@@ -19,9 +19,30 @@ struct SoundEventRequestQueueComponent;
 namespace SoundEventRequestQueueUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI bool tryQueueFromSystem(::SoundEventRequestQueueComponent& requestQueue, ::StrictEntityContext const& entity, ::ActorDataFlagComponent const& actorFlags, ::ActorDefinitionIdentifierComponent const& actorIdentifier, ::ActorUniqueIDComponent const& actorUniqueID, ::DimensionTypeComponent const& dimensionType, ::SharedTypes::Legacy::LevelSoundEvent soundEvent, ::SharedTypes::Legacy::ActorLocation location, int soundData);
+MCNAPI bool tryQueueFromSystem(
+    ::SoundEventRequestQueueComponent&          requestQueue,
+    ::StrictEntityContext const&                entity,
+    ::ActorDataFlagComponent const&             actorFlags,
+    ::ActorDefinitionIdentifierComponent const& actorIdentifier,
+    ::ActorUniqueIDComponent const&             actorUniqueID,
+    ::DimensionTypeComponent const&             dimensionType,
+    ::SharedTypes::Legacy::LevelSoundEvent      soundEvent,
+    ::SharedTypes::Legacy::ActorLocation        location,
+    int                                         soundData
+);
 
-MCNAPI bool tryQueueSynchronizedFromSystem(::SoundEventRequestQueueComponent& requestQueue, ::StrictEntityContext const& entity, ::ActorDataFlagComponent const& actorFlags, ::ActorDefinitionIdentifierComponent const& actorIdentifier, ::ActorUniqueIDComponent const& actorUniqueID, ::DimensionTypeComponent const& dimensionType, ::SharedTypes::Legacy::LevelSoundEvent soundEvent, ::SharedTypes::Legacy::ActorLocation location, int soundData, bool isGlobal);
+MCNAPI bool tryQueueSynchronizedFromSystem(
+    ::SoundEventRequestQueueComponent&          requestQueue,
+    ::StrictEntityContext const&                entity,
+    ::ActorDataFlagComponent const&             actorFlags,
+    ::ActorDefinitionIdentifierComponent const& actorIdentifier,
+    ::ActorUniqueIDComponent const&             actorUniqueID,
+    ::DimensionTypeComponent const&             dimensionType,
+    ::SharedTypes::Legacy::LevelSoundEvent      soundEvent,
+    ::SharedTypes::Legacy::ActorLocation        location,
+    int                                         soundData,
+    bool                                        isGlobal
+);
 // NOLINTEND
 
-}
+} // namespace SoundEventRequestQueueUtility

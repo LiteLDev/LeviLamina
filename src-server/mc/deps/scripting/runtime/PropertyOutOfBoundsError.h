@@ -16,7 +16,7 @@ struct PropertyOutOfBoundsError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, double> value;
+    ::ll::TypedStorage<8, 8, double>                   value;
     ::ll::TypedStorage<8, 16, ::std::optional<double>> minValue;
     ::ll::TypedStorage<8, 16, ::std::optional<double>> maxValue;
     // NOLINTEND
@@ -33,9 +33,18 @@ public:
 
     MCAPI PropertyOutOfBoundsError(::Scripting::PropertyOutOfBoundsError&&);
 
-    MCAPI PropertyOutOfBoundsError(::std::string const& propertyName, ::std::optional<double> minValue_, ::std::optional<double> maxValue_);
+    MCAPI PropertyOutOfBoundsError(
+        ::std::string const&    propertyName,
+        ::std::optional<double> minValue_,
+        ::std::optional<double> maxValue_
+    );
 
-    MCAPI PropertyOutOfBoundsError(::std::string const& propertyName, double value_, ::std::optional<double> minValue_, ::std::optional<double> maxValue_);
+    MCAPI PropertyOutOfBoundsError(
+        ::std::string const&    propertyName,
+        double                  value_,
+        ::std::optional<double> minValue_,
+        ::std::optional<double> maxValue_
+    );
 
     MCAPI ::Scripting::PropertyOutOfBoundsError& operator=(::Scripting::PropertyOutOfBoundsError&&);
 
@@ -55,9 +64,15 @@ public:
 
     MCAPI void* $ctor(::Scripting::PropertyOutOfBoundsError&&);
 
-    MCAPI void* $ctor(::std::string const& propertyName, ::std::optional<double> minValue_, ::std::optional<double> maxValue_);
+    MCAPI void*
+    $ctor(::std::string const& propertyName, ::std::optional<double> minValue_, ::std::optional<double> maxValue_);
 
-    MCAPI void* $ctor(::std::string const& propertyName, double value_, ::std::optional<double> minValue_, ::std::optional<double> maxValue_);
+    MCAPI void* $ctor(
+        ::std::string const&    propertyName,
+        double                  value_,
+        ::std::optional<double> minValue_,
+        ::std::optional<double> maxValue_
+    );
     // NOLINTEND
 
 public:
@@ -65,7 +80,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

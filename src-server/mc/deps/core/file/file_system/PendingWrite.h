@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk581f22;
-    ::ll::UntypedStorage<1, 2> mUnkaeb3eb;
+    ::ll::UntypedStorage<1, 2>  mUnkaeb3eb;
     // NOLINTEND
 
 public:
@@ -17,7 +17,6 @@ public:
     PendingWrite& operator=(PendingWrite const&);
     PendingWrite(PendingWrite const&);
     PendingWrite();
-
 };
 
-}
+} // namespace Core

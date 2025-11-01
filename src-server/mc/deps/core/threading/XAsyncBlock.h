@@ -11,10 +11,9 @@ struct XAsyncBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::XTaskQueueObject*> queue;
-    ::ll::TypedStorage<8, 8, void*> context;
-    ::ll::TypedStorage<8, 8, void(*) (::XAsyncBlock*)> callback;
-    ::ll::TypedStorage<1, 32, uchar[32]> internal;
+    ::ll::TypedStorage<8, 8, ::XTaskQueueObject*>      queue;
+    ::ll::TypedStorage<8, 8, void*>                    context;
+    ::ll::TypedStorage<8, 8, void (*)(::XAsyncBlock*)> callback;
+    ::ll::TypedStorage<1, 32, uchar[32]>               internal;
     // NOLINTEND
-
 };

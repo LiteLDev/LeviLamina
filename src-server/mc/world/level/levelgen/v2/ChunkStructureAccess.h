@@ -19,10 +19,12 @@ public:
     virtual ~ChunkStructureAccess() = default;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::br::worldgen::StructureInstance const> getStructureInstance(::br::worldgen::Structure const&) const = 0;
+    virtual ::std::shared_ptr<::br::worldgen::StructureInstance const>
+    getStructureInstance(::br::worldgen::Structure const&) const = 0;
 
     // vIndex: 2
-    virtual void setStructureInstance(::br::worldgen::Structure const&, ::std::shared_ptr<::br::worldgen::StructureInstance>) = 0;
+    virtual void
+    setStructureInstance(::br::worldgen::Structure const&, ::std::shared_ptr<::br::worldgen::StructureInstance>) = 0;
 
     // vIndex: 3
     virtual ::ChunkPos getPos() const = 0;
@@ -33,7 +35,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

@@ -5,7 +5,7 @@
 namespace br::worldgen {
 
 enum class FrequencyReductionMethod : uchar {
-    Default = 0,
+    Default     = 0,
     LegacyType1 = 1,
     LegacyType2 = 2,
     LegacyType3 = 3,

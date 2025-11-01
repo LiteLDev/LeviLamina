@@ -53,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $SetMessageQueue(::rtc::Thread* queue);
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

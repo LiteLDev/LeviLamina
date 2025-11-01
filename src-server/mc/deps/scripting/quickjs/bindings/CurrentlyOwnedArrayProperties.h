@@ -10,36 +10,35 @@ public:
     // clang-format off
     struct Prop;
     // clang-format on
-    
+
     // CurrentlyOwnedArrayProperties inner types define
     struct Prop {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk8478ce;
+        ::ll::UntypedStorage<8, 8>  mUnk8478ce;
         ::ll::UntypedStorage<8, 32> mUnk32882d;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Prop& operator=(Prop const&);
         Prop(Prop const&);
         Prop();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Prop();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -51,7 +50,6 @@ public:
     CurrentlyOwnedArrayProperties& operator=(CurrentlyOwnedArrayProperties const&);
     CurrentlyOwnedArrayProperties(CurrentlyOwnedArrayProperties const&);
     CurrentlyOwnedArrayProperties();
-
 };
 
-}
+} // namespace Scripting::QuickJS

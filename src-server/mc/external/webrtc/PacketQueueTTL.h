@@ -18,7 +18,6 @@ public:
     PacketQueueTTL& operator=(PacketQueueTTL const&);
     PacketQueueTTL(PacketQueueTTL const&);
     PacketQueueTTL();
-
 };
 
-}
+} // namespace webrtc

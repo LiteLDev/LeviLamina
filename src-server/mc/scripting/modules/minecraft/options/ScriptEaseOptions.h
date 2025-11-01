@@ -30,7 +30,6 @@ public:
 
     MCNAPI static ::Scripting::InterfaceBinding bindV1();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

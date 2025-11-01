@@ -12,6 +12,5 @@ public:
     ::ll::UntypedStorage<8, 8> mUnkbdaf5d;
     ::ll::UntypedStorage<8, 8> mUnk2caf38;
     // NOLINTEND
-
 };
-}
+} // namespace brstd::detail

@@ -22,10 +22,14 @@ public:
     virtual ~TurnPortFactory() /*override*/;
 
     // vIndex: 2
-    virtual ::std::unique_ptr<::cricket::Port> Create(::cricket::CreateRelayPortArgs const& args, ::std::shared_ptr<::rtc::AsyncPacketSocket> udp_socket) /*override*/;
+    virtual ::std::unique_ptr<::cricket::Port> Create(
+        ::cricket::CreateRelayPortArgs const&       args,
+        ::std::shared_ptr<::rtc::AsyncPacketSocket> udp_socket
+    ) /*override*/;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::cricket::Port> Create(::cricket::CreateRelayPortArgs const& args, int min_port, int max_port) /*override*/;
+    virtual ::std::unique_ptr<::cricket::Port>
+    Create(::cricket::CreateRelayPortArgs const& args, int min_port, int max_port) /*override*/;
     // NOLINTEND
 
 public:
@@ -37,9 +41,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::cricket::Port> $Create(::cricket::CreateRelayPortArgs const& args, ::std::shared_ptr<::rtc::AsyncPacketSocket> udp_socket);
+    MCNAPI ::std::unique_ptr<::cricket::Port>
+    $Create(::cricket::CreateRelayPortArgs const& args, ::std::shared_ptr<::rtc::AsyncPacketSocket> udp_socket);
 
-    MCNAPI ::std::unique_ptr<::cricket::Port> $Create(::cricket::CreateRelayPortArgs const& args, int min_port, int max_port);
+    MCNAPI ::std::unique_ptr<::cricket::Port>
+    $Create(::cricket::CreateRelayPortArgs const& args, int min_port, int max_port);
     // NOLINTEND
 
 public:
@@ -47,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

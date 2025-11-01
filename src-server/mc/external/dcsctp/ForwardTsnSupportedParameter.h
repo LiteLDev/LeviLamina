@@ -13,7 +13,8 @@ namespace dcsctp { struct ForwardTsnSupportedParameterConfig; }
 
 namespace dcsctp {
 
-class ForwardTsnSupportedParameter : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::ForwardTsnSupportedParameterConfig> {
+class ForwardTsnSupportedParameter : public ::dcsctp::Parameter,
+                                     public ::dcsctp::TLVTrait<::dcsctp::ForwardTsnSupportedParameterConfig> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -46,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

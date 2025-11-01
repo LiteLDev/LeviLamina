@@ -4,8 +4,7 @@
 
 namespace webrtc {
 
-template<typename T0>
-class FieldTrialOptional {
-};
+template <typename T0>
+class FieldTrialOptional {};
 
-}
+} // namespace webrtc

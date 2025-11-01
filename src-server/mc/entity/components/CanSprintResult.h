@@ -15,5 +15,4 @@ public:
     CanSprintResult& operator=(CanSprintResult const&);
     CanSprintResult(CanSprintResult const&);
     CanSprintResult();
-
 };

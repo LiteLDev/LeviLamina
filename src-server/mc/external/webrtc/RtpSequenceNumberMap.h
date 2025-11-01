@@ -11,7 +11,7 @@ public:
     struct Association;
     struct Info;
     // clang-format on
-    
+
     // RtpSequenceNumberMap inner types define
     struct Info {
     public:
@@ -21,15 +21,14 @@ public:
         ::ll::UntypedStorage<1, 1> mUnk35db5e;
         ::ll::UntypedStorage<1, 1> mUnk644b32;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Info& operator=(Info const&);
         Info(Info const&);
         Info();
-    
     };
-    
+
     struct Association {
     public:
         // member variables
@@ -37,19 +36,18 @@ public:
         ::ll::UntypedStorage<2, 2> mUnke71be6;
         ::ll::UntypedStorage<4, 8> mUnk7bc739;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Association& operator=(Association const&);
         Association(Association const&);
         Association();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd49feb;
+    ::ll::UntypedStorage<8, 8>  mUnkd49feb;
     ::ll::UntypedStorage<8, 40> mUnk873fea;
     // NOLINTEND
 
@@ -82,7 +80,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

@@ -16,16 +16,16 @@ class NoodleCavifier {
 public:
     // NoodleCavifier inner types define
     using InterpolatorArray = ::std::array<::NoiseCellInterpolator*, 4>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::NoodleCavifierNoises const&> mNoises;
-    ::ll::TypedStorage<2, 2, short const> mNoodlesMinHeight;
-    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator> mToggleInterpolator;
-    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator> mThicknessInterpolator;
-    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator> mRidgeAInterpolator;
-    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator> mRidgeBInterpolator;
+    ::ll::TypedStorage<8, 8, ::NoodleCavifierNoises const&>                     mNoises;
+    ::ll::TypedStorage<2, 2, short const>                                       mNoodlesMinHeight;
+    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator>                          mToggleInterpolator;
+    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator>                          mThicknessInterpolator;
+    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator>                          mRidgeAInterpolator;
+    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator>                          mRidgeBInterpolator;
     ::ll::TypedStorage<4, 4100, ::Util::MultidimensionalArray<float, 5, 5, 41>> mToggleNoiseBuffer;
     ::ll::TypedStorage<4, 4100, ::Util::MultidimensionalArray<float, 5, 5, 41>> mThicknessNoiseBuffer;
     ::ll::TypedStorage<4, 4100, ::Util::MultidimensionalArray<float, 5, 5, 41>> mRidgeANoiseBuffer;
@@ -53,5 +53,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::NoodleCavifierNoises const& noises, short minWorldHeight);
     // NOLINTEND
-
 };

@@ -24,4 +24,4 @@ MCNAPI ::std::string const& TITLE_FORMAT();
 MCNAPI ::std::string const& UNKNOWN();
 // NOLINTEND
 
-}
+} // namespace SmithingTemplateUtils

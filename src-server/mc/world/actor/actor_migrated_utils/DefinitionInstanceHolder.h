@@ -4,8 +4,7 @@
 
 namespace ActorMigratedUtils {
 
-template<typename T0>
-class DefinitionInstanceHolder {
-};
+template <typename T0>
+class DefinitionInstanceHolder {};
 
-}
+} // namespace ActorMigratedUtils

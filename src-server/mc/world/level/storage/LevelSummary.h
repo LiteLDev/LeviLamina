@@ -28,42 +28,42 @@ struct LevelSummary {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkda60e7;
-    ::ll::UntypedStorage<8, 32> mUnk76266f;
-    ::ll::UntypedStorage<8, 8> mUnk7511c6;
-    ::ll::UntypedStorage<4, 4> mUnk66426f;
-    ::ll::UntypedStorage<1, 1> mUnk57412d;
-    ::ll::UntypedStorage<1, 1> mUnke30c4b;
-    ::ll::UntypedStorage<4, 4> mUnk298125;
-    ::ll::UntypedStorage<8, 8> mUnkf73d72;
-    ::ll::UntypedStorage<4, 4> mUnkeb97bb;
-    ::ll::UntypedStorage<8, 8> mUnkc435b8;
-    ::ll::UntypedStorage<1, 1> mUnkf0fffc;
-    ::ll::UntypedStorage<1, 1> mUnk2493d3;
-    ::ll::UntypedStorage<1, 1> mUnk414905;
-    ::ll::UntypedStorage<4, 4> mUnkfbf5b2;
-    ::ll::UntypedStorage<1, 1> mUnkffd3d7;
-    ::ll::UntypedStorage<4, 4> mUnka3dd06;
-    ::ll::UntypedStorage<8, 56> mUnk61d117;
-    ::ll::UntypedStorage<8, 56> mUnk51c0b3;
-    ::ll::UntypedStorage<4, 4> mUnk17b9b7;
-    ::ll::UntypedStorage<8, 32> mUnk47ed0f;
-    ::ll::UntypedStorage<8, 32> mUnkdcc88b;
-    ::ll::UntypedStorage<8, 32> mUnkae2e1a;
-    ::ll::UntypedStorage<4, 4> mUnk1e0d75;
-    ::ll::UntypedStorage<8, 24> mUnkf49ceb;
-    ::ll::UntypedStorage<8, 32> mUnk2b57e9;
-    ::ll::UntypedStorage<8, 72> mUnkf9dbe5;
-    ::ll::UntypedStorage<8, 32> mUnkf2671b;
-    ::ll::UntypedStorage<1, 1> mUnk8d22fd;
-    ::ll::UntypedStorage<1, 1> mUnk5b0010;
-    ::ll::UntypedStorage<8, 64> mUnk93b919;
-    ::ll::UntypedStorage<4, 4> mUnkb03051;
+    ::ll::UntypedStorage<8, 32>  mUnkda60e7;
+    ::ll::UntypedStorage<8, 32>  mUnk76266f;
+    ::ll::UntypedStorage<8, 8>   mUnk7511c6;
+    ::ll::UntypedStorage<4, 4>   mUnk66426f;
+    ::ll::UntypedStorage<1, 1>   mUnk57412d;
+    ::ll::UntypedStorage<1, 1>   mUnke30c4b;
+    ::ll::UntypedStorage<4, 4>   mUnk298125;
+    ::ll::UntypedStorage<8, 8>   mUnkf73d72;
+    ::ll::UntypedStorage<4, 4>   mUnkeb97bb;
+    ::ll::UntypedStorage<8, 8>   mUnkc435b8;
+    ::ll::UntypedStorage<1, 1>   mUnkf0fffc;
+    ::ll::UntypedStorage<1, 1>   mUnk2493d3;
+    ::ll::UntypedStorage<1, 1>   mUnk414905;
+    ::ll::UntypedStorage<4, 4>   mUnkfbf5b2;
+    ::ll::UntypedStorage<1, 1>   mUnkffd3d7;
+    ::ll::UntypedStorage<4, 4>   mUnka3dd06;
+    ::ll::UntypedStorage<8, 56>  mUnk61d117;
+    ::ll::UntypedStorage<8, 56>  mUnk51c0b3;
+    ::ll::UntypedStorage<4, 4>   mUnk17b9b7;
+    ::ll::UntypedStorage<8, 32>  mUnk47ed0f;
+    ::ll::UntypedStorage<8, 32>  mUnkdcc88b;
+    ::ll::UntypedStorage<8, 32>  mUnkae2e1a;
+    ::ll::UntypedStorage<4, 4>   mUnk1e0d75;
+    ::ll::UntypedStorage<8, 24>  mUnkf49ceb;
+    ::ll::UntypedStorage<8, 32>  mUnk2b57e9;
+    ::ll::UntypedStorage<8, 72>  mUnkf9dbe5;
+    ::ll::UntypedStorage<8, 32>  mUnkf2671b;
+    ::ll::UntypedStorage<1, 1>   mUnk8d22fd;
+    ::ll::UntypedStorage<1, 1>   mUnk5b0010;
+    ::ll::UntypedStorage<8, 64>  mUnk93b919;
+    ::ll::UntypedStorage<4, 4>   mUnkb03051;
     ::ll::UntypedStorage<8, 176> mUnk1391df;
-    ::ll::UntypedStorage<4, 4> mUnkf4d60e;
-    ::ll::UntypedStorage<1, 1> mUnka07096;
-    ::ll::UntypedStorage<8, 32> mUnk97b1ff;
-    ::ll::UntypedStorage<8, 32> mUnkc4d743;
+    ::ll::UntypedStorage<4, 4>   mUnkf4d60e;
+    ::ll::UntypedStorage<1, 1>   mUnka07096;
+    ::ll::UntypedStorage<8, 32>  mUnk97b1ff;
+    ::ll::UntypedStorage<8, 32>  mUnkc4d743;
     // NOLINTEND
 
 public:
@@ -73,11 +73,48 @@ public:
 
     MCNAPI LevelSummary(::LevelSummary const&);
 
-    MCNAPI LevelSummary(::std::string const& levelId, ::LevelData const& levelData, ::Core::Path const& levelDirectory, ::Core::Path const& levelInfoDirectory, bool isBetaRetailLevel);
+    MCNAPI LevelSummary(
+        ::std::string const& levelId,
+        ::LevelData const&   levelData,
+        ::Core::Path const&  levelDirectory,
+        ::Core::Path const&  levelInfoDirectory,
+        bool                 isBetaRetailLevel
+    );
 
-    MCNAPI LevelSummary(::std::string const& id, ::std::string const& name, int64 lastSaved, ::GameType gameType, bool isHardcore, bool playerHasDied, ::SharedTypes::Legacy::Difficulty gameDifficulty, ::LevelSeed64 seed, int npv, uint64 sizeOnDisk, bool confirmedPlatformLockedContent, bool isMultiplayerEnabled, bool lanBroadcastIntent, ::Social::GamePublishSetting xblBroadcastIntent, bool commandsEnabled, ::EducationEditionOffer eduOffer, ::GameVersion const& lastLoadedWithGameVersion, ::GameVersion const& minCompatibleClientVersion, ::StorageVersion storageVersion, ::Core::Path const& path, ::ContentIdentity const& premiumContentIdentity, ::std::string const& educationOid, bool isSingleUseWorld, ::EduSharedUriResource const& eduSharedUriResource, ::Experiments const& experiments, ::BaseGameVersion const& baseGameVersion, ::Editor::WorldType editorWorldType, bool uncompleteWorldFileOnDisk, ::std::optional<::CloudSaveLevelInfo> cloudSaveInfo);
+    MCNAPI LevelSummary(
+        ::std::string const&                  id,
+        ::std::string const&                  name,
+        int64                                 lastSaved,
+        ::GameType                            gameType,
+        bool                                  isHardcore,
+        bool                                  playerHasDied,
+        ::SharedTypes::Legacy::Difficulty     gameDifficulty,
+        ::LevelSeed64                         seed,
+        int                                   npv,
+        uint64                                sizeOnDisk,
+        bool                                  confirmedPlatformLockedContent,
+        bool                                  isMultiplayerEnabled,
+        bool                                  lanBroadcastIntent,
+        ::Social::GamePublishSetting          xblBroadcastIntent,
+        bool                                  commandsEnabled,
+        ::EducationEditionOffer               eduOffer,
+        ::GameVersion const&                  lastLoadedWithGameVersion,
+        ::GameVersion const&                  minCompatibleClientVersion,
+        ::StorageVersion                      storageVersion,
+        ::Core::Path const&                   path,
+        ::ContentIdentity const&              premiumContentIdentity,
+        ::std::string const&                  educationOid,
+        bool                                  isSingleUseWorld,
+        ::EduSharedUriResource const&         eduSharedUriResource,
+        ::Experiments const&                  experiments,
+        ::BaseGameVersion const&              baseGameVersion,
+        ::Editor::WorldType                   editorWorldType,
+        bool                                  uncompleteWorldFileOnDisk,
+        ::std::optional<::CloudSaveLevelInfo> cloudSaveInfo
+    );
 
-    MCNAPI ::std::optional<::Core::PathBuffer<::std::string>> _getScreenshotIconPath(::Core::Path const& worldDirectory);
+    MCNAPI ::std::optional<::Core::PathBuffer<::std::string>>
+    _getScreenshotIconPath(::Core::Path const& worldDirectory);
 
     MCNAPI void _initializeWorldIconPath(::Core::Path const& directory);
 
@@ -113,9 +150,45 @@ public:
 
     MCNAPI void* $ctor(::LevelSummary const&);
 
-    MCNAPI void* $ctor(::std::string const& levelId, ::LevelData const& levelData, ::Core::Path const& levelDirectory, ::Core::Path const& levelInfoDirectory, bool isBetaRetailLevel);
+    MCNAPI void* $ctor(
+        ::std::string const& levelId,
+        ::LevelData const&   levelData,
+        ::Core::Path const&  levelDirectory,
+        ::Core::Path const&  levelInfoDirectory,
+        bool                 isBetaRetailLevel
+    );
 
-    MCNAPI void* $ctor(::std::string const& id, ::std::string const& name, int64 lastSaved, ::GameType gameType, bool isHardcore, bool playerHasDied, ::SharedTypes::Legacy::Difficulty gameDifficulty, ::LevelSeed64 seed, int npv, uint64 sizeOnDisk, bool confirmedPlatformLockedContent, bool isMultiplayerEnabled, bool lanBroadcastIntent, ::Social::GamePublishSetting xblBroadcastIntent, bool commandsEnabled, ::EducationEditionOffer eduOffer, ::GameVersion const& lastLoadedWithGameVersion, ::GameVersion const& minCompatibleClientVersion, ::StorageVersion storageVersion, ::Core::Path const& path, ::ContentIdentity const& premiumContentIdentity, ::std::string const& educationOid, bool isSingleUseWorld, ::EduSharedUriResource const& eduSharedUriResource, ::Experiments const& experiments, ::BaseGameVersion const& baseGameVersion, ::Editor::WorldType editorWorldType, bool uncompleteWorldFileOnDisk, ::std::optional<::CloudSaveLevelInfo> cloudSaveInfo);
+    MCNAPI void* $ctor(
+        ::std::string const&                  id,
+        ::std::string const&                  name,
+        int64                                 lastSaved,
+        ::GameType                            gameType,
+        bool                                  isHardcore,
+        bool                                  playerHasDied,
+        ::SharedTypes::Legacy::Difficulty     gameDifficulty,
+        ::LevelSeed64                         seed,
+        int                                   npv,
+        uint64                                sizeOnDisk,
+        bool                                  confirmedPlatformLockedContent,
+        bool                                  isMultiplayerEnabled,
+        bool                                  lanBroadcastIntent,
+        ::Social::GamePublishSetting          xblBroadcastIntent,
+        bool                                  commandsEnabled,
+        ::EducationEditionOffer               eduOffer,
+        ::GameVersion const&                  lastLoadedWithGameVersion,
+        ::GameVersion const&                  minCompatibleClientVersion,
+        ::StorageVersion                      storageVersion,
+        ::Core::Path const&                   path,
+        ::ContentIdentity const&              premiumContentIdentity,
+        ::std::string const&                  educationOid,
+        bool                                  isSingleUseWorld,
+        ::EduSharedUriResource const&         eduSharedUriResource,
+        ::Experiments const&                  experiments,
+        ::BaseGameVersion const&              baseGameVersion,
+        ::Editor::WorldType                   editorWorldType,
+        bool                                  uncompleteWorldFileOnDisk,
+        ::std::optional<::CloudSaveLevelInfo> cloudSaveInfo
+    );
     // NOLINTEND
 
 public:
@@ -123,5 +196,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

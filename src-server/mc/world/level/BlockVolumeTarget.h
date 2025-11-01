@@ -25,10 +25,10 @@ class BlockVolumeTarget : public ::IBlockWorldGenAPI {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfdc169;
-    ::ll::UntypedStorage<8, 8> mUnk7f7cce;
-    ::ll::UntypedStorage<8, 8> mUnk81f5ca;
-    ::ll::UntypedStorage<4, 4> mUnk719c7d;
+    ::ll::UntypedStorage<8, 8>  mUnkfdc169;
+    ::ll::UntypedStorage<8, 8>  mUnk7f7cce;
+    ::ll::UntypedStorage<8, 8>  mUnk81f5ca;
+    ::ll::UntypedStorage<4, 4>  mUnk719c7d;
     ::ll::UntypedStorage<8, 80> mUnk48ff4c;
     // NOLINTEND
 
@@ -57,7 +57,8 @@ public:
     virtual ::Block const* tryGetLiquidBlock(::BlockPos const& pos) const /*override*/;
 
     // vIndex: 7
-    virtual ::gsl::span<::BlockDataFetchResult<::Block> const> fetchBlocksInBox(::BoundingBox const&, ::std::function<bool(::Block const&)>) /*override*/;
+    virtual ::gsl::span<::BlockDataFetchResult<::Block> const>
+    fetchBlocksInBox(::BoundingBox const&, ::std::function<bool(::Block const&)>) /*override*/;
 
     // vIndex: 8
     virtual bool hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const /*override*/;
@@ -134,7 +135,8 @@ public:
 
     MCNAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 
-    MCNAPI ::gsl::span<::BlockDataFetchResult<::Block> const> $fetchBlocksInBox(::BoundingBox const&, ::std::function<bool(::Block const&)>);
+    MCNAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
+    $fetchBlocksInBox(::BoundingBox const&, ::std::function<bool(::Block const&)>);
 
     MCNAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
 
@@ -180,5 +182,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

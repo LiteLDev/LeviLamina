@@ -33,7 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $init(int64 seed);
     // NOLINTEND
-
 };
 
-}
+} // namespace OperationNodeDetails

@@ -17,7 +17,6 @@ public:
     HeightFilter& operator=(HeightFilter const&);
     HeightFilter(HeightFilter const&);
     HeightFilter();
-
 };
 
-}
+} // namespace SharedTypes::Legacy::Spawn

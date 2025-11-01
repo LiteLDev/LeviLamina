@@ -18,5 +18,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::BidirectionalUnorderedMap<::ItemStackNetResult, ::std::string> const& mMap();
     // NOLINTEND
-
 };

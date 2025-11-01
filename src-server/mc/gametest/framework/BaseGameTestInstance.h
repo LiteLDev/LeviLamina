@@ -24,36 +24,36 @@ class BaseGameTestInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk350d5f;
-    ::ll::UntypedStorage<1, 1> mUnkf470ba;
-    ::ll::UntypedStorage<8, 8> mUnka70b5d;
-    ::ll::UntypedStorage<8, 8> mUnk1db748;
-    ::ll::UntypedStorage<8, 8> mUnkd8fe12;
-    ::ll::UntypedStorage<8, 24> mUnk96e162;
-    ::ll::UntypedStorage<8, 24> mUnk367b13;
-    ::ll::UntypedStorage<8, 64> mUnkc7fcf4;
-    ::ll::UntypedStorage<8, 24> mUnkb2b602;
-    ::ll::UntypedStorage<8, 24> mUnk6788f9;
-    ::ll::UntypedStorage<8, 8> mUnk2a8560;
+    ::ll::UntypedStorage<4, 12>  mUnk350d5f;
+    ::ll::UntypedStorage<1, 1>   mUnkf470ba;
+    ::ll::UntypedStorage<8, 8>   mUnka70b5d;
+    ::ll::UntypedStorage<8, 8>   mUnk1db748;
+    ::ll::UntypedStorage<8, 8>   mUnkd8fe12;
+    ::ll::UntypedStorage<8, 24>  mUnk96e162;
+    ::ll::UntypedStorage<8, 24>  mUnk367b13;
+    ::ll::UntypedStorage<8, 64>  mUnkc7fcf4;
+    ::ll::UntypedStorage<8, 24>  mUnkb2b602;
+    ::ll::UntypedStorage<8, 24>  mUnk6788f9;
+    ::ll::UntypedStorage<8, 8>   mUnk2a8560;
     ::ll::UntypedStorage<8, 248> mUnkfdc9e5;
-    ::ll::UntypedStorage<4, 4> mUnk7a1201;
-    ::ll::UntypedStorage<4, 4> mUnk7f9ce6;
-    ::ll::UntypedStorage<4, 4> mUnkc50f09;
-    ::ll::UntypedStorage<4, 4> mUnk21460e;
-    ::ll::UntypedStorage<4, 4> mUnkd39f83;
-    ::ll::UntypedStorage<4, 4> mUnkc056c2;
-    ::ll::UntypedStorage<4, 4> mUnkcde0ac;
-    ::ll::UntypedStorage<1, 1> mUnkfe8a57;
-    ::ll::UntypedStorage<1, 1> mUnk5cc272;
-    ::ll::UntypedStorage<8, 8> mUnkb0ad63;
-    ::ll::UntypedStorage<4, 4> mUnk4faa9d;
-    ::ll::UntypedStorage<4, 4> mUnkc02b5e;
-    ::ll::UntypedStorage<4, 4> mUnkc036b5;
-    ::ll::UntypedStorage<4, 4> mUnk89f975;
-    ::ll::UntypedStorage<1, 1> mUnkc98fbc;
-    ::ll::UntypedStorage<1, 1> mUnkcfef79;
-    ::ll::UntypedStorage<1, 1> mUnk673bc3;
-    ::ll::UntypedStorage<1, 1> mUnk9b8cd1;
+    ::ll::UntypedStorage<4, 4>   mUnk7a1201;
+    ::ll::UntypedStorage<4, 4>   mUnk7f9ce6;
+    ::ll::UntypedStorage<4, 4>   mUnkc50f09;
+    ::ll::UntypedStorage<4, 4>   mUnk21460e;
+    ::ll::UntypedStorage<4, 4>   mUnkd39f83;
+    ::ll::UntypedStorage<4, 4>   mUnkc056c2;
+    ::ll::UntypedStorage<4, 4>   mUnkcde0ac;
+    ::ll::UntypedStorage<1, 1>   mUnkfe8a57;
+    ::ll::UntypedStorage<1, 1>   mUnk5cc272;
+    ::ll::UntypedStorage<8, 8>   mUnkb0ad63;
+    ::ll::UntypedStorage<4, 4>   mUnk4faa9d;
+    ::ll::UntypedStorage<4, 4>   mUnkc02b5e;
+    ::ll::UntypedStorage<4, 4>   mUnkc036b5;
+    ::ll::UntypedStorage<4, 4>   mUnk89f975;
+    ::ll::UntypedStorage<1, 1>   mUnkc98fbc;
+    ::ll::UntypedStorage<1, 1>   mUnkcfef79;
+    ::ll::UntypedStorage<1, 1>   mUnk673bc3;
+    ::ll::UntypedStorage<1, 1>   mUnk9b8cd1;
     // NOLINTEND
 
 public:
@@ -111,7 +111,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BaseGameTestInstance(::gametest::BaseGameTestFunction const& testFunction, ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper);
+    MCNAPI BaseGameTestInstance(
+        ::gametest::BaseGameTestFunction const&                testFunction,
+        ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper
+    );
 
     MCNAPI void _cleanup();
 
@@ -133,7 +136,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::gametest::BaseGameTestFunction const& testFunction, ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper);
+    MCNAPI void* $ctor(
+        ::gametest::BaseGameTestFunction const&                testFunction,
+        ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper
+    );
     // NOLINTEND
 
 public:
@@ -159,7 +165,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace gametest

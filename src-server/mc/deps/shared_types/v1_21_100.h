@@ -17,4 +17,4 @@ MCNAPI void bindPlayerViewMode(::cereal::ReflectionCtx& ctx);
 MCNAPI void bindRotationSpace(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-}
+} // namespace SharedTypes::v1_21_100

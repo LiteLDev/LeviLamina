@@ -15,7 +15,11 @@ namespace VanillaFeatures {
 // NOLINTBEGIN
 MCAPI void registerFeatureTypes(::FeatureTypeFactory& typeFactories);
 
-MCAPI void registerFeatures(::FeatureRegistry& registry, ::BaseGameVersion const& baseGameVersion, ::Experiments const& experiment);
+MCAPI void registerFeatures(
+    ::FeatureRegistry&       registry,
+    ::BaseGameVersion const& baseGameVersion,
+    ::Experiments const&     experiment
+);
 // NOLINTEND
 
-}
+} // namespace VanillaFeatures

@@ -14,5 +14,4 @@ public:
     ServicePacksConfig& operator=(ServicePacksConfig const&);
     ServicePacksConfig(ServicePacksConfig const&);
     ServicePacksConfig();
-
 };

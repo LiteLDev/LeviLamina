@@ -16,7 +16,6 @@ public:
     ReferenceCounter& operator=(ReferenceCounter const&);
     ReferenceCounter(ReferenceCounter const&);
     ReferenceCounter();
-
 };
 
-}
+} // namespace RakNet

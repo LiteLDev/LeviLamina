@@ -12,7 +12,8 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 namespace SharedTypes::Util {
 
-class WaterAppearanceEmptyConstraint : public ::cereal::ConstraintHandle<::SharedTypes::Util::WaterAppearanceEmptyConstraint> {
+class WaterAppearanceEmptyConstraint
+: public ::cereal::ConstraintHandle<::SharedTypes::Util::WaterAppearanceEmptyConstraint> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,7 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::Util

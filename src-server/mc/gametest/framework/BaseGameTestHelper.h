@@ -59,10 +59,16 @@ public:
     virtual void succeedWhenEntityPresent(::ActorDefinitionIdentifier const&, ::BlockPos const&, bool) = 0;
 
     // vIndex: 3
-    virtual void succeedWhenEntityData(::BlockPos const&, ::ActorDefinitionIdentifier const&, ::std::function<bool(::Actor&)>) = 0;
+    virtual void
+    succeedWhenEntityData(::BlockPos const&, ::ActorDefinitionIdentifier const&, ::std::function<bool(::Actor&)>) = 0;
 
     // vIndex: 4
-    virtual void succeedWhenEntityHasComponent(::ActorDefinitionIdentifier const&, ::std::string const&, ::BlockPos const&, bool) = 0;
+    virtual void succeedWhenEntityHasComponent(
+        ::ActorDefinitionIdentifier const&,
+        ::std::string const&,
+        ::BlockPos const&,
+        bool
+    ) = 0;
 
     // vIndex: 7
     virtual void succeedWhenBlockPresent(::Block const&, int, int, int, bool) = 0;
@@ -104,22 +110,27 @@ public:
     virtual ::std::optional<::gametest::GameTestError> killAllEntities() = 0;
 
     // vIndex: 20
-    virtual ::std::variant<::gametest::GameTestError, ::Actor*> spawn(::ActorDefinitionIdentifier const&, int, int, int) = 0;
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawn(::ActorDefinitionIdentifier const&, int, int, int) = 0;
 
     // vIndex: 19
-    virtual ::std::variant<::gametest::GameTestError, ::Actor*> spawn(::ActorDefinitionIdentifier const&, ::BlockPos const&) = 0;
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawn(::ActorDefinitionIdentifier const&, ::BlockPos const&) = 0;
 
     // vIndex: 18
-    virtual ::std::variant<::gametest::GameTestError, ::Actor*> spawn(::ActorDefinitionIdentifier const&, ::Vec3 const&) = 0;
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawn(::ActorDefinitionIdentifier const&, ::Vec3 const&) = 0;
 
     // vIndex: 21
     virtual ::std::variant<::gametest::GameTestError, ::Actor*> spawnItem(::ItemStack const&, ::Vec3 const&) = 0;
 
     // vIndex: 23
-    virtual ::std::variant<::gametest::GameTestError, ::Actor*> spawnWithoutBehaviors(::ActorDefinitionIdentifier const&, ::BlockPos const&) = 0;
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawnWithoutBehaviors(::ActorDefinitionIdentifier const&, ::BlockPos const&) = 0;
 
     // vIndex: 22
-    virtual ::std::variant<::gametest::GameTestError, ::Actor*> spawnWithoutBehaviors(::ActorDefinitionIdentifier const&, ::Vec3 const&) = 0;
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawnWithoutBehaviors(::ActorDefinitionIdentifier const&, ::Vec3 const&) = 0;
 
     // vIndex: 25
     virtual ::std::optional<::gametest::GameTestError> walkTo(::Mob&, ::BlockPos const&, float) = 0;
@@ -131,58 +142,79 @@ public:
     virtual ::std::optional<::gametest::GameTestError> setTntFuse(::Actor&, int) = 0;
 
     // vIndex: 30
-    virtual ::std::optional<::gametest::GameTestError> assertEntityPresent(::ActorDefinitionIdentifier const&, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityPresent(::ActorDefinitionIdentifier const&, bool) = 0;
 
     // vIndex: 29
-    virtual ::std::optional<::gametest::GameTestError> assertEntityPresent(::ActorDefinitionIdentifier const&, int, int, int, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityPresent(::ActorDefinitionIdentifier const&, int, int, int, bool) = 0;
 
     // vIndex: 28
-    virtual ::std::optional<::gametest::GameTestError> assertEntityPresent(::ActorDefinitionIdentifier const&, ::BlockPos const&, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityPresent(::ActorDefinitionIdentifier const&, ::BlockPos const&, bool) = 0;
 
     // vIndex: 27
-    virtual ::std::optional<::gametest::GameTestError> assertEntityPresent(::ActorDefinitionIdentifier const&, ::BlockPos const&, float const, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityPresent(::ActorDefinitionIdentifier const&, ::BlockPos const&, float const, bool) = 0;
 
     // vIndex: 32
-    virtual ::std::optional<::gametest::GameTestError> assertEntityInstancePresent(::Actor const*, ::BlockPos const&, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityInstancePresent(::Actor const*, ::BlockPos const&, bool) = 0;
 
     // vIndex: 31
     virtual ::std::optional<::gametest::GameTestError> assertEntityInstancePresent(::Actor const*, bool) const = 0;
 
     // vIndex: 33
-    virtual ::std::optional<::gametest::GameTestError> assertEntityTouching(::ActorDefinitionIdentifier const&, ::Vec3 const&, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityTouching(::ActorDefinitionIdentifier const&, ::Vec3 const&, bool) = 0;
 
     // vIndex: 34
-    virtual ::std::optional<::gametest::GameTestError> assertEntityState(::BlockPos const&, ::ActorDefinitionIdentifier const&, ::std::function<bool(::Actor&)>) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityState(::BlockPos const&, ::ActorDefinitionIdentifier const&, ::std::function<bool(::Actor&)>) = 0;
 
     // vIndex: 36
     virtual ::std::optional<::gametest::GameTestError> assertBlockPresent(::BlockType const&, int, int, int, bool) = 0;
 
     // vIndex: 35
-    virtual ::std::optional<::gametest::GameTestError> assertBlockPresent(::BlockType const&, ::BlockPos const&, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertBlockPresent(::BlockType const&, ::BlockPos const&, bool) = 0;
 
     // vIndex: 37
-    virtual ::std::optional<::gametest::GameTestError> assertBlockState(::BlockPos const&, ::std::function<bool(::Block const&)>) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertBlockState(::BlockPos const&, ::std::function<bool(::Block const&)>) = 0;
 
     // vIndex: 39
-    virtual ::std::optional<::gametest::GameTestError> assertItemEntityPresent(::Item const&, int, int, int, float, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertItemEntityPresent(::Item const&, int, int, int, float, bool) = 0;
 
     // vIndex: 38
-    virtual ::std::optional<::gametest::GameTestError> assertItemEntityPresent(::Item const&, ::BlockPos const&, float, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertItemEntityPresent(::Item const&, ::BlockPos const&, float, bool) = 0;
 
     // vIndex: 40
-    virtual ::std::optional<::gametest::GameTestError> assertItemEntityCountIs(::Item const&, ::BlockPos const&, float, int) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertItemEntityCountIs(::Item const&, ::BlockPos const&, float, int) = 0;
 
     // vIndex: 41
     virtual ::std::optional<::gametest::GameTestError> assertContainerEmpty(::BlockPos const&) = 0;
 
     // vIndex: 42
-    virtual ::std::optional<::gametest::GameTestError> assertContainerContains(::ItemStack const&, ::BlockPos const&) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertContainerContains(::ItemStack const&, ::BlockPos const&) = 0;
 
     // vIndex: 43
-    virtual ::std::optional<::gametest::GameTestError> assertEntityHasComponent(::ActorDefinitionIdentifier const&, ::std::string const&, ::BlockPos const&, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityHasComponent(::ActorDefinitionIdentifier const&, ::std::string const&, ::BlockPos const&, bool) = 0;
 
     // vIndex: 44
-    virtual ::std::optional<::gametest::GameTestError> assertEntityHasArmor(::ActorDefinitionIdentifier const&, ::SharedTypes::Legacy::ArmorSlot, ::std::string const&, int, ::BlockPos const&, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError> assertEntityHasArmor(
+        ::ActorDefinitionIdentifier const&,
+        ::SharedTypes::Legacy::ArmorSlot,
+        ::std::string const&,
+        int,
+        ::BlockPos const&,
+        bool
+    ) = 0;
 
     // vIndex: 45
     virtual ::std::optional<::gametest::GameTestError> print(::std::string const&) = 0;
@@ -197,7 +229,8 @@ public:
     virtual ::std::optional<::gametest::GameTestError> pulseRedstone(::BlockPos const&, int) = 0;
 
     // vIndex: 49
-    virtual ::std::variant<::gametest::GameTestError, ::ScriptModuleGameTest::ScriptGameTestConnectivity> getFenceConnectivity(::BlockPos const&) = 0;
+    virtual ::std::variant<::gametest::GameTestError, ::ScriptModuleGameTest::ScriptGameTestConnectivity>
+    getFenceConnectivity(::BlockPos const&) = 0;
 
     // vIndex: 51
     virtual ::std::variant<::gametest::GameTestError, ::BlockPos> worldPosition(::BlockPos const&) const = 0;
@@ -215,16 +248,22 @@ public:
     virtual ::std::optional<::gametest::GameTestError> setFluidContainer(::BlockPos const&, int) = 0;
 
     // vIndex: 55
-    virtual ::std::optional<::gametest::GameTestError> triggerInternalBlockEvent(::BlockPos const&, ::std::string const&, ::std::vector<float> const&) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    triggerInternalBlockEvent(::BlockPos const&, ::std::string const&, ::std::vector<float> const&) = 0;
 
     // vIndex: 56
     virtual ::std::optional<::gametest::GameTestError> assertCanReachLocation(::Mob&, ::BlockPos const&, bool) = 0;
 
     // vIndex: 57
-    virtual ::std::optional<::gametest::GameTestError> spreadFromFaceTowardDirection(::BlockPos const&, ::ScriptModuleMinecraft::ScriptFacing, ::ScriptModuleMinecraft::ScriptFacing) = 0;
+    virtual ::std::optional<::gametest::GameTestError> spreadFromFaceTowardDirection(
+        ::BlockPos const&,
+        ::ScriptModuleMinecraft::ScriptFacing,
+        ::ScriptModuleMinecraft::ScriptFacing
+    ) = 0;
 
     // vIndex: 58
-    virtual ::std::variant<::gametest::GameTestError, ::SimulatedPlayer*> spawnSimulatedPlayer(::std::string const&, ::BlockPos const&, ::GameType) = 0;
+    virtual ::std::variant<::gametest::GameTestError, ::SimulatedPlayer*>
+    spawnSimulatedPlayer(::std::string const&, ::BlockPos const&, ::GameType) = 0;
 
     // vIndex: 59
     virtual void removeSimulatedPlayer(::SimulatedPlayer&) = 0;
@@ -246,9 +285,18 @@ public:
 
     MCNAPI void failIf(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCNAPI ::gametest::GameTestError generateErrorWithContext(::gametest::GameTestErrorType errorType, ::std::string message, ::BlockPos const& relativePos) const;
+    MCNAPI ::gametest::GameTestError generateErrorWithContext(
+        ::gametest::GameTestErrorType errorType,
+        ::std::string                 message,
+        ::BlockPos const&             relativePos
+    ) const;
 
-    MCNAPI ::gametest::GameTestError generateErrorWithContext(::gametest::GameTestErrorType errorType, ::std::string message, ::std::vector<::std::string> params, ::BlockPos const& relativePos) const;
+    MCNAPI ::gametest::GameTestError generateErrorWithContext(
+        ::gametest::GameTestErrorType errorType,
+        ::std::string                 message,
+        ::std::vector<::std::string>  params,
+        ::BlockPos const&             relativePos
+    ) const;
 
     MCNAPI ::std::variant<::gametest::GameTestError, uchar> rotateDirection(uchar direction) const;
 
@@ -258,7 +306,10 @@ public:
 
     MCNAPI void succeedWhen(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCNAPI void until(::std::function<::std::optional<::gametest::GameTestError>()> testFn, ::std::function<::std::optional<::gametest::GameTestError>()> doneFn);
+    MCNAPI void until(
+        ::std::function<::std::optional<::gametest::GameTestError>()> testFn,
+        ::std::function<::std::optional<::gametest::GameTestError>()> doneFn
+    );
     // NOLINTEND
 
 public:
@@ -266,7 +317,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace gametest

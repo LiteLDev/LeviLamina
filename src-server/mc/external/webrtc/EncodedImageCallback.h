@@ -16,16 +16,16 @@ public:
     // clang-format off
     struct Result;
     // clang-format on
-    
+
     // EncodedImageCallback inner types define
     struct Result {
     public:
         // Result inner types define
         enum class Error : int {
-            Ok = 0,
+            Ok              = 0,
             ErrorSendFailed = 1,
         };
-        
+
     public:
         // member variables
         // NOLINTBEGIN
@@ -33,20 +33,19 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk45aa4b;
         ::ll::UntypedStorage<1, 1> mUnk484c7c;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Result& operator=(Result const&);
         Result(Result const&);
         Result();
-    
     };
-    
+
     enum class DropReason : uchar {
         KDroppedByMediaOptimizations = 0,
-        KDroppedByEncoder = 1,
+        KDroppedByEncoder            = 1,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -54,7 +53,8 @@ public:
     virtual ~EncodedImageCallback() = default;
 
     // vIndex: 1
-    virtual ::webrtc::EncodedImageCallback::Result OnEncodedImage(::webrtc::EncodedImage const&, ::webrtc::CodecSpecificInfo const*) = 0;
+    virtual ::webrtc::EncodedImageCallback::Result
+    OnEncodedImage(::webrtc::EncodedImage const&, ::webrtc::CodecSpecificInfo const*) = 0;
 
     // vIndex: 2
     virtual void OnDroppedFrame(::webrtc::EncodedImageCallback::DropReason reason);
@@ -71,7 +71,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

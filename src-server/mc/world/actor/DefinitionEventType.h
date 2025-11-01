@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class DefinitionEventType : int {
-    Leaf = 0,
+    Leaf     = 0,
     Sequence = 1,
-    Random = 2,
-    None = 3,
+    Random   = 2,
+    None     = 3,
 };

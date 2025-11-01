@@ -17,4 +17,4 @@ MCNAPI bool setFromString(::std::string_view varName, ::std::string_view inputSt
 MCNAPI void setFromTicks(::std::string_view varName, int ticks, ::EffectDuration& effectDuration);
 // NOLINTEND
 
-}
+} // namespace EffectDurationUtility

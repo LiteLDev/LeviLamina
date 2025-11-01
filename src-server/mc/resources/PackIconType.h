@@ -4,5 +4,5 @@
 
 enum class PackIconType : int {
     Default = 0,
-    Bugged = 1,
+    Bugged  = 1,
 };

@@ -18,7 +18,7 @@ public:
     // clang-format off
     struct Params;
     // clang-format on
-    
+
     // JsonWebRtcNotification inner types define
     struct Params {
     public:
@@ -27,21 +27,20 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk3fa27a;
         ::ll::UntypedStorage<8, 32> mUnkd9ba28;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Params& operator=(Params const&);
         Params(Params const&);
         Params();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::JsonRpc::JsonWebRtcNotification::Params& operator=(::JsonRpc::JsonWebRtcNotification::Params&&);
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -71,7 +70,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace JsonRpc

@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct Chromaticity;
     // clang-format on
-    
+
     // HdrMasteringMetadata inner types define
     struct Chromaticity {
     public:
@@ -19,15 +19,14 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk3f15ca;
         ::ll::UntypedStorage<4, 4> mUnk920d7c;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Chromaticity& operator=(Chromaticity const&);
         Chromaticity(Chromaticity const&);
         Chromaticity();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -44,7 +43,6 @@ public:
     HdrMasteringMetadata& operator=(HdrMasteringMetadata const&);
     HdrMasteringMetadata(HdrMasteringMetadata const&);
     HdrMasteringMetadata();
-
 };
 
-}
+} // namespace webrtc

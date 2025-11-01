@@ -16,7 +16,6 @@ public:
     InspectItemSpace& operator=(InspectItemSpace const&);
     InspectItemSpace(InspectItemSpace const&);
     InspectItemSpace();
-
 };
 
-}
+} // namespace AgentComponents::Actions

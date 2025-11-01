@@ -15,13 +15,14 @@ namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-struct BlockDestructionParticlesDescription : public ::NetworkedBlockComponentDescription<::BlockDestructionParticlesDescription> {
+struct BlockDestructionParticlesDescription
+: public ::NetworkedBlockComponentDescription<::BlockDestructionParticlesDescription> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mTexture;
-    ::ll::TypedStorage<1, 1, ::TintMethod> mTintMethod;
-    ::ll::TypedStorage<4, 4, int> mParticleCount;
+    ::ll::TypedStorage<1, 1, ::TintMethod>   mTintMethod;
+    ::ll::TypedStorage<4, 4, int>            mParticleCount;
     // NOLINTEND
 
 public:
@@ -57,7 +58,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static bool postParseConstraint(::Experiments const& experiments, ::Json::Value const& componentJson, ::SemVersion const& jsonVersion);
+    MCAPI static bool postParseConstraint(
+        ::Experiments const& experiments,
+        ::Json::Value const& componentJson,
+        ::SemVersion const&  jsonVersion
+    );
     // NOLINTEND
 
 public:
@@ -111,5 +116,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

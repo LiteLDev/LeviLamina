@@ -14,9 +14,9 @@ class TargetNearbyDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc50ab8;
-    ::ll::UntypedStorage<4, 4> mUnkf55c7e;
-    ::ll::UntypedStorage<1, 1> mUnk1f1461;
+    ::ll::UntypedStorage<4, 4>   mUnkc50ab8;
+    ::ll::UntypedStorage<4, 4>   mUnkf55c7e;
+    ::ll::UntypedStorage<1, 1>   mUnk1f1461;
     ::ll::UntypedStorage<8, 104> mUnk809433;
     ::ll::UntypedStorage<8, 104> mUnk59ffaa;
     ::ll::UntypedStorage<8, 104> mUnk56719e;
@@ -37,7 +37,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TargetNearbyDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TargetNearbyDefinition>>& root
+    );
     // NOLINTEND
 
 public:
@@ -45,5 +47,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

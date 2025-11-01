@@ -21,7 +21,8 @@ struct ScriptItemUseAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> mScriptItem;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
+                                                                                                           mScriptItem;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mSource;
     // NOLINTEND
 
@@ -35,7 +36,12 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptItemUseAfterEvent(::ScriptModuleMinecraft::ScriptItemUseAfterEvent const&);
 
-    MCAPI ScriptItemUseAfterEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::ItemUseEvent const&, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptItemUseAfterEvent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Player const&                                                                player,
+        ::ItemUseEvent const&,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
 
     MCAPI ~ScriptItemUseAfterEvent();
     // NOLINTEND
@@ -53,7 +59,12 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptItemUseAfterEvent const&);
 
-    MCAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::ItemUseEvent const&, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Player const&                                                                player,
+        ::ItemUseEvent const&,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 
 public:
@@ -61,7 +72,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

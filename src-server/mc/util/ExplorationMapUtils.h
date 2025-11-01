@@ -13,9 +13,21 @@ struct ExplorationMapData;
 namespace ExplorationMapUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void makeNewExplorationMapFromFeatureName(::ItemStackBase& item, ::Level& level, ::Actor* owner, ::std::string const& featureName, bool markForRegeneration);
+MCNAPI void makeNewExplorationMapFromFeatureName(
+    ::ItemStackBase&     item,
+    ::Level&             level,
+    ::Actor*             owner,
+    ::std::string const& featureName,
+    bool                 markForRegeneration
+);
 
-MCNAPI void makeNewExplorationMapFromMapData(::ItemStackBase& item, ::Level& level, ::Actor* owner, ::ExplorationMapData const& explorationMapData, bool markForRegeneration);
+MCNAPI void makeNewExplorationMapFromMapData(
+    ::ItemStackBase&            item,
+    ::Level&                    level,
+    ::Actor*                    owner,
+    ::ExplorationMapData const& explorationMapData,
+    bool                        markForRegeneration
+);
 // NOLINTEND
 
-}
+} // namespace ExplorationMapUtils

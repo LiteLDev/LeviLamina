@@ -13,4 +13,4 @@ namespace ServerScriptDebugDrawerSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace ServerScriptDebugDrawerSystem

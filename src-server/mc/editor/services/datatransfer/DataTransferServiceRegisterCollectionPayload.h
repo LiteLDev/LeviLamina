@@ -7,7 +7,8 @@
 
 namespace Editor::Network {
 
-class DataTransferServiceRegisterCollectionPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::DataTransferServiceRegisterCollectionPayload> {
+class DataTransferServiceRegisterCollectionPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::DataTransferServiceRegisterCollectionPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -32,7 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Network::DataTransferServiceRegisterCollectionPayload& operator=(::Editor::Network::DataTransferServiceRegisterCollectionPayload&&);
+    MCNAPI ::Editor::Network::DataTransferServiceRegisterCollectionPayload&
+    operator=(::Editor::Network::DataTransferServiceRegisterCollectionPayload&&);
     // NOLINTEND
 
 public:
@@ -40,7 +42,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

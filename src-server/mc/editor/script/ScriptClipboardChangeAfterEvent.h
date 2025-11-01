@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkf2b100;
-    ::ll::UntypedStorage<1, 1> mUnk1d9702;
+    ::ll::UntypedStorage<1, 1>  mUnk1d9702;
     // NOLINTEND
 
 public:
@@ -26,7 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptClipboardChangeAfterEvent& operator=(::Editor::ScriptModule::ScriptClipboardChangeAfterEvent&&);
+    MCNAPI ::Editor::ScriptModule::ScriptClipboardChangeAfterEvent&
+    operator=(::Editor::ScriptModule::ScriptClipboardChangeAfterEvent&&);
 
     MCNAPI ~ScriptClipboardChangeAfterEvent();
     // NOLINTEND
@@ -42,7 +43,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

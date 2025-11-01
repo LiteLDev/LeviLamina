@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_80::JigsawBlockMetadata const&> mMetadata;
-    ::ll::TypedStorage<8, 8, ::JigsawStructureUtils::MetadataCache&> mCache;
-    ::ll::TypedStorage<8, 8, uint64> mIndex;
+    ::ll::TypedStorage<8, 8, ::JigsawStructureUtils::MetadataCache&>              mCache;
+    ::ll::TypedStorage<8, 8, uint64>                                              mIndex;
     // NOLINTEND
 
 public:
@@ -24,7 +24,6 @@ public:
     JigsawBlockMetadataCacheHandle& operator=(JigsawBlockMetadataCacheHandle const&);
     JigsawBlockMetadataCacheHandle(JigsawBlockMetadataCacheHandle const&);
     JigsawBlockMetadataCacheHandle();
-
 };
 
-}
+} // namespace JigsawStructureUtils

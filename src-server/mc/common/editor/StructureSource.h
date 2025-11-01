@@ -5,11 +5,11 @@
 namespace Editor {
 
 enum class StructureSource : int {
-    Bp = 0,
+    Bp            = 0,
     EditorProject = 1,
-    File = 2,
-    Level = 3,
-    Count = 4,
+    File          = 2,
+    Level         = 3,
+    Count         = 4,
 };
 
 }

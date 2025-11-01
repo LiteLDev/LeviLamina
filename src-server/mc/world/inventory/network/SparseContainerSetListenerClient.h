@@ -43,5 +43,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

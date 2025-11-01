@@ -8,4 +8,4 @@ namespace WerRegister {
 MCNAPI long callWerRegisterCustomMetadata(::std::string const& key, ::std::string const& data);
 // NOLINTEND
 
-}
+} // namespace WerRegister

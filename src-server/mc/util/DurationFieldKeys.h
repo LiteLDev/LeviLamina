@@ -27,7 +27,16 @@ public:
     // NOLINTBEGIN
     MCNAPI DurationFieldKeys(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds);
 
-    MCNAPI DurationFieldKeys(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds, ::std::string day, ::std::string hour, ::std::string minute, ::std::string second);
+    MCNAPI DurationFieldKeys(
+        ::std::string days,
+        ::std::string hours,
+        ::std::string minutes,
+        ::std::string seconds,
+        ::std::string day,
+        ::std::string hour,
+        ::std::string minute,
+        ::std::string second
+    );
 
     MCNAPI ~DurationFieldKeys();
     // NOLINTEND
@@ -37,7 +46,16 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds);
 
-    MCNAPI void* $ctor(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds, ::std::string day, ::std::string hour, ::std::string minute, ::std::string second);
+    MCNAPI void* $ctor(
+        ::std::string days,
+        ::std::string hours,
+        ::std::string minutes,
+        ::std::string seconds,
+        ::std::string day,
+        ::std::string hour,
+        ::std::string minute,
+        ::std::string second
+    );
     // NOLINTEND
 
 public:
@@ -45,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

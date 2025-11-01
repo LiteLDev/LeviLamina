@@ -17,7 +17,6 @@ public:
     PositiveRange& operator=(PositiveRange const&);
     PositiveRange(PositiveRange const&);
     PositiveRange();
-
 };
 
-}
+} // namespace catalog

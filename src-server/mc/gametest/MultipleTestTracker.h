@@ -41,7 +41,6 @@ public:
 
     MCNAPI static ::std::string const& sSuccessfulTest();
     // NOLINTEND
-
 };
 
-}
+} // namespace gametest

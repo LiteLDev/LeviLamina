@@ -13,7 +13,7 @@ public:
     // clang-format off
     struct Node;
     // clang-format on
-    
+
     // CompoundTagUpdater inner types define
     struct Node {
     public:
@@ -23,31 +23,30 @@ public:
         ::ll::UntypedStorage<8, 24> mUnkc7c806;
         ::ll::UntypedStorage<8, 24> mUnk21a04c;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Node& operator=(Node const&);
         Node(Node const&);
         Node();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Node();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke350b7;
+    ::ll::UntypedStorage<4, 4>  mUnke350b7;
     ::ll::UntypedStorage<8, 72> mUnk14c4aa;
     // NOLINTEND
 
@@ -62,5 +61,4 @@ public:
     // NOLINTBEGIN
     MCNAPI bool _update(::CompoundTagUpdater::Node const& node, ::CompoundTag& tag) const;
     // NOLINTEND
-
 };

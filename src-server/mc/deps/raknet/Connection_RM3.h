@@ -23,28 +23,28 @@ class Connection_RM3 {
 public:
     // Connection_RM3 inner types define
     enum class ConstructionMode : int {
-        ReplicaForConstruction = 0,
+        ReplicaForConstruction               = 0,
         ReplicaForConstructionAndDestruction = 1,
-        ConnectionForReplicaList = 2,
+        ConnectionForReplicaList             = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk4719ed;
-    ::ll::UntypedStorage<1, 1> mUnkbb7fd9;
+    ::ll::UntypedStorage<1, 1>   mUnk4719ed;
+    ::ll::UntypedStorage<1, 1>   mUnkbb7fd9;
     ::ll::UntypedStorage<8, 136> mUnka34d2b;
-    ::ll::UntypedStorage<8, 16> mUnk66208a;
-    ::ll::UntypedStorage<8, 16> mUnk560121;
-    ::ll::UntypedStorage<8, 16> mUnkc31f4d;
-    ::ll::UntypedStorage<8, 16> mUnk249481;
-    ::ll::UntypedStorage<8, 16> mUnka07060;
-    ::ll::UntypedStorage<8, 16> mUnk8b273f;
-    ::ll::UntypedStorage<8, 16> mUnk35727e;
-    ::ll::UntypedStorage<1, 1> mUnkcb13c1;
-    ::ll::UntypedStorage<8, 24> mUnkca9727;
-    ::ll::UntypedStorage<1, 1> mUnke0417e;
-    ::ll::UntypedStorage<4, 4> mUnk529875;
+    ::ll::UntypedStorage<8, 16>  mUnk66208a;
+    ::ll::UntypedStorage<8, 16>  mUnk560121;
+    ::ll::UntypedStorage<8, 16>  mUnkc31f4d;
+    ::ll::UntypedStorage<8, 16>  mUnk249481;
+    ::ll::UntypedStorage<8, 16>  mUnka07060;
+    ::ll::UntypedStorage<8, 16>  mUnk8b273f;
+    ::ll::UntypedStorage<8, 16>  mUnk35727e;
+    ::ll::UntypedStorage<1, 1>   mUnkcb13c1;
+    ::ll::UntypedStorage<8, 24>  mUnkca9727;
+    ::ll::UntypedStorage<1, 1>   mUnke0417e;
+    ::ll::UntypedStorage<4, 4>   mUnk529875;
     // NOLINTEND
 
 public:
@@ -84,19 +84,43 @@ public:
     virtual ::RakNet::Connection_RM3::ConstructionMode QueryConstructionMode() const;
 
     // vIndex: 9
-    virtual void QueryReplicaList(::DataStructures::List<::RakNet::Replica3*>&, ::DataStructures::List<::RakNet::Replica3*>&);
+    virtual void
+    QueryReplicaList(::DataStructures::List<::RakNet::Replica3*>&, ::DataStructures::List<::RakNet::Replica3*>&);
 
     // vIndex: 10
     virtual bool QuerySerializationList(::DataStructures::List<::RakNet::Replica3*>&);
 
     // vIndex: 11
-    virtual ::RakNet::SendSerializeIfChangedResult SendSerialize(::RakNet::Replica3*, bool*, ::RakNet::BitStream*, uint64, ::RakNet::PRO*, ::RakNet::RakPeerInterface*, uchar, uint64);
+    virtual ::RakNet::SendSerializeIfChangedResult SendSerialize(
+        ::RakNet::Replica3*,
+        bool*,
+        ::RakNet::BitStream*,
+        uint64,
+        ::RakNet::PRO*,
+        ::RakNet::RakPeerInterface*,
+        uchar,
+        uint64
+    );
 
     // vIndex: 12
-    virtual ::RakNet::SendSerializeIfChangedResult SendSerializeIfChanged(::RakNet::LastSerializationResult*, ::RakNet::SerializeParameters*, ::RakNet::RakPeerInterface*, uchar, ::RakNet::ReplicaManager3*, uint64);
+    virtual ::RakNet::SendSerializeIfChangedResult SendSerializeIfChanged(
+        ::RakNet::LastSerializationResult*,
+        ::RakNet::SerializeParameters*,
+        ::RakNet::RakPeerInterface*,
+        uchar,
+        ::RakNet::ReplicaManager3*,
+        uint64
+    );
 
     // vIndex: 13
-    virtual void SendConstruction(::DataStructures::List<::RakNet::Replica3*>&, ::DataStructures::List<::RakNet::Replica3*>&, ::RakNet::PRO, ::RakNet::RakPeerInterface*, uchar, ::RakNet::ReplicaManager3*);
+    virtual void SendConstruction(
+        ::DataStructures::List<::RakNet::Replica3*>&,
+        ::DataStructures::List<::RakNet::Replica3*>&,
+        ::RakNet::PRO,
+        ::RakNet::RakPeerInterface*,
+        uchar,
+        ::RakNet::ReplicaManager3*
+    );
     // NOLINTEND
 
 public:
@@ -104,7 +128,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

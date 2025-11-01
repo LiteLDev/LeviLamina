@@ -18,7 +18,8 @@ public:
     virtual ~OperationBase() = default;
 
     // vIndex: 1
-    virtual bool tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&) = 0;
+    virtual bool
+    tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&) = 0;
 
     // vIndex: 2
     virtual char const* getDescription() const = 0;
@@ -35,7 +36,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace PositionTrackingDB

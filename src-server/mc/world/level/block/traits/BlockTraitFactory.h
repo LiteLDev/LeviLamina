@@ -19,49 +19,49 @@ public:
     // clang-format off
     struct TraitMetadata;
     // clang-format on
-    
+
     // BlockTraitFactory inner types define
     struct TraitMetadata {
     public:
         // TraitMetadata inner types define
-        using Ctor = ::std::unique_ptr<::BlockTrait::ITrait>(*) ();
-        
+        using Ctor = ::std::unique_ptr<::BlockTrait::ITrait> (*)();
+
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTrait::ITrait>(*) ()> makeUnique;
-        ::ll::TypedStorage<8, 24, ::std::vector<::PackLoadRequirement>> requirements;
-        ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>> releasedMinFormatVersion;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTrait::ITrait> (*)()> makeUnique;
+        ::ll::TypedStorage<8, 24, ::std::vector<::PackLoadRequirement>>         requirements;
+        ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>>                releasedMinFormatVersion;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         TraitMetadata& operator=(TraitMetadata const&);
         TraitMetadata(TraitMetadata const&);
         TraitMetadata();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::BlockTraitFactory::TraitMetadata& operator=(::BlockTraitFactory::TraitMetadata&&);
-    
+
         MCAPI ~TraitMetadata();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
     using RegisteredTraitsMap = ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata>> mRegisteredTraits;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata>>
+        mRegisteredTraits;
     // NOLINTEND
 
 public:
@@ -69,7 +69,8 @@ public:
     // NOLINTBEGIN
     MCAPI BlockTraitFactory();
 
-    MCAPI ::std::unique_ptr<::BlockTrait::ITrait> createTrait(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::BlockTrait::ITrait>
+    createTrait(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
 
     MCAPI ~BlockTraitFactory();
     // NOLINTEND
@@ -95,5 +96,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

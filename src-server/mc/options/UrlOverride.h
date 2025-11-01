@@ -16,5 +16,4 @@ public:
     UrlOverride& operator=(UrlOverride const&);
     UrlOverride(UrlOverride const&);
     UrlOverride();
-
 };

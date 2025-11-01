@@ -13,4 +13,4 @@ namespace ScriptModuleMinecraftServerUI::Betas {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-}
+} // namespace ScriptModuleMinecraftServerUI::Betas

@@ -21,23 +21,30 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mItemName;
-    ::ll::TypedStorage<4, 4, ::MapOutputType> mMapOutputType;
+    ::ll::TypedStorage<4, 4, ::MapOutputType>                      mMapOutputType;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
-    virtual ::ContainerScreenActionResult tryTakeAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&) /*override*/;
+    virtual ::ContainerScreenActionResult
+    tryTakeAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&) /*override*/;
 
     // vIndex: 5
-    virtual ::ContainerScreenActionResult tryTakeAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&) /*override*/;
+    virtual ::ContainerScreenActionResult
+    tryTakeAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&) /*override*/;
 
     // vIndex: 6
-    virtual ::ContainerScreenActionResult tryTakeHalf(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&) /*override*/;
+    virtual ::ContainerScreenActionResult
+    tryTakeHalf(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&) /*override*/;
 
     // vIndex: 10
-    virtual ::ContainerScreenActionResult tryAutoPlace(::ContainerValidationSlotData const&, ::ItemTransferAmount, ::ContainerScreenAutoplaceBehaviour) /*override*/;
+    virtual ::ContainerScreenActionResult tryAutoPlace(
+        ::ContainerValidationSlotData const&,
+        ::ItemTransferAmount,
+        ::ContainerScreenAutoplaceBehaviour
+    ) /*override*/;
 
     // vIndex: 20
     virtual ::ContainerValidationCraftResult getCraftPreview() /*override*/;
@@ -57,5 +64,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

@@ -17,13 +17,13 @@ struct BiomeElementData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mNoiseFreqScale;
-    ::ll::TypedStorage<4, 4, float> mNoiseLowerBound;
-    ::ll::TypedStorage<4, 4, float> mNoiseUpperBound;
-    ::ll::TypedStorage<2, 2, ::ExpressionOp> mHeightMinType;
-    ::ll::TypedStorage<2, 2, ushort> mHeightMin;
-    ::ll::TypedStorage<2, 2, ::ExpressionOp> mHeightMaxType;
-    ::ll::TypedStorage<2, 2, ushort> mHeightMax;
+    ::ll::TypedStorage<4, 4, float>                       mNoiseFreqScale;
+    ::ll::TypedStorage<4, 4, float>                       mNoiseLowerBound;
+    ::ll::TypedStorage<4, 4, float>                       mNoiseUpperBound;
+    ::ll::TypedStorage<2, 2, ::ExpressionOp>              mHeightMinType;
+    ::ll::TypedStorage<2, 2, ushort>                      mHeightMin;
+    ::ll::TypedStorage<2, 2, ::ExpressionOp>              mHeightMaxType;
+    ::ll::TypedStorage<2, 2, ushort>                      mHeightMax;
     ::ll::TypedStorage<4, 24, ::BiomeSurfaceMaterialData> mAdjustedMaterials;
     // NOLINTEND
 
@@ -38,5 +38,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeElementData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
-
 };

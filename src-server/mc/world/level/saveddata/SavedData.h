@@ -11,7 +11,7 @@ class SavedData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mDirty;
+    ::ll::TypedStorage<1, 1, bool>           mDirty;
     ::ll::TypedStorage<8, 32, ::std::string> mId;
     // NOLINTEND
 
@@ -45,5 +45,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

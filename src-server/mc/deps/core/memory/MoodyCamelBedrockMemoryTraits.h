@@ -4,7 +4,6 @@
 
 namespace Bedrock::Memory {
 
-struct MoodyCamelBedrockMemoryTraits : public ::moodycamel::ConcurrentQueueDefaultTraits {
-};
+struct MoodyCamelBedrockMemoryTraits : public ::moodycamel::ConcurrentQueueDefaultTraits {};
 
-}
+} // namespace Bedrock::Memory

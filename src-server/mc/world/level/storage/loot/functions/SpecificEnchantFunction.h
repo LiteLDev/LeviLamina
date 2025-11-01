@@ -22,7 +22,7 @@ public:
     // clang-format off
     struct EnchantInfo;
     // clang-format on
-    
+
     // SpecificEnchantFunction inner types define
     struct EnchantInfo {
     public:
@@ -31,15 +31,14 @@ public:
         ::ll::UntypedStorage<1, 1> mUnk264825;
         ::ll::UntypedStorage<4, 8> mUnkcdc248;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         EnchantInfo& operator=(EnchantInfo const&);
         EnchantInfo(EnchantInfo const&);
         EnchantInfo();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -71,7 +70,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SpecificEnchantFunction(::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates, ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments);
+    MCNAPI SpecificEnchantFunction(
+        ::std::vector<::std::unique_ptr<::LootItemCondition>>&       predicates,
+        ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments
+    );
 
     MCNAPI void _applyInner(::ItemStackBase& item, ::Random& random, ::LootTableContext&, bool allowNonVanilla);
     // NOLINTEND
@@ -79,13 +81,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction> deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates, ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments);
+    MCNAPI void* $ctor(
+        ::std::vector<::std::unique_ptr<::LootItemCondition>>&       predicates,
+        ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments
+    );
     // NOLINTEND
 
 public:
@@ -103,5 +109,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

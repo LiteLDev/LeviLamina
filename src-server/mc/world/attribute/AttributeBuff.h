@@ -15,15 +15,15 @@ class AttributeBuff {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mAmount;
-    ::ll::TypedStorage<4, 4, ::AttributeBuffType> mType;
+    ::ll::TypedStorage<4, 4, float>                                   mAmount;
+    ::ll::TypedStorage<4, 4, ::AttributeBuffType>                     mType;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorDamageSource>> mSource;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>> mValueAmplifier;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>> mDurationAmplifier;
-    ::ll::TypedStorage<4, 4, float> mScale;
-    ::ll::TypedStorage<4, 4, int> mAmplification;
-    ::ll::TypedStorage<8, 8, uint64> mId;
-    ::ll::TypedStorage<4, 4, int> mOperand;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>>         mValueAmplifier;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>>         mDurationAmplifier;
+    ::ll::TypedStorage<4, 4, float>                                   mScale;
+    ::ll::TypedStorage<4, 4, int>                                     mAmplification;
+    ::ll::TypedStorage<8, 8, uint64>                                  mId;
+    ::ll::TypedStorage<4, 4, int>                                     mOperand;
     // NOLINTEND
 
 public:
@@ -84,5 +84,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

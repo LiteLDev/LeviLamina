@@ -13,4 +13,4 @@ namespace BlockFlammableDescriptor {
 MCAPI void fromBool(::BlockFlammableDescription& desc, bool flammable);
 // NOLINTEND
 
-}
+} // namespace BlockFlammableDescriptor

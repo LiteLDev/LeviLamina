@@ -11,7 +11,7 @@ class ServerInstanceEventHandler : public ::GameplayHandler {
 public:
     // ServerInstanceEventHandler inner types define
     using EventTypes = ::entt::type_list<::ServerInstanceGameplayEvent<void> const>;
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -27,5 +27,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

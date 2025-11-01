@@ -11,7 +11,10 @@ class CelebrateHuntComponent;
 namespace CelebrateHuntSystemInternal {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickCelebrateHuntComponent(::ActorOwnerComponent& actorOwnerComponent, ::CelebrateHuntComponent& celebrateHuntComponent);
+MCNAPI void _tickCelebrateHuntComponent(
+    ::ActorOwnerComponent&    actorOwnerComponent,
+    ::CelebrateHuntComponent& celebrateHuntComponent
+);
 // NOLINTEND
 
-}
+} // namespace CelebrateHuntSystemInternal

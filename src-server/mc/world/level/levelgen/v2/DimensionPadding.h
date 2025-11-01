@@ -11,7 +11,6 @@ public:
     ::ll::TypedStorage<4, 4, uint> mTop;
     ::ll::TypedStorage<4, 4, uint> mBottom;
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

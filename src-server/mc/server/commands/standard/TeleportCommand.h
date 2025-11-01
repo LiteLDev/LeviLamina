@@ -28,19 +28,30 @@ class TeleportCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::function<void(::Actor&, ::Vec3, ::Vec3*, ::DimensionType, ::std::optional<::RotationCommandUtils::RotationData> const&, int)>> mApplyTeleport;
-    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
-    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mDestinationEntity;
-    ::ll::TypedStorage<4, 16, ::CommandPositionFloat> mDestinationPos;
-    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mFacingEntity;
-    ::ll::TypedStorage<4, 16, ::CommandPositionFloat> mFacingPos;
-    ::ll::TypedStorage<4, 8, ::RelativeFloat> mYRot;
-    ::ll::TypedStorage<4, 8, ::RelativeFloat> mXRot;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<void(
+            ::Actor&,
+            ::Vec3,
+            ::Vec3*,
+            ::DimensionType,
+            ::std::optional<::RotationCommandUtils::RotationData> const&,
+            int
+        )>>
+                                                                   mApplyTeleport;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mTargets;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mDestinationEntity;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>              mDestinationPos;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mFacingEntity;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>              mFacingPos;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>                      mYRot;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>                      mXRot;
     ::ll::TypedStorage<4, 4, ::RotationCommandUtils::FacingResult> mHaveFacing;
-    ::ll::TypedStorage<1, 1, bool> mDestinationIsPosition;
-    ::ll::TypedStorage<1, 1, bool> mIsUsingRotation;
-    ::ll::TypedStorage<1, 1, bool> mFacingIsPosition;
-    ::ll::TypedStorage<1, 1, bool> mCheckForBlocks;
+    ::ll::TypedStorage<1, 1, bool>                                 mDestinationIsPosition;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsUsingRotation;
+    ::ll::TypedStorage<1, 1, bool>                                 mFacingIsPosition;
+    ::ll::TypedStorage<1, 1, bool>                                 mCheckForBlocks;
     // NOLINTEND
 
 public:
@@ -60,7 +71,12 @@ public:
 
     MCAPI void doArmorStandTeleportBackwardCompability(::Actor& target, ::Actor const* destinationEntity) const;
 
-    MCAPI ::RotationCommandUtils::FacingResult getFacingDirection(::CommandOrigin const& origin, ::CommandOutput& output, ::Vec3& faceTarget, ::Actor* destinationEntity) const;
+    MCAPI ::RotationCommandUtils::FacingResult getFacingDirection(
+        ::CommandOrigin const& origin,
+        ::CommandOutput&       output,
+        ::Vec3&                faceTarget,
+        ::Actor*               destinationEntity
+    ) const;
     // NOLINTEND
 
 public:
@@ -68,9 +84,22 @@ public:
     // NOLINTBEGIN
     MCAPI static void applyTarget(::Actor& victim, ::TeleportTarget target, bool keepVelocity);
 
-    MCAPI static ::TeleportTarget computeTarget(::Actor& victim, ::Vec3 destination, ::Vec3* facePosition, ::DimensionType destinationDimension, ::std::optional<::RotationCommandUtils::RotationData> const& rotationData, int commandVersion);
+    MCAPI static ::TeleportTarget computeTarget(
+        ::Actor&                                                     victim,
+        ::Vec3                                                       destination,
+        ::Vec3*                                                      facePosition,
+        ::DimensionType                                              destinationDimension,
+        ::std::optional<::RotationCommandUtils::RotationData> const& rotationData,
+        int                                                          commandVersion
+    );
 
-    MCAPI static ::std::unique_ptr<::CommandArea> getCommandAreaForTargets(::CommandOrigin const& origin, ::CommandSelectorResults<::Actor> const& targets, ::Vec3 destination, int commandVersion, bool allowUnloadedChunks);
+    MCAPI static ::std::unique_ptr<::CommandArea> getCommandAreaForTargets(
+        ::CommandOrigin const&                   origin,
+        ::CommandSelectorResults<::Actor> const& targets,
+        ::Vec3                                   destination,
+        int                                      commandVersion,
+        bool                                     allowUnloadedChunks
+    );
 
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
@@ -92,5 +121,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

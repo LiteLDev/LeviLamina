@@ -32,4 +32,4 @@ MCAPI ::std::string const& TICK_DELAY();
 MCAPI ::std::string const& TICK_QUEUE_DATA();
 // NOLINTEND
 
-}
+} // namespace StructureTag

@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class FSNTag {
-};
+class FSNTag {};
 
-}
+} // namespace dcsctp

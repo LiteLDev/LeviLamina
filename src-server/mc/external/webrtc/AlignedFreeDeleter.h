@@ -4,7 +4,6 @@
 
 namespace webrtc {
 
-struct AlignedFreeDeleter {
-};
+struct AlignedFreeDeleter {};
 
-}
+} // namespace webrtc

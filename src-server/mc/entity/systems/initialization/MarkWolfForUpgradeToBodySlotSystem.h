@@ -21,9 +21,17 @@ class MarkWolfForUpgradeToBodySlotSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _markForUpgrade(::StrictEntityContext& strictEntityContext, ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent>& modifier);
+    MCNAPI static void _markForUpgrade(
+        ::StrictEntityContext&                                   strictEntityContext,
+        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent>& modifier
+    );
 
-    MCNAPI static void _tick(::ViewT<::StrictEntityContext, ::Include<::EntityNeedsInitializeFlagComponent, ::WolfFlagComponent>, ::Exclude<::SkipBodySlotUpgradeFlagComponent>> view, ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent> modifier);
+    MCNAPI static void _tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::EntityNeedsInitializeFlagComponent, ::WolfFlagComponent>,
+            ::Exclude<::SkipBodySlotUpgradeFlagComponent>>      view,
+        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent> modifier
+    );
     // NOLINTEND
-
 };

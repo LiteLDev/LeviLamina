@@ -4,8 +4,7 @@
 
 namespace absl::internal_any_invocable {
 
-template<typename T0>
-class Impl {
-};
+template <typename T0>
+class Impl {};
 
-}
+} // namespace absl::internal_any_invocable

@@ -17,7 +17,6 @@ public:
     AudioProps& operator=(AudioProps const&);
     AudioProps(AudioProps const&);
     AudioProps();
-
 };
 
-}
+} // namespace Editor::Settings

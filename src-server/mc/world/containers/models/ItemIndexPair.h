@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 152> mUnk43a6ad;
-    ::ll::UntypedStorage<4, 4> mUnka4769e;
+    ::ll::UntypedStorage<4, 4>   mUnka4769e;
     // NOLINTEND
 
 public:
@@ -15,5 +15,4 @@ public:
     ItemIndexPair& operator=(ItemIndexPair const&);
     ItemIndexPair(ItemIndexPair const&);
     ItemIndexPair();
-
 };

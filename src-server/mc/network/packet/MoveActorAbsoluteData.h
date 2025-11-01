@@ -20,22 +20,22 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, uchar> mRaw;
-        bool mIsOnGround : 1;
-        bool mTeleported : 1;
-        bool mForceMoveLocalEntity : 1;
+        bool                            mIsOnGround           : 1;
+        bool                            mTeleported           : 1;
+        bool                            mForceMoveLocalEntity : 1;
         // NOLINTEND
-    
     };
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                mRuntimeId;
     ::ll::TypedStorage<1, 1, ::MoveActorAbsoluteData::Header> mHeader;
-    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
-    ::ll::TypedStorage<1, 1, char> mRotX;
-    ::ll::TypedStorage<1, 1, char> mRotY;
-    ::ll::TypedStorage<1, 1, char> mRotYHead;
-    ::ll::TypedStorage<1, 1, char> mRotYBody;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mPos;
+    ::ll::TypedStorage<1, 1, char>                            mRotX;
+    ::ll::TypedStorage<1, 1, char>                            mRotY;
+    ::ll::TypedStorage<1, 1, char>                            mRotYHead;
+    ::ll::TypedStorage<1, 1, char>                            mRotYBody;
     // NOLINTEND
 
 public:
@@ -55,5 +55,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Actor const& entity);
     // NOLINTEND
-
 };

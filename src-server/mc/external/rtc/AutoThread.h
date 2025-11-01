@@ -14,7 +14,6 @@ public:
     // vIndex: 3
     virtual ~AutoThread() /*override*/ = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

@@ -6,7 +6,7 @@ namespace Bedrock::PubSub {
 
 enum class DispatchResultCode : uchar {
     Cancelled = 1,
-    Deferred = 2,
+    Deferred  = 2,
 };
 
 }

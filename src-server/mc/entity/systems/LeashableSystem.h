@@ -18,4 +18,4 @@ MCNAPI ::TickingSystemWithInfo createHandleRemoveFromLeashedEntitiesRequestSyste
 MCNAPI void registerServerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-}
+} // namespace LeashableSystem

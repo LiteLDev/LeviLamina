@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkc66640;
-    ::ll::UntypedStorage<4, 8> mUnkf980db;
+    ::ll::UntypedStorage<4, 8>  mUnkf980db;
     // NOLINTEND
 
 public:
@@ -50,7 +50,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_110::BlockDefinition

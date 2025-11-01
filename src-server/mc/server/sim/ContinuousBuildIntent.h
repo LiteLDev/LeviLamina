@@ -4,7 +4,6 @@
 
 namespace sim {
 
-struct ContinuousBuildIntent {
-};
+struct ContinuousBuildIntent {};
 
-}
+} // namespace sim

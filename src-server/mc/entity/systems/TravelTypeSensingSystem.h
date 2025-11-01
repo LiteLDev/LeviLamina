@@ -28,5 +28,4 @@ struct WasInWaterFlagComponent;
 struct WaterTravelFlagComponent;
 // clang-format on
 
-struct TravelTypeSensingSystem {
-};
+struct TravelTypeSensingSystem {};

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/molang/MolangVersion.h"
+#include "mc/molang/MolangVersion.h"
 #include "mc/world/actor/state/PropertyMetadata.h"
 
 // auto generated forward declare list
@@ -40,23 +40,53 @@ public:
 
     MCNAPI void _addBoolProperty(::std::string const& name, bool clientSync, bool defaultValue);
 
-    MCNAPI void _addEnumIndexProperty(::std::string const& name, bool clientSync, ::ExpressionNode&& defaultExpression, ::std::vector<::HashedString> const& enumValues);
+    MCNAPI void _addEnumIndexProperty(
+        ::std::string const&                 name,
+        bool                                 clientSync,
+        ::ExpressionNode&&                   defaultExpression,
+        ::std::vector<::HashedString> const& enumValues
+    );
 
-    MCNAPI void _addEnumIndexProperty(::std::string const& name, bool clientSync, uint64 defaultValue, ::std::vector<::HashedString> const& enumValues);
+    MCNAPI void _addEnumIndexProperty(
+        ::std::string const&                 name,
+        bool                                 clientSync,
+        uint64                               defaultValue,
+        ::std::vector<::HashedString> const& enumValues
+    );
 
-    MCNAPI void _addFloatProperty(::std::string const& name, bool clientSync, ::ExpressionNode&& defaultExpression, float rangeMin, float rangeMax);
+    MCNAPI void _addFloatProperty(
+        ::std::string const& name,
+        bool                 clientSync,
+        ::ExpressionNode&&   defaultExpression,
+        float                rangeMin,
+        float                rangeMax
+    );
 
-    MCNAPI void _addFloatProperty(::std::string const& name, bool clientSync, float defaultValue, float rangeMin, float rangeMax);
+    MCNAPI void
+    _addFloatProperty(::std::string const& name, bool clientSync, float defaultValue, float rangeMin, float rangeMax);
 
-    MCNAPI void _addIntProperty(::std::string const& name, bool clientSync, ::ExpressionNode&& defaultExpression, int rangeMin, int rangeMax);
+    MCNAPI void _addIntProperty(
+        ::std::string const& name,
+        bool                 clientSync,
+        ::ExpressionNode&&   defaultExpression,
+        int                  rangeMin,
+        int                  rangeMax
+    );
 
-    MCNAPI void _addIntProperty(::std::string const& name, bool clientSync, int defaultValue, int rangeMin, int rangeMax);
+    MCNAPI void
+    _addIntProperty(::std::string const& name, bool clientSync, int defaultValue, int rangeMin, int rangeMax);
 
-    MCNAPI void _addPropertyMetadata(::std::string const& name, bool clientSync, ::PropertyMetadata::ContainedType propertyType);
+    MCNAPI void
+    _addPropertyMetadata(::std::string const& name, bool clientSync, ::PropertyMetadata::ContainedType propertyType);
 
     MCNAPI ::std::string const& _getFriendlyJsonTypeString(::PropertyMetadata::ContainedType type);
 
-    MCNAPI bool _loadPropertyFromJson(::std::string const& name, ::Json::Value const& propertyNode, ::MolangVersion molangVersion, bool clientSync);
+    MCNAPI bool _loadPropertyFromJson(
+        ::std::string const& name,
+        ::Json::Value const& propertyNode,
+        ::MolangVersion      molangVersion,
+        bool                 clientSync
+    );
 
     MCNAPI void _reserveSpaceForTypes(::std::vector<uint64> const& typeCounts);
 
@@ -64,7 +94,11 @@ public:
 
     MCNAPI bool getDefaultBoolValue(uint64 boolArrayIndex, ::RenderParams& renderParams) const;
 
-    MCNAPI uint64 getDefaultEnumIndexValue(uint64 enumIndexArrayIndex, ::RenderParams& renderParams, ::std::string const& propertyName) const;
+    MCNAPI uint64 getDefaultEnumIndexValue(
+        uint64               enumIndexArrayIndex,
+        ::RenderParams&      renderParams,
+        ::std::string const& propertyName
+    ) const;
 
     MCNAPI float getDefaultFloatValue(uint64 floatArrayIndex, ::RenderParams& renderParams) const;
 
@@ -82,7 +116,8 @@ public:
 
     MCNAPI static bool isValidEnumEntry(::std::string const& entryValue);
 
-    MCNAPI static ::std::shared_ptr<::PropertyGroup const> loadPropertiesFromJson(::Json::Value const& root, ::MolangVersion molangVersion);
+    MCNAPI static ::std::shared_ptr<::PropertyGroup const>
+    loadPropertiesFromJson(::Json::Value const& root, ::MolangVersion molangVersion);
     // NOLINTEND
 
 public:
@@ -104,5 +139,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

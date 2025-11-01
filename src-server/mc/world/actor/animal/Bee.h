@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64> mNormalLoop;
     ::ll::TypedStorage<8, 8, uint64> mAggressiveLoop;
-    ::ll::TypedStorage<4, 4, float> mLoopSoundSpeed;
+    ::ll::TypedStorage<4, 4, float>  mLoopSoundSpeed;
     // NOLINTEND
 
 public:
@@ -42,7 +42,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Bee(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI
+    Bee(::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext);
 
     MCAPI void _registerLoopingSounds();
 
@@ -52,7 +55,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -68,5 +75,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

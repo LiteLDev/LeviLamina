@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,55 +23,59 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-    
+
     // GoAndGiveItemsToNoteblockGoal inner types define
     class Definition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float> mRunSpeed;
-        ::ll::TypedStorage<4, 4, float> mReachBlockDistance;
-        ::ll::TypedStorage<4, 4, int> mListenTime;
-        ::ll::TypedStorage<4, 4, float> mThrowForce;
-        ::ll::TypedStorage<4, 4, float> mVerticalThrowMul;
-        ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mThrowSound;
+        ::ll::TypedStorage<4, 4, float>                                    mRunSpeed;
+        ::ll::TypedStorage<4, 4, float>                                    mReachBlockDistance;
+        ::ll::TypedStorage<4, 4, int>                                      mListenTime;
+        ::ll::TypedStorage<4, 4, float>                                    mThrowForce;
+        ::ll::TypedStorage<4, 4, float>                                    mVerticalThrowMul;
+        ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>   mThrowSound;
         ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnItemThrowTriggers;
         // NOLINTEND
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
         // NOLINTEND
-    
+
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoAndGiveItemsToNoteblockGoal::Definition>>& root);
+        MCAPI static void buildSchema(
+            ::std::string const& name,
+            ::std::shared_ptr<
+                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoAndGiveItemsToNoteblockGoal::Definition>>&
+                root
+        );
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
     enum class State : int {
         GoToNoteblock = 0,
-        Done = 1,
+        Done          = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                       mMob;
     ::ll::TypedStorage<8, 64, ::GoAndGiveItemsToNoteblockGoal::Definition> mDefinition;
-    ::ll::TypedStorage<4, 4, ::GoAndGiveItemsToNoteblockGoal::State> mState;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mTargetBlockPos;
+    ::ll::TypedStorage<4, 4, ::GoAndGiveItemsToNoteblockGoal::State>       mState;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>                    mPath;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                  mTargetBlockPos;
     // NOLINTEND
 
 public:
@@ -132,5 +136,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -18,9 +18,9 @@ public:
     // AsyncListenSocket inner types define
     enum class State : int {
         KClosed = 0,
-        KBound = 1,
+        KBound  = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -63,7 +63,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

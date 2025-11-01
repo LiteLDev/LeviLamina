@@ -17,9 +17,9 @@ struct BlockPatternEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier const> mEntityType;
-    ::ll::TypedStorage<4, 12, ::Vec3 const> mPos;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext> const> mEntity;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier const>           mEntityType;
+    ::ll::TypedStorage<4, 12, ::Vec3 const>                                 mPos;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext> const>             mEntity;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle> const> mBlockSourceHandle;
     // NOLINTEND
 
@@ -39,5 +39,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPatternEvent const&);
     // NOLINTEND
-
 };

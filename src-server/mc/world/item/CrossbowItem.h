@@ -25,29 +25,33 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 320, ::ResolvedItemIconInfo[5]> mFrame;
-    ::ll::TypedStorage<4, 4, int const> mMaxDurability;
-    ::ll::TypedStorage<4, 4, int const> mMaxMultiShots;
-    ::ll::TypedStorage<4, 4, float const> mMultishotAngleDelta;
-    ::ll::TypedStorage<4, 4, float const> mDefaultArrowPower;
+    ::ll::TypedStorage<4, 4, int const>                   mMaxDurability;
+    ::ll::TypedStorage<4, 4, int const>                   mMaxMultiShots;
+    ::ll::TypedStorage<4, 4, float const>                 mMultishotAngleDelta;
+    ::ll::TypedStorage<4, 4, float const>                 mDefaultArrowPower;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 110
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     // vIndex: 111
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     // vIndex: 113
-    virtual int getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const /*override*/;
+    virtual int
+    getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const
+        /*override*/;
 
     // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     // vIndex: 82
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const /*override*/;
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
+        /*override*/;
 
     // vIndex: 83
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
@@ -76,7 +80,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::Vec3 _getShootDir(::Player const& player, float angleOffset) const;
 
-    MCAPI void _shootArrow(::ItemInstance const& crossbow, ::ItemInstance const& projectileInstance, ::Player& player) const;
+    MCAPI void
+    _shootArrow(::ItemInstance const& crossbow, ::ItemInstance const& projectileInstance, ::Player& player) const;
 
     MCAPI void _shootFirework(::ItemInstance const& projectileInstance, ::Player& player) const;
     // NOLINTEND
@@ -84,11 +89,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCFOLD ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCFOLD ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI int $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
+    MCAPI int
+    $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
     MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
@@ -112,5 +119,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

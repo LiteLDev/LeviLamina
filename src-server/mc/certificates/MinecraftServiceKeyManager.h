@@ -20,7 +20,7 @@ public:
     // clang-format off
     struct BlockingInitRecursiveContext;
     // clang-format on
-    
+
     // MinecraftServiceKeyManager inner types define
     struct BlockingInitRecursiveContext {
     public:
@@ -28,31 +28,30 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnk5cfe5d;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         BlockingInitRecursiveContext& operator=(BlockingInitRecursiveContext const&);
         BlockingInitRecursiveContext(BlockingInitRecursiveContext const&);
         BlockingInitRecursiveContext();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 336> mUnkeed942;
-    ::ll::UntypedStorage<8, 8> mUnkb1e41f;
-    ::ll::UntypedStorage<8, 8> mUnkd5789e;
-    ::ll::UntypedStorage<8, 64> mUnk7954b5;
-    ::ll::UntypedStorage<8, 32> mUnkc46713;
-    ::ll::UntypedStorage<8, 8> mUnkd6fb1a;
-    ::ll::UntypedStorage<8, 32> mUnkfe2c47;
-    ::ll::UntypedStorage<1, 1> mUnk349f6c;
-    ::ll::UntypedStorage<8, 24> mUnkac8556;
-    ::ll::UntypedStorage<8, 64> mUnk65f124;
-    ::ll::UntypedStorage<8, 64> mUnkc82f81;
-    ::ll::UntypedStorage<8, 64> mUnk75be14;
-    ::ll::UntypedStorage<8, 64> mUnk9fbe61;
+    ::ll::UntypedStorage<8, 8>   mUnkb1e41f;
+    ::ll::UntypedStorage<8, 8>   mUnkd5789e;
+    ::ll::UntypedStorage<8, 64>  mUnk7954b5;
+    ::ll::UntypedStorage<8, 32>  mUnkc46713;
+    ::ll::UntypedStorage<8, 8>   mUnkd6fb1a;
+    ::ll::UntypedStorage<8, 32>  mUnkfe2c47;
+    ::ll::UntypedStorage<1, 1>   mUnk349f6c;
+    ::ll::UntypedStorage<8, 24>  mUnkac8556;
+    ::ll::UntypedStorage<8, 64>  mUnk65f124;
+    ::ll::UntypedStorage<8, 64>  mUnkc82f81;
+    ::ll::UntypedStorage<8, 64>  mUnk75be14;
+    ::ll::UntypedStorage<8, 64>  mUnk9fbe61;
     // NOLINTEND
 
 public:
@@ -72,7 +71,10 @@ public:
     // NOLINTBEGIN
     MCNAPI MinecraftServiceKeyManager();
 
-    MCNAPI void _blockingInitRecursive(::MinecraftServiceKeyInfo keyFetchResult, ::std::shared_ptr<::MinecraftServiceKeyManager::BlockingInitRecursiveContext> context);
+    MCNAPI void _blockingInitRecursive(
+        ::MinecraftServiceKeyInfo                                                     keyFetchResult,
+        ::std::shared_ptr<::MinecraftServiceKeyManager::BlockingInitRecursiveContext> context
+    );
 
     MCNAPI ::Bedrock::Threading::Async<::MinecraftServiceKeyInfo> _fullFetch(bool highPriority);
 
@@ -102,5 +104,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

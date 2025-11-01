@@ -12,29 +12,28 @@ public:
     // clang-format off
     struct IncomingData;
     // clang-format on
-    
+
     // LocalNetworkPeer inner types define
     struct IncomingData {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkf996fd;
-        ::ll::UntypedStorage<8, 8> mUnkd4dc08;
+        ::ll::UntypedStorage<8, 8>  mUnkd4dc08;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         IncomingData& operator=(IncomingData const&);
         IncomingData(IncomingData const&);
         IncomingData();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk4398dc;
-    ::ll::UntypedStorage<8, 8> mUnk6da0a3;
+    ::ll::UntypedStorage<8, 8>  mUnk6da0a3;
     // NOLINTEND
 
 public:
@@ -59,7 +58,8 @@ public:
     virtual bool isEncrypted() const /*override*/;
 
     // vIndex: 7
-    virtual ::NetworkPeer::DataStatus _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
+    virtual ::NetworkPeer::DataStatus
+    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
 
     // vIndex: 0
     virtual ~LocalNetworkPeer() /*override*/ = default;
@@ -70,5 +70,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

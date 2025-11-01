@@ -18,5 +18,4 @@ public:
     RecipeOptionalCraftInputs& operator=(RecipeOptionalCraftInputs const&);
     RecipeOptionalCraftInputs(RecipeOptionalCraftInputs const&);
     RecipeOptionalCraftInputs();
-
 };

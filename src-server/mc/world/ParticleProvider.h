@@ -23,7 +23,7 @@ class ParticleProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk35e01e;
+    ::ll::UntypedStorage<8, 8>   mUnk35e01e;
     ::ll::UntypedStorage<8, 128> mUnk32d7f2;
     ::ll::UntypedStorage<8, 128> mUnk25b551;
     ::ll::UntypedStorage<8, 128> mUnk48a2b8;
@@ -69,5 +69,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

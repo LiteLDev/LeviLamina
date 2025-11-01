@@ -26,12 +26,12 @@ public:
     enum class Data : int {
         OwnerID = 17,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mDealtDamage;
-    ::ll::TypedStorage<4, 4, int> mClientSideReturnTridentTickCount;
+    ::ll::TypedStorage<1, 1, bool>          mDealtDamage;
+    ::ll::TypedStorage<4, 4, int>           mClientSideReturnTridentTickCount;
     ::ll::TypedStorage<8, 152, ::ItemStack> mTrident;
     // NOLINTEND
 
@@ -79,7 +79,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ThrownTrident(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI ThrownTrident(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCAPI void returnWithLoyalty(int enchantLevel);
     // NOLINTEND
@@ -87,7 +91,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -117,5 +125,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

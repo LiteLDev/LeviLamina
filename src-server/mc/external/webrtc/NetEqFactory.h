@@ -23,7 +23,11 @@ public:
     virtual ~NetEqFactory() = default;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::webrtc::NetEq> CreateNetEq(::webrtc::NetEq::Config const&, ::webrtc::scoped_refptr<::webrtc::AudioDecoderFactory> const&, ::webrtc::Clock*) const = 0;
+    virtual ::std::unique_ptr<::webrtc::NetEq> CreateNetEq(
+        ::webrtc::NetEq::Config const&,
+        ::webrtc::scoped_refptr<::webrtc::AudioDecoderFactory> const&,
+        ::webrtc::Clock*
+    ) const = 0;
     // NOLINTEND
 
 public:
@@ -31,7 +35,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

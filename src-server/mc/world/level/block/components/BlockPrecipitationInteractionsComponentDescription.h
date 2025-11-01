@@ -12,7 +12,8 @@ class BlockComponentStorage;
 class SemVersion;
 // clang-format on
 
-struct BlockPrecipitationInteractionsComponentDescription : public ::NetworkedBlockComponentDescription<::BlockPrecipitationInteractionsComponentDescription> {
+struct BlockPrecipitationInteractionsComponentDescription
+: public ::NetworkedBlockComponentDescription<::BlockPrecipitationInteractionsComponentDescription> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -84,5 +85,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

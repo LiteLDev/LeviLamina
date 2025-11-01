@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/util/Rotation.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/constraints/IStructureConstraint.h"
 
 // auto generated forward declare list
@@ -31,7 +31,9 @@ public:
     virtual ~GroundedConstraint() /*override*/ = default;
 
     // vIndex: 1
-    virtual bool isSatisfied(::IBlockWorldGenAPI const& target, ::BlockPos const& structurePos, ::Rotation const& structureRot) const /*override*/;
+    virtual bool
+    isSatisfied(::IBlockWorldGenAPI const& target, ::BlockPos const& structurePos, ::Rotation const& structureRot) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -49,7 +51,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSatisfied(::IBlockWorldGenAPI const& target, ::BlockPos const& structurePos, ::Rotation const& structureRot) const;
+    MCAPI bool $isSatisfied(
+        ::IBlockWorldGenAPI const& target,
+        ::BlockPos const&          structurePos,
+        ::Rotation const&          structureRot
+    ) const;
     // NOLINTEND
 
 public:
@@ -57,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

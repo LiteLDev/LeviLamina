@@ -5,7 +5,7 @@
 namespace RakNet {
 
 enum class SendSerializeIfChangedResult : int {
-    SentData = 0,
+    SentData       = 0,
     DidNotSendData = 1,
     NeverSerialize = 2,
 };

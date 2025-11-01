@@ -14,7 +14,6 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3> mOrigin;
     ::ll::TypedStorage<4, 12, ::Vec3> mSize;
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockSelectionBoxComponentDescriptor

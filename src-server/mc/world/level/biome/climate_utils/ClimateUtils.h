@@ -11,7 +11,10 @@ namespace ClimateUtils { struct TargetSpace; }
 namespace ClimateUtils {
 // functions
 // NOLINTBEGIN
-MCAPI int64 squareDistance(::std::array<::ClimateUtils::Parameter, 7> const& parameterSpace, ::ClimateUtils::TargetSpace const& target);
+MCAPI int64 squareDistance(
+    ::std::array<::ClimateUtils::Parameter, 7> const& parameterSpace,
+    ::ClimateUtils::TargetSpace const&                target
+);
 // NOLINTEND
 
-}
+} // namespace ClimateUtils

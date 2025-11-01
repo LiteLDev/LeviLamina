@@ -30,7 +30,8 @@ public:
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 86
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
     // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -45,7 +46,8 @@ public:
     virtual bool isValidAuxValue(int value) const /*override*/;
 
     // vIndex: 88
-    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const /*override*/;
+    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
+        /*override*/;
 
     // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -67,7 +69,13 @@ public:
 
     MCAPI bool _tryTakeFlower(::Player& player, ::BlockPos const& blockPos) const;
 
-    MCAPI void _updateFlowerPotEntity(::BlockSource& region, ::BlockPos const& blockPos, ::FlowerPotBlockActor* flowerPotEntity, ::Block const* flowerBlock, ::Actor* sourceActor) const;
+    MCAPI void _updateFlowerPotEntity(
+        ::BlockSource&         region,
+        ::BlockPos const&      blockPos,
+        ::FlowerPotBlockActor* flowerPotEntity,
+        ::Block const*         flowerBlock,
+        ::Actor*               sourceActor
+    ) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
@@ -113,5 +121,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

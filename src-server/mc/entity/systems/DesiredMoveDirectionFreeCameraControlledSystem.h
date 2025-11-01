@@ -21,7 +21,17 @@ struct VehicleInputIntentComponent;
 namespace DesiredMoveDirectionFreeCameraControlledSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void doControllingPassengerTick(::MobTravelComponent& mobTravelComponent, ::FreeCameraControlledComponent const& airControlledComponent, ::VehicleInputIntentComponent& vehicleInputIntentComponent, ::StateVectorComponent const& stateVectorComponent, ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent>, ::ActorRotationComponent const, ::LocalMoveVelocityComponent const> const& controllingPassengerView);
+MCNAPI void doControllingPassengerTick(
+    ::MobTravelComponent&                  mobTravelComponent,
+    ::FreeCameraControlledComponent const& airControlledComponent,
+    ::VehicleInputIntentComponent&         vehicleInputIntentComponent,
+    ::StateVectorComponent const&          stateVectorComponent,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::PassengerComponent>,
+        ::ActorRotationComponent const,
+        ::LocalMoveVelocityComponent const> const& controllingPassengerView
+);
 // NOLINTEND
 
-}
+} // namespace DesiredMoveDirectionFreeCameraControlledSystem

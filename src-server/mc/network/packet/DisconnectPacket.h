@@ -18,9 +18,9 @@ class DisconnectPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mSkipMessage;
-    ::ll::TypedStorage<8, 32, ::std::string> mMessage;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mFilteredMessage;
+    ::ll::TypedStorage<1, 1, bool>                               mSkipMessage;
+    ::ll::TypedStorage<8, 32, ::std::string>                     mMessage;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>    mFilteredMessage;
     ::ll::TypedStorage<4, 4, ::Connection::DisconnectFailReason> mReason;
     // NOLINTEND
 
@@ -50,13 +50,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DisconnectPacket(::Connection::DisconnectFailReason reason, ::std::string const& message, ::std::optional<::std::string> filteredMessage, bool skipMessage);
+    MCAPI DisconnectPacket(
+        ::Connection::DisconnectFailReason reason,
+        ::std::string const&               message,
+        ::std::optional<::std::string>     filteredMessage,
+        bool                               skipMessage
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Connection::DisconnectFailReason reason, ::std::string const& message, ::std::optional<::std::string> filteredMessage, bool skipMessage);
+    MCAPI void* $ctor(
+        ::Connection::DisconnectFailReason reason,
+        ::std::string const&               message,
+        ::std::optional<::std::string>     filteredMessage,
+        bool                               skipMessage
+    );
     // NOLINTEND
 
 public:
@@ -82,5 +92,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 96, ::ActorSoundEffect> mSoundEffect;
-    ::ll::TypedStorage<4, 4, float> mTime;
+    ::ll::TypedStorage<4, 4, float>               mTime;
     // NOLINTEND
 
 public:
@@ -24,5 +24,4 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ActorSoundEffectEvent& operator=(::ActorSoundEffectEvent&&);
     // NOLINTEND
-
 };

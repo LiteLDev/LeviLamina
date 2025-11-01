@@ -4,8 +4,7 @@
 
 namespace Bedrock::Threading {
 
-template<typename T0>
-class UniqueLock {
-};
+template <typename T0>
+class UniqueLock {};
 
-}
+} // namespace Bedrock::Threading

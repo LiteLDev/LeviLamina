@@ -22,7 +22,6 @@ public:
     CloudLightingParameters& operator=(CloudLightingParameters const&);
     CloudLightingParameters(CloudLightingParameters const&);
     CloudLightingParameters();
-
 };
 
-}
+} // namespace mce::framebuilder

@@ -13,10 +13,10 @@ struct UV {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkaf48d1;
-    ::ll::UntypedStorage<4, 4> mUnk4a308a;
-    ::ll::UntypedStorage<8, 96> mUnk9d4c54;
-    ::ll::UntypedStorage<8, 96> mUnkbb689c;
+    ::ll::UntypedStorage<4, 4>   mUnkaf48d1;
+    ::ll::UntypedStorage<4, 4>   mUnk4a308a;
+    ::ll::UntypedStorage<8, 96>  mUnk9d4c54;
+    ::ll::UntypedStorage<8, 96>  mUnkbb689c;
     ::ll::UntypedStorage<8, 184> mUnkac8fe7;
     // NOLINTEND
 
@@ -57,7 +57,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

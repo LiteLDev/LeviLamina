@@ -12,8 +12,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk98d468;
-    ::ll::UntypedStorage<4, 4> mUnkd3b10f;
-    ::ll::UntypedStorage<4, 4> mUnkf08fde;
+    ::ll::UntypedStorage<4, 4>  mUnkd3b10f;
+    ::ll::UntypedStorage<4, 4>  mUnkf08fde;
     // NOLINTEND
 
 public:
@@ -42,7 +42,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace BedrockLog

@@ -14,5 +14,4 @@ public:
     DyeableDefinition& operator=(DyeableDefinition const&);
     DyeableDefinition(DyeableDefinition const&);
     DyeableDefinition();
-
 };

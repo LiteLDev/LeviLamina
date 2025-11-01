@@ -5,7 +5,7 @@
 namespace dcsctp {
 
 enum class TimerBackoffAlgorithm : int {
-    KFixed = 0,
+    KFixed       = 0,
     KExponential = 1,
 };
 

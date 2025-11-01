@@ -16,5 +16,4 @@ public:
     JSDebuggerLocation& operator=(JSDebuggerLocation const&);
     JSDebuggerLocation(JSDebuggerLocation const&);
     JSDebuggerLocation();
-
 };

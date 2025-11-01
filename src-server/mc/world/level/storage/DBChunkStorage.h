@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/util/BaseGameVersion.h"
-#include "mc/versionless/world/level/ChunkPos.h"
+#include "mc/util/BaseGameVersion.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/storage/ConsoleChunkBlender.h"
 #include "mc/world/level/storage/db_helpers/Category.h"
@@ -35,7 +35,7 @@ public:
     // clang-format off
     struct PreCavesAndCliffsMetaData;
     // clang-format on
-    
+
     // DBChunkStorage inner types define
     struct PreCavesAndCliffsMetaData {
     public:
@@ -44,37 +44,40 @@ public:
         ::ll::UntypedStorage<1, 1> mUnk5cb409;
         ::ll::UntypedStorage<4, 4> mUnk75181d;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PreCavesAndCliffsMetaData& operator=(PreCavesAndCliffsMetaData const&);
         PreCavesAndCliffsMetaData(PreCavesAndCliffsMetaData const&);
         PreCavesAndCliffsMetaData();
-    
     };
-    
+
     enum class ChunkCacheStatus : int {
-        Missing = 0,
+        Missing   = 0,
         Available = 1,
         DontCache = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::DBChunkStorageKey, ::DBChunkStorage::ChunkCacheStatus>> mHasChunkCache;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::DBChunkStorageKey, ::DBChunkStorage::ChunkCacheStatus>>
+                                                  mHasChunkCache;
     ::ll::TypedStorage<8, 8, ::std::shared_mutex> mHasChunkCacheSharedMutex;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::pair<bool, ::std::shared_ptr<::BlendingData>>>> mChunkBlendingDataCache;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex> mChunkBlendingDataSharedMutex;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex> mAttenuatorSharedMutex;
-    ::ll::TypedStorage<8, 8, ::DBStorage&> mStorage;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::pair<bool, ::std::shared_ptr<::BlendingData>>>>
+                                                                                          mChunkBlendingDataCache;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                         mChunkBlendingDataSharedMutex;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                         mAttenuatorSharedMutex;
+    ::ll::TypedStorage<8, 8, ::DBStorage&>                                                mStorage;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::LevelStorageWriteBatch>>> mBufferPool;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter>>> mDiscardBatch;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>> mLiveChunksBeingSaved;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter>>> mDiscardedWhileLiveSaved;
-    ::ll::TypedStorage<1, 1, bool> mBatch;
+    ::ll::
+        TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter>>>
+                                                             mDiscardedWhileLiveSaved;
+    ::ll::TypedStorage<1, 1, bool>                           mBatch;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>> mIOTaskGroup;
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion> mCurrentLevelVersion;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>             mCurrentLevelVersion;
     // NOLINTEND
 
 public:
@@ -123,10 +126,13 @@ public:
     virtual bool saveLiveChunk(::LevelChunk& lc) /*override*/;
 
     // vIndex: 18
-    virtual void writeEntityChunkTransfer(::LevelChunk& levelChunk) /*override*/;
+    virtual void writeEntityChunkTransfer(::LevelChunk& lc) /*override*/;
 
     // vIndex: 19
-    virtual void writeEntityChunkTransfersToUnloadedChunk(::ChunkKey const& chunkKey, ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers) /*override*/;
+    virtual void writeEntityChunkTransfersToUnloadedChunk(
+        ::ChunkKey const&                                       chunkKey,
+        ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers
+    ) /*override*/;
 
     // vIndex: 23
     virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr) /*override*/;
@@ -159,15 +165,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DBChunkStorage(::std::unique_ptr<::ChunkSource> parent, ::DBStorage& storage, ::Scheduler& scheduler, ::Experiments const& experiments);
+    MCAPI DBChunkStorage(
+        ::std::unique_ptr<::ChunkSource> parent,
+        ::DBStorage&                     storage,
+        ::Scheduler&                     scheduler,
+        ::Experiments const&             experiments
+    );
 
-    MCAPI void _batchDelete(::LevelStorageWriteBatch& batch, ::std::string const& key, ::DBHelpers::Category category, ::std::string_view reason);
+    MCAPI void _batchDelete(
+        ::LevelStorageWriteBatch& batch,
+        ::std::string const&      key,
+        ::DBHelpers::Category     category,
+        ::std::string_view        reason
+    );
 
-    MCAPI void _batchPut(::LevelStorageWriteBatch& batch, ::std::string const& key, ::std::string&& buffer, ::DBHelpers::Category category, ::std::string_view reason);
+    MCAPI void _batchPut(
+        ::LevelStorageWriteBatch& batch,
+        ::std::string const&      key,
+        ::std::string&&           buffer,
+        ::DBHelpers::Category     category,
+        ::std::string_view        reason
+    );
 
-    MCAPI ::std::pair<bool, ::std::shared_ptr<::BlendingData>> _cacheSeamlessChunkBlendingData(::ChunkPos chunkPos, bool isCompleted, ::std::shared_ptr<::BlendingData> blendingData);
+    MCAPI ::std::pair<bool, ::std::shared_ptr<::BlendingData>> _cacheSeamlessChunkBlendingData(
+        ::ChunkPos                        chunkPos,
+        bool                              isCompleted,
+        ::std::shared_ptr<::BlendingData> blendingData
+    );
 
-    MCAPI bool _checkSubChunksUseAbsoluteIndices(::DBChunkStorageKey key, ::LevelChunk const& lc, bool& flatworldsNeedFixup) const;
+    MCAPI bool
+    _checkSubChunksUseAbsoluteIndices(::DBChunkStorageKey key, ::LevelChunk const& lc, bool& flatworldsNeedFixup) const;
 
     MCAPI void _deserializeIndependentActorStorage(::LevelChunk& lc, ::std::string const& storageKeyDigestBuffer);
 
@@ -177,23 +204,37 @@ public:
 
     MCAPI bool _hasChunkUncached(::DBChunkStorageKey const& key);
 
-    MCAPI ::std::pair<bool, ::std::unique_ptr<::PersistentBlendData>> _levelChunkCanBeUsedForBlending(::DBChunkStorageKey const& lcKey);
+    MCAPI ::std::pair<bool, ::std::unique_ptr<::PersistentBlendData>>
+    _levelChunkCanBeUsedForBlending(::DBChunkStorageKey const& lcKey);
 
     MCAPI void _loadAndBlendFromDB(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::ChunkViewSource& neighborhood);
 
     MCAPI bool _loadChunkFromDB(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::ChunkViewSource& neighborhood);
 
-    MCAPI void _saveBlendData(::LevelStorageWriteBatch& batch, ::std::string_view prefix, ::std::string& buffer, ::PersistentBlendData data) const;
+    MCAPI void _saveBlendData(
+        ::LevelStorageWriteBatch& batch,
+        ::std::string_view        prefix,
+        ::std::string&            buffer,
+        ::PersistentBlendData     data
+    ) const;
 
-    MCAPI void _serializeChunk(::LevelChunk& lc, ::LevelStorageWriteBatch& batch, bool markEntitiesProcesedOnChunkDiscard);
+    MCAPI void
+    _serializeChunk(::LevelChunk& lc, ::LevelStorageWriteBatch& batch, bool markEntitiesProcesedOnChunkDiscard);
 
-    MCAPI void _serializeEntities(::LevelChunk& lc, ::LevelStorageWriteBatch& batch, ::std::string& buffer, bool markEntitiesProcesedOnChunkDiscard);
+    MCAPI void _serializeEntities(
+        ::LevelChunk&             lc,
+        ::LevelStorageWriteBatch& batch,
+        ::std::string&            buffer,
+        bool                      markEntitiesProcesedOnChunkDiscard
+    );
 
-    MCAPI ::std::pair<bool, ::std::shared_ptr<::BlendingData>> _tryGetBlendingDataForChunk(::ChunkPos const& checkPosition);
+    MCAPI ::std::pair<bool, ::std::shared_ptr<::BlendingData>>
+    _tryGetBlendingDataForChunk(::ChunkPos const& checkPosition);
 
     MCAPI ::std::string _upgradeActorStorage(::ChunkKey chunkKey, ::std::string_view& legacyActorData);
 
-    MCAPI void _writeActorDigest(::LevelStorageWriteBatch& batch, ::ChunkKey const& chunkKey, ::std::string const& digestBuffer);
+    MCAPI void
+    _writeActorDigest(::LevelStorageWriteBatch& batch, ::ChunkKey const& chunkKey, ::std::string const& digestBuffer);
 
     MCAPI void _writeDiscardChunksBatch();
     // NOLINTEND
@@ -203,9 +244,14 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::string> _deserializeChunkActorStorageKeys(::IDataInput& digestStream);
 
-    MCAPI static ::ConsoleChunkBlender::BlenderMode _getBlenderMode(::LevelChunk const& lc, ::Experiments const& experiments);
+    MCAPI static ::ConsoleChunkBlender::BlenderMode
+    _getBlenderMode(::LevelChunk const& lc, ::Experiments const& experiments);
 
-    MCAPI static ::std::string deserializeActorStorageToString(bool hasActorDigestVersionTag, ::std::string const& storageKeyDigestBuffer, ::std::function<bool(::std::string_view, ::std::string&)> loadDataCallback);
+    MCAPI static ::std::string deserializeActorStorageToString(
+        bool                                                      hasActorDigestVersionTag,
+        ::std::string const&                                      storageKeyDigestBuffer,
+        ::std::function<bool(::std::string_view, ::std::string&)> loadDataCallback
+    );
     // NOLINTEND
 
 public:
@@ -219,7 +265,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ChunkSource> parent, ::DBStorage& storage, ::Scheduler& scheduler, ::Experiments const& experiments);
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::ChunkSource> parent,
+        ::DBStorage&                     storage,
+        ::Scheduler&                     scheduler,
+        ::Experiments const&             experiments
+    );
     // NOLINTEND
 
 public:
@@ -253,9 +304,12 @@ public:
 
     MCAPI bool $saveLiveChunk(::LevelChunk& lc);
 
-    MCAPI void $writeEntityChunkTransfer(::LevelChunk& levelChunk);
+    MCAPI void $writeEntityChunkTransfer(::LevelChunk& lc);
 
-    MCAPI void $writeEntityChunkTransfersToUnloadedChunk(::ChunkKey const& chunkKey, ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers);
+    MCAPI void $writeEntityChunkTransfersToUnloadedChunk(
+        ::ChunkKey const&                                       chunkKey,
+        ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers
+    );
 
     MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
@@ -281,5 +335,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

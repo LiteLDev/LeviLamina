@@ -4,7 +4,6 @@
 
 namespace dragon {
 
-struct ImageDescriptionIdentifier {
-};
+struct ImageDescriptionIdentifier {};
 
-}
+} // namespace dragon

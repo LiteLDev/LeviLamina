@@ -16,7 +16,6 @@ public:
     EduAddServerResponse& operator=(EduAddServerResponse const&);
     EduAddServerResponse(EduAddServerResponse const&);
     EduAddServerResponse();
-
 };
 
-}
+} // namespace Social

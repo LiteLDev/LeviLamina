@@ -25,7 +25,7 @@ public:
 
     MCAPI void init(::ResourcePackManager& resourcePackManager);
 
-    MCAPI bool parseFile(::std::string const& fileData, ::std::string const& fileName, ::CurrentCmdVersion packCommandVersion);
+    MCAPI bool
+    parseFile(::std::string const& fileData, ::std::string const& fileName, ::CurrentCmdVersion packCommandVersion);
     // NOLINTEND
-
 };

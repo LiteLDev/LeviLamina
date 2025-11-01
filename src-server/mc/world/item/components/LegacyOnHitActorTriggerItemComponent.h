@@ -21,8 +21,8 @@ class LegacyOnHitActorTriggerItemComponent : public ::LegacyTriggerItemComponent
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mCanUseOnHitActor;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnHitActorSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                  mCanUseOnHitActor;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnHitActorSubscription;
     ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnHitActor;
     // NOLINTEND
 
@@ -71,5 +71,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

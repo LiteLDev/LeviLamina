@@ -16,23 +16,23 @@ class ExploreOutskirtsGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, int> mMinimumWaitTimeTicks;
-    ::ll::TypedStorage<4, 4, int> mNextXZDistance;
-    ::ll::TypedStorage<4, 4, int> mNextYDistance;
-    ::ll::TypedStorage<8, 8, ::Tick> mMaximumWaitTimeTicks;
-    ::ll::TypedStorage<8, 8, ::Tick> mTravelTimeout;
-    ::ll::TypedStorage<4, 4, float> mSpeedModifier;
-    ::ll::TypedStorage<4, 4, float> mExploreDistance;
-    ::ll::TypedStorage<4, 4, float> mMinimumPerimeter;
-    ::ll::TypedStorage<4, 4, float> mMinimumDistanceFromTarget;
-    ::ll::TypedStorage<4, 4, float> mWaitTimerRatio;
+    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
+    ::ll::TypedStorage<4, 4, int>     mMinimumWaitTimeTicks;
+    ::ll::TypedStorage<4, 4, int>     mNextXZDistance;
+    ::ll::TypedStorage<4, 4, int>     mNextYDistance;
+    ::ll::TypedStorage<8, 8, ::Tick>  mMaximumWaitTimeTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>  mTravelTimeout;
+    ::ll::TypedStorage<4, 4, float>   mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>   mExploreDistance;
+    ::ll::TypedStorage<4, 4, float>   mMinimumPerimeter;
+    ::ll::TypedStorage<4, 4, float>   mMinimumDistanceFromTarget;
+    ::ll::TypedStorage<4, 4, float>   mWaitTimerRatio;
     ::ll::TypedStorage<4, 12, ::Vec3> mDistanceFromBoundary;
-    ::ll::TypedStorage<1, 1, bool> mFailedToPath;
-    ::ll::TypedStorage<1, 1, bool> mTraveling;
-    ::ll::TypedStorage<8, 8, ::Tick> mShiftLocationTimer;
-    ::ll::TypedStorage<8, 8, ::Tick> mWaitTimer;
-    ::ll::TypedStorage<8, 8, ::Tick> mTravelTimer;
+    ::ll::TypedStorage<1, 1, bool>    mFailedToPath;
+    ::ll::TypedStorage<1, 1, bool>    mTraveling;
+    ::ll::TypedStorage<8, 8, ::Tick>  mShiftLocationTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>  mWaitTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>  mTravelTimer;
     ::ll::TypedStorage<4, 12, ::Vec3> mWantedPos;
     // NOLINTEND
 
@@ -88,5 +88,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

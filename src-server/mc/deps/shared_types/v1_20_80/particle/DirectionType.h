@@ -5,7 +5,7 @@
 namespace SharedTypes::v1_20_80 {
 
 enum class DirectionType : int {
-    Inwards = 0,
+    Inwards  = 0,
     Outwards = 1,
 };
 

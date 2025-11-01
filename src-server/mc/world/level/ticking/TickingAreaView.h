@@ -25,9 +25,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>> mTickingArea;
-    ::ll::TypedStorage<4, 4, uint> mPolicyHandle;
-    ::ll::TypedStorage<1, 1, bool> mInfluenceDirty;
-    ::ll::TypedStorage<1, 1, bool> mDoneLoading;
+    ::ll::TypedStorage<4, 4, uint>                                  mPolicyHandle;
+    ::ll::TypedStorage<1, 1, bool>                                  mInfluenceDirty;
+    ::ll::TypedStorage<1, 1, bool>                                  mDoneLoading;
     // NOLINTEND
 
 public:
@@ -76,7 +76,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _tickChunk(::Tick const& currentTick, ::BlockSource& region, ::Level& level, ::ChunkPos const& cp, ::LevelChunkTicking::Registry* registry);
+    MCAPI bool _tickChunk(
+        ::Tick const&                  currentTick,
+        ::BlockSource&                 region,
+        ::Level&                       level,
+        ::ChunkPos const&              cp,
+        ::LevelChunkTicking::Registry* registry
+    );
     // NOLINTEND
 
 public:
@@ -118,5 +124,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -31,7 +31,10 @@ public:
 
     MCNAPI JSONSchemaDef(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
 
-    MCNAPI void normalizeRefs(::cereal::ext::internal::OutRefsMap& outRefs, ::std::unordered_map<::std::string, ::cereal::ext::internal::JSONSchemaDef>& defsMap);
+    MCNAPI void normalizeRefs(
+        ::cereal::ext::internal::OutRefsMap&                                         outRefs,
+        ::std::unordered_map<::std::string, ::cereal::ext::internal::JSONSchemaDef>& defsMap
+    );
 
     MCNAPI ~JSONSchemaDef();
     // NOLINTEND
@@ -57,7 +60,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal::ext::internal

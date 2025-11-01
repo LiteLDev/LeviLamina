@@ -18,8 +18,8 @@ struct ObjectFactory : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk68fdc7;
-    ::ll::UntypedStorage<8, 16> mUnkac19c1;
+    ::ll::UntypedStorage<8, 32>  mUnk68fdc7;
+    ::ll::UntypedStorage<8, 16>  mUnkac19c1;
     ::ll::UntypedStorage<8, 160> mUnkf51b36;
     // NOLINTEND
 
@@ -32,7 +32,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ObjectFactory(::std::string name_, ::std::shared_ptr<::Scripting::Reflection::IFunction> func_, ::entt::meta_type type_);
+    MCNAPI ObjectFactory(
+        ::std::string                                         name_,
+        ::std::shared_ptr<::Scripting::Reflection::IFunction> func_,
+        ::entt::meta_type                                     type_
+    );
 
     MCNAPI ~ObjectFactory();
     // NOLINTEND
@@ -40,7 +44,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name_, ::std::shared_ptr<::Scripting::Reflection::IFunction> func_, ::entt::meta_type type_);
+    MCNAPI void*
+    $ctor(::std::string name_, ::std::shared_ptr<::Scripting::Reflection::IFunction> func_, ::entt::meta_type type_);
     // NOLINTEND
 
 public:
@@ -48,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

@@ -33,33 +33,35 @@ namespace mce { struct Image; }
 
 namespace Social {
 
-class UserManager : public ::Social::IUserManager, public ::LevelListCacheObserver, public ::Social::MultiplayerServiceObserver {
+class UserManager : public ::Social::IUserManager,
+                    public ::LevelListCacheObserver,
+                    public ::Social::MultiplayerServiceObserver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkce5ddf;
-    ::ll::UntypedStorage<8, 80> mUnk4ead5c;
+    ::ll::UntypedStorage<8, 24>  mUnkce5ddf;
+    ::ll::UntypedStorage<8, 80>  mUnk4ead5c;
     ::ll::UntypedStorage<8, 104> mUnk108a1f;
     ::ll::UntypedStorage<8, 104> mUnk38ae75;
-    ::ll::UntypedStorage<4, 4> mUnk110a6f;
-    ::ll::UntypedStorage<8, 56> mUnkf7b698;
-    ::ll::UntypedStorage<4, 4> mUnk75ca2d;
-    ::ll::UntypedStorage<4, 4> mUnkfc95bd;
-    ::ll::UntypedStorage<1, 1> mUnk231524;
-    ::ll::UntypedStorage<8, 64> mUnkb91d4c;
-    ::ll::UntypedStorage<8, 64> mUnk8857ff;
-    ::ll::UntypedStorage<4, 4> mUnkcd597a;
-    ::ll::UntypedStorage<8, 32> mUnkbb4da2;
-    ::ll::UntypedStorage<8, 16> mUnk89970d;
-    ::ll::UntypedStorage<8, 8> mUnk89c3de;
-    ::ll::UntypedStorage<8, 8> mUnk886a7a;
-    ::ll::UntypedStorage<8, 8> mUnk210f01;
-    ::ll::UntypedStorage<8, 64> mUnk63325d;
-    ::ll::UntypedStorage<8, 64> mUnk5805c3;
+    ::ll::UntypedStorage<4, 4>   mUnk110a6f;
+    ::ll::UntypedStorage<8, 56>  mUnkf7b698;
+    ::ll::UntypedStorage<4, 4>   mUnk75ca2d;
+    ::ll::UntypedStorage<4, 4>   mUnkfc95bd;
+    ::ll::UntypedStorage<1, 1>   mUnk231524;
+    ::ll::UntypedStorage<8, 64>  mUnkb91d4c;
+    ::ll::UntypedStorage<8, 64>  mUnk8857ff;
+    ::ll::UntypedStorage<4, 4>   mUnkcd597a;
+    ::ll::UntypedStorage<8, 32>  mUnkbb4da2;
+    ::ll::UntypedStorage<8, 16>  mUnk89970d;
+    ::ll::UntypedStorage<8, 8>   mUnk89c3de;
+    ::ll::UntypedStorage<8, 8>   mUnk886a7a;
+    ::ll::UntypedStorage<8, 8>   mUnk210f01;
+    ::ll::UntypedStorage<8, 64>  mUnk63325d;
+    ::ll::UntypedStorage<8, 64>  mUnk5805c3;
     ::ll::UntypedStorage<8, 128> mUnk18fdde;
-    ::ll::UntypedStorage<8, 24> mUnke2a1f9;
-    ::ll::UntypedStorage<8, 24> mUnk8ad5f5;
-    ::ll::UntypedStorage<8, 24> mUnkfea690;
+    ::ll::UntypedStorage<8, 24>  mUnke2a1f9;
+    ::ll::UntypedStorage<8, 24>  mUnk8ad5f5;
+    ::ll::UntypedStorage<8, 24>  mUnkfea690;
     // NOLINTEND
 
 public:
@@ -81,7 +83,8 @@ public:
     virtual void removeClient(::std::shared_ptr<::IClientInstance> const&) /*override*/;
 
     // vIndex: 36
-    virtual ::std::shared_ptr<::Social::User> setUserClient(int, ::std::shared_ptr<::IClientInstance> const&) /*override*/;
+    virtual ::std::shared_ptr<::Social::User>
+    setUserClient(int, ::std::shared_ptr<::IClientInstance> const&) /*override*/;
 
     // vIndex: 37
     virtual bool userHasClient(int) /*override*/;
@@ -135,7 +138,11 @@ public:
     virtual void setSecondaryUserCreationAllowed(int) /*override*/;
 
     // vIndex: 6
-    virtual ::Bedrock::Threading::Async<void> addSecondaryUserAsync(int, ::std::shared_ptr<::Options>, ::std::function<void(::Social::UserPlatformConnectionResult)>) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> addSecondaryUserAsync(
+        int,
+        ::std::shared_ptr<::Options>,
+        ::std::function<void(::Social::UserPlatformConnectionResult)>
+    ) /*override*/;
 
     // vIndex: 47
     virtual void tick(::IMinecraftGame&) /*override*/;
@@ -195,10 +202,14 @@ public:
     virtual bool hasPlatformProfileCards() const /*override*/;
 
     // vIndex: 29
-    virtual void getLinkedXuids(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const /*override*/;
+    virtual void
+    getLinkedXuids(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const
+        /*override*/;
 
     // vIndex: 30
-    virtual void getLinkedPlatformIds(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const /*override*/;
+    virtual void
+    getLinkedPlatformIds(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const
+        /*override*/;
 
     // vIndex: 39
     virtual ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> retrieveCIDToClientMap() /*override*/;
@@ -207,19 +218,29 @@ public:
     virtual int getClientCID(::IClientInstance const&) const /*override*/;
 
     // vIndex: 41
-    virtual void registerSignOutListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) /*override*/;
+    virtual void
+    registerSignOutListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) /*override*/;
 
     // vIndex: 42
-    virtual void registerSignInListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) /*override*/;
+    virtual void
+    registerSignInListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) /*override*/;
 
     // vIndex: 43
-    virtual ::Bedrock::PubSub::Subscription registerIdentitySignInCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription registerIdentitySignInCallback(
+        ::Social::IdentityType,
+        ::std::function<void(uint, ::Social::IdentityType)>
+    ) /*override*/;
 
     // vIndex: 44
-    virtual ::Bedrock::PubSub::Subscription registerIdentitySignOutCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription registerIdentitySignOutCallback(
+        ::Social::IdentityType,
+        ::std::function<void(uint, ::Social::IdentityType)>
+    ) /*override*/;
 
     // vIndex: 45
-    virtual ::Bedrock::PubSub::Subscription registerProfileImageChangedCallback(::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription registerProfileImageChangedCallback(
+        ::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>
+    ) /*override*/;
 
     // vIndex: 46
     virtual bool needGamepadDisconnectScreen(int) /*override*/;
@@ -279,7 +300,8 @@ public:
     virtual void _onAppSuspended();
 
     // vIndex: 66
-    virtual ::std::shared_ptr<::Social::UserCreationData> _prepareUserCreationData(::GameUserType, int, ::std::shared_ptr<::Options>, uint);
+    virtual ::std::shared_ptr<::Social::UserCreationData>
+    _prepareUserCreationData(::GameUserType, int, ::std::shared_ptr<::Options>, uint);
 
     // vIndex: 67
     virtual void _onUserAdded(::std::shared_ptr<::Social::User> const&);
@@ -290,7 +312,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Social

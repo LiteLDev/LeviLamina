@@ -34,16 +34,18 @@ namespace Scripting { struct Error; }
 
 namespace Editor::Services {
 
-class EditorBlockPaletteService : public ::Editor::Services::IEditorService, public ::Editor::Services::EditorBlockPaletteServiceProvider, public ::Editor::Services::PayloadStoreHelper {
+class EditorBlockPaletteService : public ::Editor::Services::IEditorService,
+                                  public ::Editor::Services::EditorBlockPaletteServiceProvider,
+                                  public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk208e72;
-    ::ll::UntypedStorage<8, 16> mUnkc25d79;
-    ::ll::UntypedStorage<4, 4> mUnk498fce;
+    ::ll::UntypedStorage<8, 24>  mUnk208e72;
+    ::ll::UntypedStorage<8, 16>  mUnkc25d79;
+    ::ll::UntypedStorage<4, 4>   mUnk498fce;
     ::ll::UntypedStorage<8, 736> mUnk53b476;
-    ::ll::UntypedStorage<8, 24> mUnk71f343;
-    ::ll::UntypedStorage<8, 48> mUnkce286d;
+    ::ll::UntypedStorage<8, 24>  mUnk71f343;
+    ::ll::UntypedStorage<8, 48>  mUnkce286d;
     // NOLINTEND
 
 public:
@@ -89,22 +91,36 @@ public:
     virtual ::std::vector<::std::string> getPaletteIdList() const /*override*/;
 
     // vIndex: 12
-    virtual ::std::optional<::Editor::EditorBlockPalette> getPalette(::HashedString const& paletteId) const /*override*/;
+    virtual ::std::optional<::Editor::EditorBlockPalette> getPalette(::HashedString const& paletteId) const
+        /*override*/;
 
     // vIndex: 13
-    virtual ::Scripting::Result_deprecated<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>> getPaletteItem(::HashedString const& paletteId, int index) const /*override*/;
+    virtual ::Scripting::Result_deprecated<
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>>
+    getPaletteItem(::HashedString const& paletteId, int index) const /*override*/;
 
     // vIndex: 15
-    virtual ::Bedrock::PubSub::Subscription registerEventListener(::std::function<void(::std::variant<::Editor::EditorBlockPaletteEventItemUpdated, ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged, ::Editor::EditorBlockPaletteEventActivePaletteChanged, ::Editor::EditorBlockPaletteEventPaletteUpdated, ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription registerEventListener(
+        ::std::function<void(::std::variant<
+                             ::Editor::EditorBlockPaletteEventItemUpdated,
+                             ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
+                             ::Editor::EditorBlockPaletteEventActivePaletteChanged,
+                             ::Editor::EditorBlockPaletteEventPaletteUpdated,
+                             ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback
+    ) /*override*/;
 
     // vIndex: 7
-    virtual void _handleBlockPaletteActivePaletteChangedPayload(::Editor::Network::BlockPaletteActivePaletteChangedPayload const&) = 0;
+    virtual void _handleBlockPaletteActivePaletteChangedPayload(
+        ::Editor::Network::BlockPaletteActivePaletteChangedPayload const&
+    ) = 0;
 
     // vIndex: 8
     virtual void _handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const&) = 0;
 
     // vIndex: 9
-    virtual void _handleBlockPaletteSelectedIndexChangedPayload(::Editor::Network::BlockPaletteSelectedIndexChangedPayload const&) = 0;
+    virtual void _handleBlockPaletteSelectedIndexChangedPayload(
+        ::Editor::Network::BlockPaletteSelectedIndexChangedPayload const&
+    ) = 0;
 
     // vIndex: 10
     virtual void _handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const&) = 0;
@@ -120,7 +136,10 @@ public:
 
     MCNAPI void _addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
 
-    MCNAPI ::Scripting::Result_deprecated<void> _checkForDuplicateBlocks(::HashedString const& paletteId, ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item);
+    MCNAPI ::Scripting::Result_deprecated<void> _checkForDuplicateBlocks(
+        ::HashedString const&                                                                          paletteId,
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
+    );
 
     MCNAPI ::Editor::EditorBlockPalette& _getActivePalette() const;
 
@@ -136,7 +155,11 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> _setActivePalette(::HashedString const& paletteId);
 
-    MCNAPI ::Scripting::Result_deprecated<void> _updatePaletteItem(::HashedString const& paletteId, int index, ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item);
+    MCNAPI ::Scripting::Result_deprecated<void> _updatePaletteItem(
+        ::HashedString const&                                                                          paletteId,
+        int                                                                                            index,
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
+    );
     // NOLINTEND
 
 public:
@@ -174,9 +197,18 @@ public:
 
     MCNAPI ::std::optional<::Editor::EditorBlockPalette> $getPalette(::HashedString const& paletteId) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>> $getPaletteItem(::HashedString const& paletteId, int index) const;
+    MCNAPI ::Scripting::Result_deprecated<
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>>
+    $getPaletteItem(::HashedString const& paletteId, int index) const;
 
-    MCNAPI ::Bedrock::PubSub::Subscription $registerEventListener(::std::function<void(::std::variant<::Editor::EditorBlockPaletteEventItemUpdated, ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged, ::Editor::EditorBlockPaletteEventActivePaletteChanged, ::Editor::EditorBlockPaletteEventPaletteUpdated, ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription $registerEventListener(
+        ::std::function<void(::std::variant<
+                             ::Editor::EditorBlockPaletteEventItemUpdated,
+                             ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
+                             ::Editor::EditorBlockPaletteEventActivePaletteChanged,
+                             ::Editor::EditorBlockPaletteEventPaletteUpdated,
+                             ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback
+    );
     // NOLINTEND
 
 public:
@@ -186,7 +218,6 @@ public:
 
     MCNAPI static void** $vftableForEditorBlockPaletteServiceProvider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

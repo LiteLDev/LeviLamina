@@ -22,13 +22,13 @@ public:
         Give = 0,
         Take = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke2a9c8;
+    ::ll::UntypedStorage<4, 4>   mUnke2a9c8;
     ::ll::UntypedStorage<8, 200> mUnkebc694;
-    ::ll::UntypedStorage<8, 32> mUnk1687d7;
+    ::ll::UntypedStorage<8, 32>  mUnk1687d7;
     // NOLINTEND
 
 public:
@@ -52,7 +52,11 @@ public:
     // NOLINTBEGIN
     MCAPI void _handleAllRecipes(::CommandOutput& output, ::CommandSelectorResults<::Player> const& players) const;
 
-    MCAPI void _handleSpecificRecipe(::CommandOutput& output, ::CommandSelectorResults<::Player> const& players, ::Recipes const& recipes) const;
+    MCAPI void _handleSpecificRecipe(
+        ::CommandOutput&                          output,
+        ::CommandSelectorResults<::Player> const& players,
+        ::Recipes const&                          recipes
+    ) const;
     // NOLINTEND
 
 public:
@@ -72,5 +76,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

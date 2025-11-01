@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk2a665f;
     ::ll::UntypedStorage<8, 32> mUnk82b305;
-    ::ll::UntypedStorage<1, 1> mUnk2ebeb5;
+    ::ll::UntypedStorage<1, 1>  mUnk2ebeb5;
     // NOLINTEND
 
 public:
@@ -61,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

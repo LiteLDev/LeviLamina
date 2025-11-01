@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
-#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/item/ItemContextType.h"
 #include "mc/world/item/ItemLockMode.h"
 #include "mc/world/item/ItemStack.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,14 +23,14 @@ class ItemContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ItemContextType> mItemContextType;
-    ::ll::TypedStorage<8, 8, ::Container*> mContainer;
-    ::ll::TypedStorage<4, 4, int> mSlot;
+    ::ll::TypedStorage<4, 4, ::ItemContextType>                    mItemContextType;
+    ::ll::TypedStorage<8, 8, ::Container*>                         mContainer;
+    ::ll::TypedStorage<4, 4, int>                                  mSlot;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::EquipmentSlot> mEquipmentSlot;
-    ::ll::TypedStorage<8, 8, ::BlockSource*> mBlockSource;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntityRef;
-    ::ll::TypedStorage<8, 160, ::std::optional<::ItemStack>> mItemStackContainer;
+    ::ll::TypedStorage<8, 8, ::BlockSource*>                       mBlockSource;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                          mBlockPos;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                     mEntityRef;
+    ::ll::TypedStorage<8, 160, ::std::optional<::ItemStack>>       mItemStackContainer;
     // NOLINTEND
 
 public:
@@ -62,7 +62,8 @@ public:
 
     MCAPI ::std::optional<::std::vector<::std::string>> getCanPlaceOn() const;
 
-    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> getDynamicProperty(::std::string const& collection, ::std::string const& key) const;
+    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
+    getDynamicProperty(::std::string const& collection, ::std::string const& key) const;
 
     MCAPI ::std::optional<::std::vector<::std::string>> getDynamicPropertyIds(::std::string const& collection) const;
 
@@ -88,7 +89,11 @@ public:
 
     MCAPI ::std::optional<bool> setCanPlaceOn(::std::vector<::std::string> const& blockIdentifiers);
 
-    MCAPI bool setDynamicProperty(::std::string const& collection, ::std::string const& key, ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& optionalValue);
+    MCAPI bool setDynamicProperty(
+        ::std::string const&                                                               collection,
+        ::std::string const&                                                               key,
+        ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& optionalValue
+    );
 
     MCAPI bool setKeepOnDeath(bool value);
 
@@ -104,7 +109,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool setEquipment(::ItemStack const& item, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::Mob& mob);
+    MCAPI static bool
+    setEquipment(::ItemStack const& item, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::Mob& mob);
     // NOLINTEND
 
 public:
@@ -118,5 +124,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

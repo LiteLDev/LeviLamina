@@ -8,7 +8,7 @@ class ResultAny {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsError;
+    ::ll::TypedStorage<1, 1, bool>               mIsError;
     ::ll::TypedStorage<8, 208, ::entt::meta_any> mValue;
     // NOLINTEND
 
@@ -47,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

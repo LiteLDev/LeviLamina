@@ -5,12 +5,12 @@
 namespace mce {
 
 enum class PrimitiveMode : uchar {
-    None = 0,
-    QuadList = 1,
-    TriangleList = 2,
+    None          = 0,
+    QuadList      = 1,
+    TriangleList  = 2,
     TriangleStrip = 3,
-    LineList = 4,
-    LineStrip = 5,
+    LineList      = 4,
+    LineStrip     = 5,
 };
 
 }

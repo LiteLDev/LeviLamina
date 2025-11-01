@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class InverseWeightTag {
-};
+class InverseWeightTag {};
 
-}
+} // namespace dcsctp

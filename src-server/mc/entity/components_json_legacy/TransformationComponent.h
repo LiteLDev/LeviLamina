@@ -20,11 +20,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void maintainOldData(::Actor& originalActor, ::Actor& transformed, ::TransformationDescription const& transformation, ::ActorUniqueID const& ownerID, ::Level const& level);
+    MCAPI void maintainOldData(
+        ::Actor&                           originalActor,
+        ::Actor&                           transformed,
+        ::TransformationDescription const& transformation,
+        ::ActorUniqueID const&             ownerID,
+        ::Level const&                     level
+    );
 
     MCAPI void reloadComponent(::Actor& actor);
 
     MCAPI void transformIfAble(::Actor& actor, bool shouldRemove);
     // NOLINTEND
-
 };

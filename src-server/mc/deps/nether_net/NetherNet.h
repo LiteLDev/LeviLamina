@@ -25,7 +25,12 @@ MCNAPI ::NetherNet::ErrorOr<::std::vector<uchar>, ::std::error_code> CreateKey(u
 
 MCNAPI void InitializeNetherNetTransport(::NetherNet::GlobalConfiguration const& config);
 
-MCNAPI ::std::optional<::std::variant<::NetherNet::ConnectRequest, ::NetherNet::ConnectResponse, ::NetherNet::ConnectError, ::NetherNet::CandidateAdd>> TryParseSignalingMessage(::std::string const& message);
+MCNAPI ::std::optional<::std::variant<
+    ::NetherNet::ConnectRequest,
+    ::NetherNet::ConnectResponse,
+    ::NetherNet::ConnectError,
+    ::NetherNet::CandidateAdd>>
+TryParseSignalingMessage(::std::string const& message);
 // NOLINTEND
 
 // static variables
@@ -39,4 +44,4 @@ MCNAPI ::rtc::IPAddress const& IPv6AllHostsLinkLocal();
 MCNAPI ::rtc::IPAddress const& IPv6Any();
 // NOLINTEND
 
-}
+} // namespace NetherNet

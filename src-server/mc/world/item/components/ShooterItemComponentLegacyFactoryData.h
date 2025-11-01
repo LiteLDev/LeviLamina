@@ -19,45 +19,46 @@ public:
     // clang-format off
     struct ShooterAmmunitionEntry;
     // clang-format on
-    
+
     // ShooterItemComponentLegacyFactoryData inner types define
     struct ShooterAmmunitionEntry {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::ItemDescriptor> itemDesc;
-        ::ll::TypedStorage<1, 1, bool> useOffhand;
-        ::ll::TypedStorage<1, 1, bool> searchInventory;
-        ::ll::TypedStorage<1, 1, bool> useInCreative;
+        ::ll::TypedStorage<1, 1, bool>              useOffhand;
+        ::ll::TypedStorage<1, 1, bool>              searchInventory;
+        ::ll::TypedStorage<1, 1, bool>              useInCreative;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ShooterAmmunitionEntry();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ShooterAmmunitionEntry(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
-    
-        MCFOLD ::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry& operator=(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
+
+        MCFOLD ::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&
+        operator=(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCFOLD void* $ctor(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry>> mAmmunition;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry>>
+                                    mAmmunition;
     ::ll::TypedStorage<4, 4, float> mDrawDuration;
-    ::ll::TypedStorage<1, 1, bool> mScalePowerByDrawDuration;
-    ::ll::TypedStorage<1, 1, bool> mChargeOnDraw;
+    ::ll::TypedStorage<1, 1, bool>  mScalePowerByDrawDuration;
+    ::ll::TypedStorage<1, 1, bool>  mChargeOnDraw;
     // NOLINTEND
 
 public:
@@ -70,7 +71,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
     // NOLINTEND
 
 public:
@@ -78,5 +83,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

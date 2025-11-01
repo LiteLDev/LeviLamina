@@ -9,9 +9,8 @@ struct MovementCorrectionTelemetryComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ActorType> mActorType;
+    ::ll::TypedStorage<4, 4, ::ActorType>           mActorType;
     ::ll::TypedStorage<8, 24, ::std::vector<float>> mDivergences;
-    ::ll::TypedStorage<4, 4, int> mTickCount;
+    ::ll::TypedStorage<4, 4, int>                   mTickCount;
     // NOLINTEND
-
 };

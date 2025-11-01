@@ -19,5 +19,4 @@ public:
     tm_unz_s& operator=(tm_unz_s const&);
     tm_unz_s(tm_unz_s const&);
     tm_unz_s();
-
 };

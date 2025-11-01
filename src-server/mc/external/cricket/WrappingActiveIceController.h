@@ -49,7 +49,11 @@ public:
     virtual void SetIceConfig(::cricket::IceConfig const& config) /*override*/;
 
     // vIndex: 7
-    virtual bool GetUseCandidateAttribute(::cricket::Connection const* connection, ::cricket::NominationMode mode, ::cricket::IceMode remote_ice_mode) const /*override*/;
+    virtual bool GetUseCandidateAttribute(
+        ::cricket::Connection const* connection,
+        ::cricket::NominationMode    mode,
+        ::cricket::IceMode           remote_ice_mode
+    ) const /*override*/;
 
     // vIndex: 2
     virtual void OnConnectionAdded(::cricket::Connection const* connection) /*override*/;
@@ -73,7 +77,8 @@ public:
     virtual void OnImmediateSortAndSwitchRequest(::cricket::IceSwitchReason reason) /*override*/;
 
     // vIndex: 10
-    virtual bool OnImmediateSwitchRequest(::cricket::IceSwitchReason reason, ::cricket::Connection const* selected) /*override*/;
+    virtual bool
+    OnImmediateSwitchRequest(::cricket::IceSwitchReason reason, ::cricket::Connection const* selected) /*override*/;
 
     // vIndex: 11
     virtual ::cricket::Connection const* FindNextPingableConnection() /*override*/;
@@ -84,7 +89,10 @@ public:
     // NOLINTBEGIN
     MCNAPI void HandlePingResult(::cricket::IceControllerInterface::PingResult result);
 
-    MCNAPI void HandleSwitchResult(::cricket::IceSwitchReason reason_for_switch, ::cricket::IceControllerInterface::SwitchResult result);
+    MCNAPI void HandleSwitchResult(
+        ::cricket::IceSwitchReason                      reason_for_switch,
+        ::cricket::IceControllerInterface::SwitchResult result
+    );
 
     MCNAPI void MaybeStartPinging();
 
@@ -96,13 +104,21 @@ public:
 
     MCNAPI void UpdateStateOnConnectionsResorted();
 
-    MCNAPI WrappingActiveIceController(::cricket::IceAgentInterface* ice_agent, ::cricket::IceControllerFactoryInterface* wrapped_factory, ::cricket::IceControllerFactoryArgs const& wrapped_factory_args);
+    MCNAPI WrappingActiveIceController(
+        ::cricket::IceAgentInterface*              ice_agent,
+        ::cricket::IceControllerFactoryInterface*  wrapped_factory,
+        ::cricket::IceControllerFactoryArgs const& wrapped_factory_args
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cricket::IceAgentInterface* ice_agent, ::cricket::IceControllerFactoryInterface* wrapped_factory, ::cricket::IceControllerFactoryArgs const& wrapped_factory_args);
+    MCNAPI void* $ctor(
+        ::cricket::IceAgentInterface*              ice_agent,
+        ::cricket::IceControllerFactoryInterface*  wrapped_factory,
+        ::cricket::IceControllerFactoryArgs const& wrapped_factory_args
+    );
     // NOLINTEND
 
 public:
@@ -116,7 +132,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void $SetIceConfig(::cricket::IceConfig const& config);
 
-    MCNAPI bool $GetUseCandidateAttribute(::cricket::Connection const* connection, ::cricket::NominationMode mode, ::cricket::IceMode remote_ice_mode) const;
+    MCNAPI bool $GetUseCandidateAttribute(
+        ::cricket::Connection const* connection,
+        ::cricket::NominationMode    mode,
+        ::cricket::IceMode           remote_ice_mode
+    ) const;
 
     MCNAPI void $OnConnectionAdded(::cricket::Connection const* connection);
 
@@ -142,7 +162,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

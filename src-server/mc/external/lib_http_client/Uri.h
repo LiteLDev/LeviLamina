@@ -18,8 +18,8 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk12f86b;
     ::ll::UntypedStorage<8, 32> mUnk3616b7;
     ::ll::UntypedStorage<8, 32> mUnk7b73f7;
-    ::ll::UntypedStorage<2, 2> mUnkbe2269;
-    ::ll::UntypedStorage<1, 1> mUnk926ab9;
+    ::ll::UntypedStorage<2, 2>  mUnkbe2269;
+    ::ll::UntypedStorage<1, 1>  mUnk926ab9;
     // NOLINTEND
 
 public:
@@ -35,9 +35,15 @@ public:
 
     MCNAPI bool IsSecure() const;
 
-    MCNAPI bool ParseAuthority(::http_string const& uri, ::std::_String_const_iterator<::std::_String_val<::std::_Simple_types<char>>>& it);
+    MCNAPI bool ParseAuthority(
+        ::http_string const&                                                           uri,
+        ::std::_String_const_iterator<::std::_String_val<::std::_Simple_types<char>>>& it
+    );
 
-    MCNAPI bool ParseHost(::http_string const& uri, ::std::_String_const_iterator<::std::_String_val<::std::_Simple_types<char>>>& it);
+    MCNAPI bool ParseHost(
+        ::http_string const&                                                           uri,
+        ::std::_String_const_iterator<::std::_String_val<::std::_Simple_types<char>>>& it
+    );
 
     MCNAPI ushort Port() const;
 
@@ -71,7 +77,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace xbox::httpclient

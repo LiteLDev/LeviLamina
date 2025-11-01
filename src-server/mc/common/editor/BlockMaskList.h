@@ -9,8 +9,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk1c25b4;
-    ::ll::UntypedStorage<4, 4> mUnkfef619;
-    ::ll::UntypedStorage<1, 1> mUnkf76b97;
+    ::ll::UntypedStorage<4, 4>  mUnkfef619;
+    ::ll::UntypedStorage<1, 1>  mUnkf76b97;
     // NOLINTEND
 
 public:
@@ -34,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::BlockMask

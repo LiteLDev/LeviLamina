@@ -23,7 +23,10 @@ namespace mce { class UUID; }
 
 namespace Editor::Services {
 
-class PrefabDBService : public ::Editor::Services::IEditorService, public ::Editor::Prefabs::PrefabDBServiceProvider, public ::Editor::Prefabs::PrefabDBServerPlayerServiceProvider, public ::Editor::Services::PayloadStoreHelper {
+class PrefabDBService : public ::Editor::Services::IEditorService,
+                        public ::Editor::Prefabs::PrefabDBServiceProvider,
+                        public ::Editor::Prefabs::PrefabDBServerPlayerServiceProvider,
+                        public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
@@ -59,10 +62,12 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>> getInstancesInChunk(::DimensionType const&, ::ChunkPos const&) const /*override*/;
+    virtual ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>
+    getInstancesInChunk(::DimensionType const&, ::ChunkPos const&) const /*override*/;
 
     // vIndex: 2
-    virtual ::std::optional<::Editor::Prefabs::VisiblePrefabInstance> fetchVisibleInstance(::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance const>) const /*override*/;
+    virtual ::std::optional<::Editor::Prefabs::VisiblePrefabInstance>
+        fetchVisibleInstance(::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance const>) const /*override*/;
 
     // vIndex: 2
     virtual ::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> getTemplate(::mce::UUID const&) const /*override*/;
@@ -76,7 +81,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

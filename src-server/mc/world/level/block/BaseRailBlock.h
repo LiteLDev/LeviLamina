@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockType.h"
 
@@ -28,58 +28,57 @@ public:
     // clang-format off
     class Rail;
     // clang-format on
-    
+
     // BaseRailBlock inner types define
     class Rail {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::BlockSource&> mRegion;
-        ::ll::TypedStorage<4, 12, ::BlockPos> mPos;
-        ::ll::TypedStorage<1, 1, bool> mUsesDataBit;
+        ::ll::TypedStorage<8, 8, ::BlockSource&>             mRegion;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                mPos;
+        ::ll::TypedStorage<1, 1, bool>                       mUsesDataBit;
         ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mConnections;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Rail& operator=(Rail const&);
         Rail(Rail const&);
         Rail();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI Rail(::BlockSource& region, ::BlockPos const& pos);
-    
+
         MCAPI void connectTo(::BaseRailBlock::Rail& rail);
-    
+
         MCAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
-    
+
         MCAPI bool hasNeighborRail(::BlockPos const& pos);
-    
+
         MCAPI void place(int signalStrength, bool first);
-    
+
         MCAPI void removeSoftConnections();
-    
+
         MCAPI void updateConnections(int direction);
-    
+
         MCAPI ~Rail();
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -93,22 +92,30 @@ public:
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 138
-    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
+        /*override*/;
 
     // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 61
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const /*override*/;
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
 
     // vIndex: 86
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
     // vIndex: 39
     virtual bool isRailBlock() const /*override*/;
@@ -156,7 +163,12 @@ public:
     // NOLINTBEGIN
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCFOLD ::AABB $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const;
+    MCFOLD ::AABB $getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -182,5 +194,4 @@ public:
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
-
 };

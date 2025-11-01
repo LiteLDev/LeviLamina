@@ -20,21 +20,24 @@ class SignalingService;
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
-class ClientNetworkSystem : public ::Social::IGameConnectionInfoProvider, public ::Bedrock::EnableNonOwnerReferences, public ::NetworkSystem {
+class ClientNetworkSystem : public ::Social::IGameConnectionInfoProvider,
+                            public ::Bedrock::EnableNonOwnerReferences,
+                            public ::NetworkSystem {
 public:
     // ClientNetworkSystem inner types define
     using DependencyFactory = ::brstd::function_ref<::NetworkSystem::Dependencies()>;
-    
-    using StatisticsFactory = ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>(), ::std::unique_ptr<::NetworkStatistics>()>;
-    
+
+    using StatisticsFactory =
+        ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>(), ::std::unique_ptr<::NetworkStatistics>()>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 336, ::TaskGroup> mTaskGroup;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::SignalingService>> mSignalingService;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mUserLoggingSub;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mUserConnectionQualitySub;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mDisableLanSignalingSub;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                    mTaskGroup;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::SignalingService>>             mSignalingService;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mUserLoggingSub;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mUserConnectionQualitySub;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mDisableLanSignalingSub;
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::NetworkSummary>> mNetworkSummary;
     // NOLINTEND
 
@@ -64,5 +67,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

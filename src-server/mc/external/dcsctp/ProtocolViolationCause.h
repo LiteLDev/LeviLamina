@@ -13,7 +13,8 @@ namespace dcsctp { struct ProtocolViolationCauseConfig; }
 
 namespace dcsctp {
 
-class ProtocolViolationCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::ProtocolViolationCauseConfig> {
+class ProtocolViolationCause : public ::dcsctp::Parameter,
+                               public ::dcsctp::TLVTrait<::dcsctp::ProtocolViolationCauseConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

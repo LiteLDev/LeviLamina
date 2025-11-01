@@ -4,8 +4,7 @@
 
 namespace Bedrock {
 
-template<typename T0>
-class EnumIterator {
-};
+template <typename T0>
+class EnumIterator {};
 
-}
+} // namespace Bedrock

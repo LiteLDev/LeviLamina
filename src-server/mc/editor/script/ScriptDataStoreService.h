@@ -25,8 +25,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk5c7779;
-    ::ll::UntypedStorage<8, 8> mUnka4b06c;
-    ::ll::UntypedStorage<8, 8> mUnkbacdc3;
+    ::ll::UntypedStorage<8, 8>  mUnka4b06c;
+    ::ll::UntypedStorage<8, 8>  mUnkbacdc3;
     ::ll::UntypedStorage<8, 32> mUnkd49f60;
     ::ll::UntypedStorage<8, 32> mUnk8cb4e5;
     ::ll::UntypedStorage<8, 32> mUnk68c06f;
@@ -47,9 +47,19 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptDataStoreService(::Editor::ScriptModule::ScriptDataStoreService&&);
 
-    MCNAPI ScriptDataStoreService(::Editor::Services::DataStoreServiceProvider* dataStoreService, ::Editor::Services::TelemetryServiceProvider* telemetryService, ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ScriptDataStoreService(
+        ::Editor::Services::DataStoreServiceProvider*      dataStoreService,
+        ::Editor::Services::TelemetryServiceProvider*      telemetryService,
+        ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator,
+        ::Scripting::WeakLifetimeScope const&              scope
+    );
 
-    MCNAPI void _handleDataStorePayloadEvent(::HashedString const& dataTag, ::Editor::DataStore::EventType eventType, ::Json::Value const& payload, ::Editor::DataStore::PayloadDescription const&);
+    MCNAPI void _handleDataStorePayloadEvent(
+        ::HashedString const&          dataTag,
+        ::Editor::DataStore::EventType eventType,
+        ::Json::Value const&           payload,
+        ::Editor::DataStore::PayloadDescription const&
+    );
 
     MCNAPI ::Editor::ScriptModule::ScriptDataStoreService& operator=(::Editor::ScriptModule::ScriptDataStoreService&&);
 
@@ -67,7 +77,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptDataStoreService&&);
 
-    MCNAPI void* $ctor(::Editor::Services::DataStoreServiceProvider* dataStoreService, ::Editor::Services::TelemetryServiceProvider* telemetryService, ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(
+        ::Editor::Services::DataStoreServiceProvider*      dataStoreService,
+        ::Editor::Services::TelemetryServiceProvider*      telemetryService,
+        ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator,
+        ::Scripting::WeakLifetimeScope const&              scope
+    );
     // NOLINTEND
 
 public:
@@ -75,7 +90,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

@@ -17,7 +17,6 @@ public:
     ThreadInit& operator=(ThreadInit const&);
     ThreadInit(ThreadInit const&);
     ThreadInit();
-
 };
 
-}
+} // namespace NetherNet

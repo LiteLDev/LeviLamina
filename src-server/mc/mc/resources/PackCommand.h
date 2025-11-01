@@ -13,9 +13,13 @@ namespace PackCommand { struct RepositoriesOptions; }
 namespace PackCommand {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::unique_ptr<::PackCommand::IPackCommandPipeline> createPackCommandPipeline(::std::unique_ptr<::TaskGroup> taskGroup, ::std::unique_ptr<::PackCommand::IResourceRepositories> repositories);
+MCNAPI ::std::unique_ptr<::PackCommand::IPackCommandPipeline> createPackCommandPipeline(
+    ::std::unique_ptr<::TaskGroup>                          taskGroup,
+    ::std::unique_ptr<::PackCommand::IResourceRepositories> repositories
+);
 
-MCNAPI ::std::unique_ptr<::PackCommand::IResourceRepositories> createResourceRepositories(::PackCommand::RepositoriesOptions options);
+MCNAPI ::std::unique_ptr<::PackCommand::IResourceRepositories>
+createResourceRepositories(::PackCommand::RepositoriesOptions options);
 // NOLINTEND
 
-}
+} // namespace PackCommand

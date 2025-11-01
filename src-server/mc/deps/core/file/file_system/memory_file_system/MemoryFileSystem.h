@@ -39,7 +39,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual ::Core::Result _openFile(::std::unique_ptr<::Core::FileImpl>&, ::Core::PathView, ::Core::FileOpenMode, ::Core::FileBufferingMode) /*override*/;
+    virtual ::Core::Result _openFile(
+        ::std::unique_ptr<::Core::FileImpl>&,
+        ::Core::PathView,
+        ::Core::FileOpenMode,
+        ::Core::FileBufferingMode
+    ) /*override*/;
 
     // vIndex: 7
     virtual bool _fileExists(::Core::PathView) /*override*/;
@@ -75,7 +80,11 @@ public:
     virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) /*override*/;
 
     // vIndex: 25
-    virtual ::Core::Result _iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) /*override*/;
+    virtual ::Core::Result _iterateOverDirectory(
+        ::Core::PathView,
+        ::Core::DirectoryIterationFlags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
+    ) /*override*/;
 
     // vIndex: 31
     virtual bool _fileOrDirectoryExists(::Core::PathView) /*override*/;
@@ -93,10 +102,16 @@ public:
     virtual void _initializeInternal() /*override*/;
 
     // vIndex: 47
-    virtual ::Core::Result _writeOperation(::Core::PathView fullPath, ::Core::Result&& result, ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull, uint64 numBytesWritten) /*override*/;
+    virtual ::Core::Result _writeOperation(
+        ::Core::PathView                                fullPath,
+        ::Core::Result&&                                result,
+        ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull,
+        uint64                                          numBytesWritten
+    ) /*override*/;
 
     // vIndex: 49
-    virtual ::std::unique_ptr<::Core::FileImpl> _createMemoryFileHandle(::Core::MemoryFileSystemEntryFile*, ::Core::FileOpenMode, uint64);
+    virtual ::std::unique_ptr<::Core::FileImpl>
+    _createMemoryFileHandle(::Core::MemoryFileSystemEntryFile*, ::Core::FileOpenMode, uint64);
 
     // vIndex: 0
     virtual ~MemoryFileSystem() /*override*/ = default;
@@ -107,7 +122,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

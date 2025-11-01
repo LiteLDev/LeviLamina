@@ -10,9 +10,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
-    ::ll::TypedStorage<4, 4, uint> mLayer;
-    ::ll::TypedStorage<1, 1, uchar> mUpdateFlags;
-    ::ll::TypedStorage<4, 4, uint> mRuntimeId;
+    ::ll::TypedStorage<4, 4, uint>                    mLayer;
+    ::ll::TypedStorage<1, 1, uchar>                   mUpdateFlags;
+    ::ll::TypedStorage<4, 4, uint>                    mRuntimeId;
     // NOLINTEND
-
 };

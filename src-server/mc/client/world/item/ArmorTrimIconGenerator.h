@@ -2,5 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ArmorTrimIconGenerator {
-};
+class ArmorTrimIconGenerator {};

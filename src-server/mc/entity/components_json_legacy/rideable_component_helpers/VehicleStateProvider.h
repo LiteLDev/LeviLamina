@@ -19,7 +19,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool canAddPassenger(::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers, ::RideableComponentData const& vehicleData, ::RideableComponentHelpers::IRideableActor const& vehicleActor, ::RideableComponentHelpers::IRideableActor const& passengerActor) const /*override*/;
+    virtual bool canAddPassenger(
+        ::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers,
+        ::RideableComponentData const&                         vehicleData,
+        ::RideableComponentHelpers::IRideableActor const&      vehicleActor,
+        ::RideableComponentHelpers::IRideableActor const&      passengerActor
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~VehicleStateProvider() /*override*/ = default;
@@ -28,7 +33,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canAddPassenger(::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers, ::RideableComponentData const& vehicleData, ::RideableComponentHelpers::IRideableActor const& vehicleActor, ::RideableComponentHelpers::IRideableActor const& passengerActor) const;
+    MCNAPI bool $canAddPassenger(
+        ::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers,
+        ::RideableComponentData const&                         vehicleData,
+        ::RideableComponentHelpers::IRideableActor const&      vehicleActor,
+        ::RideableComponentHelpers::IRideableActor const&      passengerActor
+    ) const;
     // NOLINTEND
 
 public:
@@ -36,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace RideableComponentHelpers

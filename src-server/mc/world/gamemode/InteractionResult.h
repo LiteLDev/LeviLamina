@@ -7,13 +7,12 @@ public:
     // InteractionResult inner types define
     enum class Result : int {
         Success = 1,
-        Swing = 2,
+        Swing   = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int> mResult;
     // NOLINTEND
-
 };

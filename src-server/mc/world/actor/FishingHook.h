@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,17 +24,17 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float const> SHOOT_SPEED;
     ::ll::TypedStorage<4, 4, float const> SHOOT_POWER;
-    ::ll::TypedStorage<4, 4, int const> NUM_PERCENTAGE_STEPS;
+    ::ll::TypedStorage<4, 4, int const>   NUM_PERCENTAGE_STEPS;
     ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
-    ::ll::TypedStorage<4, 4, float> mBobTimer;
-    ::ll::TypedStorage<4, 4, float> mFishAngle;
-    ::ll::TypedStorage<4, 4, int> mLife;
-    ::ll::TypedStorage<4, 4, int> mFlightTime;
-    ::ll::TypedStorage<4, 4, int> mTimeUntilHooked;
-    ::ll::TypedStorage<4, 4, int> mTimeUntilLured;
-    ::ll::TypedStorage<4, 4, int> mTimeUntilNibble;
-    ::ll::TypedStorage<4, 4, int> mFishingSpeed;
-    ::ll::TypedStorage<1, 1, bool> mInGround;
+    ::ll::TypedStorage<4, 4, float>       mBobTimer;
+    ::ll::TypedStorage<4, 4, float>       mFishAngle;
+    ::ll::TypedStorage<4, 4, int>         mLife;
+    ::ll::TypedStorage<4, 4, int>         mFlightTime;
+    ::ll::TypedStorage<4, 4, int>         mTimeUntilHooked;
+    ::ll::TypedStorage<4, 4, int>         mTimeUntilLured;
+    ::ll::TypedStorage<4, 4, int>         mTimeUntilNibble;
+    ::ll::TypedStorage<4, 4, int>         mFishingSpeed;
+    ::ll::TypedStorage<1, 1, bool>        mInGround;
     // NOLINTEND
 
 public:
@@ -69,7 +69,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FishingHook(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI FishingHook(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCAPI void _fishPosEvent();
 
@@ -103,7 +107,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -127,5 +135,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

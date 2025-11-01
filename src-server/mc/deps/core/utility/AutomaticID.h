@@ -2,6 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template<typename T0, typename T1>
-class AutomaticID {
-};
+template <typename T0, typename T1>
+class AutomaticID {};

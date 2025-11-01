@@ -17,7 +17,11 @@ namespace JsonUtil { class EmptyClass; }
 namespace FeatureLoading {
 // functions
 // NOLINTBEGIN
-MCAPI void _addScatterParamsLegacySchema(::JsonUtil::JsonSchemaObjectNode<::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>, ::FeatureLoading::ConcreteFeatureHolder<::ScatterFeature>>& schemaNode);
+MCAPI void _addScatterParamsLegacySchema(
+    ::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
+        ::FeatureLoading::ConcreteFeatureHolder<::ScatterFeature>>& schemaNode
+);
 // NOLINTEND
 
-}
+} // namespace FeatureLoading

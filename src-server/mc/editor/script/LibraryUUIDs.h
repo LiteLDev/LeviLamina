@@ -12,4 +12,4 @@ MCNAPI ::std::string_view const& EDITOR_SERVER_BINDINGS();
 MCNAPI ::std::string_view const& EDITOR_SERVER_INTERNAL_BINDINGS();
 // NOLINTEND
 
-}
+} // namespace Editor::ScriptModule::LibraryUUIDs

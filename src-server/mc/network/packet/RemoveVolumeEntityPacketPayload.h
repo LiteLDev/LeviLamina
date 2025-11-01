@@ -16,7 +16,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
-    ::ll::TypedStorage<4, 4, ::EntityNetId> mEntityNetId;
+    ::ll::TypedStorage<4, 4, ::EntityNetId>   mEntityNetId;
     // NOLINTEND
-
 };

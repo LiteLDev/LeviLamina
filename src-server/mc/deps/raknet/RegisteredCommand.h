@@ -18,7 +18,6 @@ public:
     RegisteredCommand& operator=(RegisteredCommand const&);
     RegisteredCommand(RegisteredCommand const&);
     RegisteredCommand();
-
 };
 
-}
+} // namespace RakNet

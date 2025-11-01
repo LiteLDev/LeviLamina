@@ -17,10 +17,10 @@ class SctpTransportInformation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk835d12;
-    ::ll::UntypedStorage<8, 8> mUnkda0b33;
+    ::ll::UntypedStorage<4, 4>  mUnk835d12;
+    ::ll::UntypedStorage<8, 8>  mUnkda0b33;
     ::ll::UntypedStorage<8, 16> mUnk65d332;
-    ::ll::UntypedStorage<4, 8> mUnk952b61;
+    ::ll::UntypedStorage<4, 8>  mUnk952b61;
     // NOLINTEND
 
 public:
@@ -32,7 +32,12 @@ public:
     // NOLINTBEGIN
     MCNAPI SctpTransportInformation(::webrtc::SctpTransportInformation const&);
 
-    MCNAPI SctpTransportInformation(::webrtc::SctpTransportState state, ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport, ::std::optional<double> max_message_size, ::std::optional<int> max_channels);
+    MCNAPI SctpTransportInformation(
+        ::webrtc::SctpTransportState                              state,
+        ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport,
+        ::std::optional<double>                                   max_message_size,
+        ::std::optional<int>                                      max_channels
+    );
 
     MCNAPI ::webrtc::SctpTransportInformation& operator=(::webrtc::SctpTransportInformation const&);
 
@@ -44,7 +49,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::SctpTransportInformation const&);
 
-    MCNAPI void* $ctor(::webrtc::SctpTransportState state, ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport, ::std::optional<double> max_message_size, ::std::optional<int> max_channels);
+    MCNAPI void* $ctor(
+        ::webrtc::SctpTransportState                              state,
+        ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport,
+        ::std::optional<double>                                   max_message_size,
+        ::std::optional<int>                                      max_channels
+    );
     // NOLINTEND
 
 public:
@@ -52,7 +62,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

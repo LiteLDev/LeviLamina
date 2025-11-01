@@ -22,7 +22,6 @@ public:
     WinHttpWebSocketExports& operator=(WinHttpWebSocketExports const&);
     WinHttpWebSocketExports(WinHttpWebSocketExports const&);
     WinHttpWebSocketExports();
-
 };
 
-}
+} // namespace xbox::httpclient

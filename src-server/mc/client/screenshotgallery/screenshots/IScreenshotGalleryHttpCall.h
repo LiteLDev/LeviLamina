@@ -24,19 +24,24 @@ public:
     virtual ~IScreenshotGalleryHttpCall() = default;
 
     // vIndex: 1
-    virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<::Screenshots::RawShowcasedScreenshot>>> getGallery(::TaskGroup&, ::Social::XUID) = 0;
+    virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<::Screenshots::RawShowcasedScreenshot>>>
+    getGallery(::TaskGroup&, ::Social::XUID) = 0;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::Async<::std::optional<::Screenshots::GallerySize>> getGallerySize(::TaskGroup&, ::Social::XUID) = 0;
+    virtual ::Bedrock::Threading::Async<::std::optional<::Screenshots::GallerySize>>
+    getGallerySize(::TaskGroup&, ::Social::XUID) = 0;
 
     // vIndex: 3
-    virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<uchar>>> getImage(::TaskGroup&, ::std::string const&) = 0;
+    virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<uchar>>>
+    getImage(::TaskGroup&, ::std::string const&) = 0;
 
     // vIndex: 4
-    virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<uchar>>> getFeaturedImage(::TaskGroup&, ::Social::XUID) = 0;
+    virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<uchar>>>
+    getFeaturedImage(::TaskGroup&, ::Social::XUID) = 0;
 
     // vIndex: 5
-    virtual ::Bedrock::Threading::Async<::std::optional<::Screenshots::RawShowcasedScreenshot>> addImageToShowcase(::TaskGroup&, int64, bool, ::Core::PathBuffer<::std::string> const&) = 0;
+    virtual ::Bedrock::Threading::Async<::std::optional<::Screenshots::RawShowcasedScreenshot>>
+    addImageToShowcase(::TaskGroup&, int64, bool, ::Core::PathBuffer<::std::string> const&) = 0;
 
     // vIndex: 6
     virtual ::Bedrock::Threading::Async<bool> removeShowcasedImage(::TaskGroup&, ::std::string const&) = 0;
@@ -53,7 +58,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Screenshots

@@ -14,15 +14,15 @@ public:
     // clang-format off
     struct Result;
     // clang-format on
-    
+
     // FrameDecryptorInterface inner types define
     enum class Status : int {
-        KOk = 0,
-        KRecoverable = 1,
+        KOk              = 0,
+        KRecoverable     = 1,
         KFailedToDecrypt = 2,
-        KUnknown = 3,
+        KUnknown         = 3,
     };
-    
+
     struct Result {
     public:
         // member variables
@@ -30,15 +30,14 @@ public:
         ::ll::UntypedStorage<4, 4> mUnkfa122e;
         ::ll::UntypedStorage<8, 8> mUnk257a1b;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Result& operator=(Result const&);
         Result(Result const&);
         Result();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -46,7 +45,13 @@ public:
     virtual ~FrameDecryptorInterface() /*override*/ = default;
 
     // vIndex: 3
-    virtual ::webrtc::FrameDecryptorInterface::Result Decrypt(::cricket::MediaType, ::std::vector<uint> const&, ::rtc::ArrayView<uchar const>, ::rtc::ArrayView<uchar const>, ::rtc::ArrayView<uchar>) = 0;
+    virtual ::webrtc::FrameDecryptorInterface::Result Decrypt(
+        ::cricket::MediaType,
+        ::std::vector<uint> const&,
+        ::rtc::ArrayView<uchar const>,
+        ::rtc::ArrayView<uchar const>,
+        ::rtc::ArrayView<uchar>
+    ) = 0;
 
     // vIndex: 4
     virtual uint64 GetMaxPlaintextByteSize(::cricket::MediaType, uint64) = 0;
@@ -57,7 +62,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

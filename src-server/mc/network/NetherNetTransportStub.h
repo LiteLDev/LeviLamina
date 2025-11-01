@@ -31,7 +31,13 @@ public:
     virtual bool IsPacketAvailable(::NetherNet::NetworkID, uint64, uint*) /*override*/;
 
     // vIndex: 3
-    virtual bool ReadPacket(::NetherNet::NetworkID remoteId, uint64 connectionId, void* pubDest, uint cbDest, uint* pcbMessageSize) /*override*/;
+    virtual bool ReadPacket(
+        ::NetherNet::NetworkID remoteId,
+        uint64                 connectionId,
+        void*                  pubDest,
+        uint                   cbDest,
+        uint*                  pcbMessageSize
+    ) /*override*/;
 
     // vIndex: 4
     virtual bool OpenSessionWithUser(::NetherNet::NetworkID) /*override*/;
@@ -40,7 +46,11 @@ public:
     virtual bool CloseSessionWithUser(::NetherNet::NetworkID, uint64) /*override*/;
 
     // vIndex: 6
-    virtual bool GetSessionState(::NetherNet::NetworkID peerId, uint64 connectionId, ::NetherNet::SessionState* pConnectionState) /*override*/;
+    virtual bool GetSessionState(
+        ::NetherNet::NetworkID     peerId,
+        uint64                     connectionId,
+        ::NetherNet::SessionState* pConnectionState
+    ) /*override*/;
 
     // vIndex: 7
     virtual void SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const&) /*override*/;
@@ -75,5 +85,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

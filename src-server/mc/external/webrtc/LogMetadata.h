@@ -32,7 +32,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(char const* file, int line, ::rtc::LoggingSeverity severity);
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc::webrtc_logging_impl

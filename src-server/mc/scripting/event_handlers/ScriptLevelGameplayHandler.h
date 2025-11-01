@@ -19,7 +19,8 @@ namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
-class ScriptLevelGameplayHandler : public ::EventHandlerDispatcher<::LevelGameplayHandler>, public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
+class ScriptLevelGameplayHandler : public ::EventHandlerDispatcher<::LevelGameplayHandler>,
+                                   public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,9 +37,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _handleScriptingWorldInitializeEvent(::ScriptingWorldInitializeEvent const& eventData, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle) const;
+    MCNAPI bool _handleScriptingWorldInitializeEvent(
+        ::ScriptingWorldInitializeEvent const&                                            eventData,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
+    ) const;
 
-    MCNAPI bool _handleWeatherChangedEvent(::LevelWeatherChangedEvent& weatherChangedEvent, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle) const;
+    MCNAPI bool _handleWeatherChangedEvent(
+        ::LevelWeatherChangedEvent&                                                       weatherChangedEvent,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
+    ) const;
     // NOLINTEND
 
 public:
@@ -54,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -41,10 +41,12 @@ public:
     virtual void removeListener(::BlockSourceListener&) /*override*/;
 
     // vIndex: 31
-    virtual ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(::Actor const*, ::AABB const&, bool, bool) /*override*/;
+    virtual ::gsl::span<::gsl::not_null<::Actor*>>
+    fetchEntities(::Actor const*, ::AABB const&, bool, bool) /*override*/;
 
     // vIndex: 30
-    virtual ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) /*override*/;
+    virtual ::gsl::span<::gsl::not_null<::Actor*>>
+    fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) /*override*/;
 
     // vIndex: 16
     virtual bool hasChunksAt(::Bounds const&, bool) const /*override*/;
@@ -61,5 +63,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

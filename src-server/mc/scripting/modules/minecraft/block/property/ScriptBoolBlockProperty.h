@@ -39,11 +39,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBoolBlockProperty(::std::string name, ::BlockState const& blockState, ::std::vector<bool> validValues, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation);
+    MCNAPI ScriptBoolBlockProperty(
+        ::std::string                                                                         name,
+        ::BlockState const&                                                                   blockState,
+        ::std::vector<bool>                                                                   validValues,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
+    );
 
     MCNAPI ::Scripting::Result_deprecated<bool> getState() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty& operator=(::ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty&
+    operator=(::ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
 
     MCNAPI ::Scripting::Result_deprecated<void> setState(bool state);
     // NOLINTEND
@@ -57,7 +63,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name, ::BlockState const& blockState, ::std::vector<bool> validValues, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation);
+    MCNAPI void* $ctor(
+        ::std::string                                                                         name,
+        ::BlockState const&                                                                   blockState,
+        ::std::vector<bool>                                                                   validValues,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
+    );
     // NOLINTEND
 
 public:
@@ -65,7 +76,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

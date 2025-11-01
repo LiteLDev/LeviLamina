@@ -17,14 +17,14 @@ class AngerLevelDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk46a660;
-    ::ll::UntypedStorage<4, 4> mUnk26bb70;
-    ::ll::UntypedStorage<4, 4> mUnk8d98e4;
-    ::ll::UntypedStorage<4, 4> mUnk53b4ae;
-    ::ll::UntypedStorage<1, 1> mUnkaf65ef;
-    ::ll::UntypedStorage<4, 4> mUnk194bba;
+    ::ll::UntypedStorage<4, 4>  mUnk46a660;
+    ::ll::UntypedStorage<4, 4>  mUnk26bb70;
+    ::ll::UntypedStorage<4, 4>  mUnk8d98e4;
+    ::ll::UntypedStorage<4, 4>  mUnk53b4ae;
+    ::ll::UntypedStorage<1, 1>  mUnkaf65ef;
+    ::ll::UntypedStorage<4, 4>  mUnk194bba;
     ::ll::UntypedStorage<8, 24> mUnkef5ae5;
-    ::ll::UntypedStorage<4, 4> mUnk18eb2d;
+    ::ll::UntypedStorage<4, 4>  mUnk18eb2d;
     ::ll::UntypedStorage<8, 64> mUnk743d5b;
     // NOLINTEND
 
@@ -45,7 +45,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AngerLevelDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AngerLevelDefinition>>& root
+    );
     // NOLINTEND
-
 };

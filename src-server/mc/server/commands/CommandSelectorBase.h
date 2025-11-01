@@ -25,33 +25,34 @@ class CommandSelectorBase {
 public:
     // CommandSelectorBase inner types define
     using FilterFunc = ::std::function<bool(::CommandOrigin const&, ::Actor const&)>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mVersion;
-    ::ll::TypedStorage<4, 4, ::CommandSelectionType> mType;
-    ::ll::TypedStorage<4, 4, ::CommandSelectionOrder> mOrder;
-    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::std::string>>> mNameFilters;
+    ::ll::TypedStorage<4, 4, int>                                                             mVersion;
+    ::ll::TypedStorage<4, 4, ::CommandSelectionType>                                          mType;
+    ::ll::TypedStorage<4, 4, ::CommandSelectionOrder>                                         mOrder;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::std::string>>>               mNameFilters;
     ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::ActorDefinitionIdentifier>>> mTypeFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::HashedString>>> mFamilyFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::std::string>>> mTagFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<bool(::CommandOrigin const&, ::Actor const&)>>> mFilterChain;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::HashedString>>>              mFamilyFilters;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::std::string>>>               mTagFilters;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<bool(::CommandOrigin const&, ::Actor const&)>>>
+                                                 mFilterChain;
     ::ll::TypedStorage<4, 16, ::CommandPosition> mPosition;
-    ::ll::TypedStorage<4, 12, ::Vec3> mBoxDeltas;
-    ::ll::TypedStorage<4, 4, float> mRadiusMinSqr;
-    ::ll::TypedStorage<4, 4, float> mRadiusMaxSqr;
-    ::ll::TypedStorage<8, 8, uint64> mCount;
-    ::ll::TypedStorage<1, 1, bool> mIncludeDeadPlayers;
-    ::ll::TypedStorage<1, 1, bool> mIsPositionBound;
-    ::ll::TypedStorage<1, 1, bool> mDistanceFiltered;
-    ::ll::TypedStorage<1, 1, bool> mPositionFiltered;
-    ::ll::TypedStorage<1, 1, bool> mCountFiltered;
-    ::ll::TypedStorage<1, 1, bool> mHaveDeltas;
-    ::ll::TypedStorage<1, 1, bool> mForcePlayer;
-    ::ll::TypedStorage<1, 1, bool> mExcludeAgents;
-    ::ll::TypedStorage<1, 1, bool> mIsExplicitIdSelector;
-    ::ll::TypedStorage<1, 1, bool> mForceDimensionFiltering;
+    ::ll::TypedStorage<4, 12, ::Vec3>            mBoxDeltas;
+    ::ll::TypedStorage<4, 4, float>              mRadiusMinSqr;
+    ::ll::TypedStorage<4, 4, float>              mRadiusMaxSqr;
+    ::ll::TypedStorage<8, 8, uint64>             mCount;
+    ::ll::TypedStorage<1, 1, bool>               mIncludeDeadPlayers;
+    ::ll::TypedStorage<1, 1, bool>               mIsPositionBound;
+    ::ll::TypedStorage<1, 1, bool>               mDistanceFiltered;
+    ::ll::TypedStorage<1, 1, bool>               mPositionFiltered;
+    ::ll::TypedStorage<1, 1, bool>               mCountFiltered;
+    ::ll::TypedStorage<1, 1, bool>               mHaveDeltas;
+    ::ll::TypedStorage<1, 1, bool>               mForcePlayer;
+    ::ll::TypedStorage<1, 1, bool>               mExcludeAgents;
+    ::ll::TypedStorage<1, 1, bool>               mIsExplicitIdSelector;
+    ::ll::TypedStorage<1, 1, bool>               mForceDimensionFiltering;
     // NOLINTEND
 
 public:
@@ -61,13 +62,27 @@ public:
 
     MCAPI void addFilter(::std::function<bool(::CommandOrigin const&, ::Actor const&)> filter);
 
-    MCAPI void addHasItemFilter(::std::string const& itemName, ::std::optional<int> auxValue, ::CommandIntegerRange const& quantity, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::CommandIntegerRange const& slot);
+    MCAPI void addHasItemFilter(
+        ::std::string const&                 itemName,
+        ::std::optional<int>                 auxValue,
+        ::CommandIntegerRange const&         quantity,
+        ::SharedTypes::Legacy::EquipmentSlot equipmentSlot,
+        ::CommandIntegerRange const&         slot
+    );
 
     MCAPI void addHasPermissionFilters(::std::vector<::HasPermissionFilter> const& filters);
 
-    MCAPI void addHasPropertyFilter(::HashedString const& propertyName, bool inverted, ::std::optional<::std::variant<::CommandRationalRange, bool, ::std::string>> const& optionalValue);
+    MCAPI void addHasPropertyFilter(
+        ::HashedString const&                                                               propertyName,
+        bool                                                                                inverted,
+        ::std::optional<::std::variant<::CommandRationalRange, bool, ::std::string>> const& optionalValue
+    );
 
-    MCAPI void addScoreFilter(::std::string const& objName, ::CommandIntegerRange const& range, ::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
+    MCAPI void addScoreFilter(
+        ::std::string const&                                              objName,
+        ::CommandIntegerRange const&                                      range,
+        ::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback
+    );
 
     MCAPI void addTypeFilter(::InvertableFilter<::std::string> const& filter);
 
@@ -107,5 +122,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

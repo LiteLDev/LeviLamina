@@ -12,5 +12,4 @@ public:
     // vIndex: 8
     virtual ~DebugInfoMob() /*override*/ = default;
     // NOLINTEND
-
 };

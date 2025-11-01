@@ -17,7 +17,10 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 
 namespace PublisherItemComponent {
 
-struct OnHitActor : public ::ItemComponent, public ::Bedrock::PubSub::Publisher<void(::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
+struct OnHitActor
+: public ::ItemComponent,
+  public ::Bedrock::PubSub::
+      Publisher<void(::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,7 +43,6 @@ public:
 
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace PublisherItemComponent

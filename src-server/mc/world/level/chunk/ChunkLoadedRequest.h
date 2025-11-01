@@ -25,11 +25,11 @@ class ChunkLoadedRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mAllowNonTickingPlayerAndTickingAreaChunks;
-    ::ll::TypedStorage<1, 1, ::AreaType> mAreaType;
-    ::ll::TypedStorage<4, 48, ::Bounds> mBounds;
-    ::ll::TypedStorage<8, 32, ::std::string> mTickingAreaName;
-    ::ll::TypedStorage<8, 32, ::std::string> mSerializationId;
+    ::ll::TypedStorage<1, 1, bool>                                mAllowNonTickingPlayerAndTickingAreaChunks;
+    ::ll::TypedStorage<1, 1, ::AreaType>                          mAreaType;
+    ::ll::TypedStorage<4, 48, ::Bounds>                           mBounds;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mTickingAreaName;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mSerializationId;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IRequestAction>> mRequestAction;
     // NOLINTEND
 
@@ -44,7 +44,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ChunkLoadedRequest(::ChunkLoadedRequest&&);
 
-    MCNAPI ChunkLoadedRequest(::std::string const& tickingAreaName, ::std::unique_ptr<::IRequestAction> requestAction, bool allowNonTickingPlayerAndTickingAreaChunks);
+    MCNAPI ChunkLoadedRequest(
+        ::std::string const&                tickingAreaName,
+        ::std::unique_ptr<::IRequestAction> requestAction,
+        bool                                allowNonTickingPlayerAndTickingAreaChunks
+    );
 
     MCNAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
 
@@ -60,7 +64,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::DeserializedChunkLoadedRequest load(::std::string const& key, ::CompoundTag const& tag, ::ICommandOriginLoader& loader, ::std::string const& dimensionPrefix, ::JigsawStructureElementRegistry const& elementReg);
+    MCNAPI static ::DeserializedChunkLoadedRequest load(
+        ::std::string const&                    key,
+        ::CompoundTag const&                    tag,
+        ::ICommandOriginLoader&                 loader,
+        ::std::string const&                    dimensionPrefix,
+        ::JigsawStructureElementRegistry const& elementReg
+    );
     // NOLINTEND
 
 public:
@@ -68,7 +78,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ChunkLoadedRequest&&);
 
-    MCNAPI void* $ctor(::std::string const& tickingAreaName, ::std::unique_ptr<::IRequestAction> requestAction, bool allowNonTickingPlayerAndTickingAreaChunks);
+    MCNAPI void* $ctor(
+        ::std::string const&                tickingAreaName,
+        ::std::unique_ptr<::IRequestAction> requestAction,
+        bool                                allowNonTickingPlayerAndTickingAreaChunks
+    );
     // NOLINTEND
 
 public:
@@ -76,5 +90,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

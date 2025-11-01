@@ -19,10 +19,10 @@ struct BlockTransformationDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mHasJsonVersionBeforeValidation;
-    ::ll::TypedStorage<4, 12, ::Vec3> mTranslation;
+    ::ll::TypedStorage<1, 1, bool>                                          mHasJsonVersionBeforeValidation;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mTranslation;
     ::ll::TypedStorage<4, 24, ::BlockTransformationComponent::RotationType> mRotation;
-    ::ll::TypedStorage<4, 24, ::BlockTransformationComponent::ScaleType> mScale;
+    ::ll::TypedStorage<4, 24, ::BlockTransformationComponent::ScaleType>    mScale;
     // NOLINTEND
 
 public:
@@ -82,5 +82,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

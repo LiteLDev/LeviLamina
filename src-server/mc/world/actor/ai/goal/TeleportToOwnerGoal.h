@@ -17,11 +17,11 @@ class TeleportToOwnerGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-    ::ll::TypedStorage<4, 4, int> mCooldownInTicks;
-    ::ll::TypedStorage<8, 8, ::Tick> mCooldownEndTick;
-    ::ll::TypedStorage<4, 12, ::Vec3> mTargetPosition;
+    ::ll::TypedStorage<4, 4, int>                 mCooldownInTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>              mCooldownEndTick;
+    ::ll::TypedStorage<4, 12, ::Vec3>             mTargetPosition;
     // NOLINTEND
 
 public:
@@ -66,5 +66,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

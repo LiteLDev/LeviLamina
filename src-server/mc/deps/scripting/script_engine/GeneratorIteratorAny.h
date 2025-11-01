@@ -22,7 +22,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnkbb8819;
-    ::ll::UntypedStorage<8, 8> mUnk6eb472;
+    ::ll::UntypedStorage<8, 8>  mUnk6eb472;
     // NOLINTEND
 
 public:
@@ -41,7 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GeneratorIteratorAny(::Scripting::IRuntime* runtime, ::Scripting::ContextId contextId, ::Scripting::WeakLifetimeScope scope, ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorIteratorType> const& generatorIteratorHandle, ::Scripting::IObjectInspector* inspector);
+    MCNAPI GeneratorIteratorAny(
+        ::Scripting::IRuntime*                                                          runtime,
+        ::Scripting::ContextId                                                          contextId,
+        ::Scripting::WeakLifetimeScope                                                  scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorIteratorType> const& generatorIteratorHandle,
+        ::Scripting::IObjectInspector*                                                  inspector
+    );
 
     MCNAPI ::Scripting::GeneratorIteratorAny& operator=(::Scripting::GeneratorIteratorAny&& rhs);
     // NOLINTEND
@@ -49,7 +55,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::IRuntime* runtime, ::Scripting::ContextId contextId, ::Scripting::WeakLifetimeScope scope, ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorIteratorType> const& generatorIteratorHandle, ::Scripting::IObjectInspector* inspector);
+    MCNAPI void* $ctor(
+        ::Scripting::IRuntime*                                                          runtime,
+        ::Scripting::ContextId                                                          contextId,
+        ::Scripting::WeakLifetimeScope                                                  scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorIteratorType> const& generatorIteratorHandle,
+        ::Scripting::IObjectInspector*                                                  inspector
+    );
     // NOLINTEND
 
 public:
@@ -63,7 +75,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

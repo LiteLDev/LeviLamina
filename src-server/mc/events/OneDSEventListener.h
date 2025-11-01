@@ -18,20 +18,20 @@ class OneDSEventListener : public ::Social::Events::AggregationEventListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkafadd0;
+    ::ll::UntypedStorage<1, 1>  mUnkafadd0;
     ::ll::UntypedStorage<8, 80> mUnka7b550;
-    ::ll::UntypedStorage<8, 8> mUnkc384c7;
-    ::ll::UntypedStorage<8, 8> mUnkaf557e;
+    ::ll::UntypedStorage<8, 8>  mUnkc384c7;
+    ::ll::UntypedStorage<8, 8>  mUnkaf557e;
     ::ll::UntypedStorage<8, 32> mUnk6979c9;
     ::ll::UntypedStorage<8, 24> mUnka6d8c6;
-    ::ll::UntypedStorage<8, 8> mUnk3d4c0b;
-    ::ll::UntypedStorage<4, 4> mUnkb929d9;
+    ::ll::UntypedStorage<8, 8>  mUnk3d4c0b;
+    ::ll::UntypedStorage<4, 4>  mUnkb929d9;
     ::ll::UntypedStorage<8, 32> mUnkbf3846;
     ::ll::UntypedStorage<8, 32> mUnk489042;
     ::ll::UntypedStorage<8, 32> mUnka6645f;
     ::ll::UntypedStorage<8, 32> mUnk6676ee;
     ::ll::UntypedStorage<8, 32> mUnk5e7b50;
-    ::ll::UntypedStorage<8, 8> mUnk2bd997;
+    ::ll::UntypedStorage<8, 8>  mUnk2bd997;
     // NOLINTEND
 
 public:
@@ -62,7 +62,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddPartA(::std::string const& eventName, ::Json::Value& eventBody, int64 eventTimestamp, bool isSafetyEvent);
+    MCNAPI void
+    AddPartA(::std::string const& eventName, ::Json::Value& eventBody, int64 eventTimestamp, bool isSafetyEvent);
 
     MCNAPI void AddPartAExtensions(::Json::Value& eventBody);
 
@@ -70,7 +71,10 @@ public:
 
     MCNAPI explicit OneDSEventListener(::Core::Path logFileName);
 
-    MCNAPI ::std::vector<::std::string> _buildEventPayloads(::std::vector<::Social::Events::Event> events, ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized);
+    MCNAPI ::std::vector<::std::string> _buildEventPayloads(
+        ::std::vector<::Social::Events::Event>                            events,
+        ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized
+    );
 
     MCNAPI bool _sendBatch();
 
@@ -120,7 +124,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Social::Events

@@ -16,5 +16,4 @@ public:
     zip_error& operator=(zip_error const&);
     zip_error(zip_error const&);
     zip_error();
-
 };

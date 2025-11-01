@@ -19,10 +19,10 @@ class CommandRequestPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mCommand;
+    ::ll::TypedStorage<8, 32, ::std::string>       mCommand;
     ::ll::TypedStorage<8, 64, ::CommandOriginData> mOrigin;
-    ::ll::TypedStorage<4, 4, ::CurrentCmdVersion> mVersion;
-    ::ll::TypedStorage<1, 1, bool> mInternalSource;
+    ::ll::TypedStorage<4, 4, ::CurrentCmdVersion>  mVersion;
+    ::ll::TypedStorage<1, 1, bool>                 mInternalSource;
     // NOLINTEND
 
 public:
@@ -67,5 +67,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

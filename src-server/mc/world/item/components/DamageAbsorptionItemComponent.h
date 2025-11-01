@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ActorDamageCause>> mAbsorbableDamageCauses;
-    ::ll::TypedStorage<1, 1, bool> mAbsorbAllDamageCauses;
+    ::ll::TypedStorage<1, 1, bool>                                                    mAbsorbAllDamageCauses;
     // NOLINTEND
 
 public:
@@ -54,5 +54,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -4,8 +4,7 @@
 
 namespace DataStructures {
 
-template<typename T0>
-class List {
-};
+template <typename T0>
+class List {};
 
-}
+} // namespace DataStructures

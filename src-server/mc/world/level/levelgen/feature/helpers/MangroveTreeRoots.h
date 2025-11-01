@@ -22,15 +22,15 @@ class MangroveTreeRoots : public ::ITreeRoot {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mMaxRootWidth;
-    ::ll::TypedStorage<4, 4, int> mMaxRootLength;
-    ::ll::TypedStorage<4, 8, ::IntRange> mYOffset;
-    ::ll::TypedStorage<4, 12, ::ChanceInformation> mAboveRootBlockChance;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mRootBlockDescriptor;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mAboveRootBlockDescriptor;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mMuddyRootBlockDescriptor;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mMudBlockDescriptor;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mRootsMayGrowThrough;
+    ::ll::TypedStorage<4, 4, int>                                  mMaxRootWidth;
+    ::ll::TypedStorage<4, 4, int>                                  mMaxRootLength;
+    ::ll::TypedStorage<4, 8, ::IntRange>                           mYOffset;
+    ::ll::TypedStorage<4, 12, ::ChanceInformation>                 mAboveRootBlockChance;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mRootBlockDescriptor;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mAboveRootBlockDescriptor;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mMuddyRootBlockDescriptor;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mMudBlockDescriptor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>>    mRootsMayGrowThrough;
     ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
     // NOLINTEND
 
@@ -41,7 +41,14 @@ public:
     virtual ~MangroveTreeRoots() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos> placeRoots(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int trunkHeight, ::RenderParams&, ::TreeHelper::TreeParams const& treeParams) const /*override*/;
+    virtual ::std::optional<::BlockPos> placeRoots(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Random&            random,
+        int                  trunkHeight,
+        ::RenderParams&,
+        ::TreeHelper::TreeParams const& treeParams
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -51,15 +58,32 @@ public:
 
     MCAPI void _placeRoot(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI ::std::vector<::BlockPos> _potentialRootPositions(::BlockPos const& pos, uchar prevDir, ::Random& random, ::BlockPos const& origin) const;
+    MCAPI ::std::vector<::BlockPos>
+    _potentialRootPositions(::BlockPos const& pos, uchar prevDir, ::Random& random, ::BlockPos const& origin) const;
 
-    MCAPI bool _simulateRoots(::IBlockWorldGenAPI& target, ::Random& random, ::BlockPos const& rootPos, ::BlockPos const& newOrigin, uchar dir, ::std::vector<::BlockPos>* rootPositions, int layer, ::TreeHelper::TreeParams const& treeParams) const;
+    MCAPI bool _simulateRoots(
+        ::IBlockWorldGenAPI&            target,
+        ::Random&                       random,
+        ::BlockPos const&               rootPos,
+        ::BlockPos const&               newOrigin,
+        uchar                           dir,
+        ::std::vector<::BlockPos>*      rootPositions,
+        int                             layer,
+        ::TreeHelper::TreeParams const& treeParams
+    ) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeRoots(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int trunkHeight, ::RenderParams&, ::TreeHelper::TreeParams const& treeParams) const;
+    MCAPI ::std::optional<::BlockPos> $placeRoots(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Random&            random,
+        int                  trunkHeight,
+        ::RenderParams&,
+        ::TreeHelper::TreeParams const& treeParams
+    ) const;
     // NOLINTEND
 
 public:
@@ -67,5 +91,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

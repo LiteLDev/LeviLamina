@@ -31,7 +31,6 @@ public:
 
     MCAPI void* $ctor(int64 const& min, int64 const& max);
     // NOLINTEND
-
 };
 
-}
+} // namespace ClimateUtils

@@ -17,4 +17,4 @@ MCNAPI void finishUsingItem(::Mob& mob, ::Tick& finishUsingItemTick);
 MCNAPI bool startUsingItem(::Mob& mob, ::ItemStack const& item, ::Tick& finishUsingItemTick);
 // NOLINTEND
 
-}
+} // namespace UseItemGoalUtility

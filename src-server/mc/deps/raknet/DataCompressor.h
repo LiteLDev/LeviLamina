@@ -4,7 +4,6 @@
 
 namespace RakNet {
 
-class DataCompressor {
-};
+class DataCompressor {};
 
-}
+} // namespace RakNet

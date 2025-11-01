@@ -5,8 +5,8 @@
 namespace BlockCullingData::CullingRule {
 
 enum class Condition : uchar {
-    SameCullingLayer = 0,
-    SameBlock = 1,
+    SameCullingLayer     = 0,
+    SameBlock            = 1,
     SameBlockPermutation = 2,
 };
 

@@ -12,7 +12,6 @@ public:
 
     MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ushort transport_sequence_number);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

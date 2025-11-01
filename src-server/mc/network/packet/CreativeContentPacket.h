@@ -26,37 +26,38 @@ public:
     struct CreativeGroupInfoDescription;
     struct CreativeItemEntryDescription;
     // clang-format on
-    
+
     // CreativeContentPacket inner types define
     struct CreativeGroupInfoDescription {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::CreativeItemCategory const> mCreativeItemCategory;
-        ::ll::TypedStorage<8, 32, ::std::string const> mName;
+        ::ll::TypedStorage<4, 4, ::CreativeItemCategory const>           mCreativeItemCategory;
+        ::ll::TypedStorage<8, 32, ::std::string const>                   mName;
         ::ll::TypedStorage<8, 64, ::NetworkItemInstanceDescriptor const> mIcon;
         // NOLINTEND
-    
     };
-    
+
     struct CreativeItemEntryDescription {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::CreativeItemNetId const> mCreativeItemNetId;
+        ::ll::TypedStorage<4, 4, ::CreativeItemNetId const>              mCreativeItemNetId;
         ::ll::TypedStorage<8, 64, ::NetworkItemInstanceDescriptor const> mItemDescriptor;
-        ::ll::TypedStorage<4, 4, uint const> mIndex;
-        ::ll::TypedStorage<4, 4, uint const> mGroupIndex;
+        ::ll::TypedStorage<4, 4, uint const>                             mIndex;
+        ::ll::TypedStorage<4, 4, uint const>                             mGroupIndex;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::CreativeItemRegistry const> const> mCreativeItemRegistryForWrite;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CreativeContentPacket::CreativeGroupInfoDescription>> mReadGroupInfoDescriptions;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CreativeContentPacket::CreativeItemEntryDescription>> mReadEntryDescriptions;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::CreativeItemRegistry const> const>
+        mCreativeItemRegistryForWrite;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CreativeContentPacket::CreativeGroupInfoDescription>>
+        mReadGroupInfoDescriptions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CreativeContentPacket::CreativeItemEntryDescription>>
+        mReadEntryDescriptions;
     // NOLINTEND
 
 public:
@@ -101,5 +102,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

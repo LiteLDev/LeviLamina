@@ -144,7 +144,6 @@ public:
 
     MCNAPI static void** $vftableForIRandomSeeded();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

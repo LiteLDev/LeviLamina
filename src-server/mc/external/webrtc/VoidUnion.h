@@ -12,6 +12,5 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk501f56;
     ::ll::UntypedStorage<8, 32> mUnkf35481;
     // NOLINTEND
-
 };
-}
+} // namespace webrtc::webrtc_function_impl

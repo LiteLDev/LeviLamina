@@ -2,6 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template<typename T0>
-class DataItem2 {
-};
+template <typename T0>
+class DataItem2 {};

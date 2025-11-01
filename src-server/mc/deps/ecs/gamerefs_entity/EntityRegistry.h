@@ -6,29 +6,30 @@
 #include "mc/deps/ecs/EntityId.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 
-class EntityRegistry : public ::EnableGetWeakRef<::EntityRegistry>, public ::std::enable_shared_from_this<::EntityRegistry> {
+class EntityRegistry : public ::EnableGetWeakRef<::EntityRegistry>,
+                       public ::std::enable_shared_from_this<::EntityRegistry> {
 public:
     // EntityRegistry inner types define
     using Base = ::entt::basic_registry<::EntityId>;
-    
+
     using BaseWeak = ::EnableGetWeakRef<::EntityRegistry>;
-    
+
     using BaseShared = ::std::enable_shared_from_this<::EntityRegistry>;
-    
+
     using EntityInvokeCallbackSig = void(::EntityId);
-    
+
     using EntityInvokeCallbackFunc = ::std::function<void(::EntityId)>;
-    
-    using EntityInvokeCallbackPair = ::std::pair<::std::function<void(::EntityId)>, ::std::function<void (::EntityId)>>;
-    
+
+    using EntityInvokeCallbackPair = ::std::pair<::std::function<void(::EntityId)>, ::std::function<void(::EntityId)>>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mDebugName;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mDebugName;
     ::ll::TypedStorage<8, 304, ::entt::basic_registry<::EntityId>> mRegistry;
-    ::ll::TypedStorage<4, 4, uint> mId;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::EntityId)>> mPreEntityInvoke;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::EntityId)>> mPostEntityInvoke;
+    ::ll::TypedStorage<4, 4, uint>                                 mId;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::EntityId)>>   mPreEntityInvoke;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::EntityId)>>   mPostEntityInvoke;
     // NOLINTEND
 
 public:
@@ -62,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

@@ -4,7 +4,6 @@
 
 namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool {
 
-struct EmptyPoolElement {
-};
+struct EmptyPoolElement {};
 
-}
+} // namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool

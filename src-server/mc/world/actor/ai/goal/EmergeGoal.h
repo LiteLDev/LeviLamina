@@ -21,51 +21,53 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-    
+
     // EmergeGoal inner types define
     class Definition : public ::BaseGoalDefinition {
     public:
         // Definition inner types define
         using self = ::EmergeGoal::Definition;
-        
+
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float> mDuration;
-        ::ll::TypedStorage<4, 4, float> mCooldownSeconds;
+        ::ll::TypedStorage<4, 4, float>                      mDuration;
+        ::ll::TypedStorage<4, 4, float>                      mCooldownSeconds;
         ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnDoneEvent;
         // NOLINTEND
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
         // NOLINTEND
-    
+
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EmergeGoal::Definition>>& root);
+        MCAPI static void buildSchema(
+            ::std::string const&                                                                                   name,
+            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EmergeGoal::Definition>>& root
+        );
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<2, 2, ushort> mDurationTicks;
+    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
+    ::ll::TypedStorage<2, 2, ushort>                     mDurationTicks;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnDoneEvent;
-    ::ll::TypedStorage<8, 8, ::Tick> mCooldownExpiryTick;
-    ::ll::TypedStorage<8, 8, ::Tick> mEndTick;
-    ::ll::TypedStorage<2, 2, ushort> mCooldownTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mCooldownExpiryTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mEndTick;
+    ::ll::TypedStorage<2, 2, ushort>                     mCooldownTicks;
     // NOLINTEND
 
 public:
@@ -120,5 +122,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -12,8 +12,8 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk787867;
     ::ll::UntypedStorage<8, 24> mUnk9c3ab5;
     ::ll::UntypedStorage<8, 32> mUnk306e9c;
-    ::ll::UntypedStorage<1, 1> mUnkc38836;
-    ::ll::UntypedStorage<1, 1> mUnk772ab0;
+    ::ll::UntypedStorage<1, 1>  mUnkc38836;
+    ::ll::UntypedStorage<1, 1>  mUnk772ab0;
     ::ll::UntypedStorage<8, 80> mUnkf3e4dd;
     // NOLINTEND
 
@@ -29,5 +29,4 @@ public:
     // vIndex: 0
     virtual ~DisplayLoggedErrorManager() /*override*/ = default;
     // NOLINTEND
-
 };

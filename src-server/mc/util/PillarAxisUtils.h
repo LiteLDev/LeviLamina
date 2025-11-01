@@ -12,4 +12,4 @@ namespace PillarAxisUtils {
 MCNAPI ::Bedrock::DenseEnumMap<::PillarAxis, ::std::string_view, 3> const& AXIS_NAME();
 // NOLINTEND
 
-}
+} // namespace PillarAxisUtils

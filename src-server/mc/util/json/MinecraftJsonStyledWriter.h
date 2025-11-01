@@ -16,16 +16,16 @@ class MinecraftJsonStyledWriter : public ::Json::Writer {
 public:
     // MinecraftJsonStyledWriter inner types define
     using ChildValues = ::std::vector<::std::string>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mChildValues;
-    ::ll::TypedStorage<8, 32, ::std::string> mDocument;
-    ::ll::TypedStorage<8, 32, ::std::string> mIndentString;
-    ::ll::TypedStorage<4, 4, int> mRightMargin;
-    ::ll::TypedStorage<4, 4, int> mIndentSize;
-    ::ll::TypedStorage<1, 1, bool> mAddChildValues;
+    ::ll::TypedStorage<8, 32, ::std::string>                mDocument;
+    ::ll::TypedStorage<8, 32, ::std::string>                mIndentString;
+    ::ll::TypedStorage<4, 4, int>                           mRightMargin;
+    ::ll::TypedStorage<4, 4, int>                           mIndentSize;
+    ::ll::TypedStorage<1, 1, bool>                          mAddChildValues;
     // NOLINTEND
 
 public:
@@ -43,7 +43,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Json

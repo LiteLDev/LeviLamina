@@ -29,7 +29,8 @@ public:
     virtual bool SetSend(bool) = 0;
 
     // vIndex: 24
-    virtual bool SetVideoSend(uint, ::cricket::VideoOptions const*, ::rtc::VideoSourceInterface<::webrtc::VideoFrame>*) = 0;
+    virtual bool
+    SetVideoSend(uint, ::cricket::VideoOptions const*, ::rtc::VideoSourceInterface<::webrtc::VideoFrame>*) = 0;
 
     // vIndex: 25
     virtual void GenerateSendKeyFrame(uint, ::std::vector<::std::string> const&) = 0;
@@ -58,7 +59,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

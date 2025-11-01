@@ -13,4 +13,4 @@ namespace LoadingScreenSystems {
 MCNAPI void registerServerSystems(::EntitySystems& entitySystems);
 // NOLINTEND
 
-}
+} // namespace LoadingScreenSystems

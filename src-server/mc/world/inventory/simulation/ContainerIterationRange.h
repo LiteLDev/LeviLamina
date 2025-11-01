@@ -9,5 +9,4 @@ public:
     ::ll::TypedStorage<4, 4, int> mStartIndex;
     ::ll::TypedStorage<4, 4, int> mSize;
     // NOLINTEND
-
 };

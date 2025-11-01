@@ -17,20 +17,20 @@ class SnapToSurfaceFeature : public ::IFeature {
 public:
     // SnapToSurfaceFeature inner types define
     enum class Surface : int {
-        Ceiling = 0,
-        Floor = 1,
+        Ceiling          = 0,
+        Floor            = 1,
         RandomHorizontal = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeatureToSnap;
-    ::ll::TypedStorage<4, 4, int> mVerticalSearchRange;
-    ::ll::TypedStorage<4, 4, ::SnapToSurfaceFeature::Surface> mSurface;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>            mFeatureToSnap;
+    ::ll::TypedStorage<4, 4, int>                               mVerticalSearchRange;
+    ::ll::TypedStorage<4, 4, ::SnapToSurfaceFeature::Surface>   mSurface;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedSurfaceBlocks;
-    ::ll::TypedStorage<1, 1, bool> mAllowAirPlacement;
-    ::ll::TypedStorage<1, 1, bool> mAllowUnderwaterPlacement;
+    ::ll::TypedStorage<1, 1, bool>                              mAllowAirPlacement;
+    ::ll::TypedStorage<1, 1, bool>                              mAllowUnderwaterPlacement;
     // NOLINTEND
 
 public:
@@ -46,7 +46,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> _findSnapPos(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::SnapToSurfaceFeature::Surface targetSurface) const;
+    MCAPI ::std::optional<::BlockPos> _findSnapPos(
+        ::IBlockWorldGenAPI&            target,
+        ::BlockPos const&               pos,
+        ::SnapToSurfaceFeature::Surface targetSurface
+    ) const;
     // NOLINTEND
 
 public:
@@ -60,5 +64,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

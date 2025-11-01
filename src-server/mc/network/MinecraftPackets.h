@@ -16,5 +16,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::Packet> createPacket(::MinecraftPacketIds id);
     // NOLINTEND
-
 };

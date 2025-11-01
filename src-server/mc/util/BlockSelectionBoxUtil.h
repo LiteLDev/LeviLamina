@@ -14,4 +14,4 @@ namespace BlockSelectionBoxUtil {
 MCNAPI ::AABB computeAABBFromOriginAndSize(::Vec3 const& origin, ::Vec3 const& size);
 // NOLINTEND
 
-}
+} // namespace BlockSelectionBoxUtil

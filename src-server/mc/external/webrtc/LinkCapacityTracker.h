@@ -15,9 +15,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnk374897;
-    ::ll::UntypedStorage<8, 8> mUnk288b2e;
-    ::ll::UntypedStorage<8, 8> mUnked489c;
-    ::ll::UntypedStorage<8, 8> mUnkab965b;
+    ::ll::UntypedStorage<8, 8>  mUnk288b2e;
+    ::ll::UntypedStorage<8, 8>  mUnked489c;
+    ::ll::UntypedStorage<8, 8>  mUnkab965b;
     // NOLINTEND
 
 public:
@@ -30,7 +30,11 @@ public:
     // NOLINTBEGIN
     MCNAPI LinkCapacityTracker();
 
-    MCNAPI void OnRateUpdate(::std::optional<::webrtc::DataRate> acknowledged, ::webrtc::DataRate target, ::webrtc::Timestamp at_time);
+    MCNAPI void OnRateUpdate(
+        ::std::optional<::webrtc::DataRate> acknowledged,
+        ::webrtc::DataRate                  target,
+        ::webrtc::Timestamp                 at_time
+    );
 
     MCNAPI void OnRttBackoff(::webrtc::DataRate backoff_rate, ::webrtc::Timestamp at_time);
 
@@ -54,7 +58,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

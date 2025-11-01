@@ -23,9 +23,9 @@ class ChunkViewSource : public ::ChunkSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ChunkSource::LoadMode> mParentLoadMode;
+    ::ll::TypedStorage<4, 4, ::ChunkSource::LoadMode>                       mParentLoadMode;
     ::ll::TypedStorage<8, 376, ::GridArea<::std::shared_ptr<::LevelChunk>>> mArea;
-    ::ll::TypedStorage<8, 8, ::ChunkSource&> mMainSource;
+    ::ll::TypedStorage<8, 8, ::ChunkSource&>                                mMainSource;
     // NOLINTEND
 
 public:
@@ -46,7 +46,8 @@ public:
     virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr) /*override*/;
 
     // vIndex: 7
-    virtual ::std::shared_ptr<::LevelChunk> createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
+    virtual ::std::shared_ptr<::LevelChunk>
+    createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
 
     // vIndex: 27
     virtual bool isWithinWorldLimit(::ChunkPos const& cp) const /*override*/;
@@ -63,15 +64,39 @@ public:
     // NOLINTBEGIN
     MCAPI ChunkViewSource(::ChunkViewSource const& otherChunkViewSource);
 
-    MCAPI ChunkViewSource(::ChunkSource& mainSource, ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea, ::Bounds const& bounds);
+    MCAPI ChunkViewSource(
+        ::ChunkSource&                                              mainSource,
+        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea,
+        ::Bounds const&                                             bounds
+    );
 
     MCAPI void clearEntryAtChunkPos(::ChunkPos const& chunkPos);
 
-    MCAPI void move(::Bounds const& bounds, bool isCircle, ::ChunkSourceViewGenerateMode chunkViewGenerateMode, ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add, float const* serverBuildRatio);
+    MCAPI void move(
+        ::Bounds const&               bounds,
+        bool                          isCircle,
+        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
+        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
+        float const*                                                                                   serverBuildRatio
+    );
 
-    MCAPI void move(::BlockPos const& blockMin, ::BlockPos const& blockMax, bool isCircle, ::ChunkSourceViewGenerateMode chunkViewGenerateMode, ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add, float const* serverBuildRatio);
+    MCAPI void move(
+        ::BlockPos const&             blockMin,
+        ::BlockPos const&             blockMax,
+        bool                          isCircle,
+        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
+        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
+        float const*                                                                                   serverBuildRatio
+    );
 
-    MCAPI void move(::BlockPos const& center, int radius, bool isCircle, ::ChunkSourceViewGenerateMode chunkViewGenerateMode, ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add, float const* serverBuildRatio);
+    MCAPI void move(
+        ::BlockPos const&             center,
+        int                           radius,
+        bool                          isCircle,
+        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
+        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
+        float const*                                                                                   serverBuildRatio
+    );
     // NOLINTEND
 
 public:
@@ -79,7 +104,11 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChunkViewSource const& otherChunkViewSource);
 
-    MCAPI void* $ctor(::ChunkSource& mainSource, ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea, ::Bounds const& bounds);
+    MCAPI void* $ctor(
+        ::ChunkSource&                                              mainSource,
+        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea,
+        ::Bounds const&                                             bounds
+    );
     // NOLINTEND
 
 public:
@@ -97,7 +126,8 @@ public:
 
     MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
-    MCFOLD ::std::shared_ptr<::LevelChunk> $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    MCFOLD ::std::shared_ptr<::LevelChunk>
+    $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     MCAPI bool $isWithinWorldLimit(::ChunkPos const& cp) const;
 
@@ -109,5 +139,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

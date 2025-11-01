@@ -26,5 +26,4 @@ public:
     gz_header_s& operator=(gz_header_s const&);
     gz_header_s(gz_header_s const&);
     gz_header_s();
-
 };

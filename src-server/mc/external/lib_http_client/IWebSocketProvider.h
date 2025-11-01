@@ -22,7 +22,8 @@ public:
     virtual ~IWebSocketProvider() = default;
 
     // vIndex: 1
-    virtual HRESULT ConnectAsync(::http_string const&, ::http_string const&, ::HC_WEBSOCKET_OBSERVER*, ::XAsyncBlock*) = 0;
+    virtual HRESULT
+    ConnectAsync(::http_string const&, ::http_string const&, ::HC_WEBSOCKET_OBSERVER*, ::XAsyncBlock*) = 0;
 
     // vIndex: 2
     virtual HRESULT SendAsync(::HC_WEBSOCKET_OBSERVER*, char const*, ::XAsyncBlock*) = 0;
@@ -39,7 +40,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace xbox::httpclient

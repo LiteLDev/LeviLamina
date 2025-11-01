@@ -14,21 +14,21 @@ class WebSocketCommunicator {
 public:
     // WebSocketCommunicator inner types define
     enum class SocketType : uchar {
-        None = 0,
+        None   = 0,
         Client = 1,
         Server = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnka71289;
-    ::ll::UntypedStorage<1, 1> mUnkfe149d;
-    ::ll::UntypedStorage<8, 8> mUnkf245b5;
-    ::ll::UntypedStorage<2, 2> mUnk175cb8;
-    ::ll::UntypedStorage<1, 1> mUnk1c4fa5;
+    ::ll::UntypedStorage<1, 1>  mUnka71289;
+    ::ll::UntypedStorage<1, 1>  mUnkfe149d;
+    ::ll::UntypedStorage<8, 8>  mUnkf245b5;
+    ::ll::UntypedStorage<2, 2>  mUnk175cb8;
+    ::ll::UntypedStorage<1, 1>  mUnk1c4fa5;
     ::ll::UntypedStorage<8, 24> mUnk3b881a;
-    ::ll::UntypedStorage<1, 1> mUnk14febb;
+    ::ll::UntypedStorage<1, 1>  mUnk14febb;
     // NOLINTEND
 
 public:
@@ -67,5 +67,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

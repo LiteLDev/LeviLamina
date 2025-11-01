@@ -17,5 +17,4 @@ public:
     srtp_crypto_kernel_t& operator=(srtp_crypto_kernel_t const&);
     srtp_crypto_kernel_t(srtp_crypto_kernel_t const&);
     srtp_crypto_kernel_t();
-
 };

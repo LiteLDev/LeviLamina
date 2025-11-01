@@ -13,4 +13,4 @@ namespace FlyingPlayerStuckOnGroundWorkaroundSystem {
 MCNAPI void registerSystem(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-}
+} // namespace FlyingPlayerStuckOnGroundWorkaroundSystem

@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 104> mUnk5ed1d2;
-    ::ll::UntypedStorage<8, 8> mUnk75bb3d;
+    ::ll::UntypedStorage<8, 8>   mUnk75bb3d;
     // NOLINTEND
 
 public:
@@ -29,9 +29,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool load(::cereal::SchemaReader& reader, ::entt::meta_handle data, ::entt::meta_any const& loadContext, ::cereal::LoaderConfig const& config);
+    MCNAPI bool load(
+        ::cereal::SchemaReader&       reader,
+        ::entt::meta_handle           data,
+        ::entt::meta_any const&       loadContext,
+        ::cereal::LoaderConfig const& config
+    );
 
-    MCNAPI void loadImpl(::cereal::SchemaReader& reader, ::entt::meta_any instance, ::entt::meta_any const& udata, ::cereal::LoaderConfig const& config);
+    MCNAPI void loadImpl(
+        ::cereal::SchemaReader&       reader,
+        ::entt::meta_any              instance,
+        ::entt::meta_any const&       udata,
+        ::cereal::LoaderConfig const& config
+    );
 
     MCNAPI bool save(::cereal::SchemaWriter& writer, ::entt::meta_handle data, ::cereal::SaverConfig const& config);
 
@@ -43,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal::internal

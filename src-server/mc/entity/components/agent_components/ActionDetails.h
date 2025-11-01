@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk11df84;
-    ::ll::UntypedStorage<4, 4> mUnka6f6b0;
+    ::ll::UntypedStorage<4, 4>  mUnka6f6b0;
     // NOLINTEND
 
 public:
@@ -17,7 +17,6 @@ public:
     ActionDetails& operator=(ActionDetails const&);
     ActionDetails(ActionDetails const&);
     ActionDetails();
-
 };
 
-}
+} // namespace AgentComponents

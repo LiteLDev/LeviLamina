@@ -13,4 +13,4 @@ namespace webrtc::rtcp {
 MCNAPI ::webrtc::rtcp::RemoteEstimateSerializer const* GetRemoteEstimateSerializer();
 // NOLINTEND
 
-}
+} // namespace webrtc::rtcp

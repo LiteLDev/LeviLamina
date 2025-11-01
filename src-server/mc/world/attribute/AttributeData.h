@@ -18,13 +18,13 @@ struct AttributeData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mCurrentValue;
-    ::ll::TypedStorage<4, 4, float> mMinValue;
-    ::ll::TypedStorage<4, 4, float> mMaxValue;
-    ::ll::TypedStorage<4, 4, float> mDefaultValue;
-    ::ll::TypedStorage<4, 4, float> mDefaultMinValue;
-    ::ll::TypedStorage<4, 4, float> mDefaultMaxValue;
-    ::ll::TypedStorage<8, 48, ::HashedString> mName;
+    ::ll::TypedStorage<4, 4, float>                               mCurrentValue;
+    ::ll::TypedStorage<4, 4, float>                               mMinValue;
+    ::ll::TypedStorage<4, 4, float>                               mMaxValue;
+    ::ll::TypedStorage<4, 4, float>                               mDefaultValue;
+    ::ll::TypedStorage<4, 4, float>                               mDefaultMinValue;
+    ::ll::TypedStorage<4, 4, float>                               mDefaultMaxValue;
+    ::ll::TypedStorage<8, 48, ::HashedString>                     mName;
     ::ll::TypedStorage<8, 24, ::std::vector<::AttributeModifier>> mModifiers;
     // NOLINTEND
 
@@ -36,29 +36,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AttributeData(::AttributeData const&);
+    MCAPI AttributeData(::AttributeData const&);
 
-    MCNAPI explicit AttributeData(::AttributeInstance const& instance);
+    MCAPI explicit AttributeData(::AttributeInstance const& instance);
 
-    MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
-    MCNAPI void write(::BinaryStream& stream) const;
+    MCAPI void write(::BinaryStream& stream) const;
 
-    MCNAPI ~AttributeData();
+    MCAPI ~AttributeData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::AttributeData const&);
+    MCAPI void* $ctor(::AttributeData const&);
 
-    MCNAPI void* $ctor(::AttributeInstance const& instance);
+    MCAPI void* $ctor(::AttributeInstance const& instance);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
-
 };

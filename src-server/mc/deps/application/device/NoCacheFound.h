@@ -4,7 +4,6 @@
 
 namespace Bedrock::DeviceIdErrorType {
 
-struct NoCacheFound {
-};
+struct NoCacheFound {};
 
-}
+} // namespace Bedrock::DeviceIdErrorType

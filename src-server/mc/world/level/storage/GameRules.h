@@ -23,65 +23,70 @@ class GameRules : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // GameRules inner types define
     using GameRuleMap = ::std::vector<::GameRule>;
-    
+
     using WorldPolicyMap = ::std::map<::HashedString, ::GameRule>;
-    
+
     enum class GameRulesIndex : int {
-        InvalidGameRule = -1,
-        CommandBlockOutput = 0,
-        DoDaylightCycle = 1,
-        DoEntityDrops = 2,
-        DoFireTick = 3,
-        RecipesUnlock = 4,
-        DoLimitedCrafting = 5,
-        DoMobLoot = 6,
-        DoMobSpawning = 7,
-        DoTileDrops = 8,
-        DoWeatherCycle = 9,
-        DrowningDamage = 10,
-        FallDamage = 11,
-        FireDamage = 12,
-        KeepInventory = 13,
-        MobGriefing = 14,
-        Pvp = 15,
-        ShowCoordinates = 16,
-        LocatorBar = 17,
-        ShowDaysPlayed = 18,
-        DoNaturalRegeneration = 19,
-        DoTntExplode = 20,
-        SendCommandFeedback = 21,
-        MaxCommandChainLength = 22,
-        DoInsomnia = 23,
-        CommandBlocksEnabled = 24,
-        RandomTickSpeed = 25,
-        DoImmediateRespawn = 26,
-        ShowDeathMessages = 27,
-        FunctionCommandLimit = 28,
-        PlayerSpawnRadius = 29,
-        ShowTags = 30,
-        FreezeDamage = 31,
-        RespawnBlocksExplode = 32,
-        ShowBorderEffect = 33,
-        ShowRecipeMessages = 34,
-        PlayerSleepingPercentage = 35,
+        InvalidGameRule           = -1,
+        CommandBlockOutput        = 0,
+        DoDaylightCycle           = 1,
+        DoEntityDrops             = 2,
+        DoFireTick                = 3,
+        RecipesUnlock             = 4,
+        DoLimitedCrafting         = 5,
+        DoMobLoot                 = 6,
+        DoMobSpawning             = 7,
+        DoTileDrops               = 8,
+        DoWeatherCycle            = 9,
+        DrowningDamage            = 10,
+        FallDamage                = 11,
+        FireDamage                = 12,
+        KeepInventory             = 13,
+        MobGriefing               = 14,
+        Pvp                       = 15,
+        ShowCoordinates           = 16,
+        LocatorBar                = 17,
+        ShowDaysPlayed            = 18,
+        DoNaturalRegeneration     = 19,
+        DoTntExplode              = 20,
+        SendCommandFeedback       = 21,
+        MaxCommandChainLength     = 22,
+        DoInsomnia                = 23,
+        CommandBlocksEnabled      = 24,
+        RandomTickSpeed           = 25,
+        DoImmediateRespawn        = 26,
+        ShowDeathMessages         = 27,
+        FunctionCommandLimit      = 28,
+        PlayerSpawnRadius         = 29,
+        ShowTags                  = 30,
+        FreezeDamage              = 31,
+        RespawnBlocksExplode      = 32,
+        ShowBorderEffect          = 33,
+        ShowRecipeMessages        = 34,
+        PlayerSleepingPercentage  = 35,
         ProjectilesCanBreakBlocks = 36,
-        TntExplosionDropDecay = 37,
-        VanillaGameRuleCount = 38,
-        GlobalMute = 38,
-        AllowDestructiveObjects = 39,
-        AllowMobs = 40,
-        CodeBuilder = 41,
-        EduCloudSave = 42,
-        EduGameRuleCount = 43,
-        GameRuleCount = 43,
+        TntExplosionDropDecay     = 37,
+        VanillaGameRuleCount      = 38,
+        GlobalMute                = 38,
+        AllowDestructiveObjects   = 39,
+        AllowMobs                 = 40,
+        CodeBuilder               = 41,
+        EduCloudSave              = 42,
+        EduGameRuleCount          = 43,
+        GameRuleCount             = 43,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::GameRule>> mGameRules;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GameRule>>              mGameRules;
     ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::GameRule>> mWorldPolicies;
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::GameRules const&, ::GameRuleId const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mGameRuleChangePublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::GameRules const&, ::GameRuleId const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mGameRuleChangePublisher;
     // NOLINTEND
 
 public:
@@ -102,7 +107,15 @@ public:
 
     MCAPI void _registerRules();
 
-    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> _setGameRule(::GameRule* gameRule, ::std::variant<::std::monostate, bool, int, float> value, ::GameRule::Type type, bool returnPacket, bool* pValueValidated, bool* pValueChanged, ::GameRule::ValidationError* errorOutput);
+    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> _setGameRule(
+        ::GameRule*                                        gameRule,
+        ::std::variant<::std::monostate, bool, int, float> value,
+        ::GameRule::Type                                   type,
+        bool                                               returnPacket,
+        bool*                                              pValueValidated,
+        bool*                                              pValueChanged,
+        ::GameRule::ValidationError*                       errorOutput
+    );
 
     MCAPI ::std::unique_ptr<::GameRulesChangedPacket> createAllGameRulesPacket() const;
 
@@ -120,9 +133,23 @@ public:
 
     MCAPI void setMarketplaceOverrides();
 
-    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> setRule(::GameRuleId rule, bool value, bool returnPacket, bool* pValueValidated, bool* pValueChanged, ::GameRule::ValidationError* errorOutput);
+    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> setRule(
+        ::GameRuleId                 rule,
+        bool                         value,
+        bool                         returnPacket,
+        bool*                        pValueValidated,
+        bool*                        pValueChanged,
+        ::GameRule::ValidationError* errorOutput
+    );
 
-    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> setRule(::GameRuleId rule, int value, bool returnPacket, bool* pValueValidated, bool* pValueChanged, ::GameRule::ValidationError* errorOutput);
+    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> setRule(
+        ::GameRuleId                 rule,
+        int                          value,
+        bool                         returnPacket,
+        bool*                        pValueValidated,
+        bool*                        pValueChanged,
+        ::GameRule::ValidationError* errorOutput
+    );
 
     MCAPI void setTagData(::CompoundTag& tag) const;
     // NOLINTEND
@@ -160,5 +187,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

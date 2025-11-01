@@ -17,7 +17,6 @@ public:
     Default& operator=(Default const&);
     Default(Default const&);
     Default();
-
 };
 
-}
+} // namespace Bedrock::Threading::Burst::Strategy

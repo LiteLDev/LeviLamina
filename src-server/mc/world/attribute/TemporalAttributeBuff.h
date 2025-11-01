@@ -16,9 +16,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::EffectDuration> mDuration;
-    ::ll::TypedStorage<4, 4, int> mLifeTimer;
-    ::ll::TypedStorage<4, 4, float> mBaseAmount;
-    ::ll::TypedStorage<1, 1, bool> mIsSerializable;
+    ::ll::TypedStorage<4, 4, int>              mLifeTimer;
+    ::ll::TypedStorage<4, 4, float>            mBaseAmount;
+    ::ll::TypedStorage<1, 1, bool>             mIsSerializable;
     // NOLINTEND
 
 public:
@@ -51,33 +51,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TemporalAttributeBuff(::TemporalAttributeBuff const&);
+    MCAPI TemporalAttributeBuff(::TemporalAttributeBuff const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::TemporalAttributeBuff const&);
+    MCAPI void* $ctor(::TemporalAttributeBuff const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $shouldBuff() const;
+    MCAPI bool $shouldBuff() const;
 
-    MCNAPI bool $isComplete() const;
+    MCAPI bool $isComplete() const;
 
-    MCNAPI bool $isInstantaneous() const;
+    MCFOLD bool $isInstantaneous() const;
 
-    MCNAPI bool $isSerializable() const;
+    MCAPI bool $isSerializable() const;
 
-    MCNAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
+    MCAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
     // NOLINTEND
 
 public:
@@ -85,5 +85,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -13,7 +13,7 @@ public:
     // clang-format off
     struct PackedBools;
     // clang-format on
-    
+
     // Material inner types define
     struct PackedBools {
     public:
@@ -25,23 +25,22 @@ public:
         bool mUnk443042 : 1;
         bool mUnk450720 : 1;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PackedBools& operator=(PackedBools const&);
         PackedBools(PackedBools const&);
         PackedBools();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkf65d90;
-    ::ll::UntypedStorage<4, 4> mUnk98f450;
-    ::ll::UntypedStorage<1, 1> mUnk1c7c71;
-    ::ll::UntypedStorage<1, 1> mUnkf68e6c;
-    ::ll::UntypedStorage<1, 1> mUnk96c7ef;
+    ::ll::UntypedStorage<4, 4>  mUnk98f450;
+    ::ll::UntypedStorage<1, 1>  mUnk1c7c71;
+    ::ll::UntypedStorage<1, 1>  mUnkf68e6c;
+    ::ll::UntypedStorage<1, 1>  mUnk96c7ef;
     // NOLINTEND
 
 public:
@@ -56,7 +55,6 @@ public:
     // vIndex: 0
     virtual ~Material() /*override*/ = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace ClientBlockPipeline

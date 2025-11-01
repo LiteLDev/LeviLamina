@@ -13,9 +13,13 @@ struct LegacyMolangVariableComponent;
 namespace LegacyMolangVariableUpdate {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::array<::HashedString, 24> getEnderDragonHistoricalFrameVariables();
+MCAPI ::std::array<::HashedString, 24> getEnderDragonHistoricalFrameVariables();
 
-MCNAPI void updateEntitySpecificMolangVariables(::Mob& mob, ::LegacyMolangVariableComponent const& molangVariableComponent, ::RenderParams& renderParams);
+MCAPI void updateEntitySpecificMolangVariables(
+    ::Mob&                                 mob,
+    ::LegacyMolangVariableComponent const& molangVariableComponent,
+    ::RenderParams&                        renderParams
+);
 // NOLINTEND
 
-}
+} // namespace LegacyMolangVariableUpdate

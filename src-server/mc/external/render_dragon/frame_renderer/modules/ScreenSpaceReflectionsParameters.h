@@ -32,7 +32,6 @@ public:
     ScreenSpaceReflectionsParameters& operator=(ScreenSpaceReflectionsParameters const&);
     ScreenSpaceReflectionsParameters(ScreenSpaceReflectionsParameters const&);
     ScreenSpaceReflectionsParameters();
-
 };
 
-}
+} // namespace dragon::framerenderer::modules

@@ -20,9 +20,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency& operator=(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&&);
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&&);
 
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency& operator=(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
 
     MCNAPI ~NativeModuleDependency();
     // NOLINTEND
@@ -32,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v3_0_0::PackManifestDefinition

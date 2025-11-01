@@ -14,8 +14,8 @@ class OpenDoorGoal : public ::DoorInteractGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mCloseDoor;
-    ::ll::TypedStorage<4, 4, int> mForgetTime;
+    ::ll::TypedStorage<1, 1, bool>   mCloseDoor;
+    ::ll::TypedStorage<4, 4, int>    mForgetTime;
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
 
@@ -71,5 +71,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

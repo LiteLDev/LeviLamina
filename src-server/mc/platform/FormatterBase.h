@@ -4,7 +4,6 @@
 
 namespace Bedrock {
 
-struct FormatterBase {
-};
+struct FormatterBase {};
 
-}
+} // namespace Bedrock

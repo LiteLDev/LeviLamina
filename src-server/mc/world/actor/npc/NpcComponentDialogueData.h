@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mOwner;
-    ::ll::TypedStorage<1, 1, bool> mIsRemoteFire;
+    ::ll::TypedStorage<1, 1, bool>             mIsRemoteFire;
     // NOLINTEND
 
 public:
@@ -66,5 +66,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

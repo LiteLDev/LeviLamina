@@ -16,5 +16,4 @@ public:
     MovementEffect& operator=(MovementEffect const&);
     MovementEffect(MovementEffect const&);
     MovementEffect();
-
 };

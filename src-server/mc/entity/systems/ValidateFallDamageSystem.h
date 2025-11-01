@@ -25,9 +25,27 @@ namespace ValidateFallDamageSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void doValidateFallDamage(::EventingDispatcherComponent const& eventingDispatcherComponent, ::Optional<::ServerPlayerCurrentMovementComponent const> const& serverPlayerCurrentMovementComponent, ::Optional<::FallDamageResultComponent const> const& playerFallDamageResultComponent, ::Optional<::PassengerComponent const> const& passengerComponent, ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent const, ::FallDamageResultComponent const> vehicleView, ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView);
+MCNAPI void doValidateFallDamage(
+    ::EventingDispatcherComponent const&                            eventingDispatcherComponent,
+    ::Optional<::ServerPlayerCurrentMovementComponent const> const& serverPlayerCurrentMovementComponent,
+    ::Optional<::FallDamageResultComponent const> const&            playerFallDamageResultComponent,
+    ::Optional<::PassengerComponent const> const&                   passengerComponent,
+    ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent const, ::FallDamageResultComponent const> vehicleView,
+    ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
+);
 
-MCNAPI void tick(::ViewT<::StrictEntityContext, ::Include<::ServerPlayerComponent>, ::EventingDispatcherComponent const, ::Optional<::ServerPlayerCurrentMovementComponent const>, ::Optional<::FallDamageResultComponent const>, ::Optional<::PassengerComponent const>> mainView, ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent const, ::FallDamageResultComponent const> vehicleView, ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView, ::ViewT<::StrictEntityContext, ::FallDamageResultComponent const> fallDamageView);
+MCNAPI void tick(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ServerPlayerComponent>,
+        ::EventingDispatcherComponent const,
+        ::Optional<::ServerPlayerCurrentMovementComponent const>,
+        ::Optional<::FallDamageResultComponent const>,
+        ::Optional<::PassengerComponent const>>                                                            mainView,
+    ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent const, ::FallDamageResultComponent const> vehicleView,
+    ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent>   requestQueueView,
+    ::ViewT<::StrictEntityContext, ::FallDamageResultComponent const> fallDamageView
+);
 // NOLINTEND
 
-}
+} // namespace ValidateFallDamageSystem

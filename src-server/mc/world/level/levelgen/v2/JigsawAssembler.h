@@ -24,9 +24,21 @@ struct JigsawAssembler {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::br::worldgen::GenerationStub> construct(::br::worldgen::GenerationContext& context, ::br::worldgen::WorldGenContext const& worldGenContext, ::std::string_view startPool, ::std::string_view startJigsawName, int maxDepth, ::BlockPos startPos, ::br::worldgen::HeightmapProjection::Type heightmapProjection, ::br::worldgen::MaxDistanceFromCenter maxDistanceFromCenter, ::br::worldgen::DimensionPadding dimensionPadding, ::PoolAliasBinding::PoolAliasLookup&& poolAliasLookup, ::br::worldgen::JigsawExpansion expansion, ::br::worldgen::LiquidSettings liquidSettings);
+    MCAPI static ::std::optional<::br::worldgen::GenerationStub> construct(
+        ::br::worldgen::GenerationContext&        context,
+        ::br::worldgen::WorldGenContext const&    worldGenContext,
+        ::std::string_view                        startPool,
+        ::std::string_view                        startJigsawName,
+        int                                       maxDepth,
+        ::BlockPos                                startPos,
+        ::br::worldgen::HeightmapProjection::Type heightmapProjection,
+        ::br::worldgen::MaxDistanceFromCenter     maxDistanceFromCenter,
+        ::br::worldgen::DimensionPadding          dimensionPadding,
+        ::PoolAliasBinding::PoolAliasLookup&&     poolAliasLookup,
+        ::br::worldgen::JigsawExpansion           expansion,
+        ::br::worldgen::LiquidSettings            liquidSettings
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

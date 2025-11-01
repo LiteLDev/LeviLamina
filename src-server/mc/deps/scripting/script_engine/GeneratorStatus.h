@@ -16,7 +16,6 @@ public:
     GeneratorStatus& operator=(GeneratorStatus const&);
     GeneratorStatus(GeneratorStatus const&);
     GeneratorStatus();
-
 };
 
-}
+} // namespace Scripting

@@ -4,7 +4,6 @@
 
 namespace Scripting::internal {
 
-struct ObjectRegistryUtilities {
-};
+struct ObjectRegistryUtilities {};
 
-}
+} // namespace Scripting::internal

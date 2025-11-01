@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/versionless/actor/BaseGoalDefinition.h"
+#include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,10 +16,10 @@ struct EatMobGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf8d276;
-    ::ll::UntypedStorage<4, 4> mUnkfa4e4c;
-    ::ll::UntypedStorage<4, 4> mUnk3d93ba;
-    ::ll::UntypedStorage<4, 4> mUnk8ae5e1;
+    ::ll::UntypedStorage<4, 4>  mUnkf8d276;
+    ::ll::UntypedStorage<4, 4>  mUnkfa4e4c;
+    ::ll::UntypedStorage<4, 4>  mUnk3d93ba;
+    ::ll::UntypedStorage<4, 4>  mUnk8ae5e1;
     ::ll::UntypedStorage<8, 32> mUnk707bad;
     ::ll::UntypedStorage<8, 32> mUnk542448;
     // NOLINTEND
@@ -63,7 +63,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_100

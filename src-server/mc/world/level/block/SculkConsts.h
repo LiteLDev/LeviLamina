@@ -22,4 +22,4 @@ MCAPI ::std::string const& POS_Z_TAG();
 MCAPI ::std::string const& UPDATE_DELAY_TAG();
 // NOLINTEND
 
-}
+} // namespace SculkConsts

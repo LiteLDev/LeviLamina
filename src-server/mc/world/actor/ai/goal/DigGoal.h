@@ -16,28 +16,28 @@ class DigGoal : public ::Goal {
 public:
     // DigGoal inner types define
     enum class CanUseResult : int {
-        CanDig = 0,
-        IsDigging = 1,
-        NamedAndNotAllowedToDigWhenNamed = 2,
-        NotOnGoundOrInWaterOrInLava = 3,
+        CanDig                               = 0,
+        IsDigging                            = 1,
+        NamedAndNotAllowedToDigWhenNamed     = 2,
+        NotOnGoundOrInWaterOrInLava          = 3,
         CanSeeDaylightAndShouldDigInDaylight = 4,
-        DisturbedByVibration = 5,
-        DisturbedBySuspicion = 6,
-        IdlingBeforeStartingGoalAgain = 7,
+        DisturbedByVibration                 = 5,
+        DisturbedBySuspicion                 = 6,
+        IdlingBeforeStartingGoalAgain        = 7,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<8, 8, ::Tick> mGoalInitializationTick;
-    ::ll::TypedStorage<4, 4, uint> mIdleTimeTicks;
-    ::ll::TypedStorage<2, 2, ushort> mDurationTicks;
-    ::ll::TypedStorage<8, 8, ::Tick> mEndTick;
-    ::ll::TypedStorage<1, 1, bool> mAllowDigWhenNamed;
-    ::ll::TypedStorage<1, 1, bool> mVibrationIsDisturbance;
-    ::ll::TypedStorage<1, 1, bool> mSuspicionIsDisturbance;
-    ::ll::TypedStorage<1, 1, bool> mDigsInDaylight;
+    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mGoalInitializationTick;
+    ::ll::TypedStorage<4, 4, uint>                       mIdleTimeTicks;
+    ::ll::TypedStorage<2, 2, ushort>                     mDurationTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mEndTick;
+    ::ll::TypedStorage<1, 1, bool>                       mAllowDigWhenNamed;
+    ::ll::TypedStorage<1, 1, bool>                       mVibrationIsDisturbance;
+    ::ll::TypedStorage<1, 1, bool>                       mSuspicionIsDisturbance;
+    ::ll::TypedStorage<1, 1, bool>                       mDigsInDaylight;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnStartEvent;
     // NOLINTEND
 
@@ -99,5 +99,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

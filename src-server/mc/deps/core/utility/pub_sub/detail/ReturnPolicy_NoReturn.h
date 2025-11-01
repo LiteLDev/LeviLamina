@@ -4,7 +4,6 @@
 
 namespace Bedrock::PubSub::Detail {
 
-struct ReturnPolicy_NoReturn {
-};
+struct ReturnPolicy_NoReturn {};
 
-}
+} // namespace Bedrock::PubSub::Detail

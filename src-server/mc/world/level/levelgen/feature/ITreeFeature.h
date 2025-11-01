@@ -19,9 +19,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 128, ::TreeHelper::TreeParams> mTreeParams;
-    ::ll::TypedStorage<8, 8, ::ITreeTrunkWrapper> mTrunk;
-    ::ll::TypedStorage<8, 8, ::ITreeCanopyWrapper> mCanopy;
-    ::ll::TypedStorage<8, 8, ::ITreeRootWrapper> mRoots;
+    ::ll::TypedStorage<8, 8, ::ITreeTrunkWrapper>        mTrunk;
+    ::ll::TypedStorage<8, 8, ::ITreeCanopyWrapper>       mCanopy;
+    ::ll::TypedStorage<8, 8, ::ITreeRootWrapper>         mRoots;
     // NOLINTEND
 
 public:
@@ -45,5 +45,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

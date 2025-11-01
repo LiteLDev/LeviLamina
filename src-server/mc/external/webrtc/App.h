@@ -17,8 +17,8 @@ class App : public ::webrtc::rtcp::RtcpPacket {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk28d016;
-    ::ll::UntypedStorage<4, 4> mUnkd5d374;
+    ::ll::UntypedStorage<1, 1>  mUnk28d016;
+    ::ll::UntypedStorage<4, 4>  mUnkd5d374;
     ::ll::UntypedStorage<8, 24> mUnka79393;
     // NOLINTEND
 
@@ -37,7 +37,12 @@ public:
     virtual uint64 BlockLength() const /*override*/;
 
     // vIndex: 2
-    virtual bool Create(uchar* packet, uint64* index, uint64 max_length, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback) const /*override*/;
+    virtual bool Create(
+        uchar*                                                   packet,
+        uint64*                                                  index,
+        uint64                                                   max_length,
+        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -65,7 +70,12 @@ public:
     // NOLINTBEGIN
     MCNAPI uint64 $BlockLength() const;
 
-    MCNAPI bool $Create(uchar* packet, uint64* index, uint64 max_length, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback) const;
+    MCNAPI bool $Create(
+        uchar*                                                   packet,
+        uint64*                                                  index,
+        uint64                                                   max_length,
+        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
+    ) const;
     // NOLINTEND
 
 public:
@@ -73,7 +83,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc::rtcp

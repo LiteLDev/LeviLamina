@@ -24,4 +24,4 @@ MCNAPI ::std::string const& ALLOWED_EXTENSIONS_STR();
 MCNAPI ::std::set<::std::string_view> const& ALLOWED_FILETYPES();
 // NOLINTEND
 
-}
+} // namespace Editor::ThumbnailCacheHelpers

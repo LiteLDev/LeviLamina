@@ -4,7 +4,6 @@
 
 namespace Scripting {
 
-struct GeneratorType {
-};
+struct GeneratorType {};
 
-}
+} // namespace Scripting

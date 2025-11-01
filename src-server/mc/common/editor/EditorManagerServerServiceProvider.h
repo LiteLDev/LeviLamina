@@ -18,7 +18,8 @@ public:
     virtual ~EditorManagerServerServiceProvider() = default;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Subscription registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription
+        registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)>) = 0;
     // NOLINTEND
 
 public:
@@ -26,7 +27,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

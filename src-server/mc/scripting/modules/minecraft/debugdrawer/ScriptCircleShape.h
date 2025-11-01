@@ -28,10 +28,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void populatePacketData(::ShapeDataPayload& packetShapeData) const /*override*/;
+    virtual void populatePacketData(::ShapeDataPayload& packet) const /*override*/;
 
     // vIndex: 2
-    virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
+    virtual void applyUpdatedData(::ShapeDataPayload const& packet) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptCircleShape() /*override*/;
@@ -42,7 +42,8 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptCircleShape(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
 
-    MCFOLD ::ScriptModuleDebugUtilities::ScriptCircleShape& operator=(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
+    MCFOLD ::ScriptModuleDebugUtilities::ScriptCircleShape&
+    operator=(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
     // NOLINTEND
 
 public:
@@ -66,9 +67,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $populatePacketData(::ShapeDataPayload& packetShapeData) const;
+    MCFOLD void $populatePacketData(::ShapeDataPayload& packet) const;
 
-    MCFOLD void $applyUpdatedData(::ShapeDataPayload const& existing);
+    MCFOLD void $applyUpdatedData(::ShapeDataPayload const& packet);
     // NOLINTEND
 
 public:
@@ -76,7 +77,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleDebugUtilities

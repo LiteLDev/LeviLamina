@@ -16,7 +16,12 @@ namespace SoundEventSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo create();
 
-MCNAPI void doSoundEventSystem(::StrictEntityContext const&, ::LevelComponent& level, ::SoundEventRequestQueueComponent& requests, ::GetAttachPositionViews const& getAttachPosViews);
+MCNAPI void doSoundEventSystem(
+    ::StrictEntityContext const&,
+    ::LevelComponent&                  level,
+    ::SoundEventRequestQueueComponent& requests,
+    ::GetAttachPositionViews const&    getAttachPosViews
+);
 // NOLINTEND
 
-}
+} // namespace SoundEventSystem

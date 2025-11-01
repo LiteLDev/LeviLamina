@@ -16,7 +16,6 @@ public:
     WinHttpCallbackContext& operator=(WinHttpCallbackContext const&);
     WinHttpCallbackContext(WinHttpCallbackContext const&);
     WinHttpCallbackContext();
-
 };
 
-}
+} // namespace xbox::httpclient

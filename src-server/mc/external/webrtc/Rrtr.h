@@ -24,7 +24,6 @@ public:
 
     MCNAPI void Parse(uchar const* buffer);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc::rtcp

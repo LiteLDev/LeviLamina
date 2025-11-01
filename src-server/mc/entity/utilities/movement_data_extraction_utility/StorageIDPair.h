@@ -19,7 +19,6 @@ public:
     StorageIDPair& operator=(StorageIDPair const&);
     StorageIDPair(StorageIDPair const&);
     StorageIDPair();
-
 };
 
-}
+} // namespace MovementDataExtractionUtility

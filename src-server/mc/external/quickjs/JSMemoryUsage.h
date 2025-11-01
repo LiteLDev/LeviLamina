@@ -39,5 +39,4 @@ public:
     JSMemoryUsage& operator=(JSMemoryUsage const&);
     JSMemoryUsage(JSMemoryUsage const&);
     JSMemoryUsage();
-
 };

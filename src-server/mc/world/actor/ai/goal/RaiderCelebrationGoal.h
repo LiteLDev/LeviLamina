@@ -22,58 +22,62 @@ public:
     // clang-format off
     class RaiderCelebrationDefinition;
     // clang-format on
-    
+
     // RaiderCelebrationGoal inner types define
     class RaiderCelebrationDefinition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
-        ::ll::TypedStorage<4, 8, ::FloatRange> mSoundIntervalRange;
-        ::ll::TypedStorage<4, 8, ::FloatRange> mJumpIntervalRange;
-        ::ll::TypedStorage<4, 4, float> mDuration;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mCelebrationEndEvent;
+        ::ll::TypedStorage<4, 8, ::FloatRange>                           mSoundIntervalRange;
+        ::ll::TypedStorage<4, 8, ::FloatRange>                           mJumpIntervalRange;
+        ::ll::TypedStorage<4, 4, float>                                  mDuration;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mCelebrationEndEvent;
         // NOLINTEND
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~RaiderCelebrationDefinition() /*override*/ = default;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI void addCelebrationSoundByName(::std::string const& name);
         // NOLINTEND
-    
+
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RaiderCelebrationGoal::RaiderCelebrationDefinition>>& root);
+        MCAPI static void buildSchema(
+            ::std::string const&                                        name,
+            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+                ::JsonUtil::EmptyClass,
+                ::RaiderCelebrationGoal::RaiderCelebrationDefinition>>& root
+        );
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, int> mNextJumpTickTimer;
-    ::ll::TypedStorage<4, 4, int> mNextSoundTickTimer;
-    ::ll::TypedStorage<4, 4, int> mRuntimeTicks;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<4, 4, int>                                    mNextJumpTickTimer;
+    ::ll::TypedStorage<4, 4, int>                                    mNextSoundTickTimer;
+    ::ll::TypedStorage<4, 4, int>                                    mRuntimeTicks;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
-    ::ll::TypedStorage<4, 8, ::FloatRange> mSoundIntervalRange;
-    ::ll::TypedStorage<4, 8, ::FloatRange> mJumpIntervalRange;
-    ::ll::TypedStorage<4, 4, float> mDuration;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mCelebrationEndEvent;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                           mSoundIntervalRange;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                           mJumpIntervalRange;
+    ::ll::TypedStorage<4, 4, float>                                  mDuration;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mCelebrationEndEvent;
     // NOLINTEND
 
 public:
@@ -128,5 +132,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

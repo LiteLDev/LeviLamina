@@ -17,17 +17,17 @@ class TagCommand : public ::Command {
 public:
     // TagCommand inner types define
     enum class Action : uchar {
-        Add = 0,
+        Add    = 0,
         Remove = 1,
-        List = 2,
+        List   = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb16b6e;
+    ::ll::UntypedStorage<1, 1>   mUnkb16b6e;
     ::ll::UntypedStorage<8, 200> mUnk540c84;
-    ::ll::UntypedStorage<8, 32> mUnk40035f;
+    ::ll::UntypedStorage<8, 32>  mUnk40035f;
     // NOLINTEND
 
 public:
@@ -49,15 +49,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addTag(::CommandOutput& output, ::std::vector<::std::reference_wrapper<::Actor>> const& selectorResults) const;
+    MCAPI void
+    _addTag(::CommandOutput& output, ::std::vector<::std::reference_wrapper<::Actor>> const& selectorResults) const;
 
-    MCAPI ::std::vector<::std::reference_wrapper<::Actor>> _getSelectorResults(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCAPI ::std::vector<::std::reference_wrapper<::Actor>>
+    _getSelectorResults(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI ::std::string _getTagWithPercentageFixed() const;
 
-    MCAPI void _listTags(::CommandOutput& output, ::std::vector<::std::reference_wrapper<::Actor>> const& selectorResults) const;
+    MCAPI void
+    _listTags(::CommandOutput& output, ::std::vector<::std::reference_wrapper<::Actor>> const& selectorResults) const;
 
-    MCAPI void _removeTag(::CommandOutput& output, ::std::vector<::std::reference_wrapper<::Actor>> const& selectorResults) const;
+    MCAPI void
+    _removeTag(::CommandOutput& output, ::std::vector<::std::reference_wrapper<::Actor>> const& selectorResults) const;
     // NOLINTEND
 
 public:
@@ -77,5 +81,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

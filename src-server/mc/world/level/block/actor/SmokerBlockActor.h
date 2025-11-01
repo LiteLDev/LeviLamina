@@ -29,5 +29,4 @@ public:
 
     MCNAPI static void** $vftableForBlockActor();
     // NOLINTEND
-
 };

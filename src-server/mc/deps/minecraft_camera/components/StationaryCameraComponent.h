@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnk604b86;
-    ::ll::UntypedStorage<4, 8> mUnkb14dba;
+    ::ll::UntypedStorage<4, 8>  mUnkb14dba;
     // NOLINTEND
 
 public:
@@ -17,7 +17,6 @@ public:
     StationaryCameraComponent& operator=(StationaryCameraComponent const&);
     StationaryCameraComponent(StationaryCameraComponent const&);
     StationaryCameraComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

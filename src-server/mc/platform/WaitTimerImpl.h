@@ -24,7 +24,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void WaitCallback(::_TP_CALLBACK_INSTANCE*, void* context, ::_TP_TIMER*);
     // NOLINTEND
-
 };
 
-}
+} // namespace OS

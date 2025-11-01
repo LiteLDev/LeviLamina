@@ -61,7 +61,8 @@ public:
     virtual void stopMusic() /*override*/;
 
     // vIndex: 20
-    virtual uint64 registerLoop(::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float) /*override*/;
+    virtual uint64
+    registerLoop(::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float) /*override*/;
 
     // vIndex: 21
     virtual void unregisterLoop(uint64, bool) /*override*/;
@@ -169,5 +170,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

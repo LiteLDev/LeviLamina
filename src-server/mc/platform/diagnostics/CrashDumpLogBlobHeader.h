@@ -17,5 +17,4 @@ public:
     CrashDumpLogBlobHeader& operator=(CrashDumpLogBlobHeader const&);
     CrashDumpLogBlobHeader(CrashDumpLogBlobHeader const&);
     CrashDumpLogBlobHeader();
-
 };

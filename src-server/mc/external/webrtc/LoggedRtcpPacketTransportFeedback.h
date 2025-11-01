@@ -8,7 +8,7 @@ struct LoggedRtcpPacketTransportFeedback {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8d0edc;
+    ::ll::UntypedStorage<8, 8>   mUnk8d0edc;
     ::ll::UntypedStorage<8, 160> mUnk4647ac;
     // NOLINTEND
 
@@ -17,7 +17,6 @@ public:
     LoggedRtcpPacketTransportFeedback& operator=(LoggedRtcpPacketTransportFeedback const&);
     LoggedRtcpPacketTransportFeedback(LoggedRtcpPacketTransportFeedback const&);
     LoggedRtcpPacketTransportFeedback();
-
 };
 
-}
+} // namespace webrtc

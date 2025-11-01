@@ -19,13 +19,20 @@ public:
     virtual ~SystemFilePicker() /*override*/ = default;
 
     // vIndex: 1
-    virtual void initFilePick(::Core::Path const& filePath, ::std::function<void(bool, ::FileInfo)> callback) /*override*/;
+    virtual void
+    initFilePick(::Core::Path const& filePath, ::std::function<void(bool, ::FileInfo)> callback) /*override*/;
 
     // vIndex: 2
-    virtual uint64 readBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar>& buffer) /*override*/;
+    virtual uint64
+    readBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar>& buffer) /*override*/;
 
     // vIndex: 3
-    virtual bool writeBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar> const& buffer) /*override*/;
+    virtual bool writeBytes(
+        ::FileInfo const&           file,
+        uint64                      offset,
+        uint64                      bufferSize,
+        ::std::vector<uchar> const& buffer
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -41,7 +48,8 @@ public:
 
     MCNAPI uint64 $readBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar>& buffer);
 
-    MCNAPI bool $writeBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar> const& buffer);
+    MCNAPI bool
+    $writeBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar> const& buffer);
     // NOLINTEND
 
 public:
@@ -49,5 +57,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

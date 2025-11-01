@@ -20,82 +20,80 @@ public:
     class ErrorInfo;
     class Token;
     // clang-format on
-    
+
     // Reader inner types define
     using Char = char;
-    
+
     using Location = char const*;
-    
+
     enum class TokenType : int {
-        TokenEndOfStream = 0,
-        TokenObjectBegin = 1,
-        TokenObjectEnd = 2,
-        TokenArrayBegin = 3,
-        TokenArrayEnd = 4,
-        TokenString = 5,
-        TokenNumber = 6,
-        TokenTrue = 7,
-        TokenFalse = 8,
-        TokenNull = 9,
-        TokenArraySeparator = 10,
+        TokenEndOfStream     = 0,
+        TokenObjectBegin     = 1,
+        TokenObjectEnd       = 2,
+        TokenArrayBegin      = 3,
+        TokenArrayEnd        = 4,
+        TokenString          = 5,
+        TokenNumber          = 6,
+        TokenTrue            = 7,
+        TokenFalse           = 8,
+        TokenNull            = 9,
+        TokenArraySeparator  = 10,
         TokenMemberSeparator = 11,
-        TokenComment = 12,
-        TokenError = 13,
+        TokenComment         = 12,
+        TokenError           = 13,
     };
-    
+
     class Token {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::Json::Reader::TokenType> type_;
-        ::ll::TypedStorage<8, 8, char const*> start_;
-        ::ll::TypedStorage<8, 8, char const*> end_;
-        ::ll::TypedStorage<1, 1, bool> stringHasEscape_;
+        ::ll::TypedStorage<8, 8, char const*>               start_;
+        ::ll::TypedStorage<8, 8, char const*>               end_;
+        ::ll::TypedStorage<1, 1, bool>                      stringHasEscape_;
         // NOLINTEND
-    
     };
-    
+
     class ErrorInfo {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::Json::Reader::Token> token_;
-        ::ll::TypedStorage<8, 32, ::std::string> message_;
-        ::ll::TypedStorage<8, 8, char const*> extra_;
+        ::ll::TypedStorage<8, 32, ::std::string>         message_;
+        ::ll::TypedStorage<8, 8, char const*>            extra_;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~ErrorInfo();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
     using Errors = ::std::deque<::Json::Reader::ErrorInfo>;
-    
+
     using Nodes = ::std::stack<::Json::Value*, ::std::deque<::Json::Value*>>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::std::stack<::Json::Value*, ::std::deque<::Json::Value*>>> nodes_;
-    ::ll::TypedStorage<8, 40, ::std::deque<::Json::Reader::ErrorInfo>> errors_;
-    ::ll::TypedStorage<8, 32, ::std::string> document_;
-    ::ll::TypedStorage<8, 8, char const*> begin_;
-    ::ll::TypedStorage<8, 8, char const*> end_;
-    ::ll::TypedStorage<8, 8, char const*> current_;
-    ::ll::TypedStorage<8, 8, char const*> lastValueEnd_;
-    ::ll::TypedStorage<8, 8, ::Json::Value*> lastValue_;
-    ::ll::TypedStorage<8, 32, ::std::string> commentsBefore_;
-    ::ll::TypedStorage<1, 2, ::Json::Features> features_;
-    ::ll::TypedStorage<1, 1, bool> collectComments_;
+    ::ll::TypedStorage<8, 40, ::std::deque<::Json::Reader::ErrorInfo>>                    errors_;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              document_;
+    ::ll::TypedStorage<8, 8, char const*>                                                 begin_;
+    ::ll::TypedStorage<8, 8, char const*>                                                 end_;
+    ::ll::TypedStorage<8, 8, char const*>                                                 current_;
+    ::ll::TypedStorage<8, 8, char const*>                                                 lastValueEnd_;
+    ::ll::TypedStorage<8, 8, ::Json::Value*>                                              lastValue_;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              commentsBefore_;
+    ::ll::TypedStorage<1, 2, ::Json::Features>                                            features_;
+    ::ll::TypedStorage<1, 1, bool>                                                        collectComments_;
     // NOLINTEND
 
 public:
@@ -115,9 +113,11 @@ public:
 
     MCAPI ::Json::Value::CZString decodeString(::Json::Reader::Token& token, bool& successful);
 
-    MCAPI bool decodeUnicodeCodePoint(::Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
+    MCAPI bool
+    decodeUnicodeCodePoint(::Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
 
-    MCAPI bool decodeUnicodeEscapeSequence(::Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
+    MCAPI bool
+    decodeUnicodeEscapeSequence(::Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
 
     MCAPI ::std::string getFormattedErrorMessages() const;
 
@@ -157,7 +157,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Json

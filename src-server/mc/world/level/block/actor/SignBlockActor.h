@@ -38,8 +38,9 @@ public:
     struct OpenSignRequest;
     class Text;
     // clang-format on
-    
+
     // SignBlockActor inner types define
+
     struct CachedLineData {
     public:
         // member variables
@@ -97,116 +98,114 @@ public:
         // Text inner types define
         enum class LoadMode : int {
             TextOnly = 0,
-            AllData = 1,
+            AllData  = 1,
         };
-        
+
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string> mMessage;
-        ::ll::TypedStorage<8, 32, ::std::string> mFilteredMessage;
-        ::ll::TypedStorage<8, 32, ::TextObjectRoot> mTextObjectMessage;
+        ::ll::TypedStorage<8, 32, ::std::string>                        mMessage;
+        ::ll::TypedStorage<8, 32, ::std::string>                        mFilteredMessage;
+        ::ll::TypedStorage<8, 32, ::TextObjectRoot>                     mTextObjectMessage;
         ::ll::TypedStorage<8, 224, ::SignBlockActor::CachedMessageData> mCachedMessage;
-        ::ll::TypedStorage<4, 16, ::mce::Color> mSignTextColor;
-        ::ll::TypedStorage<1, 1, bool> mGlowing;
-        ::ll::TypedStorage<1, 1, bool> mHideGlowOutline;
-        ::ll::TypedStorage<1, 1, bool> mShouldPersistFormatting;
-        ::ll::TypedStorage<8, 32, ::std::string> mLastEditXuid;
-        ::ll::TypedStorage<8, 32, ::std::string> mTextObjectString;
+        ::ll::TypedStorage<4, 16, ::mce::Color>                         mSignTextColor;
+        ::ll::TypedStorage<1, 1, bool>                                  mGlowing;
+        ::ll::TypedStorage<1, 1, bool>                                  mHideGlowOutline;
+        ::ll::TypedStorage<1, 1, bool>                                  mShouldPersistFormatting;
+        ::ll::TypedStorage<8, 32, ::std::string>                        mLastEditXuid;
+        ::ll::TypedStorage<8, 32, ::std::string>                        mTextObjectString;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Text& operator=(Text const&);
         Text(Text const&);
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI Text();
-    
+
         MCAPI Text(::SignBlockActor::Text&&);
-    
+
         MCAPI void _parseOldVersionText(::CompoundTag const& tag);
-    
+
         MCAPI void _parseOtherAttributes(::CompoundTag const& tag);
-    
+
         MCAPI void _parseText(::CompoundTag const& tag);
-    
+
         MCAPI ::std::string const& getMessage() const;
-    
+
         MCAPI void load(::CompoundTag const& tag, ::SignBlockActor::Text::LoadMode load);
-    
+
         MCAPI bool save(::CompoundTag& tag) const;
-    
+
         MCAPI void setMessage(::TextObjectRoot message);
-    
+
         MCAPI void setMessage(::std::string message);
-    
+
         MCAPI ~Text();
         // NOLINTEND
-    
+
     public:
         // static functions
         // NOLINTBEGIN
         MCAPI static bool validateText(::CompoundTag const& tag);
         // NOLINTEND
-    
+
     public:
         // static variables
         // NOLINTBEGIN
         MCAPI static ::std::add_lvalue_reference_t<char const[]> SIGN_PERSIST_FORMATTING_TAG();
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor();
-    
+
         MCAPI void* $ctor(::SignBlockActor::Text&&);
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
     };
-            
+
     struct OpenSignRequest {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool> mIsWaitingForChangeClear;
-        ::ll::TypedStorage<8, 72, ::OpenSignPacket> mOpenSignPacket;
+        ::ll::TypedStorage<1, 1, bool>                                                  mIsWaitingForChangeClear;
+        ::ll::TypedStorage<8, 72, ::OpenSignPacket>                                     mOpenSignPacket;
         ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void(::OpenSignPacket&)>> mSendPacket;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~OpenSignRequest();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SignBlockActor::Text>> mTextFront;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SignBlockActor::Text>> mTextBack;
-    ::ll::TypedStorage<1, 1, bool> mIsWaxed;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mLockedForEditingBy;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SignBlockActor::Text>>            mTextFront;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SignBlockActor::Text>>            mTextBack;
+    ::ll::TypedStorage<1, 1, bool>                                                 mIsWaxed;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                      mLockedForEditingBy;
     ::ll::TypedStorage<8, 152, ::std::optional<::SignBlockActor::OpenSignRequest>> mOpenSignRequest;
-    ::ll::TypedStorage<1, 1, bool> mIsRemoteProfanityFilterEnabled;
-    ::ll::TypedStorage<1, 1, bool> mIsLocalProfanityFilterEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                 mIsRemoteProfanityFilterEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                 mIsLocalProfanityFilterEnabled;
     // NOLINTEND
 
 public:
@@ -273,7 +272,8 @@ public:
 
     MCAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
 
-    MCAPI void requestToSendOpenSignPacket(::WeakRef<::EntityContext> entityRef, ::BlockPos const& position, bool isFrontSide);
+    MCAPI void
+    requestToSendOpenSignPacket(::WeakRef<::EntityContext> entityRef, ::BlockPos const& position, bool isFrontSide);
 
     MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
     // NOLINTEND
@@ -327,5 +327,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

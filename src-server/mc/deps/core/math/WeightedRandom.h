@@ -4,7 +4,6 @@
 
 namespace Core {
 
-class WeightedRandom {
-};
+class WeightedRandom {};
 
-}
+} // namespace Core

@@ -28,7 +28,23 @@ struct PassengerComponent;
 struct VehicleComponent;
 // clang-format on
 
-class OwningGetCollisionShapeEntityProxy : public ::GetCollisionShapeEntityProxy<::StrictExecutionContext<::Filter<::CanStandOnSnowFlagComponent, ::HasLightweightFamilyFlagComponent>, ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorTypeComponent, ::FallDistanceComponent, ::PassengerComponent, ::ActorGameTypeComponent, ::ActorDataFlagComponent, ::VehicleComponent>, ::Write<>, ::AddRemove<>, ::GlobalRead<::ExternalDataComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
+class OwningGetCollisionShapeEntityProxy
+: public ::GetCollisionShapeEntityProxy<::StrictExecutionContext<
+      ::Filter<::CanStandOnSnowFlagComponent, ::HasLightweightFamilyFlagComponent>,
+      ::Read<
+          ::AABBShapeComponent,
+          ::MovementAbilitiesComponent,
+          ::ActorTypeComponent,
+          ::FallDistanceComponent,
+          ::PassengerComponent,
+          ::ActorGameTypeComponent,
+          ::ActorDataFlagComponent,
+          ::VehicleComponent>,
+      ::Write<>,
+      ::AddRemove<>,
+      ::GlobalRead<::ExternalDataComponent>,
+      ::GlobalWrite<>,
+      ::EntityFactoryT<>>> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -53,5 +69,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

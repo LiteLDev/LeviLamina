@@ -9,5 +9,4 @@ public:
     ::ll::TypedStorage<4, 4, float> mIntensity;
     ::ll::TypedStorage<4, 4, float> mDuration;
     // NOLINTEND
-
 };

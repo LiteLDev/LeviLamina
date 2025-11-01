@@ -12,5 +12,4 @@ public:
     ::ll::TypedStorage<1, 1, bool> showNameTags;
     ::ll::TypedStorage<1, 1, bool> autoJump;
     // NOLINTEND
-
 };

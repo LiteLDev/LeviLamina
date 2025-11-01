@@ -25,11 +25,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::br::worldgen::TerrainAdjustment::Type> mAdjustment;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mBiomes;
-    ::ll::TypedStorage<8, 32, ::std::string> mKey;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>> mMobs;
-    ::ll::TypedStorage<1, 1, ::br::worldgen::GenerationStep::Type> mStep;
-    ::ll::TypedStorage<8, 48, ::HashedString> mType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>>           mBiomes;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mKey;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>>
+                                                                                    mMobs;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::GenerationStep::Type>                  mStep;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                       mType;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PoolAliasBinding>>> mPoolAliases;
     // NOLINTEND
 
@@ -45,7 +46,8 @@ public:
     virtual ~Structure();
 
     // vIndex: 1
-    virtual ::std::optional<::br::worldgen::GenerationStub> findValidGenerationPoint(::br::worldgen::GenerationContext&) const = 0;
+    virtual ::std::optional<::br::worldgen::GenerationStub>
+    findValidGenerationPoint(::br::worldgen::GenerationContext&) const = 0;
     // NOLINTEND
 
 public:
@@ -53,7 +55,8 @@ public:
     // NOLINTBEGIN
     MCAPI Structure(::br::worldgen::Structure const&);
 
-    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance> generate(::br::worldgen::GenerationContext& context) const;
+    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    generate(::br::worldgen::GenerationContext& context) const;
     // NOLINTEND
 
 public:
@@ -79,7 +82,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

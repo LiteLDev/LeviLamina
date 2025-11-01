@@ -37,7 +37,8 @@ public:
     virtual ~BlockChangedPendingOperation() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::Editor::Transactions::IOperation> _commit(::Editor::ServiceProviderCollection& services) /*override*/;
+    virtual ::std::unique_ptr<::Editor::Transactions::IOperation>
+    _commit(::Editor::ServiceProviderCollection& services) /*override*/;
 
     // vIndex: 2
     virtual ::Scripting::Result_deprecated<bool> _discard(::Editor::ServiceProviderCollection&) /*override*/;
@@ -46,13 +47,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _processBlockChangeIntent(::BlockSource const& region, ::Editor::Transactions::BlockChangeIntentData& blockIntentData, ::std::vector<::Editor::Transactions::BlockChangedOperationData>& changedBlocks) const;
+    MCNAPI void _processBlockChangeIntent(
+        ::BlockSource const&                                              region,
+        ::Editor::Transactions::BlockChangeIntentData&                    blockIntentData,
+        ::std::vector<::Editor::Transactions::BlockChangedOperationData>& changedBlocks
+    ) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::Editor::Transactions::IOperation> $_commit(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::std::unique_ptr<::Editor::Transactions::IOperation>
+    $_commit(::Editor::ServiceProviderCollection& services);
 
     MCNAPI ::Scripting::Result_deprecated<bool> $_discard(::Editor::ServiceProviderCollection&);
     // NOLINTEND
@@ -62,7 +68,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Transactions

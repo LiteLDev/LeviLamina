@@ -28,7 +28,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk8fe63a;
-    ::ll::UntypedStorage<8, 8> mUnka1d3a3;
+    ::ll::UntypedStorage<8, 8>  mUnka1d3a3;
     ::ll::UntypedStorage<8, 16> mUnke52853;
     // NOLINTEND
 
@@ -45,7 +45,12 @@ public:
     virtual ~ThrottledFileSystem() /*override*/ = default;
 
     // vIndex: 6
-    virtual ::Core::Result _openFile(::std::unique_ptr<::Core::FileImpl>&, ::Core::PathView, ::Core::FileOpenMode, ::Core::FileBufferingMode) /*override*/;
+    virtual ::Core::Result _openFile(
+        ::std::unique_ptr<::Core::FileImpl>&,
+        ::Core::PathView,
+        ::Core::FileOpenMode,
+        ::Core::FileBufferingMode
+    ) /*override*/;
 
     // vIndex: 7
     virtual bool _fileExists(::Core::PathView) /*override*/;
@@ -78,7 +83,11 @@ public:
     virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) /*override*/;
 
     // vIndex: 25
-    virtual ::Core::Result _iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) /*override*/;
+    virtual ::Core::Result _iterateOverDirectory(
+        ::Core::PathView,
+        ::Core::DirectoryIterationFlags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
+    ) /*override*/;
 
     // vIndex: 31
     virtual bool _fileOrDirectoryExists(::Core::PathView) /*override*/;
@@ -119,7 +128,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

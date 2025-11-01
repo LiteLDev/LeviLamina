@@ -16,11 +16,11 @@ struct PlayerActionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::bitset<38>> mPlayerActions;
+    ::ll::TypedStorage<8, 8, ::std::bitset<38>>                                            mPlayerActions;
     ::ll::TypedStorage<8, 312, ::std::optional<::PackedItemUseLegacyInventoryTransaction>> mItemUseTransaction;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>> mItemStackRequest;
-    ::ll::TypedStorage<8, 24, ::PlayerBlockActions> mPlayerBlockActions;
-    ::ll::TypedStorage<4, 8, ::Vec2> mPreSimulationRotation;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>>                    mItemStackRequest;
+    ::ll::TypedStorage<8, 24, ::PlayerBlockActions>                                        mPlayerBlockActions;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mPreSimulationRotation;
     // NOLINTEND
 
 public:
@@ -50,5 +50,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

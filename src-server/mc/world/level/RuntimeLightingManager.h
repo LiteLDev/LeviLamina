@@ -15,7 +15,7 @@ public:
     struct RelightingChunkElement;
     struct RuntimeLightingSubchunkList;
     // clang-format on
-    
+
     // RuntimeLightingManager inner types define
     struct RelightingChunkElement {
     public:
@@ -26,42 +26,40 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk5ba057;
         ::ll::UntypedStorage<8, 8> mUnkda89a1;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         RelightingChunkElement& operator=(RelightingChunkElement const&);
         RelightingChunkElement(RelightingChunkElement const&);
         RelightingChunkElement();
-    
     };
-    
+
     struct RuntimeLightingSubchunkList {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnkd60eed;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         RuntimeLightingSubchunkList& operator=(RuntimeLightingSubchunkList const&);
         RuntimeLightingSubchunkList(RuntimeLightingSubchunkList const&);
         RuntimeLightingSubchunkList();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~RuntimeLightingSubchunkList();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -69,9 +67,9 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk7ccccf;
     ::ll::UntypedStorage<8, 24> mUnkbca36c;
     ::ll::UntypedStorage<8, 24> mUnk374d9f;
-    ::ll::UntypedStorage<8, 8> mUnk62ed05;
-    ::ll::UntypedStorage<1, 1> mUnk3f50c8;
-    ::ll::UntypedStorage<8, 8> mUnk6ca0a7;
+    ::ll::UntypedStorage<8, 8>  mUnk62ed05;
+    ::ll::UntypedStorage<1, 1>  mUnk3f50c8;
+    ::ll::UntypedStorage<8, 8>  mUnk6ca0a7;
     // NOLINTEND
 
 public:
@@ -96,7 +94,14 @@ public:
 
     MCNAPI void _removeProcessedSubchunks();
 
-    MCNAPI void updateBlockLight(::BlockPos const& blockPos, ::Brightness oldBrightness, ::Brightness newBrightness, ::Brightness oldAbsorption, ::Brightness newAbsorption, bool isSkyLight);
+    MCNAPI void updateBlockLight(
+        ::BlockPos const& blockPos,
+        ::Brightness      oldBrightness,
+        ::Brightness      newBrightness,
+        ::Brightness      oldAbsorption,
+        ::Brightness      newAbsorption,
+        bool              isSkyLight
+    );
     // NOLINTEND
 
 public:
@@ -110,5 +115,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

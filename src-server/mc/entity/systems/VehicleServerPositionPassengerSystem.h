@@ -32,7 +32,30 @@ class VehicleServerPositionPassengerSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _vehicleServerPositionPassengerSystemSingleEntity(::StrictEntityContext const&, ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent, ::PositionPassengerRequestComponent>, ::ActorDataSeatOffsetComponent const> positionPassengerView, ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent, ::MobFlagComponent>, ::ActorHeadRotationComponent const, ::PositionPassengerRequestComponent const, ::SynchedActorDataComponent const, ::ActorRotationComponent, ::MobBodyRotationComponent, ::PassengerYRotLimitComponent, ::Optional<::PlayerComponent const>> rotatePassengerView, ::EntityModifier<::ActorSetPositionRequestComponent> modifier, ::OptionalGlobal<::PassengersToPositionComponent> passengersToPositionComponent, ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::ActorRotationComponent const, ::StateVectorComponent const, ::Optional<::ActorSetPositionRequestComponent const>> vehicleView);
+    MCNAPI static void _vehicleServerPositionPassengerSystemSingleEntity(
+        ::StrictEntityContext const&,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::PassengerComponent, ::PositionPassengerRequestComponent>,
+            ::ActorDataSeatOffsetComponent const> positionPassengerView,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::PassengerComponent, ::MobFlagComponent>,
+            ::ActorHeadRotationComponent const,
+            ::PositionPassengerRequestComponent const,
+            ::SynchedActorDataComponent const,
+            ::ActorRotationComponent,
+            ::MobBodyRotationComponent,
+            ::PassengerYRotLimitComponent,
+            ::Optional<::PlayerComponent const>>             rotatePassengerView,
+        ::EntityModifier<::ActorSetPositionRequestComponent> modifier,
+        ::OptionalGlobal<::PassengersToPositionComponent>    passengersToPositionComponent,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::VehicleComponent>,
+            ::ActorRotationComponent const,
+            ::StateVectorComponent const,
+            ::Optional<::ActorSetPositionRequestComponent const>> vehicleView
+    );
     // NOLINTEND
-
 };

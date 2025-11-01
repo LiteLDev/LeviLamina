@@ -14,5 +14,4 @@ public:
     DedicatedServerConfig& operator=(DedicatedServerConfig const&);
     DedicatedServerConfig(DedicatedServerConfig const&);
     DedicatedServerConfig();
-
 };

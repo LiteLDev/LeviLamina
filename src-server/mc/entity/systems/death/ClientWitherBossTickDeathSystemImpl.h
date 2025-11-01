@@ -26,12 +26,29 @@ struct TickDeathNeededComponent;
 struct WitherBossFlagComponent;
 // clang-format on
 
-struct ClientWitherBossTickDeathSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::WitherBossFlagComponent>, ::Read<::DeathTickingComponent>, ::Write<::OverlayAlphaComponent, ::ShieldFlickerComponent, ::SwellComponent, ::SynchedActorDataComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
+struct ClientWitherBossTickDeathSystemImpl
+: public ::IStrictTickingSystem<::StrictExecutionContext<
+      ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::WitherBossFlagComponent>,
+      ::Read<::DeathTickingComponent>,
+      ::Write<::OverlayAlphaComponent, ::ShieldFlickerComponent, ::SwellComponent, ::SynchedActorDataComponent>,
+      ::AddRemove<>,
+      ::GlobalRead<>,
+      ::GlobalWrite<>,
+      ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::WitherBossFlagComponent>, ::Read<::DeathTickingComponent>, ::Write<::OverlayAlphaComponent, ::ShieldFlickerComponent, ::SwellComponent, ::SynchedActorDataComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::WitherBossFlagComponent>,
+            ::Read<::DeathTickingComponent>,
+            ::Write<::OverlayAlphaComponent, ::ShieldFlickerComponent, ::SwellComponent, ::SynchedActorDataComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~ClientWitherBossTickDeathSystemImpl() /*override*/ = default;
@@ -40,13 +57,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tick(::StrictEntityContext const&, ::DeathTickingComponent const& deathTicking, ::OverlayAlphaComponent& overlayAlpha, ::ShieldFlickerComponent& shieldFlicker, ::SwellComponent& swell, ::SynchedActorDataComponent& synchedActorData);
+    MCNAPI static void _tick(
+        ::StrictEntityContext const&,
+        ::DeathTickingComponent const& deathTicking,
+        ::OverlayAlphaComponent&       overlayAlpha,
+        ::ShieldFlickerComponent&      shieldFlicker,
+        ::SwellComponent&              swell,
+        ::SynchedActorDataComponent&   synchedActorData
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::WitherBossFlagComponent>, ::Read<::DeathTickingComponent>, ::Write<::OverlayAlphaComponent, ::ShieldFlickerComponent, ::SwellComponent, ::SynchedActorDataComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::WitherBossFlagComponent>,
+            ::Read<::DeathTickingComponent>,
+            ::Write<::OverlayAlphaComponent, ::ShieldFlickerComponent, ::SwellComponent, ::SynchedActorDataComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
     // NOLINTEND
 
 public:
@@ -54,5 +87,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

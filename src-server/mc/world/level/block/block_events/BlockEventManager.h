@@ -16,7 +16,7 @@ class BlockEventManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mFinalized;
+    ::ll::TypedStorage<1, 1, bool>                                                                  mFinalized;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::BlockEvents::IBlockEventExecutor>>> mEventExecutors;
     // NOLINTEND
 
@@ -25,7 +25,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool _assertMainOrServerThread() const;
 
-    MCAPI ::std::unique_ptr<::BlockEvents::IBlockEventExecutor> _createSpecializedExecutor(::BlockEvents::EventType type) const;
+    MCAPI ::std::unique_ptr<::BlockEvents::IBlockEventExecutor>
+    _createSpecializedExecutor(::BlockEvents::EventType type) const;
 
     MCAPI bool hasExecutor(::BlockEvents::EventType type) const;
 
@@ -37,7 +38,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockEvents

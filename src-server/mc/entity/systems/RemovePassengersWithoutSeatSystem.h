@@ -21,11 +21,22 @@ class RemovePassengersWithoutSeatSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickRemovePassengersWithoutSeat(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::RideableComponent const, ::VehicleComponent> view, ::EntityModifier<::StopRidingRequestComponent> modifier);
+    MCNAPI static void _tickRemovePassengersWithoutSeat(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent>,
+            ::RideableComponent const,
+            ::VehicleComponent>                        view,
+        ::EntityModifier<::StopRidingRequestComponent> modifier
+    );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void removePassengersWithoutSeat(::StrictEntityContext&, ::RideableComponent const& rideableComponent, ::VehicleComponent& vehicleComponent, ::EntityModifier<::StopRidingRequestComponent>& modifier);
+    MCNAPI static void removePassengersWithoutSeat(
+        ::StrictEntityContext&,
+        ::RideableComponent const&                      rideableComponent,
+        ::VehicleComponent&                             vehicleComponent,
+        ::EntityModifier<::StopRidingRequestComponent>& modifier
+    );
     // NOLINTEND
-
 };

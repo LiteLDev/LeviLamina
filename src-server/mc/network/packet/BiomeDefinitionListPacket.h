@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<ushort, ::BiomeDefinitionData>> mBiomeData;
-    ::ll::TypedStorage<8, 88, ::BiomeStringList> mStringList;
+    ::ll::TypedStorage<8, 88, ::BiomeStringList>                                   mStringList;
     // NOLINTEND
 
 public:
@@ -82,5 +82,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

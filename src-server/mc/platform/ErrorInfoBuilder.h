@@ -4,8 +4,7 @@
 
 namespace Bedrock::Detail {
 
-template<typename T0>
-struct ErrorInfoBuilder {
-};
+template <typename T0>
+struct ErrorInfoBuilder {};
 
-}
+} // namespace Bedrock::Detail

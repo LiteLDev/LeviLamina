@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
-#include "mc/versionless/world/phys/AABB.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,14 +25,14 @@ class MovingBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const*> mWrappedBlock;
-    ::ll::TypedStorage<8, 8, ::Block const*> mWrappedExtraBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*>                   mWrappedBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*>                   mWrappedExtraBlock;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockActor>> mWrappedBlockActor;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mPistonBlockPos;
-    ::ll::TypedStorage<1, 1, bool> mPistonBlockExpanding;
-    ::ll::TypedStorage<4, 24, ::AABB> mCollisionShape;
-    ::ll::TypedStorage<1, 1, bool> mPreserved;
-    ::ll::TypedStorage<4, 4, int> mPreservedLifespan;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                      mPistonBlockPos;
+    ::ll::TypedStorage<1, 1, bool>                             mPistonBlockExpanding;
+    ::ll::TypedStorage<4, 24, ::AABB>                          mCollisionShape;
+    ::ll::TypedStorage<1, 1, bool>                             mPreserved;
+    ::ll::TypedStorage<4, 4, int>                              mPreservedLifespan;
     // NOLINTEND
 
 public:
@@ -123,5 +123,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

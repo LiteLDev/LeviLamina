@@ -16,4 +16,4 @@ MCAPI void fromCompoundTag(::HitboxComponent& result, ::CompoundTag const& tag);
 MCAPI void toCompoundTag(::HitboxComponent const& source, ::CompoundTag& tag);
 // NOLINTEND
 
-}
+} // namespace HitboxComponentSerialization

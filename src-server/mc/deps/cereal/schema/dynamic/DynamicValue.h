@@ -13,15 +13,15 @@ class DynamicValue {
 public:
     // DynamicValue inner types define
     enum class Type : int {
-        Null = 0,
+        Null    = 0,
         Boolean = 1,
         Integer = 2,
-        Number = 3,
-        String = 4,
-        Array = 5,
-        Object = 6,
+        Number  = 3,
+        String  = 4,
+        Array   = 5,
+        Object  = 6,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -60,7 +60,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal

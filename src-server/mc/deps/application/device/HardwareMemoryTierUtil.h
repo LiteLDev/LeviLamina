@@ -11,7 +11,9 @@
 namespace Bedrock { struct ImplCtor; }
 // clang-format on
 
-class HardwareMemoryTierUtil : public ::Bedrock::ImplBase<::HardwareMemoryTierUtil, ::Bedrock::ImplCtor(::brstd::move_only_function<uint64()const>)> {
+class HardwareMemoryTierUtil
+: public ::Bedrock::
+      ImplBase<::HardwareMemoryTierUtil, ::Bedrock::ImplCtor(::brstd::move_only_function<uint64() const>)> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -27,5 +29,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

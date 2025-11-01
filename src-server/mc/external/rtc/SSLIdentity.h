@@ -37,9 +37,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::rtc::SSLIdentity> Create(::std::string_view common_name, ::rtc::KeyParams const& key_param);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLIdentity>
+    Create(::std::string_view common_name, ::rtc::KeyParams const& key_param);
 
-    MCNAPI static ::std::unique_ptr<::rtc::SSLIdentity> Create(::std::string_view common_name, ::rtc::KeyParams const& key_param, int64 certificate_lifetime);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLIdentity>
+    Create(::std::string_view common_name, ::rtc::KeyParams const& key_param, int64 certificate_lifetime);
     // NOLINTEND
 
 public:
@@ -59,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

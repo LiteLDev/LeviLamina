@@ -13,7 +13,8 @@ namespace Bedrock::Threading { class OSThreadPriority; }
 
 namespace Bedrock {
 
-class WorkerPoolManager : public ::Bedrock::EnableNonOwnerReferences, public ::Bedrock::ImplBase<::Bedrock::WorkerPoolManager> {
+class WorkerPoolManager : public ::Bedrock::EnableNonOwnerReferences,
+                          public ::Bedrock::ImplBase<::Bedrock::WorkerPoolManager> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -21,7 +22,14 @@ public:
     virtual void init() = 0;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(::std::string, uint64, ::Bedrock::Threading::OSThreadPriority const&, ::std::optional<uint64> const, bool, ::std::optional<int> const) = 0;
+    virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(
+        ::std::string,
+        uint64,
+        ::Bedrock::Threading::OSThreadPriority const&,
+        ::std::optional<uint64> const,
+        bool,
+        ::std::optional<int> const
+    ) = 0;
 
     // vIndex: 3
     virtual void tick() = 0;
@@ -41,7 +49,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock

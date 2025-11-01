@@ -14,8 +14,8 @@ class TameableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3a69ae;
-    ::ll::UntypedStorage<8, 16> mUnkb332e4;
+    ::ll::UntypedStorage<4, 4>   mUnk3a69ae;
+    ::ll::UntypedStorage<8, 16>  mUnkb332e4;
     ::ll::UntypedStorage<8, 104> mUnk1ae022;
     // NOLINTEND
 
@@ -36,7 +36,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TameableDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TameableDefinition>>& root
+    );
     // NOLINTEND
 
 public:
@@ -44,5 +46,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

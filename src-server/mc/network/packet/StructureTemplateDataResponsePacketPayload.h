@@ -14,9 +14,9 @@ struct StructureTemplateDataResponsePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mStructureName;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mStructureName;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mStructureTag;
-    ::ll::TypedStorage<1, 1, ::StructureTemplateResponseType> mResponseType;
+    ::ll::TypedStorage<1, 1, ::StructureTemplateResponseType>  mResponseType;
     // NOLINTEND
 
 public:
@@ -29,7 +29,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::StructureTemplateDataResponsePacketPayload& operator=(::StructureTemplateDataResponsePacketPayload&&);
 
-    MCAPI ::StructureTemplateDataResponsePacketPayload& operator=(::StructureTemplateDataResponsePacketPayload const& other);
+    MCAPI ::StructureTemplateDataResponsePacketPayload&
+    operator=(::StructureTemplateDataResponsePacketPayload const& other);
 
     MCAPI ~StructureTemplateDataResponsePacketPayload();
     // NOLINTEND
@@ -39,5 +40,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

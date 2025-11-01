@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/chunk/IRequestAction.h"
 #include "mc/world/level/levelgen/structure/StructureSettings.h"
 
@@ -21,10 +21,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StructureAnimationData>> mStructureAnimationData;
-    ::ll::TypedStorage<8, 104, ::StructureSettings> mStructureSettings;
-    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mLoadPosition;
-    ::ll::TypedStorage<8, 32, ::std::string> mFullName;
+    ::ll::TypedStorage<8, 104, ::StructureSettings>                       mStructureSettings;
+    ::ll::TypedStorage<4, 4, ::DimensionType>                             mDimensionType;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                 mLoadPosition;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mFullName;
     // NOLINTEND
 
 public:
@@ -50,23 +50,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureAnimationAction(::std::unique_ptr<::StructureAnimationData> structureAnimationData, ::DimensionType dimensionType);
+    MCNAPI StructureAnimationAction(
+        ::std::unique_ptr<::StructureAnimationData> structureAnimationData,
+        ::DimensionType                             dimensionType
+    );
 
-    MCNAPI StructureAnimationAction(::StructureSettings const& structureSettings, ::DimensionType dimensionType, ::BlockPos const& loadPosition, ::std::string const& fullName);
+    MCNAPI StructureAnimationAction(
+        ::StructureSettings const& structureSettings,
+        ::DimensionType            dimensionType,
+        ::BlockPos const&          loadPosition,
+        ::std::string const&       fullName
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::StructureAnimationAction> load(::CompoundTag const& tag, ::std::string const& dimensionPrefix);
+    MCNAPI static ::std::unique_ptr<::StructureAnimationAction>
+    load(::CompoundTag const& tag, ::std::string const& dimensionPrefix);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::StructureAnimationData> structureAnimationData, ::DimensionType dimensionType);
+    MCNAPI void*
+    $ctor(::std::unique_ptr<::StructureAnimationData> structureAnimationData, ::DimensionType dimensionType);
 
-    MCNAPI void* $ctor(::StructureSettings const& structureSettings, ::DimensionType dimensionType, ::BlockPos const& loadPosition, ::std::string const& fullName);
+    MCNAPI void* $ctor(
+        ::StructureSettings const& structureSettings,
+        ::DimensionType            dimensionType,
+        ::BlockPos const&          loadPosition,
+        ::std::string const&       fullName
+    );
     // NOLINTEND
 
 public:
@@ -82,5 +97,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

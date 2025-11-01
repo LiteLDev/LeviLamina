@@ -25,7 +25,9 @@ namespace mce { class UUID; }
 
 namespace Editor::Services {
 
-class ClipboardService : public ::Editor::Services::IEditorService, public ::Editor::Services::ClipboardServiceProvider, public ::Editor::StructureDataCache::IStructureDataProvider {
+class ClipboardService : public ::Editor::Services::IEditorService,
+                         public ::Editor::Services::ClipboardServiceProvider,
+                         public ::Editor::StructureDataCache::IStructureDataProvider {
 public:
     // member variables
     // NOLINTBEGIN
@@ -75,19 +77,32 @@ public:
     virtual ::Editor::Services::ClipboardItem* getPrimaryItem() /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result_deprecated<void> readFromWorld(::mce::UUID const& itemId, ::Editor::RelativeVolumeListBlockVolume const& volume) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    readFromWorld(::mce::UUID const& itemId, ::Editor::RelativeVolumeListBlockVolume const& volume) /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result_deprecated<void> readFromWorld(::mce::UUID const& itemId, ::BlockVolumeBase const& volume) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    readFromWorld(::mce::UUID const& itemId, ::BlockVolumeBase const& volume) /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::Result_deprecated<void> readFromEditorStructure(::mce::UUID const& itemId, ::Editor::EditorStructureTemplate const& editorStructure) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> readFromEditorStructure(
+        ::mce::UUID const&                       itemId,
+        ::Editor::EditorStructureTemplate const& editorStructure
+    ) /*override*/;
 
     // vIndex: 9
-    virtual ::Scripting::Result_deprecated<bool> writeToWorld(::mce::UUID const& itemId, ::BlockPos const& position, ::Editor::Services::ClipboardWriteOptions const* options) const /*override*/;
+    virtual ::Scripting::Result_deprecated<bool> writeToWorld(
+        ::mce::UUID const&                               itemId,
+        ::BlockPos const&                                position,
+        ::Editor::Services::ClipboardWriteOptions const* options
+    ) const /*override*/;
 
     // vIndex: 10
-    virtual ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> getPredictedWriteVolume(::mce::UUID const& itemId, ::BlockPos const& position, ::Editor::Services::ClipboardWriteOptions const* options) const /*override*/;
+    virtual ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> getPredictedWriteVolume(
+        ::mce::UUID const&                               itemId,
+        ::BlockPos const&                                position,
+        ::Editor::Services::ClipboardWriteOptions const* options
+    ) const /*override*/;
 
     // vIndex: 11
     virtual ::Scripting::Result_deprecated<void> clear(::mce::UUID const& itemId) /*override*/;
@@ -105,13 +120,19 @@ public:
     virtual ::Vec3 getOriginalWorldLocation(::mce::UUID const& itemId) const /*override*/;
 
     // vIndex: 16
-    virtual ::Bedrock::PubSub::Subscription listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)> callback) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)> callback) /*override*/;
 
     // vIndex: 0
     virtual bool hasStructureData(::mce::UUID const& id) const /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<::std::variant<::StructureTemplate const*, ::Editor::EditorStructureTemplate const*, ::std::shared_ptr<::StructureTemplate const>, ::std::shared_ptr<::Editor::EditorStructureTemplate const>>> getStructureData(::mce::UUID const& id) const /*override*/;
+    virtual ::Scripting::Result_deprecated<::std::variant<
+        ::StructureTemplate const*,
+        ::Editor::EditorStructureTemplate const*,
+        ::std::shared_ptr<::StructureTemplate const>,
+        ::std::shared_ptr<::Editor::EditorStructureTemplate const>>>
+    getStructureData(::mce::UUID const& id) const /*override*/;
     // NOLINTEND
 
 public:
@@ -155,15 +176,26 @@ public:
 
     MCNAPI ::Editor::Services::ClipboardItem* $getPrimaryItem();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $readFromWorld(::mce::UUID const& itemId, ::Editor::RelativeVolumeListBlockVolume const& volume);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $readFromWorld(::mce::UUID const& itemId, ::Editor::RelativeVolumeListBlockVolume const& volume);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $readFromWorld(::mce::UUID const& itemId, ::BlockVolumeBase const& volume);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $readFromWorld(::mce::UUID const& itemId, ::BlockVolumeBase const& volume);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $readFromEditorStructure(::mce::UUID const& itemId, ::Editor::EditorStructureTemplate const& editorStructure);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $readFromEditorStructure(::mce::UUID const& itemId, ::Editor::EditorStructureTemplate const& editorStructure);
 
-    MCNAPI ::Scripting::Result_deprecated<bool> $writeToWorld(::mce::UUID const& itemId, ::BlockPos const& position, ::Editor::Services::ClipboardWriteOptions const* options) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $writeToWorld(
+        ::mce::UUID const&                               itemId,
+        ::BlockPos const&                                position,
+        ::Editor::Services::ClipboardWriteOptions const* options
+    ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> $getPredictedWriteVolume(::mce::UUID const& itemId, ::BlockPos const& position, ::Editor::Services::ClipboardWriteOptions const* options) const;
+    MCNAPI ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> $getPredictedWriteVolume(
+        ::mce::UUID const&                               itemId,
+        ::BlockPos const&                                position,
+        ::Editor::Services::ClipboardWriteOptions const* options
+    ) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> $clear(::mce::UUID const& itemId);
 
@@ -175,11 +207,17 @@ public:
 
     MCNAPI ::Vec3 $getOriginalWorldLocation(::mce::UUID const& itemId) const;
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)> callback);
 
     MCNAPI bool $hasStructureData(::mce::UUID const& id) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::variant<::StructureTemplate const*, ::Editor::EditorStructureTemplate const*, ::std::shared_ptr<::StructureTemplate const>, ::std::shared_ptr<::Editor::EditorStructureTemplate const>>> $getStructureData(::mce::UUID const& id) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::variant<
+        ::StructureTemplate const*,
+        ::Editor::EditorStructureTemplate const*,
+        ::std::shared_ptr<::StructureTemplate const>,
+        ::std::shared_ptr<::Editor::EditorStructureTemplate const>>>
+    $getStructureData(::mce::UUID const& id) const;
     // NOLINTEND
 
 public:
@@ -191,7 +229,6 @@ public:
 
     MCNAPI static void** $vftableForIStructureDataProvider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

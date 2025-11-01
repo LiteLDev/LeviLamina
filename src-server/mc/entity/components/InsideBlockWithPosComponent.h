@@ -2,6 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template<typename T0>
-struct InsideBlockWithPosComponent {
-};
+template <typename T0>
+struct InsideBlockWithPosComponent {};

@@ -23,5 +23,4 @@ public:
     // NOLINTBEGIN
     MCFOLD ::GameRulesChangedPacketPayload& operator=(::GameRulesChangedPacketPayload&&);
     // NOLINTEND
-
 };

@@ -19,9 +19,9 @@ class DataStoreEventPayload : public ::Editor::Network::NetworkPayload<::Editor:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk798e01;
-    ::ll::UntypedStorage<4, 4> mUnk85f380;
-    ::ll::UntypedStorage<8, 40> mUnk450d39;
+    ::ll::UntypedStorage<8, 48>  mUnk798e01;
+    ::ll::UntypedStorage<4, 4>   mUnk85f380;
+    ::ll::UntypedStorage<8, 40>  mUnk450d39;
     ::ll::UntypedStorage<8, 120> mUnkc59689;
     // NOLINTEND
 
@@ -41,7 +41,12 @@ public:
     // NOLINTBEGIN
     MCNAPI DataStoreEventPayload(::Editor::Network::DataStoreEventPayload const&);
 
-    MCNAPI DataStoreEventPayload(::HashedString const& dataTag, ::Editor::DataStore::EventType eventType, ::std::optional<::std::string> payload, ::Editor::DataStore::PayloadDescription const& desc);
+    MCNAPI DataStoreEventPayload(
+        ::HashedString const&                          dataTag,
+        ::Editor::DataStore::EventType                 eventType,
+        ::std::optional<::std::string>                 payload,
+        ::Editor::DataStore::PayloadDescription const& desc
+    );
 
     MCNAPI ::Editor::Network::DataStoreEventPayload& operator=(::Editor::Network::DataStoreEventPayload const&);
     // NOLINTEND
@@ -57,7 +62,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Network::DataStoreEventPayload const&);
 
-    MCNAPI void* $ctor(::HashedString const& dataTag, ::Editor::DataStore::EventType eventType, ::std::optional<::std::string> payload, ::Editor::DataStore::PayloadDescription const& desc);
+    MCNAPI void* $ctor(
+        ::HashedString const&                          dataTag,
+        ::Editor::DataStore::EventType                 eventType,
+        ::std::optional<::std::string>                 payload,
+        ::Editor::DataStore::PayloadDescription const& desc
+    );
     // NOLINTEND
 
 public:
@@ -71,7 +81,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

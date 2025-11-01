@@ -21,7 +21,7 @@ public:
     // clang-format off
     struct GapAckBlock;
     // clang-format on
-    
+
     // SackChunk inner types define
     struct GapAckBlock {
     public:
@@ -30,20 +30,19 @@ public:
         ::ll::UntypedStorage<2, 2> mUnk73c7ea;
         ::ll::UntypedStorage<2, 2> mUnk37a68e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         GapAckBlock& operator=(GapAckBlock const&);
         GapAckBlock(GapAckBlock const&);
         GapAckBlock();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk67c613;
-    ::ll::UntypedStorage<4, 4> mUnkfd7970;
+    ::ll::UntypedStorage<4, 4>  mUnk67c613;
+    ::ll::UntypedStorage<4, 4>  mUnkfd7970;
     ::ll::UntypedStorage<8, 24> mUnk70e3b0;
     ::ll::UntypedStorage<8, 16> mUnkeb8073;
     // NOLINTEND
@@ -70,7 +69,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SackChunk(::webrtc::StrongAlias<::dcsctp::TSNTag, uint> cumulative_tsn_ack, uint a_rwnd, ::std::vector<::dcsctp::SackChunk::GapAckBlock> gap_ack_blocks, ::std::set<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> duplicate_tsns);
+    MCNAPI SackChunk(
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>             cumulative_tsn_ack,
+        uint                                                      a_rwnd,
+        ::std::vector<::dcsctp::SackChunk::GapAckBlock>           gap_ack_blocks,
+        ::std::set<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> duplicate_tsns
+    );
     // NOLINTEND
 
 public:
@@ -82,7 +86,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::StrongAlias<::dcsctp::TSNTag, uint> cumulative_tsn_ack, uint a_rwnd, ::std::vector<::dcsctp::SackChunk::GapAckBlock> gap_ack_blocks, ::std::set<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> duplicate_tsns);
+    MCNAPI void* $ctor(
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>             cumulative_tsn_ack,
+        uint                                                      a_rwnd,
+        ::std::vector<::dcsctp::SackChunk::GapAckBlock>           gap_ack_blocks,
+        ::std::set<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> duplicate_tsns
+    );
     // NOLINTEND
 
 public:
@@ -104,7 +113,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

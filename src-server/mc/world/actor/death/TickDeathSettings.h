@@ -20,5 +20,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickDeathSettings const& DEFAULT();
     // NOLINTEND
-
 };

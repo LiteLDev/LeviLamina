@@ -14,9 +14,21 @@ namespace AgentComponents { struct ActionDetails; }
 namespace AgentInteractSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void initialize(::EntityContext& entity, ::StateVectorComponent const& posState, ::MobBodyRotationComponent const& rotState, ::AgentComponents::ActionDetails const& details, ::AgentComponents::Interact const& interactInfo);
+MCNAPI void initialize(
+    ::EntityContext&                        entity,
+    ::StateVectorComponent const&           posState,
+    ::MobBodyRotationComponent const&       rotState,
+    ::AgentComponents::ActionDetails const& details,
+    ::AgentComponents::Interact const&      interactInfo
+);
 
-MCNAPI void tick(::EntityContext& entity, ::StateVectorComponent const& posState, ::MobBodyRotationComponent const& rotState, ::AgentComponents::ActionDetails const& details, ::AgentComponents::Interact const& interactInfo);
+MCNAPI void tick(
+    ::EntityContext&                        entity,
+    ::StateVectorComponent const&           posState,
+    ::MobBodyRotationComponent const&       rotState,
+    ::AgentComponents::ActionDetails const& details,
+    ::AgentComponents::Interact const&      interactInfo
+);
 // NOLINTEND
 
-}
+} // namespace AgentInteractSystem

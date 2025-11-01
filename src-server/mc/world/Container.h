@@ -31,7 +31,7 @@ public:
     // clang-format off
     struct PublisherWrapper;
     // clang-format on
-    
+
     // Container inner types define
     struct PublisherWrapper {
     public:
@@ -39,43 +39,46 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 48> mUnka32e8c;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PublisherWrapper& operator=(PublisherWrapper const&);
         PublisherWrapper(PublisherWrapper const&);
         PublisherWrapper();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~PublisherWrapper();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
     using ItemStackNetIdChangedCallback = ::std::function<void(int, ::ItemStack const&)>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mContainerType;
-    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mGameplayContainerType;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType>                     mContainerType;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType>                     mGameplayContainerType;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerContentChangeListener*>> mContentChangeListeners;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerSizeChangeListener*>> mSizeChangeListeners;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerCloseListener*>> mCloseListeners;
-    ::ll::TypedStorage<8, 48, ::Container::PublisherWrapper> mRemovedPublisher;
-    ::ll::TypedStorage<8, 40, ::std::deque<::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>>> mTransactionContextStack;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerSizeChangeListener*>>    mSizeChangeListeners;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerCloseListener*>>         mCloseListeners;
+    ::ll::TypedStorage<8, 48, ::Container::PublisherWrapper>                           mRemovedPublisher;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::deque<::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>>>
+                                                                   mTransactionContextStack;
     ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mName;
-    ::ll::TypedStorage<1, 1, bool> mCustomName;
-    ::ll::TypedStorage<8, 24, ::ContainerOwner> mContainerOwner;
-    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId> mContainerRuntimeId;
+    ::ll::TypedStorage<1, 1, bool>                                 mCustomName;
+    ::ll::TypedStorage<8, 24, ::ContainerOwner>                    mContainerOwner;
+    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId>                 mContainerRuntimeId;
     // NOLINTEND
 
 public:
@@ -206,7 +209,10 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& tag);
 
     // vIndex: 40
-    virtual void createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback, ::std::function<void()> execute);
+    virtual void createTransactionContext(
+        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
+        ::std::function<void()>                                                          execute
+    );
 
     // vIndex: 41
     virtual void initializeContainerContents(::BlockSource& region);
@@ -227,9 +233,11 @@ public:
 
     MCAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
-    MCAPI void _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
+    MCAPI void
+    _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCAPI void _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void
+    _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator) const;
 
@@ -253,7 +261,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::SharedTypes::Legacy::ContainerType, ::std::string> const& containerTypeMap();
+    MCAPI static ::BidirectionalUnorderedMap<::SharedTypes::Legacy::ContainerType, ::std::string> const&
+    containerTypeMap();
     // NOLINTEND
 
 public:
@@ -341,7 +350,10 @@ public:
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag);
 
-    MCAPI void $createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback, ::std::function<void()> execute);
+    MCAPI void $createTransactionContext(
+        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
+        ::std::function<void()>                                                          execute
+    );
 
     MCFOLD void $initializeContainerContents(::BlockSource& region);
 
@@ -355,5 +367,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

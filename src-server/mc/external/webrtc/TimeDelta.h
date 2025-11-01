@@ -7,7 +7,6 @@
 
 namespace webrtc {
 
-class TimeDelta : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::TimeDelta> {
-};
+class TimeDelta : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::TimeDelta> {};
 
-}
+} // namespace webrtc

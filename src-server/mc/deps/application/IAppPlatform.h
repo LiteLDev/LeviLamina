@@ -81,7 +81,8 @@ public:
     virtual ::std::string getPlatformString() const = 0;
 
     // vIndex: 21
-    virtual ::std::vector<::Social::MultiplayerServiceIdentifier> getBroadcastingMultiplayerServiceIds(bool, bool) const = 0;
+    virtual ::std::vector<::Social::MultiplayerServiceIdentifier>
+    getBroadcastingMultiplayerServiceIds(bool, bool) const = 0;
 
     // vIndex: 22
     virtual uint64 getLowPhysicalMemoryThreshold() const = 0;
@@ -104,5 +105,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

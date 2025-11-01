@@ -9,8 +9,8 @@ struct SendEventStage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> delay;
-    ::ll::TypedStorage<8, 32, ::std::string> eventName;
+    ::ll::TypedStorage<4, 4, int>                                    delay;
+    ::ll::TypedStorage<8, 32, ::std::string>                         eventName;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> stageSoundEvent;
     // NOLINTEND
 
@@ -25,5 +25,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

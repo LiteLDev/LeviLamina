@@ -21,10 +21,10 @@ class PackManifestFactory : public ::IPackManifestFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3137ce;
+    ::ll::UntypedStorage<8, 8>  mUnk3137ce;
     ::ll::UntypedStorage<8, 16> mUnk6440d6;
-    ::ll::UntypedStorage<8, 8> mUnk89c744;
-    ::ll::UntypedStorage<8, 8> mUnk4c2c4c;
+    ::ll::UntypedStorage<8, 8>  mUnk89c744;
+    ::ll::UntypedStorage<8, 8>  mUnk4c2c4c;
     // NOLINTEND
 
 public:
@@ -40,7 +40,12 @@ public:
     virtual ~PackManifestFactory() /*override*/;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::PackManifest> create(::PackAccessStrategy& accessStrategy, ::ResourceLocation const& location, ::PackReport& report, ::SubpackInfoCollection* subpackInfoStack) /*override*/;
+    virtual ::std::unique_ptr<::PackManifest> create(
+        ::PackAccessStrategy&     accessStrategy,
+        ::ResourceLocation const& location,
+        ::PackReport&             report,
+        ::SubpackInfoCollection*  subpackInfoStack
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -48,9 +53,14 @@ public:
     // NOLINTBEGIN
     MCNAPI PackManifestFactory(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
 
-    MCNAPI void _setAndCachePackSize(::PackManifest& manifest, ::PackAccessStrategy& accessStrategy, ::ResourceLocation const& location);
+    MCNAPI void _setAndCachePackSize(
+        ::PackManifest&           manifest,
+        ::PackAccessStrategy&     accessStrategy,
+        ::ResourceLocation const& location
+    );
 
-    MCNAPI ::std::unique_ptr<::PackManifest> _upgradeToWorldTemplateManifest(::PackAccessStrategy const& accessStrategy, ::PackManifest&& inputPack);
+    MCNAPI ::std::unique_ptr<::PackManifest>
+    _upgradeToWorldTemplateManifest(::PackAccessStrategy const& accessStrategy, ::PackManifest&& inputPack);
     // NOLINTEND
 
 public:
@@ -82,7 +92,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::PackManifest> $create(::PackAccessStrategy& accessStrategy, ::ResourceLocation const& location, ::PackReport& report, ::SubpackInfoCollection* subpackInfoStack);
+    MCNAPI ::std::unique_ptr<::PackManifest> $create(
+        ::PackAccessStrategy&     accessStrategy,
+        ::ResourceLocation const& location,
+        ::PackReport&             report,
+        ::SubpackInfoCollection*  subpackInfoStack
+    );
     // NOLINTEND
 
 public:
@@ -90,5 +105,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -14,9 +14,9 @@ struct Contents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc7baa9;
+    ::ll::UntypedStorage<8, 32>  mUnkc7baa9;
     ::ll::UntypedStorage<8, 136> mUnkf220d5;
-    ::ll::UntypedStorage<8, 24> mUnkdd0807;
+    ::ll::UntypedStorage<8, 24>  mUnkdd0807;
     // NOLINTEND
 
 public:
@@ -48,7 +48,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_60::Spawn

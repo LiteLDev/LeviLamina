@@ -10,9 +10,8 @@ struct ContainerClosePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerID> mContainerId;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                        mContainerId;
     ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mContainerType;
-    ::ll::TypedStorage<1, 1, bool> mServerInitiatedClose;
+    ::ll::TypedStorage<1, 1, bool>                                 mServerInitiatedClose;
     // NOLINTEND
-
 };

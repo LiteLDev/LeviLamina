@@ -17,5 +17,4 @@ public:
     CrashDumpLastAssertsDataArray& operator=(CrashDumpLastAssertsDataArray const&);
     CrashDumpLastAssertsDataArray(CrashDumpLastAssertsDataArray const&);
     CrashDumpLastAssertsDataArray();
-
 };

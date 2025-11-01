@@ -17,5 +17,4 @@ public:
     DropResultData& operator=(DropResultData const&);
     DropResultData(DropResultData const&);
     DropResultData();
-
 };

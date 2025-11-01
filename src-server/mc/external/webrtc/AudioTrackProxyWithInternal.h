@@ -4,8 +4,7 @@
 
 namespace webrtc {
 
-template<typename T0>
-class AudioTrackProxyWithInternal {
-};
+template <typename T0>
+class AudioTrackProxyWithInternal {};
 
-}
+} // namespace webrtc

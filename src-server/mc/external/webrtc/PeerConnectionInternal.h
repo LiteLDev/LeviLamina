@@ -39,7 +39,8 @@ public:
     virtual bool initial_offerer() const = 0;
 
     // vIndex: 67
-    virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>> GetTransceiversInternal() const = 0;
+    virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>
+    GetTransceiversInternal() const = 0;
 
     // vIndex: 68
     virtual ::std::vector<::webrtc::DataChannelStats> GetDataChannelStats() const;
@@ -51,7 +52,8 @@ public:
     virtual ::std::vector<::cricket::CandidateStats> GetPooledCandidateStats() const = 0;
 
     // vIndex: 71
-    virtual ::std::map<::std::string, ::cricket::TransportStats> GetTransportStatsByNames(::std::set<::std::string> const&) = 0;
+    virtual ::std::map<::std::string, ::cricket::TransportStats>
+    GetTransportStatsByNames(::std::set<::std::string> const&) = 0;
 
     // vIndex: 72
     virtual ::webrtc::Call::Stats GetCallStats() = 0;
@@ -92,7 +94,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

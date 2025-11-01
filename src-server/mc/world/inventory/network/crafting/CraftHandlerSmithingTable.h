@@ -33,7 +33,8 @@ public:
     virtual ~CraftHandlerSmithingTable() /*override*/ = default;
 
     // vIndex: 4
-    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
+    virtual ::ItemStackNetResult
+    _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
     // vIndex: 6
     virtual ::Recipes const* _getLevelRecipes() const /*override*/;
@@ -52,5 +53,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

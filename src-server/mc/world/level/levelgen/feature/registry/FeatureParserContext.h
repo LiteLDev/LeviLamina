@@ -15,9 +15,9 @@ struct FeatureParserContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::IWorldRegistriesProvider&> mLookupProvider;
+    ::ll::TypedStorage<8, 8, ::IWorldRegistriesProvider&>  mLookupProvider;
     ::ll::TypedStorage<8, 8, ::ResourcePackManager const&> mRpm;
-    ::ll::TypedStorage<8, 32, ::MinEngineVersion> mMinEngineVersion;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion>          mMinEngineVersion;
     // NOLINTEND
 
 public:
@@ -25,5 +25,4 @@ public:
     FeatureParserContext& operator=(FeatureParserContext const&);
     FeatureParserContext(FeatureParserContext const&);
     FeatureParserContext();
-
 };

@@ -4,8 +4,7 @@
 
 namespace absl {
 
-template<typename T0, int T1, typename T2>
-class InlinedVector {
-};
+template <typename T0, int T1, typename T2>
+class InlinedVector {};
 
-}
+} // namespace absl

@@ -13,7 +13,8 @@ namespace dcsctp { struct UserInitiatedAbortCauseConfig; }
 
 namespace dcsctp {
 
-class UserInitiatedAbortCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::UserInitiatedAbortCauseConfig> {
+class UserInitiatedAbortCause : public ::dcsctp::Parameter,
+                                public ::dcsctp::TLVTrait<::dcsctp::UserInitiatedAbortCauseConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

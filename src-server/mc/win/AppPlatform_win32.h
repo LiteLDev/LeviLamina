@@ -27,16 +27,16 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb24ea2;
-    ::ll::UntypedStorage<8, 8> mUnk356cd6;
-    ::ll::UntypedStorage<8, 8> mUnkcfaa94;
+    ::ll::UntypedStorage<8, 8>  mUnk356cd6;
+    ::ll::UntypedStorage<8, 8>  mUnkcfaa94;
     ::ll::UntypedStorage<8, 32> mUnka7d9a1;
     ::ll::UntypedStorage<8, 32> mUnk1d0c4e;
-    ::ll::UntypedStorage<1, 1> mUnk113178;
-    ::ll::UntypedStorage<1, 1> mUnk29784c;
-    ::ll::UntypedStorage<8, 8> mUnke25532;
-    ::ll::UntypedStorage<8, 8> mUnk66b4ba;
+    ::ll::UntypedStorage<1, 1>  mUnk113178;
+    ::ll::UntypedStorage<1, 1>  mUnk29784c;
+    ::ll::UntypedStorage<8, 8>  mUnke25532;
+    ::ll::UntypedStorage<8, 8>  mUnk66b4ba;
     ::ll::UntypedStorage<4, 16> mUnk44554b;
-    ::ll::UntypedStorage<4, 4> mUnkabbaf7;
+    ::ll::UntypedStorage<4, 4>  mUnkabbaf7;
     ::ll::UntypedStorage<8, 40> mUnka50bee;
     // NOLINTEND
 
@@ -59,7 +59,8 @@ public:
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename) /*override*/;
 
     // vIndex: 105
-    virtual ::std::set<::Core::PathBuffer<::std::string>> listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const /*override*/;
+    virtual ::std::set<::Core::PathBuffer<::std::string>>
+    listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const /*override*/;
 
     // vIndex: 69
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
@@ -200,7 +201,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AppPlatform_win32(::HWND__* hWnd, ::std::string const& dataFolder, ::std::string_view, ::std::shared_ptr<::HIDController> HIDControllerWinRT, int screenWidth, int screenHeight);
+    MCNAPI AppPlatform_win32(
+        ::HWND__*            hWnd,
+        ::std::string const& dataFolder,
+        ::std::string_view,
+        ::std::shared_ptr<::HIDController> HIDControllerWinRT,
+        int                                screenWidth,
+        int                                screenHeight
+    );
 
     MCNAPI ::OSInformation _fetchOSInformation() const;
     // NOLINTEND
@@ -208,7 +216,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::HWND__* hWnd, ::std::string const& dataFolder, ::std::string_view, ::std::shared_ptr<::HIDController> HIDControllerWinRT, int screenWidth, int screenHeight);
+    MCNAPI void* $ctor(
+        ::HWND__*            hWnd,
+        ::std::string const& dataFolder,
+        ::std::string_view,
+        ::std::shared_ptr<::HIDController> HIDControllerWinRT,
+        int                                screenWidth,
+        int                                screenHeight
+    );
     // NOLINTEND
 
 public:
@@ -224,7 +239,8 @@ public:
 
     MCNAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
 
-    MCNAPI ::std::set<::Core::PathBuffer<::std::string>> $listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
+    MCNAPI ::std::set<::Core::PathBuffer<::std::string>>
+    $listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
@@ -322,5 +338,4 @@ public:
 
     MCNAPI static void** $vftableForISecureStorageKeySystem();
     // NOLINTEND
-
 };

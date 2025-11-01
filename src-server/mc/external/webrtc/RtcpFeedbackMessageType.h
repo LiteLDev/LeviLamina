@@ -6,8 +6,8 @@ namespace webrtc {
 
 enum class RtcpFeedbackMessageType : int {
     GenericNack = 0,
-    Pli = 1,
-    Fir = 2,
+    Pli         = 1,
+    Fir         = 2,
 };
 
 }

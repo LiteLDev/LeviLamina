@@ -41,5 +41,4 @@ public:
 
     MCAPI ::NeighborBlockDirections getDirectionsFromStructureToExistingBlock() const;
     // NOLINTEND
-
 };

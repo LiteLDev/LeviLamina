@@ -17,7 +17,6 @@ public:
     EduFetchServersResponse& operator=(EduFetchServersResponse const&);
     EduFetchServersResponse(EduFetchServersResponse const&);
     EduFetchServersResponse();
-
 };
 
-}
+} // namespace Social

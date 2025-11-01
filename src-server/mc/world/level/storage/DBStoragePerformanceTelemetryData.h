@@ -23,5 +23,4 @@ public:
     DBStoragePerformanceTelemetryData& operator=(DBStoragePerformanceTelemetryData const&);
     DBStoragePerformanceTelemetryData(DBStoragePerformanceTelemetryData const&);
     DBStoragePerformanceTelemetryData();
-
 };

@@ -24,7 +24,12 @@ public:
     virtual void joinRealmsGame(::Realms::World const&, ::Social::GameConnectionInfo const&) = 0;
 
     // vIndex: 2
-    virtual void joinRemoteServerWithAddress(::Social::GameConnectionInfo, ::std::string const&, ::std::string const&, ::NetworkType) = 0;
+    virtual void joinRemoteServerWithAddress(
+        ::Social::GameConnectionInfo,
+        ::std::string const&,
+        ::std::string const&,
+        ::NetworkType
+    ) = 0;
 
     // vIndex: 3
     virtual ::Bedrock::Threading::Async<void> joinMultiplayerGame(::Social::MultiplayerGameInfo const&) = 0;
@@ -35,5 +40,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

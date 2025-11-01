@@ -8,7 +8,7 @@ public:
     // clang-format off
     class WeighedRandomItem;
     // clang-format on
-    
+
     // WeightedRandom inner types define
     class WeighedRandomItem {
     public:
@@ -16,7 +16,5 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, int> mRandomWeight;
         // NOLINTEND
-    
     };
-    
 };

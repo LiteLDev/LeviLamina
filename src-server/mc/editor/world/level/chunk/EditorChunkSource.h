@@ -33,13 +33,15 @@ public:
     virtual bool canCreateViews() const /*override*/;
 
     // vIndex: 8
-    virtual ::std::shared_ptr<::LevelChunk> getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
+    virtual ::std::shared_ptr<::LevelChunk>
+    getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
 
     // vIndex: 5
     virtual bool isChunkKnown(::ChunkPos const& chunkPos) /*override*/;
 
     // vIndex: 7
-    virtual ::std::shared_ptr<::LevelChunk> createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
+    virtual ::std::shared_ptr<::LevelChunk>
+    createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
 
     // vIndex: 3
     virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& cp) /*override*/;
@@ -48,7 +50,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorChunkSource(::Dimension* dimension, int side, ::std::vector<::std::unique_ptr<::LevelChunk>> levelChunks);
+    MCNAPI
+    EditorChunkSource(::Dimension* dimension, int side, ::std::vector<::std::unique_ptr<::LevelChunk>> levelChunks);
     // NOLINTEND
 
 public:
@@ -62,11 +65,13 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $canCreateViews() const;
 
-    MCNAPI ::std::shared_ptr<::LevelChunk> $getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    MCNAPI ::std::shared_ptr<::LevelChunk>
+    $getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     MCNAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
 
-    MCNAPI ::std::shared_ptr<::LevelChunk> $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    MCNAPI ::std::shared_ptr<::LevelChunk>
+    $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     MCNAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& cp);
     // NOLINTEND
@@ -76,5 +81,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

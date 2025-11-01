@@ -13,4 +13,4 @@ namespace Bedrock::Safety {
 MCNAPI ::Bedrock::Safety::RedactableString const& EMPTY_REDACTABLE_STRING();
 // NOLINTEND
 
-}
+} // namespace Bedrock::Safety

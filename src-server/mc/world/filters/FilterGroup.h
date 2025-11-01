@@ -22,14 +22,14 @@ public:
     // FilterGroup inner types define
     enum class CollectionType : int {
         And = 0,
-        Or = 1,
+        Or  = 1,
         Not = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdd1627;
+    ::ll::UntypedStorage<4, 4>  mUnkdd1627;
     ::ll::UntypedStorage<8, 24> mUnkc039d0;
     ::ll::UntypedStorage<8, 24> mUnk378121;
     // NOLINTEND
@@ -60,11 +60,24 @@ public:
     // NOLINTBEGIN
     MCNAPI FilterGroup(::FilterGroup const&);
 
-    MCNAPI bool _parseFilterInputs(::SharedTypes::v1_21_20::FilterTestData const& filterTestData, ::FilterTest::Definition const& filterDef, ::FilterInputs& inputs);
+    MCNAPI bool _parseFilterInputs(
+        ::SharedTypes::v1_21_20::FilterTestData const& filterTestData,
+        ::FilterTest::Definition const&                filterDef,
+        ::FilterInputs&                                inputs
+    );
 
-    MCNAPI bool _parseFilterParam(::std::string const& filter, ::std::string const& member, ::std::optional<::std::variant<bool, int, float, ::std::string>> param, ::FilterParamDefinition const& paramDef, ::FilterInput& input);
+    MCNAPI bool _parseFilterParam(
+        ::std::string const&                                             filter,
+        ::std::string const&                                             member,
+        ::std::optional<::std::variant<bool, int, float, ::std::string>> param,
+        ::FilterParamDefinition const&                                   paramDef,
+        ::FilterInput&                                                   input
+    );
 
-    MCNAPI bool _parseMemberCollection(::FilterGroup::CollectionType collectionType, ::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
+    MCNAPI bool _parseMemberCollection(
+        ::FilterGroup::CollectionType                   collectionType,
+        ::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData
+    );
 
     MCNAPI bool _parseObject(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
 
@@ -98,5 +111,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

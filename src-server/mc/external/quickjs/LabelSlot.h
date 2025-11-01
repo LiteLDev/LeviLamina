@@ -18,5 +18,4 @@ public:
     LabelSlot& operator=(LabelSlot const&);
     LabelSlot(LabelSlot const&);
     LabelSlot();
-
 };

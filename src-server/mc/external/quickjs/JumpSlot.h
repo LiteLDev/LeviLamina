@@ -17,5 +17,4 @@ public:
     JumpSlot& operator=(JumpSlot const&);
     JumpSlot(JumpSlot const&);
     JumpSlot();
-
 };

@@ -21,7 +21,7 @@ class TrimDataPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::TrimPattern>> mTrimPatterns;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TrimPattern>>  mTrimPatterns;
     ::ll::TypedStorage<8, 24, ::std::vector<::TrimMaterial>> mTrimMaterials;
     // NOLINTEND
 
@@ -47,7 +47,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TrimDataPacket prepareFromRegistries(::TrimPatternRegistry const& patternRegistry, ::TrimMaterialRegistry const& materialRegistry);
+    MCAPI static ::TrimDataPacket
+    prepareFromRegistries(::TrimPatternRegistry const& patternRegistry, ::TrimMaterialRegistry const& materialRegistry);
     // NOLINTEND
 
 public:
@@ -73,5 +74,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

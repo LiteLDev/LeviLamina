@@ -19,10 +19,10 @@ class SynchedActorDataEntityWrapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::SynchedActorDataComponent*>> mData;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorDataFlagComponent*>> mFlagData;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::SynchedActorDataComponent*>>    mData;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorDataFlagComponent*>>       mFlagData;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorDataDirtyFlagsComponent*>> mDirtyFlags;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mEntityContext;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                      mEntityContext;
     // NOLINTEND
 
 public:
@@ -60,5 +60,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

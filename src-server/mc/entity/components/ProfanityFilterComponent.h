@@ -9,5 +9,4 @@ public:
     ::ll::TypedStorage<1, 1, bool> mIsRemoteProfanityFilterEnabled;
     ::ll::TypedStorage<1, 1, bool> mIsLocalProfanityFilterEnabled;
     // NOLINTEND
-
 };

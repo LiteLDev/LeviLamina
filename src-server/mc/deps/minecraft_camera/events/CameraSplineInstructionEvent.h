@@ -11,5 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::CameraInstruction::SplineInstruction> mCameraSplineInstruction;
     // NOLINTEND
-
 };

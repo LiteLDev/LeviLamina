@@ -6,10 +6,10 @@ struct MobSpawnHerdInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mMinCount;
-    ::ll::TypedStorage<4, 4, uint> mMaxCount;
-    ::ll::TypedStorage<4, 4, uint> mHerdEventSkipCount;
-    ::ll::TypedStorage<4, 4, uint> mInitialEventCount;
+    ::ll::TypedStorage<4, 4, uint>           mMinCount;
+    ::ll::TypedStorage<4, 4, uint>           mMaxCount;
+    ::ll::TypedStorage<4, 4, uint>           mHerdEventSkipCount;
+    ::ll::TypedStorage<4, 4, uint>           mInitialEventCount;
     ::ll::TypedStorage<8, 32, ::std::string> mInitialEvent;
     ::ll::TypedStorage<8, 32, ::std::string> mHerdEvent;
     // NOLINTEND
@@ -21,7 +21,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobSpawnHerdInfo(uint min, uint max, ::std::string const& initialEvent, uint initialEventCount, ::std::string const& herdEvent, uint herdEventSkipCount);
+    MCAPI MobSpawnHerdInfo(
+        uint                 min,
+        uint                 max,
+        ::std::string const& initialEvent,
+        uint                 initialEventCount,
+        ::std::string const& herdEvent,
+        uint                 herdEventSkipCount
+    );
 
     MCAPI ~MobSpawnHerdInfo();
     // NOLINTEND
@@ -29,7 +36,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint min, uint max, ::std::string const& initialEvent, uint initialEventCount, ::std::string const& herdEvent, uint herdEventSkipCount);
+    MCAPI void* $ctor(
+        uint                 min,
+        uint                 max,
+        ::std::string const& initialEvent,
+        uint                 initialEventCount,
+        ::std::string const& herdEvent,
+        uint                 herdEventSkipCount
+    );
     // NOLINTEND
 
 public:
@@ -37,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

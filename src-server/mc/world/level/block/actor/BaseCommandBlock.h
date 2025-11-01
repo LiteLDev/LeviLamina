@@ -19,17 +19,17 @@ class BaseCommandBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mLastOutputId;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mLastOutputParams;
-    ::ll::TypedStorage<8, 32, ::std::string> mCommand;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mLastOutputId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>        mLastOutputParams;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mCommand;
     ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mName;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Command>> mCompiledCommand;
-    ::ll::TypedStorage<8, 8, uint64> mLastExecution;
-    ::ll::TypedStorage<4, 4, int> mVersion;
-    ::ll::TypedStorage<4, 4, int> mSuccessCount;
-    ::ll::TypedStorage<4, 4, int> mTickDelay;
-    ::ll::TypedStorage<1, 1, bool> mExecuteOnFirstTick;
-    ::ll::TypedStorage<1, 1, bool> mTrackOutput;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Command>>         mCompiledCommand;
+    ::ll::TypedStorage<8, 8, uint64>                               mLastExecution;
+    ::ll::TypedStorage<4, 4, int>                                  mVersion;
+    ::ll::TypedStorage<4, 4, int>                                  mSuccessCount;
+    ::ll::TypedStorage<4, 4, int>                                  mTickDelay;
+    ::ll::TypedStorage<1, 1, bool>                                 mExecuteOnFirstTick;
+    ::ll::TypedStorage<1, 1, bool>                                 mTrackOutput;
     // NOLINTEND
 
 public:
@@ -73,5 +73,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

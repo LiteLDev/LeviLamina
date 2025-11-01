@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0>
-class IScriptScriptDeferredEventListener {
-};
+template <typename T0>
+class IScriptScriptDeferredEventListener {};
 
-}
+} // namespace ScriptModuleMinecraft

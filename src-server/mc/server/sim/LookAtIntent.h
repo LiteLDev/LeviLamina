@@ -15,7 +15,16 @@ struct LookAtIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::std::variant<::sim::VoidLookAtIntent, ::sim::LookAtPositionIntent, ::sim::ContinuousLookAtPositionIntent, ::sim::LookAtEntityIntent, ::sim::ContinuousLookAtEntityIntent>> mType;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::variant<
+            ::sim::VoidLookAtIntent,
+            ::sim::LookAtPositionIntent,
+            ::sim::ContinuousLookAtPositionIntent,
+            ::sim::LookAtEntityIntent,
+            ::sim::ContinuousLookAtEntityIntent>>
+        mType;
     // NOLINTEND
 
 public:
@@ -25,7 +34,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LookAtIntent(::std::variant<::sim::VoidLookAtIntent, ::sim::LookAtPositionIntent, ::sim::ContinuousLookAtPositionIntent, ::sim::LookAtEntityIntent, ::sim::ContinuousLookAtEntityIntent> type);
+    MCAPI explicit LookAtIntent(
+        ::std::variant<
+            ::sim::VoidLookAtIntent,
+            ::sim::LookAtPositionIntent,
+            ::sim::ContinuousLookAtPositionIntent,
+            ::sim::LookAtEntityIntent,
+            ::sim::ContinuousLookAtEntityIntent> type
+    );
 
     MCAPI ~LookAtIntent();
     // NOLINTEND
@@ -33,7 +49,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::variant<::sim::VoidLookAtIntent, ::sim::LookAtPositionIntent, ::sim::ContinuousLookAtPositionIntent, ::sim::LookAtEntityIntent, ::sim::ContinuousLookAtEntityIntent> type);
+    MCAPI void* $ctor(
+        ::std::variant<
+            ::sim::VoidLookAtIntent,
+            ::sim::LookAtPositionIntent,
+            ::sim::ContinuousLookAtPositionIntent,
+            ::sim::LookAtEntityIntent,
+            ::sim::ContinuousLookAtEntityIntent> type
+    );
     // NOLINTEND
 
 public:
@@ -41,7 +64,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace sim

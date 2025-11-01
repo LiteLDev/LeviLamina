@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
-#include "mc/versionless/util/Mirror.h"
-#include "mc/versionless/util/Rotation.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,11 +22,11 @@ class ScriptWidgetComponentClipboardOptions : public ::Editor::ScriptModule::Scr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnk6e5b33;
-    ::ll::UntypedStorage<1, 2> mUnkc882fe;
+    ::ll::UntypedStorage<1, 2>  mUnk6e5b33;
+    ::ll::UntypedStorage<1, 2>  mUnkc882fe;
     ::ll::UntypedStorage<4, 16> mUnk320886;
     ::ll::UntypedStorage<4, 16> mUnkac6d6a;
-    ::ll::UntypedStorage<1, 2> mUnk12aa80;
+    ::ll::UntypedStorage<1, 2>  mUnk12aa80;
     ::ll::UntypedStorage<4, 32> mUnk4bcb08;
     ::ll::UntypedStorage<4, 32> mUnkfd7ba1;
     ::ll::UntypedStorage<4, 32> mUnk10d5e2;
@@ -41,7 +41,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<void> validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
 
     // vIndex: 0
     virtual ~ScriptWidgetComponentClipboardOptions() /*override*/;
@@ -54,9 +55,11 @@ public:
 
     MCNAPI ScriptWidgetComponentClipboardOptions(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
     // NOLINTEND
 
 public:
@@ -108,7 +111,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
     // NOLINTEND
 
 public:
@@ -116,7 +120,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

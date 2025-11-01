@@ -24,7 +24,19 @@ struct WitherBossPreAIStepResultComponent;
 namespace ActorPostAiStep {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickEach(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::Exclude<::ActorRemovedFlagComponent>, ::ActorOwnerComponent> commonView, ::ViewT<::StrictEntityContext, ::Include<::EnderDragonFlagComponent>> const& enderDragons, ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>> const& horses, ::ViewT<::StrictEntityContext, ::Include<::ParrotFlagComponent>> const& parrots, ::ViewT<::StrictEntityContext, ::Include<::SquidFlagComponent>> const& squids, ::ViewT<::StrictEntityContext, ::Include<::WitherBossFlagComponent>, ::WitherBossPreAIStepResultComponent const> withers);
+MCNAPI void _tickEach(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent>,
+        ::Exclude<::ActorRemovedFlagComponent>,
+        ::ActorOwnerComponent>                                                   commonView,
+    ::ViewT<::StrictEntityContext, ::Include<::EnderDragonFlagComponent>> const& enderDragons,
+    ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>> const&       horses,
+    ::ViewT<::StrictEntityContext, ::Include<::ParrotFlagComponent>> const&      parrots,
+    ::ViewT<::StrictEntityContext, ::Include<::SquidFlagComponent>> const&       squids,
+    ::ViewT<::StrictEntityContext, ::Include<::WitherBossFlagComponent>, ::WitherBossPreAIStepResultComponent const>
+        withers
+);
 // NOLINTEND
 
-}
+} // namespace ActorPostAiStep

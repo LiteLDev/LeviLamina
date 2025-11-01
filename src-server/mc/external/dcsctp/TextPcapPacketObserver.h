@@ -41,7 +41,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void PrintPacket(::std::string_view prefix, ::std::string_view socket_name, ::dcsctp::TimeMs now, ::rtc::ArrayView<uchar const> payload);
+    MCNAPI static void PrintPacket(
+        ::std::string_view            prefix,
+        ::std::string_view            socket_name,
+        ::dcsctp::TimeMs              now,
+        ::rtc::ArrayView<uchar const> payload
+    );
     // NOLINTEND
 
 public:
@@ -57,7 +62,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

@@ -22,9 +22,9 @@ class NatTypeDetectionClient : public ::RakNet::PluginInterface2, public ::RakNe
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk331e12;
-    ::ll::UntypedStorage<8, 40> mUnk5f024d;
-    ::ll::UntypedStorage<8, 16> mUnkd290ec;
+    ::ll::UntypedStorage<8, 24>  mUnk331e12;
+    ::ll::UntypedStorage<8, 40>  mUnk5f024d;
+    ::ll::UntypedStorage<8, 16>  mUnkd290ec;
     ::ll::UntypedStorage<8, 136> mUnk5a2bf5;
     // NOLINTEND
 
@@ -47,7 +47,11 @@ public:
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
     // vIndex: 7
-    virtual void OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason) /*override*/;
+    virtual void OnClosedConnection(
+        ::RakNet::SystemAddress const&,
+        ::RakNet::RakNetGUID,
+        ::RakNet::PI2_LostConnectionReason
+    ) /*override*/;
 
     // vIndex: 6
     virtual void OnRakPeerShutdown() /*override*/;
@@ -70,7 +74,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

@@ -10,7 +10,12 @@ public:
     virtual ~IUIEventTelemetry() = default;
 
     // vIndex: 1
-    virtual void fireScreenLoadTimeUpdateEvent(uint const&, ::std::string const&, ::std::chrono::nanoseconds, ::std::string const&) = 0;
+    virtual void fireScreenLoadTimeUpdateEvent(
+        uint const&,
+        ::std::string const&,
+        ::std::chrono::nanoseconds,
+        ::std::string const&
+    ) = 0;
     // NOLINTEND
 
 public:
@@ -24,5 +29,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

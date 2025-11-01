@@ -35,32 +35,32 @@ public:
     // FurnaceBlockActor inner types define
     enum : int {
         SlotIngredient = 0,
-        SlotFuel = 1,
-        SlotResult = 2,
-        NumItems = 3,
+        SlotFuel       = 1,
+        SlotResult     = 2,
+        NumItems       = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mLitTime;
-    ::ll::TypedStorage<4, 4, int> mLitDuration;
-    ::ll::TypedStorage<4, 4, int> mCookingProgress;
-    ::ll::TypedStorage<4, 4, uint> mStoredXP;
-    ::ll::TypedStorage<8, 456, ::ItemStack[3]> mItems;
-    ::ll::TypedStorage<1, 3, bool[3]> mDirty;
+    ::ll::TypedStorage<4, 4, int>                                    mLitTime;
+    ::ll::TypedStorage<4, 4, int>                                    mLitDuration;
+    ::ll::TypedStorage<4, 4, int>                                    mCookingProgress;
+    ::ll::TypedStorage<4, 4, uint>                                   mStoredXP;
+    ::ll::TypedStorage<8, 456, ::ItemStack[3]>                       mItems;
+    ::ll::TypedStorage<1, 3, bool[3]>                                mDirty;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>> mActors;
-    ::ll::TypedStorage<8, 48, ::HashedString const> mRecipeTag;
-    ::ll::TypedStorage<4, 4, int const> mBurnInterval;
-    ::ll::TypedStorage<1, 1, bool> mOpenByLocalPlayer;
+    ::ll::TypedStorage<8, 48, ::HashedString const>                  mRecipeTag;
+    ::ll::TypedStorage<4, 4, int const>                              mBurnInterval;
+    ::ll::TypedStorage<1, 1, bool>                                   mOpenByLocalPlayer;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSmeltSoundEvent;
-    ::ll::TypedStorage<4, 4, int> mSoundTick;
-    ::ll::TypedStorage<4, 4, int> mSoundTickTarget;
-    ::ll::TypedStorage<8, 8, ::Block const&> mUnlitFurnace;
-    ::ll::TypedStorage<8, 8, ::Block const&> mLitFurnace;
-    ::ll::TypedStorage<8, 128, ::ItemInstance> mLastFuelItem;
-    ::ll::TypedStorage<1, 1, bool> mNoDrop;
-    ::ll::TypedStorage<1, 1, bool> mNeedsLitStateFixup;
+    ::ll::TypedStorage<4, 4, int>                                    mSoundTick;
+    ::ll::TypedStorage<4, 4, int>                                    mSoundTickTarget;
+    ::ll::TypedStorage<8, 8, ::Block const&>                         mUnlitFurnace;
+    ::ll::TypedStorage<8, 8, ::Block const&>                         mLitFurnace;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>                       mLastFuelItem;
+    ::ll::TypedStorage<1, 1, bool>                                   mNoDrop;
+    ::ll::TypedStorage<1, 1, bool>                                   mNeedsLitStateFixup;
     // NOLINTEND
 
 public:
@@ -127,7 +127,11 @@ public:
     virtual void onMove() /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     // vIndex: 41
     virtual void fixupOnLoad(::LevelChunk& lc) /*override*/;
@@ -145,7 +149,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FurnaceBlockActor(::BlockActorType blockActorType, ::BlockPos const& pos, ::HashedString const& recipeTag, ::SharedTypes::Legacy::LevelSoundEvent smeltSound, ::SharedTypes::Legacy::ContainerType containerType, int burnInterval, ::Block const& unlitFurnace, ::Block const& litFurnace);
+    MCAPI FurnaceBlockActor(
+        ::BlockActorType                       blockActorType,
+        ::BlockPos const&                      pos,
+        ::HashedString const&                  recipeTag,
+        ::SharedTypes::Legacy::LevelSoundEvent smeltSound,
+        ::SharedTypes::Legacy::ContainerType   containerType,
+        int                                    burnInterval,
+        ::Block const&                         unlitFurnace,
+        ::Block const&                         litFurnace
+    );
 
     MCAPI void _tryBroadcastBurnSound(::BlockSource& region);
 
@@ -205,7 +218,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockActorType blockActorType, ::BlockPos const& pos, ::HashedString const& recipeTag, ::SharedTypes::Legacy::LevelSoundEvent smeltSound, ::SharedTypes::Legacy::ContainerType containerType, int burnInterval, ::Block const& unlitFurnace, ::Block const& litFurnace);
+    MCAPI void* $ctor(
+        ::BlockActorType                       blockActorType,
+        ::BlockPos const&                      pos,
+        ::HashedString const&                  recipeTag,
+        ::SharedTypes::Legacy::LevelSoundEvent smeltSound,
+        ::SharedTypes::Legacy::ContainerType   containerType,
+        int                                    burnInterval,
+        ::Block const&                         unlitFurnace,
+        ::Block const&                         litFurnace
+    );
     // NOLINTEND
 
 public:
@@ -253,7 +275,11 @@ public:
 
     MCFOLD void $onMove();
 
-    MCAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
 
     MCAPI void $fixupOnLoad(::LevelChunk& lc);
 
@@ -269,5 +295,4 @@ public:
 
     MCNAPI static void** $vftableForBlockActor();
     // NOLINTEND
-
 };

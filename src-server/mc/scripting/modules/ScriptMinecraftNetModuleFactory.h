@@ -21,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk7f2275;
-    ::ll::UntypedStorage<8, 8> mUnk4fb1f9;
+    ::ll::UntypedStorage<8, 8>  mUnk4fb1f9;
     // NOLINTEND
 
 public:
@@ -40,11 +40,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptMinecraftNetModuleFactory(::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler, ::ServerLevel* level);
+    MCNAPI
+    ScriptMinecraftNetModuleFactory(::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler, ::ServerLevel* level);
 
     MCNAPI void _addVersions();
 
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, ::std::optional<::Scripting::ContextConfig> contextConfig, bool allowUntagged, ::std::vector<::std::string> const& allowedTags);
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&          moduleBuilder,
+        ::std::optional<::Scripting::ContextConfig> contextConfig,
+        bool                                        allowUntagged,
+        ::std::vector<::std::string> const&         allowedTags
+    );
     // NOLINTEND
 
 public:
@@ -66,5 +72,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

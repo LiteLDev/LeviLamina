@@ -16,7 +16,6 @@ public:
     IsIntersecting& operator=(IsIntersecting const&);
     IsIntersecting(IsIntersecting const&);
     IsIntersecting();
-
 };
 
-}
+} // namespace SneakMovementSystem

@@ -15,7 +15,7 @@ class CompoundTagUpdaterContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk2572ce;
+    ::ll::UntypedStorage<1, 1>  mUnk2572ce;
     ::ll::UntypedStorage<8, 24> mUnk8f8756;
     // NOLINTEND
 
@@ -32,5 +32,4 @@ public:
 
     MCNAPI ::CompoundTagUpdaterResult update(::CompoundTag& tag, uint version) const;
     // NOLINTEND
-
 };

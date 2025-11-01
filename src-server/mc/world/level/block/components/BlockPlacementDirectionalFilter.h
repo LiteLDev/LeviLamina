@@ -14,5 +14,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void fromStringVector(::BlockPlacementDirectionalFilter& instance, ::std::vector<::std::string> faces);
     // NOLINTEND
-
 };

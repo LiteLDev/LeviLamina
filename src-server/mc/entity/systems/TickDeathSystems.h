@@ -13,4 +13,4 @@ namespace TickDeathSystems {
 MCNAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
-}
+} // namespace TickDeathSystems

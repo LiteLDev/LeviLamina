@@ -10,5 +10,4 @@ public:
     ::ll::TypedStorage<4, 4, int> reagentItemId;
     ::ll::TypedStorage<4, 4, int> toItemId;
     // NOLINTEND
-
 };

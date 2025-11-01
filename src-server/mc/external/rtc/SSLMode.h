@@ -5,7 +5,7 @@
 namespace rtc {
 
 enum class SSLMode : int {
-    Tls = 0,
+    Tls  = 0,
     Dtls = 1,
 };
 

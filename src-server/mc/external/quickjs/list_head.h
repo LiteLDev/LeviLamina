@@ -15,5 +15,4 @@ public:
     list_head& operator=(list_head const&);
     list_head(list_head const&);
     list_head();
-
 };

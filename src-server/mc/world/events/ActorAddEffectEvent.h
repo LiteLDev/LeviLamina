@@ -10,7 +10,7 @@ struct ActorAddEffectEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>      mEntity;
     ::ll::TypedStorage<8, 136, ::MobEffectInstance> mMobEffect;
     // NOLINTEND
 
@@ -25,5 +25,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

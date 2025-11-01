@@ -9,26 +9,26 @@ struct CameraAimAssistPacketPayload {
 public:
     // CameraAimAssistPacketPayload inner types define
     enum class Action : uchar {
-        Set = 0,
+        Set   = 0,
         Clear = 1,
         Count = 2,
     };
-    
+
     enum class TargetMode : uchar {
-        Angle = 0,
+        Angle    = 0,
         Distance = 1,
-        Count = 2,
+        Count    = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mPresetId;
-    ::ll::TypedStorage<4, 8, ::Vec2> mViewAngle;
-    ::ll::TypedStorage<4, 4, float> mDistance;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mPresetId;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                     mViewAngle;
+    ::ll::TypedStorage<4, 4, float>                                      mDistance;
     ::ll::TypedStorage<1, 1, ::CameraAimAssistPacketPayload::TargetMode> mTargetMode;
-    ::ll::TypedStorage<1, 1, ::CameraAimAssistPacketPayload::Action> mAction;
-    ::ll::TypedStorage<1, 1, bool> mShowDebugRender;
+    ::ll::TypedStorage<1, 1, ::CameraAimAssistPacketPayload::Action>     mAction;
+    ::ll::TypedStorage<1, 1, bool>                                       mShowDebugRender;
     // NOLINTEND
 
 public:
@@ -50,5 +50,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

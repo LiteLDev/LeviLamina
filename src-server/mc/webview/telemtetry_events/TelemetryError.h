@@ -16,7 +16,6 @@ public:
     TelemetryError& operator=(TelemetryError const&);
     TelemetryError(TelemetryError const&);
     TelemetryError();
-
 };
 
-}
+} // namespace TelemtetryEvents

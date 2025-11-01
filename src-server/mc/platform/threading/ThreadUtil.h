@@ -4,7 +4,6 @@
 
 namespace Bedrock::Threading {
 
-class ThreadUtil {
-};
+class ThreadUtil {};
 
-}
+} // namespace Bedrock::Threading

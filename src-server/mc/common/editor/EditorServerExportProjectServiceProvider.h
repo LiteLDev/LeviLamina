@@ -16,7 +16,9 @@ public:
     virtual ~EditorServerExportProjectServiceProvider() = default;
 
     // vIndex: 1
-    virtual void addPreTaskFilePathCallBack(::std::function<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>()>) = 0;
+    virtual void addPreTaskFilePathCallBack(
+        ::std::function<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>()>
+    ) = 0;
     // NOLINTEND
 
 public:
@@ -24,7 +26,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

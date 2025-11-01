@@ -4,7 +4,6 @@
 
 namespace webrtc {
 
-class AecDump {
-};
+class AecDump {};
 
-}
+} // namespace webrtc

@@ -17,9 +17,9 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::Vec3> mStart;
     ::ll::TypedStorage<4, 12, ::Vec3> mEnd;
-    ::ll::TypedStorage<4, 8, ::Vec2> mVariation;
-    ::ll::TypedStorage<4, 4, float> mDirScale;
-    ::ll::TypedStorage<4, 4, int> mCount;
+    ::ll::TypedStorage<4, 8, ::Vec2>  mVariation;
+    ::ll::TypedStorage<4, 4, float>   mDirScale;
+    ::ll::TypedStorage<4, 4, int>     mCount;
     // NOLINTEND
 
 public:
@@ -27,5 +27,4 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
     // NOLINTEND
-
 };

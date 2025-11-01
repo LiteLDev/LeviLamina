@@ -16,4 +16,4 @@ MCNAPI ::std::string toString(::MovePredictionType type);
 MCNAPI ::std::chrono::steady_clock::time_point& lastRenderTime();
 // NOLINTEND
 
-}
+} // namespace InternalHelpers

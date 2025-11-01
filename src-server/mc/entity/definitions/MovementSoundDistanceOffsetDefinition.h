@@ -14,5 +14,4 @@ public:
     MovementSoundDistanceOffsetDefinition& operator=(MovementSoundDistanceOffsetDefinition const&);
     MovementSoundDistanceOffsetDefinition(MovementSoundDistanceOffsetDefinition const&);
     MovementSoundDistanceOffsetDefinition();
-
 };

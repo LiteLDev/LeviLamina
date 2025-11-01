@@ -20,5 +20,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void explode();
     // NOLINTEND
-
 };

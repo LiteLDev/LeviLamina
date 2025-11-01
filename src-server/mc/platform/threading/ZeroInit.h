@@ -4,7 +4,6 @@
 
 namespace Bedrock::Threading {
 
-struct ZeroInit {
-};
+struct ZeroInit {};
 
-}
+} // namespace Bedrock::Threading

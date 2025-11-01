@@ -31,5 +31,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::EntitySet&&);
     // NOLINTEND
-
 };

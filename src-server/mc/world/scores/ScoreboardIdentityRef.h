@@ -19,16 +19,18 @@ class ScoreboardIdentityRef {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mObjectiveReferences;
+    ::ll::TypedStorage<4, 4, uint>            mObjectiveReferences;
     ::ll::TypedStorage<8, 16, ::ScoreboardId> mScoreboardId;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string const& getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver) const;
+    MCNAPI ::std::string const&
+    getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver) const;
 
-    MCNAPI ::ScoreboardOperationResult modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
+    MCNAPI ::ScoreboardOperationResult
+    modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
 
     MCNAPI bool removeFromObjective(::Scoreboard& scoreboard, ::Objective& objective);
     // NOLINTEND
@@ -44,5 +46,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::ScoreboardIdentityRef const& Undefined();
     // NOLINTEND
-
 };

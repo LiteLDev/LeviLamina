@@ -19,7 +19,6 @@ public:
     CameraGlobalInstructionComponent& operator=(CameraGlobalInstructionComponent const&);
     CameraGlobalInstructionComponent(CameraGlobalInstructionComponent const&);
     CameraGlobalInstructionComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

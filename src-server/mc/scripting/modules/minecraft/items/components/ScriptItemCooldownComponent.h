@@ -33,13 +33,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemCooldownComponent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ScriptItemCooldownComponent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> getCooldownCategory();
 
     MCNAPI ::Scripting::Result_deprecated<int> getCooldownTicks();
 
-    MCNAPI ::Scripting::Result_deprecated<int> getCooldownTicksRemaining(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
+    MCNAPI ::Scripting::Result_deprecated<int>
+    getCooldownTicksRemaining(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
 
     MCNAPI ::Scripting::Result_deprecated<bool> isCooldownCategory(::std::string const& category);
 
@@ -49,13 +53,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
     // NOLINTEND
 
 public:
@@ -63,7 +71,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

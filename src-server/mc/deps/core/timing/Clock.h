@@ -21,7 +21,6 @@ public:
     Clock& operator=(Clock const&);
     Clock(Clock const&);
     Clock();
-
 };
 
-}
+} // namespace mce

@@ -20,7 +20,7 @@ public:
     virtual ~Metronome() = default;
 
     // vIndex: 1
-    virtual void RequestCallOnNextTick(::absl::AnyInvocable<void()&&>);
+    virtual void RequestCallOnNextTick(::absl::AnyInvocable<void() &&>);
 
     // vIndex: 2
     virtual ::webrtc::TimeDelta TickPeriod() const = 0;
@@ -31,7 +31,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

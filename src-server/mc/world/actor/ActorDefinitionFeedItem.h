@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::ItemDescriptor> mItemDescriptor;
-    ::ll::TypedStorage<4, 4, float> mGrowth;
+    ::ll::TypedStorage<4, 4, float>             mGrowth;
     // NOLINTEND
 
 public:
@@ -38,5 +38,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

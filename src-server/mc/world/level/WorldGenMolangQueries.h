@@ -8,4 +8,4 @@ namespace WorldGenMolangQueries {
 MCNAPI void registerWorldGenMolangQueries();
 // NOLINTEND
 
-}
+} // namespace WorldGenMolangQueries

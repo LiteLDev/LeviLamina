@@ -19,14 +19,12 @@ public:
     struct Hash;
     struct path_view_less;
     // clang-format on
-    
+
     // PathView inner types define
-    struct Hash {
-    };
-    
-    struct path_view_less {
-    };
-    
+    struct Hash {};
+
+    struct path_view_less {};
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -70,7 +68,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

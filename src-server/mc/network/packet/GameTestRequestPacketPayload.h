@@ -9,7 +9,7 @@ struct GameTestRequestPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mTestName;
+    ::ll::TypedStorage<8, 32, ::std::string>              mTestName;
     ::ll::TypedStorage<8, 64, ::gametest::TestParameters> mParams;
     // NOLINTEND
 
@@ -33,5 +33,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

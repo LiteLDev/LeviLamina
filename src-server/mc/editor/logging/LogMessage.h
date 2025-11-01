@@ -14,10 +14,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk9428fd;
-    ::ll::UntypedStorage<1, 1> mUnke3dd3f;
-    ::ll::UntypedStorage<1, 1> mUnk7ceb69;
+    ::ll::UntypedStorage<1, 1>  mUnke3dd3f;
+    ::ll::UntypedStorage<1, 1>  mUnk7ceb69;
     ::ll::UntypedStorage<8, 24> mUnke63c1b;
-    ::ll::UntypedStorage<1, 1> mUnk74e63c;
+    ::ll::UntypedStorage<1, 1>  mUnk74e63c;
     ::ll::UntypedStorage<8, 32> mUnkc65e9f;
     ::ll::UntypedStorage<8, 32> mUnkb0af5c;
     // NOLINTEND
@@ -48,7 +48,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

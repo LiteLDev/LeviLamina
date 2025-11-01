@@ -15,7 +15,7 @@ public:
     // clang-format off
     struct RepairItemEntry;
     // clang-format on
-    
+
     // RepairableItemComponent inner types define
     struct RepairItemEntry {
     public:
@@ -24,27 +24,26 @@ public:
         ::ll::UntypedStorage<8, 24> mUnk295409;
         ::ll::UntypedStorage<8, 48> mUnka0916c;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         RepairItemEntry& operator=(RepairItemEntry const&);
         RepairItemEntry(RepairItemEntry const&);
         RepairItemEntry();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~RepairItemEntry();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -74,7 +73,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_50

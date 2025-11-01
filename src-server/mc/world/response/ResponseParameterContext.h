@@ -5,6 +5,6 @@
 enum class ResponseParameterContext : int {
     Actor = 0,
     Block = 1,
-    Item = 2,
-    None = 3,
+    Item  = 2,
+    None  = 3,
 };

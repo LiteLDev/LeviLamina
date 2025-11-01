@@ -7,7 +7,6 @@
 
 namespace webrtc {
 
-class RepairedRtpStreamId : public ::webrtc::BaseRtpStringExtension {
-};
+class RepairedRtpStreamId : public ::webrtc::BaseRtpStringExtension {};
 
-}
+} // namespace webrtc

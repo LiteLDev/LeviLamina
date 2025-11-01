@@ -23,7 +23,7 @@ class CompoundTag : public ::Tag {
 public:
     // CompoundTag inner types define
     using StringView = ::std::string_view;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -175,5 +175,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

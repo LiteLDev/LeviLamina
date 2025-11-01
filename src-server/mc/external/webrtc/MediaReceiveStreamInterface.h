@@ -26,7 +26,8 @@ public:
     virtual void Stop() = 0;
 
     // vIndex: 3
-    virtual void SetDepacketizerToDecoderFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>) = 0;
+    virtual void
+        SetDepacketizerToDecoderFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>) = 0;
 
     // vIndex: 4
     virtual void SetFrameDecryptor(::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface>) = 0;
@@ -43,7 +44,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

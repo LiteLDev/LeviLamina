@@ -16,7 +16,6 @@ public:
     ScriptPlayerIdentity& operator=(ScriptPlayerIdentity const&);
     ScriptPlayerIdentity(ScriptPlayerIdentity const&);
     ScriptPlayerIdentity();
-
 };
 
-}
+} // namespace ScriptModuleIdentity

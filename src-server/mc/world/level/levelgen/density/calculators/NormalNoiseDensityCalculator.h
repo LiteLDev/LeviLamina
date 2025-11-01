@@ -19,7 +19,8 @@ class NormalNoiseDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const> mNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+                                            mNoise;
     ::ll::TypedStorage<4, 12, ::Vec3 const> mScale;
     // NOLINTEND
 
@@ -38,5 +39,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

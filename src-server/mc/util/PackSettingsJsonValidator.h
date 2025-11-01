@@ -11,5 +11,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::JsonValidator::Property getValidator();
     // NOLINTEND
-
 };

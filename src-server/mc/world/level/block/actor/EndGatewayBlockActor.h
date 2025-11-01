@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -23,14 +23,14 @@ class EndGatewayBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mAge;
-    ::ll::TypedStorage<4, 4, int> mTeleportCooldown;
+    ::ll::TypedStorage<4, 4, int>         mAge;
+    ::ll::TypedStorage<4, 4, int>         mTeleportCooldown;
     ::ll::TypedStorage<4, 12, ::BlockPos> mExitPortal;
-    ::ll::TypedStorage<1, 1, bool> mNeedsExitGeneration;
-    ::ll::TypedStorage<1, 1, bool> mTeleportTriggered;
-    ::ll::TypedStorage<1, 1, bool> mNeedsExitPositionVerification;
-    ::ll::TypedStorage<1, 1, bool> mExitPositionVerified;
-    ::ll::TypedStorage<1, 1, bool> mEndGatewayBadPosResetRequired;
+    ::ll::TypedStorage<1, 1, bool>        mNeedsExitGeneration;
+    ::ll::TypedStorage<1, 1, bool>        mTeleportTriggered;
+    ::ll::TypedStorage<1, 1, bool>        mNeedsExitPositionVerification;
+    ::ll::TypedStorage<1, 1, bool>        mExitPositionVerified;
+    ::ll::TypedStorage<1, 1, bool>        mEndGatewayBadPosResetRequired;
     // NOLINTEND
 
 public:
@@ -76,7 +76,8 @@ public:
 
     MCAPI static ::BlockPos findExitPortal(::WorldGenerator& endGenerator, ::BlockPos const& origin);
 
-    MCAPI static ::BlockPos findValidSpawnAround(::BlockSource& region, ::BlockPos const& around, bool searchForEndStoneOnly, int searchRadius);
+    MCAPI static ::BlockPos
+    findValidSpawnAround(::BlockSource& region, ::BlockPos const& around, bool searchForEndStoneOnly, int searchRadius);
     // NOLINTEND
 
 public:
@@ -102,5 +103,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

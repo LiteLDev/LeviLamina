@@ -4,8 +4,7 @@
 
 namespace ClientBlockPipeline {
 
-template<typename T0>
-class VolumeOf {
-};
+template <typename T0>
+class VolumeOf {};
 
-}
+} // namespace ClientBlockPipeline

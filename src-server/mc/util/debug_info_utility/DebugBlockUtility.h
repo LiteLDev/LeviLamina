@@ -4,7 +4,6 @@
 
 namespace DebugInfoUtility {
 
-class DebugBlockUtility {
-};
+class DebugBlockUtility {};
 
-}
+} // namespace DebugInfoUtility

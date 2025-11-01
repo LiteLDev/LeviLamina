@@ -18,19 +18,19 @@ class AnimatePacket : public ::Packet {
 public:
     // AnimatePacket inner types define
     enum class Action : int {
-        NoAction = 0,
-        Swing = 1,
-        WakeUp = 3,
-        CriticalHit = 4,
+        NoAction         = 0,
+        Swing            = 1,
+        WakeUp           = 3,
+        CriticalHit      = 4,
         MagicCriticalHit = 5,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>        mRuntimeId;
     ::ll::TypedStorage<4, 4, ::AnimatePacket::Action> mAction;
-    ::ll::TypedStorage<4, 4, float> mData;
+    ::ll::TypedStorage<4, 4, float>                   mData;
     // NOLINTEND
 
 public:
@@ -75,5 +75,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

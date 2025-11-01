@@ -23,7 +23,15 @@ struct VehicleComponent;
 namespace SendLinkPacketOfPassengersSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void sendLinkPacketOfPassengers(::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::PassengersChangedFlagComponent>>, ::StrictEntityContext const& entity, ::ActorUniqueIDComponent const& vehicleUniqueIDComponent, ::VehicleComponent& vehicleComponent, ::Optional<::BoatMovementComponent const> boatMovement, ::EntityModifier<::SendPacketsComponent> modifier, ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent>, ::ActorUniqueIDComponent const> passengersView);
+MCNAPI void sendLinkPacketOfPassengers(
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::PassengersChangedFlagComponent>>,
+    ::StrictEntityContext const&              entity,
+    ::ActorUniqueIDComponent const&           vehicleUniqueIDComponent,
+    ::VehicleComponent&                       vehicleComponent,
+    ::Optional<::BoatMovementComponent const> boatMovement,
+    ::EntityModifier<::SendPacketsComponent>  modifier,
+    ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent>, ::ActorUniqueIDComponent const> passengersView
+);
 // NOLINTEND
 
-}
+} // namespace SendLinkPacketOfPassengersSystemImpl

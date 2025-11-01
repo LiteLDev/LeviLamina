@@ -16,7 +16,6 @@ public:
     ApplyReplayStateTrackerRequestComponent& operator=(ApplyReplayStateTrackerRequestComponent const&);
     ApplyReplayStateTrackerRequestComponent(ApplyReplayStateTrackerRequestComponent const&);
     ApplyReplayStateTrackerRequestComponent();
-
 };
 
-}
+} // namespace ClientRewind

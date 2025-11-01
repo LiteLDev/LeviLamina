@@ -7,7 +7,6 @@
 
 namespace Core::Profile {
 
-class CounterToken : public ::Core::Profile::CounterTokenMarker {
-};
+class CounterToken : public ::Core::Profile::CounterTokenMarker {};
 
-}
+} // namespace Core::Profile

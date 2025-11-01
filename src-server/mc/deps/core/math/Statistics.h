@@ -4,7 +4,6 @@
 
 namespace mce {
 
-class Statistics {
-};
+class Statistics {};
 
-}
+} // namespace mce

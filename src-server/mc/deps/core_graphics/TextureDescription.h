@@ -19,7 +19,6 @@ public:
     TextureDescription& operator=(TextureDescription const&);
     TextureDescription(TextureDescription const&);
     TextureDescription();
-
 };
 
-}
+} // namespace cg

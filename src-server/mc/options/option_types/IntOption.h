@@ -9,11 +9,11 @@ class IntOption : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8af74d;
-    ::ll::UntypedStorage<4, 4> mUnka6e3fa;
-    ::ll::UntypedStorage<4, 4> mUnk5cfa3a;
-    ::ll::UntypedStorage<4, 4> mUnk4c681f;
-    ::ll::UntypedStorage<1, 1> mUnka2bfc3;
+    ::ll::UntypedStorage<4, 4>  mUnk8af74d;
+    ::ll::UntypedStorage<4, 4>  mUnka6e3fa;
+    ::ll::UntypedStorage<4, 4>  mUnk5cfa3a;
+    ::ll::UntypedStorage<4, 4>  mUnk4c681f;
+    ::ll::UntypedStorage<1, 1>  mUnka2bfc3;
     ::ll::UntypedStorage<8, 24> mUnkde8f59;
     ::ll::UntypedStorage<8, 64> mUnkb33603;
     // NOLINTEND
@@ -42,5 +42,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

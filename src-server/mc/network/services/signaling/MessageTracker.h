@@ -22,11 +22,10 @@ public:
     struct Destination;
     struct MessageStatus;
     // clang-format on
-    
+
     // MessageTracker inner types define
-    struct Destination : public ::std::variant<::NetherNet::NetworkID, ::PlayerMessaging::NetworkID> {
-    };
-    
+    struct Destination : public ::std::variant<::NetherNet::NetworkID, ::PlayerMessaging::NetworkID> {};
+
     struct MessageStatus {
     public:
         // member variables
@@ -36,29 +35,28 @@ public:
         ::ll::UntypedStorage<8, 16> mUnkff686d;
         ::ll::UntypedStorage<8, 64> mUnk8f7071;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         MessageStatus& operator=(MessageStatus const&);
         MessageStatus(MessageStatus const&);
         MessageStatus();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::MessageTracker::MessageStatus& operator=(::MessageTracker::MessageStatus&&);
-    
+
         MCNAPI ~MessageStatus();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -78,11 +76,19 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::vector<::MessagePerformance> _clear();
 
-    MCNAPI void _complete(::NetherNet::ESessionError result, ::mce::UUID key, ::MessageTracker::MessageStatus&& value, ::MessagePerformance::Status status);
+    MCNAPI void _complete(
+        ::NetherNet::ESessionError        result,
+        ::mce::UUID                       key,
+        ::MessageTracker::MessageStatus&& value,
+        ::MessagePerformance::Status      status
+    );
 
     MCNAPI void _continueTracking(::mce::UUID key, ::MessageTracker::MessageStatus&& value);
 
-    MCNAPI void _tryGetValue(::std::string const& messageId, ::std::function<void(::mce::UUID, ::MessageTracker::MessageStatus&&)>&& fn);
+    MCNAPI void _tryGetValue(
+        ::std::string const&                                                    messageId,
+        ::std::function<void(::mce::UUID, ::MessageTracker::MessageStatus&&)>&& fn
+    );
 
     MCNAPI void add(::std::string const& messageId, ::std::function<void(::NetherNet::ESessionError)>&& onComplete);
 
@@ -94,7 +100,12 @@ public:
 
     MCNAPI void messageError(::std::string const& messageId, ::JsonRpc::JsonRpcError const& error);
 
-    MCNAPI void messageSent(::MessageTracker::Destination to, ::std::string const& message, ::std::string const& messageId, ::std::error_code error);
+    MCNAPI void messageSent(
+        ::MessageTracker::Destination to,
+        ::std::string const&          message,
+        ::std::string const&          messageId,
+        ::std::error_code             error
+    );
 
     MCNAPI ~MessageTracker();
     // NOLINTEND
@@ -104,5 +115,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

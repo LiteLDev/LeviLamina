@@ -21,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk3871d3;
-    ::ll::UntypedStorage<1, 1> mUnk68d761;
+    ::ll::UntypedStorage<1, 1>  mUnk68d761;
     // NOLINTEND
 
 public:
@@ -33,7 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>> get(::Scripting::WeakLifetimeScope scope, ::std::string const& identifier);
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>
+    get(::Scripting::WeakLifetimeScope scope, ::std::string const& identifier);
 
     MCNAPI void registerTypes(::Scripting::WeakLifetimeScope scope);
     // NOLINTEND
@@ -55,7 +56,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string const& sMinecraftNamespace();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

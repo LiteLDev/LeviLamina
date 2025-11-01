@@ -15,5 +15,4 @@ public:
     JSRegExp& operator=(JSRegExp const&);
     JSRegExp(JSRegExp const&);
     JSRegExp();
-
 };

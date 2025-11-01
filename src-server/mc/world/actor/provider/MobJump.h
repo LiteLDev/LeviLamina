@@ -10,7 +10,7 @@ class EntityContext;
 namespace MobJump {
 // functions
 // NOLINTBEGIN
-MCNAPI bool isJumping(::EntityContext const& provider);
+MCFOLD bool isJumping(::EntityContext const& provider);
 // NOLINTEND
 
-}
+} // namespace MobJump

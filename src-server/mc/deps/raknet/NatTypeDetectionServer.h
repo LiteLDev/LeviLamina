@@ -24,41 +24,40 @@ public:
     // clang-format off
     struct NATDetectionAttempt;
     // clang-format on
-    
+
     // NatTypeDetectionServer inner types define
     enum class NATDetectionState : int {
-        None = 0,
-        TestingNone1 = 1,
-        TestingNone2 = 2,
-        TestingFullCone1 = 3,
-        TestingFullCone2 = 4,
+        None                      = 0,
+        TestingNone1              = 1,
+        TestingNone2              = 2,
+        TestingFullCone1          = 3,
+        TestingFullCone2          = 4,
         TestingAddressRestricted1 = 5,
         TestingAddressRestricted2 = 6,
-        TestingPortRestricted1 = 7,
-        TestingPortRestricted2 = 8,
-        Done = 9,
+        TestingPortRestricted1    = 7,
+        TestingPortRestricted2    = 8,
+        Done                      = 9,
     };
-    
+
     struct NATDetectionAttempt {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 136> mUnkdb18b7;
-        ::ll::UntypedStorage<4, 4> mUnk35212e;
-        ::ll::UntypedStorage<4, 4> mUnk49949a;
-        ::ll::UntypedStorage<4, 4> mUnk469dad;
-        ::ll::UntypedStorage<2, 2> mUnk54ccbd;
-        ::ll::UntypedStorage<8, 16> mUnkd32b0b;
+        ::ll::UntypedStorage<4, 4>   mUnk35212e;
+        ::ll::UntypedStorage<4, 4>   mUnk49949a;
+        ::ll::UntypedStorage<4, 4>   mUnk469dad;
+        ::ll::UntypedStorage<2, 2>   mUnk54ccbd;
+        ::ll::UntypedStorage<8, 16>  mUnkd32b0b;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         NATDetectionAttempt& operator=(NATDetectionAttempt const&);
         NATDetectionAttempt(NATDetectionAttempt const&);
         NATDetectionAttempt();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -91,7 +90,11 @@ public:
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
     // vIndex: 7
-    virtual void OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason) /*override*/;
+    virtual void OnClosedConnection(
+        ::RakNet::SystemAddress const&,
+        ::RakNet::RakNetGUID,
+        ::RakNet::PI2_LostConnectionReason
+    ) /*override*/;
 
     // vIndex: 1
     virtual void OnRNS2Recv(::RakNet::RNS2RecvStruct*) /*override*/;
@@ -108,7 +111,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

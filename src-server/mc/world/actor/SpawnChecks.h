@@ -11,9 +11,8 @@ class SpawnChecks {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool canSpawnNaturally(::ILevel const& level);
+    MCAPI static bool canSpawnNaturally(::ILevel const& level);
 
-    MCNAPI static bool canSpawnWithWorldGeneration(::ILevel const& level);
+    MCAPI static bool canSpawnWithWorldGeneration(::ILevel const& level);
     // NOLINTEND
-
 };

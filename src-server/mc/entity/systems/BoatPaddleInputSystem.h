@@ -24,9 +24,25 @@ struct VehicleInputIntentComponent;
 namespace BoatPaddleInputSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void doPassengerTick(::entt::type_list<::Include<::PlayerInputRequestComponent>>, ::StrictEntityContext const& context, ::MoveInputComponent const& moveInputComponent, ::PlayerInputModeComponent const& playerInputModeComponent, ::PassengerComponent const& passengerComponent, ::Optional<::PlayerInteractionModelComponent const> const& playerInteractionModelComponent, ::ViewT<::StrictEntityContext, ::ActorRotationComponent const, ::BoatPaddleComponent const, ::VehicleInputIntentComponent> const& vehicleView);
+MCNAPI void doPassengerTick(
+    ::entt::type_list<::Include<::PlayerInputRequestComponent>>,
+    ::StrictEntityContext const&                               context,
+    ::MoveInputComponent const&                                moveInputComponent,
+    ::PlayerInputModeComponent const&                          playerInputModeComponent,
+    ::PassengerComponent const&                                passengerComponent,
+    ::Optional<::PlayerInteractionModelComponent const> const& playerInteractionModelComponent,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::ActorRotationComponent const,
+        ::BoatPaddleComponent const,
+        ::VehicleInputIntentComponent> const& vehicleView
+);
 
-MCNAPI void doVehicleTick(::entt::type_list<::Include<::ActorMovementTickNeededComponent>>, ::VehicleInputIntentComponent const& vehicleInputIntent, ::BoatPaddleComponent& boatPaddle);
+MCNAPI void doVehicleTick(
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::VehicleInputIntentComponent const& vehicleInputIntent,
+    ::BoatPaddleComponent&               boatPaddle
+);
 // NOLINTEND
 
-}
+} // namespace BoatPaddleInputSystem

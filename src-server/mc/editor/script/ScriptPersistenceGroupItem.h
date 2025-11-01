@@ -14,14 +14,15 @@ namespace Scripting { struct Error; }
 
 namespace Editor::ScriptModule {
 
-class ScriptPersistenceGroupItem : public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptPersistenceGroupItem> {
+class ScriptPersistenceGroupItem
+: public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptPersistenceGroupItem> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk5e0188;
     ::ll::UntypedStorage<8, 16> mUnk46e305;
     ::ll::UntypedStorage<8, 16> mUnkaa573d;
-    ::ll::UntypedStorage<8, 8> mUnk2fac81;
+    ::ll::UntypedStorage<8, 8>  mUnk2fac81;
     // NOLINTEND
 
 public:
@@ -51,7 +52,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

@@ -13,4 +13,4 @@ namespace OfferFlowerTickUtility {
 MCNAPI void offerFlower(bool offerFlower, ::Actor& actor, int maxOfferFlowerTicks);
 // NOLINTEND
 
-}
+} // namespace OfferFlowerTickUtility

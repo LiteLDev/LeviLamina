@@ -15,7 +15,7 @@ class InteractActionDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdddbc2;
+    ::ll::UntypedStorage<4, 4>  mUnkdddbc2;
     ::ll::UntypedStorage<8, 32> mUnk455be2;
     // NOLINTEND
 
@@ -46,5 +46,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

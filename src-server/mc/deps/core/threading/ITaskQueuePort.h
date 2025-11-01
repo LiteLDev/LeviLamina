@@ -20,16 +20,22 @@ public:
     virtual ::XTaskQueuePortObject* GetHandle() = 0;
 
     // vIndex: 4
-    virtual HRESULT QueueItem(::ITaskQueuePortContext*, uint, void*, void(*) (void*, bool)) = 0;
+    virtual HRESULT QueueItem(::ITaskQueuePortContext*, uint, void*, void (*)(void*, bool)) = 0;
 
     // vIndex: 5
-    virtual HRESULT RegisterWaitHandle(::ITaskQueuePortContext*, void*, void*, void(*) (void*, bool), ::XTaskQueueRegistrationToken*) = 0;
+    virtual HRESULT RegisterWaitHandle(
+        ::ITaskQueuePortContext*,
+        void*,
+        void*,
+        void (*)(void*, bool),
+        ::XTaskQueueRegistrationToken*
+    ) = 0;
 
     // vIndex: 6
     virtual void UnregisterWaitHandle(::XTaskQueueRegistrationToken) = 0;
 
     // vIndex: 7
-    virtual HRESULT PrepareTerminate(::ITaskQueuePortContext*, void*, void(*) (void*), void**) = 0;
+    virtual HRESULT PrepareTerminate(::ITaskQueuePortContext*, void*, void (*)(void*), void**) = 0;
 
     // vIndex: 8
     virtual void CancelTermination(void*) = 0;
@@ -70,5 +76,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

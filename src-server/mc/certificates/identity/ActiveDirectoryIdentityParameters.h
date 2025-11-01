@@ -19,7 +19,6 @@ public:
     ActiveDirectoryIdentityParameters& operator=(ActiveDirectoryIdentityParameters const&);
     ActiveDirectoryIdentityParameters(ActiveDirectoryIdentityParameters const&);
     ActiveDirectoryIdentityParameters();
-
 };
 
-}
+} // namespace Identity

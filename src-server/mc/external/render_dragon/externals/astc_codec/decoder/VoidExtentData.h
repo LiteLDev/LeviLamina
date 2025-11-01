@@ -20,7 +20,6 @@ public:
     VoidExtentData& operator=(VoidExtentData const&);
     VoidExtentData(VoidExtentData const&);
     VoidExtentData();
-
 };
 
-}
+} // namespace astc_codec

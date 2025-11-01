@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnk675f33;
-    ::ll::UntypedStorage<4, 4> mUnk426311;
+    ::ll::UntypedStorage<4, 4>  mUnk426311;
     // NOLINTEND
 
 public:
@@ -29,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

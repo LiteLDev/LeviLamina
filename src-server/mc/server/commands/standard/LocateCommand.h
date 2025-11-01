@@ -16,10 +16,10 @@ class LocateCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk7f3365;
+    ::ll::UntypedStorage<1, 1>  mUnk7f3365;
     ::ll::UntypedStorage<8, 32> mUnk884b8f;
-    ::ll::UntypedStorage<4, 4> mUnkeec355;
-    ::ll::UntypedStorage<1, 1> mUnk3b6959;
+    ::ll::UntypedStorage<4, 4>  mUnkeec355;
+    ::ll::UntypedStorage<1, 1>  mUnk3b6959;
     // NOLINTEND
 
 public:
@@ -63,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -14,4 +14,4 @@ namespace CopperGolemStatueBlockActor {
 MCAPI ::std::unique_ptr<::SerializedActorBlockActor> create(::BlockPos const& pos);
 // NOLINTEND
 
-}
+} // namespace CopperGolemStatueBlockActor

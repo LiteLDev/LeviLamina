@@ -17,8 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mAttachedID;
-    ::ll::TypedStorage<4, 4, float> mMaxHeight;
-    ::ll::TypedStorage<1, 1, bool> mShouldDropAttached;
+    ::ll::TypedStorage<4, 4, float>           mMaxHeight;
+    ::ll::TypedStorage<1, 1, bool>            mShouldDropAttached;
     // NOLINTEND
 
 public:
@@ -52,5 +52,4 @@ public:
 
     MCNAPI static ::std::string const& SHOULD_DROP_TAG();
     // NOLINTEND
-
 };

@@ -19,4 +19,4 @@ MCNAPI ::TickingSystemWithInfo createClientSystem();
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace ItemUseSlowdownSystem

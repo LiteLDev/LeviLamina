@@ -4,8 +4,7 @@
 
 namespace webrtc {
 
-template<typename T0>
-class RtpReceiverProxyWithInternal {
-};
+template <typename T0>
+class RtpReceiverProxyWithInternal {};
 
-}
+} // namespace webrtc

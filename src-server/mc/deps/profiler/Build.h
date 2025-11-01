@@ -6,7 +6,7 @@ namespace Bedrock::Profiler::details::BuildClassification {
 
 enum class Build : uchar {
     Retail = 0,
-    Dev = 1,
+    Dev    = 1,
 };
 
 }

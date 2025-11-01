@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BlockType const*> mBlockType;
-    ::ll::TypedStorage<4, 12, ::Vec3> mSpawnOffset;
+    ::ll::TypedStorage<4, 12, ::Vec3>            mSpawnOffset;
     // NOLINTEND
 
 public:
@@ -24,5 +24,4 @@ public:
     // NOLINTBEGIN
     MCAPI void initFromDefinition(::Actor const& actor);
     // NOLINTEND
-
 };

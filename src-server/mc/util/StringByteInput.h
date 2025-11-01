@@ -10,7 +10,7 @@ class StringByteInput : public ::BytesDataInput {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64> mIdx;
+    ::ll::TypedStorage<8, 8, uint64>              mIdx;
     ::ll::TypedStorage<8, 16, ::std::string_view> mBuffer;
     // NOLINTEND
 
@@ -46,5 +46,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

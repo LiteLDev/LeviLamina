@@ -11,31 +11,31 @@ class Interaction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd2c947;
-    ::ll::UntypedStorage<4, 4> mUnkd9acda;
-    ::ll::UntypedStorage<1, 1> mUnkb15b5f;
-    ::ll::UntypedStorage<1, 1> mUnk7e270d;
-    ::ll::UntypedStorage<1, 1> mUnk9f5093;
-    ::ll::UntypedStorage<1, 1> mUnk72cb1c;
-    ::ll::UntypedStorage<1, 1> mUnkb2d40d;
-    ::ll::UntypedStorage<1, 1> mUnkaa7c58;
-    ::ll::UntypedStorage<4, 4> mUnkd5328a;
-    ::ll::UntypedStorage<4, 4> mUnk79e800;
-    ::ll::UntypedStorage<4, 12> mUnk41fb56;
-    ::ll::UntypedStorage<4, 12> mUnk2d2b5f;
-    ::ll::UntypedStorage<4, 12> mUnk73b4f3;
-    ::ll::UntypedStorage<4, 4> mUnkac64af;
-    ::ll::UntypedStorage<4, 8> mUnkbbe183;
-    ::ll::UntypedStorage<8, 32> mUnk3a3d80;
-    ::ll::UntypedStorage<8, 32> mUnka7364a;
-    ::ll::UntypedStorage<8, 32> mUnke8c60e;
-    ::ll::UntypedStorage<4, 12> mUnkbdcf46;
-    ::ll::UntypedStorage<4, 4> mUnk2de782;
-    ::ll::UntypedStorage<4, 4> mUnkaceac1;
-    ::ll::UntypedStorage<8, 24> mUnk968bff;
-    ::ll::UntypedStorage<8, 24> mUnke9ec1d;
+    ::ll::UntypedStorage<4, 4>   mUnkd2c947;
+    ::ll::UntypedStorage<4, 4>   mUnkd9acda;
+    ::ll::UntypedStorage<1, 1>   mUnkb15b5f;
+    ::ll::UntypedStorage<1, 1>   mUnk7e270d;
+    ::ll::UntypedStorage<1, 1>   mUnk9f5093;
+    ::ll::UntypedStorage<1, 1>   mUnk72cb1c;
+    ::ll::UntypedStorage<1, 1>   mUnkb2d40d;
+    ::ll::UntypedStorage<1, 1>   mUnkaa7c58;
+    ::ll::UntypedStorage<4, 4>   mUnkd5328a;
+    ::ll::UntypedStorage<4, 4>   mUnk79e800;
+    ::ll::UntypedStorage<4, 12>  mUnk41fb56;
+    ::ll::UntypedStorage<4, 12>  mUnk2d2b5f;
+    ::ll::UntypedStorage<4, 12>  mUnk73b4f3;
+    ::ll::UntypedStorage<4, 4>   mUnkac64af;
+    ::ll::UntypedStorage<4, 8>   mUnkbbe183;
+    ::ll::UntypedStorage<8, 32>  mUnk3a3d80;
+    ::ll::UntypedStorage<8, 32>  mUnka7364a;
+    ::ll::UntypedStorage<8, 32>  mUnke8c60e;
+    ::ll::UntypedStorage<4, 12>  mUnkbdcf46;
+    ::ll::UntypedStorage<4, 4>   mUnk2de782;
+    ::ll::UntypedStorage<4, 4>   mUnkaceac1;
+    ::ll::UntypedStorage<8, 24>  mUnk968bff;
+    ::ll::UntypedStorage<8, 24>  mUnke9ec1d;
     ::ll::UntypedStorage<8, 104> mUnk1b388c;
-    ::ll::UntypedStorage<8, 8> mUnk9fe4c9;
+    ::ll::UntypedStorage<8, 8>   mUnk9fe4c9;
     // NOLINTEND
 
 public:
@@ -95,5 +95,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

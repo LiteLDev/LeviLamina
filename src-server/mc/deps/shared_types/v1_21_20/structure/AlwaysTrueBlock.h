@@ -4,7 +4,6 @@
 
 namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule {
 
-struct AlwaysTrueBlock {
-};
+struct AlwaysTrueBlock {};
 
-}
+} // namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule

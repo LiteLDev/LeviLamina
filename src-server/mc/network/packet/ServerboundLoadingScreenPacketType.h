@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ServerboundLoadingScreenPacketType : int {
-    Unknown = 0,
+    Unknown            = 0,
     StartLoadingScreen = 1,
-    EndLoadingScreen = 2,
+    EndLoadingScreen   = 2,
 };

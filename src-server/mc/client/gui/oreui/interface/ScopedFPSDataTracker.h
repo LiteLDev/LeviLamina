@@ -19,7 +19,6 @@ public:
     ScopedFPSDataTracker& operator=(ScopedFPSDataTracker const&);
     ScopedFPSDataTracker(ScopedFPSDataTracker const&);
     ScopedFPSDataTracker();
-
 };
 
-}
+} // namespace OreUI

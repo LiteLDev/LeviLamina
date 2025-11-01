@@ -10,7 +10,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<uchar>> data;
-    ::ll::TypedStorage<8, 24, ::FileChunkInfo> info;
+    ::ll::TypedStorage<8, 24, ::FileChunkInfo>      info;
     // NOLINTEND
-
 };

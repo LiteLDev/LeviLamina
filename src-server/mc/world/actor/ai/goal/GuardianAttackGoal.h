@@ -15,15 +15,15 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Guardian&> mGuardian;
-    ::ll::TypedStorage<4, 4, int> mAttackTicks;
-    ::ll::TypedStorage<4, 4, int> mSoundDelayTicks;
-    ::ll::TypedStorage<4, 4, int> mMagicDamage;
-    ::ll::TypedStorage<4, 4, int> mHardModeExtraMagicDamage;
-    ::ll::TypedStorage<4, 4, int> mElderExtraMagicDamage;
-    ::ll::TypedStorage<4, 4, float> mMaxRotationX;
-    ::ll::TypedStorage<4, 4, float> mMaxHeadRotationY;
-    ::ll::TypedStorage<4, 4, float> mMinDistance;
-    ::ll::TypedStorage<1, 1, bool> mLastCanSinkState;
+    ::ll::TypedStorage<4, 4, int>         mAttackTicks;
+    ::ll::TypedStorage<4, 4, int>         mSoundDelayTicks;
+    ::ll::TypedStorage<4, 4, int>         mMagicDamage;
+    ::ll::TypedStorage<4, 4, int>         mHardModeExtraMagicDamage;
+    ::ll::TypedStorage<4, 4, int>         mElderExtraMagicDamage;
+    ::ll::TypedStorage<4, 4, float>       mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float>       mMaxHeadRotationY;
+    ::ll::TypedStorage<4, 4, float>       mMinDistance;
+    ::ll::TypedStorage<1, 1, bool>        mLastCanSinkState;
     // NOLINTEND
 
 public:
@@ -78,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

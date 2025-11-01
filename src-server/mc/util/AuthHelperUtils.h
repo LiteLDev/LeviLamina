@@ -11,9 +11,12 @@ namespace Crypto::Certificate { class Certificate; }
 namespace AuthHelperUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::string _createAndSignJWTWithCertificate(::Bedrock::Services::AzureIdentityConfig const& azureConfig, ::Crypto::Certificate::Certificate const& cert);
+MCNAPI ::std::string _createAndSignJWTWithCertificate(
+    ::Bedrock::Services::AzureIdentityConfig const& azureConfig,
+    ::Crypto::Certificate::Certificate const&       cert
+);
 
 MCNAPI ::std::unique_ptr<::Crypto::Certificate::Certificate> _loadCertificateFromFile(::std::string const& certName);
 // NOLINTEND
 
-}
+} // namespace AuthHelperUtils

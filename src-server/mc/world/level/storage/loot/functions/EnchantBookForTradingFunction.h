@@ -23,44 +23,43 @@ public:
     // clang-format off
     struct EnchantmentOption;
     // clang-format on
-    
+
     // EnchantBookForTradingFunction inner types define
     struct EnchantmentOption {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk85cc40;
-        ::ll::UntypedStorage<4, 4> mUnk738917;
-        ::ll::UntypedStorage<4, 4> mUnk59d95d;
+        ::ll::UntypedStorage<4, 4>  mUnk738917;
+        ::ll::UntypedStorage<4, 4>  mUnk59d95d;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         EnchantmentOption& operator=(EnchantmentOption const&);
         EnchantmentOption(EnchantmentOption const&);
         EnchantmentOption();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~EnchantmentOption();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1be4fe;
-    ::ll::UntypedStorage<4, 4> mUnk751251;
-    ::ll::UntypedStorage<4, 4> mUnk18274c;
-    ::ll::UntypedStorage<4, 4> mUnk677e06;
+    ::ll::UntypedStorage<4, 4>  mUnk1be4fe;
+    ::ll::UntypedStorage<4, 4>  mUnk751251;
+    ::ll::UntypedStorage<4, 4>  mUnk18274c;
+    ::ll::UntypedStorage<4, 4>  mUnk677e06;
     ::ll::UntypedStorage<8, 24> mUnk4675c9;
     // NOLINTEND
 
@@ -80,13 +79,15 @@ public:
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
     // vIndex: 3
-    virtual int apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
+    virtual int
+    apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
 
     // vIndex: 2
     virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext&) /*override*/;
 
     // vIndex: 1
-    virtual int apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
+    virtual int
+    apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
 
     // vIndex: 5
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
@@ -103,9 +104,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::EnchantBookForTradingFunction::EnchantmentOption> _parseEnchantmentOption(::Json::Value const& enchantOptionData);
+    MCNAPI static ::std::optional<::EnchantBookForTradingFunction::EnchantmentOption>
+    _parseEnchantmentOption(::Json::Value const& enchantOptionData);
 
-    MCNAPI static ::std::unique_ptr<::EnchantBookForTradingFunction> deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    MCNAPI static ::std::unique_ptr<::EnchantBookForTradingFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
@@ -127,5 +130,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

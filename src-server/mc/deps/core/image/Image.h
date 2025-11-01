@@ -13,16 +13,16 @@ struct Image {
 public:
     // Image inner types define
     using Storage = ::mce::Blob;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::mce::ImageFormat> imageFormat;
-    ::ll::TypedStorage<4, 4, uint> mWidth;
-    ::ll::TypedStorage<4, 4, uint> mHeight;
-    ::ll::TypedStorage<4, 4, uint> mDepth;
-    ::ll::TypedStorage<1, 1, ::mce::ImageUsage> mUsage;
-    ::ll::TypedStorage<8, 24, ::mce::Blob> mImageBytes;
+    ::ll::TypedStorage<4, 4, uint>               mWidth;
+    ::ll::TypedStorage<4, 4, uint>               mHeight;
+    ::ll::TypedStorage<4, 4, uint>               mDepth;
+    ::ll::TypedStorage<1, 1, ::mce::ImageUsage>  mUsage;
+    ::ll::TypedStorage<8, 24, ::mce::Blob>       mImageBytes;
     // NOLINTEND
 
 public:
@@ -56,7 +56,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace mce

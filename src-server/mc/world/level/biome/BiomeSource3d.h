@@ -26,7 +26,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 216, ::BlendedMultiNoiseBiomeProvider> mBiomeProvider;
-    ::ll::TypedStorage<2, 4, ::DimensionHeightRange const> mDimensionHeight;
+    ::ll::TypedStorage<2, 4, ::DimensionHeightRange const>       mDimensionHeight;
     // NOLINTEND
 
 public:
@@ -37,16 +37,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const /*override*/;
+    virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const
+        /*override*/;
 
     // vIndex: 3
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& box, uint scale) const /*override*/;
 
     // vIndex: 2
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const /*override*/;
+    virtual ::BiomeArea
+    getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const /*override*/;
 
     // vIndex: 4
-    virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const /*override*/;
+    virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const
+        /*override*/;
 
     // vIndex: 5
     virtual bool hasBiomeById(::BiomeIdType id) const /*override*/;
@@ -69,7 +72,8 @@ public:
     // NOLINTBEGIN
     MCAPI BiomeSource3d(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
 
-    MCAPI ::ClientBlockPipeline::VolumeOf<::Biome const*> getBiomeVolumeToFill(::LevelChunk const& levelChunk, ::ChunkLocalNoiseCache const& chunkLocalNoiseCache) const;
+    MCAPI ::ClientBlockPipeline::VolumeOf<::Biome const*>
+    getBiomeVolumeToFill(::LevelChunk const& levelChunk, ::ChunkLocalNoiseCache const& chunkLocalNoiseCache) const;
     // NOLINTEND
 
 public:
@@ -91,7 +95,8 @@ public:
 
     MCFOLD ::BiomeArea $getBiomeArea(::BoundingBox const& box, uint scale) const;
 
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const;
+    MCAPI ::BiomeArea
+    $getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const;
 
     MCAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const;
 
@@ -109,5 +114,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

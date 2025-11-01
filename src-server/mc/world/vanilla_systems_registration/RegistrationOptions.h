@@ -11,7 +11,7 @@ struct RegistrationOptions : public ::ECSModule::RegistrationOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5e9164;
+    ::ll::UntypedStorage<8, 8>  mUnk5e9164;
     ::ll::UntypedStorage<8, 72> mUnkc6b192;
     // NOLINTEND
 
@@ -32,7 +32,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace VanillaSystemsRegistration

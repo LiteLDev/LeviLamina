@@ -4,7 +4,6 @@
 
 namespace mce {
 
-struct AssertResourceServiceErrorHandler {
-};
+struct AssertResourceServiceErrorHandler {};
 
-}
+} // namespace mce

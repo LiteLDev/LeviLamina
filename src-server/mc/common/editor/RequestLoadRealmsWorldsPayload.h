@@ -7,7 +7,8 @@
 
 namespace Editor::Network {
 
-class RequestLoadRealmsWorldsPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::RequestLoadRealmsWorldsPayload> {
+class RequestLoadRealmsWorldsPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::RequestLoadRealmsWorldsPayload> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -20,7 +21,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

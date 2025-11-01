@@ -5,12 +5,12 @@
 namespace Social {
 
 enum class UserPlatformConnectionResult : int {
-    Anonymous = 0,
-    NotConnected = 1,
-    Connected = 2,
+    Anonymous        = 0,
+    NotConnected     = 1,
+    Connected        = 2,
     ConnectionFailed = 3,
-    OfflineOnly = 4,
-    UserBanned = 5,
+    OfflineOnly      = 4,
+    UserBanned       = 5,
 };
 
 }

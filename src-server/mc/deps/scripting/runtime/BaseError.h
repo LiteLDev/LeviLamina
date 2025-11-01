@@ -13,12 +13,12 @@ struct BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> name;
-    ::ll::TypedStorage<8, 32, ::std::string> message;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> sourceMapDebugId;
+    ::ll::TypedStorage<8, 32, ::std::string>                              name;
+    ::ll::TypedStorage<8, 32, ::std::string>                              message;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>             sourceMapDebugId;
     ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::CallStackEntry>> mCallStack;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mCallStackStr;
-    ::ll::TypedStorage<1, 1, bool> throwAsString;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>             mCallStackStr;
+    ::ll::TypedStorage<1, 1, bool>                                        throwAsString;
     // NOLINTEND
 
 public:
@@ -57,7 +57,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

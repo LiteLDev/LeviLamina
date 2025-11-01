@@ -22,23 +22,22 @@ public:
     // clang-format off
     struct ConstructorToken;
     // clang-format on
-    
+
     // BlockPalette inner types define
-    struct ConstructorToken {
-    };
-    
+    struct ConstructorToken {};
+
     enum class PaletteType : int {
         Sequential = 0,
-        Hashed = 1,
+        Hashed     = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mLegacyBlockStatesConversionWarningMutex;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>       mLegacyBlockStatesConversionWarningMutex;
     ::ll::TypedStorage<8, 16, ::std::set<::std::pair<int, int>>> mLegacyBlockStatesConversionWarningSet;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>> mBlockFromNetworkId;
-    ::ll::TypedStorage<8, 8, ::Level*> mLevel;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>     mBlockFromNetworkId;
+    ::ll::TypedStorage<8, 8, ::Level*>                           mLevel;
     // NOLINTEND
 
 public:
@@ -117,5 +116,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

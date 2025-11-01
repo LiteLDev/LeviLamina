@@ -11,7 +11,6 @@ public:
     // vIndex: 0
     virtual ~AbstractFeatureHolder() = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace FeatureLoading

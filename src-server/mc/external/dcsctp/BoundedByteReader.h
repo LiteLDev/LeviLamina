@@ -4,8 +4,7 @@
 
 namespace dcsctp {
 
-template<int T0>
-class BoundedByteReader {
-};
+template <int T0>
+class BoundedByteReader {};
 
-}
+} // namespace dcsctp

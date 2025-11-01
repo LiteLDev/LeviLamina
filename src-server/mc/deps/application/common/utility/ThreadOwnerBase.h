@@ -4,7 +4,6 @@
 
 namespace Bedrock::Application {
 
-class ThreadOwnerBase {
-};
+class ThreadOwnerBase {};
 
-}
+} // namespace Bedrock::Application

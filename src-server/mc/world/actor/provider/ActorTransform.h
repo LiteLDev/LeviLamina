@@ -10,7 +10,7 @@ class EntityContext;
 namespace ActorTransform {
 // functions
 // NOLINTBEGIN
-MCNAPI void initializeActor(::EntityContext& entity);
+MCAPI void initializeActor(::EntityContext& entity);
 // NOLINTEND
 
-}
+} // namespace ActorTransform

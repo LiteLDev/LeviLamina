@@ -24,22 +24,25 @@ public:
     // clang-format off
     class DelayRequestQueue;
     // clang-format on
-    
+
     // DelayActionList inner types define
     class DelayRequestQueue : public ::MovePriorityQueue<::DelayRequest, ::std::greater<::DelayRequest>> {
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI int removeRequestWithAction(::DimensionDataSerializer dimensionDataSerializer, ::LevelStorage& levelStorage, ::gsl::not_null<::IRequestAction*> actionToRemove);
+        MCNAPI int removeRequestWithAction(
+            ::DimensionDataSerializer          dimensionDataSerializer,
+            ::LevelStorage&                    levelStorage,
+            ::gsl::not_null<::IRequestAction*> actionToRemove
+        );
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkeceaf4;
-    ::ll::UntypedStorage<4, 4> mUnk7cbe33;
+    ::ll::UntypedStorage<4, 4>  mUnk7cbe33;
     // NOLINTEND
 
 public:
@@ -58,13 +61,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _loadRequest(::Dimension& dimension, ::std::string const& key, ::CompoundTag const& tag, ::ICommandOriginLoader& loader, uint64 currentTick, ::std::vector<::std::string>& invalidRequestsOut);
+    MCNAPI void _loadRequest(
+        ::Dimension&                  dimension,
+        ::std::string const&          key,
+        ::CompoundTag const&          tag,
+        ::ICommandOriginLoader&       loader,
+        uint64                        currentTick,
+        ::std::vector<::std::string>& invalidRequestsOut
+    );
 
-    MCNAPI void _loadRequests(::Dimension& dimension, ::LevelStorage& levelStorage, ::ICommandOriginLoader& loader, uint64 currentTick);
+    MCNAPI void _loadRequests(
+        ::Dimension&            dimension,
+        ::LevelStorage&         levelStorage,
+        ::ICommandOriginLoader& loader,
+        uint64                  currentTick
+    );
 
-    MCNAPI ::QueueRequestResult _queueRequestOrExecuteAction(::DelayRequest request, ::LevelStorage& levelStorage, ::Dimension& dimension, uint64 currentTick, bool allowDuplicates);
+    MCNAPI ::QueueRequestResult _queueRequestOrExecuteAction(
+        ::DelayRequest  request,
+        ::LevelStorage& levelStorage,
+        ::Dimension&    dimension,
+        uint64          currentTick,
+        bool            allowDuplicates
+    );
 
-    MCNAPI void _saveRequest(::DelayRequest& request, ::std::string const& dimensionPrefix, ::LevelStorage& levelStorage);
+    MCNAPI void
+    _saveRequest(::DelayRequest& request, ::std::string const& dimensionPrefix, ::LevelStorage& levelStorage);
 
     MCNAPI void tick(::ServerLevel& level, ::Dimension& dimension, uint64 currentTick);
     // NOLINTEND
@@ -74,5 +96,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -47,7 +47,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptInventoryComponentContainer(::ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptInventoryComponentContainer& operator=(::ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptInventoryComponentContainer&
+    operator=(::ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
     // NOLINTEND
 
 public:
@@ -83,7 +84,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

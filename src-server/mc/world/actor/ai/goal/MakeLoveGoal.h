@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::VillagerBase&> mVillager;
-    ::ll::TypedStorage<4, 4, int> mLoveMakingTime;
+    ::ll::TypedStorage<4, 4, int>             mLoveMakingTime;
     // NOLINTEND
 
 public:
@@ -78,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -10,7 +10,7 @@ class SubscribedObjectives {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>            mPlayer;
     ::ll::TypedStorage<8, 16, ::std::set<::HashedString>> mObjectives;
     // NOLINTEND
 
@@ -19,5 +19,4 @@ public:
     // NOLINTBEGIN
     MCAPI bool isSubscribed(::std::string const& objective) const;
     // NOLINTEND
-
 };

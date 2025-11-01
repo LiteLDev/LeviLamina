@@ -14,5 +14,4 @@ public:
     ReviewByUserResponse& operator=(ReviewByUserResponse const&);
     ReviewByUserResponse(ReviewByUserResponse const&);
     ReviewByUserResponse();
-
 };

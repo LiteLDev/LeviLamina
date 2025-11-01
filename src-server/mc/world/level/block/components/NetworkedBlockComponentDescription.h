@@ -2,6 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template<typename T0>
-class NetworkedBlockComponentDescription {
-};
+template <typename T0>
+class NetworkedBlockComponentDescription {};

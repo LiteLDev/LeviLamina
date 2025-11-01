@@ -6,8 +6,8 @@ namespace cricket {
 
 enum class StunAddressFamily : int {
     Undef = 0,
-    Ipv4 = 1,
-    Ipv6 = 2,
+    Ipv4  = 1,
+    Ipv6  = 2,
 };
 
 }

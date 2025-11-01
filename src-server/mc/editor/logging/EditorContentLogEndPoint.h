@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkaacd73;
-    ::ll::UntypedStorage<1, 1> mUnk8d16ba;
+    ::ll::UntypedStorage<1, 1>  mUnk8d16ba;
     // NOLINTEND
 
 public:
@@ -72,7 +72,6 @@ public:
 
     MCNAPI static void** $vftableForLogEndPoint();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

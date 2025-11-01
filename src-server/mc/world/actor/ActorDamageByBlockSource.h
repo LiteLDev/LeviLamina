@@ -25,7 +25,8 @@ public:
     virtual bool isBlockSource() const /*override*/;
 
     // vIndex: 10
-    virtual ::std::pair<::std::string, ::std::vector<::std::string>> getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
 
     // vIndex: 21
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
@@ -39,7 +40,8 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isBlockSource() const;
 
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>> $getDeathMessage(::std::string deadName, ::Actor* dead) const;
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
     MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
     // NOLINTEND
@@ -49,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

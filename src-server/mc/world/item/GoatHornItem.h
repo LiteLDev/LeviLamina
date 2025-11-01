@@ -33,7 +33,12 @@ public:
     virtual int getCooldownDuration() const /*override*/;
 
     // vIndex: 53
-    virtual void appendFormattedHovertext(::ItemStackBase const& instance, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               instance,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~GoatHornItem() /*override*/ = default;
@@ -56,7 +61,12 @@ public:
 
     MCFOLD int $getCooldownDuration() const;
 
-    MCAPI void $appendFormattedHovertext(::ItemStackBase const& instance, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               instance,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
     // NOLINTEND
 
 public:
@@ -64,5 +74,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

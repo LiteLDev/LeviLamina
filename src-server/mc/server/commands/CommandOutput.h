@@ -18,11 +18,11 @@ class CommandOutput {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::CommandOutputType> mType;
+    ::ll::TypedStorage<4, 4, ::CommandOutputType>                     mType;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandPropertyBag>> mBag;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CommandOutputMessage>> mMessages;
-    ::ll::TypedStorage<4, 4, int> mSuccessCount;
-    ::ll::TypedStorage<1, 1, bool> mHasPlayerText;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandOutputMessage>>  mMessages;
+    ::ll::TypedStorage<4, 4, int>                                     mSuccessCount;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasPlayerText;
     // NOLINTEND
 
 public:
@@ -37,7 +37,11 @@ public:
 
     MCAPI explicit CommandOutput(::CommandOutputType type);
 
-    MCAPI void addMessage(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params, ::CommandOutputMessageType type);
+    MCAPI void addMessage(
+        ::std::string const&                           msgId,
+        ::std::vector<::CommandOutputParameter> const& params,
+        ::CommandOutputMessageType                     type
+    );
 
     MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
 
@@ -63,5 +67,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

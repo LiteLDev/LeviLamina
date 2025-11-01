@@ -17,5 +17,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::EducationEditionOfferValue& operator=(::EducationEditionOffer value);
     // NOLINTEND
-
 };

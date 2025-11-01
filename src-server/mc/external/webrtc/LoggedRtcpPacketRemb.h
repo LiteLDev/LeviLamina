@@ -8,7 +8,7 @@ struct LoggedRtcpPacketRemb {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk810113;
+    ::ll::UntypedStorage<8, 8>  mUnk810113;
     ::ll::UntypedStorage<8, 56> mUnkf04ade;
     // NOLINTEND
 
@@ -17,7 +17,6 @@ public:
     LoggedRtcpPacketRemb& operator=(LoggedRtcpPacketRemb const&);
     LoggedRtcpPacketRemb(LoggedRtcpPacketRemb const&);
     LoggedRtcpPacketRemb();
-
 };
 
-}
+} // namespace webrtc

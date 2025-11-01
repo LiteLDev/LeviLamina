@@ -4,7 +4,6 @@
 
 namespace flighting {
 
-class TreatmentToggles {
-};
+class TreatmentToggles {};
 
-}
+} // namespace flighting

@@ -25,7 +25,7 @@ public:
     virtual ~AsyncTCPSocket() /*override*/ = default;
 
     // vIndex: 3
-    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) /*override*/;
+    virtual int Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options) /*override*/;
 
     // vIndex: 11
     virtual uint64 ProcessInput(::rtc::ArrayView<uchar const> data) /*override*/;
@@ -46,7 +46,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $Send(void const* data, uint64 len, ::rtc::PacketOptions const& options);
+    MCNAPI int $Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options);
 
     MCNAPI uint64 $ProcessInput(::rtc::ArrayView<uchar const> data);
     // NOLINTEND
@@ -56,7 +56,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

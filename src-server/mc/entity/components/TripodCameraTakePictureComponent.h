@@ -16,15 +16,13 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-    
+
     // TripodCameraTakePictureComponent inner types define
-    class Definition {
-    };
-    
+    class Definition {};
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mSubject;
     // NOLINTEND
-
 };

@@ -16,20 +16,19 @@ struct AttributeInstanceForwarder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::AttributeInstance*> mInstance;
+    ::ll::TypedStorage<8, 8, ::AttributeInstance*>           mInstance;
     ::ll::TypedStorage<8, 8, ::AttributeModificationContext> mContext;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addModifier(::std::shared_ptr<::AttributeModifier> modifier);
+    MCAPI void addModifier(::std::shared_ptr<::AttributeModifier> modifier);
 
-    MCNAPI bool hasModifier(::AttributeModifier const& modifier) const;
+    MCAPI bool hasModifier(::AttributeModifier const& modifier) const;
 
-    MCNAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
+    MCAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
 
-    MCNAPI bool removeModifier(::mce::UUID const& id);
+    MCAPI bool removeModifier(::mce::UUID const& id);
     // NOLINTEND
-
 };

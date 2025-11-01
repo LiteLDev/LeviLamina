@@ -16,7 +16,7 @@ class MinecraftScriptSentryPlugin : public ::ScriptModuleDiagnostics::IScriptSen
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8c3ac7;
+    ::ll::UntypedStorage<8, 8>  mUnk8c3ac7;
     ::ll::UntypedStorage<8, 32> mUnkb98b5a;
     // NOLINTEND
 
@@ -52,7 +52,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleDiagnostics

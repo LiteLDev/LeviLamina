@@ -14,5 +14,4 @@ public:
     Trigger& operator=(Trigger const&);
     Trigger(Trigger const&);
     Trigger();
-
 };

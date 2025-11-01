@@ -15,5 +15,4 @@ public:
     EntityOptionalOwnerRef& operator=(EntityOptionalOwnerRef const&);
     EntityOptionalOwnerRef(EntityOptionalOwnerRef const&);
     EntityOptionalOwnerRef();
-
 };

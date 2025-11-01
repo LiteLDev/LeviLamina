@@ -7,13 +7,14 @@
 
 namespace Editor::Network {
 
-class PrefabDBClientInitializedPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::PrefabDBClientInitializedPayload> {
+class PrefabDBClientInitializedPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::PrefabDBClientInitializedPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbdfd35;
+    ::ll::UntypedStorage<4, 4>  mUnkbdfd35;
     ::ll::UntypedStorage<4, 12> mUnkf0e1a6;
-    ::ll::UntypedStorage<4, 4> mUnka3ed68;
+    ::ll::UntypedStorage<4, 4>  mUnka3ed68;
     // NOLINTEND
 
 public:
@@ -34,7 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

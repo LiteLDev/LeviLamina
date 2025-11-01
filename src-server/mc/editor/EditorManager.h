@@ -24,7 +24,9 @@ namespace Scripting { struct ContextId; }
 
 namespace Editor {
 
-class EditorManager : public ::Editor::IEditorManager, public ::Editor::Services::EditorServiceList, public ::Editor::EditorManagerServiceProvider {
+class EditorManager : public ::Editor::IEditorManager,
+                      public ::Editor::Services::EditorServiceList,
+                      public ::Editor::EditorManagerServiceProvider {
 public:
     // member variables
     // NOLINTBEGIN
@@ -44,7 +46,12 @@ public:
     virtual ~EditorManager() /*override*/;
 
     // vIndex: 4
-    virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(::ILevelListCache&, ::Scheduler&, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>) /*override*/;
+    virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
+        ::ILevelListCache&,
+        ::Scheduler&,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>
+    ) /*override*/;
 
     // vIndex: 5
     virtual void cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const /*override*/;
@@ -56,7 +63,8 @@ public:
     virtual ::Scripting::Result_deprecated<void> scriptingTeardown() /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::Result_deprecated<void> scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
 
     // vIndex: 9
     virtual void tryClearPlaytestRoundtripInfo() /*override*/;
@@ -86,7 +94,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::FileArchiver::IWorldConverter> $createWorldConverter(::ILevelListCache&, ::Scheduler&, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>);
+    MCNAPI ::std::unique_ptr<::FileArchiver::IWorldConverter> $createWorldConverter(
+        ::ILevelListCache&,
+        ::Scheduler&,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>
+    );
 
     MCNAPI void $cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const;
 
@@ -110,7 +123,6 @@ public:
 
     MCNAPI static void** $vftableForIEditorManager();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

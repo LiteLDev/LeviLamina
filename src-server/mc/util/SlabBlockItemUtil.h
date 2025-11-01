@@ -13,7 +13,8 @@ class ItemStack;
 namespace SlabBlockItemUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI void convertToDoubleBlock(::ItemStack& instance, ::Actor& actor, ::BlockPos const& pos, ::Block const& doubleBlock);
+MCNAPI void
+convertToDoubleBlock(::ItemStack& instance, ::Actor& actor, ::BlockPos const& pos, ::Block const& doubleBlock);
 // NOLINTEND
 
-}
+} // namespace SlabBlockItemUtil

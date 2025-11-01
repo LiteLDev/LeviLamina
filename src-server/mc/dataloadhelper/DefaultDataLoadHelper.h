@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/dataloadhelper/DataLoadHelper.h"
 #include "mc/dataloadhelper/DataLoadHelperType.h"
-#include "mc/versionless/util/Mirror.h"
-#include "mc/versionless/util/Rotation.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
 
@@ -65,7 +65,10 @@ public:
     virtual ::ActorUniqueID loadOwnerID(::ActorUniqueID id) /*override*/;
 
     // vIndex: 15
-    virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry, ::std::string const& componentName) /*override*/;
+    virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
+        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
+        ::std::string const&                                                                    componentName
+    ) /*override*/;
 
     // vIndex: 17
     virtual bool shouldResetTime() /*override*/;
@@ -108,7 +111,10 @@ public:
 
     MCFOLD ::ActorUniqueID $loadOwnerID(::ActorUniqueID id);
 
-    MCAPI ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry, ::std::string const& componentName);
+    MCAPI ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(
+        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
+        ::std::string const&                                                                    componentName
+    );
 
     MCFOLD bool $shouldResetTime();
 
@@ -120,5 +126,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

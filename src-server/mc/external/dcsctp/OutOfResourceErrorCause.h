@@ -13,7 +13,8 @@ namespace dcsctp { struct OutOfResourceParameterConfig; }
 
 namespace dcsctp {
 
-class OutOfResourceErrorCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::OutOfResourceParameterConfig> {
+class OutOfResourceErrorCause : public ::dcsctp::Parameter,
+                                public ::dcsctp::TLVTrait<::dcsctp::OutOfResourceParameterConfig> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -46,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

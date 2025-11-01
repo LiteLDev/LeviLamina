@@ -20,16 +20,16 @@ class VillagerBase : public ::Mob {
 public:
     // VillagerBase inner types define
     enum class BiomeType : int {
-        Plains = 0,
-        Desert = 1,
-        Jungle = 2,
+        Plains   = 0,
+        Desert   = 1,
+        Jungle   = 2,
         Savannah = 3,
-        Snow = 4,
-        Swamp = 5,
-        Taiga = 6,
-        Count = 7,
+        Snow     = 4,
+        Swamp    = 5,
+        Taiga    = 6,
+        Count    = 7,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -51,7 +51,7 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent event, int data) /*override*/;
 
     // vIndex: 67
     virtual void onLightningHit() /*override*/;
@@ -63,7 +63,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VillagerBase(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI VillagerBase(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCAPI void _addParticlesAroundSelf(::ParticleType particleType);
 
@@ -75,7 +79,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -91,7 +99,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent event, int data);
 
     MCAPI void $onLightningHit();
     // NOLINTEND
@@ -101,5 +109,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

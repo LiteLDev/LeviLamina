@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class SSNTag {
-};
+class SSNTag {};
 
-}
+} // namespace dcsctp

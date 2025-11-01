@@ -13,7 +13,8 @@ namespace dcsctp { struct ForwardTsnChunkConfig; }
 
 namespace dcsctp {
 
-class ForwardTsnChunk : public ::dcsctp::AnyForwardTsnChunk, public ::dcsctp::TLVTrait<::dcsctp::ForwardTsnChunkConfig> {
+class ForwardTsnChunk : public ::dcsctp::AnyForwardTsnChunk,
+                        public ::dcsctp::TLVTrait<::dcsctp::ForwardTsnChunkConfig> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -52,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

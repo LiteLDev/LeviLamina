@@ -14,5 +14,4 @@ public:
     UIThumbnailMeshOffscreenCaptureDescription& operator=(UIThumbnailMeshOffscreenCaptureDescription const&);
     UIThumbnailMeshOffscreenCaptureDescription(UIThumbnailMeshOffscreenCaptureDescription const&);
     UIThumbnailMeshOffscreenCaptureDescription();
-
 };

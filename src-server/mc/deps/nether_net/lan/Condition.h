@@ -22,7 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI bool StateDispatch(::std::unique_lock<::std::mutex>&& lock) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace NetherNet::RunLoop

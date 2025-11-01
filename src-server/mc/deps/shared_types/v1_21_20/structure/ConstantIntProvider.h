@@ -16,7 +16,6 @@ public:
     ConstantIntProvider& operator=(ConstantIntProvider const&);
     ConstantIntProvider(ConstantIntProvider const&);
     ConstantIntProvider();
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20

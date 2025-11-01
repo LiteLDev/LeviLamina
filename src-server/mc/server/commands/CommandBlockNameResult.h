@@ -11,20 +11,20 @@ class CommandBlockNameResult {
 public:
     // CommandBlockNameResult inner types define
     enum class Result : uchar {
-        Unknown = 0,
-        Succeess = 1,
-        NoBlockName = 2,
-        SetDataError = 3,
+        Unknown       = 0,
+        Succeess      = 1,
+        NoBlockName   = 2,
+        SetDataError  = 3,
         SetStateError = 4,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::CommandBlockNameResult::Result> mResult;
-    ::ll::TypedStorage<1, 1, bool> mIsComplexAlias;
-    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>> mComplexAliasPostSplitBlocks;
+    ::ll::TypedStorage<1, 1, bool>                             mIsComplexAlias;
+    ::ll::TypedStorage<8, 8, ::Block const*>                   mBlock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>   mComplexAliasPostSplitBlocks;
     // NOLINTEND
 
 public:
@@ -38,5 +38,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

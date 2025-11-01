@@ -12,9 +12,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
-    ::ll::TypedStorage<1, 1, bool> mStopOnMove;
+    ::ll::TypedStorage<1, 1, bool>             mStopOnMove;
     // NOLINTEND
-
 };
 
-}
+} // namespace sim

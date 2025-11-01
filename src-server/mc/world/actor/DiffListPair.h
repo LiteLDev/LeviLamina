@@ -15,5 +15,4 @@ public:
     DiffListPair& operator=(DiffListPair const&);
     DiffListPair(DiffListPair const&);
     DiffListPair();
-
 };

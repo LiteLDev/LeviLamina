@@ -18,7 +18,7 @@ public:
     // clang-format off
     struct Copy;
     // clang-format on
-    
+
     // ImmutableLocalization inner types define
     struct Copy {
     public:
@@ -27,31 +27,30 @@ public:
         ::ll::UntypedStorage<8, 16> mUnkf64f09;
         ::ll::UntypedStorage<8, 16> mUnkcd94c1;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Copy& operator=(Copy const&);
         Copy(Copy const&);
         Copy();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Copy();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2e95db;
+    ::ll::UntypedStorage<8, 8>  mUnk2e95db;
     ::ll::UntypedStorage<8, 16> mUnk55524c;
     // NOLINTEND
 
@@ -78,5 +77,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Localization&& value);
     // NOLINTEND
-
 };

@@ -27,17 +27,27 @@ public:
     virtual void removeActorFromLevelChunk(::Actor& actor) const /*override*/;
 
     // vIndex: 3
-    virtual void transferActorToDimension(::Actor const& actor, ::Dimension& dimension, ::Vec3 const& targetPosition, ::std::unique_ptr<::CompoundTag> saveTag) const /*override*/;
+    virtual void transferActorToDimension(
+        ::Actor const&                   actor,
+        ::Dimension&                     dimension,
+        ::Vec3 const&                    targetPosition,
+        ::std::unique_ptr<::CompoundTag> saveTag
+    ) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $transferTickingArea(::Actor& actor, ::Dimension& dimension) const;
+    MCFOLD void $transferTickingArea(::Actor& actor, ::Dimension& dimension) const;
 
-    MCNAPI void $removeActorFromLevelChunk(::Actor& actor) const;
+    MCAPI void $removeActorFromLevelChunk(::Actor& actor) const;
 
-    MCNAPI void $transferActorToDimension(::Actor const& actor, ::Dimension& dimension, ::Vec3 const& targetPosition, ::std::unique_ptr<::CompoundTag> saveTag) const;
+    MCAPI void $transferActorToDimension(
+        ::Actor const&                   actor,
+        ::Dimension&                     dimension,
+        ::Vec3 const&                    targetPosition,
+        ::std::unique_ptr<::CompoundTag> saveTag
+    ) const;
     // NOLINTEND
 
 public:
@@ -45,5 +55,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

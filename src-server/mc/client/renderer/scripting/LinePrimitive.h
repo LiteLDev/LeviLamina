@@ -57,7 +57,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting::RenderHelper

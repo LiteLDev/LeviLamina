@@ -12,10 +12,10 @@ public:
     // InternalDataChannelInit inner types define
     enum class OpenHandshakeRole : int {
         KOpener = 0,
-        KAcker = 1,
-        KNone = 2,
+        KAcker  = 1,
+        KNone   = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -50,7 +50,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

@@ -4,8 +4,7 @@
 
 namespace Core {
 
-template<typename T0, typename T1>
-class Subject {
-};
+template <typename T0, typename T1>
+class Subject {};
 
-}
+} // namespace Core

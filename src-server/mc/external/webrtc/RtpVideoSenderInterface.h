@@ -62,7 +62,8 @@ public:
     virtual void SetEncodingData(uint64, uint64, uint64) = 0;
 
     // vIndex: 16
-    virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info> GetSentRtpPacketInfos(uint, ::rtc::ArrayView<ushort const>) const = 0;
+    virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
+        GetSentRtpPacketInfos(uint, ::rtc::ArrayView<ushort const>) const = 0;
 
     // vIndex: 0
     virtual void SetFecAllowed(bool) = 0;
@@ -82,7 +83,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

@@ -11,10 +11,10 @@ struct PacketViolationWarningPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::PacketViolationType> mViolationType;
+    ::ll::TypedStorage<4, 4, ::PacketViolationType>     mViolationType;
     ::ll::TypedStorage<4, 4, ::PacketViolationSeverity> mViolationSeverity;
-    ::ll::TypedStorage<4, 4, ::MinecraftPacketIds> mViolatingPacketId;
-    ::ll::TypedStorage<8, 32, ::std::string> mViolationContext;
+    ::ll::TypedStorage<4, 4, ::MinecraftPacketIds>      mViolatingPacketId;
+    ::ll::TypedStorage<8, 32, ::std::string>            mViolationContext;
     // NOLINTEND
 
 public:
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

@@ -31,7 +31,10 @@ public:
     // NOLINTBEGIN
     MCNAPI void fireDBStorageError(char const* errorType) const;
 
-    MCNAPI void fireEventDBStorageSizeSnapshot(::DBStorageFolderWatcher const& folderWatcher, ::DBStorageFolderWatcherSnapshotKind kind) const;
+    MCNAPI void fireEventDBStorageSizeSnapshot(
+        ::DBStorageFolderWatcher const&      folderWatcher,
+        ::DBStorageFolderWatcherSnapshotKind kind
+    ) const;
     // NOLINTEND
 
 public:
@@ -39,5 +42,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

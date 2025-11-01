@@ -25,7 +25,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayer;
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mItem;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+                                   mItem;
     ::ll::TypedStorage<1, 1, bool> mCancel;
     // NOLINTEND
 
@@ -41,7 +45,13 @@ public:
 
     MCAPI ScriptPlayerBreakBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
 
-    MCAPI ScriptPlayerBreakBlockBeforeEvent(::Player const& player, ::Dimension& dimension, ::BlockPos const& pos, ::ItemStackBase const& item, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptPlayerBreakBlockBeforeEvent(
+        ::Player const&                       player,
+        ::Dimension&                          dimension,
+        ::BlockPos const&                     pos,
+        ::ItemStackBase const&                item,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
 
     MCAPI ~ScriptPlayerBreakBlockBeforeEvent();
     // NOLINTEND
@@ -59,7 +69,13 @@ public:
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
 
-    MCAPI void* $ctor(::Player const& player, ::Dimension& dimension, ::BlockPos const& pos, ::ItemStackBase const& item, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(
+        ::Player const&                       player,
+        ::Dimension&                          dimension,
+        ::BlockPos const&                     pos,
+        ::ItemStackBase const&                item,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 
 public:
@@ -67,7 +83,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

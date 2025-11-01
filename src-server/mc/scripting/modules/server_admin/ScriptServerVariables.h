@@ -14,7 +14,7 @@ class ScriptServerVariables {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf89f71;
+    ::ll::UntypedStorage<8, 24>  mUnkf89f71;
     ::ll::UntypedStorage<8, 288> mUnkacdc32;
     // NOLINTEND
 
@@ -45,7 +45,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleServerAdmin

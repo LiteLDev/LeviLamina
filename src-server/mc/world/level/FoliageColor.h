@@ -27,5 +27,4 @@ public:
 
     MCNAPI static ::mce::Color const& GRASS_TOP_RIGHT();
     // NOLINTEND
-
 };

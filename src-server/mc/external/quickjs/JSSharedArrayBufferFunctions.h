@@ -17,5 +17,4 @@ public:
     JSSharedArrayBufferFunctions& operator=(JSSharedArrayBufferFunctions const&);
     JSSharedArrayBufferFunctions(JSSharedArrayBufferFunctions const&);
     JSSharedArrayBufferFunctions();
-
 };

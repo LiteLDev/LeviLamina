@@ -13,4 +13,4 @@ namespace FlatteningUtils::ShulkerBox {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::ShulkerBox

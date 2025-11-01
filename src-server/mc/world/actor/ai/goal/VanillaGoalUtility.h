@@ -14,4 +14,4 @@ namespace VanillaGoalUtility {
 MCAPI void registerGoalsToFactory(::ActorGoalFactory& factory, ::ActorMigratedDefinitionFactory& migratedFactory);
 // NOLINTEND
 
-}
+} // namespace VanillaGoalUtility

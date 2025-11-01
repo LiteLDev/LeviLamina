@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0>
-struct IScriptAfterEventSignalBuilder {
-};
+template <typename T0>
+struct IScriptAfterEventSignalBuilder {};
 
-}
+} // namespace ScriptModuleMinecraft

@@ -16,12 +16,12 @@ class InventoryAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::InventorySource> mSource;
-    ::ll::TypedStorage<4, 4, uint> mSlot;
+    ::ll::TypedStorage<4, 12, ::InventorySource>            mSource;
+    ::ll::TypedStorage<4, 4, uint>                          mSlot;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mFromItemDescriptor;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mToItemDescriptor;
-    ::ll::TypedStorage<8, 152, ::ItemStack> mFromItem;
-    ::ll::TypedStorage<8, 152, ::ItemStack> mToItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                 mFromItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                 mToItem;
     // NOLINTEND
 
 public:
@@ -31,33 +31,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI InventoryAction(::InventoryAction const&);
+    MCAPI InventoryAction(::InventoryAction const&);
 
-    MCNAPI InventoryAction(::InventorySource source, uint slot, ::NetworkItemStackDescriptor const& fromItem, ::NetworkItemStackDescriptor const& toItem);
+    MCAPI InventoryAction(
+        ::InventorySource                   source,
+        uint                                slot,
+        ::NetworkItemStackDescriptor const& fromItem,
+        ::NetworkItemStackDescriptor const& toItem
+    );
 
-    MCNAPI InventoryAction(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
+    MCAPI InventoryAction(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
 
-    MCNAPI ::InventoryAction& operator=(::InventoryAction const&);
+    MCAPI ::InventoryAction& operator=(::InventoryAction const&);
 
-    MCNAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCNAPI ~InventoryAction();
+    MCAPI ~InventoryAction();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::InventoryAction const&);
+    MCAPI void* $ctor(::InventoryAction const&);
 
-    MCNAPI void* $ctor(::InventorySource source, uint slot, ::NetworkItemStackDescriptor const& fromItem, ::NetworkItemStackDescriptor const& toItem);
+    MCAPI void* $ctor(
+        ::InventorySource                   source,
+        uint                                slot,
+        ::NetworkItemStackDescriptor const& fromItem,
+        ::NetworkItemStackDescriptor const& toItem
+    );
 
-    MCNAPI void* $ctor(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
+    MCAPI void* $ctor(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
-
 };

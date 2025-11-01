@@ -14,5 +14,4 @@ public:
     RaidTriggerDefinition& operator=(RaidTriggerDefinition const&);
     RaidTriggerDefinition(RaidTriggerDefinition const&);
     RaidTriggerDefinition();
-
 };

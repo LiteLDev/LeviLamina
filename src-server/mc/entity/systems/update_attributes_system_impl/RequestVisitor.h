@@ -25,7 +25,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void operator()(::AttributeRequestComponent::AddBuffModifier const& request) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace UpdateAttributesSystemImpl

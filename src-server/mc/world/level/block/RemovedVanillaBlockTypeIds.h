@@ -13,4 +13,4 @@ namespace RemovedVanillaBlockTypeIds {
 MCAPI ::HashedString const& LavaCauldron();
 // NOLINTEND
 
-}
+} // namespace RemovedVanillaBlockTypeIds

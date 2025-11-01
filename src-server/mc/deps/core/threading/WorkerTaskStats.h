@@ -4,7 +4,6 @@
 
 namespace Bedrock::Threading::Burst::Details {
 
-struct WorkerTaskStats {
-};
+struct WorkerTaskStats {};
 
-}
+} // namespace Bedrock::Threading::Burst::Details

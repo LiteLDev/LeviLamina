@@ -25,7 +25,8 @@ namespace Scripting { struct ContextId; }
 
 namespace Editor::API {
 
-class EditorExtensionService : public ::Editor::Services::IEditorService, public ::Editor::API::EditorExtensionServiceProvider {
+class EditorExtensionService : public ::Editor::Services::IEditorService,
+                               public ::Editor::API::EditorExtensionServiceProvider {
 public:
     // member variables
     // NOLINTBEGIN
@@ -62,34 +63,55 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>> registerExtension(::std::string const& extensionName, ::Scripting::WeakLifetimeScope scope, ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)> activationClosure, ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)> shutdownClosure, ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options, ::Editor::API::ServerScriptPackType packType) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>>
+    registerExtension(
+        ::std::string const&           extensionName,
+        ::Scripting::WeakLifetimeScope scope,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
+            activationClosure,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
+                                                                          shutdownClosure,
+        ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options,
+        ::Editor::API::ServerScriptPackType                               packType
+    ) /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>> getExtension(::std::string const& extensionName) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>>
+    getExtension(::std::string const& extensionName) /*override*/;
 
     // vIndex: 3
     virtual bool hasExtension(::std::string const& extensionName) /*override*/;
 
     // vIndex: 4
-    virtual void forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func) /*override*/;
+    virtual void forEachExtension(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
+    ) /*override*/;
 
     // vIndex: 5
-    virtual void forEachExtensionOrdered(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func) /*override*/;
+    virtual void forEachExtensionOrdered(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
+    ) /*override*/;
 
     // vIndex: 6
-    virtual void forEachExtensionReverse(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func) /*override*/;
+    virtual void forEachExtensionReverse(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
+    ) /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemRebuildEvent(::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)> handler) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemRebuildEvent(
+        ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)> handler
+    ) /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()> handler) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()> handler) /*override*/;
 
     // vIndex: 9
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() /*override*/;
 
     // vIndex: 10
-    virtual ::Scripting::Result_deprecated<void> createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
     // NOLINTEND
 
 public:
@@ -115,25 +137,43 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>> $registerExtension(::std::string const& extensionName, ::Scripting::WeakLifetimeScope scope, ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)> activationClosure, ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)> shutdownClosure, ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options, ::Editor::API::ServerScriptPackType packType);
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>>
+    $registerExtension(
+        ::std::string const&           extensionName,
+        ::Scripting::WeakLifetimeScope scope,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
+            activationClosure,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
+                                                                          shutdownClosure,
+        ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options,
+        ::Editor::API::ServerScriptPackType                               packType
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>> $getExtension(::std::string const& extensionName);
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>>
+    $getExtension(::std::string const& extensionName);
 
     MCNAPI bool $hasExtension(::std::string const& extensionName);
 
-    MCNAPI void $forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
+    MCNAPI void
+    $forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
 
-    MCNAPI void $forEachExtensionOrdered(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
+    MCNAPI void
+    $forEachExtensionOrdered(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
 
-    MCNAPI void $forEachExtensionReverse(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
+    MCNAPI void
+    $forEachExtensionReverse(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $registerForScriptSystemRebuildEvent(::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)> handler);
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $registerForScriptSystemRebuildEvent(
+        ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)> handler
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()> handler);
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    $registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()> handler);
 
     MCNAPI ::Scripting::Result_deprecated<void> $destroyRegisteredExtensions();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent);
     // NOLINTEND
 
 public:
@@ -143,7 +183,6 @@ public:
 
     MCNAPI static void** $vftableForEditorExtensionServiceProvider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::API

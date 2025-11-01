@@ -21,14 +21,16 @@ namespace Editor::Selection { struct SelectionVolumeEvent; }
 
 namespace Editor::Services {
 
-class SelectionServiceServer : public ::Editor::Services::IEditorService, public ::Editor::Services::SelectionServiceProvider, public ::Editor::Services::PayloadStoreHelper {
+class SelectionServiceServer : public ::Editor::Services::IEditorService,
+                               public ::Editor::Services::SelectionServiceProvider,
+                               public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 152> mUnkc15a5e;
-    ::ll::UntypedStorage<8, 16> mUnk7bbf27;
-    ::ll::UntypedStorage<8, 16> mUnk41c42a;
-    ::ll::UntypedStorage<8, 16> mUnk7e7ef6;
+    ::ll::UntypedStorage<8, 16>  mUnk7bbf27;
+    ::ll::UntypedStorage<8, 16>  mUnk41c42a;
+    ::ll::UntypedStorage<8, 16>  mUnk7e7ef6;
     // NOLINTEND
 
 public:
@@ -122,7 +124,6 @@ public:
 
     MCNAPI static void** $vftableForSelectionServiceProvider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

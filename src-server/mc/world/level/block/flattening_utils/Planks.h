@@ -13,4 +13,4 @@ namespace FlatteningUtils::Planks {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::Planks

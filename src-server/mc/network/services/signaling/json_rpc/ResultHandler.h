@@ -4,8 +4,7 @@
 
 namespace JsonRpc {
 
-template<typename T0>
-class ResultHandler {
-};
+template <typename T0>
+class ResultHandler {};
 
-}
+} // namespace JsonRpc

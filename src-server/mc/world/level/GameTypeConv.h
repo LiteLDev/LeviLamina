@@ -15,4 +15,4 @@ MCNAPI ::std::string gameTypeToString(::GameType type);
 MCNAPI ::GameType stringToGameType(::std::string const& str);
 // NOLINTEND
 
-}
+} // namespace GameTypeConv

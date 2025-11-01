@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class MovementFloatAbilities : int {
-    FlySpeed = 0,
+    FlySpeed         = 0,
     VerticalFlySpeed = 1,
-    Count = 2,
+    Count            = 2,
 };

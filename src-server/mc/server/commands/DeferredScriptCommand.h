@@ -21,8 +21,8 @@ class DeferredScriptCommand : public ::DeferredCommandBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk413124;
-    ::ll::UntypedStorage<8, 8> mUnkb39f82;
+    ::ll::UntypedStorage<8, 8>  mUnk413124;
+    ::ll::UntypedStorage<8, 8>  mUnkb39f82;
     ::ll::UntypedStorage<8, 16> mUnk79b626;
     ::ll::UntypedStorage<8, 80> mUnkf01e9a;
     // NOLINTEND
@@ -46,13 +46,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DeferredScriptCommand(::std::unique_ptr<::ScriptCommandOutput> scriptCommandOutput, ::std::unique_ptr<::CommandContext> commandContext, ::Scripting::WeakLifetimeScope scope, ::Scripting::Promise<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>, ::ScriptModuleMinecraft::ScriptCommandError, void> promise);
+    MCNAPI DeferredScriptCommand(
+        ::std::unique_ptr<::ScriptCommandOutput> scriptCommandOutput,
+        ::std::unique_ptr<::CommandContext>      commandContext,
+        ::Scripting::WeakLifetimeScope           scope,
+        ::Scripting::Promise<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
+            ::ScriptModuleMinecraft::ScriptCommandError,
+            void> promise
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::ScriptCommandOutput> scriptCommandOutput, ::std::unique_ptr<::CommandContext> commandContext, ::Scripting::WeakLifetimeScope scope, ::Scripting::Promise<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>, ::ScriptModuleMinecraft::ScriptCommandError, void> promise);
+    MCNAPI void* $ctor(
+        ::std::unique_ptr<::ScriptCommandOutput> scriptCommandOutput,
+        ::std::unique_ptr<::CommandContext>      commandContext,
+        ::Scripting::WeakLifetimeScope           scope,
+        ::Scripting::Promise<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
+            ::ScriptModuleMinecraft::ScriptCommandError,
+            void> promise
+    );
     // NOLINTEND
 
 public:
@@ -72,5 +88,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

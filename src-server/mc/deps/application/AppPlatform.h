@@ -52,61 +52,61 @@ class AppPlatform : public ::IAppPlatform, public ::ISecureStorageKeySystem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk49db95;
-    ::ll::UntypedStorage<1, 1> mUnkcb9aaa;
-    ::ll::UntypedStorage<1, 1> mUnkbe6f7b;
-    ::ll::UntypedStorage<1, 1> mUnk513795;
-    ::ll::UntypedStorage<1, 1> mUnkce9805;
-    ::ll::UntypedStorage<8, 16> mUnk7a3ae6;
+    ::ll::UntypedStorage<8, 8>   mUnk49db95;
+    ::ll::UntypedStorage<1, 1>   mUnkcb9aaa;
+    ::ll::UntypedStorage<1, 1>   mUnkbe6f7b;
+    ::ll::UntypedStorage<1, 1>   mUnk513795;
+    ::ll::UntypedStorage<1, 1>   mUnkce9805;
+    ::ll::UntypedStorage<8, 16>  mUnk7a3ae6;
     ::ll::UntypedStorage<8, 104> mUnke68af5;
-    ::ll::UntypedStorage<1, 1> mUnk3eb9fc;
-    ::ll::UntypedStorage<8, 64> mUnkb50203;
-    ::ll::UntypedStorage<1, 4> mUnka5d242;
-    ::ll::UntypedStorage<4, 4> mUnk678160;
-    ::ll::UntypedStorage<8, 80> mUnkafb54c;
-    ::ll::UntypedStorage<8, 32> mUnked78dc;
-    ::ll::UntypedStorage<8, 32> mUnkb79db9;
-    ::ll::UntypedStorage<8, 32> mUnk2d8cb0;
-    ::ll::UntypedStorage<8, 8> mUnkdc46a5;
-    ::ll::UntypedStorage<8, 8> mUnk59b922;
-    ::ll::UntypedStorage<8, 8> mUnk14a700;
-    ::ll::UntypedStorage<8, 8> mUnk2c6ecf;
-    ::ll::UntypedStorage<1, 1> mUnk31e0b7;
-    ::ll::UntypedStorage<8, 32> mUnk6d6135;
-    ::ll::UntypedStorage<8, 8> mUnk896a24;
-    ::ll::UntypedStorage<8, 8> mUnk69a5b2;
-    ::ll::UntypedStorage<1, 1> mUnkd7bea9;
-    ::ll::UntypedStorage<8, 40> mUnk20e405;
-    ::ll::UntypedStorage<8, 8> mUnk69afa6;
-    ::ll::UntypedStorage<1, 1> mUnk6e12ac;
-    ::ll::UntypedStorage<1, 1> mUnkff6e88;
-    ::ll::UntypedStorage<4, 4> mUnk1d28ac;
-    ::ll::UntypedStorage<4, 4> mUnk81425d;
-    ::ll::UntypedStorage<1, 1> mUnkd5341c;
-    ::ll::UntypedStorage<1, 1> mUnkdcaaf8;
-    ::ll::UntypedStorage<1, 1> mUnk113b3b;
-    ::ll::UntypedStorage<1, 1> mUnkbe6182;
-    ::ll::UntypedStorage<1, 1> mUnkb00e9d;
-    ::ll::UntypedStorage<1, 1> mUnk78da06;
-    ::ll::UntypedStorage<1, 1> mUnk2ff939;
-    ::ll::UntypedStorage<8, 32> mUnkd9746f;
-    ::ll::UntypedStorage<8, 80> mUnk267c61;
-    ::ll::UntypedStorage<8, 32> mUnk26e8ea;
-    ::ll::UntypedStorage<8, 80> mUnkd6f5b8;
-    ::ll::UntypedStorage<8, 8> mUnkb30295;
-    ::ll::UntypedStorage<8, 8> mUnk40dee2;
-    ::ll::UntypedStorage<8, 8> mUnk92e07d;
-    ::ll::UntypedStorage<8, 16> mUnk706c14;
-    ::ll::UntypedStorage<8, 16> mUnk391b07;
-    ::ll::UntypedStorage<8, 16> mUnke84b85;
-    ::ll::UntypedStorage<8, 16> mUnkb30208;
-    ::ll::UntypedStorage<8, 8> mUnkf2b382;
-    ::ll::UntypedStorage<4, 4> mUnk50488d;
-    ::ll::UntypedStorage<8, 16> mUnkea295c;
-    ::ll::UntypedStorage<8, 8> mUnk412bfa;
-    ::ll::UntypedStorage<8, 8> mUnkdd0de7;
-    ::ll::UntypedStorage<8, 8> mUnkf9ffce;
-    ::ll::UntypedStorage<8, 8> mUnkb00836;
+    ::ll::UntypedStorage<1, 1>   mUnk3eb9fc;
+    ::ll::UntypedStorage<8, 64>  mUnkb50203;
+    ::ll::UntypedStorage<1, 4>   mUnka5d242;
+    ::ll::UntypedStorage<4, 4>   mUnk678160;
+    ::ll::UntypedStorage<8, 80>  mUnkafb54c;
+    ::ll::UntypedStorage<8, 32>  mUnked78dc;
+    ::ll::UntypedStorage<8, 32>  mUnkb79db9;
+    ::ll::UntypedStorage<8, 32>  mUnk2d8cb0;
+    ::ll::UntypedStorage<8, 8>   mUnkdc46a5;
+    ::ll::UntypedStorage<8, 8>   mUnk59b922;
+    ::ll::UntypedStorage<8, 8>   mUnk14a700;
+    ::ll::UntypedStorage<8, 8>   mUnk2c6ecf;
+    ::ll::UntypedStorage<1, 1>   mUnk31e0b7;
+    ::ll::UntypedStorage<8, 32>  mUnk6d6135;
+    ::ll::UntypedStorage<8, 8>   mUnk896a24;
+    ::ll::UntypedStorage<8, 8>   mUnk69a5b2;
+    ::ll::UntypedStorage<1, 1>   mUnkd7bea9;
+    ::ll::UntypedStorage<8, 40>  mUnk20e405;
+    ::ll::UntypedStorage<8, 8>   mUnk69afa6;
+    ::ll::UntypedStorage<1, 1>   mUnk6e12ac;
+    ::ll::UntypedStorage<1, 1>   mUnkff6e88;
+    ::ll::UntypedStorage<4, 4>   mUnk1d28ac;
+    ::ll::UntypedStorage<4, 4>   mUnk81425d;
+    ::ll::UntypedStorage<1, 1>   mUnkd5341c;
+    ::ll::UntypedStorage<1, 1>   mUnkdcaaf8;
+    ::ll::UntypedStorage<1, 1>   mUnk113b3b;
+    ::ll::UntypedStorage<1, 1>   mUnkbe6182;
+    ::ll::UntypedStorage<1, 1>   mUnkb00e9d;
+    ::ll::UntypedStorage<1, 1>   mUnk78da06;
+    ::ll::UntypedStorage<1, 1>   mUnk2ff939;
+    ::ll::UntypedStorage<8, 32>  mUnkd9746f;
+    ::ll::UntypedStorage<8, 80>  mUnk267c61;
+    ::ll::UntypedStorage<8, 32>  mUnk26e8ea;
+    ::ll::UntypedStorage<8, 80>  mUnkd6f5b8;
+    ::ll::UntypedStorage<8, 8>   mUnkb30295;
+    ::ll::UntypedStorage<8, 8>   mUnk40dee2;
+    ::ll::UntypedStorage<8, 8>   mUnk92e07d;
+    ::ll::UntypedStorage<8, 16>  mUnk706c14;
+    ::ll::UntypedStorage<8, 16>  mUnk391b07;
+    ::ll::UntypedStorage<8, 16>  mUnke84b85;
+    ::ll::UntypedStorage<8, 16>  mUnkb30208;
+    ::ll::UntypedStorage<8, 8>   mUnkf2b382;
+    ::ll::UntypedStorage<4, 4>   mUnk50488d;
+    ::ll::UntypedStorage<8, 16>  mUnkea295c;
+    ::ll::UntypedStorage<8, 8>   mUnk412bfa;
+    ::ll::UntypedStorage<8, 8>   mUnkdd0de7;
+    ::ll::UntypedStorage<8, 8>   mUnkf9ffce;
+    ::ll::UntypedStorage<8, 8>   mUnkb00836;
     // NOLINTEND
 
 public:
@@ -191,7 +191,7 @@ public:
     virtual ::std::string getFeedbackHelpLink() const;
 
     // vIndex: 43
-    virtual auto getModalErrorMessageProc() -> ::AssertDialogResponse(*) (::std::string const&, ::std::string const&);
+    virtual auto getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
 
     // vIndex: 44
     virtual void updateLocalization(::std::string const& loc);
@@ -380,7 +380,8 @@ public:
     virtual bool copyAssetFile(::Core::Path const& filename, ::Core::Path const& destination);
 
     // vIndex: 105
-    virtual ::std::set<::Core::PathBuffer<::std::string>> listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
+    virtual ::std::set<::Core::PathBuffer<::std::string>>
+    listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
 
     // vIndex: 106
     virtual bool supportsClientUpdate() const;
@@ -719,7 +720,8 @@ public:
     virtual ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> getMultiplayerServiceListToRegister() const;
 
     // vIndex: 21
-    virtual ::std::vector<::Social::MultiplayerServiceIdentifier> getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const /*override*/;
+    virtual ::std::vector<::Social::MultiplayerServiceIdentifier>
+    getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const /*override*/;
 
     // vIndex: 201
     virtual uint maxFileDataRequestConcurrency() const;
@@ -731,7 +733,8 @@ public:
     virtual float getStoreNetworkFailureTimeout() const;
 
     // vIndex: 203
-    virtual ::std::shared_ptr<::Core::FileStorageArea> createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
+    virtual ::std::shared_ptr<::Core::FileStorageArea>
+    createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
 
     // vIndex: 204
     virtual void handlePlatformSpecificCommerceError(uint error);
@@ -941,7 +944,7 @@ public:
 
     MCNAPI ::std::string $getFeedbackHelpLink() const;
 
-    MCNAPI auto $getModalErrorMessageProc() -> ::AssertDialogResponse(*) (::std::string const&, ::std::string const&);
+    MCNAPI auto $getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
 
     MCNAPI void $updateLocalization(::std::string const& loc);
 
@@ -1055,7 +1058,8 @@ public:
 
     MCNAPI bool $copyAssetFile(::Core::Path const& filename, ::Core::Path const& destination);
 
-    MCNAPI ::std::set<::Core::PathBuffer<::std::string>> $listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
+    MCNAPI ::std::set<::Core::PathBuffer<::std::string>>
+    $listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
 
     MCNAPI bool $supportsClientUpdate() const;
 
@@ -1265,7 +1269,8 @@ public:
 
     MCNAPI ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> $getMultiplayerServiceListToRegister() const;
 
-    MCNAPI ::std::vector<::Social::MultiplayerServiceIdentifier> $getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const;
+    MCNAPI ::std::vector<::Social::MultiplayerServiceIdentifier>
+    $getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const;
 
     MCNAPI uint $maxFileDataRequestConcurrency() const;
 
@@ -1273,7 +1278,8 @@ public:
 
     MCNAPI float $getStoreNetworkFailureTimeout() const;
 
-    MCNAPI ::std::shared_ptr<::Core::FileStorageArea> $createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
+    MCNAPI ::std::shared_ptr<::Core::FileStorageArea>
+    $createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
 
     MCNAPI void $handlePlatformSpecificCommerceError(uint error);
 
@@ -1351,5 +1357,4 @@ public:
 
     MCNAPI static void** $vftableForISecureStorageKeySystem();
     // NOLINTEND
-
 };

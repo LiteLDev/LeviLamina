@@ -16,7 +16,7 @@ class ActorFloatPropertyTest : public ::FilterTest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7e2e92;
+    ::ll::UntypedStorage<4, 4>  mUnk7e2e92;
     ::ll::UntypedStorage<8, 48> mUnkb1187d;
     // NOLINTEND
 
@@ -83,5 +83,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

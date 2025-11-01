@@ -4,8 +4,7 @@
 
 namespace Bedrock::Detail {
 
-template<typename T0, typename T1>
-struct PayloadInfo {
-};
+template <typename T0, typename T1>
+struct PayloadInfo {};
 
-}
+} // namespace Bedrock::Detail

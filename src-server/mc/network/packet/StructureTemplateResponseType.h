@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class StructureTemplateResponseType : uchar {
-    None = 0,
+    None   = 0,
     Export = 1,
-    Query = 2,
+    Query  = 2,
 };

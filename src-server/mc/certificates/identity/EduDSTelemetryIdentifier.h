@@ -17,7 +17,6 @@ public:
     EduDSTelemetryIdentifier& operator=(EduDSTelemetryIdentifier const&);
     EduDSTelemetryIdentifier(EduDSTelemetryIdentifier const&);
     EduDSTelemetryIdentifier();
-
 };
 
-}
+} // namespace Identity

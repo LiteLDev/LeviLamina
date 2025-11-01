@@ -25,5 +25,4 @@ public:
     zip_cdir& operator=(zip_cdir const&);
     zip_cdir(zip_cdir const&);
     zip_cdir();
-
 };

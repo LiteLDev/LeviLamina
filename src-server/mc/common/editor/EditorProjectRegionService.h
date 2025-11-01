@@ -20,7 +20,8 @@ namespace mce { class UUID; }
 
 namespace Editor::Services {
 
-class EditorProjectRegionService : public ::Editor::Services::IEditorService, public ::Editor::Services::EditorProjectRegionServiceProvider {
+class EditorProjectRegionService : public ::Editor::Services::IEditorService,
+                                   public ::Editor::Services::EditorProjectRegionServiceProvider {
 public:
     // member variables
     // NOLINTBEGIN
@@ -101,7 +102,6 @@ public:
 
     MCNAPI static void** $vftableForEditorProjectRegionServiceProvider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

@@ -26,7 +26,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _createBaseDripstonePatch(::IBlockWorldGenAPI& target, ::Random& random, ::BlockPos const& rootPos);
+    MCAPI static void
+    _createBaseDripstonePatch(::IBlockWorldGenAPI& target, ::Random& random, ::BlockPos const& rootPos);
     // NOLINTEND
 
 public:
@@ -40,5 +41,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

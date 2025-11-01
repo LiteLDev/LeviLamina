@@ -7,7 +7,8 @@
 
 namespace Editor::Network {
 
-class MouseBindingUnregisterPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::MouseBindingUnregisterPayload> {
+class MouseBindingUnregisterPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::MouseBindingUnregisterPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

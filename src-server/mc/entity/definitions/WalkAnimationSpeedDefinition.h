@@ -14,5 +14,4 @@ public:
     WalkAnimationSpeedDefinition& operator=(WalkAnimationSpeedDefinition const&);
     WalkAnimationSpeedDefinition(WalkAnimationSpeedDefinition const&);
     WalkAnimationSpeedDefinition();
-
 };

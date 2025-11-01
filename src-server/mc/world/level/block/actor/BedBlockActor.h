@@ -22,10 +22,10 @@ class BedBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mDyeColor;
-    ::ll::TypedStorage<1, 1, bool> mDirty;
+    ::ll::TypedStorage<4, 4, int>             mDyeColor;
+    ::ll::TypedStorage<1, 1, bool>            mDirty;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mPetSleepingOnBed;
-    ::ll::TypedStorage<8, 8, ::Block const&> mBedBlock;
+    ::ll::TypedStorage<8, 8, ::Block const&>  mBedBlock;
     // NOLINTEND
 
 public:
@@ -114,5 +114,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

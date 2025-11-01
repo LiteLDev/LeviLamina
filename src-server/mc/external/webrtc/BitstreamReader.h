@@ -18,7 +18,6 @@ public:
     BitstreamReader& operator=(BitstreamReader const&);
     BitstreamReader(BitstreamReader const&);
     BitstreamReader();
-
 };
 
-}
+} // namespace webrtc

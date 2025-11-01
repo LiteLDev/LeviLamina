@@ -17,5 +17,4 @@ public:
     NetworkSummary& operator=(NetworkSummary const&);
     NetworkSummary(NetworkSummary const&);
     NetworkSummary();
-
 };

@@ -11,9 +11,9 @@ struct GiveableTrigger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk64c310;
+    ::ll::UntypedStorage<8, 24>  mUnk64c310;
     ::ll::UntypedStorage<8, 104> mUnk3c04a1;
-    ::ll::UntypedStorage<4, 4> mUnkc87faa;
+    ::ll::UntypedStorage<4, 4>   mUnkc87faa;
     // NOLINTEND
 
 public:
@@ -42,5 +42,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

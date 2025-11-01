@@ -14,4 +14,4 @@ namespace WeatherHelpers {
 MCAPI bool shouldFreeze(::BlockSource& region, ::BlockPos const& pos, bool checkNeighbors);
 // NOLINTEND
 
-}
+} // namespace WeatherHelpers

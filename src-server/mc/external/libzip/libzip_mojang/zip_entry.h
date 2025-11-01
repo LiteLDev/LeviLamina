@@ -17,5 +17,4 @@ public:
     zip_entry& operator=(zip_entry const&);
     zip_entry(zip_entry const&);
     zip_entry();
-
 };

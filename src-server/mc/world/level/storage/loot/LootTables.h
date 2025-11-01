@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk776eca;
     ::ll::UntypedStorage<8, 80> mUnk2392d5;
-    ::ll::UntypedStorage<1, 1> mUnk1b74db;
+    ::ll::UntypedStorage<1, 1>  mUnk1b74db;
     // NOLINTEND
 
 public:
@@ -28,5 +28,4 @@ public:
     // NOLINTBEGIN
     MCNAPI ::LootTable* lookupByName(::std::string const& dir, ::ResourcePackManager& resourceLoader);
     // NOLINTEND
-
 };

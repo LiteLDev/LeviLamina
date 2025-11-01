@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk645c3d;
-    ::ll::UntypedStorage<8, 8> mUnk1a8ad5;
+    ::ll::UntypedStorage<8, 8>  mUnk1a8ad5;
     // NOLINTEND
 
 public:
@@ -27,13 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canMergeDefinitions(::DynamicPropertiesDefinition const& other, ::std::string const& identifier, uint64 sizeLimit, ::std::string& error) const;
+    MCNAPI bool _canMergeDefinitions(
+        ::DynamicPropertiesDefinition const& other,
+        ::std::string const&                 identifier,
+        uint64                               sizeLimit,
+        ::std::string&                       error
+    ) const;
 
-    MCNAPI ::std::optional<::DynamicPropertyDefinePropertyError> defineProperty(::std::string const& identifier, ::DynamicPropertyDefinition definition);
+    MCNAPI ::std::optional<::DynamicPropertyDefinePropertyError>
+    defineProperty(::std::string const& identifier, ::DynamicPropertyDefinition definition);
 
     MCNAPI ::DynamicPropertyDefinition const* tryGetPropertyDefinition(::std::string const& identifier) const;
 
-    MCNAPI ::std::optional<::std::string> tryMergeDefinitions(::DynamicPropertiesDefinition const& other, ::std::string const& identifier, uint64 sizeLimit);
+    MCNAPI ::std::optional<::std::string>
+    tryMergeDefinitions(::DynamicPropertiesDefinition const& other, ::std::string const& identifier, uint64 sizeLimit);
 
     MCNAPI ~DynamicPropertiesDefinition();
     // NOLINTEND
@@ -53,5 +60,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

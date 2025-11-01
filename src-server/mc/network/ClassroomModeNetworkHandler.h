@@ -22,10 +22,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkc48695;
-    ::ll::UntypedStorage<8, 8> mUnke73bc4;
+    ::ll::UntypedStorage<8, 8>  mUnke73bc4;
     ::ll::UntypedStorage<8, 32> mUnk3b0765;
     ::ll::UntypedStorage<8, 32> mUnk91139f;
-    ::ll::UntypedStorage<1, 1> mUnk7eb0cd;
+    ::ll::UntypedStorage<1, 1>  mUnk7eb0cd;
     // NOLINTEND
 
 public:
@@ -41,13 +41,22 @@ public:
     virtual ~ClassroomModeNetworkHandler() /*override*/;
 
     // vIndex: 8
-    virtual ::IncomingPacketFilterResult allowIncomingPacketId(::NetworkIdentifierWithSubId const& id, ::MinecraftPacketIds packetId, uint64 packetSize) /*override*/;
+    virtual ::IncomingPacketFilterResult allowIncomingPacketId(
+        ::NetworkIdentifierWithSubId const& id,
+        ::MinecraftPacketIds                packetId,
+        uint64                              packetSize
+    ) /*override*/;
 
     // vIndex: 9
-    virtual ::OutgoingPacketFilterResult allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) /*override*/;
+    virtual ::OutgoingPacketFilterResult
+    allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) /*override*/;
 
     // vIndex: 10
-    virtual void onWebsocketRequest(::std::string const& serverAddress, ::std::string const& payload, ::std::function<void()> errorCallback) /*override*/;
+    virtual void onWebsocketRequest(
+        ::std::string const&    serverAddress,
+        ::std::string const&    payload,
+        ::std::function<void()> errorCallback
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -75,11 +84,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::IncomingPacketFilterResult $allowIncomingPacketId(::NetworkIdentifierWithSubId const& id, ::MinecraftPacketIds packetId, uint64 packetSize);
+    MCNAPI ::IncomingPacketFilterResult
+    $allowIncomingPacketId(::NetworkIdentifierWithSubId const& id, ::MinecraftPacketIds packetId, uint64 packetSize);
 
-    MCNAPI ::OutgoingPacketFilterResult $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
+    MCNAPI ::OutgoingPacketFilterResult
+    $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 
-    MCNAPI void $onWebsocketRequest(::std::string const& serverAddress, ::std::string const& payload, ::std::function<void()> errorCallback);
+    MCNAPI void $onWebsocketRequest(
+        ::std::string const&    serverAddress,
+        ::std::string const&    payload,
+        ::std::function<void()> errorCallback
+    );
     // NOLINTEND
 
 public:
@@ -89,5 +104,4 @@ public:
 
     MCNAPI static void** $vftableForNetEventCallback();
     // NOLINTEND
-
 };

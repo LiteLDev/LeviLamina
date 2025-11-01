@@ -7,12 +7,13 @@
 
 namespace Editor::Network {
 
-class ThemeSettingsThemeColorUpdatedPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::ThemeSettingsThemeColorUpdatedPayload> {
+class ThemeSettingsThemeColorUpdatedPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::ThemeSettingsThemeColorUpdatedPayload> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk81c7fb;
-    ::ll::UntypedStorage<4, 4> mUnk325b30;
+    ::ll::UntypedStorage<4, 4>  mUnk325b30;
     ::ll::UntypedStorage<4, 16> mUnk577ff8;
     // NOLINTEND
 
@@ -40,7 +41,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

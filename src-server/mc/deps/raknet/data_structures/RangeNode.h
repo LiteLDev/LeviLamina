@@ -4,8 +4,7 @@
 
 namespace DataStructures {
 
-template<typename T0>
-struct RangeNode {
-};
+template <typename T0>
+struct RangeNode {};
 
-}
+} // namespace DataStructures

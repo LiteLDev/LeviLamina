@@ -22,7 +22,7 @@ class LevelChunkSaveManagerProxy : public ::ILevelChunkSaveManagerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Random&> mRandom;
+    ::ll::TypedStorage<8, 8, ::Random&>                                       mRandom;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::TaskGroup>>> mTaskGroup;
     // NOLINTEND
 
@@ -45,13 +45,22 @@ public:
     virtual ::std::shared_ptr<::LevelChunk> getRandomChunk(::Dimension& dimension) const /*override*/;
 
     // vIndex: 3
-    virtual ::std::shared_ptr<::LevelChunk> getChunk(::Dimension& dimension, ::ChunkPos const& chunkPos) const /*override*/;
+    virtual ::std::shared_ptr<::LevelChunk> getChunk(::Dimension& dimension, ::ChunkPos const& chunkPos) const
+        /*override*/;
 
     // vIndex: 4
-    virtual bool doesNonActorDataInLevelChunkNeedSaving(::LevelChunk const& levelChunk, int minTicksBeforeLiveSave, int maxTicksBeforeLiveSave) const /*override*/;
+    virtual bool doesNonActorDataInLevelChunkNeedSaving(
+        ::LevelChunk const& levelChunk,
+        int                 minTicksBeforeLiveSave,
+        int                 maxTicksBeforeLiveSave
+    ) const /*override*/;
 
     // vIndex: 5
-    virtual bool doesLevelChunkNeedSaving(::LevelChunk const& levelChunk, int minTicksBeforeLiveSave, int maxTicksBeforeLiveSave) const /*override*/;
+    virtual bool doesLevelChunkNeedSaving(
+        ::LevelChunk const& levelChunk,
+        int                 minTicksBeforeLiveSave,
+        int                 maxTicksBeforeLiveSave
+    ) const /*override*/;
 
     // vIndex: 6
     virtual void saveLiveChunk(::Dimension& dimension, ::LevelChunk& levelChunk) /*override*/;
@@ -72,9 +81,17 @@ public:
 
     MCNAPI ::std::shared_ptr<::LevelChunk> $getChunk(::Dimension& dimension, ::ChunkPos const& chunkPos) const;
 
-    MCNAPI bool $doesNonActorDataInLevelChunkNeedSaving(::LevelChunk const& levelChunk, int minTicksBeforeLiveSave, int maxTicksBeforeLiveSave) const;
+    MCNAPI bool $doesNonActorDataInLevelChunkNeedSaving(
+        ::LevelChunk const& levelChunk,
+        int                 minTicksBeforeLiveSave,
+        int                 maxTicksBeforeLiveSave
+    ) const;
 
-    MCNAPI bool $doesLevelChunkNeedSaving(::LevelChunk const& levelChunk, int minTicksBeforeLiveSave, int maxTicksBeforeLiveSave) const;
+    MCNAPI bool $doesLevelChunkNeedSaving(
+        ::LevelChunk const& levelChunk,
+        int                 minTicksBeforeLiveSave,
+        int                 maxTicksBeforeLiveSave
+    ) const;
 
     MCNAPI void $saveLiveChunk(::Dimension& dimension, ::LevelChunk& levelChunk);
 
@@ -88,5 +105,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

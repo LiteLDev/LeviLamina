@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnkc8d99a;
-    ::ll::UntypedStorage<8, 8> mUnkb92696;
+    ::ll::UntypedStorage<8, 8>  mUnkb92696;
     // NOLINTEND
 
 public:
@@ -15,5 +15,4 @@ public:
     ActorAnimationInfo& operator=(ActorAnimationInfo const&);
     ActorAnimationInfo(ActorAnimationInfo const&);
     ActorAnimationInfo();
-
 };

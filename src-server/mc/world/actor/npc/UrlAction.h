@@ -13,7 +13,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::npc::ActionValue> action;
-    ::ll::TypedStorage<8, 64, ::npc::Button> button;
+    ::ll::TypedStorage<8, 64, ::npc::Button>      button;
     // NOLINTEND
 
 public:
@@ -27,7 +27,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace npc

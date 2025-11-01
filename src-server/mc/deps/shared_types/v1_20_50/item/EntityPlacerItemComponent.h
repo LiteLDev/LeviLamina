@@ -26,9 +26,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_50::EntityPlacerItemComponent& operator=(::SharedTypes::v1_20_50::EntityPlacerItemComponent&&);
+    MCNAPI ::SharedTypes::v1_20_50::EntityPlacerItemComponent&
+    operator=(::SharedTypes::v1_20_50::EntityPlacerItemComponent&&);
 
-    MCNAPI ::SharedTypes::v1_20_50::EntityPlacerItemComponent& operator=(::SharedTypes::v1_20_50::EntityPlacerItemComponent const&);
+    MCNAPI ::SharedTypes::v1_20_50::EntityPlacerItemComponent&
+    operator=(::SharedTypes::v1_20_50::EntityPlacerItemComponent const&);
 
     MCNAPI ~EntityPlacerItemComponent();
     // NOLINTEND
@@ -44,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_50

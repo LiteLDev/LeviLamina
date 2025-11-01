@@ -5,10 +5,10 @@
 namespace ActorUtil {
 
 enum class CanBeKilledResult : uchar {
-    None = 0,
-    CanBeKilled = 1,
+    None                         = 0,
+    CanBeKilled                  = 1,
     CreativePlayerCannotBeKilled = 2,
-    EduNpcCannotBeKilled = 3,
+    EduNpcCannotBeKilled         = 3,
 };
 
 }

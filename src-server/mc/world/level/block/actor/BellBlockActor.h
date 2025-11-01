@@ -21,10 +21,10 @@ class BellBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mRinging;
+    ::ll::TypedStorage<1, 1, bool>              mRinging;
     ::ll::TypedStorage<1, 1, ::Direction::Type> mMovementDirection;
-    ::ll::TypedStorage<1, 1, bool> mPowered;
-    ::ll::TypedStorage<4, 4, int> mAlarmCooldown;
+    ::ll::TypedStorage<1, 1, bool>              mPowered;
+    ::ll::TypedStorage<4, 4, int>               mAlarmCooldown;
     // NOLINTEND
 
 public:
@@ -74,5 +74,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -14,5 +14,4 @@ public:
     OnActorEnterVolumeDefinition& operator=(OnActorEnterVolumeDefinition const&);
     OnActorEnterVolumeDefinition(OnActorEnterVolumeDefinition const&);
     OnActorEnterVolumeDefinition();
-
 };

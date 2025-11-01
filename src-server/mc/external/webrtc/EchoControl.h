@@ -15,7 +15,7 @@ public:
     // clang-format off
     struct Metrics;
     // clang-format on
-    
+
     // EchoControl inner types define
     struct Metrics {
     public:
@@ -25,15 +25,14 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkcc7434;
         ::ll::UntypedStorage<4, 4> mUnk6aabad;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Metrics& operator=(Metrics const&);
         Metrics(Metrics const&);
         Metrics();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -70,7 +69,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

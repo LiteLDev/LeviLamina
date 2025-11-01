@@ -16,5 +16,4 @@ public:
     ReceiptData_Google& operator=(ReceiptData_Google const&);
     ReceiptData_Google(ReceiptData_Google const&);
     ReceiptData_Google();
-
 };

@@ -25,4 +25,4 @@ MCNAPI ::std::unordered_map<uint, ::WeakPtr<::BlockType const>>& mBlockIdToVanil
 MCNAPI ::std::unordered_map<::std::string, int>& mBlockNameToBlockIdMap();
 // NOLINTEND
 
-}
+} // namespace BlockTypeIdMappingUtils

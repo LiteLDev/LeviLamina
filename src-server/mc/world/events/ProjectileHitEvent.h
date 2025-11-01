@@ -14,7 +14,7 @@ struct ProjectileHitEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Actor&> mProjectile;
+    ::ll::TypedStorage<8, 8, ::Actor&>            mProjectile;
     ::ll::TypedStorage<8, 136, ::HitResult const> mHitResult;
     // NOLINTEND
 
@@ -35,5 +35,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

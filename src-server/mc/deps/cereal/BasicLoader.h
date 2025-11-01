@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 112> mUnkab84fe;
-    ::ll::UntypedStorage<1, 1> mUnke16cbe;
+    ::ll::UntypedStorage<1, 1>   mUnke16cbe;
     // NOLINTEND
 
 public:
@@ -37,7 +37,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool loadImpl(::cereal::SchemaReader& reader, ::entt::meta_handle handle, ::entt::meta_any const& loadContext, ::cereal::internal::BasicSchema const& fallback);
+    MCNAPI bool loadImpl(
+        ::cereal::SchemaReader&                reader,
+        ::entt::meta_handle                    handle,
+        ::entt::meta_any const&                loadContext,
+        ::cereal::internal::BasicSchema const& fallback
+    );
     // NOLINTEND
 
 public:
@@ -51,7 +56,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal

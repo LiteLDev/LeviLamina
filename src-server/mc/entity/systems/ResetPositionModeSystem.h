@@ -13,5 +13,4 @@ struct ActorMovementTickNeededComponent;
 struct PlayerPositionModeComponent;
 // clang-format on
 
-class ResetPositionModeSystem {
-};
+class ResetPositionModeSystem {};

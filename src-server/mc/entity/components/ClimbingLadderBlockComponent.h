@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
     // NOLINTEND
-
 };

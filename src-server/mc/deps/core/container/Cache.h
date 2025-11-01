@@ -4,8 +4,7 @@
 
 namespace Core {
 
-template<typename T0, typename T1, typename T2>
-class Cache {
-};
+template <typename T0, typename T1, typename T2>
+class Cache {};
 
-}
+} // namespace Core

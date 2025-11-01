@@ -25,7 +25,8 @@ public:
     virtual void _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload) = 0;
 
     // vIndex: 3
-    virtual void _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload) = 0;
+    virtual void
+    _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload) = 0;
 
     // vIndex: 4
     virtual void _servicePendingStateChanges() = 0;
@@ -42,7 +43,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

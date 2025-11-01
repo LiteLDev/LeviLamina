@@ -18,7 +18,6 @@ public:
     TransferItemTo& operator=(TransferItemTo const&);
     TransferItemTo(TransferItemTo const&);
     TransferItemTo();
-
 };
 
-}
+} // namespace AgentComponents::Actions

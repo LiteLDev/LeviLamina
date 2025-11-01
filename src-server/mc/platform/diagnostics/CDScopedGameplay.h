@@ -17,5 +17,4 @@ public:
     CDScopedGameplay& operator=(CDScopedGameplay const&);
     CDScopedGameplay(CDScopedGameplay const&);
     CDScopedGameplay();
-
 };

@@ -13,7 +13,9 @@ namespace dcsctp { struct RestartOfAnAssociationWithNewAddressesCauseConfig; }
 
 namespace dcsctp {
 
-class RestartOfAnAssociationWithNewAddressesCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::RestartOfAnAssociationWithNewAddressesCauseConfig> {
+class RestartOfAnAssociationWithNewAddressesCause
+: public ::dcsctp::Parameter,
+  public ::dcsctp::TLVTrait<::dcsctp::RestartOfAnAssociationWithNewAddressesCauseConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,7 +44,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::RestartOfAnAssociationWithNewAddressesCause> Parse(::rtc::ArrayView<uchar const> data);
+    MCNAPI static ::std::optional<::dcsctp::RestartOfAnAssociationWithNewAddressesCause>
+    Parse(::rtc::ArrayView<uchar const> data);
     // NOLINTEND
 
 public:
@@ -58,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

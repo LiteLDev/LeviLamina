@@ -14,5 +14,4 @@ public:
     PackLoadStorage& operator=(PackLoadStorage const&);
     PackLoadStorage(PackLoadStorage const&);
     PackLoadStorage();
-
 };

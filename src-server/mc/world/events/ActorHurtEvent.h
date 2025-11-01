@@ -14,10 +14,10 @@ struct ActorHurtEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                        mEntity;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorDamageSource>> mSource;
-    ::ll::TypedStorage<4, 4, float> mDamage;
-    ::ll::TypedStorage<4, 4, int> mAbsorbedDamage;
+    ::ll::TypedStorage<4, 4, float>                                   mDamage;
+    ::ll::TypedStorage<4, 4, int>                                     mAbsorbedDamage;
     // NOLINTEND
 
 public:
@@ -31,5 +31,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

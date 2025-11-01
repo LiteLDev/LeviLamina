@@ -23,4 +23,4 @@ MCNAPI bool validateVec2Position(::Vec2 const& pos, char const* caller);
 MCNAPI bool validateVec3Position(::Vec3 const& pos, char const* caller);
 // NOLINTEND
 
-}
+} // namespace ActorValueValidation

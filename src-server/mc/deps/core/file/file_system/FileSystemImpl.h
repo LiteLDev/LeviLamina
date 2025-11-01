@@ -32,11 +32,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkc9bc1f;
-    ::ll::UntypedStorage<1, 1> mUnk26049b;
-    ::ll::UntypedStorage<1, 1> mUnkf94830;
-    ::ll::UntypedStorage<1, 1> mUnk9bcf95;
-    ::ll::UntypedStorage<4, 4> mUnka1996d;
-    ::ll::UntypedStorage<4, 4> mUnk906cc5;
+    ::ll::UntypedStorage<1, 1>  mUnk26049b;
+    ::ll::UntypedStorage<1, 1>  mUnkf94830;
+    ::ll::UntypedStorage<1, 1>  mUnk9bcf95;
+    ::ll::UntypedStorage<4, 4>  mUnka1996d;
+    ::ll::UntypedStorage<4, 4>  mUnk906cc5;
     ::ll::UntypedStorage<8, 64> mUnkdc96a2;
     ::ll::UntypedStorage<8, 80> mUnk3b13c8;
     ::ll::UntypedStorage<8, 24> mUnkb8342b;
@@ -71,7 +71,12 @@ public:
     virtual uint64 getTransactionWriteSizeLimit() const;
 
     // vIndex: 6
-    virtual ::Core::Result _openFile(::std::unique_ptr<::Core::FileImpl>&, ::Core::PathView, ::Core::FileOpenMode, ::Core::FileBufferingMode) = 0;
+    virtual ::Core::Result _openFile(
+        ::std::unique_ptr<::Core::FileImpl>&,
+        ::Core::PathView,
+        ::Core::FileOpenMode,
+        ::Core::FileBufferingMode
+    ) = 0;
 
     // vIndex: 7
     virtual bool _fileExists(::Core::PathView) = 0;
@@ -95,7 +100,13 @@ public:
     virtual ::Core::Result _copyFile(::Core::PathView sourceFileName, ::Core::PathView targetFileName);
 
     // vIndex: 14
-    virtual ::Core::Result _copyFileWithLimit(::Core::PathView sourceFileName, ::Core::PathView targetFileName, uint64 startPosition, uint64& outBytesWritten, uint64& outBytesRemaining);
+    virtual ::Core::Result _copyFileWithLimit(
+        ::Core::PathView sourceFileName,
+        ::Core::PathView targetFileName,
+        uint64           startPosition,
+        uint64&          outBytesWritten,
+        uint64&          outBytesRemaining
+    );
 
     // vIndex: 15
     virtual ::Core::Result _readFileData(::Core::PathView filePath, ::std::vector<uchar>& data);
@@ -128,22 +139,35 @@ public:
     virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) = 0;
 
     // vIndex: 25
-    virtual ::Core::Result _iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) = 0;
+    virtual ::Core::Result _iterateOverDirectory(
+        ::Core::PathView,
+        ::Core::DirectoryIterationFlags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
+    ) = 0;
 
     // vIndex: 26
-    virtual ::Core::Result _getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::PathView directoryPath);
+    virtual ::Core::Result
+    _getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::PathView directoryPath);
 
     // vIndex: 27
-    virtual ::Core::Result _getDirectoryFilesRecursively(::std::vector<::Core::PathBuffer<::std::string>>& filesOut, ::Core::PathView directoryPath);
+    virtual ::Core::Result _getDirectoryFilesRecursively(
+        ::std::vector<::Core::PathBuffer<::std::string>>& filesOut,
+        ::Core::PathView                                  directoryPath
+    );
 
     // vIndex: 28
     virtual ::Core::Result _getDirectoryFilesSizeRecursively(uint64& totalSize, ::Core::PathView directoryPath);
 
     // vIndex: 29
-    virtual ::Core::Result _getDirectoryFilesAllocatedSizeRecursively(uint64& totalSize, uint64& totalSizeAllocated, ::Core::PathView directoryPath);
+    virtual ::Core::Result _getDirectoryFilesAllocatedSizeRecursively(
+        uint64&          totalSize,
+        uint64&          totalSizeAllocated,
+        ::Core::PathView directoryPath
+    );
 
     // vIndex: 30
-    virtual ::Core::Result _copyDirectoryAndContentsRecursively(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
+    virtual ::Core::Result
+    _copyDirectoryAndContentsRecursively(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
     // vIndex: 31
     virtual bool _fileOrDirectoryExists(::Core::PathView) = 0;
@@ -170,19 +194,35 @@ public:
     virtual bool _flatFileDirectoryExists(::Core::PathView directoryPath, ::Core::PathView manifestPath);
 
     // vIndex: 39
-    virtual ::Core::Result _flatFileIterateOverDirectory(::Core::PathView directoryPath, ::Core::PathView manifestPath, ::Core::DirectoryIterationFlags flags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> callbackFunction);
+    virtual ::Core::Result _flatFileIterateOverDirectory(
+        ::Core::PathView                                                             directoryPath,
+        ::Core::PathView                                                             manifestPath,
+        ::Core::DirectoryIterationFlags                                              flags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> callbackFunction
+    );
 
     // vIndex: 40
     virtual bool _isDirectoryPathAFlatFile(::Core::PathView directoryPath);
 
     // vIndex: 41
-    virtual ::Core::Result _copyFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath, ::std::vector<::Core::ExcludedPath> const& excludedDirectories, ::std::vector<::Core::ExcludedPath> const& excludedFiles);
+    virtual ::Core::Result _copyFlatFile(
+        ::Core::PathView                           sourceDirectoryPath,
+        ::Core::PathView                           targetDirectoryPath,
+        ::std::vector<::Core::ExcludedPath> const& excludedDirectories,
+        ::std::vector<::Core::ExcludedPath> const& excludedFiles
+    );
 
     // vIndex: 42
-    virtual ::Core::Result _flatFileDeleteFileOrDirectory(::Core::PathView fileOrDirectoryPath, ::Core::PathView manifestPath, bool directoryDeleteEnabled, bool deleteRecursively);
+    virtual ::Core::Result _flatFileDeleteFileOrDirectory(
+        ::Core::PathView fileOrDirectoryPath,
+        ::Core::PathView manifestPath,
+        bool             directoryDeleteEnabled,
+        bool             deleteRecursively
+    );
 
     // vIndex: 43
-    virtual ::Core::Result _flatFileGetFileSize(::Core::PathView filePath, ::Core::PathView manifestPath, uint64* pFileSize);
+    virtual ::Core::Result
+    _flatFileGetFileSize(::Core::PathView filePath, ::Core::PathView manifestPath, uint64* pFileSize);
 
     // vIndex: 44
     virtual ::Core::Result _getLastModificationTime(::Core::PathView, int64*) = 0;
@@ -194,7 +234,12 @@ public:
     virtual ::Core::Result _endTransaction();
 
     // vIndex: 47
-    virtual ::Core::Result _writeOperation(::Core::PathView fullPath, ::Core::Result&& result, ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull, uint64 numBytesWritten);
+    virtual ::Core::Result _writeOperation(
+        ::Core::PathView                                fullPath,
+        ::Core::Result&&                                result,
+        ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull,
+        uint64                                          numBytesWritten
+    );
 
     // vIndex: 48
     virtual void _initializeInternal();
@@ -203,25 +248,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FileSystemImpl(::Core::FileAccessType accessType, ::std::shared_ptr<::Core::FileStorageArea> storageArea, ::Core::TransactionFlags transactionFlags, ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker);
+    MCNAPI FileSystemImpl(
+        ::Core::FileAccessType                             accessType,
+        ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
+        ::Core::TransactionFlags                           transactionFlags,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
+    );
 
-    MCNAPI ::Core::Result _flatFileOpenFlatFile(::std::unique_ptr<::Core::FileImpl>& fileOut, ::Core::PathView filePath, ::Core::PathView manifestPath, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode fileBufferingMode);
+    MCNAPI ::Core::Result _flatFileOpenFlatFile(
+        ::std::unique_ptr<::Core::FileImpl>& fileOut,
+        ::Core::PathView                     filePath,
+        ::Core::PathView                     manifestPath,
+        ::Core::FileOpenMode                 openMode,
+        ::Core::FileBufferingMode            fileBufferingMode
+    );
 
     MCNAPI ::Core::Result _flatFileUnloadManifest(::Core::PathView filePath);
 
     MCNAPI ::Core::Result _readOperation(::Core::Result&& result, uint64 numBytesRead);
 
-    MCNAPI ::Core::Result _readWriteOperation(::Core::Result&& result, ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull, uint64 numBytesRead, uint64 numBytesWritten);
+    MCNAPI ::Core::Result _readWriteOperation(
+        ::Core::Result&&                                result,
+        ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull,
+        uint64                                          numBytesRead,
+        uint64                                          numBytesWritten
+    );
 
     MCNAPI ::Core::Result commit();
 
-    MCNAPI ::Core::Result copyDirectoryAndContentsRecursively(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
+    MCNAPI ::Core::Result
+    copyDirectoryAndContentsRecursively(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
     MCNAPI ::Core::Result copyFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
 
-    MCNAPI ::Core::Result copyFileWithLimit(::Core::PathView sourceFileName, ::Core::PathView targetFileName, uint64 startPosition, uint64& outBytesWritten, uint64& outBytesRemaining);
+    MCNAPI ::Core::Result copyFileWithLimit(
+        ::Core::PathView sourceFileName,
+        ::Core::PathView targetFileName,
+        uint64           startPosition,
+        uint64&          outBytesWritten,
+        uint64&          outBytesRemaining
+    );
 
-    MCNAPI ::Core::Result copyFlatFile(::Core::PathView flatFileParentDirectory, ::Core::PathView targetDirectory, ::std::vector<::Core::ExcludedPath> const& excludedDirectories, ::std::vector<::Core::ExcludedPath> const& excludedFiles);
+    MCNAPI ::Core::Result copyFlatFile(
+        ::Core::PathView                           flatFileParentDirectory,
+        ::Core::PathView                           targetDirectory,
+        ::std::vector<::Core::ExcludedPath> const& excludedDirectories,
+        ::std::vector<::Core::ExcludedPath> const& excludedFiles
+    );
 
     MCNAPI ::Core::Result createDirectoryRecursively(::Core::PathView directoryPath);
 
@@ -257,9 +330,18 @@ public:
 
     MCNAPI bool isDirectoryPathAFlatFile(::Core::PathView directoryPath);
 
-    MCNAPI ::Core::Result iterateOverDirectory(::Core::PathView directoryPath, ::Core::DirectoryIterationFlags flags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> callbackFunction);
+    MCNAPI ::Core::Result iterateOverDirectory(
+        ::Core::PathView                                                             directoryPath,
+        ::Core::DirectoryIterationFlags                                              flags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> callbackFunction
+    );
 
-    MCNAPI ::Core::Result openFile(::std::unique_ptr<::Core::FileImpl>& fileOut, ::Core::PathView filePath, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode fileBufferingMode);
+    MCNAPI ::Core::Result openFile(
+        ::std::unique_ptr<::Core::FileImpl>& fileOut,
+        ::Core::PathView                     filePath,
+        ::Core::FileOpenMode                 openMode,
+        ::Core::FileBufferingMode            fileBufferingMode
+    );
 
     MCNAPI ::Core::Result renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
@@ -281,7 +363,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::FileAccessType accessType, ::std::shared_ptr<::Core::FileStorageArea> storageArea, ::Core::TransactionFlags transactionFlags, ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker);
+    MCNAPI void* $ctor(
+        ::Core::FileAccessType                             accessType,
+        ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
+        ::Core::TransactionFlags                           transactionFlags,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
+    );
     // NOLINTEND
 
 public:
@@ -303,7 +390,13 @@ public:
 
     MCNAPI ::Core::Result $_copyFile(::Core::PathView sourceFileName, ::Core::PathView targetFileName);
 
-    MCNAPI ::Core::Result $_copyFileWithLimit(::Core::PathView sourceFileName, ::Core::PathView targetFileName, uint64 startPosition, uint64& outBytesWritten, uint64& outBytesRemaining);
+    MCNAPI ::Core::Result $_copyFileWithLimit(
+        ::Core::PathView sourceFileName,
+        ::Core::PathView targetFileName,
+        uint64           startPosition,
+        uint64&          outBytesWritten,
+        uint64&          outBytesRemaining
+    );
 
     MCNAPI ::Core::Result $_readFileData(::Core::PathView filePath, ::std::vector<uchar>& data);
 
@@ -317,15 +410,24 @@ public:
 
     MCNAPI ::Core::Result $_deleteRecursively(::Core::PathView directoryPath, ::Core::FileType deleteFileType);
 
-    MCNAPI ::Core::Result $_getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::PathView directoryPath);
+    MCNAPI ::Core::Result
+    $_getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::PathView directoryPath);
 
-    MCNAPI ::Core::Result $_getDirectoryFilesRecursively(::std::vector<::Core::PathBuffer<::std::string>>& filesOut, ::Core::PathView directoryPath);
+    MCNAPI ::Core::Result $_getDirectoryFilesRecursively(
+        ::std::vector<::Core::PathBuffer<::std::string>>& filesOut,
+        ::Core::PathView                                  directoryPath
+    );
 
     MCNAPI ::Core::Result $_getDirectoryFilesSizeRecursively(uint64& totalSize, ::Core::PathView directoryPath);
 
-    MCNAPI ::Core::Result $_getDirectoryFilesAllocatedSizeRecursively(uint64& totalSize, uint64& totalSizeAllocated, ::Core::PathView directoryPath);
+    MCNAPI ::Core::Result $_getDirectoryFilesAllocatedSizeRecursively(
+        uint64&          totalSize,
+        uint64&          totalSizeAllocated,
+        ::Core::PathView directoryPath
+    );
 
-    MCNAPI ::Core::Result $_copyDirectoryAndContentsRecursively(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
+    MCNAPI ::Core::Result
+    $_copyDirectoryAndContentsRecursively(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
     MCNAPI ::Core::Result $_getFileOrDirectorySize(::Core::PathView entryName, uint64* pFileSizeOut);
 
@@ -339,19 +441,40 @@ public:
 
     MCNAPI bool $_flatFileDirectoryExists(::Core::PathView directoryPath, ::Core::PathView manifestPath);
 
-    MCNAPI ::Core::Result $_flatFileIterateOverDirectory(::Core::PathView directoryPath, ::Core::PathView manifestPath, ::Core::DirectoryIterationFlags flags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> callbackFunction);
+    MCNAPI ::Core::Result $_flatFileIterateOverDirectory(
+        ::Core::PathView                                                             directoryPath,
+        ::Core::PathView                                                             manifestPath,
+        ::Core::DirectoryIterationFlags                                              flags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> callbackFunction
+    );
 
     MCNAPI bool $_isDirectoryPathAFlatFile(::Core::PathView directoryPath);
 
-    MCNAPI ::Core::Result $_copyFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath, ::std::vector<::Core::ExcludedPath> const& excludedDirectories, ::std::vector<::Core::ExcludedPath> const& excludedFiles);
+    MCNAPI ::Core::Result $_copyFlatFile(
+        ::Core::PathView                           sourceDirectoryPath,
+        ::Core::PathView                           targetDirectoryPath,
+        ::std::vector<::Core::ExcludedPath> const& excludedDirectories,
+        ::std::vector<::Core::ExcludedPath> const& excludedFiles
+    );
 
-    MCNAPI ::Core::Result $_flatFileDeleteFileOrDirectory(::Core::PathView fileOrDirectoryPath, ::Core::PathView manifestPath, bool directoryDeleteEnabled, bool deleteRecursively);
+    MCNAPI ::Core::Result $_flatFileDeleteFileOrDirectory(
+        ::Core::PathView fileOrDirectoryPath,
+        ::Core::PathView manifestPath,
+        bool             directoryDeleteEnabled,
+        bool             deleteRecursively
+    );
 
-    MCNAPI ::Core::Result $_flatFileGetFileSize(::Core::PathView filePath, ::Core::PathView manifestPath, uint64* pFileSize);
+    MCNAPI ::Core::Result
+    $_flatFileGetFileSize(::Core::PathView filePath, ::Core::PathView manifestPath, uint64* pFileSize);
 
     MCNAPI ::Core::Result $_endTransaction();
 
-    MCNAPI ::Core::Result $_writeOperation(::Core::PathView fullPath, ::Core::Result&& result, ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull, uint64 numBytesWritten);
+    MCNAPI ::Core::Result $_writeOperation(
+        ::Core::PathView                                fullPath,
+        ::Core::Result&&                                result,
+        ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull,
+        uint64                                          numBytesWritten
+    );
 
     MCNAPI void $_initializeInternal();
     // NOLINTEND
@@ -361,7 +484,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/events/gameevents/VibrationListenerConfig.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,10 +25,22 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void onSignalReceive(::BlockSource& region, ::BlockPos const&, ::GameEvent const& gameEvent, ::Actor* source, float distance, uint listenerRange, ::Actor*) /*override*/;
+    virtual void onSignalReceive(
+        ::BlockSource& region,
+        ::BlockPos const&,
+        ::GameEvent const& gameEvent,
+        ::Actor*           source,
+        float              distance,
+        uint               listenerRange,
+        ::Actor*
+    ) /*override*/;
 
     // vIndex: 3
-    virtual bool shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext) /*override*/;
+    virtual bool shouldListen(
+        ::BlockSource&            region,
+        ::GameEvent const&        gameEvent,
+        ::GameEventContext const& gameEventContext
+    ) /*override*/;
 
     // vIndex: 4
     virtual void onSerializableDataChanged(::BlockSource& region) /*override*/;
@@ -43,9 +55,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onSignalReceive(::BlockSource& region, ::BlockPos const&, ::GameEvent const& gameEvent, ::Actor* source, float distance, uint listenerRange, ::Actor*);
+    MCAPI void $onSignalReceive(
+        ::BlockSource& region,
+        ::BlockPos const&,
+        ::GameEvent const& gameEvent,
+        ::Actor*           source,
+        float              distance,
+        uint               listenerRange,
+        ::Actor*
+    );
 
-    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
+    MCAPI bool
+    $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
 
     MCFOLD void $onSerializableDataChanged(::BlockSource& region);
 
@@ -57,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

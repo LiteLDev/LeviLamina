@@ -15,4 +15,4 @@ MCAPI ::std::vector<::WeightedBlockName> const& MOSS_PATCH();
 MCAPI ::std::vector<::WeightedBlockName> const& PALE_MOSS_PATCH();
 // NOLINTEND
 
-}
+} // namespace VegetationFeatureBlocks

@@ -10,7 +10,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
-    ::ll::TypedStorage<1, 1, bool> mIsFrontSide;
+    ::ll::TypedStorage<1, 1, bool>                    mIsFrontSide;
     // NOLINTEND
-
 };

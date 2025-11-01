@@ -13,4 +13,4 @@ namespace IsSolidMobComponentUtility {
 MCNAPI void updateFromActorFlags(::EntityContext& entity);
 // NOLINTEND
 
-}
+} // namespace IsSolidMobComponentUtility

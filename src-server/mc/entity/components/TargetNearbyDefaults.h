@@ -10,4 +10,4 @@ MCAPI float const& INSIDE_RANGE();
 MCAPI float const& OUTSIDE_RANGE();
 // NOLINTEND
 
-}
+} // namespace TargetNearbyDefaults

@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/platform/diagnostics/CrashDumpLogSectionHeader.h"
 
-struct CrashDumpLogSectionHeaderImpl : public ::CrashDumpLogSectionHeader {
-};
+struct CrashDumpLogSectionHeaderImpl : public ::CrashDumpLogSectionHeader {};

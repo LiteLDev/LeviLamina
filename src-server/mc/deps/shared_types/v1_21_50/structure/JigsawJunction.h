@@ -20,7 +20,6 @@ public:
     JigsawJunction& operator=(JigsawJunction const&);
     JigsawJunction(JigsawJunction const&);
     JigsawJunction();
-
 };
 
-}
+} // namespace SharedTypes::v1_21_50

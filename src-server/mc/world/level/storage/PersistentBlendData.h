@@ -9,10 +9,10 @@ struct PersistentBlendData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkfb2e3a;
+    ::ll::UntypedStorage<1, 1>  mUnkfb2e3a;
     ::ll::UntypedStorage<2, 32> mUnkf84333;
-    ::ll::UntypedStorage<1, 1> mUnk5def06;
-    ::ll::UntypedStorage<1, 1> mUnk68d508;
+    ::ll::UntypedStorage<1, 1>  mUnk5def06;
+    ::ll::UntypedStorage<1, 1>  mUnk68d508;
     // NOLINTEND
 
 public:
@@ -26,5 +26,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::PersistentBlendData createNoBlend(::BlendVersion blendVersion);
     // NOLINTEND
-
 };

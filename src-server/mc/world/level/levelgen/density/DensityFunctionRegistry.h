@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DensityFunctionPtr>> mFunctions;
     // NOLINTEND
-
 };

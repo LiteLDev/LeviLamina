@@ -4,8 +4,7 @@
 
 namespace cereal::internal {
 
-template<typename T0>
-class TypeSchema {
-};
+template <typename T0>
+class TypeSchema {};
 
-}
+} // namespace cereal::internal

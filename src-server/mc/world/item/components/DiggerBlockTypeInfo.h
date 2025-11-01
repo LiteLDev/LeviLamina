@@ -11,8 +11,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::SharedTypes::Legacy::BlockDescriptor> filter;
-    ::ll::TypedStorage<4, 4, int> destroySpeed;
-    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> onDig;
+    ::ll::TypedStorage<4, 4, int>                                     destroySpeed;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger>                    onDig;
     // NOLINTEND
 
 public:
@@ -34,5 +34,4 @@ public:
 
     MCAPI void* $ctor(::DiggerBlockTypeInfo const&);
     // NOLINTEND
-
 };

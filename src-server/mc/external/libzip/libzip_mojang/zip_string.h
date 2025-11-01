@@ -18,5 +18,4 @@ public:
     zip_string& operator=(zip_string const&);
     zip_string(zip_string const&);
     zip_string();
-
 };

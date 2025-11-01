@@ -30,7 +30,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PriorityPreset(::HashedString const& id, ::std::unordered_set<::HashedString> const& exclusionList, ::std::unordered_set<::HashedString> const& liquidTargetingItemsList, ::std::unordered_map<::HashedString, ::HashedString> const& itemCategoryIdTable, ::HashedString const& handCategory, ::HashedString const& defaultCategory);
+    MCNAPI PriorityPreset(
+        ::HashedString const&                                       id,
+        ::std::unordered_set<::HashedString> const&                 exclusionList,
+        ::std::unordered_set<::HashedString> const&                 liquidTargetingItemsList,
+        ::std::unordered_map<::HashedString, ::HashedString> const& itemCategoryIdTable,
+        ::HashedString const&                                       handCategory,
+        ::HashedString const&                                       defaultCategory
+    );
 
     MCNAPI ~PriorityPreset();
     // NOLINTEND
@@ -44,7 +51,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::HashedString const& id, ::std::unordered_set<::HashedString> const& exclusionList, ::std::unordered_set<::HashedString> const& liquidTargetingItemsList, ::std::unordered_map<::HashedString, ::HashedString> const& itemCategoryIdTable, ::HashedString const& handCategory, ::HashedString const& defaultCategory);
+    MCNAPI void* $ctor(
+        ::HashedString const&                                       id,
+        ::std::unordered_set<::HashedString> const&                 exclusionList,
+        ::std::unordered_set<::HashedString> const&                 liquidTargetingItemsList,
+        ::std::unordered_map<::HashedString, ::HashedString> const& itemCategoryIdTable,
+        ::HashedString const&                                       handCategory,
+        ::HashedString const&                                       defaultCategory
+    );
     // NOLINTEND
 
 public:
@@ -52,7 +66,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace CameraAimAssist

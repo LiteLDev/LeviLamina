@@ -28,7 +28,6 @@ public:
     // vIndex: 0
     virtual ~FastDispatchPublisherBase_MultiThreadedStrict() /*override*/ = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::PubSub::Detail

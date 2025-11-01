@@ -20,36 +20,35 @@ public:
     // clang-format off
     struct SinkPair;
     // clang-format on
-    
+
     // VideoSourceBase inner types define
     struct SinkPair {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk9034df;
+        ::ll::UntypedStorage<8, 8>  mUnk9034df;
         ::ll::UntypedStorage<8, 64> mUnk86a137;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         SinkPair& operator=(SinkPair const&);
         SinkPair(SinkPair const&);
         SinkPair();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~SinkPair();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -68,7 +67,10 @@ public:
     virtual ~VideoSourceBase() /*override*/;
 
     // vIndex: 1
-    virtual void AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants) /*override*/;
+    virtual void AddOrUpdateSink(
+        ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
+        ::rtc::VideoSinkWants const&                     wants
+    ) /*override*/;
 
     // vIndex: 2
     virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
@@ -97,7 +99,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
+    MCNAPI void
+    $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
 
     MCNAPI void $RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink);
     // NOLINTEND
@@ -107,7 +110,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

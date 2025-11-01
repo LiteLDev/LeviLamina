@@ -17,8 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LabTableContainerManagerModel>> mModel;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CraftableCompounds>> mCraftableCompounds;
-    ::ll::TypedStorage<1, 1, ::CompoundContainerType> mResultContainer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CraftableCompounds>>           mCraftableCompounds;
+    ::ll::TypedStorage<1, 1, ::CompoundContainerType>                           mResultContainer;
     // NOLINTEND
 
 public:
@@ -27,5 +27,4 @@ public:
     // vIndex: 0
     virtual ~LabTableContainerManagerController() /*override*/ = default;
     // NOLINTEND
-
 };

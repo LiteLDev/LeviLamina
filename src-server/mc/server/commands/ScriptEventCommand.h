@@ -17,7 +17,7 @@ class ScriptEventCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mMessageId;
+    ::ll::TypedStorage<8, 32, ::std::string>    mMessageId;
     ::ll::TypedStorage<8, 32, ::CommandMessage> mMessage;
     // NOLINTEND
 
@@ -48,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

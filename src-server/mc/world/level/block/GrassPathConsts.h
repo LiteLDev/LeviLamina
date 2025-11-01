@@ -13,4 +13,4 @@ namespace GrassPathConsts {
 MCAPI ::AABB const& GRASS_PATH_BLOCK_VISUAL_SHAPE();
 // NOLINTEND
 
-}
+} // namespace GrassPathConsts

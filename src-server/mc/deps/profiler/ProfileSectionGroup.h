@@ -17,7 +17,6 @@ public:
     ProfileSectionGroup& operator=(ProfileSectionGroup const&);
     ProfileSectionGroup(ProfileSectionGroup const&);
     ProfileSectionGroup();
-
 };
 
-}
+} // namespace Core::Profile

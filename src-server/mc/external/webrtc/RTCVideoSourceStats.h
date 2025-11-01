@@ -18,9 +18,9 @@ class RTCVideoSourceStats : public ::webrtc::RTCMediaSourceStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnka82c6d;
-    ::ll::UntypedStorage<4, 8> mUnkc5f557;
-    ::ll::UntypedStorage<4, 8> mUnk8c3196;
+    ::ll::UntypedStorage<4, 8>  mUnka82c6d;
+    ::ll::UntypedStorage<4, 8>  mUnkc5f557;
+    ::ll::UntypedStorage<4, 8>  mUnk8c3196;
     ::ll::UntypedStorage<8, 16> mUnk86ba63;
     // NOLINTEND
 
@@ -85,7 +85,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

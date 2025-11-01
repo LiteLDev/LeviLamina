@@ -40,4 +40,4 @@ MCNAPI ::Json::Value toJsonValue(::cereal::DynamicValue const& value);
 MCNAPI ::std::vector<::entt::meta_func> typeLevelSetters(::entt::meta_type const& type);
 // NOLINTEND
 
-}
+} // namespace cereal

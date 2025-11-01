@@ -23,11 +23,30 @@ namespace MinecraftCamera { struct DefaultInputCameraComponent; }
 namespace CameraInputTransferSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickMoveInputUpdate(::ViewT<::StrictEntityContext, ::Include<::MinecraftCamera::ActiveCameraComponent>, ::MinecraftCamera::CameraComponent const, ::MinecraftCamera::CameraAttachComponent const> activeAttachedCameraView, ::ViewT<::StrictEntityContext, ::Include<::MinecraftCamera::ActiveCameraComponent>, ::Exclude<::MinecraftCamera::CameraAttachComponent>, ::MinecraftCamera::CameraComponent const> activeDetachedCameraView, ::ViewT<::StrictEntityContext, ::Include<::MinecraftCamera::DefaultInputCameraComponent>, ::MinecraftCamera::CameraAttachComponent const> defaultInputCameraView, ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent>, ::MoveInputComponent> localPlayerView);
+MCNAPI void _tickMoveInputUpdate(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::MinecraftCamera::ActiveCameraComponent>,
+        ::MinecraftCamera::CameraComponent const,
+        ::MinecraftCamera::CameraAttachComponent const> activeAttachedCameraView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::MinecraftCamera::ActiveCameraComponent>,
+        ::Exclude<::MinecraftCamera::CameraAttachComponent>,
+        ::MinecraftCamera::CameraComponent const> activeDetachedCameraView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::MinecraftCamera::DefaultInputCameraComponent>,
+        ::MinecraftCamera::CameraAttachComponent const> defaultInputCameraView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent>,
+        ::MoveInputComponent> localPlayerView
+);
 
 MCNAPI ::TickingSystemWithInfo createMoveInputUpdateSystem();
 
 MCNAPI ::TickingSystemWithInfo createPlayerActionUpdateSystem();
 // NOLINTEND
 
-}
+} // namespace CameraInputTransferSystem

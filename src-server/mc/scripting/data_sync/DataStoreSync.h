@@ -40,7 +40,9 @@ public:
     virtual void clear(::std::string const& datastoreName, bool addToOutgoingChanges);
 
     // vIndex: 2
-    virtual void applyChanges(::std::vector<::std::variant<::Bedrock::DDUI::DataStoreChange, ::Bedrock::DDUI::DataStoreRemoval>> const&) = 0;
+    virtual void applyChanges(
+        ::std::vector<::std::variant<::Bedrock::DDUI::DataStoreChange, ::Bedrock::DDUI::DataStoreRemoval>> const&
+    ) = 0;
 
     // vIndex: 3
     virtual void assertAppropriateThread() const = 0;
@@ -51,7 +53,11 @@ public:
     // NOLINTBEGIN
     MCNAPI DataStoreSync();
 
-    MCNAPI void set(::std::string const& datastoreName, ::std::string const& property, ::Bedrock::DDUI::DataStoreObject const& obj, bool addToOutgoingChanges);
+    MCNAPI void
+    set(::std::string const&                    datastoreName,
+        ::std::string const&                    property,
+        ::Bedrock::DDUI::DataStoreObject const& obj,
+        bool                                    addToOutgoingChanges);
     // NOLINTEND
 
 public:
@@ -77,7 +83,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::DDUI

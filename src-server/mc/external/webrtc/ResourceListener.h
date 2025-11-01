@@ -21,7 +21,8 @@ public:
     virtual ~ResourceListener() = default;
 
     // vIndex: 1
-    virtual void OnResourceUsageStateMeasured(::webrtc::scoped_refptr<::webrtc::Resource>, ::webrtc::ResourceUsageState) = 0;
+    virtual void
+        OnResourceUsageStateMeasured(::webrtc::scoped_refptr<::webrtc::Resource>, ::webrtc::ResourceUsageState) = 0;
     // NOLINTEND
 
 public:
@@ -29,7 +30,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

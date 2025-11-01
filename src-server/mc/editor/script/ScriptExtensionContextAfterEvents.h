@@ -30,47 +30,50 @@ namespace mce { class UUID; }
 
 namespace Editor::ScriptModule {
 
-class ScriptExtensionContextAfterEvents : public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptExtensionContextAfterEvents> {
+class ScriptExtensionContextAfterEvents
+: public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptExtensionContextAfterEvents> {
 public:
     // ScriptExtensionContextAfterEvents inner types declare
     // clang-format off
     class ScriptExtensionContextAfterEventsDeferredEventListener;
     // clang-format on
-    
+
     // ScriptExtensionContextAfterEvents inner types define
-    class ScriptExtensionContextAfterEventsDeferredEventListener : public ::ScriptModuleMinecraft::IScriptScriptDeferredEventListener<::Editor::ScriptModule::ScriptExtensionContextAfterEvents> {
+    class ScriptExtensionContextAfterEventsDeferredEventListener
+    : public ::ScriptModuleMinecraft::IScriptScriptDeferredEventListener<
+          ::Editor::ScriptModule::ScriptExtensionContextAfterEvents> {
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 5
-        virtual void onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
-    
+        virtual void
+        onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
+
         // vIndex: 0
         virtual ~ScriptExtensionContextAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkf45d6d;
     ::ll::UntypedStorage<8, 16> mUnk86589b;
-    ::ll::UntypedStorage<8, 8> mUnk586770;
+    ::ll::UntypedStorage<8, 8>  mUnk586770;
     ::ll::UntypedStorage<8, 24> mUnkb230da;
-    ::ll::UntypedStorage<8, 8> mUnk6d997e;
+    ::ll::UntypedStorage<8, 8>  mUnk6d997e;
     // NOLINTEND
 
 public:
@@ -84,23 +87,44 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptExtensionContextAfterEvents(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
 
-    MCNAPI void _handleBlockPaletteChanged(::Editor::Services::EditorBlockPaletteServiceProvider const* paletteService, ::std::variant<::Editor::EditorBlockPaletteEventItemUpdated, ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged, ::Editor::EditorBlockPaletteEventActivePaletteChanged, ::Editor::EditorBlockPaletteEventPaletteUpdated, ::Editor::EditorBlockPaletteEventPaletteRemoved> const& blockPaletteEvent);
+    MCNAPI void _handleBlockPaletteChanged(
+        ::Editor::Services::EditorBlockPaletteServiceProvider const* paletteService,
+        ::std::variant<
+            ::Editor::EditorBlockPaletteEventItemUpdated,
+            ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
+            ::Editor::EditorBlockPaletteEventActivePaletteChanged,
+            ::Editor::EditorBlockPaletteEventPaletteUpdated,
+            ::Editor::EditorBlockPaletteEventPaletteRemoved> const& blockPaletteEvent
+    );
 
     MCNAPI void _handleClipboardItemChangeEvent(::mce::UUID const& itemId, bool isPrimary);
 
-    MCNAPI void _handleCurrentThemeChanged(::Editor::Services::EditorSettingsServiceProvider* settingsServiceProvider, ::std::string const& themeId);
+    MCNAPI void _handleCurrentThemeChanged(
+        ::Editor::Services::EditorSettingsServiceProvider* settingsServiceProvider,
+        ::std::string const&                               themeId
+    );
 
-    MCNAPI void _handleCursorPositionChanged(::std::optional<::Editor::Cursor::Position> const& newPosition, ::Editor::Cursor::CursorState const& cursorState);
+    MCNAPI void _handleCursorPositionChanged(
+        ::std::optional<::Editor::Cursor::Position> const& newPosition,
+        ::Editor::Cursor::CursorState const&               cursorState
+    );
 
-    MCNAPI void _handleCursorStateChanged(::Editor::Cursor::CursorState const& from, ::Editor::Cursor::CursorState const& to);
+    MCNAPI void
+    _handleCursorStateChanged(::Editor::Cursor::CursorState const& from, ::Editor::Cursor::CursorState const& to);
 
     MCNAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
 
     MCNAPI void _handleSelectionVolumeEvent(::Editor::Selection::SelectionVolumeEvent const& selectionEvent);
 
-    MCNAPI void _handleThemeColorUpdated(::Editor::Services::EditorSettingsServiceProvider* settingsServiceProvider, ::std::string const& themeId, ::Editor::Settings::ThemeSettingsColorKey colorKey, ::mce::Color const& color);
+    MCNAPI void _handleThemeColorUpdated(
+        ::Editor::Services::EditorSettingsServiceProvider* settingsServiceProvider,
+        ::std::string const&                               themeId,
+        ::Editor::Settings::ThemeSettingsColorKey          colorKey,
+        ::mce::Color const&                                color
+    );
 
-    MCNAPI ::Editor::ScriptModule::ScriptExtensionContextAfterEvents& operator=(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
+    MCNAPI ::Editor::ScriptModule::ScriptExtensionContextAfterEvents&
+    operator=(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
 
     MCNAPI void registerListeners(::Editor::ServiceProviderCollection& serviceProviders);
 
@@ -112,7 +136,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<::Editor::ScriptModule::ScriptExtensionContextAfterEvents> const& getMetadata();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
+        ::Editor::ScriptModule::ScriptExtensionContextAfterEvents> const&
+    getMetadata();
     // NOLINTEND
 
 public:
@@ -126,7 +152,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

@@ -13,4 +13,4 @@ namespace SneakingSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace SneakingSystem

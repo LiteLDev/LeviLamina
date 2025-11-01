@@ -15,5 +15,4 @@ public:
     ActorAnimationControllerGroupParseMetaData& operator=(ActorAnimationControllerGroupParseMetaData const&);
     ActorAnimationControllerGroupParseMetaData(ActorAnimationControllerGroupParseMetaData const&);
     ActorAnimationControllerGroupParseMetaData();
-
 };

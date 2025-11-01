@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/versionless/actor/BaseGoalDefinition.h"
+#include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,7 +46,6 @@ public:
 
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_100

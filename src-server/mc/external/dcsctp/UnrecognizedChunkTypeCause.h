@@ -13,7 +13,8 @@ namespace dcsctp { struct UnrecognizedChunkTypeCauseConfig; }
 
 namespace dcsctp {
 
-class UnrecognizedChunkTypeCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::UnrecognizedChunkTypeCauseConfig> {
+class UnrecognizedChunkTypeCause : public ::dcsctp::Parameter,
+                                   public ::dcsctp::TLVTrait<::dcsctp::UnrecognizedChunkTypeCauseConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

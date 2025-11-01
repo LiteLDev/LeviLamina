@@ -23,7 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk3829c0;
-    ::ll::UntypedStorage<8, 8> mUnkf04544;
+    ::ll::UntypedStorage<8, 8>  mUnkf04544;
     // NOLINTEND
 
 public:
@@ -43,7 +43,13 @@ public:
     // NOLINTBEGIN
     MCNAPI FutureAny(::Scripting::FutureAny const& rhs);
 
-    MCNAPI FutureAny(::Scripting::IRuntime* runtime, ::Scripting::ContextId contextId, ::Scripting::WeakLifetimeScope scope, ::Scripting::StrongTypedObjectHandle<::Scripting::FutureType> futureHandle, ::Scripting::IObjectInspector* inspector);
+    MCNAPI FutureAny(
+        ::Scripting::IRuntime*                                        runtime,
+        ::Scripting::ContextId                                        contextId,
+        ::Scripting::WeakLifetimeScope                                scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::FutureType> futureHandle,
+        ::Scripting::IObjectInspector*                                inspector
+    );
 
     MCNAPI ::Scripting::ResultAny getResult() const;
 
@@ -59,7 +65,13 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Scripting::FutureAny const& rhs);
 
-    MCNAPI void* $ctor(::Scripting::IRuntime* runtime, ::Scripting::ContextId contextId, ::Scripting::WeakLifetimeScope scope, ::Scripting::StrongTypedObjectHandle<::Scripting::FutureType> futureHandle, ::Scripting::IObjectInspector* inspector);
+    MCNAPI void* $ctor(
+        ::Scripting::IRuntime*                                        runtime,
+        ::Scripting::ContextId                                        contextId,
+        ::Scripting::WeakLifetimeScope                                scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::FutureType> futureHandle,
+        ::Scripting::IObjectInspector*                                inspector
+    );
     // NOLINTEND
 
 public:
@@ -73,7 +85,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

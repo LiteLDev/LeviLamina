@@ -16,23 +16,23 @@ class TitleCommand : public ::MessagingCommand {
 public:
     // TitleCommand inner types define
     enum class Mode : int {
-        Clear = 0,
-        Reset = 1,
-        Title = 2,
-        Subtitle = 3,
+        Clear     = 0,
+        Reset     = 1,
+        Title     = 2,
+        Subtitle  = 3,
         ActionBar = 4,
-        Times = 5,
+        Times     = 5,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8c3b5e;
+    ::ll::UntypedStorage<4, 4>   mUnk8c3b5e;
     ::ll::UntypedStorage<8, 200> mUnk28fb71;
-    ::ll::UntypedStorage<8, 32> mUnkf19dd5;
-    ::ll::UntypedStorage<4, 4> mUnk189b73;
-    ::ll::UntypedStorage<4, 4> mUnkc6c5f6;
-    ::ll::UntypedStorage<4, 4> mUnka4d770;
+    ::ll::UntypedStorage<8, 32>  mUnkf19dd5;
+    ::ll::UntypedStorage<4, 4>   mUnk189b73;
+    ::ll::UntypedStorage<4, 4>   mUnkc6c5f6;
+    ::ll::UntypedStorage<4, 4>   mUnka4d770;
     // NOLINTEND
 
 public:
@@ -68,5 +68,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

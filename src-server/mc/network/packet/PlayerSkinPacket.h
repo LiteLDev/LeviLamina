@@ -19,10 +19,10 @@ class PlayerSkinPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID> mUUID;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>      mUUID;
     ::ll::TypedStorage<8, 16, ::SerializedSkin> mSkin;
-    ::ll::TypedStorage<8, 32, ::std::string> mLocalizedNewSkinName;
-    ::ll::TypedStorage<8, 32, ::std::string> mLocalizedOldSkinName;
+    ::ll::TypedStorage<8, 32, ::std::string>    mLocalizedNewSkinName;
+    ::ll::TypedStorage<8, 32, ::std::string>    mLocalizedOldSkinName;
     // NOLINTEND
 
 public:
@@ -72,5 +72,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

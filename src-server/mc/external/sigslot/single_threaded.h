@@ -4,7 +4,6 @@
 
 namespace sigslot {
 
-class single_threaded {
-};
+class single_threaded {};
 
-}
+} // namespace sigslot

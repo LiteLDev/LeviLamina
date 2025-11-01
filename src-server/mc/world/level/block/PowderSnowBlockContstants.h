@@ -13,4 +13,4 @@ namespace PowderSnowBlockContstants {
 MCAPI ::AABB const& FALL_INTO_COLLISION_SHAPE();
 // NOLINTEND
 
-}
+} // namespace PowderSnowBlockContstants

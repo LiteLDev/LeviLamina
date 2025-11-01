@@ -17,7 +17,6 @@ public:
     FrameCounts& operator=(FrameCounts const&);
     FrameCounts(FrameCounts const&);
     FrameCounts();
-
 };
 
-}
+} // namespace webrtc

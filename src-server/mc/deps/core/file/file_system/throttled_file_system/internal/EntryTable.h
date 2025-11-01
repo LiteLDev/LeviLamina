@@ -13,24 +13,23 @@ public:
     // clang-format off
     class QueuedRemovalRefCounter;
     // clang-format on
-    
+
     // EntryTable inner types define
     class QueuedRemovalRefCounter {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk8d885f;
+        ::ll::UntypedStorage<8, 8>  mUnk8d885f;
         ::ll::UntypedStorage<8, 32> mUnk215766;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         QueuedRemovalRefCounter& operator=(QueuedRemovalRefCounter const&);
         QueuedRemovalRefCounter(QueuedRemovalRefCounter const&);
         QueuedRemovalRefCounter();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,7 +44,6 @@ public:
     EntryTable& operator=(EntryTable const&);
     EntryTable(EntryTable const&);
     EntryTable();
-
 };
 
-}
+} // namespace Core::Internal

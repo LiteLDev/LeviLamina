@@ -9,9 +9,9 @@ struct BlockMenuCategory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mCreativeGroupName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                               mCreativeGroupName;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory> mCreativeCategory;
-    ::ll::TypedStorage<1, 1, bool> mIsHiddenInCommands;
+    ::ll::TypedStorage<1, 1, bool>                                                         mIsHiddenInCommands;
     // NOLINTEND
 
 public:
@@ -25,5 +25,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

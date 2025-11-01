@@ -20,25 +20,27 @@ public:
     struct StartVideoCapture;
     struct StopVideoCapture;
     // clang-format on
-    
+
     // PlayerVideoCapturePacket inner types define
     struct StartVideoCapture {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, uint> mFrameRate;
+        ::ll::TypedStorage<4, 4, uint>           mFrameRate;
         ::ll::TypedStorage<8, 32, ::std::string> mFilePrefix;
         // NOLINTEND
-    
     };
-    
-    struct StopVideoCapture {
-    };
-    
+
+    struct StopVideoCapture {};
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::std::variant<::PlayerVideoCapturePacket::StartVideoCapture, ::PlayerVideoCapturePacket::StopVideoCapture>> mParams;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::std::variant<::PlayerVideoCapturePacket::StartVideoCapture, ::PlayerVideoCapturePacket::StopVideoCapture>>
+        mParams;
     // NOLINTEND
 
 public:
@@ -65,5 +67,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

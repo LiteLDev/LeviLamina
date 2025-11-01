@@ -12,13 +12,13 @@ class LevelChunkMetaDataDictionary {
 public:
     // LevelChunkMetaDataDictionary inner types define
     using PostSerializeWriteCallback = ::std::function<void(::std::string const&)>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::map<uint64, ::std::shared_ptr<::LevelChunkMetaData>>> mDictionary;
-    ::ll::TypedStorage<1, 1, bool> mDictionaryDirty;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex> mSharedMutex;
+    ::ll::TypedStorage<1, 1, bool>                                                         mDictionaryDirty;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                          mSharedMutex;
     // NOLINTEND
 
 public:
@@ -30,5 +30,4 @@ public:
 
     MCNAPI void deserialize(::IDataInput& stream);
     // NOLINTEND
-
 };

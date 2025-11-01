@@ -17,7 +17,6 @@ public:
     UInt128& operator=(UInt128 const&);
     UInt128(UInt128 const&);
     UInt128();
-
 };
 
-}
+} // namespace astc_codec::base

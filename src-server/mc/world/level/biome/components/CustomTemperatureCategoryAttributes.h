@@ -19,5 +19,4 @@ public:
     // vIndex: 0
     virtual ~CustomTemperatureCategoryAttributes() /*override*/ = default;
     // NOLINTEND
-
 };

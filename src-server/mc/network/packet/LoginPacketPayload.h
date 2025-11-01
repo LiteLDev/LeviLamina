@@ -11,7 +11,7 @@ struct LoginPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mClientNetworkVersion;
+    ::ll::TypedStorage<4, 4, int>                                    mClientNetworkVersion;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConnectionRequest>> mConnectionRequest;
     // NOLINTEND
 
@@ -40,5 +40,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

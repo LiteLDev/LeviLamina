@@ -23,10 +23,13 @@ public:
     virtual ~ILevelSoundManagerConnector() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>& getOnLevelSoundEventConnector() = 0;
+    virtual ::Bedrock::PubSub::Connector<
+        void(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>&
+    getOnLevelSoundEventConnector() = 0;
 
     // vIndex: 2
-    virtual ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>& getOnLevelSoundEventWithVolumeAndPitchConnector() = 0;
+    virtual ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
+    getOnLevelSoundEventWithVolumeAndPitchConnector() = 0;
 
     // vIndex: 3
     virtual ::Bedrock::PubSub::Connector<void(::std::string const&)>& getOnStopLevelSoundEventConnector() = 0;
@@ -43,5 +46,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

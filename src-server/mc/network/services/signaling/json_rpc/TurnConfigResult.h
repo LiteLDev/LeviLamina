@@ -15,7 +15,7 @@ public:
     // clang-format off
     struct TurnAuthServer;
     // clang-format on
-    
+
     // TurnConfigResult inner types define
     struct TurnAuthServer {
     public:
@@ -25,25 +25,24 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk7604a9;
         ::ll::UntypedStorage<8, 24> mUnkdf4d9c;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         TurnAuthServer& operator=(TurnAuthServer const&);
         TurnAuthServer(TurnAuthServer const&);
         TurnAuthServer();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::JsonRpc::TurnConfigResult::TurnAuthServer& operator=(::JsonRpc::TurnConfigResult::TurnAuthServer&&);
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk44be47;
+    ::ll::UntypedStorage<4, 4>  mUnk44be47;
     ::ll::UntypedStorage<8, 24> mUnk5f77e5;
     // NOLINTEND
 
@@ -66,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace JsonRpc

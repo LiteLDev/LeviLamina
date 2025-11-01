@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mMessage;
-    ::ll::TypedStorage<1, 1, bool> mIsValid;
+    ::ll::TypedStorage<1, 1, bool>           mIsValid;
     // NOLINTEND
 
 public:
@@ -21,5 +21,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

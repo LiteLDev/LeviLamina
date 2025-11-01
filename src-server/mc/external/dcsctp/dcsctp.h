@@ -23,4 +23,4 @@ MCNAPI ::std::string_view ToString(::dcsctp::ErrorKind error);
 MCNAPI ::std::string_view ToString(::dcsctp::ReconfigurationResponseParameter::Result result);
 // NOLINTEND
 
-}
+} // namespace dcsctp

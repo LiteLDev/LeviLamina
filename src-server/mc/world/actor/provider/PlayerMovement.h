@@ -14,13 +14,13 @@ struct MoveInputState;
 namespace PlayerMovement {
 // functions
 // NOLINTBEGIN
-MCNAPI void applyInputLocks(::ClientInputLockComponent const& lockComponent, ::MoveInputState& inputState);
+MCAPI void applyInputLocks(::ClientInputLockComponent const& lockComponent, ::MoveInputState& inputState);
 
-MCNAPI ::Vec2 calculateButtonMoveVector(::MoveInputState const& inputState);
+MCAPI ::Vec2 calculateButtonMoveVector(::MoveInputState const& inputState);
 
-MCNAPI void clearInputState(::MoveInputComponent& input);
+MCAPI void clearInputState(::MoveInputComponent& input);
 
-MCNAPI void initializePlayer(::EntityContext& provider);
+MCAPI void initializePlayer(::EntityContext& provider);
 // NOLINTEND
 
-}
+} // namespace PlayerMovement

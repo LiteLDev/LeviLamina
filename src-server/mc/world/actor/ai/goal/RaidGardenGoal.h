@@ -16,13 +16,13 @@ class RaidGardenGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mMaxToEat;
-    ::ll::TypedStorage<4, 4, int> mEaten;
-    ::ll::TypedStorage<4, 4, int> mEatDelay;
-    ::ll::TypedStorage<4, 4, int> mHasEatenFillDelay;
-    ::ll::TypedStorage<4, 4, int> mInitialEatDelay;
-    ::ll::TypedStorage<4, 4, int> mEatTimer;
-    ::ll::TypedStorage<4, 4, int> mHasEatenFillTimer;
+    ::ll::TypedStorage<4, 4, int>                               mMaxToEat;
+    ::ll::TypedStorage<4, 4, int>                               mEaten;
+    ::ll::TypedStorage<4, 4, int>                               mEatDelay;
+    ::ll::TypedStorage<4, 4, int>                               mHasEatenFillDelay;
+    ::ll::TypedStorage<4, 4, int>                               mInitialEatDelay;
+    ::ll::TypedStorage<4, 4, int>                               mEatTimer;
+    ::ll::TypedStorage<4, 4, int>                               mHasEatenFillTimer;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mEatBlocks;
     // NOLINTEND
 
@@ -72,5 +72,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

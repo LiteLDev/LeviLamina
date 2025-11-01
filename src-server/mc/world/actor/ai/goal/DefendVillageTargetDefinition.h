@@ -15,7 +15,7 @@ class DefendVillageTargetDefinition : public ::TargetGoalDefinition {
 public:
     // DefendVillageTargetDefinition inner types define
     using self = ::DefendVillageTargetDefinition;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -32,7 +32,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DefendVillageTargetDefinition>>& root);
+    MCAPI static void buildSchema(
+        ::std::string const& name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DefendVillageTargetDefinition>>&
+            root
+    );
     // NOLINTEND
 
 public:
@@ -40,5 +44,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

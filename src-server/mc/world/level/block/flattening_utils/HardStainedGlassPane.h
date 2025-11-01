@@ -13,4 +13,4 @@ namespace FlatteningUtils::HardStainedGlassPane {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::HardStainedGlassPane

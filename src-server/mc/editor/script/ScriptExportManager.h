@@ -19,7 +19,7 @@ class ScriptExportManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9ffef9;
+    ::ll::UntypedStorage<8, 8>  mUnk9ffef9;
     ::ll::UntypedStorage<8, 24> mUnkca4249;
     // NOLINTEND
 
@@ -65,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

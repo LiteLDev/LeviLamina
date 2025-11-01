@@ -15,10 +15,10 @@ struct WorldTemplateManagerInitData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk55eda7;
+    ::ll::UntypedStorage<8, 8>  mUnk55eda7;
     ::ll::UntypedStorage<8, 24> mUnk917ae1;
-    ::ll::UntypedStorage<8, 8> mUnk26b27b;
-    ::ll::UntypedStorage<8, 8> mUnk728848;
+    ::ll::UntypedStorage<8, 8>  mUnk26b27b;
+    ::ll::UntypedStorage<8, 8>  mUnk728848;
     // NOLINTEND
 
 public:
@@ -32,7 +32,10 @@ public:
     // NOLINTBEGIN
     MCNAPI void initialize(::WorldTemplateManagerInitDeps& deps);
 
-    MCNAPI void initializePackSources(::PackSourceFactory& packSourceFactory, ::Core::PathBuffer<::std::string> const& worldTemplatesPath);
+    MCNAPI void initializePackSources(
+        ::PackSourceFactory&                     packSourceFactory,
+        ::Core::PathBuffer<::std::string> const& worldTemplatesPath
+    );
 
     MCNAPI ::WorldTemplateManagerInitData& operator=(::WorldTemplateManagerInitData&&);
 
@@ -44,5 +47,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

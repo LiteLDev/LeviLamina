@@ -19,5 +19,4 @@ public:
     VanillaBlockTypeComponentAdder& operator=(VanillaBlockTypeComponentAdder const&);
     VanillaBlockTypeComponentAdder(VanillaBlockTypeComponentAdder const&);
     VanillaBlockTypeComponentAdder();
-
 };

@@ -14,12 +14,12 @@ struct ActorInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mRuntimeId;
+    ::ll::TypedStorage<4, 4, uint>                          mRuntimeId;
     ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mIdentifier;
     ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mBaseIdentifier;
-    ::ll::TypedStorage<1, 1, bool> mHasSpawnEgg;
-    ::ll::TypedStorage<1, 1, bool> mIsSummonable;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>> mExperimentIndex;
+    ::ll::TypedStorage<1, 1, bool>                          mHasSpawnEgg;
+    ::ll::TypedStorage<1, 1, bool>                          mIsSummonable;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>          mExperimentIndex;
     // NOLINTEND
 
 public:
@@ -53,5 +53,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

@@ -18,54 +18,51 @@ public:
     class PendingComparer;
     class PriorityComparer;
     // clang-format on
-    
+
     // BackgroundTaskBase inner types define
-    class PriorityComparer {
-    };
-    
-    class PendingComparer {
-    };
-    
+    class PriorityComparer {};
+
+    class PendingComparer {};
+
     class CurrentTaskAutoScope {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk209247;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         CurrentTaskAutoScope& operator=(CurrentTaskAutoScope const&);
         CurrentTaskAutoScope(CurrentTaskAutoScope const&);
         CurrentTaskAutoScope();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~CurrentTaskAutoScope();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk2ebc0e;
-    ::ll::UntypedStorage<8, 8> mUnk7e9993;
-    ::ll::UntypedStorage<8, 8> mUnk2e5c7a;
+    ::ll::UntypedStorage<1, 1>  mUnk2ebc0e;
+    ::ll::UntypedStorage<8, 8>  mUnk7e9993;
+    ::ll::UntypedStorage<8, 8>  mUnk2e5c7a;
     ::ll::UntypedStorage<8, 16> mUnk2bac6e;
-    ::ll::UntypedStorage<4, 4> mUnkb3642a;
-    ::ll::UntypedStorage<4, 4> mUnk96ebbd;
-    ::ll::UntypedStorage<4, 4> mUnkcad031;
-    ::ll::UntypedStorage<8, 8> mUnk8b825b;
+    ::ll::UntypedStorage<4, 4>  mUnkb3642a;
+    ::ll::UntypedStorage<4, 4>  mUnk96ebbd;
+    ::ll::UntypedStorage<4, 4>  mUnkcad031;
+    ::ll::UntypedStorage<8, 8>  mUnk8b825b;
     ::ll::UntypedStorage<8, 32> mUnkd0c014;
-    ::ll::UntypedStorage<1, 1> mUnk3605cd;
+    ::ll::UntypedStorage<1, 1>  mUnk3605cd;
     // NOLINTEND
 
 public:
@@ -119,5 +116,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

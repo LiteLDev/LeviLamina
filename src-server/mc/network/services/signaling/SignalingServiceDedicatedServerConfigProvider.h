@@ -18,10 +18,10 @@ class SignalingServiceDedicatedServerConfigProvider : public ::ISignalingService
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk606fe5;
+    ::ll::UntypedStorage<8, 8>  mUnk606fe5;
     ::ll::UntypedStorage<8, 16> mUnkeeffe2;
     ::ll::UntypedStorage<8, 16> mUnk3f2c31;
-    ::ll::UntypedStorage<4, 4> mUnkd782be;
+    ::ll::UntypedStorage<4, 4>  mUnkd782be;
     // NOLINTEND
 
 public:
@@ -52,13 +52,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SignalingServiceDedicatedServerConfigProvider(::gsl::not_null<::std::shared_ptr<::Bedrock::Services::DiscoveryHelper>> discoveryService, ::gsl::not_null<::std::shared_ptr<::Bedrock::Services::AuthHelper>> authService, ::DiscoveryEnvironment environment);
+    MCNAPI SignalingServiceDedicatedServerConfigProvider(
+        ::gsl::not_null<::std::shared_ptr<::Bedrock::Services::DiscoveryHelper>> discoveryService,
+        ::gsl::not_null<::std::shared_ptr<::Bedrock::Services::AuthHelper>>      authService,
+        ::DiscoveryEnvironment                                                   environment
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::Bedrock::Services::DiscoveryHelper>> discoveryService, ::gsl::not_null<::std::shared_ptr<::Bedrock::Services::AuthHelper>> authService, ::DiscoveryEnvironment environment);
+    MCNAPI void* $ctor(
+        ::gsl::not_null<::std::shared_ptr<::Bedrock::Services::DiscoveryHelper>> discoveryService,
+        ::gsl::not_null<::std::shared_ptr<::Bedrock::Services::AuthHelper>>      authService,
+        ::DiscoveryEnvironment                                                   environment
+    );
     // NOLINTEND
 
 public:
@@ -78,5 +86,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

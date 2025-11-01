@@ -11,7 +11,11 @@ class BlockChangeContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::variant<::std::monostate, ::EnvironmentChangeContext, ::ActorChangeContext, ::ScriptOrCommandChangeContext>> mContextSource;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::
+            variant<::std::monostate, ::EnvironmentChangeContext, ::ActorChangeContext, ::ScriptOrCommandChangeContext>>
+        mContextSource;
     // NOLINTEND
-
 };

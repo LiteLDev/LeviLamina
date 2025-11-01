@@ -4,6 +4,6 @@
 
 enum class ScriptDebuggerAttachMode : uint {
     Disabled = 0,
-    Connect = 1,
-    Listen = 2,
+    Connect  = 1,
+    Listen   = 2,
 };

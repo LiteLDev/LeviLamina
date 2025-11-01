@@ -4,7 +4,6 @@
 
 namespace rtc::safe_cmp_impl {
 
-struct GtOp {
-};
+struct GtOp {};
 
-}
+} // namespace rtc::safe_cmp_impl

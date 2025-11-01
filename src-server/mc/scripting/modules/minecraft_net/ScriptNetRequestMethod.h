@@ -4,7 +4,6 @@
 
 namespace ScriptModuleMinecraftNet {
 
-struct ScriptNetRequestMethod {
-};
+struct ScriptNetRequestMethod {};
 
-}
+} // namespace ScriptModuleMinecraftNet

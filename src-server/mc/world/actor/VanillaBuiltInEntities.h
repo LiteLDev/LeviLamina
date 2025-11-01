@@ -11,7 +11,7 @@ class Experiments;
 namespace VanillaBuiltInEntities {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerMappings(::BaseGameVersion const& version, ::Experiments const& experiments);
+MCAPI void registerMappings(::BaseGameVersion const& version, ::Experiments const& experiments);
 // NOLINTEND
 
-}
+} // namespace VanillaBuiltInEntities

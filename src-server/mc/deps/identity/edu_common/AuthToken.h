@@ -10,8 +10,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkef5aa9;
     ::ll::UntypedStorage<8, 32> mUnk321eec;
-    ::ll::UntypedStorage<8, 8> mUnkde788c;
-    ::ll::UntypedStorage<1, 1> mUnk467273;
+    ::ll::UntypedStorage<8, 8>  mUnkde788c;
+    ::ll::UntypedStorage<1, 1>  mUnk467273;
     // NOLINTEND
 
 public:
@@ -31,7 +31,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Identity

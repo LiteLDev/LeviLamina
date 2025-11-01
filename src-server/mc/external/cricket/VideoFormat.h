@@ -7,7 +7,6 @@
 
 namespace cricket {
 
-struct VideoFormat : public ::cricket::VideoFormatPod {
-};
+struct VideoFormat : public ::cricket::VideoFormatPod {};
 
-}
+} // namespace cricket

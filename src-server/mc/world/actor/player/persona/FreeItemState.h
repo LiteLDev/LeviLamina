@@ -18,7 +18,6 @@ public:
     FreeItemState& operator=(FreeItemState const&);
     FreeItemState(FreeItemState const&);
     FreeItemState();
-
 };
 
-}
+} // namespace persona

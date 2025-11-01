@@ -15,7 +15,7 @@ public:
     // clang-format off
     struct IntegerRange;
     // clang-format on
-    
+
     // States inner types define
     struct IntegerRange {
     public:
@@ -23,7 +23,7 @@ public:
         // clang-format off
         struct Range;
         // clang-format on
-        
+
         // IntegerRange inner types define
         struct Range {
         public:
@@ -32,29 +32,27 @@ public:
             ::ll::UntypedStorage<4, 4> mUnk61dbbf;
             ::ll::UntypedStorage<4, 4> mUnk4e560b;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             Range& operator=(Range const&);
             Range(Range const&);
             Range();
-        
         };
-        
+
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 8> mUnk4daa70;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         IntegerRange& operator=(IntegerRange const&);
         IntegerRange(IntegerRange const&);
         IntegerRange();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -71,13 +69,30 @@ public:
 
     MCNAPI States(::SharedTypes::v1_21_110::BlockDefinition::States const&);
 
-    MCNAPI ::std::unordered_map<::std::string, ::std::variant<::std::vector<::std::string>, ::std::vector<bool>, ::std::vector<int>, ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange>> getter() const;
+    MCNAPI ::std::unordered_map<
+        ::std::string,
+        ::std::variant<
+            ::std::vector<::std::string>,
+            ::std::vector<bool>,
+            ::std::vector<int>,
+            ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange>>
+    getter() const;
 
-    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::States& operator=(::SharedTypes::v1_21_110::BlockDefinition::States const&);
+    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::States&
+    operator=(::SharedTypes::v1_21_110::BlockDefinition::States const&);
 
-    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::States& operator=(::SharedTypes::v1_21_110::BlockDefinition::States&&);
+    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::States&
+    operator=(::SharedTypes::v1_21_110::BlockDefinition::States&&);
 
-    MCNAPI void setter(::std::unordered_map<::std::string, ::std::variant<::std::vector<::std::string>, ::std::vector<bool>, ::std::vector<int>, ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange>>& value);
+    MCNAPI void setter(
+        ::std::unordered_map<
+            ::std::string,
+            ::std::variant<
+                ::std::vector<::std::string>,
+                ::std::vector<bool>,
+                ::std::vector<int>,
+                ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange>>& value
+    );
 
     MCNAPI ~States();
     // NOLINTEND
@@ -101,7 +116,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_110::BlockDefinition

@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk63ef6b;
-    ::ll::UntypedStorage<4, 4> mUnk63728b;
+    ::ll::UntypedStorage<4, 4>  mUnk63728b;
     // NOLINTEND
 
 public:
@@ -31,7 +31,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::variant<::EnchantmentInstance, ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ::ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError> tryResolveInstance(::ItemEnchants& itemEnchants) const;
+    MCNAPI ::std::variant<
+        ::EnchantmentInstance,
+        ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError,
+        ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError,
+        ::ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError>
+    tryResolveInstance(::ItemEnchants& itemEnchants) const;
 
     MCNAPI ~ScriptItemEnchantmentInstance();
     // NOLINTEND
@@ -47,7 +52,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

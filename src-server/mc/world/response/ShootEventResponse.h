@@ -21,10 +21,10 @@ class ShootEventResponse : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mProjectile;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>        mProjectile;
     ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::FilterSubject> mTarget;
-    ::ll::TypedStorage<8, 16, ::ExpressionNode> mLaunchPower;
-    ::ll::TypedStorage<8, 16, ::ExpressionNode> mAngleOffset;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>                    mLaunchPower;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>                    mAngleOffset;
     // NOLINTEND
 
 public:
@@ -37,7 +37,10 @@ public:
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
     // vIndex: 3
-    virtual void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema, ::Factory<::EventResponse> const& factory) const /*override*/;
+    virtual void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
+        ::Factory<::EventResponse> const&                                                                       factory
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~ShootEventResponse() /*override*/ = default;
@@ -56,7 +59,10 @@ public:
 
     MCNAPI void $executeAction(::RenderParams& params) const;
 
-    MCNAPI void $buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema, ::Factory<::EventResponse> const& factory) const;
+    MCNAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
+        ::Factory<::EventResponse> const&                                                                       factory
+    ) const;
     // NOLINTEND
 
 public:
@@ -64,5 +70,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

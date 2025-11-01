@@ -11,10 +11,10 @@ struct ActorCarriedItemChangedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>       mEntity;
     ::ll::TypedStorage<8, 128, ::ItemInstance const> mPreviouslyCarriedItem;
     ::ll::TypedStorage<8, 128, ::ItemInstance const> mCarriedItem;
-    ::ll::TypedStorage<4, 4, ::HandSlot> mHandSlot;
+    ::ll::TypedStorage<4, 4, ::HandSlot>             mHandSlot;
     // NOLINTEND
 
 public:
@@ -41,5 +41,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

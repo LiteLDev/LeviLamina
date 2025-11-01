@@ -9,32 +9,30 @@ public:
     struct PropertySyncFloatEntry;
     struct PropertySyncIntEntry;
     // clang-format on
-    
+
     // PropertySyncData inner types define
     struct PropertySyncIntEntry {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, uint> mPropertyIndex;
-        ::ll::TypedStorage<4, 4, int> mData;
+        ::ll::TypedStorage<4, 4, int>  mData;
         // NOLINTEND
-    
     };
-    
+
     struct PropertySyncFloatEntry {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, uint> mPropertyIndex;
+        ::ll::TypedStorage<4, 4, uint>  mPropertyIndex;
         ::ll::TypedStorage<4, 4, float> mData;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::PropertySyncData::PropertySyncIntEntry>> mIntEntries;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PropertySyncData::PropertySyncIntEntry>>   mIntEntries;
     ::ll::TypedStorage<8, 24, ::std::vector<::PropertySyncData::PropertySyncFloatEntry>> mFloatEntries;
     // NOLINTEND
 
@@ -57,5 +55,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

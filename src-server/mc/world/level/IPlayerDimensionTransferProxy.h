@@ -61,7 +61,8 @@ public:
     virtual void prepareRegion(::Player&, ::Dimension const&) = 0;
 
     // vIndex: 13
-    virtual ::MovePlayerPacket createMovePlayerPacket(::Player const&, ::PlayerPositionModeComponent::PositionMode) const = 0;
+    virtual ::MovePlayerPacket
+    createMovePlayerPacket(::Player const&, ::PlayerPositionModeComponent::PositionMode) const = 0;
 
     // vIndex: 14
     virtual void setAgent(::Player&, ::Actor&) = 0;
@@ -73,7 +74,8 @@ public:
     virtual bool isRespawnReady(::Player const&) const = 0;
 
     // vIndex: 17
-    virtual ::std::pair<bool, ::std::optional<::SubChunkPos>> hasSubChunksAt(::Player const&, ::BlockPos const&, ::BlockPos const&) const = 0;
+    virtual ::std::pair<bool, ::std::optional<::SubChunkPos>>
+    hasSubChunksAt(::Player const&, ::BlockPos const&, ::BlockPos const&) const = 0;
 
     // vIndex: 18
     virtual void transferTickingArea(::Actor&, ::Dimension&) = 0;
@@ -84,5 +86,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

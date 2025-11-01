@@ -4,7 +4,6 @@
 
 namespace Documentation {
 
-struct Node {
-};
+struct Node {};
 
-}
+} // namespace Documentation

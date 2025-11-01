@@ -17,7 +17,8 @@ public:
     virtual ~SplineHelperBase() = default;
 
     // vIndex: 1
-    virtual ::std::optional<::std::vector<::Vec3>> calculateInterpolatedPoints(::std::vector<::Vec3> const&, int const) const = 0;
+    virtual ::std::optional<::std::vector<::Vec3>>
+    calculateInterpolatedPoints(::std::vector<::Vec3> const&, int const) const = 0;
     // NOLINTEND
 
 public:
@@ -25,7 +26,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Widgets

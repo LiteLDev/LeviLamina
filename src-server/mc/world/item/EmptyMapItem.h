@@ -28,7 +28,8 @@ public:
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
     // vIndex: 90
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~EmptyMapItem() /*override*/ = default;
@@ -59,5 +60,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

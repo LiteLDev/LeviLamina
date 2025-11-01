@@ -19,11 +19,11 @@ class MobEvents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 216, ::std::array<::MobEvent, 3>> mMobEvents;
-    ::ll::TypedStorage<8, 80, ::BasicTimer> mSaveTimer;
-    ::ll::TypedStorage<8, 8, ::LevelStorage&> mLevelStorage;
-    ::ll::TypedStorage<1, 1, bool> mEventsEnabled;
-    ::ll::TypedStorage<1, 1, bool> mNeedsToSave;
+    ::ll::TypedStorage<8, 216, ::std::array<::MobEvent, 3>>    mMobEvents;
+    ::ll::TypedStorage<8, 80, ::BasicTimer>                    mSaveTimer;
+    ::ll::TypedStorage<8, 8, ::LevelStorage&>                  mLevelStorage;
+    ::ll::TypedStorage<1, 1, bool>                             mEventsEnabled;
+    ::ll::TypedStorage<1, 1, bool>                             mNeedsToSave;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnLevelStorageManagerStartLeaveGameSubscription;
     // NOLINTEND
@@ -50,7 +50,8 @@ public:
 
     MCNAPI ::MobEventsIndex getIndexFromName(::std::string const& name) const;
 
-    MCNAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCNAPI void
+    initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
     MCNAPI void readFromLevelStorage();
 
@@ -76,5 +77,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

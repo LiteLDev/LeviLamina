@@ -11,7 +11,8 @@ namespace persona::color { struct Swatch; }
 namespace persona::color {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::unique_ptr<::persona::color::SwatchList> createSwatchList(::std::vector<::persona::color::Swatch>&& swatches);
+MCNAPI ::std::unique_ptr<::persona::color::SwatchList>
+createSwatchList(::std::vector<::persona::color::Swatch>&& swatches);
 // NOLINTEND
 
-}
+} // namespace persona::color

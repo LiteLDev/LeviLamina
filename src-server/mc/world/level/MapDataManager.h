@@ -25,11 +25,11 @@ class MapDataManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::DimensionManager&> mDimensionManager;
-    ::ll::TypedStorage<8, 8, ::LevelStorage*> mLevelStorage;
+    ::ll::TypedStorage<8, 8, ::DimensionManager&>                                          mDimensionManager;
+    ::ll::TypedStorage<8, 8, ::LevelStorage*>                                              mLevelStorage;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IMapDataManagerOptions>>> mMapDataManagerOptions;
-    ::ll::TypedStorage<8, 64, ::std::function<::ActorUniqueID()>> mGetNewUniqueID;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveLevelData;
+    ::ll::TypedStorage<8, 64, ::std::function<::ActorUniqueID()>>                          mGetNewUniqueID;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                             mOnSaveLevelData;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::unique_ptr<::MapItemSavedData>>> mMapData;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>> mPacketSender;
     // NOLINTEND
@@ -62,15 +62,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapDataManager(::DimensionManager& dimensionManager, ::LevelStorage* levelStorage, ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions, ::std::function<::ActorUniqueID()> getNewUniqueID);
+    MCAPI MapDataManager(
+        ::DimensionManager&                         dimensionManager,
+        ::LevelStorage*                             levelStorage,
+        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
+        ::std::function<::ActorUniqueID()>          getNewUniqueID
+    );
 
     MCAPI ::MapItemSavedData* _loadMapData(::ActorUniqueID const& uuid);
 
     MCAPI void _onSaveLevelData(::LevelStorage& levelStorage);
 
-    MCAPI ::MapItemSavedData& createMapSavedData(::std::vector<::ActorUniqueID> const& mapIds, ::BlockPos const& origin, ::DimensionType dimension, int returnScaleLevel);
+    MCAPI ::MapItemSavedData& createMapSavedData(
+        ::std::vector<::ActorUniqueID> const& mapIds,
+        ::BlockPos const&                     origin,
+        ::DimensionType                       dimension,
+        int                                   returnScaleLevel
+    );
 
-    MCAPI ::MapItemSavedData& createMapSavedData(::ActorUniqueID const& uuid, ::BlockPos const& origin, ::DimensionType dimension, int returnScaleLevel);
+    MCAPI ::MapItemSavedData& createMapSavedData(
+        ::ActorUniqueID const& uuid,
+        ::BlockPos const&      origin,
+        ::DimensionType        dimension,
+        int                    returnScaleLevel
+    );
 
     MCAPI ::ActorUniqueID expandMapByID(::ActorUniqueID uuid, bool wasInit);
 
@@ -82,7 +97,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DimensionManager& dimensionManager, ::LevelStorage* levelStorage, ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions, ::std::function<::ActorUniqueID()> getNewUniqueID);
+    MCAPI void* $ctor(
+        ::DimensionManager&                         dimensionManager,
+        ::LevelStorage*                             levelStorage,
+        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
+        ::std::function<::ActorUniqueID()>          getNewUniqueID
+    );
     // NOLINTEND
 
 public:
@@ -108,5 +128,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

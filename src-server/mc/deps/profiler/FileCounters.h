@@ -19,7 +19,6 @@ public:
     FileCounters& operator=(FileCounters const&);
     FileCounters(FileCounters const&);
     FileCounters();
-
 };
 
-}
+} // namespace Core::Profile

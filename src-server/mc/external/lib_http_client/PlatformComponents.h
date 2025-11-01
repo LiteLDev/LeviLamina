@@ -17,7 +17,6 @@ public:
     PlatformComponents& operator=(PlatformComponents const&);
     PlatformComponents(PlatformComponents const&);
     PlatformComponents();
-
 };
 
-}
+} // namespace xbox::httpclient

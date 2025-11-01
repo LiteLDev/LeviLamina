@@ -15,5 +15,4 @@ public:
     DuplicateKey& operator=(DuplicateKey const&);
     DuplicateKey(DuplicateKey const&);
     DuplicateKey();
-
 };

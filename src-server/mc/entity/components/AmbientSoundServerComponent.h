@@ -12,9 +12,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::DynamicAmbientSound>> mDynamicSounds;
-    ::ll::TypedStorage<8, 32, ::std::string> mDefaultEventName;
-    ::ll::TypedStorage<4, 4, uint> mReevaluationTimeTicks;
-    ::ll::TypedStorage<4, 4, uint> mTicksSinceReevaluation;
+    ::ll::TypedStorage<8, 32, ::std::string>                        mDefaultEventName;
+    ::ll::TypedStorage<4, 4, uint>                                  mReevaluationTimeTicks;
+    ::ll::TypedStorage<4, 4, uint>                                  mTicksSinceReevaluation;
     // NOLINTEND
 
 public:
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

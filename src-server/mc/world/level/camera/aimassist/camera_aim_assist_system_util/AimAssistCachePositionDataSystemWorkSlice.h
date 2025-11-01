@@ -6,7 +6,7 @@ namespace CameraAimAssistSystemUtil {
 
 enum class AimAssistCachePositionDataSystemWorkSlice : int {
     CachePositionDataForNextAimAssistResult = 0,
-    WaitForResultToBeCreated = 1,
+    WaitForResultToBeCreated                = 1,
 };
 
 }

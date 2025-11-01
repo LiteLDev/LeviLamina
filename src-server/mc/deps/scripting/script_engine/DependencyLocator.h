@@ -16,7 +16,6 @@ public:
     DependencyLocator& operator=(DependencyLocator const&);
     DependencyLocator(DependencyLocator const&);
     DependencyLocator();
-
 };
 
-}
+} // namespace Scripting

@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/versionless/util/Rotation.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElement.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementType.h"
 
@@ -41,10 +41,20 @@ public:
     virtual ::BlockPos getSize(::Rotation rotation) const /*override*/;
 
     // vIndex: 1
-    virtual ::std::vector<::JigsawBlockInfo> getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const /*override*/;
+    virtual ::std::vector<::JigsawBlockInfo>
+    getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const
+        /*override*/;
 
     // vIndex: 8
-    virtual bool place(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::BoundingBox chunkBB, ::Random& random, ::std::unordered_map<::BlockPos, ::std::optional<::ActorDefinitionIdentifier>>& entitiesToPlace, ::BlockPos refPos) const /*override*/;
+    virtual bool place(
+        ::BlockSource&                                                                  region,
+        ::BlockPos                                                                      position,
+        ::Rotation                                                                      rotation,
+        ::BoundingBox                                                                   chunkBB,
+        ::Random&                                                                       random,
+        ::std::unordered_map<::BlockPos, ::std::optional<::ActorDefinitionIdentifier>>& entitiesToPlace,
+        ::BlockPos                                                                      refPos
+    ) const /*override*/;
 
     // vIndex: 15
     virtual ::StructurePoolElementType type() const /*override*/;
@@ -59,13 +69,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeaturePoolElement(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::WeakRef<::IFeature> feature);
+    MCAPI FeaturePoolElement(
+        ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
+        ::WeakRef<::IFeature>                                      feature
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::WeakRef<::IFeature> feature);
+    MCAPI void*
+    $ctor(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::WeakRef<::IFeature> feature);
     // NOLINTEND
 
 public:
@@ -73,9 +87,18 @@ public:
     // NOLINTBEGIN
     MCFOLD ::BlockPos $getSize(::Rotation rotation) const;
 
-    MCAPI ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
+    MCAPI ::std::vector<::JigsawBlockInfo>
+    $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 
-    MCAPI bool $place(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::BoundingBox chunkBB, ::Random& random, ::std::unordered_map<::BlockPos, ::std::optional<::ActorDefinitionIdentifier>>& entitiesToPlace, ::BlockPos refPos) const;
+    MCAPI bool $place(
+        ::BlockSource&                                                                  region,
+        ::BlockPos                                                                      position,
+        ::Rotation                                                                      rotation,
+        ::BoundingBox                                                                   chunkBB,
+        ::Random&                                                                       random,
+        ::std::unordered_map<::BlockPos, ::std::optional<::ActorDefinitionIdentifier>>& entitiesToPlace,
+        ::BlockPos                                                                      refPos
+    ) const;
 
     MCFOLD ::StructurePoolElementType $type() const;
 
@@ -87,5 +110,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -27,7 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::HashedString const& plantType) const;
+    MCAPI bool
+    place(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::HashedString const& plantType) const;
     // NOLINTEND
 
 public:
@@ -41,5 +42,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

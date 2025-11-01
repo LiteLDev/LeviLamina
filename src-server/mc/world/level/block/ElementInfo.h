@@ -10,7 +10,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::ElementCategory> mCategory;
-    ::ll::TypedStorage<8, 8, char const*> mName;
+    ::ll::TypedStorage<8, 8, char const*>       mName;
     // NOLINTEND
-
 };

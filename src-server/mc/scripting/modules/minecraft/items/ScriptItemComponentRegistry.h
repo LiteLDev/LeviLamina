@@ -23,7 +23,8 @@ namespace Scripting { struct EngineError; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptItemComponentRegistry : public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptItemComponentRegistry> {
+class ScriptItemComponentRegistry
+: public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptItemComponentRegistry> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,9 +40,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError, ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError, ::Scripting::EngineError> registerCustomComponent(::Scripting::WeakLifetimeScope& scope, ::std::string const& componentName, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface closures);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
+        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError,
+        ::Scripting::EngineError>
+    registerCustomComponent(
+        ::Scripting::WeakLifetimeScope&                             scope,
+        ::std::string const&                                        componentName,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface closures
+    );
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentNameError, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError, ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError, ::Scripting::EngineError> registerCustomComponentV1(::Scripting::WeakLifetimeScope& scope, ::std::string const& componentName, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface closures);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptCustomComponentNameError,
+        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError,
+        ::Scripting::EngineError>
+    registerCustomComponentV1(
+        ::Scripting::WeakLifetimeScope&                             scope,
+        ::std::string const&                                        componentName,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface closures
+    );
     // NOLINTEND
 
 public:
@@ -49,7 +76,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

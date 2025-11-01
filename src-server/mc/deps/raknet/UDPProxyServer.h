@@ -21,11 +21,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 384> mUnk85e882;
-    ::ll::UntypedStorage<8, 16> mUnk973cd6;
-    ::ll::UntypedStorage<8, 16> mUnk30a013;
-    ::ll::UntypedStorage<8, 8> mUnkd4ed56;
-    ::ll::UntypedStorage<2, 2> mUnk518285;
-    ::ll::UntypedStorage<8, 8> mUnkf54107;
+    ::ll::UntypedStorage<8, 16>  mUnk973cd6;
+    ::ll::UntypedStorage<8, 16>  mUnk30a013;
+    ::ll::UntypedStorage<8, 8>   mUnkd4ed56;
+    ::ll::UntypedStorage<2, 2>   mUnk518285;
+    ::ll::UntypedStorage<8, 8>   mUnkf54107;
     // NOLINTEND
 
 public:
@@ -53,7 +53,11 @@ public:
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
     // vIndex: 7
-    virtual void OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason) /*override*/;
+    virtual void OnClosedConnection(
+        ::RakNet::SystemAddress const&,
+        ::RakNet::RakNetGUID,
+        ::RakNet::PI2_LostConnectionReason
+    ) /*override*/;
 
     // vIndex: 5
     virtual void OnRakPeerStartup() /*override*/;
@@ -67,7 +71,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

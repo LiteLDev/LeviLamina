@@ -9,5 +9,4 @@ public:
     ::ll::TypedStorage<1, 1, bool> mCanUpdateAndRender;
     ::ll::TypedStorage<1, 1, bool> mWasVisibleLastRender;
     // NOLINTEND
-
 };

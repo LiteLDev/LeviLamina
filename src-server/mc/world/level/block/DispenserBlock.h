@@ -33,7 +33,9 @@ public:
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
     // vIndex: 91
-    virtual ::Block const& getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const /*override*/;
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
 
     // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -48,19 +50,22 @@ public:
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 61
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const /*override*/;
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
 
     // vIndex: 104
     virtual bool hasComparatorSignal() const /*override*/;
 
     // vIndex: 105
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const /*override*/;
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
     // vIndex: 146
     virtual int getTickDelay() const;
 
     // vIndex: 136
-    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const /*override*/;
+    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
+        /*override*/;
 
     // vIndex: 147
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
@@ -75,7 +80,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void ejectItem(::BlockSource& region, ::Vec3 const& pos, uchar face, ::ItemStack const& item, ::Container& container, int slot, int countLimit) const;
+    MCAPI void ejectItem(
+        ::BlockSource&     region,
+        ::Vec3 const&      pos,
+        uchar              face,
+        ::ItemStack const& item,
+        ::Container&       container,
+        int                slot,
+        int                countLimit
+    ) const;
 
     MCAPI ::Vec3 getDispensePosition(::BlockSource& region, ::Vec3 const& pos) const;
 
@@ -91,7 +104,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void dropAllItemsFromContainer(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static void ejectItem(::BlockSource& region, ::Vec3 const& pos, uchar face, ::ItemStack const& item, int countLimit);
+    MCAPI static void
+    ejectItem(::BlockSource& region, ::Vec3 const& pos, uchar face, ::ItemStack const& item, int countLimit);
 
     MCAPI static void openInventoryContainer(::Player& player, ::BlockPos const& pos);
     // NOLINTEND
@@ -103,7 +117,13 @@ public:
 
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI ::Block const& $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -117,7 +137,8 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCFOLD int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCFOLD int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCFOLD int $getTickDelay() const;
 
@@ -133,5 +154,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

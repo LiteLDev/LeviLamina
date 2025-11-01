@@ -43,19 +43,26 @@ public:
     virtual ::Editor::Services::ClipboardItem* getPrimaryItem() = 0;
 
     // vIndex: 7
-    virtual ::Scripting::Result_deprecated<void> readFromWorld(::mce::UUID const&, ::Editor::RelativeVolumeListBlockVolume const&) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    readFromWorld(::mce::UUID const&, ::Editor::RelativeVolumeListBlockVolume const&) = 0;
 
     // vIndex: 6
     virtual ::Scripting::Result_deprecated<void> readFromWorld(::mce::UUID const&, ::BlockVolumeBase const&) = 0;
 
     // vIndex: 8
-    virtual ::Scripting::Result_deprecated<void> readFromEditorStructure(::mce::UUID const&, ::Editor::EditorStructureTemplate const&) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    readFromEditorStructure(::mce::UUID const&, ::Editor::EditorStructureTemplate const&) = 0;
 
     // vIndex: 9
-    virtual ::Scripting::Result_deprecated<bool> writeToWorld(::mce::UUID const&, ::BlockPos const&, ::Editor::Services::ClipboardWriteOptions const*) const = 0;
+    virtual ::Scripting::Result_deprecated<bool>
+    writeToWorld(::mce::UUID const&, ::BlockPos const&, ::Editor::Services::ClipboardWriteOptions const*) const = 0;
 
     // vIndex: 10
-    virtual ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> getPredictedWriteVolume(::mce::UUID const&, ::BlockPos const&, ::Editor::Services::ClipboardWriteOptions const*) const = 0;
+    virtual ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> getPredictedWriteVolume(
+        ::mce::UUID const&,
+        ::BlockPos const&,
+        ::Editor::Services::ClipboardWriteOptions const*
+    ) const = 0;
 
     // vIndex: 11
     virtual ::Scripting::Result_deprecated<void> clear(::mce::UUID const&) = 0;
@@ -73,7 +80,8 @@ public:
     virtual ::Vec3 getOriginalWorldLocation(::mce::UUID const&) const = 0;
 
     // vIndex: 16
-    virtual ::Bedrock::PubSub::Subscription listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription
+        listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)>) = 0;
     // NOLINTEND
 
 public:
@@ -81,7 +89,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

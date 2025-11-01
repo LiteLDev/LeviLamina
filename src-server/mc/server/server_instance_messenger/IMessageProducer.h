@@ -19,7 +19,10 @@ public:
     virtual void enqueueMessage(::brstd::move_only_function<void()>, ::ServerInstanceMessenger::MessageAction) = 0;
 
     // vIndex: 2
-    virtual void enqueueAndAwaitExecution(::brstd::move_only_function<void(::brstd::move_only_function<void()const>)>, ::ServerInstanceMessenger::MessageAction) = 0;
+    virtual void enqueueAndAwaitExecution(
+        ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)>,
+        ::ServerInstanceMessenger::MessageAction
+    ) = 0;
     // NOLINTEND
 
 public:
@@ -27,7 +30,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace ServerInstanceMessenger

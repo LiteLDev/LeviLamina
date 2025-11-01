@@ -4,5 +4,5 @@
 
 enum class JsonBetaState : uchar {
     NotBeta = 0,
-    Beta = 1,
+    Beta    = 1,
 };

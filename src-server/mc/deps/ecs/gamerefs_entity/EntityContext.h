@@ -18,17 +18,16 @@ public:
     // clang-format off
     struct Hash;
     // clang-format on
-    
+
     // EntityContext inner types define
-    struct Hash {
-    };
-    
+    struct Hash {};
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::EntityRegistry&> mRegistry;
+    ::ll::TypedStorage<8, 8, ::EntityRegistry&>                   mRegistry;
     ::ll::TypedStorage<8, 8, ::entt::basic_registry<::EntityId>&> mEnTTRegistry;
-    ::ll::TypedStorage<4, 4, ::EntityId const> mEntity;
+    ::ll::TypedStorage<4, 4, ::EntityId const>                    mEntity;
     // NOLINTEND
 
 public:
@@ -42,5 +41,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::WeakRef<::EntityContext> getWeakRef() const;
     // NOLINTEND
-
 };

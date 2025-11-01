@@ -18,7 +18,6 @@ public:
     TelemetryCommonProperties& operator=(TelemetryCommonProperties const&);
     TelemetryCommonProperties(TelemetryCommonProperties const&);
     TelemetryCommonProperties();
-
 };
 
-}
+} // namespace Webview

@@ -4,8 +4,7 @@
 
 namespace Bedrock::Threading {
 
-template<typename T0>
-class PrioritySharedMutex {
-};
+template <typename T0>
+class PrioritySharedMutex {};
 
-}
+} // namespace Bedrock::Threading

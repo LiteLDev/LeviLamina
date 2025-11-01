@@ -17,7 +17,6 @@ public:
     BufferDescription& operator=(BufferDescription const&);
     BufferDescription(BufferDescription const&);
     BufferDescription();
-
 };
 
-}
+} // namespace cg

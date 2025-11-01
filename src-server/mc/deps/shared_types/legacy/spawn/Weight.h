@@ -17,7 +17,6 @@ public:
     Weight& operator=(Weight const&);
     Weight(Weight const&);
     Weight();
-
 };
 
-}
+} // namespace SharedTypes::Legacy::Spawn

@@ -20,7 +20,7 @@ class Bat : public ::Mob {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mWasResting;
+    ::ll::TypedStorage<1, 1, bool>    mWasResting;
     ::ll::TypedStorage<4, 12, ::Vec3> mTargetPosition;
     // NOLINTEND
 
@@ -53,7 +53,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Bat(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI
+    Bat(::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext);
 
     MCAPI void postNormalTick();
     // NOLINTEND
@@ -61,7 +64,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -83,5 +90,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

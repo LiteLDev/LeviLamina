@@ -19,7 +19,6 @@ public:
 
     MCNAPI static ::Editor::ServiceProviderCollection& getServiceProviders(::Player& player);
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

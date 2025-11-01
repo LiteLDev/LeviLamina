@@ -14,5 +14,4 @@ public:
     BoneAnimationPlayer& operator=(BoneAnimationPlayer const&);
     BoneAnimationPlayer(BoneAnimationPlayer const&);
     BoneAnimationPlayer();
-
 };

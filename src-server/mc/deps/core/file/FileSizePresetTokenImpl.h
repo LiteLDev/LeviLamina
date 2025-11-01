@@ -12,10 +12,10 @@ class FileSizePresetTokenImpl : public ::Core::FileSizePresetToken, public ::Bed
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk43aab0;
+    ::ll::UntypedStorage<8, 24>   mUnk43aab0;
     ::ll::UntypedStorage<1, 1024> mUnkbc126d;
-    ::ll::UntypedStorage<8, 16> mUnk89993c;
-    ::ll::UntypedStorage<8, 8> mUnke35968;
+    ::ll::UntypedStorage<8, 16>   mUnk89993c;
+    ::ll::UntypedStorage<8, 8>    mUnke35968;
     // NOLINTEND
 
 public:
@@ -42,7 +42,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

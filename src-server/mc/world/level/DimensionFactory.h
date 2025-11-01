@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>> mDimensionFactory;
-    ::ll::TypedStorage<8, 128, ::DimensionFactoryArguments> mArgs;
+    ::ll::TypedStorage<8, 128, ::DimensionFactoryArguments>                                  mArgs;
     // NOLINTEND
 
 public:
@@ -48,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

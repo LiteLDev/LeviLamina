@@ -20,9 +20,9 @@ class MobEffectResponse : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mEffect;
-    ::ll::TypedStorage<4, 4, ::EffectDuration> mDuration;
-    ::ll::TypedStorage<4, 4, int> mAmplifier;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mEffect;
+    ::ll::TypedStorage<4, 4, ::EffectDuration>                     mDuration;
+    ::ll::TypedStorage<4, 4, int>                                  mAmplifier;
     ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::FilterSubject> mTarget;
     // NOLINTEND
 
@@ -36,7 +36,10 @@ public:
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
     // vIndex: 3
-    virtual void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema, ::Factory<::EventResponse> const& factory) const /*override*/;
+    virtual void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::Factory<::EventResponse> const&                                                                       factory
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~MobEffectResponse() /*override*/ = default;
@@ -55,7 +58,10 @@ public:
 
     MCNAPI void $executeAction(::RenderParams& params) const;
 
-    MCNAPI void $buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema, ::Factory<::EventResponse> const& factory) const;
+    MCNAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::Factory<::EventResponse> const&                                                                       factory
+    ) const;
     // NOLINTEND
 
 public:
@@ -63,5 +69,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

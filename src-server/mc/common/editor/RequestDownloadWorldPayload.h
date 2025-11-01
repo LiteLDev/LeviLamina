@@ -7,12 +7,13 @@
 
 namespace Editor::Network {
 
-class RequestDownloadWorldPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::RequestDownloadWorldPayload> {
+class RequestDownloadWorldPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::RequestDownloadWorldPayload> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkc6d953;
-    ::ll::UntypedStorage<4, 4> mUnkbce38a;
+    ::ll::UntypedStorage<4, 4>  mUnkbce38a;
     // NOLINTEND
 
 public:
@@ -39,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

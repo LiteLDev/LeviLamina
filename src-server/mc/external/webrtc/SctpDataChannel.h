@@ -32,7 +32,7 @@ public:
     // clang-format off
     class ObserverAdapter;
     // clang-format on
-    
+
     // SctpDataChannel inner types define
     class ObserverAdapter : public ::webrtc::DataChannelObserver {
     public:
@@ -40,26 +40,25 @@ public:
         // clang-format off
         class CachedGetters;
         // clang-format on
-        
+
         // ObserverAdapter inner types define
         class CachedGetters {
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 8> mUnke9c609;
-            ::ll::UntypedStorage<1, 1> mUnkab083b;
-            ::ll::UntypedStorage<4, 4> mUnk62ccd6;
+            ::ll::UntypedStorage<8, 8>  mUnke9c609;
+            ::ll::UntypedStorage<1, 1>  mUnkab083b;
+            ::ll::UntypedStorage<4, 4>  mUnk62ccd6;
             ::ll::UntypedStorage<8, 48> mUnkeb9e32;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             CachedGetters& operator=(CachedGetters const&);
             CachedGetters(CachedGetters const&);
             CachedGetters();
-        
         };
-        
+
     public:
         // member variables
         // NOLINTBEGIN
@@ -70,94 +69,93 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk4bf475;
         ::ll::UntypedStorage<8, 8> mUnk307686;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ObserverAdapter& operator=(ObserverAdapter const&);
         ObserverAdapter(ObserverAdapter const&);
         ObserverAdapter();
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual void OnStateChange() /*override*/;
-    
+
         // vIndex: 1
         virtual void OnMessage(::webrtc::DataBuffer const& buffer) /*override*/;
-    
+
         // vIndex: 2
         virtual void OnBufferedAmountChange(uint64 sent_data_size) /*override*/;
-    
+
         // vIndex: 3
         virtual bool IsOkToCallOnTheNetworkThread() /*override*/;
-    
+
         // vIndex: 4
         virtual ~ObserverAdapter() /*override*/ = default;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI void SetDelegate(::webrtc::DataChannelObserver* delegate);
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $OnStateChange();
-    
+
         MCNAPI void $OnMessage(::webrtc::DataBuffer const& buffer);
-    
+
         MCNAPI void $OnBufferedAmountChange(uint64 sent_data_size);
-    
+
         MCNAPI bool $IsOkToCallOnTheNetworkThread();
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
     enum class HandshakeState : int {
-        KHandshakeInit = 0,
+        KHandshakeInit           = 0,
         KHandshakeShouldSendOpen = 1,
-        KHandshakeShouldSendAck = 2,
-        KHandshakeWaitingForAck = 3,
-        KHandshakeReady = 4,
+        KHandshakeShouldSendAck  = 2,
+        KHandshakeWaitingForAck  = 3,
+        KHandshakeReady          = 4,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkbda45a;
-    ::ll::UntypedStorage<8, 8> mUnk13548f;
-    ::ll::UntypedStorage<2, 4> mUnkab3466;
-    ::ll::UntypedStorage<4, 4> mUnk9256c4;
+    ::ll::UntypedStorage<8, 8>  mUnkbda45a;
+    ::ll::UntypedStorage<8, 8>  mUnk13548f;
+    ::ll::UntypedStorage<2, 4>  mUnkab3466;
+    ::ll::UntypedStorage<4, 4>  mUnk9256c4;
     ::ll::UntypedStorage<8, 32> mUnk840781;
     ::ll::UntypedStorage<8, 32> mUnk19117a;
-    ::ll::UntypedStorage<4, 8> mUnkffae17;
-    ::ll::UntypedStorage<4, 8> mUnkb09717;
-    ::ll::UntypedStorage<4, 8> mUnk3ae18a;
-    ::ll::UntypedStorage<1, 1> mUnk269941;
-    ::ll::UntypedStorage<1, 1> mUnk4cf2fb;
-    ::ll::UntypedStorage<8, 8> mUnkf28c17;
-    ::ll::UntypedStorage<8, 8> mUnkd0441c;
-    ::ll::UntypedStorage<8, 8> mUnkea17bd;
-    ::ll::UntypedStorage<4, 4> mUnka12f55;
+    ::ll::UntypedStorage<4, 8>  mUnkffae17;
+    ::ll::UntypedStorage<4, 8>  mUnkb09717;
+    ::ll::UntypedStorage<4, 8>  mUnk3ae18a;
+    ::ll::UntypedStorage<1, 1>  mUnk269941;
+    ::ll::UntypedStorage<1, 1>  mUnk4cf2fb;
+    ::ll::UntypedStorage<8, 8>  mUnkf28c17;
+    ::ll::UntypedStorage<8, 8>  mUnkd0441c;
+    ::ll::UntypedStorage<8, 8>  mUnkea17bd;
+    ::ll::UntypedStorage<4, 4>  mUnka12f55;
     ::ll::UntypedStorage<8, 48> mUnk321db7;
-    ::ll::UntypedStorage<4, 4> mUnk94579e;
-    ::ll::UntypedStorage<8, 8> mUnkc1e3df;
-    ::ll::UntypedStorage<4, 4> mUnkc2f6a8;
-    ::ll::UntypedStorage<8, 8> mUnk11159a;
+    ::ll::UntypedStorage<4, 4>  mUnk94579e;
+    ::ll::UntypedStorage<8, 8>  mUnkc1e3df;
+    ::ll::UntypedStorage<4, 4>  mUnkc2f6a8;
+    ::ll::UntypedStorage<8, 8>  mUnk11159a;
     ::ll::UntypedStorage<8, 16> mUnk96602b;
-    ::ll::UntypedStorage<4, 4> mUnke0f8f0;
-    ::ll::UntypedStorage<1, 1> mUnkdfae7e;
+    ::ll::UntypedStorage<4, 4>  mUnke0f8f0;
+    ::ll::UntypedStorage<1, 1>  mUnkdfae7e;
     ::ll::UntypedStorage<8, 48> mUnkc9a510;
-    ::ll::UntypedStorage<8, 8> mUnkdb0ebb;
+    ::ll::UntypedStorage<8, 8>  mUnkdb0ebb;
     // NOLINTEND
 
 public:
@@ -239,7 +237,8 @@ public:
     virtual bool Send(::webrtc::DataBuffer const& buffer) /*override*/;
 
     // vIndex: 26
-    virtual void SendAsync(::webrtc::DataBuffer buffer, ::absl::AnyInvocable<void(::webrtc::RTCError)&&> on_complete) /*override*/;
+    virtual void
+    SendAsync(::webrtc::DataBuffer buffer, ::absl::AnyInvocable<void(::webrtc::RTCError) &&> on_complete) /*override*/;
 
     // vIndex: 2
     virtual ~SctpDataChannel() /*override*/;
@@ -272,7 +271,14 @@ public:
 
     MCNAPI void OnTransportReady();
 
-    MCNAPI SctpDataChannel(::webrtc::InternalDataChannelInit const& config, ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller, ::std::string const& label, bool connected_to_transport, ::rtc::Thread* signaling_thread, ::rtc::Thread* network_thread);
+    MCNAPI SctpDataChannel(
+        ::webrtc::InternalDataChannelInit const&                     config,
+        ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller,
+        ::std::string const&                                         label,
+        bool                                                         connected_to_transport,
+        ::rtc::Thread*                                               signaling_thread,
+        ::rtc::Thread*                                               network_thread
+    );
 
     MCNAPI bool SendControlMessage(::rtc::CopyOnWriteBuffer const& buffer);
 
@@ -290,15 +296,32 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::SctpDataChannel> Create(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller, ::std::string const& label, bool connected_to_transport, ::webrtc::InternalDataChannelInit const& config, ::rtc::Thread* signaling_thread, ::rtc::Thread* network_thread);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::SctpDataChannel> Create(
+        ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller,
+        ::std::string const&                                         label,
+        bool                                                         connected_to_transport,
+        ::webrtc::InternalDataChannelInit const&                     config,
+        ::rtc::Thread*                                               signaling_thread,
+        ::rtc::Thread*                                               network_thread
+    );
 
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::DataChannelInterface> CreateProxy(::webrtc::scoped_refptr<::webrtc::SctpDataChannel> channel, ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> signaling_safety);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::DataChannelInterface> CreateProxy(
+        ::webrtc::scoped_refptr<::webrtc::SctpDataChannel>       channel,
+        ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> signaling_safety
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::InternalDataChannelInit const& config, ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller, ::std::string const& label, bool connected_to_transport, ::rtc::Thread* signaling_thread, ::rtc::Thread* network_thread);
+    MCNAPI void* $ctor(
+        ::webrtc::InternalDataChannelInit const&                     config,
+        ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller,
+        ::std::string const&                                         label,
+        bool                                                         connected_to_transport,
+        ::rtc::Thread*                                               signaling_thread,
+        ::rtc::Thread*                                               network_thread
+    );
     // NOLINTEND
 
 public:
@@ -356,7 +379,7 @@ public:
 
     MCNAPI bool $Send(::webrtc::DataBuffer const& buffer);
 
-    MCNAPI void $SendAsync(::webrtc::DataBuffer buffer, ::absl::AnyInvocable<void(::webrtc::RTCError)&&> on_complete);
+    MCNAPI void $SendAsync(::webrtc::DataBuffer buffer, ::absl::AnyInvocable<void(::webrtc::RTCError) &&> on_complete);
     // NOLINTEND
 
 public:
@@ -364,7 +387,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

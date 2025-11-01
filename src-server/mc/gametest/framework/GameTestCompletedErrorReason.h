@@ -5,7 +5,7 @@
 namespace gametest {
 
 enum class GameTestCompletedErrorReason : int {
-    Done = 0,
+    Done    = 0,
     CleanUp = 1,
 };
 

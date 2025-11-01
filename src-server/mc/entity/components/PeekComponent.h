@@ -7,7 +7,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mHadTarget;
-    ::ll::TypedStorage<4, 4, int> mDuration;
+    ::ll::TypedStorage<4, 4, int>  mDuration;
     // NOLINTEND
-
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,22 +16,21 @@ public:
     // clang-format off
     class Item;
     // clang-format on
-    
+
     // CircuitComponentList inner types define
     class Item {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::BaseCircuitComponent*> mComponent;
-        ::ll::TypedStorage<4, 4, int> mDampening;
-        ::ll::TypedStorage<4, 12, ::BlockPos> mPos;
-        ::ll::TypedStorage<1, 1, uchar> mDirection;
-        ::ll::TypedStorage<1, 1, bool> mDirectlyPowered;
-        ::ll::TypedStorage<4, 4, int> mData;
+        ::ll::TypedStorage<4, 4, int>                     mDampening;
+        ::ll::TypedStorage<4, 12, ::BlockPos>             mPos;
+        ::ll::TypedStorage<1, 1, uchar>                   mDirection;
+        ::ll::TypedStorage<1, 1, bool>                    mDirectlyPowered;
+        ::ll::TypedStorage<4, 4, int>                     mData;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

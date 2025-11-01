@@ -5,8 +5,8 @@
 namespace cricket {
 
 enum class NominationMode : int {
-    Regular = 0,
-    Aggressive = 1,
+    Regular        = 0,
+    Aggressive     = 1,
     SemiAggressive = 2,
 };
 

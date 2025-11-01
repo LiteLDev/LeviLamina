@@ -15,7 +15,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::rtc::MessageDigest* Create(::std::string_view alg);
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

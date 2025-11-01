@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::CommandOriginData> mOriginData;
-    ::ll::TypedStorage<8, 48, ::CommandOutput> mOutput;
+    ::ll::TypedStorage<8, 48, ::CommandOutput>     mOutput;
     // NOLINTEND
 
 public:
@@ -65,5 +65,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

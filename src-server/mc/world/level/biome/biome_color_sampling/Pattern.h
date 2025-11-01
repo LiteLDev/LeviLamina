@@ -5,10 +5,10 @@
 namespace BiomeColorSampling {
 
 enum class Pattern : int {
-    Single = 0,
+    Single                    = 0,
     CornersAndMidpointsRange4 = 1,
-    Grid3x3 = 2,
-    CrossRange8 = 3,
+    Grid3x3                   = 2,
+    CrossRange8               = 3,
 };
 
 }

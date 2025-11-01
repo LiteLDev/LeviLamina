@@ -13,7 +13,7 @@ class ConnectResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6205dd;
+    ::ll::UntypedStorage<8, 8>  mUnk6205dd;
     ::ll::UntypedStorage<8, 32> mUnk3bd634;
     // NOLINTEND
 
@@ -34,9 +34,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::NetherNet::ConnectResponse Create(uint64 sessionId, ::std::string sdp);
 
-    MCNAPI static ::std::optional<::NetherNet::ConnectResponse> TryCreate(uint64 sessionId, ::webrtc::SessionDescriptionInterface const& session);
+    MCNAPI static ::std::optional<::NetherNet::ConnectResponse>
+    TryCreate(uint64 sessionId, ::webrtc::SessionDescriptionInterface const& session);
 
-    MCNAPI static ::std::optional<::NetherNet::ConnectResponse> TryParse(::std::array<::std::string_view, 3> const& tokens);
+    MCNAPI static ::std::optional<::NetherNet::ConnectResponse>
+    TryParse(::std::array<::std::string_view, 3> const& tokens);
     // NOLINTEND
 
 public:
@@ -44,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& kIdentifier();
     // NOLINTEND
-
 };
 
-}
+} // namespace NetherNet

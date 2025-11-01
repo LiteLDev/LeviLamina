@@ -16,42 +16,42 @@ class RideCommand : public ::Command {
 public:
     // RideCommand inner types define
     enum class VehicleAction : uchar {
-        StartRiding = 0,
-        StopRiding = 1,
+        StartRiding     = 0,
+        StopRiding      = 1,
         EvictPassengers = 2,
         SummonPassenger = 3,
-        SummonVehicle = 4,
+        SummonVehicle   = 4,
     };
-    
+
     enum class TeleportRules : uchar {
         TeleportPassenger = 0,
-        TeleportVehicle = 1,
+        TeleportVehicle   = 1,
     };
-    
+
     enum class VehicleFillType : uchar {
-        UntilFull = 0,
+        UntilFull   = 0,
         IfGroupFits = 1,
     };
-    
+
     enum class RideRules : uchar {
-        NoVehicleChange = 0,
+        NoVehicleChange  = 0,
         ReassignVehicles = 1,
-        SkipPassengers = 2,
+        SkipPassengers   = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnkc2b620;
     ::ll::UntypedStorage<8, 200> mUnk5a030e;
-    ::ll::UntypedStorage<1, 1> mUnkbe452b;
-    ::ll::UntypedStorage<1, 1> mUnk545e58;
-    ::ll::UntypedStorage<1, 1> mUnk8a36dd;
-    ::ll::UntypedStorage<1, 1> mUnk11d7ca;
-    ::ll::UntypedStorage<8, 8> mUnk6855a5;
-    ::ll::UntypedStorage<8, 32> mUnk26871e;
-    ::ll::UntypedStorage<8, 32> mUnkecafca;
-    ::ll::UntypedStorage<1, 1> mUnk524573;
+    ::ll::UntypedStorage<1, 1>   mUnkbe452b;
+    ::ll::UntypedStorage<1, 1>   mUnk545e58;
+    ::ll::UntypedStorage<1, 1>   mUnk8a36dd;
+    ::ll::UntypedStorage<1, 1>   mUnk11d7ca;
+    ::ll::UntypedStorage<8, 8>   mUnk6855a5;
+    ::ll::UntypedStorage<8, 32>  mUnk26871e;
+    ::ll::UntypedStorage<8, 32>  mUnkecafca;
+    ::ll::UntypedStorage<1, 1>   mUnk524573;
     // NOLINTEND
 
 public:
@@ -108,5 +108,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

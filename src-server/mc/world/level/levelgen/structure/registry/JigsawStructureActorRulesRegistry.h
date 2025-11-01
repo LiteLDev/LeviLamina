@@ -10,15 +10,25 @@ class StructurePoolActorRule;
 class JigsawStructureActorRulesRegistry {
 public:
     // JigsawStructureActorRulesRegistry inner types define
-    using ActorRulesRegistryMap = ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>>;
-    
-    using ActorRulesLookupMap = ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*>;
-    
+    using ActorRulesRegistryMap =
+        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>>;
+
+    using ActorRulesLookupMap =
+        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>>> mActorRulesRegistry;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*>> mActorRuleLookupMap;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>>>
+        mActorRulesRegistry;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*>>
+        mActorRuleLookupMap;
     // NOLINTEND
 
 public:
@@ -26,7 +36,10 @@ public:
     // NOLINTBEGIN
     MCFOLD ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const* lookupByName(::std::string name) const;
 
-    MCAPI void registerActorRules(::std::string name, ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>&& ruleList);
+    MCAPI void registerActorRules(
+        ::std::string                                                                   name,
+        ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>&& ruleList
+    );
 
     MCAPI ~JigsawStructureActorRulesRegistry();
     // NOLINTEND
@@ -36,5 +49,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

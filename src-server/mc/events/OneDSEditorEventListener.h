@@ -19,12 +19,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnk8228d9;
-    ::ll::UntypedStorage<8, 8> mUnkfa9982;
-    ::ll::UntypedStorage<8, 8> mUnk1b321f;
+    ::ll::UntypedStorage<8, 8>  mUnkfa9982;
+    ::ll::UntypedStorage<8, 8>  mUnk1b321f;
     ::ll::UntypedStorage<8, 24> mUnk534f95;
     ::ll::UntypedStorage<8, 24> mUnkdfe2f1;
-    ::ll::UntypedStorage<8, 8> mUnka936b9;
-    ::ll::UntypedStorage<4, 4> mUnk5e9a8b;
+    ::ll::UntypedStorage<8, 8>  mUnka936b9;
+    ::ll::UntypedStorage<4, 4>  mUnk5e9a8b;
     ::ll::UntypedStorage<8, 32> mUnk1d0f8b;
     ::ll::UntypedStorage<8, 32> mUnkf43964;
     ::ll::UntypedStorage<8, 32> mUnkec1236;
@@ -65,7 +65,10 @@ public:
 
     MCNAPI explicit OneDSEditorEventListener(::Core::Path logFileName);
 
-    MCNAPI ::std::vector<::std::string> _buildEventPayloads(::std::vector<::Social::Events::Event> events, ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized);
+    MCNAPI ::std::vector<::std::string> _buildEventPayloads(
+        ::std::vector<::Social::Events::Event>                            events,
+        ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized
+    );
 
     MCNAPI bool _sendBatch();
 
@@ -111,7 +114,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Social::Events

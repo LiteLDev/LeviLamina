@@ -7,7 +7,8 @@
 
 namespace Editor::Prefabs {
 
-class PrefabDBTemplate : public ::std::enable_shared_from_this<::Editor::Prefabs::PrefabDBTemplate>, public ::EnableGetWeakRef<::Editor::Prefabs::PrefabDBTemplate> {
+class PrefabDBTemplate : public ::std::enable_shared_from_this<::Editor::Prefabs::PrefabDBTemplate>,
+                         public ::EnableGetWeakRef<::Editor::Prefabs::PrefabDBTemplate> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -17,8 +18,8 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkd04334;
     ::ll::UntypedStorage<8, 24> mUnk72a0ac;
     ::ll::UntypedStorage<8, 24> mUnk8cc2c3;
-    ::ll::UntypedStorage<4, 4> mUnk17a0c6;
-    ::ll::UntypedStorage<4, 4> mUnk6e8a80;
+    ::ll::UntypedStorage<4, 4>  mUnk17a0c6;
+    ::ll::UntypedStorage<4, 4>  mUnk6e8a80;
     // NOLINTEND
 
 public:
@@ -26,7 +27,6 @@ public:
     PrefabDBTemplate& operator=(PrefabDBTemplate const&);
     PrefabDBTemplate(PrefabDBTemplate const&);
     PrefabDBTemplate();
-
 };
 
-}
+} // namespace Editor::Prefabs

@@ -13,16 +13,16 @@ public:
     // FileResponseBody inner types define
     enum class FileOpen : int {
         CreateOnly = 0,
-        Overwrite = 1,
+        Overwrite  = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk8ef555;
     ::ll::UntypedStorage<8, 16> mUnk5c858f;
-    ::ll::UntypedStorage<4, 4> mUnk8111dc;
-    ::ll::UntypedStorage<1, 1> mUnk2b1a95;
+    ::ll::UntypedStorage<4, 4>  mUnk8111dc;
+    ::ll::UntypedStorage<1, 1>  mUnk2b1a95;
     // NOLINTEND
 
 public:
@@ -64,7 +64,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Http

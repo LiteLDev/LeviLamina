@@ -21,24 +21,23 @@ public:
     struct SenderAndTargetAddress;
     struct ServerWithPing;
     // clang-format on
-    
+
     // UDPProxyClient inner types define
     struct ServerWithPing {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2> mUnk5c59c4;
+        ::ll::UntypedStorage<2, 2>   mUnk5c59c4;
         ::ll::UntypedStorage<8, 136> mUnka34e46;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ServerWithPing& operator=(ServerWithPing const&);
         ServerWithPing(ServerWithPing const&);
         ServerWithPing();
-    
     };
-    
+
     struct SenderAndTargetAddress {
     public:
         // member variables
@@ -46,38 +45,36 @@ public:
         ::ll::UntypedStorage<8, 136> mUnk29cc9a;
         ::ll::UntypedStorage<8, 136> mUnk884631;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         SenderAndTargetAddress& operator=(SenderAndTargetAddress const&);
         SenderAndTargetAddress(SenderAndTargetAddress const&);
         SenderAndTargetAddress();
-    
     };
-    
+
     struct PingServerGroup {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 272> mUnkee4b18;
-        ::ll::UntypedStorage<4, 4> mUnk238a65;
+        ::ll::UntypedStorage<4, 4>   mUnk238a65;
         ::ll::UntypedStorage<8, 136> mUnk42a701;
-        ::ll::UntypedStorage<8, 16> mUnk38a9ef;
+        ::ll::UntypedStorage<8, 16>  mUnk38a9ef;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PingServerGroup& operator=(PingServerGroup const&);
         PingServerGroup(PingServerGroup const&);
         PingServerGroup();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka3de75;
-    ::ll::UntypedStorage<8, 8> mUnk337ebd;
+    ::ll::UntypedStorage<8, 8>  mUnk337ebd;
     // NOLINTEND
 
 public:
@@ -107,7 +104,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

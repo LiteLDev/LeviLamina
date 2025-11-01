@@ -17,7 +17,6 @@ public:
     Environment& operator=(Environment const&);
     Environment(Environment const&);
     Environment();
-
 };
 
-}
+} // namespace ScriptNativeModuleIds

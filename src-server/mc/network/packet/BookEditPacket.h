@@ -20,12 +20,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::BookEditAction> mAction;
-    ::ll::TypedStorage<4, 4, int> mBookSlot;
-    ::ll::TypedStorage<4, 4, int> mPageIndex1;
-    ::ll::TypedStorage<4, 4, int> mPageIndex2;
-    ::ll::TypedStorage<8, 32, ::std::string> mText1;
-    ::ll::TypedStorage<8, 32, ::std::string> mText2;
-    ::ll::TypedStorage<8, 32, ::std::string> mText3;
+    ::ll::TypedStorage<4, 4, int>              mBookSlot;
+    ::ll::TypedStorage<4, 4, int>              mPageIndex1;
+    ::ll::TypedStorage<4, 4, int>              mPageIndex2;
+    ::ll::TypedStorage<8, 32, ::std::string>   mText1;
+    ::ll::TypedStorage<8, 32, ::std::string>   mText2;
+    ::ll::TypedStorage<8, 32, ::std::string>   mText3;
     // NOLINTEND
 
 public:
@@ -78,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

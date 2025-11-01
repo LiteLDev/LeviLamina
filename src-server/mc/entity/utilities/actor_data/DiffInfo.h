@@ -4,8 +4,7 @@
 
 namespace ActorData {
 
-template<typename T0>
-struct DiffInfo {
-};
+template <typename T0>
+struct DiffInfo {};
 
-}
+} // namespace ActorData

@@ -31,24 +31,24 @@ class AddPlayerPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>> mLinks;
-    ::ll::TypedStorage<8, 32, ::std::string> mName;
-    ::ll::TypedStorage<8, 16, ::mce::UUID> mUuid;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityId;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
-    ::ll::TypedStorage<8, 32, ::std::string> mPlatformOnlineId;
-    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
-    ::ll::TypedStorage<4, 12, ::Vec3> mVelocity;
-    ::ll::TypedStorage<4, 8, ::Vec2> mRot;
-    ::ll::TypedStorage<4, 4, float> mYHeadRot;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>>                   mLinks;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mName;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                                  mUuid;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                               mEntityId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mRuntimeId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mPlatformOnlineId;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mVelocity;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                        mRot;
+    ::ll::TypedStorage<4, 4, float>                                         mYHeadRot;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mUnpack;
-    ::ll::TypedStorage<4, 1444, ::LayeredAbilities> mAbilities;
-    ::ll::TypedStorage<8, 32, ::std::string> mDeviceId;
-    ::ll::TypedStorage<4, 4, ::BuildPlatform> mBuildPlatform;
-    ::ll::TypedStorage<4, 4, ::GameType> mPlayerGameType;
-    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mCarriedItem;
-    ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper const*> mEntityData;
-    ::ll::TypedStorage<8, 48, ::PropertySyncData> mSynchedProperties;
+    ::ll::TypedStorage<4, 1444, ::LayeredAbilities>                         mAbilities;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mDeviceId;
+    ::ll::TypedStorage<4, 4, ::BuildPlatform>                               mBuildPlatform;
+    ::ll::TypedStorage<4, 4, ::GameType>                                    mPlayerGameType;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                 mCarriedItem;
+    ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper const*>        mEntityData;
+    ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties;
     // NOLINTEND
 
 public:
@@ -109,5 +109,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

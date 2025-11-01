@@ -19,7 +19,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mId;
     ::ll::TypedStorage<8, 32, ::std::string> mValue;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayerHandle;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+        mPlayerHandle;
     // NOLINTEND
 
 public:
@@ -31,7 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptServerMessageAfterEvent& operator=(::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
 
     MCAPI ~ScriptServerMessageAfterEvent();
     // NOLINTEND
@@ -47,7 +49,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

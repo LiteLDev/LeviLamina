@@ -12,8 +12,8 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk82e3cb;
     ::ll::UntypedStorage<8, 32> mUnkf2dd53;
     ::ll::UntypedStorage<8, 32> mUnkb2d72f;
-    ::ll::UntypedStorage<8, 8> mUnke2f149;
-    ::ll::UntypedStorage<1, 1> mUnkbf426d;
+    ::ll::UntypedStorage<8, 8>  mUnke2f149;
+    ::ll::UntypedStorage<1, 1>  mUnkbf426d;
     // NOLINTEND
 
 public:
@@ -21,7 +21,6 @@ public:
     EduHeadlessConnectionHandshake& operator=(EduHeadlessConnectionHandshake const&);
     EduHeadlessConnectionHandshake(EduHeadlessConnectionHandshake const&);
     EduHeadlessConnectionHandshake();
-
 };
 
-}
+} // namespace Social

@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class MIDTag {
-};
+class MIDTag {};
 
-}
+} // namespace dcsctp

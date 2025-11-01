@@ -11,7 +11,7 @@ struct RopePoints {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64> mSize;
+    ::ll::TypedStorage<8, 8, uint64>                      mSize;
     ::ll::TypedStorage<8, 24, ::std::vector<::RopePoint>> mPoints;
     // NOLINTEND
 
@@ -23,21 +23,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RopePoints(::RopePoints const&);
+    MCAPI RopePoints(::RopePoints const&);
 
-    MCNAPI ~RopePoints();
+    MCAPI ~RopePoints();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::RopePoints const&);
+    MCAPI void* $ctor(::RopePoints const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
-
 };

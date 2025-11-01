@@ -22,5 +22,4 @@ public:
 
     MCNAPI ::KeyFrameLerpMode& operator=(::KeyFrameLerpMode const& rhs);
     // NOLINTEND
-
 };

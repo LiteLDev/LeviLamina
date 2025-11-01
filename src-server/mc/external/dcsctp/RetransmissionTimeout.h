@@ -43,7 +43,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::dcsctp::DcSctpOptions const& options);
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

@@ -6,10 +6,10 @@ class KeyboardAction {
 public:
     // KeyboardAction inner types define
     enum : int {
-        Keyup = 0,
+        Keyup   = 0,
         Keydown = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -27,5 +27,4 @@ public:
     KeyboardAction& operator=(KeyboardAction const&);
     KeyboardAction(KeyboardAction const&);
     KeyboardAction();
-
 };

@@ -17,7 +17,7 @@ class LinearUpscaleDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<2, 2, ushort> mInput;
+    ::ll::TypedStorage<2, 2, ushort>                      mInput;
     ::ll::TypedStorage<2, 6, ::DensityVolume::Dimensions> mSampleResolution;
     // NOLINTEND
 
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

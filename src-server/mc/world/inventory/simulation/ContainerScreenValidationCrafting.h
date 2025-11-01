@@ -17,10 +17,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::ContainerValidationResult tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts) /*override*/;
+    virtual ::ContainerValidationResult
+    tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts) /*override*/;
 
     // vIndex: 2
-    virtual ::ContainerValidationCraftResult getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts) /*override*/;
+    virtual ::ContainerValidationCraftResult getCraftResults(
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~ContainerScreenValidationCrafting() /*override*/ = default;
@@ -35,9 +39,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ContainerValidationResult $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
+    MCNAPI ::ContainerValidationResult
+    $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
 
-    MCNAPI ::ContainerValidationCraftResult $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
+    MCNAPI ::ContainerValidationCraftResult
+    $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
     // NOLINTEND
 
 public:
@@ -45,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

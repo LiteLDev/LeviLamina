@@ -5,7 +5,7 @@
 namespace persona {
 
 enum class AnimationExpression : uint {
-    Linear = 0,
+    Linear   = 0,
     Blinking = 1,
 };
 

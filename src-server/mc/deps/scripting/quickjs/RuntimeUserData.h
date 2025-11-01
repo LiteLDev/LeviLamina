@@ -18,7 +18,6 @@ public:
     RuntimeUserData& operator=(RuntimeUserData const&);
     RuntimeUserData(RuntimeUserData const&);
     RuntimeUserData();
-
 };
 
-}
+} // namespace Scripting::QuickJS

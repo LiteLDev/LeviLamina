@@ -17,7 +17,6 @@ public:
     Blob& operator=(Blob const&);
     Blob(Blob const&);
     Blob();
-
 };
 
-}
+} // namespace cg

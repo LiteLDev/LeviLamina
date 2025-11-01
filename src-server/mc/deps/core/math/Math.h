@@ -85,4 +85,4 @@ MCNAPI ::mce::Degree wrapDegrees(::mce::Degree input);
 MCNAPI float wrapRadians(float angle);
 // NOLINTEND
 
-}
+} // namespace mce::Math

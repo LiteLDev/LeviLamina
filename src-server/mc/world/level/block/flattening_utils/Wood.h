@@ -24,4 +24,4 @@ MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getStripped
 MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getWoodTypeSplitStates(bool stripped);
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::Wood

@@ -21,5 +21,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

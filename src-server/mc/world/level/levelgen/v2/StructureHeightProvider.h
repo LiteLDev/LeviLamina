@@ -19,7 +19,7 @@ class StructureHeightProvider : public ::br::worldgen::HeightProvider {
 public:
     // StructureHeightProvider inner types define
     using Data = ::std::variant<::br::worldgen::ConstantHeight, ::br::worldgen::UniformHeight>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -30,7 +30,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual int sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const /*override*/;
+    virtual int sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~StructureHeightProvider() /*override*/;
@@ -53,7 +54,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

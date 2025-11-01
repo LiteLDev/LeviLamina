@@ -33,5 +33,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void Deserialize(::RakNet::BitStream* b);
     // NOLINTEND
-
 };

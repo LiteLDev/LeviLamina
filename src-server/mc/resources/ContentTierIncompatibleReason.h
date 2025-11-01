@@ -18,7 +18,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string getExpandedI18nErrorList(uint errorValue, ::std::string const& i18nContextPrefix, ::std::vector<::std::string> const& arguments);
+    MCNAPI static ::std::string getExpandedI18nErrorList(
+        uint                                errorValue,
+        ::std::string const&                i18nContextPrefix,
+        ::std::vector<::std::string> const& arguments
+    );
     // NOLINTEND
 
 public:
@@ -26,5 +30,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::ContentTierIncompatibleReason& NoError();
     // NOLINTEND
-
 };

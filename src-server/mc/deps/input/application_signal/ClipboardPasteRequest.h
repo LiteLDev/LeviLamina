@@ -7,7 +7,6 @@
 
 namespace ApplicationSignal {
 
-class ClipboardPasteRequest : public ::Bedrock::Signal<::ApplicationSignal::ClipboardPasteRequest, void> {
-};
+class ClipboardPasteRequest : public ::Bedrock::Signal<::ApplicationSignal::ClipboardPasteRequest, void> {};
 
-}
+} // namespace ApplicationSignal

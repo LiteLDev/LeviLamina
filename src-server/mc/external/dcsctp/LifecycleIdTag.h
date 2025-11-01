@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class LifecycleIdTag {
-};
+class LifecycleIdTag {};
 
-}
+} // namespace dcsctp

@@ -26,7 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent& operator=(::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent&&);
+    MCNAPI ::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent&
+    operator=(::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent&&);
     // NOLINTEND
 
 public:
@@ -34,7 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

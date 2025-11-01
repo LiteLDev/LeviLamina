@@ -25,4 +25,4 @@ MCNAPI void placeAsBlock(::Editor::Brush::BlockPlacementSettings const& settings
 MCNAPI void placeWithItem(::Editor::Brush::ItemPlacementSettings const& settings);
 // NOLINTEND
 
-}
+} // namespace Editor::Brush

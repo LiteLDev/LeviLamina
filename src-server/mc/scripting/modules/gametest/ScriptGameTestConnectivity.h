@@ -19,7 +19,6 @@ public:
     ScriptGameTestConnectivity& operator=(ScriptGameTestConnectivity const&);
     ScriptGameTestConnectivity(ScriptGameTestConnectivity const&);
     ScriptGameTestConnectivity();
-
 };
 
-}
+} // namespace ScriptModuleGameTest

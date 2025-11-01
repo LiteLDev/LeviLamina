@@ -12,4 +12,4 @@ MCNAPI ::std::add_lvalue_reference_t<char const[]> kToLower();
 MCNAPI ::std::add_lvalue_reference_t<char const[]> kToUpper();
 // NOLINTEND
 
-}
+} // namespace absl::ascii_internal

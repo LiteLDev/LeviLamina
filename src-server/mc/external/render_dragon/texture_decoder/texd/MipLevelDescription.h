@@ -17,7 +17,6 @@ public:
     MipLevelDescription& operator=(MipLevelDescription const&);
     MipLevelDescription(MipLevelDescription const&);
     MipLevelDescription();
-
 };
 
-}
+} // namespace texd

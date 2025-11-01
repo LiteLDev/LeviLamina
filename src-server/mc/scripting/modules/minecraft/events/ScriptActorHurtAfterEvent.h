@@ -20,12 +20,16 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mHurtActor;
-    ::ll::TypedStorage<8, 88, ::ScriptModuleMinecraft::ScriptActorDamageSource> mDamageSource;
-    ::ll::TypedStorage<4, 4, float> mDamage;
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mDamagingActor;
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mProjectile;
+    ::ll::TypedStorage<8, 88, ::ScriptModuleMinecraft::ScriptActorDamageSource>                           mDamageSource;
+    ::ll::TypedStorage<4, 4, float>                                                                       mDamage;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mDamagingActor;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+                                                                      mProjectile;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mCause;
-    ::ll::TypedStorage<8, 32, ::std::string> mStringCause;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mStringCause;
     // NOLINTEND
 
 public:
@@ -40,7 +44,8 @@ public:
 
     MCAPI ScriptActorHurtAfterEvent(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent& operator=(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
 
     MCAPI ~ScriptActorHurtAfterEvent();
     // NOLINTEND
@@ -66,7 +71,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

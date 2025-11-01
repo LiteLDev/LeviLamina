@@ -16,7 +16,6 @@ public:
     ResourcePackPathCache& operator=(ResourcePackPathCache const&);
     ResourcePackPathCache(ResourcePackPathCache const&);
     ResourcePackPathCache();
-
 };
 
-}
+} // namespace ResourcePackPathLifetimeHelpers

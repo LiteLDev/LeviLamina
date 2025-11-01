@@ -16,7 +16,6 @@ public:
     CameraTimeOverrideComponent& operator=(CameraTimeOverrideComponent const&);
     CameraTimeOverrideComponent(CameraTimeOverrideComponent const&);
     CameraTimeOverrideComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

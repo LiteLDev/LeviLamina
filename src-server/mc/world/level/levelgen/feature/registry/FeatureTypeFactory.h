@@ -21,12 +21,12 @@ class FeatureTypeFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::SupportedFeatureSchema>> mSupportedSchemas;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SupportedFeatureUpgrader>> mSupportedUpgraders;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SupportedFeatureSchema>>                      mSupportedSchemas;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SupportedFeatureUpgrader>>                    mSupportedUpgraders;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void(::Documentation::Node&)>>> mDocumentationGenerators;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::FeatureTypeVersion>> mRegisteredFeatureTypeVersions;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureLoader>> mLoader;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureParserContext>> mParserContext;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureLoader>>                         mLoader;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureParserContext>>                  mParserContext;
     // NOLINTEND
 
 public:
@@ -41,7 +41,14 @@ public:
     // NOLINTBEGIN
     MCAPI uint64 addSupportedSchema(::std::optional<::Puv::VersionRange> versionRange);
 
-    MCAPI bool processFeature(::IWorldRegistriesProvider& lookupProvider, bool isBasePack, ::ResourcePackManager const& rpm, ::std::string const& expectedFeatureName, ::Json::Value const& featureData, ::MinEngineVersion const& minEngineVersion);
+    MCAPI bool processFeature(
+        ::IWorldRegistriesProvider&  lookupProvider,
+        bool                         isBasePack,
+        ::ResourcePackManager const& rpm,
+        ::std::string const&         expectedFeatureName,
+        ::Json::Value const&         featureData,
+        ::MinEngineVersion const&    minEngineVersion
+    );
     // NOLINTEND
 
 public:
@@ -55,5 +62,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

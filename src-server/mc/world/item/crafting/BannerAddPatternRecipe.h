@@ -31,7 +31,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const /*override*/;
+    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
+        /*override*/;
 
     // vIndex: 2
     virtual int getCraftingSize() const /*override*/;
@@ -57,7 +58,8 @@ public:
     // NOLINTBEGIN
     MCAPI BannerAddPatternRecipe(::std::string const& recipeId, ::mce::UUID const& uuid);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::BannerPattern const> const matchPatterns(::CraftingContainer const& craftSlots) const;
+    MCAPI ::Bedrock::NonOwnerPointer<::BannerPattern const> const
+    matchPatterns(::CraftingContainer const& craftSlots) const;
     // NOLINTEND
 
 public:
@@ -93,5 +95,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -19,7 +19,8 @@ public:
     virtual ~ISubChunkManagerConnector() = default;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, short, bool)>& getOnSubChunkLoadedConnector() = 0;
+    virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, short, bool)>&
+    getOnSubChunkLoadedConnector() = 0;
     // NOLINTEND
 
 public:
@@ -27,5 +28,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

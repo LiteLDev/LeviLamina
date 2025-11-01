@@ -31,7 +31,8 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit DimensionDataLoader(::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument> load(::Puv::Input const& input);
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
+    load(::Puv::Input const& input);
 
     MCNAPI ~DimensionDataLoader();
     // NOLINTEND
@@ -53,5 +54,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

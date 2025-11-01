@@ -33,7 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static float const& DEFAULT_VALUE();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_90

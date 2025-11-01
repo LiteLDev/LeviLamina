@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-struct InvalidStreamIdentifierCauseConfig {
-};
+struct InvalidStreamIdentifierCauseConfig {};
 
-}
+} // namespace dcsctp

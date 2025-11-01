@@ -6,8 +6,8 @@ class CommandIntegerRange {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mMinValue;
-    ::ll::TypedStorage<4, 4, int> mMaxValue;
+    ::ll::TypedStorage<4, 4, int>  mMinValue;
+    ::ll::TypedStorage<4, 4, int>  mMaxValue;
     ::ll::TypedStorage<1, 1, bool> mInvert;
     ::ll::TypedStorage<1, 1, bool> mInclusive;
     // NOLINTEND
@@ -29,5 +29,4 @@ public:
 
     MCAPI void* $ctor(int minVal, int maxVal, bool invert, bool inclusive);
     // NOLINTEND
-
 };

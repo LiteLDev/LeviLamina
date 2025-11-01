@@ -13,4 +13,4 @@ namespace HasAutoSteppedFilterSystem {
 MCNAPI void registerSystems(::EntitySystems& entitySystems);
 // NOLINTEND
 
-}
+} // namespace HasAutoSteppedFilterSystem

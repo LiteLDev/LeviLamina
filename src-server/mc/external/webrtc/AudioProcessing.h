@@ -23,7 +23,7 @@ public:
     struct Config;
     class RuntimeSetting;
     // clang-format on
-    
+
     // AudioProcessing inner types define
     struct Config {
     public:
@@ -39,7 +39,7 @@ public:
         struct PreAmplifier;
         struct TransientSuppression;
         // clang-format on
-        
+
         // Config inner types define
         struct Pipeline {
         public:
@@ -48,7 +48,7 @@ public:
                 KAverageChannels = 0,
                 KUseFirstChannel = 1,
             };
-            
+
         public:
             // member variables
             // NOLINTBEGIN
@@ -57,15 +57,14 @@ public:
             ::ll::UntypedStorage<1, 1> mUnkf45569;
             ::ll::UntypedStorage<4, 4> mUnk7c87d2;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             Pipeline& operator=(Pipeline const&);
             Pipeline(Pipeline const&);
             Pipeline();
-        
         };
-        
+
         struct PreAmplifier {
         public:
             // member variables
@@ -73,22 +72,21 @@ public:
             ::ll::UntypedStorage<1, 1> mUnk278b7f;
             ::ll::UntypedStorage<4, 4> mUnkddaf90;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             PreAmplifier& operator=(PreAmplifier const&);
             PreAmplifier(PreAmplifier const&);
             PreAmplifier();
-        
         };
-        
+
         struct CaptureLevelAdjustment {
         public:
             // CaptureLevelAdjustment inner types declare
             // clang-format off
             struct AnalogMicGainEmulation;
             // clang-format on
-            
+
             // CaptureLevelAdjustment inner types define
             struct AnalogMicGainEmulation {
             public:
@@ -97,15 +95,14 @@ public:
                 ::ll::UntypedStorage<1, 1> mUnkb81166;
                 ::ll::UntypedStorage<4, 4> mUnkc5352a;
                 // NOLINTEND
-            
+
             public:
                 // prevent constructor by default
                 AnalogMicGainEmulation& operator=(AnalogMicGainEmulation const&);
                 AnalogMicGainEmulation(AnalogMicGainEmulation const&);
                 AnalogMicGainEmulation();
-            
             };
-            
+
         public:
             // member variables
             // NOLINTBEGIN
@@ -114,15 +111,14 @@ public:
             ::ll::UntypedStorage<4, 4> mUnk153346;
             ::ll::UntypedStorage<4, 8> mUnkd49fb4;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             CaptureLevelAdjustment& operator=(CaptureLevelAdjustment const&);
             CaptureLevelAdjustment(CaptureLevelAdjustment const&);
             CaptureLevelAdjustment();
-        
         };
-        
+
         struct HighPassFilter {
         public:
             // member variables
@@ -130,15 +126,14 @@ public:
             ::ll::UntypedStorage<1, 1> mUnka88627;
             ::ll::UntypedStorage<1, 1> mUnk5aa257;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             HighPassFilter& operator=(HighPassFilter const&);
             HighPassFilter(HighPassFilter const&);
             HighPassFilter();
-        
         };
-        
+
         struct EchoCanceller {
         public:
             // member variables
@@ -148,25 +143,24 @@ public:
             ::ll::UntypedStorage<1, 1> mUnk6cdf68;
             ::ll::UntypedStorage<1, 1> mUnk2171df;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             EchoCanceller& operator=(EchoCanceller const&);
             EchoCanceller(EchoCanceller const&);
             EchoCanceller();
-        
         };
-        
+
         struct NoiseSuppression {
         public:
             // NoiseSuppression inner types define
             enum class Level : int {
-                KLow = 0,
+                KLow      = 0,
                 KModerate = 1,
-                KHigh = 2,
+                KHigh     = 2,
                 KVeryHigh = 3,
             };
-            
+
         public:
             // member variables
             // NOLINTBEGIN
@@ -174,61 +168,59 @@ public:
             ::ll::UntypedStorage<4, 4> mUnk24b182;
             ::ll::UntypedStorage<1, 1> mUnke3c317;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             NoiseSuppression& operator=(NoiseSuppression const&);
             NoiseSuppression(NoiseSuppression const&);
             NoiseSuppression();
-        
         };
-        
+
         struct TransientSuppression {
         public:
             // member variables
             // NOLINTBEGIN
             ::ll::UntypedStorage<1, 1> mUnke6e9cd;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             TransientSuppression& operator=(TransientSuppression const&);
             TransientSuppression(TransientSuppression const&);
             TransientSuppression();
-        
         };
-        
+
         struct GainController1 {
         public:
             // GainController1 inner types declare
             // clang-format off
             struct AnalogGainController;
             // clang-format on
-            
+
             // GainController1 inner types define
             enum class Mode : int {
-                KAdaptiveAnalog = 0,
+                KAdaptiveAnalog  = 0,
                 KAdaptiveDigital = 1,
-                KFixedDigital = 2,
+                KFixedDigital    = 2,
             };
-            
+
             struct AnalogGainController {
             public:
                 // AnalogGainController inner types declare
                 // clang-format off
                 struct ClippingPredictor;
                 // clang-format on
-                
+
                 // AnalogGainController inner types define
                 struct ClippingPredictor {
                 public:
                     // ClippingPredictor inner types define
                     enum class Mode : int {
-                        KClippingEventPrediction = 0,
+                        KClippingEventPrediction            = 0,
                         KAdaptiveStepClippingPeakPrediction = 1,
-                        KFixedStepClippingPeakPrediction = 2,
+                        KFixedStepClippingPeakPrediction    = 2,
                     };
-                    
+
                 public:
                     // member variables
                     // NOLINTBEGIN
@@ -241,55 +233,52 @@ public:
                     ::ll::UntypedStorage<4, 4> mUnk3e59d8;
                     ::ll::UntypedStorage<1, 1> mUnka25776;
                     // NOLINTEND
-                
+
                 public:
                     // prevent constructor by default
                     ClippingPredictor& operator=(ClippingPredictor const&);
                     ClippingPredictor(ClippingPredictor const&);
                     ClippingPredictor();
-                
                 };
-                
+
             public:
                 // member variables
                 // NOLINTBEGIN
-                ::ll::UntypedStorage<1, 1> mUnk681a13;
-                ::ll::UntypedStorage<4, 4> mUnk181d6f;
-                ::ll::UntypedStorage<4, 4> mUnk2e6f45;
-                ::ll::UntypedStorage<1, 1> mUnkd13cea;
-                ::ll::UntypedStorage<4, 4> mUnk1014a4;
-                ::ll::UntypedStorage<4, 4> mUnk152fb6;
-                ::ll::UntypedStorage<4, 4> mUnk9c4d36;
+                ::ll::UntypedStorage<1, 1>  mUnk681a13;
+                ::ll::UntypedStorage<4, 4>  mUnk181d6f;
+                ::ll::UntypedStorage<4, 4>  mUnk2e6f45;
+                ::ll::UntypedStorage<1, 1>  mUnkd13cea;
+                ::ll::UntypedStorage<4, 4>  mUnk1014a4;
+                ::ll::UntypedStorage<4, 4>  mUnk152fb6;
+                ::ll::UntypedStorage<4, 4>  mUnk9c4d36;
                 ::ll::UntypedStorage<4, 32> mUnkc4a29c;
                 // NOLINTEND
-            
+
             public:
                 // prevent constructor by default
                 AnalogGainController& operator=(AnalogGainController const&);
                 AnalogGainController(AnalogGainController const&);
                 AnalogGainController();
-            
             };
-            
+
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<1, 1> mUnk39034a;
-            ::ll::UntypedStorage<4, 4> mUnkae39cc;
-            ::ll::UntypedStorage<4, 4> mUnk69ccfd;
-            ::ll::UntypedStorage<4, 4> mUnkb9580d;
-            ::ll::UntypedStorage<1, 1> mUnk9d8147;
+            ::ll::UntypedStorage<1, 1>  mUnk39034a;
+            ::ll::UntypedStorage<4, 4>  mUnkae39cc;
+            ::ll::UntypedStorage<4, 4>  mUnk69ccfd;
+            ::ll::UntypedStorage<4, 4>  mUnkb9580d;
+            ::ll::UntypedStorage<1, 1>  mUnk9d8147;
             ::ll::UntypedStorage<4, 60> mUnk1b2f78;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             GainController1& operator=(GainController1 const&);
             GainController1(GainController1 const&);
             GainController1();
-        
         };
-        
+
         struct GainController2 {
         public:
             // GainController2 inner types declare
@@ -298,7 +287,7 @@ public:
             struct FixedDigital;
             struct InputVolumeController;
             // clang-format on
-            
+
             // GainController2 inner types define
             struct InputVolumeController {
             public:
@@ -306,15 +295,14 @@ public:
                 // NOLINTBEGIN
                 ::ll::UntypedStorage<1, 1> mUnkb10c80;
                 // NOLINTEND
-            
+
             public:
                 // prevent constructor by default
                 InputVolumeController& operator=(InputVolumeController const&);
                 InputVolumeController(InputVolumeController const&);
                 InputVolumeController();
-            
             };
-            
+
             struct AdaptiveDigital {
             public:
                 // member variables
@@ -326,89 +314,85 @@ public:
                 ::ll::UntypedStorage<4, 4> mUnk56701e;
                 ::ll::UntypedStorage<4, 4> mUnk6f79c7;
                 // NOLINTEND
-            
+
             public:
                 // prevent constructor by default
                 AdaptiveDigital& operator=(AdaptiveDigital const&);
                 AdaptiveDigital(AdaptiveDigital const&);
                 AdaptiveDigital();
-            
             };
-            
+
             struct FixedDigital {
             public:
                 // member variables
                 // NOLINTBEGIN
                 ::ll::UntypedStorage<4, 4> mUnk4dfd34;
                 // NOLINTEND
-            
+
             public:
                 // prevent constructor by default
                 FixedDigital& operator=(FixedDigital const&);
                 FixedDigital(FixedDigital const&);
                 FixedDigital();
-            
             };
-            
+
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<1, 1> mUnk77bbe3;
-            ::ll::UntypedStorage<1, 1> mUnkf60b75;
+            ::ll::UntypedStorage<1, 1>  mUnk77bbe3;
+            ::ll::UntypedStorage<1, 1>  mUnkf60b75;
             ::ll::UntypedStorage<4, 24> mUnkbd6377;
-            ::ll::UntypedStorage<4, 4> mUnk342986;
+            ::ll::UntypedStorage<4, 4>  mUnk342986;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             GainController2& operator=(GainController2 const&);
             GainController2(GainController2 const&);
             GainController2();
-        
         };
-        
+
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 12> mUnkc32b4d;
-        ::ll::UntypedStorage<4, 8> mUnk72deaa;
+        ::ll::UntypedStorage<4, 8>  mUnk72deaa;
         ::ll::UntypedStorage<4, 20> mUnk67ae26;
-        ::ll::UntypedStorage<1, 2> mUnk6ee2da;
-        ::ll::UntypedStorage<1, 4> mUnke928c4;
+        ::ll::UntypedStorage<1, 2>  mUnk6ee2da;
+        ::ll::UntypedStorage<1, 4>  mUnke928c4;
         ::ll::UntypedStorage<4, 12> mUnk756123;
-        ::ll::UntypedStorage<1, 1> mUnk1237fa;
+        ::ll::UntypedStorage<1, 1>  mUnk1237fa;
         ::ll::UntypedStorage<4, 80> mUnke1742d;
         ::ll::UntypedStorage<4, 32> mUnk51a21f;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Config& operator=(Config const&);
         Config(Config const&);
         Config();
-    
     };
-    
+
     class RuntimeSetting {
     public:
         // RuntimeSetting inner types declare
         // clang-format off
         struct PlayoutAudioDeviceInfo;
         // clang-format on
-        
+
         // RuntimeSetting inner types define
         enum class Type : int {
-            KNotSpecified = 0,
-            KCapturePreGain = 1,
-            KCaptureCompressionGain = 2,
-            KCaptureFixedPostGain = 3,
-            KPlayoutVolumeChange = 4,
+            KNotSpecified                         = 0,
+            KCapturePreGain                       = 1,
+            KCaptureCompressionGain               = 2,
+            KCaptureFixedPostGain                 = 3,
+            KPlayoutVolumeChange                  = 4,
             KCustomRenderProcessingRuntimeSetting = 5,
-            KPlayoutAudioDeviceChange = 6,
-            KCapturePostGain = 7,
-            KCaptureOutputUsed = 8,
+            KPlayoutAudioDeviceChange             = 6,
+            KCapturePostGain                      = 7,
+            KCaptureOutputUsed                    = 8,
         };
-        
+
         struct PlayoutAudioDeviceInfo {
         public:
             // member variables
@@ -416,15 +400,14 @@ public:
             ::ll::UntypedStorage<4, 4> mUnk419420;
             ::ll::UntypedStorage<4, 4> mUnk76aa4a;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             PlayoutAudioDeviceInfo& operator=(PlayoutAudioDeviceInfo const&);
             PlayoutAudioDeviceInfo(PlayoutAudioDeviceInfo const&);
             PlayoutAudioDeviceInfo();
-        
         };
-        
+
         union U {
         public:
             // member variables
@@ -434,47 +417,46 @@ public:
             ::ll::UntypedStorage<1, 8> mUnk2e8ef6;
             ::ll::UntypedStorage<4, 8> mUnk9852fd;
             // NOLINTEND
-        
         };
+
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4> mUnk3684bd;
         ::ll::UntypedStorage<4, 8> mUnk7644ee;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         RuntimeSetting& operator=(RuntimeSetting const&);
         RuntimeSetting(RuntimeSetting const&);
         RuntimeSetting();
-    
     };
-    
+
     enum class Error : int {
-        KNoError = 0,
-        KUnspecifiedError = -1,
-        KCreationFailedError = -2,
-        KUnsupportedComponentError = -3,
-        KUnsupportedFunctionError = -4,
-        KNullPointerError = -5,
-        KBadParameterError = -6,
-        KBadSampleRateError = -7,
-        KBadDataLengthError = -8,
-        KBadNumberChannelsError = -9,
-        KFileError = -10,
+        KNoError                    = 0,
+        KUnspecifiedError           = -1,
+        KCreationFailedError        = -2,
+        KUnsupportedComponentError  = -3,
+        KUnsupportedFunctionError   = -4,
+        KNullPointerError           = -5,
+        KBadParameterError          = -6,
+        KBadSampleRateError         = -7,
+        KBadDataLengthError         = -8,
+        KBadNumberChannelsError     = -9,
+        KFileError                  = -10,
         KStreamParameterNotSetError = -11,
-        KNotEnabledError = -12,
-        KBadStreamParameterWarning = -13,
+        KNotEnabledError            = -12,
+        KBadStreamParameterWarning  = -13,
     };
-    
+
     enum class NativeRate : int {
-        KSampleRate8kHz = 8000,
+        KSampleRate8kHz  = 8000,
         KSampleRate16kHz = 16000,
         KSampleRate32kHz = 32000,
         KSampleRate48kHz = 48000,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -518,16 +500,28 @@ public:
     virtual bool PostRuntimeSetting(::webrtc::AudioProcessing::RuntimeSetting) = 0;
 
     // vIndex: 16
-    virtual int ProcessStream(short const* const, ::webrtc::StreamConfig const&, ::webrtc::StreamConfig const&, short* const) = 0;
+    virtual int
+    ProcessStream(short const* const, ::webrtc::StreamConfig const&, ::webrtc::StreamConfig const&, short* const) = 0;
 
     // vIndex: 15
-    virtual int ProcessStream(float const* const*, ::webrtc::StreamConfig const&, ::webrtc::StreamConfig const&, float* const*) = 0;
+    virtual int
+    ProcessStream(float const* const*, ::webrtc::StreamConfig const&, ::webrtc::StreamConfig const&, float* const*) = 0;
 
     // vIndex: 18
-    virtual int ProcessReverseStream(short const* const, ::webrtc::StreamConfig const&, ::webrtc::StreamConfig const&, short* const) = 0;
+    virtual int ProcessReverseStream(
+        short const* const,
+        ::webrtc::StreamConfig const&,
+        ::webrtc::StreamConfig const&,
+        short* const
+    ) = 0;
 
     // vIndex: 17
-    virtual int ProcessReverseStream(float const* const*, ::webrtc::StreamConfig const&, ::webrtc::StreamConfig const&, float* const*) = 0;
+    virtual int ProcessReverseStream(
+        float const* const*,
+        ::webrtc::StreamConfig const&,
+        ::webrtc::StreamConfig const&,
+        float* const*
+    ) = 0;
 
     // vIndex: 19
     virtual int AnalyzeReverseStream(float const* const*, ::webrtc::StreamConfig const&) = 0;
@@ -577,7 +571,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

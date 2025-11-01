@@ -15,11 +15,11 @@ class TimerDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk6fb0ff;
-    ::ll::UntypedStorage<1, 1> mUnk1be68c;
-    ::ll::UntypedStorage<4, 8> mUnk219ada;
+    ::ll::UntypedStorage<1, 1>   mUnk6fb0ff;
+    ::ll::UntypedStorage<1, 1>   mUnk1be68c;
+    ::ll::UntypedStorage<4, 8>   mUnk219ada;
     ::ll::UntypedStorage<8, 104> mUnk941273;
-    ::ll::UntypedStorage<8, 24> mUnkb2a6e5;
+    ::ll::UntypedStorage<8, 24>  mUnkb2a6e5;
     // NOLINTEND
 
 public:
@@ -39,7 +39,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TimerDefinition>>& root);
+    MCNAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TimerDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -47,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

@@ -11,17 +11,24 @@ public:
     // clang-format off
     struct TagDeathCauseMessageType;
     // clang-format on
-    
+
     // DeathInfoPacketPayload inner types define
-    struct TagDeathCauseMessageType {
-    };
-    
-    using DeathCauseMessageType = ::TypeWrapper<::std::pair<::std::string, ::std::vector<::std::string>>, ::DeathInfoPacketPayload::TagDeathCauseMessageType>;
-    
+    struct TagDeathCauseMessageType {};
+
+    using DeathCauseMessageType = ::TypeWrapper<
+        ::std::pair<::std::string, ::std::vector<::std::string>>,
+        ::DeathInfoPacketPayload::TagDeathCauseMessageType>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::TypeWrapper<::std::pair<::std::string, ::std::vector<::std::string>>, ::DeathInfoPacketPayload::TagDeathCauseMessageType>> mDeathCauseMessage;
+    ::ll::TypedStorage<
+        8,
+        56,
+        ::TypeWrapper<
+            ::std::pair<::std::string, ::std::vector<::std::string>>,
+            ::DeathInfoPacketPayload::TagDeathCauseMessageType>>
+        mDeathCauseMessage;
     // NOLINTEND
 
 public:
@@ -43,5 +50,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

@@ -105,5 +105,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

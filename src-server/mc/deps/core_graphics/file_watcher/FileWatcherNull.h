@@ -14,7 +14,6 @@ public:
     // vIndex: 0
     virtual ~FileWatcherNull() /*override*/ = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace mce

@@ -17,5 +17,4 @@ public:
 
     MCAPI void finalizeComponentData(::BlockType& blockType);
     // NOLINTEND
-
 };

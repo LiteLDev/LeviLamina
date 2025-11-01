@@ -118,7 +118,8 @@ public:
 
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle preloadArchive(::Core::Path const& packRelativePath) const;
 
-    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle> preloadPath(::Core::Path const& packRelativePath) const;
+    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
+    preloadPath(::Core::Path const& packRelativePath) const;
     // NOLINTEND
 
 public:
@@ -168,5 +169,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

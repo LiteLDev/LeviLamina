@@ -34,19 +34,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StunPort(::rtc::Thread* thread, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ushort min_port, ushort max_port, ::std::string_view username, ::std::string_view password, ::std::set<::rtc::SocketAddress> const& servers, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports, ::webrtc::FieldTrialsView const* field_trials);
+    MCNAPI StunPort(
+        ::rtc::Thread*                                                                thread,
+        ::rtc::PacketSocketFactory*                                                   factory,
+        ::rtc::Network const*                                                         network,
+        ushort                                                                        min_port,
+        ushort                                                                        max_port,
+        ::std::string_view                                                            username,
+        ::std::string_view                                                            password,
+        ::std::set<::rtc::SocketAddress> const&                                       servers,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports,
+        ::webrtc::FieldTrialsView const*                                              field_trials
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::cricket::StunPort> Create(::rtc::Thread* thread, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ushort min_port, ushort max_port, ::std::string_view username, ::std::string_view password, ::std::set<::rtc::SocketAddress> const& servers, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports, ::std::optional<int> stun_keepalive_interval, ::webrtc::FieldTrialsView const* field_trials);
+    MCNAPI static ::std::unique_ptr<::cricket::StunPort> Create(
+        ::rtc::Thread*                                                                thread,
+        ::rtc::PacketSocketFactory*                                                   factory,
+        ::rtc::Network const*                                                         network,
+        ushort                                                                        min_port,
+        ushort                                                                        max_port,
+        ::std::string_view                                                            username,
+        ::std::string_view                                                            password,
+        ::std::set<::rtc::SocketAddress> const&                                       servers,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports,
+        ::std::optional<int>                                                          stun_keepalive_interval,
+        ::webrtc::FieldTrialsView const*                                              field_trials
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::Thread* thread, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ushort min_port, ushort max_port, ::std::string_view username, ::std::string_view password, ::std::set<::rtc::SocketAddress> const& servers, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports, ::webrtc::FieldTrialsView const* field_trials);
+    MCNAPI void* $ctor(
+        ::rtc::Thread*                                                                thread,
+        ::rtc::PacketSocketFactory*                                                   factory,
+        ::rtc::Network const*                                                         network,
+        ushort                                                                        min_port,
+        ushort                                                                        max_port,
+        ::std::string_view                                                            username,
+        ::std::string_view                                                            password,
+        ::std::set<::rtc::SocketAddress> const&                                       servers,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports,
+        ::webrtc::FieldTrialsView const*                                              field_trials
+    );
     // NOLINTEND
 
 public:
@@ -62,7 +96,6 @@ public:
 
     MCNAPI static void** $vftableForPortInterface();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

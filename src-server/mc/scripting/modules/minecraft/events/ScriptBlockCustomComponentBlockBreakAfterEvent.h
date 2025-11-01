@@ -19,17 +19,25 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockCustomComponentBlockBreakAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent, public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
+struct ScriptBlockCustomComponentBlockBreakAfterEvent
+: public ::ScriptModuleMinecraft::ScriptBlockEvent,
+  public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
 public:
     // ScriptBlockCustomComponentBlockBreakAfterEvent inner types define
-    using IntermediateStorage = ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage;
-    
+    using IntermediateStorage =
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mEntity;
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>> mDestructionCauseBlock;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> mPermutation;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mEntity;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
+            mDestructionCauseBlock;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
+        mPermutation;
     // NOLINTEND
 
 public:
@@ -40,11 +48,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentBlockBreakAfterEvent(::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent const&);
+    MCAPI ScriptBlockCustomComponentBlockBreakAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent const&
+    );
 
-    MCAPI ScriptBlockCustomComponentBlockBreakAfterEvent(::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent&&);
+    MCAPI ScriptBlockCustomComponentBlockBreakAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent&&
+    );
 
-    MCAPI ScriptBlockCustomComponentBlockBreakAfterEvent(::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage const& eventData, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptBlockCustomComponentBlockBreakAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                             scope
+    );
 
     MCAPI ~ScriptBlockCustomComponentBlockBreakAfterEvent();
     // NOLINTEND
@@ -62,7 +77,10 @@ public:
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage const& eventData, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                             scope
+    );
     // NOLINTEND
 
 public:
@@ -70,7 +88,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -20,5 +20,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
     // NOLINTEND
-
 };

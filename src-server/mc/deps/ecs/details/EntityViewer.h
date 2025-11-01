@@ -4,8 +4,7 @@
 
 namespace details {
 
-template<typename T0>
-struct EntityViewer {
-};
+template <typename T0>
+struct EntityViewer {};
 
-}
+} // namespace details

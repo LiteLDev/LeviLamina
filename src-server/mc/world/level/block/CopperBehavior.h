@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::CopperBlockSet const&> mBlockSet;
-    ::ll::TypedStorage<1, 1, ::CopperType> mType;
-    ::ll::TypedStorage<1, 1, bool> mIsWaxed;
+    ::ll::TypedStorage<1, 1, ::CopperType>            mType;
+    ::ll::TypedStorage<1, 1, bool>                    mIsWaxed;
     // NOLINTEND
 
 public:
@@ -24,5 +24,4 @@ public:
     CopperBehavior& operator=(CopperBehavior const&);
     CopperBehavior(CopperBehavior const&);
     CopperBehavior();
-
 };

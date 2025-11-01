@@ -7,7 +7,8 @@
 
 namespace Editor::Network {
 
-class BlockPaletteActivePaletteChangedPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::BlockPaletteActivePaletteChangedPayload> {
+class BlockPaletteActivePaletteChangedPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::BlockPaletteActivePaletteChangedPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,7 +39,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

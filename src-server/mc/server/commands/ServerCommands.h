@@ -14,7 +14,12 @@ namespace ServerCommands {
 // NOLINTBEGIN
 MCNAPI void setupCommonEnums(::CommandRegistry& registry);
 
-MCNAPI void setupStandardServer(::Minecraft& server, ::std::string const& networkCommands, ::std::string const& networkTestCommands, ::PermissionsFile* permissionsFile);
+MCNAPI void setupStandardServer(
+    ::Minecraft&         server,
+    ::std::string const& networkCommands,
+    ::std::string const& networkTestCommands,
+    ::PermissionsFile*   permissionsFile
+);
 // NOLINTEND
 
-}
+} // namespace ServerCommands

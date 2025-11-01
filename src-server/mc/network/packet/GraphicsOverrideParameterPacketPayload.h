@@ -15,9 +15,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<float, ::Vec3>> mKeyframes;
-    ::ll::TypedStorage<8, 32, ::std::string> mBiomeID;
-    ::ll::TypedStorage<1, 1, ::GraphicsOverrideParameterType> mParameterId;
-    ::ll::TypedStorage<1, 1, bool> mResetParameter;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mBiomeID;
+    ::ll::TypedStorage<1, 1, ::GraphicsOverrideParameterType>      mParameterId;
+    ::ll::TypedStorage<1, 1, bool>                                 mResetParameter;
     // NOLINTEND
 
 public:
@@ -47,5 +47,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

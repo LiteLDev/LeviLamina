@@ -12,8 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::LavaFlammable> mLavaFlammable;
-    ::ll::TypedStorage<2, 2, ::FlameOdds> mCatchChanceModifier;
-    ::ll::TypedStorage<2, 2, ::BurnOdds> mDestroyChanceModifier;
+    ::ll::TypedStorage<2, 2, ::FlameOdds>     mCatchChanceModifier;
+    ::ll::TypedStorage<2, 2, ::BurnOdds>      mDestroyChanceModifier;
     // NOLINTEND
-
 };

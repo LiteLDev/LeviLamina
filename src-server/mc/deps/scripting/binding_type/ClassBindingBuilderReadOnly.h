@@ -4,8 +4,7 @@
 
 namespace Scripting {
 
-template<typename T0>
-class ClassBindingBuilderReadOnly {
-};
+template <typename T0>
+class ClassBindingBuilderReadOnly {};
 
-}
+} // namespace Scripting

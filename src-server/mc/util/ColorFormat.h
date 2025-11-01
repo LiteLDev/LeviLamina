@@ -77,4 +77,4 @@ MCNAPI ::std::string const& WHITE();
 MCNAPI ::std::string const& YELLOW();
 // NOLINTEND
 
-}
+} // namespace ColorFormat

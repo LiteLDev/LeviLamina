@@ -36,7 +36,7 @@ public:
     // clang-format off
     struct ComparisonOptions;
     // clang-format on
-    
+
     // ItemStackBase inner types define
     struct ComparisonOptions {
     public:
@@ -46,27 +46,26 @@ public:
         ::ll::TypedStorage<1, 1, bool> mCompareRelevantUserData;
         ::ll::TypedStorage<1, 1, bool> mCompareDamage;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::Item>> mItem;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mUserData;
-    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
-    ::ll::TypedStorage<2, 2, short> mAuxValue;
-    ::ll::TypedStorage<1, 1, uchar> mCount;
-    ::ll::TypedStorage<1, 1, bool> mValid_DeprecatedSeeComment;
-    ::ll::TypedStorage<1, 1, bool> mShowPickUp;
-    ::ll::TypedStorage<1, 1, bool> mWasPickedUp;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::Item>>                       mItem;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>>        mUserData;
+    ::ll::TypedStorage<8, 8, ::Block const*>                          mBlock;
+    ::ll::TypedStorage<2, 2, short>                                   mAuxValue;
+    ::ll::TypedStorage<1, 1, uchar>                                   mCount;
+    ::ll::TypedStorage<1, 1, bool>                                    mValid_DeprecatedSeeComment;
+    ::ll::TypedStorage<1, 1, bool>                                    mShowPickUp;
+    ::ll::TypedStorage<1, 1, bool>                                    mWasPickedUp;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mPickupTime;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockType const*>> mCanPlaceOn;
-    ::ll::TypedStorage<8, 8, uint64> mCanPlaceOnHash;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockType const*>> mCanDestroy;
-    ::ll::TypedStorage<8, 8, uint64> mCanDestroyHash;
-    ::ll::TypedStorage<8, 8, ::Tick> mBlockingTick;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemInstance>> mChargedItem;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockType const*>>      mCanPlaceOn;
+    ::ll::TypedStorage<8, 8, uint64>                                  mCanPlaceOnHash;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockType const*>>      mCanDestroy;
+    ::ll::TypedStorage<8, 8, uint64>                                  mCanDestroyHash;
+    ::ll::TypedStorage<8, 8, ::Tick>                                  mBlockingTick;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemInstance>>       mChargedItem;
     // NOLINTEND
 
 public:
@@ -161,7 +160,8 @@ public:
 
     MCAPI ::std::unique_ptr<::DynamicProperties> getDynamicProperties() const;
 
-    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
+    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
+    getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
 
     MCAPI ::HashedString const& getFullNameHash() const;
 
@@ -221,9 +221,13 @@ public:
 
     MCAPI bool isNull() const;
 
-    MCAPI bool isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds) const;
+    MCAPI bool
+    isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds) const;
 
-    MCAPI bool isOneOfInstances(::std::initializer_list<::std::reference_wrapper<::HashedString const>> items, bool useItemLookup) const;
+    MCAPI bool isOneOfInstances(
+        ::std::initializer_list<::std::reference_wrapper<::HashedString const>> items,
+        bool                                                                    useItemLookup
+    ) const;
 
     MCAPI bool isPotionItem() const;
 
@@ -267,7 +271,11 @@ public:
 
     MCAPI void setDamageValue(short newDamage);
 
-    MCAPI void setDynamicProperty(::std::string const& key, ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value, ::std::string const& collectionName);
+    MCAPI void setDynamicProperty(
+        ::std::string const&                                              key,
+        ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value,
+        ::std::string const&                                              collectionName
+    );
 
     MCAPI void setRepairCost(int cost);
 
@@ -281,7 +289,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _loadBlocksForCanPlaceOnCanDestroy(::std::vector<::BlockType const*>& blockList, ::std::string const& blockName);
+    MCAPI static bool
+    _loadBlocksForCanPlaceOnCanDestroy(::std::vector<::BlockType const*>& blockList, ::std::string const& blockName);
     // NOLINTEND
 
 public:
@@ -353,5 +362,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

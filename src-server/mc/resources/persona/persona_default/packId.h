@@ -15,4 +15,4 @@ MCNAPI ::mce::UUID const& PERSONA_BUILTIN_PACK();
 MCNAPI ::mce::UUID const& PERSONA_TESTING_PACK();
 // NOLINTEND
 
-}
+} // namespace personaDefault::packId

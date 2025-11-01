@@ -13,4 +13,4 @@ namespace SendPacketsSystem {
 MCNAPI ::TickingSystemWithInfo createSendPacketsSystem();
 // NOLINTEND
 
-}
+} // namespace SendPacketsSystem

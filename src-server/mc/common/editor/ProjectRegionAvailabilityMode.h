@@ -5,7 +5,7 @@
 namespace Editor {
 
 enum class ProjectRegionAvailabilityMode : int {
-    Loaded = 0,
+    Loaded  = 0,
     Ticking = 1,
 };
 

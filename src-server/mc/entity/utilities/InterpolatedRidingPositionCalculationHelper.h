@@ -25,9 +25,31 @@ struct InterpolatedRidingPositionCalculationHelper {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Vec3 getHorseInterpolatedRidingOffset(::StrictEntityContext const& entity, ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>, ::StandAnimationComponent const> const& horses, ::ViewT<::StrictEntityContext, ::ActorRotationComponent const, ::RenderRotationComponent const, ::StateVectorComponent const, ::ActorDataFlagComponent const, ::ActorDataSeatOffsetComponent const> const& commonData, float alpha);
+    MCNAPI static ::Vec3 getHorseInterpolatedRidingOffset(
+        ::StrictEntityContext const&                                                                            entity,
+        ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>, ::StandAnimationComponent const> const& horses,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::ActorRotationComponent const,
+            ::RenderRotationComponent const,
+            ::StateVectorComponent const,
+            ::ActorDataFlagComponent const,
+            ::ActorDataSeatOffsetComponent const> const& commonData,
+        float                                            alpha
+    );
 
-    MCNAPI static float getInterpolatedBodyRot(::StrictEntityContext const& entity, ::ViewT<::StrictEntityContext, ::ActorRotationComponent const, ::RenderRotationComponent const, ::StateVectorComponent const, ::ActorDataFlagComponent const, ::ActorDataSeatOffsetComponent const> const& commonData, ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::MobBodyRotationComponent const> const& mobs, float alpha);
+    MCNAPI static float getInterpolatedBodyRot(
+        ::StrictEntityContext const& entity,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::ActorRotationComponent const,
+            ::RenderRotationComponent const,
+            ::StateVectorComponent const,
+            ::ActorDataFlagComponent const,
+            ::ActorDataSeatOffsetComponent const> const& commonData,
+        ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::MobBodyRotationComponent const> const& mobs,
+        float                                                                                                  alpha
+    );
     // NOLINTEND
 
 public:
@@ -35,5 +57,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Vec3 const& BASE_OFFSET();
     // NOLINTEND
-
 };

@@ -23,7 +23,12 @@ public:
     virtual ~EditorPlayerExportProjectServiceProvider() = default;
 
     // vIndex: 1
-    virtual void beginExportProject(::WeakEntityRef, ::Editor::GameOptions const&, ::Editor::WorldType const, ::std::function<void(::Editor::ExportResult const&, ::std::string)>) = 0;
+    virtual void beginExportProject(
+        ::WeakEntityRef,
+        ::Editor::GameOptions const&,
+        ::Editor::WorldType const,
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)>
+    ) = 0;
 
     // vIndex: 2
     virtual bool canExportProject() = 0;
@@ -37,7 +42,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

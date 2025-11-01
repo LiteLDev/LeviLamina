@@ -10,8 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::ContainerID> mContainerId;
-    ::ll::TypedStorage<4, 4, int> mId;
-    ::ll::TypedStorage<4, 4, int> mValue;
+    ::ll::TypedStorage<4, 4, int>           mId;
+    ::ll::TypedStorage<4, 4, int>           mValue;
     // NOLINTEND
-
 };

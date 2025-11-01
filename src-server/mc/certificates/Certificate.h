@@ -9,10 +9,10 @@ class Certificate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 136, ::UnverifiedCertificate> mUnverifiedCertificate;
+    ::ll::TypedStorage<8, 136, ::UnverifiedCertificate>        mUnverifiedCertificate;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Certificate>> mParentCertificate;
-    ::ll::TypedStorage<1, 1, bool> mIsValid;
-    ::ll::TypedStorage<1, 1, bool> mIsSelfSigned;
+    ::ll::TypedStorage<1, 1, bool>                             mIsValid;
+    ::ll::TypedStorage<1, 1, bool>                             mIsSelfSigned;
     // NOLINTEND
 
 public:
@@ -47,5 +47,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

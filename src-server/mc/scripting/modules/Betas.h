@@ -13,4 +13,4 @@ namespace ScriptLiveEventsUtilities::Betas {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-}
+} // namespace ScriptLiveEventsUtilities::Betas

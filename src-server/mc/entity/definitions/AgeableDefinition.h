@@ -16,12 +16,12 @@ class AgeableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk207183;
-    ::ll::UntypedStorage<8, 64> mUnk1793dc;
-    ::ll::UntypedStorage<8, 24> mUnk655e2d;
-    ::ll::UntypedStorage<8, 24> mUnk6f2e03;
+    ::ll::UntypedStorage<4, 4>   mUnk207183;
+    ::ll::UntypedStorage<8, 64>  mUnk1793dc;
+    ::ll::UntypedStorage<8, 24>  mUnk655e2d;
+    ::ll::UntypedStorage<8, 24>  mUnk6f2e03;
     ::ll::UntypedStorage<8, 104> mUnka52bbd;
-    ::ll::UntypedStorage<8, 16> mUnkdc85de;
+    ::ll::UntypedStorage<8, 16>  mUnkdc85de;
     // NOLINTEND
 
 public:
@@ -45,7 +45,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AgeableDefinition>>& root);
+    MCNAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AgeableDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -53,5 +54,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

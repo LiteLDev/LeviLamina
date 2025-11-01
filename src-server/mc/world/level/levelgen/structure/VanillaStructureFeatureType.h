@@ -45,4 +45,4 @@ MCAPI ::HashedString const& Village();
 MCAPI ::HashedString const& WoodlandMansion();
 // NOLINTEND
 
-}
+} // namespace VanillaStructureFeatureType

@@ -13,4 +13,4 @@ namespace UpdateMovingFlagSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace UpdateMovingFlagSystem

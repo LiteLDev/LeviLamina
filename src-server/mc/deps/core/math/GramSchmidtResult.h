@@ -18,7 +18,6 @@ public:
     GramSchmidtResult& operator=(GramSchmidtResult const&);
     GramSchmidtResult(GramSchmidtResult const&);
     GramSchmidtResult();
-
 };
 
-}
+} // namespace mce::MathUtility

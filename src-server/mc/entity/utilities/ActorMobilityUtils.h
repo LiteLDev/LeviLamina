@@ -49,21 +49,69 @@ struct VehicleInputIntentComponent;
 namespace ActorMobilityUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool canJump(::ActorDataFlagComponent const& actorData, ::IConstBlockSource const& region, ::StateVectorComponent const& stateVector, ::AABBShapeComponent const& aabbShape, ::GetCollisionShapeInterface const& collisionShape);
+MCAPI bool canJump(
+    ::ActorDataFlagComponent const&     actorData,
+    ::IConstBlockSource const&          region,
+    ::StateVectorComponent const&       stateVector,
+    ::AABBShapeComponent const&         aabbShape,
+    ::GetCollisionShapeInterface const& collisionShape
+);
 
-MCAPI void endJump(::StrictEntityContext const& context, ::StateVectorComponent const& stateVectorComponent, ::ActorDataJumpDurationComponent& actorDataJumpDurationComponent, ::ActorDataDirtyFlagsComponent& actorDataDirtyFlags, ::MobJumpComponent& mobJumpComponent, ::VehicleComponent const* vehicleComponent, ::ViewT<::StrictEntityContext, ::Include<::ParrotFlagComponent>, ::PassengerComponent const> parrotPassengers, ::EntityModifier<::ExitFromPassengerFlagComponent, ::StopRidingRequestComponent, ::MobIsJumpingFlagComponent>& modifier);
+MCAPI void endJump(
+    ::StrictEntityContext const&      context,
+    ::StateVectorComponent const&     stateVectorComponent,
+    ::ActorDataJumpDurationComponent& actorDataJumpDurationComponent,
+    ::ActorDataDirtyFlagsComponent&   actorDataDirtyFlags,
+    ::MobJumpComponent&               mobJumpComponent,
+    ::VehicleComponent const*         vehicleComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::ParrotFlagComponent>, ::PassengerComponent const> parrotPassengers,
+    ::EntityModifier<::ExitFromPassengerFlagComponent, ::StopRidingRequestComponent, ::MobIsJumpingFlagComponent>&
+        modifier
+);
 
-MCAPI float getBrightness(::StrictEntityContext const& context, float alpha, ::IConstBlockSource const& region, ::AABBShapeComponent const& aabbShapeComponent, ::OffsetsComponent const& offsetsComponent, ::StateVectorComponent const& stateVectorComponent, ::ViewT<::StrictEntityContext, ::Include<::BlazeFlagComponent>> blazeView, ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>> lavaSlimeView);
+MCAPI float getBrightness(
+    ::StrictEntityContext const&                                        context,
+    float                                                               alpha,
+    ::IConstBlockSource const&                                          region,
+    ::AABBShapeComponent const&                                         aabbShapeComponent,
+    ::OffsetsComponent const&                                           offsetsComponent,
+    ::StateVectorComponent const&                                       stateVectorComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::BlazeFlagComponent>>     blazeView,
+    ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>> lavaSlimeView
+);
 
-MCAPI bool isImmobile(::StrictEntityContext const& context, ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>>* actorView, ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::MovementAttributesComponent const, ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>>* mobView, ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::VehicleInputIntentComponent const>, ::Include<::OnGroundFlagComponent, ::HorseFlagComponent>, ::Exclude<::MobAllowStandSlidingFlagComponent, ::MobIsJumpingFlagComponent>>* horseView, ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>>* onlyHorseView, ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const>* playerView);
+MCAPI bool isImmobile(
+    ::StrictEntityContext const& context,
+    ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>>*
+        actorView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::MobFlagComponent>,
+        ::MovementAttributesComponent const,
+        ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>>* mobView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::ActorDataFlagComponent const,
+        ::Optional<::VehicleInputIntentComponent const>,
+        ::Include<::OnGroundFlagComponent, ::HorseFlagComponent>,
+        ::Exclude<::MobAllowStandSlidingFlagComponent, ::MobIsJumpingFlagComponent>>*               horseView,
+    ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>>*                                onlyHorseView,
+    ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const>* playerView
+);
 
-MCAPI bool isInLava(::IConstBlockSource const& region, ::AABBShapeComponent const& aabb, ::SubBBsComponent const& subBBs);
+MCAPI bool
+isInLava(::IConstBlockSource const& region, ::AABBShapeComponent const& aabb, ::SubBBsComponent const& subBBs);
 
-MCAPI bool isUnderLiquid(::Vec3 const& actorPos, ::Vec3 const& actorHeadPos, ::IConstBlockSource const& region, ::MaterialType blockType);
+MCAPI bool isUnderLiquid(
+    ::Vec3 const&              actorPos,
+    ::Vec3 const&              actorHeadPos,
+    ::IConstBlockSource const& region,
+    ::MaterialType             blockType
+);
 
 MCAPI bool onHoverableBlock(::IConstBlockSource const& region, ::Vec3 const& pos, ::AABB const& aabb);
 
 MCAPI bool shouldApplyLava(::IConstBlockSource const& region, ::EntityContext const& entity);
 // NOLINTEND
 
-}
+} // namespace ActorMobilityUtils

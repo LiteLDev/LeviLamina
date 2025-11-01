@@ -4,12 +4,12 @@
 
 enum class StoneSlabType : int {
     SmoothStone = 0,
-    Sandstone = 1,
-    Wood = 2,
+    Sandstone   = 1,
+    Wood        = 2,
     Cobblestone = 3,
-    Brick = 4,
-    StoneBrick = 5,
-    Quartz = 6,
+    Brick       = 4,
+    StoneBrick  = 5,
+    Quartz      = 6,
     NetherBrick = 7,
-    Count = 8,
+    Count       = 8,
 };

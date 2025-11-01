@@ -23,5 +23,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void lock();
     // NOLINTEND
-
 };

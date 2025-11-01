@@ -35,5 +35,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::mce::UUID& ModuleUUID();
     // NOLINTEND
-
 };

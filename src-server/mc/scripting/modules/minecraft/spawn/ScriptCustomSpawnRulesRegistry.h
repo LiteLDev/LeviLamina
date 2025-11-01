@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptServerStateMonitor.h"
-#include "mc/world/level/spawn/EntitySpawnReason.h"
+#include "mc/world/level/chunk/EntitySpawnReason.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -47,9 +47,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::InvalidArgumentError> registerEntitySpawnCallback(::std::string const& id, ::std::function<bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)> callback);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
+        ::Scripting::InvalidArgumentError>
+    registerEntitySpawnCallback(
+        ::std::string const& id,
+        ::std::function<bool(
+            ::br::spawn::EntityType const&,
+            ::BlockSource&,
+            ::br::spawn::EntitySpawnReason&,
+            ::BlockPos,
+            ::IRandom&
+        )>                   callback
+    );
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::InvalidArgumentError> registerObstructionCallback(::std::string const& id, ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> callback);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
+        ::Scripting::InvalidArgumentError>
+    registerObstructionCallback(
+        ::std::string const&                                                                id,
+        ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> callback
+    );
     // NOLINTEND
 
 public:
@@ -63,7 +85,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

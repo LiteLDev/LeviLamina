@@ -16,7 +16,6 @@ public:
     MouseButtonEventData& operator=(MouseButtonEventData const&);
     MouseButtonEventData(MouseButtonEventData const&);
     MouseButtonEventData();
-
 };
 
-}
+} // namespace Editor::Widgets

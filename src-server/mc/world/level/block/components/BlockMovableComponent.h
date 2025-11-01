@@ -11,7 +11,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::MovementType> mMovementType;
-    ::ll::TypedStorage<1, 1, ::StickyType> mStickyType;
+    ::ll::TypedStorage<1, 1, ::StickyType>   mStickyType;
     // NOLINTEND
-
 };

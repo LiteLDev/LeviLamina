@@ -16,4 +16,4 @@ MCNAPI ::std::function<::std::optional<int>(::BlockType const&, int)>& CreakingH
 MCNAPI ::std::function<::Block const*(::BlockType const&, int, int)>& CreakingHeartStateSetter();
 // NOLINTEND
 
-}
+} // namespace CreakingHeartConversionUtils

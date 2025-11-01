@@ -16,7 +16,6 @@ public:
     DetectRedstone& operator=(DetectRedstone const&);
     DetectRedstone(DetectRedstone const&);
     DetectRedstone();
-
 };
 
-}
+} // namespace AgentComponents::Actions

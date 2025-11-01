@@ -24,10 +24,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 13
-    virtual int generateHeightAtPosition(::BlockPos const& pos, ::Dimension& dim, ::BlockVolume& box, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache) const /*override*/;
+    virtual int generateHeightAtPosition(
+        ::BlockPos const&                                                          pos,
+        ::Dimension&                                                               dim,
+        ::BlockVolume&                                                             box,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
+    ) const /*override*/;
 
     // vIndex: 14
-    virtual ::Block const* getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
+    virtual ::Block const*
+    getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
 
     // vIndex: 15
     virtual ::Block const& getBeardStabilizeBlock(::Block const& foundationBlock) const /*override*/;
@@ -42,15 +48,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addPieces(::BlockPos position, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, ::JigsawStructureRegistry& pools, ::Dimension& dimension);
+    MCAPI static void addPieces(
+        ::BlockPos                                          position,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        ::JigsawStructureRegistry&                          pools,
+        ::Dimension&                                        dimension
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $generateHeightAtPosition(::BlockPos const& pos, ::Dimension& dim, ::BlockVolume& box, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache) const;
+    MCAPI int $generateHeightAtPosition(
+        ::BlockPos const&                                                          pos,
+        ::Dimension&                                                               dim,
+        ::BlockVolume&                                                             box,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
+    ) const;
 
-    MCFOLD ::Block const* $getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD ::Block const*
+    $getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
 
@@ -62,5 +80,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

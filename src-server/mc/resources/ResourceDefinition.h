@@ -8,4 +8,4 @@ namespace ResourceDefinition {
 MCNAPI ::std::string const& VANILLA_NAMESPACE();
 // NOLINTEND
 
-}
+} // namespace ResourceDefinition

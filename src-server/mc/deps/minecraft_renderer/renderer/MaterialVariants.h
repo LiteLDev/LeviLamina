@@ -15,5 +15,4 @@ public:
     MaterialVariants& operator=(MaterialVariants const&);
     MaterialVariants(MaterialVariants const&);
     MaterialVariants();
-
 };

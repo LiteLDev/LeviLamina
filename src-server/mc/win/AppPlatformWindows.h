@@ -16,11 +16,11 @@ class AppPlatformWindows : public ::AppPlatform {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk387a7f;
-    ::ll::UntypedStorage<8, 32> mUnk93a477;
-    ::ll::UntypedStorage<8, 32> mUnk136df8;
-    ::ll::UntypedStorage<8, 32> mUnk4a65eb;
-    ::ll::UntypedStorage<8, 32> mUnkb28730;
+    ::ll::UntypedStorage<1, 1>   mUnk387a7f;
+    ::ll::UntypedStorage<8, 32>  mUnk93a477;
+    ::ll::UntypedStorage<8, 32>  mUnk136df8;
+    ::ll::UntypedStorage<8, 32>  mUnk4a65eb;
+    ::ll::UntypedStorage<8, 32>  mUnkb28730;
     ::ll::UntypedStorage<8, 616> mUnkfe07cc;
     // NOLINTEND
 
@@ -73,7 +73,8 @@ public:
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
     // vIndex: 71
-    virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const /*override*/;
+    virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const
+        /*override*/;
 
     // vIndex: 228
     virtual bool is24HourTimeFormat() const /*override*/;
@@ -166,5 +167,4 @@ public:
 
     MCNAPI static void** $vftableForISecureStorageKeySystem();
     // NOLINTEND
-
 };

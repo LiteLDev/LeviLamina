@@ -40,13 +40,18 @@ public:
     virtual void onError(::Scripting::ContextId, ::std::string_view) const /*override*/;
 
     // vIndex: 4
-    virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const /*override*/;
+    virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const
+        /*override*/;
 
     // vIndex: 5
-    virtual bool shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const /*override*/;
+    virtual bool
+    shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const
+        /*override*/;
 
     // vIndex: 6
-    virtual void onPromiseRejection(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&, bool) const /*override*/;
+    virtual void
+    onPromiseRejection(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&, bool) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -54,5 +59,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

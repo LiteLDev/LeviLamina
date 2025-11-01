@@ -4,8 +4,7 @@
 
 namespace FeatureLoading {
 
-template<typename T0>
-struct ConcreteFeatureHolder {
-};
+template <typename T0>
+struct ConcreteFeatureHolder {};
 
-}
+} // namespace FeatureLoading

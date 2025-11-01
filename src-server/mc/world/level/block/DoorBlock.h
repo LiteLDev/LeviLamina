@@ -29,30 +29,30 @@ class DoorBlock : public ::BlockType {
 public:
     // DoorBlock inner types define
     enum class DoorType : int {
-        Oak = 0,
-        Spruce = 1,
-        Birch = 2,
-        Jungle = 3,
-        Acacia = 4,
-        Darkoak = 5,
-        Iron = 6,
-        Crimson = 7,
-        BlueNethershroom = 8,
-        Mangrove = 9,
-        Bamboo = 10,
-        Cherry = 11,
-        Copper = 12,
-        ExposedCopper = 13,
-        WeatheredCopper = 14,
-        OxidizedCopper = 15,
-        WaxedCopper = 16,
-        WaxedExposedCopper = 17,
+        Oak                  = 0,
+        Spruce               = 1,
+        Birch                = 2,
+        Jungle               = 3,
+        Acacia               = 4,
+        Darkoak              = 5,
+        Iron                 = 6,
+        Crimson              = 7,
+        BlueNethershroom     = 8,
+        Mangrove             = 9,
+        Bamboo               = 10,
+        Cherry               = 11,
+        Copper               = 12,
+        ExposedCopper        = 13,
+        WeatheredCopper      = 14,
+        OxidizedCopper       = 15,
+        WaxedCopper          = 16,
+        WaxedExposedCopper   = 17,
         WaxedWeatheredCopper = 18,
-        WaxedOxidizedCopper = 19,
-        PaleOak = 20,
-        Count = 21,
+        WaxedOxidizedCopper  = 19,
+        PaleOak              = 20,
+        Count                = 21,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -69,31 +69,51 @@ public:
     virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const /*override*/;
 
     // vIndex: 10
-    virtual ::AABB const& getVisualShapeInWorld(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferAABB) const /*override*/;
+    virtual ::AABB const& getVisualShapeInWorld(
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 9
-    virtual ::AABB const& getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const /*override*/;
+    virtual ::AABB const& getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const /*override*/;
 
     // vIndex: 13
-    virtual bool getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const /*override*/;
+    virtual bool
+    getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
+        /*override*/;
 
     // vIndex: 86
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
     // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
     // vIndex: 87
-    virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const /*override*/;
+    virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const
+        /*override*/;
 
     // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 88
-    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const /*override*/;
+    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
+        /*override*/;
 
     // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -102,13 +122,15 @@ public:
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 61
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const /*override*/;
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
 
     // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 57
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     // vIndex: 51
     virtual void onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
@@ -151,7 +173,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void getDoorBlocks(::IConstBlockSource const& region, ::BlockType const& expectedDoorBlockType, ::BlockPos const& pos, ::Block const*& outLowerBlock, ::Block const*& outUpperBlock);
+    MCAPI static void getDoorBlocks(
+        ::IConstBlockSource const& region,
+        ::BlockType const&         expectedDoorBlockType,
+        ::BlockPos const&          pos,
+        ::Block const*&            outLowerBlock,
+        ::Block const*&            outUpperBlock
+    );
     // NOLINTEND
 
 public:
@@ -167,13 +195,29 @@ public:
 
     MCFOLD ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 
-    MCAPI ::AABB const& $getVisualShapeInWorld(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferAABB) const;
+    MCAPI ::AABB const& $getVisualShapeInWorld(
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const;
 
-    MCAPI ::AABB $getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const;
+    MCAPI ::AABB $getCollisionShape(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
-    MCFOLD ::AABB const& $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    MCFOLD ::AABB const& $getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const;
 
-    MCAPI bool $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
+    MCAPI bool
+    $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
@@ -213,5 +257,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

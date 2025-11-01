@@ -20,7 +20,7 @@ public:
     struct Comparator;
     struct Key;
     // clang-format on
-    
+
     // NbtToBlockCache inner types define
     struct Key {
     public:
@@ -28,18 +28,23 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, uint64 const> mMainHash;
         ::ll::TypedStorage<8, 8, uint64 const> mNameHash;
-        ::ll::TypedStorage<4, 4, uint const> mVersion;
+        ::ll::TypedStorage<4, 4, uint const>   mVersion;
         // NOLINTEND
-    
     };
-    
-    struct Comparator {
-    };
-    
+
+    struct Comparator {};
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::map<::BlockSerializationUtils::NbtToBlockCache::Key, ::std::pair<::BlockSerializationUtils::NBTState, ::Block const*>, ::BlockSerializationUtils::NbtToBlockCache::Comparator>> mCache;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::map<
+            ::BlockSerializationUtils::NbtToBlockCache::Key,
+            ::std::pair<::BlockSerializationUtils::NBTState, ::Block const*>,
+            ::BlockSerializationUtils::NbtToBlockCache::Comparator>>
+                                                           mCache;
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
     // NOLINTEND
 
@@ -62,7 +67,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockSerializationUtils

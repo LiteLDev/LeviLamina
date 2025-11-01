@@ -18,13 +18,21 @@ struct ActorUniqueID;
 class LodestoneCompassComponent {
 public:
     // LodestoneCompassComponent inner types define
-    using CompassIdMap = ::std::unordered_map<::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>, ::std::unique_ptr<::LodestoneCompassComponentCalculator>>;
-    
+    using CompassIdMap = ::std::unordered_map<
+        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>,
+        ::std::unique_ptr<::LodestoneCompassComponentCalculator>>;
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::PositionTrackingId> mTrackingHandle;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>, ::std::unique_ptr<::LodestoneCompassComponentCalculator>>> mCalculators;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>,
+            ::std::unique_ptr<::LodestoneCompassComponentCalculator>>>
+        mCalculators;
     // NOLINTEND
 
 public:
@@ -38,7 +46,10 @@ public:
     // NOLINTBEGIN
     MCAPI LodestoneCompassComponent(::LodestoneCompassComponent&&);
 
-    MCAPI ::LodestoneCompassComponentCalculator* _findCalculator(::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId, bool createIfNotFound);
+    MCAPI ::LodestoneCompassComponentCalculator* _findCalculator(
+        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
+        bool                                                                             createIfNotFound
+    );
     // NOLINTEND
 
 public:
@@ -52,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::LodestoneCompassComponent&&);
     // NOLINTEND
-
 };

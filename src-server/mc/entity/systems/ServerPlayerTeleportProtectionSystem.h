@@ -19,7 +19,15 @@ struct StateVectorComponent;
 namespace ServerPlayerTeleportProtectionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickTeleportProtection(::StrictEntityContext const& context, ::StateVectorComponent const& stateVector, ::ServerPlayerMovementComponent& serverPlayerMovement, ::ServerPlayerTeleportingFlagComponent& serverPlayerTeleporting, ::Optional<::InvalidChunkFoundWhileTeleportingFlagComponent> hadInvalidChunkFound, ::EntityModifier<::InvalidChunkFoundWhileTeleportingFlagComponent, ::ServerPlayerTeleportingFlagComponent> modifier, ::IConstBlockSource const& region);
+MCNAPI void tickTeleportProtection(
+    ::StrictEntityContext const&                                 context,
+    ::StateVectorComponent const&                                stateVector,
+    ::ServerPlayerMovementComponent&                             serverPlayerMovement,
+    ::ServerPlayerTeleportingFlagComponent&                      serverPlayerTeleporting,
+    ::Optional<::InvalidChunkFoundWhileTeleportingFlagComponent> hadInvalidChunkFound,
+    ::EntityModifier<::InvalidChunkFoundWhileTeleportingFlagComponent, ::ServerPlayerTeleportingFlagComponent> modifier,
+    ::IConstBlockSource const&                                                                                 region
+);
 // NOLINTEND
 
-}
+} // namespace ServerPlayerTeleportProtectionSystem

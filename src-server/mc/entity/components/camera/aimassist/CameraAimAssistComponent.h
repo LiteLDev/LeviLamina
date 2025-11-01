@@ -11,11 +11,11 @@ struct CameraAimAssistComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::Vec2> mViewFrustumAngle;
-    ::ll::TypedStorage<4, 4, float> mViewFrustumDistance;
+    ::ll::TypedStorage<4, 8, ::Vec2>                        mViewFrustumAngle;
+    ::ll::TypedStorage<4, 4, float>                         mViewFrustumDistance;
     ::ll::TypedStorage<1, 1, ::CameraAimAssist::TargetMode> mTargetMode;
-    ::ll::TypedStorage<8, 48, ::HashedString> mPriorityPresetId;
-    ::ll::TypedStorage<1, 1, bool> mShowDebugRender;
+    ::ll::TypedStorage<8, 48, ::HashedString>               mPriorityPresetId;
+    ::ll::TypedStorage<1, 1, bool>                          mShowDebugRender;
     // NOLINTEND
 
 public:
@@ -37,5 +37,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

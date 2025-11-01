@@ -10,11 +10,11 @@ class SerializedPersonaPieceHandle {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mPieceId;
+    ::ll::TypedStorage<8, 32, ::std::string>       mPieceId;
     ::ll::TypedStorage<4, 4, ::persona::PieceType> mPieceType;
-    ::ll::TypedStorage<8, 16, ::mce::UUID> mPackId;
-    ::ll::TypedStorage<1, 1, bool> mIsDefaultPiece;
-    ::ll::TypedStorage<8, 32, ::std::string> mProductId;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>         mPackId;
+    ::ll::TypedStorage<1, 1, bool>                 mIsDefaultPiece;
+    ::ll::TypedStorage<8, 32, ::std::string>       mProductId;
     // NOLINTEND
 
 public:
@@ -28,5 +28,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

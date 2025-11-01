@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 168> mUnkb954b8;
     ::ll::UntypedStorage<8, 184> mUnkd5d8b1;
-    ::ll::UntypedStorage<1, 1> mUnk3d4165;
+    ::ll::UntypedStorage<1, 1>   mUnk3d4165;
     // NOLINTEND
 
 public:
@@ -64,7 +64,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal

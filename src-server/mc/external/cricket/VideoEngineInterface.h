@@ -27,10 +27,21 @@ public:
     virtual ~VideoEngineInterface() /*override*/ = default;
 
     // vIndex: 2
-    virtual ::std::unique_ptr<::cricket::VideoMediaSendChannelInterface> CreateSendChannel(::webrtc::Call*, ::cricket::MediaConfig const&, ::cricket::VideoOptions const&, ::webrtc::CryptoOptions const&, ::webrtc::VideoBitrateAllocatorFactory*);
+    virtual ::std::unique_ptr<::cricket::VideoMediaSendChannelInterface> CreateSendChannel(
+        ::webrtc::Call*,
+        ::cricket::MediaConfig const&,
+        ::cricket::VideoOptions const&,
+        ::webrtc::CryptoOptions const&,
+        ::webrtc::VideoBitrateAllocatorFactory*
+    );
 
     // vIndex: 3
-    virtual ::std::unique_ptr<::cricket::VideoMediaReceiveChannelInterface> CreateReceiveChannel(::webrtc::Call*, ::cricket::MediaConfig const&, ::cricket::VideoOptions const&, ::webrtc::CryptoOptions const&);
+    virtual ::std::unique_ptr<::cricket::VideoMediaReceiveChannelInterface> CreateReceiveChannel(
+        ::webrtc::Call*,
+        ::cricket::MediaConfig const&,
+        ::cricket::VideoOptions const&,
+        ::webrtc::CryptoOptions const&
+    );
 
     // vIndex: 5
     virtual ::std::vector<::cricket::Codec> send_codecs() const = 0;
@@ -50,7 +61,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

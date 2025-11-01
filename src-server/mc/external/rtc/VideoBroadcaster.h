@@ -22,8 +22,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnkdb225d;
     ::ll::UntypedStorage<8, 64> mUnka63a5e;
-    ::ll::UntypedStorage<8, 8> mUnka15fe9;
-    ::ll::UntypedStorage<1, 1> mUnkb72bf7;
+    ::ll::UntypedStorage<8, 8>  mUnka15fe9;
+    ::ll::UntypedStorage<1, 1>  mUnkb72bf7;
     ::ll::UntypedStorage<8, 40> mUnka62edf;
     // NOLINTEND
 
@@ -39,7 +39,10 @@ public:
     virtual ~VideoBroadcaster() /*override*/;
 
     // vIndex: 1
-    virtual void AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants) /*override*/;
+    virtual void AddOrUpdateSink(
+        ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
+        ::rtc::VideoSinkWants const&                     wants
+    ) /*override*/;
 
     // vIndex: 2
     virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
@@ -76,7 +79,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
+    MCNAPI void
+    $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
 
     MCNAPI void $RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink);
 
@@ -92,7 +96,6 @@ public:
 
     MCNAPI static void** $vftableForVideoSinkInterface();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

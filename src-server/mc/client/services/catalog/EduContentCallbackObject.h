@@ -31,5 +31,4 @@ public:
     // vIndex: 0
     virtual ~EduContentCallbackObject() = default;
     // NOLINTEND
-
 };

@@ -36,9 +36,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::InvalidArgumentError> registerEntitySpawnCallback(::Scripting::WeakLifetimeScope scope, ::std::string const& id, ::Scripting::Closure<bool(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEntitySpawnCallbackArgs>)> callback);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
+        ::Scripting::InvalidArgumentError>
+    registerEntitySpawnCallback(
+        ::Scripting::WeakLifetimeScope scope,
+        ::std::string const&           id,
+        ::Scripting::Closure<
+            bool(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEntitySpawnCallbackArgs>)> callback
+    );
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::InvalidArgumentError> registerObstructionCallback(::Scripting::WeakLifetimeScope scope, ::std::string const& id, ::Scripting::Closure<bool(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptObstructionCallbackArgs>)> callback);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
+        ::Scripting::InvalidArgumentError>
+    registerObstructionCallback(
+        ::Scripting::WeakLifetimeScope scope,
+        ::std::string const&           id,
+        ::Scripting::Closure<
+            bool(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptObstructionCallbackArgs>)> callback
+    );
     // NOLINTEND
 
 public:
@@ -46,7 +66,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

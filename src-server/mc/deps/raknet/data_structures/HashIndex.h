@@ -17,7 +17,6 @@ public:
     HashIndex& operator=(HashIndex const&);
     HashIndex(HashIndex const&);
     HashIndex();
-
 };
 
-}
+} // namespace DataStructures

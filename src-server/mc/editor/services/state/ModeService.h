@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk74980a;
     ::ll::UntypedStorage<8, 16> mUnkcd1e6b;
-    ::ll::UntypedStorage<4, 4> mUnk4d8d86;
+    ::ll::UntypedStorage<4, 4>  mUnk4d8d86;
     // NOLINTEND
 
 public:
@@ -50,7 +50,8 @@ public:
     virtual ::Scripting::Result_deprecated<void> trySetMode(::Editor::Mode newMode) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func) /*override*/;
 
     // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> _doSwitchMode(::Editor::Mode) = 0;
@@ -76,7 +77,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $trySetMode(::Editor::Mode newMode);
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func);
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    $listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func);
     // NOLINTEND
 
 public:
@@ -86,7 +88,6 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

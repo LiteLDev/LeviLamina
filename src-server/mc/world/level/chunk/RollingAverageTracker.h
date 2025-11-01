@@ -6,9 +6,9 @@ class RollingAverageTracker {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6f93ea;
-    ::ll::UntypedStorage<8, 8> mUnkb7f6cb;
-    ::ll::UntypedStorage<8, 8> mUnka07603;
+    ::ll::UntypedStorage<4, 4>   mUnk6f93ea;
+    ::ll::UntypedStorage<8, 8>   mUnkb7f6cb;
+    ::ll::UntypedStorage<8, 8>   mUnka07603;
     ::ll::UntypedStorage<8, 160> mUnk7b6dc3;
     // NOLINTEND
 
@@ -23,5 +23,4 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::vector<::std::chrono::nanoseconds> getLastSamples(uint count) const;
     // NOLINTEND
-
 };

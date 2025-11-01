@@ -20,13 +20,43 @@ struct BiomeDecorationFeature;
 namespace BiomeDecorationSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void decorate(::LevelChunk& lc, ::BlockSource& source, ::Random& random, ::gsl::span<::gsl::not_null<::Biome const*>> uniqueBiomes, ::std::string const& pass, ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider);
+MCAPI void decorate(
+    ::LevelChunk&                                lc,
+    ::BlockSource&                               source,
+    ::Random&                                    random,
+    ::gsl::span<::gsl::not_null<::Biome const*>> uniqueBiomes,
+    ::std::string const&                         pass,
+    ::IPreliminarySurfaceProvider const&         preliminarySurfaceProvider
+);
 
-MCAPI bool decorateBiome(::LevelChunk& lc, ::BlockSource& source, ::Random& random, ::gsl::span<::BiomeDecorationFeature const> featureList, ::std::string const& pass, ::Biome const* biome, ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider);
+MCAPI bool decorateBiome(
+    ::LevelChunk&                               lc,
+    ::BlockSource&                              source,
+    ::Random&                                   random,
+    ::gsl::span<::BiomeDecorationFeature const> featureList,
+    ::std::string const&                        pass,
+    ::Biome const*                              biome,
+    ::IPreliminarySurfaceProvider const&        preliminarySurfaceProvider
+);
 
-MCAPI bool decorateLargeFeature(::GeneratorType generatorType, uint const& seed, ::BlockVolumeTarget& target, ::Random& random, ::gsl::span<::BiomeDecorationFeature const> featureList, ::ChunkPos const& pos, ::std::string const& pass);
+MCAPI bool decorateLargeFeature(
+    ::GeneratorType                             generatorType,
+    uint const&                                 seed,
+    ::BlockVolumeTarget&                        target,
+    ::Random&                                   random,
+    ::gsl::span<::BiomeDecorationFeature const> featureList,
+    ::ChunkPos const&                           pos,
+    ::std::string const&                        pass
+);
 
-MCAPI void decorateLargeFeature(::Biome const& biome, ::LevelChunk& lc, ::BlockVolumeTarget& target, ::Random& random, ::ChunkPos const& pos, ::std::string const& pass);
+MCAPI void decorateLargeFeature(
+    ::Biome const&       biome,
+    ::LevelChunk&        lc,
+    ::BlockVolumeTarget& target,
+    ::Random&            random,
+    ::ChunkPos const&    pos,
+    ::std::string const& pass
+);
 // NOLINTEND
 
-}
+} // namespace BiomeDecorationSystem

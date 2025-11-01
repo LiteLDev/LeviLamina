@@ -52,5 +52,4 @@ public:
 
     MCNAPI static ::mce::Color const& YELLOW();
     // NOLINTEND
-
 };

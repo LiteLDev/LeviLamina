@@ -13,7 +13,7 @@ class JsepTransportCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk1f4845;
+    ::ll::UntypedStorage<1, 1>  mUnk1f4845;
     ::ll::UntypedStorage<8, 16> mUnk77bd73;
     ::ll::UntypedStorage<8, 16> mUnk30001c;
     ::ll::UntypedStorage<8, 16> mUnkab9818;
@@ -48,7 +48,10 @@ public:
 
     MCNAPI ::cricket::JsepTransport* GetTransportForMid(::std::string const& mid);
 
-    MCNAPI JsepTransportCollection(::std::function<bool(::std::string const&, ::cricket::JsepTransport*)> map_change_callback, ::std::function<void()> state_change_callback);
+    MCNAPI JsepTransportCollection(
+        ::std::function<bool(::std::string const&, ::cricket::JsepTransport*)> map_change_callback,
+        ::std::function<void()>                                                state_change_callback
+    );
 
     MCNAPI void MaybeDestroyJsepTransport(::cricket::JsepTransport* transport);
 
@@ -72,7 +75,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::function<bool(::std::string const&, ::cricket::JsepTransport*)> map_change_callback, ::std::function<void()> state_change_callback);
+    MCNAPI void* $ctor(
+        ::std::function<bool(::std::string const&, ::cricket::JsepTransport*)> map_change_callback,
+        ::std::function<void()>                                                state_change_callback
+    );
     // NOLINTEND
 
 public:
@@ -80,7 +86,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

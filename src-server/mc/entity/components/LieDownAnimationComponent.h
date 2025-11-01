@@ -12,5 +12,4 @@ public:
     ::ll::TypedStorage<4, 8, ::InterpolationPair> mLieDownAmount;
     ::ll::TypedStorage<4, 8, ::InterpolationPair> mLieDownAmountTail;
     // NOLINTEND
-
 };

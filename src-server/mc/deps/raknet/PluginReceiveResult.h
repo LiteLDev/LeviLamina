@@ -6,8 +6,8 @@ namespace RakNet {
 
 enum class PluginReceiveResult : int {
     StopProcessingAndDeallocate = 0,
-    ContinueProcessing = 1,
-    StopProcessing = 2,
+    ContinueProcessing          = 1,
+    StopProcessing              = 2,
 };
 
 }

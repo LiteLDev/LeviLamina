@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::set<::std::string>> mDownloadingPacks;
-    ::ll::TypedStorage<1, 1, ::ResourcePackResponse> mResponse;
+    ::ll::TypedStorage<1, 1, ::ResourcePackResponse>     mResponse;
     // NOLINTEND
 
 public:
@@ -58,5 +58,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

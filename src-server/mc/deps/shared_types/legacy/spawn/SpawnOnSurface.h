@@ -4,7 +4,6 @@
 
 namespace SharedTypes::Legacy::Spawn {
 
-struct SpawnOnSurface {
-};
+struct SpawnOnSurface {};
 
-}
+} // namespace SharedTypes::Legacy::Spawn

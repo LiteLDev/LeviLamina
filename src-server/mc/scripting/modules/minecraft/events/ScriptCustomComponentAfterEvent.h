@@ -4,7 +4,6 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptCustomComponentAfterEvent {
-};
+class ScriptCustomComponentAfterEvent {};
 
-}
+} // namespace ScriptModuleMinecraft

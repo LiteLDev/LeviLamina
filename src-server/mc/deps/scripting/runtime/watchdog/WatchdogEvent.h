@@ -13,10 +13,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::Scripting::WatchdogEventType> mType;
-    ::ll::TypedStorage<1, 1, ::Scripting::ContextId> mContextId;
-    ::ll::TypedStorage<8, 32, ::std::string> mPhaseName;
-    ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds> mTimeMs;
-    ::ll::TypedStorage<8, 8, uint64> mMemoryUsageMB;
+    ::ll::TypedStorage<1, 1, ::Scripting::ContextId>         mContextId;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mPhaseName;
+    ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds>    mTimeMs;
+    ::ll::TypedStorage<8, 8, uint64>                         mMemoryUsageMB;
     // NOLINTEND
 
 public:
@@ -26,7 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WatchdogEvent(::Scripting::WatchdogEventType eventType, ::Scripting::ContextId contextId, ::std::string phaseName, ::std::chrono::milliseconds timeMs, uint64 memoryUsageMB);
+    MCAPI WatchdogEvent(
+        ::Scripting::WatchdogEventType eventType,
+        ::Scripting::ContextId         contextId,
+        ::std::string                  phaseName,
+        ::std::chrono::milliseconds    timeMs,
+        uint64                         memoryUsageMB
+    );
 
     MCAPI ~WatchdogEvent();
     // NOLINTEND
@@ -34,7 +40,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::WatchdogEventType eventType, ::Scripting::ContextId contextId, ::std::string phaseName, ::std::chrono::milliseconds timeMs, uint64 memoryUsageMB);
+    MCAPI void* $ctor(
+        ::Scripting::WatchdogEventType eventType,
+        ::Scripting::ContextId         contextId,
+        ::std::string                  phaseName,
+        ::std::chrono::milliseconds    timeMs,
+        uint64                         memoryUsageMB
+    );
     // NOLINTEND
 
 public:
@@ -42,7 +54,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

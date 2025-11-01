@@ -16,7 +16,6 @@ public:
     UserCacheManager& operator=(UserCacheManager const&);
     UserCacheManager(UserCacheManager const&);
     UserCacheManager();
-
 };
 
-}
+} // namespace Bedrock

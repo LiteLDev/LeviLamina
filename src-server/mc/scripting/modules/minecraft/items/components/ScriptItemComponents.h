@@ -39,27 +39,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemComponents(::BaseGameVersion const& version, ::std::string const& prerelease, ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentReader const> customComponentReader);
+    MCNAPI ScriptItemComponents(
+        ::BaseGameVersion const&                                                   version,
+        ::std::string const&                                                       prerelease,
+        ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentReader const> customComponentReader
+    );
 
-    MCNAPI ::std::vector<::std::string_view> getSupportedItemComponentIds(::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, bool includeCustom);
+    MCNAPI ::std::vector<::std::string_view> getSupportedItemComponentIds(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        bool                                                                         includeCustom
+    );
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>> tryCreateComponent(::std::string_view componentName, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Scripting::WeakLifetimeScope const& scope, bool includeCustom);
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
+    tryCreateComponent(
+        ::std::string_view                                                             componentName,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope,
+        bool                                                                           includeCustom
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::std::string_view, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> _getSupportedNativeItemComponents(::std::vector<::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry> const& supportedComponentTypeNames, ::BaseGameVersion const& version, ::std::string const& prerelease);
+    MCNAPI static ::std::
+        unordered_map<::std::string_view, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>>
+        _getSupportedNativeItemComponents(
+            ::std::vector<::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry> const&
+                                     supportedComponentTypeNames,
+            ::BaseGameVersion const& version,
+            ::std::string const&     prerelease
+        );
 
-    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static void bind(
+        ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
+        ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BaseGameVersion const& version, ::std::string const& prerelease, ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentReader const> customComponentReader);
+    MCNAPI void* $ctor(
+        ::BaseGameVersion const&                                                   version,
+        ::std::string const&                                                       prerelease,
+        ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentReader const> customComponentReader
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

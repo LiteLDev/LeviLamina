@@ -15,7 +15,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::std::unordered_map<::BlockPos, ::std::string> getMarkers(::BlockPos const&, ::LegacyStructureSettings&) const = 0;
+    virtual ::std::unordered_map<::BlockPos, ::std::string>
+    getMarkers(::BlockPos const&, ::LegacyStructureSettings&) const = 0;
 
     // vIndex: 1
     virtual void placeInWorld(::BlockSource&, ::BlockPos const&, ::LegacyStructureSettings&, ::Random&) const = 0;
@@ -26,5 +27,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

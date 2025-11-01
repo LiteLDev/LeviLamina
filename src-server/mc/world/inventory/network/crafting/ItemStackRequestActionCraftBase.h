@@ -52,5 +52,4 @@ public:
 
     MCNAPI void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
     // NOLINTEND
-
 };

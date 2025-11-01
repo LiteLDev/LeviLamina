@@ -20,7 +20,6 @@ public:
     PerFrameHandleTracker& operator=(PerFrameHandleTracker const&);
     PerFrameHandleTracker(PerFrameHandleTracker const&);
     PerFrameHandleTracker();
-
 };
 
-}
+} // namespace mce

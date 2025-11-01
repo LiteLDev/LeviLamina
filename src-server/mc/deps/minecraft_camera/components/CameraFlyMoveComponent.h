@@ -17,7 +17,6 @@ public:
     CameraFlyMoveComponent& operator=(CameraFlyMoveComponent const&);
     CameraFlyMoveComponent(CameraFlyMoveComponent const&);
     CameraFlyMoveComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

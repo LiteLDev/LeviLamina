@@ -15,7 +15,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

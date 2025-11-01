@@ -11,10 +11,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
-    ::ll::TypedStorage<8, 152, ::ItemStack> mPreviousItem;
-    ::ll::TypedStorage<8, 152, ::ItemStack> mNewItem;
-    ::ll::TypedStorage<4, 4, int> mSlotNumber;
-    ::ll::TypedStorage<1, 1, bool> mIsQuantityChangedOnly;
+    ::ll::TypedStorage<8, 152, ::ItemStack>    mPreviousItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack>    mNewItem;
+    ::ll::TypedStorage<4, 4, int>              mSlotNumber;
+    ::ll::TypedStorage<1, 1, bool>             mIsQuantityChangedOnly;
     // NOLINTEND
 
 public:
@@ -44,5 +44,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

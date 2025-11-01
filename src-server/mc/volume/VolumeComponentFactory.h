@@ -12,5 +12,4 @@ public:
     // vIndex: 0
     virtual ~VolumeComponentFactory() /*override*/ = default;
     // NOLINTEND
-
 };

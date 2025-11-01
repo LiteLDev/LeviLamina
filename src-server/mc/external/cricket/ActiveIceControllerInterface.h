@@ -41,7 +41,8 @@ public:
     virtual void OnConnectionUpdated(::cricket::Connection const*) = 0;
 
     // vIndex: 7
-    virtual bool GetUseCandidateAttribute(::cricket::Connection const*, ::cricket::NominationMode, ::cricket::IceMode) const = 0;
+    virtual bool
+    GetUseCandidateAttribute(::cricket::Connection const*, ::cricket::NominationMode, ::cricket::IceMode) const = 0;
 
     // vIndex: 8
     virtual void OnSortAndSwitchRequest(::cricket::IceSwitchReason) = 0;
@@ -61,7 +62,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

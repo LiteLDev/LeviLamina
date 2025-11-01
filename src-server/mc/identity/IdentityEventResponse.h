@@ -5,9 +5,9 @@
 namespace Social {
 
 enum class IdentityEventResponse : int {
-    None = 0,
+    None           = 0,
     ReadyForSignIn = 1,
-    Error = 2,
+    Error          = 2,
 };
 
 }

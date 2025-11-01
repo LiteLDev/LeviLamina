@@ -13,7 +13,7 @@ public:
     // clang-format off
     struct Metrics;
     // clang-format on
-    
+
     // EchoDetector inner types define
     struct Metrics {
     public:
@@ -22,15 +22,14 @@ public:
         ::ll::UntypedStorage<8, 16> mUnk68868b;
         ::ll::UntypedStorage<8, 16> mUnkb34294;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Metrics& operator=(Metrics const&);
         Metrics(Metrics const&);
         Metrics();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -55,7 +54,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

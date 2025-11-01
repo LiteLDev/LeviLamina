@@ -19,7 +19,7 @@ class SetScoreboardIdentityPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ScoreboardIdentityPacketType> mType;
+    ::ll::TypedStorage<1, 1, ::ScoreboardIdentityPacketType>                 mType;
     ::ll::TypedStorage<8, 24, ::std::vector<::ScoreboardIdentityPacketInfo>> mIdentityInfo;
     // NOLINTEND
 
@@ -65,5 +65,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

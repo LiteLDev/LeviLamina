@@ -16,5 +16,4 @@ public:
     TerrainInfo& operator=(TerrainInfo const&);
     TerrainInfo(TerrainInfo const&);
     TerrainInfo();
-
 };

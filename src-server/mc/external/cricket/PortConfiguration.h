@@ -23,7 +23,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkd36a8d;
     ::ll::UntypedStorage<8, 32> mUnka4cebf;
     ::ll::UntypedStorage<8, 32> mUnk41bfd3;
-    ::ll::UntypedStorage<1, 1> mUnk27d0d4;
+    ::ll::UntypedStorage<1, 1>  mUnk27d0d4;
     ::ll::UntypedStorage<8, 24> mUnk4698cb;
     // NOLINTEND
 
@@ -40,7 +40,13 @@ public:
 
     MCNAPI ::std::set<::rtc::SocketAddress> GetRelayServerAddresses(::cricket::ProtocolType type) const;
 
-    MCNAPI PortConfiguration(::std::set<::rtc::SocketAddress> const& stun_servers, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports_, ::std::string_view username, ::std::string_view password, ::webrtc::FieldTrialsView const* field_trials);
+    MCNAPI PortConfiguration(
+        ::std::set<::rtc::SocketAddress> const&                                       stun_servers,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports_,
+        ::std::string_view                                                            username,
+        ::std::string_view                                                            password,
+        ::webrtc::FieldTrialsView const*                                              field_trials
+    );
 
     MCNAPI ::std::set<::rtc::SocketAddress> StunServers();
 
@@ -50,9 +56,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::set<::rtc::SocketAddress> const& stun_servers, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports_, ::std::string_view username, ::std::string_view password, ::webrtc::FieldTrialsView const* field_trials);
+    MCNAPI void* $ctor(
+        ::std::set<::rtc::SocketAddress> const&                                       stun_servers,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports_,
+        ::std::string_view                                                            username,
+        ::std::string_view                                                            password,
+        ::webrtc::FieldTrialsView const*                                              field_trials
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

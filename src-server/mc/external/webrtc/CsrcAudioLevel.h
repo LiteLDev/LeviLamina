@@ -4,7 +4,6 @@
 
 namespace webrtc {
 
-class CsrcAudioLevel {
-};
+class CsrcAudioLevel {};
 
-}
+} // namespace webrtc

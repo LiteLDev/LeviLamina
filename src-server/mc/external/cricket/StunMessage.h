@@ -24,24 +24,24 @@ class StunMessage {
 public:
     // StunMessage inner types define
     enum class IntegrityStatus : int {
-        KNotSet = 0,
-        KNoIntegrity = 1,
-        KIntegrityOk = 2,
+        KNotSet       = 0,
+        KNoIntegrity  = 1,
+        KIntegrityOk  = 2,
         KIntegrityBad = 3,
-        KMaxValue = 3,
+        KMaxValue     = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk30d509;
-    ::ll::UntypedStorage<2, 2> mUnk525a6a;
-    ::ll::UntypedStorage<2, 2> mUnk11e380;
+    ::ll::UntypedStorage<2, 2>  mUnk525a6a;
+    ::ll::UntypedStorage<2, 2>  mUnk11e380;
     ::ll::UntypedStorage<8, 32> mUnkf9b039;
-    ::ll::UntypedStorage<4, 4> mUnk270e98;
-    ::ll::UntypedStorage<4, 4> mUnk410538;
+    ::ll::UntypedStorage<4, 4>  mUnk270e98;
+    ::ll::UntypedStorage<4, 4>  mUnk410538;
     ::ll::UntypedStorage<8, 32> mUnk3109f3;
-    ::ll::UntypedStorage<4, 4> mUnk299a0d;
+    ::ll::UntypedStorage<4, 4>  mUnk299a0d;
     ::ll::UntypedStorage<8, 32> mUnk61c670;
     // NOLINTEND
 
@@ -80,7 +80,8 @@ public:
 
     MCNAPI ::cricket::StunAttribute* CreateAttribute(int type, uint64 length);
 
-    MCNAPI bool EqualAttributes(::cricket::StunMessage const* other, ::std::function<bool(int)> attribute_type_mask) const;
+    MCNAPI bool
+    EqualAttributes(::cricket::StunMessage const* other, ::std::function<bool(int)> attribute_type_mask) const;
 
     MCNAPI ::cricket::StunAddressAttribute const* GetAddress(int type) const;
 
@@ -126,7 +127,13 @@ public:
 
     MCNAPI static bool ValidateFingerprint(char const* data, uint64 size);
 
-    MCNAPI static bool ValidateMessageIntegrityOfType(int mi_attr_type, uint64 mi_attr_size, char const* data, uint64 size, ::std::string const& password);
+    MCNAPI static bool ValidateMessageIntegrityOfType(
+        int                  mi_attr_type,
+        uint64               mi_attr_size,
+        char const*          data,
+        uint64               size,
+        ::std::string const& password
+    );
     // NOLINTEND
 
 public:
@@ -158,7 +165,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

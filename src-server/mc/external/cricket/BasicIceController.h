@@ -23,16 +23,16 @@ class BasicIceController : public ::cricket::IceControllerInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk80631f;
-    ::ll::UntypedStorage<8, 64> mUnk225d78;
-    ::ll::UntypedStorage<8, 64> mUnkf8f14f;
+    ::ll::UntypedStorage<8, 64>  mUnk80631f;
+    ::ll::UntypedStorage<8, 64>  mUnk225d78;
+    ::ll::UntypedStorage<8, 64>  mUnkf8f14f;
     ::ll::UntypedStorage<4, 124> mUnk1ecf17;
-    ::ll::UntypedStorage<8, 8> mUnke01ba0;
-    ::ll::UntypedStorage<8, 8> mUnk9ed3fc;
-    ::ll::UntypedStorage<8, 24> mUnk5761ce;
-    ::ll::UntypedStorage<8, 16> mUnk54c456;
-    ::ll::UntypedStorage<8, 16> mUnk954483;
-    ::ll::UntypedStorage<8, 8> mUnk3dbb79;
+    ::ll::UntypedStorage<8, 8>   mUnke01ba0;
+    ::ll::UntypedStorage<8, 8>   mUnk9ed3fc;
+    ::ll::UntypedStorage<8, 24>  mUnk5761ce;
+    ::ll::UntypedStorage<8, 16>  mUnk54c456;
+    ::ll::UntypedStorage<8, 16>  mUnk954483;
+    ::ll::UntypedStorage<8, 8>   mUnk3dbb79;
     // NOLINTEND
 
 public:
@@ -72,13 +72,19 @@ public:
     virtual ::cricket::IceControllerInterface::PingResult SelectConnectionToPing(int64 last_ping_sent_ms) /*override*/;
 
     // vIndex: 9
-    virtual bool GetUseCandidateAttr(::cricket::Connection const* conn, ::cricket::NominationMode mode, ::cricket::IceMode remote_ice_mode) const /*override*/;
+    virtual bool GetUseCandidateAttr(
+        ::cricket::Connection const* conn,
+        ::cricket::NominationMode    mode,
+        ::cricket::IceMode           remote_ice_mode
+    ) const /*override*/;
 
     // vIndex: 12
-    virtual ::cricket::IceControllerInterface::SwitchResult ShouldSwitchConnection(::cricket::IceSwitchReason reason, ::cricket::Connection const* new_connection) /*override*/;
+    virtual ::cricket::IceControllerInterface::SwitchResult
+    ShouldSwitchConnection(::cricket::IceSwitchReason reason, ::cricket::Connection const* new_connection) /*override*/;
 
     // vIndex: 13
-    virtual ::cricket::IceControllerInterface::SwitchResult SortAndSwitchConnection(::cricket::IceSwitchReason reason) /*override*/;
+    virtual ::cricket::IceControllerInterface::SwitchResult
+    SortAndSwitchConnection(::cricket::IceSwitchReason reason) /*override*/;
 
     // vIndex: 14
     virtual ::std::vector<::cricket::Connection const*> PruneConnections() /*override*/;
@@ -97,13 +103,27 @@ public:
 
     MCNAPI int CalculateActiveWritablePingInterval(::cricket::Connection const* conn, int64 now) const;
 
-    MCNAPI int CompareCandidatePairNetworks(::cricket::Connection const* a, ::cricket::Connection const* b, ::std::optional<::rtc::AdapterType> network_preference) const;
+    MCNAPI int CompareCandidatePairNetworks(
+        ::cricket::Connection const*        a,
+        ::cricket::Connection const*        b,
+        ::std::optional<::rtc::AdapterType> network_preference
+    ) const;
 
     MCNAPI int CompareConnectionCandidates(::cricket::Connection const* a, ::cricket::Connection const* b) const;
 
-    MCNAPI int CompareConnectionStates(::cricket::Connection const* a, ::cricket::Connection const* b, ::std::optional<int64> receiving_unchanged_threshold, bool* missed_receiving_unchanged_threshold) const;
+    MCNAPI int CompareConnectionStates(
+        ::cricket::Connection const* a,
+        ::cricket::Connection const* b,
+        ::std::optional<int64>       receiving_unchanged_threshold,
+        bool*                        missed_receiving_unchanged_threshold
+    ) const;
 
-    MCNAPI int CompareConnections(::cricket::Connection const* a, ::cricket::Connection const* b, ::std::optional<int64> receiving_unchanged_threshold, bool* missed_receiving_unchanged_threshold) const;
+    MCNAPI int CompareConnections(
+        ::cricket::Connection const* a,
+        ::cricket::Connection const* b,
+        ::std::optional<int64>       receiving_unchanged_threshold,
+        bool*                        missed_receiving_unchanged_threshold
+    ) const;
 
     MCNAPI ::cricket::Connection const* FindOldestConnectionNeedingTriggeredCheck(int64 now);
 
@@ -111,17 +131,21 @@ public:
 
     MCNAPI ::std::vector<::cricket::Connection const*> GetBestWritableConnectionPerNetwork() const;
 
-    MCNAPI ::cricket::IceControllerInterface::SwitchResult HandleInitialSelectDampening(::cricket::IceSwitchReason reason, ::cricket::Connection const* new_connection);
+    MCNAPI ::cricket::IceControllerInterface::SwitchResult
+    HandleInitialSelectDampening(::cricket::IceSwitchReason reason, ::cricket::Connection const* new_connection);
 
     MCNAPI bool IsBackupConnection(::cricket::Connection const* conn) const;
 
     MCNAPI bool IsPingable(::cricket::Connection const* conn, int64 now) const;
 
-    MCNAPI ::cricket::Connection const* LeastRecentlyPinged(::cricket::Connection const* conn1, ::cricket::Connection const* conn2);
+    MCNAPI ::cricket::Connection const*
+    LeastRecentlyPinged(::cricket::Connection const* conn1, ::cricket::Connection const* conn2);
 
-    MCNAPI ::cricket::Connection const* MorePingable(::cricket::Connection const* conn1, ::cricket::Connection const* conn2);
+    MCNAPI ::cricket::Connection const*
+    MorePingable(::cricket::Connection const* conn1, ::cricket::Connection const* conn2);
 
-    MCNAPI ::cricket::Connection const* MostLikelyToWork(::cricket::Connection const* conn1, ::cricket::Connection const* conn2);
+    MCNAPI ::cricket::Connection const*
+    MostLikelyToWork(::cricket::Connection const* conn1, ::cricket::Connection const* conn2);
 
     MCNAPI bool PresumedWritable(::cricket::Connection const* conn) const;
 
@@ -161,9 +185,14 @@ public:
 
     MCNAPI ::cricket::IceControllerInterface::PingResult $SelectConnectionToPing(int64 last_ping_sent_ms);
 
-    MCNAPI bool $GetUseCandidateAttr(::cricket::Connection const* conn, ::cricket::NominationMode mode, ::cricket::IceMode remote_ice_mode) const;
+    MCNAPI bool $GetUseCandidateAttr(
+        ::cricket::Connection const* conn,
+        ::cricket::NominationMode    mode,
+        ::cricket::IceMode           remote_ice_mode
+    ) const;
 
-    MCNAPI ::cricket::IceControllerInterface::SwitchResult $ShouldSwitchConnection(::cricket::IceSwitchReason reason, ::cricket::Connection const* new_connection);
+    MCNAPI ::cricket::IceControllerInterface::SwitchResult
+    $ShouldSwitchConnection(::cricket::IceSwitchReason reason, ::cricket::Connection const* new_connection);
 
     MCNAPI ::cricket::IceControllerInterface::SwitchResult $SortAndSwitchConnection(::cricket::IceSwitchReason reason);
 
@@ -179,7 +208,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

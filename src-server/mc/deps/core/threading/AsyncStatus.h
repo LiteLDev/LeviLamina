@@ -5,10 +5,10 @@
 namespace Bedrock::Threading {
 
 enum class AsyncStatus : int {
-    Started = 0,
+    Started   = 0,
     Completed = 1,
-    Canceled = 2,
-    Error = 3,
+    Canceled  = 2,
+    Error     = 3,
 };
 
 }

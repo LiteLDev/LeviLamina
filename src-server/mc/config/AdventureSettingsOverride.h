@@ -18,5 +18,4 @@ public:
     AdventureSettingsOverride& operator=(AdventureSettingsOverride const&);
     AdventureSettingsOverride(AdventureSettingsOverride const&);
     AdventureSettingsOverride();
-
 };

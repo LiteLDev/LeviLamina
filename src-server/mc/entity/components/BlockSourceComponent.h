@@ -23,5 +23,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::StackRefResult<::BlockSource> tryGetBlockSource() const;
     // NOLINTEND
-
 };

@@ -18,15 +18,15 @@ class MingleGoal : public ::MoveToPOIGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mCooldownTicks;
-    ::ll::TypedStorage<4, 4, int> mCooldownTicksMax;
-    ::ll::TypedStorage<4, 4, int> mMingleTicks;
-    ::ll::TypedStorage<4, 4, int> mMingleTicksMax;
-    ::ll::TypedStorage<4, 4, int> mAvailableTicks;
-    ::ll::TypedStorage<4, 4, int> mAvailableTicksMax;
-    ::ll::TypedStorage<4, 4, int> mSpeakInterval;
+    ::ll::TypedStorage<4, 4, int>                           mCooldownTicks;
+    ::ll::TypedStorage<4, 4, int>                           mCooldownTicksMax;
+    ::ll::TypedStorage<4, 4, int>                           mMingleTicks;
+    ::ll::TypedStorage<4, 4, int>                           mMingleTicksMax;
+    ::ll::TypedStorage<4, 4, int>                           mAvailableTicks;
+    ::ll::TypedStorage<4, 4, int>                           mAvailableTicksMax;
+    ::ll::TypedStorage<4, 4, int>                           mSpeakInterval;
     ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mDesiredPartnerType;
-    ::ll::TypedStorage<4, 4, float> mMingleDistanceSquared;
+    ::ll::TypedStorage<4, 4, float>                         mMingleDistanceSquared;
     // NOLINTEND
 
 public:
@@ -63,7 +63,11 @@ public:
 
     MCAPI bool _tryPathToPartner(::Actor& partner);
 
-    MCAPI bool _validatePartnerState(::MingleComponent::MingleState expectedState, ::MingleComponent& mingleComponent, bool requireWithinInteractRange);
+    MCAPI bool _validatePartnerState(
+        ::MingleComponent::MingleState expectedState,
+        ::MingleComponent&             mingleComponent,
+        bool                           requireWithinInteractRange
+    );
     // NOLINTEND
 
 public:
@@ -87,5 +91,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

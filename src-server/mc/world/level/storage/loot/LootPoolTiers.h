@@ -16,5 +16,4 @@ public:
     LootPoolTiers& operator=(LootPoolTiers const&);
     LootPoolTiers(LootPoolTiers const&);
     LootPoolTiers();
-
 };

@@ -11,4 +11,4 @@ namespace CodeBuilderExecutionState {
 MCNAPI ::CodeBuilderExecutionState::CodeStatus toCodeStatus(::std::string_view status);
 // NOLINTEND
 
-}
+} // namespace CodeBuilderExecutionState

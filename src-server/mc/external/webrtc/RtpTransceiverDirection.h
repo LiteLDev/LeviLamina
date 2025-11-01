@@ -9,7 +9,7 @@ enum class RtpTransceiverDirection : int {
     KSendOnly = 1,
     KRecvOnly = 2,
     KInactive = 3,
-    KStopped = 4,
+    KStopped  = 4,
 };
 
 }

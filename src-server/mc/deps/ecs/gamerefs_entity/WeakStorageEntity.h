@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry>> mRegistry;
-    ::ll::TypedStorage<4, 4, ::EntityId> mEntity;
+    ::ll::TypedStorage<4, 4, ::EntityId>                   mEntity;
     // NOLINTEND
 
 public:
@@ -30,5 +30,4 @@ public:
     // NOLINTBEGIN
     MCNAPI ::WeakStorageEntity& operator=(::WeakStorageEntity&&);
     // NOLINTEND
-
 };

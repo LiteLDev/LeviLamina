@@ -32,7 +32,21 @@ struct StateVectorComponent;
 struct TriggerJumpRequestComponent;
 // clang-format on
 
-struct PlayJumpSoundSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>, ::Read<::ActorDataFlagComponent, ::ActorDefinitionIdentifierComponent, ::ActorUniqueIDComponent, ::DimensionTypeComponent, ::SoundEventPlayerComponent, ::StateVectorComponent, ::AABBShapeComponent>, ::Write<>, ::AddRemove<>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
+struct PlayJumpSoundSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
+                                     ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+                                     ::Read<
+                                         ::ActorDataFlagComponent,
+                                         ::ActorDefinitionIdentifierComponent,
+                                         ::ActorUniqueIDComponent,
+                                         ::DimensionTypeComponent,
+                                         ::SoundEventPlayerComponent,
+                                         ::StateVectorComponent,
+                                         ::AABBShapeComponent>,
+                                     ::Write<>,
+                                     ::AddRemove<>,
+                                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                                     ::GlobalWrite<>,
+                                     ::EntityFactoryT<>>> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,10 +63,43 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>, ::Read<::ActorDataFlagComponent, ::ActorDefinitionIdentifierComponent, ::ActorUniqueIDComponent, ::DimensionTypeComponent, ::SoundEventPlayerComponent, ::StateVectorComponent, ::AABBShapeComponent>, ::Write<>, ::AddRemove<>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::StateVectorComponent,
+                ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 6
-    virtual void singleTick(::StrictExecutionContext<::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>, ::Read<::ActorDataFlagComponent, ::ActorDefinitionIdentifierComponent, ::ActorUniqueIDComponent, ::DimensionTypeComponent, ::SoundEventPlayerComponent, ::StateVectorComponent, ::AABBShapeComponent>, ::Write<>, ::AddRemove<>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context, ::StrictEntityContext& entityContext) /*override*/;
+    virtual void singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::StateVectorComponent,
+                ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~PlayJumpSoundSystemImpl() /*override*/ = default;
@@ -61,15 +108,60 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doPlayJumpSoundSystem(::StrictEntityContext const& entity, ::ActorDataFlagComponent const& actorFlags, ::ActorDefinitionIdentifierComponent const& actorIdentifier, ::ActorUniqueIDComponent const& actorUniqueID, ::DimensionTypeComponent const& dimensionType, ::SoundEventPlayerComponent const& soundEventPlayerComponent, ::StateVectorComponent const& stateVectorComponent, ::AABBShapeComponent const& aabbShapeComponent, ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> requestQueueView, ::PlayJumpSoundSystem::SoundType jumpType, ::IConstBlockSource const& region);
+    MCNAPI static void doPlayJumpSoundSystem(
+        ::StrictEntityContext const&                                      entity,
+        ::ActorDataFlagComponent const&                                   actorFlags,
+        ::ActorDefinitionIdentifierComponent const&                       actorIdentifier,
+        ::ActorUniqueIDComponent const&                                   actorUniqueID,
+        ::DimensionTypeComponent const&                                   dimensionType,
+        ::SoundEventPlayerComponent const&                                soundEventPlayerComponent,
+        ::StateVectorComponent const&                                     stateVectorComponent,
+        ::AABBShapeComponent const&                                       aabbShapeComponent,
+        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> requestQueueView,
+        ::PlayJumpSoundSystem::SoundType                                  jumpType,
+        ::IConstBlockSource const&                                        region
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>, ::Read<::ActorDataFlagComponent, ::ActorDefinitionIdentifierComponent, ::ActorUniqueIDComponent, ::DimensionTypeComponent, ::SoundEventPlayerComponent, ::StateVectorComponent, ::AABBShapeComponent>, ::Write<>, ::AddRemove<>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::StateVectorComponent,
+                ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
 
-    MCNAPI void $singleTick(::StrictExecutionContext<::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>, ::Read<::ActorDataFlagComponent, ::ActorDefinitionIdentifierComponent, ::ActorUniqueIDComponent, ::DimensionTypeComponent, ::SoundEventPlayerComponent, ::StateVectorComponent, ::AABBShapeComponent>, ::Write<>, ::AddRemove<>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context, ::StrictEntityContext& entityContext);
+    MCNAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::StateVectorComponent,
+                ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext&   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -77,5 +169,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

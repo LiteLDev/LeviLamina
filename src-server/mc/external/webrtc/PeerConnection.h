@@ -91,7 +91,7 @@ public:
     // clang-format off
     struct InitializePortAllocatorResult;
     // clang-format on
-    
+
     // PeerConnection inner types define
     struct InitializePortAllocatorResult {
     public:
@@ -99,54 +99,53 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1> mUnk9e7821;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         InitializePortAllocatorResult& operator=(InitializePortAllocatorResult const&);
         InitializePortAllocatorResult(InitializePortAllocatorResult const&);
         InitializePortAllocatorResult();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnka7df9e;
-    ::ll::UntypedStorage<8, 8> mUnk754baf;
-    ::ll::UntypedStorage<4, 20> mUnkeeb554;
-    ::ll::UntypedStorage<8, 8> mUnkdc5ffe;
-    ::ll::UntypedStorage<1, 1> mUnk990d1e;
-    ::ll::UntypedStorage<4, 4> mUnkc0221b;
-    ::ll::UntypedStorage<4, 4> mUnkc7cd9b;
-    ::ll::UntypedStorage<4, 4> mUnkee6753;
-    ::ll::UntypedStorage<4, 4> mUnka964f1;
+    ::ll::UntypedStorage<8, 40>  mUnka7df9e;
+    ::ll::UntypedStorage<8, 8>   mUnk754baf;
+    ::ll::UntypedStorage<4, 20>  mUnkeeb554;
+    ::ll::UntypedStorage<8, 8>   mUnkdc5ffe;
+    ::ll::UntypedStorage<1, 1>   mUnk990d1e;
+    ::ll::UntypedStorage<4, 4>   mUnkc0221b;
+    ::ll::UntypedStorage<4, 4>   mUnkc7cd9b;
+    ::ll::UntypedStorage<4, 4>   mUnkee6753;
+    ::ll::UntypedStorage<4, 4>   mUnka964f1;
     ::ll::UntypedStorage<8, 384> mUnk8b7b48;
-    ::ll::UntypedStorage<8, 8> mUnkc3e686;
-    ::ll::UntypedStorage<8, 8> mUnk33a05e;
-    ::ll::UntypedStorage<8, 8> mUnkbcb4dc;
-    ::ll::UntypedStorage<8, 8> mUnk1f4add;
-    ::ll::UntypedStorage<8, 8> mUnk91caae;
-    ::ll::UntypedStorage<8, 8> mUnke7c5b7;
-    ::ll::UntypedStorage<8, 8> mUnk74e9a5;
-    ::ll::UntypedStorage<8, 8> mUnk8c02af;
-    ::ll::UntypedStorage<8, 8> mUnka29f89;
-    ::ll::UntypedStorage<8, 8> mUnk96653c;
-    ::ll::UntypedStorage<8, 8> mUnk93e1d2;
-    ::ll::UntypedStorage<8, 32> mUnk7b1d8e;
-    ::ll::UntypedStorage<8, 8> mUnk6406aa;
-    ::ll::UntypedStorage<8, 8> mUnk7682e5;
-    ::ll::UntypedStorage<8, 40> mUnkf7188d;
-    ::ll::UntypedStorage<8, 40> mUnk4e4f8a;
-    ::ll::UntypedStorage<8, 32> mUnk92c889;
-    ::ll::UntypedStorage<8, 8> mUnk5edebd;
-    ::ll::UntypedStorage<1, 1> mUnk3ef1df;
-    ::ll::UntypedStorage<4, 4> mUnk46d428;
-    ::ll::UntypedStorage<1, 1> mUnk43996c;
+    ::ll::UntypedStorage<8, 8>   mUnkc3e686;
+    ::ll::UntypedStorage<8, 8>   mUnk33a05e;
+    ::ll::UntypedStorage<8, 8>   mUnkbcb4dc;
+    ::ll::UntypedStorage<8, 8>   mUnk1f4add;
+    ::ll::UntypedStorage<8, 8>   mUnk91caae;
+    ::ll::UntypedStorage<8, 8>   mUnke7c5b7;
+    ::ll::UntypedStorage<8, 8>   mUnk74e9a5;
+    ::ll::UntypedStorage<8, 8>   mUnk8c02af;
+    ::ll::UntypedStorage<8, 8>   mUnka29f89;
+    ::ll::UntypedStorage<8, 8>   mUnk96653c;
+    ::ll::UntypedStorage<8, 8>   mUnk93e1d2;
+    ::ll::UntypedStorage<8, 32>  mUnk7b1d8e;
+    ::ll::UntypedStorage<8, 8>   mUnk6406aa;
+    ::ll::UntypedStorage<8, 8>   mUnk7682e5;
+    ::ll::UntypedStorage<8, 40>  mUnkf7188d;
+    ::ll::UntypedStorage<8, 40>  mUnk4e4f8a;
+    ::ll::UntypedStorage<8, 32>  mUnk92c889;
+    ::ll::UntypedStorage<8, 8>   mUnk5edebd;
+    ::ll::UntypedStorage<1, 1>   mUnk3ef1df;
+    ::ll::UntypedStorage<4, 4>   mUnk46d428;
+    ::ll::UntypedStorage<1, 1>   mUnk43996c;
     ::ll::UntypedStorage<8, 128> mUnk5eba9b;
-    ::ll::UntypedStorage<8, 16> mUnkaa09b8;
-    ::ll::UntypedStorage<8, 8> mUnka67d78;
-    ::ll::UntypedStorage<1, 1> mUnk438159;
-    ::ll::UntypedStorage<8, 16> mUnk8fb0ae;
+    ::ll::UntypedStorage<8, 16>  mUnkaa09b8;
+    ::ll::UntypedStorage<8, 8>   mUnka67d78;
+    ::ll::UntypedStorage<1, 1>   mUnk438159;
+    ::ll::UntypedStorage<8, 16>  mUnk8fb0ae;
     // NOLINTEND
 
 public:
@@ -171,31 +170,51 @@ public:
     virtual void RemoveStream(::webrtc::MediaStreamInterface* remove_stream) /*override*/;
 
     // vIndex: 8
-    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track, ::std::vector<::std::string> const& stream_ids) /*override*/;
+    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::std::vector<::std::string> const&                          stream_ids
+    ) /*override*/;
 
     // vIndex: 7
-    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track, ::std::vector<::std::string> const& stream_ids, ::std::vector<::webrtc::RtpEncodingParameters> const& init_send_encodings) /*override*/;
+    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::std::vector<::std::string> const&                          stream_ids,
+        ::std::vector<::webrtc::RtpEncodingParameters> const&        init_send_encodings
+    ) /*override*/;
 
     // vIndex: 9
-    virtual ::webrtc::RTCError RemoveTrackOrError(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> sender) /*override*/;
+    virtual ::webrtc::RTCError
+    RemoveTrackOrError(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> sender) /*override*/;
 
     // vIndex: 13
-    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track) /*override*/;
+    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
+    AddTransceiver(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track) /*override*/;
 
     // vIndex: 12
-    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track, ::webrtc::RtpTransceiverInit const& init) /*override*/;
+    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::webrtc::RtpTransceiverInit const&                          init
+    ) /*override*/;
 
     // vIndex: 11
-    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(::cricket::MediaType media_type) /*override*/;
+    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
+    AddTransceiver(::cricket::MediaType media_type) /*override*/;
 
     // vIndex: 10
-    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(::cricket::MediaType media_type, ::webrtc::RtpTransceiverInit const& init) /*override*/;
+    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
+    AddTransceiver(::cricket::MediaType media_type, ::webrtc::RtpTransceiverInit const& init) /*override*/;
 
     // vIndex: 25
-    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(::cricket::MediaType media_type, ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track, ::webrtc::RtpTransceiverInit const& init, bool update_negotiation_needed) /*override*/;
+    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(
+        ::cricket::MediaType                                         media_type,
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::webrtc::RtpTransceiverInit const&                          init,
+        bool                                                         update_negotiation_needed
+    ) /*override*/;
 
     // vIndex: 14
-    virtual ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> CreateSender(::std::string const& kind, ::std::string const& stream_id) /*override*/;
+    virtual ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>
+    CreateSender(::std::string const& kind, ::std::string const& stream_id) /*override*/;
 
     // vIndex: 15
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> GetSenders() const /*override*/;
@@ -204,22 +223,34 @@ public:
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>> GetReceivers() const /*override*/;
 
     // vIndex: 17
-    virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> GetTransceivers() const /*override*/;
+    virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> GetTransceivers() const
+        /*override*/;
 
     // vIndex: 23
-    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>> CreateDataChannelOrError(::std::string const& label, ::webrtc::DataChannelInit const* config) /*override*/;
+    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>>
+    CreateDataChannelOrError(::std::string const& label, ::webrtc::DataChannelInit const* config) /*override*/;
 
     // vIndex: 21
-    virtual bool GetStats(::webrtc::StatsObserver* observer, ::webrtc::MediaStreamTrackInterface* track, ::webrtc::PeerConnectionInterface::StatsOutputLevel level) /*override*/;
+    virtual bool GetStats(
+        ::webrtc::StatsObserver*                            observer,
+        ::webrtc::MediaStreamTrackInterface*                track,
+        ::webrtc::PeerConnectionInterface::StatsOutputLevel level
+    ) /*override*/;
 
     // vIndex: 20
     virtual void GetStats(::webrtc::RTCStatsCollectorCallback* callback) /*override*/;
 
     // vIndex: 19
-    virtual void GetStats(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> selector, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback) /*override*/;
+    virtual void GetStats(
+        ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>        selector,
+        ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
+    ) /*override*/;
 
     // vIndex: 18
-    virtual void GetStats(::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface> selector, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback) /*override*/;
+    virtual void GetStats(
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>      selector,
+        ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
+    ) /*override*/;
 
     // vIndex: 22
     virtual void ClearStatsCache() /*override*/;
@@ -267,40 +298,63 @@ public:
     virtual void RestartIce() /*override*/;
 
     // vIndex: 32
-    virtual void CreateOffer(::webrtc::CreateSessionDescriptionObserver* observer, ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options) /*override*/;
+    virtual void CreateOffer(
+        ::webrtc::CreateSessionDescriptionObserver*                     observer,
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options
+    ) /*override*/;
 
     // vIndex: 33
-    virtual void CreateAnswer(::webrtc::CreateSessionDescriptionObserver* observer, ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options) /*override*/;
+    virtual void CreateAnswer(
+        ::webrtc::CreateSessionDescriptionObserver*                     observer,
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options
+    ) /*override*/;
 
     // vIndex: 37
-    virtual void SetLocalDescription(::std::unique_ptr<::webrtc::SessionDescriptionInterface> desc, ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer) /*override*/;
+    virtual void SetLocalDescription(
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                desc,
+        ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer
+    ) /*override*/;
 
     // vIndex: 36
-    virtual void SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer) /*override*/;
+    virtual void
+    SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer) /*override*/;
 
     // vIndex: 35
-    virtual void SetLocalDescription(::webrtc::SetSessionDescriptionObserver* observer, ::webrtc::SessionDescriptionInterface* desc_ptr) /*override*/;
+    virtual void SetLocalDescription(
+        ::webrtc::SetSessionDescriptionObserver* observer,
+        ::webrtc::SessionDescriptionInterface*   desc_ptr
+    ) /*override*/;
 
     // vIndex: 34
     virtual void SetLocalDescription(::webrtc::SetSessionDescriptionObserver* observer) /*override*/;
 
     // vIndex: 39
-    virtual void SetRemoteDescription(::std::unique_ptr<::webrtc::SessionDescriptionInterface> desc, ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface> observer) /*override*/;
+    virtual void SetRemoteDescription(
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                 desc,
+        ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface> observer
+    ) /*override*/;
 
     // vIndex: 38
-    virtual void SetRemoteDescription(::webrtc::SetSessionDescriptionObserver* observer, ::webrtc::SessionDescriptionInterface* desc_ptr) /*override*/;
+    virtual void SetRemoteDescription(
+        ::webrtc::SetSessionDescriptionObserver* observer,
+        ::webrtc::SessionDescriptionInterface*   desc_ptr
+    ) /*override*/;
 
     // vIndex: 41
     virtual ::webrtc::PeerConnectionInterface::RTCConfiguration GetConfiguration() /*override*/;
 
     // vIndex: 42
-    virtual ::webrtc::RTCError SetConfiguration(::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration) /*override*/;
+    virtual ::webrtc::RTCError
+    SetConfiguration(::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration) /*override*/;
 
     // vIndex: 44
     virtual bool AddIceCandidate(::webrtc::IceCandidateInterface const* ice_candidate) /*override*/;
 
     // vIndex: 43
-    virtual void AddIceCandidate(::std::unique_ptr<::webrtc::IceCandidateInterface> candidate, ::std::function<void(::webrtc::RTCError)> callback) /*override*/;
+    virtual void AddIceCandidate(
+        ::std::unique_ptr<::webrtc::IceCandidateInterface> candidate,
+        ::std::function<void(::webrtc::RTCError)>          callback
+    ) /*override*/;
 
     // vIndex: 45
     virtual bool RemoveIceCandidates(::std::vector<::cricket::Candidate> const& candidates) /*override*/;
@@ -318,7 +372,8 @@ public:
     virtual void SetAudioRecording(bool recording) /*override*/;
 
     // vIndex: 50
-    virtual ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> LookupDtlsTransportByMid(::std::string const& mid) /*override*/;
+    virtual ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface>
+    LookupDtlsTransportByMid(::std::string const& mid) /*override*/;
 
     // vIndex: 51
     virtual ::webrtc::scoped_refptr<::webrtc::SctpTransportInterface> GetSctpTransport() const /*override*/;
@@ -327,7 +382,8 @@ public:
     virtual void AddAdaptationResource(::webrtc::scoped_refptr<::webrtc::Resource> resource) /*override*/;
 
     // vIndex: 60
-    virtual bool StartRtcEventLog(::std::unique_ptr<::webrtc::RtcEventLogOutput> output, int64 output_period_ms) /*override*/;
+    virtual bool
+    StartRtcEventLog(::std::unique_ptr<::webrtc::RtcEventLogOutput> output, int64 output_period_ms) /*override*/;
 
     // vIndex: 59
     virtual bool StartRtcEventLog(::std::unique_ptr<::webrtc::RtcEventLogOutput> output) /*override*/;
@@ -354,7 +410,8 @@ public:
     virtual bool initial_offerer() const /*override*/;
 
     // vIndex: 67
-    virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>> GetTransceiversInternal() const /*override*/;
+    virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>
+    GetTransceiversInternal() const /*override*/;
 
     // vIndex: 68
     virtual ::std::vector<::webrtc::DataChannelStats> GetDataChannelStats() const /*override*/;
@@ -369,7 +426,8 @@ public:
     virtual ::std::vector<::cricket::CandidateStats> GetPooledCandidateStats() const /*override*/;
 
     // vIndex: 71
-    virtual ::std::map<::std::string, ::cricket::TransportStats> GetTransportStatsByNames(::std::set<::std::string> const& transport_names) /*override*/;
+    virtual ::std::map<::std::string, ::cricket::TransportStats>
+    GetTransportStatsByNames(::std::set<::std::string> const& transport_names) /*override*/;
 
     // vIndex: 72
     virtual ::webrtc::Call::Stats GetCallStats() /*override*/;
@@ -378,10 +436,14 @@ public:
     virtual ::std::optional<::webrtc::AudioDeviceModule::Stats> GetAudioDeviceStats() /*override*/;
 
     // vIndex: 74
-    virtual bool GetLocalCertificate(::std::string const& transport_name, ::webrtc::scoped_refptr<::rtc::RTCCertificate>* certificate) /*override*/;
+    virtual bool GetLocalCertificate(
+        ::std::string const&                            transport_name,
+        ::webrtc::scoped_refptr<::rtc::RTCCertificate>* certificate
+    ) /*override*/;
 
     // vIndex: 75
-    virtual ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain(::std::string const& transport_name) /*override*/;
+    virtual ::std::unique_ptr<::rtc::SSLCertChain>
+    GetRemoteSSLCertChain(::std::string const& transport_name) /*override*/;
 
     // vIndex: 76
     virtual bool IceRestartPending(::std::string const& content_name) const /*override*/;
@@ -405,7 +467,8 @@ public:
     virtual ::std::optional<::rtc::SSLRole> GetSctpSslRole_n() /*override*/;
 
     // vIndex: 79
-    virtual void OnSctpDataChannelStateChanged(int channel_id, ::webrtc::DataChannelInterface::DataState state) /*override*/;
+    virtual void
+    OnSctpDataChannelStateChanged(int channel_id, ::webrtc::DataChannelInterface::DataState state) /*override*/;
 
     // vIndex: 40
     virtual bool ShouldFireNegotiationNeededEvent(uint event_id) /*override*/;
@@ -462,7 +525,10 @@ public:
     virtual bool IsUnifiedPlan() const /*override*/;
 
     // vIndex: 24
-    virtual bool ValidateBundleSettings(::cricket::SessionDescription const* desc, ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid) /*override*/;
+    virtual bool ValidateBundleSettings(
+        ::cricket::SessionDescription const*                             desc,
+        ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid
+    ) /*override*/;
 
     // vIndex: 30
     virtual bool CreateDataChannelTransport(::std::string_view mid) /*override*/;
@@ -486,33 +552,60 @@ public:
     virtual ~PeerConnection() /*override*/;
 
     // vIndex: 1
-    virtual bool OnTransportChanged(::std::string const& mid, ::webrtc::RtpTransportInternal* rtp_transport, ::webrtc::scoped_refptr<::webrtc::DtlsTransport> dtls_transport, ::webrtc::DataChannelTransportInterface* data_channel_transport) /*override*/;
+    virtual bool OnTransportChanged(
+        ::std::string const&                             mid,
+        ::webrtc::RtpTransportInternal*                  rtp_transport,
+        ::webrtc::scoped_refptr<::webrtc::DtlsTransport> dtls_transport,
+        ::webrtc::DataChannelTransportInterface*         data_channel_transport
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track, ::std::vector<::std::string> const& stream_ids, ::std::vector<::webrtc::RtpEncodingParameters> const* init_send_encodings);
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::std::vector<::std::string> const&                          stream_ids,
+        ::std::vector<::webrtc::RtpEncodingParameters> const*        init_send_encodings
+    );
 
     MCNAPI bool ConfiguredForMedia() const;
 
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> FindTransceiverBySender(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> sender);
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
+    FindTransceiverBySender(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> sender);
 
     MCNAPI bool GetLocalCandidateMediaIndex(::std::string const& content_name, int* sdp_mline_index);
 
-    MCNAPI ::webrtc::RTCError Initialize(::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration, ::webrtc::PeerConnectionDependencies dependencies);
+    MCNAPI ::webrtc::RTCError Initialize(
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::webrtc::PeerConnectionDependencies                       dependencies
+    );
 
-    MCNAPI ::webrtc::PeerConnection::InitializePortAllocatorResult InitializePortAllocator_n(::std::set<::rtc::SocketAddress> const& stun_servers, ::std::vector<::cricket::RelayServerConfig> const& turn_servers, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports, ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration);
+    MCNAPI ::webrtc::PeerConnection::InitializePortAllocatorResult InitializePortAllocator_n(
+        ::std::set<::rtc::SocketAddress> const&                                       stun_servers,
+        ::std::vector<::cricket::RelayServerConfig> const&                            turn_servers,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports,
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const&                    configuration
+    );
 
     MCNAPI ::std::function<void(::rtc::CopyOnWriteBuffer const&, int64)> InitializeRtcpCallback();
 
-    MCNAPI ::webrtc::JsepTransportController* InitializeTransportController_n(::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration, ::webrtc::PeerConnectionDependencies const& dependencies);
+    MCNAPI ::webrtc::JsepTransportController* InitializeTransportController_n(
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::webrtc::PeerConnectionDependencies const&                dependencies
+    );
 
     MCNAPI ::std::function<void(::webrtc::RtpPacketReceived const&)> InitializeUnDemuxablePacketHandler();
 
     MCNAPI void OnIceCandidate(::std::unique_ptr<::webrtc::IceCandidateInterface> candidate);
 
-    MCNAPI void OnIceCandidateError(::std::string const& address, int port, ::std::string const& url, int error_code, ::std::string const& error_text);
+    MCNAPI void OnIceCandidateError(
+        ::std::string const& address,
+        int                  port,
+        ::std::string const& url,
+        int                  error_code,
+        ::std::string const& error_text
+    );
 
     MCNAPI void OnIceCandidatesRemoved(::std::vector<::cricket::Candidate> const& candidates);
 
@@ -524,7 +617,10 @@ public:
 
     MCNAPI void OnTransportControllerCandidateError(::cricket::IceCandidateErrorEvent const& event);
 
-    MCNAPI void OnTransportControllerCandidatesGathered(::std::string const& transport_name, ::std::vector<::cricket::Candidate> const& candidates);
+    MCNAPI void OnTransportControllerCandidatesGathered(
+        ::std::string const&                       transport_name,
+        ::std::vector<::cricket::Candidate> const& candidates
+    );
 
     MCNAPI void OnTransportControllerCandidatesRemoved(::std::vector<::cricket::Candidate> const& candidates);
 
@@ -534,9 +630,27 @@ public:
 
     MCNAPI void OnTransportControllerGatheringState(::cricket::IceGatheringState state);
 
-    MCNAPI PeerConnection(::webrtc::Environment const& env, ::webrtc::scoped_refptr<::webrtc::ConnectionContext> context, ::webrtc::PeerConnectionFactoryInterface::Options const& options, bool is_unified_plan, ::std::unique_ptr<::webrtc::Call> call, ::webrtc::PeerConnectionDependencies& dependencies, bool dtls_enabled);
+    MCNAPI PeerConnection(
+        ::webrtc::Environment const&                             env,
+        ::webrtc::scoped_refptr<::webrtc::ConnectionContext>     context,
+        ::webrtc::PeerConnectionFactoryInterface::Options const& options,
+        bool                                                     is_unified_plan,
+        ::std::unique_ptr<::webrtc::Call>                        call,
+        ::webrtc::PeerConnectionDependencies&                    dependencies,
+        bool                                                     dtls_enabled
+    );
 
-    MCNAPI bool ReconfigurePortAllocator_n(::std::set<::rtc::SocketAddress> const& stun_servers, ::std::vector<::cricket::RelayServerConfig> const& turn_servers, ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports, ::webrtc::PeerConnectionInterface::IceTransportsType type, int candidate_pool_size, ::webrtc::PortPrunePolicy turn_port_prune_policy, ::webrtc::TurnCustomizer* turn_customizer, ::std::optional<int> stun_candidate_keepalive_interval, bool have_local_description);
+    MCNAPI bool ReconfigurePortAllocator_n(
+        ::std::set<::rtc::SocketAddress> const&                                       stun_servers,
+        ::std::vector<::cricket::RelayServerConfig> const&                            turn_servers,
+        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports,
+        ::webrtc::PeerConnectionInterface::IceTransportsType                          type,
+        int                                                                           candidate_pool_size,
+        ::webrtc::PortPrunePolicy                                                     turn_port_prune_policy,
+        ::webrtc::TurnCustomizer*                                                     turn_customizer,
+        ::std::optional<int>                                                          stun_candidate_keepalive_interval,
+        bool                                                                          have_local_description
+    );
 
     MCNAPI void ReportFirstConnectUsageMetrics();
 
@@ -544,7 +658,10 @@ public:
 
     MCNAPI void ReportRemoteIceCandidateAdded(::cricket::Candidate const& candidate);
 
-    MCNAPI void ReportTransportStats(::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>> transceivers);
+    MCNAPI void ReportTransportStats(
+        ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>
+            transceivers
+    );
 
     MCNAPI void ReportUsagePattern() const;
 
@@ -566,17 +683,36 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::PeerConnection>> Create(::webrtc::Environment const& env, ::webrtc::scoped_refptr<::webrtc::ConnectionContext> context, ::webrtc::PeerConnectionFactoryInterface::Options const& options, ::std::unique_ptr<::webrtc::Call> call, ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration, ::webrtc::PeerConnectionDependencies dependencies);
+    MCNAPI static ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::PeerConnection>> Create(
+        ::webrtc::Environment const&                               env,
+        ::webrtc::scoped_refptr<::webrtc::ConnectionContext>       context,
+        ::webrtc::PeerConnectionFactoryInterface::Options const&   options,
+        ::std::unique_ptr<::webrtc::Call>                          call,
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::webrtc::PeerConnectionDependencies                       dependencies
+    );
 
     MCNAPI static void ReportBestConnectionState(::cricket::TransportStats const& stats);
 
-    MCNAPI static void ReportNegotiatedCiphers(bool dtls_enabled, ::cricket::TransportStats const& stats, ::std::set<::cricket::MediaType> const& media_types);
+    MCNAPI static void ReportNegotiatedCiphers(
+        bool                                    dtls_enabled,
+        ::cricket::TransportStats const&        stats,
+        ::std::set<::cricket::MediaType> const& media_types
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::Environment const& env, ::webrtc::scoped_refptr<::webrtc::ConnectionContext> context, ::webrtc::PeerConnectionFactoryInterface::Options const& options, bool is_unified_plan, ::std::unique_ptr<::webrtc::Call> call, ::webrtc::PeerConnectionDependencies& dependencies, bool dtls_enabled);
+    MCNAPI void* $ctor(
+        ::webrtc::Environment const&                             env,
+        ::webrtc::scoped_refptr<::webrtc::ConnectionContext>     context,
+        ::webrtc::PeerConnectionFactoryInterface::Options const& options,
+        bool                                                     is_unified_plan,
+        ::std::unique_ptr<::webrtc::Call>                        call,
+        ::webrtc::PeerConnectionDependencies&                    dependencies,
+        bool                                                     dtls_enabled
+    );
     // NOLINTEND
 
 public:
@@ -596,23 +732,42 @@ public:
 
     MCNAPI void $RemoveStream(::webrtc::MediaStreamInterface* remove_stream);
 
-    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> $AddTrack(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track, ::std::vector<::std::string> const& stream_ids);
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> $AddTrack(
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::std::vector<::std::string> const&                          stream_ids
+    );
 
-    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> $AddTrack(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track, ::std::vector<::std::string> const& stream_ids, ::std::vector<::webrtc::RtpEncodingParameters> const& init_send_encodings);
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> $AddTrack(
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::std::vector<::std::string> const&                          stream_ids,
+        ::std::vector<::webrtc::RtpEncodingParameters> const&        init_send_encodings
+    );
 
     MCNAPI ::webrtc::RTCError $RemoveTrackOrError(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> sender);
 
-    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> $AddTransceiver(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track);
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
+    $AddTransceiver(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track);
 
-    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> $AddTransceiver(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track, ::webrtc::RtpTransceiverInit const& init);
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> $AddTransceiver(
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::webrtc::RtpTransceiverInit const&                          init
+    );
 
-    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> $AddTransceiver(::cricket::MediaType media_type);
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
+    $AddTransceiver(::cricket::MediaType media_type);
 
-    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> $AddTransceiver(::cricket::MediaType media_type, ::webrtc::RtpTransceiverInit const& init);
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
+    $AddTransceiver(::cricket::MediaType media_type, ::webrtc::RtpTransceiverInit const& init);
 
-    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> $AddTransceiver(::cricket::MediaType media_type, ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track, ::webrtc::RtpTransceiverInit const& init, bool update_negotiation_needed);
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> $AddTransceiver(
+        ::cricket::MediaType                                         media_type,
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::webrtc::RtpTransceiverInit const&                          init,
+        bool                                                         update_negotiation_needed
+    );
 
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> $CreateSender(::std::string const& kind, ::std::string const& stream_id);
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>
+    $CreateSender(::std::string const& kind, ::std::string const& stream_id);
 
     MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> $GetSenders() const;
 
@@ -620,15 +775,26 @@ public:
 
     MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> $GetTransceivers() const;
 
-    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>> $CreateDataChannelOrError(::std::string const& label, ::webrtc::DataChannelInit const* config);
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>>
+    $CreateDataChannelOrError(::std::string const& label, ::webrtc::DataChannelInit const* config);
 
-    MCNAPI bool $GetStats(::webrtc::StatsObserver* observer, ::webrtc::MediaStreamTrackInterface* track, ::webrtc::PeerConnectionInterface::StatsOutputLevel level);
+    MCNAPI bool $GetStats(
+        ::webrtc::StatsObserver*                            observer,
+        ::webrtc::MediaStreamTrackInterface*                track,
+        ::webrtc::PeerConnectionInterface::StatsOutputLevel level
+    );
 
     MCNAPI void $GetStats(::webrtc::RTCStatsCollectorCallback* callback);
 
-    MCNAPI void $GetStats(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> selector, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback);
+    MCNAPI void $GetStats(
+        ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>        selector,
+        ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
+    );
 
-    MCNAPI void $GetStats(::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface> selector, ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback);
+    MCNAPI void $GetStats(
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>      selector,
+        ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
+    );
 
     MCNAPI void $ClearStatsCache();
 
@@ -660,29 +826,51 @@ public:
 
     MCNAPI void $RestartIce();
 
-    MCNAPI void $CreateOffer(::webrtc::CreateSessionDescriptionObserver* observer, ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options);
+    MCNAPI void $CreateOffer(
+        ::webrtc::CreateSessionDescriptionObserver*                     observer,
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options
+    );
 
-    MCNAPI void $CreateAnswer(::webrtc::CreateSessionDescriptionObserver* observer, ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options);
+    MCNAPI void $CreateAnswer(
+        ::webrtc::CreateSessionDescriptionObserver*                     observer,
+        ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options
+    );
 
-    MCNAPI void $SetLocalDescription(::std::unique_ptr<::webrtc::SessionDescriptionInterface> desc, ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer);
+    MCNAPI void $SetLocalDescription(
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                desc,
+        ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer
+    );
 
     MCNAPI void $SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer);
 
-    MCNAPI void $SetLocalDescription(::webrtc::SetSessionDescriptionObserver* observer, ::webrtc::SessionDescriptionInterface* desc_ptr);
+    MCNAPI void $SetLocalDescription(
+        ::webrtc::SetSessionDescriptionObserver* observer,
+        ::webrtc::SessionDescriptionInterface*   desc_ptr
+    );
 
     MCNAPI void $SetLocalDescription(::webrtc::SetSessionDescriptionObserver* observer);
 
-    MCNAPI void $SetRemoteDescription(::std::unique_ptr<::webrtc::SessionDescriptionInterface> desc, ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface> observer);
+    MCNAPI void $SetRemoteDescription(
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                 desc,
+        ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface> observer
+    );
 
-    MCNAPI void $SetRemoteDescription(::webrtc::SetSessionDescriptionObserver* observer, ::webrtc::SessionDescriptionInterface* desc_ptr);
+    MCNAPI void $SetRemoteDescription(
+        ::webrtc::SetSessionDescriptionObserver* observer,
+        ::webrtc::SessionDescriptionInterface*   desc_ptr
+    );
 
     MCNAPI ::webrtc::PeerConnectionInterface::RTCConfiguration $GetConfiguration();
 
-    MCNAPI ::webrtc::RTCError $SetConfiguration(::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration);
+    MCNAPI ::webrtc::RTCError
+    $SetConfiguration(::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration);
 
     MCNAPI bool $AddIceCandidate(::webrtc::IceCandidateInterface const* ice_candidate);
 
-    MCNAPI void $AddIceCandidate(::std::unique_ptr<::webrtc::IceCandidateInterface> candidate, ::std::function<void(::webrtc::RTCError)> callback);
+    MCNAPI void $AddIceCandidate(
+        ::std::unique_ptr<::webrtc::IceCandidateInterface> candidate,
+        ::std::function<void(::webrtc::RTCError)>          callback
+    );
 
     MCNAPI bool $RemoveIceCandidates(::std::vector<::cricket::Candidate> const& candidates);
 
@@ -694,7 +882,8 @@ public:
 
     MCNAPI void $SetAudioRecording(bool recording);
 
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> $LookupDtlsTransportByMid(::std::string const& mid);
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface>
+    $LookupDtlsTransportByMid(::std::string const& mid);
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::SctpTransportInterface> $GetSctpTransport() const;
 
@@ -718,7 +907,8 @@ public:
 
     MCNAPI bool $initial_offerer() const;
 
-    MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>> $GetTransceiversInternal() const;
+    MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>
+    $GetTransceiversInternal() const;
 
     MCNAPI ::std::vector<::webrtc::DataChannelStats> $GetDataChannelStats() const;
 
@@ -728,13 +918,17 @@ public:
 
     MCNAPI ::std::vector<::cricket::CandidateStats> $GetPooledCandidateStats() const;
 
-    MCNAPI ::std::map<::std::string, ::cricket::TransportStats> $GetTransportStatsByNames(::std::set<::std::string> const& transport_names);
+    MCNAPI ::std::map<::std::string, ::cricket::TransportStats>
+    $GetTransportStatsByNames(::std::set<::std::string> const& transport_names);
 
     MCNAPI ::webrtc::Call::Stats $GetCallStats();
 
     MCNAPI ::std::optional<::webrtc::AudioDeviceModule::Stats> $GetAudioDeviceStats();
 
-    MCNAPI bool $GetLocalCertificate(::std::string const& transport_name, ::webrtc::scoped_refptr<::rtc::RTCCertificate>* certificate);
+    MCNAPI bool $GetLocalCertificate(
+        ::std::string const&                            transport_name,
+        ::webrtc::scoped_refptr<::rtc::RTCCertificate>* certificate
+    );
 
     MCNAPI ::std::unique_ptr<::rtc::SSLCertChain> $GetRemoteSSLCertChain(::std::string const& transport_name);
 
@@ -790,7 +984,10 @@ public:
 
     MCNAPI bool $IsUnifiedPlan() const;
 
-    MCNAPI bool $ValidateBundleSettings(::cricket::SessionDescription const* desc, ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid);
+    MCNAPI bool $ValidateBundleSettings(
+        ::cricket::SessionDescription const*                             desc,
+        ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid
+    );
 
     MCNAPI bool $CreateDataChannelTransport(::std::string_view mid);
 
@@ -804,7 +1001,12 @@ public:
 
     MCNAPI ::webrtc::FieldTrialsView const& $trials() const;
 
-    MCNAPI bool $OnTransportChanged(::std::string const& mid, ::webrtc::RtpTransportInternal* rtp_transport, ::webrtc::scoped_refptr<::webrtc::DtlsTransport> dtls_transport, ::webrtc::DataChannelTransportInterface* data_channel_transport);
+    MCNAPI bool $OnTransportChanged(
+        ::std::string const&                             mid,
+        ::webrtc::RtpTransportInternal*                  rtp_transport,
+        ::webrtc::scoped_refptr<::webrtc::DtlsTransport> dtls_transport,
+        ::webrtc::DataChannelTransportInterface*         data_channel_transport
+    );
     // NOLINTEND
 
 public:
@@ -816,7 +1018,6 @@ public:
 
     MCNAPI static void** $vftableForPeerConnectionSdpMethods();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

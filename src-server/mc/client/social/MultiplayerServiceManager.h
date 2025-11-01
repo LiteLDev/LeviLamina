@@ -4,7 +4,6 @@
 
 namespace Social {
 
-class MultiplayerServiceManager {
-};
+class MultiplayerServiceManager {};
 
-}
+} // namespace Social

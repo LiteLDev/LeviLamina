@@ -6,7 +6,7 @@ namespace webrtc {
 
 enum class H264PacketizationMode : int {
     NonInterleaved = 0,
-    SingleNalUnit = 1,
+    SingleNalUnit  = 1,
 };
 
 }

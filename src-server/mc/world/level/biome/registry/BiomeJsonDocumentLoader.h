@@ -23,7 +23,12 @@ class BiomeJsonDocumentLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject, ::BedrockLoadContext, nullptr_t>> mPuvBiomeLoader;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::
+            SlicedLoader<::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject, ::BedrockLoadContext, nullptr_t>>
+        mPuvBiomeLoader;
     // NOLINTEND
 
 public:
@@ -33,7 +38,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeJsonDocumentLoader(::cereal::ReflectionCtx& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator, ::BiomeJsonDocumentGlue& biomeJsonDocumentGlue, ::BiomeRegistry const& biomeRegistry, ::Core::Path const& resourceName, bool isBaseGamePack, ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>& biomeIdToResolvedData);
+    MCAPI BiomeJsonDocumentLoader(
+        ::cereal::ReflectionCtx&                           ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
+        ::BiomeJsonDocumentGlue&                           biomeJsonDocumentGlue,
+        ::BiomeRegistry const&                             biomeRegistry,
+        ::Core::Path const&                                resourceName,
+        bool                                               isBaseGamePack,
+        ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>&
+            biomeIdToResolvedData
+    );
 
     MCAPI void load(::Puv::Input const& input) const;
 
@@ -43,7 +57,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator, ::BiomeJsonDocumentGlue& biomeJsonDocumentGlue, ::BiomeRegistry const& biomeRegistry, ::Core::Path const& resourceName, bool isBaseGamePack, ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>& biomeIdToResolvedData);
+    MCAPI void* $ctor(
+        ::cereal::ReflectionCtx&                           ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
+        ::BiomeJsonDocumentGlue&                           biomeJsonDocumentGlue,
+        ::BiomeRegistry const&                             biomeRegistry,
+        ::Core::Path const&                                resourceName,
+        bool                                               isBaseGamePack,
+        ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>&
+            biomeIdToResolvedData
+    );
     // NOLINTEND
 
 public:
@@ -51,5 +74,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

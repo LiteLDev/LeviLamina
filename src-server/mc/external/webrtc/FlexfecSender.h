@@ -22,20 +22,20 @@ class FlexfecSender : public ::webrtc::VideoFecGenerator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7b64e1;
-    ::ll::UntypedStorage<8, 8> mUnkdd9463;
-    ::ll::UntypedStorage<8, 8> mUnk497eb3;
-    ::ll::UntypedStorage<4, 4> mUnkd773cf;
-    ::ll::UntypedStorage<4, 4> mUnk4b5838;
-    ::ll::UntypedStorage<4, 4> mUnkd01beb;
-    ::ll::UntypedStorage<4, 4> mUnkfa1014;
-    ::ll::UntypedStorage<8, 32> mUnk399e6e;
-    ::ll::UntypedStorage<2, 2> mUnkbd4a8d;
+    ::ll::UntypedStorage<8, 8>   mUnk7b64e1;
+    ::ll::UntypedStorage<8, 8>   mUnkdd9463;
+    ::ll::UntypedStorage<8, 8>   mUnk497eb3;
+    ::ll::UntypedStorage<4, 4>   mUnkd773cf;
+    ::ll::UntypedStorage<4, 4>   mUnk4b5838;
+    ::ll::UntypedStorage<4, 4>   mUnkd01beb;
+    ::ll::UntypedStorage<4, 4>   mUnkfa1014;
+    ::ll::UntypedStorage<8, 32>  mUnk399e6e;
+    ::ll::UntypedStorage<2, 2>   mUnkbd4a8d;
     ::ll::UntypedStorage<8, 488> mUnkb35b4f;
-    ::ll::UntypedStorage<1, 22> mUnkc2a9cc;
-    ::ll::UntypedStorage<8, 8> mUnk4f4ea2;
-    ::ll::UntypedStorage<8, 40> mUnk4174f7;
-    ::ll::UntypedStorage<8, 88> mUnk942aa7;
+    ::ll::UntypedStorage<1, 22>  mUnkc2a9cc;
+    ::ll::UntypedStorage<8, 8>   mUnk4f4ea2;
+    ::ll::UntypedStorage<8, 40>  mUnk4174f7;
+    ::ll::UntypedStorage<8, 88>  mUnk942aa7;
     // NOLINTEND
 
 public:
@@ -57,7 +57,10 @@ public:
     virtual ::std::optional<uint> FecSsrc() /*override*/;
 
     // vIndex: 5
-    virtual void SetProtectionParameters(::webrtc::FecProtectionParams const& delta_params, ::webrtc::FecProtectionParams const& key_params) /*override*/;
+    virtual void SetProtectionParameters(
+        ::webrtc::FecProtectionParams const& delta_params,
+        ::webrtc::FecProtectionParams const& key_params
+    ) /*override*/;
 
     // vIndex: 6
     virtual void AddPacketAndGenerateFec(::webrtc::RtpPacketToSend const& packet) /*override*/;
@@ -78,13 +81,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FlexfecSender(int payload_type, uint ssrc, uint protected_media_ssrc, ::std::string_view mid, ::std::vector<::webrtc::RtpExtension> const& rtp_header_extensions, ::rtc::ArrayView<::webrtc::RtpExtensionSize const> extension_sizes, ::webrtc::RtpState const* rtp_state, ::webrtc::Clock* clock);
+    MCNAPI FlexfecSender(
+        int                                                payload_type,
+        uint                                               ssrc,
+        uint                                               protected_media_ssrc,
+        ::std::string_view                                 mid,
+        ::std::vector<::webrtc::RtpExtension> const&       rtp_header_extensions,
+        ::rtc::ArrayView<::webrtc::RtpExtensionSize const> extension_sizes,
+        ::webrtc::RtpState const*                          rtp_state,
+        ::webrtc::Clock*                                   clock
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(int payload_type, uint ssrc, uint protected_media_ssrc, ::std::string_view mid, ::std::vector<::webrtc::RtpExtension> const& rtp_header_extensions, ::rtc::ArrayView<::webrtc::RtpExtensionSize const> extension_sizes, ::webrtc::RtpState const* rtp_state, ::webrtc::Clock* clock);
+    MCNAPI void* $ctor(
+        int                                                payload_type,
+        uint                                               ssrc,
+        uint                                               protected_media_ssrc,
+        ::std::string_view                                 mid,
+        ::std::vector<::webrtc::RtpExtension> const&       rtp_header_extensions,
+        ::rtc::ArrayView<::webrtc::RtpExtensionSize const> extension_sizes,
+        ::webrtc::RtpState const*                          rtp_state,
+        ::webrtc::Clock*                                   clock
+    );
     // NOLINTEND
 
 public:
@@ -100,7 +121,10 @@ public:
 
     MCNAPI ::std::optional<uint> $FecSsrc();
 
-    MCNAPI void $SetProtectionParameters(::webrtc::FecProtectionParams const& delta_params, ::webrtc::FecProtectionParams const& key_params);
+    MCNAPI void $SetProtectionParameters(
+        ::webrtc::FecProtectionParams const& delta_params,
+        ::webrtc::FecProtectionParams const& key_params
+    );
 
     MCNAPI void $AddPacketAndGenerateFec(::webrtc::RtpPacketToSend const& packet);
 
@@ -118,7 +142,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

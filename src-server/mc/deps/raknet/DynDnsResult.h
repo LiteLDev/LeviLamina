@@ -16,5 +16,4 @@ public:
     DynDnsResult& operator=(DynDnsResult const&);
     DynDnsResult(DynDnsResult const&);
     DynDnsResult();
-
 };

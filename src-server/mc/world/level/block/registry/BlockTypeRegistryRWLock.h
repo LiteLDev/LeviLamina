@@ -10,8 +10,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::shared_mutex> mSharedMutex;
-    ::ll::TypedStorage<8, 168, ::Bedrock::Threading::InstancedThreadLocal<bool, ::std::allocator<bool>>> mSharedLockIsLockedForModifications;
-    ::ll::TypedStorage<8, 168, ::Bedrock::Threading::InstancedThreadLocal<bool, ::std::allocator<bool>>> mSharedLockIsLockedForRead;
+    ::ll::TypedStorage<8, 168, ::Bedrock::Threading::InstancedThreadLocal<bool, ::std::allocator<bool>>>
+        mSharedLockIsLockedForModifications;
+    ::ll::TypedStorage<8, 168, ::Bedrock::Threading::InstancedThreadLocal<bool, ::std::allocator<bool>>>
+        mSharedLockIsLockedForRead;
     // NOLINTEND
 
 public:
@@ -25,5 +27,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
     // NOLINTEND
-
 };

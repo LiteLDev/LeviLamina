@@ -14,8 +14,8 @@ class ObjectiveCriteria {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string const> mName;
-    ::ll::TypedStorage<1, 1, bool const> mReadOnly;
+    ::ll::TypedStorage<8, 32, ::std::string const>        mName;
+    ::ll::TypedStorage<1, 1, bool const>                  mReadOnly;
     ::ll::TypedStorage<1, 1, ::ObjectiveRenderType const> mRenderType;
     // NOLINTEND
 
@@ -26,5 +26,4 @@ public:
 
     MCNAPI static ::std::unique_ptr<::CompoundTag> serialize(::ObjectiveCriteria const& toSave);
     // NOLINTEND
-
 };

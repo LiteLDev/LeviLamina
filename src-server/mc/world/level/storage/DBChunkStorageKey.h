@@ -26,5 +26,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::LevelChunk const&);
     // NOLINTEND
-
 };

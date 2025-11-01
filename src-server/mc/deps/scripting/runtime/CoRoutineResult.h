@@ -10,7 +10,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int> mNumJobsExecuted;
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

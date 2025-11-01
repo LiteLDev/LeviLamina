@@ -20,11 +20,24 @@ struct TickingSystemWithInfo;
 namespace BoatRowTimeSyncSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickBoatRowTimeWriteToBoatPaddleComponentSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::Exclude<::ControlledByLocalInstanceComponent>, ::BoatPaddleComponent, ::SynchedActorDataComponent const> view);
+MCNAPI void _tickBoatRowTimeWriteToBoatPaddleComponentSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent>,
+        ::Exclude<::ControlledByLocalInstanceComponent>,
+        ::BoatPaddleComponent,
+        ::SynchedActorDataComponent const> view
+);
 
-MCNAPI void _tickBoatRowTimeWriteToSynchedActorDataComponentSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::BoatPaddleComponent const, ::SynchedActorDataComponent> view);
+MCNAPI void _tickBoatRowTimeWriteToSynchedActorDataComponentSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent>,
+        ::BoatPaddleComponent const,
+        ::SynchedActorDataComponent> view
+);
 
 MCNAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
 // NOLINTEND
 
-}
+} // namespace BoatRowTimeSyncSystem

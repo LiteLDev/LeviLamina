@@ -19,7 +19,7 @@ class PacketSecurityController : public ::IPacketSecurityController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc814bd;
+    ::ll::UntypedStorage<8, 8>  mUnkc814bd;
     ::ll::UntypedStorage<8, 40> mUnk2b4bd9;
     // NOLINTEND
 
@@ -36,7 +36,12 @@ public:
     virtual ~PacketSecurityController() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::PacketViolationResponse checkForViolation(::MinecraftPacketIds packetId, ::SubClientId subClientId, ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result, bool* outIsNewOrUpdatedViolation) /*override*/;
+    virtual ::PacketViolationResponse checkForViolation(
+        ::MinecraftPacketIds                                                     packetId,
+        ::SubClientId                                                            subClientId,
+        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
+        bool*                                                                    outIsNewOrUpdatedViolation
+    ) /*override*/;
 
     // vIndex: 2
     virtual uint getTelemetryData() /*override*/;
@@ -45,31 +50,45 @@ public:
     virtual ::Bedrock::ErrorInfo<::std::error_code> consumePacketError(::SubClientId subClientId) /*override*/;
 
     // vIndex: 4
-    virtual void reloadPacketLimitConfig(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder) /*override*/;
+    virtual void reloadPacketLimitConfig(
+        ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PacketSecurityController(::NetworkIdentifier const& netId, ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder);
+    MCNAPI PacketSecurityController(
+        ::NetworkIdentifier const&                                     netId,
+        ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::NetworkIdentifier const& netId, ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder);
+    MCNAPI void* $ctor(
+        ::NetworkIdentifier const&                                     netId,
+        ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::PacketViolationResponse $checkForViolation(::MinecraftPacketIds packetId, ::SubClientId subClientId, ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result, bool* outIsNewOrUpdatedViolation);
+    MCNAPI ::PacketViolationResponse $checkForViolation(
+        ::MinecraftPacketIds                                                     packetId,
+        ::SubClientId                                                            subClientId,
+        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
+        bool*                                                                    outIsNewOrUpdatedViolation
+    );
 
     MCNAPI uint $getTelemetryData();
 
     MCNAPI ::Bedrock::ErrorInfo<::std::error_code> $consumePacketError(::SubClientId subClientId);
 
-    MCNAPI void $reloadPacketLimitConfig(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder);
+    MCNAPI void
+    $reloadPacketLimitConfig(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder);
     // NOLINTEND
 
 public:
@@ -77,5 +96,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

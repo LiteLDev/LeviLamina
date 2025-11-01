@@ -29,7 +29,8 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptChatSendBeforeEvent(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptChatSendBeforeEvent& operator=(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&
+    operator=(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&);
     // NOLINTEND
 
 public:
@@ -45,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

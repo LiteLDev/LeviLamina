@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkc4eb82;
     ::ll::UntypedStorage<8, 32> mUnkaddf92;
-    ::ll::UntypedStorage<8, 8> mUnk6af17c;
+    ::ll::UntypedStorage<8, 8>  mUnk6af17c;
     // NOLINTEND
 
 public:
@@ -39,7 +39,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI IScriptBlockProperty(::std::string name, ::BlockState const& blockState, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation);
+    MCNAPI IScriptBlockProperty(
+        ::std::string                                                                         name,
+        ::BlockState const&                                                                   blockState,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
+    );
 
     MCNAPI ::ScriptModuleMinecraft::IScriptBlockProperty& operator=(::ScriptModuleMinecraft::IScriptBlockProperty&&);
     // NOLINTEND
@@ -53,7 +57,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name, ::BlockState const& blockState, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation);
+    MCNAPI void* $ctor(
+        ::std::string                                                                         name,
+        ::BlockState const&                                                                   blockState,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
+    );
     // NOLINTEND
 
 public:
@@ -67,7 +75,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

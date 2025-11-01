@@ -4,7 +4,6 @@
 
 namespace cereal {
 
-struct Schema {
-};
+struct Schema {};
 
-}
+} // namespace cereal

@@ -19,11 +19,16 @@ class SquidPreAiStepSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doSquidPreAiStepSystem(::StrictEntityContext const&, ::LocalMoveVelocityComponent& localMoveVelocityComponent);
+    MCNAPI static void
+    _doSquidPreAiStepSystem(::StrictEntityContext const&, ::LocalMoveVelocityComponent& localMoveVelocityComponent);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void tick(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::SquidFlagComponent>, ::LocalMoveVelocityComponent> view);
+    MCNAPI static void tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::SquidFlagComponent>,
+            ::LocalMoveVelocityComponent> view
+    );
     // NOLINTEND
-
 };

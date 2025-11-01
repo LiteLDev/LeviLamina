@@ -20,9 +20,16 @@ struct TickingSystemWithInfo;
 namespace PlayerTickBobSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tick(::entt::type_list<::Include<::ActorTickedComponent>>, ::ActorDataFlagComponent const& actorDataFlags, ::AttributesComponent const& attributesComponent, ::StateVectorComponent const& stateVectorComponent, ::PlayerBobComponent& playerBobComponent, ::Optional<::OnGroundFlagComponent const> isOnGround);
+MCNAPI void _tick(
+    ::entt::type_list<::Include<::ActorTickedComponent>>,
+    ::ActorDataFlagComponent const&           actorDataFlags,
+    ::AttributesComponent const&              attributesComponent,
+    ::StateVectorComponent const&             stateVectorComponent,
+    ::PlayerBobComponent&                     playerBobComponent,
+    ::Optional<::OnGroundFlagComponent const> isOnGround
+);
 
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace PlayerTickBobSystem

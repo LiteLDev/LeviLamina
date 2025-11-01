@@ -17,7 +17,6 @@ public:
     SortParams& operator=(SortParams const&);
     SortParams(SortParams const&);
     SortParams();
-
 };
 
-}
+} // namespace catalog

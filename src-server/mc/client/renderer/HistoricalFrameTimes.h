@@ -6,7 +6,7 @@ struct HistoricalFrameTimes {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk72f49d;
+    ::ll::UntypedStorage<8, 8>   mUnk72f49d;
     ::ll::UntypedStorage<4, 120> mUnkbc305f;
     ::ll::UntypedStorage<4, 120> mUnka191e5;
     ::ll::UntypedStorage<4, 120> mUnk67054e;
@@ -18,5 +18,4 @@ public:
     HistoricalFrameTimes& operator=(HistoricalFrameTimes const&);
     HistoricalFrameTimes(HistoricalFrameTimes const&);
     HistoricalFrameTimes();
-
 };

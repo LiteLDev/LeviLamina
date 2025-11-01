@@ -16,7 +16,6 @@ public:
     JigsawStructureMetadataRegistry& operator=(JigsawStructureMetadataRegistry const&);
     JigsawStructureMetadataRegistry(JigsawStructureMetadataRegistry const&);
     JigsawStructureMetadataRegistry();
-
 };
 
-}
+} // namespace SharedTypes::v1_21_50

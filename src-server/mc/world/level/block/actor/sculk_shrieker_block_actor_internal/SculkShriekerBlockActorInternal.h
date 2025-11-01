@@ -15,4 +15,4 @@ namespace SculkShriekerBlockActorInternal {
 MCAPI void _shriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
 // NOLINTEND
 
-}
+} // namespace SculkShriekerBlockActorInternal

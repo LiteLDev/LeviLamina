@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::vector<::TickingSystemWithInfo> createSystems();
     // NOLINTEND
-
 };

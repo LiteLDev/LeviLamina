@@ -4,7 +4,6 @@
 
 namespace Core::Profile {
 
-class ProfileClient {
-};
+class ProfileClient {};
 
-}
+} // namespace Core::Profile

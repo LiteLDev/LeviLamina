@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk511d50;
-    ::ll::UntypedStorage<1, 1> mUnk97958d;
+    ::ll::UntypedStorage<1, 1>  mUnk97958d;
     // NOLINTEND
 
 public:
@@ -18,5 +18,4 @@ public:
     ScriptRuntimeMetadata& operator=(ScriptRuntimeMetadata const&);
     ScriptRuntimeMetadata(ScriptRuntimeMetadata const&);
     ScriptRuntimeMetadata();
-
 };

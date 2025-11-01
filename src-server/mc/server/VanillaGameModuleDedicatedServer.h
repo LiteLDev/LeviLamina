@@ -26,7 +26,8 @@ public:
     virtual void registerMolangQueries() /*override*/;
 
     // vIndex: 5
-    virtual void registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator) /*override*/;
+    virtual void
+    registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator) /*override*/;
 
     // vIndex: 0
     virtual ~VanillaGameModuleDedicatedServer() /*override*/ = default;
@@ -49,5 +50,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

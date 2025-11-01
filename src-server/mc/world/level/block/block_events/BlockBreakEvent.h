@@ -19,8 +19,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::BlockChangeContext> mDestructionContext;
-    ::ll::TypedStorage<8, 8, ::BlockSource&> mRegion;
-    ::ll::TypedStorage<8, 8, ::Block const&> mDestroyedBlock;
+    ::ll::TypedStorage<8, 8, ::BlockSource&>        mRegion;
+    ::ll::TypedStorage<8, 8, ::Block const&>        mDestroyedBlock;
     // NOLINTEND
 
 public:
@@ -56,7 +56,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockEvents

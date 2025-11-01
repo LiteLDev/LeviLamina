@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-struct UnrecognizedParametersCauseConfig {
-};
+struct UnrecognizedParametersCauseConfig {};
 
-}
+} // namespace dcsctp

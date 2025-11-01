@@ -19,7 +19,6 @@ public:
     SortedSplittedPackets& operator=(SortedSplittedPackets const&);
     SortedSplittedPackets(SortedSplittedPackets const&);
     SortedSplittedPackets();
-
 };
 
-}
+} // namespace RakNet

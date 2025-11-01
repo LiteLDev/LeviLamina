@@ -24,7 +24,7 @@ public:
     // clang-format off
     struct LocalRegistry;
     // clang-format on
-    
+
     // RuinedPortalPiece inner types define
     struct LocalRegistry {
     public:
@@ -36,23 +36,22 @@ public:
         ::ll::TypedStorage<8, 8, ::Block const&> mCrackedPolishedBlackstoneBricks;
         ::ll::TypedStorage<8, 8, ::Block const&> mAirBlock;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         LocalRegistry& operator=(LocalRegistry const&);
         LocalRegistry(LocalRegistry const&);
         LocalRegistry();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mStructureOriginX;
-    ::ll::TypedStorage<4, 4, int> mStructureOriginZ;
-    ::ll::TypedStorage<4, 24, ::BoundingBox> mStructureBounds;
-    ::ll::TypedStorage<8, 8, ::BiomeRegistry&> mBiomeRegistry;
-    ::ll::TypedStorage<8, 8, ::Biome const&> mBiome;
+    ::ll::TypedStorage<4, 4, int>                                 mStructureOriginX;
+    ::ll::TypedStorage<4, 4, int>                                 mStructureOriginZ;
+    ::ll::TypedStorage<4, 24, ::BoundingBox>                      mStructureBounds;
+    ::ll::TypedStorage<8, 8, ::BiomeRegistry&>                    mBiomeRegistry;
+    ::ll::TypedStorage<8, 8, ::Biome const&>                      mBiome;
     ::ll::TypedStorage<8, 40, ::RuinedPortalPiece::LocalRegistry> mLocalRegistry;
     // NOLINTEND
 
@@ -80,17 +79,38 @@ public:
     // NOLINTBEGIN
     MCAPI void _addNetherrackDripColumn(::Random& random, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void _maybeReplaceBlock(::Random& random, ::BlockSource& region, ::BlockPos pos, ::PortalEnvironmentModifiers const& modifiers);
+    MCAPI void _maybeReplaceBlock(
+        ::Random&                           random,
+        ::BlockSource&                      region,
+        ::BlockPos                          pos,
+        ::PortalEnvironmentModifiers const& modifiers
+    );
 
-    MCAPI void _maybeReplaceFullStoneBlock(::Random& random, ::BlockSource& region, ::BlockPos pos, ::Block const& block, ::PortalEnvironmentModifiers const& modifiers);
+    MCAPI void _maybeReplaceFullStoneBlock(
+        ::Random&                           random,
+        ::BlockSource&                      region,
+        ::BlockPos                          pos,
+        ::Block const&                      block,
+        ::PortalEnvironmentModifiers const& modifiers
+    );
 
     MCAPI void _maybeReplaceGoldBlock(::Random& random, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void _maybeReplaceStairs(::Random& random, ::BlockSource& region, ::BlockPos pos, ::PortalEnvironmentModifiers const& modifiers);
+    MCAPI void _maybeReplaceStairs(
+        ::Random&                           random,
+        ::BlockSource&                      region,
+        ::BlockPos                          pos,
+        ::PortalEnvironmentModifiers const& modifiers
+    );
 
-    MCAPI void _moveStructureBoundsToSuitableY(::Random& random, ::BlockSource& region, ::PortalEnvironmentModifiers const& modifiers);
+    MCAPI void _moveStructureBoundsToSuitableY(
+        ::Random&                           random,
+        ::BlockSource&                      region,
+        ::PortalEnvironmentModifiers const& modifiers
+    );
 
-    MCAPI void _spreadNetherrack(::Random& random, ::BlockSource& region, ::PortalEnvironmentModifiers const& modifiers);
+    MCAPI void
+    _spreadNetherrack(::Random& random, ::BlockSource& region, ::PortalEnvironmentModifiers const& modifiers);
     // NOLINTEND
 
 public:
@@ -112,5 +132,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

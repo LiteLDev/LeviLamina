@@ -16,21 +16,21 @@ class Tag {
 public:
     // Tag inner types define
     enum class Type : uchar {
-        End = 0,
-        Byte = 1,
-        Short = 2,
-        Int = 3,
-        Int64 = 4,
-        Float = 5,
-        Double = 6,
-        ByteArray = 7,
-        String = 8,
-        List = 9,
-        Compound = 10,
-        IntArray = 11,
+        End         = 0,
+        Byte        = 1,
+        Short       = 2,
+        Int         = 3,
+        Int64       = 4,
+        Float       = 5,
+        Double      = 6,
+        ByteArray   = 7,
+        String      = 8,
+        List        = 9,
+        Compound    = 10,
+        IntArray    = 11,
         NumTagTypes = 12,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -105,5 +105,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

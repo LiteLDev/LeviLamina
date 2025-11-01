@@ -142,15 +142,26 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::CommandArea> getAreaAt(::BlockPos const& pos, int commandVersion) const;
 
-    MCAPI ::std::unique_ptr<::CommandArea> getAreaAt(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
+    MCAPI ::std::unique_ptr<::CommandArea>
+    getAreaAt(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
 
-    MCAPI ::std::unique_ptr<::CommandArea> getAreaAtWithBuffer(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
+    MCAPI ::std::unique_ptr<::CommandArea> getAreaAtWithBuffer(
+        ::BlockPos const& min,
+        ::BlockPos const& max,
+        int               commandVersion,
+        bool              allowUnloadedChunks
+    ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::CommandOrigin> fromCommandOriginData(::CommandOriginData const& data, ::Bedrock::NonOwnerPointer<::ILevel> const& level, ::NetworkIdentifier const& sourceId, ::SubClientId sourceSubId);
+    MCAPI static ::std::unique_ptr<::CommandOrigin> fromCommandOriginData(
+        ::CommandOriginData const&                  data,
+        ::Bedrock::NonOwnerPointer<::ILevel> const& level,
+        ::NetworkIdentifier const&                  sourceId,
+        ::SubClientId                               sourceSubId
+    );
     // NOLINTEND
 
 public:
@@ -206,5 +217,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -4,7 +4,6 @@
 
 namespace webrtc {
 
-class AudioDecoder {
-};
+class AudioDecoder {};
 
-}
+} // namespace webrtc

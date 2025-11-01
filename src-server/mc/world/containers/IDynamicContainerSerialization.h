@@ -14,7 +14,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::std::unique_ptr<::ListTag> serializeContainerContent(::FullContainerName const&, ::SaveContext const&) = 0;
+    virtual ::std::unique_ptr<::ListTag>
+    serializeContainerContent(::FullContainerName const&, ::SaveContext const&) = 0;
 
     // vIndex: 1
     virtual ::std::optional<int> getDynamicContainerWeight(::FullContainerName const&) = 0;
@@ -43,5 +44,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

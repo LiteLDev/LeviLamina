@@ -21,10 +21,11 @@ struct ScriptPlayerUseNameTagAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayerHandle;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+                                                                                                          mPlayerHandle;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mEntityNamed;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mPreviousName;
-    ::ll::TypedStorage<8, 32, ::std::string> mNewName;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                                             mPreviousName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                              mNewName;
     // NOLINTEND
 
 public:
@@ -39,9 +40,16 @@ public:
 
     MCAPI ScriptPlayerUseNameTagAfterEvent(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
 
-    MCAPI ScriptPlayerUseNameTagAfterEvent(::Player const& player, ::Actor const& entityNamed, ::std::string newName, ::std::optional<::std::string> previousName, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptPlayerUseNameTagAfterEvent(
+        ::Player const&                       player,
+        ::Actor const&                        entityNamed,
+        ::std::string                         newName,
+        ::std::optional<::std::string>        previousName,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent& operator=(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
 
     MCAPI ~ScriptPlayerUseNameTagAfterEvent();
     // NOLINTEND
@@ -59,7 +67,13 @@ public:
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
 
-    MCAPI void* $ctor(::Player const& player, ::Actor const& entityNamed, ::std::string newName, ::std::optional<::std::string> previousName, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(
+        ::Player const&                       player,
+        ::Actor const&                        entityNamed,
+        ::std::string                         newName,
+        ::std::optional<::std::string>        previousName,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 
 public:
@@ -67,7 +81,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

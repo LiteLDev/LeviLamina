@@ -19,7 +19,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const*> mSeaFloor;
     ::ll::TypedStorage<8, 8, ::Block const*> mFoundation;
     ::ll::TypedStorage<8, 8, ::Block const*> mSea;
-    ::ll::TypedStorage<4, 4, int> mSeaFloorDepth;
+    ::ll::TypedStorage<4, 4, int>            mSeaFloorDepth;
     // NOLINTEND
 
 public:
@@ -34,5 +34,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -11,5 +11,4 @@ public:
     ::ll::TypedStorage<4, 4, uint> mCustomAnimationCount;
     ::ll::TypedStorage<4, 4, uint> mCustomEffectCount;
     // NOLINTEND
-
 };

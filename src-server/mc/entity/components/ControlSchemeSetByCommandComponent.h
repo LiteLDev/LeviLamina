@@ -11,5 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::ControlScheme::Scheme> mControlScheme;
     // NOLINTEND
-
 };

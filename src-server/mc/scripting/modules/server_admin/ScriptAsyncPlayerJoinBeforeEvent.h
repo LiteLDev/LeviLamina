@@ -32,17 +32,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptAsyncPlayerJoinBeforeEvent(::std::shared_ptr<::AsyncVerdictPromise>& promise, ::std::string playerId, ::std::string playerName);
+    MCNAPI ScriptAsyncPlayerJoinBeforeEvent(
+        ::std::shared_ptr<::AsyncVerdictPromise>& promise,
+        ::std::string                             playerId,
+        ::std::string                             playerName
+    );
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::DisconnectedError> allowJoin();
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::DisconnectedError> disallowJoin(::std::optional<::std::string> message);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::DisconnectedError>
+    disallowJoin(::std::optional<::std::string> message);
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::DisconnectedError> disconnect(::std::optional<::std::string> disconnectReason);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::DisconnectedError>
+    disconnect(::std::optional<::std::string> disconnectReason);
 
     MCNAPI bool isValid() const;
 
-    MCNAPI ::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent& operator=(::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent&&);
+    MCNAPI ::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent&
+    operator=(::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent&&);
 
     MCNAPI ~ScriptAsyncPlayerJoinBeforeEvent();
     // NOLINTEND
@@ -56,7 +63,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::AsyncVerdictPromise>& promise, ::std::string playerId, ::std::string playerName);
+    MCNAPI void*
+    $ctor(::std::shared_ptr<::AsyncVerdictPromise>& promise, ::std::string playerId, ::std::string playerName);
     // NOLINTEND
 
 public:
@@ -64,7 +72,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleServerAdmin

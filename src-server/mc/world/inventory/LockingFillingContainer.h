@@ -19,8 +19,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Bedrock::Threading::SharedRecursiveMutex>> mContainerContextMutex;
-    ::ll::TypedStorage<4, 4, int> mWeightInStorageItem;
-    ::ll::TypedStorage<1, 1, bool> mIsClientSide;
+    ::ll::TypedStorage<4, 4, int>                                                          mWeightInStorageItem;
+    ::ll::TypedStorage<1, 1, bool>                                                         mIsClientSide;
     // NOLINTEND
 
 public:
@@ -46,10 +46,15 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     // vIndex: 52
-    virtual void _trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset) /*override*/;
+    virtual void
+    _trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset) /*override*/;
 
     // vIndex: 0
     virtual ~LockingFillingContainer() /*override*/ = default;
@@ -58,7 +63,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LockingFillingContainer(int numTotalSlots, ::SharedTypes::Legacy::ContainerType containerType, ::std::weak_ptr<::Bedrock::Threading::SharedRecursiveMutex> serializationMutex, bool isClientSide);
+    MCAPI LockingFillingContainer(
+        int                                                         numTotalSlots,
+        ::SharedTypes::Legacy::ContainerType                        containerType,
+        ::std::weak_ptr<::Bedrock::Threading::SharedRecursiveMutex> serializationMutex,
+        bool                                                        isClientSide
+    );
 
     MCAPI int getWeightInStorageItem() const;
     // NOLINTEND
@@ -66,7 +76,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int numTotalSlots, ::SharedTypes::Legacy::ContainerType containerType, ::std::weak_ptr<::Bedrock::Threading::SharedRecursiveMutex> serializationMutex, bool isClientSide);
+    MCAPI void* $ctor(
+        int                                                         numTotalSlots,
+        ::SharedTypes::Legacy::ContainerType                        containerType,
+        ::std::weak_ptr<::Bedrock::Threading::SharedRecursiveMutex> serializationMutex,
+        bool                                                        isClientSide
+    );
     // NOLINTEND
 
 public:
@@ -82,7 +97,11 @@ public:
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
 
     MCAPI void $_trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
     // NOLINTEND
@@ -92,5 +111,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

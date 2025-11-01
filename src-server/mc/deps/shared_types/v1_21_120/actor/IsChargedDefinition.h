@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/versionless/actor/ActorFlagDefinition.h"
+#include "mc/deps/shared_types/actor/ActorFlagDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,8 @@ class SemVersionConstant;
 
 namespace SharedTypes::v1_21_120 {
 
-struct IsChargedDefinition : public ::SharedTypes::ActorFlagDefinition<::SharedTypes::v1_21_120::IsChargedDefinition, 9> {
+struct IsChargedDefinition
+: public ::SharedTypes::ActorFlagDefinition<::SharedTypes::v1_21_120::IsChargedDefinition, 9> {
 public:
     // static variables
     // NOLINTBEGIN
@@ -22,7 +23,6 @@ public:
 
     MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_120

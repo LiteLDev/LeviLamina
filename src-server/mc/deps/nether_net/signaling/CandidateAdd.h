@@ -8,7 +8,7 @@ class CandidateAdd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd112e8;
+    ::ll::UntypedStorage<8, 8>  mUnkd112e8;
     ::ll::UntypedStorage<8, 32> mUnk94eff9;
     // NOLINTEND
 
@@ -27,7 +27,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::NetherNet::CandidateAdd> TryParse(::std::array<::std::string_view, 3> const& tokens);
+    MCNAPI static ::std::optional<::NetherNet::CandidateAdd>
+    TryParse(::std::array<::std::string_view, 3> const& tokens);
     // NOLINTEND
 
 public:
@@ -35,7 +36,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& kIdentifier();
     // NOLINTEND
-
 };
 
-}
+} // namespace NetherNet

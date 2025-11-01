@@ -11,7 +11,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::ExpressionNode> mHeartRateExpression;
-    ::ll::TypedStorage<8, 496, ::RenderParams> mRenderParams;
+    ::ll::TypedStorage<8, 496, ::RenderParams>  mRenderParams;
     // NOLINTEND
-
 };

@@ -18,8 +18,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk1a25db;
     ::ll::UntypedStorage<8, 32> mUnka1c78e;
-    ::ll::UntypedStorage<4, 4> mUnkddf34d;
-    ::ll::UntypedStorage<1, 1> mUnk59537f;
+    ::ll::UntypedStorage<4, 4>  mUnkddf34d;
+    ::ll::UntypedStorage<1, 1>  mUnk59537f;
     ::ll::UntypedStorage<8, 24> mUnk3f5927;
     ::ll::UntypedStorage<8, 32> mUnkb00e71;
     // NOLINTEND
@@ -32,7 +32,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PersistenceGroupMetadata(::std::string const& groupNamespace, ::std::string const& name, ::Editor::Services::PersistenceScope scope, ::std::vector<int> versions);
+    MCNAPI PersistenceGroupMetadata(
+        ::std::string const&                 groupNamespace,
+        ::std::string const&                 name,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::vector<int>                   versions
+    );
 
     MCNAPI ::Editor::Services::PersistenceGroupMetadata& operator=(::Editor::Services::PersistenceGroupMetadata&&);
 
@@ -50,7 +55,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& groupNamespace, ::std::string const& name, ::Editor::Services::PersistenceScope scope, ::std::vector<int> versions);
+    MCNAPI void* $ctor(
+        ::std::string const&                 groupNamespace,
+        ::std::string const&                 name,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::vector<int>                   versions
+    );
     // NOLINTEND
 
 public:
@@ -58,7 +68,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

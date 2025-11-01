@@ -7,12 +7,13 @@
 
 namespace Editor::Network {
 
-class PersistenceGroupItemPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::PersistenceGroupItemPayload> {
+class PersistenceGroupItemPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::PersistenceGroupItemPayload> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnkad13d5;
-    ::ll::UntypedStorage<4, 4> mUnk8f4cb2;
+    ::ll::UntypedStorage<4, 4>  mUnk8f4cb2;
     // NOLINTEND
 
 public:
@@ -39,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

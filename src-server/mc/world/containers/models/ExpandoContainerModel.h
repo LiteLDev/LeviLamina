@@ -20,14 +20,14 @@ class ExpandoContainerModel : public ::ContainerModel {
 public:
     // ExpandoContainerModel inner types define
     using OnItemExpandedCallback = ::std::function<void(::std::string const&, int, int)>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemInstance, uint>>> mItems;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ExpandoModelElement>> mCurrentItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemInstance, uint>>>      mItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpandoModelElement>>                  mCurrentItems;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry>> mCreativeItemRegistry;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ExpandoModelElement>> mExpandedItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpandoModelElement>>                  mExpandedItems;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, int, int)>> mOnItemExpanded;
     // NOLINTEND
 
@@ -91,5 +91,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

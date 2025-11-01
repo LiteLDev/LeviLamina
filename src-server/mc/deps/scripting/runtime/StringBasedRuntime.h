@@ -20,10 +20,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual ::Scripting::ResultAny run(::Scripting::ContextId contextId, ::Scripting::IPayload* payload, ::std::optional<::Scripting::Privilege> privilege) /*override*/;
+    virtual ::Scripting::ResultAny
+    run(::Scripting::ContextId                  contextId,
+        ::Scripting::IPayload*                  payload,
+        ::std::optional<::Scripting::Privilege> privilege) /*override*/;
 
     // vIndex: 22
-    virtual ::Scripting::ResultAny runString(::Scripting::ContextId, ::std::string const&, ::std::string const&, ::std::optional<::Scripting::Privilege>) = 0;
+    virtual ::Scripting::ResultAny runString(
+        ::Scripting::ContextId,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::optional<::Scripting::Privilege>
+    ) = 0;
 
     // vIndex: 0
     virtual ~StringBasedRuntime() /*override*/ = default;
@@ -32,9 +40,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::ResultAny $run(::Scripting::ContextId contextId, ::Scripting::IPayload* payload, ::std::optional<::Scripting::Privilege> privilege);
+    MCAPI ::Scripting::ResultAny $run(
+        ::Scripting::ContextId                  contextId,
+        ::Scripting::IPayload*                  payload,
+        ::std::optional<::Scripting::Privilege> privilege
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

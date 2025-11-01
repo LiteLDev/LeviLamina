@@ -24,9 +24,23 @@ namespace AgentTravelSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
 
-MCNAPI void tickClient(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::AgentFlagComponent>, ::ActorOwnerComponent, ::AbilitiesComponent> view);
+MCNAPI void tickClient(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::AgentFlagComponent>,
+        ::ActorOwnerComponent,
+        ::AbilitiesComponent> view
+);
 
-MCNAPI void tickServer(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::AgentFlagComponent>, ::ActorOwnerComponent, ::AbilitiesComponent, ::StateVectorComponent> view, ::EntityModifier<::MoveRequestComponent> mod);
+MCNAPI void tickServer(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::AgentFlagComponent>,
+        ::ActorOwnerComponent,
+        ::AbilitiesComponent,
+        ::StateVectorComponent>              view,
+    ::EntityModifier<::MoveRequestComponent> mod
+);
 // NOLINTEND
 
-}
+} // namespace AgentTravelSystem

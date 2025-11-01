@@ -19,7 +19,7 @@ class ScriptSpecificEnchantFunction : public ::ScriptModuleMinecraft::ScriptLoot
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7c63b5;
+    ::ll::UntypedStorage<8, 8>  mUnk7c63b5;
     ::ll::UntypedStorage<8, 32> mUnk8706ef;
     // NOLINTEND
 
@@ -43,7 +43,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptSpecificEnchantFunction(::ScriptModuleMinecraft::ScriptSpecificEnchantFunction const&);
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>> getEnchantInfo();
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>>
+    getEnchantInfo();
     // NOLINTEND
 
 public:
@@ -69,7 +70,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

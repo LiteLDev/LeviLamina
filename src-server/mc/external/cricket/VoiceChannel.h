@@ -4,7 +4,6 @@
 
 namespace cricket {
 
-struct VoiceChannel {
-};
+struct VoiceChannel {};
 
-}
+} // namespace cricket

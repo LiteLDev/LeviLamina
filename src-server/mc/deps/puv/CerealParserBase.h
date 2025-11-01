@@ -37,13 +37,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CerealParserBase(::cereal::ReflectionCtx const& ctx, ::SemVersion parserVersion, ::Puv::VersionRange supportedRange);
+    MCNAPI CerealParserBase(
+        ::cereal::ReflectionCtx const& ctx,
+        ::SemVersion                   parserVersion,
+        ::Puv::VersionRange            supportedRange
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::SemVersion parserVersion, ::Puv::VersionRange supportedRange);
+    MCNAPI void*
+    $ctor(::cereal::ReflectionCtx const& ctx, ::SemVersion parserVersion, ::Puv::VersionRange supportedRange);
     // NOLINTEND
 
 public:
@@ -57,7 +62,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Puv

@@ -20,4 +20,4 @@ MCAPI int const& MAX_SCALE();
 MCAPI int const& TRACKING_RANGE();
 // NOLINTEND
 
-}
+} // namespace MapConstants

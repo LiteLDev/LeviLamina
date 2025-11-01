@@ -16,7 +16,6 @@ public:
     StreamId& operator=(StreamId const&);
     StreamId(StreamId const&);
     StreamId();
-
 };
 
-}
+} // namespace webrtc

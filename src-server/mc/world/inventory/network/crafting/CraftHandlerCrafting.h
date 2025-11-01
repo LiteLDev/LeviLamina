@@ -26,10 +26,10 @@ class CraftHandlerCrafting : public ::CraftHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mWorkbench;
-    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
-    ::ll::TypedStorage<4, 4, ::RecipeNetId> mRecipeNetId;
-    ::ll::TypedStorage<1, 1, uchar> mDeferredCraftCount;
+    ::ll::TypedStorage<1, 1, bool>                        mWorkbench;
+    ::ll::TypedStorage<8, 8, ::Player&>                   mPlayer;
+    ::ll::TypedStorage<4, 4, ::RecipeNetId>               mRecipeNetId;
+    ::ll::TypedStorage<1, 1, uchar>                       mDeferredCraftCount;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mConsumedItems;
     // NOLINTEND
 
@@ -46,13 +46,18 @@ public:
     virtual ~CraftHandlerCrafting() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::ItemStackNetResult handleConsumedItem(::FullContainerName const& openContainerNetId, uchar const slot, ::ItemStack const& consumedItem) /*override*/;
+    virtual ::ItemStackNetResult handleConsumedItem(
+        ::FullContainerName const& openContainerNetId,
+        uchar const                slot,
+        ::ItemStack const&         consumedItem
+    ) /*override*/;
 
     // vIndex: 2
     virtual ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType) /*override*/;
 
     // vIndex: 4
-    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
+    virtual ::ItemStackNetResult
+    _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
     // vIndex: 6
     virtual ::Recipes const* _getLevelRecipes() const /*override*/;
@@ -65,15 +70,21 @@ public:
 
     MCNAPI void _handleCarefulRestoration(::ItemInstance const& itemInstance) const;
 
-    MCNAPI ::ItemStackNetResult _handleCraftCreative(::ItemStackRequestActionCraft<::CreativeItemNetId, 14> const& requestAction);
+    MCNAPI ::ItemStackNetResult
+    _handleCraftCreative(::ItemStackRequestActionCraft<::CreativeItemNetId, 14> const& requestAction);
 
-    MCNAPI ::ItemStackNetResult _handleCraftOutput(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
+    MCNAPI ::ItemStackNetResult
+    _handleCraftOutput(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStackNetResult $handleConsumedItem(::FullContainerName const& openContainerNetId, uchar const slot, ::ItemStack const& consumedItem);
+    MCNAPI ::ItemStackNetResult $handleConsumedItem(
+        ::FullContainerName const& openContainerNetId,
+        uchar const                slot,
+        ::ItemStack const&         consumedItem
+    );
 
     MCNAPI ::ItemStackNetResult $preHandleAction(::ItemStackRequestActionType requestActionType);
 
@@ -87,5 +98,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

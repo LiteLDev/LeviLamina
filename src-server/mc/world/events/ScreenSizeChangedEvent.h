@@ -12,5 +12,4 @@ public:
     ::ll::TypedStorage<4, 8, ::Vec2 const> mSizeBefore;
     ::ll::TypedStorage<4, 8, ::Vec2 const> mSizeAfter;
     // NOLINTEND
-
 };

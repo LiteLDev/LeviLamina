@@ -17,11 +17,11 @@ class FlatWorldOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mEncodingVersion;
+    ::ll::TypedStorage<4, 4, int>                          mEncodingVersion;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockLayer>> mBlockLayers;
-    ::ll::TypedStorage<2, 2, ::BiomeIdType> mBiomeId;
-    ::ll::TypedStorage<8, 16, ::Json::Value> mStructureOptions;
-    ::ll::TypedStorage<1, 1, ::WorldVersion> mWorldVersion;
+    ::ll::TypedStorage<2, 2, ::BiomeIdType>                mBiomeId;
+    ::ll::TypedStorage<8, 16, ::Json::Value>               mStructureOptions;
+    ::ll::TypedStorage<1, 1, ::WorldVersion>               mWorldVersion;
     // NOLINTEND
 
 public:
@@ -43,5 +43,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

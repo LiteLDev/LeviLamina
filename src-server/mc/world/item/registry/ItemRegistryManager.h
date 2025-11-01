@@ -16,44 +16,43 @@ public:
     // clang-format off
     class ScopedItemRegistry;
     // clang-format on
-    
+
     // ItemRegistryManager inner types define
     class ScopedItemRegistry {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool> mIsSet;
+        ::ll::TypedStorage<1, 1, bool>               mIsSet;
         ::ll::TypedStorage<8, 16, ::ItemRegistryRef> mPreviousRegistry;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ScopedItemRegistry();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI explicit ScopedItemRegistry(::std::weak_ptr<::ItemRegistry> registry);
-    
+
         MCAPI void construct(::ItemRegistryRef registryRef);
-    
+
         MCAPI ~ScopedItemRegistry();
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // static functions
     // NOLINTBEGIN
@@ -67,5 +66,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::weak_ptr<::ItemRegistry>& mThreadLocalRegistry();
     // NOLINTEND
-
 };

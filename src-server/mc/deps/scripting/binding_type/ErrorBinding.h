@@ -16,9 +16,9 @@ struct ErrorBinding : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk883b12;
+    ::ll::UntypedStorage<8, 32>  mUnk883b12;
     ::ll::UntypedStorage<8, 160> mUnkd85588;
-    ::ll::UntypedStorage<8, 24> mUnkea44c7;
+    ::ll::UntypedStorage<8, 24>  mUnkea44c7;
     // NOLINTEND
 
 public:
@@ -33,7 +33,8 @@ public:
 
     MCNAPI ErrorBinding(::Scripting::ErrorBinding&&);
 
-    MCNAPI ErrorBinding(::std::string name_, ::entt::meta_type type_, ::std::vector<::Scripting::PropertyBinding> properties_);
+    MCNAPI
+    ErrorBinding(::std::string name_, ::entt::meta_type type_, ::std::vector<::Scripting::PropertyBinding> properties_);
 
     MCNAPI ~ErrorBinding();
     // NOLINTEND
@@ -45,7 +46,8 @@ public:
 
     MCNAPI void* $ctor(::Scripting::ErrorBinding&&);
 
-    MCNAPI void* $ctor(::std::string name_, ::entt::meta_type type_, ::std::vector<::Scripting::PropertyBinding> properties_);
+    MCNAPI void*
+    $ctor(::std::string name_, ::entt::meta_type type_, ::std::vector<::Scripting::PropertyBinding> properties_);
     // NOLINTEND
 
 public:
@@ -53,7 +55,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

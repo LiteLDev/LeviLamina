@@ -4,8 +4,7 @@
 
 namespace Bedrock::Intrusive {
 
-template<typename T0>
-class list_base_hook {
-};
+template <typename T0>
+class list_base_hook {};
 
-}
+} // namespace Bedrock::Intrusive

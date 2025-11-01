@@ -15,5 +15,4 @@ public:
     Seed128Bit& operator=(Seed128Bit const&);
     Seed128Bit(Seed128Bit const&);
     Seed128Bit();
-
 };

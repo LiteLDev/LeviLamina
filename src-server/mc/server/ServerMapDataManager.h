@@ -25,7 +25,11 @@ class ServerMapDataManager : public ::MapDataManager, public ::IServerMapDataMan
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::MapItemSavedData&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mOnCreateMapSavedData;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::MapItemSavedData&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+                                                               mOnCreateMapSavedData;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserAdded;
     // NOLINTEND
 
@@ -40,7 +44,8 @@ public:
     virtual ~ServerMapDataManager() /*override*/ = default;
 
     // vIndex: 1
-    virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector) /*override*/;
+    virtual void
+    registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector) /*override*/;
 
     // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& getOnCreateMapSavedDataConnector() /*override*/;
@@ -58,7 +63,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerMapDataManager(::DimensionManager& dimensionManager, ::LevelStorage* levelStorage, ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions, ::std::function<::ActorUniqueID()> getNewUniqueID);
+    MCAPI ServerMapDataManager(
+        ::DimensionManager&                         dimensionManager,
+        ::LevelStorage*                             levelStorage,
+        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
+        ::std::function<::ActorUniqueID()>          getNewUniqueID
+    );
 
     MCAPI void _onGameplayUserAdded(::EntityContext& entity);
     // NOLINTEND
@@ -66,7 +76,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DimensionManager& dimensionManager, ::LevelStorage* levelStorage, ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions, ::std::function<::ActorUniqueID()> getNewUniqueID);
+    MCAPI void* $ctor(
+        ::DimensionManager&                         dimensionManager,
+        ::LevelStorage*                             levelStorage,
+        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
+        ::std::function<::ActorUniqueID()>          getNewUniqueID
+    );
     // NOLINTEND
 
 public:
@@ -90,5 +105,4 @@ public:
 
     MCNAPI static void** $vftableForMapDataManager();
     // NOLINTEND
-
 };

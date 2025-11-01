@@ -29,5 +29,4 @@ public:
 
     MCNAPI static void** $vftableForContainer();
     // NOLINTEND
-
 };

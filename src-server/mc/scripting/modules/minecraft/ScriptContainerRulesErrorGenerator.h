@@ -4,7 +4,6 @@
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptContainerRulesErrorGenerator {
-};
+struct ScriptContainerRulesErrorGenerator {};
 
-}
+} // namespace ScriptModuleMinecraft

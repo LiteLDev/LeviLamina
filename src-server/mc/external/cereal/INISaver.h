@@ -26,7 +26,6 @@ public:
     // vIndex: 0
     virtual ~INISaver() /*override*/ = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal

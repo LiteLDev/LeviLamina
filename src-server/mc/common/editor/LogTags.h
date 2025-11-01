@@ -15,4 +15,4 @@ MCNAPI ::HashedString const& CONTENT_LOG();
 MCNAPI ::HashedString const& EDITOR();
 // NOLINTEND
 
-}
+} // namespace Editor::LogTags

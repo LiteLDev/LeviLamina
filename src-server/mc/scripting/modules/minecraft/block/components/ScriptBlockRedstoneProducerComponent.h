@@ -26,11 +26,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<::std::vector<::ScriptModuleMinecraft::ScriptFacing>, ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError> getConnectedFaces() const;
+    MCNAPI ::Scripting::Result<
+        ::std::vector<::ScriptModuleMinecraft::ScriptFacing>,
+        ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError>
+    getConnectedFaces() const;
 
     MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError> getPower() const;
 
-    MCNAPI ::Scripting::Result<::std::optional<::ScriptModuleMinecraft::ScriptFacing>, ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError> getStronglyPoweredFace() const;
+    MCNAPI ::Scripting::Result<
+        ::std::optional<::ScriptModuleMinecraft::ScriptFacing>,
+        ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError>
+    getStronglyPoweredFace() const;
     // NOLINTEND
 
 public:
@@ -50,7 +56,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -21,17 +21,17 @@ class VolumeEntityManagerServer : public ::VolumeEntityManager {
 public:
     // VolumeEntityManagerServer inner types define
     enum class CreateVolumeResult : int {
-        Success = 0,
-        EntityCreationFailed = 1,
-        ExceededVolumeLimit = 2,
+        Success               = 0,
+        EntityCreationFailed  = 1,
+        ExceededVolumeLimit   = 2,
         DefinitionDoesntExist = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 88> mUnk6e629a;
-    ::ll::UntypedStorage<1, 1> mUnk3d4c19;
+    ::ll::UntypedStorage<1, 1>  mUnk3d4c19;
     // NOLINTEND
 
 public:
@@ -50,9 +50,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _sendVolumeToClient(::EntityContext const& entity, ::UserEntityIdentifierComponent const& userIdentifier, ::NetworkIdentifier const& source, ::PacketSender& packetSender) const;
+    MCNAPI void _sendVolumeToClient(
+        ::EntityContext const&                 entity,
+        ::UserEntityIdentifierComponent const& userIdentifier,
+        ::NetworkIdentifier const&             source,
+        ::PacketSender&                        packetSender
+    ) const;
 
-    MCNAPI ::std::vector<::WeakRef<::EntityContext>> getAllVolumesOverlappingChunkPosition(::ChunkPos const& pos, ::DimensionType chunkDimension) const;
+    MCNAPI ::std::vector<::WeakRef<::EntityContext>>
+    getAllVolumesOverlappingChunkPosition(::ChunkPos const& pos, ::DimensionType chunkDimension) const;
     // NOLINTEND
-
 };

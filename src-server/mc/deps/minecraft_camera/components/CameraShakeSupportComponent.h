@@ -18,7 +18,6 @@ public:
     CameraShakeSupportComponent& operator=(CameraShakeSupportComponent const&);
     CameraShakeSupportComponent(CameraShakeSupportComponent const&);
     CameraShakeSupportComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

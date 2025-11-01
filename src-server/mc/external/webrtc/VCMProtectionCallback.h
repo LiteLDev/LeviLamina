@@ -14,7 +14,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual int ProtectionRequest(::webrtc::FecProtectionParams const*, ::webrtc::FecProtectionParams const*, uint*, uint*, uint*) = 0;
+    virtual int ProtectionRequest(
+        ::webrtc::FecProtectionParams const*,
+        ::webrtc::FecProtectionParams const*,
+        uint*,
+        uint*,
+        uint*
+    ) = 0;
 
     // vIndex: 1
     virtual void SetRetransmissionMode(int) = 0;
@@ -40,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

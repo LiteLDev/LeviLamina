@@ -16,12 +16,12 @@ class EnchantingContainerManagerController : public ::ContainerManagerController
 public:
     // EnchantingContainerManagerController inner types define
     enum class OptionStatus : int {
-        Selectable = 0,
-        InvalidMaterial = 1,
+        Selectable              = 0,
+        InvalidMaterial         = 1,
         InsufficientPlayerLevel = 2,
-        Absent = 3,
+        Absent                  = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,5 +46,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

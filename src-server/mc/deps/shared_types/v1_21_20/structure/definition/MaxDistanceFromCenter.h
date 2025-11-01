@@ -23,7 +23,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void fromHorizontal(int horizontal);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20::JigsawStructureDefinition

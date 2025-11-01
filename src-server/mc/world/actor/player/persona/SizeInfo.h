@@ -11,7 +11,6 @@ public:
     ::ll::TypedStorage<8, 16, ::std::string_view> mSizeName;
     ::ll::TypedStorage<8, 16, ::std::string_view> mSizeTexturePath;
     // NOLINTEND
-
 };
 
-}
+} // namespace persona

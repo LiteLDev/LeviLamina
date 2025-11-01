@@ -26,17 +26,32 @@ class ContainerModel : public ::ContainerContentChangeListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool const> mIsClientSide;
-    ::ll::TypedStorage<8, 32, ::std::string> mContainerStringName;
+    ::ll::TypedStorage<1, 1, bool const>                 mIsClientSide;
+    ::ll::TypedStorage<8, 32, ::std::string>             mContainerStringName;
     ::ll::TypedStorage<4, 12, ::FullContainerName const> mFullContainerName;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::SharedTypes::Legacy::ContainerType, ::std::function<void(int, ::ItemStack const&, ::ItemStack const&)>>> mTrackedOnContainerChangedCallbacks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void(int, ::ItemStack const&, ::ItemStack const&)>>> mOnContainerChangedCallbacks;
-    ::ll::TypedStorage<8, 64, ::std::function<void(int, ::ItemStack const&, ::ItemStack const&)>> mPlayerNotificationCallbacks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Publisher<void(::ItemStackBase const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>> mContainerSlotChangePublishers;
-    ::ll::TypedStorage<4, 4, ::ContainerCategory> mContainerCategory;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::SharedTypes::Legacy::ContainerType,
+            ::std::function<void(int, ::ItemStack const&, ::ItemStack const&)>>>
+        mTrackedOnContainerChangedCallbacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void(int, ::ItemStack const&, ::ItemStack const&)>>>
+        mOnContainerChangedCallbacks;
+    ::ll::TypedStorage<8, 64, ::std::function<void(int, ::ItemStack const&, ::ItemStack const&)>>
+        mPlayerNotificationCallbacks;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::Bedrock::PubSub::
+                          Publisher<void(::ItemStackBase const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>
+                                                         mContainerSlotChangePublishers;
+    ::ll::TypedStorage<4, 4, ::ContainerCategory>        mContainerCategory;
     ::ll::TypedStorage<8, 24, ::std::vector<::SlotData>> mItemSource;
-    ::ll::TypedStorage<8, 8, ::SparseContainerClient*> mClientUIContainer;
-    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(int), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>> mContainerSizeChangePublisher;
+    ::ll::TypedStorage<8, 8, ::SparseContainerClient*>   mClientUIContainer;
+    ::ll::
+        TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(int), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
+                                                          mContainerSizeChangePublisher;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
     // NOLINTEND
 
@@ -129,83 +144,95 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContainerModel(::FullContainerName const& fullContainerName, int containerSize, ::ContainerCategory containerCategory, bool isClientSide);
+    MCAPI ContainerModel(
+        ::FullContainerName const& fullContainerName,
+        int                        containerSize,
+        ::ContainerCategory        containerCategory,
+        bool                       isClientSide
+    );
 
-    MCNAPI void _onClientUIItemNetworkChanged(int containerSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCAPI void _onClientUIItemNetworkChanged(int containerSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCNAPI void networkUpdateItem(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCAPI void networkUpdateItem(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCNAPI void registerOnContainerChangedCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
+    MCAPI void
+    registerOnContainerChangedCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
 
-    MCNAPI void registerPlayerNotificationCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
+    MCAPI void
+    registerPlayerNotificationCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
 
-    MCNAPI void setClientUIContainer(::SparseContainerClient* clientUIContainer);
+    MCAPI void setClientUIContainer(::SparseContainerClient* clientUIContainer);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::FullContainerName const& fullContainerName, int containerSize, ::ContainerCategory containerCategory, bool isClientSide);
+    MCAPI void* $ctor(
+        ::FullContainerName const& fullContainerName,
+        int                        containerSize,
+        ::ContainerCategory        containerCategory,
+        bool                       isClientSide
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $postInit();
+    MCFOLD void $postInit();
 
-    MCNAPI void $releaseResources();
+    MCAPI void $releaseResources();
 
-    MCNAPI void $containerContentChanged(int slot);
+    MCAPI void $containerContentChanged(int slot);
 
-    MCNAPI int $getContainerSize() const;
+    MCAPI int $getContainerSize() const;
 
-    MCNAPI int $getFilteredContainerSize() const;
+    MCFOLD int $getFilteredContainerSize() const;
 
-    MCNAPI void $tick(int selectedSlot);
+    MCFOLD void $tick(int selectedSlot);
 
-    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
+    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCNAPI ::ItemStack const& $getItemStack(int modelSlot) const;
+    MCAPI ::ItemStack const& $getItemStack(int modelSlot) const;
 
-    MCNAPI ::std::vector<::ItemStack> const& $getItems() const;
+    MCAPI ::std::vector<::ItemStack> const& $getItems() const;
 
-    MCNAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
+    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
 
-    MCNAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
+    MCAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
 
-    MCNAPI bool $isItemInstanceBased() const;
+    MCFOLD bool $isItemInstanceBased() const;
 
-    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCNAPI bool $isValid();
+    MCFOLD bool $isValid();
 
-    MCNAPI bool $isItemFiltered(::ItemStackBase const& item) const;
+    MCFOLD bool $isItemFiltered(::ItemStackBase const& item) const;
 
-    MCNAPI bool $isExpanableItemFiltered(int index) const;
+    MCFOLD bool $isExpanableItemFiltered(int index) const;
 
-    MCNAPI ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
+    MCFOLD ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
 
-    MCNAPI ::std::string const& $getItemGroupName(int itemId) const;
+    MCFOLD ::std::string const& $getItemGroupName(int itemId) const;
 
-    MCNAPI void $switchItemExpando(int itemId);
+    MCFOLD void $switchItemExpando(int itemId);
 
-    MCNAPI bool $isSlotDisabled(int) const;
+    MCFOLD bool $isSlotDisabled(int) const;
 
-    MCNAPI void $refreshContainer(bool);
+    MCFOLD void $refreshContainer(bool);
 
-    MCNAPI ::Container* $_getContainer() const;
+    MCFOLD ::Container* $_getContainer() const;
 
-    MCNAPI int $_getContainerOffset() const;
+    MCFOLD int $_getContainerOffset() const;
 
-    MCNAPI void $_init();
+    MCAPI void $_init();
 
-    MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
     // NOLINTEND
 
 public:
@@ -213,5 +240,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

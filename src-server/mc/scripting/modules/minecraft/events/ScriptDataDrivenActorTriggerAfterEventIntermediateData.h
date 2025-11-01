@@ -16,8 +16,8 @@ struct ScriptDataDrivenActorTriggerAfterEventIntermediateData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 96, ::ScriptModuleMinecraft::ScriptActorData> mActor;
-    ::ll::TypedStorage<8, 32, ::std::string const> mEvent;
+    ::ll::TypedStorage<8, 96, ::ScriptModuleMinecraft::ScriptActorData>       mActor;
+    ::ll::TypedStorage<8, 32, ::std::string const>                            mEvent;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionModifier> const> mDefinitionModifiers;
     // NOLINTEND
 
@@ -32,7 +32,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

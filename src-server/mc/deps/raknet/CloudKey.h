@@ -17,7 +17,6 @@ public:
     CloudKey& operator=(CloudKey const&);
     CloudKey(CloudKey const&);
     CloudKey();
-
 };
 
-}
+} // namespace RakNet

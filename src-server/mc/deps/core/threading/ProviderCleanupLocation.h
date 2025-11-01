@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ProviderCleanupLocation : int {
-    Destructor = 0,
+    Destructor  = 0,
     AfterDoWork = 1,
-    InCancel = 2,
-    CleanedUp = 3,
+    InCancel    = 2,
+    CleanedUp   = 3,
 };

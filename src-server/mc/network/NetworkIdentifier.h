@@ -10,19 +10,19 @@ class NetworkIdentifier {
 public:
     // NetworkIdentifier inner types define
     enum class Type : int {
-        RakNet = 0,
-        Address = 1,
-        Address6 = 2,
+        RakNet    = 0,
+        Address   = 1,
+        Address6  = 2,
         NetherNet = 3,
-        Invalid = 4,
+        Invalid   = 4,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID> mNetherNetId;
-    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> mGuid;
-    ::ll::TypedStorage<8, 128, ::sockaddr_storage> mSock;
+    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID>   mNetherNetId;
+    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     mGuid;
+    ::ll::TypedStorage<8, 128, ::sockaddr_storage>      mSock;
     ::ll::TypedStorage<4, 4, ::NetworkIdentifier::Type> mType;
     // NOLINTEND
 
@@ -70,5 +70,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
     // NOLINTEND
-
 };

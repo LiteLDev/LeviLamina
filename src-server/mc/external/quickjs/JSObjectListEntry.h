@@ -15,5 +15,4 @@ public:
     JSObjectListEntry& operator=(JSObjectListEntry const&);
     JSObjectListEntry(JSObjectListEntry const&);
     JSObjectListEntry();
-
 };

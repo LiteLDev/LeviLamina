@@ -22,11 +22,12 @@ class SerializedSkin {
 public:
     // SerializedSkin inner types define
     using SerializedSkinWrapper = ::Bedrock::Application::ThreadOwner<::SerializedSkinImpl, 0>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Application::ThreadOwner<::SerializedSkinImpl, 0>>> mSkinImpl;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Application::ThreadOwner<::SerializedSkinImpl, 0>>>
+        mSkinImpl;
     // NOLINTEND
 
 public:
@@ -38,13 +39,38 @@ public:
     // NOLINTBEGIN
     MCAPI SerializedSkin();
 
-    MCAPI SerializedSkin(::std::string const& name, ::std::string const& playFabId, ::std::string const& resourcePatch, ::mce::Image const& skinImage, ushort const& skinImageWidth, ushort const& skinImageHeight, ::mce::Image const& capeImage, ushort const& capeImageWidth, ushort const& capeImageHeight, ::Json::Value&& geometryData, ::MinEngineVersion const& geometryDataMinEngineVersion, ::std::string const& animationData, ::std::string const& capeId, bool isTrustedSkin, bool isPremium, bool isPersona, bool isPersonaCapeOnClassicSkin, bool isPrimaryUser, bool overridesPlayerAppearance);
+    MCAPI SerializedSkin(
+        ::std::string const&      name,
+        ::std::string const&      playFabId,
+        ::std::string const&      resourcePatch,
+        ::mce::Image const&       skinImage,
+        ushort const&             skinImageWidth,
+        ushort const&             skinImageHeight,
+        ::mce::Image const&       capeImage,
+        ushort const&             capeImageWidth,
+        ushort const&             capeImageHeight,
+        ::Json::Value&&           geometryData,
+        ::MinEngineVersion const& geometryDataMinEngineVersion,
+        ::std::string const&      animationData,
+        ::std::string const&      capeId,
+        bool                      isTrustedSkin,
+        bool                      isPremium,
+        bool                      isPersona,
+        bool                      isPersonaCapeOnClassicSkin,
+        bool                      isPrimaryUser,
+        bool                      overridesPlayerAppearance
+    );
 
     MCFOLD ::SerializedSkin& operator=(::SerializedSkin&&);
 
     MCFOLD ::SerializedSkin& operator=(::SerializedSkin const&);
 
-    MCAPI void setPersonaAppearanceData(::persona::ArmSize::Type const& armSizeType, ::mce::Color const& skinColor, ::std::vector<::SerializedPersonaPieceHandle> personaPieces, ::std::unordered_map<::persona::PieceType, ::TintMapColor> const& pieceTintColors);
+    MCAPI void setPersonaAppearanceData(
+        ::persona::ArmSize::Type const&                                   armSizeType,
+        ::mce::Color const&                                               skinColor,
+        ::std::vector<::SerializedPersonaPieceHandle>                     personaPieces,
+        ::std::unordered_map<::persona::PieceType, ::TintMapColor> const& pieceTintColors
+    );
 
     MCAPI ~SerializedSkin();
     // NOLINTEND
@@ -54,7 +80,27 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::std::string const& name, ::std::string const& playFabId, ::std::string const& resourcePatch, ::mce::Image const& skinImage, ushort const& skinImageWidth, ushort const& skinImageHeight, ::mce::Image const& capeImage, ushort const& capeImageWidth, ushort const& capeImageHeight, ::Json::Value&& geometryData, ::MinEngineVersion const& geometryDataMinEngineVersion, ::std::string const& animationData, ::std::string const& capeId, bool isTrustedSkin, bool isPremium, bool isPersona, bool isPersonaCapeOnClassicSkin, bool isPrimaryUser, bool overridesPlayerAppearance);
+    MCAPI void* $ctor(
+        ::std::string const&      name,
+        ::std::string const&      playFabId,
+        ::std::string const&      resourcePatch,
+        ::mce::Image const&       skinImage,
+        ushort const&             skinImageWidth,
+        ushort const&             skinImageHeight,
+        ::mce::Image const&       capeImage,
+        ushort const&             capeImageWidth,
+        ushort const&             capeImageHeight,
+        ::Json::Value&&           geometryData,
+        ::MinEngineVersion const& geometryDataMinEngineVersion,
+        ::std::string const&      animationData,
+        ::std::string const&      capeId,
+        bool                      isTrustedSkin,
+        bool                      isPremium,
+        bool                      isPersona,
+        bool                      isPersonaCapeOnClassicSkin,
+        bool                      isPrimaryUser,
+        bool                      overridesPlayerAppearance
+    );
     // NOLINTEND
 
 public:
@@ -62,5 +108,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

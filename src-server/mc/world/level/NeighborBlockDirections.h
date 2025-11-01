@@ -32,7 +32,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::NeighborBlockDirections createFromRelativePosition(::BlockPos const& pos, ::BlockPos const& neighborPos);
+    MCNAPI static ::NeighborBlockDirections
+    createFromRelativePosition(::BlockPos const& pos, ::BlockPos const& neighborPos);
     // NOLINTEND
 
 public:
@@ -40,5 +41,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::NeighborDirection direction);
     // NOLINTEND
-
 };

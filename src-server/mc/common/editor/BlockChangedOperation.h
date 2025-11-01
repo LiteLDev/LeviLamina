@@ -50,15 +50,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo) const;
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> _setBlock(::Level& level, ::BlockSource& region, uint const& blockToPlace, uint const& extraBlockToPlace, ::CompoundTag* blockData, ::BlockPos const& pos) const;
+    MCNAPI ::Scripting::Result_deprecated<void> _setBlock(
+        ::Level&          level,
+        ::BlockSource&    region,
+        uint const&       blockToPlace,
+        uint const&       extraBlockToPlace,
+        ::CompoundTag*    blockData,
+        ::BlockPos const& pos
+    ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::Editor::Transactions::BlockChangeIntentData> createBlockChangeIntentFromLocation(::BlockSource const& region, ::BlockPos const& pos, bool includeAll);
+    MCNAPI static ::std::vector<::Editor::Transactions::BlockChangeIntentData>
+    createBlockChangeIntentFromLocation(::BlockSource const& region, ::BlockPos const& pos, bool includeAll);
     // NOLINTEND
 
 public:
@@ -82,7 +91,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Transactions

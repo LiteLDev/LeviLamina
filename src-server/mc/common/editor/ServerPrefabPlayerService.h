@@ -10,14 +10,16 @@
 
 namespace Editor::Services {
 
-class ServerPrefabPlayerService : public ::Editor::Services::IEditorService, public ::Editor::Prefabs::ServerPrefabPlayerServiceProvider, public ::Editor::Services::PayloadStoreHelper {
+class ServerPrefabPlayerService : public ::Editor::Services::IEditorService,
+                                  public ::Editor::Prefabs::ServerPrefabPlayerServiceProvider,
+                                  public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd20dca;
-    ::ll::UntypedStorage<4, 4> mUnk281e56;
+    ::ll::UntypedStorage<8, 8>  mUnkd20dca;
+    ::ll::UntypedStorage<4, 4>  mUnk281e56;
     ::ll::UntypedStorage<4, 12> mUnke74db6;
-    ::ll::UntypedStorage<4, 4> mUnk1cf793;
+    ::ll::UntypedStorage<4, 4>  mUnk1cf793;
     ::ll::UntypedStorage<8, 64> mUnkc4c47a;
     // NOLINTEND
 
@@ -48,7 +50,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

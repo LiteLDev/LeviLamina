@@ -18,29 +18,47 @@ class CommandRegistry;
 class CommandParameterData {
 public:
     // CommandParameterData inner types define
-    using ParseFunction = bool(::CommandRegistry::*) (void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)const;
-    
-    using CustomStorageGetFn = void*(*) (::Command*, int);
-    
-    using CustomStorageIsSetFn = bool*(*) (::Command*, int);
-    
+    using ParseFunction = bool (::CommandRegistry::*)(
+        void*,
+        ::CommandRegistry::ParseToken const&,
+        ::CommandOrigin const&,
+        int,
+        ::std::string&,
+        ::std::vector<::std::string>&
+    ) const;
+
+    using CustomStorageGetFn = void* (*)(::Command*, int);
+
+    using CustomStorageIsSetFn = bool* (*)(::Command*, int);
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::CommandRegistry>> mTypeIndex;
-    ::ll::TypedStorage<8, 8, bool(::CommandRegistry::*) (void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)const> mParse;
-    ::ll::TypedStorage<8, 32, ::std::string> mName;
-    ::ll::TypedStorage<8, 8, char const*> mEnumNameOrPostfix;
-    ::ll::TypedStorage<4, 4, int> mEnumOrPostfixSymbol;
-    ::ll::TypedStorage<8, 8, char const*> mChainedSubcommand;
-    ::ll::TypedStorage<4, 4, int> mChainedSubcommandSymbol;
+    ::ll::TypedStorage<
+        8,
+        8,
+        bool (::CommandRegistry::*)(
+            void*,
+            ::CommandRegistry::ParseToken const&,
+            ::CommandOrigin const&,
+            int,
+            ::std::string&,
+            ::std::vector<::std::string>&
+        ) const>
+                                                         mParse;
+    ::ll::TypedStorage<8, 32, ::std::string>             mName;
+    ::ll::TypedStorage<8, 8, char const*>                mEnumNameOrPostfix;
+    ::ll::TypedStorage<4, 4, int>                        mEnumOrPostfixSymbol;
+    ::ll::TypedStorage<8, 8, char const*>                mChainedSubcommand;
+    ::ll::TypedStorage<4, 4, int>                        mChainedSubcommandSymbol;
     ::ll::TypedStorage<4, 4, ::CommandParameterDataType> mParamType;
-    ::ll::TypedStorage<4, 4, int> mOffset;
-    ::ll::TypedStorage<4, 4, int> mSetOffset;
-    ::ll::TypedStorage<1, 1, bool> mIsOptional;
-    ::ll::TypedStorage<1, 1, ::CommandParameterOption> mOptions;
-    ::ll::TypedStorage<8, 8, void*(*) (::Command*, int)> mValueGetFn;
-    ::ll::TypedStorage<8, 8, bool*(*) (::Command*, int)> mValueIsSetFn;
+    ::ll::TypedStorage<4, 4, int>                        mOffset;
+    ::ll::TypedStorage<4, 4, int>                        mSetOffset;
+    ::ll::TypedStorage<1, 1, bool>                       mIsOptional;
+    ::ll::TypedStorage<1, 1, ::CommandParameterOption>   mOptions;
+    ::ll::TypedStorage<8, 8, void* (*)(::Command*, int)> mValueGetFn;
+    ::ll::TypedStorage<8, 8, bool* (*)(::Command*, int)> mValueIsSetFn;
     // NOLINTEND
 
 public:
@@ -54,5 +72,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

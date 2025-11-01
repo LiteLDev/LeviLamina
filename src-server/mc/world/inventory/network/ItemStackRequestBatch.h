@@ -23,5 +23,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestBatch>> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
-
 };

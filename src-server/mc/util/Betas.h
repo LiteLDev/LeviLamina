@@ -13,4 +13,4 @@ namespace ScriptModuleDebugUtilities::Betas {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-}
+} // namespace ScriptModuleDebugUtilities::Betas

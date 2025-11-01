@@ -4,8 +4,7 @@
 
 namespace cereal {
 
-template<typename T0>
-class BasicCommonFactory {
-};
+template <typename T0>
+class BasicCommonFactory {};
 
-}
+} // namespace cereal

@@ -21,7 +21,8 @@ public:
     // NOLINTBEGIN
     MCNAPI SchemaConverterCollection(::JsonUtil::SchemaConverterCollection const&);
 
-    MCNAPI ::JsonUtil::SchemaConverterCollection& operator()(::std::string const& filterString, bool forceCaseInsensitive);
+    MCNAPI ::JsonUtil::SchemaConverterCollection&
+    operator()(::std::string const& filterString, bool forceCaseInsensitive);
 
     MCNAPI ::JsonUtil::SchemaConverterCollection& operator()(uint64 minIndex, uint64 maxIndex, bool);
 
@@ -39,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace JsonUtil

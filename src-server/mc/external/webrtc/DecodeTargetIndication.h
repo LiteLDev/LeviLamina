@@ -5,10 +5,10 @@
 namespace webrtc {
 
 enum class DecodeTargetIndication : int {
-    KNotPresent = 0,
+    KNotPresent  = 0,
     KDiscardable = 1,
-    KSwitch = 2,
-    KRequired = 3,
+    KSwitch      = 2,
+    KRequired    = 3,
 };
 
 }

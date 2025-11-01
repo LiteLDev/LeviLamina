@@ -26,5 +26,4 @@ public:
     // NOLINTBEGIN
     MCNAPI ::VolumeDefinition const* tryGetVolumeDefinition(::std::string const& identifier) const;
     // NOLINTEND
-
 };

@@ -21,8 +21,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mBlockPos;
     ::ll::TypedStorage<8, 216, ::StructureEditorData> mData;
-    ::ll::TypedStorage<1, 1, bool> mTrigger;
-    ::ll::TypedStorage<1, 1, bool> mIsWaterlogged;
+    ::ll::TypedStorage<1, 1, bool>                    mTrigger;
+    ::ll::TypedStorage<1, 1, bool>                    mIsWaterlogged;
     // NOLINTEND
 
 public:
@@ -61,5 +61,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

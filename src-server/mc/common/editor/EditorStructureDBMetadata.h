@@ -23,17 +23,17 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk58840e;
     ::ll::UntypedStorage<8, 32> mUnk71491e;
     ::ll::UntypedStorage<8, 32> mUnk8ee653;
-    ::ll::UntypedStorage<1, 1> mUnkc265e3;
+    ::ll::UntypedStorage<1, 1>  mUnkc265e3;
     ::ll::UntypedStorage<4, 12> mUnkdc5b0c;
     ::ll::UntypedStorage<4, 12> mUnka6b0d7;
     ::ll::UntypedStorage<4, 12> mUnk6f7f73;
     ::ll::UntypedStorage<4, 12> mUnk1eaafc;
-    ::ll::UntypedStorage<4, 4> mUnk84ee08;
-    ::ll::UntypedStorage<4, 4> mUnk28f160;
-    ::ll::UntypedStorage<1, 1> mUnk7f82c5;
-    ::ll::UntypedStorage<4, 4> mUnkd53cea;
-    ::ll::UntypedStorage<4, 4> mUnk910ade;
-    ::ll::UntypedStorage<4, 4> mUnk17e3e4;
+    ::ll::UntypedStorage<4, 4>  mUnk84ee08;
+    ::ll::UntypedStorage<4, 4>  mUnk28f160;
+    ::ll::UntypedStorage<1, 1>  mUnk7f82c5;
+    ::ll::UntypedStorage<4, 4>  mUnkd53cea;
+    ::ll::UntypedStorage<4, 4>  mUnk910ade;
+    ::ll::UntypedStorage<4, 4>  mUnk17e3e4;
     ::ll::UntypedStorage<8, 40> mUnk942e04;
     ::ll::UntypedStorage<8, 40> mUnk7c379a;
     ::ll::UntypedStorage<8, 40> mUnkc0cf2c;
@@ -48,9 +48,16 @@ public:
 
     MCNAPI EditorStructureDBMetadata(::Editor::EditorStructureDBMetadata const&);
 
-    MCNAPI explicit EditorStructureDBMetadata(::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer&& loadedData);
+    MCNAPI explicit EditorStructureDBMetadata(
+        ::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer&& loadedData
+    );
 
-    MCNAPI EditorStructureDBMetadata(::mce::UUID const& guid, ::std::string structureNamespace, ::std::string structureName, ::std::string displayName);
+    MCNAPI EditorStructureDBMetadata(
+        ::mce::UUID const& guid,
+        ::std::string      structureNamespace,
+        ::std::string      structureName,
+        ::std::string      displayName
+    );
 
     MCNAPI void fromFileDataContainer(::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer&& loadedData);
 
@@ -80,7 +87,12 @@ public:
 
     MCNAPI void* $ctor(::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer&& loadedData);
 
-    MCNAPI void* $ctor(::mce::UUID const& guid, ::std::string structureNamespace, ::std::string structureName, ::std::string displayName);
+    MCNAPI void* $ctor(
+        ::mce::UUID const& guid,
+        ::std::string      structureNamespace,
+        ::std::string      structureName,
+        ::std::string      displayName
+    );
     // NOLINTEND
 
 public:
@@ -88,7 +100,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

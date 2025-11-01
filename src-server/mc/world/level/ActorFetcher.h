@@ -24,5 +24,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::Actor* fetchActorAllDimensions(::ActorUniqueID actorId, bool getRemoved) const;
     // NOLINTEND
-
 };

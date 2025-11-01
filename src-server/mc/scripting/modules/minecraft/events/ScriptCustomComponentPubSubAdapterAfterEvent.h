@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0>
-struct ScriptCustomComponentPubSubAdapterAfterEvent {
-};
+template <typename T0>
+struct ScriptCustomComponentPubSubAdapterAfterEvent {};
 
-}
+} // namespace ScriptModuleMinecraft

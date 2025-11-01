@@ -16,8 +16,8 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk46af04;
     ::ll::UntypedStorage<8, 16> mUnkac08cf;
     ::ll::UntypedStorage<8, 24> mUnkee925c;
-    ::ll::UntypedStorage<1, 1> mUnkd298ce;
-    ::ll::UntypedStorage<1, 1> mUnk13820e;
+    ::ll::UntypedStorage<1, 1>  mUnkd298ce;
+    ::ll::UntypedStorage<1, 1>  mUnk13820e;
     // NOLINTEND
 
 public:
@@ -49,7 +49,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

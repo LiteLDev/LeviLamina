@@ -21,4 +21,4 @@ MCNAPI ::Vec3 const& POSITION();
 MCNAPI float const& THIRD_PERSON_CAMERA_RADIUS();
 // NOLINTEND
 
-}
+} // namespace SeatDefaults

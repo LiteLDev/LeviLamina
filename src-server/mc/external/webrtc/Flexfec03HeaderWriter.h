@@ -22,7 +22,10 @@ public:
     virtual uint64 FecHeaderSize(uint64 packet_mask_size) const /*override*/;
 
     // vIndex: 3
-    virtual void FinalizeFecHeader(::rtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const> protected_streams, ::webrtc::ForwardErrorCorrection::Packet& fec_packet) const /*override*/;
+    virtual void FinalizeFecHeader(
+        ::rtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const> protected_streams,
+        ::webrtc::ForwardErrorCorrection::Packet&                          fec_packet
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -50,7 +53,10 @@ public:
 
     MCNAPI uint64 $FecHeaderSize(uint64 packet_mask_size) const;
 
-    MCNAPI void $FinalizeFecHeader(::rtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const> protected_streams, ::webrtc::ForwardErrorCorrection::Packet& fec_packet) const;
+    MCNAPI void $FinalizeFecHeader(
+        ::rtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const> protected_streams,
+        ::webrtc::ForwardErrorCorrection::Packet&                          fec_packet
+    ) const;
     // NOLINTEND
 
 public:
@@ -58,7 +64,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

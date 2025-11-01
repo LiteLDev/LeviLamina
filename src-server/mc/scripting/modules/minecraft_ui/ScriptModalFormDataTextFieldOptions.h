@@ -27,9 +27,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptModalFormDataTextFieldOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&&);
 
-    MCNAPI ScriptModalFormDataTextFieldOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions const&);
+    MCNAPI
+    ScriptModalFormDataTextFieldOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions const&);
 
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions& operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&&);
+    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&
+    operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&&);
 
     MCNAPI ~ScriptModalFormDataTextFieldOptions();
     // NOLINTEND
@@ -53,7 +55,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraftServerUI

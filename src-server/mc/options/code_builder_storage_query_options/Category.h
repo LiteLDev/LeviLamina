@@ -5,8 +5,8 @@
 namespace CodeBuilderStorageQueryOptions {
 
 enum class Category : uchar {
-    None = 0,
-    CodeStatus = 1,
+    None          = 0,
+    CodeStatus    = 1,
     Instantiation = 2,
 };
 

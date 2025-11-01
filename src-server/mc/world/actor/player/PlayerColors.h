@@ -13,4 +13,4 @@ namespace PlayerColors {
 MCNAPI ::mce::Color const& YELLOW();
 // NOLINTEND
 
-}
+} // namespace PlayerColors

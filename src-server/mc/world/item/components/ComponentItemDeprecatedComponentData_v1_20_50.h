@@ -11,7 +11,8 @@ struct ComponentItemDeprecatedComponentData_v1_20_50 : public ::ComponentItemDep
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::std::optional<::LegacyOnCompleteTriggerItemComponentData>> legacyOnCompleteTriggerItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::LegacyOnCompleteTriggerItemComponentData>>
+        legacyOnCompleteTriggerItemComponent;
     ::ll::TypedStorage<8, 96, ::std::optional<::LegacyOnDigTriggerItemComponentData>> legacyOnDigTriggerItemComponent;
     // NOLINTEND
 
@@ -42,5 +43,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

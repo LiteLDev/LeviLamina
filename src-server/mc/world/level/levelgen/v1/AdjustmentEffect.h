@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class AdjustmentEffect : int {
-    Beard = 0,
+    Beard         = 0,
     BeardAndShave = 1,
-    Bury = 2,
+    Bury          = 2,
 };

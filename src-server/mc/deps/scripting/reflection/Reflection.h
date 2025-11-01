@@ -8,4 +8,4 @@ namespace Scripting::Reflection {
 MCNAPI bool HasBaseType(::entt::meta_type const& baseAnyType, ::entt::meta_type const& derivedAnyType);
 // NOLINTEND
 
-}
+} // namespace Scripting::Reflection

@@ -19,28 +19,27 @@ struct CameraSplineInstructionEvent;
 struct CameraTargetInstructionEvent;
 // clang-format on
 
-class EcsEventDispatcher : public ::std::enable_shared_from_this<::EcsEventDispatcher>, public ::EnableGetWeakRef<::EcsEventDispatcher> {
+class EcsEventDispatcher : public ::std::enable_shared_from_this<::EcsEventDispatcher>,
+                           public ::EnableGetWeakRef<::EcsEventDispatcher> {
 public:
     // EcsEventDispatcher inner types declare
     // clang-format off
     template<typename T0> struct ExpandedEvent;
     // clang-format on
-    
+
     // EcsEventDispatcher inner types define
     using BaseWeak = ::EnableGetWeakRef<::EcsEventDispatcher>;
-    
+
     using BaseShared = ::std::enable_shared_from_this<::EcsEventDispatcher>;
-    
+
     using Token = ::gsl::final_action<::std::function<void()>>;
-    
-    template<typename T0>
-    struct ExpandedEvent {
-    };
-    
+
+    template <typename T0>
+    struct ExpandedEvent {};
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::entt::dispatcher> mDispatcher;
     // NOLINTEND
-
 };

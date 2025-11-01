@@ -15,5 +15,4 @@ public:
     SelectedSlotInfo& operator=(SelectedSlotInfo const&);
     SelectedSlotInfo(SelectedSlotInfo const&);
     SelectedSlotInfo();
-
 };

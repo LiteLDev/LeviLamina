@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,14 +16,14 @@ class RandomStrollGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, float> mSpeed;
-    ::ll::TypedStorage<4, 4, int> mXZDist;
-    ::ll::TypedStorage<4, 4, int> mYDist;
-    ::ll::TypedStorage<4, 4, int> mInterval;
-    ::ll::TypedStorage<4, 12, ::Vec3> mWantedPosition;
+    ::ll::TypedStorage<8, 8, ::Mob&>      mMob;
+    ::ll::TypedStorage<4, 4, float>       mSpeed;
+    ::ll::TypedStorage<4, 4, int>         mXZDist;
+    ::ll::TypedStorage<4, 4, int>         mYDist;
+    ::ll::TypedStorage<4, 4, int>         mInterval;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mWantedPosition;
     ::ll::TypedStorage<4, 12, ::BlockPos> mChosenEndPos;
-    ::ll::TypedStorage<1, 1, bool> mReachedTarget;
+    ::ll::TypedStorage<1, 1, bool>        mReachedTarget;
     // NOLINTEND
 
 public:
@@ -83,5 +83,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

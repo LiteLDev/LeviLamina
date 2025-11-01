@@ -30,7 +30,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen::processors::PosRules

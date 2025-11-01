@@ -18,7 +18,7 @@ class ScriptMobEffectInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6f7818;
+    ::ll::UntypedStorage<4, 4>  mUnk6f7818;
     ::ll::UntypedStorage<8, 24> mUnke266c8;
     // NOLINTEND
 
@@ -47,7 +47,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V2() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptMobEffectInstance& operator=(::ScriptModuleMinecraft::ScriptMobEffectInstance&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptMobEffectInstance&
+    operator=(::ScriptModuleMinecraft::ScriptMobEffectInstance&&);
 
     MCNAPI ::MobEffectInstance const* tryGetEffect() const;
     // NOLINTEND
@@ -63,7 +64,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Actor const& actor, uint effectIdx);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -21,12 +21,15 @@ struct ScriptBlockExplodedAfterEvent : public ::ScriptModuleMinecraft::ScriptBlo
 public:
     // ScriptBlockExplodedAfterEvent inner types define
     using QueueType = ::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mSource;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> mExplodedBlockPermutation;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mSource;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
+        mExplodedBlockPermutation;
     // NOLINTEND
 
 public:
@@ -41,7 +44,10 @@ public:
 
     MCAPI ScriptBlockExplodedAfterEvent(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&);
 
-    MCAPI ScriptBlockExplodedAfterEvent(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData> const& eventData, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptBlockExplodedAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                            scope
+    );
 
     MCAPI ~ScriptBlockExplodedAfterEvent();
     // NOLINTEND
@@ -59,7 +65,10 @@ public:
 
     MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&);
 
-    MCAPI void* $ctor(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData> const& eventData, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                            scope
+    );
     // NOLINTEND
 
 public:
@@ -67,7 +76,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

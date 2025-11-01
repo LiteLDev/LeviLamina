@@ -18,12 +18,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 512> mUnka4d623;
-    ::ll::UntypedStorage<8, 8> mUnked563f;
-    ::ll::UntypedStorage<8, 8> mUnk3c6231;
-    ::ll::UntypedStorage<4, 4> mUnke176ed;
-    ::ll::UntypedStorage<1, 1> mUnk72cd45;
-    ::ll::UntypedStorage<8, 8> mUnke3e796;
-    ::ll::UntypedStorage<4, 4> mUnkd7b139;
+    ::ll::UntypedStorage<8, 8>   mUnked563f;
+    ::ll::UntypedStorage<8, 8>   mUnk3c6231;
+    ::ll::UntypedStorage<4, 4>   mUnke176ed;
+    ::ll::UntypedStorage<1, 1>   mUnk72cd45;
+    ::ll::UntypedStorage<8, 8>   mUnke3e796;
+    ::ll::UntypedStorage<4, 4>   mUnkd7b139;
     // NOLINTEND
 
 public:
@@ -47,7 +47,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

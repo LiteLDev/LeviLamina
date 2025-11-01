@@ -10,7 +10,7 @@ public:
     enum class LoadError : int {
         TextureConversionError = 0,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -22,7 +22,6 @@ public:
     ImageResourceLoader& operator=(ImageResourceLoader const&);
     ImageResourceLoader(ImageResourceLoader const&);
     ImageResourceLoader();
-
 };
 
-}
+} // namespace mce

@@ -16,7 +16,7 @@ public:
     template<typename T0> struct InteractionMapping;
     struct InteractionMappingBase;
     // clang-format on
-    
+
     // PlayerInteractionSystem inner types define
     struct InteractionMappingBase {
     public:
@@ -24,29 +24,27 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~InteractionMappingBase() = default;
-    
+
         // vIndex: 1
         virtual bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
-    template<typename T0>
-    struct InteractionMapping {
-    };
-    
+
+    template <typename T0>
+    struct InteractionMapping {};
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,5 +56,4 @@ public:
     PlayerInteractionSystem& operator=(PlayerInteractionSystem const&);
     PlayerInteractionSystem(PlayerInteractionSystem const&);
     PlayerInteractionSystem();
-
 };

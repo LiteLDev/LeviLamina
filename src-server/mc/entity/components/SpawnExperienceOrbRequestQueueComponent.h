@@ -15,7 +15,12 @@ struct SpawnExperienceOrbRequestQueueComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::DimensionType, ::std::queue<::SpawnExperienceOrbRequest, ::std::deque<::SpawnExperienceOrbRequest>>>> mRequestQueues;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::DimensionType,
+            ::std::queue<::SpawnExperienceOrbRequest, ::std::deque<::SpawnExperienceOrbRequest>>>>
+        mRequestQueues;
     // NOLINTEND
-
 };

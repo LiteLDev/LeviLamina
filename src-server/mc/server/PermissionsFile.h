@@ -31,13 +31,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void applyPlayerPermissionsFromDisk(::Player& player, ::UserEntityIdentifierComponent const& userIdentifier, ::CommandPermissionLevel opCommandPermissionLevel);
+    MCNAPI void applyPlayerPermissionsFromDisk(
+        ::Player&                              player,
+        ::UserEntityIdentifierComponent const& userIdentifier,
+        ::CommandPermissionLevel               opCommandPermissionLevel
+    );
 
     MCNAPI ::std::vector<::std::string> getXUIDsByPermission(::PlayerPermissionLevel permission) const;
 
     MCNAPI bool isPermissionsSet(::std::string const& xuid, ::PlayerPermissionLevel permission) const;
 
-    MCNAPI void persistPlayerPermissionsToDisk(::UserEntityIdentifierComponent const& userIdentifier, ::PlayerPermissionLevel permission);
+    MCNAPI void persistPlayerPermissionsToDisk(
+        ::UserEntityIdentifierComponent const& userIdentifier,
+        ::PlayerPermissionLevel                permission
+    );
 
     MCNAPI void persistPlayerPermissionsToDisk(::std::string const& xuid, ::PlayerPermissionLevel permission);
 
@@ -47,5 +54,4 @@ public:
 
     MCNAPI void setDefaultPlayerPermission(::Player& player, ::CommandPermissionLevel opCommandPermissionLevel);
     // NOLINTEND
-
 };

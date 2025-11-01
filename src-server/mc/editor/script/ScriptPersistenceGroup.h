@@ -30,7 +30,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkd87475;
     ::ll::UntypedStorage<8, 16> mUnk71de30;
     ::ll::UntypedStorage<8, 64> mUnkdae144;
-    ::ll::UntypedStorage<8, 8> mUnkdd5278;
+    ::ll::UntypedStorage<8, 8>  mUnkdd5278;
     // NOLINTEND
 
 public:
@@ -42,13 +42,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPersistenceGroup(::WeakRef<::Editor::Services::PersistenceGroup> persistenceGroup, ::Editor::ScriptModule::ScriptPersistenceService* owner, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ScriptPersistenceGroup(
+        ::WeakRef<::Editor::Services::PersistenceGroup>   persistenceGroup,
+        ::Editor::ScriptModule::ScriptPersistenceService* owner,
+        ::Scripting::WeakLifetimeScope const&             scope
+    );
 
-    MCNAPI ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem> _createScriptPersistenceGroupItem(::WeakRef<::Editor::Services::PersistenceItem> groupItemRef);
+    MCNAPI ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>
+    _createScriptPersistenceGroupItem(::WeakRef<::Editor::Services::PersistenceItem> groupItemRef);
 
     MCNAPI ::Scripting::Error _getInvalidGroupError() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>> createItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>>
+    createItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
 
     MCNAPI ::Scripting::Result_deprecated<void> deleteItem(::std::string const& itemName);
 
@@ -58,9 +65,13 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> disposeGroupItem(::std::string key);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>> fetchItem(::std::string const& itemName);
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>>
+    fetchItem(::std::string const& itemName);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>> getOrCreateItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>>
+    getOrCreateItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
 
     MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> listItems() const;
     // NOLINTEND
@@ -74,9 +85,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::WeakRef<::Editor::Services::PersistenceGroup> persistenceGroup, ::Editor::ScriptModule::ScriptPersistenceService* owner, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(
+        ::WeakRef<::Editor::Services::PersistenceGroup>   persistenceGroup,
+        ::Editor::ScriptModule::ScriptPersistenceService* owner,
+        ::Scripting::WeakLifetimeScope const&             scope
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

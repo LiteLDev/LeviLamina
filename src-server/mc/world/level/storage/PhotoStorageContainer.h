@@ -10,8 +10,7 @@ struct PhotoStorageContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::PhotoType> mType;
+    ::ll::TypedStorage<1, 1, ::PhotoType>     mType;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOwnerId;
     // NOLINTEND
-
 };

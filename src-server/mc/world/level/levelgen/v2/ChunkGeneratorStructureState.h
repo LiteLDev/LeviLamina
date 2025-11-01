@@ -18,9 +18,9 @@ struct ChunkGeneratorStructureState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, int64> mLevelSeed;
-    ::ll::TypedStorage<8, 8, int64> mRingsSeed;
-    ::ll::TypedStorage<8, 8, uint64> mMaxStructureCount;
+    ::ll::TypedStorage<8, 8, int64>                                                                 mLevelSeed;
+    ::ll::TypedStorage<8, 8, int64>                                                                 mRingsSeed;
+    ::ll::TypedStorage<8, 8, uint64>                                                                mMaxStructureCount;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::br::worldgen::StructureSet const>>> mPossibleStructures;
     // NOLINTEND
 
@@ -33,7 +33,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> findNearestStructureFeature(::Dimension& dimension, ::HashedString feature, ::BlockPos const& origin, ::BiomeSource const& biomeSource, bool mustBeInNewChunks) const;
+    MCAPI ::std::optional<::BlockPos> findNearestStructureFeature(
+        ::Dimension&         dimension,
+        ::HashedString       feature,
+        ::BlockPos const&    origin,
+        ::BiomeSource const& biomeSource,
+        bool                 mustBeInNewChunks
+    ) const;
 
     MCAPI ::br::worldgen::ChunkGeneratorStructureState& operator=(::br::worldgen::ChunkGeneratorStructureState&&);
 
@@ -43,9 +49,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::ChunkGeneratorStructureState createFlat(int64 levelSeed, ::BiomeSource const& biomeSource, ::std::vector<::std::shared_ptr<::br::worldgen::StructureSet const>> structureOverrides);
+    MCAPI static ::br::worldgen::ChunkGeneratorStructureState createFlat(
+        int64                                                                levelSeed,
+        ::BiomeSource const&                                                 biomeSource,
+        ::std::vector<::std::shared_ptr<::br::worldgen::StructureSet const>> structureOverrides
+    );
 
-    MCAPI static ::br::worldgen::ChunkGeneratorStructureState createNormal(int64 levelSeed, ::BiomeSource const& biomeSource, ::br::worldgen::StructureSetRegistry const& allStructures);
+    MCAPI static ::br::worldgen::ChunkGeneratorStructureState createNormal(
+        int64                                       levelSeed,
+        ::BiomeSource const&                        biomeSource,
+        ::br::worldgen::StructureSetRegistry const& allStructures
+    );
     // NOLINTEND
 
 public:
@@ -53,7 +67,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

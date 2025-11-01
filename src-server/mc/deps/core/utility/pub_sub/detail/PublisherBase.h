@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk43b2a1;
-    ::ll::UntypedStorage<4, 4> mUnk1135b7;
+    ::ll::UntypedStorage<4, 4>  mUnk1135b7;
     // NOLINTEND
 
 public:
@@ -41,9 +41,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void _clear();
 
-    MCNAPI void _insertConnection(::std::shared_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase> const& body, ::Bedrock::PubSub::ConnectPosition at, ::std::optional<int> group);
+    MCNAPI void _insertConnection(
+        ::std::shared_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase> const& body,
+        ::Bedrock::PubSub::ConnectPosition                                        at,
+        ::std::optional<int>                                                      group
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::PubSub::Detail

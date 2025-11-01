@@ -6,8 +6,8 @@ namespace mce {
 
 enum class ImageUsage : uchar {
     Unknown = 0,
-    SRGB = 1,
-    Data = 2,
+    SRGB    = 1,
+    Data    = 2,
 };
 
 }

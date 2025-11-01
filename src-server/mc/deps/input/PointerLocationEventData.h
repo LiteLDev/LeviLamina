@@ -10,9 +10,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::InputMode> inputMode;
-    ::ll::TypedStorage<2, 2, short> x;
-    ::ll::TypedStorage<2, 2, short> y;
-    ::ll::TypedStorage<1, 1, bool> forceMotionlessPointer;
+    ::ll::TypedStorage<2, 2, short>       x;
+    ::ll::TypedStorage<2, 2, short>       y;
+    ::ll::TypedStorage<1, 1, bool>        forceMotionlessPointer;
     // NOLINTEND
-
 };

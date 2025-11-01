@@ -33,11 +33,14 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> _getPermissionCategoryV2(::ClientInputLockCategory category) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> _setPermissionCategoryV1(::ClientInputLockCategory category, bool isEnabled);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _setPermissionCategoryV1(::ClientInputLockCategory category, bool isEnabled);
 
-    MCNAPI ::Scripting::Result_deprecated<void> _setPermissionCategoryV2(::ClientInputLockCategory category, bool isEnabled);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _setPermissionCategoryV2(::ClientInputLockCategory category, bool isEnabled);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerInputPermissions& operator=(::ScriptModuleMinecraft::ScriptPlayerInputPermissions&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerInputPermissions&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerInputPermissions&&);
     // NOLINTEND
 
 public:
@@ -45,7 +48,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

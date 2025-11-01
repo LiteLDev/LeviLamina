@@ -15,9 +15,9 @@ class PartiallyExposedBlobFeature : public ::IFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar> mExposedFace;
-    ::ll::TypedStorage<4, 4, int> mPlacementRadiusAroundFloor;
-    ::ll::TypedStorage<4, 4, float> mPlacementProbabilityPerValidPosition;
+    ::ll::TypedStorage<1, 1, uchar>               mExposedFace;
+    ::ll::TypedStorage<4, 4, int>                 mPlacementRadiusAroundFloor;
+    ::ll::TypedStorage<4, 4, float>               mPlacementProbabilityPerValidPosition;
     ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockToPlace;
     // NOLINTEND
 
@@ -42,5 +42,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

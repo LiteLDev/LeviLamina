@@ -14,7 +14,8 @@ namespace Core { class FileSystem; }
 
 namespace Bedrock {
 
-class DeviceIdManager : public ::Bedrock::EnableNonOwnerReferences, public ::Bedrock::ImplBase<::Bedrock::DeviceIdManager> {
+class DeviceIdManager : public ::Bedrock::EnableNonOwnerReferences,
+                        public ::Bedrock::ImplBase<::Bedrock::DeviceIdManager> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -45,7 +46,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock

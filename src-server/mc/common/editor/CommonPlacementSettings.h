@@ -23,7 +23,6 @@ public:
     CommonPlacementSettings& operator=(CommonPlacementSettings const&);
     CommonPlacementSettings(CommonPlacementSettings const&);
     CommonPlacementSettings();
-
 };
 
-}
+} // namespace Editor::Brush

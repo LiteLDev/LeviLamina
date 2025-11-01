@@ -8,7 +8,7 @@ class MeshData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk42b31e;
+    ::ll::UntypedStorage<1, 1>  mUnk42b31e;
     ::ll::UntypedStorage<8, 24> mUnkb8c839;
     ::ll::UntypedStorage<8, 24> mUnk1d448f;
     ::ll::UntypedStorage<8, 24> mUnkd464e6;
@@ -26,7 +26,6 @@ public:
     MeshData& operator=(MeshData const&);
     MeshData(MeshData const&);
     MeshData();
-
 };
 
-}
+} // namespace mce

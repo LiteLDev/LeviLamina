@@ -16,5 +16,4 @@ public:
     JSResolveState& operator=(JSResolveState const&);
     JSResolveState(JSResolveState const&);
     JSResolveState();
-
 };

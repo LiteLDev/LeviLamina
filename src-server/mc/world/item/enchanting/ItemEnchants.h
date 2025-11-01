@@ -18,7 +18,7 @@ class ItemEnchants {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mSlot;
+    ::ll::TypedStorage<4, 4, int>                                      mSlot;
     ::ll::TypedStorage<8, 72, ::std::vector<::EnchantmentInstance>[3]> mItemEnchants;
     // NOLINTEND
 
@@ -61,5 +61,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

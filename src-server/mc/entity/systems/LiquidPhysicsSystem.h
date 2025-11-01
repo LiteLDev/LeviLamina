@@ -26,15 +26,48 @@ struct UpdateWaterStateRequestComponent;
 namespace LiquidPhysicsSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _liquidBlockFetch(::StrictEntityContext const&, ::StateVectorComponent& stateVector, ::UpdateWaterStateRequestComponent& request, ::AABBShapeComponent const& aabbShape, ::SubBBsComponent const& subBBs, ::Optional<::ItemActorFlagComponent const> maybeItem, ::std::vector<::LiquidBlockEntry>& scratch, ::IConstBlockSource const& region);
+MCNAPI void _liquidBlockFetch(
+    ::StrictEntityContext const&,
+    ::StateVectorComponent&                    stateVector,
+    ::UpdateWaterStateRequestComponent&        request,
+    ::AABBShapeComponent const&                aabbShape,
+    ::SubBBsComponent const&                   subBBs,
+    ::Optional<::ItemActorFlagComponent const> maybeItem,
+    ::std::vector<::LiquidBlockEntry>&         scratch,
+    ::IConstBlockSource const&                 region
+);
 
-MCNAPI void _markForLiquidFlow(::UpdateWaterStateRequestComponent& updateWaterStateRequest, ::Optional<::MovementAbilitiesComponent const> const& abilities);
+MCNAPI void _markForLiquidFlow(
+    ::UpdateWaterStateRequestComponent&                   updateWaterStateRequest,
+    ::Optional<::MovementAbilitiesComponent const> const& abilities
+);
 
-MCNAPI void _singleTickLiquidBlocksFetch(::StrictEntityContext& entity, ::ViewT<::StrictEntityContext, ::StateVectorComponent, ::UpdateWaterStateRequestComponent, ::AABBShapeComponent const, ::SubBBsComponent const, ::Optional<::ItemActorFlagComponent const>> view, ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const> dimensionView, ::OptionalGlobal<::LocalConstBlockSourceFactoryComponent const> factory);
+MCNAPI void _singleTickLiquidBlocksFetch(
+    ::StrictEntityContext& entity,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::StateVectorComponent,
+        ::UpdateWaterStateRequestComponent,
+        ::AABBShapeComponent const,
+        ::SubBBsComponent const,
+        ::Optional<::ItemActorFlagComponent const>>                 view,
+    ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const>  dimensionView,
+    ::OptionalGlobal<::LocalConstBlockSourceFactoryComponent const> factory
+);
 
-MCNAPI void _tickLiquidBlocksFetch(::ViewT<::StrictEntityContext, ::StateVectorComponent, ::UpdateWaterStateRequestComponent, ::AABBShapeComponent const, ::SubBBsComponent const, ::Optional<::ItemActorFlagComponent const>> view, ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const> dimensionView, ::OptionalGlobal<::LocalConstBlockSourceFactoryComponent const> factory);
+MCNAPI void _tickLiquidBlocksFetch(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::StateVectorComponent,
+        ::UpdateWaterStateRequestComponent,
+        ::AABBShapeComponent const,
+        ::SubBBsComponent const,
+        ::Optional<::ItemActorFlagComponent const>>                 view,
+    ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const>  dimensionView,
+    ::OptionalGlobal<::LocalConstBlockSourceFactoryComponent const> factory
+);
 
 MCNAPI ::TickingSystemWithInfo createFilterSystem(bool isClientSide);
 // NOLINTEND
 
-}
+} // namespace LiquidPhysicsSystem

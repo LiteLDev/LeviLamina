@@ -7,7 +7,6 @@
 
 namespace Core::Profile {
 
-class CPUProfileToken : public ::Core::Profile::CPUProfileTokenMarker {
-};
+class CPUProfileToken : public ::Core::Profile::CPUProfileTokenMarker {};
 
-}
+} // namespace Core::Profile

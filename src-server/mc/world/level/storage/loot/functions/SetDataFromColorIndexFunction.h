@@ -35,7 +35,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _applyImpl(::Item const*& inOutItemDef, ::Actor const* thisEntity, ::std::string const& originalItemName, int& outResultAux);
+    MCNAPI bool _applyImpl(
+        ::Item const*&       inOutItemDef,
+        ::Actor const*       thisEntity,
+        ::std::string const& originalItemName,
+        int&                 outResultAux
+    );
     // NOLINTEND
 
 public:
@@ -53,5 +58,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

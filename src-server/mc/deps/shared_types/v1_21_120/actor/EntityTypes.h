@@ -34,9 +34,15 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void fromDescriptor(::SharedTypes::v1_21_120::EntityTypes& entityTypes, ::SharedTypes::v1_21_120::MobDescriptor& descriptor);
+    MCNAPI static void fromDescriptor(
+        ::SharedTypes::v1_21_120::EntityTypes&   entityTypes,
+        ::SharedTypes::v1_21_120::MobDescriptor& descriptor
+    );
 
-    MCNAPI static void fromVector(::SharedTypes::v1_21_120::EntityTypes& entityTypes, ::std::vector<::SharedTypes::v1_21_120::MobDescriptor>& vector);
+    MCNAPI static void fromVector(
+        ::SharedTypes::v1_21_120::EntityTypes&                  entityTypes,
+        ::std::vector<::SharedTypes::v1_21_120::MobDescriptor>& vector
+    );
     // NOLINTEND
 
 public:
@@ -44,7 +50,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_120

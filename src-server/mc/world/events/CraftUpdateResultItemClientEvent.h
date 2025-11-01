@@ -16,7 +16,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mActor;
-    ::ll::TypedStorage<8, 128, ::ItemInstance const> mItem;
+    ::ll::TypedStorage<8, 128, ::ItemInstance const>      mItem;
     // NOLINTEND
-
 };

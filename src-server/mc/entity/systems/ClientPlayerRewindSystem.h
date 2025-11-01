@@ -15,9 +15,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo accumulateHistoryChangesSystem();
 
-    MCNAPI static void applyHistoryChangesToLiveEntity(::ReplayStateTrackerComponent const& postSimulationState, ::EntityContext& liveData);
+    MCNAPI static void applyHistoryChangesToLiveEntity(
+        ::ReplayStateTrackerComponent const& postSimulationState,
+        ::EntityContext&                     liveData
+    );
 
     MCNAPI static ::TickingSystemWithInfo discardHistoryChangesSystem();
     // NOLINTEND
-
 };

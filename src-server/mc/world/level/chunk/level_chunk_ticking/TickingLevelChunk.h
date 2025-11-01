@@ -15,7 +15,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::LevelChunk*> mChunk;
     // NOLINTEND
-
 };
 
-}
+} // namespace LevelChunkTicking

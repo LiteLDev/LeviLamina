@@ -4,7 +4,6 @@
 
 namespace MinecraftCamera {
 
-struct CameraLocalSpaceRotationComponent {
-};
+struct CameraLocalSpaceRotationComponent {};
 
-}
+} // namespace MinecraftCamera

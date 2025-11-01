@@ -24,5 +24,4 @@ public:
     // vIndex: 0
     virtual ~ClientInstanceEventCoordinator() /*override*/ = default;
     // NOLINTEND
-
 };

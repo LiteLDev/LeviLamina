@@ -20,7 +20,6 @@ public:
     BlockPlacementSettings& operator=(BlockPlacementSettings const&);
     BlockPlacementSettings(BlockPlacementSettings const&);
     BlockPlacementSettings();
-
 };
 
-}
+} // namespace Editor::Brush

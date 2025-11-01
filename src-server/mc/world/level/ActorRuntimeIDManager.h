@@ -18,7 +18,7 @@ class ActorRuntimeIDManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk322003;
+    ::ll::UntypedStorage<8, 8>  mUnk322003;
     ::ll::UntypedStorage<8, 64> mUnk5c39dd;
     ::ll::UntypedStorage<8, 24> mUnk666330;
     ::ll::UntypedStorage<8, 16> mUnke0e9d8;
@@ -66,5 +66,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

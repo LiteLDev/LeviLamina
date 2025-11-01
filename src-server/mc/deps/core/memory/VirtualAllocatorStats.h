@@ -19,7 +19,6 @@ public:
     VirtualAllocatorStats& operator=(VirtualAllocatorStats const&);
     VirtualAllocatorStats(VirtualAllocatorStats const&);
     VirtualAllocatorStats();
-
 };
 
-}
+} // namespace Bedrock::Memory

@@ -21,7 +21,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DeserializedChunkLoadedRequest(::ChunkLoadedRequest chunkLoadedRequest, ::ChunkRequestListType chunkRequestListType);
+    MCNAPI DeserializedChunkLoadedRequest(
+        ::ChunkLoadedRequest   chunkLoadedRequest,
+        ::ChunkRequestListType chunkRequestListType
+    );
 
     MCNAPI ~DeserializedChunkLoadedRequest();
     // NOLINTEND
@@ -37,5 +40,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

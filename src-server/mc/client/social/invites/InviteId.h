@@ -7,7 +7,6 @@
 
 namespace Invites {
 
-struct InviteId : public ::NewType<::std::string> {
-};
+struct InviteId : public ::NewType<::std::string> {};
 
-}
+} // namespace Invites

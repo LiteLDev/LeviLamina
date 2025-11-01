@@ -17,7 +17,7 @@ class OceanMonumentWingRoom : public ::OceanMonumentPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mMainDesign;
+    ::ll::TypedStorage<4, 4, int>  mMainDesign;
     ::ll::TypedStorage<1, 1, bool> mIsRightWing;
     // NOLINTEND
 
@@ -52,5 +52,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

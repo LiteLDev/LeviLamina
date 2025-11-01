@@ -18,12 +18,12 @@ class ListTag : public ::Tag {
 public:
     // ListTag inner types define
     using List = ::std::vector<::std::unique_ptr<::Tag>>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Tag>>> mList;
-    ::ll::TypedStorage<1, 1, ::Tag::Type> mType;
+    ::ll::TypedStorage<1, 1, ::Tag::Type>                              mType;
     // NOLINTEND
 
 public:
@@ -48,7 +48,7 @@ public:
     virtual ::std::string toString() const /*override*/;
 
     // vIndex: 7
-    virtual void print(::std::string const& prefix, ::PrintStream& out) const /*override*/;
+    virtual void print(::std::string const& prefix_, ::PrintStream& out) const /*override*/;
 
     // vIndex: 9
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
@@ -101,7 +101,7 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
+    MCAPI void $print(::std::string const& prefix_, ::PrintStream& out) const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
@@ -117,5 +117,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

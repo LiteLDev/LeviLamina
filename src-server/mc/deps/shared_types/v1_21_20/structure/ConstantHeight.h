@@ -16,7 +16,6 @@ public:
     ConstantHeight& operator=(ConstantHeight const&);
     ConstantHeight(ConstantHeight const&);
     ConstantHeight();
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20

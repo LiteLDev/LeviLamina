@@ -17,7 +17,6 @@ public:
     PackDependency& operator=(PackDependency const&);
     PackDependency(PackDependency const&);
     PackDependency();
-
 };
 
-}
+} // namespace SharedTypes::v3_0_0::PackManifestDefinition

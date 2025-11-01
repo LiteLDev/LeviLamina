@@ -19,18 +19,18 @@ public:
     // clang-format off
     struct LegacyMapping;
     // clang-format on
-    
+
     // ActorFilterGroup inner types define
     enum class Processing : int {
-        Default = 0,
-        ReadValue = 1,
-        ReadString = 2,
+        Default     = 0,
+        ReadValue   = 1,
+        ReadString  = 2,
         Environment = 3,
-        Item = 4,
-        Armor = 5,
-        Equipment = 6,
+        Item        = 4,
+        Armor       = 5,
+        Equipment   = 6,
     };
-    
+
     struct LegacyMapping {
     public:
         // member variables
@@ -41,15 +41,14 @@ public:
         ::ll::UntypedStorage<2, 2> mUnk25aff8;
         ::ll::UntypedStorage<4, 4> mUnk33deca;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         LegacyMapping& operator=(LegacyMapping const&);
         LegacyMapping(LegacyMapping const&);
         LegacyMapping();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -66,19 +65,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _addLegacyFilter(::std::string const& name, ::ActorFilterGroup::LegacyMapping const& legacy, ::FilterInput const& filterInput);
+    MCNAPI bool _addLegacyFilter(
+        ::std::string const&                     name,
+        ::ActorFilterGroup::LegacyMapping const& legacy,
+        ::FilterInput const&                     filterInput
+    );
 
     MCNAPI bool _handleUnknownMember(::std::string const& name, ::Json::Value const& jsonVal);
 
-    MCNAPI bool _parseMemberCollectionJSONCpp(::FilterGroup::CollectionType collectionType, ::Json::Value const& jsonVal);
+    MCNAPI bool
+    _parseMemberCollectionJSONCpp(::FilterGroup::CollectionType collectionType, ::Json::Value const& jsonVal);
 
     MCNAPI bool _parseMemberJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
 
     MCNAPI bool _parseObjectJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
 
-    MCNAPI bool _processLegacyArray(::std::string const& name, ::Json::Value const& jsonVal, ::ActorFilterGroup::LegacyMapping const& legacy);
+    MCNAPI bool _processLegacyArray(
+        ::std::string const&                     name,
+        ::Json::Value const&                     jsonVal,
+        ::ActorFilterGroup::LegacyMapping const& legacy
+    );
 
-    MCNAPI bool _processLegacyMember(::std::string const& name, ::Json::Value const& jsonVal, ::ActorFilterGroup::LegacyMapping const& legacy);
+    MCNAPI bool _processLegacyMember(
+        ::std::string const&                     name,
+        ::Json::Value const&                     jsonVal,
+        ::ActorFilterGroup::LegacyMapping const& legacy
+    );
 
     MCNAPI bool evaluateActor(::Actor const& e, ::VariantParameterListConst const& params) const;
     // NOLINTEND
@@ -108,5 +120,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

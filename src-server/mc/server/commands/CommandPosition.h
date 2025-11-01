@@ -17,10 +17,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::Vec3> mOffset;
-    ::ll::TypedStorage<1, 1, bool> mRelativeX;
-    ::ll::TypedStorage<1, 1, bool> mRelativeY;
-    ::ll::TypedStorage<1, 1, bool> mRelativeZ;
-    ::ll::TypedStorage<1, 1, bool> mLocal;
+    ::ll::TypedStorage<1, 1, bool>    mRelativeX;
+    ::ll::TypedStorage<1, 1, bool>    mRelativeY;
+    ::ll::TypedStorage<1, 1, bool>    mRelativeZ;
+    ::ll::TypedStorage<1, 1, bool>    mLocal;
     // NOLINTEND
 
 public:
@@ -44,5 +44,4 @@ public:
 
     MCAPI void* $ctor(::Vec3 const& absoluteOffset);
     // NOLINTEND
-
 };

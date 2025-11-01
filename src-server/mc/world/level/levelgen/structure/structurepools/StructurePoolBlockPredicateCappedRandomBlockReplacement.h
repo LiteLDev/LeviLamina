@@ -22,10 +22,10 @@ class StructurePoolBlockPredicateCappedRandomBlockReplacement : public ::IStruct
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint const> mMaximumAmount;
+    ::ll::TypedStorage<4, 4, uint const>                                        mMaximumAmount;
     ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::HashedString> const> mBlockMappings;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mCandidatePositions;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mCandidatePositionsLock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                        mCandidatePositions;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                      mCandidatePositionsLock;
     // NOLINTEND
 
 public:
@@ -63,7 +63,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructurePoolBlockPredicateCappedRandomBlockReplacement(::std::map<::HashedString, ::HashedString> const& blockMappings, uint maximumAmount);
+    MCAPI StructurePoolBlockPredicateCappedRandomBlockReplacement(
+        ::std::map<::HashedString, ::HashedString> const& blockMappings,
+        uint                                              maximumAmount
+    );
 
     MCAPI bool _finalize(::BlockSource& region, ::IRandom& random, ::std::function<void(::BlockPos&)> applyToBlocks);
     // NOLINTEND
@@ -99,5 +102,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

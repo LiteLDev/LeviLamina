@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-struct RestartOfAnAssociationWithNewAddressesCauseConfig {
-};
+struct RestartOfAnAssociationWithNewAddressesCauseConfig {};
 
-}
+} // namespace dcsctp

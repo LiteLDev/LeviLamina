@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 48, ::std::array<::EquipmentTableDropChance, 6>> mDropChances;
-    ::ll::TypedStorage<4, 4, float> mDefaultChance;
-    ::ll::TypedStorage<4, 4, float> mDefaultChanceForInvalidSlots;
+    ::ll::TypedStorage<4, 4, float>                                        mDefaultChance;
+    ::ll::TypedStorage<4, 4, float>                                        mDefaultChanceForInvalidSlots;
     // NOLINTEND
 
 public:
@@ -26,5 +26,4 @@ public:
 
     MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
     // NOLINTEND
-
 };

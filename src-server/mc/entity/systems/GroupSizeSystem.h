@@ -26,7 +26,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::GroupSizeComponent& groupSizeComponent);
+    MCNAPI static void
+    _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::GroupSizeComponent& groupSizeComponent);
     // NOLINTEND
 
 public:
@@ -40,5 +41,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

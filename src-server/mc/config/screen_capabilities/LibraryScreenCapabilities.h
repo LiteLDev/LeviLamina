@@ -9,11 +9,11 @@ struct LibraryScreenCapabilities : public ::TypedScreenCapabilities<::LibraryScr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk127e67;
-    ::ll::UntypedStorage<1, 1> mUnkddf326;
-    ::ll::UntypedStorage<1, 1> mUnk9285e2;
-    ::ll::UntypedStorage<1, 1> mUnk680c44;
-    ::ll::UntypedStorage<1, 1> mUnk7c9d7d;
+    ::ll::UntypedStorage<1, 1>  mUnk127e67;
+    ::ll::UntypedStorage<1, 1>  mUnkddf326;
+    ::ll::UntypedStorage<1, 1>  mUnk9285e2;
+    ::ll::UntypedStorage<1, 1>  mUnk680c44;
+    ::ll::UntypedStorage<1, 1>  mUnk7c9d7d;
     ::ll::UntypedStorage<8, 32> mUnk534eb4;
     // NOLINTEND
 
@@ -35,5 +35,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

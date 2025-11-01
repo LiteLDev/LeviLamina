@@ -9,7 +9,8 @@ struct ServerCameraAllowedControlSchemesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string_view, ::std::vector<::ControlScheme::Scheme>>> mAllowedSchemes;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string_view, ::std::vector<::ControlScheme::Scheme>>>
+        mAllowedSchemes;
     // NOLINTEND
 
 public:
@@ -29,5 +30,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ServerCameraAllowedControlSchemesComponent&&);
     // NOLINTEND
-
 };

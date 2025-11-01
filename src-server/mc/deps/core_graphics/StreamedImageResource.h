@@ -50,7 +50,8 @@ public:
     virtual void addImage(::std::shared_ptr<::cg::ImageResource>) /*override*/;
 
     // vIndex: 7
-    virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>> unwrapImageData() /*override*/;
+    virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
+    unwrapImageData() /*override*/;
     // NOLINTEND
 
 public:
@@ -58,7 +59,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace cg

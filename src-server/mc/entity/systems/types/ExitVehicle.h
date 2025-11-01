@@ -4,7 +4,6 @@
 
 namespace VanillaSystemCategories {
 
-struct ExitVehicle {
-};
+struct ExitVehicle {};
 
-}
+} // namespace VanillaSystemCategories

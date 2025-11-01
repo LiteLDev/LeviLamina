@@ -16,5 +16,4 @@ public:
     RequestTelemetry& operator=(RequestTelemetry const&);
     RequestTelemetry(RequestTelemetry const&);
     RequestTelemetry();
-
 };

@@ -4,6 +4,6 @@
 
 enum class LoadingScreenStateChangeType : int {
     Invalid = 0,
-    Enter = 1,
-    Exit = 2,
+    Enter   = 1,
+    Exit    = 2,
 };

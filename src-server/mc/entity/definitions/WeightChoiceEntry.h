@@ -15,5 +15,4 @@ public:
     WeightChoiceEntry& operator=(WeightChoiceEntry const&);
     WeightChoiceEntry(WeightChoiceEntry const&);
     WeightChoiceEntry();
-
 };

@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct VolumeDescription;
     // clang-format on
-    
+
     // VolumeDefinition inner types define
     struct VolumeDescription {
     public:
@@ -16,15 +16,14 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk98f1e1;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         VolumeDescription& operator=(VolumeDescription const&);
         VolumeDescription(VolumeDescription const&);
         VolumeDescription();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -44,5 +43,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string const& NAME();
     // NOLINTEND
-
 };

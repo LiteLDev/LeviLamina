@@ -4,8 +4,7 @@
 
 namespace Bedrock {
 
-template<typename T0>
-struct ErrorInfo {
-};
+template <typename T0>
+struct ErrorInfo {};
 
-}
+} // namespace Bedrock

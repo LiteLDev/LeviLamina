@@ -23,34 +23,34 @@ class NavigationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    bool mAvoidDamageBlocks : 1;
-    bool mAvoidPortals : 1;
-    bool mAvoidSun : 1;
-    bool mAvoidWater : 1;
-    bool mCanBreach : 1;
-    bool mCanFloat : 1;
-    bool mCanPathOverLava : 1;
-    bool mCanWalkInLava : 1;
-    bool mCanJump : 1;
-    bool mCanOpenDoors : 1;
-    bool mCanOpenIronDoors : 1;
-    bool mCanPassDoors : 1;
-    bool mCanSink : 1;
-    bool mIsAmphibious : 1;
-    bool mIsFollowingRivers : 1;
-    bool mHasEndPathRadius : 1;
-    bool mHasDestination : 1;
-    ::ll::TypedStorage<4, 4, int> mTick;
-    ::ll::TypedStorage<4, 4, int> mTickTimeout;
-    ::ll::TypedStorage<4, 4, int> mLastStuckCheck;
-    ::ll::TypedStorage<4, 4, float> mEndPathRadiusSqr;
-    ::ll::TypedStorage<4, 4, float> mSpeed;
-    ::ll::TypedStorage<4, 4, float> mTerminationThreshold;
-    ::ll::TypedStorage<4, 12, ::Vec3> mLastStuckCheckPosition;
-    ::ll::TypedStorage<4, 12, ::Vec3> mTargetOffset;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mBlocksToAvoid;
+    bool                                                          mAvoidDamageBlocks : 1;
+    bool                                                          mAvoidPortals      : 1;
+    bool                                                          mAvoidSun          : 1;
+    bool                                                          mAvoidWater        : 1;
+    bool                                                          mCanBreach         : 1;
+    bool                                                          mCanFloat          : 1;
+    bool                                                          mCanPathOverLava   : 1;
+    bool                                                          mCanWalkInLava     : 1;
+    bool                                                          mCanJump           : 1;
+    bool                                                          mCanOpenDoors      : 1;
+    bool                                                          mCanOpenIronDoors  : 1;
+    bool                                                          mCanPassDoors      : 1;
+    bool                                                          mCanSink           : 1;
+    bool                                                          mIsAmphibious      : 1;
+    bool                                                          mIsFollowingRivers : 1;
+    bool                                                          mHasEndPathRadius  : 1;
+    bool                                                          mHasDestination    : 1;
+    ::ll::TypedStorage<4, 4, int>                                 mTick;
+    ::ll::TypedStorage<4, 4, int>                                 mTickTimeout;
+    ::ll::TypedStorage<4, 4, int>                                 mLastStuckCheck;
+    ::ll::TypedStorage<4, 4, float>                               mEndPathRadiusSqr;
+    ::ll::TypedStorage<4, 4, float>                               mSpeed;
+    ::ll::TypedStorage<4, 4, float>                               mTerminationThreshold;
+    ::ll::TypedStorage<4, 12, ::Vec3>                             mLastStuckCheckPosition;
+    ::ll::TypedStorage<4, 12, ::Vec3>                             mTargetOffset;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>>   mBlocksToAvoid;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PathNavigation>> mNavigation;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>           mPath;
     // NOLINTEND
 
 public:
@@ -69,7 +69,13 @@ public:
 
     MCAPI void initializeFromDefinition(::Mob& owner, ::NavigationDescription* description);
 
-    MCAPI ::NodeType isFree(::Mob& owner, ::BlockPos const& lastPathPos, ::BlockPos const& testPos, ::BlockPos const& size, ::CanJumpIntoNode jumpIntoNode);
+    MCAPI ::NodeType isFree(
+        ::Mob&            owner,
+        ::BlockPos const& lastPathPos,
+        ::BlockPos const& testPos,
+        ::BlockPos const& size,
+        ::CanJumpIntoNode jumpIntoNode
+    );
 
     MCAPI bool moveTo(::Mob& owner, ::std::unique_ptr<::Path> newPath, float speed);
 
@@ -91,5 +97,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

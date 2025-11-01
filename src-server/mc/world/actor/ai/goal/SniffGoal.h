@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/shared_types/versionless/FloatRange.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/level/Tick.h"
@@ -19,14 +19,14 @@ class SniffGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 12, ::Vec3> mSniffingRadius;
+    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3>                   mSniffingRadius;
     ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mCooldownRangeSeconds;
-    ::ll::TypedStorage<2, 2, ushort> mDurationTicks;
-    ::ll::TypedStorage<8, 8, ::Tick> mEndTick;
-    ::ll::TypedStorage<8, 8, ::Tick> mCooldownExpiryTick;
-    ::ll::TypedStorage<4, 4, float> mSuspicionRadiusHorizontal;
-    ::ll::TypedStorage<4, 4, float> mSuspicionRadiusVertical;
+    ::ll::TypedStorage<2, 2, ushort>                    mDurationTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>                    mEndTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                    mCooldownExpiryTick;
+    ::ll::TypedStorage<4, 4, float>                     mSuspicionRadiusHorizontal;
+    ::ll::TypedStorage<4, 4, float>                     mSuspicionRadiusVertical;
     // NOLINTEND
 
 public:
@@ -89,5 +89,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -15,4 +15,4 @@ MCNAPI ::TickingSystemWithInfo createClientSideSpawnParticleSystem();
 MCNAPI ::TickingSystemWithInfo createServerSideClearFireSystem();
 // NOLINTEND
 
-}
+} // namespace InsidePowderSnowBlockSystem

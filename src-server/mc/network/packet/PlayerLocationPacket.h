@@ -20,15 +20,15 @@ public:
     // PlayerLocationPacket inner types define
     enum class Type : int {
         Coordinates = 0,
-        Hide = 1,
+        Hide        = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::PlayerLocationPacket::Type> mType;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mId;
-    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>              mId;
+    ::ll::TypedStorage<4, 12, ::Vec3>                      mPos;
     // NOLINTEND
 
 public:
@@ -73,5 +73,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

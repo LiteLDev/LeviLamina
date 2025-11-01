@@ -7,7 +7,8 @@
 
 namespace Editor::Network {
 
-class StructureDataCacheRequestStructurePayload : public ::Editor::Network::NetworkPayload<::Editor::Network::StructureDataCacheRequestStructurePayload> {
+class StructureDataCacheRequestStructurePayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::StructureDataCacheRequestStructurePayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

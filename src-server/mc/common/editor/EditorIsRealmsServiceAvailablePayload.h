@@ -7,7 +7,8 @@
 
 namespace Editor::Network {
 
-class EditorIsRealmsServiceAvailablePayload : public ::Editor::Network::NetworkPayload<::Editor::Network::EditorIsRealmsServiceAvailablePayload> {
+class EditorIsRealmsServiceAvailablePayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::EditorIsRealmsServiceAvailablePayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -32,7 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

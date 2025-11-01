@@ -23,7 +23,7 @@ public:
     // clang-format off
     class DataChannel;
     // clang-format on
-    
+
     // PacketQueue inner types define
     class DataChannel : public ::NetherNet::ContextProxy, public ::webrtc::DataChannelObserver {
     public:
@@ -32,87 +32,94 @@ public:
         ::ll::UntypedStorage<8, 64> mUnkd0c200;
         ::ll::UntypedStorage<8, 64> mUnk7022e3;
         ::ll::UntypedStorage<8, 40> mUnk1116c8;
-        ::ll::UntypedStorage<4, 4> mUnkea7403;
-        ::ll::UntypedStorage<8, 8> mUnk6efd8f;
-        ::ll::UntypedStorage<8, 8> mUnk6bd75c;
+        ::ll::UntypedStorage<4, 4>  mUnkea7403;
+        ::ll::UntypedStorage<8, 8>  mUnk6efd8f;
+        ::ll::UntypedStorage<8, 8>  mUnk6bd75c;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         DataChannel& operator=(DataChannel const&);
         DataChannel(DataChannel const&);
         DataChannel();
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 4
         virtual ~DataChannel() /*override*/;
-    
+
         // vIndex: 0
         virtual void OnStateChange() /*override*/;
-    
+
         // vIndex: 1
         virtual void OnMessage(::webrtc::DataBuffer const& buffer) /*override*/;
-    
+
         // vIndex: 2
         virtual void OnBufferedAmountChange(uint64) /*override*/;
-    
+
         // vIndex: 3
         virtual bool IsOkToCallOnTheNetworkThread() /*override*/;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI DataChannel(::NetherNet::ContextProxy const& ctx, ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose, ::brstd::move_only_function<void(uchar const*, uint64)> onData);
-    
+        MCNAPI DataChannel(
+            ::NetherNet::ContextProxy const&                              ctx,
+            ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose,
+            ::brstd::move_only_function<void(uchar const*, uint64)>       onData
+        );
+
         MCNAPI void _trySend();
-    
+
         MCNAPI void send(uchar const* source, uint64 size);
-    
+
         MCNAPI void setChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> channel);
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::NetherNet::ContextProxy const& ctx, ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose, ::brstd::move_only_function<void(uchar const*, uint64)> onData);
+        MCNAPI void* $ctor(
+            ::NetherNet::ContextProxy const&                              ctx,
+            ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose,
+            ::brstd::move_only_function<void(uchar const*, uint64)>       onData
+        );
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $OnStateChange();
-    
+
         MCNAPI void $OnMessage(::webrtc::DataBuffer const& buffer);
-    
+
         MCNAPI void $OnBufferedAmountChange(uint64);
-    
+
         MCNAPI bool $IsOkToCallOnTheNetworkThread();
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftableForContextProxy();
-    
+
         MCNAPI static void** $vftableForDataChannelObserver();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 120> mUnk8b6aec;
-    ::ll::UntypedStorage<8, 64> mUnk9b0d07;
+    ::ll::UntypedStorage<8, 64>  mUnk9b0d07;
     ::ll::UntypedStorage<8, 248> mUnkb28c4c;
     ::ll::UntypedStorage<8, 248> mUnk330e14;
     // NOLINTEND
@@ -133,13 +140,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PacketQueue(::NetherNet::ContextProxy const& ctx, ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose);
+    MCNAPI PacketQueue(
+        ::NetherNet::ContextProxy const&                              ctx,
+        ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::NetherNet::ContextProxy const& ctx, ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose);
+    MCNAPI void*
+    $ctor(::NetherNet::ContextProxy const& ctx, ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose);
     // NOLINTEND
 
 public:
@@ -147,7 +158,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace NetherNet

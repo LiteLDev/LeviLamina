@@ -20,11 +20,11 @@ struct ScriptActorData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mRef;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                             mRef;
     ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptEntityRefType> mActorType;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mId;
-    ::ll::TypedStorage<8, 48, ::HashedString> mTypeId;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ServerLevel*>> mLevel;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                              mId;
+    ::ll::TypedStorage<8, 48, ::HashedString>                              mTypeId;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ServerLevel*>>              mLevel;
     // NOLINTEND
 
 public:
@@ -57,7 +57,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

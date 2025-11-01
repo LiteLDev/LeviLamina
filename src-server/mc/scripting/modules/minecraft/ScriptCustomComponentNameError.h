@@ -20,11 +20,11 @@ struct ScriptCustomComponentNameError : public ::Scripting::BaseError {
 public:
     // ScriptCustomComponentNameError inner types define
     enum class Reason : int {
-        Invalid = 0,
-        NoNamespace = 1,
+        Invalid             = 0,
+        NoNamespace         = 1,
         DisallowedNamespace = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -50,7 +50,9 @@ public:
 
     MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
 
-    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentNameError, ::Scripting::EngineError> validate(::HashedString const& componentName);
+    MCNAPI static ::Scripting::
+        Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentNameError, ::Scripting::EngineError>
+        validate(::HashedString const& componentName);
     // NOLINTEND
 
 public:
@@ -58,7 +60,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

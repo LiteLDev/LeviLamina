@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/molang/MolangVersion.h"
+#include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,12 +15,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorRuntimeID>> mRuntimeIds;
-    ::ll::TypedStorage<8, 32, ::std::string> mAnimation;
-    ::ll::TypedStorage<8, 32, ::std::string> mNextState;
-    ::ll::TypedStorage<8, 32, ::std::string> mStopExpression;
-    ::ll::TypedStorage<2, 2, ::MolangVersion> mStopExpressionVersion;
-    ::ll::TypedStorage<8, 32, ::std::string> mController;
-    ::ll::TypedStorage<4, 4, float> mBlendOutTime;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mAnimation;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mNextState;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mStopExpression;
+    ::ll::TypedStorage<2, 2, ::MolangVersion>                  mStopExpressionVersion;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mController;
+    ::ll::TypedStorage<4, 4, float>                            mBlendOutTime;
     // NOLINTEND
 
 public:
@@ -51,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

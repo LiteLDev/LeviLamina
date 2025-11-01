@@ -4,7 +4,6 @@
 
 namespace mce::Math {
 
-struct TupleHash {
-};
+struct TupleHash {};
 
-}
+} // namespace mce::Math

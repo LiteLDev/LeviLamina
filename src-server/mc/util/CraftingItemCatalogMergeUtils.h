@@ -12,7 +12,10 @@ namespace CraftingItemCatalogPackStackLoadUtils { struct LoadResult; }
 namespace CraftingItemCatalogMergeUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::CraftingItemCatalogMergeResult mergeLoadResults(::ItemRegistryRef const& itemRegistry, ::std::vector<::CraftingItemCatalogPackStackLoadUtils::LoadResult> const& loadResults);
+MCNAPI ::CraftingItemCatalogMergeResult mergeLoadResults(
+    ::ItemRegistryRef const&                                                  itemRegistry,
+    ::std::vector<::CraftingItemCatalogPackStackLoadUtils::LoadResult> const& loadResults
+);
 // NOLINTEND
 
-}
+} // namespace CraftingItemCatalogMergeUtils

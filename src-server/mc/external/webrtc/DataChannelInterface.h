@@ -21,11 +21,11 @@ public:
     // DataChannelInterface inner types define
     enum class DataState : int {
         KConnecting = 0,
-        KOpen = 1,
-        KClosing = 2,
-        KClosed = 3,
+        KOpen       = 1,
+        KClosing    = 2,
+        KClosed     = 3,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -99,7 +99,7 @@ public:
     virtual bool Send(::webrtc::DataBuffer const&);
 
     // vIndex: 26
-    virtual void SendAsync(::webrtc::DataBuffer, ::absl::AnyInvocable<void(::webrtc::RTCError)&&>);
+    virtual void SendAsync(::webrtc::DataBuffer, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>);
 
     // vIndex: 2
     virtual ~DataChannelInterface() /*override*/;
@@ -122,7 +122,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

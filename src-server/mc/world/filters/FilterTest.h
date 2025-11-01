@@ -16,7 +16,7 @@ public:
     // clang-format off
     struct Definition;
     // clang-format on
-    
+
     // FilterTest inner types define
     struct Definition {
     public:
@@ -24,33 +24,32 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkba715e;
         ::ll::UntypedStorage<8, 32> mUnk1e4808;
-        ::ll::UntypedStorage<8, 8> mUnkedef7d;
-        ::ll::UntypedStorage<8, 8> mUnke70633;
-        ::ll::UntypedStorage<8, 8> mUnk411256;
-        ::ll::UntypedStorage<8, 8> mUnkf594ea;
+        ::ll::UntypedStorage<8, 8>  mUnkedef7d;
+        ::ll::UntypedStorage<8, 8>  mUnke70633;
+        ::ll::UntypedStorage<8, 8>  mUnk411256;
+        ::ll::UntypedStorage<8, 8>  mUnkf594ea;
         ::ll::UntypedStorage<8, 64> mUnka344a1;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
         Definition();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Definition();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -122,5 +121,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

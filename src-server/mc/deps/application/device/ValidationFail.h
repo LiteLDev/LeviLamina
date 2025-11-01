@@ -16,7 +16,6 @@ public:
     ValidationFail& operator=(ValidationFail const&);
     ValidationFail(ValidationFail const&);
     ValidationFail();
-
 };
 
-}
+} // namespace Bedrock::DeviceIdErrorType

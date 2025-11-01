@@ -13,7 +13,8 @@ namespace mce { class UUID; }
 
 namespace Social {
 
-class MultiplayerServiceObserver : public ::Core::Observer<::Social::MultiplayerServiceObserver, ::Core::SingleThreadedLock> {
+class MultiplayerServiceObserver
+: public ::Core::Observer<::Social::MultiplayerServiceObserver, ::Core::SingleThreadedLock> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -38,7 +39,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
     // NOLINTEND
-
 };
 
-}
+} // namespace Social

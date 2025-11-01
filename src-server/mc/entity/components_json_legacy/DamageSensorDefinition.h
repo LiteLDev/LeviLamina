@@ -29,5 +29,4 @@ public:
 
     MCNAPI void initialize(::EntityContext& entity, ::DamageSensorComponent& component) const;
     // NOLINTEND
-
 };

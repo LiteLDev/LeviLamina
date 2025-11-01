@@ -18,10 +18,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
-    ::ll::TypedStorage<4, 4, ::DimensionType> mFromDimension;
-    ::ll::TypedStorage<4, 12, ::Vec3> mFromLocation;
-    ::ll::TypedStorage<4, 4, ::DimensionType> mToDimension;
-    ::ll::TypedStorage<4, 12, ::Vec3> mToLocation;
+    ::ll::TypedStorage<4, 4, ::DimensionType>             mFromDimension;
+    ::ll::TypedStorage<4, 12, ::Vec3>                     mFromLocation;
+    ::ll::TypedStorage<4, 4, ::DimensionType>             mToDimension;
+    ::ll::TypedStorage<4, 12, ::Vec3>                     mToLocation;
     // NOLINTEND
 
 public:
@@ -35,5 +35,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

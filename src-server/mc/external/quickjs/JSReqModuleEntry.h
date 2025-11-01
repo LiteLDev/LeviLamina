@@ -15,5 +15,4 @@ public:
     JSReqModuleEntry& operator=(JSReqModuleEntry const&);
     JSReqModuleEntry(JSReqModuleEntry const&);
     JSReqModuleEntry();
-
 };

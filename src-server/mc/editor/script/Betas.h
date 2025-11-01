@@ -13,4 +13,4 @@ namespace Editor::ScriptModule::EditorServerBindingsModule::Betas {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-}
+} // namespace Editor::ScriptModule::EditorServerBindingsModule::Betas

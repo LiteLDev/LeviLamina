@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class VirtualTimeTag {
-};
+class VirtualTimeTag {};
 
-}
+} // namespace dcsctp

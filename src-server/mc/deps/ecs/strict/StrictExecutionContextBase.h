@@ -14,5 +14,4 @@ public:
     StrictExecutionContextBase& operator=(StrictExecutionContextBase const&);
     StrictExecutionContextBase(StrictExecutionContextBase const&);
     StrictExecutionContextBase();
-
 };

@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 
-struct OnIgniteDefinition : public ::ActorDefinitionTrigger {
-};
+struct OnIgniteDefinition : public ::ActorDefinitionTrigger {};

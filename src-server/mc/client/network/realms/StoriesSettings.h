@@ -22,7 +22,6 @@ public:
     StoriesSettings& operator=(StoriesSettings const&);
     StoriesSettings(StoriesSettings const&);
     StoriesSettings();
-
 };
 
-}
+} // namespace Realms

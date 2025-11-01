@@ -13,4 +13,4 @@ namespace ScriptModuleDebugUtilities::ScriptDebugShapes {
 MCAPI void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 // NOLINTEND
 
-}
+} // namespace ScriptModuleDebugUtilities::ScriptDebugShapes

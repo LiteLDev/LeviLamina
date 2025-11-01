@@ -21,5 +21,4 @@ public:
     // vIndex: 0
     virtual ~AchievementOfferInfo() = default;
     // NOLINTEND
-
 };

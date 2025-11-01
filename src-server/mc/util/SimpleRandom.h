@@ -16,7 +16,7 @@ class SimpleRandom : public ::IRandom, public ::IRandomSeeded {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke32ad8;
+    ::ll::UntypedStorage<8, 8>  mUnke32ad8;
     ::ll::UntypedStorage<8, 16> mUnk5a2dc7;
     // NOLINTEND
 
@@ -132,5 +132,4 @@ public:
 
     MCNAPI static void** $vftableForIRandom();
     // NOLINTEND
-
 };

@@ -23,7 +23,12 @@ public:
     virtual ~EditorStructureDBManagerServiceProvider() = default;
 
     // vIndex: 1
-    virtual ::std::optional<::std::string> createNewEditorProjectStructure(::Editor::EditorStructureTemplate const&, ::std::string const&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&) = 0;
+    virtual ::std::optional<::std::string> createNewEditorProjectStructure(
+        ::Editor::EditorStructureTemplate const&,
+        ::std::string const&,
+        ::std::optional<::std::string> const&,
+        ::std::optional<::std::string> const&
+    ) = 0;
 
     // vIndex: 2
     virtual bool replaceMCStructureFromTemplate(::mce::UUID const&, ::Editor::EditorStructureTemplate const&, bool) = 0;
@@ -35,16 +40,20 @@ public:
     virtual ::std::vector<::HashedString> const getEditorStructureGuids() const = 0;
 
     // vIndex: 5
-    virtual ::std::vector<::Editor::EditorStructureDBMetadata> const queryEditorStructureDBMetadata(::Editor::EditorStructureMetadataQueryParams const&) const = 0;
+    virtual ::std::vector<::Editor::EditorStructureDBMetadata> const
+    queryEditorStructureDBMetadata(::Editor::EditorStructureMetadataQueryParams const&) const = 0;
 
     // vIndex: 6
-    virtual ::Editor::EditorStructureMetadataDeleteEditResult const deleteEditorStructureDBMetadataByGuid(::mce::UUID const&, bool) = 0;
+    virtual ::Editor::EditorStructureMetadataDeleteEditResult const
+    deleteEditorStructureDBMetadataByGuid(::mce::UUID const&, bool) = 0;
 
     // vIndex: 7
-    virtual ::Editor::EditorStructureMetadataDeleteEditResult const editEditorStructureDBMetadata(::Editor::EditorStructureMetadataEditParams const&, bool) = 0;
+    virtual ::Editor::EditorStructureMetadataDeleteEditResult const
+    editEditorStructureDBMetadata(::Editor::EditorStructureMetadataEditParams const&, bool) = 0;
 
     // vIndex: 8
-    virtual ::std::optional<::Editor::EditorStructureDBMetadata> const getEditorStructureMetadataByGuid(::mce::UUID const&) const = 0;
+    virtual ::std::optional<::Editor::EditorStructureDBMetadata> const
+    getEditorStructureMetadataByGuid(::mce::UUID const&) const = 0;
 
     // vIndex: 9
     virtual void processLevelStructures() = 0;
@@ -55,7 +64,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

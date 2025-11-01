@@ -13,7 +13,7 @@ struct ScriptModalFormDataDropdownOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk1b9406;
+    ::ll::UntypedStorage<4, 8>   mUnk1b9406;
     ::ll::UntypedStorage<8, 224> mUnkdac0c3;
     // NOLINTEND
 
@@ -28,7 +28,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptModalFormDataDropdownOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataDropdownOptions&&);
 
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormDataDropdownOptions& operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormDataDropdownOptions&&);
+    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormDataDropdownOptions&
+    operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormDataDropdownOptions&&);
 
     MCNAPI ~ScriptModalFormDataDropdownOptions();
     // NOLINTEND
@@ -50,7 +51,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraftServerUI

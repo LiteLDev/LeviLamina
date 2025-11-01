@@ -24,5 +24,4 @@ public:
     zip_progress& operator=(zip_progress const&);
     zip_progress(zip_progress const&);
     zip_progress();
-
 };

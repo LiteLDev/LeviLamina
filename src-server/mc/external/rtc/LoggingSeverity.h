@@ -6,10 +6,10 @@ namespace rtc {
 
 enum class LoggingSeverity : int {
     Verbose = 0,
-    Info = 1,
+    Info    = 1,
     Warning = 2,
-    Error = 3,
-    None = 4,
+    Error   = 3,
+    None    = 4,
 };
 
 }

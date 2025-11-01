@@ -16,5 +16,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool satisfied(::IPackLoadContext const& context, ::JsonBetaState);
     // NOLINTEND
-
 };

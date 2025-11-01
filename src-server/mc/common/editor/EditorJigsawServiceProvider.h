@@ -38,19 +38,37 @@ public:
     virtual ::JigsawStructureRegistry* getJigsawRegistry(::std::string const&) = 0;
 
     // vIndex: 5
-    virtual void setJigsawRegistry(::std::string const&, ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>, bool) = 0;
+    virtual void setJigsawRegistry(
+        ::std::string const&,
+        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>,
+        bool
+    ) = 0;
 
     // vIndex: 6
-    virtual ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> getJigsawRegistryJson(::std::string const&) = 0;
+    virtual ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>
+    getJigsawRegistryJson(::std::string const&) = 0;
 
     // vIndex: 7
-    virtual void generateJigsawPreview(::std::string const&, ::std::string const&, ::std::string const&, ::BlockPos const&, int, int const, bool const, ::Editor::ScriptModule::ScriptClipboardItem const&, ::WeakEntityRef) = 0;
+    virtual void generateJigsawPreview(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        ::BlockPos const&,
+        int,
+        int const,
+        bool const,
+        ::Editor::ScriptModule::ScriptClipboardItem const&,
+        ::WeakEntityRef
+    ) = 0;
 
     // vIndex: 8
-    virtual ::Bedrock::PubSub::Subscription listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription
+        listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)>) = 0;
 
     // vIndex: 9
-    virtual ::Bedrock::PubSub::Subscription listenForGenerateJigsawPreview(::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription listenForGenerateJigsawPreview(
+        ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)>
+    ) = 0;
     // NOLINTEND
 
 public:
@@ -58,7 +76,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

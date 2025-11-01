@@ -46,17 +46,62 @@ MCNAPI ::TickingSystemWithInfo createResetNoJumpDelaySystem();
 
 MCNAPI void doDecrementNoJumpDelaySystem(::MobJumpComponent& mobJumpComponent);
 
-MCNAPI void doMobJumpSystem(::StrictEntityContext const& context, ::Optional<::JumpControlComponent const> jumpControl, ::Optional<::OnGroundFlagComponent const> onGround, ::Optional<::PlayerComponent const> isPlayer, ::Optional<::SquidFlagComponent const> isSquid, ::Optional<::WasInWaterFlagComponent const> isInWater, ::Optional<::ActorHeadInWaterFlagComponent const> breathingPointInWater, ::Optional<::CanStandOnSnowFlagComponent const> canStandOnSnow, ::Optional<::HasLightweightFamilyFlagComponent const> isLightweightFamily, ::Optional<::ImmuneToLavaDragComponent const> isImmuneToLavaDrag, ::AABBShapeComponent const& aabbShape, ::SwimAmountComponent const& swimAmount, ::MobEffectsComponent const& mobEffects, ::SubBBsComponent const& subBBs, ::ActorDataFlagComponent const& synchedActorData, ::MobJumpComponent& mobJump, ::StateVectorComponent& stateVector, ::EntityModifier<::JumpFromGroundRequestComponent> entityModifier, ::IConstBlockSource const& region);
+MCNAPI void doMobJumpSystem(
+    ::StrictEntityContext const&                          context,
+    ::Optional<::JumpControlComponent const>              jumpControl,
+    ::Optional<::OnGroundFlagComponent const>             onGround,
+    ::Optional<::PlayerComponent const>                   isPlayer,
+    ::Optional<::SquidFlagComponent const>                isSquid,
+    ::Optional<::WasInWaterFlagComponent const>           isInWater,
+    ::Optional<::ActorHeadInWaterFlagComponent const>     breathingPointInWater,
+    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnow,
+    ::Optional<::HasLightweightFamilyFlagComponent const> isLightweightFamily,
+    ::Optional<::ImmuneToLavaDragComponent const>         isImmuneToLavaDrag,
+    ::AABBShapeComponent const&                           aabbShape,
+    ::SwimAmountComponent const&                          swimAmount,
+    ::MobEffectsComponent const&                          mobEffects,
+    ::SubBBsComponent const&                              subBBs,
+    ::ActorDataFlagComponent const&                       synchedActorData,
+    ::MobJumpComponent&                                   mobJump,
+    ::StateVectorComponent&                               stateVector,
+    ::EntityModifier<::JumpFromGroundRequestComponent>    entityModifier,
+    ::IConstBlockSource const&                            region
+);
 
 MCNAPI void doResetNoJumpDelaySystem(::StrictEntityContext const&, ::MobJumpComponent& mobJumpComponent);
 
-MCNAPI void doSwimmerSwimUp(::Optional<::JumpControlComponent const> const& jumpControl, ::Optional<::SquidFlagComponent const> const& isSquid, ::MobEffectsComponent const& mobEffects, ::MobJumpComponent& mobJump, ::StateVectorComponent& stateVector);
+MCNAPI void doSwimmerSwimUp(
+    ::Optional<::JumpControlComponent const> const& jumpControl,
+    ::Optional<::SquidFlagComponent const> const&   isSquid,
+    ::MobEffectsComponent const&                    mobEffects,
+    ::MobJumpComponent&                             mobJump,
+    ::StateVectorComponent&                         stateVector
+);
 
-MCNAPI bool shouldAscendLadder(::Optional<::PlayerComponent const> const& isPlayer, ::Optional<::CanStandOnSnowFlagComponent const> const& canStandOnSnow, ::Optional<::HasLightweightFamilyFlagComponent const> const& isLightweightFamily, ::AABBShapeComponent const& aabbShapeComponent, ::ActorDataFlagComponent const& synchedActorDataComponent, ::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region);
+MCNAPI bool shouldAscendLadder(
+    ::Optional<::PlayerComponent const> const&                   isPlayer,
+    ::Optional<::CanStandOnSnowFlagComponent const> const&       canStandOnSnow,
+    ::Optional<::HasLightweightFamilyFlagComponent const> const& isLightweightFamily,
+    ::AABBShapeComponent const&                                  aabbShapeComponent,
+    ::ActorDataFlagComponent const&                              synchedActorDataComponent,
+    ::StateVectorComponent const&                                stateVectorComponent,
+    ::IConstBlockSource const&                                   region
+);
 
-MCNAPI void tickDecrementNoJumpDelaySystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>, ::MobJumpComponent> view);
+MCNAPI void tickDecrementNoJumpDelaySystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+        ::MobJumpComponent> view
+);
 
-MCNAPI void tickResetNoJumpDelaySystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>, ::Exclude<::MobIsJumpingFlagComponent, ::PassengerComponent>, ::MobJumpComponent> view);
+MCNAPI void tickResetNoJumpDelaySystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+        ::Exclude<::MobIsJumpingFlagComponent, ::PassengerComponent>,
+        ::MobJumpComponent> view
+);
 // NOLINTEND
 
-}
+} // namespace MobJumpSystem

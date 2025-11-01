@@ -14,15 +14,15 @@ public:
     // DirectionSettings inner types define
     enum class Mode : int {
         UseVelocity = 0,
-        Custom = 1,
+        Custom      = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5e6964;
+    ::ll::UntypedStorage<4, 4>   mUnk5e6964;
     ::ll::UntypedStorage<8, 144> mUnk55469a;
-    ::ll::UntypedStorage<4, 4> mUnk2e4e4e;
+    ::ll::UntypedStorage<4, 4>   mUnk2e4e4e;
     // NOLINTEND
 
 public:
@@ -42,7 +42,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

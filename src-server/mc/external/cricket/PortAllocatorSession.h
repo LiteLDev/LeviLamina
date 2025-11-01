@@ -26,13 +26,13 @@ public:
     ::ll::UntypedStorage<8, 48> mUnkfa08f6;
     ::ll::UntypedStorage<8, 48> mUnk6b08f1;
     ::ll::UntypedStorage<8, 48> mUnkd78f5b;
-    ::ll::UntypedStorage<4, 4> mUnkb4f5d4;
-    ::ll::UntypedStorage<4, 4> mUnkb49548;
+    ::ll::UntypedStorage<4, 4>  mUnkb4f5d4;
+    ::ll::UntypedStorage<4, 4>  mUnkb49548;
     ::ll::UntypedStorage<8, 32> mUnkacb616;
-    ::ll::UntypedStorage<4, 4> mUnk1b147c;
+    ::ll::UntypedStorage<4, 4>  mUnk1b147c;
     ::ll::UntypedStorage<8, 32> mUnkdc2ec0;
     ::ll::UntypedStorage<8, 32> mUnk788487;
-    ::ll::UntypedStorage<1, 1> mUnkdafaae;
+    ::ll::UntypedStorage<1, 1>  mUnkdafaae;
     // NOLINTEND
 
 public:
@@ -102,15 +102,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PortAllocatorSession(::std::string_view content_name, int component, ::std::string_view ice_ufrag, ::std::string_view ice_pwd, uint flags);
+    MCNAPI PortAllocatorSession(
+        ::std::string_view content_name,
+        int                component,
+        ::std::string_view ice_ufrag,
+        ::std::string_view ice_pwd,
+        uint               flags
+    );
 
-    MCNAPI void SetIceParameters(::std::string_view content_name, int component, ::std::string_view ice_ufrag, ::std::string_view ice_pwd);
+    MCNAPI void SetIceParameters(
+        ::std::string_view content_name,
+        int                component,
+        ::std::string_view ice_ufrag,
+        ::std::string_view ice_pwd
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view content_name, int component, ::std::string_view ice_ufrag, ::std::string_view ice_pwd, uint flags);
+    MCNAPI void* $ctor(
+        ::std::string_view content_name,
+        int                component,
+        ::std::string_view ice_ufrag,
+        ::std::string_view ice_pwd,
+        uint               flags
+    );
     // NOLINTEND
 
 public:
@@ -146,7 +163,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

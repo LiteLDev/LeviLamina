@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/platform/diagnostics/CrashDumpLogFieldFormat.h"
 
-struct CrashDumpFormatEntryImpl : public ::CrashDumpLogFieldFormat {
-};
+struct CrashDumpFormatEntryImpl : public ::CrashDumpLogFieldFormat {};

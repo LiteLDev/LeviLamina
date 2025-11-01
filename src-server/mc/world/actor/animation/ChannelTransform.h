@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk2837bb;
     ::ll::UntypedStorage<4, 12> mUnkcedb21;
-    ::ll::UntypedStorage<4, 4> mUnk44ec16;
+    ::ll::UntypedStorage<4, 4>  mUnk44ec16;
     // NOLINTEND
 
 public:
@@ -38,5 +38,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ChannelTransform_Float const& rhs);
     // NOLINTEND
-
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/chunk/NeighborAwareBlockUpgradeVersionType.h"
 #include "mc/world/level/levelgen/structure/StructureLoadResult.h"
 
@@ -17,14 +17,14 @@ class StructureTemplateData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mFormatVersion;
+    ::ll::TypedStorage<4, 4, int>                                    mFormatVersion;
     ::ll::TypedStorage<4, 4, ::NeighborAwareBlockUpgradeVersionType> mNeighborAwareBlockUpgradeVersion;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mSize;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mStructureWorldOrigin;
-    ::ll::TypedStorage<8, 24, ::std::vector<int>> mBlockIndices;
-    ::ll::TypedStorage<8, 24, ::std::vector<int>> mExtraBlockIndices;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                            mSize;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                            mStructureWorldOrigin;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                    mBlockIndices;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                    mExtraBlockIndices;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::StructureBlockPalette>> mPalettes;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CompoundTag>>> mEntityData;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CompoundTag>>>              mEntityData;
     // NOLINTEND
 
 public:
@@ -102,5 +102,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

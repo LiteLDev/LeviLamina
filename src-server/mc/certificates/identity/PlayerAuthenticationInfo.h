@@ -17,7 +17,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> NintendoName;
     ::ll::TypedStorage<8, 32, ::std::string> PlayStationName;
     ::ll::TypedStorage<8, 32, ::std::string> PublicKey;
-    ::ll::TypedStorage<8, 16, ::mce::UUID> AuthenticatedUuid;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>   AuthenticatedUuid;
     // NOLINTEND
 
 public:
@@ -28,27 +28,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerAuthenticationInfo(::PlayerAuthenticationInfo const&);
+    MCAPI PlayerAuthenticationInfo(::PlayerAuthenticationInfo const&);
 
-    MCNAPI PlayerAuthenticationInfo(::PlayerAuthenticationInfo&&);
+    MCAPI PlayerAuthenticationInfo(::PlayerAuthenticationInfo&&);
 
-    MCNAPI ::PlayerAuthenticationInfo& operator=(::PlayerAuthenticationInfo&&);
+    MCAPI ::PlayerAuthenticationInfo& operator=(::PlayerAuthenticationInfo&&);
 
-    MCNAPI ~PlayerAuthenticationInfo();
+    MCAPI ~PlayerAuthenticationInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PlayerAuthenticationInfo const&);
+    MCAPI void* $ctor(::PlayerAuthenticationInfo const&);
 
-    MCNAPI void* $ctor(::PlayerAuthenticationInfo&&);
+    MCAPI void* $ctor(::PlayerAuthenticationInfo&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
-
 };

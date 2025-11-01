@@ -25,5 +25,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void addInteraction(::Interaction const& interaction);
     // NOLINTEND
-
 };

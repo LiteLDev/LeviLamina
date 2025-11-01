@@ -30,22 +30,22 @@ class TickingAreasManager {
 public:
     // TickingAreasManager inner types define
     enum class AreaLimitCheck : int {
-        None = 0,
-        ActiveStandalone = 1,
+        None                       = 0,
+        ActiveStandalone           = 1,
         ActiveAndPendingStandalone = 2,
     };
-    
+
     using ActivePerDimension = ::std::map<::DimensionType, ::std::shared_ptr<::TickingAreaList>>;
-    
+
     using PendingPerDimension = ::std::unordered_map<::DimensionType, ::std::vector<::PendingArea>>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::map<::DimensionType, ::std::shared_ptr<::TickingAreaList>>> mActiveAreas;
+    ::ll::TypedStorage<8, 16, ::std::map<::DimensionType, ::std::shared_ptr<::TickingAreaList>>>   mActiveAreas;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::DimensionType, ::std::vector<::PendingArea>>> mPendingAreas;
-    ::ll::TypedStorage<1, 1, bool> mIsPreloadDone;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LevelStorage> const> mLevelStorage;
+    ::ll::TypedStorage<1, 1, bool>                                                                 mIsPreloadDone;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LevelStorage> const>                    mLevelStorage;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPostReloadActorAdded;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnCanStartGameSaveTimerCheckSubscription;
     // NOLINTEND
@@ -59,29 +59,63 @@ public:
     // NOLINTBEGIN
     MCAPI explicit TickingAreasManager(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage);
 
-    MCAPI ::AddTickingAreaStatus _addArea(::DimensionType dimensionId, ::std::string const& name, ::Bounds const& bounds, bool isCircle, ::TickingAreasManager::AreaLimitCheck limitCheck, bool isPersistent, ::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage);
+    MCAPI ::AddTickingAreaStatus _addArea(
+        ::DimensionType                       dimensionId,
+        ::std::string const&                  name,
+        ::Bounds const&                       bounds,
+        bool                                  isCircle,
+        ::TickingAreasManager::AreaLimitCheck limitCheck,
+        bool                                  isPersistent,
+        ::TickingAreaLoadMode                 loadMode,
+        ::LevelStorage&                       levelStorage
+    );
 
     MCAPI void _deletePendingArea(::LevelStorage& levelStorage, ::PendingArea const& pendingArea);
 
-    MCAPI ::std::string _findUsableDefaultName(::TickingAreaList const& tickingAreaList, ::std::vector<::PendingArea> const& pendingAreas) const;
+    MCAPI ::std::string _findUsableDefaultName(
+        ::TickingAreaList const&            tickingAreaList,
+        ::std::vector<::PendingArea> const& pendingAreas
+    ) const;
 
-    MCAPI ::std::vector<::TickingAreaDescription> _getPendingAreaDescriptionsFiltered(::DimensionType dimensionId, ::std::function<bool(::PendingArea const&)> includeInList) const;
+    MCAPI ::std::vector<::TickingAreaDescription> _getPendingAreaDescriptionsFiltered(
+        ::DimensionType                             dimensionId,
+        ::std::function<bool(::PendingArea const&)> includeInList
+    ) const;
 
-    MCAPI bool _hasPendingTickingAreaNamed(::std::string const& name, ::std::vector<::PendingArea> const& dimensionAreas) const;
+    MCAPI bool
+    _hasPendingTickingAreaNamed(::std::string const& name, ::std::vector<::PendingArea> const& dimensionAreas) const;
 
     MCAPI void _postReloadActorAdded(::Actor& actor);
 
     MCAPI void _processAdds(::Level& level);
 
-    MCAPI void _processRemoves(::DimensionType dimensionId, ::TickingAreaList& list, ::Level& level, ::LevelStorage& levelStorage);
+    MCAPI void
+    _processRemoves(::DimensionType dimensionId, ::TickingAreaList& list, ::Level& level, ::LevelStorage& levelStorage);
 
-    MCAPI void _savePendingArea(::LevelStorage& levelStorage, ::DimensionType dimensionId, ::PendingArea const& pendingArea);
+    MCAPI void
+    _savePendingArea(::LevelStorage& levelStorage, ::DimensionType dimensionId, ::PendingArea const& pendingArea);
 
-    MCAPI ::AddTickingAreaStatus addArea(::DimensionType dimensionId, ::std::string const& name, ::BlockPos const& min, ::BlockPos const& max, ::TickingAreasManager::AreaLimitCheck limitCheck, bool isPersistent, ::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage);
+    MCAPI ::AddTickingAreaStatus addArea(
+        ::DimensionType                       dimensionId,
+        ::std::string const&                  name,
+        ::BlockPos const&                     min,
+        ::BlockPos const&                     max,
+        ::TickingAreasManager::AreaLimitCheck limitCheck,
+        bool                                  isPersistent,
+        ::TickingAreaLoadMode                 loadMode,
+        ::LevelStorage&                       levelStorage
+    );
 
     MCAPI void addEntityArea(::DimensionType dimensionId, ::Actor const& actor, ::LevelStorage& levelStorage);
 
-    MCAPI void addEntityArea(::DimensionType dimensionId, ::ActorUniqueID const& entityId, ::Bounds const& bounds, bool alwaysActive, float maxDistToPlayers, ::LevelStorage& levelStorage);
+    MCAPI void addEntityArea(
+        ::DimensionType        dimensionId,
+        ::ActorUniqueID const& entityId,
+        ::Bounds const&        bounds,
+        bool                   alwaysActive,
+        float                  maxDistToPlayers,
+        ::LevelStorage&        levelStorage
+    );
 
     MCAPI uint countActiveStandaloneTickingAreas() const;
 
@@ -95,13 +129,25 @@ public:
 
     MCAPI void registerForLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI ::std::vector<::TickingAreaDescription> removePendingAreaByName(::DimensionType dimensionId, ::std::string const& name, ::LevelStorage& levelStorage);
+    MCAPI ::std::vector<::TickingAreaDescription>
+    removePendingAreaByName(::DimensionType dimensionId, ::std::string const& name, ::LevelStorage& levelStorage);
 
-    MCAPI ::std::vector<::TickingAreaDescription> removePendingAreaByPosition(::DimensionType dimensionId, ::BlockPos const& position, ::LevelStorage& levelStorage);
+    MCAPI ::std::vector<::TickingAreaDescription>
+    removePendingAreaByPosition(::DimensionType dimensionId, ::BlockPos const& position, ::LevelStorage& levelStorage);
 
-    MCAPI ::std::vector<::TickingAreaDescription> setPendingAreaLoadModeByName(::DimensionType dimensionId, ::std::string const& name, ::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage);
+    MCAPI ::std::vector<::TickingAreaDescription> setPendingAreaLoadModeByName(
+        ::DimensionType       dimensionId,
+        ::std::string const&  name,
+        ::TickingAreaLoadMode loadMode,
+        ::LevelStorage&       levelStorage
+    );
 
-    MCAPI ::std::vector<::TickingAreaDescription> setPendingAreaLoadModeByPosition(::DimensionType dimensionId, ::BlockPos const& position, ::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage);
+    MCAPI ::std::vector<::TickingAreaDescription> setPendingAreaLoadModeByPosition(
+        ::DimensionType       dimensionId,
+        ::BlockPos const&     position,
+        ::TickingAreaLoadMode loadMode,
+        ::LevelStorage&       levelStorage
+    );
 
     MCAPI void update(::Level& level, ::LevelStorage& levelStorage);
 
@@ -125,5 +171,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

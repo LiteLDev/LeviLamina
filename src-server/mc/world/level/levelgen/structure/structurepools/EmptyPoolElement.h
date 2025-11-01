@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/util/Rotation.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElement.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementType.h"
 
@@ -24,10 +24,13 @@ public:
     virtual ::BlockPos getSize(::Rotation rotation) const /*override*/;
 
     // vIndex: 2
-    virtual ::std::vector<::JigsawBlockInfo> getJigsawMarkers(::BlockPos position, ::Rotation rotation) const /*override*/;
+    virtual ::std::vector<::JigsawBlockInfo> getJigsawMarkers(::BlockPos position, ::Rotation rotation) const
+        /*override*/;
 
     // vIndex: 1
-    virtual ::std::vector<::JigsawBlockInfo> getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const /*override*/;
+    virtual ::std::vector<::JigsawBlockInfo>
+    getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const
+        /*override*/;
 
     // vIndex: 3
     virtual ::BoundingBox getBoundingBox(::BlockPos position, ::Rotation rotation) const /*override*/;
@@ -49,7 +52,8 @@ public:
 
     MCFOLD ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 
-    MCFOLD ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
+    MCFOLD ::std::vector<::JigsawBlockInfo>
+    $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 
     MCAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
 
@@ -63,5 +67,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

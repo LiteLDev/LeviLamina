@@ -16,9 +16,17 @@ struct EndPortalBlockFlag;
 namespace InsideEndPortalBlockSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void insideEndPortalBlockSystem(::ViewT<::StrictEntityContext, ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag> const, ::ActorOwnerComponent> view);
+MCNAPI void insideEndPortalBlockSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag> const,
+        ::ActorOwnerComponent> view
+);
 
-MCNAPI void tickInsideEndPortalBlock(::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag> const& endPortalInsideComponent, ::ActorOwnerComponent& actorOwnerComponent);
+MCNAPI void tickInsideEndPortalBlock(
+    ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag> const& endPortalInsideComponent,
+    ::ActorOwnerComponent&                                             actorOwnerComponent
+);
 // NOLINTEND
 
-}
+} // namespace InsideEndPortalBlockSystemImpl

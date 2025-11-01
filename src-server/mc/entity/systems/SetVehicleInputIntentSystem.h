@@ -24,7 +24,16 @@ struct VehicleInputIntentComponent;
 namespace SetVehicleInputIntentSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void doSetVehicleInputIntent(::entt::type_list<::Include<::ActorMovementTickNeededComponent>>, ::StrictEntityContext const& context, ::VehicleComponent const& vehicle, ::ActorDataFlagComponent const& actorDataFlag, ::ActorDataControllingSeatIndexComponent const& controllingSeatIndex, ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent, ::MobFlagComponent>> const& passengerView, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ShouldBeSimulatedComponent> const& playerView, ::EntityModifier<::VehicleInputIntentComponent> modifier);
+MCNAPI void doSetVehicleInputIntent(
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::StrictEntityContext const&                                                               context,
+    ::VehicleComponent const&                                                                  vehicle,
+    ::ActorDataFlagComponent const&                                                            actorDataFlag,
+    ::ActorDataControllingSeatIndexComponent const&                                            controllingSeatIndex,
+    ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent, ::MobFlagComponent>> const& passengerView,
+    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ShouldBeSimulatedComponent> const& playerView,
+    ::EntityModifier<::VehicleInputIntentComponent>                                                   modifier
+);
 // NOLINTEND
 
-}
+} // namespace SetVehicleInputIntentSystem

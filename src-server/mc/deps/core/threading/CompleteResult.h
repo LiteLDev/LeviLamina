@@ -4,8 +4,7 @@
 
 namespace Bedrock::Threading::AsyncResult {
 
-template<typename T0>
-class CompleteResult {
-};
+template <typename T0>
+class CompleteResult {};
 
-}
+} // namespace Bedrock::Threading::AsyncResult

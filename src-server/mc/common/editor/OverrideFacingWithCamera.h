@@ -6,7 +6,7 @@ namespace Editor::Brush {
 
 enum class OverrideFacingWithCamera : int {
     Yes = 0,
-    No = 1,
+    No  = 1,
 };
 
 }

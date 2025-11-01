@@ -4,7 +4,6 @@
 
 namespace brstd {
 
-struct identity {
-};
+struct identity {};
 
-}
+} // namespace brstd

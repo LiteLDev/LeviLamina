@@ -24,5 +24,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::CameraAimAssistDataRegistryDirtyComponent& operator=(::CameraAimAssistDataRegistryDirtyComponent&&);
     // NOLINTEND
-
 };

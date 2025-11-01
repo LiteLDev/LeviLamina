@@ -5,9 +5,9 @@
 namespace Core {
 
 enum class FlushOption : int {
-    ProcessAll = 0,
+    ProcessAll                = 0,
     ProcessRemainingAllowance = 1,
-    Discard = 2,
+    Discard                   = 2,
 };
 
 }

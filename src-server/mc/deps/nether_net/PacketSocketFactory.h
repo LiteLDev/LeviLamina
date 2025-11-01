@@ -18,9 +18,9 @@ class PacketSocketFactory : public ::rtc::BasicPacketSocketFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk765ab2;
+    ::ll::UntypedStorage<8, 8>  mUnk765ab2;
     ::ll::UntypedStorage<8, 16> mUnk50651e;
-    ::ll::UntypedStorage<8, 8> mUnka96575;
+    ::ll::UntypedStorage<8, 8>  mUnka96575;
     // NOLINTEND
 
 public:
@@ -36,10 +36,12 @@ public:
     virtual ~PacketSocketFactory() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::rtc::AsyncPacketSocket> CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
+    virtual ::std::unique_ptr<::rtc::AsyncPacketSocket>
+    CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::rtc::AsyncPacketSocket> CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort) /*override*/;
+    virtual ::std::shared_ptr<::rtc::AsyncPacketSocket>
+    CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort) /*override*/;
 
     // vIndex: 5
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() /*override*/;
@@ -48,9 +50,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::rtc::AsyncPacketSocket> $CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port);
+    MCNAPI ::std::unique_ptr<::rtc::AsyncPacketSocket>
+    $CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port);
 
-    MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket> $CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort);
+    MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket>
+    $CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort);
 
     MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAsyncDnsResolver();
     // NOLINTEND
@@ -60,7 +64,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace NetherNet

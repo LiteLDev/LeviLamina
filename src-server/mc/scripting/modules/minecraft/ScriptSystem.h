@@ -33,10 +33,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk8e6a2b;
-    ::ll::UntypedStorage<8, 8> mUnkfd41d2;
+    ::ll::UntypedStorage<8, 8>  mUnkfd41d2;
     ::ll::UntypedStorage<8, 32> mUnk77c71d;
     ::ll::UntypedStorage<8, 32> mUnk636e90;
-    ::ll::UntypedStorage<8, 8> mUnkbcba05;
+    ::ll::UntypedStorage<8, 8>  mUnkbcba05;
     ::ll::UntypedStorage<8, 40> mUnkfcb077;
     // NOLINTEND
 
@@ -51,17 +51,25 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptSystem(::ScriptModuleMinecraft::ScriptSystem&&);
 
-    MCNAPI ScriptSystem(::Scripting::WeakLifetimeScope const& scope, ::ScriptModuleMinecraft::ScriptGlobalEventListeners& eventListeners, ::gsl::not_null<::ServerLevel*> level);
+    MCNAPI ScriptSystem(
+        ::Scripting::WeakLifetimeScope const&                scope,
+        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& eventListeners,
+        ::gsl::not_null<::ServerLevel*>                      level
+    );
 
-    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError> _waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
+    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
+    _waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
-    MCNAPI void clearJob(::Scripting::WeakLifetimeScope const& scope, ::Scripting::DependencyLocator& locator, uint jobId);
+    MCNAPI void
+    clearJob(::Scripting::WeakLifetimeScope const& scope, ::Scripting::DependencyLocator& locator, uint jobId);
 
     MCNAPI void clearRun(uint runId);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemAfterEvents> getSystemAfterEvents();
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemAfterEvents>
+    getSystemAfterEvents();
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents> getSystemBeforeEvents();
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents>
+    getSystemBeforeEvents();
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemInfo> getSystemInfo();
 
@@ -75,11 +83,18 @@ public:
 
     MCNAPI uint runTimeout(::Scripting::Closure<void()> closure, ::std::optional<uint> delay);
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::InvalidArgumentError, ::Scripting::EngineError> sendScriptEvent(::std::string const& messageId, ::std::string const& messagePayload);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
+        ::Scripting::InvalidArgumentError,
+        ::Scripting::EngineError>
+    sendScriptEvent(::std::string const& messageId, ::std::string const& messagePayload);
 
-    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError> waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
+    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
+    waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
-    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError> waitTicksV1(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
+    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
+    waitTicksV1(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
     MCNAPI ~ScriptSystem();
     // NOLINTEND
@@ -95,7 +110,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystem&&);
 
-    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::ScriptModuleMinecraft::ScriptGlobalEventListeners& eventListeners, ::gsl::not_null<::ServerLevel*> level);
+    MCNAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope const&                scope,
+        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& eventListeners,
+        ::gsl::not_null<::ServerLevel*>                      level
+    );
     // NOLINTEND
 
 public:
@@ -103,7 +122,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -13,4 +13,4 @@ namespace Achievements {
 MCNAPI int getIndexForFroglight(::ItemStack const& item);
 // NOLINTEND
 
-}
+} // namespace Achievements

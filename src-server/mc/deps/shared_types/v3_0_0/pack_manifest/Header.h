@@ -20,9 +20,9 @@ public:
     ::ll::UntypedStorage<8, 40> mUnk64b471;
     ::ll::UntypedStorage<8, 40> mUnk65170f;
     ::ll::UntypedStorage<8, 40> mUnk59bd8c;
-    ::ll::UntypedStorage<1, 2> mUnk5c9186;
-    ::ll::UntypedStorage<1, 2> mUnk93f7fa;
-    ::ll::UntypedStorage<1, 2> mUnk4c4655;
+    ::ll::UntypedStorage<1, 2>  mUnk5c9186;
+    ::ll::UntypedStorage<1, 2>  mUnk93f7fa;
+    ::ll::UntypedStorage<1, 2>  mUnk4c4655;
     ::ll::UntypedStorage<8, 32> mUnk53d5bb;
     // NOLINTEND
 
@@ -37,9 +37,11 @@ public:
 
     MCNAPI Header(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
 
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Header& operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Header&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
 
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Header& operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Header&&);
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Header&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Header&&);
 
     MCNAPI ~Header();
     // NOLINTEND
@@ -63,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v3_0_0::PackManifestDefinition

@@ -19,8 +19,8 @@ class BiomeAndPatternMapPolicy : public ::BiomeColorSampling::MapPolicy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<int(*) (::Biome const&, ::BlockPos const&)> const> mSampler;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos> const> mPattern;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<int (*)(::Biome const&, ::BlockPos const&)> const> mSampler;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos> const>                                  mPattern;
     // NOLINTEND
 
 public:
@@ -44,7 +44,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace BiomeColorSampling

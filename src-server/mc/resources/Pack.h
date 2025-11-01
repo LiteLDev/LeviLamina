@@ -28,10 +28,10 @@ class Pack {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackManifest>> mManifest;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>> mAccessStrategy;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubpackInfoCollection>> mSubpackInfoStack;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>> mMetadata;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackManifest>>                                 mManifest;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>                           mAccessStrategy;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubpackInfoCollection>>                        mSubpackInfoStack;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                                 mMetadata;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const>> mDependenciesUpgrade;
     // NOLINTEND
 
@@ -42,7 +42,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Pack(::std::unique_ptr<::PackManifest> manifest, ::std::unique_ptr<::PackAccessStrategy> accessStrategy, ::std::unique_ptr<::SubpackInfoCollection> subpacks, ::std::unique_ptr<::PackMetadata> metadata);
+    MCAPI Pack(
+        ::std::unique_ptr<::PackManifest>          manifest,
+        ::std::unique_ptr<::PackAccessStrategy>    accessStrategy,
+        ::std::unique_ptr<::SubpackInfoCollection> subpacks,
+        ::std::unique_ptr<::PackMetadata>          metadata
+    );
 
     MCAPI void _loadLocalizationFiles();
 
@@ -56,9 +61,23 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Pack> createPack(::IPackIOProvider const& io, ::ResourceLocation const& fileLocation, ::PackType type, ::PackOrigin origin, ::IPackManifestFactory& manifestFactory, ::Bedrock::NonOwnerPointer<::IContentKeyProvider const> keyProvider, ::PackSourceReport* report, ::Core::Path const& zipSubDir);
+    MCAPI static ::std::unique_ptr<::Pack> createPack(
+        ::IPackIOProvider const&                                io,
+        ::ResourceLocation const&                               fileLocation,
+        ::PackType                                              type,
+        ::PackOrigin                                            origin,
+        ::IPackManifestFactory&                                 manifestFactory,
+        ::Bedrock::NonOwnerPointer<::IContentKeyProvider const> keyProvider,
+        ::PackSourceReport*                                     report,
+        ::Core::Path const&                                     zipSubDir
+    );
 
-    MCAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(::PackType type, ::PackManifest& manifest, ::PackAccessStrategy const& accessStrategy, ::PackReport& report);
+    MCAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(
+        ::PackType                  type,
+        ::PackManifest&             manifest,
+        ::PackAccessStrategy const& accessStrategy,
+        ::PackReport&               report
+    );
     // NOLINTEND
 
 public:
@@ -70,7 +89,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::PackManifest> manifest, ::std::unique_ptr<::PackAccessStrategy> accessStrategy, ::std::unique_ptr<::SubpackInfoCollection> subpacks, ::std::unique_ptr<::PackMetadata> metadata);
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::PackManifest>          manifest,
+        ::std::unique_ptr<::PackAccessStrategy>    accessStrategy,
+        ::std::unique_ptr<::SubpackInfoCollection> subpacks,
+        ::std::unique_ptr<::PackMetadata>          metadata
+    );
     // NOLINTEND
 
 public:
@@ -78,5 +102,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

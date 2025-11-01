@@ -31,7 +31,6 @@ public:
 
     MCNAPI void translate(::BlockPos const& offset);
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

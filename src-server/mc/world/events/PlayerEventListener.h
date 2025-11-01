@@ -33,7 +33,7 @@ class PlayerEventListener {
 public:
     // PlayerEventListener inner types define
     using EventType = ::PlayerNotificationEvent;
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -47,7 +47,8 @@ public:
     virtual ::EventResult onPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
 
     // vIndex: 3
-    virtual ::EventResult onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    virtual ::EventResult
+    onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
     // vIndex: 4
     virtual ::EventResult onPlayerPoweredBeacon(::Player const& player, int const level);
@@ -107,10 +108,17 @@ public:
     virtual ::EventResult onPlayerStartRiding(::Player& player, ::Actor& vehicle);
 
     // vIndex: 23
-    virtual ::EventResult onPlayerStopRiding(::Player& player, bool exitFromPassenger, bool entityIsBeingDestroyed, bool switchingVehicles);
+    virtual ::EventResult
+    onPlayerStopRiding(::Player& player, bool exitFromPassenger, bool entityIsBeingDestroyed, bool switchingVehicles);
 
     // vIndex: 24
-    virtual ::EventResult onPlayerCreated(::LocalPlayer& player, ::persona::ProfileType const personaSlot, ::std::string const& classicSkinId, bool usingClassicSkin, ::NetworkType networkType);
+    virtual ::EventResult onPlayerCreated(
+        ::LocalPlayer&               player,
+        ::persona::ProfileType const personaSlot,
+        ::std::string const&         classicSkinId,
+        bool                         usingClassicSkin,
+        ::NetworkType                networkType
+    );
 
     // vIndex: 26
     virtual ::EventResult onPlayerTeleported(::Player& player);
@@ -131,7 +139,8 @@ public:
     virtual ::EventResult onPlayerEquippedArmor(::Player& player, ::ItemDescriptor const& item);
 
     // vIndex: 31
-    virtual ::EventResult onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
+    virtual ::EventResult
+    onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
 
     // vIndex: 32
     virtual ::EventResult onPlayerNamedItem(::Player& player, ::ItemDescriptor const& item);
@@ -143,16 +152,30 @@ public:
     virtual ::EventResult onPlayerItemPlaceInteraction(::Player& player, ::ItemInstance const& itemBeforeUse);
 
     // vIndex: 35
-    virtual ::EventResult onPlayerCraftedItem(::Player& player, ::ItemInstance const& craftedItem, bool recipeBook, bool hadSearchString, bool craftedAutomatically, int startingTabId, int endingTabId, int numTabsChanged, bool filterOn, bool recipeBookShown, ::std::vector<short> const& ingredientItemIDs);
+    virtual ::EventResult onPlayerCraftedItem(
+        ::Player&                   player,
+        ::ItemInstance const&       craftedItem,
+        bool                        recipeBook,
+        bool                        hadSearchString,
+        bool                        craftedAutomatically,
+        int                         startingTabId,
+        int                         endingTabId,
+        int                         numTabsChanged,
+        bool                        filterOn,
+        bool                        recipeBookShown,
+        ::std::vector<short> const& ingredientItemIDs
+    );
 
     // vIndex: 36
     virtual ::EventResult onPlayerSmithiedItem(::Player&, ::ItemDescriptor const&);
 
     // vIndex: 37
-    virtual ::EventResult onPlayerItemEquipped(::Player& player, ::ItemInstance const& equippedItem, int equipmentSlotId);
+    virtual ::EventResult
+    onPlayerItemEquipped(::Player& player, ::ItemInstance const& equippedItem, int equipmentSlotId);
 
     // vIndex: 38
-    virtual ::EventResult onPlayerPiglinBarter(::Player& player, ::std::string const& item, bool wasTargetingBarteringPlayer);
+    virtual ::EventResult
+    onPlayerPiglinBarter(::Player& player, ::std::string const& item, bool wasTargetingBarteringPlayer);
 
     // vIndex: 39
     virtual ::EventResult onPlayerWaxOnWaxOff(::Player& player, int const blockID);
@@ -168,7 +191,8 @@ public:
 
     MCFOLD ::EventResult $onPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
 
-    MCFOLD ::EventResult $onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    MCFOLD ::EventResult
+    $onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
     MCFOLD ::EventResult $onPlayerPoweredBeacon(::Player const& player, int const level);
 
@@ -208,9 +232,16 @@ public:
 
     MCFOLD ::EventResult $onPlayerStartRiding(::Player& player, ::Actor& vehicle);
 
-    MCFOLD ::EventResult $onPlayerStopRiding(::Player& player, bool exitFromPassenger, bool entityIsBeingDestroyed, bool switchingVehicles);
+    MCFOLD ::EventResult
+    $onPlayerStopRiding(::Player& player, bool exitFromPassenger, bool entityIsBeingDestroyed, bool switchingVehicles);
 
-    MCFOLD ::EventResult $onPlayerCreated(::LocalPlayer& player, ::persona::ProfileType const personaSlot, ::std::string const& classicSkinId, bool usingClassicSkin, ::NetworkType networkType);
+    MCFOLD ::EventResult $onPlayerCreated(
+        ::LocalPlayer&               player,
+        ::persona::ProfileType const personaSlot,
+        ::std::string const&         classicSkinId,
+        bool                         usingClassicSkin,
+        ::NetworkType                networkType
+    );
 
     MCFOLD ::EventResult $onPlayerTeleported(::Player& player);
 
@@ -224,7 +255,8 @@ public:
 
     MCFOLD ::EventResult $onPlayerEquippedArmor(::Player& player, ::ItemDescriptor const& item);
 
-    MCFOLD ::EventResult $onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
+    MCFOLD ::EventResult
+    $onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
 
     MCFOLD ::EventResult $onPlayerNamedItem(::Player& player, ::ItemDescriptor const& item);
 
@@ -232,13 +264,27 @@ public:
 
     MCFOLD ::EventResult $onPlayerItemPlaceInteraction(::Player& player, ::ItemInstance const& itemBeforeUse);
 
-    MCFOLD ::EventResult $onPlayerCraftedItem(::Player& player, ::ItemInstance const& craftedItem, bool recipeBook, bool hadSearchString, bool craftedAutomatically, int startingTabId, int endingTabId, int numTabsChanged, bool filterOn, bool recipeBookShown, ::std::vector<short> const& ingredientItemIDs);
+    MCFOLD ::EventResult $onPlayerCraftedItem(
+        ::Player&                   player,
+        ::ItemInstance const&       craftedItem,
+        bool                        recipeBook,
+        bool                        hadSearchString,
+        bool                        craftedAutomatically,
+        int                         startingTabId,
+        int                         endingTabId,
+        int                         numTabsChanged,
+        bool                        filterOn,
+        bool                        recipeBookShown,
+        ::std::vector<short> const& ingredientItemIDs
+    );
 
     MCFOLD ::EventResult $onPlayerSmithiedItem(::Player&, ::ItemDescriptor const&);
 
-    MCFOLD ::EventResult $onPlayerItemEquipped(::Player& player, ::ItemInstance const& equippedItem, int equipmentSlotId);
+    MCFOLD ::EventResult
+    $onPlayerItemEquipped(::Player& player, ::ItemInstance const& equippedItem, int equipmentSlotId);
 
-    MCFOLD ::EventResult $onPlayerPiglinBarter(::Player& player, ::std::string const& item, bool wasTargetingBarteringPlayer);
+    MCFOLD ::EventResult
+    $onPlayerPiglinBarter(::Player& player, ::std::string const& item, bool wasTargetingBarteringPlayer);
 
     MCFOLD ::EventResult $onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
@@ -250,5 +296,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

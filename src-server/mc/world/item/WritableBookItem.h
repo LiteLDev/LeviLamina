@@ -42,7 +42,14 @@ public:
 
     MCAPI static void _replacePage(::ItemStackBase& book, int index, ::PageContent const& page);
 
-    MCAPI static void _signBookUserData(::CompoundTag& userData, ::std::string title, ::std::optional<::std::string> filteredTitle, ::std::string author, ::std::optional<::std::string> filteredAuthor, ::std::string xuid);
+    MCAPI static void _signBookUserData(
+        ::CompoundTag&                 userData,
+        ::std::string                  title,
+        ::std::optional<::std::string> filteredTitle,
+        ::std::string                  author,
+        ::std::optional<::std::string> filteredAuthor,
+        ::std::string                  xuid
+    );
 
     MCAPI static void addPageAt(::ItemStack& book, int index, ::PageContent const& page);
 
@@ -50,7 +57,14 @@ public:
 
     MCAPI static ::PageContent deletePage(::ItemStack& book, int index);
 
-    MCAPI static void signBook(::ItemStack& book, ::std::string title, ::std::optional<::std::string> filteredTitle, ::std::string author, ::std::optional<::std::string> filteredAuthor, ::std::string xuid);
+    MCAPI static void signBook(
+        ::ItemStack&                   book,
+        ::std::string                  title,
+        ::std::optional<::std::string> filteredTitle,
+        ::std::string                  author,
+        ::std::optional<::std::string> filteredAuthor,
+        ::std::string                  xuid
+    );
 
     MCAPI static void swapPages(::ItemStack& book, int page1, int page2);
     // NOLINTEND
@@ -70,5 +84,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

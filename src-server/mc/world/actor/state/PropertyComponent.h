@@ -20,12 +20,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>>> mPropertyGroup;
-    ::ll::TypedStorage<4, 4, ::std::bitset<32>> mDirtyIntProperties;
-    ::ll::TypedStorage<4, 4, ::std::bitset<32>> mDirtyFloatProperties;
-    ::ll::TypedStorage<4, 4, ::std::bitset<32>> mDirtyBoolProperties;
-    ::ll::TypedStorage<4, 4, ::std::bitset<32>> mDirtyEnumIndexProperties;
-    ::ll::TypedStorage<1, 1, bool> mEverythingDirty;
-    ::ll::TypedStorage<8, 120, ::PropertyContainer> mPropertyContainer;
+    ::ll::TypedStorage<4, 4, ::std::bitset<32>>                                          mDirtyIntProperties;
+    ::ll::TypedStorage<4, 4, ::std::bitset<32>>                                          mDirtyFloatProperties;
+    ::ll::TypedStorage<4, 4, ::std::bitset<32>>                                          mDirtyBoolProperties;
+    ::ll::TypedStorage<4, 4, ::std::bitset<32>>                                          mDirtyEnumIndexProperties;
+    ::ll::TypedStorage<1, 1, bool>                                                       mEverythingDirty;
+    ::ll::TypedStorage<8, 120, ::PropertyContainer>                                      mPropertyContainer;
     // NOLINTEND
 
 public:
@@ -39,11 +39,15 @@ public:
     // NOLINTBEGIN
     MCNAPI PropertyComponent(::PropertyComponent&&);
 
-    MCNAPI PropertyComponent(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
+    MCNAPI PropertyComponent(
+        ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup,
+        ::RenderParams&                                           renderParams
+    );
 
     MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void applyPendingChanges(::std::unordered_map<uint64, ::std::variant<int, float, bool, uint64>> const& pendingChanges);
+    MCNAPI void
+    applyPendingChanges(::std::unordered_map<uint64, ::std::variant<int, float, bool, uint64>> const& pendingChanges);
 
     MCNAPI bool getBool(uint64 h) const;
 
@@ -71,7 +75,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::PropertyComponent&&);
 
-    MCNAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
+    MCNAPI void*
+    $ctor(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
     // NOLINTEND
-
 };

@@ -4,8 +4,7 @@
 
 namespace Puv {
 
-template<typename T0, typename T1>
-class CerealParser {
-};
+template <typename T0, typename T1>
+class CerealParser {};
 
-}
+} // namespace Puv

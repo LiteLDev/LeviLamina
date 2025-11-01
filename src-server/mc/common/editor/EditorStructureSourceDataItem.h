@@ -22,7 +22,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 480> mUnk61b0e9;
-    ::ll::UntypedStorage<4, 4> mUnk64fd7a;
+    ::ll::UntypedStorage<4, 4>   mUnk64fd7a;
     // NOLINTEND
 
 public:
@@ -34,19 +34,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EditorStructureSourceDataItem(::std::variant<::Editor::EditorFileStructureData, ::Editor::EditorBPStructureData, ::Editor::EditorLevelStructureData, ::Editor::EditorProjectStructureData> const& dataSource);
+    MCNAPI explicit EditorStructureSourceDataItem(
+        ::std::variant<
+            ::Editor::EditorFileStructureData,
+            ::Editor::EditorBPStructureData,
+            ::Editor::EditorLevelStructureData,
+            ::Editor::EditorProjectStructureData> const& dataSource
+    );
 
     MCNAPI ::std::string getFullStructureName() const;
 
-    MCNAPI ::std::optional<::Editor::EditorStructureTemplate> load(::ResourcePackStack const& packStack, ::LevelStorage& levelStorage) const;
+    MCNAPI ::std::optional<::Editor::EditorStructureTemplate>
+    load(::ResourcePackStack const& packStack, ::LevelStorage& levelStorage) const;
 
-    MCNAPI void markMetaDataWithSourceInfo(::Editor::EditorStructureDBMetadata& metaData, ::ResourcePackStack const& packStack, ::LevelStorage& levelStorage) const;
+    MCNAPI void markMetaDataWithSourceInfo(
+        ::Editor::EditorStructureDBMetadata& metaData,
+        ::ResourcePackStack const&           packStack,
+        ::LevelStorage&                      levelStorage
+    ) const;
 
     MCNAPI bool renameMCStructureFile(::std::string const& name, ::mce::UUID const& guid, ::LevelStorage& levelStorage);
 
-    MCNAPI bool rewriteMCStructureFile(::Editor::EditorStructureTemplate const& structureTemplate, ::mce::UUID const& guid, ::LevelStorage& levelStorage);
+    MCNAPI bool rewriteMCStructureFile(
+        ::Editor::EditorStructureTemplate const& structureTemplate,
+        ::mce::UUID const&                       guid,
+        ::LevelStorage&                          levelStorage
+    );
 
-    MCNAPI bool verifyResource(::mce::UUID const& guid, ::ResourcePackStack const& packStack, ::LevelStorage& levelStorage);
+    MCNAPI bool
+    verifyResource(::mce::UUID const& guid, ::ResourcePackStack const& packStack, ::LevelStorage& levelStorage);
 
     MCNAPI ~EditorStructureSourceDataItem();
     // NOLINTEND
@@ -54,7 +70,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::variant<::Editor::EditorFileStructureData, ::Editor::EditorBPStructureData, ::Editor::EditorLevelStructureData, ::Editor::EditorProjectStructureData> const& dataSource);
+    MCNAPI void* $ctor(
+        ::std::variant<
+            ::Editor::EditorFileStructureData,
+            ::Editor::EditorBPStructureData,
+            ::Editor::EditorLevelStructureData,
+            ::Editor::EditorProjectStructureData> const& dataSource
+    );
     // NOLINTEND
 
 public:
@@ -62,7 +84,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

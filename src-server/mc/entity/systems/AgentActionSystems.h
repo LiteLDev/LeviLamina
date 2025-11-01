@@ -18,7 +18,15 @@ namespace AgentComponents { struct Executing; }
 namespace AgentActionSystems {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickActionFailed(::StrictEntityContext& entity, ::ActorOwnerComponent& actorOwner, ::EntityModifier<::AgentComponents::ActionDetails, ::AgentComponents::AnimationShrug, ::AgentComponents::CommandCooldown, ::AgentComponents::Executing>& modifier);
+MCNAPI void tickActionFailed(
+    ::StrictEntityContext& entity,
+    ::ActorOwnerComponent& actorOwner,
+    ::EntityModifier<
+        ::AgentComponents::ActionDetails,
+        ::AgentComponents::AnimationShrug,
+        ::AgentComponents::CommandCooldown,
+        ::AgentComponents::Executing>& modifier
+);
 // NOLINTEND
 
-}
+} // namespace AgentActionSystems

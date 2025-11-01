@@ -7,8 +7,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkc0e666;
-    ::ll::UntypedStorage<4, 4> mUnk71965c;
-    ::ll::UntypedStorage<8, 8> mUnk901b67;
+    ::ll::UntypedStorage<4, 4>  mUnk71965c;
+    ::ll::UntypedStorage<8, 8>  mUnk901b67;
     // NOLINTEND
 
 public:
@@ -16,5 +16,4 @@ public:
     JSMapIteratorData& operator=(JSMapIteratorData const&);
     JSMapIteratorData(JSMapIteratorData const&);
     JSMapIteratorData();
-
 };

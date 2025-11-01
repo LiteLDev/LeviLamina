@@ -24,10 +24,12 @@ public:
     virtual ::HandlerResult handleEvent(::MutableActorGameplayEvent<void>&) = 0;
 
     // vIndex: 2
-    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ActorGameplayEvent<::CoordinatorResult> const&) = 0;
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::ActorGameplayEvent<::CoordinatorResult> const&) = 0;
 
     // vIndex: 1
-    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::MutableActorGameplayEvent<::CoordinatorResult>&) = 0;
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::MutableActorGameplayEvent<::CoordinatorResult>&) = 0;
     // NOLINTEND
 
 public:
@@ -35,5 +37,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

@@ -14,7 +14,9 @@ struct ConnectionDefinition;
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
-class RemoteConnector : public ::Connector, public ::NetworkEnableDisableListener, public ::Bedrock::EnableNonOwnerReferences {
+class RemoteConnector : public ::Connector,
+                        public ::NetworkEnableDisableListener,
+                        public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -73,5 +75,4 @@ public:
 
     MCNAPI static void** $vftableForNetworkEnableDisableListener();
     // NOLINTEND
-
 };

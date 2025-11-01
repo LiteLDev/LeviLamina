@@ -10,8 +10,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mId;
-    ::ll::TypedStorage<8, 32, ::std::string> mPhotoName;
-    ::ll::TypedStorage<8, 32, ::std::string> mPhotoItemName;
+    ::ll::TypedStorage<8, 32, ::std::string>  mPhotoName;
+    ::ll::TypedStorage<8, 32, ::std::string>  mPhotoItemName;
     // NOLINTEND
 
 public:
@@ -33,5 +33,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

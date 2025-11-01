@@ -4,8 +4,7 @@
 
 namespace mce {
 
-template<typename T0>
-class ServerResourcePointer {
-};
+template <typename T0>
+class ServerResourcePointer {};
 
-}
+} // namespace mce

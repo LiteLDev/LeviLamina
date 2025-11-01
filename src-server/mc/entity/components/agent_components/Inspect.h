@@ -17,7 +17,6 @@ public:
     Inspect& operator=(Inspect const&);
     Inspect(Inspect const&);
     Inspect();
-
 };
 
-}
+} // namespace AgentComponents

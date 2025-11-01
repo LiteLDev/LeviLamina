@@ -18,8 +18,8 @@ struct ScriptItemEnchantmentType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkbf350b;
-    ::ll::UntypedStorage<1, 1> mUnka2d387;
+    ::ll::UntypedStorage<8, 8>  mUnkbf350b;
+    ::ll::UntypedStorage<1, 1>  mUnka2d387;
     ::ll::UntypedStorage<8, 32> mUnk2361be;
     // NOLINTEND
 
@@ -34,7 +34,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string getName() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptItemEnchantmentType& operator=(::ScriptModuleMinecraft::ScriptItemEnchantmentType&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptItemEnchantmentType&
+    operator=(::ScriptModuleMinecraft::ScriptItemEnchantmentType&&);
     // NOLINTEND
 
 public:
@@ -42,11 +43,15 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Enchant::Type getEnchantType(::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>, ::std::string> const& enchantmentTypeOrId);
+    MCNAPI static ::Enchant::Type getEnchantType(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
+            ::std::string> const& enchantmentTypeOrId
+    );
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType> getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::Enchant::Type enchantmentType);
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>
+    getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::Enchant::Type enchantmentType);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -13,9 +13,10 @@ namespace ExpressionNodeSerializer {
 // NOLINTBEGIN
 MCNAPI void fromSharedTypes(::ExpressionNode& instance, ::SharedTypes::Legacy::ExpressionNode const& expr);
 
-MCNAPI ::std::vector<::ExpressionNode> fromSharedTypesVector(::std::vector<::SharedTypes::Legacy::ExpressionNode> const& v);
+MCNAPI ::std::vector<::ExpressionNode>
+fromSharedTypesVector(::std::vector<::SharedTypes::Legacy::ExpressionNode> const& v);
 
 MCNAPI ::SharedTypes::Legacy::ExpressionNode toSharedTypes(::ExpressionNode const& node);
 // NOLINTEND
 
-}
+} // namespace ExpressionNodeSerializer

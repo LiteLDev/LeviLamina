@@ -17,7 +17,6 @@ public:
     RTCCertificatePEM& operator=(RTCCertificatePEM const&);
     RTCCertificatePEM(RTCCertificatePEM const&);
     RTCCertificatePEM();
-
 };
 
-}
+} // namespace rtc

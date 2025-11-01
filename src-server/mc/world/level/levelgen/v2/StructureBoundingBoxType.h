@@ -6,7 +6,7 @@ namespace br::worldgen {
 
 enum class StructureBoundingBoxType : uchar {
     Structure = 0,
-    Piece = 1,
+    Piece     = 1,
 };
 
 }

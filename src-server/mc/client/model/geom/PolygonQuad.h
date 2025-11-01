@@ -14,5 +14,4 @@ public:
     PolygonQuad& operator=(PolygonQuad const&);
     PolygonQuad(PolygonQuad const&);
     PolygonQuad();
-
 };

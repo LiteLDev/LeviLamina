@@ -14,5 +14,4 @@ public:
     IsotropicFaceData& operator=(IsotropicFaceData const&);
     IsotropicFaceData(IsotropicFaceData const&);
     IsotropicFaceData();
-
 };

@@ -27,4 +27,4 @@ MCNAPI ::HashedString const& SWING_ANIMATION_DURATION();
 MCNAPI ::HashedString const& SWING_ANIMATION_TICK();
 // NOLINTEND
 
-}
+} // namespace EntitySpecificMolang::MemberNames

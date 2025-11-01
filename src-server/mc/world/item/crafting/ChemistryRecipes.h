@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void addRecipes(::Recipes& r);
     // NOLINTEND
-
 };

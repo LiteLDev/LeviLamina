@@ -16,7 +16,10 @@ struct VillagerV2PreTravelSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doVillagerV2PreTravel(::StrictEntityContext const& entity, ::ActorDataFlagComponent const& synchedActorDataComponent, ::EntityModifier<::SkipMobTravelComponent> modifier);
+    MCNAPI static void _doVillagerV2PreTravel(
+        ::StrictEntityContext const&               entity,
+        ::ActorDataFlagComponent const&            synchedActorDataComponent,
+        ::EntityModifier<::SkipMobTravelComponent> modifier
+    );
     // NOLINTEND
-
 };

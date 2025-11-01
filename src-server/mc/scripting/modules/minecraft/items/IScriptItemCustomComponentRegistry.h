@@ -15,7 +15,9 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace ScriptModuleMinecraft {
 
-class IScriptItemCustomComponentRegistry : public ::ScriptModuleMinecraft::IScriptItemCustomComponentReader, public ::ScriptModuleMinecraft::IScriptItemCustomComponentWriter, public ::ScriptModuleMinecraft::ScriptCustomComponentRegistry {
+class IScriptItemCustomComponentRegistry : public ::ScriptModuleMinecraft::IScriptItemCustomComponentReader,
+                                           public ::ScriptModuleMinecraft::IScriptItemCustomComponentWriter,
+                                           public ::ScriptModuleMinecraft::ScriptCustomComponentRegistry {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,7 +42,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

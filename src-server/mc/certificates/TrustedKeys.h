@@ -8,4 +8,4 @@ namespace TrustedKeys {
 MCNAPI ::std::vector<::std::string> const& getAuthServicePublicKeys();
 // NOLINTEND
 
-}
+} // namespace TrustedKeys

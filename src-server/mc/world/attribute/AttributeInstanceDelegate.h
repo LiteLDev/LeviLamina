@@ -44,21 +44,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::AttributeInstance* _getMutableInstance(::AttributeModificationContext& context) const;
+    MCAPI ::AttributeInstance* _getMutableInstance(::AttributeModificationContext& context) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::AttributeInstance&, ::AttributeModificationContext&);
+    MCFOLD void $tick(::AttributeInstance&, ::AttributeModificationContext&);
 
-    MCNAPI void $notify(int64, ::AttributeModificationContext&);
+    MCFOLD void $notify(int64, ::AttributeModificationContext&);
 
-    MCNAPI bool $willChange(float, float, ::AttributeBuff const&);
+    MCFOLD bool $willChange(float, float, ::AttributeBuff const&);
 
-    MCNAPI float $change(float, float newValue, ::AttributeBuff const&);
+    MCAPI float $change(float, float newValue, ::AttributeBuff const&);
 
-    MCNAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
+    MCAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
     // NOLINTEND
 
 public:
@@ -66,5 +66,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

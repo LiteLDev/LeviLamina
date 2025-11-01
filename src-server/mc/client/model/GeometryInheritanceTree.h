@@ -8,27 +8,26 @@ public:
     // clang-format off
     struct GeometryInheritanceTreeNode;
     // clang-format on
-    
+
     // GeometryInheritanceTree inner types define
     struct GeometryInheritanceTreeNode {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkb7fe61;
-        ::ll::UntypedStorage<8, 32> mUnkfe94cc;
+        ::ll::UntypedStorage<8, 32>  mUnkb7fe61;
+        ::ll::UntypedStorage<8, 32>  mUnkfe94cc;
         ::ll::UntypedStorage<8, 112> mUnk88f3cb;
-        ::ll::UntypedStorage<8, 24> mUnk5f17bd;
-        ::ll::UntypedStorage<1, 1> mUnk9bde17;
+        ::ll::UntypedStorage<8, 24>  mUnk5f17bd;
+        ::ll::UntypedStorage<1, 1>   mUnk9bde17;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         GeometryInheritanceTreeNode& operator=(GeometryInheritanceTreeNode const&);
         GeometryInheritanceTreeNode(GeometryInheritanceTreeNode const&);
         GeometryInheritanceTreeNode();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,5 +41,4 @@ public:
     GeometryInheritanceTree& operator=(GeometryInheritanceTree const&);
     GeometryInheritanceTree(GeometryInheritanceTree const&);
     GeometryInheritanceTree();
-
 };

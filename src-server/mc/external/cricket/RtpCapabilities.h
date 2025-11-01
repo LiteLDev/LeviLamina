@@ -16,7 +16,6 @@ public:
     RtpCapabilities& operator=(RtpCapabilities const&);
     RtpCapabilities(RtpCapabilities const&);
     RtpCapabilities();
-
 };
 
-}
+} // namespace cricket

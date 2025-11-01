@@ -15,4 +15,4 @@ MCNAPI ::cereal::StringConstraint locIdStringConstraint();
 MCNAPI ::cereal::StringConstraint resourceIdentifierConstraint();
 // NOLINTEND
 
-}
+} // namespace SharedTypes::Constraints

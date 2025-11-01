@@ -4,5 +4,5 @@
 
 enum class ServerPlayerJoinBehavior : int {
     Allow = 0,
-    Deny = 1,
+    Deny  = 1,
 };

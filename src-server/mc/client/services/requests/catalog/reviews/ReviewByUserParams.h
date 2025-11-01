@@ -15,5 +15,4 @@ public:
     ReviewByUserParams& operator=(ReviewByUserParams const&);
     ReviewByUserParams(ReviewByUserParams const&);
     ReviewByUserParams();
-
 };

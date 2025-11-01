@@ -18,7 +18,6 @@ public:
     CodecBufferUsage& operator=(CodecBufferUsage const&);
     CodecBufferUsage(CodecBufferUsage const&);
     CodecBufferUsage();
-
 };
 
-}
+} // namespace webrtc

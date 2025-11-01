@@ -30,5 +30,4 @@ public:
 
     MCNAPI void tameToPlayer(::Actor& owner, ::Player& player, bool tamingParticles);
     // NOLINTEND
-
 };

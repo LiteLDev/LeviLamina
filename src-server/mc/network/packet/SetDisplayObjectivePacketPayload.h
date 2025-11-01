@@ -9,10 +9,10 @@ struct SetDisplayObjectivePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mDisplaySlotName;
-    ::ll::TypedStorage<8, 32, ::std::string> mObjectiveName;
-    ::ll::TypedStorage<8, 32, ::std::string> mObjectiveDisplayName;
-    ::ll::TypedStorage<8, 32, ::std::string> mCriteriaName;
+    ::ll::TypedStorage<8, 32, ::std::string>       mDisplaySlotName;
+    ::ll::TypedStorage<8, 32, ::std::string>       mObjectiveName;
+    ::ll::TypedStorage<8, 32, ::std::string>       mObjectiveDisplayName;
+    ::ll::TypedStorage<8, 32, ::std::string>       mCriteriaName;
     ::ll::TypedStorage<1, 1, ::ObjectiveSortOrder> mSortOrder;
     // NOLINTEND
 
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

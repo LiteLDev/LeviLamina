@@ -19,36 +19,35 @@ public:
     // clang-format off
     struct PoolEntry;
     // clang-format on
-    
+
     // WorkerPoolManagerImpl inner types define
     struct PoolEntry {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkc189dd;
+        ::ll::UntypedStorage<8, 8>  mUnkc189dd;
         ::ll::UntypedStorage<8, 16> mUnke865a9;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PoolEntry& operator=(PoolEntry const&);
         PoolEntry(PoolEntry const&);
         PoolEntry();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~PoolEntry();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -68,7 +67,14 @@ public:
     virtual void init() /*override*/;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(::std::string name, uint64 threadCount, ::Bedrock::Threading::OSThreadPriority const& priority, ::std::optional<uint64> const coreAffinityMask, bool suppressWorkerProfiling, ::std::optional<int> const idealCore) /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(
+        ::std::string                                 name,
+        uint64                                        threadCount,
+        ::Bedrock::Threading::OSThreadPriority const& priority,
+        ::std::optional<uint64> const                 coreAffinityMask,
+        bool                                          suppressWorkerProfiling,
+        ::std::optional<int> const                    idealCore
+    ) /*override*/;
 
     // vIndex: 3
     virtual void tick() /*override*/;
@@ -94,7 +100,14 @@ public:
     // NOLINTBEGIN
     MCNAPI void $init();
 
-    MCNAPI ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> $createWorkerPool(::std::string name, uint64 threadCount, ::Bedrock::Threading::OSThreadPriority const& priority, ::std::optional<uint64> const coreAffinityMask, bool suppressWorkerProfiling, ::std::optional<int> const idealCore);
+    MCNAPI ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> $createWorkerPool(
+        ::std::string                                 name,
+        uint64                                        threadCount,
+        ::Bedrock::Threading::OSThreadPriority const& priority,
+        ::std::optional<uint64> const                 coreAffinityMask,
+        bool                                          suppressWorkerProfiling,
+        ::std::optional<int> const                    idealCore
+    );
 
     MCNAPI void $tick();
     // NOLINTEND
@@ -106,7 +119,6 @@ public:
 
     MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock

@@ -40,9 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>> getConditions();
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>>
+    getConditions();
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptLootItemFunction& operator=(::ScriptModuleMinecraft::ScriptLootItemFunction const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptLootItemFunction&
+    operator=(::ScriptModuleMinecraft::ScriptLootItemFunction const&);
     // NOLINTEND
 
 public:
@@ -62,7 +64,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

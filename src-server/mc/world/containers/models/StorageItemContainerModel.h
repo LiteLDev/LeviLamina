@@ -19,9 +19,9 @@ class StorageItemContainerModel : public ::ContainerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::StorageItemComponent const*> mStorageItemComponent;
+    ::ll::TypedStorage<8, 8, ::StorageItemComponent const*>            mStorageItemComponent;
     ::ll::TypedStorage<8, 8, ::StorageWeightLimitItemComponent const*> mStorageWeightLimitComponent;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>> mContainer;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>>            mContainer;
     // NOLINTEND
 
 public:
@@ -59,7 +59,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StorageItemContainerModel(::FullContainerName const& name, ::std::shared_ptr<::Container> container, bool isClientSide, ::StorageItemComponent* storageItemComponent, ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent);
+    MCAPI StorageItemContainerModel(
+        ::FullContainerName const&         name,
+        ::std::shared_ptr<::Container>     container,
+        bool                               isClientSide,
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
+    );
 
     MCAPI void _refreshSlot(int modelSlot);
     // NOLINTEND
@@ -67,7 +73,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FullContainerName const& name, ::std::shared_ptr<::Container> container, bool isClientSide, ::StorageItemComponent* storageItemComponent, ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent);
+    MCAPI void* $ctor(
+        ::FullContainerName const&         name,
+        ::std::shared_ptr<::Container>     container,
+        bool                               isClientSide,
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
+    );
     // NOLINTEND
 
 public:
@@ -93,5 +105,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -13,7 +13,7 @@ struct ScriptBlockFillOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnka09902;
+    ::ll::UntypedStorage<1, 2>   mUnka09902;
     ::ll::UntypedStorage<8, 168> mUnk602490;
     // NOLINTEND
 
@@ -40,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

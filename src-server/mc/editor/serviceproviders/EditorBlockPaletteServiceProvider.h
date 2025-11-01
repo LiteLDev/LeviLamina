@@ -52,7 +52,11 @@ public:
     virtual int getSelectedPaletteItemIndex() const = 0;
 
     // vIndex: 8
-    virtual ::Scripting::Result_deprecated<void> setPaletteItem(::HashedString const&, int, ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> setPaletteItem(
+        ::HashedString const&,
+        int,
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const&
+    ) = 0;
 
     // vIndex: 9
     virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const&) = 0;
@@ -67,13 +71,22 @@ public:
     virtual ::std::optional<::Editor::EditorBlockPalette> getPalette(::HashedString const&) const = 0;
 
     // vIndex: 13
-    virtual ::Scripting::Result_deprecated<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>> getPaletteItem(::HashedString const&, int) const = 0;
+    virtual ::Scripting::Result_deprecated<
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>>
+    getPaletteItem(::HashedString const&, int) const = 0;
 
     // vIndex: 14
     virtual void forEachBlockType(::std::function<void(::BlockType const&, bool)>) const = 0;
 
     // vIndex: 15
-    virtual ::Bedrock::PubSub::Subscription registerEventListener(::std::function<void(::std::variant<::Editor::EditorBlockPaletteEventItemUpdated, ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged, ::Editor::EditorBlockPaletteEventActivePaletteChanged, ::Editor::EditorBlockPaletteEventPaletteUpdated, ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerEventListener(
+        ::std::function<void(::std::variant<
+                             ::Editor::EditorBlockPaletteEventItemUpdated,
+                             ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
+                             ::Editor::EditorBlockPaletteEventActivePaletteChanged,
+                             ::Editor::EditorBlockPaletteEventPaletteUpdated,
+                             ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)>
+    ) = 0;
     // NOLINTEND
 
 public:
@@ -87,7 +100,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

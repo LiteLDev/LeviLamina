@@ -21,11 +21,10 @@ public:
     class ResourceLoadTaskGroup;
     class TaskGroupState;
     // clang-format on
-    
+
     // ResourceLoadManager inner types define
-    struct LoadOrder {
-    };
-    
+    struct LoadOrder {};
+
     class TaskGroupState {
     public:
         // member variables
@@ -33,50 +32,52 @@ public:
         ::ll::UntypedStorage<1, 1> mUnkfc3423;
         ::ll::UntypedStorage<8, 8> mUnkeadda9;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         TaskGroupState& operator=(TaskGroupState const&);
         TaskGroupState(TaskGroupState const&);
         TaskGroupState();
-    
     };
-    
+
     class ResourceLoadTaskGroup {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 48> mUnkb71d1e;
-        ::ll::UntypedStorage<4, 4> mUnkfb510f;
-        ::ll::UntypedStorage<8, 8> mUnk5decd4;
+        ::ll::UntypedStorage<4, 4>  mUnkfb510f;
+        ::ll::UntypedStorage<8, 8>  mUnk5decd4;
         ::ll::UntypedStorage<8, 24> mUnkbd7168;
         ::ll::UntypedStorage<8, 16> mUnkac15ed;
-        ::ll::UntypedStorage<1, 1> mUnkd78565;
+        ::ll::UntypedStorage<1, 1>  mUnkd78565;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ResourceLoadTaskGroup& operator=(ResourceLoadTaskGroup const&);
         ResourceLoadTaskGroup(ResourceLoadTaskGroup const&);
         ResourceLoadTaskGroup();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::Bedrock::Threading::Async<void> queue(::brstd::move_only_function<::TaskResult()> threadedCallback, ::std::function<void()> mainThreadCallback, uint taskPriority);
+        MCNAPI ::Bedrock::Threading::Async<void> queue(
+            ::brstd::move_only_function<::TaskResult()> threadedCallback,
+            ::std::function<void()>                     mainThreadCallback,
+            uint                                        taskPriority
+        );
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk641f6f;
-    ::ll::UntypedStorage<8, 8> mUnkbc3f4e;
-    ::ll::UntypedStorage<8, 8> mUnk833b4d;
+    ::ll::UntypedStorage<4, 4>  mUnk641f6f;
+    ::ll::UntypedStorage<8, 8>  mUnkbc3f4e;
+    ::ll::UntypedStorage<8, 8>  mUnk833b4d;
     ::ll::UntypedStorage<8, 16> mUnk174289;
-    ::ll::UntypedStorage<8, 8> mUnkb77267;
-    ::ll::UntypedStorage<1, 1> mUnk8953d0;
+    ::ll::UntypedStorage<8, 8>  mUnkb77267;
+    ::ll::UntypedStorage<1, 1>  mUnk8953d0;
     // NOLINTEND
 
 public:
@@ -95,9 +96,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _prepareTaskGroupToRunAgain(::gsl::not_null<::ResourceLoadManager::ResourceLoadTaskGroup*> resourceLoadTaskGroup);
+    MCNAPI void
+    _prepareTaskGroupToRunAgain(::gsl::not_null<::ResourceLoadManager::ResourceLoadTaskGroup*> resourceLoadTaskGroup);
 
-    MCNAPI ::Bedrock::Threading::Async<void> queue(::ResourceLoadType resourceLoadType, ::brstd::move_only_function<::TaskResult()> threadedCallback, ::std::function<void()> mainThreadCallback, uint taskPriority);
+    MCNAPI ::Bedrock::Threading::Async<void> queue(
+        ::ResourceLoadType                          resourceLoadType,
+        ::brstd::move_only_function<::TaskResult()> threadedCallback,
+        ::std::function<void()>                     mainThreadCallback,
+        uint                                        taskPriority
+    );
 
     MCNAPI bool softCancel(::ResourceLoadType resourceLoadType);
     // NOLINTEND
@@ -105,11 +112,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::function<void()> _wrapMainThreadCallback(::ResourceLoadManager::ResourceLoadTaskGroup& resourceLoadTaskGroup, ::std::function<void ()>&& mainThreadCallback);
+    MCNAPI static ::std::function<void()> _wrapMainThreadCallback(
+        ::ResourceLoadManager::ResourceLoadTaskGroup& resourceLoadTaskGroup,
+        ::std::function<void()>&&                     mainThreadCallback
+    );
 
-    MCNAPI static ::brstd::move_only_function<::TaskResult()> _wrapTaskCallback(::ResourceLoadManager::ResourceLoadTaskGroup& resourceLoadTaskGroup, ::brstd::move_only_function<::TaskResult ()>&& threadedCallback);
+    MCNAPI static ::brstd::move_only_function<::TaskResult()> _wrapTaskCallback(
+        ::ResourceLoadManager::ResourceLoadTaskGroup& resourceLoadTaskGroup,
+        ::brstd::move_only_function<::TaskResult()>&& threadedCallback
+    );
 
-    MCNAPI static void queueChild(::brstd::move_only_function<::TaskResult()> threadedCallback, ::std::function<void()> mainThreadCallback, uint taskPriority);
+    MCNAPI static void queueChild(
+        ::brstd::move_only_function<::TaskResult()> threadedCallback,
+        ::std::function<void()>                     mainThreadCallback,
+        uint                                        taskPriority
+    );
     // NOLINTEND
-
 };

@@ -30,29 +30,29 @@ class TransmissionControlBlock : public ::dcsctp::Context {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk8051d0;
+    ::ll::UntypedStorage<8, 16>  mUnk8051d0;
     ::ll::UntypedStorage<8, 176> mUnk75b839;
-    ::ll::UntypedStorage<8, 8> mUnkb3c359;
-    ::ll::UntypedStorage<2, 8> mUnk445cef;
-    ::ll::UntypedStorage<8, 8> mUnkfb8773;
-    ::ll::UntypedStorage<8, 8> mUnkaf661f;
-    ::ll::UntypedStorage<8, 8> mUnk846fb5;
-    ::ll::UntypedStorage<4, 4> mUnk675890;
-    ::ll::UntypedStorage<4, 4> mUnkcac7da;
-    ::ll::UntypedStorage<4, 4> mUnkb66298;
-    ::ll::UntypedStorage<4, 4> mUnk12976d;
-    ::ll::UntypedStorage<8, 8> mUnk4e9dcc;
-    ::ll::UntypedStorage<8, 64> mUnkd6727c;
-    ::ll::UntypedStorage<8, 8> mUnka4cca7;
-    ::ll::UntypedStorage<8, 8> mUnk9bd8c7;
-    ::ll::UntypedStorage<8, 64> mUnk36dbcb;
-    ::ll::UntypedStorage<8, 32> mUnka87ec1;
+    ::ll::UntypedStorage<8, 8>   mUnkb3c359;
+    ::ll::UntypedStorage<2, 8>   mUnk445cef;
+    ::ll::UntypedStorage<8, 8>   mUnkfb8773;
+    ::ll::UntypedStorage<8, 8>   mUnkaf661f;
+    ::ll::UntypedStorage<8, 8>   mUnk846fb5;
+    ::ll::UntypedStorage<4, 4>   mUnk675890;
+    ::ll::UntypedStorage<4, 4>   mUnkcac7da;
+    ::ll::UntypedStorage<4, 4>   mUnkb66298;
+    ::ll::UntypedStorage<4, 4>   mUnk12976d;
+    ::ll::UntypedStorage<8, 8>   mUnk4e9dcc;
+    ::ll::UntypedStorage<8, 64>  mUnkd6727c;
+    ::ll::UntypedStorage<8, 8>   mUnka4cca7;
+    ::ll::UntypedStorage<8, 8>   mUnk9bd8c7;
+    ::ll::UntypedStorage<8, 64>  mUnk36dbcb;
+    ::ll::UntypedStorage<8, 32>  mUnka87ec1;
     ::ll::UntypedStorage<8, 104> mUnk704d04;
     ::ll::UntypedStorage<8, 168> mUnk6029a3;
     ::ll::UntypedStorage<8, 648> mUnk6b5332;
     ::ll::UntypedStorage<8, 144> mUnkcd60d6;
-    ::ll::UntypedStorage<8, 64> mUnkff1edb;
-    ::ll::UntypedStorage<8, 40> mUnkb664d7;
+    ::ll::UntypedStorage<8, 64>  mUnkff1edb;
+    ::ll::UntypedStorage<8, 40>  mUnkb664d7;
     // NOLINTEND
 
 public:
@@ -126,13 +126,43 @@ public:
 
     MCNAPI void SendBufferedPackets(::dcsctp::SctpPacket::Builder& builder, ::webrtc::Timestamp now);
 
-    MCNAPI TransmissionControlBlock(::dcsctp::TimerManager& timer_manager, ::std::string_view log_prefix, ::dcsctp::DcSctpOptions const& options, ::dcsctp::Capabilities const& capabilities, ::dcsctp::DcSctpSocketCallbacks& callbacks, ::dcsctp::SendQueue& send_queue, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> my_verification_tag, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint> my_initial_tsn, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> peer_verification_tag, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint> peer_initial_tsn, uint64 a_rwnd, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64> tie_tag, ::dcsctp::PacketSender& packet_sender, ::std::function<bool()> is_connection_established);
+    MCNAPI TransmissionControlBlock(
+        ::dcsctp::TimerManager&                                   timer_manager,
+        ::std::string_view                                        log_prefix,
+        ::dcsctp::DcSctpOptions const&                            options,
+        ::dcsctp::Capabilities const&                             capabilities,
+        ::dcsctp::DcSctpSocketCallbacks&                          callbacks,
+        ::dcsctp::SendQueue&                                      send_queue,
+        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> my_verification_tag,
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>             my_initial_tsn,
+        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> peer_verification_tag,
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>             peer_initial_tsn,
+        uint64                                                    a_rwnd,
+        ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>        tie_tag,
+        ::dcsctp::PacketSender&                                   packet_sender,
+        ::std::function<bool()>                                   is_connection_established
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::dcsctp::TimerManager& timer_manager, ::std::string_view log_prefix, ::dcsctp::DcSctpOptions const& options, ::dcsctp::Capabilities const& capabilities, ::dcsctp::DcSctpSocketCallbacks& callbacks, ::dcsctp::SendQueue& send_queue, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> my_verification_tag, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint> my_initial_tsn, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> peer_verification_tag, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint> peer_initial_tsn, uint64 a_rwnd, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64> tie_tag, ::dcsctp::PacketSender& packet_sender, ::std::function<bool()> is_connection_established);
+    MCNAPI void* $ctor(
+        ::dcsctp::TimerManager&                                   timer_manager,
+        ::std::string_view                                        log_prefix,
+        ::dcsctp::DcSctpOptions const&                            options,
+        ::dcsctp::Capabilities const&                             capabilities,
+        ::dcsctp::DcSctpSocketCallbacks&                          callbacks,
+        ::dcsctp::SendQueue&                                      send_queue,
+        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> my_verification_tag,
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>             my_initial_tsn,
+        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> peer_verification_tag,
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>             peer_initial_tsn,
+        uint64                                                    a_rwnd,
+        ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>        tie_tag,
+        ::dcsctp::PacketSender&                                   packet_sender,
+        ::std::function<bool()>                                   is_connection_established
+    );
     // NOLINTEND
 
 public:
@@ -166,7 +196,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

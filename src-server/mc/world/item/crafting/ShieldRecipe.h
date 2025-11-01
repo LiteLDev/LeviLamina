@@ -25,7 +25,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const /*override*/;
+    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
+        /*override*/;
 
     // vIndex: 2
     virtual int getCraftingSize() const /*override*/;
@@ -40,7 +41,8 @@ public:
     virtual bool isShapeless() const /*override*/;
 
     // vIndex: 5
-    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const /*override*/;
+    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
+        /*override*/;
 
     // vIndex: 6
     virtual int size() const /*override*/;
@@ -78,5 +80,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

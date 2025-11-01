@@ -17,11 +17,11 @@ class ActorDefinitionEventSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mAffectShooter;
-    ::ll::TypedStorage<1, 1, bool> mAffectProjectile;
-    ::ll::TypedStorage<1, 1, bool> mAffectTarget;
-    ::ll::TypedStorage<1, 1, bool> mAffectSplashArea;
-    ::ll::TypedStorage<4, 4, float> mSplashArea;
+    ::ll::TypedStorage<1, 1, bool>                       mAffectShooter;
+    ::ll::TypedStorage<1, 1, bool>                       mAffectProjectile;
+    ::ll::TypedStorage<1, 1, bool>                       mAffectTarget;
+    ::ll::TypedStorage<1, 1, bool>                       mAffectSplashArea;
+    ::ll::TypedStorage<4, 4, float>                      mSplashArea;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mTrigger;
     // NOLINTEND
 
@@ -61,5 +61,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

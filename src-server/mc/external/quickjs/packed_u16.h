@@ -14,5 +14,4 @@ public:
     packed_u16& operator=(packed_u16 const&);
     packed_u16(packed_u16 const&);
     packed_u16();
-
 };

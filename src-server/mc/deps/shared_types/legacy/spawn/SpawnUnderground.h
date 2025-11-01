@@ -4,7 +4,6 @@
 
 namespace SharedTypes::Legacy::Spawn {
 
-struct SpawnUnderground {
-};
+struct SpawnUnderground {};
 
-}
+} // namespace SharedTypes::Legacy::Spawn

@@ -25,18 +25,19 @@ public:
     enum class Type : int {
         Standard = 0,
     };
-    
+
     enum class EnabledConnectionStates : int {
         Cardinal = 0,
-        Count = 1,
+        Count    = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mUpdateFlags;
+    ::ll::TypedStorage<4, 4, int>                            mUpdateFlags;
     ::ll::TypedStorage<4, 4, ::BlockTrait::Connection::Type> mType;
-    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockTrait::Connection::EnabledConnectionStates, 1>> mEnabledConnectionStates;
+    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockTrait::Connection::EnabledConnectionStates, 1>>
+        mEnabledConnectionStates;
     // NOLINTEND
 
 public:
@@ -58,7 +59,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NeighborBlockDirections getConnectedDirections(::IConstBlockSource const& region, ::Block const& block, ::BlockPos const& pos, ::NeighborBlockDirections directionsToCheck);
+    MCAPI static ::NeighborBlockDirections getConnectedDirections(
+        ::IConstBlockSource const& region,
+        ::Block const&             block,
+        ::BlockPos const&          pos,
+        ::NeighborBlockDirections  directionsToCheck
+    );
     // NOLINTEND
 
 public:
@@ -66,7 +72,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockTrait

@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk9570d4;
-    ::ll::UntypedStorage<2, 2> mUnk13cef2;
+    ::ll::UntypedStorage<2, 2>  mUnk13cef2;
     // NOLINTEND
 
 public:
@@ -26,7 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleServerAdmin::ScriptTransferPlayerIpPortOptions& operator=(::ScriptModuleServerAdmin::ScriptTransferPlayerIpPortOptions&&);
+    MCNAPI ::ScriptModuleServerAdmin::ScriptTransferPlayerIpPortOptions&
+    operator=(::ScriptModuleServerAdmin::ScriptTransferPlayerIpPortOptions&&);
 
     MCNAPI ~ScriptTransferPlayerIpPortOptions();
     // NOLINTEND
@@ -42,7 +43,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleServerAdmin

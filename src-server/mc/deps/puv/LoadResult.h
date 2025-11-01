@@ -4,8 +4,7 @@
 
 namespace Puv {
 
-template<typename T0>
-class LoadResult {
-};
+template <typename T0>
+class LoadResult {};
 
-}
+} // namespace Puv

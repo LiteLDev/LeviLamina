@@ -23,15 +23,15 @@ struct JigsawStructure : public ::br::worldgen::Structure {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mStartJigsawName;
-    ::ll::TypedStorage<8, 32, ::std::string> mStart;
-    ::ll::TypedStorage<1, 1, char> mMaxDepth;
-    ::ll::TypedStorage<8, 56, ::br::worldgen::StructureHeightProvider> mStartHeight;
-    ::ll::TypedStorage<4, 8, ::br::worldgen::MaxDistanceFromCenter> mMaxDistanceFromCenter;
-    ::ll::TypedStorage<4, 8, ::br::worldgen::DimensionPadding> mDimensionPadding;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mStartJigsawName;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mStart;
+    ::ll::TypedStorage<1, 1, char>                                      mMaxDepth;
+    ::ll::TypedStorage<8, 56, ::br::worldgen::StructureHeightProvider>  mStartHeight;
+    ::ll::TypedStorage<4, 8, ::br::worldgen::MaxDistanceFromCenter>     mMaxDistanceFromCenter;
+    ::ll::TypedStorage<4, 8, ::br::worldgen::DimensionPadding>          mDimensionPadding;
     ::ll::TypedStorage<1, 1, ::br::worldgen::HeightmapProjection::Type> mProjectStartToHeightmap;
-    ::ll::TypedStorage<1, 1, ::br::worldgen::JigsawExpansion> mExpansion;
-    ::ll::TypedStorage<1, 1, ::br::worldgen::LiquidSettings> mLiquidSettings;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::JigsawExpansion>           mExpansion;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::LiquidSettings>            mLiquidSettings;
     // NOLINTEND
 
 public:
@@ -43,7 +43,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::optional<::br::worldgen::GenerationStub> findValidGenerationPoint(::br::worldgen::GenerationContext& context) const /*override*/;
+    virtual ::std::optional<::br::worldgen::GenerationStub>
+    findValidGenerationPoint(::br::worldgen::GenerationContext& context) const /*override*/;
 
     // vIndex: 0
     virtual ~JigsawStructure() /*override*/;
@@ -74,7 +75,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::GenerationStub> $findValidGenerationPoint(::br::worldgen::GenerationContext& context) const;
+    MCAPI ::std::optional<::br::worldgen::GenerationStub>
+    $findValidGenerationPoint(::br::worldgen::GenerationContext& context) const;
     // NOLINTEND
 
 public:
@@ -82,7 +84,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

@@ -29,10 +29,10 @@ class ScriptBrushShapeManagerService {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkec6894;
-    ::ll::UntypedStorage<8, 8> mUnke91993;
-    ::ll::UntypedStorage<8, 24> mUnkde8b6f;
-    ::ll::UntypedStorage<8, 40> mUnk26d3cf;
+    ::ll::UntypedStorage<8, 8>   mUnkec6894;
+    ::ll::UntypedStorage<8, 8>   mUnke91993;
+    ::ll::UntypedStorage<8, 24>  mUnkde8b6f;
+    ::ll::UntypedStorage<8, 40>  mUnk26d3cf;
     ::ll::UntypedStorage<8, 248> mUnk7c5ced;
     // NOLINTEND
 
@@ -46,13 +46,18 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptBrushShapeManagerService(::Editor::ScriptModule::ScriptBrushShapeManagerService const&);
 
-    MCNAPI ScriptBrushShapeManagerService(::Editor::Services::BrushShapeManagerServiceProvider& serviceProvider, ::Player& player, ::Scripting::WeakLifetimeScope& scope);
+    MCNAPI ScriptBrushShapeManagerService(
+        ::Editor::Services::BrushShapeManagerServiceProvider& serviceProvider,
+        ::Player&                                             player,
+        ::Scripting::WeakLifetimeScope&                       scope
+    );
 
     MCNAPI void _onBrushPaintCompletion(::Editor::Brush::BrushPaintCompletionState state);
 
     MCNAPI void activateBrushTool();
 
-    MCNAPI ::Scripting::Result_deprecated<void> beginPainting(::Scripting::Closure<void(::Editor::Brush::BrushPaintCompletionState)> const& closureEvent);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    beginPainting(::Scripting::Closure<void(::Editor::Brush::BrushPaintCompletionState)> const& closureEvent);
 
     MCNAPI void clearBlockStateOverrides();
 
@@ -60,13 +65,18 @@ public:
 
     MCNAPI void disableItemPlacement();
 
-    MCNAPI void enableItemPlacement(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeArg, ::std::optional<int const> const& aux);
+    MCNAPI void enableItemPlacement(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeArg,
+        ::std::optional<int const> const&                                                    aux
+    );
 
     MCNAPI ::Scripting::Result_deprecated<void> endPainting(bool cancelled);
 
     MCNAPI ::Vec3 getBrushShapeOffset() const;
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>> getCurrentBrushVolume();
+    MCNAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>>
+    getCurrentBrushVolume();
 
     MCNAPI ::Editor::Brush::DirectionalPlacementMode getDirectionalPlacementMode() const;
 
@@ -74,13 +84,19 @@ public:
 
     MCNAPI bool isBrushPaintBusy();
 
-    MCNAPI void pushBlockStateOverride(::std::string const& stateName, ::std::variant<int, ::std::string, bool> const& stateValue);
+    MCNAPI void
+    pushBlockStateOverride(::std::string const& stateName, ::std::variant<int, ::std::string, bool> const& stateValue);
 
     MCNAPI void setBlockFacePlacementBasedOnCamera(bool enable);
 
     MCNAPI ::Scripting::Result_deprecated<void> setBrushMask(::Editor::ScriptModule::ScriptBlockMaskList const& mask);
 
-    MCNAPI void setBrushShape(::std::variant<::std::vector<::Vec3>, ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>> const& shape);
+    MCNAPI void setBrushShape(
+        ::std::variant<
+            ::std::vector<::Vec3>,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>> const&
+            shape
+    );
 
     MCNAPI void setBrushShapeOffset(::Vec3 const& offset);
 
@@ -98,7 +114,8 @@ public:
 
     MCNAPI void setTerrainStrength(int terrainStrength);
 
-    MCNAPI ::Scripting::Result_deprecated<void> singlePaint(::Scripting::Closure<void(::Editor::Brush::BrushPaintCompletionState)> const& closureEvent);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    singlePaint(::Scripting::Closure<void(::Editor::Brush::BrushPaintCompletionState)> const& closureEvent);
 
     MCNAPI void switchBrushPaintMode(::Editor::Brush::BrushPaintMode mode);
 
@@ -116,7 +133,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptBrushShapeManagerService const&);
 
-    MCNAPI void* $ctor(::Editor::Services::BrushShapeManagerServiceProvider& serviceProvider, ::Player& player, ::Scripting::WeakLifetimeScope& scope);
+    MCNAPI void* $ctor(
+        ::Editor::Services::BrushShapeManagerServiceProvider& serviceProvider,
+        ::Player&                                             player,
+        ::Scripting::WeakLifetimeScope&                       scope
+    );
     // NOLINTEND
 
 public:
@@ -124,7 +145,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

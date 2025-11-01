@@ -28,7 +28,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk4716fa;
-    ::ll::UntypedStorage<8, 8> mUnk1f0d6e;
+    ::ll::UntypedStorage<8, 8>  mUnk1f0d6e;
     ::ll::UntypedStorage<8, 64> mUnk84293d;
     // NOLINTEND
 
@@ -43,25 +43,46 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptPersistenceService(::Editor::ScriptModule::ScriptPersistenceService&&);
 
-    MCNAPI ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup> _createScriptPersistenceGroup(::WeakRef<::Editor::Services::PersistenceGroup> groupRef);
+    MCNAPI ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>
+    _createScriptPersistenceGroup(::WeakRef<::Editor::Services::PersistenceGroup> groupRef);
 
     MCNAPI bool _validateNamespace(::Scripting::ContextConfig const& contextConfig, ::std::string namespacedName);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>> createGroup(::Scripting::ContextConfig const& contextConfig, ::std::string const& namespacedName, ::Editor::Services::PersistenceGroupCreationOptions options);
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>>
+    createGroup(
+        ::Scripting::ContextConfig const&                   contextConfig,
+        ::std::string const&                                namespacedName,
+        ::Editor::Services::PersistenceGroupCreationOptions options
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void> deleteGroup(::Scripting::ContextConfig const& contextConfig, ::std::string const& namespacedName, ::Editor::Services::PersistenceGroupCreationOptions options);
+    MCNAPI ::Scripting::Result_deprecated<void> deleteGroup(
+        ::Scripting::ContextConfig const&                   contextConfig,
+        ::std::string const&                                namespacedName,
+        ::Editor::Services::PersistenceGroupCreationOptions options
+    );
 
     MCNAPI ::Scripting::Result_deprecated<void> disposeAllGroups();
 
     MCNAPI ::Scripting::Result_deprecated<bool> disposeGroup(::mce::UUID uuid);
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>>> fetchGroups(::Editor::Services::PersistenceQueryGroupOptions options);
+    MCNAPI ::Scripting::Result_deprecated<
+        ::std::vector<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>>>
+    fetchGroups(::Editor::Services::PersistenceQueryGroupOptions options);
 
-    MCNAPI ::std::optional<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>> getGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceGroupCreationOptions options);
+    MCNAPI ::std::optional<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>>
+    getGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceGroupCreationOptions options);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>> getOrCreateGroup(::Scripting::ContextConfig const& contextConfig, ::std::string const& namespacedName, ::Editor::Services::PersistenceGroupCreationOptions options);
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>>
+    getOrCreateGroup(
+        ::Scripting::ContextConfig const&                   contextConfig,
+        ::std::string const&                                namespacedName,
+        ::Editor::Services::PersistenceGroupCreationOptions options
+    );
 
-    MCNAPI ::Editor::ScriptModule::ScriptPersistenceService& operator=(::Editor::ScriptModule::ScriptPersistenceService&&);
+    MCNAPI ::Editor::ScriptModule::ScriptPersistenceService&
+    operator=(::Editor::ScriptModule::ScriptPersistenceService&&);
     // NOLINTEND
 
 public:
@@ -83,7 +104,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptPersistenceService&&);
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

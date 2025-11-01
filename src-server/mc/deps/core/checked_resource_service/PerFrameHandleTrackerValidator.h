@@ -4,8 +4,7 @@
 
 namespace mce {
 
-template<typename T0>
-class PerFrameHandleTrackerValidator {
-};
+template <typename T0>
+class PerFrameHandleTrackerValidator {};
 
-}
+} // namespace mce

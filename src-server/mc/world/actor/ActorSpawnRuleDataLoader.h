@@ -31,9 +31,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorSpawnRuleDataLoader(::cereal::ReflectionCtx const& ctx, ::IPackLoadContext const& packLoadContext, ::br::spawn::SpawnPlacements& spawnPlacements);
+    MCNAPI ActorSpawnRuleDataLoader(
+        ::cereal::ReflectionCtx const& ctx,
+        ::IPackLoadContext const&      packLoadContext,
+        ::br::spawn::SpawnPlacements&  spawnPlacements
+    );
 
-    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
+    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData>
+    load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
     MCNAPI ~ActorSpawnRuleDataLoader();
     // NOLINTEND
@@ -41,7 +46,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::IPackLoadContext const& packLoadContext, ::br::spawn::SpawnPlacements& spawnPlacements);
+    MCNAPI void* $ctor(
+        ::cereal::ReflectionCtx const& ctx,
+        ::IPackLoadContext const&      packLoadContext,
+        ::br::spawn::SpawnPlacements&  spawnPlacements
+    );
     // NOLINTEND
 
 public:
@@ -49,5 +58,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

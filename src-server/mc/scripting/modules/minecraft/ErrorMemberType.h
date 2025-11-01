@@ -5,7 +5,7 @@
 namespace ScriptModuleMinecraft {
 
 enum class ErrorMemberType : uchar {
-    Function = 0,
+    Function    = 0,
     GetProperty = 1,
     SetProperty = 2,
 };

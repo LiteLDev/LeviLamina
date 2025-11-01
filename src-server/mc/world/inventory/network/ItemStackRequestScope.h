@@ -12,7 +12,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ItemStackNetManagerClient*> mItemStackNetManagerClient;
-    ::ll::TypedStorage<1, 1, bool> mBeganRequest;
+    ::ll::TypedStorage<1, 1, bool>                         mBeganRequest;
     // NOLINTEND
-
 };

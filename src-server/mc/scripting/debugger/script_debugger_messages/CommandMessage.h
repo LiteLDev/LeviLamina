@@ -23,7 +23,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptDebuggerMessages::CommandMessage& operator=(::ScriptDebuggerMessages::CommandMessage&&);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptDebuggerMessages

@@ -16,7 +16,6 @@ public:
     NetworkID& operator=(NetworkID const&);
     NetworkID(NetworkID const&);
     NetworkID();
-
 };
 
-}
+} // namespace NetherNet::P2P

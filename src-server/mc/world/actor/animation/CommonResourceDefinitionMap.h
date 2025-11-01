@@ -34,7 +34,8 @@ public:
 
     MCNAPI void mergeAnimation(::HashedString const& name, ::ActorSkeletalAnimationPtr animationPtr);
 
-    MCNAPI void mergeAnimationController(::HashedString const& name, ::ActorAnimationControllerPtr animationControllerPtr);
+    MCNAPI void
+    mergeAnimationController(::HashedString const& name, ::ActorAnimationControllerPtr animationControllerPtr);
 
     MCNAPI ~CommonResourceDefinitionMap();
     // NOLINTEND
@@ -50,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

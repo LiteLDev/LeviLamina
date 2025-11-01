@@ -16,9 +16,9 @@ class HungerAttributeDelegate : public ::AttributeInstanceDelegate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mActionTickTimer;
-    ::ll::TypedStorage<4, 4, int> mTickCounter;
-    ::ll::TypedStorage<4, 4, float> mLastFoodLevel;
+    ::ll::TypedStorage<4, 4, int>       mActionTickTimer;
+    ::ll::TypedStorage<4, 4, int>       mTickCounter;
+    ::ll::TypedStorage<4, 4, float>     mLastFoodLevel;
     ::ll::TypedStorage<8, 8, ::Player*> mPlayer;
     // NOLINTEND
 
@@ -38,15 +38,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canPlayerBeAffectedByHunger() const;
+    MCAPI bool _canPlayerBeAffectedByHunger() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
+    MCAPI void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
 
-    MCNAPI void $notify(int64 type, ::AttributeModificationContext& context);
+    MCAPI void $notify(int64 type, ::AttributeModificationContext& context);
     // NOLINTEND
 
 public:
@@ -54,5 +54,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

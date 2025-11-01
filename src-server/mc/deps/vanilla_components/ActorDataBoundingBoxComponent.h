@@ -9,9 +9,8 @@ struct ActorDataBoundingBoxComponent : public ::ActorDataComponentBase<::std::ar
 public:
     // ActorDataBoundingBoxComponent inner types define
     enum class Type : int {
-        Scale = 0,
-        Width = 1,
+        Scale  = 0,
+        Width  = 1,
         Height = 2,
     };
-    
 };

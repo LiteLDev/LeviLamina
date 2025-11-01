@@ -19,13 +19,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkaa0968;
-    ::ll::UntypedStorage<1, 1> mUnk247eaa;
-    ::ll::UntypedStorage<1, 1> mUnk8ff52e;
-    ::ll::UntypedStorage<1, 1> mUnk654568;
-    ::ll::UntypedStorage<1, 1> mUnkca02cf;
-    ::ll::UntypedStorage<1, 1> mUnk5fcbcc;
-    ::ll::UntypedStorage<1, 1> mUnkec775d;
-    ::ll::UntypedStorage<4, 4> mUnk18bb5b;
+    ::ll::UntypedStorage<1, 1>  mUnk247eaa;
+    ::ll::UntypedStorage<1, 1>  mUnk8ff52e;
+    ::ll::UntypedStorage<1, 1>  mUnk654568;
+    ::ll::UntypedStorage<1, 1>  mUnkca02cf;
+    ::ll::UntypedStorage<1, 1>  mUnk5fcbcc;
+    ::ll::UntypedStorage<1, 1>  mUnkec775d;
+    ::ll::UntypedStorage<4, 4>  mUnk18bb5b;
     ::ll::UntypedStorage<8, 24> mUnke3b45f;
     // NOLINTEND
 
@@ -99,9 +99,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::PackCapability getPackCapability(::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions);
+    MCNAPI static ::PackCapability
+    getPackCapability(::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions);
 
-    MCNAPI static ::PackCapability getPackDeferredCapability(::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions);
+    MCNAPI static ::PackCapability
+    getPackDeferredCapability(::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions);
     // NOLINTEND
 
 public:
@@ -115,5 +117,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,9 +19,9 @@ class EnchantingContainerManagerModel : public ::ContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
-    ::ll::TypedStorage<1, 1, bool> mShouldBookBeOpen;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemEnchantOption>> mEnchantOptions;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                                mBlockPos;
+    ::ll::TypedStorage<1, 1, bool>                                                       mShouldBookBeOpen;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemEnchantOption>>                        mEnchantOptions;
     ::ll::TypedStorage<8, 64, ::std::function<void(::EnchantingContainerManagerModel&)>> mOptionsChangedCallback;
     // NOLINTEND
 
@@ -100,5 +100,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

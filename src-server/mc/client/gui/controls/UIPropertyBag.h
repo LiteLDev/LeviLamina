@@ -18,7 +18,7 @@ public:
     struct ContextObject;
     struct PropertyChangedNotificationInfo;
     // clang-format on
-    
+
     // UIPropertyBag inner types define
     struct ContextObject {
     public:
@@ -26,17 +26,21 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4> mUnk71f0af;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ContextObject& operator=(ContextObject const&);
         ContextObject(ContextObject const&);
         ContextObject();
-    
     };
-    
-    using PropertyChangedNotificationCallback = ::std::function<void(::std::weak_ptr<::UIControl> const&, ::std::string_view, ::Json::Value const&, ::UIPropertyBag::ContextObject)>;
-    
+
+    using PropertyChangedNotificationCallback = ::std::function<void(
+        ::std::weak_ptr<::UIControl> const&,
+        ::std::string_view,
+        ::Json::Value const&,
+        ::UIPropertyBag::ContextObject
+    )>;
+
     struct PropertyChangedNotificationInfo {
     public:
         // member variables
@@ -45,23 +49,27 @@ public:
         ::ll::UntypedStorage<8, 16> mUnkeadded;
         ::ll::UntypedStorage<8, 64> mUnkeb20fd;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PropertyChangedNotificationInfo& operator=(PropertyChangedNotificationInfo const&);
         PropertyChangedNotificationInfo(PropertyChangedNotificationInfo const&);
         PropertyChangedNotificationInfo();
-    
     };
-    
+
     using PropertyChangedNotificationInfoVector = ::std::vector<::UIPropertyBag::PropertyChangedNotificationInfo>;
-    
-    using PropertyInfoList = ::std::map<::std::string, ::std::vector<::UIPropertyBag::PropertyChangedNotificationInfo>, ::std::less<void>>;
-    
+
+    using PropertyInfoList =
+        ::std::map<::std::string, ::std::vector<::UIPropertyBag::PropertyChangedNotificationInfo>, ::std::less<void>>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::UIPropertyBag::PropertyChangedNotificationInfo>, ::std::less<void>>> mPropertyChangedNotificationInfoMap;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::map<::std::string, ::std::vector<::UIPropertyBag::PropertyChangedNotificationInfo>, ::std::less<void>>>
+        mPropertyChangedNotificationInfoMap;
     // NOLINTEND
 
 public:
@@ -70,5 +78,4 @@ public:
     // vIndex: 0
     virtual ~UIPropertyBag() = default;
     // NOLINTEND
-
 };

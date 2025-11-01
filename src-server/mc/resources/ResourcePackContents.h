@@ -24,5 +24,4 @@ public:
     ResourcePackContents& operator=(ResourcePackContents const&);
     ResourcePackContents(ResourcePackContents const&);
     ResourcePackContents();
-
 };

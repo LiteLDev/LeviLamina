@@ -28,5 +28,4 @@ public:
 
     MCNAPI static uint& sNextId();
     // NOLINTEND
-
 };

@@ -21,5 +21,4 @@ public:
     zip_file_attributes& operator=(zip_file_attributes const&);
     zip_file_attributes(zip_file_attributes const&);
     zip_file_attributes();
-
 };

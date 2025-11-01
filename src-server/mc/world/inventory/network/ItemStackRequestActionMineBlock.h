@@ -17,16 +17,16 @@ class ItemStackRequestActionMineBlock : public ::ItemStackRequestAction {
 public:
     // ItemStackRequestActionMineBlock inner types define
     enum class PreValidationStatus : uchar {
-        Valid = 0,
+        Valid   = 0,
         Invalid = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mPredictedDurability;
-    ::ll::TypedStorage<4, 4, int> mSlot;
-    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant> mNetIdVariant;
+    ::ll::TypedStorage<4, 4, int>                                                    mPredictedDurability;
+    ::ll::TypedStorage<4, 4, int>                                                    mSlot;
+    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant>                               mNetIdVariant;
     ::ll::TypedStorage<1, 1, ::ItemStackRequestActionMineBlock::PreValidationStatus> mPreValidationStatus;
     // NOLINTEND
 
@@ -56,5 +56,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::FullContainerName> mContainerEnumName;
-    ::ll::TypedStorage<4, 4, int> mSlotIndex;
+    ::ll::TypedStorage<4, 4, int>                  mSlotIndex;
     // NOLINTEND
 
 public:
@@ -18,5 +18,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::ContainerValidationSlotData const& AUTOPLACE();
     // NOLINTEND
-
 };

@@ -24,12 +24,40 @@ class Tag;
 class CompoundTagVariant {
 public:
     // CompoundTagVariant inner types define
-    using Variant = ::std::variant<::EndTag, ::ByteTag, ::ShortTag, ::IntTag, ::Int64Tag, ::FloatTag, ::DoubleTag, ::ByteArrayTag, ::StringTag, ::ListTag, ::CompoundTag, ::IntArrayTag>;
-    
+    using Variant = ::std::variant<
+        ::EndTag,
+        ::ByteTag,
+        ::ShortTag,
+        ::IntTag,
+        ::Int64Tag,
+        ::FloatTag,
+        ::DoubleTag,
+        ::ByteArrayTag,
+        ::StringTag,
+        ::ListTag,
+        ::CompoundTag,
+        ::IntArrayTag>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::std::variant<::EndTag, ::ByteTag, ::ShortTag, ::IntTag, ::Int64Tag, ::FloatTag, ::DoubleTag, ::ByteArrayTag, ::StringTag, ::ListTag, ::CompoundTag, ::IntArrayTag>> mTagStorage;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::std::variant<
+            ::EndTag,
+            ::ByteTag,
+            ::ShortTag,
+            ::IntTag,
+            ::Int64Tag,
+            ::FloatTag,
+            ::DoubleTag,
+            ::ByteArrayTag,
+            ::StringTag,
+            ::ListTag,
+            ::CompoundTag,
+            ::IntArrayTag>>
+        mTagStorage;
     // NOLINTEND
 
 public:
@@ -45,5 +73,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

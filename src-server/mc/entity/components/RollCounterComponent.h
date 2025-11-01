@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/entity/components/IntComponent.h"
 
-struct RollCounterComponent : public ::IntComponent {
-};
+struct RollCounterComponent : public ::IntComponent {};

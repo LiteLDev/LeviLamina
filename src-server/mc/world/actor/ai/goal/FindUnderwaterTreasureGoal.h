@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,16 +16,16 @@ class FindUnderwaterTreasureGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&>      mMob;
     ::ll::TypedStorage<4, 12, ::BlockPos> mDestination;
-    ::ll::TypedStorage<4, 12, ::Vec3> mLastPos;
-    ::ll::TypedStorage<4, 4, int> mBlocksCounter;
-    ::ll::TypedStorage<4, 4, int> mBlocksToTravel;
-    ::ll::TypedStorage<4, 4, int> mTimeToRecalcPath;
-    ::ll::TypedStorage<4, 4, int> mFailedPathing;
-    ::ll::TypedStorage<4, 4, int> mTotalFailedPathing;
-    ::ll::TypedStorage<4, 4, float> mSpeed;
-    ::ll::TypedStorage<4, 4, int> mSearchArea;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mLastPos;
+    ::ll::TypedStorage<4, 4, int>         mBlocksCounter;
+    ::ll::TypedStorage<4, 4, int>         mBlocksToTravel;
+    ::ll::TypedStorage<4, 4, int>         mTimeToRecalcPath;
+    ::ll::TypedStorage<4, 4, int>         mFailedPathing;
+    ::ll::TypedStorage<4, 4, int>         mTotalFailedPathing;
+    ::ll::TypedStorage<4, 4, float>       mSpeed;
+    ::ll::TypedStorage<4, 4, int>         mSearchArea;
     // NOLINTEND
 
 public:
@@ -85,5 +85,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

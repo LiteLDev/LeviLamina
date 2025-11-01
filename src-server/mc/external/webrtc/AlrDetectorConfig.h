@@ -29,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

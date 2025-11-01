@@ -20,7 +20,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
     ::ll::TypedStorage<8, 8, ::Block const&> mEmptyBlock;
-    ::ll::TypedStorage<8, 32, ::std::optional<::XoroshiroPositionalRandomFactory> const> mXoroshiroPositionalRandomFactory;
+    ::ll::TypedStorage<8, 32, ::std::optional<::XoroshiroPositionalRandomFactory> const>
+        mXoroshiroPositionalRandomFactory;
     // NOLINTEND
 
 public:
@@ -42,15 +43,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LakeFeature(::Block const& block, ::std::optional<::XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory);
+    MCAPI LakeFeature(
+        ::Block const&                                      block,
+        ::std::optional<::XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory
+    );
 
-    MCAPI ::Block const* _getSolidBlockAroundLavaLake(::BlockPos blockPos, ::Block const& deepslate, ::Block const& stone) const;
+    MCAPI ::Block const*
+    _getSolidBlockAroundLavaLake(::BlockPos blockPos, ::Block const& deepslate, ::Block const& stone) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block, ::std::optional<::XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory);
+    MCAPI void*
+    $ctor(::Block const& block, ::std::optional<::XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory);
     // NOLINTEND
 
 public:
@@ -70,5 +76,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

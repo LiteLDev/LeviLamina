@@ -22,7 +22,8 @@ MCAPI uchar computeRotatedFacingID(::Matrix const& transformMatrix, uchar origin
 
 MCAPI uchar fromVec3(::Vec3 const& dir);
 
-MCAPI ::std::vector<uchar> getMostPrioritizedFacingDirection(::Vec2 const& viewVector, uchar clickedFace, bool isReplacingABlock);
+MCAPI ::std::vector<uchar>
+getMostPrioritizedFacingDirection(::Vec2 const& viewVector, uchar clickedFace, bool isReplacingABlock);
 
 MCAPI ::std::array<uchar, 6> getMostPrioritizedFacingDirectionFromViewVector(::Vec2 const& viewVector);
 
@@ -64,4 +65,4 @@ MCAPI ::std::array<schar, 6> const& STEP_Z();
 MCAPI ::std::array<::std::string_view, 6> const& TO_STRING_ARR();
 // NOLINTEND
 
-}
+} // namespace Facing

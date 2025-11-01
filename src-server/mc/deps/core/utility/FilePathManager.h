@@ -34,7 +34,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk725ea5;
     ::ll::UntypedStorage<8, 32> mUnkbefcf7;
     ::ll::UntypedStorage<8, 32> mUnk235a6a;
-    ::ll::UntypedStorage<1, 1> mUnk577587;
+    ::ll::UntypedStorage<1, 1>  mUnk577587;
     // NOLINTEND
 
 public:
@@ -91,7 +91,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

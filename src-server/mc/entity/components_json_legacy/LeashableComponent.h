@@ -15,11 +15,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::LeashablePreset>> mPresets;
-    ::ll::TypedStorage<1, 1, bool> mCanBeStolen;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnLeash;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnUnleash;
-    ::ll::TypedStorage<1, 1, bool> mOnUnleashInteractOnly;
-    ::ll::TypedStorage<4, 4, float> mAngularMomentum;
+    ::ll::TypedStorage<1, 1, bool>                              mCanBeStolen;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnLeash;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnUnleash;
+    ::ll::TypedStorage<1, 1, bool>                              mOnUnleashInteractOnly;
+    ::ll::TypedStorage<4, 4, float>                             mAngularMomentum;
     // NOLINTEND
 
 public:
@@ -49,5 +49,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

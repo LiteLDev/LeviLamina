@@ -28,7 +28,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleDiagnostics

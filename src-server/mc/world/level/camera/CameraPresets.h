@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/molang/MolangVersion.h"
 #include "mc/platform/Result.h"
-#include "mc/versionless/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,35 +25,34 @@ public:
     // clang-format off
     struct CameraList;
     // clang-format on
-    
+
     // CameraPresets inner types define
     struct CameraList {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string> mName;
+        ::ll::TypedStorage<8, 32, ::std::string>       mName;
         ::ll::TypedStorage<8, 24, ::std::vector<uint>> mPresetIndices;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~CameraList();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_90::CameraPreset>> mPresets;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CameraPresets::CameraList>> mLists;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CameraPresets::CameraList>>           mLists;
     // NOLINTEND
 
 public:
@@ -67,15 +66,31 @@ public:
     // NOLINTBEGIN
     MCNAPI void _discardInvalidPresets();
 
-    MCNAPI ::PuvLoadData::LoadResultWithTiming _parseAndLoadCameraList(::std::string const& fileData, ::MolangVersion molangVersion, ::std::string_view filename, ::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCNAPI ::PuvLoadData::LoadResultWithTiming _parseAndLoadCameraList(
+        ::std::string const&                               fileData,
+        ::MolangVersion                                    molangVersion,
+        ::std::string_view                                 filename,
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
 
-    MCNAPI ::PuvLoadData::LoadResultWithTiming _parseAndLoadCameraPreset(::std::string const& fileData, ::MolangVersion molangVersion, ::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCNAPI ::PuvLoadData::LoadResultWithTiming _parseAndLoadCameraPreset(
+        ::std::string const&                               fileData,
+        ::MolangVersion                                    molangVersion,
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
 
     MCNAPI ::std::vector<::std::string> buildCameraPresetList() const;
 
     MCNAPI ::std::optional<uint> getCameraPresetIndex(::std::string const& presetName) const;
 
-    MCNAPI void loadPresets(::ResourcePackManager& resourcePackManager, ::Experiments const& experiments, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator, ::IMinecraftEventing& eventing);
+    MCNAPI void loadPresets(
+        ::ResourcePackManager&                             resourcePackManager,
+        ::Experiments const&                               experiments,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
+        ::IMinecraftEventing&                              eventing
+    );
 
     MCNAPI ::CameraPresets& operator=(::CameraPresets&&);
 
@@ -99,5 +114,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

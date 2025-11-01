@@ -141,4 +141,4 @@ MCAPI ::GameEvent const& teleport();
 MCAPI ::GameEvent const& unequip();
 // NOLINTEND
 
-}
+} // namespace GameEventRegistry

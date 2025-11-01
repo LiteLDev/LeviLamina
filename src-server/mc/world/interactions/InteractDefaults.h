@@ -33,4 +33,4 @@ MCNAPI bool const& USE_ITEM();
 MCNAPI ::GameEvent const&& VIBRATION();
 // NOLINTEND
 
-}
+} // namespace InteractDefaults

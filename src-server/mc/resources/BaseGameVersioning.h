@@ -23,7 +23,10 @@ MCNAPI ::std::vector<::BaseGameVersion> const& getAvailableVanillaBehaviorPackGa
 
 MCNAPI ::std::vector<::BaseGameVersion> const& getAvailableVanillaResourcePackGameVersions();
 
-MCNAPI bool upgradeBaseGameVersionFromWorldTemplate(::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager, ::LevelData& levelData);
+MCNAPI bool upgradeBaseGameVersionFromWorldTemplate(
+    ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
+    ::LevelData&                                                        levelData
+);
 // NOLINTEND
 
 // static variables
@@ -33,4 +36,4 @@ MCNAPI ::BaseGameVersion const& PATCH_UPGRADE_VERSION();
 MCNAPI ::BaseGameVersion const& REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT();
 // NOLINTEND
 
-}
+} // namespace BaseGameVersioning

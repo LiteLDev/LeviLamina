@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnkba004d;
-    ::ll::UntypedStorage<1, 1> mUnk3b4565;
+    ::ll::UntypedStorage<1, 1>  mUnk3b4565;
     // NOLINTEND
 
 public:
@@ -17,7 +17,6 @@ public:
     BlockNeighbor& operator=(BlockNeighbor const&);
     BlockNeighbor(BlockNeighbor const&);
     BlockNeighbor();
-
 };
 
-}
+} // namespace BlockBreadthFirst

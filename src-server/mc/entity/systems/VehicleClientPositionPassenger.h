@@ -26,9 +26,24 @@ struct SynchedActorDataComponent;
 namespace VehicleClientPositionPassenger {
 // functions
 // NOLINTBEGIN
-MCNAPI void setPositionRequestSystem(::ViewT<::StrictEntityContext, ::ActorDataSeatOffsetComponent const> passengerView, ::ViewT<::StrictEntityContext, ::RenderPositionComponent const, ::RenderRotationComponent const> vehicleView, ::OptionalGlobal<::PassengersToPositionComponent> passengersToPositionComponent, ::EntityModifier<::ActorSetPositionRequestComponent> modifier);
+MCNAPI void setPositionRequestSystem(
+    ::ViewT<::StrictEntityContext, ::ActorDataSeatOffsetComponent const>                             passengerView,
+    ::ViewT<::StrictEntityContext, ::RenderPositionComponent const, ::RenderRotationComponent const> vehicleView,
+    ::OptionalGlobal<::PassengersToPositionComponent>    passengersToPositionComponent,
+    ::EntityModifier<::ActorSetPositionRequestComponent> modifier
+);
 
-MCNAPI void setRotationLockSystem(::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::SynchedActorDataComponent const, ::ActorHeadRotationComponent const, ::MobBodyRotationComponent, ::PassengerYRotLimitComponent> passengerView, ::ViewT<::StrictEntityContext, ::RenderRotationComponent const> vehicleView, ::OptionalGlobal<::PassengersToPositionComponent> passengersToPositionComponent);
+MCNAPI void setRotationLockSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::MobFlagComponent>,
+        ::SynchedActorDataComponent const,
+        ::ActorHeadRotationComponent const,
+        ::MobBodyRotationComponent,
+        ::PassengerYRotLimitComponent>                              passengerView,
+    ::ViewT<::StrictEntityContext, ::RenderRotationComponent const> vehicleView,
+    ::OptionalGlobal<::PassengersToPositionComponent>               passengersToPositionComponent
+);
 // NOLINTEND
 
-}
+} // namespace VehicleClientPositionPassenger

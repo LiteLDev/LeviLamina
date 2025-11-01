@@ -11,5 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 72, ::SynchedActorData> mData;
     // NOLINTEND
-
 };

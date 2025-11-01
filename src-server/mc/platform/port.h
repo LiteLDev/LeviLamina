@@ -8,4 +8,4 @@ namespace port {
 MCNAPI ::std::wstring toFilePath(::std::string const& string);
 // NOLINTEND
 
-}
+} // namespace port

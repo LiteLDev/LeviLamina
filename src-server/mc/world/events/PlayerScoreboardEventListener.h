@@ -24,7 +24,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
-    virtual ::EventResult onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score) /*override*/;
+    virtual ::EventResult
+    onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score) /*override*/;
 
     // vIndex: 0
     virtual ~PlayerScoreboardEventListener() /*override*/;
@@ -53,5 +54,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

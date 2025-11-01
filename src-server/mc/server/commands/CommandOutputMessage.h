@@ -9,8 +9,8 @@ class CommandOutputMessage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::CommandOutputMessageType> mType;
-    ::ll::TypedStorage<8, 32, ::std::string> mMessageId;
+    ::ll::TypedStorage<4, 4, ::CommandOutputMessageType>    mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                mMessageId;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mParams;
     // NOLINTEND
 
@@ -39,5 +39,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

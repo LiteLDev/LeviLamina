@@ -13,10 +13,10 @@ class ScriptCursorRay {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkac357d;
+    ::ll::UntypedStorage<4, 8>  mUnkac357d;
     ::ll::UntypedStorage<4, 12> mUnk319c34;
     ::ll::UntypedStorage<4, 12> mUnk54949d;
-    ::ll::UntypedStorage<1, 1> mUnkeeedbd;
+    ::ll::UntypedStorage<1, 1>  mUnkeeedbd;
     // NOLINTEND
 
 public:
@@ -30,7 +30,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

@@ -19,11 +19,11 @@ class BlockPlayerPlacingEvent : public ::BlockEvents::BlockCancellableEventBase 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockSource&> mRegion;
-    ::ll::TypedStorage<8, 8, ::Actor&> mActor;
+    ::ll::TypedStorage<8, 8, ::BlockSource&>                  mRegion;
+    ::ll::TypedStorage<8, 8, ::Actor&>                        mActor;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mPermutationToPlace;
-    ::ll::TypedStorage<8, 8, ::Item const&> mItem;
-    ::ll::TypedStorage<1, 1, uchar const> mFace;
+    ::ll::TypedStorage<8, 8, ::Item const&>                   mItem;
+    ::ll::TypedStorage<1, 1, uchar const>                     mFace;
     // NOLINTEND
 
 public:
@@ -59,7 +59,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockEvents

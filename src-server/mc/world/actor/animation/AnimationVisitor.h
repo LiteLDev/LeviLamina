@@ -17,5 +17,4 @@ public:
     AnimationVisitor& operator=(AnimationVisitor const&);
     AnimationVisitor(AnimationVisitor const&);
     AnimationVisitor();
-
 };

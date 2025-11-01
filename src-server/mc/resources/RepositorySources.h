@@ -15,11 +15,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RepositorySourceOptions const>> mOptions;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>> mPackSource;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>> mCachePackSource;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>> mWorldPackSource;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>> mPremiumWorldTemplatePackSource;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>> mTempWorldTemplatePackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>           mPackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>           mCachePackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>           mWorldPackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>           mPremiumWorldTemplatePackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>           mTempWorldTemplatePackSource;
     // NOLINTEND
 
 public:
@@ -31,5 +31,4 @@ public:
 
     MCAPI void initializeWorldPackSource(::PackSourceFactory& packSourceFactory, ::Core::PathView currentWorldPath);
     // NOLINTEND
-
 };

@@ -19,5 +19,4 @@ public:
     AsyncTracker& operator=(AsyncTracker const&);
     AsyncTracker(AsyncTracker const&);
     AsyncTracker();
-
 };

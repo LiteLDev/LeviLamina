@@ -22,5 +22,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::DeviceMemoryTier& mDefaultMemoryTier();
     // NOLINTEND
-
 };

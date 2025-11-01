@@ -17,7 +17,6 @@ public:
     Interact& operator=(Interact const&);
     Interact(Interact const&);
     Interact();
-
 };
 
-}
+} // namespace AgentComponents

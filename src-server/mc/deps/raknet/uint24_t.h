@@ -16,7 +16,6 @@ public:
     uint24_t& operator=(uint24_t const&);
     uint24_t(uint24_t const&);
     uint24_t();
-
 };
 
-}
+} // namespace RakNet

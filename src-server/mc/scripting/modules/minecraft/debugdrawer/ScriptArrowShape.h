@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float> mHeadRadius;
     ::ll::TypedStorage<4, 4, float> mHeadLength;
-    ::ll::TypedStorage<4, 4, int> mSegments;
+    ::ll::TypedStorage<4, 4, int>   mSegments;
     // NOLINTEND
 
 public:
@@ -31,10 +31,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void populatePacketData(::ShapeDataPayload& packet) const /*override*/;
+    virtual void populatePacketData(::ShapeDataPayload& packetShapeData) const /*override*/;
 
     // vIndex: 2
-    virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
+    virtual void applyUpdatedData(::ShapeDataPayload const& packet) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptArrowShape() /*override*/;
@@ -43,7 +43,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleDebugUtilities::ScriptArrowShape& operator=(::ScriptModuleDebugUtilities::ScriptArrowShape const&);
+    MCAPI ::ScriptModuleDebugUtilities::ScriptArrowShape&
+    operator=(::ScriptModuleDebugUtilities::ScriptArrowShape const&);
     // NOLINTEND
 
 public:
@@ -61,9 +62,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $populatePacketData(::ShapeDataPayload& packet) const;
+    MCAPI void $populatePacketData(::ShapeDataPayload& packetShapeData) const;
 
-    MCAPI void $applyUpdatedData(::ShapeDataPayload const& existing);
+    MCAPI void $applyUpdatedData(::ShapeDataPayload const& packet);
     // NOLINTEND
 
 public:
@@ -71,7 +72,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleDebugUtilities

@@ -11,7 +11,7 @@ class PlayerZoomPayload : public ::Editor::Network::NetworkPayload<::Editor::Net
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk49437a;
+    ::ll::UntypedStorage<4, 4>  mUnk49437a;
     ::ll::UntypedStorage<4, 12> mUnk88d7b2;
     // NOLINTEND
 
@@ -33,7 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

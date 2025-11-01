@@ -21,16 +21,22 @@ struct ScriptEventCommandMessageAfterEvent {
 public:
     // ScriptEventCommandMessageAfterEvent inner types define
     using QueueType = ::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEventIntermediateData;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mId;
-    ::ll::TypedStorage<8, 32, ::std::string> mMessage;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mId;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mMessage;
     ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptEventSource> mSourceType;
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mSourceEntity;
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mInitiatorEntity;
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>> mSourceBlock;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mSourceEntity;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mInitiatorEntity;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
+            mSourceBlock;
     // NOLINTEND
 
 public:
@@ -45,9 +51,14 @@ public:
 
     MCAPI ScriptEventCommandMessageAfterEvent(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
 
-    MCAPI ScriptEventCommandMessageAfterEvent(::std::shared_ptr<::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEventIntermediateData> const& scriptCommandMessageEvent, ::Scripting::WeakLifetimeScope& scope);
+    MCAPI ScriptEventCommandMessageAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEventIntermediateData> const&
+                                        scriptCommandMessageEvent,
+        ::Scripting::WeakLifetimeScope& scope
+    );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent& operator=(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
 
     MCAPI ~ScriptEventCommandMessageAfterEvent();
     // NOLINTEND
@@ -65,7 +76,11 @@ public:
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
 
-    MCAPI void* $ctor(::std::shared_ptr<::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEventIntermediateData> const& scriptCommandMessageEvent, ::Scripting::WeakLifetimeScope& scope);
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEventIntermediateData> const&
+                                        scriptCommandMessageEvent,
+        ::Scripting::WeakLifetimeScope& scope
+    );
     // NOLINTEND
 
 public:
@@ -73,7 +88,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -13,7 +13,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::Scripting::Privilege> mPrivileges;
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

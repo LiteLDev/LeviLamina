@@ -13,4 +13,4 @@ namespace JsonHelpers {
 MCNAPI ::std::string getAsString(::Json::Value const& value, ::std::string_view defaultString);
 // NOLINTEND
 
-}
+} // namespace JsonHelpers

@@ -17,7 +17,7 @@ struct MetaDataTypeVisitor_Get {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk48f76a;
+    ::ll::UntypedStorage<8, 8>  mUnk48f76a;
     ::ll::UntypedStorage<8, 32> mUnk3d34cb;
     // NOLINTEND
 
@@ -30,7 +30,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::std::variant<::BaseGameVersion, ::std::string, ::LevelSeed64, ::GeneratorType, bool, short, ::DimensionHeightRange, ::NeighborAwareBlockUpgradeVersionType>> operator()(::BaseGameVersion const&) const;
+    MCNAPI ::std::optional<::std::variant<
+        ::BaseGameVersion,
+        ::std::string,
+        ::LevelSeed64,
+        ::GeneratorType,
+        bool,
+        short,
+        ::DimensionHeightRange,
+        ::NeighborAwareBlockUpgradeVersionType>>
+    operator()(::BaseGameVersion const&) const;
 
     MCNAPI ~MetaDataTypeVisitor_Get();
     // NOLINTEND
@@ -40,5 +49,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

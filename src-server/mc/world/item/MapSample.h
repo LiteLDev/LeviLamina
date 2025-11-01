@@ -14,9 +14,8 @@ struct MapSample {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 16, ::mce::Color> mColor;
+    ::ll::TypedStorage<4, 16, ::mce::Color>  mColor;
     ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
-    ::ll::TypedStorage<2, 2, short> mHeight;
+    ::ll::TypedStorage<2, 2, short>          mHeight;
     // NOLINTEND
-
 };

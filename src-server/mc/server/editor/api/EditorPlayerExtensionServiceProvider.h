@@ -31,10 +31,13 @@ public:
     virtual ::Scripting::Result_deprecated<void> stopExtensions() = 0;
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<void> forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+        forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>) = 0;
 
     // vIndex: 4
-    virtual ::Scripting::Result_deprecated<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>> getInternalServiceContext(::Scripting::WeakLifetimeScope const&) = 0;
+    virtual ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
+    getInternalServiceContext(::Scripting::WeakLifetimeScope const&) = 0;
     // NOLINTEND
 
 public:
@@ -42,7 +45,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::API

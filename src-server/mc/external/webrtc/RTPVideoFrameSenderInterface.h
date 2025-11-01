@@ -21,7 +21,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual bool SendVideo(int, ::std::optional<::webrtc::VideoCodecType>, uint, ::webrtc::Timestamp, ::rtc::ArrayView<uchar const>, uint64, ::webrtc::RTPVideoHeader, ::webrtc::TimeDelta, ::std::vector<uint>) = 0;
+    virtual bool SendVideo(
+        int,
+        ::std::optional<::webrtc::VideoCodecType>,
+        uint,
+        ::webrtc::Timestamp,
+        ::rtc::ArrayView<uchar const>,
+        uint64,
+        ::webrtc::RTPVideoHeader,
+        ::webrtc::TimeDelta,
+        ::std::vector<uint>
+    ) = 0;
 
     // vIndex: 1
     virtual void SetVideoStructureAfterTransformation(::webrtc::FrameDependencyStructure const*) = 0;
@@ -38,7 +48,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

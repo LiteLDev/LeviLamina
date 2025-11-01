@@ -20,7 +20,7 @@ public:
     // clang-format off
     struct Key;
     // clang-format on
-    
+
     // ScriptBlockStateType inner types define
     struct Key {
     public:
@@ -28,20 +28,19 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk375741;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Key& operator=(Key const&);
         Key(Key const&);
         Key();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk513a19;
-    ::ll::UntypedStorage<8, 8> mUnka5badd;
+    ::ll::UntypedStorage<8, 8>  mUnka5badd;
     ::ll::UntypedStorage<8, 24> mUnkc6d90c;
     // NOLINTEND
 
@@ -62,9 +61,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockStateType> getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockState const& blockState);
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockStateType>
+    getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockState const& blockState);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

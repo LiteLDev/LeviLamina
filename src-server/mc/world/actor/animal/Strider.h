@@ -18,38 +18,38 @@ public:
     // clang-format off
     class PlayerRideInLavaInOverworldAchievementTracker;
     // clang-format on
-    
+
     // Strider inner types define
     class PlayerRideInLavaInOverworldAchievementTracker {
     public:
         // PlayerRideInLavaInOverworldAchievementTracker inner types define
         enum class VehicleState : uchar {
             Riding = 0,
-            Done = 1,
+            Done   = 1,
         };
-        
+
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, ::Strider::PlayerRideInLavaInOverworldAchievementTracker::VehicleState> mState;
-        ::ll::TypedStorage<1, 1, bool> mHasSentAchievement;
-        ::ll::TypedStorage<1, 1, bool> mInLavaWithPlayer;
-        ::ll::TypedStorage<4, 12, ::Vec3> mStartPosInLava;
+        ::ll::TypedStorage<1, 1, bool>      mHasSentAchievement;
+        ::ll::TypedStorage<1, 1, bool>      mInLavaWithPlayer;
+        ::ll::TypedStorage<4, 12, ::Vec3>   mStartPosInLava;
         ::ll::TypedStorage<8, 8, ::Player*> mPlayer;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI void tick(::Strider& strider);
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Strider::PlayerRideInLavaInOverworldAchievementTracker> mPlayerRideInLavaInOverworldAchievementTracker;
+    ::ll::TypedStorage<8, 24, ::Strider::PlayerRideInLavaInOverworldAchievementTracker>
+        mPlayerRideInLavaInOverworldAchievementTracker;
     // NOLINTEND
 
 public:
@@ -78,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -17,9 +17,9 @@ class WaterBoundPathNavigation : public ::PathNavigation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mAllowRiverFollow;
-    ::ll::TypedStorage<1, 1, bool> mFollowingRiver;
-    ::ll::TypedStorage<4, 4, int> mHeadingTicks;
+    ::ll::TypedStorage<1, 1, bool>  mAllowRiverFollow;
+    ::ll::TypedStorage<1, 1, bool>  mFollowingRiver;
+    ::ll::TypedStorage<4, 4, int>   mHeadingTicks;
     ::ll::TypedStorage<4, 4, float> mCenteredThreshold;
     ::ll::TypedStorage<4, 4, float> mLookAheadDistance;
     ::ll::TypedStorage<4, 4, float> mMinDepth;
@@ -77,5 +77,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

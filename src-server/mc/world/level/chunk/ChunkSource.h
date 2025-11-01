@@ -37,20 +37,20 @@ class ChunkSource : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ChunkSource inner types define
     enum class LoadMode : int {
-        None = 0,
+        None     = 0,
         Deferred = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mChunkSide;
-    ::ll::TypedStorage<8, 8, ::Level*> mLevel;
-    ::ll::TypedStorage<8, 8, ::Dimension*> mDimension;
-    ::ll::TypedStorage<8, 8, ::ChunkSource*> mParent;
+    ::ll::TypedStorage<4, 4, int>                              mChunkSide;
+    ::ll::TypedStorage<8, 8, ::Level*>                         mLevel;
+    ::ll::TypedStorage<8, 8, ::Dimension*>                     mDimension;
+    ::ll::TypedStorage<8, 8, ::ChunkSource*>                   mParent;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkSource>> mOwnedParent;
-    ::ll::TypedStorage<8, 8, ::LevelChunkBuilderData*> mLevelChunkBuilderData;
-    ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mShuttingDown;
+    ::ll::TypedStorage<8, 8, ::LevelChunkBuilderData*>         mLevelChunkBuilderData;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>              mShuttingDown;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnLevelStorageAppSuspendSubscription;
     // NOLINTEND
@@ -84,10 +84,12 @@ public:
     virtual bool isChunkSaved(::ChunkPos const& chunkPos);
 
     // vIndex: 7
-    virtual ::std::shared_ptr<::LevelChunk> createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    virtual ::std::shared_ptr<::LevelChunk>
+    createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     // vIndex: 8
-    virtual ::std::shared_ptr<::LevelChunk> getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    virtual ::std::shared_ptr<::LevelChunk>
+    getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     // vIndex: 9
     virtual bool structurePostProcessChunk(::ChunkViewSource&);
@@ -120,7 +122,10 @@ public:
     virtual void writeEntityChunkTransfer(::LevelChunk& levelChunk);
 
     // vIndex: 19
-    virtual void writeEntityChunkTransfersToUnloadedChunk(::ChunkKey const& chunkKey, ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers);
+    virtual void writeEntityChunkTransfersToUnloadedChunk(
+        ::ChunkKey const&                                       chunkKey,
+        ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers
+    );
 
     // vIndex: 20
     virtual void deserializeActorStorageToLevelChunk(::LevelChunk& levelChunk);
@@ -179,15 +184,25 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChunkSource(::std::unique_ptr<::ChunkSource> parent);
 
-    MCAPI bool _checkAndDispatchTaskForLevelChunk(::std::pair<::ChunkPos, ::ChunkState> const& chunkPosAndExpectedState, bool areInTask);
+    MCAPI bool _checkAndDispatchTaskForLevelChunk(
+        ::std::pair<::ChunkPos, ::ChunkState> const& chunkPosAndExpectedState,
+        bool                                         areInTask
+    );
 
     MCAPI void _checkForReplacementDataTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
 
     MCAPI void _checkForUnblockingChunks(::LevelChunk const& lc);
 
-    MCAPI void _checkLevelChunkForNextStage(::LevelChunk const& lc, ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& grid, ::ChunkState stateToCheck);
+    MCAPI void _checkLevelChunkForNextStage(
+        ::LevelChunk const&                                         lc,
+        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& grid,
+        ::ChunkState                                                stateToCheck
+    );
 
-    MCAPI void _checkSpecificLevelChunkForUnblocking(::LevelChunk const& lc, ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& grid);
+    MCAPI void _checkSpecificLevelChunkForUnblocking(
+        ::LevelChunk const&                                         lc,
+        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& grid
+    );
 
     MCAPI bool _chunkAtStage(::std::weak_ptr<::LevelChunk> lcwp, ::ChunkState stateToCheck);
 
@@ -195,23 +210,52 @@ public:
 
     MCAPI void _decorationPostProcessingTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
 
-    MCAPI void _dispatchTaskForLevelChunk(::std::shared_ptr<::LevelChunk> const& lc, ::std::shared_ptr<::ChunkViewSource> const& chunks, bool areInTask);
+    MCAPI void _dispatchTaskForLevelChunk(
+        ::std::shared_ptr<::LevelChunk> const&      lc,
+        ::std::shared_ptr<::ChunkViewSource> const& chunks,
+        bool                                        areInTask
+    );
 
     MCAPI void _freeChunkGenerationGridMap(::ChunkPos const& cp, bool isLevelChunkDeletion);
 
     MCAPI void _handleTaskFailure(::LevelChunk& levelChunk, ::ChunkState currentState, ::ChunkState previousState);
 
-    MCAPI void _launchChunkTask(::std::string_view taskName, ::ChunkPos const& chunkPos, bool areInTask, ::brstd::move_only_function<::TaskResult()> taskFunc);
+    MCAPI void _launchChunkTask(
+        ::std::string_view                          taskName,
+        ::ChunkPos const&                           chunkPos,
+        bool                                        areInTask,
+        ::brstd::move_only_function<::TaskResult()> taskFunc
+    );
 
-    MCAPI void _launchDecorationPostProcessingTask(::std::shared_ptr<::LevelChunk> const& lc, ::std::shared_ptr<::ChunkViewSource> const& chunks, bool areInTask);
+    MCAPI void _launchDecorationPostProcessingTask(
+        ::std::shared_ptr<::LevelChunk> const&      lc,
+        ::std::shared_ptr<::ChunkViewSource> const& chunks,
+        bool                                        areInTask
+    );
 
-    MCAPI void _launchLightingTask(::std::shared_ptr<::LevelChunk> const& lc, ::std::shared_ptr<::ChunkViewSource> const& chunks, bool areInTask);
+    MCAPI void _launchLightingTask(
+        ::std::shared_ptr<::LevelChunk> const&      lc,
+        ::std::shared_ptr<::ChunkViewSource> const& chunks,
+        bool                                        areInTask
+    );
 
-    MCAPI void _launchNeighborAwareUpgradeTask(::std::shared_ptr<::LevelChunk> const& lc, ::std::shared_ptr<::ChunkViewSource> const& chunks, bool areInTask);
+    MCAPI void _launchNeighborAwareUpgradeTask(
+        ::std::shared_ptr<::LevelChunk> const&      lc,
+        ::std::shared_ptr<::ChunkViewSource> const& chunks,
+        bool                                        areInTask
+    );
 
-    MCAPI void _launchReplacementDataTask(::std::shared_ptr<::LevelChunk> const& lc, ::std::shared_ptr<::ChunkViewSource> const& chunks, bool areInTask);
+    MCAPI void _launchReplacementDataTask(
+        ::std::shared_ptr<::LevelChunk> const&      lc,
+        ::std::shared_ptr<::ChunkViewSource> const& chunks,
+        bool                                        areInTask
+    );
 
-    MCAPI void _launchStructurePostProcessingTask(::std::shared_ptr<::LevelChunk> const& lc, ::std::shared_ptr<::ChunkViewSource> const& chunks, bool areInTask);
+    MCAPI void _launchStructurePostProcessingTask(
+        ::std::shared_ptr<::LevelChunk> const&      lc,
+        ::std::shared_ptr<::ChunkViewSource> const& chunks,
+        bool                                        areInTask
+    );
 
     MCAPI void _lightingTask(::std::shared_ptr<::LevelChunk> const& lc, ::ChunkViewSource& chunks);
 
@@ -225,11 +269,18 @@ public:
 
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
 
-    MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>> createEmptyView(::ChunkSource::LoadMode lm, bool circle, ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add, ::ChunkSourceViewGenerateMode chunkViewGenerateMode, float const* serverBuildRatio);
+    MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>> createEmptyView(
+        ::ChunkSource::LoadMode                                                                        lm,
+        bool                                                                                           circle,
+        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
+        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
+        float const*                  serverBuildRatio
+    );
 
     MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const& cp);
 
-    MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCAPI void
+    initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
     MCAPI bool shouldServerGeneratePos(::ChunkPos const& chunkPos, float serverBuildRatio, int viewRadius);
     // NOLINTEND
@@ -267,9 +318,11 @@ public:
 
     MCAPI bool $isChunkSaved(::ChunkPos const& chunkPos);
 
-    MCAPI ::std::shared_ptr<::LevelChunk> $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    MCAPI ::std::shared_ptr<::LevelChunk>
+    $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    MCAPI ::std::shared_ptr<::LevelChunk> $getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    MCAPI ::std::shared_ptr<::LevelChunk>
+    $getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     MCFOLD bool $structurePostProcessChunk(::ChunkViewSource&);
 
@@ -291,7 +344,10 @@ public:
 
     MCAPI void $writeEntityChunkTransfer(::LevelChunk& levelChunk);
 
-    MCAPI void $writeEntityChunkTransfersToUnloadedChunk(::ChunkKey const& chunkKey, ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers);
+    MCAPI void $writeEntityChunkTransfersToUnloadedChunk(
+        ::ChunkKey const&                                       chunkKey,
+        ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers
+    );
 
     MCAPI void $deserializeActorStorageToLevelChunk(::LevelChunk& levelChunk);
 
@@ -333,5 +389,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

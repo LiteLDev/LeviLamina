@@ -17,9 +17,9 @@ struct MusicClientBiomeJsonComponent : public ::SharedTypes::v1_21_40::IClientBi
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkdeca33;
+    ::ll::UntypedStorage<4, 8>  mUnkdeca33;
     ::ll::UntypedStorage<8, 40> mUnk788317;
-    ::ll::UntypedStorage<1, 1> mUnkf649a4;
+    ::ll::UntypedStorage<1, 1>  mUnkf649a4;
     // NOLINTEND
 
 public:
@@ -63,7 +63,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_110

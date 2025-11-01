@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
 #include "mc/server/commands/Command.h"
-#include "mc/versionless/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,11 +18,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnkeaf76f;
-    ::ll::UntypedStorage<8, 32> mUnk193451;
-    ::ll::UntypedStorage<8, 32> mUnka4c1bf;
-    ::ll::UntypedStorage<8, 32> mUnk347be9;
-    ::ll::UntypedStorage<8, 32> mUnk49f5d3;
-    ::ll::UntypedStorage<4, 4> mUnk83afcb;
+    ::ll::UntypedStorage<8, 32>  mUnk193451;
+    ::ll::UntypedStorage<8, 32>  mUnka4c1bf;
+    ::ll::UntypedStorage<8, 32>  mUnk347be9;
+    ::ll::UntypedStorage<8, 32>  mUnk49f5d3;
+    ::ll::UntypedStorage<4, 4>   mUnk83afcb;
     // NOLINTEND
 
 public:
@@ -81,5 +81,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

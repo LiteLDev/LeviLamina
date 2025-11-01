@@ -37,7 +37,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::vector<::webrtc::struct_parser_impl::MemberParameter> members);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

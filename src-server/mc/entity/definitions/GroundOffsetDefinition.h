@@ -14,5 +14,4 @@ public:
     GroundOffsetDefinition& operator=(GroundOffsetDefinition const&);
     GroundOffsetDefinition(GroundOffsetDefinition const&);
     GroundOffsetDefinition();
-
 };

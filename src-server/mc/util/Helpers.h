@@ -14,4 +14,4 @@ namespace Helpers {
 MCNAPI ::HashedString const& getUseDurationComponentForVersion(::SemVersion const& version);
 // NOLINTEND
 
-}
+} // namespace Helpers

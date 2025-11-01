@@ -21,9 +21,9 @@ class LibHttpClientImpl : public ::Bedrock::Http::DispatcherProcess {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkcb3229;
-    ::ll::UntypedStorage<8, 64> mUnk419653;
-    ::ll::UntypedStorage<8, 80> mUnk2cebe7;
+    ::ll::UntypedStorage<8, 16>  mUnkcb3229;
+    ::ll::UntypedStorage<8, 64>  mUnk419653;
+    ::ll::UntypedStorage<8, 80>  mUnk2cebe7;
     ::ll::UntypedStorage<8, 336> mUnk2fe4b9;
     // NOLINTEND
 
@@ -45,7 +45,8 @@ public:
     virtual void shutdown() /*override*/;
 
     // vIndex: 1
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::Bedrock::Http::Request&& request) /*override*/;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response>
+    send(::Bedrock::Http::Request&& request) /*override*/;
     // NOLINTEND
 
 public:
@@ -53,13 +54,17 @@ public:
     // NOLINTBEGIN
     MCNAPI LibHttpClientImpl();
 
-    MCNAPI ::std::optional<::std::chrono::seconds> _checkRetryPolicy(::gsl::not_null<::HC_CALL*> call, ::Bedrock::Http::Response const& httpResponse);
+    MCNAPI ::std::optional<::std::chrono::seconds>
+    _checkRetryPolicy(::gsl::not_null<::HC_CALL*> call, ::Bedrock::Http::Response const& httpResponse);
 
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> _convertResponse(::gsl::not_null<::HC_CALL*> callHandle);
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response>
+    _convertResponse(::gsl::not_null<::HC_CALL*> callHandle);
 
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> _retry(::gsl::not_null<::HC_CALL*> callHandle, ::std::chrono::seconds delay);
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response>
+    _retry(::gsl::not_null<::HC_CALL*> callHandle, ::std::chrono::seconds delay);
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody> _tryGetResponseBody(::gsl::not_null<::HC_CALL*> call);
+    MCNAPI ::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>
+    _tryGetResponseBody(::gsl::not_null<::HC_CALL*> call);
 
     MCNAPI void _untrack(::gsl::not_null<::HC_CALL*> callHandle);
     // NOLINTEND
@@ -67,13 +72,22 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static long _convertResponseBody(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Response& response);
+    MCNAPI static long
+    _convertResponseBody(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Response& response);
 
-    MCNAPI static long _convertResponseHeaders(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Response& response);
+    MCNAPI static long
+    _convertResponseHeaders(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Response& response);
 
     MCNAPI static long _createCallHandle(::HC_CALL** outHandle, ::Bedrock::Http::Request const& request);
 
-    MCNAPI static long _requestBodyRead(::HC_CALL* call, uint64 offset, uint64 bytesAvailable, void* context, uchar* destination, uint64* bytesWritten);
+    MCNAPI static long _requestBodyRead(
+        ::HC_CALL* call,
+        uint64     offset,
+        uint64     bytesAvailable,
+        void*      context,
+        uchar*     destination,
+        uint64*    bytesWritten
+    );
 
     MCNAPI static long _responseBodyWrite(::HC_CALL* call, uchar const* source, uint64 bytesAvailable, void* context);
     // NOLINTEND
@@ -107,7 +121,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Http

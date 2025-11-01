@@ -18,28 +18,28 @@ struct ComponentItemData_Legacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>> mBlockType;
-    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mTags;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mCreativeGroup;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mHoverTextColorFormat;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>> mSpeed;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>> mMaxUseDuration;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>> mDamage;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>> mEnchantValue;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>> mFrameCount;
-    ::ll::TypedStorage<4, 8, ::std::optional<::CreativeItemCategory>> mCreativeCategory;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>                         mBlockType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>                       mTags;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                      mCreativeGroup;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                      mHoverTextColorFormat;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                               mSpeed;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                                 mMaxUseDuration;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                                 mDamage;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                                 mEnchantValue;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                                 mFrameCount;
+    ::ll::TypedStorage<4, 8, ::std::optional<::CreativeItemCategory>>              mCreativeCategory;
     ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::Legacy::UseAnimation>> mUseAnim;
-    ::ll::TypedStorage<4, 8, ::std::optional<::Enchant::Slot>> mEnchantSlot;
-    ::ll::TypedStorage<1, 2, ::std::optional<uchar>> mMaxStackSize;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mIsStackedByData;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mHandEquipped;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mIsLiquidClipped;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mIsGlint;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mAllowOffhand;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mCanDestroyInCreative;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mAnimatesInToolbar;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mShouldDespawn;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mRequiresInteract;
+    ::ll::TypedStorage<4, 8, ::std::optional<::Enchant::Slot>>                     mEnchantSlot;
+    ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                               mMaxStackSize;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mIsStackedByData;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mHandEquipped;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mIsLiquidClipped;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mIsGlint;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mAllowOffhand;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mCanDestroyInCreative;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mAnimatesInToolbar;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mShouldDespawn;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mRequiresInteract;
     // NOLINTEND
 
 public:
@@ -73,5 +73,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

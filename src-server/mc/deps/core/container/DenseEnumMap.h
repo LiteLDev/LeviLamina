@@ -4,8 +4,7 @@
 
 namespace Bedrock {
 
-template<typename T0, typename T1, int T2>
-class DenseEnumMap {
-};
+template <typename T0, typename T1, int T2>
+class DenseEnumMap {};
 
-}
+} // namespace Bedrock

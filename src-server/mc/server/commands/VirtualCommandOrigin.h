@@ -28,10 +28,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnk9ecdf8;
-    ::ll::UntypedStorage<8, 8> mUnk66bd43;
-    ::ll::UntypedStorage<8, 8> mUnkab4e18;
+    ::ll::UntypedStorage<8, 8>  mUnk66bd43;
+    ::ll::UntypedStorage<8, 8>  mUnkab4e18;
     ::ll::UntypedStorage<4, 16> mUnk442c5d;
-    ::ll::UntypedStorage<4, 4> mUnk40df6d;
+    ::ll::UntypedStorage<4, 4>  mUnk40df6d;
     // NOLINTEND
 
 public:
@@ -104,7 +104,8 @@ public:
     virtual void updateValues() /*override*/;
 
     // vIndex: 28
-    virtual ::Vec3 const getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const /*override*/;
+    virtual ::Vec3 const getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const
+        /*override*/;
 
     // vIndex: 29
     virtual ::CompoundTag serialize() const /*override*/;
@@ -119,11 +120,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VirtualCommandOrigin(::CommandOrigin const& outputReceiver, ::Actor& entity, ::CommandPositionFloat const& commandPosition, int version);
+    MCNAPI VirtualCommandOrigin(
+        ::CommandOrigin const&        outputReceiver,
+        ::Actor&                      entity,
+        ::CommandPositionFloat const& commandPosition,
+        int                           version
+    );
 
-    MCNAPI VirtualCommandOrigin(::std::unique_ptr<::CommandOrigin> outputReceiver, ::std::unique_ptr<::CommandOrigin> source, ::CommandPositionFloat const& commandPosition, int version);
+    MCNAPI VirtualCommandOrigin(
+        ::std::unique_ptr<::CommandOrigin> outputReceiver,
+        ::std::unique_ptr<::CommandOrigin> source,
+        ::CommandPositionFloat const&      commandPosition,
+        int                                version
+    );
 
-    MCNAPI VirtualCommandOrigin(::CommandOrigin const& outputReceiver, ::CommandOrigin const& source, ::CommandPositionFloat const& commandPosition, int version);
+    MCNAPI VirtualCommandOrigin(
+        ::CommandOrigin const&        outputReceiver,
+        ::CommandOrigin const&        source,
+        ::CommandPositionFloat const& commandPosition,
+        int                           version
+    );
     // NOLINTEND
 
 public:
@@ -135,11 +151,26 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CommandOrigin const& outputReceiver, ::Actor& entity, ::CommandPositionFloat const& commandPosition, int version);
+    MCNAPI void* $ctor(
+        ::CommandOrigin const&        outputReceiver,
+        ::Actor&                      entity,
+        ::CommandPositionFloat const& commandPosition,
+        int                           version
+    );
 
-    MCNAPI void* $ctor(::std::unique_ptr<::CommandOrigin> outputReceiver, ::std::unique_ptr<::CommandOrigin> source, ::CommandPositionFloat const& commandPosition, int version);
+    MCNAPI void* $ctor(
+        ::std::unique_ptr<::CommandOrigin> outputReceiver,
+        ::std::unique_ptr<::CommandOrigin> source,
+        ::CommandPositionFloat const&      commandPosition,
+        int                                version
+    );
 
-    MCNAPI void* $ctor(::CommandOrigin const& outputReceiver, ::CommandOrigin const& source, ::CommandPositionFloat const& commandPosition, int version);
+    MCNAPI void* $ctor(
+        ::CommandOrigin const&        outputReceiver,
+        ::CommandOrigin const&        source,
+        ::CommandPositionFloat const& commandPosition,
+        int                           version
+    );
     // NOLINTEND
 
 public:
@@ -195,5 +226,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

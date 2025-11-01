@@ -19,21 +19,24 @@ namespace Editor::Network { class RestartServiceRequestRestartPayload; }
 
 namespace Editor::Services {
 
-class ServerRestartService : public ::Editor::Services::IEditorService, public ::Editor::Services::ServerRestartServiceProvider, public ::EventListenerDispatcher<::LevelEventListener>, public ::Editor::Services::PayloadStoreHelper {
+class ServerRestartService : public ::Editor::Services::IEditorService,
+                             public ::Editor::Services::ServerRestartServiceProvider,
+                             public ::EventListenerDispatcher<::LevelEventListener>,
+                             public ::Editor::Services::PayloadStoreHelper {
 public:
     // ServerRestartService inner types define
     enum class State : int {
-        Listening = 0,
+        Listening       = 0,
         AwaitingRestart = 1,
         RestartComplete = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk527071;
-    ::ll::UntypedStorage<4, 4> mUnk71aeb9;
-    ::ll::UntypedStorage<1, 1> mUnkba8ed2;
+    ::ll::UntypedStorage<4, 4>  mUnk71aeb9;
+    ::ll::UntypedStorage<1, 1>  mUnkba8ed2;
     // NOLINTEND
 
 public:
@@ -67,7 +70,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _onRestartServiceRequestRestartPayload(::Editor::Network::RestartServiceRequestRestartPayload const& payload);
+    MCNAPI void
+    _onRestartServiceRequestRestartPayload(::Editor::Network::RestartServiceRequestRestartPayload const& payload);
 
     MCNAPI void _onTick();
 
@@ -103,7 +107,6 @@ public:
 
     MCNAPI static void** $vftableForEventListenerDispatcher();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

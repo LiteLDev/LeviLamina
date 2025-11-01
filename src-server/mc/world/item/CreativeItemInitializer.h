@@ -19,7 +19,7 @@ class CreativeItemInitializer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::ItemRegistryRef const> mItemRegistry;
+    ::ll::TypedStorage<8, 16, ::ItemRegistryRef const>                                     mItemRegistry;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> const> mCreativeItemRegistry;
     ::ll::TypedStorage<8, 16, ::std::set<short>> mServerItemsUsedInCreativeItems;
     // NOLINTEND
@@ -31,7 +31,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CreativeItemInitializer(::ItemRegistryRef const& itemRegistry, ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry);
+    MCAPI CreativeItemInitializer(
+        ::ItemRegistryRef const&                              itemRegistry,
+        ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry
+    );
 
     MCAPI void _addCreativeItemServer(::CreativeGroupInfo& creativeGroupInfo, ::ItemInstance const& itemInstance);
 
@@ -47,7 +50,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemRegistryRef const& itemRegistry, ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry);
+    MCAPI void* $ctor(
+        ::ItemRegistryRef const&                              itemRegistry,
+        ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry
+    );
     // NOLINTEND
 
 public:
@@ -55,5 +61,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

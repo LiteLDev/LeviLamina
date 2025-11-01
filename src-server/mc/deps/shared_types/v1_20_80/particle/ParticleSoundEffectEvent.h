@@ -20,9 +20,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_80::ParticleSoundEffectEvent& operator=(::SharedTypes::v1_20_80::ParticleSoundEffectEvent&&);
+    MCNAPI ::SharedTypes::v1_20_80::ParticleSoundEffectEvent&
+    operator=(::SharedTypes::v1_20_80::ParticleSoundEffectEvent&&);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

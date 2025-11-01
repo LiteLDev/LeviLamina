@@ -13,7 +13,6 @@ struct EmptyFilter {
 public:
     // EmptyFilter inner types define
     using Data = ::ScriptModuleMinecraft::EmptyFilterData;
-    
 };
 
-}
+} // namespace ScriptModuleMinecraft

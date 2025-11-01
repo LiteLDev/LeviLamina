@@ -17,7 +17,6 @@ public:
     SigninID& operator=(SigninID const&);
     SigninID(SigninID const&);
     SigninID();
-
 };
 
-}
+} // namespace PlayerMessaging

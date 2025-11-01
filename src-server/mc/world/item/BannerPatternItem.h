@@ -9,19 +9,19 @@ class BannerPatternItem : public ::Item {
 public:
     // BannerPatternItem inner types define
     enum class Type : int {
-        CreeperCharge = 0,
-        SkullCharge = 1,
-        FlowerCharge = 2,
-        Thing = 3,
-        FieldMasoned = 4,
+        CreeperCharge   = 0,
+        SkullCharge     = 1,
+        FlowerCharge    = 2,
+        Thing           = 3,
+        FieldMasoned    = 4,
         BordureIndented = 5,
-        Snout = 6,
-        Globe = 7,
-        Flow = 8,
-        Guster = 9,
-        Count = 10,
+        Snout           = 6,
+        Globe           = 7,
+        Flow            = 8,
+        Guster          = 9,
+        Count           = 10,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -54,5 +54,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

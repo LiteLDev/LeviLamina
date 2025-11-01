@@ -35,7 +35,33 @@ struct MountTamingEvent;
 struct ProjectileHitEvent;
 // clang-format on
 
-struct ActorNotificationEvent : public ::EventVariantImpl<::ActorAcquiredItemEvent const, ::ActorAnimationChangedEvent const, ::ActorAttackEvent const, ::ActorCarriedItemChangedEvent const, ::ActorDefinitionTriggeredEvent const, ::ActorDefinitionEndedEvent const, ::ActorDiedEvent const, ::ActorDroppedItemEvent const, ::ActorEquippedArmorEvent const, ::ActorHurtEvent const, ::ActorHealthChangedEvent const, ::ActorKilledEvent const, ::ActorPlacedItemEvent const, ::ActorRemovedEvent const, ::ActorRemoveEffectEvent const, ::ActorStartRidingEvent const, ::ActorUseItemEvent const, ::KnockBackEvent const, ::MountTamingEvent const, ::ActorItemEventAfterDroppedItem const, ::ProjectileHitEvent const, ::ActorGriefingBlockEvent const, ::ActorStopRidingEvent const, ::ActorItemEventBeforeDroppedItem const, ::ActorDefinitionStartedEvent const, ::ActorAddEffectEvent const> {
+struct ActorNotificationEvent : public ::EventVariantImpl<
+                                    ::ActorAcquiredItemEvent const,
+                                    ::ActorAnimationChangedEvent const,
+                                    ::ActorAttackEvent const,
+                                    ::ActorCarriedItemChangedEvent const,
+                                    ::ActorDefinitionTriggeredEvent const,
+                                    ::ActorDefinitionEndedEvent const,
+                                    ::ActorDiedEvent const,
+                                    ::ActorDroppedItemEvent const,
+                                    ::ActorEquippedArmorEvent const,
+                                    ::ActorHurtEvent const,
+                                    ::ActorHealthChangedEvent const,
+                                    ::ActorKilledEvent const,
+                                    ::ActorPlacedItemEvent const,
+                                    ::ActorRemovedEvent const,
+                                    ::ActorRemoveEffectEvent const,
+                                    ::ActorStartRidingEvent const,
+                                    ::ActorUseItemEvent const,
+                                    ::KnockBackEvent const,
+                                    ::MountTamingEvent const,
+                                    ::ActorItemEventAfterDroppedItem const,
+                                    ::ProjectileHitEvent const,
+                                    ::ActorGriefingBlockEvent const,
+                                    ::ActorStopRidingEvent const,
+                                    ::ActorItemEventBeforeDroppedItem const,
+                                    ::ActorDefinitionStartedEvent const,
+                                    ::ActorAddEffectEvent const> {
 public:
     // member functions
     // NOLINTBEGIN
@@ -47,5 +73,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

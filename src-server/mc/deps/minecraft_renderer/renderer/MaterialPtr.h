@@ -4,7 +4,6 @@
 
 namespace mce {
 
-class MaterialPtr {
-};
+class MaterialPtr {};
 
-}
+} // namespace mce

@@ -37,31 +37,40 @@ public:
     // clang-format off
     class LockGuard;
     // clang-format on
-    
+
     // ItemRegistryRef inner types define
-    using CreativeItemsServerInitCallbackSignature = void(::ItemRegistryRef, ::BlockDefinitionGroup const&, ::CreativeItemRegistry*, ::BaseGameVersion const&, ::Experiments const&, ::ResourcePackManager const&, ::cereal::ReflectionCtx const&, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const, ::IMinecraftEventing&);
-    
+    using CreativeItemsServerInitCallbackSignature = void(
+        ::ItemRegistryRef,
+        ::BlockDefinitionGroup const&,
+        ::CreativeItemRegistry*,
+        ::BaseGameVersion const&,
+        ::Experiments const&,
+        ::ResourcePackManager const&,
+        ::cereal::ReflectionCtx const&,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const,
+        ::IMinecraftEventing&
+    );
+
     class LockGuard {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::Mutex>> mMutex;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~LockGuard();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -106,9 +115,32 @@ public:
 
     MCAPI ::BaseGameVersion getWorldBaseGameVersion() const;
 
-    MCAPI void initCreativeItemsServer(::BlockDefinitionGroup const& blockDefinitionGroup, ::Experiments const& experiment, ::ResourcePackManager const& resourcePackManager, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator, ::IMinecraftEventing& eventing, ::std::function<void(::ItemRegistryRef, ::BlockDefinitionGroup const&, ::CreativeItemRegistry*, ::BaseGameVersion const&, ::Experiments const&, ::ResourcePackManager const&, ::cereal::ReflectionCtx const&, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>, ::IMinecraftEventing&)> registerCallback) const;
+    MCAPI void initCreativeItemsServer(
+        ::BlockDefinitionGroup const&                      blockDefinitionGroup,
+        ::Experiments const&                               experiment,
+        ::ResourcePackManager const&                       resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
+        ::IMinecraftEventing&                              eventing,
+        ::std::function<void(
+            ::ItemRegistryRef,
+            ::BlockDefinitionGroup const&,
+            ::CreativeItemRegistry*,
+            ::BaseGameVersion const&,
+            ::Experiments const&,
+            ::ResourcePackManager const&,
+            ::cereal::ReflectionCtx const&,
+            ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>,
+            ::IMinecraftEventing&
+        )>                                                 registerCallback
+    ) const;
 
-    MCAPI void initServer(::Experiments const& experiments, ::BaseGameVersion const& baseGameVersion, ::ResourcePackManager* rpm, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator, ::IMinecraftEventing& eventing) const;
+    MCAPI void initServer(
+        ::Experiments const&                               experiments,
+        ::BaseGameVersion const&                           baseGameVersion,
+        ::ResourcePackManager*                             rpm,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
+        ::IMinecraftEventing&                              eventing
+    ) const;
 
     MCAPI bool isComplexAlias(::HashedString const& oldName) const;
 
@@ -126,17 +158,27 @@ public:
 
     MCFOLD ::WeakPtr<::Item> lookupByVanillaName(::HashedString const& inString) const;
 
-    MCAPI void onLevelInit(::WeakRef<::IDynamicContainerSerialization> containerSerialization, ::WeakRef<::IContainerRegistryAccess> containerAccess, ::WeakRef<::IContainerRegistryTracker> containerTracker) const;
+    MCAPI void onLevelInit(
+        ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
+        ::WeakRef<::IContainerRegistryAccess>       containerAccess,
+        ::WeakRef<::IContainerRegistryTracker>      containerTracker
+    ) const;
 
-    MCAPI void registerAlias(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion) const;
+    MCAPI void
+    registerAlias(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion) const;
 
-    MCAPI ::WeakPtr<::Item> registerComplexAlias(::HashedString const& alias, ::ItemRegistryComplexAlias const& complexAlias) const;
+    MCAPI ::WeakPtr<::Item>
+    registerComplexAlias(::HashedString const& alias, ::ItemRegistryComplexAlias const& complexAlias) const;
 
     MCAPI void registerExtraItemInitCallback(::std::function<void(::ItemRegistryRef)> callback) const;
 
     MCAPI void registerLegacyID(::HashedString const& name, short id) const;
 
-    MCAPI void registerLegacyMapping(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion) const;
+    MCAPI void registerLegacyMapping(
+        ::HashedString const&    alias,
+        ::HashedString const&    name,
+        ::BaseGameVersion const& fromVersion
+    ) const;
 
     MCAPI uint64 remapToFullLegacyNameByHash(uint64 newHash) const;
 
@@ -166,5 +208,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

@@ -19,7 +19,7 @@ public:
     // clang-format off
     struct FoliageColorMapContainer;
     // clang-format on
-    
+
     // FoliageAppearanceClientBiomeJsonComponent inner types define
     struct FoliageColorMapContainer {
     public:
@@ -27,29 +27,28 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4> mUnkf76a38;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         FoliageColorMapContainer& operator=(FoliageColorMapContainer const&);
         FoliageColorMapContainer(FoliageColorMapContainer const&);
         FoliageColorMapContainer();
-    
+
     public:
         // static functions
         // NOLINTBEGIN
         MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
-    
+
     public:
         // static variables
         // NOLINTBEGIN
         MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
-    
+
         MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -97,7 +96,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_70

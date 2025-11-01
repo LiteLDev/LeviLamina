@@ -4,6 +4,6 @@
 
 enum class ServerConnectivityTestResult : int {
     Unknown = 0,
-    Passed = 1,
-    Failed = -1,
+    Passed  = 1,
+    Failed  = -1,
 };

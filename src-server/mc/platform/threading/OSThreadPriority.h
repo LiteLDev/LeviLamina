@@ -28,7 +28,6 @@ public:
 
     MCNAPI static ::Bedrock::Threading::OSThreadPriority const& Normal();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Threading

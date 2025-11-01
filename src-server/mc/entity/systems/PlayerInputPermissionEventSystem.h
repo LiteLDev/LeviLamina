@@ -21,7 +21,12 @@ namespace PlayerInputPermissionEventSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void processChanges(::entt::type_list<::Include<::ActorTickedComponent, ::PlayerComponent>>, ::ClientInputLockComponent const& clientInputLock, ::ClientInputLockLastComponent& clientInputLockLast, ::Optional<::ActorOwnerComponent> actorOwner);
+MCNAPI void processChanges(
+    ::entt::type_list<::Include<::ActorTickedComponent, ::PlayerComponent>>,
+    ::ClientInputLockComponent const& clientInputLock,
+    ::ClientInputLockLastComponent&   clientInputLockLast,
+    ::Optional<::ActorOwnerComponent> actorOwner
+);
 // NOLINTEND
 
-}
+} // namespace PlayerInputPermissionEventSystem

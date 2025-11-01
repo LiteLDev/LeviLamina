@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOriginalMapId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                mOriginalMapId;
     // NOLINTEND
 
 public:
@@ -31,10 +31,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const /*override*/;
+    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
+        /*override*/;
 
     // vIndex: 1
-    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext& craftingContext) const /*override*/;
+    virtual ::std::vector<::ItemInstance> const&
+    assemble(::CraftingContainer& craftSlots, ::CraftingContext& craftingContext) const /*override*/;
 
     // vIndex: 8
     virtual ::std::vector<::ItemInstance> const& getResultItems() const /*override*/;
@@ -75,7 +77,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
 
-    MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext& craftingContext) const;
+    MCAPI ::std::vector<::ItemInstance> const&
+    $assemble(::CraftingContainer& craftSlots, ::CraftingContext& craftingContext) const;
 
     MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
 
@@ -91,5 +94,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

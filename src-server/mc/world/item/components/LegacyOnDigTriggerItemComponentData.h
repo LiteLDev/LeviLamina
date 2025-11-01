@@ -14,7 +14,7 @@ struct LegacyOnDigTriggerItemComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnDigDefault;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>>          mOnDigDefault;
     ::ll::TypedStorage<8, 24, ::std::vector<::DiggerBlockDefinitionTrigger>> mOnDigTriggers;
     // NOLINTEND
 
@@ -51,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

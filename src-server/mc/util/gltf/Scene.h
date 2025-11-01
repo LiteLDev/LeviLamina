@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkf69cc5;
     ::ll::UntypedStorage<8, 32> mUnk135110;
-    ::ll::UntypedStorage<4, 4> mUnk506e0a;
+    ::ll::UntypedStorage<4, 4>  mUnk506e0a;
     // NOLINTEND
 
 public:
@@ -18,7 +18,6 @@ public:
     Scene& operator=(Scene const&);
     Scene(Scene const&);
     Scene();
-
 };
 
-}
+} // namespace glTF

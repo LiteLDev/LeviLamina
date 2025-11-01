@@ -14,7 +14,11 @@ class BiomeComponentStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Bedrock::typeid_t<void>, ::std::unique_ptr<::BiomeComponentBase>>>> mComponentList;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::pair<::Bedrock::typeid_t<void>, ::std::unique_ptr<::BiomeComponentBase>>>>
+                                   mComponentList;
     ::ll::TypedStorage<1, 1, bool> mAllowAddingComponents;
     // NOLINTEND
 
@@ -31,5 +35,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

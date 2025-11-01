@@ -13,11 +13,12 @@ class StructureRegistry {
 public:
     // StructureRegistry inner types define
     using Map = ::entt::dense_map<::std::string, ::std::shared_ptr<::br::worldgen::Structure>>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::entt::dense_map<::std::string, ::std::shared_ptr<::br::worldgen::Structure>>> mStructures;
+    ::ll::TypedStorage<8, 72, ::entt::dense_map<::std::string, ::std::shared_ptr<::br::worldgen::Structure>>>
+        mStructures;
     // NOLINTEND
 
 public:
@@ -33,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

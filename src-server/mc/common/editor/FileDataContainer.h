@@ -17,7 +17,7 @@ struct FileDataContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk78aae8;
+    ::ll::UntypedStorage<8, 32>  mUnk78aae8;
     ::ll::UntypedStorage<8, 464> mUnk210e7b;
     // NOLINTEND
 
@@ -38,9 +38,14 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::std::optional<::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer> fromString(::Puv::SlicedLoader<::Editor::Structures::PUVLoader::v1::StructureMetadata, nullptr_t, nullptr_t>& loader, ::std::string& jsonString, ::std::vector<::std::string>& outErrors);
+    MCNAPI static ::std::optional<::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer> fromString(
+        ::Puv::SlicedLoader<::Editor::Structures::PUVLoader::v1::StructureMetadata, nullptr_t, nullptr_t>& loader,
+        ::std::string&                                                                                     jsonString,
+        ::std::vector<::std::string>&                                                                      outErrors
+    );
 
-    MCNAPI static ::std::optional<::std::string> toString(::cereal::ReflectionCtx& ctx, ::Editor::Structures::PUVLoader::v1::StructureMetadata&& loaderMetadata);
+    MCNAPI static ::std::optional<::std::string>
+    toString(::cereal::ReflectionCtx& ctx, ::Editor::Structures::PUVLoader::v1::StructureMetadata&& loaderMetadata);
     // NOLINTEND
 
 public:
@@ -48,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Structures::PUVLoader::CurrentVersion

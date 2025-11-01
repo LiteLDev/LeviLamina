@@ -22,9 +22,19 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void doTick(::MoveInputComponent const& input, ::PlayerInputModeComponent const&, ::LocalMoveVelocityComponent& localVelocity);
+    MCNAPI static void doTick(
+        ::MoveInputComponent const& input,
+        ::PlayerInputModeComponent const&,
+        ::LocalMoveVelocityComponent& localVelocity
+    );
 
-    MCNAPI static void tick(::ViewT<::StrictEntityContext, ::Include<::PlayerInputRequestComponent>, ::MoveInputComponent const, ::PlayerInputModeComponent const, ::LocalMoveVelocityComponent> view);
+    MCNAPI static void tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::PlayerInputRequestComponent>,
+            ::MoveInputComponent const,
+            ::PlayerInputModeComponent const,
+            ::LocalMoveVelocityComponent> view
+    );
     // NOLINTEND
-
 };

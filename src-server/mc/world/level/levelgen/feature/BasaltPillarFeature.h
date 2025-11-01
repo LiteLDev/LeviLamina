@@ -27,9 +27,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _blendAtGroundLevel(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::Block const& basalt) const;
+    MCAPI void
+    _blendAtGroundLevel(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::Block const& basalt) const;
 
-    MCAPI bool _growColumn(::BlockSource& region, ::BlockPos const& pos, ::Random& random, float placeChance, ::Block const& basalt) const;
+    MCAPI bool _growColumn(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Random&         random,
+        float             placeChance,
+        ::Block const&    basalt
+    ) const;
     // NOLINTEND
 
 public:
@@ -43,5 +50,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

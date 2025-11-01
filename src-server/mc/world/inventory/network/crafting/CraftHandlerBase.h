@@ -25,13 +25,13 @@ class CraftHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ItemStackRequestActionCraftHandler&> mCraftRequestHandler;
-    ::ll::TypedStorage<1, 1, ::ItemStackRequestActionType> mCraftActionType;
-    ::ll::TypedStorage<1, 1, bool> mNonImplementedTrustClientResults;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ExpectedSlotConsume>> mExpectedSlotConsumes;
+    ::ll::TypedStorage<8, 8, ::ItemStackRequestActionCraftHandler&>     mCraftRequestHandler;
+    ::ll::TypedStorage<1, 1, ::ItemStackRequestActionType>              mCraftActionType;
+    ::ll::TypedStorage<1, 1, bool>                                      mNonImplementedTrustClientResults;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpectedSlotConsume>>     mExpectedSlotConsumes;
     ::ll::TypedStorage<8, 24, ::std::vector<::ExpectedAnywhereConsume>> mExpectedAnywhereConsumes;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AllowedAnywhereConsume>> mAllowedAnywhereConsumes;
-    ::ll::TypedStorage<1, 1, bool> mIsCraftRequest;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AllowedAnywhereConsume>>  mAllowedAnywhereConsumes;
+    ::ll::TypedStorage<1, 1, bool>                                      mIsCraftRequest;
     // NOLINTEND
 
 public:
@@ -70,7 +70,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::tuple<::ItemStackNetResult, ::Recipe const*> _getRecipeFromNetId(::RecipeNetId const& recipeNetId);
 
-    MCAPI ::ItemStackNetResult handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction, ::ItemStackNetResult currentResult);
+    MCAPI ::ItemStackNetResult
+    handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction, ::ItemStackNetResult currentResult);
 
     MCAPI void postRequest(bool wasSuccess);
     // NOLINTEND
@@ -90,5 +91,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

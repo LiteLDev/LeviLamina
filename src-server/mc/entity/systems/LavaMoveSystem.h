@@ -22,5 +22,4 @@ struct MobTravelComponent;
 struct StateVectorComponent;
 // clang-format on
 
-class LavaMoveSystem {
-};
+class LavaMoveSystem {};

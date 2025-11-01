@@ -16,16 +16,16 @@ struct PackInfoData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::PackIdVersion> mPackIdVersion;
-    ::ll::TypedStorage<8, 8, uint64> mPackSize;
-    ::ll::TypedStorage<8, 32, ::std::string> mContentKey;
-    ::ll::TypedStorage<8, 32, ::std::string> mSubpackName;
+    ::ll::TypedStorage<8, 48, ::PackIdVersion>   mPackIdVersion;
+    ::ll::TypedStorage<8, 8, uint64>             mPackSize;
+    ::ll::TypedStorage<8, 32, ::std::string>     mContentKey;
+    ::ll::TypedStorage<8, 32, ::std::string>     mSubpackName;
     ::ll::TypedStorage<8, 24, ::ContentIdentity> mContentIdentity;
-    ::ll::TypedStorage<1, 1, bool> mHasScripts;
-    ::ll::TypedStorage<1, 1, bool> mIsAddonPack;
-    ::ll::TypedStorage<1, 1, bool> mIsRayTracingCapable;
-    ::ll::TypedStorage<1, 1, bool> mHasExceptions;
-    ::ll::TypedStorage<8, 32, ::std::string> mCDNUrl;
+    ::ll::TypedStorage<1, 1, bool>               mHasScripts;
+    ::ll::TypedStorage<1, 1, bool>               mIsAddonPack;
+    ::ll::TypedStorage<1, 1, bool>               mIsRayTracingCapable;
+    ::ll::TypedStorage<1, 1, bool>               mHasExceptions;
+    ::ll::TypedStorage<8, 32, ::std::string>     mCDNUrl;
     // NOLINTEND
 
 public:
@@ -35,7 +35,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackInfoData(::mce::UUID const& guid, ::SemVersion const& version, uint64 packSize, ::std::string const& contentKey, ::std::string const& subpackName, ::ContentIdentity const& contentIdentity, bool hasScripts, bool isAddonPack, bool isRayTracingCapable, ::std::string const& cdnUrl);
+    MCAPI PackInfoData(
+        ::mce::UUID const&       guid,
+        ::SemVersion const&      version,
+        uint64                   packSize,
+        ::std::string const&     contentKey,
+        ::std::string const&     subpackName,
+        ::ContentIdentity const& contentIdentity,
+        bool                     hasScripts,
+        bool                     isAddonPack,
+        bool                     isRayTracingCapable,
+        ::std::string const&     cdnUrl
+    );
 
     MCAPI ~PackInfoData();
     // NOLINTEND
@@ -43,7 +54,18 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::UUID const& guid, ::SemVersion const& version, uint64 packSize, ::std::string const& contentKey, ::std::string const& subpackName, ::ContentIdentity const& contentIdentity, bool hasScripts, bool isAddonPack, bool isRayTracingCapable, ::std::string const& cdnUrl);
+    MCAPI void* $ctor(
+        ::mce::UUID const&       guid,
+        ::SemVersion const&      version,
+        uint64                   packSize,
+        ::std::string const&     contentKey,
+        ::std::string const&     subpackName,
+        ::ContentIdentity const& contentIdentity,
+        bool                     hasScripts,
+        bool                     isAddonPack,
+        bool                     isRayTracingCapable,
+        ::std::string const&     cdnUrl
+    );
     // NOLINTEND
 
 public:
@@ -51,5 +73,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

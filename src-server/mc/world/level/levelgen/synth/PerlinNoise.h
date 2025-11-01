@@ -14,9 +14,9 @@ class PerlinNoise {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int const> mLevels;
+    ::ll::TypedStorage<4, 4, int const>                       mLevels;
     ::ll::TypedStorage<8, 24, ::std::vector<::ImprovedNoise>> mNoiseLevels;
-    ::ll::TypedStorage<4, 4, float> mNormalizationFactor;
+    ::ll::TypedStorage<4, 4, float>                           mNormalizationFactor;
     // NOLINTEND
 
 public:
@@ -33,7 +33,17 @@ public:
 
     MCAPI void _init(::IRandom& random, ::YBlendingBugSettings yBlendingSettings);
 
-    MCAPI void fillRegion(float* buffer, ::Vec3 const& pos, int xSize, int ySize, int zSize, ::Vec3 const& scale, int xStep, int yStep, int zStep) const;
+    MCAPI void fillRegion(
+        float*        buffer,
+        ::Vec3 const& pos,
+        int           xSize,
+        int           ySize,
+        int           zSize,
+        ::Vec3 const& scale,
+        int           xStep,
+        int           yStep,
+        int           zStep
+    ) const;
 
     MCAPI float getValue(::Vec3 const& pos) const;
 
@@ -53,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

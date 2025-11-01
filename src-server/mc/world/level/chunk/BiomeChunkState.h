@@ -8,5 +8,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, uchar> snowLevel;
     // NOLINTEND
-
 };

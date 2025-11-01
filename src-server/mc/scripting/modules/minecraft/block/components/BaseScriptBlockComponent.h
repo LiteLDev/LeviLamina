@@ -18,7 +18,7 @@ class BaseScriptBlockComponent : public ::ScriptModuleMinecraft::ScriptComponent
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd7098b;
+    ::ll::UntypedStorage<8, 8>  mUnkd7098b;
     ::ll::UntypedStorage<4, 12> mUnkd57b5d;
     // NOLINTEND
 
@@ -58,7 +58,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

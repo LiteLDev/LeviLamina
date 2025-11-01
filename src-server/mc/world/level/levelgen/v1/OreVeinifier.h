@@ -19,10 +19,10 @@ public:
     // clang-format off
     struct OreVein;
     // clang-format on
-    
+
     // OreVeinifier inner types define
     using InterpolatorArray = ::std::array<::NoiseCellInterpolator*, 3>;
-    
+
     struct OreVein {
     public:
         // member variables
@@ -30,24 +30,23 @@ public:
         ::ll::TypedStorage<8, 8, ::Block const*> oreBlock;
         ::ll::TypedStorage<8, 8, ::Block const*> rawOreBlock;
         ::ll::TypedStorage<8, 8, ::Block const*> fillerBlock;
-        ::ll::TypedStorage<4, 4, int const> minY;
-        ::ll::TypedStorage<4, 4, int const> maxY;
+        ::ll::TypedStorage<4, 4, int const>      minY;
+        ::ll::TypedStorage<4, 4, int const>      maxY;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4100, ::Util::MultidimensionalArray<float, 5, 5, 41>> mVeininessNoise;
     ::ll::TypedStorage<4, 4100, ::Util::MultidimensionalArray<float, 5, 5, 41>> mVeinNoiseA;
     ::ll::TypedStorage<4, 4100, ::Util::MultidimensionalArray<float, 5, 5, 41>> mVeinNoiseB;
-    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator> mVeininessNoiseInterpolator;
-    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator> mVeinNoiseInterpolatorA;
-    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator> mVeinNoiseInterpolatorB;
-    ::ll::TypedStorage<8, 8, ::OreVeinifierNoises const&> mNoiseSource;
-    ::ll::TypedStorage<8, 32, ::OreVeinifier::OreVein const> mCopperVein;
-    ::ll::TypedStorage<8, 32, ::OreVeinifier::OreVein const> mIronVein;
+    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator>                          mVeininessNoiseInterpolator;
+    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator>                          mVeinNoiseInterpolatorA;
+    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator>                          mVeinNoiseInterpolatorB;
+    ::ll::TypedStorage<8, 8, ::OreVeinifierNoises const&>                       mNoiseSource;
+    ::ll::TypedStorage<8, 32, ::OreVeinifier::OreVein const>                    mCopperVein;
+    ::ll::TypedStorage<8, 32, ::OreVeinifier::OreVein const>                    mIronVein;
     // NOLINTEND
 
 public:
@@ -71,5 +70,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreVeinifierNoises const& noiseSource);
     // NOLINTEND
-
 };

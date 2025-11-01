@@ -20,10 +20,12 @@ public:
     virtual ~ILevelEventManagerCoordinator() = default;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>& getLevelEventDataConnector() = 0;
+    virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
+    getLevelEventDataConnector() = 0;
 
     // vIndex: 2
-    virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>& getLevelEventCompoundTagConnector() = 0;
+    virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
+    getLevelEventCompoundTagConnector() = 0;
     // NOLINTEND
 
 public:
@@ -31,5 +33,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

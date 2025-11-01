@@ -10,8 +10,7 @@ struct ShowStoreOfferPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID> mOfferId;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                 mOfferId;
     ::ll::TypedStorage<1, 1, ::ShowStoreOfferRedirectType> mRedirectType;
     // NOLINTEND
-
 };

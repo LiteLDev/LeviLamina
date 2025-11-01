@@ -14,5 +14,4 @@ public:
     JSProperty& operator=(JSProperty const&);
     JSProperty(JSProperty const&);
     JSProperty();
-
 };

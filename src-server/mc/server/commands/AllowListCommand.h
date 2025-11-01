@@ -17,18 +17,18 @@ class AllowListCommand : public ::Command {
 public:
     // AllowListCommand inner types define
     enum class Action : int {
-        List = 0,
-        On = 1,
-        Off = 2,
-        AddName = 3,
+        List       = 0,
+        On         = 1,
+        Off        = 2,
+        AddName    = 3,
         RemoveName = 4,
-        Reload = 5,
+        Reload     = 5,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5ae04a;
+    ::ll::UntypedStorage<4, 4>  mUnk5ae04a;
     ::ll::UntypedStorage<8, 32> mUnkaf2239;
     // NOLINTEND
 
@@ -71,5 +71,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

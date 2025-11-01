@@ -12,9 +12,10 @@ struct CameraInstruction;
 namespace CameraInstructionSender {
 // functions
 // NOLINTBEGIN
-MCNAPI void sendInstruction(::PacketSender& packetSender, ::EntityContext& entity, ::CameraInstruction const& instruction);
+MCNAPI void
+sendInstruction(::PacketSender& packetSender, ::EntityContext& entity, ::CameraInstruction const& instruction);
 
 MCNAPI void updateCameraComponentsOnEntity(::EntityContext& entity, ::CameraInstruction const& instruction);
 // NOLINTEND
 
-}
+} // namespace CameraInstructionSender

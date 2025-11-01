@@ -7,7 +7,8 @@
 
 namespace Editor::Network {
 
-class PlaytestBeginSessionTransferPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::PlaytestBeginSessionTransferPayload> {
+class PlaytestBeginSessionTransferPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::PlaytestBeginSessionTransferPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,7 +41,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

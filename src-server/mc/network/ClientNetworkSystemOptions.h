@@ -16,5 +16,4 @@ public:
     ClientNetworkSystemOptions& operator=(ClientNetworkSystemOptions const&);
     ClientNetworkSystemOptions(ClientNetworkSystemOptions const&);
     ClientNetworkSystemOptions();
-
 };

@@ -37,7 +37,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _wouldBePoweredByCircuit(::CircuitSystem& circuitSystem, ::BlockPos const& pos, uchar connectionDirection);
+    MCAPI static bool
+    _wouldBePoweredByCircuit(::CircuitSystem& circuitSystem, ::BlockPos const& pos, uchar connectionDirection);
 
     MCAPI static int getInputStrength(::BlockSource const& region, ::BlockPos const& pos);
     // NOLINTEND
@@ -57,5 +58,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

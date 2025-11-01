@@ -23,5 +23,4 @@ public:
 
     MCNAPI static ::std::shared_ptr<::AttributeModifier>& WEAKNESS();
     // NOLINTEND
-
 };

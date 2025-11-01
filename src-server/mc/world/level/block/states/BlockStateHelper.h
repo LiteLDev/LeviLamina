@@ -13,4 +13,4 @@ namespace BlockStateHelper {
 MCAPI bool isOrientationSensitiveBlock(::Block const& block);
 // NOLINTEND
 
-}
+} // namespace BlockStateHelper

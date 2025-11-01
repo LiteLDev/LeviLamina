@@ -19,13 +19,15 @@ namespace mce { class UUID; }
 
 namespace Editor::Services {
 
-class ServerThumbnailCacheService : public ::Editor::Services::IEditorService, public ::Editor::Services::ServerThumbnailCacheServiceProvider, public ::Editor::Services::PayloadStoreHelper {
+class ServerThumbnailCacheService : public ::Editor::Services::IEditorService,
+                                    public ::Editor::Services::ServerThumbnailCacheServiceProvider,
+                                    public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkdbecfe;
+    ::ll::UntypedStorage<8, 64>   mUnkdbecfe;
     ::ll::UntypedStorage<8, 1032> mUnkd7b0f7;
-    ::ll::UntypedStorage<8, 24> mUnk511273;
+    ::ll::UntypedStorage<8, 24>   mUnk511273;
     // NOLINTEND
 
 public:
@@ -108,7 +110,6 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

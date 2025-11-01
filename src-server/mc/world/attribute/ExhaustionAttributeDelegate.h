@@ -25,7 +25,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
+    MCAPI void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
     // NOLINTEND
 
 public:
@@ -33,5 +33,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

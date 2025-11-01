@@ -18,7 +18,6 @@ public:
     Counter& operator=(Counter const&);
     Counter(Counter const&);
     Counter();
-
 };
 
-}
+} // namespace PerfMetrics

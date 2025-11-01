@@ -23,19 +23,19 @@ public:
     struct EncodedInfo;
     struct EncodedInfoLeaf;
     // clang-format on
-    
+
     // AudioEncoder inner types define
     enum class CodecType : int {
-        KOther = 0,
-        KOpus = 1,
-        KIsac = 2,
-        KPcmA = 3,
-        KPcmU = 4,
-        KG722 = 5,
-        KIlbc = 6,
+        KOther                    = 0,
+        KOpus                     = 1,
+        KIsac                     = 2,
+        KPcmA                     = 3,
+        KPcmU                     = 4,
+        KG722                     = 5,
+        KIlbc                     = 6,
         KMaxLoggedAudioCodecTypes = 7,
     };
-    
+
     struct EncodedInfoLeaf {
     public:
         // member variables
@@ -47,35 +47,33 @@ public:
         ::ll::UntypedStorage<1, 1> mUnk9eb05e;
         ::ll::UntypedStorage<4, 4> mUnkbc04f7;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         EncodedInfoLeaf& operator=(EncodedInfoLeaf const&);
         EncodedInfoLeaf(EncodedInfoLeaf const&);
         EncodedInfoLeaf();
-    
     };
-    
+
     struct EncodedInfo : public ::webrtc::AudioEncoder::EncodedInfoLeaf {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnk3ab0dc;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         EncodedInfo& operator=(EncodedInfo const&);
         EncodedInfo(EncodedInfo const&);
         EncodedInfo();
-    
     };
-    
+
     enum class Application : int {
         KSpeech = 0,
-        KAudio = 1,
+        KAudio  = 1,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -164,7 +162,8 @@ public:
     virtual ::std::optional<::std::pair<::webrtc::DataRate, ::webrtc::DataRate>> GetBitrateRange() const;
 
     // vIndex: 28
-    virtual ::webrtc::AudioEncoder::EncodedInfo EncodeImpl(uint, ::rtc::ArrayView<short const>, ::rtc::BufferT<uchar, 0>*) = 0;
+    virtual ::webrtc::AudioEncoder::EncodedInfo
+    EncodeImpl(uint, ::rtc::ArrayView<short const>, ::rtc::BufferT<uchar, 0>*) = 0;
     // NOLINTEND
 
 public:
@@ -172,7 +171,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

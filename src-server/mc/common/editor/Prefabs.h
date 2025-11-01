@@ -13,4 +13,4 @@ namespace Editor::Prefabs {
 MCNAPI void bindType(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-}
+} // namespace Editor::Prefabs

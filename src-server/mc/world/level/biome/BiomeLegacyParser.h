@@ -18,7 +18,13 @@ namespace cereal { struct ReflectionCtx; }
 namespace BiomeLegacyParser {
 // functions
 // NOLINTBEGIN
-MCAPI ::SharedTypes::v1_21_110::BiomeJsonDocument parseBiomeLegacy(::Puv::Input const& input, ::Puv::Logger& logger, ::cereal::ReflectionCtx& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator, ::Core::Path const& resourceName);
+MCAPI ::SharedTypes::v1_21_110::BiomeJsonDocument parseBiomeLegacy(
+    ::Puv::Input const&                                input,
+    ::Puv::Logger&                                     logger,
+    ::cereal::ReflectionCtx&                           ctx,
+    ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
+    ::Core::Path const&                                resourceName
+);
 // NOLINTEND
 
-}
+} // namespace BiomeLegacyParser

@@ -17,7 +17,6 @@ public:
     DimensionPaddingRange& operator=(DimensionPaddingRange const&);
     DimensionPaddingRange(DimensionPaddingRange const&);
     DimensionPaddingRange();
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class BrewingStandContainerData : int {
-    SetBrewTime = 0,
+    SetBrewTime   = 0,
     SetFuelAmount = 1,
-    SetFuelTotal = 2,
+    SetFuelTotal  = 2,
 };

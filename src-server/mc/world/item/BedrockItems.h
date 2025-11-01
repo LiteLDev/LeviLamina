@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void registerItems(::ItemRegistryRef itemRegistry);
     // NOLINTEND
-
 };

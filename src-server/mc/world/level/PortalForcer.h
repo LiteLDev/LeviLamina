@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/util/Random.h"
-#include "mc/versionless/world/Pos.h"
+#include "mc/world/Pos.h"
 #include "mc/world/level/PortalRecord.h"
 #include "mc/world/level/saveddata/SavedData.h"
 
@@ -28,7 +28,7 @@ public:
     // clang-format off
     class PortalPosition;
     // clang-format on
-    
+
     // PortalForcer inner types define
     class PortalPosition : public ::Pos {
     public:
@@ -36,19 +36,19 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, int> lastUsed;
         // NOLINTEND
-    
     };
-    
+
     using CachedPortalMap = ::std::unordered_map<::BlockPos, ::PortalForcer::PortalPosition>;
-    
+
     using PortalRecordSet = ::std::unordered_set<::PortalRecord>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Level&> mLevel;
+    ::ll::TypedStorage<8, 8, ::Level&>    mLevel;
     ::ll::TypedStorage<8, 2576, ::Random> mRandom;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::DimensionType, ::std::unordered_set<::PortalRecord>>> mPortalRecords;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::DimensionType, ::std::unordered_set<::PortalRecord>>>
+        mPortalRecords;
     // NOLINTEND
 
 public:
@@ -73,7 +73,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::PortalRecord> _findPortal(::DimensionType dimensionId, ::BlockPos const& centerBlockPos, int radius, ::BlockPos& targetBlockPos) const;
+    MCAPI ::std::optional<::PortalRecord> _findPortal(
+        ::DimensionType   dimensionId,
+        ::BlockPos const& centerBlockPos,
+        int               radius,
+        ::BlockPos&       targetBlockPos
+    ) const;
 
     MCAPI ::PortalRecord const& createPortal(::Actor const& entity, int radius);
 
@@ -81,7 +86,11 @@ public:
 
     MCAPI bool portalRecordExists(::DimensionType dimensionType, ::PortalRecord const& record) const;
 
-    MCAPI void removeMisalignedPortalRecords(::BlockSource& region, ::PortalShape const& referenceShape, ::PortalRecord const& referenceRecord);
+    MCAPI void removeMisalignedPortalRecords(
+        ::BlockSource&        region,
+        ::PortalShape const&  referenceShape,
+        ::PortalRecord const& referenceRecord
+    );
 
     MCAPI void removePortalRecord(::BlockSource& source, ::BlockPos const& pos);
     // NOLINTEND
@@ -113,5 +122,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

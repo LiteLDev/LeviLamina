@@ -16,5 +16,4 @@ public:
     SynchedActorDataWriter& operator=(SynchedActorDataWriter const&);
     SynchedActorDataWriter(SynchedActorDataWriter const&);
     SynchedActorDataWriter();
-
 };

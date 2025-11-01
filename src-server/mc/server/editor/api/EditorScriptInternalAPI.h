@@ -28,7 +28,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk26f8ed;
     ::ll::UntypedStorage<8, 16> mUnk6c34da;
-    ::ll::UntypedStorage<8, 8> mUnk3d92dd;
+    ::ll::UntypedStorage<8, 8>  mUnk3d92dd;
     // NOLINTEND
 
 public:
@@ -40,11 +40,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::API::EditorExtension> _registerExtension(::Scripting::ContextConfig const& contextConfig, ::std::string const& extensionName, ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)> activationClosure, ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)> shutdownClosure, ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::API::EditorExtension> _registerExtension(
+        ::Scripting::ContextConfig const& contextConfig,
+        ::std::string const&              extensionName,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
+            activationClosure,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
+                                                                          shutdownClosure,
+        ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void> fireTelemetryEvent(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer, ::std::string const& source, ::std::string const& eventName, ::std::string const& metadata);
+    MCNAPI ::Scripting::Result_deprecated<void> fireTelemetryEvent(
+        ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer,
+        ::std::string const&                   source,
+        ::std::string const&                   eventName,
+        ::std::string const&                   metadata
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>> getPlayerServiceContext(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
+    getPlayerServiceContext(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
     // NOLINTEND
 
 public:
@@ -52,7 +67,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::API

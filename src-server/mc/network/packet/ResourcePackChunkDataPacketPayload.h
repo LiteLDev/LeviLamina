@@ -6,9 +6,9 @@ struct ResourcePackChunkDataPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mResourceName;
-    ::ll::TypedStorage<4, 4, int> mChunkID;
-    ::ll::TypedStorage<8, 8, uint64> mByteOffset;
+    ::ll::TypedStorage<8, 32, ::std::string>        mResourceName;
+    ::ll::TypedStorage<4, 4, int>                   mChunkID;
+    ::ll::TypedStorage<8, 8, uint64>                mByteOffset;
     ::ll::TypedStorage<8, 24, ::std::vector<uchar>> mData;
     // NOLINTEND
 
@@ -39,5 +39,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

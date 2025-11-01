@@ -4,8 +4,7 @@
 
 namespace Bedrock {
 
-template<typename T0>
-class UniqueService {
-};
+template <typename T0>
+class UniqueService {};
 
-}
+} // namespace Bedrock

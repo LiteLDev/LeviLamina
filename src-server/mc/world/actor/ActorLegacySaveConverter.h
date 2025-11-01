@@ -64,5 +64,4 @@ public:
 
     MCNAPI static void genericConvert(::Actor& entity, ::CompoundTag const& tag);
     // NOLINTEND
-
 };

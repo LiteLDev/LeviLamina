@@ -17,7 +17,7 @@ public:
     // clang-format off
     struct NetworkRouteComparator;
     // clang-format on
-    
+
     // InFlightBytesTracker inner types define
     struct NetworkRouteComparator {
     public:
@@ -25,9 +25,8 @@ public:
         // NOLINTBEGIN
         MCNAPI bool operator()(::rtc::NetworkRoute const& a, ::rtc::NetworkRoute const& b) const;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,7 +48,6 @@ public:
 
     MCNAPI void RemoveInFlightPacketBytes(::webrtc::PacketFeedback const& packet);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

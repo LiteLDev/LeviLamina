@@ -17,7 +17,15 @@ struct LevelWeatherChangedEvent;
 struct ScriptingWorldInitializeEvent;
 // clang-format on
 
-struct LevelNotificationEvent : public ::EventVariantImpl<::LevelAddedActorEvent const, ::LevelBroadcastEvent const, ::LevelSoundBroadcastEvent const, ::LevelDayCycleEvent const, ::LevelStartLeaveGameEvent const, ::LevelGameRuleChangeEvent const, ::ScriptingWorldInitializeEvent const, ::LevelWeatherChangedEvent const> {
+struct LevelNotificationEvent : public ::EventVariantImpl<
+                                    ::LevelAddedActorEvent const,
+                                    ::LevelBroadcastEvent const,
+                                    ::LevelSoundBroadcastEvent const,
+                                    ::LevelDayCycleEvent const,
+                                    ::LevelStartLeaveGameEvent const,
+                                    ::LevelGameRuleChangeEvent const,
+                                    ::ScriptingWorldInitializeEvent const,
+                                    ::LevelWeatherChangedEvent const> {
 public:
     // member functions
     // NOLINTBEGIN
@@ -29,5 +37,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

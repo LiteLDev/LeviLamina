@@ -14,8 +14,8 @@ struct BlockStateDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mName;
-    ::ll::TypedStorage<1, 1, ::Tag::Type> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>               mName;
+    ::ll::TypedStorage<1, 1, ::Tag::Type>                  mType;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ListTag>> mEnumValues;
     // NOLINTEND
 
@@ -40,5 +40,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

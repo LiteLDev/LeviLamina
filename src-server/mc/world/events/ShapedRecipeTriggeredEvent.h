@@ -12,7 +12,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::Recipe const*>> mCraftingRecipe;
-    ::ll::TypedStorage<1, 1, bool> mIsAutoCraft;
+    ::ll::TypedStorage<1, 1, bool>                             mIsAutoCraft;
     // NOLINTEND
-
 };

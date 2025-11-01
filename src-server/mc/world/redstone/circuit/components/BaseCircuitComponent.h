@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/RefCountedSet.h"
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentList.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/RedstoneLogicExecutionFlags.h"
@@ -20,21 +20,21 @@ class BaseCircuitComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::CircuitComponentList> mSources;
+    ::ll::TypedStorage<8, 24, ::CircuitComponentList>                         mSources;
     ::ll::TypedStorage<8, 16, ::Core::RefCountedSet<::BaseCircuitComponent*>> mDestinations;
-    ::ll::TypedStorage<1, 1, bool> mIgnoreFirstUpdate;
-    ::ll::TypedStorage<1, 1, bool> mIsFirstTime;
-    ::ll::TypedStorage<1, 1, bool> mNeedsUpdate;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mPos;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mChunkPosition;
-    ::ll::TypedStorage<1, 1, bool> mShouldEvaluate;
-    ::ll::TypedStorage<4, 4, int> mStrength;
-    ::ll::TypedStorage<1, 1, uchar> mDirection;
-    ::ll::TypedStorage<1, 1, bool> mAllowPowerUp;
-    ::ll::TypedStorage<1, 1, bool> mAllowPowerDown;
-    ::ll::TypedStorage<1, 1, bool> mRemoved;
-    ::ll::TypedStorage<1, 1, bool> mConsumePowerAnyDirection;
-    ::ll::TypedStorage<8, 8, ::CircuitComponentType> mCircuitComponentType;
+    ::ll::TypedStorage<1, 1, bool>                                            mIgnoreFirstUpdate;
+    ::ll::TypedStorage<1, 1, bool>                                            mIsFirstTime;
+    ::ll::TypedStorage<1, 1, bool>                                            mNeedsUpdate;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                     mPos;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                     mChunkPosition;
+    ::ll::TypedStorage<1, 1, bool>                                            mShouldEvaluate;
+    ::ll::TypedStorage<4, 4, int>                                             mStrength;
+    ::ll::TypedStorage<1, 1, uchar>                                           mDirection;
+    ::ll::TypedStorage<1, 1, bool>                                            mAllowPowerUp;
+    ::ll::TypedStorage<1, 1, bool>                                            mAllowPowerDown;
+    ::ll::TypedStorage<1, 1, bool>                                            mRemoved;
+    ::ll::TypedStorage<1, 1, bool>                                            mConsumePowerAnyDirection;
+    ::ll::TypedStorage<8, 8, ::CircuitComponentType>                          mCircuitComponentType;
     // NOLINTEND
 
 public:
@@ -74,7 +74,8 @@ public:
     virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
     // vIndex: 11
-    virtual bool addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    virtual bool
+    addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     // vIndex: 12
     virtual bool allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
@@ -124,7 +125,13 @@ public:
     // NOLINTBEGIN
     MCAPI void addSourceItem(::CircuitComponentList::Item const& item);
 
-    MCAPI bool trackPowerSource(::CircuitTrackingInfo const& info, int dampening, bool directlyPowered, int data, bool isDirectional);
+    MCAPI bool trackPowerSource(
+        ::CircuitTrackingInfo const& info,
+        int                          dampening,
+        bool                         directlyPowered,
+        int                          data,
+        bool                         isDirectional
+    );
     // NOLINTEND
 
 public:
@@ -156,7 +163,8 @@ public:
 
     MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
-    MCFOLD bool $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    MCFOLD bool
+    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCFOLD bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
@@ -192,5 +200,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void onDespawn(::Actor& actor);
     // NOLINTEND
-
 };

@@ -16,8 +16,8 @@ class GameServerToken {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsSelfSigned;
-    ::ll::TypedStorage<1, 1, bool> mIsValid;
+    ::ll::TypedStorage<1, 1, bool>         mIsSelfSigned;
+    ::ll::TypedStorage<1, 1, bool>         mIsValid;
     ::ll::TypedStorage<8, 128, ::WebToken> mRawToken;
     // NOLINTEND
 
@@ -43,7 +43,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _validate(::WebToken const& token, ::MinecraftServiceKeyManager const& keyManager, int64 currentTime, bool checkExpiration);
+    MCAPI static bool _validate(
+        ::WebToken const&                   token,
+        ::MinecraftServiceKeyManager const& keyManager,
+        int64                               currentTime,
+        bool                                checkExpiration
+    );
 
     MCAPI static bool _validateSelfSigned(::WebToken const& token, int64 currentTime, bool checkExpiration);
     // NOLINTEND
@@ -53,5 +58,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

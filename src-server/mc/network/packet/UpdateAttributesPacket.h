@@ -22,9 +22,9 @@ class UpdateAttributesPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                mRuntimeId;
     ::ll::TypedStorage<8, 24, ::std::vector<::AttributeData>> mAttributeData;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick> mTick;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick>               mTick;
     // NOLINTEND
 
 public:
@@ -53,13 +53,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateAttributesPacket(::ActorRuntimeID const& id, ::BaseAttributeMap const& map, ::std::vector<::AttributeInstanceHandle> const& dirtyData, ::PlayerInputTick tick);
+    MCAPI UpdateAttributesPacket(
+        ::ActorRuntimeID const&                         id,
+        ::BaseAttributeMap const&                       map,
+        ::std::vector<::AttributeInstanceHandle> const& dirtyData,
+        ::PlayerInputTick                               tick
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorRuntimeID const& id, ::BaseAttributeMap const& map, ::std::vector<::AttributeInstanceHandle> const& dirtyData, ::PlayerInputTick tick);
+    MCAPI void* $ctor(
+        ::ActorRuntimeID const&                         id,
+        ::BaseAttributeMap const&                       map,
+        ::std::vector<::AttributeInstanceHandle> const& dirtyData,
+        ::PlayerInputTick                               tick
+    );
     // NOLINTEND
 
 public:
@@ -85,5 +95,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -16,8 +16,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::CrashDumpLogStringID> mTag0;
     ::ll::TypedStorage<2, 2, ::CrashDumpLogStringID> mTag1;
-    ::ll::TypedStorage<4, 4, int> mEventThreadId;
-    ::ll::TypedStorage<4, 4, uint> mTimeStamp;
+    ::ll::TypedStorage<4, 4, int>                    mEventThreadId;
+    ::ll::TypedStorage<4, 4, uint>                   mTimeStamp;
     // NOLINTEND
 
 public:
@@ -41,5 +41,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::CrashDumpLogStringID tag0, ::CrashDumpLogStringID tag1);
     // NOLINTEND
-
 };

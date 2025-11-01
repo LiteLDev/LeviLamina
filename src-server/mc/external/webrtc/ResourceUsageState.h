@@ -5,7 +5,7 @@
 namespace webrtc {
 
 enum class ResourceUsageState : int {
-    KOveruse = 0,
+    KOveruse  = 0,
     KUnderuse = 1,
 };
 

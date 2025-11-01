@@ -20,7 +20,7 @@ public:
     struct TrackerStats;
     struct WriteOperation;
     // clang-format on
-    
+
     // DiskAccessTracker inner types define
     struct WriteOperation {
     public:
@@ -30,15 +30,14 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkdacc78;
         ::ll::UntypedStorage<8, 8> mUnk8312bc;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         WriteOperation& operator=(WriteOperation const&);
         WriteOperation(WriteOperation const&);
         WriteOperation();
-    
     };
-    
+
     struct TrackerStats {
     public:
         // member variables
@@ -51,32 +50,31 @@ public:
         ::ll::UntypedStorage<8, 8> mUnke2d2e0;
         ::ll::UntypedStorage<8, 8> mUnk19960e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         TrackerStats& operator=(TrackerStats const&);
         TrackerStats(TrackerStats const&);
         TrackerStats();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnkce5dfc;
     ::ll::UntypedStorage<8, 32> mUnke3c629;
-    ::ll::UntypedStorage<8, 8> mUnk4dcf2e;
-    ::ll::UntypedStorage<8, 8> mUnk8b0df6;
-    ::ll::UntypedStorage<8, 8> mUnkec4b4c;
+    ::ll::UntypedStorage<8, 8>  mUnk4dcf2e;
+    ::ll::UntypedStorage<8, 8>  mUnk8b0df6;
+    ::ll::UntypedStorage<8, 8>  mUnkec4b4c;
     ::ll::UntypedStorage<8, 16> mUnkb6ced1;
     ::ll::UntypedStorage<8, 16> mUnk81e3dd;
     ::ll::UntypedStorage<8, 16> mUnk164044;
     ::ll::UntypedStorage<8, 56> mUnk893e32;
-    ::ll::UntypedStorage<8, 8> mUnk3bd5a4;
-    ::ll::UntypedStorage<8, 8> mUnk3d002f;
+    ::ll::UntypedStorage<8, 8>  mUnk3bd5a4;
+    ::ll::UntypedStorage<8, 8>  mUnk3d002f;
     ::ll::UntypedStorage<8, 80> mUnka734d7;
     ::ll::UntypedStorage<8, 80> mUnk37a284;
-    ::ll::UntypedStorage<1, 1> mUnk51bb1c;
+    ::ll::UntypedStorage<1, 1>  mUnk51bb1c;
     // NOLINTEND
 
 public:
@@ -112,7 +110,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

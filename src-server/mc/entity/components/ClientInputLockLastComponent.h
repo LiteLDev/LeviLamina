@@ -12,5 +12,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ClientInputLockCategory, 13>> mActiveCategories;
     // NOLINTEND
-
 };

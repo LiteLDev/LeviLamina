@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0>
-class ScriptCustomComponentEventClosure {
-};
+template <typename T0>
+class ScriptCustomComponentEventClosure {};
 
-}
+} // namespace ScriptModuleMinecraft

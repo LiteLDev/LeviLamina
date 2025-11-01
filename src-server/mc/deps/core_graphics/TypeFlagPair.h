@@ -17,7 +17,6 @@ public:
     TypeFlagPair& operator=(TypeFlagPair const&);
     TypeFlagPair(TypeFlagPair const&);
     TypeFlagPair();
-
 };
 
-}
+} // namespace cg

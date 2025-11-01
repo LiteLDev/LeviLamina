@@ -4,8 +4,7 @@
 
 namespace Bedrock::PubSub {
 
-template<typename T0>
-class DeferredConnector {
-};
+template <typename T0>
+class DeferredConnector {};
 
-}
+} // namespace Bedrock::PubSub

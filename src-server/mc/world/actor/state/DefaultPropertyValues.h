@@ -22,5 +22,4 @@ public:
     DefaultPropertyValues& operator=(DefaultPropertyValues const&);
     DefaultPropertyValues(DefaultPropertyValues const&);
     DefaultPropertyValues();
-
 };

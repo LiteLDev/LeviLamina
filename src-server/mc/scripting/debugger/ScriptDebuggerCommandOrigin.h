@@ -23,9 +23,9 @@ class ScriptDebuggerCommandOrigin : public ::CommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2a0cc2;
-    ::ll::UntypedStorage<1, 1> mUnkb047b6;
-    ::ll::UntypedStorage<4, 4> mUnk7e734d;
+    ::ll::UntypedStorage<8, 8>  mUnk2a0cc2;
+    ::ll::UntypedStorage<1, 1>  mUnkb047b6;
+    ::ll::UntypedStorage<4, 4>  mUnk7e734d;
     ::ll::UntypedStorage<8, 64> mUnkeaea08;
     // NOLINTEND
 
@@ -90,13 +90,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDebuggerCommandOrigin(::ServerLevel& origin, ::CommandPermissionLevel permissionLevel, ::DimensionType dimensionType, ::std::function<void(int, ::std::string&&)> outputCallback);
+    MCNAPI ScriptDebuggerCommandOrigin(
+        ::ServerLevel&                              origin,
+        ::CommandPermissionLevel                    permissionLevel,
+        ::DimensionType                             dimensionType,
+        ::std::function<void(int, ::std::string&&)> outputCallback
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ServerLevel& origin, ::CommandPermissionLevel permissionLevel, ::DimensionType dimensionType, ::std::function<void(int, ::std::string&&)> outputCallback);
+    MCNAPI void* $ctor(
+        ::ServerLevel&                              origin,
+        ::CommandPermissionLevel                    permissionLevel,
+        ::DimensionType                             dimensionType,
+        ::std::function<void(int, ::std::string&&)> outputCallback
+    );
     // NOLINTEND
 
 public:
@@ -138,5 +148,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

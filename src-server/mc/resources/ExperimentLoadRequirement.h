@@ -14,5 +14,4 @@ public:
     ExperimentLoadRequirement& operator=(ExperimentLoadRequirement const&);
     ExperimentLoadRequirement(ExperimentLoadRequirement const&);
     ExperimentLoadRequirement();
-
 };

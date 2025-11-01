@@ -29,7 +29,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GameTestCompletedError(::gametest::GameTestCompletedErrorReason type_, ::std::string const& gameTestName_, ::std::string const& methodName_);
+    MCNAPI GameTestCompletedError(
+        ::gametest::GameTestCompletedErrorReason type_,
+        ::std::string const&                     gameTestName_,
+        ::std::string const&                     methodName_
+    );
 
     MCNAPI ~GameTestCompletedError();
     // NOLINTEND
@@ -43,7 +47,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::gametest::GameTestCompletedErrorReason type_, ::std::string const& gameTestName_, ::std::string const& methodName_);
+    MCNAPI void* $ctor(
+        ::gametest::GameTestCompletedErrorReason type_,
+        ::std::string const&                     gameTestName_,
+        ::std::string const&                     methodName_
+    );
     // NOLINTEND
 
 public:
@@ -51,7 +59,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace gametest

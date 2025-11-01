@@ -26,7 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptTransferCollectionNameData& operator=(::Editor::ScriptModule::ScriptTransferCollectionNameData&&);
+    MCNAPI ::Editor::ScriptModule::ScriptTransferCollectionNameData&
+    operator=(::Editor::ScriptModule::ScriptTransferCollectionNameData&&);
 
     MCNAPI ~ScriptTransferCollectionNameData();
     // NOLINTEND
@@ -42,7 +43,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

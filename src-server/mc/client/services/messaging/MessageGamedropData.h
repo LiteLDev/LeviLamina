@@ -17,5 +17,4 @@ public:
     MessageGamedropData& operator=(MessageGamedropData const&);
     MessageGamedropData(MessageGamedropData const&);
     MessageGamedropData();
-
 };

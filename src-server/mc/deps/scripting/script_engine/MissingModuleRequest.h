@@ -28,7 +28,10 @@ public:
     // NOLINTBEGIN
     MCNAPI MissingModuleRequest(::Scripting::MissingModuleRequest&&);
 
-    MCNAPI MissingModuleRequest(::Scripting::ModuleDescriptor const& missingModule_, ::Scripting::ModuleDescriptor const& requestedBy_);
+    MCNAPI MissingModuleRequest(
+        ::Scripting::ModuleDescriptor const& missingModule_,
+        ::Scripting::ModuleDescriptor const& requestedBy_
+    );
 
     MCNAPI ~MissingModuleRequest();
     // NOLINTEND
@@ -38,7 +41,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Scripting::MissingModuleRequest&&);
 
-    MCNAPI void* $ctor(::Scripting::ModuleDescriptor const& missingModule_, ::Scripting::ModuleDescriptor const& requestedBy_);
+    MCNAPI void*
+    $ctor(::Scripting::ModuleDescriptor const& missingModule_, ::Scripting::ModuleDescriptor const& requestedBy_);
     // NOLINTEND
 
 public:
@@ -46,7 +50,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

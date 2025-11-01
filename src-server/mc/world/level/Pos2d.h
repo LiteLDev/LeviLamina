@@ -9,5 +9,4 @@ public:
     ::ll::TypedStorage<4, 4, int> x;
     ::ll::TypedStorage<4, 4, int> z;
     // NOLINTEND
-
 };

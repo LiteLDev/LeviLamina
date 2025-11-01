@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 336> mUnkeab699;
-    ::ll::UntypedStorage<8, 16> mUnk448721;
+    ::ll::UntypedStorage<8, 16>  mUnk448721;
     // NOLINTEND
 
 public:
@@ -18,5 +18,4 @@ public:
     RoleChecker& operator=(RoleChecker const&);
     RoleChecker(RoleChecker const&);
     RoleChecker();
-
 };

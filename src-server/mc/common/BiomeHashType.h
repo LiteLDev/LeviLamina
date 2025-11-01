@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/util/NewType.h"
 
-struct BiomeHashType : public ::NewType<uint64> {
-};
+struct BiomeHashType : public ::NewType<uint64> {};

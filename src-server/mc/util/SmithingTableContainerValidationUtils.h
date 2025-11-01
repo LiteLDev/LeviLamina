@@ -18,4 +18,4 @@ MCNAPI bool isItemAllowedInMaterialSlot(::ContainerScreenContext const& screenCo
 MCNAPI bool isItemAllowedInTemplateSlot(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item);
 // NOLINTEND
 
-}
+} // namespace SmithingTableContainerValidationUtils

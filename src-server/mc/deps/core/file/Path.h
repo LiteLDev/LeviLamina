@@ -13,11 +13,10 @@ public:
     // clang-format off
     struct path_less;
     // clang-format on
-    
+
     // Path inner types define
-    struct path_less {
-    };
-    
+    struct path_less {};
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,7 +63,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

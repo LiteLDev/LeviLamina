@@ -17,7 +17,6 @@ public:
     RakWString& operator=(RakWString const&);
     RakWString(RakWString const&);
     RakWString();
-
 };
 
-}
+} // namespace RakNet

@@ -15,5 +15,4 @@ public:
     unz_global_info_s& operator=(unz_global_info_s const&);
     unz_global_info_s(unz_global_info_s const&);
     unz_global_info_s();
-
 };

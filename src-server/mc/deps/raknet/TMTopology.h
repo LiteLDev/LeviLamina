@@ -5,7 +5,7 @@
 namespace RakNet {
 
 enum class TMTopology : int {
-    PeerToPeer = 0,
+    PeerToPeer   = 0,
     ClientServer = 1,
 };
 

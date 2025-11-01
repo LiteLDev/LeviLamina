@@ -18,4 +18,4 @@ MCNAPI ::ActorUtil::CanBeKilledResult const canActorBeKilled(::Actor const& acto
 MCNAPI void startFizzEffect(::Actor& actor);
 // NOLINTEND
 
-}
+} // namespace ActorUtil

@@ -37,39 +37,91 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBookItemComponent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ScriptBookItemComponent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
 
-    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> _getAuthor() const;
+    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
+    _getAuthor() const;
 
-    MCNAPI ::Scripting::Result<::std::vector<::std::optional<::std::string>>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> _getContents() const;
+    MCNAPI ::Scripting::
+        Result<::std::vector<::std::optional<::std::string>>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
+        _getContents() const;
 
-    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> _getPageContent(int index) const;
+    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
+    _getPageContent(int index) const;
 
     MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> _getPageCount() const;
 
-    MCNAPI ::Scripting::Result<::std::vector<::std::optional<::ScriptModuleMinecraft::ScriptRawMessageInterface>>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> _getRawContents() const;
+    MCNAPI ::Scripting::Result<
+        ::std::vector<::std::optional<::ScriptModuleMinecraft::ScriptRawMessageInterface>>,
+        ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
+    _getRawContents() const;
 
-    MCNAPI ::Scripting::Result<::std::optional<::ScriptModuleMinecraft::ScriptRawMessageInterface>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> _getRawPageContent(int index) const;
+    MCNAPI ::Scripting::Result<
+        ::std::optional<::ScriptModuleMinecraft::ScriptRawMessageInterface>,
+        ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
+    _getRawPageContent(int index) const;
 
-    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> _getTitle() const;
+    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
+    _getTitle() const;
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidItemStackError, ::ScriptModuleMinecraft::ScriptBookError, ::ScriptModuleMinecraft::ScriptBookPageContentError> _insertPage(int index, ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface, ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> content);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptInvalidItemStackError,
+        ::ScriptModuleMinecraft::ScriptBookError,
+        ::ScriptModuleMinecraft::ScriptBookPageContentError>
+    _insertPage(
+        int index,
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> content
+    );
 
     MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> _isSigned() const;
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> _removePage(int index);
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidItemStackError, ::ScriptModuleMinecraft::ScriptBookError, ::ScriptModuleMinecraft::ScriptBookPageContentError> _setContents(::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface, ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>>> contents);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptInvalidItemStackError,
+        ::ScriptModuleMinecraft::ScriptBookError,
+        ::ScriptModuleMinecraft::ScriptBookPageContentError>
+    _setContents(
+        ::std::vector<::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>>> contents
+    );
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidItemStackError, ::ScriptModuleMinecraft::ScriptBookError, ::ScriptModuleMinecraft::ScriptBookPageContentError> _setPageContent(int index, ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface, ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> content);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptInvalidItemStackError,
+        ::ScriptModuleMinecraft::ScriptBookError,
+        ::ScriptModuleMinecraft::ScriptBookPageContentError>
+    _setPageContent(
+        int index,
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> content
+    );
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::ScriptModuleMinecraft::ScriptInvalidItemStackError, ::ScriptModuleMinecraft::ScriptBookError> _signBook(::std::string const& title, ::std::string const& author);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::ScriptModuleMinecraft::ScriptInvalidItemStackError,
+        ::ScriptModuleMinecraft::ScriptBookError>
+    _signBook(::std::string const& title, ::std::string const& author);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
     MCNAPI static ::std::string const& getTypeName();
     // NOLINTEND
@@ -77,7 +129,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
     // NOLINTEND
 
 public:
@@ -85,7 +140,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

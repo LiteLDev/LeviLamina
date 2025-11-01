@@ -14,5 +14,4 @@ public:
     srtp_kdf_t& operator=(srtp_kdf_t const&);
     srtp_kdf_t(srtp_kdf_t const&);
     srtp_kdf_t();
-
 };

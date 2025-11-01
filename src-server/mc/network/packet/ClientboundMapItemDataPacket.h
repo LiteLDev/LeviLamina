@@ -8,7 +8,7 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/saveddata/maps/MapItemTrackedActor.h"
 
 // auto generated forward declare list
@@ -27,28 +27,28 @@ public:
     // ClientboundMapItemDataPacket inner types define
     enum class Type : int {
         // bitfield representation
-        Invalid = 0,
-        TextureUpdate = 1 << 1,
+        Invalid          = 0,
+        TextureUpdate    = 1 << 1,
         DecorationUpdate = 1 << 2,
-        Creation = 1 << 3,
+        Creation         = 1 << 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> mMapIds;
-    ::ll::TypedStorage<1, 1, char> mScale;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>>                    mMapIds;
+    ::ll::TypedStorage<1, 1, char>                                               mScale;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::MapDecoration>>> mDecorations;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MapItemTrackedActor::UniqueId>> mUniqueIds;
-    ::ll::TypedStorage<4, 4, int> mStartX;
-    ::ll::TypedStorage<4, 4, int> mStartY;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mMapOrigin;
-    ::ll::TypedStorage<1, 1, uchar> mDimension;
-    ::ll::TypedStorage<4, 4, int> mWidth;
-    ::ll::TypedStorage<4, 4, int> mHeight;
-    ::ll::TypedStorage<4, 4, ::ClientboundMapItemDataPacket::Type> mType;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint>> mMapPixels;
-    ::ll::TypedStorage<1, 1, bool> mLocked;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MapItemTrackedActor::UniqueId>>    mUniqueIds;
+    ::ll::TypedStorage<4, 4, int>                                                mStartX;
+    ::ll::TypedStorage<4, 4, int>                                                mStartY;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                        mMapOrigin;
+    ::ll::TypedStorage<1, 1, uchar>                                              mDimension;
+    ::ll::TypedStorage<4, 4, int>                                                mWidth;
+    ::ll::TypedStorage<4, 4, int>                                                mHeight;
+    ::ll::TypedStorage<4, 4, ::ClientboundMapItemDataPacket::Type>               mType;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>                               mMapPixels;
+    ::ll::TypedStorage<1, 1, bool>                                               mLocked;
     // NOLINTEND
 
 public:
@@ -77,7 +77,20 @@ public:
 
     MCAPI ClientboundMapItemDataPacket(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
 
-    MCAPI ClientboundMapItemDataPacket(::ActorUniqueID mapId, schar scale, ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>> const& decorations, ::buffer_span<uint> mapColors, int startX, int startY, int width, int height, ::DimensionType dimension, bool isLocked, ::BlockPos const& mapOrigin);
+    MCAPI ClientboundMapItemDataPacket(
+        ::ActorUniqueID mapId,
+        schar           scale,
+        ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>> const&
+                            decorations,
+        ::buffer_span<uint> mapColors,
+        int                 startX,
+        int                 startY,
+        int                 width,
+        int                 height,
+        ::DimensionType     dimension,
+        bool                isLocked,
+        ::BlockPos const&   mapOrigin
+    );
 
     MCAPI bool isOfType(::ClientboundMapItemDataPacket::Type type) const;
     // NOLINTEND
@@ -89,7 +102,20 @@ public:
 
     MCAPI void* $ctor(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
 
-    MCAPI void* $ctor(::ActorUniqueID mapId, schar scale, ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>> const& decorations, ::buffer_span<uint> mapColors, int startX, int startY, int width, int height, ::DimensionType dimension, bool isLocked, ::BlockPos const& mapOrigin);
+    MCAPI void* $ctor(
+        ::ActorUniqueID mapId,
+        schar           scale,
+        ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>> const&
+                            decorations,
+        ::buffer_span<uint> mapColors,
+        int                 startX,
+        int                 startY,
+        int                 width,
+        int                 height,
+        ::DimensionType     dimension,
+        bool                isLocked,
+        ::BlockPos const&   mapOrigin
+    );
     // NOLINTEND
 
 public:
@@ -115,5 +141,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

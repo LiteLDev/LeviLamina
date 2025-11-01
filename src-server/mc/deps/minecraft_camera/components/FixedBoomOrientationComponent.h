@@ -16,7 +16,6 @@ public:
     FixedBoomOrientationComponent& operator=(FixedBoomOrientationComponent const&);
     FixedBoomOrientationComponent(FixedBoomOrientationComponent const&);
     FixedBoomOrientationComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

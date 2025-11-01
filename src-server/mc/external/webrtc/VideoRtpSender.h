@@ -63,19 +63,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VideoRtpSender(::rtc::Thread* worker_thread, ::std::string const& id, ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer);
+    MCNAPI VideoRtpSender(
+        ::rtc::Thread*                               worker_thread,
+        ::std::string const&                         id,
+        ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::VideoRtpSender> Create(::rtc::Thread* worker_thread, ::std::string const& id, ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::VideoRtpSender> Create(
+        ::rtc::Thread*                               worker_thread,
+        ::std::string const&                         id,
+        ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::Thread* worker_thread, ::std::string const& id, ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer);
+    MCNAPI void* $ctor(
+        ::rtc::Thread*                               worker_thread,
+        ::std::string const&                         id,
+        ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
+    );
     // NOLINTEND
 
 public:
@@ -111,7 +123,6 @@ public:
 
     MCNAPI static void** $vftableForRtpSenderInternal();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

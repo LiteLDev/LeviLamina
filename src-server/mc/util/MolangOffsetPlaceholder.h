@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 48, ::HashedString> mName;
-    ::ll::TypedStorage<8, 8, uint64> mResourceOffset;
+    ::ll::TypedStorage<8, 8, uint64>          mResourceOffset;
     // NOLINTEND
 
 public:
@@ -24,5 +24,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::MolangOffsetPlaceholder& operator=(::MolangOffsetPlaceholder&&);
     // NOLINTEND
-
 };

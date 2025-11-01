@@ -17,7 +17,7 @@ public:
     // clang-format off
     struct AllowListEntryMatcher;
     // clang-format on
-    
+
     // AllowList inner types define
     struct AllowListEntryMatcher {
     public:
@@ -26,27 +26,26 @@ public:
         ::ll::UntypedStorage<8, 32> mUnkac9474;
         ::ll::UntypedStorage<8, 32> mUnk2ba5a7;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         AllowListEntryMatcher& operator=(AllowListEntryMatcher const&);
         AllowListEntryMatcher(AllowListEntryMatcher const&);
         AllowListEntryMatcher();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI AllowListEntryMatcher(::std::string name, ::std::string xuid);
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::std::string name, ::std::string xuid);
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -94,5 +93,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

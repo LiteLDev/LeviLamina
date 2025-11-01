@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class NeighborAwareBlockUpdateType : int {
-    None = 0,
+    None                 = 0,
     WallBlockConnections = 1,
-    ConnectionUpgrade = 2,
+    ConnectionUpgrade    = 2,
 };

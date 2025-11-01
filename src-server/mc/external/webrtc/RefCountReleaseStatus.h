@@ -5,7 +5,7 @@
 namespace webrtc {
 
 enum class RefCountReleaseStatus : int {
-    KDroppedLastRef = 0,
+    KDroppedLastRef    = 0,
     KOtherRefsRemained = 1,
 };
 

@@ -4,7 +4,6 @@
 
 namespace webrtc::field_trial {
 
-class FieldTrialsAllowedInScopeForTesting {
-};
+class FieldTrialsAllowedInScopeForTesting {};
 
-}
+} // namespace webrtc::field_trial

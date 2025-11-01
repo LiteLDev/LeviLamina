@@ -32,7 +32,14 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createAgentAbilitiesSyncSystem();
 
-    MCNAPI static void tick(::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::PlayerComponent, ::Include<::ActorTickedComponent const, ::AbilitiesDirtyComponent>> view, ::ViewT<::StrictEntityContext, ::LevelComponent> levelView, ::EntityModifier<::AbilitiesDirtyComponent> modifier);
+    MCNAPI static void tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::ActorOwnerComponent,
+            ::PlayerComponent,
+            ::Include<::ActorTickedComponent const, ::AbilitiesDirtyComponent>> view,
+        ::ViewT<::StrictEntityContext, ::LevelComponent>                        levelView,
+        ::EntityModifier<::AbilitiesDirtyComponent>                             modifier
+    );
     // NOLINTEND
-
 };

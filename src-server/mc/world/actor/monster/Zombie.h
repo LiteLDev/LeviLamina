@@ -21,13 +21,13 @@ class Zombie : public ::HumanoidMonster {
 public:
     // Zombie inner types define
     enum class ZombieType : int {
-        Default = 0,
-        Villager = 1,
-        Husk = 2,
+        Default   = 0,
+        Villager  = 1,
+        Husk      = 2,
         Pigzombie = 3,
-        Drowned = 4,
+        Drowned   = 4,
     };
-    
+
 public:
     // prevent constructor by default
     Zombie();
@@ -54,7 +54,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Zombie(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI Zombie(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCFOLD void setZombieType(::Zombie::ZombieType type);
     // NOLINTEND
@@ -70,7 +74,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -96,5 +104,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -15,9 +15,9 @@ struct ActorUseItemEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Actor&> mActor;
+    ::ll::TypedStorage<8, 8, ::Actor&>               mActor;
     ::ll::TypedStorage<8, 128, ::ItemInstance const> mItemUsed;
-    ::ll::TypedStorage<4, 4, ::ItemUseMethod> mItemUseMethod;
+    ::ll::TypedStorage<4, 4, ::ItemUseMethod>        mItemUseMethod;
     // NOLINTEND
 
 public:
@@ -44,5 +44,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

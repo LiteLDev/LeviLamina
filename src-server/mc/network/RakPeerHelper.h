@@ -18,7 +18,7 @@ public:
     // clang-format off
     class IPSupportInterface;
     // clang-format on
-    
+
     // RakPeerHelper inner types define
     class IPSupportInterface {
     public:
@@ -26,58 +26,57 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~IPSupportInterface();
-    
+
         // vIndex: 1
         virtual bool useIPv4Only() const = 0;
-    
+
         // vIndex: 2
         virtual bool useIPv6Only() const = 0;
-    
+
         // vIndex: 3
         virtual ushort getDefaultGamePort() const = 0;
-    
+
         // vIndex: 4
         virtual ushort getDefaultGamePortv6() const = 0;
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
-    
+
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
     enum class PeerPurpose : int {
-        Gameplay = 0,
+        Gameplay     = 0,
         LanDiscovery = 1,
-        Count = 2,
+        Count        = 2,
     };
-    
+
     enum class IPVersion : int {
-        IPv4 = 0,
-        IPv6 = 1,
+        IPv4  = 0,
+        IPv6  = 1,
         Count = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::RakNet::StartupResult> mResult;
-    ::ll::TypedStorage<4, 8, int[2]> mConnectionIndices;
-    ::ll::TypedStorage<2, 4, ushort[2]> mBoundPorts;
+    ::ll::TypedStorage<4, 4, ::RakNet::StartupResult>              mResult;
+    ::ll::TypedStorage<4, 8, int[2]>                               mConnectionIndices;
+    ::ll::TypedStorage<2, 4, ushort[2]>                            mBoundPorts;
     ::ll::TypedStorage<8, 8, ::RakPeerHelper::IPSupportInterface&> mIPSupportInterface;
     // NOLINTEND
 
@@ -92,9 +91,18 @@ public:
     // NOLINTBEGIN
     MCNAPI void LogIPSupport(::RakPeerHelper::PeerPurpose purpose);
 
-    MCNAPI ::RakNet::StartupResult _startupInternal(::gsl::not_null<::RakNet::RakPeerInterface*> peer, ::ConnectionDefinition const& definition, ::RakNet::SocketDescriptor* sockets, int& socketCount, int ipv6Index);
+    MCNAPI ::RakNet::StartupResult _startupInternal(
+        ::gsl::not_null<::RakNet::RakPeerInterface*> peer,
+        ::ConnectionDefinition const&                definition,
+        ::RakNet::SocketDescriptor*                  sockets,
+        int&                                         socketCount,
+        int                                          ipv6Index
+    );
 
-    MCNAPI ::RakNet::StartupResult peerStartup(::RakNet::RakPeerInterface* peerIn, ::ConnectionDefinition const& definition, ::RakPeerHelper::PeerPurpose purpose);
+    MCNAPI ::RakNet::StartupResult peerStartup(
+        ::RakNet::RakPeerInterface*   peerIn,
+        ::ConnectionDefinition const& definition,
+        ::RakPeerHelper::PeerPurpose  purpose
+    );
     // NOLINTEND
-
 };

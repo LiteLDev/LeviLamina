@@ -29,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::TimeDelta v);
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

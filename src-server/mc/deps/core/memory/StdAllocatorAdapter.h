@@ -4,8 +4,7 @@
 
 namespace Bedrock::Memory {
 
-template<typename T0>
-class StdAllocatorAdapter {
-};
+template <typename T0>
+class StdAllocatorAdapter {};
 
-}
+} // namespace Bedrock::Memory

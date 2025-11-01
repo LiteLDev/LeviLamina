@@ -35,7 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI bool set(::std::string_view str, bool copy);
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::JSONObject

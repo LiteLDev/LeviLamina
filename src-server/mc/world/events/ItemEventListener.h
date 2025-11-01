@@ -18,7 +18,7 @@ class ItemEventListener {
 public:
     // ItemEventListener inner types define
     using EventType = ::ItemNotificationEvent;
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,13 +32,16 @@ public:
     virtual ::EventResult onInventoryItemClosed();
 
     // vIndex: 3
-    virtual ::EventResult onItemTransferredFromContainer(::ItemStackBase const& item, ::std::string const& srcContainerName);
+    virtual ::EventResult
+    onItemTransferredFromContainer(::ItemStackBase const& item, ::std::string const& srcContainerName);
 
     // vIndex: 4
-    virtual ::EventResult onItemTransferredToContainer(::ItemStackBase const& item, ::std::string const& dstContainerName);
+    virtual ::EventResult
+    onItemTransferredToContainer(::ItemStackBase const& item, ::std::string const& dstContainerName);
 
     // vIndex: 5
-    virtual ::EventResult onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& containerName);
+    virtual ::EventResult
+    onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& containerName);
 
     // vIndex: 6
     virtual ::EventResult onInventoryLayoutSelected(int activeInventoryLayout, int activeInventoryLeftTabIndex);
@@ -50,7 +53,8 @@ public:
     virtual ::EventResult onRecipeSelected(::ItemStackBase const& item);
 
     // vIndex: 9
-    virtual ::EventResult onItemSmelted(::Player& player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem);
+    virtual ::EventResult
+    onItemSmelted(::Player& player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem);
 
     // vIndex: 10
     virtual ::EventResult onItemSpawningActor(::Actor const& spawningActor);
@@ -81,11 +85,14 @@ public:
 
     MCFOLD ::EventResult $onInventoryItemClosed();
 
-    MCFOLD ::EventResult $onItemTransferredFromContainer(::ItemStackBase const& item, ::std::string const& srcContainerName);
+    MCFOLD ::EventResult
+    $onItemTransferredFromContainer(::ItemStackBase const& item, ::std::string const& srcContainerName);
 
-    MCFOLD ::EventResult $onItemTransferredToContainer(::ItemStackBase const& item, ::std::string const& dstContainerName);
+    MCFOLD ::EventResult
+    $onItemTransferredToContainer(::ItemStackBase const& item, ::std::string const& dstContainerName);
 
-    MCFOLD ::EventResult $onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& containerName);
+    MCFOLD ::EventResult
+    $onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& containerName);
 
     MCFOLD ::EventResult $onInventoryLayoutSelected(int activeInventoryLayout, int activeInventoryLeftTabIndex);
 
@@ -93,7 +100,8 @@ public:
 
     MCFOLD ::EventResult $onRecipeSelected(::ItemStackBase const& item);
 
-    MCFOLD ::EventResult $onItemSmelted(::Player& player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem);
+    MCFOLD ::EventResult
+    $onItemSmelted(::Player& player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem);
 
     MCFOLD ::EventResult $onItemSpawningActor(::Actor const& spawningActor);
 
@@ -115,5 +123,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -9,7 +9,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk6323d8;
     ::ll::UntypedStorage<8, 64> mUnk208261;
     ::ll::UntypedStorage<8, 64> mUnk76d216;
-    ::ll::UntypedStorage<4, 8> mUnk4d3f52;
+    ::ll::UntypedStorage<4, 8>  mUnk4d3f52;
     ::ll::UntypedStorage<8, 32> mUnkff1c15;
     ::ll::UntypedStorage<8, 32> mUnkca201e;
     // NOLINTEND
@@ -39,5 +39,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

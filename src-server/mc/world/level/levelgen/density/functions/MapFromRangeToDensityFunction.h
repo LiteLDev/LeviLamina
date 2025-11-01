@@ -17,10 +17,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::DensityFunctionPtr const> mInput;
-    ::ll::TypedStorage<4, 4, float const> mFromMin;
-    ::ll::TypedStorage<4, 4, float const> mFromMax;
-    ::ll::TypedStorage<4, 4, float const> mToMin;
-    ::ll::TypedStorage<4, 4, float const> mToMax;
+    ::ll::TypedStorage<4, 4, float const>                 mFromMin;
+    ::ll::TypedStorage<4, 4, float const>                 mFromMax;
+    ::ll::TypedStorage<4, 4, float const>                 mToMin;
+    ::ll::TypedStorage<4, 4, float const>                 mToMax;
     // NOLINTEND
 
 public:
@@ -38,5 +38,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

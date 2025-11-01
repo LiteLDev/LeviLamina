@@ -20,7 +20,9 @@ public:
     virtual ~BrewingStandResultContainerValidation() /*override*/ = default;
 
     // vIndex: 2
-    virtual bool isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool) const /*override*/;
+    virtual bool
+    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool) const
+        /*override*/;
 
     // vIndex: 3
     virtual int getAvailableSetCount(int const slot, ::ItemStackBase const& item) const /*override*/;
@@ -32,13 +34,20 @@ public:
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
     // vIndex: 9
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+        /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool) const;
+    MCNAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const&,
+        int const,
+        ::ItemStackBase const& item,
+        int const,
+        bool
+    ) const;
 
     MCNAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 
@@ -54,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<2, 34> mUnkc9c1ec;
     ::ll::UntypedStorage<2, 34> mUnk3c5bca;
-    ::ll::UntypedStorage<1, 1> mUnk418dba;
+    ::ll::UntypedStorage<1, 1>  mUnk418dba;
     // NOLINTEND
 
 public:
@@ -18,7 +18,6 @@ public:
     VertexLayout& operator=(VertexLayout const&);
     VertexLayout(VertexLayout const&);
     VertexLayout();
-
 };
 
-}
+} // namespace mce

@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0>
-struct ScriptAfterEventMetadata {
-};
+template <typename T0>
+struct ScriptAfterEventMetadata {};
 
-}
+} // namespace ScriptModuleMinecraft

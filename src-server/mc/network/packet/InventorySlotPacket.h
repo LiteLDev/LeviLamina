@@ -21,10 +21,10 @@ class InventorySlotPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerID> mInventoryId;
-    ::ll::TypedStorage<4, 12, ::FullContainerName> mFullContainerName;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                 mInventoryId;
+    ::ll::TypedStorage<4, 12, ::FullContainerName>          mFullContainerName;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mStorageItem;
-    ::ll::TypedStorage<4, 4, uint> mSlot;
+    ::ll::TypedStorage<4, 4, uint>                          mSlot;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mItem;
     // NOLINTEND
 
@@ -86,5 +86,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

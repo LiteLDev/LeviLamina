@@ -19,7 +19,6 @@ public:
     LoggedIceCandidatePairEvent& operator=(LoggedIceCandidatePairEvent const&);
     LoggedIceCandidatePairEvent(LoggedIceCandidatePairEvent const&);
     LoggedIceCandidatePairEvent();
-
 };
 
-}
+} // namespace webrtc

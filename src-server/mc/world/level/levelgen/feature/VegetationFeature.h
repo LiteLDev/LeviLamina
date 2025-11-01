@@ -34,7 +34,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool placeBlock(::BlockSource& region, ::Block const& blockToPlace, ::BlockPos const& pos, ::Random& random);
+    MCAPI static bool
+    placeBlock(::BlockSource& region, ::Block const& blockToPlace, ::BlockPos const& pos, ::Random& random);
     // NOLINTEND
 
 public:
@@ -48,5 +49,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

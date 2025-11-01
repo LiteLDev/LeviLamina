@@ -4,7 +4,6 @@
 
 namespace astc_codec::base {
 
-struct NulloptT {
-};
+struct NulloptT {};
 
-}
+} // namespace astc_codec::base

@@ -13,7 +13,7 @@ class ScriptServerStateMonitor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7f133f;
+    ::ll::UntypedStorage<4, 4>  mUnk7f133f;
     ::ll::UntypedStorage<8, 16> mUnkccd0a1;
     ::ll::UntypedStorage<8, 16> mUnke8d94f;
     ::ll::UntypedStorage<8, 16> mUnk5bdafd;
@@ -74,7 +74,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

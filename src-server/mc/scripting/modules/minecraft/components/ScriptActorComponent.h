@@ -45,7 +45,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptActorComponent(::ScriptModuleMinecraft::ScriptActorComponent const&);
 
-    MCNAPI ScriptActorComponent(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& context, ::std::string const& id);
+    MCNAPI ScriptActorComponent(
+        ::WeakEntityRef const&                entity,
+        ::Scripting::WeakLifetimeScope const& context,
+        ::std::string const&                  id
+    );
 
     MCNAPI ::Scripting::Error _functionError(::std::string_view functionName) const;
 
@@ -57,7 +61,10 @@ public:
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> getEntityV1() const;
 
-    MCNAPI ::Scripting::Result<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>, ::ScriptModuleMinecraft::ScriptInvalidActorError> getEntityV2() const;
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getEntityV2() const;
     // NOLINTEND
 
 public:
@@ -73,7 +80,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorComponent const&);
 
-    MCNAPI void* $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& context, ::std::string const& id);
+    MCNAPI void*
+    $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& context, ::std::string const& id);
     // NOLINTEND
 
 public:
@@ -87,7 +95,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

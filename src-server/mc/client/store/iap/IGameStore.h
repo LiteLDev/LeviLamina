@@ -2,5 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class IGameStore {
-};
+class IGameStore {};

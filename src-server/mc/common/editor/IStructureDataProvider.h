@@ -22,7 +22,12 @@ public:
     virtual bool hasStructureData(::mce::UUID const&) const = 0;
 
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<::std::variant<::StructureTemplate const*, ::Editor::EditorStructureTemplate const*, ::std::shared_ptr<::StructureTemplate const>, ::std::shared_ptr<::Editor::EditorStructureTemplate const>>> getStructureData(::mce::UUID const&) const = 0;
+    virtual ::Scripting::Result_deprecated<::std::variant<
+        ::StructureTemplate const*,
+        ::Editor::EditorStructureTemplate const*,
+        ::std::shared_ptr<::StructureTemplate const>,
+        ::std::shared_ptr<::Editor::EditorStructureTemplate const>>>
+    getStructureData(::mce::UUID const&) const = 0;
     // NOLINTEND
 
 public:
@@ -30,7 +35,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::StructureDataCache

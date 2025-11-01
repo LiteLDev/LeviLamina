@@ -17,9 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
-    ::ll::TypedStorage<4, 4, ::SpawnPositionType> mSpawnPosType;
-    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
+    ::ll::TypedStorage<4, 4, ::SpawnPositionType>     mSpawnPosType;
+    ::ll::TypedStorage<4, 4, ::DimensionType>         mDimensionType;
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mSpawnBlockPos;
     // NOLINTEND
-
 };

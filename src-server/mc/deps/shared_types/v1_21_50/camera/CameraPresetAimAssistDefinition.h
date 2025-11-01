@@ -19,9 +19,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk3c4e65;
-    ::ll::UntypedStorage<1, 2> mUnk60c5a8;
+    ::ll::UntypedStorage<1, 2>  mUnk60c5a8;
     ::ll::UntypedStorage<4, 12> mUnk89b38a;
-    ::ll::UntypedStorage<4, 8> mUnk39024b;
+    ::ll::UntypedStorage<4, 8>  mUnk39024b;
     // NOLINTEND
 
 public:
@@ -34,9 +34,11 @@ public:
     // NOLINTBEGIN
     MCNAPI CameraPresetAimAssistDefinition(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition& operator=(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
+    MCNAPI ::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&
+    operator=(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition& operator=(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition const&);
+    MCNAPI ::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&
+    operator=(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition const&);
 
     MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition const& rhs) const;
 
@@ -50,7 +52,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition>
+    read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
@@ -64,7 +67,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_50

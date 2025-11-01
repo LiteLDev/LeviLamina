@@ -16,9 +16,9 @@ struct EditorBlockPalette {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk79915c;
+    ::ll::UntypedStorage<8, 48>  mUnk79915c;
     ::ll::UntypedStorage<8, 648> mUnkeae374;
-    ::ll::UntypedStorage<8, 40> mUnk503dde;
+    ::ll::UntypedStorage<8, 40>  mUnk503dde;
     // NOLINTEND
 
 public:
@@ -30,7 +30,11 @@ public:
     // NOLINTBEGIN
     MCNAPI EditorBlockPalette(::Editor::EditorBlockPalette const&);
 
-    MCNAPI EditorBlockPalette(::HashedString id, ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9> items, ::std::optional<::std::string> displayName);
+    MCNAPI EditorBlockPalette(
+        ::HashedString                                                                                           id,
+        ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9> items,
+        ::std::optional<::std::string> displayName
+    );
 
     MCNAPI ::Editor::EditorBlockPalette& operator=(::Editor::EditorBlockPalette&&);
 
@@ -60,7 +64,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::EditorBlockPalette const&);
 
-    MCNAPI void* $ctor(::HashedString id, ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9> items, ::std::optional<::std::string> displayName);
+    MCNAPI void* $ctor(
+        ::HashedString                                                                                           id,
+        ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9> items,
+        ::std::optional<::std::string> displayName
+    );
     // NOLINTEND
 
 public:
@@ -68,7 +76,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

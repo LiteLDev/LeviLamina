@@ -6,7 +6,7 @@ namespace Bedrock::Application {
 
 enum class ThreadOwnerBehavior : int {
     Assert = 0,
-    Log = 1,
+    Log    = 1,
 };
 
 }

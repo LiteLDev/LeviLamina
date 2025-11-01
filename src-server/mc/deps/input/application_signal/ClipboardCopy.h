@@ -12,7 +12,7 @@ namespace ApplicationSignal { struct ClipboardCopyData; }
 
 namespace ApplicationSignal {
 
-class ClipboardCopy : public ::Bedrock::Signal<::ApplicationSignal::ClipboardCopy, ::ApplicationSignal::ClipboardCopyData> {
-};
+class ClipboardCopy
+: public ::Bedrock::Signal<::ApplicationSignal::ClipboardCopy, ::ApplicationSignal::ClipboardCopyData> {};
 
-}
+} // namespace ApplicationSignal

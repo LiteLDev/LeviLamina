@@ -4,8 +4,7 @@
 
 namespace Scripting {
 
-template<typename T0>
-class WeakTypedObjectHandle {
-};
+template <typename T0>
+class WeakTypedObjectHandle {};
 
-}
+} // namespace Scripting

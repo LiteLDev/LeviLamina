@@ -15,10 +15,10 @@ public:
     // TaskQueueFactory inner types define
     enum class Priority : int {
         Normal = 0,
-        High = 1,
-        Low = 2,
+        High   = 1,
+        Low    = 2,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -26,7 +26,8 @@ public:
     virtual ~TaskQueueFactory() = default;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::webrtc::TaskQueueBase, ::webrtc::TaskQueueDeleter> CreateTaskQueue(::std::string_view, ::webrtc::TaskQueueFactory::Priority) const = 0;
+    virtual ::std::unique_ptr<::webrtc::TaskQueueBase, ::webrtc::TaskQueueDeleter>
+        CreateTaskQueue(::std::string_view, ::webrtc::TaskQueueFactory::Priority) const = 0;
     // NOLINTEND
 
 public:
@@ -34,7 +35,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

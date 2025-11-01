@@ -22,5 +22,4 @@ public:
 
     MCAPI static ::std::weak_ptr<::BlockTypeRegistry>& mThreadLocalRegistry();
     // NOLINTEND
-
 };

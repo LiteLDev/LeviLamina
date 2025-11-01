@@ -31,7 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerPlaceBlockAfterEvent(::Player& player, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptPlayerPlaceBlockAfterEvent(
+        ::Player&                             player,
+        ::BlockPos const&                     pos,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 
 public:
@@ -45,7 +49,6 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Player& player, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

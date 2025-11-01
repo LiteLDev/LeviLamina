@@ -4,8 +4,7 @@
 
 namespace DataStructures {
 
-template<typename T0>
-class MemoryPool {
-};
+template <typename T0>
+class MemoryPool {};
 
-}
+} // namespace DataStructures

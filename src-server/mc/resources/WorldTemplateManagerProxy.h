@@ -14,5 +14,4 @@ public:
     WorldTemplateManagerProxy& operator=(WorldTemplateManagerProxy const&);
     WorldTemplateManagerProxy(WorldTemplateManagerProxy const&);
     WorldTemplateManagerProxy();
-
 };

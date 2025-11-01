@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/util/NewType.h"
 
-struct NewBlockID : public ::NewType<ushort> {
-};
+struct NewBlockID : public ::NewType<ushort> {};

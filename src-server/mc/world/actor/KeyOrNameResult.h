@@ -7,14 +7,14 @@ public:
     // KeyOrNameResult inner types define
     enum class ResultType : int {
         LocalizationKey = 0,
-        Name = 1,
+        Name            = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk147683;
-    ::ll::UntypedStorage<4, 4> mUnk5fbc85;
+    ::ll::UntypedStorage<4, 4>  mUnk5fbc85;
     // NOLINTEND
 
 public:
@@ -34,5 +34,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

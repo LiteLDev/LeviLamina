@@ -7,11 +7,11 @@
 #include "mc/dataloadhelper/DataLoadHelperType.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/versionless/util/Mirror.h"
-#include "mc/versionless/util/Rotation.h"
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,13 +23,13 @@ class StructureDataLoadHelper : public ::DataLoadHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::BlockPos> mStructurePlacementLocation;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mStructureWorldOrigin;
-    ::ll::TypedStorage<4, 12, ::Vec3> mPivot;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOwner;
-    ::ll::TypedStorage<1, 1, ::Rotation> mRotation;
-    ::ll::TypedStorage<1, 1, ::Mirror> mMirror;
-    ::ll::TypedStorage<8, 8, ::Level*> mLevel;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                             mStructurePlacementLocation;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                             mStructureWorldOrigin;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                 mPivot;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                         mOwner;
+    ::ll::TypedStorage<1, 1, ::Rotation>                                              mRotation;
+    ::ll::TypedStorage<1, 1, ::Mirror>                                                mMirror;
+    ::ll::TypedStorage<8, 8, ::Level*>                                                mLevel;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::ActorUniqueID>> mOldIDToNewID;
     // NOLINTEND
 
@@ -83,7 +83,10 @@ public:
     virtual ::ActorUniqueID loadOwnerID(::ActorUniqueID id) /*override*/;
 
     // vIndex: 15
-    virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry, ::std::string const& componentName) /*override*/;
+    virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
+        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
+        ::std::string const&                                                                    componentName
+    ) /*override*/;
 
     // vIndex: 17
     virtual bool shouldResetTime() /*override*/;
@@ -101,13 +104,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureDataLoadHelper(::BlockPos const& structurePlacementLocation, ::BlockPos const& structureWorldOrigin, ::Vec3 const& rotationPivot, ::ActorUniqueID ownerID, ::Rotation rotation, ::Mirror mirror, ::Level& level);
+    MCNAPI StructureDataLoadHelper(
+        ::BlockPos const& structurePlacementLocation,
+        ::BlockPos const& structureWorldOrigin,
+        ::Vec3 const&     rotationPivot,
+        ::ActorUniqueID   ownerID,
+        ::Rotation        rotation,
+        ::Mirror          mirror,
+        ::Level&          level
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& structurePlacementLocation, ::BlockPos const& structureWorldOrigin, ::Vec3 const& rotationPivot, ::ActorUniqueID ownerID, ::Rotation rotation, ::Mirror mirror, ::Level& level);
+    MCNAPI void* $ctor(
+        ::BlockPos const& structurePlacementLocation,
+        ::BlockPos const& structureWorldOrigin,
+        ::Vec3 const&     rotationPivot,
+        ::ActorUniqueID   ownerID,
+        ::Rotation        rotation,
+        ::Mirror          mirror,
+        ::Level&          level
+    );
     // NOLINTEND
 
 public:
@@ -147,7 +166,10 @@ public:
 
     MCNAPI ::ActorUniqueID $loadOwnerID(::ActorUniqueID id);
 
-    MCNAPI ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry, ::std::string const& componentName);
+    MCNAPI ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(
+        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
+        ::std::string const&                                                                    componentName
+    );
 
     MCNAPI bool $shouldResetTime();
 
@@ -161,5 +183,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

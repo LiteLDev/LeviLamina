@@ -19,13 +19,13 @@ public:
     // NOLINTBEGIN
     MCNAPI ::webrtc::RTCErrorOr<::cricket::RidDescription> DeserializeRidDescription(::std::string_view string) const;
 
-    MCNAPI ::webrtc::RTCErrorOr<::cricket::SimulcastDescription> DeserializeSimulcastDescription(::std::string_view string) const;
+    MCNAPI ::webrtc::RTCErrorOr<::cricket::SimulcastDescription>
+    DeserializeSimulcastDescription(::std::string_view string) const;
 
     MCNAPI ::std::string SerializeRidDescription(::cricket::RidDescription const& rid_description) const;
 
     MCNAPI ::std::string SerializeSimulcastDescription(::cricket::SimulcastDescription const& simulcast) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

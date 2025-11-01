@@ -17,8 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ushort const> mInput;
-    ::ll::TypedStorage<4, 4, float const> mMin;
-    ::ll::TypedStorage<4, 4, float const> mMax;
+    ::ll::TypedStorage<4, 4, float const>  mMin;
+    ::ll::TypedStorage<4, 4, float const>  mMax;
     // NOLINTEND
 
 public:
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

@@ -21,7 +21,11 @@ struct ScriptPlayerInteractWithBlockBeforeEvent : public ::ScriptModuleMinecraft
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mItemStack;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+                                   mItemStack;
     ::ll::TypedStorage<1, 1, bool> mCancel;
     // NOLINTEND
 
@@ -33,11 +37,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent const&);
+    MCAPI
+    ScriptPlayerInteractWithBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent const&);
 
     MCAPI ScriptPlayerInteractWithBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
 
-    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(::Player& player, ::PlayerInteractWithBlockBeforeEvent const& eventData, ::Scripting::WeakLifetimeScope& scope);
+    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(
+        ::Player&                                   player,
+        ::PlayerInteractWithBlockBeforeEvent const& eventData,
+        ::Scripting::WeakLifetimeScope&             scope
+    );
     // NOLINTEND
 
 public:
@@ -53,9 +62,12 @@ public:
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
 
-    MCAPI void* $ctor(::Player& player, ::PlayerInteractWithBlockBeforeEvent const& eventData, ::Scripting::WeakLifetimeScope& scope);
+    MCAPI void* $ctor(
+        ::Player&                                   player,
+        ::PlayerInteractWithBlockBeforeEvent const& eventData,
+        ::Scripting::WeakLifetimeScope&             scope
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

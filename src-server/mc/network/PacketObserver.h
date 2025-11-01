@@ -17,7 +17,7 @@ public:
     // clang-format off
     struct PacketStats;
     // clang-format on
-    
+
     // PacketObserver inner types define
     struct PacketStats {
     public:
@@ -30,15 +30,14 @@ public:
         ::ll::UntypedStorage<4, 4> mUnkf9db13;
         ::ll::UntypedStorage<4, 4> mUnkc40279;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PacketStats& operator=(PacketStats const&);
         PacketStats(PacketStats const&);
         PacketStats();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -98,5 +97,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

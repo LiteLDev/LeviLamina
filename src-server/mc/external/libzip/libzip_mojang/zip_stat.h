@@ -23,5 +23,4 @@ public:
     zip_stat& operator=(zip_stat const&);
     zip_stat(zip_stat const&);
     zip_stat();
-
 };

@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkcab9bf;
-    ::ll::UntypedStorage<1, 1> mUnk38a779;
+    ::ll::UntypedStorage<1, 1>  mUnk38a779;
     // NOLINTEND
 
 public:
@@ -41,11 +41,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::rtc::PlatformThread SpawnDetached(::std::function<void()> thread_function, ::std::string_view name, ::rtc::ThreadAttributes attributes);
+    MCNAPI static ::rtc::PlatformThread
+    SpawnDetached(::std::function<void()> thread_function, ::std::string_view name, ::rtc::ThreadAttributes attributes);
 
-    MCNAPI static ::rtc::PlatformThread SpawnJoinable(::std::function<void()> thread_function, ::std::string_view name, ::rtc::ThreadAttributes attributes);
+    MCNAPI static ::rtc::PlatformThread
+    SpawnJoinable(::std::function<void()> thread_function, ::std::string_view name, ::rtc::ThreadAttributes attributes);
 
-    MCNAPI static ::rtc::PlatformThread SpawnThread(::std::function<void()> thread_function, ::std::string_view name, ::rtc::ThreadAttributes attributes, bool joinable);
+    MCNAPI static ::rtc::PlatformThread SpawnThread(
+        ::std::function<void()> thread_function,
+        ::std::string_view      name,
+        ::rtc::ThreadAttributes attributes,
+        bool                    joinable
+    );
     // NOLINTEND
 
 public:
@@ -65,7 +72,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

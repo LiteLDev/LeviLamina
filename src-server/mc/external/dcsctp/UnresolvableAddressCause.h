@@ -13,7 +13,8 @@ namespace dcsctp { struct UnresolvableAddressCauseConfig; }
 
 namespace dcsctp {
 
-class UnresolvableAddressCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::UnresolvableAddressCauseConfig> {
+class UnresolvableAddressCause : public ::dcsctp::Parameter,
+                                 public ::dcsctp::TLVTrait<::dcsctp::UnresolvableAddressCauseConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,7 +59,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

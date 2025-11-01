@@ -23,7 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::InventorySource, ::std::vector<::InventoryAction>>> mActions;
-    ::ll::TypedStorage<8, 24, ::std::vector<::InventoryTransactionItemGroup>> mContents;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InventoryTransactionItemGroup>>                            mContents;
     // NOLINTEND
 
 public:
@@ -64,7 +64,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::InventoryTransactionError, ::std::string> const& inventoryTransactionErrorMap();
+    MCAPI static ::BidirectionalUnorderedMap<::InventoryTransactionError, ::std::string> const&
+    inventoryTransactionErrorMap();
     // NOLINTEND
 
 public:
@@ -78,5 +79,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

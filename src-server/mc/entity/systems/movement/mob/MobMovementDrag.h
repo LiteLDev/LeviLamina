@@ -25,7 +25,15 @@ MCNAPI void forLiquidDragSystems(::std::function<void(::TickingSystemWithInfo&&)
 
 MCNAPI void forNormalDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCNAPI void tickApplyWaterDrag(::entt::type_list<::Include<::WaterTravelFlagComponent>>, ::Optional<::OnGroundFlagComponent const> onGroundFlag, ::Optional<::WaterMovementComponent const> waterMovement, ::ActorDataFlagComponent const& actorDataFlagComponent, ::SwimSpeedMultiplierComponent const& swimSpeedMultiplierComponent, ::WaterWalkSpeedEnchantComponent const& waterWalkSpeedEnchantComponent, ::StateVectorComponent& stateVectorComponent);
+MCNAPI void tickApplyWaterDrag(
+    ::entt::type_list<::Include<::WaterTravelFlagComponent>>,
+    ::Optional<::OnGroundFlagComponent const>  onGroundFlag,
+    ::Optional<::WaterMovementComponent const> waterMovement,
+    ::ActorDataFlagComponent const&            actorDataFlagComponent,
+    ::SwimSpeedMultiplierComponent const&      swimSpeedMultiplierComponent,
+    ::WaterWalkSpeedEnchantComponent const&    waterWalkSpeedEnchantComponent,
+    ::StateVectorComponent&                    stateVectorComponent
+);
 // NOLINTEND
 
-}
+} // namespace MobMovementDrag

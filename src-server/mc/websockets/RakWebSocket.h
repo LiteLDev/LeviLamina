@@ -18,51 +18,51 @@ class RakWebSocket {
 public:
     // RakWebSocket inner types define
     enum class PacketDirection : int {
-        Inward = 1,
-        Outward = 2,
+        Inward   = 1,
+        Outward  = 2,
         Bothways = 3,
     };
-    
+
     enum class ConnectionState : int {
-        None = 0,
-        CloseHandshake = 1,
-        Starting = 2,
-        Connecting = 3,
-        OpenHandshakeInit = 4,
+        None               = 0,
+        CloseHandshake     = 1,
+        Starting           = 2,
+        Connecting         = 3,
+        OpenHandshakeInit  = 4,
         OpenHandshakeAwait = 5,
-        OpenAndProcessing = 6,
+        OpenAndProcessing  = 6,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8dc180;
+    ::ll::UntypedStorage<8, 8>   mUnk8dc180;
     ::ll::UntypedStorage<8, 136> mUnk33094b;
     ::ll::UntypedStorage<8, 288> mUnkf81a14;
-    ::ll::UntypedStorage<8, 32> mUnk9fda3d;
-    ::ll::UntypedStorage<2, 2> mUnkd89728;
-    ::ll::UntypedStorage<1, 1> mUnk21496a;
-    ::ll::UntypedStorage<4, 4> mUnk353334;
+    ::ll::UntypedStorage<8, 32>  mUnk9fda3d;
+    ::ll::UntypedStorage<2, 2>   mUnkd89728;
+    ::ll::UntypedStorage<1, 1>   mUnk21496a;
+    ::ll::UntypedStorage<4, 4>   mUnk353334;
     ::ll::UntypedStorage<8, 104> mUnk36f6f3;
-    ::ll::UntypedStorage<8, 32> mUnk3e1e17;
-    ::ll::UntypedStorage<1, 1> mUnkecfccb;
-    ::ll::UntypedStorage<8, 64> mUnkbc67d8;
-    ::ll::UntypedStorage<8, 64> mUnkb91861;
-    ::ll::UntypedStorage<8, 64> mUnk1ffa0d;
-    ::ll::UntypedStorage<8, 32> mUnkd9cf46;
-    ::ll::UntypedStorage<8, 32> mUnk9c97f4;
-    ::ll::UntypedStorage<8, 32> mUnke28242;
-    ::ll::UntypedStorage<8, 32> mUnkeb54d8;
-    ::ll::UntypedStorage<8, 32> mUnk4a88f7;
-    ::ll::UntypedStorage<2, 2> mUnkc7a25d;
-    ::ll::UntypedStorage<1, 1> mUnk67328e;
-    ::ll::UntypedStorage<8, 32> mUnk60a8e6;
-    ::ll::UntypedStorage<8, 32> mUnka50af4;
-    ::ll::UntypedStorage<8, 32> mUnkb0ccf9;
+    ::ll::UntypedStorage<8, 32>  mUnk3e1e17;
+    ::ll::UntypedStorage<1, 1>   mUnkecfccb;
+    ::ll::UntypedStorage<8, 64>  mUnkbc67d8;
+    ::ll::UntypedStorage<8, 64>  mUnkb91861;
+    ::ll::UntypedStorage<8, 64>  mUnk1ffa0d;
+    ::ll::UntypedStorage<8, 32>  mUnkd9cf46;
+    ::ll::UntypedStorage<8, 32>  mUnk9c97f4;
+    ::ll::UntypedStorage<8, 32>  mUnke28242;
+    ::ll::UntypedStorage<8, 32>  mUnkeb54d8;
+    ::ll::UntypedStorage<8, 32>  mUnk4a88f7;
+    ::ll::UntypedStorage<2, 2>   mUnkc7a25d;
+    ::ll::UntypedStorage<1, 1>   mUnk67328e;
+    ::ll::UntypedStorage<8, 32>  mUnk60a8e6;
+    ::ll::UntypedStorage<8, 32>  mUnka50af4;
+    ::ll::UntypedStorage<8, 32>  mUnkb0ccf9;
     ::ll::UntypedStorage<8, 128> mUnk6c717f;
-    ::ll::UntypedStorage<8, 8> mUnk5f029b;
-    ::ll::UntypedStorage<8, 24> mUnk9ddaab;
-    ::ll::UntypedStorage<4, 4> mUnk8a7ba4;
+    ::ll::UntypedStorage<8, 8>   mUnk5f029b;
+    ::ll::UntypedStorage<8, 24>  mUnk9ddaab;
+    ::ll::UntypedStorage<4, 4>   mUnk8a7ba4;
     // NOLINTEND
 
 public:
@@ -122,7 +122,8 @@ public:
 
     MCNAPI void _processDataFrames(::RakNet::BitStream& newIncoming);
 
-    MCNAPI bool _processPacket(::std::function<void(::RakNet::BitStream&)> const& processStep, bool acceptNewConnection);
+    MCNAPI bool
+    _processPacket(::std::function<void(::RakNet::BitStream&)> const& processStep, bool acceptNewConnection);
 
     MCNAPI void _reset();
 
@@ -132,7 +133,8 @@ public:
 
     MCNAPI bool _sendNonControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);
 
-    MCNAPI void _splitWebSocketURI(::std::string const& uri, ::std::string& scheme, ::std::string& host, ::std::string& path);
+    MCNAPI void
+    _splitWebSocketURI(::std::string const& uri, ::std::string& scheme, ::std::string& host, ::std::string& path);
 
     MCNAPI void _subProcessHttpResponse(::RakNet::BitStream& newIncoming);
 
@@ -178,5 +180,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

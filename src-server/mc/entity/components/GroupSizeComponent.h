@@ -9,8 +9,7 @@ struct GroupSizeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mCount;
+    ::ll::TypedStorage<4, 4, int>    mCount;
     ::ll::TypedStorage<8, 8, ::Tick> mNextTick;
     // NOLINTEND
-
 };

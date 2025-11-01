@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class StreamIDTag {
-};
+class StreamIDTag {};
 
-}
+} // namespace dcsctp

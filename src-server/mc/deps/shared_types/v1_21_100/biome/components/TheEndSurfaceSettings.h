@@ -4,7 +4,6 @@
 
 namespace SharedTypes::v1_21_100::SurfaceBuilder {
 
-struct TheEndSurfaceSettings {
-};
+struct TheEndSurfaceSettings {};
 
-}
+} // namespace SharedTypes::v1_21_100::SurfaceBuilder

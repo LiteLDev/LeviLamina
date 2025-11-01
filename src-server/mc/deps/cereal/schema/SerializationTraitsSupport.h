@@ -24,7 +24,6 @@ public:
     // vIndex: 0
     virtual ~SerializationTraitsSupport() = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal

@@ -5,9 +5,9 @@
 namespace Editor::ScriptModule {
 
 enum class ScriptWidgetMouseButtonEventType : int {
-    Pressed = 0,
+    Pressed  = 0,
     Released = 1,
-    Drag = 2,
+    Drag     = 2,
 };
 
 }

@@ -32,7 +32,20 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo create();
 
-    MCNAPI static void tick(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::Optional<::VehicleComponent const>, ::StateVectorComponent const, ::ActorDataDirtyFlagsComponent, ::ActorDataJumpDurationComponent, ::JumpTicksComponent, ::MobJumpComponent> view, ::ViewT<::StrictEntityContext, ::Include<::ParrotFlagComponent>, ::PassengerComponent const> parrotPassengersView, ::EntityModifier<::ExitFromPassengerFlagComponent, ::StopRidingRequestComponent, ::MobIsJumpingFlagComponent> mod);
+    MCNAPI static void tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent>,
+            ::Optional<::VehicleComponent const>,
+            ::StateVectorComponent const,
+            ::ActorDataDirtyFlagsComponent,
+            ::ActorDataJumpDurationComponent,
+            ::JumpTicksComponent,
+            ::MobJumpComponent> view,
+        ::ViewT<::StrictEntityContext, ::Include<::ParrotFlagComponent>, ::PassengerComponent const>
+            parrotPassengersView,
+        ::EntityModifier<::ExitFromPassengerFlagComponent, ::StopRidingRequestComponent, ::MobIsJumpingFlagComponent>
+            mod
+    );
     // NOLINTEND
-
 };

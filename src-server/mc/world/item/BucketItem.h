@@ -51,10 +51,11 @@ public:
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 83
-    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
+    virtual void releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const /*override*/;
 
     // vIndex: 82
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const /*override*/;
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
+        /*override*/;
 
     // vIndex: 64
     virtual bool uniqueAuxValues() const /*override*/;
@@ -63,7 +64,8 @@ public:
     virtual bool isBucket() const /*override*/;
 
     // vIndex: 81
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+        /*override*/;
 
     // vIndex: 49
     virtual bool isLiquidClipItem() const /*override*/;
@@ -84,7 +86,9 @@ public:
     virtual bool isDestructive(int auxValue) const /*override*/;
 
     // vIndex: 123
-    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~BucketItem() /*override*/ = default;
@@ -93,9 +97,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canEmptyBucketIntoBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Block const& extraBlock, ::Actor const* placer) const;
+    MCAPI bool _canEmptyBucketIntoBlock(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Block const&    extraBlock,
+        ::Actor const*    placer
+    ) const;
 
-    MCAPI bool _emptyBucket(::BlockSource& region, ::Block const& contents, ::BlockPos const& pos, ::Actor* placer, ::ItemStack const& instance, uchar face) const;
+    MCAPI bool _emptyBucket(
+        ::BlockSource&     region,
+        ::Block const&     contents,
+        ::BlockPos const&  pos,
+        ::Actor*           placer,
+        ::ItemStack const& instance,
+        uchar              face
+    ) const;
 
     MCAPI bool _supportsEntityType(::ActorType const& entityType, ::HashedString& bucketType) const;
 
@@ -107,7 +124,12 @@ public:
 
     MCAPI void addBucketEntitySaveData(::Actor& entity, ::ItemStack& instance) const;
 
-    MCAPI bool readBucketEntitySaveData(::BlockSource& region, ::Actor* placer, ::BlockPos pos, ::ItemInstance const& instance) const;
+    MCAPI bool readBucketEntitySaveData(
+        ::BlockSource&        region,
+        ::Actor*              placer,
+        ::BlockPos            pos,
+        ::ItemInstance const& instance
+    ) const;
     // NOLINTEND
 
 public:
@@ -127,7 +149,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCFOLD void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCFOLD void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
 
     MCFOLD bool $uniqueAuxValues() const;
 
@@ -147,7 +169,8 @@ public:
 
     MCAPI bool $isDestructive(int auxValue) const;
 
-    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -155,5 +178,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

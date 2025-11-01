@@ -20,7 +20,7 @@ public:
     // clang-format off
     struct InitProxy;
     // clang-format on
-    
+
     // GameRuleCommand inner types define
     struct InitProxy {
     public:
@@ -28,25 +28,24 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk895cad;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         InitProxy& operator=(InitProxy const&);
         InitProxy(InitProxy const&);
         InitProxy();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk8beb94;
-    ::ll::UntypedStorage<4, 4> mUnk429d60;
-    ::ll::UntypedStorage<4, 4> mUnk4140a0;
-    ::ll::UntypedStorage<1, 1> mUnk7e7790;
-    ::ll::UntypedStorage<1, 1> mUnk4dbe3f;
-    ::ll::UntypedStorage<1, 1> mUnkf282fd;
-    ::ll::UntypedStorage<1, 1> mUnke07538;
+    ::ll::UntypedStorage<4, 4>  mUnk429d60;
+    ::ll::UntypedStorage<4, 4>  mUnk4140a0;
+    ::ll::UntypedStorage<1, 1>  mUnk7e7790;
+    ::ll::UntypedStorage<1, 1>  mUnk4dbe3f;
+    ::ll::UntypedStorage<1, 1>  mUnkf282fd;
+    ::ll::UntypedStorage<1, 1>  mUnke07538;
     // NOLINTEND
 
 public:
@@ -76,7 +75,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void createJsonIndex(::std::string const& ruleName, ::GameRule const& rule, ::Json::Value& json, ::std::string* value);
+    MCAPI static void
+    createJsonIndex(::std::string const& ruleName, ::GameRule const& rule, ::Json::Value& json, ::std::string* value);
 
     MCAPI static void setup(::CommandRegistry& registry, ::GameRuleCommand::InitProxy&& dependencies);
     // NOLINTEND
@@ -92,5 +92,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

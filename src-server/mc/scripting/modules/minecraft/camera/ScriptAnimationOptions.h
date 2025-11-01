@@ -13,7 +13,7 @@ struct ScriptAnimationOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb5e6ab;
+    ::ll::UntypedStorage<4, 4>  mUnkb5e6ab;
     ::ll::UntypedStorage<8, 48> mUnk7b3d05;
     // NOLINTEND
 
@@ -40,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

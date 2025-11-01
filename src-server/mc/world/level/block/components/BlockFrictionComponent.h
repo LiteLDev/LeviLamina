@@ -8,5 +8,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float> mFriction;
     // NOLINTEND
-
 };

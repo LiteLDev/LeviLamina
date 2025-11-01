@@ -19,7 +19,6 @@ public:
     ClampedNormalFloat& operator=(ClampedNormalFloat const&);
     ClampedNormalFloat(ClampedNormalFloat const&);
     ClampedNormalFloat();
-
 };
 
-}
+} // namespace ValueProviders

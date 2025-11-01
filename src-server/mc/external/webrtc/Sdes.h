@@ -19,41 +19,40 @@ public:
     // clang-format off
     struct Chunk;
     // clang-format on
-    
+
     // Sdes inner types define
     struct Chunk {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnka234ae;
+        ::ll::UntypedStorage<4, 4>  mUnka234ae;
         ::ll::UntypedStorage<8, 32> mUnk39b793;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Chunk& operator=(Chunk const&);
         Chunk(Chunk const&);
         Chunk();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Chunk();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnka6911a;
-    ::ll::UntypedStorage<8, 8> mUnk4e6e46;
+    ::ll::UntypedStorage<8, 8>  mUnk4e6e46;
     // NOLINTEND
 
 public:
@@ -71,7 +70,12 @@ public:
     virtual uint64 BlockLength() const /*override*/;
 
     // vIndex: 2
-    virtual bool Create(uchar* packet, uint64* index, uint64 max_length, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback) const /*override*/;
+    virtual bool Create(
+        uchar*                                                   packet,
+        uint64*                                                  index,
+        uint64                                                   max_length,
+        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -101,7 +105,12 @@ public:
     // NOLINTBEGIN
     MCNAPI uint64 $BlockLength() const;
 
-    MCNAPI bool $Create(uchar* packet, uint64* index, uint64 max_length, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback) const;
+    MCNAPI bool $Create(
+        uchar*                                                   packet,
+        uint64*                                                  index,
+        uint64                                                   max_length,
+        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
+    ) const;
     // NOLINTEND
 
 public:
@@ -109,7 +118,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc::rtcp

@@ -19,13 +19,14 @@ namespace Scripting { struct ClassBinding; }
 
 namespace Editor::ScriptModule {
 
-class ScriptIBlockPaletteItem : public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptIBlockPaletteItem> {
+class ScriptIBlockPaletteItem
+: public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptIBlockPaletteItem> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk7450d8;
     ::ll::UntypedStorage<8, 40> mUnk773ed5;
-    ::ll::UntypedStorage<4, 4> mUnkafc61f;
+    ::ll::UntypedStorage<4, 4>  mUnkafc61f;
     // NOLINTEND
 
 public:
@@ -40,16 +41,23 @@ public:
     virtual ~ScriptIBlockPaletteItem();
 
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<void> setBlock(::std::variant<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> setBlock(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const&
+    ) = 0;
 
     // vIndex: 2
-    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>> getBlock() const = 0;
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    getBlock() const = 0;
 
     // vIndex: 3
     virtual ::std::optional<::std::string> getDisplayName() const;
 
     // vIndex: 4
-    virtual ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> getServiceBlockPaletteItem() const = 0;
+    virtual ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
+    getServiceBlockPaletteItem() const = 0;
     // NOLINTEND
 
 public:
@@ -57,7 +65,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::ScriptModule::ScriptBlockPaletteItemType getType() const;
 
-    MCNAPI ::Editor::ScriptModule::ScriptIBlockPaletteItem& operator=(::Editor::ScriptModule::ScriptIBlockPaletteItem const&);
+    MCNAPI ::Editor::ScriptModule::ScriptIBlockPaletteItem&
+    operator=(::Editor::ScriptModule::ScriptIBlockPaletteItem const&);
     // NOLINTEND
 
 public:
@@ -83,7 +92,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

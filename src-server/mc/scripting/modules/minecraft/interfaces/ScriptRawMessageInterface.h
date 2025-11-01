@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk5071be;
     ::ll::UntypedStorage<8, 40> mUnkd71b92;
-    ::ll::UntypedStorage<8, 8> mUnk51e4bc;
+    ::ll::UntypedStorage<8, 8>  mUnk51e4bc;
     ::ll::UntypedStorage<8, 32> mUnkbb74af;
     ::ll::UntypedStorage<8, 88> mUnk52bfc9;
     // NOLINTEND
@@ -36,15 +36,19 @@ public:
 
     MCNAPI void buildJsonObject(::Json::Value& val) const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface& operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
+    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
+    operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface& operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface&& other);
+    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
+    operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface&& other);
 
     MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other) const;
 
-    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError> resolveAsJson(::Actor& recipient, ::CurrentCmdVersion commandVersion) const;
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
+    resolveAsJson(::Actor& recipient, ::CurrentCmdVersion commandVersion) const;
 
-    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError> resolveAsJsonString(::Actor& recipient, ::CurrentCmdVersion commandVersion) const;
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError>
+    resolveAsJsonString(::Actor& recipient, ::CurrentCmdVersion commandVersion) const;
 
     MCNAPI ::Json::Value toJson() const;
 
@@ -64,7 +68,10 @@ public:
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRawMessageInterface fromString(::std::string const& str);
 
-    MCNAPI static ::std::vector<::ScriptModuleMinecraft::ScriptRawMessageInterface> rawTextStringsToRawText(::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> const& rawTextWithString);
+    MCNAPI static ::std::vector<::ScriptModuleMinecraft::ScriptRawMessageInterface> rawTextStringsToRawText(
+        ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> const&
+            rawTextWithString
+    );
     // NOLINTEND
 
 public:
@@ -80,7 +87,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

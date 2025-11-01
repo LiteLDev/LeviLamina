@@ -47,7 +47,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AutonomousActorManager(::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry, ::Bedrock::NotNullNonOwnerPtr<::ActorManager> actorManager);
+    MCNAPI AutonomousActorManager(
+        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
+        ::Bedrock::NotNullNonOwnerPtr<::ActorManager>              actorManager
+    );
 
     MCNAPI void _moveActiveAutonomousActorEntityToInactive(::Actor& actor, ::LevelChunk& levelChunk);
 
@@ -57,7 +60,8 @@ public:
 
     MCNAPI void _saveAllAutonomousActors(::LevelStorage& levelStorage);
 
-    MCNAPI ::Actor* addAutonomousActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Actor*
+    addAutonomousActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
     MCNAPI void loadAutonomousActorsFromDisk(::LevelStorage& levelStorage, ::ActorFactory& actorFactory);
 
@@ -87,7 +91,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry, ::Bedrock::NotNullNonOwnerPtr<::ActorManager> actorManager);
+    MCNAPI void* $ctor(
+        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
+        ::Bedrock::NotNullNonOwnerPtr<::ActorManager>              actorManager
+    );
     // NOLINTEND
 
 public:
@@ -95,5 +102,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

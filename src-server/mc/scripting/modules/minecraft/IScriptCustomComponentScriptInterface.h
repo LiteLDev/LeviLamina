@@ -4,7 +4,6 @@
 
 namespace ScriptModuleMinecraft::CustomComponentEventHelpers {
 
-class IScriptCustomComponentScriptInterface {
-};
+class IScriptCustomComponentScriptInterface {};
 
-}
+} // namespace ScriptModuleMinecraft::CustomComponentEventHelpers

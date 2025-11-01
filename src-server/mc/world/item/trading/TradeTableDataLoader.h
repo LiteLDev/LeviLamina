@@ -20,7 +20,11 @@ class TradeTableDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::SharedTypes::v1_21_30::TradeTableData, ::BedrockLoadContext, nullptr_t>> mLoader;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::SlicedLoader<::SharedTypes::v1_21_30::TradeTableData, ::BedrockLoadContext, nullptr_t>>
+        mLoader;
     // NOLINTEND
 
 public:
@@ -30,9 +34,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeTableDataLoader(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCAPI TradeTableDataLoader(
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
 
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_30::TradeTableData> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_30::TradeTableData>
+    load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
     MCAPI ~TradeTableDataLoader();
     // NOLINTEND
@@ -48,5 +56,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

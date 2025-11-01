@@ -17,5 +17,4 @@ public:
     CrashDumpFrameDataArray& operator=(CrashDumpFrameDataArray const&);
     CrashDumpFrameDataArray(CrashDumpFrameDataArray const&);
     CrashDumpFrameDataArray();
-
 };

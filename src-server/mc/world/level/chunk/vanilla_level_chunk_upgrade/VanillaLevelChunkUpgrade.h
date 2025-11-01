@@ -40,7 +40,8 @@ MCAPI void fillNegativeSubChunksWithAir(::LevelChunk& lc, ::BlockSource& region)
 
 MCAPI void fillNegativeSubChunksWithGeneration(::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
-MCAPI void fillNegativeSubChunksWithGenerationOrAir(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::BlockSource& region);
+MCAPI void
+fillNegativeSubChunksWithGenerationOrAir(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::BlockSource& region);
 
 MCAPI void fixStemBlockStates(::BlockSource& region, ::BlockPos updatePos, ::Block const& block);
 
@@ -74,4 +75,4 @@ MCAPI ::std::vector<::std::string> const& V1_VILLAGER_BEHAVIORS();
 MCAPI ::std::vector<::std::string> const& V1_VILLAGER_CAREERS();
 // NOLINTEND
 
-}
+} // namespace VanillaLevelChunkUpgrade

@@ -20,14 +20,14 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk511710;
     ::ll::UntypedStorage<8, 32> mUnkede228;
     ::ll::UntypedStorage<4, 16> mUnk5533a3;
-    ::ll::UntypedStorage<4, 8> mUnkd60431;
-    ::ll::UntypedStorage<1, 1> mUnk42288f;
-    ::ll::UntypedStorage<4, 4> mUnkf34e45;
-    ::ll::UntypedStorage<4, 4> mUnk8b439f;
-    ::ll::UntypedStorage<4, 4> mUnk3ffdca;
-    ::ll::UntypedStorage<4, 4> mUnkedce45;
-    ::ll::UntypedStorage<4, 4> mUnkb17bec;
-    ::ll::UntypedStorage<1, 1> mUnka1ced5;
+    ::ll::UntypedStorage<4, 8>  mUnkd60431;
+    ::ll::UntypedStorage<1, 1>  mUnk42288f;
+    ::ll::UntypedStorage<4, 4>  mUnkf34e45;
+    ::ll::UntypedStorage<4, 4>  mUnk8b439f;
+    ::ll::UntypedStorage<4, 4>  mUnk3ffdca;
+    ::ll::UntypedStorage<4, 4>  mUnkedce45;
+    ::ll::UntypedStorage<4, 4>  mUnkb17bec;
+    ::ll::UntypedStorage<1, 1>  mUnka1ced5;
     // NOLINTEND
 
 public:
@@ -43,16 +43,30 @@ public:
     virtual ~BaseGameTestFunction();
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::gametest::IGameTestFunctionContext> createContext(::gametest::BaseGameTestHelper&) const = 0;
+    virtual ::std::unique_ptr<::gametest::IGameTestFunctionContext>
+    createContext(::gametest::BaseGameTestHelper&) const = 0;
 
     // vIndex: 2
-    virtual ::std::unique_ptr<::gametest::IGameTestFunctionRunResult> run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext&) const = 0;
+    virtual ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
+    run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext&) const = 0;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BaseGameTestFunction(::std::string batchName, ::std::string testName, ::std::string structureName, int maxTicks, int setupTicks, int padding, bool rotate, bool required, int requiredSuccesses, int attempts, ::std::vector<::std::string> tags);
+    MCNAPI BaseGameTestFunction(
+        ::std::string                batchName,
+        ::std::string                testName,
+        ::std::string                structureName,
+        int                          maxTicks,
+        int                          setupTicks,
+        int                          padding,
+        bool                         rotate,
+        bool                         required,
+        int                          requiredSuccesses,
+        int                          attempts,
+        ::std::vector<::std::string> tags
+    );
 
     MCNAPI bool hasTag(::std::string const& tag) const;
     // NOLINTEND
@@ -60,7 +74,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string batchName, ::std::string testName, ::std::string structureName, int maxTicks, int setupTicks, int padding, bool rotate, bool required, int requiredSuccesses, int attempts, ::std::vector<::std::string> tags);
+    MCNAPI void* $ctor(
+        ::std::string                batchName,
+        ::std::string                testName,
+        ::std::string                structureName,
+        int                          maxTicks,
+        int                          setupTicks,
+        int                          padding,
+        bool                         rotate,
+        bool                         required,
+        int                          requiredSuccesses,
+        int                          attempts,
+        ::std::vector<::std::string> tags
+    );
     // NOLINTEND
 
 public:
@@ -80,7 +106,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace gametest

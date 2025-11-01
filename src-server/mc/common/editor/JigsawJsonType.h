@@ -5,8 +5,8 @@
 namespace Editor::Services {
 
 enum class JigsawJsonType : uchar {
-    Processor = 0,
-    Structure = 1,
+    Processor    = 0,
+    Structure    = 1,
     StructureSet = 2,
     TemplatePool = 3,
 };

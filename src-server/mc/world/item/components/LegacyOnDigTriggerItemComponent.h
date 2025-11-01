@@ -23,9 +23,9 @@ class LegacyOnDigTriggerItemComponent : public ::LegacyTriggerItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mCanUseOnDig;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnMineBlockSubscription;
-    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnDigDefault;
+    ::ll::TypedStorage<1, 1, bool>                                           mCanUseOnDig;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mOnMineBlockSubscription;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>>          mOnDigDefault;
     ::ll::TypedStorage<8, 24, ::std::vector<::DiggerBlockDefinitionTrigger>> mOnDigTriggers;
     // NOLINTEND
 
@@ -85,5 +85,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

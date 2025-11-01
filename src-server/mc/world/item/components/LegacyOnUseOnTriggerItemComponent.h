@@ -22,7 +22,7 @@ class LegacyOnUseOnTriggerItemComponent : public ::LegacyTriggerItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseOnSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnUseOnSubscription;
     ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnUseOnTrigger;
     // NOLINTEND
 
@@ -45,7 +45,15 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LegacyOnUseOnTriggerItemComponent(::OnUseOnItemComponentLegacyFactoryData&& data);
 
-    MCAPI void _useOn(bool& result, ::ItemStack const& initialItemStack, ::ItemStack& currentItemStack, ::Actor& entity, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos);
+    MCAPI void _useOn(
+        bool&              result,
+        ::ItemStack const& initialItemStack,
+        ::ItemStack&       currentItemStack,
+        ::Actor&           entity,
+        ::BlockPos const&  pos,
+        uchar              face,
+        ::Vec3 const&      clickPos
+    );
     // NOLINTEND
 
 public:
@@ -71,5 +79,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

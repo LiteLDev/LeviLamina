@@ -20,11 +20,14 @@ struct ScriptProjectileHitInfoAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>> mDimension;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+                                      mDimension;
     ::ll::TypedStorage<4, 12, ::Vec3> mLocation;
     ::ll::TypedStorage<4, 12, ::Vec3> mHitVector;
     ::ll::TypedStorage<4, 12, ::Vec3> mSurfaceHitNormal;
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mSource;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+                                                                                                          mSource;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mProjectile;
     // NOLINTEND
 
@@ -40,7 +43,10 @@ public:
 
     MCAPI ScriptProjectileHitInfoAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent const&);
 
-    MCAPI ScriptProjectileHitInfoAfterEvent(::ProjectileHitEvent const& projectileHitEvent, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptProjectileHitInfoAfterEvent(
+        ::ProjectileHitEvent const&           projectileHitEvent,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
 
     MCAPI ~ScriptProjectileHitInfoAfterEvent();
     // NOLINTEND
@@ -60,7 +66,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

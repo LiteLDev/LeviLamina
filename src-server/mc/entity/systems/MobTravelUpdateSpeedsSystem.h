@@ -25,7 +25,19 @@ class MobTravelUpdateSpeedsSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickMobTravelUpdateSpeedsSystem(::ViewT<::StrictEntityContext, ::Include<::MobTravelComponent>, ::ActorDataFlagComponent const, ::ActorDataControllingSeatIndexComponent const, ::VehicleComponent const, ::AirSpeedComponent, ::MovementAttributesComponent const, ::MovementSpeedComponent, ::Optional<::CanVehicleSprintFlagComponent const>> view, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>> players, ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const> actorDataView);
+    MCNAPI static void tickMobTravelUpdateSpeedsSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::MobTravelComponent>,
+            ::ActorDataFlagComponent const,
+            ::ActorDataControllingSeatIndexComponent const,
+            ::VehicleComponent const,
+            ::AirSpeedComponent,
+            ::MovementAttributesComponent const,
+            ::MovementSpeedComponent,
+            ::Optional<::CanVehicleSprintFlagComponent const>>         view,
+        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>>   players,
+        ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const> actorDataView
+    );
     // NOLINTEND
-
 };

@@ -27,7 +27,7 @@ public:
     class UpdateCardinalGetPlacementBlockCallback;
     class UpdateFacingGetPlacementBlockCallback;
     // clang-format on
-    
+
     // PlacementDirection inner types define
     class UpdateCardinalGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
     public:
@@ -35,62 +35,84 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, float const> mRotationOffset;
         // NOLINTEND
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
-        virtual ::gsl::not_null<::Block const*> getPlacementBlock(::gsl::not_null<::Block const*> block, ::Actor const& by, ::BlockPos const&, uchar, ::Vec3 const&) const /*override*/;
-    
+        virtual ::gsl::not_null<::Block const*> getPlacementBlock(
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
+            ::BlockPos const&,
+            uchar,
+            ::Vec3 const&
+        ) const /*override*/;
+
         // vIndex: 0
         virtual ~UpdateCardinalGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(::gsl::not_null<::Block const*> block, ::Actor const& by, ::BlockPos const&, uchar, ::Vec3 const&) const;
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
+            ::BlockPos const&,
+            uchar,
+            ::Vec3 const&
+        ) const;
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
     class UpdateFacingGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, float const> mRotationOffset;
         // NOLINTEND
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
-        virtual ::gsl::not_null<::Block const*> getPlacementBlock(::gsl::not_null<::Block const*> block, ::Actor const& by, ::BlockPos const& pos, uchar, ::Vec3 const&) const /*override*/;
-    
+        virtual ::gsl::not_null<::Block const*> getPlacementBlock(
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
+            ::BlockPos const&               pos,
+            uchar,
+            ::Vec3 const&
+        ) const /*override*/;
+
         // vIndex: 0
         virtual ~UpdateFacingGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(::gsl::not_null<::Block const*> block, ::Actor const& by, ::BlockPos const& pos, uchar, ::Vec3 const&) const;
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
+            ::BlockPos const&               pos,
+            uchar,
+            ::Vec3 const&
+        ) const;
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
     struct EnabledStates {
     public:
         // member variables
@@ -98,26 +120,28 @@ public:
         ::ll::TypedStorage<1, 1, bool> mCardinalDirection;
         ::ll::TypedStorage<1, 1, bool> mFacingDirection;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
         // NOLINTEND
-    
+
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void fromStringVector(::BlockTrait::PlacementDirection::EnabledStates& instance, ::std::vector<::std::string> const& states);
+        MCAPI static void fromStringVector(
+            ::BlockTrait::PlacementDirection::EnabledStates& instance,
+            ::std::vector<::std::string> const&              states
+        );
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 2, ::BlockTrait::PlacementDirection::EnabledStates> mStates;
-    ::ll::TypedStorage<4, 4, float> mRotationOffset;
+    ::ll::TypedStorage<4, 4, float>                                           mRotationOffset;
     // NOLINTEND
 
 public:
@@ -167,7 +191,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockTrait

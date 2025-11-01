@@ -13,7 +13,7 @@ struct FileDataContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd35feb;
+    ::ll::UntypedStorage<8, 32>  mUnkd35feb;
     ::ll::UntypedStorage<8, 160> mUnkbbd638;
     // NOLINTEND
 
@@ -28,7 +28,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Prefabs::PrefabDBTemplateLoader::CurrentVersion

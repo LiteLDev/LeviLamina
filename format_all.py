@@ -77,11 +77,29 @@ def format_code_files(
             executor.submit(format_file, file_batch, clang_format_path)
 
 
+def check_directory_structure():
+    """检查当前目录结构"""
+    current_dir = os.getcwd()
+    print(f"当前工作目录: {current_dir}")
+    print(f"当前目录内容: {os.listdir('.')}")
+    
+    # 检查目标目录是否存在
+    target_dirs = ["./src", "./src-server", "./src-client"]
+    for dir_path in target_dirs:
+        exists = os.path.exists(dir_path)
+        print(f"目录 {dir_path} 存在: {exists}")
+        if exists:
+            try:
+                files = os.listdir(dir_path)
+                print(f"  {dir_path} 中的文件: {files[:10]}...")  # 显示前10个文件
+            except Exception as e:
+                print(f"  无法读取 {dir_path}: {e}")
+
 if __name__ == "__main__":
     clang_format_path = r"clang-format"
 
     import time
-
+    check_directory_structure()
     print(f"开始 {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}")
     format_code_files("./src", clang_format_path)
     format_code_files("./src-server", clang_format_path)

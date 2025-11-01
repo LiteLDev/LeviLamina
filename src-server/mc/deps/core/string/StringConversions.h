@@ -16,7 +16,6 @@ public:
 
     MCNAPI static int toWide(char const* src, int srcLen, wchar_t* dest, int max);
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

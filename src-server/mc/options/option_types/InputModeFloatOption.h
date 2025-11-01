@@ -9,11 +9,11 @@ class InputModeFloatOption : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2c1e26;
-    ::ll::UntypedStorage<4, 4> mUnk12b75b;
+    ::ll::UntypedStorage<4, 4>  mUnk2c1e26;
+    ::ll::UntypedStorage<4, 4>  mUnk12b75b;
     ::ll::UntypedStorage<8, 64> mUnk8fd07f;
     ::ll::UntypedStorage<8, 64> mUnkac5f60;
-    ::ll::UntypedStorage<4, 4> mUnk356984;
+    ::ll::UntypedStorage<4, 4>  mUnk356984;
     // NOLINTEND
 
 public:
@@ -43,5 +43,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

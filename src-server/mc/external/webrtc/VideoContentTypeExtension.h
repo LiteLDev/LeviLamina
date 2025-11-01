@@ -13,7 +13,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ::webrtc::VideoContentType content_type);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

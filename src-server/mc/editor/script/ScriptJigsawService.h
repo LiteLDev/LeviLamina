@@ -36,7 +36,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk1e3220;
     ::ll::UntypedStorage<8, 16> mUnk3d5c5f;
     ::ll::UntypedStorage<8, 16> mUnk9f66df;
-    ::ll::UntypedStorage<8, 8> mUnk285082;
+    ::ll::UntypedStorage<8, 8>  mUnk285082;
     ::ll::UntypedStorage<8, 24> mUnkb976de;
     // NOLINTEND
 
@@ -51,21 +51,46 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptJigsawService(::Editor::ScriptModule::ScriptJigsawService&&);
 
-    MCNAPI ScriptJigsawService(::Editor::Services::EditorJigsawServiceProvider* jigsawService, ::Editor::EditorPlayerServiceProvider* playerService, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ScriptJigsawService(
+        ::Editor::Services::EditorJigsawServiceProvider* jigsawService,
+        ::Editor::EditorPlayerServiceProvider*           playerService,
+        ::Scripting::WeakLifetimeScope const&            scope
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::vector<::Editor::Services::EditorJigsawSection>, ::Scripting::Error, void>> generateJigsaw(::std::string const& registryName, ::std::string const& startingPool, ::std::string const& startTarget, ::Vec3 const& seed, int depth, int maxHorizontalDistanceFromCenter, bool validateRegistry, ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem, ::Scripting::ScriptObjectFactory& factory);
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::Promise<::std::vector<::Editor::Services::EditorJigsawSection>, ::Scripting::Error, void>>
+    generateJigsaw(
+        ::std::string const&                               registryName,
+        ::std::string const&                               startingPool,
+        ::std::string const&                               startTarget,
+        ::Vec3 const&                                      seed,
+        int                                                depth,
+        int                                                maxHorizontalDistanceFromCenter,
+        bool                                               validateRegistry,
+        ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem,
+        ::Scripting::ScriptObjectFactory&                  factory
+    );
 
     MCNAPI ::std::map<::std::string, ::std::string> getEmptyRegistryFiles();
 
     MCNAPI ::std::string getExportLocation();
 
-    MCNAPI ::std::map<::std::string, ::std::vector<::Editor::Services::EditorRegistryFile>> getRegistryData(::std::string const& registryName);
+    MCNAPI ::std::map<::std::string, ::std::vector<::Editor::Services::EditorRegistryFile>>
+    getRegistryData(::std::string const& registryName);
 
     MCNAPI ::std::vector<::std::string> getRegistryList();
 
     MCNAPI ::Editor::ScriptModule::ScriptJigsawService& operator=(::Editor::ScriptModule::ScriptJigsawService&&);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::vector<::std::string>, ::Scripting::Error, void>> setRegistryData(::std::string const& registryName, ::std::vector<::Editor::Services::EditorRegistryFile> processorData, ::std::vector<::Editor::Services::EditorRegistryFile> structureData, ::std::vector<::Editor::Services::EditorRegistryFile> structureSetData, ::std::vector<::Editor::Services::EditorRegistryFile> templatePoolData, ::Scripting::ScriptObjectFactory& factory);
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::vector<::std::string>, ::Scripting::Error, void>>
+    setRegistryData(
+        ::std::string const&                                  registryName,
+        ::std::vector<::Editor::Services::EditorRegistryFile> processorData,
+        ::std::vector<::Editor::Services::EditorRegistryFile> structureData,
+        ::std::vector<::Editor::Services::EditorRegistryFile> structureSetData,
+        ::std::vector<::Editor::Services::EditorRegistryFile> templatePoolData,
+        ::Scripting::ScriptObjectFactory&                     factory
+    );
 
     MCNAPI ~ScriptJigsawService();
     // NOLINTEND
@@ -87,7 +112,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptJigsawService&&);
 
-    MCNAPI void* $ctor(::Editor::Services::EditorJigsawServiceProvider* jigsawService, ::Editor::EditorPlayerServiceProvider* playerService, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(
+        ::Editor::Services::EditorJigsawServiceProvider* jigsawService,
+        ::Editor::EditorPlayerServiceProvider*           playerService,
+        ::Scripting::WeakLifetimeScope const&            scope
+    );
     // NOLINTEND
 
 public:
@@ -95,7 +124,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

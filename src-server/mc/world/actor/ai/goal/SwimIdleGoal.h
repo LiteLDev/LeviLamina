@@ -15,9 +15,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, int> mTicks;
-    ::ll::TypedStorage<4, 4, int> mIdleTicks;
-    ::ll::TypedStorage<4, 4, float> mSuccessRate;
+    ::ll::TypedStorage<4, 4, int>    mTicks;
+    ::ll::TypedStorage<4, 4, int>    mIdleTicks;
+    ::ll::TypedStorage<4, 4, float>  mSuccessRate;
     // NOLINTEND
 
 public:
@@ -67,5 +67,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0>
-class ParamStorage {
-};
+template <typename T0>
+class ParamStorage {};
 
-}
+} // namespace ScriptModuleMinecraft

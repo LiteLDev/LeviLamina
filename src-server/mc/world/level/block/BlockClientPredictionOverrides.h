@@ -4,6 +4,6 @@
 
 enum class BlockClientPredictionOverrides : uchar {
     BlockPlayerInteract = 0,
-    BlockPlayerPlacing = 1,
-    Count = 7,
+    BlockPlayerPlacing  = 1,
+    Count               = 7,
 };

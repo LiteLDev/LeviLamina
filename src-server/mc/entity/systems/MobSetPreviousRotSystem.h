@@ -21,11 +21,22 @@ class MobSetPreviousRotSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _setPreviousRotation(::StrictEntityContext&, ::ActorHeadRotationComponent& actorHeadRotation, ::ActorRotationComponent& actorRotation, ::MobBodyRotationComponent& mobBodyRotation);
+    MCNAPI static void _setPreviousRotation(
+        ::StrictEntityContext&,
+        ::ActorHeadRotationComponent& actorHeadRotation,
+        ::ActorRotationComponent&     actorRotation,
+        ::MobBodyRotationComponent&   mobBodyRotation
+    );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void tick(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>, ::ActorHeadRotationComponent, ::ActorRotationComponent, ::MobBodyRotationComponent> mobView);
+    MCNAPI static void tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+            ::ActorHeadRotationComponent,
+            ::ActorRotationComponent,
+            ::MobBodyRotationComponent> mobView
+    );
     // NOLINTEND
-
 };

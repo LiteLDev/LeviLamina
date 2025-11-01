@@ -13,7 +13,8 @@ namespace gametest { class BaseGameTestInstance; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
-class MinecraftReportGameListener : public ::gametest::IGameTestListener, public ::std::enable_shared_from_this<::MinecraftReportGameListener> {
+class MinecraftReportGameListener : public ::gametest::IGameTestListener,
+                                    public ::std::enable_shared_from_this<::MinecraftReportGameListener> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -74,5 +75,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

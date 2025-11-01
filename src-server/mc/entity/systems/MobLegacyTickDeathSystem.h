@@ -13,4 +13,4 @@ namespace MobLegacyTickDeathSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace MobLegacyTickDeathSystem

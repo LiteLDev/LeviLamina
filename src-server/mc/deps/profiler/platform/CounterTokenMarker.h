@@ -4,7 +4,6 @@
 
 namespace Core::Profile {
 
-class CounterTokenMarker {
-};
+class CounterTokenMarker {};
 
-}
+} // namespace Core::Profile

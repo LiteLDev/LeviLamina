@@ -22,7 +22,8 @@ class ActorDimensionTransferer : public ::IActorDimensionTransferer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IActorDimensionTransferProxy>>> mActorDimensionTransferProxy;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IActorDimensionTransferProxy>>>
+                                                                                   mActorDimensionTransferProxy;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ActorManager> const> mActorManager;
     // NOLINTEND
 
@@ -36,7 +37,14 @@ public:
     virtual void setupActorForTransfer(::Actor& actor) /*override*/;
 
     // vIndex: 2
-    virtual ::Vec3 findTargetPositionAndSetPosition(::Actor& actor, ::DimensionType toId, ::DimensionType fromId, ::IDimension const& toDimension, ::PortalForcer const& portalForcer, ::std::optional<::Vec3> const& actorPosition) /*override*/;
+    virtual ::Vec3 findTargetPositionAndSetPosition(
+        ::Actor&                       actor,
+        ::DimensionType                toId,
+        ::DimensionType                fromId,
+        ::IDimension const&            toDimension,
+        ::PortalForcer const&          portalForcer,
+        ::std::optional<::Vec3> const& actorPosition
+    ) /*override*/;
 
     // vIndex: 3
     virtual void transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition) /*override*/;
@@ -47,7 +55,14 @@ public:
     // NOLINTBEGIN
     MCAPI void $setupActorForTransfer(::Actor& actor);
 
-    MCAPI ::Vec3 $findTargetPositionAndSetPosition(::Actor& actor, ::DimensionType toId, ::DimensionType fromId, ::IDimension const& toDimension, ::PortalForcer const& portalForcer, ::std::optional<::Vec3> const& actorPosition);
+    MCAPI ::Vec3 $findTargetPositionAndSetPosition(
+        ::Actor&                       actor,
+        ::DimensionType                toId,
+        ::DimensionType                fromId,
+        ::IDimension const&            toDimension,
+        ::PortalForcer const&          portalForcer,
+        ::std::optional<::Vec3> const& actorPosition
+    );
 
     MCAPI void $transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition);
     // NOLINTEND
@@ -57,5 +72,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

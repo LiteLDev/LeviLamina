@@ -16,12 +16,12 @@ class FollowCaravanGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>> mParent;
-    ::ll::TypedStorage<4, 4, float> mSpeedModifier;
-    ::ll::TypedStorage<4, 4, float> mSpeedModifierO;
-    ::ll::TypedStorage<4, 4, int> mDistanceCheckCounter;
-    ::ll::TypedStorage<4, 4, int> mCaravanSize;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>>                    mParent;
+    ::ll::TypedStorage<4, 4, float>                                 mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                                 mSpeedModifierO;
+    ::ll::TypedStorage<4, 4, int>                                   mDistanceCheckCounter;
+    ::ll::TypedStorage<4, 4, int>                                   mCaravanSize;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor> const> mTargetTypes;
     // NOLINTEND
 
@@ -85,5 +85,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

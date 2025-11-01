@@ -17,7 +17,6 @@ public:
     Box& operator=(Box const&);
     Box(Box const&);
     Box();
-
 };
 
-}
+} // namespace SharedTypes::v1_21_110

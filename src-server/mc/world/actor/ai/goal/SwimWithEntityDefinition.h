@@ -16,19 +16,19 @@ class SwimWithEntityDefinition : public ::BaseGoalDefinition {
 public:
     // SwimWithEntityDefinition inner types define
     using self = ::SwimWithEntityDefinition;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mSuccessRate;
-    ::ll::TypedStorage<4, 4, float> mChanceToStop;
-    ::ll::TypedStorage<4, 4, float> mIntervalRefreshTime;
-    ::ll::TypedStorage<4, 4, float> mCatchUpThreshold;
-    ::ll::TypedStorage<4, 4, float> mMatchDirectionThreshold;
-    ::ll::TypedStorage<4, 4, float> mCatchUpMultiplier;
-    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
-    ::ll::TypedStorage<4, 4, float> mSearchRange;
-    ::ll::TypedStorage<4, 4, float> mStopDistance;
+    ::ll::TypedStorage<4, 4, float>                           mSuccessRate;
+    ::ll::TypedStorage<4, 4, float>                           mChanceToStop;
+    ::ll::TypedStorage<4, 4, float>                           mIntervalRefreshTime;
+    ::ll::TypedStorage<4, 4, float>                           mCatchUpThreshold;
+    ::ll::TypedStorage<4, 4, float>                           mMatchDirectionThreshold;
+    ::ll::TypedStorage<4, 4, float>                           mCatchUpMultiplier;
+    ::ll::TypedStorage<4, 4, float>                           mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float>                           mSearchRange;
+    ::ll::TypedStorage<4, 4, float>                           mStopDistance;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetTypes;
     // NOLINTEND
 
@@ -42,7 +42,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SwimWithEntityDefinition>>& root);
+    MCAPI static void buildSchema(
+        ::std::string const&                                                                                     name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SwimWithEntityDefinition>>& root
+    );
     // NOLINTEND
 
 public:
@@ -50,5 +53,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

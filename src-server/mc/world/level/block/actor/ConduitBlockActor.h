@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -21,16 +21,16 @@ class ConduitBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsActive;
-    ::ll::TypedStorage<1, 1, bool> mIsHunting;
-    ::ll::TypedStorage<4, 4, int> mBlockRefreshCounter;
-    ::ll::TypedStorage<8, 8, uint64> mNextAmbientSound;
-    ::ll::TypedStorage<4, 4, float> mAnimationValue;
-    ::ll::TypedStorage<4, 4, float> mRotation;
-    ::ll::TypedStorage<4, 4, int> mRotationTickCount;
-    ::ll::TypedStorage<4, 4, int> mWindLevel;
-    ::ll::TypedStorage<4, 4, int> mEffectRange;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mTarget;
+    ::ll::TypedStorage<1, 1, bool>                       mIsActive;
+    ::ll::TypedStorage<1, 1, bool>                       mIsHunting;
+    ::ll::TypedStorage<4, 4, int>                        mBlockRefreshCounter;
+    ::ll::TypedStorage<8, 8, uint64>                     mNextAmbientSound;
+    ::ll::TypedStorage<4, 4, float>                      mAnimationValue;
+    ::ll::TypedStorage<4, 4, float>                      mRotation;
+    ::ll::TypedStorage<4, 4, int>                        mRotationTickCount;
+    ::ll::TypedStorage<4, 4, int>                        mWindLevel;
+    ::ll::TypedStorage<4, 4, int>                        mEffectRange;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mTarget;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mBlockPositions;
     // NOLINTEND
 
@@ -96,5 +96,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -22,7 +22,6 @@ public:
     NetEqOperationsAndState& operator=(NetEqOperationsAndState const&);
     NetEqOperationsAndState(NetEqOperationsAndState const&);
     NetEqOperationsAndState();
-
 };
 
-}
+} // namespace webrtc

@@ -15,9 +15,13 @@ struct VanillaEntityInitializerCommon {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void initActorComponents(::EntityHost host, ::std::unique_ptr<::Actor> actor, ::EntityContext& entity, ::EntityContext const&);
+    MCNAPI static void initActorComponents(
+        ::EntityHost               host,
+        ::std::unique_ptr<::Actor> actor,
+        ::EntityContext&           entity,
+        ::EntityContext const&
+    );
 
     MCNAPI static void initLevelEntityDependentComponents(::EntityContext& entity, ::EntityContext const& level);
     // NOLINTEND
-
 };

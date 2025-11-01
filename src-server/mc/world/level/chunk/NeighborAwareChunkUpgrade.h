@@ -12,9 +12,16 @@ class LevelChunk;
 namespace NeighborAwareChunkUpgrade {
 // functions
 // NOLINTBEGIN
-MCNAPI void doLevelChunkNeighborAwareUpgrade(::LevelChunk& levelChunk, ::BlockSource& region, ::INeighborAwareChunkUpgrader const& neighborAwareChunkUpgrader);
+MCNAPI void doLevelChunkNeighborAwareUpgrade(
+    ::LevelChunk&                        levelChunk,
+    ::BlockSource&                       region,
+    ::INeighborAwareChunkUpgrader const& neighborAwareChunkUpgrader
+);
 
-MCNAPI bool verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& levelChunk, ::INeighborAwareChunkUpgrader const& neighborAwareChunkUpgrader);
+MCNAPI bool verifyChunkNeedsNeighborAwareUpgrade(
+    ::LevelChunk&                        levelChunk,
+    ::INeighborAwareChunkUpgrader const& neighborAwareChunkUpgrader
+);
 // NOLINTEND
 
-}
+} // namespace NeighborAwareChunkUpgrade

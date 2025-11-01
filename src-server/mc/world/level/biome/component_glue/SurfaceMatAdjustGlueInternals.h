@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/molang/MolangVersion.h"
+#include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +15,12 @@ namespace SharedTypes::Util { struct MolangJsonContainer; }
 namespace SurfaceMatAdjustGlueInternals {
 // functions
 // NOLINTBEGIN
-MCAPI bool resolveAndVerifyMolang(::std::optional<::ExpressionNode>& expressionNode, ::SharedTypes::Util::MolangJsonContainer const& molangJson, ::MolangVersion molangVersion, ::gsl::span<::HashedString const> querySetID);
+MCAPI bool resolveAndVerifyMolang(
+    ::std::optional<::ExpressionNode>&              expressionNode,
+    ::SharedTypes::Util::MolangJsonContainer const& molangJson,
+    ::MolangVersion                                 molangVersion,
+    ::gsl::span<::HashedString const>               querySetID
+);
 // NOLINTEND
 
-}
+} // namespace SurfaceMatAdjustGlueInternals

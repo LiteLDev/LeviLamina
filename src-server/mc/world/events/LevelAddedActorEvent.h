@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Level>> mLevel;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mActor;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>             mActor;
     // NOLINTEND
 
 public:
@@ -31,5 +31,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

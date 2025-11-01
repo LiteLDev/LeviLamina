@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnkc7586e;
     ::ll::UntypedStorage<8, 32> mUnkdb7a42;
-    ::ll::UntypedStorage<4, 4> mUnkc9d1b1;
+    ::ll::UntypedStorage<4, 4>  mUnkc9d1b1;
     // NOLINTEND
 
 public:
@@ -30,7 +30,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Persistence

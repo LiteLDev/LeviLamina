@@ -16,10 +16,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual bool isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const slot, ::ItemStackBase const& item, int const amount, bool) const /*override*/;
+    virtual bool isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const /*override*/;
 
     // vIndex: 4
-    virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const& itemInSlot) const /*override*/;
+    virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const& itemInSlot) const
+        /*override*/;
 
     // vIndex: 3
     virtual int getAvailableSetCount(int slot, ::ItemStackBase const& item) const /*override*/;
@@ -34,7 +41,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const slot, ::ItemStackBase const& item, int const amount, bool) const;
+    MCNAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const;
 
     MCNAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const& itemInSlot) const;
 
@@ -48,5 +61,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

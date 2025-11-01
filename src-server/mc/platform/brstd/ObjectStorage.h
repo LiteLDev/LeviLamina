@@ -4,8 +4,7 @@
 
 namespace Bedrock::Uninitialized {
 
-template<typename T0>
-struct ObjectStorage {
-};
+template <typename T0>
+struct ObjectStorage {};
 
-}
+} // namespace Bedrock::Uninitialized

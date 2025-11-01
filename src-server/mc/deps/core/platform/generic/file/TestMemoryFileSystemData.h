@@ -11,7 +11,7 @@ struct TestMemoryFileSystemData : public ::Core::MemoryFileSystemData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk65452a;
+    ::ll::UntypedStorage<8, 8>  mUnk65452a;
     ::ll::UntypedStorage<8, 64> mUnk63a6d7;
     // NOLINTEND
 
@@ -20,7 +20,6 @@ public:
     TestMemoryFileSystemData& operator=(TestMemoryFileSystemData const&);
     TestMemoryFileSystemData(TestMemoryFileSystemData const&);
     TestMemoryFileSystemData();
-
 };
 
-}
+} // namespace Bedrock

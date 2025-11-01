@@ -11,13 +11,13 @@ class JigsawStructureElementRegistry {
 public:
     // JigsawStructureElementRegistry inner types define
     using StructureElementRegistry = ::std::vector<::std::unique_ptr<::StructurePoolElement>>;
-    
+
     using StructureElementLookupMap = ::std::unordered_map<::std::string, ::StructurePoolElement const*>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::StructurePoolElement>>> mElementRegistry;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::StructurePoolElement>>>           mElementRegistry;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::StructurePoolElement const*>> mElementLookupMap;
     // NOLINTEND
 
@@ -26,7 +26,8 @@ public:
     // NOLINTBEGIN
     MCFOLD ::StructurePoolElement const* lookupByName(::std::string name) const;
 
-    MCAPI ::StructurePoolElement const& registerStructureElement(::std::string name, ::std::unique_ptr<::StructurePoolElement>&& element);
+    MCAPI ::StructurePoolElement const&
+    registerStructureElement(::std::string name, ::std::unique_ptr<::StructurePoolElement>&& element);
 
     MCAPI ~JigsawStructureElementRegistry();
     // NOLINTEND
@@ -36,5 +37,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

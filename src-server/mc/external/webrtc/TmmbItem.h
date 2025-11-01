@@ -36,7 +36,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(uint ssrc, uint64 bitrate_bps, ushort overhead);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc::rtcp

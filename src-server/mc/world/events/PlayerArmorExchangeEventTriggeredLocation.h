@@ -4,5 +4,5 @@
 
 enum class PlayerArmorExchangeEventTriggeredLocation : int {
     ServerPlayerSetArmor = 0,
-    MobHurtArmor = 1,
+    MobHurtArmor         = 1,
 };

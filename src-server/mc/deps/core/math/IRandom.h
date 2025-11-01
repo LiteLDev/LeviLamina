@@ -59,5 +59,4 @@ public:
     // NOLINTBEGIN
     MCFOLD ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
     // NOLINTEND
-
 };

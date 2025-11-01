@@ -18,7 +18,7 @@ class MineshaftCrossing : public ::MineshaftPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> direction;
+    ::ll::TypedStorage<4, 4, int>  direction;
     ::ll::TypedStorage<1, 1, bool> isTwoFloored;
     // NOLINTEND
 
@@ -29,7 +29,11 @@ public:
     virtual ::StructurePieceType getType() const /*override*/;
 
     // vIndex: 3
-    virtual void addChildren(::StructurePiece& startPiece, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random) /*override*/;
+    virtual void addChildren(
+        ::StructurePiece&                                   startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random
+    ) /*override*/;
 
     // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB) /*override*/;
@@ -47,7 +51,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BoundingBox findCrossing(::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, int footX, int footY, int footZ, int direction);
+    MCAPI static ::BoundingBox findCrossing(
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction
+    );
     // NOLINTEND
 
 public:
@@ -55,7 +66,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI void $addChildren(::StructurePiece& startPiece, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random);
+    MCAPI void $addChildren(
+        ::StructurePiece&                                   startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random
+    );
 
     MCAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
     // NOLINTEND
@@ -65,5 +80,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

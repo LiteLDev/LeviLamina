@@ -16,4 +16,4 @@ MCNAPI ::std::string_view const& TRADE_TABLES_PAYLOAD_KEY();
 MCNAPI ::std::string_view const& VOXEL_SHAPE_PAYLOAD_KEY();
 // NOLINTEND
 
-}
+} // namespace SharedTypes::Comprehensive

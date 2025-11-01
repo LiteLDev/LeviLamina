@@ -20,7 +20,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static void freezeMovement(::StrictEntityContext&, ::StateVectorComponent& stateVector);
 
-    MCNAPI static void tickPassengerFreezeMovementSystem(::ViewT<::StrictEntityContext, ::Include<::PassengerComponent, ::ActorMovementTickNeededComponent>, ::StateVectorComponent> view);
+    MCNAPI static void tickPassengerFreezeMovementSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::PassengerComponent, ::ActorMovementTickNeededComponent>,
+            ::StateVectorComponent> view
+    );
     // NOLINTEND
-
 };

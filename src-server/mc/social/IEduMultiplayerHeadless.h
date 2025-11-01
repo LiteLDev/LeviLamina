@@ -25,11 +25,11 @@ public:
     // IEduMultiplayerHeadless inner types define
     enum class ServerHealth : int {
         Unknown = -1,
-        Poor = 0,
-        Mid = 1,
-        Good = 2,
+        Poor    = 0,
+        Mid     = 1,
+        Good    = 2,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -49,19 +49,34 @@ public:
     virtual ::Bedrock::Threading::Async<::Social::EduFetchServersResponse> requestBroadcastedServers();
 
     // vIndex: 6
-    virtual ::Bedrock::Threading::Async<::Social::EduFetchServersResponse> requestServerInfo(::std::vector<::std::string> const&);
+    virtual ::Bedrock::Threading::Async<::Social::EduFetchServersResponse>
+    requestServerInfo(::std::vector<::std::string> const&);
 
     // vIndex: 7
     virtual ::Bedrock::Threading::Async<::Social::EduAddServerResponse> requestAddServer(::std::string const&);
 
     // vIndex: 8
-    virtual ::Bedrock::Threading::Async<::Social::EduJoinServerResponse> requestJoinServer(::std::string const&, ::std::string const&);
+    virtual ::Bedrock::Threading::Async<::Social::EduJoinServerResponse>
+    requestJoinServer(::std::string const&, ::std::string const&);
 
     // vIndex: 9
-    virtual void saveCachedServersToDisk(::brstd::flat_map<::std::string, ::Social::EduDedicatedServerDetails, ::std::less<::std::string>, ::std::vector<::std::string>, ::std::vector<::Social::EduDedicatedServerDetails>> const&);
+    virtual void saveCachedServersToDisk(
+        ::brstd::flat_map<
+            ::std::string,
+            ::Social::EduDedicatedServerDetails,
+            ::std::less<::std::string>,
+            ::std::vector<::std::string>,
+            ::std::vector<::Social::EduDedicatedServerDetails>> const&
+    );
 
     // vIndex: 10
-    virtual ::brstd::flat_map<::std::string, ::Social::EduDedicatedServerDetails, ::std::less<::std::string>, ::std::vector<::std::string>, ::std::vector<::Social::EduDedicatedServerDetails>> loadCachedServersFromDisk();
+    virtual ::brstd::flat_map<
+        ::std::string,
+        ::Social::EduDedicatedServerDetails,
+        ::std::less<::std::string>,
+        ::std::vector<::std::string>,
+        ::std::vector<::Social::EduDedicatedServerDetails>>
+    loadCachedServersFromDisk();
 
     // vIndex: 11
     virtual ::Social::EduHeadlessConnectionHandshake getHandshake() const;
@@ -87,7 +102,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Social

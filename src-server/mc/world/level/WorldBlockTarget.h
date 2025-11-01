@@ -28,9 +28,9 @@ class WorldBlockTarget : public ::IBlockWorldGenAPI {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockSource&> mBlockSource;
+    ::ll::TypedStorage<8, 8, ::BlockSource&>     mBlockSource;
     ::ll::TypedStorage<8, 80, ::WorldGenContext> mWorldGenContext;
-    ::ll::TypedStorage<1, 1, bool> mBlockSimpleIsAllowed;
+    ::ll::TypedStorage<1, 1, bool>               mBlockSimpleIsAllowed;
     // NOLINTEND
 
 public:
@@ -64,7 +64,8 @@ public:
     virtual ::Block const* tryGetLiquidBlock(::BlockPos const& pos) const /*override*/;
 
     // vIndex: 7
-    virtual ::gsl::span<::BlockDataFetchResult<::Block> const> fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate) /*override*/;
+    virtual ::gsl::span<::BlockDataFetchResult<::Block> const>
+    fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate) /*override*/;
 
     // vIndex: 8
     virtual bool hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const /*override*/;
@@ -79,7 +80,8 @@ public:
     virtual bool apply() const /*override*/;
 
     // vIndex: 12
-    virtual bool placeStructure(::BlockPos const& pos, ::StructureTemplate& structure, ::StructureSettings& settings) /*override*/;
+    virtual bool
+    placeStructure(::BlockPos const& pos, ::StructureTemplate& structure, ::StructureSettings& settings) /*override*/;
 
     // vIndex: 13
     virtual bool mayPlace(::BlockPos const& pos, ::Block const& block) const /*override*/;
@@ -97,7 +99,8 @@ public:
     virtual short getMinHeight() const /*override*/;
 
     // vIndex: 18
-    virtual bool shimPlaceForOldFeatures(::Feature const& feature, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    virtual bool shimPlaceForOldFeatures(::Feature const& feature, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
 
     // vIndex: 19
     virtual short getHeightmap(int x, int z) /*override*/;
@@ -145,7 +148,8 @@ public:
 
     MCNAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 
-    MCNAPI ::gsl::span<::BlockDataFetchResult<::Block> const> $fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
+    MCNAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
+    $fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
 
     MCNAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
 
@@ -191,5 +195,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

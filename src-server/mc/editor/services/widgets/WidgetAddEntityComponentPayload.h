@@ -15,12 +15,14 @@ namespace mce { class UUID; }
 
 namespace Editor::Network {
 
-class WidgetAddEntityComponentPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetAddEntityComponentPayload>, public ::Editor::Network::WidgetComponentBasePayload {
+class WidgetAddEntityComponentPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetAddEntityComponentPayload>,
+  public ::Editor::Network::WidgetComponentBasePayload {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkb22c2c;
-    ::ll::UntypedStorage<1, 1> mUnka6ce39;
+    ::ll::UntypedStorage<1, 1>  mUnka6ce39;
     ::ll::UntypedStorage<8, 40> mUnk7e0373;
     ::ll::UntypedStorage<8, 40> mUnk55487e;
     // NOLINTEND
@@ -40,11 +42,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WidgetAddEntityComponentPayload(::mce::UUID const& serviceId, ::mce::UUID const& groupId, ::mce::UUID const& widgetId, ::mce::UUID const& componentId, ::std::string const& componentName, ::Vec3 const& pos, bool visible, bool lockToSurface, ::std::string const& entityName, bool clickable, ::std::optional<::std::string> selectedAnimation, ::std::optional<::std::string> deselectedAnimation);
+    MCNAPI WidgetAddEntityComponentPayload(
+        ::mce::UUID const&             serviceId,
+        ::mce::UUID const&             groupId,
+        ::mce::UUID const&             widgetId,
+        ::mce::UUID const&             componentId,
+        ::std::string const&           componentName,
+        ::Vec3 const&                  pos,
+        bool                           visible,
+        bool                           lockToSurface,
+        ::std::string const&           entityName,
+        bool                           clickable,
+        ::std::optional<::std::string> selectedAnimation,
+        ::std::optional<::std::string> deselectedAnimation
+    );
 
-    MCNAPI ::Editor::Network::WidgetAddEntityComponentPayload& operator=(::Editor::Network::WidgetAddEntityComponentPayload&&);
+    MCNAPI ::Editor::Network::WidgetAddEntityComponentPayload&
+    operator=(::Editor::Network::WidgetAddEntityComponentPayload&&);
 
-    MCNAPI ::Editor::Network::WidgetAddEntityComponentPayload& operator=(::Editor::Network::WidgetAddEntityComponentPayload const&);
+    MCNAPI ::Editor::Network::WidgetAddEntityComponentPayload&
+    operator=(::Editor::Network::WidgetAddEntityComponentPayload const&);
     // NOLINTEND
 
 public:
@@ -56,7 +73,20 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::mce::UUID const& serviceId, ::mce::UUID const& groupId, ::mce::UUID const& widgetId, ::mce::UUID const& componentId, ::std::string const& componentName, ::Vec3 const& pos, bool visible, bool lockToSurface, ::std::string const& entityName, bool clickable, ::std::optional<::std::string> selectedAnimation, ::std::optional<::std::string> deselectedAnimation);
+    MCNAPI void* $ctor(
+        ::mce::UUID const&             serviceId,
+        ::mce::UUID const&             groupId,
+        ::mce::UUID const&             widgetId,
+        ::mce::UUID const&             componentId,
+        ::std::string const&           componentName,
+        ::Vec3 const&                  pos,
+        bool                           visible,
+        bool                           lockToSurface,
+        ::std::string const&           entityName,
+        bool                           clickable,
+        ::std::optional<::std::string> selectedAnimation,
+        ::std::optional<::std::string> deselectedAnimation
+    );
     // NOLINTEND
 
 public:
@@ -70,7 +100,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

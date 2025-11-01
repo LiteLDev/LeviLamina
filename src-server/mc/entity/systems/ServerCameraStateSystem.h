@@ -18,7 +18,19 @@ struct StateVectorComponent;
 namespace ServerCameraStateSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tick(::ViewT<::StrictEntityContext, ::ServerActiveCameraComponent, ::StateVectorComponent const, ::Exclude<::ServerCameraInstructionComponent>> noCameraInstructionView, ::ViewT<::StrictEntityContext, ::ServerActiveCameraComponent, ::StateVectorComponent const, ::ServerCameraStatesComponent const, ::ServerCameraInstructionComponent> cameraInstructionView);
+MCNAPI void _tick(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::ServerActiveCameraComponent,
+        ::StateVectorComponent const,
+        ::Exclude<::ServerCameraInstructionComponent>> noCameraInstructionView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::ServerActiveCameraComponent,
+        ::StateVectorComponent const,
+        ::ServerCameraStatesComponent const,
+        ::ServerCameraInstructionComponent> cameraInstructionView
+);
 // NOLINTEND
 
-}
+} // namespace ServerCameraStateSystem

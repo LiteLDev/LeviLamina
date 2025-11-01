@@ -22,5 +22,4 @@ public:
     // NOLINTBEGIN
     MCAPI void set(::Bedrock::NonOwnerPointer<::NetEventCallback> callback);
     // NOLINTEND
-
 };

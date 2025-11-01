@@ -17,7 +17,7 @@ public:
     // clang-format off
     struct LocalRegistry;
     // clang-format on
-    
+
     // MossStoneSelector inner types define
     struct LocalRegistry {
     public:
@@ -26,9 +26,8 @@ public:
         ::ll::TypedStorage<8, 8, ::Block const*> mCobblestone;
         ::ll::TypedStorage<8, 8, ::Block const*> mMossyCobblestone;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -62,5 +61,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -21,7 +21,6 @@ public:
     // vIndex: 0
     virtual ~BlockEventBlockTypeExecutor() /*override*/ = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockEvents::Detail

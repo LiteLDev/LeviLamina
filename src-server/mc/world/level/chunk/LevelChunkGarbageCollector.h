@@ -17,7 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Dimension&> mDimension;
-    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter>>> mLevelChunksToDiscard;
+    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter>>>
+                                                    mLevelChunksToDiscard;
     ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mPendingDeletes;
     // NOLINTEND
 
@@ -40,5 +41,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

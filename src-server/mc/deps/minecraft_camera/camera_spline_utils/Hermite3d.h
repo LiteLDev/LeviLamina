@@ -15,7 +15,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk4aa2f0;
     ::ll::UntypedStorage<8, 24> mUnk9a00f0;
     ::ll::UntypedStorage<8, 24> mUnk9d0cd8;
-    ::ll::UntypedStorage<1, 1> mUnkf32b7d;
+    ::ll::UntypedStorage<1, 1>  mUnkf32b7d;
     // NOLINTEND
 
 public:
@@ -42,7 +42,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace CameraSplineUtils

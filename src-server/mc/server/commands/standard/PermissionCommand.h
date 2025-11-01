@@ -17,23 +17,23 @@ class PermissionCommand : public ::ServerCommand {
 public:
     // PermissionCommand inner types define
     enum class Action : int {
-        List = 0,
+        List   = 0,
         Reload = 1,
-        Set = 2,
+        Set    = 2,
     };
-    
+
     enum class AvailableCommandPermissionPresets : int {
-        Visitor = 0,
-        Member = 1,
-        Operator = 2,
+        Visitor   = 0,
+        Member    = 1,
+        Operator  = 2,
         Undefined = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk24ccee;
-    ::ll::UntypedStorage<4, 4> mUnk2d494e;
+    ::ll::UntypedStorage<4, 4>   mUnk24ccee;
+    ::ll::UntypedStorage<4, 4>   mUnk2d494e;
     ::ll::UntypedStorage<8, 200> mUnk62d6b2;
     // NOLINTEND
 
@@ -86,5 +86,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

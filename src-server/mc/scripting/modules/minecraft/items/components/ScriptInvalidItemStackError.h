@@ -32,7 +32,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptInvalidItemStackError(::ScriptModuleMinecraft::ScriptInvalidItemStackError const&);
 
-    MCNAPI ScriptInvalidItemStackError(::ScriptModuleMinecraft::ErrorMemberType memberType, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemType, ::std::string_view functionName);
+    MCNAPI ScriptInvalidItemStackError(
+        ::ScriptModuleMinecraft::ErrorMemberType                                      memberType,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemType,
+        ::std::string_view                                                            functionName
+    );
 
     MCNAPI ~ScriptInvalidItemStackError();
     // NOLINTEND
@@ -48,7 +52,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptInvalidItemStackError const&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ErrorMemberType memberType, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemType, ::std::string_view functionName);
+    MCNAPI void* $ctor(
+        ::ScriptModuleMinecraft::ErrorMemberType                                      memberType,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemType,
+        ::std::string_view                                                            functionName
+    );
     // NOLINTEND
 
 public:
@@ -56,7 +64,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

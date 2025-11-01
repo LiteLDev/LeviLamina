@@ -15,4 +15,4 @@ MCAPI void tickGoals(::Mob& owner, bool isTarget);
 MCAPI void tryStartGoals(::Mob& owner, bool isTarget);
 // NOLINTEND
 
-}
+} // namespace GoalSelectorUtility

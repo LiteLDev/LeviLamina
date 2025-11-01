@@ -20,8 +20,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk6dd226;
     ::ll::UntypedStorage<8, 64> mUnked134c;
-    ::ll::UntypedStorage<4, 8> mUnk86c058;
-    ::ll::UntypedStorage<4, 8> mUnk845646;
+    ::ll::UntypedStorage<4, 8>  mUnk86c058;
+    ::ll::UntypedStorage<4, 8>  mUnk845646;
     // NOLINTEND
 
 public:
@@ -37,7 +37,8 @@ public:
 
     MCNAPI CameraAimAssistCategoryPriorities(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities& operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&
+    operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
 
     MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities const&) const;
 
@@ -51,7 +52,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities>
+    read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
@@ -69,7 +71,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_50

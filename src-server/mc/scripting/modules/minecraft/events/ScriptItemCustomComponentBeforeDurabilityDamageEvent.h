@@ -19,23 +19,31 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemCustomComponentBeforeDurabilityDamageEvent : public ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeEvent<int&, ::ItemStack&, ::Actor&, ::Mob&> {
+struct ScriptItemCustomComponentBeforeDurabilityDamageEvent
+: public ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeEvent<int&, ::ItemStack&, ::Actor&, ::Mob&> {
 public:
     // ScriptItemCustomComponentBeforeDurabilityDamageEvent inner types define
-    using EventConnectorsType = ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<void(int&, ::ItemStack&, ::Actor&, ::Mob&)>;
-    
+    using EventConnectorsType =
+        ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<void(int&, ::ItemStack&, ::Actor&, ::Mob&)>;
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int> mDurabilityDamage;
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mScriptItem;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+                                                                                                          mScriptItem;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mHitEntity;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mAttackingEntity;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+        mAttackingEntity;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptItemCustomComponentBeforeDurabilityDamageEvent& operator=(ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
+    ScriptItemCustomComponentBeforeDurabilityDamageEvent&
+    operator=(ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
     ScriptItemCustomComponentBeforeDurabilityDamageEvent();
 
 public:
@@ -54,9 +62,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&);
+    MCAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&
+    );
 
-    MCAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
+    MCAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent const&
+    );
     // NOLINTEND
 
 public:
@@ -92,7 +104,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -24,9 +24,27 @@ struct ShouldUpdateBoundingBoxRequestComponent;
 namespace StartGlidingActionSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doStartGlidingClientAction(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>, ::PlayerActionComponent const, ::ActorDataFlagComponent, ::ActorDataDirtyFlagsComponent> view, ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier);
+MCNAPI void doStartGlidingClientAction(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,
+        ::PlayerActionComponent const,
+        ::ActorDataFlagComponent,
+        ::ActorDataDirtyFlagsComponent>                         view,
+    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
+);
 
-MCNAPI void doStartGlidingServerAction(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>, ::PlayerActionComponent const, ::ActorDataFlagComponent, ::ActorDataDirtyFlagsComponent, ::ElytraFlightTimeTicksComponent> view, ::OptionalGlobal<::CurrentTickComponent const> tickComponent, ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier);
+MCNAPI void doStartGlidingServerAction(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,
+        ::PlayerActionComponent const,
+        ::ActorDataFlagComponent,
+        ::ActorDataDirtyFlagsComponent,
+        ::ElytraFlightTimeTicksComponent>                       view,
+    ::OptionalGlobal<::CurrentTickComponent const>              tickComponent,
+    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
+);
 // NOLINTEND
 
-}
+} // namespace StartGlidingActionSystemImpl

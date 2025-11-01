@@ -16,7 +16,6 @@ public:
     ContextMolangVersion& operator=(ContextMolangVersion const&);
     ContextMolangVersion(ContextMolangVersion const&);
     ContextMolangVersion();
-
 };
 
-}
+} // namespace Scripting

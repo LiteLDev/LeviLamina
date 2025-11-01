@@ -2,6 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template<typename T0>
-class WeightedBiomeAttributes {
-};
+template <typename T0>
+class WeightedBiomeAttributes {};

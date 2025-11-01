@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk727ce9;
     ::ll::UntypedStorage<8, 24> mUnkf73704;
-    ::ll::UntypedStorage<1, 2> mUnk29b767;
+    ::ll::UntypedStorage<1, 2>  mUnk29b767;
     ::ll::UntypedStorage<8, 40> mUnka736b2;
     // NOLINTEND
 
@@ -56,7 +56,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

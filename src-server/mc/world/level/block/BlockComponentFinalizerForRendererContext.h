@@ -17,11 +17,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ClientBlockPipeline::SchematicsRepository&> mSchematicsRepo;
-    ::ll::TypedStorage<8, 8, ::GeometryGroup&> mGeometryGroup;
-    ::ll::TypedStorage<8, 8, ::BlockCullingGroup&> mBlockCullingGroup;
-    ::ll::TypedStorage<8, 8, ::AtlasItemManager const&> mAtlasItemManager;
-    ::ll::TypedStorage<8, 8, ::ClientBlockPipeline::MaterialRepository&> mMaterialRepository;
-    ::ll::TypedStorage<8, 8, ::Experiments const&> mExperiments;
+    ::ll::TypedStorage<8, 8, ::GeometryGroup&>                             mGeometryGroup;
+    ::ll::TypedStorage<8, 8, ::BlockCullingGroup&>                         mBlockCullingGroup;
+    ::ll::TypedStorage<8, 8, ::AtlasItemManager const&>                    mAtlasItemManager;
+    ::ll::TypedStorage<8, 8, ::ClientBlockPipeline::MaterialRepository&>   mMaterialRepository;
+    ::ll::TypedStorage<8, 8, ::Experiments const&>                         mExperiments;
     // NOLINTEND
 
 public:
@@ -29,5 +29,4 @@ public:
     BlockComponentFinalizerForRendererContext& operator=(BlockComponentFinalizerForRendererContext const&);
     BlockComponentFinalizerForRendererContext(BlockComponentFinalizerForRendererContext const&);
     BlockComponentFinalizerForRendererContext();
-
 };

@@ -14,11 +14,22 @@ namespace ItemDynamicPropertiesHelper {
 // NOLINTBEGIN
 MCAPI bool clearAllDynamicProperties(::ItemStackBase& item, ::std::string const& collection);
 
-MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> getDynamicProperty(::ItemStackBase const& item, ::std::string const& key, ::std::string const& collectionName, ::cereal::ReflectionCtx const& ctx);
+MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> getDynamicProperty(
+    ::ItemStackBase const&         item,
+    ::std::string const&           key,
+    ::std::string const&           collectionName,
+    ::cereal::ReflectionCtx const& ctx
+);
 
 MCAPI bool removeDynamicProperty(::ItemStackBase& item, ::std::string const& key, ::std::string const& collectionName);
 
-MCAPI void setDynamicProperty(::ItemStackBase& item, ::std::string const& key, ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value, ::std::string const& collectionName, ::cereal::ReflectionCtx const& ctx);
+MCAPI void setDynamicProperty(
+    ::ItemStackBase&                                                  item,
+    ::std::string const&                                              key,
+    ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value,
+    ::std::string const&                                              collectionName,
+    ::cereal::ReflectionCtx const&                                    ctx
+);
 // NOLINTEND
 
-}
+} // namespace ItemDynamicPropertiesHelper

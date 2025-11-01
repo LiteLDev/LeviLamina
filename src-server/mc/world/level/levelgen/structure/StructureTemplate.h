@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/versionless/util/Mirror.h"
-#include "mc/versionless/util/Rotation.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/level/chunk/NeighborAwareBlockUpdateType.h"
 #include "mc/world/level/levelgen/structure/IStructureTemplate.h"
 #include "mc/world/level/levelgen/structure/StructureTemplateData.h"
@@ -34,13 +34,13 @@ class StructureTemplate : public ::IStructureTemplate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mName;
-    ::ll::TypedStorage<8, 176, ::StructureTemplateData> mStructureTemplateData;
-    ::ll::TypedStorage<1, 1, uchar> mStructureVersion;
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mName;
+    ::ll::TypedStorage<8, 176, ::StructureTemplateData>                                mStructureTemplateData;
+    ::ll::TypedStorage<1, 1, uchar>                                                    mStructureVersion;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry>> mUnknownBlockRegistry;
-    ::ll::TypedStorage<1, 1, bool> mIsRemovable;
-    ::ll::TypedStorage<8, 16, ::std::map<::Block const*, int>> mBlockToIndex;
-    ::ll::TypedStorage<1, 1, bool> mNeedsOptimize;
+    ::ll::TypedStorage<1, 1, bool>                                                     mIsRemovable;
+    ::ll::TypedStorage<8, 16, ::std::map<::Block const*, int>>                         mBlockToIndex;
+    ::ll::TypedStorage<1, 1, bool>                                                     mNeedsOptimize;
     // NOLINTEND
 
 public:
@@ -65,7 +65,8 @@ public:
     virtual void clear();
 
     // vIndex: 7
-    virtual ::BoundingBox getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
+    virtual ::BoundingBox
+    getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
 
     // vIndex: 8
     virtual void fillEmpty(::BlockPos const& size);
@@ -91,23 +92,65 @@ public:
     // NOLINTBEGIN
     MCAPI explicit StructureTemplate(::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
-    MCAPI StructureTemplate(::std::string_view name, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
+    MCAPI StructureTemplate(
+        ::std::string_view                                      name,
+        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
+    );
 
-    MCAPI StructureTemplate(::StructureTemplate const& temp, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
+    MCAPI StructureTemplate(
+        ::StructureTemplate const&                              temp,
+        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
+    );
 
     MCAPI void _clearStructureData();
 
-    MCAPI void _fillBlockInfo(::BlockSource& region, ::BlockPos const& minCorner, ::BlockPos const& maxCorner, ::BlockPos const& size);
+    MCAPI void _fillBlockInfo(
+        ::BlockSource&    region,
+        ::BlockPos const& minCorner,
+        ::BlockPos const& maxCorner,
+        ::BlockPos const& size
+    );
 
     MCAPI void _fillEntityList(::BlockSource& region, ::BlockPos const& minCorner, ::BlockPos const& maxCorner);
 
-    MCAPI int _getOrCreateIndex(::Block const& block, ::std::map<::Block const*, int>& indexMap, ::StructureBlockPalette& palette);
+    MCAPI int _getOrCreateIndex(
+        ::Block const&                   block,
+        ::std::map<::Block const*, int>& indexMap,
+        ::StructureBlockPalette&         palette
+    );
 
-    MCAPI void _placeEntitiesInWorld(::BlockSource& region, ::DataLoadHelper& dataLoadHelper, bool shouldReloadActorEquipment, ::std::optional<::BoundingBox> overlapBB) const;
+    MCAPI void _placeEntitiesInWorld(
+        ::BlockSource&                 region,
+        ::DataLoadHelper&              dataLoadHelper,
+        bool                           shouldReloadActorEquipment,
+        ::std::optional<::BoundingBox> overlapBB
+    ) const;
 
-    MCAPI void _placeNextBlockSegmentInWorld(::BlockSource& region, uint64 startPlacement, uint64 endPlacement, ::StructureSettings const& structureSettings, ::DataLoadHelper& dataLoadHelper, ::StructureBlockPalette const& structureBlockPalette, ::BlockPalette const& globalBlockPalette, ::BlockPos position, ::BlockPos const& offset, ::Vec3 const& pivot, ::Rotation rotation, ::Mirror mirror, float integrityValue, uint integritySeed, ::StructureTelemetryServerData*, bool updateItemData, bool ignoreJigsawBlocks) const;
+    MCAPI void _placeNextBlockSegmentInWorld(
+        ::BlockSource&                 region,
+        uint64                         startPlacement,
+        uint64                         endPlacement,
+        ::StructureSettings const&     structureSettings,
+        ::DataLoadHelper&              dataLoadHelper,
+        ::StructureBlockPalette const& structureBlockPalette,
+        ::BlockPalette const&          globalBlockPalette,
+        ::BlockPos                     position,
+        ::BlockPos const&              offset,
+        ::Vec3 const&                  pivot,
+        ::Rotation                     rotation,
+        ::Mirror                       mirror,
+        float                          integrityValue,
+        uint                           integritySeed,
+        ::StructureTelemetryServerData*,
+        bool updateItemData,
+        bool ignoreJigsawBlocks
+    ) const;
 
-    MCAPI void fillFromWorld(::BlockSource& region, ::BlockPos const& capturePosition, ::StructureSettings const& structureSettings);
+    MCAPI void fillFromWorld(
+        ::BlockSource&             region,
+        ::BlockPos const&          capturePosition,
+        ::StructureSettings const& structureSettings
+    );
 
     MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 
@@ -119,11 +162,26 @@ public:
 
     MCAPI void optimizePalette(::std::string const& paletteName);
 
-    MCAPI void placeEntitiesInWorld(::BlockSource& region, ::BlockPos const& position, ::StructureSettings const& structureSettings, ::BoundingBox overlapBB) const;
+    MCAPI void placeEntitiesInWorld(
+        ::BlockSource&             region,
+        ::BlockPos const&          position,
+        ::StructureSettings const& structureSettings,
+        ::BoundingBox              overlapBB
+    ) const;
 
-    MCAPI void placeInWorld(::BlockSource& region, ::BlockPalette const& globalBlockPalette, ::BlockPos const& position, ::StructureSettings const& structureSettings, ::StructureTelemetryServerData* telemetryServerData, bool updateItemData) const;
+    MCAPI void placeInWorld(
+        ::BlockSource&                  region,
+        ::BlockPalette const&           globalBlockPalette,
+        ::BlockPos const&               position,
+        ::StructureSettings const&      structureSettings,
+        ::StructureTelemetryServerData* telemetryServerData,
+        bool                            updateItemData
+    ) const;
 
-    MCAPI void placeNextSegmentInWorld(::StructureAnimationData& structureAnimationData, ::BlockPalette const& globalBlockPalette) const;
+    MCAPI void placeNextSegmentInWorld(
+        ::StructureAnimationData& structureAnimationData,
+        ::BlockPalette const&     globalBlockPalette
+    ) const;
 
     MCAPI bool setBlock(::BlockPos const& pos, ::Block const* block, bool waterlogged);
 
@@ -149,9 +207,13 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
-    MCAPI void* $ctor(::std::string_view name, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
+    MCAPI void*
+    $ctor(::std::string_view name, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
-    MCAPI void* $ctor(::StructureTemplate const& temp, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
+    MCAPI void* $ctor(
+        ::StructureTemplate const&                              temp,
+        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
+    );
     // NOLINTEND
 
 public:
@@ -169,7 +231,8 @@ public:
 
     MCAPI void $clear();
 
-    MCAPI ::BoundingBox $getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
+    MCAPI ::BoundingBox
+    $getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
 
     MCAPI void $fillEmpty(::BlockPos const& size);
 
@@ -189,5 +252,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

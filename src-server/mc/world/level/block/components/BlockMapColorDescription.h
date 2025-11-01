@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/versionless/Color255RGB.h"
+#include "mc/deps/shared_types/shared_types/Color255RGB.h"
 #include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 16, ::SharedTypes::Color255RGB> mMapColor;
-    ::ll::TypedStorage<1, 1, ::TintMethod> mTintMethod;
+    ::ll::TypedStorage<1, 1, ::TintMethod>                mTintMethod;
     // NOLINTEND
 
 public:
@@ -79,5 +79,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

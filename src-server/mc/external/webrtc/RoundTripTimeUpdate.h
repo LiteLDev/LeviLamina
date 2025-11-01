@@ -18,7 +18,6 @@ public:
     RoundTripTimeUpdate& operator=(RoundTripTimeUpdate const&);
     RoundTripTimeUpdate(RoundTripTimeUpdate const&);
     RoundTripTimeUpdate();
-
 };
 
-}
+} // namespace webrtc

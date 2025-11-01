@@ -8,9 +8,9 @@ struct Version {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk9c04c2;
-    ::ll::UntypedStorage<2, 2> mUnk59edf9;
-    ::ll::UntypedStorage<2, 2> mUnk82270a;
+    ::ll::UntypedStorage<2, 2>  mUnk9c04c2;
+    ::ll::UntypedStorage<2, 2>  mUnk59edf9;
+    ::ll::UntypedStorage<2, 2>  mUnk82270a;
     ::ll::UntypedStorage<8, 32> mUnk4d580f;
     // NOLINTEND
 
@@ -53,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

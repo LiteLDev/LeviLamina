@@ -11,5 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 32, ::CameraInstruction::FadeInstruction> mCameraFadeInstruction;
     // NOLINTEND
-
 };

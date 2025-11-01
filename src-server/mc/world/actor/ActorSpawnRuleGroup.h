@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mCategoryLookup;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mSpawnDelayStartMap;
-    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&> mEventing;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                     mEventing;
     // NOLINTEND
 
 public:
@@ -40,7 +40,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorSpawnRuleGroup(::ResourcePackManager& resourcePackManager, ::IWorldRegistriesProvider& registries, ::br::spawn::SpawnPlacements& spawnPlacements, ::cereal::ReflectionCtx const& ctx, ::LinkedAssetValidator& linkedAssetValidator, ::Experiments const& experiments, ::IMinecraftEventing& eventing);
+    MCNAPI ActorSpawnRuleGroup(
+        ::ResourcePackManager&         resourcePackManager,
+        ::IWorldRegistriesProvider&    registries,
+        ::br::spawn::SpawnPlacements&  spawnPlacements,
+        ::cereal::ReflectionCtx const& ctx,
+        ::LinkedAssetValidator&        linkedAssetValidator,
+        ::Experiments const&           experiments,
+        ::IMinecraftEventing&          eventing
+    );
 
     MCNAPI void resetDelayEnd(::MobSpawnRules spawnRules, uint64 age, ::Random& random);
     // NOLINTEND
@@ -48,7 +56,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ResourcePackManager& resourcePackManager, ::IWorldRegistriesProvider& registries, ::br::spawn::SpawnPlacements& spawnPlacements, ::cereal::ReflectionCtx const& ctx, ::LinkedAssetValidator& linkedAssetValidator, ::Experiments const& experiments, ::IMinecraftEventing& eventing);
+    MCNAPI void* $ctor(
+        ::ResourcePackManager&         resourcePackManager,
+        ::IWorldRegistriesProvider&    registries,
+        ::br::spawn::SpawnPlacements&  spawnPlacements,
+        ::cereal::ReflectionCtx const& ctx,
+        ::LinkedAssetValidator&        linkedAssetValidator,
+        ::Experiments const&           experiments,
+        ::IMinecraftEventing&          eventing
+    );
     // NOLINTEND
 
 public:
@@ -56,5 +72,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

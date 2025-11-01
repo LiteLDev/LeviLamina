@@ -23,21 +23,21 @@ public:
     // BrewingStandBlockActor inner types define
     enum : int {
         Ingredient = 0,
-        Potion1 = 1,
-        Potion2 = 2,
-        Potion3 = 3,
-        Fuel = 4,
+        Potion1    = 1,
+        Potion2    = 2,
+        Potion3    = 3,
+        Fuel       = 4,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mBrewTime;
-    ::ll::TypedStorage<4, 4, int> mFuelAmount;
-    ::ll::TypedStorage<4, 4, int> mFuelTotal;
-    ::ll::TypedStorage<8, 8, ::Item const*> mIngredient;
+    ::ll::TypedStorage<4, 4, int>              mBrewTime;
+    ::ll::TypedStorage<4, 4, int>              mFuelAmount;
+    ::ll::TypedStorage<4, 4, int>              mFuelTotal;
+    ::ll::TypedStorage<8, 8, ::Item const*>    mIngredient;
     ::ll::TypedStorage<8, 760, ::ItemStack[5]> mItems;
-    ::ll::TypedStorage<1, 1, bool> mNotifyPlayersOnChange;
+    ::ll::TypedStorage<1, 1, bool>             mNotifyPlayersOnChange;
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 25
     virtual ::std::string getName() const /*override*/;
@@ -101,7 +101,11 @@ public:
     virtual void onMove() /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -117,7 +121,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD ::std::string $getName() const;
 
@@ -151,7 +155,11 @@ public:
 
     MCFOLD void $onMove();
 
-    MCAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
     // NOLINTEND
 
 public:
@@ -161,5 +169,4 @@ public:
 
     MCAPI static void** $vftableForContainer();
     // NOLINTEND
-
 };

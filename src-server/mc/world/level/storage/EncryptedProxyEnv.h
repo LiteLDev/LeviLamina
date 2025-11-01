@@ -14,10 +14,10 @@ class EncryptedProxyEnv : public ::leveldb::EnvWrapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfea032;
+    ::ll::UntypedStorage<8, 8>  mUnkfea032;
     ::ll::UntypedStorage<8, 32> mUnkedb53e;
     ::ll::UntypedStorage<8, 32> mUnk6f13c3;
-    ::ll::UntypedStorage<1, 1> mUnk535aec;
+    ::ll::UntypedStorage<1, 1>  mUnk535aec;
     // NOLINTEND
 
 public:
@@ -51,13 +51,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EncryptedProxyEnv(::leveldb::Env* env, ::ContentIdentity const& contentIdentity, ::std::string const& contentKey, ::EncryptedProxyReadMode mode);
+    MCNAPI EncryptedProxyEnv(
+        ::leveldb::Env*          env,
+        ::ContentIdentity const& contentIdentity,
+        ::std::string const&     contentKey,
+        ::EncryptedProxyReadMode mode
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::leveldb::Env* env, ::ContentIdentity const& contentIdentity, ::std::string const& contentKey, ::EncryptedProxyReadMode mode);
+    MCNAPI void* $ctor(
+        ::leveldb::Env*          env,
+        ::ContentIdentity const& contentIdentity,
+        ::std::string const&     contentKey,
+        ::EncryptedProxyReadMode mode
+    );
     // NOLINTEND
 
 public:
@@ -79,5 +89,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

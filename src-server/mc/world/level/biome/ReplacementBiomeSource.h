@@ -31,36 +31,44 @@ public:
     struct BiomeReplacementIndex;
     struct BiomeReplacementNoise;
     // clang-format on
-    
+
     // ReplacementBiomeSource inner types define
     struct BiomeReplacementNoise {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 2060, ::SimplexNoise const> mNoise;
-        ::ll::TypedStorage<4, 4, float> mAmount;
-        ::ll::TypedStorage<4, 4, float> mNoiseFrequencyScale;
+        ::ll::TypedStorage<4, 4, float>                   mAmount;
+        ::ll::TypedStorage<4, 4, float>                   mNoiseFrequencyScale;
         // NOLINTEND
-    
     };
-    
+
     struct BiomeReplacementIndex {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::gsl::not_null<::Biome const*>> mBiome;
-        ::ll::TypedStorage<8, 16, ::std::optional<uint64>> mNoiseIndex;
+        ::ll::TypedStorage<8, 16, ::std::optional<uint64>>        mNoiseIndex;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeSource3d>> mWrappedBiomeSource;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BiomeIdType, ::std::vector<::ReplacementBiomeSource::BiomeReplacementIndex>>> mVanillaBiomeToReplacementNoiseIndex;
-    ::ll::TypedStorage<8, 40, ::brstd::flat_set<::BiomeIdType, ::std::less<::BiomeIdType>, ::std::vector<::BiomeIdType>>> mFullyReplacedBiomeIds;
-    ::ll::TypedStorage<8, 40, ::brstd::flat_set<::BiomeHashType, ::std::less<::BiomeHashType>, ::std::vector<::BiomeHashType>>> mFullyReplacedBiomeNameHashes;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::BiomeIdType, ::std::vector<::ReplacementBiomeSource::BiomeReplacementIndex>>>
+        mVanillaBiomeToReplacementNoiseIndex;
+    ::ll::
+        TypedStorage<8, 40, ::brstd::flat_set<::BiomeIdType, ::std::less<::BiomeIdType>, ::std::vector<::BiomeIdType>>>
+            mFullyReplacedBiomeIds;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::brstd::flat_set<::BiomeHashType, ::std::less<::BiomeHashType>, ::std::vector<::BiomeHashType>>>
+        mFullyReplacedBiomeNameHashes;
     ::ll::TypedStorage<8, 24, ::std::vector<::ReplacementBiomeSource::BiomeReplacementNoise>> mNoiseEntries;
     // NOLINTEND
 
@@ -72,16 +80,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const /*override*/;
+    virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const
+        /*override*/;
 
     // vIndex: 3
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
     // vIndex: 2
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const /*override*/;
+    virtual ::BiomeArea
+    getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const /*override*/;
 
     // vIndex: 4
-    virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const /*override*/;
+    virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const
+        /*override*/;
 
     // vIndex: 5
     virtual bool hasBiomeById(::BiomeIdType id) const /*override*/;
@@ -102,7 +113,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ReplacementBiomeSource(::XoroshiroPositionalRandomFactory const& random, ::std::vector<::BiomeReplacement> const& biomeReplacements, ::std::unique_ptr<::BiomeSource3d> wrappedBiomeSource);
+    MCAPI ReplacementBiomeSource(
+        ::XoroshiroPositionalRandomFactory const& random,
+        ::std::vector<::BiomeReplacement> const&  biomeReplacements,
+        ::std::unique_ptr<::BiomeSource3d>        wrappedBiomeSource
+    );
 
     MCAPI bool fullyReplacesBiomeById(::BiomeIdType id) const;
 
@@ -114,7 +129,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::XoroshiroPositionalRandomFactory const& random, ::std::vector<::BiomeReplacement> const& biomeReplacements, ::std::unique_ptr<::BiomeSource3d> wrappedBiomeSource);
+    MCAPI void* $ctor(
+        ::XoroshiroPositionalRandomFactory const& random,
+        ::std::vector<::BiomeReplacement> const&  biomeReplacements,
+        ::std::unique_ptr<::BiomeSource3d>        wrappedBiomeSource
+    );
     // NOLINTEND
 
 public:
@@ -130,7 +149,8 @@ public:
 
     MCFOLD ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const;
+    MCAPI ::BiomeArea
+    $getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const;
 
     MCAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const;
 
@@ -148,5 +168,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

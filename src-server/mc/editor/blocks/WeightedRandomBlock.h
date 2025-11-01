@@ -28,7 +28,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::HashedString _getBlock() const;
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

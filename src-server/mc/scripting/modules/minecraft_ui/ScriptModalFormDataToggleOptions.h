@@ -13,7 +13,7 @@ struct ScriptModalFormDataToggleOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnk24b964;
+    ::ll::UntypedStorage<1, 2>   mUnk24b964;
     ::ll::UntypedStorage<8, 224> mUnk56fa7e;
     // NOLINTEND
 
@@ -28,7 +28,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptModalFormDataToggleOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataToggleOptions&&);
 
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormDataToggleOptions& operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormDataToggleOptions&&);
+    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormDataToggleOptions&
+    operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormDataToggleOptions&&);
 
     MCNAPI ~ScriptModalFormDataToggleOptions();
     // NOLINTEND
@@ -50,7 +51,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraftServerUI

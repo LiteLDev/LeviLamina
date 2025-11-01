@@ -19,7 +19,7 @@ public:
     // clang-format off
     struct Request;
     // clang-format on
-    
+
     // Fir inner types define
     struct Request {
     public:
@@ -28,15 +28,14 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk4013c3;
         ::ll::UntypedStorage<1, 1> mUnka5f37f;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Request& operator=(Request const&);
         Request(Request const&);
         Request();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,7 +57,12 @@ public:
     virtual uint64 BlockLength() const /*override*/;
 
     // vIndex: 2
-    virtual bool Create(uchar* packet, uint64* index, uint64 max_length, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback) const /*override*/;
+    virtual bool Create(
+        uchar*                                                   packet,
+        uint64*                                                  index,
+        uint64                                                   max_length,
+        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -86,7 +90,12 @@ public:
     // NOLINTBEGIN
     MCNAPI uint64 $BlockLength() const;
 
-    MCNAPI bool $Create(uchar* packet, uint64* index, uint64 max_length, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback) const;
+    MCNAPI bool $Create(
+        uchar*                                                   packet,
+        uint64*                                                  index,
+        uint64                                                   max_length,
+        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
+    ) const;
     // NOLINTEND
 
 public:
@@ -94,7 +103,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc::rtcp

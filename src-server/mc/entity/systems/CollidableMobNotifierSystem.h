@@ -32,9 +32,30 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void tickNotifier(::StrictEntityContext const&, ::AABBShapeComponent const& aabbShapeComponent, ::DimensionTypeComponent const& dimensionComponent, ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::Exclude<::ActorIsFirstTickFlagComponent>> mobView, ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView, ::EntityModifier<::CollidableMobNearFlagComponent> mod, ::LocalSpatialEntityFetcherFactoryComponent& spatialEntityFetcherFactory, ::LocalSpatialEntityFetcher& spatialEntityFetcher);
+    MCNAPI static void tickNotifier(
+        ::StrictEntityContext const&,
+        ::AABBShapeComponent const&     aabbShapeComponent,
+        ::DimensionTypeComponent const& dimensionComponent,
+        ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::Exclude<::ActorIsFirstTickFlagComponent>>
+                                                                               mobView,
+        ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView,
+        ::EntityModifier<::CollidableMobNearFlagComponent>                     mod,
+        ::LocalSpatialEntityFetcherFactoryComponent&                           spatialEntityFetcherFactory,
+        ::LocalSpatialEntityFetcher&                                           spatialEntityFetcher
+    );
 
-    MCNAPI static void tickSystem(::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent> factory, ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::CollidableMobFlagComponent>, ::Exclude<::ActorRemovedFlagComponent>, ::AABBShapeComponent const, ::DimensionTypeComponent const> view, ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::Exclude<::ActorIsFirstTickFlagComponent>> mobView, ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView, ::EntityModifier<::CollidableMobNearFlagComponent> mod);
+    MCNAPI static void tickSystem(
+        ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent> factory,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::CollidableMobFlagComponent>,
+            ::Exclude<::ActorRemovedFlagComponent>,
+            ::AABBShapeComponent const,
+            ::DimensionTypeComponent const> view,
+        ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::Exclude<::ActorIsFirstTickFlagComponent>>
+                                                                               mobView,
+        ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView,
+        ::EntityModifier<::CollidableMobNearFlagComponent>                     mod
+    );
     // NOLINTEND
-
 };

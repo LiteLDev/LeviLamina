@@ -23,10 +23,14 @@ public:
     virtual void getPendingInviteCount(::std::function<void(::Realms::GenericStatus, int)>) = 0;
 
     // vIndex: 2
-    virtual void getPendingInviteCountFriendsOnly(::std::function<void(::Realms::GenericStatus, int)>, ::std::vector<::std::string> const&) = 0;
+    virtual void getPendingInviteCountFriendsOnly(
+        ::std::function<void(::Realms::GenericStatus, int)>,
+        ::std::vector<::std::string> const&
+    ) = 0;
 
     // vIndex: 3
-    virtual void listInvites(::std::function<void(::Realms::GenericStatus, ::std::vector<::Invites::Invite>)>, bool) = 0;
+    virtual void
+    listInvites(::std::function<void(::Realms::GenericStatus, ::std::vector<::Invites::Invite>)>, bool) = 0;
     // NOLINTEND
 
 public:
@@ -34,7 +38,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Realms

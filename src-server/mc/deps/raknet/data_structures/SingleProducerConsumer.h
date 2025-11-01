@@ -4,8 +4,7 @@
 
 namespace DataStructures {
 
-template<typename T0>
-class SingleProducerConsumer {
-};
+template <typename T0>
+class SingleProducerConsumer {};
 
-}
+} // namespace DataStructures

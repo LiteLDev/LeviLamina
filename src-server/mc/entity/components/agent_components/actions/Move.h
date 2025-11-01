@@ -16,7 +16,6 @@ public:
     Move& operator=(Move const&);
     Move(Move const&);
     Move();
-
 };
 
-}
+} // namespace AgentComponents::Actions

@@ -32,7 +32,6 @@ public:
 
     MCNAPI void ReportUsagePattern(::webrtc::PeerConnectionObserver* observer) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

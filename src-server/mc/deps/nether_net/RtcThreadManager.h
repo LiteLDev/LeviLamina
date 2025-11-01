@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk47090c;
-    ::ll::UntypedStorage<8, 8> mUnk4bb523;
+    ::ll::UntypedStorage<8, 8>  mUnk4bb523;
     // NOLINTEND
 
 public:
@@ -30,11 +30,14 @@ public:
     // NOLINTBEGIN
     MCNAPI ::rtc::Thread* GetRtcThread() const;
 
-    MCNAPI void Initialize(char const* threadName, ::NetherNet::ThreadInit const& threadInit, ::std::unique_ptr<::rtc::SocketServer>&& socketServer);
+    MCNAPI void Initialize(
+        char const*                              threadName,
+        ::NetherNet::ThreadInit const&           threadInit,
+        ::std::unique_ptr<::rtc::SocketServer>&& socketServer
+    );
 
     MCNAPI void Shutdown();
     // NOLINTEND
-
 };
 
-}
+} // namespace NetherNet

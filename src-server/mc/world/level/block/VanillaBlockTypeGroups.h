@@ -177,4 +177,4 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Woode
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoolIds();
 // NOLINTEND
 
-}
+} // namespace VanillaBlockTypeGroups

@@ -22,7 +22,9 @@ namespace webrtc { class VideoTrackSourceInterface; }
 
 namespace webrtc {
 
-class VideoTrack : public ::webrtc::MediaStreamTrack<::webrtc::VideoTrackInterface>, public ::rtc::VideoSourceBaseGuarded, public ::webrtc::ObserverInterface {
+class VideoTrack : public ::webrtc::MediaStreamTrack<::webrtc::VideoTrackInterface>,
+                   public ::rtc::VideoSourceBaseGuarded,
+                   public ::webrtc::ObserverInterface {
 public:
     // member variables
     // NOLINTBEGIN
@@ -43,7 +45,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants) /*override*/;
+    virtual void AddOrUpdateSink(
+        ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
+        ::rtc::VideoSinkWants const&                     wants
+    ) /*override*/;
 
     // vIndex: 2
     virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
@@ -82,19 +87,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VideoTrack(::std::string_view label, ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>> source, ::rtc::Thread* worker_thread);
+    MCNAPI VideoTrack(
+        ::std::string_view label,
+        ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>>
+                       source,
+        ::rtc::Thread* worker_thread
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::VideoTrack> Create(::std::string_view id, ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface> source, ::rtc::Thread* worker_thread);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::VideoTrack> Create(
+        ::std::string_view                                           id,
+        ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface> source,
+        ::rtc::Thread*                                               worker_thread
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view label, ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>> source, ::rtc::Thread* worker_thread);
+    MCNAPI void* $ctor(
+        ::std::string_view label,
+        ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>>
+                       source,
+        ::rtc::Thread* worker_thread
+    );
     // NOLINTEND
 
 public:
@@ -106,7 +125,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
+    MCNAPI void
+    $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
 
     MCNAPI void $RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink);
 
@@ -142,7 +162,6 @@ public:
 
     MCNAPI static void** $vftableForMediaStreamTrack();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

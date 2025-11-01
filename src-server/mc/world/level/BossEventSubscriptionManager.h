@@ -13,13 +13,15 @@ struct ActorUniqueID;
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
-class BossEventSubscriptionManager : public ::Bedrock::EnableNonOwnerReferences, public ::Bedrock::ImplBase<::BossEventSubscriptionManager> {
+class BossEventSubscriptionManager : public ::Bedrock::EnableNonOwnerReferences,
+                                     public ::Bedrock::ImplBase<::BossEventSubscriptionManager> {
 public:
     // BossEventSubscriptionManager inner types define
     using onBossEventSignature = void(::BossEventUpdateType);
-    
-    using onBossEventWithPacketSignature = void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&);
-    
+
+    using onBossEventWithPacketSignature =
+        void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&);
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -27,7 +29,9 @@ public:
     virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(::std::function<void(::BossEventUpdateType)>) = 0;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(
+        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)>
+    ) = 0;
 
     // vIndex: 4
     virtual void broadcastBossEvent(::BossEventUpdateType) = 0;
@@ -47,5 +51,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

@@ -8,4 +8,4 @@ namespace Bedrock::Services {
 MCNAPI ::std::string const& getLocalIdentityScope(::std::string const& serviceName);
 // NOLINTEND
 
-}
+} // namespace Bedrock::Services

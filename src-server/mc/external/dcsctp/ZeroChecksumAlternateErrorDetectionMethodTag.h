@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class ZeroChecksumAlternateErrorDetectionMethodTag {
-};
+class ZeroChecksumAlternateErrorDetectionMethodTag {};
 
-}
+} // namespace dcsctp

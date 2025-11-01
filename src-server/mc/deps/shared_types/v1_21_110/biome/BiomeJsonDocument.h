@@ -20,7 +20,7 @@ public:
     // clang-format off
     struct BiomeJsonObject;
     // clang-format on
-    
+
     // BiomeJsonDocument inner types define
     struct BiomeJsonObject {
     public:
@@ -29,7 +29,7 @@ public:
         struct BiomeDescription;
         struct ComponentMap;
         // clang-format on
-        
+
         // BiomeJsonObject inner types define
         struct BiomeDescription {
         public:
@@ -37,117 +37,117 @@ public:
             // clang-format off
             struct BiomeIdentifierReferenceConstraint;
             // clang-format on
-            
+
             // BiomeDescription inner types define
-            struct BiomeIdentifierReferenceConstraint : public ::cereal::ConstraintHandle<::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription::BiomeIdentifierReferenceConstraint> {
+            struct BiomeIdentifierReferenceConstraint
+            : public ::cereal::ConstraintHandle<::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::
+                                                    BiomeDescription::BiomeIdentifierReferenceConstraint> {
             public:
                 // virtual functions
                 // NOLINTBEGIN
                 // vIndex: 3
                 virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
-            
+
                 // vIndex: 1
                 virtual ~BiomeIdentifierReferenceConstraint() /*override*/ = default;
                 // NOLINTEND
-            
+
             public:
                 // virtual function thunks
                 // NOLINTBEGIN
-            
+
                 // NOLINTEND
-            
             };
-            
+
         public:
             // member variables
             // NOLINTBEGIN
             ::ll::UntypedStorage<8, 32> mUnk16b23f;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             BiomeDescription& operator=(BiomeDescription const&);
             BiomeDescription(BiomeDescription const&);
             BiomeDescription();
-        
+
         public:
             // member functions
             // NOLINTBEGIN
-            MCNAPI ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&&);
-        
+            MCNAPI ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
+            operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&&);
+
             MCNAPI ~BiomeDescription();
             // NOLINTEND
-        
+
         public:
             // static functions
             // NOLINTBEGIN
             MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
-        
+
         public:
             // destructor thunk
             // NOLINTBEGIN
             MCNAPI void $dtor();
             // NOLINTEND
-        
         };
-        
+
         struct ComponentMap {
         public:
             // member variables
             // NOLINTBEGIN
             ::ll::UntypedStorage<8, 16> mUnk55192b;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             ComponentMap& operator=(ComponentMap const&);
             ComponentMap(ComponentMap const&);
             ComponentMap();
-        
+
         public:
             // static functions
             // NOLINTBEGIN
             MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
-        
         };
-        
+
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk5ff55f;
         ::ll::UntypedStorage<8, 16> mUnk9b1b1d;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         BiomeJsonObject& operator=(BiomeJsonObject const&);
         BiomeJsonObject(BiomeJsonObject const&);
         BiomeJsonObject();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject&&);
-    
+        MCNAPI ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject&
+        operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject&&);
+
         MCNAPI ~BiomeJsonObject();
         // NOLINTEND
-    
+
     public:
         // static functions
         // NOLINTBEGIN
         MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -198,7 +198,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_110

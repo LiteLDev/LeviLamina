@@ -18,9 +18,21 @@ struct MobTravelComponent;
 namespace MobTravelIntentSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::LocalMoveVelocityComponent, ::MobRotationComponent, ::MobTravelComponent> view);
+MCNAPI void tickSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent>,
+        ::LocalMoveVelocityComponent,
+        ::MobRotationComponent,
+        ::MobTravelComponent> view
+);
 
-MCNAPI void updatedMoveVelocity(::StrictEntityContext const&, ::LocalMoveVelocityComponent& localMoveVelocityComponent, ::MobRotationComponent& mobRotationComponent, ::MobTravelComponent& mobTravelComponent);
+MCNAPI void updatedMoveVelocity(
+    ::StrictEntityContext const&,
+    ::LocalMoveVelocityComponent& localMoveVelocityComponent,
+    ::MobRotationComponent&       mobRotationComponent,
+    ::MobTravelComponent&         mobTravelComponent
+);
 // NOLINTEND
 
-}
+} // namespace MobTravelIntentSystemImpl

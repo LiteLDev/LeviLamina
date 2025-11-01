@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,10 +16,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle> const> mBlockSourceHandle;
-    ::ll::TypedStorage<4, 12, ::BlockPos const> mPressurePlateBlockPos;
-    ::ll::TypedStorage<4, 4, int const> mPreviousRedstonePower;
-    ::ll::TypedStorage<4, 4, int const> mRedstonePower;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mSource;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>                             mPressurePlateBlockPos;
+    ::ll::TypedStorage<4, 4, int const>                                     mPreviousRedstonePower;
+    ::ll::TypedStorage<4, 4, int const>                                     mRedstonePower;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef const>                        mSource;
     // NOLINTEND
 
 public:
@@ -33,5 +33,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

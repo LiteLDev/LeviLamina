@@ -39,7 +39,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(int initial_target_rate_kbps, bool can_build_up_underuse);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

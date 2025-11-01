@@ -14,5 +14,4 @@ public:
     FetchImageParams& operator=(FetchImageParams const&);
     FetchImageParams(FetchImageParams const&);
     FetchImageParams();
-
 };

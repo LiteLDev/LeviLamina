@@ -16,12 +16,12 @@ struct ThrowableItemComponentLegacyFactoryData : public ::IItemComponentLegacyFa
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mDoSwing;
+    ::ll::TypedStorage<1, 1, bool>  mDoSwing;
     ::ll::TypedStorage<4, 4, float> mMinDrawDuration;
     ::ll::TypedStorage<4, 4, float> mDrawDuration;
     ::ll::TypedStorage<4, 4, float> mLaunchPowerScale;
     ::ll::TypedStorage<4, 4, float> mMaxLaunchPower;
-    ::ll::TypedStorage<1, 1, bool> mScalePowerByDrawDuration;
+    ::ll::TypedStorage<1, 1, bool>  mScalePowerByDrawDuration;
     // NOLINTEND
 
 public:
@@ -34,7 +34,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
     // NOLINTEND
 
 public:
@@ -42,5 +46,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

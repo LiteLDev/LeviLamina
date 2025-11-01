@@ -9,7 +9,7 @@ class MoveTowardsRestrictionDefinition : public ::BaseGoalDefinition {
 public:
     // MoveTowardsRestrictionDefinition inner types define
     using self = ::MoveTowardsRestrictionDefinition;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -22,5 +22,4 @@ public:
     // vIndex: 0
     virtual ~MoveTowardsRestrictionDefinition() /*override*/ = default;
     // NOLINTEND
-
 };

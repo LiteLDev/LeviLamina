@@ -26,7 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_80::ParticleBasicRenderParameters& operator=(::SharedTypes::v1_20_80::ParticleBasicRenderParameters&&);
+    MCNAPI ::SharedTypes::v1_20_80::ParticleBasicRenderParameters&
+    operator=(::SharedTypes::v1_20_80::ParticleBasicRenderParameters&&);
     // NOLINTEND
 
 public:
@@ -34,7 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

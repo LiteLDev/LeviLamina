@@ -13,4 +13,4 @@ MCNAPI bool IsScreenshare(::webrtc::VideoContentType const& content_type);
 MCNAPI char const* ToString(::webrtc::VideoContentType const& content_type);
 // NOLINTEND
 
-}
+} // namespace webrtc::videocontenttypehelpers

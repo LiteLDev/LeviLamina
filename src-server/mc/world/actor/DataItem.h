@@ -9,7 +9,7 @@ class DataItem {
 public:
     // DataItem inner types define
     using ID = ushort;
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,5 +34,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

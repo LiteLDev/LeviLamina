@@ -22,7 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_110::Shape& operator=(::SharedTypes::v1_21_110::Shape&&);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_110

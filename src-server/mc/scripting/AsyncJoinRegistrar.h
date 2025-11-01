@@ -35,7 +35,16 @@ public:
     virtual ~AsyncJoinRegistrar() /*override*/ = default;
 
     // vIndex: 0
-    virtual ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(::brstd::move_only_function<void(::NetworkIdentifier const&, ::std::variant<::std::reference_wrapper<::ConnectionRequest const>, ::std::reference_wrapper<::SubClientConnectionRequest const>> const&, ::SubClientId, ::std::shared_ptr<::AsyncVerdictPromise>)> joinCallback) /*override*/;
+    virtual ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(
+        ::brstd::move_only_function<void(
+            ::NetworkIdentifier const&,
+            ::std::variant<
+                ::std::reference_wrapper<::ConnectionRequest const>,
+                ::std::reference_wrapper<::SubClientConnectionRequest const>> const&,
+            ::SubClientId,
+            ::std::shared_ptr<::AsyncVerdictPromise>
+        )> joinCallback
+    ) /*override*/;
 
     // vIndex: 1
     virtual bool isPaused() /*override*/;
@@ -58,7 +67,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> $registerAsyncJoinCallback(::brstd::move_only_function<void(::NetworkIdentifier const&, ::std::variant<::std::reference_wrapper<::ConnectionRequest const>, ::std::reference_wrapper<::SubClientConnectionRequest const>> const&, ::SubClientId, ::std::shared_ptr<::AsyncVerdictPromise>)> joinCallback);
+    MCNAPI ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> $registerAsyncJoinCallback(
+        ::brstd::move_only_function<void(
+            ::NetworkIdentifier const&,
+            ::std::variant<
+                ::std::reference_wrapper<::ConnectionRequest const>,
+                ::std::reference_wrapper<::SubClientConnectionRequest const>> const&,
+            ::SubClientId,
+            ::std::shared_ptr<::AsyncVerdictPromise>
+        )> joinCallback
+    );
 
     MCNAPI bool $isPaused();
     // NOLINTEND
@@ -68,5 +86,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

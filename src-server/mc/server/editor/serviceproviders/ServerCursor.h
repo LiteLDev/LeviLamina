@@ -17,7 +17,9 @@ namespace Editor::Network { class PayloadServiceProvider; }
 
 namespace Editor::Cursor {
 
-class ServerCursor : public ::Editor::Cursor::Cursor, public ::Bedrock::EnableNonOwnerReferences, public ::EnableGetWeakRef<::Editor::Cursor::ServerCursor> {
+class ServerCursor : public ::Editor::Cursor::Cursor,
+                     public ::Bedrock::EnableNonOwnerReferences,
+                     public ::EnableGetWeakRef<::Editor::Cursor::ServerCursor> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -70,7 +72,6 @@ public:
 
     MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Cursor

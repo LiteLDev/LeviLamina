@@ -4,8 +4,7 @@
 
 namespace ActorData {
 
-template<typename T0, typename T1, typename T2>
-struct ActorDataSimpleOperations {
-};
+template <typename T0, typename T1, typename T2>
+struct ActorDataSimpleOperations {};
 
-}
+} // namespace ActorData

@@ -27,31 +27,30 @@ public:
     // clang-format off
     struct DirectoryItem;
     // clang-format on
-    
+
     // WriteBufferedTransaction inner types define
     struct DirectoryItem {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 1032> mUnk57ae0e;
-        ::ll::UntypedStorage<8, 8> mUnk4e123c;
-        ::ll::UntypedStorage<4, 4> mUnk79eb3b;
+        ::ll::UntypedStorage<8, 8>    mUnk4e123c;
+        ::ll::UntypedStorage<4, 4>    mUnk79eb3b;
         ::ll::UntypedStorage<8, 1032> mUnkae7371;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         DirectoryItem& operator=(DirectoryItem const&);
         DirectoryItem(DirectoryItem const&);
         DirectoryItem();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk322229;
-    ::ll::UntypedStorage<8, 8> mUnk17068e;
+    ::ll::UntypedStorage<8, 8>  mUnk17068e;
     ::ll::UntypedStorage<8, 24> mUnk97857d;
     ::ll::UntypedStorage<8, 16> mUnkf9ece4;
     // NOLINTEND
@@ -69,7 +68,12 @@ public:
     virtual ::Core::CrossStorageCopyMode getCrossStorageCopyMode() /*override*/;
 
     // vIndex: 6
-    virtual ::Core::Result _openFile(::std::unique_ptr<::Core::FileImpl>&, ::Core::PathView, ::Core::FileOpenMode, ::Core::FileBufferingMode) /*override*/;
+    virtual ::Core::Result _openFile(
+        ::std::unique_ptr<::Core::FileImpl>&,
+        ::Core::PathView,
+        ::Core::FileOpenMode,
+        ::Core::FileBufferingMode
+    ) /*override*/;
 
     // vIndex: 7
     virtual bool _fileExists(::Core::PathView) /*override*/;
@@ -102,7 +106,11 @@ public:
     virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) /*override*/;
 
     // vIndex: 25
-    virtual ::Core::Result _iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) /*override*/;
+    virtual ::Core::Result _iterateOverDirectory(
+        ::Core::PathView,
+        ::Core::DirectoryIterationFlags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
+    ) /*override*/;
 
     // vIndex: 31
     virtual bool _fileOrDirectoryExists(::Core::PathView) /*override*/;
@@ -128,7 +136,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

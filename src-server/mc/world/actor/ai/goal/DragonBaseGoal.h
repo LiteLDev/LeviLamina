@@ -16,10 +16,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::EnderDragon&> mDragon;
-    ::ll::TypedStorage<4, 4, float> mActiveSpeed;
-    ::ll::TypedStorage<4, 4, float> mFlightSpeed;
-    ::ll::TypedStorage<4, 4, float> mTurnSpeed;
-    ::ll::TypedStorage<4, 8, ::FloatRange> mTargetZone;
+    ::ll::TypedStorage<4, 4, float>          mActiveSpeed;
+    ::ll::TypedStorage<4, 4, float>          mFlightSpeed;
+    ::ll::TypedStorage<4, 4, float>          mTurnSpeed;
+    ::ll::TypedStorage<4, 8, ::FloatRange>   mTargetZone;
     // NOLINTEND
 
 public:
@@ -34,5 +34,4 @@ public:
     // vIndex: 0
     virtual ~DragonBaseGoal() /*override*/ = default;
     // NOLINTEND
-
 };

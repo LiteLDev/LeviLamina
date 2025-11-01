@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 
 struct EnvironmentChangeContext {
 public:
@@ -11,5 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 16, ::std::optional<::BlockPos>> mBlockPosContext;
     // NOLINTEND
-
 };

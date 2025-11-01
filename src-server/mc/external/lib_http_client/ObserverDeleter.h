@@ -4,7 +4,6 @@
 
 namespace xbox::httpclient {
 
-struct ObserverDeleter {
-};
+struct ObserverDeleter {};
 
-}
+} // namespace xbox::httpclient

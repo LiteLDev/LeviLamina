@@ -5,9 +5,9 @@
 namespace cricket {
 
 enum class TurnErrorType : int {
-    Forbidden = 403,
-    AllocationMismatch = 437,
-    WrongCredentials = 441,
+    Forbidden           = 403,
+    AllocationMismatch  = 437,
+    WrongCredentials    = 441,
     UnsupportedProtocol = 442,
 };
 

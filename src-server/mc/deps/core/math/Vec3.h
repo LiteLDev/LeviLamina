@@ -77,5 +77,4 @@ public:
 
     MCAPI void* $ctor(float x_, float y_, float z_);
     // NOLINTEND
-
 };

@@ -16,7 +16,6 @@ public:
     SchemaConverterNode& operator=(SchemaConverterNode const&);
     SchemaConverterNode(SchemaConverterNode const&);
     SchemaConverterNode();
-
 };
 
-}
+} // namespace JsonUtil

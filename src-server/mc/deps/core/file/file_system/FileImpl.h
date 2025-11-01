@@ -22,24 +22,23 @@ public:
     // clang-format off
     struct WriteBufferInfo;
     // clang-format on
-    
+
     // FileImpl inner types define
     struct WriteBufferInfo {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkec2ac3;
+        ::ll::UntypedStorage<8, 8>  mUnkec2ac3;
         ::ll::UntypedStorage<8, 80> mUnk52e0bb;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         WriteBufferInfo& operator=(WriteBufferInfo const&);
         WriteBufferInfo(WriteBufferInfo const&);
         WriteBufferInfo();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -163,7 +162,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

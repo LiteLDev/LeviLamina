@@ -15,5 +15,4 @@ public:
     XTaskQueueObject& operator=(XTaskQueueObject const&);
     XTaskQueueObject(XTaskQueueObject const&);
     XTaskQueueObject();
-
 };

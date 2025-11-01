@@ -22,7 +22,13 @@ namespace MobTravelFilterSystemImpl {
 // NOLINTBEGIN
 MCNAPI void addMobTravelComponent(::StrictEntityContext const& context, ::EntityModifier<::MobTravelComponent> mod);
 
-MCNAPI void tickMobTravelFilterSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>, ::Exclude<::PassengerComponent>> view, ::EntityModifier<::MobTravelComponent> mod);
+MCNAPI void tickMobTravelFilterSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+        ::Exclude<::PassengerComponent>>   view,
+    ::EntityModifier<::MobTravelComponent> mod
+);
 // NOLINTEND
 
-}
+} // namespace MobTravelFilterSystemImpl

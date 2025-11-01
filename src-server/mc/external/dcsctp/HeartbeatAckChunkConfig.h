@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-struct HeartbeatAckChunkConfig {
-};
+struct HeartbeatAckChunkConfig {};
 
-}
+} // namespace dcsctp

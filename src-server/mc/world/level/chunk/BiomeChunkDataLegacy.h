@@ -11,5 +11,4 @@ public:
     ::ll::TypedStorage<1, 1, uchar> g;
     ::ll::TypedStorage<1, 1, uchar> b;
     // NOLINTEND
-
 };

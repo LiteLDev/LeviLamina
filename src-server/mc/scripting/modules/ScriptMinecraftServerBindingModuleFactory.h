@@ -25,8 +25,8 @@ class ScriptMinecraftServerBindingModuleFactory : public ::Scripting::GenericMod
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb4ef81;
-    ::ll::UntypedStorage<8, 8> mUnk52d2a7;
+    ::ll::UntypedStorage<1, 1>  mUnkb4ef81;
+    ::ll::UntypedStorage<8, 8>  mUnk52d2a7;
     ::ll::UntypedStorage<8, 16> mUnk6c2f68;
     ::ll::UntypedStorage<8, 16> mUnk7524c9;
     // NOLINTEND
@@ -47,17 +47,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptMinecraftServerBindingModuleFactory(::ServerLevel* level, ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry const> itemCustomComponentRegistry, ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry const> blockCustomComponentRegistry, bool importRestricted);
+    MCNAPI ScriptMinecraftServerBindingModuleFactory(
+        ::ServerLevel*                                                                level,
+        ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry const>  itemCustomComponentRegistry,
+        ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry const> blockCustomComponentRegistry,
+        bool                                                                          importRestricted
+    );
 
     MCNAPI void _addVersions();
 
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, ::std::optional<::Scripting::ContextConfig> const& contextConfig, bool allowUntagged, ::std::vector<::std::string> const& additionalTags);
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&                 moduleBuilder,
+        ::std::optional<::Scripting::ContextConfig> const& contextConfig,
+        bool                                               allowUntagged,
+        ::std::vector<::std::string> const&                additionalTags
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>& getActorComponentFactories();
+    MCNAPI static ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
+    getActorComponentFactories();
 
     MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
 
@@ -75,7 +86,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ServerLevel* level, ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry const> itemCustomComponentRegistry, ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry const> blockCustomComponentRegistry, bool importRestricted);
+    MCNAPI void* $ctor(
+        ::ServerLevel*                                                                level,
+        ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry const>  itemCustomComponentRegistry,
+        ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry const> blockCustomComponentRegistry,
+        bool                                                                          importRestricted
+    );
     // NOLINTEND
 
 public:
@@ -83,5 +99,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -22,7 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::vector<uchar> Serialize();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

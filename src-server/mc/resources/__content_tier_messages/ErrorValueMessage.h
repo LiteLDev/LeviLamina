@@ -17,7 +17,6 @@ public:
     ErrorValueMessage& operator=(ErrorValueMessage const&);
     ErrorValueMessage(ErrorValueMessage const&);
     ErrorValueMessage();
-
 };
 
-}
+} // namespace _ContentTierMessages

@@ -16,11 +16,14 @@ class DataStoreUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::std::string> getSelectedModalTool(::Editor::Services::DataStoreServiceProvider& dataStore);
+    MCNAPI static ::std::optional<::std::string>
+    getSelectedModalTool(::Editor::Services::DataStoreServiceProvider& dataStore);
 
-    MCNAPI static ::Scripting::Result_deprecated<void> updateSelectedModalTool(::Editor::Services::DataStoreServiceProvider& dataStore, ::std::optional<::std::string> const& newToolId);
+    MCNAPI static ::Scripting::Result_deprecated<void> updateSelectedModalTool(
+        ::Editor::Services::DataStoreServiceProvider& dataStore,
+        ::std::optional<::std::string> const&         newToolId
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

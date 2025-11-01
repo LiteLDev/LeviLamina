@@ -15,5 +15,4 @@ public:
 
     MCNAPI static ::TickingSystemWithInfo createUpdateSystem();
     // NOLINTEND
-
 };

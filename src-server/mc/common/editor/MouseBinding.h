@@ -16,7 +16,6 @@ public:
     MouseBinding& operator=(MouseBinding const&);
     MouseBinding(MouseBinding const&);
     MouseBinding();
-
 };
 
-}
+} // namespace Editor::Input

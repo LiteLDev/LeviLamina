@@ -14,4 +14,4 @@ namespace TrimPatternRegistryHardCodedInit {
 MCAPI ::std::unordered_map<::HashedString, ::HashedString> getPatterns(::ItemRegistryRef itemRegistry);
 // NOLINTEND
 
-}
+} // namespace TrimPatternRegistryHardCodedInit

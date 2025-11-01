@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 48, ::PackIdVersion> mPackId;
-    ::ll::TypedStorage<8, 32, ::std::string> mSubpackName;
+    ::ll::TypedStorage<8, 32, ::std::string>   mSubpackName;
     // NOLINTEND
 
 public:
@@ -38,5 +38,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

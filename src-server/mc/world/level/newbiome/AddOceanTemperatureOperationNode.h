@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/biome/BiomeTemperatureCategory.h"
+#include "mc/world/level/biome/BiomeTemperatureCategory.h"
 #include "mc/world/level/newbiome/RootOperationNode.h"
 #include "mc/world/level/newbiome/operation_node_details/WorkingData.h"
 
@@ -17,7 +17,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
-    virtual void _fillArea(::OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>& operationNodeData, ::Pos2d const& origin, ::Pos2d const& size) const /*override*/;
+    virtual void _fillArea(
+        ::OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>& operationNodeData,
+        ::Pos2d const&                                                         origin,
+        ::Pos2d const&                                                         size
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~AddOceanTemperatureOperationNode() /*override*/ = default;
@@ -26,7 +30,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_fillArea(::OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>& operationNodeData, ::Pos2d const& origin, ::Pos2d const& size) const;
+    MCNAPI void $_fillArea(
+        ::OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>& operationNodeData,
+        ::Pos2d const&                                                         origin,
+        ::Pos2d const&                                                         size
+    ) const;
     // NOLINTEND
 
 public:
@@ -34,5 +42,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

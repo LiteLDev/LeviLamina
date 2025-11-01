@@ -14,5 +14,4 @@ public:
     SoundVolumeDefinition& operator=(SoundVolumeDefinition const&);
     SoundVolumeDefinition(SoundVolumeDefinition const&);
     SoundVolumeDefinition();
-
 };

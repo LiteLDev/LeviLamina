@@ -10,24 +10,23 @@ public:
     // clang-format off
     struct DualPlaneData;
     // clang-format on
-    
+
     // LogicalASTCBlock inner types define
     struct DualPlaneData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk5cb817;
+        ::ll::UntypedStorage<4, 4>  mUnk5cb817;
         ::ll::UntypedStorage<8, 24> mUnkb77b15;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         DualPlaneData& operator=(DualPlaneData const&);
         DualPlaneData(DualPlaneData const&);
         DualPlaneData();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,7 +41,6 @@ public:
     LogicalASTCBlock& operator=(LogicalASTCBlock const&);
     LogicalASTCBlock(LogicalASTCBlock const&);
     LogicalASTCBlock();
-
 };
 
-}
+} // namespace astc_codec

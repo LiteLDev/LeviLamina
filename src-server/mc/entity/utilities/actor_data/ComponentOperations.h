@@ -4,8 +4,7 @@
 
 namespace ActorData {
 
-template<typename T0>
-struct ComponentOperations {
-};
+template <typename T0>
+struct ComponentOperations {};
 
-}
+} // namespace ActorData

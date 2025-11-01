@@ -7,7 +7,8 @@
 
 namespace Editor::Network {
 
-class RealmWorldDownloadResponsePayload : public ::Editor::Network::NetworkPayload<::Editor::Network::RealmWorldDownloadResponsePayload> {
+class RealmWorldDownloadResponsePayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::RealmWorldDownloadResponsePayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -32,7 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

@@ -22,4 +22,4 @@ MCNAPI ::std::add_lvalue_reference_t<char const[]> Tags();
 MCNAPI ::std::add_lvalue_reference_t<char const[]> WorldGen();
 // NOLINTEND
 
-}
+} // namespace QuerySetIdentifier

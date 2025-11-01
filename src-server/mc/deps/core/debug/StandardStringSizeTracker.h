@@ -19,7 +19,6 @@ public:
     StandardStringSizeTracker& operator=(StandardStringSizeTracker const&);
     StandardStringSizeTracker(StandardStringSizeTracker const&);
     StandardStringSizeTracker();
-
 };
 
-}
+} // namespace Bedrock

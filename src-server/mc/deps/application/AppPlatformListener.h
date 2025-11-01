@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLowMemorySubscription;
-    ::ll::TypedStorage<1, 1, bool> mListenerRegistered;
+    ::ll::TypedStorage<1, 1, bool>                             mListenerRegistered;
     // NOLINTEND
 
 public:
@@ -143,5 +143,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

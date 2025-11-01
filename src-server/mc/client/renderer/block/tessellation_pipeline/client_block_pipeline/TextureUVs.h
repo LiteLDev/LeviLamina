@@ -21,7 +21,6 @@ public:
     TextureUVs& operator=(TextureUVs const&);
     TextureUVs(TextureUVs const&);
     TextureUVs();
-
 };
 
-}
+} // namespace ClientBlockPipeline

@@ -16,17 +16,17 @@ public:
     // BlockStateCommandParam inner types define
     enum class Type : int {
         Integer = 0,
-        Float = 1,
-        Bool = 2,
-        String = 3,
+        Float   = 1,
+        Bool    = 2,
+        String  = 3,
         Invalid = 4,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mBlockState;
-    ::ll::TypedStorage<8, 32, ::std::string> mValue;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mBlockState;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mValue;
     ::ll::TypedStorage<4, 4, ::BlockStateCommandParam::Type> mType;
     // NOLINTEND
 
@@ -37,7 +37,8 @@ public:
 
     MCAPI ::BlockState const* _getBlockState(::Block const& block) const;
 
-    MCAPI ::std::optional<::std::pair<::HashedString, int>> getNameAndValue(::CommandOutput& output, ::Block const& defaultNewBlock) const;
+    MCAPI ::std::optional<::std::pair<::HashedString, int>>
+    getNameAndValue(::CommandOutput& output, ::Block const& defaultNewBlock) const;
 
     MCAPI bool setBlockState(::Block const** inputBlock, ::CommandOutput& output) const;
 
@@ -49,5 +50,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

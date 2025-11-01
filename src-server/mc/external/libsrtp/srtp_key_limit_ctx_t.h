@@ -15,5 +15,4 @@ public:
     srtp_key_limit_ctx_t& operator=(srtp_key_limit_ctx_t const&);
     srtp_key_limit_ctx_t(srtp_key_limit_ctx_t const&);
     srtp_key_limit_ctx_t();
-
 };

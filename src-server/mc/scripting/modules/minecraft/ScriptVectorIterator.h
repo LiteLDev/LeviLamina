@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0, typename T1>
-class ScriptVectorIterator {
-};
+template <typename T0, typename T1>
+class ScriptVectorIterator {};
 
-}
+} // namespace ScriptModuleMinecraft

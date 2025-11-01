@@ -13,4 +13,4 @@ namespace ActorUpdatePostTickPositionDeltaSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace ActorUpdatePostTickPositionDeltaSystem

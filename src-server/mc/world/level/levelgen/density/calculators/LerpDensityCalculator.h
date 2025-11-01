@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ushort> mInputA;
     ::ll::TypedStorage<2, 2, ushort> mInputB;
-    ::ll::TypedStorage<4, 4, float> mAlpha;
+    ::ll::TypedStorage<4, 4, float>  mAlpha;
     // NOLINTEND
 
 public:
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

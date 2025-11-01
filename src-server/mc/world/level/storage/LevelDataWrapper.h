@@ -9,9 +9,9 @@ class LevelDataWrapper : public ::LevelListCacheObserver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc5446e;
+    ::ll::UntypedStorage<8, 8>    mUnkc5446e;
     ::ll::UntypedStorage<8, 1568> mUnkab2ff4;
-    ::ll::UntypedStorage<8, 8> mUnkc8a4d6;
+    ::ll::UntypedStorage<8, 8>    mUnkc8a4d6;
     // NOLINTEND
 
 public:
@@ -41,5 +41,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

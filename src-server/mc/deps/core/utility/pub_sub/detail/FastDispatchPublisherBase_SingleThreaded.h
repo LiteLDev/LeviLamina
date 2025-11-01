@@ -9,14 +9,14 @@
 
 namespace Bedrock::PubSub::Detail {
 
-class FastDispatchPublisherBase_SingleThreaded : public ::Bedrock::PubSub::Detail::PublisherBase, public ::Bedrock::PubSub::ThreadModel::SingleThreaded::NullMutex {
+class FastDispatchPublisherBase_SingleThreaded : public ::Bedrock::PubSub::Detail::PublisherBase,
+                                                 public ::Bedrock::PubSub::ThreadModel::SingleThreaded::NullMutex {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~FastDispatchPublisherBase_SingleThreaded() /*override*/ = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::PubSub::Detail

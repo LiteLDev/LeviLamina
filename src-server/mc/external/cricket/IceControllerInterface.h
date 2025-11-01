@@ -22,7 +22,7 @@ public:
     struct PingResult;
     struct SwitchResult;
     // clang-format on
-    
+
     // IceControllerInterface inner types define
     struct SwitchResult {
     public:
@@ -32,50 +32,48 @@ public:
         ::ll::UntypedStorage<4, 12> mUnke2427c;
         ::ll::UntypedStorage<8, 24> mUnk8e65c1;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         SwitchResult& operator=(SwitchResult const&);
         SwitchResult();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI SwitchResult(::cricket::IceControllerInterface::SwitchResult const&);
-    
+
         MCNAPI ~SwitchResult();
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::cricket::IceControllerInterface::SwitchResult const&);
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
     struct PingResult {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk6c85f3;
-        ::ll::UntypedStorage<4, 4> mUnkce886a;
+        ::ll::UntypedStorage<4, 4>  mUnkce886a;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PingResult& operator=(PingResult const&);
         PingResult(PingResult const&);
         PingResult();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -107,7 +105,8 @@ public:
     virtual ::cricket::IceControllerInterface::PingResult SelectConnectionToPing(int64) = 0;
 
     // vIndex: 9
-    virtual bool GetUseCandidateAttr(::cricket::Connection const*, ::cricket::NominationMode, ::cricket::IceMode) const = 0;
+    virtual bool
+    GetUseCandidateAttr(::cricket::Connection const*, ::cricket::NominationMode, ::cricket::IceMode) const = 0;
 
     // vIndex: 10
     virtual ::cricket::Connection const* FindNextPingableConnection() = 0;
@@ -116,7 +115,8 @@ public:
     virtual void MarkConnectionPinged(::cricket::Connection const*) = 0;
 
     // vIndex: 12
-    virtual ::cricket::IceControllerInterface::SwitchResult ShouldSwitchConnection(::cricket::IceSwitchReason, ::cricket::Connection const*) = 0;
+    virtual ::cricket::IceControllerInterface::SwitchResult
+    ShouldSwitchConnection(::cricket::IceSwitchReason, ::cricket::Connection const*) = 0;
 
     // vIndex: 13
     virtual ::cricket::IceControllerInterface::SwitchResult SortAndSwitchConnection(::cricket::IceSwitchReason) = 0;
@@ -130,7 +130,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

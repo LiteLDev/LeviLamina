@@ -44,7 +44,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve const&);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

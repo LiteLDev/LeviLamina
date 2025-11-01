@@ -15,5 +15,4 @@ public:
     PortPair& operator=(PortPair const&);
     PortPair(PortPair const&);
     PortPair();
-
 };

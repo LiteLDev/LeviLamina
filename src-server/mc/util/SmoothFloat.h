@@ -16,5 +16,4 @@ public:
     SmoothFloat& operator=(SmoothFloat const&);
     SmoothFloat(SmoothFloat const&);
     SmoothFloat();
-
 };

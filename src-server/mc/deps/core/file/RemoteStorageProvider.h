@@ -62,22 +62,46 @@ public:
     virtual void onSignOut() = 0;
 
     // vIndex: 10
-    virtual ::CallbackToken onSignIn(::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>) = 0;
+    virtual ::CallbackToken
+        onSignIn(::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>) = 0;
 
     // vIndex: 11
-    virtual ::CallbackToken deleteContainer(::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>, ::std::string const&) = 0;
+    virtual ::CallbackToken deleteContainer(
+        ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 12
-    virtual ::CallbackToken commit(::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result, ::Core::StorageResult)>>>, ::std::string const&, ::std::set<::std::string> const&, ::std::set<::std::string>&, ::std::set<::std::string>&, bool) = 0;
+    virtual ::CallbackToken commit(
+        ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result, ::Core::StorageResult)>>>,
+        ::std::string const&,
+        ::std::set<::std::string> const&,
+        ::std::set<::std::string>&,
+        ::std::set<::std::string>&,
+        bool
+    ) = 0;
 
     // vIndex: 13
-    virtual ::CallbackToken sync(::std::string const&, ::std::string const&, ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>, ::std::function<void(::std::string const&, bool)>) = 0;
+    virtual ::CallbackToken sync(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>,
+        ::std::function<void(::std::string const&, bool)>
+    ) = 0;
 
     // vIndex: 14
-    virtual ::CallbackToken syncMeta(::std::string const&, ::std::string const&, ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>) = 0;
+    virtual ::CallbackToken syncMeta(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>
+    ) = 0;
 
     // vIndex: 15
-    virtual ::CallbackToken syncContainerManifest(::std::string const&, ::std::string const&, ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>) = 0;
+    virtual ::CallbackToken syncContainerManifest(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>
+    ) = 0;
 
     // vIndex: 16
     virtual ::Core::RemoteStorageManifest getManifest(::std::string const&) = 0;
@@ -88,7 +112,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

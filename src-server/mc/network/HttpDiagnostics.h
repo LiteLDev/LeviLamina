@@ -23,7 +23,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::Bedrock::Http::Request&& request) /*override*/;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response>
+    send(::Bedrock::Http::Request&& request) /*override*/;
 
     // vIndex: 0
     virtual ~HttpDiagnostics() /*override*/ = default;
@@ -52,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Http

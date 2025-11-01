@@ -9,8 +9,7 @@ struct UpdateClientInputLocksPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mInputLockComponentData;
+    ::ll::TypedStorage<4, 4, uint>    mInputLockComponentData;
     ::ll::TypedStorage<4, 12, ::Vec3> mServerPos;
     // NOLINTEND
-
 };

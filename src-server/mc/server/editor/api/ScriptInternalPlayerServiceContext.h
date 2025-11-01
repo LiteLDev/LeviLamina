@@ -14,12 +14,13 @@ namespace Scripting { struct ClassBinding; }
 
 namespace Editor::ScriptModule {
 
-class ScriptInternalPlayerServiceContext : public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptInternalPlayerServiceContext> {
+class ScriptInternalPlayerServiceContext
+: public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptInternalPlayerServiceContext> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk72f87f;
-    ::ll::UntypedStorage<8, 8> mUnk5865f3;
+    ::ll::UntypedStorage<8, 8>  mUnk5865f3;
     ::ll::UntypedStorage<8, 32> mUnk705f83;
     ::ll::UntypedStorage<8, 32> mUnk4c1358;
     ::ll::UntypedStorage<8, 32> mUnk33b9c0;
@@ -39,7 +40,10 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptInternalPlayerServiceContext(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
 
-    MCNAPI ScriptInternalPlayerServiceContext(::Editor::ServiceProviderCollection& playerServices, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ScriptInternalPlayerServiceContext(
+        ::Editor::ServiceProviderCollection&  playerServices,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
 
     MCNAPI ~ScriptInternalPlayerServiceContext();
     // NOLINTEND
@@ -55,7 +59,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
 
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& playerServices, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void*
+    $ctor(::Editor::ServiceProviderCollection& playerServices, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -63,7 +68,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

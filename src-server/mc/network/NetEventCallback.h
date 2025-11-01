@@ -267,22 +267,48 @@ public:
     virtual void onStoreOfferReceive(::ShowStoreOfferRedirectType const, ::std::string const& offerID);
 
     // vIndex: 7
-    virtual void onDisconnect(::NetworkIdentifier const&, ::Connection::DisconnectFailReason const, ::Connection::DisconnectionStage const, ::std::string const& message, bool skipMessage, ::std::string const& telemetryOverride);
+    virtual void onDisconnect(
+        ::NetworkIdentifier const&,
+        ::Connection::DisconnectFailReason const,
+        ::Connection::DisconnectionStage const,
+        ::std::string const& message,
+        bool                 skipMessage,
+        ::std::string const& telemetryOverride
+    );
 
     // vIndex: 8
-    virtual ::IncomingPacketFilterResult allowIncomingPacketId(::NetworkIdentifierWithSubId const&, ::MinecraftPacketIds, uint64) = 0;
+    virtual ::IncomingPacketFilterResult
+    allowIncomingPacketId(::NetworkIdentifierWithSubId const&, ::MinecraftPacketIds, uint64) = 0;
 
     // vIndex: 9
-    virtual ::OutgoingPacketFilterResult allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&) = 0;
+    virtual ::OutgoingPacketFilterResult
+    allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&) = 0;
 
     // vIndex: 10
     virtual void onWebsocketRequest(::std::string const&, ::std::string const&, ::std::function<void()>);
 
     // vIndex: 11
-    virtual void handlePacketViolation(::std::shared_ptr<::IPacketSecurityController> const&, ::std::error_code const&, ::PacketViolationResponse const, ::MinecraftPacketIds const, ::std::string&&, ::NetworkIdentifier const&, ::SubClientId const, ::SubClientId const, uint const);
+    virtual void handlePacketViolation(
+        ::std::shared_ptr<::IPacketSecurityController> const&,
+        ::std::error_code const&,
+        ::PacketViolationResponse const,
+        ::MinecraftPacketIds const,
+        ::std::string&&,
+        ::NetworkIdentifier const&,
+        ::SubClientId const,
+        ::SubClientId const,
+        uint const
+    );
 
     // vIndex: 12
-    virtual void sendPacketViolationWarningPacket(::std::error_code const&, ::PacketViolationResponse, ::MinecraftPacketIds, ::std::string const&, ::NetworkIdentifier const&, ::SubClientId);
+    virtual void sendPacketViolationWarningPacket(
+        ::std::error_code const&,
+        ::PacketViolationResponse,
+        ::MinecraftPacketIds,
+        ::std::string const&,
+        ::NetworkIdentifier const&,
+        ::SubClientId
+    );
 
     // vIndex: 13
     virtual void onTransferRequest(::NetworkIdentifier const&, ::Social::GameConnectionInfo const&);
@@ -966,13 +992,37 @@ public:
 
     MCFOLD void $onStoreOfferReceive(::ShowStoreOfferRedirectType const, ::std::string const& offerID);
 
-    MCFOLD void $onDisconnect(::NetworkIdentifier const&, ::Connection::DisconnectFailReason const, ::Connection::DisconnectionStage const, ::std::string const& message, bool skipMessage, ::std::string const& telemetryOverride);
+    MCFOLD void $onDisconnect(
+        ::NetworkIdentifier const&,
+        ::Connection::DisconnectFailReason const,
+        ::Connection::DisconnectionStage const,
+        ::std::string const& message,
+        bool                 skipMessage,
+        ::std::string const& telemetryOverride
+    );
 
     MCFOLD void $onWebsocketRequest(::std::string const&, ::std::string const&, ::std::function<void()>);
 
-    MCFOLD void $handlePacketViolation(::std::shared_ptr<::IPacketSecurityController> const&, ::std::error_code const&, ::PacketViolationResponse const, ::MinecraftPacketIds const, ::std::string&&, ::NetworkIdentifier const&, ::SubClientId const, ::SubClientId const, uint const);
+    MCFOLD void $handlePacketViolation(
+        ::std::shared_ptr<::IPacketSecurityController> const&,
+        ::std::error_code const&,
+        ::PacketViolationResponse const,
+        ::MinecraftPacketIds const,
+        ::std::string&&,
+        ::NetworkIdentifier const&,
+        ::SubClientId const,
+        ::SubClientId const,
+        uint const
+    );
 
-    MCFOLD void $sendPacketViolationWarningPacket(::std::error_code const&, ::PacketViolationResponse, ::MinecraftPacketIds, ::std::string const&, ::NetworkIdentifier const&, ::SubClientId);
+    MCFOLD void $sendPacketViolationWarningPacket(
+        ::std::error_code const&,
+        ::PacketViolationResponse,
+        ::MinecraftPacketIds,
+        ::std::string const&,
+        ::NetworkIdentifier const&,
+        ::SubClientId
+    );
 
     MCFOLD void $onTransferRequest(::NetworkIdentifier const&, ::Social::GameConnectionInfo const&);
 
@@ -1420,5 +1470,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

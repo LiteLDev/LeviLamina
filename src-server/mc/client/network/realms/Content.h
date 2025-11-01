@@ -4,7 +4,6 @@
 
 namespace Realms {
 
-struct Content {
-};
+struct Content {};
 
-}
+} // namespace Realms

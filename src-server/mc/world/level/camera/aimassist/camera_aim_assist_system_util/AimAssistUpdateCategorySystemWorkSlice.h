@@ -6,7 +6,7 @@ namespace CameraAimAssistSystemUtil {
 
 enum class AimAssistUpdateCategorySystemWorkSlice : int {
     UpdateCategoryForNextAimAssistResult = 0,
-    WaitForResultToBeCreated = 1,
+    WaitForResultToBeCreated             = 1,
 };
 
 }

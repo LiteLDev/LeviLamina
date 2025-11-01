@@ -17,11 +17,11 @@ class HoldGroundGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mLookAt;
-    ::ll::TypedStorage<4, 4, float> mHostileRadiusSqr;
-    ::ll::TypedStorage<1, 1, bool> mBroadcast;
-    ::ll::TypedStorage<4, 4, float> mBroadcastRange;
+    ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>             mLookAt;
+    ::ll::TypedStorage<4, 4, float>                            mHostileRadiusSqr;
+    ::ll::TypedStorage<1, 1, bool>                             mBroadcast;
+    ::ll::TypedStorage<4, 4, float>                            mBroadcastRange;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const> mWithinRangeEvent;
     // NOLINTEND
 
@@ -77,5 +77,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

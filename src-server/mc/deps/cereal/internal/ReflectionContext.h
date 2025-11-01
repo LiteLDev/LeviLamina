@@ -8,7 +8,7 @@ struct ReflectionContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::entt::meta_ctx> mMetaCtx;
+    ::ll::TypedStorage<8, 72, ::entt::meta_ctx>                                             mMetaCtx;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::entt::type_info>>> mKnownProperties;
     // NOLINTEND
 
@@ -23,7 +23,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal::internal

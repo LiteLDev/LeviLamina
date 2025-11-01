@@ -12,7 +12,6 @@ namespace dcsctp { class TimeMsTag; }
 
 namespace dcsctp {
 
-class TimeMs : public ::webrtc::StrongAlias<::dcsctp::TimeMsTag, int64> {
-};
+class TimeMs : public ::webrtc::StrongAlias<::dcsctp::TimeMsTag, int64> {};
 
-}
+} // namespace dcsctp

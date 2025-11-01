@@ -4,6 +4,6 @@
 
 enum class ScreenEventScope : schar {
     Controller = 0,
-    View = 1,
-    Global = 2,
+    View       = 1,
+    Global     = 2,
 };

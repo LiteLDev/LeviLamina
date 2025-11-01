@@ -19,7 +19,6 @@ public:
     FinishMiningDependencies& operator=(FinishMiningDependencies const&);
     FinishMiningDependencies(FinishMiningDependencies const&);
     FinishMiningDependencies();
-
 };
 
-}
+} // namespace Interactions::Mining

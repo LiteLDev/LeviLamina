@@ -14,7 +14,6 @@
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/network/packet/PlayerRespawnState.h"
 #include "mc/platform/UUID.h"
-#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/ActorResetRule.h"
@@ -23,6 +22,7 @@
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/inventory/InventoryMenu.h"
 #include "mc/world/item/ItemStack.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/chunk/NetworkChunkSubscriber.h"
 
@@ -72,7 +72,7 @@ public:
     class RegionListener;
     class UndergroundTelemetryHeuristic;
     // clang-format on
-    
+
     // LocalPlayer inner types define
     class RegionListener {
     public:
@@ -80,118 +80,114 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~RegionListener() = default;
-    
+
         // vIndex: 1
         virtual void onRegionDestroyed() = 0;
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
-    
+
         // NOLINTEND
-    
     };
-    
+
     class EmoteExpediateData {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, int64> mEmoteButtonDownStartTime;
-        ::ll::TypedStorage<1, 1, bool> mIsExpediateSelectionActive;
+        ::ll::TypedStorage<1, 1, bool>  mIsExpediateSelectionActive;
         // NOLINTEND
-    
     };
-    
+
     class FellFromWorldHeightAchievementTracker {
     public:
         // FellFromWorldHeightAchievementTracker inner types define
         enum class FallState : uchar {
-            Falling = 0,
+            Falling             = 0,
             TickCheckAliveTicks = 1,
-            CheckForAlive = 2,
-            Done = 3,
+            CheckForAlive       = 2,
+            Done                = 3,
         };
-        
+
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, ::LocalPlayer::FellFromWorldHeightAchievementTracker::FallState> mState;
-        ::ll::TypedStorage<4, 4, int> mCheckAliveTicks;
-        ::ll::TypedStorage<1, 1, bool> mHasSentAchievement;
+        ::ll::TypedStorage<4, 4, int>                                                             mCheckAliveTicks;
+        ::ll::TypedStorage<1, 1, bool>                                                            mHasSentAchievement;
         // NOLINTEND
-    
     };
-    
+
     class UndergroundTelemetryHeuristic {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool> mIsUndergroundCurrentTick;
-        ::ll::TypedStorage<1, 1, bool> mWasUndergroundPreviousTick;
-        ::ll::TypedStorage<1, 1, bool> mForceInitialEventingPropertyUpdate;
-        ::ll::TypedStorage<4, 12, ::BlockPos> mPreviousBlockPos;
+        ::ll::TypedStorage<1, 1, bool>         mIsUndergroundCurrentTick;
+        ::ll::TypedStorage<1, 1, bool>         mWasUndergroundPreviousTick;
+        ::ll::TypedStorage<1, 1, bool>         mForceInitialEventingPropertyUpdate;
+        ::ll::TypedStorage<4, 12, ::BlockPos>  mPreviousBlockPos;
         ::ll::TypedStorage<1, 1, ::Brightness> mPreviousNaturalLightLevel;
         // NOLINTEND
-    
     };
-    
+
     struct ContainerCloseInfo {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mContainerTypeToClose;
-        ::ll::TypedStorage<1, 1, bool> mShouldCloseContainerScreen;
+        ::ll::TypedStorage<1, 1, bool>                                 mShouldCloseContainerScreen;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 112, ::InventoryMenu> mInventoryMenu;
-    ::ll::TypedStorage<4, 4, float> mPortalEffectTime;
-    ::ll::TypedStorage<4, 4, float> mOPortalEffectTime;
-    ::ll::TypedStorage<8, 16, ::LocalPlayer::EmoteExpediateData> mEmoteExpediateData;
+    ::ll::TypedStorage<8, 112, ::InventoryMenu>                             mInventoryMenu;
+    ::ll::TypedStorage<4, 4, float>                                         mPortalEffectTime;
+    ::ll::TypedStorage<4, 4, float>                                         mOPortalEffectTime;
+    ::ll::TypedStorage<8, 16, ::LocalPlayer::EmoteExpediateData>            mEmoteExpediateData;
     ::ll::TypedStorage<4, 20, ::LocalPlayer::UndergroundTelemetryHeuristic> mUndergroundTelemetryHeuristic;
-    ::ll::TypedStorage<4, 12, ::LocalPlayer::FellFromWorldHeightAchievementTracker> mFellFromWorldHeightAchievementTracker;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLowMemorySubscription;
-    ::ll::TypedStorage<8, 8, ::IClientInstance&> mClient;
-    ::ll::TypedStorage<4, 4, int> mCanCloseScreenOnHurtAfterTime;
-    ::ll::TypedStorage<4, 12, ::Vec3> mlastFrameDelta;
-    ::ll::TypedStorage<1, 1, bool> mEnablePortalEffect;
-    ::ll::TypedStorage<8, 152, ::ItemStack> mSentOffhandItem;
-    ::ll::TypedStorage<8, 152, ::ItemStack> mSentInventoryItem;
-    ::ll::TypedStorage<4, 4, int> mSentSelectedSlot;
-    ::ll::TypedStorage<1, 2, ::LocalPlayer::ContainerCloseInfo> mContainerCloseInfo;
-    ::ll::TypedStorage<8, 8, uint64> mSessionTickCount;
+    ::ll::TypedStorage<4, 12, ::LocalPlayer::FellFromWorldHeightAchievementTracker>
+                                                                             mFellFromWorldHeightAchievementTracker;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mLowMemorySubscription;
+    ::ll::TypedStorage<8, 8, ::IClientInstance&>                             mClient;
+    ::ll::TypedStorage<4, 4, int>                                            mCanCloseScreenOnHurtAfterTime;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                        mlastFrameDelta;
+    ::ll::TypedStorage<1, 1, bool>                                           mEnablePortalEffect;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                                  mSentOffhandItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                                  mSentInventoryItem;
+    ::ll::TypedStorage<4, 4, int>                                            mSentSelectedSlot;
+    ::ll::TypedStorage<1, 2, ::LocalPlayer::ContainerCloseInfo>              mContainerCloseInfo;
+    ::ll::TypedStorage<8, 8, uint64>                                         mSessionTickCount;
     ::ll::TypedStorage<8, 24, ::std::vector<::LocalPlayer::RegionListener*>> mRegionListeners;
-    ::ll::TypedStorage<1, 1, bool> mDamagedByMobThisFrame;
-    ::ll::TypedStorage<1, 1, bool> mIsTeacher;
-    ::ll::TypedStorage<1, 1, bool> mHasBeenInitialized;
-    ::ll::TypedStorage<1, 1, bool> mPrevTransitionBlocking;
-    ::ll::TypedStorage<8, 32, ::std::string> mInventorySearchString;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::mce::UUID>> mAllSentEmotePieceIds;
-    ::ll::TypedStorage<8, 48, ::HashedString> mCurrentStructureFeature;
-    ::ll::TypedStorage<8, 152, ::ItemStack> mItemActivationItem;
-    ::ll::TypedStorage<4, 4, int> mItemActivationTicks;
-    ::ll::TypedStorage<4, 4, float> mItemActivationOffsetX;
-    ::ll::TypedStorage<4, 4, float> mItemActivationOffsetY;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerAutomationObserver>> mAutomationObserver;
+    ::ll::TypedStorage<1, 1, bool>                                           mDamagedByMobThisFrame;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsTeacher;
+    ::ll::TypedStorage<1, 1, bool>                                           mHasBeenInitialized;
+    ::ll::TypedStorage<1, 1, bool>                                           mPrevTransitionBlocking;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mInventorySearchString;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::mce::UUID>>             mAllSentEmotePieceIds;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                mCurrentStructureFeature;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                                  mItemActivationItem;
+    ::ll::TypedStorage<4, 4, int>                                            mItemActivationTicks;
+    ::ll::TypedStorage<4, 4, float>                                          mItemActivationOffsetX;
+    ::ll::TypedStorage<4, 4, float>                                          mItemActivationOffsetY;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerAutomationObserver>>  mAutomationObserver;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubChunkRequestSubscriber>> mSubChunkSubscriber;
-    ::ll::TypedStorage<4, 4, uint> mTickingAreaChunkIndexToCheckForRequests;
-    ::ll::TypedStorage<8, 32, ::NetworkChunkSubscriber> mChunkSubscriberView;
-    ::ll::TypedStorage<1, 1, ::PlayerRespawnState> mClientRespawnState;
-    ::ll::TypedStorage<4, 12, ::Vec3> mClientRespawnPotentialPosition;
-    ::ll::TypedStorage<4, 4, int> mRenderChunkRadiusLowMemoryWatermark;
-    ::ll::TypedStorage<8, 32, ::std::string> mLastDeathInfo;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorPlayer>> mEditorClientPlayer;
+    ::ll::TypedStorage<4, 4, uint>                                           mTickingAreaChunkIndexToCheckForRequests;
+    ::ll::TypedStorage<8, 32, ::NetworkChunkSubscriber>                      mChunkSubscriberView;
+    ::ll::TypedStorage<1, 1, ::PlayerRespawnState>                           mClientRespawnState;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                        mClientRespawnPotentialPosition;
+    ::ll::TypedStorage<4, 4, int>                                            mRenderChunkRadiusLowMemoryWatermark;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mLastDeathInfo;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorPlayer>>     mEditorClientPlayer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::DDUI::DataStoreSyncClient>> mDataStoreSync;
-    ::ll::TypedStorage<4, 4, float> mCurrentExpCache;
-    ::ll::TypedStorage<4, 4, int> mCurrentLevelCache;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastLevelChangedTimePoint;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastXPContainerClosedTimePoint;
-    ::ll::TypedStorage<1, 1, bool> mPreparedMainChunkSource;
+    ::ll::TypedStorage<4, 4, float>                                                   mCurrentExpCache;
+    ::ll::TypedStorage<4, 4, int>                                                     mCurrentLevelCache;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                 mLastLevelChangedTimePoint;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                 mLastXPContainerClosedTimePoint;
+    ::ll::TypedStorage<1, 1, bool>                                                    mPreparedMainChunkSource;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mVisibleTouchJoystickLockSubscription;
     // NOLINTEND
 
@@ -268,7 +264,8 @@ public:
     virtual void setContainerData(::IContainerManager&, int, int) /*override*/;
 
     // vIndex: 222
-    virtual void slotChanged(::IContainerManager&, ::Container&, int, ::ItemStack const&, ::ItemStack const&, bool) /*override*/;
+    virtual void
+    slotChanged(::IContainerManager&, ::Container&, int, ::ItemStack const&, ::ItemStack const&, bool) /*override*/;
 
     // vIndex: 223
     virtual void refreshContainer(::IContainerManager&) /*override*/;
@@ -283,13 +280,26 @@ public:
     virtual void respawn() /*override*/;
 
     // vIndex: 201
-    virtual void displayClientMessage(::std::string const& message, ::std::optional<::std::string> const filteredMessage) /*override*/;
+    virtual void displayClientMessage(
+        ::std::string const&                 message,
+        ::std::optional<::std::string> const filteredMessage
+    ) /*override*/;
 
     // vIndex: 202
-    virtual void displayTextObjectMessage(::TextObjectRoot const& textObject, ::std::string const& fromXuid, ::std::string const& fromPlatformId) /*override*/;
+    virtual void displayTextObjectMessage(
+        ::TextObjectRoot const& textObject,
+        ::std::string const&    fromXuid,
+        ::std::string const&    fromPlatformId
+    ) /*override*/;
 
     // vIndex: 205
-    virtual void displayWhisperMessage(::std::string const& author, ::std::string const& message, ::std::optional<::std::string> const filteredMessage, ::std::string const& xuid, ::std::string const& platformId) /*override*/;
+    virtual void displayWhisperMessage(
+        ::std::string const&                 author,
+        ::std::string const&                 message,
+        ::std::optional<::std::string> const filteredMessage,
+        ::std::string const&                 xuid,
+        ::std::string const&                 platformId
+    ) /*override*/;
 
     // vIndex: 206
     virtual ::BedSleepingResult startSleepInBed(::BlockPos const& bedBlockPos) /*override*/;
@@ -403,7 +413,10 @@ public:
     virtual ::PlayerEventCoordinator& getPlayerEventCoordinator() /*override*/;
 
     // vIndex: 125
-    virtual void applySnapshot(::EntityContext const& snapshotEntity, ::MovementDataExtractionUtility::SnapshotAccessor const& originalSnapshotEntity) /*override*/;
+    virtual void applySnapshot(
+        ::EntityContext const&                                   snapshotEntity,
+        ::MovementDataExtractionUtility::SnapshotAccessor const& originalSnapshotEntity
+    ) /*override*/;
 
     // vIndex: 244
     virtual void destroyEditorPlayer() /*override*/;
@@ -432,5 +445,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

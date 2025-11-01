@@ -17,8 +17,8 @@ class BundleManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkec5072;
-    ::ll::UntypedStorage<4, 4> mUnkd745be;
+    ::ll::UntypedStorage<1, 1>  mUnkec5072;
+    ::ll::UntypedStorage<4, 4>  mUnkd745be;
     ::ll::UntypedStorage<8, 24> mUnkc15033;
     ::ll::UntypedStorage<8, 24> mUnk169382;
     ::ll::UntypedStorage<8, 16> mUnk912948;
@@ -59,7 +59,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

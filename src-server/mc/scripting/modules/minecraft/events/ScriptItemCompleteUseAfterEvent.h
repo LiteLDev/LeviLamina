@@ -31,7 +31,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCompleteUseAfterEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::ItemCompleteUseEvent const& itemEvent, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptItemCompleteUseAfterEvent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Player const&                                                                player,
+        ::ItemCompleteUseEvent const&                                                  itemEvent,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
     // NOLINTEND
 
 public:
@@ -45,9 +50,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::ItemCompleteUseEvent const& itemEvent, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Player const&                                                                player,
+        ::ItemCompleteUseEvent const&                                                  itemEvent,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -4,7 +4,6 @@
 
 namespace MinecraftCamera {
 
-struct OverrideCameraComponent {
-};
+struct OverrideCameraComponent {};
 
-}
+} // namespace MinecraftCamera

@@ -8,9 +8,9 @@ struct ContentLogOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkc66f7d;
-    ::ll::UntypedStorage<1, 1> mUnk8c7efb;
-    ::ll::UntypedStorage<1, 1> mUnk92c993;
+    ::ll::UntypedStorage<2, 2>  mUnkc66f7d;
+    ::ll::UntypedStorage<1, 1>  mUnk8c7efb;
+    ::ll::UntypedStorage<1, 1>  mUnk92c993;
     ::ll::UntypedStorage<8, 24> mUnk2584a7;
     ::ll::UntypedStorage<8, 24> mUnk78fbae;
     ::ll::UntypedStorage<8, 24> mUnkdcae4e;
@@ -40,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace LoadResultHelpers

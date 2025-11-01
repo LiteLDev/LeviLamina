@@ -16,7 +16,6 @@ public:
     Turn& operator=(Turn const&);
     Turn(Turn const&);
     Turn();
-
 };
 
-}
+} // namespace AgentComponents::Actions

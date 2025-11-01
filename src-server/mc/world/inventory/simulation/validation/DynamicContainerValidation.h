@@ -30,13 +30,22 @@ public:
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
     // vIndex: 9
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+        /*override*/;
 
     // vIndex: 2
-    virtual bool isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const, ::ItemStackBase const& item, int const amount, bool isInternalTransfer) const /*override*/;
+    virtual bool isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const,
+        ::ItemStackBase const& item,
+        int const              amount,
+        bool                   isInternalTransfer
+    ) const /*override*/;
 
     // vIndex: 4
-    virtual int getAllowedAddCount(::ContainerScreenContext const& screenContext, ::ItemStackBase const& itemInSlot) const /*override*/;
+    virtual int
+    getAllowedAddCount(::ContainerScreenContext const& screenContext, ::ItemStackBase const& itemInSlot) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~DynamicContainerValidation() /*override*/ = default;
@@ -51,9 +60,16 @@ public:
 
     MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
-    MCNAPI bool $isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const, ::ItemStackBase const& item, int const amount, bool isInternalTransfer) const;
+    MCNAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const,
+        ::ItemStackBase const& item,
+        int const              amount,
+        bool                   isInternalTransfer
+    ) const;
 
-    MCNAPI int $getAllowedAddCount(::ContainerScreenContext const& screenContext, ::ItemStackBase const& itemInSlot) const;
+    MCNAPI int
+    $getAllowedAddCount(::ContainerScreenContext const& screenContext, ::ItemStackBase const& itemInSlot) const;
     // NOLINTEND
 
 public:
@@ -61,5 +77,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -4,7 +4,6 @@
 
 namespace brstd {
 
-struct no_value_t {
-};
+struct no_value_t {};
 
-}
+} // namespace brstd

@@ -21,13 +21,24 @@ public:
     virtual ~IContentApi() = default;
 
     // vIndex: 1
-    virtual void applyContentOnRealm(::Realms::RealmId const, ::std::vector<::Realms::Content> const&, ::std::function<void(::Realms::GenericStatus)>) = 0;
+    virtual void applyContentOnRealm(
+        ::Realms::RealmId const,
+        ::std::vector<::Realms::Content> const&,
+        ::std::function<void(::Realms::GenericStatus)>
+    ) = 0;
 
     // vIndex: 2
-    virtual void fetchAppliedPacks(::Realms::RealmId const, ::std::function<void(::Realms::GenericStatus, ::std::vector<::Realms::Content>)>) = 0;
+    virtual void fetchAppliedPacks(
+        ::Realms::RealmId const,
+        ::std::function<void(::Realms::GenericStatus, ::std::vector<::Realms::Content>)>
+    ) = 0;
 
     // vIndex: 3
-    virtual void checkForExistingPack(::std::string const&, ::std::string const&, ::std::function<void(::Realms::GenericStatus, bool)>) = 0;
+    virtual void checkForExistingPack(
+        ::std::string const&,
+        ::std::string const&,
+        ::std::function<void(::Realms::GenericStatus, bool)>
+    ) = 0;
     // NOLINTEND
 
 public:
@@ -35,7 +46,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Realms

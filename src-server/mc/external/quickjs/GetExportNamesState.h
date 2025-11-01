@@ -19,5 +19,4 @@ public:
     GetExportNamesState& operator=(GetExportNamesState const&);
     GetExportNamesState(GetExportNamesState const&);
     GetExportNamesState();
-
 };

@@ -18,8 +18,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 144> mUnk5d02bb;
-    ::ll::UntypedStorage<8, 48> mUnk6c8b56;
-    ::ll::UntypedStorage<1, 1> mUnk48f640;
+    ::ll::UntypedStorage<8, 48>  mUnk6c8b56;
+    ::ll::UntypedStorage<1, 1>   mUnk48f640;
     ::ll::UntypedStorage<8, 168> mUnk7e8e4c;
     // NOLINTEND
 
@@ -44,9 +44,11 @@ public:
 
     MCNAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent& operator=(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
+    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
+    operator=(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent& operator=(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
+    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
+    operator=(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
     // NOLINTEND
 
 public:
@@ -86,7 +88,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

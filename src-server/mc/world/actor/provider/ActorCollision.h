@@ -44,4 +44,4 @@ MCAPI void setWasOnGround(::EntityContext& provider, bool value);
 MCFOLD bool wasOnGround(::EntityContext const& provider);
 // NOLINTEND
 
-}
+} // namespace ActorCollision

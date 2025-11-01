@@ -31,9 +31,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickServer(::EntityContext& entity, ::ActorOwnerComponent& actorOwnerComponent, ::OnFireComponent& onFireComponent, ::Optional<::AbilitiesComponent const> abilities);
+    MCNAPI static void _tickServer(
+        ::EntityContext&                       entity,
+        ::ActorOwnerComponent&                 actorOwnerComponent,
+        ::OnFireComponent&                     onFireComponent,
+        ::Optional<::AbilitiesComponent const> abilities
+    );
 
-    MCNAPI static void _tickServerImpl(bool isFireImmune, ::EntityContext& entity, ::Actor& actor, ::OnFireComponent& onFireComponent, ::optional_ref<::AbilitiesComponent const> abilities);
+    MCNAPI static void _tickServerImpl(
+        bool                                       isFireImmune,
+        ::EntityContext&                           entity,
+        ::Actor&                                   actor,
+        ::OnFireComponent&                         onFireComponent,
+        ::optional_ref<::AbilitiesComponent const> abilities
+    );
     // NOLINTEND
 
 public:
@@ -47,5 +58,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

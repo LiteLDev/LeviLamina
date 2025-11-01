@@ -17,72 +17,71 @@ public:
     struct DequeuedEntry;
     struct QueueEntry;
     // clang-format on
-    
+
     // PriorityDeferredSubscriptionHub inner types define
     struct DequeuedEntry {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 64> mUnk625823;
-        ::ll::UntypedStorage<4, 4> mUnkec5839;
+        ::ll::UntypedStorage<4, 4>  mUnkec5839;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         DequeuedEntry& operator=(DequeuedEntry const&);
         DequeuedEntry(DequeuedEntry const&);
         DequeuedEntry();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry& operator=(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&&);
-    
+        MCNAPI ::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&
+        operator=(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&&);
+
         MCNAPI ~DequeuedEntry();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
     struct QueueEntry {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 64> mUnka11425;
-        ::ll::UntypedStorage<4, 8> mUnk20c6e2;
-        ::ll::UntypedStorage<4, 4> mUnka8f19d;
+        ::ll::UntypedStorage<4, 8>  mUnk20c6e2;
+        ::ll::UntypedStorage<4, 4>  mUnka8f19d;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         QueueEntry& operator=(QueueEntry const&);
         QueueEntry(QueueEntry const&);
         QueueEntry();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~QueueEntry();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 560> mUnk31088e;
-    ::ll::UntypedStorage<8, 40> mUnkbc9ae5;
+    ::ll::UntypedStorage<8, 40>  mUnkbc9ae5;
     // NOLINTEND
 
 public:
@@ -103,7 +102,11 @@ public:
     virtual bool _runOneEvent() /*override*/;
 
     // vIndex: 10
-    virtual void _enqueue(::std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, ::std::optional<int> group) /*override*/;
+    virtual void _enqueue(
+        ::std::function<void()>            fn,
+        ::Bedrock::PubSub::ConnectPosition at,
+        ::std::optional<int>               group
+    ) /*override*/;
 
     // vIndex: 12
     virtual void _runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
@@ -133,7 +136,8 @@ public:
 
     MCNAPI bool $_runOneEvent();
 
-    MCNAPI void $_enqueue(::std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, ::std::optional<int> group);
+    MCNAPI void
+    $_enqueue(::std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, ::std::optional<int> group);
 
     MCNAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
     // NOLINTEND
@@ -143,7 +147,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::PubSub

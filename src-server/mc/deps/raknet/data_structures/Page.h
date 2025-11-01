@@ -4,8 +4,7 @@
 
 namespace DataStructures {
 
-template<typename T0, typename T1, int T2>
-struct Page {
-};
+template <typename T0, typename T1, int T2>
+struct Page {};
 
-}
+} // namespace DataStructures

@@ -23,15 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void load(::ListTag const& inventoryList, ::SemVersion const& version);
+    MCAPI void load(::ListTag const& inventoryList, ::SemVersion const& version);
 
-    MCNAPI ::std::unique_ptr<::ListTag> save(::SaveContext const& saveContext) const;
+    MCAPI ::std::unique_ptr<::ListTag> save(::SaveContext const& saveContext) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -39,5 +39,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

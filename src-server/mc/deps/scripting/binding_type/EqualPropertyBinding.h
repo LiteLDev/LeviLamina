@@ -4,7 +4,6 @@
 
 namespace Scripting {
 
-struct EqualPropertyBinding {
-};
+struct EqualPropertyBinding {};
 
-}
+} // namespace Scripting

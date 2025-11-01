@@ -17,7 +17,6 @@ public:
     SneakingInfo& operator=(SneakingInfo const&);
     SneakingInfo(SneakingInfo const&);
     SneakingInfo();
-
 };
 
-}
+} // namespace SneakingComponentConstants

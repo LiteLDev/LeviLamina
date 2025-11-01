@@ -20,7 +20,7 @@ public:
     // clang-format off
     class MaterialHelper;
     // clang-format on
-    
+
     // CappedSurfaceBuilder inner types define
     class MaterialHelper {
     public:
@@ -28,46 +28,46 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~MaterialHelper() = default;
-    
+
         // vIndex: 1
         virtual bool isFoundationBlock(::Block const& block) const;
-    
+
         // vIndex: 2
         virtual bool isWaterBlock(::Block const& block) const;
-    
+
         // vIndex: 3
         virtual bool isLavaBlock(::Block const& block) const;
-    
+
         // vIndex: 4
         virtual bool isSolidBlock(::Block const& block) const;
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI bool $isFoundationBlock(::Block const& block) const;
-    
+
         MCAPI bool $isWaterBlock(::Block const& block) const;
-    
+
         MCAPI bool $isLavaBlock(::Block const& block) const;
-    
+
         MCAPI bool $isSolidBlock(::Block const& block) const;
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mLevelSeed;
+    ::ll::TypedStorage<4, 4, uint>                             mLevelSeed;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>> mBeachNoise;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VanillaSurfaceBuilders::CappedSurfaceBuilder::MaterialHelper>> mMaterialHelper;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VanillaSurfaceBuilders::CappedSurfaceBuilder::MaterialHelper>>
+        mMaterialHelper;
     // NOLINTEND
 
 public:
@@ -106,7 +106,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace VanillaSurfaceBuilders

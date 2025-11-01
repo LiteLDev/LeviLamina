@@ -17,7 +17,6 @@ public:
     RtpExtensionSize& operator=(RtpExtensionSize const&);
     RtpExtensionSize(RtpExtensionSize const&);
     RtpExtensionSize();
-
 };
 
-}
+} // namespace webrtc

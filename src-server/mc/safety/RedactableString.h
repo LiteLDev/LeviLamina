@@ -11,7 +11,7 @@ class RedactableString {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mUnredactedString;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mUnredactedString;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mRedactedString;
     // NOLINTEND
 
@@ -59,7 +59,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Safety

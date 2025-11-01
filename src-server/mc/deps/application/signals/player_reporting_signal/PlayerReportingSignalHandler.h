@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk9595d8;
     ::ll::UntypedStorage<8, 16> mUnkeea946;
-    ::ll::UntypedStorage<1, 1> mUnkf9318b;
+    ::ll::UntypedStorage<1, 1>  mUnkf9318b;
     // NOLINTEND
 
 public:
@@ -25,7 +25,6 @@ public:
     // vIndex: 0
     virtual ~PlayerReportingSignalHandler() = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace PlayerReportingSignal

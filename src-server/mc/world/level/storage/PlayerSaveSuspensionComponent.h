@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::SuspendPlayerSave>> mWeakSuspendToken;
     // NOLINTEND
-
 };

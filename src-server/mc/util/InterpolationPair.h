@@ -15,5 +15,4 @@ public:
     InterpolationPair& operator=(InterpolationPair const&);
     InterpolationPair(InterpolationPair const&);
     InterpolationPair();
-
 };

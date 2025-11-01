@@ -14,7 +14,13 @@ namespace VoronoiZoom {
 // NOLINTBEGIN
 MCNAPI ::Vec3 getGridOffset(::SimplePositionalRandomFactory const& positionalRandom, ::BlockPos worldPos);
 
-MCNAPI uint getZoomedVoronoiCellIndex(::BlockPos inPos, ::std::vector<::Vec3> const& voronoiCellOffsets, uint minCellIndex, uint bufferXZSize, uint bufferYSize);
+MCNAPI uint getZoomedVoronoiCellIndex(
+    ::BlockPos                   inPos,
+    ::std::vector<::Vec3> const& voronoiCellOffsets,
+    uint                         minCellIndex,
+    uint                         bufferXZSize,
+    uint                         bufferYSize
+);
 // NOLINTEND
 
-}
+} // namespace VoronoiZoom

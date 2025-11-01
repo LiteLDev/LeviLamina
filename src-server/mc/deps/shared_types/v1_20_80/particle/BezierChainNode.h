@@ -19,7 +19,6 @@ public:
     BezierChainNode& operator=(BezierChainNode const&);
     BezierChainNode(BezierChainNode const&);
     BezierChainNode();
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

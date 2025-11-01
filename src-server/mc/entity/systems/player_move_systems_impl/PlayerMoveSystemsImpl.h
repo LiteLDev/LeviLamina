@@ -19,7 +19,14 @@ struct WasOnGroundFlagComponent;
 namespace VanillaSystems::PlayerMoveSystemsImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void _doPlayerPreMoveSystem(::StrictEntityContext const& entity, ::MoveRequestComponent const& request, ::StateVectorComponent const& stateVector, ::VanillaClientGameplayComponent& last, ::Optional<::OnGroundFlagComponent const> onGround, ::EntityModifier<::WasOnGroundFlagComponent>& modifier);
+MCNAPI void _doPlayerPreMoveSystem(
+    ::StrictEntityContext const&                  entity,
+    ::MoveRequestComponent const&                 request,
+    ::StateVectorComponent const&                 stateVector,
+    ::VanillaClientGameplayComponent&             last,
+    ::Optional<::OnGroundFlagComponent const>     onGround,
+    ::EntityModifier<::WasOnGroundFlagComponent>& modifier
+);
 // NOLINTEND
 
-}
+} // namespace VanillaSystems::PlayerMoveSystemsImpl

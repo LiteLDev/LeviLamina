@@ -17,8 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::CurrentCmdVersion> version;
-    ::ll::TypedStorage<8, 32, ::std::string> rawCommand;
-    ::ll::TypedStorage<8, 8, ::Command*> command;
+    ::ll::TypedStorage<8, 32, ::std::string>      rawCommand;
+    ::ll::TypedStorage<8, 8, ::Command*>          command;
     // NOLINTEND
 
 public:
@@ -32,7 +32,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace npc

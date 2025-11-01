@@ -16,7 +16,6 @@ public:
     EmptyClass& operator=(EmptyClass const&);
     EmptyClass(EmptyClass const&);
     EmptyClass();
-
 };
 
-}
+} // namespace JsonUtil

@@ -19,7 +19,6 @@ public:
     StunStats& operator=(StunStats const&);
     StunStats(StunStats const&);
     StunStats();
-
 };
 
-}
+} // namespace cricket

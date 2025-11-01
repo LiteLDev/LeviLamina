@@ -25,16 +25,16 @@ class Arrow : public ::AbstractArrow {
 public:
     // Arrow inner types define
     enum class Data : int {
-        IsCritical = 16,
+        IsCritical     = 16,
         TippedAuxValue = 18,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mLife;
-    ::ll::TypedStorage<4, 4, int> mEnchantFlame;
-    ::ll::TypedStorage<4, 4, int> mEnchantInfinity;
+    ::ll::TypedStorage<4, 4, int>                                 mLife;
+    ::ll::TypedStorage<4, 4, int>                                 mEnchantFlame;
+    ::ll::TypedStorage<4, 4, int>                                 mEnchantInfinity;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mMobEffects;
     // NOLINTEND
 
@@ -79,7 +79,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Arrow(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI Arrow(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCAPI void addMobEffect(::MobEffectInstance effect);
 
@@ -97,7 +101,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -127,5 +135,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

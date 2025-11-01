@@ -14,5 +14,4 @@ public:
     ImageMetaListDocument& operator=(ImageMetaListDocument const&);
     ImageMetaListDocument(ImageMetaListDocument const&);
     ImageMetaListDocument();
-
 };

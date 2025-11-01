@@ -4,8 +4,7 @@
 
 namespace cereal {
 
-template<typename T0>
-class BasicNumericConstraint {
-};
+template <typename T0>
+class BasicNumericConstraint {};
 
-}
+} // namespace cereal

@@ -19,16 +19,16 @@ class EnchantingTableBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mOpen;
-    ::ll::TypedStorage<4, 4, float> mOpenOld;
-    ::ll::TypedStorage<4, 4, float> mRot;
-    ::ll::TypedStorage<4, 4, float> mRotOld;
-    ::ll::TypedStorage<4, 4, float> mRotT;
-    ::ll::TypedStorage<4, 4, float> mFlip;
-    ::ll::TypedStorage<4, 4, float> mFlipOld;
-    ::ll::TypedStorage<4, 4, float> mFlipT;
-    ::ll::TypedStorage<4, 4, float> mFlipA;
-    ::ll::TypedStorage<4, 4, int> mTime;
+    ::ll::TypedStorage<4, 4, float>          mOpen;
+    ::ll::TypedStorage<4, 4, float>          mOpenOld;
+    ::ll::TypedStorage<4, 4, float>          mRot;
+    ::ll::TypedStorage<4, 4, float>          mRotOld;
+    ::ll::TypedStorage<4, 4, float>          mRotT;
+    ::ll::TypedStorage<4, 4, float>          mFlip;
+    ::ll::TypedStorage<4, 4, float>          mFlipOld;
+    ::ll::TypedStorage<4, 4, float>          mFlipT;
+    ::ll::TypedStorage<4, 4, float>          mFlipA;
+    ::ll::TypedStorage<4, 4, int>            mTime;
     ::ll::TypedStorage<8, 32, ::std::string> customName;
     // NOLINTEND
 
@@ -78,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

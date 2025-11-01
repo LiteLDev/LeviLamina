@@ -4,8 +4,7 @@
 
 namespace Scripting::Reflection {
 
-template<typename T0, int T1, int T2>
-class MemberPropertyGetter {
-};
+template <typename T0, int T1, int T2>
+class MemberPropertyGetter {};
 
-}
+} // namespace Scripting::Reflection

@@ -11,7 +11,9 @@
 
 namespace ServerInstanceMessenger {
 
-class Messenger : public ::ServerInstanceMessenger::IMessenger, public ::ServerInstanceMessenger::IMessageConsumer, public ::ServerInstanceMessenger::IMessageProducer {
+class Messenger : public ::ServerInstanceMessenger::IMessenger,
+                  public ::ServerInstanceMessenger::IMessageConsumer,
+                  public ::ServerInstanceMessenger::IMessageProducer {
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,10 +30,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void enqueueMessage(::brstd::move_only_function<void()> message, ::ServerInstanceMessenger::MessageAction action) /*override*/;
+    virtual void enqueueMessage(
+        ::brstd::move_only_function<void()>      message,
+        ::ServerInstanceMessenger::MessageAction action
+    ) /*override*/;
 
     // vIndex: 2
-    virtual void enqueueAndAwaitExecution(::brstd::move_only_function<void(::brstd::move_only_function<void()const>)> message, ::ServerInstanceMessenger::MessageAction action) /*override*/;
+    virtual void enqueueAndAwaitExecution(
+        ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)> message,
+        ::ServerInstanceMessenger::MessageAction                                     action
+    ) /*override*/;
 
     // vIndex: 1
     virtual void processMessages() /*override*/;
@@ -49,9 +57,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $enqueueMessage(::brstd::move_only_function<void()> message, ::ServerInstanceMessenger::MessageAction action);
+    MCNAPI void
+    $enqueueMessage(::brstd::move_only_function<void()> message, ::ServerInstanceMessenger::MessageAction action);
 
-    MCNAPI void $enqueueAndAwaitExecution(::brstd::move_only_function<void(::brstd::move_only_function<void()const>)> message, ::ServerInstanceMessenger::MessageAction action);
+    MCNAPI void $enqueueAndAwaitExecution(
+        ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)> message,
+        ::ServerInstanceMessenger::MessageAction                                     action
+    );
 
     MCNAPI void $processMessages();
 
@@ -69,7 +81,6 @@ public:
 
     MCNAPI static void** $vftableForIMessageProducer();
     // NOLINTEND
-
 };
 
-}
+} // namespace ServerInstanceMessenger

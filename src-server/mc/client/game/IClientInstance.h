@@ -197,7 +197,15 @@ public:
     virtual void onDestroyMinecraftGame() = 0;
 
     // vIndex: 3
-    virtual void init(::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&, ::ClientNetworkSystem&, ::Timer&, ::Timer&, ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&, int, ::IGameModuleApp&) = 0;
+    virtual void init(
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&,
+        ::ClientNetworkSystem&,
+        ::Timer&,
+        ::Timer&,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&,
+        int,
+        ::IGameModuleApp&
+    ) = 0;
 
     // vIndex: 4
     virtual void initSceneFactory(::std::unique_ptr<::SceneFactory>, ::std::unique_ptr<::OreUI::SceneProvider>) = 0;
@@ -224,7 +232,15 @@ public:
     virtual ::std::optional<::Social::GameConnectionInfo> getGameConnectionInfo() = 0;
 
     // vIndex: 12
-    virtual void onStartJoinGame(bool, ::std::string const&, ::std::string const&, ::std::string const&, ::NetworkType, ::Social::MultiplayerServiceIdentifier, bool) = 0;
+    virtual void onStartJoinGame(
+        bool,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        ::NetworkType,
+        ::Social::MultiplayerServiceIdentifier,
+        bool
+    ) = 0;
 
     // vIndex: 13
     virtual void onCancelJoinGame() = 0;
@@ -272,10 +288,15 @@ public:
     virtual float getFrameAlpha() = 0;
 
     // vIndex: 28
-    virtual void startSubClientLateJoin(bool, ::std::unique_ptr<::GameModuleClient>, ::std::optional<::PlayerJoinWorldTelemetryInfo>) = 0;
+    virtual void startSubClientLateJoin(
+        bool,
+        ::std::unique_ptr<::GameModuleClient>,
+        ::std::optional<::PlayerJoinWorldTelemetryInfo>
+    ) = 0;
 
     // vIndex: 29
-    virtual ::Bedrock::Threading::Async<::ClientGameSetupResult> setupClientGame(bool, ::std::unique_ptr<::GameModuleClient>) = 0;
+    virtual ::Bedrock::Threading::Async<::ClientGameSetupResult>
+    setupClientGame(bool, ::std::unique_ptr<::GameModuleClient>) = 0;
 
     // vIndex: 30
     virtual ::BlockSource* getRegion() = 0;
@@ -611,7 +632,10 @@ public:
     virtual void stopDestroying() = 0;
 
     // vIndex: 141
-    virtual void onClientCreatedLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>>, ::OwnerPtr<::EntityContext>) = 0;
+    virtual void onClientCreatedLevel(
+        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>>,
+        ::OwnerPtr<::EntityContext>
+    ) = 0;
 
     // vIndex: 142
     virtual ::PlayerAuthentication& getPlayerAuthentication() = 0;
@@ -863,7 +887,8 @@ public:
     virtual ::ToastManager& getToastManager() = 0;
 
     // vIndex: 225
-    virtual ::ClipboardProxy<::ApplicationSignal::ClipboardCopy, ::ApplicationSignal::ClipboardPasteRequest>& getClipboardManager() = 0;
+    virtual ::ClipboardProxy<::ApplicationSignal::ClipboardCopy, ::ApplicationSignal::ClipboardPasteRequest>&
+    getClipboardManager() = 0;
 
     // vIndex: 227
     virtual ::AbstractScene* getTopScene() = 0;
@@ -923,7 +948,8 @@ public:
     virtual ::OreUI::ITelemetry& getOreUITelemetry() = 0;
 
     // vIndex: 245
-    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> prepareSceneFor(::ui::SceneType const, ::std::function<::std::shared_ptr<::AbstractScene>()>) = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack>
+    prepareSceneFor(::ui::SceneType const, ::std::function<::std::shared_ptr<::AbstractScene>()>) = 0;
 
     // vIndex: 246
     virtual ::CachedScenes& getCachedScenes() = 0;
@@ -983,7 +1009,11 @@ public:
     virtual ::Vec2 getSafeZoneScale() const = 0;
 
     // vIndex: 265
-    virtual void verifySkinApproval(::std::string const&, ::std::function<void(::std::string)> const&, ::std::function<void()> const&) const = 0;
+    virtual void verifySkinApproval(
+        ::std::string const&,
+        ::std::function<void(::std::string)> const&,
+        ::std::function<void()> const&
+    ) const = 0;
 
     // vIndex: 266
     virtual ::InputMode getCurrentInputMode() const = 0;
@@ -1187,7 +1217,11 @@ public:
     virtual void connectToThirdPartyServer(::std::string const&, int) = 0;
 
     // vIndex: 333
-    virtual void connectToExperience(::std::string const&, ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)>, ::std::function<void(::World::JoinServerWorldResult)>) = 0;
+    virtual void connectToExperience(
+        ::std::string const&,
+        ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)>,
+        ::std::function<void(::World::JoinServerWorldResult)>
+    ) = 0;
 
     // vIndex: 334
     virtual void startExternalNetworkWorld(::Social::GameConnectionInfo, ::std::string const&, bool) = 0;
@@ -1223,7 +1257,10 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> getDevConsoleLogger() const = 0;
 
     // vIndex: 345
-    virtual ::std::shared_ptr<::FileDataRequest> requestImageFromUrl(::std::string const&, ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)>) = 0;
+    virtual ::std::shared_ptr<::FileDataRequest> requestImageFromUrl(
+        ::std::string const&,
+        ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)>
+    ) = 0;
 
     // vIndex: 346
     virtual void initializeRenderResources() = 0;
@@ -1289,7 +1326,8 @@ public:
     virtual ::std::shared_ptr<::ITTSEventManager> getTTSEventManager() = 0;
 
     // vIndex: 367
-    virtual void addTTSMessage(::std::string const&, ::ProfanityFilterContext, bool, ::std::string const&, bool, bool) = 0;
+    virtual void
+    addTTSMessage(::std::string const&, ::ProfanityFilterContext, bool, ::std::string const&, bool, bool) = 0;
 
     // vIndex: 368
     virtual void initCommands() = 0;
@@ -1367,7 +1405,8 @@ public:
     virtual ::PlayerCapabilities::IClientController const& getClientCapabilities() const = 0;
 
     // vIndex: 393
-    virtual ::cg::math::Rect<float> calculateViewPortModifiers(::SubClientId const, uint64 const, ::SplitScreenDirection const) const = 0;
+    virtual ::cg::math::Rect<float>
+    calculateViewPortModifiers(::SubClientId const, uint64 const, ::SplitScreenDirection const) const = 0;
 
     // vIndex: 394
     virtual ::std::weak_ptr<::IClientInstance> getWeakPtrToThis() = 0;
@@ -1471,5 +1510,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

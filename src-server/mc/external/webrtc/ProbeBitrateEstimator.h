@@ -18,7 +18,7 @@ public:
     // clang-format off
     struct AggregatedCluster;
     // clang-format on
-    
+
     // ProbeBitrateEstimator inner types define
     struct AggregatedCluster {
     public:
@@ -33,20 +33,19 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk3b313b;
         ::ll::UntypedStorage<8, 8> mUnkcf4cff;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         AggregatedCluster& operator=(AggregatedCluster const&);
         AggregatedCluster(AggregatedCluster const&);
         AggregatedCluster();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk70e958;
-    ::ll::UntypedStorage<8, 8> mUnkd8dba6;
+    ::ll::UntypedStorage<8, 8>  mUnkd8dba6;
     ::ll::UntypedStorage<8, 16> mUnk756214;
     // NOLINTEND
 
@@ -63,7 +62,8 @@ public:
 
     MCNAPI ::std::optional<::webrtc::DataRate> FetchAndResetLastEstimatedBitrate();
 
-    MCNAPI ::std::optional<::webrtc::DataRate> HandleProbeAndEstimateBitrate(::webrtc::PacketResult const& packet_feedback);
+    MCNAPI ::std::optional<::webrtc::DataRate>
+    HandleProbeAndEstimateBitrate(::webrtc::PacketResult const& packet_feedback);
 
     MCNAPI explicit ProbeBitrateEstimator(::webrtc::RtcEventLog* event_log);
 
@@ -81,7 +81,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

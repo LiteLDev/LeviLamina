@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct Objects;
     // clang-format on
-    
+
     // ApplicationInit inner types define
     struct Objects {
     public:
@@ -20,15 +20,14 @@ public:
         ::ll::UntypedStorage<8, 16> mUnkffe70a;
         ::ll::UntypedStorage<8, 16> mUnk18199e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Objects& operator=(Objects const&);
         Objects(Objects const&);
         Objects();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,7 +41,6 @@ public:
     ApplicationInit& operator=(ApplicationInit const&);
     ApplicationInit(ApplicationInit const&);
     ApplicationInit();
-
 };
 
-}
+} // namespace Bedrock

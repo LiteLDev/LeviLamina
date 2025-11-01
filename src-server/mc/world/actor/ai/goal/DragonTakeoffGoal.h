@@ -15,9 +15,9 @@ class DragonTakeoffGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mFirstTick;
+    ::ll::TypedStorage<1, 1, bool>                      mFirstTick;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mCurrentPath;
-    ::ll::TypedStorage<8, 8, ::EnderDragon&> mDragon;
+    ::ll::TypedStorage<8, 8, ::EnderDragon&>            mDragon;
     // NOLINTEND
 
 public:
@@ -78,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

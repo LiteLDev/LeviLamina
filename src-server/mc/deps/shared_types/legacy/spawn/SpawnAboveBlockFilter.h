@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 88> mUnkdd4fa2;
-    ::ll::UntypedStorage<4, 4> mUnke69066;
+    ::ll::UntypedStorage<4, 4>  mUnke69066;
     // NOLINTEND
 
 public:
@@ -36,7 +36,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::Legacy::Spawn

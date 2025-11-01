@@ -12,9 +12,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
-    ::ll::TypedStorage<4, 4, int> mCountdown;
+    ::ll::TypedStorage<4, 4, int>              mCountdown;
     // NOLINTEND
-
 };
 
-}
+} // namespace sim

@@ -22,13 +22,22 @@ class VanillaBiomes {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addBiomeDimensionAttributeComponentHelper(::BiomeRegistry& registry, ::BiomeIdType id, ::DimensionType dimensionType);
+    MCAPI static void addBiomeDimensionAttributeComponentHelper(
+        ::BiomeRegistry& registry,
+        ::BiomeIdType    id,
+        ::DimensionType  dimensionType
+    );
 
     MCAPI static void initBiomeComponentGlue(::BiomeJsonDocumentGlue& biomeJsonDocumentGlue);
 
     MCAPI static void initBiomeDimensionComponent(::BiomeRegistry& registry);
 
-    MCAPI static void initBiomes(::BiomeRegistry& registry, ::SpawnSettings const& spawnSettings, ::BaseGameVersion const& baseGameVersion, ::Experiments const&);
+    MCAPI static void initBiomes(
+        ::BiomeRegistry&         registry,
+        ::SpawnSettings const&   spawnSettings,
+        ::BaseGameVersion const& baseGameVersion,
+        ::Experiments const&
+    );
 
     MCAPI static void initDefaultWorldGenComponents(::IWorldRegistriesProvider& registries);
 
@@ -42,5 +51,4 @@ public:
 
     MCAPI static ::SpawnBiomeType& mSpawnBiomeType();
     // NOLINTEND
-
 };

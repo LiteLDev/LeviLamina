@@ -10,7 +10,7 @@ public:
     // clang-format off
     class ForceMangle;
     // clang-format on
-    
+
     // TraceID inner types define
     class ForceMangle {
     public:
@@ -18,15 +18,14 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk225eff;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ForceMangle& operator=(ForceMangle const&);
         ForceMangle(ForceMangle const&);
         ForceMangle();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,7 +37,6 @@ public:
     TraceID& operator=(TraceID const&);
     TraceID(TraceID const&);
     TraceID();
-
 };
 
-}
+} // namespace webrtc::trace_event_internal

@@ -42,13 +42,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ZipPackWriteStrategy(::ResourceLocation const& archiveLocation, ::Core::Path const& scratchPath, ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> archiveFileAccess, ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> rawFileAccess);
+    MCNAPI ZipPackWriteStrategy(
+        ::ResourceLocation const&                    archiveLocation,
+        ::Core::Path const&                          scratchPath,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> archiveFileAccess,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> rawFileAccess
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ResourceLocation const& archiveLocation, ::Core::Path const& scratchPath, ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> archiveFileAccess, ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> rawFileAccess);
+    MCNAPI void* $ctor(
+        ::ResourceLocation const&                    archiveLocation,
+        ::Core::Path const&                          scratchPath,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> archiveFileAccess,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> rawFileAccess
+    );
     // NOLINTEND
 
 public:
@@ -68,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

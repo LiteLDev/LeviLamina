@@ -25,7 +25,6 @@ public:
     LoggedIceCandidatePairConfig& operator=(LoggedIceCandidatePairConfig const&);
     LoggedIceCandidatePairConfig(LoggedIceCandidatePairConfig const&);
     LoggedIceCandidatePairConfig();
-
 };
 
-}
+} // namespace webrtc

@@ -16,10 +16,10 @@ class UsedRtpHeaderExtensionIds : public ::cricket::UsedIds<::webrtc::RtpExtensi
 public:
     // UsedRtpHeaderExtensionIds inner types define
     enum class IdDomain : int {
-        KOneByteOnly = 0,
+        KOneByteOnly    = 0,
         KTwoByteAllowed = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -60,7 +60,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

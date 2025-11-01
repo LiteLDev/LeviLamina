@@ -10,7 +10,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::CheatSpeedOperation> mOperation;
-    ::ll::TypedStorage<4, 4, float> mValue;
+    ::ll::TypedStorage<4, 4, float>                 mValue;
     // NOLINTEND
-
 };

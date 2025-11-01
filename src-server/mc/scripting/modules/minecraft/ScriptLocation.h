@@ -20,7 +20,6 @@ public:
 
     MCNAPI static ::Scripting::InterfaceBinding bindVecXZ();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

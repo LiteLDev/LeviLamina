@@ -10,7 +10,7 @@ class PlayerSleepManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::PlayerSleepStatus> mPlayerSleepStatus;
+    ::ll::TypedStorage<4, 12, ::PlayerSleepStatus>             mPlayerSleepStatus;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnAnyGameplayUsersRemovedSubscription;
     // NOLINTEND
 
@@ -41,5 +41,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

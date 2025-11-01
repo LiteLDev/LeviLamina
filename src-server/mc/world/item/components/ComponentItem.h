@@ -54,20 +54,21 @@ class ComponentItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    bool mExcludeUserDataDiffCheck : 1;
-    bool mCanDestroyInCreative : 1;
-    bool mRequiresInteract : 1;
-    bool mIsLiquidClipped : 1;
-    ::ll::TypedStorage<4, 4, float> mSpeed;
-    ::ll::TypedStorage<4, 4, int> mDamage;
-    ::ll::TypedStorage<4, 4, ::Enchant::Slot> mEnchantSlot;
-    ::ll::TypedStorage<4, 4, int> mEnchantValue;
+    bool                                                    mExcludeUserDataDiffCheck : 1;
+    bool                                                    mCanDestroyInCreative     : 1;
+    bool                                                    mRequiresInteract         : 1;
+    bool                                                    mIsLiquidClipped          : 1;
+    ::ll::TypedStorage<4, 4, float>                         mSpeed;
+    ::ll::TypedStorage<4, 4, int>                           mDamage;
+    ::ll::TypedStorage<4, 4, ::Enchant::Slot>               mEnchantSlot;
+    ::ll::TypedStorage<4, 4, int>                           mEnchantValue;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mAlias;
-    ::ll::TypedStorage<1, 1, bool> mIsAttachable;
+    ::ll::TypedStorage<1, 1, bool>                          mIsAttachable;
     ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::std::shared_ptr<::ItemComponent>>> mItemComponents;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IconItemComponent>> mIcon;
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>> mBlockTypeForRendering;
-    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::shared_ptr<::ItemComponent>>> mRegisteredCerealComponents;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IconItemComponent>>                         mIcon;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>                                    mBlockTypeForRendering;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::shared_ptr<::ItemComponent>>>
+                                                                                            mRegisteredCerealComponents;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
     // NOLINTEND
 
@@ -82,7 +83,8 @@ public:
     virtual ~ComponentItem() /*override*/;
 
     // vIndex: 1
-    virtual ::PuvLoadData::LoadResultWithTiming initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const) /*override*/;
+    virtual ::PuvLoadData::LoadResultWithTiming
+    initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const) /*override*/;
 
     // vIndex: 2
     virtual void tearDown() /*override*/;
@@ -166,10 +168,19 @@ public:
     virtual bool requiresInteract() const /*override*/;
 
     // vIndex: 53
-    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
     // vIndex: 54
-    virtual bool isValidRepairItem(::ItemStackBase const& source, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const /*override*/;
+    virtual bool isValidRepairItem(
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const /*override*/;
 
     // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
@@ -211,13 +222,20 @@ public:
     virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 80
-    virtual ::Actor* createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction) const /*override*/;
+    virtual ::Actor* createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      direction
+    ) const /*override*/;
 
     // vIndex: 81
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+        /*override*/;
 
     // vIndex: 82
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const /*override*/;
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
+        /*override*/;
 
     // vIndex: 83
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
@@ -232,13 +250,15 @@ public:
     virtual void hitActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     // vIndex: 87
-    virtual void hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const /*override*/;
+    virtual void hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const
+        /*override*/;
 
     // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     // vIndex: 91
-    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const /*override*/;
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const
+        /*override*/;
 
     // vIndex: 94
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const /*override*/;
@@ -262,7 +282,8 @@ public:
     virtual int getVariant(int, int, bool) const;
 
     // vIndex: 109
-    virtual ::PuvLoadData::LoadResultWithTiming initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&) /*override*/;
+    virtual ::PuvLoadData::LoadResultWithTiming
+    initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&) /*override*/;
 
     // vIndex: 112
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
@@ -274,10 +295,11 @@ public:
     virtual bool isEmissive(int auxValue) const /*override*/;
 
     // vIndex: 111
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     // vIndex: 110
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int frame) /*override*/;
 
     // vIndex: 116
     virtual bool canBeCharged() const /*override*/;
@@ -298,16 +320,21 @@ public:
     virtual ::std::vector<::std::string> validateFromNetwork(::CompoundTag const& tag) /*override*/;
 
     // vIndex: 120
-    virtual bool _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const /*override*/;
+    virtual bool
+    _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const
+        /*override*/;
 
     // vIndex: 121
-    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
+    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const
+        /*override*/;
 
     // vIndex: 122
     virtual bool _shouldAutoCalculatePlacePos() const /*override*/;
 
     // vIndex: 123
-    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -315,7 +342,9 @@ public:
     // NOLINTBEGIN
     MCAPI ComponentItem(::std::string const& nameId, short id, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void _addRegisteredCerealComponent(::std::pair<::std::string const, ::std::shared_ptr<::ItemComponent>>& cerealComponent);
+    MCAPI void _addRegisteredCerealComponent(
+        ::std::pair<::std::string const, ::std::shared_ptr<::ItemComponent>>& cerealComponent
+    );
 
     MCAPI ::std::unique_ptr<::CompoundTag> _buildItemPropertiesNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
@@ -323,19 +352,34 @@ public:
 
     MCAPI bool _doesNotTakeDurabilityDamage() const;
 
-    MCAPI void _initializeLoadedComponents(::std::optional<::SemVersion> documentVersion, ::std::optional<::Experiments> _experiments);
+    MCAPI void _initializeLoadedComponents(
+        ::std::optional<::SemVersion>  documentVersion,
+        ::std::optional<::Experiments> _experiments
+    );
 
-    MCAPI void _loadComponentsFromNetworkTag(::std::string const& componentName, ::CompoundTag const& componentTag, ::cereal::ReflectionCtx const& ctx);
+    MCAPI void _loadComponentsFromNetworkTag(
+        ::std::string const&           componentName,
+        ::CompoundTag const&           componentTag,
+        ::cereal::ReflectionCtx const& ctx
+    );
 
     MCAPI void _loadItemPropertiesNetworkTag(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
     MCAPI void _loadItemTagsNetworkTag(::ListTag const& listTag);
 
-    MCAPI ::PuvLoadData::LoadResultWithTiming _validateSchemaAndInitItem(::Json::Value const& itemData, ::SemVersion const& documentVersion, ::JsonBetaState canUseBeta, ::IPackLoadContext& packLoadContext, bool isServer, ::cereal::ReflectionCtx const& ctx);
+    MCAPI ::PuvLoadData::LoadResultWithTiming _validateSchemaAndInitItem(
+        ::Json::Value const&           itemData,
+        ::SemVersion const&            documentVersion,
+        ::JsonBetaState                canUseBeta,
+        ::IPackLoadContext&            packLoadContext,
+        bool                           isServer,
+        ::cereal::ReflectionCtx const& ctx
+    );
 
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void init(::ComponentItemDataAll_Latest&& data, ::SemVersion const& documentVersion, ::Experiments const& experiments);
+    MCAPI void
+    init(::ComponentItemDataAll_Latest&& data, ::SemVersion const& documentVersion, ::Experiments const& experiments);
     // NOLINTEND
 
 public:
@@ -345,7 +389,12 @@ public:
 
     MCAPI static void registerItemComponentTypes(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::pair<bool, ::SemVersion> upgradeJson(::cereal::ReflectionCtx const& ctx, ::std::string& document, ::Core::Path const& resourceName, ::std::optional<::SemVersion> minVersion);
+    MCAPI static ::std::pair<bool, ::SemVersion> upgradeJson(
+        ::cereal::ReflectionCtx const& ctx,
+        ::std::string&                 document,
+        ::Core::Path const&            resourceName,
+        ::std::optional<::SemVersion>  minVersion
+    );
     // NOLINTEND
 
 public:
@@ -417,9 +466,18 @@ public:
 
     MCAPI bool $requiresInteract() const;
 
-    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
 
-    MCAPI bool $isValidRepairItem(::ItemStackBase const& source, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const;
+    MCAPI bool $isValidRepairItem(
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const;
 
     MCAPI int $getEnchantSlot() const;
 
@@ -447,7 +505,12 @@ public:
 
     MCAPI ::ItemStack& $useAsAttack(::ItemStack& item, ::Player& player) const;
 
-    MCAPI ::Actor* $createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction) const;
+    MCAPI ::Actor* $createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      direction
+    ) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
@@ -483,9 +546,10 @@ public:
 
     MCFOLD bool $isEmissive(int auxValue) const;
 
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int frame);
 
     MCAPI bool $canBeCharged() const;
 
@@ -499,13 +563,15 @@ public:
 
     MCAPI ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const& tag);
 
-    MCFOLD bool $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
+    MCFOLD bool
+    $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
     MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     MCAPI bool $_shouldAutoCalculatePlacePos() const;
 
-    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -513,5 +579,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

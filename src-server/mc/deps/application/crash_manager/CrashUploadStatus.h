@@ -14,9 +14,9 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkd6db4b;
     ::ll::UntypedStorage<8, 32> mUnk6515c6;
     ::ll::UntypedStorage<8, 32> mUnkd66716;
-    ::ll::UntypedStorage<8, 8> mUnkac985e;
-    ::ll::UntypedStorage<8, 8> mUnke83f2e;
-    ::ll::UntypedStorage<8, 8> mUnke1bf8d;
+    ::ll::UntypedStorage<8, 8>  mUnkac985e;
+    ::ll::UntypedStorage<8, 8>  mUnke83f2e;
+    ::ll::UntypedStorage<8, 8>  mUnke1bf8d;
     // NOLINTEND
 
 public:
@@ -24,7 +24,6 @@ public:
     CrashUploadStatus& operator=(CrashUploadStatus const&);
     CrashUploadStatus(CrashUploadStatus const&);
     CrashUploadStatus();
-
 };
 
-}
+} // namespace Bedrock

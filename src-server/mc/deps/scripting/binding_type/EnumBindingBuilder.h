@@ -4,8 +4,7 @@
 
 namespace Scripting {
 
-template<typename T0, typename T1>
-class EnumBindingBuilder {
-};
+template <typename T0, typename T1>
+class EnumBindingBuilder {};
 
-}
+} // namespace Scripting

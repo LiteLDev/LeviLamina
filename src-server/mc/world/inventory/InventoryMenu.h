@@ -18,7 +18,7 @@ class InventoryMenu : public ::BaseContainerMenu {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Container*> mContainer;
+    ::ll::TypedStorage<8, 8, ::Container*>                           mContainer;
     ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>> mContainerRegistryAccess;
     // NOLINTEND
 
@@ -38,7 +38,8 @@ public:
     virtual void removeSlot(int slot, int count) /*override*/;
 
     // vIndex: 11
-    virtual void setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool) /*override*/;
+    virtual void
+    setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool) /*override*/;
 
     // vIndex: 12
     virtual ::ItemStack const& getFullContainerSlot(int slot, ::FullContainerName const& name) const /*override*/;
@@ -56,27 +57,27 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
-    MCNAPI ::ItemStack const& $getSlot(int slot) const;
+    MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCNAPI void $removeSlot(int slot, int count);
+    MCAPI void $removeSlot(int slot, int count);
 
-    MCNAPI void $setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool);
+    MCAPI void $setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool);
 
-    MCNAPI ::ItemStack const& $getFullContainerSlot(int slot, ::FullContainerName const& name) const;
+    MCAPI ::ItemStack const& $getFullContainerSlot(int slot, ::FullContainerName const& name) const;
 
-    MCNAPI void $serverInitItemStackIds();
+    MCAPI void $serverInitItemStackIds();
 
-    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCNAPI ::Container* $_getContainer() const;
+    MCFOLD ::Container* $_getContainer() const;
     // NOLINTEND
 
 public:
@@ -86,5 +87,4 @@ public:
 
     MCNAPI static void** $vftableForIContainerManager();
     // NOLINTEND
-
 };

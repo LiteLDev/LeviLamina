@@ -5,7 +5,7 @@
 namespace Scripting::QuickJS {
 
 enum class ArgConversionHint : uint {
-    None = 0,
+    None               = 0,
     NewUntrackedObject = 1,
 };
 

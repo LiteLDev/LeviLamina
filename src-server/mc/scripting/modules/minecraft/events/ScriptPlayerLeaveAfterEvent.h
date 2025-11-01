@@ -26,7 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent& operator=(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
+    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
     // NOLINTEND
 
 public:
@@ -36,7 +37,6 @@ public:
 
     MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

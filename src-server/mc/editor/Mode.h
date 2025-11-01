@@ -5,8 +5,8 @@
 namespace Editor {
 
 enum class Mode : int {
-    Disabled = 0,
-    Tool = 1,
+    Disabled  = 0,
+    Tool      = 1,
     Crosshair = 2,
 };
 

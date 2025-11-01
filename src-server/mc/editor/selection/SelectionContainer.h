@@ -34,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::Network::PayloadServiceProvider& _getNetworkService();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Selection

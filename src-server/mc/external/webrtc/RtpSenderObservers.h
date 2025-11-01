@@ -24,7 +24,6 @@ public:
     RtpSenderObservers& operator=(RtpSenderObservers const&);
     RtpSenderObservers(RtpSenderObservers const&);
     RtpSenderObservers();
-
 };
 
-}
+} // namespace webrtc

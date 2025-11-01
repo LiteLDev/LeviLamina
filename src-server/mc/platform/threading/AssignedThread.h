@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct ThreadIdInitializer;
     // clang-format on
-    
+
     // AssignedThread inner types define
     struct ThreadIdInitializer {
     public:
@@ -19,21 +19,20 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkfa216a;
         ::ll::UntypedStorage<4, 4> mUnk5c0c7e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ThreadIdInitializer& operator=(ThreadIdInitializer const&);
         ThreadIdInitializer(ThreadIdInitializer const&);
         ThreadIdInitializer();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1d2bd8;
+    ::ll::UntypedStorage<4, 4>  mUnk1d2bd8;
     ::ll::UntypedStorage<8, 64> mUnke4e11d;
-    ::ll::UntypedStorage<8, 8> mUnkd5581a;
+    ::ll::UntypedStorage<8, 8>  mUnkd5581a;
     // NOLINTEND
 
 public:
@@ -47,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void assign(::std::thread::id const& thread);
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Threading

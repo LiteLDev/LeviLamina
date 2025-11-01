@@ -16,7 +16,6 @@ public:
     LoggedRtcpPacketOutgoing& operator=(LoggedRtcpPacketOutgoing const&);
     LoggedRtcpPacketOutgoing(LoggedRtcpPacketOutgoing const&);
     LoggedRtcpPacketOutgoing();
-
 };
 
-}
+} // namespace webrtc

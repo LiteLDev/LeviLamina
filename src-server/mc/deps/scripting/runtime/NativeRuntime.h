@@ -41,7 +41,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Scripting::RegistryManager&> mRegistryManager;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::std::unique_ptr<::Scripting::RuntimeContextData>>> mContextObjects;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::std::unique_ptr<::Scripting::RuntimeContextData>>>
+        mContextObjects;
     // NOLINTEND
 
 public:
@@ -57,31 +58,63 @@ public:
     virtual ~NativeRuntime() /*override*/ = default;
 
     // vIndex: 3
-    virtual ::std::optional<::Scripting::ScriptContext> createContext(::Scripting::ModuleBindingBundle&& bindings, ::Scripting::IDependencyLoader* loader, ::Scripting::IPrinter* printer, ::Scripting::ContextConfig const&) /*override*/;
+    virtual ::std::optional<::Scripting::ScriptContext> createContext(
+        ::Scripting::ModuleBindingBundle&& bindings,
+        ::Scripting::IDependencyLoader*    loader,
+        ::Scripting::IPrinter*             printer,
+        ::Scripting::ContextConfig const&
+    ) /*override*/;
 
     // vIndex: 4
     virtual void destroyContext(::Scripting::ContextId contextId) /*override*/;
 
     // vIndex: 5
-    virtual ::Scripting::ResultAny run(::Scripting::ContextId contextId, ::Scripting::IPayload* payload, ::std::optional<::Scripting::Privilege> privilege) /*override*/;
+    virtual ::Scripting::ResultAny
+    run(::Scripting::ContextId                  contextId,
+        ::Scripting::IPayload*                  payload,
+        ::std::optional<::Scripting::Privilege> privilege) /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::ResultAny call(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::ClosureType>, ::entt::meta_any*, uint, ::entt::meta_type const&, ::std::optional<::Scripting::Privilege>) /*override*/;
+    virtual ::Scripting::ResultAny call(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::ClosureType>,
+        ::entt::meta_any*,
+        uint,
+        ::entt::meta_type const&,
+        ::std::optional<::Scripting::Privilege>
+    ) /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::ResultAny resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) /*override*/;
+    virtual ::Scripting::ResultAny resolve(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::PromiseType>,
+        ::entt::meta_any&
+    ) /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::ResultAny reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) /*override*/;
+    virtual ::Scripting::ResultAny reject(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::PromiseType>,
+        ::entt::meta_any&
+    ) /*override*/;
 
     // vIndex: 9
-    virtual ::Scripting::FutureStatus getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const /*override*/;
+    virtual ::Scripting::FutureStatus
+        getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const
+        /*override*/;
 
     // vIndex: 10
-    virtual ::Scripting::ResultAny getFutureResult(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>, ::entt::meta_type const&) const /*override*/;
+    virtual ::Scripting::ResultAny getFutureResult(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType>,
+        ::entt::meta_type const&
+    ) const /*override*/;
 
     // vIndex: 11
-    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> executeCoroutines(::std::optional<::std::chrono::microseconds>, ::std::optional<::Scripting::Privilege>) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> executeCoroutines(
+        ::std::optional<::std::chrono::microseconds>,
+        ::std::optional<::Scripting::Privilege>
+    ) /*override*/;
 
     // vIndex: 12
     virtual bool hasPendingJobs() /*override*/;
@@ -96,7 +129,10 @@ public:
     virtual void startProfiler() /*override*/;
 
     // vIndex: 16
-    virtual void stopProfiler(::std::function<void(::std::string_view)>, ::std::optional<::std::reference_wrapper<::std::string const>>) /*override*/;
+    virtual void stopProfiler(
+        ::std::function<void(::std::string_view)>,
+        ::std::optional<::std::reference_wrapper<::std::string const>>
+    ) /*override*/;
 
     // vIndex: 17
     virtual ::Scripting::RuntimeStats computeRuntimeStats() const /*override*/;
@@ -111,7 +147,8 @@ public:
     virtual ::Scripting::IWatchdog* getWatchdog() const /*override*/;
 
     // vIndex: 21
-    virtual ::std::optional<::Scripting::TypeNameInfo> getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const /*override*/;
+    virtual ::std::optional<::Scripting::TypeNameInfo>
+    getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const /*override*/;
     // NOLINTEND
 
 public:
@@ -119,7 +156,17 @@ public:
     // NOLINTBEGIN
     MCAPI explicit NativeRuntime(::Scripting::RegistryManager& registryManager);
 
-    MCAPI ::Scripting::ResultAny runFunction(::Scripting::ContextId contextId, ::std::function<::Scripting::ResultAny(::Scripting::NativeRuntime&, ::Scripting::ContextId, ::Scripting::WeakLifetimeScope, ::Scripting::ModuleBindingBundle const&, ::Scripting::IDependencyLoader*, ::Scripting::IPrinter*)> const& function);
+    MCAPI ::Scripting::ResultAny runFunction(
+        ::Scripting::ContextId contextId,
+        ::std::function<::Scripting::ResultAny(
+            ::Scripting::NativeRuntime&,
+            ::Scripting::ContextId,
+            ::Scripting::WeakLifetimeScope,
+            ::Scripting::ModuleBindingBundle const&,
+            ::Scripting::IDependencyLoader*,
+            ::Scripting::IPrinter*
+        )> const&              function
+    );
     // NOLINTEND
 
 public:
@@ -131,23 +178,47 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::Scripting::ScriptContext> $createContext(::Scripting::ModuleBindingBundle&& bindings, ::Scripting::IDependencyLoader* loader, ::Scripting::IPrinter* printer, ::Scripting::ContextConfig const&);
+    MCAPI ::std::optional<::Scripting::ScriptContext> $createContext(
+        ::Scripting::ModuleBindingBundle&& bindings,
+        ::Scripting::IDependencyLoader*    loader,
+        ::Scripting::IPrinter*             printer,
+        ::Scripting::ContextConfig const&
+    );
 
     MCAPI void $destroyContext(::Scripting::ContextId contextId);
 
-    MCAPI ::Scripting::ResultAny $run(::Scripting::ContextId contextId, ::Scripting::IPayload* payload, ::std::optional<::Scripting::Privilege> privilege);
+    MCAPI ::Scripting::ResultAny $run(
+        ::Scripting::ContextId                  contextId,
+        ::Scripting::IPayload*                  payload,
+        ::std::optional<::Scripting::Privilege> privilege
+    );
 
-    MCFOLD ::Scripting::ResultAny $call(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::ClosureType>, ::entt::meta_any*, uint, ::entt::meta_type const&, ::std::optional<::Scripting::Privilege>);
+    MCFOLD ::Scripting::ResultAny $call(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::ClosureType>,
+        ::entt::meta_any*,
+        uint,
+        ::entt::meta_type const&,
+        ::std::optional<::Scripting::Privilege>
+    );
 
-    MCFOLD ::Scripting::ResultAny $resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&);
+    MCFOLD ::Scripting::ResultAny
+    $resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&);
 
-    MCFOLD ::Scripting::ResultAny $reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&);
+    MCFOLD ::Scripting::ResultAny
+    $reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&);
 
-    MCFOLD ::Scripting::FutureStatus $getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const;
+    MCFOLD ::Scripting::FutureStatus
+        $getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const;
 
-    MCFOLD ::Scripting::ResultAny $getFutureResult(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>, ::entt::meta_type const&) const;
+    MCFOLD ::Scripting::ResultAny $getFutureResult(
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType>,
+        ::entt::meta_type const&
+    ) const;
 
-    MCFOLD ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> $executeCoroutines(::std::optional<::std::chrono::microseconds>, ::std::optional<::Scripting::Privilege>);
+    MCFOLD ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
+        $executeCoroutines(::std::optional<::std::chrono::microseconds>, ::std::optional<::Scripting::Privilege>);
 
     MCFOLD bool $hasPendingJobs();
 
@@ -157,7 +228,10 @@ public:
 
     MCFOLD void $startProfiler();
 
-    MCFOLD void $stopProfiler(::std::function<void(::std::string_view)>, ::std::optional<::std::reference_wrapper<::std::string const>>);
+    MCFOLD void $stopProfiler(
+        ::std::function<void(::std::string_view)>,
+        ::std::optional<::std::reference_wrapper<::std::string const>>
+    );
 
     MCAPI ::Scripting::RuntimeStats $computeRuntimeStats() const;
 
@@ -167,7 +241,8 @@ public:
 
     MCFOLD ::Scripting::IWatchdog* $getWatchdog() const;
 
-    MCAPI ::std::optional<::Scripting::TypeNameInfo> $getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const;
+    MCAPI ::std::optional<::Scripting::TypeNameInfo>
+    $getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const;
     // NOLINTEND
 
 public:
@@ -175,7 +250,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

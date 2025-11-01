@@ -26,7 +26,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, uchar> mFacing;
-    ::ll::TypedStorage<1, 1, bool> mFacingChanged;
+    ::ll::TypedStorage<1, 1, bool>  mFacingChanged;
     // NOLINTEND
 
 public:
@@ -84,7 +84,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 _calculateActorMovementIntoShulker(::std::vector<::AABB> const& intersectingAABBs, ::AABB const& actorAabbAfterMovement) const;
+    MCAPI ::Vec3 _calculateActorMovementIntoShulker(
+        ::std::vector<::AABB> const& intersectingAABBs,
+        ::AABB const&                actorAabbAfterMovement
+    ) const;
 
     MCAPI ::Vec3 _calculateMovementWithCollisions(::BlockSource& region, ::Actor* actor) const;
 
@@ -138,5 +141,4 @@ public:
 
     MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
-
 };

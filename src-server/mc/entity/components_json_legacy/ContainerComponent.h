@@ -29,12 +29,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 440, ::FillingContainer> mContainer;
-    ::ll::TypedStorage<8, 8, ::Actor*> mListenerShim;
-    ::ll::TypedStorage<1, 1, bool> mCanBeSiphonedFrom;
-    ::ll::TypedStorage<1, 1, bool> mPrivate;
-    ::ll::TypedStorage<1, 1, bool> mRestrictToOwner;
-    ::ll::TypedStorage<8, 32, ::std::string> mLootTable;
-    ::ll::TypedStorage<4, 4, int> mLootTableSeed;
+    ::ll::TypedStorage<8, 8, ::Actor*>             mListenerShim;
+    ::ll::TypedStorage<1, 1, bool>                 mCanBeSiphonedFrom;
+    ::ll::TypedStorage<1, 1, bool>                 mPrivate;
+    ::ll::TypedStorage<1, 1, bool>                 mRestrictToOwner;
+    ::ll::TypedStorage<8, 32, ::std::string>       mLootTable;
+    ::ll::TypedStorage<4, 4, int>                  mLootTableSeed;
     // NOLINTEND
 
 public:
@@ -83,7 +83,14 @@ public:
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCAPI void rebuildContainer(::Actor& owner, ::SharedTypes::Legacy::ContainerType type, int size, bool canBesiphonedFrom, int, bool isPrivate);
+    MCAPI void rebuildContainer(
+        ::Actor&                             owner,
+        ::SharedTypes::Legacy::ContainerType type,
+        int                                  size,
+        bool                                 canBesiphonedFrom,
+        int,
+        bool isPrivate
+    );
 
     MCAPI void removeItemsOfType(::ItemStack const& item, int count);
 
@@ -121,5 +128,4 @@ public:
 
     MCNAPI static void** $vftableForContainerCloseListener();
     // NOLINTEND
-
 };

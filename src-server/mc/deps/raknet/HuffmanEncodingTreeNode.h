@@ -18,5 +18,4 @@ public:
     HuffmanEncodingTreeNode& operator=(HuffmanEncodingTreeNode const&);
     HuffmanEncodingTreeNode(HuffmanEncodingTreeNode const&);
     HuffmanEncodingTreeNode();
-
 };

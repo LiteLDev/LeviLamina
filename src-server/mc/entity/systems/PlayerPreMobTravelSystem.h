@@ -19,7 +19,11 @@ struct StateVectorComponent;
 namespace PlayerPreMobTravelSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickPlayerPreMobTravelSystem(::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::MobTravelComponent>, ::StateVectorComponent const> view, ::EntityModifier<::PlayerPreMobTravelComponent> mod);
+MCNAPI void tickPlayerPreMobTravelSystem(
+    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::MobTravelComponent>, ::StateVectorComponent const>
+                                                    view,
+    ::EntityModifier<::PlayerPreMobTravelComponent> mod
+);
 // NOLINTEND
 
-}
+} // namespace PlayerPreMobTravelSystem

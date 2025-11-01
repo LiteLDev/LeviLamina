@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class DownloaderState : int {
-    Failed = 0,
+    Failed        = 0,
     ErrorOccurred = 1,
-    Done = 2,
+    Done          = 2,
 };

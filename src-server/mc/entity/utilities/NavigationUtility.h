@@ -15,15 +15,41 @@ class Vec3;
 namespace NavigationUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI bool canMoveDirectly(::Mob& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos, int sx, int sy, int sz, bool isClimbing);
+MCNAPI bool
+canMoveDirectly(::Mob& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos, int sx, int sy, int sz, bool isClimbing);
 
 MCNAPI bool canMoveDirectlyWaterBound(::Mob const& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos);
 
-MCNAPI bool canWalkAbove(::Mob& mob, int startX, int startY, int startZ, int sx, int sy, int sz, ::Vec3 const& startPos, float goalDirX, float goalDirZ, bool isClimbing);
+MCNAPI bool canWalkAbove(
+    ::Mob&        mob,
+    int           startX,
+    int           startY,
+    int           startZ,
+    int           sx,
+    int           sy,
+    int           sz,
+    ::Vec3 const& startPos,
+    float         goalDirX,
+    float         goalDirZ,
+    bool          isClimbing
+);
 
-MCNAPI bool canWalkDirectly(::Mob& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos, int sx, int sy, int sz, bool isClimbing);
+MCNAPI bool
+canWalkDirectly(::Mob& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos, int sx, int sy, int sz, bool isClimbing);
 
-MCNAPI bool canWalkOn(::Mob& mob, int x, int y, int z, int sx, int sy, int sz, ::Vec3 const& startPos, float goalDirX, float goalDirZ, bool isClimbing);
+MCNAPI bool canWalkOn(
+    ::Mob&        mob,
+    int           x,
+    int           y,
+    int           z,
+    int           sx,
+    int           sy,
+    int           sz,
+    ::Vec3 const& startPos,
+    float         goalDirX,
+    float         goalDirZ,
+    bool          isClimbing
+);
 
 MCNAPI bool closeToDone(::Mob const& mob, float dist);
 
@@ -33,7 +59,8 @@ MCNAPI int getSurfaceY(::Mob const& mob);
 
 MCNAPI bool invalidPathStartStatus(::Mob const& mob, ::BlockPos& startPosition);
 
-MCNAPI bool isDoorBlockingPath(::Mob const& mob, ::Block const& block, ::Path const& path, ::BlockPos const& nodePos, uint64 index);
+MCNAPI bool
+isDoorBlockingPath(::Mob const& mob, ::Block const& block, ::Path const& path, ::BlockPos const& nodePos, uint64 index);
 
 MCNAPI bool isInLiquid(::Mob const& mob);
 
@@ -48,4 +75,4 @@ MCNAPI bool swimCondition(::Mob const&, ::BlockSource& region, int gridPosX, int
 MCNAPI void trimPathFromSun(::Mob const& mob);
 // NOLINTEND
 
-}
+} // namespace NavigationUtility

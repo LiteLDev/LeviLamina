@@ -4,7 +4,6 @@
 
 namespace cg {
 
-class TextureConversionUtils {
-};
+class TextureConversionUtils {};
 
-}
+} // namespace cg

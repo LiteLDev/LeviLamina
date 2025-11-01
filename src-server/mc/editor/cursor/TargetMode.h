@@ -6,7 +6,7 @@ namespace Editor::Cursor {
 
 enum class TargetMode : int {
     Block = 0,
-    Face = 1,
+    Face  = 1,
 };
 
 }

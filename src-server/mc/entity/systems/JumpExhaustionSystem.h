@@ -25,11 +25,27 @@ struct TriggerJumpRequestComponent;
 namespace JumpExhaustionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _doJumpExhaustion(::StrictEntityContext const& entity, ::ActorDataFlagComponent const& actorDataFlagComponent, ::ActorGameTypeComponent const& actorGameTypeComponent, ::ExhaustionComponent const& exhaustionComponent, ::EntityModifier<::AttributeRequestComponent>& modifier, ::GameType const& defaultGameType);
+MCNAPI void _doJumpExhaustion(
+    ::StrictEntityContext const&                   entity,
+    ::ActorDataFlagComponent const&                actorDataFlagComponent,
+    ::ActorGameTypeComponent const&                actorGameTypeComponent,
+    ::ExhaustionComponent const&                   exhaustionComponent,
+    ::EntityModifier<::AttributeRequestComponent>& modifier,
+    ::GameType const&                              defaultGameType
+);
 
-MCNAPI void _tickJumpExhaustion(::ViewT<::StrictEntityContext, ::Include<::TriggerJumpRequestComponent, ::PlayerComponent>, ::ActorDataFlagComponent const, ::ActorGameTypeComponent const, ::ExhaustionComponent const> view, ::EntityModifier<::AttributeRequestComponent> modifier, ::OptionalGlobal<::ExternalDataComponent> externalData);
+MCNAPI void _tickJumpExhaustion(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::TriggerJumpRequestComponent, ::PlayerComponent>,
+        ::ActorDataFlagComponent const,
+        ::ActorGameTypeComponent const,
+        ::ExhaustionComponent const>              view,
+    ::EntityModifier<::AttributeRequestComponent> modifier,
+    ::OptionalGlobal<::ExternalDataComponent>     externalData
+);
 
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace JumpExhaustionSystem

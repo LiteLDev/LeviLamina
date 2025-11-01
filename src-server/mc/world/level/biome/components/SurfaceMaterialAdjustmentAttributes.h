@@ -22,34 +22,33 @@ public:
     // clang-format off
     struct Element;
     // clang-format on
-    
+
     // SurfaceMaterialAdjustmentAttributes inner types define
     struct Element {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float> mNoiseFreqScale;
-        ::ll::TypedStorage<4, 4, float> mNoiseLowerBound;
-        ::ll::TypedStorage<4, 4, float> mNoiseUpperBound;
-        ::ll::TypedStorage<8, 16, ::ExpressionNode> mHeightMin;
-        ::ll::TypedStorage<8, 16, ::ExpressionNode> mHeightMax;
+        ::ll::TypedStorage<4, 4, float>                        mNoiseFreqScale;
+        ::ll::TypedStorage<4, 4, float>                        mNoiseLowerBound;
+        ::ll::TypedStorage<4, 4, float>                        mNoiseUpperBound;
+        ::ll::TypedStorage<8, 16, ::ExpressionNode>            mHeightMin;
+        ::ll::TypedStorage<8, 16, ::ExpressionNode>            mHeightMax;
         ::ll::TypedStorage<8, 56, ::SurfaceMaterialAttributes> mAdjustedMaterials;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Element();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -66,13 +65,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(::RenderParams& molangParams, ::gsl::not_null<::PerlinSimplexNoise*> noise, ::BlockPos const& pos, int heightMin, int heightMax) const;
+    MCAPI ::SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(
+        ::RenderParams&                        molangParams,
+        ::gsl::not_null<::PerlinSimplexNoise*> noise,
+        ::BlockPos const&                      pos,
+        int                                    heightMin,
+        int                                    heightMax
+    ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void parseExpressionNodeFloat(::ExpressionOp op, ::std::string const& data, ::ExpressionNode& node, float defaultValue);
+    MCFOLD static void
+    parseExpressionNodeFloat(::ExpressionOp op, ::std::string const& data, ::ExpressionNode& node, float defaultValue);
     // NOLINTEND
 
 public:
@@ -80,5 +86,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

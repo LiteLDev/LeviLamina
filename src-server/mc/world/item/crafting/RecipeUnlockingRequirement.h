@@ -11,17 +11,17 @@ class RecipeUnlockingRequirement {
 public:
     // RecipeUnlockingRequirement inner types define
     enum class UnlockingContext : int {
-        None = 0,
-        AlwaysUnlocked = 1,
-        PlayerInWater = 2,
+        None               = 0,
+        AlwaysUnlocked     = 1,
+        PlayerInWater      = 2,
         PlayerHasManyItems = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::RecipeUnlockingRequirement::UnlockingContext> mContext;
-    ::ll::TypedStorage<8, 24, ::std::vector<::RecipeIngredient>> mIngredients;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RecipeIngredient>>             mIngredients;
     // NOLINTEND
 
 public:
@@ -37,7 +37,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::RecipeUnlockingRequirement::UnlockingContext unlockingContextFromString(::std::string const& context);
+    MCAPI static ::RecipeUnlockingRequirement::UnlockingContext
+    unlockingContextFromString(::std::string const& context);
     // NOLINTEND
 
 public:
@@ -53,5 +54,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

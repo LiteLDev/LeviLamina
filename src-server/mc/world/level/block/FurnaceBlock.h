@@ -54,7 +54,8 @@ public:
     virtual bool hasComparatorSignal() const /*override*/;
 
     // vIndex: 105
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const /*override*/;
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
     // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -72,7 +73,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setLit(bool lit, ::BlockSource& region, ::BlockPos const& pos, ::BlockActorType blockActorType, ::Block const& unlitFurnace, ::Block const& litFurnace);
+    MCAPI static void setLit(
+        bool              lit,
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::BlockActorType  blockActorType,
+        ::Block const&    unlitFurnace,
+        ::Block const&    litFurnace
+    );
     // NOLINTEND
 
 public:
@@ -94,7 +102,8 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCFOLD int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCFOLD int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
@@ -104,5 +113,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

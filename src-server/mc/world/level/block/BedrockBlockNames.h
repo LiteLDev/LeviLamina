@@ -17,4 +17,4 @@ MCAPI ::HashedString const& ClientRequestPlaceholderBlock();
 MCAPI ::HashedString const& Unknown();
 // NOLINTEND
 
-}
+} // namespace BedrockBlockNames

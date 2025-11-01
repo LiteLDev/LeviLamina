@@ -32,7 +32,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static float const& kValueUndefined();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

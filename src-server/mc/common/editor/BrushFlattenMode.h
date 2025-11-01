@@ -7,7 +7,7 @@ namespace Editor::Brush {
 enum class BrushFlattenMode : int {
     Both = 0,
     Down = 1,
-    Up = 2,
+    Up   = 2,
 };
 
 }

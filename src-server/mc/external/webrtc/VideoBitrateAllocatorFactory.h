@@ -18,7 +18,8 @@ public:
     virtual ~VideoBitrateAllocatorFactory() = default;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::webrtc::VideoBitrateAllocator> CreateVideoBitrateAllocator(::webrtc::VideoCodec const&) = 0;
+    virtual ::std::unique_ptr<::webrtc::VideoBitrateAllocator>
+    CreateVideoBitrateAllocator(::webrtc::VideoCodec const&) = 0;
     // NOLINTEND
 
 public:
@@ -26,7 +27,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

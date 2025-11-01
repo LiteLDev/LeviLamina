@@ -20,29 +20,27 @@ public:
     struct BlockConnectionResult;
     struct ConnectionData;
     // clang-format on
-    
+
     // BlockConnectionComponent inner types define
     struct BlockConnectionResult {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mBlock;
-        ::ll::TypedStorage<4, 4, int> mUpdateFlags;
+        ::ll::TypedStorage<4, 4, int>                             mUpdateFlags;
         // NOLINTEND
-    
     };
-    
+
     struct ConnectionData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<2, 2, ::NeighborBlockDirections> mDirections;
+        ::ll::TypedStorage<2, 2, ::NeighborBlockDirections>                                  mDirections;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTrait::IConnectionUpdateCallback>> mUpdateCallback;
-        ::ll::TypedStorage<4, 4, int> mUpdateFlags;
+        ::ll::TypedStorage<4, 4, int>                                                        mUpdateFlags;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -52,7 +50,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const& handleConnectionUpdate(::BlockSource& region, ::Block const& block, ::BlockPos const& pos, ::NeighborBlockDirections neighborDirections) const;
+    MCAPI ::Block const& handleConnectionUpdate(
+        ::BlockSource&            region,
+        ::Block const&            block,
+        ::BlockPos const&         pos,
+        ::NeighborBlockDirections neighborDirections
+    ) const;
     // NOLINTEND
-
 };

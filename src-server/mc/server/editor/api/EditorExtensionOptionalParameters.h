@@ -28,9 +28,11 @@ public:
     // NOLINTBEGIN
     MCNAPI EditorExtensionOptionalParameters(::Editor::API::EditorExtensionOptionalParameters&&);
 
-    MCNAPI ::Editor::API::EditorExtensionOptionalParameters& operator=(::Editor::API::EditorExtensionOptionalParameters const&);
+    MCNAPI ::Editor::API::EditorExtensionOptionalParameters&
+    operator=(::Editor::API::EditorExtensionOptionalParameters const&);
 
-    MCNAPI ::Editor::API::EditorExtensionOptionalParameters& operator=(::Editor::API::EditorExtensionOptionalParameters&&);
+    MCNAPI ::Editor::API::EditorExtensionOptionalParameters&
+    operator=(::Editor::API::EditorExtensionOptionalParameters&&);
 
     MCNAPI ~EditorExtensionOptionalParameters();
     // NOLINTEND
@@ -52,7 +54,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::API

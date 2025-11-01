@@ -15,12 +15,12 @@ class SwimWanderGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, int> mTicks;
-    ::ll::TypedStorage<4, 4, int> mWanderTicks;
-    ::ll::TypedStorage<4, 4, float> mInterval;
-    ::ll::TypedStorage<4, 4, float> mLookAheadDistance;
-    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
+    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
+    ::ll::TypedStorage<4, 4, int>     mTicks;
+    ::ll::TypedStorage<4, 4, int>     mWanderTicks;
+    ::ll::TypedStorage<4, 4, float>   mInterval;
+    ::ll::TypedStorage<4, 4, float>   mLookAheadDistance;
+    ::ll::TypedStorage<4, 4, float>   mSpeedMultiplier;
     ::ll::TypedStorage<4, 12, ::Vec3> mWanted;
     // NOLINTEND
 
@@ -77,5 +77,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

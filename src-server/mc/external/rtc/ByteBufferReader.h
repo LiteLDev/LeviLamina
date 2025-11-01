@@ -62,7 +62,6 @@ public:
 
     MCNAPI void* $ctor(::rtc::ArrayView<uchar const> bytes);
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

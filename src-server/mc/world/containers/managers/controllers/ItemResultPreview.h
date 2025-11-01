@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 128> mUnk301aba;
-    ::ll::UntypedStorage<4, 4> mUnk78cbb5;
+    ::ll::UntypedStorage<4, 4>   mUnk78cbb5;
     // NOLINTEND
 
 public:
@@ -15,5 +15,4 @@ public:
     ItemResultPreview& operator=(ItemResultPreview const&);
     ItemResultPreview(ItemResultPreview const&);
     ItemResultPreview();
-
 };

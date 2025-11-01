@@ -13,4 +13,4 @@ namespace BoatMove {
 MCNAPI void registerMoveIntentSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
-}
+} // namespace BoatMove

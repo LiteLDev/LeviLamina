@@ -4,8 +4,7 @@
 
 namespace brstd {
 
-template<typename T0>
-class move_only_function {
-};
+template <typename T0>
+class move_only_function {};
 
-}
+} // namespace brstd

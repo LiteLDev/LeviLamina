@@ -20,9 +20,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, ::std::variant<::std::monostate, int, float>> mValue;
-    ::ll::TypedStorage<1, 1, ::UpdateType> mUpdateType;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mId;
-    ::ll::TypedStorage<4, 4, uint> mPropertyIndex;
+    ::ll::TypedStorage<1, 1, ::UpdateType>                                 mUpdateType;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                              mId;
+    ::ll::TypedStorage<4, 4, uint>                                         mPropertyIndex;
     // NOLINTEND
 
 public:
@@ -72,5 +72,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

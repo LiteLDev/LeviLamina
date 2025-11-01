@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct LightPair;
     // clang-format on
-    
+
     // SubChunkBrightnessStorage inner types define
     struct LightPair {
     public:
@@ -17,18 +17,16 @@ public:
         union {
             struct {
                 uchar blockLight : 4;
-                uchar skyLight : 4;
+                uchar skyLight   : 4;
             };
             ::ll::TypedStorage<1, 1, uchar> raw;
         };
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 2048, ::std::array<uchar, 2048>> mLightValues;
     // NOLINTEND
-
 };

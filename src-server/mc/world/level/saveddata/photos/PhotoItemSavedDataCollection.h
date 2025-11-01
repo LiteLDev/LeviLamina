@@ -12,7 +12,7 @@ class PhotoItemSavedDataCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::unique_ptr<::PhotoItemSavedData>>> mPhotoData;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::unique_ptr<::PhotoItemSavedData>>>
+        mPhotoData;
     // NOLINTEND
-
 };

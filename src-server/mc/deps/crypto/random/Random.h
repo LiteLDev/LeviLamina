@@ -15,4 +15,4 @@ MCAPI ::mce::UUID generateUUID();
 MCAPI uint64 generateUUID64Bit();
 // NOLINTEND
 
-}
+} // namespace Crypto::Random

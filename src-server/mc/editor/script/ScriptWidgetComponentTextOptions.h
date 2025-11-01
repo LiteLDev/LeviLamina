@@ -35,9 +35,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentTextOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentTextOptions&&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentTextOptions const&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentTextOptions const&);
     // NOLINTEND
 
 public:
@@ -63,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

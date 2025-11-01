@@ -15,12 +15,12 @@ struct ItemStackResponseSlotInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar> mRequestedSlot;
-    ::ll::TypedStorage<1, 1, uchar> mSlot;
-    ::ll::TypedStorage<1, 1, uchar> mAmount;
-    ::ll::TypedStorage<4, 4, ::ItemStackNetId> mItemStackNetId;
+    ::ll::TypedStorage<1, 1, uchar>                                mRequestedSlot;
+    ::ll::TypedStorage<1, 1, uchar>                                mSlot;
+    ::ll::TypedStorage<1, 1, uchar>                                mAmount;
+    ::ll::TypedStorage<4, 4, ::ItemStackNetId>                     mItemStackNetId;
     ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mCustomName;
-    ::ll::TypedStorage<2, 2, short> mDurabilityCorrection;
+    ::ll::TypedStorage<2, 2, short>                                mDurabilityCorrection;
     // NOLINTEND
 
 public:
@@ -48,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

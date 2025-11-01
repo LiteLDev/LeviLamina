@@ -17,8 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ushort> mChoiceInput;
-    ::ll::TypedStorage<4, 4, float> mMinInclusive;
-    ::ll::TypedStorage<4, 4, float> mMaxExclusive;
+    ::ll::TypedStorage<4, 4, float>  mMinInclusive;
+    ::ll::TypedStorage<4, 4, float>  mMaxExclusive;
     ::ll::TypedStorage<2, 2, ushort> mInRangeInput;
     ::ll::TypedStorage<2, 2, ushort> mOutOfRangeInput;
     // NOLINTEND
@@ -38,5 +38,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

@@ -31,7 +31,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

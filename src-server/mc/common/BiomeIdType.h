@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/util/NewType.h"
 
-struct BiomeIdType : public ::NewType<ushort> {
-};
+struct BiomeIdType : public ::NewType<ushort> {};

@@ -20,12 +20,12 @@ class AreaAttackComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3> mDamageRange;
-    ::ll::TypedStorage<4, 4, int> mDamagePerTick;
-    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mDamageCause;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mEntityFilter;
-    ::ll::TypedStorage<4, 4, int> mAttackCooldownTicks;
-    ::ll::TypedStorage<1, 1, bool> mPlayAttackSound;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                              mDamageRange;
+    ::ll::TypedStorage<4, 4, int>                                                  mDamagePerTick;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause>              mDamageCause;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                                  mEntityFilter;
+    ::ll::TypedStorage<4, 4, int>                                                  mAttackCooldownTicks;
+    ::ll::TypedStorage<1, 1, bool>                                                 mPlayAttackSound;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ActorUniqueID, ::Tick>>> mAttackCooldownVector;
     // NOLINTEND
 
@@ -52,5 +52,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

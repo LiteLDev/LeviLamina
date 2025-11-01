@@ -16,7 +16,7 @@ public:
     class Ingredient;
     template<typename T0> class Mix;
     // clang-format on
-    
+
     // PotionBrewing inner types define
     class Ingredient {
     public:
@@ -25,25 +25,28 @@ public:
         ::ll::TypedStorage<4, 4, int> mItemId;
         ::ll::TypedStorage<4, 4, int> mData;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI bool equals(::ItemDescriptor const& input) const;
         // NOLINTEND
-    
     };
-    
-    template<typename T0>
-    class Mix {
-    };
-    
+
+    template <typename T0>
+    class Mix {};
+
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addContainerRecipe(::Item const& from, ::PotionBrewing::Ingredient const& ingredient, ::Item const& to);
+    MCAPI static void
+    addContainerRecipe(::Item const& from, ::PotionBrewing::Ingredient const& ingredient, ::Item const& to);
 
-    MCAPI static void addPotionMix(::ItemDescriptor const& from, ::PotionBrewing::Ingredient const& ingredient, ::ItemDescriptor const& to);
+    MCAPI static void addPotionMix(
+        ::ItemDescriptor const&            from,
+        ::PotionBrewing::Ingredient const& ingredient,
+        ::ItemDescriptor const&            to
+    );
 
     MCAPI static ::ItemInstance getChemistryMix(::ItemDescriptor const& from, ::ItemDescriptor const& ingredient);
 
@@ -85,5 +88,4 @@ public:
 
     MCAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidRecipeInputs();
     // NOLINTEND
-
 };

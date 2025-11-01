@@ -29,5 +29,4 @@ public:
     // NOLINTBEGIN
     MCAPI void _createOrUpdate(::MockableOwnedBlockSource& region, ::DimensionType type) const;
     // NOLINTEND
-
 };

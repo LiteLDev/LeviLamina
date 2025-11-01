@@ -16,11 +16,11 @@ struct ActorDocumentDataParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk378d91;
+    ::ll::UntypedStorage<8, 8>  mUnk378d91;
     ::ll::UntypedStorage<8, 24> mUnk4b99f1;
     ::ll::UntypedStorage<8, 32> mUnkd3c737;
-    ::ll::UntypedStorage<1, 1> mUnk6b732f;
-    ::ll::UntypedStorage<1, 1> mUnka6ee3a;
+    ::ll::UntypedStorage<1, 1>  mUnk6b732f;
+    ::ll::UntypedStorage<1, 1>  mUnka6ee3a;
     // NOLINTEND
 
 public:
@@ -33,7 +33,13 @@ public:
     // NOLINTBEGIN
     MCNAPI ActorDocumentDataParams(::ActorDocumentDataParams const&);
 
-    MCNAPI ActorDocumentDataParams(::SharedTypes::v1_21_120::ActorDefinitions& value, ::SemVersion const& formatVersion, ::MinEngineVersion const& minEngineVersion, bool isBaseGamePack, ::JsonBetaState canUseBeta);
+    MCNAPI ActorDocumentDataParams(
+        ::SharedTypes::v1_21_120::ActorDefinitions& value,
+        ::SemVersion const&                         formatVersion,
+        ::MinEngineVersion const&                   minEngineVersion,
+        bool                                        isBaseGamePack,
+        ::JsonBetaState                             canUseBeta
+    );
 
     MCNAPI ~ActorDocumentDataParams();
     // NOLINTEND
@@ -43,7 +49,13 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ActorDocumentDataParams const&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_120::ActorDefinitions& value, ::SemVersion const& formatVersion, ::MinEngineVersion const& minEngineVersion, bool isBaseGamePack, ::JsonBetaState canUseBeta);
+    MCNAPI void* $ctor(
+        ::SharedTypes::v1_21_120::ActorDefinitions& value,
+        ::SemVersion const&                         formatVersion,
+        ::MinEngineVersion const&                   minEngineVersion,
+        bool                                        isBaseGamePack,
+        ::JsonBetaState                             canUseBeta
+    );
     // NOLINTEND
 
 public:
@@ -51,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

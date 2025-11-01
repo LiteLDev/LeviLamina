@@ -19,7 +19,8 @@ struct ScriptPlayerEmoteAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayerHandle;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+                                             mPlayerHandle;
     ::ll::TypedStorage<8, 32, ::std::string> mEmotePieceId;
     // NOLINTEND
 
@@ -32,9 +33,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerEmoteAfterEvent(::Player const& player, ::std::string emotePieceId, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptPlayerEmoteAfterEvent(
+        ::Player const&                       player,
+        ::std::string                         emotePieceId,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent& operator=(::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&&);
 
     MCAPI ~ScriptPlayerEmoteAfterEvent();
     // NOLINTEND
@@ -56,7 +62,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

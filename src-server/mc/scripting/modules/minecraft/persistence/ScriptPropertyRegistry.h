@@ -31,9 +31,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> registerEntityTypeDynamicProperties(::Scripting::WeakLifetimeScope scope, ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition, ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptActorType> entityTypeOrId);
+    MCNAPI ::Scripting::Result_deprecated<void> registerEntityTypeDynamicProperties(
+        ::Scripting::WeakLifetimeScope                                          scope,
+        ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&       dynamicPropertiesDefinition,
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptActorType> entityTypeOrId
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void> registerWorldDynamicProperties(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition);
+    MCNAPI ::Scripting::Result_deprecated<void> registerWorldDynamicProperties(
+        ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
+    );
     // NOLINTEND
 
 public:
@@ -41,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

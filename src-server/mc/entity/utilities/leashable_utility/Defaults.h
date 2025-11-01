@@ -23,4 +23,4 @@ MCNAPI ::LeashablePreset const& PRESET();
 MCNAPI float const& SOFT_DISTANCE();
 // NOLINTEND
 
-}
+} // namespace Leashable::Defaults

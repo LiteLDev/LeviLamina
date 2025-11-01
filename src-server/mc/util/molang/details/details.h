@@ -15,7 +15,8 @@ MCNAPI bool operator==(::Molang::details::SourceTree const& lhs, ::Molang::detai
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::unordered_map<uint64, ::std::pair<::std::pair<::std::string, ::std::string>, ::std::string>>& preOptimizedHashes();
+MCNAPI ::std::unordered_map<uint64, ::std::pair<::std::pair<::std::string, ::std::string>, ::std::string>>&
+preOptimizedHashes();
 // NOLINTEND
 
-}
+} // namespace Molang::details

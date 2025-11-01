@@ -25,9 +25,11 @@ public:
     // NOLINTBEGIN
     MCNAPI Module(::SharedTypes::v3_0_0::PackManifestDefinition::Module const&);
 
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Module& operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Module&&);
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Module&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Module&&);
 
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Module& operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Module const&);
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Module&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Module const&);
 
     MCNAPI ~Module();
     // NOLINTEND
@@ -43,7 +45,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v3_0_0::PackManifestDefinition

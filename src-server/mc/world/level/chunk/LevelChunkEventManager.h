@@ -19,10 +19,25 @@ class LevelChunkEventManager : public ::ILevelChunkEventManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::ChunkSource&, ::LevelChunk&, int), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mOnChunkLoadedPublisher;
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::ChunkSource&, ::LevelChunk&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mOnChunkReloadedPublisher;
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::LevelChunk&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mOnChunkDiscardedPublisher;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ILevelChunkEventManagerProxy>> const> mLevelChunkEventManagerProxy;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::ChunkSource&, ::LevelChunk&, int), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnChunkLoadedPublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::ChunkSource&, ::LevelChunk&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnChunkReloadedPublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::LevelChunk&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnChunkDiscardedPublisher;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ILevelChunkEventManagerProxy>> const>
+        mLevelChunkEventManagerProxy;
     // NOLINTEND
 
 public:
@@ -36,10 +51,12 @@ public:
     virtual ~LevelChunkEventManager() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, int)>& getOnChunkLoadedConnector() /*override*/;
+    virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, int)>&
+    getOnChunkLoadedConnector() /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&)>& getOnChunkReloadedConnector() /*override*/;
+    virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&)>&
+    getOnChunkReloadedConnector() /*override*/;
 
     // vIndex: 3
     virtual ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& getOnChunkDiscardedConnector() /*override*/;
@@ -48,7 +65,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LevelChunkEventManager(::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy);
+    MCNAPI explicit LevelChunkEventManager(
+        ::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy
+    );
     // NOLINTEND
 
 public:
@@ -72,5 +91,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

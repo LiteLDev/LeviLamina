@@ -25,24 +25,52 @@ namespace br::worldgen { struct StructureSet; }
 struct JigsawStructureParser {
 public:
     // JigsawStructureParser inner types define
-    using StructureProcessorList = ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>;
-    
+    using StructureProcessorList =
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>;
+
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::br::worldgen::JigsawStructure> prepareJigsawDefinitionData(::std::vector<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents> const& jigsawsData, ::IWorldRegistriesProvider& registries);
+    MCAPI static ::std::vector<::br::worldgen::JigsawStructure> prepareJigsawDefinitionData(
+        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents> const& jigsawsData,
+        ::IWorldRegistriesProvider&                                                        registries
+    );
 
-    MCAPI static ::std::unordered_map<::std::string, ::std::shared_ptr<::br::worldgen::StructureSet>> prepareJigsawSetData(::std::vector<::SharedTypes::v1_21_20::JigsawStructureSet::Contents> const& stuctureSets, ::br::worldgen::StructureRegistry const& structureRegistry);
+    MCAPI static ::std::unordered_map<::std::string, ::std::shared_ptr<::br::worldgen::StructureSet>>
+    prepareJigsawSetData(
+        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureSet::Contents> const& stuctureSets,
+        ::br::worldgen::StructureRegistry const&                                    structureRegistry
+    );
 
-    MCAPI static ::std::unordered_map<::std::string, ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>> prepareProcessorsData(::std::vector<::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents> const& documents);
+    MCAPI static ::std::unordered_map<
+        ::std::string,
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>>
+    prepareProcessorsData(
+        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents> const& documents
+    );
 
-    MCAPI static ::std::vector<::StructureTemplatePool> prepareTemplatePoolsData(::std::vector<::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents> const& templatePoolsData, ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::JigsawStructureRegistry& registry, ::FeatureRegistry const& features);
+    MCAPI static ::std::vector<::StructureTemplatePool> prepareTemplatePoolsData(
+        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents> const& templatePoolsData,
+        ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager>                           structureManager,
+        ::JigsawStructureRegistry&                                                           registry,
+        ::FeatureRegistry const&                                                             features
+    );
 
-    MCAPI static ::br::worldgen::JigsawStructure processJigsawDefinition(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const& jigsawData, ::IWorldRegistriesProvider& registries);
+    MCAPI static ::br::worldgen::JigsawStructure processJigsawDefinition(
+        ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const& jigsawData,
+        ::IWorldRegistriesProvider&                                         registries
+    );
 
-    MCAPI static ::std::shared_ptr<::br::worldgen::StructureSet> processJigsawSet(::SharedTypes::v1_21_20::JigsawStructureSet::Contents const& setData, ::br::worldgen::StructureRegistry const& structureRegistry);
+    MCAPI static ::std::shared_ptr<::br::worldgen::StructureSet> processJigsawSet(
+        ::SharedTypes::v1_21_20::JigsawStructureSet::Contents const& setData,
+        ::br::worldgen::StructureRegistry const&                     structureRegistry
+    );
 
-    MCAPI static ::StructureTemplatePool processTemplatePool(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const& templatePool, ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::JigsawStructureRegistry& registry, ::FeatureRegistry const& features);
+    MCAPI static ::StructureTemplatePool processTemplatePool(
+        ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const& templatePool,
+        ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager>            structureManager,
+        ::JigsawStructureRegistry&                                            registry,
+        ::FeatureRegistry const&                                              features
+    );
     // NOLINTEND
-
 };

@@ -19,32 +19,31 @@ public:
     // clang-format off
     struct PacketUnit;
     // clang-format on
-    
+
     // RtpPacketizerH264 inner types define
     struct PacketUnit {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk88bdb2;
-        ::ll::UntypedStorage<1, 1> mUnkc014ea;
-        ::ll::UntypedStorage<1, 1> mUnk34776e;
-        ::ll::UntypedStorage<1, 1> mUnke2078c;
-        ::ll::UntypedStorage<1, 1> mUnk6e2157;
+        ::ll::UntypedStorage<1, 1>  mUnkc014ea;
+        ::ll::UntypedStorage<1, 1>  mUnk34776e;
+        ::ll::UntypedStorage<1, 1>  mUnke2078c;
+        ::ll::UntypedStorage<1, 1>  mUnk6e2157;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PacketUnit& operator=(PacketUnit const&);
         PacketUnit(PacketUnit const&);
         PacketUnit();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 16> mUnk24da15;
-    ::ll::UntypedStorage<8, 8> mUnk658d84;
+    ::ll::UntypedStorage<8, 8>  mUnk658d84;
     ::ll::UntypedStorage<8, 40> mUnke7c980;
     ::ll::UntypedStorage<8, 40> mUnk908fe9;
     // NOLINTEND
@@ -83,13 +82,21 @@ public:
 
     MCNAPI uint64 PacketizeStapA(uint64 fragment_index);
 
-    MCNAPI RtpPacketizerH264(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits, ::webrtc::H264PacketizationMode packetization_mode);
+    MCNAPI RtpPacketizerH264(
+        ::rtc::ArrayView<uchar const>              payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
+        ::webrtc::H264PacketizationMode            packetization_mode
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits, ::webrtc::H264PacketizationMode packetization_mode);
+    MCNAPI void* $ctor(
+        ::rtc::ArrayView<uchar const>              payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
+        ::webrtc::H264PacketizationMode            packetization_mode
+    );
     // NOLINTEND
 
 public:
@@ -111,7 +118,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

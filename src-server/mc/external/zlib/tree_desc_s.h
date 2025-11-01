@@ -16,5 +16,4 @@ public:
     tree_desc_s& operator=(tree_desc_s const&);
     tree_desc_s(tree_desc_s const&);
     tree_desc_s();
-
 };

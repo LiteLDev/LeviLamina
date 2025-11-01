@@ -17,7 +17,6 @@ public:
 
     MCNAPI static bool Validate(::dcsctp::SackChunk const& sack);
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

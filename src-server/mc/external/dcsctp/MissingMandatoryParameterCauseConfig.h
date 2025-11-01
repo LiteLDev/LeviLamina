@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-struct MissingMandatoryParameterCauseConfig {
-};
+struct MissingMandatoryParameterCauseConfig {};
 
-}
+} // namespace dcsctp

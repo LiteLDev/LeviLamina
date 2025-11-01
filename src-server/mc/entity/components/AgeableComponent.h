@@ -21,5 +21,4 @@ public:
     // NOLINTBEGIN
     MCAPI bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
-
 };

@@ -19,11 +19,11 @@ class AsyncTCPSocketBase : public ::rtc::AsyncPacketSocket {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk744ef4;
+    ::ll::UntypedStorage<8, 8>  mUnk744ef4;
     ::ll::UntypedStorage<8, 24> mUnke9e798;
     ::ll::UntypedStorage<8, 24> mUnkb68108;
-    ::ll::UntypedStorage<8, 8> mUnk169cb8;
-    ::ll::UntypedStorage<8, 8> mUnk921ceb;
+    ::ll::UntypedStorage<8, 8>  mUnk169cb8;
+    ::ll::UntypedStorage<8, 8>  mUnk921ceb;
     // NOLINTEND
 
 public:
@@ -51,7 +51,12 @@ public:
     virtual ::rtc::SocketAddress GetRemoteAddress() const /*override*/;
 
     // vIndex: 4
-    virtual int SendTo(void const* pv, uint64 cb, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options) /*override*/;
+    virtual int SendTo(
+        void const*                 pv,
+        uint64                      cb,
+        ::rtc::SocketAddress const& addr,
+        ::rtc::PacketOptions const& options
+    ) /*override*/;
 
     // vIndex: 5
     virtual int Close() /*override*/;
@@ -109,7 +114,8 @@ public:
 
     MCNAPI ::rtc::SocketAddress $GetRemoteAddress() const;
 
-    MCNAPI int $SendTo(void const* pv, uint64 cb, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options);
+    MCNAPI int
+    $SendTo(void const* pv, uint64 cb, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options);
 
     MCNAPI int $Close();
 
@@ -129,7 +135,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

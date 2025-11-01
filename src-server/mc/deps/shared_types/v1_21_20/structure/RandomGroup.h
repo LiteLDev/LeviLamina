@@ -20,9 +20,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::PoolAliases::RandomGroup& operator=(::SharedTypes::v1_21_20::PoolAliases::RandomGroup&&);
+    MCNAPI ::SharedTypes::v1_21_20::PoolAliases::RandomGroup&
+    operator=(::SharedTypes::v1_21_20::PoolAliases::RandomGroup&&);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20::PoolAliases

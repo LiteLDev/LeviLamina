@@ -17,7 +17,6 @@ public:
     InternalPacketRefCountedData& operator=(InternalPacketRefCountedData const&);
     InternalPacketRefCountedData(InternalPacketRefCountedData const&);
     InternalPacketRefCountedData();
-
 };
 
-}
+} // namespace RakNet

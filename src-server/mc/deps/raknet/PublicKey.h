@@ -19,7 +19,6 @@ public:
     PublicKey& operator=(PublicKey const&);
     PublicKey(PublicKey const&);
     PublicKey();
-
 };
 
-}
+} // namespace RakNet

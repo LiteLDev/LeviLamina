@@ -17,7 +17,6 @@ public:
     WorkTargetItem& operator=(WorkTargetItem const&);
     WorkTargetItem(WorkTargetItem const&);
     WorkTargetItem();
-
 };
 
-}
+} // namespace Bedrock::Threading::Burst::Details

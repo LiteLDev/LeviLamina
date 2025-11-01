@@ -28,8 +28,8 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk8db829;
     ::ll::UntypedStorage<8, 64> mUnk344341;
     ::ll::UntypedStorage<8, 16> mUnkfa52ad;
-    ::ll::UntypedStorage<8, 8> mUnk7ed562;
-    ::ll::UntypedStorage<8, 8> mUnk2c6cf6;
+    ::ll::UntypedStorage<8, 8>  mUnk7ed562;
+    ::ll::UntypedStorage<8, 8>  mUnk2c6cf6;
     ::ll::UntypedStorage<8, 64> mUnkbc1121;
     // NOLINTEND
 
@@ -51,9 +51,21 @@ public:
 
     MCNAPI void UpdatePlayerLoadout(::Player& player);
 
-    MCNAPI void VehicleEntered(::std::string const& vehicleName, int vehicleVariant, ::std::map<::std::string, ::std::string> const& mobProps, int passengerCount);
+    MCNAPI void VehicleEntered(
+        ::std::string const&                            vehicleName,
+        int                                             vehicleVariant,
+        ::std::map<::std::string, ::std::string> const& mobProps,
+        int                                             passengerCount
+    );
 
-    MCNAPI void VehicleExited(::std::string const& vehicleName, int vehicleVariant, ::std::map<::std::string, ::std::string> const& mobProps, int passengerCount, double timeOnMountSeconds, double distanceTravelled);
+    MCNAPI void VehicleExited(
+        ::std::string const&                            vehicleName,
+        int                                             vehicleVariant,
+        ::std::map<::std::string, ::std::string> const& mobProps,
+        int                                             passengerCount,
+        double                                          timeOnMountSeconds,
+        double                                          distanceTravelled
+    );
 
     MCNAPI ~PlayerTelemetry();
     // NOLINTEND
@@ -69,7 +81,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Social::Events

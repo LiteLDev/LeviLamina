@@ -14,7 +14,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk4d745e;
     ::ll::UntypedStorage<8, 32> mUnk66df0a;
     ::ll::UntypedStorage<8, 32> mUnke45549;
-    ::ll::UntypedStorage<1, 1> mUnk5b333f;
+    ::ll::UntypedStorage<1, 1>  mUnk5b333f;
     // NOLINTEND
 
 public:
@@ -34,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock

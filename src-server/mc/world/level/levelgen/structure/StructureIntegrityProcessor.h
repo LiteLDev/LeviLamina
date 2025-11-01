@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float> mIntegrity;
-    ::ll::TypedStorage<4, 4, uint> mStartSeed;
+    ::ll::TypedStorage<4, 4, uint>  mStartSeed;
     // NOLINTEND
 
 public:
@@ -15,5 +15,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<bool> generateFlagsForIndices(int startIndex, int endIndex) const;
     // NOLINTEND
-
 };

@@ -17,7 +17,6 @@ public:
     RetryState& operator=(RetryState const&);
     RetryState(RetryState const&);
     RetryState();
-
 };
 
-}
+} // namespace Identity::Strategies

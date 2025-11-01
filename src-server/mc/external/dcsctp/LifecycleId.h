@@ -12,7 +12,6 @@ namespace dcsctp { class LifecycleIdTag; }
 
 namespace dcsctp {
 
-class LifecycleId : public ::webrtc::StrongAlias<::dcsctp::LifecycleIdTag, uint64> {
-};
+class LifecycleId : public ::webrtc::StrongAlias<::dcsctp::LifecycleIdTag, uint64> {};
 
-}
+} // namespace dcsctp

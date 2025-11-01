@@ -14,5 +14,4 @@ public:
     RenderControllerPtr& operator=(RenderControllerPtr const&);
     RenderControllerPtr(RenderControllerPtr const&);
     RenderControllerPtr();
-
 };

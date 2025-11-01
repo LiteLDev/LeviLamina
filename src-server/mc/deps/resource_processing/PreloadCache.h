@@ -21,11 +21,10 @@ public:
     struct PreloadedContentMaps;
     struct SharedOnlyConstructionTag;
     // clang-format on
-    
+
     // PreloadCache inner types define
-    struct SharedOnlyConstructionTag {
-    };
-    
+    struct SharedOnlyConstructionTag {};
+
     struct PreloadedContentMaps {
     public:
         // member variables
@@ -33,15 +32,14 @@ public:
         ::ll::UntypedStorage<8, 64> mUnkea2f7b;
         ::ll::UntypedStorage<8, 64> mUnk31b19a;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PreloadedContentMaps& operator=(PreloadedContentMaps const&);
         PreloadedContentMaps(PreloadedContentMaps const&);
         PreloadedContentMaps();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -59,11 +57,19 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit PreloadCache(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
 
-    MCNAPI ::Bedrock::Resources::PreloadedPathHandle _findPreloadedPath(::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps, ::Core::Path const& cleanPath) const;
+    MCNAPI ::Bedrock::Resources::PreloadedPathHandle _findPreloadedPath(
+        ::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps,
+        ::Core::Path const&                                             cleanPath
+    ) const;
 
-    MCNAPI ::Bedrock::Resources::PreloadState _getAsset(::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps, ::Core::Path const& path, ::std::string* assetData) const;
+    MCNAPI ::Bedrock::Resources::PreloadState _getAsset(
+        ::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps,
+        ::Core::Path const&                                             path,
+        ::std::string*                                                  assetData
+    ) const;
 
-    MCNAPI ::Bedrock::Resources::PreloadedPathHandle addPreloadedPath(::Core::Path const& path, ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> archiveReader);
+    MCNAPI ::Bedrock::Resources::PreloadedPathHandle
+    addPreloadedPath(::Core::Path const& path, ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> archiveReader);
 
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle findPreloadedPath(::Core::Path const& path) const;
     // NOLINTEND
@@ -71,7 +77,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _preloadedPathDeleter(::std::weak_ptr<::Bedrock::Resources::PreloadCache> weakThis, ::Core::Path const& path, ::Bedrock::Resources::Archive::Reader* reader);
+    MCNAPI static void _preloadedPathDeleter(
+        ::std::weak_ptr<::Bedrock::Resources::PreloadCache> weakThis,
+        ::Core::Path const&                                 path,
+        ::Bedrock::Resources::Archive::Reader*              reader
+    );
     // NOLINTEND
 
 public:
@@ -79,7 +89,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Resources

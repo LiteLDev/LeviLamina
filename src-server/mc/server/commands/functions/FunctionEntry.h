@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkcf07dc;
-    ::ll::UntypedStorage<1, 1> mUnk2e067d;
+    ::ll::UntypedStorage<1, 1>  mUnk2e067d;
     // NOLINTEND
 
 public:
@@ -33,7 +33,8 @@ public:
     virtual ~FunctionEntry() /*override*/ = default;
 
     // vIndex: 1
-    virtual void execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) /*override*/;
+    virtual void
+    execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) /*override*/;
     // NOLINTEND
 
 public:
@@ -47,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

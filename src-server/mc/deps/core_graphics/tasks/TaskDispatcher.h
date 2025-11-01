@@ -4,8 +4,7 @@
 
 namespace cg {
 
-template<typename T0>
-class TaskDispatcher {
-};
+template <typename T0>
+class TaskDispatcher {};
 
-}
+} // namespace cg

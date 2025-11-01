@@ -14,5 +14,4 @@ public:
     PackMetadata& operator=(PackMetadata const&);
     PackMetadata(PackMetadata const&);
     PackMetadata();
-
 };

@@ -10,7 +10,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::NewInteractionModel> mModel;
-    ::ll::TypedStorage<1, 1, bool> mShouldApplyBlockBreakingDelay;
+    ::ll::TypedStorage<1, 1, bool>                  mShouldApplyBlockBreakingDelay;
     // NOLINTEND
-
 };

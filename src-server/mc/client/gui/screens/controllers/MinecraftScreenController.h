@@ -15,46 +15,47 @@
 class UIPropertyBag;
 // clang-format on
 
-class MinecraftScreenController : public ::ScreenController, public ::Bedrock::EnableNonOwnerReferences, public ::std::enable_shared_from_this<::MinecraftScreenController> {
+class MinecraftScreenController : public ::ScreenController,
+                                  public ::Bedrock::EnableNonOwnerReferences,
+                                  public ::std::enable_shared_from_this<::MinecraftScreenController> {
 public:
     // MinecraftScreenController inner types declare
     // clang-format off
     struct LeaveScreenInfo;
     // clang-format on
-    
+
     // MinecraftScreenController inner types define
     struct LeaveScreenInfo {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkdf9d74;
+        ::ll::UntypedStorage<1, 1>  mUnkdf9d74;
         ::ll::UntypedStorage<8, 32> mUnke11e12;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         LeaveScreenInfo& operator=(LeaveScreenInfo const&);
         LeaveScreenInfo(LeaveScreenInfo const&);
         LeaveScreenInfo();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk597512;
-    ::ll::UntypedStorage<4, 4> mUnk6b49e5;
-    ::ll::UntypedStorage<4, 4> mUnk3fbbc6;
-    ::ll::UntypedStorage<4, 4> mUnk9d8073;
-    ::ll::UntypedStorage<1, 1> mUnk398789;
+    ::ll::UntypedStorage<4, 4>  mUnk6b49e5;
+    ::ll::UntypedStorage<4, 4>  mUnk3fbbc6;
+    ::ll::UntypedStorage<4, 4>  mUnk9d8073;
+    ::ll::UntypedStorage<1, 1>  mUnk398789;
     ::ll::UntypedStorage<8, 64> mUnk74da16;
     ::ll::UntypedStorage<8, 32> mUnk88ae43;
     ::ll::UntypedStorage<8, 32> mUnke0c100;
     ::ll::UntypedStorage<8, 40> mUnk48d201;
-    ::ll::UntypedStorage<1, 1> mUnk500617;
+    ::ll::UntypedStorage<1, 1>  mUnk500617;
     ::ll::UntypedStorage<8, 64> mUnked78bd;
     ::ll::UntypedStorage<8, 64> mUnkba0362;
-    ::ll::UntypedStorage<1, 1> mUnk611fb7;
+    ::ll::UntypedStorage<1, 1>  mUnk611fb7;
     // NOLINTEND
 
 public:
@@ -97,7 +98,15 @@ public:
     virtual void onOpen() /*override*/;
 
     // vIndex: 19
-    virtual bool bind(::std::string const&, uint, int, ::std::string const&, uint, ::std::string const&, ::UIPropertyBag&) /*override*/;
+    virtual bool bind(
+        ::std::string const&,
+        uint,
+        int,
+        ::std::string const&,
+        uint,
+        ::std::string const&,
+        ::UIPropertyBag&
+    ) /*override*/;
 
     // vIndex: 18
     virtual bool bind(::std::string const&, uint, ::std::string const&, ::UIPropertyBag&) /*override*/;
@@ -153,5 +162,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

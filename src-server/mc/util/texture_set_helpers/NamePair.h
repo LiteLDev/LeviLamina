@@ -8,7 +8,7 @@ struct NamePair {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk92c4f0;
+    ::ll::UntypedStorage<1, 1>  mUnk92c4f0;
     ::ll::UntypedStorage<8, 32> mUnk758a41;
     // NOLINTEND
 
@@ -29,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace TextureSetHelpers

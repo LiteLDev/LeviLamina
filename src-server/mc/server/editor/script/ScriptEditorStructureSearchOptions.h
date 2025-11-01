@@ -33,9 +33,11 @@ public:
 
     MCNAPI ScriptEditorStructureSearchOptions(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions& operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
+    operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions& operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
+    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
+    operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
 
     MCNAPI ::Editor::EditorStructureMetadataQueryParams toQueryParams() const;
 
@@ -61,7 +63,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

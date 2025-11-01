@@ -5,10 +5,10 @@
 namespace Editor::API {
 
 enum class ServerScriptPackType : int {
-    Core = 0,
+    Core         = 0,
     Experimental = 1,
-    Samples = 2,
-    External = 3,
+    Samples      = 2,
+    External     = 3,
 };
 
 }

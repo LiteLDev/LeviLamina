@@ -13,7 +13,7 @@ public:
     // clang-format off
     struct ActionStatusImpl;
     // clang-format on
-    
+
     // ThreadPoolImpl inner types define
     struct ActionStatusImpl : public ::OS::ThreadPoolActionStatus {
     public:
@@ -24,39 +24,38 @@ public:
         ::ll::UntypedStorage<8, 8> mUnka555e8;
         ::ll::UntypedStorage<1, 1> mUnkb6b982;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ActionStatusImpl& operator=(ActionStatusImpl const&);
         ActionStatusImpl(ActionStatusImpl const&);
         ActionStatusImpl();
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual void Complete() /*override*/;
-    
+
         // vIndex: 1
         virtual void MayRunLong() /*override*/;
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $Complete();
-    
+
         MCNAPI void $MayRunLong();
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -77,7 +76,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void TPCallback(::_TP_CALLBACK_INSTANCE* instance, void* context, ::_TP_WORK*);
     // NOLINTEND
-
 };
 
-}
+} // namespace OS

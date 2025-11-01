@@ -29,11 +29,30 @@ namespace InitialTickFilterSystem {
 // NOLINTBEGIN
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 
-MCNAPI void tickingAreaFilterTickEntity(::StrictEntityContext const& context, ::TickWorldComponent& tickWorldComponent, ::CurrentTickComponent const& currentTickComponent, ::EntityModifier<::ActorMovementTickNeededComponent>& modifier);
+MCNAPI void tickingAreaFilterTickEntity(
+    ::StrictEntityContext const&                          context,
+    ::TickWorldComponent&                                 tickWorldComponent,
+    ::CurrentTickComponent const&                         currentTickComponent,
+    ::EntityModifier<::ActorMovementTickNeededComponent>& modifier
+);
 
-MCNAPI void tickingAreaFilterTickView(::OptionalGlobal<::CurrentTickComponent const> currentTickComponent, ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::TickWorldComponent> view, ::EntityModifier<::ActorMovementTickNeededComponent> modifier);
+MCNAPI void tickingAreaFilterTickView(
+    ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::TickWorldComponent> view,
+    ::EntityModifier<::ActorMovementTickNeededComponent>                                                modifier
+);
 
-MCNAPI void validChunkFilterTickEntity(::StrictEntityContext const& context, ::StateVectorComponent& stateVector, ::Optional<::ActorRotationComponent> const& actorRotation, ::Optional<::MobBodyRotationComponent> const& mobBodyRotation, ::Optional<::ActorHeadRotationComponent> const& actorHeadRotation, ::Optional<::ActorWalkAnimationComponent> const& actorWalkAnimation, ::std::function<void(::StrictEntityContext const&)> const& modifierFunctor, bool resetAnimation, ::IConstBlockSource const& region);
+MCNAPI void validChunkFilterTickEntity(
+    ::StrictEntityContext const&                               context,
+    ::StateVectorComponent&                                    stateVector,
+    ::Optional<::ActorRotationComponent> const&                actorRotation,
+    ::Optional<::MobBodyRotationComponent> const&              mobBodyRotation,
+    ::Optional<::ActorHeadRotationComponent> const&            actorHeadRotation,
+    ::Optional<::ActorWalkAnimationComponent> const&           actorWalkAnimation,
+    ::std::function<void(::StrictEntityContext const&)> const& modifierFunctor,
+    bool                                                       resetAnimation,
+    ::IConstBlockSource const&                                 region
+);
 // NOLINTEND
 
-}
+} // namespace InitialTickFilterSystem

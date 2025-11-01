@@ -26,7 +26,6 @@ public:
     GraphicsProps& operator=(GraphicsProps const&);
     GraphicsProps(GraphicsProps const&);
     GraphicsProps();
-
 };
 
-}
+} // namespace Editor::Settings

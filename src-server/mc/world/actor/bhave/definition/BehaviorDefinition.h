@@ -35,7 +35,8 @@ public:
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory);
 
     // vIndex: 2
-    virtual ::std::unique_ptr<::BehaviorNode> createNode(::Actor& owner, ::BehaviorFactory const& factory, ::BehaviorNode* parent, ::BehaviorData* data) const;
+    virtual ::std::unique_ptr<::BehaviorNode>
+    createNode(::Actor& owner, ::BehaviorFactory const& factory, ::BehaviorNode* parent, ::BehaviorData* data) const;
     // NOLINTEND
 
 public:
@@ -43,7 +44,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
 
-    MCNAPI ::std::unique_ptr<::BehaviorNode> $createNode(::Actor& owner, ::BehaviorFactory const& factory, ::BehaviorNode* parent, ::BehaviorData* data) const;
+    MCNAPI ::std::unique_ptr<::BehaviorNode>
+    $createNode(::Actor& owner, ::BehaviorFactory const& factory, ::BehaviorNode* parent, ::BehaviorData* data) const;
     // NOLINTEND
 
 public:
@@ -51,5 +53,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -24,7 +24,7 @@ class ActorAnimationControllerGroup : public ::Bedrock::EnableNonOwnerReferences
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk105d01;
+    ::ll::UntypedStorage<8, 8>  mUnk105d01;
     ::ll::UntypedStorage<8, 80> mUnk820f1e;
     ::ll::UntypedStorage<8, 64> mUnkef9672;
     ::ll::UntypedStorage<8, 24> mUnk89a8cf;
@@ -46,9 +46,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _loadActorAnimationController(::std::string const& fileData, ::Core::Path const& filenameWithExtension, ::MinEngineVersion const& minEngineVersion, ::CurrentCmdVersion packCommandVersion);
+    MCNAPI void _loadActorAnimationController(
+        ::std::string const&      fileData,
+        ::Core::Path const&       filenameWithExtension,
+        ::MinEngineVersion const& minEngineVersion,
+        ::CurrentCmdVersion       packCommandVersion
+    );
 
-    MCNAPI ::std::shared_ptr<::ActorAnimationControllerInfo> getActorAnimationControllerInfo(::HashedString const& name);
+    MCNAPI ::std::shared_ptr<::ActorAnimationControllerInfo>
+    getActorAnimationControllerInfo(::HashedString const& name);
 
     MCNAPI void loadActorAnimationControllersSync(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
@@ -56,9 +62,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationControllerGroupParseMetaData>> _buildAnimationControllerFileSchema_v1_10_Or_Later(::SemVersion const& version);
+    MCNAPI static ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationControllerGroupParseMetaData>>
+    _buildAnimationControllerFileSchema_v1_10_Or_Later(::SemVersion const& version);
 
-    MCNAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, bool>> _buildAnimationControllerFileSchema_v1_8();
+    MCNAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, bool>>
+    _buildAnimationControllerFileSchema_v1_8();
 
     MCNAPI static bool loadFormatVersion(::Json::Value const& root, ::SemVersion& version);
 
@@ -76,5 +85,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

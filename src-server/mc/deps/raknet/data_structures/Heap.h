@@ -4,7 +4,6 @@
 
 namespace DataStructures {
 
-class Heap {
-};
+class Heap {};
 
-}
+} // namespace DataStructures

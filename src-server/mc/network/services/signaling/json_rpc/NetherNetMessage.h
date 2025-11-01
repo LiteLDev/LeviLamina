@@ -18,7 +18,7 @@ public:
     // clang-format off
     struct Params;
     // clang-format on
-    
+
     // NetherNetMessage inner types define
     struct Params {
     public:
@@ -27,29 +27,28 @@ public:
         ::ll::UntypedStorage<8, 32> mUnke32961;
         ::ll::UntypedStorage<8, 32> mUnk6f0843;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Params& operator=(Params const&);
         Params(Params const&);
         Params();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::JsonRpc::NetherNetMessage::Params& operator=(::JsonRpc::NetherNetMessage::Params&&);
-    
+
         MCNAPI ~Params();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -87,7 +86,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace JsonRpc

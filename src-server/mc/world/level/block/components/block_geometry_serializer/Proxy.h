@@ -20,12 +20,12 @@ struct Proxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString> mGeometryName;
-    ::ll::TypedStorage<8, 48, ::HashedString> mCullingName;
-    ::ll::TypedStorage<8, 48, ::HashedString> mCullingLayer;
-    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::ExpressionNode>> mBoneVisibilities;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                   mGeometryName;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                   mCullingName;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                   mCullingLayer;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::ExpressionNode>>      mBoneVisibilities;
     ::ll::TypedStorage<8, 24, ::std::variant<bool, ::std::set<::HashedString>>> mUVsLocked;
-    ::ll::TypedStorage<4, 52, ::BlockRendererDescription> mRenderer;
+    ::ll::TypedStorage<4, 52, ::BlockRendererDescription>                       mRenderer;
     // NOLINTEND
 
 public:
@@ -69,7 +69,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockGeometrySerializer

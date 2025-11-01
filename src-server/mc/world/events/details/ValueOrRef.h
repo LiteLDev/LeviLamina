@@ -4,8 +4,7 @@
 
 namespace Details {
 
-template<typename T0>
-class ValueOrRef {
-};
+template <typename T0>
+class ValueOrRef {};
 
-}
+} // namespace Details

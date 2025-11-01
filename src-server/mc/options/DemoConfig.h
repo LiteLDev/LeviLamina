@@ -7,8 +7,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk67aabc;
-    ::ll::UntypedStorage<4, 8> mUnk2851fc;
-    ::ll::UntypedStorage<4, 8> mUnke51b1a;
+    ::ll::UntypedStorage<4, 8>  mUnk2851fc;
+    ::ll::UntypedStorage<4, 8>  mUnke51b1a;
     // NOLINTEND
 
 public:
@@ -16,5 +16,4 @@ public:
     DemoConfig& operator=(DemoConfig const&);
     DemoConfig(DemoConfig const&);
     DemoConfig();
-
 };

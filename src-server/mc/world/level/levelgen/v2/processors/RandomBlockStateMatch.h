@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Block const*> mBlockState;
-    ::ll::TypedStorage<4, 4, float> mProbability;
+    ::ll::TypedStorage<4, 4, float>          mProbability;
     // NOLINTEND
 
 public:
@@ -48,7 +48,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen::processors::BlockRules

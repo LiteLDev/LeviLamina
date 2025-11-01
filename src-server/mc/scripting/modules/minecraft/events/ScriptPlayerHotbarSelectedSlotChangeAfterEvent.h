@@ -20,10 +20,15 @@ struct ScriptPlayerHotbarSelectedSlotChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayerHandle;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+                                  mPlayerHandle;
     ::ll::TypedStorage<4, 4, int> mPreviousSlotSelected;
     ::ll::TypedStorage<4, 4, int> mNewSlotSelected;
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mItemStack;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+        mItemStack;
     // NOLINTEND
 
 public:
@@ -34,9 +39,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerHotbarSelectedSlotChangeAfterEvent(::ScriptModuleMinecraft::ScriptPlayerHotbarSelectedSlotChangeAfterEvent const&);
+    MCAPI ScriptPlayerHotbarSelectedSlotChangeAfterEvent(
+        ::ScriptModuleMinecraft::ScriptPlayerHotbarSelectedSlotChangeAfterEvent const&
+    );
 
-    MCAPI ScriptPlayerHotbarSelectedSlotChangeAfterEvent(::Player const& player, int previousSlotSelected, int newSlotSelected, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptPlayerHotbarSelectedSlotChangeAfterEvent(
+        ::Player const& player,
+        int             previousSlotSelected,
+        int             newSlotSelected,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
+        ::Scripting::WeakLifetimeScope const&                                                           scope
+    );
 
     MCAPI ~ScriptPlayerHotbarSelectedSlotChangeAfterEvent();
     // NOLINTEND
@@ -52,7 +65,13 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerHotbarSelectedSlotChangeAfterEvent const&);
 
-    MCAPI void* $ctor(::Player const& player, int previousSlotSelected, int newSlotSelected, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(
+        ::Player const& player,
+        int             previousSlotSelected,
+        int             newSlotSelected,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
+        ::Scripting::WeakLifetimeScope const&                                                           scope
+    );
     // NOLINTEND
 
 public:
@@ -60,7 +79,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

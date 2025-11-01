@@ -7,8 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float> mValue;
-    ::ll::TypedStorage<1, 1, bool> mIgnoresFallDamage;
-    ::ll::TypedStorage<1, 1, bool> mSpawnParticlesWhenHittingGround;
+    ::ll::TypedStorage<1, 1, bool>  mIgnoresFallDamage;
+    ::ll::TypedStorage<1, 1, bool>  mSpawnParticlesWhenHittingGround;
     // NOLINTEND
-
 };

@@ -16,7 +16,6 @@ public:
     UnzipInternals& operator=(UnzipInternals const&);
     UnzipInternals(UnzipInternals const&);
     UnzipInternals();
-
 };
 
-}
+} // namespace Core

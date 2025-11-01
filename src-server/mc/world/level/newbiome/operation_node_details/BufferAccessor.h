@@ -4,8 +4,7 @@
 
 namespace OperationNodeDetails {
 
-template<typename T0>
-class BufferAccessor {
-};
+template <typename T0>
+class BufferAccessor {};
 
-}
+} // namespace OperationNodeDetails

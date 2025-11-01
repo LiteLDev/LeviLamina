@@ -12,5 +12,4 @@ public:
     // vIndex: 0
     virtual ~ContainerScreenTemporaryActionScope() /*override*/ = default;
     // NOLINTEND
-
 };

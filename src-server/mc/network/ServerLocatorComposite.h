@@ -21,8 +21,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkff7b44;
-    ::ll::UntypedStorage<8, 8> mUnk64eb8f;
-    ::ll::UntypedStorage<8, 8> mUnk89c7fa;
+    ::ll::UntypedStorage<8, 8>  mUnk64eb8f;
+    ::ll::UntypedStorage<8, 8>  mUnk89c7fa;
     // NOLINTEND
 
 public:
@@ -38,7 +38,17 @@ public:
     virtual ~ServerLocatorComposite() /*override*/ = default;
 
     // vIndex: 3
-    virtual void startAnnouncingServer(::std::string const&, ::std::string const&, ::Bedrock::NonOwnerPointer<::AppPlatform>, ::GameType, int, int, bool, bool, bool) /*override*/;
+    virtual void startAnnouncingServer(
+        ::std::string const&,
+        ::std::string const&,
+        ::Bedrock::NonOwnerPointer<::AppPlatform>,
+        ::GameType,
+        int,
+        int,
+        bool,
+        bool,
+        bool
+    ) /*override*/;
 
     // vIndex: 4
     virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform>) /*override*/;
@@ -68,7 +78,11 @@ public:
     virtual float getPingTimeForGUID(::std::string const&) /*override*/;
 
     // vIndex: 13
-    virtual void checkCanConnectToCustomServerAsync(::std::string, int, ::std::function<void(::ServerConnectivityTestResult)>) /*override*/;
+    virtual void checkCanConnectToCustomServerAsync(
+        ::std::string,
+        int,
+        ::std::function<void(::ServerConnectivityTestResult)>
+    ) /*override*/;
 
     // vIndex: 1
     virtual void _onDisable() /*override*/;
@@ -82,5 +96,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

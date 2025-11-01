@@ -29,7 +29,6 @@ public:
     TypeIds& operator=(TypeIds const&);
     TypeIds(TypeIds const&);
     TypeIds();
-
 };
 
-}
+} // namespace ECSModule

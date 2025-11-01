@@ -31,5 +31,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createCleanupSystem();
     // NOLINTEND
-
 };

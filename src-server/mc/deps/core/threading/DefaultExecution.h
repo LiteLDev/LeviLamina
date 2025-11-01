@@ -4,7 +4,6 @@
 
 namespace Bedrock::Threading::Burst::Strategy::Execution {
 
-class DefaultExecution {
-};
+class DefaultExecution {};
 
-}
+} // namespace Bedrock::Threading::Burst::Strategy::Execution

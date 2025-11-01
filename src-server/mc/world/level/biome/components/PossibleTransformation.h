@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Biome const*, uint>>> mTransformsInto;
-    ::ll::TypedStorage<8, 64, ::BiomeFilterGroup> mCondition;
-    ::ll::TypedStorage<4, 4, uint> mMinPassingNeighbors;
+    ::ll::TypedStorage<8, 64, ::BiomeFilterGroup>                               mCondition;
+    ::ll::TypedStorage<4, 4, uint>                                              mMinPassingNeighbors;
     // NOLINTEND
 
 public:
@@ -44,5 +44,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

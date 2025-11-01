@@ -15,8 +15,8 @@ struct BlockAmbientSoundComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<bool(::BlockSource&, ::BlockPos const&)const>> mCanPlay;
-    ::ll::TypedStorage<4, 4, int> mOneInChance;
+    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<bool(::BlockSource&, ::BlockPos const&) const>> mCanPlay;
+    ::ll::TypedStorage<4, 4, int>                                                                         mOneInChance;
     // NOLINTEND
 
 public:
@@ -30,5 +30,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

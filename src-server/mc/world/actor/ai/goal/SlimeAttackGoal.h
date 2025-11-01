@@ -15,12 +15,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, int> mGrowTiredTicks;
-    ::ll::TypedStorage<4, 4, int> mGrowTiredCooldownTicks;
-    ::ll::TypedStorage<4, 4, float> mMaxRotationX;
-    ::ll::TypedStorage<4, 4, float> mMaxRotationY;
-    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
-    ::ll::TypedStorage<4, 4, float> mSetPersistent;
+    ::ll::TypedStorage<4, 4, int>    mGrowTiredTicks;
+    ::ll::TypedStorage<4, 4, int>    mGrowTiredCooldownTicks;
+    ::ll::TypedStorage<4, 4, float>  mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float>  mMaxRotationY;
+    ::ll::TypedStorage<4, 4, float>  mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float>  mSetPersistent;
     // NOLINTEND
 
 public:
@@ -70,5 +70,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -18,7 +18,6 @@ public:
     BloomParameters& operator=(BloomParameters const&);
     BloomParameters(BloomParameters const&);
     BloomParameters();
-
 };
 
-}
+} // namespace dragon::framerenderer::modules::postfx

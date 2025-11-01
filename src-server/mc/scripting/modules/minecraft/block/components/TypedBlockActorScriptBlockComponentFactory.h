@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0>
-class TypedBlockActorScriptBlockComponentFactory {
-};
+template <typename T0>
+class TypedBlockActorScriptBlockComponentFactory {};
 
-}
+} // namespace ScriptModuleMinecraft

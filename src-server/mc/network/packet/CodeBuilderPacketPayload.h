@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mURL;
-    ::ll::TypedStorage<1, 1, bool> mShouldOpenCodeBuilder;
+    ::ll::TypedStorage<1, 1, bool>           mShouldOpenCodeBuilder;
     // NOLINTEND
 
 public:
@@ -29,5 +29,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

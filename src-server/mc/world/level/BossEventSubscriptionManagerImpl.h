@@ -19,24 +19,42 @@ class BossEventSubscriptionManagerImpl : public ::BossEventSubscriptionManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::BossEventUpdateType), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mOnBossEvent;
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mOnBossEventWithPacket;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::BossEventUpdateType), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnBossEvent;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+        mOnBossEventWithPacket;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback) /*override*/;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(
+        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
+    ) /*override*/;
 
     // vIndex: 4
     virtual void broadcastBossEvent(::BossEventUpdateType type) /*override*/;
 
     // vIndex: 3
-    virtual void broadcastBossEvent(::BossEventUpdateType type, ::ActorUniqueID const& id, ::BossEventPacket const& packet) /*override*/;
+    virtual void broadcastBossEvent(
+        ::BossEventUpdateType    type,
+        ::ActorUniqueID const&   id,
+        ::BossEventPacket const& packet
+    ) /*override*/;
 
     // vIndex: 5
     virtual bool areBossEventSubscribersReady() const /*override*/;
@@ -62,11 +80,14 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(
+        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
+    );
 
     MCNAPI void $broadcastBossEvent(::BossEventUpdateType type);
 
-    MCNAPI void $broadcastBossEvent(::BossEventUpdateType type, ::ActorUniqueID const& id, ::BossEventPacket const& packet);
+    MCNAPI void
+    $broadcastBossEvent(::BossEventUpdateType type, ::ActorUniqueID const& id, ::BossEventPacket const& packet);
 
     MCNAPI bool $areBossEventSubscribersReady() const;
     // NOLINTEND
@@ -78,5 +99,4 @@ public:
 
     MCNAPI static void** $vftableForImplBase();
     // NOLINTEND
-
 };

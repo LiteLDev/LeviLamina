@@ -19,15 +19,19 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Http::Request _buildKeysRequest(::std::string const& keyEndpoint, bool highPriority);
 
-    MCNAPI static ::Bedrock::Http::Request _buildMetadataRequest(::std::string const& authServiceUrl, bool highPriority);
+    MCNAPI static ::Bedrock::Http::Request
+    _buildMetadataRequest(::std::string const& authServiceUrl, bool highPriority);
 
-    MCNAPI static ::std::optional<::std::unordered_map<::std::string, ::std::string>> _parseKeysResponse(::Bedrock::Http::Response const& response);
+    MCNAPI static ::std::optional<::std::unordered_map<::std::string, ::std::string>>
+    _parseKeysResponse(::Bedrock::Http::Response const& response);
 
-    MCNAPI static ::std::optional<::MinecraftServiceKeysMetadata> _parseMetadataResponse(::Bedrock::Http::Response const& response);
+    MCNAPI static ::std::optional<::MinecraftServiceKeysMetadata>
+    _parseMetadataResponse(::Bedrock::Http::Response const& response);
 
-    MCNAPI static ::Bedrock::Threading::Async<::std::optional<::std::unordered_map<::std::string, ::std::string>>> getKeys(::TaskGroup& taskOwner, ::std::string const& endpoint, bool highPriority);
+    MCNAPI static ::Bedrock::Threading::Async<::std::optional<::std::unordered_map<::std::string, ::std::string>>>
+    getKeys(::TaskGroup& taskOwner, ::std::string const& endpoint, bool highPriority);
 
-    MCNAPI static ::Bedrock::Threading::Async<::std::optional<::MinecraftServiceKeysMetadata>> getKeysMetadata(::TaskGroup& taskOwner, ::std::string const& authServiceUrl, bool highPriority);
+    MCNAPI static ::Bedrock::Threading::Async<::std::optional<::MinecraftServiceKeysMetadata>>
+    getKeysMetadata(::TaskGroup& taskOwner, ::std::string const& authServiceUrl, bool highPriority);
     // NOLINTEND
-
 };

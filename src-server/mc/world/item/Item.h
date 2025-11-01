@@ -10,7 +10,7 @@
 #include "mc/deps/shared_types/legacy/item/UseAnimation.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/resources/JsonBetaState.h"
-#include "mc/versionless/util/BaseGameVersion.h"
+#include "mc/util/BaseGameVersion.h"
 #include "mc/world/interactions/mining/MineBlockItemEffectType.h"
 #include "mc/world/item/CreativeItemCategory.h"
 #include "mc/world/item/InHandUpdateType.h"
@@ -67,50 +67,50 @@ class Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ItemVersion> mItemParseVersion;
-    ::ll::TypedStorage<8, 32, ::std::string> mTextureAtlasFile;
-    ::ll::TypedStorage<4, 4, int> mFrameCount;
-    ::ll::TypedStorage<1, 1, bool> mAnimatesInToolbar;
-    ::ll::TypedStorage<1, 1, bool> mIsMirroredArt;
-    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::UseAnimation> mUseAnim;
-    ::ll::TypedStorage<8, 32, ::std::string> mHoverTextColorFormat;
-    ::ll::TypedStorage<4, 4, int> mIconFrame;
-    ::ll::TypedStorage<4, 4, int> mAtlasFrame;
-    ::ll::TypedStorage<4, 4, int> mAtlasTotalFrames;
-    ::ll::TypedStorage<8, 32, ::std::string> mIconName;
-    ::ll::TypedStorage<8, 32, ::std::string> mAtlasName;
-    ::ll::TypedStorage<1, 1, uchar> mMaxStackSize;
-    ::ll::TypedStorage<2, 2, short> mId;
-    ::ll::TypedStorage<8, 32, ::std::string> mDescriptionId;
-    ::ll::TypedStorage<8, 48, ::HashedString> mRawNameId;
-    ::ll::TypedStorage<8, 32, ::std::string> mNamespace;
-    ::ll::TypedStorage<8, 48, ::HashedString> mFullName;
-    ::ll::TypedStorage<2, 2, short> mMaxDamage;
-    bool mIsGlint : 1;
-    bool mHandEquipped : 1;
-    bool mIsStackedByData : 1;
-    bool mRequiresWorldBuilder : 1;
-    bool mExplodable : 1;
-    bool mFireResistant : 1;
-    bool mShouldDespawn : 1;
-    bool mAllowOffhand : 1;
-    bool mIgnoresPermissions : 1;
-    ::ll::TypedStorage<4, 4, int> mMaxUseDuration;
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion> mMinRequiredBaseGameVersion;
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>> mBlockType;
-    ::ll::TypedStorage<4, 4, ::CreativeItemCategory> mCreativeCategory;
-    ::ll::TypedStorage<8, 8, ::Item*> mCraftingRemainingItem;
-    ::ll::TypedStorage<8, 32, ::std::string> mCreativeGroup;
-    ::ll::TypedStorage<4, 4, float> mFurnaceBurnIntervalModifier;
-    ::ll::TypedStorage<4, 4, float> mFurnaceXPmultiplier;
-    ::ll::TypedStorage<1, 1, ::ItemCommandVisibility> mIsHiddenInCommands;
-    ::ll::TypedStorage<4, 4, ::Rarity> mBaseRarity;
+    ::ll::TypedStorage<4, 4, ::ItemVersion>                                   mItemParseVersion;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mTextureAtlasFile;
+    ::ll::TypedStorage<4, 4, int>                                             mFrameCount;
+    ::ll::TypedStorage<1, 1, bool>                                            mAnimatesInToolbar;
+    ::ll::TypedStorage<1, 1, bool>                                            mIsMirroredArt;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::UseAnimation>             mUseAnim;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mHoverTextColorFormat;
+    ::ll::TypedStorage<4, 4, int>                                             mIconFrame;
+    ::ll::TypedStorage<4, 4, int>                                             mAtlasFrame;
+    ::ll::TypedStorage<4, 4, int>                                             mAtlasTotalFrames;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mIconName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mAtlasName;
+    ::ll::TypedStorage<1, 1, uchar>                                           mMaxStackSize;
+    ::ll::TypedStorage<2, 2, short>                                           mId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mDescriptionId;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                 mRawNameId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mNamespace;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                 mFullName;
+    ::ll::TypedStorage<2, 2, short>                                           mMaxDamage;
+    bool                                                                      mIsGlint              : 1;
+    bool                                                                      mHandEquipped         : 1;
+    bool                                                                      mIsStackedByData      : 1;
+    bool                                                                      mRequiresWorldBuilder : 1;
+    bool                                                                      mExplodable           : 1;
+    bool                                                                      mFireResistant        : 1;
+    bool                                                                      mShouldDespawn        : 1;
+    bool                                                                      mAllowOffhand         : 1;
+    bool                                                                      mIgnoresPermissions   : 1;
+    ::ll::TypedStorage<4, 4, int>                                             mMaxUseDuration;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                              mMinRequiredBaseGameVersion;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>                    mBlockType;
+    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>                          mCreativeCategory;
+    ::ll::TypedStorage<8, 8, ::Item*>                                         mCraftingRemainingItem;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mCreativeGroup;
+    ::ll::TypedStorage<4, 4, float>                                           mFurnaceBurnIntervalModifier;
+    ::ll::TypedStorage<4, 4, float>                                           mFurnaceXPmultiplier;
+    ::ll::TypedStorage<1, 1, ::ItemCommandVisibility>                         mIsHiddenInCommands;
+    ::ll::TypedStorage<4, 4, ::Rarity>                                        mBaseRarity;
     ::ll::TypedStorage<4, 4, ::Interactions::Mining::MineBlockItemEffectType> mMineBlockType;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FoodItemComponentLegacy>> mFoodComponentLegacy;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SeedItemComponentLegacy>> mSeedComponent;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CameraItemComponentLegacy>> mCameraComponentLegacy;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>> mOnResetBAICallbacks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemTag>> mTags;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FoodItemComponentLegacy>>    mFoodComponentLegacy;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SeedItemComponentLegacy>>    mSeedComponent;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CameraItemComponentLegacy>>  mCameraComponentLegacy;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>>         mOnResetBAICallbacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemTag>>                       mTags;
     // NOLINTEND
 
 public:
@@ -124,7 +124,8 @@ public:
     virtual ~Item();
 
     // vIndex: 1
-    virtual ::PuvLoadData::LoadResultWithTiming initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const);
+    virtual ::PuvLoadData::LoadResultWithTiming
+    initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const);
 
     // vIndex: 2
     virtual void tearDown();
@@ -280,7 +281,12 @@ public:
     virtual ::std::string getHoverTextColor(::ItemStackBase const& stack) const;
 
     // vIndex: 53
-    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool showCategory) const;
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool                                 showCategory
+    ) const;
 
     // vIndex: 54
     virtual bool isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const&, ::BaseGameVersion const&) const;
@@ -397,7 +403,8 @@ public:
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
 
     // vIndex: 92
-    virtual void readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
+    virtual void
+    readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
 
     // vIndex: 93
     virtual void writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
@@ -424,7 +431,13 @@ public:
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
 
     // vIndex: 101
-    virtual ::InHandUpdateType getInHandUpdateType(::Player const& player, ::ItemStack const& oldItem, ::ItemStack const& newItem, bool const, bool const slotChanged) const;
+    virtual ::InHandUpdateType getInHandUpdateType(
+        ::Player const&    player,
+        ::ItemStack const& oldItem,
+        ::ItemStack const& newItem,
+        bool const,
+        bool const slotChanged
+    ) const;
 
     // vIndex: 102
     virtual bool validFishInteraction(int) const;
@@ -448,7 +461,8 @@ public:
     virtual bool hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
 
     // vIndex: 109
-    virtual ::PuvLoadData::LoadResultWithTiming initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
+    virtual ::PuvLoadData::LoadResultWithTiming
+    initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
 
     // vIndex: 110
     virtual ::Item& setIconInfo(::std::string const& name, int index);
@@ -481,7 +495,8 @@ public:
     virtual bool calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     // vIndex: 120
-    virtual bool _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
+    virtual bool
+    _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
     // vIndex: 121
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor&, uchar&, ::BlockPos&) const;
@@ -490,7 +505,8 @@ public:
     virtual bool _shouldAutoCalculatePlacePos() const;
 
     // vIndex: 123
-    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -500,9 +516,21 @@ public:
 
     MCAPI bool _dispenseHoneycombItem(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos) const;
 
-    MCAPI void _helpChangeInventoryItemInPlace(::Actor& actor, ::ItemStack& startingItem, ::ItemStack& replacementItem, ::ItemAcquisitionMethod acquisitionMethod) const;
+    MCAPI void _helpChangeInventoryItemInPlace(
+        ::Actor&                actor,
+        ::ItemStack&            startingItem,
+        ::ItemStack&            replacementItem,
+        ::ItemAcquisitionMethod acquisitionMethod
+    ) const;
 
-    MCAPI ::CoordinatorResult _sendTryPlaceBlockEvent(::Block const& block, ::BlockSource const& region, ::Actor const& actor, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::CoordinatorResult _sendTryPlaceBlockEvent(
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::Actor const&       actor,
+        ::BlockPos const&    pos,
+        uchar                face,
+        ::Vec3 const&        clickPos
+    ) const;
 
     MCAPI ::Item& addTag(::ItemTag const& tag);
 
@@ -538,9 +566,19 @@ public:
 
     MCAPI ::Item& setStackedByData(bool isStackedByData);
 
-    MCAPI bool updateCustomBlockEntityTag(::BlockSource& region, ::ItemStackBase& instance, ::BlockPos const& pos) const;
+    MCAPI bool
+    updateCustomBlockEntityTag(::BlockSource& region, ::ItemStackBase& instance, ::BlockPos const& pos) const;
 
-    MCAPI ::InteractionResult useOn(::ItemStack& item, ::Actor& entity, int x, int y, int z, uchar face, ::Vec3 const& clickPos, ::ItemUsedOnEventContext itemUsedOnEventContext) const;
+    MCAPI ::InteractionResult useOn(
+        ::ItemStack&             item,
+        ::Actor&                 entity,
+        int                      x,
+        int                      y,
+        int                      z,
+        uchar                    face,
+        ::Vec3 const&            clickPos,
+        ::ItemUsedOnEventContext itemUsedOnEventContext
+    ) const;
     // NOLINTEND
 
 public:
@@ -676,7 +714,12 @@ public:
 
     MCAPI ::std::string $getHoverTextColor(::ItemStackBase const& stack) const;
 
-    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool showCategory) const;
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool                                 showCategory
+    ) const;
 
     MCFOLD bool $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const&, ::BaseGameVersion const&) const;
 
@@ -754,7 +797,8 @@ public:
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
 
-    MCAPI void $readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
+    MCAPI void
+    $readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
 
     MCAPI void $writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
 
@@ -772,7 +816,13 @@ public:
 
     MCFOLD void $fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
 
-    MCAPI ::InHandUpdateType $getInHandUpdateType(::Player const& player, ::ItemStack const& oldItem, ::ItemStack const& newItem, bool const, bool const slotChanged) const;
+    MCAPI ::InHandUpdateType $getInHandUpdateType(
+        ::Player const&    player,
+        ::ItemStack const& oldItem,
+        ::ItemStack const& newItem,
+        bool const,
+        bool const slotChanged
+    ) const;
 
     MCFOLD bool $validFishInteraction(int) const;
 
@@ -806,13 +856,15 @@ public:
 
     MCAPI bool $calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCFOLD bool $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
+    MCFOLD bool
+    $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
     MCFOLD bool $_calculatePlacePos(::ItemStackBase&, ::Actor&, uchar&, ::BlockPos&) const;
 
     MCFOLD bool $_shouldAutoCalculatePlacePos() const;
 
-    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -820,5 +872,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

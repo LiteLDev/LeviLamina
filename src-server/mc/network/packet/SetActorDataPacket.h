@@ -23,10 +23,10 @@ class SetActorDataPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mId;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mPackedItems;
-    ::ll::TypedStorage<8, 48, ::PropertySyncData> mSynchedProperties;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick> mTick;
+    ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick>                             mTick;
     // NOLINTEND
 
 public:
@@ -55,13 +55,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetActorDataPacket(::ActorRuntimeID id, ::SynchedActorDataEntityWrapper& entityData, ::PropertyComponent* propertyComponent, uint64 tick, bool packAll);
+    MCAPI SetActorDataPacket(
+        ::ActorRuntimeID                 id,
+        ::SynchedActorDataEntityWrapper& entityData,
+        ::PropertyComponent*             propertyComponent,
+        uint64                           tick,
+        bool                             packAll
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorRuntimeID id, ::SynchedActorDataEntityWrapper& entityData, ::PropertyComponent* propertyComponent, uint64 tick, bool packAll);
+    MCAPI void* $ctor(
+        ::ActorRuntimeID                 id,
+        ::SynchedActorDataEntityWrapper& entityData,
+        ::PropertyComponent*             propertyComponent,
+        uint64                           tick,
+        bool                             packAll
+    );
     // NOLINTEND
 
 public:
@@ -87,5 +99,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

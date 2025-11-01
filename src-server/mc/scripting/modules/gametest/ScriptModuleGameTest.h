@@ -17,4 +17,4 @@ MCNAPI ::Scripting::EnumBinding bindPersonaArmSize();
 MCNAPI ::Scripting::EnumBinding bindPersonaPieceType();
 // NOLINTEND
 
-}
+} // namespace ScriptModuleGameTest

@@ -33,13 +33,16 @@ namespace Scripting { struct ContextId; }
 
 namespace Editor {
 
-class EditorManagerServer : public ::Editor::EditorManager, public ::Editor::Services::EditorManagerServerServiceProvider, public ::EventListenerDispatcher<::LevelEventListener>, public ::ServerInstanceEventListener {
+class EditorManagerServer : public ::Editor::EditorManager,
+                            public ::Editor::Services::EditorManagerServerServiceProvider,
+                            public ::EventListenerDispatcher<::LevelEventListener>,
+                            public ::ServerInstanceEventListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk63252c;
-    ::ll::UntypedStorage<8, 8> mUnk2bb08a;
-    ::ll::UntypedStorage<8, 8> mUnkf4abda;
+    ::ll::UntypedStorage<8, 8>  mUnk63252c;
+    ::ll::UntypedStorage<8, 8>  mUnk2bb08a;
+    ::ll::UntypedStorage<8, 8>  mUnkf4abda;
     ::ll::UntypedStorage<8, 24> mUnk62d704;
     ::ll::UntypedStorage<8, 48> mUnkc95cac;
     // NOLINTEND
@@ -75,19 +78,27 @@ public:
     virtual ::Scripting::Result_deprecated<void> scriptingTeardown() /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::Result_deprecated<void> scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
 
     // vIndex: 4
-    virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(::ILevelListCache& levelListCache, ::Scheduler& scheduler, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> keyProvider) /*override*/;
+    virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
+        ::ILevelListCache&                                              levelListCache,
+        ::Scheduler&                                                    scheduler,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
+    ) /*override*/;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Subscription registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorManagerServer(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager);
+    MCNAPI
+    EditorManagerServer(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager);
 
     MCNAPI void _dispatchToServerPlayers(::Editor::Network::INetworkPayload& payload);
 
@@ -123,9 +134,15 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
 
-    MCNAPI ::std::unique_ptr<::FileArchiver::IWorldConverter> $createWorldConverter(::ILevelListCache& levelListCache, ::Scheduler& scheduler, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> keyProvider);
+    MCNAPI ::std::unique_ptr<::FileArchiver::IWorldConverter> $createWorldConverter(
+        ::ILevelListCache&                                              levelListCache,
+        ::Scheduler&                                                    scheduler,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
+    );
 
-    MCNAPI ::Bedrock::PubSub::Subscription $registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func);
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func);
     // NOLINTEND
 
 public:
@@ -143,7 +160,6 @@ public:
 
     MCNAPI static void** $vftableForEventListenerDispatcher();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

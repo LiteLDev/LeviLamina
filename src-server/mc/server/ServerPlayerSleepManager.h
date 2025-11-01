@@ -23,17 +23,17 @@ class ServerPlayerSleepManager : public ::PlayerSleepManager, public ::IServerPl
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1bd6b4;
-    ::ll::UntypedStorage<8, 8> mUnk245965;
-    ::ll::UntypedStorage<8, 24> mUnke94e86;
+    ::ll::UntypedStorage<8, 24>  mUnk1bd6b4;
+    ::ll::UntypedStorage<8, 8>   mUnk245965;
+    ::ll::UntypedStorage<8, 24>  mUnke94e86;
     ::ll::UntypedStorage<8, 128> mUnk4e19d4;
     ::ll::UntypedStorage<8, 128> mUnke28aa3;
-    ::ll::UntypedStorage<8, 16> mUnk14f81a;
-    ::ll::UntypedStorage<8, 16> mUnk5a6432;
-    ::ll::UntypedStorage<8, 16> mUnk80dd8d;
-    ::ll::UntypedStorage<8, 16> mUnk6765b6;
-    ::ll::UntypedStorage<1, 1> mUnk3cbf25;
-    ::ll::UntypedStorage<1, 1> mUnk41cf95;
+    ::ll::UntypedStorage<8, 16>  mUnk14f81a;
+    ::ll::UntypedStorage<8, 16>  mUnk5a6432;
+    ::ll::UntypedStorage<8, 16>  mUnk80dd8d;
+    ::ll::UntypedStorage<8, 16>  mUnk6765b6;
+    ::ll::UntypedStorage<1, 1>   mUnk3cbf25;
+    ::ll::UntypedStorage<1, 1>   mUnk41cf95;
     // NOLINTEND
 
 public:
@@ -61,7 +61,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerPlayerSleepManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager, ::std::unique_ptr<::IPlayerSleepPercentageGetter> playerSleepPercentageGetter, ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager);
+    MCNAPI ServerPlayerSleepManager(
+        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
+        ::std::unique_ptr<::IPlayerSleepPercentageGetter>    playerSleepPercentageGetter,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>   levelEventManager
+    );
 
     MCNAPI void _broadcastSleepingPlayerList(::PlayerSleepStatus const& playerSleepStatus);
 
@@ -71,13 +75,18 @@ public:
 
     MCNAPI void initializeWithPlayerDeathManager(::PlayerDeathManager& playerDeathManager);
 
-    MCNAPI void registerWithPlayerDimensionTransferConnector(::IPlayerDimensionTransferConnector& playerDimensionTransferConnector);
+    MCNAPI void
+    registerWithPlayerDimensionTransferConnector(::IPlayerDimensionTransferConnector& playerDimensionTransferConnector);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager, ::std::unique_ptr<::IPlayerSleepPercentageGetter> playerSleepPercentageGetter, ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager);
+    MCNAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
+        ::std::unique_ptr<::IPlayerSleepPercentageGetter>    playerSleepPercentageGetter,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>   levelEventManager
+    );
     // NOLINTEND
 
 public:
@@ -103,5 +112,4 @@ public:
 
     MCNAPI static void** $vftableForPlayerSleepManager();
     // NOLINTEND
-
 };

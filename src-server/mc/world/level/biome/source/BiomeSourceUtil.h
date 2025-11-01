@@ -16,9 +16,20 @@ namespace BiomeSourceUtil {
 // NOLINTBEGIN
 MCAPI short determineDestinationHeight(::Dimension const& dimension, ::BlockPos const& destination);
 
-MCAPI ::BlockPos determineUndergroundDestination(::Dimension const& dimension, ::BlockPos const& startDestination, ::std::function<bool(::Biome const&)> const& predicate, int searchRadius);
+MCAPI ::BlockPos determineUndergroundDestination(
+    ::Dimension const&                           dimension,
+    ::BlockPos const&                            startDestination,
+    ::std::function<bool(::Biome const&)> const& predicate,
+    int                                          searchRadius
+);
 
-MCAPI ::std::optional<::BlockPos> locateBiome(::std::function<bool(::Biome const&)> const& predicate, ::BiomeSource const& biomeSource, ::BlockPos const& center, ::BoundingBox worldBounds, uint resolution);
+MCAPI ::std::optional<::BlockPos> locateBiome(
+    ::std::function<bool(::Biome const&)> const& predicate,
+    ::BiomeSource const&                         biomeSource,
+    ::BlockPos const&                            center,
+    ::BoundingBox                                worldBounds,
+    uint                                         resolution
+);
 // NOLINTEND
 
-}
+} // namespace BiomeSourceUtil

@@ -8,5 +8,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, float[2]> delta;
     // NOLINTEND
-
 };

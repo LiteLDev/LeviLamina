@@ -21,13 +21,13 @@ class SubClientConnectionRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk7f2040;
-    ::ll::UntypedStorage<8, 8> mUnk2af921;
-    ::ll::UntypedStorage<8, 8> mUnkaac929;
-    ::ll::UntypedStorage<8, 8> mUnk75974b;
-    ::ll::UntypedStorage<8, 32> mUnk2ecdf6;
+    ::ll::UntypedStorage<1, 1>   mUnk7f2040;
+    ::ll::UntypedStorage<8, 8>   mUnk2af921;
+    ::ll::UntypedStorage<8, 8>   mUnkaac929;
+    ::ll::UntypedStorage<8, 8>   mUnk75974b;
+    ::ll::UntypedStorage<8, 32>  mUnk2ecdf6;
     ::ll::UntypedStorage<8, 136> mUnk55b735;
-    ::ll::UntypedStorage<4, 4> mUnkeec142;
+    ::ll::UntypedStorage<4, 4>   mUnkeec142;
     ::ll::UntypedStorage<8, 272> mUnk8de152;
     // NOLINTEND
 
@@ -93,7 +93,11 @@ public:
 
     MCNAPI ::std::string toString();
 
-    MCNAPI bool verify(::std::vector<::std::string> const& trustedKeys, int64 currentTime, ::MinecraftServiceKeyManager const& mcServiceKeyManager);
+    MCNAPI bool verify(
+        ::std::vector<::std::string> const& trustedKeys,
+        int64                               currentTime,
+        ::MinecraftServiceKeyManager const& mcServiceKeyManager
+    );
 
     MCNAPI bool verifySelfSigned();
 
@@ -119,5 +123,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

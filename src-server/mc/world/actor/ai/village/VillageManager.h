@@ -34,67 +34,67 @@ public:
     struct DwellerTestVillageInfo;
     struct VillageInfo;
     // clang-format on
-    
+
     // VillageManager inner types define
     using POIBlueprintMap = ::std::unordered_map<::BlockType const*, ::std::unique_ptr<::POIBlueprint>>;
-    
+
     using VillageMap = ::std::unordered_map<::mce::UUID, ::std::shared_ptr<::Village>>;
-    
+
     using POIMap = ::std::unordered_map<::BlockPos, ::std::shared_ptr<::POIInstance>>;
-    
+
     enum class BedAvailabilityState : int {
-        Unknown = 0,
+        Unknown       = 0,
         SomeAvailable = 1,
         NoneAvailable = 2,
     };
-    
+
     struct VillageInfo {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Village>> village;
-        ::ll::TypedStorage<1, 1, bool> positionIsWithinVillageBounds;
-        ::ll::TypedStorage<4, 4, float> distanceToClosestEdgeOfVillage;
+        ::ll::TypedStorage<1, 1, bool>                          positionIsWithinVillageBounds;
+        ::ll::TypedStorage<4, 4, float>                         distanceToClosestEdgeOfVillage;
         // NOLINTEND
-    
     };
-    
+
     struct DwellerTestVillageInfo : public ::VillageManager::VillageInfo {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::VillageManager::BedAvailabilityState> bedAvailability;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~DwellerTestVillageInfo();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Dimension&> mDimension;
-    ::ll::TypedStorage<8, 40, ::std::deque<::ActorUniqueID>> mFindPOIQueries;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::POIInstance>>> mUnclusteredPOIs;
+    ::ll::TypedStorage<8, 8, ::Dimension&>                                                     mDimension;
+    ::ll::TypedStorage<8, 40, ::std::deque<::ActorUniqueID>>                                   mFindPOIQueries;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::POIInstance>>>                 mUnclusteredPOIs;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::mce::UUID, ::std::shared_ptr<::Village>>> mVillages;
-    ::ll::TypedStorage<8, 192, ::std::array<::std::unordered_map<::BlockPos, ::std::shared_ptr<::POIInstance>>, 3>> mClusteredPOIs;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockType const*, ::std::unique_ptr<::POIBlueprint>>> mPOIBlueprints;
-    ::ll::TypedStorage<8, 8, ::Tick> mTickCount;
-    ::ll::TypedStorage<8, 32, ::WanderingTraderScheduler> mWanderingTraderScheduler;
-    ::ll::TypedStorage<1, 1, bool> mFinishedQueryScan;
-    ::ll::TypedStorage<4, 4, int> mCurrentXScan;
-    ::ll::TypedStorage<4, 4, int> mCurrentYScan;
-    ::ll::TypedStorage<4, 4, int> mCurrentZScan;
+    ::ll::TypedStorage<8, 192, ::std::array<::std::unordered_map<::BlockPos, ::std::shared_ptr<::POIInstance>>, 3>>
+        mClusteredPOIs;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockType const*, ::std::unique_ptr<::POIBlueprint>>>
+                                                               mPOIBlueprints;
+    ::ll::TypedStorage<8, 8, ::Tick>                           mTickCount;
+    ::ll::TypedStorage<8, 32, ::WanderingTraderScheduler>      mWanderingTraderScheduler;
+    ::ll::TypedStorage<1, 1, bool>                             mFinishedQueryScan;
+    ::ll::TypedStorage<4, 4, int>                              mCurrentXScan;
+    ::ll::TypedStorage<4, 4, int>                              mCurrentYScan;
+    ::ll::TypedStorage<4, 4, int>                              mCurrentZScan;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnLevelStorageManagerStartLeaveGameSubscription;
     // NOLINTEND
@@ -112,7 +112,8 @@ public:
     virtual ~VillageManager() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::weak_ptr<::Village> fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const /*override*/;
+    virtual ::std::weak_ptr<::Village>
+    fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const /*override*/;
 
     // vIndex: 2
     virtual ::std::weak_ptr<::Village> getVillageByID(::mce::UUID const& villageID) const /*override*/;
@@ -127,11 +128,13 @@ public:
 
     MCAPI void _assignPOIOnly(::std::shared_ptr<::POIInstance>&& pi);
 
-    MCAPI float _calculateDistanceFromPositionToEdgeOfVillage(::BlockPos const& position, ::Village const& village) const;
+    MCAPI float
+    _calculateDistanceFromPositionToEdgeOfVillage(::BlockPos const& position, ::Village const& village) const;
 
     MCAPI ::std::shared_ptr<::Village> _createOrGetVillage(::mce::UUID const& id, ::BlockPos const& newVillagePos);
 
-    MCAPI ::std::unordered_map<::Village const*, ::VillageManager::BedAvailabilityState> _getVillageWithBedsAvailableMap() const;
+    MCAPI ::std::unordered_map<::Village const*, ::VillageManager::BedAvailabilityState>
+    _getVillageWithBedsAvailableMap() const;
 
     MCAPI void _loadPOIBlueprints();
 
@@ -145,7 +148,11 @@ public:
 
     MCAPI void _unclusterDerelictPOIs(::std::vector<::std::weak_ptr<::POIInstance>>& pois);
 
-    MCAPI ::std::weak_ptr<::Village> fetchClosestVillageMostSuitableForDweller(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const;
+    MCAPI ::std::weak_ptr<::Village> fetchClosestVillageMostSuitableForDweller(
+        ::BlockPos const& position,
+        int               maxDistFromVillageBounds,
+        uint              searchRadius
+    ) const;
 
     MCAPI ::std::weak_ptr<::Village> getClosestVillageWithRaid(::BlockPos const& pos);
 
@@ -155,7 +162,8 @@ public:
 
     MCAPI bool hasPOI(::BlockPos const& position, ::POIType type) const;
 
-    MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCAPI void
+    initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
     MCAPI void insertPOI(::std::shared_ptr<::POIInstance>&& poi);
 
@@ -187,7 +195,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::weak_ptr<::Village> $fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const;
+    MCAPI ::std::weak_ptr<::Village>
+    $fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const;
 
     MCAPI ::std::weak_ptr<::Village> $getVillageByID(::mce::UUID const& villageID) const;
     // NOLINTEND
@@ -197,5 +206,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

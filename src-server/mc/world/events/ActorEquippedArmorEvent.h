@@ -11,8 +11,8 @@ struct ActorEquippedArmorEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
-    ::ll::TypedStorage<8, 128, ::ItemInstance const> mArmor;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                 mEntity;
+    ::ll::TypedStorage<8, 128, ::ItemInstance const>           mArmor;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ArmorSlot> mSlot;
     // NOLINTEND
 
@@ -40,5 +40,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

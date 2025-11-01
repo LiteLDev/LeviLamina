@@ -16,4 +16,4 @@ MCAPI ::FlatteningUtils::Instance get();
 MCAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::Quartz

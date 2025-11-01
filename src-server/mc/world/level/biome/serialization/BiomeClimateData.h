@@ -25,5 +25,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeClimateData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
-
 };

@@ -19,13 +19,13 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk53b973;
     ::ll::UntypedStorage<8, 32> mUnkd1bdc9;
     ::ll::UntypedStorage<8, 16> mUnk794254;
-    ::ll::UntypedStorage<2, 2> mUnk8028a2;
+    ::ll::UntypedStorage<2, 2>  mUnk8028a2;
     ::ll::UntypedStorage<8, 32> mUnk521b21;
     ::ll::UntypedStorage<8, 32> mUnke04660;
     ::ll::UntypedStorage<8, 32> mUnk6e466a;
     ::ll::UntypedStorage<8, 32> mUnk268667;
     ::ll::UntypedStorage<8, 24> mUnk1f6462;
-    ::ll::UntypedStorage<1, 1> mUnk716a43;
+    ::ll::UntypedStorage<1, 1>  mUnk716a43;
     // NOLINTEND
 
 public:
@@ -58,7 +58,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace cg

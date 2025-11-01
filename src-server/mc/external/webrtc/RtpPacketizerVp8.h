@@ -21,7 +21,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk8d6496;
     ::ll::UntypedStorage<8, 16> mUnke6bb71;
     ::ll::UntypedStorage<8, 24> mUnke2066a;
-    ::ll::UntypedStorage<8, 8> mUnkd0225c;
+    ::ll::UntypedStorage<8, 8>  mUnkd0225c;
     // NOLINTEND
 
 public:
@@ -46,19 +46,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RtpPacketizerVp8(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits, ::webrtc::RTPVideoHeaderVP8 const& hdr_info);
+    MCNAPI RtpPacketizerVp8(
+        ::rtc::ArrayView<uchar const>              payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
+        ::webrtc::RTPVideoHeaderVP8 const&         hdr_info
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::absl::InlinedVector<uchar, 6, ::std::allocator<uchar>> BuildHeader(::webrtc::RTPVideoHeaderVP8 const& header);
+    MCNAPI static ::absl::InlinedVector<uchar, 6, ::std::allocator<uchar>>
+    BuildHeader(::webrtc::RTPVideoHeaderVP8 const& header);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits, ::webrtc::RTPVideoHeaderVP8 const& hdr_info);
+    MCNAPI void* $ctor(
+        ::rtc::ArrayView<uchar const>              payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
+        ::webrtc::RTPVideoHeaderVP8 const&         hdr_info
+    );
     // NOLINTEND
 
 public:
@@ -80,7 +89,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

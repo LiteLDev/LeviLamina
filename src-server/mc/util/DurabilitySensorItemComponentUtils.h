@@ -14,4 +14,4 @@ namespace DurabilitySensorItemComponentUtils {
 MCNAPI void onHurtAndBreak(::ItemStackBase const& item, ::Actor& owner, int oldDamage, int newDamage);
 // NOLINTEND
 
-}
+} // namespace DurabilitySensorItemComponentUtils

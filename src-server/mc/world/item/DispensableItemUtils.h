@@ -19,7 +19,14 @@ namespace DispensableItemUtils {
 // NOLINTBEGIN
 MCAPI void spawnLoot(::Level& level, ::Actor& actor, ::std::string const& lootTable);
 
-MCAPI bool tryDispenseEquipment(::BlockSource& region, ::Container& container, int slot, ::BlockPos pos, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, bool dispenseToPlayers);
+MCAPI bool tryDispenseEquipment(
+    ::BlockSource&                       region,
+    ::Container&                         container,
+    int                                  slot,
+    ::BlockPos                           pos,
+    ::SharedTypes::Legacy::EquipmentSlot equipmentSlot,
+    bool                                 dispenseToPlayers
+);
 // NOLINTEND
 
-}
+} // namespace DispensableItemUtils

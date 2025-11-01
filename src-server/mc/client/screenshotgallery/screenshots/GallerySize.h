@@ -4,7 +4,6 @@
 
 namespace Screenshots {
 
-struct GallerySize {
-};
+struct GallerySize {};
 
-}
+} // namespace Screenshots

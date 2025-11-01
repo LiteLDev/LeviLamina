@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ExternalDataInterface>> mExternalDataInterface;
     // NOLINTEND
-
 };

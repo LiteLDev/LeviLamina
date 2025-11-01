@@ -4,8 +4,7 @@
 
 namespace Scripting {
 
-template<typename T0>
-class ClosureGeneric {
-};
+template <typename T0>
+class ClosureGeneric {};
 
-}
+} // namespace Scripting

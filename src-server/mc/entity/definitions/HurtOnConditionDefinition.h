@@ -25,5 +25,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void addDamageCondition(::DamageCondition const& damageCondition);
     // NOLINTEND
-
 };

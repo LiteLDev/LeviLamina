@@ -19,5 +19,4 @@ public:
     DynBuf& operator=(DynBuf const&);
     DynBuf(DynBuf const&);
     DynBuf();
-
 };

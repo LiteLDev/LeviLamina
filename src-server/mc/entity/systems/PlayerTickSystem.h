@@ -14,5 +14,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo create(bool isCatchup);
     // NOLINTEND
-
 };

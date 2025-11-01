@@ -20,9 +20,9 @@ class SkullBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mRotation;
-    ::ll::TypedStorage<1, 1, bool> mIsDoingAnimation;
-    ::ll::TypedStorage<4, 4, int> mAnimationTickCount;
+    ::ll::TypedStorage<4, 4, float>                   mRotation;
+    ::ll::TypedStorage<1, 1, bool>                    mIsDoingAnimation;
+    ::ll::TypedStorage<4, 4, int>                     mAnimationTickCount;
     ::ll::TypedStorage<4, 4, ::SkullBlock::SkullType> mSkullType;
     // NOLINTEND
 
@@ -72,5 +72,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

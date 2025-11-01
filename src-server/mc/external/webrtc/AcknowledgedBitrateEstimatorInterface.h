@@ -38,7 +38,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::webrtc::AcknowledgedBitrateEstimatorInterface> Create(::webrtc::FieldTrialsView const* key_value_config);
+    MCNAPI static ::std::unique_ptr<::webrtc::AcknowledgedBitrateEstimatorInterface>
+    Create(::webrtc::FieldTrialsView const* key_value_config);
     // NOLINTEND
 
 public:
@@ -58,7 +59,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

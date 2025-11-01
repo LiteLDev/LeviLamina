@@ -7,7 +7,8 @@
 
 namespace Editor::Network {
 
-class PrefabDBServerVisibilityUpdatePayload : public ::Editor::Network::NetworkPayload<::Editor::Network::PrefabDBServerVisibilityUpdatePayload> {
+class PrefabDBServerVisibilityUpdatePayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::PrefabDBServerVisibilityUpdatePayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

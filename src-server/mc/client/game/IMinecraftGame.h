@@ -156,7 +156,17 @@ namespace mce { class TextureGroup; }
 namespace mce { class UUID; }
 // clang-format on
 
-class IMinecraftGame : public ::Bedrock::EnableNonOwnerReferences, public ::Bedrock::AppIsland, public ::IMinecraftApp, public ::IGameServerStartup, public ::IGameServerShutdown, public ::INetworkGameConnector, public ::IClientInstances, public ::IWorldTransfer, public ::AppExtensions::AppExtensionsOwner, public ::ISplitScreenChangedPublisher, public ::IGameEventNotifier {
+class IMinecraftGame : public ::Bedrock::EnableNonOwnerReferences,
+                       public ::Bedrock::AppIsland,
+                       public ::IMinecraftApp,
+                       public ::IGameServerStartup,
+                       public ::IGameServerShutdown,
+                       public ::INetworkGameConnector,
+                       public ::IClientInstances,
+                       public ::IWorldTransfer,
+                       public ::AppExtensions::AppExtensionsOwner,
+                       public ::ISplitScreenChangedPublisher,
+                       public ::IGameEventNotifier {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -266,7 +276,8 @@ public:
     virtual bool hasNetworkPrivileges(bool) = 0;
 
     // vIndex: 35
-    virtual ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository const> getThirdPartyServerRepository() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository const>
+    getThirdPartyServerRepository() const = 0;
 
     // vIndex: 34
     virtual ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository> getThirdPartyServerRepository() = 0;
@@ -278,7 +289,14 @@ public:
     virtual ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> const& getClientInstanceMap() const = 0;
 
     // vIndex: 38
-    virtual void joinMultiplayerWithAddress(::Social::GameConnectionInfo, bool, ::std::string const&, ::std::string const&, ::NetworkType, bool) = 0;
+    virtual void joinMultiplayerWithAddress(
+        ::Social::GameConnectionInfo,
+        bool,
+        ::std::string const&,
+        ::std::string const&,
+        ::NetworkType,
+        bool
+    ) = 0;
 
     // vIndex: 39
     virtual ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> getOfferRepository() const = 0;
@@ -302,10 +320,14 @@ public:
     virtual bool isResuming() const = 0;
 
     // vIndex: 46
-    virtual void setTestExecuteCommandCallback(::std::function<void(::TestCommandType, ::std::vector<::std::string> const&, int)> const&) = 0;
+    virtual void setTestExecuteCommandCallback(
+        ::std::function<void(::TestCommandType, ::std::vector<::std::string> const&, int)> const&
+    ) = 0;
 
     // vIndex: 47
-    virtual void setTestAssetCommandCallback(::std::function<void(::TestAssetCommandType, ::std::vector<::std::string> const&)> const&) = 0;
+    virtual void setTestAssetCommandCallback(
+        ::std::function<void(::TestAssetCommandType, ::std::vector<::std::string> const&)> const&
+    ) = 0;
 
     // vIndex: 48
     virtual void runTestExecuteCommandCallback(::TestCommandType, ::std::vector<::std::string> const&, int) const = 0;
@@ -362,7 +384,14 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem const> getNewPlayerSystem() const = 0;
 
     // vIndex: 63
-    virtual void createAndUploadWorldToRealm(::std::string const&, ::std::string const&, ::ContentIdentity const&, ::LevelSettings const&, ::Realms::World, ::std::function<void(::Realms::World)>) = 0;
+    virtual void createAndUploadWorldToRealm(
+        ::std::string const&,
+        ::std::string const&,
+        ::ContentIdentity const&,
+        ::LevelSettings const&,
+        ::Realms::World,
+        ::std::function<void(::Realms::World)>
+    ) = 0;
 
     // vIndex: 64
     virtual ::ILevelListCache& getLevelListCache() = 0;
@@ -407,7 +436,8 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::BlockCullingGroup> getBlockCullingGroup() const = 0;
 
     // vIndex: 78
-    virtual ::Bedrock::NotNullNonOwnerPtr<::ClientBlockPipeline::SchematicsRepository> getSchematicsRepository() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ClientBlockPipeline::SchematicsRepository>
+    getSchematicsRepository() const = 0;
 
     // vIndex: 79
     virtual ::ParticleEffectGroup& getParticleEffectGroup() const = 0;
@@ -533,7 +563,8 @@ public:
     virtual bool hasActorResourceDefinitionGroup() const = 0;
 
     // vIndex: 120
-    virtual ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> getActorResourceDefinitionGroup() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const>
+    getActorResourceDefinitionGroup() const = 0;
 
     // vIndex: 121
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> getActorResourceDefinitionGroupMutable() = 0;
@@ -548,7 +579,8 @@ public:
     virtual int getMaxPlayerCount() const = 0;
 
     // vIndex: 125
-    virtual void queueScreenshotRequest(::ScreenshotOptions&, ::std::function<void(::Core::PathBuffer<::std::string> const&)>) = 0;
+    virtual void
+    queueScreenshotRequest(::ScreenshotOptions&, ::std::function<void(::Core::PathBuffer<::std::string> const&)>) = 0;
 
     // vIndex: 126
     virtual ::Core::PathBuffer<::std::string> requestScreenshot(::ScreenshotOptions&) = 0;
@@ -602,7 +634,8 @@ public:
     virtual ::std::shared_ptr<::FlightingService> getFlightingServicePtr() const = 0;
 
     // vIndex: 143
-    virtual ::Bedrock::NotNullNonOwnerPtr<::TreatmentPackDownloadMonitor const> getTreatmentPackDownloadMonitor() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::TreatmentPackDownloadMonitor const>
+    getTreatmentPackDownloadMonitor() const = 0;
 
     // vIndex: 144
     virtual ::SceneFactory& getPrimarySceneFactory() const = 0;
@@ -899,7 +932,8 @@ public:
     virtual float calculateScreenSizeToResolutionScalar(int const, int const) const = 0;
 
     // vIndex: 239
-    virtual ::Bedrock::NotNullNonOwnerPtr<::GlobalResourcesCrashRecovery const> GetGlobalResourcesCrashRecovery() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::GlobalResourcesCrashRecovery const>
+    GetGlobalResourcesCrashRecovery() const = 0;
 
     // vIndex: 240
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> getLevelDbEnv() = 0;
@@ -934,5 +968,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

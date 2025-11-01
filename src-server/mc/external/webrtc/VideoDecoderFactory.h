@@ -17,7 +17,7 @@ public:
     // clang-format off
     struct CodecSupport;
     // clang-format on
-    
+
     // VideoDecoderFactory inner types define
     struct CodecSupport {
     public:
@@ -26,15 +26,14 @@ public:
         ::ll::UntypedStorage<1, 1> mUnk35eb9f;
         ::ll::UntypedStorage<1, 1> mUnkc9d82e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         CodecSupport& operator=(CodecSupport const&);
         CodecSupport(CodecSupport const&);
         CodecSupport();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -48,7 +47,8 @@ public:
     virtual ::webrtc::VideoDecoderFactory::CodecSupport QueryCodecSupport(::webrtc::SdpVideoFormat const&, bool) const;
 
     // vIndex: 3
-    virtual ::std::unique_ptr<::webrtc::VideoDecoder> Create(::webrtc::Environment const&, ::webrtc::SdpVideoFormat const&) = 0;
+    virtual ::std::unique_ptr<::webrtc::VideoDecoder>
+    Create(::webrtc::Environment const&, ::webrtc::SdpVideoFormat const&) = 0;
     // NOLINTEND
 
 public:
@@ -56,7 +56,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

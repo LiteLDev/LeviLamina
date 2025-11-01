@@ -9,5 +9,4 @@ public:
     ::ll::TypedStorage<1, 1, bool> mStopVerticalMovement;
     ::ll::TypedStorage<1, 1, bool> mStopHorizontalMovement;
     // NOLINTEND
-
 };

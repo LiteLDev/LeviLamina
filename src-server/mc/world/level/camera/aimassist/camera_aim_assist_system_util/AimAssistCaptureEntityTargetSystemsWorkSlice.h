@@ -6,7 +6,7 @@ namespace CameraAimAssistSystemUtil {
 
 enum class AimAssistCaptureEntityTargetSystemsWorkSlice : int {
     FetchValidEntitiesInFrustumAndUpdateStatus = 0,
-    WaitForResultToBeCreated = 1,
+    WaitForResultToBeCreated                   = 1,
 };
 
 }

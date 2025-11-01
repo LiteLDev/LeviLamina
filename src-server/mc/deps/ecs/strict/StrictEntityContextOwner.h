@@ -14,5 +14,4 @@ public:
     StrictEntityContextOwner& operator=(StrictEntityContextOwner const&);
     StrictEntityContextOwner(StrictEntityContextOwner const&);
     StrictEntityContextOwner();
-
 };

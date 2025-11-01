@@ -17,5 +17,4 @@ public:
     BehaviorPackContents& operator=(BehaviorPackContents const&);
     BehaviorPackContents(BehaviorPackContents const&);
     BehaviorPackContents();
-
 };

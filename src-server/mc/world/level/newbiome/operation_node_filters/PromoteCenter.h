@@ -25,7 +25,6 @@ public:
     PromoteCenter& operator=(PromoteCenter const&);
     PromoteCenter(PromoteCenter const&);
     PromoteCenter();
-
 };
 
-}
+} // namespace OperationNodeFilters

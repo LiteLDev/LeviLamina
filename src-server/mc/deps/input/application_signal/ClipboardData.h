@@ -16,7 +16,6 @@ public:
     ClipboardData& operator=(ClipboardData const&);
     ClipboardData(ClipboardData const&);
     ClipboardData();
-
 };
 
-}
+} // namespace ApplicationSignal

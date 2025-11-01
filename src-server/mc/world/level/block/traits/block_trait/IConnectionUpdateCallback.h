@@ -20,7 +20,8 @@ public:
     virtual ~IConnectionUpdateCallback() = default;
 
     // vIndex: 1
-    virtual ::Block const& updateConnection(::BlockSource const&, ::Block const&, ::BlockPos const&, ::NeighborBlockDirections) const = 0;
+    virtual ::Block const&
+    updateConnection(::BlockSource const&, ::Block const&, ::BlockPos const&, ::NeighborBlockDirections) const = 0;
     // NOLINTEND
 
 public:
@@ -28,7 +29,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockTrait

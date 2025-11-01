@@ -16,4 +16,4 @@ MCNAPI ::std::function<::std::optional<int>(::BlockType const&, int)>& SculkSens
 MCNAPI ::std::function<::Block const*(::BlockType const&, int, int)>& SculkSensorPhaseStateSetter();
 // NOLINTEND
 
-}
+} // namespace SculkSensorConversionUtils

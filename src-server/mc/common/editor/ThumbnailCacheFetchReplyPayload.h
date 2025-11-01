@@ -13,12 +13,13 @@ namespace mce { class UUID; }
 
 namespace Editor::Network {
 
-class ThumbnailCacheFetchReplyPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::ThumbnailCacheFetchReplyPayload> {
+class ThumbnailCacheFetchReplyPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::ThumbnailCacheFetchReplyPayload> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka9457b;
-    ::ll::UntypedStorage<4, 4> mUnk1889d1;
+    ::ll::UntypedStorage<4, 4>  mUnk1889d1;
     ::ll::UntypedStorage<8, 48> mUnkfea430;
     // NOLINTEND
 
@@ -38,13 +39,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ThumbnailCacheFetchReplyPayload(::mce::UUID const& id, uint hash, ::std::variant<::Editor::ThumbnailFileBytes, ::std::string> data);
+    MCNAPI ThumbnailCacheFetchReplyPayload(
+        ::mce::UUID const&                                          id,
+        uint                                                        hash,
+        ::std::variant<::Editor::ThumbnailFileBytes, ::std::string> data
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::mce::UUID const& id, uint hash, ::std::variant<::Editor::ThumbnailFileBytes, ::std::string> data);
+    MCNAPI void*
+    $ctor(::mce::UUID const& id, uint hash, ::std::variant<::Editor::ThumbnailFileBytes, ::std::string> data);
     // NOLINTEND
 
 public:
@@ -52,7 +58,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

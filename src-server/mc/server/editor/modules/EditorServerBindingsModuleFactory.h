@@ -35,7 +35,12 @@ public:
 
     MCNAPI void _addVersions(::Editor::ServiceProviderCollection& managerServices);
 
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(::Editor::ServiceProviderCollection& managerServices, ::Scripting::ModuleBindingBuilder& builder, bool allowUntagged, ::std::vector<::std::string> const& additionalTags);
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Editor::ServiceProviderCollection& managerServices,
+        ::Scripting::ModuleBindingBuilder&   builder,
+        bool                                 allowUntagged,
+        ::std::vector<::std::string> const&  additionalTags
+    );
     // NOLINTEND
 
 public:
@@ -63,7 +68,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::API

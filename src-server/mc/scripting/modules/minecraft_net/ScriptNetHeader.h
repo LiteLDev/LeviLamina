@@ -29,7 +29,10 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptNetHeader(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
 
-    MCNAPI ScriptNetHeader(::std::string const& key, ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> value);
+    MCNAPI ScriptNetHeader(
+        ::std::string const&                                                         key,
+        ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> value
+    );
 
     MCNAPI ::ScriptModuleMinecraftNet::ScriptNetHeader& operator=(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
 
@@ -47,7 +50,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
 
-    MCNAPI void* $ctor(::std::string const& key, ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> value);
+    MCNAPI void*
+    $ctor(::std::string const& key, ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> value);
     // NOLINTEND
 
 public:
@@ -55,7 +59,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraftNet

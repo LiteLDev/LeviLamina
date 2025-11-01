@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk9356ab;
-    ::ll::UntypedStorage<1, 1> mUnk6758be;
+    ::ll::UntypedStorage<1, 1>  mUnk6758be;
     // NOLINTEND
 
 public:
@@ -17,7 +17,6 @@ public:
     GetReportJsonFunctionData& operator=(GetReportJsonFunctionData const&);
     GetReportJsonFunctionData(GetReportJsonFunctionData const&);
     GetReportJsonFunctionData();
-
 };
 
-}
+} // namespace PlayerReportingSignal

@@ -15,8 +15,8 @@ struct TreeParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mNumBaseClusters;
-    ::ll::TypedStorage<4, 4, int> mClusterRadius;
+    ::ll::TypedStorage<4, 4, int>                               mNumBaseClusters;
+    ::ll::TypedStorage<4, 4, int>                               mClusterRadius;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mValidBaseBlocks;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mBaseMayReplace;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mMayGrowOn;
@@ -37,7 +37,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace TreeHelper

@@ -54,7 +54,9 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<float> getOnFireTime() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> getOwner() const;
+    MCNAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+    getOwner() const;
 
     MCNAPI ::Scripting::Result_deprecated<bool> getShouldBounceOnHit() const;
 
@@ -82,19 +84,25 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> setOnFireTime(float value);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setOwner(::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> const& scriptActor);
+    MCNAPI ::Scripting::Result_deprecated<void> setOwner(
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> const& scriptActor
+    );
 
     MCNAPI ::Scripting::Result_deprecated<void> setShouldBounceOnHit(bool value);
 
     MCNAPI ::Scripting::Result_deprecated<void> setStopOnHit(bool value);
 
-    MCNAPI ::Scripting::Result_deprecated<void> shoot(::Vec3 const& velocity, ::std::optional<::ScriptModuleMinecraft::ScriptProjectileShootOptions> const& options);
+    MCNAPI ::Scripting::Result_deprecated<void> shoot(
+        ::Vec3 const&                                                                 velocity,
+        ::std::optional<::ScriptModuleMinecraft::ScriptProjectileShootOptions> const& options
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
@@ -114,7 +122,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

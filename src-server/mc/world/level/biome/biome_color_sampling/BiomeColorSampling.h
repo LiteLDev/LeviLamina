@@ -33,4 +33,4 @@ MCFOLD int getMapWaterColor(::Biome const& biome, ::BlockPos const&);
 MCAPI ::std::vector<::BlockPos> const& getPattern(::BiomeColorSampling::Pattern pattern);
 // NOLINTEND
 
-}
+} // namespace BiomeColorSampling

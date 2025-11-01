@@ -5,5 +5,5 @@
 enum class RealmsPurchaseIntent : int {
     CreateRealm = 0,
     ExtendRealm = 1,
-    RenewRealm = 2,
+    RenewRealm  = 2,
 };

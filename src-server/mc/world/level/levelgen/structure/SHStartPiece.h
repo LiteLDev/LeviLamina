@@ -18,10 +18,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::StructurePiece*>> pendingChildren;
-    ::ll::TypedStorage<8, 8, ::SHPortalRoom*> portalRoom;
-    ::ll::TypedStorage<8, 32, ::std::string> imposedPiece;
-    ::ll::TypedStorage<8, 32, ::std::string> previousPiece;
-    ::ll::TypedStorage<8, 24, ::std::vector<::PieceWeight>> pieceWeights;
+    ::ll::TypedStorage<8, 8, ::SHPortalRoom*>                   portalRoom;
+    ::ll::TypedStorage<8, 32, ::std::string>                    imposedPiece;
+    ::ll::TypedStorage<8, 32, ::std::string>                    previousPiece;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PieceWeight>>     pieceWeights;
     // NOLINTEND
 
 public:
@@ -51,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

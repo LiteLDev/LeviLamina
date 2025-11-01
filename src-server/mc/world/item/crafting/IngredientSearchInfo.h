@@ -12,7 +12,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SlotData>> mSlots;
-    ::ll::TypedStorage<4, 4, int> mCount;
+    ::ll::TypedStorage<4, 4, int>                        mCount;
     // NOLINTEND
-
 };

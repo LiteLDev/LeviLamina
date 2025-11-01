@@ -25,15 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Description* parseDescription(::ActorDocumentDataParams actorDocumentDataParams);
+    MCAPI ::Description* parseDescription(::ActorDocumentDataParams actorDocumentDataParams);
 
-    MCNAPI ::Description* parseDescription(::DeserializeDataParams deserializeDataParams);
+    MCAPI ::Description* parseDescription(::DeserializeDataParams deserializeDataParams);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $deserializeData(::DeserializeDataParams);
+    MCFOLD void $deserializeData(::DeserializeDataParams);
     // NOLINTEND
 
 public:
@@ -41,5 +41,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

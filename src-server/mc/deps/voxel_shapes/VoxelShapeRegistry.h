@@ -16,8 +16,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkd2e60a;
     ::ll::UntypedStorage<8, 64> mUnk5c0ed1;
-    ::ll::UntypedStorage<2, 2> mUnk937122;
-    ::ll::UntypedStorage<2, 2> mUnk11cf12;
+    ::ll::UntypedStorage<2, 2>  mUnk937122;
+    ::ll::UntypedStorage<2, 2>  mUnk11cf12;
     // NOLINTEND
 
 public:
@@ -50,7 +50,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
     // NOLINTEND
-
 };
 
-}
+} // namespace VoxelShapes

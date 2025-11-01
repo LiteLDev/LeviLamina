@@ -22,7 +22,12 @@ MCNAPI ::TickingSystemWithInfo createSystem();
 
 MCNAPI void doTick(::ActorOwnerComponent& actorOwnerComponent);
 
-MCNAPI void tick(::ViewT<::StrictEntityContext, ::Include<::LocalPlayerComponent, ::StopRidingRequestComponent>, ::ActorOwnerComponent> localPlayerStopRidingView);
+MCNAPI void tick(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::LocalPlayerComponent, ::StopRidingRequestComponent>,
+        ::ActorOwnerComponent> localPlayerStopRidingView
+);
 // NOLINTEND
 
-}
+} // namespace StopRidingLocalPlayerCameraForceCutSystem

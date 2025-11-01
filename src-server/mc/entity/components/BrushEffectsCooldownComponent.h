@@ -17,5 +17,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::ExpiringTick const& EXPIRED_TICK();
     // NOLINTEND
-
 };

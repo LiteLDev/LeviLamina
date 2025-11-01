@@ -17,13 +17,13 @@ class LifetimeRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkcb6979;
-    ::ll::UntypedStorage<8, 8> mUnk217a0b;
-    ::ll::UntypedStorage<8, 64> mUnke1f331;
+    ::ll::UntypedStorage<1, 1>   mUnkcb6979;
+    ::ll::UntypedStorage<8, 8>   mUnk217a0b;
+    ::ll::UntypedStorage<8, 64>  mUnke1f331;
     ::ll::UntypedStorage<8, 304> mUnkdff59e;
-    ::ll::UntypedStorage<8, 16> mUnk8cf060;
-    ::ll::UntypedStorage<8, 16> mUnkc52c09;
-    ::ll::UntypedStorage<8, 24> mUnkff5fe4;
+    ::ll::UntypedStorage<8, 16>  mUnk8cf060;
+    ::ll::UntypedStorage<8, 16>  mUnkc52c09;
+    ::ll::UntypedStorage<8, 24>  mUnkff5fe4;
     ::ll::UntypedStorage<8, 128> mUnk60fe14;
     // NOLINTEND
 
@@ -40,7 +40,8 @@ public:
 
     MCNAPI ::Scripting::ObjectHandle _createBaseObject(::Scripting::internal::BaseScriptComponent&& baseScriptComp);
 
-    MCNAPI void _destroyObject(::Scripting::ObjectHandle handle, ::Scripting::internal::BaseScriptComponent& baseScriptComp);
+    MCNAPI void
+    _destroyObject(::Scripting::ObjectHandle handle, ::Scripting::internal::BaseScriptComponent& baseScriptComp);
 
     MCNAPI void destroyLifetimeScope(bool expectAllDead);
 
@@ -64,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Scripting::ContextId contextId, ::Scripting::LifetimeRegistryReference& registryRef);
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

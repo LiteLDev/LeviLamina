@@ -19,11 +19,11 @@ class PositionTrackingDBServer : public ::std::enable_shared_from_this<::Positio
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb10319;
-    ::ll::UntypedStorage<8, 8> mUnka9fff9;
-    ::ll::UntypedStorage<8, 8> mUnk6c1d34;
-    ::ll::UntypedStorage<8, 8> mUnk9cff21;
-    ::ll::UntypedStorage<8, 8> mUnk5448f9;
+    ::ll::UntypedStorage<8, 8>  mUnkb10319;
+    ::ll::UntypedStorage<8, 8>  mUnka9fff9;
+    ::ll::UntypedStorage<8, 8>  mUnk6c1d34;
+    ::ll::UntypedStorage<8, 8>  mUnk9cff21;
+    ::ll::UntypedStorage<8, 8>  mUnk5448f9;
     ::ll::UntypedStorage<8, 24> mUnk791b46;
     // NOLINTEND
 
@@ -40,7 +40,8 @@ public:
 
     MCAPI void _addRecordToPendingUpdateQueue(::PositionTrackingDB::TrackingRecord* record);
 
-    MCAPI void _beginWriteTrackingRecordToLevelStorage(::PositionTrackingDB::TrackingRecord const* record, bool forceWrite);
+    MCAPI void
+    _beginWriteTrackingRecordToLevelStorage(::PositionTrackingDB::TrackingRecord const* record, bool forceWrite);
 
     MCAPI void _broadcastUpdateToClients(::PositionTrackingDB::TrackingRecord const* record);
 
@@ -48,7 +49,8 @@ public:
 
     MCAPI ::PositionTrackingDB::ResultCode destroyTracker(::PositionTrackingId const& id, bool forceLocalCacheEntry);
 
-    MCAPI ::PositionTrackingDB::ResultCode findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
+    MCAPI ::PositionTrackingDB::ResultCode
+    findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
 
     MCAPI bool tick();
 
@@ -66,7 +68,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace PositionTrackingDB

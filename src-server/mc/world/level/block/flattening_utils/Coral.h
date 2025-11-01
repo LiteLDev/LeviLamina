@@ -24,4 +24,4 @@ MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getColorSpl
 MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getDeadSplitStates(::CoralColor color);
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::Coral

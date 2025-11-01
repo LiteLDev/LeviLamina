@@ -5,10 +5,10 @@
 namespace webrtc {
 
 enum class IceCandidatePairConfigType : int {
-    KAdded = 0,
-    KUpdated = 1,
+    KAdded     = 0,
+    KUpdated   = 1,
     KDestroyed = 2,
-    KSelected = 3,
+    KSelected  = 3,
     KNumValues = 4,
 };
 

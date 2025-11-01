@@ -25,7 +25,8 @@ public:
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 67
-    virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const /*override*/;
+    virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
+        /*override*/;
 
     // vIndex: 68
     virtual bool isBounceBlock() const /*override*/;
@@ -62,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -23,61 +23,64 @@ public:
     // clang-format off
     struct Definition;
     // clang-format on
-    
+
     // TakeBlockGoal inner types define
     struct Definition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mValidBlocks;
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mCanTake;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnTake;
-        ::ll::TypedStorage<4, 8, ::IntRange> mXZRange;
-        ::ll::TypedStorage<4, 8, ::IntRange> mYRange;
-        ::ll::TypedStorage<4, 4, float> mChance;
-        ::ll::TypedStorage<1, 1, bool> mAffectedByGriefingRule;
-        ::ll::TypedStorage<1, 1, bool> mRequiresLineOfSight;
+        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>               mCanTake;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnTake;
+        ::ll::TypedStorage<4, 8, ::IntRange>                        mXZRange;
+        ::ll::TypedStorage<4, 8, ::IntRange>                        mYRange;
+        ::ll::TypedStorage<4, 4, float>                             mChance;
+        ::ll::TypedStorage<1, 1, bool>                              mAffectedByGriefingRule;
+        ::ll::TypedStorage<1, 1, bool>                              mRequiresLineOfSight;
         // NOLINTEND
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/;
         // NOLINTEND
-    
+
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TakeBlockGoal::Definition>>& root);
+        MCAPI static void buildSchema(
+            ::std::string const& name,
+            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TakeBlockGoal::Definition>>&
+                root
+        );
         // NOLINTEND
-    
+
     public:
         // static variables
         // NOLINTBEGIN
         MCAPI static bool const& DEFAULT_AFFECTED_BY_GRIEFING_RULE();
-    
+
         MCAPI static bool const& DEFAULT_REQUIRES_LINE_OF_SIGHT();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&>                        mMob;
     ::ll::TypedStorage<8, 232, ::TakeBlockGoal::Definition> mDefinition;
     // NOLINTEND
 
@@ -118,5 +121,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

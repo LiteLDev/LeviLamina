@@ -14,5 +14,4 @@ public:
     SwStopper& operator=(SwStopper const&);
     SwStopper(SwStopper const&);
     SwStopper();
-
 };

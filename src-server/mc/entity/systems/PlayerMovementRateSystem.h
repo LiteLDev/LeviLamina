@@ -18,7 +18,10 @@ namespace PlayerMovementRateSystem {
 // NOLINTBEGIN
 MCNAPI void tickEntity(::ServerPlayerMovementComponent& serverPlayerMovement, uint64 numberOfTick);
 
-MCNAPI void tickSystem(::ViewT<::StrictEntityContext, ::ServerPlayerMovementComponent> view, ::OptionalGlobal<::OverflowTickComponent> overflowTick);
+MCNAPI void tickSystem(
+    ::ViewT<::StrictEntityContext, ::ServerPlayerMovementComponent> view,
+    ::OptionalGlobal<::OverflowTickComponent>                       overflowTick
+);
 // NOLINTEND
 
-}
+} // namespace PlayerMovementRateSystem

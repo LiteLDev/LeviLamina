@@ -16,7 +16,6 @@ public:
     CameraPresetComponent& operator=(CameraPresetComponent const&);
     CameraPresetComponent(CameraPresetComponent const&);
     CameraPresetComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

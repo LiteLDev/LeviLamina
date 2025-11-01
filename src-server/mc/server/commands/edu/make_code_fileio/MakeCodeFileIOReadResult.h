@@ -8,7 +8,7 @@ struct MakeCodeFileIOReadResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk70adc2;
+    ::ll::UntypedStorage<4, 4>  mUnk70adc2;
     ::ll::UntypedStorage<8, 32> mUnkfad2a8;
     // NOLINTEND
 
@@ -29,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace MakeCodeFileIO

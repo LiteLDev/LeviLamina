@@ -15,9 +15,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk2320e4;
-    ::ll::UntypedStorage<1, 2> mUnka28c60;
+    ::ll::UntypedStorage<1, 2>  mUnka28c60;
     ::ll::UntypedStorage<8, 24> mUnkfe260d;
-    ::ll::UntypedStorage<8, 8> mUnk892e32;
+    ::ll::UntypedStorage<8, 8>  mUnk892e32;
     // NOLINTEND
 
 public:
@@ -87,7 +87,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

@@ -22,7 +22,7 @@ public:
         Create = 0,
         Delete = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,7 +58,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> _loadEntity(::Level* level);
 
-    MCNAPI ::Scripting::Result_deprecated<void> _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo);
 
     MCNAPI ::Scripting::Result_deprecated<void> _saveEntity(::Level* level);
     // NOLINTEND
@@ -90,7 +91,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Transactions

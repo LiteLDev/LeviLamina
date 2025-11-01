@@ -20,7 +20,6 @@ public:
     VideoStreamEncoderSettings& operator=(VideoStreamEncoderSettings const&);
     VideoStreamEncoderSettings(VideoStreamEncoderSettings const&);
     VideoStreamEncoderSettings();
-
 };
 
-}
+} // namespace webrtc

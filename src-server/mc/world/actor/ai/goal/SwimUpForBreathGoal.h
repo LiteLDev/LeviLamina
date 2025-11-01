@@ -16,14 +16,14 @@ class SwimUpForBreathGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mSpeedMod;
-    ::ll::TypedStorage<4, 4, int> mSearchRadius;
-    ::ll::TypedStorage<4, 4, int> mSearchHeight;
+    ::ll::TypedStorage<4, 4, float>          mSpeedMod;
+    ::ll::TypedStorage<4, 4, int>            mSearchRadius;
+    ::ll::TypedStorage<4, 4, int>            mSearchHeight;
     ::ll::TypedStorage<4, 4, ::MaterialType> mMaterialType;
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 12, ::Vec3> mWanted;
-    ::ll::TypedStorage<4, 4, int> mStartBreath;
-    ::ll::TypedStorage<1, 1, bool> mEndsInAir;
+    ::ll::TypedStorage<8, 8, ::Mob&>         mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3>        mWanted;
+    ::ll::TypedStorage<4, 4, int>            mStartBreath;
+    ::ll::TypedStorage<1, 1, bool>           mEndsInAir;
     // NOLINTEND
 
 public:
@@ -86,5 +86,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

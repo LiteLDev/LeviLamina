@@ -14,5 +14,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void addEffectByName(::std::string const& name);
     // NOLINTEND
-
 };

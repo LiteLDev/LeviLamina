@@ -14,5 +14,4 @@ public:
     LootTableDefinition& operator=(LootTableDefinition const&);
     LootTableDefinition(LootTableDefinition const&);
     LootTableDefinition();
-
 };

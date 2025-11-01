@@ -19,9 +19,20 @@ struct VehicleInputIntentComponent;
 namespace ReplayStateSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickReplayStateSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::ServerPlayerCurrentMovementComponent const, ::ReplayStateComponent> playerReplayView, ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::VehicleInputIntentComponent const, ::ReplayStateComponent> vehicleReplayView);
+MCNAPI void _tickReplayStateSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent>,
+        ::ServerPlayerCurrentMovementComponent const,
+        ::ReplayStateComponent> playerReplayView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent>,
+        ::VehicleInputIntentComponent const,
+        ::ReplayStateComponent> vehicleReplayView
+);
 
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-}
+} // namespace ReplayStateSystem

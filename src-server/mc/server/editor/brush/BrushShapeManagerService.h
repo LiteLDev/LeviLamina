@@ -25,24 +25,26 @@ namespace Editor::Network { class NativeBrushPaintEventPayload; }
 
 namespace Editor::Brush {
 
-class BrushShapeManagerService : public ::Editor::Services::IEditorService, public ::Editor::Services::BrushShapeManagerServiceProvider, public ::Editor::Services::PayloadStoreHelper {
+class BrushShapeManagerService : public ::Editor::Services::IEditorService,
+                                 public ::Editor::Services::BrushShapeManagerServiceProvider,
+                                 public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6af011;
+    ::ll::UntypedStorage<8, 8>  mUnk6af011;
     ::ll::UntypedStorage<8, 88> mUnka4cddc;
     ::ll::UntypedStorage<8, 64> mUnk51d4db;
     ::ll::UntypedStorage<4, 12> mUnk37d1f3;
-    ::ll::UntypedStorage<4, 4> mUnkc4a1dd;
-    ::ll::UntypedStorage<4, 4> mUnkbbaf84;
-    ::ll::UntypedStorage<4, 4> mUnka573ba;
-    ::ll::UntypedStorage<1, 1> mUnke46fbe;
-    ::ll::UntypedStorage<1, 1> mUnk97eafd;
-    ::ll::UntypedStorage<4, 4> mUnkca6267;
-    ::ll::UntypedStorage<1, 1> mUnk205ad5;
+    ::ll::UntypedStorage<4, 4>  mUnkc4a1dd;
+    ::ll::UntypedStorage<4, 4>  mUnkbbaf84;
+    ::ll::UntypedStorage<4, 4>  mUnka573ba;
+    ::ll::UntypedStorage<1, 1>  mUnke46fbe;
+    ::ll::UntypedStorage<1, 1>  mUnk97eafd;
+    ::ll::UntypedStorage<4, 4>  mUnkca6267;
+    ::ll::UntypedStorage<1, 1>  mUnk205ad5;
     ::ll::UntypedStorage<8, 48> mUnke94b7f;
     ::ll::UntypedStorage<8, 24> mUnkeaa4d2;
-    ::ll::UntypedStorage<1, 1> mUnk718da0;
+    ::ll::UntypedStorage<1, 1>  mUnk718da0;
     // NOLINTEND
 
 public:
@@ -88,7 +90,8 @@ public:
     virtual void setBrushMask(::Editor::BlockMask::BlockMaskList const& mask) /*override*/;
 
     // vIndex: 7
-    virtual void beginPainting(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback) /*override*/;
+    virtual void
+    beginPainting(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback) /*override*/;
 
     // vIndex: 8
     virtual void endPainting(bool const cancelled) /*override*/;
@@ -124,7 +127,8 @@ public:
     virtual bool isBusy() /*override*/;
 
     // vIndex: 19
-    virtual void setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode directionalPlacementMode) /*override*/;
+    virtual void
+    setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode directionalPlacementMode) /*override*/;
 
     // vIndex: 20
     virtual ::Editor::Brush::DirectionalPlacementMode getDirectionalPlacementMode() const /*override*/;
@@ -145,7 +149,10 @@ public:
     virtual bool const isItemPlacementActive() const /*override*/;
 
     // vIndex: 26
-    virtual void pushBlockStateOverride(::HashedString const& stateName, ::std::variant<int, ::std::string, bool> const& stateValue) /*override*/;
+    virtual void pushBlockStateOverride(
+        ::HashedString const&                           stateName,
+        ::std::variant<int, ::std::string, bool> const& stateValue
+    ) /*override*/;
 
     // vIndex: 27
     virtual void clearBlockStateOverrides() /*override*/;
@@ -231,7 +238,10 @@ public:
 
     MCNAPI bool const $isItemPlacementActive() const;
 
-    MCNAPI void $pushBlockStateOverride(::HashedString const& stateName, ::std::variant<int, ::std::string, bool> const& stateValue);
+    MCNAPI void $pushBlockStateOverride(
+        ::HashedString const&                           stateName,
+        ::std::variant<int, ::std::string, bool> const& stateValue
+    );
 
     MCNAPI void $clearBlockStateOverrides();
 
@@ -245,7 +255,6 @@ public:
 
     MCNAPI static void** $vftableForBrushShapeManagerServiceProvider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Brush

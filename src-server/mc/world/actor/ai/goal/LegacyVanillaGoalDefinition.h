@@ -13,4 +13,4 @@ namespace LegacyVanillaGoalDefinition {
 MCAPI void init(::ActorMigratedDefinitionFactory* migratedFactory);
 // NOLINTEND
 
-}
+} // namespace LegacyVanillaGoalDefinition

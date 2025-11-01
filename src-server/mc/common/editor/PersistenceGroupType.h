@@ -5,9 +5,9 @@
 namespace Editor::Services {
 
 enum class PersistenceGroupType : int {
-    Local = 0,
+    Local       = 0,
     Replication = 1,
-    Shared = 2,
+    Shared      = 2,
 };
 
 }

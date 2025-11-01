@@ -4,8 +4,7 @@
 
 namespace Bedrock::PubSub::Detail {
 
-template<typename T0, int T1>
-struct ReturnPolicy {
-};
+template <typename T0, int T1>
+struct ReturnPolicy {};
 
-}
+} // namespace Bedrock::PubSub::Detail

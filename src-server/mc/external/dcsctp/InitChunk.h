@@ -17,11 +17,11 @@ class InitChunk : public ::dcsctp::Chunk, public ::dcsctp::TLVTrait<::dcsctp::In
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkee7807;
-    ::ll::UntypedStorage<4, 4> mUnkcea217;
-    ::ll::UntypedStorage<2, 2> mUnk9420ef;
-    ::ll::UntypedStorage<2, 2> mUnk64b350;
-    ::ll::UntypedStorage<4, 4> mUnk4b9b3c;
+    ::ll::UntypedStorage<4, 4>  mUnkee7807;
+    ::ll::UntypedStorage<4, 4>  mUnkcea217;
+    ::ll::UntypedStorage<2, 2>  mUnk9420ef;
+    ::ll::UntypedStorage<2, 2>  mUnk64b350;
+    ::ll::UntypedStorage<4, 4>  mUnk4b9b3c;
     ::ll::UntypedStorage<8, 24> mUnkca0ea8;
     // NOLINTEND
 
@@ -69,7 +69,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

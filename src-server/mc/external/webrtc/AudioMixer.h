@@ -18,41 +18,40 @@ public:
     // clang-format off
     class Source;
     // clang-format on
-    
+
     // AudioMixer inner types define
     class Source {
     public:
         // Source inner types define
         enum class AudioFrameInfo : int {
             KNormal = 0,
-            KMuted = 1,
-            KError = 2,
+            KMuted  = 1,
+            KError  = 2,
         };
-        
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ::webrtc::AudioMixer::Source::AudioFrameInfo GetAudioFrameWithInfo(int, ::webrtc::AudioFrame*) = 0;
-    
+
         // vIndex: 1
         virtual int Ssrc() const = 0;
-    
+
         // vIndex: 2
         virtual int PreferredSampleRate() const = 0;
-    
+
         // vIndex: 3
         virtual ~Source() = default;
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
-    
+
         // NOLINTEND
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -74,7 +73,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

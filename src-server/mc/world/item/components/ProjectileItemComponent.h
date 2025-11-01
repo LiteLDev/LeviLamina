@@ -25,7 +25,7 @@ class ProjectileItemComponent : public ::NetworkedItemComponent<::ProjectileItem
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mMinCriticalPower;
+    ::ll::TypedStorage<4, 4, float>                         mMinCriticalPower;
     ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mActorIdentifier;
     // NOLINTEND
 
@@ -54,13 +54,23 @@ public:
 
     MCAPI ::Vec3 getShootDir(::Player const& player, float angleOffset) const;
 
-    MCAPI ::Actor* shootProjectile(::BlockSource& region, ::Vec3 const& aimPos, ::Vec3 const& aimDir, float power, ::Player* player) const;
+    MCAPI ::Actor* shootProjectile(
+        ::BlockSource& region,
+        ::Vec3 const&  aimPos,
+        ::Vec3 const&  aimDir,
+        float          power,
+        ::Player*      player
+    ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -86,5 +96,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

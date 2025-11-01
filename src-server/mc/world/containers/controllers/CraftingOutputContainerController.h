@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 128, ::ItemInstance> mRecipeItem;
-    ::ll::TypedStorage<1, 1, bool> mIsRecipeCraftable;
+    ::ll::TypedStorage<1, 1, bool>             mIsRecipeCraftable;
     // NOLINTEND
 
 public:
@@ -46,5 +46,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

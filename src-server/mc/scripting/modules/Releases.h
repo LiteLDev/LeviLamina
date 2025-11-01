@@ -21,4 +21,4 @@ MCNAPI ::Scripting::Version const& V1_1_0();
 MCNAPI ::Scripting::Version const& V1_2_0();
 // NOLINTEND
 
-}
+} // namespace ScriptModuleCommon::Releases

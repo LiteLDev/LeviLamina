@@ -5,10 +5,10 @@
 namespace RakNet {
 
 enum class RM3DestructionState : int {
-    SendDestruction = 0,
+    SendDestruction       = 0,
     DoNotQueryDestruction = 1,
-    NoAction = 2,
-    Max = 3,
+    NoAction              = 2,
+    Max                   = 3,
 };
 
 }

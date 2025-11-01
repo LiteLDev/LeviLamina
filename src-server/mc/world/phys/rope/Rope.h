@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/versionless/world/phys/AABB.h"
+#include "mc/world/phys/AABB.h"
 #include "mc/world/phys/rope/RopeParams.h"
 #include "mc/world/phys/rope/RopePoints.h"
 #include "mc/world/phys/rope/rope_details/AABBPred.h"
@@ -22,47 +22,46 @@ public:
     // clang-format off
     struct IntermediateData;
     // clang-format on
-    
+
     // Rope inner types define
     struct IntermediateData {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::RopePoints> mQueuedRenderPoints;
-        ::ll::TypedStorage<4, 12, ::Vec3> mPrevStartPin;
-        ::ll::TypedStorage<4, 12, ::Vec3> mPrevEndPin;
-        ::ll::TypedStorage<4, 12, ::Vec3> mStartPin;
-        ::ll::TypedStorage<4, 12, ::Vec3> mEndPin;
-        ::ll::TypedStorage<8, 8, uint64> mToCutNode;
-        ::ll::TypedStorage<1, 1, bool> mAbandonCollision;
+        ::ll::TypedStorage<4, 12, ::Vec3>       mPrevStartPin;
+        ::ll::TypedStorage<4, 12, ::Vec3>       mPrevEndPin;
+        ::ll::TypedStorage<4, 12, ::Vec3>       mStartPin;
+        ::ll::TypedStorage<4, 12, ::Vec3>       mEndPin;
+        ::ll::TypedStorage<8, 8, uint64>        mToCutNode;
+        ::ll::TypedStorage<1, 1, bool>          mAbandonCollision;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~IntermediateData();
+        MCAPI ~IntermediateData();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 96, ::Rope::IntermediateData> mIntermediateData;
-    ::ll::TypedStorage<8, 88, ::RopeParams> mParameters;
-    ::ll::TypedStorage<8, 32, ::RopePoints> mRenderPoints;
-    ::ll::TypedStorage<8, 24, ::std::vector<::RopeNode>> mNodes;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AABBBucket>> mColliderBuckets;
-    ::ll::TypedStorage<8, 24, ::std::vector<::RopeWave>> mWaves;
+    ::ll::TypedStorage<8, 96, ::Rope::IntermediateData>                    mIntermediateData;
+    ::ll::TypedStorage<8, 88, ::RopeParams>                                mParameters;
+    ::ll::TypedStorage<8, 32, ::RopePoints>                                mRenderPoints;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RopeNode>>                   mNodes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AABBBucket>>                 mColliderBuckets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RopeWave>>                   mWaves;
     ::ll::TypedStorage<8, 16, ::std::set<::AABB, ::RopeDetails::AABBPred>> mDenyListedColliders;
-    ::ll::TypedStorage<8, 8, uint64> mCutNode;
-    ::ll::TypedStorage<8, 8, uint64> mMinNodes;
+    ::ll::TypedStorage<8, 8, uint64>                                       mCutNode;
+    ::ll::TypedStorage<8, 8, uint64>                                       mMinNodes;
     // NOLINTEND
 
 public:
@@ -72,45 +71,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Rope();
+    MCAPI Rope();
 
-    MCNAPI Rope(::Rope const&);
+    MCAPI Rope(::Rope const&);
 
-    MCNAPI void _finalizeBucket(::AABBBucket& bucket);
+    MCAPI void _finalizeBucket(::AABBBucket& bucket);
 
-    MCNAPI void _integrate();
+    MCAPI void _integrate();
 
-    MCNAPI void _pruneDenyList();
+    MCAPI void _pruneDenyList();
 
-    MCNAPI void _resize();
+    MCAPI void _resize();
 
-    MCNAPI float _solveCollisions(bool checkDenyList);
+    MCAPI float _solveCollisions(bool checkDenyList);
 
-    MCNAPI float _solveDistanceConstraints1();
+    MCAPI float _solveDistanceConstraints1();
 
-    MCNAPI float _solveDistanceConstraints3();
+    MCAPI float _solveDistanceConstraints3();
 
-    MCNAPI void initializePins(::std::optional<::RopeParams> parameters);
+    MCAPI void initializePins(::std::optional<::RopeParams> parameters);
 
-    MCNAPI void prepareAABBBucketsForNextFrame();
+    MCAPI void prepareAABBBucketsForNextFrame();
 
-    MCNAPI void tick();
+    MCAPI void tick();
 
-    MCNAPI ~Rope();
+    MCAPI ~Rope();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::Rope const&);
+    MCAPI void* $ctor(::Rope const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
-
 };

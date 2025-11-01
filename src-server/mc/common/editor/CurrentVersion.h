@@ -14,7 +14,10 @@ namespace cereal { struct ReflectionCtx; }
 namespace Editor::Structures::PUVLoader::CurrentVersion {
 // functions
 // NOLINTBEGIN
-MCNAPI void initializeLoader(::cereal::ReflectionCtx& ctx, ::Puv::SlicedLoader<::Editor::Structures::PUVLoader::v1::StructureMetadata, nullptr_t, nullptr_t>& loader);
+MCNAPI void initializeLoader(
+    ::cereal::ReflectionCtx&                                                                           ctx,
+    ::Puv::SlicedLoader<::Editor::Structures::PUVLoader::v1::StructureMetadata, nullptr_t, nullptr_t>& loader
+);
 // NOLINTEND
 
-}
+} // namespace Editor::Structures::PUVLoader::CurrentVersion

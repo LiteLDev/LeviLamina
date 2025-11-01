@@ -35,7 +35,6 @@ public:
     ::ll::TypedStorage<8, 8, int64> mBinaryObjectCount;
     ::ll::TypedStorage<8, 8, int64> mBinaryObjectSize;
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

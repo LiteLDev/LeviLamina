@@ -24,17 +24,17 @@ class AppConfigs : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // AppConfigs inner types define
     enum class MaelstromEduUsabilityStatus : uchar {
-        Unknown = 0,
+        Unknown   = 0,
         Unallowed = 1,
-        Allowed = 2,
+        Allowed   = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk9f7098;
-    ::ll::UntypedStorage<8, 8> mUnke1b346;
-    ::ll::UntypedStorage<8, 8> mUnk401edb;
+    ::ll::UntypedStorage<8, 8>  mUnke1b346;
+    ::ll::UntypedStorage<8, 8>  mUnk401edb;
     ::ll::UntypedStorage<8, 64> mUnk6aa499;
     // NOLINTEND
 
@@ -268,5 +268,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

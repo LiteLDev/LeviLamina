@@ -13,9 +13,12 @@ namespace Editor::API { struct EditorExtensionOptionalParameters; }
 namespace Editor::API {
 // functions
 // NOLINTBEGIN
-MCNAPI void _preprocessExtensionCreationParameters(::Editor::API::ServerScriptPackType packType, ::std::optional<::Editor::API::EditorExtensionOptionalParameters>& params);
+MCNAPI void _preprocessExtensionCreationParameters(
+    ::Editor::API::ServerScriptPackType                                packType,
+    ::std::optional<::Editor::API::EditorExtensionOptionalParameters>& params
+);
 
 MCNAPI ::Editor::API::ServerScriptPackType getServerScriptPackType(::std::string const& moduleId);
 // NOLINTEND
 
-}
+} // namespace Editor::API

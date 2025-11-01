@@ -14,5 +14,4 @@ public:
     FrictionModifierDefinition& operator=(FrictionModifierDefinition const&);
     FrictionModifierDefinition(FrictionModifierDefinition const&);
     FrictionModifierDefinition();
-
 };

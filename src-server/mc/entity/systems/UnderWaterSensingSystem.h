@@ -44,15 +44,98 @@ struct VanillaOffsetComponent;
 struct VehicleComponent;
 // clang-format on
 
-struct UnderWaterSensingSystem : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent, ::PlayerComponent>, ::Read<::DimensionTypeComponent, ::StateVectorComponent, ::UpdateWaterStateRequestComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::PassengerComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::ActorDataFlagComponent, ::AABBShapeComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent>, ::Write<>, ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
+struct UnderWaterSensingSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
+                                     ::Filter<
+                                         ::HorseFlagComponent,
+                                         ::MobFlagComponent,
+                                         ::ParrotFlagComponent,
+                                         ::VehicleComponent,
+                                         ::CamelFlagComponent,
+                                         ::PlayerComponent>,
+                                     ::Read<
+                                         ::DimensionTypeComponent,
+                                         ::StateVectorComponent,
+                                         ::UpdateWaterStateRequestComponent,
+                                         ::ActorRotationComponent,
+                                         ::MobBodyRotationComponent,
+                                         ::PassengerComponent,
+                                         ::RenderRotationComponent,
+                                         ::StandAnimationComponent,
+                                         ::ActorDataFlagComponent,
+                                         ::AABBShapeComponent,
+                                         ::OffsetsComponent,
+                                         ::VanillaOffsetComponent,
+                                         ::PassengerRenderingRidingOffsetComponent>,
+                                     ::Write<>,
+                                     ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+                                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                                     ::GlobalWrite<>,
+                                     ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<::Filter<::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent, ::PlayerComponent>, ::Read<::DimensionTypeComponent, ::StateVectorComponent, ::UpdateWaterStateRequestComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::PassengerComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::ActorDataFlagComponent, ::AABBShapeComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent>, ::Write<>, ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::UpdateWaterStateRequestComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::ActorDataFlagComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<>,
+            ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 6
-    virtual void singleTick(::StrictExecutionContext<::Filter<::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent, ::PlayerComponent>, ::Read<::DimensionTypeComponent, ::StateVectorComponent, ::UpdateWaterStateRequestComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::PassengerComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::ActorDataFlagComponent, ::AABBShapeComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent>, ::Write<>, ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context, ::StrictEntityContext& entityContext) /*override*/;
+    virtual void singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::UpdateWaterStateRequestComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::ActorDataFlagComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<>,
+            ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~UnderWaterSensingSystem() /*override*/ = default;
@@ -61,15 +144,80 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doUnderWaterSensing(::StrictEntityContext const& entity, ::StateVectorComponent const& stateVectorComponent, ::UpdateWaterStateRequestComponent const& request, ::Optional<::ActorHeadInWaterFlagComponent const> headInWater, ::EntityModifier<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent> modifier, ::GetAttachPositionViews const& views, ::IConstBlockSource const& region);
+    MCNAPI static void doUnderWaterSensing(
+        ::StrictEntityContext const&                                                          entity,
+        ::StateVectorComponent const&                                                         stateVectorComponent,
+        ::UpdateWaterStateRequestComponent const&                                             request,
+        ::Optional<::ActorHeadInWaterFlagComponent const>                                     headInWater,
+        ::EntityModifier<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent> modifier,
+        ::GetAttachPositionViews const&                                                       views,
+        ::IConstBlockSource const&                                                            region
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<::Filter<::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent, ::PlayerComponent>, ::Read<::DimensionTypeComponent, ::StateVectorComponent, ::UpdateWaterStateRequestComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::PassengerComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::ActorDataFlagComponent, ::AABBShapeComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent>, ::Write<>, ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::UpdateWaterStateRequestComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::ActorDataFlagComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<>,
+            ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
 
-    MCNAPI void $singleTick(::StrictExecutionContext<::Filter<::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent, ::PlayerComponent>, ::Read<::DimensionTypeComponent, ::StateVectorComponent, ::UpdateWaterStateRequestComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::PassengerComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::ActorDataFlagComponent, ::AABBShapeComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent>, ::Write<>, ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context, ::StrictEntityContext& entityContext);
+    MCNAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::UpdateWaterStateRequestComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::ActorDataFlagComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<>,
+            ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext&   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -77,5 +225,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

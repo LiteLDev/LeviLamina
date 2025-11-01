@@ -22,7 +22,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void tick(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::EnderManFlagComponent, ::MobIsJumpingFlagComponent>> view, ::EntityModifier<::MobIsJumpingFlagComponent> mod);
+    MCNAPI static void tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::EnderManFlagComponent, ::MobIsJumpingFlagComponent>> view,
+        ::EntityModifier<::MobIsJumpingFlagComponent>                                                            mod
+    );
     // NOLINTEND
-
 };

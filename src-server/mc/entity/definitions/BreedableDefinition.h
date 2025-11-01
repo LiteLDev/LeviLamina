@@ -17,24 +17,24 @@ class BreedableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc3ef0a;
-    ::ll::UntypedStorage<1, 1> mUnk1b873f;
-    ::ll::UntypedStorage<1, 1> mUnk899edb;
-    ::ll::UntypedStorage<1, 1> mUnka9d998;
-    ::ll::UntypedStorage<1, 1> mUnk65f5b5;
-    ::ll::UntypedStorage<1, 1> mUnke323bb;
-    ::ll::UntypedStorage<1, 1> mUnk7654d6;
-    ::ll::UntypedStorage<4, 4> mUnkf3f68f;
-    ::ll::UntypedStorage<4, 4> mUnkabab37;
+    ::ll::UntypedStorage<1, 1>  mUnkc3ef0a;
+    ::ll::UntypedStorage<1, 1>  mUnk1b873f;
+    ::ll::UntypedStorage<1, 1>  mUnk899edb;
+    ::ll::UntypedStorage<1, 1>  mUnka9d998;
+    ::ll::UntypedStorage<1, 1>  mUnk65f5b5;
+    ::ll::UntypedStorage<1, 1>  mUnke323bb;
+    ::ll::UntypedStorage<1, 1>  mUnk7654d6;
+    ::ll::UntypedStorage<4, 4>  mUnkf3f68f;
+    ::ll::UntypedStorage<4, 4>  mUnkabab37;
     ::ll::UntypedStorage<8, 24> mUnka7b953;
     ::ll::UntypedStorage<8, 16> mUnk31b5b3;
     ::ll::UntypedStorage<8, 24> mUnk68a570;
     ::ll::UntypedStorage<8, 64> mUnkb3b590;
     ::ll::UntypedStorage<8, 24> mUnk64149d;
     ::ll::UntypedStorage<4, 12> mUnk5e7ad9;
-    ::ll::UntypedStorage<1, 1> mUnk494446;
-    ::ll::UntypedStorage<4, 8> mUnkb060cf;
-    ::ll::UntypedStorage<4, 8> mUnk4f1ebf;
+    ::ll::UntypedStorage<1, 1>  mUnk494446;
+    ::ll::UntypedStorage<4, 8>  mUnkb060cf;
+    ::ll::UntypedStorage<4, 8>  mUnk4f1ebf;
     ::ll::UntypedStorage<4, 12> mUnk625dc7;
     ::ll::UntypedStorage<8, 16> mUnkfac445;
     ::ll::UntypedStorage<8, 56> mUnk8b89e2;
@@ -65,7 +65,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BreedableDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BreedableDefinition>>& root
+    );
     // NOLINTEND
 
 public:
@@ -73,5 +75,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

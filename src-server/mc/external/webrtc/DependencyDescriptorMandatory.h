@@ -19,7 +19,6 @@ public:
     DependencyDescriptorMandatory& operator=(DependencyDescriptorMandatory const&);
     DependencyDescriptorMandatory(DependencyDescriptorMandatory const&);
     DependencyDescriptorMandatory();
-
 };
 
-}
+} // namespace webrtc

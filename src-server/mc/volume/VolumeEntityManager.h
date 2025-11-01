@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk4d91e3;
-    ::ll::UntypedStorage<8, 8> mUnk3ed3b4;
+    ::ll::UntypedStorage<8, 8>  mUnk3ed3b4;
     ::ll::UntypedStorage<8, 64> mUnk438525;
     ::ll::UntypedStorage<8, 64> mUnk2b84c0;
     // NOLINTEND
@@ -27,5 +27,4 @@ public:
     // vIndex: 0
     virtual ~VolumeEntityManager() /*override*/ = default;
     // NOLINTEND
-
 };

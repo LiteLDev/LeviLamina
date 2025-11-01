@@ -14,9 +14,9 @@ class PerlinSimplexNoise {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mLevels;
+    ::ll::TypedStorage<4, 4, int>                            mLevels;
     ::ll::TypedStorage<8, 24, ::std::vector<::SimplexNoise>> mNoiseLevels;
-    ::ll::TypedStorage<4, 4, float> mNormalizationFactor;
+    ::ll::TypedStorage<4, 4, float>                          mNormalizationFactor;
     // NOLINTEND
 
 public:
@@ -33,7 +33,15 @@ public:
 
     MCAPI void _init(::IRandom& r, bool parityInitialization);
 
-    MCAPI float* getRegion(float* buffer, ::Vec2 const& pos, int xSize, int ySize, ::Vec2 const& scale, float sizeScale, float powScale) const;
+    MCAPI float* getRegion(
+        float*        buffer,
+        ::Vec2 const& pos,
+        int           xSize,
+        int           ySize,
+        ::Vec2 const& scale,
+        float         sizeScale,
+        float         powScale
+    ) const;
 
     MCAPI float getValue(::Vec3 const& pos) const;
 
@@ -55,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

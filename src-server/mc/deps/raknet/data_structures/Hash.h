@@ -4,7 +4,6 @@
 
 namespace DataStructures {
 
-class Hash {
-};
+class Hash {};
 
-}
+} // namespace DataStructures

@@ -5,7 +5,7 @@
 namespace dragon::tasks {
 
 enum class RenderQueue : int {
-    PreFrame = 0,
+    PreFrame  = 0,
     PostFrame = 1,
 };
 

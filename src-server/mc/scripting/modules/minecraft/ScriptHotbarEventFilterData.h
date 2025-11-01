@@ -16,7 +16,6 @@ public:
     ScriptHotbarEventFilterData& operator=(ScriptHotbarEventFilterData const&);
     ScriptHotbarEventFilterData(ScriptHotbarEventFilterData const&);
     ScriptHotbarEventFilterData();
-
 };
 
-}
+} // namespace ScriptModuleMinecraft::EventFilters

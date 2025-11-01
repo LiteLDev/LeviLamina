@@ -4,8 +4,7 @@
 
 namespace OperationNodeDetails {
 
-template<typename T0, int T1, int T2>
-struct NeighborhoodReader {
-};
+template <typename T0, int T1, int T2>
+struct NeighborhoodReader {};
 
-}
+} // namespace OperationNodeDetails

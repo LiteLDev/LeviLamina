@@ -9,7 +9,7 @@ class SearchRequestTelemetry : public ::RequestTelemetry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkcc1707;
+    ::ll::UntypedStorage<1, 1>  mUnkcc1707;
     ::ll::UntypedStorage<8, 32> mUnkc36713;
     // NOLINTEND
 
@@ -18,5 +18,4 @@ public:
     SearchRequestTelemetry& operator=(SearchRequestTelemetry const&);
     SearchRequestTelemetry(SearchRequestTelemetry const&);
     SearchRequestTelemetry();
-
 };

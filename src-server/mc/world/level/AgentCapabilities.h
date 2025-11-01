@@ -8,5 +8,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 2, ::std::optional<bool>> canModifyBlocks;
     // NOLINTEND
-
 };

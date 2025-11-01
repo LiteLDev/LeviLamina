@@ -13,14 +13,14 @@ struct ComponentInfo;
 struct SystemInfo {
 public:
     // SystemInfo inner types define
-    using GenerateComponentInfoVectorFunction = ::std::vector<::ComponentInfo>(*) ();
-    
+    using GenerateComponentInfoVectorFunction = ::std::vector<::ComponentInfo> (*)();
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mName;
-    ::ll::TypedStorage<8, 152, ::Dependencies> mDependencies;
-    ::ll::TypedStorage<8, 8, ::std::vector<::ComponentInfo>(*) ()> mGenerateDetailedInfo;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mName;
+    ::ll::TypedStorage<8, 152, ::Dependencies>                     mDependencies;
+    ::ll::TypedStorage<8, 8, ::std::vector<::ComponentInfo> (*)()> mGenerateDetailedInfo;
     // NOLINTEND
 
 public:
@@ -48,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

@@ -20,13 +20,29 @@ namespace ScriptModuleMinecraft { struct ValueParams; }
 namespace ActorHasPropertySelectorUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI bool checkIntProperty(::PropertyComponent const& property, ::HashedString const& propertyName, ::CommandRationalRange& rationalRange, bool inverted);
+MCNAPI bool checkIntProperty(
+    ::PropertyComponent const& property,
+    ::HashedString const&      propertyName,
+    ::CommandRationalRange&    rationalRange,
+    bool                       inverted
+);
 
 MCNAPI bool checkIntToBoolConversionNoInversion(bool boolValue, ::CommandRationalRange& rationalRange);
 
-MCNAPI ::std::variant<::CommandRationalRange, bool, ::std::string> parseComparison(::std::variant<::ScriptModuleMinecraft::LessThanComparison, ::ScriptModuleMinecraft::LessThanOrEqualsComparison, ::ScriptModuleMinecraft::GreaterThanComparison, ::ScriptModuleMinecraft::GreaterThanOrEqualsComparison, ::ScriptModuleMinecraft::EqualsComparison, ::ScriptModuleMinecraft::NotEqualsComparison, ::ScriptModuleMinecraft::RangeComparison> const& comparison, bool isExclude);
+MCNAPI ::std::variant<::CommandRationalRange, bool, ::std::string> parseComparison(
+    ::std::variant<
+        ::ScriptModuleMinecraft::LessThanComparison,
+        ::ScriptModuleMinecraft::LessThanOrEqualsComparison,
+        ::ScriptModuleMinecraft::GreaterThanComparison,
+        ::ScriptModuleMinecraft::GreaterThanOrEqualsComparison,
+        ::ScriptModuleMinecraft::EqualsComparison,
+        ::ScriptModuleMinecraft::NotEqualsComparison,
+        ::ScriptModuleMinecraft::RangeComparison> const& comparison,
+    bool                                                 isExclude
+);
 
-MCNAPI ::std::variant<::CommandRationalRange, bool, ::std::string> parseValueParams(::ScriptModuleMinecraft::ValueParams const& params, bool isExclude);
+MCNAPI ::std::variant<::CommandRationalRange, bool, ::std::string>
+parseValueParams(::ScriptModuleMinecraft::ValueParams const& params, bool isExclude);
 // NOLINTEND
 
-}
+} // namespace ActorHasPropertySelectorUtils

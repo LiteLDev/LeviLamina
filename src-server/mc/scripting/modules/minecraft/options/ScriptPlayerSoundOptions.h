@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 16> mUnk3c9ff5;
-    ::ll::UntypedStorage<4, 8> mUnk897870;
-    ::ll::UntypedStorage<4, 8> mUnkf67b7f;
+    ::ll::UntypedStorage<4, 8>  mUnk897870;
+    ::ll::UntypedStorage<4, 8>  mUnkf67b7f;
     // NOLINTEND
 
 public:
@@ -36,7 +36,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft
