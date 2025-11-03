@@ -11,14 +11,8 @@ class GetItemCountCommand : public ::AgentCommands::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd8f4ca;
+    ::ll::TypedStorage<4, 4, int> mCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GetItemCountCommand& operator=(GetItemCountCommand const&);
-    GetItemCountCommand(GetItemCountCommand const&);
-    GetItemCountCommand();
 
 public:
     // virtual functions
@@ -39,11 +33,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute();
+    MCFOLD void $execute();
 
-    MCNAPI bool $isDone();
+    MCFOLD bool $isDone();
 
-    MCNAPI void $fireCommandDoneEvent();
+    MCAPI void $fireCommandDoneEvent();
     // NOLINTEND
 
 public:

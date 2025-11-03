@@ -2,17 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/NetworkPermissions.h"
+#include "mc/network/ServerPlayerJoinBehavior.h"
+
 struct NetworkServerConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5a2500;
-    ::ll::UntypedStorage<1, 1>  mUnkc58783;
-    ::ll::UntypedStorage<8, 24> mUnk2bc0af;
-    ::ll::UntypedStorage<1, 1>  mUnk958413;
-    ::ll::UntypedStorage<1, 1>  mUnke87fce;
-    ::ll::UntypedStorage<1, 1>  mUnk708d57;
-    ::ll::UntypedStorage<4, 4>  mUnk34796a;
+    ::ll::TypedStorage<8, 32, ::std::string>                serverType;
+    ::ll::TypedStorage<1, 1, bool>                          requireTrustedAuthentication;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> extraTrustedKeys;
+    ::ll::TypedStorage<1, 1, ::NetworkPermissions>          networkPermissions;
+    ::ll::TypedStorage<1, 1, bool>                          allowSubclientLogin;
+    ::ll::TypedStorage<1, 1, bool>                          enablePacketReceiptEventing;
+    ::ll::TypedStorage<4, 4, ::ServerPlayerJoinBehavior>    defaultJoinBehavior;
     // NOLINTEND
 
 public:

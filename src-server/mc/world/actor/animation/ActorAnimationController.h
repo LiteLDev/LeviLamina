@@ -2,42 +2,39 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/core/string/HashedString.h"
+
 // auto generated forward declare list
 // clang-format off
 class ActorAnimationControllerState;
-class HashedString;
 // clang-format on
 
 class ActorAnimationController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk72907e;
-    ::ll::UntypedStorage<8, 24> mUnke82d66;
-    ::ll::UntypedStorage<8, 8>  mUnkbf1b50;
-    ::ll::UntypedStorage<8, 24> mUnk8e330d;
-    ::ll::UntypedStorage<8, 32> mUnk1211b3;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                                    mName;
+    ::ll::TypedStorage<8, 24, ::SemVersion>                                                      mVersion;
+    ::ll::TypedStorage<8, 8, uint64>                                                             mInitialStateIndex;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ActorAnimationControllerState>>> mStates;
+    ::ll::TypedStorage<8, 32, ::std::string> mSourceFilePathWithExtension;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorAnimationController& operator=(ActorAnimationController const&);
-    ActorAnimationController(ActorAnimationController const&);
-    ActorAnimationController();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
+    MCAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
 
-    MCNAPI void resolveTransitionStateIndices();
+    MCAPI void resolveTransitionStateIndices();
 
-    MCNAPI ~ActorAnimationController();
+    MCAPI ~ActorAnimationController();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

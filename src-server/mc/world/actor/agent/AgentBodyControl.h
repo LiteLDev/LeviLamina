@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $clientTick(::Mob& mob);
+    MCAPI void $clientTick(::Mob& mob);
     // NOLINTEND
 
 public:

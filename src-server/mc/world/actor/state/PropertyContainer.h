@@ -33,20 +33,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PropertyContainer(
+    MCAPI PropertyContainer(
         ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup,
         ::RenderParams&                                           renderParams
     );
 
-    MCNAPI bool _readValueFromTag(::PropertyMetadata const& propertyMetadata, ::Tag const& tag);
+    MCAPI bool _readValueFromTag(::PropertyMetadata const& propertyMetadata, ::Tag const& tag);
 
-    MCNAPI void addAdditionalSaveDataToCompoundTag(::CompoundTag& compoundTag) const;
+    MCAPI void addAdditionalSaveDataToCompoundTag(::CompoundTag& compoundTag) const;
 
-    MCNAPI void addEntryToSyncData(::PropertyMetadata const& propMetadata, ::PropertySyncData& syncData) const;
+    MCAPI void addEntryToSyncData(::PropertyMetadata const& propMetadata, ::PropertySyncData& syncData) const;
 
-    MCNAPI bool getMolangValue(uint64 propertyNameHash, ::MolangScriptArg& out) const;
+    MCAPI bool getMolangValue(uint64 propertyNameHash, ::MolangScriptArg& out) const;
 
-    MCNAPI void setAliasProperties(
+    MCAPI void setAliasProperties(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::Tag>> const& aliasProperties,
         ::std::string const&                                                  aliasName,
         ::std::string const&                                                  canonicalName
@@ -56,7 +56,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
+    MCAPI void*
     $ctor(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
     // NOLINTEND
 };

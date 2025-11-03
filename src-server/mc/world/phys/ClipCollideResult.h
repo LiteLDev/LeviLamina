@@ -2,19 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 struct ClipCollideResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk6f08d3;
-    ::ll::UntypedStorage<4, 12> mUnk277fe7;
-    ::ll::UntypedStorage<4, 12> mUnk2fc124;
-    ::ll::UntypedStorage<4, 4>  mUnk66f4c5;
+    ::ll::TypedStorage<4, 4, float>   mPenetration;
+    ::ll::TypedStorage<4, 12, ::Vec3> mClippedVelocity;
+    ::ll::TypedStorage<4, 12, ::Vec3> mDepenetratingVelocity;
+    ::ll::TypedStorage<4, 4, int>     mDepenetratingAxis;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClipCollideResult& operator=(ClipCollideResult const&);
-    ClipCollideResult(ClipCollideResult const&);
-    ClipCollideResult();
 };

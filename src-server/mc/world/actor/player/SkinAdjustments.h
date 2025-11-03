@@ -21,12 +21,6 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb6f038;
+    ::ll::TypedStorage<4, 4, uint> mAnimOverrideBitmask;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SkinAdjustments& operator=(SkinAdjustments const&);
-    SkinAdjustments(SkinAdjustments const&);
-    SkinAdjustments();
 };

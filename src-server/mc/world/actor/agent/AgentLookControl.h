@@ -27,15 +27,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float& sBaseYMax();
+    MCAPI static float& sBaseYMax();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeInternal(::Mob& mob);
+    MCAPI void $initializeInternal(::Mob& mob);
 
-    MCNAPI void $tick(::Mob& mob);
+    MCAPI void $tick(::Mob& mob);
     // NOLINTEND
 
 public:

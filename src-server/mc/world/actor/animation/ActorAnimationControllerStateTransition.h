@@ -2,18 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/molang/ExpressionNode.h"
+
 class ActorAnimationControllerStateTransition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkeb47df;
-    ::ll::UntypedStorage<8, 8>  mUnk54d5ca;
-    ::ll::UntypedStorage<8, 16> mUnkc8f8ff;
+    ::ll::TypedStorage<8, 32, ::std::string>    mTargetStateName;
+    ::ll::TypedStorage<8, 8, uint64>            mTargetStateIndex;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode> mTransitionExpression;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorAnimationControllerStateTransition& operator=(ActorAnimationControllerStateTransition const&);
-    ActorAnimationControllerStateTransition(ActorAnimationControllerStateTransition const&);
-    ActorAnimationControllerStateTransition();
 };

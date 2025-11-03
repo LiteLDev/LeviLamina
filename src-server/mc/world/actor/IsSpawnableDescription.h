@@ -9,14 +9,8 @@ struct IsSpawnableDescription : public ::DefintionDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkd016c3;
+    ::ll::TypedStorage<1, 1, bool> mIsSpawnable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IsSpawnableDescription& operator=(IsSpawnableDescription const&);
-    IsSpawnableDescription(IsSpawnableDescription const&);
-    IsSpawnableDescription();
 
 public:
     // virtual functions
@@ -31,7 +25,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
     // NOLINTEND
 
 public:

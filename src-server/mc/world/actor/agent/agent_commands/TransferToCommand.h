@@ -11,16 +11,10 @@ class TransferToCommand : public ::AgentCommands::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf6afdf;
-    ::ll::UntypedStorage<4, 4> mUnkc62ffa;
-    ::ll::UntypedStorage<4, 4> mUnk9773ab;
+    ::ll::TypedStorage<4, 4, int> mSrcSlot;
+    ::ll::TypedStorage<4, 4, int> mQuantity;
+    ::ll::TypedStorage<4, 4, int> mDestSlot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TransferToCommand& operator=(TransferToCommand const&);
-    TransferToCommand(TransferToCommand const&);
-    TransferToCommand();
 
 public:
     // virtual functions
@@ -38,9 +32,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute();
+    MCAPI void $execute();
 
-    MCNAPI bool $isDone();
+    MCFOLD bool $isDone();
     // NOLINTEND
 
 public:

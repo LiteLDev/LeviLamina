@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/Result.h"
 #include "mc/world/level/ActorManagerProxy.h"
 #include "mc/world/level/ActorValidationError.h"
@@ -10,20 +11,15 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Level;
 // clang-format on
 
 class ServerActorManagerProxy : public ::ActorManagerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk112fa3;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Level>> mLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerActorManagerProxy& operator=(ServerActorManagerProxy const&);
-    ServerActorManagerProxy(ServerActorManagerProxy const&);
-    ServerActorManagerProxy();
 
 public:
     // virtual functions
@@ -50,15 +46,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeActor(::Actor& actor);
+    MCAPI void $initializeActor(::Actor& actor);
 
-    MCNAPI ::Bedrock::Result<void, ::ActorValidationError> $validate(::Actor const& actor);
+    MCAPI ::Bedrock::Result<void, ::ActorValidationError> $validate(::Actor const& actor);
 
-    MCNAPI void $addActor(::Actor& actor);
+    MCAPI void $addActor(::Actor& actor);
 
-    MCNAPI void $removeActorInLevelChunk(::Actor const& actor);
+    MCAPI void $removeActorInLevelChunk(::Actor const& actor);
 
-    MCNAPI void $deleteActorFromWorldInLevelChunk(::Actor const& actor);
+    MCAPI void $deleteActorFromWorldInLevelChunk(::Actor const& actor);
     // NOLINTEND
 
 public:

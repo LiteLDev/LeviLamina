@@ -3,15 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/platform/threading/SpinLockImpl.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/dimension/ChunkBuildOrderPolicyBase.h"
-
-// auto generated forward declare list
-// clang-format off
-class ChunkPos;
-class SpinLockImpl;
-class Vec3;
-// clang-format on
 
 class ChunkBuildOrderPolicy : public ::ChunkBuildOrderPolicyBase {
 public:
@@ -31,21 +26,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk6eb64a;
-        ::ll::UntypedStorage<4, 12> mUnk2033fc;
-        ::ll::UntypedStorage<4, 4>  mUnkc7237f;
+        ::ll::TypedStorage<8, 8, ::ChunkPos>                        position;
+        ::ll::TypedStorage<4, 12, ::Vec3>                           parameter;
+        ::ll::TypedStorage<4, 4, ::ChunkBuildOrderPolicy::HintType> type;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Influence& operator=(Influence const&);
-        Influence(Influence const&);
-        Influence();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI int getPriority(::ChunkPos const& cp) const;
+        MCAPI int getPriority(::ChunkPos const& cp) const;
         // NOLINTEND
     };
 
@@ -97,16 +86,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getChunkRebuildPriority(::ChunkPos const& cp) const;
+    MCAPI int $getChunkRebuildPriority(::ChunkPos const& cp) const;
 
-    MCNAPI uint $registerForUpdates();
+    MCAPI uint $registerForUpdates();
 
-    MCNAPI void $unregisterForUpdates(uint handle);
+    MCAPI void $unregisterForUpdates(uint handle);
 
-    MCNAPI void
+    MCAPI void
     $setPlayerInfluence(uint handle, ::ChunkPos const& playerPosition, ::Vec3 const& playerMovementDirection);
 
-    MCNAPI void $setTickingAreaInfluence(
+    MCAPI void $setTickingAreaInfluence(
         uint              handle,
         ::ChunkPos const& tickingAreaPosition,
         int               sizeX,
@@ -115,7 +104,7 @@ public:
         bool              preload
     );
 
-    MCNAPI void $updateInfluences();
+    MCAPI void $updateInfluences();
     // NOLINTEND
 
 public:

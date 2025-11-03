@@ -8,13 +8,14 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class Player;
 // clang-format on
 
 class LegacyPlayerTransactionSubject : public ::ILegacyItemUseTransactionSubject {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk484862;
+    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
     // NOLINTEND
 
 public:
@@ -39,9 +40,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isServerAuthBlockBreakingEnabled() const;
+    MCAPI bool $isServerAuthBlockBreakingEnabled() const;
 
-    MCNAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
+    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
     // NOLINTEND
 
 public:

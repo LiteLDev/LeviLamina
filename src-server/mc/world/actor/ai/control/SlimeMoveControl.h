@@ -31,13 +31,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static int _getJumpDelay(::Mob const& mob);
+    MCAPI static int _getJumpDelay(::Mob const& mob);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
     // NOLINTEND
 
 public:

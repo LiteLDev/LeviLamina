@@ -2,21 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 namespace VehicleUtils {
 
 struct VehicleDirections {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkbf7371;
-    ::ll::UntypedStorage<4, 12> mUnkeb8adf;
+    ::ll::TypedStorage<4, 12, ::Vec3> forward;
+    ::ll::TypedStorage<4, 12, ::Vec3> right;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VehicleDirections& operator=(VehicleDirections const&);
-    VehicleDirections(VehicleDirections const&);
-    VehicleDirections();
 };
 
 } // namespace VehicleUtils

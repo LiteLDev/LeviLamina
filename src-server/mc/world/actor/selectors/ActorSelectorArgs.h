@@ -48,42 +48,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorSelectorArgs();
+    MCAPI ActorSelectorArgs();
 
-    MCNAPI ActorSelectorArgs(::ActorSelectorArgs const&);
+    MCAPI ActorSelectorArgs(::ActorSelectorArgs const&);
 
-    MCNAPI ActorSelectorArgs(::ActorSelectorArgs&&);
+    MCAPI ActorSelectorArgs(::ActorSelectorArgs&&);
 
-    MCNAPI ::ActorSelectorArgs& operator=(::ActorSelectorArgs const&);
+    MCAPI ::ActorSelectorArgs& operator=(::ActorSelectorArgs const&);
 
-    MCNAPI ::ActorSelectorArgs& operator=(::ActorSelectorArgs&&);
+    MCAPI ::ActorSelectorArgs& operator=(::ActorSelectorArgs&&);
 
-    MCNAPI ~ActorSelectorArgs();
+    MCAPI ~ActorSelectorArgs();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::pair<int, int> const& DEFAULT_LEVEL();
+    MCAPI static ::std::pair<int, int> const& DEFAULT_LEVEL();
 
-    MCNAPI static ::std::pair<float, float> const& DEFAULT_X_ROTATION();
+    MCAPI static ::std::pair<float, float> const& DEFAULT_X_ROTATION();
 
-    MCNAPI static ::std::pair<float, float> const& DEFAULT_Y_ROTATION();
+    MCAPI static ::std::pair<float, float> const& DEFAULT_Y_ROTATION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ActorSelectorArgs const&);
+    MCAPI void* $ctor(::ActorSelectorArgs const&);
 
-    MCNAPI void* $ctor(::ActorSelectorArgs&&);
+    MCAPI void* $ctor(::ActorSelectorArgs&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

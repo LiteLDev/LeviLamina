@@ -6,13 +6,7 @@ class AnimationValueCurveKeyFrame {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdc0f53;
-    ::ll::UntypedStorage<4, 4> mUnk7bbf09;
+    ::ll::TypedStorage<4, 4, float> mInputValue;
+    ::ll::TypedStorage<4, 4, float> mOutputValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AnimationValueCurveKeyFrame& operator=(AnimationValueCurveKeyFrame const&);
-    AnimationValueCurveKeyFrame(AnimationValueCurveKeyFrame const&);
-    AnimationValueCurveKeyFrame();
 };

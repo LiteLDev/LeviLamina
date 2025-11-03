@@ -15,17 +15,11 @@ class ShootBowNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1da8f9;
-    ::ll::UntypedStorage<4, 4> mUnkacdc70;
-    ::ll::UntypedStorage<4, 4> mUnkfbbb12;
-    ::ll::UntypedStorage<1, 1> mUnk9f3e96;
+    ::ll::TypedStorage<4, 4, int>  mNumTimesToShoot;
+    ::ll::TypedStorage<4, 4, int>  mNumTimesShot;
+    ::ll::TypedStorage<4, 4, int>  mTicksLeftToShoot;
+    ::ll::TypedStorage<1, 1, bool> mDone;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShootBowNode& operator=(ShootBowNode const&);
-    ShootBowNode(ShootBowNode const&);
-    ShootBowNode();
 
 public:
     // virtual functions
@@ -43,7 +37,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFromDefinition(::Actor& owner);
+    MCFOLD void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
 public:

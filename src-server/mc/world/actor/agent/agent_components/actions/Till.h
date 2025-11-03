@@ -2,32 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/agent/agent_components/Direction.h"
+
 namespace AgentComponents::Actions {
 
 struct Till {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk7749f3;
-    ::ll::UntypedStorage<8, 32> mUnk2a39e3;
+    ::ll::TypedStorage<1, 1, ::AgentComponents::Direction> dir;
+    ::ll::TypedStorage<8, 32, ::std::string>               item;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Till& operator=(Till const&);
-    Till(Till const&);
-    Till();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~Till();
+    MCAPI ~Till();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

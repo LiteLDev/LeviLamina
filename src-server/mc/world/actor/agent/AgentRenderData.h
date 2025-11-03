@@ -6,13 +6,7 @@ struct AgentRenderData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk359d55;
-    ::ll::UntypedStorage<8, 8> mUnkaf7065;
+    ::ll::TypedStorage<4, 4, float> mEaseIn;
+    ::ll::TypedStorage<8, 8, int64> mOldTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AgentRenderData& operator=(AgentRenderData const&);
-    AgentRenderData(AgentRenderData const&);
-    AgentRenderData();
 };

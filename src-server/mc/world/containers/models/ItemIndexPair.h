@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/ItemStack.h"
+
 struct ItemIndexPair {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 152> mUnk43a6ad;
-    ::ll::UntypedStorage<4, 4>   mUnka4769e;
+    ::ll::TypedStorage<8, 152, ::ItemStack> item;
+    ::ll::TypedStorage<4, 4, int>           index;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemIndexPair& operator=(ItemIndexPair const&);
-    ItemIndexPair(ItemIndexPair const&);
-    ItemIndexPair();
 };

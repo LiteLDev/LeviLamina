@@ -2,22 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+
 namespace Util::Agent {
 
 struct SimulatedMoveResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkbe6546;
-    ::ll::UntypedStorage<4, 4> mUnkcc7657;
-    ::ll::UntypedStorage<1, 1> mUnkfd5051;
+    ::ll::TypedStorage<4, 8, ::Vec2> xzResult;
+    ::ll::TypedStorage<4, 4, float>  yResult;
+    ::ll::TypedStorage<1, 1, bool>   isReachable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SimulatedMoveResult& operator=(SimulatedMoveResult const&);
-    SimulatedMoveResult(SimulatedMoveResult const&);
-    SimulatedMoveResult();
 };
 
 } // namespace Util::Agent

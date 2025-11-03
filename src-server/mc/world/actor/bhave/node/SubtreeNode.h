@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/bhave/BehaviorData.h"
 #include "mc/world/actor/bhave/BehaviorStatus.h"
+#include "mc/world/actor/bhave/BehaviorTreeDefinitionPtr.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 
 // auto generated forward declare list
@@ -15,16 +17,10 @@ class SubtreeNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkb9afe0;
-    ::ll::UntypedStorage<8, 8>  mUnkaab666;
-    ::ll::UntypedStorage<8, 88> mUnkba9609;
+    ::ll::TypedStorage<8, 16, ::BehaviorTreeDefinitionPtr>      mSubtreePtr;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorNode>> mSubtreeHead;
+    ::ll::TypedStorage<8, 88, ::BehaviorData>                   mSubtreeData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubtreeNode& operator=(SubtreeNode const&);
-    SubtreeNode(SubtreeNode const&);
-    SubtreeNode();
 
 public:
     // virtual functions
@@ -42,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFromDefinition(::Actor& owner);
+    MCAPI void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
 public:

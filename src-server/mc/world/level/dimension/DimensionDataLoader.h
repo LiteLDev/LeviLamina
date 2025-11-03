@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/puv/LoadResult.h"
+#include "mc/deps/puv/SlicedLoader.h"
 #include "mc/world/level/GeneratorType.h"
 
 // auto generated forward declare list
@@ -17,41 +18,43 @@ class DimensionDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnk9d3a4b;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::SlicedLoader<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument, nullptr_t, nullptr_t>>
+        mDimensionDefinitionLoader;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DimensionDataLoader& operator=(DimensionDataLoader const&);
-    DimensionDataLoader(DimensionDataLoader const&);
     DimensionDataLoader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DimensionDataLoader(::cereal::ReflectionCtx const& ctx);
+    MCAPI explicit DimensionDataLoader(::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
     load(::Puv::Input const& input);
 
-    MCNAPI ~DimensionDataLoader();
+    MCAPI ~DimensionDataLoader();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::GeneratorType> stringToGeneratorType(::std::string const& generatorNameString);
+    MCAPI static ::std::optional<::GeneratorType> stringToGeneratorType(::std::string const& generatorNameString);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

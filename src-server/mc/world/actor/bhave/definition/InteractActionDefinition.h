@@ -15,15 +15,9 @@ class InteractActionDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkdddbc2;
-    ::ll::UntypedStorage<8, 32> mUnk455be2;
+    ::ll::TypedStorage<4, 4, int>            mInteractTicks;
+    ::ll::TypedStorage<8, 32, ::std::string> mInteractTicksId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InteractActionDefinition& operator=(InteractActionDefinition const&);
-    InteractActionDefinition(InteractActionDefinition const&);
-    InteractActionDefinition();
 
 public:
     // virtual functions
@@ -38,7 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCFOLD void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:

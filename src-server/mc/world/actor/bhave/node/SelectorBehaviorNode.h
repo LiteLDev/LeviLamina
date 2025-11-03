@@ -15,15 +15,9 @@ class SelectorBehaviorNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1fcce1;
-    ::ll::UntypedStorage<8, 8> mUnk2d572e;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorNode>> mActiveChild;
+    ::ll::TypedStorage<8, 8, uint64>                            mCurrentIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SelectorBehaviorNode& operator=(SelectorBehaviorNode const&);
-    SelectorBehaviorNode(SelectorBehaviorNode const&);
-    SelectorBehaviorNode();
 
 public:
     // virtual functions
@@ -41,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFromDefinition(::Actor& owner);
+    MCFOLD void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
 public:

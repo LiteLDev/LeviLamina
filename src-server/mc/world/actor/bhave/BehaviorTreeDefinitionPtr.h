@@ -2,35 +2,35 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AutomationBehaviorTreeGroup;
+class BehaviorTreeDefinition;
+// clang-format on
+
 class BehaviorTreeDefinitionPtr {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk51d3a5;
-    ::ll::UntypedStorage<8, 8> mUnk7b4b36;
+    ::ll::TypedStorage<8, 8, ::AutomationBehaviorTreeGroup*> mGroup;
+    ::ll::TypedStorage<8, 8, ::BehaviorTreeDefinition*>      mPtr;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BehaviorTreeDefinitionPtr& operator=(BehaviorTreeDefinitionPtr const&);
-    BehaviorTreeDefinitionPtr(BehaviorTreeDefinitionPtr const&);
-    BehaviorTreeDefinitionPtr();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BehaviorTreeDefinitionPtr();
+    MCAPI ~BehaviorTreeDefinitionPtr();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BehaviorTreeDefinitionPtr const& NONE();
+    MCAPI static ::BehaviorTreeDefinitionPtr const& NONE();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

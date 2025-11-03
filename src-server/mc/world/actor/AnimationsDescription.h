@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 struct DeserializeDataParams;
 // clang-format on
 
@@ -14,14 +15,8 @@ struct AnimationsDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk649197;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::HashedString>> mActorAnimationMap;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AnimationsDescription& operator=(AnimationsDescription const&);
-    AnimationsDescription(AnimationsDescription const&);
-    AnimationsDescription();
 
 public:
     // virtual functions
@@ -39,15 +34,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
     // NOLINTEND
 
 public:

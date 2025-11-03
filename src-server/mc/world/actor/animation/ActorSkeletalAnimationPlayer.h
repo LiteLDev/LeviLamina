@@ -6,36 +6,35 @@
 #include "mc/world/actor/SkeletalHierarchyIndex.h"
 #include "mc/world/actor/animation/ActorAnimationPlayer.h"
 #include "mc/world/actor/animation/ActorAnimationType.h"
+#include "mc/world/actor/animation/ActorSkeletalAnimationPtr.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorSkeletalAnimationPtr;
 class AnimationComponent;
 class BoneOrientation;
 class ExpressionNode;
 class HashedString;
 class RenderParams;
 struct AnimationVisitor;
+struct BoneAnimationPlayer;
 // clang-format on
 
 class ActorSkeletalAnimationPlayer : public ::ActorAnimationPlayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkf2dda4;
-    ::ll::UntypedStorage<8, 24> mUnk934a88;
-    ::ll::UntypedStorage<8, 64> mUnk64ca7e;
-    ::ll::UntypedStorage<8, 8>  mUnkbf3295;
-    ::ll::UntypedStorage<8, 8>  mUnk80bd55;
-    ::ll::UntypedStorage<4, 4>  mUnk173802;
-    ::ll::UntypedStorage<4, 4>  mUnk7a32f6;
-    ::ll::UntypedStorage<4, 4>  mUnk2a6bf2;
+    ::ll::TypedStorage<8, 16, ::ActorSkeletalAnimationPtr>                                        mAnimationData;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BoneAnimationPlayer>>                               mBoneAnimationPlayers;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<int>>> mBoneToPartMapping;
+    ::ll::TypedStorage<8, 8, ::std::unordered_map<::HashedString, ::HashedString> const*> mActorParticleEffectMap;
+    ::ll::TypedStorage<8, 8, ::std::unordered_map<::HashedString, ::std::string> const*>  mActorSoundEffectMap;
+    ::ll::TypedStorage<4, 4, float>                                                       mAnimTime;
+    ::ll::TypedStorage<4, 4, float>                                                       mLastAnimTime;
+    ::ll::TypedStorage<4, 4, float>                                                       mStartDelay;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ActorSkeletalAnimationPlayer& operator=(ActorSkeletalAnimationPlayer const&);
-    ActorSkeletalAnimationPlayer(ActorSkeletalAnimationPlayer const&);
     ActorSkeletalAnimationPlayer();
 
 public:
@@ -85,20 +84,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorSkeletalAnimationPlayer(
+    MCAPI ActorSkeletalAnimationPlayer(
         ::HashedString const&       friendlyName,
         ::ActorSkeletalAnimationPtr animationData,
         ::AnimationComponent&       animationComponent,
         ::ExpressionNode const&     blendExpression
     );
 
-    MCNAPI bool _updateAnimTime(::RenderParams& renderParams);
+    MCAPI bool _updateAnimTime(::RenderParams& renderParams);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::HashedString const&       friendlyName,
         ::ActorSkeletalAnimationPtr animationData,
         ::AnimationComponent&       animationComponent,
@@ -109,36 +108,35 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $applyToPose(
+    MCAPI void $applyToPose(
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationMap,
         float                                                                             blendWeight
     );
 
-    MCNAPI void $resetAnimation();
+    MCAPI void $resetAnimation();
 
-    MCNAPI void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
+    MCFOLD void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
 
-    MCNAPI void
-    $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
+    MCAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
 
-    MCNAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
+    MCAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
 
-    MCNAPI bool $hasAnimationFinished() const;
+    MCFOLD bool $hasAnimationFinished() const;
 
-    MCNAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const&);
+    MCFOLD ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const&);
 
-    MCNAPI ::ActorAnimationType $getAnimationType() const;
+    MCFOLD ::ActorAnimationType $getAnimationType() const;
 
-    MCNAPI ::HashedString const& $getRawName() const;
+    MCAPI ::HashedString const& $getRawName() const;
 
-    MCNAPI void $visit(::AnimationVisitor&& dispatcher);
+    MCAPI void $visit(::AnimationVisitor&& dispatcher);
     // NOLINTEND
 
 public:

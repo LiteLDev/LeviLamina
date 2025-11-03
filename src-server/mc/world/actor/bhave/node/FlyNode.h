@@ -15,18 +15,12 @@ class FlyNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk326fbd;
-    ::ll::UntypedStorage<1, 1> mUnk3d45cf;
-    ::ll::UntypedStorage<1, 1> mUnk7a9d48;
-    ::ll::UntypedStorage<1, 1> mUnk98b2d0;
-    ::ll::UntypedStorage<1, 1> mUnk205cb3;
+    ::ll::TypedStorage<1, 1, bool> mHaveCheckedFlightStatus;
+    ::ll::TypedStorage<1, 1, bool> mJumpedLastTick;
+    ::ll::TypedStorage<1, 1, bool> mJumpedOnce;
+    ::ll::TypedStorage<1, 1, bool> mShouldBeFlying;
+    ::ll::TypedStorage<1, 1, bool> mShouldThrowEventIfNoStateChangeNecessary;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FlyNode& operator=(FlyNode const&);
-    FlyNode(FlyNode const&);
-    FlyNode();
 
 public:
     // virtual functions
@@ -44,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFromDefinition(::Actor& owner);
+    MCAPI void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
 public:

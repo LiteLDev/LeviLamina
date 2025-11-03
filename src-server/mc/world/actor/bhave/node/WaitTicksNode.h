@@ -15,15 +15,9 @@ class WaitTicksNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk263cb2;
-    ::ll::UntypedStorage<4, 4> mUnk575c95;
+    ::ll::TypedStorage<4, 4, int> mMaxTicks;
+    ::ll::TypedStorage<4, 4, int> mCurrTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WaitTicksNode& operator=(WaitTicksNode const&);
-    WaitTicksNode(WaitTicksNode const&);
-    WaitTicksNode();
 
 public:
     // virtual functions
@@ -41,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFromDefinition(::Actor& owner);
+    MCAPI void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
 public:

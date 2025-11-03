@@ -3,24 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/resources/JsonBetaState.h"
+#include "mc/resources/MinEngineVersion.h"
 
 // auto generated forward declare list
 // clang-format off
-class MinEngineVersion;
-class SemVersion;
 namespace SharedTypes::v1_21_120 { struct ActorDefinitions; }
 // clang-format on
 
 struct ActorDocumentDataParams {
 public:
+    // ActorDocumentDataParams inner types define
+    using Definitions = ::SharedTypes::v1_21_120::ActorDefinitions;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk378d91;
-    ::ll::UntypedStorage<8, 24> mUnk4b99f1;
-    ::ll::UntypedStorage<8, 32> mUnkd3c737;
-    ::ll::UntypedStorage<1, 1>  mUnk6b732f;
-    ::ll::UntypedStorage<1, 1>  mUnka6ee3a;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_120::ActorDefinitions&> mValue;
+    ::ll::TypedStorage<8, 24, ::SemVersion const>                         mFormatVersion;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion const>                   mMinEngineVersion;
+    ::ll::TypedStorage<1, 1, bool const>                                  mIsBaseGamePack;
+    ::ll::TypedStorage<1, 1, ::JsonBetaState const>                       mCanUseBeta;
     // NOLINTEND
 
 public:
@@ -31,9 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorDocumentDataParams(::ActorDocumentDataParams const&);
+    MCAPI ActorDocumentDataParams(::ActorDocumentDataParams const&);
 
-    MCNAPI ActorDocumentDataParams(
+    MCAPI ActorDocumentDataParams(
         ::SharedTypes::v1_21_120::ActorDefinitions& value,
         ::SemVersion const&                         formatVersion,
         ::MinEngineVersion const&                   minEngineVersion,
@@ -41,15 +45,15 @@ public:
         ::JsonBetaState                             canUseBeta
     );
 
-    MCNAPI ~ActorDocumentDataParams();
+    MCAPI ~ActorDocumentDataParams();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorDocumentDataParams const&);
+    MCAPI void* $ctor(::ActorDocumentDataParams const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::SharedTypes::v1_21_120::ActorDefinitions& value,
         ::SemVersion const&                         formatVersion,
         ::MinEngineVersion const&                   minEngineVersion,
@@ -61,6 +65,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

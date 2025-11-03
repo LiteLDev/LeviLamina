@@ -13,40 +13,40 @@ class HashedString;
 namespace persona {
 // functions
 // NOLINTBEGIN
-MCNAPI ::persona::PieceType pieceTypeFromString(::std::string const& assetTypeStr);
+MCAPI ::persona::PieceType pieceTypeFromString(::std::string const& assetTypeStr);
 
-MCNAPI ::std::string const& stringFromPieceType(::persona::PieceType assetType, bool isDefaultItem);
+MCAPI ::std::string const& stringFromPieceType(::persona::PieceType assetType, bool isDefaultItem);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::string const& ANIMATED_128X128_NAME();
+MCAPI ::std::string const& ANIMATED_128X128_NAME();
 
-MCNAPI ::std::string const& ANIMATED_128X128_TEXTURE_CONTROLLER_FIRST_PERSON();
+MCAPI ::std::string const& ANIMATED_128X128_TEXTURE_CONTROLLER_FIRST_PERSON();
 
-MCNAPI ::std::string const& ANIMATED_128X128_TEXTURE_CONTROLLER_THIRD_PERSON();
+MCAPI ::std::string const& ANIMATED_128X128_TEXTURE_CONTROLLER_THIRD_PERSON();
 
-MCNAPI ::HashedString const& ANIMATED_128X128_TEXTURE_FRAMES_VARIABLE();
+MCAPI ::HashedString const& ANIMATED_128X128_TEXTURE_FRAMES_VARIABLE();
 
-MCNAPI ::std::string const& ANIMATED_32X32_NAME();
+MCAPI ::std::string const& ANIMATED_32X32_NAME();
 
-MCNAPI ::std::string const& ANIMATED_32X32_TEXTURE_CONTROLLER_FIRST_PERSON();
+MCAPI ::std::string const& ANIMATED_32X32_TEXTURE_CONTROLLER_FIRST_PERSON();
 
-MCNAPI ::std::string const& ANIMATED_32X32_TEXTURE_CONTROLLER_THIRD_PERSON();
+MCAPI ::std::string const& ANIMATED_32X32_TEXTURE_CONTROLLER_THIRD_PERSON();
 
-MCNAPI ::HashedString const& ANIMATED_32X32_TEXTURE_FRAMES_VARIABLE();
+MCAPI ::HashedString const& ANIMATED_32X32_TEXTURE_FRAMES_VARIABLE();
 
-MCNAPI ::std::string const& ANIMATED_FACE_CONTROLLER_FIRST_PERSON();
+MCAPI ::std::string const& ANIMATED_FACE_CONTROLLER_FIRST_PERSON();
 
-MCNAPI ::std::string const& ANIMATED_FACE_CONTROLLER_THIRD_PERSON();
+MCAPI ::std::string const& ANIMATED_FACE_CONTROLLER_THIRD_PERSON();
 
-MCNAPI ::std::string const& ANIMATED_FACE_NAME();
+MCAPI ::std::string const& ANIMATED_FACE_NAME();
 
-MCNAPI ::HashedString const& ANIMATED_FACE_TEXTURE_FRAMES_VARIABLE();
+MCAPI ::HashedString const& ANIMATED_FACE_TEXTURE_FRAMES_VARIABLE();
 
-MCNAPI ::std::string const& NONE_PIECE_PATH();
+MCAPI ::std::string const& NONE_PIECE_PATH();
 
-MCNAPI ::HashedString const& USE_BLINKING_ANIMATION_VARIABLE();
+MCAPI ::HashedString const& USE_BLINKING_ANIMATION_VARIABLE();
 // NOLINTEND
 
 } // namespace persona

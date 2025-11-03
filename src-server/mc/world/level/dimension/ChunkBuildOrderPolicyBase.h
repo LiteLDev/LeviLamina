@@ -37,13 +37,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uint $registerForUpdates();
+    MCFOLD uint $registerForUpdates();
     // NOLINTEND
 
 public:

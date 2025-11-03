@@ -6,15 +6,9 @@ struct GoalDebugInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk23ce31;
-    ::ll::UntypedStorage<8, 32> mUnk4e6197;
-    ::ll::UntypedStorage<1, 1>  mUnk3b396c;
-    ::ll::UntypedStorage<4, 4>  mUnk6bce95;
+    ::ll::TypedStorage<4, 4, int>            mPriority;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<1, 1, bool>           mUsed;
+    ::ll::TypedStorage<4, 4, int>            mControlFlag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GoalDebugInfo& operator=(GoalDebugInfo const&);
-    GoalDebugInfo(GoalDebugInfo const&);
-    GoalDebugInfo();
 };

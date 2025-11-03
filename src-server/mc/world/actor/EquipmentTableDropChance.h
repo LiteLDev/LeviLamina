@@ -2,23 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/SlotWithDropChance.h"
+
 struct EquipmentTableDropChance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf20942;
-    ::ll::UntypedStorage<4, 4> mUnk649c25;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::SlotWithDropChance> mSlot;
+    ::ll::TypedStorage<4, 4, float>                                     mDropChance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EquipmentTableDropChance& operator=(EquipmentTableDropChance const&);
-    EquipmentTableDropChance(EquipmentTableDropChance const&);
-    EquipmentTableDropChance();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setSlotFromEquipmentSlotName(::std::string const& equipmentSlotName);
+    MCAPI void setSlotFromEquipmentSlotName(::std::string const& equipmentSlotName);
     // NOLINTEND
 };

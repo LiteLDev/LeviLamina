@@ -8,14 +8,8 @@ struct InspectItemSpace {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc71b2e;
+    ::ll::TypedStorage<4, 4, int> slot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InspectItemSpace& operator=(InspectItemSpace const&);
-    InspectItemSpace(InspectItemSpace const&);
-    InspectItemSpace();
 };
 
 } // namespace AgentComponents::Actions
