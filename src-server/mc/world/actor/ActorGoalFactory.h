@@ -9,12 +9,6 @@ class ActorGoalFactory : public ::EntityGoalFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk53ca53;
+    ::ll::TypedStorage<1, 1, bool> mGenerateDoc;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorGoalFactory& operator=(ActorGoalFactory const&);
-    ActorGoalFactory(ActorGoalFactory const&);
-    ActorGoalFactory();
 };

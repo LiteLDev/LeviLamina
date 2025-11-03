@@ -195,7 +195,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool
+        MCAPI bool
         setSpawnPoint(::BlockPos const& playerPosition, ::DimensionType dimension, ::BlockPos const& spawnBlock);
         // NOLINTEND
     };
@@ -431,7 +431,7 @@ public:
     virtual bool isInTrialMode();
 
     // vIndex: 143
-    virtual void setSpeed(float speed) /*override*/;
+    virtual void setSpeed(float _speed) /*override*/;
 
     // vIndex: 150
     virtual int getItemUseDuration() const /*override*/;
@@ -449,7 +449,7 @@ public:
     virtual bool isDamageBlocked(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 161
     virtual ::std::vector<::ItemStack const*> getAllHandEquipment() const /*override*/;
@@ -565,7 +565,7 @@ public:
     virtual bool isSilentObserver() const /*override*/;
 
     // vIndex: 112
-    virtual void useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem) /*override*/;
+    virtual void useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem) /*override*/;
 
     // vIndex: 211
     virtual bool isLoading() const;
@@ -1212,7 +1212,7 @@ public:
 
     MCFOLD bool $isInTrialMode();
 
-    MCAPI void $setSpeed(float speed);
+    MCAPI void $setSpeed(float _speed);
 
     MCAPI int $getItemUseDuration() const;
 
@@ -1224,7 +1224,7 @@ public:
 
     MCAPI bool $isDamageBlocked(::ActorDamageSource const& source) const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI ::std::vector<::ItemStack const*> $getAllHandEquipment() const;
 
@@ -1305,7 +1305,7 @@ public:
 
     MCAPI bool $isSilentObserver() const;
 
-    MCAPI void $useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem);
+    MCAPI void $useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
     MCFOLD bool $isLoading() const;
 

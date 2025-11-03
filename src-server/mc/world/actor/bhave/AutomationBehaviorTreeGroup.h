@@ -4,18 +4,25 @@
 
 // auto generated forward declare list
 // clang-format off
+class BehaviorFactory;
 class BehaviorTreeDefinition;
 class BehaviorTreeDefinitionPtr;
+class ResourcePackManager;
 // clang-format on
 
 class AutomationBehaviorTreeGroup {
 public:
+    // AutomationBehaviorTreeGroup inner types define
+    using BehaviorDefinitionMap = ::std::unordered_map<::std::string, ::std::unique_ptr<::BehaviorTreeDefinition>>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6be485;
-    ::ll::UntypedStorage<8, 8>  mUnkf40c09;
-    ::ll::UntypedStorage<8, 64> mUnk9e3c09;
-    ::ll::UntypedStorage<8, 64> mUnkcdf6b0;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager&> mResourcePackManager;
+    ::ll::TypedStorage<8, 8, ::BehaviorFactory&>     mFactory;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::BehaviorTreeDefinition>>>
+                                                                                  mDefinitions;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::BehaviorTreeDefinitionPtr*>> mRegisteredPtrs;
     // NOLINTEND
 
 public:
@@ -27,8 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _removeRef(::BehaviorTreeDefinitionPtr& ref);
+    MCAPI void _removeRef(::BehaviorTreeDefinitionPtr& ref);
 
-    MCNAPI ::BehaviorTreeDefinitionPtr tryGetDefinition(::std::string const& defId);
+    MCAPI ::BehaviorTreeDefinitionPtr tryGetDefinition(::std::string const& defId);
     // NOLINTEND
 };

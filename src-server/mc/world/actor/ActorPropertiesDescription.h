@@ -5,11 +5,16 @@
 // auto generated inclusion list
 #include "mc/world/actor/DefintionDescription.h"
 
+// auto generated forward declare list
+// clang-format off
+class PropertyGroup;
+// clang-format on
+
 struct ActorPropertiesDescription : public ::DefintionDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk4b6cfa;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PropertyGroup const>> mPropertyGroup;
     // NOLINTEND
 
 public:
@@ -30,19 +35,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ActorPropertiesDescription& operator=(::ActorPropertiesDescription const&);
+    MCAPI ::ActorPropertiesDescription& operator=(::ActorPropertiesDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
     // NOLINTEND
 
 public:

@@ -6,13 +6,7 @@ struct BoneAnimationChannelPlayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1a36cf;
-    ::ll::UntypedStorage<4, 4> mUnk49a5a0;
+    ::ll::TypedStorage<4, 4, uint>  mEndFrameIndex;
+    ::ll::TypedStorage<4, 4, float> mTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BoneAnimationChannelPlayer& operator=(BoneAnimationChannelPlayer const&);
-    BoneAnimationChannelPlayer(BoneAnimationChannelPlayer const&);
-    BoneAnimationChannelPlayer();
 };

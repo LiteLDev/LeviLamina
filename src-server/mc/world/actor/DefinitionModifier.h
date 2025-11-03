@@ -2,29 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class DefinitionTrigger;
+class EventResponse;
+// clang-format on
+
 struct DefinitionModifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc07185;
-    ::ll::UntypedStorage<8, 24> mUnk87a0c8;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DefinitionTrigger>>    mTriggers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::EventResponse const*>> mResponses;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DefinitionModifier& operator=(DefinitionModifier const&);
-    DefinitionModifier(DefinitionModifier const&);
-    DefinitionModifier();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~DefinitionModifier();
+    MCAPI ~DefinitionModifier();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

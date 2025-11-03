@@ -7,26 +7,22 @@
 class Actor;
 class CompoundTag;
 class HashedString;
+class PropertyGroup;
 // clang-format on
 
 class PropertyGroupManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk64dcbf;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::shared_ptr<::PropertyGroup const>>>
+        mPropertyGroups;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PropertyGroupManager& operator=(PropertyGroupManager const&);
-    PropertyGroupManager(PropertyGroupManager const&);
-    PropertyGroupManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CompoundTag getActorPropertyDataTag(::HashedString const& actorCanonicalName) const;
+    MCAPI ::CompoundTag getActorPropertyDataTag(::HashedString const& actorCanonicalName) const;
 
-    MCNAPI void tryInitPropertiesOnActor(::Actor& actor) const;
+    MCAPI void tryInitPropertiesOnActor(::Actor& actor) const;
     // NOLINTEND
 };

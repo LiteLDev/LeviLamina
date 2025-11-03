@@ -21,10 +21,12 @@ public:
         Unknown = 5,
     };
 
+    using SizeInfoList = ::std::unordered_map<::persona::BodySize::Type, ::persona::SizeInfo>;
+
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::persona::BodySize::Type, ::persona::SizeInfo> const& mInfoList();
+    MCAPI static ::std::unordered_map<::persona::BodySize::Type, ::persona::SizeInfo> const& mInfoList();
     // NOLINTEND
 };
 

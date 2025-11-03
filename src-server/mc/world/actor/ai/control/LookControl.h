@@ -27,9 +27,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeInternal(::Mob& mob);
+    MCFOLD void $initializeInternal(::Mob& mob);
 
-    MCNAPI void $tick(::Mob& mob);
+    MCAPI void $tick(::Mob& mob);
     // NOLINTEND
 
 public:

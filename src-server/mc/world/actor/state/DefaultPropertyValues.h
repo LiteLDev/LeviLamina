@@ -9,17 +9,21 @@ class ExpressionNode;
 
 struct DefaultPropertyValues {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk70e50a;
-    ::ll::UntypedStorage<8, 24> mUnkddd0df;
-    ::ll::UntypedStorage<8, 24> mUnk9ca6fd;
-    ::ll::UntypedStorage<8, 24> mUnk5ee02a;
-    // NOLINTEND
+    // DefaultPropertyValues inner types define
+    using IntOrMolang = ::std::variant<int, ::ExpressionNode>;
+
+    using FloatOrMolang = ::std::variant<float, ::ExpressionNode>;
+
+    using BoolOrMolang = ::std::variant<bool, ::ExpressionNode>;
+
+    using SizeTOrMolang = ::std::variant<uint64, ::ExpressionNode>;
 
 public:
-    // prevent constructor by default
-    DefaultPropertyValues& operator=(DefaultPropertyValues const&);
-    DefaultPropertyValues(DefaultPropertyValues const&);
-    DefaultPropertyValues();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::variant<int, ::ExpressionNode>>>    mIntValueOrExpressions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::variant<float, ::ExpressionNode>>>  mFloatValueOrExpressions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::variant<bool, ::ExpressionNode>>>   mBoolValueOrExpressions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::variant<uint64, ::ExpressionNode>>> mEnumIndexValueOrExpressions;
+    // NOLINTEND
 };

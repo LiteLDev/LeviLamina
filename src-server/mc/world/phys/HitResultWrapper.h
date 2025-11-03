@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/phys/HitResult.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -14,28 +18,22 @@ class HitResultWrapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 136> mUnk1c34b7;
-    ::ll::UntypedStorage<8, 136> mUnk8defd0;
-    ::ll::UntypedStorage<8, 16>  mUnk41fb9b;
-    ::ll::UntypedStorage<8, 16>  mUnk9429f5;
+    ::ll::TypedStorage<8, 136, ::HitResult>                    mHitResult;
+    ::ll::TypedStorage<8, 136, ::HitResult>                    mLiquidHitResult;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnRemoveActorEntityReferences;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserRemoved;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HitResultWrapper& operator=(HitResultWrapper const&);
-    HitResultWrapper(HitResultWrapper const&);
-    HitResultWrapper();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _onActorRemoved(::Actor const& actor);
+    MCFOLD void _onActorRemoved(::Actor const& actor);
 
-    MCNAPI void _onGameplayUserRemoved(::EntityContext const& entity);
+    MCAPI void _onGameplayUserRemoved(::EntityContext const& entity);
 
-    MCNAPI void _removeIfActorMatches(::Actor const& actor);
+    MCFOLD void _removeIfActorMatches(::Actor const& actor);
 
-    MCNAPI void initialize(
+    MCAPI void initialize(
         ::IActorManagerConnector&        actorManagerConnector,
         ::IGameplayUserManagerConnector& gameplayUserManagerConnector
     );

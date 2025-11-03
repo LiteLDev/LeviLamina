@@ -15,15 +15,9 @@ class SequenceBehaviorNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk78378f;
-    ::ll::UntypedStorage<8, 8> mUnkf09ebd;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorNode>> mActiveChild;
+    ::ll::TypedStorage<8, 8, uint64>                            mCurrentIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SequenceBehaviorNode& operator=(SequenceBehaviorNode const&);
-    SequenceBehaviorNode(SequenceBehaviorNode const&);
-    SequenceBehaviorNode();
 
 public:
     // virtual functions
@@ -41,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFromDefinition(::Actor& owner);
+    MCFOLD void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
 public:

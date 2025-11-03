@@ -6,13 +6,7 @@ struct SkinData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk92d40b;
-    ::ll::UntypedStorage<4, 8> mUnk7c0832;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mVariant;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mMarkVariant;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SkinData& operator=(SkinData const&);
-    SkinData(SkinData const&);
-    SkinData();
 };

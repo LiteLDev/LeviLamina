@@ -2,18 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class CommandRationalRange;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/server/commands/CommandRationalRange.h"
 
 struct HasPropertyFilter {
 public:
+    // HasPropertyFilter inner types define
+    using ValueVariant = ::std::variant<::CommandRationalRange, bool, ::std::string>;
+
+    using OptionalValueVariant = ::std::optional<::std::variant<::CommandRationalRange, bool, ::std::string>>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk23569d;
-    ::ll::UntypedStorage<1, 1>  mUnkdb1415;
-    ::ll::UntypedStorage<8, 48> mUnk3bfe6a;
+    ::ll::TypedStorage<8, 48, ::HashedString> mPropertyName;
+    ::ll::TypedStorage<1, 1, bool>            mInverted;
+    ::ll::TypedStorage<8, 48, ::std::optional<::std::variant<::CommandRationalRange, bool, ::std::string>>> mValue;
     // NOLINTEND
 
 public:
@@ -24,22 +29,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI HasPropertyFilter(::HasPropertyFilter&&);
+    MCAPI HasPropertyFilter(::HasPropertyFilter&&);
 
-    MCNAPI ::HasPropertyFilter& operator=(::HasPropertyFilter const&);
+    MCAPI ::HasPropertyFilter& operator=(::HasPropertyFilter const&);
 
-    MCNAPI ~HasPropertyFilter();
+    MCAPI ~HasPropertyFilter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::HasPropertyFilter&&);
+    MCAPI void* $ctor(::HasPropertyFilter&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

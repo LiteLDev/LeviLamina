@@ -41,7 +41,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void tick(::Strider& strider);
+        MCAPI void tick(::Strider& strider);
         // NOLINTEND
     };
 

@@ -39,14 +39,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk6fe7f1;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CopyableDataList& operator=(CopyableDataList const&);
-        CopyableDataList(CopyableDataList const&);
-        CopyableDataList();
     };
 
 public:

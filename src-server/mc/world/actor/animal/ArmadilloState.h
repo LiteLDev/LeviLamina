@@ -10,15 +10,15 @@ class HashedString;
 namespace ArmadilloState {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::HashedString const& ROLLED_UP();
+MCAPI ::HashedString const& ROLLED_UP();
 
-MCNAPI ::HashedString const& ROLLED_UP_PEEKING();
+MCAPI ::HashedString const& ROLLED_UP_PEEKING();
 
-MCNAPI ::HashedString const& ROLLED_UP_RELAXING();
+MCAPI ::HashedString const& ROLLED_UP_RELAXING();
 
-MCNAPI ::HashedString const& ROLLED_UP_UNROLLING();
+MCAPI ::HashedString const& ROLLED_UP_UNROLLING();
 
-MCNAPI ::HashedString const& UNROLLED();
+MCAPI ::HashedString const& UNROLLED();
 // NOLINTEND
 
 } // namespace ArmadilloState

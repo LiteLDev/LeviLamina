@@ -24,7 +24,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::persona::ArmSize::Type, ::persona::SizeInfo> const& mInfoList();
+    MCAPI static ::std::unordered_map<::persona::ArmSize::Type, ::persona::SizeInfo> const& mInfoList();
     // NOLINTEND
 };
 

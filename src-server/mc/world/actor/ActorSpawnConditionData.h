@@ -2,30 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BiomeFilterGroup.h"
+#include "mc/world/level/biome/MobSpawnRules.h"
+
 struct ActorSpawnConditionData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnke7ee7e;
-    ::ll::UntypedStorage<8, 64>  mUnk9bc0ae;
-    ::ll::UntypedStorage<8, 392> mUnk4bca28;
+    ::ll::TypedStorage<4, 4, int>                 mSpawnWeight;
+    ::ll::TypedStorage<8, 64, ::BiomeFilterGroup> mBiomeFilter;
+    ::ll::TypedStorage<8, 392, ::MobSpawnRules>   mSpawnCondition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorSpawnConditionData& operator=(ActorSpawnConditionData const&);
-    ActorSpawnConditionData(ActorSpawnConditionData const&);
-    ActorSpawnConditionData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ActorSpawnConditionData();
+    MCAPI ~ActorSpawnConditionData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,16 +16,10 @@ class LookAtBlockNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk2cd297;
-    ::ll::UntypedStorage<4, 4>  mUnkab2608;
-    ::ll::UntypedStorage<4, 4>  mUnkfb8e4c;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
+    ::ll::TypedStorage<4, 4, int>         mDelayTicks;
+    ::ll::TypedStorage<4, 4, int>         mDelayCounter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LookAtBlockNode& operator=(LookAtBlockNode const&);
-    LookAtBlockNode(LookAtBlockNode const&);
-    LookAtBlockNode();
 
 public:
     // virtual functions
@@ -42,7 +37,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFromDefinition(::Actor& owner);
+    MCFOLD void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
 public:

@@ -2,26 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/player/persona/ProfileType.h"
+
 namespace persona {
 
 struct PersonaCharacterHandle {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk85c790;
-    ::ll::UntypedStorage<1, 1>  mUnk752aff;
+    ::ll::TypedStorage<8, 32, ::std::string>         mSkinName;
+    ::ll::TypedStorage<1, 1, ::persona::ProfileType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PersonaCharacterHandle& operator=(PersonaCharacterHandle const&);
-    PersonaCharacterHandle(PersonaCharacterHandle const&);
-    PersonaCharacterHandle();
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::persona::PersonaCharacterHandle const& INVALID();
+    MCAPI static ::persona::PersonaCharacterHandle const& INVALID();
     // NOLINTEND
 };
 

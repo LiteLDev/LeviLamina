@@ -14,7 +14,7 @@ struct DerivedDimensionArguments;
 namespace VanillaDimensionFactory {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerDimensionTypes(::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>& dimensionFactory);
+MCAPI void registerDimensionTypes(::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>& dimensionFactory);
 // NOLINTEND
 
 } // namespace VanillaDimensionFactory

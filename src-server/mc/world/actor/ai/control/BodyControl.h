@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _rotateTowards(::Mob& mob, float targetRotation, float clampAngle);
+    MCAPI void _rotateTowards(::Mob& mob, float targetRotation, float clampAngle);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $clientTick(::Mob& mob);
+    MCAPI void $clientTick(::Mob& mob);
     // NOLINTEND
 
 public:

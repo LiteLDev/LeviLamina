@@ -15,17 +15,11 @@ class FlyDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3d66b9;
-    ::ll::UntypedStorage<8, 32> mUnkabca45;
-    ::ll::UntypedStorage<1, 1>  mUnk83f7e7;
-    ::ll::UntypedStorage<8, 32> mUnkfe353c;
+    ::ll::TypedStorage<1, 1, bool>           mShouldBeFlying;
+    ::ll::TypedStorage<8, 32, ::std::string> mShouldBeFlyingId;
+    ::ll::TypedStorage<1, 1, bool>           mShouldThrowEventIfNoStateChangeNecessary;
+    ::ll::TypedStorage<8, 32, ::std::string> mShouldThrowEventIfNoStateChangeNecessaryId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FlyDefinition& operator=(FlyDefinition const&);
-    FlyDefinition(FlyDefinition const&);
-    FlyDefinition();
 
 public:
     // virtual functions
@@ -40,7 +34,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:

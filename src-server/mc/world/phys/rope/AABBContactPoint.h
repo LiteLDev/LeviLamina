@@ -2,18 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 struct AABBContactPoint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkb20d65;
-    ::ll::UntypedStorage<4, 4>  mUnk442c9a;
-    ::ll::UntypedStorage<4, 12> mUnk43ab57;
+    ::ll::TypedStorage<4, 4, int>     mNormalIndex;
+    ::ll::TypedStorage<4, 4, float>   mSignedPenetration;
+    ::ll::TypedStorage<4, 12, ::Vec3> mNormal;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AABBContactPoint& operator=(AABBContactPoint const&);
-    AABBContactPoint(AABBContactPoint const&);
-    AABBContactPoint();
 };

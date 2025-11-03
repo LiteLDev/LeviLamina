@@ -15,15 +15,9 @@ class SelectItemDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3e5e49;
-    ::ll::UntypedStorage<8, 32> mUnk22f4bc;
+    ::ll::TypedStorage<8, 32, ::std::string> mItemName;
+    ::ll::TypedStorage<8, 32, ::std::string> mItemNameId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SelectItemDefinition& operator=(SelectItemDefinition const&);
-    SelectItemDefinition(SelectItemDefinition const&);
-    SelectItemDefinition();
 
 public:
     // virtual functions

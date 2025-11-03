@@ -12,56 +12,56 @@ class ActorLegacySaveConverter {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void convertBoat(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertBoat(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertChicken(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertChicken(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertCow(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertCow(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertCreeper(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertCreeper(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertEnderman(::Actor& entity, ::CompoundTag const&);
+    MCAPI static void convertEnderman(::Actor& entity, ::CompoundTag const&);
 
-    MCNAPI static void convertHorse(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertHorse(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertIronGolem(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertIronGolem(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertMinecart(::Actor& entity, ::CompoundTag const&);
+    MCAPI static void convertMinecart(::Actor& entity, ::CompoundTag const&);
 
-    MCNAPI static void convertMinecartHopper(::Actor& entity, ::CompoundTag const&);
+    MCAPI static void convertMinecartHopper(::Actor& entity, ::CompoundTag const&);
 
-    MCNAPI static void convertMinecartTNT(::Actor& entity, ::CompoundTag const&);
+    MCAPI static void convertMinecartTNT(::Actor& entity, ::CompoundTag const&);
 
-    MCNAPI static void convertOcelot(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertOcelot(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertPig(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertPig(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertRabbit(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertRabbit(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertSave(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertSave(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertSheep(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertSheep(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertSilverfish(::Actor& entity, ::CompoundTag const&);
+    MCAPI static void convertSilverfish(::Actor& entity, ::CompoundTag const&);
 
-    MCNAPI static void convertSkeleton(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertSkeleton(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertSlime(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertSlime(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertSnowgolem(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertSnowgolem(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertSpider(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertSpider(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertSquid(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertSquid(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertVillager(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertVillager(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertWolf(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertWolf(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertZombie(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertZombie(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void convertZombieVillager(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void convertZombieVillager(::Actor& entity, ::CompoundTag const& tag);
 
-    MCNAPI static void genericConvert(::Actor& entity, ::CompoundTag const& tag);
+    MCAPI static void genericConvert(::Actor& entity, ::CompoundTag const& tag);
     // NOLINTEND
 };

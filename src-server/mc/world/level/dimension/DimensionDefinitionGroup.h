@@ -48,39 +48,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DimensionDefinitionGroup(::DimensionDefinitionGroup const&);
+    MCAPI DimensionDefinitionGroup(::DimensionDefinitionGroup const&);
 
-    MCNAPI DimensionDefinitionGroup(::DimensionDefinitionGroup&&);
+    MCAPI DimensionDefinitionGroup(::DimensionDefinitionGroup&&);
 
-    MCNAPI DimensionDefinitionGroup(
+    MCAPI DimensionDefinitionGroup(
         ::cereal::ReflectionCtx const& ctx,
         ::ResourcePackManager* const   rpm,
         ::IMinecraftEventing&          eventing
     );
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
     tryAddDimensionDefinitionByString(
         ::std::string const&  dimensionDefinitionJSON,
         ::DimensionDataLoader dimensionLoader
     );
 
-    MCNAPI ~DimensionDefinitionGroup();
+    MCAPI ~DimensionDefinitionGroup();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::DimensionDefinitionGroup const&);
+    MCAPI void* $ctor(::DimensionDefinitionGroup const&);
 
-    MCNAPI void* $ctor(::DimensionDefinitionGroup&&);
+    MCAPI void* $ctor(::DimensionDefinitionGroup&&);
 
-    MCNAPI void*
+    MCAPI void*
     $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

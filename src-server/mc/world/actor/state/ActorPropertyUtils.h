@@ -15,14 +15,14 @@ struct MolangScriptArg;
 namespace ActorPropertyUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI bool _checkAndQueueBoolValue(
+MCAPI bool _checkAndQueueBoolValue(
     ::PropertyGroup const&,
     uint64                     overallIndex,
     ::ActorDefinitionDiffList* actorDiffList,
     bool                       value
 );
 
-MCNAPI bool _checkAndQueueEnumIndexValueByHash(
+MCAPI bool _checkAndQueueEnumIndexValueByHash(
     ::PropertyGroup const&     propertyGroup,
     uint64                     enumIndexArrayIndex,
     uint64                     overallIndex,
@@ -30,7 +30,7 @@ MCNAPI bool _checkAndQueueEnumIndexValueByHash(
     uint64                     value
 );
 
-MCNAPI bool _checkAndQueueFloatValue(
+MCAPI bool _checkAndQueueFloatValue(
     ::PropertyGroup const&,
     uint64,
     uint64                     overallIndex,
@@ -38,7 +38,7 @@ MCNAPI bool _checkAndQueueFloatValue(
     float                      value
 );
 
-MCNAPI bool _checkAndQueueIntValue(
+MCAPI bool _checkAndQueueIntValue(
     ::PropertyGroup const&,
     uint64,
     uint64                     overallIndex,
@@ -46,7 +46,7 @@ MCNAPI bool _checkAndQueueIntValue(
     int                        value
 );
 
-MCNAPI void addPendingEventResponseChange(
+MCAPI void addPendingEventResponseChange(
     ::PropertyComponent const& props,
     ::Actor&                   actor,
     ::HashedString const&      propertyName,
@@ -54,21 +54,21 @@ MCNAPI void addPendingEventResponseChange(
     ::std::string const&       displayName
 );
 
-MCNAPI bool tryQueueBoolValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, bool value);
+MCAPI bool tryQueueBoolValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, bool value);
 
-MCNAPI bool
+MCAPI bool
 tryQueueEnumIndexValueByIndex(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, uint64 value);
 
-MCNAPI bool tryQueueEnumIndexValueByString(
+MCAPI bool tryQueueEnumIndexValueByString(
     ::PropertyComponent const& props,
     ::Actor&                   actor,
     uint64                     propertyNameHash,
     ::std::string const&       value
 );
 
-MCNAPI bool tryQueueFloatValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, float value);
+MCAPI bool tryQueueFloatValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, float value);
 
-MCNAPI bool tryQueueIntValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, int value);
+MCAPI bool tryQueueIntValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, int value);
 // NOLINTEND
 
 } // namespace ActorPropertyUtils

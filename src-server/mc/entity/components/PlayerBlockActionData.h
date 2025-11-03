@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/network/packet/PlayerActionType.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,16 +16,10 @@ struct PlayerBlockActionData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk9285fa;
-    ::ll::UntypedStorage<4, 12> mUnk742f8b;
-    ::ll::UntypedStorage<4, 4>  mUnk74d969;
+    ::ll::TypedStorage<4, 4, ::PlayerActionType> mPlayerActionType;
+    ::ll::TypedStorage<4, 12, ::BlockPos>        mPos;
+    ::ll::TypedStorage<4, 4, int>                mFacing;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerBlockActionData& operator=(PlayerBlockActionData const&);
-    PlayerBlockActionData(PlayerBlockActionData const&);
-    PlayerBlockActionData();
 
 public:
     // static functions

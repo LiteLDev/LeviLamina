@@ -6,18 +6,12 @@ struct TickDeathSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke4d6ab;
+    ::ll::TypedStorage<1, 1, bool> mEnabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TickDeathSettings& operator=(TickDeathSettings const&);
-    TickDeathSettings(TickDeathSettings const&);
-    TickDeathSettings();
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::TickDeathSettings const& DEFAULT();
+    MCAPI static ::TickDeathSettings const& DEFAULT();
     // NOLINTEND
 };

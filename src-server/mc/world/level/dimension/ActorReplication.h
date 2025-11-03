@@ -2,10 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/ChunkPos.h"
+
 // auto generated forward declare list
 // clang-format off
 class ChunkSource;
 class Level;
+class ServerPlayer;
 class WeakEntityRef;
 // clang-format on
 
@@ -17,50 +21,40 @@ public:
     // clang-format on
 
     // ActorReplication inner types define
+    using PlayerIndex = ushort;
+
     struct PlayerAtChunk {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkab1853;
-        ::ll::UntypedStorage<2, 2> mUnk604313;
+        ::ll::TypedStorage<8, 8, ::ChunkPos> mChunkPos;
+        ::ll::TypedStorage<2, 2, ushort>     mPlayerIndex;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlayerAtChunk& operator=(PlayerAtChunk const&);
-        PlayerAtChunk(PlayerAtChunk const&);
-        PlayerAtChunk();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb1760f;
-    ::ll::UntypedStorage<8, 24> mUnke615be;
-    ::ll::UntypedStorage<8, 24> mUnkb223ac;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::vector<ushort>>> mPlayersAtChunks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorReplication::PlayerAtChunk>>        mPlayerInterestMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::ServerPlayer*>>>         mUnwrappedPlayerList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorReplication& operator=(ActorReplication const&);
-    ActorReplication(ActorReplication const&);
-    ActorReplication();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void processReplicationForPlayers(
+    MCAPI void processReplicationForPlayers(
         ::std::vector<::WeakEntityRef> const& playerList,
         ::Level const&                        level,
         ::ChunkSource&                        chunkSource
     );
 
-    MCNAPI ~ActorReplication();
+    MCAPI ~ActorReplication();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

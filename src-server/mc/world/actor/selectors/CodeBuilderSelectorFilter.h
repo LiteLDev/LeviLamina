@@ -2,29 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/code_builder_execution_state/CodeStatus.h"
+
 struct CodeBuilderSelectorFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkcc5927;
-    ::ll::UntypedStorage<8, 32> mUnk9d442a;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderExecutionState::CodeStatus> mStatus;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mPropertyName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CodeBuilderSelectorFilter& operator=(CodeBuilderSelectorFilter const&);
-    CodeBuilderSelectorFilter(CodeBuilderSelectorFilter const&);
-    CodeBuilderSelectorFilter();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~CodeBuilderSelectorFilter();
+    MCAPI ~CodeBuilderSelectorFilter();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

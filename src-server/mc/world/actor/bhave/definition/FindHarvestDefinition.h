@@ -15,15 +15,9 @@ class FindHarvestDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk67628d;
-    ::ll::UntypedStorage<8, 32> mUnkdcfd56;
+    ::ll::TypedStorage<8, 32, ::std::string> mItemName;
+    ::ll::TypedStorage<8, 32, ::std::string> mItemNameId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FindHarvestDefinition& operator=(FindHarvestDefinition const&);
-    FindHarvestDefinition(FindHarvestDefinition const&);
-    FindHarvestDefinition();
 
 public:
     // virtual functions

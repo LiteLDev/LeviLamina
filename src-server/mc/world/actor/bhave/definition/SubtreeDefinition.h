@@ -15,15 +15,9 @@ class SubtreeDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb8ae51;
-    ::ll::UntypedStorage<8, 24> mUnkd59133;
+    ::ll::TypedStorage<8, 32, ::std::string>                                            mSubtreeId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::std::string>>> mBehaviorDataItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubtreeDefinition& operator=(SubtreeDefinition const&);
-    SubtreeDefinition(SubtreeDefinition const&);
-    SubtreeDefinition();
 
 public:
     // virtual functions
@@ -38,13 +32,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:

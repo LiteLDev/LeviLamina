@@ -2,34 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorAnimationControllerInfo;
+// clang-format on
+
 class ActorAnimationControllerPtr {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk573969;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorAnimationControllerInfo>> mActorAnimationControllerInfoPtr;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorAnimationControllerPtr& operator=(ActorAnimationControllerPtr const&);
-    ActorAnimationControllerPtr(ActorAnimationControllerPtr const&);
-    ActorAnimationControllerPtr();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ActorAnimationControllerPtr();
+    MCAPI ~ActorAnimationControllerPtr();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::ActorAnimationControllerPtr const& NONE();
+    MCAPI static ::ActorAnimationControllerPtr const& NONE();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

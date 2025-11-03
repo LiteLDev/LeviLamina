@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/server/IServerPlayerSleepManagerConnector.h"
 #include "mc/world/level/PlayerSleepManager.h"
 
@@ -17,29 +19,35 @@ class LevelEventManager;
 class Player;
 class PlayerDeathManager;
 struct PlayerSleepStatus;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class ServerPlayerSleepManager : public ::PlayerSleepManager, public ::IServerPlayerSleepManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk1bd6b4;
-    ::ll::UntypedStorage<8, 8>   mUnk245965;
-    ::ll::UntypedStorage<8, 24>  mUnke94e86;
-    ::ll::UntypedStorage<8, 128> mUnk4e19d4;
-    ::ll::UntypedStorage<8, 128> mUnke28aa3;
-    ::ll::UntypedStorage<8, 16>  mUnk14f81a;
-    ::ll::UntypedStorage<8, 16>  mUnk5a6432;
-    ::ll::UntypedStorage<8, 16>  mUnk80dd8d;
-    ::ll::UntypedStorage<8, 16>  mUnk6765b6;
-    ::ll::UntypedStorage<1, 1>   mUnk3cbf25;
-    ::ll::UntypedStorage<1, 1>   mUnk41cf95;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> const> mGameplayUserManager;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IPlayerSleepPercentageGetter>> const>
+                                                                                        mPlayerSleepPercentageGetter;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> const> mLevelEventManager;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::Player&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnPlayerWakeUpPublisher;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+                                                               mOnWakeUpAllPlayersPublisher;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerDeathSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserAddedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserRemovedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>
+                                   mOnAnyPlayerChangeDimensionPrepareRegionCompleteSubscription;
+    ::ll::TypedStorage<1, 1, bool> mEnoughPlayersAreSleeping;
+    ::ll::TypedStorage<1, 1, bool> mShouldSendSleepMessage;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ServerPlayerSleepManager& operator=(ServerPlayerSleepManager const&);
-    ServerPlayerSleepManager(ServerPlayerSleepManager const&);
     ServerPlayerSleepManager();
 
 public:
@@ -61,28 +69,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerPlayerSleepManager(
+    MCAPI ServerPlayerSleepManager(
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::std::unique_ptr<::IPlayerSleepPercentageGetter>    playerSleepPercentageGetter,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>   levelEventManager
     );
 
-    MCNAPI void _broadcastSleepingPlayerList(::PlayerSleepStatus const& playerSleepStatus);
+    MCAPI void _broadcastSleepingPlayerList(::PlayerSleepStatus const& playerSleepStatus);
 
-    MCNAPI void _onPlayerDeath();
+    MCFOLD void _onPlayerDeath();
 
-    MCNAPI bool enoughPlayersDeepSleeping() const;
+    MCAPI bool enoughPlayersDeepSleeping() const;
 
-    MCNAPI void initializeWithPlayerDeathManager(::PlayerDeathManager& playerDeathManager);
+    MCAPI void initializeWithPlayerDeathManager(::PlayerDeathManager& playerDeathManager);
 
-    MCNAPI void
+    MCAPI void
     registerWithPlayerDimensionTransferConnector(::IPlayerDimensionTransferConnector& playerDimensionTransferConnector);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::std::unique_ptr<::IPlayerSleepPercentageGetter>    playerSleepPercentageGetter,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>   levelEventManager
@@ -92,17 +100,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $updateSleepingPlayerList();
+    MCAPI void $updateSleepingPlayerList();
 
-    MCNAPI ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
 
-    MCNAPI ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
     // NOLINTEND
 
 public:

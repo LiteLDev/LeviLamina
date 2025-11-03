@@ -4,12 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/puv/LoadResult.h"
+#include "mc/deps/puv/Loader.h"
+#include "mc/deps/puv/SlicedLoader.h"
 
 // auto generated forward declare list
 // clang-format off
 class IPackLoadContext;
 struct ActorSpawnRuleData;
 namespace Bedrock::Resources { class MinecraftDocumentInput; }
+namespace SharedTypes::v1_21_60::Spawn { struct Contents; }
 namespace br::spawn { class SpawnPlacements; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -18,35 +21,32 @@ class ActorSpawnRuleDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnk7467cf;
-    ::ll::UntypedStorage<8, 192> mUnkba8a95;
+    ::ll::TypedStorage<8, 104, ::Puv::Loader<::SharedTypes::v1_21_60::Spawn::Contents>>         mLoader;
+    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::ActorSpawnRuleData, nullptr_t, nullptr_t>> mLoaderV0;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ActorSpawnRuleDataLoader& operator=(ActorSpawnRuleDataLoader const&);
-    ActorSpawnRuleDataLoader(ActorSpawnRuleDataLoader const&);
     ActorSpawnRuleDataLoader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorSpawnRuleDataLoader(
+    MCAPI ActorSpawnRuleDataLoader(
         ::cereal::ReflectionCtx const& ctx,
         ::IPackLoadContext const&      packLoadContext,
         ::br::spawn::SpawnPlacements&  spawnPlacements
     );
 
-    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData>
-    load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
+    MCAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
-    MCNAPI ~ActorSpawnRuleDataLoader();
+    MCAPI ~ActorSpawnRuleDataLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::cereal::ReflectionCtx const& ctx,
         ::IPackLoadContext const&      packLoadContext,
         ::br::spawn::SpawnPlacements&  spawnPlacements
@@ -56,6 +56,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

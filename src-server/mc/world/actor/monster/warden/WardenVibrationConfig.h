@@ -60,19 +60,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WardenVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
+    MCAPI WardenVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
+    MCAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onSignalReceive(
+    MCAPI void $onSignalReceive(
         ::BlockSource&    region,
         ::BlockPos const& vibrationSourcePos,
         ::GameEvent const&,
@@ -82,9 +82,9 @@ public:
         ::Actor* projectileOwner
     );
 
-    MCNAPI bool $isValidVibration(::GameEvent const& gameEvent);
+    MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCNAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
+    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
     // NOLINTEND
 
 public:

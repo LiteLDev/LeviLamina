@@ -15,17 +15,11 @@ class HaveItemDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk44be53;
-    ::ll::UntypedStorage<4, 4>  mUnka0a60a;
-    ::ll::UntypedStorage<8, 32> mUnk7d94f7;
-    ::ll::UntypedStorage<8, 32> mUnke27783;
+    ::ll::TypedStorage<8, 32, ::std::string> mItemName;
+    ::ll::TypedStorage<4, 4, int>            mItemCount;
+    ::ll::TypedStorage<8, 32, ::std::string> mItemNameId;
+    ::ll::TypedStorage<8, 32, ::std::string> mItemCountId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HaveItemDefinition& operator=(HaveItemDefinition const&);
-    HaveItemDefinition(HaveItemDefinition const&);
-    HaveItemDefinition();
 
 public:
     // virtual functions

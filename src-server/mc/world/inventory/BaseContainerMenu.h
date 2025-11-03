@@ -152,8 +152,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForContainerContentChangeListener();
+    MCAPI static void** $vftableForContainerContentChangeListener();
 
-    MCNAPI static void** $vftableForIContainerManager();
+    MCAPI static void** $vftableForIContainerManager();
     // NOLINTEND
 };

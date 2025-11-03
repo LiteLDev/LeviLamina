@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/bhave/definition/BehaviorDefinition.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,15 +16,9 @@ class LookAtBlockDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnka43c13;
-    ::ll::UntypedStorage<8, 32> mUnkce98e0;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mBlockPos;
+    ::ll::TypedStorage<8, 32, ::std::string> mBlockPosId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LookAtBlockDefinition& operator=(LookAtBlockDefinition const&);
-    LookAtBlockDefinition(LookAtBlockDefinition const&);
-    LookAtBlockDefinition();
 
 public:
     // virtual functions
@@ -38,7 +33,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCFOLD void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:

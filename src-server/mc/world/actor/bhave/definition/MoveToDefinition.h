@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/bhave/definition/BehaviorDefinition.h"
 
 // auto generated forward declare list
@@ -15,17 +16,11 @@ class MoveToDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk553ca4;
-    ::ll::UntypedStorage<8, 32> mUnk651d18;
-    ::ll::UntypedStorage<4, 4>  mUnkf3165b;
-    ::ll::UntypedStorage<8, 32> mUnk147777;
+    ::ll::TypedStorage<4, 12, ::Vec3>        mPosToMoveTo;
+    ::ll::TypedStorage<8, 32, ::std::string> mPosToMoveToId;
+    ::ll::TypedStorage<4, 4, float>          mDistanceEpsilon;
+    ::ll::TypedStorage<8, 32, ::std::string> mDistanceEpsilonId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveToDefinition& operator=(MoveToDefinition const&);
-    MoveToDefinition(MoveToDefinition const&);
-    MoveToDefinition();
 
 public:
     // virtual functions
@@ -40,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:

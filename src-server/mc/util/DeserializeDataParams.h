@@ -5,11 +5,16 @@
 // auto generated inclusion list
 #include "mc/util/DeserializeDataSettings.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 struct DeserializeDataParams : public ::DeserializeDataSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk407f0e;
+    ::ll::TypedStorage<8, 8, ::Json::Value&> mValue;
     // NOLINTEND
 
 public:
@@ -21,12 +26,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~DeserializeDataParams();
+    MCAPI ~DeserializeDataParams();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

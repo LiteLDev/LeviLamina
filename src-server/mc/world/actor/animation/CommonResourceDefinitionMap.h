@@ -7,6 +7,7 @@
 class ActorAnimationControllerPtr;
 class ActorSkeletalAnimationPtr;
 class HashedString;
+struct MolangVariableSettings;
 struct NamedMolangScript;
 // clang-format on
 
@@ -14,41 +15,37 @@ class CommonResourceDefinitionMap {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk1b76f2;
-    ::ll::UntypedStorage<8, 64> mUnkbf67e1;
-    ::ll::UntypedStorage<8, 24> mUnk5f6bfa;
-    ::ll::UntypedStorage<8, 24> mUnk5bd786;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ActorSkeletalAnimationPtr>> mActorAnimationMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ActorAnimationControllerPtr>>
+                                                                       mActorAnimationControllerMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::NamedMolangScript>>      mActorAnimateScriptArray;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MolangVariableSettings>> mVariableSettings;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommonResourceDefinitionMap& operator=(CommonResourceDefinitionMap const&);
-    CommonResourceDefinitionMap(CommonResourceDefinitionMap const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CommonResourceDefinitionMap();
+    MCAPI CommonResourceDefinitionMap();
 
-    MCNAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
+    MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
 
-    MCNAPI void mergeAnimation(::HashedString const& name, ::ActorSkeletalAnimationPtr animationPtr);
+    MCAPI void mergeAnimation(::HashedString const& name, ::ActorSkeletalAnimationPtr animationPtr);
 
-    MCNAPI void
+    MCAPI void
     mergeAnimationController(::HashedString const& name, ::ActorAnimationControllerPtr animationControllerPtr);
 
-    MCNAPI ~CommonResourceDefinitionMap();
+    MCAPI ~CommonResourceDefinitionMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

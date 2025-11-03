@@ -15,17 +15,11 @@ class FindActorDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5fcff6;
-    ::ll::UntypedStorage<8, 32> mUnkc3680e;
-    ::ll::UntypedStorage<4, 4>  mUnk761f87;
-    ::ll::UntypedStorage<8, 32> mUnkd2805f;
+    ::ll::TypedStorage<8, 32, ::std::string> mEntityName;
+    ::ll::TypedStorage<8, 32, ::std::string> mEntityType;
+    ::ll::TypedStorage<4, 4, int>            mSearchRadius;
+    ::ll::TypedStorage<8, 32, ::std::string> mSearchRadiusId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FindActorDefinition& operator=(FindActorDefinition const&);
-    FindActorDefinition(FindActorDefinition const&);
-    FindActorDefinition();
 
 public:
     // virtual functions
@@ -40,13 +34,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCFOLD void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:

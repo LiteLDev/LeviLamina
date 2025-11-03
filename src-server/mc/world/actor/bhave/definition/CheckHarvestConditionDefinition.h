@@ -15,15 +15,9 @@ class CheckHarvestConditionDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk52630c;
-    ::ll::UntypedStorage<8, 32> mUnk44d92e;
+    ::ll::TypedStorage<8, 32, ::std::string> mBlockName;
+    ::ll::TypedStorage<8, 32, ::std::string> mBlockNameId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CheckHarvestConditionDefinition& operator=(CheckHarvestConditionDefinition const&);
-    CheckHarvestConditionDefinition(CheckHarvestConditionDefinition const&);
-    CheckHarvestConditionDefinition();
 
 public:
     // virtual functions

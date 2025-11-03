@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/agent/agent_commands/Command.h"
+#include "mc/world/actor/agent/agent_components/Direction.h"
 
 namespace AgentCommands {
 
@@ -11,15 +12,9 @@ class InspectDataCommand : public ::AgentCommands::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk29d4ca;
-    ::ll::UntypedStorage<2, 2> mUnk86d229;
+    ::ll::TypedStorage<1, 1, ::AgentComponents::Direction> mDir;
+    ::ll::TypedStorage<2, 2, ushort const>                 mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InspectDataCommand& operator=(InspectDataCommand const&);
-    InspectDataCommand(InspectDataCommand const&);
-    InspectDataCommand();
 
 public:
     // virtual functions
@@ -40,11 +35,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute();
+    MCFOLD void $execute();
 
-    MCNAPI bool $isDone();
+    MCFOLD bool $isDone();
 
-    MCNAPI void $fireCommandDoneEvent();
+    MCAPI void $fireCommandDoneEvent();
     // NOLINTEND
 
 public:

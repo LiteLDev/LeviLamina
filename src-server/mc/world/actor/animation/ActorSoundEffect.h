@@ -2,29 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 class ActorSoundEffect {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkcb1af2;
-    ::ll::UntypedStorage<8, 48> mUnk7c62a3;
+    ::ll::TypedStorage<8, 48, ::HashedString> mSoundEffectName;
+    ::ll::TypedStorage<8, 48, ::HashedString> mLocatorName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorSoundEffect& operator=(ActorSoundEffect const&);
-    ActorSoundEffect(ActorSoundEffect const&);
-    ActorSoundEffect();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ActorSoundEffect();
+    MCAPI ~ActorSoundEffect();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

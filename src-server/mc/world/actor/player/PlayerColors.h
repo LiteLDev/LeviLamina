@@ -10,7 +10,7 @@ namespace mce { class Color; }
 namespace PlayerColors {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::mce::Color const& YELLOW();
+MCAPI ::mce::Color const& YELLOW();
 // NOLINTEND
 
 } // namespace PlayerColors

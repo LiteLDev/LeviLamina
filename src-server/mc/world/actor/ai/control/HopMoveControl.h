@@ -36,9 +36,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 
-    MCNAPI void $setWantedPosition(::MoveControlComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed);
+    MCAPI void $setWantedPosition(::MoveControlComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed);
     // NOLINTEND
 
 public:

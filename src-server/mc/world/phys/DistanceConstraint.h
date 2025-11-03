@@ -2,22 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 class DistanceConstraint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk24d58d;
-    ::ll::UntypedStorage<4, 12> mUnke0112f;
-    ::ll::UntypedStorage<4, 4>  mUnk3d0ff3;
-    ::ll::UntypedStorage<1, 1>  mUnk833a3f;
-    ::ll::UntypedStorage<4, 4>  mUnkc062a6;
-    ::ll::UntypedStorage<4, 4>  mUnk10f7e8;
-    ::ll::UntypedStorage<4, 4>  mUnk14daac;
+    ::ll::TypedStorage<4, 4, float>   mConstraintMass;
+    ::ll::TypedStorage<4, 12, ::Vec3> mConstraintAxis;
+    ::ll::TypedStorage<4, 4, float>   mBias;
+    ::ll::TypedStorage<1, 1, bool>    mShouldEnforce;
+    ::ll::TypedStorage<4, 4, float>   mMassA;
+    ::ll::TypedStorage<4, 4, float>   mMassB;
+    ::ll::TypedStorage<4, 4, float>   mDesiredDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DistanceConstraint& operator=(DistanceConstraint const&);
-    DistanceConstraint(DistanceConstraint const&);
-    DistanceConstraint();
 };

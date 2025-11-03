@@ -15,16 +15,10 @@ class RepeatUntilSuccessNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd57cf2;
-    ::ll::UntypedStorage<4, 4> mUnkd652a1;
-    ::ll::UntypedStorage<4, 4> mUnk5f58d6;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorNode>> mActiveChild;
+    ::ll::TypedStorage<4, 4, int>                               mMaxNumberOfAttempts;
+    ::ll::TypedStorage<4, 4, int>                               mCurrentAttempt;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RepeatUntilSuccessNode& operator=(RepeatUntilSuccessNode const&);
-    RepeatUntilSuccessNode(RepeatUntilSuccessNode const&);
-    RepeatUntilSuccessNode();
 
 public:
     // virtual functions
@@ -42,7 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFromDefinition(::Actor& owner);
+    MCAPI void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
 public:

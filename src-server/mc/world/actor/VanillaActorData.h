@@ -2,19 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
+// clang-format on
+
 struct VanillaActorData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6a6056;
-    ::ll::UntypedStorage<1, 1> mUnk325334;
-    ::ll::UntypedStorage<8, 8> mUnk9e1ce1;
-    ::ll::UntypedStorage<4, 8> mUnk96212c;
+    ::ll::TypedStorage<4, 4, ::ActorType> mActorType;
+    ::ll::TypedStorage<1, 1, bool>        mAllowSummon;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Actor> (*)(::ActorDefinitionGroup*, ::ActorDefinitionIdentifier const&, ::EntityContext&)>
+                                                   mFactory;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> experimentIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VanillaActorData& operator=(VanillaActorData const&);
-    VanillaActorData(VanillaActorData const&);
-    VanillaActorData();
 };

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/agent/agent_commands/Command.h"
+#include "mc/world/actor/agent/agent_components/CollectionSpecification.h"
 
 namespace AgentCommands {
 
@@ -11,16 +12,10 @@ class CollectCommand : public ::AgentCommands::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkadc321;
-    ::ll::UntypedStorage<1, 1> mUnkf113ff;
-    ::ll::UntypedStorage<1, 1> mUnkb9caea;
+    ::ll::TypedStorage<4, 4, int>                                        mItemId;
+    ::ll::TypedStorage<1, 1, ::AgentComponents::CollectionSpecification> mCollecting;
+    ::ll::TypedStorage<1, 1, bool>                                       mDone;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CollectCommand& operator=(CollectCommand const&);
-    CollectCommand(CollectCommand const&);
-    CollectCommand();
 
 public:
     // virtual functions
@@ -38,9 +33,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute();
+    MCAPI void $execute();
 
-    MCNAPI bool $isDone();
+    MCAPI bool $isDone();
     // NOLINTEND
 
 public:

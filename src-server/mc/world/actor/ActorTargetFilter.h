@@ -21,22 +21,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk7cfec4;
-    ::ll::UntypedStorage<8, 32> mUnk3eb4d5;
-    ::ll::UntypedStorage<8, 24> mUnk101989;
-    ::ll::UntypedStorage<8, 24> mUnkf6a79d;
+    ::ll::TypedStorage<4, 4, ::ActorTargetFilter::ConditionType>  mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mKey;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>      mConditions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorTargetFilter>> mChildrenConditions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorTargetFilter& operator=(ActorTargetFilter const&);
-    ActorTargetFilter(ActorTargetFilter const&);
-    ActorTargetFilter();
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<
+    MCAPI static ::std::add_lvalue_reference_t<
         ::std::unordered_map<::HashedString, bool (*)(::ActorTargetFilter const&, ::Actor&)>>
     ConditionPredicates();
     // NOLINTEND

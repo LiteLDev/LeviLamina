@@ -37,45 +37,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PropertyComponent(::PropertyComponent&&);
+    MCAPI PropertyComponent(::PropertyComponent&&);
 
-    MCNAPI PropertyComponent(
+    MCAPI PropertyComponent(
         ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup,
         ::RenderParams&                                           renderParams
     );
 
-    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void
+    MCAPI void
     applyPendingChanges(::std::unordered_map<uint64, ::std::variant<int, float, bool, uint64>> const& pendingChanges);
 
-    MCNAPI bool getBool(uint64 h) const;
+    MCAPI bool getBool(uint64 h) const;
 
-    MCNAPI float getFloat(uint64 h) const;
+    MCAPI float getFloat(uint64 h) const;
 
-    MCNAPI int getInt(uint64 h) const;
+    MCAPI int getInt(uint64 h) const;
 
-    MCNAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
+    MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
 
-    MCNAPI ::PropertyMetadata::ContainedType getPropertyType(::HashedString const& h) const;
+    MCAPI ::PropertyMetadata::ContainedType getPropertyType(::HashedString const& h) const;
 
-    MCNAPI ::HashedString const& getString(uint64 h) const;
+    MCAPI ::HashedString const& getString(uint64 h) const;
 
-    MCNAPI ::PropertyComponent& operator=(::PropertyComponent&&);
+    MCAPI ::PropertyComponent& operator=(::PropertyComponent&&);
 
-    MCNAPI ::PropertySyncData packDirtySyncData();
+    MCAPI ::PropertySyncData packDirtySyncData();
 
-    MCNAPI ::std::optional<bool> tryGetBool(uint64 h) const;
+    MCAPI ::std::optional<bool> tryGetBool(uint64 h) const;
 
-    MCNAPI ::HashedString const* tryGetString(uint64 h) const;
+    MCAPI ::HashedString const* tryGetString(uint64 h) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PropertyComponent&&);
+    MCAPI void* $ctor(::PropertyComponent&&);
 
-    MCNAPI void*
+    MCAPI void*
     $ctor(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
     // NOLINTEND
 };

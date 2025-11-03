@@ -4112,20 +4112,20 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForWorldRecoveryTelemetryHandler();
+    MCAPI static void** $vftableForWorldRecoveryTelemetryHandler();
 
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCNAPI static void** $vftableForIScreenChangedEventing();
+    MCAPI static void** $vftableForIScreenChangedEventing();
 
-    MCNAPI static void** $vftableForIUIEventTelemetry();
+    MCAPI static void** $vftableForIUIEventTelemetry();
 
-    MCNAPI static void** $vftableForIWebviewTelemetry();
+    MCAPI static void** $vftableForIWebviewTelemetry();
 
-    MCNAPI static void** $vftableForIConnectionEventing();
+    MCAPI static void** $vftableForIConnectionEventing();
 
-    MCNAPI static void** $vftableForCrashTelemetryProcessor();
+    MCAPI static void** $vftableForCrashTelemetryProcessor();
 
-    MCNAPI static void** $vftableForIPackTelemetry();
+    MCAPI static void** $vftableForIPackTelemetry();
     // NOLINTEND
 };
