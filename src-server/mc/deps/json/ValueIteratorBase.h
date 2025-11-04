@@ -33,13 +33,13 @@ public:
             map_.~IterT();
         }
     }
+
 public:
     // member variables
     // NOLINTBEGIN
     union {
         Json::Value::ArrayValues::iterator  array_;
-        Json::Value::ObjectValues::iterator
-            map_;
+        Json::Value::ObjectValues::iterator map_;
     };
     ::ll::TypedStorage<1, 1, bool> isArray_;
     // NOLINTEND

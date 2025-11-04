@@ -14,8 +14,8 @@ class RotationData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::RelativeFloat                  mRotX;
-    ::RelativeFloat                  mRotY;
+    ::RelativeFloat         mRotX;
+    ::RelativeFloat         mRotY;
     ::std::optional<::Vec2> mCommandOriginRotation;
     // NOLINTEND
 };

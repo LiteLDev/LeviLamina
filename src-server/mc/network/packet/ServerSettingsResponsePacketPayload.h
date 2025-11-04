@@ -4,6 +4,6 @@
 
 struct ServerSettingsResponsePacketPayload {
 public:
-    uint                    mFormId;
+    uint          mFormId;
     ::std::string mFormJSON;
 };

@@ -80,6 +80,7 @@ protected:
             }
         }
         return *this;
-    }};
+    }
+};
 
 } // namespace brstd::detail::function

@@ -3,7 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 template <typename T, typename Comparator = std::less<T>>
-class MovePriorityQueue {private:
+class MovePriorityQueue {
+private:
     using Base           = std::vector<T>;
     using iterator       = Base::iterator;
     using const_iterator = Base::const_iterator;

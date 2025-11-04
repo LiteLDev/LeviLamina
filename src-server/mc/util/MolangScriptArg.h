@@ -70,7 +70,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::MolangScriptArgType mType;
-    ::MolangScriptArgPOD   mPOD;
+    ::MolangScriptArgPOD  mPOD;
     MolangScriptArgData   mData;
     // NOLINTEND
 

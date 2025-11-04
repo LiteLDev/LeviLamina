@@ -96,13 +96,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::PacketPriority                                               mPriority;
-    ::NetworkPeer::Reliability                           mReliability;
-    ::SubClientId                                                     mSenderSubId;
-    bool                                                                       mIsHandled;
+    ::PacketPriority                        mPriority;
+    ::NetworkPeer::Reliability              mReliability;
+    ::SubClientId                           mSenderSubId;
+    bool                                    mIsHandled;
     ::std::chrono::steady_clock::time_point mReceiveTimepoint;
-    ::IPacketHandlerDispatcher const*             mHandler;
-    ::Compressibility                                             mCompressible;
+    ::IPacketHandlerDispatcher const*       mHandler;
+    ::Compressibility                       mCompressible;
     // NOLINTEND
 
 public:

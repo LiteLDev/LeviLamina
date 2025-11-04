@@ -22,7 +22,8 @@ class CommandPositionFloat;
 namespace Bedrock {
 
 template <typename Category>
-class typeid_t {public:
+class typeid_t {
+public:
     ushort value{};
     [[nodiscard]] constexpr typeid_t(typeid_t const& other) : value(other.value) {}
     constexpr typeid_t& operator=(typeid_t const& other) {

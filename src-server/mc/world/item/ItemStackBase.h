@@ -52,26 +52,27 @@ public:
 public:
     LLNDAPI std::string getTypeName() const;
     LLNDAPI std::string getDescriptionName() const;
-    LLNDAPI bool isEnchanted() const;
-    LLNDAPI bool removeEnchants() const;
+    LLNDAPI bool        isEnchanted() const;
+    LLNDAPI bool        removeEnchants() const;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::WeakPtr<::Item>                                             mItem;
-    ::std::unique_ptr<::CompoundTag>               mUserData;
-    ::Block const*                                                   mBlock;
-    short                                                                     mAuxValue;
-    uchar                                                                     mCount;
-    bool                                                                       mValid_DeprecatedSeeComment;
-    bool                                                                       mShowPickUp;
-    bool                                                                       mWasPickedUp;
+    ::WeakPtr<::Item>                       mItem;
+    ::std::unique_ptr<::CompoundTag>        mUserData;
+    ::Block const*                          mBlock;
+    short                                   mAuxValue;
+    uchar                                   mCount;
+    bool                                    mValid_DeprecatedSeeComment;
+    bool                                    mShowPickUp;
+    bool                                    mWasPickedUp;
     ::std::chrono::steady_clock::time_point mPickupTime;
-    ::std::vector<::BlockType const*>            mCanPlaceOn;
-    uint64                                                                   mCanPlaceOnHash;
-    ::std::vector<::BlockType const*>            mCanDestroy;
-    uint64                                                                   mCanDestroyHash;
-    ::Tick                                                                   mBlockingTick;
-    ::std::unique_ptr<::ItemInstance>             mChargedItem;
+    ::std::vector<::BlockType const*>       mCanPlaceOn;
+    uint64                                  mCanPlaceOnHash;
+    ::std::vector<::BlockType const*>       mCanDestroy;
+    uint64                                  mCanDestroyHash;
+    ::Tick                                  mBlockingTick;
+    ::std::unique_ptr<::ItemInstance>       mChargedItem;
     // NOLINTEND
 
 public:

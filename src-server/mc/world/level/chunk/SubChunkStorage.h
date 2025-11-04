@@ -6,7 +6,8 @@
 #include "mc/world/level/chunk/sub_chunk_storage_unit/Type.h"
 
 template <typename T>
-class SubChunkStorage {public:
+class SubChunkStorage {
+public:
     // NOLINTBEGIN
     static SubChunkStorageUnit::Type           chooseTypeForElementTypeCount(size_t elementCount);
     static std::unique_ptr<SubChunkStorage<T>> makeUniform(T const& element);

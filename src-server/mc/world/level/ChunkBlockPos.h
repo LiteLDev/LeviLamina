@@ -11,8 +11,8 @@ class ChunkBlockPos {
 public:
     // member variables
     // NOLINTBEGIN
-    uchar                           x;
-    uchar                           z;
+    uchar              x;
+    uchar              z;
     ::ChunkLocalHeight y;
     // NOLINTEND
 

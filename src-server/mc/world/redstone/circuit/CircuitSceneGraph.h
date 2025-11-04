@@ -60,7 +60,7 @@ public:
     ::std::unordered_map<::BlockPos, ::CircuitSceneGraph::PendingEntry> mPendingAdds;
     ::std::unordered_map<::BlockPos, ::CircuitSceneGraph::PendingEntry> mPendingUpdates;
     ::std::unordered_map<::BlockPos, ::std::vector<::BlockPos>>         mComponentsToReEvaluate;
-    ::std::vector<::CircuitSceneGraph::PendingEntry>                               mPendingRemoves;
+    ::std::vector<::CircuitSceneGraph::PendingEntry>                    mPendingRemoves;
     // NOLINTEND
 
 public:

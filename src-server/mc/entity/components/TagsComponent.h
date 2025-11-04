@@ -6,4 +6,5 @@
 template <typename T>
 class TagsComponent : public TagsComponentBase {
 public:
-    T mTagSetID;};
+    T mTagSetID;
+};

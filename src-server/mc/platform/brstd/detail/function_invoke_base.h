@@ -210,6 +210,7 @@ public:
 
     Return operator()(Xs... args) const&& noexcept {
         return this->get_invoke()(this->mStorage, std::forward<Xs>(args)...);
-    }};
+    }
+};
 
 } // namespace brstd::detail::function

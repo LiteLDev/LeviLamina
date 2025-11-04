@@ -17,10 +17,10 @@ class TickNextTickData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::BlockPos        pos;
+    ::BlockPos     pos;
     ::Block const* mBlock;
-    ::Tick                 tick;
-    int                       priorityOffset;
+    ::Tick         tick;
+    int            priorityOffset;
     // NOLINTEND
 
 public:

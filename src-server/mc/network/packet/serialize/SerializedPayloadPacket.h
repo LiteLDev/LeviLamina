@@ -40,4 +40,5 @@ public:
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&);};
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&);
+};

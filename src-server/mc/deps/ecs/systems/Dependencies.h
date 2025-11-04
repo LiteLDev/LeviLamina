@@ -18,8 +18,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    bool                                                                   mBlocking;
-    bool                                                                   mUsesEntityFactory;
+    bool                                 mBlocking;
+    bool                                 mUsesEntityFactory;
     ::std::array<::std::vector<uint>, 6> mAccessGroups;
     // NOLINTEND
 

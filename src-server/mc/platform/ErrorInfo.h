@@ -6,7 +6,8 @@
 namespace Bedrock {
 
 template <typename E = std::error_code>
-struct ErrorInfo {public:
+struct ErrorInfo {
+public:
     ErrorInfo() = default;
 
     [[nodiscard]] constexpr E&       code() { return mError; }

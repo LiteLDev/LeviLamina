@@ -20,7 +20,7 @@ class LecternUpdatePacket : public ::Packet, public ::LecternUpdatePacketPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SerializationMode>           mSerializationMode;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:

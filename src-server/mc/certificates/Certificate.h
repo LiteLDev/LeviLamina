@@ -10,10 +10,10 @@ class Certificate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::UnverifiedCertificate                 mUnverifiedCertificate;
+    ::UnverifiedCertificate          mUnverifiedCertificate;
     ::std::unique_ptr<::Certificate> mParentCertificate;
-    bool                                                         mIsValid;
-    bool                                                         mIsSelfSigned;
+    bool                             mIsValid;
+    bool                             mIsSelfSigned;
     // NOLINTEND
 
 public:

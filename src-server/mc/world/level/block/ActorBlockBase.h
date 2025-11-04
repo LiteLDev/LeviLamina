@@ -4,4 +4,5 @@
 
 template <typename T0>
 class ActorBlockBase : public T0 {
-public:};
+public:
+};

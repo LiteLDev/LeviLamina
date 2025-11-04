@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::WeakRef<::EntityRegistry> mRegistry;
-    ::EntityId                                    mEntity;
+    ::EntityId                  mEntity;
     // NOLINTEND
 
 public:

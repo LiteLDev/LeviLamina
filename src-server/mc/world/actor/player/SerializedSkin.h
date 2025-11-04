@@ -23,6 +23,7 @@ public:
     // SerializedSkin inner types define
     using SerializedSkinWrapper =
         ::Bedrock::Application::ThreadOwner<::SerializedSkinImpl, Bedrock::Application::ThreadOwnerBehavior::Assert>;
+
 public:
     // member variables
     // NOLINTBEGIN

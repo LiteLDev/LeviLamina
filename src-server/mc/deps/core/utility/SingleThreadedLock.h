@@ -4,7 +4,8 @@
 
 namespace Core {
 
-class SingleThreadedLock {public:
+class SingleThreadedLock {
+public:
     constexpr void lock() {}
     constexpr void unlock() {}
 };

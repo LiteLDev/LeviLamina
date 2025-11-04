@@ -11,6 +11,7 @@ class MultidimensionalArray : public std::array<T, [] {
     return v;
 }()> {
 public:
-    consteval size_t dim() const { return sizeof...(Ns); }};
+    consteval size_t dim() const { return sizeof...(Ns); }
+};
 
 } // namespace Util

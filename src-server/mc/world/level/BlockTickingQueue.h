@@ -38,16 +38,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        bool                              mIsRemoved;
+        bool               mIsRemoved;
         ::TickNextTickData mData;
         // NOLINTEND
-
     };
 
     struct HashBlockTick {};
 
 
-    class TickDataSet : public ::MovePriorityQueue<::BlockTickingQueue::BlockTick, ::std::greater<::BlockTickingQueue::BlockTick>> {
+    class TickDataSet
+    : public ::MovePriorityQueue<::BlockTickingQueue::BlockTick, ::std::greater<::BlockTickingQueue::BlockTick>> {
     public:
         // member functions
         // NOLINTBEGIN
@@ -61,7 +61,6 @@ public:
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-
     };
 
 public:

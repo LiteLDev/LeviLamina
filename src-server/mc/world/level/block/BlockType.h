@@ -186,7 +186,6 @@ public:
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-
     };
 
     struct HorizontalDirectionBits {
@@ -198,7 +197,6 @@ public:
         ::ll::TypedStorage<1, 1, bool> mSouth;
         ::ll::TypedStorage<1, 1, bool> mWest;
         // NOLINTEND
-
     };
 
     struct AlteredStateCollection {
@@ -232,7 +230,6 @@ public:
         // NOLINTBEGIN
 
         // NOLINTEND
-
     };
 
     struct RemovedStateCollection : public ::BlockType::AlteredStateCollection {
@@ -250,7 +247,6 @@ public:
             ::ll::TypedStorage<4, 4, int>                                   mData;
             ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::BlockType>> mBlockType;
             // NOLINTEND
-
         };
 
     public:
@@ -294,7 +290,6 @@ public:
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-
     };
 
     struct RearrangedStateCollection : public ::BlockType::AlteredStateCollection {
@@ -372,7 +367,6 @@ public:
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-
     };
 
 public:
@@ -382,6 +376,7 @@ public:
     LLNDAPI static optional_ref<BlockType const> tryGetFromRegistry(uint legacyBlockID);
 
     LLNDAPI static optional_ref<BlockType> tryGetFromRegistry(std::string_view name);
+
 public:
     // member variables
     // NOLINTBEGIN

@@ -14,4 +14,5 @@ template <>
 struct ScriptingGameplayEvent<CoordinatorResult>
 : ConstEventVariant<ScriptCommandMessageEvent, ScriptModuleStartupEvent, ScriptModuleShutdownEvent> {
     using ConstEventVariant<ScriptCommandMessageEvent, ScriptModuleStartupEvent, ScriptModuleShutdownEvent>::
-        ConstEventVariant;};
+        ConstEventVariant;
+};

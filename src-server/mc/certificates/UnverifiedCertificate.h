@@ -16,7 +16,7 @@ class UnverifiedCertificate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::WebToken const                                                   mRawToken;
+    ::WebToken const                           mRawToken;
     ::std::unique_ptr<::UnverifiedCertificate> mParentUnverifiedCertificate;
     // NOLINTEND
 

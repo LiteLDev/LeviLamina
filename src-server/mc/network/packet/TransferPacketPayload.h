@@ -5,6 +5,6 @@
 struct TransferPacketPayload {
 public:
     ::std::string mDestination;
-    ushort                mDestinationPort;
+    ushort        mDestinationPort;
     bool          mReloadWorld;
 };

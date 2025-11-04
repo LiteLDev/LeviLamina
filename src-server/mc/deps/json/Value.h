@@ -66,6 +66,7 @@ public:
             }
             return false;
         }
+
     public:
         // member functions
         // NOLINTBEGIN
@@ -144,7 +145,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::Json::Value::ValueHolder value_;
-    ::Json::ValueType                   type_;
+    ::Json::ValueType          type_;
     // NOLINTEND
 
 public:

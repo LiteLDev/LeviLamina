@@ -7,6 +7,6 @@ public:
     // member variables
     // NOLINTBEGIN
     float mOffset;
-    bool   mRelative;
+    bool  mRelative;
     // NOLINTEND
 };

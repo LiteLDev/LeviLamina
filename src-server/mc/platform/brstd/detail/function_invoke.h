@@ -71,6 +71,7 @@ public:
         function_invoke tmp = std::move(other);
         other               = std::move(*this);
         *this               = std::move(tmp);
-    }};
+    }
+};
 
 } // namespace brstd::detail::function

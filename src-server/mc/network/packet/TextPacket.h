@@ -27,14 +27,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::TextPacketType                              mType;
-    ::std::string                                   mAuthor;
-    ::std::string                                   mMessage;
+    ::TextPacketType               mType;
+    ::std::string                  mAuthor;
+    ::std::string                  mMessage;
     ::std::optional<::std::string> mFilteredMessage;
-    ::std::vector<::std::string>     params;
-    bool                                                      mLocalize;
-    ::std::string                                   mXuid;
-    ::std::string                                   mPlatformId;
+    ::std::vector<::std::string>   params;
+    bool                           mLocalize;
+    ::std::string                  mXuid;
+    ::std::string                  mPlatformId;
     // NOLINTEND
 
 public:

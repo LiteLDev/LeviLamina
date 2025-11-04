@@ -25,19 +25,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::Vec3                   mStartPos;
-    ::Vec3                   mRayDir;
-    ::HitResultType  mType;
-    uchar                      mFacing;
-    ::BlockPos           mBlock;
-    ::Vec3                   mPos;
+    ::Vec3          mStartPos;
+    ::Vec3          mRayDir;
+    ::HitResultType mType;
+    uchar           mFacing;
+    ::BlockPos      mBlock;
+    ::Vec3          mPos;
     ::WeakEntityRef mEntity;
-    ::AABB                   mEntityAABB;
-    bool                        mIsHitLiquid;
-    uchar                      mLiquidFacing;
-    ::BlockPos           mLiquid;
-    ::Vec3                   mLiquidPos;
-    bool                        mIndirectHit;
+    ::AABB          mEntityAABB;
+    bool            mIsHitLiquid;
+    uchar           mLiquidFacing;
+    ::BlockPos      mLiquid;
+    ::Vec3          mLiquidPos;
+    bool            mIndirectHit;
     // NOLINTEND
 
 public:

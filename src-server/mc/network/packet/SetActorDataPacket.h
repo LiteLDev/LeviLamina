@@ -27,10 +27,10 @@ class SetActorDataPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ActorRuntimeID                                                          mId;
+    ::ActorRuntimeID                             mId;
     ::std::vector<::std::unique_ptr<::DataItem>> mPackedItems;
-    ::PropertySyncData                                                     mSynchedProperties;
-    ::PlayerInputTick                                                        mTick;
+    ::PropertySyncData                           mSynchedProperties;
+    ::PlayerInputTick                            mTick;
     // NOLINTEND
 
 public:

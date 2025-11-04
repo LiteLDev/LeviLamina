@@ -6,7 +6,8 @@
 namespace Core {
 
 template <class ObserverType, class LockType>
-class Subject {public:
+class Subject {
+public:
     LockType                                  mLock;
     std::vector<gsl::not_null<ObserverType*>> mObservers;
 

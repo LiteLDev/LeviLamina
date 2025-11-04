@@ -91,20 +91,21 @@ public:
     [[nodiscard]] constexpr ConstReverseIterator crbegin() const noexcept { return ConstReverseIterator{cend()}; }
     [[nodiscard]] constexpr ReverseIterator      rend() noexcept { return ReverseIterator{begin()}; }
     [[nodiscard]] constexpr ConstReverseIterator crend() const noexcept { return ConstReverseIterator{cbegin()}; }
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::SharedTypes::Legacy::ContainerType                                        mContainerType;
-    ::SharedTypes::Legacy::ContainerType                                        mGameplayContainerType;
+    ::SharedTypes::Legacy::ContainerType                    mContainerType;
+    ::SharedTypes::Legacy::ContainerType                    mGameplayContainerType;
     ::std::unordered_set<::ContainerContentChangeListener*> mContentChangeListeners;
-    ::std::unordered_set<::ContainerSizeChangeListener*>       mSizeChangeListeners;
-    ::std::unordered_set<::ContainerCloseListener*>                 mCloseListeners;
-    ::Container::PublisherWrapper                                                     mRemovedPublisher;
+    ::std::unordered_set<::ContainerSizeChangeListener*>    mSizeChangeListeners;
+    ::std::unordered_set<::ContainerCloseListener*>         mCloseListeners;
+    ::Container::PublisherWrapper                           mRemovedPublisher;
     ::std::deque<TransactionContext>                        mTransactionContextStack;
     ::Bedrock::Safety::RedactableString                     mName;
-    bool                                                                                    mCustomName;
-    ::ContainerOwner                                                           mContainerOwner;
-    ::ContainerRuntimeId                                                    mContainerRuntimeId;
+    bool                                                    mCustomName;
+    ::ContainerOwner                                        mContainerOwner;
+    ::ContainerRuntimeId                                    mContainerRuntimeId;
     // NOLINTEND
 
 public:

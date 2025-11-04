@@ -28,11 +28,12 @@ public:
     LLNDAPI ll::Expected<Block::BlockStateValueType> toStateValue() const;
 
     LLNDAPI static ll::Expected<Block::BlockStatesType> toStateMap(std::vector<BlockStateCommandParam> const&);
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::std::string                                  mBlockState;
-    ::std::string                                  mValue;
+    ::std::string                  mBlockState;
+    ::std::string                  mValue;
     ::BlockStateCommandParam::Type mType;
     // NOLINTEND
 

@@ -101,9 +101,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::RakNet::RakPeerInterface&                                            mRakPeer;
-        ::NetworkIdentifier                                                          mId;
-        ::std::string                                                                       mSendBuffer;
+        ::RakNet::RakPeerInterface&   mRakPeer;
+        ::NetworkIdentifier           mId;
+        ::std::string                 mSendBuffer;
         ::std::vector<ReadBufferData> mReadBufferDatas;
         int                           mApproximateMaxBps;
         int                           mLastPing;
@@ -162,8 +162,10 @@ public:
         // NOLINTBEGIN
         MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
-        MCAPI ::NetworkPeer::DataStatus $_receivePacket(::std::string& outData, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
-);
+        MCAPI ::NetworkPeer::DataStatus $_receivePacket(
+            ::std::string&                                                    outData,
+            ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+        );
         MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
         MCAPI void $update();

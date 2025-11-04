@@ -6,4 +6,5 @@
 template <typename T0>
 class CopperBlock : public T0 {
 public:
-    CopperBehavior mCopperBehavior;};
+    CopperBehavior mCopperBehavior;
+};

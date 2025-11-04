@@ -15,10 +15,11 @@ struct SystemInfo {
 public:
     // SystemInfo inner types define
     using GenerateComponentInfoVectorFunction = ::std::vector<::ComponentInfo> (*)();
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::std::string                                                                        mName;
+    ::std::string                                                  mName;
     ::Dependencies                                                 mDependencies;
     ::ll::TypedStorage<8, 8, ::std::vector<::ComponentInfo> (*)()> mGenerateDetailedInfo;
     // NOLINTEND

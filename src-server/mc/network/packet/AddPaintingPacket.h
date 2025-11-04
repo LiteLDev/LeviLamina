@@ -21,7 +21,7 @@ class AddPaintingPacket : public ::Packet, public ::AddPaintingPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SerializationMode>         mSerializationMode;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:

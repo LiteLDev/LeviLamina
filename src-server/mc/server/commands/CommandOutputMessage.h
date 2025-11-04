@@ -9,8 +9,8 @@ class CommandOutputMessage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::CommandOutputMessageType      mType;
-    ::std::string                               mMessageId;
+    ::CommandOutputMessageType   mType;
+    ::std::string                mMessageId;
     ::std::vector<::std::string> mParams;
     // NOLINTEND
 

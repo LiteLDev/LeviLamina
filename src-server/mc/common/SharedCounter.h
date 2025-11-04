@@ -3,7 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 template <typename T>
-class SharedCounter {public:
+class SharedCounter {
+public:
     constexpr explicit SharedCounter(T* p = nullptr) : ptr(p), share_count(1), weak_count(0) {}
 
     constexpr void addShareCount() { share_count++; }

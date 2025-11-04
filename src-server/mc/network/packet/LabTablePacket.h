@@ -20,7 +20,7 @@ class LabTablePacket : public ::Packet, public ::LabTablePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SerializationMode>      mSerializationMode;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:

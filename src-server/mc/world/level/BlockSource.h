@@ -75,6 +75,7 @@ public:
     LLNDAPI optional_ref<Container> tryGetContainer(BlockPos const& pos);
 
     LLAPI optional_ref<Actor> spawnActor(CompoundTag const&);
+
 public:
     // member variables
     // NOLINTBEGIN

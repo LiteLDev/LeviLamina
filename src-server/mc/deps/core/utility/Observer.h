@@ -6,7 +6,8 @@
 namespace Core {
 
 template <class DerivedType, class LockType>
-class Observer {public:
+class Observer {
+public:
     using SubjectType = ::Core::Subject<DerivedType, LockType>;
 
     SubjectType* mpSubject{};

@@ -15,6 +15,7 @@ public:
     Tag::Type mType{Tag::End};
 
     using Tag::operator==;
+
 public:
     [[nodiscard]] constexpr ListTag() = default;
 

@@ -6,7 +6,7 @@
 
 #include "ll/api/base/Meta.h"
 
-template<typename T>
+template <typename T>
 class optional_ref {
 private:
     T* mPtr = nullptr;

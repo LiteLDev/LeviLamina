@@ -23,7 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::std::string mString;
-    int                      mCount;
+    int           mCount;
     // NOLINTEND
 
     operator std::string const&() const { return mString; }

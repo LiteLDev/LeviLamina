@@ -24,13 +24,12 @@ public:
         // member variables
         // NOLINTBEGIN
         ::BaseCircuitComponent* mComponent;
-        int                                         mDampening;
-        ::BlockPos                          mPos;
-        uchar                                     mDirection;
-        bool                                       mDirectlyPowered;
-        int                                         mData;
+        int                     mDampening;
+        ::BlockPos              mPos;
+        uchar                   mDirection;
+        bool                    mDirectlyPowered;
+        int                     mData;
         // NOLINTEND
-
     };
 
 public:

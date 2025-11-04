@@ -6,7 +6,7 @@
 template <typename T>
 class WeakPtr;
 
-template<typename T>
+template <typename T>
 class SharedPtr {
 public:
     template <typename... Args>
@@ -105,4 +105,5 @@ public:
         }
     }
 
-    SharedCounter<T>* counter;};
+    SharedCounter<T>* counter;
+};

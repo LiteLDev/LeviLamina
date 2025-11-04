@@ -20,11 +20,11 @@ class CommandOutput {
 public:
     // member variables
     // NOLINTBEGIN
-    CommandOutputType                                       mType;
+    CommandOutputType                   mType;
     std::unique_ptr<CommandPropertyBag> mBag;
-    std::vector<CommandOutputMessage>    mMessages;
-    int                                                                     mSuccessCount;
-    bool                                                                   mHasPlayerText;
+    std::vector<CommandOutputMessage>   mMessages;
+    int                                 mSuccessCount;
+    bool                                mHasPlayerText;
     // NOLINTEND
 
     template <class First, class... Args>

@@ -12,6 +12,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::NetworkIdentifier id;
-    ::SubClientId               subClientId;
+    ::SubClientId       subClientId;
     // NOLINTEND
 };

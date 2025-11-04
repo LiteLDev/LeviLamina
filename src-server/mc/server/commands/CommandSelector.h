@@ -11,4 +11,5 @@ template <typename T>
 class CommandSelector : CommandSelectorBase {
 public:
     CommandSelector() : CommandSelectorBase(std::is_same_v<T, Player>) {}
-    MCAPI CommandSelectorResults<T> results(CommandOrigin const& a0) const;};
+    MCAPI CommandSelectorResults<T> results(CommandOrigin const& a0) const;
+};

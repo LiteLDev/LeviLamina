@@ -221,7 +221,6 @@ public:
         [[nodiscard]] inline bool operator==(Symbol const& other) const { return mValue == other.mValue; }
 
         uint64 toIndex() const { return mValue & 0xffffffffe00fffffull; }
-
     };
 
     struct SymbolHasher {};
@@ -247,15 +246,16 @@ public:
     public:
         // Overload inner types define
         using AllocFunction = ::brstd::copyable_function<::std::unique_ptr<::Command>() const>;
+
     public:
         // member variables
         // NOLINTBEGIN
-        ::CommandVersion                                                                          version;
+        ::CommandVersion                         version;
         AllocFunction                            alloc;
-        ::std::vector<::CommandParameterData>                               params;
-        int                                                                                                    versionOffset;
-        bool                                                                                                  isChaining;
-        ::std::vector<::CommandRegistry::Symbol>                         paramsSymbol;
+        ::std::vector<::CommandParameterData>    params;
+        int                                      versionOffset;
+        bool                                     isChaining;
+        ::std::vector<::CommandRegistry::Symbol> paramsSymbol;
         // NOLINTEND
     };
 
@@ -263,19 +263,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::std::string                                                           name;
-        ::std::string                                                           description;
+        ::std::string                              name;
+        ::std::string                              description;
         ::std::vector<::CommandRegistry::Overload> overloads;
-        ::std::vector<uint>                                               chainedSubcommandIndexes;
-        ::CommandPermissionLevel                                      permissionLevel;
-        ::CommandRegistry::Symbol                                    commandSymbol;
-        ::CommandRegistry::Symbol                                    commandAliasEnum;
-        ::CommandFlag                                                            flags;
-        int                                                                                firstRule;
-        int                                                                                firstFactorization;
-        int                                                                                firstOptional;
-        bool                                                                              runnable;
-        uint64                                                                          ruleCounter;
+        ::std::vector<uint>                        chainedSubcommandIndexes;
+        ::CommandPermissionLevel                   permissionLevel;
+        ::CommandRegistry::Symbol                  commandSymbol;
+        ::CommandRegistry::Symbol                  commandAliasEnum;
+        ::CommandFlag                              flags;
+        int                                        firstRule;
+        int                                        firstFactorization;
+        int                                        firstOptional;
+        bool                                       runnable;
+        uint64                                     ruleCounter;
         // NOLINTEND
 
     public:
@@ -309,11 +309,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        char const*                             mText;
-        uint                                           mLength;
+        char const*               mText;
+        uint                      mLength;
         ::CommandRegistry::Symbol mType;
         ::CommandRegistry::Symbol mIdentifierInfo;
-        ::CommandRegistry const&   mRegistry;
+        ::CommandRegistry const&  mRegistry;
         // NOLINTEND
 
     public:
@@ -335,10 +335,10 @@ public:
         // NOLINTBEGIN
         ::std::unique_ptr<::CommandRegistry::ParseToken> child;
         ::std::unique_ptr<::CommandRegistry::ParseToken> next;
-        ::CommandRegistry::ParseToken*                                     parent;
-        char const*                                                                           text;
-        uint                                                                                         length;
-        ::CommandRegistry::Symbol                                               type;
+        ::CommandRegistry::ParseToken*                   parent;
+        char const*                                      text;
+        uint                                             length;
+        ::CommandRegistry::Symbol                        type;
         // NOLINTEND
 
     public:
@@ -411,7 +411,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::std::string                                                      name;
+        ::std::string                              name;
         ::Bedrock::typeid_t<::CommandRegistry>     type;
         ParseFunction                              parse;
         ::std::vector<::std::pair<uint64, uint64>> values;
@@ -436,7 +436,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::std::string                                                    name;
+        ::std::string                            name;
         ::Bedrock::typeid_t<::CommandRegistry>   type;
         ParseFunction                            parse;
         ::std::vector<::std::pair<uint64, uint>> values;
@@ -459,7 +459,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::std::string                               mName;
+        ::std::string                mName;
         ::std::vector<::std::string> mValues;
         // NOLINTEND
     };
@@ -516,7 +516,6 @@ public:
         // NOLINTBEGIN
         MCAPI void* $ctor();
         // NOLINTEND
-
     };
 
     struct RegistryState {
@@ -579,7 +578,7 @@ public:
             ::CommandRegistry::SymbolPairHasher,
             ::std::equal_to<void>>
 
-                                                             predict;
+                                   predict;
         ::std::chrono::nanoseconds buildDuration;
         // NOLINTEND
     };
@@ -660,36 +659,36 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::std::function<void(::Packet const&)>                                              mNetworkUpdateCallback;
+    ::std::function<void(::Packet const&)>                   mNetworkUpdateCallback;
     ScoreboardScoreAccessor                                  mGetScoreForObjective;
-    bool                                                                                                                   mIsEduMode;
-    ::std::vector<::CommandRegistry::ParseRule>                                    mRules;
-    ::std::map<uint, ::CommandRegistry::ParseTable>                            mParseTables;
-    ::std::vector<::CommandRegistry::OptionalParameterChain>          mOptionals;
-    ::std::vector<::std::string>                                                                  mEnumValues;
-    ::std::vector<::CommandRegistry::Enum>                                              mEnums;
-    ::std::vector<::std::string>                                                        mChainedSubcommandValues;
-    ::std::vector<::CommandRegistry::ChainedSubcommand>          mChainedSubcommands;
-    ::std::vector<::CommandRegistry::Factorization>                  mFactorizations;
-    ::std::vector<::std::string>                                                        mPostfixes;
-    ::std::map<::std::string, uint>                                                  mEnumLookup;
-    ::std::map<::std::string, uint64>                                              mEnumValueLookup;
-    ::std::map<::std::string, uint>                                                  mChainedSubcommandLookup;
-    ::std::map<::std::string, uint64>                                              mChainedSubcommandValueLookup;
-    ::std::vector<::CommandRegistry::Symbol>                                mCommandSymbols;
+    bool                                                     mIsEduMode;
+    ::std::vector<::CommandRegistry::ParseRule>              mRules;
+    ::std::map<uint, ::CommandRegistry::ParseTable>          mParseTables;
+    ::std::vector<::CommandRegistry::OptionalParameterChain> mOptionals;
+    ::std::vector<::std::string>                             mEnumValues;
+    ::std::vector<::CommandRegistry::Enum>                   mEnums;
+    ::std::vector<::std::string>                             mChainedSubcommandValues;
+    ::std::vector<::CommandRegistry::ChainedSubcommand>      mChainedSubcommands;
+    ::std::vector<::CommandRegistry::Factorization>          mFactorizations;
+    ::std::vector<::std::string>                             mPostfixes;
+    ::std::map<::std::string, uint>                          mEnumLookup;
+    ::std::map<::std::string, uint64>                        mEnumValueLookup;
+    ::std::map<::std::string, uint>                          mChainedSubcommandLookup;
+    ::std::map<::std::string, uint64>                        mChainedSubcommandValueLookup;
+    ::std::vector<::CommandRegistry::Symbol>                 mCommandSymbols;
     ::std::map<::std::string, ::CommandRegistry::Signature>  mSignatures;
     ::std::map<::Bedrock::typeid_t<::CommandRegistry>, int>  mTypeLookup;
-    ::std::map<::std::string, ::std::string>                                mAliases;
-    ::std::vector<::SemanticConstraint>                                          mSemanticConstraints;
-    ::std::map<::SemanticConstraint, uchar>                                  mSemanticConstraintLookup;
-    ::std::vector<::CommandRegistry::ConstrainedValue>            mConstrainedValues;
-    ::std::map<::std::pair<uint64, uint>, uint>                          mConstrainedValueLookup;
-    ::std::vector<::CommandRegistry::SoftEnum>                            mSoftEnums;
-    ::std::map<::std::string, uint>                                                  mSoftEnumLookup;
-    ::std::vector<::CommandRegistry::RegistryState>                  mStateStack;
-    ::CommandRegistry::ParamSymbols                                                 mArgs;
-    ::std::unordered_set<int>                                                              mSkipOnEpsAutocompleteSymbols;
-    ::std::unordered_set<int>                                                              mAllowEmptySymbols;
+    ::std::map<::std::string, ::std::string>                 mAliases;
+    ::std::vector<::SemanticConstraint>                      mSemanticConstraints;
+    ::std::map<::SemanticConstraint, uchar>                  mSemanticConstraintLookup;
+    ::std::vector<::CommandRegistry::ConstrainedValue>       mConstrainedValues;
+    ::std::map<::std::pair<uint64, uint>, uint>              mConstrainedValueLookup;
+    ::std::vector<::CommandRegistry::SoftEnum>               mSoftEnums;
+    ::std::map<::std::string, uint>                          mSoftEnumLookup;
+    ::std::vector<::CommandRegistry::RegistryState>          mStateStack;
+    ::CommandRegistry::ParamSymbols                          mArgs;
+    ::std::unordered_set<int>                                mSkipOnEpsAutocompleteSymbols;
+    ::std::unordered_set<int>                                mAllowEmptySymbols;
     CommandOverrideFunctor                                   mCommandOverrideFunctor;
     ::std::unique_ptr<::CommandRunStats>                     mCommandRunStats;
     // NOLINTEND
@@ -954,9 +953,7 @@ public:
 
     MCAPI ::AvailableCommandsPacket serializeAvailableCommands() const;
 
-    MCAPI void setCommandRegistrationOverride(
-        CommandOverrideFunctor functor
-    );
+    MCAPI void setCommandRegistrationOverride(CommandOverrideFunctor functor);
 
     MCAPI void setSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 

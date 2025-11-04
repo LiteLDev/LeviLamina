@@ -42,9 +42,10 @@ public:
 
     struct BlockComplexAliasBlockState {
     public:
-        BlockComplexAliasBlockState(HashedString const& stateName, int             value) noexcept
+        BlockComplexAliasBlockState(HashedString const& stateName, int value) noexcept
         : stateName(stateName),
           value(value) {}
+
     public:
         // member variables
         // NOLINTBEGIN
@@ -57,7 +58,6 @@ public:
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
-
     };
 
     using BlockComplexAliasCallback = ::std::function<::Block const*(int)>;
