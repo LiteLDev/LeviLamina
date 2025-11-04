@@ -52,7 +52,8 @@ LL_STATIC_HOOK(
                 auto& inputstate = *input.mInputState;
                 auto& pkt        = *serverPlayerCurrentMovementComponent.mCurrentUpdate;
                 if (pkt.mInputData.get()[(size_t)::PlayerAuthInputPacket::InputData::StartJumping]
-                    && inputstate.mJumpDown && input.mJumping) {
+                    && inputstate.mFlagValues->test((ushort)MoveInputState::Flag::JumpDown)
+                    && input.mFlagValues->test((ushort)MoveInputState::Flag::JumpInputWasPressed)) {
                     EventBus::getInstance().publish(PlayerJumpEvent(static_cast<ServerPlayer&>(*actor)));
                 }
             }

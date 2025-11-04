@@ -22,9 +22,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        uint64                          mFilenameHash;
+        uint64             mFilenameHash;
         ::std::string_view mFilename;
-        uint                              mLine;
+        uint               mLine;
         // NOLINTEND
     };
 
@@ -32,35 +32,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::std::string                                              mValue;
+        ::std::string                        mValue;
         ::std::optional<::Bedrock::LogLevel> mLogLevel;
-        ::std::optional<::LogAreaID>                 mLogArea;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Context& operator=(Context const&);
-        Context(Context const&);
-        Context();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI Context(::Bedrock::CallStack::Context&&);
-
-        MCNAPI ~Context();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Bedrock::CallStack::Context&&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        ::std::optional<::LogAreaID>         mLogArea;
         // NOLINTEND
     };
 
@@ -68,7 +42,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::Bedrock::CallStack::Frame                                       mFrame;
+        ::Bedrock::CallStack::Frame                    mFrame;
         ::std::optional<::Bedrock::CallStack::Context> mContext;
         // NOLINTEND
 

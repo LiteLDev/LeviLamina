@@ -2,9 +2,6 @@
 
 #include "ll/api/service/Bedrock.h"
 
-#include "mc/certificates/WebToken.h"
-#include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
-#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/ConnectionRequest.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkPeer.h"
@@ -19,7 +16,6 @@
 #include "mc/world/actor/player/PermissionsHandler.h"
 #include "mc/world/actor/player/PlayerInventory.h"
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
-#include "mc/world/level/storage/AdventureSettings.h"
 
 UserEntityIdentifierComponent const& Player::getUserEntityIdentifier() const {
     return *(getEntityContext().tryGetComponent<UserEntityIdentifierComponent>());

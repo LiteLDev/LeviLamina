@@ -21,9 +21,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::NetherNet::NetworkID         mNetherNetId;
-    ::RakNet::RakNetGUID             mGuid;
-    ::ll::UntypedStorage<8, 128>      mSock;
+    ::NetherNet::NetworkID       mNetherNetId;
+    ::RakNet::RakNetGUID         mGuid;
+    ::ll::UntypedStorage<8, 128> mSock;
     ::NetworkIdentifier::Type    mType;
     // NOLINTEND
 
@@ -31,6 +31,8 @@ public:
     LLNDAPI std::string getIPAndPort() const;
 
     [[nodiscard]] bool operator==(::NetworkIdentifier const& other) const { return equalsTypeData(other); }
+
+    NetworkIdentifier(::NetworkIdentifier const& other) = default;
 
 public:
     // member functions
