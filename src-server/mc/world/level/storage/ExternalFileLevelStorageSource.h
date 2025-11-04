@@ -28,14 +28,12 @@ class ExternalFileLevelStorageSource : public ::LevelStorageSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4cadaa;
-    ::ll::UntypedStorage<8, 24> mUnkd541e0;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::SaveTransactionManager>> mSaveTransactionManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager>>  mFilePathManager;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ExternalFileLevelStorageSource& operator=(ExternalFileLevelStorageSource const&);
-    ExternalFileLevelStorageSource(ExternalFileLevelStorageSource const&);
     ExternalFileLevelStorageSource();
 
 public:
