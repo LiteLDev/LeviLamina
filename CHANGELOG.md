@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.0] - 2025-11-04
+
+### Changed
+
+- Adapted to Minecraft 1.21.120.4 @Lovelylavender4 @ShrBox
+
+### Fixed
+
+- Fixed the issue where `UniqueTagPtr::emplace` lacked a return value @Lovelylavender4
+- Updated svtobool to accept with 5 characters @OEOTYAN
+- Fixed actor::traceRay [#1759] @8848yyds
+
 ## [1.6.2] - 2025-10-15
 
 ### Fixed
@@ -287,7 +299,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed mce::UUID::fromStringHash and SimulatedPlayer::tryGetFromEntity (#1634) @xiaoqch
 - Fixed CustomFormResult for dropdown element(#1637) @xiaoqch
 - Fixed wrong type of IDType @ShrBox
-- Replaced ServerInstanceEventCoordinator::sendServerInitializeEnd with ServerScriptManager::$onServerThreadStarted to fix [#1636] @ShrBox
+- Replaced ServerInstanceEventCoordinator::sendServerInitializeEnd with ServerScriptManager::$onServerThreadStarted to
+  fix [#1636] @ShrBox
 
 ## [1.1.0] - 2025-02-28
 
@@ -412,11 +425,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **Adapted to BDS version *1.21.50*** @OEOTYAN @ddf8196 @Dofes @dreamguxiang @futrime @KawaiiNahida @Lovelylavender4 @PA733 @Pd233 @RimuruChan @ShrBox @wu-vincent
+- **Adapted to BDS version *1.21.50*** @OEOTYAN @ddf8196 @Dofes @dreamguxiang @futrime @KawaiiNahida @Lovelylavender4
+  @PA733 @Pd233 @RimuruChan @ShrBox @wu-vincent
 - Added the missing field to CommandRegistry::Overload @wu-vincent
 - Added StdoutRedirector @OEOTYAN
 - Added imgui and some relate codes @ddf8196 @OEOTYAN
-- Added function definitions for ItemStackBase::getTypeName, ItemStackBase::getDescriptionName, ItemStackBase::getDamageValue to the source file @Dofes
+- Added function definitions for ItemStackBase::getTypeName, ItemStackBase::getDescriptionName, ItemStackBase::
+  getDamageValue to the source file @Dofes
 - Added some headers for ui @Dofes
 - Added clang/gcc virtualDetector @OEOTYAN
 - Added hints for double enable/disable @OEOTYAN
@@ -424,7 +439,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added ll::memory::IndirectValue @OEOTYAN
 - Added tight pair @OEOTYAN
 - Added pl config to formatter @OEOTYAN
-- Added default tick pool  @OEOTYAN
+- Added default tick pool @OEOTYAN
 - Added TypeTraits, AnyFunction @OEOTYAN
 - Added ConcurrentPriorityQueue and try_pop_if @OEOTYAN
 - Added addTaskAfter to Executer @OEOTYAN
@@ -517,7 +532,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Adapted to BDS version 1.21.3 @Lovelylavender4
-- Added abi compatibility to mods  @OEOTYAN
+- Added abi compatibility to mods @OEOTYAN
 - Completes the member variables of ISurfaceBuilder::BuildParameters,BiomeArea,SpikeFeature @Lovelylavender4
 - Completes the member variables of ClimateParameters,BiomeDecorationFeature,ScatterParams::CoordinateRange @killcerr
 
@@ -839,7 +854,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added dependencies and updated internal types in BlockTickingQueue
-- Completed the member variables of HeightmapWrapper, LevelChunkPacket, StructureFeatureRegistry, ChunkGeneratorStructureState, ResourceDrops, and StructureSetRegistry
+- Completed the member variables of HeightmapWrapper, LevelChunkPacket, StructureFeatureRegistry,
+  ChunkGeneratorStructureState, ResourceDrops, and StructureSetRegistry
 
 ### Changed
 
@@ -967,13 +983,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add initializer list to CompoundTag
-- Complete the size of RenderParams and VanillaTreeFeature, as well as VillageFeature, add their respective member variables to WorldBlockTarget and WorldGenContext
+- Complete the size of RenderParams and VanillaTreeFeature, as well as VillageFeature, add their respective member
+  variables to WorldBlockTarget and WorldGenContext
 - Add a virtual destructor to IBlockWorldGenAPI to ensure its size is correct
 - Add member variables to ChunkSource
 - Filler DistanceSortedActor struct
 - Dependency diagnostic for NativePlugin
 - Complete the member variables for Pos2d, the size for Block, and the parent class list for DividedPos2d
-- Revise the construction of buffer_span_mut and ActorBlockSyncMessage, and complete the member variables for ChunkLocalNoiseCache
+- Revise the construction of buffer_span_mut and ActorBlockSyncMessage, and complete the member variables for
+  ChunkLocalNoiseCache
 - Add member variables to Aquifer::FluidSample and Aquifer
 - Move fakeChangeDimension to api
 
@@ -1028,7 +1046,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add lang dir to plugin
 - Add hash function to InventorySource
 - Complete the missing parameters for the LL_SIGNATURE_CALL macro
-- Complete the size of ItemStackRequestActionHandler and the parameter names of ItemStackRequestActionHandler::_handleTransfer
+- Complete the size of ItemStackRequestActionHandler and the parameter names of ItemStackRequestActionHandler::_
+  handleTransfer
 - Add InventoryAction and NetworkItemStackDescriptor missed constructor
 - Add members to FlowerFeature,FlatWorldGeneratorOptions
 
@@ -1135,8 +1154,10 @@ For lip and tooth-hub test only.
 [#1739]: https://github.com/LiteLDev/LeviLamina/issues/1739
 [#1747]: https://github.com/LiteLDev/LeviLamina/issues/1747
 [#1750]: https://github.com/LiteLDev/LeviLamina/issues/1750
+[#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.0...HEAD
+[1.7.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.2...v1.7.0
 [1.6.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.1...v1.6.2
 [1.6.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.0...v1.6.1
 [1.6.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.2...v1.6.0
