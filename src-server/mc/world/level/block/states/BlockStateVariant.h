@@ -20,3 +20,4 @@ public:
     // vIndex: 2
     virtual bool fromNBT(::CompoundTag const&, int&) const /*override*/;
     // NOLINTEND};
+};
