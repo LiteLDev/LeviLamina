@@ -27,7 +27,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ChunksLoadedStatus areAllChunksLoadedAndTicking(
+    MCAPI static ::ChunksLoadedStatus areAllChunksLoadedAndTicking(
         ::Dimension const& dimension,
         ::ChunkSource&     source,
         ::Bounds const&    bounds,

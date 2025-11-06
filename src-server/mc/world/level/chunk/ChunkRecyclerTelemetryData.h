@@ -28,29 +28,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnka03430;
+        ::ll::TypedStorage<8, 8, uint64> mNanoseconds;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TimeAccumulator& operator=(TimeAccumulator const&);
-        TimeAccumulator(TimeAccumulator const&);
-        TimeAccumulator();
     };
 
     struct ChunkData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkb7a81c;
-        ::ll::UntypedStorage<8, 8> mUnk837b09;
+        ::ll::TypedStorage<8, 8, ::ChunkRecyclerTelemetryData::TimeAccumulator> mTimeAccumulator;
+        ::ll::TypedStorage<8, 8, int64>                                         mSequence;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChunkData& operator=(ChunkData const&);
-        ChunkData(ChunkData const&);
-        ChunkData();
     };
 
     enum class Bucket : int {
@@ -71,28 +59,22 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnka0675b;
-        ::ll::UntypedStorage<8, 32> mUnk249e04;
-        ::ll::UntypedStorage<8, 8>  mUnkb37204;
-        ::ll::UntypedStorage<8, 64> mUnk705d42;
+        ::ll::TypedStorage<4, 4, ::ChunkRecyclerTelemetryData::Bucket>          mBucket;
+        ::ll::TypedStorage<8, 32, ::std::string>                                mName;
+        ::ll::TypedStorage<8, 8, ::ChunkRecyclerTelemetryData::TimeAccumulator> mTimeAccumulator;
+        ::ll::TypedStorage<8, 64, ::std::function<bool(int64)>>                 isInRangeInclusive;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BucketContext& operator=(BucketContext const&);
-        BucketContext(BucketContext const&);
-        BucketContext();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~BucketContext();
+        MCAPI ~BucketContext();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -100,14 +82,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk70ffe4;
+        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mTimeStart;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TaskInfo& operator=(TaskInfo const&);
-        TaskInfo(TaskInfo const&);
-        TaskInfo();
     };
 
 public:
@@ -142,27 +118,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChunkRecyclerTelemetryData();
+    MCAPI ChunkRecyclerTelemetryData();
 
-    MCNAPI void _reset();
+    MCAPI void _reset();
 
-    MCNAPI void _setIsLocked();
+    MCAPI void _setIsLocked();
 
-    MCNAPI void endLevel(::Level& level);
+    MCAPI void endLevel(::Level& level);
 
-    MCNAPI void recordCacheCheck(::LevelChunk const& lc);
+    MCAPI void recordCacheCheck(::LevelChunk const& lc);
 
-    MCNAPI void recordChunkDeleted(::LevelChunk const& lc);
+    MCAPI void recordChunkDeleted(::LevelChunk const& lc);
 
-    MCNAPI void recordTaskCompleted(::LevelChunk const& lc, ::ChunkRecyclerTelemetryData::TaskInfo const& taskInfo);
+    MCAPI void recordTaskCompleted(::LevelChunk const& lc, ::ChunkRecyclerTelemetryData::TaskInfo const& taskInfo);
 
-    MCNAPI void tickLevel(::Level const& level);
+    MCAPI void tickLevel(::Level const& level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -23,12 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ChunkRecyclerTelemetryOutput();
+    MCAPI ~ChunkRecyclerTelemetryOutput();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
