@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.1] - 2025-11-06
+
+### Added
+
+- Added  constructor for BlockRandomTickEvent @Lovelylavender4
+
+### Changed
+
+- Bumped bedrock-runtime-data to v1.21.120-server.3
+
+### Fixed
+
+- Fixed BlockStateVariant.h
+- Fixed the length issue of motd modify @zimuya4153
+- Enhanced NonOwnerPointer constructor overloads for better type conversion @OEOTYAN
+- Fixed DerivedDimensionArguments
+
 ## [1.7.0] - 2025-11-04
 
 ### Changed
@@ -1156,7 +1173,8 @@ For lip and tooth-hub test only.
 [#1750]: https://github.com/LiteLDev/LeviLamina/issues/1750
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.1...HEAD
+[1.7.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.0...v1.7.1
 [1.7.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.2...v1.7.0
 [1.6.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.1...v1.6.2
 [1.6.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.0...v1.6.1
