@@ -15,11 +15,21 @@ public:
     : mControlBlock(std::move(cb)),
       mPointer(p) {}
 
-    NonOwnerPointer(T const& t)
+    template <typename U = T>
+        requires std::is_convertible_v<U*, T*>
+    NonOwnerPointer(U const& t)
     : NonOwnerPointer(
           static_cast<::Bedrock::EnableNonOwnerReferences const&>(t).mControlBlock,
           const_cast<T*>(std::addressof(t))
       ) {}
+    template <typename U = T>
+        requires std::is_convertible_v<U*, T*>
+    NonOwnerPointer(NonOwnerPointer<U> const& p) : NonOwnerPointer(p.mControlBlock, p.mPointer) {}
+    template <typename U = T>
+        requires std::is_convertible_v<U*, T*>
+    NonOwnerPointer(NonOwnerPointer<U>&& p)
+    : NonOwnerPointer(std::move(p.mControlBlock), std::exchange(p.mPointer, nullptr)) {}
+
 
     NonOwnerPointer() noexcept {}
     NonOwnerPointer(std::nullptr_t) noexcept {}
