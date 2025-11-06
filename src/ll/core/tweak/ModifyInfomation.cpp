@@ -139,12 +139,14 @@ LL_TYPE_INSTANCE_HOOK(
     char const* data,
     uint        dataSize
 ) {
-    if (auto dataView = std::string_view{data + 2, dataSize - 2}; dataView.starts_with("MCPE;")) {
-        auto modified = fmt::format("{}LeviLamina;", dataView);
-        auto length   = modified.size();
-        modified.insert(modified.begin(), static_cast<char>(length & 0xFF));
-        modified.insert(modified.begin(), static_cast<char>((length >> 8) & 0xFF));
-        return origin(modified.c_str(), static_cast<uint>(modified.size()));
+    if (dataSize >=2) {
+        if (auto dataView = std::string_view{data + 2, dataSize - 2}; dataView.starts_with("MCPE;")) {
+            auto modified = fmt::format("{}LeviLamina;", dataView);
+            auto length   = modified.size();
+            modified.insert(modified.begin(), static_cast<char>(length & 0xFF));
+            modified.insert(modified.begin(), static_cast<char>((length >> 8) & 0xFF));
+            return origin(modified.c_str(), static_cast<uint>(modified.size()));
+        }
     }
     return origin(data, dataSize);
 }
