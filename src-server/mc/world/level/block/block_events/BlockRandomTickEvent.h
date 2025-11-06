@@ -22,6 +22,11 @@ public:
     // NOLINTEND
 
 public:
+    BlockRandomTickEvent(BlockPos const pos, BlockSource& region, Random& random) : mRegion(region), mRandom(random) {
+        mPos = pos;
+    }
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
