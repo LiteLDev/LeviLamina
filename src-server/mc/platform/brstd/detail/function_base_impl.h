@@ -70,9 +70,9 @@ class function_base_impl {
     struct vtable_impl {
         static Fn* target(storage const& self) {
             if constexpr (HeapTarget) {
-                return self.large_fn_ptr<Fn>();
+                return self.template large_fn_ptr<Fn>();
             } else {
-                return self.small_fn_ptr<Fn>();
+                return self.template small_fn_ptr<Fn>();
             }
         }
 
@@ -81,7 +81,7 @@ class function_base_impl {
                 if constexpr (HeapTarget) {
                     to.set_large_fn_ptr(::new Fn(*target(self)));
                 } else {
-                    ::new (to.embedded_target_ptr<Fn>()) Fn(*target(self));
+                    ::new (to.template embedded_target_ptr<Fn>()) Fn(*target(self));
                 }
             }
         }
@@ -92,7 +92,7 @@ class function_base_impl {
                 self.set_large_fn_ptr(nullptr);
             } else {
                 auto const ptr = target(self);
-                ::new (to.embedded_target_ptr<Fn>()) Fn(std::move(*ptr));
+                ::new (to.template embedded_target_ptr<Fn>()) Fn(std::move(*ptr));
                 ptr->~Fn();
             }
         }
