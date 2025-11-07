@@ -557,3 +557,4 @@ fabric.properties
 /src/ll/test/include_all.cpp
 /src-test/**/include_all.cpp
 /builder/
+/vsxmake2026
