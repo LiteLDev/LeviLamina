@@ -32,6 +32,7 @@
 #include "mc/world/events/PlayerSelectedItemChangedEvent.h"
 #include "mc/world/events/PlayerShootArrowEvent.h"
 #include "mc/world/events/PlayerSkinLoadedClientEvent.h"
+#include "mc/world/events/PlayerSleepStateChangeEvent.h"
 #include "mc/world/events/PlayerStopLoadingEvent.h"
 #include "mc/world/events/PlayerSwingStartEvent.h"
 #include "mc/world/events/PlayerUpdateInteractionEvent.h"

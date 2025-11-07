@@ -11,3 +11,4 @@ public:
     // vIndex: 0
     virtual ~BuiltInBlockStateVariant() /*override*/ = default;
     // NOLINTEND};
+};
