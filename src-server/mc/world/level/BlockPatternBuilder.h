@@ -4,46 +4,40 @@
 
 // auto generated inclusion list
 #include "mc/platform/brstd/move_only_function.h"
+#include "mc/world/level/BlockPatternData.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockPos;
 class BlockSource;
-struct BlockPatternData;
 // clang-format on
 
 class BlockPatternBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88> mUnkd5a757;
+    ::ll::TypedStorage<8, 88, ::BlockPatternData> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPatternBuilder& operator=(BlockPatternBuilder const&);
-    BlockPatternBuilder(BlockPatternBuilder const&);
-    BlockPatternBuilder();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockPatternBuilder& aisle(::std::vector<::std::string> patterns);
+    MCAPI ::BlockPatternBuilder& aisle(::std::vector<::std::string> patterns);
 
-    MCNAPI ::BlockPatternData buildOrAssert();
+    MCAPI ::BlockPatternData buildOrAssert();
 
-    MCNAPI ::BlockPatternBuilder& define(
+    MCAPI ::BlockPatternBuilder& define(
         char                                                                                       pattern,
         ::brstd::move_only_function<bool(::BlockSource&, ::BlockPos const&, ::Block const&) const> tester
     );
 
-    MCNAPI ~BlockPatternBuilder();
+    MCAPI ~BlockPatternBuilder();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

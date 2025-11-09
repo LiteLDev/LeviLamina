@@ -17,37 +17,35 @@ class PlayerTickManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5744d2;
-    ::ll::UntypedStorage<8, 24> mUnk4a6113;
-    ::ll::UntypedStorage<8, 8>  mUnk9e7dd0;
-    ::ll::UntypedStorage<1, 1>  mUnk17a4af;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const>    mDimensionManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> const> mGameplayUserManager;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IPlayerTickProxy>>>      mPlayerTickProxy;
+    ::ll::TypedStorage<1, 1, bool const>                                                  mIsClientSide;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PlayerTickManager& operator=(PlayerTickManager const&);
-    PlayerTickManager(PlayerTickManager const&);
     PlayerTickManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerTickManager(
+    MCAPI PlayerTickManager(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::std::unique_ptr<::IPlayerTickProxy>                playerTickProxy,
         bool                                                 isClientSide
     );
 
-    MCNAPI void processPlayerNetworking(::Tick const& currentTick);
+    MCAPI void processPlayerNetworking(::Tick const& currentTick);
 
-    MCNAPI ~PlayerTickManager();
+    MCAPI ~PlayerTickManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::std::unique_ptr<::IPlayerTickProxy>                playerTickProxy,
@@ -58,6 +56,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

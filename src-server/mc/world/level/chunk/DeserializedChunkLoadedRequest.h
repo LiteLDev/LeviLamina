@@ -21,23 +21,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DeserializedChunkLoadedRequest(
+    MCAPI DeserializedChunkLoadedRequest(
         ::ChunkLoadedRequest   chunkLoadedRequest,
         ::ChunkRequestListType chunkRequestListType
     );
 
-    MCNAPI ~DeserializedChunkLoadedRequest();
+    MCAPI ~DeserializedChunkLoadedRequest();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ChunkLoadedRequest chunkLoadedRequest, ::ChunkRequestListType chunkRequestListType);
+    MCAPI void* $ctor(::ChunkLoadedRequest chunkLoadedRequest, ::ChunkRequestListType chunkRequestListType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

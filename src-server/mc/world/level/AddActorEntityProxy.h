@@ -3,20 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/level/IAddActorEntityProxy.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Dimension;
 // clang-format on
 
 class AddActorEntityProxy : public ::IAddActorEntityProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk16011c;
-    ::ll::UntypedStorage<8, 8> mUnkb68e29;
-    ::ll::UntypedStorage<8, 8> mUnk6e1b78;
+    ::ll::TypedStorage<8, 8, ::Dimension&>     mDimension;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>  mActorUniqueID;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mActorRuntimeID;
     // NOLINTEND
 
 public:
@@ -41,9 +44,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeActor(::Actor& actor);
+    MCAPI void $initializeActor(::Actor& actor);
 
-    MCNAPI void $reloadActor(::Actor& actor);
+    MCAPI void $reloadActor(::Actor& actor);
     // NOLINTEND
 
 public:

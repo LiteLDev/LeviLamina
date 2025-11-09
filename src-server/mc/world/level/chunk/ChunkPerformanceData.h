@@ -29,31 +29,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkd86ca2;
-        ::ll::UntypedStorage<8, 8> mUnk482aa0;
+        ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mCount;
+        ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mMemorySum;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        AtomicMemoryAccumulator& operator=(AtomicMemoryAccumulator const&);
-        AtomicMemoryAccumulator(AtomicMemoryAccumulator const&);
-        AtomicMemoryAccumulator();
     };
 
     struct PaletteData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnka5207c;
-        ::ll::UntypedStorage<8, 8> mUnk12ad51;
-        ::ll::UntypedStorage<8, 8> mUnkcecb36;
+        ::ll::TypedStorage<8, 8, uint64> mMin;
+        ::ll::TypedStorage<8, 8, uint64> mMax;
+        ::ll::TypedStorage<8, 8, double> mAverage;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PaletteData& operator=(PaletteData const&);
-        PaletteData(PaletteData const&);
-        PaletteData();
     };
 
 public:
@@ -126,19 +114,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChunkPerformanceData();
+    MCAPI ChunkPerformanceData();
 
-    MCNAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
+    MCAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
 
-    MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCNAPI void resetAll();
+    MCAPI void resetAll();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -32,17 +32,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addChunkLoadedRequest(
+    MCAPI void _addChunkLoadedRequest(
         ::ChunkLoadedRequest chunkLoadedRequest,
         ::std::string const& dimensionPrefix,
         ::ChunksLoadedStatus chunksLoadedStatus,
         ::LevelStorage&      levelStorage
     );
 
-    MCNAPI int
+    MCAPI int
     _clearRequest(::LevelStorage& levelStorage, ::IRequestAction* actionToRemove, ::std::string_view tickingAreaName);
 
-    MCNAPI ::QueueRequestResult _queueRequestOrExecuteAction(
+    MCAPI ::QueueRequestResult _queueRequestOrExecuteAction(
         ::ChunkLoadedRequest chunkLoadedRequest,
         ::ServerLevel&       serverLevel,
         ::LevelStorage&      levelStorage,
@@ -50,26 +50,26 @@ public:
         ::ChunksLoadedStatus chunksLoadedStatus
     );
 
-    MCNAPI void _saveRequest(
+    MCAPI void _saveRequest(
         ::ChunkLoadedRequest&  request,
         ::std::string const&   dimensionPrefix,
         ::ChunkRequestListType chunkRequestListType,
         ::LevelStorage&        levelStorage
     );
 
-    MCNAPI void _updateAsyncList(
+    MCAPI void _updateAsyncList(
         ::LevelStorage&                                              levelStorage,
         ::Dimension&                                                 dimension,
         ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction
     );
 
-    MCNAPI void _updateTickingList(
+    MCAPI void _updateTickingList(
         ::ServerLevel&                                               serverLevel,
         ::Dimension&                                                 dimension,
         ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction
     );
 
-    MCNAPI void loadRequest(
+    MCAPI void loadRequest(
         ::std::string const&                    key,
         ::CompoundTag const&                    tag,
         ::ICommandOriginLoader&                 loader,
@@ -77,7 +77,7 @@ public:
         ::JigsawStructureElementRegistry const& elementReg
     );
 
-    MCNAPI ::QueueRequestResult queueRequestOrExecuteAction(
+    MCAPI ::QueueRequestResult queueRequestOrExecuteAction(
         ::ChunkLoadedRequest chunkLoadedRequest,
         ::ServerLevel&       serverLevel,
         ::Dimension&         dimension

@@ -2,13 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class DimensionHeightRange;
+class IAddActorEntityProxy;
+class PlayerLimboActorManager;
+// clang-format on
+
 struct AddLimboActorHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk4a93cd;
-    ::ll::UntypedStorage<8, 8> mUnkfcbbc2;
-    ::ll::UntypedStorage<8, 8> mUnk5028a6;
+    ::ll::TypedStorage<8, 8, ::IAddActorEntityProxy&>       mAddActorEntityProxy;
+    ::ll::TypedStorage<8, 8, ::DimensionHeightRange const&> mHeightRange;
+    ::ll::TypedStorage<8, 8, ::PlayerLimboActorManager&>    mPlayerLimboActorManager;
     // NOLINTEND
 
 public:

@@ -3,14 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/brstd/flat_map.h"
 
 // auto generated forward declare list
 // clang-format off
 class Dimension;
+class PacketSender;
 class Player;
 class UserEntityIdentifierComponent;
-class Vec3;
 class WeakEntityRef;
 struct ActorUniqueID;
 // clang-format on
@@ -29,17 +32,13 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 16> mUnk59c9c9;
-        ::ll::UntypedStorage<4, 4>  mUnkb0af90;
-        ::ll::UntypedStorage<1, 1>  mUnk8c20f1;
+        ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mPosition;
+        ::ll::TypedStorage<4, 4, ::DimensionType>          mDimension;
+        ::ll::TypedStorage<1, 1, bool>                     mIsSpectator;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlayerLocationData& operator=(PlayerLocationData const&);
-        PlayerLocationData(PlayerLocationData const&);
-        PlayerLocationData();
     };
+
+    using OptionalPosition = ::std::optional<::Vec3>;
 
     struct ActorUniqueIDCompare {};
 
@@ -48,33 +47,45 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnkb41d2f;
-    ::ll::UntypedStorage<8, 56> mUnkff8b2b;
-    ::ll::UntypedStorage<8, 24> mUnkbabe0d;
-    ::ll::UntypedStorage<4, 4>  mUnkd651b8;
+    ::ll::TypedStorage<
+        8,
+        56,
+        ::brstd::flat_map<
+            ::ActorUniqueID,
+            ::PlayerLocationSender::PlayerLocationData,
+            ::PlayerLocationSender::ActorUniqueIDCompare,
+            ::std::vector<::ActorUniqueID>,
+            ::std::vector<::PlayerLocationSender::PlayerLocationData>>>
+        mCurrentPlayerLocationData;
+    ::ll::TypedStorage<
+        8,
+        56,
+        ::brstd::flat_map<
+            ::std::pair<::ActorUniqueID, ::ActorUniqueID>,
+            ::std::optional<::Vec3>,
+            ::PlayerLocationSender::ActorUniqueIDPairCompare,
+            ::std::vector<::std::pair<::ActorUniqueID, ::ActorUniqueID>>,
+            ::std::vector<::std::optional<::Vec3>>>>
+                                                                          mSentPlayerData;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>> mPacketSender;
+    ::ll::TypedStorage<4, 4, float>                                       mSimulationDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerLocationSender& operator=(PlayerLocationSender const&);
-    PlayerLocationSender(PlayerLocationSender const&);
-    PlayerLocationSender();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _checkPlayerPairAndMaybeSendPacket(
+    MCAPI void _checkPlayerPairAndMaybeSendPacket(
         ::UserEntityIdentifierComponent const& userIdentifier,
         ::Player const&                        viewingPlayer,
         ::Player const&                        observedPlayer
     );
 
-    MCNAPI void _forEachClientPlayerPair(
+    MCAPI void _forEachClientPlayerPair(
         ::std::vector<::WeakEntityRef> const&                                                           gameplayUsers,
         ::std::function<void(::UserEntityIdentifierComponent const&, ::Player const&, ::Player const&)> action
     );
 
-    MCNAPI bool _shouldSendPositionPacket(
+    MCAPI bool _shouldSendPositionPacket(
         ::Vec3 const&                                     viewingPlayerPosition,
         ::DimensionType const&                            viewingPlayerDimension,
         bool                                              viewingPlayerIsSpectator,
@@ -82,24 +93,24 @@ public:
         ::PlayerLocationSender::PlayerLocationData const& observedPlayerPositionNew
     ) const;
 
-    MCNAPI void _updatePlayerData(::Player const& player);
+    MCAPI void _updatePlayerData(::Player const& player);
 
-    MCNAPI void removePlayerData(::ActorUniqueID const& playerID);
+    MCAPI void removePlayerData(::ActorUniqueID const& playerID);
 
-    MCNAPI void updatePlayersData(::std::vector<::WeakEntityRef> const& gameplayUsers);
+    MCAPI void updatePlayersData(::std::vector<::WeakEntityRef> const& gameplayUsers);
 
-    MCNAPI ~PlayerLocationSender();
+    MCAPI ~PlayerLocationSender();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::PlayerLocationSender::PlayerLocationData const& NULL_PLAYER_LOCATION_DATA();
+    MCAPI static ::PlayerLocationSender::PlayerLocationData const& NULL_PLAYER_LOCATION_DATA();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

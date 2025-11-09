@@ -9,14 +9,16 @@
 // clang-format off
 class Command;
 class CommandOrigin;
+class FunctionManager;
+class MinecraftCommands;
 // clang-format on
 
 class CommandManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk66ac1d;
-    ::ll::UntypedStorage<8, 8> mUnk549ea2;
+    ::ll::TypedStorage<8, 8, ::MinecraftCommands&>                 mCommands;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FunctionManager>> mFunctionManager;
     // NOLINTEND
 
 public:
@@ -28,6 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
+    MCAPI void runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
     // NOLINTEND
 };

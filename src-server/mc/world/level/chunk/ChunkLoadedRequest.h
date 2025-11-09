@@ -42,29 +42,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChunkLoadedRequest(::ChunkLoadedRequest&&);
+    MCAPI ChunkLoadedRequest(::ChunkLoadedRequest&&);
 
-    MCNAPI ChunkLoadedRequest(
+    MCAPI ChunkLoadedRequest(
         ::std::string const&                tickingAreaName,
         ::std::unique_ptr<::IRequestAction> requestAction,
         bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
 
-    MCNAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
+    MCAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
 
-    MCNAPI ::ChunksLoadedStatus areAllChunksLoaded(::Dimension& dimension, ::Tick currentLevelTick) const;
+    MCAPI ::ChunksLoadedStatus areAllChunksLoaded(::Dimension& dimension, ::Tick currentLevelTick) const;
 
-    MCNAPI bool areaContainsChunk(::LevelChunk const& chunk) const;
+    MCAPI bool areaContainsChunk(::LevelChunk const& chunk) const;
 
-    MCNAPI ::CompoundTag serialize(::ChunkRequestListType chunkRequestListType);
+    MCAPI ::CompoundTag serialize(::ChunkRequestListType chunkRequestListType);
 
-    MCNAPI ~ChunkLoadedRequest();
+    MCAPI ~ChunkLoadedRequest();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::DeserializedChunkLoadedRequest load(
+    MCAPI static ::DeserializedChunkLoadedRequest load(
         ::std::string const&                    key,
         ::CompoundTag const&                    tag,
         ::ICommandOriginLoader&                 loader,
@@ -76,9 +76,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ChunkLoadedRequest&&);
+    MCAPI void* $ctor(::ChunkLoadedRequest&&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string const&                tickingAreaName,
         ::std::unique_ptr<::IRequestAction> requestAction,
         bool                                allowNonTickingPlayerAndTickingAreaChunks
@@ -88,6 +88,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -2,30 +2,44 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/brstd/flat_map.h"
+#include "mc/platform/brstd/move_only_function.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+// clang-format on
+
 struct BlockPatternData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5da3e8;
-    ::ll::UntypedStorage<8, 56> mUnk52423e;
-    ::ll::UntypedStorage<4, 4>  mUnkc50dd9;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mPattern;
+    ::ll::TypedStorage<
+        8,
+        56,
+        ::brstd::flat_map<
+            char,
+            ::brstd::move_only_function<bool(::BlockSource&, ::BlockPos const&, ::Block const&) const>,
+            ::std::less<char>,
+            ::std::vector<char>,
+            ::std::vector<::brstd::move_only_function<bool(::BlockSource&, ::BlockPos const&, ::Block const&) const>>>>
+                                  mLookup;
+    ::ll::TypedStorage<4, 4, int> mPatternLength;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPatternData& operator=(BlockPatternData const&);
-    BlockPatternData(BlockPatternData const&);
-    BlockPatternData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BlockPatternData();
+    MCAPI ~BlockPatternData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

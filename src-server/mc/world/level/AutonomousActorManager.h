@@ -4,8 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,71 +29,69 @@ class AutonomousActorManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf06aa6;
-    ::ll::UntypedStorage<8, 24> mUnk45dc81;
-    ::ll::UntypedStorage<8, 24> mUnkcc0197;
-    ::ll::UntypedStorage<8, 16> mUnkb23f8a;
-    ::ll::UntypedStorage<8, 16> mUnk76fda5;
-    ::ll::UntypedStorage<8, 16> mUnk2b39de;
-    ::ll::UntypedStorage<8, 16> mUnka42bc5;
-    ::ll::UntypedStorage<8, 16> mUnkaa510c;
-    ::ll::UntypedStorage<8, 16> mUnkd0dfa5;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OwnerPtr<::EntityContext>>>          mOwnedInactiveAutonomousActors;
+    ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>>                      mActiveAutonomousActors;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ActorManager> const> mActorManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                     mOnRemoveActorEntityReferences;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnAutonomousActorRemovedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnChunkLoaded;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnChunkDiscarded;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveGameDataSubscription;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry>>     mEntityRegistry;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    AutonomousActorManager& operator=(AutonomousActorManager const&);
-    AutonomousActorManager(AutonomousActorManager const&);
     AutonomousActorManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AutonomousActorManager(
+    MCAPI AutonomousActorManager(
         ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager>              actorManager
     );
 
-    MCNAPI void _moveActiveAutonomousActorEntityToInactive(::Actor& actor, ::LevelChunk& levelChunk);
+    MCAPI void _moveActiveAutonomousActorEntityToInactive(::Actor& actor, ::LevelChunk& levelChunk);
 
-    MCNAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
+    MCAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
 
-    MCNAPI void _onRemoveActorEntityReferences(::Actor& actor);
+    MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
-    MCNAPI void _saveAllAutonomousActors(::LevelStorage& levelStorage);
+    MCAPI void _saveAllAutonomousActors(::LevelStorage& levelStorage);
 
-    MCNAPI ::Actor*
+    MCAPI ::Actor*
     addAutonomousActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
-    MCNAPI void loadAutonomousActorsFromDisk(::LevelStorage& levelStorage, ::ActorFactory& actorFactory);
+    MCAPI void loadAutonomousActorsFromDisk(::LevelStorage& levelStorage, ::ActorFactory& actorFactory);
 
-    MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCNAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCNAPI bool removeActiveAutonomousActorEntity(::WeakEntityRef weakEntityRef);
+    MCAPI bool removeActiveAutonomousActorEntity(::WeakEntityRef weakEntityRef);
 
-    MCNAPI ~AutonomousActorManager();
+    MCAPI ~AutonomousActorManager();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _deduplicateDuplicateActorsFromList(::ListTag& listTag);
+    MCAPI static void _deduplicateDuplicateActorsFromList(::ListTag& listTag);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& AUTONOMOUS_ACTOR_KEY();
+    MCAPI static ::std::string_view const& AUTONOMOUS_ACTOR_KEY();
 
-    MCNAPI static ::std::string_view const& AUTONOMOUS_ACTOR_LIST_KEY();
+    MCAPI static ::std::string_view const& AUTONOMOUS_ACTOR_LIST_KEY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager>              actorManager
     );
@@ -100,6 +100,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

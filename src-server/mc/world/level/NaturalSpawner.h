@@ -5,7 +5,9 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/spawn_category/Type.h"
+#include "mc/world/level/SpawnSettings.h"
 #include "mc/world/level/Spawner.h"
+#include "mc/world/level/chunk/SpawnPlacements.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,8 +16,10 @@ class Biome;
 class BlockPos;
 class BlockSource;
 class ChunkPos;
+class IMinecraftEventing;
 class IRandom;
 class IWorldRegistriesProvider;
+class Level;
 class LevelChunkVolumeData;
 class Mob;
 class Random;
@@ -23,23 +27,27 @@ class ResourcePackManager;
 class SpawnGroupRegistry;
 class Vec3;
 struct ActorUniqueID;
-struct SpawnSettings;
 namespace br::spawn { class EntityTypeCache; }
-namespace br::spawn { class SpawnPlacements; }
 namespace br::spawn { struct State; }
 // clang-format on
 
 class NaturalSpawner : public ::Spawner {
 public:
+    // NaturalSpawner inner types define
+    using SpawnPredicate = ::std::function<bool(::ActorType, ::BlockPos, ::LevelChunkVolumeData const&)>;
+
+    using AfterSpawnCallback = ::std::function<void(::Mob&, ::LevelChunkVolumeData const&)>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk2d322f;
-    ::ll::UntypedStorage<8, 8>   mUnk9032a6;
-    ::ll::UntypedStorage<8, 48>  mUnk905d1f;
-    ::ll::UntypedStorage<8, 272> mUnk504207;
-    ::ll::UntypedStorage<8, 8>   mUnk62f589;
-    ::ll::UntypedStorage<8, 8>   mUnke1fc69;
-    ::ll::UntypedStorage<8, 8>   mUnk5d231c;
+    ::ll::TypedStorage<8, 8, ::Level&>                                        mLevel;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                           mEventing;
+    ::ll::TypedStorage<8, 48, ::SpawnSettings>                                mSpawnSettings;
+    ::ll::TypedStorage<8, 272, ::br::spawn::SpawnPlacements>                  mSpawnPlacements;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorSpawnRuleGroup>>        mActorSpawnRules;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SpawnGroupRegistry>>         mSpawnGroupRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::br::spawn::EntityTypeCache>> mEntityTypeCache;
     // NOLINTEND
 
 public:

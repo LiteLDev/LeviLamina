@@ -14,14 +14,8 @@ class BlockHashPalette : public ::BlockPalette {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk5d6c54;
+    ::ll::TypedStorage<8, 16, ::std::map<uint, uint64>> mNetworkIdToPaletteIndexMap;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockHashPalette& operator=(BlockHashPalette const&);
-    BlockHashPalette(BlockHashPalette const&);
-    BlockHashPalette();
 
 public:
     // virtual functions
@@ -45,13 +39,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockPalette::PaletteType $getPaletteType();
+    MCFOLD ::BlockPalette::PaletteType $getPaletteType();
 
-    MCNAPI void $appendBlock(::Block const& block);
+    MCAPI void $appendBlock(::Block const& block);
 
-    MCNAPI ::Block const& $getBlock(uint const& networkId) const;
+    MCAPI ::Block const& $getBlock(uint const& networkId) const;
 
-    MCNAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
+    MCAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
     // NOLINTEND
 
 public:
