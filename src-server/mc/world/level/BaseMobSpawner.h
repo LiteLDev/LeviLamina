@@ -2,41 +2,43 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
 class CompoundTag;
-struct ActorDefinitionIdentifier;
+class SpawnData;
 // clang-format on
 
 class BaseMobSpawner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkd2dbeb;
-    ::ll::UntypedStorage<4, 4>   mUnk2f3a7a;
-    ::ll::UntypedStorage<4, 4>   mUnk4b3eed;
-    ::ll::UntypedStorage<8, 176> mUnk940170;
-    ::ll::UntypedStorage<8, 24>  mUnka1c2c0;
-    ::ll::UntypedStorage<8, 8>   mUnkf3fbaa;
-    ::ll::UntypedStorage<4, 4>   mUnk91d28a;
-    ::ll::UntypedStorage<4, 4>   mUnk242bd7;
-    ::ll::UntypedStorage<4, 4>   mUnkb155c4;
-    ::ll::UntypedStorage<8, 24>  mUnkb9b5e0;
-    ::ll::UntypedStorage<4, 4>   mUnk40445d;
-    ::ll::UntypedStorage<4, 4>   mUnk345749;
-    ::ll::UntypedStorage<4, 4>   mUnk8b3a4b;
-    ::ll::UntypedStorage<1, 1>   mUnkdc1334;
-    ::ll::UntypedStorage<4, 4>   mUnk1f4926;
-    ::ll::UntypedStorage<4, 4>   mUnk3cea86;
-    ::ll::UntypedStorage<4, 4>   mUnkb02a14;
+    ::ll::TypedStorage<4, 4, int>                            mSpawnDelay;
+    ::ll::TypedStorage<4, 4, float>                          mSpin;
+    ::ll::TypedStorage<4, 4, float>                          mOSpin;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>  mActorDefId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SpawnData>>    mSpawnPotentials;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SpawnData>> mNextSpawnData;
+    ::ll::TypedStorage<4, 4, int>                            mMinSpawnDelay;
+    ::ll::TypedStorage<4, 4, int>                            mMaxSpawnDelay;
+    ::ll::TypedStorage<4, 4, int>                            mSpawnCount;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>               mDisplayEntity;
+    ::ll::TypedStorage<4, 4, int>                            mMaxNearbyEntities;
+    ::ll::TypedStorage<4, 4, int>                            mRequiredPlayerRange;
+    ::ll::TypedStorage<4, 4, int>                            mSpawnRange;
+    ::ll::TypedStorage<1, 1, bool>                           mActive;
+    ::ll::TypedStorage<4, 4, float>                          mDisplayEntityWidth;
+    ::ll::TypedStorage<4, 4, float>                          mDisplayEntityHeight;
+    ::ll::TypedStorage<4, 4, float>                          mDisplayEntityScale;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BaseMobSpawner& operator=(BaseMobSpawner const&);
-    BaseMobSpawner(BaseMobSpawner const&);
     BaseMobSpawner();
 
 public:
@@ -61,31 +63,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BaseMobSpawner(::ActorDefinitionIdentifier actorDefId);
+    MCAPI explicit BaseMobSpawner(::ActorDefinitionIdentifier actorDefId);
 
-    MCNAPI void _delay(::BlockSource& source);
+    MCAPI void _delay(::BlockSource& source);
 
-    MCNAPI ::ActorDefinitionIdentifier getSpawnTypeId() const;
+    MCAPI ::ActorDefinitionIdentifier getSpawnTypeId() const;
 
-    MCNAPI void removeDisplayEntity();
+    MCAPI void removeDisplayEntity();
 
-    MCNAPI void setEntityId(::ActorDefinitionIdentifier actorDefId);
+    MCAPI void setEntityId(::ActorDefinitionIdentifier actorDefId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorDefinitionIdentifier actorDefId);
+    MCAPI void* $ctor(::ActorDefinitionIdentifier actorDefId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::BlockSource& source);
+    MCAPI void $tick(::BlockSource& source);
 
-    MCNAPI void $load(::CompoundTag const& data);
+    MCAPI void $load(::CompoundTag const& data);
 
-    MCNAPI void $save(::CompoundTag& tag);
+    MCAPI void $save(::CompoundTag& tag);
     // NOLINTEND
 
 public:

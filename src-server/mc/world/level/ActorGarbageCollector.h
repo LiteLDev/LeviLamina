@@ -14,29 +14,23 @@ class ActorGarbageCollector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf30b7b;
-    ::ll::UntypedStorage<8, 24> mUnkba024f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OwnerPtr<::EntityContext>>> mPendingEntitiesToRemove;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OwnerPtr<::EntityContext>>> mDiscardedSerializingEntities;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorGarbageCollector& operator=(ActorGarbageCollector const&);
-    ActorGarbageCollector(ActorGarbageCollector const&);
-    ActorGarbageCollector();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void garbageCollectEntity(::OwnerPtr<::EntityContext> entity);
+    MCAPI void garbageCollectEntity(::OwnerPtr<::EntityContext> entity);
 
-    MCNAPI void update();
+    MCAPI void update();
 
-    MCNAPI ~ActorGarbageCollector();
+    MCAPI ~ActorGarbageCollector();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

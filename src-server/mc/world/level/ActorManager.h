@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/platform/Result.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
@@ -24,26 +26,38 @@ class ILevelChunkEventManagerConnector;
 class LevelChunk;
 class WeakEntityRef;
 struct ActorUniqueID;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class ActorManager : public ::IActorManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnkdbad9c;
-    ::ll::UntypedStorage<8, 8>   mUnk2cdcd8;
-    ::ll::UntypedStorage<8, 24>  mUnkea18e6;
-    ::ll::UntypedStorage<8, 128> mUnk9f3dde;
-    ::ll::UntypedStorage<8, 128> mUnkf0ea9f;
-    ::ll::UntypedStorage<8, 128> mUnkb48e44;
-    ::ll::UntypedStorage<1, 1>   mUnk583438;
-    ::ll::UntypedStorage<8, 16>  mUnkfd3a24;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OwnerPtr<::EntityContext>>>              mEntities;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IActorManagerProxy>>> mActorManagerProxy;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector>>  mActorGarbageCollector;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::Actor&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnActorEntityAdded;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::Actor&, ::ActorInitializationMethod), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mPostReloadActor;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::Actor&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+                                                               mOnRemoveActorEntityReferences;
+    ::ll::TypedStorage<1, 1, bool>                             mIsLevelTearingDown;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnChunkDiscarded;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ActorManager& operator=(ActorManager const&);
-    ActorManager(ActorManager const&);
     ActorManager();
 
 public:
@@ -67,52 +81,52 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorManager(
+    MCAPI ActorManager(
         ::std::unique_ptr<::IActorManagerProxy>                actorManagerProxy,
         ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector
     );
 
-    MCNAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
+    MCAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
 
-    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
+    MCAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
     addActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
-    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
+    MCAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
     addActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
 
-    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError> addActorEntity(
+    MCAPI ::Bedrock::Result<::Actor*, ::ActorValidationError> addActorEntity(
         ::Dimension&                dimension,
         ::ActorUniqueID             actorUniqueID,
         ::ActorRuntimeID            actorRuntimeID,
         ::OwnerPtr<::EntityContext> entity
     );
 
-    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
+    MCAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
     addGlobalActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
-    MCNAPI void cleanupActorEntityReferencesGarbageCollect(::OwnerPtr<::EntityContext> entity);
+    MCAPI void cleanupActorEntityReferencesGarbageCollect(::OwnerPtr<::EntityContext> entity);
 
-    MCNAPI ::OwnerPtr<::EntityContext> deleteActorEntityFromWorldAndTakeEntity(::WeakEntityRef entityRef);
+    MCAPI ::OwnerPtr<::EntityContext> deleteActorEntityFromWorldAndTakeEntity(::WeakEntityRef entityRef);
 
-    MCNAPI void forceRemoveActorFromWorld(::Actor& actor);
+    MCAPI void forceRemoveActorFromWorld(::Actor& actor);
 
-    MCNAPI void onChunkDiscarded(::LevelChunk const& levelChunk, ::WeakEntityRef entityRef);
+    MCAPI void onChunkDiscarded(::LevelChunk const& levelChunk, ::WeakEntityRef entityRef);
 
-    MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCNAPI ::OwnerPtr<::EntityContext> removeActorEntityAndTakeEntity(::WeakEntityRef entityRef);
+    MCAPI ::OwnerPtr<::EntityContext> removeActorEntityAndTakeEntity(::WeakEntityRef entityRef);
 
-    MCNAPI void removeActorEntityReferencesForDeletion(::Actor& actor);
+    MCAPI void removeActorEntityReferencesForDeletion(::Actor& actor);
 
-    MCNAPI ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef entityRef);
+    MCAPI ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef entityRef);
 
-    MCNAPI ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef entityRef, ::LevelChunk& levelChunk);
+    MCAPI ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef entityRef, ::LevelChunk& levelChunk);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::IActorManagerProxy>                actorManagerProxy,
         ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector
     );
@@ -121,18 +135,18 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
 
-    MCNAPI ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
     $getRegisterPostReloadActorConnector();
 
-    MCNAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();
     // NOLINTEND
 
 public:

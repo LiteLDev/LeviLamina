@@ -6,12 +6,6 @@ class LoadingScreenIdManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7db596;
+    ::ll::TypedStorage<4, 4, uint> mLastLoadingScreenId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LoadingScreenIdManager& operator=(LoadingScreenIdManager const&);
-    LoadingScreenIdManager(LoadingScreenIdManager const&);
-    LoadingScreenIdManager();
 };
