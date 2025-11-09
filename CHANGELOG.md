@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.2] - 2025-11-09
+
+### Changed
+
+- Bumped bedrock-runtime-data to v1.21.120-server.4
+
+### Fixed
+
+- Fixed some header files missing closing brackets errors @Lovelylavender4
+- Fixed the warning that the keyword 'template' should appear before the dependency template name @Lovelylavender4
+
 ## [1.7.1] - 2025-11-06
 
 ### Added
@@ -1173,7 +1184,8 @@ For lip and tooth-hub test only.
 [#1750]: https://github.com/LiteLDev/LeviLamina/issues/1750
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.1...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.2...HEAD
+[1.7.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.1...v1.7.2
 [1.7.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.0...v1.7.1
 [1.7.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.2...v1.7.0
 [1.6.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.1...v1.6.2
