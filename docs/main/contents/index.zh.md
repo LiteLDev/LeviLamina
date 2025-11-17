@@ -12,3 +12,8 @@
 LeviLamina 是一个非官方的模组加载器，为 Minecraft 基岩专用服务器（BDS）提供必需的 API 支持。它具有全面的 API、强大的事件系统和实用接口，使开发者能够轻松增强 BDS 的新游戏功能。
 
 开发者可以使用 C++ 创建模组。这种无缝集成允许轻松自定义，并提供直观的学习体验。
+
+## 鸣谢
+
+感谢[武汉旋律云网络科技有限公司](https://www.rhymc.com/)对本项目的支持  
+[![Rhymc](https://www.rhymc.com/assets/img/logo.png)](https://www.rhymc.com/)
