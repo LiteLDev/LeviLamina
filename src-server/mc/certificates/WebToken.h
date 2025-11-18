@@ -26,27 +26,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WebToken();
+    MCAPI WebToken();
 
-    MCNAPI explicit WebToken(::std::string token);
+    MCAPI explicit WebToken(::std::string token);
 
-    MCNAPI ::std::string _signatureToDER() const;
+    MCAPI ::std::string _signatureToDER() const;
 
-    MCNAPI ::std::string toString() const;
+    MCAPI ::std::string toString() const;
 
-    MCNAPI bool verifyWithExternalKey(::std::string const& publicKey) const;
+    MCAPI bool verifyWithExternalKey(::std::string const& publicKey) const;
 
-    MCNAPI bool verifyWithIncludedKey(::std::vector<::std::string> const& trustedKeys) const;
+    MCAPI bool verifyWithIncludedKey(::std::vector<::std::string> const& trustedKeys) const;
 
-    MCNAPI ~WebToken();
+    MCAPI ~WebToken();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string _DERToBinary(::std::string const& derSignature, int outputLength);
+    MCAPI static ::std::string _DERToBinary(::std::string const& derSignature, int outputLength);
 
-    MCNAPI static ::std::unique_ptr<::WebToken> createFromData(
+    MCAPI static ::std::unique_ptr<::WebToken> createFromData(
         ::Json::Value const&                                           dataInfo,
         ::PrivateKeyManager const&                                     manager,
         ::std::variant<::PublicKeySignatureType, ::CertificateSNIType> signatureType
@@ -56,14 +56,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::std::string token);
+    MCAPI void* $ctor(::std::string token);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
