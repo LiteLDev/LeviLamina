@@ -28,34 +28,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI UnverifiedCertificate(::UnverifiedCertificate const& other);
+    MCAPI UnverifiedCertificate(::UnverifiedCertificate const& other);
 
-    MCNAPI void addToChain(::Json::Value& chain) const;
+    MCAPI void addToChain(::Json::Value& chain) const;
 
-    MCNAPI ::std::string getIdentityPublicKey() const;
+    MCAPI ::std::string getIdentityPublicKey() const;
 
-    MCNAPI ::std::string toString() const;
+    MCAPI ::std::string toString() const;
 
-    MCNAPI ::std::unique_ptr<::Certificate> verify(::std::vector<::std::string> const& trustedKeys) const;
+    MCAPI ::std::unique_ptr<::Certificate> verify(::std::vector<::std::string> const& trustedKeys) const;
 
-    MCNAPI ~UnverifiedCertificate();
+    MCAPI ~UnverifiedCertificate();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::UnverifiedCertificate fromString(::std::string const& input);
+    MCAPI static ::UnverifiedCertificate fromString(::std::string const& input);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::UnverifiedCertificate const& other);
+    MCAPI void* $ctor(::UnverifiedCertificate const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
