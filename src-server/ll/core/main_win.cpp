@@ -34,6 +34,7 @@
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/core/io/Output.h"
 #include "ll/core/mod/ModRegistrar.h"
+#include "ll/core/tweak/VulnerabilityFixes.h"
 
 #include "windows.h"
 
@@ -195,6 +196,18 @@ void leviLaminaMain() {
     command::registerCommands();
 
     mod::ModRegistrar::getInstance().loadAllMods();
+
+
+    if (config.modules.vulnerabilityFixes) {
+        auto levistoneMod = mod::ModManagerRegistry::getInstance().getMod("EndstoneRuntime");
+        if (levistoneMod) {
+            if (levistoneMod->getManifest().version.value_or(data::Version()) < data::Version(0, 10, 12)) {
+                vulnerability_fixes::enableFixes();
+            }
+        } else {
+            vulnerability_fixes::enableFixes();
+        }
+    }
 }
 
 LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main"_sym, int, int argc, char* argv[]) {
