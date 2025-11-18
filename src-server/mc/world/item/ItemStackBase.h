@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/Tick.h"
 
+class IDataInput;
+
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
@@ -54,6 +56,7 @@ public:
     LLNDAPI std::string getDescriptionName() const;
     LLNDAPI bool        isEnchanted() const;
     LLNDAPI bool        removeEnchants() const;
+    LLAPI void          deserializeComponents(IDataInput& input);
 
 public:
     // member variables

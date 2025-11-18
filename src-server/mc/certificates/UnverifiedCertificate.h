@@ -21,9 +21,12 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UnverifiedCertificate& operator=(UnverifiedCertificate const&);
-    UnverifiedCertificate();
+    UnverifiedCertificate(
+        ::WebToken const&                          rawToken,
+        ::std::unique_ptr<UnverifiedCertificate>&& parentUnverifiedCertificate
+    )
+    : mRawToken(rawToken),
+      mParentUnverifiedCertificate(std::move(parentUnverifiedCertificate)) {}
 
 public:
     // member functions
