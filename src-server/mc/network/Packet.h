@@ -25,21 +25,6 @@ class BlockPos;
 class NetworkIdentifier;
 struct NetworkIdentifierWithSubId;
 
-#ifndef MC_NETWORK_PACKET_DECALARE
-
-#define MC_NETWORK_PACKET_DECALARE(packetClassName)                                                                    \
-    class packetClassName : public ::PayloadPacket<::packetClassName##Payload>
-
-#endif
-
-#ifndef MC_NETWORK_PACKET_DECALARE_END
-#define MC_NETWORK_PACKET_DECALARE_END ;
-#endif
-
-// class (.*?) : public ::Packet \{\npublic:\n    // member variables\n    // NOLINTBEGIN\n *
-// ::ll::TypedStorage<.*?::\1Payload> mPayload;\n.*\n.*
-// MC_NETWORK_PACKET_DECALARE($1)
-
 class Packet {
 public:
     [[nodiscard]] constexpr explicit Packet(
@@ -223,6 +208,7 @@ public:
     // NOLINTEND
 };
 
+namespace ll {
 template <class PacketPayloadT>
 class PayloadPacket : public ::Packet, public PacketPayloadT {
 public:
@@ -234,3 +220,4 @@ public:
     PayloadPacket(Args&&... args) : Packet(),
                                     PacketPayloadT(std::forward<Args>(args)...) {}
 };
+} // namespace ll

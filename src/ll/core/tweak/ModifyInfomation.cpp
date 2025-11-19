@@ -139,7 +139,7 @@ LL_TYPE_INSTANCE_HOOK(
     char const* data,
     uint        dataSize
 ) {
-    if (dataSize >=2) {
+    if (dataSize >= 2) {
         if (auto dataView = std::string_view{data + 2, dataSize - 2}; dataView.starts_with("MCPE;")) {
             auto modified = fmt::format("{}LeviLamina;", dataView);
             auto length   = modified.size();
