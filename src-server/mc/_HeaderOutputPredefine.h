@@ -313,6 +313,10 @@ struct TypedStorageImpl<Align, Size, ::sockaddr_in> {
 template <size_t Align, size_t Size, class T>
 using TypedStorage = typename TypedStorageImpl<Align, Size, T>::type;
 
+template <class T>
+class PayloadPacket {
+public:
+};
 } // namespace ll
 
 // clang-format on

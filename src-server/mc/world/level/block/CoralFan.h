@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 48
-    virtual bool isValidAuxValue(int value) const /*override*/;
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     // vIndex: 5
     virtual ::AABB getCollisionShape(
@@ -95,7 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValidAuxValue(int value) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
     MCFOLD ::AABB $getCollisionShape(
         ::Block const&,

@@ -16,12 +16,11 @@ class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class UpdateBlockPacket : public ::Packet {
+class UpdateBlockPacket : public ::ll::PayloadPacket<::UpdateBlockPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 24, ::UpdateBlockPacketPayload> mPayload;
-    ::ll::TypedStorage<4, 4, ::SerializationMode>         mSerializationMode;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:

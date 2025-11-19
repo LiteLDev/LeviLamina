@@ -42,7 +42,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool const                           advancedToolTips
     ) const /*override*/;
 
     // vIndex: 48
@@ -89,7 +89,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool const                           advancedToolTips
     ) const;
 
     MCFOLD bool $isDestructive(int) const;

@@ -10,6 +10,12 @@ class Vec3;
 
 class BehaviorData {
 public:
+    // BehaviorData inner types declare
+    // clang-format off
+    template<typename T0> struct Data;
+    struct DataProxy;
+    // clang-format on
+
     // BehaviorData inner types define
     enum class DataType : uchar {
         BlockPosition = 0,
@@ -20,9 +26,6 @@ public:
         Vector3       = 5,
         VoidPointer   = 6,
     };
-
-    template <typename T0>
-    struct Data {};
 
     struct DataProxy {
     public:
@@ -54,6 +57,9 @@ public:
         MCNAPI static void** $vftable();
         // NOLINTEND
     };
+
+    template <typename T0>
+    struct Data {};
 
 public:
     // member variables

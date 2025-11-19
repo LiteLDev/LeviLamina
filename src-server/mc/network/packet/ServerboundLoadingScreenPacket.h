@@ -16,12 +16,11 @@ class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class ServerboundLoadingScreenPacket : public ::Packet {
+class ServerboundLoadingScreenPacket : public ::ll::PayloadPacket<::ServerboundLoadingScreenPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::ServerboundLoadingScreenPacketPayload> mPayload;
-    ::ll::TypedStorage<4, 4, ::SerializationMode>                      mSerializationMode;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
@@ -47,7 +46,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 7
-    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
     // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
@@ -96,7 +95,7 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCFOLD void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 

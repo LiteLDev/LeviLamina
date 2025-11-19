@@ -47,7 +47,7 @@ public:
     virtual void setSitting(bool value) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 154
     virtual bool isAlliedTo(::Mob* other) /*override*/;
@@ -85,7 +85,7 @@ public:
 
     MCFOLD void $setSitting(bool value);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI bool $isAlliedTo(::Mob* other);
 

@@ -62,8 +62,8 @@ public:
         ::std::string const& address,
         int                  port,
         ::std::string const& url,
-        int                  error_code,
-        ::std::string const& error_text
+        int                  errorCode,
+        ::std::string const& errorMessage
     ) /*override*/;
 
     // vIndex: 0
@@ -101,8 +101,8 @@ public:
         ::std::string const& address,
         int                  port,
         ::std::string const& url,
-        int                  error_code,
-        ::std::string const& error_text
+        int                  errorCode,
+        ::std::string const& errorMessage
     );
     // NOLINTEND
 
