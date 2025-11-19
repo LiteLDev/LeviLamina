@@ -43,7 +43,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -89,9 +89,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void LogIPSupport(::RakPeerHelper::PeerPurpose purpose);
+    MCAPI void LogIPSupport(::RakPeerHelper::PeerPurpose purpose);
 
-    MCNAPI ::RakNet::StartupResult _startupInternal(
+    MCAPI ::RakNet::StartupResult _startupInternal(
         ::gsl::not_null<::RakNet::RakPeerInterface*> peer,
         ::ConnectionDefinition const&                definition,
         ::RakNet::SocketDescriptor*                  sockets,
@@ -99,7 +99,7 @@ public:
         int                                          ipv6Index
     );
 
-    MCNAPI ::RakNet::StartupResult peerStartup(
+    MCAPI ::RakNet::StartupResult peerStartup(
         ::RakNet::RakPeerInterface*   peerIn,
         ::ConnectionDefinition const& definition,
         ::RakPeerHelper::PeerPurpose  purpose

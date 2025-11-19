@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Random& $getThreadRandom();
+    MCAPI ::Random& $getThreadRandom();
     // NOLINTEND
 
 public:

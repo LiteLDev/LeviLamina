@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
 class BlockPosIterator {
 public:
     // BlockPosIterator inner types declare
@@ -15,27 +18,21 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnke77ff1;
-        ::ll::UntypedStorage<4, 12> mUnka91ee5;
-        ::ll::UntypedStorage<4, 4>  mUnk17b8ba;
-        ::ll::UntypedStorage<4, 12> mUnk7b4ad6;
-        ::ll::UntypedStorage<4, 4>  mUnk7e4212;
-        ::ll::UntypedStorage<4, 4>  mUnkdf6d11;
-        ::ll::UntypedStorage<4, 4>  mUnkc161ae;
-        ::ll::UntypedStorage<1, 1>  mUnk89cbf6;
-        ::ll::UntypedStorage<1, 1>  mUnk4c5f40;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mOrigin;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mReach;
+        ::ll::TypedStorage<4, 4, int>         mMaxDepth;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mCurrentPos;
+        ::ll::TypedStorage<4, 4, int>         mCurrentDepth;
+        ::ll::TypedStorage<4, 4, int>         mMaxX;
+        ::ll::TypedStorage<4, 4, int>         mMaxY;
+        ::ll::TypedStorage<1, 1, bool>        mZMirror;
+        ::ll::TypedStorage<1, 1, bool>        mDone;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FromCenter& operator=(FromCenter const&);
-        FromCenter(FromCenter const&);
-        FromCenter();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::BlockPosIterator::FromCenter& operator++();
+        MCAPI ::BlockPosIterator::FromCenter& operator++();
         // NOLINTEND
     };
 
@@ -43,40 +40,28 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 56> mUnk2c5c9b;
+        ::ll::TypedStorage<4, 56, ::BlockPosIterator::FromCenter> mFromCenter;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ManhattanDistance& operator=(ManhattanDistance const&);
-        ManhattanDistance(ManhattanDistance const&);
-        ManhattanDistance();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::BlockPosIterator::ManhattanDistance& operator++();
+        MCAPI ::BlockPosIterator::ManhattanDistance& operator++();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk23564d;
-    ::ll::UntypedStorage<4, 12> mUnk402960;
-    ::ll::UntypedStorage<4, 12> mUnkac9ddc;
-    ::ll::UntypedStorage<1, 1>  mUnk962628;
+    ::ll::TypedStorage<4, 12, ::BlockPos const> mMinCorner;
+    ::ll::TypedStorage<4, 12, ::BlockPos const> mMaxCorner;
+    ::ll::TypedStorage<4, 12, ::BlockPos>       mCurrentPos;
+    ::ll::TypedStorage<1, 1, bool>              mDone;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPosIterator& operator=(BlockPosIterator const&);
-    BlockPosIterator(BlockPosIterator const&);
-    BlockPosIterator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockPosIterator end() const;
+    MCAPI ::BlockPosIterator end() const;
     // NOLINTEND
 };

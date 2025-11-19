@@ -9,6 +9,8 @@
 // clang-format off
 class Block;
 class BlockPos;
+class BlockSource;
+struct BlockPatternData;
 struct BuildMatch;
 // clang-format on
 
@@ -16,8 +18,8 @@ class BlockPatternMatcher {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkdeb64e;
-    ::ll::UntypedStorage<8, 8> mUnkde5e37;
+    ::ll::TypedStorage<8, 8, ::BlockSource&>            mRegion;
+    ::ll::TypedStorage<8, 8, ::BlockPatternData const&> mData;
     // NOLINTEND
 
 public:
@@ -29,11 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BuildMatch match(::BlockPos const& pos) const;
+    MCAPI ::BuildMatch match(::BlockPos const& pos) const;
 
-    MCNAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up) const;
+    MCAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up) const;
 
-    MCNAPI void replaceBlocks(
+    MCAPI void replaceBlocks(
         char                                                           subPattern,
         ::BuildMatch const&                                            buildMatch,
         ::Block const&                                                 block,
@@ -44,6 +46,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void noopCallback(::Block const&, ::BlockPos const&);
+    MCFOLD static void noopCallback(::Block const&, ::BlockPos const&);
     // NOLINTEND
 };

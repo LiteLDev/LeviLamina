@@ -27,20 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WorldGenContext(::WorldGenContext const&);
+    MCAPI WorldGenContext(::WorldGenContext const&);
 
-    MCNAPI ~WorldGenContext();
+    MCAPI ~WorldGenContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::WorldGenContext const&);
+    MCAPI void* $ctor(::WorldGenContext const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

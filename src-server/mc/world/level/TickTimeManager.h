@@ -2,48 +2,48 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+
 // auto generated forward declare list
 // clang-format off
 class IGameplayUserManagerConnector;
 class IServerPlayerSleepManagerConnector;
+class ITickTimeManagerProxy;
+class PacketSender;
 // clang-format on
 
 class TickTimeManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk5276d2;
-    ::ll::UntypedStorage<8, 8>  mUnk2e2b89;
-    ::ll::UntypedStorage<8, 24> mUnkf1c29a;
-    ::ll::UntypedStorage<8, 8>  mUnkda5959;
-    ::ll::UntypedStorage<8, 16> mUnk27d19c;
-    ::ll::UntypedStorage<8, 16> mUnkcc65d5;
+    ::ll::TypedStorage<1, 1, bool const>                                                  mIsClientSide;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ITickTimeManagerProxy>>> mTickTimeManagerProxy;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>>                 mPacketSender;
+    ::ll::TypedStorage<8, 8, int64>                                                       mLastTimePacketSent;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mOnGameplayUserAdded;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnWakeUpAllPlayersSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TickTimeManager& operator=(TickTimeManager const&);
-    TickTimeManager(TickTimeManager const&);
-    TickTimeManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _onWakeUpAllPlayers();
+    MCAPI void _onWakeUpAllPlayers();
 
-    MCNAPI void _syncTime(int64 currentTick);
+    MCAPI void _syncTime(int64 currentTick);
 
-    MCNAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCNAPI void
+    MCAPI void
     registerForPlayerSleepManagerEvents(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
 
-    MCNAPI ~TickTimeManager();
+    MCAPI ~TickTimeManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
