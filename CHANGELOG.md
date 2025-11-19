@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.5] - 2025-11-19
+
+### Added
+
+- Enable packet rate limiting by default to prevent packet flooding. @wu-vincent
+- Enable RakNet's connection frequency limiting. @wu-vincent
+
+### Fixed
+
+- Patched a vulnerability that allows malicious clients to continue sending packets after the connection is closed. @wu-vincent
+
 ## [1.7.4] - 2025-11-18
 
 ### Fixed
@@ -1191,7 +1202,8 @@ For lip and tooth-hub test only.
 [#1750]: https://github.com/LiteLDev/LeviLamina/issues/1750
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.4...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.5...HEAD
+[1.7.5]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.4...v1.7.5
 [1.7.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.3...v1.7.4
 [1.7.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.1...v1.7.3
 [1.7.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.0...v1.7.1

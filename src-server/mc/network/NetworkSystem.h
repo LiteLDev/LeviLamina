@@ -141,6 +141,9 @@ public:
     NetworkSystem();
 
 public:
+    LLNDAPI NetworkConnection* getConnectionFromId(NetworkIdentifier const& id);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
