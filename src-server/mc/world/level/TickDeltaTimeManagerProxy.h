@@ -3,20 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/timing/Stopwatch.h"
 #include "mc/world/level/ITickDeltaTimeManagerProxy.h"
 
 class TickDeltaTimeManagerProxy : public ::ITickDeltaTimeManagerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk793aac;
+    ::ll::TypedStorage<8, 56, ::Stopwatch> mTickTimer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TickDeltaTimeManagerProxy& operator=(TickDeltaTimeManagerProxy const&);
-    TickDeltaTimeManagerProxy(TickDeltaTimeManagerProxy const&);
-    TickDeltaTimeManagerProxy();
 
 public:
     // virtual functions
@@ -34,9 +29,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI double $calculateDeltaTimeAndReset();
+    MCAPI double $calculateDeltaTimeAndReset();
     // NOLINTEND
 
 public:

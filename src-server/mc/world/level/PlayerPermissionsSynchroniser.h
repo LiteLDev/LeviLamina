@@ -2,29 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class PacketSender;
+class PlayerAbilitiesManager;
+// clang-format on
+
 class PlayerPermissionsSynchroniser {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfdc9cf;
-    ::ll::UntypedStorage<8, 24> mUnk4b563b;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>>           mPacketSender;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PlayerAbilitiesManager>> mPlayerAbilitiesManager;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerPermissionsSynchroniser& operator=(PlayerPermissionsSynchroniser const&);
-    PlayerPermissionsSynchroniser(PlayerPermissionsSynchroniser const&);
-    PlayerPermissionsSynchroniser();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~PlayerPermissionsSynchroniser();
+    MCAPI ~PlayerPermissionsSynchroniser();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

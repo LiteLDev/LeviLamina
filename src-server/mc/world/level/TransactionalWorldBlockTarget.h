@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/WorldChangeTransaction.h"
 #include "mc/world/level/BlockDataFetchResult.h"
 #include "mc/world/level/IBlockWorldGenAPI.h"
 
@@ -25,14 +26,8 @@ class TransactionalWorldBlockTarget : public ::IBlockWorldGenAPI {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk943c12;
+    ::ll::TypedStorage<8, 16, ::WorldChangeTransaction> mTransaction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TransactionalWorldBlockTarget& operator=(TransactionalWorldBlockTarget const&);
-    TransactionalWorldBlockTarget(TransactionalWorldBlockTarget const&);
-    TransactionalWorldBlockTarget();
 
 public:
     // virtual functions
@@ -118,60 +113,60 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const& $getBlock(::BlockPos const& pos) const;
+    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
-    MCNAPI ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
 
-    MCNAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getExtraBlock(::BlockPos const& pos) const;
 
-    MCNAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
+    MCFOLD ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 
-    MCNAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
+    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
     $fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
 
-    MCNAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
+    MCAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
 
-    MCNAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
+    MCAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
 
-    MCNAPI bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
+    MCFOLD bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
 
-    MCNAPI bool $apply() const;
+    MCAPI bool $apply() const;
 
-    MCNAPI bool $placeStructure(::BlockPos const& pos, ::StructureTemplate& structure, ::StructureSettings& settings);
+    MCAPI bool $placeStructure(::BlockPos const& pos, ::StructureTemplate& structure, ::StructureSettings& settings);
 
-    MCNAPI bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI short $getMaxHeight() const;
+    MCFOLD short $getMaxHeight() const;
 
-    MCNAPI short $getMinHeight() const;
+    MCFOLD short $getMinHeight() const;
 
-    MCNAPI bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
+    MCFOLD bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
 
-    MCNAPI short $getHeightmap(int x, int z);
+    MCFOLD short $getHeightmap(int x, int z);
 
-    MCNAPI bool $isLegacyLevel();
+    MCFOLD bool $isLegacyLevel();
 
-    MCNAPI ::Biome const* $getBiome(::BlockPos const& pos) const;
+    MCFOLD ::Biome const* $getBiome(::BlockPos const& pos) const;
 
-    MCNAPI bool $isInBounds(::Pos const& pos) const;
+    MCFOLD bool $isInBounds(::Pos const& pos) const;
 
-    MCNAPI short $getLocalWaterLevel(::BlockPos const& pos) const;
+    MCAPI short $getLocalWaterLevel(::BlockPos const& pos) const;
 
-    MCNAPI ::LevelData const& $getLevelData() const;
+    MCAPI ::LevelData const& $getLevelData() const;
 
-    MCNAPI ::WorldGenContext const& $getContext();
+    MCAPI ::WorldGenContext const& $getContext();
 
-    MCNAPI void $disableBlockSimple();
+    MCFOLD void $disableBlockSimple();
     // NOLINTEND
 
 public:

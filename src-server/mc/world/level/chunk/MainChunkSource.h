@@ -61,26 +61,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& cp);
+    MCFOLD ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& cp);
 
-    MCNAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
+    MCAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
 
-    MCNAPI ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Random& random);
+    MCAPI ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Random& random);
 
-    MCNAPI ::std::shared_ptr<::LevelChunk>
+    MCAPI ::std::shared_ptr<::LevelChunk>
     $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    MCNAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
+    MCFOLD void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
-    MCNAPI ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const& $getStorage() const;
+    MCFOLD ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const& $getStorage() const;
 
-    MCNAPI void $clearDeletedEntities();
+    MCAPI void $clearDeletedEntities();
 
-    MCNAPI ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* $getChunkMap();
+    MCFOLD ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* $getChunkMap();
 
-    MCNAPI bool $canCreateViews() const;
+    MCFOLD bool $canCreateViews() const;
 
-    MCNAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
+    MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
     // NOLINTEND
 
 public:

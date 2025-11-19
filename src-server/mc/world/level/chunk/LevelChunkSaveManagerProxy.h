@@ -75,29 +75,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::WeakRef<::Dimension> $getRandomDimension(::DimensionManager& dimensionManager) const;
+    MCAPI ::WeakRef<::Dimension> $getRandomDimension(::DimensionManager& dimensionManager) const;
 
-    MCNAPI ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Dimension& dimension) const;
+    MCAPI ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Dimension& dimension) const;
 
-    MCNAPI ::std::shared_ptr<::LevelChunk> $getChunk(::Dimension& dimension, ::ChunkPos const& chunkPos) const;
+    MCAPI ::std::shared_ptr<::LevelChunk> $getChunk(::Dimension& dimension, ::ChunkPos const& chunkPos) const;
 
-    MCNAPI bool $doesNonActorDataInLevelChunkNeedSaving(
+    MCAPI bool $doesNonActorDataInLevelChunkNeedSaving(
         ::LevelChunk const& levelChunk,
         int                 minTicksBeforeLiveSave,
         int                 maxTicksBeforeLiveSave
     ) const;
 
-    MCNAPI bool $doesLevelChunkNeedSaving(
+    MCAPI bool $doesLevelChunkNeedSaving(
         ::LevelChunk const& levelChunk,
         int                 minTicksBeforeLiveSave,
         int                 maxTicksBeforeLiveSave
     ) const;
 
-    MCNAPI void $saveLiveChunk(::Dimension& dimension, ::LevelChunk& levelChunk);
+    MCAPI void $saveLiveChunk(::Dimension& dimension, ::LevelChunk& levelChunk);
 
-    MCNAPI void $queueTaskForChunkSave(::brstd::move_only_function<::TaskResult()>&& task);
+    MCAPI void $queueTaskForChunkSave(::brstd::move_only_function<::TaskResult()>&& task);
 
-    MCNAPI void $startLeaveGame();
+    MCAPI void $startLeaveGame();
     // NOLINTEND
 
 public:

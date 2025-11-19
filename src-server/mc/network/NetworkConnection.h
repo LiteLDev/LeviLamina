@@ -51,13 +51,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~PausedPacket();
+        MCAPI ~PausedPacket();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -95,7 +95,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NetworkConnection(
+    MCAPI NetworkConnection(
         ::NetworkIdentifier const&                     id,
         ::std::shared_ptr<::NetworkPeer>               peer,
         bool                                           isSafeAndFast,
@@ -106,18 +106,18 @@ public:
         ::std::shared_ptr<::IPacketSecurityController> packetSecurityController
     );
 
-    MCNAPI ::NetworkPeer::DataStatus receivePacket(
+    MCAPI ::NetworkPeer::DataStatus receivePacket(
         ::std::string&                                                    receiveBuffer,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );
 
-    MCNAPI ~NetworkConnection();
+    MCAPI ~NetworkConnection();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::NetworkIdentifier const&                     id,
         ::std::shared_ptr<::NetworkPeer>               peer,
         bool                                           isSafeAndFast,
@@ -132,6 +132,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

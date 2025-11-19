@@ -62,18 +62,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _findRandomChunkToSave();
+    MCAPI void _findRandomChunkToSave();
 
-    MCNAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
+    MCAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
 
-    MCNAPI void registerForLevelChunkManagerEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCAPI void registerForLevelChunkManagerEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCNAPI ~LevelChunkSaveManager();
+    MCAPI ~LevelChunkSaveManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

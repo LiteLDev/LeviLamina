@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/brstd/flat_map.h"
+
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+struct ActorUniqueID;
+// clang-format on
+
 class PlayerLocationReceiver {
 public:
     // PlayerLocationReceiver inner types declare
@@ -15,12 +24,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk89c1dd;
+    ::ll::TypedStorage<
+        8,
+        56,
+        ::brstd::flat_map<
+            ::ActorUniqueID,
+            ::std::optional<::Vec3>,
+            ::PlayerLocationReceiver::ActorUniqueIDCompare,
+            ::std::vector<::ActorUniqueID>,
+            ::std::vector<::std::optional<::Vec3>>>>
+        mCurrentPlayerLocationData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerLocationReceiver& operator=(PlayerLocationReceiver const&);
-    PlayerLocationReceiver(PlayerLocationReceiver const&);
-    PlayerLocationReceiver();
 };
