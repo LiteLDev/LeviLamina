@@ -197,16 +197,8 @@ void leviLaminaMain() {
 
     mod::ModRegistrar::getInstance().loadAllMods();
 
-
     if (config.modules.vulnerabilityFixes) {
-        auto levistoneMod = mod::ModManagerRegistry::getInstance().getMod("EndstoneRuntime");
-        if (levistoneMod) {
-            if (levistoneMod->getManifest().version.value_or(data::Version()) < data::Version(0, 10, 12)) {
-                vulnerability_fixes::enableFixes();
-            }
-        } else {
-            vulnerability_fixes::enableFixes();
-        }
+        vulnerability_fixes::enableFixes();
     }
 }
 
