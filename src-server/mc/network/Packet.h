@@ -212,8 +212,6 @@ namespace ll {
 template <class PacketPayloadT>
 class PayloadPacket : public ::Packet, public PacketPayloadT {
 public:
-    ::SerializationMode mSerializationMode;
-
     using PayloadType = PacketPayloadT;
 
     template <typename... Args>
