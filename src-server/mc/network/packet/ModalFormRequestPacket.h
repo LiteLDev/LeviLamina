@@ -16,11 +16,7 @@ class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class ModalFormRequestPacket : public ::Packet, public ::ModalFormRequestPacketPayload {
-public:
-    ModalFormRequestPacket(uint formId, ::std::string const& formJSON)
-    : ModalFormRequestPacketPayload(formId, formJSON) {}
-
+class ModalFormRequestPacket : public ::ll::PayloadPacket<::ModalFormRequestPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -54,7 +50,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 7
-    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
     // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
@@ -80,7 +76,7 @@ public:
 
     // vIndex: 16
     virtual ::Bedrock::Result<void>
-    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     // vIndex: 0
     virtual ~ModalFormRequestPacket() /*override*/;
@@ -121,7 +117,7 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCFOLD void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 
@@ -138,8 +134,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void>
-    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

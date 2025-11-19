@@ -17,6 +17,11 @@ namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class CodeBuilderSourcePacket : public ::ll::PayloadPacket<::CodeBuilderSourcePacketPayload> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
+    // NOLINTEND
 
 public:
     // virtual functions

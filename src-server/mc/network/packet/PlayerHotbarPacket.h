@@ -16,7 +16,7 @@ class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class PlayerHotbarPacket : public ::Packet, public ::PlayerHotbarPacketPayload {
+class PlayerHotbarPacket : public ::ll::PayloadPacket<::PlayerHotbarPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN

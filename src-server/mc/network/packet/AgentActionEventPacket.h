@@ -17,6 +17,11 @@ namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class AgentActionEventPacket : public ::ll::PayloadPacket<::AgentActionEventPacketPayload> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
+    // NOLINTEND
 
 public:
     // prevent constructor by default

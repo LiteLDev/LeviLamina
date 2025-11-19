@@ -17,7 +17,7 @@ class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class AddPaintingPacket : public ::Packet, public ::AddPaintingPacketPayload {
+class AddPaintingPacket : public ::ll::PayloadPacket<::AddPaintingPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -77,7 +77,7 @@ public:
 
     // vIndex: 16
     virtual ::Bedrock::Result<void>
-    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     // vIndex: 0
     virtual ~AddPaintingPacket() /*override*/ = default;
@@ -129,8 +129,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void>
-    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

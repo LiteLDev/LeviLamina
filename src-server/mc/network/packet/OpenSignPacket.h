@@ -16,7 +16,7 @@ class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class OpenSignPacket : public ::Packet, public ::OpenSignPacketPayload {
+class OpenSignPacket : public ::ll::PayloadPacket<::OpenSignPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN

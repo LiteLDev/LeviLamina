@@ -18,6 +18,11 @@ namespace cereal { struct ReflectionCtx; }
 
 class PositionTrackingDBClientRequestPacket
 : public ::ll::PayloadPacket<::PositionTrackingDBClientRequestPacketPayload> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
+    // NOLINTEND
 
 public:
     // virtual functions

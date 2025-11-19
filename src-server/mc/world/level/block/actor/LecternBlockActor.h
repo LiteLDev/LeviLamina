@@ -39,7 +39,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
@@ -104,7 +104,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCFOLD int $getMaxStackSize() const;
 

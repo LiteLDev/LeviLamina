@@ -41,7 +41,7 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 137
-    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     // vIndex: 147
     virtual void pushActors() /*override*/;
@@ -80,7 +80,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCFOLD void $pushActors();
     // NOLINTEND

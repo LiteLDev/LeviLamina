@@ -17,6 +17,11 @@ namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class StructureTemplateDataResponsePacket : public ::ll::PayloadPacket<::StructureTemplateDataResponsePacketPayload> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
+    // NOLINTEND
 
 public:
     // prevent constructor by default

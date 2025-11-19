@@ -43,7 +43,7 @@ public:
     virtual ::SharedTypes::Legacy::LevelSoundEvent getDeathSound() /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 8
     virtual ~Goat() /*override*/ = default;
@@ -82,7 +82,7 @@ public:
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getDeathSound();
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
     // NOLINTEND
 
 public:

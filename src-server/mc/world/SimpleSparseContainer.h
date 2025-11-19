@@ -46,7 +46,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 22
     virtual void startOpen(::Actor& actor) /*override*/;
@@ -100,7 +100,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI void $startOpen(::Actor& actor);
 

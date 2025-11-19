@@ -17,6 +17,11 @@ namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class UpdateAdventureSettingsPacket : public ::ll::PayloadPacket<::UpdateAdventureSettingsPacketPayload> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
+    // NOLINTEND
 
 public:
     [[nodiscard]] explicit UpdateAdventureSettingsPacket(AdventureSettings const& settings) : PayloadPacket(settings) {}
@@ -44,7 +49,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 7
-    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
     // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
@@ -70,7 +75,7 @@ public:
 
     // vIndex: 16
     virtual ::Bedrock::Result<void>
-    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     // vIndex: 0
     virtual ~UpdateAdventureSettingsPacket() /*override*/;
@@ -99,7 +104,7 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCFOLD void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 
@@ -116,8 +121,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void>
-    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

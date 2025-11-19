@@ -17,14 +17,19 @@ namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class SpawnParticleEffectPacket : public ::ll::PayloadPacket<::SpawnParticleEffectPacketPayload> {
-
 public:
-    template <typename... Args>
-    SpawnParticleEffectPacket(Args&&... args) : PayloadPacket(std::forward<Args>(args)...) {}
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     SpawnParticleEffectPacket();
+
+public:
+    template <typename... Args>
+    SpawnParticleEffectPacket(Args&&... args) : PayloadPacket(std::forward<Args>(args)...) {}
 
 public:
     // virtual functions
@@ -49,7 +54,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 7
-    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
     // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
@@ -116,7 +121,7 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCFOLD void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 

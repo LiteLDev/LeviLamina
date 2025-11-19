@@ -61,7 +61,7 @@ public:
     virtual bool shouldUseJsonForRenderMatrix() const /*override*/;
 
     // vIndex: 110
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
@@ -107,7 +107,7 @@ public:
 
     MCFOLD bool $shouldUseJsonForRenderMatrix() const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
     // NOLINTEND

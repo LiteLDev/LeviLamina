@@ -17,6 +17,11 @@ namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class StopSoundPacket : public ::ll::PayloadPacket<::StopSoundPacketPayload> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
+    // NOLINTEND
 
 public:
     StopSoundPacket(std::string const& name, bool stopAll = false, bool stopMusicLegacy = false)

@@ -29,7 +29,7 @@ public:
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 110
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 111
     virtual ::ResolvedItemIconInfo
@@ -75,7 +75,7 @@ public:
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;

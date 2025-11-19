@@ -33,7 +33,7 @@ public:
     virtual ~DataStoreSyncServer() /*override*/ = default;
 
     // vIndex: 1
-    virtual void clear(::std::string const& dataStoreName, bool addToOutgoingChanges) /*override*/;
+    virtual void clear(::std::string const& datastoreName, bool addToOutgoingChanges) /*override*/;
 
     // vIndex: 2
     virtual void applyChanges(
@@ -48,7 +48,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $clear(::std::string const& dataStoreName, bool addToOutgoingChanges);
+    MCNAPI void $clear(::std::string const& datastoreName, bool addToOutgoingChanges);
 
     MCNAPI void $applyChanges(
         ::std::vector<::std::variant<::Bedrock::DDUI::DataStoreChange, ::Bedrock::DDUI::DataStoreRemoval>> const&

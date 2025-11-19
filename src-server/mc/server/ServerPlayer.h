@@ -206,7 +206,7 @@ public:
 
     // vIndex: 204
     virtual void displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& textObject,
+        ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     ) /*override*/;
@@ -515,7 +515,7 @@ public:
     );
 
     MCAPI void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& textObject,
+        ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );

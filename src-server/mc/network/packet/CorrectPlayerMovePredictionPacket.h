@@ -16,7 +16,7 @@ class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class CorrectPlayerMovePredictionPacket : public ::Packet, public ::CorrectPlayerMovePredictionPacketPayload {
+class CorrectPlayerMovePredictionPacket : public ::ll::PayloadPacket<::CorrectPlayerMovePredictionPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -72,7 +72,7 @@ public:
 
     // vIndex: 16
     virtual ::Bedrock::Result<void>
-    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     // vIndex: 0
     virtual ~CorrectPlayerMovePredictionPacket() /*override*/;
@@ -118,7 +118,8 @@ public:
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCAPI ::Bedrock::Result<void>
+    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:
