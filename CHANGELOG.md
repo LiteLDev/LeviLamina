@@ -14,11 +14,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enable packet rate limiting by default to prevent packet flooding. @wu-vincent
 - Enable RakNet's connection frequency limiting. @wu-vincent
 
+### Changed
+
+- Bumped bedrock-runtime-data to v1.21.120-server.7
+
 ### Fixed
 
 - Patched a vulnerability that allows malicious clients to continue sending packets after the connection is closed. @wu-vincent
 
 ## [1.7.4] - 2025-11-18
+
+### Changed
+
+- Bumped PreLoader to v1.15.6
+- Bumped bedrock-runtime-data to v1.21.120-server.6
 
 ### Fixed
 
