@@ -6,7 +6,7 @@ struct JSProperty {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnke49a59;
+    ::ll::UntypedStorage<8, 16> mUnk4221a9;
     // NOLINTEND
 
 public:

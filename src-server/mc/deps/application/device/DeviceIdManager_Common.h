@@ -18,10 +18,10 @@ class DeviceIdManager_Common : public ::Bedrock::DeviceIdManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3b65a6;
-    ::ll::UntypedStorage<8, 32> mUnk64cddd;
-    ::ll::UntypedStorage<8, 32> mUnka9a7fd;
-    ::ll::UntypedStorage<8, 88> mUnkf13734;
+    ::ll::UntypedStorage<8, 24>  mUnk3b65a6;
+    ::ll::UntypedStorage<8, 32>  mUnk64cddd;
+    ::ll::UntypedStorage<8, 32>  mUnka9a7fd;
+    ::ll::UntypedStorage<8, 120> mUnkf13734;
     // NOLINTEND
 
 public:
