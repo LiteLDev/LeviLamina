@@ -7,6 +7,7 @@
 class Block;
 class BlockPos;
 class IBlockWorldGenAPI;
+struct BlockChange;
 // clang-format on
 
 class WorldChangeTransaction {
@@ -21,14 +22,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkb19e91;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::BlockChange>> changes;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Data& operator=(Data const&);
-        Data(Data const&);
-        Data();
     };
 
 public:
@@ -47,22 +42,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit WorldChangeTransaction(::IBlockWorldGenAPI& target);
+    MCAPI explicit WorldChangeTransaction(::IBlockWorldGenAPI& target);
 
-    MCNAPI void setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
+    MCAPI void setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
 
-    MCNAPI ~WorldChangeTransaction();
+    MCAPI ~WorldChangeTransaction();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::IBlockWorldGenAPI& target);
+    MCAPI void* $ctor(::IBlockWorldGenAPI& target);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

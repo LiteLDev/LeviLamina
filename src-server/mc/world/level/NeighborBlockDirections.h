@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/EnumSet.h"
 #include "mc/world/level/block/NeighborDirection.h"
 
 // auto generated forward declare list
@@ -14,31 +15,29 @@ class NeighborBlockDirections {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk4f5df1;
+    ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::NeighborDirection, 14>> mDirections;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    NeighborBlockDirections& operator=(NeighborBlockDirections const&);
-    NeighborBlockDirections(NeighborBlockDirections const&);
     NeighborBlockDirections();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit NeighborBlockDirections(::NeighborDirection direction);
+    MCAPI explicit NeighborBlockDirections(::NeighborDirection direction);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::NeighborBlockDirections
+    MCAPI static ::NeighborBlockDirections
     createFromRelativePosition(::BlockPos const& pos, ::BlockPos const& neighborPos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::NeighborDirection direction);
+    MCAPI void* $ctor(::NeighborDirection direction);
     // NOLINTEND
 };

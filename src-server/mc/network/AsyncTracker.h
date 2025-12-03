@@ -6,17 +6,11 @@ class AsyncTracker {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf3645e;
-    ::ll::UntypedStorage<1, 1> mUnk2ad320;
-    ::ll::UntypedStorage<8, 8> mUnka89370;
-    ::ll::UntypedStorage<8, 8> mUnk6c3c62;
-    ::ll::UntypedStorage<1, 1> mUnkdd22bf;
-    ::ll::UntypedStorage<8, 8> mUnk689b12;
+    ::ll::TypedStorage<1, 1, bool>                                    isCurrentWaitingOnCall;
+    ::ll::TypedStorage<1, 1, bool>                                    mWasCallAborted;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> operationStartTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::seconds>                  timeLimit;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasRetryBeenRequested;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mRetryTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AsyncTracker& operator=(AsyncTracker const&);
-    AsyncTracker(AsyncTracker const&);
-    AsyncTracker();
 };

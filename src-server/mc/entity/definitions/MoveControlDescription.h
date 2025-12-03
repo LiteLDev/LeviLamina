@@ -14,14 +14,8 @@ struct MoveControlDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk945d5e;
+    ::ll::TypedStorage<4, 4, float> mMaxTurn;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveControlDescription& operator=(MoveControlDescription const&);
-    MoveControlDescription(MoveControlDescription const&);
-    MoveControlDescription();
 
 public:
     // virtual functions
@@ -36,6 +30,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
     // NOLINTEND
 };

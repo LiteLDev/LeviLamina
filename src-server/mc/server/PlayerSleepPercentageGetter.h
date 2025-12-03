@@ -3,20 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/server/IPlayerSleepPercentageGetter.h"
+
+// auto generated forward declare list
+// clang-format off
+class GameRules;
+// clang-format on
 
 class PlayerSleepPercentageGetter : public ::IPlayerSleepPercentageGetter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk49c20a;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameRules const> const> mGameRules;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerSleepPercentageGetter& operator=(PlayerSleepPercentageGetter const&);
-    PlayerSleepPercentageGetter(PlayerSleepPercentageGetter const&);
-    PlayerSleepPercentageGetter();
 
 public:
     // virtual functions
@@ -31,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $getPlayerSleepPercentageGoal() const;
+    MCAPI float $getPlayerSleepPercentageGoal() const;
     // NOLINTEND
 
 public:
