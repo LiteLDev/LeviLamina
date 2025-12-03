@@ -2,10 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/ChunkPos.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class Dimension;
+class SubChunkPos;
 struct Brightness;
+struct SubChunkLightUpdate;
 // clang-format on
 
 class RuntimeLightingManager {
@@ -21,55 +27,44 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk7fba0a;
-        ::ll::UntypedStorage<8, 8> mUnk3e689f;
-        ::ll::UntypedStorage<8, 8> mUnk5ba057;
-        ::ll::UntypedStorage<8, 8> mUnkda89a1;
+        ::ll::TypedStorage<4, 4, float>                                 mDist;
+        ::ll::TypedStorage<8, 8, ::ChunkPos>                            mChunkPos;
+        ::ll::TypedStorage<8, 8, uint64>                                mSubChunkIndex;
+        ::ll::TypedStorage<8, 8, ::std::vector<::SubChunkLightUpdate>*> mAlteredBlockList;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RelightingChunkElement& operator=(RelightingChunkElement const&);
-        RelightingChunkElement(RelightingChunkElement const&);
-        RelightingChunkElement();
     };
 
     struct RuntimeLightingSubchunkList {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnkd60eed;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::SubChunkLightUpdate>>> mAlteredSubchunkBlockList;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RuntimeLightingSubchunkList& operator=(RuntimeLightingSubchunkList const&);
-        RuntimeLightingSubchunkList(RuntimeLightingSubchunkList const&);
-        RuntimeLightingSubchunkList();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~RuntimeLightingSubchunkList();
+        MCAPI ~RuntimeLightingSubchunkList();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk8c931b;
-    ::ll::UntypedStorage<8, 24> mUnk7ccccf;
-    ::ll::UntypedStorage<8, 24> mUnkbca36c;
-    ::ll::UntypedStorage<8, 24> mUnk374d9f;
-    ::ll::UntypedStorage<8, 8>  mUnk62ed05;
-    ::ll::UntypedStorage<1, 1>  mUnk3f50c8;
-    ::ll::UntypedStorage<8, 8>  mUnk6ca0a7;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::RuntimeLightingManager::RuntimeLightingSubchunkList>>
+                                                                                               mLevelChunksToLight;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RuntimeLightingManager::RelightingChunkElement>> mListOfChunksToProcess;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPos>>                                    mProcessedSubchunks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                                       mBrightnessChangedList;
+    ::ll::TypedStorage<8, 8, ::Dimension&>                                                     mDimension;
+    ::ll::TypedStorage<1, 1, bool>                                                             mWorkerScheduled;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                                       mLightingTimeboxTime;
     // NOLINTEND
 
 public:
@@ -88,13 +83,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _getListOfChunksWithPlayerDistance();
+    MCAPI void _getListOfChunksWithPlayerDistance();
 
-    MCNAPI void _relightChunks(::std::chrono::nanoseconds timeLimit);
+    MCAPI void _relightChunks(::std::chrono::nanoseconds timeLimit);
 
-    MCNAPI void _removeProcessedSubchunks();
+    MCAPI void _removeProcessedSubchunks();
 
-    MCNAPI void updateBlockLight(
+    MCAPI void updateBlockLight(
         ::BlockPos const& blockPos,
         ::Brightness      oldBrightness,
         ::Brightness      newBrightness,
@@ -107,7 +102,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

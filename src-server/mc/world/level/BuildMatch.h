@@ -2,24 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/world/level/BlockPos.h"
+
 struct BuildMatch {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk13914f;
-    ::ll::UntypedStorage<1, 1>  mUnk670024;
-    ::ll::UntypedStorage<1, 1>  mUnk892cf1;
-    ::ll::UntypedStorage<4, 4>  mUnkd9b1da;
-    ::ll::UntypedStorage<4, 4>  mUnk2fe544;
-    ::ll::UntypedStorage<4, 4>  mUnkcfeb00;
-    ::ll::UntypedStorage<4, 4>  mUnkbe7a31;
-    ::ll::UntypedStorage<4, 12> mUnk2ac412;
-    ::ll::UntypedStorage<4, 12> mUnkc23527;
+    ::ll::TypedStorage<1, 1, bool>        mMatched;
+    ::ll::TypedStorage<1, 1, uchar>       mForward;
+    ::ll::TypedStorage<1, 1, uchar>       mUp;
+    ::ll::TypedStorage<4, 4, int>         mNumPatterns;
+    ::ll::TypedStorage<4, 4, int>         mPatternSize;
+    ::ll::TypedStorage<4, 4, int>         mSubPatternIndex;
+    ::ll::TypedStorage<4, 4, int>         mRowIndex;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mPattern;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mObjectPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BuildMatch& operator=(BuildMatch const&);
-    BuildMatch(BuildMatch const&);
-    BuildMatch();
 };

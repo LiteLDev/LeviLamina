@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/level/IPhotoManagerConnector.h"
 
 // auto generated forward declare list
@@ -12,7 +14,9 @@
 class Actor;
 class AppPlatform;
 class LevelStorage;
+class PhotoStorage;
 struct ScreenshotOptions;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace cg { class ImageBuffer; }
 // clang-format on
 
@@ -20,17 +24,28 @@ class PhotoManager : public ::IPhotoManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk9d30d8;
-    ::ll::UntypedStorage<8, 24>  mUnkb6ff69;
-    ::ll::UntypedStorage<8, 32>  mUnk15bb57;
-    ::ll::UntypedStorage<1, 1>   mUnk418844;
-    ::ll::UntypedStorage<8, 128> mUnk1ac7e9;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PhotoStorage>>                 mPhotoStorage;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LevelStorage> const> mLevelStorage;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                mScreenshotsFolder;
+    ::ll::TypedStorage<1, 1, bool const>                                        mIsClientSide;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(
+                ::cg::ImageBuffer&,
+                ::Actor*,
+                ::Actor*,
+                ::ScreenshotOptions&,
+                ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
+            ),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+        mPictureTakenPublisher;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PhotoManager& operator=(PhotoManager const&);
-    PhotoManager(PhotoManager const&);
     PhotoManager();
 
 public:
@@ -53,23 +68,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PhotoManager(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
+    MCAPI PhotoManager(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
 
-    MCNAPI void createPhotoStorage();
+    MCAPI void createPhotoStorage();
 
-    MCNAPI void createScreenshotsFolder(::std::string const& levelId, ::AppPlatform& appPlatform);
+    MCAPI void createScreenshotsFolder(::std::string const& levelId, ::AppPlatform& appPlatform);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::PubSub::Connector<void(
+    MCAPI ::Bedrock::PubSub::Connector<void(
         ::cg::ImageBuffer&,
         ::Actor*,
         ::Actor*,

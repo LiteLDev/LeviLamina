@@ -51,24 +51,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk639906;
-        ::ll::UntypedStorage<4, 4>  mUnk757818;
-        ::ll::UntypedStorage<4, 4>  mUnkffc636;
-        ::ll::UntypedStorage<8, 8>  mUnkf95090;
-        ::ll::UntypedStorage<4, 4>  mUnkcc0c31;
-        ::ll::UntypedStorage<8, 24> mUnk966309;
-        ::ll::UntypedStorage<4, 4>  mUnk5a0990;
-        ::ll::UntypedStorage<8, 8>  mUnk7b5357;
-        ::ll::UntypedStorage<8, 8>  mUnkb9f549;
-        ::ll::UntypedStorage<8, 8>  mUnk5163f4;
-        ::ll::UntypedStorage<8, 8>  mUnke9f4fd;
+        ::ll::TypedStorage<8, 8, char const*>                                 mName;
+        ::ll::TypedStorage<4, 4, ::ProfilerLite::ScopeTag>                    mScope;
+        ::ll::TypedStorage<4, 4, ::ProfilerLite::ScopeTag>                    mBaseScope;
+        ::ll::TypedStorage<8, 8, ::ProfilerLite::ScopedData*>                 mParent;
+        ::ll::TypedStorage<4, 4, int>                                         mTabCount;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ProfilerLite::ScopedData*>> mChildren;
+        ::ll::TypedStorage<4, 4, int>                                         mHitCount;
+        ::ll::TypedStorage<8, 8, double>                                      mTotalTime;
+        ::ll::TypedStorage<8, 8, double>                                      mTotalInclusiveTime;
+        ::ll::TypedStorage<8, 8, double>                                      mMaxTimePerLoop;
+        ::ll::TypedStorage<8, 8, double>                                      mFrameAccumulatedTime;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ScopedData& operator=(ScopedData const&);
-        ScopedData(ScopedData const&);
-        ScopedData();
 
     public:
         // member functions
@@ -87,20 +81,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk423d24;
-        ::ll::UntypedStorage<4, 4> mUnkbe74e1;
-        ::ll::UntypedStorage<4, 4> mUnkf5e907;
-        ::ll::UntypedStorage<4, 4> mUnk6aeac2;
-        ::ll::UntypedStorage<4, 4> mUnkc71324;
-        ::ll::UntypedStorage<8, 8> mUnkf09595;
-        ::ll::UntypedStorage<1, 1> mUnk5f6eae;
+        ::ll::TypedStorage<4, 4, uint>                       mGameUpdates;
+        ::ll::TypedStorage<4, 4, uint>                       mFrames;
+        ::ll::TypedStorage<4, 4, float>                      mFPS;
+        ::ll::TypedStorage<4, 4, float>                      mGameUpdateFPS;
+        ::ll::TypedStorage<4, 4, float>                      mFrameTime;
+        ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> mLastFrame;
+        ::ll::TypedStorage<1, 1, bool>                       mFirstFrame;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RealtimeFrameData& operator=(RealtimeFrameData const&);
-        RealtimeFrameData(RealtimeFrameData const&);
-        RealtimeFrameData();
     };
 
 public:

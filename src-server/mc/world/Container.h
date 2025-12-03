@@ -7,6 +7,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/safety/RedactableString.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
@@ -26,6 +27,7 @@ class ItemStack;
 class Random;
 class Vec3;
 struct ContainerRuntimeIdTag;
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
 class Container {
@@ -40,25 +42,21 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48> mUnka32e8c;
+        ::ll::
+            TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
+                mPublisher;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PublisherWrapper& operator=(PublisherWrapper const&);
-        PublisherWrapper(PublisherWrapper const&);
-        PublisherWrapper();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~PublisherWrapper();
+        MCAPI ~PublisherWrapper();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AllowListEntry;
 namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
@@ -23,41 +24,33 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkac9474;
-        ::ll::UntypedStorage<8, 32> mUnk2ba5a7;
+        ::ll::TypedStorage<8, 32, ::std::string> mName;
+        ::ll::TypedStorage<8, 32, ::std::string> mXuid;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        AllowListEntryMatcher& operator=(AllowListEntryMatcher const&);
-        AllowListEntryMatcher(AllowListEntryMatcher const&);
         AllowListEntryMatcher();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI AllowListEntryMatcher(::std::string name, ::std::string xuid);
+        MCAPI AllowListEntryMatcher(::std::string name, ::std::string xuid);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::std::string name, ::std::string xuid);
+        MCAPI void* $ctor(::std::string name, ::std::string xuid);
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbac7e4;
-    ::ll::UntypedStorage<8, 64> mUnk4ff264;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AllowListEntry>> mEntries;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>         mSyncCallback;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AllowList& operator=(AllowList const&);
-    AllowList(AllowList const&);
-    AllowList();
 
 public:
     // virtual functions
@@ -75,17 +68,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string const& xuid) const;
+    MCAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string const& xuid) const;
 
-    MCNAPI void tryUpdateEntries(::mce::UUID const& uuid, ::std::string const& xuid, ::std::string const& name);
+    MCAPI void tryUpdateEntries(::mce::UUID const& uuid, ::std::string const& xuid, ::std::string const& name);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $serialize(::Json::Value& root);
+    MCAPI void $serialize(::Json::Value& root);
 
-    MCNAPI void $deserialize(::Json::Value& root);
+    MCAPI void $deserialize(::Json::Value& root);
     // NOLINTEND
 
 public:

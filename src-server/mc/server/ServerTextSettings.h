@@ -9,14 +9,8 @@ class ServerTextSettings : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd3ac72;
+    ::ll::TypedStorage<4, 4, ::std::bitset<3>> mEnabledTextEvents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerTextSettings& operator=(ServerTextSettings const&);
-    ServerTextSettings(ServerTextSettings const&);
-    ServerTextSettings();
 
 public:
     // virtual functions
