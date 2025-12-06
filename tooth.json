@@ -24,7 +24,7 @@
                 {
                     "type": "zip",
                     "urls": [
-                        "https://{{tooth}}/releases/download/v{{version}}/levilamina-v{{version}}-release-windows-x64.zip"
+                        "https://{{tooth}}/releases/download/v{{version}}/levilamina-v{{version}}-server-release-windows-x64.zip"
                     ],
                     "placements": [
                         {
@@ -59,7 +59,7 @@
                 {
                     "type": "zip",
                     "urls": [
-                        "https://{{tooth}}/releases/download/v{{version}}/levilamina-client-v{{version}}-release-windows-x64.zip"
+                        "https://{{tooth}}/releases/download/v{{version}}/levilamina-v{{version}}-client-release-windows-x64.zip"
                     ],
                     "placements": [
                         {
