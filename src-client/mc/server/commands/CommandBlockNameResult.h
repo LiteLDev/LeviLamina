@@ -1,0 +1,35 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
+class CommandBlockNameResult {
+public:
+    // CommandBlockNameResult inner types define
+    enum class Result : uint {};
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::CommandBlockNameResult::Result> mResult;
+    ::ll::TypedStorage<1, 1, bool>                             mIsComplexAlias;
+    ::ll::TypedStorage<8, 8, ::Block const*>                   mBlock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>   mComplexAliasPostSplitBlocks;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~CommandBlockNameResult();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+};

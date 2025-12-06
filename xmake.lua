@@ -11,12 +11,8 @@ local is_iphoneos = is_plat("iphoneos")
 local is_x64      = is_arch("x64", "x86_64")
 local is_arm64    = is_arch("arm64", "arm64-v8a")
 
--- TODO:
--- local is_server = is_config("target_type", "server")
--- local is_client = is_config("target_type", "client")
-
-local is_server = true
-local is_client = false
+local is_server = is_config("target_type", "server")
+local is_client = is_config("target_type", "client")
 
 -- Dependencies from xmake-repo.
 add_requires("ctre 3.8.1")

@@ -1,0 +1,35 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/level/block/actor/BlockActor.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+// clang-format on
+
+class DaylightDetectorBlockActor : public ::BlockActor {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 9
+    virtual void tick(::BlockSource& region) /*override*/;
+
+    // vIndex: 0
+    virtual ~DaylightDetectorBlockActor() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};

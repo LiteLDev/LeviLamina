@@ -1,0 +1,9 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+namespace Crypto::Symmetric {
+
+struct Symmetric {};
+
+} // namespace Crypto::Symmetric
