@@ -11,7 +11,6 @@
     },
     "variants": [
         {
-            "label": "",
             "platform": "win-x64",
             "dependencies": {
                 "github.com/LiteLDev/bds": "1.21.124",
@@ -36,24 +35,41 @@
                     ]
                 }
             ],
-            "preserve_files": [],
             "remove_files": [
                 "bedrock_server_mod.exe"
             ],
             "scripts": {
-                "pre_install": [],
-                "install": [],
                 "post_install": [
                     ".\\PeEditor.exe -mb"
                 ],
-                "pre_pack": [],
-                "post_pack": [],
-                "pre_uninstall": [],
-                "uninstall": [],
                 "post_uninstall": [
                     "IF EXIST bedrock_server.exe (DEL bedrock_server.exe.bak) ELSE (REN bedrock_server.exe.bak bedrock_server.exe)"
                 ]
             }
+        },
+        {
+            "label": "client",
+            "platform": "win-x64",
+            "dependencies": {
+                "github.com/LiteLDev/CrashLogger": "1.3.*",
+                "github.com/LiteLDev/levilamina-loc": "1.5.*",
+                "github.com/LiteLDev/bedrock-runtime-data": "1.21.124-client.1"
+            },
+            "assets": [
+                {
+                    "type": "zip",
+                    "urls": [
+                        "https://{{tooth}}/releases/download/v{{version}}/levilamina-client-v{{version}}-release-windows-x64.zip"
+                    ],
+                    "placements": [
+                        {
+                            "type": "dir",
+                            "src": "LeviLamina/",
+                            "dest": "plugins/LeviLamina/"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
