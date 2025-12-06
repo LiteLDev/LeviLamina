@@ -2,13 +2,14 @@ add_rules("mode.debug", "mode.release")
 
 add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 
--- TODO:
--- local is_server = is_config("target_type", "server")
--- local is_client = is_config("target_type", "client")
+option("target_type")
+    set_default("server")
+    set_showmenu(true)
+    set_values("server", "client")
+option_end()
 
-local is_server = true
-local is_client = false
-
+local is_server = is_config("target_type", "server")
+local is_client = is_config("target_type", "client")
 
 if not has_config("vs_runtime") then
     set_runtimes("MD")

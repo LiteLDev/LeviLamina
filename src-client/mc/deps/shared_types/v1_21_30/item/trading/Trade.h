@@ -1,0 +1,9 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+namespace SharedTypes::v1_21_30 {
+
+struct Trade {};
+
+} // namespace SharedTypes::v1_21_30
