@@ -6,13 +6,8 @@ add_repositories("levimc-repo https://github.com/LiteLDev/xmake-repo.git")
 
 local is_windows  = is_plat("windows")
 local is_linux    = is_plat("linux")
-local is_android  = is_plat("android")
-local is_iphoneos = is_plat("iphoneos")
-local is_x64      = is_arch("x64", "x86_64")
-local is_arm64    = is_arch("arm64", "arm64-v8a")
 
 local is_server = is_config("target_type", "server")
-local is_client = is_config("target_type", "client")
 
 -- Dependencies from xmake-repo.
 add_requires("ctre 3.8.1")
@@ -85,9 +80,9 @@ option_end()
 if is_server then
     set_defaultarchs("windows|x64")
     set_allowedarchs("windows|x64", "linux|x86_64")
-elseif is_client then
+else
     set_defaultarchs("windows|x64")
-    set_allowedarchs("windows|x64", "android|arm64-v8a", "android|x86_64", "iphoneos|arm64")
+    set_allowedarchs("windows|x64")
 end
 
 if is_windows and not has_config("vs_runtime") then
@@ -140,7 +135,6 @@ target("LeviLamina")
     )
 
     if not is_windows then
-        remove_files("src-server/ll/core/plugin-abi/**.cpp")
         add_cxxflags("clang::-Wno-invalid-offsetof")
         add_defines(
             "__GCC_DESTRUCTIVE_SIZE=64",
@@ -200,7 +194,7 @@ target("LeviLamina")
         add_headerfiles("src-server/(**.h)")
         add_includedirs("src-server")
         add_files("src-server/**.cpp")
-    elseif is_client then
+    else
         if is_windows then
             add_syslinks("dxgi", "runtimeobject", "gdi32")
         end
@@ -208,23 +202,6 @@ target("LeviLamina")
         add_headerfiles("src-client/(**.h)")
         add_includedirs("src-client")
         add_files("src-client/**.cpp")
-        remove_files( -- remove when everything fine
-            "src/mc/world/**.cpp",
-            -- "src/mc/world/level/**.cpp",
-            "src/mc/network/**.cpp",
-            "src/mc/server/*.cpp"
-            -- "src/mc/nbt/**.cpp",
-            -- "src/ll/api/chrono/**.cpp",
-            -- "src/ll/api/command/**.cpp",
-            -- "src/ll/core/command/**.cpp",
-            -- "src/ll/api/event/**.cpp",
-            -- "src/ll/api/Versions.cpp",
-            -- "src/ll/api/service/ServiceManager.cpp",
-            -- "src/ll/api/utils/CryptoUtils.cpp",
-            -- "src/ll/api/thread/TickSyncSleep.cpp",
-            -- "src/ll/api/thread/ServerThreadExecutor.cpp",
-            -- "src/ll/core/tweak/ModifyMemoryAllocator.cpp"
-        )
         add_cxflags("/wd4273")
         add_shflags("/IGNORE:4217")
     end
@@ -295,26 +272,6 @@ target("LeviLamina")
         remove_files("./**/*_linux.*")
         remove_files("./**/linux/**.*")
         remove_headerfiles("./**/linux/**.*")
-    end
-    if not is_android then
-        remove_files("./**/*_android.*")
-        remove_files("./**/android/**.*")
-        remove_headerfiles("./**/android/**.*")
-    end
-    if not is_iphoneos then
-        remove_files("./**/*_ios.*")
-        remove_files("./**/ios/**.*")
-        remove_headerfiles("./**/ios/**.*")
-    end
-    if not is_x64 then
-        remove_files("./**/*_x64.*")
-        remove_files("./**/x64/**.*")
-        remove_headerfiles("./**/x64/**.*")
-    end
-    if not is_arm64 then
-        remove_files("./**/*_arm64.*")
-        remove_files("./**/arm64/**.*")
-        remove_headerfiles("./**/arm64/**.*")
     end
 
     on_config(function (target)
