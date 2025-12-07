@@ -2,7 +2,7 @@ add_rules("mode.release", "mode.debug")
 
 set_xmakever("3.0.0")
 
-add_repositories("levimc-repo https://github.com/LiteLDev/xmake-repo.git")
+add_repositories("levimc-repo " .. (get_config("levimc_repo") or "https://github.com/LiteLDev/xmake-repo.git"))
 
 local is_windows  = is_plat("windows")
 local is_linux    = is_plat("linux")
@@ -59,6 +59,12 @@ else
         add_requires("imgui[dx11=y,dx12=y] v1.91.0-docking")
     end
 end
+
+option("levimc_repo")
+    set_default("https://github.com/LiteLDev/xmake-repo.git")
+    set_showmenu(true)
+    set_description("Set the levimc-repo path or url")
+option_end()
 
 option("publish")
     set_default(false)
