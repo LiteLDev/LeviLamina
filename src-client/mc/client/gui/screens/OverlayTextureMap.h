@@ -10,7 +10,7 @@ namespace mce { class TexturePtr; }
 class OverlayTextureMap {
 public:
     // OverlayTextureMap inner types define
-    enum class TextureId : uint {};
+    enum class TextureId : int {};
 
 public:
     // member variables

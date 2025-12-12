@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
-struct IClientInstance;
+class IClientInstance;
 // clang-format on
 
 class ClientInstanceLocalPlayerEntityGetter : public ::ILocalPlayerEntityGetter {
@@ -27,10 +27,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClientInstanceLocalPlayerEntityGetter() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::EntityContext* getLocalPlayerEntityContext() const /*override*/;
     // NOLINTEND
 

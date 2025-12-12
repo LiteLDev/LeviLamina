@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class StoreVisualStyle;
 struct MainMenuScreenModel;
-struct StoreVisualStyle;
 namespace Json { class Value; }
 namespace catalog { struct ICatalogImageResourceManager; }
 namespace catalog { struct ImageInfo; }
@@ -31,13 +31,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TextureComponent() /*override*/ = default;
 
-    // vIndex: 8
     virtual void tick(::ui::DirtyFlag&) /*override*/;
 
-    // vIndex: 17
     virtual void _parseData(::Json::Value const& compJson) /*override*/;
     // NOLINTEND
 

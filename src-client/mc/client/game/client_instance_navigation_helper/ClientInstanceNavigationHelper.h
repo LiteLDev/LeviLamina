@@ -4,8 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ISceneStack;
 struct ISceneFactory;
-struct ISceneStack;
 struct StoreDataDrivenScreenController;
 struct StoreDataDrivenScreenParams;
 namespace ClientInstanceNavigationHelper { struct CoinPurchaseScreenParams; }

@@ -2,4 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PersonaService {};
+struct PersonaService {
+public:
+    // PersonaService inner types declare
+    // clang-format off
+    struct UserSavingInfo;
+    // clang-format on
+
+    // PersonaService inner types define
+    enum class InitializationState : schar {};
+
+    struct UserSavingInfo {};
+};

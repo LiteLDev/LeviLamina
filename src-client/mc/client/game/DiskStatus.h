@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class DiskStatus : uint {};
+enum class DiskStatus : uchar {};

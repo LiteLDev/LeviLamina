@@ -7,7 +7,7 @@ namespace Realms {
 struct SubscriptionInfo {
 public:
     // SubscriptionInfo inner types define
-    enum class PurchaseType : uint {};
+    enum class PurchaseType : int {};
 };
 
 } // namespace Realms

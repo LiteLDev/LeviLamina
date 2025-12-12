@@ -30,16 +30,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void preRender(::ScreenContext& screenContext) /*override*/;
 
-    // vIndex: 6
     virtual void postRender(::ScreenContext& screenContext) /*override*/;
 
-    // vIndex: 9
     virtual void setupStage(::ScreenContext& screenContext, bool const clearBuffer);
 
-    // vIndex: 0
     virtual ~RenderStageWithFrameBufferObject() /*override*/;
     // NOLINTEND
 

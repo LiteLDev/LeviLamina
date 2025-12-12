@@ -4,6 +4,6 @@
 
 namespace AppExtensions {
 
-class IGameModuleExtensions {};
+struct IGameModuleExtensions {};
 
 } // namespace AppExtensions

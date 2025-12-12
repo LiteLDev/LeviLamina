@@ -20,8 +20,8 @@ class TaskQueueImpl : public ::Api<2, ::ITaskQueue> {
 public:
     // TaskQueueImpl inner types declare
     // clang-format off
-    struct TerminationData;
     struct TerminationEntry;
+    struct TerminationData;
     // clang-format on
 
     // TaskQueueImpl inner types define
@@ -86,16 +86,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 12
     virtual ~TaskQueueImpl() /*override*/ = default;
 
-    // vIndex: 3
     virtual ::XTaskQueueObject* GetHandle() /*override*/;
 
-    // vIndex: 4
     virtual HRESULT GetPortContext(::XTaskQueuePort port, ::ITaskQueuePortContext** portContext) /*override*/;
 
-    // vIndex: 5
     virtual HRESULT RegisterWaitHandle(
         ::XTaskQueuePort port,
         void*            waitHandle,
@@ -104,29 +100,22 @@ public:
         ::XTaskQueueRegistrationToken* token
     ) /*override*/;
 
-    // vIndex: 6
     virtual void UnregisterWaitHandle(::XTaskQueueRegistrationToken token) /*override*/;
 
-    // vIndex: 7
     virtual HRESULT RegisterSubmitCallback(
         void* context,
         void (*callback)(void*, ::XTaskQueueObject*, ::XTaskQueuePort),
         ::XTaskQueueRegistrationToken* token
     ) /*override*/;
 
-    // vIndex: 8
     virtual void UnregisterSubmitCallback(::XTaskQueueRegistrationToken token) /*override*/;
 
-    // vIndex: 9
     virtual bool CanTerminate() /*override*/;
 
-    // vIndex: 10
     virtual bool CanClose() /*override*/;
 
-    // vIndex: 11
     virtual HRESULT Terminate(bool wait, void* callbackContext, void (*callback)(void*)) /*override*/;
 
-    // vIndex: 14
     virtual void RundownObject() /*override*/;
     // NOLINTEND
 

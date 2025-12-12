@@ -7,6 +7,7 @@
 #include "mc/deps/core_graphics/enums/TextureFormat.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialRenderType.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialType.h"
+#include "mc/deps/renderer/VertexField.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -47,19 +48,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::std::string buildHeader(::std::set<::std::string> const& defines) /*override*/;
 
-    // vIndex: 1
     virtual void parseRuntimeStates(::Json::Value const& root) /*override*/;
 
-    // vIndex: 4
     virtual void parseShader(::Json::Value const& root) /*override*/;
 
-    // vIndex: 2
     virtual void appendShaderPathForGfxAPI() /*override*/;
 
-    // vIndex: 0
     virtual ~RenderMaterial() /*override*/;
     // NOLINTEND
 

@@ -5,5 +5,5 @@
 struct GameModuleClient {
 public:
     // GameModuleClient inner types define
-    enum class ResourceLoadingPhase : uint {};
+    enum class ResourceLoadingPhase : int {};
 };

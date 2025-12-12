@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/IClientDataTransferSessionStorage.h"
+#include "mc/client/editor/serviceproviders/IClientDataTransferSessionStorage.h"
 
 class AtmosphericScatteringSessionStorage : public ::Editor::Services::IClientDataTransferSessionStorage {
 public:
@@ -21,7 +21,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AtmosphericScatteringSessionStorage() /*override*/ = default;
     // NOLINTEND
 

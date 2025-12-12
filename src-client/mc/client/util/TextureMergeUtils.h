@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cg { struct ImageBuffer; }
+namespace cg { class ImageBuffer; }
 // clang-format on
 
 class TextureMergeUtils {

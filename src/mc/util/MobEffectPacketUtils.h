@@ -1,0 +1,28 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/network/packet/MobEffectPacketPayload.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class EntityContext;
+class MobEffectInstance;
+class MobEffectPacket;
+// clang-format on
+
+namespace MobEffectPacketUtils {
+// functions
+// NOLINTBEGIN
+MCNAPI_C void applyPacket(::Actor& actor, ::MobEffectPacket const& packet);
+
+MCNAPI ::std::optional<::MobEffectPacket> createPacket(
+    ::MobEffectPacketPayload::Event eventType,
+    ::MobEffectInstance const&      effect,
+    ::EntityContext const&          sourceEntity
+);
+// NOLINTEND
+
+} // namespace MobEffectPacketUtils

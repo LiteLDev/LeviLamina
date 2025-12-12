@@ -1,0 +1,56 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace Scripting { struct ClassBinding; }
+// clang-format on
+
+namespace ScriptModuleMinecraft {
+
+struct ScriptActorSpawnAfterEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk6038c5;
+    ::ll::UntypedStorage<1, 1>  mUnk77abaa;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptActorSpawnAfterEvent& operator=(ScriptActorSpawnAfterEvent const&);
+    ScriptActorSpawnAfterEvent(ScriptActorSpawnAfterEvent const&);
+    ScriptActorSpawnAfterEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptActorSpawnAfterEvent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle,
+        ::ActorInitializationMethod                                                cause
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle,
+        ::ActorInitializationMethod                                                cause
+    );
+    // NOLINTEND
+};
+
+} // namespace ScriptModuleMinecraft

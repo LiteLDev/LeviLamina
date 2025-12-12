@@ -20,12 +20,29 @@ class TaskQueuePortImpl : public ::Api<1, ::ITaskQueuePort> {
 public:
     // TaskQueuePortImpl inner types declare
     // clang-format off
-    struct QueueEntry;
     struct TerminationEntry;
     struct WaitRegistration;
+    struct QueueEntry;
     // clang-format on
 
     // TaskQueuePortImpl inner types define
+    struct TerminationEntry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkdacf6c;
+        ::ll::UntypedStorage<8, 8> mUnk7d5495;
+        ::ll::UntypedStorage<8, 8> mUnkfaaf35;
+        ::ll::UntypedStorage<8, 8> mUnkff496d;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TerminationEntry& operator=(TerminationEntry const&);
+        TerminationEntry(TerminationEntry const&);
+        TerminationEntry();
+    };
+
     struct WaitRegistration {
     public:
         // member variables
@@ -66,23 +83,6 @@ public:
         QueueEntry();
     };
 
-    struct TerminationEntry {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkdacf6c;
-        ::ll::UntypedStorage<8, 8> mUnk7d5495;
-        ::ll::UntypedStorage<8, 8> mUnkfaaf35;
-        ::ll::UntypedStorage<8, 8> mUnkff496d;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TerminationEntry& operator=(TerminationEntry const&);
-        TerminationEntry(TerminationEntry const&);
-        TerminationEntry();
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -114,13 +114,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 19
     virtual ~TaskQueuePortImpl() /*override*/;
 
-    // vIndex: 3
     virtual ::XTaskQueuePortObject* GetHandle() /*override*/;
 
-    // vIndex: 4
     virtual HRESULT QueueItem(
         ::ITaskQueuePortContext* portContext,
         uint                     waitMs,
@@ -128,7 +125,6 @@ public:
         void (*callback)(void*, bool)
     ) /*override*/;
 
-    // vIndex: 5
     virtual HRESULT RegisterWaitHandle(
         ::ITaskQueuePortContext* portContext,
         void*                    waitHandle,
@@ -137,10 +133,8 @@ public:
         ::XTaskQueueRegistrationToken* token
     ) /*override*/;
 
-    // vIndex: 6
     virtual void UnregisterWaitHandle(::XTaskQueueRegistrationToken token) /*override*/;
 
-    // vIndex: 7
     virtual HRESULT PrepareTerminate(
         ::ITaskQueuePortContext* portContext,
         void*                    callbackContext,
@@ -148,37 +142,26 @@ public:
         void** token
     ) /*override*/;
 
-    // vIndex: 8
     virtual void CancelTermination(void* token) /*override*/;
 
-    // vIndex: 9
     virtual void Terminate(void* token) /*override*/;
 
-    // vIndex: 10
     virtual HRESULT Attach(::ITaskQueuePortContext* portContext) /*override*/;
 
-    // vIndex: 11
     virtual void Detach(::ITaskQueuePortContext* portContext) /*override*/;
 
-    // vIndex: 12
     virtual bool Dispatch(::ITaskQueuePortContext* portContext, uint timeoutInMs) /*override*/;
 
-    // vIndex: 13
     virtual bool IsEmpty() /*override*/;
 
-    // vIndex: 14
     virtual void WaitForUnwind() /*override*/;
 
-    // vIndex: 15
     virtual HRESULT SuspendTermination(::ITaskQueuePortContext* portContext) /*override*/;
 
-    // vIndex: 16
     virtual void ResumeTermination(::ITaskQueuePortContext* portContext) /*override*/;
 
-    // vIndex: 17
     virtual void SuspendPort() /*override*/;
 
-    // vIndex: 18
     virtual void ResumePort() /*override*/;
     // NOLINTEND
 

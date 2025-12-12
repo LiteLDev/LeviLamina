@@ -12,12 +12,12 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class LinkedAssetValidator;
 class LocalPlayer;
-struct LinkedAssetValidator;
-struct ResourcePackManager;
-struct SemVersionConstant;
+class ResourcePackManager;
+class SemVersionConstant;
 namespace Editor::Services { struct ClientDataTransferServiceProvider; }
-namespace Puv { struct LoadResultAny; }
+namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 namespace dragon::framerenderer::modules { struct ColorGradingParameters; }
 // clang-format on
@@ -43,11 +43,11 @@ public:
         public:
             // ColorGradingSettings inner types declare
             // clang-format off
-            struct ColorGrading;
             struct ColorGradingDescription;
-            struct Highlights;
             struct Midtones;
+            struct Highlights;
             struct Shadows;
+            struct ColorGrading;
             struct ToneMapping;
             // clang-format on
 
@@ -262,8 +262,8 @@ public:
         public:
             // ColorGradingSettings inner types declare
             // clang-format off
-            struct ColorGrading;
             struct Temperature;
+            struct ColorGrading;
             // clang-format on
 
             // ColorGradingSettings inner types define
@@ -403,24 +403,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ColorGraderConfig() /*override*/;
 
-    // vIndex: 2
     virtual void loadDataSync(
         ::cereal::ReflectionCtx const&                     ctx,
         ::ResourcePackManager&                             resourcePackManager,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     ) /*override*/;
 
-    // vIndex: 1
     virtual ::Puv::LoadResultAny loadFromString(
         ::cereal::ReflectionCtx const&                     ctx,
         ::std::string const&                               dataJson,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     ) /*override*/;
 
-    // vIndex: 3
     virtual void _setDefaultIdentifierImpl(::HashedString const& defaultIdentifier) /*override*/;
     // NOLINTEND
 

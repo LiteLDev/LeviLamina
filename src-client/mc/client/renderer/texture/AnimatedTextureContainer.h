@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class AnimatedTextureTintCollection;
-namespace cg { struct ImageBuffer; }
+namespace cg { class ImageBuffer; }
 namespace mce { class TextureContainer; }
 // clang-format on
 

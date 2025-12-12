@@ -28,16 +28,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void initialize() /*override*/;
 
-    // vIndex: 2
     virtual ::std::string_view getAssetRoot() /*override*/;
 
-    // vIndex: 3
     virtual ::std::string_view getSaveDataRoot() /*override*/;
 
-    // vIndex: 4
     virtual ::Bedrock::PlatformBootstrap::LoadResult rawLoadAssetFile(
         char*       buffer,
         uint64      bufferSize,
@@ -46,7 +42,6 @@ public:
         uint64      errorBufferSize
     ) /*override*/;
 
-    // vIndex: 5
     virtual ::Bedrock::PlatformBootstrap::LoadResult rawLoadDataFile(
         char*       buffer,
         uint64      bufferSize,
@@ -55,7 +50,6 @@ public:
         uint64      errorBufferSize
     ) /*override*/;
 
-    // vIndex: 6
     virtual ::Bedrock::PlatformBootstrap::SaveResult rawSaveDataFile(
         char const* buffer,
         uint64      bufferSize,
@@ -65,7 +59,6 @@ public:
         uint64 errorBufferSize
     ) /*override*/;
 
-    // vIndex: 7
     virtual ::Bedrock::PlatformBootstrap::LoadResult rawLoadFromCustomRoot(
         char*       buffer,
         uint64      bufferSize,
@@ -74,11 +67,9 @@ public:
         uint64      errorBufferSize
     ) /*override*/;
 
-    // vIndex: 8
     virtual ::Bedrock::PlatformBootstrap::CreateDirectoryResult
     rawCreateDirectory(char const* path, char* errorBuffer, uint64 errorBufferSize) /*override*/;
 
-    // vIndex: 0
     virtual ~PlatformBootstrap_Win32() /*override*/ = default;
     // NOLINTEND
 

@@ -1,0 +1,63 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/actor/ai/goal/Goal.h"
+
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
+class AgentCommandExecutionGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AgentCommandExecutionGoal& operator=(AgentCommandExecutionGoal const&);
+    AgentCommandExecutionGoal(AgentCommandExecutionGoal const&);
+    AgentCommandExecutionGoal();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual bool canUse() /*override*/;
+
+    virtual void start() /*override*/;
+
+    virtual void stop() /*override*/;
+
+    virtual bool canBeInterrupted() /*override*/;
+
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+
+    virtual ~AgentCommandExecutionGoal() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI bool $canUse();
+
+    MCNAPI void $start();
+
+    MCNAPI void $stop();
+
+    MCNAPI bool $canBeInterrupted();
+
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};

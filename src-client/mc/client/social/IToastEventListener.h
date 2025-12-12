@@ -5,5 +5,5 @@
 struct IToastEventListener {
 public:
     // IToastEventListener inner types define
-    enum class ToastEventType : uint {};
+    enum class ToastEventType : int {};
 };

@@ -34,19 +34,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EduMultiplayerHeadlessHost() /*override*/ = default;
 
-    // vIndex: 1
     virtual void hostServer() /*override*/;
 
-    // vIndex: 2
     virtual ::Social::EduJoinerResponse tryAcceptJoiner(::std::string const&, ::std::string const&) /*override*/;
 
-    // vIndex: 3
     virtual ::std::string getHostToJoinerNonce(::std::string const&) const /*override*/;
 
-    // vIndex: 4
     virtual ::Bedrock::Threading::Async<void> onNextFetchJoiners() /*override*/;
     // NOLINTEND
 

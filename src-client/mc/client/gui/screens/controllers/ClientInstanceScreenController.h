@@ -28,10 +28,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClientInstanceScreenController() /*override*/;
 
-    // vIndex: 2
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND
 

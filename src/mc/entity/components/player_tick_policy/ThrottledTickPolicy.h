@@ -1,0 +1,63 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/entity/components/IPlayerTickPolicy.h"
+
+namespace PlayerTickPolicy {
+
+struct ThrottledTickPolicy : public ::IPlayerTickPolicy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkb54545;
+    ::ll::UntypedStorage<8, 8> mUnk5554b9;
+    ::ll::UntypedStorage<1, 1> mUnk3eb4a5;
+    ::ll::UntypedStorage<1, 1> mUnk31528c;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ThrottledTickPolicy& operator=(ThrottledTickPolicy const&);
+    ThrottledTickPolicy(ThrottledTickPolicy const&);
+    ThrottledTickPolicy();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual uint64 getMaxTickCount(uint64 const creditTicks, bool hasQueuedInput) const /*override*/;
+
+    virtual ::IPlayerTickPolicy::TickAction
+    shouldTickPlayer(uint64 const creditTicks, uint64 unprocessedTicksSize) const /*override*/;
+
+    virtual bool isStrictMovement() const /*override*/;
+
+    virtual bool isStrictDismount() const /*override*/;
+
+    virtual ~ThrottledTickPolicy() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI uint64 $getMaxTickCount(uint64 const creditTicks, bool hasQueuedInput) const;
+
+    MCNAPI ::IPlayerTickPolicy::TickAction
+    $shouldTickPlayer(uint64 const creditTicks, uint64 unprocessedTicksSize) const;
+
+    MCNAPI bool $isStrictMovement() const;
+
+    MCNAPI bool $isStrictDismount() const;
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};
+
+} // namespace PlayerTickPolicy

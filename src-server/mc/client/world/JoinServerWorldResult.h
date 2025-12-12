@@ -4,6 +4,6 @@
 
 namespace World {
 
-enum class JoinServerWorldResult : uint {};
+enum class JoinServerWorldResult : int {};
 
 }

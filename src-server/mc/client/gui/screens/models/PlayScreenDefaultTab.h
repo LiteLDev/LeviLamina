@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PlayScreenDefaultTab : uint {};
+enum class PlayScreenDefaultTab : int {};

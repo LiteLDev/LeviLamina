@@ -19,8 +19,13 @@ class BlockPos;
 class BlockSource;
 class DataDrivenRenderer;
 class Dimension;
+class GeometryGroup;
 class HashedString;
+class IClientInstance;
+class MultiPlayerLevel;
+class Options;
 class ScreenContext;
+class SoundPlayerInterface;
 class Tessellator;
 class TextureAtlas;
 class WeakEntityRef;
@@ -30,17 +35,12 @@ struct BlockTessellator;
 struct ClientFrameUpdateContext;
 struct FrameRenderObject;
 struct GameRenderer;
-struct GeometryGroup;
-struct IClientInstance;
 struct LevelRenderPreRenderUpdateParameters;
 struct MinecraftGameplayGraphicsResources;
-struct MultiPlayerLevel;
-struct Options;
 struct RenderChunkCoordinator;
 struct ScreenshotOptions;
 struct SoundMapping;
-struct SoundPlayerInterface;
-namespace cg { struct ImageBuffer; }
+namespace cg { class ImageBuffer; }
 namespace mce { class TextureGroup; }
 // clang-format on
 
@@ -103,22 +103,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelRenderer() /*override*/;
 
-    // vIndex: 4
     virtual void onAppSuspended() /*override*/;
 
-    // vIndex: 5
     virtual void onAppResumed() /*override*/;
 
-    // vIndex: 14
     virtual void onDeviceLost() /*override*/;
 
-    // vIndex: 19
     virtual void onLowMemory(::LowMemorySeverity) /*override*/;
 
-    // vIndex: 4
     virtual void onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              pos,
@@ -131,7 +125,6 @@ public:
         ::Actor*                       blockChangeSource
     ) /*override*/;
 
-    // vIndex: 27
     virtual void takePicture(
         ::cg::ImageBuffer&                                              outImage,
         ::Actor*                                                        camera,

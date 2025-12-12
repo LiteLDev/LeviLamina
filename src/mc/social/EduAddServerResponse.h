@@ -1,0 +1,33 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+namespace Social {
+
+struct EduAddServerResponse {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk95caf4;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    EduAddServerResponse& operator=(EduAddServerResponse const&);
+    EduAddServerResponse(EduAddServerResponse const&);
+    EduAddServerResponse();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~EduAddServerResponse();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
+};
+
+} // namespace Social

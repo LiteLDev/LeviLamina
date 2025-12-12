@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class EduShareUriType : uint {};
+enum class EduShareUriType : int {};

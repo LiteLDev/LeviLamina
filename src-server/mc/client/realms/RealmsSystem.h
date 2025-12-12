@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-class RealmsSystem {};
+struct RealmsSystem {};
 
 } // namespace Realms

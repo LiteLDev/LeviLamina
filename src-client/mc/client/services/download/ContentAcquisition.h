@@ -12,7 +12,7 @@ public:
     // clang-format on
 
     // ContentAcquisition inner types define
-    enum class DownloadHistoryEntryResult : uint {};
+    enum class DownloadHistoryEntryResult : int {};
 
     struct DownloadCallback {};
 

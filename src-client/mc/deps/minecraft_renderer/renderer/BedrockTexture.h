@@ -8,11 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class ResourceLocationPair;
 struct BedrockTextureData;
-struct ResourceLocationPair;
-namespace cg { struct TextureSetDefinition; }
-namespace cg { struct TextureSetImageContainer; }
-namespace cg { struct TextureSetImageDescription; }
+namespace cg { class TextureSetDefinition; }
+namespace cg { class TextureSetImageContainer; }
+namespace cg { class TextureSetImageDescription; }
 namespace mce { class TextureContainer; }
 namespace mce { struct ClientTexture; }
 namespace mce { struct TextureDescription; }

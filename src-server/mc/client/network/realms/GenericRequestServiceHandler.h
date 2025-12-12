@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-class GenericRequestServiceHandler {};
+struct GenericRequestServiceHandler {};
 
 } // namespace Realms

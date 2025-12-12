@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorResourceDefinitionGroup {};
+struct ActorResourceDefinitionGroup {};

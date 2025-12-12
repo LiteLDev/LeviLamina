@@ -1,0 +1,20 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/actor/ai/goal/MoveTowardsRestrictionDefinition.h"
+
+class MoveTowardsHomeRestrictionDefinition : public ::MoveTowardsRestrictionDefinition {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~MoveTowardsHomeRestrictionDefinition() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};

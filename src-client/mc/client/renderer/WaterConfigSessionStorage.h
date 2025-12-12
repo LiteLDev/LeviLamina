@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/IClientDataTransferSessionStorage.h"
+#include "mc/client/editor/serviceproviders/IClientDataTransferSessionStorage.h"
 
 class WaterConfigSessionStorage : public ::Editor::Services::IClientDataTransferSessionStorage {
 public:
@@ -21,7 +21,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WaterConfigSessionStorage() /*override*/ = default;
     // NOLINTEND
 

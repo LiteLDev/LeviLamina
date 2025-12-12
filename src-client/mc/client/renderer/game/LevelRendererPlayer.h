@@ -24,14 +24,17 @@ class BlockSource;
 class CompoundTag;
 class EntityContext;
 class HashedString;
+class IClientInstance;
 class IRandom;
 class Level;
 class LevelRenderer;
 class Matrix;
 class Mob;
+class Options;
 class Player;
 class Random;
 class ScreenContext;
+class SoundPlayerInterface;
 class TextureAtlas;
 class Vec3;
 class WeakEntityRef;
@@ -44,22 +47,19 @@ struct CrackRenderObjectCollection;
 struct DeferredSound;
 struct DirectionalLightRenderData;
 struct Font;
-struct IClientInstance;
 struct LevelRenderPreRenderUpdateParameters;
 struct NameTagRenderObjectCollection;
-struct Options;
 struct RenderChunkShared;
 struct ResolvedItemIconInfo;
 struct SkyRenderObject;
 struct Sound;
 struct SoundMapping;
-struct SoundPlayerInterface;
 struct TextureUVCoordinateSet;
 struct ViewRenderData;
 struct ViewRenderObject;
+namespace mce { class Camera; }
 namespace mce { class Color; }
 namespace mce { class MaterialPtr; }
-namespace mce { struct Camera; }
 namespace mce::framebuilder { struct SkyWeatherParameters; }
 // clang-format on
 
@@ -202,77 +202,55 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelRendererPlayer() /*override*/;
 
-    // vIndex: 6
     virtual void initResources() /*override*/;
 
-    // vIndex: 7
     virtual void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext) /*override*/;
 
-    // vIndex: 8
     virtual void tickLevelRendererCamera() /*override*/;
 
-    // vIndex: 9
     virtual void tickRain() /*override*/;
 
-    // vIndex: 1
     virtual void onWillChangeDimension(::Player& player) /*override*/;
 
-    // vIndex: 2
     virtual void onDimensionChanged(::Player& player) /*override*/;
 
-    // vIndex: 21
     virtual void recalculateRenderDistance(float const renderDistanceScalar) /*override*/;
 
-    // vIndex: 22
     virtual void preRenderUpdate(
         ::ScreenContext&                        screenContext,
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     ) /*override*/;
 
-    // vIndex: 16
     virtual void renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer) /*override*/;
 
-    // vIndex: 10
     virtual void
     updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters) /*override*/;
 
-    // vIndex: 12
     virtual ::NameTagRenderObjectCollection extractNameTags(::ScreenContext& screenContext) const /*override*/;
 
-    // vIndex: 11
     virtual void
     callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font) /*override*/;
 
-    // vIndex: 14
     virtual ::CrackRenderObjectCollection extractCracks(::ScreenContext& screenContext) const /*override*/;
 
-    // vIndex: 13
     virtual void
     callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj) /*override*/;
 
-    // vIndex: 18
     virtual bool getForceFog(::Actor const& cameraActor) const /*override*/;
 
-    // vIndex: 19
     virtual void setupFog(::ScreenContext& screenContext, float const skyIntensityOverride) /*override*/;
 
-    // vIndex: 26
     virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data) /*override*/;
 
-    // vIndex: 25
     virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data) /*override*/;
 
-    // vIndex: 1
     virtual void addCameraListenerToRenderChunkCoordinator() /*override*/;
 
-    // vIndex: 25
     virtual void
     notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version) /*override*/;
 
-    // vIndex: 12
     virtual void addTerrainParticleEffect(
         ::BlockPos const& pos,
         ::Block const&    block,
@@ -282,7 +260,6 @@ public:
         float             emitterRadius
     ) /*override*/;
 
-    // vIndex: 13
     virtual void addTerrainSlideEffect(
         ::BlockPos const& pos,
         ::Block const&    block,
@@ -292,14 +269,12 @@ public:
         float             emitterRadius
     ) /*override*/;
 
-    // vIndex: 14
     virtual void addBreakingItemParticleEffect(
         ::Vec3 const&                     pos,
         ::BreakingItemParticleData const& data,
         ::ResolvedItemIconInfo const&     textureInfo
     ) /*override*/;
 
-    // vIndex: 15
     virtual void addBiomeTintedParticleEffect(
         ::HashedString const&         effect,
         ::BlockPos const&             pos,
@@ -307,24 +282,18 @@ public:
         ::std::optional<::mce::Color> overrideColor
     ) /*override*/;
 
-    // vIndex: 33
     virtual float getUnderwaterVisionClarity();
 
-    // vIndex: 31
     virtual ::FogDefinition::DistanceSettingType _getFogDistanceSettingType() const /*override*/;
 
-    // vIndex: 32
     virtual ::FogDefinition::DensitySettingType _getFogDensitySettingType() const /*override*/;
 
-    // vIndex: 28
     virtual void _releaseRespectiveResources() /*override*/;
 
-    // vIndex: 27
     virtual void queueRenderEntities(
         ::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters
     ) /*override*/;
 
-    // vIndex: 15
     virtual void renderEntityEffects(::BaseActorRenderContext& renderContext) /*override*/;
     // NOLINTEND
 

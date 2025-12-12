@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ClassroomSetting : uint {};
+enum class ClassroomSetting : int {};

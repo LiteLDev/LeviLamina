@@ -1,0 +1,177 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/core/secure_storage/SecureStorage.h"
+
+// auto generated forward declare list
+// clang-format off
+class ISecureStorageKeySystem;
+class SecureStorageKey;
+namespace Core { class Path; }
+namespace Core { class PathView; }
+// clang-format on
+
+class FileSecureStorage : public ::SecureStorage {
+public:
+    // FileSecureStorage inner types declare
+    // clang-format off
+    class StorageSystem;
+    class FileStorageSystem;
+    // clang-format on
+
+    // FileSecureStorage inner types define
+    class StorageSystem {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual bool getData(::std::string&, ::Core::Path);
+
+        virtual void setData(::std::string const&, ::Core::Path);
+
+        virtual ~StorageSystem() = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
+    };
+
+    class FileStorageSystem : public ::FileSecureStorage::StorageSystem {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 80> mUnkabc774;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FileStorageSystem& operator=(FileStorageSystem const&);
+        FileStorageSystem(FileStorageSystem const&);
+        FileStorageSystem();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual bool getData(::std::string& output, ::Core::Path path) /*override*/;
+
+        virtual void setData(::std::string const& data, ::Core::Path path) /*override*/;
+
+        virtual ~FileStorageSystem() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI bool $getData(::std::string& output, ::Core::Path path);
+
+        MCNAPI void $setData(::std::string const& data, ::Core::Path path);
+
+
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk3dbac1;
+    ::ll::UntypedStorage<8, 16> mUnk8a969d;
+    ::ll::UntypedStorage<8, 8>  mUnk7832e5;
+    ::ll::UntypedStorage<8, 64> mUnk691ea8;
+    ::ll::UntypedStorage<8, 64> mUnk36a680;
+    ::ll::UntypedStorage<8, 8>  mUnkf95aee;
+    ::ll::UntypedStorage<8, 8>  mUnk7dfe40;
+    ::ll::UntypedStorage<8, 8>  mUnkd82ddc;
+    ::ll::UntypedStorage<8, 8>  mUnk9dc477;
+    ::ll::UntypedStorage<8, 32> mUnk9ecaf6;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FileSecureStorage& operator=(FileSecureStorage const&);
+    FileSecureStorage(FileSecureStorage const&);
+    FileSecureStorage();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~FileSecureStorage() /*override*/;
+
+    virtual bool add(::std::string const& key, ::std::string const& value) /*override*/;
+
+    virtual bool addOrUpdate(::std::string const& key, ::std::string const& value) /*override*/;
+
+    virtual bool remove(::std::string const& key) /*override*/;
+
+    virtual bool get(::std::string const& key, ::std::string& outValue) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI FileSecureStorage(
+        ::Core::PathView                    settingsPath,
+        ::Core::PathView                    baseSettingsPath,
+        ::ISecureStorageKeySystem*          sskSystem,
+        ::Core::PathView                    userDataPath,
+        ::FileSecureStorage::StorageSystem* storage
+    );
+
+    MCNAPI ::std::string _contentKeyObfuscator(::std::string const& codedData, ::std::string const& identifier);
+
+    MCNAPI ::SecureStorageKey _getSecureStorageKey() const;
+
+    MCNAPI bool _init(bool expectedFailure);
+
+    MCNAPI void _initalizeSymmetricEncyrption(::std::string& symmetricKey, bool force);
+
+    MCNAPI void _rebuildSecureStorageFile();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Core::PathView                    settingsPath,
+        ::Core::PathView                    baseSettingsPath,
+        ::ISecureStorageKeySystem*          sskSystem,
+        ::Core::PathView                    userDataPath,
+        ::FileSecureStorage::StorageSystem* storage
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI bool $add(::std::string const& key, ::std::string const& value);
+
+    MCNAPI bool $addOrUpdate(::std::string const& key, ::std::string const& value);
+
+    MCNAPI bool $remove(::std::string const& key);
+
+    MCNAPI bool $get(::std::string const& key, ::std::string& outValue);
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};

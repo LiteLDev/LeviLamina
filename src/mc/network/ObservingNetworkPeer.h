@@ -1,0 +1,41 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/network/Compressibility.h"
+#include "mc/network/NetworkPeer.h"
+
+class ObservingNetworkPeer : public ::NetworkPeer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 176> mUnkb97280;
+    ::ll::UntypedStorage<8, 24>  mUnk372c7f;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ObservingNetworkPeer& operator=(ObservingNetworkPeer const&);
+    ObservingNetworkPeer(ObservingNetworkPeer const&);
+    ObservingNetworkPeer();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
+
+    virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
+
+    virtual ::NetworkPeer::DataStatus
+    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
+
+    virtual ~ObservingNetworkPeer() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+};

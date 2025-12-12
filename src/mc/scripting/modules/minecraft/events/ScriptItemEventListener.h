@@ -1,0 +1,89 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/events/EventListenerDispatcher.h"
+#include "mc/world/events/EventResult.h"
+#include "mc/world/events/ItemEventListener.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ItemCompleteUseEvent;
+struct ItemReleaseUseEvent;
+struct ItemStartUseEvent;
+struct ItemStartUseOnEvent;
+struct ItemStopUseEvent;
+struct ItemStopUseOnEvent;
+struct ItemUseEvent;
+struct ItemUsedOnEvent;
+// clang-format on
+
+namespace ScriptModuleMinecraft {
+
+class ScriptItemEventListener : public ::EventListenerDispatcher<::ItemEventListener> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk77a3ff;
+    ::ll::UntypedStorage<8, 16> mUnke24955;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptItemEventListener& operator=(ScriptItemEventListener const&);
+    ScriptItemEventListener(ScriptItemEventListener const&);
+    ScriptItemEventListener();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::EventResult onEvent(::ItemUsedOnEvent const& itemEvent) /*override*/;
+
+    virtual ::EventResult onEvent(::ItemStartUseOnEvent const& itemEvent) /*override*/;
+
+    virtual ::EventResult onEvent(::ItemStopUseOnEvent const& itemEvent) /*override*/;
+
+    virtual ::EventResult onEvent(::ItemUseEvent const& itemEvent) /*override*/;
+
+    virtual ::EventResult onEvent(::ItemStartUseEvent const& itemEvent) /*override*/;
+
+    virtual ::EventResult onEvent(::ItemCompleteUseEvent const& itemEvent) /*override*/;
+
+    virtual ::EventResult onEvent(::ItemReleaseUseEvent const& itemEvent) /*override*/;
+
+    virtual ::EventResult onEvent(::ItemStopUseEvent const& itemEvent) /*override*/;
+
+    virtual ~ScriptItemEventListener() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::EventResult $onEvent(::ItemUsedOnEvent const& itemEvent);
+
+    MCNAPI ::EventResult $onEvent(::ItemStartUseOnEvent const& itemEvent);
+
+    MCNAPI ::EventResult $onEvent(::ItemStopUseOnEvent const& itemEvent);
+
+    MCNAPI ::EventResult $onEvent(::ItemUseEvent const& itemEvent);
+
+    MCNAPI ::EventResult $onEvent(::ItemStartUseEvent const& itemEvent);
+
+    MCNAPI ::EventResult $onEvent(::ItemCompleteUseEvent const& itemEvent);
+
+    MCNAPI ::EventResult $onEvent(::ItemReleaseUseEvent const& itemEvent);
+
+    MCNAPI ::EventResult $onEvent(::ItemStopUseEvent const& itemEvent);
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};
+
+} // namespace ScriptModuleMinecraft

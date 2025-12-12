@@ -4,6 +4,6 @@
 
 namespace Progress {
 
-class ProgressTips {};
+struct ProgressTips {};
 
 } // namespace Progress

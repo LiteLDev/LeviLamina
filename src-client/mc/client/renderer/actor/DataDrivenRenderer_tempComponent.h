@@ -20,30 +20,24 @@ class DataDrivenRenderer_tempComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DataDrivenRenderer_tempComponent() = default;
 
-    // vIndex: 1
     virtual void preRender(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     );
 
-    // vIndex: 2
     virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) = 0;
 
-    // vIndex: 3
     virtual void renderEffects(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     );
 
-    // vIndex: 4
     virtual ::AABB getRenderBounds(::Actor const& entity) const;
 
-    // vIndex: 5
     virtual ::V2TempComponentRequirements getV2Requirements() const;
     // NOLINTEND
 

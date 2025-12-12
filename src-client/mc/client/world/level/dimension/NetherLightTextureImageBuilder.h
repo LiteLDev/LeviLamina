@@ -7,19 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
-struct BaseLightData;
-struct IClientInstance;
+class BaseLightData;
+class IClientInstance;
 // clang-format on
 
 class NetherLightTextureImageBuilder : public ::BaseLightTextureImageBuilder {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual ::std::unique_ptr<::BaseLightData>
     createBaseLightTextureData(::IClientInstance* client, ::BaseLightData const& currentData) /*override*/;
 
-    // vIndex: 0
     virtual ~NetherLightTextureImageBuilder() /*override*/ = default;
     // NOLINTEND
 

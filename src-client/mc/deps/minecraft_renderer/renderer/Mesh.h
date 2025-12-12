@@ -14,6 +14,7 @@ struct UIMeshOffscreenCaptureDescription;
 struct UIStructureVolumeOffscreenCaptureDescription;
 struct UIThumbnailMeshOffscreenCaptureDescription;
 namespace dragon { struct RenderMetadata; }
+namespace dragon::mesh { class Mesh; }
 namespace mce { class MaterialPtr; }
 namespace mce { class MeshContext; }
 namespace mce { class MeshData; }
@@ -23,11 +24,6 @@ namespace mce { struct ClientTexture; }
 namespace mce { struct ServerTexture; }
 namespace mce { struct VertexLayout; }
 // clang-format on
-
-
-namespace dragon::mesh {
-class Mesh;
-}
 
 namespace mce {
 

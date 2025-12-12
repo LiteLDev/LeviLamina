@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class SettingsScreenMode : uint {};
+enum class SettingsScreenMode : int {};

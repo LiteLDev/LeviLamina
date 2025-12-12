@@ -12,14 +12,14 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class IMinecraftEventing;
+class LinkedAssetValidator;
 class LocalPlayer;
+class ResourcePackManager;
 class SemVersion;
-struct IMinecraftEventing;
-struct LinkedAssetValidator;
-struct ResourcePackManager;
-struct SemVersionConstant;
+class SemVersionConstant;
 namespace Editor::Services { struct ClientDataTransferServiceProvider; }
-namespace Puv { struct LoadResultAny; }
+namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class TextureGroup; }
 namespace mce::framebuilder { struct CausticsParameters; }
@@ -47,8 +47,8 @@ public:
         public:
             // WaterSettings inner types declare
             // clang-format off
-            struct PSY;
             struct WaterDescription;
+            struct PSY;
             struct Waves;
             // clang-format on
 
@@ -192,8 +192,8 @@ public:
     public:
         // WaterConfigSettingsV1 inner types declare
         // clang-format off
-        struct WaterSettings;
         struct WaterSurfaceParameters;
+        struct WaterSettings;
         // clang-format on
 
         // WaterConfigSettingsV1 inner types define
@@ -394,24 +394,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WaterConfig() /*override*/;
 
-    // vIndex: 2
     virtual void loadDataSync(
         ::cereal::ReflectionCtx const&                     ctx,
         ::ResourcePackManager&                             resourcePackManager,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     ) /*override*/;
 
-    // vIndex: 1
     virtual ::Puv::LoadResultAny loadFromString(
         ::cereal::ReflectionCtx const&                     ctx,
         ::std::string const&                               dataJson,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     ) /*override*/;
 
-    // vIndex: 3
     virtual void _setDefaultIdentifierImpl(::HashedString const& defaultIdentifier) /*override*/;
     // NOLINTEND
 

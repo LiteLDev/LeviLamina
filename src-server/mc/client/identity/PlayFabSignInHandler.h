@@ -4,6 +4,6 @@
 
 namespace Social {
 
-class PlayFabSignInHandler {};
+struct PlayFabSignInHandler {};
 
 } // namespace Social

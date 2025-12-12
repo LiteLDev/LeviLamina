@@ -29,10 +29,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    // vIndex: 0
     virtual ~DedicatedWSServerCommand() /*override*/ = default;
     // NOLINTEND
 

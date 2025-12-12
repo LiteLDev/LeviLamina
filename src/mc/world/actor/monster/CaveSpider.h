@@ -1,0 +1,34 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/actor/monster/Spider.h"
+
+class CaveSpider : public ::Spider {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual float getModelScale() const /*override*/;
+
+    virtual void getDebugText(::std::vector<::std::string>& outputInfo) /*override*/;
+
+    virtual ~CaveSpider() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI float $getModelScale() const;
+
+    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};

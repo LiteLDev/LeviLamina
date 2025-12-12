@@ -15,11 +15,11 @@ class UWPMigrationManager {
 public:
     // UWPMigrationManager inner types declare
     // clang-format off
+    struct MoveOperation;
+    struct OperationResult;
     struct MoveDirectoryOperation;
     struct MoveFileOperation;
-    struct MoveOperation;
     struct MoveSecureStorageOperation;
-    struct OperationResult;
     // clang-format on
 
     // UWPMigrationManager inner types define
@@ -58,13 +58,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~MoveOperation() = default;
 
-        // vIndex: 1
         virtual ::Core::Result migrate(bool) const = 0;
 
-        // vIndex: 2
         virtual void cleanup() const = 0;
         // NOLINTEND
 
@@ -72,93 +69,6 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
-    struct MoveDirectoryOperation : public ::UWPMigrationManager::MoveOperation {
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 1
-        virtual ::Core::Result migrate(bool forceCritical) const /*override*/;
-
-        // vIndex: 2
-        virtual void cleanup() const /*override*/;
-
-        // vIndex: 0
-        virtual ~MoveDirectoryOperation() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI ::Core::Result $migrate(bool forceCritical) const;
-
-        MCNAPI void $cleanup() const;
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
-    struct MoveFileOperation : public ::UWPMigrationManager::MoveOperation {
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 1
-        virtual ::Core::Result migrate(bool forceCritical) const /*override*/;
-
-        // vIndex: 2
-        virtual void cleanup() const /*override*/;
-
-        // vIndex: 0
-        virtual ~MoveFileOperation() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI ::Core::Result $migrate(bool forceCritical) const;
-
-        MCNAPI void $cleanup() const;
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
-    struct MoveSecureStorageOperation : public ::UWPMigrationManager::MoveOperation {
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 1
-        virtual ::Core::Result migrate(bool) const /*override*/;
-
-        // vIndex: 2
-        virtual void cleanup() const /*override*/;
-
-        // vIndex: 0
-        virtual ~MoveSecureStorageOperation() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI ::Core::Result $migrate(bool) const;
-
-        MCNAPI void $cleanup() const;
         // NOLINTEND
 
     public:
@@ -181,6 +91,84 @@ public:
         OperationResult& operator=(OperationResult const&);
         OperationResult(OperationResult const&);
         OperationResult();
+    };
+
+    struct MoveDirectoryOperation : public ::UWPMigrationManager::MoveOperation {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::Core::Result migrate(bool forceCritical) const /*override*/;
+
+        virtual void cleanup() const /*override*/;
+
+        virtual ~MoveDirectoryOperation() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI ::Core::Result $migrate(bool forceCritical) const;
+
+        MCNAPI void $cleanup() const;
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+    struct MoveFileOperation : public ::UWPMigrationManager::MoveOperation {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::Core::Result migrate(bool forceCritical) const /*override*/;
+
+        virtual void cleanup() const /*override*/;
+
+        virtual ~MoveFileOperation() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI ::Core::Result $migrate(bool forceCritical) const;
+
+        MCNAPI void $cleanup() const;
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+    struct MoveSecureStorageOperation : public ::UWPMigrationManager::MoveOperation {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::Core::Result migrate(bool) const /*override*/;
+
+        virtual void cleanup() const /*override*/;
+
+        virtual ~MoveSecureStorageOperation() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI ::Core::Result $migrate(bool) const;
+
+        MCNAPI void $cleanup() const;
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
     };
 
 public:

@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cg { struct ImageBuffer; }
-namespace cg { struct ImageResource; }
+namespace cg { class ImageBuffer; }
+namespace cg { class ImageResource; }
 namespace mce { struct TextureDescription; }
 // clang-format on
 

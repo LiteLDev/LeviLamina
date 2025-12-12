@@ -12,9 +12,9 @@ class HashedString;
 class MinEngineVersion;
 class RenderControllerInfo;
 class RenderControllerPtr;
+class ResourceLoadManager;
+class ResourcePackManager;
 class TaskResult;
-struct ResourceLoadManager;
-struct ResourcePackManager;
 // clang-format on
 
 class RenderControllerGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -35,7 +35,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RenderControllerGroup() /*override*/;
     // NOLINTEND
 

@@ -22,19 +22,14 @@ class LevelRendererCameraListeners : public ::LevelRendererCamera,
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelRendererCameraListeners() /*override*/;
 
-    // vIndex: 1
     virtual void onWillChangeDimension(::Player& player) /*override*/;
 
-    // vIndex: 2
     virtual void onDimensionChanged(::Player& player) /*override*/;
 
-    // vIndex: 21
     virtual void onChunkReloaded(::ChunkSource&, ::LevelChunk& lc) /*override*/;
 
-    // vIndex: 26
     virtual void updateLevelCullerType(::LevelCullerType const newLevelCullerType) /*override*/;
     // NOLINTEND
 

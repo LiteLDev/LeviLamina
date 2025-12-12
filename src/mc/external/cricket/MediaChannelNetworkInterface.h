@@ -1,0 +1,55 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/external/rtc/Socket.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace rtc { class CopyOnWriteBuffer; }
+namespace rtc { struct PacketOptions; }
+// clang-format on
+
+namespace cricket {
+
+class MediaChannelNetworkInterface {
+public:
+    // MediaChannelNetworkInterface inner types define
+    enum class SocketType : int {
+        Rtp  = 0,
+        Rtcp = 1,
+    };
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual bool SendPacket(::rtc::CopyOnWriteBuffer*, ::rtc::PacketOptions const&) = 0;
+
+    virtual bool SendRtcp(::rtc::CopyOnWriteBuffer*, ::rtc::PacketOptions const&) = 0;
+
+    virtual int SetOption(::cricket::MediaChannelNetworkInterface::SocketType, ::rtc::Socket::Option, int) = 0;
+
+    virtual ~MediaChannelNetworkInterface();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};
+
+} // namespace cricket

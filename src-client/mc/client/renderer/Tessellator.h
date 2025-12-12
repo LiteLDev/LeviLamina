@@ -19,9 +19,9 @@ namespace mce { struct BufferResourceService; }
 class Tessellator {
 public:
     // Tessellator inner types define
-    enum class UploadMode : uint {};
+    enum class UploadMode : int {};
 
-    enum class SupplementaryFieldAutoGenerationMode : uint {};
+    enum class SupplementaryFieldAutoGenerationMode : int {};
 
 public:
     // member variables

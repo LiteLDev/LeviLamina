@@ -1,0 +1,50 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
+namespace SharedTypes::v1_21_100 {
+
+struct CameraAttachDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk21ccf9;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CameraAttachDefinition& operator=(CameraAttachDefinition const&);
+    CameraAttachDefinition(CameraAttachDefinition const&);
+    CameraAttachDefinition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~CameraAttachDefinition();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
+};
+
+} // namespace SharedTypes::v1_21_100

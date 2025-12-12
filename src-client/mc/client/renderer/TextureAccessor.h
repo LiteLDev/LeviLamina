@@ -10,7 +10,7 @@
 // clang-format off
 class ResourceLocation;
 struct BedrockTextureData;
-namespace cg { struct ImageBuffer; }
+namespace cg { class ImageBuffer; }
 namespace mce { struct TextureDescription; }
 // clang-format on
 
@@ -30,38 +30,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::cg::ImageBuffer*
     insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer) /*override*/;
 
-    // vIndex: 2
     virtual ::cg::ImageBuffer*
     getCachedImageOrLoadSync(::ResourceLocation const& resourceLocation, bool const forceReload) /*override*/;
 
-    // vIndex: 3
     virtual ::cg::ImageBuffer* getCachedImage(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    // vIndex: 4
     virtual void setTextureMetadata(
         ::ResourceLocation const&        resourceLocation,
         ::mce::TextureDescription const& textureDescription
     ) /*override*/;
 
-    // vIndex: 5
     virtual ::BedrockTextureData const* getBedrockTextureData(::ResourceLocation const& resourceLocation) const
         /*override*/;
 
-    // vIndex: 6
     virtual bool isLoaded(
         ::ResourceLocation const&       resourceLocation,
         bool                            ignoreCreation,
         ::cg::TextureSetLayerType const textureType
     ) const /*override*/;
 
-    // vIndex: 7
     virtual ::cg::ImageBuffer const& getMissingImageBuffer() const /*override*/;
 
-    // vIndex: 0
     virtual ~TextureAccessor() /*override*/;
     // NOLINTEND
 

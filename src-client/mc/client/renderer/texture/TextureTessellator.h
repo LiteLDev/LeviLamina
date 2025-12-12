@@ -16,7 +16,7 @@ public:
     // clang-format on
 
     // TextureTessellator inner types define
-    enum class VerticalSide : uint {};
+    enum class VerticalSide : int {};
 
     struct TessellationParameters {};
 

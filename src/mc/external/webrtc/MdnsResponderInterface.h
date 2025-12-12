@@ -1,0 +1,33 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace rtc { class IPAddress; }
+// clang-format on
+
+namespace webrtc {
+
+class MdnsResponderInterface {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~MdnsResponderInterface() = default;
+
+    virtual void CreateNameForAddress(
+        ::rtc::IPAddress const&,
+        ::std::function<void(::rtc::IPAddress const&, ::std::string_view)>
+    ) = 0;
+
+    virtual void RemoveNameForAddress(::rtc::IPAddress const&, ::std::function<void(bool)>) = 0;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+};
+
+} // namespace webrtc

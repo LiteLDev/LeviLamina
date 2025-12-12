@@ -1,0 +1,20 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/level/biome/components/BiomeComponentBase.h"
+
+struct DefaultOverworldBiomeSurfaceFlag : public ::BiomeComponentBase {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~DefaultOverworldBiomeSurfaceFlag() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};

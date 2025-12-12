@@ -1,0 +1,124 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/actor/ActorEvent.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/Mob.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class EntityContext;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
+namespace mce { class Color; }
+// clang-format on
+
+class Squid : public ::Mob {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnk7fce78;
+    ::ll::UntypedStorage<4, 4>  mUnk5e9d92;
+    ::ll::UntypedStorage<4, 4>  mUnk50b096;
+    ::ll::UntypedStorage<4, 4>  mUnk62e2ee;
+    ::ll::UntypedStorage<4, 4>  mUnk713e69;
+    ::ll::UntypedStorage<4, 4>  mUnkb67107;
+    ::ll::UntypedStorage<4, 4>  mUnk7592ae;
+    ::ll::UntypedStorage<4, 4>  mUnke10f3c;
+    ::ll::UntypedStorage<4, 4>  mUnkcf3931;
+    ::ll::UntypedStorage<4, 4>  mUnkd1e7d7;
+    ::ll::UntypedStorage<4, 4>  mUnkd41b7e;
+    ::ll::UntypedStorage<4, 4>  mUnk159f78;
+    ::ll::UntypedStorage<4, 4>  mUnk21f29d;
+    ::ll::UntypedStorage<4, 4>  mUnka0bf64;
+    ::ll::UntypedStorage<4, 4>  mUnk586089;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Squid& operator=(Squid const&);
+    Squid(Squid const&);
+    Squid();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+
+    virtual bool checkSpawnObstruction() const /*override*/;
+
+    virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
+
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+
+    virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
+
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+
+    virtual ~Squid() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Squid(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext,
+        ::mce::Color const&                inkParticleColor
+    );
+
+    MCAPI ::Vec3 _randomInkDir();
+
+    MCAPI void postAiStep();
+
+    MCAPI void spawnInkParticles();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext,
+        ::mce::Color const&                inkParticleColor
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
+    MCFOLD bool $checkSpawnObstruction() const;
+
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
+
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
+
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};

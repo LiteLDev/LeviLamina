@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-class DataProviderManager_DEPRECATED {};
+struct DataProviderManager_DEPRECATED {};
 
 } // namespace OreUI

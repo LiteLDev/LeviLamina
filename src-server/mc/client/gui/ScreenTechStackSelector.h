@@ -4,6 +4,6 @@
 
 namespace ui {
 
-class ScreenTechStackSelector {};
+struct ScreenTechStackSelector {};
 
 } // namespace ui

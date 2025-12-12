@@ -5,5 +5,5 @@
 struct CubemapBackgroundResources {
 public:
     // CubemapBackgroundResources inner types define
-    enum class CubemapType : uint {};
+    enum class CubemapType : int {};
 };

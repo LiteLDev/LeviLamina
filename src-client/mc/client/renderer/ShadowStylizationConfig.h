@@ -9,10 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 class LocalPlayer;
+class ResourcePackManager;
 class SemVersion;
-struct ResourcePackManager;
 namespace Editor::Services { struct ClientDataTransferServiceProvider; }
-namespace Puv { struct LoadResultAny; }
+namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -103,7 +103,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ShadowStylizationConfig() /*override*/;
     // NOLINTEND
 

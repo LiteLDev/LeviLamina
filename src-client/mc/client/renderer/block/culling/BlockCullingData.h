@@ -18,7 +18,11 @@ public:
         // clang-format on
 
         // CullingRule inner types define
-        enum class Condition : uint {};
+        enum class Condition : uchar {
+            SameCullingLayer     = 0,
+            SameBlock            = 1,
+            SameBlockPermutation = 2,
+        };
 
         struct GeometryPart {};
     };

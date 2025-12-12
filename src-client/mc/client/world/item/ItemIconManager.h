@@ -11,7 +11,7 @@ class TextureAtlasItem;
 struct AtlasItemManager;
 struct ResolvedItemIconInfo;
 struct TextureUVCoordinateSet;
-namespace cg { struct TextureSetImageContainer; }
+namespace cg { class TextureSetImageContainer; }
 // clang-format on
 
 class ItemIconManager {

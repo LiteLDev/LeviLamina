@@ -42,7 +42,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 9
     virtual void getLeashOffsets(
         ::Actor& actor,
         float,
@@ -52,29 +51,21 @@ public:
         ::Bedrock::small_vector_base<::Vec3>& output
     ) const /*override*/;
 
-    // vIndex: 2
     virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData) /*override*/;
 
-    // vIndex: 4
     virtual void
     renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData) /*override*/;
 
-    // vIndex: 8
     virtual ::AABB getRenderBounds(::Actor const& entity) const /*override*/;
 
-    // vIndex: 7
     virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup) /*override*/;
 
-    // vIndex: 10
     virtual void setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const /*override*/;
 
-    // vIndex: 11
     virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const /*override*/;
 
-    // vIndex: 12
     virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const /*override*/;
 
-    // vIndex: 0
     virtual ~DataDrivenRenderer() /*override*/;
     // NOLINTEND
 

@@ -4,6 +4,6 @@
 
 namespace flighting {
 
-class TreatmentToggles {};
+struct TreatmentToggles {};
 
 } // namespace flighting

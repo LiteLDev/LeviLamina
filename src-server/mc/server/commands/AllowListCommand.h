@@ -41,10 +41,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void execute(::CommandOrigin const&, ::CommandOutput& output) const /*override*/;
 
-    // vIndex: 0
     virtual ~AllowListCommand() /*override*/ = default;
     // NOLINTEND
 

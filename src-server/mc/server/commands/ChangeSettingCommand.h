@@ -38,10 +38,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void execute(::CommandOrigin const&, ::CommandOutput& output) const /*override*/;
 
-    // vIndex: 0
     virtual ~ChangeSettingCommand() /*override*/ = default;
     // NOLINTEND
 

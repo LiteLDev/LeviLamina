@@ -4,6 +4,6 @@
 
 namespace Social {
 
-class MultiplayerServiceManager {};
+struct MultiplayerServiceManager {};
 
 } // namespace Social

@@ -77,31 +77,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ActorRenderer() /*override*/;
 
-    // vIndex: 2
     virtual void render(::BaseActorRenderContext&, ::ActorRenderData&) = 0;
 
-    // vIndex: 3
     virtual void renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    // vIndex: 4
     virtual void renderEffects(::BaseActorRenderContext&, ::ActorRenderData&);
 
-    // vIndex: 5
     virtual void renderLeash(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    // vIndex: 6
     virtual void renderWaterHole(::BaseActorRenderContext&, ::ActorRenderData&);
 
-    // vIndex: 7
     virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup>);
 
-    // vIndex: 8
     virtual ::AABB getRenderBounds(::Actor const& entity) const;
 
-    // vIndex: 9
     virtual void getLeashOffsets(
         ::Actor&,
         float                                 yRot,
@@ -111,13 +102,10 @@ public:
         ::Bedrock::small_vector_base<::Vec3>& output
     ) const;
 
-    // vIndex: 10
     virtual void setIsOnScreen(::Actor&, bool const, float) const;
 
-    // vIndex: 11
     virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams&) const;
 
-    // vIndex: 12
     virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams&) const;
     // NOLINTEND
 

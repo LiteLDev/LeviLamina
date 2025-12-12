@@ -2,4 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PersonaRepository {};
+struct PersonaRepository {
+public:
+    // PersonaRepository inner types declare
+    // clang-format off
+    struct PendingPieceDownloadBatch;
+    struct StartupParams;
+    // clang-format on
+
+    // PersonaRepository inner types define
+    struct PendingPieceDownloadBatch {};
+
+    struct StartupParams {};
+};

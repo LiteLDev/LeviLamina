@@ -10,15 +10,15 @@
 // auto generated forward declare list
 // clang-format off
 class BaseActorRenderContext;
+class IClientInstance;
 class Level;
 class LevelRenderer;
+class Options;
 class Player;
 class ScreenContext;
 class Vec3;
 class WeakEntityRef;
-struct IClientInstance;
 struct LevelRenderPreRenderUpdateParameters;
-struct Options;
 struct ShadowCascadeState;
 namespace mce::framebuilder { struct ShadowParameters; }
 // clang-format on
@@ -53,44 +53,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 21
     virtual void recalculateRenderDistance(float const renderDistanceScalar) /*override*/;
 
-    // vIndex: 22
     virtual void preRenderUpdate(
         ::ScreenContext&                        screenContext,
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     ) /*override*/;
 
-    // vIndex: 16
     virtual void renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer) /*override*/;
 
-    // vIndex: 27
     virtual void queueRenderEntities(
         ::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters
     ) /*override*/;
 
-    // vIndex: 30
     virtual void setupViewArea() /*override*/;
 
-    // vIndex: 17
     virtual void
     setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters) /*override*/;
 
-    // vIndex: 10
     virtual void
     updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters) /*override*/;
 
-    // vIndex: 2
     virtual void onDimensionChanged(::Player& player) /*override*/;
 
-    // vIndex: 1
     virtual void addCameraListenerToRenderChunkCoordinator() /*override*/;
 
-    // vIndex: 26
     virtual void updateLevelCullerType(::LevelCullerType const newLevelCullerType) /*override*/;
 
-    // vIndex: 0
     virtual ~LevelRendererShadowCamera() /*override*/ = default;
     // NOLINTEND
 

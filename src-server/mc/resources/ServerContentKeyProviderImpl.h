@@ -16,19 +16,14 @@ class ServerContentKeyProviderImpl : public ::IContentAccessibilityProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::string getContentKey(::ContentIdentity const& contentIdentity) const /*override*/;
 
-    // vIndex: 6
     virtual bool canAccess(::ContentIdentity const&) const /*override*/;
 
-    // vIndex: 4
     virtual void setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&) /*override*/;
 
-    // vIndex: 5
     virtual void clearTempContentKeys() /*override*/;
 
-    // vIndex: 0
     virtual ~ServerContentKeyProviderImpl() /*override*/ = default;
     // NOLINTEND
 

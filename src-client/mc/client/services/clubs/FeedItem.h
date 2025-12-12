@@ -7,7 +7,7 @@ namespace Clubs {
 struct FeedItem {
 public:
     // FeedItem inner types define
-    enum class Type : uint {};
+    enum class Type : int {};
 };
 
 } // namespace Clubs

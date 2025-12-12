@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SoundEngine {};
+struct SoundEngine {
+public:
+    // SoundEngine inner types define
+    enum class MusicVolumeSource : uint64 {};
+};

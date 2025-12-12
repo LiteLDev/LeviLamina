@@ -8,6 +8,8 @@
 #include "mc/deps/minecraft_renderer/game/ShadowContext.h"
 #include "mc/platform/brstd/flat_map.h"
 #include "mc/util/GridArea.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/FogDefinition.h"
 
 // auto generated forward declare list
@@ -17,10 +19,9 @@ class Actor;
 class BaseActorRenderContext;
 class Block;
 class BlockActor;
-class BlockPos;
 class BlockSource;
-class ChunkPos;
 class Dimension;
+class IClientInstance;
 class Level;
 class LevelRenderer;
 class Player;
@@ -37,7 +38,6 @@ struct FogVolumetricCoefficientSetting;
 struct FogVolumetricDensitySetting;
 struct FogVolumetricHenyeyGreensteinGSetting;
 struct Font;
-struct IClientInstance;
 struct LevelBuilder;
 struct LevelCullerBase;
 struct LevelRenderPreRenderUpdateParameters;
@@ -55,12 +55,12 @@ class LevelRendererCamera {
 public:
     // LevelRendererCamera inner types declare
     // clang-format off
+    struct LevelRendererDebugInformation;
+    struct RainState;
     struct FogBrightnessPair;
     struct FogBrightnessParams;
-    struct LevelRendererDebugInformation;
-    struct LimitedActorRenderParams;
     struct PlayerStateParams;
-    struct RainState;
+    struct LimitedActorRenderParams;
     struct RenderChunkPosBounds;
     // clang-format on
 
@@ -321,110 +321,77 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelRendererCamera();
 
-    // vIndex: 1
     virtual void addCameraListenerToRenderChunkCoordinator();
 
-    // vIndex: 2
     virtual void onAppSuspended();
 
-    // vIndex: 3
     virtual void onAppResumed();
 
-    // vIndex: 4
     virtual void onDeviceLost();
 
-    // vIndex: 5
     virtual void onLowMemory();
 
-    // vIndex: 6
     virtual void initResources();
 
-    // vIndex: 7
     virtual void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
-    // vIndex: 8
     virtual void tickLevelRendererCamera();
 
-    // vIndex: 9
     virtual void tickRain();
 
-    // vIndex: 10
     virtual void updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
-    // vIndex: 11
     virtual void callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font);
 
-    // vIndex: 12
     virtual ::NameTagRenderObjectCollection extractNameTags(::ScreenContext& screenContext) const;
 
-    // vIndex: 13
     virtual void callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj);
 
-    // vIndex: 14
     virtual ::CrackRenderObjectCollection extractCracks(::ScreenContext& screenContext) const;
 
-    // vIndex: 15
     virtual void renderEntityEffects(::BaseActorRenderContext& renderContext);
 
-    // vIndex: 16
     virtual void renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
 
-    // vIndex: 17
     virtual void setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
-    // vIndex: 18
     virtual bool getForceFog(::Actor const&) const;
 
-    // vIndex: 19
     virtual void setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
 
-    // vIndex: 20
     virtual float getAmbientBrightness() const;
 
-    // vIndex: 21
     virtual void recalculateRenderDistance(float const renderDistanceScalar);
 
-    // vIndex: 22
     virtual void preRenderUpdate(
         ::ScreenContext&                        screenContext,
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );
 
-    // vIndex: 23
     virtual void render(
         ::BaseActorRenderContext& baseEntityRenderContext,
         ::ViewRenderObject const& renderObj,
         ::IClientInstance&        ci
     );
 
-    // vIndex: 24
     virtual void postRenderUpdate();
 
-    // vIndex: 25
     virtual void notifyGeoChangedForAffectedEntities(::RenderChunkShared&, uchar);
 
-    // vIndex: 26
     virtual void updateLevelCullerType(::LevelCullerType const) = 0;
 
-    // vIndex: 27
     virtual void queueRenderEntities(::LevelRenderPreRenderUpdateParameters const&);
 
-    // vIndex: 28
     virtual void _releaseRespectiveResources();
 
-    // vIndex: 29
     virtual ::Block const* _getBlockForBlockEnity(::BlockActor const& blockActor);
 
-    // vIndex: 30
     virtual void setupViewArea();
 
-    // vIndex: 31
     virtual ::FogDefinition::DistanceSettingType _getFogDistanceSettingType() const;
 
-    // vIndex: 32
     virtual ::FogDefinition::DensitySettingType _getFogDensitySettingType() const;
     // NOLINTEND
 

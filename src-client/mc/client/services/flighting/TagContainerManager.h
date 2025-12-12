@@ -7,7 +7,7 @@ namespace flighting {
 struct TagContainerManager {
 public:
     // TagContainerManager inner types define
-    enum class FetchState : uint {};
+    enum class FetchState : int {};
 };
 
 } // namespace flighting

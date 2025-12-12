@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class MarketplacePassTabIndex : uint {};
+enum class MarketplacePassTabIndex : int {};

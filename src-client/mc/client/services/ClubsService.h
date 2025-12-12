@@ -13,6 +13,6 @@ public:
     struct RequestInfo {
     public:
         // RequestInfo inner types define
-        enum class Status : uint {};
+        enum class Status : int {};
     };
 };

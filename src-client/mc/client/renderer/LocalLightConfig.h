@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ResourcePackManager;
-struct SemVersionConstant;
+class ResourcePackManager;
+class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -156,7 +156,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LocalLightConfig() /*override*/;
     // NOLINTEND
 

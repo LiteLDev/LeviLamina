@@ -11,12 +11,12 @@ public:
     // clang-format on
 
     // SkinRepositoryClientInterface inner types define
-    enum class SyncState : uint {};
+    enum class SyncState : int {};
 
     struct PersonaProfileLoadingState {
     public:
         // PersonaProfileLoadingState inner types define
-        enum class State : uint {};
+        enum class State : int {};
     };
 
     struct SkinEntitlementChangeListener {};

@@ -31,16 +31,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TickingTextureStage() /*override*/ = default;
 
-    // vIndex: 3
     virtual void preRender(::ScreenContext& screenContext) /*override*/;
 
-    // vIndex: 5
     virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
 
-    // vIndex: 6
     virtual void postRender(::ScreenContext& screenContext) /*override*/;
     // NOLINTEND
 

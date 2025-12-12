@@ -5,5 +5,5 @@
 struct SoundEngine {
 public:
     // SoundEngine inner types define
-    enum class MusicVolumeSource : uint {};
+    enum class MusicVolumeSource : uint64 {};
 };

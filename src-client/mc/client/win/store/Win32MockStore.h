@@ -63,56 +63,39 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual bool requiresRestorePurchasesButton() const /*override*/;
 
-    // vIndex: 4
     virtual bool allowsSubscriptions() const /*override*/;
 
-    // vIndex: 5
     virtual ::std::string getStoreId() const /*override*/;
 
-    // vIndex: 7
     virtual ::std::string getProductSkuPrefix() const /*override*/;
 
-    // vIndex: 10
     virtual void queryProducts(::std::vector<::ProductSku> const&) /*override*/;
 
-    // vIndex: 11
     virtual ::PurchaseResult
     purchase(::ProductSku const&, ::ProductType, ::std::string const&, ::PurchasePath) /*override*/;
 
-    // vIndex: 12
     virtual void acknowledgePurchase(::PurchaseInfo const&, ::ProductType) /*override*/;
 
-    // vIndex: 13
     virtual void queryPurchases(bool) /*override*/;
 
-    // vIndex: 14
     virtual void restorePurchases() /*override*/;
 
-    // vIndex: 15
     virtual bool isTrial() const /*override*/;
 
-    // vIndex: 16
     virtual void purchaseGame(::TrialUpgradePurchaseTier const tier) /*override*/;
 
-    // vIndex: 19
     virtual bool isGameLicensed() const /*override*/;
 
-    // vIndex: 25
     virtual void registerLicenseChangeCallback(::std::function<void()>) /*override*/;
 
-    // vIndex: 26
     virtual void handleLicenseChange() /*override*/;
 
-    // vIndex: 23
     virtual ::std::string getAppReceipt() const /*override*/;
 
-    // vIndex: 42
     virtual ::std::string getPriceForCaymanOffer(::std::string const&, ::std::string const&) const /*override*/;
 
-    // vIndex: 0
     virtual ~Win32MockStore() /*override*/ = default;
     // NOLINTEND
 

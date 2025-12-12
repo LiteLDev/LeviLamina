@@ -1,0 +1,38 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveSimpleBase.h"
+
+namespace SharedTypes::v1_20_80 {
+
+struct ParticleCurveCatmullRom : public ::SharedTypes::v1_20_80::ParticleCurveSimpleBase {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual uint64 _getMinCurveNodesAllowed() /*override*/;
+
+    virtual uint64 _getMaxCurveNodesAllowed() /*override*/;
+
+    virtual ~ParticleCurveCatmullRom() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI uint64 $_getMinCurveNodesAllowed();
+
+    MCNAPI uint64 $_getMaxCurveNodesAllowed();
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};
+
+} // namespace SharedTypes::v1_20_80

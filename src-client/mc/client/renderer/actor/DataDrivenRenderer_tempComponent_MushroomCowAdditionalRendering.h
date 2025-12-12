@@ -38,17 +38,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual ::V2TempComponentRequirements getV2Requirements() const /*override*/;
 
-    // vIndex: 2
     virtual void render(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~DataDrivenRenderer_tempComponent_MushroomCowAdditionalRendering() /*override*/ = default;
     // NOLINTEND
 

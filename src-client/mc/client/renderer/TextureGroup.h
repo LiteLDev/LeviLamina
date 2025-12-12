@@ -16,16 +16,16 @@
 // auto generated forward declare list
 // clang-format off
 class BedrockTexture;
+class IAdvancedGraphicsOptions;
+class ResourceLoadManager;
 class ResourceLocation;
+class ResourceLocationPair;
 struct BedrockTextureData;
-struct IAdvancedGraphicsOptions;
-struct ResourceLoadManager;
-struct ResourceLocationPair;
-namespace cg { struct ImageBuffer; }
-namespace cg { struct TextureSetDefinition; }
+namespace cg { class ImageBuffer; }
+namespace cg { class TextureSetDefinition; }
+namespace mce { class ImageResourceLoader; }
 namespace mce { class TextureContainer; }
 namespace mce { class TexturePtr; }
-namespace mce { struct ImageResourceLoader; }
 namespace mce { struct TextureResourceService; }
 // clang-format on
 
@@ -62,10 +62,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TextureGroup() /*override*/;
 
-    // vIndex: 1
     virtual ::mce::TexturePtr getTexture(
         ::ResourceLocation const&       resourceLocation,
         bool const                      forceReload,

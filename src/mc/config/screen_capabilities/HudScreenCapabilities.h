@@ -1,0 +1,32 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/config/TypedScreenCapabilities.h"
+
+struct HudScreenCapabilities : public ::TypedScreenCapabilities<::HudScreenCapabilities> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkd6a05d;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    HudScreenCapabilities& operator=(HudScreenCapabilities const&);
+    HudScreenCapabilities(HudScreenCapabilities const&);
+    HudScreenCapabilities();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~HudScreenCapabilities() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};

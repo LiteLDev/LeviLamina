@@ -76,24 +76,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void preRender(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
 
-    // vIndex: 2
     virtual void render(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
 
-    // vIndex: 5
     virtual ::V2TempComponentRequirements getV2Requirements() const /*override*/;
 
-    // vIndex: 0
     virtual ~DataDrivenRenderer_tempComponent_HumanoidAdditionalRendering() /*override*/;
     // NOLINTEND
 

@@ -16,6 +16,7 @@ class Actor;
 class BaseActorRenderContext;
 class Block;
 class BlockType;
+class IClientInstance;
 class ItemStack;
 class Level;
 class Mob;
@@ -25,13 +26,12 @@ class TextureTessellator;
 class Vec3;
 struct BlockTessellator;
 struct Brightness;
-struct IClientInstance;
 struct ItemInHandRenderFrameId;
 struct ItemRenderCall;
 namespace dragon { struct RenderMetadata; }
+namespace mce { class Camera; }
 namespace mce { class MaterialPtr; }
 namespace mce { class TextureGroup; }
-namespace mce { struct Camera; }
 namespace mce { struct ViewportInfo; }
 // clang-format on
 
@@ -152,7 +152,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ItemInHandRenderer() /*override*/;
     // NOLINTEND
 

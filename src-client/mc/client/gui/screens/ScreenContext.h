@@ -16,7 +16,7 @@ struct FrameRenderObject;
 struct GuiData;
 struct MinecraftGraphics;
 struct ProfanityContext;
-namespace mce { struct Clock; }
+namespace mce { class Clock; }
 namespace mce { struct ViewportInfo; }
 // clang-format on
 

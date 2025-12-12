@@ -1,0 +1,71 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
+#include "mc/deps/core/threading/IBackgroundTaskOwner.h"
+#include "mc/deps/core/threading/TaskGroupState.h"
+#include "mc/platform/brstd/move_only_function.h"
+
+// auto generated forward declare list
+// clang-format off
+class BackgroundTaskBase;
+class TaskResult;
+struct TaskStartInfo;
+// clang-format on
+
+class InternalTaskGroup : public ::IBackgroundTaskOwner {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
+        ::TaskStartInfo const&,
+        ::brstd::move_only_function<::TaskResult()>&&,
+        ::std::function<void()>&&
+    ) /*override*/;
+
+    virtual ::Bedrock::Threading::Async<void>
+    queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&) /*override*/;
+
+    virtual void taskRegister(::std::shared_ptr<::BackgroundTaskBase>) /*override*/;
+
+    virtual void requeueTask(::std::shared_ptr<::BackgroundTaskBase>, bool) /*override*/;
+
+    virtual ::TaskGroupState getState() const /*override*/;
+
+    virtual void processCoroutines() /*override*/;
+
+    virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*> task) /*override*/;
+
+    virtual ~InternalTaskGroup() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::Bedrock::Threading::Async<void>
+    $queue_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&, ::std::function<void()>&&);
+
+    MCNAPI ::Bedrock::Threading::Async<void>
+    $queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&);
+
+    MCNAPI void $taskRegister(::std::shared_ptr<::BackgroundTaskBase>);
+
+    MCNAPI void $requeueTask(::std::shared_ptr<::BackgroundTaskBase>, bool);
+
+    MCNAPI ::TaskGroupState $getState() const;
+
+    MCNAPI void $processCoroutines();
+
+    MCNAPI void $taskComplete(::gsl::not_null<::BackgroundTaskBase*> task);
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};

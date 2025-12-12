@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ResourcePackManager;
-struct SemVersionConstant;
-namespace Puv { struct LoadResultAny; }
+class ResourcePackManager;
+class SemVersionConstant;
+namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -33,8 +33,8 @@ public:
         public:
             // PBRFallbackSettings inner types declare
             // clang-format off
-            struct PBRData;
             struct PBRDataMER;
+            struct PBRData;
             // clang-format on
 
             // PBRFallbackSettings inner types define
@@ -140,7 +140,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PBRFallbackConfig() /*override*/;
     // NOLINTEND
 

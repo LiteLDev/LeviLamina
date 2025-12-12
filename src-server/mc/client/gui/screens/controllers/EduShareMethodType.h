@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class EduShareMethodType : uint {};
+enum class EduShareMethodType : int {};

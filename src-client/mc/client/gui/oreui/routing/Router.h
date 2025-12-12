@@ -12,7 +12,7 @@ public:
     // clang-format on
 
     // Router inner types define
-    enum class RouterPushMode : uint {};
+    enum class RouterPushMode : int {};
 
     struct DeferredChangeNotification {};
 };

@@ -13,7 +13,7 @@ public:
     // clang-format on
 
     // SubscriptionService inner types define
-    enum class SubscriptionQueryStatus : uint {};
+    enum class SubscriptionQueryStatus : int {};
 
     struct CachedSubscription {};
 

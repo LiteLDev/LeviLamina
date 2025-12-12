@@ -33,19 +33,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SignalingServiceDedicatedServerConfigProvider() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() /*override*/;
 
-    // vIndex: 2
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getJsonRpcUrl() /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() /*override*/;
 
-    // vIndex: 4
     virtual void reset() /*override*/;
     // NOLINTEND
 

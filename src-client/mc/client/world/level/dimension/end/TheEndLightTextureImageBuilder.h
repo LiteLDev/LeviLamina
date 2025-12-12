@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct BaseLightData;
+class BaseLightData;
 namespace mce { struct Image; }
 // clang-format on
 
@@ -15,7 +15,6 @@ class TheEndLightTextureImageBuilder : public ::BaseLightTextureImageBuilder {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual bool buildImage(
         ::BaseLightData const& lightData,
         ::mce::Image*          targetImage,
@@ -25,7 +24,6 @@ public:
         bool                   clampToMinimum
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~TheEndLightTextureImageBuilder() /*override*/ = default;
     // NOLINTEND
 

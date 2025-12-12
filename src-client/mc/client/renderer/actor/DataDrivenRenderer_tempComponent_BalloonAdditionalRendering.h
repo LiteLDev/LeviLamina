@@ -39,20 +39,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
 
-    // vIndex: 3
     virtual void renderEffects(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
 
-    // vIndex: 4
     virtual ::AABB getRenderBounds(::Actor const& entity) const /*override*/;
 
-    // vIndex: 0
     virtual ~DataDrivenRenderer_tempComponent_BalloonAdditionalRendering() /*override*/ = default;
     // NOLINTEND
 

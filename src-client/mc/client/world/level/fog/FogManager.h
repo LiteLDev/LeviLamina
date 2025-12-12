@@ -10,7 +10,7 @@ public:
     // clang-format on
 
     // FogManager inner types define
-    enum class LayerType : uint {};
+    enum class LayerType : int {};
 
     struct Layer {};
 };

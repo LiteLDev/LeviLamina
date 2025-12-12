@@ -16,13 +16,10 @@ class RenderStageWithDefaultBackBuffer : public ::mce::RenderStage {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void preRender(::ScreenContext&) /*override*/;
 
-    // vIndex: 6
     virtual void postRender(::ScreenContext&) /*override*/;
 
-    // vIndex: 0
     virtual ~RenderStageWithDefaultBackBuffer() /*override*/ = default;
     // NOLINTEND
 

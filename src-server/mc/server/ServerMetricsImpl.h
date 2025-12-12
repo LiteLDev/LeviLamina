@@ -52,16 +52,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ServerMetricsImpl() /*override*/ = default;
 
-    // vIndex: 1
     virtual void sendPeriodicMetrics(::ServerInstance& serverInstance) /*override*/;
 
-    // vIndex: 2
     virtual void sendServerTickTime(::std::chrono::nanoseconds const& timepoint) /*override*/;
 
-    // vIndex: 3
     virtual void sendChunkLoadTelemetryData() /*override*/;
     // NOLINTEND
 

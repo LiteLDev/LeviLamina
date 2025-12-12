@@ -4,6 +4,6 @@
 
 namespace Social {
 
-class PresenceManager {};
+struct PresenceManager {};
 
 } // namespace Social

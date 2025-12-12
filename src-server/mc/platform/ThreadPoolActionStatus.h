@@ -8,10 +8,8 @@ struct ThreadPoolActionStatus {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual void Complete() = 0;
 
-    // vIndex: 1
     virtual void MayRunLong() = 0;
     // NOLINTEND
 

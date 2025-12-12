@@ -10,7 +10,7 @@ public:
     // clang-format on
 
     // PersonaService inner types define
-    enum class InitializationState : uint {};
+    enum class InitializationState : schar {};
 
     struct UserSavingInfo {};
 };

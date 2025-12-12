@@ -24,10 +24,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void init() /*override*/;
 
-    // vIndex: 0
     virtual ~RenderChunkConstants() /*override*/;
     // NOLINTEND
 

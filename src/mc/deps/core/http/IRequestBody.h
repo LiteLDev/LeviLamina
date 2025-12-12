@@ -1,0 +1,59 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+namespace Bedrock::Http::Internal {
+
+class IRequestBody : public ::std::enable_shared_from_this<::Bedrock::Http::Internal::IRequestBody> {
+public:
+    // IRequestBody inner types declare
+    // clang-format off
+    struct ReadResult;
+    // clang-format on
+
+    // IRequestBody inner types define
+    struct ReadResult {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnkb4d25b;
+        ::ll::UntypedStorage<8, 8> mUnk659573;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ReadResult& operator=(ReadResult const&);
+        ReadResult(ReadResult const&);
+        ReadResult();
+    };
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~IRequestBody();
+
+    virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar>) = 0;
+
+    virtual uint64 getSize() = 0;
+
+    virtual void cancel() = 0;
+
+    virtual ::std::string const& getLoggableSource() const = 0;
+
+    virtual ::gsl::span<uchar const> getLoggableData() const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+};
+
+} // namespace Bedrock::Http::Internal

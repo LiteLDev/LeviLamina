@@ -11,11 +11,11 @@ public:
     // clang-format on
 
     // CloudFileUploadManager inner types define
-    enum class RequestType : uint {};
+    enum class RequestType : int {};
 
-    enum class UploadErrorAction : uint {};
+    enum class UploadErrorAction : int {};
 
-    enum class UploadType : uint {};
+    enum class UploadType : int {};
 
     struct AuthTokenProvider {};
 

@@ -4,22 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/texture/TextureAtlasStatus.h"
+#include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core_graphics/MipMapSupport.h"
 
 // auto generated forward declare list
 // clang-format off
-class ResourceLocation;
+class ResourcePackManager;
 class TextureAtlasTile;
 struct ParsedAtlasNode;
 struct ParsedAtlasNodeElement;
-struct ResourcePackManager;
 struct RuntimeImageGeneratorInfo;
 struct TextureAtlasResourceCallbacks;
 namespace Json { class Value; }
-namespace cg { struct ImageBuffer; }
-namespace cg { struct TextureSetImageContainer; }
+namespace cg { class ImageBuffer; }
+namespace cg { class TextureSetImageContainer; }
 namespace mce { class Color; }
 namespace mce { class TextureGroup; }
 namespace mce::framebuilder { struct PBRTextureDataManager; }
@@ -49,7 +49,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TextureAtlas() /*override*/;
     // NOLINTEND
 

@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GameModuleClient {};
+struct GameModuleClient {
+public:
+    // GameModuleClient inner types define
+    enum class ResourceLoadingPhase : int {};
+};

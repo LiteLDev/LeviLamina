@@ -5,5 +5,5 @@
 struct GameRenderer {
 public:
     // GameRenderer inner types define
-    enum class FrameCaptureMode : uint {};
+    enum class FrameCaptureMode : int {};
 };

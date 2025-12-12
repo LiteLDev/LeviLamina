@@ -2,4 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LatencyGraphDisplay {};
+struct LatencyGraphDisplay {
+public:
+    // LatencyGraphDisplay inner types declare
+    // clang-format off
+    struct Measurement;
+    // clang-format on
+
+    // LatencyGraphDisplay inner types define
+    struct Measurement {};
+};

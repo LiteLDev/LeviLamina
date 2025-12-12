@@ -19,8 +19,8 @@ struct ImageResourceManager;
 struct StbImageLoadPolicy;
 struct StdIoStreamPolicy;
 struct TextureAtlasResourceCallbacks;
-namespace cg { struct ImageBuffer; }
-namespace cg { struct TextureSetImageContainer; }
+namespace cg { class ImageBuffer; }
+namespace cg { class TextureSetImageContainer; }
 namespace mce { class TextureGroup; }
 namespace mce { struct Image; }
 // clang-format on
@@ -45,7 +45,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TextureHotReloader() /*override*/;
     // NOLINTEND
 

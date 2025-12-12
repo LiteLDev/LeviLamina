@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class IToastEventListener {};
+struct IToastEventListener {
+public:
+    // IToastEventListener inner types define
+    enum class ToastEventType : int {};
+};

@@ -4,6 +4,10 @@
 
 namespace Realms {
 
-struct SubscriptionInfo {};
+struct SubscriptionInfo {
+public:
+    // SubscriptionInfo inner types define
+    enum class PurchaseType : int {};
+};
 
 } // namespace Realms

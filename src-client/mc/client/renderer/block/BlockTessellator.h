@@ -11,13 +11,13 @@ public:
     // clang-format on
 
     // BlockTessellator inner types define
-    enum class BambooFenceSlatPieceType : uint {};
+    enum class BambooFenceSlatPieceType : int {};
 
-    enum class CrossTextureReverseSideMapping : uint {};
+    enum class CrossTextureReverseSideMapping : uchar {};
 
-    enum class CrossTextureWidth : uint {};
+    enum class CrossTextureWidth : uchar {};
 
-    enum class FenceGatePieceType : uint {};
+    enum class FenceGatePieceType : int {};
 
     struct LocalRegistry {};
 

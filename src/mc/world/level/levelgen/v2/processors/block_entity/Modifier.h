@@ -1,0 +1,93 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/level/levelgen/v2/processors/block_entity/AppendLoot.h"
+#include "mc/world/level/levelgen/v2/processors/block_entity/ModifierType.h"
+#include "mc/world/level/levelgen/v2/processors/block_entity/Passthrough.h"
+
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class IRandom;
+namespace Util { class XXHash; }
+// clang-format on
+
+namespace br::worldgen::processors::BlockEntity {
+
+struct Modifier : public ::br::worldgen::processors::BlockEntity::ModifierType {
+public:
+    // Modifier inner types define
+    using Type = ::std::variant<
+        ::br::worldgen::processors::BlockEntity::Passthrough,
+        ::br::worldgen::processors::BlockEntity::AppendLoot>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::std::variant<
+            ::br::worldgen::processors::BlockEntity::Passthrough,
+            ::br::worldgen::processors::BlockEntity::AppendLoot>>
+        mData;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Modifier& operator=(Modifier const&);
+    Modifier();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom& random, ::CompoundTag const* existingTag) const
+        /*override*/;
+
+    virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+
+    virtual ~Modifier() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier&&);
+
+    MCNAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier&&);
+
+    MCNAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::CompoundTag> $apply(::IRandom& random, ::CompoundTag const* existingTag) const;
+
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};
+
+} // namespace br::worldgen::processors::BlockEntity

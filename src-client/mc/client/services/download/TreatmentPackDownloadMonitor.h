@@ -5,5 +5,5 @@
 struct TreatmentPackDownloadMonitor {
 public:
     // TreatmentPackDownloadMonitor inner types define
-    enum class FetchState : uint {};
+    enum class FetchState : int {};
 };

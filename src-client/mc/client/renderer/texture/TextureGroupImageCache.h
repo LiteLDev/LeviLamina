@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class ResourceLocation;
-namespace cg { struct ImageBuffer; }
+namespace cg { class ImageBuffer; }
 // clang-format on
 
 class TextureGroupImageCache : public ::IImageCache {
@@ -27,13 +27,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TextureGroupImageCache() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::cg::ImageBuffer* getCachedImage(::ResourceLocation const& resourceLocation) /*override*/;
 
-    // vIndex: 2
     virtual ::cg::ImageBuffer*
     insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer) /*override*/;
     // NOLINTEND

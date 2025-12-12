@@ -4,6 +4,17 @@
 
 namespace bgfx {
 
-struct Init {};
+struct Init {
+public:
+    // Init inner types declare
+    // clang-format off
+    struct Limits;
+    // clang-format on
+
+    // Init inner types define
+    enum class DebugConfig : int {};
+
+    struct Limits {};
+};
 
 } // namespace bgfx

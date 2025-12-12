@@ -27,9 +27,9 @@ struct RenderChunkCoordinator;
 struct RenderChunkGeometry;
 struct RenderChunkQuadInfo;
 struct RuntimeLocalLightingConfig;
+namespace ClientBlockPipeline { class MaterialRepository; }
 namespace ClientBlockPipeline { struct BlockTessellatorPipeline; }
 namespace ClientBlockPipeline { struct Description; }
-namespace ClientBlockPipeline { struct MaterialRepository; }
 namespace ClientBlockPipeline { struct TessellatorContext; }
 namespace mce { class Mesh; }
 namespace mce { class MeshData; }

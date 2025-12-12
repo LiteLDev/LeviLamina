@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PurchaseResult : uint {};
+enum class PurchaseResult : int {};

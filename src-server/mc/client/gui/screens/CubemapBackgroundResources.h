@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CubemapBackgroundResources {};
+struct CubemapBackgroundResources {
+public:
+    // CubemapBackgroundResources inner types define
+    enum class CubemapType : int {};
+};

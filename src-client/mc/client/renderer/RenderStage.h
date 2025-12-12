@@ -30,31 +30,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RenderStage();
 
-    // vIndex: 1
     virtual void preRenderUpdate(::ScreenContext& screenContext);
 
-    // vIndex: 2
     virtual void postRenderUpdate(::ScreenContext& screenContext);
 
-    // vIndex: 3
     virtual void preRender(::ScreenContext&) = 0;
 
-    // vIndex: 4
     virtual void prepareFrame(::ScreenContext& screenContext);
 
-    // vIndex: 5
     virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    // vIndex: 6
     virtual void postRender(::ScreenContext&);
 
-    // vIndex: 7
     virtual bool shouldSkip() const;
 
-    // vIndex: 8
     virtual bool shouldRender() const;
     // NOLINTEND
 

@@ -4,6 +4,6 @@
 
 namespace Social {
 
-class MultiplayerGameInfo {};
+struct MultiplayerGameInfo {};
 
 } // namespace Social

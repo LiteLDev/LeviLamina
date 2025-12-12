@@ -9,12 +9,12 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStackBase;
+class Option;
 class PlayerCommandOrigin;
+class RectangleArea;
 class Vec2;
 struct FontHandle;
 struct GameRuleId;
-struct Option;
-struct RectangleArea;
 // clang-format on
 
 class ClientInstanceModel : public ::ClientModel {
@@ -33,91 +33,62 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClientInstanceModel() /*override*/ = default;
 
-    // vIndex: 1
     virtual bool hasCommandsEnabled() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getFormattedHoverText(::ItemStackBase const& item, bool const showCategory) /*override*/;
 
-    // vIndex: 3
     virtual bool achievementsWillBeDisabledOnLoad() /*override*/;
 
-    // vIndex: 4
     virtual bool hasAchievementsDisabled() /*override*/;
 
-    // vIndex: 5
     virtual ::std::string getLevelName() /*override*/;
 
-    // vIndex: 6
     virtual int getGameDifficulty() /*override*/;
 
-    // vIndex: 7
     virtual int getGameType() /*override*/;
 
-    // vIndex: 8
     virtual void setGameType(::GameType gameType) /*override*/;
 
-    // vIndex: 9
     virtual int getGenerator() /*override*/;
 
-    // vIndex: 10
     virtual bool getStartWithMap() /*override*/;
 
-    // vIndex: 11
     virtual bool isAlwaysDay() /*override*/;
 
-    // vIndex: 12
     virtual bool isGameRule(::GameRuleId gameRule) /*override*/;
 
-    // vIndex: 13
     virtual bool isImmutableWorld() /*override*/;
 
-    // vIndex: 14
     virtual ::std::unique_ptr<::PlayerCommandOrigin> makePlayerCommandOrigin() /*override*/;
 
-    // vIndex: 15
     virtual void setCommandsEnabled(bool val) /*override*/;
 
-    // vIndex: 16
     virtual void disableAchievements() /*override*/;
 
-    // vIndex: 17
     virtual float getGuiScale() const /*override*/;
 
-    // vIndex: 18
     virtual ::Vec2 getScreenSize() const /*override*/;
 
-    // vIndex: 19
     virtual ::RectangleArea getSafeScreenZoneArea() const /*override*/;
 
-    // vIndex: 20
     virtual ::RectangleArea getWYSIWYGSafeScreenZoneArea() const /*override*/;
 
-    // vIndex: 21
     virtual ::RectangleArea getLayoutCustomizationSubPanelRectangle() const /*override*/;
 
-    // vIndex: 22
     virtual ::RectangleArea getLayoutCustomizationMainPanelRectangle() const /*override*/;
 
-    // vIndex: 23
     virtual ::RectangleArea getWYSIWYGBottomHudReservedArea() const /*override*/;
 
-    // vIndex: 24
     virtual ::RectangleArea const& getHUDHotbarRectangle() const /*override*/;
 
-    // vIndex: 25
     virtual ::Option const& getGuiScaleOption() const /*override*/;
 
-    // vIndex: 26
     virtual void setGuiScaleOffset(int guiScale) /*override*/;
 
-    // vIndex: 27
     virtual ::FontHandle getFontHandle() const /*override*/;
 
-    // vIndex: 28
     virtual void notifyForLeaveGame() /*override*/;
     // NOLINTEND
 

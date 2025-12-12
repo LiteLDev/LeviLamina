@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class StoreErrorCodes : uint {};
+enum class StoreErrorCodes : uchar {};

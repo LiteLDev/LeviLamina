@@ -1,0 +1,67 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/client/identity/PlayFabStatus.h"
+#include "mc/deps/core/threading/Async.h"
+
+namespace Social {
+
+struct PlayFabSignInResult {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk5c0ee5;
+    ::ll::UntypedStorage<1, 1>  mUnkccefc2;
+    ::ll::UntypedStorage<8, 32> mUnk5534b0;
+    ::ll::UntypedStorage<8, 32> mUnk9eec11;
+    ::ll::UntypedStorage<8, 32> mUnk3819dd;
+    ::ll::UntypedStorage<8, 8>  mUnk343a4f;
+    ::ll::UntypedStorage<8, 8>  mUnkf3f150;
+    ::ll::UntypedStorage<8, 32> mUnk42df6b;
+    ::ll::UntypedStorage<8, 32> mUnkbc0bfe;
+    ::ll::UntypedStorage<8, 32> mUnk1bc973;
+    ::ll::UntypedStorage<8, 32> mUnk60bb1c;
+    ::ll::UntypedStorage<4, 4>  mUnkc8366b;
+    ::ll::UntypedStorage<8, 56> mUnk17e42c;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlayFabSignInResult& operator=(PlayFabSignInResult const&);
+    PlayFabSignInResult();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C PlayFabSignInResult(::Social::PlayFabSignInResult&&);
+
+    MCNAPI_C PlayFabSignInResult(::Social::PlayFabSignInResult const&);
+
+    MCNAPI_C ~PlayFabSignInResult();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::Bedrock::Threading::Async<::Social::PlayFabSignInResult>
+    taskResult(::Social::PlayFabStatus status);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::Social::PlayFabSignInResult&&);
+
+    MCNAPI_C void* $ctor(::Social::PlayFabSignInResult const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
+};
+
+} // namespace Social

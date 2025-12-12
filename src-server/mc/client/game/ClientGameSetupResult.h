@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ClientGameSetupResult : uint {};
+enum class ClientGameSetupResult : int {};

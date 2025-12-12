@@ -1,0 +1,152 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/platform/threading/UniqueLock.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+namespace Core { class FileOpenMode; }
+namespace Core { class FileSystemImpl; }
+namespace Core { class Result; }
+// clang-format on
+
+namespace Core {
+
+class FileImpl {
+public:
+    // FileImpl inner types declare
+    // clang-format off
+    struct WriteBufferInfo;
+    // clang-format on
+
+    // FileImpl inner types define
+    struct WriteBufferInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnkec2ac3;
+        ::ll::UntypedStorage<8, 80> mUnk52e0bb;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        WriteBufferInfo& operator=(WriteBufferInfo const&);
+        WriteBufferInfo(WriteBufferInfo const&);
+        WriteBufferInfo();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 2> mUnk77bcd9;
+    ::ll::UntypedStorage<8, 8> mUnkb78983;
+    ::ll::UntypedStorage<8, 8> mUnk95d296;
+    ::ll::UntypedStorage<1, 1> mUnk1f6afd;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FileImpl& operator=(FileImpl const&);
+    FileImpl(FileImpl const&);
+    FileImpl();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~FileImpl();
+
+    virtual ::Core::PathBuffer<::std::string> _getPath() const = 0;
+
+    virtual uint64 _getBlockSize() const = 0;
+
+    virtual bool _isOpen() = 0;
+
+    virtual ::Core::Result _close() = 0;
+
+    virtual ::Core::Result _read(void*, uint64, uint64*) = 0;
+
+    virtual ::Core::Result _readExactly(void*, uint64) = 0;
+
+    virtual ::Core::Result _skip(uint64) = 0;
+
+    virtual ::Core::Result _readAtPosition(uint64, void*, uint64, uint64*) = 0;
+
+    virtual ::Core::Result _getPosition(uint64*) = 0;
+
+    virtual ::Core::Result _setPosition(uint64) = 0;
+
+    virtual ::Core::Result _write(void const*, uint64) = 0;
+
+    virtual ::Core::Result _flush() = 0;
+
+    virtual ::Core::Result _getSize(uint64*) = 0;
+
+    virtual ::Core::Result _getRemainingSize(uint64*) = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI FileImpl(::Core::FileSystemImpl* pTransaction, ::Core::FileOpenMode openMode);
+
+    MCNAPI ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> _lockIfWriteBuffered(bool flushBuffer);
+
+    MCNAPI ::Core::Result _writeOperation(::Core::Result&& result, uint64 numBytesWritten);
+
+    MCNAPI ::Core::Result close();
+
+    MCNAPI void detachFromTransaction();
+
+    MCNAPI ::Core::Result getPosition(uint64* pPosition);
+
+    MCNAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
+
+    MCNAPI ::Core::Result readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
+
+    MCNAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
+
+    MCNAPI ::Core::Result setPosition(uint64 position);
+
+    MCNAPI ::Core::Result skip(uint64 numBytes);
+
+    MCNAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::vector<::Core::FileImpl*>& sAllFiles();
+
+    MCNAPI static ::Bedrock::Threading::Mutex& sAllFilesLock();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::FileSystemImpl* pTransaction, ::Core::FileOpenMode openMode);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};
+
+} // namespace Core

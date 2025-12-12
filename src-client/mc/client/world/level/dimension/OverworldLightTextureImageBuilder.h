@@ -9,7 +9,6 @@ class OverworldLightTextureImageBuilder : public ::BaseLightTextureImageBuilder 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~OverworldLightTextureImageBuilder() /*override*/ = default;
     // NOLINTEND
 

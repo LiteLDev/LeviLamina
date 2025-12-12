@@ -93,37 +93,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DedicatedServer() /*override*/;
 
-    // vIndex: 5
     virtual bool stop() /*override*/;
 
-    // vIndex: 8
     virtual ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const /*override*/;
 
-    // vIndex: 1
     virtual ::Bedrock::NotNullNonOwnerPtr<::Minecraft> getPrimaryMinecraft() /*override*/;
 
-    // vIndex: 2
     virtual ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> getAutomationClient() const /*override*/;
 
-    // vIndex: 3
     virtual bool isEduMode() const /*override*/;
 
-    // vIndex: 4
     virtual bool isDedicatedServer() const /*override*/;
 
-    // vIndex: 5
     virtual void onNetworkMaxPlayersChanged(uint newMaxPlayerCount) /*override*/;
 
-    // vIndex: 6
     virtual ::IGameModuleShared& getGameModuleShared() /*override*/;
 
-    // vIndex: 7
     virtual void requestServerShutdown(::std::string const&) /*override*/;
 
-    // vIndex: 9
     virtual bool requestInGamePause(::SubClientId const&, bool) /*override*/;
     // NOLINTEND
 

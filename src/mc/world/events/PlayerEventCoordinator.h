@@ -1,0 +1,56 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/world/events/EventCoordinator.h"
+#include "mc/world/events/EventRef.h"
+#include "mc/world/events/PlayerGameplayEvent.h"
+
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class ItemEnchants;
+class ItemStack;
+class Player;
+class PlayerEventListener;
+class PlayerGameplayHandler;
+// clang-format on
+
+class PlayerEventCoordinator : public ::EventCoordinator<::PlayerEventListener> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerGameplayHandler>> mPlayerGameplayHandler;
+    // NOLINTEND
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~PlayerEventCoordinator() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void registerPlayerGameplayHandler(::std::unique_ptr<::PlayerGameplayHandler>&& handler);
+
+    MCNAPI ::CoordinatorResult sendEvent(::EventRef<::PlayerGameplayEvent<::CoordinatorResult>> const& event);
+
+    MCNAPI void sendEvent(::EventRef<::PlayerGameplayEvent<void>> const& event);
+
+    MCNAPI void sendPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
+
+    MCNAPI_C void sendPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
+
+    MCNAPI void sendPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};

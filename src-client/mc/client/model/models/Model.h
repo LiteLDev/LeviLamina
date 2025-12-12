@@ -13,11 +13,11 @@ class BaseActorRenderContext;
 class ClientPBRTextureData;
 class DataDrivenGeometry;
 class Mob;
+class ModelPart;
 class RenderController;
 class RenderParams;
 class ScreenContext;
 struct MERSUniformData;
-struct ModelPart;
 namespace dragon { struct RenderMetadata; }
 namespace mce { class MaterialPtr; }
 namespace mce { struct ClientTexture; }
@@ -48,47 +48,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Model() /*override*/;
 
-    // vIndex: 20
     virtual void clear();
 
-    // vIndex: 4
     virtual void onAppSuspended() /*override*/;
 
-    // vIndex: 21
     virtual void preDraw(::ScreenContext&);
 
-    // vIndex: 22
     virtual void postDraw(::ScreenContext&);
 
-    // vIndex: 26
     virtual void render(::ScreenContext&);
 
-    // vIndex: 25
     virtual void render(::ScreenContext& screenContext, ::Actor&, float, float, float, float, float, float);
 
-    // vIndex: 24
     virtual void render(::BaseActorRenderContext&);
 
-    // vIndex: 23
     virtual void
     render(::BaseActorRenderContext& baseActorRenderContext, ::Actor&, float, float, float, float, float, float);
 
-    // vIndex: 28
     virtual void setupAnim(float, float, float, float, float, float);
 
-    // vIndex: 27
     virtual void setupAnim();
 
-    // vIndex: 29
     virtual void prepareMobModel(::Mob&, float, float, float);
 
-    // vIndex: 30
     virtual float getHeightAdjustment() const;
 
-    // vIndex: 31
     virtual ::AABB buildAABB() const;
     // NOLINTEND
 

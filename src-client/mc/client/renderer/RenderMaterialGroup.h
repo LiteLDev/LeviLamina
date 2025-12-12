@@ -10,9 +10,9 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class ResourceLoadManager;
 class ResourceLocation;
-struct ResourceLoadManager;
-struct ResourcePackManager;
+class ResourcePackManager;
 namespace mce { class RenderMaterialInfo; }
 namespace mce { struct ShaderGroup; }
 // clang-format on
@@ -42,16 +42,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void onAppResumed() /*override*/;
 
-    // vIndex: 1
     virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const& name) /*override*/;
 
-    // vIndex: 2
     virtual void clearMaterial(::HashedString const& name) /*override*/;
 
-    // vIndex: 0
     virtual ~RenderMaterialGroup() /*override*/;
     // NOLINTEND
 

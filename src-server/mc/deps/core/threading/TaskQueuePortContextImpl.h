@@ -36,40 +36,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual uint AddRef() /*override*/;
 
-    // vIndex: 1
     virtual uint Release() /*override*/;
 
-    // vIndex: 2
     virtual HRESULT QueryApi(::ApiId id, void** ptr) /*override*/;
 
-    // vIndex: 3
     virtual ::XTaskQueuePort GetType() /*override*/;
 
-    // vIndex: 4
     virtual ::TaskQueuePortStatus GetStatus() /*override*/;
 
-    // vIndex: 5
     virtual ::ITaskQueue* GetQueue() /*override*/;
 
-    // vIndex: 6
     virtual ::ITaskQueuePort* GetPort() /*override*/;
 
-    // vIndex: 7
     virtual bool TrySetStatus(::TaskQueuePortStatus expectedStatus, ::TaskQueuePortStatus status) /*override*/;
 
-    // vIndex: 8
     virtual void SetStatus(::TaskQueuePortStatus status) /*override*/;
 
-    // vIndex: 9
     virtual void ItemQueued() /*override*/;
 
-    // vIndex: 10
     virtual bool AddSuspend() /*override*/;
 
-    // vIndex: 11
     virtual bool RemoveSuspend() /*override*/;
     // NOLINTEND
 

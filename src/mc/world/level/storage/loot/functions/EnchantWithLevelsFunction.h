@@ -1,0 +1,79 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/level/storage/loot/functions/LootItemFunction.h"
+
+// auto generated forward declare list
+// clang-format off
+class ItemInstance;
+class ItemStack;
+class LootItemCondition;
+class LootTableContext;
+class Random;
+struct Trade;
+namespace Json { class Value; }
+// clang-format on
+
+class EnchantWithLevelsFunction : public ::LootItemFunction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8> mUnk3632ac;
+    ::ll::UntypedStorage<1, 1> mUnkc5975e;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    EnchantWithLevelsFunction& operator=(EnchantWithLevelsFunction const&);
+    EnchantWithLevelsFunction(EnchantWithLevelsFunction const&);
+    EnchantWithLevelsFunction();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~EnchantWithLevelsFunction() /*override*/ = default;
+
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
+
+    virtual int
+    apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
+
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
+
+    virtual int
+    apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
+
+    virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+
+    MCNAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+
+    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+
+    MCNAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+
+    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
+};

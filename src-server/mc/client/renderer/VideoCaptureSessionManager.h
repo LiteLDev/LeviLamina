@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VideoCaptureSessionManager {};
+struct VideoCaptureSessionManager {};

@@ -11,10 +11,8 @@ class DeviceIdManager_Win32 : public ::Bedrock::DeviceIdManager_Common {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
     virtual void _initializePlatform(bool const isAnonymous) /*override*/;
 
-    // vIndex: 0
     virtual ~DeviceIdManager_Win32() /*override*/ = default;
     // NOLINTEND
 

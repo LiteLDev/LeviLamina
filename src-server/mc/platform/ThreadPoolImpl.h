@@ -34,10 +34,8 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual void Complete() /*override*/;
 
-        // vIndex: 1
         virtual void MayRunLong() /*override*/;
         // NOLINTEND
 

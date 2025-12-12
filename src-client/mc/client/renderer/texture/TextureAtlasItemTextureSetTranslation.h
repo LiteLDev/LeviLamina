@@ -6,25 +6,25 @@ struct TextureAtlasItemTextureSetTranslation {
 public:
     // TextureAtlasItemTextureSetTranslation inner types declare
     // clang-format off
-    struct ColorUniform;
     struct LayerType;
-    struct MERSInfo;
-    struct MERSTranslation;
-    struct MERSUniform;
-    struct NormalInfo;
-    struct NormalTranslation;
     struct SingleChannelInfo;
-    struct SingleChannelTranslation;
-    struct Translation;
+    struct MERSInfo;
+    struct NormalInfo;
     struct TranslationScale;
-    struct Uniform;
     struct UniformFloat;
     struct UniformVec3;
     struct UniformVec4;
+    struct Translation;
+    struct ColorUniform;
+    struct NormalTranslation;
+    struct MERSTranslation;
+    struct MERSUniform;
+    struct Uniform;
+    struct SingleChannelTranslation;
     // clang-format on
 
     // TextureAtlasItemTextureSetTranslation inner types define
-    enum class Channel : uint {};
+    enum class Channel : uchar {};
 
     struct LayerType {};
 

@@ -4,6 +4,21 @@
 
 namespace dragon::framerenderer {
 
-class CommandContext {};
+struct CommandContext {
+public:
+    // CommandContext inner types declare
+    // clang-format off
+    struct MaterialAccelerationStructureBinding;
+    struct MaterialBufferBinding;
+    struct MaterialTextureBinding;
+    // clang-format on
+
+    // CommandContext inner types define
+    struct MaterialAccelerationStructureBinding {};
+
+    struct MaterialBufferBinding {};
+
+    struct MaterialTextureBinding {};
+};
 
 } // namespace dragon::framerenderer

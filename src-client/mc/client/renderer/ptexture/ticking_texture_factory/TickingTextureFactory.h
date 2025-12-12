@@ -4,10 +4,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ResourcePackManager;
 class TextureAtlas;
 struct FlipbookTextureDescription;
 struct MinecraftGraphics;
-struct ResourcePackManager;
 namespace mce { class TextureGroup; }
 // clang-format on
 

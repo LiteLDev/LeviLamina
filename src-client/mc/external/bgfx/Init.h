@@ -12,7 +12,7 @@ public:
     // clang-format on
 
     // Init inner types define
-    enum class DebugConfig : uint {};
+    enum class DebugConfig : int {};
 
     struct Limits {};
 };
