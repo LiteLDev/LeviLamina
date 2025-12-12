@@ -109,7 +109,7 @@ target("LeviLamina")
     set_configdir("$(builddir)/config")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     add_configfiles("src/(ll/core/Version.h.in)")
-    add_headerfiles("src/(**.h)")
+    add_headerfiles("src/(ll/api/**.h)", "src/(mc/**.h)")
     add_includedirs("src", "$(builddir)/config")
     set_pcxxheader("src/ll/api/Global.h")
     add_packages("demangler", "mimalloc", "ctre", "cpr", "trampoline", "preloader")
@@ -197,7 +197,7 @@ target("LeviLamina")
     end
 
     if is_server then
-        add_headerfiles("src-server/(**.h)")
+        add_headerfiles("src-server/(ll/api/**.h)", "src-server/(mc/**.h)")
         add_includedirs("src-server")
         add_files("src-server/**.cpp")
     else
@@ -205,7 +205,7 @@ target("LeviLamina")
             add_syslinks("dxgi", "runtimeobject", "gdi32")
         end
         add_packages("imgui")
-        add_headerfiles("src-client/(**.h)")
+        add_headerfiles("src-client/(ll/api/**.h)", "src-client/(mc/**.h)")
         add_includedirs("src-client")
         add_files("src-client/**.cpp")
         add_cxflags("/wd4273")
