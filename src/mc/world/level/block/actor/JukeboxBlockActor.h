@@ -39,62 +39,44 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 20
     virtual int getContainerSize() const /*override*/;
 
-    // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
-    // vIndex: 32
     virtual bool canPushInItem(int, int, ::ItemStack const& item) const /*override*/;
 
-    // vIndex: 33
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
-    // vIndex: 7
-    virtual ::ItemStack const& getItem(int) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 22
     virtual void startOpen(::Actor&) /*override*/;
 
-    // vIndex: 23
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 31
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 30
     virtual ::Container const* getContainer() const /*override*/;
 
-    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 2
     virtual void serverInitItemStackIds(
         int containerSlot,
         int,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    // vIndex: 0
     virtual ~JukeboxBlockActor() /*override*/ = default;
     // NOLINTEND
 
@@ -137,9 +119,9 @@ public:
 
     MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-    MCAPI ::ItemStack const& $getItem(int) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD void $startOpen(::Actor&);
 
@@ -157,6 +139,8 @@ public:
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
+
     // NOLINTEND
 
 public:

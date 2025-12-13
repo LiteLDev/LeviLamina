@@ -9,7 +9,6 @@ class Trade1ContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Trade1ContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

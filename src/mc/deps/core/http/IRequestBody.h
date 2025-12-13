@@ -30,22 +30,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IRequestBody();
 
-    // vIndex: 1
     virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar>) = 0;
 
-    // vIndex: 2
     virtual uint64 getSize() = 0;
 
-    // vIndex: 3
     virtual void cancel() = 0;
 
-    // vIndex: 4
     virtual ::std::string const& getLoggableSource() const = 0;
 
-    // vIndex: 5
     virtual ::gsl::span<uchar const> getLoggableData() const = 0;
     // NOLINTEND
 

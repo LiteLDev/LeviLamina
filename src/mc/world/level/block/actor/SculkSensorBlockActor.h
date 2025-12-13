@@ -33,28 +33,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    // vIndex: 0
     virtual ~SculkSensorBlockActor() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SculkSensorBlockActor(::BlockPos const& pos);
+    MCNAPI explicit SculkSensorBlockActor(::BlockPos const& pos);
 
-    MCAPI SculkSensorBlockActor(
+    MCNAPI SculkSensorBlockActor(
         ::BlockActorType                                  type,
         ::BlockPos const&                                 pos,
         uint                                              listenerRange,
@@ -65,9 +60,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BlockActorType                                  type,
         ::BlockPos const&                                 pos,
         uint                                              listenerRange,
@@ -78,19 +73,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCFOLD void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
+
+
     // NOLINTEND
 
 public:

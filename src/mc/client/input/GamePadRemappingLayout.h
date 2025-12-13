@@ -30,40 +30,63 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~GamePadRemappingLayout() /*override*/ = default;
 
-    // vIndex: 1
     virtual void setMappingWithRawInput(::std::string const&, int, ::RawInputType) /*override*/;
 
-    // vIndex: 6
-    virtual ::std::string getMappedKeyName(int) const /*override*/;
+    virtual ::std::string getMappedKeyName(int key) const /*override*/;
 
-    // vIndex: 5
-    virtual ::std::string getMappedKeyName(int, bool) const /*override*/;
+    virtual ::std::string getMappedKeyName(int key, bool checkUserConfiguredSwap) const /*override*/;
 
-    // vIndex: 4
-    virtual ::std::string getMappedKeyName(::Keymapping const&) const /*override*/;
+    virtual ::std::string getMappedKeyName(::Keymapping const& keyMapping) const /*override*/;
 
-    // vIndex: 3
-    virtual ::std::string getSaveString(::std::string const&) const /*override*/;
+    virtual ::std::string getSaveString(::std::string const& action) const /*override*/;
 
-    // vIndex: 2
-    virtual int getAdjustedKey(int) const /*override*/;
+    virtual int getAdjustedKey(int key) const /*override*/;
 
-    // vIndex: 8
-    virtual ::std::string getKeySpriteLocation(int, ::IconSize) const /*override*/;
+    virtual ::std::string getKeySpriteLocation(int key, ::IconSize iconSize) const /*override*/;
 
-    // vIndex: 7
-    virtual ::std::string getKeySpriteLocation(::Keymapping const&) const /*override*/;
+    virtual ::std::string getKeySpriteLocation(::Keymapping const& keyMapping) const /*override*/;
 
-    // vIndex: 9
     virtual int _rawKeyToKey(int, ::RawInputType) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::std::string
+    _getKeySpriteLocationInternal(int key, bool checkUserConfiguredButtonSwapping, ::IconSize iconSize) const;
+
+    MCNAPI_C ::std::string const _getMappedKeyNameInternal(int key, bool checkUserConfiguredButtonSwapping) const;
+
+    MCNAPI_C void _swapGamepadKeyBindings(int key1, int key2);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::std::string $getMappedKeyName(int key) const;
 
+    MCNAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
+
+    MCNAPI ::std::string $getMappedKeyName(::Keymapping const& keyMapping) const;
+
+    MCNAPI ::std::string $getSaveString(::std::string const& action) const;
+
+    MCNAPI int $getAdjustedKey(int key) const;
+
+    MCNAPI ::std::string $getKeySpriteLocation(int key, ::IconSize iconSize) const;
+
+    MCNAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

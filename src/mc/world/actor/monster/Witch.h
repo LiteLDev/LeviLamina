@@ -19,26 +19,24 @@ class Witch : public ::HumanoidMonster {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mUsingTime;
+    ::ll::UntypedStorage<4, 4> mUnkb0db77;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    Witch& operator=(Witch const&);
+    Witch(Witch const&);
     Witch();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 12
     virtual ::Vec3 getFiringPos() const /*override*/;
 
-    // vIndex: 167
     virtual float getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const /*override*/;
 
-    // vIndex: 8
     virtual ~Witch() /*override*/ = default;
     // NOLINTEND
 
@@ -70,6 +68,8 @@ public:
     MCAPI ::Vec3 $getFiringPos() const;
 
     MCAPI float $getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const;
+
+
     // NOLINTEND
 
 public:

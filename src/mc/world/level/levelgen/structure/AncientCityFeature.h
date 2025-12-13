@@ -22,13 +22,18 @@ class AncientCityFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
+    ::ll::UntypedStorage<8, 24> mUnkeb47d4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AncientCityFeature& operator=(AncientCityFeature const&);
+    AncientCityFeature(AncientCityFeature const&);
+    AncientCityFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const& biomeSource,
         ::Random&            random,
@@ -38,10 +43,8 @@ public:
         ::Dimension const&
     ) /*override*/;
 
-    // vIndex: 3
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
 
-    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -52,7 +55,6 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
-    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension& dimension,
         ::BiomeSource const&,
@@ -61,7 +63,6 @@ public:
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~AncientCityFeature() /*override*/ = default;
     // NOLINTEND
 
@@ -96,6 +97,8 @@ public:
         ::ChunkPos const& chunkPos,
         ::IPreliminarySurfaceProvider const&
     );
+
+
     // NOLINTEND
 
 public:

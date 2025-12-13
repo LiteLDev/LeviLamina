@@ -31,14 +31,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RNS2_Windows() /*override*/ = default;
 
-    // vIndex: 3
     virtual ::RakNet::RNS2BindResult
     Bind(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line) /*override*/;
 
-    // vIndex: 1
     virtual int Send(::RakNet::RNS2_SendParameters* sendParameters, char const* file, uint line) /*override*/;
     // NOLINTEND
 
@@ -49,6 +46,8 @@ public:
     $Bind(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line);
 
     MCAPI int $Send(::RakNet::RNS2_SendParameters* sendParameters, char const* file, uint line);
+
+
     // NOLINTEND
 
 public:

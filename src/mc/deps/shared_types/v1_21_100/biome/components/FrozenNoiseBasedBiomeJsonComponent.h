@@ -17,10 +17,8 @@ struct FrozenNoiseBasedBiomeJsonComponent : public ::SharedTypes::v1_20_60::IBio
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::BiomeComponentVersion getType() const /*override*/;
 
-    // vIndex: 0
     virtual ~FrozenNoiseBasedBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -42,6 +40,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::BiomeComponentVersion $getType() const;
+
+
     // NOLINTEND
 
 public:

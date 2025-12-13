@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/ObjectHandleValue.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class IScriptRef; }

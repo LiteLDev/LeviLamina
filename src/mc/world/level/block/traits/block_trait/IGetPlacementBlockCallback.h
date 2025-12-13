@@ -16,10 +16,8 @@ class IGetPlacementBlockCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IGetPlacementBlockCallback() = default;
 
-    // vIndex: 1
     virtual ::gsl::not_null<::Block const*> getPlacementBlock(
         ::gsl::not_null<::Block const*>,
         ::Actor const&,

@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Item;
 // clang-format on
 
 class SelectItemNode : public ::BehaviorNode {
@@ -24,22 +23,25 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>          mItemName;
-    ::ll::TypedStorage<8, 8, ::Item const*>           mItem;
-    ::ll::TypedStorage<4, 4, int>                     mItemSlot;
-    ::ll::TypedStorage<4, 4, ::SelectItemNode::State> mState;
+    ::ll::UntypedStorage<8, 32> mUnk4f414e;
+    ::ll::UntypedStorage<8, 8>  mUnkd2abbc;
+    ::ll::UntypedStorage<4, 4>  mUnk2461f1;
+    ::ll::UntypedStorage<4, 4>  mUnkc6056d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SelectItemNode& operator=(SelectItemNode const&);
+    SelectItemNode(SelectItemNode const&);
+    SelectItemNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
-    // vIndex: 2
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
-    // vIndex: 0
     virtual ~SelectItemNode() /*override*/ = default;
     // NOLINTEND
 

@@ -9,16 +9,12 @@ class PackSettingsError : public ::PackError {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::string getLocErrorMessage() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::unordered_map<int, ::std::string> const& getLocErrorMessageMap() const /*override*/;
 
-    // vIndex: 3
     virtual ::std::unordered_map<int, ::std::string> const& getEventErrorMessageMap() const /*override*/;
 
-    // vIndex: 0
     virtual ~PackSettingsError() /*override*/;
     // NOLINTEND
 
@@ -36,6 +32,8 @@ public:
     MCNAPI ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
 
     MCNAPI ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
+
+
     // NOLINTEND
 
 public:

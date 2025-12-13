@@ -24,6 +24,13 @@ public:
         Check         = 5,
     };
 
+    enum class CodeBuilderRuntimeAction : int {
+        None  = 0,
+        Start = 1,
+        Stop  = 2,
+        Pause = 3,
+    };
+
     enum class CommandKeyword : uchar {
         None       = 0,
         Code       = 1,
@@ -33,13 +40,6 @@ public:
     enum class SubscriptionType : int {
         None       = 0,
         Scoreboard = 1,
-    };
-
-    enum class CodeBuilderRuntimeAction : int {
-        None  = 0,
-        Start = 1,
-        Stop  = 2,
-        Pause = 3,
     };
 
 public:
@@ -66,10 +66,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    // vIndex: 0
     virtual ~CodeBuilderCommand() /*override*/ = default;
     // NOLINTEND
 
@@ -83,6 +81,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
+
     // NOLINTEND
 
 public:

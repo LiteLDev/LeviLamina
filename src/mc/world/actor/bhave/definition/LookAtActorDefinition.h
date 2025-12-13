@@ -15,32 +15,38 @@ class LookAtActorDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mEntityName;
-    ::ll::TypedStorage<8, 32, ::std::string> mEntityType;
-    ::ll::TypedStorage<4, 4, int>            mSearchRadius;
-    ::ll::TypedStorage<8, 32, ::std::string> mSearchRadiusId;
+    ::ll::UntypedStorage<8, 32> mUnk4a9134;
+    ::ll::UntypedStorage<8, 32> mUnk67647a;
+    ::ll::UntypedStorage<4, 4>  mUnkc993da;
+    ::ll::UntypedStorage<8, 32> mUnkbc6075;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LookAtActorDefinition& operator=(LookAtActorDefinition const&);
+    LookAtActorDefinition(LookAtActorDefinition const&);
+    LookAtActorDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
-    // vIndex: 0
     virtual ~LookAtActorDefinition() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+
+
     // NOLINTEND
 
 public:

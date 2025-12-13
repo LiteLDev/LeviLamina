@@ -12,16 +12,12 @@ class ITextObject {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ITextObject() = default;
 
-    // vIndex: 1
     virtual ::std::string asString() const = 0;
 
-    // vIndex: 2
     virtual ::Json::Value asJsonValue() const = 0;
 
-    // vIndex: 3
     virtual ::Json::Value resolve(::ResolveData const&) const = 0;
     // NOLINTEND
 

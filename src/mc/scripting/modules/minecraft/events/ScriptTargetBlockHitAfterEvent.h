@@ -3,13 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -19,16 +16,22 @@ struct ScriptTargetBlockHitAfterEvent : public ::ScriptModuleMinecraft::ScriptBl
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3>                                                                     mHitVector;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mSource;
-    ::ll::TypedStorage<4, 4, int> mPreviousRedstonePower;
-    ::ll::TypedStorage<4, 4, int> mRedstonePower;
+    ::ll::UntypedStorage<4, 12> mUnkd9d5ef;
+    ::ll::UntypedStorage<8, 32> mUnk562ed1;
+    ::ll::UntypedStorage<4, 4>  mUnk3a087e;
+    ::ll::UntypedStorage<4, 4>  mUnk36a62a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptTargetBlockHitAfterEvent& operator=(ScriptTargetBlockHitAfterEvent const&);
+    ScriptTargetBlockHitAfterEvent(ScriptTargetBlockHitAfterEvent const&);
+    ScriptTargetBlockHitAfterEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

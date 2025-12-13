@@ -11,32 +11,32 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct ItemStackResponseInfo;
 // clang-format on
 
 class ItemStackResponsePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStackResponseInfo>> mResponses;
+    ::ll::UntypedStorage<8, 24> mUnk80864f;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ItemStackResponsePacket& operator=(ItemStackResponsePacket const&);
+    ItemStackResponsePacket(ItemStackResponsePacket const&);
+    ItemStackResponsePacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ItemStackResponsePacket() /*override*/;
 
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
@@ -56,6 +56,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

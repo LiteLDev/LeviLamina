@@ -22,24 +22,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemUseEvent(::ItemUseEvent&&);
+    MCNAPI ItemUseEvent(::ItemUseEvent&&);
 
-    MCAPI ItemUseEvent(::ItemUseEvent const&);
+    MCNAPI ItemUseEvent(::ItemUseEvent const&);
 
-    MCAPI ~ItemUseEvent();
+    MCNAPI ~ItemUseEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemUseEvent&&);
+    MCNAPI void* $ctor(::ItemUseEvent&&);
 
-    MCAPI void* $ctor(::ItemUseEvent const&);
+    MCNAPI void* $ctor(::ItemUseEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -15,25 +15,29 @@ class MoveItemDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mFromContainer;
-    ::ll::TypedStorage<8, 32, ::std::string> mFromContainerId;
-    ::ll::TypedStorage<4, 4, int>            mFromSlot;
-    ::ll::TypedStorage<8, 32, ::std::string> mFromSlotId;
-    ::ll::TypedStorage<8, 32, ::std::string> mToContainer;
-    ::ll::TypedStorage<8, 32, ::std::string> mToContainerId;
-    ::ll::TypedStorage<4, 4, int>            mToSlot;
-    ::ll::TypedStorage<8, 32, ::std::string> mToSlotId;
-    ::ll::TypedStorage<4, 4, int>            mItemCount;
-    ::ll::TypedStorage<8, 32, ::std::string> mItemCountId;
+    ::ll::UntypedStorage<8, 32> mUnk3dd586;
+    ::ll::UntypedStorage<8, 32> mUnk7b247a;
+    ::ll::UntypedStorage<4, 4>  mUnkafd772;
+    ::ll::UntypedStorage<8, 32> mUnk152d4e;
+    ::ll::UntypedStorage<8, 32> mUnk3eee13;
+    ::ll::UntypedStorage<8, 32> mUnk8daa08;
+    ::ll::UntypedStorage<4, 4>  mUnk7e5ac2;
+    ::ll::UntypedStorage<8, 32> mUnk8e68dc;
+    ::ll::UntypedStorage<4, 4>  mUnk24e24c;
+    ::ll::UntypedStorage<8, 32> mUnkd92e70;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveItemDefinition& operator=(MoveItemDefinition const&);
+    MoveItemDefinition(MoveItemDefinition const&);
+    MoveItemDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
-    // vIndex: 0
     virtual ~MoveItemDefinition() /*override*/ = default;
     // NOLINTEND
 

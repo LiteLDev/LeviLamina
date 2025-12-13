@@ -28,22 +28,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 0
     virtual ~OwnerHurtByTargetGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCFOLD void $start();
+    MCNAPI void $start();
+
+
     // NOLINTEND
 
 public:

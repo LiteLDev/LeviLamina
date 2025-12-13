@@ -26,26 +26,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 141
     virtual ::SharedTypes::Legacy::LevelSoundEvent getDeathSound() /*override*/;
 
-    // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 8
     virtual ~Goat() /*override*/ = default;
     // NOLINTEND
 
@@ -82,7 +75,9 @@ public:
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getDeathSound();
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
+
     // NOLINTEND
 
 public:

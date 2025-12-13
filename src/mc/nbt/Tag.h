@@ -34,37 +34,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Tag();
 
-    // vIndex: 1
     virtual void deleteChildren();
 
-    // vIndex: 2
     virtual void write(::IDataOutput&) const = 0;
 
-    // vIndex: 3
     virtual ::Bedrock::Result<void> load(::IDataInput&) = 0;
 
-    // vIndex: 4
     virtual ::std::string toString() const = 0;
 
-    // vIndex: 5
     virtual ::Tag::Type getId() const = 0;
 
-    // vIndex: 6
     virtual bool equals(::Tag const& rhs) const;
 
-    // vIndex: 8
     virtual void print(::PrintStream& out) const;
 
-    // vIndex: 7
     virtual void print(::std::string const& prefix, ::PrintStream& out) const;
 
-    // vIndex: 9
     virtual ::std::unique_ptr<::Tag> copy() const = 0;
 
-    // vIndex: 10
     virtual uint64 hash() const = 0;
     // NOLINTEND
 
@@ -98,6 +87,8 @@ public:
     MCAPI void $print(::PrintStream& out) const;
 
     MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
+
+
     // NOLINTEND
 
 public:

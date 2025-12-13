@@ -23,13 +23,10 @@ class ServerBlockUtilityService : public ::Editor::BlockUtils::CommonBlockUtilit
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ServerBlockUtilityService() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Editor::BlockUtils::CommonBlockUtilityServiceProvider& getCommonInterface() /*override*/;
 
-    // vIndex: 2
     virtual void fillVolume(
         ::std::variant<
             ::BlockVolumeBase const*,
@@ -38,13 +35,10 @@ public:
         ::std::optional<::Block const*> const                     optBlock
     ) /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> _implInit() /*override*/;
 
-    // vIndex: 8
     virtual ::Scripting::Result_deprecated<void> _implReady() /*override*/;
 
-    // vIndex: 9
     virtual ::Scripting::Result_deprecated<void> _implQuit() /*override*/;
     // NOLINTEND
 
@@ -66,6 +60,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $_implReady();
 
     MCNAPI ::Scripting::Result_deprecated<void> $_implQuit();
+
+
     // NOLINTEND
 
 public:

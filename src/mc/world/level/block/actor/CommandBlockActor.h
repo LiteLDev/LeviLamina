@@ -42,44 +42,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 4
     virtual void saveBlockData(::CompoundTag& tag, ::BlockSource& region) const /*override*/;
 
-    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 5
     virtual void
     loadBlockData(::CompoundTag const& tag, ::BlockSource& region, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 6
     virtual void onCustomTagLoadDone(::BlockSource& region) /*override*/;
 
-    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 11
     virtual void onPlace(::BlockSource& region) /*override*/;
 
-    // vIndex: 24
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const /*override*/;
 
-    // vIndex: 26
     virtual void setCustomName(::Bedrock::Safety::RedactableString const& name) /*override*/;
 
-    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region) /*override*/;
 
-    // vIndex: 44
     virtual bool _playerCanUpdate(::Player const& player) const /*override*/;
 
-    // vIndex: 0
     virtual ~CommandBlockActor() /*override*/ = default;
     // NOLINTEND
 
@@ -143,6 +130,8 @@ public:
     MCAPI void $_onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
 
     MCAPI bool $_playerCanUpdate(::Player const& player) const;
+
+
     // NOLINTEND
 
 public:

@@ -14,25 +14,18 @@ class ILevelStorageManagerConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ILevelStorageManagerConnector() = default;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnSaveConnector() = 0;
 
-    // vIndex: 2
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnSaveGameDataConnector() = 0;
 
-    // vIndex: 3
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnSaveLevelDataConnector() = 0;
 
-    // vIndex: 4
     virtual ::Bedrock::PubSub::Connector<void(bool&)>& getOnCanStartGameSaveTimerCheckConnector() = 0;
 
-    // vIndex: 5
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnStartLeaveGameConnector() = 0;
 
-    // vIndex: 6
     virtual ::Bedrock::PubSub::Connector<void()>& getOnAppSuspendConnector() = 0;
     // NOLINTEND
 

@@ -14,13 +14,10 @@ class Creeper : public ::Monster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 8
     virtual ~Creeper() /*override*/ = default;
     // NOLINTEND
 
@@ -30,6 +27,8 @@ public:
     MCAPI void $normalTick();
 
     MCAPI void $die(::ActorDamageSource const& source);
+
+
     // NOLINTEND
 
 public:

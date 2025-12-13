@@ -23,10 +23,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelCrashDumpManager() /*override*/ = default;
 
-    // vIndex: 1
     virtual void setCrashDumpLogStringID(::CrashDumpLogStringID crashDumpLogStringID) const /*override*/;
     // NOLINTEND
 
@@ -34,6 +32,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $setCrashDumpLogStringID(::CrashDumpLogStringID crashDumpLogStringID) const;
+
+
     // NOLINTEND
 
 public:

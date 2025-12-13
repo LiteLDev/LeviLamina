@@ -34,6 +34,19 @@ public:
     // clang-format on
 
     // WidgetComponentStateChangePayload inner types define
+    enum class WidgetComponentStateVariantType : int {
+        BoundingBox               = 0,
+        Clipboard                 = 1,
+        Entity                    = 2,
+        Gizmo                     = 3,
+        Spline                    = 4,
+        Text                      = 5,
+        VolumeOutline             = 6,
+        VolumeOutlineVolumeUpdate = 7,
+        Grid                      = 8,
+        Null                      = 9,
+    };
+
     class ComponentStateBase {
     public:
         // member variables
@@ -49,21 +62,6 @@ public:
         ComponentStateBase(ComponentStateBase const&);
         ComponentStateBase();
     };
-
-    enum class WidgetComponentStateVariantType : int {
-        BoundingBox               = 0,
-        Clipboard                 = 1,
-        Entity                    = 2,
-        Gizmo                     = 3,
-        Spline                    = 4,
-        Text                      = 5,
-        VolumeOutline             = 6,
-        VolumeOutlineVolumeUpdate = 7,
-        Grid                      = 8,
-        Null                      = 9,
-    };
-
-    class ComponentStateNULL {};
 
     class ComponentStateBoundingBox {
     public:
@@ -88,11 +86,12 @@ public:
         // prevent constructor by default
         ComponentStateBoundingBox& operator=(ComponentStateBoundingBox const&);
         ComponentStateBoundingBox(ComponentStateBoundingBox const&);
-        ComponentStateBoundingBox();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI_C ComponentStateBoundingBox();
+
         MCNAPI bool
         operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateBoundingBox const& other) const;
         // NOLINTEND
@@ -101,6 +100,12 @@ public:
         // static functions
         // NOLINTBEGIN
         MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI_C void* $ctor();
         // NOLINTEND
     };
 
@@ -150,10 +155,10 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity&
-        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity const&);
+        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity&&);
 
         MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity&
-        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity&&);
+        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity const&);
 
         MCNAPI ~ComponentStateEntity();
         // NOLINTEND
@@ -179,8 +184,51 @@ public:
         // prevent constructor by default
         ComponentStateGizmo& operator=(ComponentStateGizmo const&);
         ComponentStateGizmo(ComponentStateGizmo const&);
-        ComponentStateGizmo();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ComponentStateGizmo();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI_C void* $ctor();
+        // NOLINTEND
     };
+
+    class ComponentStateGrid {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 8>  mUnkcd0b45;
+        ::ll::UntypedStorage<4, 20> mUnkd277fa;
+        ::ll::UntypedStorage<4, 12> mUnk489dfe;
+        ::ll::UntypedStorage<4, 12> mUnk4e492b;
+        ::ll::UntypedStorage<4, 12> mUnkfc0933;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ComponentStateGrid(ComponentStateGrid const&);
+        ComponentStateGrid();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid&
+        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid&&);
+
+        MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid&
+        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid const&);
+
+        MCNAPI bool
+        operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid const& other) const;
+        // NOLINTEND
+    };
+
+    class ComponentStateNULL {};
 
     class ComponentStateSpline {
     public:
@@ -201,10 +249,10 @@ public:
         MCNAPI ComponentStateSpline(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline&&);
 
         MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline&
-        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline const&);
+        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline&&);
 
         MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline&
-        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline&&);
+        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline const&);
 
         MCNAPI ~ComponentStateSpline();
         // NOLINTEND
@@ -342,36 +390,6 @@ public:
         // NOLINTEND
     };
 
-    class ComponentStateGrid {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 8>  mUnkcd0b45;
-        ::ll::UntypedStorage<4, 20> mUnkd277fa;
-        ::ll::UntypedStorage<4, 12> mUnk489dfe;
-        ::ll::UntypedStorage<4, 12> mUnk4e492b;
-        ::ll::UntypedStorage<4, 12> mUnkfc0933;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ComponentStateGrid(ComponentStateGrid const&);
-        ComponentStateGrid();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid&
-        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid&&);
-
-        MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid&
-        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid const&);
-
-        MCNAPI bool
-        operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid const& other) const;
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -389,7 +407,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WidgetComponentStateChangePayload() /*override*/;
     // NOLINTEND
 

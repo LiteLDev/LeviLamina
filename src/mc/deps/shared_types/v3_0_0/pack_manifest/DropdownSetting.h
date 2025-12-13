@@ -29,10 +29,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&&);
 
     MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&&);
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
 
     MCNAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&) const;
 

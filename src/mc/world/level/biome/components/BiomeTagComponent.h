@@ -16,7 +16,6 @@ struct BiomeTagComponent : public ::BiomeComponentBase, public ::TagsComponent<:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BiomeTagComponent() /*override*/ = default;
     // NOLINTEND
 

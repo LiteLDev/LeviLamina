@@ -13,10 +13,8 @@ class IRideableActorActions {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IRideableActorActions() = default;
 
-    // vIndex: 1
     virtual bool startRiding(::RideableComponentHelpers::IActorWrapper&) = 0;
     // NOLINTEND
 

@@ -2,27 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-class BlockType;
-class Random;
-// clang-format on
-
 namespace CaveFeatureUtils {
 
 struct CarverConfiguration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                     mIs_1_16_terrainGen;
-    ::ll::TypedStorage<4, 4, int>                                      mMinHeight;
-    ::ll::TypedStorage<8, 8, float (*)(::Random&)>                     mGetTunnelThickness;
-    ::ll::TypedStorage<8, 8, int (*)(::Random&)>                       mGetDistance;
-    ::ll::TypedStorage<8, 8, bool (*)(::Block const&, ::Block const&)> mIsDiggable;
-    ::ll::TypedStorage<8, 8, bool (*)(::BlockType const&)>             mIsSurface;
-    ::ll::TypedStorage<8, 8, int (*)(::Random&, int const)>            mGetRandomY;
+    ::ll::UntypedStorage<1, 1> mUnk199ca9;
+    ::ll::UntypedStorage<4, 4> mUnkd3a66f;
+    ::ll::UntypedStorage<8, 8> mUnk4e9378;
+    ::ll::UntypedStorage<8, 8> mUnk70603f;
+    ::ll::UntypedStorage<8, 8> mUnk9fa816;
+    ::ll::UntypedStorage<8, 8> mUnk430116;
+    ::ll::UntypedStorage<8, 8> mUnk4bcf4c;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CarverConfiguration& operator=(CarverConfiguration const&);
+    CarverConfiguration(CarverConfiguration const&);
+    CarverConfiguration();
 };
 
 } // namespace CaveFeatureUtils

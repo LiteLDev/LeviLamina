@@ -2,21 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ClockSpriteCalculator;
-class CompassSpriteCalculator;
-// clang-format on
-
 namespace ItemBlockActorHelpers {
 
 struct SpriteCalculatorRefs {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ClockSpriteCalculator&>   mClockSpriteCalc;
-    ::ll::TypedStorage<8, 8, ::CompassSpriteCalculator&> mCompassSpriteCalc;
-    ::ll::TypedStorage<8, 8, ::CompassSpriteCalculator&> mRecoveryCompassSpriteCalc;
+    ::ll::UntypedStorage<8, 8> mUnk3139dc;
+    ::ll::UntypedStorage<8, 8> mUnk915987;
+    ::ll::UntypedStorage<8, 8> mUnk5363ec;
     // NOLINTEND
 
 public:

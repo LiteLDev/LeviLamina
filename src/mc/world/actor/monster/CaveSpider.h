@@ -9,13 +9,10 @@ class CaveSpider : public ::Spider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 179
     virtual float getModelScale() const /*override*/;
 
-    // vIndex: 113
     virtual void getDebugText(::std::vector<::std::string>& outputInfo) /*override*/;
 
-    // vIndex: 8
     virtual ~CaveSpider() /*override*/ = default;
     // NOLINTEND
 
@@ -25,6 +22,8 @@ public:
     MCAPI float $getModelScale() const;
 
     MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
+
+
     // NOLINTEND
 
 public:

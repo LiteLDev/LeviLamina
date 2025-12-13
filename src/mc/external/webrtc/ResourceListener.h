@@ -17,10 +17,8 @@ class ResourceListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ResourceListener() = default;
 
-    // vIndex: 1
     virtual void
         OnResourceUsageStateMeasured(::webrtc::scoped_refptr<::webrtc::Resource>, ::webrtc::ResourceUsageState) = 0;
     // NOLINTEND

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class PathView; }
+// clang-format on
+
 class PackManifestFactoryCache {
 public:
     // PackManifestFactoryCache inner types declare
@@ -42,6 +47,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PackManifestFactoryCache();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI_C static ::Core::PathView const& CacheFileName();
     // NOLINTEND
 
 public:

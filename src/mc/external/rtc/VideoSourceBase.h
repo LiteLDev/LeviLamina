@@ -63,16 +63,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~VideoSourceBase() /*override*/;
 
-    // vIndex: 1
     virtual void AddOrUpdateSink(
         ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
         ::rtc::VideoSinkWants const&                     wants
     ) /*override*/;
 
-    // vIndex: 2
     virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
     // NOLINTEND
 
@@ -103,6 +100,8 @@ public:
     $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
 
     MCNAPI void $RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink);
+
+
     // NOLINTEND
 
 public:

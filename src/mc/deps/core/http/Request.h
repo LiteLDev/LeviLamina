@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Http { class Response; }
+namespace Bedrock::Http::Internal { class IResponseBody; }
 // clang-format on
 
 namespace Bedrock::Http {
@@ -37,6 +38,10 @@ public:
     MCNAPI ::Bedrock::Http::Request& operator=(::Bedrock::Http::Request const&);
 
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> send();
+
+    MCNAPI_C void setResponseBodyHandler(
+        ::gsl::not_null<::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>> responseBodyHandler
+    );
 
     MCNAPI ~Request();
     // NOLINTEND

@@ -20,10 +20,10 @@ namespace SharedTypes::v1_21_110 { struct SwimUpForBreathGoalDefinition; }
 namespace ActorMigratedUtils {
 // functions
 // NOLINTBEGIN
+MCNAPI void initialize(::EntityContext&, ::EatMobGoal& goal, ::SharedTypes::v1_21_100::EatMobGoalDefinition definition);
+
 MCNAPI void
 initialize(::EntityContext&, ::SonicBoomGoal& goal, ::SharedTypes::v1_21_110::SonicBoomGoalDefinition definition);
-
-MCNAPI void initialize(::EntityContext&, ::EatMobGoal& goal, ::SharedTypes::v1_21_100::EatMobGoalDefinition definition);
 
 MCNAPI void initialize(
     ::EntityContext&,

@@ -24,10 +24,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 16
     virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
 
-    // vIndex: 0
     virtual ~CompactionListenerEnv() /*override*/ = default;
     // NOLINTEND
 
@@ -41,6 +39,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $Schedule(void (*function)(void*), void* arg);
+
+
     // NOLINTEND
 
 public:

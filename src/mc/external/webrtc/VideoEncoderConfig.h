@@ -19,29 +19,75 @@ class VideoEncoderConfig {
 public:
     // VideoEncoderConfig inner types declare
     // clang-format off
-    class Av1EncoderSpecificSettings;
     class EncoderSpecificSettings;
     class VideoStreamFactoryInterface;
+    class Av1EncoderSpecificSettings;
     class Vp8EncoderSpecificSettings;
     class Vp9EncoderSpecificSettings;
     // clang-format on
 
     // VideoEncoderConfig inner types define
+    enum class ContentType : int {
+        KRealtimeVideo = 0,
+        KScreen        = 1,
+    };
+
     class EncoderSpecificSettings : public ::webrtc::RefCountInterface {
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 3
         virtual void FillVideoCodecVp8(::webrtc::VideoCodecVP8*) const;
 
-        // vIndex: 4
         virtual void FillVideoCodecVp9(::webrtc::VideoCodecVP9*) const;
 
-        // vIndex: 5
         virtual void FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const;
 
-        // vIndex: 2
         virtual ~EncoderSpecificSettings() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
+    };
+
+    class VideoStreamFactoryInterface : public ::webrtc::RefCountInterface {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::std::vector<::webrtc::VideoStream>
+        CreateEncoderStreams(int, int, ::webrtc::VideoEncoderConfig const&) = 0;
+
+        virtual ~VideoStreamFactoryInterface() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
+    };
+
+    class Av1EncoderSpecificSettings : public ::webrtc::VideoEncoderConfig::EncoderSpecificSettings {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk5fd9b0;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Av1EncoderSpecificSettings& operator=(Av1EncoderSpecificSettings const&);
+        Av1EncoderSpecificSettings(Av1EncoderSpecificSettings const&);
+        Av1EncoderSpecificSettings();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual void FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const /*override*/;
+
+        virtual ~Av1EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -67,10 +113,8 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 3
         virtual void FillVideoCodecVp8(::webrtc::VideoCodecVP8*) const /*override*/;
 
-        // vIndex: 2
         virtual ~Vp8EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
 
@@ -97,65 +141,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 4
         virtual void FillVideoCodecVp9(::webrtc::VideoCodecVP9*) const /*override*/;
 
-        // vIndex: 2
         virtual ~Vp9EncoderSpecificSettings() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-    };
-
-    class Av1EncoderSpecificSettings : public ::webrtc::VideoEncoderConfig::EncoderSpecificSettings {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk5fd9b0;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Av1EncoderSpecificSettings& operator=(Av1EncoderSpecificSettings const&);
-        Av1EncoderSpecificSettings(Av1EncoderSpecificSettings const&);
-        Av1EncoderSpecificSettings();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 5
-        virtual void FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const /*override*/;
-
-        // vIndex: 2
-        virtual ~Av1EncoderSpecificSettings() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-    };
-
-    enum class ContentType : int {
-        KRealtimeVideo = 0,
-        KScreen        = 1,
-    };
-
-    class VideoStreamFactoryInterface : public ::webrtc::RefCountInterface {
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 3
-        virtual ::std::vector<::webrtc::VideoStream>
-        CreateEncoderStreams(int, int, ::webrtc::VideoEncoderConfig const&) = 0;
-
-        // vIndex: 2
-        virtual ~VideoStreamFactoryInterface() /*override*/ = default;
         // NOLINTEND
 
     public:

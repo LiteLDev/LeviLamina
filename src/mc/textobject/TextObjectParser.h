@@ -17,22 +17,6 @@ public:
     // clang-format on
 
     // TextObjectParser inner types define
-    struct ServerData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk65f186;
-        ::ll::UntypedStorage<8, 8> mUnk50aa87;
-        ::ll::UntypedStorage<8, 8> mUnk9a53de;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ServerData& operator=(ServerData const&);
-        ServerData(ServerData const&);
-        ServerData();
-    };
-
     struct ErrorLocalization {
     public:
         // member variables
@@ -58,6 +42,22 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    };
+
+    struct ServerData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk65f186;
+        ::ll::UntypedStorage<8, 8> mUnk50aa87;
+        ::ll::UntypedStorage<8, 8> mUnk9a53de;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ServerData& operator=(ServerData const&);
+        ServerData(ServerData const&);
+        ServerData();
     };
 
 public:

@@ -58,7 +58,6 @@ class MobSuffocationSystemImpl
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
@@ -78,7 +77,6 @@ public:
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~MobSuffocationSystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -137,6 +135,8 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
     );
+
+
     // NOLINTEND
 
 public:

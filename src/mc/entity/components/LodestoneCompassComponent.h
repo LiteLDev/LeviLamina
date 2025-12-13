@@ -11,6 +11,7 @@
 class BlockPos;
 class CompassSpriteCalculator;
 class Dimension;
+class Level;
 class LodestoneCompassComponentCalculator;
 struct ActorUniqueID;
 // clang-format on
@@ -44,23 +45,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LodestoneCompassComponent(::LodestoneCompassComponent&&);
+    MCNAPI LodestoneCompassComponent(::LodestoneCompassComponent&&);
 
-    MCAPI ::LodestoneCompassComponentCalculator* _findCalculator(
+    MCNAPI ::LodestoneCompassComponentCalculator* _findCalculator(
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
         bool                                                                             createIfNotFound
     );
+
+    MCNAPI_C bool tick(::Level& level);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::CompassSpriteCalculator& mSpinningLodestone();
+    MCNAPI static ::CompassSpriteCalculator& mSpinningLodestone();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LodestoneCompassComponent&&);
+    MCNAPI void* $ctor(::LodestoneCompassComponent&&);
     // NOLINTEND
 };

@@ -5,12 +5,11 @@
 namespace cereal {
 
 enum class SchemaRWType : uchar {
-    // bitfield representation
     Invalid           = 0,
-    Object            = 1 << 0,
-    Array             = 1 << 1,
-    Other             = 1 << 2,
-    EnttEnumAsBitmask = Object | Other,
+    Object            = 1,
+    Array             = 2,
+    Other             = 4,
+    EnttEnumAsBitmask = 5,
 };
 
 }

@@ -15,16 +15,12 @@ class Turtle : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 8
     virtual ~Turtle() /*override*/ = default;
     // NOLINTEND
 
@@ -36,6 +32,8 @@ public:
     MCAPI void $die(::ActorDamageSource const& source);
 
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+
+
     // NOLINTEND
 
 public:

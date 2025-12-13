@@ -24,59 +24,12 @@ public:
     // ContentLog inner types declare
     // clang-format off
     class ContentLogEndPointData;
-    class ContentLogScope;
-    class ScopeHandler;
     class ThreadSpecificData;
+    class ScopeHandler;
+    class ContentLogScope;
     // clang-format on
 
     // ContentLog inner types define
-    class ScopeHandler : public ::std::enable_shared_from_this<::ContentLog::ScopeHandler> {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 168> mUnkf021af;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ScopeHandler& operator=(ScopeHandler const&);
-        ScopeHandler(ScopeHandler const&);
-        ScopeHandler();
-    };
-
-    class ContentLogScope {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                                         mPopScope;
-        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ContentLog::ScopeHandler>> mScopeHandler;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ContentLogScope();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI explicit ContentLogScope(::Bedrock::StaticOptimizedString scope);
-
-        MCNAPI ~ContentLogScope();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Bedrock::StaticOptimizedString scope);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
     class ContentLogEndPointData {
     public:
         // member variables
@@ -128,6 +81,53 @@ public:
         // NOLINTEND
     };
 
+    class ScopeHandler : public ::std::enable_shared_from_this<::ContentLog::ScopeHandler> {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 168> mUnkf021af;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ScopeHandler& operator=(ScopeHandler const&);
+        ScopeHandler(ScopeHandler const&);
+        ScopeHandler();
+    };
+
+    class ContentLogScope {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool>                                         mPopScope;
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ContentLog::ScopeHandler>> mScopeHandler;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ContentLogScope();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI explicit ContentLogScope(::Bedrock::StaticOptimizedString scope);
+
+        MCNAPI ~ContentLogScope();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::Bedrock::StaticOptimizedString scope);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -146,7 +146,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ContentLog() /*override*/;
     // NOLINTEND
 
@@ -167,7 +166,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
+    MCNAPI_S static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
 
     MCNAPI static char const* getLogAreaName(::LogArea area);
     // NOLINTEND

@@ -25,47 +25,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 176
     virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 34
     virtual ::mce::Color getNameTagTextColor() const /*override*/;
 
-    // vIndex: 32
     virtual bool canShowNameTag() const /*override*/;
 
-    // vIndex: 50
     virtual bool isTargetable() const /*override*/;
 
-    // vIndex: 102
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
-    // vIndex: 138
     virtual void knockback(::Actor*, int, float, float, float, float, float) /*override*/;
 
-    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 173
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
-    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
 
-    // vIndex: 8
     virtual ~Npc() /*override*/ = default;
     // NOLINTEND
 
@@ -124,6 +110,8 @@ public:
     MCFOLD bool $canExistWhenDisallowMob() const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
+
+
     // NOLINTEND
 
 public:

@@ -11,21 +11,21 @@ public:
     // clang-format on
 
     // PropertySyncData inner types define
-    struct PropertySyncIntEntry {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, uint> mPropertyIndex;
-        ::ll::TypedStorage<4, 4, int>  mData;
-        // NOLINTEND
-    };
-
     struct PropertySyncFloatEntry {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, uint>  mPropertyIndex;
         ::ll::TypedStorage<4, 4, float> mData;
+        // NOLINTEND
+    };
+
+    struct PropertySyncIntEntry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, uint> mPropertyIndex;
+        ::ll::TypedStorage<4, 4, int>  mData;
         // NOLINTEND
     };
 

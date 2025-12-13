@@ -15,17 +15,17 @@ class AmphibiousMoveControl : public ::GenericMoveControl {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
 
-    // vIndex: 0
     virtual ~AmphibiousMoveControl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+
+
     // NOLINTEND
 
 public:

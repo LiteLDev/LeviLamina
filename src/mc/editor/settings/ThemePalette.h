@@ -28,9 +28,9 @@ public:
 
     MCNAPI ThemePalette(::Editor::Settings::ThemePalette const&);
 
-    MCNAPI ::Editor::Settings::ThemePalette& operator=(::Editor::Settings::ThemePalette const&);
-
     MCNAPI ::Editor::Settings::ThemePalette& operator=(::Editor::Settings::ThemePalette&&);
+
+    MCNAPI ::Editor::Settings::ThemePalette& operator=(::Editor::Settings::ThemePalette const&);
 
     MCNAPI ~ThemePalette();
     // NOLINTEND

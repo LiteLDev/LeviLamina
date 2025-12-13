@@ -16,27 +16,25 @@ class RamGoalNoItemDropper : public ::RamAttackGoalUtils::RamGoalItemDropperInte
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void tryDropHorn(::Vec3 dropPos) const /*override*/;
 
-    // vIndex: 2
     virtual void checkForHornDropOnCollision(::Vec3 collisionPos) /*override*/;
 
-    // vIndex: 3
     virtual void dontDropHorn() /*override*/;
 
-    // vIndex: 0
     virtual ~RamGoalNoItemDropper() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tryDropHorn(::Vec3 dropPos) const;
+    MCNAPI void $tryDropHorn(::Vec3 dropPos) const;
 
-    MCFOLD void $checkForHornDropOnCollision(::Vec3 collisionPos);
+    MCNAPI void $checkForHornDropOnCollision(::Vec3 collisionPos);
 
-    MCFOLD void $dontDropHorn();
+    MCNAPI void $dontDropHorn();
+
+
     // NOLINTEND
 
 public:

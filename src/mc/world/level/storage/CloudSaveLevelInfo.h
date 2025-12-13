@@ -21,19 +21,31 @@ public:
 
 public:
     // prevent constructor by default
-    CloudSaveLevelInfo& operator=(CloudSaveLevelInfo const&);
     CloudSaveLevelInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CloudSaveLevelInfo(::CloudSaveLevelInfo const&);
-
     MCNAPI CloudSaveLevelInfo(::CloudSaveLevelInfo&&);
+
+    MCNAPI CloudSaveLevelInfo(::CloudSaveLevelInfo const&);
 
     MCNAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
 
+    MCNAPI_C CloudSaveLevelInfo(
+        ::std::string driveItemId,
+        ::std::string cTag,
+        ::std::string userId,
+        ::std::string filename,
+        ::std::string lastUpdated,
+        bool          needsUpload
+    );
+
     MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
+
+    MCNAPI_C ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
+
+    MCNAPI_C bool operator==(::CloudSaveLevelInfo const& other) const;
 
     MCNAPI void serialize(::CompoundTag& tag) const;
 
@@ -43,11 +55,20 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CloudSaveLevelInfo const&);
-
     MCNAPI void* $ctor(::CloudSaveLevelInfo&&);
 
+    MCNAPI void* $ctor(::CloudSaveLevelInfo const&);
+
     MCNAPI void* $ctor(::CompoundTag const& tag);
+
+    MCNAPI_C void* $ctor(
+        ::std::string driveItemId,
+        ::std::string cTag,
+        ::std::string userId,
+        ::std::string filename,
+        ::std::string lastUpdated,
+        bool          needsUpload
+    );
     // NOLINTEND
 
 public:

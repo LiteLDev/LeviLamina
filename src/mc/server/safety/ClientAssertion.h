@@ -20,13 +20,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ClientAssertion();
+    MCNAPI_S ~ClientAssertion();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI_S void $dtor();
     // NOLINTEND
 };
 

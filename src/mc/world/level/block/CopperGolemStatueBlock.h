@@ -23,10 +23,8 @@ class CopperGolemStatueBlock : public ::CopperBlock<::ActorBlock> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 99
     virtual void executeEvent(
         ::BlockSource&       region,
         ::BlockPos const&    pos,
@@ -35,20 +33,15 @@ public:
         ::Actor&             sourceEntity
     ) const /*override*/;
 
-    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const /*override*/;
 
-    // vIndex: 104
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 105
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
-    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 0
     virtual ~CopperGolemStatueBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -56,6 +49,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI_C static ::std::array<::std::string_view, 4> const& POSES();
     // NOLINTEND
 
 public:
@@ -78,6 +77,8 @@ public:
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+
+
     // NOLINTEND
 
 public:

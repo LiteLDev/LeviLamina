@@ -17,37 +17,43 @@ class HugeMushroomFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mForcedType;
+    ::ll::UntypedStorage<4, 4> mUnk8795ce;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    HugeMushroomFeature& operator=(HugeMushroomFeature const&);
+    HugeMushroomFeature(HugeMushroomFeature const&);
+    HugeMushroomFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 0
     virtual ~HugeMushroomFeature() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canSurvive(::Block const& belowBlock) const;
+    MCNAPI bool _canSurvive(::Block const& belowBlock) const;
 
-    MCAPI bool placeFixed(::BlockSource& region, ::BlockPos const& pos, int mushroomType, int height) const;
+    MCNAPI bool placeFixed(::BlockSource& region, ::BlockPos const& pos, int mushroomType, int height) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

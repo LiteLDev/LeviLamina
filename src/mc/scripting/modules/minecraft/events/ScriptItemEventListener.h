@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ItemEventListener.h"
@@ -19,7 +17,6 @@ struct ItemStopUseEvent;
 struct ItemStopUseOnEvent;
 struct ItemUseEvent;
 struct ItemUsedOnEvent;
-namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -28,60 +25,58 @@ class ScriptItemEventListener : public ::EventListenerDispatcher<::ItemEventList
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-                                                              mScriptEventsHandle;
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::UntypedStorage<8, 16> mUnk77a3ff;
+    ::ll::UntypedStorage<8, 16> mUnke24955;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptItemEventListener& operator=(ScriptItemEventListener const&);
+    ScriptItemEventListener(ScriptItemEventListener const&);
+    ScriptItemEventListener();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 23
     virtual ::EventResult onEvent(::ItemUsedOnEvent const& itemEvent) /*override*/;
 
-    // vIndex: 22
     virtual ::EventResult onEvent(::ItemStartUseOnEvent const& itemEvent) /*override*/;
 
-    // vIndex: 21
     virtual ::EventResult onEvent(::ItemStopUseOnEvent const& itemEvent) /*override*/;
 
-    // vIndex: 24
     virtual ::EventResult onEvent(::ItemUseEvent const& itemEvent) /*override*/;
 
-    // vIndex: 20
     virtual ::EventResult onEvent(::ItemStartUseEvent const& itemEvent) /*override*/;
 
-    // vIndex: 19
     virtual ::EventResult onEvent(::ItemCompleteUseEvent const& itemEvent) /*override*/;
 
-    // vIndex: 18
     virtual ::EventResult onEvent(::ItemReleaseUseEvent const& itemEvent) /*override*/;
 
-    // vIndex: 17
     virtual ::EventResult onEvent(::ItemStopUseEvent const& itemEvent) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptItemEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ItemUsedOnEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemUsedOnEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemStartUseOnEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemStartUseOnEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemStopUseOnEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemStopUseOnEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemUseEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemUseEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemStartUseEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemStartUseEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemCompleteUseEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemCompleteUseEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemReleaseUseEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemReleaseUseEvent const& itemEvent);
 
-    MCAPI ::EventResult $onEvent(::ItemStopUseEvent const& itemEvent);
+    MCNAPI ::EventResult $onEvent(::ItemStopUseEvent const& itemEvent);
+
+
     // NOLINTEND
 
 public:

@@ -28,28 +28,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MippedImageResource() /*override*/ = default;
 
-    // vIndex: 1
     virtual bool isEmpty() const /*override*/;
 
-    // vIndex: 2
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 3
     virtual uint getSize() const /*override*/;
 
-    // vIndex: 4
-    virtual ::cg::ImageBuffer const* getImage(uint) const /*override*/;
+    virtual ::cg::ImageBuffer const* getImage(uint mipLevel) const /*override*/;
 
-    // vIndex: 6
-    virtual void addImage(::cg::ImageBuffer) /*override*/;
+    virtual void addImage(::cg::ImageBuffer imageToAdd) /*override*/;
 
-    // vIndex: 5
-    virtual void addImage(::std::shared_ptr<::cg::ImageResource>) /*override*/;
+    virtual void addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd) /*override*/;
 
-    // vIndex: 7
     virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
     unwrapImageData() /*override*/;
     // NOLINTEND
@@ -57,7 +49,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool $isEmpty() const;
 
+    MCNAPI bool $isValid() const;
+
+    MCNAPI uint $getSize() const;
+
+    MCNAPI ::cg::ImageBuffer const* $getImage(uint mipLevel) const;
+
+    MCNAPI void $addImage(::cg::ImageBuffer imageToAdd);
+
+    MCNAPI void $addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
+
+    MCNAPI ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
+    $unwrapImageData();
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

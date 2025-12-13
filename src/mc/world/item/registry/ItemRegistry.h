@@ -5,13 +5,11 @@
 // auto generated inclusion list
 #include "mc/common/SharedPtr.h"
 #include "mc/common/WeakPtr.h"
-#include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/json/Value.h"
 #include "mc/util/BaseGameVersion.h"
+#include "mc/world/item/Item.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,12 +17,12 @@ class ActorInfoRegistry;
 class BlockDefinitionGroup;
 class CreativeItemRegistry;
 class Experiments;
+class HashedString;
 class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
 class IMinecraftEventing;
 class IPackLoadContext;
-class Item;
 class ItemRegistryRef;
 class LevelData;
 class LinkedAssetValidator;
@@ -46,21 +44,83 @@ public:
     // clang-format off
     struct ItemAlias;
     struct ItemHashAlias;
-    struct ItemLoadResult;
     struct LoadedItemAsset;
+    struct ItemLoadResult;
     // clang-format on
 
     // ItemRegistry inner types define
-    using ItemRegistryMap = ::std::vector<::SharedPtr<::Item>>;
+    struct ItemAlias {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 48> mUnk2254ff;
+        ::ll::UntypedStorage<8, 32> mUnk541114;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ItemAlias& operator=(ItemAlias const&);
+        ItemAlias(ItemAlias const&);
+        ItemAlias();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~ItemAlias();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct ItemHashAlias {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnk627c3a;
+        ::ll::UntypedStorage<8, 32> mUnk99d309;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ItemHashAlias& operator=(ItemHashAlias const&);
+        ItemHashAlias(ItemHashAlias const&);
+        ItemHashAlias();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ItemHashAlias(uint64 nameHash, ::BaseGameVersion const& version);
+
+        MCNAPI ::ItemRegistry::ItemHashAlias& operator=(::ItemRegistry::ItemHashAlias&&);
+
+        MCNAPI ~ItemHashAlias();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(uint64 nameHash, ::BaseGameVersion const& version);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
 
     struct LoadedItemAsset {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::Json::Value>                         mUpgradedJsonRoot;
-        ::ll::TypedStorage<8, 24, ::SemVersion>                          mDocumentVersion;
-        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IPackLoadContext>> mPackLoadContext;
-        ::ll::TypedStorage<8, 32, ::std::string>                         mLoadedPackName;
+        ::ll::UntypedStorage<8, 16> mUnk3d8ae0;
+        ::ll::UntypedStorage<8, 24> mUnkb0fb71;
+        ::ll::UntypedStorage<8, 16> mUnk48eade;
+        ::ll::UntypedStorage<8, 32> mUnkb103c2;
         // NOLINTEND
 
     public:
@@ -72,21 +132,48 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI LoadedItemAsset(::ItemRegistry::LoadedItemAsset&&);
+        MCNAPI LoadedItemAsset(::ItemRegistry::LoadedItemAsset&&);
 
-        MCAPI ~LoadedItemAsset();
+        MCNAPI ~LoadedItemAsset();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::ItemRegistry::LoadedItemAsset&&);
+        MCNAPI void* $ctor(::ItemRegistry::LoadedItemAsset&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct ItemLoadResult {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 96> mUnkbbb797;
+        ::ll::UntypedStorage<8, 32> mUnkb57c73;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ItemLoadResult& operator=(ItemLoadResult const&);
+        ItemLoadResult(ItemLoadResult const&);
+        ItemLoadResult();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~ItemLoadResult();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -102,84 +189,7 @@ public:
         ::IMinecraftEventing&
     );
 
-    struct ItemAlias {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 48, ::HashedString>    currentName;
-        ::ll::TypedStorage<8, 32, ::BaseGameVersion> sinceVersion;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ItemAlias();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-    };
-
-    struct ItemHashAlias {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64>             aliasName;
-        ::ll::TypedStorage<8, 32, ::BaseGameVersion> sinceVersion;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ItemHashAlias& operator=(ItemHashAlias const&);
-        ItemHashAlias(ItemHashAlias const&);
-        ItemHashAlias();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ItemHashAlias(uint64 nameHash, ::BaseGameVersion const& version);
-
-        MCAPI ::ItemRegistry::ItemHashAlias& operator=(::ItemRegistry::ItemHashAlias&&);
-
-        MCAPI ~ItemHashAlias();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(uint64 nameHash, ::BaseGameVersion const& version);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
-    };
-
-    struct ItemLoadResult {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 96, ::std::optional<::ItemRegistry::LoadedItemAsset>> mLoadedItemAsset;
-        ::ll::TypedStorage<8, 32, ::std::string>                                    mError;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ItemLoadResult();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-    };
+    using ItemRegistryMap = ::std::vector<::SharedPtr<::Item>>;
 
 public:
     // member variables
@@ -237,6 +247,10 @@ public:
 
     MCAPI void clearItemAndCreativeItemRegistry();
 
+    MCAPI_C void digestServerItemComponents(::std::vector<::ItemData> const& items);
+
+    MCAPI_C void findAllAttachableDefinitions();
+
     MCAPI void finishedRegistration();
 
     MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
@@ -244,9 +258,19 @@ public:
 
     MCAPI ::WeakPtr<::Item> getItem(short id);
 
+    MCAPI_C short getLegacyIDFromName(::HashedString const& name);
+
     MCAPI ::std::pair<::HashedString, int> getNameFromAlias(::HashedString const& name, int aux) const;
 
     MCAPI ::HashedString getNameFromLegacyID(short id);
+
+    MCAPI_C void initClient(
+        ::std::vector<::ItemData> const& serverItemData,
+        ::Experiments const&             experiments,
+        ::BaseGameVersion const&         baseGameVersion
+    );
+
+    MCAPI_C void initClientData(::ResourcePackManager& resourcePackManager, ::Experiments const& experiments);
 
     MCAPI void initCreativeItemsServer(
         ::BlockDefinitionGroup const&                      blockDefinitionGroup,
@@ -281,6 +305,8 @@ public:
 
     MCAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
 
+    MCAPI_C void matchServerItemIds(::std::vector<::ItemData> const& serverItemData);
+
     MCAPI void onLevelInit(
         ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
         ::WeakRef<::IContainerRegistryAccess>       containerAccess,
@@ -304,6 +330,8 @@ public:
     MCAPI void registerValidatorIdentifier(::std::string const& str);
 
     MCAPI void setCheckForItemWorldCompatibility(bool value);
+
+    MCAPI_C void setItemId(::HashedString const& itemName, short itemId, bool isComponentBased);
 
     MCAPI void unregisterItem(::HashedString const& itemName);
 

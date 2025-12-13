@@ -43,13 +43,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void OnTransformedFrame(::std::unique_ptr<::webrtc::TransformableFrameInterface> frame) /*override*/;
 
-    // vIndex: 4
     virtual void StartShortCircuiting() /*override*/;
 
-    // vIndex: 2
     virtual ~RTPSenderVideoFrameTransformerDelegate() /*override*/ = default;
     // NOLINTEND
 
@@ -100,6 +97,8 @@ public:
     MCNAPI void $OnTransformedFrame(::std::unique_ptr<::webrtc::TransformableFrameInterface> frame);
 
     MCNAPI void $StartShortCircuiting();
+
+
     // NOLINTEND
 
 public:

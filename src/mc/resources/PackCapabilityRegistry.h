@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PackCapabilityRegistry(::std::initializer_list<::PackCapability> const& packCapabilities);
+    MCNAPI_S explicit PackCapabilityRegistry(::std::initializer_list<::PackCapability> const& packCapabilities);
 
     MCNAPI ~PackCapabilityRegistry();
     // NOLINTEND
@@ -31,7 +31,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::initializer_list<::PackCapability> const& packCapabilities);
+    MCNAPI_S void* $ctor(::std::initializer_list<::PackCapability> const& packCapabilities);
     // NOLINTEND
 
 public:

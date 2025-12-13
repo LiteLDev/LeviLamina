@@ -55,7 +55,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FileIndexLru() /*override*/ = default;
     // NOLINTEND
 };

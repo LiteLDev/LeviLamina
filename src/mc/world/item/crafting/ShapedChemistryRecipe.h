@@ -14,17 +14,31 @@ namespace mce { class UUID; }
 
 class ShapedChemistryRecipe : public ::ShapedRecipe {
 public:
+    // prevent constructor by default
+    ShapedChemistryRecipe& operator=(ShapedChemistryRecipe const&);
+    ShapedChemistryRecipe(ShapedChemistryRecipe const&);
+    ShapedChemistryRecipe();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
     virtual ::mce::UUID const& getId() const /*override*/;
 
-    // vIndex: 5
     virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
         /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~ShapedChemistryRecipe() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ShapedChemistryRecipe() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI_C ShapedChemistryRecipe(::ShapedChemistryRecipe&&);
     // NOLINTEND
 
 public:
@@ -34,11 +48,25 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI_C void* $ctor(::ShapedChemistryRecipe&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::mce::UUID const& $getId() const;
 
     MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
+
+
     // NOLINTEND
 
 public:

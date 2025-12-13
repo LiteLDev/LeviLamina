@@ -25,6 +25,33 @@ public:
     // clang-format on
 
     // AngerLevelComponent inner types define
+    struct ConditionalSound {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk9863dc;
+        ::ll::UntypedStorage<8, 16> mUnkf71226;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ConditionalSound& operator=(ConditionalSound const&);
+        ConditionalSound(ConditionalSound const&);
+        ConditionalSound();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~ConditionalSound();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
     struct Nuisance {
     public:
         // member variables
@@ -56,33 +83,6 @@ public:
     };
 
     using ActorNuisance = ::std::pair<::Actor*, int>;
-
-    struct ConditionalSound {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk9863dc;
-        ::ll::UntypedStorage<8, 16> mUnkf71226;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ConditionalSound& operator=(ConditionalSound const&);
-        ConditionalSound(ConditionalSound const&);
-        ConditionalSound();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ConditionalSound();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
 
 public:
     // member variables

@@ -6,22 +6,16 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/json/Value.h"
 #include "mc/deps/shared_types/v1_21_110/item/ItemCategory.h"
 #include "mc/resources/JsonBetaState.h"
-#include "mc/resources/MinEngineVersion.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/level/block/definition/BlockDescription.h"
-#include "mc/world/level/block/traits/BlockTraitFactory.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockType;
 class CompoundTag;
-class DefinitionEvent;
 class Experiments;
 class IMinecraftEventing;
 class IPackLoadContext;
@@ -29,9 +23,12 @@ class Level;
 class LinkedAssetValidator;
 class PackLoadRequirement;
 class ResourcePackManager;
+class SemVersion;
 struct BlockComponentGroupDescription;
 struct BlockDefinition;
+struct BlockDescription;
 struct BlockPermutationDescription;
+namespace Json { class Value; }
 namespace JsonUtil { class EmptyClass; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -48,45 +45,46 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::SemVersion>        mFormatVersion;
-        ::ll::TypedStorage<8, 32, ::MinEngineVersion>  mMinEngineVersion;
-        ::ll::TypedStorage<8, 24, ::SemVersion>        mOriginalJsonVersion;
-        ::ll::TypedStorage<8, 176, ::BlockDescription> mDescription;
-        ::ll::TypedStorage<1, 1, ::JsonBetaState>      mIsBeta;
-        ::ll::TypedStorage<8, 32, ::std::string>       mResourcePackLocation;
-        ::ll::TypedStorage<8, 32, ::std::string>       mResourceFileLocation;
-        ::ll::TypedStorage<8, 16, ::Json::Value>       mRoot;
+        ::ll::UntypedStorage<8, 24>  mUnk66603e;
+        ::ll::UntypedStorage<8, 32>  mUnkf1018e;
+        ::ll::UntypedStorage<8, 24>  mUnkd4f5d9;
+        ::ll::UntypedStorage<8, 176> mUnk960d05;
+        ::ll::UntypedStorage<1, 1>   mUnkd6d7a8;
+        ::ll::UntypedStorage<8, 32>  mUnke5554e;
+        ::ll::UntypedStorage<8, 32>  mUnk597a19;
+        ::ll::UntypedStorage<8, 16>  mUnk9a0d89;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BlockResource& operator=(BlockResource const&);
+        BlockResource(BlockResource const&);
+        BlockResource();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~BlockResource();
+        MCNAPI ~BlockResource();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DefinitionEvent>> mEventHandlers;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::BlockDefinition>>>
-        mBlockDefinitions;
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockDescription>>>
-                                                                                            mDescriptionSchema;
-    ::ll::TypedStorage<8, 128, ::BlockTraitFactory>                                         mTraitFactory;
-    ::ll::TypedStorage<4, 4, int>                                                           mLastBlockId;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                 mBlockResourceGroupNames;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
-    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                         mEventing;
+    ::ll::UntypedStorage<8, 64>  mUnk1b5f57;
+    ::ll::UntypedStorage<8, 64>  mUnkcd9897;
+    ::ll::UntypedStorage<8, 16>  mUnke67cd4;
+    ::ll::UntypedStorage<8, 128> mUnk255ed4;
+    ::ll::UntypedStorage<4, 4>   mUnka63e94;
+    ::ll::UntypedStorage<8, 24>  mUnkf2dec9;
+    ::ll::UntypedStorage<8, 24>  mUnk67f28b;
+    ::ll::UntypedStorage<8, 8>   mUnk4afa49;
     // NOLINTEND
 
 public:
@@ -98,21 +96,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
+    MCNAPI BlockDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
 
-    MCAPI void _applyBlockStates(::BlockType* block, ::BlockDefinition const& definition);
+    MCNAPI void _applyBlockStates(::BlockType* block, ::BlockDefinition const& definition);
 
-    MCAPI void _buildBlockDescriptionSchema(
+    MCNAPI void _buildBlockDescriptionSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockDescription>>& description
     );
 
-    MCAPI void _buildBlockMenuCategorySchema(
+    MCNAPI void _buildBlockMenuCategorySchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockDescription>>& description
     );
 
-    MCAPI bool _checkInvalidPermutationComponents(::BlockComponentGroupDescription const& componentGroupDescription);
+    MCNAPI bool _checkInvalidPermutationComponents(::BlockComponentGroupDescription const& componentGroupDescription);
 
-    MCAPI bool _loadBlockDescription(
+    MCNAPI bool _loadBlockDescription(
         ::Json::Value const&      root,
         ::BlockDescription&       desc,
         ::JsonBetaState&          canUseBeta,
@@ -120,20 +118,20 @@ public:
         ::SemVersion const&       jsonVersion
     );
 
-    MCAPI bool _loadComponents(
+    MCNAPI bool _loadComponents(
         ::Json::Value const& root,
         ::BlockDefinition&   definition,
         ::IPackLoadContext&  packLoadContext,
         ::JsonBetaState      canUseBeta
     );
 
-    MCAPI void
+    MCNAPI void
     _loadComponentsForLegacyCompabitility(::SemVersion const& originalJsonVersion, ::BlockDefinition& definition);
 
-    MCAPI bool
+    MCNAPI bool
     _loadEvents(::Json::Value const& root, ::BlockDefinition& definition, ::IPackLoadContext& packLoadContext);
 
-    MCAPI bool _parseComponents(
+    MCNAPI bool _parseComponents(
         ::Json::Value const&              blockRoot,
         ::BlockComponentGroupDescription& componentGroupDescription,
         ::std::string const&              blockIdentifier,
@@ -143,10 +141,10 @@ public:
         bool                              isVanillaBlock
     );
 
-    MCAPI ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory
+    MCNAPI ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory
     _stringToCreativeItemCategory(::std::string const& category, ::std::string const& blockIdentifier);
 
-    MCAPI bool _validatePrereleaseRequirements(
+    MCNAPI bool _validatePrereleaseRequirements(
         ::LogArea                                   logArea,
         ::std::string const&                        jsonType,
         ::std::string const&                        jsonIdentifier,
@@ -156,50 +154,50 @@ public:
         ::JsonBetaState                             canUseBeta
     ) const;
 
-    MCAPI void buildBlockSchema();
+    MCNAPI void buildBlockSchema();
 
-    MCAPI void digestServerBlockProperties(::std::vector<::std::pair<::std::string, ::CompoundTag>> const& blocks);
+    MCNAPI void digestServerBlockProperties(::std::vector<::std::pair<::std::string, ::CompoundTag>> const& blocks);
 
-    MCAPI ::std::unique_ptr<::BlockDefinition>
+    MCNAPI ::std::unique_ptr<::BlockDefinition>
     generateBlockDefinition(::BlockDefinitionGroup::BlockResource const& resource, ::IPackLoadContext& packLoadContext);
 
-    MCAPI ::std::vector<::std::pair<::std::string, ::CompoundTag>> generateServerBlockProperties() const;
+    MCNAPI ::std::vector<::std::pair<::std::string, ::CompoundTag>> generateServerBlockProperties() const;
 
-    MCAPI ::std::vector<::BlockDefinition const*> getBlockDefinitions() const;
+    MCNAPI ::std::vector<::BlockDefinition const*> getBlockDefinitions() const;
 
-    MCAPI void initBlockFromDefinition(::Block& block, ::BlockPermutationDescription const& definition);
+    MCNAPI void initBlockFromDefinition(::Block& block, ::BlockPermutationDescription const& definition);
 
-    MCAPI void initializeBlockFromDefinition(::BlockDefinition const& definition, ::Level& level);
+    MCNAPI void initializeBlockFromDefinition(::BlockDefinition const& definition, ::Level& level);
 
-    MCAPI ::std::unique_ptr<::BlockDefinition> loadResource(
+    MCNAPI ::std::unique_ptr<::BlockDefinition> loadResource(
         ::std::string                            upgradedJsonData,
         ::Core::PathBuffer<::std::string> const& res,
         ::std::string const&                     resourcePacklocation,
         ::IPackLoadContext&                      packLoadContext
     );
 
-    MCAPI void loadResources(
+    MCNAPI void loadResources(
         ::ResourcePackManager const&                       resourcePackManager,
         ::Experiments const&                               experiments,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCAPI void registerBlockFromDefinition(::BlockDefinition const& definition, bool assertIfAlreadyExists);
+    MCNAPI void registerBlockFromDefinition(::BlockDefinition const& definition, bool assertIfAlreadyExists);
 
-    MCAPI ::WeakPtr<::BlockType> registerDataDrivenBlock(::BlockDescription const& desc);
+    MCNAPI ::WeakPtr<::BlockType> registerDataDrivenBlock(::BlockDescription const& desc);
 
-    MCAPI ~BlockDefinitionGroup();
+    MCNAPI ~BlockDefinitionGroup();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

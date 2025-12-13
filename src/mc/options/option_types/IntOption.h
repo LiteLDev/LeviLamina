@@ -4,6 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/options/option_types/Option.h"
+#include "mc/options/option_types/OptionID.h"
+#include "mc/options/option_types/OptionOwnerType.h"
+#include "mc/options/option_types/OptionResetFlags.h"
+
+// auto generated forward declare list
+// clang-format off
+class GameVersion;
+// clang-format on
 
 class IntOption : public ::Option {
 public:
@@ -27,19 +35,98 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~IntOption() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~IntOption() /*override*/;
+#endif
 
-    // vIndex: 1
-    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
+    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
 
-    // vIndex: 4
-    virtual void load(::std::string const&) /*override*/;
+    virtual void load(::std::string const& valueString) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C IntOption(
+        ::OptionID                id,
+        ::OptionOwnerType         ownerType,
+        ::OptionResetFlags        resetFlags,
+        ::std::string const&      captionId,
+        ::std::string const&      saveTag,
+        int                       value,
+        ::std::vector<int> const& values,
+        bool                      clampToRange,
+        ::GameVersion             version
+    );
+
+    MCNAPI_C IntOption(
+        ::OptionID           id,
+        ::OptionOwnerType    ownerType,
+        ::OptionResetFlags   resetFlags,
+        ::std::string const& captionId,
+        ::std::string const& saveTag,
+        int                  value,
+        bool                 clampToRange,
+        int                  valueMin,
+        int                  valueMax,
+        ::GameVersion        version
+    );
+
+    MCNAPI_C int _validate(int value);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::OptionID                id,
+        ::OptionOwnerType         ownerType,
+        ::OptionResetFlags        resetFlags,
+        ::std::string const&      captionId,
+        ::std::string const&      saveTag,
+        int                       value,
+        ::std::vector<int> const& values,
+        bool                      clampToRange,
+        ::GameVersion             version
+    );
+
+    MCNAPI_C void* $ctor(
+        ::OptionID           id,
+        ::OptionOwnerType    ownerType,
+        ::OptionResetFlags   resetFlags,
+        ::std::string const& captionId,
+        ::std::string const& saveTag,
+        int                  value,
+        bool                 clampToRange,
+        int                  valueMin,
+        int                  valueMax,
+        ::GameVersion        version
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
+    MCNAPI void $load(::std::string const& valueString);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

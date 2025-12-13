@@ -3,7 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/EnableQueueForThread.h"
+
+// auto generated forward declare list
+// clang-format off
+class Scheduler;
+class WorkerPool;
+// clang-format on
 
 namespace Bedrock::Threading {
 
@@ -15,7 +22,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EnableQueueForMainThread() /*override*/;
     // NOLINTEND
 
@@ -23,12 +29,20 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EnableQueueForMainThread(::std::string name);
+
+    MCNAPI_C EnableQueueForMainThread(::WorkerPool&, ::Scheduler&, ::std::string);
+
+    MCNAPI_C ::Bedrock::Threading::Async<void> queueForMainThread(::std::function<void()>&& callback);
+
+    MCNAPI_C ::Bedrock::Threading::Async<void> queueForMainThreadAutoRequeue(::std::function<bool()>&& callback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string name);
+
+    MCNAPI_C void* $ctor(::WorkerPool&, ::Scheduler&, ::std::string);
     // NOLINTEND
 
 public:

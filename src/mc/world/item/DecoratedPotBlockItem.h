@@ -17,7 +17,6 @@ class DecoratedPotBlockItem : public ::BlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -25,10 +24,8 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 100
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
-    // vIndex: 0
     virtual ~DecoratedPotBlockItem() /*override*/ = default;
     // NOLINTEND
 
@@ -49,6 +46,8 @@ public:
     ) const;
 
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
+
+
     // NOLINTEND
 
 public:

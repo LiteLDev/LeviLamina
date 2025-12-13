@@ -6,19 +6,25 @@ struct CommandName {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> name;
-    ::ll::TypedStorage<1, 1, bool>           showInAutoComplete;
+    ::ll::UntypedStorage<8, 32> mUnk7bd438;
+    ::ll::UntypedStorage<1, 1>  mUnk4f68f8;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CommandName& operator=(CommandName const&);
+    CommandName(CommandName const&);
+    CommandName();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~CommandName();
+    MCNAPI ~CommandName();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

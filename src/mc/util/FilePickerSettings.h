@@ -10,6 +10,12 @@ public:
     // clang-format on
 
     // FilePickerSettings inner types define
+    enum class PickerType : int {
+        Invalid = 0,
+        Open    = 1,
+        Save    = 2,
+    };
+
     struct FileDescription {
     public:
         // member variables
@@ -37,12 +43,6 @@ public:
         // NOLINTEND
     };
 
-    enum class PickerType : int {
-        Invalid = 0,
-        Open    = 1,
-        Save    = 2,
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -67,6 +67,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void addFileDescription(::std::string const& extension, ::std::string const& name, bool isDefaultExtension);
+
+    MCNAPI_C void setDefaultFileName(::std::string fileName);
+
+    MCNAPI_C void setPickerTitle(::std::string FilePickerTitle);
 
     MCNAPI ~FilePickerSettings();
     // NOLINTEND

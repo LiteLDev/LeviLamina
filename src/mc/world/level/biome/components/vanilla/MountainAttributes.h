@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-// clang-format on
-
 struct MountainAttributes : public ::BiomeComponentBase {
 public:
     // MountainAttributes inner types declare
@@ -23,20 +18,32 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Block const*> mSteep;
-        ::ll::TypedStorage<1, 1, bool>           mNorthSlopes;
-        ::ll::TypedStorage<1, 1, bool>           mSouthSlopes;
-        ::ll::TypedStorage<1, 1, bool>           mWestSlopes;
-        ::ll::TypedStorage<1, 1, bool>           mEastSlopes;
+        ::ll::UntypedStorage<8, 8> mUnk3961d6;
+        ::ll::UntypedStorage<1, 1> mUnk4f320b;
+        ::ll::UntypedStorage<1, 1> mUnk3f0cc1;
+        ::ll::UntypedStorage<1, 1> mUnk30bf99;
+        ::ll::UntypedStorage<1, 1> mUnk882b62;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SteepMaterial& operator=(SteepMaterial const&);
+        SteepMaterial(SteepMaterial const&);
+        SteepMaterial();
     };
 
     struct TopSlideSettings {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool> mEnabled;
+        ::ll::UntypedStorage<1, 1> mUnk8953d9;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TopSlideSettings& operator=(TopSlideSettings const&);
+        TopSlideSettings(TopSlideSettings const&);
+        TopSlideSettings();
     };
 
 public:
@@ -49,7 +56,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MountainAttributes() /*override*/ = default;
     // NOLINTEND
 

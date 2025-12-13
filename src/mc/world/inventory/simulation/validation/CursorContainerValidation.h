@@ -15,13 +15,10 @@ class CursorContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
 
-    // vIndex: 8
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
-    // vIndex: 0
     virtual ~CursorContainerValidation() /*override*/ = default;
     // NOLINTEND
 
@@ -31,6 +28,8 @@ public:
     MCNAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
     MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+
+
     // NOLINTEND
 
 public:

@@ -23,6 +23,22 @@ public:
         Pointer = 3,
     };
 
+    enum class FilterQueryType : int {
+        Equal         = 0,
+        NotEqual      = 1,
+        GreaterThan   = 2,
+        GreaterThanEq = 3,
+        LessThan      = 4,
+        LessThanEq    = 5,
+        IsEmpty       = 6,
+        NotEmpty      = 7,
+    };
+
+    enum class SortQueryType : int {
+        IncreasingOrder = 0,
+        DecreasingOrder = 1,
+    };
+
     struct Cell {
     public:
         // member variables
@@ -55,31 +71,6 @@ public:
         ColumnDescriptor();
     };
 
-    struct Row {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkc89e3e;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Row& operator=(Row const&);
-        Row(Row const&);
-        Row();
-    };
-
-    enum class FilterQueryType : int {
-        Equal         = 0,
-        NotEqual      = 1,
-        GreaterThan   = 2,
-        GreaterThanEq = 3,
-        LessThan      = 4,
-        LessThanEq    = 5,
-        IsEmpty       = 6,
-        NotEmpty      = 7,
-    };
-
     struct FilterQuery {
     public:
         // member variables
@@ -97,9 +88,18 @@ public:
         FilterQuery();
     };
 
-    enum class SortQueryType : int {
-        IncreasingOrder = 0,
-        DecreasingOrder = 1,
+    struct Row {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnkc89e3e;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Row& operator=(Row const&);
+        Row(Row const&);
+        Row();
     };
 
     struct SortQuery {

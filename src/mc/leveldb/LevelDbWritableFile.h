@@ -24,19 +24,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::leveldb::Status Append(::leveldb::Slice const& slice) /*override*/;
 
-    // vIndex: 2
     virtual ::leveldb::Status Close() /*override*/;
 
-    // vIndex: 3
     virtual ::leveldb::Status Flush() /*override*/;
 
-    // vIndex: 4
     virtual ::leveldb::Status Sync() /*override*/;
 
-    // vIndex: 0
     virtual ~LevelDbWritableFile() /*override*/ = default;
     // NOLINTEND
 
@@ -64,6 +59,8 @@ public:
     MCNAPI ::leveldb::Status $Flush();
 
     MCNAPI ::leveldb::Status $Sync();
+
+
     // NOLINTEND
 
 public:

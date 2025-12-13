@@ -33,10 +33,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PlayerDeathManager() /*override*/;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::Player&)>& getOnPlayerDeathConnector() /*override*/;
     // NOLINTEND
 
@@ -56,6 +54,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::Bedrock::PubSub::Connector<void(::Player&)>& $getOnPlayerDeathConnector();
+
+
     // NOLINTEND
 
 public:

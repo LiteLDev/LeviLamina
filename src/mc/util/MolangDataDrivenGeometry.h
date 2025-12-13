@@ -27,8 +27,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C MolangDataDrivenGeometry(::std::shared_ptr<::DataDrivenGeometry> geometry, ::HashedString const& name);
+
     MCAPI ::MolangDataDrivenGeometry& operator=(::MolangDataDrivenGeometry&&);
 
     MCFOLD bool operator==(::MolangDataDrivenGeometry const& rhs) const;
+
+    MCAPI_C ~MolangDataDrivenGeometry();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static ::MolangDataDrivenGeometry const& getDefaultErrorValue();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI_C void* $ctor(::std::shared_ptr<::DataDrivenGeometry> geometry, ::HashedString const& name);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

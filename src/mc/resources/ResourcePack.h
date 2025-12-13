@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/resources/PackIconType.h"
 #include "mc/resources/PackReport.h"
 #include "mc/resources/ResourceSignature.h"
 
@@ -14,6 +15,7 @@ class PackAccessStrategy;
 struct SubpackInfo;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
+namespace Json { class Value; }
 // clang-format on
 
 class ResourcePack {
@@ -69,12 +71,20 @@ public:
 
     MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream, int subpackIndex) const;
 
+    MCAPI_C ::Json::Value getTexturesList(int subpackIndex) const;
+
+    MCAPI_C bool hasExtraResourcesForLocale(::std::string const& code, int subpackIndex) const;
+
+    MCAPI_C bool hasIcon(::PackIconType iconType) const;
+
     MCAPI bool hasResource(::Core::Path const& resourceName, int subpackIndex) const;
 
     MCAPI bool isAssetExtractionViable() const;
 
     MCAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
     preloadPath(::Core::Path const& packRelativePath, int subpackIndex, bool) const;
+
+    MCAPI_C void regenerateAssetSet();
 
     MCAPI void setLocale(::std::string const& code);
 

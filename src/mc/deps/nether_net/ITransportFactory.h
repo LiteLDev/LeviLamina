@@ -19,26 +19,20 @@ class ITransportFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ITransportFactory() = default;
 
-    // vIndex: 1
     virtual void setLoggingLevel(::NetherNet::LogSeverity) = 0;
 
-    // vIndex: 2
     virtual void suspendTransport() = 0;
 
-    // vIndex: 3
     virtual void resumeTransport() = 0;
 
-    // vIndex: 4
     virtual ::NetherNet::INetherNetTransportInterface* createTransportInterface(
         ::NetherNet::NetworkID,
         ::NetherNet::TransportConfiguration*,
         ::NetherNet::INetherNetTransportInterfaceCallbacks*
     ) = 0;
 
-    // vIndex: 5
     virtual void destroyTransportInterface(::NetherNet::INetherNetTransportInterface*) = 0;
     // NOLINTEND
 

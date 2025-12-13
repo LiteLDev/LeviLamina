@@ -9,16 +9,12 @@ class LootEnchant : public ::Enchant {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual int getMinCost(int level) const /*override*/;
 
-    // vIndex: 3
     virtual int getMaxCost(int level) const /*override*/;
 
-    // vIndex: 5
     virtual int getMaxLevel() const /*override*/;
 
-    // vIndex: 0
     virtual ~LootEnchant() /*override*/ = default;
     // NOLINTEND
 
@@ -30,6 +26,8 @@ public:
     MCFOLD int $getMaxCost(int level) const;
 
     MCFOLD int $getMaxLevel() const;
+
+
     // NOLINTEND
 
 public:

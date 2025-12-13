@@ -9,7 +9,6 @@ class BlockCerealSchemaUpgrade : public ::CerealSchemaUpgrade {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlockCerealSchemaUpgrade() /*override*/ = default;
     // NOLINTEND
 

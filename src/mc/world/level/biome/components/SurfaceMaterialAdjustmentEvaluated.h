@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/components/SurfaceMaterialBlocks.h"
-
 struct SurfaceMaterialAdjustmentEvaluated {
 public:
     // SurfaceMaterialAdjustmentEvaluated inner types declare
@@ -17,27 +14,39 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>                      mHeightMin;
-        ::ll::TypedStorage<4, 4, int>                      mHeightMax;
-        ::ll::TypedStorage<8, 48, ::SurfaceMaterialBlocks> mSurfaceMaterialBlocks;
+        ::ll::UntypedStorage<4, 4>  mUnkec3d3b;
+        ::ll::UntypedStorage<4, 4>  mUnke1670e;
+        ::ll::UntypedStorage<8, 48> mUnkee978f;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Element& operator=(Element const&);
+        Element(Element const&);
+        Element();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::SurfaceMaterialAdjustmentEvaluated::Element>> mAdjustments;
+    ::ll::UntypedStorage<8, 24> mUnka21856;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SurfaceMaterialAdjustmentEvaluated& operator=(SurfaceMaterialAdjustmentEvaluated const&);
+    SurfaceMaterialAdjustmentEvaluated(SurfaceMaterialAdjustmentEvaluated const&);
+    SurfaceMaterialAdjustmentEvaluated();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~SurfaceMaterialAdjustmentEvaluated();
+    MCNAPI ~SurfaceMaterialAdjustmentEvaluated();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

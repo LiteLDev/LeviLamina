@@ -19,27 +19,20 @@ class MaceItem : public ::WeaponItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 54
     virtual bool
     isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const
         /*override*/;
 
-    // vIndex: 85
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 37
     virtual float getAttackDamageBonus(::Actor const& attacker) const /*override*/;
 
-    // vIndex: 84
     virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
-    // vIndex: 32
     virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
-    // vIndex: 0
     virtual ~MaceItem() /*override*/ = default;
     // NOLINTEND
 
@@ -58,6 +51,8 @@ public:
     MCFOLD float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
+
+
     // NOLINTEND
 
 public:

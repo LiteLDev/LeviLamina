@@ -15,6 +15,7 @@ class ContainerScreenValidatorBase;
 class ContainerValidationBase;
 class ItemStack;
 class SimpleSparseContainer;
+struct ContainerIterationRange;
 struct ContainerValidationCraftInputs;
 struct ContainerValidationCraftResult;
 struct ContainerValidationLayer;
@@ -50,18 +51,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ContainerScreenValidation();
 
-    // vIndex: 1
     virtual ::ContainerValidationResult
     tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const);
 
-    // vIndex: 2
     virtual ::ContainerValidationCraftResult
     getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const);
 
-    // vIndex: 3
     virtual ::ContainerValidationResult tryActivate();
     // NOLINTEND
 
@@ -103,6 +100,9 @@ public:
         int                                  transferAmount,
         ::ContainerScreenRequestActionType   actionType
     );
+
+    MCNAPI_C ::std::optional<::ContainerIterationRange>
+    getContainerIterator(::ContainerValidationSlotData const& slotData);
 
     MCNAPI ::std::shared_ptr<::SimpleSparseContainer>
     getOrCreateSparseContainer(::FullContainerName const& containerEnumName);
@@ -161,6 +161,8 @@ public:
     $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const);
 
     MCNAPI ::ContainerValidationResult $tryActivate();
+
+
     // NOLINTEND
 
 public:

@@ -13,7 +13,7 @@ class Vec3;
 namespace InteractionZoneUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<int>
+MCNAPI ::std::optional<int>
 calculateHitSlot(::Vec3 const& blockHit, uchar hitFace, ::InteractionZoneUtils::HitZoneType hitZoneType);
 // NOLINTEND
 

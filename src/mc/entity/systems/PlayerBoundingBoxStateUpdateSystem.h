@@ -83,7 +83,6 @@ class PlayerBoundingBoxStateUpdateSystem
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
@@ -119,7 +118,6 @@ public:
             ::EntityFactoryT<>>& strictContext
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~PlayerBoundingBoxStateUpdateSystem() /*override*/ = default;
     // NOLINTEND
 
@@ -207,6 +205,8 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& strictContext
     );
+
+
     // NOLINTEND
 
 public:

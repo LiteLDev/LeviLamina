@@ -26,13 +26,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual char const* getJsonName() const /*override*/;
 
-    // vIndex: 2
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
-    // vIndex: 1
     virtual ~JumpControlDescription() /*override*/;
     // NOLINTEND
 
@@ -48,6 +45,8 @@ public:
     MCNAPI char const* $getJsonName() const;
 
     MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+
+
     // NOLINTEND
 
 public:

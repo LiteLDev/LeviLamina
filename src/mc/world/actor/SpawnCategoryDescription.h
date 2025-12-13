@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/DefintionDescription.h"
-#include "mc/world/actor/spawn_category/Type.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,29 +14,35 @@ struct SpawnCategoryDescription : public ::DefintionDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SpawnCategory::Type> mSpawnCategory;
+    ::ll::UntypedStorage<4, 4> mUnkdaabf7;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SpawnCategoryDescription& operator=(SpawnCategoryDescription const&);
+    SpawnCategoryDescription(SpawnCategoryDescription const&);
+    SpawnCategoryDescription();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual char const* getJsonName() const /*override*/;
 
-    // vIndex: 0
     virtual ~SpawnCategoryDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void parse(::Json::Value const& root);
+    MCNAPI void parse(::Json::Value const& root);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
+
+
     // NOLINTEND
 
 public:

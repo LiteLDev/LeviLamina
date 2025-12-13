@@ -18,4 +18,16 @@ public:
     DisplayLoggedError& operator=(DisplayLoggedError const&);
     DisplayLoggedError(DisplayLoggedError const&);
     DisplayLoggedError();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~DisplayLoggedError();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

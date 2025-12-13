@@ -24,24 +24,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerInventoryItemChangeEvent();
+    MCNAPI PlayerInventoryItemChangeEvent();
 
-    MCAPI PlayerInventoryItemChangeEvent(::PlayerInventoryItemChangeEvent const&);
+    MCNAPI PlayerInventoryItemChangeEvent(::PlayerInventoryItemChangeEvent const&);
 
-    MCAPI ~PlayerInventoryItemChangeEvent();
+    MCNAPI ~PlayerInventoryItemChangeEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::PlayerInventoryItemChangeEvent const&);
+    MCNAPI void* $ctor(::PlayerInventoryItemChangeEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

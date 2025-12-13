@@ -22,17 +22,23 @@ public:
     // clang-format on
 
     // NbtToBlockCache inner types define
+    struct Comparator {};
+
     struct Key {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64 const> mMainHash;
-        ::ll::TypedStorage<8, 8, uint64 const> mNameHash;
-        ::ll::TypedStorage<4, 4, uint const>   mVersion;
+        ::ll::UntypedStorage<8, 8> mUnkd89f4c;
+        ::ll::UntypedStorage<8, 8> mUnk764ea6;
+        ::ll::UntypedStorage<4, 4> mUnk6eb8c8;
         // NOLINTEND
-    };
 
-    struct Comparator {};
+    public:
+        // prevent constructor by default
+        Key& operator=(Key const&);
+        Key(Key const&);
+        Key();
+    };
 
 public:
     // member variables
@@ -51,21 +57,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NbtToBlockCache();
+    MCNAPI NbtToBlockCache();
 
-    MCAPI ~NbtToBlockCache();
+    MCNAPI ~NbtToBlockCache();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -18,17 +18,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptingEventListener() = default;
 
-    // vIndex: 1
     virtual ::EventResult onEvent(::ScriptingNotificationEvent const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onEvent(::ScriptingNotificationEvent const&);
+    MCNAPI ::EventResult $onEvent(::ScriptingNotificationEvent const&);
+
+
     // NOLINTEND
 
 public:

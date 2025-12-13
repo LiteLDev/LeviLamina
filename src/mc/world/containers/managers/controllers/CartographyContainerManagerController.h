@@ -41,79 +41,153 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CartographyContainerManagerController();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~CartographyContainerManagerController() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~CartographyContainerManagerController() /*override*/;
+#endif
 
-    // vIndex: 1
-    virtual void postInit(::std::weak_ptr<::ContainerManagerController>) /*override*/;
+    virtual void postInit(::std::weak_ptr<::ContainerManagerController> self) /*override*/;
 
-    // vIndex: 27
-    virtual bool isOutputSlot(::std::string const&) const /*override*/;
+    virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
 
-    // vIndex: 8
-    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
+    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const& slot) const /*override*/;
 
-    // vIndex: 3
-    virtual void setPreviewItemName(::Bedrock::Safety::RedactableString const&) /*override*/;
+    virtual void setPreviewItemName(::Bedrock::Safety::RedactableString const& name) /*override*/;
 
-    // vIndex: 4
-    virtual void setItemName(::Bedrock::Safety::RedactableString const&) /*override*/;
+    virtual void setItemName(::Bedrock::Safety::RedactableString const& name) /*override*/;
 
-    // vIndex: 5
     virtual ::Bedrock::Safety::RedactableString const& getPreviewItemName() const /*override*/;
 
-    // vIndex: 6
     virtual ::Bedrock::Safety::RedactableString const& getItemName() const /*override*/;
 
-    // vIndex: 7
     virtual void updatePreviewItem() /*override*/;
 
-    // vIndex: 9
-    virtual void handleTakeAmount(::SlotData const&, int, ::SlotData const&) /*override*/;
+    virtual void handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot) /*override*/;
 
-    // vIndex: 10
-    virtual void handleTakeAll(::SlotData const&, ::SlotData const&) /*override*/;
+    virtual void handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
 
-    // vIndex: 11
-    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
+    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
 
-    // vIndex: 12
-    virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
+    virtual void handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
 
-    // vIndex: 13
-    virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
+    virtual void handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot) /*override*/;
 
-    // vIndex: 15
     virtual int handleAutoPlace(
-        ::SlotData const&,
-        int,
-        ::std::vector<::AutoPlaceItem> const&,
-        ::std::vector<::AutoPlaceResult>&
+        ::SlotData const&                     srcSlot,
+        int                                   amount,
+        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
+        ::std::vector<::AutoPlaceResult>&     destinations
     ) /*override*/;
 
-    // vIndex: 34
-    virtual void _onContainerScreenAction(::ContainerScreenActionResult const&) /*override*/;
+    virtual void _onContainerScreenAction(::ContainerScreenActionResult const& result) /*override*/;
 
-    // vIndex: 29
     virtual ::CreateContainerItemScope
-    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+    _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const&) /*override*/;
 
-    // vIndex: 32
-    virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
+    virtual void _onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot) /*override*/;
 
-    // vIndex: 28
     virtual void _updateItemStackRequest(
         ::ContainerScreenRequestActionType,
-        ::ContainerScreenActionResult const&,
-        ::ItemStackRequestScope&
+        ::ContainerScreenActionResult const& result,
+        ::ItemStackRequestScope&             requestScope
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit CartographyContainerManagerController(
+        ::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel
+    );
+
+    MCNAPI_C ::ItemInstance _buildResultItem();
+
+    MCNAPI_C void _clearName();
+
+    MCNAPI_C bool _createCraftItem(::ItemInstance& instance, ::ItemStackRequestScope const& requestScope);
+
+    MCNAPI_C bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    MCNAPI_C void _setName(::Bedrock::Safety::RedactableString const& name);
+
+    MCNAPI_C void _setupCallbacks();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $postInit(::std::weak_ptr<::ContainerManagerController> self);
 
+    MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
+
+    MCNAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
+
+    MCNAPI void $setPreviewItemName(::Bedrock::Safety::RedactableString const& name);
+
+    MCNAPI void $setItemName(::Bedrock::Safety::RedactableString const& name);
+
+    MCNAPI ::Bedrock::Safety::RedactableString const& $getPreviewItemName() const;
+
+    MCNAPI ::Bedrock::Safety::RedactableString const& $getItemName() const;
+
+    MCNAPI void $updatePreviewItem();
+
+    MCNAPI void $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
+
+    MCNAPI void $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+
+    MCNAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+
+    MCNAPI void $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+
+    MCNAPI void $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    MCNAPI int $handleAutoPlace(
+        ::SlotData const&                     srcSlot,
+        int                                   amount,
+        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
+        ::std::vector<::AutoPlaceResult>&     destinations
+    );
+
+    MCNAPI void $_onContainerScreenAction(::ContainerScreenActionResult const& result);
+
+    MCNAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const&);
+
+    MCNAPI void $_onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot);
+
+    MCNAPI void $_updateItemStackRequest(
+        ::ContainerScreenRequestActionType,
+        ::ContainerScreenActionResult const& result,
+        ::ItemStackRequestScope&             requestScope
+    );
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

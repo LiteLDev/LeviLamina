@@ -21,7 +21,7 @@ struct BiomeTagSetIDType;
 namespace VanillaBiomeSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void applySerializedDataToBiome(
+MCNAPI void applySerializedDataToBiome(
     ::BiomeDefinitionData const&                                              data,
     ::Biome&                                                                  biome,
     ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& tagRegistry,
@@ -31,7 +31,7 @@ MCAPI void applySerializedDataToBiome(
     ::BiomeStringList const&                                                  stringList
 );
 
-MCAPI void serializeBiomeToData(
+MCNAPI void serializeBiomeToData(
     ::Biome const&                                                                  biome,
     ::BiomeDefinitionData&                                                          data,
     bool                                                                            clientSideChunkGen,

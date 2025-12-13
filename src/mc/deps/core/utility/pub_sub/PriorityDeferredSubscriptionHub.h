@@ -92,26 +92,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void flushPendingEvents() /*override*/;
 
-    // vIndex: 8
     virtual ::Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const /*override*/;
 
-    // vIndex: 11
     virtual bool _runOneEvent() /*override*/;
 
-    // vIndex: 10
     virtual void _enqueue(
         ::std::function<void()>            fn,
         ::Bedrock::PubSub::ConnectPosition at,
         ::std::optional<int>               group
     ) /*override*/;
 
-    // vIndex: 12
     virtual void _runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
 
-    // vIndex: 0
     virtual ~PriorityDeferredSubscriptionHub() /*override*/ = default;
     // NOLINTEND
 
@@ -140,6 +134,8 @@ public:
     $_enqueue(::std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, ::std::optional<int> group);
 
     MCNAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
+
+
     // NOLINTEND
 
 public:

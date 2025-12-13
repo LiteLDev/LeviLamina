@@ -29,10 +29,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::cricket::IceTransportInternal* internal() /*override*/;
 
-    // vIndex: 2
     virtual ~IceTransportWithPointer() /*override*/;
     // NOLINTEND
 
@@ -52,6 +50,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::cricket::IceTransportInternal* $internal();
+
+
     // NOLINTEND
 
 public:

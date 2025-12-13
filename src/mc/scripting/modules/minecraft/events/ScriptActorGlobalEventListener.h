@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
@@ -13,7 +11,6 @@
 // clang-format off
 struct ActorAddEffectEvent;
 struct ActorDefinitionEndedEvent;
-namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -30,39 +27,48 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-        ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-                                       mScriptEventsHandle;
-        ::ll::TypedStorage<1, 1, bool> mAfterListener;
+        ::ll::UntypedStorage<8, 16> mUnk9fb76e;
+        ::ll::UntypedStorage<8, 16> mUnk139cda;
+        ::ll::UntypedStorage<1, 1>  mUnk486be0;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Listener& operator=(Listener const&);
+        Listener(Listener const&);
+        Listener();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptActorGlobalEventListener::Listener>>
-        mListeners;
+    ::ll::UntypedStorage<8, 24> mUnk3c3251;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptActorGlobalEventListener& operator=(ScriptActorGlobalEventListener const&);
+    ScriptActorGlobalEventListener(ScriptActorGlobalEventListener const&);
+    ScriptActorGlobalEventListener();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 18
     virtual ::EventResult onEvent(::ActorAddEffectEvent const& actorAddEffectEvent) /*override*/;
 
-    // vIndex: 38
     virtual ::EventResult onEvent(::ActorDefinitionEndedEvent const& actorDefinitionEndedEvent) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptActorGlobalEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ActorAddEffectEvent const& actorAddEffectEvent);
+    MCNAPI ::EventResult $onEvent(::ActorAddEffectEvent const& actorAddEffectEvent);
 
-    MCAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& actorDefinitionEndedEvent);
+    MCNAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& actorDefinitionEndedEvent);
+
+
     // NOLINTEND
 
 public:

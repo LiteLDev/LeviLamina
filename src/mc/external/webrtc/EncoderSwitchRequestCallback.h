@@ -13,13 +13,10 @@ class EncoderSwitchRequestCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EncoderSwitchRequestCallback() = default;
 
-    // vIndex: 1
     virtual void RequestEncoderFallback() = 0;
 
-    // vIndex: 2
     virtual void RequestEncoderSwitch(::webrtc::SdpVideoFormat const&, bool) = 0;
     // NOLINTEND
 

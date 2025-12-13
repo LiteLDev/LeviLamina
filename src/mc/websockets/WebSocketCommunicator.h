@@ -40,26 +40,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WebSocketCommunicator() = default;
 
-    // vIndex: 1
     virtual bool shouldSerialize();
 
-    // vIndex: 2
     virtual void onSerialize();
 
-    // vIndex: 3
     virtual void onReceive(::RakWebSocketDataFrame const&);
 
-    // vIndex: 4
     virtual void onClose(::CloseStatusCode, ::std::string const&);
 
-    // vIndex: 5
     virtual void onConnected(::std::string const&);
 
-    // vIndex: 6
     virtual void onPostClosed();
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void _setSocketType(::WebSocketCommunicator::SocketType socketType);
     // NOLINTEND
 
 public:

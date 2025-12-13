@@ -15,22 +15,16 @@ struct ServerNetherNetConnector : public ::NetherNetConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 9
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
-    // vIndex: 11
     virtual void disconnect() /*override*/;
 
-    // vIndex: 14
     virtual bool isServer() const /*override*/;
 
-    // vIndex: 2
     virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64) /*override*/;
 
-    // vIndex: 3
     virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId) /*override*/;
 
-    // vIndex: 0
     virtual ~ServerNetherNetConnector() /*override*/ = default;
     // NOLINTEND
 
@@ -46,6 +40,8 @@ public:
     MCNAPI bool $OnSessionRequested(::NetherNet::NetworkID, uint64);
 
     MCNAPI void $OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId);
+
+
     // NOLINTEND
 
 public:

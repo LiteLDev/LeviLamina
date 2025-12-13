@@ -16,21 +16,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptActorSpawnError(::ActorValidationError error);
+    MCNAPI explicit ScriptActorSpawnError(::ActorValidationError error);
 
-    MCAPI ~ScriptActorSpawnError();
+    MCNAPI ~ScriptActorSpawnError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorValidationError error);
+    MCNAPI void* $ctor(::ActorValidationError error);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -27,25 +27,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EduKeyProvider() /*override*/ = default;
 
-    // vIndex: 6
     virtual bool canAccess(::ContentIdentity const&) const /*override*/;
 
-    // vIndex: 1
     virtual ::std::string getContentKey(::ContentIdentity const&) const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getAlternateContentKey(::ContentIdentity const&) const /*override*/;
 
-    // vIndex: 4
     virtual void setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&) /*override*/;
 
-    // vIndex: 5
     virtual void clearTempContentKeys() /*override*/;
 
-    // vIndex: 3
     virtual bool requireEncryptedReads() const /*override*/;
     // NOLINTEND
 

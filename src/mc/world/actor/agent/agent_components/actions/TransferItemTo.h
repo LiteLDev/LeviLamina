@@ -8,10 +8,16 @@ struct TransferItemTo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> src;
-    ::ll::TypedStorage<4, 4, int> dest;
-    ::ll::TypedStorage<4, 4, int> quantity;
+    ::ll::UntypedStorage<4, 4> mUnk30b91d;
+    ::ll::UntypedStorage<4, 4> mUnk79b2e0;
+    ::ll::UntypedStorage<4, 4> mUnk2528ed;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TransferItemTo& operator=(TransferItemTo const&);
+    TransferItemTo(TransferItemTo const&);
+    TransferItemTo();
 };
 
 } // namespace AgentComponents::Actions

@@ -14,19 +14,14 @@ class CrashTelemetryProcessor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CrashTelemetryProcessor() = default;
 
-    // vIndex: 1
     virtual void sendCrashTelemetryNow(::std::shared_ptr<::Bedrock::SessionInfo>) = 0;
 
-    // vIndex: 2
     virtual void addCrashTelemetryToBatch(::std::shared_ptr<::Bedrock::SessionInfo>) = 0;
 
-    // vIndex: 3
     virtual void sendBatchedCrashTelemetry() = 0;
 
-    // vIndex: 4
     virtual void sendCrashStatusTelemetry(::Bedrock::CrashUploadStatus const&) = 0;
     // NOLINTEND
 

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
+struct SubChunkPacketHandler;
 // clang-format on
 
 class SubChunkInsertManager {
@@ -32,6 +33,21 @@ public:
         SubChunkInsertTaskInfo& operator=(SubChunkInsertTaskInfo const&);
         SubChunkInsertTaskInfo(SubChunkInsertTaskInfo const&);
         SubChunkInsertTaskInfo();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ::SubChunkInsertManager::SubChunkInsertTaskInfo&
+        operator=(::SubChunkInsertManager::SubChunkInsertTaskInfo&&);
+
+        MCNAPI_C ~SubChunkInsertTaskInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -43,5 +59,35 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                                          mMaxInFlightTasks;
     ::ll::TypedStorage<1, 1, bool>                                                            mIsLeavingGame;
     ::ll::TypedStorage<8, 64, ::std::function<::Player*()>>                                   mGetPrimaryLocalPlayer;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SubChunkInsertManager();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit SubChunkInsertManager(::std::function<::Player*()> getPrimaryLocalPlayer);
+
+    MCNAPI_C void _launchSubChunkInsertTasks(::Player* player);
+
+    MCNAPI_C void addSubChunkInsertTask(::std::shared_ptr<::SubChunkPacketHandler> handler);
+
+    MCNAPI_C void tick();
+
+    MCNAPI_C ~SubChunkInsertManager();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::function<::Player*()> getPrimaryLocalPlayer);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
     // NOLINTEND
 };

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+
 // auto generated forward declare list
 // clang-format off
 class PackAccessStrategy;
@@ -92,6 +95,10 @@ public:
     MCAPI static ::std::string _getDigitGroupSeparator(::std::string const& langCode);
 
     MCAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
+
+    MCAPI_C static ::Core::PathBuffer<::std::string> getLangFilePath(::std::string const& langCode);
+
+    MCAPI_C static ::std::string getLanguageCode(::std::string const& fullCode);
     // NOLINTEND
 
 public:

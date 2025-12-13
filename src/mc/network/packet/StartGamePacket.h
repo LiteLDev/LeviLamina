@@ -3,75 +3,73 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec2.h"
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/resource/ContentIdentity.h"
-#include "mc/legacy/ActorRuntimeID.h"
-#include "mc/legacy/ActorUniqueID.h"
-#include "mc/nbt/CompoundTag.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/NetworkPermissions.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
-#include "mc/platform/UUID.h"
-#include "mc/world/actor/player/SyncedPlayerMovementSettings.h"
 #include "mc/world/level/GameType.h"
-#include "mc/world/level/LevelSettings.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorRuntimeID;
 class BinaryStream;
 class BlockDefinitionGroup;
+class CompoundTag;
+class ContentIdentity;
+class LevelSettings;
 class ReadOnlyBinaryStream;
+class Vec2;
+class Vec3;
+struct ActorUniqueID;
 struct PlayerMovementSettings;
+namespace mce { class UUID; }
 // clang-format on
 
 class StartGamePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1440, ::LevelSettings>             mSettings;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                mEntityId;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>               mRuntimeId;
-    ::ll::TypedStorage<4, 4, ::GameType>                     mEntityGameType;
-    ::ll::TypedStorage<4, 12, ::Vec3>                        mPos;
-    ::ll::TypedStorage<4, 8, ::Vec2>                         mRot;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mLevelId;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mLevelName;
-    ::ll::TypedStorage<8, 24, ::ContentIdentity>             mTemplateContentIdentity;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>                   mWorldTemplateId;
-    ::ll::TypedStorage<1, 1, bool>                           mIsTrial;
-    ::ll::TypedStorage<4, 8, ::SyncedPlayerMovementSettings> mMovementSettings;
-    ::ll::TypedStorage<8, 8, uint64>                         mLevelCurrentTime;
-    ::ll::TypedStorage<4, 4, int>                            mEnchantmentSeed;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mMultiplayerCorrelationId;
-    ::ll::TypedStorage<1, 1, bool>                           mEnableItemStackNetManager;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mServerVersion;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>                 mPlayerPropertyData;
-    ::ll::TypedStorage<8, 8, uint64>                         mServerBlockTypeRegistryChecksum;
-    ::ll::TypedStorage<1, 1, bool>                           mServerEnabledClientSideGeneration;
-    ::ll::TypedStorage<1, 1, bool>                           mBlockNetworkIdsAreHashes;
-    ::ll::TypedStorage<1, 1, bool>                           mTickDeathSystemsEnabled;
-    ::ll::TypedStorage<1, 1, ::NetworkPermissions>           mNetworkPermissions;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::CompoundTag>>> mBlockProperties;
+    ::ll::UntypedStorage<8, 1440> mUnke0fdbe;
+    ::ll::UntypedStorage<8, 8>    mUnk83e619;
+    ::ll::UntypedStorage<8, 8>    mUnkc51da8;
+    ::ll::UntypedStorage<4, 4>    mUnkbeaa1e;
+    ::ll::UntypedStorage<4, 12>   mUnk91c4b3;
+    ::ll::UntypedStorage<4, 8>    mUnka7dd7d;
+    ::ll::UntypedStorage<8, 32>   mUnk56e19d;
+    ::ll::UntypedStorage<8, 32>   mUnk9e02c7;
+    ::ll::UntypedStorage<8, 24>   mUnkc57ccf;
+    ::ll::UntypedStorage<8, 16>   mUnk55b3a0;
+    ::ll::UntypedStorage<1, 1>    mUnkcf48ae;
+    ::ll::UntypedStorage<4, 8>    mUnkad44af;
+    ::ll::UntypedStorage<8, 8>    mUnk930d3b;
+    ::ll::UntypedStorage<4, 4>    mUnk124f7d;
+    ::ll::UntypedStorage<8, 32>   mUnk6fa8b3;
+    ::ll::UntypedStorage<1, 1>    mUnk18d75b;
+    ::ll::UntypedStorage<8, 32>   mUnkb170ec;
+    ::ll::UntypedStorage<8, 24>   mUnk763adb;
+    ::ll::UntypedStorage<8, 8>    mUnk6731d1;
+    ::ll::UntypedStorage<1, 1>    mUnkbf0f86;
+    ::ll::UntypedStorage<1, 1>    mUnkc74fc4;
+    ::ll::UntypedStorage<1, 1>    mUnk43842c;
+    ::ll::UntypedStorage<1, 1>    mUnkdf3686;
+    ::ll::UntypedStorage<8, 24>   mUnkea9ce3;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StartGamePacket& operator=(StartGamePacket const&);
+    StartGamePacket(StartGamePacket const&);
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    // vIndex: 0
     virtual ~StartGamePacket() /*override*/;
     // NOLINTEND
 
@@ -103,6 +101,8 @@ public:
         int                             enchantmentSeed,
         uint64                          blockTypeRegistryChecksum
     );
+
+    MCAPI_C void _prepareBlockPropertiesTags(::BlockDefinitionGroup const& blockDefinitionGroup);
     // NOLINTEND
 
 public:
@@ -151,6 +151,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

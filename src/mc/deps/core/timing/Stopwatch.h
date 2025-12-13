@@ -17,22 +17,31 @@ public:
     // prevent constructor by default
     Stopwatch& operator=(Stopwatch const&);
     Stopwatch(Stopwatch const&);
-    Stopwatch();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Stopwatch();
 
-    // vIndex: 1
     virtual double stop();
 
-    // vIndex: 2
     virtual double stopContinue();
 
-    // vIndex: 3
     virtual void print(::std::string const& prepend);
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C Stopwatch();
+
+    MCNAPI_C void start();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
     // NOLINTEND
 
 public:
@@ -49,6 +58,8 @@ public:
     MCNAPI double $stopContinue();
 
     MCNAPI void $print(::std::string const& prepend);
+
+
     // NOLINTEND
 
 public:

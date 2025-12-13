@@ -25,10 +25,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroup& operator=(::SharedTypes::v1_21_60::CraftingCatalogGroup&&);
+
     MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroup&
     operator=(::SharedTypes::v1_21_60::CraftingCatalogGroup const&);
-
-    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroup& operator=(::SharedTypes::v1_21_60::CraftingCatalogGroup&&);
     // NOLINTEND
 
 public:

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace PlayerReportingSignal {
 
 struct JsonData {
@@ -17,6 +22,26 @@ public:
     JsonData& operator=(JsonData const&);
     JsonData(JsonData const&);
     JsonData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C JsonData(::std::string key, ::Json::Value value);
+
+    MCNAPI_C ~JsonData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::string key, ::Json::Value value);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace PlayerReportingSignal

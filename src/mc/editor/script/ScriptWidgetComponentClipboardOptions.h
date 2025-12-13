@@ -40,11 +40,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void>
     validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptWidgetComponentClipboardOptions() /*override*/;
     // NOLINTEND
 
@@ -56,10 +54,10 @@ public:
     MCNAPI ScriptWidgetComponentClipboardOptions(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
     // NOLINTEND
 
 public:
@@ -113,6 +111,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void>
     $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
+
+
     // NOLINTEND
 
 public:

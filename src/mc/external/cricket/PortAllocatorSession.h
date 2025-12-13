@@ -44,58 +44,40 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PortAllocatorSession() /*override*/;
 
-    // vIndex: 1
     virtual void SetCandidateFilter(uint filter) = 0;
 
-    // vIndex: 2
     virtual void StartGettingPorts() = 0;
 
-    // vIndex: 3
     virtual void StopGettingPorts() = 0;
 
-    // vIndex: 4
     virtual bool IsGettingPorts() = 0;
 
-    // vIndex: 5
     virtual void ClearGettingPorts() = 0;
 
-    // vIndex: 6
     virtual bool IsCleared() const;
 
-    // vIndex: 7
     virtual bool IsStopped() const;
 
-    // vIndex: 8
     virtual void RegatherOnFailedNetworks();
 
-    // vIndex: 9
     virtual void GetCandidateStatsFromReadyPorts(::std::vector<::cricket::CandidateStats>* candidate_stats_list) const;
 
-    // vIndex: 10
     virtual void SetStunKeepaliveIntervalForReadyPorts(::std::optional<int> const& stun_keepalive_interval);
 
-    // vIndex: 11
     virtual ::std::vector<::cricket::PortInterface*> ReadyPorts() const = 0;
 
-    // vIndex: 12
     virtual ::std::vector<::cricket::Candidate> ReadyCandidates() const = 0;
 
-    // vIndex: 13
     virtual bool CandidatesAllocationDone() const = 0;
 
-    // vIndex: 14
     virtual void PruneAllPorts();
 
-    // vIndex: 15
     virtual uint generation();
 
-    // vIndex: 16
     virtual void set_generation(uint generation);
 
-    // vIndex: 17
     virtual void UpdateIceParametersInternal();
     // NOLINTEND
 
@@ -156,6 +138,8 @@ public:
     MCNAPI void $set_generation(uint generation);
 
     MCNAPI void $UpdateIceParametersInternal();
+
+
     // NOLINTEND
 
 public:

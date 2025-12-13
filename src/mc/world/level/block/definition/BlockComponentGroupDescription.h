@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 struct BlockComponentDescription;
 namespace cereal { class DynamicValue; }
 namespace cereal { class SerializerContext; }
@@ -22,8 +21,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::BlockComponentDescription>>>
-            mMap;
+        ::ll::UntypedStorage<8, 64> mUnka139a3;
         // NOLINTEND
 
     public:
@@ -33,43 +31,43 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Components(::BlockComponentGroupDescription::Components const&);
+        MCNAPI Components(::BlockComponentGroupDescription::Components const&);
 
-        MCAPI void _setCustomComponent(
+        MCNAPI void _setCustomComponent(
             ::std::string_view                               compName,
             ::std::shared_ptr<::cereal::DynamicValue> const& compData,
             bool                                             overridePlayerInteract,
             bool                                             overridePlayerPlacing
         );
 
-        MCAPI ::std::shared_ptr<::cereal::DynamicValue>
+        MCNAPI ::std::shared_ptr<::cereal::DynamicValue>
         getCustomComponent(::cereal::SerializerContext const& context) const;
 
-        MCFOLD ::BlockComponentGroupDescription::Components&
+        MCNAPI ::BlockComponentGroupDescription::Components&
         operator=(::BlockComponentGroupDescription::Components const&);
 
-        MCAPI ~Components();
+        MCNAPI ~Components();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::BlockComponentGroupDescription::Components const&);
+        MCNAPI void* $ctor(::BlockComponentGroupDescription::Components const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::BlockComponentGroupDescription::Components>                  mCerealDescriptions;
-    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>                                 mTags;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::BlockComponentDescription>>> mDescriptions;
+    ::ll::UntypedStorage<8, 64> mUnke08dc0;
+    ::ll::UntypedStorage<8, 24> mUnkd8d4e6;
+    ::ll::UntypedStorage<8, 24> mUnkd642d2;
     // NOLINTEND
 
 public:
@@ -79,32 +77,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockComponentGroupDescription();
+    MCNAPI BlockComponentGroupDescription();
 
-    MCAPI BlockComponentGroupDescription(::BlockComponentGroupDescription&&);
+    MCNAPI BlockComponentGroupDescription(::BlockComponentGroupDescription&&);
 
-    MCAPI BlockComponentGroupDescription(::BlockComponentGroupDescription const&);
+    MCNAPI BlockComponentGroupDescription(::BlockComponentGroupDescription const&);
 
-    MCAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
+    MCNAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
 
-    MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
+    MCNAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
 
-    MCAPI ~BlockComponentGroupDescription();
+    MCNAPI ~BlockComponentGroupDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::BlockComponentGroupDescription&&);
+    MCNAPI void* $ctor(::BlockComponentGroupDescription&&);
 
-    MCAPI void* $ctor(::BlockComponentGroupDescription const&);
+    MCNAPI void* $ctor(::BlockComponentGroupDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

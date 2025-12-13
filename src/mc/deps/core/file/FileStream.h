@@ -10,7 +10,7 @@ namespace Core { class PathView; }
 
 namespace Core {
 
-class FileStream : public ::std::iostream, public virtual ::std::ios {
+class FileStream : public virtual ::std::ios, public ::std::iostream {
 public:
     // member variables
     // NOLINTBEGIN
@@ -27,7 +27,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FileStream() /*override*/ = default;
     // NOLINTEND
 

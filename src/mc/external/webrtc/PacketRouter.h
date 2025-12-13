@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/external/absl/AnyInvocable.h"
 #include "mc/external/webrtc/PacingController.h"
+#include "mc/external/webrtc/RtpRtcpInterface.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class DataSize; }
 namespace webrtc { class RtcpFeedbackSenderInterface; }
 namespace webrtc { class RtpPacketToSend; }
-namespace webrtc { class RtpRtcpInterface; }
 namespace webrtc { struct PacedPacketInfo; }
 // clang-format on
 
@@ -43,29 +43,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PacketRouter() /*override*/;
 
-    // vIndex: 1
     virtual void SendPacket(
         ::std::unique_ptr<::webrtc::RtpPacketToSend> packet,
         ::webrtc::PacedPacketInfo const&             cluster_info
     ) /*override*/;
 
-    // vIndex: 2
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> FetchFec() /*override*/;
 
-    // vIndex: 3
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>
     GeneratePadding(::webrtc::DataSize size) /*override*/;
 
-    // vIndex: 5
     virtual void OnAbortedRetransmissions(uint ssrc, ::rtc::ArrayView<ushort const> sequence_numbers) /*override*/;
 
-    // vIndex: 6
     virtual ::std::optional<uint> GetRtxSsrcForMedia(uint ssrc) const /*override*/;
 
-    // vIndex: 4
     virtual void OnBatchComplete() /*override*/;
     // NOLINTEND
 
@@ -125,6 +118,8 @@ public:
     MCNAPI ::std::optional<uint> $GetRtxSsrcForMedia(uint ssrc) const;
 
     MCNAPI void $OnBatchComplete();
+
+
     // NOLINTEND
 
 public:

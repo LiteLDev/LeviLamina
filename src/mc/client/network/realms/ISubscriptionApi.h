@@ -17,10 +17,8 @@ class ISubscriptionApi {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ISubscriptionApi() = default;
 
-    // vIndex: 1
     virtual void getSubscriptionDetails(
         ::Realms::RealmId,
         ::std::function<void(::Realms::GenericStatus, ::Realms::SubscriptionInfo)>

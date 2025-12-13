@@ -33,23 +33,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RobustThroughputEstimator() /*override*/;
 
-    // vIndex: 1
     virtual void
     IncomingPacketFeedbackVector(::std::vector<::webrtc::PacketResult> const& packet_feedback_vector) /*override*/;
 
-    // vIndex: 2
     virtual ::std::optional<::webrtc::DataRate> bitrate() const /*override*/;
 
-    // vIndex: 3
     virtual ::std::optional<::webrtc::DataRate> PeekRate() const /*override*/;
 
-    // vIndex: 4
     virtual void SetAlr(bool) /*override*/;
 
-    // vIndex: 5
     virtual void SetAlrEndedTime(::webrtc::Timestamp) /*override*/;
     // NOLINTEND
 
@@ -85,6 +79,8 @@ public:
     MCNAPI void $SetAlr(bool);
 
     MCNAPI void $SetAlrEndedTime(::webrtc::Timestamp);
+
+
     // NOLINTEND
 
 public:

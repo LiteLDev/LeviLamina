@@ -13,13 +13,10 @@ class IStructurePoolBlockTagPredicate {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IStructurePoolBlockTagPredicate() = default;
 
-    // vIndex: 1
     virtual bool test(::Block const&, ::CompoundTag const&) const = 0;
 
-    // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash&) const = 0;
     // NOLINTEND
 

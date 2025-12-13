@@ -2,13 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
 // auto generated forward declare list
 // clang-format off
 class Player;
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -19,9 +15,8 @@ struct ScriptPlayerEmoteAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
-                                             mPlayerHandle;
-    ::ll::TypedStorage<8, 32, ::std::string> mEmotePieceId;
+    ::ll::UntypedStorage<8, 32> mUnkd75600;
+    ::ll::UntypedStorage<8, 32> mUnk646c8a;
     // NOLINTEND
 
 public:
@@ -33,34 +28,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerEmoteAfterEvent(
+    MCNAPI ScriptPlayerEmoteAfterEvent(
         ::Player const&                       player,
         ::std::string                         emotePieceId,
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&&);
 
-    MCAPI ~ScriptPlayerEmoteAfterEvent();
+    MCNAPI ~ScriptPlayerEmoteAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player const& player, ::std::string emotePieceId, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::Player const& player, ::std::string emotePieceId, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

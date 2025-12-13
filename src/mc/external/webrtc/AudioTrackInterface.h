@@ -19,22 +19,16 @@ class AudioTrackInterface : public ::webrtc::MediaStreamTrackInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 8
     virtual ::webrtc::AudioSourceInterface* GetSource() const = 0;
 
-    // vIndex: 9
     virtual void AddSink(::webrtc::AudioTrackSinkInterface* sink) = 0;
 
-    // vIndex: 10
     virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* sink) = 0;
 
-    // vIndex: 11
     virtual bool GetSignalLevel(int* level);
 
-    // vIndex: 12
     virtual ::webrtc::scoped_refptr<::webrtc::AudioProcessorInterface> GetAudioProcessor();
 
-    // vIndex: 2
     virtual ~AudioTrackInterface() /*override*/;
     // NOLINTEND
 
@@ -50,6 +44,8 @@ public:
     MCNAPI bool $GetSignalLevel(int* level);
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::AudioProcessorInterface> $GetAudioProcessor();
+
+
     // NOLINTEND
 };
 

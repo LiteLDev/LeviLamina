@@ -18,7 +18,6 @@ class IAsyncJoinRegistrar {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(
         ::brstd::move_only_function<void(
             ::NetworkIdentifier const&,
@@ -30,10 +29,8 @@ public:
         )>
     ) = 0;
 
-    // vIndex: 1
     virtual bool isPaused() = 0;
 
-    // vIndex: 2
     virtual ~IAsyncJoinRegistrar() = default;
     // NOLINTEND
 

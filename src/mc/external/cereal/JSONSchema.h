@@ -34,9 +34,9 @@ public:
     // NOLINTBEGIN
     MCNAPI JSONSchema();
 
-    MCNAPI JSONSchema(::cereal::ext::JSONSchema const&);
-
     MCNAPI JSONSchema(::cereal::ext::JSONSchema&&);
+
+    MCNAPI JSONSchema(::cereal::ext::JSONSchema const&);
 
     MCNAPI void makeAndNormalizeDefs(
         ::cereal::ext::internal::OutRefsMap&              outRefs,
@@ -62,9 +62,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::cereal::ext::JSONSchema const&);
-
     MCNAPI void* $ctor(::cereal::ext::JSONSchema&&);
+
+    MCNAPI void* $ctor(::cereal::ext::JSONSchema const&);
     // NOLINTEND
 
 public:

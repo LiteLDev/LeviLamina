@@ -31,42 +31,39 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& debugInfo) const /*override*/;
 
-    // vIndex: 0
     virtual ~SkeletonHorseTrapGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Horse* _createHorse(::SharedTypes::Legacy::Difficulty const& difficulty);
+    MCNAPI ::Horse* _createHorse(::SharedTypes::Legacy::Difficulty const& difficulty);
 
-    MCAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const& difficulty, ::Horse const& otherHorse);
+    MCNAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const& difficulty, ::Horse const& otherHorse);
 
-    MCAPI ::Player* _getClosestPlayer() const;
+    MCNAPI ::Player* _getClosestPlayer() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCFOLD void $start();
+    MCNAPI void $start();
 
-    MCAPI void $appendDebugInfo(::std::string& debugInfo) const;
+    MCNAPI void $appendDebugInfo(::std::string& debugInfo) const;
+
+
     // NOLINTEND
 
 public:

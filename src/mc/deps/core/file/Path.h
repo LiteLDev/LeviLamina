@@ -33,9 +33,13 @@ public:
     // NOLINTBEGIN
     MCNAPI Path();
 
-    MCNAPI explicit Path(::std::string&& str);
+    MCNAPI_S explicit Path(::std::string&& str);
 
-    MCNAPI explicit Path(char const* str);
+    MCNAPI_S explicit Path(char const* str);
+
+    MCNAPI_C char const* getUtf8CString() const;
+
+    MCNAPI_C ::std::string_view getUtf8StringView() const;
 
     MCNAPI ::Core::Path& operator=(::Core::Path&&);
 
@@ -53,9 +57,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::std::string&& str);
+    MCNAPI_S void* $ctor(::std::string&& str);
 
-    MCNAPI void* $ctor(char const* str);
+    MCNAPI_S void* $ctor(char const* str);
     // NOLINTEND
 
 public:

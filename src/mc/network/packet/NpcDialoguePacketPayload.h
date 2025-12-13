@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/legacy/ActorUniqueID.h"
-
 // auto generated forward declare list
 // clang-format off
 class NpcDialoguePacket;
@@ -22,12 +19,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                   mNpcId;
-    ::ll::TypedStorage<4, 4, ::NpcDialoguePacketPayload::NpcDialogueActionType> mNpcDialogueActionType;
-    ::ll::TypedStorage<8, 32, ::std::string>                                    mDialogue;
-    ::ll::TypedStorage<8, 32, ::std::string>                                    mSceneName;
-    ::ll::TypedStorage<8, 32, ::std::string>                                    mNpcName;
-    ::ll::TypedStorage<8, 32, ::std::string>                                    mActionJSON;
+    ::ll::UntypedStorage<8, 8>  mUnk4b7367;
+    ::ll::UntypedStorage<4, 4>  mUnkbcccf1;
+    ::ll::UntypedStorage<8, 32> mUnkf381d0;
+    ::ll::UntypedStorage<8, 32> mUnka3a9fe;
+    ::ll::UntypedStorage<8, 32> mUnk9d792d;
+    ::ll::UntypedStorage<8, 32> mUnk7feb1f;
     // NOLINTEND
 
 public:
@@ -38,17 +35,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::NpcDialoguePacketPayload& operator=(::NpcDialoguePacketPayload const&);
+    MCNAPI ::NpcDialoguePacketPayload& operator=(::NpcDialoguePacketPayload&&);
 
-    MCAPI ::NpcDialoguePacketPayload& operator=(::NpcDialoguePacketPayload&&);
+    MCNAPI ::NpcDialoguePacketPayload& operator=(::NpcDialoguePacketPayload const&);
 
-    MCAPI ~NpcDialoguePacketPayload();
+    MCNAPI ~NpcDialoguePacketPayload();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool initializePacket(
+    MCNAPI static bool initializePacket(
         ::NpcDialoguePacket&        outPacket,
         ::NpcDialogueStorage const* storage,
         ::std::string const&        sceneName
@@ -58,6 +55,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

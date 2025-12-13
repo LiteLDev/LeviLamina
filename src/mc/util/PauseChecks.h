@@ -14,6 +14,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool isActorTickPaused(::Actor const& actor);
 
+    MCNAPI_C static bool isAnimationPaused(::Actor const& actor);
+
     MCNAPI static bool isMobSpawningPaused(::ILevel const& level);
     // NOLINTEND
 };

@@ -75,38 +75,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
         ::TaskStartInfo const&                        startInfo,
         ::brstd::move_only_function<::TaskResult()>&& task,
         ::std::function<void()>&&                     callback
     ) /*override*/;
 
-    // vIndex: 2
     virtual ::Bedrock::Threading::Async<void> queueSync_DEPRECATED(
         ::TaskStartInfo const&                        startInfo,
         ::brstd::move_only_function<::TaskResult()>&& task
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~TaskGroup() /*override*/;
 
-    // vIndex: 3
     virtual void taskRegister(::std::shared_ptr<::BackgroundTaskBase> task) /*override*/;
 
-    // vIndex: 4
     virtual void requeueTask(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate) /*override*/;
 
-    // vIndex: 5
     virtual ::TaskGroupState getState() const /*override*/;
 
-    // vIndex: 6
     virtual void processCoroutines() /*override*/;
 
-    // vIndex: 7
     virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*> task) /*override*/;
 
-    // vIndex: 8
     virtual bool _workerPoolIsAsync() const;
     // NOLINTEND
 
@@ -124,9 +115,15 @@ public:
 
     MCAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
 
+    MCAPI_C uint64 count() const;
+
     MCAPI void flush(::std::function<void()> waitFn);
 
     MCAPI bool isEmpty() const;
+
+    MCAPI_C void kick(uint count);
+
+    MCAPI_C void resume();
 
     MCAPI void sync_DEPRECATED_ASK_TOMMO(::std::function<void()> waitFn);
     // NOLINTEND
@@ -172,6 +169,8 @@ public:
     MCAPI void $taskComplete(::gsl::not_null<::BackgroundTaskBase*> task);
 
     MCAPI bool $_workerPoolIsAsync() const;
+
+
     // NOLINTEND
 
 public:

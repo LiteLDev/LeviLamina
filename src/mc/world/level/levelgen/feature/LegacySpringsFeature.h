@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
-#include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,41 +18,43 @@ class LegacySpringsFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mWaterSpringFeature;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mLavaSpringFeature;
-    ::ll::TypedStorage<1, 1, bool>                   mIsCavesAndCliffsUpdate;
+    ::ll::UntypedStorage<8, 24> mUnk1b6150;
+    ::ll::UntypedStorage<8, 24> mUnkf240b4;
+    ::ll::UntypedStorage<1, 1>  mUnk1220d0;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    LegacySpringsFeature& operator=(LegacySpringsFeature const&);
+    LegacySpringsFeature(LegacySpringsFeature const&);
     LegacySpringsFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LegacySpringsFeature() /*override*/ = default;
 
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacySpringsFeature(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
+    MCNAPI LegacySpringsFeature(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
+    MCNAPI void* $ctor(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

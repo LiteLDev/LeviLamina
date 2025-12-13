@@ -14,13 +14,10 @@ class IResourceRepositories {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IResourceRepositories() = default;
 
-    // vIndex: 1
     virtual void fillPackAssociations(::std::vector<::gsl::not_null<::PackCommand::PackAssociations*>>&) = 0;
 
-    // vIndex: 2
     virtual void removePacks(::std::vector<::gsl::not_null<::Pack const*>> const&) = 0;
     // NOLINTEND
 

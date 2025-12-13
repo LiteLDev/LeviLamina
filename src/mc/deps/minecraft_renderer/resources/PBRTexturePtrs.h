@@ -24,6 +24,18 @@ public:
         MERSTexturePtr& operator=(MERSTexturePtr const&);
         MERSTexturePtr(MERSTexturePtr const&);
         MERSTexturePtr();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ~MERSTexturePtr();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
 
     struct NormalTexturePtr {
@@ -52,6 +64,25 @@ public:
 public:
     // prevent constructor by default
     PBRTexturePtrs& operator=(PBRTexturePtrs const&);
-    PBRTexturePtrs(PBRTexturePtrs const&);
     PBRTexturePtrs();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C PBRTexturePtrs(::PBRTexturePtrs const&);
+
+    MCNAPI_C ~PBRTexturePtrs();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::PBRTexturePtrs const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

@@ -17,15 +17,18 @@ public:
 
 public:
     // prevent constructor by default
-    RedactableString(RedactableString const&);
     RedactableString();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C RedactableString(::Bedrock::Safety::RedactableString const&);
+
     MCAPI RedactableString(::std::string&& unredactedString, ::std::optional<::std::string>&& redactedString);
 
     MCAPI void append(::std::string rhs);
+
+    MCAPI_C void clear();
 
     MCAPI ::Bedrock::Result<void> erase(uint64 offset, uint64 count);
 
@@ -33,9 +36,9 @@ public:
 
     MCAPI void operator+=(::Bedrock::Safety::RedactableString const& rhs);
 
-    MCFOLD ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString const&);
-
     MCAPI ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString&&);
+
+    MCFOLD ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString const&);
 
     MCAPI ::Bedrock::Safety::RedactableString& operator=(::std::string&& unredactedString);
 
@@ -51,6 +54,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI_C void* $ctor(::Bedrock::Safety::RedactableString const&);
+
     MCAPI void* $ctor(::std::string&& unredactedString, ::std::optional<::std::string>&& redactedString);
     // NOLINTEND
 

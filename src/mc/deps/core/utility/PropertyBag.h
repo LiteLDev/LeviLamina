@@ -14,8 +14,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C bool has(::std::string_view key) const;
+
+    MCNAPI_C ~PropertyBag();
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::PropertyBag& EMPTY();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
     // NOLINTEND
 };

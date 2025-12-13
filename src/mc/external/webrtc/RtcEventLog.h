@@ -30,19 +30,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RtcEventLog() = default;
 
-    // vIndex: 1
     virtual bool StartLogging(::std::unique_ptr<::webrtc::RtcEventLogOutput>, int64) = 0;
 
-    // vIndex: 3
     virtual void StopLogging() = 0;
 
-    // vIndex: 2
     virtual void StopLogging(::std::function<void()> callback);
 
-    // vIndex: 4
     virtual void Log(::std::unique_ptr<::webrtc::RtcEvent>) = 0;
     // NOLINTEND
 
@@ -50,6 +45,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $StopLogging(::std::function<void()> callback);
+
+
     // NOLINTEND
 };
 

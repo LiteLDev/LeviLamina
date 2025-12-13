@@ -34,15 +34,15 @@ public:
         UseAsAttack = 3,
     };
 
+    enum class PredictedResult : uchar {
+        Failure = 0,
+        Success = 1,
+    };
+
     enum class TriggerType : uchar {
         Unknown        = 0,
         PlayerInput    = 1,
         SimulationTick = 2,
-    };
-
-    enum class PredictedResult : uchar {
-        Failure = 0,
-        Success = 1,
     };
 
 public:
@@ -63,22 +63,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ItemUseInventoryTransaction() /*override*/;
 
-    // vIndex: 1
     virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    // vIndex: 2
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 3
     virtual void postLoadItems(::BlockPalette& blockPalette, bool isClientSide) /*override*/;
 
-    // vIndex: 5
     virtual void onTransactionError(::Player& player, ::InventoryTransactionError error) const /*override*/;
 
-    // vIndex: 4
     virtual ::InventoryTransactionError handle(::Player& player, bool isSenderAuthority) const /*override*/;
     // NOLINTEND
 
@@ -145,6 +139,8 @@ public:
     MCAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
     MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+
+
     // NOLINTEND
 
 public:

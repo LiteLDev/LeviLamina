@@ -24,26 +24,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SidePoweredComponent() /*override*/;
 
-    // vIndex: 26
     virtual uchar getPoweroutDirection() const /*override*/;
 
-    // vIndex: 12
     virtual bool
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
-    // vIndex: 6
     virtual bool canConsumePowerAnyDirection() const /*override*/;
 
-    // vIndex: 7
     virtual bool canConsumerPower() const /*override*/;
 
-    // vIndex: 10
     virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent) /*override*/;
 
-    // vIndex: 23
     virtual void removeFromAnySourceList(::BaseCircuitComponent const* component) /*override*/;
     // NOLINTEND
 
@@ -73,6 +66,8 @@ public:
     MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
     MCAPI void $removeFromAnySourceList(::BaseCircuitComponent const* component);
+
+
     // NOLINTEND
 
 public:

@@ -27,20 +27,40 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::glm::vec3 eval(float) const /*override*/;
+    virtual ::glm::vec3 eval(float t) const /*override*/;
 
-    // vIndex: 2
     virtual ::CameraSplineUtils::SplineType getType() const /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~Hermite3d() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~Hermite3d() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::glm::vec3 $eval(float t) const;
 
+    MCNAPI ::CameraSplineUtils::SplineType $getType() const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

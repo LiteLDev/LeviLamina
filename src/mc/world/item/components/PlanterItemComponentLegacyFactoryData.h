@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/util/Reference.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -18,8 +16,8 @@ struct PlanterItemComponentLegacyFactoryData : public ::IItemComponentLegacyFact
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<0>>      mBlock;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedUseBlocks;
+    ::ll::UntypedStorage<8, 32> mUnk818f9b;
+    ::ll::UntypedStorage<8, 24> mUnkd8bb46;
     // NOLINTEND
 
 public:
@@ -31,7 +29,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PlanterItemComponentLegacyFactoryData() /*override*/;
     // NOLINTEND
 

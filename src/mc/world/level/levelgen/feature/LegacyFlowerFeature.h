@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
-#include "mc/world/level/levelgen/feature/helpers/FlowerPlacementType.h"
-#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,25 +16,31 @@ class LegacyFlowerFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::FlowerPlacementType>       mPlacementType;
-    ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise const> mBiomeInfoNoise;
-    ::ll::TypedStorage<4, 4, int const>                   mIterations;
+    ::ll::UntypedStorage<4, 4>  mUnk6a2ff7;
+    ::ll::UntypedStorage<8, 40> mUnk2a37af;
+    ::ll::UntypedStorage<4, 4>  mUnka5beed;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LegacyFlowerFeature& operator=(LegacyFlowerFeature const&);
+    LegacyFlowerFeature(LegacyFlowerFeature const&);
+    LegacyFlowerFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 0
     virtual ~LegacyFlowerFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

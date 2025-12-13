@@ -13,6 +13,11 @@ public:
     // clang-format on
 
     // Bounds inner types define
+    enum class Option : int {
+        Default = 0,
+        Flatten = 1,
+    };
+
     struct Iterator {
     public:
         // member variables
@@ -27,11 +32,6 @@ public:
         Iterator& operator=(Iterator const&);
         Iterator(Iterator const&);
         Iterator();
-    };
-
-    enum class Option : int {
-        Default = 0,
-        Flatten = 1,
     };
 
 public:

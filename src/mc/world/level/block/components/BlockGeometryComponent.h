@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Matrix.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/block/components/BlockGeometryDescription.h"
 
@@ -22,15 +21,21 @@ public:
     // clang-format on
 
     // BlockGeometryComponent inner types define
-    struct DefaultRenderer {};
-
     struct DefaultPlusEmbeddedRenderer {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 64, ::Matrix> mTransformationMatrix;
+        ::ll::UntypedStorage<4, 64> mUnkd0d89e;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DefaultPlusEmbeddedRenderer& operator=(DefaultPlusEmbeddedRenderer const&);
+        DefaultPlusEmbeddedRenderer(DefaultPlusEmbeddedRenderer const&);
+        DefaultPlusEmbeddedRenderer();
     };
+
+    struct DefaultRenderer {};
 
     using Renderer = ::std::
         variant<::BlockGeometryComponent::DefaultRenderer, ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer>;
@@ -58,29 +63,33 @@ public:
 
 public:
     // prevent constructor by default
-    BlockGeometryComponent& operator=(BlockGeometryComponent const&);
     BlockGeometryComponent(BlockGeometryComponent const&);
-    BlockGeometryComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription);
+    MCNAPI_C BlockGeometryComponent();
 
-    MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent&&);
+    MCNAPI explicit BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription);
 
-    MCAPI ~BlockGeometryComponent();
+    MCNAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent&&);
+
+    MCNAPI_C ::BlockGeometryComponent& operator=(::BlockGeometryComponent const&);
+
+    MCNAPI ~BlockGeometryComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockGeometryDescription const& blockGeometryDescription);
+    MCNAPI_C void* $ctor();
+
+    MCNAPI void* $ctor(::BlockGeometryDescription const& blockGeometryDescription);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -30,11 +30,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void
     sendActorUseItemEvent(::EntityContext& actor, ::ItemStack& item, ::ItemUseMethod useMethod) /*override*/;
 
-    // vIndex: 0
     virtual ~ActorEventCoordinatorDependencies() /*override*/ = default;
     // NOLINTEND
 
@@ -42,6 +40,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $sendActorUseItemEvent(::EntityContext& actor, ::ItemStack& item, ::ItemUseMethod useMethod);
+
+
     // NOLINTEND
 
 public:

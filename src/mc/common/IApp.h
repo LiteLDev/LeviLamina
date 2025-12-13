@@ -9,41 +9,39 @@ class IApp : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~IApp() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~IApp() /*override*/;
+#endif
 
-    // vIndex: 1
     virtual void init() = 0;
 
-    // vIndex: 2
     virtual bool isInited() = 0;
 
-    // vIndex: 3
     virtual void changeContext() = 0;
 
-    // vIndex: 4
     virtual void quit(::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 5
     virtual bool wantToQuit() = 0;
 
-    // vIndex: 6
     virtual void setRenderingSize(int, int) = 0;
 
-    // vIndex: 7
     virtual void setUISizeAndScale(int, int, float) = 0;
 
-    // vIndex: 8
     virtual void muteAudio() = 0;
 
-    // vIndex: 9
     virtual void unMuteAudio() = 0;
 
-    // vIndex: 10
     virtual void audioEngineOn() = 0;
 
-    // vIndex: 11
     virtual void audioEngineOff() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

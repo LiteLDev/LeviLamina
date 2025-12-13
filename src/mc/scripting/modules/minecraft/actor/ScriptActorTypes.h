@@ -17,40 +17,35 @@ namespace ScriptModuleMinecraft {
 
 class ScriptActorTypes {
 public:
-    // ScriptActorTypes inner types define
-    using ActorTypesMap = ::std::
-        unordered_map<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::unordered_map<
-            ::std::string,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>>
-                                                                      mActorTypes;
-    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::Level const>> mLevel;
-    ::ll::TypedStorage<1, 1, bool>                                    mRegisteredTypes;
+    ::ll::UntypedStorage<8, 64> mUnk883648;
+    ::ll::UntypedStorage<8, 8>  mUnk5bfa27;
+    ::ll::UntypedStorage<1, 1>  mUnk4ca34e;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptActorTypes& operator=(ScriptActorTypes const&);
+    ScriptActorTypes(ScriptActorTypes const&);
+    ScriptActorTypes();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void add(::Scripting::WeakLifetimeScope& scope, ::std::string const& actorName);
+    MCNAPI void add(::Scripting::WeakLifetimeScope& scope, ::std::string const& actorName);
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>
     get(::std::string const& actorName);
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>
     getAll(::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
     // NOLINTEND
 };
 

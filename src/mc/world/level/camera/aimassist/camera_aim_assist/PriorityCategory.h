@@ -23,12 +23,13 @@ public:
 public:
     // prevent constructor by default
     PriorityCategory& operator=(PriorityCategory const&);
-    PriorityCategory(PriorityCategory const&);
     PriorityCategory();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C PriorityCategory(::CameraAimAssist::PriorityCategory const&);
+
     MCNAPI PriorityCategory(
         ::HashedString const&                            id,
         int                                              defaultBlockPriority,
@@ -36,6 +37,10 @@ public:
         int                                              defaultEntityPriority,
         ::std::unordered_map<::HashedString, int> const& entityPriority
     );
+
+    MCNAPI_C ::CameraAimAssist::PriorityCategory& operator=(::CameraAimAssist::PriorityCategory&&);
+
+    MCNAPI_C ~PriorityCategory();
     // NOLINTEND
 
 public:
@@ -47,6 +52,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::CameraAimAssist::PriorityCategory const&);
+
     MCNAPI void* $ctor(
         ::HashedString const&                            id,
         int                                              defaultBlockPriority,
@@ -54,6 +61,12 @@ public:
         int                                              defaultEntityPriority,
         ::std::unordered_map<::HashedString, int> const& entityPriority
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
     // NOLINTEND
 };
 

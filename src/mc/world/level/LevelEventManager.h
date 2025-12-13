@@ -52,14 +52,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelEventManager() /*override*/;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
     getLevelEventDataConnector() /*override*/;
 
-    // vIndex: 2
     virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
     getLevelEventCompoundTagConnector() /*override*/;
     // NOLINTEND
@@ -107,6 +104,8 @@ public:
 
     MCNAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
     $getLevelEventCompoundTagConnector();
+
+
     // NOLINTEND
 
 public:

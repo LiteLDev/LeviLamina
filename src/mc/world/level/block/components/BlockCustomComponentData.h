@@ -2,21 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/cereal/schema/dynamic/DynamicValue.h"
-#include "mc/deps/core/string/HashedString.h"
-#include "mc/scripting/modules/minecraft/ScriptCustomComponentParameterCacheHandle.h"
-
 struct BlockCustomComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString> mName;
-    ::ll::TypedStorage<
-        8,
-        80,
-        ::std::variant<::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle, ::cereal::DynamicValue>>
-        mData;
+    ::ll::UntypedStorage<8, 48> mUnkd9ee96;
+    ::ll::UntypedStorage<8, 80> mUnk12f0f1;
     // NOLINTEND
 
 public:
@@ -27,16 +18,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::BlockCustomComponentData& operator=(::BlockCustomComponentData&&);
+    MCNAPI ::BlockCustomComponentData& operator=(::BlockCustomComponentData&&);
 
-    MCAPI ::BlockCustomComponentData& operator=(::BlockCustomComponentData const&);
+    MCNAPI ::BlockCustomComponentData& operator=(::BlockCustomComponentData const&);
 
-    MCAPI ~BlockCustomComponentData();
+    MCNAPI ~BlockCustomComponentData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

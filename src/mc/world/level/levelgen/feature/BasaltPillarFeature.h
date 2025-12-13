@@ -17,20 +17,18 @@ class BasaltPillarFeature : public ::Feature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 0
     virtual ~BasaltPillarFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _blendAtGroundLevel(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::Block const& basalt) const;
 
-    MCAPI bool _growColumn(
+    MCNAPI bool _growColumn(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         ::Random&         random,
@@ -42,7 +40,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

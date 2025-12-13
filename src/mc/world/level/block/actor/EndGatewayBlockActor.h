@@ -36,28 +36,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 20
     virtual bool hasAlphaLayer() const /*override*/;
 
-    // vIndex: 16
     virtual void triggerEvent(int b0, int b1) /*override*/;
 
-    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 0
     virtual ~EndGatewayBlockActor() /*override*/ = default;
     // NOLINTEND
 
@@ -96,6 +88,8 @@ public:
     MCAPI void $triggerEvent(int b0, int b1);
 
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
+
     // NOLINTEND
 
 public:

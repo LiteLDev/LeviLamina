@@ -15,10 +15,8 @@ class IStructureConstraint {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IStructureConstraint() = default;
 
-    // vIndex: 1
     virtual bool isSatisfied(::IBlockWorldGenAPI const&, ::BlockPos const&, ::Rotation const&) const = 0;
     // NOLINTEND
 

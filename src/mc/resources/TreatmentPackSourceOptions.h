@@ -16,4 +16,16 @@ public:
     TreatmentPackSourceOptions& operator=(TreatmentPackSourceOptions const&);
     TreatmentPackSourceOptions(TreatmentPackSourceOptions const&);
     TreatmentPackSourceOptions();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~TreatmentPackSourceOptions();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

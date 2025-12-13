@@ -41,9 +41,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ClassBinding();
 
-    MCNAPI ClassBinding(::Scripting::ClassBinding const&);
-
     MCNAPI ClassBinding(::Scripting::ClassBinding&&);
+
+    MCNAPI ClassBinding(::Scripting::ClassBinding const&);
 
     MCNAPI ClassBinding(
         ::std::string                                   name_,
@@ -66,9 +66,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::Scripting::ClassBinding const&);
-
     MCNAPI void* $ctor(::Scripting::ClassBinding&&);
+
+    MCNAPI void* $ctor(::Scripting::ClassBinding const&);
 
     MCNAPI void* $ctor(
         ::std::string                                   name_,

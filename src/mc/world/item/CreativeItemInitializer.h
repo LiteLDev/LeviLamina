@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/world/item/registry/ItemRegistryRef.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,6 +11,7 @@ class BaseGameVersion;
 class CreativeGroupInfo;
 class CreativeItemRegistry;
 class ItemInstance;
+class ItemRegistryRef;
 struct BlockDefinition;
 // clang-format on
 
@@ -19,38 +19,40 @@ class CreativeItemInitializer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::ItemRegistryRef const>                                     mItemRegistry;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> const> mCreativeItemRegistry;
-    ::ll::TypedStorage<8, 16, ::std::set<short>> mServerItemsUsedInCreativeItems;
+    ::ll::UntypedStorage<8, 16> mUnkd28e76;
+    ::ll::UntypedStorage<8, 24> mUnk270cf8;
+    ::ll::UntypedStorage<8, 16> mUnkbbebb3;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    CreativeItemInitializer& operator=(CreativeItemInitializer const&);
+    CreativeItemInitializer(CreativeItemInitializer const&);
     CreativeItemInitializer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CreativeItemInitializer(
+    MCNAPI CreativeItemInitializer(
         ::ItemRegistryRef const&                              itemRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry
     );
 
-    MCAPI void _addCreativeItemServer(::CreativeGroupInfo& creativeGroupInfo, ::ItemInstance const& itemInstance);
+    MCNAPI void _addCreativeItemServer(::CreativeGroupInfo& creativeGroupInfo, ::ItemInstance const& itemInstance);
 
-    MCAPI void _addLooseCreativeItem(::ItemInstance const& itemInstance);
+    MCNAPI void _addLooseCreativeItem(::ItemInstance const& itemInstance);
 
-    MCAPI void _addLooseCreativeItemsServer(::BaseGameVersion const& worldVersion);
+    MCNAPI void _addLooseCreativeItemsServer(::BaseGameVersion const& worldVersion);
 
-    MCAPI void addLooseBlocks(::std::vector<::BlockDefinition const*> const& blockDefinitions);
+    MCNAPI void addLooseBlocks(::std::vector<::BlockDefinition const*> const& blockDefinitions);
 
-    MCAPI ~CreativeItemInitializer();
+    MCNAPI ~CreativeItemInitializer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ItemRegistryRef const&                              itemRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry
     );
@@ -59,6 +61,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

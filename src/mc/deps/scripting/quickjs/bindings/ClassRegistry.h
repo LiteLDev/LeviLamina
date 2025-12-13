@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/binding_type/PropertyBinding.h"
+#include "mc/deps/scripting/quickjs/bindings/RegisteredClass.h"
+
 // auto generated forward declare list
 // clang-format off
 struct JSContext;
@@ -11,9 +15,7 @@ namespace Scripting { struct EqualPropertyBinding; }
 namespace Scripting { struct ErrorBinding; }
 namespace Scripting { struct HashPropertyBinding; }
 namespace Scripting { struct InterfaceBinding; }
-namespace Scripting { struct PropertyBinding; }
 namespace Scripting { struct TypeNameInfo; }
-namespace Scripting::QuickJS { class RegisteredClass; }
 namespace Scripting::QuickJS { class RegisteredEnum; }
 namespace Scripting::QuickJS { class RegisteredError; }
 namespace Scripting::QuickJS { class RegisteredInterface; }

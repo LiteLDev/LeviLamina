@@ -20,17 +20,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual ::std::string_view getStructureName() const /*override*/;
 
-    // vIndex: 0
     virtual ~RuinedPortalStart() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RuinedPortalStart(
+    MCNAPI RuinedPortalStart(
         ::BiomeRegistry&                     registry,
         ::BiomeSource const&                 source,
         int                                  chunkX,
@@ -42,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BiomeRegistry&                     registry,
         ::BiomeSource const&                 source,
         int                                  chunkX,
@@ -54,7 +52,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view $getStructureName() const;
+    MCNAPI ::std::string_view $getStructureName() const;
+
+
     // NOLINTEND
 
 public:

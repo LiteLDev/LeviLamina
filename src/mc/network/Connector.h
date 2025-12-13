@@ -26,16 +26,12 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~ConnectionCallbacks() = default;
 
-        // vIndex: 1
         virtual bool onNewIncomingConnection(::NetworkIdentifier const&, ::std::shared_ptr<::NetworkPeer>&&) = 0;
 
-        // vIndex: 2
         virtual bool onNewOutgoingConnection(::NetworkIdentifier const&, ::std::shared_ptr<::NetworkPeer>&&) = 0;
 
-        // vIndex: 3
         virtual void onConnectionClosed(
             ::NetworkIdentifier const&,
             ::Connection::DisconnectFailReason const,
@@ -67,31 +63,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Connector();
 
-    // vIndex: 1
     virtual ::std::string getLocalIp();
 
-    // vIndex: 2
     virtual ushort getPort() const;
 
-    // vIndex: 3
     virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const;
 
-    // vIndex: 4
     virtual bool isIPv4Supported() const;
 
-    // vIndex: 5
     virtual bool isIPv6Supported() const;
 
-    // vIndex: 6
     virtual ushort getIPv4Port() const;
 
-    // vIndex: 7
     virtual ushort getIPv6Port() const;
 
-    // vIndex: 8
     virtual ::TransportLayer getNetworkType() const;
     // NOLINTEND
 
@@ -118,7 +105,11 @@ public:
 
     MCNAPI ushort $getIPv6Port() const;
 
+#ifdef LL_PLAT_S
     MCNAPI ::TransportLayer $getNetworkType() const;
+#endif
+
+
     // NOLINTEND
 
 public:

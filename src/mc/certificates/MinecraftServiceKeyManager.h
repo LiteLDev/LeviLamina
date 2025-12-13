@@ -62,7 +62,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MinecraftServiceKeyManager() /*override*/;
     // NOLINTEND
 
@@ -71,20 +70,20 @@ public:
     // NOLINTBEGIN
     MCNAPI MinecraftServiceKeyManager();
 
-    MCNAPI void _blockingInitRecursive(
+    MCNAPI_S void _blockingInitRecursive(
         ::MinecraftServiceKeyInfo                                                     keyFetchResult,
         ::std::shared_ptr<::MinecraftServiceKeyManager::BlockingInitRecursiveContext> context
     );
 
     MCNAPI ::Bedrock::Threading::Async<::MinecraftServiceKeyInfo> _fullFetch(bool highPriority);
 
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> _getAuthServiceUrl();
+    MCNAPI_S ::Bedrock::Threading::Async<::Bedrock::Http::Url> _getAuthServiceUrl();
 
-    MCNAPI ::std::future<bool> blockingInit();
+    MCNAPI_S ::std::future<bool> blockingInit();
 
     MCNAPI ::MinecraftServiceKeyInfo getKeyInfo() const;
 
-    MCNAPI void setDiscoveryHelper(::Bedrock::NonOwnerPointer<::Bedrock::Services::DiscoveryHelper> discoveryHelper);
+    MCNAPI_S void setDiscoveryHelper(::Bedrock::NonOwnerPointer<::Bedrock::Services::DiscoveryHelper> discoveryHelper);
     // NOLINTEND
 
 public:

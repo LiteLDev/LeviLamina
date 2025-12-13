@@ -22,6 +22,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float& COOLDOWN_TIME_SECONDS();
+    MCNAPI static float& COOLDOWN_TIME_SECONDS();
     // NOLINTEND
 };

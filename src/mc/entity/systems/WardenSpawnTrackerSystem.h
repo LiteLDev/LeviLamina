@@ -17,13 +17,10 @@ class WardenSpawnTrackerSystem : public ::ITickingSystem, public ::LevelEventLis
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 2
     virtual ::EventResult onLevelAddedPlayer(::Player& player) /*override*/;
 
-    // vIndex: 0
     virtual ~WardenSpawnTrackerSystem() /*override*/ = default;
     // NOLINTEND
 
@@ -33,6 +30,8 @@ public:
     MCNAPI void $tick(::EntityRegistry& registry);
 
     MCNAPI ::EventResult $onLevelAddedPlayer(::Player& player);
+
+
     // NOLINTEND
 
 public:

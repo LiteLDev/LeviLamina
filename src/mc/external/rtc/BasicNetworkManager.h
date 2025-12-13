@@ -50,22 +50,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ~BasicNetworkManager() /*override*/;
 
-    // vIndex: 3
     virtual void StartUpdating() /*override*/;
 
-    // vIndex: 4
     virtual void StopUpdating() /*override*/;
 
-    // vIndex: 8
     virtual void DumpNetworks() /*override*/;
 
-    // vIndex: 9
     virtual void set_vpn_list(::std::vector<::rtc::NetworkMask> const& vpn) /*override*/;
 
-    // vIndex: 0
     virtual ::rtc::NetworkBindingResult
     BindSocketToNetwork(int socket_fd, ::rtc::IPAddress const& address) /*override*/;
     // NOLINTEND
@@ -126,6 +120,8 @@ public:
     MCNAPI void $set_vpn_list(::std::vector<::rtc::NetworkMask> const& vpn);
 
     MCNAPI ::rtc::NetworkBindingResult $BindSocketToNetwork(int socket_fd, ::rtc::IPAddress const& address);
+
+
     // NOLINTEND
 
 public:

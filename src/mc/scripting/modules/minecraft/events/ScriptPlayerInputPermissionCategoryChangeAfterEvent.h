@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/entity/enums/ClientInputLockCategory.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -18,16 +13,22 @@ struct ScriptPlayerInputPermissionCategoryChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
-                                                        mPlayerHandle;
-    ::ll::TypedStorage<1, 1, ::ClientInputLockCategory> mCategory;
-    ::ll::TypedStorage<1, 1, bool>                      mEnabled;
+    ::ll::UntypedStorage<8, 32> mUnk582b07;
+    ::ll::UntypedStorage<1, 1>  mUnk85edce;
+    ::ll::UntypedStorage<1, 1>  mUnkcfc97a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptPlayerInputPermissionCategoryChangeAfterEvent&
+    operator=(ScriptPlayerInputPermissionCategoryChangeAfterEvent const&);
+    ScriptPlayerInputPermissionCategoryChangeAfterEvent(ScriptPlayerInputPermissionCategoryChangeAfterEvent const&);
+    ScriptPlayerInputPermissionCategoryChangeAfterEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

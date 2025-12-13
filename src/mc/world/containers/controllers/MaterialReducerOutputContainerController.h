@@ -20,16 +20,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MaterialReducerOutputContainerController() /*override*/ = default;
 
-    // vIndex: 3
-    virtual bool isItemAllowed(::ItemStackBase const&) const /*override*/;
+    virtual bool isItemAllowed(::ItemStackBase const& item) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool $isItemAllowed(::ItemStackBase const& item) const;
+#endif
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -13,6 +13,8 @@ class EntityContext;
 namespace SynchedActorDataAccess {
 // functions
 // NOLINTBEGIN
+MCAPI_C float getBoundingBoxScale(::EntityContext const& entity);
+
 MCAPI int getControllingSeatIndex(::EntityContext const& entity);
 
 MCAPI int getJumpDuration(::EntityContext const& entity);

@@ -39,31 +39,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::string const& transport_name() const = 0;
 
-    // vIndex: 2
     virtual bool writable() const = 0;
 
-    // vIndex: 3
     virtual bool receiving() const = 0;
 
-    // vIndex: 4
     virtual int SendPacket(char const*, uint64, ::rtc::PacketOptions const&, int) = 0;
 
-    // vIndex: 5
     virtual int SetOption(::rtc::Socket::Option, int) = 0;
 
-    // vIndex: 6
     virtual bool GetOption(::rtc::Socket::Option opt, int* value);
 
-    // vIndex: 7
     virtual int GetError() = 0;
 
-    // vIndex: 8
     virtual ::std::optional<::rtc::NetworkRoute> network_route() const;
 
-    // vIndex: 0
     virtual ~PacketTransportInternal() /*override*/;
     // NOLINTEND
 
@@ -104,6 +95,8 @@ public:
     MCNAPI bool $GetOption(::rtc::Socket::Option opt, int* value);
 
     MCNAPI ::std::optional<::rtc::NetworkRoute> $network_route() const;
+
+
     // NOLINTEND
 
 public:

@@ -5,7 +5,7 @@
 namespace ChiseledBookshelfBlockActorKeys {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& Items();
+MCNAPI ::std::string const& Items();
 // NOLINTEND
 
 } // namespace ChiseledBookshelfBlockActorKeys

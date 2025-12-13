@@ -16,14 +16,11 @@ struct BiomeTypeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool
     resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&) /*override*/;
 
-    // vIndex: 2
     virtual void applyToBiome(::Biome&, ::SharedTypes::v1_20_60::IBiomeJsonComponent const&) const /*override*/;
 
-    // vIndex: 0
     virtual ~BiomeTypeComponentGlue() /*override*/ = default;
     // NOLINTEND
 

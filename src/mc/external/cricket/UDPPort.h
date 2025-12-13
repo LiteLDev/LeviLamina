@@ -8,6 +8,7 @@
 #include "mc/external/cricket/ProtocolType.h"
 #include "mc/external/rtc/DiffServCodePoint.h"
 #include "mc/external/rtc/Socket.h"
+#include "mc/external/rtc/SocketAddress.h"
 #include "mc/external/webrtc/IceCandidateType.h"
 
 // auto generated forward declare list
@@ -20,7 +21,6 @@ namespace rtc { class AsyncPacketSocket; }
 namespace rtc { class Network; }
 namespace rtc { class PacketSocketFactory; }
 namespace rtc { class ReceivedPacket; }
-namespace rtc { class SocketAddress; }
 namespace rtc { class Thread; }
 namespace rtc { struct PacketOptions; }
 namespace rtc { struct SentPacket; }
@@ -108,41 +108,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~UDPPort() /*override*/;
 
-    // vIndex: 9
     virtual void PrepareAddress() /*override*/;
 
-    // vIndex: 11
     virtual ::cricket::Connection* CreateConnection(
         ::cricket::Candidate const&               address,
         ::cricket::PortInterface::CandidateOrigin origin
     ) /*override*/;
 
-    // vIndex: 12
     virtual int SetOption(::rtc::Socket::Option opt, int value) /*override*/;
 
-    // vIndex: 13
     virtual int GetOption(::rtc::Socket::Option opt, int* value) /*override*/;
 
-    // vIndex: 14
     virtual int GetError() /*override*/;
 
-    // vIndex: 41
     virtual bool
     HandleIncomingPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet) /*override*/;
 
-    // vIndex: 8
     virtual bool SupportsProtocol(::std::string_view protocol) const /*override*/;
 
-    // vIndex: 15
     virtual ::cricket::ProtocolType GetProtocol() const /*override*/;
 
-    // vIndex: 22
     virtual void GetStunStats(::std::optional<::cricket::StunStats>* stats) /*override*/;
 
-    // vIndex: 17
     virtual int SendTo(
         void const*                 data,
         uint64                      size,
@@ -151,16 +140,12 @@ public:
         bool                        payload
     ) /*override*/;
 
-    // vIndex: 34
     virtual void UpdateNetworkCost() /*override*/;
 
-    // vIndex: 35
     virtual ::rtc::DiffServCodePoint StunDscpValue() const /*override*/;
 
-    // vIndex: 44
     virtual void PostAddAddress(bool is_final) /*override*/;
 
-    // vIndex: 43
     virtual void OnSentPacket(::rtc::AsyncPacketSocket* socket, ::rtc::SentPacket const& sent_packet) /*override*/;
     // NOLINTEND
 
@@ -305,6 +290,8 @@ public:
     MCNAPI void $PostAddAddress(bool is_final);
 
     MCNAPI void $OnSentPacket(::rtc::AsyncPacketSocket* socket, ::rtc::SentPacket const& sent_packet);
+
+
     // NOLINTEND
 
 public:

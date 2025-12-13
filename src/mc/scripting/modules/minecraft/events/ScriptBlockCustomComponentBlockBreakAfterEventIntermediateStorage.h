@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/scripting/modules/minecraft/actor/ScriptActorData.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentAfterEventIntermediateStorage.h"
-#include "mc/world/level/BlockPos.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -22,32 +20,42 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 12, ::BlockPos const> mPos;
+        ::ll::UntypedStorage<4, 12> mUnkb9ac1c;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BlockCause& operator=(BlockCause const&);
+        BlockCause(BlockCause const&);
+        BlockCause();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::std::optional<::ScriptModuleMinecraft::ScriptActorData> const> mEntity;
-    ::ll::TypedStorage<
-        4,
-        16,
-        ::std::optional<::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage::
-                            BlockCause> const>
-        mDestructionCauseBlock;
+    ::ll::UntypedStorage<8, 104> mUnkb9f6c0;
+    ::ll::UntypedStorage<4, 16>  mUnk23bc09;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage&
+    operator=(ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage const&);
+    ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage(
+        ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage const&
+    );
+    ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage();
+    MCNAPI ~ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

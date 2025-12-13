@@ -23,20 +23,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 168
     virtual bool createAIGoals() /*override*/;
 
-    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 8
     virtual ~Dolphin() /*override*/ = default;
     // NOLINTEND
 
@@ -70,6 +65,8 @@ public:
     MCAPI bool $createAIGoals();
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+
     // NOLINTEND
 
 public:

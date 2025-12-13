@@ -18,6 +18,18 @@ public:
     Scene& operator=(Scene const&);
     Scene(Scene const&);
     Scene();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~Scene();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace glTF

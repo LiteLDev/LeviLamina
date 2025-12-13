@@ -15,4 +15,16 @@ public:
     ReceiptData_Apple& operator=(ReceiptData_Apple const&);
     ReceiptData_Apple(ReceiptData_Apple const&);
     ReceiptData_Apple();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~ReceiptData_Apple();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

@@ -23,31 +23,53 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void init() /*override*/;
 
-    // vIndex: 2
     virtual bool isInited() /*override*/;
 
-    // vIndex: 3
     virtual void changeContext() /*override*/;
 
-    // vIndex: 4
-    virtual void quit(::std::string const&, ::std::string const&) /*override*/;
+    virtual void quit(::std::string const& src, ::std::string const& reason) /*override*/;
 
-    // vIndex: 5
     virtual bool wantToQuit() /*override*/;
 
-    // vIndex: 12
     virtual void initImpl() = 0;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~App() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~App() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $init();
 
+    MCNAPI bool $isInited();
+
+    MCNAPI void $changeContext();
+
+    MCNAPI void $quit(::std::string const& src, ::std::string const& reason);
+
+    MCNAPI bool $wantToQuit();
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForAppPlatformListener();
     // NOLINTEND
 };

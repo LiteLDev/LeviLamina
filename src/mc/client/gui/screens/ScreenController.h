@@ -15,11 +15,12 @@
 // clang-format off
 class BlockPos;
 class ScreenControllerProxy;
+class StringHash;
+class TaskResult;
 class UIPropertyBag;
 struct ActorUniqueID;
 struct FocusMoveScreenEventData;
 struct InputModeChangeScreenEventData;
-struct ItemRendererData;
 struct PointerHeldScreenEventData;
 struct RawInputScreenEventData;
 struct ScreenEvent;
@@ -29,6 +30,7 @@ struct TextEditSelectedStateChangeEventData;
 struct ToggleChangeEventData;
 namespace Json { class Value; }
 namespace mce { class Color; }
+struct ItemRendererData;
 // clang-format on
 
 class ScreenController : public ::IScreenController {
@@ -98,128 +100,472 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~ScreenController() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ScreenController() /*override*/;
+#endif
 
-    // vIndex: 2
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    // vIndex: 1
     virtual void preFrameTick() /*override*/;
 
-    // vIndex: 3
-    virtual ::ui::ViewRequest handleEvent(::ScreenEvent&) /*override*/;
+    virtual ::ui::ViewRequest handleEvent(::ScreenEvent& screenEvent) /*override*/;
 
-    // vIndex: 4
     virtual ::std::optional<::std::string> getRoute() const /*override*/;
 
-    // vIndex: 5
     virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) /*override*/;
 
-    // vIndex: 6
     virtual void onOpen();
 
-    // vIndex: 7
     virtual void queueTitleNarration();
 
-    // vIndex: 8
     virtual void onTerminate();
 
-    // vIndex: 9
     virtual void onInit();
 
-    // vIndex: 10
     virtual void onDelete();
 
-    // vIndex: 11
     virtual bool canExit();
 
-    // vIndex: 12
     virtual ::ui::ViewRequest tryExit();
 
-    // vIndex: 13
     virtual void onCreation();
 
-    // vIndex: 14
     virtual void onReload();
 
-    // vIndex: 15
     virtual void onLeave();
 
-    // vIndex: 16
     virtual void leaveScreen(::std::string const&);
 
-    // vIndex: 17
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification);
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification);
 
-    // vIndex: 19
-    virtual bool
-    bind(::std::string const&, uint, int, ::std::string const&, uint, ::std::string const&, ::UIPropertyBag&);
+    virtual bool bind(
+        ::std::string const& collectionName,
+        uint                 collectionNameHash,
+        int                  collectionIndex,
+        ::std::string const& bindingName,
+        uint                 bindingNameHash,
+        ::std::string const& bindingNameOverride,
+        ::UIPropertyBag&     bag
+    );
 
-    // vIndex: 18
-    virtual bool bind(::std::string const&, uint, ::std::string const&, ::UIPropertyBag&);
+    virtual bool bind(
+        ::std::string const& bindingName,
+        uint                 bindingNameHash,
+        ::std::string const& bindingNameOverride,
+        ::UIPropertyBag&     bag
+    );
 
-    // vIndex: 20
     virtual void handleLicenseChanged();
 
-    // vIndex: 21
-    virtual void setAssociatedBlockPos(::BlockPos const&);
+    virtual void setAssociatedBlockPos(::BlockPos const& pos);
 
-    // vIndex: 22
-    virtual void setAssociatedEntityUniqueID(::ActorUniqueID const);
+    virtual void setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID);
 
-    // vIndex: 23
     virtual void setSuspendInput(bool);
 
-    // vIndex: 24
     virtual void setSuspendDirectionalInput(bool);
 
-    // vIndex: 25
-    virtual void setViewCommand(::ScreenViewCommand const&);
+    virtual void setViewCommand(::ScreenViewCommand const& callback);
 
-    // vIndex: 26
-    virtual void addStaticScreenVars(::Json::Value&);
+    virtual void addStaticScreenVars(::Json::Value& globalVars);
 
-    // vIndex: 27
     virtual ::std::string getAdditionalScreenInfo() const;
 
-    // vIndex: 28
     virtual ::std::string getTelemetryOverride() const;
 
-    // vIndex: 29
     virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
 
-    // vIndex: 30
     virtual ::ui::SceneType getSceneType() const;
 
-    // vIndex: 31
     virtual int getScreenVersion() const;
 
-    // vIndex: 32
     virtual uint getSceneId() const;
 
-    // vIndex: 33
     virtual ::ScreenControllerProxy* getProxy();
 
-    // vIndex: 34
     virtual void onEntered();
 
-    // vIndex: 35
     virtual void onScreenPushedAbove();
 
-    // vIndex: 36
     virtual void onEntering();
 
-    // vIndex: 37
     virtual bool _doesScreenHaveExitBehavior() const;
 
-    // vIndex: 38
     virtual bool _isContainerScreen() const;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit ScreenController(bool useTaskGroup);
+
+    MCNAPI_C uint _getNameId(::std::string const& name) const;
+
+    MCNAPI_C ::ui::ViewRequest _handleButtonEvent(::ScreenEvent& screenEvent);
+
+    MCNAPI_C ::ui::ViewRequest _handleEvent(::ScreenEvent& screenEvent);
+
+    MCNAPI_C void _registerSubController(::std::shared_ptr<::ScreenController> controller);
+
+    MCNAPI_C void bindBool(
+        ::StringHash const&                       bindingName,
+        ::brstd::move_only_function<bool() const> callback,
+        ::brstd::move_only_function<bool() const> condition
+    );
+
+    MCNAPI_C void bindBoolForAnyCollection(
+        ::StringHash const&                                                bindingName,
+        ::brstd::move_only_function<bool(::std::string const&, int) const> callback,
+        ::brstd::move_only_function<bool(::std::string const&, int) const> condition
+    );
+
+    MCNAPI_C void bindBoolForCollection(
+        ::StringHash const&                          collectionName,
+        ::StringHash const&                          bindingName,
+        ::brstd::move_only_function<bool(int) const> callback,
+        ::brstd::move_only_function<bool(int) const> condition
+    );
+
+    MCNAPI_C void bindColor(
+        ::StringHash const&                               bindingName,
+        ::brstd::move_only_function<::mce::Color() const> callback,
+        ::brstd::move_only_function<bool() const>         condition
+    );
+
+    MCNAPI_C void bindColorForCollection(
+        ::StringHash const&                                  collectionName,
+        ::StringHash const&                                  bindingName,
+        ::brstd::move_only_function<::mce::Color(int) const> callback,
+        ::brstd::move_only_function<bool(int) const>         condition
+    );
+
+    MCNAPI_C void bindColorWithPropertyBag(
+        ::StringHash const&                                               bindingName,
+        ::brstd::move_only_function<::mce::Color(::UIPropertyBag&) const> callback,
+        ::brstd::move_only_function<bool() const>                         condition
+    );
+
+    MCNAPI_C void bindDoubleForAnyCollection(
+        ::StringHash const&                                                  bindingName,
+        ::brstd::move_only_function<double(::std::string const&, int) const> callback,
+        ::brstd::move_only_function<bool(::std::string const&, int) const>   condition
+    );
+
+    MCNAPI_C void bindFloat(
+        ::StringHash const&                        bindingName,
+        ::brstd::move_only_function<float() const> callback,
+        ::brstd::move_only_function<bool() const>  condition
+    );
+
+    MCNAPI_C void bindFloatForAnyCollection(
+        ::StringHash const&                                                 bindingName,
+        ::brstd::move_only_function<float(::std::string const&, int) const> callback,
+        ::brstd::move_only_function<bool(::std::string const&, int) const>  condition
+    );
+
+    MCNAPI_C void bindFloatForCollection(
+        ::StringHash const&                           collectionName,
+        ::StringHash const&                           bindingName,
+        ::brstd::move_only_function<float(int) const> callback,
+        ::brstd::move_only_function<bool(int) const>  condition
+    );
+
+    MCNAPI_C void bindForAnyCollection(
+        ::StringHash const& bindingName,
+        ::brstd::move_only_function<void(::std::string const&, int, ::std::string const&, ::UIPropertyBag&) const>
+                                                                           callback,
+        ::brstd::move_only_function<bool(::std::string const&, int) const> condition
+    );
+
+    MCNAPI_C void bindForAnyCollection(
+        ::StringHash const&                                                                  bindingName,
+        ::brstd::move_only_function<void(int, ::std::string const&, ::UIPropertyBag&) const> callback,
+        ::brstd::move_only_function<bool(::std::string const&, int) const>                   condition
+    );
+
+    MCNAPI_C void bindForCollection(
+        ::StringHash const&                                                                  collectionName,
+        ::StringHash const&                                                                  bindingName,
+        ::brstd::move_only_function<void(int, ::std::string const&, ::UIPropertyBag&) const> func
+    );
+
+    MCNAPI_C void bindForGlobal(
+        ::StringHash const&                                                             bindingName,
+        ::brstd::move_only_function<void(::std::string const&, ::UIPropertyBag&) const> func
+    );
+
+    MCNAPI_C void bindForGlobalGridSize(
+        ::StringHash const&                                                             bindingName,
+        ::brstd::move_only_function<void(::std::string const&, ::UIPropertyBag&) const> callback,
+        ::brstd::move_only_function<bool() const>                                       condition
+    );
+
+    MCNAPI_C void bindGridSize(
+        ::StringHash const&                               bindingName,
+        ::brstd::move_only_function<::glm::ivec2() const> callback,
+        ::brstd::move_only_function<bool() const>         condition
+    );
+
+    MCNAPI_C void bindInt(
+        ::StringHash const&                       bindingName,
+        ::brstd::move_only_function<int() const>  callback,
+        ::brstd::move_only_function<bool() const> condition
+    );
+
+    MCNAPI_C void bindIntForAnyCollection(
+        ::StringHash const&                                                bindingName,
+        ::brstd::move_only_function<int(::std::string const&, int) const>  callback,
+        ::brstd::move_only_function<bool(::std::string const&, int) const> condition
+    );
+
+    MCNAPI_C void bindIntForCollection(
+        ::StringHash const&                          collectionName,
+        ::StringHash const&                          bindingName,
+        ::brstd::move_only_function<int(int) const>  callback,
+        ::brstd::move_only_function<bool(int) const> condition
+    );
+
+    MCNAPI_C void bindItemDataForAnyCollection(
+        ::StringHash const&                                                              bindingName,
+        ::brstd::move_only_function<::ItemRendererData(::std::string const&, int) const> callback,
+        ::brstd::move_only_function<bool(::std::string const&, int) const>               condition
+    );
+
+    MCNAPI_C void bindString(
+        ::StringHash const&                                bindingName,
+        ::brstd::move_only_function<::std::string() const> callback,
+        ::brstd::move_only_function<bool() const>          condition
+    );
+
+    MCNAPI_C void bindStringForAnyCollection(
+        ::StringHash const&                                                         bindingName,
+        ::brstd::move_only_function<::std::string(::std::string const&, int) const> callback,
+        ::brstd::move_only_function<bool(::std::string const&, int) const>          condition
+    );
+
+    MCNAPI_C void bindStringForCollection(
+        ::StringHash const&                                   collectionName,
+        ::StringHash const&                                   bindingName,
+        ::brstd::move_only_function<::std::string(int) const> callback,
+        ::brstd::move_only_function<bool(int) const>          condition
+    );
+
+    MCNAPI_C bool hasFinishedAsyncTasks() const;
+
+    MCNAPI_C void
+    queueAsyncTask(::brstd::move_only_function<::TaskResult()>&& task, ::std::function<void()>&& callback);
+
+    MCNAPI_C void
+    registerAnimationEventHandler(uint eventId, ::brstd::move_only_function<::ui::ViewRequest() const> callback);
+
+    MCNAPI_C void registerButtonEventHandler(
+        uint                                                                   buttonId,
+        ::ButtonState                                                          currentState,
+        ::ButtonState                                                          previousState,
+        ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const> callback
+    );
+
+    MCNAPI_C void registerButtonEventHandler(
+        uint                                                                   buttonId,
+        ::ButtonState                                                          currentState,
+        ::ScreenController::PreviousButtonStateRequirement                     previousStateRequirement,
+        ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const> callback
+    );
+
+    MCNAPI_C void registerButtonInteractedHandler(
+        uint                                                                   buttonId,
+        ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const> callback
+    );
+
+    MCNAPI_C void registerButtonPressedHandler(
+        uint                                                                   buttonId,
+        ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const> callback
+    );
+
+    MCNAPI_C void registerButtonReleasedHandler(
+        uint                                                                   buttonId,
+        ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const> callback
+    );
+
+    MCNAPI_C void registerClipStateChangeEventHandler(
+        uint                                                                         eventId,
+        ::brstd::move_only_function<::ui::ViewRequest(bool, ::UIPropertyBag&) const> callback
+    );
+
+    MCNAPI_C void registerClippedCollectionEventHandler(
+        ::StringHash const&                                                              collectionName,
+        ::brstd::move_only_function<::ui::ViewRequest(int, int, ::UIPropertyBag&) const> callback
+    );
+
+    MCNAPI_C void
+    registerCustomRendererEventHandler(uint eventId, ::brstd::move_only_function<::ui::ViewRequest() const> callback);
+
+    MCNAPI_C void registerFocusMovedEventHandler(
+        ::brstd::move_only_function<::ui::ViewRequest(::FocusMoveScreenEventData&) const> callback
+    );
+
+    MCNAPI_C void registerInputModechangedEventHandler(
+        ::brstd::move_only_function<::ui::ViewRequest(::InputModeChangeScreenEventData&) const> callback
+    );
+
+    MCNAPI_C void registerPointerHeldEventHandler(
+        ::brstd::move_only_function<::ui::ViewRequest(::PointerHeldScreenEventData&) const> callback
+    );
+
+    MCNAPI_C void registerSliderChangedEventHandler(
+        uint                                                             buttonId,
+        ::brstd::move_only_function<::ui::ViewRequest(int, float) const> callback
+    );
+
+    MCNAPI_C void registerSliderFinishedEventHandler(
+        uint                                                             buttonId,
+        ::brstd::move_only_function<::ui::ViewRequest(int, float) const> callback
+    );
+
+    MCNAPI_C void registerSliderNotFinishedEventHandler(
+        uint                                                             buttonId,
+        ::brstd::move_only_function<::ui::ViewRequest(int, float) const> callback
+    );
+
+    MCNAPI_C void registerTextEditChangedEventHandler(
+        uint                                                                                  buttonId,
+        ::brstd::move_only_function<::ui::ViewRequest(::TextEditScreenEventData&, int) const> callback
+    );
+
+    MCNAPI_C void registerTextEditFinishedEventHandler(
+        uint                                                                                  buttonId,
+        ::brstd::move_only_function<::ui::ViewRequest(::TextEditScreenEventData&, int) const> callback
+    );
+
+    MCNAPI_C void registerTextEditSelectedStateChangeEventHandler(
+        uint                                                                                          buttonId,
+        ::brstd::move_only_function<::ui::ViewRequest(::TextEditSelectedStateChangeEventData&) const> callback
+    );
+
+    MCNAPI_C void registerTextEventHandler(
+        ::brstd::move_only_function<::ui::ViewRequest(::TextEditScreenEventData&, int) const> callback
+    );
+
+    MCNAPI_C void registerToggleChangeEventHandler(
+        uint                                                                           buttonId,
+        ::brstd::move_only_function<::ui::ViewRequest(::ToggleChangeEventData&) const> callback
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(bool useTaskGroup);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::ui::DirtyFlag $tick();
 
+    MCNAPI void $preFrameTick();
+
+    MCNAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
+
+    MCNAPI ::std::optional<::std::string> $getRoute() const;
+
+    MCNAPI void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
+
+    MCNAPI void $onOpen();
+
+    MCNAPI void $queueTitleNarration();
+
+    MCNAPI void $onTerminate();
+
+    MCNAPI void $onInit();
+
+    MCNAPI void $onDelete();
+
+    MCNAPI bool $canExit();
+
+    MCNAPI ::ui::ViewRequest $tryExit();
+
+    MCNAPI void $onCreation();
+
+    MCNAPI void $onReload();
+
+    MCNAPI void $onLeave();
+
+    MCNAPI void $leaveScreen(::std::string const&);
+
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCNAPI bool $bind(
+        ::std::string const& collectionName,
+        uint                 collectionNameHash,
+        int                  collectionIndex,
+        ::std::string const& bindingName,
+        uint                 bindingNameHash,
+        ::std::string const& bindingNameOverride,
+        ::UIPropertyBag&     bag
+    );
+
+    MCNAPI bool $bind(
+        ::std::string const& bindingName,
+        uint                 bindingNameHash,
+        ::std::string const& bindingNameOverride,
+        ::UIPropertyBag&     bag
+    );
+
+    MCNAPI void $handleLicenseChanged();
+
+    MCNAPI void $setAssociatedBlockPos(::BlockPos const& pos);
+
+    MCNAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID);
+
+    MCNAPI void $setSuspendInput(bool);
+
+    MCNAPI void $setSuspendDirectionalInput(bool);
+
+    MCNAPI void $setViewCommand(::ScreenViewCommand const& callback);
+
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
+
+    MCNAPI ::std::string $getTelemetryOverride() const;
+
+    MCNAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
+
+    MCNAPI ::ui::SceneType $getSceneType() const;
+
+    MCNAPI int $getScreenVersion() const;
+
+    MCNAPI uint $getSceneId() const;
+
+    MCNAPI ::ScreenControllerProxy* $getProxy();
+
+    MCNAPI void $onEntered();
+
+    MCNAPI void $onScreenPushedAbove();
+
+    MCNAPI void $onEntering();
+
+    MCNAPI bool $_doesScreenHaveExitBehavior() const;
+
+    MCNAPI bool $_isContainerScreen() const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -17,6 +17,18 @@ public:
     FileReadingData& operator=(FileReadingData const&);
     FileReadingData(FileReadingData const&);
     FileReadingData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~FileReadingData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace gif

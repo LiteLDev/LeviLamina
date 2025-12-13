@@ -20,10 +20,6 @@ public:
     // clang-format on
 
     // BackgroundTaskBase inner types define
-    class PriorityComparer {};
-
-    class PendingComparer {};
-
     class CurrentTaskAutoScope {
     public:
         // member variables
@@ -50,6 +46,10 @@ public:
         // NOLINTEND
     };
 
+    class PendingComparer {};
+
+    class PriorityComparer {};
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -74,16 +74,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BackgroundTaskBase();
 
-    // vIndex: 1
     virtual void cancel() = 0;
 
-    // vIndex: 2
     virtual bool isReady() const = 0;
 
-    // vIndex: 3
     virtual ::TaskRunResult run(::ITaskExecutionContext const*, bool) = 0;
     // NOLINTEND
 

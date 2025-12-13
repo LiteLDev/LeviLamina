@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void placeEntities(::BlockSource& region, ::BoundingBox const& chunkBB) const;
+    MCNAPI void placeEntities(::BlockSource& region, ::BoundingBox const& chunkBB) const;
     // NOLINTEND
 };
 

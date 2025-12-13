@@ -2,12 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/item/registry/ItemRegistryRef.h"
-
 // auto generated forward declare list
 // clang-format off
 class ItemRegistry;
+class ItemRegistryRef;
 // clang-format on
 
 class ItemRegistryManager {
@@ -22,48 +20,56 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>               mIsSet;
-        ::ll::TypedStorage<8, 16, ::ItemRegistryRef> mPreviousRegistry;
+        ::ll::UntypedStorage<1, 1>  mUnk7a3173;
+        ::ll::UntypedStorage<8, 16> mUnk2d4641;
         // NOLINTEND
 
     public:
         // prevent constructor by default
+        ScopedItemRegistry& operator=(ScopedItemRegistry const&);
+        ScopedItemRegistry(ScopedItemRegistry const&);
         ScopedItemRegistry();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit ScopedItemRegistry(::std::weak_ptr<::ItemRegistry> registry);
+        MCNAPI explicit ScopedItemRegistry(::std::weak_ptr<::ItemRegistry> registry);
 
-        MCAPI void construct(::ItemRegistryRef registryRef);
+        MCNAPI_C explicit ScopedItemRegistry(::ItemRegistryRef registryRef);
 
-        MCAPI ~ScopedItemRegistry();
+        MCNAPI void construct(::ItemRegistryRef registryRef);
+
+        MCNAPI ~ScopedItemRegistry();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
+        MCNAPI void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
+
+        MCNAPI_C void* $ctor(::ItemRegistryRef registryRef);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ItemRegistryRef getItemRegistry();
+    MCNAPI static ::ItemRegistryRef getItemRegistry();
 
-    MCAPI static void setItemRegistry(::ItemRegistryRef registryRef);
+    MCNAPI_C static void resetItemRegistry();
+
+    MCNAPI static void setItemRegistry(::ItemRegistryRef registryRef);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::weak_ptr<::ItemRegistry>& mThreadLocalRegistry();
+    MCNAPI static ::std::weak_ptr<::ItemRegistry>& mThreadLocalRegistry();
     // NOLINTEND
 };

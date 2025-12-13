@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class ColorChannel;
+namespace cg { class TextureSetDefinition; }
 namespace cg { struct ImageDescription; }
 namespace mce { class Color; }
 // clang-format on
@@ -45,6 +46,32 @@ public:
     TextureSetImageDescription& operator=(TextureSetImageDescription const&);
     TextureSetImageDescription(TextureSetImageDescription const&);
     TextureSetImageDescription();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit TextureSetImageDescription(::cg::ImageDescription const& imageDesc);
+
+    MCNAPI_C explicit TextureSetImageDescription(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
+
+    MCNAPI_C ::cg::TextureSetImageDescription& operator=(::cg::TextureSetImageDescription&&);
+
+    MCNAPI_C ~TextureSetImageDescription();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::cg::ImageDescription const& imageDesc);
+
+    MCNAPI_C void* $ctor(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace cg

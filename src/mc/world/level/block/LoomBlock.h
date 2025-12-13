@@ -15,16 +15,12 @@ class LoomBlock : public ::FaceDirectionalBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 29
     virtual bool isCraftingBlock() const /*override*/;
 
-    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 0
     virtual ~LoomBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -42,6 +38,8 @@ public:
     MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+
+
     // NOLINTEND
 
 public:

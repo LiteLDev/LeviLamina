@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/EditorServerExportProjectServiceProvider.h"
-#include "mc/common/editor/ProjectExportStatus.h"
 #include "mc/common/editor/WorldType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/ProjectExportStatus.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/export/ExportResult.h"
 #include "mc/server/editor/serviceproviders/EditorPlayerExportProjectServiceProvider.h"
+#include "mc/server/editor/serviceproviders/EditorServerExportProjectServiceProvider.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -44,19 +44,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorExportProjectManagerService() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 1
     virtual void beginExportProject(
         ::WeakEntityRef                                                     playerRef,
         ::Editor::GameOptions const&                                        gameOptions,
@@ -64,13 +59,10 @@ public:
         ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback
     ) /*override*/;
 
-    // vIndex: 2
     virtual bool canExportProject() /*override*/;
 
-    // vIndex: 3
     virtual ::Editor::ProjectExportStatus getExportStatus() /*override*/;
 
-    // vIndex: 1
     virtual void addPreTaskFilePathCallBack(
         ::std::function<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>()>
             preTaskFilePathCallback
@@ -133,6 +125,8 @@ public:
         ::std::function<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>()>
             preTaskFilePathCallback
     );
+
+
     // NOLINTEND
 
 public:

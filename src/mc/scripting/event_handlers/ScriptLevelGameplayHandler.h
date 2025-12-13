@@ -24,13 +24,10 @@ class ScriptLevelGameplayHandler : public ::EventHandlerDispatcher<::LevelGamepl
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::LevelWeatherChangedEvent& event) /*override*/;
 
-    // vIndex: 4
     virtual ::HandlerResult handleEvent(::ScriptingWorldInitializeEvent const& event) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptLevelGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
@@ -56,6 +53,8 @@ public:
     MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::LevelWeatherChangedEvent& event);
 
     MCNAPI ::HandlerResult $handleEvent(::ScriptingWorldInitializeEvent const& event);
+
+
     // NOLINTEND
 
 public:

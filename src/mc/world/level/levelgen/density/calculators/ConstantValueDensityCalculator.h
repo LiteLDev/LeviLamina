@@ -16,16 +16,20 @@ class ConstantValueDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float const> mValue;
+    ::ll::UntypedStorage<4, 4> mUnk8340ed;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ConstantValueDensityCalculator& operator=(ConstantValueDensityCalculator const&);
+    ConstantValueDensityCalculator(ConstantValueDensityCalculator const&);
+    ConstantValueDensityCalculator();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ConstantValueDensityCalculator() /*override*/ = default;
 
-    // vIndex: 1
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
     // NOLINTEND
 

@@ -11,7 +11,7 @@ struct RuleSet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::DetectionRule>> ruleSet;
+    ::ll::UntypedStorage<8, 24> mUnk8ae233;
     // NOLINTEND
 
 public:
@@ -23,20 +23,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::RuleSet& operator=(::RuleSet&&);
+    MCNAPI ::RuleSet& operator=(::RuleSet&&);
 
-    MCAPI ~RuleSet();
+    MCNAPI ~RuleSet();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void filterDuplicates(::RuleSet& instance, ::std::vector<::DetectionRule> const& detectionRules);
+    MCNAPI static void filterDuplicates(::RuleSet& instance, ::std::vector<::DetectionRule> const& detectionRules);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

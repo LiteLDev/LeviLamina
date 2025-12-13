@@ -29,19 +29,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RakNetRandomSync() = default;
 
-    // vIndex: 1
     virtual void SerializeConstruction(::RakNet::BitStream*);
 
-    // vIndex: 2
     virtual bool DeserializeConstruction(::RakNet::BitStream*);
 
-    // vIndex: 3
     virtual void Serialize(::RakNet::BitStream*);
 
-    // vIndex: 4
     virtual void Deserialize(::RakNet::BitStream*);
     // NOLINTEND
 

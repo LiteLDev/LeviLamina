@@ -32,7 +32,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SettingsScreenCapabilities() /*override*/;
     // NOLINTEND
 

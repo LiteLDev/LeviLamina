@@ -8,9 +8,15 @@ struct ColumnRange {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::std::optional<int>> floor;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>> ceiling;
+    ::ll::UntypedStorage<4, 8> mUnke369c2;
+    ::ll::UntypedStorage<4, 8> mUnk2d6bb4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ColumnRange& operator=(ColumnRange const&);
+    ColumnRange(ColumnRange const&);
+    ColumnRange();
 };
 
 } // namespace ColumnUtils

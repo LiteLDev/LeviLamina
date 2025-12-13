@@ -30,12 +30,33 @@ public:
     // prevent constructor by default
     MessPublicKeyManager& operator=(MessPublicKeyManager const&);
     MessPublicKeyManager(MessPublicKeyManager const&);
-    MessPublicKeyManager();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MessPublicKeyManager() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C MessPublicKeyManager();
+
+    MCNAPI_C ::std::vector<::std::string> getMessLoginPublicKeys();
+
+    MCNAPI_C void
+    requestPublicKeys(::MessPublicKeyManager::PublicKeysEndpoint endpoint, ::std::function<void(bool)> callback);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

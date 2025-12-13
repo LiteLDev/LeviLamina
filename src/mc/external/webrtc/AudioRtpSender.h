@@ -38,46 +38,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ~AudioRtpSender() /*override*/;
 
-    // vIndex: 0
     virtual bool CanInsertDtmf() /*override*/;
 
-    // vIndex: 1
     virtual bool InsertDtmf(int code, int duration) /*override*/;
 
-    // vIndex: 0
     virtual void OnChanged() /*override*/;
 
-    // vIndex: 7
     virtual ::cricket::MediaType media_type() const /*override*/;
 
-    // vIndex: 35
     virtual ::std::string track_kind() const /*override*/;
 
-    // vIndex: 15
     virtual ::webrtc::scoped_refptr<::webrtc::DtmfSenderInterface> GetDtmfSender() const /*override*/;
 
-    // vIndex: 42
     virtual ::webrtc::RTCError GenerateKeyFrame(::std::vector<::std::string> const& rids) /*override*/;
 
-    // vIndex: 36
     virtual void SetSend() /*override*/;
 
-    // vIndex: 37
     virtual void ClearSend() /*override*/;
 
-    // vIndex: 38
     virtual void AttachTrack() /*override*/;
 
-    // vIndex: 39
     virtual void DetachTrack() /*override*/;
 
-    // vIndex: 40
     virtual void AddTrackToStats() /*override*/;
 
-    // vIndex: 41
     virtual void RemoveTrackFromStats() /*override*/;
     // NOLINTEND
 
@@ -148,6 +134,8 @@ public:
     MCNAPI void $AddTrackToStats();
 
     MCNAPI void $RemoveTrackFromStats();
+
+
     // NOLINTEND
 
 public:

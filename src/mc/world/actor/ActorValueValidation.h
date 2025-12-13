@@ -12,15 +12,15 @@ class Vec3;
 namespace ActorValueValidation {
 // functions
 // NOLINTBEGIN
-MCAPI void _fireTelemetryEvent(::BlockPos const& invalidBlockPos, char const* caller);
+MCNAPI void _fireTelemetryEvent(::BlockPos const& invalidBlockPos, char const* caller);
 
-MCAPI void _fireTelemetryEvent(::Vec3 const& invalidPos, char const* caller);
+MCNAPI void _fireTelemetryEvent(::Vec3 const& invalidPos, char const* caller);
 
-MCAPI bool validateHeadRotationFloatValue(float value, char const* caller);
+MCNAPI bool validateHeadRotationFloatValue(float value, char const* caller);
 
-MCAPI bool validateVec2Position(::Vec2 const& pos, char const* caller);
+MCNAPI bool validateVec2Position(::Vec2 const& pos, char const* caller);
 
-MCAPI bool validateVec3Position(::Vec3 const& pos, char const* caller);
+MCNAPI bool validateVec3Position(::Vec3 const& pos, char const* caller);
 // NOLINTEND
 
 } // namespace ActorValueValidation

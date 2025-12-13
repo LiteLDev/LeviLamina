@@ -37,103 +37,70 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CommandOrigin() = default;
 
-    // vIndex: 1
     virtual ::std::string const& getRequestId() const = 0;
 
-    // vIndex: 2
     virtual ::std::string getName() const = 0;
 
-    // vIndex: 3
     virtual ::BlockPos getBlockPosition() const = 0;
 
-    // vIndex: 4
     virtual ::Vec3 getWorldPosition() const = 0;
 
-    // vIndex: 5
     virtual ::std::optional<::Vec2> getRotation() const = 0;
 
-    // vIndex: 6
     virtual ::Level* getLevel() const = 0;
 
-    // vIndex: 7
     virtual ::Dimension* getDimension() const = 0;
 
-    // vIndex: 8
     virtual ::Actor* getEntity() const = 0;
 
-    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const = 0;
 
-    // vIndex: 10
     virtual ::std::unique_ptr<::CommandOrigin> clone() const = 0;
 
-    // vIndex: 11
     virtual ::std::optional<::BlockPos> getCursorHitBlockPos() const;
 
-    // vIndex: 12
     virtual ::std::optional<::Vec3> getCursorHitPos() const;
 
-    // vIndex: 13
     virtual bool hasChatPerms() const;
 
-    // vIndex: 14
     virtual bool hasTellPerms() const;
 
-    // vIndex: 15
     virtual bool canUseAbility(::AbilitiesIndex) const;
 
-    // vIndex: 16
     virtual bool isWorldBuilder() const;
 
-    // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
 
-    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const;
 
-    // vIndex: 19
     virtual ::NetworkIdentifier const& getSourceId() const;
 
-    // vIndex: 20
     virtual ::SubClientId getSourceSubId() const;
 
-    // vIndex: 21
     virtual ::CommandOrigin const& getOutputReceiver() const;
 
-    // vIndex: 22
     virtual ::CommandOriginIdentity getIdentity() const;
 
-    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const = 0;
 
-    // vIndex: 24
     virtual ::CommandOriginData toCommandOriginData() const;
 
-    // vIndex: 25
     virtual ::mce::UUID const& getUUID() const;
 
-    // vIndex: 26
     virtual void handleCommandOutputCallback(int, ::std::string&&) const;
 
-    // vIndex: 27
     virtual void updateValues();
 
-    // vIndex: 28
     virtual ::Vec3 const getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
 
-    // vIndex: 29
     virtual ::CompoundTag serialize() const;
 
-    // vIndex: 30
     virtual bool isValid() const = 0;
 
-    // vIndex: 31
     virtual bool requiresValidLevel() const;
 
-    // vIndex: 32
     virtual void _setUUID(::mce::UUID const& uuid);
     // NOLINTEND
 
@@ -210,6 +177,8 @@ public:
     MCFOLD bool $requiresValidLevel() const;
 
     MCFOLD void $_setUUID(::mce::UUID const& uuid);
+
+
     // NOLINTEND
 
 public:

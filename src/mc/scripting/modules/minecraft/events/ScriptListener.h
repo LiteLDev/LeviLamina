@@ -2,25 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraft { class ScriptSystemAfterEvents; }
-// clang-format on
-
 namespace ScriptModuleMinecraft {
 
 struct ScriptListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemAfterEvents>>
-                                                              mScriptEventsHandle;
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::UntypedStorage<8, 16> mUnk9ee736;
+    ::ll::UntypedStorage<8, 16> mUnkab773f;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptListener& operator=(ScriptListener const&);
+    ScriptListener(ScriptListener const&);
+    ScriptListener();
 };
 
 } // namespace ScriptModuleMinecraft

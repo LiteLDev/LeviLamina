@@ -17,13 +17,10 @@ class QuartzBlock : public ::RotatedPillarBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~QuartzBlock() /*override*/ = default;
 
-    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
@@ -41,6 +38,8 @@ public:
         ::Vec3 const&     clickPos,
         int               itemValue
     ) const;
+
+
     // NOLINTEND
 
 public:

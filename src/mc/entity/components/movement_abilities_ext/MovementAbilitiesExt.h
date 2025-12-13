@@ -11,7 +11,7 @@ struct MovementAbilitiesComponent;
 namespace MovementAbilitiesExt {
 // functions
 // NOLINTBEGIN
-MCAPI void inheritFrom(::MovementAbilitiesComponent& destination, ::AbilitiesComponent const& abilities);
+MCNAPI void inheritFrom(::MovementAbilitiesComponent& destination, ::AbilitiesComponent const& abilities);
 // NOLINTEND
 
 } // namespace MovementAbilitiesExt

@@ -19,9 +19,9 @@ struct ActorSpawnRuleData;
 class SpawnGroupRegistry {
 public:
     // SpawnGroupRegistry inner types define
-    using SpawnGroupRegistryMap = ::std::vector<::std::unique_ptr<::SpawnGroupData>>;
-
     using SpawnGroupLookupMap = ::std::unordered_map<::std::string, ::SpawnGroupData*>;
+
+    using SpawnGroupRegistryMap = ::std::vector<::std::unique_ptr<::SpawnGroupData>>;
 
     using SpawnRulesHandler =
         ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>;
@@ -43,7 +43,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SpawnGroupRegistry() = default;
     // NOLINTEND
 

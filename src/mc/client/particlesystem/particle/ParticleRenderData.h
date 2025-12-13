@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct MERSUniformData;
+struct PBRTexturePtrs;
+// clang-format on
+
 class ParticleRenderData {
 public:
     // ParticleRenderData inner types declare
@@ -68,4 +74,19 @@ public:
     ParticleRenderData& operator=(ParticleRenderData const&);
     ParticleRenderData(ParticleRenderData const&);
     ParticleRenderData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ushort
+    addTexture(::PBRTexturePtrs const& texturePtr, ::std::optional<::MERSUniformData> const& mersUniform);
+
+    MCNAPI_C ~ParticleRenderData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

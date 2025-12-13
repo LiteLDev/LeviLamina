@@ -16,6 +16,8 @@ namespace LeashKnotUtility {
 // NOLINTBEGIN
 MCNAPI bool canSurviveAtPos(::BlockSource const& region, ::BlockPos const& pos);
 
+MCNAPI_C bool canTranferLeashedActors(::Actor const& holderActor, ::BlockPos const& pos);
+
 MCNAPI ::LeashKnot* findAt(::BlockSource& region, ::BlockPos const& pos);
 
 MCNAPI ::LeashKnot* trySpawn(::BlockSource& region, ::BlockPos const& pos, ::ItemInstance const* itemUsed);

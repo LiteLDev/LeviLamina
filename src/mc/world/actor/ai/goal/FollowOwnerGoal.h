@@ -44,36 +44,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 9
     virtual void
     onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension) /*override*/;
 
-    // vIndex: 0
     virtual ~FollowOwnerGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FollowOwnerGoal(
+    MCNAPI FollowOwnerGoal(
         ::Mob& mob,
         float  speed,
         float  startDistance,
@@ -84,13 +76,13 @@ public:
         float  maxDistance
     );
 
-    MCAPI bool _canReachOwner(::Mob& owner, ::NavigationComponent& navigationComponent) const;
+    MCNAPI bool _canReachOwner(::Mob& owner, ::NavigationComponent& navigationComponent) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Mob& mob,
         float  speed,
         float  startDistance,
@@ -105,19 +97,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    MCNAPI void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+
+
     // NOLINTEND
 
 public:

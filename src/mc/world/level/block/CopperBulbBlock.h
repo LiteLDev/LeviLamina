@@ -28,32 +28,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 61
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
 
-    // vIndex: 104
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 105
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
-    // vIndex: 54
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
-    // vIndex: 125
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    // vIndex: 0
     virtual ~CopperBulbBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -82,6 +74,8 @@ public:
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+
+
     // NOLINTEND
 
 public:

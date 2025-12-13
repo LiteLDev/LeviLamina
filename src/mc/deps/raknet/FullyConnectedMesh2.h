@@ -24,11 +24,18 @@ public:
     // FullyConnectedMesh2 inner types declare
     // clang-format off
     struct FCM2Participant;
-    struct VerifiedJoinInProgress;
     struct VerifiedJoinInProgressMember;
+    struct VerifiedJoinInProgress;
     // clang-format on
 
     // FullyConnectedMesh2 inner types define
+    enum class JoinInProgressState : int {
+        Processing  = 0,
+        Failed      = 1,
+        Connected   = 2,
+        Unnecessary = 3,
+    };
+
     struct FCM2Participant {
     public:
         // member variables
@@ -42,13 +49,6 @@ public:
         FCM2Participant& operator=(FCM2Participant const&);
         FCM2Participant(FCM2Participant const&);
         FCM2Participant();
-    };
-
-    enum class JoinInProgressState : int {
-        Processing  = 0,
-        Failed      = 1,
-        Connected   = 2,
-        Unnecessary = 3,
     };
 
     struct VerifiedJoinInProgressMember {
@@ -110,16 +110,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FullyConnectedMesh2() /*override*/ = default;
 
-    // vIndex: 17
     virtual void StartVerifiedJoin(::RakNet::RakNetGUID);
 
-    // vIndex: 18
     virtual void RespondOnVerifiedJoinCapable(::RakNet::Packet*, bool, ::RakNet::BitStream*);
 
-    // vIndex: 19
     virtual void GetVerifiedJoinRequiredProcessingList(
         ::RakNet::RakNetGUID,
         ::DataStructures::List<::RakNet::SystemAddress>&,
@@ -127,7 +123,6 @@ public:
         ::DataStructures::List<::RakNet::BitStream*>&
     );
 
-    // vIndex: 20
     virtual void GetVerifiedJoinAcceptedAdditionalData(
         ::RakNet::Packet*,
         bool*,
@@ -135,47 +130,34 @@ public:
         ::RakNet::BitStream*
     );
 
-    // vIndex: 21
     virtual void GetVerifiedJoinRejectedAdditionalData(::RakNet::Packet*, ::RakNet::BitStream*);
 
-    // vIndex: 22
     virtual void WriteVJCUserData(::RakNet::BitStream*);
 
-    // vIndex: 23
     virtual void WriteVJSUserData(::RakNet::BitStream*, ::RakNet::RakNetGUID);
 
-    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
-    // vIndex: 5
     virtual void OnRakPeerStartup() /*override*/;
 
-    // vIndex: 1
     virtual void OnAttach() /*override*/;
 
-    // vIndex: 6
     virtual void OnRakPeerShutdown() /*override*/;
 
-    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,
         ::RakNet::PI2_LostConnectionReason
     ) /*override*/;
 
-    // vIndex: 8
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
 
-    // vIndex: 9
     virtual void OnFailedConnectionAttempt(::RakNet::Packet*, ::RakNet::PI2_FailedConnectionAttemptReason) /*override*/;
 
-    // vIndex: 24
     virtual void OnVerifiedJoinFailed(::RakNet::RakNetGUID, bool);
 
-    // vIndex: 25
     virtual void OnVerifiedJoinAccepted(::RakNet::Packet*);
 
-    // vIndex: 26
     virtual void OnVerifiedJoinRejected(::RakNet::Packet*);
     // NOLINTEND
 

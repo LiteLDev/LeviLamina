@@ -6,14 +6,16 @@ namespace Scripting {
 
 struct ContextId {
 public:
-    // ContextId inner types define
-    using ContextIdValueType = uchar;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar> value;
+    ::ll::UntypedStorage<1, 1> mUnk7fd96a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ContextId& operator=(ContextId const&);
+    ContextId(ContextId const&);
+    ContextId();
 };
 
 } // namespace Scripting

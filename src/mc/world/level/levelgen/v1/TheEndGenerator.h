@@ -13,7 +13,6 @@
 class Biome;
 class BiomeArea;
 class BiomeSource;
-class Block;
 class BlockPos;
 class BlockSource;
 class BlockVolume;
@@ -38,17 +37,23 @@ public:
     // clang-format on
 
     // TheEndGenerator inner types define
-    using CellPos2d = ::DividedPos2d<8>;
-
-    using NoiseBuffer = ::Util::MultidimensionalArray<float, 3, 3, 33>;
-
     struct ThreadData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 262144, ::std::array<::Block const*, 32768>> blockBuffer;
+        ::ll::UntypedStorage<8, 262144> mUnk420483;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ThreadData& operator=(ThreadData const&);
+        ThreadData(ThreadData const&);
+        ThreadData();
     };
+
+    using CellPos2d = ::DividedPos2d<8>;
+
+    using NoiseBuffer = ::Util::MultidimensionalArray<float, 3, 3, 33>;
 
 public:
     // member variables
@@ -74,23 +79,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TheEndGenerator() /*override*/;
 
-    // vIndex: 14
-    virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
+    virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
 
-    // vIndex: 9
     virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhoodIn) /*override*/;
 
-    // vIndex: 10
     virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood) /*override*/;
 
-    // vIndex: 16
     virtual void
     postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random) /*override*/;
 
-    // vIndex: 42
     virtual void prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
@@ -98,22 +97,16 @@ public:
         bool                  factorInBeardsAndShavers
     ) /*override*/;
 
-    // vIndex: 1
     virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const /*override*/;
 
-    // vIndex: 43
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
-    // vIndex: 44
     virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 
-    // vIndex: 46
     virtual ::BlockPos findSpawnPosition() const /*override*/;
 
-    // vIndex: 45
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
-    // vIndex: 49
     virtual void decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
@@ -122,7 +115,6 @@ public:
         ::ChunkPos const&    pos
     ) const /*override*/;
 
-    // vIndex: 50
     virtual void
     decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
         /*override*/;
@@ -157,7 +149,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
 
     MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
@@ -192,6 +184,8 @@ public:
 
     MCFOLD void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

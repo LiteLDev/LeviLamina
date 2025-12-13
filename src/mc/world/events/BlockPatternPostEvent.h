@@ -9,12 +9,12 @@ struct BlockPatternPostEvent : public ::BlockPatternEvent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~BlockPatternPostEvent();
+    MCNAPI ~BlockPatternPostEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

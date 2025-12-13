@@ -17,7 +17,6 @@ class ScriptSaturationComponent : public ::ScriptModuleMinecraft::AttributeScrip
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptSaturationComponent() /*override*/ = default;
     // NOLINTEND
 

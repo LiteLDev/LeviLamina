@@ -13,8 +13,8 @@ struct ScriptPlayerLeaveAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mPlayerName;
-    ::ll::TypedStorage<8, 32, ::std::string> mPlayerId;
+    ::ll::UntypedStorage<8, 32> mUnkbba7ed;
+    ::ll::UntypedStorage<8, 32> mUnk7bd1a2;
     // NOLINTEND
 
 public:
@@ -26,16 +26,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 };
 

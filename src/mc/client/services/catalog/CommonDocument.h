@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CatalogBackend;
+namespace Json { class Value; }
+// clang-format on
+
 struct CommonDocument {
 public:
     // member variables
@@ -30,8 +36,47 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommonDocument& operator=(CommonDocument const&);
-    CommonDocument(CommonDocument const&);
-    CommonDocument();
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C CommonDocument();
+
+    MCNAPI_C CommonDocument(::CommonDocument&&);
+
+    MCNAPI_C CommonDocument(::CommonDocument const&);
+
+    MCNAPI_C void _fromJsonShared(::std::string const& langCode, ::Json::Value const& documentObject, bool pascalCase);
+
+    MCNAPI_C bool containsTag(::std::string const& stringToCheck) const;
+
+    MCNAPI_C void
+    fromJson(::std::string const& langCode, ::Json::Value const& documentObject, ::CatalogBackend const& backend);
+
+    MCNAPI_C void fromPersonaJson(
+        ::std::string const&    langCode,
+        ::Json::Value const&    documentObject,
+        ::CatalogBackend const& backend
+    );
+
+    MCNAPI_C ::CommonDocument& operator=(::CommonDocument&&);
+
+    MCNAPI_C ::CommonDocument& operator=(::CommonDocument const&);
+
+    MCNAPI_C ~CommonDocument();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::CommonDocument&&);
+
+    MCNAPI_C void* $ctor(::CommonDocument const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

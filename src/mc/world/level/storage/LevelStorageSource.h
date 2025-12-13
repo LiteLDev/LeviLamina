@@ -26,22 +26,16 @@ class LevelStorageSource : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelStorageSource() /*override*/;
 
-    // vIndex: 1
     virtual ::std::string const& getName() const = 0;
 
-    // vIndex: 2
     virtual ::Bedrock::Result<bool> getLevelData(::std::string const&, ::LevelData&) const = 0;
 
-    // vIndex: 3
-    virtual void saveLevelData(::std::string const&, ::LevelData const&) = 0;
+    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& data) = 0;
 
-    // vIndex: 4
     virtual void getLevelList(::std::vector<::Core::PathBuffer<::std::string>>&) = 0;
 
-    // vIndex: 5
     virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(
         ::Scheduler&,
         ::std::string const&,
@@ -52,44 +46,32 @@ public:
         ::std::unique_ptr<::LevelStorageEventing>
     ) = 0;
 
-    // vIndex: 6
     virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(
         ::std::string const&,
         ::ContentIdentity const&,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&
     ) = 0;
 
-    // vIndex: 7
     virtual void deleteLevel(::std::string const&) = 0;
 
-    // vIndex: 9
     virtual bool renameLevel(::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 8
     virtual void renameLevel(::LevelData&, ::Core::Path const&, ::std::string const&) = 0;
 
-    // vIndex: 10
     virtual bool createBackupCopyOfWorld(::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 11
     virtual bool isLevelMarkedForSync(::Core::Path const&) const = 0;
 
-    // vIndex: 12
     virtual bool isLevelPartiallyCopied(::Core::Path const&) const = 0;
 
-    // vIndex: 13
     virtual ::Core::PathBuffer<::std::string> getLevelDatFoundPath(::Core::Path const&) const = 0;
 
-    // vIndex: 14
     virtual ::Core::PathBuffer<::std::string> const getBasePath() const = 0;
 
-    // vIndex: 15
     virtual ::Core::PathBuffer<::std::string> const getPathToLevel(::std::string const&) const = 0;
 
-    // vIndex: 16
     virtual ::Core::PathBuffer<::std::string> const getPathToLevelInfo(::std::string const&, bool) const = 0;
 
-    // vIndex: 17
     virtual bool isBetaRetailLevel(::std::string const&) const = 0;
     // NOLINTEND
 

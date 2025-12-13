@@ -29,16 +29,12 @@ class LevelListener : public ::BlockSourceListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelListener() /*override*/;
 
-    // vIndex: 9
     virtual void allChanged();
 
-    // vIndex: 10
     virtual void sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int);
 
-    // vIndex: 11
     virtual void addParticleEffect(
         ::HashedString const&,
         ::Actor const&,
@@ -47,17 +43,13 @@ public:
         ::MolangVariableMap const&
     );
 
-    // vIndex: 12
     virtual void addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
 
-    // vIndex: 13
     virtual void addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
 
-    // vIndex: 14
     virtual void
     addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
 
-    // vIndex: 15
     virtual void addBiomeTintedParticleEffect(
         ::HashedString const&,
         ::BlockPos const&,
@@ -65,40 +57,28 @@ public:
         ::std::optional<::mce::Color>
     );
 
-    // vIndex: 16
     virtual void playMusic(::std::string const&, ::Vec3 const&, float, float);
 
-    // vIndex: 17
     virtual void playStreamingMusic(::std::string const&, int, int, int);
 
-    // vIndex: 18
     virtual void onEntityAdded(::Actor&);
 
-    // vIndex: 19
     virtual void onEntityRemoved(::Actor&);
 
-    // vIndex: 20
     virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk&);
 
-    // vIndex: 21
     virtual void onChunkReloaded(::ChunkSource&, ::LevelChunk&);
 
-    // vIndex: 22
     virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool);
 
-    // vIndex: 23
     virtual void onChunkUnloaded(::LevelChunk&);
 
-    // vIndex: 24
     virtual void onLevelDestruction(::std::string const&);
 
-    // vIndex: 26
     virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
 
-    // vIndex: 25
     virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
 
-    // vIndex: 27
     virtual void takePicture(
         ::cg::ImageBuffer&,
         ::Actor*,
@@ -107,13 +87,10 @@ public:
         ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
     );
 
-    // vIndex: 28
     virtual void playerListChanged();
 
-    // vIndex: 29
     virtual void onLevelDataCommandsChanged(bool);
 
-    // vIndex: 30
     virtual void onLevelDataWorldTemplateOptionsUnlocked();
     // NOLINTEND
 
@@ -128,7 +105,9 @@ public:
     // NOLINTBEGIN
     MCFOLD void $allChanged();
 
+#ifdef LL_PLAT_S
     MCFOLD void $sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int);
+#endif
 
     MCFOLD void $addParticleEffect(
         ::HashedString const&,
@@ -183,6 +162,8 @@ public:
     MCFOLD void $onLevelDataCommandsChanged(bool);
 
     MCFOLD void $onLevelDataWorldTemplateOptionsUnlocked();
+
+
     // NOLINTEND
 
 public:

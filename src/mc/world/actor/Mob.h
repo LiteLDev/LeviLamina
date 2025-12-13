@@ -80,222 +80,150 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 8
     virtual ~Mob() /*override*/;
 
-    // vIndex: 138
     virtual void
     knockback(::Actor*, int, float xd, float zd, float horizontalPower, float verticalPower, float heightCap);
 
-    // vIndex: 122
     virtual void kill() /*override*/;
 
-    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 124
     virtual bool shouldDropDeathLoot() const /*override*/;
 
-    // vIndex: 139
     virtual void spawnAnim();
 
-    // vIndex: 47
     virtual bool isAlive() const /*override*/;
 
-    // vIndex: 42
     virtual bool isSleeping() const /*override*/;
 
-    // vIndex: 43
     virtual void setSleeping(bool val) /*override*/;
 
-    // vIndex: 45
     virtual bool isBlocking() const /*override*/;
 
-    // vIndex: 140
     virtual void setSprinting(bool shouldSprint);
 
-    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 141
     virtual ::SharedTypes::Legacy::LevelSoundEvent getDeathSound();
 
-    // vIndex: 142
     virtual float getSpeed() const;
 
-    // vIndex: 143
     virtual void setSpeed(float speed);
 
-    // vIndex: 16
     virtual float getYawSpeedInDegreesPerSecond() const /*override*/;
 
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 25
     virtual void baseTick() /*override*/;
 
-    // vIndex: 144
     virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 145
     virtual void damageCarriedItemOnAttack(::Actor& target, float);
 
-    // vIndex: 66
     virtual bool doFireHurt(int amount) /*override*/;
 
-    // vIndex: 146
     virtual void aiStep();
 
-    // vIndex: 147
     virtual void pushActors();
 
-    // vIndex: 148
     virtual bool checkSpawnRules(bool);
 
-    // vIndex: 149
     virtual bool checkSpawnObstruction() const;
 
-    // vIndex: 28
     virtual void addPassenger(::Actor& passenger) /*override*/;
 
-    // vIndex: 27
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
-    // vIndex: 150
     virtual int getItemUseDuration() const;
 
-    // vIndex: 151
     virtual float getItemUseStartupProgress() const;
 
-    // vIndex: 152
     virtual float getItemUseIntervalProgress() const;
 
-    // vIndex: 111
     virtual bool swing() /*override*/;
 
-    // vIndex: 153
     virtual float getMaxHeadXRot();
 
-    // vIndex: 40
     virtual bool isImmobile() const /*override*/;
 
-    // vIndex: 19
     virtual void blockedByShield(::ActorDamageSource const& source, ::Actor& blocker) /*override*/;
 
-    // vIndex: 51
-    virtual void setTarget(::Actor* entity) /*override*/;
+    virtual void setTarget(::Actor* target) /*override*/;
 
-    // vIndex: 53
     virtual bool attack(::Actor&, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
 
-    // vIndex: 154
     virtual bool isAlliedTo(::Mob*);
 
-    // vIndex: 155
     virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&);
 
-    // vIndex: 65
     virtual ::SharedTypes::Legacy::ActorDamageCause getBlockDamageCause(::Block const&) const /*override*/;
 
-    // vIndex: 97
     virtual bool inCaravan() const /*override*/;
 
-    // vIndex: 156
     virtual int getArmorValue() const;
 
-    // vIndex: 157
     virtual void hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots);
 
-    // vIndex: 158
-    virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot, ::ItemStack const&);
+    virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
-    // vIndex: 159
     virtual void sendArmorDamage(::std::bitset<5> const);
 
-    // vIndex: 160
     virtual void sendArmor(::std::bitset<5> const armorSlots);
 
-    // vIndex: 73
-    virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot) const /*override*/;
+    virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot slot) const /*override*/;
 
-    // vIndex: 74
-    virtual int getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot) const /*override*/;
+    virtual int getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot slot) const /*override*/;
 
-    // vIndex: 75
-    virtual float getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot, int) const /*override*/;
+    virtual float getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot slot, int channelRGBA) const /*override*/;
 
-    // vIndex: 161
     virtual ::std::vector<::ItemStack const*> getAllHandEquipment() const;
 
-    // vIndex: 162
     virtual ::std::vector<::ItemStack const*> getAllEquipment() const;
 
-    // vIndex: 104
     virtual int getDeathTime() const /*override*/;
 
-    // vIndex: 164
     virtual void dropEquipmentOnDeath(::ActorDamageSource const& source);
 
-    // vIndex: 163
     virtual void dropEquipmentOnDeath();
 
-    // vIndex: 165
     virtual void clearVanishEnchantedItemsOnDeath();
 
-    // vIndex: 166
     virtual void sendInventory(bool);
 
-    // vIndex: 102
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
-    // vIndex: 13
     virtual float getInterpolatedBodyRot(float a) const /*override*/;
 
-    // vIndex: 14
     virtual float getInterpolatedHeadRot(float a) const /*override*/;
 
-    // vIndex: 15
     virtual float getInterpolatedBodyYaw(float a) const /*override*/;
 
-    // vIndex: 49
     virtual bool isSurfaceMob() const /*override*/;
 
-    // vIndex: 167
     virtual float getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const;
 
-    // vIndex: 168
     virtual bool createAIGoals();
 
-    // vIndex: 169
     virtual void onBorn(::Actor&, ::Actor&);
 
-    // vIndex: 170
     virtual bool setItemSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
-    // vIndex: 171
     virtual void setTransitioningSitting(bool value);
 
-    // vIndex: 0
     virtual bool hasComponent(::HashedString const& name) const /*override*/;
 
-    // vIndex: 88
     virtual bool canChangeDimensionsUsingPortal() const /*override*/;
 
-    // vIndex: 21
     virtual void teleportTo(
         ::Vec3 const& pos,
         bool          shouldStopRiding,
@@ -304,52 +232,36 @@ public:
         bool          keepVelocity
     ) /*override*/;
 
-    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const&);
 
-    // vIndex: 173
     virtual bool canExistWhenDisallowMob() const;
 
-    // vIndex: 60
     virtual bool canPowerJump() const /*override*/;
 
-    // vIndex: 76
     virtual void setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 121
     virtual void renderDebugServerState(::IOptionsReader const& options) /*override*/;
 
-    // vIndex: 85
     virtual bool canFreeze() const /*override*/;
 
-    // vIndex: 174
     virtual void tickDeath();
 
-    // vIndex: 137
-    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 175
     virtual ::std::unique_ptr<::BodyControl> initBodyControl();
 
-    // vIndex: 92
     virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
 
-    // vIndex: 1
     virtual void outOfWorld() /*override*/;
 
-    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool) /*override*/;
 
-    // vIndex: 176
     virtual void newServerAiStep();
 
-    // vIndex: 7
     virtual void _doInitialMove() /*override*/;
 
-    // vIndex: 177
     virtual ::AABB _getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const&) const;
     // NOLINTEND
 
@@ -406,6 +318,8 @@ public:
 
     MCAPI void frostWalk();
 
+    MCAPI_C ::std::vector<int> getAllArmorID() const;
+
     MCAPI float getArmorCoverPercentage() const;
 
     MCAPI int getArmorTypeHash();
@@ -446,6 +360,8 @@ public:
 
     MCAPI void hurtArmor(::ActorDamageSource const& source, int damage);
 
+    MCAPI_C bool isGliding() const;
+
     MCAPI void jumpFromGround();
 
     MCAPI void knockback(::Actor* source, int damage, float xd, float zd, float horizontalPower, float verticalPower);
@@ -465,6 +381,8 @@ public:
     MCAPI void setJumpTicks(int ticks);
 
     MCAPI void setYBodyRotation(float rotation);
+
+    MCAPI_C void setYBodyRotations(float rotation, float oldRotation);
 
     MCAPI bool shouldApplyWaterGravity();
 
@@ -603,7 +521,7 @@ public:
 
     MCAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
 
-    MCAPI void $setTarget(::Actor* entity);
+    MCAPI void $setTarget(::Actor* target);
 
     MCFOLD bool $isAlliedTo(::Mob*);
 
@@ -672,7 +590,7 @@ public:
 
     MCAPI void $tickDeath();
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -689,6 +607,18 @@ public:
     MCAPI void $_doInitialMove();
 
     MCAPI ::AABB $_getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const&) const;
+
+#ifdef LL_PLAT_C
+    MCAPI void $setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
+
+    MCAPI ::ArmorMaterialType $getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
+
+    MCAPI int $getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
+
+    MCAPI float $getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot slot, int channelRGBA) const;
+#endif
+
+
     // NOLINTEND
 
 public:

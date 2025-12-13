@@ -31,10 +31,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ~AsyncJoinRegistrar() /*override*/ = default;
 
-    // vIndex: 0
     virtual ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(
         ::brstd::move_only_function<void(
             ::NetworkIdentifier const&,
@@ -46,7 +44,6 @@ public:
         )> joinCallback
     ) /*override*/;
 
-    // vIndex: 1
     virtual bool isPaused() /*override*/;
     // NOLINTEND
 
@@ -79,6 +76,8 @@ public:
     );
 
     MCNAPI bool $isPaused();
+
+
     // NOLINTEND
 
 public:

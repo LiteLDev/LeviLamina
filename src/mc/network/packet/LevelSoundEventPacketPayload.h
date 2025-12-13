@@ -29,14 +29,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::LevelSoundEventPacketPayload& operator=(::LevelSoundEventPacketPayload&&);
+    MCNAPI ::LevelSoundEventPacketPayload& operator=(::LevelSoundEventPacketPayload&&);
 
-    MCAPI ~LevelSoundEventPacketPayload();
+    MCNAPI ~LevelSoundEventPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

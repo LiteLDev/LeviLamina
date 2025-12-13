@@ -22,10 +22,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WorldTemplatePackManifest() /*override*/;
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::PackManifest> clone() const /*override*/;
     // NOLINTEND
 
@@ -39,6 +37,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::PackManifest> $clone() const;
+
+
     // NOLINTEND
 
 public:

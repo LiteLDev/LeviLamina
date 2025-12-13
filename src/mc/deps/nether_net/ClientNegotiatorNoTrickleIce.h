@@ -30,13 +30,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 15
     virtual void _onSetLocalDescription(::webrtc::RTCError) /*override*/;
 
-    // vIndex: 17
     virtual void _onLocalIceCandidate(::webrtc::IceCandidateInterface const* iceCandidate) /*override*/;
 
-    // vIndex: 0
     virtual ~ClientNegotiatorNoTrickleIce() /*override*/ = default;
     // NOLINTEND
 

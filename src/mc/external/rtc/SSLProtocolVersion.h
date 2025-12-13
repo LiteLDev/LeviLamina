@@ -5,12 +5,13 @@
 namespace rtc {
 
 enum class SSLProtocolVersion : int {
+    // bitfield representation
     NotGiven = -1,
     Tls10    = 0,
-    Tls11    = 1,
-    Tls12    = 2,
-    Dtls10   = 1,
-    Dtls12   = 2,
+    Tls11    = 1 << 0,
+    Dtls10   = 1 << 0,
+    Tls12    = 1 << 1,
+    Dtls12   = 1 << 1,
 };
 
 }

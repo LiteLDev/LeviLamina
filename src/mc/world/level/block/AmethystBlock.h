@@ -16,13 +16,10 @@ class AmethystBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 16
     virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const /*override*/;
 
-    // vIndex: 47
     virtual bool isSilentWhenJumpingOff() const /*override*/;
 
-    // vIndex: 0
     virtual ~AmethystBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -32,6 +29,8 @@ public:
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 
     MCFOLD bool $isSilentWhenJumpingOff() const;
+
+
     // NOLINTEND
 
 public:

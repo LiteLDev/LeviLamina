@@ -28,65 +28,59 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 10
     virtual int getAttackTicksResetValue() const /*override*/;
 
-    // vIndex: 0
     virtual ~DelayedAttackGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _attemptAttack(::Actor& target, bool canReach, bool hasLineOfSight);
+    MCNAPI void _attemptAttack(::Actor& target, bool canReach, bool hasLineOfSight);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isTargetInLineOfSightLegacy(::Mob const& mob, ::Actor const& target);
+    MCNAPI static bool _isTargetInLineOfSightLegacy(::Mob const& mob, ::Actor const& target);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& mMinLineOfSightFixVersion();
+    MCNAPI static ::BaseGameVersion const& mMinLineOfSightFixVersion();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCFOLD void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI int $getAttackTicksResetValue() const;
+    MCNAPI int $getAttackTicksResetValue() const;
+
+
     // NOLINTEND
 
 public:

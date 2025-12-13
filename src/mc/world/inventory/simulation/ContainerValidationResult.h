@@ -30,6 +30,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ContainerValidationResult(::ContainerValidationResult const&);
 
+    MCNAPI_C ::ContainerValidationResult& operator=(::ContainerValidationResult&&);
+
     MCNAPI ~ContainerValidationResult();
     // NOLINTEND
 

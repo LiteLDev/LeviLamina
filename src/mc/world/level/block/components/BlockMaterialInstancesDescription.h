@@ -6,16 +6,13 @@
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
-#include "mc/world/level/block/components/BlockMaterialInstancePackedBools.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
 class Experiments;
-class HashedString;
 class SemVersion;
-struct BlockMaterialInstance;
 namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -24,8 +21,8 @@ struct BlockMaterialInstancesDescription : public ::BlockComponentDescription {
 public:
     // BlockMaterialInstancesDescription inner types declare
     // clang-format off
-    struct BlockMaterialData;
     struct BlockMaterialInstanceData;
+    struct BlockMaterialData;
     // clang-format on
 
     // BlockMaterialInstancesDescription inner types define
@@ -33,66 +30,70 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>                     textureName;
-        ::ll::TypedStorage<4, 4, float>                              ambientOcclusion;
-        ::ll::TypedStorage<1, 1, ::BlockRenderLayer>                 renderLayer;
-        ::ll::TypedStorage<1, 1, ::TintMethod>                       tintMethod;
-        ::ll::TypedStorage<1, 1, ::BlockMaterialInstancePackedBools> packedBools;
+        ::ll::UntypedStorage<8, 32> mUnkd404fa;
+        ::ll::UntypedStorage<4, 4>  mUnk560526;
+        ::ll::UntypedStorage<1, 1>  mUnkb5483c;
+        ::ll::UntypedStorage<1, 1>  mUnkc44bf0;
+        ::ll::UntypedStorage<1, 1>  mUnk4f7e4b;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BlockMaterialInstanceData& operator=(BlockMaterialInstanceData const&);
+        BlockMaterialInstanceData(BlockMaterialInstanceData const&);
+        BlockMaterialInstanceData();
     };
 
     struct BlockMaterialData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>                                                  materialName;
-        ::ll::TypedStorage<8, 40, ::BlockMaterialInstancesDescription::BlockMaterialInstanceData> materialInstanceData;
+        ::ll::UntypedStorage<8, 32> mUnke0dca5;
+        ::ll::UntypedStorage<8, 40> mUnk6be5e5;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BlockMaterialData& operator=(BlockMaterialData const&);
+        BlockMaterialData(BlockMaterialData const&);
+        BlockMaterialData();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::BlockMaterialInstance>> mMaterials;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::string>>           mMaterialMappings;
+    ::ll::UntypedStorage<8, 64> mUnk98b178;
+    ::ll::UntypedStorage<8, 64> mUnkfaac49;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
-    // vIndex: 4
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
-    // vIndex: 2
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
-    // vIndex: 7
     virtual bool isNetworkComponent() const /*override*/;
 
-    // vIndex: 8
     virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
-    // vIndex: 9
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
-    // vIndex: 10
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
-    // vIndex: 0
     virtual ~BlockMaterialInstancesDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockMaterialInstancesDescription();
+    MCNAPI BlockMaterialInstancesDescription();
 
-    MCAPI BlockMaterialInstancesDescription(::BlockMaterialInstancesDescription const&);
+    MCNAPI BlockMaterialInstancesDescription(::BlockMaterialInstancesDescription const&);
 
-    MCAPI BlockMaterialInstancesDescription(
+    MCNAPI BlockMaterialInstancesDescription(
         ::std::string const& textureName,
         ::BlockRenderLayer   renderLayer,
         float                ambientOcclusion,
@@ -104,17 +105,17 @@ public:
         bool                 emissive
     );
 
-    MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription const&);
+    MCNAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription&&);
 
-    MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription&&);
+    MCNAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static bool postParseConstraint(
+    MCNAPI static bool postParseConstraint(
         ::Experiments const& experiments,
         ::Json::Value const& componentJson,
         ::SemVersion const&  jsonVersion
@@ -124,17 +125,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& NameID();
+    MCNAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::BlockMaterialInstancesDescription const&);
+    MCNAPI void* $ctor(::BlockMaterialInstancesDescription const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const& textureName,
         ::BlockRenderLayer   renderLayer,
         float                ambientOcclusion,
@@ -150,25 +151,27 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD bool $isNetworkComponent() const;
+    MCNAPI bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+
+
     // NOLINTEND
 
 public:

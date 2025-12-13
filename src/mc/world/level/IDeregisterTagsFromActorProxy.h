@@ -11,10 +11,8 @@ class IDeregisterTagsFromActorProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IDeregisterTagsFromActorProxy() = default;
 
-    // vIndex: 1
     virtual void deregisterTagsFromActor(::Actor&) = 0;
     // NOLINTEND
 

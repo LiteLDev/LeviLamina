@@ -2,15 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace Invites {
 
 struct Invite {
 public:
     // Invite inner types define
-    enum class State : int {
-        Uninitialized = 0,
-        Accepted      = 1,
-        Declined      = 2,
+    enum class InvitationStatus : int {
+        Active   = 0,
+        Accepted = 1,
+        Rejected = 2,
+        Expired  = 3,
     };
 
     enum class InvitationType : int {
@@ -19,11 +25,10 @@ public:
         Game   = 2,
     };
 
-    enum class InvitationStatus : int {
-        Active   = 0,
-        Accepted = 1,
-        Rejected = 2,
-        Expired  = 3,
+    enum class State : int {
+        Uninitialized = 0,
+        Accepted      = 1,
+        Declined      = 2,
     };
 
 public:
@@ -44,10 +49,42 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Invite& operator=(Invite const&);
-    Invite(Invite const&);
-    Invite();
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C Invite();
+
+    MCNAPI_C Invite(::Invites::Invite&&);
+
+    MCNAPI_C Invite(::Invites::Invite const&);
+
+    MCNAPI_C ::Invites::Invite& operator=(::Invites::Invite&&);
+
+    MCNAPI_C ::Invites::Invite& operator=(::Invites::Invite const&);
+
+    MCNAPI_C ~Invite();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::Invites::Invite fromJson(::Json::Value const& json);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::Invites::Invite&&);
+
+    MCNAPI_C void* $ctor(::Invites::Invite const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Invites

@@ -44,85 +44,59 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 25
     virtual ::std::vector<::AABB>& fetchAABBs(::AABB const&, bool) = 0;
 
-    // vIndex: 26
     virtual ::std::vector<::AABB>&
     fetchCollisionShapes(::AABB const&, bool, ::std::optional<::EntityContext const>, ::std::vector<::AABB>*) = 0;
 
-    // vIndex: 27
     virtual ::WeakRef<::BlockSource> getWeakRef() = 0;
 
-    // vIndex: 28
     virtual void addListener(::BlockSourceListener&) = 0;
 
-    // vIndex: 29
     virtual void removeListener(::BlockSourceListener&) = 0;
 
-    // vIndex: 31
     virtual ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(::Actor const*, ::AABB const&, bool, bool) = 0;
 
-    // vIndex: 30
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) = 0;
 
-    // vIndex: 32
     virtual bool
     setBlock(::BlockPos const&, ::Block const&, int, ::ActorBlockSyncMessage const*, ::BlockChangeContext const&) = 0;
 
-    // vIndex: 33
     virtual bool setExtraBlock(::BlockPos const&, ::Block const&, int) = 0;
 
-    // vIndex: 34
     virtual bool removeBlock(::BlockPos const&, ::BlockChangeContext const&) = 0;
 
-    // vIndex: 35
     virtual short getMinHeight() const = 0;
 
-    // vIndex: 36
     virtual short getMaxHeight() const = 0;
 
-    // vIndex: 38
     virtual ::Dimension& getDimension() const = 0;
 
-    // vIndex: 37
     virtual ::Dimension& getDimension() = 0;
 
-    // vIndex: 39
     virtual ::Dimension const& getDimensionConst() const = 0;
 
-    // vIndex: 40
     virtual ::LevelChunk* getChunkAt(::BlockPos const&) const = 0;
 
-    // vIndex: 42
     virtual ::LevelChunk* getChunk(int, int) const = 0;
 
-    // vIndex: 41
     virtual ::LevelChunk* getChunk(::ChunkPos const&) const = 0;
 
-    // vIndex: 43
     virtual ::Level& getLevel() = 0;
 
-    // vIndex: 44
     virtual ::ILevel& getILevel() const = 0;
 
-    // vIndex: 45
     virtual ::LevelSeed64 getLevelSeed64() const = 0;
 
-    // vIndex: 47
     virtual short getAboveTopSolidBlock(int, int, bool, bool) const = 0;
 
-    // vIndex: 46
     virtual short getAboveTopSolidBlock(::BlockPos const&, bool, bool, bool) const = 0;
 
-    // vIndex: 49
     virtual short getHeight(::std::function<bool(::Block const&)> const&, ::BlockPos const&) const = 0;
 
-    // vIndex: 48
     virtual short getHeight(::std::function<bool(::Block const&)> const&, int, int) const = 0;
 
-    // vIndex: 51
     virtual ::HitResult clip(
         ::Vec3 const&,
         ::Vec3 const&,
@@ -136,40 +110,28 @@ public:
         bool
     ) const = 0;
 
-    // vIndex: 50
     virtual ::HitResult clip(::ClipParameters const&) const = 0;
 
-    // vIndex: 52
     virtual ::ChunkSource& getChunkSource() = 0;
 
-    // vIndex: 54
     virtual bool isSolidBlockingBlock(::BlockPos const&) const = 0;
 
-    // vIndex: 53
     virtual bool isSolidBlockingBlock(int, int, int) const = 0;
 
-    // vIndex: 55
     virtual bool areChunksFullyLoaded(::BlockPos const&, int) const = 0;
 
-    // vIndex: 56
     virtual bool mayPlace(::Block const&, ::BlockPos const&, uchar, ::Actor*, bool, ::Vec3) = 0;
 
-    // vIndex: 57
     virtual bool canDoBlockDrops() const = 0;
 
-    // vIndex: 58
     virtual bool canDoContainedItemDrops() const = 0;
 
-    // vIndex: 59
     virtual bool isInstaticking(::BlockPos const&) const = 0;
 
-    // vIndex: 60
     virtual bool checkBlockPermissions(::Actor&, ::BlockPos const&, uchar, ::ItemStackBase const&, bool) = 0;
 
-    // vIndex: 61
     virtual void postGameEvent(::Actor*, ::GameEvent const&, ::BlockPos const&, ::Block const*) = 0;
 
-    // vIndex: 62
     virtual void fireBlockChanged(
         ::BlockPos const&,
         uint,
@@ -181,10 +143,8 @@ public:
         ::Actor*
     ) = 0;
 
-    // vIndex: 63
     virtual void blockEvent(::BlockPos const&, int, int) = 0;
 
-    // vIndex: 0
     virtual ~IBlockSource() /*override*/ = default;
     // NOLINTEND
 

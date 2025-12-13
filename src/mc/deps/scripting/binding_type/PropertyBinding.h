@@ -30,9 +30,9 @@ public:
     // NOLINTBEGIN
     MCNAPI PropertyBinding();
 
-    MCNAPI PropertyBinding(::Scripting::PropertyBinding const&);
-
     MCNAPI PropertyBinding(::Scripting::PropertyBinding&&);
+
+    MCNAPI PropertyBinding(::Scripting::PropertyBinding const&);
 
     MCNAPI ~PropertyBinding();
     // NOLINTEND
@@ -42,9 +42,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::Scripting::PropertyBinding const&);
-
     MCNAPI void* $ctor(::Scripting::PropertyBinding&&);
+
+    MCNAPI void* $ctor(::Scripting::PropertyBinding const&);
     // NOLINTEND
 
 public:

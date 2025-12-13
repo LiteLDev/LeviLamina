@@ -18,8 +18,20 @@ public:
     PersonaAnimationDefinition();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~PersonaAnimationDefinition();
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::PersonaAnimationDefinition const& INVALID_ANIMATION_DEFINITION();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
     // NOLINTEND
 };

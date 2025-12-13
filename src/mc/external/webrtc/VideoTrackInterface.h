@@ -30,25 +30,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void AddOrUpdateSink(
         ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
         ::rtc::VideoSinkWants const&                     wants
     ) /*override*/;
 
-    // vIndex: 2
     virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
 
-    // vIndex: 8
     virtual ::webrtc::VideoTrackSourceInterface* GetSource() const = 0;
 
-    // vIndex: 9
     virtual ::webrtc::VideoTrackInterface::ContentHint content_hint() const;
 
-    // vIndex: 10
     virtual void set_content_hint(::webrtc::VideoTrackInterface::ContentHint hint);
 
-    // vIndex: 0
     virtual ~VideoTrackInterface() /*override*/;
     // NOLINTEND
 
@@ -69,6 +63,8 @@ public:
     MCNAPI ::webrtc::VideoTrackInterface::ContentHint $content_hint() const;
 
     MCNAPI void $set_content_hint(::webrtc::VideoTrackInterface::ContentHint hint);
+
+
     // NOLINTEND
 };
 

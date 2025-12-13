@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/events/IScriptItemCustomComponentSignalCollection.h"
-#include "mc/scripting/modules/minecraft/events/ScriptCustomComponentPubSubAdapter.h"
-#include "mc/scripting/modules/minecraft/events/metadata/ScriptCustomComponentAfterEventList.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptCustomComponentEventMetadata.h"
 
 // auto generated forward declare list
@@ -16,7 +14,6 @@ class ScriptDeferredFlushTracker;
 struct ItemCustomComponentData;
 namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
-namespace ScriptModuleMinecraft::Detail { struct BeforeEventExecutor; }
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
@@ -27,56 +24,44 @@ class ScriptItemCustomComponentSignalCollection
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::ScriptModuleMinecraft::ScriptCustomComponentAfterEventList> mAfterEventSignals;
-    ::ll::TypedStorage<
-        8,
-        96,
-        ::ScriptModuleMinecraft::ScriptCustomComponentPubSubAdapter<
-            ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface,
-            ::ComponentItem,
-            ::ScriptModuleMinecraft::Detail::BeforeEventExecutor>>
-        mAdapter;
+    ::ll::UntypedStorage<8, 24> mUnk19348b;
+    ::ll::UntypedStorage<8, 96> mUnk39381f;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptItemCustomComponentSignalCollection& operator=(ScriptItemCustomComponentSignalCollection const&);
+    ScriptItemCustomComponentSignalCollection(ScriptItemCustomComponentSignalCollection const&);
     ScriptItemCustomComponentSignalCollection();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 13
     virtual void registerClosures(
         ::HashedString const&                                         componentName,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     ) /*override*/;
 
-    // vIndex: 14
     virtual void subscribeToItemForComponent(
         ::ComponentItem&                                item,
         ::std::vector<::ItemCustomComponentData> const& components
     ) /*override*/;
 
-    // vIndex: 15
     virtual void clear() /*override*/;
 
-    // vIndex: 9
     virtual void onPreFlushAfterEvents() /*override*/;
 
-    // vIndex: 8
     virtual void onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
-    // vIndex: 10
     virtual void onPostFlushAfterEvents() /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptItemCustomComponentSignalCollection() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptItemCustomComponentSignalCollection(
+    MCNAPI explicit ScriptItemCustomComponentSignalCollection(
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache
     );
     // NOLINTEND
@@ -84,37 +69,39 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
+    MCNAPI static ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface> const
     _getEventMetadata();
 
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerClosures(
+    MCNAPI void $registerClosures(
         ::HashedString const&                                         componentName,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
 
-    MCAPI void
+    MCNAPI void
     $subscribeToItemForComponent(::ComponentItem& item, ::std::vector<::ItemCustomComponentData> const& components);
 
-    MCAPI void $clear();
+    MCNAPI void $clear();
 
-    MCAPI void $onPreFlushAfterEvents();
+    MCNAPI void $onPreFlushAfterEvents();
 
-    MCAPI void $onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void $onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void $onPostFlushAfterEvents();
+    MCNAPI void $onPostFlushAfterEvents();
+
+
     // NOLINTEND
 
 public:

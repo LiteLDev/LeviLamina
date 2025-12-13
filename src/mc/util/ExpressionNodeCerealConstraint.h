@@ -14,10 +14,8 @@ class ExpressionNodeCerealConstraint : public ::cereal::ConstraintHandle<::Expre
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
-    // vIndex: 1
     virtual ~ExpressionNodeCerealConstraint() /*override*/ = default;
     // NOLINTEND
 

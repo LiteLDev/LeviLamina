@@ -16,9 +16,9 @@ struct PropertyOutOfBoundsError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, double>                   value;
-    ::ll::TypedStorage<8, 16, ::std::optional<double>> minValue;
-    ::ll::TypedStorage<8, 16, ::std::optional<double>> maxValue;
+    ::ll::UntypedStorage<8, 8>  mUnk932921;
+    ::ll::UntypedStorage<8, 16> mUnk57acd1;
+    ::ll::UntypedStorage<8, 16> mUnk442b6c;
     // NOLINTEND
 
 public:
@@ -29,45 +29,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertyOutOfBoundsError(::Scripting::PropertyOutOfBoundsError const&);
+    MCNAPI PropertyOutOfBoundsError(::Scripting::PropertyOutOfBoundsError&&);
 
-    MCAPI PropertyOutOfBoundsError(::Scripting::PropertyOutOfBoundsError&&);
+    MCNAPI PropertyOutOfBoundsError(::Scripting::PropertyOutOfBoundsError const&);
 
-    MCAPI PropertyOutOfBoundsError(
+    MCNAPI PropertyOutOfBoundsError(
         ::std::string const&    propertyName,
         ::std::optional<double> minValue_,
         ::std::optional<double> maxValue_
     );
 
-    MCAPI PropertyOutOfBoundsError(
+    MCNAPI PropertyOutOfBoundsError(
         ::std::string const&    propertyName,
         double                  value_,
         ::std::optional<double> minValue_,
         ::std::optional<double> maxValue_
     );
 
-    MCAPI ::Scripting::PropertyOutOfBoundsError& operator=(::Scripting::PropertyOutOfBoundsError&&);
+    MCNAPI ::Scripting::PropertyOutOfBoundsError& operator=(::Scripting::PropertyOutOfBoundsError&&);
 
-    MCAPI ~PropertyOutOfBoundsError();
+    MCNAPI ~PropertyOutOfBoundsError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::PropertyOutOfBoundsError const&);
+    MCNAPI void* $ctor(::Scripting::PropertyOutOfBoundsError&&);
 
-    MCAPI void* $ctor(::Scripting::PropertyOutOfBoundsError&&);
+    MCNAPI void* $ctor(::Scripting::PropertyOutOfBoundsError const&);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string const& propertyName, ::std::optional<double> minValue_, ::std::optional<double> maxValue_);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&    propertyName,
         double                  value_,
         ::std::optional<double> minValue_,
@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -34,15 +34,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::FeedItem::Effect& operator=(::FeedItem::Effect&&);
+        MCNAPI ::FeedItem::Effect& operator=(::FeedItem::Effect&&);
 
-        MCAPI ~Effect();
+        MCNAPI ~Effect();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -65,9 +65,9 @@ public:
 
     MCAPI void addEffect(::FeedItem::Effect const& effect);
 
-    MCAPI ::FeedItem& operator=(::FeedItem const&);
-
     MCAPI ::FeedItem& operator=(::FeedItem&&);
+
+    MCAPI ::FeedItem& operator=(::FeedItem const&);
 
     MCAPI ~FeedItem();
     // NOLINTEND

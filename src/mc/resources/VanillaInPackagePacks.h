@@ -10,16 +10,18 @@ class VanillaInPackagePacks : public ::IInPackagePacks {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType) const /*override*/;
+    virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType packType) const /*override*/;
 
-    // vIndex: 0
     virtual ~VanillaInPackagePacks() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::std::vector<::IInPackagePacks::MetaData> $getPacks(::PackType packType) const;
+#endif
+
 
     // NOLINTEND
 

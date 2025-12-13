@@ -36,54 +36,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorServerSettingsService() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 7
     virtual void
     _handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& payload) /*override*/;
 
-    // vIndex: 8
     virtual void _handleGraphicsSettingsChangedPayload(
         ::Editor::Network::GraphicsSettingsChangedPayload const& payload
     ) /*override*/;
 
-    // vIndex: 9
     virtual void
     _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload) /*override*/;
 
-    // vIndex: 10
     virtual void
     _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload) /*override*/;
 
-    // vIndex: 11
     virtual void _handleThemeSettingsCurrentThemeChangedPayload(
         ::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload
     ) /*override*/;
 
-    // vIndex: 12
     virtual void _handleThemeSettingsNewThemeCreatedPayload(
         ::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload
     ) /*override*/;
 
-    // vIndex: 13
     virtual void _handleThemeSettingsThemeColorUpdatedPayload(
         ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
     ) /*override*/;
 
-    // vIndex: 14
     virtual void _handleThemeSettingsThemeDeletedPayload(
         ::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload
     ) /*override*/;
@@ -162,6 +149,8 @@ public:
 
     MCNAPI void
     $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload);
+
+
     // NOLINTEND
 
 public:

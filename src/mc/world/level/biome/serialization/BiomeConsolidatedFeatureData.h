@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
-#include "mc/world/level/biome/serialization/BiomeScatterParamData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,11 +14,11 @@ struct BiomeConsolidatedFeatureData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::BiomeScatterParamData> mScatter;
-    ::ll::TypedStorage<2, 2, ushort>                   mFeature;
-    ::ll::TypedStorage<2, 2, ushort>                   mIdentifier;
-    ::ll::TypedStorage<2, 2, ushort>                   mPass;
-    ::ll::TypedStorage<1, 1, bool>                     mCanUseInternalFeature;
+    ::ll::UntypedStorage<8, 48> mUnk713af5;
+    ::ll::UntypedStorage<2, 2>  mUnke53c9d;
+    ::ll::UntypedStorage<2, 2>  mUnk7ad97f;
+    ::ll::UntypedStorage<2, 2>  mUnkea7e04;
+    ::ll::UntypedStorage<1, 1>  mUnk5be7e3;
     // NOLINTEND
 
 public:
@@ -31,26 +30,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeConsolidatedFeatureData(::BiomeConsolidatedFeatureData&&);
+    MCNAPI BiomeConsolidatedFeatureData(::BiomeConsolidatedFeatureData&&);
 
-    MCAPI ~BiomeConsolidatedFeatureData();
+    MCNAPI ~BiomeConsolidatedFeatureData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeConsolidatedFeatureData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeConsolidatedFeatureData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeConsolidatedFeatureData&&);
+    MCNAPI void* $ctor(::BiomeConsolidatedFeatureData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

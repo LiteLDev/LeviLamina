@@ -2,17 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-// clang-format on
-
 struct WeightedBlockName {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::HashedString const&> mBlockName;
-    ::ll::TypedStorage<4, 4, int const>             mWeight;
+    ::ll::UntypedStorage<8, 8> mUnk989f3e;
+    ::ll::UntypedStorage<4, 4> mUnkea9ab6;
     // NOLINTEND
 
 public:

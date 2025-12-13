@@ -22,16 +22,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 27
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 8
     virtual ~Pufferfish() /*override*/ = default;
     // NOLINTEND
 
@@ -63,6 +59,8 @@ public:
     MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+
     // NOLINTEND
 
 public:

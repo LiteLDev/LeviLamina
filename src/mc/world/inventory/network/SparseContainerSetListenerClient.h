@@ -28,19 +28,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SparseContainerSetListenerClient() /*override*/ = default;
 
-    // vIndex: 1
-    virtual void preSetItem(::Container*, int, bool, ::ItemStack*) /*override*/;
+    virtual void preSetItem(::Container* container, int slot, bool isEmptyItem, ::ItemStack* item) /*override*/;
 
-    // vIndex: 2
-    virtual bool postSetItem(::Container*, ::ItemStack&) /*override*/;
+    virtual bool postSetItem(::Container* container, ::ItemStack& item) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $preSetItem(::Container* container, int slot, bool isEmptyItem, ::ItemStack* item);
 
+    MCNAPI bool $postSetItem(::Container* container, ::ItemStack& item);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

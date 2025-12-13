@@ -27,13 +27,23 @@ public:
     // NOLINTBEGIN
     MCNAPI EnvironmentQueryResponse(::Bedrock::Services::EnvironmentQueryResponse const&);
 
+    MCNAPI_C ::std::string GetPropertyValue(::std::string const& serviceName, ::std::string const& propertyKey) const;
+
     MCNAPI void fromJsonShared(::Json::Value const& jsonValue);
+
+    MCNAPI_C ~EnvironmentQueryResponse();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Bedrock::Services::EnvironmentQueryResponse const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
     // NOLINTEND
 };
 

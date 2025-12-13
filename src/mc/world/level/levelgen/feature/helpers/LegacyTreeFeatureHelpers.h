@@ -17,7 +17,7 @@ class RenderParams;
 namespace LegacyTreeFeatureHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI void placeTrees(
+MCNAPI void placeTrees(
     ::IBlockWorldGenAPI&                                     target,
     ::BlockPos const&                                        origin,
     ::Random&                                                random,

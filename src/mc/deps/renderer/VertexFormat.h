@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/renderer/VertexField.h"
+#include "mc/deps/renderer/VertexFieldType.h"
+
 namespace mce {
 
 class VertexFormat {
@@ -41,6 +45,20 @@ public:
     VertexFormat& operator=(VertexFormat const&);
     VertexFormat(VertexFormat const&);
     VertexFormat();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ushort getFieldSize(::mce::VertexField field) const;
+
+    MCNAPI_C ::mce::VertexFieldType getFieldType(::mce::VertexField field) const;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI_C static ::mce::VertexFormat const& EMPTY();
+    // NOLINTEND
 };
 
 } // namespace mce

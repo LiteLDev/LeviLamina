@@ -5,6 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 class BackwardsCompatTextureInfo;
+class ResourceLocation;
+class ResourceLocationPair;
 // clang-format on
 
 class BackwardsCompatTextureGroup {
@@ -19,6 +21,16 @@ public:
     BackwardsCompatTextureGroup& operator=(BackwardsCompatTextureGroup const&);
     BackwardsCompatTextureGroup(BackwardsCompatTextureGroup const&);
     BackwardsCompatTextureGroup();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::BackwardsCompatTextureInfo const& getBackCompatInfo(::ResourceLocation const& resourceLocation) const;
+
+    MCNAPI_C void loadTextures(::gsl::span<::ResourceLocationPair> texturesToLoad);
+
+    MCNAPI_C void populate(::std::string const& backCompatFile);
+    // NOLINTEND
 
 public:
     // static variables

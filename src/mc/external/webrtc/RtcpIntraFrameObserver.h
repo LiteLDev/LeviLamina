@@ -8,10 +8,8 @@ class RtcpIntraFrameObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RtcpIntraFrameObserver() = default;
 
-    // vIndex: 1
     virtual void OnReceivedIntraFrameRequest(uint) = 0;
     // NOLINTEND
 

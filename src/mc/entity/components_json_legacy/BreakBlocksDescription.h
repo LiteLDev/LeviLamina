@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorComponentDescription.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,13 +27,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual char const* getJsonName() const /*override*/;
 
-    // vIndex: 2
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
-    // vIndex: 1
     virtual ~BreakBlocksDescription() /*override*/;
     // NOLINTEND
 
@@ -48,6 +46,8 @@ public:
     MCNAPI char const* $getJsonName() const;
 
     MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+
+
     // NOLINTEND
 
 public:

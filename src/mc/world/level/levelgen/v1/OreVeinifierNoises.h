@@ -3,23 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/random/XoroshiroPositionalRandomFactory.h"
 #include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
 #include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
+
+// auto generated forward declare list
+// clang-format off
+class XoroshiroPositionalRandomFactory;
+// clang-format on
 
 class OreVeinifierNoises {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mVeininessNoiseSource;
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mVeinNoiseSourceA;
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mVeinNoiseSourceB;
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-                                                                        mGapNoiseSource;
-    ::ll::TypedStorage<8, 24, ::XoroshiroPositionalRandomFactory const> mPositionalRandomFactory;
+    ::ll::UntypedStorage<8, 56> mUnk1a89af;
+    ::ll::UntypedStorage<8, 56> mUnk7a0c84;
+    ::ll::UntypedStorage<8, 56> mUnk925041;
+    ::ll::UntypedStorage<8, 56> mUnk8daedd;
+    ::ll::UntypedStorage<8, 24> mUnk1f4bbd;
     // NOLINTEND
 
 public:
@@ -30,9 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OreVeinifierNoises(::OreVeinifierNoises const&);
+    MCNAPI OreVeinifierNoises(::OreVeinifierNoises const&);
 
-    MCAPI OreVeinifierNoises(
+    MCNAPI OreVeinifierNoises(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeininessNoiseSource,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeinNoiseSourceA,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeinNoiseSourceB,
@@ -40,21 +40,21 @@ public:
         ::XoroshiroPositionalRandomFactory                                            mPositionalRandomFactory
     );
 
-    MCAPI ~OreVeinifierNoises();
+    MCNAPI ~OreVeinifierNoises();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::OreVeinifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
+    MCNAPI static ::OreVeinifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::OreVeinifierNoises const&);
+    MCNAPI void* $ctor(::OreVeinifierNoises const&);
 
-    MCFOLD void* $ctor(
+    MCNAPI void* $ctor(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeininessNoiseSource,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeinNoiseSourceA,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeinNoiseSourceB,
@@ -66,6 +66,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

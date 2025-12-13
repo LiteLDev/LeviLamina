@@ -22,6 +22,13 @@ namespace Util { struct ReplacementResults; }
 class LootCommand : public ::Command {
 public:
     // LootCommand inner types define
+    enum class Source : int {
+        Loot  = 0,
+        Kill  = 1,
+        Mine  = 2,
+        Error = 3,
+    };
+
     enum class Target : int {
         Spawn   = 0,
         Give    = 1,
@@ -34,13 +41,6 @@ public:
         Entity = 0,
         Block  = 1,
         Error  = 2,
-    };
-
-    enum class Source : int {
-        Loot  = 0,
-        Kill  = 1,
-        Mine  = 2,
-        Error = 3,
     };
 
 public:
@@ -71,10 +71,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    // vIndex: 0
     virtual ~LootCommand() /*override*/ = default;
     // NOLINTEND
 
@@ -121,6 +119,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
+
     // NOLINTEND
 
 public:

@@ -4,13 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/XAsyncOp.h"
-#include "mc/external/lib_http_client/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 struct XAsyncBlock;
 struct XAsyncProviderData;
-namespace xbox::httpclient { class IHttpProvider; }
 // clang-format on
 
 struct HC_CALL {
@@ -31,7 +29,9 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk23f554;
     ::ll::UntypedStorage<1, 1>  mUnkfea43d;
     ::ll::UntypedStorage<4, 4>  mUnk4f7136;
-    ::ll::UntypedStorage<4, 4>  mUnk21abaa;
+#ifdef LL_PLAT_S
+    ::ll::UntypedStorage<4, 4> mUnk21abaa;
+#endif
     ::ll::UntypedStorage<4, 4>  mUnkbed0a8;
     ::ll::UntypedStorage<4, 4>  mUnkedd66f;
     ::ll::UntypedStorage<8, 32> mUnk9be00f;
@@ -41,42 +41,31 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkb6b181;
     ::ll::UntypedStorage<8, 8>  mUnk7c1b0f;
     ::ll::UntypedStorage<8, 8>  mUnkd48f47;
-    ::ll::UntypedStorage<8, 8>  mUnk60184e;
-    ::ll::UntypedStorage<8, 8>  mUnk1bd5b5;
-    ::ll::UntypedStorage<1, 1>  mUnkaff5f2;
-    ::ll::UntypedStorage<1, 1>  mUnkbacc1f;
-    ::ll::UntypedStorage<1, 1>  mUnk38835b;
-    ::ll::UntypedStorage<4, 4>  mUnkc9bb28;
-    ::ll::UntypedStorage<4, 4>  mUnkef06fa;
-    ::ll::UntypedStorage<4, 4>  mUnkbeca7b;
-    ::ll::UntypedStorage<8, 8>  mUnke7da0d;
-    ::ll::UntypedStorage<4, 4>  mUnk911abe;
-    ::ll::UntypedStorage<8, 8>  mUnk8ce464;
+#ifdef LL_PLAT_S
+    ::ll::UntypedStorage<8, 8> mUnk60184e;
+    ::ll::UntypedStorage<8, 8> mUnk1bd5b5;
+    ::ll::UntypedStorage<1, 1> mUnkaff5f2;
+#endif
+    ::ll::UntypedStorage<1, 1> mUnkbacc1f;
+    ::ll::UntypedStorage<1, 1> mUnk38835b;
+    ::ll::UntypedStorage<4, 4> mUnkc9bb28;
+    ::ll::UntypedStorage<4, 4> mUnkef06fa;
+    ::ll::UntypedStorage<4, 4> mUnkbeca7b;
+    ::ll::UntypedStorage<8, 8> mUnke7da0d;
+    ::ll::UntypedStorage<4, 4> mUnk911abe;
+    ::ll::UntypedStorage<8, 8> mUnk8ce464;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HC_CALL& operator=(HC_CALL const&);
-    HC_CALL(HC_CALL const&);
-    HC_CALL();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~HC_CALL();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::xbox::httpclient::Result<::std::chrono::seconds> GetRetryAfterHeaderTime();
-
-    MCNAPI HC_CALL(uint64 _id, ::xbox::httpclient::IHttpProvider& provider);
-
     MCNAPI long PerformAsync(::XAsyncBlock* async);
-
-    MCNAPI ::xbox::httpclient::Result<bool> ShouldFailFast(uint& performDelay);
 
     MCNAPI bool ShouldRetry(uint& performDelay);
     // NOLINTEND
@@ -84,7 +73,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void CompressRequestBody(void* c, bool canceled);
+    MCNAPI_S static void CompressRequestBody(void* c, bool canceled);
 
     MCNAPI static long PerfomAsyncProvider(::XAsyncOp op, ::XAsyncProviderData const* data);
 
@@ -104,12 +93,6 @@ public:
     );
 
     MCNAPI static long ResponseBodyWrite(::HC_CALL* call, uchar const* source, uint64 bytesAvailable, void*);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(uint64 _id, ::xbox::httpclient::IHttpProvider& provider);
     // NOLINTEND
 
 public:

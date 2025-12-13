@@ -29,6 +29,24 @@ public:
     // clang-format on
 
     // ScoreboardCommand inner types define
+    enum class Action : int {
+        Invalid    = 0,
+        Add        = 1,
+        List       = 2,
+        Operation  = 3,
+        Random     = 4,
+        Remove     = 5,
+        Reset      = 6,
+        Set        = 7,
+        SetDisplay = 8,
+        Test       = 9,
+    };
+
+    enum class Category : int {
+        Objectives = 0,
+        Players    = 1,
+    };
+
     struct InitProxy {
     public:
         // member variables
@@ -71,24 +89,6 @@ public:
         // NOLINTEND
     };
 
-    enum class Category : int {
-        Objectives = 0,
-        Players    = 1,
-    };
-
-    enum class Action : int {
-        Invalid    = 0,
-        Add        = 1,
-        List       = 2,
-        Operation  = 3,
-        Random     = 4,
-        Remove     = 5,
-        Reset      = 6,
-        Set        = 7,
-        SetDisplay = 8,
-        Test       = 9,
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -119,10 +119,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    // vIndex: 0
     virtual ~ScoreboardCommand() /*override*/;
     // NOLINTEND
 
@@ -265,6 +263,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
+
     // NOLINTEND
 
 public:

@@ -40,12 +40,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~CircuitComponentList();
+    MCNAPI ~CircuitComponentList();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

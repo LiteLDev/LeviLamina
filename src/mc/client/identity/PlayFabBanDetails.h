@@ -17,6 +17,18 @@ public:
     PlayFabBanDetails& operator=(PlayFabBanDetails const&);
     PlayFabBanDetails(PlayFabBanDetails const&);
     PlayFabBanDetails();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~PlayFabBanDetails();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Social

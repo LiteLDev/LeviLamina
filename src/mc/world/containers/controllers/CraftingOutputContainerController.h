@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContainerModel;
 class Recipe;
 // clang-format on
 
@@ -20,30 +21,58 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CraftingOutputContainerController();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CraftingOutputContainerController() /*override*/ = default;
 
-    // vIndex: 5
-    virtual int getBackgroundStyle(int, bool) const /*override*/;
+    virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
 
-    // vIndex: 10
-    virtual void onRecipeSelected(::Recipe const*, uint64, bool) /*override*/;
+    virtual void onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems) /*override*/;
 
-    // vIndex: 1
-    virtual ::ItemInstance const& getRecipeItem(int) const /*override*/;
+    virtual ::ItemInstance const& getRecipeItem(int slot) const /*override*/;
 
-    // vIndex: 11
     virtual void clearSelectedRecipe() /*override*/;
 
-    // vIndex: 8
-    virtual bool _canRemove(int, int) const /*override*/;
+    virtual bool _canRemove(int modelSlot, int removeCount) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit CraftingOutputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 
+    MCNAPI void $onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
+
+    MCNAPI ::ItemInstance const& $getRecipeItem(int slot) const;
+
+    MCNAPI void $clearSelectedRecipe();
+
+    MCNAPI bool $_canRemove(int modelSlot, int removeCount) const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

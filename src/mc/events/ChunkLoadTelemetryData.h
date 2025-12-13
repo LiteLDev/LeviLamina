@@ -16,22 +16,6 @@ public:
     // clang-format on
 
     // ChunkLoadTelemetryData inner types define
-    struct ServerChunkLoading {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkcfd81b;
-        ::ll::UntypedStorage<4, 4> mUnk233b11;
-        ::ll::UntypedStorage<4, 4> mUnkf2b37c;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ServerChunkLoading& operator=(ServerChunkLoading const&);
-        ServerChunkLoading(ServerChunkLoading const&);
-        ServerChunkLoading();
-    };
-
     struct ClientSubChunkCache {
     public:
         // member variables
@@ -46,6 +30,22 @@ public:
         ClientSubChunkCache& operator=(ClientSubChunkCache const&);
         ClientSubChunkCache(ClientSubChunkCache const&);
         ClientSubChunkCache();
+    };
+
+    struct ServerChunkLoading {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnkcfd81b;
+        ::ll::UntypedStorage<4, 4> mUnk233b11;
+        ::ll::UntypedStorage<4, 4> mUnkf2b37c;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ServerChunkLoading& operator=(ServerChunkLoading const&);
+        ServerChunkLoading(ServerChunkLoading const&);
+        ServerChunkLoading();
     };
 
 public:
@@ -65,6 +65,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Json::Value toJson() const;
+    MCNAPI_S ::Json::Value toJson() const;
     // NOLINTEND
 };

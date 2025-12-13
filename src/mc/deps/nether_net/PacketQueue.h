@@ -46,19 +46,14 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 4
         virtual ~DataChannel() /*override*/;
 
-        // vIndex: 0
         virtual void OnStateChange() /*override*/;
 
-        // vIndex: 1
         virtual void OnMessage(::webrtc::DataBuffer const& buffer) /*override*/;
 
-        // vIndex: 2
         virtual void OnBufferedAmountChange(uint64) /*override*/;
 
-        // vIndex: 3
         virtual bool IsOkToCallOnTheNetworkThread() /*override*/;
         // NOLINTEND
 
@@ -104,6 +99,8 @@ public:
         MCNAPI void $OnBufferedAmountChange(uint64);
 
         MCNAPI bool $IsOkToCallOnTheNetworkThread();
+
+
         // NOLINTEND
 
     public:
@@ -133,7 +130,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PacketQueue() /*override*/ = default;
     // NOLINTEND
 

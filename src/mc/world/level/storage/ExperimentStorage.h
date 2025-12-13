@@ -23,6 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C bool isAnyToggleEnabled() const;
+
     MCNAPI ::ExperimentStorage& operator=(::ExperimentStorage&&);
 
     MCNAPI ::ExperimentStorage& operator=(::ExperimentStorage const&);

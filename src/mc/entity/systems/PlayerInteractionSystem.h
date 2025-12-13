@@ -13,8 +13,8 @@ class PlayerInteractionSystem {
 public:
     // PlayerInteractionSystem inner types declare
     // clang-format off
-    template<typename T0> struct InteractionMapping;
     struct InteractionMappingBase;
+    template<typename T0> struct InteractionMapping;
     // clang-format on
 
     // PlayerInteractionSystem inner types define
@@ -22,10 +22,8 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~InteractionMappingBase() = default;
 
-        // vIndex: 1
         virtual bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
         // NOLINTEND
 
@@ -33,6 +31,8 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
+
+
         // NOLINTEND
 
     public:

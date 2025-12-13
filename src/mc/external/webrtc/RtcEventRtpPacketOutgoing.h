@@ -29,13 +29,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RtcEventRtpPacketOutgoing() /*override*/;
 
-    // vIndex: 1
     virtual ::webrtc::RtcEvent::Type GetType() const /*override*/;
 
-    // vIndex: 2
     virtual bool IsConfigEvent() const /*override*/;
     // NOLINTEND
 
@@ -63,6 +60,8 @@ public:
     MCNAPI ::webrtc::RtcEvent::Type $GetType() const;
 
     MCNAPI bool $IsConfigEvent() const;
+
+
     // NOLINTEND
 
 public:

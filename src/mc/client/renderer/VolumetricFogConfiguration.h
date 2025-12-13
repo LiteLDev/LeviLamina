@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/options/VolumetricFogQuality.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+namespace dragon::framerenderer::modules { struct VolumeScatteringParameters; }
+// clang-format on
+
 struct VolumetricFogConfiguration {
 public:
     // member variables
@@ -13,8 +22,31 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    VolumetricFogConfiguration& operator=(VolumetricFogConfiguration const&);
-    VolumetricFogConfiguration(VolumetricFogConfiguration const&);
-    VolumetricFogConfiguration();
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C VolumetricFogConfiguration();
+
+    MCNAPI_C VolumetricFogConfiguration(::VolumetricFogConfiguration const&);
+
+    MCNAPI_C ::dragon::framerenderer::modules::VolumeScatteringParameters
+    getVolumeScatteringParameters(::VolumetricFogQuality quality) const;
+
+    MCNAPI_C ::VolumetricFogConfiguration& operator=(::VolumetricFogConfiguration&&);
+
+    MCNAPI_C ::VolumetricFogConfiguration& operator=(::VolumetricFogConfiguration const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::VolumetricFogConfiguration const&);
+    // NOLINTEND
 };

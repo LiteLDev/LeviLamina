@@ -13,14 +13,14 @@ struct ReplaceBiomesComponent;
 namespace ReplaceBiomesSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void applySerializedReplaceBiomesData(
+MCNAPI void applySerializedReplaceBiomesData(
     ::BiomeReplacementsData const& data,
     ::ReplaceBiomesComponent&      component,
     ::BiomeRegistry const&         biomeRegistry,
     ::BiomeStringList const&       stringList
 );
 
-MCAPI void serializeReplaceBiomesData(
+MCNAPI void serializeReplaceBiomesData(
     ::ReplaceBiomesComponent const& component,
     ::BiomeReplacementsData&        data,
     ::BiomeStringList&              stringList

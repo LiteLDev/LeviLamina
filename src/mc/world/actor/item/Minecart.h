@@ -26,70 +26,55 @@ class Minecart : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mDisplayBlockSerId;
-    ::ll::TypedStorage<1, 1, bool>                             mFlipped;
-    ::ll::TypedStorage<4, 4, float>                            mRailRenderRot;
-    ::ll::TypedStorage<8, 8, uint64>                           mBaseLoop;
-    ::ll::TypedStorage<8, 8, uint64>                           mRidingLoop;
-    ::ll::TypedStorage<4, 4, float>                            mSmoothSpeed;
+    ::ll::UntypedStorage<8, 8> mUnk3355bb;
+    ::ll::UntypedStorage<1, 1> mUnk74c1d6;
+    ::ll::UntypedStorage<4, 4> mUnkd59223;
+    ::ll::UntypedStorage<8, 8> mUnk80b5a7;
+    ::ll::UntypedStorage<8, 8> mUnk8f8e51;
+    ::ll::UntypedStorage<4, 4> mUnk34dff3;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    Minecart& operator=(Minecart const&);
+    Minecart(Minecart const&);
     Minecart();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 8
     virtual ~Minecart() /*override*/;
 
-    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 138
     virtual void destroy(::ActorDamageSource const&, bool dropMinecartComponents);
 
-    // vIndex: 139
     virtual ::MinecartType getType() = 0;
 
-    // vIndex: 140
     virtual ::Block const* getDefaultDisplayBlock() const;
 
-    // vIndex: 141
     virtual int getDefaultDisplayOffset() const;
 
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 91
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
-    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 15
     virtual float getInterpolatedBodyYaw(float) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 122
     virtual void kill() /*override*/;
 
-    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
 
-    // vIndex: 142
     virtual void applyNaturalSlowdown(::BlockSource&);
 
-    // vIndex: 143
     virtual void _lazyInitDisplayBlock();
     // NOLINTEND
 
@@ -105,6 +90,10 @@ public:
     MCAPI void _registerLoopingSounds();
 
     MCAPI void dropMinecartWithContentsAndRemove(::std::string_view vanillaMinecartName, bool dropMinecartComponents);
+
+    MCAPI_C ::Block const* getDisplayBlock() const;
+
+    MCAPI_C int getDisplayOffset() const;
 
     MCAPI void postNormalTick(::BlockPos const& preNormalTickBlockPos);
 
@@ -161,6 +150,8 @@ public:
     MCAPI void $applyNaturalSlowdown(::BlockSource&);
 
     MCAPI void $_lazyInitDisplayBlock();
+
+
     // NOLINTEND
 
 public:

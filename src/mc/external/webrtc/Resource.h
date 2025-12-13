@@ -16,13 +16,10 @@ class Resource : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ~Resource() /*override*/ = default;
 
-    // vIndex: 3
     virtual ::std::string Name() const = 0;
 
-    // vIndex: 4
     virtual void SetResourceListener(::webrtc::ResourceListener*) = 0;
     // NOLINTEND
 

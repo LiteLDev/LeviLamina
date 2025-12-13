@@ -13,12 +13,11 @@ struct BaseGoalDefinition {
 public:
     // BaseGoalDefinition inner types define
     enum class Flag : int {
-        // bitfield representation
         None              = 0,
-        Move              = 1 << 0,
-        Look              = 1 << 1,
-        Jump              = 1 << 2,
-        EnttEnumAsBitmask = Move | Jump,
+        Move              = 1,
+        Look              = 2,
+        Jump              = 4,
+        EnttEnumAsBitmask = 5,
     };
 
 public:

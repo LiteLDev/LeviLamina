@@ -2,21 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class ReplayStateComponent;
-// clang-format on
-
 namespace SynchedActorDataSerializer {
 
 struct DeserializeArgs {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Actor&>                 mActor;
-    ::ll::TypedStorage<8, 16, ::std::optional<uint64>> mTargetFrame;
-    ::ll::TypedStorage<8, 8, ::ReplayStateComponent*>  mReplay;
+    ::ll::UntypedStorage<8, 8>  mUnk91d7e4;
+    ::ll::UntypedStorage<8, 16> mUnkdb9abd;
+    ::ll::UntypedStorage<8, 8>  mUnkfa11dc;
     // NOLINTEND
 
 public:

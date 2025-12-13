@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/events/gameevents/VibrationListenerConfig.h"
 
 // auto generated forward declare list
@@ -19,17 +18,18 @@ class AllayVibrationConfig : public ::VibrationListenerConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mActor;
+    ::ll::UntypedStorage<8, 24> mUnk24b204;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    AllayVibrationConfig& operator=(AllayVibrationConfig const&);
+    AllayVibrationConfig(AllayVibrationConfig const&);
     AllayVibrationConfig();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void onSignalReceive(
         ::BlockSource&     region,
         ::BlockPos const&  vibrationSourcePos,
@@ -40,32 +40,29 @@ public:
         ::Actor*
     ) /*override*/;
 
-    // vIndex: 2
     virtual bool isValidVibration(::GameEvent const& gameEvent) /*override*/;
 
-    // vIndex: 3
     virtual bool shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&) /*override*/;
 
-    // vIndex: 0
     virtual ~AllayVibrationConfig() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AllayVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
+    MCNAPI AllayVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
+    MCNAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onSignalReceive(
+    MCNAPI void $onSignalReceive(
         ::BlockSource&     region,
         ::BlockPos const&  vibrationSourcePos,
         ::GameEvent const& gameEvent,
@@ -75,9 +72,11 @@ public:
         ::Actor*
     );
 
-    MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
+    MCNAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCFOLD bool $shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&);
+    MCNAPI bool $shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&);
+
+
     // NOLINTEND
 
 public:

@@ -2,16 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/comprehensive/ParticleType.h"
-#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
-
 struct DurabilityThreshold {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                    mDurability;
-    ::ll::TypedStorage<4, 4, ::ParticleType>                         mParticleType;
-    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
+    ::ll::UntypedStorage<4, 4> mUnkf15656;
+    ::ll::UntypedStorage<4, 4> mUnk7b18a1;
+    ::ll::UntypedStorage<4, 4> mUnkc23b3d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DurabilityThreshold& operator=(DurabilityThreshold const&);
+    DurabilityThreshold(DurabilityThreshold const&);
+    DurabilityThreshold();
 };

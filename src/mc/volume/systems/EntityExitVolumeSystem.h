@@ -26,10 +26,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
-    virtual void tick(::EntityRegistry&) /*override*/;
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 0
     virtual ~EntityExitVolumeSystem() /*override*/ = default;
     // NOLINTEND
 

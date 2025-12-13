@@ -23,22 +23,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelEventGenericPacketPayload(::SharedTypes::Legacy::LevelEvent eventId, ::CompoundTag const& data);
+    MCNAPI LevelEventGenericPacketPayload(::SharedTypes::Legacy::LevelEvent eventId, ::CompoundTag const& data);
 
-    MCAPI ::LevelEventGenericPacketPayload& operator=(::LevelEventGenericPacketPayload&&);
+    MCNAPI ::LevelEventGenericPacketPayload& operator=(::LevelEventGenericPacketPayload&&);
 
-    MCAPI ~LevelEventGenericPacketPayload();
+    MCNAPI ~LevelEventGenericPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::LevelEvent eventId, ::CompoundTag const& data);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::LevelEvent eventId, ::CompoundTag const& data);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

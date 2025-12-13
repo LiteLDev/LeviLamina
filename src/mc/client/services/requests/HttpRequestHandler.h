@@ -9,23 +9,24 @@
 // auto generated forward declare list
 // clang-format off
 class IMinecraftEventing;
+class ServiceClient;
 namespace Bedrock::Http { class Response; }
 // clang-format on
 
 class HttpRequestHandler : public ::std::enable_shared_from_this<::HttpRequestHandler> {
 public:
     // HttpRequestHandler inner types define
-    enum class WaitForSignIn : uint {
-        None    = 0,
-        PlayFab = 1,
-    };
-
     enum class RequestStatus : int {
         NotStarted = 0,
         InProgress = 1,
         Completed  = 2,
         Canceled   = 3,
         TimeOut    = 4,
+    };
+
+    enum class WaitForSignIn : uint {
+        None    = 0,
+        PlayFab = 1,
     };
 
 public:
@@ -51,40 +52,72 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~HttpRequestHandler() = default;
+#else // LL_PLAT_C
+    virtual ~HttpRequestHandler();
+#endif
 
-    // vIndex: 1
-    virtual bool trySend(bool const);
+    virtual bool trySend(bool const networkAllowed);
 
-    // vIndex: 2
     virtual ::Bedrock::Threading::Async<::std::string> getAuthToken() = 0;
 
-    // vIndex: 3
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::std::string) = 0;
 
-    // vIndex: 4
     virtual void processResponse(::Bedrock::Http::Response) = 0;
 
-    // vIndex: 5
     virtual void sendCachedRequest();
 
-    // vIndex: 6
     virtual bool isDone() const;
 
-    // vIndex: 7
     virtual void onComplete() = 0;
 
-    // vIndex: 8
     virtual bool canSendRequest() const;
 
-    // vIndex: 9
-    virtual void fireTelemetry(::Bedrock::NonOwnerPointer<::IMinecraftEventing> const&);
+    virtual void fireTelemetry(::Bedrock::NonOwnerPointer<::IMinecraftEventing> const& eventing);
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C HttpRequestHandler(::ServiceClient const& owner, uint timeoutSeconds);
+
+    MCNAPI_C void sendRequest();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::ServiceClient const& owner, uint timeoutSeconds);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool $trySend(bool const networkAllowed);
 
+    MCNAPI void $sendCachedRequest();
+
+    MCNAPI bool $isDone() const;
+
+    MCNAPI bool $canSendRequest() const;
+
+    MCNAPI void $fireTelemetry(::Bedrock::NonOwnerPointer<::IMinecraftEventing> const& eventing);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

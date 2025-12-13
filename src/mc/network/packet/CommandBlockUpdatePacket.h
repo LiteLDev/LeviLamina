@@ -3,17 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/NetworkBlockPosition.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
-#include "mc/safety/RedactableString.h"
-#include "mc/world/level/block/CommandBlockMode.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class BlockSource;
+class CommandBlockActor;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -21,18 +19,18 @@ class CommandBlockUpdatePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>              mBlockPos;
-    ::ll::TypedStorage<2, 2, ::CommandBlockMode>                   mMode;
-    ::ll::TypedStorage<1, 1, bool>                                 mRedstoneMode;
-    ::ll::TypedStorage<1, 1, bool>                                 mIsConditional;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                     mEntityId;
-    ::ll::TypedStorage<8, 32, ::std::string>                       mCommand;
-    ::ll::TypedStorage<8, 32, ::std::string>                       mLastOutput;
-    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mName;
-    ::ll::TypedStorage<4, 4, int>                                  mTickDelay;
-    ::ll::TypedStorage<1, 1, bool>                                 mTrackOutput;
-    ::ll::TypedStorage<1, 1, bool>                                 mExecuteOnFirstTick;
-    ::ll::TypedStorage<1, 1, bool>                                 mIsBlock;
+    ::ll::UntypedStorage<4, 12> mUnke019e8;
+    ::ll::UntypedStorage<2, 2>  mUnkacd19c;
+    ::ll::UntypedStorage<1, 1>  mUnka24794;
+    ::ll::UntypedStorage<1, 1>  mUnk32f5c9;
+    ::ll::UntypedStorage<8, 8>  mUnka9b60a;
+    ::ll::UntypedStorage<8, 32> mUnk120d9b;
+    ::ll::UntypedStorage<8, 32> mUnk420d90;
+    ::ll::UntypedStorage<8, 72> mUnk10bc9c;
+    ::ll::UntypedStorage<4, 4>  mUnk11a417;
+    ::ll::UntypedStorage<1, 1>  mUnkbd3eb9;
+    ::ll::UntypedStorage<1, 1>  mUnk559d99;
+    ::ll::UntypedStorage<1, 1>  mUnk55adbf;
     // NOLINTEND
 
 public:
@@ -43,19 +41,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    // vIndex: 0
     virtual ~CommandBlockUpdatePacket() /*override*/;
     // NOLINTEND
 
@@ -63,12 +56,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandBlockUpdatePacket(::CommandBlockUpdatePacket const&);
+
+    MCAPI_C CommandBlockUpdatePacket(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::CommandBlockUpdatePacket const&);
+
+    MCAPI_C void* $ctor(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
     // NOLINTEND
 
 public:
@@ -87,6 +84,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

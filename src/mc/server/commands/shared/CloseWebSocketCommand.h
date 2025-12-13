@@ -9,6 +9,7 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
+class CommandRegistry;
 class IMinecraftApp;
 // clang-format on
 
@@ -16,11 +17,15 @@ class CloseWebSocketCommand : public ::Command {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput&) const /*override*/;
 
-    // vIndex: 0
     virtual ~CloseWebSocketCommand() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static void setup(::CommandRegistry& registry, ::IMinecraftApp& app);
     // NOLINTEND
 
 public:
@@ -33,6 +38,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput&) const;
+
+
     // NOLINTEND
 
 public:

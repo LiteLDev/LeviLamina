@@ -12,6 +12,29 @@ namespace webrtc {
 class ColorSpace {
 public:
     // ColorSpace inner types define
+    enum class ChromaSiting : int {
+        KUnspecified = 0,
+        KCollocated  = 1,
+        KHalf        = 2,
+    };
+
+    enum class MatrixID : uchar {
+        KRGB         = 0,
+        KBT709       = 1,
+        KUnspecified = 2,
+        KFCC         = 4,
+        KBT470BG     = 5,
+        KSMPTE170M   = 6,
+        KSMPTE240M   = 7,
+        KYCOCG       = 8,
+        KBT2020Ncl   = 9,
+        KBT2020Cl    = 10,
+        KSMPTE2085   = 11,
+        KCDNCLS      = 12,
+        KCDCLS       = 13,
+        KBT2100Ictcp = 14,
+    };
+
     enum class PrimaryID : uchar {
         KBT709       = 1,
         KUnspecified = 2,
@@ -25,6 +48,13 @@ public:
         KSMPTEST431  = 11,
         KSMPTEST432  = 12,
         KJEDECP22    = 22,
+    };
+
+    enum class RangeID : int {
+        KInvalid = 0,
+        KLimited = 1,
+        KFull    = 2,
+        KDerived = 3,
     };
 
     enum class TransferID : uchar {
@@ -45,36 +75,6 @@ public:
         KSMPTEST2084  = 16,
         KSMPTEST428   = 17,
         KARIBStdB67   = 18,
-    };
-
-    enum class MatrixID : uchar {
-        KRGB         = 0,
-        KBT709       = 1,
-        KUnspecified = 2,
-        KFCC         = 4,
-        KBT470BG     = 5,
-        KSMPTE170M   = 6,
-        KSMPTE240M   = 7,
-        KYCOCG       = 8,
-        KBT2020Ncl   = 9,
-        KBT2020Cl    = 10,
-        KSMPTE2085   = 11,
-        KCDNCLS      = 12,
-        KCDCLS       = 13,
-        KBT2100Ictcp = 14,
-    };
-
-    enum class RangeID : int {
-        KInvalid = 0,
-        KLimited = 1,
-        KFull    = 2,
-        KDerived = 3,
-    };
-
-    enum class ChromaSiting : int {
-        KUnspecified = 0,
-        KCollocated  = 1,
-        KHalf        = 2,
     };
 
 public:

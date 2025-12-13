@@ -32,31 +32,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ~VideoRtpSender() /*override*/;
 
-    // vIndex: 0
     virtual void OnChanged() /*override*/;
 
-    // vIndex: 7
     virtual ::cricket::MediaType media_type() const /*override*/;
 
-    // vIndex: 35
     virtual ::std::string track_kind() const /*override*/;
 
-    // vIndex: 15
     virtual ::webrtc::scoped_refptr<::webrtc::DtmfSenderInterface> GetDtmfSender() const /*override*/;
 
-    // vIndex: 42
     virtual ::webrtc::RTCError GenerateKeyFrame(::std::vector<::std::string> const& rids) /*override*/;
 
-    // vIndex: 36
     virtual void SetSend() /*override*/;
 
-    // vIndex: 37
     virtual void ClearSend() /*override*/;
 
-    // vIndex: 38
     virtual void AttachTrack() /*override*/;
     // NOLINTEND
 
@@ -114,6 +105,8 @@ public:
     MCNAPI void $ClearSend();
 
     MCNAPI void $AttachTrack();
+
+
     // NOLINTEND
 
 public:

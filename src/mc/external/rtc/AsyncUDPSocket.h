@@ -36,19 +36,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AsyncUDPSocket() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::rtc::SocketAddress GetLocalAddress() const /*override*/;
 
-    // vIndex: 2
     virtual ::rtc::SocketAddress GetRemoteAddress() const /*override*/;
 
-    // vIndex: 3
-    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) /*override*/;
+    virtual int Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options) /*override*/;
 
-    // vIndex: 4
     virtual int SendTo(
         void const*                 pv,
         uint64                      cb,
@@ -56,22 +51,16 @@ public:
         ::rtc::PacketOptions const& options
     ) /*override*/;
 
-    // vIndex: 5
     virtual int Close() /*override*/;
 
-    // vIndex: 6
     virtual ::rtc::AsyncPacketSocket::State GetState() const /*override*/;
 
-    // vIndex: 7
     virtual int GetOption(::rtc::Socket::Option opt, int* value) /*override*/;
 
-    // vIndex: 8
     virtual int SetOption(::rtc::Socket::Option opt, int value) /*override*/;
 
-    // vIndex: 9
     virtual int GetError() const /*override*/;
 
-    // vIndex: 10
     virtual void SetError(int error) /*override*/;
     // NOLINTEND
 
@@ -102,7 +91,7 @@ public:
 
     MCNAPI ::rtc::SocketAddress $GetRemoteAddress() const;
 
-    MCNAPI int $Send(void const* data, uint64 len, ::rtc::PacketOptions const& options);
+    MCNAPI int $Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options);
 
     MCNAPI int
     $SendTo(void const* pv, uint64 cb, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options);
@@ -118,6 +107,8 @@ public:
     MCNAPI int $GetError() const;
 
     MCNAPI void $SetError(int error);
+
+
     // NOLINTEND
 
 public:

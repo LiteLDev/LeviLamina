@@ -3,10 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
-#include "mc/util/IntRange.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -28,32 +25,37 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                                                   mDuration;
-        ::ll::TypedStorage<4, 4, float>                                                   mRandomStartChance;
-        ::ll::TypedStorage<4, 4, int>                                                     mForceUseBelowHealth;
-        ::ll::TypedStorage<4, 8, ::IntRange>                                              mActivationDamageRange;
-        ::ll::TypedStorage<1, 1, bool>                                                    mApplyRegeneration;
-        ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ActorDamageCause>> mDamageCauses;
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                                     mFilters;
+        ::ll::UntypedStorage<4, 4>  mUnka74a71;
+        ::ll::UntypedStorage<4, 4>  mUnk7331df;
+        ::ll::UntypedStorage<4, 4>  mUnk1e8f68;
+        ::ll::UntypedStorage<4, 8>  mUnk1d2779;
+        ::ll::UntypedStorage<1, 1>  mUnk278a3a;
+        ::ll::UntypedStorage<8, 24> mUnk5f3f3f;
+        ::ll::UntypedStorage<8, 64> mUnkd46bef;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~Definition() /*override*/ = default;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void addDamageCause(::std::string const& causeCased);
+        MCNAPI void addDamageCause(::std::string const& causeCased);
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
+        MCNAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PlayDeadGoal::Definition>>&
                 root
@@ -87,37 +89,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 0
     virtual ~PlayDeadGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
+
+
     // NOLINTEND
 
 public:

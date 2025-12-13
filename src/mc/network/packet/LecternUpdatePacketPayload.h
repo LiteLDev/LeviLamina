@@ -2,15 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/NetworkBlockPosition.h"
-
 struct LecternUpdatePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                     mPage;
-    ::ll::TypedStorage<4, 4, int>                     mTotalPages;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
+    ::ll::UntypedStorage<4, 4>  mUnk101910;
+    ::ll::UntypedStorage<4, 4>  mUnkb4dd7b;
+    ::ll::UntypedStorage<4, 12> mUnk840543;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LecternUpdatePacketPayload& operator=(LecternUpdatePacketPayload const&);
+    LecternUpdatePacketPayload(LecternUpdatePacketPayload const&);
+    LecternUpdatePacketPayload();
 };

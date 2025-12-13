@@ -42,9 +42,9 @@ public:
     // NOLINTBEGIN
     MCNAPI AvoidMobTypeGoalDefinition();
 
-    MCNAPI AvoidMobTypeGoalDefinition(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition const&);
-
     MCNAPI AvoidMobTypeGoalDefinition(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
+
+    MCNAPI AvoidMobTypeGoalDefinition(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition const&);
 
     MCNAPI ::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&
     operator=(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
@@ -91,9 +91,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition const&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition const&);
     // NOLINTEND
 
 public:

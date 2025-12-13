@@ -12,6 +12,7 @@
 // clang-format off
 class IFileAccess;
 class IWorldTemplateManagerInitializer;
+class Pack;
 class WorldTemplateCollectionView;
 struct PackIdVersion;
 struct WorldTemplateInfo;
@@ -45,48 +46,39 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~WorldTemplateManager() /*override*/;
+#else // LL_PLAT_C
+    virtual ~WorldTemplateManager() /*override*/ = default;
+#endif
 
-    // vIndex: 1
     virtual void flushResourceLoaderTasks() /*override*/;
 
-    // vIndex: 5
     virtual void populateWorldTemplates() /*override*/;
 
-    // vIndex: 6
     virtual uint64 getWorldTemplateSize() const /*override*/;
 
-    // vIndex: 7
     virtual ::WorldTemplateInfo const& getWorldTemplateAtIndex(int index) const /*override*/;
 
-    // vIndex: 4
     virtual ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& getLocalTemplates() const /*override*/;
 
-    // vIndex: 2
     virtual ::WorldTemplateInfo const*
     findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const /*override*/;
 
-    // vIndex: 9
     virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const
         /*override*/;
 
-    // vIndex: 11
     virtual void forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const& callback) const
         /*override*/;
 
-    // vIndex: 8
     virtual void deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity) /*override*/;
 
-    // vIndex: 12
     virtual bool isInitialized() const /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::PubSub::Subscription registerModifiedCallback(
         ::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction
     ) /*override*/;
 
-    // vIndex: 10
     virtual ::WorldTemplateCollectionView createView(::mce::UUID const& toView) const /*override*/;
     // NOLINTEND
 
@@ -102,7 +94,16 @@ public:
 
     MCNAPI void _initialize(::WorldTemplateManagerInitData&& data);
 
+    MCNAPI_C void addKnownPackFromImport(::Pack const& pack);
+
+    MCNAPI_C ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack const>>>
+    loadPacksForTemplate(::WorldTemplateInfo const& info);
+
+    MCNAPI_C void setWorldIconAllowListPath(::WorldTemplateInfo const& info, ::std::string path);
+
     MCNAPI void sortWorldTemplates();
+
+    MCNAPI_C void update();
     // NOLINTEND
 
 public:
@@ -145,6 +146,8 @@ public:
     $registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction);
 
     MCNAPI ::WorldTemplateCollectionView $createView(::mce::UUID const& toView) const;
+
+
     // NOLINTEND
 
 public:

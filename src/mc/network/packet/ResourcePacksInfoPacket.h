@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
-#include "mc/network/packet/PacksInfoData.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -20,36 +19,33 @@ class ResourcePacksInfoPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::PacksInfoData> mData;
+    ::ll::UntypedStorage<8, 80> mUnk117fec;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ResourcePacksInfoPacket& operator=(ResourcePacksInfoPacket const&);
+    ResourcePacksInfoPacket(ResourcePacksInfoPacket const&);
     ResourcePacksInfoPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    // vIndex: 0
     virtual ~ResourcePacksInfoPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePacksInfoPacket(
+    MCAPI_S ResourcePacksInfoPacket(
         bool                           resourcePackRequired,
         ::std::vector<::PackInfoData>& resourcePacks,
         bool                           hasAddonPacks,
@@ -61,7 +57,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCAPI_S void* $ctor(
         bool                           resourcePackRequired,
         ::std::vector<::PackInfoData>& resourcePacks,
         bool                           hasAddonPacks,
@@ -86,6 +82,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

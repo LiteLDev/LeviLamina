@@ -3,9 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/ChanceInformation.h"
-#include "mc/util/IntRange.h"
-#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeCanopy.h"
 
 // auto generated forward declare list
@@ -22,23 +19,27 @@ class CherryTreeCanopy : public ::ITreeCanopy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>  mLeavesBlockDescriptor;
-    ::ll::TypedStorage<4, 8, ::IntRange>           mHeight;
-    ::ll::TypedStorage<4, 8, ::IntRange>           mRadius;
-    ::ll::TypedStorage<4, 4, int>                  mTrunkWidth;
-    ::ll::TypedStorage<4, 12, ::ChanceInformation> mWideBottomLayerHoleChance;
-    ::ll::TypedStorage<4, 12, ::ChanceInformation> mCornerHoleChance;
-    ::ll::TypedStorage<4, 12, ::ChanceInformation> mHangingLeavesChance;
-    ::ll::TypedStorage<4, 12, ::ChanceInformation> mHangingLeavesExtensionChance;
+    ::ll::UntypedStorage<8, 184> mUnkb3a627;
+    ::ll::UntypedStorage<4, 8>   mUnk8cdc5a;
+    ::ll::UntypedStorage<4, 8>   mUnk1ddc86;
+    ::ll::UntypedStorage<4, 4>   mUnk80ac2a;
+    ::ll::UntypedStorage<4, 12>  mUnk7f620e;
+    ::ll::UntypedStorage<4, 12>  mUnk7fad39;
+    ::ll::UntypedStorage<4, 12>  mUnk397cda;
+    ::ll::UntypedStorage<4, 12>  mUnke423a1;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CherryTreeCanopy& operator=(CherryTreeCanopy const&);
+    CherryTreeCanopy(CherryTreeCanopy const&);
+    CherryTreeCanopy();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CherryTreeCanopy() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> placeCanopy(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
@@ -52,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _placeLayerOfLeaves(
+    MCNAPI void _placeLayerOfLeaves(
         ::IBlockWorldGenAPI&            target,
         ::Random&                       random,
         ::BlockPos const&               canopyPos,
@@ -62,7 +63,7 @@ public:
         ::TreeHelper::TreeParams const& treeParams
     ) const;
 
-    MCAPI void _placeLayerOfLeavesWithHangingLeavesBelow(
+    MCNAPI void _placeLayerOfLeavesWithHangingLeavesBelow(
         ::IBlockWorldGenAPI&            target,
         ::Random&                       random,
         ::BlockPos const&               canopyPos,
@@ -72,13 +73,13 @@ public:
         ::TreeHelper::TreeParams const& treeParams
     ) const;
 
-    MCAPI bool _shouldSkipPosition(::Random& random, ::BlockPos const& pos, int radius) const;
+    MCNAPI bool _shouldSkipPosition(::Random& random, ::BlockPos const& pos, int radius) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Random&            random,
@@ -86,6 +87,8 @@ public:
         ::TreeHelper::TreeParams const& treeParams,
         ::std::vector<::BlockPos> const&
     ) const;
+
+
     // NOLINTEND
 
 public:

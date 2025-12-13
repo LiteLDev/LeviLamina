@@ -43,19 +43,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FlexfecReceiveStream() /*override*/ = default;
 
-    // vIndex: 2
     virtual void SetRtcpMode(::webrtc::RtcpMode) = 0;
 
-    // vIndex: 3
     virtual void SetPayloadType(int) = 0;
 
-    // vIndex: 4
     virtual int payload_type() const = 0;
 
-    // vIndex: 5
     virtual ::webrtc::ReceiveStatistics const* GetStats() const = 0;
     // NOLINTEND
 

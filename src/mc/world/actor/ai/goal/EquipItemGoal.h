@@ -25,7 +25,6 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~Definition() /*override*/ = default;
         // NOLINTEND
 
@@ -52,40 +51,37 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 0
     virtual ~EquipItemGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _dropItem(::ItemStack const& item) const;
+    MCNAPI void _dropItem(::ItemStack const& item) const;
 
-    MCAPI void _sendMobEquipmentPacket(::MobEquipmentPacket packet) const;
+    MCNAPI void _sendMobEquipmentPacket(::MobEquipmentPacket packet) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCFOLD bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
+
+
     // NOLINTEND
 
 public:

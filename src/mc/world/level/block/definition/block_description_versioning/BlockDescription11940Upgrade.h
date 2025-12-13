@@ -16,13 +16,11 @@ class BlockDescription11940Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool previousSchema(
         ::rapidjson::
             GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
     ) const /*override*/;
 
-    // vIndex: 2
     virtual void upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
@@ -31,37 +29,38 @@ public:
         ::SemVersion const&
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~BlockDescription11940Upgrade() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDescription11940Upgrade();
+    MCNAPI BlockDescription11940Upgrade();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $previousSchema(
+    MCNAPI bool $previousSchema(
         ::rapidjson::
             GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
     ) const;
 
-    MCAPI void $upgradeToNext(
+    MCNAPI void $upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&
     ) const;
+
+
     // NOLINTEND
 
 public:

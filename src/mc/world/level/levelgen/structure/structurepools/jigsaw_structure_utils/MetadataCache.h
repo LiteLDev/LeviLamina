@@ -14,9 +14,9 @@ class MetadataCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_80::JigsawStructureMetadata const&> mMetadata;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                          mBlockCache;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                          mFinalBlockCache;
+    ::ll::UntypedStorage<8, 8>  mUnk70ffba;
+    ::ll::UntypedStorage<8, 24> mUnkfe7328;
+    ::ll::UntypedStorage<8, 24> mUnkd8ad64;
     // NOLINTEND
 
 public:
@@ -28,23 +28,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MetadataCache(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
+    MCNAPI explicit MetadataCache(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
 
-    MCAPI ::Block const* getOrCreateBlockCache(uint64 index);
+    MCNAPI ::Block const* getOrCreateBlockCache(uint64 index);
 
-    MCAPI ~MetadataCache();
+    MCNAPI ~MetadataCache();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

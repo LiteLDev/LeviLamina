@@ -8,9 +8,9 @@
 namespace FlatteningUtils::CoralWallFan3 {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getDeadSplitStates(bool hangType);
+MCNAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getDeadSplitStates(bool hangType);
 
-MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getHangTypeSplitStates(bool dead);
+MCNAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getHangTypeSplitStates(bool dead);
 // NOLINTEND
 
 } // namespace FlatteningUtils::CoralWallFan3

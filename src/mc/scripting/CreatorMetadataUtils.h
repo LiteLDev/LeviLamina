@@ -25,64 +25,64 @@ namespace Scripting { struct Version; }
 namespace CreatorMetadataUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void _addCommonEngineMetadata(::Json::Value& root, char const* type);
+MCAPI_S void _addCommonEngineMetadata(::Json::Value& root, char const* type);
 
-MCAPI void _addCommonVanillaMetadata(::Json::Value& jsonRoot, char const* type);
+MCAPI_S void _addCommonVanillaMetadata(::Json::Value& jsonRoot, char const* type);
 
-MCAPI void _addPrivilegeToArray(::Json::Value& arr, ::Scripting::Privilege privilege);
+MCAPI_S void _addPrivilegeToArray(::Json::Value& arr, ::Scripting::Privilege privilege);
 
-MCAPI void _generateAfterEventsOrderingDocumentation(
+MCAPI_S void _generateAfterEventsOrderingDocumentation(
     ::Scripting::ScriptEngine const& scriptEngine,
     ::Core::Path const&              docsFolder
 );
 
-MCAPI ::Json::Value _generateBiomeMetadataJson(::BiomeRegistry const& biomes);
+MCAPI_S ::Json::Value _generateBiomeMetadataJson(::BiomeRegistry const& biomes);
 
-MCAPI ::Json::Value _generateBlocksMetadataJson();
+MCAPI_S ::Json::Value _generateBlocksMetadataJson();
 
-MCAPI ::Json::Value _generateCameraMetadataJson(::CameraPresets const& presets);
+MCAPI_S ::Json::Value _generateCameraMetadataJson(::CameraPresets const& presets);
 
-MCAPI ::Json::Value _generateCooldownCategoriesMetadataJson(::ItemRegistryRef itemRegistry);
+MCAPI_S ::Json::Value _generateCooldownCategoriesMetadataJson(::ItemRegistryRef itemRegistry);
 
-MCAPI ::Json::Value _generateDimensionsMetadataJson();
+MCAPI_S ::Json::Value _generateDimensionsMetadataJson();
 
-MCAPI ::Json::Value _generateEffectsMetadataJson();
+MCAPI_S ::Json::Value _generateEffectsMetadataJson();
 
-MCAPI ::Json::Value _generateEnchantmentsMetadataJson();
+MCAPI_S ::Json::Value _generateEnchantmentsMetadataJson();
 
-MCAPI ::Json::Value _generateEntitiesMetadataJson(
+MCAPI_S ::Json::Value _generateEntitiesMetadataJson(
     ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList
 );
 
-MCAPI ::Json::Value _generateItemsMetadataJson(::ItemRegistryRef itemRegistry);
+MCAPI_S ::Json::Value _generateItemsMetadataJson(::ItemRegistryRef itemRegistry);
 
-MCAPI ::Json::Value _generatePotionDeliveryTypesMetadataJson();
+MCAPI_S ::Json::Value _generatePotionDeliveryTypesMetadataJson();
 
-MCAPI ::Json::Value _generatePotionEffectsMetadataJson();
+MCAPI_S ::Json::Value _generatePotionEffectsMetadataJson();
 
-MCAPI ::Json::Value _generateScriptingModuleMetadataJson(
+MCAPI_S ::Json::Value _generateScriptingModuleMetadataJson(
     ::Scripting::ModuleBinding const&          moduleToBind,
     ::Scripting::SupportedBindingModule const& moduleDescriptor,
     ::Scripting::ModuleBindingBundle const&    loadedModules
 );
 
-MCAPI ::Json::Value _generateStructureFeatureMetadataJson();
+MCAPI_S ::Json::Value _generateStructureFeatureMetadataJson();
 
-MCAPI ::std::unordered_map<::std::string, ::std::string> _getPropertyToEntityNameMap(
+MCAPI_S ::std::unordered_map<::std::string, ::std::string> _getPropertyToEntityNameMap(
     ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList
 );
 
-MCAPI void generateCommandsDocumentation(::CommandRegistry& commandRegistry, ::Core::Path const& docsFolder);
+MCAPI_S void generateCommandsDocumentation(::CommandRegistry& commandRegistry, ::Core::Path const& docsFolder);
 
-MCAPI void generateCooldownCategoriesDocumentation(::Core::Path const& docsFolder, ::ItemRegistryRef itemRegistry);
+MCAPI_S void generateCooldownCategoriesDocumentation(::Core::Path const& docsFolder, ::ItemRegistryRef itemRegistry);
 
-MCAPI void generateItemsDocumentation(::Core::Path const& docsFolder, ::ItemRegistryRef itemRegistry);
+MCAPI_S void generateItemsDocumentation(::Core::Path const& docsFolder, ::ItemRegistryRef itemRegistry);
 
-MCAPI void generateSchemaDataDocumentation(::Core::Path const& schemaDataFolder);
+MCAPI_S void generateSchemaDataDocumentation(::Core::Path const& schemaDataFolder);
 
-MCAPI void generateScriptingDocumentation(::Scripting::ScriptEngine& scriptEngine, ::Core::Path const& docsFolder);
+MCAPI_S void generateScriptingDocumentation(::Scripting::ScriptEngine& scriptEngine, ::Core::Path const& docsFolder);
 
-MCAPI void generateVanillaDataDocumentation(
+MCAPI_S void generateVanillaDataDocumentation(
     ::Core::Path const&                                                              docsFolder,
     ::ItemRegistryRef                                                                itemRegistry,
     ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList,
@@ -92,18 +92,18 @@ MCAPI void generateVanillaDataDocumentation(
 
 MCAPI ::std::string getGameSemVersionAsString();
 
-MCAPI ::std::initializer_list<::AllExperiments> getRequiredExperimentsForMetadata();
+MCAPI_S ::std::initializer_list<::AllExperiments> getRequiredExperimentsForMetadata();
 
-MCAPI ::std::string scriptingVersionToString(::Scripting::Version const& version);
+MCAPI_S ::std::string scriptingVersionToString(::Scripting::Version const& version);
 
-MCAPI bool validateVariantResolution(
+MCAPI_S bool validateVariantResolution(
     ::Scripting::ModuleBinding const&       moduleToBind,
     ::entt::meta_type const&                variantType,
     ::Scripting::ModuleBindingBundle const& loadedModules,
     ::std::string const&                    bindingName
 );
 
-MCAPI bool writeJsonMetadataToFile(::Json::Value const& json, ::Core::Path const& filepath);
+MCAPI_S bool writeJsonMetadataToFile(::Json::Value const& json, ::Core::Path const& filepath);
 // NOLINTEND
 
 } // namespace CreatorMetadataUtils

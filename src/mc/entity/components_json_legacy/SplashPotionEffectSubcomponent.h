@@ -27,19 +27,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SplashPotionEffectSubcomponent() /*override*/ = default;
 
-    // vIndex: 1
     virtual void readfromJSON(::Json::Value& component) /*override*/;
 
-    // vIndex: 2
     virtual void writetoJSON(::Json::Value&) const /*override*/;
 
-    // vIndex: 3
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
-    // vIndex: 4
     virtual char const* getName() const /*override*/;
     // NOLINTEND
 
@@ -66,5 +61,7 @@ public:
     MCAPI void $readfromJSON(::Json::Value& component);
 
     MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
+
+
     // NOLINTEND
 };

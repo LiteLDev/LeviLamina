@@ -27,28 +27,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptCompositePrintLogger() /*override*/ = default;
 
-    // vIndex: 1
     virtual void onInfo(::Scripting::ContextId, ::std::string_view) const /*override*/;
 
-    // vIndex: 2
     virtual void onWarn(::Scripting::ContextId, ::std::string_view) const /*override*/;
 
-    // vIndex: 3
     virtual void onError(::Scripting::ContextId, ::std::string_view) const /*override*/;
 
-    // vIndex: 4
     virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const
         /*override*/;
 
-    // vIndex: 5
     virtual bool
     shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const
         /*override*/;
 
-    // vIndex: 6
     virtual void
     onPromiseRejection(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&, bool) const
         /*override*/;

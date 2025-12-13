@@ -17,20 +17,26 @@ class FileStorageAreaObserver : public ::Core::Observer<::Core::FileStorageAreaO
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void _onBeginWrites() = 0;
 
-    // vIndex: 3
     virtual void _onEndWrites() = 0;
 
-    // vIndex: 4
     virtual void _onWriteFile(::Core::PathView) = 0;
 
-    // vIndex: 5
     virtual void _onDeleteFile(::Core::PathView) = 0;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~FileStorageAreaObserver() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~FileStorageAreaObserver() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

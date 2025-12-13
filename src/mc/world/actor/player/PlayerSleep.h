@@ -10,7 +10,7 @@ class EntityContext;
 namespace PlayerSleep {
 // functions
 // NOLINTBEGIN
-MCAPI void initializePlayer(::EntityContext& provider);
+MCNAPI void initializePlayer(::EntityContext& provider);
 // NOLINTEND
 
 } // namespace PlayerSleep

@@ -17,22 +17,21 @@ class OceanMonumentDoubleYZRoom : public ::OceanMonumentPiece {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::StructurePieceType getType() const /*override*/;
 
-    // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-    // vIndex: 0
     virtual ~OceanMonumentDoubleYZRoom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+
     // NOLINTEND
 
 public:

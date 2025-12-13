@@ -8,8 +8,14 @@ struct ScriptItemCustomComponentClosureFlags {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<2, 2, ushort> mValue;
+    ::ll::UntypedStorage<2, 2> mUnk10b61a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptItemCustomComponentClosureFlags& operator=(ScriptItemCustomComponentClosureFlags const&);
+    ScriptItemCustomComponentClosureFlags(ScriptItemCustomComponentClosureFlags const&);
+    ScriptItemCustomComponentClosureFlags();
 };
 
 } // namespace ScriptModuleMinecraft

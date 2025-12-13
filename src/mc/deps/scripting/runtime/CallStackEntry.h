@@ -8,27 +8,33 @@ struct CallStackEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> functionName;
-    ::ll::TypedStorage<8, 32, ::std::string> fileName;
-    ::ll::TypedStorage<4, 4, int>            lineNumber;
+    ::ll::UntypedStorage<8, 32> mUnk5cd443;
+    ::ll::UntypedStorage<8, 32> mUnke29b41;
+    ::ll::UntypedStorage<4, 4>  mUnk1bb804;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CallStackEntry& operator=(CallStackEntry const&);
+    CallStackEntry(CallStackEntry const&);
+    CallStackEntry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~CallStackEntry();
+    MCNAPI ~CallStackEntry();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::CallStackEntry FromBacktrace(::std::string_view backtrace);
+    MCNAPI static ::Scripting::CallStackEntry FromBacktrace(::std::string_view backtrace);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

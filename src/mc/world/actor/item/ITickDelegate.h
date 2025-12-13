@@ -14,13 +14,10 @@ class ITickDelegate {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ITickDelegate() = default;
 
-    // vIndex: 1
     virtual void onLand(::FallingBlock const&, ::IBlockSource&, ::BlockPos const&) = 0;
 
-    // vIndex: 2
     virtual void breakBlock(::FallingBlockActor&) = 0;
     // NOLINTEND
 

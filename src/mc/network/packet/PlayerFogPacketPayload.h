@@ -6,18 +6,24 @@ struct PlayerFogPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mFogStack;
+    ::ll::UntypedStorage<8, 24> mUnk1c87b2;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlayerFogPacketPayload& operator=(PlayerFogPacketPayload const&);
+    PlayerFogPacketPayload(PlayerFogPacketPayload const&);
+    PlayerFogPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PlayerFogPacketPayload();
+    MCNAPI ~PlayerFogPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

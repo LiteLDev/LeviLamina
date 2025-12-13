@@ -29,25 +29,18 @@ class VanillaServerGameplayEventListener : public ::EventListenerDispatcher<::Ac
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 34
     virtual ::EventResult onEvent(::ActorHurtEvent const& actorHurtEvent) /*override*/;
 
-    // vIndex: 70
     virtual ::EventResult onEvent(::PlayerDamageEvent const& playerDamageEvent) /*override*/;
 
-    // vIndex: 64
     virtual ::EventResult onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent) /*override*/;
 
-    // vIndex: 8
     virtual ::EventResult onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message) /*override*/;
 
-    // vIndex: 7
     virtual ::EventResult onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod) /*override*/;
 
-    // vIndex: 7
     virtual ::EventResult onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos) /*override*/;
 
-    // vIndex: 1
     virtual ::EventResult onBlockPlacedByPlayer(
         ::Player&         player,
         ::Block const&    placedBlock,
@@ -55,7 +48,6 @@ public:
         bool              isUnderwater
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~VanillaServerGameplayEventListener() /*override*/ = default;
     // NOLINTEND
 
@@ -76,6 +68,8 @@ public:
 
     MCAPI ::EventResult
     $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+
+
     // NOLINTEND
 
 public:

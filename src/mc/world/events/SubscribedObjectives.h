@@ -4,19 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/deps/ecs/WeakEntityRef.h"
 
 class SubscribedObjectives {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>            mPlayer;
-    ::ll::TypedStorage<8, 16, ::std::set<::HashedString>> mObjectives;
+    ::ll::UntypedStorage<8, 24> mUnkffeb18;
+    ::ll::UntypedStorage<8, 16> mUnk574a18;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SubscribedObjectives& operator=(SubscribedObjectives const&);
+    SubscribedObjectives(SubscribedObjectives const&);
+    SubscribedObjectives();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isSubscribed(::std::string const& objective) const;
+    MCNAPI bool isSubscribed(::std::string const& objective) const;
     // NOLINTEND
 };

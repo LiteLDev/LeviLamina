@@ -14,10 +14,8 @@ class RedstoneBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 118
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 0
     virtual ~RedstoneBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -25,6 +23,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $canSpawnOn(::Actor*) const;
+
+
     // NOLINTEND
 
 public:

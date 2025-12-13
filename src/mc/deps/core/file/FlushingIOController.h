@@ -21,10 +21,8 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~Flusher();
 
-        // vIndex: 1
         virtual ::Core::Result _flushBuffer(void const*, uint64) = 0;
         // NOLINTEND
 

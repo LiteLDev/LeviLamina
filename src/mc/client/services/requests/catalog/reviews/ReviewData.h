@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 struct ReviewData {
 public:
     // member variables
@@ -27,4 +32,24 @@ public:
     ReviewData& operator=(ReviewData const&);
     ReviewData(ReviewData const&);
     ReviewData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit ReviewData(::Json::Value const& jsonValue);
+
+    MCNAPI_C ~ReviewData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::Json::Value const& jsonValue);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

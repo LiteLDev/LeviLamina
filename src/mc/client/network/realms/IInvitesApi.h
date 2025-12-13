@@ -16,19 +16,15 @@ class IInvitesApi {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IInvitesApi() = default;
 
-    // vIndex: 1
     virtual void getPendingInviteCount(::std::function<void(::Realms::GenericStatus, int)>) = 0;
 
-    // vIndex: 2
     virtual void getPendingInviteCountFriendsOnly(
         ::std::function<void(::Realms::GenericStatus, int)>,
         ::std::vector<::std::string> const&
     ) = 0;
 
-    // vIndex: 3
     virtual void
     listInvites(::std::function<void(::Realms::GenericStatus, ::std::vector<::Invites::Invite>)>, bool) = 0;
     // NOLINTEND

@@ -26,10 +26,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::SharedTypes::v1_20_80::TintingComponentColor& operator=(::SharedTypes::v1_20_80::TintingComponentColor&&);
+
     MCNAPI ::SharedTypes::v1_20_80::TintingComponentColor&
     operator=(::SharedTypes::v1_20_80::TintingComponentColor const&);
-
-    MCNAPI ::SharedTypes::v1_20_80::TintingComponentColor& operator=(::SharedTypes::v1_20_80::TintingComponentColor&&);
 
     MCNAPI ~TintingComponentColor();
     // NOLINTEND

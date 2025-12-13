@@ -9,7 +9,6 @@ class BlastFurnaceContainerManagerModel : public ::FurnaceContainerManagerModel 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlastFurnaceContainerManagerModel() /*override*/ = default;
     // NOLINTEND
 

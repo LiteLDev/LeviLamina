@@ -29,19 +29,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LoadOperation() /*override*/ = default;
 
-    // vIndex: 2
     virtual char const* getDescription() const /*override*/;
 
-    // vIndex: 5
     virtual bool _init(
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
         ::PositionTrackingDB::TrackingRecord&                           record
     ) /*override*/;
 
-    // vIndex: 6
     virtual bool _tick(
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
         ::PositionTrackingDB::TrackingRecord&
@@ -62,6 +58,8 @@ public:
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
         ::PositionTrackingDB::TrackingRecord&
     );
+
+
     // NOLINTEND
 
 public:

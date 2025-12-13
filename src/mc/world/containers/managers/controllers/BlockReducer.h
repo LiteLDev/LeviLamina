@@ -47,10 +47,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlockReducer() = default;
 
-    // vIndex: 1
     virtual void registerBlock(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
     // NOLINTEND
 
@@ -68,6 +66,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $registerBlock(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
+
+
     // NOLINTEND
 
 public:

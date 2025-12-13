@@ -32,67 +32,46 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 13
     virtual bool write(::cereal::NullType) /*override*/;
 
-    // vIndex: 12
     virtual bool write(bool value) /*override*/;
 
-    // vIndex: 11
     virtual bool write(char value) /*override*/;
 
-    // vIndex: 10
     virtual bool write(uchar value) /*override*/;
 
-    // vIndex: 9
     virtual bool write(short value) /*override*/;
 
-    // vIndex: 8
     virtual bool write(ushort value) /*override*/;
 
-    // vIndex: 7
     virtual bool write(int value) /*override*/;
 
-    // vIndex: 6
     virtual bool write(uint value) /*override*/;
 
-    // vIndex: 5
     virtual bool write(int64 value) /*override*/;
 
-    // vIndex: 4
     virtual bool write(uint64 value) /*override*/;
 
-    // vIndex: 3
     virtual bool write(float value) /*override*/;
 
-    // vIndex: 2
     virtual bool write(double value) /*override*/;
 
-    // vIndex: 1
     virtual bool write(::std::string_view const value) /*override*/;
 
-    // vIndex: 14
     virtual void writeValidityFlag(bool) /*override*/;
 
-    // vIndex: 15
     virtual void writeControlValue(uint) /*override*/;
 
-    // vIndex: 16
     virtual bool pushMember(::std::string_view const value) /*override*/;
 
-    // vIndex: 17
     virtual void popMember() /*override*/;
 
-    // vIndex: 18
     virtual ::cereal::SchemaRWType openObject() /*override*/;
 
-    // vIndex: 19
     virtual ::cereal::SchemaRWType openArray(bool isDynamicExtent, uint64 length) /*override*/;
 
-    // vIndex: 20
     virtual void close() /*override*/;
 
-    // vIndex: 0
     virtual ~DynamicValueSchemaWriter() /*override*/;
     // NOLINTEND
 
@@ -150,6 +129,8 @@ public:
     MCNAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
 
     MCNAPI void $close();
+
+
     // NOLINTEND
 
 public:

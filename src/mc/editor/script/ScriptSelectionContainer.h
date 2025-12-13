@@ -30,7 +30,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptSelectionContainer() = default;
     // NOLINTEND
 

@@ -23,10 +23,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~NatPunchthroughDebugInterface_PacketLogger() /*override*/ = default;
 
-    // vIndex: 1
     virtual void OnClientMessage(char const*) /*override*/;
     // NOLINTEND
 

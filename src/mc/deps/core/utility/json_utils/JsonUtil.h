@@ -14,6 +14,9 @@ class HashedString;
 class SemVersion;
 class Vec2;
 class Vec3;
+class Vec4;
+namespace Core { class Path; }
+namespace Core { class Result; }
 namespace Json { class Value; }
 namespace JsonUtil { class EmptyClass; }
 namespace SharedTypes::v1_21_100 { struct ChargeAttackGoalDefinition; }
@@ -58,34 +61,8 @@ MCNAPI void buildActorDefinitionSchema(
 );
 
 MCNAPI void buildActorGoalSchema(
-    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
-        ::JsonUtil::EmptyClass,
-        ::SharedTypes::v1_21_110::StayNearNoteblockGoalDefinition>>& root,
-    ::std::string const&
-);
-
-MCNAPI void buildActorGoalSchema(
-    ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_120::DigGoalDefinition>>& root,
-    ::std::string const&
-);
-
-MCNAPI void buildActorGoalSchema(
-    ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_100::EatMobGoalDefinition>>& root,
-    ::std::string const&
-);
-
-MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_120::AvoidBlockGoalDefinition>>&
-        root,
-    ::std::string const&
-);
-
-MCNAPI void buildActorGoalSchema(
-    ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_120::DrinkMilkGoalDefinition>>&
         root,
     ::std::string const&
 );
@@ -99,41 +76,33 @@ MCNAPI void buildActorGoalSchema(
 
 MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SwoopAttackGoalDefinition>>&
-                         root,
-    ::std::string const& name
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_120::DigGoalDefinition>>& root,
+    ::std::string const&
 );
 
 MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SlimeAttackGoalDefinition>>&
-                         root,
-    ::std::string const& name
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_120::DrinkMilkGoalDefinition>>&
+        root,
+    ::std::string const&
 );
 
 MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SwimWanderGoalDefinition>>&
-                         root,
-    ::std::string const& name
-);
-
-MCNAPI void buildActorGoalSchema(
-    ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SniffGoalDefinition>>& root,
-    ::std::string const&                                                                                          name
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_100::EatMobGoalDefinition>>& root,
+    ::std::string const&
 );
 
 MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
         ::JsonUtil::EmptyClass,
-        ::SharedTypes::v1_21_100::ControlledByPlayerGoalDefinition>>& root,
-    ::std::string const&                                              name
+        ::SharedTypes::v1_21_110::StayNearNoteblockGoalDefinition>>& root,
+    ::std::string const&
 );
 
 MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SlimeFloatGoalDefinition>>&
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_100::ChargeAttackGoalDefinition>>&
                          root,
     ::std::string const& name
 );
@@ -148,8 +117,8 @@ MCNAPI void buildActorGoalSchema(
 MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
         ::JsonUtil::EmptyClass,
-        ::SharedTypes::v1_21_110::SwimUpForBreathGoalDefinition>>& root,
-    ::std::string const&                                           name
+        ::SharedTypes::v1_21_100::ControlledByPlayerGoalDefinition>>& root,
+    ::std::string const&                                              name
 );
 
 MCNAPI void buildActorGoalSchema(
@@ -160,23 +129,30 @@ MCNAPI void buildActorGoalSchema(
 );
 
 MCNAPI void buildActorGoalSchema(
-    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
-        ::JsonUtil::EmptyClass,
-        ::SharedTypes::v1_21_110::SlimeKeepOnJumpingGoalDefinition>>& root,
-    ::std::string const&                                              name
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::RoarGoalDefinition>>& root,
+    ::std::string const&                                                                                         name
 );
 
 MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SwimIdleGoalDefinition>>&
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SlimeAttackGoalDefinition>>&
                          root,
     ::std::string const& name
 );
 
 MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::RoarGoalDefinition>>& root,
-    ::std::string const&                                                                                         name
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SlimeFloatGoalDefinition>>&
+                         root,
+    ::std::string const& name
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_21_110::SlimeKeepOnJumpingGoalDefinition>>& root,
+    ::std::string const&                                              name
 );
 
 MCNAPI void buildActorGoalSchema(
@@ -188,6 +164,12 @@ MCNAPI void buildActorGoalSchema(
 
 MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SniffGoalDefinition>>& root,
+    ::std::string const&                                                                                          name
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SonicBoomGoalDefinition>>&
                          root,
     ::std::string const& name
@@ -195,10 +177,33 @@ MCNAPI void buildActorGoalSchema(
 
 MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_100::ChargeAttackGoalDefinition>>&
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SwimIdleGoalDefinition>>&
                          root,
     ::std::string const& name
 );
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_21_110::SwimUpForBreathGoalDefinition>>& root,
+    ::std::string const&                                           name
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SwimWanderGoalDefinition>>&
+                         root,
+    ::std::string const& name
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::SwoopAttackGoalDefinition>>&
+                         root,
+    ::std::string const& name
+);
+
+MCNAPI_C ::Core::Result deserializeFromFile(::Json::Value& json, ::Core::Path const& path);
 
 MCNAPI void eraseSchema(::HashedString const& name, ::SemVersion const& version);
 
@@ -216,9 +221,17 @@ MCNAPI bool parseItemColor(::ItemColor& outColor, ::Json::Value const& root);
 
 MCNAPI bool parseRange(::Json::Value const& root, int& outMin, int& outMax);
 
+MCNAPI_C bool parseRange(::Json::Value const& root, float& outMin, float& outMax);
+
 MCNAPI bool parseVec2(::Vec2& outVec, ::Json::Value const& root);
 
 MCNAPI bool parseVec3(::Vec3& outVec, ::Json::Value const& root);
+
+MCNAPI_C bool parseVec4(::Vec4& outVec, ::Json::Value const& root);
+
+MCNAPI_C ::Json::Value patchJson(::Json::Value const& base, ::Json::Value const& patch, char terminator);
+
+MCNAPI_C bool serializeToFile(::Json::Value const& json, ::Core::Path const& path);
 
 MCNAPI void setDefaultPrettyName(::std::string& destPrettyName, ::HashedString const& sourceName);
 

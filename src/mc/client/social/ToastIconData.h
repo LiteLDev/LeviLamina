@@ -15,4 +15,18 @@ public:
     ToastIconData& operator=(ToastIconData const&);
     ToastIconData(ToastIconData const&);
     ToastIconData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::ToastIconData& operator=(::ToastIconData&&);
+
+    MCNAPI_C ~ToastIconData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

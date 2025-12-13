@@ -17,30 +17,52 @@ public:
     // prevent constructor by default
     RayTracingHardwareOptions& operator=(RayTracingHardwareOptions const&);
     RayTracingHardwareOptions(RayTracingHardwareOptions const&);
-    RayTracingHardwareOptions();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool isHardwareRayTracingCompatible() const /*override*/;
 
-    // vIndex: 2
     virtual bool isHardwareDeferredCompatible() const /*override*/;
 
-    // vIndex: 3
     virtual bool isPlatformCompatible() const /*override*/;
 
-    // vIndex: 4
     virtual bool isUpscalingAvailable() const /*override*/;
 
-    // vIndex: 0
     virtual ~RayTracingHardwareOptions() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C RayTracingHardwareOptions();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool $isHardwareRayTracingCompatible() const;
 
+    MCNAPI bool $isHardwareDeferredCompatible() const;
+
+    MCNAPI bool $isPlatformCompatible() const;
+
+    MCNAPI bool $isUpscalingAvailable() const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

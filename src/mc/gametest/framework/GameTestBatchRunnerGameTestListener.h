@@ -28,19 +28,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance&) /*override*/;
 
-    // vIndex: 2
     virtual void onTestPassed(::gametest::BaseGameTestInstance&) /*override*/;
 
-    // vIndex: 3
     virtual void onTestFailed(::gametest::BaseGameTestInstance&) /*override*/;
 
-    // vIndex: 6
     virtual void onTestRetryFinished(::gametest::BaseGameTestInstance&) /*override*/;
 
-    // vIndex: 0
     virtual ~GameTestBatchRunnerGameTestListener() /*override*/ = default;
     // NOLINTEND
 
@@ -54,6 +49,8 @@ public:
     MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance&);
 
     MCNAPI void $onTestRetryFinished(::gametest::BaseGameTestInstance&);
+
+
     // NOLINTEND
 
 public:

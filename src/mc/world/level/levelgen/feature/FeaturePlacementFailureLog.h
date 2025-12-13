@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/string/StaticOptimizedString.h"
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class StaticOptimizedString; }
+// clang-format on
 
 class FeaturePlacementFailureLog {
 public:
@@ -17,42 +19,52 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Bedrock::StaticOptimizedString> source;
-        ::ll::TypedStorage<8, 8, ::Bedrock::StaticOptimizedString> message;
+        ::ll::UntypedStorage<8, 8> mUnk111c7e;
+        ::ll::UntypedStorage<8, 8> mUnk897754;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SourceMessagePair& operator=(SourceMessagePair const&);
+        SourceMessagePair(SourceMessagePair const&);
+        SourceMessagePair();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SourceMessagePair();
+        MCNAPI ~SourceMessagePair();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
-
-    using Log = ::std::vector<::FeaturePlacementFailureLog::SourceMessagePair>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::FeaturePlacementFailureLog::SourceMessagePair>> mFailureLog;
+    ::ll::UntypedStorage<8, 24> mUnk52d2f8;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FeaturePlacementFailureLog& operator=(FeaturePlacementFailureLog const&);
+    FeaturePlacementFailureLog(FeaturePlacementFailureLog const&);
+    FeaturePlacementFailureLog();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void logFailure(::Bedrock::StaticOptimizedString source, ::Bedrock::StaticOptimizedString message);
+    MCNAPI void logFailure(::Bedrock::StaticOptimizedString source, ::Bedrock::StaticOptimizedString message);
 
-    MCAPI ~FeaturePlacementFailureLog();
+    MCNAPI ~FeaturePlacementFailureLog();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

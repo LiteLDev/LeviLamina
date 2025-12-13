@@ -17,10 +17,9 @@ struct ScriptPlayerJoinAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
-                                             mPlayerHandle;
-    ::ll::TypedStorage<8, 32, ::std::string> mPlayerName;
-    ::ll::TypedStorage<8, 32, ::std::string> mPlayerId;
+    ::ll::UntypedStorage<8, 32> mUnk57b25e;
+    ::ll::UntypedStorage<8, 32> mUnkafb053;
+    ::ll::UntypedStorage<8, 32> mUnk974a22;
     // NOLINTEND
 
 public:
@@ -32,30 +31,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerJoinAfterEvent(
+    MCNAPI ScriptPlayerJoinAfterEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle,
         ::std::string const&                                                        playerName,
         ::std::string const&                                                        playerId
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&&);
 
-    MCAPI ~ScriptPlayerJoinAfterEvent();
+    MCNAPI ~ScriptPlayerJoinAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle,
         ::std::string const&                                                        playerName,
         ::std::string const&                                                        playerId
@@ -65,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

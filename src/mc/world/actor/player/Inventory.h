@@ -14,31 +14,22 @@ class Inventory : public ::FillingContainer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Inventory() /*override*/ = default;
 
-    // vIndex: 1
     virtual void init() /*override*/;
 
-    // vIndex: 46
     virtual bool add(::ItemStack& item) /*override*/;
 
-    // vIndex: 47
     virtual bool canAdd(::ItemStack const& item) const /*override*/;
 
-    // vIndex: 53
     virtual int getFirstEmptySlot() const;
 
-    // vIndex: 26
     virtual int getEmptySlotsCount() const /*override*/;
 
-    // vIndex: 54
     virtual void setContainerSize(int size);
 
-    // vIndex: 12
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
     // NOLINTEND
 
@@ -70,6 +61,8 @@ public:
     MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+
+
     // NOLINTEND
 
 public:

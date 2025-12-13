@@ -29,22 +29,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PlayerEventCoordinator() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void registerPlayerGameplayHandler(::std::unique_ptr<::PlayerGameplayHandler>&& handler);
+    MCNAPI void registerPlayerGameplayHandler(::std::unique_ptr<::PlayerGameplayHandler>&& handler);
 
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::PlayerGameplayEvent<::CoordinatorResult>> const& event);
+    MCNAPI ::CoordinatorResult sendEvent(::EventRef<::PlayerGameplayEvent<::CoordinatorResult>> const& event);
 
-    MCAPI void sendEvent(::EventRef<::PlayerGameplayEvent<void>> const& event);
+    MCNAPI void sendEvent(::EventRef<::PlayerGameplayEvent<void>> const& event);
 
-    MCAPI void sendPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
+    MCNAPI void sendPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
 
-    MCAPI void sendPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    MCNAPI_C void sendPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
+
+    MCNAPI void sendPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
     // NOLINTEND
 
 public:

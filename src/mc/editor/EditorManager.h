@@ -42,10 +42,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorManager() /*override*/;
 
-    // vIndex: 4
     virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
         ::ILevelListCache&,
         ::Scheduler&,
@@ -53,23 +51,17 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>
     ) /*override*/;
 
-    // vIndex: 5
     virtual void cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const /*override*/;
 
-    // vIndex: 6
     virtual void cleanupOrphanedTemporaryRealmsUploadWorlds() /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> scriptingTeardown() /*override*/;
 
-    // vIndex: 8
     virtual ::Scripting::Result_deprecated<void>
     scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
 
-    // vIndex: 9
     virtual void tryClearPlaytestRoundtripInfo() /*override*/;
 
-    // vIndex: 1
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() /*override*/;
     // NOLINTEND
 
@@ -112,6 +104,8 @@ public:
     MCNAPI void $tryClearPlaytestRoundtripInfo();
 
     MCNAPI ::Editor::ServiceProviderCollection& $getServiceProviders();
+
+
     // NOLINTEND
 
 public:

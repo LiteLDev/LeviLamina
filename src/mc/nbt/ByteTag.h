@@ -22,28 +22,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void write(::IDataOutput& dos) const /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::Result<void> load(::IDataInput& dis) /*override*/;
 
-    // vIndex: 5
     virtual ::Tag::Type getId() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::string toString() const /*override*/;
 
-    // vIndex: 6
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
-    // vIndex: 9
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
 
-    // vIndex: 10
     virtual uint64 hash() const /*override*/;
 
-    // vIndex: 0
     virtual ~ByteTag() /*override*/;
     // NOLINTEND
 
@@ -69,6 +61,8 @@ public:
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
     MCAPI uint64 $hash() const;
+
+
     // NOLINTEND
 
 public:

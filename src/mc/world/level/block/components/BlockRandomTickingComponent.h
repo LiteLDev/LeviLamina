@@ -23,22 +23,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlockRandomTickingComponent();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
+    MCNAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
-    MCAPI void onTick(::BlockEvents::BlockRandomTickLegacyEvent const& eventData) const;
+    MCNAPI void onTick(::BlockEvents::BlockRandomTickLegacyEvent const& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

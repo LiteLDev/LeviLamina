@@ -8,13 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class IDependencyLoader; }
-namespace Scripting { class IPrinter; }
 namespace Scripting { class NativeRuntime; }
 namespace Scripting { class ResultAny; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextId; }
-namespace Scripting { struct ModuleBindingBundle; }
 // clang-format on
 
 namespace Scripting {
@@ -23,27 +19,24 @@ class NativeFunctionPayload : public ::Scripting::IPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::function<::Scripting::ResultAny(
-            ::Scripting::NativeRuntime&,
-            ::Scripting::ContextId,
-            ::Scripting::WeakLifetimeScope,
-            ::Scripting::ModuleBindingBundle const&,
-            ::Scripting::IDependencyLoader*,
-            ::Scripting::IPrinter*
-        )>>
-        mFunction;
+    ::ll::UntypedStorage<8, 64> mUnk79f943;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    NativeFunctionPayload& operator=(NativeFunctionPayload const&);
+    NativeFunctionPayload(NativeFunctionPayload const&);
+    NativeFunctionPayload();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~NativeFunctionPayload() /*override*/;
+#else // LL_PLAT_C
+    virtual ~NativeFunctionPayload() /*override*/ = default;
+#endif
 
-    // vIndex: 2
     virtual ::Scripting::ResultAny runOn(
         ::Scripting::ContextId      contextId,
         ::Scripting::NativeRuntime& runtime,
@@ -54,23 +47,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::ResultAny $runOn(
+#ifdef LL_PLAT_S
+    MCNAPI ::Scripting::ResultAny $runOn(
         ::Scripting::ContextId      contextId,
         ::Scripting::NativeRuntime& runtime,
         ::std::optional<::Scripting::Privilege>
     );
-    // NOLINTEND
+#endif
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };
 

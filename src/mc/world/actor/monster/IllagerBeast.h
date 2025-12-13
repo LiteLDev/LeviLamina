@@ -22,10 +22,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 19
     virtual void blockedByShield(::ActorDamageSource const& source, ::Actor& blocker) /*override*/;
 
-    // vIndex: 8
     virtual ~IllagerBeast() /*override*/ = default;
     // NOLINTEND
 
@@ -53,6 +51,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
+
+
     // NOLINTEND
 
 public:

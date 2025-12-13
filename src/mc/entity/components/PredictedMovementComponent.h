@@ -9,7 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class AddActorPacket;
+class MotionPredictionHintsPacket;
 class MoveActorAbsoluteData;
+class SetActorMotionPacket;
 class Vec2;
 class Vec3;
 struct PredictedMovementSystemParams;
@@ -19,17 +22,39 @@ class PredictedMovementComponent {
 public:
     // PredictedMovementComponent inner types declare
     // clang-format off
-    class HistoryCache;
-    struct HistoryItem;
     struct HistoryTimestampData;
+    struct HistoryItem;
+    struct PredictionDbgWindowData;
+    struct PredictionDbgData;
+    struct RuntimePredictionData;
+    class HistoryCache;
     struct MotionHistoryItem;
     struct MoveHistoryItem;
-    struct PredictionDbgData;
-    struct PredictionDbgWindowData;
-    struct RuntimePredictionData;
     // clang-format on
 
     // PredictedMovementComponent inner types define
+    struct HistoryTimestampData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkcc9bee;
+        ::ll::UntypedStorage<8, 8> mUnk4baf21;
+        ::ll::UntypedStorage<4, 4> mUnk274cb5;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        HistoryTimestampData& operator=(HistoryTimestampData const&);
+        HistoryTimestampData(HistoryTimestampData const&);
+        HistoryTimestampData();
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCNAPI static uint& mSequenceIdGenerator();
+        // NOLINTEND
+    };
+
     struct HistoryItem {
     public:
         // HistoryItem inner types define
@@ -56,285 +81,41 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
+#ifdef LL_PLAT_S
         virtual ~HistoryItem() = default;
+#else // LL_PLAT_C
+        virtual ~HistoryItem();
+#endif
 
-        // vIndex: 1
         virtual bool isValidStartItem() const = 0;
 
-        // vIndex: 2
         virtual bool isAddedActorItem() const = 0;
 
-        // vIndex: 3
         virtual bool isMotionHintItem() const = 0;
 
-        // vIndex: 4
         virtual ::std::string toString() const;
 
-        // vIndex: 5
         virtual ::Vec3 const& getPos() const = 0;
 
-        // vIndex: 6
         virtual ::Vec2 const& getRot() const = 0;
 
-        // vIndex: 7
         virtual float getYHeadRot() const = 0;
 
-        // vIndex: 8
         virtual bool isOnGround() const = 0;
         // NOLINTEND
 
     public:
-        // virtual function thunks
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI ::std::string $toString() const;
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
-    struct MoveHistoryItem : public ::PredictedMovementComponent::HistoryItem {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkf7e85b;
-        ::ll::UntypedStorage<4, 8>  mUnk188a45;
-        ::ll::UntypedStorage<4, 4>  mUnk4ca4c2;
-        ::ll::UntypedStorage<1, 1>  mUnk262622;
-        ::ll::UntypedStorage<1, 1>  mUnk1dbcf5;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MoveHistoryItem& operator=(MoveHistoryItem const&);
-        MoveHistoryItem(MoveHistoryItem const&);
-        MoveHistoryItem();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 1
-        virtual bool isValidStartItem() const /*override*/;
-
-        // vIndex: 2
-        virtual bool isAddedActorItem() const /*override*/;
-
-        // vIndex: 3
-        virtual bool isMotionHintItem() const /*override*/;
-
-        // vIndex: 5
-        virtual ::Vec3 const& getPos() const /*override*/;
-
-        // vIndex: 6
-        virtual ::Vec2 const& getRot() const /*override*/;
-
-        // vIndex: 7
-        virtual float getYHeadRot() const /*override*/;
-
-        // vIndex: 8
-        virtual bool isOnGround() const /*override*/;
-
-        // vIndex: 0
-        virtual ~MoveHistoryItem() /*override*/ = default;
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCFOLD bool $isValidStartItem() const;
+        MCNAPI ::std::string $toString() const;
 
-        MCFOLD bool $isAddedActorItem() const;
 
-        MCFOLD bool $isMotionHintItem() const;
-
-        MCFOLD ::Vec3 const& $getPos() const;
-
-        MCAPI ::Vec2 const& $getRot() const;
-
-        MCAPI float $getYHeadRot() const;
-
-        MCFOLD bool $isOnGround() const;
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
-    struct MotionHistoryItem : public ::PredictedMovementComponent::HistoryItem {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkeba6ba;
-        ::ll::UntypedStorage<4, 12> mUnka8087d;
-        ::ll::UntypedStorage<1, 1>  mUnkd62109;
-        ::ll::UntypedStorage<4, 12> mUnk391ca0;
-        ::ll::UntypedStorage<4, 8>  mUnkccd7ff;
-        ::ll::UntypedStorage<4, 4>  mUnk131d7f;
-        ::ll::UntypedStorage<1, 1>  mUnkeea86e;
-        ::ll::UntypedStorage<1, 1>  mUnk3bfc51;
-        ::ll::UntypedStorage<1, 1>  mUnk766402;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MotionHistoryItem& operator=(MotionHistoryItem const&);
-        MotionHistoryItem(MotionHistoryItem const&);
-        MotionHistoryItem();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 1
-        virtual bool isValidStartItem() const /*override*/;
-
-        // vIndex: 2
-        virtual bool isAddedActorItem() const /*override*/;
-
-        // vIndex: 3
-        virtual bool isMotionHintItem() const /*override*/;
-
-        // vIndex: 5
-        virtual ::Vec3 const& getPos() const /*override*/;
-
-        // vIndex: 6
-        virtual ::Vec2 const& getRot() const /*override*/;
-
-        // vIndex: 7
-        virtual float getYHeadRot() const /*override*/;
-
-        // vIndex: 8
-        virtual bool isOnGround() const /*override*/;
-
-        // vIndex: 0
-        virtual ~MotionHistoryItem() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-    };
-
-    struct HistoryTimestampData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkcc9bee;
-        ::ll::UntypedStorage<8, 8> mUnk4baf21;
-        ::ll::UntypedStorage<4, 4> mUnk274cb5;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        HistoryTimestampData& operator=(HistoryTimestampData const&);
-        HistoryTimestampData(HistoryTimestampData const&);
-        HistoryTimestampData();
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static uint& mSequenceIdGenerator();
-        // NOLINTEND
-    };
-
-    class HistoryCache {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 40> mUnk28e59b;
-        ::ll::UntypedStorage<8, 16> mUnk468c22;
-        ::ll::UntypedStorage<8, 16> mUnk93cee2;
-        ::ll::UntypedStorage<8, 40> mUnk52177c;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        HistoryCache& operator=(HistoryCache const&);
-        HistoryCache(HistoryCache const&);
-        HistoryCache();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void _addHistoryItem(::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& item);
-
-        MCAPI void _clearHistory();
-
-        MCAPI void addHistory(
-            ::MoveActorAbsoluteData const&                 moveData,
-            ::std::chrono::steady_clock::time_point const& receiveTimepoint
-        );
-
-        MCAPI ::std::string toString();
-        // NOLINTEND
-    };
-
-    struct RuntimePredictionData {
-    public:
-        // RuntimePredictionData inner types declare
-        // clang-format off
-        struct LerpedInterval;
-        // clang-format on
-
-        // RuntimePredictionData inner types define
-        struct LerpedInterval {
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 8> mUnk250c8c;
-            ::ll::UntypedStorage<8, 8> mUnk83704d;
-            ::ll::UntypedStorage<8, 8> mUnkebc783;
-            ::ll::UntypedStorage<4, 4> mUnk32a0c2;
-            // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            LerpedInterval& operator=(LerpedInterval const&);
-            LerpedInterval(LerpedInterval const&);
-            LerpedInterval();
-        };
-
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk961a6a;
-        ::ll::UntypedStorage<8, 8>  mUnk44eafe;
-        ::ll::UntypedStorage<8, 8>  mUnkbc15c5;
-        ::ll::UntypedStorage<8, 8>  mUnk39a977;
-        ::ll::UntypedStorage<8, 8>  mUnke72963;
-        ::ll::UntypedStorage<8, 8>  mUnkbcf454;
-        ::ll::UntypedStorage<8, 32> mUnk628c63;
-        ::ll::UntypedStorage<8, 32> mUnk88c081;
-        ::ll::UntypedStorage<8, 32> mUnk9ae460;
-        ::ll::UntypedStorage<8, 8>  mUnk3fa1bb;
-        ::ll::UntypedStorage<4, 28> mUnk38ab66;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RuntimePredictionData& operator=(RuntimePredictionData const&);
-        RuntimePredictionData(RuntimePredictionData const&);
-        RuntimePredictionData();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~RuntimePredictionData() = default;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void reset();
         // NOLINTEND
 
     public:
@@ -389,15 +170,296 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::string toString() const;
+        MCNAPI ::std::string toString() const;
 
-        MCAPI ~PredictionDbgData();
+        MCNAPI ~PredictionDbgData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct RuntimePredictionData {
+    public:
+        // RuntimePredictionData inner types declare
+        // clang-format off
+        struct LerpedInterval;
+        // clang-format on
+
+        // RuntimePredictionData inner types define
+        struct LerpedInterval {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::UntypedStorage<8, 8> mUnk250c8c;
+            ::ll::UntypedStorage<8, 8> mUnk83704d;
+            ::ll::UntypedStorage<8, 8> mUnkebc783;
+            ::ll::UntypedStorage<4, 4> mUnk32a0c2;
+            // NOLINTEND
+
+        public:
+            // prevent constructor by default
+            LerpedInterval& operator=(LerpedInterval const&);
+            LerpedInterval(LerpedInterval const&);
+            LerpedInterval();
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk961a6a;
+        ::ll::UntypedStorage<8, 8>  mUnk44eafe;
+        ::ll::UntypedStorage<8, 8>  mUnkbc15c5;
+        ::ll::UntypedStorage<8, 8>  mUnk39a977;
+        ::ll::UntypedStorage<8, 8>  mUnke72963;
+        ::ll::UntypedStorage<8, 8>  mUnkbcf454;
+        ::ll::UntypedStorage<8, 32> mUnk628c63;
+        ::ll::UntypedStorage<8, 32> mUnk88c081;
+        ::ll::UntypedStorage<8, 32> mUnk9ae460;
+        ::ll::UntypedStorage<8, 8>  mUnk3fa1bb;
+        ::ll::UntypedStorage<4, 28> mUnk38ab66;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RuntimePredictionData& operator=(RuntimePredictionData const&);
+        RuntimePredictionData(RuntimePredictionData const&);
+        RuntimePredictionData();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ~RuntimePredictionData() = default;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI void reset();
+
+        MCNAPI_C void updateRuntimeData(
+            ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& newItem,
+            ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& prevNewItem,
+            uint64                                                                    currentHistoryItemSize
+        );
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+    class HistoryCache {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 40> mUnk28e59b;
+        ::ll::UntypedStorage<8, 16> mUnk468c22;
+        ::ll::UntypedStorage<8, 16> mUnk93cee2;
+        ::ll::UntypedStorage<8, 40> mUnk52177c;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        HistoryCache& operator=(HistoryCache const&);
+        HistoryCache(HistoryCache const&);
+        HistoryCache();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI void _addHistoryItem(::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& item);
+
+        MCNAPI void _clearHistory();
+
+        MCNAPI_C void
+        addHistory(::AddActorPacket const& actorData, ::std::chrono::steady_clock::time_point const& receiveTimepoint);
+
+        MCNAPI_C void addHistory(
+            ::SetActorMotionPacket const&                  motionData,
+            ::std::chrono::steady_clock::time_point const& receiveTimepoint
+        );
+
+        MCNAPI_C void addHistory(
+            ::MotionPredictionHintsPacket const&           motionPredictionHints,
+            ::std::chrono::steady_clock::time_point const& receiveTimepoint
+        );
+
+        MCNAPI void addHistory(
+            ::MoveActorAbsoluteData const&                 moveData,
+            ::std::chrono::steady_clock::time_point const& receiveTimepoint
+        );
+
+        MCNAPI ::std::string toString();
+        // NOLINTEND
+    };
+
+    struct MotionHistoryItem : public ::PredictedMovementComponent::HistoryItem {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnkeba6ba;
+        ::ll::UntypedStorage<4, 12> mUnka8087d;
+        ::ll::UntypedStorage<1, 1>  mUnkd62109;
+        ::ll::UntypedStorage<4, 12> mUnk391ca0;
+        ::ll::UntypedStorage<4, 8>  mUnkccd7ff;
+        ::ll::UntypedStorage<4, 4>  mUnk131d7f;
+        ::ll::UntypedStorage<1, 1>  mUnkeea86e;
+        ::ll::UntypedStorage<1, 1>  mUnk3bfc51;
+        ::ll::UntypedStorage<1, 1>  mUnk766402;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MotionHistoryItem& operator=(MotionHistoryItem const&);
+        MotionHistoryItem(MotionHistoryItem const&);
+        MotionHistoryItem();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual bool isValidStartItem() const /*override*/;
+
+        virtual bool isAddedActorItem() const /*override*/;
+
+        virtual bool isMotionHintItem() const /*override*/;
+
+        virtual ::Vec3 const& getPos() const /*override*/;
+
+        virtual ::Vec2 const& getRot() const /*override*/;
+
+        virtual float getYHeadRot() const /*override*/;
+
+        virtual bool isOnGround() const /*override*/;
+
+        virtual ~MotionHistoryItem() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C MotionHistoryItem(
+            ::Vec3 const&                                                                   motion,
+            bool                                                                            onGround,
+            bool                                                                            isMotionHintItem,
+            ::std::chrono::steady_clock::time_point const&                                  timepoint,
+            ::std::shared_ptr<::PredictedMovementComponent::MoveHistoryItem const> const&   prevMoveItem,
+            ::std::shared_ptr<::PredictedMovementComponent::MotionHistoryItem const> const& prevMotionItem,
+            bool                                                                            didAdjustTimepoint,
+            ::std::chrono::milliseconds const&                                              timepointDiff
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI_C void* $ctor(
+            ::Vec3 const&                                                                   motion,
+            bool                                                                            onGround,
+            bool                                                                            isMotionHintItem,
+            ::std::chrono::steady_clock::time_point const&                                  timepoint,
+            ::std::shared_ptr<::PredictedMovementComponent::MoveHistoryItem const> const&   prevMoveItem,
+            ::std::shared_ptr<::PredictedMovementComponent::MotionHistoryItem const> const& prevMotionItem,
+            bool                                                                            didAdjustTimepoint,
+            ::std::chrono::milliseconds const&                                              timepointDiff
+        );
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI bool $isValidStartItem() const;
+
+        MCNAPI bool $isAddedActorItem() const;
+
+        MCNAPI bool $isMotionHintItem() const;
+
+        MCNAPI ::Vec3 const& $getPos() const;
+
+        MCNAPI ::Vec2 const& $getRot() const;
+
+        MCNAPI float $getYHeadRot() const;
+
+        MCNAPI bool $isOnGround() const;
+#endif
+
+
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+    struct MoveHistoryItem : public ::PredictedMovementComponent::HistoryItem {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnkf7e85b;
+        ::ll::UntypedStorage<4, 8>  mUnk188a45;
+        ::ll::UntypedStorage<4, 4>  mUnk4ca4c2;
+        ::ll::UntypedStorage<1, 1>  mUnk262622;
+        ::ll::UntypedStorage<1, 1>  mUnk1dbcf5;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MoveHistoryItem& operator=(MoveHistoryItem const&);
+        MoveHistoryItem(MoveHistoryItem const&);
+        MoveHistoryItem();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual bool isValidStartItem() const /*override*/;
+
+        virtual bool isAddedActorItem() const /*override*/;
+
+        virtual bool isMotionHintItem() const /*override*/;
+
+        virtual ::Vec3 const& getPos() const /*override*/;
+
+        virtual ::Vec2 const& getRot() const /*override*/;
+
+        virtual float getYHeadRot() const /*override*/;
+
+        virtual bool isOnGround() const /*override*/;
+
+        virtual ~MoveHistoryItem() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI bool $isValidStartItem() const;
+
+        MCNAPI bool $isAddedActorItem() const;
+
+        MCNAPI bool $isMotionHintItem() const;
+
+        MCNAPI ::Vec3 const& $getPos() const;
+
+        MCNAPI ::Vec2 const& $getRot() const;
+
+        MCNAPI float $getYHeadRot() const;
+
+        MCNAPI bool $isOnGround() const;
+
+
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -422,25 +484,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _debugLog(
+    MCNAPI void _debugLog(
         ::PredictedMovementSystemParams&                       params,
         ::PredictedMovementComponent::PredictionDbgData const& debugData
     ) const;
 
-    MCAPI bool _tryInterpolate(
+    MCNAPI bool _tryInterpolate(
         ::PredictedMovementSystemParams&               params,
         ::std::chrono::steady_clock::time_point const& renderTimepoint
     );
 
-    MCAPI void reset();
+    MCNAPI void reset();
 
-    MCAPI void
+    MCNAPI void
     tickNextPosition(::PredictedMovementSystemParams& params, ::std::chrono::steady_clock::time_point const& timepoint);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::PredictedMovementComponent::RuntimePredictionData>& mGlobalRuntimePredictionData();
+    MCNAPI static ::std::unique_ptr<::PredictedMovementComponent::RuntimePredictionData>&
+    mGlobalRuntimePredictionData();
     // NOLINTEND
 };

@@ -9,22 +9,16 @@ class BigEndianStringByteOutput : public ::StringByteOutput {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void writeFloat(float v) /*override*/;
 
-    // vIndex: 4
     virtual void writeDouble(double v) /*override*/;
 
-    // vIndex: 6
     virtual void writeShort(short v) /*override*/;
 
-    // vIndex: 7
     virtual void writeInt(int v) /*override*/;
 
-    // vIndex: 8
     virtual void writeLongLong(int64 v) /*override*/;
 
-    // vIndex: 0
     virtual ~BigEndianStringByteOutput() /*override*/;
     // NOLINTEND
 
@@ -46,6 +40,8 @@ public:
     MCAPI void $writeInt(int v);
 
     MCAPI void $writeLongLong(int64 v);
+
+
     // NOLINTEND
 
 public:

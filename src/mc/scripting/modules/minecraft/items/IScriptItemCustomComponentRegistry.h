@@ -21,13 +21,10 @@ class IScriptItemCustomComponentRegistry : public ::ScriptModuleMinecraft::IScri
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::ScriptDeferredEventListener& getEventListener() = 0;
 
-    // vIndex: 4
     virtual void setCerealContext(::cereal::ReflectionCtx&);
 
-    // vIndex: 0
     virtual ~IScriptItemCustomComponentRegistry() /*override*/;
     // NOLINTEND
 

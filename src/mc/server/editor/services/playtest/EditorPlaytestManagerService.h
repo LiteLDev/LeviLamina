@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/SessionResult.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
+#include "mc/editor/services/playtest/SessionResult.h"
 #include "mc/server/editor/serviceproviders/EditorPlayerPlaytestServiceProvider.h"
 #include "mc/server/editor/serviceproviders/EditorPlaytestManagerServiceProvider.h"
 
@@ -84,29 +84,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorPlaytestManagerService() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 1
     virtual ::Editor::Playtest::SessionResult getPlaytestSessionAvailability(::WeakEntityRef playerRef) /*override*/;
 
-    // vIndex: 2
     virtual void beginPlaytestSession(
         ::WeakEntityRef                                                 playerRef,
         ::Editor::GameOptions const&                                    options,
         ::std::function<void(::Editor::Playtest::SessionResult const&)> callback
     ) /*override*/;
 
-    // vIndex: 3
     virtual void _handlePlayersSessionTransferResponse(
         ::WeakEntityRef                                                       playerRef,
         ::Editor::Network::PlaytestBeginSessionTransferResponsePayload const& payload
@@ -141,6 +134,8 @@ public:
         ::WeakEntityRef                                                       playerRef,
         ::Editor::Network::PlaytestBeginSessionTransferResponsePayload const& payload
     );
+
+
     // NOLINTEND
 
 public:

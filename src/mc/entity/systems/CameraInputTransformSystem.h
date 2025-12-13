@@ -30,9 +30,9 @@ MCNAPI void _tick(
 
 MCNAPI ::TickingSystemWithInfo create();
 
-MCNAPI float getWorldYawInDegrees(::Vec3 const& orientation);
-
 MCNAPI float getWorldYawInDegrees(::Vec2 const& orientation);
+
+MCNAPI float getWorldYawInDegrees(::Vec3 const& orientation);
 // NOLINTEND
 
 } // namespace CameraInputTransformSystem

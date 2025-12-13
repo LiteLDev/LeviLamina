@@ -25,8 +25,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~PlaytestBeginSessionTransferResponsePayload() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~PlaytestBeginSessionTransferResponsePayload() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

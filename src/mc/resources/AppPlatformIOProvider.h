@@ -17,19 +17,14 @@ class AppPlatformIOProvider : public ::IPackIOProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> getFileAccess(::ResourceFileSystem system) const /*override*/;
 
-    // vIndex: 2
     virtual ::std::function<::std::string(::Core::Path const&)> getAssetReader() const /*override*/;
 
-    // vIndex: 3
     virtual ::Core::Path getOnDiskScratchPath() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::unique_ptr<::IPackIOProvider> clone() const /*override*/;
 
-    // vIndex: 0
     virtual ~AppPlatformIOProvider() /*override*/ = default;
     // NOLINTEND
 
@@ -43,6 +38,8 @@ public:
     MCNAPI ::Core::Path $getOnDiskScratchPath() const;
 
     MCNAPI ::std::unique_ptr<::IPackIOProvider> $clone() const;
+
+
     // NOLINTEND
 
 public:

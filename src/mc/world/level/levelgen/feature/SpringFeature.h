@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class BlockSource;
 class BlockType;
@@ -18,7 +17,7 @@ class SpringFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
+    ::ll::UntypedStorage<8, 8> mUnkc73c96;
     // NOLINTEND
 
 public:
@@ -30,23 +29,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 0
     virtual ~SpringFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isValidSpringBorderBlock(::BlockType const& block, ::BlockSource& region) const;
+    MCNAPI bool isValidSpringBorderBlock(::BlockType const& block, ::BlockSource& region) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

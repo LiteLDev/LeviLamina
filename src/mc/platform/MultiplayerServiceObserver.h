@@ -18,13 +18,10 @@ class MultiplayerServiceObserver
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
-    virtual void onInvalidPlayerJoinedLobby(::mce::UUID const&, ::std::string const&);
+    virtual void onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
 
-    // vIndex: 3
     virtual void onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
 
-    // vIndex: 0
     virtual ~MultiplayerServiceObserver() /*override*/;
     // NOLINTEND
 
@@ -38,6 +35,12 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
+
+#ifdef LL_PLAT_C
+    MCNAPI void $onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
+#endif
+
+
     // NOLINTEND
 };
 

@@ -23,7 +23,6 @@ class ScriptLeashableComponent
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptLeashableComponent() /*override*/ = default;
     // NOLINTEND
 

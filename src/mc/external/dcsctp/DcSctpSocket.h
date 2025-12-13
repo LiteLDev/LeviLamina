@@ -48,6 +48,17 @@ public:
     // clang-format on
 
     // DcSctpSocket inner types define
+    enum class State : int {
+        KClosed           = 0,
+        KCookieWait       = 1,
+        KCookieEchoed     = 2,
+        KEstablished      = 3,
+        KShutdownPending  = 4,
+        KShutdownSent     = 5,
+        KShutdownReceived = 6,
+        KShutdownAckSent  = 7,
+    };
+
     struct ConnectParameters {
     public:
         // member variables
@@ -61,17 +72,6 @@ public:
         ConnectParameters& operator=(ConnectParameters const&);
         ConnectParameters(ConnectParameters const&);
         ConnectParameters();
-    };
-
-    enum class State : int {
-        KClosed           = 0,
-        KCookieWait       = 1,
-        KCookieEchoed     = 2,
-        KEstablished      = 3,
-        KShutdownPending  = 4,
-        KShutdownSent     = 5,
-        KShutdownReceived = 6,
-        KShutdownAckSent  = 7,
     };
 
 public:
@@ -102,84 +102,62 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void ReceivePacket(::rtc::ArrayView<uchar const> data) /*override*/;
 
-    // vIndex: 2
     virtual void HandleTimeout(::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64> timeout_id) /*override*/;
 
-    // vIndex: 3
     virtual void Connect() /*override*/;
 
-    // vIndex: 4
     virtual void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const& state) /*override*/;
 
-    // vIndex: 5
     virtual void Shutdown() /*override*/;
 
-    // vIndex: 6
     virtual void Close() /*override*/;
 
-    // vIndex: 12
     virtual ::dcsctp::SendStatus
     Send(::dcsctp::DcSctpMessage message, ::dcsctp::SendOptions const& send_options) /*override*/;
 
-    // vIndex: 13
     virtual ::std::vector<::dcsctp::SendStatus> SendMany(
         ::rtc::ArrayView<::dcsctp::DcSctpMessage> messages,
         ::dcsctp::SendOptions const&              send_options
     ) /*override*/;
 
-    // vIndex: 14
     virtual ::dcsctp::ResetStreamsStatus ResetStreams(
         ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
     ) /*override*/;
 
-    // vIndex: 7
     virtual ::dcsctp::SocketState state() const /*override*/;
 
-    // vIndex: 8
     virtual ::dcsctp::DcSctpOptions const& options() const /*override*/;
 
-    // vIndex: 9
     virtual void SetMaxMessageSize(uint64 max_message_size) /*override*/;
 
-    // vIndex: 10
     virtual void SetStreamPriority(
         ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>       stream_id,
         ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort> priority
     ) /*override*/;
 
-    // vIndex: 11
     virtual ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>
     GetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const /*override*/;
 
-    // vIndex: 15
     virtual uint64 buffered_amount(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const /*override*/;
 
-    // vIndex: 16
     virtual uint64 buffered_amount_low_threshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const
         /*override*/;
 
-    // vIndex: 17
     virtual void SetBufferedAmountLowThreshold(
         ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id,
         uint64                                               bytes
     ) /*override*/;
 
-    // vIndex: 18
     virtual ::std::optional<::dcsctp::Metrics> GetMetrics() const /*override*/;
 
-    // vIndex: 19
     virtual ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const /*override*/;
 
-    // vIndex: 20
     virtual ::std::optional<::dcsctp::DcSctpSocketHandoverState> GetHandoverStateAndClose() /*override*/;
 
-    // vIndex: 21
     virtual ::dcsctp::SctpImplementation peer_implementation() const /*override*/;
 
-    // vIndex: 0
     virtual ~DcSctpSocket() /*override*/ = default;
     // NOLINTEND
 
@@ -368,6 +346,8 @@ public:
     MCNAPI ::std::optional<::dcsctp::DcSctpSocketHandoverState> $GetHandoverStateAndClose();
 
     MCNAPI ::dcsctp::SctpImplementation $peer_implementation() const;
+
+
     // NOLINTEND
 
 public:

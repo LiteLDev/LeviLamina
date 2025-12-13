@@ -32,19 +32,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorServerPlayer() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 6
     virtual ::optional_ref<::PlayerEventCoordinator> getPlayerEventCoordinator() /*override*/;
     // NOLINTEND
 
@@ -64,6 +59,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::optional_ref<::PlayerEventCoordinator> $getPlayerEventCoordinator();
+
+
     // NOLINTEND
 
 public:

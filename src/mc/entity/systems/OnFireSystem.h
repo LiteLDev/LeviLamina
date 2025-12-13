@@ -14,7 +14,6 @@ class OnFireSystem : public ::ITickingSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~OnFireSystem() /*override*/ = default;
     // NOLINTEND
 
@@ -22,6 +21,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _extinguishFireIfInWater(::Actor& actor);
+
+    MCAPI_C static void onFireChanged(::Actor& actor);
 
     MCAPI static void setOnFire(::Actor& actor, int seconds);
 

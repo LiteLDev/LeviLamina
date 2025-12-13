@@ -36,11 +36,15 @@ public:
 
     MCAPI ::CompoundTag const& getCompoundTag(ushort id) const;
 
+    MCAPI_C float getFloat(ushort id) const;
+
     MCAPI int getInt(ushort id) const;
 
     MCAPI int64 getInt64(ushort id) const;
 
     MCAPI schar getInt8(ushort id) const;
+
+    MCAPI_C short getShort(ushort id) const;
 
     MCAPI bool hasData(ushort id) const;
 

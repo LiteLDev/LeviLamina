@@ -19,10 +19,8 @@ class MineshaftFeature : public ::StructureFeature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MineshaftFeature() /*override*/ = default;
 
-    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -32,10 +30,8 @@ public:
         ::Dimension const&                   dimension
     ) /*override*/;
 
-    // vIndex: 2
     virtual bool shouldPostProcessMobs() const /*override*/;
 
-    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&                         generator,
         ::BiomeSource const&                 biomeSource,
@@ -66,6 +62,8 @@ public:
         ::ChunkPos const&                    lc,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
+
+
     // NOLINTEND
 
 public:

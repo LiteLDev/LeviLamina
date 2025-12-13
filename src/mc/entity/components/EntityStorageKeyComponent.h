@@ -20,6 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::EntityStorageKeyComponent& operator=(::EntityStorageKeyComponent&&);
+    MCNAPI ::EntityStorageKeyComponent& operator=(::EntityStorageKeyComponent&&);
     // NOLINTEND
 };

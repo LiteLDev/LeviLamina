@@ -20,10 +20,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 85
     virtual bool canFreeze() const /*override*/;
 
-    // vIndex: 8
     virtual ~PolarBear() /*override*/ = default;
     // NOLINTEND
 
@@ -51,6 +49,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $canFreeze() const;
+
+
     // NOLINTEND
 
 public:

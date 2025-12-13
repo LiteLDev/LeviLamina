@@ -16,14 +16,12 @@ class UpgradeTo118 : public ::ItemCerealSchemaUpgrade {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool previousSchema(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
     ) const /*override*/;
 
-    // vIndex: 2
     virtual void upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
@@ -32,20 +30,19 @@ public:
         ::SemVersion const&
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~UpgradeTo118() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpgradeTo118();
+    MCNAPI UpgradeTo118();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool checkRepairItemEntrySchema(
+    MCNAPI static bool checkRepairItemEntrySchema(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
@@ -55,25 +52,27 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $previousSchema(
+    MCNAPI bool $previousSchema(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
     ) const;
 
-    MCAPI void $upgradeToNext(
+    MCNAPI void $upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&
     ) const;
+
+
     // NOLINTEND
 
 public:

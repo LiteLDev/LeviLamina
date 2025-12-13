@@ -20,8 +20,8 @@ public:
     // OverworldGenerationRulesBiomeJsonComponent inner types declare
     // clang-format off
     struct WeightedBiomeName;
-    struct WeightedBiomeNameVector;
     struct WeightedTemperatureCategory;
+    struct WeightedBiomeNameVector;
     // clang-format on
 
     // OverworldGenerationRulesBiomeJsonComponent inner types define
@@ -60,6 +60,26 @@ public:
         // NOLINTEND
     };
 
+    struct WeightedTemperatureCategory {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 16> mUnk941ba8;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        WeightedTemperatureCategory& operator=(WeightedTemperatureCategory const&);
+        WeightedTemperatureCategory(WeightedTemperatureCategory const&);
+        WeightedTemperatureCategory();
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        // NOLINTEND
+    };
+
     struct WeightedBiomeNameVector {
     public:
         // member variables
@@ -91,26 +111,6 @@ public:
         // NOLINTEND
     };
 
-    struct WeightedTemperatureCategory {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 16> mUnk941ba8;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WeightedTemperatureCategory& operator=(WeightedTemperatureCategory const&);
-        WeightedTemperatureCategory(WeightedTemperatureCategory const&);
-        WeightedTemperatureCategory();
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -129,10 +129,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::BiomeComponentVersion getType() const /*override*/;
 
-    // vIndex: 0
     virtual ~OverworldGenerationRulesBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -164,6 +162,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::BiomeComponentVersion $getType() const;
+
+
     // NOLINTEND
 
 public:

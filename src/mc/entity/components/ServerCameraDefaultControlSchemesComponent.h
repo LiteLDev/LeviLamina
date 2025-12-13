@@ -21,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerCameraDefaultControlSchemesComponent(::ServerCameraDefaultControlSchemesComponent&&);
+    MCNAPI ServerCameraDefaultControlSchemesComponent(::ServerCameraDefaultControlSchemesComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerCameraDefaultControlSchemesComponent&&);
+    MCNAPI void* $ctor(::ServerCameraDefaultControlSchemesComponent&&);
     // NOLINTEND
 };

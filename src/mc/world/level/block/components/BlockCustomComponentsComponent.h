@@ -4,13 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/scripting/modules/minecraft/ScriptCustomComponentParameterCacheHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentToExecute.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockType;
-class HashedString;
 struct BlockCustomComponentData;
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
@@ -28,10 +26,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::HashedString const&>                                                     mName;
-        ::ll::TypedStorage<8, 16, ::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle const> mData;
-        ::ll::TypedStorage<8, 8, ::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
-            mComponent;
+        ::ll::UntypedStorage<8, 8>  mUnkf66582;
+        ::ll::UntypedStorage<8, 16> mUnk1216ec;
+        ::ll::UntypedStorage<8, 8>  mUnk29a4ca;
         // NOLINTEND
 
     public:
@@ -54,9 +51,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
+    MCNAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
 
-    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
         void>>
     tryGetComponentsToExecute(::BlockType const& baseBlock) const;

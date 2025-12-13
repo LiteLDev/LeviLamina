@@ -11,7 +11,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-class RecipeIngredient;
 struct RecipeNetIdTag;
 // clang-format on
 
@@ -19,20 +18,23 @@ class ItemStackRequestActionCraftRecipeAuto : public ::ItemStackRequestActionCra
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::RecipeIngredient>> mIngredients;
-    ::ll::TypedStorage<1, 1, uchar>                              mNumIngredients;
+    ::ll::UntypedStorage<8, 24> mUnk89b09e;
+    ::ll::UntypedStorage<1, 1>  mUnk3ebc43;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ItemStackRequestActionCraftRecipeAuto& operator=(ItemStackRequestActionCraftRecipeAuto const&);
+    ItemStackRequestActionCraftRecipeAuto(ItemStackRequestActionCraftRecipeAuto const&);
+    ItemStackRequestActionCraftRecipeAuto();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 5
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    // vIndex: 0
     virtual ~ItemStackRequestActionCraftRecipeAuto() /*override*/ = default;
     // NOLINTEND
 
@@ -42,6 +44,8 @@ public:
     MCNAPI void $_write(::BinaryStream& stream) const;
 
     MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

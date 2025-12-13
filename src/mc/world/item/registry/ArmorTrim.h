@@ -2,12 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/string/HashedString.h"
-
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class HashedString;
 class ItemStackBase;
 class Level;
 namespace Bedrock::Safety { class RedactableString; }
@@ -17,63 +15,65 @@ class ArmorTrim {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString> mPatternId;
-    ::ll::TypedStorage<8, 48, ::HashedString> mMaterialId;
+    ::ll::UntypedStorage<8, 48> mUnk9bfa43;
+    ::ll::UntypedStorage<8, 48> mUnkb7fbf8;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ArmorTrim& operator=(ArmorTrim const&);
+    ArmorTrim(ArmorTrim const&);
     ArmorTrim();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ArmorTrim(::HashedString patternId, ::HashedString materialId);
+    MCNAPI ArmorTrim(::HashedString patternId, ::HashedString materialId);
 
-    MCAPI void load(::CompoundTag const& tag);
+    MCNAPI void load(::CompoundTag const& tag);
 
-    MCAPI ~ArmorTrim();
+    MCNAPI ~ArmorTrim();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void appendUpgradeHoverText(
+    MCNAPI static void appendUpgradeHoverText(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext
     );
 
-    MCAPI static ::std::optional<::ArmorTrim> getTrim(::ItemStackBase const& instance);
+    MCNAPI static ::std::optional<::ArmorTrim> getTrim(::ItemStackBase const& instance);
 
-    MCAPI static void setTrim(::ItemStackBase& instance, ::ArmorTrim trim);
+    MCNAPI static void setTrim(::ItemStackBase& instance, ::ArmorTrim trim);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& TAG_TRIM();
+    MCNAPI static ::std::string const& TAG_TRIM();
 
-    MCAPI static ::std::string const& TAG_TRIM_MATERIAL();
+    MCNAPI static ::std::string const& TAG_TRIM_MATERIAL();
 
-    MCAPI static ::std::string const& TAG_TRIM_PATTERN();
+    MCNAPI static ::std::string const& TAG_TRIM_PATTERN();
 
-    MCAPI static ::std::string const& UPGRADE_DESCRIPTION();
+    MCNAPI static ::std::string const& UPGRADE_DESCRIPTION();
 
-    MCAPI static ::std::string const& UPGRADE_DESCRIPTION_FORMAT();
+    MCNAPI static ::std::string const& UPGRADE_DESCRIPTION_FORMAT();
 
-    MCAPI static ::std::string const& WRONG_VERSION_OR_ITEM_ERROR();
+    MCNAPI static ::std::string const& WRONG_VERSION_OR_ITEM_ERROR();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString patternId, ::HashedString materialId);
+    MCNAPI void* $ctor(::HashedString patternId, ::HashedString materialId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

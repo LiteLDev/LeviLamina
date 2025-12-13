@@ -20,19 +20,14 @@ class GoatHornItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 116
     virtual bool canBeCharged() const /*override*/;
 
-    // vIndex: 97
     virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
-    // vIndex: 98
     virtual int getCooldownDuration() const /*override*/;
 
-    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -40,7 +35,6 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~GoatHornItem() /*override*/ = default;
     // NOLINTEND
 
@@ -67,6 +61,8 @@ public:
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
+
+
     // NOLINTEND
 
 public:

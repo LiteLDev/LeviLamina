@@ -31,20 +31,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AzureFileStorageEndpoint() = default;
 
-    // vIndex: 1
     virtual ::Bedrock::Http::Request makeListFilesRequest(::Core::Path const&) const;
 
-    // vIndex: 2
     virtual void sendListFilesRequest(
         ::Bedrock::Http::Request&,
         ::TaskGroup&,
         ::std::function<void(::Bedrock::Http::Response const&, ::std::string const&)>
     ) const;
 
-    // vIndex: 3
     virtual void
     downloadSingleFile(::Core::Path const&, ::AzureFileDownloader&, ::std::function<void(::DownloaderResult)>) const;
     // NOLINTEND

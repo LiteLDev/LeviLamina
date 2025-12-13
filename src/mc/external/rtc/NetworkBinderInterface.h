@@ -16,10 +16,8 @@ class NetworkBinderInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::rtc::NetworkBindingResult BindSocketToNetwork(int, ::rtc::IPAddress const&) = 0;
 
-    // vIndex: 1
     virtual ~NetworkBinderInterface();
     // NOLINTEND
 

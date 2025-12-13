@@ -38,23 +38,35 @@ public:
     // clang-format on
 
     // RTCPReceiver inner types define
+    class CustomSequenceChecker : public ::webrtc::SequenceChecker {};
+
+    struct LastFirStatus {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk43d0d1;
+        ::ll::UntypedStorage<1, 1> mUnk35d576;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LastFirStatus& operator=(LastFirStatus const&);
+        LastFirStatus(LastFirStatus const&);
+        LastFirStatus();
+    };
+
     class ModuleRtpRtcp {
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual void SetTmmbn(::std::vector<::webrtc::rtcp::TmmbItem>) = 0;
 
-        // vIndex: 1
         virtual void OnRequestSendReport() = 0;
 
-        // vIndex: 2
         virtual void OnReceivedNack(::std::vector<ushort> const&) = 0;
 
-        // vIndex: 3
         virtual void OnReceivedRtcpReportBlocks(::rtc::ArrayView<::webrtc::ReportBlockData const>) = 0;
 
-        // vIndex: 4
         virtual ~ModuleRtpRtcp() = default;
         // NOLINTEND
 
@@ -81,7 +93,40 @@ public:
         NonSenderRttStats();
     };
 
-    class CustomSequenceChecker : public ::webrtc::SequenceChecker {};
+    struct PacketInformation {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>   mUnkb10304;
+        ::ll::UntypedStorage<4, 4>   mUnk4a0133;
+        ::ll::UntypedStorage<8, 24>  mUnka46ecb;
+        ::ll::UntypedStorage<8, 24>  mUnk6e029d;
+        ::ll::UntypedStorage<8, 16>  mUnk63fb49;
+        ::ll::UntypedStorage<4, 4>   mUnkb69d48;
+        ::ll::UntypedStorage<8, 8>   mUnkb75852;
+        ::ll::UntypedStorage<4, 172> mUnk6b762e;
+        ::ll::UntypedStorage<8, 144> mUnk521b78;
+        ::ll::UntypedStorage<8, 8>   mUnk212b96;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PacketInformation& operator=(PacketInformation const&);
+        PacketInformation(PacketInformation const&);
+        PacketInformation();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~PacketInformation();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
 
     class RegisteredSsrcs {
     public:
@@ -124,38 +169,41 @@ public:
         // NOLINTEND
     };
 
-    struct PacketInformation {
+    struct RrtrInformation {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnkb10304;
-        ::ll::UntypedStorage<4, 4>   mUnk4a0133;
-        ::ll::UntypedStorage<8, 24>  mUnka46ecb;
-        ::ll::UntypedStorage<8, 24>  mUnk6e029d;
-        ::ll::UntypedStorage<8, 16>  mUnk63fb49;
-        ::ll::UntypedStorage<4, 4>   mUnkb69d48;
-        ::ll::UntypedStorage<8, 8>   mUnkb75852;
-        ::ll::UntypedStorage<4, 172> mUnk6b762e;
-        ::ll::UntypedStorage<8, 144> mUnk521b78;
-        ::ll::UntypedStorage<8, 8>   mUnk212b96;
+        ::ll::UntypedStorage<4, 4> mUnk2e959c;
+        ::ll::UntypedStorage<4, 4> mUnk6f8d04;
+        ::ll::UntypedStorage<4, 4> mUnk70c74c;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        PacketInformation& operator=(PacketInformation const&);
-        PacketInformation(PacketInformation const&);
-        PacketInformation();
+        RrtrInformation& operator=(RrtrInformation const&);
+        RrtrInformation(RrtrInformation const&);
+        RrtrInformation();
+    };
+
+    class RttStats {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkf5055e;
+        ::ll::UntypedStorage<8, 8> mUnkfbd3ff;
+        ::ll::UntypedStorage<8, 8> mUnkabd139;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RttStats& operator=(RttStats const&);
+        RttStats(RttStats const&);
+        RttStats();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~PacketInformation();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCNAPI void AddRtt(::webrtc::TimeDelta rtt);
         // NOLINTEND
     };
 
@@ -215,59 +263,6 @@ public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
-    struct RrtrInformation {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk2e959c;
-        ::ll::UntypedStorage<4, 4> mUnk6f8d04;
-        ::ll::UntypedStorage<4, 4> mUnk70c74c;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RrtrInformation& operator=(RrtrInformation const&);
-        RrtrInformation(RrtrInformation const&);
-        RrtrInformation();
-    };
-
-    struct LastFirStatus {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk43d0d1;
-        ::ll::UntypedStorage<1, 1> mUnk35d576;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LastFirStatus& operator=(LastFirStatus const&);
-        LastFirStatus(LastFirStatus const&);
-        LastFirStatus();
-    };
-
-    class RttStats {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkf5055e;
-        ::ll::UntypedStorage<8, 8> mUnkfbd3ff;
-        ::ll::UntypedStorage<8, 8> mUnkabd139;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RttStats& operator=(RttStats const&);
-        RttStats(RttStats const&);
-        RttStats();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void AddRtt(::webrtc::TimeDelta rtt);
         // NOLINTEND
     };
 

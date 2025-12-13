@@ -25,58 +25,41 @@ class RepeaterBlock : public ::DiodeBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 147
     virtual bool isLocked(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 54
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
-    // vIndex: 69
     virtual bool isPreservingMediumWhenPlaced(::BlockType const* medium) const /*override*/;
 
-    // vIndex: 157
     virtual int getTurnOnDelay(::Block const& block) const /*override*/;
 
-    // vIndex: 158
     virtual ::Block const* getOnBlock(::Block const* block) const /*override*/;
 
-    // vIndex: 159
     virtual ::Block const* getOffBlock(::Block const* block) const /*override*/;
 
-    // vIndex: 153
     virtual bool isAlternateInput(::Block const& block) const /*override*/;
 
-    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 0
     virtual ~RepeaterBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -135,6 +118,8 @@ public:
     MCAPI bool $isAlternateInput(::Block const& block) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+
+
     // NOLINTEND
 
 public:

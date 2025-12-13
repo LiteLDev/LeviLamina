@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/projectile/PredictableProjectile.h"
 
@@ -18,6 +17,7 @@ class Mob;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
 struct VariantParameterList;
 // clang-format on
 
@@ -25,45 +25,38 @@ class Throwable : public ::PredictableProjectile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>            mInGround;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOwnerId;
-    ::ll::TypedStorage<4, 4, int>             mShakeTime;
-    ::ll::TypedStorage<4, 4, int>             mLife;
+    ::ll::UntypedStorage<1, 1> mUnk497068;
+    ::ll::UntypedStorage<8, 8> mUnk11b16a;
+    ::ll::UntypedStorage<4, 4> mUnkb3e2d3;
+    ::ll::UntypedStorage<4, 4> mUnk8dca32;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    Throwable& operator=(Throwable const&);
+    Throwable(Throwable const&);
     Throwable();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 22
     virtual void lerpMotion(::Vec3 const& delta) /*override*/;
 
-    // vIndex: 138
     virtual float getThrowPower();
 
-    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 139
     virtual float getThrowUpAngleOffset();
 
-    // vIndex: 140
     virtual float getGravity();
 
-    // vIndex: 8
     virtual ~Throwable() /*override*/;
     // NOLINTEND
 
@@ -121,6 +114,8 @@ public:
     MCFOLD float $getThrowUpAngleOffset();
 
     MCAPI float $getGravity();
+
+
     // NOLINTEND
 
 public:

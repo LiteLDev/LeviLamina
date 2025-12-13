@@ -22,17 +22,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MineshaftStart() /*override*/ = default;
 
-    // vIndex: 4
     virtual ::std::string_view getStructureName() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MineshaftStart(
+    MCNAPI MineshaftStart(
         ::Dimension const&                   dimension,
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -44,7 +42,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Dimension const&                   dimension,
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -56,7 +54,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view $getStructureName() const;
+    MCNAPI ::std::string_view $getStructureName() const;
+
+
     // NOLINTEND
 
 public:

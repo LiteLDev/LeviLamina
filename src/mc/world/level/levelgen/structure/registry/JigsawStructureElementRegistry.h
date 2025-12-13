@@ -10,9 +10,9 @@ class StructurePoolElement;
 class JigsawStructureElementRegistry {
 public:
     // JigsawStructureElementRegistry inner types define
-    using StructureElementRegistry = ::std::vector<::std::unique_ptr<::StructurePoolElement>>;
-
     using StructureElementLookupMap = ::std::unordered_map<::std::string, ::StructurePoolElement const*>;
+
+    using StructureElementRegistry = ::std::vector<::std::unique_ptr<::StructurePoolElement>>;
 
 public:
     // member variables

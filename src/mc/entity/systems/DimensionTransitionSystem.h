@@ -45,6 +45,9 @@ public:
         ::EntityModifier<::DimensionTransitionComponent> mod
     );
 
+    MCAPI_C static void
+    _tickReadyToContinueClient(::ViewT<::StrictEntityContext, ::PlayerChangeDimensionRequestComponent> view);
+
     MCAPI static void _tickVehicleDismount(
         ::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent, ::PassengerComponent>>
             passengers,

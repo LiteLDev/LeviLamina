@@ -55,56 +55,40 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Scoreboard();
 
-    // vIndex: 1
     virtual ::DisplayObjective const* setDisplayObjective(
         ::std::string const&       displaySlotName,
         ::Objective const&         objective,
         ::ObjectiveSortOrder const order
     );
 
-    // vIndex: 2
     virtual ::Objective* clearDisplayObjective(::std::string const& displaySlotName);
 
-    // vIndex: 5
     virtual ::ScoreboardId const& createScoreboardId(::Player const& player);
 
-    // vIndex: 4
     virtual ::ScoreboardId const& createScoreboardId(::Actor const& entity);
 
-    // vIndex: 3
     virtual ::ScoreboardId const& createScoreboardId(::std::string const& fakePlayer);
 
-    // vIndex: 6
     virtual void onObjectiveAdded(::Objective const& objective);
 
-    // vIndex: 7
     virtual void onObjectiveRemoved(::Objective& objective);
 
-    // vIndex: 8
     virtual void onScoreChanged(::ScoreboardId const& id, ::Objective const& obj);
 
-    // vIndex: 9
     virtual void onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
 
-    // vIndex: 10
     virtual void onPlayerJoined(::Player const& player);
 
-    // vIndex: 11
     virtual void onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId);
 
-    // vIndex: 12
     virtual void tick();
 
-    // vIndex: 13
     virtual void setPacketSender(::PacketSender* sender);
 
-    // vIndex: 14
     virtual void writeToLevelStorage();
 
-    // vIndex: 15
     virtual bool isClientSide() const;
     // NOLINTEND
 
@@ -128,12 +112,19 @@ public:
         ::CommandOperator              opCode
     );
 
+    MCAPI_C bool clearScoreboardIdentity(::ScoreboardId const& scoreboardId);
+
     MCAPI ::ObjectiveCriteria const&
     createObjectiveCriteria(::std::string const& name, bool readOnly, ::ObjectiveRenderType renderType);
 
     MCAPI ::ObjectiveCriteria* getCriteria(::std::string const& criteriaName) const;
 
     MCAPI ::std::vector<::PlayerScore> getDisplayInfoFiltered(::std::string const& displaySlot) const;
+
+    MCAPI_C ::std::vector<::PlayerScore> getDisplayInfoSorted(
+        ::std::string const&                                                       displaySlot,
+        ::std::function<void(::ObjectiveSortOrder, ::std::vector<::PlayerScore>&)> sortMethod
+    ) const;
 
     MCAPI ::DisplayObjective const* getDisplayObjective(::std::string const& displaySlotName) const;
 
@@ -249,6 +240,8 @@ public:
     MCFOLD void $writeToLevelStorage();
 
     MCFOLD bool $isClientSide() const;
+
+
     // NOLINTEND
 
 public:

@@ -16,17 +16,17 @@ class BambooFeature : public ::Feature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
 
-    // vIndex: 0
     virtual ~BambooFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

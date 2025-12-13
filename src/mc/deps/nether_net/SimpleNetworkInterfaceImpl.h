@@ -65,10 +65,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SimpleNetworkInterfaceImpl() /*override*/;
 
-    // vIndex: 1
     virtual bool SendPacket(
         ::NetherNet::NetworkID remoteId,
         uint64                 connectionId,
@@ -76,11 +74,9 @@ public:
         ::NetherNet::ESendType eSendType
     ) /*override*/;
 
-    // vIndex: 2
     virtual bool
     IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize) /*override*/;
 
-    // vIndex: 3
     virtual bool ReadPacket(
         ::NetherNet::NetworkID remoteId,
         uint64                 connectionId,
@@ -89,59 +85,43 @@ public:
         uint*                  pcbMessageSize
     ) /*override*/;
 
-    // vIndex: 4
     virtual bool OpenSessionWithUser(::NetherNet::NetworkID networkIDRemote) /*override*/;
 
-    // vIndex: 5
     virtual bool CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId) /*override*/;
 
-    // vIndex: 6
     virtual bool GetSessionState(
-        ::NetherNet::NetworkID     networkIDRemote,
+        ::NetherNet::NetworkID     peerId,
         uint64                     connectionId,
         ::NetherNet::SessionState* pConnectionState
     ) /*override*/;
 
-    // vIndex: 7
     virtual void SetSignalingInterface(
         ::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface
     ) /*override*/;
 
-    // vIndex: 8
     virtual void SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config) /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::PubSub::Subscription
     RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
 
-    // vIndex: 14
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler* handler) /*override*/;
 
-    // vIndex: 9
     virtual bool IsBroadcastDiscoveryEnabled() /*override*/;
 
-    // vIndex: 10
     virtual void EnableBroadcastDiscovery() /*override*/;
 
-    // vIndex: 11
     virtual void DisableBroadcastDiscovery() /*override*/;
 
-    // vIndex: 12
     virtual void EnableLANSignaling() /*override*/;
 
-    // vIndex: 13
     virtual void DisableLANSignaling() /*override*/;
 
-    // vIndex: 1
     virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event) /*override*/;
 
-    // vIndex: 3
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event) /*override*/;
 
-    // vIndex: 2
     virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event) /*override*/;
 
-    // vIndex: 1
     virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event) /*override*/;
     // NOLINTEND
 
@@ -199,11 +179,8 @@ public:
 
     MCNAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
 
-    MCNAPI bool $GetSessionState(
-        ::NetherNet::NetworkID     networkIDRemote,
-        uint64                     connectionId,
-        ::NetherNet::SessionState* pConnectionState
-    );
+    MCNAPI bool
+    $GetSessionState(::NetherNet::NetworkID peerId, uint64 connectionId, ::NetherNet::SessionState* pConnectionState);
 
     MCNAPI void
     $SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface);
@@ -231,6 +208,8 @@ public:
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event);
 
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event);
+
+
     // NOLINTEND
 
 public:

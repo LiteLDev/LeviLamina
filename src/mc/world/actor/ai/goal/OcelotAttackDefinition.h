@@ -13,35 +13,36 @@ namespace JsonUtil { class EmptyClass; }
 
 class OcelotAttackDefinition : public ::BaseGoalDefinition {
 public:
-    // OcelotAttackDefinition inner types define
-    using self = ::OcelotAttackDefinition;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mCooldownTime;
-    ::ll::TypedStorage<4, 4, float> mMaxRotationX;
-    ::ll::TypedStorage<4, 4, float> mMaxHeadRotationY;
-    ::ll::TypedStorage<4, 4, float> mMaxDistance;
-    ::ll::TypedStorage<4, 4, float> mMaxSneakRange;
-    ::ll::TypedStorage<4, 4, float> mMaxSprintRange;
-    ::ll::TypedStorage<4, 4, float> mReachMultiplier;
-    ::ll::TypedStorage<4, 4, float> mSneakSpeedModifier;
-    ::ll::TypedStorage<4, 4, float> mSprintSpeedModifier;
-    ::ll::TypedStorage<4, 4, float> mWalkSpeedModifier;
+    ::ll::UntypedStorage<4, 4> mUnk54300c;
+    ::ll::UntypedStorage<4, 4> mUnk1db96b;
+    ::ll::UntypedStorage<4, 4> mUnk1a5cd8;
+    ::ll::UntypedStorage<4, 4> mUnkf007f7;
+    ::ll::UntypedStorage<4, 4> mUnk88d33c;
+    ::ll::UntypedStorage<4, 4> mUnk32a747;
+    ::ll::UntypedStorage<4, 4> mUnkeabe3d;
+    ::ll::UntypedStorage<4, 4> mUnk5bdf7b;
+    ::ll::UntypedStorage<4, 4> mUnk3ffa0f;
+    ::ll::UntypedStorage<4, 4> mUnk3088a7;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    OcelotAttackDefinition& operator=(OcelotAttackDefinition const&);
+    OcelotAttackDefinition(OcelotAttackDefinition const&);
+    OcelotAttackDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~OcelotAttackDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::string const&                                                                                   name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OcelotAttackDefinition>>& root
     );

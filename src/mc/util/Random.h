@@ -21,34 +21,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Random() /*override*/;
 
-    // vIndex: 4
     virtual bool nextBoolean() /*override*/;
 
-    // vIndex: 5
     virtual float nextFloat() /*override*/;
 
-    // vIndex: 6
     virtual double nextDouble() /*override*/;
 
-    // vIndex: 2
     virtual int nextInt() /*override*/;
 
-    // vIndex: 1
     virtual int nextInt(int n) /*override*/;
 
-    // vIndex: 3
     virtual int64 nextLong() /*override*/;
 
-    // vIndex: 7
     virtual double nextGaussianDouble() /*override*/;
 
-    // vIndex: 8
     virtual void consumeCount(uint count) /*override*/;
 
-    // vIndex: 9
     virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
     // NOLINTEND
 
@@ -59,9 +49,21 @@ public:
 
     MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
+    MCAPI_C float nextFloat(float min, float max);
+
+    MCAPI_C float nextGaussianFloat();
+
     MCAPI int nextInt(int min, int max);
 
+    MCAPI_C ::glm::vec3 nextVec3(float f);
+
     MCAPI void setSeed(uint seed);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static ::Random& getThreadLocal();
     // NOLINTEND
 
 public:
@@ -104,6 +106,8 @@ public:
     MCAPI void $consumeCount(uint count);
 
     MCAPI ::std::unique_ptr<::IRandom> $fork();
+
+
     // NOLINTEND
 
 public:

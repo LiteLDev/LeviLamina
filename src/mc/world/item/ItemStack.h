@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetIdVariant.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/item/ItemStackBase.h"
 
 // auto generated forward declare list
@@ -15,8 +16,10 @@ class CompoundTag;
 class ILevel;
 class InteractionResult;
 class Item;
+class ItemInstance;
 class NetworkItemStackDescriptor;
 class Vec3;
+struct ItemStackNetIdTag;
 struct ItemUsedOnEventContext;
 // clang-format on
 
@@ -30,25 +33,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void reinit(::Block const& block, int count) /*override*/;
 
-    // vIndex: 3
     virtual void reinit(::Item const& item, int count, int auxValue) /*override*/;
 
-    // vIndex: 1
     virtual void reinit(::std::string_view const name, int count, int auxValue) /*override*/;
 
-    // vIndex: 4
     virtual void setNull(::std::optional<::std::string> reason) /*override*/;
 
-    // vIndex: 5
     virtual ::std::string toString() const /*override*/;
 
-    // vIndex: 6
     virtual ::std::string toDebugString() const /*override*/;
 
-    // vIndex: 0
     virtual ~ItemStack() /*override*/;
     // NOLINTEND
 
@@ -59,11 +55,15 @@ public:
 
     MCAPI ItemStack(::ItemStack const& rhs);
 
+    MCAPI_C explicit ItemStack(::ItemInstance const& rhs);
+
     MCAPI ItemStack(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCAPI ItemStack(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
     MCAPI ItemStack(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
+
+    MCAPI_C void clientInitNetId(::ItemStackNetId const& serverNetId);
 
     MCAPI int getMaxUseDuration() const;
 
@@ -114,6 +114,8 @@ public:
 
     MCAPI void* $ctor(::ItemStack const& rhs);
 
+    MCAPI_C void* $ctor(::ItemInstance const& rhs);
+
     MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
@@ -141,6 +143,8 @@ public:
     MCAPI ::std::string $toString() const;
 
     MCAPI ::std::string $toDebugString() const;
+
+
     // NOLINTEND
 
 public:

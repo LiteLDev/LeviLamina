@@ -35,42 +35,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::ResourceLocation const& getPackLocation() const /*override*/;
 
-    // vIndex: 7
     virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
-    // vIndex: 9
     virtual void forEachIn(
         ::Core::Path const&                        packRelativePath,
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       recurseAnyways
     ) const /*override*/;
 
-    // vIndex: 11
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
-    // vIndex: 12
     virtual ::Core::PathBuffer<::std::string> const& getSubPath() const /*override*/;
 
-    // vIndex: 13
     virtual bool supportsSignatureVerification() const /*override*/;
 
-    // vIndex: 14
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 23
     virtual ::std::string _getContentsFile() /*override*/;
 
-    // vIndex: 24
     virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const /*override*/;
 
-    // vIndex: 22
     virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
     _preloadSubFolders(::Core::Path const& packRelativePath) const /*override*/;
 
-    // vIndex: 0
     virtual ~ZippedEncryptedFilesAccessStrategy() /*override*/ = default;
     // NOLINTEND
 
@@ -125,6 +114,8 @@ public:
 
     MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
     $_preloadSubFolders(::Core::Path const& packRelativePath) const;
+
+
     // NOLINTEND
 
 public:

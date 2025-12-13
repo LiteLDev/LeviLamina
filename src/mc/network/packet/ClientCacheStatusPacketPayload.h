@@ -6,6 +6,12 @@ struct ClientCacheStatusPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mEnabled;
+    ::ll::UntypedStorage<1, 1> mUnk7da6c8;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ClientCacheStatusPacketPayload& operator=(ClientCacheStatusPacketPayload const&);
+    ClientCacheStatusPacketPayload(ClientCacheStatusPacketPayload const&);
+    ClientCacheStatusPacketPayload();
 };

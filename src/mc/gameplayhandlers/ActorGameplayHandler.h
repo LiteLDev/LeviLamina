@@ -14,20 +14,15 @@ class ActorGameplayHandler : public ::GameplayHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ActorGameplayHandler() /*override*/ = default;
 
-    // vIndex: 4
     virtual ::HandlerResult handleEvent(::ActorGameplayEvent<void> const&) = 0;
 
-    // vIndex: 3
     virtual ::HandlerResult handleEvent(::MutableActorGameplayEvent<void>&) = 0;
 
-    // vIndex: 2
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::ActorGameplayEvent<::CoordinatorResult> const&) = 0;
 
-    // vIndex: 1
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::MutableActorGameplayEvent<::CoordinatorResult>&) = 0;
     // NOLINTEND

@@ -5,6 +5,9 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
+class BlockSource;
+class Random;
+class Vec3;
 // clang-format on
 
 class LevelAnimateTickHelper {
@@ -16,6 +19,21 @@ public:
     // clang-format on
 
     // LevelAnimateTickHelper inner types define
+    struct LoopCount {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk6eea10;
+        ::ll::UntypedStorage<4, 4> mUnk5d0383;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LoopCount& operator=(LoopCount const&);
+        LoopCount(LoopCount const&);
+        LoopCount();
+    };
+
     struct TimeLimitedJavaParityOffsetCenterData {
     public:
         // member variables
@@ -32,21 +50,6 @@ public:
         TimeLimitedJavaParityOffsetCenterData();
     };
 
-    struct LoopCount {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk6eea10;
-        ::ll::UntypedStorage<4, 4> mUnk5d0383;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LoopCount& operator=(LoopCount const&);
-        LoopCount(LoopCount const&);
-        LoopCount();
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -60,6 +63,39 @@ public:
     LevelAnimateTickHelper& operator=(LevelAnimateTickHelper const&);
     LevelAnimateTickHelper(LevelAnimateTickHelper const&);
     LevelAnimateTickHelper();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void
+    _tickBlockAnimationsJavaParity(::BlockSource& region, ::Random& random, ::Vec3 const& centerPosition) const;
+
+    MCNAPI_C void _tickBlockAnimationsTimeLimitedJavaParity(
+        ::BlockSource&                                                         region,
+        ::Random&                                                              random,
+        ::Vec3 const&                                                          centerPosition,
+        ::LevelAnimateTickHelper::TimeLimitedJavaParityOffsetCenterData const& offsetCenterData
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static void _animateTickRandomBlockInRadius(
+        ::BlockSource& region,
+        ::Random&      random,
+        ::Vec3 const&  centerPosition,
+        float          radius,
+        bool           doAnimateTickBedrockLegacy
+    );
+
+    MCNAPI_C static ::LevelAnimateTickHelper::TimeLimitedJavaParityOffsetCenterData
+    _computeTimeLimitedJavaParityAnimateTickCenter(
+        ::Vec3 const& centerPosition,
+        ::Vec3 const& prevPosition,
+        ::Vec3 const& viewDirection
+    );
+    // NOLINTEND
 
 public:
     // static variables

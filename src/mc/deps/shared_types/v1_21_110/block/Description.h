@@ -21,27 +21,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Description(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
+    MCNAPI_S Description(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
 
-    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::Description&
+    MCNAPI_S ::SharedTypes::v1_21_110::BlockDefinition::Description&
     operator=(::SharedTypes::v1_21_110::BlockDefinition::Description&&);
 
-    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::Description&
+    MCNAPI_S ::SharedTypes::v1_21_110::BlockDefinition::Description&
     operator=(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
 
-    MCNAPI ~Description();
+    MCNAPI_S ~Description();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
+    MCNAPI_S void* $ctor(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI_S void $dtor();
     // NOLINTEND
 };
 

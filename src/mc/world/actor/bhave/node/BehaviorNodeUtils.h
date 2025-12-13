@@ -11,7 +11,7 @@ class Vec3;
 namespace BehaviorNodeUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void lookAt(::Actor& actorLooking, ::Vec3 const& lookAtPos, float yMax, float xMax);
+MCNAPI void lookAt(::Actor& actorLooking, ::Vec3 const& lookAtPos, float yMax, float xMax);
 // NOLINTEND
 
 } // namespace BehaviorNodeUtils

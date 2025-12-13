@@ -9,28 +9,40 @@ class WindowStatePlatformWin32 : public ::WindowStatePlatform {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual bool getWindowRect(::HWND__*, ::tagRECT&) const /*override*/;
+    virtual bool getWindowRect(::HWND__* window, ::tagRECT& result) const /*override*/;
 
-    // vIndex: 2
-    virtual bool getClientRect(::HWND__*, ::tagRECT&) const /*override*/;
+    virtual bool getClientRect(::HWND__* window, ::tagRECT& result) const /*override*/;
 
-    // vIndex: 3
-    virtual bool getWindowShowCommand(::HWND__*, int&) const /*override*/;
+    virtual bool getWindowShowCommand(::HWND__* window, int& result) const /*override*/;
 
-    // vIndex: 4
-    virtual bool getClosestMonitorRect(::tagRECT const&, ::tagRECT&) const /*override*/;
+    virtual bool getClosestMonitorRect(::tagRECT const& closestToRect, ::tagRECT& result) const /*override*/;
 
-    // vIndex: 5
-    virtual bool getAdjustedWindowRect(::tagRECT const&, ::tagRECT&) const /*override*/;
+    virtual bool getAdjustedWindowRect(::tagRECT const& clientRect, ::tagRECT& windowRect) const /*override*/;
 
-    // vIndex: 0
     virtual ~WindowStatePlatformWin32() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool $getWindowRect(::HWND__* window, ::tagRECT& result) const;
 
+    MCNAPI bool $getClientRect(::HWND__* window, ::tagRECT& result) const;
+
+    MCNAPI bool $getWindowShowCommand(::HWND__* window, int& result) const;
+
+    MCNAPI bool $getClosestMonitorRect(::tagRECT const& closestToRect, ::tagRECT& result) const;
+
+    MCNAPI bool $getAdjustedWindowRect(::tagRECT const& clientRect, ::tagRECT& windowRect) const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

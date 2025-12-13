@@ -2,15 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
-
 struct BlockPickRequestPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::BlockPos> mPos;
-    ::ll::TypedStorage<1, 1, bool>        mWithData;
-    ::ll::TypedStorage<1, 1, uchar>       mMaxSlots;
+    ::ll::UntypedStorage<4, 12> mUnk9305a8;
+    ::ll::UntypedStorage<1, 1>  mUnkb19220;
+    ::ll::UntypedStorage<1, 1>  mUnk95c386;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockPickRequestPacketPayload& operator=(BlockPickRequestPacketPayload const&);
+    BlockPickRequestPacketPayload(BlockPickRequestPacketPayload const&);
+    BlockPickRequestPacketPayload();
 };

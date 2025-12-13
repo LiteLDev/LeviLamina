@@ -8,10 +8,8 @@ class Operation {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Operation();
 
-    // vIndex: 1
     virtual void Run() = 0;
     // NOLINTEND
 

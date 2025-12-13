@@ -18,10 +18,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~InMemoryRandomAccessFile() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::leveldb::Status Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const /*override*/;
     // NOLINTEND
 
@@ -29,6 +27,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::leveldb::Status $Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const;
+
+
     // NOLINTEND
 
 public:

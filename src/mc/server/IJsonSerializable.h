@@ -11,13 +11,10 @@ class IJsonSerializable {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IJsonSerializable();
 
-    // vIndex: 1
     virtual void serialize(::Json::Value&) = 0;
 
-    // vIndex: 2
     virtual void deserialize(::Json::Value&) = 0;
     // NOLINTEND
 

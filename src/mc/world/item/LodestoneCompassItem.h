@@ -14,8 +14,11 @@ class BlockSource;
 class Dimension;
 class InteractionResult;
 class ItemStack;
+class ItemStackBase;
+class Level;
 class LodestoneCompassComponent;
 class Mob;
+class PositionTrackingId;
 class Vec3;
 struct ActorUniqueID;
 namespace PositionTrackingDB { class TrackingRecord; }
@@ -25,14 +28,12 @@ class LodestoneCompassItem : public ::AbstractCompassItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 113
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const /*override*/;
 
-    // vIndex: 123
     virtual ::InteractionResult
-    _useOn(::ItemStack& item, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
 
-    // vIndex: 0
     virtual ~LodestoneCompassItem() /*override*/ = default;
     // NOLINTEND
 
@@ -44,6 +45,16 @@ public:
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& calcId
     );
 
+    MCAPI_C static int getCompassFrame(
+        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>& calcId,
+        ::ItemStack const&                                                         item,
+        ::Level const&                                                             level,
+        ::BlockPos const&                                                          itemPosition,
+        ::DimensionType const&                                                     itemDimension
+    );
+
+    MCAPI_C static ::PositionTrackingId getPositionTrackingId(::ItemStackBase const& item);
+
     MCAPI static bool linkCompassToLodestone(::ItemStack& item, ::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
 
@@ -53,7 +64,9 @@ public:
     MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const;
 
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& item, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+
+
     // NOLINTEND
 
 public:

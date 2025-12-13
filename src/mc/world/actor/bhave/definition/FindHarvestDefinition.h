@@ -15,17 +15,21 @@ class FindHarvestDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mItemName;
-    ::ll::TypedStorage<8, 32, ::std::string> mItemNameId;
+    ::ll::UntypedStorage<8, 32> mUnk67628d;
+    ::ll::UntypedStorage<8, 32> mUnkdcfd56;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FindHarvestDefinition& operator=(FindHarvestDefinition const&);
+    FindHarvestDefinition(FindHarvestDefinition const&);
+    FindHarvestDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
-    // vIndex: 0
     virtual ~FindHarvestDefinition() /*override*/ = default;
     // NOLINTEND
 

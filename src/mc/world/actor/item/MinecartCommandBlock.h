@@ -20,32 +20,23 @@ class MinecartCommandBlock : public ::Minecart {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 32
     virtual bool canShowNameTag() const /*override*/;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 139
     virtual ::MinecartType getType() /*override*/;
 
-    // vIndex: 140
     virtual ::Block const* getDefaultDisplayBlock() const /*override*/;
 
-    // vIndex: 142
     virtual void applyNaturalSlowdown(::BlockSource& region) /*override*/;
 
-    // vIndex: 143
     virtual void _lazyInitDisplayBlock() /*override*/;
 
-    // vIndex: 8
     virtual ~MinecartCommandBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -67,6 +58,8 @@ public:
     MCFOLD void $applyNaturalSlowdown(::BlockSource& region);
 
     MCAPI void $_lazyInitDisplayBlock();
+
+
     // NOLINTEND
 
 public:

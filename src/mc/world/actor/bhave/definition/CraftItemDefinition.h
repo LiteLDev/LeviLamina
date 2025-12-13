@@ -15,17 +15,21 @@ class CraftItemDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mItemName;
-    ::ll::TypedStorage<8, 32, ::std::string> mItemNameId;
+    ::ll::UntypedStorage<8, 32> mUnk2d7343;
+    ::ll::UntypedStorage<8, 32> mUnkabf6c7;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CraftItemDefinition& operator=(CraftItemDefinition const&);
+    CraftItemDefinition(CraftItemDefinition const&);
+    CraftItemDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
-    // vIndex: 0
     virtual ~CraftItemDefinition() /*override*/ = default;
     // NOLINTEND
 

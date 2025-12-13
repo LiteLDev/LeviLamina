@@ -24,10 +24,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 9
     virtual void PrepareAddress() /*override*/;
 
-    // vIndex: 0
     virtual ~StunPort() /*override*/ = default;
     // NOLINTEND
 
@@ -87,6 +85,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $PrepareAddress();
+
+
     // NOLINTEND
 
 public:

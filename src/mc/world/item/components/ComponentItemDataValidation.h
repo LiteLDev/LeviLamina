@@ -13,7 +13,7 @@ struct ComponentItemDataAll_Latest;
 namespace ComponentItemDataValidation {
 // functions
 // NOLINTBEGIN
-MCAPI void validate(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
+MCNAPI void validate(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
 // NOLINTEND
 
 } // namespace ComponentItemDataValidation

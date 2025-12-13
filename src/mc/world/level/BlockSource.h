@@ -51,6 +51,7 @@ class Vec3;
 class WeakEntityRef;
 struct ActorBlockSyncMessage;
 struct ActorDefinitionIdentifier;
+struct BiomeIdLatticeBatch;
 struct Bounds;
 struct Brightness;
 struct ClipParameters;
@@ -96,49 +97,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlockSource() /*override*/;
 
-    // vIndex: 27
     virtual ::WeakRef<::BlockSource> getWeakRef() /*override*/;
 
-    // vIndex: 43
     virtual ::Level& getLevel() /*override*/;
 
-    // vIndex: 38
     virtual ::Dimension& getDimension() const /*override*/;
 
-    // vIndex: 37
     virtual ::Dimension& getDimension() /*override*/;
 
-    // vIndex: 39
     virtual ::Dimension const& getDimensionConst() const /*override*/;
 
-    // vIndex: 17
     virtual ::DimensionType getDimensionId() const /*override*/;
 
-    // vIndex: 18
     virtual bool shouldFireEvents(::LevelChunk const& c) const /*override*/;
 
-    // vIndex: 59
     virtual bool isInstaticking(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 28
     virtual void addListener(::BlockSourceListener& l) /*override*/;
 
-    // vIndex: 29
     virtual void removeListener(::BlockSourceListener& l) /*override*/;
 
-    // vIndex: 42
     virtual ::LevelChunk* getChunk(int x, int z) const /*override*/;
 
-    // vIndex: 41
     virtual ::LevelChunk* getChunk(::ChunkPos const& pos) const /*override*/;
 
-    // vIndex: 40
     virtual ::LevelChunk* getChunkAt(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 46
     virtual short getAboveTopSolidBlock(
         ::BlockPos const& pos,
         bool              includeWater,
@@ -146,35 +132,25 @@ public:
         bool              iteratePastInitialBlocking
     ) const /*override*/;
 
-    // vIndex: 47
     virtual short getAboveTopSolidBlock(int x, int z, bool includeWater, bool includeLeaves) const /*override*/;
 
-    // vIndex: 49
     virtual short getHeight(::std::function<bool(::Block const&)> const& type, ::BlockPos const& pos) const
         /*override*/;
 
-    // vIndex: 48
     virtual short getHeight(::std::function<bool(::Block const&)> const& type, int x, int z) const /*override*/;
 
-    // vIndex: 12
     virtual ::Material const& getMaterial(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 11
     virtual ::Material const& getMaterial(int x, int y, int z) const /*override*/;
 
-    // vIndex: 36
     virtual short getMaxHeight() const /*override*/;
 
-    // vIndex: 35
     virtual short getMinHeight() const /*override*/;
 
-    // vIndex: 13
     virtual bool hasBorderBlock(::BlockPos const pos) const /*override*/;
 
-    // vIndex: 23
     virtual float getBrightness(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 56
     virtual bool mayPlace(
         ::Block const&    block,
         ::BlockPos const& pos,
@@ -184,50 +160,40 @@ public:
         ::Vec3            clickPos
     ) /*override*/;
 
-    // vIndex: 57
     virtual bool canDoBlockDrops() const /*override*/;
 
-    // vIndex: 58
     virtual bool canDoContainedItemDrops() const /*override*/;
 
-    // vIndex: 16
     virtual bool hasChunksAt(::Bounds const& bounds, bool ignoreClientChunk) const /*override*/;
 
-    // vIndex: 15
     virtual bool hasChunksAt(::BlockPos const& pos, int r, bool ignoreClientChunk) const /*override*/;
 
-    // vIndex: 14
     virtual bool hasChunksAt(::AABB const& bb, bool ignoreClientChunk) const /*override*/;
 
-    // vIndex: 55
     virtual bool areChunksFullyLoaded(::BlockPos const& pos, int r) const /*override*/;
 
-    // vIndex: 7
     virtual bool containsAnyLiquid(::AABB const& box) const /*override*/;
 
-    // vIndex: 8
     virtual bool containsMaterial(::AABB const& box, ::MaterialType material) const /*override*/;
 
-    // vIndex: 63
     virtual void blockEvent(::BlockPos const& pos, int b0, int b1) /*override*/;
 
-    // vIndex: 31
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities) /*override*/;
 
-    // vIndex: 30
-    virtual ::gsl::span<::gsl::not_null<::Actor*>>
-    fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) /*override*/;
+    virtual ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(
+        ::ActorType                     entityTypeId,
+        ::AABB const&                   bb,
+        ::Actor const*                  except,
+        ::std::function<bool(::Actor*)> selector
+    ) /*override*/;
 
-    // vIndex: 19
     virtual void
     fetchAABBs(::std::vector<::AABB>& shapes, ::AABB const& intersectTestBox, bool withUnloadedChunks) const
         /*override*/;
 
-    // vIndex: 25
     virtual ::std::vector<::AABB>& fetchAABBs(::AABB const& intersectTestBox, bool withUnloadedChunks) /*override*/;
 
-    // vIndex: 26
     virtual ::std::vector<::AABB>& fetchCollisionShapes(
         ::AABB const&                          intersectTestBox,
         bool                                   withUnloadedChunks,
@@ -235,7 +201,6 @@ public:
         ::std::vector<::AABB>*                 tempShapes
     ) /*override*/;
 
-    // vIndex: 20
     virtual void fetchCollisionShapes(
         ::std::vector<::AABB>&                             shapes,
         ::AABB const&                                      intersectTestBox,
@@ -244,7 +209,6 @@ public:
         ::std::vector<::AABB>*                             tempShapes
     ) const /*override*/;
 
-    // vIndex: 21
     virtual void fetchCollisionShapesAndBlocks(
         ::std::vector<::BlockSourceVisitor::CollisionShape>& shapes,
         ::AABB const&                                        intersectTestBox,
@@ -253,7 +217,6 @@ public:
         ::std::vector<::AABB>*                               tempShapes
     ) const /*override*/;
 
-    // vIndex: 22
     virtual ::AABB getTallestCollisionShape(
         ::AABB const&                                      intersectTestBox,
         float*                                             actualSurfaceOffset,
@@ -261,7 +224,6 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 51
     virtual ::HitResult clip(
         ::Vec3 const&                                                            A,
         ::Vec3 const&                                                            B,
@@ -275,16 +237,12 @@ public:
         bool                                                                     stopOnFirstLiquidHit
     ) const /*override*/;
 
-    // vIndex: 50
     virtual ::HitResult clip(::ClipParameters const& parameters) const /*override*/;
 
-    // vIndex: 9
     virtual bool isInWall(::Vec3 const& pos) const /*override*/;
 
-    // vIndex: 10
     virtual bool isUnderWater(::BlockPos const& pos, ::Block const& block) const /*override*/;
 
-    // vIndex: 62
     virtual void fireBlockChanged(
         ::BlockPos const&              pos,
         uint                           layer,
@@ -296,25 +254,18 @@ public:
         ::Actor*                       source
     ) /*override*/;
 
-    // vIndex: 2
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 1
     virtual ::Block const& getBlock(::BlockPos const& pos, uint layer) const /*override*/;
 
-    // vIndex: 3
     virtual ::BlockActor const* getBlockEntity(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 4
     virtual ::Block const& getExtraBlock(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 5
     virtual ::Block const& getLiquidBlock(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 6
     virtual bool hasBlock(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 32
     virtual bool setBlock(
         ::BlockPos const&              pos,
         ::Block const&                 block,
@@ -323,28 +274,20 @@ public:
         ::BlockChangeContext const&    changeSourceContext
     ) /*override*/;
 
-    // vIndex: 33
     virtual bool setExtraBlock(::BlockPos const& pos, ::Block const& block, int updateFlags) /*override*/;
 
-    // vIndex: 34
     virtual bool removeBlock(::BlockPos const& pos, ::BlockChangeContext const& changeSourceContext) /*override*/;
 
-    // vIndex: 53
     virtual bool isSolidBlockingBlock(int x, int y, int z) const /*override*/;
 
-    // vIndex: 54
     virtual bool isSolidBlockingBlock(::BlockPos const& p) const /*override*/;
 
-    // vIndex: 44
     virtual ::ILevel& getILevel() const /*override*/;
 
-    // vIndex: 45
     virtual ::LevelSeed64 getLevelSeed64() const /*override*/;
 
-    // vIndex: 52
     virtual ::ChunkSource& getChunkSource() /*override*/;
 
-    // vIndex: 60
     virtual bool checkBlockPermissions(
         ::Actor&               entity,
         ::BlockPos const&      blockPos,
@@ -353,10 +296,8 @@ public:
         bool                   generateParticle
     ) /*override*/;
 
-    // vIndex: 24
     virtual float getVisualLiquidHeight(::Vec3 const& pos) const /*override*/;
 
-    // vIndex: 61
     virtual void postGameEvent(
         ::Actor*           source,
         ::GameEvent const& gameEvent,
@@ -421,6 +362,8 @@ public:
 
     MCAPI bool _getBlockPermissions(::BlockPos const& pos, bool currentState);
 
+    MCAPI_C float _getLiquidHeight(::BlockPos const& pos, ::MaterialType mat, bool blockedFromAbove) const;
+
     MCAPI ::Brightness
     _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool propagate, bool accountForNight) const;
 
@@ -452,6 +395,8 @@ public:
 
     MCAPI bool areChunksFullyLoaded(::BlockPos const& min, ::BlockPos const& max) const;
 
+    MCAPI_C void blockEvent(int x, int y, int z, int b0, int b1);
+
     MCAPI bool canSeeSky(::BlockPos const& pos) const;
 
     MCAPI bool canSeeSkyFromBelowWater(::BlockPos const& pos);
@@ -481,7 +426,10 @@ public:
 
     MCAPI ::std::vector<::BlockActor*> fetchBlockEntities(::BlockActorType blockActorTypeId, ::AABB const& bb) const;
 
-    MCAPI ::std::vector<::BlockActor*> const& fetchBlockEntities(::AABB const& bb);
+    MCAPI_S ::std::vector<::BlockActor*> const& fetchBlockEntities(::AABB const& bb);
+
+    MCAPI_C void
+    fetchBlockEntities(::AABB const& bb, ::std::vector<::BlockActor*>& blockEntityList, bool withPreservedEntities);
 
     MCAPI bool fetchBlocks(::BlockPos const& origin, ::BlockVolume& volume) const;
 
@@ -525,11 +473,17 @@ public:
 
     MCAPI ::Biome const& getBiome(::BlockPos const& pos) const;
 
+    MCAPI_C ::BiomeIdLatticeBatch getBiomeIdsInBatch(::BlockPos const& centerPos, int areaOffset, int gridOffset) const;
+
     MCAPI ::BlockActor* getBlockEntity(::BlockPos const&);
+
+    MCAPI_C ::BrightnessPair getLightColor(::BlockPos const& pos, ::Brightness minBlockLight) const;
 
     MCAPI float getSeenPercent(::Vec3 const& center, ::AABB const& bb);
 
     MCAPI int getSkylightBrightness(::BlockPos const& pos) const;
+
+    MCAPI_C ::Biome const& getSurfaceBiome(::BlockPos const& pos) const;
 
     MCAPI void getTallestCollisionShapeFromUnloadedChunksAABBs(
         ::AABB const& intersectTestBox,
@@ -554,7 +508,11 @@ public:
 
     MCAPI bool hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const;
 
+    MCAPI_C bool isEmptyBlock(::BlockPos const& pos) const;
+
     MCAPI bool isNearUnloadedChunks(::ChunkPos const& pos) const;
+
+    MCAPI_C bool isPositionUnderSnow(::Vec3 const& p);
 
     MCAPI bool isTouchingMaterial(::BlockPos const& pos, ::MaterialType type) const;
 
@@ -583,6 +541,8 @@ public:
     MCAPI bool setExtraBlockSimple(::BlockPos const& pos, ::Block const& block);
 
     MCAPI bool setLiquidBlock(::BlockPos const& pos, ::Block const& block, bool useExtraData, int updateFlags);
+
+    MCAPI_C ::Biome const* tryGetBiome(::BlockPos const& pos) const;
 
     MCAPI void updateConnectionsAt(::BlockPos const& pos);
 
@@ -628,8 +588,6 @@ public:
     MCFOLD ::Level& $getLevel();
 
     MCFOLD ::Dimension& $getDimension() const;
-
-    MCFOLD ::Dimension& $getDimension();
 
     MCFOLD ::Dimension const& $getDimensionConst() const;
 
@@ -819,6 +777,17 @@ public:
         ::BlockPos const&  originPos,
         ::Block const*     affectedBlock
     );
+
+#ifdef LL_PLAT_C
+    MCAPI ::gsl::span<::gsl::not_null<::Actor*>> $fetchEntities(
+        ::ActorType                     entityTypeId,
+        ::AABB const&                   bb,
+        ::Actor const*                  except,
+        ::std::function<bool(::Actor*)> selector
+    );
+#endif
+
+
     // NOLINTEND
 
 public:

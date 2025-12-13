@@ -31,16 +31,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~InPackagePackSource() /*override*/ = default;
 
-    // vIndex: 2
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
-    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
 
-    // vIndex: 3
     virtual ::PackType getPackType() const /*override*/;
     // NOLINTEND
 
@@ -52,6 +48,8 @@ public:
     MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
 
     MCNAPI ::PackType $getPackType() const;
+
+
     // NOLINTEND
 
 public:

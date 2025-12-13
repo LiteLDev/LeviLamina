@@ -2,16 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ArmorSlotAndDamagePair;
-// clang-format on
-
 struct PlayerArmorDamagePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ArmorSlotAndDamagePair>> mSlotAndDamagePairs;
+    ::ll::UntypedStorage<8, 24> mUnka4431f;
     // NOLINTEND
 
 public:
@@ -23,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PlayerArmorDamagePacketPayload& operator=(::PlayerArmorDamagePacketPayload&&);
+    MCNAPI ::PlayerArmorDamagePacketPayload& operator=(::PlayerArmorDamagePacketPayload&&);
     // NOLINTEND
 };

@@ -54,16 +54,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RtcEvent() = default;
 
-    // vIndex: 1
     virtual ::webrtc::RtcEvent::Type GetType() const = 0;
 
-    // vIndex: 2
     virtual bool IsConfigEvent() const = 0;
 
-    // vIndex: 3
     virtual uint GetGroupKey() const;
     // NOLINTEND
 
@@ -83,6 +79,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI uint $GetGroupKey() const;
+
+
     // NOLINTEND
 
 public:

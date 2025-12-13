@@ -11,9 +11,9 @@ namespace FlatteningUtils { struct Instance; }
 namespace FlatteningUtils::Leaves2 {
 // functions
 // NOLINTBEGIN
-MCAPI ::FlatteningUtils::Instance get();
+MCNAPI ::FlatteningUtils::Instance get();
 
-MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
+MCNAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 // NOLINTEND
 
 } // namespace FlatteningUtils::Leaves2

@@ -8,8 +8,8 @@ class RemoteStorageManifest {
 public:
     // RemoteStorageManifest inner types declare
     // clang-format off
-    struct BlobRecord;
     struct BlobSequence;
+    struct BlobRecord;
     // clang-format on
 
     // RemoteStorageManifest inner types define
@@ -63,6 +63,18 @@ public:
     RemoteStorageManifest& operator=(RemoteStorageManifest const&);
     RemoteStorageManifest(RemoteStorageManifest const&);
     RemoteStorageManifest();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~RemoteStorageManifest();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Core

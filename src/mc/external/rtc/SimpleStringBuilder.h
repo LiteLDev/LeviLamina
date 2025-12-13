@@ -27,13 +27,13 @@ public:
 
     MCNAPI ::rtc::SimpleStringBuilder& operator<<(char ch);
 
-    MCNAPI ::rtc::SimpleStringBuilder& operator<<(uint i);
-
     MCNAPI ::rtc::SimpleStringBuilder& operator<<(int i);
 
-    MCNAPI ::rtc::SimpleStringBuilder& operator<<(uint64 i);
+    MCNAPI ::rtc::SimpleStringBuilder& operator<<(uint i);
 
     MCNAPI ::rtc::SimpleStringBuilder& operator<<(int64 i);
+
+    MCNAPI ::rtc::SimpleStringBuilder& operator<<(uint64 i);
 
     MCNAPI ::rtc::SimpleStringBuilder& operator<<(::std::string_view str);
     // NOLINTEND

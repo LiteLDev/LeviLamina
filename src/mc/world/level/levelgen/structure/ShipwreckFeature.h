@@ -24,11 +24,11 @@ class ShipwreckFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool const>                    mUseTiltedSpacing;
-    ::ll::TypedStorage<4, 4, int const>                     mSpacing;
-    ::ll::TypedStorage<4, 4, int const>                     mMinSeparation;
-    ::ll::TypedStorage<8, 8, ::OceanMonumentFeature&>       mMonument;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
+    ::ll::UntypedStorage<1, 1>  mUnkd45d35;
+    ::ll::UntypedStorage<4, 4>  mUnk7f361c;
+    ::ll::UntypedStorage<4, 4>  mUnk4ce55a;
+    ::ll::UntypedStorage<8, 8>  mUnkc7588e;
+    ::ll::UntypedStorage<8, 24> mUnk227c84;
     // NOLINTEND
 
 public:
@@ -40,10 +40,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
 
-    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -54,7 +52,6 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
-    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&         generator,
         ::BiomeSource const& biomeSource,
@@ -63,7 +60,6 @@ public:
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
-    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -73,7 +69,6 @@ public:
         ::Dimension const&                   dimension
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~ShipwreckFeature() /*override*/ = default;
     // NOLINTEND
 
@@ -120,6 +115,8 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
         ::Dimension const&                   dimension
     );
+
+
     // NOLINTEND
 
 public:

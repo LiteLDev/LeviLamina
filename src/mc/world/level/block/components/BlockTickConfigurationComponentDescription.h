@@ -14,36 +14,41 @@ class BlockTickConfigurationComponentDescription : public ::BlockComponentDescri
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mDelayIntervalMinTicks;
-    ::ll::TypedStorage<4, 4, uint> mDelayIntervalMaxTicks;
-    ::ll::TypedStorage<1, 1, bool> mLooping;
+    ::ll::UntypedStorage<4, 4> mUnk2123fc;
+    ::ll::UntypedStorage<4, 4> mUnkc1db79;
+    ::ll::UntypedStorage<1, 1> mUnk619de3;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockTickConfigurationComponentDescription& operator=(BlockTickConfigurationComponentDescription const&);
+    BlockTickConfigurationComponentDescription(BlockTickConfigurationComponentDescription const&);
+    BlockTickConfigurationComponentDescription();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
-    // vIndex: 2
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
-    // vIndex: 0
     virtual ~BlockTickConfigurationComponentDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& NameID();
+    MCNAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+
+
     // NOLINTEND
 
 public:

@@ -63,73 +63,50 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void preApplyInput(::EntityContext& e) /*override*/;
 
-    // vIndex: 2
     virtual void postApplyInput(::EntityContext& e) /*override*/;
 
-    // vIndex: 3
     virtual void applyCollisionData(::EntityContext& entity) /*override*/;
 
-    // vIndex: 4
     virtual ::ExternalDataSnapshotComponent const& getSnapshot() const /*override*/;
 
-    // vIndex: 5
     virtual void captureExternalData(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 22
     virtual void capture(::MoveInputComponent const& input) /*override*/;
 
-    // vIndex: 21
     virtual void capture(::ReplayStateTrackerComponent const& tracker) /*override*/;
 
-    // vIndex: 20
     virtual void capture(::ActorRotationComponent const& rot) /*override*/;
 
-    // vIndex: 19
     virtual void capture(::History::TurnInput const& turn) /*override*/;
 
-    // vIndex: 18
     virtual void capture(::BlockCollisionsSystem::BlockCollisionResolutionVectorComponent const& v) /*override*/;
 
-    // vIndex: 17
     virtual void capture(::BlockPosTrackerComponent const& tracker) /*override*/;
 
-    // vIndex: 16
     virtual void capture(::BuoyancyComponent const& buoyancy) /*override*/;
 
-    // vIndex: 15
     virtual void capture(::BuoyancyFloatRequestComponent const& request) /*override*/;
 
-    // vIndex: 14
     virtual void capture(::InsideSlowingSweetBerryBushBlockComponent const& inside) /*override*/;
 
-    // vIndex: 13
     virtual void capture(::ItemUseSlowdownModifierComponent const& slowdown) /*override*/;
 
-    // vIndex: 12
     virtual void capture(::RewindCollisionShapesComponent&& shapes) /*override*/;
 
-    // vIndex: 11
     virtual void capture(::MovementEffect const& movementEffect) /*override*/;
 
-    // vIndex: 10
     virtual void capture(::VehicleInputIntentComponent const& vehicleIntent) /*override*/;
 
-    // vIndex: 9
     virtual void capture(::IsSolidMobNearbyComponent const& isSolidMobNearby) /*override*/;
 
-    // vIndex: 8
     virtual void capture(::RiptideTridentSpinAttackComponent const& riptideSpinAttack) /*override*/;
 
-    // vIndex: 7
     virtual void capture(::SpinAttackResultsComponent const& spinAttackResults) /*override*/;
 
-    // vIndex: 6
     virtual void capture(::MovementInterpolatorComponent const& interpolator) /*override*/;
 
-    // vIndex: 0
     virtual ~ReplayableActorInput() /*override*/;
     // NOLINTEND
 
@@ -201,6 +178,8 @@ public:
     MCNAPI void $capture(::SpinAttackResultsComponent const& spinAttackResults);
 
     MCNAPI void $capture(::MovementInterpolatorComponent const& interpolator);
+
+
     // NOLINTEND
 
 public:

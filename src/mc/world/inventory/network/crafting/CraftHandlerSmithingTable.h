@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStackRequestActionCraftBase;
-class Player;
 class Recipes;
 // clang-format on
 
@@ -17,7 +16,7 @@ class CraftHandlerSmithingTable : public ::CraftHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
+    ::ll::UntypedStorage<8, 8> mUnk5fa9a4;
     // NOLINTEND
 
 public:
@@ -29,14 +28,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CraftHandlerSmithingTable() /*override*/ = default;
 
-    // vIndex: 4
     virtual ::ItemStackNetResult
     _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
-    // vIndex: 6
     virtual ::Recipes const* _getLevelRecipes() const /*override*/;
     // NOLINTEND
 
@@ -46,6 +42,8 @@ public:
     MCNAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
     MCNAPI ::Recipes const* $_getLevelRecipes() const;
+
+
     // NOLINTEND
 
 public:

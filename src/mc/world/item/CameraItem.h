@@ -9,7 +9,6 @@ class CameraItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CameraItem() /*override*/ = default;
     // NOLINTEND
 

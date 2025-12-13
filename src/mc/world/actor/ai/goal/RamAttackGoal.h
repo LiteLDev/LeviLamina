@@ -5,9 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/util/FloatRange.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
@@ -15,7 +13,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionTrigger;
 class Mob;
 class Path;
 namespace JsonUtil { class EmptyClass; }
@@ -31,59 +28,11 @@ public:
     // clang-format on
 
     // RamAttackGoal inner types define
-    class Definition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>                                                    mRamDistance;
-        ::ll::TypedStorage<4, 4, int>                                                    mMinRamDistance;
-        ::ll::TypedStorage<4, 4, float>                                                  mKnockbackForce;
-        ::ll::TypedStorage<4, 4, float>                                                  mKnockbackHeight;
-        ::ll::TypedStorage<4, 4, float>                                                  mBabyKnockbackModifier;
-        ::ll::TypedStorage<4, 4, float>                                                  mRunSpeed;
-        ::ll::TypedStorage<4, 4, float>                                                  mRamSpeed;
-        ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>>               mOnStartTriggers;
-        ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::LevelSoundEvent>> mPreRamSound;
-        ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::LevelSoundEvent>> mRamImpactSound;
-        ::ll::TypedStorage<4, 8, ::FloatRange>                                           mCooldownTime;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~Definition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void addPreRamSoundEventByName(::std::string const& name);
-
-        MCAPI void addRamImpactSoundEventByName(::std::string const& name);
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RamAttackGoal::Definition>>&
-                root
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
+    enum class Direction : int {
+        North = 0,
+        South = 1,
+        West  = 2,
+        East  = 3,
     };
 
     enum class State : int {
@@ -96,22 +45,81 @@ public:
         Done                        = 6,
     };
 
-    enum class Direction : int {
-        North = 0,
-        South = 1,
-        West  = 2,
-        East  = 3,
-    };
-
     struct AttackPos {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 12, ::Vec3>                    mPosition;
-        ::ll::TypedStorage<4, 4, float>                      mDistance;
-        ::ll::TypedStorage<1, 1, bool>                       mCheckX;
-        ::ll::TypedStorage<4, 4, ::RamAttackGoal::Direction> mDirection;
-        ::ll::TypedStorage<1, 1, bool>                       mHasChargePos;
+        ::ll::UntypedStorage<4, 12> mUnk25d45c;
+        ::ll::UntypedStorage<4, 4>  mUnkc5456c;
+        ::ll::UntypedStorage<1, 1>  mUnkdb23c3;
+        ::ll::UntypedStorage<4, 4>  mUnka6f895;
+        ::ll::UntypedStorage<1, 1>  mUnk1a20ee;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        AttackPos& operator=(AttackPos const&);
+        AttackPos(AttackPos const&);
+        AttackPos();
+    };
+
+    class Definition : public ::BaseGoalDefinition {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk8efcbe;
+        ::ll::UntypedStorage<4, 4>  mUnk32af7a;
+        ::ll::UntypedStorage<4, 4>  mUnk8389ff;
+        ::ll::UntypedStorage<4, 4>  mUnkc9fbf3;
+        ::ll::UntypedStorage<4, 4>  mUnk35de51;
+        ::ll::UntypedStorage<4, 4>  mUnk17f729;
+        ::ll::UntypedStorage<4, 4>  mUnkbad802;
+        ::ll::UntypedStorage<8, 24> mUnkc4f47f;
+        ::ll::UntypedStorage<8, 24> mUnk84003f;
+        ::ll::UntypedStorage<8, 24> mUnk4a46c6;
+        ::ll::UntypedStorage<4, 8>  mUnk7dcc37;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
+        Definition();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ~Definition() /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI void addPreRamSoundEventByName(::std::string const& name);
+
+        MCNAPI void addRamImpactSoundEventByName(::std::string const& name);
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static void buildSchema(
+            ::std::string const& name,
+            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RamAttackGoal::Definition>>&
+                root
+        );
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -145,70 +153,65 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 0
     virtual ~RamAttackGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RamAttackGoal(::Mob& mob);
+    MCNAPI explicit RamAttackGoal(::Mob& mob);
 
-    MCAPI bool _hasChargePath();
+    MCNAPI bool _hasChargePath();
 
-    MCAPI bool _initiateRamAttack();
+    MCNAPI bool _initiateRamAttack();
 
-    MCAPI void _resetCooldown();
+    MCNAPI void _resetCooldown();
 
-    MCAPI void _tryKnockbackTarget();
+    MCNAPI void _tryKnockbackTarget();
 
-    MCAPI bool _verifyTargetStillInPositionAndPrepareForRamAttack();
+    MCNAPI bool _verifyTargetStillInPositionAndPrepareForRamAttack();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCNAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
+
+
     // NOLINTEND
 
 public:

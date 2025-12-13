@@ -21,13 +21,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::webrtc::MediaSourceInterface::SourceState state() const = 0;
 
-    // vIndex: 4
     virtual bool remote() const = 0;
 
-    // vIndex: 2
     virtual ~MediaSourceInterface() /*override*/ = default;
     // NOLINTEND
 

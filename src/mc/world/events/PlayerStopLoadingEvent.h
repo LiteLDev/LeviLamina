@@ -16,4 +16,16 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~PlayerStopLoadingEvent();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

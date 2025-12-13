@@ -26,22 +26,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorContentLogEndPoint() /*override*/;
 
-    // vIndex: 1
     virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
 
-    // vIndex: 2
     virtual bool logOnlyOnce() const /*override*/;
 
-    // vIndex: 2
     virtual void flush() /*override*/;
 
-    // vIndex: 3
     virtual void setEnabled(bool newState) /*override*/;
 
-    // vIndex: 4
     virtual bool isEnabled() const /*override*/;
     // NOLINTEND
 
@@ -63,6 +57,8 @@ public:
     MCNAPI void $setEnabled(bool newState);
 
     MCNAPI bool $isEnabled() const;
+
+
     // NOLINTEND
 
 public:

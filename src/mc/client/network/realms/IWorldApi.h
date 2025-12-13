@@ -17,10 +17,8 @@ class IWorldApi {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IWorldApi() = default;
 
-    // vIndex: 1
     virtual void initializeWorld(
         ::Realms::RealmId,
         ::std::string const&,
@@ -28,15 +26,12 @@ public:
         ::std::function<void(::Realms::GenericStatus, ::Realms::FailureReason)>
     ) = 0;
 
-    // vIndex: 2
     virtual void
         openWorld(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus)>, ::std::function<void(int)>) = 0;
 
-    // vIndex: 3
     virtual void
         closeWorld(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus)>, ::std::function<void(int)>) = 0;
 
-    // vIndex: 4
     virtual void
         resetWorld(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus)>, ::std::function<void(int)>) = 0;
     // NOLINTEND

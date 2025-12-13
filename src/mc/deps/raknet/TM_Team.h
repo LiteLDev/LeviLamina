@@ -26,7 +26,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TM_Team() = default;
     // NOLINTEND
 };

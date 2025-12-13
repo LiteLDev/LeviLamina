@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool findNearestStructureFeature(
+    MCNAPI bool findNearestStructureFeature(
         ::Dimension&                    dimension,
         ::IPreliminarySurfaceProvider&  surfaceProvider,
         ::HashedString                  feature,
@@ -43,10 +43,10 @@ public:
         ::std::optional<::HashedString> biomeTag
     );
 
-    MCAPI ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos);
+    MCNAPI ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos);
 
-    MCAPI ::StructureFeature* getStructureFeatureOfType(::HashedString type) const;
+    MCNAPI ::StructureFeature* getStructureFeatureOfType(::HashedString type) const;
 
-    MCAPI bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
+    MCNAPI bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
     // NOLINTEND
 };

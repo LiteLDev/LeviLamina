@@ -8,13 +8,10 @@ class RandomGenerator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RandomGenerator() = default;
 
-    // vIndex: 1
     virtual bool Init(void const*, uint64) = 0;
 
-    // vIndex: 2
     virtual bool Generate(void*, uint64) = 0;
     // NOLINTEND
 

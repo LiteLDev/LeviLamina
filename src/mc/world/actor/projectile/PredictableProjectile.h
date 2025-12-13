@@ -9,10 +9,8 @@ class PredictableProjectile : public ::Actor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
     virtual void _doInitialMove() /*override*/;
 
-    // vIndex: 8
     virtual ~PredictableProjectile() /*override*/;
     // NOLINTEND
 
@@ -26,6 +24,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $_doInitialMove();
+
+
     // NOLINTEND
 
 public:

@@ -13,9 +13,9 @@ struct ScriptActorDamageCause {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBinding bindV010();
+    MCNAPI static ::Scripting::EnumBinding bindV010();
 
-    MCAPI static ::Scripting::EnumBinding bindV1();
+    MCNAPI static ::Scripting::EnumBinding bindV1();
     // NOLINTEND
 };
 

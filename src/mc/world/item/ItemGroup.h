@@ -2,25 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/item/ItemInstance.h"
+// auto generated forward declare list
+// clang-format off
+class ItemInstance;
+// clang-format on
 
 class ItemGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 128, ::ItemInstance>     mItemTemplate;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>> mStackSize;
+    ::ll::UntypedStorage<8, 128> mUnkbedaf1;
+    ::ll::UntypedStorage<4, 8>   mUnk6986f0;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ItemGroup& operator=(ItemGroup const&);
+    ItemGroup(ItemGroup const&);
     ItemGroup();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ItemGroup(::ItemInstance const& itemInstance);
+
+    MCAPI_C ::ItemInstance getItemInstanceCopy() const;
 
     MCAPI ~ItemGroup();
     // NOLINTEND

@@ -5,16 +5,45 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+namespace CerealHelpers { class FileReferenceLoadContext; }
+namespace CerealHelpers { class FileReferenceLoader; }
+namespace CerealHelpers { struct FileReference; }
 namespace CerealHelpers { struct Member; }
+namespace Core { class Path; }
+namespace Core { class Result; }
 namespace Json { class Value; }
 namespace SharedTypes::v1_21_20 { struct FilterGroupData; }
 namespace SharedTypes::v1_21_20 { struct FilterTestData; }
+namespace cereal { class StrictJsonLoader; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace CerealHelpers {
 // functions
 // NOLINTBEGIN
+MCNAPI_C bool _beginFromFileReference(
+    ::CerealHelpers::FileReference const&            fileReference,
+    ::CerealHelpers::FileReferenceLoadContext const& context,
+    ::std::string&                                   outJsonFileData
+);
+
+MCNAPI_C ::Core::Result _beginLoadFromJsonFile(
+    ::CerealHelpers::FileReferenceLoader& fileReferenceLoader,
+    ::Core::Path const&                   path,
+    ::std::string&                        outJsonFileData
+);
+
+MCNAPI_C void _endFromFileReference(
+    ::std::optional<::std::vector<::std::string>>&&  errors,
+    ::CerealHelpers::FileReferenceLoadContext const& context
+);
+
+MCNAPI_C ::Core::Result _endLoadFromJsonFile(
+    ::cereal::StrictJsonLoader&           jsonLoader,
+    ::CerealHelpers::FileReferenceLoader& fileReferenceLoader,
+    ::Core::Path const&                   path
+);
+
 MCNAPI void bindHelpers(::cereal::ReflectionCtx& ctx);
 
 MCNAPI void bindMceUUID(::cereal::ReflectionCtx& ctx);
@@ -93,6 +122,8 @@ parseFilterTestData(::SharedTypes::v1_21_20::FilterTestData& data, ::Json::Value
 MCNAPI ::std::add_lvalue_reference_t<char const[]> REGEX_MATERIAL_NAME();
 
 MCNAPI ::std::add_lvalue_reference_t<char const[]> REGEX_NAMESPACE_NAME();
+
+MCNAPI_C ::std::add_lvalue_reference_t<char const[]> REGEX_NO_MINECRAFT_NAMESPACE_NAME();
 // NOLINTEND
 
 } // namespace CerealHelpers

@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/material/MaterialType.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -14,13 +11,19 @@ class VanillaBlockData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>            mBlockID;
-    ::ll::TypedStorage<4, 4, ::MaterialType> mMaterial;
+    ::ll::UntypedStorage<4, 4> mUnkbfccfd;
+    ::ll::UntypedStorage<4, 4> mUnk98e017;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    VanillaBlockData& operator=(VanillaBlockData const&);
+    VanillaBlockData(VanillaBlockData const&);
+    VanillaBlockData();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };

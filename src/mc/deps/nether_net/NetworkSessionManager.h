@@ -62,7 +62,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~NetworkSessionManager() /*override*/ = default;
     // NOLINTEND
 
@@ -123,16 +122,16 @@ public:
     ) const;
 
     MCNAPI void ProcessSignal(
-        ::NetherNet::NetworkID              remoteID,
-        ::NetherNet::ConnectResponse const& signal,
-        ::NetherNet::SignalingChannelId
-    ) const;
-
-    MCNAPI void ProcessSignal(
         ::NetherNet::NetworkID           remoteID,
         ::NetherNet::CandidateAdd const& signal,
         ::NetherNet::SignalingChannelId
     );
+
+    MCNAPI void ProcessSignal(
+        ::NetherNet::NetworkID              remoteID,
+        ::NetherNet::ConnectResponse const& signal,
+        ::NetherNet::SignalingChannelId
+    ) const;
 
     MCNAPI bool
     ReadPacket(::NetherNet::NetworkID remoteId, uint64 connectionId, void* pubDest, uint cbDest, uint* pcbMessageSize);

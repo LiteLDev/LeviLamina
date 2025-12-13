@@ -17,7 +17,6 @@ class LevelBlockDestroyerProxy : public ::ILevelBlockDestroyerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void sendEvents(
         ::LevelEventManager& levelEventManager,
         ::BlockSource&       region,
@@ -25,10 +24,8 @@ public:
         ::Block const&       block
     ) /*override*/;
 
-    // vIndex: 2
     virtual void dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) /*override*/;
 
-    // vIndex: 0
     virtual ~LevelBlockDestroyerProxy() /*override*/ = default;
     // NOLINTEND
 
@@ -43,6 +40,8 @@ public:
     );
 
     MCNAPI void $dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
+
+
     // NOLINTEND
 
 public:

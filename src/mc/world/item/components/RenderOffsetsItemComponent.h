@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/renderer/MatrixStack.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -17,42 +18,11 @@ class RenderOffsetsItemComponent : public ::NetworkedItemComponent<::RenderOffse
 public:
     // RenderOffsetsItemComponent inner types declare
     // clang-format off
-    struct ItemTransforms;
     struct TRS;
+    struct ItemTransforms;
     // clang-format on
 
     // RenderOffsetsItemComponent inner types define
-    struct TRS {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 12, ::std::array<float, 3>> mTranslation;
-        ::ll::TypedStorage<4, 12, ::std::array<float, 3>> mRotation;
-        ::ll::TypedStorage<4, 12, ::std::array<float, 3>> mScale;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator==(::RenderOffsetsItemComponent::TRS const& other) const;
-        // NOLINTEND
-    };
-
-    struct ItemTransforms {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 36, ::RenderOffsetsItemComponent::TRS> mFirstPerson;
-        ::ll::TypedStorage<4, 36, ::RenderOffsetsItemComponent::TRS> mThirdPerson;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator==(::RenderOffsetsItemComponent::ItemTransforms const& other) const;
-        // NOLINTEND
-    };
-
     enum class Hand : int {
         MainHand = 0,
         OffHand  = 1,
@@ -61,6 +31,49 @@ public:
     enum class Perspective : int {
         FirstPerson = 0,
         ThirdPerson = 1,
+    };
+
+    struct TRS {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnk51bcea;
+        ::ll::UntypedStorage<4, 12> mUnk899447;
+        ::ll::UntypedStorage<4, 12> mUnk7e2076;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TRS& operator=(TRS const&);
+        TRS(TRS const&);
+        TRS();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI bool operator==(::RenderOffsetsItemComponent::TRS const& other) const;
+        // NOLINTEND
+    };
+
+    struct ItemTransforms {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 36> mUnka00cee;
+        ::ll::UntypedStorage<4, 36> mUnk5e1775;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ItemTransforms& operator=(ItemTransforms const&);
+        ItemTransforms(ItemTransforms const&);
+        ItemTransforms();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI bool operator==(::RenderOffsetsItemComponent::ItemTransforms const& other) const;
+        // NOLINTEND
     };
 
 public:
@@ -73,13 +86,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RenderOffsetsItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI_C static void _buildMatrixFromData(
+        ::MatrixStack::MatrixStackRef&                      mvs,
+        ::RenderOffsetsItemComponent::ItemTransforms const& hand,
+        ::RenderOffsetsItemComponent::Perspective           perspective
+    );
+
     MCFOLD static void _fromString(::RenderOffsetsItemComponent&, ::std::string const&);
 
     MCAPI static void bindType(

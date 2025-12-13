@@ -2,22 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/Vec2.h"
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/entity/enums/RewindType.h"
-#include "mc/network/packet/PlayerInputTick.h"
-
 struct CorrectPlayerMovePredictionPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3>                mPos;
-    ::ll::TypedStorage<4, 12, ::Vec3>                mPosDelta;
-    ::ll::TypedStorage<4, 8, ::Vec2>                 mVehicleRotation;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>> mVehicleAngularVelocity;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick>      mTick;
-    ::ll::TypedStorage<1, 1, bool>                   mOnGround;
-    ::ll::TypedStorage<1, 1, ::RewindType>           mPredictionType;
+    ::ll::UntypedStorage<4, 12> mUnk20137a;
+    ::ll::UntypedStorage<4, 12> mUnk961b4d;
+    ::ll::UntypedStorage<4, 8>  mUnkdb8d70;
+    ::ll::UntypedStorage<4, 8>  mUnk8393e5;
+    ::ll::UntypedStorage<8, 8>  mUnk9a0b42;
+    ::ll::UntypedStorage<1, 1>  mUnkbcbc65;
+    ::ll::UntypedStorage<1, 1>  mUnk916d6d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CorrectPlayerMovePredictionPacketPayload& operator=(CorrectPlayerMovePredictionPacketPayload const&);
+    CorrectPlayerMovePredictionPacketPayload(CorrectPlayerMovePredictionPacketPayload const&);
+    CorrectPlayerMovePredictionPacketPayload();
 };

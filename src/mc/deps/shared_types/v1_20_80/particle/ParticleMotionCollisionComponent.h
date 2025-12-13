@@ -34,10 +34,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
-    // vIndex: 0
     virtual ~ParticleMotionCollisionComponent() /*override*/;
     // NOLINTEND
 
@@ -63,6 +61,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::HashedString const& $getIdentifier() const;
+
+
     // NOLINTEND
 
 public:

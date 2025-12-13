@@ -9,7 +9,6 @@ class DriedKelpBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DriedKelpBlock() /*override*/ = default;
     // NOLINTEND
 

@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI_C bool isCompatible(int version) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::CurrentCmdVersion const getVersionMapping(::SemVersion const& engineVersion);

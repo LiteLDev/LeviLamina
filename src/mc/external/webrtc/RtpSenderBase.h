@@ -37,10 +37,8 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~SetStreamsObserver() = default;
 
-        // vIndex: 1
         virtual void OnSetStreams() = 0;
         // NOLINTEND
 
@@ -84,135 +82,96 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 20
     virtual void SetMediaChannel(::cricket::MediaSendChannelInterface* media_channel) /*override*/;
 
-    // vIndex: 3
     virtual bool SetTrack(::webrtc::MediaStreamTrackInterface* track) /*override*/;
 
-    // vIndex: 4
     virtual ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track() const /*override*/;
 
-    // vIndex: 12
     virtual ::webrtc::RtpParameters GetParameters() const /*override*/;
 
-    // vIndex: 13
     virtual ::webrtc::RTCError SetParameters(::webrtc::RtpParameters const& parameters) /*override*/;
 
-    // vIndex: 14
     virtual void SetParametersAsync(
         ::webrtc::RtpParameters const&                    parameters,
         ::absl::AnyInvocable<void(::webrtc::RTCError) &&> callback
     ) /*override*/;
 
-    // vIndex: 26
     virtual ::webrtc::RtpParameters GetParametersInternal() const /*override*/;
 
-    // vIndex: 27
     virtual void SetParametersInternal(
         ::webrtc::RtpParameters const&                    parameters,
         ::absl::AnyInvocable<void(::webrtc::RTCError) &&> callback,
         bool                                              blocking
     ) /*override*/;
 
-    // vIndex: 30
     virtual ::webrtc::RTCError CheckCodecParameters(::webrtc::RtpParameters const& parameters) /*override*/;
 
-    // vIndex: 28
     virtual ::webrtc::RtpParameters GetParametersInternalWithAllLayers() const /*override*/;
 
-    // vIndex: 29
     virtual ::webrtc::RTCError
     SetParametersInternalWithAllLayers(::webrtc::RtpParameters const& parameters) /*override*/;
 
-    // vIndex: 21
     virtual void SetSsrc(uint ssrc) /*override*/;
 
-    // vIndex: 6
     virtual uint ssrc() const /*override*/;
 
-    // vIndex: 9
     virtual ::std::vector<::std::string> stream_ids() const /*override*/;
 
-    // vIndex: 22
     virtual void set_stream_ids(::std::vector<::std::string> const& stream_ids) /*override*/;
 
-    // vIndex: 10
     virtual void SetStreams(::std::vector<::std::string> const& stream_ids) /*override*/;
 
-    // vIndex: 8
     virtual ::std::string id() const /*override*/;
 
-    // vIndex: 23
     virtual void
     set_init_send_encodings(::std::vector<::webrtc::RtpEncodingParameters> const& init_send_encodings) /*override*/;
 
-    // vIndex: 11
     virtual ::std::vector<::webrtc::RtpEncodingParameters> init_send_encodings() const /*override*/;
 
-    // vIndex: 24
     virtual void set_transport(::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport) /*override*/;
 
-    // vIndex: 5
     virtual ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport() const /*override*/;
 
-    // vIndex: 16
     virtual void
     SetFrameEncryptor(::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface> frame_encryptor) /*override*/;
 
-    // vIndex: 17
     virtual ::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface> GetFrameEncryptor() const /*override*/;
 
-    // vIndex: 25
     virtual void Stop() /*override*/;
 
-    // vIndex: 31
     virtual int AttachmentId() const /*override*/;
 
-    // vIndex: 32
     virtual ::webrtc::RTCError DisableEncodingLayers(::std::vector<::std::string> const& rids) /*override*/;
 
-    // vIndex: 18
     virtual void SetEncoderToPacketizerFrameTransformer(
         ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
     ) /*override*/;
 
-    // vIndex: 19
     virtual void SetEncoderSelector(
         ::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> encoder_selector
     ) /*override*/;
 
-    // vIndex: 33
     virtual void SetTransceiverAsStopped() /*override*/;
 
-    // vIndex: 34
     virtual void SetSendCodecs(::std::vector<::cricket::Codec> send_codecs) /*override*/;
 
-    // vIndex: 35
     virtual ::std::string track_kind() const = 0;
 
-    // vIndex: 36
     virtual void SetSend() = 0;
 
-    // vIndex: 37
     virtual void ClearSend() = 0;
 
-    // vIndex: 38
     virtual void AttachTrack();
 
-    // vIndex: 39
     virtual void DetachTrack();
 
-    // vIndex: 40
     virtual void AddTrackToStats();
 
-    // vIndex: 41
     virtual void RemoveTrackFromStats();
 
-    // vIndex: 42
     virtual ::webrtc::RTCError GenerateKeyFrame(::std::vector<::std::string> const&) = 0;
 
-    // vIndex: 1
     virtual ~RtpSenderBase() /*override*/;
     // NOLINTEND
 
@@ -326,6 +285,8 @@ public:
     MCNAPI void $AddTrackToStats();
 
     MCNAPI void $RemoveTrackFromStats();
+
+
     // NOLINTEND
 
 public:

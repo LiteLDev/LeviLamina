@@ -9,7 +9,6 @@
 // clang-format off
 class Player;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -20,13 +19,8 @@ struct ScriptPlayerSwingStartAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
-        mPlayerHandle;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-        mHeldItemStack;
+    ::ll::UntypedStorage<8, 32> mUnk92aacc;
+    ::ll::UntypedStorage<8, 40> mUnk90be8f;
     // NOLINTEND
 
 public:
@@ -37,29 +31,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerSwingStartAfterEvent(::ScriptModuleMinecraft::ScriptPlayerSwingStartAfterEvent const&);
+    MCNAPI ScriptPlayerSwingStartAfterEvent(::ScriptModuleMinecraft::ScriptPlayerSwingStartAfterEvent const&);
 
-    MCAPI ScriptPlayerSwingStartAfterEvent(
+    MCNAPI ScriptPlayerSwingStartAfterEvent(
         ::Player const&                                                                                 player,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> heldItemStack,
         ::Scripting::WeakLifetimeScope const&                                                           scope
     );
 
-    MCAPI ~ScriptPlayerSwingStartAfterEvent();
+    MCNAPI ~ScriptPlayerSwingStartAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerSwingStartAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerSwingStartAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Player const&                                                                                 player,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> heldItemStack,
         ::Scripting::WeakLifetimeScope const&                                                           scope
@@ -69,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

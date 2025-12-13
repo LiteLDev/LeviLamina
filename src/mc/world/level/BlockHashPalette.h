@@ -20,19 +20,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::BlockPalette::PaletteType getPaletteType() /*override*/;
 
-    // vIndex: 2
     virtual void appendBlock(::Block const& blockState) /*override*/;
 
-    // vIndex: 3
     virtual ::Block const& getBlock(uint const& networkId) const /*override*/;
 
-    // vIndex: 4
     virtual void assignBlockNetworkId(::Block const& block, uint64 networkId) const /*override*/;
 
-    // vIndex: 0
     virtual ~BlockHashPalette() /*override*/ = default;
     // NOLINTEND
 
@@ -46,6 +41,8 @@ public:
     MCAPI ::Block const& $getBlock(uint const& networkId) const;
 
     MCAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
+
+
     // NOLINTEND
 
 public:

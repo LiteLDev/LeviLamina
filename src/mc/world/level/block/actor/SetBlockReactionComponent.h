@@ -30,17 +30,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SetBlockReactionComponent() /*override*/ = default;
 
-    // vIndex: 3
     virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
+    MCNAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
+
+
     // NOLINTEND
 
 public:

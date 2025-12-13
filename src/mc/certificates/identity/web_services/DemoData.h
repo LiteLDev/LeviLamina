@@ -16,6 +16,18 @@ public:
     DemoData& operator=(DemoData const&);
     DemoData(DemoData const&);
     DemoData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~DemoData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace WebServices::EduSignin

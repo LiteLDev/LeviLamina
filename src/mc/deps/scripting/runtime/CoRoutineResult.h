@@ -8,8 +8,14 @@ struct CoRoutineResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mNumJobsExecuted;
+    ::ll::UntypedStorage<4, 4> mUnk4cbe63;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CoRoutineResult& operator=(CoRoutineResult const&);
+    CoRoutineResult(CoRoutineResult const&);
+    CoRoutineResult();
 };
 
 } // namespace Scripting

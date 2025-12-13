@@ -16,19 +16,25 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::UnlockedRecipesPacketPayload::PacketType> mPacketType;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>              mUnlockedRecipes;
+    ::ll::UntypedStorage<4, 4>  mUnk5be290;
+    ::ll::UntypedStorage<8, 24> mUnkd0d8e6;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UnlockedRecipesPacketPayload& operator=(UnlockedRecipesPacketPayload const&);
+    UnlockedRecipesPacketPayload(UnlockedRecipesPacketPayload const&);
+    UnlockedRecipesPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~UnlockedRecipesPacketPayload();
+    MCNAPI ~UnlockedRecipesPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -13,10 +13,8 @@ class SocketFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SocketFactory() = default;
 
-    // vIndex: 1
     virtual ::rtc::Socket* CreateSocket(int, int) = 0;
     // NOLINTEND
 

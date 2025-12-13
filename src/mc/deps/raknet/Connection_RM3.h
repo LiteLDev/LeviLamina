@@ -56,41 +56,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Connection_RM3() = default;
 
-    // vIndex: 1
     virtual ::RakNet::Replica3* AllocReplica(::RakNet::BitStream*, ::RakNet::ReplicaManager3*) = 0;
 
-    // vIndex: 2
     virtual void GetConstructedReplicas(::DataStructures::List<::RakNet::Replica3*>&);
 
-    // vIndex: 3
     virtual void SerializeOnDownloadStarted(::RakNet::BitStream*);
 
-    // vIndex: 4
     virtual void DeserializeOnDownloadStarted(::RakNet::BitStream*);
 
-    // vIndex: 5
     virtual void SerializeOnDownloadComplete(::RakNet::BitStream*);
 
-    // vIndex: 6
     virtual void DeserializeOnDownloadComplete(::RakNet::BitStream*);
 
-    // vIndex: 7
     virtual bool QueryGroupDownloadMessages() const;
 
-    // vIndex: 8
     virtual ::RakNet::Connection_RM3::ConstructionMode QueryConstructionMode() const;
 
-    // vIndex: 9
     virtual void
     QueryReplicaList(::DataStructures::List<::RakNet::Replica3*>&, ::DataStructures::List<::RakNet::Replica3*>&);
 
-    // vIndex: 10
     virtual bool QuerySerializationList(::DataStructures::List<::RakNet::Replica3*>&);
 
-    // vIndex: 11
     virtual ::RakNet::SendSerializeIfChangedResult SendSerialize(
         ::RakNet::Replica3*,
         bool*,
@@ -102,7 +90,6 @@ public:
         uint64
     );
 
-    // vIndex: 12
     virtual ::RakNet::SendSerializeIfChangedResult SendSerializeIfChanged(
         ::RakNet::LastSerializationResult*,
         ::RakNet::SerializeParameters*,
@@ -112,7 +99,6 @@ public:
         uint64
     );
 
-    // vIndex: 13
     virtual void SendConstruction(
         ::DataStructures::List<::RakNet::Replica3*>&,
         ::DataStructures::List<::RakNet::Replica3*>&,

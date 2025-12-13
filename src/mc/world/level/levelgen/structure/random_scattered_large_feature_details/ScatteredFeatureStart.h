@@ -26,30 +26,29 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::RandomScatteredLargeFeatureDetails::ScatteredFeatureStart::Type> type;
+    ::ll::UntypedStorage<4, 4> mUnkbf1416;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScatteredFeatureStart& operator=(ScatteredFeatureStart const&);
+    ScatteredFeatureStart(ScatteredFeatureStart const&);
     ScatteredFeatureStart();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual int getMaxYSpawnOffset() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getStructureName() const /*override*/;
 
-    // vIndex: 0
     virtual ~ScatteredFeatureStart() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatteredFeatureStart(
+    MCNAPI ScatteredFeatureStart(
         ::BiomeSource const&                 source,
         short                                seaLevel,
         int                                  chunkX,
@@ -61,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BiomeSource const&                 source,
         short                                seaLevel,
         int                                  chunkX,
@@ -73,9 +72,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMaxYSpawnOffset() const;
+    MCNAPI int $getMaxYSpawnOffset() const;
 
-    MCAPI ::std::string_view $getStructureName() const;
+    MCNAPI ::std::string_view $getStructureName() const;
+
+
     // NOLINTEND
 
 public:

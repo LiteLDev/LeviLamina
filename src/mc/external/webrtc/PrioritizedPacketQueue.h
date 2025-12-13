@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/external/absl/InlinedVector.h"
 #include "mc/external/webrtc/RtpPacketMediaType.h"
+#include "mc/external/webrtc/TimeDelta.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class DataSize; }
 namespace webrtc { class RtpPacketToSend; }
-namespace webrtc { class TimeDelta; }
 namespace webrtc { class Timestamp; }
 namespace webrtc { struct PacketQueueTTL; }
 // clang-format on

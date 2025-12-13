@@ -2,22 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockState;
-class HashedString;
-// clang-format on
-
 class BlockStateRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::BlockState const*>> mBlockStateMap;
+    ::ll::UntypedStorage<8, 64> mUnk77b41b;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockStateRegistry& operator=(BlockStateRegistry const&);
+    BlockStateRegistry(BlockStateRegistry const&);
+    BlockStateRegistry();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockStateRegistry& get();
+    MCNAPI static ::BlockStateRegistry& get();
     // NOLINTEND
 };

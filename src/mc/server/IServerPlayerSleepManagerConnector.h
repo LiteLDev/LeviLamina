@@ -14,10 +14,8 @@ class IServerPlayerSleepManagerConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::Player&)>& getPlayerWakeUpConnector() = 0;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void()>& getOnWakeUpAllPlayersConnector() = 0;
     // NOLINTEND
 

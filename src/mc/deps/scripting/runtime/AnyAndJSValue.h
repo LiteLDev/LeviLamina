@@ -2,35 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/external/quickjs/JSValue.h"
-
-// auto generated forward declare list
-// clang-format off
-struct JSContext;
-// clang-format on
-
 namespace Scripting {
 
 struct AnyAndJSValue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 208, ::entt::meta_any>          any;
-    ::ll::TypedStorage<8, 24, ::std::optional<::JSValue>> jsValue;
-    ::ll::TypedStorage<8, 8, ::JSContext*>                ctx;
+    ::ll::UntypedStorage<8, 208> mUnk4b7841;
+    ::ll::UntypedStorage<8, 24>  mUnk98c9ab;
+    ::ll::UntypedStorage<8, 8>   mUnkaff2a7;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AnyAndJSValue& operator=(AnyAndJSValue const&);
+    AnyAndJSValue(AnyAndJSValue const&);
+    AnyAndJSValue();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~AnyAndJSValue();
+    MCNAPI ~AnyAndJSValue();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,26 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/string/HashedString.h"
-
 struct FlatWorldLayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString> material;
-    ::ll::TypedStorage<4, 4, int>             height;
+    ::ll::UntypedStorage<8, 48> mUnk322b41;
+    ::ll::UntypedStorage<4, 4>  mUnk867241;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FlatWorldLayer& operator=(FlatWorldLayer const&);
+    FlatWorldLayer(FlatWorldLayer const&);
+    FlatWorldLayer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~FlatWorldLayer();
+    MCNAPI ~FlatWorldLayer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

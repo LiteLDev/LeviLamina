@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace Realms {
 
 struct Player {
@@ -21,10 +26,40 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Player& operator=(Player const&);
-    Player(Player const&);
-    Player();
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C Player();
+
+    MCNAPI_C Player(::Realms::Player&&);
+
+    MCNAPI_C Player(::Realms::Player const&);
+
+    MCNAPI_C ::Realms::Player& operator=(::Realms::Player const&);
+
+    MCNAPI_C ~Player();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::Realms::Player fromJson(::Json::Value const& json);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::Realms::Player&&);
+
+    MCNAPI_C void* $ctor(::Realms::Player const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Realms

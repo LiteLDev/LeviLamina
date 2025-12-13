@@ -17,31 +17,30 @@ class WitherSkull : public ::Fireball {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mLifetime;
+    ::ll::UntypedStorage<4, 4> mUnk4c40de;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WitherSkull& operator=(WitherSkull const&);
+    WitherSkull(WitherSkull const&);
+    WitherSkull();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual void initializeComponents(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
-    // vIndex: 140
     virtual bool shouldBurn() /*override*/;
 
-    // vIndex: 48
     virtual bool isOnFire() const /*override*/;
 
-    // vIndex: 119
     virtual bool canDestroyBlock(::Block const& block) const /*override*/;
 
-    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 138
     virtual float getInertia() /*override*/;
 
-    // vIndex: 8
     virtual ~WitherSkull() /*override*/ = default;
     // NOLINTEND
 
@@ -57,6 +56,8 @@ public:
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI float $getInertia();
+
+
     // NOLINTEND
 
 public:

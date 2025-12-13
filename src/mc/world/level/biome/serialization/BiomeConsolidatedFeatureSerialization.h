@@ -18,20 +18,20 @@ struct ConsolidatedFeatures;
 namespace BiomeConsolidatedFeatureSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void applySerializedConsolidatedFeature(
+MCNAPI void applySerializedConsolidatedFeature(
     ::BiomeConsolidatedFeatureData const& data,
     ::BiomeDecorationFeature&             consolidatedFeature,
     ::FeatureRegistry&                    featureRegistry,
     ::BiomeStringList const&              stringList
 );
 
-MCAPI ::std::optional<::BiomeConsolidatedFeatureData> serializeConsolidatedFeature(
+MCNAPI ::std::optional<::BiomeConsolidatedFeatureData> serializeConsolidatedFeature(
     ::BiomeDecorationFeature const& consolidatedFeature,
     ::FeatureRegistry const&        featureRegistry,
     ::BiomeStringList&              stringList
 );
 
-MCAPI void serializeConsolidatedFeaturesData(
+MCNAPI void serializeConsolidatedFeaturesData(
     ::BiomeDecorationAttributes<::ConsolidatedFeatures> const& consolidatedFeatures,
     ::BiomeConsolidatedFeaturesData&                           data,
     ::FeatureRegistry const&                                   featureRegistry,

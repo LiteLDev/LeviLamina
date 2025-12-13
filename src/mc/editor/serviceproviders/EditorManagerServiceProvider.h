@@ -13,10 +13,8 @@ class EditorManagerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorManagerServiceProvider() = default;
 
-    // vIndex: 1
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() = 0;
     // NOLINTEND
 

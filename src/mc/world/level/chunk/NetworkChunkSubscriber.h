@@ -19,4 +19,16 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                 mBlockRadiusLimit;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkViewSource>> mSource;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~NetworkChunkSubscriber();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

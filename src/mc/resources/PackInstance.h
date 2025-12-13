@@ -30,6 +30,7 @@ public:
 
 public:
     // prevent constructor by default
+    PackInstance(PackInstance const&);
     PackInstance();
 
 public:
@@ -49,7 +50,14 @@ public:
         ::PackSettings*                                    packSettings
     );
 
+    MCAPI_C void
+    forEachIn(::Core::Path const& path, ::std::function<void(::Core::Path const&)> callback, bool recurseAnyways) const;
+
     MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream) const;
+
+    MCAPI_C bool hasResource(::Core::Path const& resourceName) const;
+
+    MCAPI_C ::PackInstance& operator=(::PackInstance const&);
 
     MCAPI ~PackInstance();
     // NOLINTEND

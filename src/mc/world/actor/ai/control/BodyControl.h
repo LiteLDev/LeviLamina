@@ -21,23 +21,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void clientTick(::Mob& mob);
 
-    // vIndex: 0
     virtual ~BodyControl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _rotateTowards(::Mob& mob, float targetRotation, float clampAngle);
+    MCNAPI void _rotateTowards(::Mob& mob, float targetRotation, float clampAngle);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clientTick(::Mob& mob);
+    MCNAPI void $clientTick(::Mob& mob);
+
+
     // NOLINTEND
 
 public:

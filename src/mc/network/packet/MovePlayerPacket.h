@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec2.h"
-#include "mc/deps/core/math/Vec3.h"
 #include "mc/entity/components/PlayerPositionModeComponent.h"
-#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
-#include "mc/network/packet/PlayerInputTick.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -17,47 +13,44 @@
 class BinaryStream;
 class Player;
 class ReadOnlyBinaryStream;
+class Vec3;
 // clang-format on
 
 class MovePlayerPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                            mPlayerID;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                     mPos;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                      mRot;
-    ::ll::TypedStorage<4, 4, float>                                       mYHeadRot;
-    ::ll::TypedStorage<1, 1, ::PlayerPositionModeComponent::PositionMode> mResetPosition;
-    ::ll::TypedStorage<1, 1, bool>                                        mOnGround;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                            mRidingID;
-    ::ll::TypedStorage<4, 4, int>                                         mCause;
-    ::ll::TypedStorage<4, 4, int>                                         mSourceEntityType;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick>                           mTick;
+    ::ll::UntypedStorage<8, 8>  mUnkc411d0;
+    ::ll::UntypedStorage<4, 12> mUnk58a158;
+    ::ll::UntypedStorage<4, 8>  mUnk146e88;
+    ::ll::UntypedStorage<4, 4>  mUnkb4cd76;
+    ::ll::UntypedStorage<1, 1>  mUnke2b0c8;
+    ::ll::UntypedStorage<1, 1>  mUnkf2613d;
+    ::ll::UntypedStorage<8, 8>  mUnkc48604;
+    ::ll::UntypedStorage<4, 4>  mUnke96e1d;
+    ::ll::UntypedStorage<4, 4>  mUnkd891dd;
+    ::ll::UntypedStorage<8, 8>  mUnk548c50;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    MovePlayerPacket& operator=(MovePlayerPacket const&);
+    MovePlayerPacket(MovePlayerPacket const&);
     MovePlayerPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 11
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    // vIndex: 0
     virtual ~MovePlayerPacket() /*override*/;
     // NOLINTEND
 
@@ -105,6 +98,8 @@ public:
     MCAPI bool $isValid() const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

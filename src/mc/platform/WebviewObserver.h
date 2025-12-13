@@ -16,34 +16,24 @@ class WebviewObserver : public ::Core::Observer<::WebviewObserver, ::Core::Singl
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WebviewObserver() /*override*/;
 
-    // vIndex: 2
     virtual void onLoadingBegin();
 
-    // vIndex: 3
     virtual void onLoadingEnd();
 
-    // vIndex: 4
     virtual void onError(::WebviewError const&);
 
-    // vIndex: 5
     virtual void onWebviewChanged();
 
-    // vIndex: 6
     virtual void onDownloadBegin(::WebviewDownloadInfo const&);
 
-    // vIndex: 7
     virtual void onDownloadUpdate(::WebviewDownloadInfo const&);
 
-    // vIndex: 8
     virtual void onDownloadComplete(::WebviewDownloadInfo const&);
 
-    // vIndex: 9
     virtual void onDownloadCanceled(::WebviewDownloadInfo const&);
 
-    // vIndex: 10
     virtual void onMessageRecieved(::std::string const&);
     // NOLINTEND
 
@@ -73,5 +63,7 @@ public:
     MCNAPI void $onDownloadCanceled(::WebviewDownloadInfo const&);
 
     MCNAPI void $onMessageRecieved(::std::string const&);
+
+
     // NOLINTEND
 };

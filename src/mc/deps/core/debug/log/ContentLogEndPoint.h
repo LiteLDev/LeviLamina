@@ -18,16 +18,12 @@ class ContentLogEndPoint : public ::Bedrock::EnableNonOwnerReferences, public ::
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ContentLogEndPoint() /*override*/;
 
-    // vIndex: 1
     virtual void log(::LogArea const, ::LogLevel const, char const*) = 0;
 
-    // vIndex: 1
     virtual void log(char const* message) /*override*/;
 
-    // vIndex: 2
     virtual bool logOnlyOnce() const = 0;
     // NOLINTEND
 
@@ -47,6 +43,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $log(char const* message);
+
+
     // NOLINTEND
 
 public:

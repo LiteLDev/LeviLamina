@@ -25,22 +25,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ItemStackRequestAction();
 
-    // vIndex: 1
     virtual ::ItemStackRequestActionCraftBase const* getCraftAction() const;
 
-    // vIndex: 2
     virtual int getFilteredStringIndex() const;
 
-    // vIndex: 3
     virtual void postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
 
-    // vIndex: 4
     virtual void _write(::BinaryStream&) const = 0;
 
-    // vIndex: 5
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) = 0;
     // NOLINTEND
 
@@ -70,6 +64,8 @@ public:
     MCFOLD int $getFilteredStringIndex() const;
 
     MCFOLD void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
+
+
     // NOLINTEND
 
 public:

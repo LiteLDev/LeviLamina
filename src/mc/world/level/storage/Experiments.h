@@ -19,15 +19,22 @@ public:
 
     MCAPI Experiments();
 
+    MCAPI_C bool _shouldShowAsExperimentalLevel(
+        ::std::vector<bool> const&       experimentData,
+        ::gsl::span<::std::string const> toggleNames
+    ) const;
+
     MCAPI ::std::string getExperimentsActiveAsJSONList() const;
 
     MCAPI ::std::vector<::std::string> getExperimentsActiveForTelemetry() const;
 
     MCAPI void getTagData(::CompoundTag const& tag);
 
-    MCAPI void setExperimentEnabled(::AllExperiments experiment, bool value);
+    MCAPI_S void setExperimentEnabled(::AllExperiments experiment, bool value);
 
     MCAPI void setTagData(::CompoundTag& tag) const;
+
+    MCAPI_C bool shouldShowAsExperimentalLevel() const;
 
     MCAPI ~Experiments();
     // NOLINTEND

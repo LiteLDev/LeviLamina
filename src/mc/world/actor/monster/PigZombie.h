@@ -16,30 +16,30 @@ class PigZombie : public ::Zombie {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mAngerTime;
-    ::ll::TypedStorage<4, 4, int> mPlayAngrySoundIn;
-    ::ll::TypedStorage<4, 4, int> mStunedTime;
+    ::ll::UntypedStorage<4, 4> mUnkb480f4;
+    ::ll::UntypedStorage<4, 4> mUnka23cdc;
+    ::ll::UntypedStorage<4, 4> mUnkdf9a1f;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PigZombie& operator=(PigZombie const&);
+    PigZombie(PigZombie const&);
+    PigZombie();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 8
     virtual ~PigZombie() /*override*/ = default;
     // NOLINTEND
 
@@ -55,6 +55,8 @@ public:
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+
     // NOLINTEND
 
 public:

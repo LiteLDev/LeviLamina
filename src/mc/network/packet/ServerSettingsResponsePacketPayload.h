@@ -6,8 +6,8 @@ struct ServerSettingsResponsePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>           mFormId;
-    ::ll::TypedStorage<8, 32, ::std::string> mFormJSON;
+    ::ll::UntypedStorage<4, 4>  mUnkda4612;
+    ::ll::UntypedStorage<8, 32> mUnka45811;
     // NOLINTEND
 
 public:
@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ServerSettingsResponsePacketPayload& operator=(::ServerSettingsResponsePacketPayload&&);
+    MCNAPI ::ServerSettingsResponsePacketPayload& operator=(::ServerSettingsResponsePacketPayload&&);
 
-    MCAPI ~ServerSettingsResponsePacketPayload();
+    MCNAPI ~ServerSettingsResponsePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -18,9 +18,9 @@ class Vec3;
 namespace ActorParticles {
 // functions
 // NOLINTBEGIN
-MCAPI uint calculateDustParticleNumberFromFall(float fallDistance);
+MCNAPI uint calculateDustParticleNumberFromFall(float fallDistance);
 
-MCAPI void spawnBalloonPopParticles(
+MCNAPI void spawnBalloonPopParticles(
     uint                                particleCount,
     ::AABB                              aabb,
     ::SharedTypes::Legacy::PaletteColor color,
@@ -28,9 +28,9 @@ MCAPI void spawnBalloonPopParticles(
     ::Random&                           random
 );
 
-MCAPI void spawnDeathParticles(::Vec3 position, ::Vec2 aabbDim, float heightOffset, ::ILevel& level);
+MCNAPI void spawnDeathParticles(::Vec3 position, ::Vec2 aabbDim, float heightOffset, ::ILevel& level);
 
-MCAPI void spawnParticlesInArea(
+MCNAPI void spawnParticlesInArea(
     ::ILevel&      level,
     uint           particleCount,
     ::ParticleType type,
@@ -39,7 +39,7 @@ MCAPI void spawnParticlesInArea(
     ::Random&      random
 );
 
-MCAPI void spawnPukeParticles(
+MCNAPI void spawnPukeParticles(
     uint      numLines,
     uint      particlesPerLine,
     ::Vec3    position,
@@ -48,7 +48,7 @@ MCAPI void spawnPukeParticles(
     ::Random& random
 );
 
-MCAPI void spawnTreasureHuntingParticles(
+MCNAPI void spawnTreasureHuntingParticles(
     uint      particleCount,
     ::Vec3    position,
     ::Vec3    direction,

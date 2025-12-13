@@ -21,13 +21,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) /*override*/;
 
-    // vIndex: 11
     virtual uint64 ProcessInput(::rtc::ArrayView<uchar const> data) /*override*/;
 
-    // vIndex: 0
     virtual ~AsyncStunTCPSocket() /*override*/ = default;
     // NOLINTEND
 
@@ -51,6 +48,8 @@ public:
     MCNAPI int $Send(void const* data, uint64 len, ::rtc::PacketOptions const& options);
 
     MCNAPI uint64 $ProcessInput(::rtc::ArrayView<uchar const> data);
+
+
     // NOLINTEND
 
 public:

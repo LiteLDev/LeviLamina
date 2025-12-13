@@ -14,10 +14,8 @@ class ContainerScreenSimulationActivate : public ::ContainerScreenSimulation {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 19
     virtual ::ContainerScreenActionResult tryActivate();
 
-    // vIndex: 0
     virtual ~ContainerScreenSimulationActivate() /*override*/ = default;
     // NOLINTEND
 

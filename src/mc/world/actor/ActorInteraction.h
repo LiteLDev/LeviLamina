@@ -4,40 +4,38 @@
 
 class ActorInteraction {
 public:
-    // ActorInteraction inner types define
-    using OnInteraction = ::std::function<void()>;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>           mInteractText;
-    ::ll::TypedStorage<8, 64, ::std::function<void()>> mInteraction;
-    ::ll::TypedStorage<1, 1, bool>                     mNoCapture;
+    ::ll::UntypedStorage<8, 32> mUnkdceb93;
+    ::ll::UntypedStorage<8, 64> mUnk45ae3b;
+    ::ll::UntypedStorage<1, 1>  mUnke06505;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ActorInteraction& operator=(ActorInteraction const&);
+    ActorInteraction(ActorInteraction const&);
     ActorInteraction();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorInteraction(bool noCapture);
+    MCNAPI explicit ActorInteraction(bool noCapture);
 
-    MCAPI void capture(::std::function<void()> interactFunc);
+    MCNAPI void capture(::std::function<void()> interactFunc);
 
-    MCAPI ~ActorInteraction();
+    MCNAPI ~ActorInteraction();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool noCapture);
+    MCNAPI void* $ctor(bool noCapture);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

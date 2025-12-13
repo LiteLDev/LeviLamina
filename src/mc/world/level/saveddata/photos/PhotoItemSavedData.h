@@ -2,16 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/legacy/ActorUniqueID.h"
-
 class PhotoItemSavedData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mPhotoId;
-    ::ll::TypedStorage<8, 32, ::std::string>  mPhotoName;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mPhotoOwner;
-    ::ll::TypedStorage<1, 1, bool>            mDirty;
+    ::ll::UntypedStorage<8, 8>  mUnk3c0173;
+    ::ll::UntypedStorage<8, 32> mUnk660b1f;
+    ::ll::UntypedStorage<8, 8>  mUnk73a428;
+    ::ll::UntypedStorage<1, 1>  mUnk25c2f6;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PhotoItemSavedData& operator=(PhotoItemSavedData const&);
+    PhotoItemSavedData(PhotoItemSavedData const&);
+    PhotoItemSavedData();
 };

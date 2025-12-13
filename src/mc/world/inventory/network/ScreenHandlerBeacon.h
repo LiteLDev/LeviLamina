@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BeaconBlockActor;
-class ContainerScreenContext;
 class ItemStackRequestAction;
 class ItemStackRequestActionBeaconPayment;
 // clang-format on
@@ -18,11 +16,11 @@ class ScreenHandlerBeacon : public ::ScreenHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ContainerScreenContext const&> mScreenContext;
-    ::ll::TypedStorage<1, 1, bool>                            mIsPaymentAction;
-    ::ll::TypedStorage<4, 4, int>                             mPrimaryEffectId;
-    ::ll::TypedStorage<4, 4, int>                             mSecondaryEffectId;
-    ::ll::TypedStorage<8, 8, ::BeaconBlockActor*>             mBeaconBlockActor;
+    ::ll::UntypedStorage<8, 8> mUnkeb402e;
+    ::ll::UntypedStorage<1, 1> mUnk808e7a;
+    ::ll::UntypedStorage<4, 4> mUnk1cc159;
+    ::ll::UntypedStorage<4, 4> mUnk2bd231;
+    ::ll::UntypedStorage<8, 8> mUnk3df537;
     // NOLINTEND
 
 public:
@@ -34,16 +32,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScreenHandlerBeacon() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
 
-    // vIndex: 2
     virtual ::ItemStackNetResult endRequest() /*override*/;
 
-    // vIndex: 4
     virtual void postRequest(bool const wasSuccess) /*override*/;
     // NOLINTEND
 
@@ -61,6 +55,8 @@ public:
     MCNAPI ::ItemStackNetResult $endRequest();
 
     MCNAPI void $postRequest(bool const wasSuccess);
+
+
     // NOLINTEND
 
 public:

@@ -22,10 +22,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void dispatch(::BlockEvents::BlockEntityFallOnEvent& eventData) const /*override*/;
 
-    // vIndex: 0
     virtual ~BlockEntityFallOnEventExecutor() /*override*/ = default;
     // NOLINTEND
 
@@ -33,6 +31,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $dispatch(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+
+
     // NOLINTEND
 
 public:

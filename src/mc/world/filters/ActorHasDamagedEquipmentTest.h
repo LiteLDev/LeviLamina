@@ -14,13 +14,10 @@ class ActorHasDamagedEquipmentTest : public ::ActorHasEquipmentTest {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual ::std::string_view getName() const /*override*/;
 
-    // vIndex: 9
     virtual bool _isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const /*override*/;
 
-    // vIndex: 0
     virtual ~ActorHasDamagedEquipmentTest() /*override*/;
     // NOLINTEND
 
@@ -36,6 +33,8 @@ public:
     MCNAPI ::std::string_view $getName() const;
 
     MCNAPI bool $_isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const;
+
+
     // NOLINTEND
 
 public:

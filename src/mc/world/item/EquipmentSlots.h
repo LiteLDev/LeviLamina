@@ -15,17 +15,17 @@ class EntityContext;
 namespace EquipmentSlots {
 // functions
 // NOLINTBEGIN
-MCAPI char const* equipmentSlotToName(::SharedTypes::Legacy::EquipmentSlot slot);
+MCNAPI char const* equipmentSlotToName(::SharedTypes::Legacy::EquipmentSlot slot);
 
-MCAPI ::SharedTypes::Legacy::ArmorSlot getArmorSlotForEntityArmorEquipmentSlot(::EntityContext const& entityContext);
+MCNAPI ::SharedTypes::Legacy::ArmorSlot getArmorSlotForEntityArmorEquipmentSlot(::EntityContext const& entityContext);
 
-MCAPI ::SharedTypes::Legacy::EquipmentSlot hashedNameToEquipmentSlot(uint64 const& slotName);
+MCNAPI ::SharedTypes::Legacy::EquipmentSlot hashedNameToEquipmentSlot(uint64 const& slotName);
 
-MCAPI ::SharedTypes::Legacy::EquipmentSlot nameToEquipmentSlot(::std::string const& slotName);
+MCNAPI ::SharedTypes::Legacy::EquipmentSlot nameToEquipmentSlot(::std::string const& slotName);
 
-MCAPI ::SharedTypes::Legacy::SlotWithDropChance nbtKeyToSlotWithDropChance(::std::string const& nbtKey);
+MCNAPI ::SharedTypes::Legacy::SlotWithDropChance nbtKeyToSlotWithDropChance(::std::string const& nbtKey);
 
-MCAPI ::std::string slotWithDropChanceToNbtKey(::SharedTypes::Legacy::SlotWithDropChance slot);
+MCNAPI ::std::string slotWithDropChanceToNbtKey(::SharedTypes::Legacy::SlotWithDropChance slot);
 // NOLINTEND
 
 } // namespace EquipmentSlots

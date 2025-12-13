@@ -4,24 +4,29 @@
 
 // auto generated inclusion list
 #include "mc/util/WeightedRandom.h"
-#include "mc/world/actor/ActorDefinitionIdentifier.h"
 
 class MobSpawnerPermutation : public ::WeightedRandom::WeighedRandomItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mId;
+    ::ll::UntypedStorage<8, 176> mUnkfee09a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MobSpawnerPermutation& operator=(MobSpawnerPermutation const&);
+    MobSpawnerPermutation(MobSpawnerPermutation const&);
+    MobSpawnerPermutation();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~MobSpawnerPermutation();
+    MCNAPI ~MobSpawnerPermutation();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

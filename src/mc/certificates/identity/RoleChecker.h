@@ -18,4 +18,13 @@ public:
     RoleChecker& operator=(RoleChecker const&);
     RoleChecker(RoleChecker const&);
     RoleChecker();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void checkRole(
+        ::std::string const&                                                           jsonCredentials,
+        ::std::function<void(::edu::Role, ::std::string const&, ::std::string const&)> callback
+    );
+    // NOLINTEND
 };

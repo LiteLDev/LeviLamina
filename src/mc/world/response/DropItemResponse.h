@@ -30,20 +30,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
-    // vIndex: 2
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
-    // vIndex: 3
     virtual void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
                                                schema,
         ::Factory<::ActorEventResponse> const& factory
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~DropItemResponse() /*override*/ = default;
     // NOLINTEND
 
@@ -65,6 +61,8 @@ public:
                                                schema,
         ::Factory<::ActorEventResponse> const& factory
     ) const;
+
+
     // NOLINTEND
 
 public:

@@ -6,7 +6,7 @@ struct RemoveObjectivePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mObjectiveName;
+    ::ll::UntypedStorage<8, 32> mUnk275635;
     // NOLINTEND
 
 public:
@@ -18,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::RemoveObjectivePacketPayload& operator=(::RemoveObjectivePacketPayload&&);
+    MCNAPI ::RemoveObjectivePacketPayload& operator=(::RemoveObjectivePacketPayload&&);
 
-    MCAPI ~RemoveObjectivePacketPayload();
+    MCNAPI ~RemoveObjectivePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

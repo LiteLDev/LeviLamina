@@ -23,16 +23,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DDTCallback() /*override*/ = default;
 
-    // vIndex: 1
     virtual bool OnFile(::RakNet::FileListTransferCBInterface::OnFileStruct*) /*override*/;
 
-    // vIndex: 2
     virtual void OnFileProgress(::RakNet::FileListTransferCBInterface::FileProgressStruct*) /*override*/;
 
-    // vIndex: 4
     virtual bool OnDownloadComplete(::RakNet::FileListTransferCBInterface::DownloadCompleteStruct*) /*override*/;
     // NOLINTEND
 

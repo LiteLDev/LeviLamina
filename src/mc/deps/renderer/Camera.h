@@ -24,10 +24,32 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Camera& operator=(Camera const&);
-    Camera(Camera const&);
-    Camera();
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C Camera();
+
+    MCNAPI_C Camera(::mce::Camera const&);
+
+    MCNAPI_C ::mce::Camera& operator=(::mce::Camera const&);
+
+    MCNAPI_C void updateViewMatrixDependencies();
+
+    MCNAPI_C ~Camera();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::mce::Camera const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace mce

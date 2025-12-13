@@ -36,114 +36,83 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelStorage();
 
-    // vIndex: 1
     virtual void addStorageObserver(::std::unique_ptr<::LevelStorageObserver>) = 0;
 
-    // vIndex: 2
     virtual bool loadedSuccessfully() const;
 
-    // vIndex: 3
     virtual ::std::unique_ptr<::CompoundTag> getCompoundTag(::std::string const&, ::DBHelpers::Category) = 0;
 
-    // vIndex: 4
     virtual bool hasKey(::std::string_view, ::DBHelpers::Category) const = 0;
 
-    // vIndex: 5
     virtual void forEachKeyWithPrefix(
         ::std::string_view,
         ::DBHelpers::Category,
         ::std::function<void(::std::string_view, ::std::string_view)> const&
     ) const = 0;
 
-    // vIndex: 6
     virtual bool loadLevelData(::LevelData&) = 0;
 
-    // vIndex: 7
     virtual ::std::unique_ptr<::ChunkSource> createChunkStorage(::std::unique_ptr<::ChunkSource>, ::StorageVersion) = 0;
 
-    // vIndex: 8
     virtual void saveLevelData(::LevelData const&) = 0;
 
-    // vIndex: 9
     virtual ::Core::PathBuffer<::std::string> const& getFullPath() const = 0;
 
-    // vIndex: 11
     virtual ::Bedrock::Threading::Async<void>
     saveData(::std::string const&, ::std::string&&, ::DBHelpers::Category) = 0;
 
-    // vIndex: 10
     virtual ::Bedrock::Threading::Async<void> saveData(::LevelStorageWriteBatch const&) = 0;
 
-    // vIndex: 12
     virtual ::Bedrock::Threading::Async<void> deleteData(::std::string const&, ::DBHelpers::Category) = 0;
 
-    // vIndex: 13
     virtual void getStatistics(::std::string&, ::LevelStorage::StatsType) const = 0;
 
-    // vIndex: 14
     virtual bool clonePlayerData(::std::string_view fromKey, ::std::string_view toKey);
 
-    // vIndex: 15
     virtual ::Core::LevelStorageResult getLevelStorageState() const = 0;
 
-    // vIndex: 16
     virtual ::ContentIdentity const* getContentIdentity() const = 0;
 
-    // vIndex: 17
     virtual void startShutdown() = 0;
 
-    // vIndex: 18
     virtual bool isShuttingDown() const = 0;
 
-    // vIndex: 19
     virtual bool checkShutdownDone() = 0;
 
-    // vIndex: 20
     virtual bool loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
 
-    // vIndex: 21
     virtual ::Core::LevelStorageResult getState() const = 0;
 
-    // vIndex: 22
     virtual ::std::vector<::SnapshotFilenameAndLength> createSnapshot(::std::string const&, bool) = 0;
 
-    // vIndex: 23
     virtual void releaseSnapshot() = 0;
 
-    // vIndex: 24
     virtual ::Bedrock::Threading::Async<void> compactStorage() = 0;
 
-    // vIndex: 25
     virtual void syncAndSuspendStorage() = 0;
 
-    // vIndex: 26
     virtual void resumeStorage() = 0;
 
-    // vIndex: 27
     virtual void setFlushAllowed(bool) = 0;
 
-    // vIndex: 28
     virtual void flushToPermanentStorage() = 0;
 
-    // vIndex: 29
     virtual void freeCaches();
 
-    // vIndex: 30
     virtual void setCompactionCallback(::std::function<void(::CompactionStatus)>) = 0;
 
-    // vIndex: 31
     virtual void setCriticalSyncSaveCallback(::std::function<void()>) = 0;
 
-    // vIndex: 32
     virtual void corruptLevel();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C ::std::unique_ptr<::LevelStorageWriteBatch> createWriteBatch();
+
     MCAPI ::std::string getServerId(::Player const& client, bool isXboxLive);
 
     MCAPI ::std::vector<::std::string> loadAllPlayerIDs(bool includeLocalPlayer) const;
@@ -182,6 +151,8 @@ public:
     MCFOLD void $freeCaches();
 
     MCFOLD void $corruptLevel();
+
+
     // NOLINTEND
 
 public:

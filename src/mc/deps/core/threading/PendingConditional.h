@@ -27,20 +27,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PendingConditional() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Bedrock::Threading::AsyncStatus getStatus() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::error_code getError() const /*override*/;
 
-    // vIndex: 3
     virtual void cancel() /*override*/;
 
-    // vIndex: 5
     virtual void addOnComplete(::std::function<void(::Bedrock::Threading::IAsyncResult<void> const&)>) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void doCheck();
     // NOLINTEND
 
 public:

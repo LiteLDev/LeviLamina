@@ -28,10 +28,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CommandOriginLoader() /*override*/;
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const& tag) /*override*/;
     // NOLINTEND
 
@@ -51,6 +49,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::CommandOrigin> $load(::CompoundTag const& tag);
+
+
     // NOLINTEND
 
 public:

@@ -2,15 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/item/enchanting/EnchantResultType.h"
-
 struct EnchantResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::EnchantResultType> result;
-    ::ll::TypedStorage<8, 8, uint64>              enchantIdx;
-    ::ll::TypedStorage<4, 4, int>                 level;
+    ::ll::UntypedStorage<1, 1> mUnkde36cf;
+    ::ll::UntypedStorage<8, 8> mUnk37781e;
+    ::ll::UntypedStorage<4, 4> mUnke66dc9;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    EnchantResult& operator=(EnchantResult const&);
+    EnchantResult(EnchantResult const&);
+    EnchantResult();
 };

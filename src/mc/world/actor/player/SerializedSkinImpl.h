@@ -83,9 +83,13 @@ public:
         bool                      overridesPlayerAppearance
     );
 
+    MCAPI_C void clear();
+
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
     MCAPI void setArmSizeFromString(::std::string const& armSizeStr);
+
+    MCAPI_C void setCapeId(::std::string const& capeId);
 
     MCAPI void updateGeometryName();
 

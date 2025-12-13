@@ -37,52 +37,36 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptCommandOrigin() /*override*/;
 
-    // vIndex: 1
     virtual ::std::string const& getRequestId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 3
     virtual ::BlockPos getBlockPosition() const /*override*/;
 
-    // vIndex: 4
     virtual ::Vec3 getWorldPosition() const /*override*/;
 
-    // vIndex: 5
     virtual ::std::optional<::Vec2> getRotation() const /*override*/;
 
-    // vIndex: 6
     virtual ::Level* getLevel() const /*override*/;
 
-    // vIndex: 7
     virtual ::Dimension* getDimension() const /*override*/;
 
-    // vIndex: 8
     virtual ::Actor* getEntity() const /*override*/;
 
-    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const /*override*/;
 
-    // vIndex: 10
     virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
-    // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const /*override*/;
 
-    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const /*override*/;
 
-    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const /*override*/;
 
-    // vIndex: 26
     virtual void handleCommandOutputCallback(int successCount, ::std::string&& messages) const /*override*/;
 
-    // vIndex: 30
     virtual bool isValid() const /*override*/;
     // NOLINTEND
 
@@ -146,6 +130,8 @@ public:
     MCAPI void $handleCommandOutputCallback(int successCount, ::std::string&& messages) const;
 
     MCFOLD bool $isValid() const;
+
+
     // NOLINTEND
 
 public:

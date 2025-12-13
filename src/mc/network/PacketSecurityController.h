@@ -32,10 +32,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PacketSecurityController() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::PacketViolationResponse checkForViolation(
         ::MinecraftPacketIds                                                     packetId,
         ::SubClientId                                                            subClientId,
@@ -43,13 +41,10 @@ public:
         bool*                                                                    outIsNewOrUpdatedViolation
     ) /*override*/;
 
-    // vIndex: 2
     virtual uint getTelemetryData() /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::ErrorInfo<::std::error_code> consumePacketError(::SubClientId subClientId) /*override*/;
 
-    // vIndex: 4
     virtual void reloadPacketLimitConfig(
         ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
     ) /*override*/;
@@ -89,6 +84,8 @@ public:
 
     MCNAPI void
     $reloadPacketLimitConfig(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder);
+
+
     // NOLINTEND
 
 public:

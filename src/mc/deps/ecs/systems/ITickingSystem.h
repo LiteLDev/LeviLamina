@@ -16,16 +16,12 @@ class ITickingSystem : public ::ISystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ITickingSystem() /*override*/ = default;
 
-    // vIndex: 2
-    virtual void tick(::EntityRegistry&) = 0;
+    virtual void tick(::EntityRegistry& registry) = 0;
 
-    // vIndex: 4
     virtual void singleTick(::EntityRegistry& registry, ::EntityContext& entity);
 
-    // vIndex: 3
     virtual void singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
     // NOLINTEND
 
@@ -35,5 +31,13 @@ public:
     MCNAPI void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
 
     MCNAPI void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

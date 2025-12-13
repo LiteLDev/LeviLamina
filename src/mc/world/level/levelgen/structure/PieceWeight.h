@@ -6,35 +6,37 @@ class PieceWeight {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> pieceClass;
-    ::ll::TypedStorage<4, 4, int>            weight;
-    ::ll::TypedStorage<4, 4, int>            placeCount;
-    ::ll::TypedStorage<4, 4, int>            maxPlaceCount;
-    ::ll::TypedStorage<4, 4, int>            minDepth;
-    ::ll::TypedStorage<1, 1, bool>           allowInRow;
+    ::ll::UntypedStorage<8, 32> mUnk37d9f4;
+    ::ll::UntypedStorage<4, 4>  mUnk3393d8;
+    ::ll::UntypedStorage<4, 4>  mUnka5b947;
+    ::ll::UntypedStorage<4, 4>  mUnk363f93;
+    ::ll::UntypedStorage<4, 4>  mUnk2fe59b;
+    ::ll::UntypedStorage<1, 1>  mUnk4d6e94;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    PieceWeight& operator=(PieceWeight const&);
+    PieceWeight(PieceWeight const&);
     PieceWeight();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PieceWeight(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
+    MCNAPI PieceWeight(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
 
-    MCAPI ~PieceWeight();
+    MCNAPI ~PieceWeight();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
+    MCNAPI void* $ctor(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

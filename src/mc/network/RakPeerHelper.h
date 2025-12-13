@@ -20,23 +20,30 @@ public:
     // clang-format on
 
     // RakPeerHelper inner types define
+    enum class IPVersion : int {
+        IPv4  = 0,
+        IPv6  = 1,
+        Count = 2,
+    };
+
+    enum class PeerPurpose : int {
+        Gameplay     = 0,
+        LanDiscovery = 1,
+        Count        = 2,
+    };
+
     class IPSupportInterface {
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~IPSupportInterface();
 
-        // vIndex: 1
         virtual bool useIPv4Only() const = 0;
 
-        // vIndex: 2
         virtual bool useIPv6Only() const = 0;
 
-        // vIndex: 3
         virtual ushort getDefaultGamePort() const = 0;
 
-        // vIndex: 4
         virtual ushort getDefaultGamePortv6() const = 0;
         // NOLINTEND
 
@@ -57,18 +64,6 @@ public:
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    };
-
-    enum class PeerPurpose : int {
-        Gameplay     = 0,
-        LanDiscovery = 1,
-        Count        = 2,
-    };
-
-    enum class IPVersion : int {
-        IPv4  = 0,
-        IPv6  = 1,
-        Count = 2,
     };
 
 public:

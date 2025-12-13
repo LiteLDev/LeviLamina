@@ -16,14 +16,11 @@ class ILevelEventManagerCoordinator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ILevelEventManagerCoordinator() = default;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
     getLevelEventDataConnector() = 0;
 
-    // vIndex: 2
     virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
     getLevelEventCompoundTagConnector() = 0;
     // NOLINTEND

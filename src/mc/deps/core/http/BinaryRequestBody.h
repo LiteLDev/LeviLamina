@@ -24,22 +24,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BinaryRequestBody() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar> destination) /*override*/;
 
-    // vIndex: 2
     virtual uint64 getSize() /*override*/;
 
-    // vIndex: 3
     virtual void cancel() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string const& getLoggableSource() const /*override*/;
 
-    // vIndex: 5
     virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
     // NOLINTEND
 
@@ -61,6 +55,8 @@ public:
     MCNAPI ::std::string const& $getLoggableSource() const;
 
     MCNAPI ::gsl::span<uchar const> $getLoggableData() const;
+
+
     // NOLINTEND
 
 public:

@@ -15,37 +15,43 @@ struct ActorAliasDescription : public ::DefintionDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::AliasInfoDescription>> mAliases;
+    ::ll::UntypedStorage<8, 24> mUnk8ea846;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ActorAliasDescription& operator=(ActorAliasDescription const&);
+    ActorAliasDescription(ActorAliasDescription const&);
+    ActorAliasDescription();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual char const* getJsonName() const /*override*/;
 
-    // vIndex: 0
     virtual ~ActorAliasDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AliasInfoDescription const* getAliasInfo(::std::string const& name) const;
+    MCNAPI ::AliasInfoDescription const* getAliasInfo(::std::string const& name) const;
 
-    MCAPI void parse(::Json::Value& root, bool isVanilla);
+    MCNAPI void parse(::Json::Value& root, bool isVanilla);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
+
+
     // NOLINTEND
 
 public:

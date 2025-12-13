@@ -15,6 +15,7 @@
 #include "mc/util/MolangStruct_UV.h"
 #include "mc/util/MolangStruct_XY.h"
 #include "mc/util/MolangStruct_XYZ.h"
+#include "mc/util/MolangStruct_Z.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,13 +41,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MolangMemberArray(::MolangStruct_RGBA, ::mce::Color const& color);
-
     MCAPI MolangMemberArray(::MolangStruct_RGB, ::mce::Color const& color);
+
+    MCAPI MolangMemberArray(::MolangStruct_RGBA, ::mce::Color const& color);
 
     MCAPI MolangMemberArray(::MolangStruct_XY, ::Vec2 const& vec);
 
     MCAPI MolangMemberArray(::MolangStruct_XYZ, ::Vec3 const& vec);
+
+    MCAPI_C MolangMemberArray(::MolangStruct_Z, float z);
 
     MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int base, int pattern);
 
@@ -79,13 +82,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MolangStruct_RGBA, ::mce::Color const& color);
-
     MCAPI void* $ctor(::MolangStruct_RGB, ::mce::Color const& color);
+
+    MCAPI void* $ctor(::MolangStruct_RGBA, ::mce::Color const& color);
 
     MCAPI void* $ctor(::MolangStruct_XY, ::Vec2 const& vec);
 
     MCAPI void* $ctor(::MolangStruct_XYZ, ::Vec3 const& vec);
+
+    MCAPI_C void* $ctor(::MolangStruct_Z, float z);
 
     MCAPI void* $ctor(::MolangStruct_BaseAndPattern, int base, int pattern);
 

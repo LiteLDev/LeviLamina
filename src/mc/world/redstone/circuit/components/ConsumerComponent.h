@@ -29,14 +29,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 14
     virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
-    // vIndex: 12
     virtual bool
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
-    // vIndex: 11
     virtual bool addSource(
         ::CircuitSceneGraph&         graph,
         ::CircuitTrackingInfo const& info,
@@ -44,16 +41,12 @@ public:
         bool&                        bDirectlyPowered
     ) /*override*/;
 
-    // vIndex: 7
     virtual bool canConsumerPower() const /*override*/;
 
-    // vIndex: 22
     virtual bool isSecondaryPowered() const /*override*/;
 
-    // vIndex: 24
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
-    // vIndex: 0
     virtual ~ConsumerComponent() /*override*/;
     // NOLINTEND
 
@@ -90,6 +83,8 @@ public:
     MCAPI bool $isSecondaryPowered() const;
 
     MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+
+
     // NOLINTEND
 
 public:

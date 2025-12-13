@@ -52,63 +52,57 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 3
     virtual bool canBeInterrupted() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 0
     virtual ~StalkAndPounceOnTargetGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _attemptToStrike(::Vec3 const& mobPos, ::Vec3 const& targetPos);
+    MCNAPI void _attemptToStrike(::Vec3 const& mobPos, ::Vec3 const& targetPos);
 
-    MCAPI bool _isPouncePathClear(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
+    MCNAPI bool _isPouncePathClear(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
 
-    MCAPI bool _isStuckBlock(::BlockPos blockPos) const;
+    MCNAPI bool _isStuckBlock(::BlockPos blockPos) const;
 
-    MCAPI void _pounce(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
+    MCNAPI void _pounce(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
 
-    MCAPI void _preparePounce(::Vec3 const& mobPos, ::Vec3 const& targetPos);
+    MCNAPI void _preparePounce(::Vec3 const& mobPos, ::Vec3 const& targetPos);
 
-    MCAPI void _stuck();
+    MCNAPI void _stuck();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canBeInterrupted();
+    MCNAPI bool $canBeInterrupted();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
+
+
     // NOLINTEND
 
 public:

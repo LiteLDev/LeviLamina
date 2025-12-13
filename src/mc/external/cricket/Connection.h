@@ -44,34 +44,6 @@ public:
     // clang-format on
 
     // Connection inner types define
-    struct SentPing {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk3678cf;
-        ::ll::UntypedStorage<8, 8>  mUnkb88b47;
-        ::ll::UntypedStorage<4, 4>  mUnkdf6945;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SentPing& operator=(SentPing const&);
-        SentPing(SentPing const&);
-        SentPing();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~SentPing();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
     enum class WriteState : int {
         Writable        = 0,
         WriteUnreliable = 1,
@@ -95,22 +67,16 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 2
         virtual void OnResponse(::cricket::StunMessage* response) /*override*/;
 
-        // vIndex: 3
         virtual void OnErrorResponse(::cricket::StunMessage* response) /*override*/;
 
-        // vIndex: 5
         virtual void OnTimeout() /*override*/;
 
-        // vIndex: 6
         virtual void OnSent() /*override*/;
 
-        // vIndex: 7
         virtual int resend_delay() /*override*/;
 
-        // vIndex: 0
         virtual ~ConnectionRequest() /*override*/ = default;
         // NOLINTEND
 
@@ -146,12 +112,42 @@ public:
         MCNAPI void $OnSent();
 
         MCNAPI int $resend_delay();
+
+
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+    struct SentPing {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk3678cf;
+        ::ll::UntypedStorage<8, 8>  mUnkb88b47;
+        ::ll::UntypedStorage<4, 4>  mUnkdf6945;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SentPing& operator=(SentPing const&);
+        SentPing(SentPing const&);
+        SentPing();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~SentPing();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -221,31 +217,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Connection() /*override*/;
 
-    // vIndex: 1
     virtual ::cricket::Candidate const& local_candidate() const /*override*/;
 
-    // vIndex: 2
     virtual ::cricket::Candidate const& remote_candidate() const /*override*/;
 
-    // vIndex: 3
     virtual ::rtc::Network const* network() const;
 
-    // vIndex: 4
     virtual int generation() const;
 
-    // vIndex: 5
     virtual uint64 priority() const;
 
-    // vIndex: 6
     virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) = 0;
 
-    // vIndex: 7
     virtual int GetError() = 0;
 
-    // vIndex: 8
     virtual void OnConnectionRequestResponse(::cricket::StunRequest* request, ::cricket::StunMessage* response);
     // NOLINTEND
 
@@ -465,6 +452,8 @@ public:
     MCNAPI uint64 $priority() const;
 
     MCNAPI void $OnConnectionRequestResponse(::cricket::StunRequest* request, ::cricket::StunMessage* response);
+
+
     // NOLINTEND
 
 public:

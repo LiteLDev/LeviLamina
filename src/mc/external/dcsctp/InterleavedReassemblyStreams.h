@@ -121,31 +121,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual int
     Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn,
         ::dcsctp::Data                                                                   data) /*override*/;
 
-    // vIndex: 2
     virtual uint64 HandleForwardTsn(
         ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> new_cumulative_ack_tsn,
         ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>              skipped_streams
     ) /*override*/;
 
-    // vIndex: 3
     virtual void
     ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> stream_ids) /*override*/;
 
-    // vIndex: 4
     virtual ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const /*override*/;
 
-    // vIndex: 5
     virtual void AddHandoverState(::dcsctp::DcSctpSocketHandoverState& state) /*override*/;
 
-    // vIndex: 6
     virtual void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const& state) /*override*/;
 
-    // vIndex: 0
     virtual ~InterleavedReassemblyStreams() /*override*/ = default;
     // NOLINTEND
 
@@ -194,6 +187,8 @@ public:
     MCNAPI void $AddHandoverState(::dcsctp::DcSctpSocketHandoverState& state);
 
     MCNAPI void $RestoreFromState(::dcsctp::DcSctpSocketHandoverState const& state);
+
+
     // NOLINTEND
 
 public:

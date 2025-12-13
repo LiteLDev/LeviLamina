@@ -9,7 +9,6 @@ class GlowItemFrameBlockActor : public ::ItemFrameBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~GlowItemFrameBlockActor() /*override*/ = default;
     // NOLINTEND
 

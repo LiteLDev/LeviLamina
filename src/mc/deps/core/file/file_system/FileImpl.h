@@ -57,49 +57,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FileImpl();
 
-    // vIndex: 1
     virtual ::Core::PathBuffer<::std::string> _getPath() const = 0;
 
-    // vIndex: 2
     virtual uint64 _getBlockSize() const = 0;
 
-    // vIndex: 3
     virtual bool _isOpen() = 0;
 
-    // vIndex: 4
     virtual ::Core::Result _close() = 0;
 
-    // vIndex: 5
     virtual ::Core::Result _read(void*, uint64, uint64*) = 0;
 
-    // vIndex: 6
     virtual ::Core::Result _readExactly(void*, uint64) = 0;
 
-    // vIndex: 7
     virtual ::Core::Result _skip(uint64) = 0;
 
-    // vIndex: 8
     virtual ::Core::Result _readAtPosition(uint64, void*, uint64, uint64*) = 0;
 
-    // vIndex: 9
     virtual ::Core::Result _getPosition(uint64*) = 0;
 
-    // vIndex: 10
     virtual ::Core::Result _setPosition(uint64) = 0;
 
-    // vIndex: 11
     virtual ::Core::Result _write(void const*, uint64) = 0;
 
-    // vIndex: 12
     virtual ::Core::Result _flush() = 0;
 
-    // vIndex: 13
     virtual ::Core::Result _getSize(uint64*) = 0;
 
-    // vIndex: 14
     virtual ::Core::Result _getRemainingSize(uint64*) = 0;
     // NOLINTEND
 

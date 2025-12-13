@@ -20,38 +20,6 @@ public:
     // clang-format on
 
     // RealmsTelemetry inner types define
-    struct RealmsCallCount {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnk83284f;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RealmsCallCount& operator=(RealmsCallCount const&);
-        RealmsCallCount(RealmsCallCount const&);
-        RealmsCallCount();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void addCall(int64 realmId, ::Bedrock::Http::Status returnCode, int count);
-
-        MCNAPI ::Social::Events::RealmsTelemetry::CallCount getTotalCallCount() const;
-
-        MCNAPI ::Json::Value toJson() const;
-
-        MCNAPI ~RealmsCallCount();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
     struct CallCount {
     public:
         // member variables
@@ -83,6 +51,38 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::Social::Events::RealmsTelemetry::CallCount&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct RealmsCallCount {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnk83284f;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RealmsCallCount& operator=(RealmsCallCount const&);
+        RealmsCallCount(RealmsCallCount const&);
+        RealmsCallCount();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI void addCall(int64 realmId, ::Bedrock::Http::Status returnCode, int count);
+
+        MCNAPI ::Social::Events::RealmsTelemetry::CallCount getTotalCallCount() const;
+
+        MCNAPI ::Json::Value toJson() const;
+
+        MCNAPI ~RealmsCallCount();
         // NOLINTEND
 
     public:

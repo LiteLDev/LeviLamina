@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ReceiptData_Google;
 namespace Json { class Value; }
 // clang-format on
 
@@ -26,22 +27,44 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual char const* getPath() const /*override*/;
 
-    // vIndex: 2
     virtual ::Json::Value toPostBody() const /*override*/;
 
-    // vIndex: 3
-    virtual void fromJsonResponse(::Json::Value const&) /*override*/;
+    virtual void fromJsonResponse(::Json::Value const& jsonResponse) /*override*/;
 
-    // vIndex: 0
     virtual ~CheckReceiptDetailsGooglePlayStore() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit CheckReceiptDetailsGooglePlayStore(::std::vector<::ReceiptData_Google> receiptsToCheck);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::vector<::ReceiptData_Google> receiptsToCheck);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI char const* $getPath() const;
 
+    MCNAPI ::Json::Value $toPostBody() const;
+
+    MCNAPI void $fromJsonResponse(::Json::Value const& jsonResponse);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

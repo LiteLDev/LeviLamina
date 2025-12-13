@@ -18,22 +18,21 @@ struct AlwaysTrue : public ::br::worldgen::processors::BlockRules::TestType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool test(::Block const&, ::IRandom&) const /*override*/;
 
-    // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
-    // vIndex: 0
     virtual ~AlwaysTrue() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $test(::Block const&, ::IRandom&) const;
+    MCNAPI bool $test(::Block const&, ::IRandom&) const;
 
-    MCFOLD void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+
+
     // NOLINTEND
 
 public:

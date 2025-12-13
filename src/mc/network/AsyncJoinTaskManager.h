@@ -90,7 +90,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AsyncJoinTaskManager() /*override*/;
     // NOLINTEND
 

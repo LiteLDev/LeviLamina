@@ -9,10 +9,10 @@ class LinkedAssetValidator : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // LinkedAssetValidator inner types declare
     // clang-format off
-    struct AssetCollection;
     struct KnownObject;
     struct KnownObjectHasher;
     struct Reference;
+    struct AssetCollection;
     // clang-format on
 
     // LinkedAssetValidator inner types define
@@ -20,34 +20,6 @@ public:
         New       = 0,
         Loaded    = 1,
         Validated = 2,
-    };
-
-    struct Reference {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk6cb2bf;
-        ::ll::UntypedStorage<8, 32> mUnk532ea1;
-        ::ll::UntypedStorage<8, 32> mUnk6b5cf2;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Reference& operator=(Reference const&);
-        Reference(Reference const&);
-        Reference();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~Reference();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct KnownObject {
@@ -78,6 +50,34 @@ public:
     };
 
     struct KnownObjectHasher {};
+
+    struct Reference {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk6cb2bf;
+        ::ll::UntypedStorage<8, 32> mUnk532ea1;
+        ::ll::UntypedStorage<8, 32> mUnk6b5cf2;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Reference& operator=(Reference const&);
+        Reference(Reference const&);
+        Reference();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~Reference();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
 
     struct AssetCollection {
     public:
@@ -124,20 +124,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LinkedAssetValidator() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LinkedAssetValidator(bool isClient);
+    MCNAPI_S explicit LinkedAssetValidator(bool isClient);
+
+    MCNAPI_C void addFile(int assetType, ::std::string const& filepath);
 
     MCNAPI void addFileReference(int assetType, ::std::string const& filepath, ::std::string contextString);
 
     MCNAPI void addIdentifier(int assetType, ::std::string const& identifier);
 
     MCNAPI void addReference(int assetType, ::std::string const& identifier, ::std::string contextString);
+
+    MCNAPI_C void reset();
     // NOLINTEND
 
 public:
@@ -149,7 +152,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(bool isClient);
+    MCNAPI_S void* $ctor(bool isClient);
     // NOLINTEND
 
 public:

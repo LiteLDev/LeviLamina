@@ -39,13 +39,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ExternalFileLevelStorageSource() /*override*/;
 
-    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
-    // vIndex: 5
     virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(
         ::Scheduler&                                                      scheduler,
         ::std::string const&                                              levelId,
@@ -56,76 +53,63 @@ public:
         ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
     ) /*override*/;
 
-    // vIndex: 6
     virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(
         ::std::string const&                                              levelId,
         ::ContentIdentity const&                                          contentIdentity,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     ) /*override*/;
 
-    // vIndex: 2
     virtual ::Bedrock::Result<bool> getLevelData(::std::string const& levelId, ::LevelData& levelDataOut) const
         /*override*/;
 
-    // vIndex: 3
     virtual void saveLevelData(::std::string const& levelId, ::LevelData const& data) /*override*/;
 
-    // vIndex: 4
     virtual void getLevelList(::std::vector<::Core::PathBuffer<::std::string>>& paths) /*override*/;
 
-    // vIndex: 7
     virtual void deleteLevel(::std::string const& levelId) /*override*/;
 
-    // vIndex: 9
     virtual bool renameLevel(::std::string const& levelId, ::std::string const& newLevelName) /*override*/;
 
-    // vIndex: 8
     virtual void
     renameLevel(::LevelData& levelData, ::Core::Path const& fullPath, ::std::string const& newLevelName) /*override*/;
 
-    // vIndex: 10
     virtual bool createBackupCopyOfWorld(
         ::std::string const& levelId,
         ::std::string const& newLeveId,
         ::std::string const& newName
     ) /*override*/;
 
-    // vIndex: 11
     virtual bool isLevelMarkedForSync(::Core::Path const& levelPath) const /*override*/;
 
-    // vIndex: 12
     virtual bool isLevelPartiallyCopied(::Core::Path const& levelPath) const /*override*/;
 
-    // vIndex: 13
     virtual ::Core::PathBuffer<::std::string> getLevelDatFoundPath(::Core::Path const& levelPath) const /*override*/;
 
-    // vIndex: 14
     virtual ::Core::PathBuffer<::std::string> const getBasePath() const /*override*/;
 
-    // vIndex: 15
     virtual ::Core::PathBuffer<::std::string> const getPathToLevel(::std::string const& levelId) const /*override*/;
 
-    // vIndex: 16
     virtual ::Core::PathBuffer<::std::string> const getPathToLevelInfo(::std::string const& levelId, bool) const
         /*override*/;
 
-    // vIndex: 17
     virtual bool isBetaRetailLevel(::std::string const&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExternalFileLevelStorageSource(
+    MCAPI_S ExternalFileLevelStorageSource(
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&  pathManager,
         ::Bedrock::NotNullNonOwnerPtr<::SaveTransactionManager> const& saveTransactionManager
     );
+
+    MCAPI_C void _getLevelList(::std::vector<::Core::PathBuffer<::std::string>>& paths) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCAPI_S void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&  pathManager,
         ::Bedrock::NotNullNonOwnerPtr<::SaveTransactionManager> const& saveTransactionManager
     );
@@ -189,6 +173,8 @@ public:
     MCFOLD ::Core::PathBuffer<::std::string> const $getPathToLevelInfo(::std::string const& levelId, bool) const;
 
     MCFOLD bool $isBetaRetailLevel(::std::string const&) const;
+
+
     // NOLINTEND
 
 public:

@@ -14,10 +14,8 @@ class CobblestoneBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 128
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
-    // vIndex: 0
     virtual ~CobblestoneBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -25,6 +23,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Block const* $tryGetInfested(::Block const& block) const;
+
+
     // NOLINTEND
 
 public:

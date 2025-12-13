@@ -41,9 +41,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::ChestBlockActor&> mChest;
-        ::ll::TypedStorage<1, 1, bool>               mIsUsed;
-        ::ll::TypedStorage<8, 8, ::ActorUniqueID>    mActorId;
+        ::ll::UntypedStorage<8, 8> mUnkb4cf5c;
+        ::ll::UntypedStorage<1, 1> mUnk53b96d;
+        ::ll::UntypedStorage<8, 8> mUnk3062dd;
         // NOLINTEND
 
     public:
@@ -87,135 +87,94 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ChestBlockActor() /*override*/;
 
-    // vIndex: 20
     virtual int getContainerSize() const /*override*/;
 
-    // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
-    // vIndex: 25
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 7
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    // vIndex: 12
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
-    // vIndex: 2
     virtual void serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 45
     virtual void loadItems(::CompoundTag const& base, ::ILevel& level);
 
-    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 46
     virtual bool saveItems(::CompoundTag& base, ::SaveContext const& saveContext) const;
 
-    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 3
     virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 16
     virtual void triggerEvent(int b0, int b1) /*override*/;
 
-    // vIndex: 22
     virtual void startOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    // vIndex: 23
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 18
     virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const& position) /*override*/;
 
-    // vIndex: 21
     virtual ::BlockActor* getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
-    // vIndex: 49
     virtual int clearInventory(int resizeTo) /*override*/;
 
-    // vIndex: 31
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 30
     virtual ::Container const* getContainer() const /*override*/;
 
-    // vIndex: 12
     virtual void onMove() /*override*/;
 
-    // vIndex: 11
     virtual void onPlace(::BlockSource& region) /*override*/;
 
-    // vIndex: 47
     virtual void openBy(::Player& p);
 
-    // vIndex: 34
     virtual void setContainerChanged(int slot) /*override*/;
 
-    // vIndex: 32
     virtual bool canPushInItem(int, int, ::ItemStack const&) const /*override*/;
 
-    // vIndex: 33
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
-    // vIndex: 23
     virtual void getDebugText(
         ::std::vector<::std::string>& outputInfo,
         ::BlockPos const&             debugPos,
         ::BlockSource const*          region
     ) const /*override*/;
 
-    // vIndex: 3
     virtual void addContentChangeListener(::ContainerContentChangeListener* listener) /*override*/;
 
-    // vIndex: 4
     virtual void removeContentChangeListener(::ContainerContentChangeListener* listener) /*override*/;
 
-    // vIndex: 41
     virtual void initializeContainerContents(::BlockSource& region) /*override*/;
 
-    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    // vIndex: 48
     virtual bool _canOpenThis(::BlockSource& region) const;
 
-    // vIndex: 49
     virtual ::AABB getObstructionAABB() const;
 
-    // vIndex: 50
     virtual bool _detectEntityObstruction(::BlockSource& region) const;
 
-    // vIndex: 51
     virtual ::SharedTypes::Legacy::LevelSoundEvent getOpenSound() const;
 
-    // vIndex: 52
     virtual ::SharedTypes::Legacy::LevelSoundEvent getCloseSound() const;
     // NOLINTEND
 
@@ -258,6 +217,13 @@ public:
     MCAPI ::ChestBlock const* tryGetChestBlock(::BlockSource const& region) const;
 
     MCAPI void unpair(::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static ::std::unique_ptr<::ChestBlockActor>
+    createChestBlockEntity(::std::optional<::ChestType> const& chestType, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -367,6 +333,8 @@ public:
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getOpenSound() const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getCloseSound() const;
+
+
     // NOLINTEND
 
 public:

@@ -48,7 +48,6 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~State() /*override*/ = default;
         // NOLINTEND
 
@@ -76,17 +75,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AsyncDnsResolver() /*override*/;
 
-    // vIndex: 2
     virtual void Start(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
 
-    // vIndex: 1
     virtual void
     Start(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
 
-    // vIndex: 3
     virtual ::webrtc::AsyncDnsResolverResult const& result() const /*override*/;
     // NOLINTEND
 
@@ -116,6 +111,8 @@ public:
     MCNAPI void $Start(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
 
     MCNAPI ::webrtc::AsyncDnsResolverResult const& $result() const;
+
+
     // NOLINTEND
 
 public:

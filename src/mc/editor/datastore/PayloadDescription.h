@@ -21,9 +21,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::DataStore::PayloadDescription& operator=(::Editor::DataStore::PayloadDescription const&);
-
     MCNAPI ::Editor::DataStore::PayloadDescription& operator=(::Editor::DataStore::PayloadDescription&&);
+
+    MCNAPI ::Editor::DataStore::PayloadDescription& operator=(::Editor::DataStore::PayloadDescription const&);
 
     MCNAPI ~PayloadDescription();
     // NOLINTEND

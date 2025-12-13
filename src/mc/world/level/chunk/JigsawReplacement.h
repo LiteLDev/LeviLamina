@@ -21,7 +21,6 @@ class JigsawReplacement : public ::br::worldgen::StructureProcessor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
         ::IBlockSource&,
         ::BlockPos targetPosition,
@@ -31,13 +30,10 @@ public:
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
-    // vIndex: 3
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
-    // vIndex: 4
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
-    // vIndex: 0
     virtual ~JigsawReplacement() /*override*/ = default;
     // NOLINTEND
 
@@ -62,6 +58,8 @@ public:
     MCNAPI ::br::worldgen::StructureProcessorType $type() const;
 
     MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+
+
     // NOLINTEND
 
 public:

@@ -16,10 +16,8 @@ class ITreeTrunk {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ITreeTrunk() = default;
 
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> placeTrunk(
         ::IBlockWorldGenAPI&,
         ::BlockPos const&,
@@ -30,7 +28,6 @@ public:
         ::ITreeCanopy const*
     ) const = 0;
 
-    // vIndex: 2
     virtual int getTreeHeight(::Random&) const = 0;
     // NOLINTEND
 

@@ -35,34 +35,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void write(::IDataOutput& dos) const /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::Result<void> load(::IDataInput& dis) /*override*/;
 
-    // vIndex: 5
     virtual ::Tag::Type getId() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::string toString() const /*override*/;
 
-    // vIndex: 7
-    virtual void print(::std::string const& prefix, ::PrintStream& out) const /*override*/;
+    virtual void print(::std::string const& prefix_, ::PrintStream& out) const /*override*/;
 
-    // vIndex: 9
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
 
-    // vIndex: 10
     virtual uint64 hash() const /*override*/;
 
-    // vIndex: 6
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
-    // vIndex: 1
     virtual void deleteChildren() /*override*/;
 
-    // vIndex: 0
     virtual ~ListTag() /*override*/;
     // NOLINTEND
 
@@ -101,7 +91,7 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
+    MCAPI void $print(::std::string const& prefix_, ::PrintStream& out) const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
@@ -110,6 +100,8 @@ public:
     MCAPI bool $equals(::Tag const& rhs) const;
 
     MCAPI void $deleteChildren();
+
+
     // NOLINTEND
 
 public:

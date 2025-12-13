@@ -16,10 +16,8 @@ class CopperLightningRodBlock : public ::CopperBlock<::LightningRodBlock> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 17
     virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 0
     virtual ~CopperLightningRodBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -27,6 +25,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+
+
     // NOLINTEND
 
 public:

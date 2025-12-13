@@ -22,16 +22,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SharedRecursiveMutexBase() = default;
 
-    // vIndex: 1
     virtual bool _threadHoldsSharedLock(::std::thread::id) = 0;
 
-    // vIndex: 2
     virtual bool _shouldLockForSharedAccess(::std::thread::id) = 0;
 
-    // vIndex: 3
     virtual bool _shouldUnLockForSharedAccess(::std::thread::id) = 0;
     // NOLINTEND
 

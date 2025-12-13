@@ -2,61 +2,52 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
 
 class BaseBlockLocationIterator {
 public:
-    // BaseBlockLocationIterator inner types define
-    using value_type = ::BlockPos;
-
-    using difference_type = int64;
-
-    using pointer = ::BlockPos*;
-
-    using reference = ::BlockPos;
-
-    using iterator_category = ::std::input_iterator_tag;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::BlockPos> mMin;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mMax;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mCurrent;
-    ::ll::TypedStorage<1, 1, bool>        mDone;
+    ::ll::UntypedStorage<4, 12> mUnk5888e9;
+    ::ll::UntypedStorage<4, 12> mUnkab4ac1;
+    ::ll::UntypedStorage<4, 12> mUnk1e2df8;
+    ::ll::UntypedStorage<1, 1>  mUnkbed67c;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BaseBlockLocationIterator& operator=(BaseBlockLocationIterator const&);
+    BaseBlockLocationIterator(BaseBlockLocationIterator const&);
+    BaseBlockLocationIterator();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BaseBlockLocationIterator() = default;
 
-    // vIndex: 1
     virtual bool operator==(::BaseBlockLocationIterator const&) const;
 
-    // vIndex: 2
     virtual bool operator!=(::BaseBlockLocationIterator const&) const;
 
-    // vIndex: 3
     virtual ::BaseBlockLocationIterator& operator++();
 
-    // vIndex: 4
     virtual bool isValid() const = 0;
 
-    // vIndex: 5
     virtual void _begin();
 
-    // vIndex: 6
     virtual void _end();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_begin();
+    MCNAPI void $_begin();
 
-    MCFOLD void $_end();
+    MCNAPI void $_end();
+
+
     // NOLINTEND
 };

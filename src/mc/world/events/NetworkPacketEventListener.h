@@ -15,10 +15,8 @@ class NetworkPacketEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~NetworkPacketEventListener() = default;
 
-    // vIndex: 1
     virtual ::EventResult onPacketReceivedFrom(::PacketHeader const&, ::Packet const&);
     // NOLINTEND
 

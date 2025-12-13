@@ -29,19 +29,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
     virtual void OnSent() /*override*/;
 
-    // vIndex: 2
     virtual void OnResponse(::cricket::StunMessage* response) /*override*/;
 
-    // vIndex: 3
     virtual void OnErrorResponse(::cricket::StunMessage* response) /*override*/;
 
-    // vIndex: 5
     virtual void OnTimeout() /*override*/;
 
-    // vIndex: 0
     virtual ~TurnRefreshRequest() /*override*/ = default;
     // NOLINTEND
 
@@ -67,6 +62,8 @@ public:
     MCNAPI void $OnErrorResponse(::cricket::StunMessage* response);
 
     MCNAPI void $OnTimeout();
+
+
     // NOLINTEND
 
 public:

@@ -7,8 +7,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class Scheduler;
+class WorkerPool;
 namespace Bedrock::Threading::Burst::Strategy { class Console; }
 namespace Bedrock::Threading::Burst::Strategy::Execution { class GreedyExecution; }
+namespace Core { class DeferredTask; }
 // clang-format on
 
 namespace dragon::tasks {
@@ -17,10 +20,10 @@ class GraphicsTasks {
 public:
     // GraphicsTasks inner types declare
     // clang-format off
-    struct InitBegin;
     struct InitBgfx;
     struct InitEnd;
     struct InitFinalize;
+    struct InitBegin;
     struct InitPending;
     struct InitializationState;
     // clang-format on
@@ -47,26 +50,19 @@ public:
         InitBgfx& operator=(InitBgfx const&);
         InitBgfx(InitBgfx const&);
         InitBgfx();
-    };
 
-    struct InitBegin : public ::dragon::tasks::GraphicsTasks::InitBgfx {};
-
-    struct InitPending : public ::dragon::tasks::GraphicsTasks::InitBgfx {
     public:
-        // member variables
+        // member functions
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk28428c;
-        ::ll::UntypedStorage<8, 16> mUnk835481;
+        MCNAPI_C ~InitBgfx();
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        InitPending& operator=(InitPending const&);
-        InitPending(InitPending const&);
-        InitPending();
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
-
-    struct InitFinalize {};
 
     struct InitEnd {
     public:
@@ -82,12 +78,86 @@ public:
         InitEnd();
     };
 
+    struct InitFinalize {};
+
+    struct InitBegin : public ::dragon::tasks::GraphicsTasks::InitBgfx {
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ~InitBegin();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
+    };
+
+    struct InitPending : public ::dragon::tasks::GraphicsTasks::InitBgfx {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk28428c;
+        ::ll::UntypedStorage<8, 16> mUnk835481;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        InitPending& operator=(InitPending const&);
+        InitPending(InitPending const&);
+        InitPending();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ::dragon::tasks::GraphicsTasks::InitPending& operator=(::dragon::tasks::GraphicsTasks::InitPending&&);
+
+        MCNAPI_C ~InitPending();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
+    };
+
     struct InitializationState : public ::std::variant<
                                      ::std::monostate,
                                      ::dragon::tasks::GraphicsTasks::InitBegin,
                                      ::dragon::tasks::GraphicsTasks::InitPending,
                                      ::dragon::tasks::GraphicsTasks::InitFinalize,
-                                     ::dragon::tasks::GraphicsTasks::InitEnd> {};
+                                     ::dragon::tasks::GraphicsTasks::InitEnd> {
+    public:
+        // prevent constructor by default
+        InitializationState& operator=(InitializationState const&);
+        InitializationState();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C InitializationState(::dragon::tasks::GraphicsTasks::InitializationState&&);
+
+        MCNAPI_C InitializationState(::dragon::tasks::GraphicsTasks::InitializationState const&);
+
+        MCNAPI_C ~InitializationState();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI_C void* $ctor(::dragon::tasks::GraphicsTasks::InitializationState&&);
+
+        MCNAPI_C void* $ctor(::dragon::tasks::GraphicsTasks::InitializationState const&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables
@@ -120,6 +190,60 @@ public:
     GraphicsTasks& operator=(GraphicsTasks const&);
     GraphicsTasks(GraphicsTasks const&);
     GraphicsTasks();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C GraphicsTasks(
+        ::WorkerPool&                                       rendererPool,
+        ::gsl::span<::std::reference_wrapper<::WorkerPool>> helperPools,
+        ::Scheduler&                                        clientScheduler
+    );
+
+    MCNAPI_C bool _executeSynchronousRenderOperation(::std::function<void()> const& callback);
+
+    MCNAPI_C void _forCounter(
+        uint64                               count,
+        ::std::function<void(uint64)> const& workerCallback,
+        ::std::function<void(uint)> const&   resolveCallback
+    );
+
+    MCNAPI_C bool _queueMainFrameRenderTask(::std::function<void()> const& callback);
+
+    MCNAPI_C void _waitUntilCompleted(::std::shared_ptr<::Core::DeferredTask> task);
+
+    MCNAPI_C ::dragon::tasks::GraphicsTasks::InitializationState
+    continueInit(::dragon::tasks::GraphicsTasks::InitializationState state);
+
+    MCNAPI_C void frame(
+        ::std::function<void()> const&                                                 frameContentCallback,
+        ::std::function<::std::chrono::nanoseconds(::std::chrono::nanoseconds)> const& computeSleepDuration
+    );
+
+    MCNAPI_C bool previousFrameComplete();
+
+    MCNAPI_C void queueResourcesTask(::std::function<void()> const& task);
+
+    MCNAPI_C void waitForPreviousFrame();
+
+    MCNAPI_C ~GraphicsTasks();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::WorkerPool&                                       rendererPool,
+        ::gsl::span<::std::reference_wrapper<::WorkerPool>> helperPools,
+        ::Scheduler&                                        clientScheduler
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace dragon::tasks

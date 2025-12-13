@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core::WriteThrottledOS { class OSWriteThrottleTracker; }
+// clang-format on
+
 namespace Core::WriteThrottledOS {
 
 class ThrottledFileWriteEstimator {
@@ -28,6 +33,20 @@ public:
         WriteTimeEstimate(WriteTimeEstimate const&);
         WriteTimeEstimate();
     };
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::Core::WriteThrottledOS::ThrottledFileWriteEstimator::WriteTimeEstimate getTimeToWrite(
+        int                                                     recoverLeewayHintMb,
+        ::Core::WriteThrottledOS::OSWriteThrottleTracker const& tracker,
+        uint64                                                  size,
+        ::std::optional<uint64>                                 startingBudget,
+        ::std::optional<uint64>                                 maxWriteSpeedBytes,
+        ::std::chrono::nanoseconds const&                       timeDiffbeforeImpacted,
+        ::std::chrono::nanoseconds const&                       timeDiffbeforeImpactedWhileWaiting
+    );
+    // NOLINTEND
 };
 
 } // namespace Core::WriteThrottledOS

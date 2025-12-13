@@ -10,7 +10,6 @@
 class BlockPos;
 class BlockVolume;
 class BoundingBox;
-class ChunkPos;
 class Dimension;
 class JigsawBlockInfo;
 class JigsawStructureRegistry;
@@ -24,42 +23,23 @@ struct JigsawJunction;
 
 class LegacyJigsawPlacement {
 public:
-    // LegacyJigsawPlacement inner types define
-    using PieceFactory = ::std::function<::std::unique_ptr<::PoolElementStructurePiece>(
-        ::StructurePoolElement const&,
-        ::BlockPos const&,
-        ::Rotation const&,
-        int,
-        ::JigsawJunction&,
-        ::BoundingBox const&,
-        ::BlockPos const&
-    )>;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int const> mMaxDepth;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::function<::std::unique_ptr<::PoolElementStructurePiece>(
-            ::StructurePoolElement const&,
-            ::BlockPos const&,
-            ::Rotation const&,
-            int,
-            ::JigsawJunction&,
-            ::BoundingBox const&,
-            ::BlockPos const&
-        )>>
-        mFactory;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>>
-        mChunkHeightCache;
+    ::ll::UntypedStorage<4, 4>  mUnk4488b6;
+    ::ll::UntypedStorage<8, 64> mUnk50e36e;
+    ::ll::UntypedStorage<8, 64> mUnk113b09;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LegacyJigsawPlacement& operator=(LegacyJigsawPlacement const&);
+    LegacyJigsawPlacement(LegacyJigsawPlacement const&);
+    LegacyJigsawPlacement();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addPiece(
+    MCNAPI void _addPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::PoolElementStructurePiece const&                  sourcePiece,
         ::Random&                                           random,
@@ -71,7 +51,7 @@ public:
         ::BlockPos const&                                   refPos
     );
 
-    MCAPI bool _tryPlacingPiece(
+    MCNAPI bool _tryPlacingPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::PoolElementStructurePiece const&                  sourcePiece,
         ::Random&                                           random,
@@ -86,7 +66,7 @@ public:
         ::BlockPos const&                                   refPos
     );
 
-    MCAPI void addPieces(
+    MCNAPI void addPieces(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::StructurePoolElement const&                       initialElement,
         ::Random&                                           random,
@@ -96,12 +76,12 @@ public:
         ::Dimension&                                        dimension
     );
 
-    MCAPI ~LegacyJigsawPlacement();
+    MCNAPI ~LegacyJigsawPlacement();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

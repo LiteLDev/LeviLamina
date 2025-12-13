@@ -20,6 +20,20 @@ public:
     BlockSchematicPart& operator=(BlockSchematicPart const&);
     BlockSchematicPart(BlockSchematicPart const&);
     BlockSchematicPart();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::ClientBlockPipeline::BlockSchematicPart& operator=(::ClientBlockPipeline::BlockSchematicPart&&);
+
+    MCNAPI_C ~BlockSchematicPart();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

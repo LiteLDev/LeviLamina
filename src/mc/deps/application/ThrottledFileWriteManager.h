@@ -3,19 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class SceneFactory;
+class AppPlatform;
+namespace Core::WriteThrottledOS { class OSWriteThrottleTracker; }
+struct SceneFactory;
 // clang-format on
 
 class ThrottledFileWriteManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ThrottledFileWriteManager inner types declare
     // clang-format off
-    struct TelemetryOperationInProgress;
     struct TransactionContext;
+    struct TelemetryOperationInProgress;
     // clang-format on
 
     // ThrottledFileWriteManager inner types define
@@ -31,6 +35,18 @@ public:
         TransactionContext& operator=(TransactionContext const&);
         TransactionContext(TransactionContext const&);
         TransactionContext();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ~TransactionContext();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
 
     struct TelemetryOperationInProgress {
@@ -50,6 +66,18 @@ public:
         TelemetryOperationInProgress& operator=(TelemetryOperationInProgress const&);
         TelemetryOperationInProgress(TelemetryOperationInProgress const&);
         TelemetryOperationInProgress();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ~TelemetryOperationInProgress();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -76,7 +104,55 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~ThrottledFileWriteManager() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ThrottledFileWriteManager() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ThrottledFileWriteManager(
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>                        appPlatform,
+        ::std::shared_ptr<::Core::WriteThrottledOS::OSWriteThrottleTracker> oSWriteThrottleTracker
+    );
+
+    MCNAPI_C ::Bedrock::Threading::Async<bool> beginLargeFileTransaction(
+        uint64                                            bytesToBeWritten,
+        ::std::string const&                              originatingSystem,
+        ::ThrottledFileWriteManager::TransactionContext&& context
+    );
+
+    MCNAPI_C void emitTelemetryEvent(
+        ::std::string const&                    originatingSystem,
+        bool                                    operationWasCancelled,
+        ::std::chrono::steady_clock::time_point operationCompleteTimestamp
+    );
+
+    MCNAPI_C ::Bedrock::Threading::Async<void> endLargeFileTransaction(::std::string const& originatingSystem);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>                        appPlatform,
+        ::std::shared_ptr<::Core::WriteThrottledOS::OSWriteThrottleTracker> oSWriteThrottleTracker
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -36,10 +36,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~PackManifestFactory() /*override*/;
+#else // LL_PLAT_C
+    virtual ~PackManifestFactory() /*override*/ = default;
+#endif
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::PackManifest> create(
         ::PackAccessStrategy&     accessStrategy,
         ::ResourceLocation const& location,
@@ -98,6 +100,8 @@ public:
         ::PackReport&             report,
         ::SubpackInfoCollection*  subpackInfoStack
     );
+
+
     // NOLINTEND
 
 public:

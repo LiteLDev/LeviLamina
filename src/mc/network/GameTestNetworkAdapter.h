@@ -37,13 +37,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 2
         virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
-        // vIndex: 3
         virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
-        // vIndex: 0
         virtual ~GameTestNetworkListener() /*override*/ = default;
         // NOLINTEND
 
@@ -53,6 +50,8 @@ public:
         MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
         MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
+
+
         // NOLINTEND
 
     public:

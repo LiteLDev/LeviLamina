@@ -12,7 +12,6 @@ class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class EntityContext;
-class WitherBoss;
 struct ActorDefinitionIdentifier;
 // clang-format on
 
@@ -29,38 +28,32 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::WitherBoss*> mParentWither;
+    ::ll::UntypedStorage<8, 8> mUnk8992a7;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    Skeleton& operator=(Skeleton const&);
+    Skeleton(Skeleton const&);
     Skeleton();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 155
     virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
 
-    // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 51
     virtual void setTarget(::Actor* entity) /*override*/;
 
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 85
     virtual bool canFreeze() const /*override*/;
 
-    // vIndex: 113
     virtual void getDebugText(::std::vector<::std::string>& outputInfo) /*override*/;
 
-    // vIndex: 8
     virtual ~Skeleton() /*override*/ = default;
     // NOLINTEND
 
@@ -100,6 +93,8 @@ public:
     MCAPI bool $canFreeze() const;
 
     MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
+
+
     // NOLINTEND
 
 public:

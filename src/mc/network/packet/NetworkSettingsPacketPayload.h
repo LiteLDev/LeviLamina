@@ -2,17 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/PacketCompressionAlgorithm.h"
-
 struct NetworkSettingsPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<2, 2, ushort>                       mCompressionThreshold;
-    ::ll::TypedStorage<2, 2, ::PacketCompressionAlgorithm> mCompressionAlgorithm;
-    ::ll::TypedStorage<1, 1, bool>                         mClientThrottleEnabled;
-    ::ll::TypedStorage<1, 1, uchar>                        mClientThrottleThreshold;
-    ::ll::TypedStorage<4, 4, float>                        mClientThrottleScalar;
+    ::ll::UntypedStorage<2, 2> mUnk9aeadd;
+    ::ll::UntypedStorage<2, 2> mUnk207b48;
+    ::ll::UntypedStorage<1, 1> mUnke6279e;
+    ::ll::UntypedStorage<1, 1> mUnk6c94ff;
+    ::ll::UntypedStorage<4, 4> mUnk76da6a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    NetworkSettingsPacketPayload& operator=(NetworkSettingsPacketPayload const&);
+    NetworkSettingsPacketPayload(NetworkSettingsPacketPayload const&);
+    NetworkSettingsPacketPayload();
 };

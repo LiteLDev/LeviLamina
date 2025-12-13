@@ -15,13 +15,10 @@ class CraftingTableBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 29
     virtual bool isCraftingBlock() const /*override*/;
 
-    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    // vIndex: 0
     virtual ~CraftingTableBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -37,6 +34,8 @@ public:
     MCFOLD bool $isCraftingBlock() const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+
+
     // NOLINTEND
 
 public:

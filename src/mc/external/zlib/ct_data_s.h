@@ -4,15 +4,14 @@
 
 struct ct_data_s {
 public:
-    // member variables
-    // NOLINTBEGIN
+// member variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_S
     ::ll::UntypedStorage<2, 2> mUnk511d4c;
     ::ll::UntypedStorage<2, 2> mUnka61b5d;
+#else // LL_PLAT_C
+    ::ll::UntypedStorage<2, 2> mUnkd4fdac;
+    ::ll::UntypedStorage<2, 2> mUnk4da1c6;
+#endif
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ct_data_s& operator=(ct_data_s const&);
-    ct_data_s(ct_data_s const&);
-    ct_data_s();
 };

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/small_vector.h"
-#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
@@ -16,36 +15,36 @@ class Random;
 
 class MultifaceFeature : public ::IFeature {
 public:
-    // MultifaceFeature inner types define
-    using ShuffledFaces = ::Bedrock::small_vector<uchar, 6>;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mBlock;
-    ::ll::TypedStorage<4, 4, int>                               mSearchRange;
-    ::ll::TypedStorage<1, 1, bool>                              mCanPlaceOnFloor;
-    ::ll::TypedStorage<1, 1, bool>                              mCanPlaceOnCeiling;
-    ::ll::TypedStorage<1, 1, bool>                              mCanPlaceOnWall;
-    ::ll::TypedStorage<4, 4, float>                             mChanceOfSpreading;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mCanBePlacedOn;
-    ::ll::TypedStorage<8, 24, ::std::vector<uchar>>             mValidDirections;
+    ::ll::UntypedStorage<8, 184> mUnk78b3a5;
+    ::ll::UntypedStorage<4, 4>   mUnk15d416;
+    ::ll::UntypedStorage<1, 1>   mUnk586697;
+    ::ll::UntypedStorage<1, 1>   mUnk9bd694;
+    ::ll::UntypedStorage<1, 1>   mUnk31ba0b;
+    ::ll::UntypedStorage<4, 4>   mUnk953900;
+    ::ll::UntypedStorage<8, 24>  mUnkda9de5;
+    ::ll::UntypedStorage<8, 24>  mUnk696bc6;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MultifaceFeature& operator=(MultifaceFeature const&);
+    MultifaceFeature(MultifaceFeature const&);
+    MultifaceFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
-    // vIndex: 0
     virtual ~MultifaceFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
+    MCNAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
         ::BlockSource&           region,
         ::BlockPos const&        pos,
         ::Random&                random,
@@ -56,7 +55,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+
+
     // NOLINTEND
 
 public:

@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/OwnerPtr.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting::RenderHelper { class BasePrimitive; }
+// clang-format on
+
 namespace Editor::Network {
 
 class WidgetPrimComponentAxialSphere {
@@ -18,6 +26,13 @@ public:
     WidgetPrimComponentAxialSphere& operator=(WidgetPrimComponentAxialSphere const&);
     WidgetPrimComponentAxialSphere(WidgetPrimComponentAxialSphere const&);
     WidgetPrimComponentAxialSphere();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+    createPrimitive(::Editor::Network::WidgetPrimComponentAxialSphere const& data);
+    // NOLINTEND
 };
 
 } // namespace Editor::Network

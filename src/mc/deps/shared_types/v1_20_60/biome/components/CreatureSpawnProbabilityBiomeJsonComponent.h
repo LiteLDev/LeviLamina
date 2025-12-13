@@ -29,10 +29,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::BiomeComponentVersion getType() const /*override*/;
 
-    // vIndex: 0
     virtual ~CreatureSpawnProbabilityBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -54,6 +52,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::BiomeComponentVersion $getType() const;
+
+
     // NOLINTEND
 
 public:

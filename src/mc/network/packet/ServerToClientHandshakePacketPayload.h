@@ -6,7 +6,7 @@ struct ServerToClientHandshakePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mData;
+    ::ll::UntypedStorage<8, 32> mUnk14363a;
     // NOLINTEND
 
 public:
@@ -18,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ServerToClientHandshakePacketPayload& operator=(::ServerToClientHandshakePacketPayload&&);
+    MCNAPI ::ServerToClientHandshakePacketPayload& operator=(::ServerToClientHandshakePacketPayload&&);
 
-    MCAPI ~ServerToClientHandshakePacketPayload();
+    MCNAPI ~ServerToClientHandshakePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

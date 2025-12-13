@@ -9,7 +9,6 @@ class BeaconContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BeaconContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

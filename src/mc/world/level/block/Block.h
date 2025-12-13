@@ -3,9 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/block/tessellation_pipeline/item_transforms/Type.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/nbt/CompoundTag.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/CachedComponentData.h"
 #include "mc/world/level/block/components/BlockComponentDirectData.h"
 #include "mc/world/level/block/components/BlockComponentStorage.h"
@@ -15,6 +19,7 @@
 class AABB;
 class Actor;
 class BaseGameVersion;
+class BlockGraphics;
 class BlockPos;
 class BlockSource;
 class BlockState;
@@ -27,11 +32,14 @@ class IConstBlockSource;
 class ItemActor;
 class ItemInstance;
 class ItemStackBase;
+class Matrix;
 class NeighborBlockDirections;
 class Player;
 class Random;
 class RenderParams;
 class Vec3;
+struct BlockAnimateTickData;
+namespace VoxelShapes { class VoxelShape; }
 // clang-format on
 
 class Block {
@@ -48,7 +56,12 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                         mSerializationIdHash;
     ::ll::TypedStorage<4, 4, uint>                           mSerializationIdHashForNetwork;
     ::ll::TypedStorage<4, 4, uint>                           mNetworkId;
-    ::ll::TypedStorage<1, 1, bool>                           mHasRuntimeId;
+#ifdef LL_PLAT_S
+    ::ll::TypedStorage<1, 1, bool> mHasRuntimeId;
+#else // LL_PLAT_C
+    ::ll::TypedStorage<1, 1, bool>                   mHasRuntimeId;
+    ::ll::TypedStorage<8, 8, ::BlockGraphics const*> mBlockGraphics;
+#endif
     // NOLINTEND
 
 public:
@@ -58,7 +71,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Block() = default;
     // NOLINTEND
 
@@ -70,6 +82,8 @@ public:
     MCAPI Block(ushort data, ::gsl::not_null<::BlockType*> oldBlock, ::CompoundTag serId, uint const& runId);
 
     MCAPI bool _isSolid() const;
+
+    MCAPI_C void _playAmbientSounds(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void _queueForTickBasedOnComponentConfiguration(
         ::BlockSource&    region,
@@ -127,6 +141,8 @@ public:
 
     MCAPI bool executeTrigger(::DefinitionTrigger const& trigger, ::RenderParams& params) const;
 
+    MCAPI_C void forEachState(::brstd::function_ref<bool(::BlockState const&, int)> callback) const;
+
     MCAPI bool getCollisionShape(
         ::AABB&                                            outAABB,
         ::IConstBlockSource const&                         region,
@@ -134,7 +150,25 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
+    MCAPI_C ::BlockType::HorizontalDirectionBits
+    getConnectedDirections(::BlockPos const& pos, ::BlockSource& region) const;
+
+    MCAPI_C ::std::string getCraftingLabelText() const;
+
     MCAPI ::std::string getDescriptionId() const;
+
+    MCAPI_C float getDestructionParticleCount() const;
+
+    MCAPI_C ::Matrix getItemDisplayTransform(::ClientBlockPipeline::ItemTransforms::Type type) const;
+
+    MCAPI_C ::VoxelShapes::VoxelShape const* getOcclusionFaceShape(uchar face) const;
+
+    MCAPI_C ::AABB const&
+    getOutline(::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
+
+    MCAPI_C ::BlockRenderLayer getRenderLayer() const;
+
+    MCAPI_C bool getSecondPart(::BlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
     MCAPI ::Block const& getStateFromLegacyData(ushort data) const;
 
@@ -143,6 +177,10 @@ public:
     MCAPI bool hasState(::BlockState const& stateType) const;
 
     MCAPI bool hasTag(::HashedString const& tagName) const;
+
+    MCAPI_C bool isCraftingBlock() const;
+
+    MCAPI_C bool isInteractiveBlock() const;
 
     MCAPI bool isPartialBlock(::BlockSource const& region, ::BlockPos const& pos) const;
 

@@ -30,7 +30,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::BlockState::StateListNode*& mHead();
+        MCNAPI static ::BlockState::StateListNode*& mHead();
         // NOLINTEND
     };
 
@@ -46,20 +46,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlockState();
 
-    // vIndex: 1
     virtual void toNBT(::CompoundTag&, int) const = 0;
 
-    // vIndex: 2
     virtual bool fromNBT(::CompoundTag const&, int&) const = 0;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

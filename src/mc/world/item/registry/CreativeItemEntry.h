@@ -31,8 +31,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~CreativeItemEntry() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~CreativeItemEntry() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -55,6 +59,12 @@ public:
         ::ItemInstance const&      item,
         uint                       index
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

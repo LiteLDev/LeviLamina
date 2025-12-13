@@ -36,9 +36,9 @@ public:
     // NOLINTBEGIN
     MCNAPI MobDescriptor();
 
-    MCNAPI ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor const&);
-
     MCNAPI ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor&&);
+
+    MCNAPI ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor const&);
 
     MCNAPI ~MobDescriptor();
     // NOLINTEND

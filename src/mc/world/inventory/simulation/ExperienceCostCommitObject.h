@@ -26,16 +26,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ExperienceCostCommitObject() /*override*/ = default;
 
-    // vIndex: 1
     virtual bool append(::ContainerValidationCommitObject* other) /*override*/;
 
-    // vIndex: 2
     virtual bool canCommit(::ContainerScreenContext const& screenContext) const /*override*/;
 
-    // vIndex: 3
     virtual void commit(::ContainerScreenContext const& screenContext) /*override*/;
     // NOLINTEND
 
@@ -47,6 +43,8 @@ public:
     MCNAPI bool $canCommit(::ContainerScreenContext const& screenContext) const;
 
     MCNAPI void $commit(::ContainerScreenContext const& screenContext);
+
+
     // NOLINTEND
 
 public:

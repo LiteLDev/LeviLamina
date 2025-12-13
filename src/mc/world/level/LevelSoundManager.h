@@ -34,23 +34,24 @@ public:
     // clang-format on
 
     // LevelSoundManager inner types define
-    struct QueuedSoundSendPacket {
+    struct QueuedSoundBroadcastMultipleUserIdsPacket {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 120, ::LevelSoundEventPacket> mPacket;
+        ::ll::TypedStorage<8, 120, ::LevelSoundEventPacket>                    mPacket;
+        ::ll::TypedStorage<8, 24, ::std::vector<::NetworkIdentifierWithSubId>> mNetworkIds;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~QueuedSoundSendPacket();
+        MCAPI ~QueuedSoundBroadcastMultipleUserIdsPacket();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -95,24 +96,23 @@ public:
         // NOLINTEND
     };
 
-    struct QueuedSoundBroadcastMultipleUserIdsPacket {
+    struct QueuedSoundSendPacket {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 120, ::LevelSoundEventPacket>                    mPacket;
-        ::ll::TypedStorage<8, 24, ::std::vector<::NetworkIdentifierWithSubId>> mNetworkIds;
+        ::ll::TypedStorage<8, 120, ::LevelSoundEventPacket> mPacket;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~QueuedSoundBroadcastMultipleUserIdsPacket();
+        MCAPI ~QueuedSoundSendPacket();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -173,25 +173,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<
         void(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>&
     getOnLevelSoundEventConnector() /*override*/;
 
-    // vIndex: 2
     virtual ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
     getOnLevelSoundEventWithVolumeAndPitchConnector() /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::PubSub::Connector<void(::std::string const&)>& getOnStopLevelSoundEventConnector() /*override*/;
 
-    // vIndex: 4
     virtual ::Bedrock::PubSub::Connector<void()>& getOnStopAllLevelSoundsEventConnector() /*override*/;
 
-    // vIndex: 5
     virtual ::Bedrock::PubSub::Connector<void()>& getOnStopMusicEventConnector() /*override*/;
 
-    // vIndex: 0
     virtual ~LevelSoundManager() /*override*/;
     // NOLINTEND
 
@@ -244,7 +238,7 @@ public:
         bool                                   isGlobal
     );
 
-    MCAPI void stopSoundEvent(::std::string const& name);
+    MCAPI_S void stopSoundEvent(::std::string const& name);
     // NOLINTEND
 
 public:
@@ -280,6 +274,8 @@ public:
     MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
 
     MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
+
+
     // NOLINTEND
 
 public:

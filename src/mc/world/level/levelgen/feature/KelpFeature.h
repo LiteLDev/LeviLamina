@@ -16,23 +16,29 @@ class KelpFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int const> mIterations;
+    ::ll::UntypedStorage<4, 4> mUnk5d3848;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    KelpFeature& operator=(KelpFeature const&);
+    KelpFeature(KelpFeature const&);
+    KelpFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 0
     virtual ~KelpFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

@@ -15,24 +15,30 @@ class AttackDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>            mAttackTicks;
-    ::ll::TypedStorage<8, 32, ::std::string> mAttackTicksId;
+    ::ll::UntypedStorage<4, 4>  mUnk976952;
+    ::ll::UntypedStorage<8, 32> mUnkfd92bc;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AttackDefinition& operator=(AttackDefinition const&);
+    AttackDefinition(AttackDefinition const&);
+    AttackDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
-    // vIndex: 0
     virtual ~AttackDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+
+
     // NOLINTEND
 
 public:

@@ -10,7 +10,11 @@ namespace Common { struct BuildInfo; }
 namespace Common {
 // functions
 // NOLINTBEGIN
+MCAPI_C ::std::string getBuildFlavor();
+
 MCAPI ::Common::BuildInfo getBuildInfo();
+
+MCAPI_C ::std::string getGameDevInfoString();
 
 MCAPI ::std::string getGameSemVerString();
 
@@ -18,7 +22,9 @@ MCAPI ::std::string getGameVersionString();
 
 MCAPI ::std::string getGameVersionStringNet();
 
-MCAPI ::std::string getServerVersionString();
+MCAPI_S ::std::string getServerVersionString();
+
+MCAPI_C ::std::optional<::std::string> getShortBuildDateISOString();
 // NOLINTEND
 
 } // namespace Common

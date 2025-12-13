@@ -24,6 +24,21 @@ public:
     PointLightLODingParameters& operator=(PointLightLODingParameters const&);
     PointLightLODingParameters(PointLightLODingParameters const&);
     PointLightLODingParameters();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::dragon::framerenderer::PointLightLODingParameters&
+    operator=(::dragon::framerenderer::PointLightLODingParameters&&);
+
+    MCNAPI_C ~PointLightLODingParameters();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace dragon::framerenderer

@@ -9,28 +9,33 @@ class ShiftedDurationAmplifier : public ::Amplifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mShiftedValue;
+    ::ll::UntypedStorage<4, 4> mUnk6280fc;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ShiftedDurationAmplifier& operator=(ShiftedDurationAmplifier const&);
+    ShiftedDurationAmplifier(ShiftedDurationAmplifier const&);
+    ShiftedDurationAmplifier();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ShiftedDurationAmplifier() /*override*/ = default;
 
-    // vIndex: 2
     virtual bool shouldBuff(int remainingDuration, int amplification) const /*override*/;
 
-    // vIndex: 3
     virtual int getTickInterval(int amplification) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldBuff(int remainingDuration, int amplification) const;
+    MCNAPI bool $shouldBuff(int remainingDuration, int amplification) const;
 
-    MCAPI int $getTickInterval(int amplification) const;
+    MCNAPI int $getTickInterval(int amplification) const;
+
+
     // NOLINTEND
 
 public:

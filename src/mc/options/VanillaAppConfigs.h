@@ -9,7 +9,6 @@ class VanillaAppConfigs : public ::AppConfigs {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~VanillaAppConfigs() /*override*/ = default;
     // NOLINTEND
 

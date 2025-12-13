@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/RenderResolution.h"
+
 namespace webrtc {
 
 struct FrameDependencyStructure {

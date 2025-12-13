@@ -9,7 +9,6 @@ class PlaceBlockDefinition : public ::BehaviorDefinition {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PlaceBlockDefinition() /*override*/ = default;
     // NOLINTEND
 

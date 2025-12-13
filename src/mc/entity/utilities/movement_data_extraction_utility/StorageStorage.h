@@ -8,6 +8,7 @@ class BreathableComponent;
 class BuoyancyComponent;
 class CollisionBoxComponent;
 class DimensionStateComponent;
+class EntityRegistry;
 class FreezingComponent;
 class HitboxComponent;
 class JumpControlComponent;
@@ -248,6 +249,12 @@ public:
     StorageStorage& operator=(StorageStorage const&);
     StorageStorage(StorageStorage const&);
     StorageStorage();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::MovementDataExtractionUtility::StorageStorage& getOrInit(::EntityRegistry& registry);
+    // NOLINTEND
 };
 
 } // namespace MovementDataExtractionUtility

@@ -22,7 +22,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~NetworkSessionOwner() /*override*/ = default;
     // NOLINTEND
 
@@ -31,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void createNetworkSession(::TransportLayer transportLayer);
 
-    MCNAPI void destroyNetworkSession();
+    MCNAPI_S void destroyNetworkSession();
     // NOLINTEND
 
 public:

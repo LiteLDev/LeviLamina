@@ -13,19 +13,25 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                mString;
-    ::ll::TypedStorage<4, 4, ::KeyOrNameResult::ResultType> mType;
+    ::ll::UntypedStorage<8, 32> mUnk147683;
+    ::ll::UntypedStorage<4, 4>  mUnk5fbc85;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    KeyOrNameResult& operator=(KeyOrNameResult const&);
+    KeyOrNameResult(KeyOrNameResult const&);
+    KeyOrNameResult();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~KeyOrNameResult();
+    MCNAPI ~KeyOrNameResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

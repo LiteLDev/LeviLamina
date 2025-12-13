@@ -14,16 +14,22 @@ struct BiomeMultinoiseGenRulesData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mTemperature;
-    ::ll::TypedStorage<4, 4, float> mHumidity;
-    ::ll::TypedStorage<4, 4, float> mAltitude;
-    ::ll::TypedStorage<4, 4, float> mWeirdness;
-    ::ll::TypedStorage<4, 4, float> mWeight;
+    ::ll::UntypedStorage<4, 4> mUnkd35fc4;
+    ::ll::UntypedStorage<4, 4> mUnkfb63c8;
+    ::ll::UntypedStorage<4, 4> mUnk244fd5;
+    ::ll::UntypedStorage<4, 4> mUnk31bf95;
+    ::ll::UntypedStorage<4, 4> mUnkedb9f9;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BiomeMultinoiseGenRulesData& operator=(BiomeMultinoiseGenRulesData const&);
+    BiomeMultinoiseGenRulesData(BiomeMultinoiseGenRulesData const&);
+    BiomeMultinoiseGenRulesData();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeMultinoiseGenRulesData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeMultinoiseGenRulesData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

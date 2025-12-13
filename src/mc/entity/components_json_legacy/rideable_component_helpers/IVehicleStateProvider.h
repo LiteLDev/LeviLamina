@@ -15,10 +15,8 @@ class IVehicleStateProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IVehicleStateProvider() = default;
 
-    // vIndex: 1
     virtual bool canAddPassenger(
         ::std::vector<::StrictActorIDEntityContextPair> const&,
         ::RideableComponentData const&,

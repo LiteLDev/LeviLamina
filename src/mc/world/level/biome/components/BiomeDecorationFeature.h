@@ -30,28 +30,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeDecorationFeature();
+    MCNAPI BiomeDecorationFeature();
 
-    MCAPI BiomeDecorationFeature(::BiomeDecorationFeature&&);
+    MCNAPI BiomeDecorationFeature(::BiomeDecorationFeature&&);
 
-    MCAPI BiomeDecorationFeature(::BiomeDecorationFeature const&);
+    MCNAPI BiomeDecorationFeature(::BiomeDecorationFeature const&);
 
-    MCAPI ~BiomeDecorationFeature();
+    MCNAPI ~BiomeDecorationFeature();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::BiomeDecorationFeature&&);
+    MCNAPI void* $ctor(::BiomeDecorationFeature&&);
 
-    MCAPI void* $ctor(::BiomeDecorationFeature const&);
+    MCNAPI void* $ctor(::BiomeDecorationFeature const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

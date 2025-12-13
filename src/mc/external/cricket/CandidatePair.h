@@ -29,13 +29,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CandidatePair() /*override*/;
 
-    // vIndex: 1
     virtual ::cricket::Candidate const& local_candidate() const /*override*/;
 
-    // vIndex: 2
     virtual ::cricket::Candidate const& remote_candidate() const /*override*/;
     // NOLINTEND
 
@@ -51,6 +48,8 @@ public:
     MCNAPI ::cricket::Candidate const& $local_candidate() const;
 
     MCNAPI ::cricket::Candidate const& $remote_candidate() const;
+
+
     // NOLINTEND
 
 public:

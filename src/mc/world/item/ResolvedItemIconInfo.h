@@ -22,11 +22,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResolvedItemIconInfo& operator=(ResolvedItemIconInfo const&);
+    ResolvedItemIconInfo(ResolvedItemIconInfo const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ResolvedItemIconInfo();
 
     MCAPI ResolvedItemIconInfo(::std::string const& name, int frame, ::ItemIconInfoType type);
+
+    MCAPI_C ::ResolvedItemIconInfo& operator=(::ResolvedItemIconInfo&&);
 
     MCAPI ~ResolvedItemIconInfo();
     // NOLINTEND

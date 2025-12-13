@@ -16,16 +16,12 @@ class ICommandsContextProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ICommandsContextProvider() = default;
 
-    // vIndex: 1
     virtual ::ILevel* getLevel() = 0;
 
-    // vIndex: 2
     virtual ::NetworkIdentifier getLocalNetworkId() const = 0;
 
-    // vIndex: 3
     virtual void onCommandExecuted(::MCRESULT, ::CommandOriginType, ::std::string const&, ::std::string const&) = 0;
     // NOLINTEND
 

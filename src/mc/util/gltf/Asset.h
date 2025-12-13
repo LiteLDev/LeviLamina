@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace glTF {
 
 struct Asset {
@@ -41,6 +46,20 @@ public:
     Asset& operator=(Asset const&);
     Asset(Asset const&);
     Asset();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::Json::Value serialize() const;
+
+    MCNAPI_C ~Asset();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace glTF

@@ -29,10 +29,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptLootPoolEntry() = default;
 
-    // vIndex: 1
     virtual ::LootPoolEntry const& _getEntry() const = 0;
     // NOLINTEND
 

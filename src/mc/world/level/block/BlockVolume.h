@@ -21,15 +21,15 @@ public:
     struct BlockVolumeIter {
     public:
         // BlockVolumeIter inner types define
+        using difference_type = int64;
+
         using iterator_category = ::std::forward_iterator_tag;
+
+        using pointer = ::std::pair<::Block const*, ::Pos> const*;
 
         using reference = ::std::pair<::Block const*, ::Pos> const&;
 
         using value_type = ::std::pair<::Block const*, ::Pos> const;
-
-        using pointer = ::std::pair<::Block const*, ::Pos> const*;
-
-        using difference_type = int64;
 
     public:
         // member variables

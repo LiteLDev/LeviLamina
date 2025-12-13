@@ -18,7 +18,18 @@ public:
     // prevent constructor by default
     BoxSchematic& operator=(BoxSchematic const&);
     BoxSchematic(BoxSchematic const&);
-    BoxSchematic();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C BoxSchematic();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

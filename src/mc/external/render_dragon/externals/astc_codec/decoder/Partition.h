@@ -19,6 +19,18 @@ public:
     Partition& operator=(Partition const&);
     Partition(Partition const&);
     Partition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~Partition();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace astc_codec

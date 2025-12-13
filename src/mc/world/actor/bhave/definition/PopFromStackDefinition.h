@@ -15,16 +15,20 @@ class PopFromStackDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mDataId;
+    ::ll::UntypedStorage<8, 32> mUnk2f40a7;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PopFromStackDefinition& operator=(PopFromStackDefinition const&);
+    PopFromStackDefinition(PopFromStackDefinition const&);
+    PopFromStackDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
-    // vIndex: 0
     virtual ~PopFromStackDefinition() /*override*/ = default;
     // NOLINTEND
 

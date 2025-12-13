@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -17,10 +13,9 @@ struct ScriptServerMessageAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mId;
-    ::ll::TypedStorage<8, 32, ::std::string> mValue;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
-        mPlayerHandle;
+    ::ll::UntypedStorage<8, 32> mUnk8b5a6f;
+    ::ll::UntypedStorage<8, 32> mUnke2bc8e;
+    ::ll::UntypedStorage<8, 32> mUnk7c27ea;
     // NOLINTEND
 
 public:
@@ -32,22 +27,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
 
-    MCAPI ~ScriptServerMessageAfterEvent();
+    MCNAPI ~ScriptServerMessageAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

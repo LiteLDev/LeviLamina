@@ -9,7 +9,6 @@ class GrindstoneContainerScreenValidator : public ::ContainerScreenValidatorBase
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~GrindstoneContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

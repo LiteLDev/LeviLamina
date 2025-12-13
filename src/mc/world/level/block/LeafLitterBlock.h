@@ -18,19 +18,15 @@ class LeafLitterBlock : public ::FlowerBedBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 0
     virtual ~LeafLitterBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -43,6 +39,8 @@ public:
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+
+
     // NOLINTEND
 
 public:

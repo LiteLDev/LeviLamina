@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void record(::std::string_view key, ::std::shared_ptr<::br::worldgen::StructureSet>&& set);
+    MCNAPI void record(::std::string_view key, ::std::shared_ptr<::br::worldgen::StructureSet>&& set);
     // NOLINTEND
 };
 

@@ -40,7 +40,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptMinecraftServerBindingModuleFactory() /*override*/ = default;
     // NOLINTEND
 

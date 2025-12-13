@@ -21,16 +21,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual int Connect(::rtc::SocketAddress const& addr) /*override*/;
 
-    // vIndex: 18
     virtual void OnConnectEvent(::rtc::Socket* socket) /*override*/;
 
-    // vIndex: 22
     virtual void ProcessInput(char* data, uint64* len) /*override*/;
 
-    // vIndex: 0
     virtual ~AsyncSSLSocket() /*override*/ = default;
     // NOLINTEND
 
@@ -54,6 +50,8 @@ public:
     MCNAPI void $OnConnectEvent(::rtc::Socket* socket);
 
     MCNAPI void $ProcessInput(char* data, uint64* len);
+
+
     // NOLINTEND
 
 public:

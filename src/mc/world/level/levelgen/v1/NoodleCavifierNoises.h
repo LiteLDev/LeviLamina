@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
-#include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
-
 // auto generated forward declare list
 // clang-format off
 class XoroshiroPositionalRandomFactory;
@@ -15,14 +11,10 @@ class NoodleCavifierNoises {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mToggleNoiseSource;
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mThicknessNoiseSource;
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mRidgeANoiseSource;
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mRidgeBNoiseSource;
+    ::ll::UntypedStorage<8, 56> mUnkf46a20;
+    ::ll::UntypedStorage<8, 56> mUnked368f;
+    ::ll::UntypedStorage<8, 56> mUnk7f80b0;
+    ::ll::UntypedStorage<8, 56> mUnk84fa38;
     // NOLINTEND
 
 public:
@@ -33,26 +25,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NoodleCavifierNoises(::NoodleCavifierNoises const&);
+    MCNAPI NoodleCavifierNoises(::NoodleCavifierNoises const&);
 
-    MCAPI ~NoodleCavifierNoises();
+    MCNAPI ~NoodleCavifierNoises();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NoodleCavifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
+    MCNAPI static ::NoodleCavifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NoodleCavifierNoises const&);
+    MCNAPI void* $ctor(::NoodleCavifierNoises const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

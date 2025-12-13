@@ -9,7 +9,6 @@
 // clang-format off
 class Biome;
 class BiomeRegistry;
-class Block;
 namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 // clang-format on
 
@@ -17,35 +16,40 @@ struct MountainParametersBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const*> mSteepMaterialAdjustmentBlock;
+    ::ll::UntypedStorage<8, 8> mUnk8c9b7b;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MountainParametersBiomeComponentGlue& operator=(MountainParametersBiomeComponentGlue const&);
+    MountainParametersBiomeComponentGlue(MountainParametersBiomeComponentGlue const&);
+    MountainParametersBiomeComponentGlue();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool resolveAndValidate(
         ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent,
         ::BiomeRegistry const&
     ) /*override*/;
 
-    // vIndex: 2
     virtual void
     applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const
         /*override*/;
 
-    // vIndex: 0
     virtual ~MountainParametersBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
+    MCNAPI bool
     $resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent, ::BiomeRegistry const&);
 
-    MCAPI void
+    MCNAPI void
     $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const;
+
+
     // NOLINTEND
 
 public:

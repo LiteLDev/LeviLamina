@@ -15,4 +15,16 @@ public:
     SerialWorkListLogEntry& operator=(SerialWorkListLogEntry const&);
     SerialWorkListLogEntry(SerialWorkListLogEntry const&);
     SerialWorkListLogEntry();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~SerialWorkListLogEntry();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

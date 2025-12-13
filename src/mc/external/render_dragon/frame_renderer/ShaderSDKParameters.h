@@ -18,6 +18,18 @@ public:
     ShaderSDKParameters& operator=(ShaderSDKParameters const&);
     ShaderSDKParameters(ShaderSDKParameters const&);
     ShaderSDKParameters();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ShaderSDKParameters(::dragon::framerenderer::ShaderSDKParameters&&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::dragon::framerenderer::ShaderSDKParameters&&);
+    // NOLINTEND
 };
 
 } // namespace dragon::framerenderer

@@ -36,11 +36,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
 
-    // vIndex: 0
     virtual ~DropdownControl() /*override*/ = default;
     // NOLINTEND
 
@@ -71,6 +69,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+
+
     // NOLINTEND
 
 public:

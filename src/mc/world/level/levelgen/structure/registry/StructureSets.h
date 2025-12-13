@@ -16,7 +16,7 @@ struct StructureSets {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bootstrap(
+    MCNAPI static void bootstrap(
         ::br::worldgen::StructureRegistry const&                                    structures,
         ::br::worldgen::StructureSetRegistry&                                       context,
         ::BaseGameVersion const&                                                    baseGameVersion,

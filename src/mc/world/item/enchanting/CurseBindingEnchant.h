@@ -9,16 +9,12 @@ class CurseBindingEnchant : public ::Enchant {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual int getMinCost(int level) const /*override*/;
 
-    // vIndex: 3
     virtual int getMaxCost(int level) const /*override*/;
 
-    // vIndex: 14
     virtual bool isTreasureOnly() const /*override*/;
 
-    // vIndex: 0
     virtual ~CurseBindingEnchant() /*override*/ = default;
     // NOLINTEND
 
@@ -30,6 +26,8 @@ public:
     MCFOLD int $getMaxCost(int level) const;
 
     MCFOLD bool $isTreasureOnly() const;
+
+
     // NOLINTEND
 
 public:

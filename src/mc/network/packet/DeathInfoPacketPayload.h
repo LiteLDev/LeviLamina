@@ -15,20 +15,10 @@ public:
     // DeathInfoPacketPayload inner types define
     struct TagDeathCauseMessageType {};
 
-    using DeathCauseMessageType = ::TypeWrapper<
-        ::std::pair<::std::string, ::std::vector<::std::string>>,
-        ::DeathInfoPacketPayload::TagDeathCauseMessageType>;
-
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        56,
-        ::TypeWrapper<
-            ::std::pair<::std::string, ::std::vector<::std::string>>,
-            ::DeathInfoPacketPayload::TagDeathCauseMessageType>>
-        mDeathCauseMessage;
+    ::ll::UntypedStorage<8, 56> mUnk18942d;
     // NOLINTEND
 
 public:
@@ -40,14 +30,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::DeathInfoPacketPayload& operator=(::DeathInfoPacketPayload&&);
+    MCNAPI ::DeathInfoPacketPayload& operator=(::DeathInfoPacketPayload&&);
 
-    MCAPI ~DeathInfoPacketPayload();
+    MCNAPI ~DeathInfoPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

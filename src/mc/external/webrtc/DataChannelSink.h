@@ -17,25 +17,18 @@ class DataChannelSink {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DataChannelSink() = default;
 
-    // vIndex: 1
     virtual void OnDataReceived(int, ::webrtc::DataMessageType, ::rtc::CopyOnWriteBuffer const&) = 0;
 
-    // vIndex: 2
     virtual void OnChannelClosing(int) = 0;
 
-    // vIndex: 3
     virtual void OnChannelClosed(int) = 0;
 
-    // vIndex: 4
     virtual void OnReadyToSend() = 0;
 
-    // vIndex: 5
     virtual void OnTransportClosed(::webrtc::RTCError);
 
-    // vIndex: 6
     virtual void OnBufferedAmountLow(int) = 0;
     // NOLINTEND
 

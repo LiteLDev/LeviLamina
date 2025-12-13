@@ -52,22 +52,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~NetworkMonitorInterface() = default;
 
-    // vIndex: 1
     virtual void Start() = 0;
 
-    // vIndex: 2
     virtual void Stop() = 0;
 
-    // vIndex: 3
     virtual ::rtc::NetworkMonitorInterface::InterfaceInfo GetInterfaceInfo(::std::string_view) = 0;
 
-    // vIndex: 4
     virtual bool SupportsBindSocketToNetwork() const;
 
-    // vIndex: 5
     virtual ::rtc::NetworkBindingResult BindSocketToNetwork(int, ::rtc::IPAddress const&, ::std::string_view);
     // NOLINTEND
 

@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/storage/GameRule.h"
-#include "mc/world/level/storage/GameRules.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
@@ -17,15 +13,21 @@ struct ScriptGameRuleChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::GameRules::GameRulesIndex>                        mRule;
-    ::ll::TypedStorage<1, 1, ::GameRule::Type>                                   mType;
-    ::ll::TypedStorage<4, 8, ::std::variant<::std::monostate, bool, int, float>> mValue;
+    ::ll::UntypedStorage<4, 4> mUnk9275d1;
+    ::ll::UntypedStorage<1, 1> mUnkf07758;
+    ::ll::UntypedStorage<4, 8> mUnk4aafd8;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptGameRuleChangeAfterEvent& operator=(ScriptGameRuleChangeAfterEvent const&);
+    ScriptGameRuleChangeAfterEvent(ScriptGameRuleChangeAfterEvent const&);
+    ScriptGameRuleChangeAfterEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

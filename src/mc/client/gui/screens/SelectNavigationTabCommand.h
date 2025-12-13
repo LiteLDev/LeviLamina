@@ -17,4 +17,16 @@ public:
     SelectNavigationTabCommand& operator=(SelectNavigationTabCommand const&);
     SelectNavigationTabCommand(SelectNavigationTabCommand const&);
     SelectNavigationTabCommand();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~SelectNavigationTabCommand();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

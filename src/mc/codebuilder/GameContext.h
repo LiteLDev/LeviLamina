@@ -19,34 +19,6 @@ public:
     // clang-format on
 
     // GameContext inner types define
-    struct ObjectTypeList {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkc72584;
-        ::ll::UntypedStorage<8, 64> mUnk869a9a;
-        ::ll::UntypedStorage<8, 24> mUnk3238f1;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ObjectTypeList& operator=(ObjectTypeList const&);
-        ObjectTypeList(ObjectTypeList const&);
-        ObjectTypeList();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ObjectTypeList();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
     struct ItemTypeList {
     public:
         // member variables
@@ -73,6 +45,34 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct ObjectTypeList {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnkc72584;
+        ::ll::UntypedStorage<8, 64> mUnk869a9a;
+        ::ll::UntypedStorage<8, 24> mUnk3238f1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ObjectTypeList& operator=(ObjectTypeList const&);
+        ObjectTypeList(ObjectTypeList const&);
+        ObjectTypeList();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~ObjectTypeList();
         // NOLINTEND
 
     public:

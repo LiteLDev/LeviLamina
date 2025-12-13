@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace glTF {
 
 struct Node {
@@ -25,8 +30,36 @@ public:
 public:
     // prevent constructor by default
     Node& operator=(Node const&);
-    Node(Node const&);
-    Node();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C Node();
+
+    MCNAPI_C Node(::glTF::Node&&);
+
+    MCNAPI_C Node(::glTF::Node const&);
+
+    MCNAPI_C ::Json::Value serialize() const;
+
+    MCNAPI_C ~Node();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::glTF::Node&&);
+
+    MCNAPI_C void* $ctor(::glTF::Node const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace glTF

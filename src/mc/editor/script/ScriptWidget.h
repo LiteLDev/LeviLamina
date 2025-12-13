@@ -102,37 +102,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
     virtual ~ScriptWidget();
 
-    // vIndex: 6
     virtual ::AABB const& _getWorldBounds() const /*override*/;
 
-    // vIndex: 0
     virtual void _performDeleteWidget(bool suppressClientMessage) /*override*/;
 
-    // vIndex: 1
     virtual void _setValid(bool valid) /*override*/;
 
-    // vIndex: 2
     virtual void
     _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload) /*override*/;
 
-    // vIndex: 3
     virtual void _handleWidgetComponentStateChangePayload(
         ::Editor::Network::WidgetComponentStateChangePayload const& payload
     ) /*override*/;
 
-    // vIndex: 4
     virtual void _servicePendingStateChanges() /*override*/;
 
-    // vIndex: 5
     virtual void _setSelectedNoBroadcast(bool selected) /*override*/;
 
-    // vIndex: 0
     virtual ::Scripting::WeakLifetimeScope& _getScope() /*override*/;
 
-    // vIndex: 1
     virtual void _deleteComponent(::mce::UUID const& componentId) /*override*/;
     // NOLINTEND
 
@@ -384,6 +374,8 @@ public:
     MCNAPI ::Scripting::WeakLifetimeScope& $_getScope();
 
     MCNAPI void $_deleteComponent(::mce::UUID const& componentId);
+
+
     // NOLINTEND
 
 public:

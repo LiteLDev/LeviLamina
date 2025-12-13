@@ -24,10 +24,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void serialize(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 0
     virtual ~ItemDescriptorCount() /*override*/;
     // NOLINTEND
 
@@ -61,6 +59,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $serialize(::BinaryStream& stream) const;
+
+
     // NOLINTEND
 
 public:

@@ -41,8 +41,6 @@ public:
     // clang-format on
 
     // OverworldGenerator inner types define
-    using NoiseBuffer = ::Util::MultidimensionalArray<float, 5, 5, 41>;
-
     struct ThreadData {
     public:
         // member variables
@@ -56,6 +54,8 @@ public:
         ::ll::TypedStorage<8, 2576, ::Random>                              random;
         // NOLINTEND
     };
+
+    using NoiseBuffer = ::Util::MultidimensionalArray<float, 5, 5, 41>;
 
 public:
     // member variables
@@ -80,26 +80,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~OverworldGenerator() /*override*/;
 
-    // vIndex: 14
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
-    // vIndex: 9
     virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhoodIn) /*override*/;
 
-    // vIndex: 10
     virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhoodIn) /*override*/;
 
-    // vIndex: 51
     virtual ::Util::MultidimensionalArray<float, 5, 5, 41>
     generateDensityCellsForChunk(::ChunkPos const& chunkPos) const = 0;
 
-    // vIndex: 45
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
-    // vIndex: 42
     virtual void prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
@@ -107,20 +100,15 @@ public:
         bool                  factorInBeardsAndShavers
     ) /*override*/;
 
-    // vIndex: 43
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
-    // vIndex: 52
     virtual int getLevelGenHeight() const = 0;
 
-    // vIndex: 53
     virtual ::std::optional<::XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const = 0;
 
-    // vIndex: 54
     virtual ::std::unique_ptr<::Aquifer>
     tryMakeAquifer(::ChunkPos const&, ::SurfaceLevelCache const&, short, short, short) const;
 
-    // vIndex: 49
     virtual void decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
@@ -129,16 +117,12 @@ public:
         ::ChunkPos const&    pos
     ) const /*override*/;
 
-    // vIndex: 55
     virtual ::ChunkLocalNoiseCache createNoiseCache(::ChunkPos) const;
 
-    // vIndex: 56
     virtual ::PerlinSimplexNoise const& getSurfaceNoise() = 0;
 
-    // vIndex: 57
     virtual ::std::unique_ptr<::PerlinSimplexNoise> const& getMaterialAdjNoise() const = 0;
 
-    // vIndex: 58
     virtual void _prepareHeights(
         ::BlockVolume&,
         ::ChunkPos const&,
@@ -153,9 +137,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OverworldGenerator(::Dimension& dimension, bool isLegacyWorld);
+    MCNAPI OverworldGenerator(::Dimension& dimension, bool isLegacyWorld);
 
-    MCAPI void buildSurfaces(
+    MCNAPI void buildSurfaces(
         ::OverworldGenerator::ThreadData& thread,
         ::BlockVolume&                    blocks,
         ::LevelChunk&                     levelChunk,
@@ -163,52 +147,52 @@ public:
         ::SurfaceLevelCache const&        surfaceLevelCache
     );
 
-    MCAPI ::SurfaceLevelCache createSurfaceLevelCache(::ChunkPos chunkPos) const;
+    MCNAPI ::SurfaceLevelCache createSurfaceLevelCache(::ChunkPos chunkPos) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _fixWaterAlongEdges(::LevelChunk const& lc, ::BlockSource& source, ::BlockTickingQueue& instaTickQueue);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, bool isLegacyWorld);
+    MCNAPI void* $ctor(::Dimension& dimension, bool isLegacyWorld);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
+    MCNAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
-    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhoodIn);
+    MCNAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
-    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+    MCNAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 
-    MCAPI void $prepareHeights(
+    MCNAPI void $prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
         ::std::vector<short>* ZXheights,
         bool                  factorInBeardsAndShavers
     );
 
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
+    MCNAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCFOLD ::std::unique_ptr<::Aquifer>
+    MCNAPI ::std::unique_ptr<::Aquifer>
     $tryMakeAquifer(::ChunkPos const&, ::SurfaceLevelCache const&, short, short, short) const;
 
-    MCFOLD void $decorateWorldGenLoadChunk(
+    MCNAPI void $decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
         ::BlockVolumeTarget& target,
@@ -216,7 +200,9 @@ public:
         ::ChunkPos const&    pos
     ) const;
 
-    MCAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos) const;
+    MCNAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos) const;
+
+
     // NOLINTEND
 
 public:

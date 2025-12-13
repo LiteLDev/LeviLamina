@@ -31,49 +31,89 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void fireEvent(
-        ::std::string const&,
-        ::std::vector<::Social::Events::Property> const&,
-        ::std::vector<::Social::Events::Measurement> const&,
-        bool
+        ::std::string const&                                eventName,
+        ::std::vector<::Social::Events::Property> const&    properties,
+        ::std::vector<::Social::Events::Measurement> const& measurements,
+        bool                                                shouldAggregate
     ) /*override*/;
 
-    // vIndex: 2
     virtual void fireEventOreUIScreenLoadFailed() /*override*/;
 
-    // vIndex: 3
     virtual void fireEventOreUIJsException() /*override*/;
 
-    // vIndex: 4
-    virtual void fireEventOreUIScreenPerformance(::OreUI::DataTracker const&) /*override*/;
+    virtual void fireEventOreUIScreenPerformance(::OreUI::DataTracker const& dataTracker) /*override*/;
 
-    // vIndex: 5
     virtual void fireEventButtonPressed(
-        ::std::string const&,
-        ::std::unordered_map<::std::string, ::std::string> const&
+        ::std::string const&                                      buttonName,
+        ::std::unordered_map<::std::string, ::std::string> const& details
     ) /*override*/;
 
-    // vIndex: 7
-    virtual void
-    fireEventModalShown(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&) /*override*/;
+    virtual void fireEventModalShown(
+        ::std::string const&                                      modalName,
+        ::std::unordered_map<::std::string, ::std::string> const& details
+    ) /*override*/;
 
-    // vIndex: 6
-    virtual void
-    fireEventOptionsChanged(::std::string const&, ::std::unordered_map<::std::string, int> const&) /*override*/;
+    virtual void fireEventOptionsChanged(
+        ::std::string const&                            optionsGroup,
+        ::std::unordered_map<::std::string, int> const& events
+    ) /*override*/;
 
-    // vIndex: 8
-    virtual void
-    fireEventRealmsStoriesOptIn(::std::string const&, ::std::string const&, ::std::string const&, bool) /*override*/;
+    virtual void fireEventRealmsStoriesOptIn(
+        ::std::string const& correlationId,
+        ::std::string const& action,
+        ::std::string const& realmId,
+        bool                 isOwner
+    ) /*override*/;
 
-    // vIndex: 0
     virtual ~Telemetry() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $fireEvent(
+        ::std::string const&                                eventName,
+        ::std::vector<::Social::Events::Property> const&    properties,
+        ::std::vector<::Social::Events::Measurement> const& measurements,
+        bool                                                shouldAggregate
+    );
 
+    MCNAPI void $fireEventOreUIScreenLoadFailed();
+
+    MCNAPI void $fireEventOreUIJsException();
+
+    MCNAPI void $fireEventOreUIScreenPerformance(::OreUI::DataTracker const& dataTracker);
+
+    MCNAPI void $fireEventButtonPressed(
+        ::std::string const&                                      buttonName,
+        ::std::unordered_map<::std::string, ::std::string> const& details
+    );
+
+    MCNAPI void $fireEventModalShown(
+        ::std::string const&                                      modalName,
+        ::std::unordered_map<::std::string, ::std::string> const& details
+    );
+
+    MCNAPI void
+    $fireEventOptionsChanged(::std::string const& optionsGroup, ::std::unordered_map<::std::string, int> const& events);
+
+    MCNAPI void $fireEventRealmsStoriesOptIn(
+        ::std::string const& correlationId,
+        ::std::string const& action,
+        ::std::string const& realmId,
+        bool                 isOwner
+    );
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

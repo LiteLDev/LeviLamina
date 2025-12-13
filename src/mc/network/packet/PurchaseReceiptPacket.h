@@ -14,15 +14,8 @@ struct PurchaseReceiptPacketInfo;
 class PurchaseReceiptPacket
 : public ::SerializedPayloadPacket<::PurchaseReceiptPacketInfo, ::PurchaseReceiptPacketPayload> {
 public:
-    // PurchaseReceiptPacket inner types define
-    using PayloadType = ::PurchaseReceiptPacketPayload;
-
-    using PacketInfo = ::PurchaseReceiptPacketInfo;
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PurchaseReceiptPacket() /*override*/ = default;
     // NOLINTEND
 

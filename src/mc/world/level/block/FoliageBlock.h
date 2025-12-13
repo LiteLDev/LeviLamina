@@ -24,17 +24,13 @@ class FoliageBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 146
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
@@ -42,16 +38,12 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 147
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 148
     virtual ::Block const& setGrowth(
         ::BlockSource&    region,
         ::BlockPos const& pos,
@@ -60,7 +52,6 @@ public:
         int               updateFlags
     ) const;
 
-    // vIndex: 0
     virtual ~FoliageBlock() /*override*/;
     // NOLINTEND
 
@@ -113,6 +104,8 @@ public:
         ushort            newGrowth,
         int               updateFlags
     ) const;
+
+
     // NOLINTEND
 
 public:

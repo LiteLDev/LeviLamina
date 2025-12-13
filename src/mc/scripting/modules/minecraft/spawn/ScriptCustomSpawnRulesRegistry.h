@@ -37,10 +37,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void _onReload() /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptCustomSpawnRulesRegistry() /*override*/ = default;
     // NOLINTEND
 
@@ -78,6 +76,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $_onReload();
+
+
     // NOLINTEND
 
 public:

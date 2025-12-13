@@ -24,19 +24,15 @@ class ScriptScriptingEventHandler : public ::EventHandlerDispatcher<::ScriptingE
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::BeforeWatchdogTerminateEvent& beforeWatchdogTerminateEvent) /*override*/;
 
-    // vIndex: 4
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::ScriptModuleStartupEvent const& moduleStartupEvent) /*override*/;
 
-    // vIndex: 3
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::ScriptModuleShutdownEvent const& moduleShutdownEvent) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptScriptingEventHandler() /*override*/ = default;
     // NOLINTEND
 
@@ -73,6 +69,8 @@ public:
 
     MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::ScriptModuleShutdownEvent const& moduleShutdownEvent);
+
+
     // NOLINTEND
 
 public:

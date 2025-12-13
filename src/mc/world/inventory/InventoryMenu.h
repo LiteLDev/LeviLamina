@@ -11,6 +11,7 @@
 class Container;
 class IContainerRegistryAccess;
 class ItemStack;
+class Player;
 struct FullContainerName;
 // clang-format on
 
@@ -23,35 +24,42 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    InventoryMenu();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ~InventoryMenu() /*override*/;
 
-    // vIndex: 8
     virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
 
-    // vIndex: 9
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    // vIndex: 2
     virtual void removeSlot(int slot, int count) /*override*/;
 
-    // vIndex: 11
     virtual void
     setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool) /*override*/;
 
-    // vIndex: 12
     virtual ::ItemStack const& getFullContainerSlot(int slot, ::FullContainerName const& name) const /*override*/;
 
-    // vIndex: 6
     virtual void serverInitItemStackIds() /*override*/;
 
-    // vIndex: 7
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    // vIndex: 5
     virtual ::Container* _getContainer() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI_C InventoryMenu(::Player& player, ::Container* container);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI_C void* $ctor(::Player& player, ::Container* container);
     // NOLINTEND
 
 public:
@@ -78,6 +86,8 @@ public:
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
     MCFOLD ::Container* $_getContainer() const;
+
+
     // NOLINTEND
 
 public:

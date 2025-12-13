@@ -20,6 +20,18 @@ public:
     BufferView& operator=(BufferView const&);
     BufferView(BufferView const&);
     BufferView();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~BufferView();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace glTF

@@ -21,19 +21,20 @@ struct ScriptPistonActionAfterEvent : public ::ScriptModuleMinecraft::ScriptBloc
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent>>
-                                   mPiston;
-    ::ll::TypedStorage<1, 1, bool> mIsExpanding;
+    ::ll::UntypedStorage<8, 32> mUnkf83ed5;
+    ::ll::UntypedStorage<1, 1>  mUnk71f088;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptPistonActionAfterEvent& operator=(ScriptPistonActionAfterEvent const&);
+    ScriptPistonActionAfterEvent(ScriptPistonActionAfterEvent const&);
     ScriptPistonActionAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPistonActionAfterEvent(
+    MCNAPI ScriptPistonActionAfterEvent(
         ::PistonActionEvent const&                                                                pistonActionEvent,
         ::BlockSourceHandle&                                                                      blockSourceHandle,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent> piston,
@@ -44,13 +45,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::PistonActionEvent const&                                                                pistonActionEvent,
         ::BlockSourceHandle&                                                                      blockSourceHandle,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent> piston,

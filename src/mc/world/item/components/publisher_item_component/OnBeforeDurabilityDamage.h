@@ -24,7 +24,6 @@ struct OnBeforeDurabilityDamage
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~OnBeforeDurabilityDamage() /*override*/ = default;
     // NOLINTEND
 

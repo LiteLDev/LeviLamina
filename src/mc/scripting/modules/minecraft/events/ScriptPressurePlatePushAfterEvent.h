@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -18,15 +16,21 @@ struct ScriptPressurePlatePushAfterEvent : public ::ScriptModuleMinecraft::Scrip
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mPreviousRedstonePower;
-    ::ll::TypedStorage<4, 4, int> mRedstonePower;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mSource;
+    ::ll::UntypedStorage<4, 4>  mUnk978b7b;
+    ::ll::UntypedStorage<4, 4>  mUnk3311c0;
+    ::ll::UntypedStorage<8, 32> mUnkaed99c;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptPressurePlatePushAfterEvent& operator=(ScriptPressurePlatePushAfterEvent const&);
+    ScriptPressurePlatePushAfterEvent(ScriptPressurePlatePushAfterEvent const&);
+    ScriptPressurePlatePushAfterEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

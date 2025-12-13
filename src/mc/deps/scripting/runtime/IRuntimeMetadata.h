@@ -8,8 +8,14 @@ struct IRuntimeMetadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::std::thread::id> mThreadId;
+    ::ll::UntypedStorage<4, 4> mUnk68c916;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    IRuntimeMetadata& operator=(IRuntimeMetadata const&);
+    IRuntimeMetadata(IRuntimeMetadata const&);
+    IRuntimeMetadata();
 };
 
 } // namespace Scripting

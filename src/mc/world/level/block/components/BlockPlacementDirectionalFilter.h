@@ -6,12 +6,19 @@ struct BlockPlacementDirectionalFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar> directionMask;
+    ::ll::UntypedStorage<1, 1> mUnkcdca40;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockPlacementDirectionalFilter& operator=(BlockPlacementDirectionalFilter const&);
+    BlockPlacementDirectionalFilter(BlockPlacementDirectionalFilter const&);
+    BlockPlacementDirectionalFilter();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void fromStringVector(::BlockPlacementDirectionalFilter& instance, ::std::vector<::std::string> faces);
+    MCNAPI static void
+    fromStringVector(::BlockPlacementDirectionalFilter& instance, ::std::vector<::std::string> faces);
     // NOLINTEND
 };

@@ -23,21 +23,41 @@ public:
 
 public:
     // prevent constructor by default
-    ResourceLocation();
+    ResourceLocation& operator=(ResourceLocation const&);
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C ResourceLocation();
+
+    MCNAPI_C ResourceLocation(::ResourceLocation const&);
+
+    MCNAPI_C explicit ResourceLocation(::Core::PathView path);
+
     MCNAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 
     MCNAPI ::Core::PathBuffer<::std::string> getFullPath() const;
+
+    MCNAPI_C bool operator==(::ResourceLocation const& rhs) const;
 
     MCNAPI ~ResourceLocation();
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::ResourceLocation const& getEmptyLocation();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::ResourceLocation const&);
+
+    MCNAPI_C void* $ctor(::Core::PathView path);
+
     MCNAPI void* $ctor(::Core::PathView path, ::ResourceFileSystem fileSystem);
     // NOLINTEND
 

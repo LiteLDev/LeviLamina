@@ -10,11 +10,16 @@ public:
     // clang-format off
     struct TimeAndValue;
     struct TimeAndValueQueue;
-    struct TrackedObject;
     struct TrackedObjectData;
+    struct TrackedObject;
     // clang-format on
 
     // StatisticsHistory inner types define
+    enum class SHDataCategory : int {
+        Discrete   = 0,
+        Continuous = 1,
+    };
+
     enum class SHErrorCode : int {
         Ok               = 0,
         UknownObject     = 1,
@@ -42,11 +47,6 @@ public:
         SortByLongTermHighestDescending    = 16,
         SortByLongTermLowestAscending      = 17,
         SortByLongTermLowestDescending     = 18,
-    };
-
-    enum class SHDataCategory : int {
-        Discrete   = 0,
-        Continuous = 1,
     };
 
     struct TimeAndValue {
@@ -134,7 +134,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~StatisticsHistory() = default;
     // NOLINTEND
 };

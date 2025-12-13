@@ -23,10 +23,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool Parse(::std::optional<::std::string> str_value) /*override*/;
 
-    // vIndex: 0
     virtual ~FieldTrialFlag() /*override*/;
     // NOLINTEND
 
@@ -58,6 +56,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $Parse(::std::optional<::std::string> str_value);
+
+
     // NOLINTEND
 
 public:

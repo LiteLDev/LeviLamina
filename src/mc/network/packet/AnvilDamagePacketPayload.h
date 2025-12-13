@@ -2,14 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/NetworkBlockPosition.h"
-
 struct AnvilDamagePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                     mDamage;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPosition;
+    ::ll::UntypedStorage<4, 4>  mUnk5c7301;
+    ::ll::UntypedStorage<4, 12> mUnk6dee4c;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AnvilDamagePacketPayload& operator=(AnvilDamagePacketPayload const&);
+    AnvilDamagePacketPayload(AnvilDamagePacketPayload const&);
+    AnvilDamagePacketPayload();
 };

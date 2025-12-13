@@ -34,43 +34,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MinecraftGameTestInstance() /*override*/ = default;
 
-    // vIndex: 14
     virtual ::BlockSource& getBlockSource() const;
 
-    // vIndex: 1
     virtual void initialize() /*override*/;
 
-    // vIndex: 2
     virtual bool hasStructureBlock() const /*override*/;
 
-    // vIndex: 3
     virtual void clearStructure() /*override*/;
 
-    // vIndex: 4
     virtual void spawnStructure() /*override*/;
 
-    // vIndex: 5
     virtual ::std::optional<::AABB> getStructureBounds() const /*override*/;
 
-    // vIndex: 6
     virtual ::std::optional<::Vec3> getStructureBlockPivot() const /*override*/;
 
-    // vIndex: 7
     virtual ::std::optional<::Vec3> getStructureBlockPosPivot() const /*override*/;
 
-    // vIndex: 8
     virtual ::BoundingBox getStructureBoundingBox() const /*override*/;
 
-    // vIndex: 9
     virtual ::DimensionType getStructureDimension() const /*override*/;
 
-    // vIndex: 10
     virtual int _getLevelTick() const /*override*/;
 
-    // vIndex: 11
     virtual bool _isTestReady() /*override*/;
     // NOLINTEND
 
@@ -106,6 +93,8 @@ public:
     MCNAPI int $_getLevelTick() const;
 
     MCNAPI bool $_isTestReady();
+
+
     // NOLINTEND
 
 public:

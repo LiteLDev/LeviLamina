@@ -61,6 +61,34 @@ public:
         // NOLINTEND
     };
 
+    struct InternalRecord {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk3a67c1;
+        ::ll::UntypedStorage<4, 4>  mUnka87b81;
+        ::ll::UntypedStorage<8, 32> mUnk70b608;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        InternalRecord& operator=(InternalRecord const&);
+        InternalRecord(InternalRecord const&);
+        InternalRecord();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~InternalRecord();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
     class RequestInfo {
     public:
         // RequestInfo inner types define
@@ -160,45 +188,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI RtpTransceiverStatsInfo(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&);
-
         MCNAPI RtpTransceiverStatsInfo(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo&&);
+
+        MCNAPI RtpTransceiverStatsInfo(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&);
-
         MCNAPI void* $ctor(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo&&);
-        // NOLINTEND
-    };
 
-    struct InternalRecord {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk3a67c1;
-        ::ll::UntypedStorage<4, 4>  mUnka87b81;
-        ::ll::UntypedStorage<8, 32> mUnk70b608;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        InternalRecord& operator=(InternalRecord const&);
-        InternalRecord(InternalRecord const&);
-        InternalRecord();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~InternalRecord();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCNAPI void* $ctor(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&);
         // NOLINTEND
     };
 
@@ -235,14 +235,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ~RTCStatsCollector() /*override*/;
 
-    // vIndex: 3
     virtual void
     ProducePartialResultsOnSignalingThreadImpl(::webrtc::Timestamp timestamp, ::webrtc::RTCStatsReport* partial_report);
 
-    // vIndex: 4
     virtual void ProducePartialResultsOnNetworkThreadImpl(
         ::webrtc::Timestamp                                                                 timestamp,
         ::std::map<::std::string, ::cricket::TransportStats> const&                         transport_stats_by_name,
@@ -271,12 +268,12 @@ public:
     MCNAPI void GetStatsReport(::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback);
 
     MCNAPI void GetStatsReport(
-        ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>         selector,
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>       selector,
         ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
     );
 
     MCNAPI void GetStatsReport(
-        ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>       selector,
+        ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>         selector,
         ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
     );
 
@@ -384,6 +381,8 @@ public:
         ::std::map<::std::string, ::webrtc::RTCStatsCollector::CertificateStatsPair> const& transport_cert_stats,
         ::webrtc::RTCStatsReport*                                                           partial_report
     );
+
+
     // NOLINTEND
 
 public:

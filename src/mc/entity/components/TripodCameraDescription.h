@@ -9,23 +9,23 @@ struct TripodCameraDescription : public ::ActorComponentDescription {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual char const* getJsonName() const /*override*/;
 
-    // vIndex: 1
     virtual ~TripodCameraDescription() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
+
+
     // NOLINTEND
 
 public:

@@ -10,11 +10,11 @@ class StructurePoolBlockTagRule;
 class JigsawStructureBlockTagRulesRegistry {
 public:
     // JigsawStructureBlockTagRulesRegistry inner types define
-    using BlockTagRulesRegistryMap =
-        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>>;
-
     using BlockTagRulesLookupMap =
         ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*>;
+
+    using BlockTagRulesRegistryMap =
+        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>>;
 
 public:
     // member variables
@@ -34,19 +34,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* lookupByName(::std::string name) const;
+    MCNAPI ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* lookupByName(::std::string name) const;
 
-    MCAPI void registerBlockTagRules(
+    MCNAPI void registerBlockTagRules(
         ::std::string                                                                      name,
         ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>&& ruleList
     );
 
-    MCAPI ~JigsawStructureBlockTagRulesRegistry();
+    MCNAPI ~JigsawStructureBlockTagRulesRegistry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

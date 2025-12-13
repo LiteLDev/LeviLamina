@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class ContainerModel;
 class CraftingContainer;
 class CraftingContext;
 class ItemDescriptor;
@@ -19,6 +20,7 @@ class ItemInstance;
 class ItemStack;
 class NetworkItemInstanceDescriptor;
 class RecipeIngredient;
+struct IngredientSearchResults;
 struct RecipeNetIdTag;
 // clang-format on
 
@@ -26,17 +28,11 @@ class Recipe {
 public:
     // Recipe inner types declare
     // clang-format off
-    struct ConstructionContext;
     class Results;
+    struct ConstructionContext;
     // clang-format on
 
     // Recipe inner types define
-    using Ingredients = ::std::vector<::RecipeIngredient>;
-
-    using ResultList = ::std::vector<::ItemInstance>;
-
-    using UnloadedItemInstanceResultList = ::std::vector<::NetworkItemInstanceDescriptor>;
-
     class Results {
     public:
         // member variables
@@ -86,6 +82,12 @@ public:
         // NOLINTEND
     };
 
+    using Ingredients = ::std::vector<::RecipeIngredient>;
+
+    using ResultList = ::std::vector<::ItemInstance>;
+
+    using UnloadedItemInstanceResultList = ::std::vector<::NetworkItemInstanceDescriptor>;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -104,55 +106,42 @@ public:
 
 public:
     // prevent constructor by default
+    Recipe& operator=(Recipe const&);
+    Recipe(Recipe const&);
     Recipe();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Recipe();
 
-    // vIndex: 1
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer&, ::CraftingContext&) const = 0;
 
-    // vIndex: 2
     virtual int getCraftingSize() const = 0;
 
-    // vIndex: 3
     virtual ::RecipeIngredient const& getIngredient(int, int) const = 0;
 
-    // vIndex: 4
     virtual bool isShapeless() const = 0;
 
-    // vIndex: 5
     virtual bool matches(::CraftingContainer const&, ::CraftingContext const&) const = 0;
 
-    // vIndex: 6
     virtual int size() const = 0;
 
-    // vIndex: 7
     virtual ::mce::UUID const& getId() const;
 
-    // vIndex: 8
     virtual ::std::vector<::ItemInstance> const& getResultItems() const;
 
-    // vIndex: 9
     virtual bool isMultiRecipe() const;
 
-    // vIndex: 10
     virtual bool hasDataDrivenResult() const;
 
-    // vIndex: 11
     virtual bool itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item) const;
 
-    // vIndex: 13
     virtual bool itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const;
 
-    // vIndex: 12
     virtual bool
     itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs, ::CompoundTag const* rhsTag) const;
 
-    // vIndex: 14
     virtual uint64 getIngredientsHash() const;
     // NOLINTEND
 
@@ -160,6 +149,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Recipe(::Recipe::ConstructionContext&& context);
+
+    MCAPI_C Recipe(::Recipe&& recipe);
+
+    MCAPI_C ::IngredientSearchResults
+    checkContainerItemsForUsability(::std::vector<::ContainerModel*> const& containers) const;
 
     MCAPI int countQuantityOfIngredient(::ItemInstance const& ingredient) const;
 
@@ -178,6 +172,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
+
+    MCAPI_C void* $ctor(::Recipe&& recipe);
     // NOLINTEND
 
 public:
@@ -204,6 +200,8 @@ public:
     MCAPI bool $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs, ::CompoundTag const* rhsTag) const;
 
     MCAPI uint64 $getIngredientsHash() const;
+
+
     // NOLINTEND
 
 public:

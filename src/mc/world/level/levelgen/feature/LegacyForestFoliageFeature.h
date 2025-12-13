@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
-#include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,44 +24,46 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::LegacyForestFoliageFeature::Type> mForestType;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>             mTallGrassFeature;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>             mDoublePlantFeature;
+    ::ll::UntypedStorage<4, 4>  mUnk243b32;
+    ::ll::UntypedStorage<8, 24> mUnk6ea174;
+    ::ll::UntypedStorage<8, 24> mUnkc610a9;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    LegacyForestFoliageFeature& operator=(LegacyForestFoliageFeature const&);
+    LegacyForestFoliageFeature(LegacyForestFoliageFeature const&);
     LegacyForestFoliageFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
 
-    // vIndex: 0
     virtual ~LegacyForestFoliageFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
+    MCNAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
 
-    MCAPI void
+    MCNAPI void
     _placeDoublePlants(::BlockSource& region, ::BlockPos const& origin, ::Random& random, int doublePlantCount) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
+    MCNAPI void* $ctor(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

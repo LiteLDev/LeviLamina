@@ -31,23 +31,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void advanceFrame(::EntityContext&) const /*override*/;
+    virtual void advanceFrame(::EntityContext& entity) const /*override*/;
 
-    // vIndex: 2
-    virtual void advanceLiveFrame(::Actor&, ::std::optional<uint64>) /*override*/;
+    virtual void advanceLiveFrame(::Actor& actor, ::std::optional<uint64>) /*override*/;
 
-    // vIndex: 3
     virtual ::std::bitset<2> getCorrectionTypeBitset() const /*override*/;
 
-    // vIndex: 0
     virtual ~MovementEffectsReplay() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $advanceFrame(::EntityContext& entity) const;
 
+    MCNAPI void $advanceLiveFrame(::Actor& actor, ::std::optional<uint64>);
+
+    MCNAPI ::std::bitset<2> $getCorrectionTypeBitset() const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

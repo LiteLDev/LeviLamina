@@ -27,19 +27,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual bool test(::Block const&, ::Randomize&) const /*override*/;
 
-    // vIndex: 1
     virtual bool test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const /*override*/;
 
-    // vIndex: 5
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
-    // vIndex: 6
     virtual void appendMetadataKey(::Util::XXHash&) const /*override*/;
 
-    // vIndex: 0
     virtual ~StructurePoolBlockPredicateLinearPosition() /*override*/ = default;
     // NOLINTEND
 

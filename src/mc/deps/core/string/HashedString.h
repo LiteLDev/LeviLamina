@@ -12,12 +12,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HashedString();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C HashedString();
+
     MCNAPI HashedString(::HashedString&& rhs);
 
     MCNAPI HashedString(::HashedString const& rhs);
@@ -34,9 +32,9 @@ public:
 
     MCNAPI explicit operator ::std::string_view() const;
 
-    MCNAPI ::HashedString& operator=(::HashedString const& rhs);
-
     MCNAPI ::HashedString& operator=(::HashedString&& rhs);
+
+    MCNAPI ::HashedString& operator=(::HashedString const& rhs);
 
     MCNAPI ~HashedString();
     // NOLINTEND
@@ -44,9 +42,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static uint64 computeHash(char const* str);
-
     MCNAPI static uint64 computeHash(::std::string const& str);
+
+    MCNAPI static uint64 computeHash(char const* str);
 
     MCNAPI static ::HashedString const& getEmptyString();
     // NOLINTEND
@@ -60,6 +58,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
     MCNAPI void* $ctor(::HashedString&& rhs);
 
     MCNAPI void* $ctor(::HashedString const& rhs);

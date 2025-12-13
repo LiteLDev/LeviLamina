@@ -24,12 +24,12 @@ public:
     // clang-format on
 
     // BlockPalette inner types define
-    struct ConstructorToken {};
-
     enum class PaletteType : int {
         Sequential = 0,
         Hashed     = 1,
     };
+
+    struct ConstructorToken {};
 
 public:
     // member variables
@@ -47,19 +47,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlockPalette();
 
-    // vIndex: 1
     virtual ::BlockPalette::PaletteType getPaletteType();
 
-    // vIndex: 2
     virtual void appendBlock(::Block const& blockState);
 
-    // vIndex: 3
     virtual ::Block const& getBlock(uint const& networkId) const;
 
-    // vIndex: 4
     virtual void assignBlockNetworkId(::Block const& block, uint64 networkId) const;
     // NOLINTEND
 
@@ -109,6 +104,8 @@ public:
     MCNAPI ::Block const& $getBlock(uint const& networkId) const;
 
     MCNAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
+
+
     // NOLINTEND
 
 public:

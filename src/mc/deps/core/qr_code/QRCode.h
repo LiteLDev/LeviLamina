@@ -16,6 +16,26 @@ public:
     QRCode& operator=(QRCode const&);
     QRCode(QRCode const&);
     QRCode();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit QRCode(::std::string const& targetString);
+
+    MCNAPI_C ~QRCode();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::string const& targetString);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Bedrock

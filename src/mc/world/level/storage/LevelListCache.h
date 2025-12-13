@@ -52,57 +52,42 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelListCache() /*override*/;
 
-    // vIndex: 1
     virtual void addLevel(::std::string const& levelId, ::LevelData&& levelData) /*override*/;
 
-    // vIndex: 2
     virtual void deleteLevel(::std::string const& levelId) /*override*/;
 
-    // vIndex: 3
     virtual void refreshLevel(::std::string const& levelId) /*override*/;
 
-    // vIndex: 4
     virtual void deleteLevelFiles(::std::string const& levelId) /*override*/;
 
-    // vIndex: 5
     virtual void postDeleteLevel(::std::string const& levelId) /*override*/;
 
-    // vIndex: 6
     virtual void renameLevel(::std::string const& levelId, ::std::string const& newLevelName) /*override*/;
 
-    // vIndex: 7
     virtual void renameAndSaveLevelData(
         ::std::string const& levelId,
         ::std::string const& newLevelName,
         ::LevelData const&   levelData
     ) /*override*/;
 
-    // vIndex: 8
-    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& levelData) /*override*/;
+    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& data) /*override*/;
 
-    // vIndex: 9
     virtual void createBackupCopyOfWorld(
         ::std::string const& levelId,
         ::std::string const& newLevelId,
         ::std::string const& newName
     ) /*override*/;
 
-    // vIndex: 10
     virtual bool hasLevelWithId(::std::string const& levelId) /*override*/;
 
-    // vIndex: 11
     virtual bool checkIfLevelIsCorruptOrMissing(::std::string const& levelId) /*override*/;
 
-    // vIndex: 12
     virtual void addObserver(::LevelListCacheObserver& observer) /*override*/;
 
-    // vIndex: 13
     virtual void removeObserver(::LevelListCacheObserver& observer) /*override*/;
 
-    // vIndex: 14
     virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(
         ::Scheduler&                                                      scheduler,
         ::std::string const&                                              levelId,
@@ -113,33 +98,25 @@ public:
         ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
     ) /*override*/;
 
-    // vIndex: 15
     virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(
         ::std::string const&                                              levelId,
         ::ContentIdentity const&                                          contentIdentity,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     ) /*override*/;
 
-    // vIndex: 16
     virtual ::LevelSummary* getLevelSummary(::std::string const& levelId) /*override*/;
 
-    // vIndex: 17
     virtual ::LevelSummary const* getLevelSummaryByName(::std::string const& levelName) /*override*/;
 
-    // vIndex: 18
     virtual ::LevelSummary* getOrCreateLevelSummary(::Core::Path const& directory) /*override*/;
 
-    // vIndex: 19
     virtual ::LevelData* getLevelData(::std::string const& levelId) /*override*/;
 
-    // vIndex: 20
     virtual ::Bedrock::NonOwnerPointer<::LevelData>
     getLevelDataNonOwnerPointer(::std::string const& levelId) /*override*/;
 
-    // vIndex: 21
     virtual ::LevelSummary* getShallowLevelSummary(::std::string const& levelId) /*override*/;
 
-    // vIndex: 22
     virtual void getLevelList(
         ::std::vector<::LevelSummary>& dest,
         bool                           includeShallowSummaries,
@@ -147,22 +124,16 @@ public:
         bool                           includeBetaRetailLevels
     ) /*override*/;
 
-    // vIndex: 23
     virtual bool hasCachedLevels(bool includeShallowSummaries) const /*override*/;
 
-    // vIndex: 24
     virtual void updateLevelCache(::std::string const& levelId) /*override*/;
 
-    // vIndex: 25
     virtual ::std::unique_ptr<::LevelStorageObserver> createLevelStorageObserver() /*override*/;
 
-    // vIndex: 26
     virtual void onSave(::std::string const& levelId) /*override*/;
 
-    // vIndex: 27
     virtual void onStorageChanged() /*override*/;
 
-    // vIndex: 28
     virtual ::Core::PathBuffer<::std::string> const getBasePath() const /*override*/;
     // NOLINTEND
 
@@ -229,7 +200,7 @@ public:
         ::LevelData const&   levelData
     );
 
-    MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& levelData);
+    MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& data);
 
     MCNAPI void $createBackupCopyOfWorld(
         ::std::string const& levelId,
@@ -291,6 +262,8 @@ public:
     MCNAPI void $onStorageChanged();
 
     MCNAPI ::Core::PathBuffer<::std::string> const $getBasePath() const;
+
+
     // NOLINTEND
 
 public:

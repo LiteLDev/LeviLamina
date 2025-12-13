@@ -23,9 +23,12 @@ MCNAPI ::std::string_view getName(::entt::meta_data const& data);
 
 MCNAPI ::std::string_view getName(::entt::meta_type const& type);
 
-MCNAPI ::cereal::SchemaDescription getSchemaDescription(::cereal::ReflectionCtx const& ctx, ::entt::type_info info);
+MCNAPI_S ::cereal::SchemaDescription getSchemaDescription(::cereal::ReflectionCtx const& ctx, ::entt::type_info info);
 
-MCNAPI ::std::vector<::cereal::SchemaDescription> getSchemaDescriptions(::cereal::ReflectionCtx const& ctx);
+MCNAPI_C ::std::vector<::cereal::SchemaDescription>
+getSchemaDescriptionRecursive(::cereal::ReflectionCtx const& ctx, ::entt::type_info info);
+
+MCNAPI_S ::std::vector<::cereal::SchemaDescription> getSchemaDescriptions(::cereal::ReflectionCtx const& ctx);
 
 MCNAPI bool isOptional(::entt::meta_type const& type);
 

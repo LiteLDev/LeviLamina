@@ -27,16 +27,12 @@ class VoiceEngineInterface : public ::cricket::RtpHeaderExtensionQueryInterface 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~VoiceEngineInterface() /*override*/ = default;
 
-    // vIndex: 2
     virtual void Init() = 0;
 
-    // vIndex: 3
     virtual ::webrtc::scoped_refptr<::webrtc::AudioState> GetAudioState() const = 0;
 
-    // vIndex: 4
     virtual ::std::unique_ptr<::cricket::VoiceMediaSendChannelInterface> CreateSendChannel(
         ::webrtc::Call*,
         ::cricket::MediaConfig const&,
@@ -45,7 +41,6 @@ public:
         ::webrtc::AudioCodecPairId
     );
 
-    // vIndex: 5
     virtual ::std::unique_ptr<::cricket::VoiceMediaReceiveChannelInterface> CreateReceiveChannel(
         ::webrtc::Call*,
         ::cricket::MediaConfig const&,
@@ -54,19 +49,14 @@ public:
         ::webrtc::AudioCodecPairId
     );
 
-    // vIndex: 6
     virtual ::std::vector<::cricket::Codec> const& send_codecs() const = 0;
 
-    // vIndex: 7
     virtual ::std::vector<::cricket::Codec> const& recv_codecs() const = 0;
 
-    // vIndex: 8
     virtual bool StartAecDump(::webrtc::FileWrapper, int64) = 0;
 
-    // vIndex: 9
     virtual void StopAecDump() = 0;
 
-    // vIndex: 10
     virtual ::std::optional<::webrtc::AudioDeviceModule::Stats> GetAudioDeviceStats() = 0;
     // NOLINTEND
 

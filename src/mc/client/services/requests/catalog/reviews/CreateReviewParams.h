@@ -19,4 +19,16 @@ public:
     CreateReviewParams& operator=(CreateReviewParams const&);
     CreateReviewParams(CreateReviewParams const&);
     CreateReviewParams();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~CreateReviewParams();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

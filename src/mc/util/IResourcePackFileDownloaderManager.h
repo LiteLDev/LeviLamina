@@ -18,10 +18,8 @@ class IResourcePackFileDownloaderManager {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IResourcePackFileDownloaderManager() = default;
 
-    // vIndex: 1
     virtual void tryStartDownloadingFile(
         ::TaskGroup&,
         ::std::string const&,
@@ -37,11 +35,9 @@ public:
         ::std::function<void(::ResourcePackFileDownloadError)>
     ) = 0;
 
-    // vIndex: 2
     virtual ::Bedrock::Threading::SharedAsync<void>
     chunkReceived(::TaskGroup&, ::std::string const&, ::FileChunkInfo const&, ::std::vector<uchar>) = 0;
 
-    // vIndex: 3
     virtual void cleanup() = 0;
     // NOLINTEND
 

@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/util/Rotation.h"
-#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/biome/OceanTempCategory.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 #include "mc/world/level/levelgen/structure/TemplateStructurePiece.h"
@@ -13,12 +12,12 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockPos;
 class BlockSource;
 class BoundingBox;
 class Random;
 class StructureManager;
 class StructurePiece;
-class StructurePoolBlockRule;
 struct OceanRuinConfiguration;
 // clang-format on
 
@@ -34,31 +33,29 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>> mStructureManager;
-        ::ll::TypedStorage<8, 32, ::std::string>                                     mTemplateName;
-        ::ll::TypedStorage<4, 4, ::OceanTempCategory>                                mBiomeType;
-        ::ll::TypedStorage<4, 4, float>                                              mIntegrity;
-        ::ll::TypedStorage<1, 1, bool>                                               mIsLarge;
-        ::ll::TypedStorage<1, 1, ::Rotation>                                         mRotation;
-        ::ll::TypedStorage<4, 12, ::BlockPos>                                        mPosition;
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockRule>>>>
-            mPlaceArchySuspiciousBlocks;
+        ::ll::UntypedStorage<8, 24> mUnkedc396;
+        ::ll::UntypedStorage<8, 32> mUnke834c0;
+        ::ll::UntypedStorage<4, 4>  mUnkeae53e;
+        ::ll::UntypedStorage<4, 4>  mUnk3c1b82;
+        ::ll::UntypedStorage<1, 1>  mUnk82275a;
+        ::ll::UntypedStorage<1, 1>  mUnkd02750;
+        ::ll::UntypedStorage<4, 12> mUnk1647b1;
+        ::ll::UntypedStorage<8, 8>  mUnka09d74;
         // NOLINTEND
 
     public:
         // prevent constructor by default
+        OceanRuinPiece& operator=(OceanRuinPiece const&);
+        OceanRuinPiece(OceanRuinPiece const&);
         OceanRuinPiece();
 
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 2
         virtual ::StructurePieceType getType() const /*override*/;
 
-        // vIndex: 4
         virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-        // vIndex: 13
         virtual void _handleDataMarker(
             ::std::string const& markerId,
             ::BlockPos const&    position,
@@ -67,14 +64,13 @@ public:
             ::BoundingBox const& chunkBB
         ) /*override*/;
 
-        // vIndex: 0
         virtual ~OceanRuinPiece() /*override*/;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI OceanRuinPiece(
+        MCNAPI OceanRuinPiece(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string                                     templateName,
             ::BlockPos const&                                 origin,
@@ -84,15 +80,15 @@ public:
             ::OceanTempCategory                               type
         );
 
-        MCAPI int _getHeight(::BlockPos& pos, ::BlockSource& region, ::BlockPos const& corner);
+        MCNAPI int _getHeight(::BlockPos& pos, ::BlockSource& region, ::BlockPos const& corner);
 
-        MCAPI ::Block const* getChestReplacer(::OceanTempCategory type, ::std::string const& location);
+        MCNAPI ::Block const* getChestReplacer(::OceanTempCategory type, ::std::string const& location);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string                                     templateName,
             ::BlockPos const&                                 origin,
@@ -106,23 +102,25 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::StructurePieceType $getType() const;
+        MCNAPI ::StructurePieceType $getType() const;
 
-        MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCAPI void $_handleDataMarker(
+        MCNAPI void $_handleDataMarker(
             ::std::string const& markerId,
             ::BlockPos const&    position,
             ::BlockSource&       region,
             ::Random&            random,
             ::BoundingBox const& chunkBB
         );
+
+
         // NOLINTEND
 
     public:
@@ -135,7 +133,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _addClusterRuins(
+    MCNAPI static void _addClusterRuins(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
         ::Random&                                           random,
         ::Rotation const&                                   rotation,
@@ -144,7 +142,7 @@ public:
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces
     );
 
-    MCAPI static void _addPiece(
+    MCNAPI static void _addPiece(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
         ::BlockPos const&                                   position,
         ::Rotation const&                                   rotation,
@@ -155,9 +153,9 @@ public:
         float                                               baseIntegrity
     );
 
-    MCAPI static ::std::vector<::BlockPos> _allPositions(::Random& random, int cornerX, int cornerY, int cornerZ);
+    MCNAPI static ::std::vector<::BlockPos> _allPositions(::Random& random, int cornerX, int cornerY, int cornerZ);
 
-    MCAPI static void addPieces(
+    MCNAPI static void addPieces(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
         ::BlockPos const&                                   position,
         ::Rotation const&                                   rotation,
@@ -170,32 +168,32 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view& BIG_RUIN_LOOT();
+    MCNAPI static ::std::string_view& BIG_RUIN_LOOT();
 
-    MCAPI static ::std::string_view& RUIN_LOOT();
+    MCNAPI static ::std::string_view& RUIN_LOOT();
 
-    MCAPI static ::std::string_view& STRUCTURE_BIG_RUIN1_BRICK();
+    MCNAPI static ::std::string_view& STRUCTURE_BIG_RUIN1_BRICK();
 
-    MCAPI static ::std::string_view& STRUCTURE_BIG_RUIN8_BRICK();
+    MCNAPI static ::std::string_view& STRUCTURE_BIG_RUIN8_BRICK();
 
-    MCAPI static ::std::string_view& STRUCTURE_RUIN_2_BRICK();
+    MCNAPI static ::std::string_view& STRUCTURE_RUIN_2_BRICK();
 
-    MCAPI static ::std::string_view& STRUCTURE_RUIN_3_BRICK();
+    MCNAPI static ::std::string_view& STRUCTURE_RUIN_3_BRICK();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsBrick();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsBrick();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsCracked();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsCracked();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsMossy();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigRuinsMossy();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigWarmRuins();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> bigWarmRuins();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsBrick();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsBrick();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsCracked();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsCracked();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsMossy();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> ruinsMossy();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[]> warmRuins();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[]> warmRuins();
     // NOLINTEND
 };

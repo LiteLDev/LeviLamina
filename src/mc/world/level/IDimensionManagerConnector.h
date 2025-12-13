@@ -14,7 +14,6 @@ class IDimensionManagerConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::Dimension&)>& getOnNewDimensionCreatedConnector() = 0;
     // NOLINTEND
 

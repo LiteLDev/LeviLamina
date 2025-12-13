@@ -3,10 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/ChanceInformation.h"
-#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeCanopy.h"
-#include "mc/world/level/levelgen/feature/helpers/tree_helper/AttachableDecoration.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,23 +18,27 @@ class SimpleTreeCanopy : public ::ITreeCanopy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                  mMinOffset;
-    ::ll::TypedStorage<4, 4, int>                                  mMaxOffset;
-    ::ll::TypedStorage<4, 4, int>                                  mMinWidth;
-    ::ll::TypedStorage<4, 4, float>                                mRiseInv;
-    ::ll::TypedStorage<4, 4, int>                                  mRun;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mLeafBlockDescriptor;
-    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ChanceInformation>>  mVariationChancePerLayer;
+    ::ll::UntypedStorage<4, 4>   mUnkbe72f3;
+    ::ll::UntypedStorage<4, 4>   mUnke8e1c3;
+    ::ll::UntypedStorage<4, 4>   mUnk9c64a9;
+    ::ll::UntypedStorage<4, 4>   mUnkeac94e;
+    ::ll::UntypedStorage<4, 4>   mUnkda9dab;
+    ::ll::UntypedStorage<8, 184> mUnka9e656;
+    ::ll::UntypedStorage<8, 208> mUnkff10ab;
+    ::ll::UntypedStorage<8, 24>  mUnkb91e20;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SimpleTreeCanopy& operator=(SimpleTreeCanopy const&);
+    SimpleTreeCanopy(SimpleTreeCanopy const&);
+    SimpleTreeCanopy();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SimpleTreeCanopy() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> placeCanopy(
         ::IBlockWorldGenAPI&             target,
         ::BlockPos const&                pos,
@@ -51,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI&             target,
         ::BlockPos const&                pos,
         ::Random&                        random,
@@ -59,6 +60,8 @@ public:
         ::TreeHelper::TreeParams const&  treeParams,
         ::std::vector<::BlockPos> const& attachmentPositions
     ) const;
+
+
     // NOLINTEND
 
 public:

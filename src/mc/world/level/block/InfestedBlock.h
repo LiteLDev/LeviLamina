@@ -24,10 +24,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 129
     virtual ::Block const* tryGetUninfested(::Block const& block) const /*override*/;
 
-    // vIndex: 90
     virtual void spawnAfterBreak(
         ::BlockSource& region,
         ::Block const&,
@@ -35,7 +33,6 @@ public:
         ::ResourceDropsContext const& resourceDropsContext
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~InfestedBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -56,6 +53,8 @@ public:
         ::BlockPos const&             pos,
         ::ResourceDropsContext const& resourceDropsContext
     ) const;
+
+
     // NOLINTEND
 
 public:

@@ -32,47 +32,39 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                 mLife;
-    ::ll::TypedStorage<4, 4, int>                                 mEnchantFlame;
-    ::ll::TypedStorage<4, 4, int>                                 mEnchantInfinity;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mMobEffects;
+    ::ll::UntypedStorage<4, 4>  mUnk3d577d;
+    ::ll::UntypedStorage<4, 4>  mUnk5b628b;
+    ::ll::UntypedStorage<4, 4>  mUnkbc8193;
+    ::ll::UntypedStorage<8, 24> mUnk5ddff5;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    Arrow& operator=(Arrow const&);
+    Arrow(Arrow const&);
     Arrow();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 138
     virtual void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed) /*override*/;
 
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 39
     virtual void playerTouch(::Player& player) /*override*/;
 
-    // vIndex: 120
     virtual void setAuxValue(int aux) /*override*/;
 
-    // vIndex: 139
     virtual ::ItemStack _getPickupItem() const /*override*/;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 140
     virtual ::mce::Color getEffectColor();
 
-    // vIndex: 8
     virtual ~Arrow() /*override*/ = default;
     // NOLINTEND
 
@@ -128,6 +120,8 @@ public:
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI ::mce::Color $getEffectColor();
+
+
     // NOLINTEND
 
 public:

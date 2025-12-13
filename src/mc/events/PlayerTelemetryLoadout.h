@@ -19,6 +19,18 @@ public:
     PlayerTelemetryLoadout& operator=(PlayerTelemetryLoadout const&);
     PlayerTelemetryLoadout(PlayerTelemetryLoadout const&);
     PlayerTelemetryLoadout();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~PlayerTelemetryLoadout();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Social::Events

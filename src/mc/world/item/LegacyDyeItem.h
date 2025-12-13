@@ -15,10 +15,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 16
     virtual bool isDye() const /*override*/;
 
-    // vIndex: 0
     virtual ~LegacyDyeItem() /*override*/ = default;
     // NOLINTEND
 
@@ -26,6 +24,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isDye() const;
+
+
     // NOLINTEND
 
 public:

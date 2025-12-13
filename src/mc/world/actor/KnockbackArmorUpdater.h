@@ -16,10 +16,8 @@ class KnockbackArmorUpdater : public ::EventListenerDispatcher<::ActorEventListe
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 35
     virtual ::EventResult onEvent(::ActorEquippedArmorEvent const& actorEquippedArmorEvent) /*override*/;
 
-    // vIndex: 0
     virtual ~KnockbackArmorUpdater() /*override*/ = default;
     // NOLINTEND
 
@@ -27,6 +25,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::EventResult $onEvent(::ActorEquippedArmorEvent const& actorEquippedArmorEvent);
+
+
     // NOLINTEND
 
 public:

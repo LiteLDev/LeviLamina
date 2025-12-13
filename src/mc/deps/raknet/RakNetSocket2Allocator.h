@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::RakNet::RakNetSocket2> CreateSharedRNS2();
 
-    MCAPI static void DeallocRNS2(::RakNet::RakNetSocket2* s);
+    MCFOLD static void DeallocRNS2(::RakNet::RakNetSocket2* s);
     // NOLINTEND
 };
 

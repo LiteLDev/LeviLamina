@@ -38,59 +38,42 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 110
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 94
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const /*override*/;
 
-    // vIndex: 76
     virtual bool canUseOnSimTick() const /*override*/;
 
-    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 83
-    virtual void releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const /*override*/;
+    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    // vIndex: 82
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 
-    // vIndex: 64
     virtual bool uniqueAuxValues() const /*override*/;
 
-    // vIndex: 12
     virtual bool isBucket() const /*override*/;
 
-    // vIndex: 81
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
-    // vIndex: 49
     virtual bool isLiquidClipItem() const /*override*/;
 
-    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 102
     virtual bool validFishInteraction(int) const /*override*/;
 
-    // vIndex: 115
     virtual ::Brightness getLightEmission(int) const /*override*/;
 
-    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 48
     virtual bool isDestructive(int auxValue) const /*override*/;
 
-    // vIndex: 123
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
-    // vIndex: 0
     virtual ~BucketItem() /*override*/ = default;
     // NOLINTEND
 
@@ -141,7 +124,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
@@ -149,7 +132,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCFOLD void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
+    MCFOLD void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
     MCFOLD bool $uniqueAuxValues() const;
 
@@ -171,6 +154,8 @@ public:
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+
+
     // NOLINTEND
 
 public:

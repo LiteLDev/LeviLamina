@@ -13,22 +13,16 @@ class I420BufferInterface : public ::webrtc::PlanarYuv8Buffer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::webrtc::VideoFrameBuffer::Type type() const /*override*/;
 
-    // vIndex: 10
     virtual int ChromaWidth() const /*override*/;
 
-    // vIndex: 11
     virtual int ChromaHeight() const /*override*/;
 
-    // vIndex: 6
     virtual ::webrtc::scoped_refptr<::webrtc::I420BufferInterface> ToI420() /*override*/;
 
-    // vIndex: 7
     virtual ::webrtc::I420BufferInterface const* GetI420() const /*override*/;
 
-    // vIndex: 2
     virtual ~I420BufferInterface() /*override*/;
     // NOLINTEND
 
@@ -50,6 +44,8 @@ public:
     MCNAPI ::webrtc::scoped_refptr<::webrtc::I420BufferInterface> $ToI420();
 
     MCNAPI ::webrtc::I420BufferInterface const* $GetI420() const;
+
+
     // NOLINTEND
 };
 

@@ -14,7 +14,6 @@ class ScriptIdentityModuleFactory : public ::Scripting::GenericModuleBindingFact
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptIdentityModuleFactory() /*override*/ = default;
     // NOLINTEND
 

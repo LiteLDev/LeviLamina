@@ -61,93 +61,66 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::webrtc::AudioSendStream* CreateAudioSendStream(::webrtc::AudioSendStream::Config const&) = 0;
 
-    // vIndex: 1
     virtual void DestroyAudioSendStream(::webrtc::AudioSendStream*) = 0;
 
-    // vIndex: 2
     virtual ::webrtc::AudioReceiveStreamInterface*
     CreateAudioReceiveStream(::webrtc::AudioReceiveStreamInterface::Config const&) = 0;
 
-    // vIndex: 3
     virtual void DestroyAudioReceiveStream(::webrtc::AudioReceiveStreamInterface*) = 0;
 
-    // vIndex: 5
     virtual ::webrtc::VideoSendStream*
         CreateVideoSendStream(::webrtc::VideoSendStream::Config, ::webrtc::VideoEncoderConfig) = 0;
 
-    // vIndex: 4
     virtual ::webrtc::VideoSendStream* CreateVideoSendStream(
         ::webrtc::VideoSendStream::Config,
         ::webrtc::VideoEncoderConfig,
         ::std::unique_ptr<::webrtc::FecController>
     );
 
-    // vIndex: 6
     virtual void DestroyVideoSendStream(::webrtc::VideoSendStream*) = 0;
 
-    // vIndex: 7
     virtual ::webrtc::VideoReceiveStreamInterface*
         CreateVideoReceiveStream(::webrtc::VideoReceiveStreamInterface::Config) = 0;
 
-    // vIndex: 8
     virtual void DestroyVideoReceiveStream(::webrtc::VideoReceiveStreamInterface*) = 0;
 
-    // vIndex: 9
     virtual ::webrtc::FlexfecReceiveStream*
     CreateFlexfecReceiveStream(::webrtc::FlexfecReceiveStream::Config const) = 0;
 
-    // vIndex: 10
     virtual void DestroyFlexfecReceiveStream(::webrtc::FlexfecReceiveStream*) = 0;
 
-    // vIndex: 11
     virtual void AddAdaptationResource(::webrtc::scoped_refptr<::webrtc::Resource>) = 0;
 
-    // vIndex: 12
     virtual ::webrtc::PacketReceiver* Receiver() = 0;
 
-    // vIndex: 13
     virtual ::webrtc::RtpTransportControllerSendInterface* GetTransportControllerSend() = 0;
 
-    // vIndex: 14
     virtual ::webrtc::Call::Stats GetStats() const = 0;
 
-    // vIndex: 15
     virtual void SignalChannelNetworkState(::webrtc::MediaType, ::webrtc::NetworkState) = 0;
 
-    // vIndex: 16
     virtual void OnAudioTransportOverheadChanged(int) = 0;
 
-    // vIndex: 19
     virtual void OnLocalSsrcUpdated(::webrtc::AudioReceiveStreamInterface&, uint) = 0;
 
-    // vIndex: 18
     virtual void OnLocalSsrcUpdated(::webrtc::VideoReceiveStreamInterface&, uint) = 0;
 
-    // vIndex: 17
     virtual void OnLocalSsrcUpdated(::webrtc::FlexfecReceiveStream&, uint) = 0;
 
-    // vIndex: 20
     virtual void OnUpdateSyncGroup(::webrtc::AudioReceiveStreamInterface&, ::std::string_view) = 0;
 
-    // vIndex: 21
     virtual void OnSentPacket(::rtc::SentPacket const&) = 0;
 
-    // vIndex: 22
     virtual void SetClientBitratePreferences(::webrtc::BitrateSettings const&) = 0;
 
-    // vIndex: 23
     virtual ::webrtc::FieldTrialsView const& trials() const = 0;
 
-    // vIndex: 24
     virtual ::webrtc::TaskQueueBase* network_thread() const = 0;
 
-    // vIndex: 25
     virtual ::webrtc::TaskQueueBase* worker_thread() const = 0;
 
-    // vIndex: 26
     virtual ~Call() = default;
     // NOLINTEND
 

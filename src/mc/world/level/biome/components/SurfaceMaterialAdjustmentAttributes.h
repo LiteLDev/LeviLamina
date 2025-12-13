@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/molang/ExpressionNode.h"
 #include "mc/util/molang/ExpressionOp.h"
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
-#include "mc/world/level/biome/components/SurfaceMaterialAttributes.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class ExpressionNode;
 class PerlinSimplexNoise;
 class RenderParams;
 struct SurfaceMaterialAdjustmentEvaluated;
@@ -28,24 +27,30 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                        mNoiseFreqScale;
-        ::ll::TypedStorage<4, 4, float>                        mNoiseLowerBound;
-        ::ll::TypedStorage<4, 4, float>                        mNoiseUpperBound;
-        ::ll::TypedStorage<8, 16, ::ExpressionNode>            mHeightMin;
-        ::ll::TypedStorage<8, 16, ::ExpressionNode>            mHeightMax;
-        ::ll::TypedStorage<8, 56, ::SurfaceMaterialAttributes> mAdjustedMaterials;
+        ::ll::UntypedStorage<4, 4>  mUnk4988e6;
+        ::ll::UntypedStorage<4, 4>  mUnk419993;
+        ::ll::UntypedStorage<4, 4>  mUnk5e506c;
+        ::ll::UntypedStorage<8, 16> mUnk7701b7;
+        ::ll::UntypedStorage<8, 16> mUnk610e0d;
+        ::ll::UntypedStorage<8, 56> mUnkff1866;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Element& operator=(Element const&);
+        Element(Element const&);
+        Element();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Element();
+        MCNAPI ~Element();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -58,14 +63,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SurfaceMaterialAdjustmentAttributes() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(
+    MCNAPI ::SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(
         ::RenderParams&                        molangParams,
         ::gsl::not_null<::PerlinSimplexNoise*> noise,
         ::BlockPos const&                      pos,
@@ -77,7 +81,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void
+    MCNAPI static void
     parseExpressionNodeFloat(::ExpressionOp op, ::std::string const& data, ::ExpressionNode& node, float defaultValue);
     // NOLINTEND
 

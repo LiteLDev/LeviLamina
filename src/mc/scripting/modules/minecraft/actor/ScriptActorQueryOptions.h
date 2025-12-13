@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
 #include "mc/scripting/modules/minecraft/ScriptActorFilter.h"
 
 // auto generated forward declare list
@@ -18,32 +17,38 @@ struct ScriptActorQueryOptions : public ::ScriptModuleMinecraft::ScriptActorFilt
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mPosition;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>>   mMinDistance;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>>   mMaxDistance;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>>     mClosest;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>>     mFarthest;
-    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mVolume;
+    ::ll::UntypedStorage<4, 16> mUnk20dab8;
+    ::ll::UntypedStorage<4, 8>  mUnk772d97;
+    ::ll::UntypedStorage<4, 8>  mUnkc74b8d;
+    ::ll::UntypedStorage<4, 8>  mUnkc554cd;
+    ::ll::UntypedStorage<4, 8>  mUnke0846d;
+    ::ll::UntypedStorage<4, 16> mUnk6de076;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptActorQueryOptions& operator=(ScriptActorQueryOptions const&);
+    ScriptActorQueryOptions(ScriptActorQueryOptions const&);
+    ScriptActorQueryOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptActorQueryOptions();
+    MCNAPI ~ScriptActorQueryOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
 
-    MCAPI static ::Scripting::InterfaceBinding bindV1();
+    MCNAPI static ::Scripting::InterfaceBinding bindV1();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -15,10 +15,8 @@ class HttpInterface : public ::Bedrock::ImplBase<::Bedrock::Http::HttpInterface>
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~HttpInterface() /*override*/ = default;
 
-    // vIndex: 1
     virtual void send(::gsl::not_null<::HC_CALL*>, ::gsl::not_null<::XAsyncBlock*>, ::HC_PERFORM_ENV*) = 0;
     // NOLINTEND
 

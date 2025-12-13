@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
-#include "mc/util/molang/ExpressionOp.h"
-#include "mc/world/level/biome/serialization/BiomeSurfaceMaterialData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,25 +15,31 @@ struct BiomeElementData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                       mNoiseFreqScale;
-    ::ll::TypedStorage<4, 4, float>                       mNoiseLowerBound;
-    ::ll::TypedStorage<4, 4, float>                       mNoiseUpperBound;
-    ::ll::TypedStorage<2, 2, ::ExpressionOp>              mHeightMinType;
-    ::ll::TypedStorage<2, 2, ushort>                      mHeightMin;
-    ::ll::TypedStorage<2, 2, ::ExpressionOp>              mHeightMaxType;
-    ::ll::TypedStorage<2, 2, ushort>                      mHeightMax;
-    ::ll::TypedStorage<4, 24, ::BiomeSurfaceMaterialData> mAdjustedMaterials;
+    ::ll::UntypedStorage<4, 4>  mUnk65692a;
+    ::ll::UntypedStorage<4, 4>  mUnkf6df2a;
+    ::ll::UntypedStorage<4, 4>  mUnk445cd1;
+    ::ll::UntypedStorage<2, 2>  mUnk22196b;
+    ::ll::UntypedStorage<2, 2>  mUnk8e9108;
+    ::ll::UntypedStorage<2, 2>  mUnkee8d42;
+    ::ll::UntypedStorage<2, 2>  mUnk9c8d09;
+    ::ll::UntypedStorage<4, 24> mUnk304f19;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BiomeElementData& operator=(BiomeElementData const&);
+    BiomeElementData(BiomeElementData const&);
+    BiomeElementData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void write(::BinaryStream& stream) const;
+    MCNAPI void write(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeElementData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeElementData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

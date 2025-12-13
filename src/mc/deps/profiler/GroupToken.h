@@ -30,21 +30,6 @@ public:
         AnnotationData();
     };
 
-    struct ScopeImplToken {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk913715;
-        ::ll::UntypedStorage<8, 48> mUnk749021;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ScopeImplToken& operator=(ScopeImplToken const&);
-        ScopeImplToken(ScopeImplToken const&);
-        ScopeImplToken();
-    };
-
     struct CounterImplToken {
     public:
         // member variables
@@ -58,6 +43,21 @@ public:
         CounterImplToken& operator=(CounterImplToken const&);
         CounterImplToken(CounterImplToken const&);
         CounterImplToken();
+    };
+
+    struct ScopeImplToken {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk913715;
+        ::ll::UntypedStorage<8, 48> mUnk749021;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ScopeImplToken& operator=(ScopeImplToken const&);
+        ScopeImplToken(ScopeImplToken const&);
+        ScopeImplToken();
     };
 
 public:

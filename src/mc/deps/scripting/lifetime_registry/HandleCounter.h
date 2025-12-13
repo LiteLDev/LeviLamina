@@ -56,7 +56,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void onMakeObject(
         ::Scripting::LifetimeRegistry&,
         ::Scripting::ObjectHandle,
@@ -64,7 +63,6 @@ public:
         uint
     ) /*override*/;
 
-    // vIndex: 2
     virtual void onDestroyObject(
         ::Scripting::LifetimeRegistry&,
         ::Scripting::ObjectHandle,
@@ -72,7 +70,6 @@ public:
         uint
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~HandleCounter() /*override*/ = default;
     // NOLINTEND
 

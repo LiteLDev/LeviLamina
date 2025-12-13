@@ -33,10 +33,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IInPackagePacks() = default;
 
-    // vIndex: 1
     virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType) const = 0;
     // NOLINTEND
 

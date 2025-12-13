@@ -21,10 +21,8 @@ class LoggingServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LoggingServiceProvider() = default;
 
-    // vIndex: 1
     virtual void
     log(::std::string&&,
         ::Player*,
@@ -33,13 +31,10 @@ public:
         ::Editor::LogChannel,
         ::std::string) = 0;
 
-    // vIndex: 2
     virtual void flush() = 0;
 
-    // vIndex: 3
     virtual ::std::vector<::Editor::LogMessage> const& getMessages() const = 0;
 
-    // vIndex: 4
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
         listenForLogMessage(::std::function<void(::Editor::LogMessage const&)>) = 0;
     // NOLINTEND

@@ -2,17 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/legacy/ActorUniqueID.h"
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/level/saveddata/maps/MapDecoration.h"
-
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class ChunkViewSource;
-class Dimension;
 class MapItemSavedData;
 class Packet;
 // clang-format on
@@ -35,9 +27,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::MapItemTrackedActor::Type> type;
-        ::ll::TypedStorage<8, 8, ::ActorUniqueID>             keyEntityId;
-        ::ll::TypedStorage<4, 12, ::BlockPos>                 keyBlockPos;
+        ::ll::UntypedStorage<4, 4>  mUnk8279e5;
+        ::ll::UntypedStorage<8, 8>  mUnk1cffa7;
+        ::ll::UntypedStorage<4, 12> mUnk1fba7e;
         // NOLINTEND
 
     public:
@@ -48,47 +40,49 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI UniqueId(::MapItemTrackedActor::UniqueId const& rhs);
+        MCNAPI UniqueId(::MapItemTrackedActor::UniqueId const& rhs);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::MapItemTrackedActor::UniqueId const& rhs);
+        MCNAPI void* $ctor(::MapItemTrackedActor::UniqueId const& rhs);
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::MapItemTrackedActor::UniqueId>      mUniqueId;
-    ::ll::TypedStorage<1, 1, bool>                                  mNeedsResend;
-    ::ll::TypedStorage<4, 4, uint>                                  mMinDirtyX;
-    ::ll::TypedStorage<4, 4, uint>                                  mMinDirtyY;
-    ::ll::TypedStorage<4, 4, uint>                                  mMaxDirtyX;
-    ::ll::TypedStorage<4, 4, uint>                                  mMaxDirtyY;
-    ::ll::TypedStorage<4, 4, int>                                   mTick;
-    ::ll::TypedStorage<4, 4, float>                                 mLastRotation;
-    ::ll::TypedStorage<1, 1, ::MapDecoration::Type>                 mDecorationType;
-    ::ll::TypedStorage<4, 4, ::DimensionType>                       mDimensionId;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>> mChunkViewSource;
+    ::ll::UntypedStorage<8, 32> mUnk6b8326;
+    ::ll::UntypedStorage<1, 1>  mUnkf41f17;
+    ::ll::UntypedStorage<4, 4>  mUnk369cab;
+    ::ll::UntypedStorage<4, 4>  mUnk66a3bf;
+    ::ll::UntypedStorage<4, 4>  mUnk8bdf44;
+    ::ll::UntypedStorage<4, 4>  mUnk5b38b5;
+    ::ll::UntypedStorage<4, 4>  mUnk79d7e3;
+    ::ll::UntypedStorage<4, 4>  mUnkc40bf0;
+    ::ll::UntypedStorage<1, 1>  mUnka0d5f7;
+    ::ll::UntypedStorage<4, 4>  mUnkcdcfdc;
+    ::ll::UntypedStorage<8, 16> mUnkf6f35a;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    MapItemTrackedActor& operator=(MapItemTrackedActor const&);
+    MapItemTrackedActor(MapItemTrackedActor const&);
     MapItemTrackedActor();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapItemTrackedActor(::MapItemTrackedActor::UniqueId const& id, ::BlockSource& region);
+    MCNAPI MapItemTrackedActor(::MapItemTrackedActor::UniqueId const& id, ::BlockSource& region);
 
-    MCAPI ::std::unique_ptr<::Packet> nextUpdatePacket(::MapItemSavedData const& savedData);
+    MCNAPI ::std::unique_ptr<::Packet> nextUpdatePacket(::MapItemSavedData const& savedData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MapItemTrackedActor::UniqueId const& id, ::BlockSource& region);
+    MCNAPI void* $ctor(::MapItemTrackedActor::UniqueId const& id, ::BlockSource& region);
     // NOLINTEND
 };

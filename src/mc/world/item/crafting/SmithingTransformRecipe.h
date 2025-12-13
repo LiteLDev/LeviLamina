@@ -20,30 +20,36 @@ class SmithingTransformRecipe : public ::ShapelessRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mRuntimeResults;
+    ::ll::UntypedStorage<8, 24> mUnk45d773;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    SmithingTransformRecipe& operator=(SmithingTransformRecipe const&);
+    SmithingTransformRecipe(SmithingTransformRecipe const&);
     SmithingTransformRecipe();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual bool matches(::CraftingContainer const& craftingContainer, ::CraftingContext const&) const /*override*/;
 
-    // vIndex: 1
     virtual ::std::vector<::ItemInstance> const&
     assemble(::CraftingContainer& craftingContainer, ::CraftingContext&) const /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~SmithingTransformRecipe() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~SmithingTransformRecipe() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C SmithingTransformRecipe(::SmithingTransformRecipe&&);
+
     MCAPI SmithingTransformRecipe(
         ::std::string const&      recipeId,
         ::RecipeIngredient const& templateIngredient,
@@ -63,6 +69,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI_C void* $ctor(::SmithingTransformRecipe&&);
+
     MCAPI void* $ctor(
         ::std::string const&      recipeId,
         ::RecipeIngredient const& templateIngredient,
@@ -74,12 +82,20 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $matches(::CraftingContainer const& craftingContainer, ::CraftingContext const&) const;
 
     MCAPI ::std::vector<::ItemInstance> const&
     $assemble(::CraftingContainer& craftingContainer, ::CraftingContext&) const;
+
+
     // NOLINTEND
 
 public:

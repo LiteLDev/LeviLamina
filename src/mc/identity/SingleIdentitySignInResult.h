@@ -18,6 +18,18 @@ public:
     SingleIdentitySignInResult& operator=(SingleIdentitySignInResult const&);
     SingleIdentitySignInResult(SingleIdentitySignInResult const&);
     SingleIdentitySignInResult();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~SingleIdentitySignInResult();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Social

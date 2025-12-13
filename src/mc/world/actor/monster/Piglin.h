@@ -23,13 +23,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 118
     virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
-    // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
-    // vIndex: 8
     virtual ~Piglin() /*override*/;
     // NOLINTEND
 
@@ -65,6 +62,8 @@ public:
     MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
     MCFOLD bool $isDarkEnoughToSpawn() const;
+
+
     // NOLINTEND
 
 public:

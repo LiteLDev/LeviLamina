@@ -25,7 +25,6 @@ struct MiningBlock : public ::ItemComponent,
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MiningBlock() /*override*/ = default;
     // NOLINTEND
 

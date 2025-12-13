@@ -23,10 +23,8 @@ class HoneyBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
@@ -34,16 +32,12 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 133
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 139
     virtual int getExtraRenderLayers() const /*override*/;
 
-    // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const&, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 0
     virtual ~HoneyBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -76,6 +70,8 @@ public:
     MCFOLD int $getExtraRenderLayers() const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB& bufferAABB) const;
+
+
     // NOLINTEND
 
 public:

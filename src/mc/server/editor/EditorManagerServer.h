@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/EditorManagerServerServiceProvider.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/EditorManager.h"
+#include "mc/server/editor/serviceproviders/EditorManagerServerServiceProvider.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/LevelEventListener.h"
@@ -56,32 +56,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 11
     virtual ::EventResult onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent) /*override*/;
 
-    // vIndex: 0
     virtual ~EditorManagerServer() /*override*/;
 
-    // vIndex: 2
     virtual bool isClientSide() const /*override*/;
 
-    // vIndex: 3
     virtual ::std::unique_ptr<::Editor::IEditorPlayer> createPlayer(::Player& player) /*override*/;
 
-    // vIndex: 4
     virtual ::EventResult onServerLevelInitialized(::ServerInstance& instance, ::Level& level) /*override*/;
 
-    // vIndex: 11
     virtual ::EventResult onStartLeaveGame(::ServerInstance& instance) /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> scriptingTeardown() /*override*/;
 
-    // vIndex: 8
     virtual ::Scripting::Result_deprecated<void>
     scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
 
-    // vIndex: 4
     virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
         ::ILevelListCache&                                              levelListCache,
         ::Scheduler&                                                    scheduler,
@@ -89,7 +80,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     ) /*override*/;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Subscription
     registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func) /*override*/;
     // NOLINTEND
@@ -143,6 +133,8 @@ public:
 
     MCNAPI ::Bedrock::PubSub::Subscription
     $registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func);
+
+
     // NOLINTEND
 
 public:

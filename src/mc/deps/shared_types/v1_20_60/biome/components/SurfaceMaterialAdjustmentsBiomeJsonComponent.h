@@ -17,8 +17,8 @@ struct SurfaceMaterialAdjustmentsBiomeJsonComponent : public ::SharedTypes::v1_2
 public:
     // SurfaceMaterialAdjustmentsBiomeJsonComponent inner types declare
     // clang-format off
-    struct SurfaceMaterialAdjustment;
     struct SurfaceMaterialAdjustmentMaterials;
+    struct SurfaceMaterialAdjustment;
     // clang-format on
 
     // SurfaceMaterialAdjustmentsBiomeJsonComponent inner types define
@@ -121,10 +121,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::BiomeComponentVersion getType() const /*override*/;
 
-    // vIndex: 0
     virtual ~SurfaceMaterialAdjustmentsBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -146,6 +144,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::BiomeComponentVersion $getType() const;
+
+
     // NOLINTEND
 
 public:

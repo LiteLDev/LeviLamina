@@ -6,6 +6,12 @@ struct OnScreenTextureAnimationPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mEffectID;
+    ::ll::UntypedStorage<4, 4> mUnkd81f0e;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    OnScreenTextureAnimationPacketPayload& operator=(OnScreenTextureAnimationPacketPayload const&);
+    OnScreenTextureAnimationPacketPayload(OnScreenTextureAnimationPacketPayload const&);
+    OnScreenTextureAnimationPacketPayload();
 };

@@ -16,46 +16,51 @@ struct OverworldGenerationRulesBiomeComponentGlue : public ::IBiomeComponentGlue
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::Biome const*>>> mHillsTransformationBiomes;
-    ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::Biome const*>>> mMutateTransformationBiomes;
-    ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::Biome const*>>> mRiverTransformationBiomes;
-    ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::Biome const*>>> mShoreTransformationBiomes;
+    ::ll::UntypedStorage<8, 24> mUnk59e8dd;
+    ::ll::UntypedStorage<8, 24> mUnk6573f3;
+    ::ll::UntypedStorage<8, 24> mUnk733fd8;
+    ::ll::UntypedStorage<8, 24> mUnk76939f;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    OverworldGenerationRulesBiomeComponentGlue& operator=(OverworldGenerationRulesBiomeComponentGlue const&);
+    OverworldGenerationRulesBiomeComponentGlue(OverworldGenerationRulesBiomeComponentGlue const&);
+    OverworldGenerationRulesBiomeComponentGlue();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool resolveAndValidate(
         ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent,
         ::BiomeRegistry const&                              biomeRegistry
     ) /*override*/;
 
-    // vIndex: 2
     virtual void
     applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const
         /*override*/;
 
-    // vIndex: 0
     virtual ~OverworldGenerationRulesBiomeComponentGlue() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $resolveAndValidate(
+    MCNAPI bool $resolveAndValidate(
         ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent,
         ::BiomeRegistry const&                              biomeRegistry
     );
 
-    MCAPI void
+    MCNAPI void
     $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const;
+
+
     // NOLINTEND
 
 public:

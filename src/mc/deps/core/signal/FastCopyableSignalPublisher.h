@@ -32,21 +32,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual void send(void const*) /*override*/;
+    virtual void send(void const* data) /*override*/;
 
-    // vIndex: 2
     virtual ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)>
-    getConnectOp(::std::function<void(void const*)>&&) /*override*/;
+    getConnectOp(::std::function<void(void const*)>&& handler) /*override*/;
 
-    // vIndex: 0
     virtual ~FastCopyableSignalPublisher() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $send(void const* data);
 
+    MCNAPI ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)>
+    $getConnectOp(::std::function<void(void const*)>&& handler);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

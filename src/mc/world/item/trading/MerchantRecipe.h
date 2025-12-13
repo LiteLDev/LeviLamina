@@ -35,17 +35,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MerchantRecipe();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C MerchantRecipe();
+
+    MCAPI MerchantRecipe(::MerchantRecipe&&);
+
     MCAPI MerchantRecipe(::MerchantRecipe const&);
 
     MCAPI explicit MerchantRecipe(::CompoundTag const* tag);
-
-    MCAPI MerchantRecipe(::MerchantRecipe&&);
 
     MCAPI MerchantRecipe(::ItemInstance const& buy, ::ItemInstance const& sell);
 
@@ -76,11 +74,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI_C void* $ctor();
+
+    MCAPI void* $ctor(::MerchantRecipe&&);
+
     MCFOLD void* $ctor(::MerchantRecipe const&);
 
     MCAPI void* $ctor(::CompoundTag const* tag);
-
-    MCAPI void* $ctor(::MerchantRecipe&&);
 
     MCAPI void* $ctor(::ItemInstance const& buy, ::ItemInstance const& sell);
 

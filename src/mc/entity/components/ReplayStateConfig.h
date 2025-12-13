@@ -20,6 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setReplayStateConfigThresholds(float baseThreshold);
+    MCAPI_S void setReplayStateConfigThresholds(float baseThreshold);
     // NOLINTEND
 };

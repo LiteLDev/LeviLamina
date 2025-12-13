@@ -14,35 +14,35 @@ namespace JsonUtil { class EmptyClass; }
 
 class NearestAttackableTargetDefinition : public ::TargetGoalDefinition {
 public:
-    // NearestAttackableTargetDefinition inner types define
-    using self = ::NearestAttackableTargetDefinition;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>  mReselectTargets;
-    ::ll::TypedStorage<4, 4, int>   mAttackInterval;
-    ::ll::TypedStorage<4, 4, int>   mScanInterval;
-    ::ll::TypedStorage<4, 4, float> mTargetSearchHeight;
-    ::ll::TypedStorage<4, 4, float> mTargetInvisibleMultiplier;
-    ::ll::TypedStorage<4, 4, float> mTargetSneakVisibilityMultiplier;
-    ::ll::TypedStorage<1, 1, bool>  mSetPersistent;
+    ::ll::UntypedStorage<1, 1> mUnk67abec;
+    ::ll::UntypedStorage<4, 4> mUnk5c17f0;
+    ::ll::UntypedStorage<4, 4> mUnk50ac30;
+    ::ll::UntypedStorage<4, 4> mUnk513186;
+    ::ll::UntypedStorage<4, 4> mUnk9805ea;
+    ::ll::UntypedStorage<4, 4> mUnk3439b5;
+    ::ll::UntypedStorage<1, 1> mUnk919701;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    NearestAttackableTargetDefinition& operator=(NearestAttackableTargetDefinition const&);
+    NearestAttackableTargetDefinition(NearestAttackableTargetDefinition const&);
+    NearestAttackableTargetDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual bool validate(::Mob& mob) const /*override*/;
 
-    // vIndex: 0
     virtual ~NearestAttackableTargetDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::string const& name,
         ::std::shared_ptr<
             ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::NearestAttackableTargetDefinition>>& root
@@ -52,7 +52,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $validate(::Mob& mob) const;
+    MCNAPI bool $validate(::Mob& mob) const;
+
+
     // NOLINTEND
 
 public:

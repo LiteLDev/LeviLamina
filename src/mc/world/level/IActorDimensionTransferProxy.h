@@ -14,16 +14,12 @@ class IActorDimensionTransferProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IActorDimensionTransferProxy() = default;
 
-    // vIndex: 1
     virtual void transferTickingArea(::Actor&, ::Dimension&) const = 0;
 
-    // vIndex: 2
     virtual void removeActorFromLevelChunk(::Actor&) const = 0;
 
-    // vIndex: 3
     virtual void
     transferActorToDimension(::Actor const&, ::Dimension&, ::Vec3 const&, ::std::unique_ptr<::CompoundTag>) const = 0;
     // NOLINTEND

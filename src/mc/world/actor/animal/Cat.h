@@ -21,13 +21,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 57
     virtual void onTame() /*override*/;
 
-    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 8
     virtual ~Cat() /*override*/ = default;
     // NOLINTEND
 
@@ -56,6 +53,8 @@ public:
     MCAPI void $onTame();
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+
+
     // NOLINTEND
 
 public:

@@ -2,29 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/util/BaseGameVersion.h"
-#include "mc/world/item/registry/ItemRegistryComplexAlias.h"
-
-// auto generated forward declare list
-// clang-format off
-class Block;
-namespace FlatteningUtils { struct LegacyBlockInfo; }
-// clang-format on
-
 namespace FlatteningUtils {
 
 struct Instance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::FlatteningUtils::LegacyBlockInfo const&> info;
-    ::ll::TypedStorage<8, 64, ::std::function<::Block const*(int)>>     blockComplexAliasCallback;
-    ::ll::TypedStorage<8, 96, ::ItemRegistryComplexAlias>               itemComplexAliasCallback;
-    ::ll::TypedStorage<8, 64, ::std::function<void()>>                  registerAlteredStatesCallback;
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                        baseGameVersion;
-    ::ll::TypedStorage<8, 24, ::SemVersion>                             blockJsonFormatVersion;
+    ::ll::UntypedStorage<8, 8>  mUnk73e163;
+    ::ll::UntypedStorage<8, 64> mUnkc19403;
+    ::ll::UntypedStorage<8, 96> mUnk1c2103;
+    ::ll::UntypedStorage<8, 64> mUnk511b3d;
+    ::ll::UntypedStorage<8, 32> mUnk69fed9;
+    ::ll::UntypedStorage<8, 24> mUnk413ef2;
     // NOLINTEND
 
 public:
@@ -36,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~Instance();
+    MCNAPI ~Instance();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

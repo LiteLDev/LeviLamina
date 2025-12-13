@@ -2,45 +2,46 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/BiomeIdType.h"
-#include "mc/deps/json/Value.h"
-#include "mc/world/level/WorldVersion.h"
-
 // auto generated forward declare list
 // clang-format off
 class LevelData;
-struct BlockLayer;
+namespace Json { class Value; }
 // clang-format on
 
 class FlatWorldOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                          mEncodingVersion;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockLayer>> mBlockLayers;
-    ::ll::TypedStorage<2, 2, ::BiomeIdType>                mBiomeId;
-    ::ll::TypedStorage<8, 16, ::Json::Value>               mStructureOptions;
-    ::ll::TypedStorage<1, 1, ::WorldVersion>               mWorldVersion;
+    ::ll::UntypedStorage<4, 4>  mUnk3e86f2;
+    ::ll::UntypedStorage<8, 24> mUnkeb1112;
+    ::ll::UntypedStorage<2, 2>  mUnkd2ee2a;
+    ::ll::UntypedStorage<8, 16> mUnk397123;
+    ::ll::UntypedStorage<1, 1>  mUnkb4c0eb;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FlatWorldOptions& operator=(FlatWorldOptions const&);
+    FlatWorldOptions(FlatWorldOptions const&);
+    FlatWorldOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _load(::Json::Value const& root, ::LevelData const& levelData);
+    MCNAPI bool _load(::Json::Value const& root, ::LevelData const& levelData);
 
-    MCAPI ~FlatWorldOptions();
+    MCNAPI ~FlatWorldOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value getLayers(::LevelData const& levelData);
+    MCNAPI static ::Json::Value getLayers(::LevelData const& levelData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

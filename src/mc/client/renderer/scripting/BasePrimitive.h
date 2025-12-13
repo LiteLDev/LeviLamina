@@ -32,31 +32,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::Scripting::RenderHelper::PrimitiveType getType() const = 0;
 
-    // vIndex: 1
     virtual ::Vec3 const& getPosition() const = 0;
 
-    // vIndex: 2
     virtual void setPosition(::Vec3 const&);
 
-    // vIndex: 3
     virtual void updateBoundingBox(::Vec3 const&, ::AABB&) const;
 
-    // vIndex: 4
     virtual ~BasePrimitive() = default;
 
-    // vIndex: 5
     virtual void _rebuild() = 0;
 
-    // vIndex: 6
     virtual void _getVertices(::std::vector<::Scripting::RenderHelper::Vertex>&) = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $setPosition(::Vec3 const&);
+#endif
+
 
     // NOLINTEND
 };

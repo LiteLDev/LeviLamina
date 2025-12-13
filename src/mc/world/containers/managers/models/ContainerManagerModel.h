@@ -16,9 +16,11 @@ class BlockPos;
 class ContainerManagerController;
 class ContainerModel;
 class DynamicContainerTracker;
+class HashedString;
 class IContainerRegistryAccess;
 class ItemStack;
 class Player;
+struct ActorUniqueID;
 struct FullContainerName;
 struct PlayerContainerRefresher;
 namespace Bedrock::PubSub { class Subscription; }
@@ -70,58 +72,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ContainerManagerModel() /*override*/;
 
-    // vIndex: 14
     virtual bool tick();
 
-    // vIndex: 1
     virtual ::ContainerID getContainerId() const /*override*/;
 
-    // vIndex: 2
     virtual void setContainerId(::ContainerID id) /*override*/;
 
-    // vIndex: 3
     virtual ::SharedTypes::Legacy::ContainerType getContainerType() const /*override*/;
 
-    // vIndex: 4
     virtual void setContainerType(::SharedTypes::Legacy::ContainerType type) /*override*/;
 
-    // vIndex: 5
     virtual ::Bedrock::PubSub::Subscription
     registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const
         /*override*/;
 
-    // vIndex: 15
     virtual void debitPlayerLevels(int levels);
 
-    // vIndex: 16
     virtual bool isCreativeMode() const;
 
-    // vIndex: 17
     virtual bool isClientSide() const;
 
-    // vIndex: 18
     virtual bool isServerAuthoritative() const;
 
-    // vIndex: 19
     virtual bool isValid(float pickRange);
 
-    // vIndex: 6
     virtual void serverInitItemStackIds() /*override*/;
 
-    // vIndex: 11
     virtual void
     setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool) /*override*/;
 
-    // vIndex: 12
     virtual ::ItemStack const& getFullContainerSlot(int slot, ::FullContainerName const& name) const /*override*/;
 
-    // vIndex: 13
     virtual void broadcastChanges() /*override*/;
 
-    // vIndex: 20
     virtual ::ContainerScreenContext _postInit() = 0;
     // NOLINTEND
 
@@ -135,6 +120,20 @@ public:
     MCAPI bool _isPlayerInRangeOfPosition(::BlockPos const& blockPos, float pickRange) const;
 
     MCAPI void addDynamicContainer(::std::shared_ptr<::ContainerModel> model);
+
+    MCAPI_C bool blockHasCustomName(::BlockPos const& blockPos) const;
+
+    MCAPI_C ::std::string getBlockDisplayName(::BlockPos const& blockPos) const;
+
+    MCAPI_C ::HashedString getBlockLocName(::BlockPos const& blockPos) const;
+
+    MCAPI_C ::std::shared_ptr<::ContainerModel> getDynamicContainer(::FullContainerName const& name);
+
+    MCAPI_C ::HashedString getEntityLocName(::ActorUniqueID const& actorUniqueID) const;
+
+    MCAPI_C ::std::string getEntityName(::ActorUniqueID const& actorUniqueID) const;
+
+    MCAPI_C void grantExperience(int amount);
 
     MCAPI void postInit();
     // NOLINTEND
@@ -184,6 +183,8 @@ public:
     MCAPI ::ItemStack const& $getFullContainerSlot(int slot, ::FullContainerName const& name) const;
 
     MCAPI void $broadcastChanges();
+
+
     // NOLINTEND
 
 public:

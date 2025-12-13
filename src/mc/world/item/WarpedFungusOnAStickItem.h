@@ -18,19 +18,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 51
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 56
     virtual int getEnchantValue() const /*override*/;
 
-    // vIndex: 0
     virtual ~WarpedFungusOnAStickItem() /*override*/ = default;
     // NOLINTEND
 
@@ -56,6 +51,8 @@ public:
     MCAPI int $getEnchantSlot() const;
 
     MCFOLD int $getEnchantValue() const;
+
+
     // NOLINTEND
 
 public:

@@ -13,13 +13,10 @@ class IScriptSentryPlugin {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IScriptSentryPlugin() = default;
 
-    // vIndex: 1
     virtual void setSentryLogger(::std::unique_ptr<::ScriptSentryLogger>) = 0;
 
-    // vIndex: 2
     virtual ::std::string const& getPlatformName() const = 0;
     // NOLINTEND
 

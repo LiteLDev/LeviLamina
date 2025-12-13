@@ -38,13 +38,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LootItemCondition() = default;
 
-    // vIndex: 1
     virtual bool applies(::Random&, ::LootTableContext&) = 0;
 
-    // vIndex: 2
     virtual ::LootItemCondition::ConditionType getConditionType() const = 0;
     // NOLINTEND
 

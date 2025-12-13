@@ -14,15 +14,12 @@ class ServerGameplayUserManagerProxy : public ::GameplayUserManagerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::optional<::std::string>
     validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const
         /*override*/;
 
-    // vIndex: 2
     virtual bool shouldGeneratePlayerIndex() const /*override*/;
 
-    // vIndex: 0
     virtual ~ServerGameplayUserManagerProxy() /*override*/ = default;
     // NOLINTEND
 
@@ -33,6 +30,8 @@ public:
     $validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const;
 
     MCNAPI bool $shouldGeneratePlayerIndex() const;
+
+
     // NOLINTEND
 
 public:

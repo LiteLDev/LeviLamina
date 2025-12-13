@@ -118,10 +118,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RtpTransportControllerSend() /*override*/;
 
-    // vIndex: 2
     virtual ::webrtc::RtpVideoSenderInterface* CreateRtpVideoSender(
         ::std::map<uint, ::webrtc::RtpState> const&                  suspended_ssrcs,
         ::std::map<uint, ::webrtc::RtpPayloadState> const&           states,
@@ -134,105 +132,74 @@ public:
         ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
     ) /*override*/;
 
-    // vIndex: 3
     virtual void DestroyRtpVideoSender(::webrtc::RtpVideoSenderInterface* rtp_video_sender) /*override*/;
 
-    // vIndex: 4
     virtual void RegisterSendingRtpStream(::webrtc::RtpRtcpInterface& rtp_module) /*override*/;
 
-    // vIndex: 5
     virtual void DeRegisterSendingRtpStream(::webrtc::RtpRtcpInterface& rtp_module) /*override*/;
 
-    // vIndex: 1
     virtual ::webrtc::PacketRouter* packet_router() /*override*/;
 
-    // vIndex: 6
     virtual ::webrtc::NetworkStateEstimateObserver* network_state_estimate_observer() /*override*/;
 
-    // vIndex: 7
     virtual ::webrtc::RtpPacketSender* packet_sender() /*override*/;
 
-    // vIndex: 8
     virtual void SetAllocatedSendBitrateLimits(::webrtc::BitrateAllocationLimits limits) /*override*/;
 
-    // vIndex: 9
     virtual void ReconfigureBandwidthEstimation(::webrtc::BandwidthEstimationSettings const& settings) /*override*/;
 
-    // vIndex: 10
     virtual void SetPacingFactor(float pacing_factor) /*override*/;
 
-    // vIndex: 11
     virtual void SetQueueTimeLimit(int limit_ms) /*override*/;
 
-    // vIndex: 12
     virtual ::webrtc::StreamFeedbackProvider* GetStreamFeedbackProvider() /*override*/;
 
-    // vIndex: 13
     virtual void RegisterTargetTransferRateObserver(::webrtc::TargetTransferRateObserver* observer) /*override*/;
 
-    // vIndex: 14
     virtual void
     OnNetworkRouteChanged(::std::string_view transport_name, ::rtc::NetworkRoute const& network_route) /*override*/;
 
-    // vIndex: 15
     virtual void OnNetworkAvailability(bool network_available) /*override*/;
 
-    // vIndex: 16
     virtual ::webrtc::NetworkLinkRtcpObserver* GetRtcpObserver() /*override*/;
 
-    // vIndex: 17
     virtual int64 GetPacerQueuingDelayMs() const /*override*/;
 
-    // vIndex: 18
     virtual ::std::optional<::webrtc::Timestamp> GetFirstPacketTime() const /*override*/;
 
-    // vIndex: 19
     virtual void EnablePeriodicAlrProbing(bool enable) /*override*/;
 
-    // vIndex: 20
     virtual void OnSentPacket(::rtc::SentPacket const& sent_packet) /*override*/;
 
-    // vIndex: 21
     virtual void OnReceivedPacket(::webrtc::ReceivedPacket const& packet_msg) /*override*/;
 
-    // vIndex: 22
     virtual void SetSdpBitrateParameters(::webrtc::BitrateConstraints const& constraints) /*override*/;
 
-    // vIndex: 23
     virtual void SetClientBitratePreferences(::webrtc::BitrateSettings const& preferences) /*override*/;
 
-    // vIndex: 24
     virtual void OnTransportOverheadChanged(uint64 transport_overhead_bytes_per_packet) /*override*/;
 
-    // vIndex: 25
     virtual void AccountForAudioPacketsInPacedSender(bool account_for_audio) /*override*/;
 
-    // vIndex: 26
     virtual void IncludeOverheadInPacedSender() /*override*/;
 
-    // vIndex: 27
     virtual void EnsureStarted() /*override*/;
 
-    // vIndex: 2
     virtual void
     OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp receive_time, ::webrtc::DataRate bitrate) /*override*/;
 
-    // vIndex: 3
     virtual void OnReport(
         ::webrtc::Timestamp                               receive_time,
         ::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks
     ) /*override*/;
 
-    // vIndex: 4
     virtual void OnRttUpdate(::webrtc::Timestamp receive_time, ::webrtc::TimeDelta rtt) /*override*/;
 
-    // vIndex: 1
     virtual void OnTransportFeedback(
         ::webrtc::Timestamp                      receive_time,
         ::webrtc::rtcp::TransportFeedback const& feedback
     ) /*override*/;
 
-    // vIndex: 0
     virtual void OnRemoteNetworkEstimate(::webrtc::NetworkStateEstimate estimate) /*override*/;
     // NOLINTEND
 
@@ -365,6 +332,8 @@ public:
     $OnTransportFeedback(::webrtc::Timestamp receive_time, ::webrtc::rtcp::TransportFeedback const& feedback);
 
     MCNAPI void $OnRemoteNetworkEstimate(::webrtc::NetworkStateEstimate estimate);
+
+
     // NOLINTEND
 
 public:

@@ -34,10 +34,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptSimpleBlockPaletteItem() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> setBlock(
         ::std::variant<
             ::std::string,
@@ -45,11 +43,9 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
     ) /*override*/;
 
-    // vIndex: 2
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     getBlock() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
     getServiceBlockPaletteItem() const /*override*/;
     // NOLINTEND
@@ -81,6 +77,8 @@ public:
 
     MCNAPI ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
     $getServiceBlockPaletteItem() const;
+
+
     // NOLINTEND
 
 public:

@@ -14,9 +14,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
 class ChunkSource;
 class Dimension;
+class IPlayerDimensionTransferConnector;
 class LevelChunk;
+class Player;
 class SubChunkPos;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
@@ -43,6 +46,18 @@ public:
         SubChunkChange& operator=(SubChunkChange const&);
         SubChunkChange(SubChunkChange const&);
         SubChunkChange();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ~SubChunkChange();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -71,19 +86,65 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SubChunkManager();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, short, bool)>&
     getOnSubChunkLoadedConnector() /*override*/;
 
-    // vIndex: 0
     virtual ~SubChunkManager() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit SubChunkManager(::std::function<::Player*()> getPrimaryLocalPlayer);
+
+    MCNAPI_C void applySubChunkChanges(::BlockSource& source, ::LevelChunk& levelChunk, short absoluteSubChunkIndex);
+
+    MCNAPI_C void onSubChunkLoaded(
+        ::DimensionType playerDimension,
+        ::ChunkSource&  source,
+        ::LevelChunk&   lc,
+        short           absoluteSubChunkIndex,
+        bool            subChunkVisibilityChanged
+    );
+
+    MCNAPI_C void pruneSubChunkChanges(::DimensionType playerDimension);
+
+    MCNAPI_C void
+    registerWithPlayerDimensionTransferConnector(::IPlayerDimensionTransferConnector& playerDimensionTransferConnector);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI_C static ::std::chrono::nanoseconds const& SUBCHUNK_CHANGE_TIMEOUT();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::function<::Player*()> getPrimaryLocalPlayer);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, short, bool)>&
+    $getOnSubChunkLoadedConnector();
+#endif
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

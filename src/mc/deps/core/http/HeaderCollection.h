@@ -33,6 +33,8 @@ public:
 
     MCNAPI void set(::std::string const& headerName, ::std::string const& headerValue);
 
+    MCNAPI_C void setNoSafetyChecks(::std::string const& headerName, ::std::string const& headerValue);
+
     MCNAPI ~HeaderCollection();
     // NOLINTEND
 

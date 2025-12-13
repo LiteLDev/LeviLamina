@@ -22,7 +22,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RecipeIngredient() /*override*/;
     // NOLINTEND
 
@@ -33,15 +32,15 @@ public:
 
     MCAPI explicit RecipeIngredient(::ReadOnlyBinaryStream& stream);
 
-    MCAPI RecipeIngredient(::BlockType const& block, ushort stackSize);
-
     MCAPI RecipeIngredient(::Block const& block, ushort stackSize);
+
+    MCAPI RecipeIngredient(::BlockType const& block, ushort stackSize);
 
     MCAPI RecipeIngredient(::ItemTag const& itemTag, ushort stackSize);
 
-    MCAPI RecipeIngredient(::std::string_view item, int auxValue, ushort stackSize);
-
     MCAPI RecipeIngredient(::Item const& item, int auxValue, ushort stackSize);
+
+    MCAPI RecipeIngredient(::std::string_view item, int auxValue, ushort stackSize);
 
     MCFOLD ::RecipeIngredient& operator=(::RecipeIngredient const&);
     // NOLINTEND
@@ -59,15 +58,15 @@ public:
 
     MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void* $ctor(::BlockType const& block, ushort stackSize);
-
     MCAPI void* $ctor(::Block const& block, ushort stackSize);
+
+    MCAPI void* $ctor(::BlockType const& block, ushort stackSize);
 
     MCAPI void* $ctor(::ItemTag const& itemTag, ushort stackSize);
 
-    MCAPI void* $ctor(::std::string_view item, int auxValue, ushort stackSize);
-
     MCAPI void* $ctor(::Item const& item, int auxValue, ushort stackSize);
+
+    MCAPI void* $ctor(::std::string_view item, int auxValue, ushort stackSize);
     // NOLINTEND
 
 public:

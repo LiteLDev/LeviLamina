@@ -15,28 +15,37 @@ class RepeatUntilSuccessNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorNode>> mActiveChild;
-    ::ll::TypedStorage<4, 4, int>                               mMaxNumberOfAttempts;
-    ::ll::TypedStorage<4, 4, int>                               mCurrentAttempt;
+    ::ll::UntypedStorage<8, 8> mUnkd57cf2;
+    ::ll::UntypedStorage<4, 4> mUnkd652a1;
+    ::ll::UntypedStorage<4, 4> mUnk5f58d6;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RepeatUntilSuccessNode& operator=(RepeatUntilSuccessNode const&);
+    RepeatUntilSuccessNode(RepeatUntilSuccessNode const&);
+    RepeatUntilSuccessNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
-    // vIndex: 2
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
-    // vIndex: 0
     virtual ~RepeatUntilSuccessNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromDefinition(::Actor& owner);
+    MCNAPI void $initializeFromDefinition(::Actor& owner);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
+#endif
+
+
     // NOLINTEND
 
 public:

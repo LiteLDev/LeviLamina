@@ -27,6 +27,20 @@ public:
         IncomingData& operator=(IncomingData const&);
         IncomingData(IncomingData const&);
         IncomingData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ::LocalNetworkPeer::IncomingData& operator=(::LocalNetworkPeer::IncomingData&&);
+
+        MCNAPI_C ~IncomingData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -40,34 +54,64 @@ public:
     // prevent constructor by default
     LocalNetworkPeer& operator=(LocalNetworkPeer const&);
     LocalNetworkPeer(LocalNetworkPeer const&);
-    LocalNetworkPeer();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
+    virtual void sendPacket(::std::string const& data, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
 
-    // vIndex: 2
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
-    // vIndex: 5
     virtual bool isLocal() const /*override*/;
 
-    // vIndex: 6
     virtual bool isEncrypted() const /*override*/;
 
-    // vIndex: 7
-    virtual ::NetworkPeer::DataStatus
-    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
+    virtual ::NetworkPeer::DataStatus _receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    ) /*override*/;
 
-    // vIndex: 0
     virtual ~LocalNetworkPeer() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C LocalNetworkPeer();
+
+    MCNAPI_C void addIncomingData(::std::string data);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability, ::Compressibility);
 
+    MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+
+    MCNAPI bool $isLocal() const;
+
+    MCNAPI bool $isEncrypted() const;
+
+    MCNAPI ::NetworkPeer::DataStatus $_receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    );
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

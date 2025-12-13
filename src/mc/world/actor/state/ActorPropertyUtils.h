@@ -6,10 +6,13 @@
 // clang-format off
 class Actor;
 class ActorDefinitionDiffList;
+class EntityOverrides;
 class HashedString;
 class PropertyComponent;
 class PropertyGroup;
+struct ActorUniqueID;
 struct MolangScriptArg;
+struct PropertySyncData;
 // clang-format on
 
 namespace ActorPropertyUtils {
@@ -52,6 +55,13 @@ MCAPI void addPendingEventResponseChange(
     ::HashedString const&      propertyName,
     ::MolangScriptArg const&   molangResult,
     ::std::string const&       displayName
+);
+
+MCAPI_C void ingestPropertySyncData(
+    ::PropertyComponent&      props,
+    ::PropertySyncData const& syncData,
+    ::ActorUniqueID           id,
+    ::EntityOverrides const&  overrides
 );
 
 MCAPI bool tryQueueBoolValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, bool value);

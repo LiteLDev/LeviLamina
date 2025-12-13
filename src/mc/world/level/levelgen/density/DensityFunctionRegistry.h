@@ -2,15 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct DensityFunctionPtr;
-// clang-format on
-
 class DensityFunctionRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DensityFunctionPtr>> mFunctions;
+    ::ll::UntypedStorage<8, 64> mUnk98ae3b;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DensityFunctionRegistry& operator=(DensityFunctionRegistry const&);
+    DensityFunctionRegistry(DensityFunctionRegistry const&);
+    DensityFunctionRegistry();
 };

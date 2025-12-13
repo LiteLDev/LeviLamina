@@ -54,36 +54,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptPlugin() /*override*/;
 
-    // vIndex: 1
     virtual ::std::optional<::Scripting::ScriptData> onLoadScript(::std::string const& name) /*override*/;
 
-    // vIndex: 1
     virtual void onInfo(::Scripting::ContextId contextId, ::std::string_view message) const /*override*/;
 
-    // vIndex: 2
     virtual void onWarn(::Scripting::ContextId contextId, ::std::string_view message) const /*override*/;
 
-    // vIndex: 3
     virtual void onError(::Scripting::ContextId contextId, ::std::string_view message) const /*override*/;
 
-    // vIndex: 4
     virtual void onException(
         ::Scripting::ContextId        contextId,
         ::Scripting::BaseError const& error,
         ::entt::meta_any const&       errorAny
     ) const /*override*/;
 
-    // vIndex: 5
     virtual bool shouldPrintException(
         ::Scripting::ContextId        contextId,
         ::Scripting::BaseError const& error,
         ::entt::meta_any const&       errorAny
     ) const /*override*/;
 
-    // vIndex: 6
     virtual void onPromiseRejection(
         ::Scripting::ContextId        contextId,
         ::Scripting::BaseError const& error,
@@ -165,6 +157,8 @@ public:
         ::entt::meta_any const&       errorAny,
         bool                          isHandled
     ) const;
+
+
     // NOLINTEND
 
 public:

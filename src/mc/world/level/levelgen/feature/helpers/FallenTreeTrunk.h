@@ -3,17 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
-#include "mc/util/IntRange.h"
-#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeTrunk.h"
-#include "mc/world/level/levelgen/feature/helpers/tree_helper/AttachableDecoration.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class IBlockWorldGenAPI;
-class IFeature;
 class ITreeCanopy;
 class Random;
 class RenderParams;
@@ -24,24 +19,27 @@ class FallenTreeTrunk : public ::ITreeTrunk {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::IntRange>                           mLogLength;
-    ::ll::TypedStorage<4, 8, ::IntRange>                           mHeightModifier;
-    ::ll::TypedStorage<4, 8, ::IntRange>                           mStumpHeight;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mTrunkBlockDescriptor;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>               mLogDecorationFeature;
-    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
+    ::ll::UntypedStorage<4, 8>   mUnkff52c7;
+    ::ll::UntypedStorage<4, 8>   mUnk2fe6cb;
+    ::ll::UntypedStorage<4, 8>   mUnk318b99;
+    ::ll::UntypedStorage<8, 184> mUnk80a26d;
+    ::ll::UntypedStorage<8, 24>  mUnk99fb8f;
+    ::ll::UntypedStorage<8, 208> mUnk4d2496;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FallenTreeTrunk& operator=(FallenTreeTrunk const&);
+    FallenTreeTrunk(FallenTreeTrunk const&);
+    FallenTreeTrunk();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FallenTreeTrunk() /*override*/ = default;
 
-    // vIndex: 2
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
@@ -56,9 +54,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getTreeHeight(::Random& random) const;
+    MCNAPI int $getTreeHeight(::Random& random) const;
 
-    MCAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,
@@ -67,6 +65,8 @@ public:
         ::TreeHelper::TreeParams const& treeParams,
         ::ITreeCanopy const*
     ) const;
+
+
     // NOLINTEND
 
 public:

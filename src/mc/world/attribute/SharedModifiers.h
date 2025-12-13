@@ -11,16 +11,16 @@ class SharedModifiers {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::AttributeModifier>& DAMAGE_BOOST();
+    MCNAPI static ::std::shared_ptr<::AttributeModifier>& DAMAGE_BOOST();
 
-    MCAPI static ::std::shared_ptr<::AttributeModifier>& HEALTH_BOOST();
+    MCNAPI static ::std::shared_ptr<::AttributeModifier>& HEALTH_BOOST();
 
-    MCAPI static ::std::shared_ptr<::AttributeModifier>& MOVEMENT_SLOWDOWN();
+    MCNAPI static ::std::shared_ptr<::AttributeModifier>& MOVEMENT_SLOWDOWN();
 
-    MCAPI static ::std::shared_ptr<::AttributeModifier>& MOVEMENT_SPEED();
+    MCNAPI static ::std::shared_ptr<::AttributeModifier>& MOVEMENT_SPEED();
 
-    MCAPI static ::std::shared_ptr<::AttributeModifier>& SPRINTING_BOOST();
+    MCNAPI static ::std::shared_ptr<::AttributeModifier>& SPRINTING_BOOST();
 
-    MCAPI static ::std::shared_ptr<::AttributeModifier>& WEAKNESS();
+    MCNAPI static ::std::shared_ptr<::AttributeModifier>& WEAKNESS();
     // NOLINTEND
 };

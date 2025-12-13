@@ -27,14 +27,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SimplePlayerContainer() /*override*/ = default;
 
-    // vIndex: 7
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
     // NOLINTEND
 
 public:
@@ -42,7 +39,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+
+
     // NOLINTEND
 
 public:

@@ -52,25 +52,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FileSystemImpl() = default;
 
-    // vIndex: 1
     virtual ::Core::Result getLastModificationTime(::Core::PathView entryPath, int64* lastModificationTime);
 
-    // vIndex: 2
     virtual ::Core::Result copyTimeAndAccessRights(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
 
-    // vIndex: 3
     virtual bool shouldCommit();
 
-    // vIndex: 4
     virtual ::Core::CrossStorageCopyMode getCrossStorageCopyMode();
 
-    // vIndex: 5
     virtual uint64 getTransactionWriteSizeLimit() const;
 
-    // vIndex: 6
     virtual ::Core::Result _openFile(
         ::std::unique_ptr<::Core::FileImpl>&,
         ::Core::PathView,
@@ -78,28 +71,20 @@ public:
         ::Core::FileBufferingMode
     ) = 0;
 
-    // vIndex: 7
     virtual bool _fileExists(::Core::PathView) = 0;
 
-    // vIndex: 8
     virtual ::Core::Result _deleteFile(::Core::PathView) = 0;
 
-    // vIndex: 9
     virtual ::Core::Result _deleteFilePriority(::Core::PathView filePath);
 
-    // vIndex: 10
     virtual ::Core::Result _getFileSize(::Core::PathView, uint64*) = 0;
 
-    // vIndex: 11
     virtual ::Core::Result _renameFile(::Core::PathView, ::Core::PathView) = 0;
 
-    // vIndex: 12
     virtual ::Core::Result _createEmptyFile(::Core::PathView fileName);
 
-    // vIndex: 13
     virtual ::Core::Result _copyFile(::Core::PathView sourceFileName, ::Core::PathView targetFileName);
 
-    // vIndex: 14
     virtual ::Core::Result _copyFileWithLimit(
         ::Core::PathView sourceFileName,
         ::Core::PathView targetFileName,
@@ -108,92 +93,67 @@ public:
         uint64&          outBytesRemaining
     );
 
-    // vIndex: 15
     virtual ::Core::Result _readFileData(::Core::PathView filePath, ::std::vector<uchar>& data);
 
-    // vIndex: 16
     virtual ::Core::Result _createOneDirectory(::Core::PathView) = 0;
 
-    // vIndex: 17
     virtual ::Core::Result _createOneDirectoryIfNotExisting(::Core::PathView directoryPath);
 
-    // vIndex: 18
     virtual ::Core::Result _createDirectoryRecursively(::Core::PathView directoryPath);
 
-    // vIndex: 19
     virtual bool _directoryExists(::Core::PathView) = 0;
 
-    // vIndex: 20
     virtual ::Core::Result _deleteEmptyDirectory(::Core::PathView) = 0;
 
-    // vIndex: 21
     virtual ::Core::Result _deleteDirectoryAndContentsRecursively(::Core::PathView directoryPath);
 
-    // vIndex: 22
     virtual ::Core::Result _deleteDirectoryContentsRecursively(::Core::PathView directoryPath);
 
-    // vIndex: 23
     virtual ::Core::Result _deleteRecursively(::Core::PathView directoryPath, ::Core::FileType deleteFileType);
 
-    // vIndex: 24
     virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) = 0;
 
-    // vIndex: 25
     virtual ::Core::Result _iterateOverDirectory(
         ::Core::PathView,
         ::Core::DirectoryIterationFlags,
         ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
     ) = 0;
 
-    // vIndex: 26
     virtual ::Core::Result
     _getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::PathView directoryPath);
 
-    // vIndex: 27
     virtual ::Core::Result _getDirectoryFilesRecursively(
         ::std::vector<::Core::PathBuffer<::std::string>>& filesOut,
         ::Core::PathView                                  directoryPath
     );
 
-    // vIndex: 28
     virtual ::Core::Result _getDirectoryFilesSizeRecursively(uint64& totalSize, ::Core::PathView directoryPath);
 
-    // vIndex: 29
     virtual ::Core::Result _getDirectoryFilesAllocatedSizeRecursively(
         uint64&          totalSize,
         uint64&          totalSizeAllocated,
         ::Core::PathView directoryPath
     );
 
-    // vIndex: 30
     virtual ::Core::Result
     _copyDirectoryAndContentsRecursively(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
-    // vIndex: 31
     virtual bool _fileOrDirectoryExists(::Core::PathView) = 0;
 
-    // vIndex: 32
     virtual ::Core::Result _getFileOrDirectorySize(::Core::PathView entryName, uint64* pFileSizeOut);
 
-    // vIndex: 33
     virtual ::Core::Result _getEntryType(::Core::PathView, ::Core::FileType&) = 0;
 
-    // vIndex: 34
     virtual ::Core::Result _addIgnoredThrottlePath(::Core::PathView);
 
-    // vIndex: 35
     virtual ::Core::Result _removeIgnoredThrottlePath(::Core::PathView);
 
-    // vIndex: 36
     virtual ::Core::Result _createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
-    // vIndex: 37
     virtual bool _flatFileFileExists(::Core::PathView filePath, ::Core::PathView manifestPath);
 
-    // vIndex: 38
     virtual bool _flatFileDirectoryExists(::Core::PathView directoryPath, ::Core::PathView manifestPath);
 
-    // vIndex: 39
     virtual ::Core::Result _flatFileIterateOverDirectory(
         ::Core::PathView                                                             directoryPath,
         ::Core::PathView                                                             manifestPath,
@@ -201,10 +161,8 @@ public:
         ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> callbackFunction
     );
 
-    // vIndex: 40
     virtual bool _isDirectoryPathAFlatFile(::Core::PathView directoryPath);
 
-    // vIndex: 41
     virtual ::Core::Result _copyFlatFile(
         ::Core::PathView                           sourceDirectoryPath,
         ::Core::PathView                           targetDirectoryPath,
@@ -212,7 +170,6 @@ public:
         ::std::vector<::Core::ExcludedPath> const& excludedFiles
     );
 
-    // vIndex: 42
     virtual ::Core::Result _flatFileDeleteFileOrDirectory(
         ::Core::PathView fileOrDirectoryPath,
         ::Core::PathView manifestPath,
@@ -220,20 +177,15 @@ public:
         bool             deleteRecursively
     );
 
-    // vIndex: 43
     virtual ::Core::Result
     _flatFileGetFileSize(::Core::PathView filePath, ::Core::PathView manifestPath, uint64* pFileSize);
 
-    // vIndex: 44
     virtual ::Core::Result _getLastModificationTime(::Core::PathView, int64*) = 0;
 
-    // vIndex: 45
     virtual ::Core::Result _copyTimeAndAccessRights(::Core::PathView, ::Core::PathView) = 0;
 
-    // vIndex: 46
     virtual ::Core::Result _endTransaction();
 
-    // vIndex: 47
     virtual ::Core::Result _writeOperation(
         ::Core::PathView                                fullPath,
         ::Core::Result&&                                result,
@@ -241,7 +193,6 @@ public:
         uint64                                          numBytesWritten
     );
 
-    // vIndex: 48
     virtual void _initializeInternal();
     // NOLINTEND
 
@@ -477,6 +428,8 @@ public:
     );
 
     MCNAPI void $_initializeInternal();
+
+
     // NOLINTEND
 
 public:

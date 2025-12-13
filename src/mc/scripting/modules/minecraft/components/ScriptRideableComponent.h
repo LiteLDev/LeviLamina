@@ -24,7 +24,6 @@ class ScriptRideableComponent
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptRideableComponent() /*override*/ = default;
     // NOLINTEND
 

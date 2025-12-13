@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/animation/KeyFrameLerpMode.h"
+#include "mc/world/actor/animation/BoneTransformType.h"
 
 // auto generated forward declare list
 // clang-format off
+class BoneOrientation;
 class ExpressionNode;
-class KeyFrameTransformData;
+class RenderParams;
 class Vec3;
 // clang-format on
 
@@ -16,9 +17,9 @@ class KeyFrameTransform {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::KeyFrameTransformData>> mPrePost;
-    ::ll::TypedStorage<8, 16, ::KeyFrameLerpMode>                     mLerpMode;
-    ::ll::TypedStorage<4, 4, float>                                   mKeyFrameTimeStamp;
+    ::ll::UntypedStorage<8, 24> mUnkb32d8a;
+    ::ll::UntypedStorage<8, 16> mUnk57e818;
+    ::ll::UntypedStorage<4, 4>  mUnk1b0226;
     // NOLINTEND
 
 public:
@@ -29,25 +30,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI KeyFrameTransform(::KeyFrameTransform const&);
+    MCNAPI KeyFrameTransform(::KeyFrameTransform const&);
 
-    MCAPI ::KeyFrameTransform& operator=(::KeyFrameTransform&&);
+    MCNAPI_C void animate(
+        ::RenderParams&     renderParams,
+        ::BoneOrientation&  destBoneOrientation,
+        float               scale,
+        ::BoneTransformType boneTransformType
+    ) const;
 
-    MCAPI bool optimizeAndGetDataValues(::Vec3& minValue, ::Vec3& maxValue);
+    MCNAPI ::KeyFrameTransform& operator=(::KeyFrameTransform&&);
 
-    MCAPI void set(::ExpressionNode const& expression);
+    MCNAPI bool optimizeAndGetDataValues(::Vec3& minValue, ::Vec3& maxValue);
 
-    MCAPI void set(::ExpressionNode const& expression, ::Vec3 const& axis);
+    MCNAPI void set(::ExpressionNode const& expression);
 
-    MCAPI void set(::ExpressionNode const& expression, int axisIndex);
+    MCNAPI void set(::ExpressionNode const& expression, ::Vec3 const& axis);
 
-    MCAPI ~KeyFrameTransform();
+    MCNAPI void set(::ExpressionNode const& expression, int axisIndex);
+
+    MCNAPI ~KeyFrameTransform();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void computeCubicPolynomial(
+    MCNAPI static void computeCubicPolynomial(
         ::KeyFrameTransform* p0,
         ::KeyFrameTransform& p1,
         ::KeyFrameTransform& p2,
@@ -58,12 +66,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::KeyFrameTransform const&);
+    MCNAPI void* $ctor(::KeyFrameTransform const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

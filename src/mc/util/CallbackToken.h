@@ -20,6 +20,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void cancelCallback();
 
+    MCNAPI_C ::CallbackToken& operator=(::CallbackToken&& rhs);
+
     MCNAPI void release();
 
     MCNAPI ~CallbackToken();

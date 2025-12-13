@@ -31,10 +31,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MinecraftJsonStyledWriter() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::std::string write(::Json::Value const&) /*override*/;
     // NOLINTEND
 

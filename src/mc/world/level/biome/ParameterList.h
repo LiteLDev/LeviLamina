@@ -2,20 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/RTree.h"
-
-// auto generated forward declare list
-// clang-format off
-struct BiomeNoiseTarget;
-// clang-format on
-
 class ParameterList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeNoiseTarget>> mNoiseTargets;
-    ::ll::TypedStorage<8, 168, ::std::optional<::RTree>>         mTree;
+    ::ll::UntypedStorage<8, 24>  mUnk22c268;
+    ::ll::UntypedStorage<8, 168> mUnkb49057;
     // NOLINTEND
 
 public:
@@ -27,20 +19,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParameterList(::ParameterList&&);
+    MCNAPI ParameterList(::ParameterList&&);
 
-    MCAPI ~ParameterList();
+    MCNAPI ~ParameterList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ParameterList&&);
+    MCNAPI void* $ctor(::ParameterList&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

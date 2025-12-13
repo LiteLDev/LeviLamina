@@ -16,12 +16,12 @@ struct ServerInstanceNotificationEvent
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ServerInstanceNotificationEvent();
+    MCNAPI ~ServerInstanceNotificationEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

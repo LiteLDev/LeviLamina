@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class AquiferNoises;
-class Block;
 class ChunkPos;
 class SurfaceLevelCache;
 struct OverworldNoises3d;
@@ -23,8 +22,6 @@ public:
     // clang-format on
 
     // Aquifer inner types define
-    using AquifierGridPos = ::BlockPos;
-
     struct FluidSample {
     public:
         // FluidSample inner types define
@@ -47,8 +44,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Block const&> mWater;
-        ::ll::TypedStorage<8, 8, ::Block const&> mLava;
+        ::ll::UntypedStorage<8, 8> mUnk33b760;
+        ::ll::UntypedStorage<8, 8> mUnkeef3f1;
         // NOLINTEND
 
     public:
@@ -57,6 +54,8 @@ public:
         LocalRegistry(LocalRegistry const&);
         LocalRegistry();
     };
+
+    using AquifierGridPos = ::BlockPos;
 
 public:
     // member variables
@@ -84,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Aquifer(
+    MCNAPI Aquifer(
         ::ChunkPos const&          chunkPos,
         ::AquiferNoises const&     aquiferNoises,
         ::OverworldNoises3d const& terrainNoises,
@@ -94,30 +93,30 @@ public:
         int                        seaLevel
     );
 
-    MCAPI float _calculatePressure(
+    MCNAPI float _calculatePressure(
         ::BlockPos                    worldPos,
         float&                        barrierNoiseValue,
         ::Aquifer::FluidSample const& fluidYClosest1,
         ::Aquifer::FluidSample const& fluidYClosest2
     ) const;
 
-    MCAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
+    MCNAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
 
-    MCAPI ::Aquifer::FluidSample _getOrComputeNewFluidSample(::BlockPos const& cellCenter);
+    MCNAPI ::Aquifer::FluidSample _getOrComputeNewFluidSample(::BlockPos const& cellCenter);
 
-    MCAPI void computeAt(::BlockPos const& worldPos);
+    MCNAPI void computeAt(::BlockPos const& worldPos);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
+    MCNAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ChunkPos const&          chunkPos,
         ::AquiferNoises const&     aquiferNoises,
         ::OverworldNoises3d const& terrainNoises,

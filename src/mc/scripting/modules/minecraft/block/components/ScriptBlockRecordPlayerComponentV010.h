@@ -22,7 +22,6 @@ class ScriptBlockRecordPlayerComponentV010 : public ::ScriptModuleMinecraft::Bas
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptBlockRecordPlayerComponentV010() /*override*/ = default;
     // NOLINTEND
 

@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/BiomeIdType.h"
-#include "mc/world/level/levelgen/flat/FlatWorldPresetID.h"
-
 // auto generated forward declare list
 // clang-format off
-struct FlatWorldLayer;
 namespace Json { class Value; }
 // clang-format on
 
@@ -16,9 +11,9 @@ struct FlatWorldPreset {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::FlatWorldPresetID>              id;
-    ::ll::TypedStorage<2, 2, ::BiomeIdType>                    biome;
-    ::ll::TypedStorage<8, 24, ::std::vector<::FlatWorldLayer>> layers;
+    ::ll::UntypedStorage<4, 4>  mUnk9f41d2;
+    ::ll::UntypedStorage<2, 2>  mUnk5db49e;
+    ::ll::UntypedStorage<8, 24> mUnk23449a;
     // NOLINTEND
 
 public:
@@ -30,22 +25,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlatWorldPreset(::FlatWorldPreset&&);
+    MCNAPI FlatWorldPreset(::FlatWorldPreset&&);
 
-    MCAPI ::Json::Value toJson() const;
+    MCNAPI_C ushort getBiomeId() const;
 
-    MCAPI ~FlatWorldPreset();
+    MCNAPI ::Json::Value toJson() const;
+
+    MCNAPI ~FlatWorldPreset();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FlatWorldPreset&&);
+    MCNAPI void* $ctor(::FlatWorldPreset&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BeaconBlockActor;
 class ContainerModel;
 class ContainerScreenContext;
 class ItemStack;
@@ -27,20 +28,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BeaconContainerManagerModel() /*override*/ = default;
 
-    // vIndex: 8
     virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
-    // vIndex: 9
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    // vIndex: 7
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    // vIndex: 20
     virtual ::ContainerScreenContext _postInit() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI_C void _sendBeaconPaymentPacket(::BeaconBlockActor& beacon);
+
+    MCAPI_C void confirmTransaction(bool isPaymentConfirmed);
+
+    MCAPI_C ::std::string getEffectHoverName(int iSlot, bool bSecondaryEffect);
+
+    MCAPI_C void selectEffect(int iSlot, bool bSecondaryEffect);
     // NOLINTEND
 
 public:
@@ -53,6 +61,8 @@ public:
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
     MCAPI ::ContainerScreenContext $_postInit();
+
+
     // NOLINTEND
 
 public:

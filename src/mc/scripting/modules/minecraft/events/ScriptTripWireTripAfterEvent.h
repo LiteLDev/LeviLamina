@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 // auto generated forward declare list
 // clang-format off
 struct TripWireTripEvent;
-namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -20,19 +18,20 @@ struct ScriptTripWireTripAfterEvent : public ::ScriptModuleMinecraft::ScriptBloc
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsPowered;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
-        mSources;
+    ::ll::UntypedStorage<1, 1>  mUnkccc723;
+    ::ll::UntypedStorage<8, 24> mUnk8ad5c8;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptTripWireTripAfterEvent& operator=(ScriptTripWireTripAfterEvent const&);
+    ScriptTripWireTripAfterEvent(ScriptTripWireTripAfterEvent const&);
     ScriptTripWireTripAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTripWireTripAfterEvent(
+    MCNAPI ScriptTripWireTripAfterEvent(
         ::TripWireTripEvent const&            tripWireTripEvent,
         ::Scripting::WeakLifetimeScope const& scope
     );
@@ -41,13 +40,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TripWireTripEvent const& tripWireTripEvent, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::TripWireTripEvent const& tripWireTripEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

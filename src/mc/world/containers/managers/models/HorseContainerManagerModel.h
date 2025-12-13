@@ -23,19 +23,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~HorseContainerManagerModel() /*override*/ = default;
 
-    // vIndex: 8
     virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
-    // vIndex: 9
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    // vIndex: 7
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    // vIndex: 20
     virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
@@ -57,6 +52,8 @@ public:
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
     MCAPI ::ContainerScreenContext $_postInit();
+
+
     // NOLINTEND
 
 public:

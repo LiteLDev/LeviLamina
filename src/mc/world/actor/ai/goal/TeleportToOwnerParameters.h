@@ -6,8 +6,14 @@ struct TeleportToOwnerParameters {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>  mMinTargetRadius;
-    ::ll::TypedStorage<4, 4, int>  mMaxTargetRadius;
-    ::ll::TypedStorage<1, 1, bool> mRandomizeAndCheckForClearance;
+    ::ll::UntypedStorage<4, 4> mUnk361990;
+    ::ll::UntypedStorage<4, 4> mUnk864269;
+    ::ll::UntypedStorage<1, 1> mUnkc355a4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TeleportToOwnerParameters& operator=(TeleportToOwnerParameters const&);
+    TeleportToOwnerParameters(TeleportToOwnerParameters const&);
+    TeleportToOwnerParameters();
 };

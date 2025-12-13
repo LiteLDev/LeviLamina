@@ -126,19 +126,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 13
     virtual ::EventResult onEvent(::ServerInstanceRequestResourceReload const& reloadEvent) /*override*/;
 
-    // vIndex: 13
     virtual ::EventResult onEvent(::LevelStartLeaveGameEvent const& levelStartLeaveGameEvent) /*override*/;
 
-    // vIndex: 0
     virtual ~ServerScriptManager() /*override*/;
 
-    // vIndex: 6
     virtual ::EventResult onServerUpdateEnd(::ServerInstance& instance) /*override*/;
 
-    // vIndex: 9
     virtual ::EventResult onServerThreadStarted(::ServerInstance& instance) /*override*/;
     // NOLINTEND
 
@@ -220,6 +215,8 @@ public:
     MCAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
 
     MCAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
+
+
     // NOLINTEND
 
 public:

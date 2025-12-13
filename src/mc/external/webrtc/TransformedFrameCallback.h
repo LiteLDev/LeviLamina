@@ -16,13 +16,10 @@ class TransformedFrameCallback : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void OnTransformedFrame(::std::unique_ptr<::webrtc::TransformableFrameInterface>) = 0;
 
-    // vIndex: 4
     virtual void StartShortCircuiting();
 
-    // vIndex: 2
     virtual ~TransformedFrameCallback() /*override*/;
     // NOLINTEND
 

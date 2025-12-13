@@ -20,7 +20,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 8
     virtual ~Chicken() /*override*/ = default;
     // NOLINTEND
 

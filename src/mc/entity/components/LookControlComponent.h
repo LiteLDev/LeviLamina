@@ -28,10 +28,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::Mob& owner);
+    MCNAPI void initialize(::Mob& owner);
 
-    MCAPI void setInternalType(::std::unique_ptr<::LookControl> type);
+    MCNAPI void setInternalType(::std::unique_ptr<::LookControl> type);
 
-    MCAPI void setLookAtPosition(::Actor const* target, float yMax, float xMax);
+    MCNAPI void setLookAtPosition(::Actor const* target, float yMax, float xMax);
     // NOLINTEND
 };

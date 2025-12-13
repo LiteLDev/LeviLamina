@@ -4,15 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_21_60/item/crafting_item_catalog/CraftingCatalogItemCategory.h"
-#include "mc/world/item/ItemInstance.h"
 
 class CraftingItemCatalogMergeResult {
 public:
     // CraftingItemCatalogMergeResult inner types declare
     // clang-format off
-    struct Category;
-    struct Group;
     struct Identifier;
+    struct Group;
+    struct Category;
     // clang-format on
 
     // CraftingItemCatalogMergeResult inner types define
@@ -20,8 +19,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>   mName;
-        ::ll::TypedStorage<8, 128, ::ItemInstance> mIcon;
+        ::ll::UntypedStorage<8, 32>  mUnke23999;
+        ::ll::UntypedStorage<8, 128> mUnk1a86f2;
         // NOLINTEND
 
     public:
@@ -33,21 +32,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Identifier(::CraftingItemCatalogMergeResult::Identifier&&);
+        MCNAPI Identifier(::CraftingItemCatalogMergeResult::Identifier&&);
 
-        MCAPI ~Identifier();
+        MCNAPI ~Identifier();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::CraftingItemCatalogMergeResult::Identifier&&);
+        MCNAPI void* $ctor(::CraftingItemCatalogMergeResult::Identifier&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -55,8 +54,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 168, ::std::optional<::CraftingItemCatalogMergeResult::Identifier>> mIdentifier;
-        ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>>                                  mItems;
+        ::ll::UntypedStorage<8, 168> mUnk2581b5;
+        ::ll::UntypedStorage<8, 24>  mUnk7e3c36;
         // NOLINTEND
 
     public:
@@ -68,23 +67,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Group(::CraftingItemCatalogMergeResult::Group&&);
+        MCNAPI Group(::CraftingItemCatalogMergeResult::Group&&);
 
-        MCAPI ::CraftingItemCatalogMergeResult::Group& operator=(::CraftingItemCatalogMergeResult::Group&&);
+        MCNAPI ::CraftingItemCatalogMergeResult::Group& operator=(::CraftingItemCatalogMergeResult::Group&&);
 
-        MCAPI ~Group();
+        MCNAPI ~Group();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::CraftingItemCatalogMergeResult::Group&&);
+        MCNAPI void* $ctor(::CraftingItemCatalogMergeResult::Group&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -92,53 +91,65 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::std::vector<::CraftingItemCatalogMergeResult::Group>> mGroups;
+        ::ll::UntypedStorage<8, 24> mUnke3ab8c;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Category& operator=(Category const&);
+        Category(Category const&);
+        Category();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Category();
+        MCNAPI ~Category();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::CraftingItemCatalogMergeResult::Category> mConstructionCategory;
-    ::ll::TypedStorage<8, 24, ::CraftingItemCatalogMergeResult::Category> mNatureCategory;
-    ::ll::TypedStorage<8, 24, ::CraftingItemCatalogMergeResult::Category> mEquipmentCategory;
-    ::ll::TypedStorage<8, 24, ::CraftingItemCatalogMergeResult::Category> mItemsCategory;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>                  mUsedItems;
+    ::ll::UntypedStorage<8, 24> mUnk653287;
+    ::ll::UntypedStorage<8, 24> mUnk983063;
+    ::ll::UntypedStorage<8, 24> mUnk6119e7;
+    ::ll::UntypedStorage<8, 24> mUnk51eea4;
+    ::ll::UntypedStorage<8, 64> mUnk887091;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CraftingItemCatalogMergeResult& operator=(CraftingItemCatalogMergeResult const&);
+    CraftingItemCatalogMergeResult(CraftingItemCatalogMergeResult const&);
+    CraftingItemCatalogMergeResult();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void insertAfterGroup(
+    MCNAPI void insertAfterGroup(
         ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory,
         ::std::string_view                                   groupName,
         ::CraftingItemCatalogMergeResult::Group              insertGroup
     );
 
-    MCAPI void insertAfterItemsGroup(
+    MCNAPI void insertAfterItemsGroup(
         ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory,
         ::std::string_view                                   itemName,
         ::CraftingItemCatalogMergeResult::Group              insertGroup
     );
 
-    MCAPI ~CraftingItemCatalogMergeResult();
+    MCNAPI ~CraftingItemCatalogMergeResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

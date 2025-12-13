@@ -42,32 +42,6 @@ public:
         BroadcastToClientManagers = 5,
     };
 
-    struct ConstructionInfo {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkaf66f0;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ConstructionInfo& operator=(ConstructionInfo const&);
-        ConstructionInfo(ConstructionInfo const&);
-        ConstructionInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ConstructionInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
     struct CachedPacket {
     public:
         // member variables
@@ -87,6 +61,32 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~CachedPacket();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct ConstructionInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnkaf66f0;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ConstructionInfo& operator=(ConstructionInfo const&);
+        ConstructionInfo(ConstructionInfo const&);
+        ConstructionInfo();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~ConstructionInfo();
         // NOLINTEND
 
     public:
@@ -116,57 +116,43 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PayloadService() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void>
     dispatchToSelf(::Editor::Network::INetworkPayload& payload) /*override*/;
 
-    // vIndex: 2
     virtual void onReceivePayload(::EditorNetworkPacket const& packet) /*override*/;
 
-    // vIndex: 3
     virtual void _registerPayload(
         char const*                                                              payloadName,
         ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc
     ) /*override*/;
 
-    // vIndex: 4
     virtual ::Scripting::Result_deprecated<void> _send(::Editor::Network::INetworkPayload& payload) /*override*/;
 
-    // vIndex: 5
     virtual ::Scripting::Result_deprecated<void>
     _sendToManager(::Editor::Network::INetworkPayload& payload) /*override*/;
 
-    // vIndex: 6
     virtual ::Scripting::Result_deprecated<void>
     _sendToClientId(::mce::UUID const& clientId, ::Editor::Network::INetworkPayload& payload) /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> _sendToClientIds(
         ::std::vector<::mce::UUID> const&   clientIds,
         ::Editor::Network::INetworkPayload& payload
     ) /*override*/;
 
-    // vIndex: 8
     virtual ::Scripting::Result_deprecated<void>
     _broadcastToClients(::Editor::Network::INetworkPayload& payload) /*override*/;
 
-    // vIndex: 9
     virtual ::Scripting::Result_deprecated<void>
     _broadcastToClientManagers(::Editor::Network::INetworkPayload& payload) /*override*/;
 
-    // vIndex: 10
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> _listenFor(
         char const*                                                      payloadName,
         ::std::function<void(::Editor::Network::INetworkPayload const&)> func
@@ -273,6 +259,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $_listenFor(char const* payloadName, ::std::function<void(::Editor::Network::INetworkPayload const&)> func);
+
+
     // NOLINTEND
 
 public:

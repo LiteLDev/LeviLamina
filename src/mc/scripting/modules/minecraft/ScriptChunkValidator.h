@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/ChunkPos.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class ChunkPos;
 // clang-format on
 
 namespace ScriptModuleMinecraft {

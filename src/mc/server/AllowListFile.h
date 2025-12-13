@@ -27,30 +27,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit AllowListFile(::Core::Path const& filePath);
+    MCNAPI_S explicit AllowListFile(::Core::Path const& filePath);
 
-    MCNAPI ::FileReadResult reload();
+    MCNAPI_S ::FileReadResult reload();
 
-    MCNAPI void syncToDisc();
+    MCNAPI_S void syncToDisc();
 
-    MCNAPI ~AllowListFile();
+    MCNAPI_S ~AllowListFile();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::AllowListFile loadFromDefaultLocations();
+    MCNAPI_S static ::AllowListFile loadFromDefaultLocations();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::Path const& filePath);
+    MCNAPI_S void* $ctor(::Core::Path const& filePath);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI_S void $dtor();
     // NOLINTEND
 };

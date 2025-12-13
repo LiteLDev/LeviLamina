@@ -45,7 +45,6 @@ class VerticalCollisionSystem
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
@@ -62,7 +61,6 @@ public:
             ::EntityFactoryT<>>& strictContext
     ) /*override*/;
 
-    // vIndex: 6
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
@@ -80,7 +78,6 @@ public:
         ::StrictEntityContext&   entity
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~VerticalCollisionSystem() /*override*/ = default;
     // NOLINTEND
 
@@ -142,6 +139,8 @@ public:
             ::EntityFactoryT<>>& strictContext,
         ::StrictEntityContext&   entity
     );
+
+
     // NOLINTEND
 
 public:

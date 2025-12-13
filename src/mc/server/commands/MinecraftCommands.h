@@ -53,7 +53,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MinecraftCommands();
     // NOLINTEND
 
@@ -96,6 +95,15 @@ public:
     );
 
     MCAPI ::MCRESULT requestCommandExecution(::CommandContext& context, bool suppressOutput);
+
+    MCAPI_C ::MCRESULT requestCommandExecution(
+        ::std::unique_ptr<::CommandOrigin> origin,
+        ::std::string const&               commandLine,
+        int                                version,
+        bool                               suppressOutput
+    );
+
+    MCAPI_C void tick();
     // NOLINTEND
 
 public:

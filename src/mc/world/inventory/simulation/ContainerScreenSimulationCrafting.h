@@ -16,19 +16,28 @@ class ContainerScreenSimulationCrafting : public ::ContainerScreenSimulation {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 19
-    virtual ::ContainerScreenActionResult tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs>);
+    virtual ::ContainerScreenActionResult tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs);
 
-    // vIndex: 20
     virtual ::ContainerValidationCraftResult getCraftPreview();
 
-    // vIndex: 0
     virtual ~ContainerScreenSimulationCrafting() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::ContainerScreenActionResult $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs);
 
+    MCNAPI ::ContainerValidationCraftResult $getCraftPreview();
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

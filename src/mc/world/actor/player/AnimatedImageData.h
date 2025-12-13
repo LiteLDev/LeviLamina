@@ -25,24 +25,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimatedImageData(
+    MCNAPI AnimatedImageData(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,
         ::mce::Image const&            animatedImage,
         float                          frames
     );
 
-    MCAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
+    MCNAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
+
+    MCNAPI_C ~AnimatedImageData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,
         ::mce::Image const&            animatedImage,
         float                          frames
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
     // NOLINTEND
 };

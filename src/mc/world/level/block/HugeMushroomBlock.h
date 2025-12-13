@@ -9,10 +9,8 @@ class HugeMushroomBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 124
     virtual ::BlockType& init() /*override*/;
 
-    // vIndex: 0
     virtual ~HugeMushroomBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -20,6 +18,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::BlockType& $init();
+
+
     // NOLINTEND
 
 public:

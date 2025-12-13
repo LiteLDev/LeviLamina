@@ -23,10 +23,8 @@ class HangingSignBlock : public ::SignBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
@@ -34,26 +32,19 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 146
     virtual float getYRotationInDegrees(::Block const& block) const /*override*/;
 
-    // vIndex: 148
     virtual ::ItemInstance _getItemInstance() const /*override*/;
 
-    // vIndex: 0
     virtual ~HangingSignBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -86,6 +77,8 @@ public:
     MCAPI float $getYRotationInDegrees(::Block const& block) const;
 
     MCAPI ::ItemInstance $_getItemInstance() const;
+
+
     // NOLINTEND
 
 public:

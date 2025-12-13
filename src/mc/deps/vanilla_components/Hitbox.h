@@ -2,15 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/world/phys/AABB.h"
-
 struct Hitbox {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3> mPivot;
-    ::ll::TypedStorage<4, 24, ::AABB> mAabb;
+    ::ll::UntypedStorage<4, 12> mUnk92dc7f;
+    ::ll::UntypedStorage<4, 24> mUnkfcf9c8;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Hitbox& operator=(Hitbox const&);
+    Hitbox(Hitbox const&);
+    Hitbox();
 };

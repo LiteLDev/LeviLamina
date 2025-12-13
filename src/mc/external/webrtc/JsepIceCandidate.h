@@ -31,22 +31,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~JsepIceCandidate() /*override*/;
 
-    // vIndex: 1
     virtual ::std::string sdp_mid() const /*override*/;
 
-    // vIndex: 2
     virtual int sdp_mline_index() const /*override*/;
 
-    // vIndex: 3
     virtual ::cricket::Candidate const& candidate() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::string server_url() const /*override*/;
 
-    // vIndex: 5
     virtual bool ToString(::std::string* out) const /*override*/;
     // NOLINTEND
 
@@ -86,6 +80,8 @@ public:
     MCNAPI ::std::string $server_url() const;
 
     MCNAPI bool $ToString(::std::string* out) const;
+
+
     // NOLINTEND
 
 public:

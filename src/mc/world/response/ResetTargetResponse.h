@@ -18,20 +18,16 @@ class ResetTargetResponse : public ::ActorEventResponse {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
                                                schema,
         ::Factory<::ActorEventResponse> const& factory
     ) const /*override*/;
 
-    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
-    // vIndex: 2
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
-    // vIndex: 0
     virtual ~ResetTargetResponse() /*override*/ = default;
     // NOLINTEND
 
@@ -53,6 +49,8 @@ public:
     MCNAPI ::std::string const& $getName() const;
 
     MCNAPI void $executeAction(::RenderParams& params) const;
+
+
     // NOLINTEND
 
 public:

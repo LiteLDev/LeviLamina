@@ -27,10 +27,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DeferredCompiledCommand() /*override*/ = default;
 
-    // vIndex: 1
     virtual void execute(::MinecraftCommands&) /*override*/;
     // NOLINTEND
 
@@ -38,6 +36,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $execute(::MinecraftCommands&);
+
+
     // NOLINTEND
 
 public:

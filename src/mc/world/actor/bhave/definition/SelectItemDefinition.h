@@ -15,17 +15,21 @@ class SelectItemDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mItemName;
-    ::ll::TypedStorage<8, 32, ::std::string> mItemNameId;
+    ::ll::UntypedStorage<8, 32> mUnk3e5e49;
+    ::ll::UntypedStorage<8, 32> mUnk22f4bc;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SelectItemDefinition& operator=(SelectItemDefinition const&);
+    SelectItemDefinition(SelectItemDefinition const&);
+    SelectItemDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
-    // vIndex: 0
     virtual ~SelectItemDefinition() /*override*/ = default;
     // NOLINTEND
 

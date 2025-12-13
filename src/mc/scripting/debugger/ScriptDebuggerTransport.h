@@ -25,40 +25,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptDebuggerTransport() /*override*/ = default;
 
-    // vIndex: 1
     virtual bool listen(ushort port) /*override*/;
 
-    // vIndex: 2
     virtual bool connect(::std::string const& host, ushort port) /*override*/;
 
-    // vIndex: 3
     virtual bool selectClient(::std::string& outClient) /*override*/;
 
-    // vIndex: 4
     virtual bool started() const /*override*/;
 
-    // vIndex: 5
     virtual bool connected() const /*override*/;
 
-    // vIndex: 6
     virtual bool lostConnection() const /*override*/;
 
-    // vIndex: 7
     virtual bool readyClose() const /*override*/;
 
-    // vIndex: 8
     virtual void close() /*override*/;
 
-    // vIndex: 9
     virtual bool peek() const /*override*/;
 
-    // vIndex: 10
     virtual bool receive(char* buffer, uint64 length) /*override*/;
 
-    // vIndex: 11
     virtual void send(char const* buffer, uint64 length) /*override*/;
     // NOLINTEND
 
@@ -86,6 +74,8 @@ public:
     MCNAPI bool $receive(char* buffer, uint64 length);
 
     MCNAPI void $send(char const* buffer, uint64 length);
+
+
     // NOLINTEND
 
 public:

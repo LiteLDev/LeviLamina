@@ -20,10 +20,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 148
     virtual bool checkSpawnRules(bool) /*override*/;
 
-    // vIndex: 8
     virtual ~WaterAnimal() /*override*/;
     // NOLINTEND
 
@@ -59,6 +57,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $checkSpawnRules(bool);
+
+
     // NOLINTEND
 
 public:

@@ -3,20 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/threading/Mutex.h"
-#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/levelgen/structure/StructureFeature.h"
 
 // auto generated forward declare list
 // clang-format off
 class BiomeSource;
 class BlockPos;
+class ChunkPos;
 class Dimension;
 class HashedString;
 class IPreliminarySurfaceProvider;
 class Random;
 class StructureStart;
-class VillageFeature;
 // clang-format on
 
 class StrongholdFeature : public ::StructureFeature {
@@ -31,24 +29,35 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>       success;
-        ::ll::TypedStorage<8, 8, ::ChunkPos> location;
+        ::ll::UntypedStorage<1, 1> mUnkb304b0;
+        ::ll::UntypedStorage<8, 8> mUnk65e98b;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        StrongholdResult& operator=(StrongholdResult const&);
+        StrongholdResult(StrongholdResult const&);
+        StrongholdResult();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                         mIsSpotSelected;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ChunkPos>>   mSelectedChunks;
-    ::ll::TypedStorage<8, 8, ::VillageFeature*>            mVillages;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mPositionMutex;
+    ::ll::UntypedStorage<1, 1>  mUnk97c3dc;
+    ::ll::UntypedStorage<8, 24> mUnk4c1f2a;
+    ::ll::UntypedStorage<8, 8>  mUnka0ac9e;
+    ::ll::UntypedStorage<8, 80> mUnk97dbad;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StrongholdFeature& operator=(StrongholdFeature const&);
+    StrongholdFeature(StrongholdFeature const&);
+    StrongholdFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -58,7 +67,6 @@ public:
         ::Dimension const&                   dimension
     ) /*override*/;
 
-    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -69,7 +77,6 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
-    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension& generator,
         ::BiomeSource const&,
@@ -78,7 +85,6 @@ public:
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~StrongholdFeature() /*override*/ = default;
     // NOLINTEND
 
@@ -139,6 +145,8 @@ public:
         ::ChunkPos const& cp,
         ::IPreliminarySurfaceProvider const&
     );
+
+
     // NOLINTEND
 
 public:

@@ -46,16 +46,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LegacyChunkStorage() /*override*/;
 
-    // vIndex: 14
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
-    // vIndex: 17
     virtual bool saveLiveChunk(::LevelChunk& lc) /*override*/;
 
-    // vIndex: 23
     virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr) /*override*/;
     // NOLINTEND
 
@@ -103,6 +99,8 @@ public:
     MCNAPI bool $saveLiveChunk(::LevelChunk& lc);
 
     MCNAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
+
+
     // NOLINTEND
 
 public:

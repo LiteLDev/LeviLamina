@@ -27,4 +27,24 @@ public:
     DisconnectionErrorDetails& operator=(DisconnectionErrorDetails const&);
     DisconnectionErrorDetails(DisconnectionErrorDetails const&);
     DisconnectionErrorDetails();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C DisconnectionErrorDetails(::DisconnectionErrorDetails&&);
+
+    MCNAPI_C ~DisconnectionErrorDetails();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::DisconnectionErrorDetails&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

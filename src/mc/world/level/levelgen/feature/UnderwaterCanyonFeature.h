@@ -21,10 +21,8 @@ class UnderwaterCanyonFeature : public ::CanyonFeature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool _isDiggable(::BlockType const& block) const /*override*/;
 
-    // vIndex: 0
     virtual bool _carve(
         ::BlockVolume&       blocks,
         ::BiomeSource const& localBiomeSource,
@@ -49,9 +47,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isDiggable(::BlockType const& block) const;
+    MCNAPI bool $_isDiggable(::BlockType const& block) const;
 
-    MCAPI bool $_carve(
+    MCNAPI bool $_carve(
         ::BlockVolume&       blocks,
         ::BiomeSource const& localBiomeSource,
         ::CanyonFeatureUtils::CanyonConfiguration const&,
@@ -70,6 +68,8 @@ public:
         ::gsl::span<float const> widthRandomization,
         ::WorldGenContext const&
     ) const;
+
+
     // NOLINTEND
 
 public:

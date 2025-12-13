@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/climate_utils/Parameter.h"
-
 // auto generated forward declare list
 // clang-format off
-class Biome;
 struct BiomeNoiseTarget;
 namespace ClimateUtils { struct TargetSpace; }
 // clang-format on
@@ -16,8 +12,8 @@ class RTree {
 public:
     // RTree inner types declare
     // clang-format off
-    struct Hint;
     class Node;
+    struct Hint;
     // clang-format on
 
     // RTree inner types define
@@ -25,35 +21,41 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 112, ::std::array<::ClimateUtils::Parameter, 7>> mParameterSpace;
-        ::ll::TypedStorage<8, 24, ::std::vector<::RTree::Node>>                mChildren;
-        ::ll::TypedStorage<8, 16, ::std::optional<::Biome const*>>             mBiome;
-        ::ll::TypedStorage<8, 8, int64>                                        mTotalMagnitude;
+        ::ll::UntypedStorage<8, 112> mUnk81eae8;
+        ::ll::UntypedStorage<8, 24>  mUnkb13f4d;
+        ::ll::UntypedStorage<8, 16>  mUnk2d76d4;
+        ::ll::UntypedStorage<8, 8>   mUnk8b9903;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Node& operator=(Node const&);
+        Node(Node const&);
+        Node();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void
+        MCNAPI void
         search(::ClimateUtils::TargetSpace const& target, ::std::pair<::RTree::Node const*, int64>& closestLeaf) const;
 
-        MCAPI ~Node();
+        MCNAPI ~Node();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::std::optional<::RTree::Node> branch(::std::vector<::RTree::Node>&& children);
+        MCNAPI static ::std::optional<::RTree::Node> branch(::std::vector<::RTree::Node>&& children);
 
-        MCAPI static ::std::vector<::RTree::Node> bucketize(::std::vector<::RTree::Node>&& nodes);
+        MCNAPI static ::std::vector<::RTree::Node> bucketize(::std::vector<::RTree::Node>&& nodes);
 
-        MCAPI static void sort(::std::vector<::RTree::Node>& children, int dimension, bool absolute);
+        MCNAPI static void sort(::std::vector<::RTree::Node>& children, int dimension, bool absolute);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -61,33 +63,45 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::RTree::Node const*> node;
+        ::ll::UntypedStorage<8, 8> mUnk836830;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Hint& operator=(Hint const&);
+        Hint(Hint const&);
+        Hint();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 160, ::RTree::Node const> mRoot;
+    ::ll::UntypedStorage<8, 160> mUnk4be11c;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RTree& operator=(RTree const&);
+    RTree(RTree const&);
+    RTree();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~RTree();
+    MCNAPI ~RTree();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::RTree::Node> build(::std::vector<::RTree::Node>&& children);
+    MCNAPI static ::std::optional<::RTree::Node> build(::std::vector<::RTree::Node>&& children);
 
-    MCAPI static ::std::optional<::RTree> create(::std::vector<::BiomeNoiseTarget> const& biomes);
+    MCNAPI static ::std::optional<::RTree> create(::std::vector<::BiomeNoiseTarget> const& biomes);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

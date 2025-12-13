@@ -11,7 +11,9 @@ struct ProfileTypeConverter {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string_view
+    MCNAPI_C static ::persona::ProfileType getProfileTypeFromString(::std::string const& profileTypeStr);
+
+    MCNAPI_S static ::std::string_view
     getStringFromProfileType(::persona::ProfileType typeToGetStringFor, bool nonLegacyStrDesired);
     // NOLINTEND
 };

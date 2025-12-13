@@ -46,48 +46,44 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void handleGameEvent(
         ::GameEvent const&        gameEvent,
         ::GameEventContext const& gameEventContext,
         ::BlockSource&            region
     ) /*override*/;
 
-    // vIndex: 3
     virtual uint getRange() const /*override*/;
 
-    // vIndex: 2
     virtual ::GameEvents::PositionSource const& getPositionSource() const /*override*/;
 
-    // vIndex: 0
     virtual ~VibrationListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _requestVibrationParticle(::BlockSource& region, ::BlockPos const& originPos, float timeToLive);
+    MCNAPI void _requestVibrationParticle(::BlockSource& region, ::BlockPos const& originPos, float timeToLive);
 
-    MCAPI bool _tryAdvanceInFlightVibration(::BlockSource& region);
+    MCNAPI bool _tryAdvanceInFlightVibration(::BlockSource& region);
 
-    MCAPI void _trySendSneakCloseToSculkSensorEventPacket(
+    MCNAPI void _trySendSneakCloseToSculkSensorEventPacket(
         ::BlockSource&            region,
         ::GameEvent const&        gameEvent,
         ::GameEventContext const& gameEventContext,
         ::Vec3 const&             sensorPos
     );
 
-    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
 
-    MCAPI void tick(::BlockSource& region);
+    MCNAPI void tick(::BlockSource& region);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _shouldIgnoreVibration(
+    MCNAPI static bool _shouldIgnoreVibration(
         ::BlockSource&            region,
         ::GameEvent const&        gameEvent,
         ::GameEventContext const& gameEventContext
@@ -97,12 +93,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
-    MCFOLD uint $getRange() const;
+    MCNAPI uint $getRange() const;
 
-    MCFOLD ::GameEvents::PositionSource const& $getPositionSource() const;
+    MCNAPI ::GameEvents::PositionSource const& $getPositionSource() const;
+
+
     // NOLINTEND
 
 public:

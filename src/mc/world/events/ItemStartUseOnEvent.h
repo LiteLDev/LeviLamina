@@ -26,24 +26,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStartUseOnEvent(::ItemStartUseOnEvent&&);
+    MCNAPI ItemStartUseOnEvent(::ItemStartUseOnEvent&&);
 
-    MCAPI ItemStartUseOnEvent(::ItemStartUseOnEvent const&);
+    MCNAPI ItemStartUseOnEvent(::ItemStartUseOnEvent const&);
 
-    MCAPI ~ItemStartUseOnEvent();
+    MCNAPI ~ItemStartUseOnEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStartUseOnEvent&&);
+    MCNAPI void* $ctor(::ItemStartUseOnEvent&&);
 
-    MCAPI void* $ctor(::ItemStartUseOnEvent const&);
+    MCNAPI void* $ctor(::ItemStartUseOnEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

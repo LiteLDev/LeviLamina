@@ -23,6 +23,7 @@ class CompoundBlockVolume;
 class Dimension;
 class Vec3;
 namespace Editor { class RelativeVolumeListBlockVolume; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::BlockMask { class BlockMaskList; }
 // clang-format on
 
@@ -47,37 +48,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CommonBlockUtilityService() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 1
     virtual ::std::set<::ChunkPos> getChunksFromAABB(::AABB const& aabb) const /*override*/;
 
-    // vIndex: 2
     virtual bool isChunkLoaded(::ChunkPos const& pos) const /*override*/;
 
-    // vIndex: 3
     virtual bool isChunkFullyLoaded(::ChunkPos const& pos) const /*override*/;
 
-    // vIndex: 4
     virtual bool areChunksLoaded(::std::set<::ChunkPos> const& chunks) const /*override*/;
 
-    // vIndex: 5
     virtual bool isAreaLoaded(::AABB const& aabb) const /*override*/;
 
-    // vIndex: 6
     virtual ::Editor::RelativeVolumeListBlockVolume trimVolumeToFitContents(
         ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume,
         bool                                      retainMarqueeAfterTrimming,
@@ -86,17 +76,14 @@ public:
         ::Editor::BlockMask::BlockMaskList const& blockMask
     ) /*override*/;
 
-    // vIndex: 7
     virtual ::Editor::RelativeVolumeListBlockVolume findObscuredBlocksWithinVolume(
         ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume
     ) /*override*/;
 
-    // vIndex: 8
     virtual ::Editor::RelativeVolumeListBlockVolume shrinkWrapVolume(
         ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const
     ) /*override*/;
 
-    // vIndex: 9
     virtual bool isLocationInsideDimensionBounds(
         ::std::variant<
             ::BlockVolumeBase const*,
@@ -106,16 +93,12 @@ public:
             ::BlockPos const*> const test
     ) /*override*/;
 
-    // vIndex: 13
     virtual ::Vec3 getDimensionMinLocation() const /*override*/;
 
-    // vIndex: 14
     virtual ::Vec3 getDimensionMaxLocation() const /*override*/;
 
-    // vIndex: 15
     virtual ::BoundingBox getDimensionLocationBoundingBox() const /*override*/;
 
-    // vIndex: 10
     virtual ::CompoundBlockVolume getContiguousSelection(
         int const                                            size,
         ::Facing::Name const&                                selectionDirection,
@@ -127,7 +110,6 @@ public:
         ::std::vector<::std::string> const&                  contiguousSelectionBlockList
     ) const /*override*/;
 
-    // vIndex: 11
     virtual bool areBlocksContiguous(
         ::Editor::BlockUtils::ContiguousSelectionType const& contiguousSelectionType,
         ::Block const&                                       blockToTest,
@@ -135,19 +117,14 @@ public:
         ::std::vector<::std::string> const&                  allowList
     ) const /*override*/;
 
-    // vIndex: 12
     virtual ::Vec3 getDeltaFromDirection(::Facing::Name const& selectionDirection) const /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> _implInit() = 0;
 
-    // vIndex: 8
     virtual ::Scripting::Result_deprecated<void> _implReady() = 0;
 
-    // vIndex: 9
     virtual ::Scripting::Result_deprecated<void> _implQuit() = 0;
 
-    // vIndex: 16
     virtual ::AABB getBoundForContiguousSelection(
         ::Vec3 const&         initialLocation,
         ::Facing::Name const& selectionDirection,
@@ -155,20 +132,16 @@ public:
         bool const            isFace
     ) const /*override*/;
 
-    // vIndex: 17
     virtual bool isBlockExposedInDirection(
         ::Dimension const&    dimension,
         ::Vec3 const&         targetLocation,
         ::Facing::Name const& direction
     ) const /*override*/;
 
-    // vIndex: 18
     virtual bool isSameBlockType(::Block const& blockA, ::Block const& blockB) const /*override*/;
 
-    // vIndex: 19
     virtual bool isSameBlockAndProperties(::Block const& blockA, ::Block const& blockB) const /*override*/;
 
-    // vIndex: 20
     virtual bool isBlockTypeInSelectionList(::Block const& block, ::std::vector<::std::string> const& allowList) const
         /*override*/;
     // NOLINTEND
@@ -176,9 +149,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C explicit CommonBlockUtilityService(::Editor::ServiceProviderCollection& providers);
+
     MCNAPI ::BlockSource& _getBlockSource() const;
 
     MCNAPI ::Dimension& _getDimension() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -276,6 +257,8 @@ public:
     MCNAPI bool $isSameBlockAndProperties(::Block const& blockA, ::Block const& blockB) const;
 
     MCNAPI bool $isBlockTypeInSelectionList(::Block const& block, ::std::vector<::std::string> const& allowList) const;
+
+
     // NOLINTEND
 
 public:

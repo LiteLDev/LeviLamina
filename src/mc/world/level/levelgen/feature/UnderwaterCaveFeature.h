@@ -21,13 +21,18 @@ class UnderwaterCaveFeature : public ::CaveFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const*> mAirReplacementBlock;
+    ::ll::UntypedStorage<8, 8> mUnkd4ebd0;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UnderwaterCaveFeature& operator=(UnderwaterCaveFeature const&);
+    UnderwaterCaveFeature(UnderwaterCaveFeature const&);
+    UnderwaterCaveFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
     virtual bool carveEllipsoidVolume(
         ::IBlockWorldGenAPI& target,
         ::CaveFeatureUtils::CarverConfiguration const&,
@@ -40,20 +45,19 @@ public:
         ::CaveFeatureUtils::CarvingParameters const& carveValues
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~UnderwaterCaveFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isDiggable(::Block const& block);
+    MCNAPI static bool isDiggable(::Block const& block);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $carveEllipsoidVolume(
+    MCNAPI bool $carveEllipsoidVolume(
         ::IBlockWorldGenAPI& target,
         ::CaveFeatureUtils::CarverConfiguration const&,
         ::Random&                                    random,
@@ -64,6 +68,8 @@ public:
         float                                        yRad,
         ::CaveFeatureUtils::CarvingParameters const& carveValues
     ) const;
+
+
     // NOLINTEND
 
 public:

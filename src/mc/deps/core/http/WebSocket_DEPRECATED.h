@@ -24,7 +24,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WebSocket_DEPRECATED() /*override*/ = default;
     // NOLINTEND
 };

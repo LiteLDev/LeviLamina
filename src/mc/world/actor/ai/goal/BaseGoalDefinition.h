@@ -11,41 +11,46 @@ class BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mPriority;
-    ::ll::TypedStorage<4, 4, int> mControlFlags;
+    ::ll::UntypedStorage<4, 4> mUnk8d09b6;
+    ::ll::UntypedStorage<4, 4> mUnk28fb77;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BaseGoalDefinition& operator=(BaseGoalDefinition const&);
+    BaseGoalDefinition(BaseGoalDefinition const&);
+    BaseGoalDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BaseGoalDefinition();
 
-    // vIndex: 1
     virtual bool validateMobType(::Mob&) const;
 
-    // vIndex: 2
     virtual bool validate(::Mob&) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, int> const& mControlFlagMap();
+    MCNAPI static ::std::unordered_map<::std::string, int> const& mControlFlagMap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $validateMobType(::Mob&) const;
+    MCNAPI bool $validateMobType(::Mob&) const;
 
-    MCFOLD bool $validate(::Mob&) const;
+    MCNAPI bool $validate(::Mob&) const;
+
+
     // NOLINTEND
 
 public:

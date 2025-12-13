@@ -39,31 +39,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 17
     virtual bool findTargetBlock() /*override*/;
 
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 11
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
-    // vIndex: 14
     virtual void _moveToBlock() /*override*/;
 
-    // vIndex: 0
     virtual ~LayEggGoal() /*override*/;
     // NOLINTEND
 
@@ -133,6 +124,8 @@ public:
     MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI void $_moveToBlock();
+
+
     // NOLINTEND
 
 public:

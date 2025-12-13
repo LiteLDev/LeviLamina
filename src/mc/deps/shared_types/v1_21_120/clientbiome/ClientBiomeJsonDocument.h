@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersionConstant;
+namespace SharedTypes::v1_21_110 { struct ClientBiomeJsonDocument; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -96,6 +98,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C ClientBiomeJsonDocument(::SharedTypes::v1_21_120::ClientBiomeJsonDocument&&);
+
     MCNAPI ~ClientBiomeJsonDocument();
     // NOLINTEND
 
@@ -103,6 +107,21 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI_C static ::SharedTypes::v1_21_120::ClientBiomeJsonDocument
+    upgrade(::SharedTypes::v1_21_110::ClientBiomeJsonDocument oldDocument);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI_C static ::SemVersionConstant const& FIRST_VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::SharedTypes::v1_21_120::ClientBiomeJsonDocument&&);
     // NOLINTEND
 
 public:

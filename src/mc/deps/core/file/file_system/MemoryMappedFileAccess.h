@@ -29,10 +29,8 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 1
         virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const /*override*/;
 
-        // vIndex: 0
         virtual ~MemoryMappedFileReadAccess() /*override*/;
         // NOLINTEND
 
@@ -46,6 +44,8 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI uint64 $fread(void* buffer, uint64 size, uint64 count, void* file) const;
+
+
         // NOLINTEND
 
     public:
@@ -59,10 +59,8 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 1
         virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file) /*override*/;
 
-        // vIndex: 0
         virtual ~MemoryMappedFileWriteAccess() /*override*/;
         // NOLINTEND
 
@@ -76,6 +74,8 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI uint64 $fwrite(void const* buffer, uint64 size, uint64 count, void* file);
+
+
         // NOLINTEND
 
     public:
@@ -152,28 +152,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MemoryMappedFileAccess() /*override*/;
 
-    // vIndex: 1
     virtual void* fopen(::Core::PathView filePath, ::std::string const& mode) /*override*/;
 
-    // vIndex: 2
     virtual int fclose(void* file) /*override*/;
 
-    // vIndex: 3
     virtual int fseek(void* file, int64 offset, int origin) /*override*/;
 
-    // vIndex: 4
     virtual int64 ftell(void* file) /*override*/;
 
-    // vIndex: 5
     virtual ::IFileReadAccess const* getReadInterface() const /*override*/;
 
-    // vIndex: 6
     virtual ::IFileWriteAccess* getWriteInterface() /*override*/;
 
-    // vIndex: 7
     virtual void unload() /*override*/;
     // NOLINTEND
 
@@ -223,6 +215,8 @@ public:
     MCNAPI ::IFileWriteAccess* $getWriteInterface();
 
     MCNAPI void $unload();
+
+
     // NOLINTEND
 
 public:

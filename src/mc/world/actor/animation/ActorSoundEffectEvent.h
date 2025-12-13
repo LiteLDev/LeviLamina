@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ActorSoundEffectEvent& operator=(::ActorSoundEffectEvent&&);
+    MCNAPI ::ActorSoundEffectEvent& operator=(::ActorSoundEffectEvent&&);
     // NOLINTEND
 };

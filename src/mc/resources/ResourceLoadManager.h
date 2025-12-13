@@ -10,7 +10,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Scheduler;
 class TaskResult;
+class WorkerPool;
 // clang-format on
 
 class ResourceLoadManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -18,8 +20,8 @@ public:
     // ResourceLoadManager inner types declare
     // clang-format off
     struct LoadOrder;
-    class ResourceLoadTaskGroup;
     class TaskGroupState;
+    class ResourceLoadTaskGroup;
     // clang-format on
 
     // ResourceLoadManager inner types define
@@ -61,11 +63,39 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI_C ResourceLoadTaskGroup(
+            ::std::string_view                groupName,
+            ::ResourceLoadType                loadType,
+            ::std::vector<::ResourceLoadType> dependencies,
+            ::Scheduler&                      scheduler,
+            ::WorkerPool&                     workerPool
+        );
+
         MCNAPI ::Bedrock::Threading::Async<void> queue(
             ::brstd::move_only_function<::TaskResult()> threadedCallback,
             ::std::function<void()>                     mainThreadCallback,
             uint                                        taskPriority
         );
+
+        MCNAPI_C ~ResourceLoadTaskGroup();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI_C void* $ctor(
+            ::std::string_view                groupName,
+            ::ResourceLoadType                loadType,
+            ::std::vector<::ResourceLoadType> dependencies,
+            ::Scheduler&                      scheduler,
+            ::WorkerPool&                     workerPool
+        );
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
         // NOLINTEND
     };
 
@@ -89,15 +119,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~ResourceLoadManager() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ResourceLoadManager() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C void _cancel();
+
+    MCNAPI_C void _initializeResourceLoadTaskGroups();
+
     MCNAPI void
     _prepareTaskGroupToRunAgain(::gsl::not_null<::ResourceLoadManager::ResourceLoadTaskGroup*> resourceLoadTaskGroup);
+
+    MCNAPI_C bool areDependenciesLoaded(::ResourceLoadType resourceLoadType) const;
+
+    MCNAPI_C bool isComplete() const;
+
+    MCNAPI_C bool isComplete(::ResourceLoadType resourceLoadType) const;
+
+    MCNAPI_C void printRunningTasks();
 
     MCNAPI ::Bedrock::Threading::Async<void> queue(
         ::ResourceLoadType                          resourceLoadType,
@@ -106,7 +152,29 @@ public:
         uint                                        taskPriority
     );
 
+    MCNAPI_C ::Bedrock::Threading::Async<void> queueAsync(
+        ::ResourceLoadType                          resourceLoadType,
+        ::brstd::move_only_function<::TaskResult()> callback,
+        uint                                        taskPriority
+    );
+
+    MCNAPI_C ::Bedrock::Threading::Async<void> queueSync(
+        ::ResourceLoadType                          resourceLoadType,
+        ::brstd::move_only_function<::TaskResult()> callback,
+        uint                                        taskPriority
+    );
+
+    MCNAPI_C void registerResourceLoadTaskGroup(
+        ::std::string_view                groupName,
+        ::ResourceLoadType                resourceLoadType,
+        ::std::vector<::ResourceLoadType> dependencies
+    );
+
     MCNAPI bool softCancel(::ResourceLoadType resourceLoadType);
+
+    MCNAPI_C void sync(::ResourceLoadType resourceLoadType);
+
+    MCNAPI_C void update();
     // NOLINTEND
 
 public:
@@ -127,5 +195,17 @@ public:
         ::std::function<void()>                     mainThreadCallback,
         uint                                        taskPriority
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

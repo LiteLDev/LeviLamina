@@ -26,7 +26,6 @@ class ScriptBlockSignComponent : public ::ScriptModuleMinecraft::BaseScriptBlock
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptBlockSignComponent() /*override*/ = default;
     // NOLINTEND
 

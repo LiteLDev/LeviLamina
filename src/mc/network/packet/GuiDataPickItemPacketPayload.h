@@ -6,9 +6,9 @@ struct GuiDataPickItemPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mItemName;
-    ::ll::TypedStorage<8, 32, ::std::string> mItemEffectName;
-    ::ll::TypedStorage<4, 4, int>            mSlot;
+    ::ll::UntypedStorage<8, 32> mUnkbe04dd;
+    ::ll::UntypedStorage<8, 32> mUnkbd0956;
+    ::ll::UntypedStorage<4, 4>  mUnkbcbc25;
     // NOLINTEND
 
 public:
@@ -20,14 +20,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::GuiDataPickItemPacketPayload& operator=(::GuiDataPickItemPacketPayload&&);
+    MCNAPI ::GuiDataPickItemPacketPayload& operator=(::GuiDataPickItemPacketPayload&&);
 
-    MCAPI ~GuiDataPickItemPacketPayload();
+    MCNAPI ~GuiDataPickItemPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

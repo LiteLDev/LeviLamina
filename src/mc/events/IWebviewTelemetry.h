@@ -26,16 +26,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
     virtual void onDownloadBegin(::WebviewDownloadInfo const& downloadInfo) /*override*/;
 
-    // vIndex: 8
     virtual void onDownloadComplete(::WebviewDownloadInfo const& downloadInfo) /*override*/;
 
-    // vIndex: 9
     virtual void onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo) /*override*/;
 
-    // vIndex: 0
     virtual ~IWebviewTelemetry() /*override*/ = default;
     // NOLINTEND
 
@@ -47,5 +43,7 @@ public:
     MCNAPI void $onDownloadComplete(::WebviewDownloadInfo const& downloadInfo);
 
     MCNAPI void $onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
+
+
     // NOLINTEND
 };

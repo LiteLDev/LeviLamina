@@ -26,37 +26,56 @@ struct CredentialsObserver : public ::Core::Observer<::edu::auth::CredentialsObs
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~CredentialsObserver() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~CredentialsObserver() /*override*/;
+#endif
 
-    // vIndex: 9
-    virtual void onNotify(::edu::auth::CredentialsAcquired const&);
+    virtual void onNotify(::edu::auth::CredentialsAcquired const& state);
 
-    // vIndex: 8
-    virtual void onNotify(::edu::auth::CredentialsRefreshSuccess const&);
+    virtual void onNotify(::edu::auth::CredentialsRefreshSuccess const& state);
 
-    // vIndex: 7
-    virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::SignInCredsRefreshFailed> const&);
+    virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::SignInCredsRefreshFailed> const& state);
 
-    // vIndex: 6
-    virtual void onNotify(::EDUConfigData const&);
+    virtual void onNotify(::EDUConfigData const& config);
 
-    // vIndex: 5
-    virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsAuthComplete> const&);
+    virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsAuthComplete> const& state);
 
-    // vIndex: 4
-    virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const&);
+    virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state);
 
-    // vIndex: 3
-    virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsExpired> const&);
+    virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsExpired> const& state);
 
-    // vIndex: 2
-    virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::GraphCredsRefreshFailed> const&);
+    virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::GraphCredsRefreshFailed> const& state);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $onNotify(::edu::auth::CredentialsAcquired const& state);
+
+    MCNAPI void $onNotify(::edu::auth::CredentialsRefreshSuccess const& state);
+
+    MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::SignInCredsRefreshFailed> const& state);
+
+    MCNAPI void $onNotify(::EDUConfigData const& config);
+
+    MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsAuthComplete> const& state);
+
+    MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state);
+
+    MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsExpired> const& state);
+
+    MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::GraphCredsRefreshFailed> const& state);
+#endif
+
 
     // NOLINTEND
 };

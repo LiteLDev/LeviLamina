@@ -3,48 +3,51 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/v1_21_10/scatter_params/CoordinateEvaluationOrder.h"
 #include "mc/platform/Result.h"
-#include "mc/util/molang/ExpressionOp.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct BiomeCoordinateData;
 // clang-format on
 
 struct BiomeScatterParamData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeCoordinateData>>              mCoordinates;
-    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_10::CoordinateEvaluationOrder> mEvalOrder;
-    ::ll::TypedStorage<2, 2, ::ExpressionOp>                                     mChancePercentType;
-    ::ll::TypedStorage<2, 2, ushort>                                             mChancePercent;
-    ::ll::TypedStorage<4, 4, int>                                                mChanceNumerator;
-    ::ll::TypedStorage<4, 4, int>                                                mChanceDenominator;
-    ::ll::TypedStorage<2, 2, ::ExpressionOp>                                     mIterationsType;
-    ::ll::TypedStorage<2, 2, ushort>                                             mIterations;
+    ::ll::UntypedStorage<8, 24> mUnk8b3dbb;
+    ::ll::UntypedStorage<4, 4>  mUnk98acea;
+    ::ll::UntypedStorage<2, 2>  mUnk86065f;
+    ::ll::UntypedStorage<2, 2>  mUnke357cc;
+    ::ll::UntypedStorage<4, 4>  mUnkb7c5b3;
+    ::ll::UntypedStorage<4, 4>  mUnkf64191;
+    ::ll::UntypedStorage<2, 2>  mUnk42b79f;
+    ::ll::UntypedStorage<2, 2>  mUnka84676;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BiomeScatterParamData& operator=(BiomeScatterParamData const&);
+    BiomeScatterParamData(BiomeScatterParamData const&);
+    BiomeScatterParamData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void write(::BinaryStream& stream) const;
+    MCNAPI void write(::BinaryStream& stream) const;
 
-    MCAPI ~BiomeScatterParamData();
+    MCNAPI ~BiomeScatterParamData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeScatterParamData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeScatterParamData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

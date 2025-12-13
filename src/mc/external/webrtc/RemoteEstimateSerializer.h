@@ -16,13 +16,10 @@ class RemoteEstimateSerializer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual bool Parse(::rtc::ArrayView<uchar const>, ::webrtc::NetworkStateEstimate*) const = 0;
 
-    // vIndex: 1
     virtual ::rtc::BufferT<uchar, 0> Serialize(::webrtc::NetworkStateEstimate const&) const = 0;
 
-    // vIndex: 2
     virtual ~RemoteEstimateSerializer() = default;
     // NOLINTEND
 

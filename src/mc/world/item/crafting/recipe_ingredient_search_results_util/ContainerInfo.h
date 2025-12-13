@@ -2,20 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ContainerModel;
-// clang-format on
-
 namespace RecipeIngredientSearchResultsUtil {
 
 struct ContainerInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ContainerModel*> mContainer;
-    ::ll::TypedStorage<8, 8, uint64>            mContainerIndex;
+    ::ll::UntypedStorage<8, 8> mUnk39a689;
+    ::ll::UntypedStorage<8, 8> mUnkfbebb4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ContainerInfo& operator=(ContainerInfo const&);
+    ContainerInfo(ContainerInfo const&);
+    ContainerInfo();
 };
 
 } // namespace RecipeIngredientSearchResultsUtil

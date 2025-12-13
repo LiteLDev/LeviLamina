@@ -38,10 +38,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Json::Value clientConfig(::Json::Value const&) const /*override*/;
 
-    // vIndex: 2
     virtual ::Identity::_TokenRefreshState::Enum refreshToken(
         ::Identity::IEduAuth&,
         ::AccessTokenInfo const&,
@@ -51,10 +49,8 @@ public:
         ::std::function<void()>
     ) /*override*/;
 
-    // vIndex: 3
     virtual void onRefreshedToken(bool, ::Identity::EduResourceType) /*override*/;
 
-    // vIndex: 4
     virtual ::Identity::SsoPromptMode signIn(
         ::Identity::IEduAuth&,
         int64,
@@ -62,19 +58,14 @@ public:
         ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
     ) /*override*/;
 
-    // vIndex: 5
     virtual void signInSuccess(::std::string const&) /*override*/;
 
-    // vIndex: 6
     virtual void demoSignInSuccess() /*override*/;
 
-    // vIndex: 7
     virtual void resetAuthentication(::Identity::IEduAuth&, bool) /*override*/;
 
-    // vIndex: 8
     virtual bool isDemoConversion() const /*override*/;
 
-    // vIndex: 0
     virtual ~EduHeadlessSso() /*override*/ = default;
     // NOLINTEND
 

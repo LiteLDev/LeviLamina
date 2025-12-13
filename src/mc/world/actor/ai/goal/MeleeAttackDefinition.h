@@ -9,20 +9,25 @@ class MeleeAttackDefinition : public ::MeleeAttackBaseDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mReachMultiplier;
+    ::ll::UntypedStorage<4, 4> mUnkbe14ae;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MeleeAttackDefinition& operator=(MeleeAttackDefinition const&);
+    MeleeAttackDefinition(MeleeAttackDefinition const&);
+    MeleeAttackDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MeleeAttackDefinition() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -8,31 +8,36 @@
 // auto generated forward declare list
 // clang-format off
 class ReadOnlyBinaryStream;
-struct BiomeReplacementData;
 // clang-format on
 
 struct BiomeReplacementsData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeReplacementData>> mBiomeReplacements;
+    ::ll::UntypedStorage<8, 24> mUnkfdf058;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BiomeReplacementsData& operator=(BiomeReplacementsData const&);
+    BiomeReplacementsData(BiomeReplacementsData const&);
+    BiomeReplacementsData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~BiomeReplacementsData();
+    MCNAPI ~BiomeReplacementsData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeReplacementsData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeReplacementsData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -15,4 +15,16 @@ public:
     ItemResultPreview& operator=(ItemResultPreview const&);
     ItemResultPreview(ItemResultPreview const&);
     ItemResultPreview();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~ItemResultPreview();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

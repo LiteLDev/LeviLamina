@@ -37,40 +37,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MinecartBlockCommandOrigin() /*override*/ = default;
 
-    // vIndex: 3
     virtual ::BlockPos getBlockPosition() const /*override*/;
 
-    // vIndex: 4
     virtual ::Vec3 getWorldPosition() const /*override*/;
 
-    // vIndex: 5
     virtual ::std::optional<::Vec2> getRotation() const /*override*/;
 
-    // vIndex: 8
     virtual ::Actor* getEntity() const /*override*/;
 
-    // vIndex: 10
     virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
-    // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const /*override*/;
 
-    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const /*override*/;
 
-    // vIndex: 29
     virtual ::CompoundTag serialize() const /*override*/;
 
-    // vIndex: 30
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 34
     virtual ::CommandBlockActor* _getBlockEntity(::BlockSource& region) const /*override*/;
 
-    // vIndex: 33
     virtual ::BaseCommandBlock* _getBaseCommandBlock(::BlockSource& region) const /*override*/;
     // NOLINTEND
 
@@ -116,6 +104,8 @@ public:
     MCNAPI ::CommandBlockActor* $_getBlockEntity(::BlockSource& region) const;
 
     MCNAPI ::BaseCommandBlock* $_getBaseCommandBlock(::BlockSource& region) const;
+
+
     // NOLINTEND
 
 public:

@@ -8,14 +8,13 @@
 // auto generated forward declare list
 // clang-format off
 class ReadOnlyBinaryStream;
-struct BiomeElementData;
 // clang-format on
 
 struct BiomeSurfaceMaterialAdjustmentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeElementData>> mAdjustments;
+    ::ll::UntypedStorage<8, 24> mUnkfdee0e;
     // NOLINTEND
 
 public:
@@ -26,26 +25,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeSurfaceMaterialAdjustmentData(::BiomeSurfaceMaterialAdjustmentData const&);
+    MCNAPI BiomeSurfaceMaterialAdjustmentData(::BiomeSurfaceMaterialAdjustmentData const&);
 
-    MCAPI ~BiomeSurfaceMaterialAdjustmentData();
+    MCNAPI ~BiomeSurfaceMaterialAdjustmentData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeSurfaceMaterialAdjustmentData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeSurfaceMaterialAdjustmentData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeSurfaceMaterialAdjustmentData const&);
+    MCNAPI void* $ctor(::BiomeSurfaceMaterialAdjustmentData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

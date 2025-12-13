@@ -34,10 +34,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 1
     virtual void
     log(::std::string&&                 msg,
         ::Player*                       player,
@@ -46,13 +44,10 @@ public:
         ::Editor::LogChannel            logChannelMask,
         ::std::string                   subMsg) /*override*/;
 
-    // vIndex: 2
     virtual void flush() /*override*/;
 
-    // vIndex: 3
     virtual ::std::vector<::Editor::LogMessage> const& getMessages() const /*override*/;
 
-    // vIndex: 0
     virtual ~ServerLoggingService() /*override*/ = default;
     // NOLINTEND
 
@@ -79,6 +74,8 @@ public:
     MCNAPI void $flush();
 
     MCNAPI ::std::vector<::Editor::LogMessage> const& $getMessages() const;
+
+
     // NOLINTEND
 
 public:

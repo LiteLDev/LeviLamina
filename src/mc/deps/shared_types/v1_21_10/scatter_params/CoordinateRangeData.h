@@ -32,9 +32,9 @@ public:
 
     MCNAPI CoordinateRangeData(::SharedTypes::v1_21_10::CoordinateRangeData const&);
 
-    MCNAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData const&);
-
     MCNAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData&&);
+
+    MCNAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData const&);
 
     MCNAPI ~CoordinateRangeData();
     // NOLINTEND

@@ -32,10 +32,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CommandResponseBase() = default;
 
-    // vIndex: 1
     virtual ::CommandOriginSystem _getCommandOriginSystem() const;
     // NOLINTEND
 
@@ -59,5 +57,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::CommandOriginSystem $_getCommandOriginSystem() const;
+
+
     // NOLINTEND
 };

@@ -13,6 +13,20 @@ public:
     // clang-format on
 
     // VideoSinkWants inner types define
+    struct Aggregates {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk81391a;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Aggregates& operator=(Aggregates const&);
+        Aggregates(Aggregates const&);
+        Aggregates();
+    };
+
     struct FrameSize {
     public:
         // member variables
@@ -26,20 +40,6 @@ public:
         FrameSize& operator=(FrameSize const&);
         FrameSize(FrameSize const&);
         FrameSize();
-    };
-
-    struct Aggregates {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk81391a;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Aggregates& operator=(Aggregates const&);
-        Aggregates(Aggregates const&);
-        Aggregates();
     };
 
 public:

@@ -15,10 +15,8 @@ class ExhaustionAttributeDelegate : public ::AttributeInstanceDelegate {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context) /*override*/;
 
-    // vIndex: 0
     virtual ~ExhaustionAttributeDelegate() /*override*/ = default;
     // NOLINTEND
 
@@ -26,6 +24,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
+
+
     // NOLINTEND
 
 public:

@@ -16,7 +16,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DocumentComponent() /*override*/ = default;
     // NOLINTEND
 };

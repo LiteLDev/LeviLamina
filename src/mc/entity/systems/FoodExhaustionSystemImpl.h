@@ -82,7 +82,6 @@ struct FoodExhaustionSystemImpl : public ::IStrictTickingSystem<::StrictExecutio
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
@@ -119,7 +118,6 @@ public:
             ::EntityFactoryT<>>& context
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~FoodExhaustionSystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -161,6 +159,8 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     );
+
+
     // NOLINTEND
 
 public:

@@ -29,7 +29,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool equals(::ItemDescriptor const& input) const;
+        MCNAPI bool equals(::ItemDescriptor const& input) const;
         // NOLINTEND
     };
 

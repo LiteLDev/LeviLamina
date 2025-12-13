@@ -2,20 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/threading/SpinLockImpl.h"
-
-// auto generated forward declare list
-// clang-format off
-class Biome;
-class BlockPos;
-// clang-format on
-
 struct BiomeSourceGetBiomeCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::Biome const*>> mMap;
-    ::ll::TypedStorage<8, 32, ::SpinLockImpl>                                   mLock;
+    ::ll::UntypedStorage<8, 64> mUnk8e91b6;
+    ::ll::UntypedStorage<8, 32> mUnk590117;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BiomeSourceGetBiomeCache& operator=(BiomeSourceGetBiomeCache const&);
+    BiomeSourceGetBiomeCache(BiomeSourceGetBiomeCache const&);
+    BiomeSourceGetBiomeCache();
 };

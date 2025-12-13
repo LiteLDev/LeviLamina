@@ -11,9 +11,9 @@ class Actor;
 namespace AttackGoalUtility {
 // functions
 // NOLINTBEGIN
-MCAPI ::AABB getTargetHitbox(::Actor const& target);
+MCNAPI ::AABB getTargetHitbox(::Actor const& target);
 
-MCAPI bool isInSunlight(::Actor const& actor);
+MCNAPI bool isInSunlight(::Actor const& actor);
 // NOLINTEND
 
 } // namespace AttackGoalUtility

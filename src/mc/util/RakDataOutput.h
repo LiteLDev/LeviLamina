@@ -26,10 +26,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 9
     virtual void writeBytes(void const* data, uint64 bytes) /*override*/;
 
-    // vIndex: 0
     virtual ~RakDataOutput() /*override*/;
     // NOLINTEND
 
@@ -43,6 +41,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $writeBytes(void const* data, uint64 bytes);
+
+
     // NOLINTEND
 
 public:

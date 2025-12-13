@@ -34,25 +34,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::ServiceReference<::IMinecraftEventing> getEventing() /*override*/;
 
-    // vIndex: 2
     virtual ::ServiceReference<::FeatureToggles> getFeatureToggles() /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::NonOwnerPointer<::ThrottledFileWriteManager> getFileWriteManager() /*override*/;
 
-    // vIndex: 4
     virtual ::ServiceReference<::flighting::IFlightReader> getTreatmentToggles() /*override*/;
 
-    // vIndex: 5
     virtual ::I18n& getI18n() /*override*/;
 
-    // vIndex: 6
     virtual bool& getUseSuspendHandler() /*override*/;
 
-    // vIndex: 0
     virtual ~GlobalDependencies() /*override*/ = default;
     // NOLINTEND
 
@@ -70,6 +63,8 @@ public:
     MCNAPI ::I18n& $getI18n();
 
     MCNAPI bool& $getUseSuspendHandler();
+
+
     // NOLINTEND
 
 public:

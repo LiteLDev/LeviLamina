@@ -16,25 +16,26 @@ class EvocationFang : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mClientSideAttackStarted;
+    ::ll::UntypedStorage<1, 1> mUnk7b33a4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    EvocationFang& operator=(EvocationFang const&);
+    EvocationFang(EvocationFang const&);
+    EvocationFang();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
-    // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 8
     virtual ~EvocationFang() /*override*/ = default;
     // NOLINTEND
 
@@ -51,9 +52,11 @@ public:
 
     MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCFOLD float $getShadowRadius() const;
+
+
     // NOLINTEND
 
 public:

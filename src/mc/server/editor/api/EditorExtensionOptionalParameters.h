@@ -29,10 +29,10 @@ public:
     MCNAPI EditorExtensionOptionalParameters(::Editor::API::EditorExtensionOptionalParameters&&);
 
     MCNAPI ::Editor::API::EditorExtensionOptionalParameters&
-    operator=(::Editor::API::EditorExtensionOptionalParameters const&);
+    operator=(::Editor::API::EditorExtensionOptionalParameters&&);
 
     MCNAPI ::Editor::API::EditorExtensionOptionalParameters&
-    operator=(::Editor::API::EditorExtensionOptionalParameters&&);
+    operator=(::Editor::API::EditorExtensionOptionalParameters const&);
 
     MCNAPI ~EditorExtensionOptionalParameters();
     // NOLINTEND

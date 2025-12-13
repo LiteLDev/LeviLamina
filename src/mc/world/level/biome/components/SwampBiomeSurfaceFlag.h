@@ -9,13 +9,18 @@ struct SwampBiomeSurfaceFlag : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mMaxPuddleDepthBelowSeaLevel;
+    ::ll::UntypedStorage<4, 4> mUnk92aaab;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SwampBiomeSurfaceFlag& operator=(SwampBiomeSurfaceFlag const&);
+    SwampBiomeSurfaceFlag(SwampBiomeSurfaceFlag const&);
+    SwampBiomeSurfaceFlag();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SwampBiomeSurfaceFlag() /*override*/ = default;
     // NOLINTEND
 

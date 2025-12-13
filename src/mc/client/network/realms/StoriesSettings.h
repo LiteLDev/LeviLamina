@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/network/realms/OptInState.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace Realms {
 
 struct StoriesSettings {
@@ -22,6 +30,22 @@ public:
     StoriesSettings& operator=(StoriesSettings const&);
     StoriesSettings(StoriesSettings const&);
     StoriesSettings();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C bool operator==(::Realms::StoriesSettings const& rhs) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::Realms::StoriesSettings fromJson(::Json::Value const& json);
+
+    MCNAPI_C static ::Realms::OptInState optInStringToEnum(::std::string const& optInStateAsString);
+
+    MCNAPI_C static ::Json::Value toJson(::Realms::StoriesSettings const& storiesSettings);
+    // NOLINTEND
 };
 
 } // namespace Realms

@@ -34,13 +34,11 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk677b67;
     ::ll::UntypedStorage<4, 4>  mUnk539aea;
     ::ll::UntypedStorage<4, 4>  mUnk2ed5b8;
+#ifdef LL_PLAT_S
     ::ll::UntypedStorage<8, 32> mUnka2f10c;
+#else // LL_PLAT_C
+    ::ll::UntypedStorage<8, 32> mUnkcc23b4;
+#endif
     ::ll::UntypedStorage<8, 16> mUnke75f9d;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JSFunctionBytecode& operator=(JSFunctionBytecode const&);
-    JSFunctionBytecode(JSFunctionBytecode const&);
-    JSFunctionBytecode();
 };

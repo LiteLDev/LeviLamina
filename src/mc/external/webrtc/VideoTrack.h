@@ -44,43 +44,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void AddOrUpdateSink(
         ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
         ::rtc::VideoSinkWants const&                     wants
     ) /*override*/;
 
-    // vIndex: 2
     virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
 
-    // vIndex: 3
     virtual void RequestRefreshFrame() /*override*/;
 
-    // vIndex: 8
     virtual ::webrtc::VideoTrackSourceInterface* GetSource() const /*override*/;
 
-    // vIndex: 9
     virtual ::webrtc::VideoTrackInterface::ContentHint content_hint() const /*override*/;
 
-    // vIndex: 10
     virtual void set_content_hint(::webrtc::VideoTrackInterface::ContentHint hint) /*override*/;
 
-    // vIndex: 6
     virtual bool set_enabled(bool enable) /*override*/;
 
-    // vIndex: 5
     virtual bool enabled() const /*override*/;
 
-    // vIndex: 7
     virtual ::webrtc::MediaStreamTrackInterface::TrackState state() const /*override*/;
 
-    // vIndex: 3
     virtual ::std::string kind() const /*override*/;
 
-    // vIndex: 1
     virtual ~VideoTrack() /*override*/;
 
-    // vIndex: 0
     virtual void OnChanged() /*override*/;
     // NOLINTEND
 
@@ -147,6 +135,8 @@ public:
     MCNAPI ::std::string $kind() const;
 
     MCNAPI void $OnChanged();
+
+
     // NOLINTEND
 
 public:

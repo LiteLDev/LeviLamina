@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/ActorType.h"
-
 struct SetLastHurtByPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ActorType> mLastHurtBy;
+    ::ll::UntypedStorage<4, 4> mUnk29ccd8;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SetLastHurtByPacketPayload& operator=(SetLastHurtByPacketPayload const&);
+    SetLastHurtByPacketPayload(SetLastHurtByPacketPayload const&);
+    SetLastHurtByPacketPayload();
 };

@@ -28,26 +28,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Result<::std::unique_ptr<::IPacketLimitAlgorithm>>
+    MCNAPI_S ::Bedrock::Result<::std::unique_ptr<::IPacketLimitAlgorithm>>
     _deserializeAlgorithm(::Json::Value& algorithmNode);
 
-    MCNAPI ::Bedrock::Result<::PacketGroupDefinition::PacketGroupBuilder>
+    MCNAPI_S ::Bedrock::Result<::PacketGroupDefinition::PacketGroupBuilder>
     _deserializePacketLimitConfig(::Json::Value& root);
 
-    MCNAPI ::Bedrock::Result<::PacketGroupDefinition::PacketGroupBuilder> deserializePacketLimitConfig();
+    MCNAPI_S ::Bedrock::Result<::PacketGroupDefinition::PacketGroupBuilder> deserializePacketLimitConfig();
 
-    MCNAPI ~PacketLimitAlgorithmDeserializer();
+    MCNAPI_S ~PacketLimitAlgorithmDeserializer();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::PacketLimitAlgorithmDeserializer createFromDefaultLocation();
+    MCNAPI_S static ::PacketLimitAlgorithmDeserializer createFromDefaultLocation();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI_S void $dtor();
     // NOLINTEND
 };

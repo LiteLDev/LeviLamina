@@ -9,17 +9,17 @@ class RealmEventServerLogger : public ::IRealmEventLogger {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void logEvent(::std::string const& message) /*override*/;
 
-    // vIndex: 0
     virtual ~RealmEventServerLogger() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $logEvent(::std::string const& message);
+    MCNAPI void $logEvent(::std::string const& message);
+
+
     // NOLINTEND
 
 public:

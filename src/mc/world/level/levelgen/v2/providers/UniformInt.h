@@ -14,34 +14,38 @@ struct UniformInt : public ::IntProviderType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mMinInclusive;
-    ::ll::TypedStorage<4, 4, int> mMaxInclusive;
+    ::ll::UntypedStorage<4, 4> mUnk78de38;
+    ::ll::UntypedStorage<4, 4> mUnk53e45c;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UniformInt& operator=(UniformInt const&);
+    UniformInt(UniformInt const&);
+    UniformInt();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual int sample(::IRandom& random) const /*override*/;
 
-    // vIndex: 2
     virtual int maxValue() const /*override*/;
 
-    // vIndex: 3
     virtual int minValue() const /*override*/;
 
-    // vIndex: 0
     virtual ~UniformInt() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $sample(::IRandom& random) const;
+    MCNAPI int $sample(::IRandom& random) const;
 
-    MCFOLD int $maxValue() const;
+    MCNAPI int $maxValue() const;
 
-    MCFOLD int $minValue() const;
+    MCNAPI int $minValue() const;
+
+
     // NOLINTEND
 
 public:

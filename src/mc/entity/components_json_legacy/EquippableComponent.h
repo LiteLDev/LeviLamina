@@ -7,6 +7,7 @@
 class Actor;
 class CompoundTag;
 class ItemStack;
+class UpdateEquipPacket;
 struct SlotDescriptor;
 // clang-format on
 
@@ -31,5 +32,7 @@ public:
     MCNAPI bool onItemChanged(::Actor& owner, uint64 slotIdx, ::ItemStack const& item) const;
 
     MCNAPI ::EquippableComponent& operator=(::EquippableComponent&& other);
+
+    MCNAPI_C void setDataFromPacket(::UpdateEquipPacket const& packet);
     // NOLINTEND
 };

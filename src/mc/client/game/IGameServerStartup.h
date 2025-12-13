@@ -11,19 +11,17 @@
 class ContentIdentity;
 class LevelSettings;
 class TaskGroup;
+struct LevelSummary;
 // clang-format on
 
 class IGameServerStartup {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IGameServerStartup() = default;
 
-    // vIndex: 1
     virtual bool canStartLocalServer() const = 0;
 
-    // vIndex: 2
     virtual ::Bedrock::Threading::Async<void> startLocalServerAsync(
         ::std::string const&,
         ::std::string const&,
@@ -32,11 +30,23 @@ public:
         ::StartIntent
     ) = 0;
 
-    // vIndex: 3
     virtual bool isHostingLocalDedicatedServer() const = 0;
 
-    // vIndex: 4
     virtual ::TaskGroup& _getServerInitTaskGroup() = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::Bedrock::Threading::Async<void> startLocalServerAsyncFromSummary(::LevelSummary const& levelSummary);
+
+    MCNAPI_C bool startLocalServerBlocking(
+        ::std::string const&     levelId,
+        ::std::string const&     levelName,
+        ::ContentIdentity const& premiumTemplateContentIdentity,
+        ::LevelSettings const&   settings,
+        ::StartIntent            startIntent
+    );
     // NOLINTEND
 
 public:

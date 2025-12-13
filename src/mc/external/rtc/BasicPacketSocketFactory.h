@@ -35,18 +35,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BasicPacketSocketFactory() /*override*/;
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::rtc::AsyncPacketSocket>
     CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
 
-    // vIndex: 2
     virtual ::std::shared_ptr<::rtc::AsyncPacketSocket>
     CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
 
-    // vIndex: 3
     virtual ::std::unique_ptr<::rtc::AsyncListenSocket> CreateServerTcpSocket(
         ::rtc::SocketAddress const& local_address,
         ushort                      min_port,
@@ -54,7 +50,6 @@ public:
         int                         opts
     ) /*override*/;
 
-    // vIndex: 4
     virtual ::std::unique_ptr<::rtc::AsyncPacketSocket> CreateClientTcpSocket(
         ::rtc::SocketAddress const&          local_address,
         ::rtc::SocketAddress const&          remote_address,
@@ -63,7 +58,6 @@ public:
         ::rtc::PacketSocketTcpOptions const& tcp_options
     ) /*override*/;
 
-    // vIndex: 5
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() /*override*/;
     // NOLINTEND
 
@@ -109,6 +103,8 @@ public:
     );
 
     MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAsyncDnsResolver();
+
+
     // NOLINTEND
 
 public:

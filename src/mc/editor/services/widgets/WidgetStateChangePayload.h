@@ -41,7 +41,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WidgetStateChangePayload() /*override*/ = default;
     // NOLINTEND
 

@@ -29,19 +29,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FileLogEndPoint() /*override*/ = default;
 
-    // vIndex: 1
     virtual void log(char const*) /*override*/;
 
-    // vIndex: 2
     virtual void flush() /*override*/;
 
-    // vIndex: 3
     virtual void setEnabled(bool) /*override*/;
 
-    // vIndex: 4
     virtual bool isEnabled() const /*override*/;
     // NOLINTEND
 

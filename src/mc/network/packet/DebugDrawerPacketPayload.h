@@ -2,16 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ShapeDataPayload;
-// clang-format on
-
 struct DebugDrawerPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ShapeDataPayload>> mShapes;
+    ::ll::UntypedStorage<8, 24> mUnkbb52c1;
     // NOLINTEND
 
 public:
@@ -23,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::DebugDrawerPacketPayload& operator=(::DebugDrawerPacketPayload&&);
+    MCNAPI ::DebugDrawerPacketPayload& operator=(::DebugDrawerPacketPayload&&);
 
-    MCAPI ~DebugDrawerPacketPayload();
+    MCNAPI ~DebugDrawerPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

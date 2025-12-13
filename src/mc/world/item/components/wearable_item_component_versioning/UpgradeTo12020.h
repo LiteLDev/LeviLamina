@@ -11,37 +11,37 @@ class UpgradeTo12020 : public ::ItemCerealSchemaUpgrade {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool previousSchema(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~UpgradeTo12020() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpgradeTo12020();
+    MCNAPI UpgradeTo12020();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $previousSchema(
+    MCNAPI bool $previousSchema(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
     ) const;
+
+
     // NOLINTEND
 
 public:

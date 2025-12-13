@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentAfterEventIntermediateStorage.h"
 
 namespace ScriptModuleMinecraft {
@@ -13,20 +12,29 @@ struct ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mEntity;
-    ::ll::TypedStorage<4, 4, float const>            mFallDistance;
+    ::ll::UntypedStorage<8, 24> mUnk5608c6;
+    ::ll::UntypedStorage<4, 4>  mUnk23c7dd;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage&
+    operator=(ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage const&);
+    ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage(
+        ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage const&
+    );
+    ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage();
+    MCNAPI ~ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -19,7 +19,6 @@ class VCMReceiveCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual int FrameToRender(
         ::webrtc::VideoFrame&,
         ::std::optional<uchar>,
@@ -28,16 +27,12 @@ public:
         ::webrtc::VideoFrameType
     ) = 0;
 
-    // vIndex: 1
     virtual void OnDroppedFrames(uint);
 
-    // vIndex: 2
     virtual void OnIncomingPayloadType(int);
 
-    // vIndex: 3
     virtual void OnDecoderInfoChanged(::webrtc::VideoDecoder::DecoderInfo const&);
 
-    // vIndex: 4
     virtual ~VCMReceiveCallback() = default;
     // NOLINTEND
 

@@ -22,40 +22,6 @@ public:
     // clang-format on
 
     // AudioSendStream inner types define
-    struct Stats {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnkd0a5b8;
-        ::ll::UntypedStorage<8, 8>   mUnk4c539f;
-        ::ll::UntypedStorage<8, 8>   mUnkb115e9;
-        ::ll::UntypedStorage<8, 8>   mUnk2a88c7;
-        ::ll::UntypedStorage<4, 4>   mUnk477ff2;
-        ::ll::UntypedStorage<8, 8>   mUnk6a00e0;
-        ::ll::UntypedStorage<8, 8>   mUnkd81c77;
-        ::ll::UntypedStorage<4, 4>   mUnk3c951f;
-        ::ll::UntypedStorage<4, 4>   mUnkce6ab3;
-        ::ll::UntypedStorage<8, 32>  mUnkca7d23;
-        ::ll::UntypedStorage<4, 8>   mUnk4d54b4;
-        ::ll::UntypedStorage<4, 4>   mUnk2be52c;
-        ::ll::UntypedStorage<8, 8>   mUnkf82688;
-        ::ll::UntypedStorage<2, 2>   mUnk74874a;
-        ::ll::UntypedStorage<8, 8>   mUnk526a97;
-        ::ll::UntypedStorage<8, 8>   mUnkcb97e5;
-        ::ll::UntypedStorage<4, 56>  mUnkc30448;
-        ::ll::UntypedStorage<8, 112> mUnk686b36;
-        ::ll::UntypedStorage<8, 8>   mUnk916441;
-        ::ll::UntypedStorage<8, 24>  mUnkcfbd21;
-        ::ll::UntypedStorage<4, 4>   mUnkfec135;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Stats& operator=(Stats const&);
-        Stats(Stats const&);
-        Stats();
-    };
-
     struct Config {
     public:
         // Config inner types declare
@@ -132,35 +98,60 @@ public:
         Config();
     };
 
+    struct Stats {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>   mUnkd0a5b8;
+        ::ll::UntypedStorage<8, 8>   mUnk4c539f;
+        ::ll::UntypedStorage<8, 8>   mUnkb115e9;
+        ::ll::UntypedStorage<8, 8>   mUnk2a88c7;
+        ::ll::UntypedStorage<4, 4>   mUnk477ff2;
+        ::ll::UntypedStorage<8, 8>   mUnk6a00e0;
+        ::ll::UntypedStorage<8, 8>   mUnkd81c77;
+        ::ll::UntypedStorage<4, 4>   mUnk3c951f;
+        ::ll::UntypedStorage<4, 4>   mUnkce6ab3;
+        ::ll::UntypedStorage<8, 32>  mUnkca7d23;
+        ::ll::UntypedStorage<4, 8>   mUnk4d54b4;
+        ::ll::UntypedStorage<4, 4>   mUnk2be52c;
+        ::ll::UntypedStorage<8, 8>   mUnkf82688;
+        ::ll::UntypedStorage<2, 2>   mUnk74874a;
+        ::ll::UntypedStorage<8, 8>   mUnk526a97;
+        ::ll::UntypedStorage<8, 8>   mUnkcb97e5;
+        ::ll::UntypedStorage<4, 56>  mUnkc30448;
+        ::ll::UntypedStorage<8, 112> mUnk686b36;
+        ::ll::UntypedStorage<8, 8>   mUnk916441;
+        ::ll::UntypedStorage<8, 24>  mUnkcfbd21;
+        ::ll::UntypedStorage<4, 4>   mUnkfec135;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Stats& operator=(Stats const&);
+        Stats(Stats const&);
+        Stats();
+    };
+
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ~AudioSendStream() /*override*/ = default;
 
-    // vIndex: 2
     virtual ::webrtc::AudioSendStream::Config const& GetConfig() const = 0;
 
-    // vIndex: 3
     virtual void
     Reconfigure(::webrtc::AudioSendStream::Config const&, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>) = 0;
 
-    // vIndex: 4
     virtual void Start() = 0;
 
-    // vIndex: 5
     virtual void Stop() = 0;
 
-    // vIndex: 6
     virtual bool SendTelephoneEvent(int, int, int, int) = 0;
 
-    // vIndex: 7
     virtual void SetMuted(bool) = 0;
 
-    // vIndex: 9
     virtual ::webrtc::AudioSendStream::Stats GetStats() const = 0;
 
-    // vIndex: 8
     virtual ::webrtc::AudioSendStream::Stats GetStats(bool) const = 0;
     // NOLINTEND
 

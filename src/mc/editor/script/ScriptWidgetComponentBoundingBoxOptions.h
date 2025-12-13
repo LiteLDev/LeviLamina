@@ -44,27 +44,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void>
     validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptWidgetComponentBoundingBoxOptions() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptWidgetComponentBoundingBoxOptions(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&&);
+
     MCNAPI
     ScriptWidgetComponentBoundingBoxOptions(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions const&);
 
-    MCNAPI ScriptWidgetComponentBoundingBoxOptions(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&&);
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions const&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&&);
     // NOLINTEND
 
 public:
@@ -108,9 +106,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions const&);
-
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&&);
+
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions const&);
     // NOLINTEND
 
 public:
@@ -124,6 +122,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void>
     $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
+
+
     // NOLINTEND
 
 public:

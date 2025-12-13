@@ -12,27 +12,26 @@ struct MobDescriptor;
 
 class TargetGoalDefinition : public ::BaseGoalDefinition {
 public:
-    // TargetGoalDefinition inner types define
-    using self = ::TargetGoalDefinition;
-
-    using TargetTypes = ::std::vector<::MobDescriptor>;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                            mAttackOwner;
-    ::ll::TypedStorage<1, 1, bool>                            mMustReach;
-    ::ll::TypedStorage<1, 1, bool>                            mMustSee;
-    ::ll::TypedStorage<4, 4, float>                           mDefaultFollowDistance;
-    ::ll::TypedStorage<4, 4, float>                           mForgetTargetTime;
-    ::ll::TypedStorage<4, 4, float>                           mPersistTargetTime;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetTypes;
+    ::ll::UntypedStorage<1, 1>  mUnke37f30;
+    ::ll::UntypedStorage<1, 1>  mUnk7727a0;
+    ::ll::UntypedStorage<1, 1>  mUnk6bfb00;
+    ::ll::UntypedStorage<4, 4>  mUnk51c60d;
+    ::ll::UntypedStorage<4, 4>  mUnk99351c;
+    ::ll::UntypedStorage<4, 4>  mUnkc2c4aa;
+    ::ll::UntypedStorage<8, 24> mUnkef0f5b;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TargetGoalDefinition& operator=(TargetGoalDefinition const&);
+    TargetGoalDefinition(TargetGoalDefinition const&);
+    TargetGoalDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TargetGoalDefinition() /*override*/ = default;
     // NOLINTEND
 

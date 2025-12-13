@@ -19,36 +19,30 @@ class EnderCrystal : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::function<void(::EnderCrystal&, ::ActorDamageSource const&)>>
-        mCrystalDamagedCallback;
+    ::ll::UntypedStorage<8, 64> mUnk387000;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    EnderCrystal& operator=(EnderCrystal const&);
+    EnderCrystal(EnderCrystal const&);
     EnderCrystal();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 8
     virtual ~EnderCrystal() /*override*/ = default;
     // NOLINTEND
 
@@ -65,7 +59,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& HEAL_DISTANCE();
+    MCAPI_S static float const& HEAL_DISTANCE();
     // NOLINTEND
 
 public:
@@ -92,6 +86,8 @@ public:
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+
     // NOLINTEND
 
 public:

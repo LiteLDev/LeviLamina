@@ -14,4 +14,16 @@ public:
     ServicePacksConfig& operator=(ServicePacksConfig const&);
     ServicePacksConfig(ServicePacksConfig const&);
     ServicePacksConfig();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~ServicePacksConfig();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

@@ -36,14 +36,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SendEventData& operator=(::SendEventData const&);
+    MCNAPI ::SendEventData& operator=(::SendEventData const&);
 
-    MCAPI ~SendEventData();
+    MCNAPI ~SendEventData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

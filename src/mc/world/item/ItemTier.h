@@ -6,10 +6,16 @@ struct ItemTier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>   mLevel;
-    ::ll::TypedStorage<4, 4, int>   mUses;
-    ::ll::TypedStorage<4, 4, float> mSpeed;
-    ::ll::TypedStorage<4, 4, int>   mDamage;
-    ::ll::TypedStorage<4, 4, int>   mEnchantmentValue;
+    ::ll::UntypedStorage<4, 4> mUnkc020be;
+    ::ll::UntypedStorage<4, 4> mUnka84bab;
+    ::ll::UntypedStorage<4, 4> mUnk43bc53;
+    ::ll::UntypedStorage<4, 4> mUnk23193e;
+    ::ll::UntypedStorage<4, 4> mUnk4d0e5f;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ItemTier& operator=(ItemTier const&);
+    ItemTier(ItemTier const&);
+    ItemTier();
 };

@@ -9,7 +9,6 @@ class OverworldBrightnessRamp : public ::DimensionBrightnessRamp {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~OverworldBrightnessRamp() /*override*/ = default;
     // NOLINTEND
 

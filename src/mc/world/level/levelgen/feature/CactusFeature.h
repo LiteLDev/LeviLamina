@@ -16,23 +16,29 @@ class CactusFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mPlaceCactusFlowers;
+    ::ll::UntypedStorage<1, 1> mUnkc9f851;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CactusFeature& operator=(CactusFeature const&);
+    CactusFeature(CactusFeature const&);
+    CactusFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 0
     virtual ~CactusFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

@@ -48,13 +48,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~VanillaGameModuleServer() /*override*/ = default;
 
-    // vIndex: 2
     virtual void init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) /*override*/;
 
-    // vIndex: 3
     virtual void initializeBehaviorStack(
         ::Experiments const&                                            experiments,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
@@ -63,7 +60,6 @@ public:
         bool                                                            includeEditorPacks
     ) /*override*/;
 
-    // vIndex: 4
     virtual void configureLevel(
         ::Bedrock::NotNullNonOwnerPtr<::Level>& level,
         ::Experiments const&                    experiments,
@@ -75,22 +71,17 @@ public:
             biomeIdToResolvedData
     ) /*override*/;
 
-    // vIndex: 5
     virtual void configureNewPlayer(::Player& player) /*override*/;
 
-    // vIndex: 6
     virtual void configureDocumentation(
         ::IGameModuleDocumentation& moduleDocumentation,
         ::ItemRegistryRef const     docItemRegistry
     ) /*override*/;
 
-    // vIndex: 7
     virtual void tick() /*override*/;
 
-    // vIndex: 8
     virtual void setupCommands(::CommandRegistry& commandRegistry) /*override*/;
 
-    // vIndex: 9
     virtual void configureServerNetworkHandler(
         ::ServerInstance&                                     server,
         ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> handler
@@ -154,6 +145,8 @@ public:
         ::ServerInstance&                                     server,
         ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> handler
     );
+
+
     // NOLINTEND
 
 public:

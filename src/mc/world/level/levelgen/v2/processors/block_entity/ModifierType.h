@@ -15,13 +15,10 @@ struct ModifierType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ModifierType() = default;
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom&, ::CompoundTag const*) const = 0;
 
-    // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash&) const = 0;
     // NOLINTEND
 

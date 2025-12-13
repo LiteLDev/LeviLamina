@@ -27,10 +27,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~UpgraderBase();
 
-    // vIndex: 1
     virtual ::Puv::LoadResultAny doUpgrade(::Puv::LoadResultAny) const = 0;
     // NOLINTEND
 

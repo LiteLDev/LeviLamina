@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerArmorExchangeEvent(::PlayerArmorExchangeEvent const&);
+    MCNAPI PlayerArmorExchangeEvent(::PlayerArmorExchangeEvent const&);
 
-    MCAPI ~PlayerArmorExchangeEvent();
+    MCNAPI ~PlayerArmorExchangeEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerArmorExchangeEvent const&);
+    MCNAPI void* $ctor(::PlayerArmorExchangeEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

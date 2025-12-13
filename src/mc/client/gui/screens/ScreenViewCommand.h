@@ -32,7 +32,20 @@ public:
 
 public:
     // prevent constructor by default
-    ScreenViewCommand& operator=(ScreenViewCommand const&);
     ScreenViewCommand(ScreenViewCommand const&);
     ScreenViewCommand();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::ScreenViewCommand& operator=(::ScreenViewCommand const&);
+
+    MCNAPI_C ~ScreenViewCommand();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

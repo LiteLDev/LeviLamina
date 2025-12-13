@@ -25,49 +25,34 @@ class RtpReceiverInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track() const = 0;
 
-    // vIndex: 4
     virtual ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport() const;
 
-    // vIndex: 5
     virtual ::std::vector<::std::string> stream_ids() const;
 
-    // vIndex: 6
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> streams() const;
 
-    // vIndex: 7
     virtual ::cricket::MediaType media_type() const = 0;
 
-    // vIndex: 8
     virtual ::std::string id() const = 0;
 
-    // vIndex: 9
     virtual ::webrtc::RtpParameters GetParameters() const = 0;
 
-    // vIndex: 10
     virtual bool SetParameters(::webrtc::RtpParameters const& parameters);
 
-    // vIndex: 11
     virtual void SetObserver(::webrtc::RtpReceiverObserverInterface*) = 0;
 
-    // vIndex: 12
     virtual void SetJitterBufferMinimumDelay(::std::optional<double>) = 0;
 
-    // vIndex: 13
     virtual ::std::vector<::webrtc::RtpSource> GetSources() const;
 
-    // vIndex: 14
     virtual void SetFrameDecryptor(::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface>);
 
-    // vIndex: 15
     virtual ::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface> GetFrameDecryptor() const;
 
-    // vIndex: 16
     virtual void SetDepacketizerToDecoderFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>);
 
-    // vIndex: 2
     virtual ~RtpReceiverInterface() /*override*/ = default;
     // NOLINTEND
 
@@ -75,6 +60,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $SetParameters(::webrtc::RtpParameters const& parameters);
+
+
     // NOLINTEND
 };
 

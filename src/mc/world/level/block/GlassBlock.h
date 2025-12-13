@@ -26,13 +26,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 56
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 6
     virtual bool getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
@@ -40,7 +37,6 @@ public:
         ::BlockPos const&          pos
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~GlassBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -57,6 +53,8 @@ public:
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos
     ) const;
+
+
     // NOLINTEND
 
 public:

@@ -6,10 +6,10 @@ struct PropertyValues {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<int>>    mIntValues;
-    ::ll::TypedStorage<8, 24, ::std::vector<float>>  mFloatValues;
-    ::ll::TypedStorage<8, 32, ::std::vector<bool>>   mBoolValues;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mEnumIndexValues;
+    ::ll::UntypedStorage<8, 24> mUnkd3015f;
+    ::ll::UntypedStorage<8, 24> mUnkb42fd6;
+    ::ll::UntypedStorage<8, 32> mUnka6c4d6;
+    ::ll::UntypedStorage<8, 24> mUnk16e385;
     // NOLINTEND
 
 public:
@@ -21,16 +21,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PropertyValues& operator=(::PropertyValues&&);
+    MCNAPI ::PropertyValues& operator=(::PropertyValues&&);
 
-    MCAPI void resize(uint64 numInts, uint64 numFloats, uint64 numBools, uint64 numEnums);
+    MCNAPI void resize(uint64 numInts, uint64 numFloats, uint64 numBools, uint64 numEnums);
 
-    MCAPI ~PropertyValues();
+    MCNAPI ~PropertyValues();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

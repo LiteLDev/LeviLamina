@@ -15,13 +15,14 @@ public:
 
 public:
     // prevent constructor by default
-    ResourceMetadata& operator=(ResourceMetadata const&);
     ResourceMetadata(ResourceMetadata const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ResourceMetadata();
+
+    MCNAPI_C ::ResourceMetadata& operator=(::ResourceMetadata const&);
 
     MCNAPI ~ResourceMetadata();
     // NOLINTEND

@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/nbt/CompoundTag.h"
-#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockSource;
+class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class BeehiveBlockActor : public ::BlockActor {
@@ -28,25 +28,27 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mActorIdentifier;
-        ::ll::TypedStorage<8, 24, ::CompoundTag>                mSaveData;
-        ::ll::TypedStorage<4, 4, uint>                          mTicksLeftToStay;
+        ::ll::UntypedStorage<8, 176> mUnkda7ec5;
+        ::ll::UntypedStorage<8, 24>  mUnk5c198a;
+        ::ll::UntypedStorage<4, 4>   mUnk53aa96;
         // NOLINTEND
 
     public:
         // prevent constructor by default
+        Occupant& operator=(Occupant const&);
+        Occupant(Occupant const&);
         Occupant();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Occupant(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
+        MCNAPI Occupant(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
+        MCNAPI void* $ctor(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
         // NOLINTEND
     };
 
@@ -60,16 +62,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 0
     virtual ~BeehiveBlockActor() /*override*/;
     // NOLINTEND
 
@@ -90,6 +88,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI_C static uint const& MAX_OCCUPANCY();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -103,6 +107,8 @@ public:
     MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+
     // NOLINTEND
 
 public:

@@ -17,6 +17,18 @@ public:
     FlushedTransactions& operator=(FlushedTransactions const&);
     FlushedTransactions(FlushedTransactions const&);
     FlushedTransactions();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~FlushedTransactions();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace mce

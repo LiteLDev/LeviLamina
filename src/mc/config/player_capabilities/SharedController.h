@@ -23,16 +23,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canChat(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
 
-    // vIndex: 2
     virtual bool canTell(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
 
-    // vIndex: 3
     virtual bool canOpenChat(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
 
-    // vIndex: 0
     virtual ~SharedController() /*override*/ = default;
     // NOLINTEND
 
@@ -44,6 +40,8 @@ public:
     MCNAPI bool $canTell(::PlayerCapabilities::IPlayerData const& player) const;
 
     MCNAPI bool $canOpenChat(::PlayerCapabilities::IPlayerData const& player) const;
+
+
     // NOLINTEND
 
 public:

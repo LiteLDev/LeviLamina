@@ -29,10 +29,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RakNetCommandParser() /*override*/ = default;
 
-    // vIndex: 5
     virtual bool OnCommand(
         char const*,
         uint,
@@ -42,10 +40,8 @@ public:
         char const*
     ) /*override*/;
 
-    // vIndex: 1
     virtual char const* GetName() const /*override*/;
 
-    // vIndex: 4
     virtual void SendHelp(::RakNet::TransportInterface*, ::RakNet::SystemAddress const&) /*override*/;
     // NOLINTEND
 

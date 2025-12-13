@@ -29,21 +29,66 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EnchantingContainerManagerController();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EnchantingContainerManagerController() /*override*/ = default;
 
-    // vIndex: 11
-    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
+    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
 
-    // vIndex: 2
     virtual void registerContainerCallbacks() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit EnchantingContainerManagerController(
+        ::std::weak_ptr<::EnchantingContainerManagerModel> containerManagerModel
+    );
+
+    MCNAPI_C ::std::string _getEnchantHint(int option);
+
+    MCNAPI_C void _setupCallbacks();
+
+    MCNAPI_C void enchantResult(int option);
+
+    MCNAPI_C ::std::string getEnchantHint(int option);
+
+    MCNAPI_C ::std::string getHoverText(int option);
+
+    MCNAPI_C int getInputItemId();
+
+    MCNAPI_C int getPlayerLevels();
+
+    MCNAPI_C ::std::string getRunesForOption(int option);
+
+    MCNAPI_C ::EnchantingContainerManagerController::OptionStatus getStatusForOption(int option);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::weak_ptr<::EnchantingContainerManagerModel> containerManagerModel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 
+    MCNAPI void $registerContainerCallbacks();
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

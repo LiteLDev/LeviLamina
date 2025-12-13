@@ -13,20 +13,20 @@ struct PossibleTransformation;
 namespace BiomeConditionalTransformationSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void applySerializedBiomeConditionalTransformationDataVector(
+MCNAPI void applySerializedBiomeConditionalTransformationDataVector(
     ::std::vector<::BiomeConditionalTransformationData> const& data,
     ::std::vector<::PossibleTransformation>&                   conditionalTransformations,
     ::BiomeRegistry const&                                     biomeRegistry,
     ::BiomeStringList const&                                   stringList
 );
 
-MCAPI void serializeBiomeConditionalTransformationData(
+MCNAPI void serializeBiomeConditionalTransformationData(
     ::PossibleTransformation const&       conditionalTransformation,
     ::BiomeConditionalTransformationData& data,
     ::BiomeStringList&                    stringList
 );
 
-MCAPI void serializeBiomeConditionalTransformationDataVector(
+MCNAPI void serializeBiomeConditionalTransformationDataVector(
     ::std::vector<::PossibleTransformation> const&       conditionalTransformations,
     ::std::vector<::BiomeConditionalTransformationData>& data,
     ::BiomeStringList&                                   stringList

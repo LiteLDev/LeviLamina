@@ -7,6 +7,7 @@
 class Player;
 class Vec3;
 namespace Social::Events { class Event; }
+namespace Social::Events { struct PlayerTelemetryLoadout; }
 // clang-format on
 
 namespace Social::Events {
@@ -41,7 +42,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C void ItemAcquired(::std::string const& itemName, ::std::string const& acquisitionMethod, int itemCount);
+
+    MCNAPI_C void ItemEquipped(::std::string const& itemName, int slot, int enchantCount);
+
     MCNAPI void ItemUsed(::std::string const& itemName, ::std::string const& useMethod);
+
+    MCNAPI_C void MobInteracted(
+        ::std::string                                   InteractedEntity,
+        ::std::string                                   interactionType,
+        int                                             interactedEntityVariant,
+        uchar                                           interactedEntityColor,
+        ::Social::Events::PlayerTelemetryLoadout const& loadout,
+        ::std::map<::std::string, ::std::string> const& mobProps
+    );
 
     MCNAPI PlayerTelemetry();
 

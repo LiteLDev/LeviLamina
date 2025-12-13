@@ -31,31 +31,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PlayerStateControllerService() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 7
     virtual void _onEditorActivate();
 
-    // vIndex: 8
     virtual void _onEditorDeactivate();
 
-    // vIndex: 9
     virtual void _onEnterToolMode();
 
-    // vIndex: 10
     virtual void _onExitToolMode();
 
-    // vIndex: 11
     virtual void _onEnterCrosshairMode();
 
-    // vIndex: 12
     virtual void _onExitCrosshairMode();
     // NOLINTEND
 
@@ -91,6 +82,8 @@ public:
     MCNAPI void $_onEnterCrosshairMode();
 
     MCNAPI void $_onExitCrosshairMode();
+
+
     // NOLINTEND
 
 public:

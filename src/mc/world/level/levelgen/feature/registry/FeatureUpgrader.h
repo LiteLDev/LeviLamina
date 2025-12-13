@@ -14,17 +14,17 @@ class FeatureUpgrader : public ::Puv::UpgraderBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Puv::LoadResultAny doUpgrade(::Puv::LoadResultAny source) const /*override*/;
 
-    // vIndex: 0
     virtual ~FeatureUpgrader() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Puv::LoadResultAny $doUpgrade(::Puv::LoadResultAny source) const;
+    MCNAPI ::Puv::LoadResultAny $doUpgrade(::Puv::LoadResultAny source) const;
+
+
     // NOLINTEND
 
 public:

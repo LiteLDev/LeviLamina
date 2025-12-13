@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockPos;
 class BlockSource;
 class ItemStackBase;
@@ -14,10 +15,10 @@ namespace ItemBlockActorHelpers { struct SpriteCalculatorRefs; }
 namespace ItemBlockActorHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 tickMapItem(::ItemStackBase const& item, ::BlockSource& region, ::BlockPos const& pos, bool& refreshClientMap);
 
-MCAPI void tickSpriteCalculators(
+MCNAPI void tickSpriteCalculators(
     ::ItemStackBase const&                         item,
     ::ItemBlockActorHelpers::SpriteCalculatorRefs& spriteCalculators,
     ::BlockSource const&                           region,
@@ -26,11 +27,14 @@ MCAPI void tickSpriteCalculators(
     bool                                           instant
 );
 
-MCAPI bool tryDestroyDisplayEntitiy(::WeakEntityRef& displayEntityRef, ::BlockSource& region);
+MCNAPI bool tryDestroyDisplayEntitiy(::WeakEntityRef& displayEntityRef, ::BlockSource& region);
 
-MCAPI void updateMapItem(::ItemStackBase const& item, ::BlockSource& region, ::BlockPos const& pos);
+MCNAPI_C ::Actor*
+tryGetOrCreateDisplayEntity(::WeakEntityRef& displayEntityRef, ::BlockSource& region, ::BlockPos const& pos);
 
-MCAPI void updateSpriteCalculators(
+MCNAPI void updateMapItem(::ItemStackBase const& item, ::BlockSource& region, ::BlockPos const& pos);
+
+MCNAPI void updateSpriteCalculators(
     ::ItemStackBase const&                               item,
     ::ItemBlockActorHelpers::SpriteCalculatorRefs const& spriteCalculators,
     ::BlockSource const&                                 region,

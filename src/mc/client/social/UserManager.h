@@ -22,13 +22,14 @@ class IMinecraftGame;
 class Options;
 struct ControllerIDtoClientMap;
 namespace Bedrock::PubSub { class Subscription; }
+namespace Core { class FileStorageArea; }
 namespace Core { class SingleThreadedLock; }
 namespace Social { class ProfileImageOptions; }
 namespace Social { class User; }
 namespace Social { class UserListObserver; }
-namespace Social { class XboxLiveUser; }
 namespace Social { struct UserCreationData; }
 namespace mce { struct Image; }
+namespace Social { struct XboxLiveUser; }
 // clang-format on
 
 namespace Social {
@@ -52,6 +53,9 @@ public:
     ::ll::UntypedStorage<8, 64>  mUnk8857ff;
     ::ll::UntypedStorage<4, 4>   mUnkcd597a;
     ::ll::UntypedStorage<8, 32>  mUnkbb4da2;
+#ifdef LL_PLAT_C
+    ::ll::UntypedStorage<4, 4> mUnkecd3a6;
+#endif
     ::ll::UntypedStorage<8, 16>  mUnk89970d;
     ::ll::UntypedStorage<8, 8>   mUnk89c3de;
     ::ll::UntypedStorage<8, 8>   mUnk886a7a;
@@ -65,252 +69,386 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UserManager& operator=(UserManager const&);
-    UserManager(UserManager const&);
-    UserManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~UserManager() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~UserManager() /*override*/;
+#endif
 
-    // vIndex: 34
-    virtual void removeUser(int, bool) /*override*/;
+    virtual void removeUser(int id, bool restartIfPrimary) /*override*/;
 
-    // vIndex: 35
-    virtual void removeClient(::std::shared_ptr<::IClientInstance> const&) /*override*/;
+    virtual void removeClient(::std::shared_ptr<::IClientInstance> const& ci) /*override*/;
 
-    // vIndex: 36
     virtual ::std::shared_ptr<::Social::User>
-    setUserClient(int, ::std::shared_ptr<::IClientInstance> const&) /*override*/;
+    setUserClient(int id, ::std::shared_ptr<::IClientInstance> const& clientPtr) /*override*/;
 
-    // vIndex: 37
-    virtual bool userHasClient(int) /*override*/;
+    virtual bool userHasClient(int id) /*override*/;
 
-    // vIndex: 38
     virtual ::std::string_view getPlayFabTitleId() const /*override*/;
 
-    // vIndex: 3
     virtual ::std::shared_ptr<::Social::User> getPrimaryUser() const /*override*/;
 
-    // vIndex: 53
-    virtual ::std::shared_ptr<::Social::User> getUserFromUserId(uint) /*override*/;
+    virtual ::std::shared_ptr<::Social::User> getUserFromUserId(uint id) /*override*/;
 
-    // vIndex: 52
-    virtual ::std::shared_ptr<::Social::User const> const getUserFromUserId(uint) const /*override*/;
+    virtual ::std::shared_ptr<::Social::User const> const getUserFromUserId(uint id) const /*override*/;
 
-    // vIndex: 51
-    virtual ::std::shared_ptr<::Social::User> getUserFromControllerId(int) const /*override*/;
+    virtual ::std::shared_ptr<::Social::User> getUserFromControllerId(int id) const /*override*/;
 
-    // vIndex: 50
-    virtual ::std::shared_ptr<::Social::User> getUser(::IClientInstance const&) const /*override*/;
+    virtual ::std::shared_ptr<::Social::User> getUser(::IClientInstance const& client) const /*override*/;
 
-    // vIndex: 49
-    virtual ::std::shared_ptr<::Social::User> getUser(::Social::XboxLiveUser const&) /*override*/;
+    virtual ::std::shared_ptr<::Social::User> getUser(::Social::XboxLiveUser const& liveUser) /*override*/;
 
-    // vIndex: 54
-    virtual ::GameUserType getUserTypeFromUserId(uint) const /*override*/;
+    virtual ::GameUserType getUserTypeFromUserId(uint id) const /*override*/;
 
-    // vIndex: 55
     virtual bool isChatAllowedWhenBlockedByPlatform() const /*override*/;
 
-    // vIndex: 56
     virtual ::std::vector<::std::shared_ptr<::Social::User>> const& getUsers() const /*override*/;
 
-    // vIndex: 57
-    virtual bool isUserSignedIn(uint) /*override*/;
+    virtual bool isUserSignedIn(uint id) /*override*/;
 
-    // vIndex: 58
     virtual bool isPrimaryUserInitialSignInInProgress() const /*override*/;
 
-    // vIndex: 1
-    virtual ::Bedrock::Threading::Async<void> createPrimaryUserAsync(::std::shared_ptr<::Options>) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> createPrimaryUserAsync(::std::shared_ptr<::Options> options) /*override*/;
 
-    // vIndex: 2
     virtual void initPrimaryIdentity() /*override*/;
 
-    // vIndex: 4
-    virtual bool isSecondaryUserCreationAllowed(int) const /*override*/;
+    virtual bool isSecondaryUserCreationAllowed(int id) const /*override*/;
 
-    // vIndex: 5
-    virtual void setSecondaryUserCreationAllowed(int) /*override*/;
+    virtual void setSecondaryUserCreationAllowed(int id) /*override*/;
 
-    // vIndex: 6
     virtual ::Bedrock::Threading::Async<void> addSecondaryUserAsync(
-        int,
-        ::std::shared_ptr<::Options>,
-        ::std::function<void(::Social::UserPlatformConnectionResult)>
+        int                                                           id,
+        ::std::shared_ptr<::Options>                                  options,
+        ::std::function<void(::Social::UserPlatformConnectionResult)> callback
     ) /*override*/;
 
-    // vIndex: 47
-    virtual void tick(::IMinecraftGame&) /*override*/;
+    virtual void tick(::IMinecraftGame& minecraftGame) /*override*/;
 
-    // vIndex: 48
-    virtual void updateMapping(bool, bool) /*override*/;
+    virtual void updateMapping(bool onScreenAcceptingAllControllerInput, bool inGame) /*override*/;
 
-    // vIndex: 13
     virtual bool isPrimaryUserReady() const /*override*/;
 
-    // vIndex: 14
     virtual bool canAccessPlayScreen() /*override*/;
 
-    // vIndex: 15
     virtual bool needToShowPlatformStoreConnectConfirmationScreen() /*override*/;
 
-    // vIndex: 16
     virtual bool canAccessSettingsScreen() /*override*/;
 
-    // vIndex: 17
     virtual bool canAccessAchievementsScreen() /*override*/;
 
-    // vIndex: 18
     virtual bool canAccessSkinScreen() /*override*/;
 
-    // vIndex: 19
     virtual bool canAccessStoreScreen() const /*override*/;
 
-    // vIndex: 20
     virtual bool canAccessRealmsPendingInvitesScreen() /*override*/;
 
-    // vIndex: 21
     virtual bool canHandleInvites() /*override*/;
 
-    // vIndex: 22
     virtual bool needPlatformConnectionBeforeXBLSignIn() /*override*/;
 
-    // vIndex: 23
     virtual bool needPlatformConnectionForMultiplayer() const /*override*/;
 
-    // vIndex: 24
     virtual bool needPlatformConnectionForSplitScreenMultiplayer() const /*override*/;
 
-    // vIndex: 25
     virtual bool needPlatformConnectionBeforeServerSearch() const /*override*/;
 
-    // vIndex: 8
     virtual bool canChangePrimaryUserFromStartMenuScreen() const /*override*/;
 
-    // vIndex: 63
     virtual bool hasPlatformPremiumAccess() const;
 
-    // vIndex: 27
     virtual bool hasPlatformIcons() const /*override*/;
 
-    // vIndex: 28
     virtual bool hasPlatformProfileCards() const /*override*/;
 
-    // vIndex: 29
-    virtual void
-    getLinkedXuids(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const
-        /*override*/;
+    virtual void getLinkedXuids(
+        ::std::function<void(::std::string, ::std::string)> callback,
+        ::std::vector<::std::string> const&                 platformIds
+    ) const /*override*/;
 
-    // vIndex: 30
-    virtual void
-    getLinkedPlatformIds(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const
-        /*override*/;
+    virtual void getLinkedPlatformIds(
+        ::std::function<void(::std::string, ::std::string)> callback,
+        ::std::vector<::std::string> const&                 xuids
+    ) const /*override*/;
 
-    // vIndex: 39
     virtual ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> retrieveCIDToClientMap() /*override*/;
 
-    // vIndex: 40
-    virtual int getClientCID(::IClientInstance const&) const /*override*/;
+    virtual int getClientCID(::IClientInstance const& client) const /*override*/;
 
-    // vIndex: 41
-    virtual void
-    registerSignOutListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) /*override*/;
+    virtual void registerSignOutListener(
+        ::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const& listener
+    ) /*override*/;
 
-    // vIndex: 42
-    virtual void
-    registerSignInListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) /*override*/;
+    virtual void registerSignInListener(
+        ::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const& listener
+    ) /*override*/;
 
-    // vIndex: 43
     virtual ::Bedrock::PubSub::Subscription registerIdentitySignInCallback(
-        ::Social::IdentityType,
-        ::std::function<void(uint, ::Social::IdentityType)>
+        ::Social::IdentityType                              idType,
+        ::std::function<void(uint, ::Social::IdentityType)> listener
     ) /*override*/;
 
-    // vIndex: 44
     virtual ::Bedrock::PubSub::Subscription registerIdentitySignOutCallback(
-        ::Social::IdentityType,
-        ::std::function<void(uint, ::Social::IdentityType)>
+        ::Social::IdentityType                              idType,
+        ::std::function<void(uint, ::Social::IdentityType)> listener
     ) /*override*/;
 
-    // vIndex: 45
     virtual ::Bedrock::PubSub::Subscription registerProfileImageChangedCallback(
-        ::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>
+        ::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)> listener
     ) /*override*/;
 
-    // vIndex: 46
-    virtual bool needGamepadDisconnectScreen(int) /*override*/;
+    virtual bool needGamepadDisconnectScreen(int controllerId) /*override*/;
 
-    // vIndex: 31
     virtual void onAppResumed() /*override*/;
 
-    // vIndex: 32
     virtual void onAppSuspended() /*override*/;
 
-    // vIndex: 33
     virtual void onAppFocusLost() /*override*/;
 
-    // vIndex: 11
-    virtual void forceCloudSaveOnWorld(::std::string const&) /*override*/;
+    virtual void forceCloudSaveOnWorld(::std::string const& levelId) /*override*/;
 
-    // vIndex: 26
     virtual bool needsAsyncUserSelection(int, bool) /*override*/;
 
-    // vIndex: 9
     virtual void getAsyncUserSelection(::std::function<void(int)>, int) /*override*/;
 
-    // vIndex: 10
-    virtual void getAsyncUserSelectionForNewPrimaryUser(int, bool) /*override*/;
+    virtual void getAsyncUserSelectionForNewPrimaryUser(int id, bool restrictToControllerIdChange) /*override*/;
 
-    // vIndex: 12
     virtual ::Core::Subject<::Social::UserListObserver, ::Core::SingleThreadedLock>& getUserListSubject() /*override*/;
 
-    // vIndex: 7
     virtual bool controllerChanged(int&, int&) /*override*/;
 
-    // vIndex: 59
-    virtual void registerLevelLocationObserver(::ILevelListCache&) /*override*/;
+    virtual void registerLevelLocationObserver(::ILevelListCache& levelListCache) /*override*/;
 
-    // vIndex: 60
     virtual ::Social::MultiplayerServiceObserver& getMultiplayerServiceObserver() /*override*/;
 
-    // vIndex: 61
     virtual ::Social::MultiplayerServiceIdentifier getPlatformMultiplayerServiceIdentifier() const /*override*/;
 
-    // vIndex: 62
     virtual bool willSyncUserDataStorage() const /*override*/;
 
-    // vIndex: 2
-    virtual void onLevelAdded(::std::string const&) /*override*/;
+    virtual void onLevelAdded(::std::string const& levelId) /*override*/;
 
-    // vIndex: 3
-    virtual void onLevelUpdated(::std::string const&) /*override*/;
+    virtual void onLevelUpdated(::std::string const& levelId) /*override*/;
 
-    // vIndex: 4
-    virtual void onLevelDeleted(::std::string const&) /*override*/;
+    virtual void onLevelDeleted(::std::string const& levelId) /*override*/;
 
-    // vIndex: 64
     virtual void _onAppResumed();
 
-    // vIndex: 65
     virtual void _onAppSuspended();
 
-    // vIndex: 66
     virtual ::std::shared_ptr<::Social::UserCreationData>
-    _prepareUserCreationData(::GameUserType, int, ::std::shared_ptr<::Options>, uint);
+    _prepareUserCreationData(::GameUserType userType, int controllerId, ::std::shared_ptr<::Options> options, uint id);
 
-    // vIndex: 67
     virtual void _onUserAdded(::std::shared_ptr<::Social::User> const&);
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C UserManager();
+
+    MCNAPI_C void _addUser(::std::shared_ptr<::Social::User> user);
+
+    MCNAPI_C void _doAutoSignInIfPossible(::IMinecraftGame& minecraftGame);
+
+    MCNAPI_C void _removeUserLoop(int id);
+
+    MCNAPI_C void _signInFailed(::std::shared_ptr<::Social::User> user, ::std::error_code failure);
+
+    MCNAPI_C void
+    notifyUserStorageAreaChanged(::Social::User* _user, ::std::shared_ptr<::Core::FileStorageArea> oldStorageArea);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $removeUser(int id, bool restartIfPrimary);
 
+    MCNAPI void $removeClient(::std::shared_ptr<::IClientInstance> const& ci);
+
+    MCNAPI ::std::shared_ptr<::Social::User>
+    $setUserClient(int id, ::std::shared_ptr<::IClientInstance> const& clientPtr);
+
+    MCNAPI bool $userHasClient(int id);
+
+    MCNAPI ::std::string_view $getPlayFabTitleId() const;
+
+    MCNAPI ::std::shared_ptr<::Social::User> $getPrimaryUser() const;
+
+    MCNAPI ::std::shared_ptr<::Social::User> $getUserFromUserId(uint id);
+
+    MCNAPI ::std::shared_ptr<::Social::User const> const $getUserFromUserId(uint id) const;
+
+    MCNAPI ::std::shared_ptr<::Social::User> $getUserFromControllerId(int id) const;
+
+    MCNAPI ::std::shared_ptr<::Social::User> $getUser(::IClientInstance const& client) const;
+
+    MCNAPI ::std::shared_ptr<::Social::User> $getUser(::Social::XboxLiveUser const& liveUser);
+
+    MCNAPI ::GameUserType $getUserTypeFromUserId(uint id) const;
+
+    MCNAPI bool $isChatAllowedWhenBlockedByPlatform() const;
+
+    MCNAPI ::std::vector<::std::shared_ptr<::Social::User>> const& $getUsers() const;
+
+    MCNAPI bool $isUserSignedIn(uint id);
+
+    MCNAPI bool $isPrimaryUserInitialSignInInProgress() const;
+
+    MCNAPI ::Bedrock::Threading::Async<void> $createPrimaryUserAsync(::std::shared_ptr<::Options> options);
+
+    MCNAPI void $initPrimaryIdentity();
+
+    MCNAPI bool $isSecondaryUserCreationAllowed(int id) const;
+
+    MCNAPI void $setSecondaryUserCreationAllowed(int id);
+
+    MCNAPI ::Bedrock::Threading::Async<void> $addSecondaryUserAsync(
+        int                                                           id,
+        ::std::shared_ptr<::Options>                                  options,
+        ::std::function<void(::Social::UserPlatformConnectionResult)> callback
+    );
+
+    MCNAPI void $tick(::IMinecraftGame& minecraftGame);
+
+    MCNAPI void $updateMapping(bool onScreenAcceptingAllControllerInput, bool inGame);
+
+    MCNAPI bool $isPrimaryUserReady() const;
+
+    MCNAPI bool $canAccessPlayScreen();
+
+    MCNAPI bool $needToShowPlatformStoreConnectConfirmationScreen();
+
+    MCNAPI bool $canAccessSettingsScreen();
+
+    MCNAPI bool $canAccessAchievementsScreen();
+
+    MCNAPI bool $canAccessSkinScreen();
+
+    MCNAPI bool $canAccessStoreScreen() const;
+
+    MCNAPI bool $canAccessRealmsPendingInvitesScreen();
+
+    MCNAPI bool $canHandleInvites();
+
+    MCNAPI bool $needPlatformConnectionBeforeXBLSignIn();
+
+    MCNAPI bool $needPlatformConnectionForMultiplayer() const;
+
+    MCNAPI bool $needPlatformConnectionForSplitScreenMultiplayer() const;
+
+    MCNAPI bool $needPlatformConnectionBeforeServerSearch() const;
+
+    MCNAPI bool $canChangePrimaryUserFromStartMenuScreen() const;
+
+    MCNAPI bool $hasPlatformPremiumAccess() const;
+
+    MCNAPI bool $hasPlatformIcons() const;
+
+    MCNAPI bool $hasPlatformProfileCards() const;
+
+    MCNAPI void $getLinkedXuids(
+        ::std::function<void(::std::string, ::std::string)> callback,
+        ::std::vector<::std::string> const&                 platformIds
+    ) const;
+
+    MCNAPI void $getLinkedPlatformIds(
+        ::std::function<void(::std::string, ::std::string)> callback,
+        ::std::vector<::std::string> const&                 xuids
+    ) const;
+
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> $retrieveCIDToClientMap();
+
+    MCNAPI int $getClientCID(::IClientInstance const& client) const;
+
+    MCNAPI void
+    $registerSignOutListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const& listener);
+
+    MCNAPI void
+    $registerSignInListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const& listener);
+
+    MCNAPI ::Bedrock::PubSub::Subscription $registerIdentitySignInCallback(
+        ::Social::IdentityType                              idType,
+        ::std::function<void(uint, ::Social::IdentityType)> listener
+    );
+
+    MCNAPI ::Bedrock::PubSub::Subscription $registerIdentitySignOutCallback(
+        ::Social::IdentityType                              idType,
+        ::std::function<void(uint, ::Social::IdentityType)> listener
+    );
+
+    MCNAPI ::Bedrock::PubSub::Subscription $registerProfileImageChangedCallback(
+        ::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)> listener
+    );
+
+    MCNAPI bool $needGamepadDisconnectScreen(int controllerId);
+
+    MCNAPI void $onAppResumed();
+
+    MCNAPI void $onAppSuspended();
+
+    MCNAPI void $onAppFocusLost();
+
+    MCNAPI void $forceCloudSaveOnWorld(::std::string const& levelId);
+
+    MCNAPI bool $needsAsyncUserSelection(int, bool);
+
+    MCNAPI void $getAsyncUserSelection(::std::function<void(int)>, int);
+
+    MCNAPI void $getAsyncUserSelectionForNewPrimaryUser(int id, bool restrictToControllerIdChange);
+
+    MCNAPI ::Core::Subject<::Social::UserListObserver, ::Core::SingleThreadedLock>& $getUserListSubject();
+
+    MCNAPI bool $controllerChanged(int&, int&);
+
+    MCNAPI void $registerLevelLocationObserver(::ILevelListCache& levelListCache);
+
+    MCNAPI ::Social::MultiplayerServiceObserver& $getMultiplayerServiceObserver();
+
+    MCNAPI ::Social::MultiplayerServiceIdentifier $getPlatformMultiplayerServiceIdentifier() const;
+
+    MCNAPI bool $willSyncUserDataStorage() const;
+
+    MCNAPI void $onLevelAdded(::std::string const& levelId);
+
+    MCNAPI void $onLevelUpdated(::std::string const& levelId);
+
+    MCNAPI void $onLevelDeleted(::std::string const& levelId);
+
+    MCNAPI void $_onAppResumed();
+
+    MCNAPI void $_onAppSuspended();
+
+    MCNAPI ::std::shared_ptr<::Social::UserCreationData>
+    $_prepareUserCreationData(::GameUserType userType, int controllerId, ::std::shared_ptr<::Options> options, uint id);
+
+    MCNAPI void $_onUserAdded(::std::shared_ptr<::Social::User> const&);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForIUserManager();
+
+    MCNAPI static void** $vftableForLevelListCacheObserver();
+
+    MCNAPI static void** $vftableForMultiplayerServiceObserver();
     // NOLINTEND
 };
 

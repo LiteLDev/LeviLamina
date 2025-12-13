@@ -29,28 +29,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ApplicationInitHandler() = default;
 
-    // vIndex: 1
     virtual void onFatalInitializationError(char const*) = 0;
 
-    // vIndex: 2
     virtual void onMemoryHeapInit() = 0;
 
-    // vIndex: 3
     virtual void onConfigureMainThread() = 0;
 
-    // vIndex: 4
     virtual void onCrashDumpInit() = 0;
 
-    // vIndex: 5
     virtual void onCrashDumpTerminate() = 0;
 
-    // vIndex: 6
     virtual ::Bedrock::ApplicationInitHandler::InstallCrashHandlerResult onInstallCrashHandler() = 0;
 
-    // vIndex: 7
     virtual void onShutdownCompleted() = 0;
     // NOLINTEND
 

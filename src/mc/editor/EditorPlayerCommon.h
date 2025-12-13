@@ -61,42 +61,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 54
     virtual ::EventResult onEvent(::PlayerDimensionChangeAfterEvent const& evt) /*override*/;
 
-    // vIndex: 0
     virtual ~EditorPlayerCommon() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick) /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::PubSub::Subscription
     registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)> fn) /*override*/;
 
-    // vIndex: 1
     virtual ::Player* getPlayer() const /*override*/;
 
-    // vIndex: 6
     virtual ::optional_ref<::PlayerEventCoordinator> getPlayerEventCoordinator() = 0;
 
-    // vIndex: 21
     virtual ::EventResult onPlayerTick(::Player& player) /*override*/;
 
-    // vIndex: 5
     virtual void _onTick() /*override*/;
     // NOLINTEND
 
@@ -142,6 +130,8 @@ public:
     MCNAPI ::EventResult $onPlayerTick(::Player& player);
 
     MCNAPI void $_onTick();
+
+
     // NOLINTEND
 
 public:

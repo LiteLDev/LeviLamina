@@ -9,20 +9,25 @@ class IAdvancedGraphicsHardwareOptions : public ::Bedrock::EnableNonOwnerReferen
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~IAdvancedGraphicsHardwareOptions() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~IAdvancedGraphicsHardwareOptions() /*override*/;
+#endif
 
-    // vIndex: 1
     virtual bool isHardwareRayTracingCompatible() const = 0;
 
-    // vIndex: 2
     virtual bool isHardwareDeferredCompatible() const = 0;
 
-    // vIndex: 3
     virtual bool isPlatformCompatible() const = 0;
 
-    // vIndex: 4
     virtual bool isUpscalingAvailable() const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

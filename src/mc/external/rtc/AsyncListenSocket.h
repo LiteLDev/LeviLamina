@@ -36,13 +36,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::rtc::AsyncListenSocket::State GetState() const = 0;
 
-    // vIndex: 2
     virtual ::rtc::SocketAddress GetLocalAddress() const = 0;
 
-    // vIndex: 0
     virtual ~AsyncListenSocket() /*override*/;
     // NOLINTEND
 

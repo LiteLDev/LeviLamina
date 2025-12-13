@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/BlockDescriptor.h"
-#include "mc/world/level/block/block_descriptor_serializer/StatesProxy.h"
-#include "mc/world/level/block/block_descriptor_serializer/TagsProxy.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,9 +16,9 @@ struct BlockDescriptorProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                            mName;
-    ::ll::TypedStorage<8, 24, ::BlockDescriptorSerializer::StatesProxy> mStates;
-    ::ll::TypedStorage<8, 32, ::BlockDescriptorSerializer::TagsProxy>   mTags;
+    ::ll::UntypedStorage<8, 32> mUnk64c69c;
+    ::ll::UntypedStorage<8, 24> mUnk331105;
+    ::ll::UntypedStorage<8, 32> mUnk5e2bf7;
     // NOLINTEND
 
 public:
@@ -32,28 +30,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockDescriptorProxy(::SharedTypes::Legacy::BlockDescriptor desc);
+    MCNAPI explicit BlockDescriptorProxy(::SharedTypes::Legacy::BlockDescriptor desc);
 
-    MCAPI BlockDescriptorProxy(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
+    MCNAPI BlockDescriptorProxy(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
 
-    MCAPI ::BlockDescriptorSerializer::BlockDescriptorProxy&
+    MCNAPI ::BlockDescriptorSerializer::BlockDescriptorProxy&
     operator=(::BlockDescriptorSerializer::BlockDescriptorProxy&&);
 
-    MCAPI ~BlockDescriptorProxy();
+    MCNAPI ~BlockDescriptorProxy();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
 
-    MCAPI void* $ctor(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
+    MCNAPI void* $ctor(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

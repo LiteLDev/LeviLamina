@@ -30,16 +30,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~StunUInt16ListAttribute() /*override*/;
 
-    // vIndex: 1
     virtual ::cricket::StunAttributeValueType value_type() const /*override*/;
 
-    // vIndex: 3
     virtual bool Read(::rtc::ByteBufferReader* buf) /*override*/;
 
-    // vIndex: 4
     virtual bool Write(::rtc::ByteBufferWriter* buf) const /*override*/;
     // NOLINTEND
 
@@ -77,6 +73,8 @@ public:
     MCNAPI bool $Read(::rtc::ByteBufferReader* buf);
 
     MCNAPI bool $Write(::rtc::ByteBufferWriter* buf) const;
+
+
     // NOLINTEND
 
 public:

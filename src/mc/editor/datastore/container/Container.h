@@ -22,10 +22,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Container() = default;
 
-    // vIndex: 1
     virtual void clear() = 0;
     // NOLINTEND
 

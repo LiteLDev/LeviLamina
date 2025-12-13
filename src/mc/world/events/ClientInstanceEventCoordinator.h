@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/events/ClientInstanceGameplayEvent.h"
 #include "mc/world/events/EventCoordinator.h"
+#include "mc/world/events/EventRef.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,7 +23,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClientInstanceEventCoordinator() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void sendEvent(::EventRef<::ClientInstanceGameplayEvent<void>> const& event);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

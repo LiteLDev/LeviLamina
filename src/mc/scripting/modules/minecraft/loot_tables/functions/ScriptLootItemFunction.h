@@ -30,10 +30,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptLootItemFunction() = 0;
 
-    // vIndex: 1
     virtual ::LootItemFunction const& _getFunction() const = 0;
     // NOLINTEND
 

@@ -9,24 +9,30 @@ class ShiftedValueAmplifier : public ::Amplifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>   mShiftedValue;
-    ::ll::TypedStorage<4, 4, float> mScalar;
+    ::ll::UntypedStorage<4, 4> mUnk5295c7;
+    ::ll::UntypedStorage<4, 4> mUnk187dcb;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ShiftedValueAmplifier& operator=(ShiftedValueAmplifier const&);
+    ShiftedValueAmplifier(ShiftedValueAmplifier const&);
+    ShiftedValueAmplifier();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ShiftedValueAmplifier() /*override*/ = default;
 
-    // vIndex: 1
     virtual float getAmount(int amplification, float scale) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getAmount(int amplification, float scale) const;
+    MCNAPI float $getAmount(int amplification, float scale) const;
+
+
     // NOLINTEND
 
 public:

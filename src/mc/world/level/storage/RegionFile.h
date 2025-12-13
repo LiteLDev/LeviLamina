@@ -27,7 +27,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RegionFile() = default;
     // NOLINTEND
 

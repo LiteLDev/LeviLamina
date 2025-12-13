@@ -22,8 +22,6 @@ public:
         Float   = 3,
     };
 
-    using Value = ::std::variant<::std::monostate, bool, int, float>;
-
     class ValidationError {
     public:
         // member variables
@@ -50,6 +48,8 @@ public:
 
     using ValidateValueCallback =
         ::std::function<bool(::std::variant<::std::monostate, bool, int, float> const&, ::GameRule::ValidationError*)>;
+
+    using Value = ::std::variant<::std::monostate, bool, int, float>;
 
 public:
     // member variables
@@ -78,15 +78,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameRule(::GameRule const&);
-
     MCAPI GameRule(::GameRule&&);
+
+    MCAPI GameRule(::GameRule const&);
 
     MCAPI GameRule(::std::string const& name, bool canBeModifiedByPlayer);
 
     MCAPI ::GameRule& _setDefaultValue(bool b);
 
     MCAPI ::GameRule& _setDefaultValue(int i);
+
+    MCAPI_C bool getBool() const;
+
+    MCAPI_C int getInt() const;
 
     MCAPI ::std::string getLowercaseName() const;
 
@@ -117,9 +121,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameRule const&);
-
     MCAPI void* $ctor(::GameRule&&);
+
+    MCAPI void* $ctor(::GameRule const&);
 
     MCAPI void* $ctor(::std::string const& name, bool canBeModifiedByPlayer);
     // NOLINTEND

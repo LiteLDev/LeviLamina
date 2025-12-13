@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class ModeChangedPayload; }
 // clang-format on
 
@@ -34,30 +35,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ModeService() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 1
     virtual ::Editor::Mode getMode() const /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> trySetMode(::Editor::Mode newMode) /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func) /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> _doSwitchMode(::Editor::Mode) = 0;
 
-    // vIndex: 8
     virtual void _handleModeChangedPayload(::Editor::Network::ModeChangedPayload const&) = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit ModeService(::Editor::ServiceProviderCollection& providers);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -79,6 +84,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func);
+
+
     // NOLINTEND
 
 public:

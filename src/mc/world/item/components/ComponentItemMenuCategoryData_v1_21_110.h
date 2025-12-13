@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/v1_21_110/item/ItemCategory.h"
-
 // auto generated forward declare list
 // clang-format off
 struct ComponentItemMenuCategoryData_v1_21_60;
@@ -15,9 +12,9 @@ struct ComponentItemMenuCategoryData_v1_21_110 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory> mCreativeCategory;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                              mCreativeGroupName;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                        mIsHiddenInCommands;
+    ::ll::UntypedStorage<1, 1>  mUnkd81378;
+    ::ll::UntypedStorage<8, 40> mUnke8fd6c;
+    ::ll::UntypedStorage<1, 2>  mUnk2591a3;
     // NOLINTEND
 
 public:
@@ -28,17 +25,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ComponentItemMenuCategoryData_v1_21_110& operator=(::ComponentItemMenuCategoryData_v1_21_110 const&);
+    MCNAPI ::ComponentItemMenuCategoryData_v1_21_110& operator=(::ComponentItemMenuCategoryData_v1_21_110&&);
 
-    MCFOLD ::ComponentItemMenuCategoryData_v1_21_110& operator=(::ComponentItemMenuCategoryData_v1_21_110&&);
+    MCNAPI ::ComponentItemMenuCategoryData_v1_21_110& operator=(::ComponentItemMenuCategoryData_v1_21_110 const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void
+    MCNAPI static void
     upgrade(::ComponentItemMenuCategoryData_v1_21_60& oldData, ::ComponentItemMenuCategoryData_v1_21_110& newData);
     // NOLINTEND
 };

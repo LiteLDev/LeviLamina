@@ -21,40 +21,28 @@ class SSLAdapter : public ::rtc::AsyncSocketAdapter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 22
     virtual void SetIgnoreBadCert(bool) = 0;
 
-    // vIndex: 23
     virtual void SetAlpnProtocols(::std::vector<::std::string> const&) = 0;
 
-    // vIndex: 24
     virtual void SetEllipticCurves(::std::vector<::std::string> const&) = 0;
 
-    // vIndex: 25
     virtual void SetMode(::rtc::SSLMode) = 0;
 
-    // vIndex: 26
     virtual void SetCertVerifier(::rtc::SSLCertificateVerifier*) = 0;
 
-    // vIndex: 27
     virtual void SetIdentity(::std::unique_ptr<::rtc::SSLIdentity>) = 0;
 
-    // vIndex: 28
     virtual void SetRole(::rtc::SSLRole) = 0;
 
-    // vIndex: 29
     virtual int StartSSL(::std::string_view) = 0;
 
-    // vIndex: 30
     virtual bool IsResumedSession() = 0;
 
-    // vIndex: 10
     virtual int Listen(int backlog) /*override*/;
 
-    // vIndex: 11
     virtual ::rtc::Socket* Accept(::rtc::SocketAddress* paddr) /*override*/;
 
-    // vIndex: 0
     virtual ~SSLAdapter() /*override*/;
     // NOLINTEND
 
@@ -76,6 +64,8 @@ public:
     MCNAPI int $Listen(int backlog);
 
     MCNAPI ::rtc::Socket* $Accept(::rtc::SocketAddress* paddr);
+
+
     // NOLINTEND
 };
 

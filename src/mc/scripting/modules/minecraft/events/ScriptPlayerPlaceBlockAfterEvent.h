@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class Player;
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -21,17 +19,19 @@ struct ScriptPlayerPlaceBlockAfterEvent : public ::ScriptModuleMinecraft::Script
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayer;
+    ::ll::UntypedStorage<8, 32> mUnk3da92e;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptPlayerPlaceBlockAfterEvent& operator=(ScriptPlayerPlaceBlockAfterEvent const&);
+    ScriptPlayerPlaceBlockAfterEvent(ScriptPlayerPlaceBlockAfterEvent const&);
     ScriptPlayerPlaceBlockAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerPlaceBlockAfterEvent(
+    MCNAPI ScriptPlayerPlaceBlockAfterEvent(
         ::Player&                             player,
         ::BlockPos const&                     pos,
         ::Scripting::WeakLifetimeScope const& scope
@@ -41,13 +41,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::Player& player, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

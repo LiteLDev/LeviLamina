@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/agent/agent_commands/Command.h"
-#include "mc/world/actor/agent/agent_components/Direction.h"
-#include "mc/world/item/ItemStack.h"
 
 namespace AgentCommands {
 
@@ -13,30 +11,35 @@ class PlaceCommand : public ::AgentCommands::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 152, ::ItemStack>                mItem;
-    ::ll::TypedStorage<4, 4, int>                          mSlot;
-    ::ll::TypedStorage<1, 1, ::AgentComponents::Direction> mDir;
+    ::ll::UntypedStorage<8, 152> mUnk2f2909;
+    ::ll::UntypedStorage<4, 4>   mUnk9a64b6;
+    ::ll::UntypedStorage<1, 1>   mUnk2bf38a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlaceCommand& operator=(PlaceCommand const&);
+    PlaceCommand(PlaceCommand const&);
+    PlaceCommand();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void execute() /*override*/;
 
-    // vIndex: 2
     virtual bool isDone() /*override*/;
 
-    // vIndex: 0
     virtual ~PlaceCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute();
+    MCNAPI void $execute();
 
-    MCAPI bool $isDone();
+    MCNAPI bool $isDone();
+
+
     // NOLINTEND
 
 public:

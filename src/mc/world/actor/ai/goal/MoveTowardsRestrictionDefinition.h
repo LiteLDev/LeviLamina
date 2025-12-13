@@ -7,19 +7,20 @@
 
 class MoveTowardsRestrictionDefinition : public ::BaseGoalDefinition {
 public:
-    // MoveTowardsRestrictionDefinition inner types define
-    using self = ::MoveTowardsRestrictionDefinition;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
+    ::ll::UntypedStorage<4, 4> mUnkc54d20;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveTowardsRestrictionDefinition& operator=(MoveTowardsRestrictionDefinition const&);
+    MoveTowardsRestrictionDefinition(MoveTowardsRestrictionDefinition const&);
+    MoveTowardsRestrictionDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MoveTowardsRestrictionDefinition() /*override*/ = default;
     // NOLINTEND
 };

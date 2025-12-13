@@ -16,24 +16,23 @@ class FitSimpleTopRoom : public ::MonumentRoomFitter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool fits(::RoomDefinition const& definition) const /*override*/;
 
-    // vIndex: 2
     virtual ::std::unique_ptr<::OceanMonumentPiece>
     create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random) /*override*/;
 
-    // vIndex: 0
     virtual ~FitSimpleTopRoom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $fits(::RoomDefinition const& definition) const;
+    MCNAPI bool $fits(::RoomDefinition const& definition) const;
 
-    MCAPI ::std::unique_ptr<::OceanMonumentPiece>
+    MCNAPI ::std::unique_ptr<::OceanMonumentPiece>
     $create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random);
+
+
     // NOLINTEND
 
 public:

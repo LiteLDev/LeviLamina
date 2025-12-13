@@ -23,7 +23,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BundleInteractionItemComponent() /*override*/ = default;
     // NOLINTEND
 

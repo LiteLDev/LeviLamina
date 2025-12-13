@@ -20,13 +20,10 @@ class WaterlilyBlock : public ::FoliageBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
@@ -34,10 +31,8 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 0
     virtual ~WaterlilyBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -56,6 +51,8 @@ public:
     ) const;
 
     MCFOLD bool $isLavaBlocking() const;
+
+
     // NOLINTEND
 
 public:

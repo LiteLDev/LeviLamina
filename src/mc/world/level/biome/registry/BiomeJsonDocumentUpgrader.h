@@ -12,7 +12,7 @@ struct BiomeJsonDocumentUpgrader {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::rapidjson::GenericDocument<
+    MCNAPI static ::std::optional<::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
         ::rapidjson::CrtAllocator>>

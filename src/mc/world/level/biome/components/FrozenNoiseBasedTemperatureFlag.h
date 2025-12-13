@@ -9,7 +9,6 @@ struct FrozenNoiseBasedTemperatureFlag : public ::BiomeComponentBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FrozenNoiseBasedTemperatureFlag() /*override*/ = default;
     // NOLINTEND
 

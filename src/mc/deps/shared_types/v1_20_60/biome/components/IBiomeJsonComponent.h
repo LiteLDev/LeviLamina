@@ -11,10 +11,8 @@ struct IBiomeJsonComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IBiomeJsonComponent() = default;
 
-    // vIndex: 1
     virtual ::BiomeComponentVersion getType() const = 0;
     // NOLINTEND
 

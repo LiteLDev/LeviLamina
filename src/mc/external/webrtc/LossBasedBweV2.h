@@ -26,21 +26,6 @@ public:
     // clang-format on
 
     // LossBasedBweV2 inner types define
-    struct Result {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk7991b2;
-        ::ll::UntypedStorage<4, 4> mUnkbd6ab1;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Result& operator=(Result const&);
-        Result(Result const&);
-        Result();
-    };
-
     struct ChannelParameters {
     public:
         // member variables
@@ -138,6 +123,22 @@ public:
         Derivatives();
     };
 
+    struct HoldInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk10d3ac;
+        ::ll::UntypedStorage<8, 8> mUnkb49201;
+        ::ll::UntypedStorage<8, 8> mUnkda8305;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        HoldInfo& operator=(HoldInfo const&);
+        HoldInfo(HoldInfo const&);
+        HoldInfo();
+    };
+
     struct Observation {
     public:
         // member variables
@@ -158,6 +159,21 @@ public:
         Observation();
     };
 
+    struct PaddingInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk8bf814;
+        ::ll::UntypedStorage<8, 8> mUnk7b0ece;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PaddingInfo& operator=(PaddingInfo const&);
+        PaddingInfo(PaddingInfo const&);
+        PaddingInfo();
+    };
+
     struct PartialObservation {
     public:
         // member variables
@@ -175,35 +191,19 @@ public:
         PartialObservation();
     };
 
-    struct PaddingInfo {
+    struct Result {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk8bf814;
-        ::ll::UntypedStorage<8, 8> mUnk7b0ece;
+        ::ll::UntypedStorage<8, 8> mUnk7991b2;
+        ::ll::UntypedStorage<4, 4> mUnkbd6ab1;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        PaddingInfo& operator=(PaddingInfo const&);
-        PaddingInfo(PaddingInfo const&);
-        PaddingInfo();
-    };
-
-    struct HoldInfo {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk10d3ac;
-        ::ll::UntypedStorage<8, 8> mUnkb49201;
-        ::ll::UntypedStorage<8, 8> mUnkda8305;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        HoldInfo& operator=(HoldInfo const&);
-        HoldInfo(HoldInfo const&);
-        HoldInfo();
+        Result& operator=(Result const&);
+        Result(Result const&);
+        Result();
     };
 
 public:

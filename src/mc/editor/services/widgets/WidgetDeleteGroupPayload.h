@@ -13,7 +13,6 @@ class WidgetDeleteGroupPayload : public ::Editor::Network::NetworkPayload<::Edit
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WidgetDeleteGroupPayload() /*override*/ = default;
     // NOLINTEND
 

@@ -2,17 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/legacy/FilterSubject.h"
-#include "mc/world/actor/ActorFilterGroup.h"
-
 class ActorDefinitionTrigger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                       mType;
-    ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::FilterSubject> mTarget;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                  mFilter;
+    ::ll::UntypedStorage<8, 32> mUnkf67777;
+    ::ll::UntypedStorage<2, 2>  mUnk444ddb;
+    ::ll::UntypedStorage<8, 64> mUnk4eb2d9;
     // NOLINTEND
 
 public:

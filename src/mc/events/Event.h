@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
+namespace Json { class Value; }
 namespace Social::Events { class Measurement; }
 namespace Social::Events { class Property; }
 // clang-format on
@@ -60,7 +61,11 @@ public:
 
     MCNAPI void addProperty(::Social::Events::Property const& property);
 
+    MCNAPI_C ::Json::Value measurementsAsJsonValue() const;
+
     MCNAPI bool operator==(::Social::Events::Event const& other) const;
+
+    MCNAPI_C ::Json::Value propertiesAsJsonValue() const;
 
     MCNAPI void updateMeasurements(::Social::Events::Event const& event);
 

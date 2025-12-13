@@ -15,16 +15,12 @@ class ILevelChunkEventManagerConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ILevelChunkEventManagerConnector() = default;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, int)>& getOnChunkLoadedConnector() = 0;
 
-    // vIndex: 2
     virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&)>& getOnChunkReloadedConnector() = 0;
 
-    // vIndex: 3
     virtual ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& getOnChunkDiscardedConnector() = 0;
     // NOLINTEND
 

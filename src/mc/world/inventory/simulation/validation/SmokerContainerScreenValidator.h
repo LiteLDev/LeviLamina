@@ -9,7 +9,6 @@ class SmokerContainerScreenValidator : public ::FurnaceContainerScreenValidator 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SmokerContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

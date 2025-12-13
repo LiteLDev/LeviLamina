@@ -13,6 +13,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ActorRuntimeID;
 class BlockActorDataPacket;
 class BlockPos;
@@ -32,15 +33,37 @@ class VaultBlockActor : public ::BlockActor {
 public:
     // VaultBlockActor inner types declare
     // clang-format off
-    class Client;
-    class Server;
     struct VaultClientData;
     struct VaultConfig;
     struct VaultServerData;
     struct VaultSharedData;
+    class Client;
+    class Server;
     // clang-format on
 
     // VaultBlockActor inner types define
+    struct VaultClientData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float>            currentSpin;
+        ::ll::TypedStorage<4, 4, float>            previousSpin;
+        ::ll::TypedStorage<8, 24, ::WeakEntityRef> displayEntity;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~VaultClientData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
     struct VaultConfig {
     public:
         // member variables
@@ -56,6 +79,32 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~VaultConfig();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct VaultServerData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::Tick>                          stateUpdateResumesAt;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>     itemsToEject;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> rewardedPlayers;
+        ::ll::TypedStorage<1, 1, bool>                            doesBlockNeedToBeSaved;
+        ::ll::TypedStorage<8, 8, ::Tick>                          serverTick;
+        ::ll::TypedStorage<8, 8, ::Tick>                          lastInsertFailTimestamp;
+        ::ll::TypedStorage<4, 4, int>                             totalEjectionsNeeded;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~VaultServerData();
         // NOLINTEND
 
     public:
@@ -88,51 +137,26 @@ public:
         // NOLINTEND
     };
 
-    struct VaultClientData {
+    class Client {
     public:
-        // member variables
+        // static functions
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>            currentSpin;
-        ::ll::TypedStorage<4, 4, float>            previousSpin;
-        ::ll::TypedStorage<8, 24, ::WeakEntityRef> displayEntity;
-        // NOLINTEND
+        MCAPI static void emitConnectedParticles(
+            ::BlockSource&                            region,
+            ::BlockPos                                pos,
+            ::VaultBlockActor::VaultSharedData const& sharedData
+        );
 
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~VaultClientData();
-        // NOLINTEND
+        MCAPI static void emitIdleParticles(
+            ::BlockSource const&                      region,
+            ::VaultBlockActor::VaultSharedData const& sharedData,
+            ::BlockPos                                pos
+        );
 
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
-    };
+        MCAPI static void
+        playIdleSounds(::BlockSource& region, ::BlockPos pos, ::VaultBlockActor::VaultSharedData const& sharedData);
 
-    struct VaultServerData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Tick>                          stateUpdateResumesAt;
-        ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>     itemsToEject;
-        ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> rewardedPlayers;
-        ::ll::TypedStorage<1, 1, bool>                            doesBlockNeedToBeSaved;
-        ::ll::TypedStorage<8, 8, ::Tick>                          serverTick;
-        ::ll::TypedStorage<8, 8, ::Tick>                          lastInsertFailTimestamp;
-        ::ll::TypedStorage<4, 4, int>                             totalEjectionsNeeded;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~VaultServerData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCAPI static void removeDisplayEntity(::VaultBlockActor::VaultClientData& clientData);
         // NOLINTEND
     };
 
@@ -217,29 +241,6 @@ public:
         // NOLINTEND
     };
 
-    class Client {
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void emitConnectedParticles(
-            ::BlockSource&                            region,
-            ::BlockPos                                pos,
-            ::VaultBlockActor::VaultSharedData const& sharedData
-        );
-
-        MCAPI static void emitIdleParticles(
-            ::BlockSource const&                      region,
-            ::VaultBlockActor::VaultSharedData const& sharedData,
-            ::BlockPos                                pos
-        );
-
-        MCAPI static void
-        playIdleSounds(::BlockSource& region, ::BlockPos pos, ::VaultBlockActor::VaultSharedData const& sharedData);
-
-        MCAPI static void removeDisplayEntity(::VaultBlockActor::VaultClientData& clientData);
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -256,22 +257,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~VaultBlockActor() /*override*/;
 
-    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
@@ -279,6 +274,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit VaultBlockActor(::BlockPos const& pos);
+
+    MCAPI_C void clientEmitActivationParticles(::BlockSource& region) const;
+
+    MCAPI_C void clientEmitConnectedParticles(::BlockSource& region) const;
+
+    MCAPI_C void clientEmitDeactivationParticles(::BlockSource& region) const;
+
+    MCAPI_C ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
     // NOLINTEND
 
 public:
@@ -312,6 +315,8 @@ public:
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCAPI void $_onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
+
+
     // NOLINTEND
 
 public:

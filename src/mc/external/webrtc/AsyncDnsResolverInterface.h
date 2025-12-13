@@ -17,16 +17,12 @@ class AsyncDnsResolverInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AsyncDnsResolverInterface() = default;
 
-    // vIndex: 2
     virtual void Start(::rtc::SocketAddress const&, ::absl::AnyInvocable<void()>) = 0;
 
-    // vIndex: 1
     virtual void Start(::rtc::SocketAddress const&, int, ::absl::AnyInvocable<void()>) = 0;
 
-    // vIndex: 3
     virtual ::webrtc::AsyncDnsResolverResult const& result() const = 0;
     // NOLINTEND
 

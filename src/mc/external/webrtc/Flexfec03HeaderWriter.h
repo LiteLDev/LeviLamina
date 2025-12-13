@@ -12,16 +12,12 @@ class Flexfec03HeaderWriter : public ::webrtc::FecHeaderWriter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Flexfec03HeaderWriter() /*override*/;
 
-    // vIndex: 1
     virtual uint64 MinPacketMaskSize(uchar const* packet_mask, uint64 packet_mask_size) const /*override*/;
 
-    // vIndex: 2
     virtual uint64 FecHeaderSize(uint64 packet_mask_size) const /*override*/;
 
-    // vIndex: 3
     virtual void FinalizeFecHeader(
         ::rtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const> protected_streams,
         ::webrtc::ForwardErrorCorrection::Packet&                          fec_packet
@@ -57,6 +53,8 @@ public:
         ::rtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const> protected_streams,
         ::webrtc::ForwardErrorCorrection::Packet&                          fec_packet
     ) const;
+
+
     // NOLINTEND
 
 public:

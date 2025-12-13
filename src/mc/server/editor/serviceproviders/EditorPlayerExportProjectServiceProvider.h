@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ProjectExportStatus.h"
 #include "mc/common/editor/WorldType.h"
+#include "mc/editor/ProjectExportStatus.h"
 #include "mc/editor/services/export/ExportResult.h"
 
 // auto generated forward declare list
@@ -19,10 +19,8 @@ class EditorPlayerExportProjectServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorPlayerExportProjectServiceProvider() = default;
 
-    // vIndex: 1
     virtual void beginExportProject(
         ::WeakEntityRef,
         ::Editor::GameOptions const&,
@@ -30,10 +28,8 @@ public:
         ::std::function<void(::Editor::ExportResult const&, ::std::string)>
     ) = 0;
 
-    // vIndex: 2
     virtual bool canExportProject() = 0;
 
-    // vIndex: 3
     virtual ::Editor::ProjectExportStatus getExportStatus() = 0;
     // NOLINTEND
 

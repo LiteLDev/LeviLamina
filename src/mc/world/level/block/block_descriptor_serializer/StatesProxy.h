@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/BlockDescriptor.h"
-#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +16,7 @@ struct StatesProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor::State>> mBlockStates;
+    ::ll::UntypedStorage<8, 24> mUnk34053b;
     // NOLINTEND
 
 public:
@@ -29,26 +28,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fromMap(::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound> const& proxyMap);
+    MCNAPI void fromMap(::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound> const& proxyMap);
 
-    MCAPI ::BlockDescriptorSerializer::StatesProxy& operator=(::BlockDescriptorSerializer::StatesProxy&&);
+    MCNAPI ::BlockDescriptorSerializer::StatesProxy& operator=(::BlockDescriptorSerializer::StatesProxy&&);
 
-    MCAPI ~StatesProxy();
+    MCNAPI ~StatesProxy();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound>
+    MCNAPI static ::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound>
     toMap(::BlockDescriptorSerializer::StatesProxy const& instance);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

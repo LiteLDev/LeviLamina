@@ -17,8 +17,31 @@ public:
 public:
     // prevent constructor by default
     EduJoinServerResponse& operator=(EduJoinServerResponse const&);
-    EduJoinServerResponse(EduJoinServerResponse const&);
     EduJoinServerResponse();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C EduJoinServerResponse(::Social::EduJoinServerResponse&&);
+
+    MCNAPI_C EduJoinServerResponse(::Social::EduJoinServerResponse const&);
+
+    MCNAPI_C ~EduJoinServerResponse();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::Social::EduJoinServerResponse&&);
+
+    MCNAPI_C void* $ctor(::Social::EduJoinServerResponse const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Social

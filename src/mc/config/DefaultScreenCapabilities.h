@@ -9,7 +9,6 @@ struct DefaultScreenCapabilities : public ::TypedScreenCapabilities<::DefaultScr
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DefaultScreenCapabilities() /*override*/ = default;
     // NOLINTEND
 

@@ -23,13 +23,10 @@ class ScriptItemGameplayHandler : public ::EventHandlerDispatcher<::ItemGameplay
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 11
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ItemUseOnEvent& itemEvent) /*override*/;
 
-    // vIndex: 10
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ItemUseEvent& itemEvent) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptItemGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
@@ -55,6 +52,8 @@ public:
     MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ItemUseOnEvent& itemEvent);
 
     MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ItemUseEvent& itemEvent);
+
+
     // NOLINTEND
 
 public:

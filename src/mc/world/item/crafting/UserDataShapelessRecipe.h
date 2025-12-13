@@ -20,30 +20,36 @@ class UserDataShapelessRecipe : public ::ShapelessRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
+    ::ll::UntypedStorage<8, 24> mUnk3372c7;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    UserDataShapelessRecipe& operator=(UserDataShapelessRecipe const&);
+    UserDataShapelessRecipe(UserDataShapelessRecipe const&);
     UserDataShapelessRecipe();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
         /*override*/;
 
-    // vIndex: 13
     virtual bool itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~UserDataShapelessRecipe() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~UserDataShapelessRecipe() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C UserDataShapelessRecipe(::UserDataShapelessRecipe&&);
+
     MCAPI explicit UserDataShapelessRecipe(::Recipe::ConstructionContext&& context);
 
     MCAPI bool _itemShouldKeepUserData(::ItemStack const& item) const;
@@ -58,7 +64,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI_C void* $ctor(::UserDataShapelessRecipe&&);
+
     MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -67,6 +81,8 @@ public:
     MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const;
 
     MCAPI bool $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const;
+
+
     // NOLINTEND
 
 public:

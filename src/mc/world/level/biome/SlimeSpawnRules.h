@@ -12,9 +12,9 @@ class SpawnConditions;
 namespace SlimeSpawnRules {
 // functions
 // NOLINTBEGIN
-MCAPI bool checkSpawnRulesCallback(::SpawnConditions const& conditions, ::BlockSource& region);
+MCNAPI bool checkSpawnRulesCallback(::SpawnConditions const& conditions, ::BlockSource& region);
 
-MCAPI bool isSlimeChunk(::ChunkPos const& chunkPos);
+MCNAPI bool isSlimeChunk(::ChunkPos const& chunkPos);
 // NOLINTEND
 
 } // namespace SlimeSpawnRules

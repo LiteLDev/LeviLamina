@@ -15,19 +15,22 @@ class FindRecipeNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mTargetItemName;
+    ::ll::UntypedStorage<8, 32> mUnk5054fc;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FindRecipeNode& operator=(FindRecipeNode const&);
+    FindRecipeNode(FindRecipeNode const&);
+    FindRecipeNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
-    // vIndex: 2
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
-    // vIndex: 0
     virtual ~FindRecipeNode() /*override*/ = default;
     // NOLINTEND
 

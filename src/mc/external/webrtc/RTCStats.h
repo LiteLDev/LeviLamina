@@ -25,16 +25,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RTCStats();
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::RTCStats> copy() const = 0;
 
-    // vIndex: 2
     virtual char const* type() const = 0;
 
-    // vIndex: 3
     virtual ::std::vector<::webrtc::Attribute> AttributesImpl(uint64 additional_capacity) const;
     // NOLINTEND
 
@@ -64,6 +60,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::vector<::webrtc::Attribute> $AttributesImpl(uint64 additional_capacity) const;
+
+
     // NOLINTEND
 
 public:

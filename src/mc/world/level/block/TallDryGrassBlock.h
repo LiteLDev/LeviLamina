@@ -17,12 +17,10 @@ class TallDryGrassBlock : public ::ShortDryGrassBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 0
     virtual ~TallDryGrassBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -31,6 +29,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+
+
     // NOLINTEND
 
 public:

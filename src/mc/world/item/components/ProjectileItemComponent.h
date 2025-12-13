@@ -37,7 +37,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ProjectileItemComponent() /*override*/;
     // NOLINTEND
 

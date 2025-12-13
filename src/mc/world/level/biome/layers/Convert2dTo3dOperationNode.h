@@ -10,27 +10,29 @@
 // clang-format off
 class Biome;
 class BlockPos;
-class Pos2d;
 // clang-format on
 
 class Convert2dTo3dOperationNode : public ::OperationNode<::Biome*, ::BlockPos> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OperationNode<::Biome*, ::Pos2d>>> mParent;
+    ::ll::UntypedStorage<8, 16> mUnk5e93a9;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Convert2dTo3dOperationNode& operator=(Convert2dTo3dOperationNode const&);
+    Convert2dTo3dOperationNode(Convert2dTo3dOperationNode const&);
+    Convert2dTo3dOperationNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void init(int64 seed) /*override*/;
 
-    // vIndex: 2
     virtual ::OperationNodeDetails::TransferData<::Biome*>
     _allocateAndFill(uint64, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
-    // vIndex: 0
     virtual ~Convert2dTo3dOperationNode() /*override*/ = default;
     // NOLINTEND
 

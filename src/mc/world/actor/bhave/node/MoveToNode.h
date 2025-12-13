@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 
@@ -16,28 +15,37 @@ class MoveToNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3> mPosToMoveTo;
-    ::ll::TypedStorage<1, 1, bool>    mJumping;
-    ::ll::TypedStorage<4, 4, float>   mDistanceEpsilon;
+    ::ll::UntypedStorage<4, 12> mUnkaa0290;
+    ::ll::UntypedStorage<1, 1>  mUnk9477a8;
+    ::ll::UntypedStorage<4, 4>  mUnk8d78c3;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveToNode& operator=(MoveToNode const&);
+    MoveToNode(MoveToNode const&);
+    MoveToNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
-    // vIndex: 2
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
-    // vIndex: 0
     virtual ~MoveToNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromDefinition(::Actor& owner);
+    MCNAPI void $initializeFromDefinition(::Actor& owner);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
+#endif
+
+
     // NOLINTEND
 
 public:

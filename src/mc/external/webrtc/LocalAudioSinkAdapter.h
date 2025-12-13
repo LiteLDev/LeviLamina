@@ -25,10 +25,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ~LocalAudioSinkAdapter() /*override*/;
 
-    // vIndex: 0
     virtual void OnData(
         void const*            audio_data,
         int                    bits_per_sample,
@@ -38,7 +36,6 @@ public:
         ::std::optional<int64> absolute_capture_timestamp_ms
     ) /*override*/;
 
-    // vIndex: 1
     virtual void OnData(
         void const* audio_data,
         int         bits_per_sample,
@@ -47,10 +44,8 @@ public:
         uint64      number_of_frames
     ) /*override*/;
 
-    // vIndex: 2
     virtual int NumPreferredChannels() const /*override*/;
 
-    // vIndex: 0
     virtual void SetSink(::cricket::AudioSource::Sink* sink) /*override*/;
     // NOLINTEND
 
@@ -95,6 +90,8 @@ public:
     MCNAPI int $NumPreferredChannels() const;
 
     MCNAPI void $SetSink(::cricket::AudioSource::Sink* sink);
+
+
     // NOLINTEND
 
 public:

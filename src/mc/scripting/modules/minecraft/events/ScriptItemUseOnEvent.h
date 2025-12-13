@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/scripting/modules/minecraft/ScriptFacing.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
-namespace ScriptModuleMinecraft { class ScriptBlock; }
+class Vec3;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -23,12 +21,11 @@ struct ScriptItemUseOnEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
-                                                                    mScriptItem;
-    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptFacing> mFace;
-    ::ll::TypedStorage<4, 12, ::Vec3>                               mFaceLocationAbsolute;
-    ::ll::TypedStorage<4, 12, ::Vec3>                               mFaceLocationRelative;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> mBlock;
+    ::ll::UntypedStorage<8, 32> mUnke9534a;
+    ::ll::UntypedStorage<4, 4>  mUnk90638f;
+    ::ll::UntypedStorage<4, 12> mUnkc66f2e;
+    ::ll::UntypedStorage<4, 12> mUnka5a2cb;
+    ::ll::UntypedStorage<8, 32> mUnk259048;
     // NOLINTEND
 
 public:
@@ -39,9 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemUseOnEvent(::ScriptModuleMinecraft::ScriptItemUseOnEvent const&);
+    MCNAPI ScriptItemUseOnEvent(::ScriptModuleMinecraft::ScriptItemUseOnEvent const&);
 
-    MCAPI ScriptItemUseOnEvent(
+    MCNAPI ScriptItemUseOnEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> scriptItem,
         uchar                                                                          face,
         ::Vec3                                                                         faceLocation,
@@ -50,21 +47,21 @@ public:
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
 
-    MCAPI ~ScriptItemUseOnEvent();
+    MCNAPI ~ScriptItemUseOnEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseOnEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseOnEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> scriptItem,
         uchar                                                                          face,
         ::Vec3                                                                         faceLocation,
@@ -77,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

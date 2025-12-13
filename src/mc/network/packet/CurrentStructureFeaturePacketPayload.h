@@ -18,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::CurrentStructureFeaturePacketPayload& operator=(::CurrentStructureFeaturePacketPayload&&);
+    MCNAPI ::CurrentStructureFeaturePacketPayload& operator=(::CurrentStructureFeaturePacketPayload&&);
 
-    MCAPI ~CurrentStructureFeaturePacketPayload();
+    MCNAPI ~CurrentStructureFeaturePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

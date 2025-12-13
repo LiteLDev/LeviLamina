@@ -46,10 +46,8 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~AudioDataProxy() /*override*/ = default;
 
-        // vIndex: 1
         virtual void OnData(::webrtc::AudioSinkInterface::Data const& audio) /*override*/;
         // NOLINTEND
 
@@ -57,6 +55,8 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $OnData(::webrtc::AudioSinkInterface::Data const& audio);
+
+
         // NOLINTEND
 
     public:
@@ -87,28 +87,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::webrtc::MediaSourceInterface::SourceState state() const /*override*/;
 
-    // vIndex: 4
     virtual bool remote() const /*override*/;
 
-    // vIndex: 5
     virtual void SetVolume(double volume) /*override*/;
 
-    // vIndex: 6
     virtual void RegisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver* observer) /*override*/;
 
-    // vIndex: 7
     virtual void UnregisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver* observer) /*override*/;
 
-    // vIndex: 8
     virtual void AddSink(::webrtc::AudioTrackSinkInterface* sink) /*override*/;
 
-    // vIndex: 9
     virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* sink) /*override*/;
 
-    // vIndex: 2
     virtual ~RemoteAudioSource() /*override*/;
     // NOLINTEND
 
@@ -162,6 +154,8 @@ public:
     MCNAPI void $AddSink(::webrtc::AudioTrackSinkInterface* sink);
 
     MCNAPI void $RemoveSink(::webrtc::AudioTrackSinkInterface* sink);
+
+
     // NOLINTEND
 
 public:

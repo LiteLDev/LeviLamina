@@ -17,7 +17,6 @@ class ArmorItemComponent : public ::NetworkedItemComponent<::ArmorItemComponent>
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ArmorItemComponent() /*override*/ = default;
     // NOLINTEND
 

@@ -13,25 +13,25 @@ namespace cereal { class SerializerContext; }
 namespace BlockDescriptorSerializer {
 // functions
 // NOLINTBEGIN
-MCAPI ::BlockDescriptor _validateAndCreateFromString(::std::string const& str);
+MCNAPI ::BlockDescriptor _validateAndCreateFromString(::std::string const& str);
 
-MCAPI void fromProxy(::BlockDescriptor& instance, ::BlockDescriptorSerializer::BlockDescriptorProxy& proxy);
+MCNAPI void fromProxy(::BlockDescriptor& instance, ::BlockDescriptorSerializer::BlockDescriptorProxy& proxy);
 
-MCAPI void fromProxyWithAssetValidation(
+MCNAPI void fromProxyWithAssetValidation(
     ::BlockDescriptor&                                 instance,
     ::BlockDescriptorSerializer::BlockDescriptorProxy& proxy,
     ::BedrockLoadContext                               context,
     ::cereal::SerializerContext const&                 serializerContext
 );
 
-MCAPI void fromStringWithAssetValidation(
+MCNAPI void fromStringWithAssetValidation(
     ::BlockDescriptor&                 instance,
     ::std::string const&               str,
     ::BedrockLoadContext               context,
     ::cereal::SerializerContext const& serializerContext
 );
 
-MCAPI ::BlockDescriptorSerializer::BlockDescriptorProxy toProxy(::BlockDescriptor const& instance);
+MCNAPI ::BlockDescriptorSerializer::BlockDescriptorProxy toProxy(::BlockDescriptor const& instance);
 // NOLINTEND
 
 } // namespace BlockDescriptorSerializer

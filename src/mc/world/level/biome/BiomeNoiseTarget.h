@@ -2,19 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/ClimateParameters.h"
-
-// auto generated forward declare list
-// clang-format off
-class Biome;
-// clang-format on
-
 struct BiomeNoiseTarget {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Biome const*>        data;
-    ::ll::TypedStorage<8, 216, ::ClimateParameters> climateParameters;
+    ::ll::UntypedStorage<8, 8>   mUnkc6497b;
+    ::ll::UntypedStorage<8, 216> mUnk6fce12;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BiomeNoiseTarget& operator=(BiomeNoiseTarget const&);
+    BiomeNoiseTarget(BiomeNoiseTarget const&);
+    BiomeNoiseTarget();
 };

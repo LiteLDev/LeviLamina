@@ -12,14 +12,20 @@ class TrimMaterialRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::TrimMaterial>> mTrimMaterials;
+    ::ll::UntypedStorage<8, 24> mUnk315430;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TrimMaterialRegistry& operator=(TrimMaterialRegistry const&);
+    TrimMaterialRegistry(TrimMaterialRegistry const&);
+    TrimMaterialRegistry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::TrimMaterial> getTrimMaterialByItemName(::HashedString const& itemName) const;
+    MCNAPI ::std::optional<::TrimMaterial> getTrimMaterialByItemName(::HashedString const& itemName) const;
 
-    MCAPI ::std::optional<::TrimMaterial> getTrimMaterialByMaterialId(::HashedString const& materialId) const;
+    MCNAPI ::std::optional<::TrimMaterial> getTrimMaterialByMaterialId(::HashedString const& materialId) const;
     // NOLINTEND
 };

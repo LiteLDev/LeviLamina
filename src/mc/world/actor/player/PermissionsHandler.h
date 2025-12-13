@@ -22,24 +22,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addSaveData(::CompoundTag& tag) const;
+    MCNAPI void addSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool loadSaveData(::CompoundTag const& tag);
+    MCNAPI bool loadSaveData(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PlayerPermissionLevel playerPermissionLevelFromString(::std::string const& s);
+    MCNAPI_C static ::std::optional<::std::string>
+    getDiff(::PermissionsHandler const& lhs, ::PermissionsHandler const& rhs);
 
-    MCAPI static ::std::string playerPermissionLevelToString(::PlayerPermissionLevel const& permission);
+    MCNAPI static ::PlayerPermissionLevel playerPermissionLevelFromString(::std::string const& s);
+
+    MCNAPI static ::std::string playerPermissionLevelToString(::PlayerPermissionLevel const& permission);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DIFF_COMMAND_PERMISSION();
+    MCNAPI static ::std::string const& DIFF_COMMAND_PERMISSION();
 
-    MCAPI static ::std::string const& DIFF_PLAYER_PERMISSION();
+    MCNAPI static ::std::string const& DIFF_PLAYER_PERMISSION();
     // NOLINTEND
 };

@@ -10,7 +10,7 @@ class ActorMigratedDefinitionFactory;
 namespace LegacyVanillaGoalDefinition {
 // functions
 // NOLINTBEGIN
-MCAPI void init(::ActorMigratedDefinitionFactory* migratedFactory);
+MCNAPI void init(::ActorMigratedDefinitionFactory* migratedFactory);
 // NOLINTEND
 
 } // namespace LegacyVanillaGoalDefinition

@@ -23,22 +23,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~StreamInterface();
 
-    // vIndex: 1
     virtual ::rtc::StreamState GetState() const = 0;
 
-    // vIndex: 2
     virtual ::rtc::StreamResult Read(::rtc::ArrayView<uchar>, uint64&, int&) = 0;
 
-    // vIndex: 3
     virtual ::rtc::StreamResult Write(::rtc::ArrayView<uchar const>, uint64&, int&) = 0;
 
-    // vIndex: 4
     virtual void Close() = 0;
 
-    // vIndex: 5
     virtual bool Flush();
     // NOLINTEND
 
@@ -66,6 +60,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $Flush();
+
+
     // NOLINTEND
 
 public:

@@ -22,7 +22,6 @@ struct OnUseAsAttack : public ::ItemComponent,
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~OnUseAsAttack() /*override*/ = default;
     // NOLINTEND
 

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Social { class ProfileImageOptions; }
+// clang-format on
+
 namespace Social {
 
 struct XboxLiveUserProfileData {
@@ -39,10 +44,42 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    XboxLiveUserProfileData& operator=(XboxLiveUserProfileData const&);
-    XboxLiveUserProfileData(XboxLiveUserProfileData const&);
-    XboxLiveUserProfileData();
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C XboxLiveUserProfileData();
+
+    MCNAPI_C XboxLiveUserProfileData(::Social::XboxLiveUserProfileData&&);
+
+    MCNAPI_C XboxLiveUserProfileData(::Social::XboxLiveUserProfileData const&);
+
+    MCNAPI_C explicit XboxLiveUserProfileData(::std::string const& xuid);
+
+    MCNAPI_C ::Social::ProfileImageOptions getDefaultProfileImageOptions() const;
+
+    MCNAPI_C bool hasValidXUID() const;
+
+    MCNAPI_C ::Social::XboxLiveUserProfileData& operator=(::Social::XboxLiveUserProfileData const&);
+
+    MCNAPI_C ~XboxLiveUserProfileData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::Social::XboxLiveUserProfileData&&);
+
+    MCNAPI_C void* $ctor(::Social::XboxLiveUserProfileData const&);
+
+    MCNAPI_C void* $ctor(::std::string const& xuid);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Social

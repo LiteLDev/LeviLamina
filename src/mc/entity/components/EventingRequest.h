@@ -13,6 +13,21 @@ public:
     // clang-format on
 
     // EventingRequest inner types define
+    struct ActorMovementCorrectionData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk7a7984;
+        ::ll::UntypedStorage<8, 24> mUnk783515;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ActorMovementCorrectionData& operator=(ActorMovementCorrectionData const&);
+        ActorMovementCorrectionData(ActorMovementCorrectionData const&);
+        ActorMovementCorrectionData();
+    };
+
     struct PersonaEmoteData {
     public:
         // member variables
@@ -61,21 +76,6 @@ public:
         PlayerUnexpectedFallDamageData();
     };
 
-    struct ActorMovementCorrectionData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk7a7984;
-        ::ll::UntypedStorage<8, 24> mUnk783515;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ActorMovementCorrectionData& operator=(ActorMovementCorrectionData const&);
-        ActorMovementCorrectionData(ActorMovementCorrectionData const&);
-        ActorMovementCorrectionData();
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -93,12 +93,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~EventingRequest();
+    MCNAPI ~EventingRequest();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

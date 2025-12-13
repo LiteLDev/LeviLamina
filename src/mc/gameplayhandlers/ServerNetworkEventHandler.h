@@ -16,11 +16,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::MutableServerNetworkGameplayEvent<::CoordinatorResult>&) = 0;
 
-    // vIndex: 0
     virtual ~ServerNetworkEventHandler() /*override*/ = default;
     // NOLINTEND
 

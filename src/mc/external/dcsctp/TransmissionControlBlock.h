@@ -64,40 +64,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool is_connection_established() const /*override*/;
 
-    // vIndex: 2
     virtual ::webrtc::StrongAlias<::dcsctp::TSNTag, uint> my_initial_tsn() const /*override*/;
 
-    // vIndex: 3
     virtual ::webrtc::StrongAlias<::dcsctp::TSNTag, uint> peer_initial_tsn() const /*override*/;
 
-    // vIndex: 4
     virtual ::dcsctp::DcSctpSocketCallbacks& callbacks() const /*override*/;
 
-    // vIndex: 5
     virtual void ObserveRTT(::webrtc::TimeDelta rtt) /*override*/;
 
-    // vIndex: 6
     virtual ::webrtc::TimeDelta current_rto() const /*override*/;
 
-    // vIndex: 7
     virtual bool IncrementTxErrorCounter(::std::string_view reason) /*override*/;
 
-    // vIndex: 8
     virtual void ClearTxErrorCounter() /*override*/;
 
-    // vIndex: 10
     virtual ::dcsctp::SctpPacket::Builder PacketBuilder() const /*override*/;
 
-    // vIndex: 9
     virtual bool HasTooManyTxErrors() const /*override*/;
 
-    // vIndex: 11
     virtual void Send(::dcsctp::SctpPacket::Builder& builder) /*override*/;
 
-    // vIndex: 0
     virtual ~TransmissionControlBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -189,6 +177,8 @@ public:
     MCNAPI bool $HasTooManyTxErrors() const;
 
     MCNAPI void $Send(::dcsctp::SctpPacket::Builder& builder);
+
+
     // NOLINTEND
 
 public:

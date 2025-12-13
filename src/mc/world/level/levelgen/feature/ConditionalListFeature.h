@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
-#include "mc/util/molang/ExpressionNode.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
@@ -29,32 +27,44 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeatureRef;
-        ::ll::TypedStorage<8, 16, ::ExpressionNode>      mExpressionNode;
+        ::ll::UntypedStorage<8, 24> mUnk1490ae;
+        ::ll::UntypedStorage<8, 16> mUnk3ca238;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FeatureExpressionNodePair& operator=(FeatureExpressionNodePair const&);
+        FeatureExpressionNodePair(FeatureExpressionNodePair const&);
+        FeatureExpressionNodePair();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ConditionalListFeature::FeatureExpressionNodePair>> mFeatureCollection;
-    ::ll::TypedStorage<4, 4, ::ConditionalListFeature::EarlyOutScheme>                            mEarlyOutScheme;
+    ::ll::UntypedStorage<8, 24> mUnk8b5713;
+    ::ll::UntypedStorage<4, 4>  mUnk184fb9;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ConditionalListFeature& operator=(ConditionalListFeature const&);
+    ConditionalListFeature(ConditionalListFeature const&);
+    ConditionalListFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ConditionalListFeature() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+
+
     // NOLINTEND
 
 public:

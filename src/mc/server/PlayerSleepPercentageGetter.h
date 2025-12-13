@@ -21,10 +21,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PlayerSleepPercentageGetter() /*override*/ = default;
 
-    // vIndex: 1
     virtual float getPlayerSleepPercentageGoal() const /*override*/;
     // NOLINTEND
 
@@ -32,6 +30,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI float $getPlayerSleepPercentageGoal() const;
+
+
     // NOLINTEND
 
 public:

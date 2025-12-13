@@ -31,6 +31,7 @@
 // clang-format off
 class Dimension;
 class LevelData;
+struct LevelSummary;
 struct PackInstanceId;
 namespace mce { class UUID; }
 // clang-format on
@@ -120,13 +121,15 @@ public:
     // NOLINTBEGIN
     MCAPI LevelSettings();
 
+    MCAPI LevelSettings(::LevelSettings&&);
+
     MCAPI LevelSettings(::LevelSettings const&);
 
-    MCAPI LevelSettings(::LevelSettings&&);
+    MCAPI_C explicit LevelSettings(::LevelSummary const& summary);
 
     MCAPI LevelSettings(::LevelData const& data, ::DimensionType dimension);
 
-    MCAPI ::LevelSettings& addExcludedScriptModule(::mce::UUID moduleUUID);
+    MCAPI_S ::LevelSettings& addExcludedScriptModule(::mce::UUID moduleUUID);
 
     MCAPI ::CloudSaveLevelInfo const& getCloudSaveInfo() const;
 
@@ -143,6 +146,8 @@ public:
     MCAPI ::LevelSettings& setEducationCreatorWorldID(::std::string id);
 
     MCAPI ::LevelSettings& setEducationEditionOffer(::EducationEditionOffer offer);
+
+    MCAPI_C void setEducationLevelSettings(::EducationLevelSettings settings);
 
     MCAPI ::LevelSettings& setEducationProductID(::std::string id);
 
@@ -174,9 +179,11 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
+    MCAPI void* $ctor(::LevelSettings&&);
+
     MCAPI void* $ctor(::LevelSettings const&);
 
-    MCAPI void* $ctor(::LevelSettings&&);
+    MCAPI_C void* $ctor(::LevelSummary const& summary);
 
     MCAPI void* $ctor(::LevelData const& data, ::DimensionType dimension);
     // NOLINTEND

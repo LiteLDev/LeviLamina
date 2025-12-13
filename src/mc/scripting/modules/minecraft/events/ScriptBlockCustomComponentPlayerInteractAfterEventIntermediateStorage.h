@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentAfterEventIntermediateStorage.h"
 
 namespace ScriptModuleMinecraft {
@@ -14,21 +12,30 @@ struct ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef const>         mPlayer;
-    ::ll::TypedStorage<1, 1, uchar const>                    mFace;
-    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3> const> mHit;
+    ::ll::UntypedStorage<8, 24> mUnk6971d7;
+    ::ll::UntypedStorage<1, 1>  mUnk6d13f7;
+    ::ll::UntypedStorage<4, 16> mUnk6c0af7;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage&
+    operator=(ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage const&);
+    ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage(
+        ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage const&
+    );
+    ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage();
+    MCNAPI ~ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

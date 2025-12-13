@@ -11,27 +11,27 @@ class BlockSource;
 
 class CompassSpriteCalculator {
 public:
-    // CompassSpriteCalculator inner types define
-    using PointToTargetFunction = ::BlockPos (*)(::BlockSource const*, ::Actor*);
-
-    using IsPointingAtTargetFunction = bool (*)(::BlockSource const*, ::Actor*);
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockPos (*)(::BlockSource const*, ::Actor*)> mTargetToPointTo;
-    ::ll::TypedStorage<8, 8, bool (*)(::BlockSource const*, ::Actor*)>       mIsPointingAtTarget;
-    ::ll::TypedStorage<4, 4, int>                                            mFrame;
-    ::ll::TypedStorage<4, 4, float>                                          mRot;
-    ::ll::TypedStorage<4, 4, float>                                          mRotA;
+    ::ll::UntypedStorage<8, 8> mUnka643b6;
+    ::ll::UntypedStorage<8, 8> mUnk46d9d2;
+    ::ll::UntypedStorage<4, 4> mUnk16b4e4;
+    ::ll::UntypedStorage<4, 4> mUnkc84c5a;
+    ::ll::UntypedStorage<4, 4> mUnkdb8cd3;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CompassSpriteCalculator& operator=(CompassSpriteCalculator const&);
+    CompassSpriteCalculator(CompassSpriteCalculator const&);
+    CompassSpriteCalculator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int update(::Actor& actor, bool instant);
+    MCNAPI int update(::Actor& actor, bool instant);
 
-    MCAPI int updateFromPosition(
+    MCNAPI int updateFromPosition(
         ::BlockSource const* region,
         ::Actor*             actor,
         float                x,
@@ -41,7 +41,7 @@ public:
         bool                 instant
     );
 
-    MCAPI int updateFromPosition(
+    MCNAPI int updateFromPosition(
         ::BlockSource const*,
         ::BlockPos const& lookTowards,
         float             x,
@@ -56,12 +56,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isInLastDeathDimension(::BlockSource const* region, ::Actor* actor);
+    MCNAPI static bool isInLastDeathDimension(::BlockSource const* region, ::Actor* actor);
 
-    MCAPI static bool isInOverworldDimension(::BlockSource const* region, ::Actor*);
+    MCNAPI static bool isInOverworldDimension(::BlockSource const* region, ::Actor*);
 
-    MCAPI static ::BlockPos pointTowardsLastDeathLocation(::BlockSource const* region, ::Actor* actor);
+    MCNAPI static ::BlockPos pointTowardsLastDeathLocation(::BlockSource const* region, ::Actor* actor);
 
-    MCAPI static ::BlockPos pointTowardsSpawnPoint(::BlockSource const* region, ::Actor*);
+    MCNAPI static ::BlockPos pointTowardsSpawnPoint(::BlockSource const* region, ::Actor*);
     // NOLINTEND
 };

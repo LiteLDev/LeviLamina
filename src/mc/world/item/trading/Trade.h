@@ -2,33 +2,34 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct TradeItem;
-// clang-format on
-
 struct Trade {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                        mMaxUses;
-    ::ll::TypedStorage<1, 1, bool>                                       mRewardExperience;
-    ::ll::TypedStorage<4, 4, int>                                        mWeight;
-    ::ll::TypedStorage<4, 4, uint>                                       mTraderExperience;
-    ::ll::TypedStorage<4, 4, int>                                        mPrimaryOfferCount;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::TradeItem>>> mOffer;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::TradeItem>>> mReceive;
+    ::ll::UntypedStorage<4, 4>  mUnk566420;
+    ::ll::UntypedStorage<1, 1>  mUnkb6605c;
+    ::ll::UntypedStorage<4, 4>  mUnke6d5f2;
+    ::ll::UntypedStorage<4, 4>  mUnk5c8e4c;
+    ::ll::UntypedStorage<4, 4>  mUnk3e8840;
+    ::ll::UntypedStorage<8, 24> mUnk9efbba;
+    ::ll::UntypedStorage<8, 24> mUnkfa4bf7;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Trade& operator=(Trade const&);
+    Trade(Trade const&);
+    Trade();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~Trade();
+    MCNAPI ~Trade();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

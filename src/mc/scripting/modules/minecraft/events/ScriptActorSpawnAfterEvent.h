@@ -18,18 +18,20 @@ struct ScriptActorSpawnAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mActor;
-    ::ll::TypedStorage<1, 1, ::ActorInitializationMethod>                                                 mCause;
+    ::ll::UntypedStorage<8, 32> mUnk6038c5;
+    ::ll::UntypedStorage<1, 1>  mUnk77abaa;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptActorSpawnAfterEvent& operator=(ScriptActorSpawnAfterEvent const&);
+    ScriptActorSpawnAfterEvent(ScriptActorSpawnAfterEvent const&);
     ScriptActorSpawnAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorSpawnAfterEvent(
+    MCNAPI ScriptActorSpawnAfterEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle,
         ::ActorInitializationMethod                                                cause
     );
@@ -38,13 +40,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle,
         ::ActorInitializationMethod                                                cause
     );

@@ -23,40 +23,52 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Block const*> mStoneBrick;
-        ::ll::TypedStorage<8, 8, ::Block const*> mInfestedStoneBrick;
-        ::ll::TypedStorage<8, 8, ::Block const*> mAirBlock;
-        ::ll::TypedStorage<8, 8, ::Block const*> mCrackedStoneBrick;
-        ::ll::TypedStorage<8, 8, ::Block const*> mMossyStoneBrick;
+        ::ll::UntypedStorage<8, 8> mUnk588583;
+        ::ll::UntypedStorage<8, 8> mUnke7b278;
+        ::ll::UntypedStorage<8, 8> mUnkb4a474;
+        ::ll::UntypedStorage<8, 8> mUnk7f506e;
+        ::ll::UntypedStorage<8, 8> mUnk1028ae;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LocalRegistry& operator=(LocalRegistry const&);
+        LocalRegistry(LocalRegistry const&);
+        LocalRegistry();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::SmoothStoneSelector::LocalRegistry> mLocalRegistry;
+    ::ll::UntypedStorage<8, 40> mUnke44132;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SmoothStoneSelector& operator=(SmoothStoneSelector const&);
+    SmoothStoneSelector(SmoothStoneSelector const&);
+    SmoothStoneSelector();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Block const& next(::Random& random, int, int, int, bool isEdge) const /*override*/;
 
-    // vIndex: 0
     virtual ~SmoothStoneSelector() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $next(::Random& random, int, int, int, bool isEdge) const;
+    MCNAPI ::Block const& $next(::Random& random, int, int, int, bool isEdge) const;
+
+
     // NOLINTEND
 
 public:

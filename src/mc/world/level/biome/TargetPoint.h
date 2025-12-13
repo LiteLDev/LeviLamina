@@ -2,37 +2,36 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/climate_utils/TargetSpace.h"
-
 struct TargetPoint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, int64 const>                        mTemperature;
-    ::ll::TypedStorage<8, 8, int64 const>                        mHumidity;
-    ::ll::TypedStorage<8, 8, int64 const>                        mContinentalness;
-    ::ll::TypedStorage<8, 8, int64 const>                        mErosion;
-    ::ll::TypedStorage<8, 8, int64 const>                        mDepth;
-    ::ll::TypedStorage<8, 8, int64 const>                        mWeirdness;
-    ::ll::TypedStorage<8, 56, ::ClimateUtils::TargetSpace const> mTargetSpace;
+    ::ll::UntypedStorage<8, 8>  mUnk4133f2;
+    ::ll::UntypedStorage<8, 8>  mUnkdf9425;
+    ::ll::UntypedStorage<8, 8>  mUnka8e7ea;
+    ::ll::UntypedStorage<8, 8>  mUnk645c03;
+    ::ll::UntypedStorage<8, 8>  mUnkd6aafb;
+    ::ll::UntypedStorage<8, 8>  mUnkc74c6a;
+    ::ll::UntypedStorage<8, 56> mUnk2c85b3;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    TargetPoint& operator=(TargetPoint const&);
+    TargetPoint(TargetPoint const&);
     TargetPoint();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     TargetPoint(float temperature, float humidity, float continentalness, float erosion, float depth, float weirdness);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(float temperature, float humidity, float continentalness, float erosion, float depth, float weirdness);
     // NOLINTEND
 };

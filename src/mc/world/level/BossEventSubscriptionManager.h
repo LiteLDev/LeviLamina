@@ -25,24 +25,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(::std::function<void(::BossEventUpdateType)>) = 0;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(
         ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)>
     ) = 0;
 
-    // vIndex: 4
     virtual void broadcastBossEvent(::BossEventUpdateType) = 0;
 
-    // vIndex: 3
     virtual void broadcastBossEvent(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&) = 0;
 
-    // vIndex: 5
     virtual bool areBossEventSubscribersReady() const = 0;
 
-    // vIndex: 0
     virtual ~BossEventSubscriptionManager() /*override*/ = default;
     // NOLINTEND
 

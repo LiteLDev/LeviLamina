@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/container/EnumSet.h"
 #include "mc/world/level/block/traits/block_trait/ITrait.h"
 
 // auto generated forward declare list
@@ -22,44 +21,45 @@ namespace BlockTrait {
 class Connection : public ::BlockTrait::ITrait {
 public:
     // Connection inner types define
-    enum class Type : int {
-        Standard = 0,
-    };
-
     enum class EnabledConnectionStates : int {
         Cardinal = 0,
         Count    = 1,
     };
 
+    enum class Type : int {
+        Standard = 0,
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                            mUpdateFlags;
-    ::ll::TypedStorage<4, 4, ::BlockTrait::Connection::Type> mType;
-    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockTrait::Connection::EnabledConnectionStates, 1>>
-        mEnabledConnectionStates;
+    ::ll::UntypedStorage<4, 4> mUnkf54a26;
+    ::ll::UntypedStorage<4, 4> mUnka74308;
+    ::ll::UntypedStorage<1, 1> mUnk1f35c0;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Connection& operator=(Connection const&);
+    Connection(Connection const&);
+    Connection();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Connection() /*override*/ = default;
 
-    // vIndex: 1
     virtual void applyToBlockType(::BlockType&) const /*override*/;
 
-    // vIndex: 2
     virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
 
-    // vIndex: 3
     virtual void initializeFromNetwork(::CompoundTag const&, ::cereal::ReflectionCtx const&) /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NeighborBlockDirections getConnectedDirections(
+    MCNAPI static ::NeighborBlockDirections getConnectedDirections(
         ::IConstBlockSource const& region,
         ::Block const&             block,
         ::BlockPos const&          pos,

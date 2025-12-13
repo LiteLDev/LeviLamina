@@ -18,10 +18,8 @@ class NoRestrictions : public ::br::spawn::PlacementType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool isSpawnPositionOk(::BlockSource&, ::BlockPos, ::br::spawn::EntityType const&) const /*override*/;
 
-    // vIndex: 0
     virtual ~NoRestrictions() /*override*/ = default;
     // NOLINTEND
 
@@ -29,6 +27,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $isSpawnPositionOk(::BlockSource&, ::BlockPos, ::br::spawn::EntityType const&) const;
+
+
     // NOLINTEND
 
 public:

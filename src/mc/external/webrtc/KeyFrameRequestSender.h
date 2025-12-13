@@ -8,10 +8,8 @@ class KeyFrameRequestSender {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual void RequestKeyFrame() = 0;
 
-    // vIndex: 1
     virtual ~KeyFrameRequestSender() = default;
     // NOLINTEND
 

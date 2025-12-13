@@ -4,12 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/surface/ISurfaceBuilder.h"
-#include "mc/world/level/block/BlockColor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class PerlinSimplexNoise;
 class Random;
 // clang-format on
 
@@ -19,53 +17,56 @@ class LegacyMesaSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 64, ::std::array<::BlockColor, 64>>         mColorBands;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mPillarNoise;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mPillarRoofNoise;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mBandsNoise;
+    ::ll::UntypedStorage<1, 64> mUnk25f178;
+    ::ll::UntypedStorage<8, 8>  mUnk80f733;
+    ::ll::UntypedStorage<8, 8>  mUnkc93024;
+    ::ll::UntypedStorage<8, 8>  mUnk71c973;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LegacyMesaSurfaceBuilder& operator=(LegacyMesaSurfaceBuilder const&);
+    LegacyMesaSurfaceBuilder(LegacyMesaSurfaceBuilder const&);
+    LegacyMesaSurfaceBuilder();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void initBuilder(uint levelSeed) /*override*/;
 
-    // vIndex: 2
     virtual void initBiomeSurface(::Biome& biome) const /*override*/;
 
-    // vIndex: 3
     virtual bool isBestBuilder(::Biome const& biome) const /*override*/;
 
-    // vIndex: 4
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
-    // vIndex: 0
     virtual ~LegacyMesaSurfaceBuilder() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void generateBands(::Random& random);
+    MCNAPI void generateBands(::Random& random);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initBuilder(uint levelSeed);
+    MCNAPI void $initBuilder(uint levelSeed);
 
-    MCFOLD void $initBiomeSurface(::Biome& biome) const;
+    MCNAPI void $initBiomeSurface(::Biome& biome) const;
 
-    MCFOLD bool $isBestBuilder(::Biome const& biome) const;
+    MCNAPI bool $isBestBuilder(::Biome const& biome) const;
 
-    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    MCNAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+
+
     // NOLINTEND
 
 public:

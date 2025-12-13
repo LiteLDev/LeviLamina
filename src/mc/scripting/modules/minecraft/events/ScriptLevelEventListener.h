@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/LevelEventListener.h"
@@ -16,7 +14,6 @@ class Level;
 class Player;
 struct LevelGameRuleChangeEvent;
 struct ScriptingWorldInitializeEvent;
-namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -25,31 +22,30 @@ class ScriptLevelEventListener : public ::EventListenerDispatcher<::LevelEventLi
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-                                   mScriptEventsHandle;
-    ::ll::TypedStorage<1, 1, bool> mAfterListener;
+    ::ll::UntypedStorage<8, 16> mUnk207210;
+    ::ll::UntypedStorage<8, 16> mUnk1938c0;
+    ::ll::UntypedStorage<1, 1>  mUnk452ca9;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptLevelEventListener& operator=(ScriptLevelEventListener const&);
+    ScriptLevelEventListener(ScriptLevelEventListener const&);
+    ScriptLevelEventListener();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 12
     virtual ::EventResult onEvent(::LevelGameRuleChangeEvent const& event) /*override*/;
 
-    // vIndex: 11
     virtual ::EventResult onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent) /*override*/;
 
-    // vIndex: 5
     virtual ::EventResult onLevelTick(::Level&) /*override*/;
 
-    // vIndex: 2
     virtual ::EventResult onLevelAddedPlayer(::Player& player) /*override*/;
 
-    // vIndex: 3
     virtual ::EventResult onLevelRemovedPlayer(::Player& player) /*override*/;
 
-    // vIndex: 8
     virtual ::EventResult onLevelWeatherChange(
         ::std::string const& dimension,
         bool                 wasRaining,
@@ -58,27 +54,25 @@ public:
         bool                 isLightning
     ) /*override*/;
 
-    // vIndex: 4
     virtual ::EventResult onLevelRemovedActor(::Actor& actor) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptLevelEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::LevelGameRuleChangeEvent const& event);
+    MCNAPI ::EventResult $onEvent(::LevelGameRuleChangeEvent const& event);
 
-    MCAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
+    MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
 
-    MCAPI ::EventResult $onLevelTick(::Level&);
+    MCNAPI ::EventResult $onLevelTick(::Level&);
 
-    MCAPI ::EventResult $onLevelAddedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelAddedPlayer(::Player& player);
 
-    MCAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
 
-    MCAPI ::EventResult $onLevelWeatherChange(
+    MCNAPI ::EventResult $onLevelWeatherChange(
         ::std::string const& dimension,
         bool                 wasRaining,
         bool                 wasLightning,
@@ -86,7 +80,9 @@ public:
         bool                 isLightning
     );
 
-    MCAPI ::EventResult $onLevelRemovedActor(::Actor& actor);
+    MCNAPI ::EventResult $onLevelRemovedActor(::Actor& actor);
+
+
     // NOLINTEND
 
 public:

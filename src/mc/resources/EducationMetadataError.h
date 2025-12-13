@@ -9,13 +9,10 @@ class EducationMetadataError : public ::PackError {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::std::unordered_map<int, ::std::string> const& getLocErrorMessageMap() const /*override*/;
 
-    // vIndex: 3
     virtual ::std::unordered_map<int, ::std::string> const& getEventErrorMessageMap() const /*override*/;
 
-    // vIndex: 0
     virtual ~EducationMetadataError() /*override*/;
     // NOLINTEND
 
@@ -31,6 +28,8 @@ public:
     MCNAPI ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
 
     MCNAPI ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
+
+
     // NOLINTEND
 
 public:

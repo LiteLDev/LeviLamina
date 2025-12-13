@@ -42,8 +42,8 @@ public:
     // ItemStackRequestActionHandler inner types declare
     // clang-format off
     struct PlayerLegacyRequestSlotIdAssignment;
-    struct RequestIdAssignments;
     struct RequestSlotIdAssignment;
+    struct RequestIdAssignments;
     struct ScreenData;
     // clang-format on
 
@@ -53,30 +53,6 @@ public:
         DropRandomly = 1,
         Destroy      = 2,
         Consume      = 3,
-    };
-
-    struct RequestSlotIdAssignment {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, uchar>            mSlot;
-        ::ll::TypedStorage<4, 4, ::ItemStackNetId> mServerNetId;
-        // NOLINTEND
-    };
-
-    struct RequestIdAssignments {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mExpireTime;
-        ::ll::TypedStorage<
-            8,
-            64,
-            ::std::unordered_map<
-                ::ContainerRuntimeId,
-                ::std::unordered_map<uchar, ::ItemStackRequestActionHandler::RequestSlotIdAssignment>>>
-            mContainers;
-        // NOLINTEND
     };
 
     struct PlayerLegacyRequestSlotIdAssignment {
@@ -110,6 +86,30 @@ public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct RequestSlotIdAssignment {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, uchar>            mSlot;
+        ::ll::TypedStorage<4, 4, ::ItemStackNetId> mServerNetId;
+        // NOLINTEND
+    };
+
+    struct RequestIdAssignments {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mExpireTime;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::unordered_map<
+                ::ContainerRuntimeId,
+                ::std::unordered_map<uchar, ::ItemStackRequestActionHandler::RequestSlotIdAssignment>>>
+            mContainers;
         // NOLINTEND
     };
 

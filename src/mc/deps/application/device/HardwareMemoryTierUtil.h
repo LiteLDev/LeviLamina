@@ -17,10 +17,8 @@ class HardwareMemoryTierUtil
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::HardwareMemoryTier getHardwareMemoryTier() const = 0;
 
-    // vIndex: 0
     virtual ~HardwareMemoryTierUtil() /*override*/ = default;
     // NOLINTEND
 

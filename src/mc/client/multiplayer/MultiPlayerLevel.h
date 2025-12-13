@@ -4,35 +4,50 @@
 
 // auto generated inclusion list
 #include "mc/client/multiplayer/BeforeLevelForLevelHoldingOwnership.h"
+#include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ArmorTrimUnloader;
 class BlockSource;
-class CameraRegistry;
+class BlockTypeRegistry;
 class ChunkSource;
+class DimensionDefinitionGroup;
 class DisplayActorManager;
 class EntityContext;
 class EntitySystems;
 class Experiments;
+class IEntityRegistryOwner;
+class IMinecraftEventing;
+class ItemRegistryRef;
 class LevelChunk;
+class LevelData;
 class LevelSettings;
 class MapDataManager;
 class NetworkIdentifier;
+class PacketSender;
 class PlayerSleepManager;
+class ResourcePackManager;
+class Scheduler;
 class SerializedSkin;
+class SoundPlayerInterface;
+class StructureManager;
 class SubChunkManager;
 class SubChunkPacket;
 class SubChunkRequestManager;
 class TrustedSkinHelper;
 class WeakEntityRef;
 struct ActorUniqueID;
+struct NetworkPermissions;
 struct Tick;
+struct ArmorTrimUnloader;
+struct CameraRegistry;
 // clang-format on
 
 class MultiPlayerLevel : public ::Level, public ::BeforeLevelForLevelHoldingOwnership {
@@ -61,99 +76,229 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~MultiPlayerLevel() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~MultiPlayerLevel() /*override*/;
+#endif
 
-    // vIndex: 1
     virtual bool initialize(
-        ::std::string const&,
-        ::LevelSettings const&,
-        ::Experiments const&,
-        ::std::string const*,
+        ::std::string const&   levelName,
+        ::LevelSettings const& levelSettings,
+        ::Experiments const&   experiments,
+        ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
             ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            biomeIdToResolvedData
     ) /*override*/;
 
-    // vIndex: 77
     virtual ::Tick const getCurrentServerTick() const /*override*/;
 
-    // vIndex: 2
     virtual void startLeaveGame() /*override*/;
 
-    // vIndex: 40
-    virtual ::Actor* addEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) /*override*/;
+    virtual ::Actor* addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) /*override*/;
 
-    // vIndex: 56
-    virtual ::OwnerPtr<::EntityContext> removeActorFromWorldAndTakeEntity(::WeakEntityRef) /*override*/;
+    virtual ::OwnerPtr<::EntityContext> removeActorFromWorldAndTakeEntity(::WeakEntityRef entityRef) /*override*/;
 
-    // vIndex: 57
-    virtual ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef, ::LevelChunk&) /*override*/;
+    virtual ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef entityRef, ::LevelChunk&) /*override*/;
 
-    // vIndex: 44
-    virtual ::Actor* addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) /*override*/;
+    virtual ::Actor* addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) /*override*/;
 
-    // vIndex: 47
-    virtual void removeDisplayEntity(::WeakEntityRef) /*override*/;
+    virtual void removeDisplayEntity(::WeakEntityRef entity) /*override*/;
 
-    // vIndex: 48
     virtual ::Bedrock::NonOwnerPointer<::DisplayActorManager> getDisplayActorManager() /*override*/;
 
-    // vIndex: 392
     virtual ::PlayerSleepManager const& getPlayerSleepManager() const /*override*/;
 
-    // vIndex: 391
     virtual ::PlayerSleepManager& getPlayerSleepManager() /*override*/;
 
-    // vIndex: 316
-    virtual void notifySubChunkRequestManager(::SubChunkPacket const&) /*override*/;
+    virtual void notifySubChunkRequestManager(::SubChunkPacket const& packet) /*override*/;
 
-    // vIndex: 317
     virtual ::SubChunkRequestManager* getSubChunkRequestManager() /*override*/;
 
-    // vIndex: 225
-    virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool) /*override*/;
+    virtual void onSubChunkLoaded(
+        ::ChunkSource& source,
+        ::LevelChunk&  lc,
+        short          absoluteSubChunkIndex,
+        bool           subChunkVisibilityChanged
+    ) /*override*/;
 
-    // vIndex: 226
     virtual ::Bedrock::NonOwnerPointer<::SubChunkManager> getSubChunkManager() /*override*/;
 
-    // vIndex: 300
-    virtual bool canUseSkin(::SerializedSkin const&, ::NetworkIdentifier const&, ::ActorUniqueID const&) const
-        /*override*/;
+    virtual bool canUseSkin(
+        ::SerializedSkin const&    skin,
+        ::NetworkIdentifier const& networkIdentifier,
+        ::ActorUniqueID const&     playerId
+    ) const /*override*/;
 
-    // vIndex: 301
     virtual ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> getTrustedSkinHelper() const /*override*/;
 
-    // vIndex: 373
     virtual ::MultiPlayerLevel* asMultiPlayerLevel() /*override*/;
 
-    // vIndex: 375
     virtual ::Bedrock::NonOwnerPointer<::CameraRegistry const> getCameraRegistry() const /*override*/;
 
-    // vIndex: 374
     virtual ::Bedrock::NonOwnerPointer<::CameraRegistry> getCameraRegistry() /*override*/;
 
-    // vIndex: 376
     virtual ::Bedrock::NonOwnerPointer<::EntitySystems> getCameraSystems() /*override*/;
 
-    // vIndex: 390
     virtual ::ArmorTrimUnloader* getArmorTrimUnloader() /*override*/;
 
-    // vIndex: 371
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() /*override*/;
 
-    // vIndex: 384
     virtual void subChunkTickAndSendRequests() /*override*/;
 
-    // vIndex: 387
     virtual ::MapDataManager& _getMapDataManager() /*override*/;
 
-    // vIndex: 393
     virtual void _subTick() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C MultiPlayerLevel(
+        ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
+        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
+        ::Bedrock::UniqueOwnerPointer<::LevelData>                   levelData,
+        ::IMinecraftEventing&                                        eventing,
+        ::ResourcePackManager&                                       resourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>            structureManager,
+        ::Scheduler&                                                 context,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner,
+        ::WeakRef<::EntityContext>                                   levelEntity,
+        ::TrustedSkinHelper                                          trustedSkinHelper,
+        ::SubClientId                                                subClientId,
+        ::ItemRegistryRef                                            itemRegistry,
+        ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry>           blockTypeRegistry,
+        bool                                                         clientSideChunkGenerationEnabled,
+        bool                                                         blockNetworkIdsAreHashes,
+        ::NetworkPermissions const&                                  networkPermissions,
+        ::DimensionDefinitionGroup                                   dimensionGroup
+    );
+
+    MCNAPI_C void _initializeSubChunkManager();
+
+    MCNAPI_C void _onSubChunkLoaded(
+        ::ChunkSource& source,
+        ::LevelChunk&  lc,
+        short          absoluteSubChunkIndex,
+        bool           subChunkVisibilityChanged
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
+        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
+        ::Bedrock::UniqueOwnerPointer<::LevelData>                   levelData,
+        ::IMinecraftEventing&                                        eventing,
+        ::ResourcePackManager&                                       resourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>            structureManager,
+        ::Scheduler&                                                 context,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner,
+        ::WeakRef<::EntityContext>                                   levelEntity,
+        ::TrustedSkinHelper                                          trustedSkinHelper,
+        ::SubClientId                                                subClientId,
+        ::ItemRegistryRef                                            itemRegistry,
+        ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry>           blockTypeRegistry,
+        bool                                                         clientSideChunkGenerationEnabled,
+        bool                                                         blockNetworkIdsAreHashes,
+        ::NetworkPermissions const&                                  networkPermissions,
+        ::DimensionDefinitionGroup                                   dimensionGroup
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool $initialize(
+        ::std::string const&   levelName,
+        ::LevelSettings const& levelSettings,
+        ::Experiments const&   experiments,
+        ::std::string const*   levelId,
+        ::std::optional<::std::reference_wrapper<
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            biomeIdToResolvedData
+    );
 
+    MCNAPI ::Tick const $getCurrentServerTick() const;
+
+    MCNAPI void $startLeaveGame();
+
+    MCNAPI ::Actor* $addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+
+    MCNAPI ::OwnerPtr<::EntityContext> $removeActorFromWorldAndTakeEntity(::WeakEntityRef entityRef);
+
+    MCNAPI ::OwnerPtr<::EntityContext> $takeEntity(::WeakEntityRef entityRef, ::LevelChunk&);
+
+    MCNAPI ::Actor* $addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+
+    MCNAPI void $removeDisplayEntity(::WeakEntityRef entity);
+
+    MCNAPI ::Bedrock::NonOwnerPointer<::DisplayActorManager> $getDisplayActorManager();
+
+    MCNAPI ::PlayerSleepManager const& $getPlayerSleepManager() const;
+
+    MCNAPI ::PlayerSleepManager& $getPlayerSleepManager();
+
+    MCNAPI void $notifySubChunkRequestManager(::SubChunkPacket const& packet);
+
+    MCNAPI ::SubChunkRequestManager* $getSubChunkRequestManager();
+
+    MCNAPI void $onSubChunkLoaded(
+        ::ChunkSource& source,
+        ::LevelChunk&  lc,
+        short          absoluteSubChunkIndex,
+        bool           subChunkVisibilityChanged
+    );
+
+    MCNAPI ::Bedrock::NonOwnerPointer<::SubChunkManager> $getSubChunkManager();
+
+    MCNAPI bool $canUseSkin(
+        ::SerializedSkin const&    skin,
+        ::NetworkIdentifier const& networkIdentifier,
+        ::ActorUniqueID const&     playerId
+    ) const;
+
+    MCNAPI ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> $getTrustedSkinHelper() const;
+
+    MCNAPI ::MultiPlayerLevel* $asMultiPlayerLevel();
+
+    MCNAPI ::Bedrock::NonOwnerPointer<::CameraRegistry const> $getCameraRegistry() const;
+
+    MCNAPI ::Bedrock::NonOwnerPointer<::CameraRegistry> $getCameraRegistry();
+
+    MCNAPI ::Bedrock::NonOwnerPointer<::EntitySystems> $getCameraSystems();
+
+    MCNAPI ::ArmorTrimUnloader* $getArmorTrimUnloader();
+
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
+
+    MCNAPI void $subChunkTickAndSendRequests();
+
+    MCNAPI ::MapDataManager& $_getMapDataManager();
+
+    MCNAPI void $_subTick();
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForILevel();
+
+    MCNAPI static void** $vftableForIWorldRegistriesProvider();
+
+    MCNAPI static void** $vftableForBlockSourceListener();
     // NOLINTEND
 };

@@ -20,14 +20,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SetTitlePacketPayload::TitleType> mType;
-    ::ll::TypedStorage<8, 32, ::std::string>                     mTitleText;
-    ::ll::TypedStorage<8, 32, ::std::string>                     mFilteredTitleText;
-    ::ll::TypedStorage<4, 4, int>                                mFadeInTime;
-    ::ll::TypedStorage<4, 4, int>                                mStayTime;
-    ::ll::TypedStorage<4, 4, int>                                mFadeOutTime;
-    ::ll::TypedStorage<8, 32, ::std::string>                     mXuid;
-    ::ll::TypedStorage<8, 32, ::std::string>                     mPlatformOnlineId;
+    ::ll::UntypedStorage<4, 4>  mUnke8839a;
+    ::ll::UntypedStorage<8, 32> mUnk117eb9;
+    ::ll::UntypedStorage<8, 32> mUnka29079;
+    ::ll::UntypedStorage<4, 4>  mUnke36386;
+    ::ll::UntypedStorage<4, 4>  mUnk58a725;
+    ::ll::UntypedStorage<4, 4>  mUnk73a6f6;
+    ::ll::UntypedStorage<8, 32> mUnk38d878;
+    ::ll::UntypedStorage<8, 32> mUnk56cacb;
     // NOLINTEND
 
 public:
@@ -38,31 +38,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SetTitlePacketPayload(::SetTitlePacketPayload::TitleType type);
+    MCNAPI explicit SetTitlePacketPayload(::SetTitlePacketPayload::TitleType type);
 
-    MCAPI SetTitlePacketPayload(int fadeInTime, int stayTime, int fadeOutTime);
+    MCNAPI SetTitlePacketPayload(int fadeInTime, int stayTime, int fadeOutTime);
 
-    MCAPI SetTitlePacketPayload(
+    MCNAPI SetTitlePacketPayload(
         ::SetTitlePacketPayload::TitleType type,
         ::std::string const&               titleText,
         ::std::optional<::std::string>     filteredTitleText
     );
 
-    MCAPI ::SetTitlePacketPayload& operator=(::SetTitlePacketPayload&&);
+    MCNAPI ::SetTitlePacketPayload& operator=(::SetTitlePacketPayload&&);
 
-    MCAPI ::SetTitlePacketPayload& operator=(::SetTitlePacketPayload const&);
+    MCNAPI ::SetTitlePacketPayload& operator=(::SetTitlePacketPayload const&);
 
-    MCAPI ~SetTitlePacketPayload();
+    MCNAPI ~SetTitlePacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SetTitlePacketPayload::TitleType type);
+    MCNAPI void* $ctor(::SetTitlePacketPayload::TitleType type);
 
-    MCAPI void* $ctor(int fadeInTime, int stayTime, int fadeOutTime);
+    MCNAPI void* $ctor(int fadeInTime, int stayTime, int fadeOutTime);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::SetTitlePacketPayload::TitleType type,
         ::std::string const&               titleText,
         ::std::optional<::std::string>     filteredTitleText
@@ -72,6 +72,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
