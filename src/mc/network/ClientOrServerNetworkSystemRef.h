@@ -31,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::ClientNetworkSystem& toClientNetworkSystem();
-
     MCAPI ::ServerNetworkSystem& toServerNetworkSystem();
     // NOLINTEND
 };

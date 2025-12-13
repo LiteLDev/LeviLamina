@@ -75,10 +75,6 @@ public:
     LLNDAPI operator class AABB() const;
 
 public:
-    // prevent constructor by default
-    BoundingBox();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI_C BoundingBox(::BlockPos const& min, ::BlockPos const& size, ::Rotation rotation);

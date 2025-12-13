@@ -40,8 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ReadOnlyBinaryStream(::std::string_view buffer, bool copyBuffer);
-
     MCAPI ::Bedrock::Result<void> ensureReadCompleted() const;
 
     MCAPI ::Bedrock::Result<bool> getBool();

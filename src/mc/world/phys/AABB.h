@@ -97,8 +97,6 @@ public:
 
     MCAPI ::AABB cloneAndTransformByMatrix(::Matrix const& transform) const;
 
-    MCAPI_C bool contains(::Vec3 const& p) const;
-
     MCAPI float distanceTo(::Vec3 const& pos) const;
 
     MCAPI float distanceToSqr(::AABB const& aabb) const;

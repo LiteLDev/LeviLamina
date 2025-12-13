@@ -246,8 +246,6 @@ public:
 
     MCAPI bool isDamaged() const;
 
-    MCAPI_C bool isEnchanted() const;
-
     MCAPI bool isEnchantingBook() const;
 
     MCAPI_C bool isGlint() const;

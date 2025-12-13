@@ -24,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C RedactableString(::Bedrock::Safety::RedactableString const&);
-
     MCAPI RedactableString(::std::string&& unredactedString, ::std::optional<::std::string>&& redactedString);
 
     MCAPI void append(::std::string rhs);

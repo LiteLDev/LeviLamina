@@ -696,8 +696,6 @@ public:
 
     MCFOLD ::Dimension const& getDimensionConst() const;
 
-    MCAPI_C ::DimensionType getDimensionId() const;
-
     MCAPI ::MobEffectInstance const* getEffect(::MobEffect const& effect) const;
 
     MCAPI ::ActorType getEntityTypeId() const;
@@ -799,8 +797,6 @@ public:
     MCAPI void handleFallDamage(float fallDistance, float multiplier, ::ActorDamageSource source);
 
     MCAPI void handleLeftoverFallDamage(float damage, ::ActorDamageSource source);
-
-    MCAPI_C bool hasCategory(::ActorCategory categories) const;
 
     MCAPI bool hasDimension() const;
 

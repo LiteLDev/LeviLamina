@@ -3,14 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/input/InputMode.h"
+#include "mc/entity/components/PlayerBlockActions.h"
+#include "mc/input/ClientPlayMode.h"
+#include "mc/input/NewInteractionModel.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/PlayerInputTick.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class ItemStackRequestData;
 class ReadOnlyBinaryStream;
+struct PackedItemUseLegacyInventoryTransaction;
 struct PlayerActionComponent;
 // clang-format on
 
@@ -89,25 +99,25 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnk63de45;
-    ::ll::UntypedStorage<4, 12> mUnk42b2d2;
-    ::ll::UntypedStorage<4, 4>  mUnkf016f9;
-    ::ll::UntypedStorage<4, 12> mUnkfd98a4;
-    ::ll::UntypedStorage<4, 8>  mUnkf7c4e6;
-    ::ll::UntypedStorage<4, 8>  mUnk15e2f4;
-    ::ll::UntypedStorage<4, 8>  mUnk894f50;
-    ::ll::UntypedStorage<4, 8>  mUnkeb2562;
-    ::ll::UntypedStorage<4, 12> mUnkfcd95a;
-    ::ll::UntypedStorage<4, 8>  mUnkde335b;
-    ::ll::UntypedStorage<8, 16> mUnkdcc37a;
-    ::ll::UntypedStorage<4, 4>  mUnk95d7b7;
-    ::ll::UntypedStorage<4, 4>  mUnk8b5a95;
-    ::ll::UntypedStorage<4, 4>  mUnk316d20;
-    ::ll::UntypedStorage<8, 8>  mUnk3d1b1c;
-    ::ll::UntypedStorage<8, 8>  mUnk9ed3b2;
-    ::ll::UntypedStorage<8, 8>  mUnkbd8f6f;
-    ::ll::UntypedStorage<8, 24> mUnk80256d;
-    ::ll::UntypedStorage<8, 8>  mUnkff20eb;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mRot;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mPos;
+    ::ll::TypedStorage<4, 4, float>                                                        mYHeadRot;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mPosDelta;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mVehicleRot;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mAnalogMoveVector;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mMove;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mInteractRotation;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mCameraOrientation;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mRawMoveVector;
+    ::ll::TypedStorage<8, 16, ::std::bitset<65>>                                           mInputData;
+    ::ll::TypedStorage<4, 4, ::InputMode>                                                  mInputMode;
+    ::ll::TypedStorage<4, 4, ::ClientPlayMode>                                             mPlayMode;
+    ::ll::TypedStorage<4, 4, ::NewInteractionModel>                                        mNewInteractionModel;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick>                                            mClientTick;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackedItemUseLegacyInventoryTransaction>> mItemUseTransaction;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>>                    mItemStackRequest;
+    ::ll::TypedStorage<8, 24, ::PlayerBlockActions>                                        mPlayerBlockActions;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                              mClientPredictedVehicle;
     // NOLINTEND
 
 public:
