@@ -7,9 +7,6 @@
 class BaseLightData;
 class Dimension;
 class IClientInstance;
-class IOptions;
-class Player;
-namespace mce { struct Image; }
 // clang-format on
 
 class BaseLightTextureImageBuilder {
@@ -22,73 +19,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BaseLightTextureImageBuilder() = default;
 
-    virtual void init(::Dimension* d);
+    // vIndex: 1
+    virtual void init(::Dimension*);
 
-#ifdef LL_PLAT_C
-    virtual bool buildImage(
-        ::BaseLightData const& lightData,
-        ::mce::Image*          targetImage,
-        uint                   imageLength,
-        float                  a,
-        float                  ambientBoost,
-        bool                   clampToMinimum
-    );
-
-    virtual bool buildImageSplit(
-        ::BaseLightData const& lightData,
-        ::mce::Image*          targetImage,
-        uint                   imageLength,
-        float                  a,
-        bool                   clampToMinimum
-    );
-
-#endif
-    virtual ::std::unique_ptr<::BaseLightData>
-    createBaseLightTextureData(::IClientInstance* client, ::BaseLightData const& currentData);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static void
-    _updateDarknessLightData(::BaseLightData& baseLightData, ::Player const& player, ::IOptions const& options);
+    // vIndex: 2
+    virtual ::std::unique_ptr<::BaseLightData> createBaseLightTextureData(::IClientInstance*, ::BaseLightData const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $init(::Dimension* d);
 
-    MCNAPI bool $buildImage(
-        ::BaseLightData const& lightData,
-        ::mce::Image*          targetImage,
-        uint                   imageLength,
-        float                  a,
-        float                  ambientBoost,
-        bool                   clampToMinimum
-    );
-
-    MCNAPI bool $buildImageSplit(
-        ::BaseLightData const& lightData,
-        ::mce::Image*          targetImage,
-        uint                   imageLength,
-        float                  a,
-        bool                   clampToMinimum
-    );
-
-    MCNAPI ::std::unique_ptr<::BaseLightData>
-    $createBaseLightTextureData(::IClientInstance* client, ::BaseLightData const& currentData);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

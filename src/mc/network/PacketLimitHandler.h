@@ -26,14 +26,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ::PacketViolationResponse checkForViolation(
         ::MinecraftPacketIds                                                     packetId,
         ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
         bool*                                                                    outIsNewOrUpdatedViolation
     ) /*override*/;
 
+    // vIndex: 1
     virtual uint getTelemetryData() /*override*/;
 
+    // vIndex: 2
     virtual ~PacketLimitHandler() /*override*/ = default;
     // NOLINTEND
 
@@ -56,8 +59,6 @@ public:
     );
 
     MCNAPI uint $getTelemetryData();
-
-
     // NOLINTEND
 
 public:

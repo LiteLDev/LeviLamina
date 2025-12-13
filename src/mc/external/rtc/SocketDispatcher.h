@@ -31,22 +31,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SocketDispatcher() /*override*/;
 
+    // vIndex: 6
     virtual bool Create(int type);
 
+    // vIndex: 18
     virtual bool Create(int family, int type) /*override*/;
 
+    // vIndex: 3
     virtual void* GetWSAEvent() /*override*/;
 
+    // vIndex: 4
     virtual uint64 GetSocket() /*override*/;
 
+    // vIndex: 5
     virtual bool CheckSignalClose() /*override*/;
 
+    // vIndex: 1
     virtual uint GetRequestedEvents() /*override*/;
 
+    // vIndex: 2
     virtual void OnEvent(uint ff, int err) /*override*/;
 
+    // vIndex: 12
     virtual int Close() /*override*/;
     // NOLINTEND
 
@@ -98,8 +107,6 @@ public:
     MCNAPI void $OnEvent(uint ff, int err);
 
     MCNAPI int $Close();
-
-
     // NOLINTEND
 
 public:

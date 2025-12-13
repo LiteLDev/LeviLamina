@@ -23,16 +23,4 @@ public:
     LowMemoryReport& operator=(LowMemoryReport const&);
     LowMemoryReport(LowMemoryReport const&);
     LowMemoryReport();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~LowMemoryReport();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

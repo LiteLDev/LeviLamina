@@ -39,22 +39,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const& block) const /*override*/;
 
+    // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~SkullBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -94,8 +102,6 @@ public:
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

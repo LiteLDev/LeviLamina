@@ -43,14 +43,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MapDataManager();
 
+    // vIndex: 1
     virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&);
 
+    // vIndex: 2
     virtual ::MapItemSavedData& createMapSavedData(::ActorUniqueID const& uuid);
 
+    // vIndex: 3
     virtual void requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
 
+    // vIndex: 4
     virtual void _copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
     // NOLINTEND
 
@@ -116,8 +121,6 @@ public:
     MCAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
 
     MCAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
-
-
     // NOLINTEND
 
 public:

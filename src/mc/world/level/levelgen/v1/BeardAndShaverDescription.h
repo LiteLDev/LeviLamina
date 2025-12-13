@@ -2,19 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/v1/BeardingDescriptionCache.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+struct BeardKernel;
 // clang-format on
 
 class BeardAndShaverDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 40> mUnk6ad3e6;
-    ::ll::UntypedStorage<8, 8>  mUnk823fce;
-    ::ll::UntypedStorage<4, 4>  mUnk64e250;
-    ::ll::UntypedStorage<4, 4>  mUnk7f9e75;
+    ::ll::TypedStorage<4, 40, ::BeardingDescriptionCache const> mCache;
+    ::ll::TypedStorage<8, 8, ::BeardKernel const&>              mBeardKernel;
+    ::ll::TypedStorage<4, 4, float const>                       mMinBeardWidth;
+    ::ll::TypedStorage<4, 4, float const>                       mMaxBeardWidth;
     // NOLINTEND
 
 public:
@@ -26,6 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI float calculateContribution(::BlockPos const& pos) const;
+    MCAPI float calculateContribution(::BlockPos const& pos) const;
     // NOLINTEND
 };

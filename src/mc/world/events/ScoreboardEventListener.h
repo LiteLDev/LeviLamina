@@ -14,35 +14,38 @@ class ScoreboardEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScoreboardEventListener();
 
+    // vIndex: 1
     virtual ::EventResult onObjectiveAdded(::std::string const&);
 
+    // vIndex: 2
     virtual ::EventResult onObjectiveRemoved(::std::string const&);
 
+    // vIndex: 3
     virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const&);
 
+    // vIndex: 4
     virtual ::EventResult onScoreChanged(::ScoreboardId const&, ::std::string const&, int);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onObjectiveAdded(::std::string const&);
+    MCFOLD ::EventResult $onObjectiveAdded(::std::string const&);
 
-    MCNAPI ::EventResult $onObjectiveRemoved(::std::string const&);
+    MCFOLD ::EventResult $onObjectiveRemoved(::std::string const&);
 
-    MCNAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const&);
+    MCFOLD ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const&);
 
-    MCNAPI ::EventResult $onScoreChanged(::ScoreboardId const&, ::std::string const&, int);
-
-
+    MCFOLD ::EventResult $onScoreChanged(::ScoreboardId const&, ::std::string const&, int);
     // NOLINTEND
 
 public:

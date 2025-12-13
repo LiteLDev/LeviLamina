@@ -53,21 +53,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual ~ScriptWidgetGroup() = default;
 
+    // vIndex: 0
     virtual void _performDeleteGroup() /*override*/;
 
+    // vIndex: 1
     virtual void _setValid(bool valid) /*override*/;
 
+    // vIndex: 2
     virtual void
     _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload) /*override*/;
 
+    // vIndex: 3
     virtual void _handleWidgetComponentStateChangePayload(
         ::Editor::Network::WidgetComponentStateChangePayload const& payload
     ) /*override*/;
 
+    // vIndex: 4
     virtual void _servicePendingStateChanges() /*override*/;
 
+    // vIndex: 0
     virtual ::Scripting::Result_deprecated<void> _deleteWidget(
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete
     ) /*override*/;
@@ -148,8 +155,6 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void>
     $_deleteWidget(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete);
-
-
     // NOLINTEND
 
 public:

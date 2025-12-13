@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/util/UploadError.h"
-
 // auto generated forward declare list
 // clang-format off
-class FileArchiver;
 class IFileChunkUploader;
 class TaskGroup;
 struct FileChunkInfo;
@@ -81,13 +76,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FileUploadManager();
 
+    // vIndex: 1
     virtual float getUploadProgress() const;
 
+    // vIndex: 2
     virtual void
     archiveAndUploadFileToRealmStorage(::std::string const&, ::Core::Path const&, int const, ::std::string const&) = 0;
 
+    // vIndex: 3
     virtual void uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
     // NOLINTEND
 
@@ -95,12 +94,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI FileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
-
-    MCNAPI_C FileUploadManager(
-        ::TaskGroup&                                         taskGroup,
-        ::std::shared_ptr<::IFileChunkUploader>              fileUploader,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> const& fileArchiver
-    );
 
     MCNAPI void _generateMultiPartHelper();
 
@@ -111,8 +104,6 @@ public:
     MCNAPI void _uploadStream();
 
     MCNAPI void addCallbackQueue(::std::function<void()> callback);
-
-    MCNAPI_C void setFailed(::UploadError reason);
 
     MCNAPI void uploadFile(
         ::std::string const& uploadId,
@@ -132,12 +123,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
-
-    MCNAPI_C void* $ctor(
-        ::TaskGroup&                                         taskGroup,
-        ::std::shared_ptr<::IFileChunkUploader>              fileUploader,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> const& fileArchiver
-    );
     // NOLINTEND
 
 public:
@@ -152,8 +137,6 @@ public:
     MCNAPI float $getUploadProgress() const;
 
     MCNAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
-
-
     // NOLINTEND
 
 public:

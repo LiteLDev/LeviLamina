@@ -30,6 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptWidgetComponentRenderPrimType_Box() /*override*/ = default;
     // NOLINTEND
 

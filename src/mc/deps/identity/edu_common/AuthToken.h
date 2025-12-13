@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Identity::AuthToken& operator=(::Identity::AuthToken&&);
-
     MCNAPI ~AuthToken();
     // NOLINTEND
 

@@ -30,10 +30,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::optional<bool> isGameRuleEnabled(::GameRuleId const rule) const /*override*/;
 
+    // vIndex: 2
     virtual ::ChatRestrictionLevel getChatRestrictionLevel() const /*override*/;
 
+    // vIndex: 0
     virtual ~SharedData() /*override*/ = default;
     // NOLINTEND
 
@@ -43,8 +46,6 @@ public:
     MCNAPI ::std::optional<bool> $isGameRuleEnabled(::GameRuleId const rule) const;
 
     MCNAPI ::ChatRestrictionLevel $getChatRestrictionLevel() const;
-
-
     // NOLINTEND
 
 public:

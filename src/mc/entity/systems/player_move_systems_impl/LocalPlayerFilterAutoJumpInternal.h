@@ -95,6 +95,7 @@ struct LocalPlayerFilterAutoJumpInternal
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
@@ -135,6 +136,7 @@ public:
             ::EntityFactoryT<>>& context
     ) /*override*/;
 
+    // vIndex: 6
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<
@@ -176,6 +178,7 @@ public:
         ::StrictEntityContext&   entity
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~LocalPlayerFilterAutoJumpInternal() /*override*/ = default;
     // NOLINTEND
 
@@ -363,8 +366,6 @@ public:
             ::EntityFactoryT<>>& context,
         ::StrictEntityContext&   entity
     );
-
-
     // NOLINTEND
 
 public:

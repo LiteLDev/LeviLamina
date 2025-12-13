@@ -15,38 +15,19 @@ class NpcEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~NpcEventListener() = default;
-#else // LL_PLAT_C
-    virtual ~NpcEventListener();
-#endif
 
-    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> data);
+    // vIndex: 1
+    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData>);
 
-    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    // vIndex: 2
+    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID, bool);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> data);
 
-    MCNAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -14,8 +14,10 @@ class BiomeFilterGroup : public ::FilterGroup {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BiomeFilterGroup() /*override*/;
 
+    // vIndex: 2
     virtual ::std::shared_ptr<::FilterGroup> _createSubgroup(::FilterGroup::CollectionType type) const /*override*/;
     // NOLINTEND
 
@@ -35,8 +37,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::shared_ptr<::FilterGroup> $_createSubgroup(::FilterGroup::CollectionType type) const;
-
-
     // NOLINTEND
 
 public:

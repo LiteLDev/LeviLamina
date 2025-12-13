@@ -72,18 +72,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~HTTPConnection2() /*override*/ = default;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
+    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,
         ::RakNet::PI2_LostConnectionReason
     ) /*override*/;
 
+    // vIndex: 8
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
 
+    // vIndex: 9
     virtual void OnFailedConnectionAttempt(::RakNet::Packet*, ::RakNet::PI2_FailedConnectionAttemptReason) /*override*/;
     // NOLINTEND
 

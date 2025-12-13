@@ -51,8 +51,8 @@ class JsepTransportController : public ::sigslot::has_slots<::sigslot::single_th
 public:
     // JsepTransportController inner types declare
     // clang-format off
-    class Observer;
     struct Config;
+    class Observer;
     // clang-format on
 
     // JsepTransportController inner types define
@@ -60,8 +60,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~Observer();
 
+        // vIndex: 1
         virtual bool OnTransportChanged(
             ::std::string const&,
             ::webrtc::RtpTransportInternal*,
@@ -169,6 +171,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~JsepTransportController() /*override*/;
     // NOLINTEND
 

@@ -3,21 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/social/IToastManager.h"
-#include "mc/client/social/ToastMessageType.h"
 #include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/ResourcePackListener.h"
 
 // auto generated forward declare list
 // clang-format off
-class IClientInstance;
-class Option;
-class PushNotificationMessage;
 class ResourcePackManager;
 class ToastMessage;
-namespace Json { class Value; }
 // clang-format on
 
 class ToastManager : public ::IToastManager,
@@ -57,108 +50,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~ToastManager() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ToastManager() /*override*/;
-#endif
 
-    virtual void pushToast(::ToastMessage&& message) /*override*/;
+    // vIndex: 1
+    virtual void pushToast(::ToastMessage&&) /*override*/;
 
+    // vIndex: 2
     virtual bool isEditorModeEnabled() const /*override*/;
 
+    // vIndex: 1
     virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ToastManager(
-        ::IClientInstance&                                   client,
-        ::Option*                                            enableDebugToastsOption,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager> resourcePackManager
-    );
-
-    MCNAPI_C void _destroyToast();
-
-    MCNAPI_C ::std::string _extractGameInviteDescription(::Json::Value const& propertyBag);
-
-    MCNAPI_C ::std::string _extractGameInviteHandle(::Json::Value const& propertyBag);
-
-    MCNAPI_C void _handleInvite(bool parseJSON);
-
-    MCNAPI_C void _invitationTelemetry(::Json::Value const& data, ::ToastMessageType type);
-
-    MCNAPI_C bool _isToastAllowed(::ToastMessageType messageType) const;
-
-    MCNAPI_C void _playDefaultToastSound() const;
-
-    MCNAPI_C void _playMobileInviteTTS() const;
-
-    MCNAPI_C void _playRecipeUnlockingToastInSound() const;
-
-    MCNAPI_C void _playRecipeUnlockingToastOutSound() const;
-
-    MCNAPI_C void _reportClick();
-
-    MCNAPI_C void _sendRemoveToast();
-
-    MCNAPI_C void _sendShowToast(bool animateIn);
-
-    MCNAPI_C void _sendTTS(bool useIndication, ::std::string const& message) const;
-
-    MCNAPI_C void _setInitialToastValues();
-
-    MCNAPI_C void _showNewToast();
-
-    MCNAPI_C float getCurrentToastDisplaySeconds() const;
-
-    MCNAPI_C ::ui::ViewRequest handleToastButton();
-
-    MCNAPI_C void pushNotificationReceived(::PushNotificationMessage const& msg);
-
-    MCNAPI_C void setCurrentToastsDuration(float timeInSec);
-
-    MCNAPI_C void update();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        ::IClientInstance&                                   client,
-        ::Option*                                            enableDebugToastsOption,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager> resourcePackManager
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $pushToast(::ToastMessage&& message);
 
-    MCNAPI bool $isEditorModeEnabled() const;
-
-    MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIToastManager();
-
-    MCNAPI static void** $vftableForResourcePackListener();
-
-    MCNAPI static void** $vftableForEnableQueueForMainThread();
     // NOLINTEND
 };

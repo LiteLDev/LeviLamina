@@ -14,8 +14,10 @@ class ServerLevelRandom : public ::LevelRandom {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::Random& getThreadRandom() /*override*/;
 
+    // vIndex: 0
     virtual ~ServerLevelRandom() /*override*/ = default;
     // NOLINTEND
 
@@ -23,8 +25,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Random& $getThreadRandom();
-
-
     // NOLINTEND
 
 public:

@@ -30,10 +30,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~App() /*override*/;
 
+    // vIndex: 1
     virtual uint64 BlockLength() const /*override*/;
 
+    // vIndex: 2
     virtual bool Create(
         uchar*                                                   packet,
         uint64*                                                  index,
@@ -73,8 +76,6 @@ public:
         uint64                                                   max_length,
         ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
     ) const;
-
-
     // NOLINTEND
 
 public:

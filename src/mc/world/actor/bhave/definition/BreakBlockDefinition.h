@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/bhave/definition/BehaviorDefinition.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,32 +16,26 @@ class BreakBlockDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk23a542;
-    ::ll::UntypedStorage<8, 32> mUnk120a08;
-    ::ll::UntypedStorage<4, 4>  mUnk15c1e8;
-    ::ll::UntypedStorage<8, 32> mUnk7832bb;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mBlockPos;
+    ::ll::TypedStorage<8, 32, ::std::string> mBlockPosId;
+    ::ll::TypedStorage<4, 4, int>            mNumTicksToBreak;
+    ::ll::TypedStorage<8, 32, ::std::string> mNumTicksToBreakId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BreakBlockDefinition& operator=(BreakBlockDefinition const&);
-    BreakBlockDefinition(BreakBlockDefinition const&);
-    BreakBlockDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
+    // vIndex: 0
     virtual ~BreakBlockDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
-
-
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:

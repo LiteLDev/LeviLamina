@@ -16,22 +16,18 @@ class HeightMapDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk1e8e42;
-    ::ll::UntypedStorage<4, 4> mUnk7d71cf;
-    ::ll::UntypedStorage<4, 4> mUnk58e9bc;
+    ::ll::TypedStorage<2, 2, ushort const> mInput;
+    ::ll::TypedStorage<4, 4, float const>  mAboveDensity;
+    ::ll::TypedStorage<4, 4, float const>  mBelowDensity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HeightMapDensityCalculator& operator=(HeightMapDensityCalculator const&);
-    HeightMapDensityCalculator(HeightMapDensityCalculator const&);
-    HeightMapDensityCalculator();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~HeightMapDensityCalculator() /*override*/ = default;
 
+    // vIndex: 1
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
     // NOLINTEND
 

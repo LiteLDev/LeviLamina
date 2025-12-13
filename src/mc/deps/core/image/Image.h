@@ -34,8 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit Image(::mce::Blob&& contents);
-
     MCNAPI Image(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
 
     MCNAPI ::mce::Image clone() const;
@@ -44,16 +42,12 @@ public:
 
     MCNAPI void resizeImageBytesToFitImageDescription();
 
-    MCNAPI_C void setRawImage(::mce::Blob&& contents);
-
     MCNAPI ~Image();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::mce::Blob&& contents);
-
     MCNAPI void* $ctor(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
     // NOLINTEND
 

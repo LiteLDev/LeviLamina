@@ -14,17 +14,17 @@ class AgentBodyControl : public ::BodyControl {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void clientTick(::Mob& mob) /*override*/;
 
+    // vIndex: 0
     virtual ~AgentBodyControl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $clientTick(::Mob& mob);
-
-
+    MCAPI void $clientTick(::Mob& mob);
     // NOLINTEND
 
 public:

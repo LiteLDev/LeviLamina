@@ -27,20 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::PlayerBlockActions& operator=(::PlayerBlockActions&&);
+    MCAPI ::PlayerBlockActions& operator=(::PlayerBlockActions&&);
 
-    MCNAPI ~PlayerBlockActions();
+    MCAPI ~PlayerBlockActions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::PlayerBlockActions> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::PlayerBlockActions> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

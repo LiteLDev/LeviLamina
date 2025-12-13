@@ -2,22 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 struct ScriptItemChargeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke16171;
-    ::ll::UntypedStorage<8, 32> mUnkf44225;
-    ::ll::UntypedStorage<4, 4>  mUnkc9945b;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
+                                                                                                           mScriptItem;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mSource;
+    ::ll::TypedStorage<4, 4, int>                                                                          mUseDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptItemChargeAfterEvent& operator=(ScriptItemChargeAfterEvent const&);
-    ScriptItemChargeAfterEvent(ScriptItemChargeAfterEvent const&);
-    ScriptItemChargeAfterEvent();
 };
 
 } // namespace ScriptModuleMinecraft

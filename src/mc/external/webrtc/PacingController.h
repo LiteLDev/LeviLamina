@@ -29,6 +29,39 @@ public:
     // clang-format on
 
     // PacingController inner types define
+    class PacketSender {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 0
+        virtual ~PacketSender() = default;
+
+        // vIndex: 1
+        virtual void SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend>, ::webrtc::PacedPacketInfo const&) = 0;
+
+        // vIndex: 2
+        virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> FetchFec() = 0;
+
+        // vIndex: 3
+        virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(::webrtc::DataSize) = 0;
+
+        // vIndex: 4
+        virtual void OnBatchComplete();
+
+        // vIndex: 5
+        virtual void OnAbortedRetransmissions(uint, ::rtc::ArrayView<ushort const>);
+
+        // vIndex: 6
+        virtual ::std::optional<uint> GetRtxSsrcForMedia(uint) const;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
+    };
+
     struct Configuration {
     public:
         // member variables
@@ -46,32 +79,6 @@ public:
         Configuration& operator=(Configuration const&);
         Configuration(Configuration const&);
         Configuration();
-    };
-
-    class PacketSender {
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~PacketSender() = default;
-
-        virtual void SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend>, ::webrtc::PacedPacketInfo const&) = 0;
-
-        virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> FetchFec() = 0;
-
-        virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(::webrtc::DataSize) = 0;
-
-        virtual void OnBatchComplete();
-
-        virtual void OnAbortedRetransmissions(uint, ::rtc::ArrayView<ushort const>);
-
-        virtual ::std::optional<uint> GetRtxSsrcForMedia(uint) const;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:

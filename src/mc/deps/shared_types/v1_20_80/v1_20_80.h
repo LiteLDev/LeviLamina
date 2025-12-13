@@ -13,13 +13,10 @@ namespace SharedTypes::v1_20_80 { struct ParticleCurveSimpleBase; }
 namespace SharedTypes::v1_20_80 {
 // functions
 // NOLINTBEGIN
-MCNAPI_S bool operator==(
+MCNAPI bool operator==(
     ::SharedTypes::v1_20_80::BezierChainNodeMap const& lhs,
     ::SharedTypes::v1_20_80::BezierChainNodeMap const& rhs
 );
-
-MCNAPI bool
-operator==(::SharedTypes::v1_20_80::ColorGradient const& lhs, ::SharedTypes::v1_20_80::ColorGradient const& rhs);
 
 MCNAPI bool operator==(
     ::SharedTypes::v1_20_80::ParticleCurveBezierChain const& lhs,
@@ -30,6 +27,9 @@ MCNAPI bool operator==(
     ::SharedTypes::v1_20_80::ParticleCurveSimpleBase const& lhs,
     ::SharedTypes::v1_20_80::ParticleCurveSimpleBase const& rhs
 );
+
+MCNAPI bool
+operator==(::SharedTypes::v1_20_80::ColorGradient const& lhs, ::SharedTypes::v1_20_80::ColorGradient const& rhs);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_20_80

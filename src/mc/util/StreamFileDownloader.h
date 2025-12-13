@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/Async.h"
 #include "mc/util/DownloaderResult.h"
 #include "mc/util/DownloaderState.h"
 #include "mc/util/IFileChunkDownloader.h"
@@ -12,7 +11,6 @@
 // clang-format off
 struct FileInfo;
 namespace Bedrock::Http { class Request; }
-namespace Bedrock::Http { class Response; }
 // clang-format on
 
 class StreamFileDownloader : public ::IFileChunkDownloader,
@@ -36,134 +34,67 @@ public:
     // prevent constructor by default
     StreamFileDownloader& operator=(StreamFileDownloader const&);
     StreamFileDownloader(StreamFileDownloader const&);
+    StreamFileDownloader();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~StreamFileDownloader() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~StreamFileDownloader() /*override*/;
-#endif
 
+    // vIndex: 1
     virtual void update() /*override*/;
 
+    // vIndex: 2
     virtual void initRealmsFileDownloader(
-        ::std::string const&                      downloadId,
-        int const                                 slotIndex,
-        ::std::string const&                      downloadUrl,
-        ::FileInfo const&                         file,
-        uint64                                    fromByteOffset,
-        ::std::string const&                      downloadVersion,
-        ::std::function<void(::DownloaderResult)> callback
+        ::std::string const&,
+        int const,
+        ::std::string const&,
+        ::FileInfo const&,
+        uint64,
+        ::std::string const&,
+        ::std::function<void(::DownloaderResult)>
     ) /*override*/;
 
+    // vIndex: 3
     virtual void initFileDownloader(
         ::std::string const&,
-        ::std::string const& downloadUrl,
-        ::FileInfo const&,
-        uint64 expectedFileSize,
-        uint64 fromByteOffset,
         ::std::string const&,
-        ::std::function<void(::DownloaderResult)> callback
+        ::FileInfo const&,
+        uint64,
+        uint64,
+        ::std::string const&,
+        ::std::function<void(::DownloaderResult)>
     ) /*override*/;
 
+    // vIndex: 4
     virtual void downloadFile(
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)> dataCallback,
-        ::std::function<void(::DownloaderState)>                                                         endCallback
+        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>,
+        ::std::function<void(::DownloaderState)>
     ) /*override*/;
 
+    // vIndex: 5
     virtual bool canCancelDownload() const /*override*/;
 
+    // vIndex: 6
     virtual void cancelDownload() /*override*/;
 
+    // vIndex: 7
     virtual uint64 getDownloadTotalSize() const /*override*/;
 
+    // vIndex: 8
     virtual uint64 getDownloadReceivedSize() const /*override*/;
 
+    // vIndex: 9
     virtual float getDownloadProgress() const /*override*/;
 
+    // vIndex: 10
     virtual ::Bedrock::Http::Request _makeRequest();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C StreamFileDownloader();
-
-    MCNAPI_C void _checkErrorAndRequeue(uint64 bytesWritten, bool hasError);
-
-    MCNAPI_C void _downloadFile();
-
-    MCNAPI_C ::Bedrock::Threading::Async<::Bedrock::Http::Response>
-    _downloadNextChunk(::Bedrock::Http::Request request);
-
-    MCNAPI_C ::Bedrock::Threading::Async<::std::tuple<uint64, bool>>
-    _processResponse(::Bedrock::Http::Response response);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $update();
 
-    MCNAPI void $initRealmsFileDownloader(
-        ::std::string const&                      downloadId,
-        int const                                 slotIndex,
-        ::std::string const&                      downloadUrl,
-        ::FileInfo const&                         file,
-        uint64                                    fromByteOffset,
-        ::std::string const&                      downloadVersion,
-        ::std::function<void(::DownloaderResult)> callback
-    );
-
-    MCNAPI void $initFileDownloader(
-        ::std::string const&,
-        ::std::string const& downloadUrl,
-        ::FileInfo const&,
-        uint64 expectedFileSize,
-        uint64 fromByteOffset,
-        ::std::string const&,
-        ::std::function<void(::DownloaderResult)> callback
-    );
-
-    MCNAPI void $downloadFile(
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)> dataCallback,
-        ::std::function<void(::DownloaderState)>                                                         endCallback
-    );
-
-    MCNAPI bool $canCancelDownload() const;
-
-    MCNAPI void $cancelDownload();
-
-    MCNAPI uint64 $getDownloadTotalSize() const;
-
-    MCNAPI uint64 $getDownloadReceivedSize() const;
-
-    MCNAPI float $getDownloadProgress() const;
-
-    MCNAPI ::Bedrock::Http::Request $_makeRequest();
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

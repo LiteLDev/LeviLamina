@@ -28,10 +28,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Command();
 
+    // vIndex: 1
     virtual bool collectOptionalArguments();
 
+    // vIndex: 2
     virtual void execute(::CommandOrigin const&, ::CommandOutput&) const = 0;
     // NOLINTEND
 
@@ -54,9 +57,9 @@ public:
 
     MCAPI static bool shouldUseCommandOriginRotation(::CommandOrigin const& origin, int version);
 
-    MCAPI static bool validRange(int input, int low, int high, ::CommandOutput& output);
-
     MCAPI static bool validRange(float input, float low, float high, ::CommandOutput& output);
+
+    MCAPI static bool validRange(int input, int low, int high, ::CommandOutput& output);
     // NOLINTEND
 
 public:
@@ -75,8 +78,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $collectOptionalArguments();
-
-
     // NOLINTEND
 
 public:

@@ -18,10 +18,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::leveldb::Status Read(uint64 n, ::leveldb::Slice* result, char* scratch) /*override*/;
 
+    // vIndex: 2
     virtual ::leveldb::Status Skip(uint64 n) /*override*/;
 
+    // vIndex: 0
     virtual ~LevelDbSequentialFile() /*override*/ = default;
     // NOLINTEND
 
@@ -31,8 +34,6 @@ public:
     MCNAPI ::leveldb::Status $Read(uint64 n, ::leveldb::Slice* result, char* scratch);
 
     MCNAPI ::leveldb::Status $Skip(uint64 n);
-
-
     // NOLINTEND
 
 public:

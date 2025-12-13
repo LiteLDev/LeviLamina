@@ -28,12 +28,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NullSocketServer() /*override*/;
 
+    // vIndex: 3
     virtual bool Wait(::webrtc::TimeDelta max_wait_duration, bool process_io) /*override*/;
 
+    // vIndex: 4
     virtual void WakeUp() /*override*/;
 
+    // vIndex: 1
     virtual ::rtc::Socket* CreateSocket(int, int) /*override*/;
     // NOLINTEND
 
@@ -63,8 +67,6 @@ public:
     MCNAPI void $WakeUp();
 
     MCNAPI ::rtc::Socket* $CreateSocket(int, int);
-
-
     // NOLINTEND
 
 public:

@@ -27,12 +27,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~CommandsRegistryConfiguration() /*override*/;
-#else // LL_PLAT_C
-    virtual ~CommandsRegistryConfiguration() /*override*/ = default;
-#endif
-
     // NOLINTEND
 
 public:
@@ -40,13 +36,13 @@ public:
     // NOLINTBEGIN
     MCNAPI CommandsRegistryConfiguration(::CommandsRegistryConfiguration&&);
 
-    MCNAPI_S ::CommandsRegistryConfiguration& operator=(::CommandsRegistryConfiguration&&);
+    MCNAPI ::CommandsRegistryConfiguration& operator=(::CommandsRegistryConfiguration&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@ class EndPortalBlockActor : public ::BlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EndPortalBlockActor() /*override*/ = default;
     // NOLINTEND
 

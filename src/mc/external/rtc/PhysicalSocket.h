@@ -44,54 +44,79 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PhysicalSocket() /*override*/;
 
+    // vIndex: 18
     virtual bool Create(int family, int type);
 
+    // vIndex: 1
     virtual ::rtc::SocketAddress GetLocalAddress() const /*override*/;
 
+    // vIndex: 2
     virtual ::rtc::SocketAddress GetRemoteAddress() const /*override*/;
 
+    // vIndex: 3
     virtual int Bind(::rtc::SocketAddress const& bind_addr) /*override*/;
 
+    // vIndex: 4
     virtual int Connect(::rtc::SocketAddress const& addr) /*override*/;
 
+    // vIndex: 13
     virtual int GetError() const /*override*/;
 
+    // vIndex: 14
     virtual void SetError(int error) /*override*/;
 
+    // vIndex: 15
     virtual ::rtc::Socket::ConnState GetState() const /*override*/;
 
+    // vIndex: 16
     virtual int GetOption(::rtc::Socket::Option opt, int* value) /*override*/;
 
+    // vIndex: 17
     virtual int SetOption(::rtc::Socket::Option opt, int value) /*override*/;
 
+    // vIndex: 5
     virtual int Send(void const* pv, uint64 cb) /*override*/;
 
+    // vIndex: 6
     virtual int SendTo(void const* buffer, uint64 length, ::rtc::SocketAddress const& addr) /*override*/;
 
+    // vIndex: 7
     virtual int Recv(void* buffer, uint64 length, int64* timestamp) /*override*/;
 
+    // vIndex: 9
     virtual int RecvFrom(void* buffer, uint64 length, ::rtc::SocketAddress* out_addr, int64* timestamp) /*override*/;
 
+    // vIndex: 8
     virtual int RecvFrom(::rtc::Socket::ReceiveBuffer& buffer) /*override*/;
 
+    // vIndex: 10
     virtual int Listen(int backlog) /*override*/;
 
+    // vIndex: 11
     virtual ::rtc::Socket* Accept(::rtc::SocketAddress* out_addr) /*override*/;
 
+    // vIndex: 12
     virtual int Close() /*override*/;
 
+    // vIndex: 19
     virtual uint64 DoAccept(uint64 socket, ::sockaddr* addr, int* addrlen);
 
+    // vIndex: 20
     virtual int DoSend(uint64 socket, char const* buf, int len, int flags);
 
+    // vIndex: 21
     virtual int DoSendTo(uint64 socket, char const* buf, int len, int flags, ::sockaddr const* dest_addr, int addrlen);
 
+    // vIndex: 22
     virtual void SetEnabledEvents(uchar events);
 
+    // vIndex: 23
     virtual void EnableEvents(uchar events);
 
+    // vIndex: 24
     virtual void DisableEvents(uchar events);
     // NOLINTEND
 
@@ -181,8 +206,6 @@ public:
     MCNAPI void $EnableEvents(uchar events);
 
     MCNAPI void $DisableEvents(uchar events);
-
-
     // NOLINTEND
 
 public:

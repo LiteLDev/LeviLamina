@@ -20,18 +20,25 @@ class SSLAdapterFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SSLAdapterFactory() = default;
 
+    // vIndex: 1
     virtual void SetMode(::rtc::SSLMode) = 0;
 
+    // vIndex: 2
     virtual void SetCertVerifier(::rtc::SSLCertificateVerifier*) = 0;
 
+    // vIndex: 3
     virtual void SetIdentity(::std::unique_ptr<::rtc::SSLIdentity>) = 0;
 
+    // vIndex: 4
     virtual void SetRole(::rtc::SSLRole) = 0;
 
+    // vIndex: 5
     virtual void SetIgnoreBadCert(bool) = 0;
 
+    // vIndex: 6
     virtual ::rtc::SSLAdapter* CreateAdapter(::rtc::Socket*) = 0;
     // NOLINTEND
 

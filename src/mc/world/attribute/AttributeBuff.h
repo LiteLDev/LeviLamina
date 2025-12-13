@@ -34,12 +34,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AttributeBuff();
 
+    // vIndex: 1
     virtual bool isInstantaneous() const = 0;
 
+    // vIndex: 2
     virtual bool isSerializable() const = 0;
 
+    // vIndex: 3
     virtual void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
     // NOLINTEND
 
@@ -73,8 +77,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
-
-
     // NOLINTEND
 
 public:

@@ -9,7 +9,6 @@
 // clang-format off
 class Actor;
 class ItemStackBase;
-namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -21,17 +20,7 @@ public:
 
     MCAPI static bool addKeepOnDeath(::ItemStackBase& item, ::Json::Value const& data);
 
-    MCAPI_C static void
-    appendItemLockHoverText(::Bedrock::Safety::RedactableString& formattedHoverText, ::ItemStackBase const& item);
-
-    MCAPI_C static void
-    appendItemLockPopupNoticeText(::std::string& formattedPopupNoticeText, ::ItemStackBase const& item);
-
-    MCAPI_C static bool canDropItem(::Actor const& actor, ::ItemStackBase const& item);
-
     MCAPI static bool canMoveItemSlots(::Actor const& actor, ::ItemStackBase const& item);
-
-    MCAPI_C static bool canPlayerDropItem(::ItemStackBase const& item);
 
     MCAPI static ::ItemLockMode getItemLockMode(::ItemStackBase const& item);
 

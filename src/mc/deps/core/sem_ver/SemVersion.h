@@ -16,15 +16,15 @@ namespace Json { class Value; }
 class SemVersion : public ::SemVersionBase<::Bedrock::StaticOptimizedString> {
 public:
     // SemVersion inner types define
+    enum class ParseOption : int {
+        AllowWildcards = 0,
+        NoWildcards    = 1,
+    };
+
     enum class MatchType : int {
         Full    = 0,
         Partial = 1,
         None    = 2,
-    };
-
-    enum class ParseOption : int {
-        AllowWildcards = 0,
-        NoWildcards    = 1,
     };
 
 public:
@@ -32,11 +32,11 @@ public:
     // NOLINTBEGIN
     MCAPI SemVersion();
 
+    MCAPI explicit SemVersion(::SemVersionAnyVersionType);
+
     MCAPI SemVersion(::SemVersion const&);
 
     MCAPI explicit SemVersion(::SemVersionConstant const& other);
-
-    MCAPI explicit SemVersion(::SemVersionAnyVersionType);
 
     MCAPI SemVersion(
         ushort                           major,
@@ -46,9 +46,9 @@ public:
         ::Bedrock::StaticOptimizedString buildMeta
     );
 
-    MCAPI ::SemVersion& operator=(::SemVersion&&);
-
     MCAPI ::SemVersion& operator=(::SemVersion const&);
+
+    MCAPI ::SemVersion& operator=(::SemVersion&&);
 
     MCAPI ~SemVersion();
     // NOLINTEND
@@ -70,11 +70,11 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor();
 
+    MCAPI void* $ctor(::SemVersionAnyVersionType);
+
     MCAPI void* $ctor(::SemVersion const&);
 
     MCAPI void* $ctor(::SemVersionConstant const& other);
-
-    MCAPI void* $ctor(::SemVersionAnyVersionType);
 
     MCAPI void* $ctor(
         ushort                           major,

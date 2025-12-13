@@ -17,36 +17,38 @@ class LightningBolt : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkcdcb88;
-    ::ll::UntypedStorage<4, 4> mUnkd45498;
-    ::ll::UntypedStorage<4, 4> mUnkcf0099;
-    ::ll::UntypedStorage<1, 1> mUnk97fd43;
-    ::ll::UntypedStorage<1, 1> mUnkf5773f;
+    ::ll::TypedStorage<4, 4, uint> mSeed;
+    ::ll::TypedStorage<4, 4, int>  mLife;
+    ::ll::TypedStorage<4, 4, int>  mFlashes;
+    ::ll::TypedStorage<1, 1, bool> mCanHurt;
+    ::ll::TypedStorage<1, 1, bool> mHasTriedToHurt;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LightningBolt& operator=(LightningBolt const&);
-    LightningBolt(LightningBolt const&);
-    LightningBolt();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
+    // vIndex: 24
     virtual void normalTick() /*override*/;
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 138
     virtual bool shouldAlwaysRender();
 
+    // vIndex: 8
     virtual ~LightningBolt() /*override*/ = default;
     // NOLINTEND
 
@@ -72,8 +74,6 @@ public:
     MCFOLD float $getShadowRadius() const;
 
     MCFOLD bool $shouldAlwaysRender();
-
-
     // NOLINTEND
 
 public:

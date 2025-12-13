@@ -6,6 +6,7 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/camera/controlscheme/Scheme.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,26 +18,25 @@ class ClientboundControlSchemeSetPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc4c3c8;
+    ::ll::TypedStorage<1, 1, ::ControlScheme::Scheme> mControlScheme;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientboundControlSchemeSetPacket& operator=(ClientboundControlSchemeSetPacket const&);
-    ClientboundControlSchemeSetPacket(ClientboundControlSchemeSetPacket const&);
-    ClientboundControlSchemeSetPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
     virtual ~ClientboundControlSchemeSetPacket() /*override*/;
     // NOLINTEND
 
@@ -56,8 +56,6 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

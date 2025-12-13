@@ -20,19 +20,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ~Tags();
+    MCNAPI ~Tags();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_S static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_S void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

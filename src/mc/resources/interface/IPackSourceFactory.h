@@ -16,7 +16,6 @@ class IWorldTemplateManager;
 class InPackagePackSource;
 class Pack;
 class PackSource;
-class TreatmentPackSource;
 class WorldHistoryPackSource;
 class WorldTemplateCollectionView;
 class WorldTemplatePackSource;
@@ -30,16 +29,10 @@ class IPackSourceFactory : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IPackSourceFactory() /*override*/;
 
-#ifdef LL_PLAT_C
-    virtual ::TreatmentPackSource& createTreatmentPackSource(::Core::Path const&, ::PackType) = 0;
-
-    virtual ::TreatmentPackSource* getTreatmentPackSource(::Core::Path const&, ::PackType) const = 0;
-
-    virtual void removeFromTreatmentPackSource(::Core::Path const&) = 0;
-
-#endif
+    // vIndex: 2
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const&,
         ::mce::UUID const&,
@@ -47,6 +40,7 @@ public:
         ::PackOrigin
     ) = 0;
 
+    // vIndex: 1
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
         ::std::unique_ptr<::WorldTemplateCollectionView>,
         ::mce::UUID const&,
@@ -54,26 +48,37 @@ public:
         ::PackOrigin
     ) = 0;
 
+    // vIndex: 3
     virtual ::WorldTemplatePackSource* getWorldTemplatePackSource(::mce::UUID const&, ::PackType) const = 0;
 
+    // vIndex: 4
     virtual ::DirectoryPackSource& createDirectoryPackSource(::Core::Path const&, ::PackType, ::PackOrigin, bool) = 0;
 
+    // vIndex: 5
     virtual ::DirectoryPackSource* getDirectoryPackSource(::Core::Path const&, ::PackType) const = 0;
 
+    // vIndex: 6
     virtual ::InPackagePackSource& createInPackagePackSource(::PackType) = 0;
 
+    // vIndex: 7
     virtual ::InPackagePackSource* getInPackagePackSource(::PackType) = 0;
 
+    // vIndex: 8
     virtual ::WorldHistoryPackSource& createWorldHistoryPackSource(::Core::Path const&, ::PackType) = 0;
 
+    // vIndex: 9
     virtual ::WorldHistoryPackSource* getWorldHistoryPackSource(::Core::Path const&, ::PackType) const = 0;
 
+    // vIndex: 10
     virtual ::std::unique_ptr<::CompositePackSource> createCompositePackSource(::std::vector<::PackSource*>) = 0;
 
+    // vIndex: 11
     virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const&) const = 0;
 
+    // vIndex: 12
     virtual void removeFromDirectoryPackSource(::Core::Path const&) = 0;
 
+    // vIndex: 13
     virtual ::std::unique_ptr<::Realms::RealmsServicePackSource>
     createRealmsServicePackSource(int64, ::PackType, ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&&) = 0;
     // NOLINTEND

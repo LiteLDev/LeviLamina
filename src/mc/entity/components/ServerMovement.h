@@ -12,9 +12,9 @@ struct ClientAcceptanceThresholdsComponent;
 namespace ServerMovement {
 // functions
 // NOLINTBEGIN
-MCNAPI void notifyOfServerInitiatedMotion(::EntityContext& entity);
+MCAPI void notifyOfServerInitiatedMotion(::EntityContext& entity);
 
-MCNAPI void notifyOfServerInitiatedPlayerMotion(
+MCAPI void notifyOfServerInitiatedPlayerMotion(
     ::ActorOwnerComponent&                 actorOwnerComponent,
     ::ClientAcceptanceThresholdsComponent* clientAcceptanceThresholdsComponent
 );

@@ -22,54 +22,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~CraftableElements() = default;
-#else // LL_PLAT_C
-    virtual ~CraftableElements();
-#endif
 
+    // vIndex: 1
     virtual void registerElements();
 
-    virtual void _registerElement(int electrons, int neutrons, ::ElementType result);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void
-    _registerElementRange(int electrons, int neutronStart, int neutronEnd, int defaultNeutron, ::ElementType result);
-
-    MCNAPI_C void _registerElementRange(
-        int                       electrons,
-        int                       neutronStart,
-        int                       neutronEnd,
-        ::std::vector<int> const& additionalNeutrons,
-        int                       defaultNeutron,
-        ::ElementType             result
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    // vIndex: 2
+    virtual void _registerElement(int, int, ::ElementType);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $registerElements();
 
-    MCNAPI void $_registerElement(int electrons, int neutrons, ::ElementType result);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

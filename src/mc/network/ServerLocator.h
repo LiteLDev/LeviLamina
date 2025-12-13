@@ -20,8 +20,10 @@ class ServerLocator : public ::NetworkEnableDisableListener {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ServerLocator() /*override*/;
 
+    // vIndex: 3
     virtual void startAnnouncingServer(
         ::std::string const&,
         ::std::string const&,
@@ -34,29 +36,41 @@ public:
         bool
     ) = 0;
 
+    // vIndex: 4
     virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform>) = 0;
 
+    // vIndex: 5
     virtual void startServerDiscovery(::PortPair) = 0;
 
+    // vIndex: 6
     virtual void stopServerDiscovery() = 0;
 
+    // vIndex: 8
     virtual void addCustomServer(::AsynchronousIPResolver const&, int) = 0;
 
+    // vIndex: 7
     virtual void addCustomServer(::std::string const&, int) = 0;
 
+    // vIndex: 9
     virtual ::std::vector<::PingedCompatibleServer> getServerList() const = 0;
 
+    // vIndex: 10
     virtual void clearServerList() = 0;
 
+    // vIndex: 11
     virtual void update() = 0;
 
+    // vIndex: 12
     virtual float getPingTimeForGUID(::std::string const&) = 0;
 
+    // vIndex: 13
     virtual void
     checkCanConnectToCustomServerAsync(::std::string, int, ::std::function<void(::ServerConnectivityTestResult)>) = 0;
 
+    // vIndex: 1
     virtual void _onDisable() /*override*/;
 
+    // vIndex: 2
     virtual void _onEnable() /*override*/;
     // NOLINTEND
 
@@ -72,8 +86,6 @@ public:
     MCNAPI void $_onDisable();
 
     MCNAPI void $_onEnable();
-
-
     // NOLINTEND
 
 public:

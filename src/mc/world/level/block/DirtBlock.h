@@ -24,27 +24,36 @@ class DirtBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
+    // vIndex: 74
     virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
+    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
+    // vIndex: 46
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
+    // vIndex: 82
     virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
         /*override*/;
 
+    // vIndex: 143
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 0
     virtual ~DirtBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -73,8 +82,6 @@ public:
     MCFOLD ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-
     // NOLINTEND
 
 public:

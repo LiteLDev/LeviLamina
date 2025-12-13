@@ -19,6 +19,7 @@ class ScriptMinecraftServerUIBindingsModuleFactory : public ::Scripting::Generic
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptMinecraftServerUIBindingsModuleFactory() /*override*/ = default;
     // NOLINTEND
 

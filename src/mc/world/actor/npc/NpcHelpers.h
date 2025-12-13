@@ -12,9 +12,9 @@ struct NpcDialogueScene;
 namespace NpcHelpers {
 // functions
 // NOLINTBEGIN
-MCNAPI ::ActorUniqueID const tryGetActorUniqueId(::WeakEntityRef const& ref);
+MCAPI ::ActorUniqueID const tryGetActorUniqueId(::WeakEntityRef const& ref);
 
-MCNAPI ::NpcDialogueScene* tryGetScene(::WeakEntityRef const& entityRef, ::std::string const& scene);
+MCAPI ::NpcDialogueScene* tryGetScene(::WeakEntityRef const& entityRef, ::std::string const& scene);
 // NOLINTEND
 
 } // namespace NpcHelpers

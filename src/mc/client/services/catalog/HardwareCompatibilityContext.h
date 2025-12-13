@@ -18,10 +18,4 @@ public:
     HardwareCompatibilityContext& operator=(HardwareCompatibilityContext const&);
     HardwareCompatibilityContext(HardwareCompatibilityContext const&);
     HardwareCompatibilityContext();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::HardwareCompatibilityContext const buildHardwareCompatibilityContext();
-    // NOLINTEND
 };

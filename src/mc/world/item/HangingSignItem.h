@@ -17,11 +17,14 @@ class HangingSignItem : public ::SignItem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 124
     virtual ::Block const* getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const
         /*override*/;
 
+    // vIndex: 121
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
 
+    // vIndex: 0
     virtual ~HangingSignItem() /*override*/ = default;
     // NOLINTEND
 
@@ -41,8 +44,6 @@ public:
     MCAPI ::Block const* $getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
 
     MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
-
-
     // NOLINTEND
 
 public:

@@ -10,15 +10,12 @@
 // auto generated forward declare list
 // clang-format off
 class ContentIdentity;
-class ContentTierIncompatibleReason;
-class ContentTierInfo;
 class IResourcePackRepository;
 class LoadedResourceData;
 class PackInstance;
 class PackSourceReport;
 class ResourceLocation;
 class ResourcePackMergeStrategy;
-struct PackIdVersion;
 struct PackInstanceId;
 // clang-format on
 
@@ -41,13 +38,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ResourcePackStack();
 
+    // vIndex: 3
     virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;
 
+    // vIndex: 2
     virtual bool
     loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::ResourcePackMergeStrategy& mergeStrategy) const;
 
+    // vIndex: 1
     virtual bool loadAllVersionsOf(
         ::ResourceLocation const&                          resourceLocation,
         ::brstd::function_ref<bool(::PackInstance const&)> packInstanceFilter,
@@ -58,11 +59,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ResourcePackStack(
-        ::std::vector<::PackInstance> const&                                  packs,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo
-    );
-
     MCAPI ResourcePackStack(
         ::std::vector<::PackInstanceId> const&                                identities,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
@@ -76,8 +72,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         bool                                                                  isDependent);
 
-    MCAPI_C ::ContentTierIncompatibleReason canSupportPacks(::ContentTierInfo const& contentInfoTier) const;
-
     MCAPI ::std::vector<::std::string> getPackTelemetryNamesWithVersion(::PackType type) const;
 
     MCAPI ::std::vector<::PackInstance> getPacksWhereAssetExtractionNotViable(
@@ -87,21 +81,13 @@ public:
 
     MCAPI void getSplitStacks(::ResourcePackStack& clientStack, ::ResourcePackStack& serverStack) const;
 
-    MCAPI_C ::std::vector<::PackInstanceId> getStackAsIdentities() const;
-
     MCAPI bool hasCapabilityInStack(::std::string_view capability) const;
 
     MCAPI bool hasPlatformLockedContent() const;
 
-    MCAPI_C bool isOnStack(::PackIdVersion const& packIdentity) const;
-
     MCAPI bool removeIf(::std::function<bool(::PackInstance const&)> const& callback);
 
     MCAPI void removeInvalidPacks();
-
-    MCAPI_C void serialize(::std::ostream& fileStream) const;
-
-    MCAPI_C bool supportsVibrantVisuals() const;
     // NOLINTEND
 
 public:
@@ -119,22 +105,11 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         ::std::optional<::std::string>                                        levelId
     );
-
-    MCAPI_C static ::std::unique_ptr<::ResourcePackStack> deserialize(
-        ::std::vector<::PackInstanceId> const&                                ids,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
-        ::std::optional<::std::string>                                        levelId
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(
-        ::std::vector<::PackInstance> const&                                  packs,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo
-    );
-
     MCAPI void* $ctor(
         ::std::vector<::PackInstanceId> const&                                identities,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
@@ -161,8 +136,6 @@ public:
         ::brstd::function_ref<bool(::PackInstance const&)> packInstanceFilter,
         ::ResourcePackMergeStrategy&                       mergeStrategy
     ) const;
-
-
     // NOLINTEND
 
 public:

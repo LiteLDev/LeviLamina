@@ -31,12 +31,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptItemInventoryComponentContainer() /*override*/ = default;
 
+    // vIndex: 2
     virtual ::Scripting::Result_deprecated<int> getEmptySlotsCount() const /*override*/;
 
+    // vIndex: 13
     virtual ::Container* _tryGetContainer() const /*override*/;
 
+    // vIndex: 14
     virtual ::ItemContext _getItemContext(int slot) const /*override*/;
     // NOLINTEND
 
@@ -48,8 +52,6 @@ public:
     MCNAPI ::Container* $_tryGetContainer() const;
 
     MCNAPI ::ItemContext $_getItemContext(int slot) const;
-
-
     // NOLINTEND
 
 public:

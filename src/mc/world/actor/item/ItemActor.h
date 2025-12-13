@@ -12,14 +12,12 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 class ListTag;
 class Packet;
 class Player;
-class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
@@ -37,15 +35,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkb1098f;
-        ::ll::UntypedStorage<4, 4> mUnk754ce8;
+        ::ll::TypedStorage<1, 1, bool>  mUseAdjustments;
+        ::ll::TypedStorage<4, 4, float> mFirstRenderedYaw;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ItemRenderAdjustments& operator=(ItemRenderAdjustments const&);
-        ItemRenderAdjustments(ItemRenderAdjustments const&);
-        ItemRenderAdjustments();
     };
 
 public:
@@ -70,28 +62,40 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
+    // vIndex: 8
     virtual ~ItemActor() /*override*/ = default;
 
+    // vIndex: 39
     virtual void playerTouch(::Player& player) /*override*/;
 
+    // vIndex: 23
     virtual ::std::unique_ptr<::Packet> tryCreateAddActorPacket() /*override*/;
 
+    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
+    // vIndex: 99
     virtual bool canSynchronizeNewEntity() const /*override*/;
 
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
+    // vIndex: 18
     virtual bool isFireImmune() const /*override*/;
 
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const&, float damage, bool, bool) /*override*/;
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
     // NOLINTEND
 
@@ -115,15 +119,6 @@ public:
     MCAPI void _mergeWithNeighbours();
 
     MCAPI void _validateItem();
-
-    MCAPI_C void clientInitialize(
-        ::BlockSource&     region,
-        ::Vec3 const&      pos,
-        ::ItemStack const& item,
-        int                throwTime,
-        bool               isInItemFrame,
-        bool               isFromFishing
-    );
 
     MCAPI void postNormalTick();
     // NOLINTEND
@@ -162,8 +157,6 @@ public:
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-
     // NOLINTEND
 
 public:

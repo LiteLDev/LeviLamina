@@ -62,6 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
@@ -80,6 +81,7 @@ public:
             ::EntityFactoryT<>>& context
     ) /*override*/;
 
+    // vIndex: 6
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
@@ -99,6 +101,7 @@ public:
         ::StrictEntityContext&   entityContext
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~PlayJumpSoundSystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -159,8 +162,6 @@ public:
             ::EntityFactoryT<>>& context,
         ::StrictEntityContext&   entityContext
     );
-
-
     // NOLINTEND
 
 public:

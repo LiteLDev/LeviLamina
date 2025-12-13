@@ -14,8 +14,10 @@ class RapidFertilizerItem : public ::FertilizerItem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 100
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
+    // vIndex: 0
     virtual ~RapidFertilizerItem() /*override*/ = default;
     // NOLINTEND
 
@@ -23,8 +25,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $fixupCommon(::ItemStackBase& stack) const;
-
-
     // NOLINTEND
 
 public:

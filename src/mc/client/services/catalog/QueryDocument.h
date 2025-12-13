@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class CustomDocumentModifier;
-namespace Json { class Value; }
-// clang-format on
-
 struct QueryDocument {
 public:
     // member variables
@@ -37,33 +31,5 @@ public:
     // prevent constructor by default
     QueryDocument& operator=(QueryDocument const&);
     QueryDocument(QueryDocument const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C QueryDocument();
-
-    MCNAPI_C
-    QueryDocument(::Json::Value const& queryObject, ::CustomDocumentModifier*, ::std::string const& defaultContentType);
-
-    MCNAPI_C void
-    fromJson(::Json::Value const& queryObject, ::CustomDocumentModifier*, ::std::string const& defaultContentType);
-
-    MCNAPI_C ~QueryDocument();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void*
-    $ctor(::Json::Value const& queryObject, ::CustomDocumentModifier*, ::std::string const& defaultContentType);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+    QueryDocument();
 };

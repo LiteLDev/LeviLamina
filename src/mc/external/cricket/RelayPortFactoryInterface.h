@@ -15,11 +15,14 @@ class RelayPortFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RelayPortFactoryInterface() = default;
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::cricket::Port>
     Create(::cricket::CreateRelayPortArgs const&, ::std::shared_ptr<::rtc::AsyncPacketSocket>) = 0;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::cricket::Port> Create(::cricket::CreateRelayPortArgs const&, int, int) = 0;
     // NOLINTEND
 

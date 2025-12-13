@@ -21,47 +21,53 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 5
     virtual void stop() /*override*/;
 
+    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 17
     virtual ::std::weak_ptr<::POIInstance> _getOwnedPOI(::POIType type) const /*override*/;
 
+    // vIndex: 16
     virtual uint64 _getRepathTime() const /*override*/;
 
+    // vIndex: 0
     virtual ~HideGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _sendSoundTheAlarmAchievement() const;
+    MCAPI void _sendSoundTheAlarmAchievement() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI ::std::weak_ptr<::POIInstance> $_getOwnedPOI(::POIType type) const;
+    MCAPI ::std::weak_ptr<::POIInstance> $_getOwnedPOI(::POIType type) const;
 
-    MCNAPI uint64 $_getRepathTime() const;
-
-
+    MCFOLD uint64 $_getRepathTime() const;
     // NOLINTEND
 
 public:

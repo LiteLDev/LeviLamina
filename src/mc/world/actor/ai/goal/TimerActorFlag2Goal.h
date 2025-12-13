@@ -18,6 +18,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~Definition() /*override*/ = default;
         // NOLINTEND
 
@@ -31,6 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TimerActorFlag2Goal() /*override*/ = default;
     // NOLINTEND
 

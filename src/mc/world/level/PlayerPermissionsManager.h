@@ -53,8 +53,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PlayerPermissionsManager();
 
+    // vIndex: 1
     virtual bool hasPlayerPermissions(::ActorUniqueID playerId) const;
     // NOLINTEND
 
@@ -69,18 +71,7 @@ public:
 
     MCAPI void _loadLocalPermissionsList();
 
-    MCAPI_C void _updatePermissionLevel();
-
-    MCAPI_C void _updatePermissionsList();
-
-    MCAPI_C bool arePermissionsSynced(
-        ::std::optional<::PlayerPermissionLevel>           playerPermissionLevel,
-        ::std::vector<::std::pair<::AbilitiesIndex, bool>> playerPermissions
-    ) const;
-
     MCAPI bool loadPlayerPermissions(::ActorUniqueID playerId);
-
-    MCAPI_C bool savePlayerPermissions(::ActorUniqueID playerId);
     // NOLINTEND
 
 public:
@@ -103,8 +94,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $hasPlayerPermissions(::ActorUniqueID playerId) const;
-
-
     // NOLINTEND
 
 public:

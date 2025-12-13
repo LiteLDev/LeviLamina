@@ -37,8 +37,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptIBlockPaletteItem();
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> setBlock(
         ::std::variant<
             ::std::string,
@@ -46,11 +48,14 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const&
     ) = 0;
 
+    // vIndex: 2
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     getBlock() const = 0;
 
+    // vIndex: 3
     virtual ::std::optional<::std::string> getDisplayName() const;
 
+    // vIndex: 4
     virtual ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
     getServiceBlockPaletteItem() const = 0;
     // NOLINTEND
@@ -80,8 +85,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::optional<::std::string> $getDisplayName() const;
-
-
     // NOLINTEND
 
 public:

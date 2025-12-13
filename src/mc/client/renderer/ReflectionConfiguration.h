@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 struct ReflectionConfiguration {
 public:
     // member variables
@@ -21,24 +16,5 @@ public:
     // prevent constructor by default
     ReflectionConfiguration& operator=(ReflectionConfiguration const&);
     ReflectionConfiguration(ReflectionConfiguration const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ReflectionConfiguration();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static void bindReflectionParameterType(::cereal::ReflectionCtx& ctx);
-
-    MCNAPI_C static void bindRegenParameterType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-    // NOLINTEND
+    ReflectionConfiguration();
 };

@@ -47,25 +47,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FlexfecSender() /*override*/;
 
+    // vIndex: 1
     virtual ::webrtc::VideoFecGenerator::FecType GetFecType() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::optional<uint> FecSsrc() /*override*/;
 
+    // vIndex: 5
     virtual void SetProtectionParameters(
         ::webrtc::FecProtectionParams const& delta_params,
         ::webrtc::FecProtectionParams const& key_params
     ) /*override*/;
 
+    // vIndex: 6
     virtual void AddPacketAndGenerateFec(::webrtc::RtpPacketToSend const& packet) /*override*/;
 
+    // vIndex: 7
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GetFecPackets() /*override*/;
 
+    // vIndex: 3
     virtual uint64 MaxPacketOverhead() const /*override*/;
 
+    // vIndex: 4
     virtual ::webrtc::DataRate CurrentFecRate() const /*override*/;
 
+    // vIndex: 8
     virtual ::std::optional<::webrtc::RtpState> GetRtpState() /*override*/;
     // NOLINTEND
 
@@ -126,8 +135,6 @@ public:
     MCNAPI ::webrtc::DataRate $CurrentFecRate() const;
 
     MCNAPI ::std::optional<::webrtc::RtpState> $GetRtpState();
-
-
     // NOLINTEND
 
 public:

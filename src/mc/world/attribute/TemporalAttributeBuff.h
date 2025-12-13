@@ -29,16 +29,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TemporalAttributeBuff() /*override*/;
 
+    // vIndex: 4
     virtual bool shouldBuff() const;
 
+    // vIndex: 5
     virtual bool isComplete() const;
 
+    // vIndex: 1
     virtual bool isInstantaneous() const /*override*/;
 
+    // vIndex: 2
     virtual bool isSerializable() const /*override*/;
 
+    // vIndex: 3
     virtual void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier) /*override*/;
     // NOLINTEND
 
@@ -72,8 +78,6 @@ public:
     MCAPI bool $isSerializable() const;
 
     MCAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
-
-
     // NOLINTEND
 
 public:

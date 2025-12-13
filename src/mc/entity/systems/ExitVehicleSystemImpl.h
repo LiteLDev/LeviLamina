@@ -116,6 +116,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<
@@ -155,6 +156,7 @@ public:
         ::StrictEntityContext&   entityContext
     ) /*override*/;
 
+    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
@@ -193,6 +195,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~ExitVehicleSystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -394,8 +397,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
     );
-
-
     // NOLINTEND
 
 public:

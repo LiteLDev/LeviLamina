@@ -22,11 +22,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptSentryLogger() /*override*/ = default;
 
+    // vIndex: 4
     virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const
         /*override*/;
 
+    // vIndex: 6
     virtual void onPromiseRejection(
         ::Scripting::ContextId,
         ::Scripting::BaseError const& error,
@@ -46,8 +49,6 @@ public:
         ::entt::meta_any const&,
         bool isHandled
     ) const;
-
-
     // NOLINTEND
 
 public:

@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/player/persona/PieceType.h"
-
-// auto generated forward declare list
-// clang-format off
-class Pack;
-class TintMapColor;
-struct PackIdVersion;
-// clang-format on
-
 class PersonaPiece {
 public:
     // PersonaPiece inner types declare
@@ -66,52 +56,14 @@ public:
 public:
     // prevent constructor by default
     PersonaPiece& operator=(PersonaPiece const&);
+    PersonaPiece(PersonaPiece const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PersonaPiece();
 
-    MCNAPI_C PersonaPiece(::PersonaPiece&&);
-
-    MCNAPI_C PersonaPiece(::PersonaPiece const&);
-
-    MCNAPI_C PersonaPiece(
-        ::std::string const&   pieceId,
-        ::PackIdVersion const& packIdVersion,
-        ::persona::PieceType   pieceTypeId,
-        bool                   platformLocked,
-        bool                   titleLocked
-    );
-
-    MCNAPI_C ::std::string getPieceName() const;
-
-    MCNAPI_C ::TintMapColor getTintBaseColor() const;
-
-    MCNAPI_C bool getTintMapColor(::TintMapColor& tintColor) const;
-
-    MCNAPI_C void hipBoneParentRetarget();
-
-    MCNAPI_C void initLocalizationDictionary();
-
-    MCNAPI_C bool isValid() const;
-
-    MCNAPI_C bool operator!=(::PersonaPiece const& asset) const;
-
-    MCNAPI_C void setPieceNameAsLocKey(::std::string const& pieceName);
-
     MCNAPI ~PersonaPiece();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::PersonaPiece createPersonaPieceFromPiecePack(
-        ::std::shared_ptr<::Pack>        sourcePack,
-        ::PersonaPiece::FilePaths const& filePaths,
-        bool                             differPieceAndPackIds,
-        bool                             isTestResourcePack
-    );
     // NOLINTEND
 
 public:
@@ -124,18 +76,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-
-    MCNAPI_C void* $ctor(::PersonaPiece&&);
-
-    MCNAPI_C void* $ctor(::PersonaPiece const&);
-
-    MCNAPI_C void* $ctor(
-        ::std::string const&   pieceId,
-        ::PackIdVersion const& packIdVersion,
-        ::persona::PieceType   pieceTypeId,
-        bool                   platformLocked,
-        bool                   titleLocked
-    );
     // NOLINTEND
 
 public:

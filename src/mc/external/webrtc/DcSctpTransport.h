@@ -84,73 +84,104 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DcSctpTransport() /*override*/;
 
+    // vIndex: 1
     virtual void SetOnConnectedCallback(::std::function<void()> callback) /*override*/;
 
+    // vIndex: 2
     virtual void SetDataChannelSink(::webrtc::DataChannelSink* sink) /*override*/;
 
+    // vIndex: 3
     virtual void SetDtlsTransport(::rtc::PacketTransportInternal* transport) /*override*/;
 
+    // vIndex: 4
     virtual bool Start(int local_sctp_port, int remote_sctp_port, int max_message_size) /*override*/;
 
+    // vIndex: 5
     virtual bool OpenStream(int sid) /*override*/;
 
+    // vIndex: 6
     virtual bool ResetStream(int sid) /*override*/;
 
+    // vIndex: 7
     virtual ::webrtc::RTCError
     SendData(int sid, ::webrtc::SendDataParams const& params, ::rtc::CopyOnWriteBuffer const& payload) /*override*/;
 
+    // vIndex: 8
     virtual bool ReadyToSendData() /*override*/;
 
+    // vIndex: 9
     virtual int max_message_size() const /*override*/;
 
+    // vIndex: 10
     virtual ::std::optional<int> max_outbound_streams() const /*override*/;
 
+    // vIndex: 11
     virtual ::std::optional<int> max_inbound_streams() const /*override*/;
 
+    // vIndex: 12
     virtual uint64 buffered_amount(int sid) const /*override*/;
 
+    // vIndex: 13
     virtual uint64 buffered_amount_low_threshold(int sid) const /*override*/;
 
+    // vIndex: 14
     virtual void SetBufferedAmountLowThreshold(int sid, uint64 bytes) /*override*/;
 
+    // vIndex: 15
     virtual void set_debug_name_for_testing(char const* debug_name) /*override*/;
 
+    // vIndex: 2
     virtual ::dcsctp::SendPacketStatus SendPacketWithStatus(::rtc::ArrayView<uchar const> data) /*override*/;
 
+    // vIndex: 4
     virtual ::std::unique_ptr<::dcsctp::Timeout>
     CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision) /*override*/;
 
+    // vIndex: 5
     virtual ::dcsctp::TimeMs TimeMillis() /*override*/;
 
+    // vIndex: 7
     virtual uint GetRandomInt(uint low, uint high) /*override*/;
 
+    // vIndex: 19
     virtual void OnTotalBufferedAmountLow() /*override*/;
 
+    // vIndex: 18
     virtual void OnBufferedAmountLow(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) /*override*/;
 
+    // vIndex: 9
     virtual void OnMessageReceived(::dcsctp::DcSctpMessage message) /*override*/;
 
+    // vIndex: 10
     virtual void OnError(::dcsctp::ErrorKind error, ::std::string_view message) /*override*/;
 
+    // vIndex: 11
     virtual void OnAborted(::dcsctp::ErrorKind error, ::std::string_view message) /*override*/;
 
+    // vIndex: 12
     virtual void OnConnected() /*override*/;
 
+    // vIndex: 13
     virtual void OnClosed() /*override*/;
 
+    // vIndex: 14
     virtual void OnConnectionRestarted() /*override*/;
 
+    // vIndex: 15
     virtual void OnStreamsResetFailed(
         ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams,
         ::std::string_view                                                           reason
     ) /*override*/;
 
+    // vIndex: 16
     virtual void OnStreamsResetPerformed(
         ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
     ) /*override*/;
 
+    // vIndex: 17
     virtual void OnIncomingStreamsReset(
         ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
     ) /*override*/;
@@ -273,8 +304,6 @@ public:
     MCNAPI void $OnIncomingStreamsReset(
         ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
     );
-
-
     // NOLINTEND
 
 public:

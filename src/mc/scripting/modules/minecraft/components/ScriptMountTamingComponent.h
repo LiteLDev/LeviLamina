@@ -23,6 +23,7 @@ class ScriptMountTamingComponent
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptMountTamingComponent() /*override*/ = default;
     // NOLINTEND
 

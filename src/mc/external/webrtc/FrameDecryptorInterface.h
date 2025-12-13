@@ -41,8 +41,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ~FrameDecryptorInterface() /*override*/ = default;
 
+    // vIndex: 3
     virtual ::webrtc::FrameDecryptorInterface::Result Decrypt(
         ::cricket::MediaType,
         ::std::vector<uint> const&,
@@ -51,6 +53,7 @@ public:
         ::rtc::ArrayView<uchar>
     ) = 0;
 
+    // vIndex: 4
     virtual uint64 GetMaxPlaintextByteSize(::cricket::MediaType, uint64) = 0;
     // NOLINTEND
 

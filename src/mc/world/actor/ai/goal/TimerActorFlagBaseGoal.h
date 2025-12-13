@@ -36,49 +36,54 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 6
     virtual void tick() /*override*/;
 
+    // vIndex: 5
     virtual void stop() /*override*/;
 
+    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 0
     virtual ~TimerActorFlagBaseGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TimerActorFlagBaseGoal(::Mob& mob, ::ActorFlags actorFlag);
+    MCAPI TimerActorFlagBaseGoal(::Mob& mob, ::ActorFlags actorFlag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Mob& mob, ::ActorFlags actorFlag);
+    MCAPI void* $ctor(::Mob& mob, ::ActorFlags actorFlag);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $tick();
+    MCFOLD void $tick();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
-
-
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

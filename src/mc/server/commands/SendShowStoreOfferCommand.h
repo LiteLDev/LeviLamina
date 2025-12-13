@@ -30,24 +30,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
+    // vIndex: 0
     virtual ~SendShowStoreOfferCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_S static void setup(::CommandRegistry& registry);
+    MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
-#endif
+    // NOLINTEND
 
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

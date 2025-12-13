@@ -28,20 +28,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 176
     virtual void newServerAiStep() /*override*/;
 
+    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
+    // vIndex: 11
     virtual void remove() /*override*/;
 
+    // vIndex: 102
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
+    // vIndex: 118
     virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
+    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
+    // vIndex: 8
     virtual ~VillagerV2() /*override*/ = default;
     // NOLINTEND
 
@@ -83,8 +91,6 @@ public:
     MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
-
-
     // NOLINTEND
 
 public:

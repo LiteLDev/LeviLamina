@@ -30,16 +30,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual uint64 count() /*override*/;
 
+    // vIndex: 4
     virtual ::webrtc::MediaStreamInterface* at(uint64 index) /*override*/;
 
+    // vIndex: 5
     virtual ::webrtc::MediaStreamInterface* find(::std::string const& id) /*override*/;
 
+    // vIndex: 6
     virtual ::webrtc::MediaStreamTrackInterface* FindAudioTrack(::std::string const& id) /*override*/;
 
+    // vIndex: 7
     virtual ::webrtc::MediaStreamTrackInterface* FindVideoTrack(::std::string const& id) /*override*/;
 
+    // vIndex: 2
     virtual ~StreamCollection() /*override*/ = default;
     // NOLINTEND
 
@@ -63,8 +69,6 @@ public:
     MCNAPI ::webrtc::MediaStreamTrackInterface* $FindAudioTrack(::std::string const& id);
 
     MCNAPI ::webrtc::MediaStreamTrackInterface* $FindVideoTrack(::std::string const& id);
-
-
     // NOLINTEND
 };
 

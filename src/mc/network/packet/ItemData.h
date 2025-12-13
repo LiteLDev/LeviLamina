@@ -31,34 +31,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemData(::ItemData&&);
+    MCAPI ItemData(::ItemData&&);
 
-    MCNAPI ItemData(::ItemData const& other);
+    MCAPI ItemData(::ItemData const& other);
 
-    MCNAPI ::ItemData& operator=(::ItemData&&);
+    MCAPI ::ItemData& operator=(::ItemData&&);
 
-    MCNAPI bool operator==(::ItemData const&) const;
+    MCAPI bool operator==(::ItemData const&) const;
 
-    MCNAPI ~ItemData();
+    MCAPI ~ItemData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::ItemData> fromItemRegistry(::ItemRegistryRef itemRegistry);
+    MCAPI static ::std::vector<::ItemData> fromItemRegistry(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemData&&);
+    MCAPI void* $ctor(::ItemData&&);
 
-    MCNAPI void* $ctor(::ItemData const& other);
+    MCAPI void* $ctor(::ItemData const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -80,25 +80,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TCPPort() /*override*/;
 
+    // vIndex: 11
     virtual ::cricket::Connection* CreateConnection(
         ::cricket::Candidate const&               address,
         ::cricket::PortInterface::CandidateOrigin origin
     ) /*override*/;
 
+    // vIndex: 9
     virtual void PrepareAddress() /*override*/;
 
+    // vIndex: 13
     virtual int GetOption(::rtc::Socket::Option opt, int* value) /*override*/;
 
+    // vIndex: 12
     virtual int SetOption(::rtc::Socket::Option opt, int value) /*override*/;
 
+    // vIndex: 14
     virtual int GetError() /*override*/;
 
+    // vIndex: 8
     virtual bool SupportsProtocol(::std::string_view protocol) const /*override*/;
 
+    // vIndex: 15
     virtual ::cricket::ProtocolType GetProtocol() const /*override*/;
 
+    // vIndex: 17
     virtual int SendTo(
         void const*                 data,
         uint64                      size,
@@ -107,6 +116,7 @@ public:
         bool                        payload
     ) /*override*/;
 
+    // vIndex: 43
     virtual void OnSentPacket(::rtc::AsyncPacketSocket* socket, ::rtc::SentPacket const& sent_packet) /*override*/;
     // NOLINTEND
 
@@ -185,8 +195,6 @@ public:
     );
 
     MCNAPI void $OnSentPacket(::rtc::AsyncPacketSocket* socket, ::rtc::SentPacket const& sent_packet);
-
-
     // NOLINTEND
 
 public:

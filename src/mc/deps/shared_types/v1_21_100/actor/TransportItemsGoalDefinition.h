@@ -16,15 +16,15 @@ namespace SharedTypes::v1_21_100 {
 struct TransportItemsGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
 public:
     // TransportItemsGoalDefinition inner types define
+    enum class SearchStrategy : int {
+        Nearest = 0,
+        Random  = 1,
+    };
+
     enum class PlaceStrategy : int {
         Any                 = 0,
         WithMatching        = 1,
         WithMatchingOrEmpty = 2,
-    };
-
-    enum class SearchStrategy : int {
-        Nearest = 0,
-        Random  = 1,
     };
 
 public:

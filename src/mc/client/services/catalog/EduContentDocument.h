@@ -15,16 +15,4 @@ public:
     EduContentDocument& operator=(EduContentDocument const&);
     EduContentDocument(EduContentDocument const&);
     EduContentDocument();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~EduContentDocument();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

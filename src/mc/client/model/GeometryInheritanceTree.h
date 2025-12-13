@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class GeometryGroup;
-struct ModelParent;
-// clang-format on
-
 class GeometryInheritanceTree {
 public:
     // GeometryInheritanceTree inner types declare
@@ -32,18 +26,6 @@ public:
         GeometryInheritanceTreeNode& operator=(GeometryInheritanceTreeNode const&);
         GeometryInheritanceTreeNode(GeometryInheritanceTreeNode const&);
         GeometryInheritanceTreeNode();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ~GeometryInheritanceTreeNode();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -58,31 +40,5 @@ public:
     // prevent constructor by default
     GeometryInheritanceTree& operator=(GeometryInheritanceTree const&);
     GeometryInheritanceTree(GeometryInheritanceTree const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C GeometryInheritanceTree();
-
-    MCNAPI_C ::GeometryInheritanceTree::GeometryInheritanceTreeNode&
-    _node(::std::string const& name, ::std::string const& fileName);
-
-    MCNAPI_C void addInheritance(
-        ::std::string const& child,
-        ::std::string const& sourceFilePathWithExtension,
-        ::ModelParent const& modelParent,
-        ::std::string const& parentName
-    );
-
-    MCNAPI_C void visitBFS(
-        ::std::weak_ptr<::GeometryGroup> weakGeometryGroup,
-        ::std::function<void(::std::weak_ptr<::GeometryGroup>, ::std::string const&, ::ModelParent const&)> callback
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-    // NOLINTEND
+    GeometryInheritanceTree();
 };

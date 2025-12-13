@@ -8,8 +8,10 @@ class IScriptCustomComponentEventClosure {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual bool valid() const = 0;
 
+    // vIndex: 1
     virtual bool allowsParameters() const = 0;
     // NOLINTEND
 

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
-
 class ILocalizationDictionary {
 public:
     // member variables
@@ -25,42 +20,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~ILocalizationDictionary() = default;
-#else // LL_PLAT_C
-    virtual ~ILocalizationDictionary();
-#endif
 
+    // vIndex: 1
     virtual ::std::string getLocString(::std::string const&) const = 0;
 
+    // vIndex: 2
     virtual bool isLocalizationReady() const = 0;
 
+    // vIndex: 3
     virtual void _updateLoc() = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C bool _updateLocPath(::Core::Path const& locFilePath);
-
-    MCNAPI_C void updateLoc();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

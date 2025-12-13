@@ -49,14 +49,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StructureFeature();
 
+    // vIndex: 1
     virtual bool shouldAddHardcodedSpawnAreas() const;
 
+    // vIndex: 2
     virtual bool shouldPostProcessMobs() const;
 
+    // vIndex: 3
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const;
 
+    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -67,6 +72,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
+    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&,
         ::Random&,
@@ -76,6 +82,7 @@ public:
         ::Dimension const&
     ) = 0;
 
+    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&,
         ::BiomeSource const&,
@@ -84,6 +91,7 @@ public:
         ::IPreliminarySurfaceProvider const&
     ) = 0;
 
+    // vIndex: 7
     virtual ::StructureStart* getStructureAt(int cellX, int cellY, int cellZ);
     // NOLINTEND
 
@@ -180,8 +188,6 @@ public:
     );
 
     MCAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
-
-
     // NOLINTEND
 
 public:

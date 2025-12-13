@@ -50,14 +50,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual bool isReady() const /*override*/;
 
+    // vIndex: 7
     virtual void tick() /*override*/;
 
+    // vIndex: 8
     virtual void _updateState() /*override*/;
 
+    // vIndex: 9
     virtual uint _genMaskingKey() const /*override*/;
 
+    // vIndex: 0
     virtual ~RakWebSocketServer() /*override*/ = default;
     // NOLINTEND
 

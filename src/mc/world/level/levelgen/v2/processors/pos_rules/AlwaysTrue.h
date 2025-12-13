@@ -18,21 +18,22 @@ struct AlwaysTrue : public ::br::worldgen::processors::PosRules::TestType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool test(::BlockPos, ::BlockPos, ::BlockPos, ::IRandom&) const /*override*/;
 
+    // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
     virtual ~AlwaysTrue() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $test(::BlockPos, ::BlockPos, ::BlockPos, ::IRandom&) const;
+    MCFOLD bool $test(::BlockPos, ::BlockPos, ::BlockPos, ::IRandom&) const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
-
-
+    MCFOLD void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

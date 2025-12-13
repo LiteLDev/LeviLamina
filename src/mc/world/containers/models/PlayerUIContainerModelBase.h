@@ -29,26 +29,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 1
     virtual ~PlayerUIContainerModelBase() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~PlayerUIContainerModelBase() /*override*/;
-#endif
 
+    // vIndex: 2
     virtual void postInit() /*override*/;
 
+    // vIndex: 3
     virtual void releaseResources() /*override*/;
 
+    // vIndex: 0
     virtual void containerContentChanged(int slot) /*override*/;
 
+    // vIndex: 14
     virtual bool isValid() /*override*/;
 
+    // vIndex: 7
     virtual ::ContainerWeakRef getContainerWeakRef() const /*override*/;
 
+    // vIndex: 23
     virtual int _getContainerOffset() const /*override*/;
 
+    // vIndex: 25
     virtual void _onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem) /*override*/;
 
+    // vIndex: 22
     virtual ::Container* _getContainer() const /*override*/;
     // NOLINTEND
 
@@ -56,12 +61,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _refreshContainer(bool initial);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -82,8 +81,6 @@ public:
     MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
     MCAPI ::Container* $_getContainer() const;
-
-
     // NOLINTEND
 
 public:

@@ -30,33 +30,6 @@ public:
     // clang-format on
 
     // ServerDataTransferService inner types define
-    struct PendingDataRequest {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkcf69c7;
-        ::ll::UntypedStorage<8, 32> mUnk711599;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PendingDataRequest& operator=(PendingDataRequest const&);
-        PendingDataRequest(PendingDataRequest const&);
-        PendingDataRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PendingDataRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
     struct RegisteredCollection {
     public:
         // member variables
@@ -84,6 +57,33 @@ public:
         // NOLINTEND
     };
 
+    struct PendingDataRequest {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnkcf69c7;
+        ::ll::UntypedStorage<8, 32> mUnk711599;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PendingDataRequest& operator=(PendingDataRequest const&);
+        PendingDataRequest(PendingDataRequest const&);
+        PendingDataRequest();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~PendingDataRequest();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -100,33 +100,44 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ServerDataTransferService() /*override*/;
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
+    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
+    // vIndex: 1
     virtual void requestData(
         ::std::string const& collectionName,
         ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback,
         bool                                                                                                 useSnapshot
     ) /*override*/;
 
+    // vIndex: 2
     virtual ::Scripting::Result_deprecated<::std::string const>
     requestSchema(::std::string const& collectionName) /*override*/;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void>
     sendData(::std::string const& collectionName, ::std::string const& jsonData) /*override*/;
 
+    // vIndex: 4
     virtual ::Scripting::Result_deprecated<void> sendDataToClipboard(::std::string const& jsonData) /*override*/;
 
+    // vIndex: 5
     virtual ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> getRegisteredCollections() const
         /*override*/;
 
+    // vIndex: 6
     virtual ::Scripting::Result_deprecated<void> openSession(::std::string const& collectionName) /*override*/;
 
+    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> closeSession(::std::string const& collectionName) /*override*/;
     // NOLINTEND
 
@@ -183,8 +194,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $openSession(::std::string const& collectionName);
 
     MCNAPI ::Scripting::Result_deprecated<void> $closeSession(::std::string const& collectionName);
-
-
     // NOLINTEND
 
 public:

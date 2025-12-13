@@ -43,14 +43,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
+    // vIndex: 7
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
+    // vIndex: 4
     virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
+    // vIndex: 5
     virtual bool initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
+    // vIndex: 0
     virtual ~PlanterItemComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -113,8 +118,6 @@ public:
     MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
     MCAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
-
-
     // NOLINTEND
 
 public:

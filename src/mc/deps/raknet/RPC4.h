@@ -18,8 +18,8 @@ public:
     // RPC4 inner types declare
     // clang-format off
     struct LocalCallback;
-    struct LocalSlotObject;
     struct LocalSlot;
+    struct LocalSlotObject;
     // clang-format on
 
     // RPC4 inner types define
@@ -90,10 +90,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RPC4() /*override*/ = default;
 
+    // vIndex: 1
     virtual void OnAttach() /*override*/;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
     // NOLINTEND
 

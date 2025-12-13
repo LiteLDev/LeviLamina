@@ -29,11 +29,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MinecraftGameTestBatchRunner() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::std::shared_ptr<::gametest::BaseGameTestInstance>
     _createGameTestInstance(::gametest::BaseGameTestFunction& function) /*override*/;
 
+    // vIndex: 2
     virtual void
     _runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker) /*override*/;
     // NOLINTEND
@@ -45,8 +48,6 @@ public:
     $_createGameTestInstance(::gametest::BaseGameTestFunction& function);
 
     MCNAPI void $_runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker);
-
-
     // NOLINTEND
 
 public:

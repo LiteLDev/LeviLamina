@@ -62,10 +62,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
+    // vIndex: 2
     virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const /*override*/;
 
+    // vIndex: 10
     virtual ::AABB const& getVisualShapeInWorld(
         ::Block const&,
         ::IConstBlockSource const& region,
@@ -73,6 +76,7 @@ public:
         ::AABB&                    bufferAABB
     ) const /*override*/;
 
+    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -80,6 +84,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
+    // vIndex: 9
     virtual ::AABB const& getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -87,47 +92,65 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
+    // vIndex: 13
     virtual bool
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
 
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
+    // vIndex: 87
     virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const
         /*override*/;
 
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 88
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 61
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
 
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
+    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
+    // vIndex: 51
     virtual void onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
+    // vIndex: 49
     virtual bool canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
+    // vIndex: 37
     virtual bool isDoorBlock() const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 146
     virtual void _useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
+    // vIndex: 144
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
+    // vIndex: 0
     virtual ~DoorBlock() /*override*/;
     // NOLINTEND
 
@@ -141,8 +164,6 @@ public:
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void setToggled(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor, bool toggled) const;
-
-    MCAPI_C bool shouldFlipTexture(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -229,8 +250,6 @@ public:
     MCAPI void $_useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
     MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
-
-
     // NOLINTEND
 
 public:

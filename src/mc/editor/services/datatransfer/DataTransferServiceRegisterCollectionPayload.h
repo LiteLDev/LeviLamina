@@ -26,12 +26,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~DataTransferServiceRegisterCollectionPayload() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~DataTransferServiceRegisterCollectionPayload() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -39,12 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::Network::DataTransferServiceRegisterCollectionPayload&
     operator=(::Editor::Network::DataTransferServiceRegisterCollectionPayload&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

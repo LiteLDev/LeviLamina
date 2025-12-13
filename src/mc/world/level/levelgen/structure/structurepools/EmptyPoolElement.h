@@ -20,41 +20,46 @@ class EmptyPoolElement : public ::StructurePoolElement {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ::BlockPos getSize(::Rotation rotation) const /*override*/;
 
+    // vIndex: 2
     virtual ::std::vector<::JigsawBlockInfo> getJigsawMarkers(::BlockPos position, ::Rotation rotation) const
         /*override*/;
 
+    // vIndex: 1
     virtual ::std::vector<::JigsawBlockInfo>
     getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const
         /*override*/;
 
+    // vIndex: 3
     virtual ::BoundingBox getBoundingBox(::BlockPos position, ::Rotation rotation) const /*override*/;
 
+    // vIndex: 13
     virtual bool isValid() const /*override*/;
 
+    // vIndex: 15
     virtual ::StructurePoolElementType type() const /*override*/;
 
+    // vIndex: 14
     virtual ~EmptyPoolElement() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockPos $getSize(::Rotation rotation) const;
+    MCFOLD ::BlockPos $getSize(::Rotation rotation) const;
 
-    MCNAPI ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
+    MCFOLD ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 
-    MCNAPI ::std::vector<::JigsawBlockInfo>
+    MCFOLD ::std::vector<::JigsawBlockInfo>
     $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 
-    MCNAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
+    MCAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
 
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI ::StructurePoolElementType $type() const;
-
-
+    MCFOLD ::StructurePoolElementType $type() const;
     // NOLINTEND
 
 public:

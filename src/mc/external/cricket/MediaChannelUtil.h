@@ -40,10 +40,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 2
         virtual ~TransportForMediaChannels() /*override*/ = default;
 
+        // vIndex: 0
         virtual bool SendRtp(::rtc::ArrayView<uchar const>, ::webrtc::PacketOptions const&) /*override*/;
 
+        // vIndex: 1
         virtual bool SendRtcp(::rtc::ArrayView<uchar const>) /*override*/;
         // NOLINTEND
 
@@ -70,8 +73,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MediaChannelUtil() = default;
 
+    // vIndex: 1
     virtual int GetRtpSendTimeExtnId() const;
     // NOLINTEND
 

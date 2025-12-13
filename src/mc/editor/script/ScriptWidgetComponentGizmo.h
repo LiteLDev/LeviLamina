@@ -49,10 +49,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ~ScriptWidgetComponentGizmo() /*override*/ = default;
 
+    // vIndex: 3
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
 
+    // vIndex: 0
     virtual void
     _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload) /*override*/;
     // NOLINTEND
@@ -123,8 +126,6 @@ public:
     MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
 
     MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
-
-
     // NOLINTEND
 
 public:

@@ -18,31 +18,36 @@ class MapCloningRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk6c8cf1;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    MapCloningRecipe& operator=(MapCloningRecipe const&);
-    MapCloningRecipe(MapCloningRecipe const&);
     MapCloningRecipe();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const /*override*/;
 
+    // vIndex: 1
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
         /*override*/;
 
+    // vIndex: 8
     virtual ::std::vector<::ItemInstance> const& getResultItems() const /*override*/;
 
+    // vIndex: 2
     virtual int getCraftingSize() const /*override*/;
 
+    // vIndex: 6
     virtual int size() const /*override*/;
 
+    // vIndex: 3
     virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
 
+    // vIndex: 0
     virtual ~MapCloningRecipe() /*override*/ = default;
     // NOLINTEND
 
@@ -80,8 +85,6 @@ public:
     MCFOLD int $size() const;
 
     MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
-
-
     // NOLINTEND
 
 public:

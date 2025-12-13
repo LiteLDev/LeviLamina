@@ -6,17 +6,12 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class CompoundTag;
-class Level;
-class Random;
 class Vec3;
 // clang-format on
 
 namespace CreakingHeartParticlesUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI_C void emitTrailParticles(::Level& level, ::CompoundTag const& data, ::Random& random);
-
 MCNAPI void requestTrailParticles(
     ::BlockSource&    region,
     ::BlockPos const& creakingHeartPos,

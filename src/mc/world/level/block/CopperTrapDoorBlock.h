@@ -16,10 +16,13 @@ class CopperTrapDoorBlock : public ::CopperBlock<::TrapDoorBlock> {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 146
     virtual void _useTrapDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 0
     virtual ~CopperTrapDoorBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -29,8 +32,6 @@ public:
     MCAPI void $_useTrapDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-
     // NOLINTEND
 
 public:

@@ -19,28 +19,40 @@ class UnzipFile {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~UnzipFile();
 
+    // vIndex: 1
     virtual ::Core::ZipUtils::UnzipResult locateFile(char const*, int) = 0;
 
+    // vIndex: 2
     virtual ::Core::ZipUtils::UnzipResult goToFirstFile() = 0;
 
+    // vIndex: 3
     virtual ::Core::ZipUtils::UnzipResult goToNextFile() = 0;
 
+    // vIndex: 4
     virtual ::std::string getCurrentFileName() const = 0;
 
+    // vIndex: 5
     virtual ::Core::ZipUtils::UnzipResult openCurrentFileForReading() = 0;
 
+    // vIndex: 6
     virtual ::Core::ZipUtils::UnzipResult closeCurrentFile() = 0;
 
+    // vIndex: 7
     virtual void readCurrentFileContentsIntoMemory(::std::string&) = 0;
 
+    // vIndex: 8
     virtual void readCurrentFileContents(uint64, ::std::function<void(int, void const*)>) = 0;
 
+    // vIndex: 9
     virtual uint64 getTotalFilesInZip() = 0;
 
+    // vIndex: 10
     virtual uint64 getCurrentFileUncompressedSize() = 0;
 
+    // vIndex: 11
     virtual bool _isGood() const = 0;
     // NOLINTEND
 

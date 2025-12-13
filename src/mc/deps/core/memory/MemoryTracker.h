@@ -16,22 +16,31 @@ class MemoryTracker {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MemoryTracker() = default;
 
+    // vIndex: 1
     virtual bool isTracking() const;
 
+    // vIndex: 2
     virtual ::Memory::MemoryCategory getCurrentCategory() const;
 
+    // vIndex: 3
     virtual void setCurrentCategory(::Memory::MemoryCategory);
 
+    // vIndex: 4
     virtual uint64 getCategoryAllocationCount(uint) const;
 
+    // vIndex: 5
     virtual uint64 getCategoryAllocatedMemory(uint) const;
 
+    // vIndex: 6
     virtual uint64 getCategoryTotalAllocationCount(uint) const;
 
+    // vIndex: 7
     virtual void publish();
 
+    // vIndex: 8
     virtual void populateCounters(::std::vector<::Memory::MemoryCategoryCounter>&, uint64) const;
     // NOLINTEND
 
@@ -53,8 +62,6 @@ public:
     MCFOLD void $publish();
 
     MCFOLD void $populateCounters(::std::vector<::Memory::MemoryCategoryCounter>&, uint64) const;
-
-
     // NOLINTEND
 
 public:

@@ -19,36 +19,41 @@ namespace Molang::details {
 
 class CompiledExpressionWithSource : public ::Molang::details::CompiledExpressionWithContentScope {
 public:
-// member variables
-// NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // member variables
+    // NOLINTBEGIN
     ::ll::UntypedStorage<8, 144> mUnk36c341;
-#else // LL_PLAT_C
-    ::ll::UntypedStorage<8, 152> mUnk36c341;
-#endif
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    CompiledExpressionWithSource& operator=(CompiledExpressionWithSource const&);
+    CompiledExpressionWithSource(CompiledExpressionWithSource const&);
     CompiledExpressionWithSource();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::unique_ptr<::Molang::details::IComplexExpression> clone() const /*override*/;
 
+    // vIndex: 7
     virtual void replaceArrayVariables(
         ::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap
     ) /*override*/;
 
+    // vIndex: 8
     virtual void validateArrayVariables() const /*override*/;
 
+    // vIndex: 12
     virtual ::ExpressionOp getOp() const /*override*/;
 
+    // vIndex: 13
     virtual bool needsToCompile() const /*override*/;
 
+    // vIndex: 15
     virtual ::Molang::details::SourceTree* getSource() /*override*/;
 
+    // vIndex: 0
     virtual ~CompiledExpressionWithSource() /*override*/ = default;
     // NOLINTEND
 
@@ -84,8 +89,6 @@ public:
     MCNAPI bool $needsToCompile() const;
 
     MCNAPI ::Molang::details::SourceTree* $getSource();
-
-
     // NOLINTEND
 
 public:

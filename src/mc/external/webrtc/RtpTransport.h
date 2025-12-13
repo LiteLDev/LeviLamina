@@ -51,46 +51,64 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual bool rtcp_mux_enabled() const /*override*/;
 
+    // vIndex: 1
     virtual void SetRtcpMuxEnabled(bool enable) /*override*/;
 
+    // vIndex: 2
     virtual ::std::string const& transport_name() const /*override*/;
 
+    // vIndex: 3
     virtual int SetRtpOption(::rtc::Socket::Option opt, int value) /*override*/;
 
+    // vIndex: 4
     virtual int SetRtcpOption(::rtc::Socket::Option opt, int value) /*override*/;
 
+    // vIndex: 6
     virtual bool IsReadyToSend() const /*override*/;
 
+    // vIndex: 7
     virtual bool IsWritable(bool rtcp) const /*override*/;
 
+    // vIndex: 8
     virtual bool
     SendRtpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
 
+    // vIndex: 9
     virtual bool
     SendRtcpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
 
+    // vIndex: 11
     virtual bool IsSrtpActive() const /*override*/;
 
+    // vIndex: 10
     virtual void
     UpdateRtpHeaderExtensionMap(::std::vector<::webrtc::RtpExtension> const& header_extensions) /*override*/;
 
+    // vIndex: 12
     virtual bool RegisterRtpDemuxerSink(
         ::webrtc::RtpDemuxerCriteria const& criteria,
         ::webrtc::RtpPacketSinkInterface*   sink
     ) /*override*/;
 
+    // vIndex: 13
     virtual bool UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink) /*override*/;
 
+    // vIndex: 14
     virtual void OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route);
 
+    // vIndex: 15
     virtual void OnRtpPacketReceived(::rtc::ReceivedPacket const& received_packet);
 
+    // vIndex: 16
     virtual void OnRtcpPacketReceived(::rtc::ReceivedPacket const& received_packet);
 
+    // vIndex: 17
     virtual void OnWritableState(::rtc::PacketTransportInternal* packet_transport);
 
+    // vIndex: 0
     virtual ~RtpTransport() /*override*/;
     // NOLINTEND
 
@@ -165,8 +183,6 @@ public:
     MCNAPI void $OnRtcpPacketReceived(::rtc::ReceivedPacket const& received_packet);
 
     MCNAPI void $OnWritableState(::rtc::PacketTransportInternal* packet_transport);
-
-
     // NOLINTEND
 
 public:

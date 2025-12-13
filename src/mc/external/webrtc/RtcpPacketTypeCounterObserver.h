@@ -13,8 +13,10 @@ class RtcpPacketTypeCounterObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RtcpPacketTypeCounterObserver() = default;
 
+    // vIndex: 1
     virtual void RtcpPacketTypesCounterUpdated(uint, ::webrtc::RtcpPacketTypeCounter const&) = 0;
     // NOLINTEND
 

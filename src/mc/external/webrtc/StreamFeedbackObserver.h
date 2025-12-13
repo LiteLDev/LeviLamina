@@ -32,8 +32,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StreamFeedbackObserver() = default;
 
+    // vIndex: 1
     virtual void OnPacketFeedbackVector(::std::vector<::webrtc::StreamFeedbackObserver::StreamPacketInfo>) = 0;
     // NOLINTEND
 

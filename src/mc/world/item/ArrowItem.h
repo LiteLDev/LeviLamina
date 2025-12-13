@@ -42,8 +42,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    // vIndex: 110
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
+    // vIndex: 80
     virtual ::Actor* createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
@@ -51,12 +53,15 @@ public:
         ::Vec3 const&      direction
     ) const /*override*/;
 
+    // vIndex: 81
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
+    // vIndex: 90
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
+    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -64,13 +69,17 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
+    // vIndex: 91
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const /*override*/;
 
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
+    // vIndex: 0
     virtual ~ArrowItem() /*override*/ = default;
     // NOLINTEND
 
@@ -95,7 +104,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI ::Actor* $createProjectileActor(
         ::BlockSource&     region,
@@ -122,8 +131,6 @@ public:
 
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
-
-
     // NOLINTEND
 
 public:

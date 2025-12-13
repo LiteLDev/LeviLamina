@@ -24,11 +24,11 @@ class OceanRuinFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk6293aa;
-    ::ll::UntypedStorage<4, 4>  mUnk41ecdf;
-    ::ll::UntypedStorage<4, 4>  mUnk3ed8b4;
-    ::ll::UntypedStorage<8, 24> mUnk93efb0;
-    ::ll::UntypedStorage<8, 8>  mUnk539693;
+    ::ll::TypedStorage<1, 1, bool const>                    mUseTiltedSpacing;
+    ::ll::TypedStorage<4, 4, int const>                     mRuinSpacing;
+    ::ll::TypedStorage<4, 4, int const>                     mMinRuinSeparation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> allowedBiomes;
+    ::ll::TypedStorage<8, 8, ::OceanMonumentFeature&>       mMonument;
     // NOLINTEND
 
 public:
@@ -40,8 +40,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
 
+    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -52,6 +54,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
+    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -61,6 +64,7 @@ public:
         ::Dimension const&                   dimension
     ) /*override*/;
 
+    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&                         generator,
         ::BiomeSource const&                 biomeSource,
@@ -69,6 +73,7 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~OceanRuinFeature() /*override*/ = default;
     // NOLINTEND
 
@@ -115,8 +120,6 @@ public:
         ::ChunkPos const&                    lc,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
-
-
     // NOLINTEND
 
 public:

@@ -11,6 +11,7 @@ class Actor;
 class BlockPos;
 class BlockSource;
 class Experiments;
+class LiquidBlock;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -19,7 +20,7 @@ class LiquidBlockDynamic : public ::LiquidBlockBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9b9ad6;
+    ::ll::TypedStorage<8, 8, ::LiquidBlock const&> mLiquidBlock;
     // NOLINTEND
 
 public:
@@ -31,10 +32,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 145
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~LiquidBlockDynamic() /*override*/ = default;
     // NOLINTEND
 
@@ -52,8 +56,6 @@ public:
     MCFOLD void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

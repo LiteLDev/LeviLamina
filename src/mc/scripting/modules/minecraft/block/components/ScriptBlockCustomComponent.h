@@ -32,6 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptBlockCustomComponent() /*override*/ = default;
     // NOLINTEND
 

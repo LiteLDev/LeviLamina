@@ -24,15 +24,15 @@ public:
     // clang-format on
 
     // RtpPacketHistory inner types define
+    enum class StorageMode : int {
+        KDisabled     = 0,
+        KStoreAndCull = 1,
+    };
+
     enum class PaddingMode : int {
         KDefault           = 0,
         KPriority          = 1,
         KRecentLargePacket = 2,
-    };
-
-    enum class StorageMode : int {
-        KDisabled     = 0,
-        KStoreAndCull = 1,
     };
 
     struct MoreUseful {

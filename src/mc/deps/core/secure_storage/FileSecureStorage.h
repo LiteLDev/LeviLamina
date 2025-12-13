@@ -17,8 +17,8 @@ class FileSecureStorage : public ::SecureStorage {
 public:
     // FileSecureStorage inner types declare
     // clang-format off
-    class StorageSystem;
     class FileStorageSystem;
+    class StorageSystem;
     // clang-format on
 
     // FileSecureStorage inner types define
@@ -26,10 +26,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual bool getData(::std::string&, ::Core::Path);
 
+        // vIndex: 1
         virtual void setData(::std::string const&, ::Core::Path);
 
+        // vIndex: 2
         virtual ~StorageSystem() = default;
         // NOLINTEND
 
@@ -56,10 +59,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual bool getData(::std::string& output, ::Core::Path path) /*override*/;
 
+        // vIndex: 1
         virtual void setData(::std::string const& data, ::Core::Path path) /*override*/;
 
+        // vIndex: 2
         virtual ~FileStorageSystem() /*override*/ = default;
         // NOLINTEND
 
@@ -69,8 +75,6 @@ public:
         MCNAPI bool $getData(::std::string& output, ::Core::Path path);
 
         MCNAPI void $setData(::std::string const& data, ::Core::Path path);
-
-
         // NOLINTEND
 
     public:
@@ -104,14 +108,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FileSecureStorage() /*override*/;
 
+    // vIndex: 1
     virtual bool add(::std::string const& key, ::std::string const& value) /*override*/;
 
+    // vIndex: 2
     virtual bool addOrUpdate(::std::string const& key, ::std::string const& value) /*override*/;
 
+    // vIndex: 3
     virtual bool remove(::std::string const& key) /*override*/;
 
+    // vIndex: 4
     virtual bool get(::std::string const& key, ::std::string& outValue) /*override*/;
     // NOLINTEND
 
@@ -165,8 +174,6 @@ public:
     MCNAPI bool $remove(::std::string const& key);
 
     MCNAPI bool $get(::std::string const& key, ::std::string& outValue);
-
-
     // NOLINTEND
 
 public:

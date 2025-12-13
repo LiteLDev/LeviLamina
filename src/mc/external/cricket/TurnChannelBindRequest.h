@@ -34,14 +34,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TurnChannelBindRequest() /*override*/;
 
+    // vIndex: 6
     virtual void OnSent() /*override*/;
 
+    // vIndex: 2
     virtual void OnResponse(::cricket::StunMessage* response) /*override*/;
 
+    // vIndex: 3
     virtual void OnErrorResponse(::cricket::StunMessage* response) /*override*/;
 
+    // vIndex: 5
     virtual void OnTimeout() /*override*/;
     // NOLINTEND
 
@@ -79,8 +84,6 @@ public:
     MCNAPI void $OnErrorResponse(::cricket::StunMessage* response);
 
     MCNAPI void $OnTimeout();
-
-
     // NOLINTEND
 
 public:

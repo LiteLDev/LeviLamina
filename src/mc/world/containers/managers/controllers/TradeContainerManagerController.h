@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
@@ -11,14 +10,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class ItemStack;
 class ItemStackBase;
 class MerchantRecipe;
 class TradeContainerManagerModel;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
 struct CreateContainerItemScope;
-struct ItemStackRequestScope;
 struct ItemTransferAmount;
 struct SelectedSlotInfo;
 // clang-format on
@@ -35,119 +32,51 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TradeContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TradeContainerManagerController() /*override*/ = default;
 
-    virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
+    // vIndex: 27
+    virtual bool isOutputSlot(::std::string const&) const /*override*/;
 
-    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const& slot) const /*override*/;
+    // vIndex: 8
+    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
 
-    virtual void handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
+    // vIndex: 10
+    virtual void handleTakeAll(::SlotData const&, ::SlotData const&) /*override*/;
 
-    virtual void handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot) /*override*/;
+    // vIndex: 9
+    virtual void handleTakeAmount(::SlotData const&, int, ::SlotData const&) /*override*/;
 
-    virtual void handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
+    // vIndex: 12
+    virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
 
+    // vIndex: 15
     virtual int handleAutoPlace(
-        ::SlotData const&                     srcSlot,
-        int                                   amount,
-        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
-        ::std::vector<::AutoPlaceResult>&     destinations
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
     ) /*override*/;
 
-    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
+    // vIndex: 11
+    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
 
-    virtual void handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot) /*override*/;
+    // vIndex: 13
+    virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
 
-    virtual void
-    handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type) /*override*/;
+    // vIndex: 25
+    virtual void handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType) /*override*/;
 
+    // vIndex: 29
     virtual ::CreateContainerItemScope
-    _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit TradeContainerManagerController(::std::weak_ptr<::TradeContainerManagerModel> pModel);
-
-    MCNAPI_C void _consumeIngredients(uchar numCrafts);
-
-    MCNAPI_C void
-    _consumeMaterials(::ItemStack const& containerItem, int amount, ::ContainerEnumName inputContainerEnumName);
-
-    MCNAPI_C void _createResult(bool shouldPlayAudio);
-
-    MCNAPI_C void
-    _createTradeItem(::ItemInstance& itemInstance, ::ItemStackRequestScope const& requestScope, uchar numCrafts);
-
-    MCNAPI_C ::MerchantRecipe* _getActiveRecipe();
-
-    MCNAPI_C bool _handleTransferTrade(::SlotData const& srcSlot, ::SlotData const& dstSlot);
-
-    MCNAPI_C void _moveItemsBackToInventory();
-
-    MCNAPI_C void _setupCallbacks();
-
-    MCNAPI_C int getAvailableRecipeListSize();
-
-    MCNAPI_C ::std::string getDisplayName();
-
-    MCNAPI_C ::MerchantRecipe* getRecipe(int CurrentIndex);
-
-    MCNAPI_C void recipeChanged();
-
-    MCNAPI_C void setRecipeIndex(int index);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::TradeContainerManagerModel> pModel);
+    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
 
-    MCNAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
-
-    MCNAPI void $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
-
-    MCNAPI void $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
-
-    MCNAPI void $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
-
-    MCNAPI int $handleAutoPlace(
-        ::SlotData const&                     srcSlot,
-        int                                   amount,
-        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
-        ::std::vector<::AutoPlaceResult>&     destinations
-    );
-
-    MCNAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
-
-    MCNAPI void $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
-
-    MCNAPI void $handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type);
-
-    MCNAPI ::CreateContainerItemScope
-    $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

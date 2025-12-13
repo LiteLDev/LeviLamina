@@ -72,8 +72,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MockTextFilteringProcessor() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::CallbackToken processAnonymousMessages(
         ::IMinecraftEventing*,
         ::TextProcessingEventOrigin,
@@ -85,6 +87,7 @@ public:
         )>
     ) /*override*/;
 
+    // vIndex: 3
     virtual ::CallbackToken processMessages(
         ::Player const&,
         ::TextProcessingEventOrigin,
@@ -96,6 +99,7 @@ public:
         )>
     ) /*override*/;
 
+    // vIndex: 2
     virtual ::CallbackToken processMessages(
         ::BlockCommandOrigin const&,
         ::IMinecraftEventing*,
@@ -108,6 +112,7 @@ public:
         )>
     ) /*override*/;
 
+    // vIndex: 4
     virtual void onStartShutdown() /*override*/;
     // NOLINTEND
 

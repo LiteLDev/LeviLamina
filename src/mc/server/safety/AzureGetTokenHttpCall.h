@@ -35,37 +35,39 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~AzureGetTokenHttpCall();
-#else // LL_PLAT_C
-    virtual ~AzureGetTokenHttpCall() = default;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ::Bedrock::Threading::Async<::Bedrock::Services::AzureGetTokenHttpResponse> send(::TaskGroup& taskGroup);
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Services::AzureGetTokenHttpResponse> send(::TaskGroup& taskGroup);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static ::std::optional<::Bedrock::Http::Request> _buildRequest(
+    MCNAPI static ::std::optional<::Bedrock::Http::Request> _buildRequest(
         ::std::string const&                        url,
         ::std::string const&                        clientId,
         ::std::string const&                        scope,
         ::Bedrock::Services::ClientAssertion const& clientAssertionAuth
     );
 
-    MCNAPI_S static ::Bedrock::Services::AzureGetTokenHttpResponse _parseResponse(::Bedrock::Http::Response response);
+    MCNAPI static ::Bedrock::Services::AzureGetTokenHttpResponse _parseResponse(::Bedrock::Http::Response response);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -9,6 +9,7 @@ class UseActorDefinition : public ::BehaviorDefinition {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~UseActorDefinition() /*override*/ = default;
     // NOLINTEND
 

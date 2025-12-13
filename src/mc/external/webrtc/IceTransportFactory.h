@@ -17,8 +17,10 @@ class IceTransportFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IceTransportFactory() = default;
 
+    // vIndex: 1
     virtual ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>
     CreateIceTransport(::std::string const&, int, ::webrtc::IceTransportInit) = 0;
     // NOLINTEND

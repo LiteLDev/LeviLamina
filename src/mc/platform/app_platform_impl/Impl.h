@@ -7,15 +7,11 @@
 #include "mc/deps/application/IPlatformScreenshots.h"
 #include "mc/deps/core/platform/UIScalingRules.h"
 #include "mc/deps/core/threading/Async.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/options/UIProfile.h"
 
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
-class BatteryMonitorInterface;
-class SuspendHandler;
-class ThermalMonitorInterface;
 struct IntegrityTokenResult;
 struct ScreenshotOptions;
 namespace AppPlatformImpl { class IDependencies; }
@@ -47,56 +43,61 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Impl() /*override*/;
 
+    // vIndex: 1
     virtual ::IPlatformScreenshots& getPlatformScreenshots() /*override*/;
 
+    // vIndex: 9
     virtual bool mouseInputHandledByImGui() /*override*/;
 
+    // vIndex: 10
     virtual bool keyboardInputHandledByImGui() /*override*/;
 
+    // vIndex: 11
     virtual void updateImGuiMousePosition(float x, float y) /*override*/;
 
+    // vIndex: 12
     virtual void updateImGuiMouseButton(uchar button, bool isDown) /*override*/;
 
+    // vIndex: 13
     virtual void updateImGuiMouseScrollBar(float value) /*override*/;
 
+    // vIndex: 14
     virtual void imGuiAddInputChar(ushort c) /*override*/;
 
+    // vIndex: 15
     virtual bool updateImGuiKeyboard(uchar param, bool isDown) /*override*/;
 
+    // vIndex: 2
     virtual void setServiceLocators(::AppPlatform& platform) /*override*/;
 
+    // vIndex: 3
     virtual void resetServiceLocators() /*override*/;
 
+    // vIndex: 4
     virtual void setDiskAccessEventing(::Core::DiskAccessTracker& diskAccessTracker) /*override*/;
 
+    // vIndex: 5
     virtual bool isRealmsEnabled() const /*override*/;
 
+    // vIndex: 6
     virtual ::Bedrock::PubSub::Subscription initializeLoadProfiler(::Core::LoadTimeProfiler& profiler) /*override*/;
 
+    // vIndex: 7
     virtual ::Bedrock::Threading::Async<::IntegrityTokenResult>
     requestIntegrityToken(::std::string const&) /*override*/;
 
+    // vIndex: 8
     virtual ::std::string getFullLanguageCode() /*override*/;
 
-    virtual ::UIProfile getDefaultUIProfile(::UIScalingRules uiScalingRules) const /*override*/;
+    // vIndex: 16
+    virtual ::UIProfile getDefaultUIProfile(::UIScalingRules) const /*override*/;
 
-#ifdef LL_PLAT_S
+    // vIndex: 1
     virtual ::std::optional<::ScreenshotOptions> getExtraLevelSaveDataIconParams(::std::string const&) const
         /*override*/;
-#else // LL_PLAT_C
-    virtual ::std::optional<::ScreenshotOptions> getExtraLevelSaveDataIconParams(::std::string const&) const
-        /*override*/;
-
-    virtual ::Bedrock::NonOwnerPointer<::SuspendHandler>
-    getSuspendHandler(bool updateCachedValue, ::AppPlatform& appPlatform) /*override*/;
-
-    virtual ::BatteryMonitorInterface const& getBatteryMonitorInterface() const /*override*/;
-
-    virtual ::ThermalMonitorInterface const& getThermalMonitorInterface() const /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -151,19 +152,6 @@ public:
     MCNAPI ::std::string $getFullLanguageCode();
 
     MCNAPI ::std::optional<::ScreenshotOptions> $getExtraLevelSaveDataIconParams(::std::string const&) const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::UIProfile $getDefaultUIProfile(::UIScalingRules uiScalingRules) const;
-
-    MCNAPI ::Bedrock::NonOwnerPointer<::SuspendHandler>
-    $getSuspendHandler(bool updateCachedValue, ::AppPlatform& appPlatform);
-
-    MCNAPI ::BatteryMonitorInterface const& $getBatteryMonitorInterface() const;
-
-    MCNAPI ::ThermalMonitorInterface const& $getThermalMonitorInterface() const;
-#endif
-
-
     // NOLINTEND
 
 public:

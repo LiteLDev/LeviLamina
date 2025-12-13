@@ -12,8 +12,10 @@ class IActiveDirectoryIdentityTelemetry {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IActiveDirectoryIdentityTelemetry() = default;
 
+    // vIndex: 1
     virtual void fireEventSignInEdu(
         ::std::string const&,
         ::edu::Role,
@@ -23,10 +25,13 @@ public:
         ::std::vector<::std::pair<::std::string, ::std::string>> const&
     ) = 0;
 
+    // vIndex: 2
     virtual void fireEventEduDemoConversion(::edu::Role, ::LastClickedSource) = 0;
 
+    // vIndex: 3
     virtual void fireCodeBuilderLoadPerformanceEvent(::CodeBuilderPerformance::Stage) = 0;
 
+    // vIndex: 4
     virtual ::std::string getAppSessionId() = 0;
     // NOLINTEND
 

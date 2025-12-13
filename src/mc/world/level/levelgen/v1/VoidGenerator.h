@@ -43,18 +43,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~VoidGenerator() /*override*/ = default;
 
+    // vIndex: 44
     virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 
+    // vIndex: 46
     virtual ::BlockPos findSpawnPosition() const /*override*/;
 
+    // vIndex: 14
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
+    // vIndex: 9
     virtual bool structurePostProcessChunk(::ChunkViewSource&) /*override*/;
 
+    // vIndex: 10
     virtual bool decorationPostProcessChunk(::ChunkViewSource&) /*override*/;
 
+    // vIndex: 42
     virtual void prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
@@ -62,14 +69,18 @@ public:
         bool                  factorInBeardsAndShavers
     ) /*override*/;
 
+    // vIndex: 43
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
+    // vIndex: 45
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
+    // vIndex: 50
     virtual void
     decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
         /*override*/;
 
+    // vIndex: 49
     virtual void decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
@@ -125,8 +136,6 @@ public:
         ::Random&            random,
         ::ChunkPos const&    pos
     ) const;
-
-
     // NOLINTEND
 
 public:

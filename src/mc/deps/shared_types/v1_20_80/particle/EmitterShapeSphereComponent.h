@@ -30,17 +30,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+    // vIndex: 0
     virtual ~EmitterShapeSphereComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
-
     MCNAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
+
+    MCNAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
 
     MCNAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
     operator=(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
@@ -64,9 +66,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
     // NOLINTEND
 
 public:
@@ -79,8 +81,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::HashedString const& $getIdentifier() const;
-
-
     // NOLINTEND
 
 public:

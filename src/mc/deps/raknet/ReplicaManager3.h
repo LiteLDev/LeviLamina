@@ -65,26 +65,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ReplicaManager3() /*override*/ = default;
 
+    // vIndex: 17
     virtual ::RakNet::Connection_RM3* AllocConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID) const = 0;
 
+    // vIndex: 18
     virtual void DeallocConnection(::RakNet::Connection_RM3*) const = 0;
 
+    // vIndex: 3
     virtual void Update() /*override*/;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
+    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,
         ::RakNet::PI2_LostConnectionReason
     ) /*override*/;
 
+    // vIndex: 8
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
 
+    // vIndex: 6
     virtual void OnRakPeerShutdown() /*override*/;
 
+    // vIndex: 2
     virtual void OnDetach() /*override*/;
     // NOLINTEND
 

@@ -4,9 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/puv/ParserBase.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
+struct FeatureParserContext;
+namespace FeatureLoading { struct FeatureRootParseContext; }
+namespace JsonUtil { class EmptyClass; }
 namespace Puv { class Input; }
 namespace Puv { class LoadResultAny; }
 // clang-format on
@@ -15,8 +19,13 @@ class FeatureParser : public ::Puv::ParserBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkbe1b85;
-    ::ll::UntypedStorage<8, 8> mUnk4559ff;
+    ::ll::TypedStorage<8, 8, ::FeatureParserContext&> mContext;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::shared_ptr<
+            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>> const&>
+        mSchema;
     // NOLINTEND
 
 public:
@@ -28,17 +37,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::Puv::LoadResultAny doParse(::Puv::Input const& input) const /*override*/;
 
+    // vIndex: 0
     virtual ~FeatureParser() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Puv::LoadResultAny $doParse(::Puv::Input const& input) const;
-
-
+    MCAPI ::Puv::LoadResultAny $doParse(::Puv::Input const& input) const;
     // NOLINTEND
 
 public:

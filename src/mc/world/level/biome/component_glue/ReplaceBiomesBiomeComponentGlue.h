@@ -16,42 +16,37 @@ struct ReplaceBiomesBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9b7531;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::gsl::not_null<::Biome const*>>>> mTargetBiomes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ReplaceBiomesBiomeComponentGlue& operator=(ReplaceBiomesBiomeComponentGlue const&);
-    ReplaceBiomesBiomeComponentGlue(ReplaceBiomesBiomeComponentGlue const&);
-    ReplaceBiomesBiomeComponentGlue();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool resolveAndValidate(
         ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent,
         ::BiomeRegistry const&                              registry
     ) /*override*/;
 
+    // vIndex: 2
     virtual void
     applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~ReplaceBiomesBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $resolveAndValidate(
+    MCAPI bool $resolveAndValidate(
         ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent,
         ::BiomeRegistry const&                              registry
     );
 
-    MCNAPI void
+    MCAPI void
     $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const;
-
-
     // NOLINTEND
 
 public:

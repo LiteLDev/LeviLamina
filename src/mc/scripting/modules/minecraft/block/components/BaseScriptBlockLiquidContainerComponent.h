@@ -30,10 +30,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual ::Scripting::Result_deprecated<void> setFillLevel(int level);
 
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
+    // vIndex: 0
     virtual ~BaseScriptBlockLiquidContainerComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -55,8 +58,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $setFillLevel(int level);
 
     MCNAPI bool $_isValid() const;
-
-
     // NOLINTEND
 
 public:

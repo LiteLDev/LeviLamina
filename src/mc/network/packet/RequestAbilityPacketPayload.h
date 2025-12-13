@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/player/AbilitiesIndex.h"
+
 struct RequestAbilityPacketPayload {
 public:
     // RequestAbilityPacketPayload inner types define
@@ -14,14 +17,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk92f28b;
-    ::ll::UntypedStorage<1, 1> mUnk9932ba;
-    ::ll::UntypedStorage<4, 8> mUnkf09b8e;
+    ::ll::TypedStorage<1, 1, ::AbilitiesIndex>                    mAbility;
+    ::ll::TypedStorage<1, 1, ::RequestAbilityPacketPayload::Type> mValueType;
+    ::ll::TypedStorage<4, 8, ::std::variant<bool, float>>         mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RequestAbilityPacketPayload& operator=(RequestAbilityPacketPayload const&);
-    RequestAbilityPacketPayload(RequestAbilityPacketPayload const&);
-    RequestAbilityPacketPayload();
 };

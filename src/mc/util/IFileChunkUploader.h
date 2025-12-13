@@ -41,12 +41,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~IFileChunkUploader() = default;
-#else // LL_PLAT_C
-    virtual ~IFileChunkUploader();
-#endif
 
+    // vIndex: 1
     virtual void initFileUploader(
         ::std::string const&,
         ::FileInfo const&,
@@ -55,13 +53,16 @@ public:
         ::std::function<void(bool)>
     ) = 0;
 
+    // vIndex: 2
     virtual void getServerMissingChunks(
         ::FileInfo const&                                     file,
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
+    // vIndex: 3
     virtual void confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
 
+    // vIndex: 4
     virtual void uploadChunk(
         ::FileInfo const&           file,
         ::FileChunkInfo const&      chunk,
@@ -69,6 +70,7 @@ public:
         ::std::function<void(bool)> onCompleteCallback
     );
 
+    // vIndex: 5
     virtual void uploadStream(
         ::FileInfo const&                                               file,
         uint64                                                          streamSize,
@@ -76,21 +78,20 @@ public:
         ::std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
     );
 
+    // vIndex: 6
     virtual bool canCancelUpload(::FileInfo const&) const = 0;
 
+    // vIndex: 7
     virtual void cancelUpload(::FileInfo const&) = 0;
 
+    // vIndex: 8
     virtual ::UploadError getInitErrorCode() const = 0;
 
+    // vIndex: 9
     virtual float getUploadProgress(::FileInfo const&) const = 0;
 
+    // vIndex: 10
     virtual ::FileChunkInfo getChunkInfo(::FileInfo const& file, int chunkID) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -118,8 +119,6 @@ public:
     );
 
     MCNAPI ::FileChunkInfo $getChunkInfo(::FileInfo const& file, int chunkID) const;
-
-
     // NOLINTEND
 
 public:

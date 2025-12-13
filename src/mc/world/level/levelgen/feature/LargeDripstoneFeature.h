@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class IBlockWorldGenAPI;
 class Random;
 namespace DripstoneUtils { class WindOffsetter; }
@@ -25,28 +25,22 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk1918c4;
-        ::ll::UntypedStorage<1, 1>  mUnk398797;
-        ::ll::UntypedStorage<4, 4>  mUnkb24ebd;
-        ::ll::UntypedStorage<4, 4>  mUnka18da9;
-        ::ll::UntypedStorage<4, 4>  mUnk22ed9f;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mRoot;
+        ::ll::TypedStorage<1, 1, bool const>  mPointingUp;
+        ::ll::TypedStorage<4, 4, int>         mRadius;
+        ::ll::TypedStorage<4, 4, float const> mBluntness;
+        ::ll::TypedStorage<4, 4, float const> mScale;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LargeDripstone& operator=(LargeDripstone const&);
-        LargeDripstone(LargeDripstone const&);
-        LargeDripstone();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(
+        MCAPI bool moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(
             ::IBlockWorldGenAPI&                   target,
             ::DripstoneUtils::WindOffsetter const& wind
         );
 
-        MCNAPI void
+        MCAPI void
         placeBlocks(::IBlockWorldGenAPI& target, ::Random& random, ::DripstoneUtils::WindOffsetter const& wind) const;
         // NOLINTEND
     };
@@ -54,17 +48,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
+    // vIndex: 0
     virtual ~LargeDripstoneFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
-
-
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

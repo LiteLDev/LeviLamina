@@ -34,37 +34,42 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initializeInternal(::Mob& mob, ::NavigationDescription* description) /*override*/;
 
+    // vIndex: 2
     virtual void tick(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
+    // vIndex: 3
     virtual ::Vec3 getTempMobPos(::Mob const& mob) const /*override*/;
 
+    // vIndex: 10
     virtual bool travel(::NavigationComponent& parent, ::Mob& mob, float& xa, float& ya, float& za) /*override*/;
 
+    // vIndex: 11
     virtual bool canUpdatePath(::Mob const& mob) const /*override*/;
 
+    // vIndex: 12
     virtual void updatePath(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
+    // vIndex: 0
     virtual ~WaterBoundPathNavigation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
+    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
 
-    MCNAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
+    MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 
-    MCNAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
+    MCAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
 
-    MCNAPI bool $travel(::NavigationComponent& parent, ::Mob& mob, float& xa, float& ya, float& za);
+    MCAPI bool $travel(::NavigationComponent& parent, ::Mob& mob, float& xa, float& ya, float& za);
 
-    MCNAPI bool $canUpdatePath(::Mob const& mob) const;
+    MCAPI bool $canUpdatePath(::Mob const& mob) const;
 
-    MCNAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
-
-
+    MCAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
     // NOLINTEND
 
 public:

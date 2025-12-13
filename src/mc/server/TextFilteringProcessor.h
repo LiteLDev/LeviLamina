@@ -19,8 +19,10 @@ class TextFilteringProcessor : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TextFilteringProcessor() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::CallbackToken processAnonymousMessages(
         ::IMinecraftEventing*,
         ::TextProcessingEventOrigin,
@@ -32,6 +34,7 @@ public:
         )>
     ) = 0;
 
+    // vIndex: 3
     virtual ::CallbackToken processMessages(
         ::Player const&,
         ::TextProcessingEventOrigin,
@@ -43,6 +46,7 @@ public:
         )>
     ) = 0;
 
+    // vIndex: 2
     virtual ::CallbackToken processMessages(
         ::BlockCommandOrigin const&,
         ::IMinecraftEventing*,
@@ -55,6 +59,7 @@ public:
         )>
     ) = 0;
 
+    // vIndex: 4
     virtual void onStartShutdown() = 0;
     // NOLINTEND
 

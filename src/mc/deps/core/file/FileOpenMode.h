@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit FileOpenMode(::std::string_view spec);
+    MCNAPI explicit FileOpenMode(::std::string_view spec);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::std::string_view spec);
+    MCNAPI void* $ctor(::std::string_view spec);
     // NOLINTEND
 };
 

@@ -20,12 +20,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ServerNetworkEventListener();
 
+    // vIndex: 1
     virtual ::EventResult onEvent(::ServerNetworkGameplayNotificationEvent const&);
 
+    // vIndex: 2
     virtual ::EventResult onMessage(::MessageEvent const&);
 
+    // vIndex: 3
     virtual ::EventResult onDiagnostics(::DiagnosticsEvent const&);
     // NOLINTEND
 
@@ -43,8 +47,6 @@ public:
     MCFOLD ::EventResult $onMessage(::MessageEvent const&);
 
     MCFOLD ::EventResult $onDiagnostics(::DiagnosticsEvent const&);
-
-
     // NOLINTEND
 
 public:

@@ -18,10 +18,12 @@ class FileStorageAreaFetcher : public ::Core::IFileStorageAreaFetcher {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::Core::Result
     getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~FileStorageAreaFetcher() /*override*/ = default;
     // NOLINTEND
 
@@ -30,8 +32,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Core::Result
     $getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path) const;
-
-
     // NOLINTEND
 
 public:

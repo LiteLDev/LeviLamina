@@ -18,28 +18,6 @@ public:
     TelemetryCommonProperties& operator=(TelemetryCommonProperties const&);
     TelemetryCommonProperties(TelemetryCommonProperties const&);
     TelemetryCommonProperties();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C TelemetryCommonProperties(::Webview::TelemetryCommonProperties&&);
-
-    MCNAPI_C ::Webview::TelemetryCommonProperties& operator=(::Webview::TelemetryCommonProperties&&);
-
-    MCNAPI_C ~TelemetryCommonProperties();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Webview::TelemetryCommonProperties&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Webview

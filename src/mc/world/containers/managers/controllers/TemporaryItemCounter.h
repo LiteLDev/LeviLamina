@@ -15,16 +15,4 @@ public:
     TemporaryItemCounter& operator=(TemporaryItemCounter const&);
     TemporaryItemCounter(TemporaryItemCounter const&);
     TemporaryItemCounter();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~TemporaryItemCounter();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

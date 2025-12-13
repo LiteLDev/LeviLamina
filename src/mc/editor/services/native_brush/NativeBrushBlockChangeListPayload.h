@@ -27,18 +27,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~NativeBrushBlockChangeListPayload() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~NativeBrushBlockChangeListPayload() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -22,30 +22,41 @@ class BambooSaplingBlock : public ::FoliageBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
+    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
+    // vIndex: 112
     virtual bool isAuxValueRelevantForPicking() const /*override*/;
 
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    virtual bool isValidAuxValue(int auxValue) const /*override*/;
+    // vIndex: 48
+    virtual bool isValidAuxValue(int value) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 0
     virtual ~BambooSaplingBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -77,11 +88,9 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCAPI bool $isValidAuxValue(int value) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-
     // NOLINTEND
 
 public:

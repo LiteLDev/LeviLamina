@@ -2,11 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/packet/WebSocketPacketData.h"
+
 struct AutomationClientConnectPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkde4774;
+    ::ll::TypedStorage<8, 32, ::WebSocketPacketData> mWebSocketData;
     // NOLINTEND
 
 public:
@@ -18,14 +21,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::AutomationClientConnectPacketPayload& operator=(::AutomationClientConnectPacketPayload&&);
+    MCFOLD ::AutomationClientConnectPacketPayload& operator=(::AutomationClientConnectPacketPayload&&);
 
-    MCNAPI ~AutomationClientConnectPacketPayload();
+    MCAPI ~AutomationClientConnectPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

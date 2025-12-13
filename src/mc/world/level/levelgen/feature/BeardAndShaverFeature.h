@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,35 +17,29 @@ class BeardAndShaverFeature : public ::IFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk8d2f81;
-    ::ll::UntypedStorage<4, 24>  mUnk6fca60;
-    ::ll::UntypedStorage<4, 4>   mUnk7ca8b3;
-    ::ll::UntypedStorage<8, 184> mUnk58a20b;
-    ::ll::UntypedStorage<8, 184> mUnk3dcb6e;
-    ::ll::UntypedStorage<4, 4>   mUnkb90b8b;
-    ::ll::UntypedStorage<4, 4>   mUnk531526;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeatureRef;
+    ::ll::TypedStorage<4, 24, ::BoundingBox>         mBoundingBox;
+    ::ll::TypedStorage<4, 4, float>                  mYDelta;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>    mSurfaceBlock;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>    mSupportBlock;
+    ::ll::TypedStorage<4, 4, float>                  mBeardRaggednessMin;
+    ::ll::TypedStorage<4, 4, float>                  mBeardRaggednessMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BeardAndShaverFeature& operator=(BeardAndShaverFeature const&);
-    BeardAndShaverFeature(BeardAndShaverFeature const&);
-    BeardAndShaverFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BeardAndShaverFeature() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
-
-
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

@@ -12,10 +12,13 @@ class IMessageProducer {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IMessageProducer() = default;
 
+    // vIndex: 1
     virtual void enqueueMessage(::brstd::move_only_function<void()>, ::ServerInstanceMessenger::MessageAction) = 0;
 
+    // vIndex: 2
     virtual void enqueueAndAwaitExecution(
         ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)>,
         ::ServerInstanceMessenger::MessageAction

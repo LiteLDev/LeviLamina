@@ -43,14 +43,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptTickListener() /*override*/;
 
+    // vIndex: 6
     virtual ::EventResult onLevelTickStart(::Level& level) /*override*/;
 
+    // vIndex: 7
     virtual ::EventResult onLevelTickEnd(::Level&) /*override*/;
 
+    // vIndex: 11
     virtual void onScriptTickStart() /*override*/;
 
+    // vIndex: 12
     virtual void onScriptTickEnd() /*override*/;
     // NOLINTEND
 
@@ -96,8 +101,6 @@ public:
     MCNAPI void $onScriptTickStart();
 
     MCNAPI void $onScriptTickEnd();
-
-
     // NOLINTEND
 
 public:

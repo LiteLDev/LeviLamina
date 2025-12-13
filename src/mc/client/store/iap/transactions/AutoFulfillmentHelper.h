@@ -9,24 +9,16 @@ class AutoFulfillmentHelper {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AutoFulfillmentHelper() = default;
 
+    // vIndex: 1
     virtual void execute(::TransactionStatus);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $execute(::TransactionStatus);
-#endif
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

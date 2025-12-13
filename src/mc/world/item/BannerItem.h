@@ -40,15 +40,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 123
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
+    // vIndex: 90
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
+    // vIndex: 43
     virtual ::Rarity getRarity(::ItemStackBase const& stack) const /*override*/;
 
+    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -56,12 +60,16 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
+    // vIndex: 46
     virtual bool isWearableThroughLootTable(::CompoundTag const* userData) const /*override*/;
 
-    virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
+    // vIndex: 100
+    virtual void fixupCommon(::ItemStackBase& item) const /*override*/;
 
+    // vIndex: 0
     virtual ~BannerItem() /*override*/ = default;
     // NOLINTEND
 
@@ -94,9 +102,7 @@ public:
 
     MCAPI bool $isWearableThroughLootTable(::CompoundTag const* userData) const;
 
-    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
-
-
+    MCAPI void $fixupCommon(::ItemStackBase& item) const;
     // NOLINTEND
 
 public:

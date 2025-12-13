@@ -42,41 +42,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::optional<::br::worldgen::GenerationStub>
     findValidGenerationPoint(::br::worldgen::GenerationContext& context) const /*override*/;
 
+    // vIndex: 0
     virtual ~JigsawStructure() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JigsawStructure();
+    MCAPI JigsawStructure();
 
-    MCNAPI JigsawStructure(::br::worldgen::JigsawStructure&&);
+    MCAPI JigsawStructure(::br::worldgen::JigsawStructure&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::br::worldgen::JigsawStructure&&);
+    MCAPI void* $ctor(::br::worldgen::JigsawStructure&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::br::worldgen::GenerationStub>
+    MCAPI ::std::optional<::br::worldgen::GenerationStub>
     $findValidGenerationPoint(::br::worldgen::GenerationContext& context) const;
-
-
     // NOLINTEND
 
 public:

@@ -26,25 +26,25 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static float getContinents(::TerrainShaper::Point const& point);
+        MCFOLD static float getContinents(::TerrainShaper::Point const& point);
 
-        MCNAPI static float getErosion(::TerrainShaper::Point const& point);
+        MCAPI static float getErosion(::TerrainShaper::Point const& point);
 
-        MCNAPI static float getRidges(::TerrainShaper::Point const& point);
+        MCFOLD static float getRidges(::TerrainShaper::Point const& point);
 
-        MCNAPI static float getWeirdness(::TerrainShaper::Point const& point);
+        MCFOLD static float getWeirdness(::TerrainShaper::Point const& point);
         // NOLINTEND
 
     public:
         // static variables
         // NOLINTBEGIN
-        MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>& CONTINENTS_EXTRACTOR();
+        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& CONTINENTS_EXTRACTOR();
 
-        MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>& EROSION_EXTRACTOR();
+        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& EROSION_EXTRACTOR();
 
-        MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>& RIDGES_EXTRACTOR();
+        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& RIDGES_EXTRACTOR();
 
-        MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>& WEIRDNESS_EXTRACTOR();
+        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& WEIRDNESS_EXTRACTOR();
         // NOLINTEND
     };
 
@@ -66,30 +66,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TerrainShaper(::TerrainShaper const&);
+    MCAPI TerrainShaper(::TerrainShaper const&);
 
-    MCNAPI TerrainShaper(
+    MCAPI TerrainShaper(
         ::ToFloatFunction<::TerrainShaper::Point> offsetSpline,
         ::ToFloatFunction<::TerrainShaper::Point> factorSpline,
         ::ToFloatFunction<::TerrainShaper::Point> jaggednessSpline
     );
 
-    MCNAPI float offset(float continentalness, float erosion, float weirdness) const;
+    MCAPI float offset(float continentalness, float erosion, float weirdness) const;
 
-    MCNAPI ~TerrainShaper();
+    MCAPI ~TerrainShaper();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionJaggednessSpline(
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionJaggednessSpline(
         float jaggednessFactorAtPeakRidgeAndErosionIndex0,
         float jaggednessFactorAtPeakRidgeAndErosionIndex1,
         float jaggednessFactorAtHighRidgeAndErosionIndex0,
         float jaggednessFactorAtHighRidgeAndErosionIndex1
     );
 
-    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionOffsetSpline(
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionOffsetSpline(
         ::std::string const& name,
         float                lowValley,
         float                hill,
@@ -101,19 +101,19 @@ public:
         bool                 saddle
     );
 
-    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point>
     buildMountainRidgeSplineWithPoints(float modulation, bool saddle);
 
-    MCNAPI static ::TerrainShaper buildOverworld();
+    MCAPI static ::TerrainShaper buildOverworld();
 
-    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point>
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point>
     buildRidgeJaggednessSpline(float jaggednessFactorAtPeakRidge, float jaggednessFactorAtHighRidge);
 
-    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point> buildWeirdnessJaggednessSpline(float jaggednessFactor);
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> buildWeirdnessJaggednessSpline(float jaggednessFactor);
 
-    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point> getErosionFactor(float baseValue, bool shatteredTerrain);
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> getErosionFactor(float baseValue, bool shatteredTerrain);
 
-    MCNAPI static ::ToFloatFunction<::TerrainShaper::Point> ridgeSpline(
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> ridgeSpline(
         ::std::string const& name,
         float                valley,
         float                low,
@@ -127,9 +127,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::TerrainShaper const&);
+    MCAPI void* $ctor(::TerrainShaper const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ToFloatFunction<::TerrainShaper::Point> offsetSpline,
         ::ToFloatFunction<::TerrainShaper::Point> factorSpline,
         ::ToFloatFunction<::TerrainShaper::Point> jaggednessSpline
@@ -139,6 +139,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

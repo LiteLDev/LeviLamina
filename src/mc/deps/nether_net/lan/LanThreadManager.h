@@ -5,9 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
 #include "mc/deps/nether_net/ILanDiscovery.h"
-#include "mc/deps/nether_net/NetworkID.h"
 #include "mc/deps/nether_net/lan/Controller.h"
-#include "mc/external/rtc/IPAddress.h"
 #include "mc/external/rtc/Thread.h"
 #include "mc/external/sigslot/has_slots.h"
 #include "mc/external/sigslot/single_threaded.h"
@@ -17,6 +15,7 @@
 namespace Bedrock::PubSub { class Subscription; }
 namespace NetherNet { struct DiscoveryResponsePacket; }
 namespace NetherNet { struct ILanEventHandler; }
+namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct ThreadInit; }
 namespace rtc { class AsyncPacketSocket; }
 namespace rtc { class ReceivedPacket; }
@@ -56,31 +55,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ~LanThreadManager() /*override*/;
 
+    // vIndex: 6
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler* handler) /*override*/;
 
+    // vIndex: 0
     virtual bool IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID id) /*override*/;
 
+    // vIndex: 2
     virtual void EnableBroadcastDiscovery(::NetherNet::NetworkID id) /*override*/;
 
+    // vIndex: 1
     virtual void DisableBroadcastDiscovery(::NetherNet::NetworkID id) /*override*/;
 
+    // vIndex: 4
     virtual void SendLanBroadcastResponse(
         ::rtc::SocketAddress const&                 destination,
         ::NetherNet::DiscoveryResponsePacket const& packet
     ) /*override*/;
 
+    // vIndex: 5
     virtual void SendSignalingMessageTo(
         ::NetherNet::NetworkID networkIdFrom,
         ::NetherNet::NetworkID networkIdTo,
         ::std::string const&   message
     ) /*override*/;
 
+    // vIndex: 3
     virtual bool IsNetworkIdOnLan(::NetherNet::NetworkID networkId) /*override*/;
 
+    // vIndex: 7
     virtual void Suspend() /*override*/;
 
+    // vIndex: 8
     virtual void Resume() /*override*/;
     // NOLINTEND
 
@@ -167,8 +176,6 @@ public:
     MCNAPI void $Suspend();
 
     MCNAPI void $Resume();
-
-
     // NOLINTEND
 
 public:

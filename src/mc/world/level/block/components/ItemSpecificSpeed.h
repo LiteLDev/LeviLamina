@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/ItemDescriptor.h"
+
 struct ItemSpecificSpeed {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk313ad1;
-    ::ll::UntypedStorage<4, 4>  mUnke75603;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor> mItem;
+    ::ll::TypedStorage<4, 4, float>             mBlockDestroySpeed;
     // NOLINTEND
 
 public:
@@ -17,22 +20,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemSpecificSpeed(::ItemSpecificSpeed const&);
+    MCAPI ItemSpecificSpeed(::ItemSpecificSpeed const&);
 
-    MCNAPI ::ItemSpecificSpeed& operator=(::ItemSpecificSpeed const&);
+    MCFOLD ::ItemSpecificSpeed& operator=(::ItemSpecificSpeed const&);
 
-    MCNAPI ~ItemSpecificSpeed();
+    MCAPI ~ItemSpecificSpeed();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemSpecificSpeed const&);
+    MCFOLD void* $ctor(::ItemSpecificSpeed const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

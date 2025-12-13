@@ -33,13 +33,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ApplicationDataStores() /*override*/;
 
+    // vIndex: 1
     virtual void init() /*override*/;
 
+    // vIndex: 3
     virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
     getDataStore(::Bedrock::IApplicationDataStores::DataStores which) /*override*/;
 
+    // vIndex: 2
     virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
     getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const /*override*/;
     // NOLINTEND
@@ -74,8 +78,6 @@ public:
 
     MCNAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
     $getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
-
-
     // NOLINTEND
 
 public:

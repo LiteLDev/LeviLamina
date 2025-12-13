@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/input/InputMode.h"
 #include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
@@ -12,14 +11,10 @@ class AnimatedImageData;
 class MinEngineVersion;
 class MinecraftServiceKeyManager;
 class SerializedPersonaPieceHandle;
-class SerializedSkin;
 class TintMapColor;
 class WebToken;
-struct SubClientAuthInfo;
-struct SyncedClientOptionsComponent;
 namespace Json { class Value; }
 namespace mce { class Color; }
-namespace mce { struct Image; }
 // clang-format on
 
 class SubClientConnectionRequest {
@@ -112,26 +107,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::SubClientConnectionRequest create(
-        ::SubClientAuthInfo const&            authInfo,
-        ::std::string const&                  deviceId,
-        ::std::string const&                  selfSignedId,
-        uint64                                clientRandomId,
-        ::std::string const&                  platformId,
-        ::std::string const&                  skinId,
-        ::mce::Image const&                   skinData,
-        ::mce::Image const&                   capeData,
-        ::SerializedSkin const&               serializedSkin,
-        ::InputMode                           currentInputMode,
-        ::std::string const&                  thirdPartyName,
-        ::std::string const&                  platformOnlineId,
-        ::std::string const&                  platformOfflineId,
-        ::std::string const&                  capeId,
-        bool                                  isPrimaryUser,
-        bool                                  compatibleWithClientSideChunkGen,
-        ::SyncedClientOptionsComponent const& options
-    );
-
     MCNAPI static ::SubClientConnectionRequest fromString(::std::string const& str);
     // NOLINTEND
 

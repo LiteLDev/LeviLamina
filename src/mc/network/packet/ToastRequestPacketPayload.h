@@ -6,8 +6,8 @@ struct ToastRequestPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk9e7824;
-    ::ll::UntypedStorage<8, 32> mUnkba5c75;
+    ::ll::TypedStorage<8, 32, ::std::string> mTitle;
+    ::ll::TypedStorage<8, 32, ::std::string> mContent;
     // NOLINTEND
 
 public:
@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ToastRequestPacketPayload& operator=(::ToastRequestPacketPayload&&);
+    MCFOLD ::ToastRequestPacketPayload& operator=(::ToastRequestPacketPayload&&);
 
-    MCNAPI ~ToastRequestPacketPayload();
+    MCAPI ~ToastRequestPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

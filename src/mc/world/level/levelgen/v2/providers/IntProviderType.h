@@ -11,12 +11,16 @@ struct IntProviderType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IntProviderType() = default;
 
+    // vIndex: 1
     virtual int sample(::IRandom&) const = 0;
 
+    // vIndex: 2
     virtual int maxValue() const = 0;
 
+    // vIndex: 3
     virtual int minValue() const = 0;
     // NOLINTEND
 

@@ -29,11 +29,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void
     fillPackAssociations(::std::vector<::gsl::not_null<::PackCommand::PackAssociations*>>& packs) /*override*/;
 
+    // vIndex: 2
     virtual void removePacks(::std::vector<::gsl::not_null<::Pack const*>> const& packs) /*override*/;
 
+    // vIndex: 0
     virtual ~RepositoryImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -43,8 +46,6 @@ public:
     MCNAPI void $fillPackAssociations(::std::vector<::gsl::not_null<::PackCommand::PackAssociations*>>& packs);
 
     MCNAPI void $removePacks(::std::vector<::gsl::not_null<::Pack const*>> const& packs);
-
-
     // NOLINTEND
 
 public:

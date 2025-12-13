@@ -24,10 +24,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void serialize(::Json::Value& root) /*override*/;
 
+    // vIndex: 2
     virtual void deserialize(::Json::Value& root) /*override*/;
 
+    // vIndex: 0
     virtual ~AllowListEntry() /*override*/;
     // NOLINTEND
 
@@ -43,8 +46,6 @@ public:
     MCNAPI void $serialize(::Json::Value& root);
 
     MCNAPI void $deserialize(::Json::Value& root);
-
-
     // NOLINTEND
 
 public:

@@ -2,13 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/resources/MinEngineVersion.h"
+
+// auto generated forward declare list
+// clang-format off
+class IWorldRegistriesProvider;
+class ResourcePackManager;
+// clang-format on
+
 struct FeatureParserContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk19a66b;
-    ::ll::UntypedStorage<8, 8>  mUnkc286ce;
-    ::ll::UntypedStorage<8, 32> mUnk1a0f48;
+    ::ll::TypedStorage<8, 8, ::IWorldRegistriesProvider&>  mLookupProvider;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager const&> mRpm;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion>          mMinEngineVersion;
     // NOLINTEND
 
 public:

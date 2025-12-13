@@ -16,6 +16,7 @@ class ScriptDiagnosticsModuleFactory : public ::Scripting::GenericModuleBindingF
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptDiagnosticsModuleFactory() /*override*/ = default;
     // NOLINTEND
 

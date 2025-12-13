@@ -25,10 +25,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context) /*override*/;
 
+    // vIndex: 2
     virtual void notify(int64 type, ::AttributeModificationContext& context) /*override*/;
 
+    // vIndex: 0
     virtual ~HungerAttributeDelegate() /*override*/ = default;
     // NOLINTEND
 
@@ -44,8 +47,6 @@ public:
     MCAPI void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
 
     MCAPI void $notify(int64 type, ::AttributeModificationContext& context);
-
-
     // NOLINTEND
 
 public:

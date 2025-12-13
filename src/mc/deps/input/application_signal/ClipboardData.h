@@ -16,18 +16,6 @@ public:
     ClipboardData& operator=(ClipboardData const&);
     ClipboardData(ClipboardData const&);
     ClipboardData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ClipboardData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ApplicationSignal

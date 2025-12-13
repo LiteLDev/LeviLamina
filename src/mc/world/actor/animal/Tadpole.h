@@ -22,11 +22,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 8
     virtual ~Tadpole() /*override*/ = default;
     // NOLINTEND
 
@@ -56,8 +59,6 @@ public:
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI float $getShadowRadius() const;
-
-
     // NOLINTEND
 
 public:

@@ -24,26 +24,35 @@ class CandleBlock : public ::AbstractCandleBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
+    // vIndex: 22
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
+    // vIndex: 146
     virtual int _getNumCandles(::Block const& block) const /*override*/;
 
+    // vIndex: 147
     virtual void _iterateCandles(
         ::Block const&                            block,
         ::BlockPos const&                         pos,
         ::std::function<void(::Vec3 const&, int)> callback
     ) const /*override*/;
 
+    // vIndex: 148
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 0
     virtual ~CandleBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -82,12 +91,6 @@ public:
     MCAPI void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-#ifdef LL_PLAT_C
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
-#endif
-
-
     // NOLINTEND
 
 public:

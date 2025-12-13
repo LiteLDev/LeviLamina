@@ -11,8 +11,10 @@ class NetworkStatePredictor {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetworkStatePredictor() = default;
 
+    // vIndex: 1
     virtual ::webrtc::BandwidthUsage Update(int64, int64, ::webrtc::BandwidthUsage) = 0;
     // NOLINTEND
 

@@ -24,15 +24,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 8
     virtual ~Vex() /*override*/ = default;
     // NOLINTEND
 
@@ -65,8 +70,6 @@ public:
     MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCFOLD void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-
     // NOLINTEND
 
 public:

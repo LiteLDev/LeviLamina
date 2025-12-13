@@ -20,8 +20,10 @@ class DataStoreServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DataStoreServiceProvider() = default;
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> dispatchEvent(
         ::HashedString const&,
         ::Editor::DataStore::EventType,
@@ -29,8 +31,10 @@ public:
         ::Editor::DataStore::PayloadDescription const&
     ) = 0;
 
+    // vIndex: 2
     virtual ::Json::Value getPayload(::HashedString const&, ::Editor::DataStore::PayloadDescription const&) const = 0;
 
+    // vIndex: 3
     virtual ::Bedrock::PubSub::Subscription listenForEvent(
         ::std::function<void(
             ::HashedString const&,

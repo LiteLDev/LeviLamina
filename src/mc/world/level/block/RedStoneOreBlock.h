@@ -30,22 +30,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 94
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 133
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
+    // vIndex: 46
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
+    // vIndex: 146
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 
+    // vIndex: 147
     virtual void _unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~RedStoneOreBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -77,8 +86,6 @@ public:
     MCAPI void $_unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

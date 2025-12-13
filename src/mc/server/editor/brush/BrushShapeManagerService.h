@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/BrushFlattenMode.h"
 #include "mc/common/editor/DirectionalPlacementMode.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
-#include "mc/editor/services/native_brush/BrushFlattenMode.h"
 #include "mc/editor/services/native_brush/BrushPaintCompletionState.h"
 #include "mc/editor/services/native_brush/BrushPaintMode.h"
 #include "mc/server/editor/serviceproviders/BrushShapeManagerServiceProvider.h"
@@ -56,75 +56,108 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BrushShapeManagerService() /*override*/;
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
+    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
+    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
+    // vIndex: 1
     virtual ::Editor::RelativeVolumeListBlockVolume const& getCurrentBrushVolume() const /*override*/;
 
+    // vIndex: 2
     virtual void activateBrushTool() /*override*/;
 
+    // vIndex: 3
     virtual void switchBrushPaintMode(::Editor::Brush::BrushPaintMode mode) /*override*/;
 
+    // vIndex: 5
     virtual void setBrushShape(::std::vector<::Vec3> const& shapeOffsets) /*override*/;
 
+    // vIndex: 4
     virtual void setBrushShape(::Editor::RelativeVolumeListBlockVolume const& volume) /*override*/;
 
+    // vIndex: 6
     virtual void setBrushMask(::Editor::BlockMask::BlockMaskList const& mask) /*override*/;
 
+    // vIndex: 7
     virtual void
     beginPainting(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback) /*override*/;
 
+    // vIndex: 8
     virtual void endPainting(bool const cancelled) /*override*/;
 
+    // vIndex: 9
     virtual void singlePaint(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback) /*override*/;
 
+    // vIndex: 10
     virtual void deactivateBrushTool() /*override*/;
 
+    // vIndex: 11
     virtual void setBrushShapeOffset(::Vec3 const& offset) /*override*/;
 
+    // vIndex: 12
     virtual ::Vec3 getBrushShapeOffset() const /*override*/;
 
+    // vIndex: 13
     virtual void setTerrainStrength(int const terrainStrength) /*override*/;
 
+    // vIndex: 14
     virtual void setFlattenMode(::Editor::Brush::BrushFlattenMode flattenMode) /*override*/;
 
+    // vIndex: 15
     virtual void setFlattenSmoothing(int const flattenSmoothing) /*override*/;
 
+    // vIndex: 16
     virtual void setFloorBlockOverride(bool const floorBlockOverride) /*override*/;
 
+    // vIndex: 17
     virtual void setBrushShapeVisible(bool const visible) /*override*/;
 
+    // vIndex: 18
     virtual bool isBusy() /*override*/;
 
+    // vIndex: 19
     virtual void
     setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode directionalPlacementMode) /*override*/;
 
+    // vIndex: 20
     virtual ::Editor::Brush::DirectionalPlacementMode getDirectionalPlacementMode() const /*override*/;
 
+    // vIndex: 21
     virtual void setInverseEraseMode(bool const inverseErase) /*override*/;
 
+    // vIndex: 22
     virtual bool getInverseEraseMode() const /*override*/;
 
+    // vIndex: 23
     virtual void setItemPlacement(::HashedString const& itemName) /*override*/;
 
+    // vIndex: 24
     virtual ::HashedString const& getItemPlacement() const /*override*/;
 
+    // vIndex: 25
     virtual bool const isItemPlacementActive() const /*override*/;
 
+    // vIndex: 26
     virtual void pushBlockStateOverride(
         ::HashedString const&                           stateName,
         ::std::variant<int, ::std::string, bool> const& stateValue
     ) /*override*/;
 
+    // vIndex: 27
     virtual void clearBlockStateOverrides() /*override*/;
 
+    // vIndex: 28
     virtual void setBlockFacePlacementBasedOnCamera(bool const enable) /*override*/;
     // NOLINTEND
 
@@ -213,8 +246,6 @@ public:
     MCNAPI void $clearBlockStateOverrides();
 
     MCNAPI void $setBlockFacePlacementBasedOnCamera(bool const enable);
-
-
     // NOLINTEND
 
 public:

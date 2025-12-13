@@ -25,8 +25,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual void OnSetVolume(double) = 0;
 
+        // vIndex: 1
         virtual ~AudioObserver();
         // NOLINTEND
 
@@ -52,18 +54,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual void SetVolume(double volume);
 
+    // vIndex: 6
     virtual void RegisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver* observer);
 
+    // vIndex: 7
     virtual void UnregisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver* observer);
 
+    // vIndex: 8
     virtual void AddSink(::webrtc::AudioTrackSinkInterface* sink);
 
+    // vIndex: 9
     virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* sink);
 
+    // vIndex: 10
     virtual ::cricket::AudioOptions const options() const;
 
+    // vIndex: 2
     virtual ~AudioSourceInterface() /*override*/;
     // NOLINTEND
 
@@ -87,8 +96,6 @@ public:
     MCNAPI void $RemoveSink(::webrtc::AudioTrackSinkInterface* sink);
 
     MCNAPI ::cricket::AudioOptions const $options() const;
-
-
     // NOLINTEND
 };
 

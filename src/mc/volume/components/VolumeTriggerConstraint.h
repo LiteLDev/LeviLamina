@@ -14,8 +14,10 @@ class VolumeTriggerConstraint : public ::cereal::ConstraintHandle<::VolumeTrigge
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
+    // vIndex: 1
     virtual ~VolumeTriggerConstraint() /*override*/ = default;
     // NOLINTEND
 

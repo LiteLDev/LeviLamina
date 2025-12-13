@@ -6,7 +6,6 @@
 // clang-format off
 class CompoundTag;
 class DefinitionInstanceGroup;
-class HashedString;
 // clang-format on
 
 class ComponentNetRelevancyRegistry {
@@ -31,28 +30,6 @@ public:
         NetSerializationCallbacks& operator=(NetSerializationCallbacks const&);
         NetSerializationCallbacks(NetSerializationCallbacks const&);
         NetSerializationCallbacks();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C NetSerializationCallbacks(::ComponentNetRelevancyRegistry::NetSerializationCallbacks&&);
-
-        MCNAPI_C ::ComponentNetRelevancyRegistry::NetSerializationCallbacks& setNeverClientSide();
-
-        MCNAPI_C ~NetSerializationCallbacks();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI_C void* $ctor(::ComponentNetRelevancyRegistry::NetSerializationCallbacks&&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -70,20 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::ComponentNetRelevancyRegistry::NetSerializationCallbacks& registerNetSerialization(
-        ::HashedString const&                                                   definitionName,
-        ::std::function<bool(::DefinitionInstanceGroup const&, ::CompoundTag&)> serializationCallback
-    );
-
     MCNAPI bool
     serializeComponentDefinitionsForClient(::DefinitionInstanceGroup const& definitionGroup, ::CompoundTag& tag) const;
-
-    MCNAPI_C ~ComponentNetRelevancyRegistry();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
     // NOLINTEND
 };

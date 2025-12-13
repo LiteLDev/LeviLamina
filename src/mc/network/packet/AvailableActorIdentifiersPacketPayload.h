@@ -2,28 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActorInfo;
+// clang-format on
+
 struct AvailableActorIdentifiersPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbb385d;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorInfo>> mIdentifierList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AvailableActorIdentifiersPacketPayload& operator=(AvailableActorIdentifiersPacketPayload const&);
-    AvailableActorIdentifiersPacketPayload(AvailableActorIdentifiersPacketPayload const&);
-    AvailableActorIdentifiersPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~AvailableActorIdentifiersPacketPayload();
+    MCAPI ~AvailableActorIdentifiersPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

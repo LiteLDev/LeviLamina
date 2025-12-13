@@ -25,58 +25,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar> destination) /*override*/;
+    // vIndex: 1
+    virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar>) /*override*/;
 
+    // vIndex: 2
     virtual uint64 getSize() /*override*/;
 
+    // vIndex: 3
     virtual void cancel() /*override*/;
 
+    // vIndex: 4
     virtual ::std::string const& getLoggableSource() const /*override*/;
 
+    // vIndex: 5
     virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
 
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~FileRequestBody() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~FileRequestBody() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C bool _lazyOpenFileHandle();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::Http::Internal::IRequestBody::ReadResult $read(::gsl::span<uchar> destination);
 
-    MCNAPI uint64 $getSize();
-
-    MCNAPI void $cancel();
-
-    MCNAPI ::std::string const& $getLoggableSource() const;
-
-    MCNAPI ::gsl::span<uchar const> $getLoggableData() const;
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

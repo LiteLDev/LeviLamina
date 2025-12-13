@@ -24,8 +24,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FecHeaderReader();
 
+    // vIndex: 1
     virtual bool ReadFecHeader(::webrtc::ForwardErrorCorrection::ReceivedFecPacket*) const = 0;
     // NOLINTEND
 

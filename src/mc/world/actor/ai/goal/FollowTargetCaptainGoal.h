@@ -16,43 +16,48 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 6
     virtual void tick() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 5
     virtual void stop() /*override*/;
 
+    // vIndex: 0
     virtual ~FollowTargetCaptainGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _determineMovePos();
+    MCAPI void _determineMovePos();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $stop();
-
-
+    MCFOLD void $stop();
     // NOLINTEND
 
 public:

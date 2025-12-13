@@ -15,10 +15,13 @@ class Villager : public ::VillagerBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 102
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
+    // vIndex: 8
     virtual ~Villager() /*override*/ = default;
     // NOLINTEND
 
@@ -28,8 +31,6 @@ public:
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $buildDebugInfo(::std::string& out) const;
-
-
     // NOLINTEND
 
 public:

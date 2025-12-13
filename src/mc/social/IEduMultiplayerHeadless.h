@@ -33,25 +33,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void hostServer();
 
-    virtual ::Social::EduJoinerResponse
-    tryAcceptJoiner(::std::string const& sessionToken, ::std::string const& joinerToHostNonce);
+    // vIndex: 2
+    virtual ::Social::EduJoinerResponse tryAcceptJoiner(::std::string const&, ::std::string const&);
 
-    virtual ::std::string getHostToJoinerNonce(::std::string const& sessionToken) const;
+    // vIndex: 3
+    virtual ::std::string getHostToJoinerNonce(::std::string const&) const;
 
+    // vIndex: 4
     virtual ::Bedrock::Threading::Async<void> onNextFetchJoiners();
 
+    // vIndex: 5
     virtual ::Bedrock::Threading::Async<::Social::EduFetchServersResponse> requestBroadcastedServers();
 
+    // vIndex: 6
     virtual ::Bedrock::Threading::Async<::Social::EduFetchServersResponse>
     requestServerInfo(::std::vector<::std::string> const&);
 
+    // vIndex: 7
     virtual ::Bedrock::Threading::Async<::Social::EduAddServerResponse> requestAddServer(::std::string const&);
 
+    // vIndex: 8
     virtual ::Bedrock::Threading::Async<::Social::EduJoinServerResponse>
     requestJoinServer(::std::string const&, ::std::string const&);
 
+    // vIndex: 9
     virtual void saveCachedServersToDisk(
         ::brstd::flat_map<
             ::std::string,
@@ -61,6 +69,7 @@ public:
             ::std::vector<::Social::EduDedicatedServerDetails>> const&
     );
 
+    // vIndex: 10
     virtual ::brstd::flat_map<
         ::std::string,
         ::Social::EduDedicatedServerDetails,
@@ -69,24 +78,17 @@ public:
         ::std::vector<::Social::EduDedicatedServerDetails>>
     loadCachedServersFromDisk();
 
+    // vIndex: 11
     virtual ::Social::EduHeadlessConnectionHandshake getHandshake() const;
 
+    // vIndex: 12
     virtual ::std::string getHostIp() const;
 
+    // vIndex: 13
     virtual int getHostPort() const;
 
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~IEduMultiplayerHeadless() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~IEduMultiplayerHeadless() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::string const& getServicesEndpoint();
     // NOLINTEND
 
 public:
@@ -96,25 +98,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $hostServer();
-
-    MCNAPI ::Social::EduJoinerResponse
-    $tryAcceptJoiner(::std::string const& sessionToken, ::std::string const& joinerToHostNonce);
-
-    MCNAPI ::std::string $getHostToJoinerNonce(::std::string const& sessionToken) const;
-
-    MCNAPI ::Bedrock::Threading::Async<void> $onNextFetchJoiners();
-#endif
-
 
     // NOLINTEND
 };

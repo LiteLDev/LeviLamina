@@ -11,6 +11,7 @@ class ScriptCustomComponentRegistry : public ::ScriptModuleMinecraft::ScriptServ
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptCustomComponentRegistry() /*override*/;
     // NOLINTEND
 

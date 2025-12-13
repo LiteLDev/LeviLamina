@@ -26,6 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PlatformThread();
     // NOLINTEND
 

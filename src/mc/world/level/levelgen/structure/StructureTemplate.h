@@ -20,10 +20,8 @@ class BlockSource;
 class BoundingBox;
 class CompoundTag;
 class DataLoadHelper;
-class Dimension;
 class IUnknownBlockTypeRegistry;
 class JigsawStructureBlockInfo;
-class LevelChunk;
 class StructureAnimationData;
 class StructureBlockPalette;
 class StructureSettings;
@@ -54,27 +52,38 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StructureTemplate() /*override*/;
 
+    // vIndex: 4
     virtual bool load(::CompoundTag const& tag);
 
+    // vIndex: 5
     virtual ::std::unique_ptr<::CompoundTag> save() const;
 
+    // vIndex: 6
     virtual void clear();
 
+    // vIndex: 7
     virtual ::BoundingBox
     getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
 
+    // vIndex: 8
     virtual void fillEmpty(::BlockPos const& size);
 
+    // vIndex: 3
     virtual ::NeighborAwareBlockUpdateType shouldHandleUpgradeForBlock(::Block const& block) const /*override*/;
 
+    // vIndex: 9
     virtual bool _allowReadBlock(::BlockPos const&, ::Block const& block) const;
 
+    // vIndex: 10
     virtual bool _allowReadActor(::Actor const& actor) const;
 
+    // vIndex: 2
     virtual ::BlockPos rawSize() const /*override*/;
 
+    // vIndex: 1
     virtual ::br::worldgen::StructureTemplateBlockPalette randomPalette(::BlockPos randomPosSeed) const /*override*/;
     // NOLINTEND
 
@@ -183,13 +192,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Block const& _mapToRotation(::Block const& curr, ::Rotation rotation);
-
-    MCAPI_C static ::std::vector<::std::unique_ptr<::LevelChunk>> constructTransformedLevelChunks(
-        ::Dimension&                                            targetDimension,
-        ::StructureSettings const&                              settings,
-        ::StructureTemplateData const&                          structureTemplateData,
-        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockRegistry
-    );
     // NOLINTEND
 
 public:
@@ -243,8 +245,6 @@ public:
     MCAPI ::BlockPos $rawSize() const;
 
     MCAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos randomPosSeed) const;
-
-
     // NOLINTEND
 
 public:

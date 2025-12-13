@@ -21,16 +21,4 @@ public:
     CraftingSessionInfo& operator=(CraftingSessionInfo const&);
     CraftingSessionInfo(CraftingSessionInfo const&);
     CraftingSessionInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~CraftingSessionInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

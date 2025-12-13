@@ -35,21 +35,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::WSConnectionResult connect(::std::string const& uri) /*override*/;
 
+    // vIndex: 2
     virtual ::WSConnectionResult
     connect(::std::string const& uri, ::std::vector<::std::string> const& subProtocols) /*override*/;
 
+    // vIndex: 7
     virtual void tick() /*override*/;
 
+    // vIndex: 4
     virtual void
     setOnMessageReceivedHandler(::std::function<void(::RakWebSocketDataFrame const&)> const& handler) /*override*/;
 
+    // vIndex: 5
     virtual void
     setOnCloseHandler(::std::function<void(::CloseStatusCode, ::std::string const&)> const& handler) /*override*/;
 
+    // vIndex: 6
     virtual void setOnConnectedHandler(::std::function<void(::std::string const&)> const& handler) /*override*/;
 
+    // vIndex: 0
     virtual ~RetryingRakWebSocketClient() /*override*/ = default;
     // NOLINTEND
 

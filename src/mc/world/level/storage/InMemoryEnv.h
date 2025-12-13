@@ -23,25 +23,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~InMemoryEnv() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::leveldb::Status NewSequentialFile(::std::string const& f, ::leveldb::SequentialFile** r) /*override*/;
 
+    // vIndex: 2
     virtual ::leveldb::Status NewRandomAccessFile(::std::string const& f, ::leveldb::RandomAccessFile** r) /*override*/;
 
+    // vIndex: 3
     virtual ::leveldb::Status NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r) /*override*/;
 
+    // vIndex: 4
     virtual ::leveldb::Status
     NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
 
+    // vIndex: 7
     virtual ::leveldb::Status RemoveFile(::std::string const& fname) /*override*/;
 
+    // vIndex: 13
     virtual ::leveldb::Status RenameFile(::std::string const& from, ::std::string const& to) /*override*/;
 
+    // vIndex: 5
     virtual bool FileExists(::std::string const& f) /*override*/;
 
+    // vIndex: 6
     virtual ::leveldb::Status GetChildren(::std::string const& dir, ::std::vector<::std::string>* r) /*override*/;
 
+    // vIndex: 22
     virtual void flushToPermanentStorage() /*override*/;
     // NOLINTEND
 
@@ -71,8 +81,6 @@ public:
     MCNAPI ::leveldb::Status $GetChildren(::std::string const& dir, ::std::vector<::std::string>* r);
 
     MCNAPI void $flushToPermanentStorage();
-
-
     // NOLINTEND
 
 public:

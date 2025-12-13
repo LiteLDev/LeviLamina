@@ -16,21 +16,17 @@ class ScaleDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkb9d5d8;
-    ::ll::UntypedStorage<4, 4> mUnka81736;
+    ::ll::TypedStorage<2, 2, ushort const> mInput;
+    ::ll::TypedStorage<4, 4, float const>  mScale;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScaleDensityCalculator& operator=(ScaleDensityCalculator const&);
-    ScaleDensityCalculator(ScaleDensityCalculator const&);
-    ScaleDensityCalculator();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScaleDensityCalculator() /*override*/ = default;
 
+    // vIndex: 1
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
     // NOLINTEND
 

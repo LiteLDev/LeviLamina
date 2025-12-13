@@ -22,6 +22,7 @@ class HangingRootsBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
@@ -29,15 +30,20 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~HangingRootsBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -64,8 +70,6 @@ public:
     MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

@@ -27,10 +27,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::unique_ptr<::IRandom> forBlockPos(::BlockPos const& blockPos) const /*override*/;
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::IRandom> forString(::std::string const& string) const /*override*/;
 
+    // vIndex: 0
     virtual ~SimplePositionalRandomFactory() /*override*/ = default;
     // NOLINTEND
 
@@ -40,8 +43,6 @@ public:
     MCNAPI ::std::unique_ptr<::IRandom> $forBlockPos(::BlockPos const& blockPos) const;
 
     MCNAPI ::std::unique_ptr<::IRandom> $forString(::std::string const& string) const;
-
-
     // NOLINTEND
 
 public:

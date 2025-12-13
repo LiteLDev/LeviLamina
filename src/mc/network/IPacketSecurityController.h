@@ -23,6 +23,7 @@ class IPacketSecurityController
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::PacketViolationResponse checkForViolation(
         ::MinecraftPacketIds,
         ::SubClientId,
@@ -30,12 +31,16 @@ public:
         bool*
     ) = 0;
 
+    // vIndex: 2
     virtual uint getTelemetryData() = 0;
 
+    // vIndex: 3
     virtual ::Bedrock::ErrorInfo<::std::error_code> consumePacketError(::SubClientId) = 0;
 
+    // vIndex: 4
     virtual void reloadPacketLimitConfig(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder>) = 0;
 
+    // vIndex: 0
     virtual ~IPacketSecurityController() /*override*/;
     // NOLINTEND
 

@@ -37,12 +37,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~VideoDecoderFactory() = default;
 
+    // vIndex: 1
     virtual ::std::vector<::webrtc::SdpVideoFormat> GetSupportedFormats() const = 0;
 
+    // vIndex: 2
     virtual ::webrtc::VideoDecoderFactory::CodecSupport QueryCodecSupport(::webrtc::SdpVideoFormat const&, bool) const;
 
+    // vIndex: 3
     virtual ::std::unique_ptr<::webrtc::VideoDecoder>
     Create(::webrtc::Environment const&, ::webrtc::SdpVideoFormat const&) = 0;
     // NOLINTEND

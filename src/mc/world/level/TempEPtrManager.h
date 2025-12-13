@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/_TickPtr.h"
+// auto generated forward declare list
+// clang-format off
+class _TickPtr;
+// clang-format on
 
 class TempEPtrManager {
 public:

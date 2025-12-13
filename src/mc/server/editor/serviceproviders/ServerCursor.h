@@ -35,23 +35,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ServerCursor() /*override*/ = default;
 
+    // vIndex: 2
     virtual void setCursorState(::Editor::Cursor::CursorState&& state) /*override*/;
 
+    // vIndex: 5
     virtual ::Scripting::Result_deprecated<::BlockPos> moveCursor(::glm::ivec3 const& offset) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit ServerCursor(::Editor::Network::PayloadServiceProvider& payloadService);
+    MCNAPI explicit ServerCursor(::Editor::Network::PayloadServiceProvider& payloadService);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::Editor::Network::PayloadServiceProvider& payloadService);
+    MCNAPI void* $ctor(::Editor::Network::PayloadServiceProvider& payloadService);
     // NOLINTEND
 
 public:
@@ -60,8 +63,6 @@ public:
     MCNAPI void $setCursorState(::Editor::Cursor::CursorState&& state);
 
     MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveCursor(::glm::ivec3 const& offset);
-
-
     // NOLINTEND
 
 public:

@@ -15,8 +15,10 @@ class SctpTransportFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SctpTransportFactoryInterface() = default;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::cricket::SctpTransportInternal>
     CreateSctpTransport(::webrtc::Environment const&, ::rtc::PacketTransportInternal*) = 0;
     // NOLINTEND

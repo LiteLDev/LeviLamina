@@ -35,45 +35,50 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 3
     virtual bool canBeInterrupted() /*override*/;
 
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 6
     virtual void tick() /*override*/;
 
+    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 0
     virtual ~SwimUpForBreathGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int _determineApproximateLiquidDepthOfMob() const;
+    MCAPI int _determineApproximateLiquidDepthOfMob() const;
 
-    MCNAPI void _findAirPosition();
+    MCAPI void _findAirPosition();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI bool $canBeInterrupted();
+    MCFOLD bool $canBeInterrupted();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
-
-
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

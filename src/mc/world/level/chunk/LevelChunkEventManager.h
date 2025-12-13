@@ -47,14 +47,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LevelChunkEventManager() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, int)>&
     getOnChunkLoadedConnector() /*override*/;
 
+    // vIndex: 2
     virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&)>&
     getOnChunkReloadedConnector() /*override*/;
 
+    // vIndex: 3
     virtual ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& getOnChunkDiscardedConnector() /*override*/;
     // NOLINTEND
 
@@ -80,8 +84,6 @@ public:
     MCNAPI ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&)>& $getOnChunkReloadedConnector();
 
     MCNAPI ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& $getOnChunkDiscardedConnector();
-
-
     // NOLINTEND
 
 public:

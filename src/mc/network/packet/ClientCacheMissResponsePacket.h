@@ -11,32 +11,33 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+namespace ClientBlobCache::Server { class Blob; }
 // clang-format on
 
 class ClientCacheMissResponsePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb48626;
-    ::ll::UntypedStorage<8, 64> mUnk81b99f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ClientBlobCache::Server::Blob>>> mWriteMissingContent;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>> mReceivedMissingContent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientCacheMissResponsePacket& operator=(ClientCacheMissResponsePacket const&);
-    ClientCacheMissResponsePacket(ClientCacheMissResponsePacket const&);
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
     virtual ~ClientCacheMissResponsePacket() /*override*/;
     // NOLINTEND
 
@@ -68,8 +69,6 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

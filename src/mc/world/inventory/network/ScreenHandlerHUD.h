@@ -15,8 +15,10 @@ class ScreenHandlerHUD : public ::ScreenHandlerBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
 
+    // vIndex: 0
     virtual ~ScreenHandlerHUD() /*override*/ = default;
     // NOLINTEND
 
@@ -24,8 +26,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
-
-
     // NOLINTEND
 
 public:

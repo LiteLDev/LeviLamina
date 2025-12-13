@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -16,7 +17,7 @@ class FlowerBedFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9af495;
+    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
     // NOLINTEND
 
 public:
@@ -28,17 +29,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
+    // vIndex: 0
     virtual ~FlowerBedFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

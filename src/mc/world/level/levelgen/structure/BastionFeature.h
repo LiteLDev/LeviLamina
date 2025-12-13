@@ -23,20 +23,20 @@ class BastionFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk33148d;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BastionFeature& operator=(BastionFeature const&);
-    BastionFeature(BastionFeature const&);
     BastionFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
 
+    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -47,6 +47,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
+    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const& biomeSource,
         ::Random&            random,
@@ -56,8 +57,10 @@ public:
         ::Dimension const&
     ) /*override*/;
 
+    // vIndex: 2
     virtual bool shouldPostProcessMobs() const /*override*/;
 
+    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension& generator,
         ::BiomeSource const&,
@@ -66,6 +69,7 @@ public:
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~BastionFeature() /*override*/ = default;
     // NOLINTEND
 
@@ -114,8 +118,6 @@ public:
         ::ChunkPos const& chunkPos,
         ::IPreliminarySurfaceProvider const&
     );
-
-
     // NOLINTEND
 
 public:

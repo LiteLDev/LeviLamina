@@ -28,6 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const                       slot,
@@ -36,14 +37,19 @@ public:
         bool
     ) const /*override*/;
 
+    // vIndex: 3
     virtual int getAvailableSetCount(int slot, ::ItemStackBase const& item) const /*override*/;
 
+    // vIndex: 4
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
+    // vIndex: 8
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
+    // vIndex: 7
     virtual bool canDestroy(::ContainerScreenContext const& screenContext) const /*override*/;
 
+    // vIndex: 0
     virtual ~MaterialReducerInputValidation() /*override*/ = default;
     // NOLINTEND
 
@@ -71,8 +77,6 @@ public:
     MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
     MCNAPI bool $canDestroy(::ContainerScreenContext const& screenContext) const;
-
-
     // NOLINTEND
 
 public:

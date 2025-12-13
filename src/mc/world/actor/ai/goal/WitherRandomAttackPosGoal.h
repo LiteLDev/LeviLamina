@@ -15,29 +15,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 5
     virtual void stop() /*override*/;
 
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 0
     virtual ~WitherRandomAttackPosGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
-
-
+    MCFOLD bool $canContinueToUse();
     // NOLINTEND
 
 public:

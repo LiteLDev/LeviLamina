@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/client/services/requests/catalog/SortBy.h"
-#include "mc/client/services/requests/catalog/SortDirection.h"
-
-// auto generated forward declare list
-// clang-format off
-struct QueryDocument;
-namespace catalog { class PositiveRange; }
-// clang-format on
-
 class SearchQuery {
 public:
     // SearchQuery inner types define
@@ -60,84 +50,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C SearchQuery();
-
-    MCNAPI_C explicit SearchQuery(::QueryDocument const& queryDoc);
-
-    MCNAPI_C SearchQuery(::SearchQuery const& searchQuery);
-
-    MCNAPI_C
-    SearchQuery(::std::string const& contentType, ::catalog::SortBy sortBy, ::catalog::SortDirection sortDirection);
-
-    MCNAPI_C SearchQuery(
-        ::std::vector<::std::string> const& contentTypes,
-        ::catalog::SortBy                   sortBy,
-        ::catalog::SortDirection            sortDirection
-    );
-
-    MCNAPI_C void _appendClientVersionFilter(::std::string& tagFilter) const;
-
-    MCNAPI_C void _appendTagFilterArrays(
-        ::std::string&                                            tagFilter,
-        ::SearchQuery::TagType                                    type,
-        ::std::vector<::std::vector<::std::string> const*> const& tagArrays
-    ) const;
-
-    MCNAPI_C void _appendTagFilters(
-        ::std::string&                      tagFilter,
-        ::SearchQuery::TagType              type,
-        ::std::vector<::std::string> const& tagsToAppend
-    ) const;
-
-    MCNAPI_C ::std::string _buildPostBody(::std::string const& acceptLang) const;
-
-    MCNAPI_C ::std::string _generateTagsString() const;
-
-    MCNAPI_C void addCreatorId(::std::string const& id);
-
-    MCNAPI_C void addPriceRangeFilter(::catalog::PositiveRange const& priceRange);
-
-    MCNAPI_C void clearAllTags();
-
-    MCNAPI_C uint generateSearchAndFilterIdentifier() const;
-
-    MCNAPI_C ::std::string getSortByAndSortDirectionStr() const;
-
-    MCNAPI_C ::SearchQuery& operator=(::SearchQuery const&);
-
-    MCNAPI_C ~SearchQuery();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI_C static int const& MAX_SEARCH_RESULTS_PER_REQUEST();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::QueryDocument const& queryDoc);
-
-    MCNAPI_C void* $ctor(::SearchQuery const& searchQuery);
-
-    MCNAPI_C void*
-    $ctor(::std::string const& contentType, ::catalog::SortBy sortBy, ::catalog::SortDirection sortDirection);
-
-    MCNAPI_C void* $ctor(
-        ::std::vector<::std::string> const& contentTypes,
-        ::catalog::SortBy                   sortBy,
-        ::catalog::SortDirection            sortDirection
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+    // prevent constructor by default
+    SearchQuery& operator=(SearchQuery const&);
+    SearchQuery(SearchQuery const&);
+    SearchQuery();
 };

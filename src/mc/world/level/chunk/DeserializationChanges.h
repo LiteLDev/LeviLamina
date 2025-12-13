@@ -15,16 +15,4 @@ public:
     DeserializationChanges& operator=(DeserializationChanges const&);
     DeserializationChanges(DeserializationChanges const&);
     DeserializationChanges();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~DeserializationChanges();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

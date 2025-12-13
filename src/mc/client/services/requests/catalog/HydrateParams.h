@@ -17,16 +17,4 @@ public:
     HydrateParams& operator=(HydrateParams const&);
     HydrateParams(HydrateParams const&);
     HydrateParams();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~HydrateParams();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

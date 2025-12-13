@@ -29,10 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual uint64 _getMinCurveNodesAllowed();
 
+    // vIndex: 2
     virtual uint64 _getMaxCurveNodesAllowed();
 
+    // vIndex: 0
     virtual ~ParticleCurveSimpleBase() /*override*/;
     // NOLINTEND
 
@@ -44,10 +47,10 @@ public:
     MCNAPI ParticleCurveSimpleBase(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleCurveSimpleBase&
-    operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase&&);
+    operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleCurveSimpleBase&
-    operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
+    operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase&&);
 
     MCNAPI void validateNodeListSize();
     // NOLINTEND
@@ -78,8 +81,6 @@ public:
     MCNAPI uint64 $_getMinCurveNodesAllowed();
 
     MCNAPI uint64 $_getMaxCurveNodesAllowed();
-
-
     // NOLINTEND
 
 public:

@@ -29,8 +29,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::LootItemFunction const& _getFunction() const /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptRandomBlockStateFunction() /*override*/ = default;
     // NOLINTEND
 
@@ -50,8 +52,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::LootItemFunction const& $_getFunction() const;
-
-
     // NOLINTEND
 
 public:

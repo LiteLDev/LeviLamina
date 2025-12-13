@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptBlock; }
+namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -13,8 +18,9 @@ struct ScriptBlockEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf8d2e9;
-    ::ll::UntypedStorage<8, 32> mUnkaeee50;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+                                                                                                          mDimension;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> mBlock;
     // NOLINTEND
 
 public:
@@ -25,27 +31,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockEvent(::ScriptModuleMinecraft::ScriptBlockEvent const&);
+    MCAPI ScriptBlockEvent(::ScriptModuleMinecraft::ScriptBlockEvent const&);
 
-    MCNAPI ~ScriptBlockEvent();
+    MCAPI ~ScriptBlockEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockEvent const&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

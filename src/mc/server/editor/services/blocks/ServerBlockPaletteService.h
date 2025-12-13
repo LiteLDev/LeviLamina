@@ -26,47 +26,63 @@ class ServerBlockPaletteService : public ::Editor::Services::EditorBlockPaletteS
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ServerBlockPaletteService() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
+    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
+    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
+    // vIndex: 6
     virtual ::Scripting::Result_deprecated<void> setSelectedPaletteItemIndex(int index) /*override*/;
 
+    // vIndex: 8
     virtual ::Scripting::Result_deprecated<void> setPaletteItem(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     ) /*override*/;
 
+    // vIndex: 9
     virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const&) /*override*/;
 
+    // vIndex: 3
     virtual void addOrReplacePalette(::Editor::EditorBlockPalette const& palette) /*override*/;
 
+    // vIndex: 4
     virtual ::Scripting::Result_deprecated<void> removePalette(::HashedString const& paletteId) /*override*/;
 
+    // vIndex: 5
     virtual ::Scripting::Result_deprecated<void> setActivePalette(::HashedString const& paletteId) /*override*/;
 
+    // vIndex: 8
     virtual void _handleBlockPaletteItemChangedPayload(
         ::Editor::Network::BlockPaletteItemChangedPayload const& payload
     ) /*override*/;
 
+    // vIndex: 9
     virtual void _handleBlockPaletteSelectedIndexChangedPayload(
         ::Editor::Network::BlockPaletteSelectedIndexChangedPayload const& payload
     ) /*override*/;
 
+    // vIndex: 7
     virtual void _handleBlockPaletteActivePaletteChangedPayload(
         ::Editor::Network::BlockPaletteActivePaletteChangedPayload const& payload
     ) /*override*/;
 
+    // vIndex: 10
     virtual void
     _handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const& payload) /*override*/;
 
+    // vIndex: 11
     virtual void
     _handleBlockPaletteRemovedPayload(::Editor::Network::BlockPaletteRemovedPayload const& payload) /*override*/;
     // NOLINTEND
@@ -122,8 +138,6 @@ public:
     MCNAPI void $_handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const& payload);
 
     MCNAPI void $_handleBlockPaletteRemovedPayload(::Editor::Network::BlockPaletteRemovedPayload const& payload);
-
-
     // NOLINTEND
 
 public:

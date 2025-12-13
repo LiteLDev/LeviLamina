@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class LocalPlayer;
-// clang-format on
-
 struct LocalPlayerChangedConnector {
 public:
     // member variables
@@ -20,11 +15,4 @@ public:
     LocalPlayerChangedConnector& operator=(LocalPlayerChangedConnector const&);
     LocalPlayerChangedConnector(LocalPlayerChangedConnector const&);
     LocalPlayerChangedConnector();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::function<void(::LocalPlayer const*)>
-    createLocalPlayerChangedCallback(::std::function<void()> initCallback, ::std::function<void()> resetCallback);
-    // NOLINTEND
 };

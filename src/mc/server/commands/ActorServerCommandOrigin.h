@@ -29,16 +29,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ActorServerCommandOrigin() /*override*/ = default;
 
+    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const /*override*/;
 
+    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const /*override*/;
 
+    // vIndex: 10
     virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
+    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const /*override*/;
 
+    // vIndex: 29
     virtual ::CompoundTag serialize() const /*override*/;
     // NOLINTEND
 
@@ -54,8 +60,6 @@ public:
     MCNAPI ::CommandOriginType $getOriginType() const;
 
     MCNAPI ::CompoundTag $serialize() const;
-
-
     // NOLINTEND
 
 public:

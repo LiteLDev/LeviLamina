@@ -31,10 +31,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initializeActor(::Actor& actor) /*override*/;
 
+    // vIndex: 2
     virtual void reloadActor(::Actor& actor) /*override*/;
 
+    // vIndex: 0
     virtual ~AddActorEntityProxy() /*override*/ = default;
     // NOLINTEND
 
@@ -44,8 +47,6 @@ public:
     MCAPI void $initializeActor(::Actor& actor);
 
     MCAPI void $reloadActor(::Actor& actor);
-
-
     // NOLINTEND
 
 public:

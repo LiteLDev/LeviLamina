@@ -2,32 +2,44 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/WeakPtr.h"
+#include "mc/deps/shared_types/legacy/item/UseAnimation.h"
+#include "mc/world/item/CreativeItemCategory.h"
+#include "mc/world/item/enchanting/Enchant.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockType;
+class HashedString;
+// clang-format on
+
 struct ComponentItemData_Legacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkff2ccd;
-    ::ll::UntypedStorage<8, 24> mUnk32ef34;
-    ::ll::UntypedStorage<8, 40> mUnk477935;
-    ::ll::UntypedStorage<8, 40> mUnka90ecd;
-    ::ll::UntypedStorage<4, 8>  mUnk84ee2c;
-    ::ll::UntypedStorage<4, 8>  mUnkfc6298;
-    ::ll::UntypedStorage<4, 8>  mUnkb0eb5d;
-    ::ll::UntypedStorage<4, 8>  mUnk8ee6f4;
-    ::ll::UntypedStorage<4, 8>  mUnk429bf0;
-    ::ll::UntypedStorage<4, 8>  mUnkfed70d;
-    ::ll::UntypedStorage<1, 2>  mUnk98de32;
-    ::ll::UntypedStorage<4, 8>  mUnk97e102;
-    ::ll::UntypedStorage<1, 2>  mUnka9b5f0;
-    ::ll::UntypedStorage<1, 2>  mUnk42a627;
-    ::ll::UntypedStorage<1, 2>  mUnk111268;
-    ::ll::UntypedStorage<1, 2>  mUnkbf1c15;
-    ::ll::UntypedStorage<1, 2>  mUnk754359;
-    ::ll::UntypedStorage<1, 2>  mUnkd10418;
-    ::ll::UntypedStorage<1, 2>  mUnkac9fba;
-    ::ll::UntypedStorage<1, 2>  mUnk7ed0db;
-    ::ll::UntypedStorage<1, 2>  mUnk85e4f4;
-    ::ll::UntypedStorage<1, 2>  mUnkecfff4;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>                         mBlockType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>                       mTags;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                      mCreativeGroup;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                      mHoverTextColorFormat;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                               mSpeed;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                                 mMaxUseDuration;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                                 mDamage;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                                 mEnchantValue;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                                 mFrameCount;
+    ::ll::TypedStorage<4, 8, ::std::optional<::CreativeItemCategory>>              mCreativeCategory;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::Legacy::UseAnimation>> mUseAnim;
+    ::ll::TypedStorage<4, 8, ::std::optional<::Enchant::Slot>>                     mEnchantSlot;
+    ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                               mMaxStackSize;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mIsStackedByData;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mHandEquipped;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mIsLiquidClipped;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mIsGlint;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mAllowOffhand;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mCanDestroyInCreative;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mAnimatesInToolbar;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mShouldDespawn;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mRequiresInteract;
     // NOLINTEND
 
 public:
@@ -37,28 +49,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemData_Legacy(::ComponentItemData_Legacy&&);
+    MCAPI ComponentItemData_Legacy(::ComponentItemData_Legacy const&);
 
-    MCNAPI ComponentItemData_Legacy(::ComponentItemData_Legacy const&);
+    MCAPI ComponentItemData_Legacy(::ComponentItemData_Legacy&&);
 
-    MCNAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy&&);
+    MCAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy&&);
 
-    MCNAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy const&);
+    MCAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy const&);
 
-    MCNAPI ~ComponentItemData_Legacy();
+    MCAPI ~ComponentItemData_Legacy();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ComponentItemData_Legacy&&);
+    MCAPI void* $ctor(::ComponentItemData_Legacy const&);
 
-    MCNAPI void* $ctor(::ComponentItemData_Legacy const&);
+    MCAPI void* $ctor(::ComponentItemData_Legacy&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -15,26 +15,4 @@ public:
     ActivationUri& operator=(ActivationUri const&);
     ActivationUri(ActivationUri const&);
     ActivationUri();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ActivationUri();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::unordered_map<::std::string, ::std::string>
-    extractArgumentsFromFilename(::std::string_view filename, ::std::optional<::std::string> originalPath);
-
-    MCNAPI_C static ::std::unordered_map<::std::string, ::std::string>
-    extractArgumentsFromUri(::std::string const& uri);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

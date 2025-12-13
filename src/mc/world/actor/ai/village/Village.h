@@ -40,21 +40,6 @@ public:
     // clang-format on
 
     // Village inner types define
-    enum class VillageVersion : uchar {
-        Base                 = 0,
-        WorksiteInitEventFix = 1,
-        Count                = 2,
-    };
-
-    struct DwellerData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Tick>      mLastTicked;
-        ::ll::TypedStorage<4, 12, ::BlockPos> mLastSavedPosition;
-        // NOLINTEND
-    };
-
     struct StandingModifiers {
     public:
         // static variables
@@ -73,13 +58,28 @@ public:
         // NOLINTEND
     };
 
-    using ClaimedPOIList = ::std::unordered_map<::ActorUniqueID, ::std::array<::std::weak_ptr<::POIInstance>, 3>>;
+    enum class VillageVersion : uchar {
+        Base                 = 0,
+        WorksiteInitEventFix = 1,
+        Count                = 2,
+    };
+
+    struct DwellerData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::Tick>      mLastTicked;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mLastSavedPosition;
+        // NOLINTEND
+    };
+
+    using UnclaimedPOIList = ::std::array<::std::vector<::std::weak_ptr<::POIInstance>>, 3>;
 
     using DwellerMap = ::std::unordered_map<::ActorUniqueID, ::Village::DwellerData>;
 
-    using DwellerTimestamp = ::std::pair<::ActorUniqueID, ::Tick>;
+    using ClaimedPOIList = ::std::unordered_map<::ActorUniqueID, ::std::array<::std::weak_ptr<::POIInstance>, 3>>;
 
-    using UnclaimedPOIList = ::std::array<::std::vector<::std::weak_ptr<::POIInstance>>, 3>;
+    using DwellerTimestamp = ::std::pair<::ActorUniqueID, ::Tick>;
 
 public:
     // member variables

@@ -17,10 +17,13 @@ class FallingBlockActorDelegate : public ::ITickDelegate {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void onLand(::FallingBlock const&, ::IBlockSource&, ::BlockPos const&) /*override*/;
 
+    // vIndex: 2
     virtual void breakBlock(::FallingBlockActor&) /*override*/;
 
+    // vIndex: 0
     virtual ~FallingBlockActorDelegate() /*override*/ = default;
     // NOLINTEND
 

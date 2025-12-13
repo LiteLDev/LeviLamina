@@ -15,10 +15,13 @@ struct TestType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TestType() = default;
 
+    // vIndex: 1
     virtual bool test(::Block const&, ::IRandom&) const = 0;
 
+    // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash&) const = 0;
     // NOLINTEND
 

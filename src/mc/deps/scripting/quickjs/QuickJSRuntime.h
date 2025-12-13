@@ -65,12 +65,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~QuickJSRuntime() /*override*/;
 
+    // vIndex: 1
     virtual ::Scripting::IRuntimeMetadata* getMetadata() const /*override*/;
 
+    // vIndex: 2
     virtual void moveToThread() /*override*/;
 
+    // vIndex: 3
     virtual ::std::optional<::Scripting::ScriptContext> createContext(
         ::Scripting::ModuleBindingBundle&& bindings,
         ::Scripting::IDependencyLoader*    loader,
@@ -78,8 +82,10 @@ public:
         ::Scripting::ContextConfig const&  config
     ) /*override*/;
 
+    // vIndex: 4
     virtual void destroyContext(::Scripting::ContextId contextId) /*override*/;
 
+    // vIndex: 22
     virtual ::Scripting::ResultAny runString(
         ::Scripting::ContextId                  contextId,
         ::std::string const&                    scriptName,
@@ -87,6 +93,7 @@ public:
         ::std::optional<::Scripting::Privilege> privilege
     ) /*override*/;
 
+    // vIndex: 6
     virtual ::Scripting::ResultAny call(
         ::Scripting::ContextId                                   contextId,
         ::Scripting::TypedObjectHandle<::Scripting::ClosureType> closureHandle,
@@ -96,56 +103,71 @@ public:
         ::std::optional<::Scripting::Privilege>                  privilege
     ) /*override*/;
 
+    // vIndex: 7
     virtual ::Scripting::ResultAny resolve(
         ::Scripting::ContextId                                   contextId,
         ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
         ::entt::meta_any&                                        arg
     ) /*override*/;
 
+    // vIndex: 8
     virtual ::Scripting::ResultAny reject(
         ::Scripting::ContextId                                   contextId,
         ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
         ::entt::meta_any&                                        arg
     ) /*override*/;
 
+    // vIndex: 9
     virtual ::Scripting::FutureStatus
         getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const
         /*override*/;
 
+    // vIndex: 10
     virtual ::Scripting::ResultAny getFutureResult(
         ::Scripting::ContextId                                  contextId,
         ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,
         ::entt::meta_type const&                                expectedResultType
     ) const /*override*/;
 
+    // vIndex: 11
     virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> executeCoroutines(
         ::std::optional<::std::chrono::microseconds> timeSlice,
         ::std::optional<::Scripting::Privilege>      privilege
     ) /*override*/;
 
+    // vIndex: 12
     virtual bool hasPendingJobs() /*override*/;
 
+    // vIndex: 13
     virtual ::Scripting::IDebuggerController* enableDebugger(::Scripting::IDebuggerTransport& transport) /*override*/;
 
+    // vIndex: 14
     virtual void disableDebugger() /*override*/;
 
+    // vIndex: 15
     virtual void startProfiler() /*override*/;
 
+    // vIndex: 16
     virtual void stopProfiler(
         ::std::function<void(::std::string_view)>                      captureCb,
         ::std::optional<::std::reference_wrapper<::std::string const>> savePathOpt
     ) /*override*/;
 
+    // vIndex: 17
     virtual ::Scripting::RuntimeStats computeRuntimeStats() const /*override*/;
 
+    // vIndex: 21
     virtual ::std::optional<::Scripting::TypeNameInfo>
     getNameForType(::Scripting::ContextId contextId, ::entt::meta_type const& type, bool allowUnknownTypes) const
         /*override*/;
 
+    // vIndex: 18
     virtual ::Scripting::IWatchdog* enableWatchdog(::Scripting::WatchdogSettings settings) /*override*/;
 
+    // vIndex: 19
     virtual void disableWatchdog() /*override*/;
 
+    // vIndex: 20
     virtual ::Scripting::IWatchdog* getWatchdog() const /*override*/;
     // NOLINTEND
 
@@ -275,8 +297,6 @@ public:
     MCNAPI void $disableWatchdog();
 
     MCNAPI ::Scripting::IWatchdog* $getWatchdog() const;
-
-
     // NOLINTEND
 
 public:

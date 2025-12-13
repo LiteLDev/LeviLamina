@@ -42,43 +42,47 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 5
     virtual void stop() /*override*/;
 
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 6
     virtual void tick() /*override*/;
 
+    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 0
     virtual ~CircleAroundAnchorGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _selectNext();
+    MCAPI void _selectNext();
 
-    MCNAPI void _setAnchorAboveGround();
+    MCAPI void _setAnchorAboveGround();
 
-    MCNAPI void _setAnchorAboveTarget();
+    MCAPI void _setAnchorAboveTarget();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCFOLD void $stop();
 
-    MCNAPI bool $canUse();
+    MCFOLD bool $canUse();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
-
-
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

@@ -24,24 +24,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
+    // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
+    // vIndex: 156
     virtual int getArmorValue() const /*override*/;
 
+    // vIndex: 38
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
+    // vIndex: 182
     virtual ::OwnerPtr<::EntityContext> createChild(int i) /*override*/;
 
+    // vIndex: 48
     virtual bool isOnFire() const /*override*/;
 
+    // vIndex: 181
     virtual void decreaseSquish() /*override*/;
 
+    // vIndex: 179
     virtual bool doPlayLandSound() /*override*/;
 
+    // vIndex: 8
     virtual ~LavaSlime() /*override*/ = default;
     // NOLINTEND
 
@@ -85,8 +95,6 @@ public:
     MCAPI void $decreaseSquish();
 
     MCFOLD bool $doPlayLandSound();
-
-
     // NOLINTEND
 
 public:

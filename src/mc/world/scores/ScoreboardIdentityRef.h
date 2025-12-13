@@ -32,7 +32,7 @@ public:
     MCNAPI ::ScoreboardOperationResult
     modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
 
-    MCNAPI_S bool removeFromObjective(::Scoreboard& scoreboard, ::Objective& objective);
+    MCNAPI bool removeFromObjective(::Scoreboard& scoreboard, ::Objective& objective);
     // NOLINTEND
 
 public:

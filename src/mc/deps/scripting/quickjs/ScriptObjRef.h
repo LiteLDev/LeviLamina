@@ -69,12 +69,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptObjRef() /*override*/ = default;
 
+    // vIndex: 1
     virtual void onReduceToSingleOwner() /*override*/;
 
+    // vIndex: 2
     virtual void onPromoteToMultipleOwners() /*override*/;
 
+    // vIndex: 3
     virtual void onFinalize() /*override*/;
     // NOLINTEND
 
@@ -96,8 +100,6 @@ public:
     MCNAPI void $onPromoteToMultipleOwners();
 
     MCNAPI void $onFinalize();
-
-
     // NOLINTEND
 
 public:

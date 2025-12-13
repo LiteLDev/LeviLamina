@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/storage/RealmEventForPlayer.h"
 #include "mc/world/level/storage/RealmEventId.h"
 
 // auto generated forward declare list
@@ -29,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit RealmsStoriesData(::LevelStorage& levelStorage);
+    MCNAPI explicit RealmsStoriesData(::LevelStorage& levelStorage);
 
-    MCNAPI_S void clearAllRealmEventsInLevelData();
+    MCNAPI void clearAllRealmEventsInLevelData();
 
     MCNAPI void setPlayerRealmEventPublished(::RealmEventId eventId, ::std::string const& xuid);
 
     MCNAPI void setWorldRealmEventPublished(::RealmEventId eventId);
 
-    MCNAPI_S ~RealmsStoriesData();
+    MCNAPI ~RealmsStoriesData();
     // NOLINTEND
 
 public:
@@ -51,12 +50,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::LevelStorage& levelStorage);
+    MCNAPI void* $ctor(::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_S void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

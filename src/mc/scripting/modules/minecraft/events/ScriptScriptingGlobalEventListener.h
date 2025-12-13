@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 struct ScriptCommandMessageEvent;
+namespace ScriptModuleMinecraft { struct ScriptListener; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -18,29 +19,23 @@ class ScriptScriptingGlobalEventListener : public ::EventListenerDispatcher<::Sc
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk550148;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptListener>> mListeners;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptScriptingGlobalEventListener& operator=(ScriptScriptingGlobalEventListener const&);
-    ScriptScriptingGlobalEventListener(ScriptScriptingGlobalEventListener const&);
-    ScriptScriptingGlobalEventListener();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual ::EventResult onEvent(::ScriptCommandMessageEvent const& scriptCommandMessageEvent) /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptScriptingGlobalEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::ScriptCommandMessageEvent const& scriptCommandMessageEvent);
-
-
+    MCAPI ::EventResult $onEvent(::ScriptCommandMessageEvent const& scriptCommandMessageEvent);
     // NOLINTEND
 
 public:

@@ -9,10 +9,11 @@ struct RopeParams {
 public:
     // RopeParams inner types define
     enum class Flags : int {
+        // bitfield representation
         None             = 0,
-        DynamicResize    = 2,
-        DynamicStretch   = 4,
-        CollisionEnabled = 8,
+        DynamicResize    = 1 << 1,
+        DynamicStretch   = 1 << 2,
+        CollisionEnabled = 1 << 3,
     };
 
 public:

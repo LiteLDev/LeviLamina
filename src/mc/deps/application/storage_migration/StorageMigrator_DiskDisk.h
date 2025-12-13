@@ -32,10 +32,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StorageMigrator_DiskDisk() /*override*/ = default;
 
+    // vIndex: 1
     virtual bool doQuickCompletionCheck() /*override*/;
 
+    // vIndex: 2
     virtual void _runMigration(
         ::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>,
         ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>,

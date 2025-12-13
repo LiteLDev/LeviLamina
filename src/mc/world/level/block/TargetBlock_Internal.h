@@ -11,7 +11,7 @@ class BlockSource;
 namespace TargetBlock_Internal {
 // functions
 // NOLINTBEGIN
-MCNAPI void sendTargetBlockHitTelemetryEvent(::BlockSource& region, ::Actor const& projectile, int signalStrength);
+MCAPI void sendTargetBlockHitTelemetryEvent(::BlockSource& region, ::Actor const& projectile, int signalStrength);
 // NOLINTEND
 
 } // namespace TargetBlock_Internal

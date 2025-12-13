@@ -34,24 +34,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual bool nextBoolean() /*override*/;
 
+    // vIndex: 5
     virtual float nextFloat() /*override*/;
 
+    // vIndex: 6
     virtual double nextDouble() /*override*/;
 
+    // vIndex: 2
     virtual int nextInt() /*override*/;
 
+    // vIndex: 1
     virtual int nextInt(int n) /*override*/;
 
+    // vIndex: 3
     virtual int64 nextLong() /*override*/;
 
+    // vIndex: 8
     virtual void consumeCount(uint count) /*override*/;
 
+    // vIndex: 7
     virtual double nextGaussianDouble() /*override*/;
 
+    // vIndex: 9
     virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
 
+    // vIndex: 0
     virtual ~Random() /*override*/;
     // NOLINTEND
 
@@ -105,8 +115,6 @@ public:
     MCAPI double $nextGaussianDouble();
 
     MCAPI ::std::unique_ptr<::IRandom> $fork();
-
-
     // NOLINTEND
 
 public:

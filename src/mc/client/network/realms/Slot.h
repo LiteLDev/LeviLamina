@@ -21,30 +21,8 @@ public:
 public:
     // prevent constructor by default
     Slot& operator=(Slot const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C Slot();
-
-    MCNAPI_C Slot(::Realms::Slot const&);
-
-    MCNAPI_C ~Slot();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::Realms::Slot const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+    Slot(Slot const&);
+    Slot();
 };
 
 } // namespace Realms

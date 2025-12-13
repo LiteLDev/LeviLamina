@@ -18,24 +18,5 @@ public:
     // prevent constructor by default
     TelemetryInfo& operator=(TelemetryInfo const&);
     TelemetryInfo(TelemetryInfo const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C TelemetryInfo();
-
-    MCNAPI_C void _detectTampering();
-
-    MCNAPI_C ::std::string _generateTamperGuard(::std::string const& content) const;
-
-    MCNAPI_C void _load();
-
-    MCNAPI_C void _save();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-    // NOLINTEND
+    TelemetryInfo();
 };

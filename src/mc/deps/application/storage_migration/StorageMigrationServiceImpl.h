@@ -39,32 +39,44 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initialize(
         ::Core::Path const&,
         ::Core::Path const&,
         ::Bedrock::StorageMigration::StorageMigrationType
     ) /*override*/;
 
+    // vIndex: 2
     virtual bool checkMigrationPreviouslyCompleted() /*override*/;
 
+    // vIndex: 3
     virtual bool checkMigrationInProgress() /*override*/;
 
+    // vIndex: 4
     virtual ::std::shared_ptr<::Bedrock::StorageMigration::ManifestData> loadManifest() /*override*/;
 
+    // vIndex: 5
     virtual void setMigrationUIActive(bool) /*override*/;
 
+    // vIndex: 6
     virtual ::Core::PathBuffer<::std::string> const& getSource() const /*override*/;
 
+    // vIndex: 7
     virtual ::Core::PathBuffer<::std::string> const& getDestination() const /*override*/;
 
+    // vIndex: 8
     virtual ::Bedrock::StorageMigration::StorageMigrationType getMigrationType() const /*override*/;
 
+    // vIndex: 9
     virtual ::std::shared_ptr<::Bedrock::StorageMigration::MigrationDetector> getDetector() const /*override*/;
 
+    // vIndex: 10
     virtual ::std::shared_ptr<::Bedrock::StorageMigration::StorageMigrator> getMigrator() const /*override*/;
 
+    // vIndex: 11
     virtual bool isMigrationUIActive() const /*override*/;
 
+    // vIndex: 0
     virtual ~StorageMigrationServiceImpl() /*override*/ = default;
     // NOLINTEND
 

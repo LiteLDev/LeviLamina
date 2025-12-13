@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/external/cricket/ProtocolType.h"
-#include "mc/external/rtc/SocketAddress.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace cricket { struct RelayServerConfig; }
+namespace rtc { class SocketAddress; }
 namespace webrtc { class FieldTrialsView; }
 // clang-format on
 

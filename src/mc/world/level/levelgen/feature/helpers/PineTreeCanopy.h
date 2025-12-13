@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/IntRange.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeCanopy.h"
 
 // auto generated forward declare list
@@ -18,22 +20,18 @@ class PineTreeCanopy : public ::ITreeCanopy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>   mUnk173640;
-    ::ll::UntypedStorage<4, 4>   mUnk9ea4cc;
-    ::ll::UntypedStorage<8, 184> mUnk167c25;
+    ::ll::TypedStorage<4, 8, ::IntRange>          mHeight;
+    ::ll::TypedStorage<4, 4, int>                 mRadius;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mLeavesBlockDescriptor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PineTreeCanopy& operator=(PineTreeCanopy const&);
-    PineTreeCanopy(PineTreeCanopy const&);
-    PineTreeCanopy();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PineTreeCanopy() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::std::optional<::BlockPos> placeCanopy(
         ::IBlockWorldGenAPI&             target,
         ::BlockPos const&                pos,
@@ -47,7 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI&             target,
         ::BlockPos const&                pos,
         ::Random&                        random,
@@ -55,8 +53,6 @@ public:
         ::TreeHelper::TreeParams const&  treeParams,
         ::std::vector<::BlockPos> const& attachmentPositions
     ) const;
-
-
     // NOLINTEND
 
 public:

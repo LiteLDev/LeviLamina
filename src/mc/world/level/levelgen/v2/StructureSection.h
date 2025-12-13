@@ -29,14 +29,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StructureSection() = default;
 
+    // vIndex: 1
     virtual void appendJunctions(::BoundingBox const&, ::std::vector<::br::worldgen::JigsawJunction>&) = 0;
 
+    // vIndex: 2
     virtual void appendRigid(::br::worldgen::TerrainAdjustment::Type, ::std::vector<::br::worldgen::Rigid>&) = 0;
 
+    // vIndex: 4
     virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) const = 0;
 
+    // vIndex: 3
     virtual bool postProcess(
         ::BlockSource&,
         ::IRandom&,
@@ -45,6 +50,7 @@ public:
         ::br::worldgen::JigsawReplacement
     ) const = 0;
 
+    // vIndex: 5
     virtual void placeEntities(::BlockSource&, ::BoundingBox const&) const = 0;
     // NOLINTEND
 

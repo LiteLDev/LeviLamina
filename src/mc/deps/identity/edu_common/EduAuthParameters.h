@@ -16,18 +16,6 @@ public:
     EduAuthParameters& operator=(EduAuthParameters const&);
     EduAuthParameters(EduAuthParameters const&);
     EduAuthParameters();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~EduAuthParameters();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Identity

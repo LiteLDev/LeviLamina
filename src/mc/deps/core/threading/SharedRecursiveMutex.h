@@ -23,12 +23,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool _threadHoldsSharedLock(::std::thread::id) /*override*/;
 
+    // vIndex: 2
     virtual bool _shouldLockForSharedAccess(::std::thread::id) /*override*/;
 
+    // vIndex: 3
     virtual bool _shouldUnLockForSharedAccess(::std::thread::id) /*override*/;
 
+    // vIndex: 0
     virtual ~SharedRecursiveMutex() /*override*/;
     // NOLINTEND
 
@@ -46,8 +50,6 @@ public:
     MCNAPI bool $_shouldLockForSharedAccess(::std::thread::id);
 
     MCNAPI bool $_shouldUnLockForSharedAccess(::std::thread::id);
-
-
     // NOLINTEND
 
 public:

@@ -18,14 +18,18 @@ class BasicAsyncDnsResolverFactory : public ::webrtc::AsyncDnsResolverFactoryInt
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
     CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
     CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
 
+    // vIndex: 3
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> Create() /*override*/;
 
+    // vIndex: 0
     virtual ~BasicAsyncDnsResolverFactory() /*override*/ = default;
     // NOLINTEND
 
@@ -39,8 +43,6 @@ public:
     $CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
 
     MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $Create();
-
-
     // NOLINTEND
 
 public:

@@ -54,6 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AnyForwardTsnChunk() /*override*/ = default;
     // NOLINTEND
 

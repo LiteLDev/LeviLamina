@@ -25,9 +25,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 12
     virtual bool
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
+    // vIndex: 0
     virtual ~DirectionalProducerComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -35,8 +37,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
-
-
     // NOLINTEND
 
 public:

@@ -16,23 +16,18 @@ struct ThrowableItemComponentLegacyFactoryData : public ::IItemComponentLegacyFa
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkaf42dc;
-    ::ll::UntypedStorage<4, 4> mUnkd1ee69;
-    ::ll::UntypedStorage<4, 4> mUnkca5ed4;
-    ::ll::UntypedStorage<4, 4> mUnk33ab61;
-    ::ll::UntypedStorage<4, 4> mUnkd654d1;
-    ::ll::UntypedStorage<1, 1> mUnk9d25cc;
+    ::ll::TypedStorage<1, 1, bool>  mDoSwing;
+    ::ll::TypedStorage<4, 4, float> mMinDrawDuration;
+    ::ll::TypedStorage<4, 4, float> mDrawDuration;
+    ::ll::TypedStorage<4, 4, float> mLaunchPowerScale;
+    ::ll::TypedStorage<4, 4, float> mMaxLaunchPower;
+    ::ll::TypedStorage<1, 1, bool>  mScalePowerByDrawDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ThrowableItemComponentLegacyFactoryData& operator=(ThrowableItemComponentLegacyFactoryData const&);
-    ThrowableItemComponentLegacyFactoryData(ThrowableItemComponentLegacyFactoryData const&);
-    ThrowableItemComponentLegacyFactoryData();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ThrowableItemComponentLegacyFactoryData() /*override*/ = default;
     // NOLINTEND
 

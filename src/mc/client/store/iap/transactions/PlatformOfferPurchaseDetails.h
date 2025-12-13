@@ -17,16 +17,4 @@ public:
     PlatformOfferPurchaseDetails& operator=(PlatformOfferPurchaseDetails const&);
     PlatformOfferPurchaseDetails(PlatformOfferPurchaseDetails const&);
     PlatformOfferPurchaseDetails();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~PlatformOfferPurchaseDetails();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

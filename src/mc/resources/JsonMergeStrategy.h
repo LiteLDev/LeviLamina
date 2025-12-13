@@ -31,53 +31,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void mergeFiles(::std::vector<::LoadedResourceData> const& fileStack) /*override*/;
+    // vIndex: 1
+    virtual void mergeFiles(::std::vector<::LoadedResourceData> const&) /*override*/;
 
-    virtual bool _parseJson(::Json::Reader& reader, ::std::string const& fileName, ::Json::Value& root) const;
+    // vIndex: 2
+    virtual bool _parseJson(::Json::Reader&, ::std::string const&, ::Json::Value&) const;
 
+    // vIndex: 3
     virtual void _preMergeTransform(::Json::Value&);
 
+    // vIndex: 4
     virtual void _preMergePacketTransform(int const);
 
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~JsonMergeStrategy() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~JsonMergeStrategy() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void _recursiveMerge(::Json::Value& root, ::Json::Value const& object);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $mergeFiles(::std::vector<::LoadedResourceData> const& fileStack);
 
-    MCNAPI bool $_parseJson(::Json::Reader& reader, ::std::string const& fileName, ::Json::Value& root) const;
-
-    MCNAPI void $_preMergeTransform(::Json::Value&);
-
-    MCNAPI void $_preMergePacketTransform(int const);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

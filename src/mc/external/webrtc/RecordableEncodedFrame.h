@@ -41,18 +41,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RecordableEncodedFrame() = default;
 
+    // vIndex: 1
     virtual ::webrtc::scoped_refptr<::webrtc::EncodedImageBufferInterface const> encoded_buffer() const = 0;
 
+    // vIndex: 2
     virtual ::std::optional<::webrtc::ColorSpace> color_space() const = 0;
 
+    // vIndex: 3
     virtual ::webrtc::VideoCodecType codec() const = 0;
 
+    // vIndex: 4
     virtual bool is_key_frame() const = 0;
 
+    // vIndex: 5
     virtual ::webrtc::RecordableEncodedFrame::EncodedResolution resolution() const = 0;
 
+    // vIndex: 6
     virtual ::webrtc::Timestamp render_time() const = 0;
     // NOLINTEND
 

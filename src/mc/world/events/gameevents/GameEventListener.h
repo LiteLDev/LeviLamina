@@ -21,22 +21,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~GameEventListener() = default;
 
+    // vIndex: 1
     virtual void handleGameEvent(::GameEvent const&, ::GameEventContext const&, ::BlockSource&) = 0;
 
+    // vIndex: 2
     virtual ::GameEvents::PositionSource const& getPositionSource() const = 0;
 
+    // vIndex: 3
     virtual uint getRange() const = 0;
 
+    // vIndex: 4
     virtual ::GameEventListener::DeliveryMode getDeliveryMode() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::GameEventListener::DeliveryMode $getDeliveryMode() const;
-
-
+    MCFOLD ::GameEventListener::DeliveryMode $getDeliveryMode() const;
     // NOLINTEND
 };

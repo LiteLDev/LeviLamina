@@ -14,22 +14,30 @@ class NullSSLCertificateInterface : public ::Crypto::Certificate::ISystemInterfa
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NullSSLCertificateInterface() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::std::string serialize(::Crypto::Certificate::Encoding) const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string extractPublicKey(::Crypto::Certificate::Encoding) const /*override*/;
 
+    // vIndex: 3
     virtual ::std::string extractPrivateKey(::Crypto::Certificate::Encoding) const /*override*/;
 
+    // vIndex: 4
     virtual ::std::string getIssuer() const /*override*/;
 
+    // vIndex: 5
     virtual bool hasValidCertChain() const /*override*/;
 
+    // vIndex: 6
     virtual ::std::string
         generateCertificateThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const
         /*override*/;
 
+    // vIndex: 7
     virtual ::std::string
         generatePublicKeyThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const
         /*override*/;

@@ -23,13 +23,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
 
+    // vIndex: 8
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
+    // vIndex: 9
     virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
         /*override*/;
 
+    // vIndex: 2
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const,
@@ -38,10 +42,12 @@ public:
         bool                   isInternalTransfer
     ) const /*override*/;
 
+    // vIndex: 4
     virtual int
     getAllowedAddCount(::ContainerScreenContext const& screenContext, ::ItemStackBase const& itemInSlot) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~DynamicContainerValidation() /*override*/ = default;
     // NOLINTEND
 
@@ -64,8 +70,6 @@ public:
 
     MCNAPI int
     $getAllowedAddCount(::ContainerScreenContext const& screenContext, ::ItemStackBase const& itemInSlot) const;
-
-
     // NOLINTEND
 
 public:

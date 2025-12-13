@@ -18,25 +18,24 @@ public:
         WrapAround   = 2,
     };
 
+    using SpreadTypes = ::std::vector<::MultifaceSpreader::SpreadType>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk693f7c;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MultifaceSpreader::SpreadType>> mSpreadTypes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MultifaceSpreader& operator=(MultifaceSpreader const&);
-    MultifaceSpreader(MultifaceSpreader const&);
-    MultifaceSpreader();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MultifaceSpreader() = default;
 
+    // vIndex: 1
     virtual bool _canSpreadFrom(::Block const& block, uchar const facing) const;
 
+    // vIndex: 2
     virtual bool _canSpreadInto(
         ::IBlockWorldGenAPI& target,
         ::Block const&       self,
@@ -44,6 +43,7 @@ public:
         uchar const          placementDirection
     ) const;
 
+    // vIndex: 3
     virtual bool _isOtherBlockValidAsSource(::Block const&) const;
     // NOLINTEND
 
@@ -104,8 +104,6 @@ public:
     ) const;
 
     MCFOLD bool $_isOtherBlockValidAsSource(::Block const&) const;
-
-
     // NOLINTEND
 
 public:

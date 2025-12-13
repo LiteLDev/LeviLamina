@@ -20,18 +20,23 @@ class ActorQueueCommandResponse : public ::CommandResponseBase, public ::ActorEv
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
+    // vIndex: 2
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
+    // vIndex: 3
     virtual void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
                                                schema,
         ::Factory<::ActorEventResponse> const& factory
     ) const /*override*/;
 
+    // vIndex: 1
     virtual ::CommandOriginSystem _getCommandOriginSystem() const /*override*/;
 
+    // vIndex: 0
     virtual ~ActorQueueCommandResponse() /*override*/ = default;
     // NOLINTEND
 
@@ -55,8 +60,6 @@ public:
     ) const;
 
     MCNAPI ::CommandOriginSystem $_getCommandOriginSystem() const;
-
-
     // NOLINTEND
 
 public:

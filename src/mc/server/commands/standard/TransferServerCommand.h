@@ -33,15 +33,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
+    // vIndex: 0
     virtual ~TransferServerCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S ::Social::GameConnectionInfo _convertToDestination() const;
+    MCAPI ::Social::GameConnectionInfo _convertToDestination() const;
 
     MCAPI ::Player const* _loopPlayers(::Level& level, ::std::function<bool(::Player const*)> condition) const;
     // NOLINTEND
@@ -56,8 +58,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-
     // NOLINTEND
 
 public:

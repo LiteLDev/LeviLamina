@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Random;
 class SimplexNoise;
 struct CameraShakeEvent;
 // clang-format on
@@ -26,21 +25,5 @@ public:
     ::ll::TypedStorage<4, 4, float>                              mDecayRate;
     ::ll::TypedStorage<1, 1, ::CameraShakeType>                  mShakeType;
     ::ll::TypedStorage<1, 1, bool>                               mWasShaking;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraShakeComponent& operator=(CameraShakeComponent const&);
-    CameraShakeComponent(CameraShakeComponent const&);
-    CameraShakeComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void initialize(::Random& random);
-
-    MCNAPI_C ::CameraShakeComponent& operator=(::CameraShakeComponent&&);
-
-    MCNAPI_C bool queueShakeEvent(float intensity, float duration);
     // NOLINTEND
 };

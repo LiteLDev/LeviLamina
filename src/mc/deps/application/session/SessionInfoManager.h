@@ -21,12 +21,16 @@ class SessionInfoManager : public ::Bedrock::EnableNonOwnerReferences,
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initialize() = 0;
 
+    // vIndex: 2
     virtual void beginNewSession() = 0;
 
+    // vIndex: 3
     virtual ::std::shared_ptr<::Bedrock::SessionInfo const> getCurrentSession() const = 0;
 
+    // vIndex: 4
     virtual ::Bedrock::AccessUpdateEditor<
         ::std::shared_ptr<::Bedrock::SessionInfo>,
         ::Bedrock::SessionInfoManagerImpl,
@@ -34,16 +38,20 @@ public:
         ::Bedrock::Threading::Mutex>
     editCurrentSession() = 0;
 
+    // vIndex: 5
     virtual ::Bedrock::PubSub::Connector<void(
         ::Bedrock::NonOwnerPointer<::Bedrock::SessionInfoManager> const&,
         ::std::shared_ptr<::Bedrock::SessionInfo const> const&
     )>&
     onCurrentSessionChanged() = 0;
 
+    // vIndex: 6
     virtual ::std::string serializeSession(::Bedrock::SessionInfo const&) const = 0;
 
+    // vIndex: 7
     virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view) const = 0;
 
+    // vIndex: 0
     virtual ~SessionInfoManager() /*override*/;
     // NOLINTEND
 

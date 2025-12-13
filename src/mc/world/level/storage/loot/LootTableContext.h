@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/world/level/storage/loot/LootTable.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -23,6 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ~GlobalTransportFactory() /*override*/ = default;
     // NOLINTEND
 

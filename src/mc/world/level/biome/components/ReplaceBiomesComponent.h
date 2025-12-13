@@ -20,6 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ReplaceBiomesComponent() /*override*/ = default;
     // NOLINTEND
 

@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<4, 4, ::ContainerExpandStatus> status;
     ::ll::TypedStorage<8, 32, ::std::string>          groupName;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ExpandoModelElement();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

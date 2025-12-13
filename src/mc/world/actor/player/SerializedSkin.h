@@ -61,13 +61,9 @@ public:
         bool                      overridesPlayerAppearance
     );
 
-    MCAPI_C bool isValid() const;
-
     MCFOLD ::SerializedSkin& operator=(::SerializedSkin&&);
 
     MCFOLD ::SerializedSkin& operator=(::SerializedSkin const&);
-
-    MCAPI_C void setGeometryData(::Json::Value data, ::MinEngineVersion minEngineVersion);
 
     MCAPI void setPersonaAppearanceData(
         ::persona::ArmSize::Type const&                                   armSizeType,

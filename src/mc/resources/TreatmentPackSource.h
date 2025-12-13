@@ -31,32 +31,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TreatmentPackSource() /*override*/ = default;
 
+    // vIndex: 2
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
+    // vIndex: 3
     virtual ::PackType getPackType() const /*override*/;
 
-    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
+    // vIndex: 5
+    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::PackOrigin $getPackOrigin() const;
 
-    MCNAPI ::PackType $getPackType() const;
-
-    MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

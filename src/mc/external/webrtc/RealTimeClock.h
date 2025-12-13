@@ -17,10 +17,13 @@ class RealTimeClock : public ::webrtc::Clock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::webrtc::Timestamp CurrentTime() /*override*/;
 
+    // vIndex: 2
     virtual ::webrtc::NtpTime ConvertTimestampToNtpTime(::webrtc::Timestamp timestamp) /*override*/;
 
+    // vIndex: 0
     virtual ~RealTimeClock() /*override*/ = default;
     // NOLINTEND
 
@@ -30,8 +33,6 @@ public:
     MCNAPI ::webrtc::Timestamp $CurrentTime();
 
     MCNAPI ::webrtc::NtpTime $ConvertTimestampToNtpTime(::webrtc::Timestamp timestamp);
-
-
     // NOLINTEND
 
 public:

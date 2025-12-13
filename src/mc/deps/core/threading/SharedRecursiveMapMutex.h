@@ -24,12 +24,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool _threadHoldsSharedLock(::std::thread::id) /*override*/;
 
+    // vIndex: 2
     virtual bool _shouldLockForSharedAccess(::std::thread::id) /*override*/;
 
+    // vIndex: 3
     virtual bool _shouldUnLockForSharedAccess(::std::thread::id) /*override*/;
 
+    // vIndex: 0
     virtual ~SharedRecursiveMapMutex() /*override*/ = default;
     // NOLINTEND
 

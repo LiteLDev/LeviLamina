@@ -31,16 +31,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CompositeMediaEngine() /*override*/ = default;
 
+    // vIndex: 1
     virtual bool Init() /*override*/;
 
+    // vIndex: 3
     virtual ::cricket::VoiceEngineInterface& voice() /*override*/;
 
+    // vIndex: 2
     virtual ::cricket::VoiceEngineInterface const& voice() const /*override*/;
 
+    // vIndex: 5
     virtual ::cricket::VideoEngineInterface& video() /*override*/;
 
+    // vIndex: 4
     virtual ::cricket::VideoEngineInterface const& video() const /*override*/;
     // NOLINTEND
 

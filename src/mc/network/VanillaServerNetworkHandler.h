@@ -31,8 +31,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~VanillaServerNetworkHandler() /*override*/ = default;
 
+    // vIndex: 1
     virtual void
     handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet) /*override*/;
     // NOLINTEND
@@ -41,8 +43,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet);
-
-
     // NOLINTEND
 
 public:

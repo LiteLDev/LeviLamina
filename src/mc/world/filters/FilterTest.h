@@ -66,22 +66,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FilterTest() = default;
 
+    // vIndex: 1
     virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
+    // vIndex: 2
     virtual bool evaluate(::FilterContext const&) const = 0;
 
+    // vIndex: 3
     virtual void finalizeParsedValue(::IWorldRegistriesProvider& registries);
 
+    // vIndex: 4
     virtual ::std::string_view getName() const = 0;
 
+    // vIndex: 5
     virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getDomain() const;
 
+    // vIndex: 6
     virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getValue() const = 0;
 
+    // vIndex: 7
     virtual ::Json::Value _serializeDomain() const;
 
+    // vIndex: 8
     virtual ::Json::Value _serializeValue() const = 0;
     // NOLINTEND
 
@@ -105,8 +114,6 @@ public:
     MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getDomain() const;
 
     MCNAPI ::Json::Value $_serializeDomain() const;
-
-
     // NOLINTEND
 
 public:

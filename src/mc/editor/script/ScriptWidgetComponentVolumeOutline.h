@@ -61,8 +61,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ~ScriptWidgetComponentVolumeOutline() /*override*/;
 
+    // vIndex: 3
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
 
@@ -230,8 +232,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
-
-
     // NOLINTEND
 
 public:

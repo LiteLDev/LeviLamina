@@ -20,16 +20,11 @@ class AudioEncoder {
 public:
     // AudioEncoder inner types declare
     // clang-format off
-    struct EncodedInfoLeaf;
     struct EncodedInfo;
+    struct EncodedInfoLeaf;
     // clang-format on
 
     // AudioEncoder inner types define
-    enum class Application : int {
-        KSpeech = 0,
-        KAudio  = 1,
-    };
-
     enum class CodecType : int {
         KOther                    = 0,
         KOpus                     = 1,
@@ -74,65 +69,99 @@ public:
         EncodedInfo();
     };
 
+    enum class Application : int {
+        KSpeech = 0,
+        KAudio  = 1,
+    };
+
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AudioEncoder() = default;
 
+    // vIndex: 1
     virtual int SampleRateHz() const = 0;
 
+    // vIndex: 2
     virtual uint64 NumChannels() const = 0;
 
+    // vIndex: 3
     virtual int RtpTimestampRateHz() const;
 
+    // vIndex: 4
     virtual uint64 Num10MsFramesInNextPacket() const = 0;
 
+    // vIndex: 5
     virtual uint64 Max10MsFramesInAPacket() const = 0;
 
+    // vIndex: 6
     virtual int GetTargetBitrate() const = 0;
 
+    // vIndex: 7
     virtual void Reset() = 0;
 
+    // vIndex: 8
     virtual bool SetFec(bool);
 
+    // vIndex: 9
     virtual bool SetDtx(bool);
 
+    // vIndex: 10
     virtual bool GetDtx() const;
 
+    // vIndex: 11
     virtual bool SetApplication(::webrtc::AudioEncoder::Application);
 
+    // vIndex: 12
     virtual void SetMaxPlaybackRate(int);
 
+    // vIndex: 13
     virtual void SetTargetBitrate(int);
 
+    // vIndex: 14
     virtual ::rtc::ArrayView<::std::unique_ptr<::webrtc::AudioEncoder>> ReclaimContainedEncoders();
 
+    // vIndex: 15
     virtual bool EnableAudioNetworkAdaptor(::std::string const&, ::webrtc::RtcEventLog*);
 
+    // vIndex: 16
     virtual void DisableAudioNetworkAdaptor();
 
+    // vIndex: 17
     virtual void OnReceivedUplinkPacketLossFraction(float);
 
+    // vIndex: 18
     virtual void OnReceivedUplinkRecoverablePacketLossFraction(float);
 
+    // vIndex: 19
     virtual void OnReceivedTargetAudioBitrate(int);
 
+    // vIndex: 20
     virtual void OnReceivedUplinkBandwidth(int, ::std::optional<int64>);
 
+    // vIndex: 21
     virtual void OnReceivedUplinkAllocation(::webrtc::BitrateAllocationUpdate);
 
+    // vIndex: 22
     virtual void OnReceivedRtt(int);
 
+    // vIndex: 23
     virtual void OnReceivedOverhead(uint64);
 
+    // vIndex: 24
     virtual void SetReceiverFrameLengthRange(int, int);
 
+    // vIndex: 25
     virtual ::webrtc::ANAStats GetANAStats() const;
 
+    // vIndex: 26
     virtual ::std::optional<::std::pair<::webrtc::TimeDelta, ::webrtc::TimeDelta>> GetFrameLengthRange() const = 0;
 
+    // vIndex: 27
     virtual ::std::optional<::std::pair<::webrtc::DataRate, ::webrtc::DataRate>> GetBitrateRange() const;
 
+    // vIndex: 28
     virtual ::webrtc::AudioEncoder::EncodedInfo
     EncodeImpl(uint, ::rtc::ArrayView<short const>, ::rtc::BufferT<uchar, 0>*) = 0;
     // NOLINTEND

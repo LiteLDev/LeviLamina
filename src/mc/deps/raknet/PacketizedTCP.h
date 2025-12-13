@@ -34,11 +34,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PacketizedTCP() /*override*/ = default;
 
+    // vIndex: 1
     virtual void
     Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast) /*override*/;
 
+    // vIndex: 2
     virtual bool SendList(
         char const**                   data,
         uint const*                    lengths,
@@ -47,6 +50,7 @@ public:
         bool                           broadcast
     ) /*override*/;
 
+    // vIndex: 4
     virtual ::RakNet::Packet* Receive() /*override*/;
     // NOLINTEND
 

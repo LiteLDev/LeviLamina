@@ -45,67 +45,20 @@ public:
     // RakPeer inner types declare
     // clang-format off
     struct BanStruct;
+    struct BufferedCommandStruct;
     struct PingAndClockDifferential;
+    struct RemoteSystemStruct;
     struct RequestedConnectionStruct;
     struct SocketQueryOutput;
-    struct RemoteSystemStruct;
-    struct BufferedCommandStruct;
     // clang-format on
 
     // RakPeer inner types define
-    enum : int {
-        RequestedConnectionListMutex = 0,
-        OfflinePingResponseMutex     = 1,
-        NumberOfRakpeerMutexes       = 2,
-    };
-
-    struct BanStruct {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, char*> IP;
-        ::ll::TypedStorage<4, 4, uint>  timeout;
-        // NOLINTEND
-    };
-
     struct PingAndClockDifferential {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<2, 2, ushort> pingTime;
         ::ll::TypedStorage<8, 8, uint64> clockDifferential;
-        // NOLINTEND
-    };
-
-    struct RequestedConnectionStruct {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
-        ::ll::TypedStorage<8, 8, uint64>                    nextRequestTime;
-        ::ll::TypedStorage<1, 1, uchar>                     requestsMade;
-        ::ll::TypedStorage<8, 8, char*>                     data;
-        ::ll::TypedStorage<2, 2, ushort>                    dataLength;
-        ::ll::TypedStorage<1, 256, char[256]>               outgoingPassword;
-        ::ll::TypedStorage<1, 1, uchar>                     outgoingPasswordLength;
-        ::ll::TypedStorage<4, 4, uint>                      socketIndex;
-        ::ll::TypedStorage<4, 4, uint>                      extraData;
-        ::ll::TypedStorage<4, 4, uint>                      sendConnectionAttemptCount;
-        ::ll::TypedStorage<4, 4, uint>                      timeBetweenSendConnectionAttemptsMS;
-        ::ll::TypedStorage<4, 4, uint>                      timeoutTime;
-        ::ll::TypedStorage<4, 4, ::RakNet::PublicKeyMode>   publicKeyMode;
-        ::ll::TypedStorage<8, 8, ::RakNet::RakNetSocket2*>  socket;
-        enum : int {
-            Connect = 1,
-        } actionToTake;
-        // NOLINTEND
-    };
-
-    struct SocketQueryOutput {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::RakNetSocket2*>> sockets;
         // NOLINTEND
     };
 
@@ -167,6 +120,39 @@ public:
         // NOLINTEND
     };
 
+    struct BanStruct {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, char*> IP;
+        ::ll::TypedStorage<4, 4, uint>  timeout;
+        // NOLINTEND
+    };
+
+    struct RequestedConnectionStruct {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
+        ::ll::TypedStorage<8, 8, uint64>                    nextRequestTime;
+        ::ll::TypedStorage<1, 1, uchar>                     requestsMade;
+        ::ll::TypedStorage<8, 8, char*>                     data;
+        ::ll::TypedStorage<2, 2, ushort>                    dataLength;
+        ::ll::TypedStorage<1, 256, char[256]>               outgoingPassword;
+        ::ll::TypedStorage<1, 1, uchar>                     outgoingPasswordLength;
+        ::ll::TypedStorage<4, 4, uint>                      socketIndex;
+        ::ll::TypedStorage<4, 4, uint>                      extraData;
+        ::ll::TypedStorage<4, 4, uint>                      sendConnectionAttemptCount;
+        ::ll::TypedStorage<4, 4, uint>                      timeBetweenSendConnectionAttemptsMS;
+        ::ll::TypedStorage<4, 4, uint>                      timeoutTime;
+        ::ll::TypedStorage<4, 4, ::RakNet::PublicKeyMode>   publicKeyMode;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakNetSocket2*>  socket;
+        enum : int {
+            Connect = 1,
+        } actionToTake;
+        // NOLINTEND
+    };
+
     struct BufferedCommandStruct {
     public:
         // member variables
@@ -196,6 +182,20 @@ public:
             DoNothing           = 4,
         } command;
         // NOLINTEND
+    };
+
+    struct SocketQueryOutput {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::RakNetSocket2*>> sockets;
+        // NOLINTEND
+    };
+
+    enum : int {
+        RequestedConnectionListMutex = 0,
+        OfflinePingResponseMutex     = 1,
+        NumberOfRakpeerMutexes       = 2,
     };
 
 public:
@@ -271,10 +271,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RakPeer() /*override*/;
 
+    // vIndex: 1
     virtual void InitializeConfiguration(::std::unique_ptr<::RakNet::ShadowBanList> banList) /*override*/;
 
+    // vIndex: 2
     virtual ::RakNet::StartupResult Startup(
         uint                        maxConnections,
         ::RakNet::SocketDescriptor* socketDescriptors,
@@ -282,27 +285,38 @@ public:
         int                         threadPriority
     ) /*override*/;
 
+    // vIndex: 3
     virtual bool
     InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey) /*override*/;
 
+    // vIndex: 4
     virtual void DisableSecurity() /*override*/;
 
+    // vIndex: 5
     virtual void AddToSecurityExceptionList(char const* ip) /*override*/;
 
+    // vIndex: 6
     virtual void RemoveFromSecurityExceptionList(char const* ip) /*override*/;
 
+    // vIndex: 7
     virtual bool IsInSecurityExceptionList(char const* ip) /*override*/;
 
+    // vIndex: 8
     virtual void SetMaximumIncomingConnections(ushort numberAllowed) /*override*/;
 
+    // vIndex: 9
     virtual uint GetMaximumIncomingConnections() const /*override*/;
 
+    // vIndex: 10
     virtual ushort NumberOfConnections() const /*override*/;
 
+    // vIndex: 11
     virtual void SetIncomingPassword(char const* passwordData, int passwordDataLength) /*override*/;
 
+    // vIndex: 12
     virtual void GetIncomingPassword(char* passwordData, int* passwordDataLength) /*override*/;
 
+    // vIndex: 13
     virtual ::RakNet::ConnectionAttemptResult Connect(
         char const*          host,
         ushort               remotePort,
@@ -315,6 +329,7 @@ public:
         uint                 timeoutTime
     ) /*override*/;
 
+    // vIndex: 14
     virtual ::RakNet::ConnectionAttemptResult ConnectWithSocket(
         char const*              host,
         ushort                   remotePort,
@@ -327,22 +342,29 @@ public:
         uint                     timeoutTime
     ) /*override*/;
 
+    // vIndex: 15
     virtual void Shutdown(
         uint             blockDuration,
         uchar            orderingChannel,
         ::PacketPriority disconnectionNotificationPriority
     ) /*override*/;
 
+    // vIndex: 16
     virtual bool SetApplicationHandshakeCompleted(::RakNet::AddressOrGUID systemIdentifier) /*override*/;
 
+    // vIndex: 17
     virtual bool IsActive() const /*override*/;
 
+    // vIndex: 18
     virtual bool GetConnectionList(::RakNet::SystemAddress* remoteSystems, ushort* numberOfSystems) const /*override*/;
 
+    // vIndex: 19
     virtual uint GetNextSendReceipt() /*override*/;
 
+    // vIndex: 20
     virtual uint IncrementNextSendReceipt() /*override*/;
 
+    // vIndex: 22
     virtual uint Send(
         char const*                   data,
         int const                     length,
@@ -354,6 +376,7 @@ public:
         uint                          forceReceiptNumber
     ) /*override*/;
 
+    // vIndex: 21
     virtual uint Send(
         ::RakNet::BitStream const*    bitStream,
         ::PacketPriority              priority,
@@ -364,8 +387,10 @@ public:
         uint                          forceReceiptNumber
     ) /*override*/;
 
+    // vIndex: 23
     virtual void SendLoopback(char const* data, int const length) /*override*/;
 
+    // vIndex: 24
     virtual uint SendList(
         char const**                  data,
         int const*                    lengths,
@@ -378,12 +403,16 @@ public:
         uint                          forceReceiptNumber
     ) /*override*/;
 
+    // vIndex: 25
     virtual ::RakNet::Packet* Receive() /*override*/;
 
+    // vIndex: 26
     virtual void DeallocatePacket(::RakNet::Packet* packet) /*override*/;
 
+    // vIndex: 27
     virtual uint GetMaximumNumberOfPeers() const /*override*/;
 
+    // vIndex: 28
     virtual void CloseConnection(
         ::RakNet::AddressOrGUID const target,
         bool                          sendDisconnectionNotification,
@@ -391,33 +420,46 @@ public:
         ::PacketPriority              disconnectionNotificationPriority
     ) /*override*/;
 
+    // vIndex: 30
     virtual void CancelConnectionAttempt(::RakNet::SystemAddress const target) /*override*/;
 
+    // vIndex: 29
     virtual ::RakNet::ConnectionState GetConnectionState(::RakNet::AddressOrGUID const systemIdentifier) /*override*/;
 
+    // vIndex: 31
     virtual int GetIndexFromSystemAddress(::RakNet::SystemAddress const systemAddress) const /*override*/;
 
+    // vIndex: 32
     virtual ::RakNet::SystemAddress GetSystemAddressFromIndex(uint index) /*override*/;
 
+    // vIndex: 33
     virtual ::RakNet::RakNetGUID GetGUIDFromIndex(uint index) /*override*/;
 
+    // vIndex: 34
     virtual void GetSystemList(
         ::DataStructures::List<::RakNet::SystemAddress>& addresses,
         ::DataStructures::List<::RakNet::RakNetGUID>&    guids
     ) const /*override*/;
 
+    // vIndex: 35
     virtual void AddToBanList(char const* IP, uint milliseconds) /*override*/;
 
+    // vIndex: 36
     virtual void RemoveFromBanList(char const* IP) /*override*/;
 
+    // vIndex: 37
     virtual void ClearBanList() /*override*/;
 
+    // vIndex: 38
     virtual bool IsBanned(char const* IP) /*override*/;
 
+    // vIndex: 39
     virtual void SetLimitIPConnectionFrequency(bool b) /*override*/;
 
+    // vIndex: 41
     virtual void Ping(::RakNet::SystemAddress const target) /*override*/;
 
+    // vIndex: 40
     virtual bool Ping(
         char const* host,
         ushort      remotePort,
@@ -425,65 +467,94 @@ public:
         uint        connectionSocketIndex
     ) /*override*/;
 
+    // vIndex: 42
     virtual void SendNatTraversalMessage(::RakNet::SystemAddress const target) /*override*/;
 
+    // vIndex: 43
     virtual int GetAveragePing(::RakNet::AddressOrGUID const systemIdentifier) /*override*/;
 
+    // vIndex: 44
     virtual int GetLastPing(::RakNet::AddressOrGUID const systemIdentifier) const /*override*/;
 
+    // vIndex: 45
     virtual int GetLowestPing(::RakNet::AddressOrGUID const systemIdentifier) const /*override*/;
 
+    // vIndex: 46
     virtual void SetOccasionalPing(bool doPing) /*override*/;
 
+    // vIndex: 47
     virtual uint64 GetClockDifferential(::RakNet::AddressOrGUID const systemIdentifier) /*override*/;
 
+    // vIndex: 50
     virtual void SetOfflinePingResponse(char const* data, uint const length) /*override*/;
 
+    // vIndex: 51
     virtual void GetOfflinePingResponse(char** data, uint* length) /*override*/;
 
+    // vIndex: 52
     virtual ::RakNet::SystemAddress GetInternalID(::RakNet::SystemAddress const systemAddress, int const index) const
         /*override*/;
 
+    // vIndex: 53
     virtual void SetInternalID(::RakNet::SystemAddress systemAddress, int index) /*override*/;
 
+    // vIndex: 54
     virtual ::RakNet::SystemAddress GetExternalID(::RakNet::SystemAddress const target) const /*override*/;
 
+    // vIndex: 55
     virtual ::RakNet::RakNetGUID const GetMyGUID() const /*override*/;
 
+    // vIndex: 56
     virtual void resetMyGUID() /*override*/;
 
+    // vIndex: 57
     virtual ::RakNet::SystemAddress GetMyBoundAddress(int const socketIndex) /*override*/;
 
+    // vIndex: 48
     virtual void SetAllowUnconnectedPings(bool unconnectedPings) /*override*/;
 
+    // vIndex: 49
     virtual bool GetAllowUnconnectedPings() const /*override*/;
 
+    // vIndex: 58
     virtual ::RakNet::RakNetGUID const& GetGuidFromSystemAddress(::RakNet::SystemAddress const input) const
         /*override*/;
 
+    // vIndex: 59
     virtual ::RakNet::SystemAddress GetSystemAddressFromGuid(::RakNet::RakNetGUID const input) const /*override*/;
 
+    // vIndex: 60
     virtual bool GetClientPublicKeyFromSystemAddress(::RakNet::SystemAddress const input, char* client_public_key) const
         /*override*/;
 
+    // vIndex: 61
     virtual void SetTimeoutTime(uint timeMS, ::RakNet::SystemAddress const target) /*override*/;
 
+    // vIndex: 62
     virtual uint GetTimeoutTime(::RakNet::SystemAddress const target) /*override*/;
 
+    // vIndex: 63
     virtual int GetMTUSize(::RakNet::SystemAddress const target) const /*override*/;
 
+    // vIndex: 64
     virtual uint GetNumberOfAdapters() /*override*/;
 
+    // vIndex: 65
     virtual ::RakNet::NetworkAdapter& GetLocalAdapter(uint index) /*override*/;
 
+    // vIndex: 66
     virtual uint GetNumberOfAddresses() /*override*/;
 
+    // vIndex: 67
     virtual char const* GetLocalIP(uint index) /*override*/;
 
+    // vIndex: 68
     virtual bool IsLocalIP(char const* ip) /*override*/;
 
+    // vIndex: 69
     virtual void AllowConnectionResponseIPMigration(bool allow) /*override*/;
 
+    // vIndex: 70
     virtual bool AdvertiseSystem(
         char const* host,
         ushort      remotePort,
@@ -492,62 +563,86 @@ public:
         uint        connectionSocketIndex
     ) /*override*/;
 
+    // vIndex: 71
     virtual void SetSplitMessageProgressInterval(int interval) /*override*/;
 
+    // vIndex: 72
     virtual int GetSplitMessageProgressInterval() const /*override*/;
 
+    // vIndex: 73
     virtual void SetUnreliableTimeout(uint timeoutMS) /*override*/;
 
+    // vIndex: 74
     virtual void SendTTL(char const* host, ushort remotePort, int ttl, uint connectionSocketIndex) /*override*/;
 
+    // vIndex: 75
     virtual void AttachPlugin(::RakNet::PluginInterface2* plugin) /*override*/;
 
+    // vIndex: 76
     virtual void DetachPlugin(::RakNet::PluginInterface2* plugin) /*override*/;
 
+    // vIndex: 77
     virtual void PushBackPacket(::RakNet::Packet* packet, bool pushAtHead) /*override*/;
 
+    // vIndex: 78
     virtual void
     ChangeSystemAddress(::RakNet::RakNetGUID guid, ::RakNet::SystemAddress const& systemAddress) /*override*/;
 
+    // vIndex: 79
     virtual ::RakNet::Packet* AllocatePacket(uint dataSize) /*override*/;
 
+    // vIndex: 80
     virtual ::RakNet::RakNetSocket2* GetSocket(::RakNet::SystemAddress const target) /*override*/;
 
+    // vIndex: 81
     virtual void GetSockets(::DataStructures::List<::RakNet::RakNetSocket2*>& sockets) /*override*/;
 
+    // vIndex: 82
     virtual void ReleaseSockets(::DataStructures::List<::RakNet::RakNetSocket2*>& sockets) /*override*/;
 
+    // vIndex: 83
     virtual void WriteOutOfBandHeader(::RakNet::BitStream* bitStream) /*override*/;
 
+    // vIndex: 84
     virtual void SetUserUpdateThread(
         void (*_userUpdateThreadPtr)(::RakNet::RakPeerInterface*, void*),
         void* _userUpdateThreadData
     ) /*override*/;
 
+    // vIndex: 85
     virtual void
     SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(::RakNet::RNS2RecvStruct*)) /*override*/;
 
+    // vIndex: 86
     virtual void ApplyNetworkSimulator(float packetloss, ushort minExtraPing, ushort extraPingVariance) /*override*/;
 
+    // vIndex: 87
     virtual void SetPerConnectionOutgoingBandwidthLimit(uint maxBitsPerSecond) /*override*/;
 
+    // vIndex: 88
     virtual bool IsNetworkSimulatorActive() /*override*/;
 
+    // vIndex: 90
     virtual ::RakNet::RakNetStatistics*
     GetStatistics(::RakNet::SystemAddress const systemAddress, ::RakNet::RakNetStatistics* rns) /*override*/;
 
+    // vIndex: 89
     virtual bool GetStatistics(uint const index, ::RakNet::RakNetStatistics* rns) /*override*/;
 
+    // vIndex: 91
     virtual void GetStatisticsList(
         ::DataStructures::List<::RakNet::SystemAddress>&    addresses,
         ::DataStructures::List<::RakNet::RakNetGUID>&       guids,
         ::DataStructures::List<::RakNet::RakNetStatistics>& statistics
     ) /*override*/;
 
+    // vIndex: 92
     virtual uint GetReceiveBufferSize() /*override*/;
 
+    // vIndex: 93
     virtual bool RunUpdateCycle(::RakNet::BitStream& updateBitStream) /*override*/;
 
+    // vIndex: 94
     virtual bool SendOutOfBand(
         char const* host,
         ushort      remotePort,
@@ -556,10 +651,13 @@ public:
         uint        connectionSocketIndex
     ) /*override*/;
 
+    // vIndex: 2
     virtual void DeallocRNS2RecvStruct(::RakNet::RNS2RecvStruct* s, char const* file, uint line) /*override*/;
 
+    // vIndex: 3
     virtual ::RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const* file, uint line) /*override*/;
 
+    // vIndex: 1
     virtual void OnRNS2Recv(::RakNet::RNS2RecvStruct* recvStruct) /*override*/;
     // NOLINTEND
 
@@ -992,8 +1090,6 @@ public:
     MCAPI ::RakNet::RNS2RecvStruct* $AllocRNS2RecvStruct(char const* file, uint line);
 
     MCAPI void $OnRNS2Recv(::RakNet::RNS2RecvStruct* recvStruct);
-
-
     // NOLINTEND
 
 public:

@@ -17,6 +17,7 @@ class ShulkerBoxBlockItem : public ::BlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -24,10 +25,13 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
+    // vIndex: 91
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const /*override*/;
 
+    // vIndex: 33
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
+    // vIndex: 0
     virtual ~ShulkerBoxBlockItem() /*override*/ = default;
     // NOLINTEND
 
@@ -50,8 +54,6 @@ public:
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
 
     MCAPI int $getLevelDataForAuxValue(int auxValue) const;
-
-
     // NOLINTEND
 
 public:

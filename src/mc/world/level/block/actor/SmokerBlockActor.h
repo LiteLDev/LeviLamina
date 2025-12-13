@@ -9,17 +9,17 @@ class SmokerBlockActor : public ::FurnaceBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 25
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 0
     virtual ~SmokerBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $getName() const;
-
-
+    MCAPI ::std::string $getName() const;
     // NOLINTEND
 
 public:

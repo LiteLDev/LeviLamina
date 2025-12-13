@@ -21,47 +21,54 @@ class JigsawBlock : public ::FaceDirectionalActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
+    // vIndex: 119
     virtual ::Block const& getRenderBlock() const /*override*/;
 
+    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
+    // vIndex: 121
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~JigsawBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool canAttach(::JigsawBlockInfo const& block1, ::JigsawBlockInfo const& block2);
+    MCAPI static bool canAttach(::JigsawBlockInfo const& block1, ::JigsawBlockInfo const& block2);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI ::Block const& $getRenderBlock() const;
+    MCAPI ::Block const& $getRenderBlock() const;
 
-    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCNAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -69,9 +76,7 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -11,7 +11,7 @@ struct OffsetsComponent;
 namespace NPCSize {
 // functions
 // NOLINTBEGIN
-MCNAPI void updateSize(::AABBShapeComponent const& aabbShape, ::OffsetsComponent& offsets);
+MCAPI void updateSize(::AABBShapeComponent const& aabbShape, ::OffsetsComponent& offsets);
 // NOLINTEND
 
 } // namespace NPCSize

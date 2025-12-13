@@ -53,8 +53,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LogCommandParser() /*override*/ = default;
 
+    // vIndex: 5
     virtual bool OnCommand(
         char const*,
         uint,
@@ -64,14 +66,19 @@ public:
         char const*
     ) /*override*/;
 
+    // vIndex: 1
     virtual char const* GetName() const /*override*/;
 
+    // vIndex: 4
     virtual void SendHelp(::RakNet::TransportInterface*, ::RakNet::SystemAddress const&) /*override*/;
 
+    // vIndex: 2
     virtual void OnNewIncomingConnection(::RakNet::SystemAddress const&, ::RakNet::TransportInterface*) /*override*/;
 
+    // vIndex: 3
     virtual void OnConnectionLost(::RakNet::SystemAddress const&, ::RakNet::TransportInterface*) /*override*/;
 
+    // vIndex: 6
     virtual void OnTransportChange(::RakNet::TransportInterface*) /*override*/;
     // NOLINTEND
 

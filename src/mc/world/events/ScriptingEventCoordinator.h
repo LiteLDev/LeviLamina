@@ -21,13 +21,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptingEventCoordinator() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void registerScriptingEventHandler(::std::unique_ptr<::ScriptingEventHandler>&& handler);
+    MCFOLD void registerScriptingEventHandler(::std::unique_ptr<::ScriptingEventHandler>&& handler);
     // NOLINTEND
 
 public:

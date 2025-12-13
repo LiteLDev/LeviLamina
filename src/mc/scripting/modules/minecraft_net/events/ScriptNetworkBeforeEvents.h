@@ -40,12 +40,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptNetworkBeforeEvents() /*override*/;
 
+    // vIndex: 1
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>>
     onBeforePacketReceive(::IncomingPacketEvent const& packetEvent) /*override*/;
 
+    // vIndex: 2
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>>
     onBeforePacketSend(::OutgoingPacketEvent const& packetEvent) /*override*/;
@@ -88,8 +91,6 @@ public:
     MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>>
     $onBeforePacketSend(::OutgoingPacketEvent const& packetEvent);
-
-
     // NOLINTEND
 
 public:

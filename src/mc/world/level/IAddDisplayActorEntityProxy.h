@@ -11,10 +11,13 @@ class IAddDisplayActorEntityProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IAddDisplayActorEntityProxy() = default;
 
+    // vIndex: 1
     virtual void initializeActor(::Actor&) const = 0;
 
+    // vIndex: 2
     virtual void registerDisplayEntityToDimension(::Actor const&) const = 0;
     // NOLINTEND
 

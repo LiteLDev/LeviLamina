@@ -55,43 +55,44 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool test(::Block const& block, ::IRandom& random) const /*override*/;
 
+    // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
     virtual ~Test() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Test(::br::worldgen::processors::BlockRules::Test&&);
+    MCAPI Test(::br::worldgen::processors::BlockRules::Test&&);
 
-    MCNAPI Test(::br::worldgen::processors::BlockRules::Test const&);
+    MCAPI Test(::br::worldgen::processors::BlockRules::Test const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::br::worldgen::processors::BlockRules::Test&&);
+    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::Test&&);
 
-    MCNAPI void* $ctor(::br::worldgen::processors::BlockRules::Test const&);
+    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::Test const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $test(::Block const& block, ::IRandom& random) const;
+    MCAPI bool $test(::Block const& block, ::IRandom& random) const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
-
-
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

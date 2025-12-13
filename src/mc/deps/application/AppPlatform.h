@@ -3,25 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/MousePointerType.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
-#include "mc/deps/application/AppAction.h"
-#include "mc/deps/application/ClipboardFeatureFlags.h"
 #include "mc/deps/application/DeviceSunsetTier.h"
 #include "mc/deps/application/IAppPlatform.h"
 #include "mc/deps/application/LowMemorySeverity.h"
 #include "mc/deps/application/OsVersion.h"
-#include "mc/deps/application/StoragePermissionResult.h"
 #include "mc/deps/core/NetworkConnectionType.h"
 #include "mc/deps/core/debug/AssertDialogResponse.h"
 #include "mc/deps/core/file/FileAccessType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/AppFocusState.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
-#include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/deps/core/platform/FullscreenMode.h"
 #include "mc/deps/core/platform/OperationMode.h"
-#include "mc/deps/core/platform/PermissionRequestReason.h"
 #include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/core/platform/UIScalingRules.h"
 #include "mc/deps/core/resource/ResourceFileSystem.h"
@@ -32,44 +26,26 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/input/InputMode.h"
-#include "mc/options/UIProfile.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActivationUri;
 class AppLifecycleContext;
 class AppPlatformListener;
-class BatteryMonitorInterface;
-class FilePickerSettings;
 class HardwareMemoryTierUtil;
 class IAppPlatformImpl;
 class IFileAccess;
 class IPlatformScreenshots;
-class ImagePickingCallback;
-class PDFWriter;
-class PropertyBag;
-class PushNotificationMessage;
-class RectangleArea;
 class SecureStorage;
 class SecureStorageKey;
-class ThermalMonitorInterface;
-class ThrottledFileWriteManager;
-class UriListener;
+class WebviewInterface;
 struct IntegrityTokenResult;
-namespace ApplicationSignal { class ClipboardCopy; }
-namespace ApplicationSignal { class ClipboardPaste; }
-namespace ApplicationSignal { class ClipboardPasteRequest; }
-namespace Bedrock { class IApplicationDataStores; }
-namespace Bedrock::Threading { class Mutex; }
 namespace Core { class FileStorageArea; }
 namespace Core { class Path; }
 namespace Core { class PathView; }
+namespace Social { class MultiplayerService; }
 namespace Social { struct UserCreationData; }
+namespace Webview { class PlatformArguments; }
 namespace mce { class UUID; }
-namespace mce { struct Image; }
-struct WebviewInterface;
-namespace Social { struct MultiplayerService; }
-namespace Webview { struct PlatformArguments; }
 // clang-format on
 
 class AppPlatform : public ::IAppPlatform, public ::ISecureStorageKeySystem {
@@ -84,777 +60,800 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk7a3ae6;
     ::ll::UntypedStorage<8, 104> mUnke68af5;
     ::ll::UntypedStorage<1, 1>   mUnk3eb9fc;
-#ifdef LL_PLAT_C
-    ::ll::UntypedStorage<8, 8>  mUnk2a484c;
-    ::ll::UntypedStorage<8, 64> mUnkd51380;
-#endif
-    ::ll::UntypedStorage<8, 64> mUnkb50203;
-    ::ll::UntypedStorage<1, 4>  mUnka5d242;
-    ::ll::UntypedStorage<4, 4>  mUnk678160;
-    ::ll::UntypedStorage<8, 80> mUnkafb54c;
-    ::ll::UntypedStorage<8, 32> mUnked78dc;
-    ::ll::UntypedStorage<8, 32> mUnkb79db9;
-    ::ll::UntypedStorage<8, 32> mUnk2d8cb0;
-    ::ll::UntypedStorage<8, 8>  mUnkdc46a5;
-    ::ll::UntypedStorage<8, 8>  mUnk59b922;
-    ::ll::UntypedStorage<8, 8>  mUnk14a700;
-    ::ll::UntypedStorage<8, 8>  mUnk2c6ecf;
-    ::ll::UntypedStorage<1, 1>  mUnk31e0b7;
-    ::ll::UntypedStorage<8, 32> mUnk6d6135;
-    ::ll::UntypedStorage<8, 8>  mUnk896a24;
-    ::ll::UntypedStorage<8, 8>  mUnk69a5b2;
-    ::ll::UntypedStorage<1, 1>  mUnkd7bea9;
-    ::ll::UntypedStorage<8, 40> mUnk20e405;
-    ::ll::UntypedStorage<8, 8>  mUnk69afa6;
-    ::ll::UntypedStorage<1, 1>  mUnk6e12ac;
-    ::ll::UntypedStorage<1, 1>  mUnkff6e88;
-    ::ll::UntypedStorage<4, 4>  mUnk1d28ac;
-    ::ll::UntypedStorage<4, 4>  mUnk81425d;
-    ::ll::UntypedStorage<1, 1>  mUnkd5341c;
-    ::ll::UntypedStorage<1, 1>  mUnkdcaaf8;
-    ::ll::UntypedStorage<1, 1>  mUnk113b3b;
-    ::ll::UntypedStorage<1, 1>  mUnkbe6182;
-    ::ll::UntypedStorage<1, 1>  mUnkb00e9d;
-    ::ll::UntypedStorage<1, 1>  mUnk78da06;
-    ::ll::UntypedStorage<1, 1>  mUnk2ff939;
-    ::ll::UntypedStorage<8, 32> mUnkd9746f;
-    ::ll::UntypedStorage<8, 80> mUnk267c61;
-    ::ll::UntypedStorage<8, 32> mUnk26e8ea;
-    ::ll::UntypedStorage<8, 80> mUnkd6f5b8;
-    ::ll::UntypedStorage<8, 8>  mUnkb30295;
-    ::ll::UntypedStorage<8, 8>  mUnk40dee2;
-    ::ll::UntypedStorage<8, 8>  mUnk92e07d;
-    ::ll::UntypedStorage<8, 16> mUnk706c14;
-    ::ll::UntypedStorage<8, 16> mUnk391b07;
-    ::ll::UntypedStorage<8, 16> mUnke84b85;
-    ::ll::UntypedStorage<8, 16> mUnkb30208;
-    ::ll::UntypedStorage<8, 8>  mUnkf2b382;
-    ::ll::UntypedStorage<4, 4>  mUnk50488d;
-    ::ll::UntypedStorage<8, 16> mUnkea295c;
-    ::ll::UntypedStorage<8, 8>  mUnk412bfa;
-    ::ll::UntypedStorage<8, 8>  mUnkdd0de7;
-    ::ll::UntypedStorage<8, 8>  mUnkf9ffce;
-#ifdef LL_PLAT_C
-    ::ll::UntypedStorage<8, 8> mUnk85aa65;
-#endif
-    ::ll::UntypedStorage<8, 8> mUnkb00836;
+    ::ll::UntypedStorage<8, 64>  mUnkb50203;
+    ::ll::UntypedStorage<1, 4>   mUnka5d242;
+    ::ll::UntypedStorage<4, 4>   mUnk678160;
+    ::ll::UntypedStorage<8, 80>  mUnkafb54c;
+    ::ll::UntypedStorage<8, 32>  mUnked78dc;
+    ::ll::UntypedStorage<8, 32>  mUnkb79db9;
+    ::ll::UntypedStorage<8, 32>  mUnk2d8cb0;
+    ::ll::UntypedStorage<8, 8>   mUnkdc46a5;
+    ::ll::UntypedStorage<8, 8>   mUnk59b922;
+    ::ll::UntypedStorage<8, 8>   mUnk14a700;
+    ::ll::UntypedStorage<8, 8>   mUnk2c6ecf;
+    ::ll::UntypedStorage<1, 1>   mUnk31e0b7;
+    ::ll::UntypedStorage<8, 32>  mUnk6d6135;
+    ::ll::UntypedStorage<8, 8>   mUnk896a24;
+    ::ll::UntypedStorage<8, 8>   mUnk69a5b2;
+    ::ll::UntypedStorage<1, 1>   mUnkd7bea9;
+    ::ll::UntypedStorage<8, 40>  mUnk20e405;
+    ::ll::UntypedStorage<8, 8>   mUnk69afa6;
+    ::ll::UntypedStorage<1, 1>   mUnk6e12ac;
+    ::ll::UntypedStorage<1, 1>   mUnkff6e88;
+    ::ll::UntypedStorage<4, 4>   mUnk1d28ac;
+    ::ll::UntypedStorage<4, 4>   mUnk81425d;
+    ::ll::UntypedStorage<1, 1>   mUnkd5341c;
+    ::ll::UntypedStorage<1, 1>   mUnkdcaaf8;
+    ::ll::UntypedStorage<1, 1>   mUnk113b3b;
+    ::ll::UntypedStorage<1, 1>   mUnkbe6182;
+    ::ll::UntypedStorage<1, 1>   mUnkb00e9d;
+    ::ll::UntypedStorage<1, 1>   mUnk78da06;
+    ::ll::UntypedStorage<1, 1>   mUnk2ff939;
+    ::ll::UntypedStorage<8, 32>  mUnkd9746f;
+    ::ll::UntypedStorage<8, 80>  mUnk267c61;
+    ::ll::UntypedStorage<8, 32>  mUnk26e8ea;
+    ::ll::UntypedStorage<8, 80>  mUnkd6f5b8;
+    ::ll::UntypedStorage<8, 8>   mUnkb30295;
+    ::ll::UntypedStorage<8, 8>   mUnk40dee2;
+    ::ll::UntypedStorage<8, 8>   mUnk92e07d;
+    ::ll::UntypedStorage<8, 16>  mUnk706c14;
+    ::ll::UntypedStorage<8, 16>  mUnk391b07;
+    ::ll::UntypedStorage<8, 16>  mUnke84b85;
+    ::ll::UntypedStorage<8, 16>  mUnkb30208;
+    ::ll::UntypedStorage<8, 8>   mUnkf2b382;
+    ::ll::UntypedStorage<4, 4>   mUnk50488d;
+    ::ll::UntypedStorage<8, 16>  mUnkea295c;
+    ::ll::UntypedStorage<8, 8>   mUnk412bfa;
+    ::ll::UntypedStorage<8, 8>   mUnkdd0de7;
+    ::ll::UntypedStorage<8, 8>   mUnkf9ffce;
+    ::ll::UntypedStorage<8, 8>   mUnkb00836;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    AppPlatform& operator=(AppPlatform const&);
+    AppPlatform(AppPlatform const&);
     AppPlatform();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AppPlatform() /*override*/;
 
+    // vIndex: 25
     virtual void initialize();
 
+    // vIndex: 26
     virtual void teardown();
 
+    // vIndex: 7
     virtual void initAppPlatformNetworkSettings() /*override*/;
 
+    // vIndex: 27
     virtual void initializeScreenDependentResources();
 
+    // vIndex: 28
     virtual uint64 getHighPerformanceThreadsCount() const;
 
+    // vIndex: 29
     virtual uint64 getTotalHardwareThreadsCount() const;
 
+    // vIndex: 30
     virtual void initializeGraphicsDeviceTier();
 
+    // vIndex: 31
     virtual void addListener(::AppPlatformListener* l, float priority);
 
+    // vIndex: 32
     virtual void removeListener(::AppPlatformListener* l);
 
+    // vIndex: 33
     virtual void restartApp(bool restart);
 
+    // vIndex: 1
     virtual bool restartRequested() /*override*/;
 
+    // vIndex: 34
     virtual ::Core::PathBuffer<::std::string> getPackagePath() const = 0;
 
+    // vIndex: 8
     virtual int const numberOfThrottledTreatmentPacksToImportPerMinute() const /*override*/;
 
+    // vIndex: 9
     virtual bool const areTreatmentPacksThrottled() const /*override*/;
 
+    // vIndex: 24
     virtual ::HardwareMemoryTierUtil const& getHardwareMemoryTierUtil() const /*override*/;
 
-#ifdef LL_PLAT_C
-    virtual ::Core::PathBuffer<::std::string> getDataUrl() const = 0;
-
-    virtual void loadPNG(::mce::Image& out, ::Core::Path const& filename);
-
-    virtual void loadTGA(::mce::Image& out, ::Core::Path const& filename);
-
-    virtual void loadJPEG(::mce::Image& out, ::Core::Path const& filename);
-
-    virtual int getKeyFromKeyCode(int keyCode, int metaState, int deviceId);
-
-    virtual void textEditComponentGainedFocus(::std::string const&, int, bool, bool, bool);
-
-    virtual void textEditComponentLostFocus();
-
-    virtual void
-    showKeyboard(::std::string const&, int, bool, bool, bool, int const, ::glm::vec2 const&, float, ::InputMode);
-
-    virtual void hideKeyboard();
-
-    virtual bool blankLineDismissesChat() const;
-
-    virtual bool signWrapsTextEntry() const;
-
-    virtual bool isFullScreenKeyboard() const;
-
-    virtual bool actionSuspendsApp(::AppAction) const;
-
-    virtual float getKeyboardHeight() const;
-
-    virtual bool refocusMouse(bool lostMouse, bool oldMouseGrabbed);
-
-    virtual void setMousePointerType(::ui::MousePointerType);
-
-    virtual void hideMousePointer();
-
-    virtual void showMousePointer();
-
-    virtual void postInteractiveSignIn();
-
-    virtual bool useHardwareMouse();
-
-    virtual void provideHardwareMouseImageData(::mce::Image const& imageData);
-
-    virtual bool hasCustomSoftwareCursor() const;
-
-    virtual ::Core::PathBuffer<::std::string> getCustomSoftwareCursorAsset() const;
-
-    virtual bool getPointerFocus();
-
-    virtual void setPointerFocus(bool lostFocus);
-
-    virtual void toggleSimulateTouchWithMouse();
-
-    virtual void _fireAppSuspended();
-
-    virtual void _fireAppResumed();
-
-    virtual void _fireAppFocusLost();
-
-    virtual void _fireAppFocusGained();
-
-    virtual void _fireResizeBegin();
-
-    virtual void _fireResizeEnd();
-
-    virtual void _fireDeviceLost();
-
-    virtual void _fireSurfaceCreated();
-
-    virtual void _fireSurfaceDestroyed();
-
-    virtual void _fireAppConfigurationChanged();
-
-    virtual void _fireAppPaused();
-
-    virtual void _fireAppUnpaused();
-
-    virtual void swapBuffers() = 0;
-
-    virtual void discardBackbuffer();
-
-    virtual ::std::string getSystemLocale() const = 0;
-
-    virtual ::std::string getTermsOfUseHyperlink() const;
-
-    virtual void pickImage(::std::shared_ptr<::ImagePickingCallback>) = 0;
-
-    virtual void pickFile(::std::shared_ptr<::FilePickerSettings> settings);
-
-    virtual bool supportsAlbumExport() const;
-
-    virtual bool supportsPDFExport() const;
-
-    virtual ::std::shared_ptr<::PDFWriter> createPlatformPDFWriter();
-
-    virtual void shareFile(::Core::Path const& path, ::std::function<void(bool)> onCompletionCallback);
-
-    virtual bool hasHardwareBackButton();
-
-    virtual bool supportsMSAA() const;
-
-    virtual bool supports3rdPartyServers() const;
-
-    virtual bool supportsManualAddedServers() const;
-
-    virtual bool supportsFilePicking() const;
-
-    virtual bool supportsTouch() const;
-
-    virtual bool supportsKeyboardMouse() const;
-
-    virtual bool supportsGamepad() const;
-
-    virtual ::ClipboardFeatureFlags getClipboardFeatures() const;
-
-    virtual bool supportsClipboardSet() const;
-
-    virtual bool supportsClipboardGet() const;
-
-    virtual bool supportsClipboardAsyncGet() const;
-
-    virtual void setClipboard(::std::string const& value) const;
-
-    virtual ::std::wstring getClipboardText() const;
-
-    virtual void getClipboardTextAsync(::std::function<void(::std::string const&)> callback) const;
-
-    virtual bool supportsShare() const;
-
-    virtual void share() const;
-
-    virtual bool allowSplitScreen();
-
-    virtual float splitScreenRenderDistScalar(uint numPlayers);
-
-    virtual float uiOpenRenderDistScalar();
-
-    virtual void pushNotificationReceived(::PushNotificationMessage const& msg);
-
-    virtual void openStoragePermissionRequest(
-        ::PermissionRequestReason                        reason,
-        ::std::function<void(::StoragePermissionResult)> resultCallback
-    );
-
-    virtual void setStorageDirectory(
-        ::FileStorageDirectory dir,
-        bool                   isCallback,
-        ::PropertyBag const&   extraData,
-        ::std::function<void(bool)>
-    );
-
-    virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory dir);
-
-    virtual ::FileStorageDirectory getStorageDirectory() const;
-
-    virtual void setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)> callback);
-
-    virtual void setStorageDirectoryChanged(::std::function<void(::Core::Path const&)> callback);
-
-    virtual void runStoragePermissionResultCallback(::StoragePermissionResult result);
-
-    virtual bool hasExternalStoragePermission();
-
-    virtual bool delayOptionSaveUntilCloudSync() const;
-
-    virtual void updateTextEditBoxPosition(
-        ::RectangleArea const& controlPosition,
-        ::RectangleArea const& selectionPosition,
-        float const            guiScale
-    );
-
-    virtual ::BatteryMonitorInterface const& getBatteryMonitorInterface() const;
-
-    virtual ::ThermalMonitorInterface const& getThermalMonitorInterface() const;
-
-    virtual void trialCorrelationStart();
-
-    virtual void setAllowLostFocusToasts(bool allowLostFocusToasts);
-
-    virtual void setShowLostFocusToasts(bool showLostFocusToasts);
-
-    virtual bool getShowLostFocusToasts();
-
-    virtual double getTimeSFromProcessStart() const = 0;
-
-#endif
+    // vIndex: 35
     virtual ::Bedrock::Threading::Async<::IntegrityTokenResult> requestIntegrityToken(::std::string const& nonceToken);
 
+    // vIndex: 36
     virtual void setIntegrityToken(::std::string const& integrityToken);
 
+    // vIndex: 37
     virtual void setIntegrityTokenErrorMessage(::std::string const& errorMessage);
 
+    // vIndex: 38
     virtual bool supportsInPackageRecursion() const;
 
+    // vIndex: 39
     virtual bool supportsXboxLiveAchievements() const;
 
+    // vIndex: 40
     virtual void hideSplashScreen();
 
+    // vIndex: 41
     virtual ::std::string getFeedbackBugsLink() const;
 
+    // vIndex: 42
     virtual ::std::string getFeedbackHelpLink() const;
 
+    // vIndex: 43
     virtual auto getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
 
+    // vIndex: 44
     virtual void updateLocalization(::std::string const& loc);
 
+    // vIndex: 45
     virtual void setSleepEnabled(bool enabled);
 
+    // vIndex: 46
     virtual ::Core::PathBuffer<::std::string> getScratchPath();
 
+    // vIndex: 47
     virtual ::Core::PathBuffer<::std::string> getInternalPackStoragePath() const;
 
+    // vIndex: 48
     virtual ::Core::PathBuffer<::std::string> getSettingsPath();
 
+    // vIndex: 2
     virtual ::Core::PathBuffer<::std::string> getLoggingPath() const /*override*/;
 
+    // vIndex: 49
     virtual ::Core::PathBuffer<::std::string> getPackagedShaderCachePath();
 
+    // vIndex: 50
     virtual ::Core::PathBuffer<::std::string> getShaderCachePath();
 
+    // vIndex: 51
     virtual ::Core::PathBuffer<::std::string> getUserdataPathForLevels() const;
 
+    // vIndex: 52
     virtual ::Core::PathBuffer<::std::string> getCacheStoragePath();
 
+    // vIndex: 53
     virtual ::Core::PathBuffer<::std::string> getOnDiskScratchPath();
 
+    // vIndex: 54
     virtual ::Core::PathBuffer<::std::string> getOnDiskPackScratchPath();
 
+    // vIndex: 55
     virtual ::Core::PathBuffer<::std::string> getLevelInfoCachePath() const;
 
+    // vIndex: 56
     virtual ::Core::PathBuffer<::std::string> getCatalogSearchScratchPath();
 
+    // vIndex: 57
     virtual ::Core::PathBuffer<::std::string> getUserStorageRootPath() const;
 
+    // vIndex: 58
     virtual ::std::shared_ptr<::Core::FileStorageArea> getOrCreateStorageAreaForUser(::Social::UserCreationData const&);
 
+    // vIndex: 59
     virtual bool hasSeparatedStorageAreasForContentAcquisition() const;
 
+    // vIndex: 60
     virtual uint64 getOptimalLDBSize();
 
+    // vIndex: 61
     virtual int getMaxLDBFilesOpen() const;
 
+    // vIndex: 62
     virtual bool getDisableLDBSeekCompactions() const;
 
+    // vIndex: 63
     virtual void showDialog(int dialogId);
 
+    // vIndex: 65
     virtual void createUserInput();
 
+    // vIndex: 64
     virtual void createUserInput(int dialogId);
 
+    // vIndex: 66
     virtual int getUserInputStatus();
 
+    // vIndex: 67
     virtual ::std::vector<::std::string> getUserInput();
 
+    // vIndex: 68
     virtual ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> getFileAccess(::ResourceFileSystem fileSystem);
 
+    // vIndex: 69
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath);
 
+    // vIndex: 70
     virtual void registerFileForCollectionWithCrashDump(::Core::Path const& fileName);
 
+    // vIndex: 71
     virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
 
+    // vIndex: 72
     virtual int getScreenWidth() const;
 
+    // vIndex: 73
     virtual int getScreenHeight() const;
 
+    // vIndex: 74
     virtual int getDisplayWidth();
 
+    // vIndex: 75
     virtual int getDisplayHeight();
 
+    // vIndex: 76
     virtual void setScreenSize(int width, int height);
 
+    // vIndex: 77
     virtual void setWindowSize(int width, int height);
 
+    // vIndex: 78
     virtual void setWindowText(::std::string const& title);
 
+    // vIndex: 79
     virtual ::std::optional<::OperationMode> getOperationMode() const;
 
+    // vIndex: 80
     virtual bool allowContentLogWriteToDisk();
 
+    // vIndex: 81
     virtual uint getMaxClubsRequests() const;
 
+    // vIndex: 82
     virtual void queueForMainThread_DEPRECATED(::std::function<void()>) = 0;
 
+    // vIndex: 83
     virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() = 0;
 
+    // vIndex: 84
     virtual bool supportsLaunchingLegacyVersion() const;
 
+    // vIndex: 85
     virtual void launchLegacyVersion();
 
+    // vIndex: 86
     virtual bool canManageLegacyData() const;
 
+    // vIndex: 87
     virtual bool supportsDayOneExperience() const;
 
+    // vIndex: 88
     virtual bool canMigrateWorldData() const;
 
+    // vIndex: 89
     virtual bool isContentAutoUpdateAllowed() const;
 
+    // vIndex: 90
     virtual int getMaxSimultaneousDownloads() const;
 
+    // vIndex: 91
     virtual uint getMaxSimultaneousServiceRequests() const;
 
+    // vIndex: 92
     virtual bool isDownloadAndImportBlocking() const;
 
+    // vIndex: 93
     virtual bool isDownloadBuffered() const;
 
+    // vIndex: 94
     virtual bool supportsAutoSaveOnDBCompaction() const;
 
+    // vIndex: 95
     virtual ::std::string getTextBoxBackend() const = 0;
 
-    virtual void setTextBoxBackend(::std::string const& str) = 0;
+    // vIndex: 96
+    virtual void setTextBoxBackend(::std::string const&) = 0;
 
+    // vIndex: 97
     virtual int getCaretPosition() const = 0;
 
+    // vIndex: 98
     virtual void setCaretPosition(int) = 0;
 
+    // vIndex: 99
     virtual bool supportsVibration() const;
 
+    // vIndex: 100
     virtual void vibrate(int milliSeconds);
 
+    // vIndex: 101
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename);
 
+    // vIndex: 102
     virtual ::std::string _readAssetFileInternal(::Core::Path const& filename);
 
+    // vIndex: 103
     virtual bool hasAssetFile(::Core::Path const& filename);
 
+    // vIndex: 104
     virtual bool copyAssetFile(::Core::Path const& filename, ::Core::Path const& destination);
 
+    // vIndex: 105
     virtual ::std::set<::Core::PathBuffer<::std::string>>
     listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
 
+    // vIndex: 106
     virtual bool supportsClientUpdate() const;
 
+    // vIndex: 107
     virtual ::std::string getClientUpdateUrl() const;
 
+    // vIndex: 108
     virtual int checkLicense();
 
+    // vIndex: 109
     virtual bool hasBuyButtonWhenInvalidLicense();
 
+    // vIndex: 13
     virtual bool isNetworkAvailable() const /*override*/;
 
+    // vIndex: 14
     virtual bool isLANAvailable() const /*override*/;
 
+    // vIndex: 12
     virtual bool isNetworkEnabled(bool onlyWifiAllowed) const /*override*/;
 
+    // vIndex: 110
     virtual void setNetworkAllowed(bool allowed);
 
+    // vIndex: 111
     virtual bool isNetworkAllowed() const;
 
+    // vIndex: 16
     virtual bool isInternetAvailable() const /*override*/;
 
+    // vIndex: 112
     virtual ::std::optional<bool> isOnWifiConnectionTelemetryValue();
 
+    // vIndex: 113
     virtual ::NetworkConnectionType getNetworkConnectionType();
 
+    // vIndex: 114
     virtual void setNetworkConnectionType(::NetworkConnectionType connectionType);
 
+    // vIndex: 115
     virtual int getDefaultNetworkMaxPlayers() const;
 
+    // vIndex: 17
     virtual bool multiplayerRequiresPremiumAccess() const /*override*/;
 
+    // vIndex: 18
     virtual bool multiplayerRequiresUGCEnabled() const /*override*/;
 
+    // vIndex: 116
     virtual bool isCrossPlatformToggleVisible() const;
 
+    // vIndex: 117
     virtual bool isTelemetryAllowed();
 
+    // vIndex: 118
     virtual bool isTrialWorldsTransferToFullGameAllowed() const;
 
+    // vIndex: 119
     virtual void buyGame();
 
+    // vIndex: 120
     virtual void finish();
 
+    // vIndex: 121
     virtual bool canLaunchUri(::std::string const& uri);
 
+    // vIndex: 122
     virtual void launchUri(::std::string const& uri);
 
+    // vIndex: 123
     virtual void launchSettings();
 
+    // vIndex: 124
     virtual bool useXboxControlHelpers() const;
 
+    // vIndex: 125
     virtual ::PlatformType getPlatformType() const;
 
+    // vIndex: 126
     virtual bool isCentennial() const;
 
+    // vIndex: 127
     virtual ::std::string getPackageFamilyName() const;
 
+    // vIndex: 19
     virtual ::BuildPlatform getBuildPlatform() const /*override*/;
 
+    // vIndex: 20
     virtual ::std::string getPlatformString() const = 0;
 
+    // vIndex: 128
     virtual ::std::string getSubPlatformString() const = 0;
 
+    // vIndex: 129
     virtual int getNumberOfParticleFramesToInterpolate() const;
 
+    // vIndex: 130
     virtual int getDpi() const;
 
+    // vIndex: 131
     virtual void setDpi(int dpi);
 
+    // vIndex: 132
     virtual ::UIScalingRules getUIScalingRules() const;
 
+    // vIndex: 133
     virtual void setUIScalingRules(::UIScalingRules UIScalingRules);
 
+    // vIndex: 134
     virtual bool hasIDEProfiler();
 
+    // vIndex: 135
     virtual ::std::string getPlatformStringVar(int stringId);
 
+    // vIndex: 136
     virtual ::std::string getApplicationId() const = 0;
 
+    // vIndex: 137
     virtual uint64 getFreeMemory() const = 0;
 
+    // vIndex: 138
     virtual uint64 getMemoryLimit() const = 0;
 
+    // vIndex: 139
     virtual uint64 getUsedMemory() = 0;
 
+    // vIndex: 23
     virtual uint64 getTotalPhysicalMemory() const = 0;
 
+    // vIndex: 140
     virtual uint64 getMaximumUsedMemory();
 
+    // vIndex: 141
     virtual uint64 getLowMemoryEventThreshold(::LowMemorySeverity) const;
 
+    // vIndex: 142
     virtual uint64 getLowMemoryEventRecoveryThreshold(::LowMemorySeverity severity) const;
 
+    // vIndex: 22
     virtual uint64 getLowPhysicalMemoryThreshold() const /*override*/;
 
+    // vIndex: 143
     virtual void calculateIfLowMemoryDevice();
 
+    // vIndex: 3
     virtual bool isLowMemoryDevice() const /*override*/;
 
+    // vIndex: 4
     virtual bool isLowPhysicalMemoryDevice() const /*override*/;
 
+    // vIndex: 144
     virtual uint64 getTextureMemoryBudget() const;
 
+    // vIndex: 145
     virtual uint64 getSingleMipDefaultMemoryBudget() const;
 
+    // vIndex: 146
     virtual void readyForApplicationExitInfo() const;
 
+    // vIndex: 147
     virtual ::DeviceSunsetTier getDeviceSunsetTier() const;
 
+    // vIndex: 148
     virtual int getMaxSimRadiusInChunks() const;
 
+    // vIndex: 149
     virtual ::std::vector<::std::string> getBroadcastAddresses();
 
+    // vIndex: 150
     virtual ::std::vector<::std::string> getIPAddresses();
 
+    // vIndex: 151
     virtual bool useAppPlatformForTelemetryIPAddress();
 
+    // vIndex: 152
     virtual ::std::string getModelName();
 
+    // vIndex: 153
     virtual bool usesHDRBrightness() const;
 
+    // vIndex: 154
     virtual void updateBootstrapSettingsFromTreatmentsAsync();
 
-#ifdef LL_PLAT_C
-    virtual ::std::string getDeviceId() const /*override*/;
-
-    virtual ::std::string createUUID() = 0;
-
-    virtual bool isTablet() const = 0;
-
-    virtual void registerUriListener(::UriListener& listener);
-
-    virtual void registerUriListener(::std::string const& verb, ::UriListener& listener);
-
-    virtual void unregisterUriListener(::UriListener const& listener);
-
-    virtual void notifyUriListeners(::ActivationUri const& uri);
-
-    virtual void notifyUriListenerRegistrationDone();
-
-#endif
+    // vIndex: 155
     virtual void setFullscreenMode(::FullscreenMode const fullscreenMode);
 
+    // vIndex: 156
     virtual bool isNetworkThrottled() const;
 
+    // vIndex: 15
     virtual bool isLANAllowed() const /*override*/;
 
+    // vIndex: 157
     virtual bool doesLANRequireMultiplayerRestrictions() const;
 
+    // vIndex: 158
     virtual void collectGraphicsHardwareDetails();
 
+    // vIndex: 159
     virtual ::std::string getEdition() const;
 
+    // vIndex: 160
     virtual ::OsVersion getOSVersion() const;
 
+    // vIndex: 161
     virtual void setThreadsFrozen(bool frozen);
 
+    // vIndex: 162
     virtual bool areThreadsFrozen() const;
 
+    // vIndex: 163
     virtual float getDefaultSafeZoneScaleX() const;
 
+    // vIndex: 164
     virtual float getDefaultSafeZoneScaleY() const;
 
+    // vIndex: 165
     virtual float getDefaultSafeZoneScaleAll() const;
 
+    // vIndex: 166
     virtual float getDefaultScreenPositionX() const;
 
+    // vIndex: 167
     virtual float getDefaultScreenPositionY() const;
 
+    // vIndex: 168
     virtual bool isQuitCapable() const;
 
+    // vIndex: 169
     virtual bool requireControllerAtStartup() const;
 
+    // vIndex: 170
     virtual bool notifyControllerConnectionStateChange() const;
 
+    // vIndex: 171
     virtual bool platformRequiresControllerApplet() const;
 
+    // vIndex: 172
     virtual ::InputMode getDefaultInputMode() const;
 
+    // vIndex: 173
     virtual ::AppFocusState getFocusState();
 
+    // vIndex: 174
     virtual ::AppLifecycleContext& getAppLifecycleContext();
 
+    // vIndex: 175
     virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const&) = 0;
 
+    // vIndex: 176
     virtual bool supportsFliteTTS() const;
 
+    // vIndex: 177
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage();
 
+    // vIndex: 1
     virtual ::SecureStorageKey getSecureStorageKey(::std::string const& key) /*override*/;
 
+    // vIndex: 2
     virtual void setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value) /*override*/;
 
+    // vIndex: 178
     virtual bool devHotReloadRenderResources() const;
 
+    // vIndex: 179
     virtual bool shouldPauseDownloadsWhenEnterGame() const;
 
+    // vIndex: 180
     virtual bool compareAppReceiptToLocalReceipt(::std::string const& otherReceipt);
 
+    // vIndex: 181
     virtual ::mce::UUID const& getThirdPartyPackUUID() const;
 
+    // vIndex: 182
     virtual bool saveTreatmentPacksAsZips() const;
 
+    // vIndex: 183
     virtual bool saveEncryptedPacksAsZips() const;
 
+    // vIndex: 184
     virtual bool saveEncryptedWorldTemplatePacksAsZips() const;
 
+    // vIndex: 185
     virtual bool allowsResourcePackDevelopment() const;
 
+    // vIndex: 186
     virtual bool supportsLegacySinglePremiumCacheDirectory() const;
 
+    // vIndex: 187
     virtual bool supportsWorldShare() const;
 
+    // vIndex: 188
     virtual bool hasJournalingFilesystem() const;
 
+    // vIndex: 189
     virtual bool isAutoCompactionEnabled() const;
 
+    // vIndex: 190
     virtual ::std::chrono::nanoseconds getLevelSaveInterval() const;
 
+    // vIndex: 191
     virtual ::std::chrono::nanoseconds getOptionsSaveInterval() const;
 
+    // vIndex: 5
     virtual bool hasPlatformSpecificInvites() const /*override*/;
 
+    // vIndex: 192
     virtual bool usePlatformProfilePicturesOnly() const;
 
+    // vIndex: 193
     virtual bool allowBetaXblSignIn() const;
 
+    // vIndex: 194
     virtual bool requiresXboxLiveSigninToPlay() const;
 
+    // vIndex: 195
     virtual bool requiresLiveGoldForMultiplayer() const;
 
+    // vIndex: 196
     virtual bool shouldRegisterForXboxLiveNotifications() const;
 
+    // vIndex: 6
     virtual bool isRealmsEnabled() const /*override*/;
 
+    // vIndex: 197
     virtual bool minimizeBackgroundDownloads() const;
 
+    // vIndex: 198
     virtual bool requiresAutoSaveIconExplanationPopup() const;
 
+    // vIndex: 199
     virtual ::IPlatformScreenshots& getPlatformScreenshots();
 
+    // vIndex: 200
     virtual ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> getMultiplayerServiceListToRegister() const;
 
+    // vIndex: 21
     virtual ::std::vector<::Social::MultiplayerServiceIdentifier>
     getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const /*override*/;
 
+    // vIndex: 201
     virtual uint maxFileDataRequestConcurrency() const;
 
+    // vIndex: 10
     virtual void goToExternalConsumablesStoreListing() const /*override*/;
 
+    // vIndex: 202
     virtual float getStoreNetworkFailureTimeout() const;
 
+    // vIndex: 203
     virtual ::std::shared_ptr<::Core::FileStorageArea>
     createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
 
+    // vIndex: 204
     virtual void handlePlatformSpecificCommerceError(uint error);
 
+    // vIndex: 205
     virtual bool isEduMode() const;
 
+    // vIndex: 206
     virtual bool importAsFlatFile() const;
 
+    // vIndex: 207
     virtual bool isWebviewSupported() const;
 
+    // vIndex: 208
     virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&&) const;
 
+    // vIndex: 209
     virtual bool canAppSelfTerminate() const = 0;
 
+    // vIndex: 210
     virtual bool getPlatformTTSExists() const;
 
+    // vIndex: 211
     virtual bool getPlatformTTSEnabled() const;
 
+    // vIndex: 212
     virtual ::std::variant<::HWND__*, ::std::monostate> getRenderSurfaceParameters() const;
 
+    // vIndex: 213
     virtual bool shouldRemoveGraphicsDeviceOnAppTermination() const;
 
+    // vIndex: 214
     virtual bool isJoinableViaExternalServers() const;
 
+    // vIndex: 215
     virtual void onPrimaryUserNetworkReady();
 
+    // vIndex: 216
     virtual bool isDisplayInitialized() const;
 
+    // vIndex: 217
     virtual bool usesAsyncOptionSaving() const;
 
+    // vIndex: 218
     virtual void showPlatformStoreIcon(bool shouldShow);
 
+    // vIndex: 11
     virtual void showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback) /*override*/;
 
-#ifdef LL_PLAT_C
-    virtual void showXboxLiveUserSettings();
-
-#endif
+    // vIndex: 219
     virtual void initializeGameStreaming();
 
+    // vIndex: 220
     virtual void notifyNetworkConfigurationChanged();
 
+    // vIndex: 221
     virtual void setKeepScreenOnFlag(bool);
 
+    // vIndex: 222
     virtual void initializeMulticast() const;
 
+    // vIndex: 223
     virtual void requestMulticastReceivePermission();
 
+    // vIndex: 224
     virtual bool hasMulticastReceivePermission() const;
 
+    // vIndex: 225
     virtual void releaseMulticastReceivePermission() const;
 
+    // vIndex: 226
     virtual void onMinecraftGameInitComplete();
 
+    // vIndex: 227
     virtual void onFullGameUnlock();
 
+    // vIndex: 228
     virtual bool is24HourTimeFormat() const;
 
+    // vIndex: 229
     virtual ::Bedrock::Threading::Async<bool> showOSUserDialog(::std::string, ::std::string, ::std::string);
 
-#ifdef LL_PLAT_C
-    virtual ::Bedrock::NotNullNonOwnerPtr<::ThrottledFileWriteManager> getThrottledFileWriteManager() const;
-
-#endif
+    // vIndex: 230
     virtual ::Core::PathBuffer<::std::string> _getCurrentStoragePath() const = 0;
 
+    // vIndex: 231
     virtual ::Core::PathBuffer<::std::string> _getExternalStoragePath() const = 0;
 
+    // vIndex: 232
     virtual ::Core::PathBuffer<::std::string> _getInternalStoragePath() const = 0;
 
+    // vIndex: 233
     virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const = 0;
 
-#ifdef LL_PLAT_C
-    virtual void _notifyUriListeners(::ActivationUri const& uri, bool ignoreVerb);
-
-#endif
+    // vIndex: 234
     virtual bool _tryEnableCPUBoost();
 
+    // vIndex: 235
     virtual void _disableCPUBoost();
 
+    // vIndex: 236
     virtual void _initializeFileStorageAreas();
 
+    // vIndex: 237
     virtual void _teardownFileStorageAreas();
 
+    // vIndex: 238
     virtual int getPlatformDpi() const;
 
+    // vIndex: 239
     virtual ::UIScalingRules getPlatformUIScalingRules() const;
 
+    // vIndex: 240
     virtual ::Core::PathBuffer<::std::string> getPlatformTempPath() const = 0;
 
+    // vIndex: 241
     virtual void _onInitialize();
 
+    // vIndex: 242
     virtual void _onTeardown();
     // NOLINTEND
 
@@ -863,43 +862,15 @@ public:
     // NOLINTBEGIN
     MCNAPI AppPlatform(bool registerService, ::std::unique_ptr<::IAppPlatformImpl> impl);
 
-    MCNAPI_C void _clipboardCopyHandler(::ApplicationSignal::ClipboardCopy const& signal);
-
-    MCNAPI_C void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
-
-    MCNAPI_C void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const& signal);
-
     MCNAPI void _fireAppTerminated();
 
     MCNAPI void _initializeLoadProfiler();
 
-    MCNAPI_C ::Bedrock::NotNullNonOwnerPtr<::Bedrock::IApplicationDataStores> getApplicationDataStores();
-
-    MCNAPI_C ::UIProfile getDefaultUIProfile() const;
-
-    MCNAPI_S ::Core::PathBuffer<::std::string> getInternalStoragePath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> getInternalStoragePath() const;
 
     MCNAPI ::std::optional<::std::locale> getLocaleForDateTimeFormatting() const;
 
     MCNAPI ::gsl::not_null<::Bedrock::PubSub::Connector<void(::LowMemorySeverity)>*> getOnLowMemoryConnector();
-
-    MCNAPI_C double getTotalActiveSeconds();
-
-    MCNAPI_C void loadImage(::mce::Image& out, ::Core::Path const& filename);
-
-    MCNAPI_C ::mce::Image loadTexture(::Core::Path const& filename);
-
-    MCNAPI_C ::mce::Image loadTextureFromStream(::std::string const& fileStream);
-
-    MCNAPI_C bool requiresNetworkOutageMessaging() const;
-
-    MCNAPI_C void setShareData(::std::string shareTitle, ::std::string shareText, ::std::string shareUri);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static bool updateImGuiKeyboard(uchar param, bool isDown);
     // NOLINTEND
 
 public:
@@ -912,12 +883,6 @@ public:
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SETTINGS_PATH();
 
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SHADERCACHE_PATH();
-
-    MCNAPI_C static bool& mIsInitialized();
-
-    MCNAPI_C static ::ActivationUri& mPendingProtocolActivation();
-
-    MCNAPI_C static ::Bedrock::Threading::Mutex& mProtocolMutex();
     // NOLINTEND
 
 public:
@@ -1240,9 +1205,7 @@ public:
 
     MCNAPI bool $platformRequiresControllerApplet() const;
 
-#ifdef LL_PLAT_S
     MCNAPI ::InputMode $getDefaultInputMode() const;
-#endif
 
     MCNAPI ::AppFocusState $getFocusState();
 
@@ -1385,200 +1348,6 @@ public:
     MCNAPI void $_onInitialize();
 
     MCNAPI void $_onTeardown();
-
-#ifdef LL_PLAT_C
-    MCNAPI void $loadPNG(::mce::Image& out, ::Core::Path const& filename);
-
-    MCNAPI void $loadTGA(::mce::Image& out, ::Core::Path const& filename);
-
-    MCNAPI void $loadJPEG(::mce::Image& out, ::Core::Path const& filename);
-
-    MCNAPI int $getKeyFromKeyCode(int keyCode, int metaState, int deviceId);
-
-    MCNAPI void $textEditComponentGainedFocus(::std::string const&, int, bool, bool, bool);
-
-    MCNAPI void $textEditComponentLostFocus();
-
-    MCNAPI void $hideKeyboard();
-
-    MCNAPI bool $blankLineDismissesChat() const;
-
-    MCNAPI bool $signWrapsTextEntry() const;
-
-    MCNAPI bool $isFullScreenKeyboard() const;
-
-    MCNAPI bool $actionSuspendsApp(::AppAction) const;
-
-    MCNAPI float $getKeyboardHeight() const;
-
-    MCNAPI bool $refocusMouse(bool lostMouse, bool oldMouseGrabbed);
-
-    MCNAPI void $setMousePointerType(::ui::MousePointerType);
-
-    MCNAPI void $hideMousePointer();
-
-    MCNAPI void $showMousePointer();
-
-    MCNAPI void $postInteractiveSignIn();
-
-    MCNAPI bool $useHardwareMouse();
-
-    MCNAPI void $provideHardwareMouseImageData(::mce::Image const& imageData);
-
-    MCNAPI bool $hasCustomSoftwareCursor() const;
-
-    MCNAPI ::Core::PathBuffer<::std::string> $getCustomSoftwareCursorAsset() const;
-
-    MCNAPI bool $getPointerFocus();
-
-    MCNAPI void $setPointerFocus(bool lostFocus);
-
-    MCNAPI void $toggleSimulateTouchWithMouse();
-
-    MCNAPI void $_fireAppSuspended();
-
-    MCNAPI void $_fireAppResumed();
-
-    MCNAPI void $_fireAppFocusLost();
-
-    MCNAPI void $_fireAppFocusGained();
-
-    MCNAPI void $_fireResizeBegin();
-
-    MCNAPI void $_fireResizeEnd();
-
-    MCNAPI void $_fireDeviceLost();
-
-    MCNAPI void $_fireSurfaceCreated();
-
-    MCNAPI void $_fireSurfaceDestroyed();
-
-    MCNAPI void $_fireAppConfigurationChanged();
-
-    MCNAPI void $_fireAppPaused();
-
-    MCNAPI void $_fireAppUnpaused();
-
-    MCNAPI void $discardBackbuffer();
-
-    MCNAPI ::std::string $getTermsOfUseHyperlink() const;
-
-    MCNAPI void $pickFile(::std::shared_ptr<::FilePickerSettings> settings);
-
-    MCNAPI bool $supportsAlbumExport() const;
-
-    MCNAPI bool $supportsPDFExport() const;
-
-    MCNAPI ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
-
-    MCNAPI void $shareFile(::Core::Path const& path, ::std::function<void(bool)> onCompletionCallback);
-
-    MCNAPI bool $hasHardwareBackButton();
-
-    MCNAPI bool $supportsMSAA() const;
-
-    MCNAPI bool $supports3rdPartyServers() const;
-
-    MCNAPI bool $supportsManualAddedServers() const;
-
-    MCNAPI bool $supportsFilePicking() const;
-
-    MCNAPI bool $supportsTouch() const;
-
-    MCNAPI bool $supportsKeyboardMouse() const;
-
-    MCNAPI bool $supportsGamepad() const;
-
-    MCNAPI ::ClipboardFeatureFlags $getClipboardFeatures() const;
-
-    MCNAPI bool $supportsClipboardSet() const;
-
-    MCNAPI bool $supportsClipboardGet() const;
-
-    MCNAPI bool $supportsClipboardAsyncGet() const;
-
-    MCNAPI void $setClipboard(::std::string const& value) const;
-
-    MCNAPI ::std::wstring $getClipboardText() const;
-
-    MCNAPI void $getClipboardTextAsync(::std::function<void(::std::string const&)> callback) const;
-
-    MCNAPI bool $supportsShare() const;
-
-    MCNAPI void $share() const;
-
-    MCNAPI bool $allowSplitScreen();
-
-    MCNAPI float $splitScreenRenderDistScalar(uint numPlayers);
-
-    MCNAPI float $uiOpenRenderDistScalar();
-
-    MCNAPI void $pushNotificationReceived(::PushNotificationMessage const& msg);
-
-    MCNAPI void $openStoragePermissionRequest(
-        ::PermissionRequestReason                        reason,
-        ::std::function<void(::StoragePermissionResult)> resultCallback
-    );
-
-    MCNAPI void $setStorageDirectory(
-        ::FileStorageDirectory dir,
-        bool                   isCallback,
-        ::PropertyBag const&   extraData,
-        ::std::function<void(bool)>
-    );
-
-    MCNAPI ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory dir);
-
-    MCNAPI ::FileStorageDirectory $getStorageDirectory() const;
-
-    MCNAPI void $setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)> callback);
-
-    MCNAPI void $setStorageDirectoryChanged(::std::function<void(::Core::Path const&)> callback);
-
-    MCNAPI void $runStoragePermissionResultCallback(::StoragePermissionResult result);
-
-    MCNAPI bool $hasExternalStoragePermission();
-
-    MCNAPI bool $delayOptionSaveUntilCloudSync() const;
-
-    MCNAPI void $updateTextEditBoxPosition(
-        ::RectangleArea const& controlPosition,
-        ::RectangleArea const& selectionPosition,
-        float const            guiScale
-    );
-
-    MCNAPI ::BatteryMonitorInterface const& $getBatteryMonitorInterface() const;
-
-    MCNAPI ::ThermalMonitorInterface const& $getThermalMonitorInterface() const;
-
-    MCNAPI void $trialCorrelationStart();
-
-    MCNAPI void $setAllowLostFocusToasts(bool allowLostFocusToasts);
-
-    MCNAPI void $setShowLostFocusToasts(bool showLostFocusToasts);
-
-    MCNAPI bool $getShowLostFocusToasts();
-
-    MCNAPI ::std::string $getDeviceId() const;
-
-    MCNAPI void $registerUriListener(::UriListener& listener);
-
-    MCNAPI void $registerUriListener(::std::string const& verb, ::UriListener& listener);
-
-    MCNAPI void $unregisterUriListener(::UriListener const& listener);
-
-    MCNAPI void $notifyUriListeners(::ActivationUri const& uri);
-
-    MCNAPI void $notifyUriListenerRegistrationDone();
-
-    MCNAPI void $showXboxLiveUserSettings();
-
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ThrottledFileWriteManager> $getThrottledFileWriteManager() const;
-
-    MCNAPI void $_notifyUriListeners(::ActivationUri const& uri, bool ignoreVerb);
-#endif
-
-
     // NOLINTEND
 
 public:

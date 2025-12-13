@@ -28,6 +28,22 @@ public:
         KHigh = 1,
     };
 
+    struct PostTaskTraits {};
+
+    struct PostDelayedTaskTraits {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk38e36a;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PostDelayedTaskTraits& operator=(PostDelayedTaskTraits const&);
+        PostDelayedTaskTraits(PostDelayedTaskTraits const&);
+        PostDelayedTaskTraits();
+    };
+
     class CurrentTaskQueueSetter {
     public:
         // member variables
@@ -62,33 +78,20 @@ public:
         // NOLINTEND
     };
 
-    struct PostDelayedTaskTraits {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk38e36a;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PostDelayedTaskTraits& operator=(PostDelayedTaskTraits const&);
-        PostDelayedTaskTraits(PostDelayedTaskTraits const&);
-        PostDelayedTaskTraits();
-    };
-
-    struct PostTaskTraits {};
-
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void Delete() = 0;
 
+    // vIndex: 1
     virtual void PostTaskImpl(
         ::absl::AnyInvocable<void() &&>,
         ::webrtc::TaskQueueBase::PostTaskTraits const&,
         ::webrtc::Location const&
     ) = 0;
 
+    // vIndex: 2
     virtual void PostDelayedTaskImpl(
         ::absl::AnyInvocable<void() &&>,
         ::webrtc::TimeDelta,
@@ -96,6 +99,7 @@ public:
         ::webrtc::Location const&
     ) = 0;
 
+    // vIndex: 3
     virtual ~TaskQueueBase() = default;
     // NOLINTEND
 

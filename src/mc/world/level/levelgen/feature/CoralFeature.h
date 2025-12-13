@@ -17,15 +17,17 @@ class CoralFeature : public ::Feature {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
+    // vIndex: 0
     virtual ~CoralFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _buildHand(
+    MCAPI void _buildHand(
         ::BlockSource&                                 region,
         ::BlockPos const&                              pos,
         ::Random&                                      random,
@@ -34,7 +36,7 @@ public:
         ::gsl::not_null<::Block const*>                block
     ) const;
 
-    MCNAPI void _buildPlantArm(
+    MCAPI void _buildPlantArm(
         ::BlockSource&                                 region,
         ::Random&                                      random,
         ::BlockPos const&                              pos,
@@ -45,7 +47,7 @@ public:
         bool                                           notTall
     ) const;
 
-    MCNAPI void _buildPlantLike(
+    MCAPI void _buildPlantLike(
         ::BlockSource&                                 region,
         ::BlockPos const&                              pos,
         ::Random&                                      random,
@@ -54,7 +56,7 @@ public:
         ::gsl::not_null<::Block const*>                block
     ) const;
 
-    MCNAPI void _buildSmallClump(
+    MCAPI void _buildSmallClump(
         ::BlockSource&             region,
         ::BlockPos const&          pos,
         ::Random&                  random,
@@ -63,7 +65,7 @@ public:
         ::gsl::not_null<::Block const*> block
     ) const;
 
-    MCNAPI void _buildSpire(
+    MCAPI void _buildSpire(
         ::BlockSource&                                 region,
         ::BlockPos const&                              pos,
         ::Random&                                      random,
@@ -72,25 +74,25 @@ public:
         ::gsl::not_null<::Block const*>                block
     ) const;
 
-    MCNAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos, int color) const;
+    MCAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos, int color) const;
 
-    MCNAPI int _getColor(::Block const& block) const;
+    MCAPI int _getColor(::Block const& block) const;
 
-    MCNAPI void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
+    MCFOLD void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
 
-    MCNAPI void _placeTopDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void _placeTopDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI bool
+    MCAPI bool
     _setBlock(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color) const;
 
-    MCNAPI bool _setBlockOnSolid(
+    MCAPI bool _setBlockOnSolid(
         ::BlockSource&                  region,
         ::BlockPos const&               pos,
         ::gsl::not_null<::Block const*> block,
         int                             color
     ) const;
 
-    MCNAPI void _starCorners(
+    MCAPI void _starCorners(
         ::BlockSource&                  region,
         ::Random&                       random,
         ::BlockPos const&               pos,
@@ -100,7 +102,7 @@ public:
         bool                            negateChance
     ) const;
 
-    MCNAPI void _starFormation(
+    MCAPI void _starFormation(
         ::BlockSource&                  region,
         ::Random&                       random,
         ::BlockPos const&               pos,
@@ -114,9 +116,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

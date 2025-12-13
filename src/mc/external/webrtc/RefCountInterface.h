@@ -11,10 +11,13 @@ class RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void AddRef() const = 0;
 
+    // vIndex: 1
     virtual ::webrtc::RefCountReleaseStatus Release() const = 0;
 
+    // vIndex: 2
     virtual ~RefCountInterface() = default;
     // NOLINTEND
 

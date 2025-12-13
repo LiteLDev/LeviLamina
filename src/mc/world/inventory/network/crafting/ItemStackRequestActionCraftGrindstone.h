@@ -17,24 +17,22 @@ class ItemStackRequestActionCraftGrindstone : public ::ItemStackRequestActionCra
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk52d9fe;
+    ::ll::TypedStorage<4, 4, int> mRepairCost;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestActionCraftGrindstone& operator=(ItemStackRequestActionCraftGrindstone const&);
-    ItemStackRequestActionCraftGrindstone(ItemStackRequestActionCraftGrindstone const&);
-    ItemStackRequestActionCraftGrindstone();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 5
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 6
     virtual ::ItemStackNetIdVariant const& getRecipeNetId() const /*override*/;
 
+    // vIndex: 0
     virtual ~ItemStackRequestActionCraftGrindstone() /*override*/ = default;
     // NOLINTEND
 
@@ -46,8 +44,6 @@ public:
     MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
     MCNAPI ::ItemStackNetIdVariant const& $getRecipeNetId() const;
-
-
     // NOLINTEND
 
 public:

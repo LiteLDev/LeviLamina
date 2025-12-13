@@ -33,13 +33,6 @@ public:
     // clang-format on
 
     // LegacyTelemetryEventPacket inner types define
-    enum class AgentResult : int {
-        ActionFail       = 0,
-        ActionSuccess    = 1,
-        QueryResultFalse = 2,
-        QueryResultTrue  = 3,
-    };
-
     enum class Type : int {
         Achievement                     = 0,
         Interaction                     = 1,
@@ -73,6 +66,13 @@ public:
         SneakCloseToSculkSensor         = 29,
         CarefulRestoration              = 30,
         ItemUsedEvent                   = 31,
+    };
+
+    enum class AgentResult : int {
+        ActionFail       = 0,
+        ActionSuccess    = 1,
+        QueryResultFalse = 2,
+        QueryResultTrue  = 3,
     };
 
     struct Data {
@@ -188,23 +188,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Data();
+        MCAPI Data();
 
-        MCNAPI ::LegacyTelemetryEventPacket::Data& operator=(::LegacyTelemetryEventPacket::Data&&);
+        MCAPI ::LegacyTelemetryEventPacket::Data& operator=(::LegacyTelemetryEventPacket::Data&&);
 
-        MCNAPI ~Data();
+        MCAPI ~Data();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -223,14 +223,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
     virtual ~LegacyTelemetryEventPacket() /*override*/;
     // NOLINTEND
 
@@ -398,8 +403,6 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

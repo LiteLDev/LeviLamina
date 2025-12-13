@@ -6,10 +6,13 @@ class ITickDeltaTimeManagerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ITickDeltaTimeManagerProxy() = default;
 
+    // vIndex: 1
     virtual void start() = 0;
 
+    // vIndex: 2
     virtual double calculateDeltaTimeAndReset() = 0;
     // NOLINTEND
 

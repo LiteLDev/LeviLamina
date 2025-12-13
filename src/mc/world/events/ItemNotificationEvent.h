@@ -37,12 +37,12 @@ struct ItemNotificationEvent : public ::EventVariantImpl<
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ItemNotificationEvent();
+    MCAPI ~ItemNotificationEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

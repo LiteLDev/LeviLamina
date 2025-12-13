@@ -40,21 +40,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 43
     virtual ::EventResult onEvent(::ActorAcquiredItemEvent const& actorAcquiredItemEvent) /*override*/;
 
+    // vIndex: 32
     virtual ::EventResult onEvent(::ActorKilledEvent const& actorKilledEvent) /*override*/;
 
+    // vIndex: 73
     virtual ::EventResult onEvent(::PlayerUseNameTagEvent const& playerUseNameTagEvent) /*override*/;
 
+    // vIndex: 18
     virtual ::EventResult onPlayerMove(::Player& player) /*override*/;
 
+    // vIndex: 2
     virtual ::EventResult onPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn) /*override*/;
 
+    // vIndex: 3
     virtual ::EventResult
     onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension) /*override*/;
 
+    // vIndex: 4
     virtual ::EventResult onPlayerPoweredBeacon(::Player const& player, int level) /*override*/;
 
+    // vIndex: 35
     virtual ::EventResult onPlayerCraftedItem(
         ::Player&                   player,
         ::ItemInstance const&       craftedItem,
@@ -69,9 +77,11 @@ public:
         ::std::vector<short> const& ingredientItemIDs
     ) /*override*/;
 
+    // vIndex: 31
     virtual ::EventResult
     onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants) /*override*/;
 
+    // vIndex: 0
     virtual ~RealmsStoriesGameplayEventListener() /*override*/ = default;
     // NOLINTEND
 
@@ -143,8 +153,6 @@ public:
 
     MCNAPI ::EventResult
     $onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
-
-
     // NOLINTEND
 
 public:

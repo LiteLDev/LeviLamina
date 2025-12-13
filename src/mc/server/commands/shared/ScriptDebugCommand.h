@@ -15,17 +15,6 @@ class ScriptDiagnosticsPublishToFile;
 class ScriptDebugCommand : public ::Command {
 public:
     // ScriptDebugCommand inner types define
-    enum class DebuggerAction : int {
-        Listen  = 0,
-        Connect = 1,
-        Close   = 2,
-    };
-
-    enum class DiagnosticsAction : int {
-        StartCapture = 0,
-        StopCapture  = 1,
-    };
-
     enum class Mode : int {
         Unknown     = 0,
         Debugger    = 1,
@@ -33,14 +22,26 @@ public:
         Diagnostics = 3,
     };
 
+    enum class DebuggerAction : int {
+        Listen  = 0,
+        Connect = 1,
+        Close   = 2,
+    };
+
     enum class ProfilerAction : int {
         Start = 0,
         Stop  = 1,
     };
 
+    enum class DiagnosticsAction : int {
+        StartCapture = 0,
+        StopCapture  = 1,
+    };
+
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptDebugCommand() /*override*/;
     // NOLINTEND
 

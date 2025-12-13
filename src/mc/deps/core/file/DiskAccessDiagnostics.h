@@ -13,21 +13,6 @@ public:
     // clang-format on
 
     // DiskAccessDiagnostics inner types define
-    struct WriteBudgetHistoryEntry {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk5ccd86;
-        ::ll::UntypedStorage<8, 8> mUnk9efbce;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WriteBudgetHistoryEntry& operator=(WriteBudgetHistoryEntry const&);
-        WriteBudgetHistoryEntry(WriteBudgetHistoryEntry const&);
-        WriteBudgetHistoryEntry();
-    };
-
     struct WriteBudgetTelemetryPeriodState {
     public:
         // member variables
@@ -45,6 +30,21 @@ public:
         WriteBudgetTelemetryPeriodState& operator=(WriteBudgetTelemetryPeriodState const&);
         WriteBudgetTelemetryPeriodState(WriteBudgetTelemetryPeriodState const&);
         WriteBudgetTelemetryPeriodState();
+    };
+
+    struct WriteBudgetHistoryEntry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk5ccd86;
+        ::ll::UntypedStorage<8, 8> mUnk9efbce;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        WriteBudgetHistoryEntry& operator=(WriteBudgetHistoryEntry const&);
+        WriteBudgetHistoryEntry(WriteBudgetHistoryEntry const&);
+        WriteBudgetHistoryEntry();
     };
 
 public:
@@ -73,24 +73,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _checkWriteBudget(
-        ::std::chrono::steady_clock::time_point currentTime,
-        uint64                                  budgetLowPoint,
-        uint64                                  budgetReplenishPoint,
-        uint64                                  currentWriteBudget,
-        double                                  writesPerMinute,
-        ::std::optional<uint64>                 osMaxWriteSpeed
-    );
-
-    MCNAPI_C void update(
-        uint64                     byteWrittenPerPeriod,
-        ::std::chrono::nanoseconds byteWriteLimitPeriodDuration,
-        uint64                     byteWriteLimitPerPeriod,
-        uint                       writeCountPerPeriod,
-        ::std::chrono::nanoseconds writeCountLimitPeriodDuration,
-        uint                       writeCountLimitPerPeriod
-    );
-
     MCNAPI ~DiskAccessDiagnostics();
     // NOLINTEND
 

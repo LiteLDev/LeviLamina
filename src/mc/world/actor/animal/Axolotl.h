@@ -18,13 +18,17 @@ class Axolotl : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
+    // vIndex: 177
     virtual ::AABB _getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const& mobPos) const /*override*/;
 
+    // vIndex: 8
     virtual ~Axolotl() /*override*/ = default;
     // NOLINTEND
 
@@ -36,8 +40,6 @@ public:
     MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 
     MCAPI ::AABB $_getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const& mobPos) const;
-
-
     // NOLINTEND
 
 public:

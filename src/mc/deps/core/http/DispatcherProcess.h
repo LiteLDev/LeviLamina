@@ -24,14 +24,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DispatcherProcess() /*override*/;
 
+    // vIndex: 2
     virtual void initialize();
 
+    // vIndex: 3
     virtual void shutdown();
 
+    // vIndex: 4
     virtual void suspend();
 
+    // vIndex: 5
     virtual void resume();
     // NOLINTEND
 
@@ -51,8 +56,6 @@ public:
     MCNAPI void $suspend();
 
     MCNAPI void $resume();
-
-
     // NOLINTEND
 
 public:

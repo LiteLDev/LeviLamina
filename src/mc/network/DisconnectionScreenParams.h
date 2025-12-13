@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/connection/DisconnectFailReason.h"
-#include "mc/network/connection/DisconnectionStage.h"
-
 struct DisconnectionScreenParams {
 public:
     // member variables
@@ -26,44 +22,4 @@ public:
     DisconnectionScreenParams& operator=(DisconnectionScreenParams const&);
     DisconnectionScreenParams(DisconnectionScreenParams const&);
     DisconnectionScreenParams();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C DisconnectionScreenParams(
-        ::Connection::DisconnectFailReason disconnectFailReason,
-        ::std::string                      titleStringOverride,
-        ::std::string                      bodyStringOverride,
-        ::Connection::DisconnectionStage   disconnectStage,
-        ::std::string                      screenNameOverride,
-        ::std::string                      telemetryString,
-        bool                               leaveGame,
-        bool                               isSubClient,
-        ::std::string                      codewordOverride
-    );
-
-    MCNAPI_C ~DisconnectionScreenParams();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        ::Connection::DisconnectFailReason disconnectFailReason,
-        ::std::string                      titleStringOverride,
-        ::std::string                      bodyStringOverride,
-        ::Connection::DisconnectionStage   disconnectStage,
-        ::std::string                      screenNameOverride,
-        ::std::string                      telemetryString,
-        bool                               leaveGame,
-        bool                               isSubClient,
-        ::std::string                      codewordOverride
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

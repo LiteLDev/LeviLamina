@@ -24,6 +24,16 @@ public:
     // clang-format on
 
     // LevelChunkAndSubChunkLoggingData inner types define
+    struct LogEntry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mTimePoint;
+        ::ll::TypedStorage<8, 32, ::std::string>                          mLogEntry;
+        ::ll::TypedStorage<1, 1, bool>                                    mIsClientSide;
+        // NOLINTEND
+    };
+
     struct CollatedLogEntry {
     public:
         // member variables
@@ -42,16 +52,6 @@ public:
         ::ll::TypedStorage<1, 1, bool> mEnabled;
         ::ll::TypedStorage<1, 1, bool> mShowLevelChunk;
         ::ll::TypedStorage<1, 1, bool> mShowSubChunk;
-        // NOLINTEND
-    };
-
-    struct LogEntry {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mTimePoint;
-        ::ll::TypedStorage<8, 32, ::std::string>                          mLogEntry;
-        ::ll::TypedStorage<1, 1, bool>                                    mIsClientSide;
         // NOLINTEND
     };
 
@@ -82,6 +82,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LevelChunkAndSubChunkLoggingData() /*override*/ = default;
     // NOLINTEND
 };

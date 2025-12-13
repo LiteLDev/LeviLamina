@@ -18,10 +18,6 @@ class CommandRegistry;
 class CommandParameterData {
 public:
     // CommandParameterData inner types define
-    using CustomStorageGetFn = void* (*)(::Command*, int);
-
-    using CustomStorageIsSetFn = bool* (*)(::Command*, int);
-
     using ParseFunction = bool (::CommandRegistry::*)(
         void*,
         ::CommandRegistry::ParseToken const&,
@@ -30,6 +26,10 @@ public:
         ::std::string&,
         ::std::vector<::std::string>&
     ) const;
+
+    using CustomStorageGetFn = void* (*)(::Command*, int);
+
+    using CustomStorageIsSetFn = bool* (*)(::Command*, int);
 
 public:
     // member variables

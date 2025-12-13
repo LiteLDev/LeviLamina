@@ -67,14 +67,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ActiveTransfersManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void collectTrackingData() const;
-
     MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob> dropBlobFor(::NetworkIdentifier const& client, uint64 id);
 
     MCAPI bool isCacheEnabledFor(::NetworkIdentifier const& client) const;

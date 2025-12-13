@@ -29,22 +29,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual int width() const /*override*/;
 
+    // vIndex: 5
     virtual int height() const /*override*/;
 
+    // vIndex: 15
     virtual uchar const* DataY() const /*override*/;
 
+    // vIndex: 16
     virtual uchar const* DataU() const /*override*/;
 
+    // vIndex: 17
     virtual uchar const* DataV() const /*override*/;
 
+    // vIndex: 12
     virtual int StrideY() const /*override*/;
 
+    // vIndex: 13
     virtual int StrideU() const /*override*/;
 
+    // vIndex: 14
     virtual int StrideV() const /*override*/;
 
+    // vIndex: 2
     virtual ~I420Buffer() /*override*/;
     // NOLINTEND
 
@@ -110,8 +119,6 @@ public:
     MCNAPI int $StrideU() const;
 
     MCNAPI int $StrideV() const;
-
-
     // NOLINTEND
 
 public:

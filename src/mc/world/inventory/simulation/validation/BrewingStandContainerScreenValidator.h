@@ -9,6 +9,7 @@ class BrewingStandContainerScreenValidator : public ::ContainerScreenValidatorBa
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BrewingStandContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

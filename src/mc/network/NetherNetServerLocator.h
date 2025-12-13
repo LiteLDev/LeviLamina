@@ -90,8 +90,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetherNetServerLocator() /*override*/;
 
+    // vIndex: 3
     virtual void startAnnouncingServer(
         ::std::string const&                      playerName,
         ::std::string const&                      worldName,
@@ -104,16 +106,22 @@ public:
         bool                                      isHardcore
     ) /*override*/;
 
+    // vIndex: 4
     virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform) /*override*/;
 
+    // vIndex: 5
     virtual void startServerDiscovery(::PortPair ports) /*override*/;
 
+    // vIndex: 6
     virtual void stopServerDiscovery() /*override*/;
 
+    // vIndex: 9
     virtual ::std::vector<::PingedCompatibleServer> getServerList() const /*override*/;
 
+    // vIndex: 10
     virtual void clearServerList() /*override*/;
 
+    // vIndex: 11
     virtual void update() /*override*/;
     // NOLINTEND
 
@@ -186,8 +194,6 @@ public:
     MCNAPI void $clearServerList();
 
     MCNAPI void $update();
-
-
     // NOLINTEND
 
 public:

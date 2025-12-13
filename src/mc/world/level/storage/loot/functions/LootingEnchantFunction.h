@@ -29,12 +29,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LootingEnchantFunction() /*override*/ = default;
 
+    // vIndex: 4
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
+    // vIndex: 2
     virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) /*override*/;
 
+    // vIndex: 5
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
@@ -52,8 +56,6 @@ public:
     MCNAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
 
     MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
-
-
     // NOLINTEND
 
 public:

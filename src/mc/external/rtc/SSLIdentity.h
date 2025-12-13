@@ -15,16 +15,22 @@ class SSLIdentity {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SSLIdentity();
 
+    // vIndex: 1
     virtual ::rtc::SSLCertificate const& certificate() const = 0;
 
+    // vIndex: 2
     virtual ::rtc::SSLCertChain const& cert_chain() const = 0;
 
+    // vIndex: 3
     virtual ::std::string PrivateKeyToPEMString() const = 0;
 
+    // vIndex: 4
     virtual ::std::string PublicKeyToPEMString() const = 0;
 
+    // vIndex: 5
     virtual ::std::unique_ptr<::rtc::SSLIdentity> CloneInternal() const = 0;
     // NOLINTEND
 

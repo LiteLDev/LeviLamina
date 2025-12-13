@@ -34,24 +34,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const
         /*override*/;
 
+    // vIndex: 4
     virtual bool containsOnly(int, int, int, int, ::gsl::span<::BiomeIdType const> allowed) const /*override*/;
 
+    // vIndex: 3
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
+    // vIndex: 2
     virtual ::BiomeArea
     getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptions) const /*override*/;
 
+    // vIndex: 5
     virtual bool hasBiomeById(::BiomeIdType id) const /*override*/;
 
+    // vIndex: 6
     virtual bool hasBiomeByNameHash(::BiomeHashType hash) const /*override*/;
 
+    // vIndex: 7
     virtual ::BiomeSourceType const getType() const /*override*/;
 
+    // vIndex: 8
     virtual ::Biome const* _getBiome(::GetBiomeOptions const&) const /*override*/;
 
+    // vIndex: 0
     virtual ~FixedBiomeSource() /*override*/ = default;
     // NOLINTEND
 
@@ -74,8 +83,6 @@ public:
     MCFOLD ::BiomeSourceType const $getType() const;
 
     MCFOLD ::Biome const* $_getBiome(::GetBiomeOptions const&) const;
-
-
     // NOLINTEND
 
 public:

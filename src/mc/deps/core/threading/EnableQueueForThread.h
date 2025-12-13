@@ -23,6 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EnableQueueForThread() = default;
     // NOLINTEND
 
@@ -30,8 +31,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Bedrock::Threading::Async<void> queue(::std::function<void()>&& callback);
-
-    MCNAPI_C ::Bedrock::Threading::Async<void> queueAutoRequeue(::std::function<bool()>&& callback);
     // NOLINTEND
 
 public:

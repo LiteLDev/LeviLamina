@@ -27,6 +27,40 @@ public:
     // clang-format on
 
     // Thread inner types define
+    class ScopedDisallowBlockingCalls {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk87b273;
+        ::ll::UntypedStorage<1, 1> mUnke79f5b;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ScopedDisallowBlockingCalls& operator=(ScopedDisallowBlockingCalls const&);
+        ScopedDisallowBlockingCalls(ScopedDisallowBlockingCalls const&);
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ScopedDisallowBlockingCalls();
+
+        MCNAPI ~ScopedDisallowBlockingCalls();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
     class CurrentThreadSetter : public ::webrtc::TaskQueueBase::CurrentTaskQueueSetter {
     public:
         // member variables
@@ -81,40 +115,6 @@ public:
         // NOLINTEND
     };
 
-    class ScopedDisallowBlockingCalls {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk87b273;
-        ::ll::UntypedStorage<1, 1> mUnke79f5b;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ScopedDisallowBlockingCalls& operator=(ScopedDisallowBlockingCalls const&);
-        ScopedDisallowBlockingCalls(ScopedDisallowBlockingCalls const&);
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ScopedDisallowBlockingCalls();
-
-        MCNAPI ~ScopedDisallowBlockingCalls();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -145,30 +145,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ~Thread() /*override*/;
 
+    // vIndex: 4
     virtual void Quit();
 
+    // vIndex: 5
     virtual bool IsQuitting();
 
+    // vIndex: 6
     virtual void Restart();
 
+    // vIndex: 7
     virtual bool IsProcessingMessagesForTesting();
 
+    // vIndex: 8
     virtual int GetDelay();
 
+    // vIndex: 9
     virtual void Stop();
 
+    // vIndex: 10
     virtual void Run();
 
+    // vIndex: 0
     virtual void Delete() /*override*/;
 
+    // vIndex: 1
     virtual void PostTaskImpl(
         ::absl::AnyInvocable<void() &&>                task,
         ::webrtc::TaskQueueBase::PostTaskTraits const& traits,
         ::webrtc::Location const&                      location
     ) /*override*/;
 
+    // vIndex: 2
     virtual void PostDelayedTaskImpl(
         ::absl::AnyInvocable<void() &&>                       task,
         ::webrtc::TimeDelta                                   delay,
@@ -176,6 +187,7 @@ public:
         ::webrtc::Location const&                             location
     ) /*override*/;
 
+    // vIndex: 11
     virtual void BlockingCallImpl(::rtc::FunctionView<void()> functor, ::webrtc::Location const& location);
     // NOLINTEND
 
@@ -220,9 +232,9 @@ public:
 
     MCNAPI explicit Thread(::std::unique_ptr<::rtc::SocketServer> ss);
 
-    MCNAPI Thread(::rtc::SocketServer* ss, bool do_init);
-
     MCNAPI Thread(::std::unique_ptr<::rtc::SocketServer> ss, bool do_init);
+
+    MCNAPI Thread(::rtc::SocketServer* ss, bool do_init);
 
     MCNAPI void UnwrapCurrent();
 
@@ -250,9 +262,9 @@ public:
 
     MCNAPI void* $ctor(::std::unique_ptr<::rtc::SocketServer> ss);
 
-    MCNAPI void* $ctor(::rtc::SocketServer* ss, bool do_init);
-
     MCNAPI void* $ctor(::std::unique_ptr<::rtc::SocketServer> ss, bool do_init);
+
+    MCNAPI void* $ctor(::rtc::SocketServer* ss, bool do_init);
     // NOLINTEND
 
 public:
@@ -294,8 +306,6 @@ public:
     );
 
     MCNAPI void $BlockingCallImpl(::rtc::FunctionView<void()> functor, ::webrtc::Location const& location);
-
-
     // NOLINTEND
 
 public:

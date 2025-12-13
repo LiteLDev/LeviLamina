@@ -24,6 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CursorServiceMovementPayload() /*override*/ = default;
     // NOLINTEND
 

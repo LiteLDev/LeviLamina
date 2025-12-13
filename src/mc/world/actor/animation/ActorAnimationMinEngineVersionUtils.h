@@ -12,7 +12,7 @@ class ActorAnimationMinEngineVersionUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::MinEngineVersion useFormatVersionOrMinEngineVersionBackCompat(
+    MCAPI static ::MinEngineVersion useFormatVersionOrMinEngineVersionBackCompat(
         ::MinEngineVersion const& minEngineVersion,
         ::SemVersion const&       formatVersion
     );

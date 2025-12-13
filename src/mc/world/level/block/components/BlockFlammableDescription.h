@@ -18,33 +18,35 @@ struct BlockFlammableDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5bafc8;
-    ::ll::UntypedStorage<4, 4> mUnk633d01;
-    ::ll::UntypedStorage<4, 4> mUnkeedb42;
+    ::ll::TypedStorage<1, 1, ::LavaFlammable> mLavaFlammable;
+    ::ll::TypedStorage<4, 4, int>             mCatchChanceModifier;
+    ::ll::TypedStorage<4, 4, int>             mDestroyChanceModifier;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockFlammableDescription& operator=(BlockFlammableDescription const&);
-    BlockFlammableDescription(BlockFlammableDescription const&);
     BlockFlammableDescription();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
+    // vIndex: 4
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    // vIndex: 2
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    // vIndex: 0
     virtual ~BlockFlammableDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockFlammableDescription(
+    MCAPI BlockFlammableDescription(
         ::FlameOdds     catchChanceModifier,
         ::BurnOdds      destroyChanceModifier,
         ::LavaFlammable lavaFlammable
@@ -54,38 +56,35 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::FlameOdds catchChanceModifier, ::BurnOdds destroyChanceModifier, ::LavaFlammable lavaFlammable);
+    MCAPI void* $ctor(::FlameOdds catchChanceModifier, ::BurnOdds destroyChanceModifier, ::LavaFlammable lavaFlammable);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
-
-
+    MCFOLD void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
     // NOLINTEND
 
 public:

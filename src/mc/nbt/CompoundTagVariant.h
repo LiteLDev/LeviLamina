@@ -65,8 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Tag& emplace(::Tag&& tag);
 
-    MCNAPI_C ::Tag const* get() const;
-
     MCNAPI ~CompoundTagVariant();
     // NOLINTEND
 

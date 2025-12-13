@@ -13,13 +13,17 @@ class IDynamicContainerSerialization {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ::std::unique_ptr<::ListTag>
     serializeContainerContent(::FullContainerName const&, ::SaveContext const&) = 0;
 
+    // vIndex: 1
     virtual ::std::optional<int> getDynamicContainerWeight(::FullContainerName const&) = 0;
 
+    // vIndex: 2
     virtual bool hasContainer(::FullContainerName const&) const = 0;
 
+    // vIndex: 3
     virtual ~IDynamicContainerSerialization();
     // NOLINTEND
 

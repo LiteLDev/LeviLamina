@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
-#include "mc/world/inventory/network/ItemStackRequestActionType.h"
 #include "mc/world/inventory/network/ItemStackRequestSlotInfo.h"
 
 // auto generated forward declare list
@@ -26,43 +25,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackRequestActionTransferBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 5
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
     virtual ~ItemStackRequestActionTransferBase() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ItemStackRequestActionTransferBase(
-        ::ItemStackRequestActionType      actionType,
-        uchar                             amount,
-        ::ItemStackRequestSlotInfo const& src,
-        ::ItemStackRequestSlotInfo const& dst,
-        bool                              isDstSerialized,
-        bool                              isAmountSerialized
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        ::ItemStackRequestActionType      actionType,
-        uchar                             amount,
-        ::ItemStackRequestSlotInfo const& src,
-        ::ItemStackRequestSlotInfo const& dst,
-        bool                              isDstSerialized,
-        bool                              isAmountSerialized
-    );
     // NOLINTEND
 
 public:
@@ -71,8 +43,6 @@ public:
     MCNAPI void $_write(::BinaryStream& stream) const;
 
     MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

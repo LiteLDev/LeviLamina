@@ -18,16 +18,6 @@ public:
     // clang-format on
 
     // Scheduler inner types define
-    enum class MaximumTimeBudget : int {
-        Yes = 0,
-        No  = 1,
-    };
-
-    enum class MinimumTimeBudget : int {
-        Yes = 0,
-        No  = 1,
-    };
-
     class ScopedChangeScheduler {
     public:
         // member variables
@@ -40,6 +30,16 @@ public:
         ScopedChangeScheduler& operator=(ScopedChangeScheduler const&);
         ScopedChangeScheduler(ScopedChangeScheduler const&);
         ScopedChangeScheduler();
+    };
+
+    enum class MinimumTimeBudget : int {
+        Yes = 0,
+        No  = 1,
+    };
+
+    enum class MaximumTimeBudget : int {
+        Yes = 0,
+        No  = 1,
     };
 
 public:
@@ -65,12 +65,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~Scheduler() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~Scheduler() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -103,12 +99,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string name, uint FPS);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

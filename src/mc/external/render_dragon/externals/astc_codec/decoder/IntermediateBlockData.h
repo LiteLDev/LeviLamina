@@ -23,18 +23,6 @@ public:
     IntermediateBlockData& operator=(IntermediateBlockData const&);
     IntermediateBlockData(IntermediateBlockData const&);
     IntermediateBlockData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~IntermediateBlockData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace astc_codec

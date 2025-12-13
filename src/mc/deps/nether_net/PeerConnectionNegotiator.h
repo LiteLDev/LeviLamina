@@ -37,46 +37,6 @@ public:
     // clang-format on
 
     // PeerConnectionNegotiator inner types define
-    struct CreateSessionObserver : public ::rtc::RefCountedObject<::webrtc::CreateSessionDescriptionObserver> {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 128> mUnk9601da;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CreateSessionObserver& operator=(CreateSessionObserver const&);
-        CreateSessionObserver(CreateSessionObserver const&);
-        CreateSessionObserver();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual void OnSuccess(::webrtc::SessionDescriptionInterface* description) /*override*/;
-
-        virtual void OnFailure(::webrtc::RTCError error) /*override*/;
-
-        virtual ~CreateSessionObserver() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $OnSuccess(::webrtc::SessionDescriptionInterface* description);
-
-        MCNAPI void $OnFailure(::webrtc::RTCError error);
-
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
     struct SetLocalDescriptionObserver
     : public ::rtc::RefCountedObject<::webrtc::SetLocalDescriptionObserverInterface> {
     public:
@@ -94,8 +54,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 3
         virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError result) /*override*/;
 
+        // vIndex: 2
         virtual ~SetLocalDescriptionObserver() /*override*/ = default;
         // NOLINTEND
 
@@ -103,8 +65,6 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $OnSetLocalDescriptionComplete(::webrtc::RTCError result);
-
-
         // NOLINTEND
 
     public:
@@ -131,8 +91,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 3
         virtual void OnSetRemoteDescriptionComplete(::webrtc::RTCError result) /*override*/;
 
+        // vIndex: 2
         virtual ~SetRemoteDescriptionObserver() /*override*/ = default;
         // NOLINTEND
 
@@ -140,8 +102,47 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $OnSetRemoteDescriptionComplete(::webrtc::RTCError result);
+        // NOLINTEND
 
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
 
+    struct CreateSessionObserver : public ::rtc::RefCountedObject<::webrtc::CreateSessionDescriptionObserver> {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 128> mUnk9601da;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CreateSessionObserver& operator=(CreateSessionObserver const&);
+        CreateSessionObserver(CreateSessionObserver const&);
+        CreateSessionObserver();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 3
+        virtual void OnSuccess(::webrtc::SessionDescriptionInterface* description) /*override*/;
+
+        // vIndex: 4
+        virtual void OnFailure(::webrtc::RTCError error) /*override*/;
+
+        // vIndex: 2
+        virtual ~CreateSessionObserver() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI void $OnSuccess(::webrtc::SessionDescriptionInterface* description);
+
+        MCNAPI void $OnFailure(::webrtc::RTCError error);
         // NOLINTEND
 
     public:
@@ -174,20 +175,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PeerConnectionNegotiator() /*override*/;
 
+    // vIndex: 10
     virtual ::NetherNet::ESessionError checkTimeout(::std::chrono::seconds) const;
 
+    // vIndex: 11
     virtual void onRemoteAnswer(::NetherNet::ConnectResponse const&);
 
+    // vIndex: 12
     virtual void onRemoteError(::NetherNet::ConnectError const&);
 
+    // vIndex: 13
     virtual void onRemoteIceCandidate(::NetherNet::CandidateAdd const&) = 0;
 
+    // vIndex: 14
     virtual void _onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const&) = 0;
 
+    // vIndex: 15
     virtual void _onSetLocalDescription(::webrtc::RTCError) = 0;
 
+    // vIndex: 16
     virtual void _onSetRemoteDescription(::webrtc::RTCError) = 0;
     // NOLINTEND
 
@@ -237,8 +246,6 @@ public:
     MCNAPI void $onRemoteAnswer(::NetherNet::ConnectResponse const&);
 
     MCNAPI void $onRemoteError(::NetherNet::ConnectError const&);
-
-
     // NOLINTEND
 
 public:

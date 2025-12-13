@@ -20,32 +20,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureTemplateDataRequestPacketPayload();
+    MCAPI StructureTemplateDataRequestPacketPayload();
 
-    MCNAPI StructureTemplateDataRequestPacketPayload(::StructureTemplateDataRequestPacketPayload&&);
+    MCAPI StructureTemplateDataRequestPacketPayload(::StructureTemplateDataRequestPacketPayload const&);
 
-    MCNAPI StructureTemplateDataRequestPacketPayload(::StructureTemplateDataRequestPacketPayload const&);
+    MCAPI StructureTemplateDataRequestPacketPayload(::StructureTemplateDataRequestPacketPayload&&);
 
-    MCNAPI ::StructureTemplateDataRequestPacketPayload& operator=(::StructureTemplateDataRequestPacketPayload&&);
+    MCAPI ::StructureTemplateDataRequestPacketPayload& operator=(::StructureTemplateDataRequestPacketPayload const&);
 
-    MCNAPI ::StructureTemplateDataRequestPacketPayload& operator=(::StructureTemplateDataRequestPacketPayload const&);
+    MCAPI ::StructureTemplateDataRequestPacketPayload& operator=(::StructureTemplateDataRequestPacketPayload&&);
 
-    MCNAPI ~StructureTemplateDataRequestPacketPayload();
+    MCAPI ~StructureTemplateDataRequestPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::StructureTemplateDataRequestPacketPayload&&);
+    MCAPI void* $ctor(::StructureTemplateDataRequestPacketPayload const&);
 
-    MCNAPI void* $ctor(::StructureTemplateDataRequestPacketPayload const&);
+    MCAPI void* $ctor(::StructureTemplateDataRequestPacketPayload&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

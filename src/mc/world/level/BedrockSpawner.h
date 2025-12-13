@@ -63,22 +63,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BedrockSpawner() /*override*/ = default;
 
+    // vIndex: 1
     virtual void initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries) /*override*/;
 
+    // vIndex: 2
     virtual ::SpawnSettings const& getSpawnSettings() const /*override*/;
 
+    // vIndex: 3
     virtual void setSpawnSettings(::SpawnSettings const& spawnSettings) /*override*/;
 
+    // vIndex: 4
     virtual ::ActorSpawnRuleGroup const* getSpawnRules() const /*override*/;
 
+    // vIndex: 5
     virtual ::ActorSpawnRuleGroup* getSpawnRulesMutable() const /*override*/;
 
+    // vIndex: 6
     virtual ::SpawnGroupRegistry const* getSpawnGroupRegistry() const /*override*/;
 
+    // vIndex: 7
     virtual ::br::spawn::EntityTypeCache* getEntityTypeCache() const /*override*/;
 
+    // vIndex: 9
     virtual ::ItemActor* spawnItem(
         ::BlockSource&     region,
         ::ItemStack const& inst,
@@ -87,20 +96,26 @@ public:
         int                throwTime
     ) /*override*/;
 
+    // vIndex: 11
     virtual void postProcessSpawnMobs(::BlockSource& region, int xo, int zo, ::Random& random) /*override*/;
 
+    // vIndex: 12
     virtual void tick(
         ::BlockSource&                region,
         ::LevelChunkVolumeData const& levelChunkVolumeData,
         ::ChunkPos const              chunkPos
     ) /*override*/;
 
+    // vIndex: 13
     virtual void tickMobCount() /*override*/;
 
+    // vIndex: 14
     virtual void incrementSpawnableTickedMob() /*override*/;
 
+    // vIndex: 15
     virtual uint getSpawnableTickedMobCountPrevious() const /*override*/;
 
+    // vIndex: 16
     virtual ::std::unordered_set<::ActorUniqueID> spawnMobGroup(
         ::BlockSource&                  region,
         ::std::string const&            spawnGroupId,
@@ -110,6 +125,7 @@ public:
         ::std::function<void(::Mob&)>&& spawnedCallback
     ) /*override*/;
 
+    // vIndex: 17
     virtual ::br::spawn::SpawnPlacements& getSpawnPlacements() /*override*/;
     // NOLINTEND
 
@@ -199,8 +215,6 @@ public:
     );
 
     MCFOLD ::br::spawn::SpawnPlacements& $getSpawnPlacements();
-
-
     // NOLINTEND
 
 public:

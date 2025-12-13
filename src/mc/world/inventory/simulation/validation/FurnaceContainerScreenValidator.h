@@ -44,12 +44,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::shared_ptr<::ContainerValidationCommitObject> postCommitItemRemoved(
         ::ContainerEnumName const containerEnumName,
         int const                 slot,
         ::ItemStack const&        item
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~FurnaceContainerScreenValidator() /*override*/;
     // NOLINTEND
 
@@ -76,8 +78,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::shared_ptr<::ContainerValidationCommitObject>
     $postCommitItemRemoved(::ContainerEnumName const containerEnumName, int const slot, ::ItemStack const& item);
-
-
     // NOLINTEND
 
 public:

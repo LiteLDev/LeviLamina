@@ -16,18 +16,6 @@ public:
     UnsupportedAction& operator=(UnsupportedAction const&);
     UnsupportedAction(UnsupportedAction const&);
     UnsupportedAction();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~UnsupportedAction();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace TelemtetryEvents

@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class IPackIOProvider;
-class Pack;
 struct DirectoryPackSourceOptions;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
@@ -39,12 +38,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DirectoryPackSource() /*override*/;
 
+    // vIndex: 2
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
+    // vIndex: 3
     virtual ::PackType getPackType() const /*override*/;
 
+    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
     // NOLINTEND
 
@@ -52,8 +55,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit DirectoryPackSource(::DirectoryPackSourceOptions options);
-
-    MCNAPI_C void addPack(::std::shared_ptr<::Pack>&& pack);
 
     MCNAPI void deleteAllPacksAndReset();
     // NOLINTEND
@@ -88,8 +89,6 @@ public:
     MCNAPI ::PackType $getPackType() const;
 
     MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
-
-
     // NOLINTEND
 
 public:

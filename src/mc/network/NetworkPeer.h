@@ -13,6 +13,17 @@ public:
     // clang-format on
 
     // NetworkPeer inner types define
+    using PacketRecvTimepoint = ::std::chrono::steady_clock::time_point;
+
+    using PacketRecvTimepointPtr = ::std::shared_ptr<::std::chrono::steady_clock::time_point>;
+
+    enum class Reliability : int {
+        Reliable            = 0,
+        ReliableOrdered     = 1,
+        Unreliable          = 2,
+        UnreliableSequenced = 3,
+    };
+
     enum class DataStatus : int {
         HasData    = 0,
         NoData     = 1,
@@ -24,13 +35,6 @@ public:
         Low          = 1,
         Medium       = 2,
         High         = 3,
-    };
-
-    enum class Reliability : int {
-        Reliable            = 0,
-        ReliableOrdered     = 1,
-        Unreliable          = 2,
-        UnreliableSequenced = 3,
     };
 
     struct NetworkStatus {
@@ -51,10 +55,6 @@ public:
         // NOLINTEND
     };
 
-    using PacketRecvTimepoint = ::std::chrono::steady_clock::time_point;
-
-    using PacketRecvTimepointPtr = ::std::shared_ptr<::std::chrono::steady_clock::time_point>;
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,20 +64,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetworkPeer();
 
+    // vIndex: 1
     virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) = 0;
 
+    // vIndex: 2
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
 
+    // vIndex: 3
     virtual void update();
 
+    // vIndex: 4
     virtual void flush(::std::function<void()>&& callback);
 
+    // vIndex: 5
     virtual bool isLocal() const;
 
+    // vIndex: 6
     virtual bool isEncrypted() const;
 
+    // vIndex: 7
     virtual ::NetworkPeer::DataStatus
     _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) = 0;
     // NOLINTEND
@@ -98,8 +106,6 @@ public:
     MCNAPI bool $isLocal() const;
 
     MCNAPI bool $isEncrypted() const;
-
-
     // NOLINTEND
 
 public:

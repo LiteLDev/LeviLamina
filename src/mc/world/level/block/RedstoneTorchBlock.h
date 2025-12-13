@@ -29,30 +29,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 61
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
 
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
+    // vIndex: 146
     virtual int getTickDelay();
 
+    // vIndex: 54
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
+    // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
+    // vIndex: 118
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 0
     virtual ~RedstoneTorchBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -87,8 +98,6 @@ public:
     MCFOLD bool $canSpawnOn(::Actor*) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-
     // NOLINTEND
 
 public:

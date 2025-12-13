@@ -30,12 +30,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
+    // vIndex: 4
     virtual void singleTick(::EntityRegistry& registry, ::EntityContext& entity) /*override*/;
 
+    // vIndex: 3
     virtual void singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext) /*override*/;
 
+    // vIndex: 0
     virtual ~RunInitializers() /*override*/ = default;
     // NOLINTEND
 
@@ -47,8 +51,6 @@ public:
     MCNAPI void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
 
     MCNAPI void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
-
-
     // NOLINTEND
 
 public:

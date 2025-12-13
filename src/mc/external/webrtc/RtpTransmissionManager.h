@@ -65,8 +65,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void OnSetStreams() /*override*/;
 
+    // vIndex: 0
     virtual ~RtpTransmissionManager() /*override*/ = default;
     // NOLINTEND
 
@@ -221,8 +223,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $OnSetStreams();
-
-
     // NOLINTEND
 
 public:

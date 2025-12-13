@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PerlinSimplexNoise(::PerlinSimplexNoise const&);
+    MCAPI PerlinSimplexNoise(::PerlinSimplexNoise const&);
 
-    MCNAPI PerlinSimplexNoise(uint seed, int levels);
+    MCAPI PerlinSimplexNoise(uint seed, int levels);
 
-    MCNAPI void _init(::IRandom& r, bool parityInitialization);
+    MCAPI void _init(::IRandom& r, bool parityInitialization);
 
-    MCNAPI float* getRegion(
+    MCAPI float* getRegion(
         float*        buffer,
         ::Vec2 const& pos,
         int           xSize,
@@ -43,24 +43,24 @@ public:
         float         powScale
     ) const;
 
-    MCNAPI float getValue(::Vec3 const& pos) const;
+    MCAPI float getValue(::Vec3 const& pos) const;
 
-    MCNAPI float getValue(float x, float y) const;
+    MCAPI float getValue(float x, float y) const;
 
-    MCNAPI ~PerlinSimplexNoise();
+    MCAPI ~PerlinSimplexNoise();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PerlinSimplexNoise const&);
+    MCAPI void* $ctor(::PerlinSimplexNoise const&);
 
-    MCNAPI void* $ctor(uint seed, int levels);
+    MCAPI void* $ctor(uint seed, int levels);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

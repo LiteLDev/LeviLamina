@@ -3,9 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class EducationWorldType : uchar {
+    // bitfield representation
     Default            = 0,
-    HasQuizDeprecated  = 1,
-    SinglePlayerLesson = 2,
-    MultiplayerLesson  = 4,
-    AnyLesson          = 6,
+    HasQuizDeprecated  = 1 << 0,
+    SinglePlayerLesson = 1 << 1,
+    MultiplayerLesson  = 1 << 2,
+    AnyLesson          = SinglePlayerLesson | MultiplayerLesson,
 };

@@ -26,10 +26,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual char const* getJsonName() const /*override*/;
 
+    // vIndex: 2
     virtual void deserializeData(::DeserializeDataParams) /*override*/;
 
+    // vIndex: 1
     virtual ~DanceDescription() /*override*/ = default;
     // NOLINTEND
 

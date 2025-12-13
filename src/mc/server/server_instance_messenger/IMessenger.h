@@ -14,10 +14,13 @@ class IMessenger {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IMessenger() = default;
 
+    // vIndex: 1
     virtual ::ServerInstanceMessenger::IMessageProducer& getProducer() = 0;
 
+    // vIndex: 2
     virtual ::ServerInstanceMessenger::IMessageConsumer& getConsumer() = 0;
     // NOLINTEND
 

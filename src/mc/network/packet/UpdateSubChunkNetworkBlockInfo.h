@@ -24,12 +24,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI UpdateSubChunkNetworkBlockInfo(::UpdateSubChunkNetworkBlockInfo const&);
+    MCAPI UpdateSubChunkNetworkBlockInfo(::UpdateSubChunkNetworkBlockInfo const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::UpdateSubChunkNetworkBlockInfo const&);
+    MCAPI void* $ctor(::UpdateSubChunkNetworkBlockInfo const&);
     // NOLINTEND
 };

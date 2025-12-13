@@ -18,28 +18,32 @@ class HappyGhast : public ::Animal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb39d53;
+    ::ll::TypedStorage<8, 8, uint64> mRidingLoop;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    HappyGhast& operator=(HappyGhast const&);
-    HappyGhast(HappyGhast const&);
     HappyGhast();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual ~HappyGhast() /*override*/ = default;
 
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
+    // vIndex: 24
     virtual void normalTick() /*override*/;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 146
     virtual void aiStep() /*override*/;
     // NOLINTEND
 
@@ -77,8 +81,6 @@ public:
     MCFOLD float $getShadowRadius() const;
 
     MCAPI void $aiStep();
-
-
     // NOLINTEND
 
 public:

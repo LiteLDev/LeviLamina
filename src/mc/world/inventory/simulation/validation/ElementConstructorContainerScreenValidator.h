@@ -9,6 +9,7 @@ class ElementConstructorContainerScreenValidator : public ::ContainerScreenValid
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ElementConstructorContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

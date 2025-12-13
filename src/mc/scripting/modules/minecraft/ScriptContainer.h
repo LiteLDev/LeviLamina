@@ -38,37 +38,49 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptContainer();
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<int> getSize() const;
 
+    // vIndex: 2
     virtual ::Scripting::Result_deprecated<int> getEmptySlotsCount() const;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void>
     setItemV010(int slot, ::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
+    // vIndex: 4
     virtual ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
     setItem(int slot, ::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack) const;
 
+    // vIndex: 5
     virtual ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     getItem(int slot) const;
 
+    // vIndex: 6
     virtual ::Scripting::Result_deprecated<void>
     addItemV010(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
+    // vIndex: 7
     virtual ::Scripting::Result_deprecated<bool>
     transferItemV010(int fromSlot, int toSlot, ::ScriptModuleMinecraft::ScriptContainer& toScriptContainer) const;
 
+    // vIndex: 8
     virtual ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
     moveItem(int fromSlot, int toSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
 
+    // vIndex: 9
     virtual ::Scripting::Result_deprecated<bool>
     swapItemsV010(int slot, int otherSlot, ::ScriptModuleMinecraft::ScriptContainer& otherScriptContainer) const;
 
+    // vIndex: 10
     virtual ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
     swapItems(int slot, int otherSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& otherScriptContainer) const;
 
+    // vIndex: 11
     virtual ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerSlot>>
     getSlot(
@@ -77,10 +89,13 @@ public:
             scriptContainerWrapperHandle
     );
 
+    // vIndex: 12
     virtual ::Scripting::Result_deprecated<void> clearAll() const;
 
+    // vIndex: 13
     virtual ::Container* _tryGetContainer() const = 0;
 
+    // vIndex: 14
     virtual ::ItemContext _getItemContext(int) const = 0;
     // NOLINTEND
 
@@ -155,8 +170,6 @@ public:
     );
 
     MCNAPI ::Scripting::Result_deprecated<void> $clearAll() const;
-
-
     // NOLINTEND
 
 public:

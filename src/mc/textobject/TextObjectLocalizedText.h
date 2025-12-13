@@ -27,12 +27,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string asString() const /*override*/;
 
+    // vIndex: 2
     virtual ::Json::Value asJsonValue() const /*override*/;
 
+    // vIndex: 3
     virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
 
+    // vIndex: 0
     virtual ~TextObjectLocalizedText() /*override*/ = default;
     // NOLINTEND
 
@@ -44,8 +48,6 @@ public:
     MCNAPI ::Json::Value $asJsonValue() const;
 
     MCNAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
-
-
     // NOLINTEND
 
 public:

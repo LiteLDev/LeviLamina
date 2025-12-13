@@ -38,24 +38,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EditorStructureBlockSource() /*override*/ = default;
 
+    // vIndex: 28
     virtual void addListener(::BlockSourceListener&) /*override*/;
 
+    // vIndex: 29
     virtual void removeListener(::BlockSourceListener&) /*override*/;
 
+    // vIndex: 31
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::Actor const*, ::AABB const&, bool, bool) /*override*/;
 
+    // vIndex: 30
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) /*override*/;
 
+    // vIndex: 16
     virtual bool hasChunksAt(::Bounds const&, bool) const /*override*/;
 
+    // vIndex: 15
     virtual bool hasChunksAt(::BlockPos const&, int, bool) const /*override*/;
 
+    // vIndex: 14
     virtual bool hasChunksAt(::AABB const&, bool) const /*override*/;
 
+    // vIndex: 32
     virtual bool setBlock(
         ::BlockPos const& pos,
         ::Block const&    block,
@@ -109,8 +118,6 @@ public:
         ::ActorBlockSyncMessage const*,
         ::BlockChangeContext const&
     );
-
-
     // NOLINTEND
 
 public:

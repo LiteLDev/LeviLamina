@@ -60,6 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~OwningGetCollisionShapeEntityProxy() /*override*/ = default;
     // NOLINTEND
 

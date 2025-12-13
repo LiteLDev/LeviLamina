@@ -43,25 +43,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ~ContainerRegistry() /*override*/ = default;
 
+    // vIndex: 0
     virtual ::std::unique_ptr<::ListTag>
     serializeContainerContent(::FullContainerName const& name, ::SaveContext const& saveContext) /*override*/;
 
+    // vIndex: 1
     virtual ::std::optional<int> getDynamicContainerWeight(::FullContainerName const& name) /*override*/;
 
+    // vIndex: 2
     virtual bool hasContainer(::FullContainerName const& name) const /*override*/;
 
+    // vIndex: 0
     virtual ::std::shared_ptr<::StorageItemContainerModel> getModel(::FullContainerName const& name) /*override*/;
 
+    // vIndex: 1
     virtual ::std::shared_ptr<::FillingContainer> getBackingContainer(::FullContainerName const& name) /*override*/;
 
+    // vIndex: 2
     virtual void tryCreateEntry(
         ::StorageItemComponent*            storageItemComponent,
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent,
         ::FullContainerName const&         name
     ) /*override*/;
 
+    // vIndex: 0
     virtual ::std::unique_ptr<::DynamicContainerManager> createContainerManager(
         ::FullContainerName const&         id,
         ::ItemStack const&                 storageItem,
@@ -69,12 +77,16 @@ public:
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     ) /*override*/;
 
+    // vIndex: 1
     virtual uint generateNewID() /*override*/;
 
+    // vIndex: 2
     virtual void tryLoadSavedStorageItem(::ListTag const& contentData, ::FullContainerName const& name) /*override*/;
 
+    // vIndex: 3
     virtual void setExpired(::std::vector<::FullContainerName> const& removedContainers) /*override*/;
 
+    // vIndex: 4
     virtual uint64 getSize() /*override*/;
     // NOLINTEND
 
@@ -143,8 +155,6 @@ public:
     MCAPI void $setExpired(::std::vector<::FullContainerName> const& removedContainers);
 
     MCFOLD uint64 $getSize();
-
-
     // NOLINTEND
 
 public:

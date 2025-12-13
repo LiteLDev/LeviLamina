@@ -14,32 +14,22 @@ class SkinPackContentKeyProvider : public ::IContentKeyProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string getContentKey(::ContentIdentity const&) const /*override*/;
 
+    // vIndex: 4
     virtual void setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&) /*override*/;
 
+    // vIndex: 5
     virtual void clearTempContentKeys() /*override*/;
 
+    // vIndex: 0
     virtual ~SkinPackContentKeyProvider() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::string $getContentKey(::ContentIdentity const&) const;
 
-    MCNAPI void $setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&);
-
-    MCNAPI void $clearTempContentKeys();
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

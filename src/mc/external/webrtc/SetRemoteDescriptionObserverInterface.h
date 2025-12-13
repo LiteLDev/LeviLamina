@@ -16,8 +16,10 @@ class SetRemoteDescriptionObserverInterface : public ::webrtc::RefCountInterface
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual void OnSetRemoteDescriptionComplete(::webrtc::RTCError) = 0;
 
+    // vIndex: 2
     virtual ~SetRemoteDescriptionObserverInterface() /*override*/ = default;
     // NOLINTEND
 

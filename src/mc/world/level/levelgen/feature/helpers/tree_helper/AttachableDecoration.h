@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/ChanceInformation.h"
+#include "mc/world/level/block/BlockDescriptor.h"
+
 // auto generated forward declare list
 // clang-format off
 class Block;
@@ -30,58 +34,46 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk2d65d6;
-        ::ll::UntypedStorage<1, 1> mUnk902e71;
-        ::ll::UntypedStorage<1, 1> mUnk4cfdc3;
-        ::ll::UntypedStorage<1, 1> mUnk1f977f;
+        ::ll::TypedStorage<1, 1, bool> mWest;
+        ::ll::TypedStorage<1, 1, bool> mEast;
+        ::ll::TypedStorage<1, 1, bool> mNorth;
+        ::ll::TypedStorage<1, 1, bool> mSouth;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DirectionMask& operator=(DirectionMask const&);
-        DirectionMask(DirectionMask const&);
-        DirectionMask();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12>  mUnk634662;
-    ::ll::UntypedStorage<8, 184> mUnkac5ea1;
-    ::ll::UntypedStorage<4, 4>   mUnk8d2c21;
-    ::ll::UntypedStorage<4, 4>   mUnk33cfcb;
+    ::ll::TypedStorage<4, 12, ::ChanceInformation>                                mDecorationChance;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                                 mDecorationBlock;
+    ::ll::TypedStorage<4, 4, int>                                                 mNumSteps;
+    ::ll::TypedStorage<4, 4, ::TreeHelper::AttachableDecoration::GrowthDirection> mDirection;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttachableDecoration& operator=(AttachableDecoration const&);
-    AttachableDecoration(AttachableDecoration const&);
-    AttachableDecoration();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _placeMultiDecoration(
+    MCAPI void _placeMultiDecoration(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Block const&       block,
         ::BlockPos const&    origin
     ) const;
 
-    MCNAPI void placeDecoration(
+    MCAPI void placeDecoration(
         ::IBlockWorldGenAPI&                                     target,
         ::BlockPos const&                                        pos,
         ::Random&                                                random,
         ::TreeHelper::AttachableDecoration::DirectionMask const& mask
     ) const;
 
-    MCNAPI ~AttachableDecoration();
+    MCAPI ~AttachableDecoration();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

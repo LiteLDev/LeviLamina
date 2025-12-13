@@ -38,16 +38,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
 
+    // vIndex: 2
     virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
+    // vIndex: 4
     virtual ::std::string_view getName() const /*override*/;
 
+    // vIndex: 6
     virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getValue() const /*override*/;
 
+    // vIndex: 8
     virtual ::Json::Value _serializeValue() const /*override*/;
 
+    // vIndex: 0
     virtual ~ActorInWeatherTest() /*override*/ = default;
     // NOLINTEND
 
@@ -63,8 +69,6 @@ public:
     MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getValue() const;
 
     MCNAPI ::Json::Value $_serializeValue() const;
-
-
     // NOLINTEND
 
 public:

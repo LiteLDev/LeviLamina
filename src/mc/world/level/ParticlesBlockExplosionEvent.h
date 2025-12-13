@@ -22,8 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void load(::CompoundTag const& data);
-
     MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
 
     MCNAPI ~ParticlesBlockExplosionEvent();

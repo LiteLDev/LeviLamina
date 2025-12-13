@@ -58,8 +58,6 @@ MCNAPI void _tickSystem(
     ::ViewT<::StrictEntityContext, ::PredictedMovementComponent> disablingView
 );
 
-MCNAPI_C void _updateRuntimeData(::PredictedMovementComponent& component);
-
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 

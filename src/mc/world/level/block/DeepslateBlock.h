@@ -14,10 +14,13 @@ class DeepslateBlock : public ::RotatedPillarBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 46
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
+    // vIndex: 128
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
+    // vIndex: 0
     virtual ~DeepslateBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -27,8 +30,6 @@ public:
     MCFOLD bool $canBeOriginalSurface(bool) const;
 
     MCAPI ::Block const* $tryGetInfested(::Block const& block) const;
-
-
     // NOLINTEND
 
 public:

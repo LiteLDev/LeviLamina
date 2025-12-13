@@ -39,18 +39,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual void OnStatsDelivered(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const& report) /*override*/;
 
+    // vIndex: 1
     virtual void OnSignalingChange(::webrtc::PeerConnectionInterface::SignalingState) /*override*/;
 
+    // vIndex: 4
     virtual void OnDataChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> dataChannel) /*override*/;
 
+    // vIndex: 7
     virtual void OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState) /*override*/;
 
-    virtual void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState newState) /*override*/;
+    // vIndex: 10
+    virtual void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState new_state) /*override*/;
 
+    // vIndex: 11
     virtual void OnIceCandidate(::webrtc::IceCandidateInterface const* candidate) /*override*/;
 
+    // vIndex: 12
     virtual void OnIceCandidateError(
         ::std::string const& address,
         int                  port,
@@ -59,6 +66,7 @@ public:
         ::std::string const& errorMessage
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~PeerConnectionObserver() /*override*/ = default;
     // NOLINTEND
 
@@ -85,7 +93,7 @@ public:
 
     MCNAPI void $OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState);
 
-    MCNAPI void $OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState newState);
+    MCNAPI void $OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState new_state);
 
     MCNAPI void $OnIceCandidate(::webrtc::IceCandidateInterface const* candidate);
 
@@ -96,8 +104,6 @@ public:
         int                  errorCode,
         ::std::string const& errorMessage
     );
-
-
     // NOLINTEND
 
 public:

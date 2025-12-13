@@ -28,10 +28,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void OnSentPacket(::dcsctp::TimeMs now, ::rtc::ArrayView<uchar const> payload) /*override*/;
 
+    // vIndex: 2
     virtual void OnReceivedPacket(::dcsctp::TimeMs now, ::rtc::ArrayView<uchar const> payload) /*override*/;
 
+    // vIndex: 0
     virtual ~TextPcapPacketObserver() /*override*/ = default;
     // NOLINTEND
 
@@ -52,8 +55,6 @@ public:
     MCNAPI void $OnSentPacket(::dcsctp::TimeMs now, ::rtc::ArrayView<uchar const> payload);
 
     MCNAPI void $OnReceivedPacket(::dcsctp::TimeMs now, ::rtc::ArrayView<uchar const> payload);
-
-
     // NOLINTEND
 
 public:

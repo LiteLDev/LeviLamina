@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/Mob.h"
 #include "mc/world/actor/agent/AgentAnimation.h"
+#include "mc/world/actor/agent/AgentRenderData.h"
 #include "mc/world/actor/agent/AgentTravelType.h"
 
 // auto generated forward declare list
@@ -39,64 +41,82 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk618b0a;
-    ::ll::UntypedStorage<4, 8>  mUnka894c6;
-    ::ll::UntypedStorage<4, 4>  mUnkb25082;
-    ::ll::UntypedStorage<4, 4>  mUnk8eff9b;
-    ::ll::UntypedStorage<1, 1>  mUnk666d92;
-    ::ll::UntypedStorage<1, 1>  mUnkb09f58;
-    ::ll::UntypedStorage<8, 16> mUnk306c02;
+    ::ll::TypedStorage<1, 1, bool>               mIsHovering;
+    ::ll::TypedStorage<4, 8, ::Vec2>             mHorizontalTarget;
+    ::ll::TypedStorage<4, 4, float>              mVerticalTarget;
+    ::ll::TypedStorage<4, 4, int>                mSelectedSlot;
+    ::ll::TypedStorage<1, 1, bool>               mHasSetName;
+    ::ll::TypedStorage<1, 1, bool>               mHasFiredCreationEvent;
+    ::ll::TypedStorage<8, 16, ::AgentRenderData> mRenderData;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Agent& operator=(Agent const&);
-    Agent(Agent const&);
     Agent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 34
     virtual ::mce::Color getNameTagTextColor() const /*override*/;
 
+    // vIndex: 32
     virtual bool canShowNameTag() const /*override*/;
 
+    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
+    // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
+    // vIndex: 138
     virtual void knockback(::Actor*, int, float, float, float, float, float) /*override*/;
 
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
+    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 168
     virtual bool createAIGoals() /*override*/;
 
+    // vIndex: 77
     virtual void setCarriedItem(::ItemStack const& item) /*override*/;
 
+    // vIndex: 24
     virtual void normalTick() /*override*/;
 
+    // vIndex: 25
     virtual void baseTick() /*override*/;
 
+    // vIndex: 21
     virtual void
     teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity) /*override*/;
 
+    // vIndex: 173
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
+    // vIndex: 50
     virtual bool isTargetable() const /*override*/;
 
+    // vIndex: 31
     virtual bool isInvisible() const /*override*/;
 
+    // vIndex: 122
     virtual void kill() /*override*/;
 
+    // vIndex: 55
     virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
+    // vIndex: 175
     virtual ::std::unique_ptr<::BodyControl> initBodyControl() /*override*/;
 
+    // vIndex: 8
     virtual ~Agent() /*override*/ = default;
     // NOLINTEND
 
@@ -184,8 +204,6 @@ public:
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
-
-
     // NOLINTEND
 
 public:

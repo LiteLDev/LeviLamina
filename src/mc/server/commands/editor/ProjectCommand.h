@@ -18,16 +18,16 @@ struct ActorUniqueID;
 class ProjectCommand : public ::ServerCommand {
 public:
     // ProjectCommand inner types define
+    enum class Subcommand : int {
+        None   = 0,
+        Export = 1,
+    };
+
     enum class ExportSubcommandTypes : int {
         None     = 0,
         Project  = 1,
         World    = 2,
         Template = 3,
-    };
-
-    enum class Subcommand : int {
-        None   = 0,
-        Export = 1,
     };
 
     enum class TaskState : int {
@@ -52,8 +52,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
+    // vIndex: 0
     virtual ~ProjectCommand() /*override*/ = default;
     // NOLINTEND
 
@@ -107,8 +109,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-
     // NOLINTEND
 
 public:

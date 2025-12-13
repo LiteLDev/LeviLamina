@@ -45,6 +45,32 @@ public:
         // NOLINTEND
     };
 
+    struct Warning {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnkbedc65;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Warning& operator=(Warning const&);
+        Warning(Warning const&);
+        Warning();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~Warning();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
     struct Info {
     public:
         // member variables
@@ -97,32 +123,6 @@ public:
         // NOLINTEND
     };
 
-    struct Warning {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkbedc65;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Warning& operator=(Warning const&);
-        Warning(Warning const&);
-        Warning();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~Warning();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -143,9 +143,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPluginResult(::ScriptPluginResult&&);
-
     MCAPI ScriptPluginResult(::ScriptPluginResult const&);
+
+    MCAPI ScriptPluginResult(::ScriptPluginResult&&);
 
     MCAPI ScriptPluginResult(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
 
@@ -163,9 +163,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptPluginResult&&);
-
     MCAPI void* $ctor(::ScriptPluginResult const&);
+
+    MCAPI void* $ctor(::ScriptPluginResult&&);
 
     MCAPI void* $ctor(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
     // NOLINTEND

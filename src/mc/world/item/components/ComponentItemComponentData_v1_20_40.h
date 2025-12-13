@@ -2,6 +2,38 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/components/AllowOffHandItemComponent.h"
+#include "mc/world/item/components/CanDestroyInCreativeItemComponent.h"
+#include "mc/world/item/components/ChargeableItemComponentLegacyFactoryData.h"
+#include "mc/world/item/components/CooldownItemComponent.h"
+#include "mc/world/item/components/DamageItemComponent.h"
+#include "mc/world/item/components/DiggerItemComponentLegacyFactoryData.h"
+#include "mc/world/item/components/DisplayNameItemComponent.h"
+#include "mc/world/item/components/DurabilityItemComponent.h"
+#include "mc/world/item/components/EnchantableItemComponent.h"
+#include "mc/world/item/components/EntityPlacerItemComponentLegacyFactoryData.h"
+#include "mc/world/item/components/FoodItemComponentData_v1_20_30.h"
+#include "mc/world/item/components/FuelItemComponent.h"
+#include "mc/world/item/components/GlintItemComponent.h"
+#include "mc/world/item/components/HandEquippedItemComponent.h"
+#include "mc/world/item/components/HoverTextColorItemComponent.h"
+#include "mc/world/item/components/IconItemComponentLegacyFactoryData.h"
+#include "mc/world/item/components/InteractButtonItemComponent.h"
+#include "mc/world/item/components/LiquidClippedItemComponent.h"
+#include "mc/world/item/components/MaxStackSizeItemComponent.h"
+#include "mc/world/item/components/PlanterItemComponentLegacyFactoryData.h"
+#include "mc/world/item/components/ProjectileItemComponent.h"
+#include "mc/world/item/components/RecordItemComponent.h"
+#include "mc/world/item/components/RepairableItemComponent.h"
+#include "mc/world/item/components/ShooterItemComponentLegacyFactoryData.h"
+#include "mc/world/item/components/ShouldDespawnItemComponent.h"
+#include "mc/world/item/components/StackedByDataItemComponent.h"
+#include "mc/world/item/components/ThrowableItemComponentLegacyFactoryData.h"
+#include "mc/world/item/components/UseAnimationItemComponent.h"
+#include "mc/world/item/components/UseModifiersItemComponentLegacyFactoryData.h"
+#include "mc/world/item/components/WearableItemComponentLegacyFactoryData.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -11,36 +43,36 @@ struct ComponentItemComponentData_v1_20_40 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80>  mUnk768da2;
-    ::ll::UntypedStorage<8, 80>  mUnka69b69;
-    ::ll::UntypedStorage<8, 40>  mUnkb97016;
-    ::ll::UntypedStorage<8, 104> mUnk1bd2d3;
-    ::ll::UntypedStorage<8, 56>  mUnk136989;
-    ::ll::UntypedStorage<8, 240> mUnk6748bc;
-    ::ll::UntypedStorage<8, 40>  mUnk440b59;
-    ::ll::UntypedStorage<8, 32>  mUnk741e06;
-    ::ll::UntypedStorage<8, 48>  mUnk23fb6e;
-    ::ll::UntypedStorage<8, 72>  mUnka38246;
-    ::ll::UntypedStorage<8, 208> mUnk96318d;
-    ::ll::UntypedStorage<8, 48>  mUnkc03c19;
-    ::ll::UntypedStorage<8, 48>  mUnk833b05;
-    ::ll::UntypedStorage<4, 40>  mUnkb0862f;
-    ::ll::UntypedStorage<4, 24>  mUnk10aa3c;
-    ::ll::UntypedStorage<8, 40>  mUnk95602e;
-    ::ll::UntypedStorage<8, 32>  mUnkf90e7c;
-    ::ll::UntypedStorage<8, 32>  mUnk14eee3;
-    ::ll::UntypedStorage<8, 72>  mUnkdb9d05;
-    ::ll::UntypedStorage<4, 24>  mUnkb2275c;
-    ::ll::UntypedStorage<8, 32>  mUnk966bad;
-    ::ll::UntypedStorage<8, 32>  mUnk3328b7;
-    ::ll::UntypedStorage<8, 32>  mUnk715628;
-    ::ll::UntypedStorage<8, 32>  mUnkb5180a;
-    ::ll::UntypedStorage<8, 32>  mUnkf1ab89;
-    ::ll::UntypedStorage<8, 32>  mUnka8c6a6;
-    ::ll::UntypedStorage<8, 32>  mUnkb1c85f;
-    ::ll::UntypedStorage<8, 32>  mUnkf15d87;
-    ::ll::UntypedStorage<8, 64>  mUnk259c9a;
-    ::ll::UntypedStorage<8, 64>  mUnk82ad16;
+    ::ll::TypedStorage<8, 80, ::std::optional<::ChargeableItemComponentLegacyFactoryData>>    chargeableItemComponent;
+    ::ll::TypedStorage<8, 80, ::std::optional<::CooldownItemComponent>>                       cooldownItemComponent;
+    ::ll::TypedStorage<8, 40, ::std::optional<::DurabilityItemComponent>>                     durabilityItemComponent;
+    ::ll::TypedStorage<8, 104, ::std::optional<::DiggerItemComponentLegacyFactoryData>>       diggerItemComponent;
+    ::ll::TypedStorage<8, 56, ::std::optional<::DisplayNameItemComponent>>                    displayNameItemComponent;
+    ::ll::TypedStorage<8, 240, ::std::optional<::EntityPlacerItemComponentLegacyFactoryData>> entityPlacerItemComponent;
+    ::ll::TypedStorage<8, 40, ::std::optional<::FoodItemComponentData_v1_20_30>>              foodItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::FuelItemComponent>>                           fuelItemComponent;
+    ::ll::TypedStorage<8, 48, ::std::optional<::IconItemComponentLegacyFactoryData>>          iconItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::PlanterItemComponentLegacyFactoryData>>       planterItemComponent;
+    ::ll::TypedStorage<8, 208, ::std::optional<::ProjectileItemComponent>>                    projectileItemComponent;
+    ::ll::TypedStorage<8, 48, ::std::optional<::RepairableItemComponent>>                     repairableItemComponent;
+    ::ll::TypedStorage<8, 48, ::std::optional<::ShooterItemComponentLegacyFactoryData>>       shooterItemComponent;
+    ::ll::TypedStorage<4, 40, ::std::optional<::ThrowableItemComponentLegacyFactoryData>>     throwableItemComponent;
+    ::ll::TypedStorage<4, 24, ::std::optional<::WearableItemComponentLegacyFactoryData>>      wearableItemComponent;
+    ::ll::TypedStorage<8, 40, ::std::optional<::RecordItemComponent>>                         recordItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::MaxStackSizeItemComponent>>                   maxStackSizeItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::CanDestroyInCreativeItemComponent>> canDestroyInCreativeItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::HoverTextColorItemComponent>>       hoverTextColorItemComponent;
+    ::ll::TypedStorage<4, 24, ::std::optional<::UseModifiersItemComponentLegacyFactoryData>> useModifiersItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::StackedByDataItemComponent>>                 stackedByDataItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::GlintItemComponent>>                         glintItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::HandEquippedItemComponent>>                  handEquippedItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::ShouldDespawnItemComponent>>                 shouldDespawnItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::DamageItemComponent>>                        damageItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::AllowOffHandItemComponent>>                  allowOffHandItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::LiquidClippedItemComponent>>                 liquidClippedItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::UseAnimationItemComponent>>                  useAnimationItemComponent;
+    ::ll::TypedStorage<8, 64, ::std::optional<::EnchantableItemComponent>>                   enchantableItemComponent;
+    ::ll::TypedStorage<8, 64, ::std::optional<::InteractButtonItemComponent>> interactButtonItemComponent;
     // NOLINTEND
 
 public:
@@ -50,34 +82,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemComponentData_v1_20_40(::ComponentItemComponentData_v1_20_40&&);
+    MCAPI ComponentItemComponentData_v1_20_40(::ComponentItemComponentData_v1_20_40 const&);
 
-    MCNAPI ComponentItemComponentData_v1_20_40(::ComponentItemComponentData_v1_20_40 const&);
+    MCAPI ComponentItemComponentData_v1_20_40(::ComponentItemComponentData_v1_20_40&&);
 
-    MCNAPI ::ComponentItemComponentData_v1_20_40& operator=(::ComponentItemComponentData_v1_20_40&&);
+    MCAPI ::ComponentItemComponentData_v1_20_40& operator=(::ComponentItemComponentData_v1_20_40&&);
 
-    MCNAPI ::ComponentItemComponentData_v1_20_40& operator=(::ComponentItemComponentData_v1_20_40 const&);
+    MCAPI ::ComponentItemComponentData_v1_20_40& operator=(::ComponentItemComponentData_v1_20_40 const&);
 
-    MCNAPI ~ComponentItemComponentData_v1_20_40();
+    MCAPI ~ComponentItemComponentData_v1_20_40();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ComponentItemComponentData_v1_20_40&&);
+    MCAPI void* $ctor(::ComponentItemComponentData_v1_20_40 const&);
 
-    MCNAPI void* $ctor(::ComponentItemComponentData_v1_20_40 const&);
+    MCAPI void* $ctor(::ComponentItemComponentData_v1_20_40&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

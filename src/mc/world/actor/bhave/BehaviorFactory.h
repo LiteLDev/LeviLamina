@@ -12,26 +12,34 @@ namespace Json { class Value; }
 
 class BehaviorFactory {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk745c73;
-    // NOLINTEND
+    // BehaviorFactory inner types define
+    using DefinitionCreator = ::std::function<::std::unique_ptr<::BehaviorDefinition>()>;
+
+    using NodeCreator = ::std::function<::std::unique_ptr<::BehaviorNode>()>;
 
 public:
-    // prevent constructor by default
-    BehaviorFactory& operator=(BehaviorFactory const&);
-    BehaviorFactory(BehaviorFactory const&);
-    BehaviorFactory();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::std::pair<
+                ::std::function<::std::unique_ptr<::BehaviorDefinition>()>,
+                ::std::function<::std::unique_ptr<::BehaviorNode>()>>>>
+        mFactoryPairs;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _initNodes();
+    MCAPI void _initNodes();
 
-    MCNAPI ::std::unique_ptr<::BehaviorDefinition>
+    MCAPI ::std::unique_ptr<::BehaviorDefinition>
     loadNodeDefinition(::std::string const& name, ::Json::Value root, ::BehaviorTreeDefinitionPtr& ptr) const;
 
-    MCNAPI void registerNodePair(
+    MCAPI void registerNodePair(
         ::std::string const&                                       id,
         ::std::function<::std::unique_ptr<::BehaviorDefinition>()> definitionCreator,
         ::std::function<::std::unique_ptr<::BehaviorNode>()>       nodeCreator

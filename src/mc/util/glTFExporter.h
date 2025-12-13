@@ -2,21 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-namespace Json { class Value; }
-namespace glTF { struct Accessor; }
-namespace glTF { struct Buffer; }
-namespace glTF { struct BufferView; }
-namespace glTF { struct Image; }
-namespace glTF { struct Material; }
-namespace glTF { struct Mesh; }
-namespace glTF { struct Node; }
-namespace glTF { struct Scene; }
-namespace glTF { struct Texture; }
-// clang-format on
-
 class glTFExporter {
 public:
     // member variables
@@ -55,44 +40,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~glTFExporter() = default;
-#else // LL_PLAT_C
-    virtual ~glTFExporter();
-#endif
-
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C bool _hasMaterial(::std::string const& materialName);
-
-    MCNAPI_C void _serialize(::Json::Value& root);
-
-    MCNAPI_C void _serializeBinaryData(::Json::Value& glTF);
-
-    MCNAPI_C int addAccessor(::glTF::Accessor& accessor);
-
-    MCNAPI_C int addBuffer(::glTF::Buffer& buffer);
-
-    MCNAPI_C int addBufferView(::glTF::BufferView& bufferView);
-
-    MCNAPI_C int addImage(::glTF::Image& image);
-
-    MCNAPI_C int addMaterial(::glTF::Material& material);
-
-    MCNAPI_C int addMesh(::glTF::Mesh& mesh);
-
-    MCNAPI_C int addNode(::glTF::Node& node);
-
-    MCNAPI_C int addScene(::glTF::Scene& scene);
-
-    MCNAPI_C int addTexture(::glTF::Texture& texture);
-
-    MCNAPI_C glTFExporter(::Core::Path const& folderPath, ::std::string const& modelName);
-
-    MCNAPI_C void serialize();
     // NOLINTEND
 
 public:
@@ -100,28 +49,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& BINARY_EXTENSION();
 
-    MCNAPI_C static ::std::string_view const& GLB_BUFFER_URI();
-
     MCNAPI static ::std::string_view const& GLB_EXTENSION();
 
     MCNAPI static ::std::string_view const& GLTF_EXTENSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Core::Path const& folderPath, ::std::string const& modelName);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -18,14 +18,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SecureStorage();
 
+    // vIndex: 1
     virtual bool add(::std::string const&, ::std::string const&) = 0;
 
+    // vIndex: 2
     virtual bool addOrUpdate(::std::string const&, ::std::string const&) = 0;
 
+    // vIndex: 3
     virtual bool remove(::std::string const&) = 0;
 
+    // vIndex: 4
     virtual bool get(::std::string const&, ::std::string&) = 0;
     // NOLINTEND
 

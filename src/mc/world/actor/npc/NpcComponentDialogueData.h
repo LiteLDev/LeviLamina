@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/actor/npc/INpcDialogueData.h"
 
 // auto generated forward declare list
@@ -16,77 +17,53 @@ struct NpcComponentDialogueData : public ::INpcDialogueData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfdaf47;
-    ::ll::UntypedStorage<1, 1>  mUnk4842f9;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mOwner;
+    ::ll::TypedStorage<1, 1, bool>             mIsRemoteFire;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NpcComponentDialogueData& operator=(NpcComponentDialogueData const&);
-    NpcComponentDialogueData(NpcComponentDialogueData const&);
-    NpcComponentDialogueData();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string const& getDialogueText() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string const& getRawDialogueText() const /*override*/;
 
+    // vIndex: 3
     virtual ::std::string const& getNameText() const /*override*/;
 
+    // vIndex: 4
     virtual ::std::string const& getNameRawText() const /*override*/;
 
+    // vIndex: 5
     virtual ::std::string const& getSceneName() const /*override*/;
 
+    // vIndex: 7
     virtual ::npc::ActionContainer* getActionsContainer() /*override*/;
 
+    // vIndex: 6
     virtual ::npc::ActionContainer const* getActionsContainer() const /*override*/;
 
+    // vIndex: 8
     virtual ::ActorUniqueID getActorUniqueID() /*override*/;
 
+    // vIndex: 10
     virtual ::Actor* getActor() /*override*/;
 
+    // vIndex: 9
     virtual ::Actor const* getActor() const /*override*/;
 
+    // vIndex: 11
     virtual bool isRemoteFire() /*override*/;
 
+    // vIndex: 0
     virtual ~NpcComponentDialogueData() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::string const& $getDialogueText() const;
 
-    MCNAPI ::std::string const& $getRawDialogueText() const;
-
-    MCNAPI ::std::string const& $getNameText() const;
-
-    MCNAPI ::std::string const& $getNameRawText() const;
-
-    MCNAPI ::std::string const& $getSceneName() const;
-
-    MCNAPI ::npc::ActionContainer* $getActionsContainer();
-
-    MCNAPI ::npc::ActionContainer const* $getActionsContainer() const;
-
-    MCNAPI ::ActorUniqueID $getActorUniqueID();
-
-    MCNAPI ::Actor* $getActor();
-
-    MCNAPI ::Actor const* $getActor() const;
-
-    MCNAPI bool $isRemoteFire();
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

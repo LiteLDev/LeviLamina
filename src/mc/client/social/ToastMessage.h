@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/client/social/ToastMessageType.h"
-
-// auto generated forward declare list
-// clang-format off
-struct ToastIconData;
-namespace Json { class Value; }
-// clang-format on
-
 class ToastMessage {
 public:
     // member variables
@@ -47,71 +38,7 @@ public:
 
 public:
     // prevent constructor by default
+    ToastMessage& operator=(ToastMessage const&);
+    ToastMessage(ToastMessage const&);
     ToastMessage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ToastMessage(::ToastMessage&&);
-
-    MCNAPI_C ToastMessage(::ToastMessage const&);
-
-    MCNAPI_C explicit ToastMessage(::std::string const& message);
-
-    MCNAPI_C ToastMessage(
-        ::ToastMessageType   type,
-        ::std::string const& title,
-        ::std::string const& subtitle,
-        ::Json::Value const& propertyBag
-    );
-
-    MCNAPI_C ToastMessage(
-        ::ToastMessageType   type,
-        ::std::string const& title,
-        ::std::string const& subtitle,
-        ::Json::Value const& propertyBag,
-        float                displaySeconds
-    );
-
-    MCNAPI_C ::std::vector<::ToastIconData> getIconIds() const;
-
-    MCNAPI_C bool mergeMessage(::ToastMessage& other);
-
-    MCNAPI_C ::ToastMessage& operator=(::ToastMessage&&);
-
-    MCNAPI_C ::ToastMessage& operator=(::ToastMessage const&);
-
-    MCNAPI_C ~ToastMessage();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::ToastMessage&&);
-
-    MCNAPI_C void* $ctor(::ToastMessage const&);
-
-    MCNAPI_C void* $ctor(::std::string const& message);
-
-    MCNAPI_C void* $ctor(
-        ::ToastMessageType   type,
-        ::std::string const& title,
-        ::std::string const& subtitle,
-        ::Json::Value const& propertyBag
-    );
-
-    MCNAPI_C void* $ctor(
-        ::ToastMessageType   type,
-        ::std::string const& title,
-        ::std::string const& subtitle,
-        ::Json::Value const& propertyBag,
-        float                displaySeconds
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

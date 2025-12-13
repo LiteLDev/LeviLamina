@@ -21,12 +21,16 @@ class ChemicalHeatBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 139
     virtual int getExtraRenderLayers() const /*override*/;
 
+    // vIndex: 56
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~ChemicalHeatBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -58,8 +62,6 @@ public:
     MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

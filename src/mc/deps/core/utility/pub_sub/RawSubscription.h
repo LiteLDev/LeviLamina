@@ -7,18 +7,6 @@
 
 namespace Bedrock::PubSub {
 
-class RawSubscription : public ::Bedrock::PubSub::SubscriptionBase {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~RawSubscription();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
-};
+class RawSubscription : public ::Bedrock::PubSub::SubscriptionBase {};
 
 } // namespace Bedrock::PubSub

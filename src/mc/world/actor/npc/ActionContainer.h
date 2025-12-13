@@ -14,8 +14,8 @@ struct ActionContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke14f11;
-    ::ll::UntypedStorage<8, 24> mUnk8bc2fe;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>> mActions;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                                                 mButtons;
     // NOLINTEND
 
 public:
@@ -27,21 +27,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::npc::ActionContainer& operator=(::npc::ActionContainer&&);
+    MCAPI ::npc::ActionContainer& operator=(::npc::ActionContainer&&);
 
-    MCNAPI void push(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
+    MCAPI void push(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
 
-    MCNAPI_C void remove(uint64 index);
+    MCAPI void reset(::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& data);
 
-    MCNAPI void reset(::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& data);
-
-    MCNAPI ~ActionContainer();
+    MCAPI ~ActionContainer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -30,21 +30,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PackReport& operator=(PackReport const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PackReport();
 
-    MCNAPI PackReport(::PackReport&&);
-
     MCNAPI PackReport(::PackReport const&);
 
-    MCNAPI_S bool hasErrors() const;
+    MCNAPI PackReport(::PackReport&&);
 
-    MCNAPI_C void merge(::PackReport&& other);
+    MCNAPI bool hasErrors() const;
 
     MCNAPI ::PackReport& operator=(::PackReport&&);
-
-    MCNAPI_C ::PackReport& operator=(::PackReport const&);
 
     MCNAPI ~PackReport();
     // NOLINTEND
@@ -54,9 +54,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::PackReport&&);
-
     MCNAPI void* $ctor(::PackReport const&);
+
+    MCNAPI void* $ctor(::PackReport&&);
     // NOLINTEND
 
 public:

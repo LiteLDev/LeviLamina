@@ -4,17 +4,27 @@
 
 // auto generated inclusion list
 #include "mc/world/item/components/ComponentItemDeprecatedComponentData_v1_20_30.h"
+#include "mc/world/item/components/LegacyOnHitActorTriggerItemComponentData.h"
+#include "mc/world/item/components/LegacyOnHitBlockTriggerItemComponentData.h"
+#include "mc/world/item/components/LegacyOnHurtActorTriggerItemComponentData.h"
+#include "mc/world/item/components/OnUseItemComponent.h"
+#include "mc/world/item/components/OnUseOnItemComponentLegacyFactoryData.h"
+#include "mc/world/item/components/RenderOffsetsItemComponent.h"
 
 struct ComponentItemDeprecatedComponentData_v1_20_40 : public ::ComponentItemDeprecatedComponentData_v1_20_30 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72>  mUnkb3c915;
-    ::ll::UntypedStorage<8, 72>  mUnk2ba0ea;
-    ::ll::UntypedStorage<8, 168> mUnk6d55ca;
-    ::ll::UntypedStorage<8, 72>  mUnk991399;
-    ::ll::UntypedStorage<8, 72>  mUnk849a51;
-    ::ll::UntypedStorage<8, 72>  mUnkdfb65b;
+    ::ll::TypedStorage<8, 72, ::std::optional<::OnUseItemComponent>> onUseItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::OnUseOnItemComponentLegacyFactoryData>>
+                                                                              legacyOnUseOnTriggerItemComponent;
+    ::ll::TypedStorage<8, 168, ::std::optional<::RenderOffsetsItemComponent>> renderOffsetsItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::LegacyOnHurtActorTriggerItemComponentData>>
+        legacyOnHurtActorTriggerItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::LegacyOnHitActorTriggerItemComponentData>>
+        legacyOnHitActorTriggerItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::LegacyOnHitBlockTriggerItemComponentData>>
+        legacyOnHitBlockTriggerItemComponent;
     // NOLINTEND
 
 public:
@@ -24,30 +34,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemDeprecatedComponentData_v1_20_40(::ComponentItemDeprecatedComponentData_v1_20_40&&);
+    MCAPI ComponentItemDeprecatedComponentData_v1_20_40(::ComponentItemDeprecatedComponentData_v1_20_40 const&);
 
-    MCNAPI ComponentItemDeprecatedComponentData_v1_20_40(::ComponentItemDeprecatedComponentData_v1_20_40 const&);
+    MCAPI ComponentItemDeprecatedComponentData_v1_20_40(::ComponentItemDeprecatedComponentData_v1_20_40&&);
 
-    MCNAPI ::ComponentItemDeprecatedComponentData_v1_20_40&
-    operator=(::ComponentItemDeprecatedComponentData_v1_20_40&&);
-
-    MCNAPI ::ComponentItemDeprecatedComponentData_v1_20_40&
+    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_40&
     operator=(::ComponentItemDeprecatedComponentData_v1_20_40 const&);
 
-    MCNAPI ~ComponentItemDeprecatedComponentData_v1_20_40();
+    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_40& operator=(::ComponentItemDeprecatedComponentData_v1_20_40&&);
+
+    MCAPI ~ComponentItemDeprecatedComponentData_v1_20_40();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_40&&);
+    MCAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_40 const&);
 
-    MCNAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_40 const&);
+    MCAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_40&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

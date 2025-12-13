@@ -3,75 +3,75 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/shared_types/Color255RGB.h"
 #include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-namespace SharedTypes { struct Color255RGB; }
 // clang-format on
 
 struct BlockMapColorDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk121012;
-    ::ll::UntypedStorage<1, 1>  mUnk3d9d2e;
+    ::ll::TypedStorage<4, 16, ::SharedTypes::Color255RGB> mMapColor;
+    ::ll::TypedStorage<1, 1, ::TintMethod>                mTintMethod;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockMapColorDescription& operator=(BlockMapColorDescription const&);
-    BlockMapColorDescription(BlockMapColorDescription const&);
     BlockMapColorDescription();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
+    // vIndex: 2
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    // vIndex: 4
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    // vIndex: 0
     virtual ~BlockMapColorDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockMapColorDescription(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
+    MCAPI BlockMapColorDescription(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
+    MCAPI void* $ctor(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
-
-
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
     // NOLINTEND
 
 public:

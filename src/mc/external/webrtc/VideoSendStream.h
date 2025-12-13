@@ -23,36 +23,11 @@ public:
     // VideoSendStream inner types declare
     // clang-format off
     struct Config;
-    struct StreamStats;
     struct Stats;
+    struct StreamStats;
     // clang-format on
 
     // VideoSendStream inner types define
-    struct Config {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 288> mUnkccbdb4;
-        ::ll::UntypedStorage<8, 40>  mUnkc4b09b;
-        ::ll::UntypedStorage<4, 4>   mUnkedf477;
-        ::ll::UntypedStorage<8, 8>   mUnke19dd7;
-        ::ll::UntypedStorage<4, 4>   mUnkbf7346;
-        ::ll::UntypedStorage<4, 4>   mUnk6a5ab4;
-        ::ll::UntypedStorage<1, 1>   mUnk945978;
-        ::ll::UntypedStorage<1, 1>   mUnk1cb5a2;
-        ::ll::UntypedStorage<8, 8>   mUnk48ac42;
-        ::ll::UntypedStorage<8, 8>   mUnk92291e;
-        ::ll::UntypedStorage<1, 5>   mUnkd97f02;
-        ::ll::UntypedStorage<8, 8>   mUnkf4b2bd;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Config& operator=(Config const&);
-        Config(Config const&);
-        Config();
-    };
-
     struct StreamStats {
     public:
         // StreamStats inner types define
@@ -139,31 +114,67 @@ public:
         Stats();
     };
 
+    struct Config {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 288> mUnkccbdb4;
+        ::ll::UntypedStorage<8, 40>  mUnkc4b09b;
+        ::ll::UntypedStorage<4, 4>   mUnkedf477;
+        ::ll::UntypedStorage<8, 8>   mUnke19dd7;
+        ::ll::UntypedStorage<4, 4>   mUnkbf7346;
+        ::ll::UntypedStorage<4, 4>   mUnk6a5ab4;
+        ::ll::UntypedStorage<1, 1>   mUnk945978;
+        ::ll::UntypedStorage<1, 1>   mUnk1cb5a2;
+        ::ll::UntypedStorage<8, 8>   mUnk48ac42;
+        ::ll::UntypedStorage<8, 8>   mUnk92291e;
+        ::ll::UntypedStorage<1, 5>   mUnkd97f02;
+        ::ll::UntypedStorage<8, 8>   mUnkf4b2bd;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Config& operator=(Config const&);
+        Config(Config const&);
+        Config();
+    };
+
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void Start() = 0;
 
+    // vIndex: 1
     virtual void Stop() = 0;
 
+    // vIndex: 2
     virtual bool started() = 0;
 
+    // vIndex: 3
     virtual void AddAdaptationResource(::webrtc::scoped_refptr<::webrtc::Resource>) = 0;
 
+    // vIndex: 4
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::Resource>> GetAdaptationResources() = 0;
 
+    // vIndex: 5
     virtual void
     SetSource(::rtc::VideoSourceInterface<::webrtc::VideoFrame>*, ::webrtc::DegradationPreference const&) = 0;
 
+    // vIndex: 7
     virtual void ReconfigureVideoEncoder(::webrtc::VideoEncoderConfig) = 0;
 
+    // vIndex: 6
     virtual void
         ReconfigureVideoEncoder(::webrtc::VideoEncoderConfig, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>) = 0;
 
+    // vIndex: 8
     virtual ::webrtc::VideoSendStream::Stats GetStats() = 0;
 
+    // vIndex: 9
     virtual void GenerateKeyFrame(::std::vector<::std::string> const&) = 0;
 
+    // vIndex: 10
     virtual ~VideoSendStream() = default;
     // NOLINTEND
 

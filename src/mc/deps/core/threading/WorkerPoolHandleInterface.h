@@ -16,15 +16,11 @@ class WorkerPoolHandleInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~WorkerPoolHandleInterface() = default;
 
+    // vIndex: 1
     virtual ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> get() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::WorkerPool& operator*() const;
     // NOLINTEND
 
 public:

@@ -24,12 +24,6 @@ public:
     ParticleMotionCollisionEventVector();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ParticleMotionCollisionEventVector();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -38,12 +32,6 @@ public:
         ::SharedTypes::v1_20_80::ParticleMotionCollisionEventVector& instance,
         ::SharedTypes::v1_20_80::ParticleMotionCollisionEvent const& event
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
     // NOLINTEND
 };
 

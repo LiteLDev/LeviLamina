@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ContainerScreenContext;
-class ItemInstance;
 class ItemStack;
 class Player;
 // clang-format on
@@ -29,20 +28,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AnvilContainerManagerModel() /*override*/ = default;
 
+    // vIndex: 7
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
+    // vIndex: 8
     virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
+    // vIndex: 9
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
+    // vIndex: 10
     virtual void setData(int id, int value) /*override*/;
 
+    // vIndex: 19
     virtual bool isValid(float pickRange) /*override*/;
 
+    // vIndex: 13
     virtual void broadcastChanges() /*override*/;
 
+    // vIndex: 20
     virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
@@ -50,12 +57,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AnvilContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
-    MCAPI_C void applyDamageToAnvilBlock();
-
-    MCAPI_C void fireItemAcquiredEvent(::ItemInstance const& instance, int count);
-
-    MCAPI_C void fireItemCraftedEvent(::ItemInstance const& item);
     // NOLINTEND
 
 public:
@@ -86,8 +87,6 @@ public:
     MCFOLD void $broadcastChanges();
 
     MCAPI ::ContainerScreenContext $_postInit();
-
-
     // NOLINTEND
 
 public:

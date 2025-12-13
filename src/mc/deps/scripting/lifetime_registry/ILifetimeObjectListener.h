@@ -14,11 +14,14 @@ class ILifetimeObjectListener {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ILifetimeObjectListener();
 
+    // vIndex: 1
     virtual void
     onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;
 
+    // vIndex: 2
     virtual void
     onDestroyObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;
     // NOLINTEND

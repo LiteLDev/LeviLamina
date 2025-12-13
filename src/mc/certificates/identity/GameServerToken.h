@@ -9,10 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftServiceKeyManager;
-class PrivateKeyManager;
 struct PlayerAuthenticationInfo;
-struct RawGameServerToken;
-namespace mce { class UUID; }
 // clang-format on
 
 class GameServerToken {
@@ -54,14 +51,6 @@ public:
     );
 
     MCAPI static bool _validateSelfSigned(::WebToken const& token, int64 currentTime, bool checkExpiration);
-
-    MCAPI_C static ::RawGameServerToken createSelfSigned(
-        ::PrivateKeyManager const& signer,
-        int64                      expirationDate,
-        ::mce::UUID const&,
-        ::std::string const& displayName,
-        ::std::string const& xuid
-    );
     // NOLINTEND
 
 public:

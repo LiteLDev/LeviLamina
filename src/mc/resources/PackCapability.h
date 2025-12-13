@@ -25,6 +25,33 @@ public:
         // clang-format on
 
         // ValidationResult inner types define
+        struct Succeeded {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::UntypedStorage<4, 4>  mUnkdc70c4;
+            ::ll::UntypedStorage<8, 16> mUnkebceb3;
+            // NOLINTEND
+
+        public:
+            // prevent constructor by default
+            Succeeded& operator=(Succeeded const&);
+            Succeeded(Succeeded const&);
+            Succeeded();
+
+        public:
+            // member functions
+            // NOLINTBEGIN
+            MCNAPI ~Succeeded();
+            // NOLINTEND
+
+        public:
+            // destructor thunk
+            // NOLINTBEGIN
+            MCNAPI void $dtor();
+            // NOLINTEND
+        };
+
         struct Failed {
         public:
             // member variables
@@ -52,33 +79,6 @@ public:
         };
 
         struct NotFound {};
-
-        struct Succeeded {
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::UntypedStorage<4, 4>  mUnkdc70c4;
-            ::ll::UntypedStorage<8, 16> mUnkebceb3;
-            // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            Succeeded& operator=(Succeeded const&);
-            Succeeded(Succeeded const&);
-            Succeeded();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ~Succeeded();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
-            // NOLINTEND
-        };
     };
 
 public:

@@ -62,8 +62,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
 
+    // vIndex: 0
     virtual ~BossbarCommand() /*override*/ = default;
     // NOLINTEND
 

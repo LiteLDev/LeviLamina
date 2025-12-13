@@ -11,14 +11,14 @@ struct BlockComponentGroupDescription;
 namespace BlockDefinitionCrossComponentValidation::Detail {
 // functions
 // NOLINTBEGIN
-MCNAPI void constrainRandomOffsetToCollisionBox(::BlockComponentGroupDescription const& blockComponentGroupDescription);
+MCAPI void constrainRandomOffsetToCollisionBox(::BlockComponentGroupDescription const& blockComponentGroupDescription);
 
-MCNAPI bool validateGeometryAndMaterialComponents(
+MCAPI bool validateGeometryAndMaterialComponents(
     ::BlockComponentGroupDescription const& description,
     ::SemVersion const&                     originalJsonVersion
 );
 
-MCNAPI bool
+MCAPI bool
 validateNoRandomOffsetComponentIfFullCubeGeo(::BlockComponentGroupDescription const& blockComponentGroupDescription);
 // NOLINTEND
 

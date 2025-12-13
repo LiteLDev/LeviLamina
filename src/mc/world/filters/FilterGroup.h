@@ -42,12 +42,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FilterGroup() = default;
 
+    // vIndex: 1
     virtual bool parse(::Json::Value const& jsonVal);
 
+    // vIndex: 2
     virtual ::std::shared_ptr<::FilterGroup> _createSubgroup(::FilterGroup::CollectionType) const = 0;
 
+    // vIndex: 3
     virtual bool _setupContext(::FilterTest const& test, ::FilterContext& context) const;
     // NOLINTEND
 
@@ -100,8 +104,6 @@ public:
     MCNAPI bool $parse(::Json::Value const& jsonVal);
 
     MCNAPI bool $_setupContext(::FilterTest const& test, ::FilterContext& context) const;
-
-
     // NOLINTEND
 
 public:

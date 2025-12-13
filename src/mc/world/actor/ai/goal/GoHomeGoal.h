@@ -27,30 +27,25 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk87ac53;
-        ::ll::UntypedStorage<4, 4>  mUnk88b2f2;
-        ::ll::UntypedStorage<4, 4>  mUnk98587b;
-        ::ll::UntypedStorage<4, 4>  mUnk3963f1;
-        ::ll::UntypedStorage<8, 24> mUnk7b9d13;
-        ::ll::UntypedStorage<8, 24> mUnk3d6b1b;
+        ::ll::TypedStorage<4, 4, float>                                    mSpeedMultiplier;
+        ::ll::TypedStorage<4, 4, int>                                      mInterval;
+        ::ll::TypedStorage<4, 4, float>                                    mGoalRadius;
+        ::ll::TypedStorage<4, 4, float>                                    mCalculateNewPathRadius;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnHomeTriggers;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnFailedTriggers;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        GoHomeDefinition& operator=(GoHomeDefinition const&);
-        GoHomeDefinition(GoHomeDefinition const&);
-        GoHomeDefinition();
 
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~GoHomeDefinition() /*override*/;
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoHomeGoal::GoHomeDefinition>>&
                 root
@@ -60,7 +55,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -93,53 +88,58 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 5
     virtual void stop() /*override*/;
 
+    // vIndex: 6
     virtual void tick() /*override*/;
 
+    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 0
     virtual ~GoHomeGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _hasReachedHome() const;
+    MCAPI bool _hasReachedHome() const;
 
-    MCNAPI bool _hasRequiredComponents() const;
+    MCAPI bool _hasRequiredComponents() const;
 
-    MCNAPI void _triggerOnFailedEvents();
+    MCAPI void _triggerOnFailedEvents();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
-
-
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

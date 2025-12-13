@@ -19,6 +19,7 @@ class ScriptBlockRedstoneProducerComponent : public ::ScriptModuleMinecraft::Bas
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptBlockRedstoneProducerComponent() /*override*/ = default;
     // NOLINTEND
 

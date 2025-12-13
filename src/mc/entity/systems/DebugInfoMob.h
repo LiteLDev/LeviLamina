@@ -9,6 +9,7 @@ class DebugInfoMob : public ::Mob {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual ~DebugInfoMob() /*override*/ = default;
     // NOLINTEND
 };

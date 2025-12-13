@@ -19,12 +19,16 @@ class SculkVeinBlockBehavior : public ::SculkBehavior {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual int updateDecayDelay(int const) const /*override*/;
 
+    // vIndex: 1
     virtual int updateFacingData(int const, ::Block const& block) const /*override*/;
 
+    // vIndex: 2
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
+    // vIndex: 3
     virtual bool attemptSpreadVeins(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
@@ -33,6 +37,7 @@ public:
         ::SculkSpreader&
     ) const /*override*/;
 
+    // vIndex: 4
     virtual int attemptUseCharge(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
@@ -45,6 +50,7 @@ public:
         bool const       spreadVeins
     ) const /*override*/;
 
+    // vIndex: 5
     virtual void onDischarged(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos) const
         /*override*/;
     // NOLINTEND
@@ -94,8 +100,6 @@ public:
     ) const;
 
     MCAPI void $onDischarged(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos) const;
-
-
     // NOLINTEND
 
 public:

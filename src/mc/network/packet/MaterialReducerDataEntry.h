@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
 // auto generated forward declare list
 // clang-format off
-class ReadOnlyBinaryStream;
 struct MaterialReducerEntryOutput;
 // clang-format on
 
@@ -20,30 +16,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MaterialReducerDataEntry& operator=(MaterialReducerDataEntry const&);
-    MaterialReducerDataEntry(MaterialReducerDataEntry const&);
-    MaterialReducerDataEntry();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C MaterialReducerDataEntry(::MaterialReducerDataEntry&&);
-
-    MCNAPI_C ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-
-    MCNAPI ~MaterialReducerDataEntry();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::MaterialReducerDataEntry&&);
+    MCAPI ~MaterialReducerDataEntry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

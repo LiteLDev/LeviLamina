@@ -36,25 +36,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~ISignalingServiceConfigProvider() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ISignalingServiceConfigProvider() /*override*/;
-#endif
 
+    // vIndex: 1
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() = 0;
 
+    // vIndex: 2
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getJsonRpcUrl() = 0;
 
+    // vIndex: 3
     virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() = 0;
 
+    // vIndex: 4
     virtual void reset() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

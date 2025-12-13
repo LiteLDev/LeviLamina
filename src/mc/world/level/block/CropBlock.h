@@ -26,17 +26,23 @@ class CropBlock : public ::FoliageBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
+    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
@@ -44,10 +50,12 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
+    // vIndex: 9
     virtual ::AABB const&
     getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
+    // vIndex: 99
     virtual void executeEvent(
         ::BlockSource&       region,
         ::BlockPos const&    pos,
@@ -56,21 +64,27 @@ public:
         ::Actor&             sourceEntity
     ) const /*override*/;
 
+    // vIndex: 3
     virtual bool
     hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const
         /*override*/;
 
+    // vIndex: 149
     virtual ::ItemInstance const getBaseSeed() const;
 
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
+    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 0
     virtual ~CropBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -122,8 +136,6 @@ public:
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-
     // NOLINTEND
 
 public:

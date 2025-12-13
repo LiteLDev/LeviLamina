@@ -18,8 +18,10 @@ class HttpInterfaceInternal : public ::Bedrock::Http::HttpInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~HttpInterfaceInternal() /*override*/ = default;
 
+    // vIndex: 1
     virtual void send(
         ::gsl::not_null<::HC_CALL*>     call,
         ::gsl::not_null<::XAsyncBlock*> asyncBlock,
@@ -32,8 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void
     $send(::gsl::not_null<::HC_CALL*> call, ::gsl::not_null<::XAsyncBlock*> asyncBlock, ::HC_PERFORM_ENV* env);
-
-
     // NOLINTEND
 
 public:

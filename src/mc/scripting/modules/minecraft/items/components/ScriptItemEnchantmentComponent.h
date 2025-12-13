@@ -41,6 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptItemEnchantmentComponent() /*override*/ = default;
     // NOLINTEND
 

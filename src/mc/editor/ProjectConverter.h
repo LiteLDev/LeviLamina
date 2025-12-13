@@ -64,16 +64,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ProjectConverter() /*override*/;
 
+    // vIndex: 1
     virtual void enqueueConvertImportingWorldTasks(
         ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
         ::Bedrock::Threading::Async<void>&                              prevTaskHandle
     ) /*override*/;
 
+    // vIndex: 2
     virtual bool shouldCopyWorldForConversion(::std::string const& levelId) const /*override*/;
 
+    // vIndex: 3
     virtual void enqueueConvertExportingWorldTasks(
         ::std::shared_ptr<::FileArchiver::ExportData>&                  exportData,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
@@ -151,8 +155,6 @@ public:
         ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
             pathCallbacks
     );
-
-
     // NOLINTEND
 
 public:

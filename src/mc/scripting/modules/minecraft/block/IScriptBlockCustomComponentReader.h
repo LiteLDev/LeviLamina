@@ -19,8 +19,10 @@ class IScriptBlockCustomComponentReader {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IScriptBlockCustomComponentReader() = default;
 
+    // vIndex: 1
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     tryGetCustomComponentParametersForItem(
         ::IBlockSource const&,

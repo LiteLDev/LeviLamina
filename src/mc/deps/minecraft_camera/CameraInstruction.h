@@ -27,115 +27,6 @@ public:
     // clang-format on
 
     // CameraInstruction inner types define
-    struct AttachToEntityInstruction {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk7ed7d3;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        AttachToEntityInstruction& operator=(AttachToEntityInstruction const&);
-        AttachToEntityInstruction(AttachToEntityInstruction const&);
-        AttachToEntityInstruction();
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static ::Bedrock::Result<::CameraInstruction::AttachToEntityInstruction>
-        read(::ReadOnlyBinaryStream& stream);
-        // NOLINTEND
-    };
-
-    struct FadeInstruction {
-    public:
-        // FadeInstruction inner types declare
-        // clang-format off
-        struct ColorOption;
-        struct TimeOption;
-        // clang-format on
-
-        // FadeInstruction inner types define
-        struct ColorOption {
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::TypedStorage<4, 4, float> mRed;
-            ::ll::TypedStorage<4, 4, float> mGreen;
-            ::ll::TypedStorage<4, 4, float> mBlue;
-            // NOLINTEND
-
-        public:
-            // static functions
-            // NOLINTBEGIN
-            MCNAPI static ::Bedrock::Result<::CameraInstruction::FadeInstruction::ColorOption>
-            read(::ReadOnlyBinaryStream& stream);
-            // NOLINTEND
-        };
-
-        struct TimeOption {
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::TypedStorage<4, 4, float> mFadeInTime;
-            ::ll::TypedStorage<4, 4, float> mHoldTime;
-            ::ll::TypedStorage<4, 4, float> mFadeOutTime;
-            // NOLINTEND
-
-        public:
-            // static functions
-            // NOLINTBEGIN
-            MCNAPI static ::Bedrock::Result<::CameraInstruction::FadeInstruction::TimeOption>
-            read(::ReadOnlyBinaryStream& stream);
-            // NOLINTEND
-        };
-
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 16, ::std::optional<::CameraInstruction::FadeInstruction::TimeOption>>  mTime;
-        ::ll::TypedStorage<4, 16, ::std::optional<::CameraInstruction::FadeInstruction::ColorOption>> mColor;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool operator==(::CameraInstruction::FadeInstruction const& other) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-        MCNAPI static ::Bedrock::Result<::CameraInstruction::FadeInstruction> read(::ReadOnlyBinaryStream& stream);
-        // NOLINTEND
-    };
-
-    struct FovInstruction {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk92b57e;
-        ::ll::UntypedStorage<1, 1> mUnkc5385b;
-        ::ll::UntypedStorage<4, 4> mUnk8ff2a0;
-        ::ll::UntypedStorage<4, 4> mUnk21fb35;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FovInstruction& operator=(FovInstruction const&);
-        FovInstruction(FovInstruction const&);
-        FovInstruction();
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static ::Bedrock::Result<::CameraInstruction::FovInstruction> read(::ReadOnlyBinaryStream& stream);
-        // NOLINTEND
-    };
-
     struct SetInstruction {
     public:
         // SetInstruction inner types declare
@@ -161,38 +52,6 @@ public:
             // static functions
             // NOLINTBEGIN
             MCNAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction::EaseOption>
-            read(::ReadOnlyBinaryStream& stream);
-            // NOLINTEND
-        };
-
-        struct EntityOffsetOption {
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::TypedStorage<4, 4, float> mEntityOffsetX;
-            ::ll::TypedStorage<4, 4, float> mEntityOffsetY;
-            ::ll::TypedStorage<4, 4, float> mEntityOffsetZ;
-            // NOLINTEND
-
-        public:
-            // static functions
-            // NOLINTBEGIN
-            MCNAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction::EntityOffsetOption>
-            read(::ReadOnlyBinaryStream& stream);
-            // NOLINTEND
-        };
-
-        struct FacingOption {
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::TypedStorage<4, 12, ::Vec3> mFacingPos;
-            // NOLINTEND
-
-        public:
-            // static functions
-            // NOLINTBEGIN
-            MCNAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction::FacingOption>
             read(::ReadOnlyBinaryStream& stream);
             // NOLINTEND
         };
@@ -244,6 +103,38 @@ public:
             // NOLINTEND
         };
 
+        struct EntityOffsetOption {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::TypedStorage<4, 4, float> mEntityOffsetX;
+            ::ll::TypedStorage<4, 4, float> mEntityOffsetY;
+            ::ll::TypedStorage<4, 4, float> mEntityOffsetZ;
+            // NOLINTEND
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction::EntityOffsetOption>
+            read(::ReadOnlyBinaryStream& stream);
+            // NOLINTEND
+        };
+
+        struct FacingOption {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::TypedStorage<4, 12, ::Vec3> mFacingPos;
+            // NOLINTEND
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction::FacingOption>
+            read(::ReadOnlyBinaryStream& stream);
+            // NOLINTEND
+        };
+
     public:
         // member variables
         // NOLINTBEGIN
@@ -273,6 +164,136 @@ public:
         MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
         MCNAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction> read(::ReadOnlyBinaryStream& stream);
+        // NOLINTEND
+    };
+
+    struct FadeInstruction {
+    public:
+        // FadeInstruction inner types declare
+        // clang-format off
+        struct ColorOption;
+        struct TimeOption;
+        // clang-format on
+
+        // FadeInstruction inner types define
+        struct TimeOption {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::TypedStorage<4, 4, float> mFadeInTime;
+            ::ll::TypedStorage<4, 4, float> mHoldTime;
+            ::ll::TypedStorage<4, 4, float> mFadeOutTime;
+            // NOLINTEND
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static ::Bedrock::Result<::CameraInstruction::FadeInstruction::TimeOption>
+            read(::ReadOnlyBinaryStream& stream);
+            // NOLINTEND
+        };
+
+        struct ColorOption {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::TypedStorage<4, 4, float> mRed;
+            ::ll::TypedStorage<4, 4, float> mGreen;
+            ::ll::TypedStorage<4, 4, float> mBlue;
+            // NOLINTEND
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static ::Bedrock::Result<::CameraInstruction::FadeInstruction::ColorOption>
+            read(::ReadOnlyBinaryStream& stream);
+            // NOLINTEND
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 16, ::std::optional<::CameraInstruction::FadeInstruction::TimeOption>>  mTime;
+        ::ll::TypedStorage<4, 16, ::std::optional<::CameraInstruction::FadeInstruction::ColorOption>> mColor;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI bool operator==(::CameraInstruction::FadeInstruction const& other) const;
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+        MCNAPI static ::Bedrock::Result<::CameraInstruction::FadeInstruction> read(::ReadOnlyBinaryStream& stream);
+        // NOLINTEND
+    };
+
+    struct TargetInstruction {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 16> mUnkeab5b0;
+        ::ll::UntypedStorage<8, 8>  mUnk9536e6;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TargetInstruction& operator=(TargetInstruction const&);
+        TargetInstruction(TargetInstruction const&);
+        TargetInstruction();
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static ::Bedrock::Result<::CameraInstruction::TargetInstruction> read(::ReadOnlyBinaryStream& stream);
+        // NOLINTEND
+    };
+
+    struct FovInstruction {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk92b57e;
+        ::ll::UntypedStorage<1, 1> mUnkc5385b;
+        ::ll::UntypedStorage<4, 4> mUnk8ff2a0;
+        ::ll::UntypedStorage<4, 4> mUnk21fb35;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FovInstruction& operator=(FovInstruction const&);
+        FovInstruction(FovInstruction const&);
+        FovInstruction();
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static ::Bedrock::Result<::CameraInstruction::FovInstruction> read(::ReadOnlyBinaryStream& stream);
+        // NOLINTEND
+    };
+
+    struct AttachToEntityInstruction {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk7ed7d3;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        AttachToEntityInstruction& operator=(AttachToEntityInstruction const&);
+        AttachToEntityInstruction(AttachToEntityInstruction const&);
+        AttachToEntityInstruction();
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static ::Bedrock::Result<::CameraInstruction::AttachToEntityInstruction>
+        read(::ReadOnlyBinaryStream& stream);
         // NOLINTEND
     };
 
@@ -347,27 +368,6 @@ public:
         // NOLINTEND
     };
 
-    struct TargetInstruction {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 16> mUnkeab5b0;
-        ::ll::UntypedStorage<8, 8>  mUnk9536e6;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TargetInstruction& operator=(TargetInstruction const&);
-        TargetInstruction(TargetInstruction const&);
-        TargetInstruction();
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static ::Bedrock::Result<::CameraInstruction::TargetInstruction> read(::ReadOnlyBinaryStream& stream);
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -389,13 +389,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CameraInstruction(::CameraInstruction&&);
-
     MCNAPI CameraInstruction(::CameraInstruction const&);
 
-    MCNAPI ::CameraInstruction& operator=(::CameraInstruction&&);
+    MCNAPI CameraInstruction(::CameraInstruction&&);
 
     MCNAPI ::CameraInstruction& operator=(::CameraInstruction const&);
+
+    MCNAPI ::CameraInstruction& operator=(::CameraInstruction&&);
 
     MCNAPI bool operator==(::CameraInstruction const& other) const;
 
@@ -415,9 +415,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CameraInstruction&&);
-
     MCNAPI void* $ctor(::CameraInstruction const&);
+
+    MCNAPI void* $ctor(::CameraInstruction&&);
     // NOLINTEND
 
 public:

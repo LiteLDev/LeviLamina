@@ -21,15 +21,20 @@ class EditorPlayerExtensionServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EditorPlayerExtensionServiceProvider() = default;
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> startExtensions(::std::optional<::Scripting::ContextId>) = 0;
 
+    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> stopExtensions() = 0;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void>
         forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>) = 0;
 
+    // vIndex: 4
     virtual ::Scripting::Result_deprecated<
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
     getInternalServiceContext(::Scripting::WeakLifetimeScope const&) = 0;

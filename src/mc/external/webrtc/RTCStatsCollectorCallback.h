@@ -17,8 +17,10 @@ class RTCStatsCollectorCallback : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ~RTCStatsCollectorCallback() /*override*/ = default;
 
+    // vIndex: 3
     virtual void OnStatsDelivered(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const&) = 0;
     // NOLINTEND
 

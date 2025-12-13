@@ -15,13 +15,13 @@ namespace Json {
 class ValueIteratorBase {
 public:
     // ValueIteratorBase inner types define
-    using SelfType = ::Json::ValueIteratorBase;
+    using size_t = uint;
 
     using difference_type = int;
 
-    using iterator_category = ::std::bidirectional_iterator_tag;
+    using SelfType = ::Json::ValueIteratorBase;
 
-    using size_t = uint;
+    using iterator_category = ::std::bidirectional_iterator_tag;
 
 public:
     // member variables

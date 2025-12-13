@@ -14,8 +14,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PackWriteStrategy() = default;
 
+    // vIndex: 1
     virtual void writeAsset(::PackWriteStrategy::FileName, ::std::string const&) = 0;
     // NOLINTEND
 

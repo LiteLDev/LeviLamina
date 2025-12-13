@@ -56,9 +56,9 @@ public:
         ::std::optional<::Scripting::ContextBaseGameVersion> baseGameVersion_
     );
 
-    MCNAPI ::Scripting::ContextConfig& operator=(::Scripting::ContextConfig&&);
-
     MCNAPI ::Scripting::ContextConfig& operator=(::Scripting::ContextConfig const&);
+
+    MCNAPI ::Scripting::ContextConfig& operator=(::Scripting::ContextConfig&&);
 
     MCNAPI ~ContextConfig();
     // NOLINTEND

@@ -26,6 +26,7 @@ struct OnHitBlock : public ::ItemComponent,
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~OnHitBlock() /*override*/ = default;
     // NOLINTEND
 

@@ -24,16 +24,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::cricket::MediaType type() const /*override*/;
 
+    // vIndex: 9
     virtual ::cricket::UnsupportedContentDescription* as_unsupported() /*override*/;
 
+    // vIndex: 8
     virtual ::cricket::UnsupportedContentDescription const* as_unsupported() const /*override*/;
 
+    // vIndex: 11
     virtual bool has_codecs() const /*override*/;
 
+    // vIndex: 12
     virtual ::cricket::UnsupportedContentDescription* CloneInternal() const /*override*/;
 
+    // vIndex: 0
     virtual ~UnsupportedContentDescription() /*override*/ = default;
     // NOLINTEND
 
@@ -49,8 +55,6 @@ public:
     MCNAPI bool $has_codecs() const;
 
     MCNAPI ::cricket::UnsupportedContentDescription* $CloneInternal() const;
-
-
     // NOLINTEND
 
 public:

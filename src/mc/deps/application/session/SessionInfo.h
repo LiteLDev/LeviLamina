@@ -30,9 +30,9 @@ public:
     // NOLINTBEGIN
     MCNAPI SessionInfo();
 
-    MCNAPI ::Bedrock::SessionInfo& operator=(::Bedrock::SessionInfo&&);
-
     MCNAPI ::Bedrock::SessionInfo& operator=(::Bedrock::SessionInfo const&);
+
+    MCNAPI ::Bedrock::SessionInfo& operator=(::Bedrock::SessionInfo&&);
 
     MCNAPI bool operator==(::Bedrock::SessionInfo const& rhs) const;
 

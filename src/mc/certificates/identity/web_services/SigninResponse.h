@@ -20,31 +20,8 @@ public:
 public:
     // prevent constructor by default
     SigninResponse& operator=(SigninResponse const&);
+    SigninResponse(SigninResponse const&);
     SigninResponse();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C SigninResponse(::WebServices::EduSignin::SigninResponse&&);
-
-    MCNAPI_C SigninResponse(::WebServices::EduSignin::SigninResponse const&);
-
-    MCNAPI_C ~SigninResponse();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::WebServices::EduSignin::SigninResponse&&);
-
-    MCNAPI_C void* $ctor(::WebServices::EduSignin::SigninResponse const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace WebServices::EduSignin

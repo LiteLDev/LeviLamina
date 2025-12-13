@@ -14,6 +14,7 @@ class NpcEventCoordinator : public ::EventCoordinator<::NpcEventListener> {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NpcEventCoordinator() /*override*/ = default;
     // NOLINTEND
 

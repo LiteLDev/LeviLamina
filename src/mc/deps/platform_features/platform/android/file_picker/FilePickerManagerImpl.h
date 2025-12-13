@@ -17,11 +17,14 @@ class FilePickerManagerImpl : public ::Bedrock::FilePickerManager {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool directoryPickingEnabledForPlatform() const /*override*/;
 
+    // vIndex: 2
     virtual ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult>
     pickDirectory(::Bedrock::DirectoryPickerConfig const&) /*override*/;
 
+    // vIndex: 0
     virtual ~FilePickerManagerImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -32,8 +35,6 @@ public:
 
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult>
     $pickDirectory(::Bedrock::DirectoryPickerConfig const&);
-
-
     // NOLINTEND
 
 public:

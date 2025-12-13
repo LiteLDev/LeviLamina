@@ -35,8 +35,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DirectoryDeltaTransfer() /*override*/ = default;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
     // NOLINTEND
 

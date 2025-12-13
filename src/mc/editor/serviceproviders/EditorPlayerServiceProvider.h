@@ -20,13 +20,17 @@ class EditorPlayerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EditorPlayerServiceProvider() = default;
 
+    // vIndex: 1
     virtual ::Player* getPlayer() const = 0;
 
+    // vIndex: 2
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
         registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)>) = 0;
 
+    // vIndex: 3
     virtual ::Bedrock::PubSub::Subscription
         registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)>) = 0;
     // NOLINTEND

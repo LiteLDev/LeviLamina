@@ -31,12 +31,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::std::vector<::webrtc::Attribute> AttributesImpl(uint64 additional_capacity) const /*override*/;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::RTCStats> copy() const /*override*/;
 
+    // vIndex: 2
     virtual char const* type() const /*override*/;
 
+    // vIndex: 0
     virtual ~RTCReceivedRtpStreamStats() /*override*/;
     // NOLINTEND
 
@@ -72,8 +76,6 @@ public:
     MCNAPI ::std::unique_ptr<::webrtc::RTCStats> $copy() const;
 
     MCNAPI char const* $type() const;
-
-
     // NOLINTEND
 
 public:

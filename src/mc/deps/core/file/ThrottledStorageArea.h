@@ -34,18 +34,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ThrottledStorageArea() /*override*/ = default;
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) /*override*/;
 
+    // vIndex: 21
     virtual void tick() /*override*/;
 
+    // vIndex: 22
     virtual void flushImmediately() /*override*/;
 
+    // vIndex: 38
     virtual void _onTeardown() /*override*/;
 
+    // vIndex: 39
     virtual void _initialize(::Scheduler&, ::WorkerPool&);
 
+    // vIndex: 40
     virtual void _finalize();
     // NOLINTEND
 

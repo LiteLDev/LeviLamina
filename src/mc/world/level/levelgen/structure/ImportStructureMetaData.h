@@ -22,18 +22,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ImportStructureMetaData() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::StructureTemplate const* getStructure(::std::string const& name);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI ::StructureTemplate const* getStructure(::std::string const& name);
     // NOLINTEND
 };

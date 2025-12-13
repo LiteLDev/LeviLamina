@@ -13,6 +13,7 @@ class ScriptWidgetService_WidgetInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ::AABB const& _getDimensionBounds() const = 0;
     // NOLINTEND
 

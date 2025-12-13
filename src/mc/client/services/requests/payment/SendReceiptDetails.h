@@ -26,38 +26,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~SendReceiptDetails() = default;
-#else // LL_PLAT_C
-    virtual ~SendReceiptDetails();
-#endif
 
+    // vIndex: 1
     virtual char const* getPath() const = 0;
 
+    // vIndex: 2
     virtual ::Json::Value toPostBody() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void _addCommonProperties(::Json::Value& commonBody) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -28,8 +28,6 @@ public:
     // clang-format on
 
     // LevelChunkSaveManager inner types define
-    class CompareLevelChunkQueuedSavingElement {};
-
     struct LevelChunkQueuedSavingElement {
     public:
         // member variables
@@ -39,6 +37,8 @@ public:
         ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionId;
         // NOLINTEND
     };
+
+    class CompareLevelChunkQueuedSavingElement {};
 
 public:
     // member variables

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/PositionTrackingId.h"
+
 struct PositionTrackingDBClientRequestPacketPayload {
 public:
     // PositionTrackingDBClientRequestPacketPayload inner types define
@@ -12,13 +15,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk9bc122;
-    ::ll::UntypedStorage<4, 4> mUnkf3d42f;
+    ::ll::TypedStorage<1, 1, ::PositionTrackingDBClientRequestPacketPayload::Action> mAction;
+    ::ll::TypedStorage<4, 4, ::PositionTrackingId>                                   mId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PositionTrackingDBClientRequestPacketPayload& operator=(PositionTrackingDBClientRequestPacketPayload const&);
-    PositionTrackingDBClientRequestPacketPayload(PositionTrackingDBClientRequestPacketPayload const&);
-    PositionTrackingDBClientRequestPacketPayload();
 };

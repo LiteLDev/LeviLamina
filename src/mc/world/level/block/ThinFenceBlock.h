@@ -28,14 +28,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual void addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
+        ::BlockPos const&          blockPos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const /*override*/;
 
+    // vIndex: 7
     virtual bool addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
@@ -45,6 +47,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
+    // vIndex: 10
     virtual ::AABB const& getVisualShapeInWorld(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -52,6 +55,7 @@ public:
         ::AABB&                    bufferAABB
     ) const /*override*/;
 
+    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -59,6 +63,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
+    // vIndex: 6
     virtual bool getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
@@ -66,6 +71,7 @@ public:
         ::BlockPos const&          pos
     ) const /*override*/;
 
+    // vIndex: 9
     virtual ::AABB const& getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -73,18 +79,24 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
+    // vIndex: 24
     virtual bool canConnect(::Block const& otherBlock, uchar, ::Block const&) const /*override*/;
 
+    // vIndex: 33
     virtual bool isThinFenceBlock() const /*override*/;
 
+    // vIndex: 13
     virtual bool
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
 
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
+    // vIndex: 0
     virtual ~ThinFenceBlock() /*override*/;
     // NOLINTEND
 
@@ -106,7 +118,7 @@ public:
     MCAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
+        ::BlockPos const&          blockPos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
@@ -158,8 +170,6 @@ public:
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
-
-
     // NOLINTEND
 
 public:

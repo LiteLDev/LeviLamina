@@ -11,8 +11,10 @@ class ILevelDataOverride {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ILevelDataOverride() = default;
 
+    // vIndex: 1
     virtual void applyTo(::LevelData&) const = 0;
     // NOLINTEND
 

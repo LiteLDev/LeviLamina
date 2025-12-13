@@ -14,16 +14,4 @@ public:
     GlobalTags& operator=(GlobalTags const&);
     GlobalTags(GlobalTags const&);
     GlobalTags();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~GlobalTags();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

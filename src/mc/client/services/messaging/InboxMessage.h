@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/services/messaging/MessageData.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 struct InboxMessage : public ::MessageData {
 public:
     // member variables
@@ -25,29 +20,6 @@ public:
 public:
     // prevent constructor by default
     InboxMessage& operator=(InboxMessage const&);
+    InboxMessage(InboxMessage const&);
     InboxMessage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C InboxMessage(::InboxMessage const&);
-
-    MCNAPI_C explicit InboxMessage(::Json::Value const& json);
-
-    MCNAPI_C ~InboxMessage();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::InboxMessage const&);
-
-    MCNAPI_C void* $ctor(::Json::Value const& json);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

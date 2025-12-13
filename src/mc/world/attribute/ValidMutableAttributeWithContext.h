@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::AttributeInstanceForwarder* operator->();
+    MCAPI ::AttributeInstanceForwarder* operator->();
     // NOLINTEND
 };

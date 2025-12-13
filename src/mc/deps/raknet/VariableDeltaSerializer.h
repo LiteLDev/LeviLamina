@@ -15,36 +15,6 @@ public:
     // clang-format on
 
     // VariableDeltaSerializer inner types define
-    struct ChangedVariablesList {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk34ae0b;
-        ::ll::UntypedStorage<2, 2>  mUnk935bb4;
-        ::ll::UntypedStorage<1, 56> mUnk1e20ff;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChangedVariablesList& operator=(ChangedVariablesList const&);
-        ChangedVariablesList(ChangedVariablesList const&);
-        ChangedVariablesList();
-    };
-
-    struct DeserializationContext {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkde12c7;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DeserializationContext& operator=(DeserializationContext const&);
-        DeserializationContext(DeserializationContext const&);
-        DeserializationContext();
-    };
-
     struct RemoteSystemVariableHistory {
     public:
         // member variables
@@ -59,6 +29,22 @@ public:
         RemoteSystemVariableHistory& operator=(RemoteSystemVariableHistory const&);
         RemoteSystemVariableHistory(RemoteSystemVariableHistory const&);
         RemoteSystemVariableHistory();
+    };
+
+    struct ChangedVariablesList {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk34ae0b;
+        ::ll::UntypedStorage<2, 2>  mUnk935bb4;
+        ::ll::UntypedStorage<1, 56> mUnk1e20ff;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ChangedVariablesList& operator=(ChangedVariablesList const&);
+        ChangedVariablesList(ChangedVariablesList const&);
+        ChangedVariablesList();
     };
 
     struct SerializationContext {
@@ -83,6 +69,20 @@ public:
         SerializationContext& operator=(SerializationContext const&);
         SerializationContext(SerializationContext const&);
         SerializationContext();
+    };
+
+    struct DeserializationContext {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkde12c7;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DeserializationContext& operator=(DeserializationContext const&);
+        DeserializationContext(DeserializationContext const&);
+        DeserializationContext();
     };
 
 public:

@@ -8,14 +8,8 @@ struct TargetSpace {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk67e5cc;
+    ::ll::TypedStorage<8, 56, ::std::array<int64, 7>> mParams;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TargetSpace& operator=(TargetSpace const&);
-    TargetSpace(TargetSpace const&);
-    TargetSpace();
 };
 
 } // namespace ClimateUtils

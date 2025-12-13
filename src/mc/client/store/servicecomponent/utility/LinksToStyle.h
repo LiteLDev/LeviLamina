@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/client/store/sidebar/EventAction.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 struct LinksToStyle {
 public:
     // member variables
@@ -23,47 +15,7 @@ public:
 
 public:
     // prevent constructor by default
+    LinksToStyle& operator=(LinksToStyle const&);
     LinksToStyle(LinksToStyle const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C LinksToStyle();
-
-    MCNAPI_C LinksToStyle(::LinksToStyle&&);
-
-    MCNAPI_C LinksToStyle(::std::string const& linkId, ::std::string const& screenDisplayType);
-
-    MCNAPI_C
-    LinksToStyle(::std::string const& linkId, ::sidebar::EventAction linkType, ::std::string const& screenDisplayType);
-
-    MCNAPI_C ::LinksToStyle& operator=(::LinksToStyle&&);
-
-    MCNAPI_C ::LinksToStyle& operator=(::LinksToStyle const&);
-
-    MCNAPI_C void parse(::Json::Value const& customObject);
-
-    MCNAPI_C void parseLinksToInfo(::Json::Value const& linksToInfoObject);
-
-    MCNAPI_C ~LinksToStyle();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::LinksToStyle&&);
-
-    MCNAPI_C void* $ctor(::std::string const& linkId, ::std::string const& screenDisplayType);
-
-    MCNAPI_C void*
-    $ctor(::std::string const& linkId, ::sidebar::EventAction linkType, ::std::string const& screenDisplayType);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+    LinksToStyle();
 };

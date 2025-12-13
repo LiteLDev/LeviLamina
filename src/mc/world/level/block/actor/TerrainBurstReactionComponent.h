@@ -26,17 +26,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TerrainBurstReactionComponent() /*override*/ = default;
 
+    // vIndex: 3
     virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
-
-
+    MCAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
     // NOLINTEND
 
 public:

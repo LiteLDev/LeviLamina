@@ -33,18 +33,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EnchantWithLevelsFunction() /*override*/ = default;
 
+    // vIndex: 4
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
+    // vIndex: 3
     virtual int
     apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
 
+    // vIndex: 2
     virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
+    // vIndex: 1
     virtual int
     apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
 
+    // vIndex: 5
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
@@ -67,8 +73,6 @@ public:
     MCNAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
     MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
-
-
     // NOLINTEND
 
 public:

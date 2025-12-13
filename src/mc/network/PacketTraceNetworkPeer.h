@@ -7,11 +7,6 @@
 #include "mc/network/NetworkPeer.h"
 #include "mc/platform/brstd/simple_circular_queue.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 class PacketTraceNetworkPeer : public ::NetworkPeer {
 public:
     // PacketTraceNetworkPeer inner types declare
@@ -36,12 +31,6 @@ public:
         PacketTraceInfo& operator=(PacketTraceInfo const&);
         PacketTraceInfo(PacketTraceInfo const&);
         PacketTraceInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ::Json::Value toJson() const;
-        // NOLINTEND
     };
 
     class PacketTraceQueue : public ::brstd::simple_circular_queue<::PacketTraceNetworkPeer::PacketTraceInfo, 3> {};
@@ -62,20 +51,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
 
+    // vIndex: 2
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
+    // vIndex: 7
     virtual ::NetworkPeer::DataStatus
     _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
 
+    // vIndex: 0
     virtual ~PacketTraceNetworkPeer() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
     // NOLINTEND
 
 public:

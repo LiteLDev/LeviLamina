@@ -16,21 +16,17 @@ class OffsetDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnke0bd67;
-    ::ll::UntypedStorage<4, 4> mUnk5b73b3;
+    ::ll::TypedStorage<2, 2, ushort const> mInput;
+    ::ll::TypedStorage<4, 4, float const>  mOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OffsetDensityCalculator& operator=(OffsetDensityCalculator const&);
-    OffsetDensityCalculator(OffsetDensityCalculator const&);
-    OffsetDensityCalculator();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~OffsetDensityCalculator() /*override*/ = default;
 
+    // vIndex: 1
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
     // NOLINTEND
 

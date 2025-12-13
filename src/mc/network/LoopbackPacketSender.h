@@ -31,30 +31,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool isInitialized() const /*override*/;
 
+    // vIndex: 2
     virtual void send(::Packet& packet) /*override*/;
 
+    // vIndex: 3
     virtual void sendTo(::NetworkIdentifier const& id, ::SubClientId subid, ::Packet& packet) /*override*/;
 
+    // vIndex: 4
     virtual void sendToServer(::Packet& packet) /*override*/;
 
+    // vIndex: 5
     virtual void
     sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId recipientSubId) /*override*/;
 
+    // vIndex: 6
     virtual void
     sendToClient(::UserEntityIdentifierComponent const* userIdentifier, ::Packet const& packet) /*override*/;
 
+    // vIndex: 7
     virtual void
     sendToClients(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) /*override*/;
 
+    // vIndex: 9
     virtual void sendBroadcast(::Packet const& packet) /*override*/;
 
+    // vIndex: 8
     virtual void
     sendBroadcast(::NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, ::Packet const& packet) /*override*/;
 
+    // vIndex: 10
     virtual void flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback) /*override*/;
 
+    // vIndex: 0
     virtual ~LoopbackPacketSender() /*override*/ = default;
     // NOLINTEND
 
@@ -80,8 +91,6 @@ public:
     MCAPI void $sendBroadcast(::NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, ::Packet const& packet);
 
     MCAPI void $flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback);
-
-
     // NOLINTEND
 
 public:

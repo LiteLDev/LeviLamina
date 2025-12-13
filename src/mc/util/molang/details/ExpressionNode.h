@@ -5,10 +5,8 @@
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
 #include "mc/platform/brstd/bitset.h"
-#include "mc/platform/brstd/flat_set.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/util/MolangCompileResult.h"
-#include "mc/util/molang/ExpressionNode.h"
 #include "mc/util/molang/ExpressionOp.h"
 
 // auto generated forward declare list
@@ -29,14 +27,10 @@ class ExpressionNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkf560f0;
-    ::ll::UntypedStorage<4, 4> mUnk4e6e98;
-    ::ll::UntypedStorage<4, 4> mUnk56c08e;
-#ifdef LL_PLAT_S
+    ::ll::UntypedStorage<2, 2>  mUnkf560f0;
+    ::ll::UntypedStorage<4, 4>  mUnk4e6e98;
+    ::ll::UntypedStorage<4, 4>  mUnk56c08e;
     ::ll::UntypedStorage<8, 88> mUnka6816f;
-#else // LL_PLAT_C
-    ::ll::UntypedStorage<8, 96> mUnka6816f;
-#endif
     ::ll::UntypedStorage<8, 24> mUnk58ba9b;
     // NOLINTEND
 
@@ -47,9 +41,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ExpressionNode(::Molang::details::ExpressionNode&&);
-
     MCNAPI ExpressionNode(::Molang::details::ExpressionNode const&);
+
+    MCNAPI ExpressionNode(::Molang::details::ExpressionNode&&);
 
     MCNAPI bool _buildTree(::brstd::bitset<109, uint64> const& usedTokenFlags, ::MolangVersion molangVersion);
 
@@ -67,7 +61,7 @@ public:
 
     MCNAPI bool _validateChildrenAreNumerical(::MolangVersion version) const;
 
-    MCNAPI_S bool areAllChildrenEqual() const;
+    MCNAPI bool areAllChildrenEqual() const;
 
     MCNAPI void clear();
 
@@ -110,7 +104,7 @@ public:
 
     MCNAPI bool processMathFuncs();
 
-    MCNAPI_S bool processMemberAccessors();
+    MCNAPI bool processMemberAccessors();
 
     MCNAPI bool processNegativesAndLogicalNots();
 
@@ -123,9 +117,6 @@ public:
     MCNAPI bool processUnaryExpression(::ExpressionOp op);
 
     MCNAPI void replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap);
-
-    MCNAPI_C ::brstd::flat_set<::HashedString, ::std::less<::HashedString>, ::std::vector<::HashedString>>
-    replaceResourceVariables(::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>& resourceTable);
 
     MCNAPI void validateArrayVariables() const;
 
@@ -154,11 +145,6 @@ public:
         ::Molang::details::ExpressionNode const& memberAccessorNode
     );
 
-    MCNAPI_C static ::MolangScriptArg const* _getScriptArgFromMemberAccessedVariable(
-        ::MolangEvalParams&                      state,
-        ::Molang::details::ExpressionNode const& memberAccessorNode
-    );
-
     MCNAPI static void _writeScriptArgToMemberAccessedVariable(
         ::MolangEvalParams&                      state,
         ::Molang::details::ExpressionNode const& memberAccessorNode,
@@ -171,9 +157,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Molang::details::ExpressionNode&&);
-
     MCNAPI void* $ctor(::Molang::details::ExpressionNode const&);
+
+    MCNAPI void* $ctor(::Molang::details::ExpressionNode&&);
     // NOLINTEND
 
 public:

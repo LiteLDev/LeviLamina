@@ -22,9 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Metadata(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
-
     MCNAPI Metadata(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
+
+    MCNAPI Metadata(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
 
     MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
@@ -38,9 +38,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
-
     MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
+
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
     // NOLINTEND
 
 public:

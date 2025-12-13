@@ -13,10 +13,13 @@ class SocketLayerOverride {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SocketLayerOverride() = default;
 
+    // vIndex: 1
     virtual int RakNetSendTo(char const*, int, ::RakNet::SystemAddress const&) = 0;
 
+    // vIndex: 2
     virtual int RakNetRecvFrom(char*, ::RakNet::SystemAddress*, bool) = 0;
     // NOLINTEND
 

@@ -9,6 +9,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class HashedString;
 class Random;
 // clang-format on
 
@@ -16,28 +17,24 @@ class NetherFossilFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk21717a;
-    ::ll::UntypedStorage<1, 1>  mUnkaf6255;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mValidGroundBlocks;
+    ::ll::TypedStorage<1, 1, bool>                           mMayPlaceInLava;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetherFossilFeature& operator=(NetherFossilFeature const&);
-    NetherFossilFeature(NetherFossilFeature const&);
-    NetherFossilFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
 
+    // vIndex: 0
     virtual ~NetherFossilFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _tryPlaceDriedGhastBlock(
+    MCAPI void _tryPlaceDriedGhastBlock(
         ::BlockSource&    region,
         ::BlockPos const& aabbMin,
         ::BlockPos const& aabbMax,
@@ -49,15 +46,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_LOCATION_FOSSIL();
+    MCAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_LOCATION_FOSSIL();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
-
-
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
     // NOLINTEND
 
 public:

@@ -21,9 +21,9 @@ public:
     // NOLINTBEGIN
     MCNAPI MolangJsonContainer();
 
-    MCNAPI MolangJsonContainer(::SharedTypes::Util::MolangJsonContainer&&);
-
     MCNAPI MolangJsonContainer(::SharedTypes::Util::MolangJsonContainer const&);
+
+    MCNAPI MolangJsonContainer(::SharedTypes::Util::MolangJsonContainer&&);
 
     MCNAPI ::SharedTypes::Util::MolangJsonContainer& operator=(::SharedTypes::Util::MolangJsonContainer const&);
 
@@ -47,9 +47,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::Util::MolangJsonContainer&&);
-
     MCNAPI void* $ctor(::SharedTypes::Util::MolangJsonContainer const&);
+
+    MCNAPI void* $ctor(::SharedTypes::Util::MolangJsonContainer&&);
     // NOLINTEND
 
 public:

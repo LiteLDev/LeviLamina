@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/level/block/AnvilDamage.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FallingBlock.h"
 
@@ -28,6 +27,7 @@ class AnvilBlock : public ::FallingBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
@@ -35,34 +35,47 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
+    // vIndex: 9
     virtual ::AABB const&
     getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
+    // vIndex: 146
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
+    // vIndex: 147
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
+    // vIndex: 123
     virtual void animateTick(::BlockAnimateTickData const&) const /*override*/;
 
+    // vIndex: 148
     virtual bool falling() const /*override*/;
 
+    // vIndex: 149
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 29
     virtual bool isCraftingBlock() const /*override*/;
 
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
+    // vIndex: 13
     virtual bool
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
 
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 0
     virtual ~AnvilBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -77,9 +90,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
 
-    MCAPI_C static ::AnvilDamage getDamageEnumForName(::HashedString const& name);
-
-    MCAPI_S static int getDamageForName(::HashedString const& name);
+    MCAPI static int getDamageForName(::HashedString const& name);
     // NOLINTEND
 
 public:
@@ -114,13 +125,9 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-#ifdef LL_PLAT_S
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
-#endif
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-
     // NOLINTEND
 
 public:

@@ -13,8 +13,10 @@ class IActorAdapter {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IActorAdapter() = default;
 
+    // vIndex: 1
     virtual void dropHangingActor(::StrictEntityContext const&) = 0;
     // NOLINTEND
 

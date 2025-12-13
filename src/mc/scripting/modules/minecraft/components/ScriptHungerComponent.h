@@ -17,6 +17,7 @@ class ScriptHungerComponent : public ::ScriptModuleMinecraft::AttributeScriptAct
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptHungerComponent() /*override*/ = default;
     // NOLINTEND
 

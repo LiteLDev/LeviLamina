@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-namespace PlayerReportingSignal { class GetReportJson; }
-namespace PlayerReportingSignal { class ResetAll; }
-namespace PlayerReportingSignal { class SendReport; }
-namespace PlayerReportingSignal { class SetData; }
-namespace PlayerReportingSignal { class SetJson; }
-// clang-format on
-
 namespace PlayerReportingSignal {
 
 class PlayerReportingSignalHandler {
@@ -32,29 +22,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PlayerReportingSignalHandler() = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::Json::Value _getReportDataJson();
-
-    MCNAPI_C void _getReportJsonHandler(::PlayerReportingSignal::GetReportJson const& signal);
-
-    MCNAPI_C void _resetAll(::PlayerReportingSignal::ResetAll const& signal);
-
-    MCNAPI_C void _sendReport(::PlayerReportingSignal::SendReport const& signal);
-
-    MCNAPI_C void _setDataHandler(::PlayerReportingSignal::SetData const& signal);
-
-    MCNAPI_C void _setJsonHandler(::PlayerReportingSignal::SetJson const& signal);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

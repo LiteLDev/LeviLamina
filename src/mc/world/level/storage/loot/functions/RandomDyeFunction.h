@@ -19,12 +19,16 @@ class RandomDyeFunction : public ::LootItemFunction {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RandomDyeFunction() /*override*/ = default;
 
+    // vIndex: 4
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
+    // vIndex: 2
     virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext&) /*override*/;
 
+    // vIndex: 5
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
@@ -44,8 +48,6 @@ public:
     MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
 
     MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
-
-
     // NOLINTEND
 
 public:

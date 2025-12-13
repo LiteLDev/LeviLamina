@@ -9,20 +9,12 @@
 #include "mc/client/store/servicecomponent/StoreUIComponentWithStaticBinding.h"
 #include "mc/client/store/servicecomponent/utility/LinksToStyle.h"
 #include "mc/client/store/servicecomponent/utility/StyleData.h"
-#include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
 // clang-format off
+class StoreCatalogItem;
 class StoreUIComponent;
-class StoreVisualStyle;
-class UIPropertyBag;
-struct TextStyle;
-struct IStoreCatalogItem;
-struct MainMenuScreenModel;
-struct StoreCatalogItem;
-struct StoreDataDrivenScreenController;
-namespace catalog { struct ImageInfo; }
 // clang-format on
 
 class OfferCollectionComponent : public ::StoreUIComponentWithStaticBinding<::OfferCollectionComponent> {
@@ -58,112 +50,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~OfferCollectionComponent() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~OfferCollectionComponent() /*override*/;
-#endif
 
-    virtual void getComponentDependanciesToAdd(
-        ::std::vector<::std::shared_ptr<::StoreUIComponent>>& compDependanciesToAdd
-    ) /*override*/;
+    // vIndex: 5
+    virtual void getComponentDependanciesToAdd(::std::vector<::std::shared_ptr<::StoreUIComponent>>&) /*override*/;
 
+    // vIndex: 8
     virtual void tick(::ui::DirtyFlag&) /*override*/;
 
+    // vIndex: 11
     virtual bool canRemove() const /*override*/;
 
+    // vIndex: 12
     virtual int getReadyCount() const /*override*/;
 
+    // vIndex: 14
     virtual ::ImageTelemetryInfo getImageTelemetry() const /*override*/;
 
-    virtual void _parseData(::Json::Value const& offerCollectionCompJson) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C OfferCollectionComponent(::StoreVisualStyle& owner, ::std::shared_ptr<::MainMenuScreenModel> model);
-
-    MCNAPI_C void _forceSelectLastItemIfNeeded(
-        ::StoreDataDrivenScreenController& controller,
-        ::UIPropertyBag*                   bag,
-        ::OfferCollectionComponent*        offerCollectionComp
-    );
-
-    MCNAPI_C ::std::function<void(::Bedrock::Http::StatusCode, ::catalog::ImageInfo&)> _getImageFetchCallback();
-
-    MCNAPI_C void addNewOffers(::std::vector<::gsl::not_null<::IStoreCatalogItem*>>& newOffers);
-
-    MCNAPI_C void fetchImages();
-
-    MCNAPI_C void fireEventSearchItemSelected(
-        ::StoreDataDrivenScreenController& controller,
-        int                                offerCollectionIndex,
-        ::std::string const&               productId
-    ) const;
-
-    MCNAPI_C ::std::string const getFocusIdString(::UIPropertyBag const& bag, int index) const;
-
-    MCNAPI_C ::TextStyle
-    getIconOverlayTextStyle(::std::string const& anchor, int iconOverlayIndex, ::UIPropertyBag& bag);
-
-    MCNAPI_C ::std::vector<::gsl::not_null<::IStoreCatalogItem*>> getOffers() const;
-
-    MCNAPI_C void incrementFirstVisibleItemIndex();
-
-    MCNAPI_C bool isLastOfferInCollection(int offerIndex) const;
-
-    MCNAPI_C bool isShowMoreButtonVisible(int offerIndex) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static void _registerIconOverlayBinds(::StoreDataDrivenScreenController& controller);
-
-    MCNAPI_C static ::std::vector<::std::string>
-    bindCoinBundleSectionContent(::OfferCollectionComponent const& offerCollection);
-
-    MCNAPI_C static ::std::vector<::std::string>
-    bindVerticalSectionContent(::OfferCollectionComponent const& offerCollectionComp);
-
-    MCNAPI_C static void registerStaticBindsAndEvents(::StoreDataDrivenScreenController& controller);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::StoreVisualStyle& owner, ::std::shared_ptr<::MainMenuScreenModel> model);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    // vIndex: 17
+    virtual void _parseData(::Json::Value const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void
-    $getComponentDependanciesToAdd(::std::vector<::std::shared_ptr<::StoreUIComponent>>& compDependanciesToAdd);
 
-    MCNAPI bool $canRemove() const;
-
-    MCNAPI int $getReadyCount() const;
-
-    MCNAPI ::ImageTelemetryInfo $getImageTelemetry() const;
-
-    MCNAPI void $_parseData(::Json::Value const& offerCollectionCompJson);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

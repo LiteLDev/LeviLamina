@@ -9,6 +9,7 @@ class RecoveryCompassItem : public ::AbstractCompassItem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RecoveryCompassItem() /*override*/ = default;
     // NOLINTEND
 

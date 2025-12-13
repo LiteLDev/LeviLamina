@@ -17,14 +17,19 @@ class MinecartChest : public ::Minecart {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 138
     virtual void destroy(::ActorDamageSource const& source, bool dropMinecartComponents) /*override*/;
 
+    // vIndex: 142
     virtual void applyNaturalSlowdown(::BlockSource& region) /*override*/;
 
+    // vIndex: 139
     virtual ::MinecartType getType() /*override*/;
 
+    // vIndex: 140
     virtual ::Block const* getDefaultDisplayBlock() const /*override*/;
 
+    // vIndex: 8
     virtual ~MinecartChest() /*override*/ = default;
     // NOLINTEND
 
@@ -38,8 +43,6 @@ public:
     MCFOLD ::MinecartType $getType();
 
     MCAPI ::Block const* $getDefaultDisplayBlock() const;
-
-
     // NOLINTEND
 
 public:

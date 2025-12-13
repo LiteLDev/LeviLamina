@@ -57,30 +57,43 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MediaContentDescription();
 
+    // vIndex: 1
     virtual ::cricket::MediaType type() const = 0;
 
+    // vIndex: 3
     virtual ::cricket::AudioContentDescription* as_audio();
 
+    // vIndex: 2
     virtual ::cricket::AudioContentDescription const* as_audio() const;
 
+    // vIndex: 5
     virtual ::cricket::VideoContentDescription* as_video();
 
+    // vIndex: 4
     virtual ::cricket::VideoContentDescription const* as_video() const;
 
+    // vIndex: 7
     virtual ::cricket::SctpDataContentDescription* as_sctp();
 
+    // vIndex: 6
     virtual ::cricket::SctpDataContentDescription const* as_sctp() const;
 
+    // vIndex: 9
     virtual ::cricket::UnsupportedContentDescription* as_unsupported();
 
+    // vIndex: 8
     virtual ::cricket::UnsupportedContentDescription const* as_unsupported() const;
 
+    // vIndex: 10
     virtual void set_protocol(::std::string_view protocol);
 
+    // vIndex: 11
     virtual bool has_codecs() const;
 
+    // vIndex: 12
     virtual ::cricket::MediaContentDescription* CloneInternal() const = 0;
     // NOLINTEND
 
@@ -141,8 +154,6 @@ public:
     MCNAPI void $set_protocol(::std::string_view protocol);
 
     MCNAPI bool $has_codecs() const;
-
-
     // NOLINTEND
 
 public:

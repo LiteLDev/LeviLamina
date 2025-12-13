@@ -14,27 +14,28 @@ class AgentLookControl : public ::LookControl {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initializeInternal(::Mob& mob) /*override*/;
 
+    // vIndex: 2
     virtual void tick(::Mob& mob) /*override*/;
 
+    // vIndex: 0
     virtual ~AgentLookControl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float& sBaseYMax();
+    MCAPI static float& sBaseYMax();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeInternal(::Mob& mob);
+    MCAPI void $initializeInternal(::Mob& mob);
 
-    MCNAPI void $tick(::Mob& mob);
-
-
+    MCAPI void $tick(::Mob& mob);
     // NOLINTEND
 
 public:

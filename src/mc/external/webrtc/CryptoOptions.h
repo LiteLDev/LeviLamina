@@ -13,20 +13,6 @@ public:
     // clang-format on
 
     // CryptoOptions inner types define
-    struct SFrame {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk39f362;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SFrame& operator=(SFrame const&);
-        SFrame(SFrame const&);
-        SFrame();
-    };
-
     struct Srtp {
     public:
         // member variables
@@ -42,6 +28,20 @@ public:
         Srtp& operator=(Srtp const&);
         Srtp(Srtp const&);
         Srtp();
+    };
+
+    struct SFrame {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk39f362;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SFrame& operator=(SFrame const&);
+        SFrame(SFrame const&);
+        SFrame();
     };
 
 public:

@@ -37,23 +37,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::Bedrock::PubSub::Subscription
     subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback) /*override*/;
 
+    // vIndex: 1
     virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(
         ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
     ) /*override*/;
 
+    // vIndex: 4
     virtual void broadcastBossEvent(::BossEventUpdateType type) /*override*/;
 
+    // vIndex: 3
     virtual void broadcastBossEvent(
         ::BossEventUpdateType    type,
         ::ActorUniqueID const&   id,
         ::BossEventPacket const& packet
     ) /*override*/;
 
+    // vIndex: 5
     virtual bool areBossEventSubscribersReady() const /*override*/;
 
+    // vIndex: 0
     virtual ~BossEventSubscriptionManagerImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -84,8 +90,6 @@ public:
     $broadcastBossEvent(::BossEventUpdateType type, ::ActorUniqueID const& id, ::BossEventPacket const& packet);
 
     MCNAPI bool $areBossEventSubscribersReady() const;
-
-
     // NOLINTEND
 
 public:

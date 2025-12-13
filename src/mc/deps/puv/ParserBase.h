@@ -29,8 +29,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ParserBase() = default;
 
+    // vIndex: 1
     virtual ::Puv::LoadResultAny doParse(::Puv::Input const&) const = 0;
     // NOLINTEND
 

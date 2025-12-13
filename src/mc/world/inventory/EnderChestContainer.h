@@ -22,14 +22,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 22
     virtual void startOpen(::Actor& actor) /*override*/;
 
+    // vIndex: 23
     virtual void stopOpen(::Actor& actor) /*override*/;
 
+    // vIndex: 5
     virtual ::Bedrock::PubSub::Connector<void()>* getContainerRemovedConnector() /*override*/;
 
+    // vIndex: 6
     virtual bool hasRemovedSubscribers() const /*override*/;
 
+    // vIndex: 0
     virtual ~EnderChestContainer() /*override*/ = default;
     // NOLINTEND
 
@@ -43,8 +48,6 @@ public:
     MCAPI ::Bedrock::PubSub::Connector<void()>* $getContainerRemovedConnector();
 
     MCAPI bool $hasRemovedSubscribers() const;
-
-
     // NOLINTEND
 
 public:

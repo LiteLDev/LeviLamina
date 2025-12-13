@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,12 +20,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ParticleEffectData();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ParticleEffectData();
-
-    MCNAPI_C ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData&&);
-
     MCNAPI ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData const&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData&&);
@@ -43,18 +42,8 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI_C static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::SharedTypes::v1_20_80::ParticleEffectData&&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEffectData const&);
     // NOLINTEND
 

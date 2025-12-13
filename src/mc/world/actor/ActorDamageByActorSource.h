@@ -37,27 +37,38 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool isEntitySource() const /*override*/;
 
+    // vIndex: 10
     virtual ::std::pair<::std::string, ::std::vector<::std::string>>
     getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
 
+    // vIndex: 11
     virtual bool getIsCreative() const /*override*/;
 
+    // vIndex: 12
     virtual bool getIsWorldBuilder() const /*override*/;
 
+    // vIndex: 13
     virtual ::ActorUniqueID getEntityUniqueID() const /*override*/;
 
+    // vIndex: 14
     virtual ::ActorType getEntityType() const /*override*/;
 
+    // vIndex: 15
     virtual ::ActorCategory getEntityCategories() const /*override*/;
 
+    // vIndex: 18
     virtual ::ActorUniqueID getDamagingEntityUniqueID() const /*override*/;
 
+    // vIndex: 19
     virtual ::ActorType getDamagingEntityType() const /*override*/;
 
+    // vIndex: 21
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
 
+    // vIndex: 0
     virtual ~ActorDamageByActorSource() /*override*/;
     // NOLINTEND
 
@@ -102,8 +113,6 @@ public:
     MCFOLD ::ActorType $getDamagingEntityType() const;
 
     MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
-
-
     // NOLINTEND
 
 public:

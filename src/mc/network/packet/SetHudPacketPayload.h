@@ -2,12 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/HudElement.h"
+#include "mc/util/HudVisibility.h"
+
 struct SetHudPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkadb395;
-    ::ll::UntypedStorage<4, 4>  mUnkdd9d4b;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HudElement>> mHudElement;
+    ::ll::TypedStorage<4, 4, ::HudVisibility>              mHudVisible;
     // NOLINTEND
 
 public:
@@ -19,14 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SetHudPacketPayload& operator=(::SetHudPacketPayload&&);
+    MCAPI ::SetHudPacketPayload& operator=(::SetHudPacketPayload&&);
 
-    MCNAPI ~SetHudPacketPayload();
+    MCAPI ~SetHudPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

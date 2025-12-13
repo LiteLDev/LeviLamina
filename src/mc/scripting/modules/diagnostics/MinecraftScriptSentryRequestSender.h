@@ -29,8 +29,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void sendRequest(::SentryEnvelope sentryEvent) /*override*/;
 
+    // vIndex: 0
     virtual ~MinecraftScriptSentryRequestSender() /*override*/ = default;
     // NOLINTEND
 
@@ -38,8 +40,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $sendRequest(::SentryEnvelope sentryEvent);
-
-
     // NOLINTEND
 
 public:

@@ -13,8 +13,8 @@ struct ScriptPackSettingChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbe030b;
-    ::ll::UntypedStorage<8, 40> mUnk5330f9;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mSettingName;
+    ::ll::TypedStorage<8, 40, ::std::variant<float, bool, ::std::string>> mSettingValue;
     // NOLINTEND
 
 public:
@@ -26,22 +26,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent&
+    MCAPI ::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent&&);
 
-    MCNAPI ~ScriptPackSettingChangeAfterEvent();
+    MCAPI ~ScriptPackSettingChangeAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

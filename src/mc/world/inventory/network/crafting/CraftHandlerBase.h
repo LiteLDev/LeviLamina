@@ -11,8 +11,12 @@
 // clang-format off
 class ItemStack;
 class ItemStackRequestActionCraftBase;
+class ItemStackRequestActionCraftHandler;
 class Recipe;
 class Recipes;
+struct AllowedAnywhereConsume;
+struct ExpectedAnywhereConsume;
+struct ExpectedSlotConsume;
 struct FullContainerName;
 struct RecipeNetIdTag;
 // clang-format on
@@ -21,13 +25,13 @@ class CraftHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk97411e;
-    ::ll::UntypedStorage<1, 1>  mUnkf6091a;
-    ::ll::UntypedStorage<1, 1>  mUnkd3fa17;
-    ::ll::UntypedStorage<8, 24> mUnk1a195c;
-    ::ll::UntypedStorage<8, 24> mUnk4b67b7;
-    ::ll::UntypedStorage<8, 24> mUnke75150;
-    ::ll::UntypedStorage<1, 1>  mUnkbdc7c9;
+    ::ll::TypedStorage<8, 8, ::ItemStackRequestActionCraftHandler&>     mCraftRequestHandler;
+    ::ll::TypedStorage<1, 1, ::ItemStackRequestActionType>              mCraftActionType;
+    ::ll::TypedStorage<1, 1, bool>                                      mNonImplementedTrustClientResults;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpectedSlotConsume>>     mExpectedSlotConsumes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpectedAnywhereConsume>> mExpectedAnywhereConsumes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AllowedAnywhereConsume>>  mAllowedAnywhereConsumes;
+    ::ll::TypedStorage<1, 1, bool>                                      mIsCraftRequest;
     // NOLINTEND
 
 public:
@@ -39,18 +43,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CraftHandlerBase() = default;
 
+    // vIndex: 1
     virtual ::ItemStackNetResult handleConsumedItem(::FullContainerName const&, uchar const, ::ItemStack const&);
 
+    // vIndex: 2
     virtual ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType);
 
+    // vIndex: 3
     virtual void endRequestBatch();
 
+    // vIndex: 4
     virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) = 0;
 
+    // vIndex: 5
     virtual void _postCraftRequest(bool const wasSuccess);
 
+    // vIndex: 6
     virtual ::Recipes const* _getLevelRecipes() const;
     // NOLINTEND
 
@@ -73,8 +84,6 @@ public:
     MCFOLD void $_postCraftRequest(bool const wasSuccess);
 
     MCFOLD ::Recipes const* $_getLevelRecipes() const;
-
-
     // NOLINTEND
 
 public:

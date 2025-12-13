@@ -29,10 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RakNetSocket2() = default;
 
+    // vIndex: 1
     virtual int Send(::RakNet::RNS2_SendParameters*, char const*, uint) = 0;
 
+    // vIndex: 2
     virtual void SetMulticastInterface(int interfaceIndex);
     // NOLINTEND
 
@@ -40,8 +43,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $SetMulticastInterface(int interfaceIndex);
-
-
     // NOLINTEND
 
 public:

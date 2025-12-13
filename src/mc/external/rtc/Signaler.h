@@ -25,18 +25,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Signaler() /*override*/ = default;
 
+    // vIndex: 6
     virtual void Signal();
 
+    // vIndex: 1
     virtual uint GetRequestedEvents() /*override*/;
 
+    // vIndex: 2
     virtual void OnEvent(uint ff, int err) /*override*/;
 
+    // vIndex: 3
     virtual void* GetWSAEvent() /*override*/;
 
+    // vIndex: 4
     virtual uint64 GetSocket() /*override*/;
 
+    // vIndex: 5
     virtual bool CheckSignalClose() /*override*/;
     // NOLINTEND
 
@@ -54,8 +61,6 @@ public:
     MCNAPI uint64 $GetSocket();
 
     MCNAPI bool $CheckSignalClose();
-
-
     // NOLINTEND
 
 public:

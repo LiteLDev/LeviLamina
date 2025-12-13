@@ -18,29 +18,36 @@ class IFoodItemComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IFoodItemComponent() = default;
 
+    // vIndex: 1
     virtual int getNutrition() const = 0;
 
+    // vIndex: 2
     virtual float getSaturationModifier() const = 0;
 
+    // vIndex: 3
     virtual bool canAlwaysEat() const = 0;
 
+    // vIndex: 4
     virtual ::Item const* eatItem(::ItemStack&, ::Actor&, ::Level&) = 0;
 
+    // vIndex: 5
     virtual void use(bool& result, ::ItemStack& item, ::Player& player) = 0;
 
+    // vIndex: 6
     virtual ::Item const* useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&) = 0;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> CAN_ALWAYS_EAT();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> CAN_ALWAYS_EAT();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NUTRITION();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> NUTRITION();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SATURATION_MODIFIER();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SATURATION_MODIFIER();
     // NOLINTEND
 
 public:

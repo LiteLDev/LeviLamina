@@ -19,24 +19,26 @@ class Panda : public ::Animal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk737550;
+    ::ll::TypedStorage<1, 1, bool> mFinishedTransitionLastTick;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Panda& operator=(Panda const&);
-    Panda(Panda const&);
     Panda();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 171
     virtual void setTransitioningSitting(bool value) /*override*/;
 
+    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 8
     virtual ~Panda() /*override*/ = default;
     // NOLINTEND
 
@@ -76,8 +78,6 @@ public:
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-
     // NOLINTEND
 
 public:

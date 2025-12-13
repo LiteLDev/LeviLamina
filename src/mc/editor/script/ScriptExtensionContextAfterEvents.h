@@ -45,9 +45,11 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 5
         virtual void
         onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
+        // vIndex: 0
         virtual ~ScriptExtensionContextAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
 
@@ -55,8 +57,6 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
-
-
         // NOLINTEND
 
     public:

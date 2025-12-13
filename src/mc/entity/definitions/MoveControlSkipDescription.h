@@ -9,8 +9,10 @@ struct MoveControlSkipDescription : public ::MoveControlDescription {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual char const* getJsonName() const /*override*/;
 
+    // vIndex: 1
     virtual ~MoveControlSkipDescription() /*override*/;
     // NOLINTEND
 
@@ -24,8 +26,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI char const* $getJsonName() const;
-
-
     // NOLINTEND
 
 public:

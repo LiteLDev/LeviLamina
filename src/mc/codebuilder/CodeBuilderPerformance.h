@@ -10,18 +10,6 @@ class IMinecraftEventing;
 class CodeBuilderPerformance {
 public:
     // CodeBuilderPerformance inner types define
-    enum class Flags : int {
-        AwaitingFirstCommandSent     = 0,
-        AwaitingFirstCommandReceived = 1,
-        AwaitingFirstCommandRun      = 2,
-        CodeScreenCached             = 3,
-        CodeRunStarted               = 4,
-        FirstWorldLaunch             = 5,
-        FirstSessionLaunch           = 6,
-        TutorialCached               = 7,
-        Count                        = 8,
-    };
-
     enum class Stage : int {
         CacheCodescreenStart  = 0,
         CacheCodescreenFinish = 1,
@@ -44,6 +32,18 @@ public:
         FirstCommandRun       = 18,
     };
 
+    enum class Flags : int {
+        AwaitingFirstCommandSent     = 0,
+        AwaitingFirstCommandReceived = 1,
+        AwaitingFirstCommandRun      = 2,
+        CodeScreenCached             = 3,
+        CodeRunStarted               = 4,
+        FirstWorldLaunch             = 5,
+        FirstSessionLaunch           = 6,
+        TutorialCached               = 7,
+        Count                        = 8,
+    };
+
 public:
     // static functions
     // NOLINTBEGIN
@@ -57,8 +57,6 @@ public:
     );
 
     MCNAPI static ::std::chrono::milliseconds getElapsedTime(::CodeBuilderPerformance::Stage stage);
-
-    MCNAPI_C static void setCodeBuilderSessionId();
 
     MCNAPI static ::std::string toString(::CodeBuilderPerformance::Stage stage);
 

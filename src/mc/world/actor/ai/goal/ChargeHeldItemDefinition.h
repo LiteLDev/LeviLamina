@@ -8,32 +8,32 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemDescriptor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class ChargeHeldItemDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3e9be9;
-    // NOLINTEND
+    // ChargeHeldItemDefinition inner types define
+    using self = ::ChargeHeldItemDefinition;
 
 public:
-    // prevent constructor by default
-    ChargeHeldItemDefinition& operator=(ChargeHeldItemDefinition const&);
-    ChargeHeldItemDefinition(ChargeHeldItemDefinition const&);
-    ChargeHeldItemDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mChargeItemList;
+    // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ChargeHeldItemDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                     name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ChargeHeldItemDefinition>>& root
     );

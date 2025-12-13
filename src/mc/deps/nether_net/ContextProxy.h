@@ -31,24 +31,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ContextProxy() /*override*/;
 
+    // vIndex: 1
     virtual ::NetherNet::RtcThreadManager const& getSignalThread() const /*override*/;
 
+    // vIndex: 2
     virtual ::NetherNet::RtcThreadManager const& getNetworkThread() const /*override*/;
 
+    // vIndex: 3
     virtual ::NetherNet::RtcThreadManager const& getWorkerThread() const /*override*/;
 
+    // vIndex: 4
     virtual ::NetherNet::ILanDiscovery& getLanDiscovery() /*override*/;
 
+    // vIndex: 5
     virtual void onSuspend() /*override*/;
 
+    // vIndex: 6
     virtual void onResume() /*override*/;
 
+    // vIndex: 7
     virtual ::NetherNet::GlobalConfiguration const& getGlobalConfig() const /*override*/;
 
+    // vIndex: 9
     virtual void setLoggingLevel(::NetherNet::LogSeverity min) /*override*/;
 
+    // vIndex: 8
     virtual void _logMessage(::NetherNet::LogSeverity level, char const* fmt, char* args) const /*override*/;
     // NOLINTEND
 
@@ -78,8 +88,6 @@ public:
     MCNAPI void $setLoggingLevel(::NetherNet::LogSeverity min);
 
     MCNAPI void $_logMessage(::NetherNet::LogSeverity level, char const* fmt, char* args) const;
-
-
     // NOLINTEND
 
 public:

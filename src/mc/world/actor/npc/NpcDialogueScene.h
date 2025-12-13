@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/npc/ActionContainer.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
@@ -11,10 +14,10 @@ struct NpcDialogueScene {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkdfdbda;
-    ::ll::UntypedStorage<8, 32> mUnk123520;
-    ::ll::UntypedStorage<8, 32> mUnke02416;
-    ::ll::UntypedStorage<8, 48> mUnke7eff6;
+    ::ll::TypedStorage<8, 32, ::std::string>          mSceneName;
+    ::ll::TypedStorage<8, 32, ::std::string>          mText;
+    ::ll::TypedStorage<8, 32, ::std::string>          mNPCName;
+    ::ll::TypedStorage<8, 48, ::npc::ActionContainer> mActionsContainer;
     // NOLINTEND
 
 public:
@@ -26,21 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::NpcDialogueScene& operator=(::NpcDialogueScene&&);
+    MCAPI ::NpcDialogueScene& operator=(::NpcDialogueScene&&);
 
-    MCNAPI ~NpcDialogueScene();
+    MCAPI ~NpcDialogueScene();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::NpcDialogueScene
+    MCAPI static ::NpcDialogueScene
     parse(::Json::Value const& sceneNode, ::std::string const& fileName, int packCommandVersion);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -2,20 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/reflection/Privilege.h"
+
 namespace Scripting {
 
 class RequiredPrivileges {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkfd639e;
+    ::ll::TypedStorage<1, 1, ::Scripting::Privilege> mPrivileges;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RequiredPrivileges& operator=(RequiredPrivileges const&);
-    RequiredPrivileges(RequiredPrivileges const&);
-    RequiredPrivileges();
 };
 
 } // namespace Scripting

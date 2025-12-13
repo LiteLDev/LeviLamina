@@ -34,12 +34,13 @@ public:
     // SignBlockActor inner types declare
     // clang-format off
     struct CachedLineData;
-    struct OpenSignRequest;
     struct CachedMessageData;
+    struct OpenSignRequest;
     class Text;
     // clang-format on
 
     // SignBlockActor inner types define
+
     struct CachedLineData {
     public:
         // member variables
@@ -51,55 +52,30 @@ public:
     public:
         // prevent constructor by default
         CachedLineData& operator=(CachedLineData const&);
+        CachedLineData(CachedLineData const&);
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI CachedLineData();
+        MCAPI CachedLineData();
 
-        MCNAPI CachedLineData(::SignBlockActor::CachedLineData&&);
+        MCAPI CachedLineData(::SignBlockActor::CachedLineData&&);
 
-        MCNAPI_C CachedLineData(::SignBlockActor::CachedLineData const&);
-
-        MCNAPI ~CachedLineData();
+        MCAPI ~CachedLineData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCFOLD void* $ctor();
 
-        MCNAPI void* $ctor(::SignBlockActor::CachedLineData&&);
-
-        MCNAPI_C void* $ctor(::SignBlockActor::CachedLineData const&);
+        MCFOLD void* $ctor(::SignBlockActor::CachedLineData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
-    struct OpenSignRequest {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                                                  mIsWaitingForChangeClear;
-        ::ll::TypedStorage<8, 72, ::OpenSignPacket>                                     mOpenSignPacket;
-        ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void(::OpenSignPacket&)>> mSendPacket;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~OpenSignRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -114,32 +90,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                  dirty;
         ::ll::TypedStorage<4, 4, ::InputMode>                           inputMode;
         ::ll::TypedStorage<4, 4, ::NewInteractionModel>                 interactionModel;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CachedMessageData& operator=(CachedMessageData const&);
-        CachedMessageData(CachedMessageData const&);
-        CachedMessageData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C CachedMessageData(::SignBlockActor::CachedMessageData&&);
-
-        MCNAPI_C ~CachedMessageData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI_C void* $ctor(::SignBlockActor::CachedMessageData&&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
         // NOLINTEND
     };
 
@@ -176,7 +126,7 @@ public:
         // NOLINTBEGIN
         MCAPI Text();
 
-        MCAPI_S Text(::SignBlockActor::Text&&);
+        MCAPI Text(::SignBlockActor::Text&&);
 
         MCAPI void _parseOldVersionText(::CompoundTag const& tag);
 
@@ -190,11 +140,9 @@ public:
 
         MCAPI bool save(::CompoundTag& tag) const;
 
-        MCAPI_C void setCachedMessage(::SignBlockActor::CachedMessageData cachedMessage);
+        MCAPI void setMessage(::TextObjectRoot message);
 
         MCAPI void setMessage(::std::string message);
-
-        MCAPI void setMessage(::TextObjectRoot message);
 
         MCAPI ~Text();
         // NOLINTEND
@@ -216,7 +164,29 @@ public:
         // NOLINTBEGIN
         MCAPI void* $ctor();
 
-        MCAPI_S void* $ctor(::SignBlockActor::Text&&);
+        MCAPI void* $ctor(::SignBlockActor::Text&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct OpenSignRequest {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool>                                                  mIsWaitingForChangeClear;
+        ::ll::TypedStorage<8, 72, ::OpenSignPacket>                                     mOpenSignPacket;
+        ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void(::OpenSignPacket&)>> mSendPacket;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~OpenSignRequest();
         // NOLINTEND
 
     public:
@@ -245,41 +215,56 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SignBlockActor() /*override*/;
 
+    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
+    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
+    // vIndex: 19
     virtual float getShadowRadius(::BlockSource& region) const /*override*/;
 
+    // vIndex: 27
     virtual ::std::string getImmersiveReaderText(::BlockSource& region) /*override*/;
 
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
+    // vIndex: 36
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const& tag) const /*override*/;
 
+    // vIndex: 37
     virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const& tag) const /*override*/;
 
+    // vIndex: 38
     virtual void setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
+    // vIndex: 39
     virtual void setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
+    // vIndex: 40
     virtual bool validateData(::CompoundTag const& tag) const /*override*/;
 
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
+    // vIndex: 44
     virtual bool _playerCanUpdate(::Player const& fromPlayer) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
+    MCAPI SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
 
     MCAPI bool _tryLoadR13Data(::CompoundTag const& tag, ::SignBlockActor::Text& frontText);
 
@@ -290,17 +275,13 @@ public:
     MCAPI void
     requestToSendOpenSignPacket(::WeakRef<::EntityContext> entityRef, ::BlockPos const& position, bool isFrontSide);
 
-    MCAPI_C void setCachedMessage(::SignTextSide side, ::SignBlockActor::CachedMessageData cachedMessage);
-
-    MCAPI_C void setMessage(::SignTextSide side, ::std::string message);
-
     MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_S void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
+    MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
     // NOLINTEND
 
 public:
@@ -339,8 +320,6 @@ public:
     MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
     MCAPI bool $_playerCanUpdate(::Player const& fromPlayer) const;
-
-
     // NOLINTEND
 
 public:

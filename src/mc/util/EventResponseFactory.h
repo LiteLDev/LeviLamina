@@ -29,10 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EventResponseFactory();
 
+    // vIndex: 1
     virtual void initializeFactory(::IPackLoadContext const& packLoadContext) = 0;
 
+    // vIndex: 2
     virtual void initSchema() = 0;
     // NOLINTEND
 

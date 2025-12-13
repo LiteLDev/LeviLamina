@@ -19,24 +19,4 @@ public:
     ReceiptData_Sony& operator=(ReceiptData_Sony const&);
     ReceiptData_Sony(ReceiptData_Sony const&);
     ReceiptData_Sony();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ReceiptData_Sony(::ReceiptData_Sony&&);
-
-    MCNAPI_C ~ReceiptData_Sony();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::ReceiptData_Sony&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

@@ -23,9 +23,6 @@ public:
         ::std::string const&                i18nContextPrefix,
         ::std::vector<::std::string> const& arguments
     );
-
-    MCNAPI_C static ::std::vector<::std::string>
-    getI18nErrorLabelList(uint errorValue, ::std::string const& i18nPrefix);
     // NOLINTEND
 
 public:

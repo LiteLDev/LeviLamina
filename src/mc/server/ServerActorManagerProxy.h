@@ -24,16 +24,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initializeActor(::Actor& actor) /*override*/;
 
+    // vIndex: 2
     virtual ::Bedrock::Result<void, ::ActorValidationError> validate(::Actor const& actor) /*override*/;
 
+    // vIndex: 3
     virtual void addActor(::Actor& actor) /*override*/;
 
+    // vIndex: 5
     virtual void removeActorInLevelChunk(::Actor const& actor) /*override*/;
 
+    // vIndex: 6
     virtual void deleteActorFromWorldInLevelChunk(::Actor const& actor) /*override*/;
 
+    // vIndex: 0
     virtual ~ServerActorManagerProxy() /*override*/ = default;
     // NOLINTEND
 
@@ -49,8 +55,6 @@ public:
     MCAPI void $removeActorInLevelChunk(::Actor const& actor);
 
     MCAPI void $deleteActorFromWorldInLevelChunk(::Actor const& actor);
-
-
     // NOLINTEND
 
 public:

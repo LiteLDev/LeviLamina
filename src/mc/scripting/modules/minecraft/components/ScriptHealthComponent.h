@@ -21,18 +21,24 @@ class ScriptHealthComponent : public ::ScriptModuleMinecraft::AttributeScriptAct
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual ::Scripting::Result_deprecated<bool> setCurrent(float const& value) const /*override*/;
 
+    // vIndex: 6
     virtual ::Scripting::
         Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
         setCurrentV2(float const& value) const /*override*/;
 
+    // vIndex: 10
     virtual ::Scripting::Result_deprecated<void> resetToMinValue() const /*override*/;
 
+    // vIndex: 11
     virtual ::Scripting::Result_deprecated<void> resetToMaxValue() const /*override*/;
 
+    // vIndex: 12
     virtual ::Scripting::Result_deprecated<void> resetToDefaultValue() const /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptHealthComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -69,8 +75,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $resetToMaxValue() const;
 
     MCNAPI ::Scripting::Result_deprecated<void> $resetToDefaultValue() const;
-
-
     // NOLINTEND
 
 public:

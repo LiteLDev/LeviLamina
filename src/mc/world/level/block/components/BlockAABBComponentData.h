@@ -2,18 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/phys/AABB.h"
+
 struct BlockAABBComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3c0db8;
-    ::ll::UntypedStorage<4, 24> mUnkd07040;
-    ::ll::UntypedStorage<4, 24> mUnka0b137;
+    ::ll::TypedStorage<1, 1, bool>    mEnabled;
+    ::ll::TypedStorage<4, 24, ::AABB> mOriginalAABB;
+    ::ll::TypedStorage<4, 24, ::AABB> mTransformedAABB;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockAABBComponentData& operator=(BlockAABBComponentData const&);
-    BlockAABBComponentData(BlockAABBComponentData const&);
-    BlockAABBComponentData();
 };

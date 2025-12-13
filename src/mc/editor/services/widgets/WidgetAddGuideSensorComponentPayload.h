@@ -14,6 +14,7 @@ class WidgetAddGuideSensorComponentPayload
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~WidgetAddGuideSensorComponentPayload() /*override*/;
     // NOLINTEND
 

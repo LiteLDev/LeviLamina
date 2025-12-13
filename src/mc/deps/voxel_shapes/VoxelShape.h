@@ -33,9 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VoxelShape(::VoxelShapes::VoxelShape&&);
-
     MCNAPI VoxelShape(::VoxelShapes::VoxelShape const&);
+
+    MCNAPI VoxelShape(::VoxelShapes::VoxelShape&&);
 
     MCNAPI VoxelShape(
         ::VoxelShapes::Cells               cells,
@@ -71,12 +71,6 @@ public:
         ::VoxelShapes::JoinOperation     operation
     );
 
-    MCNAPI_C static bool joinIsNotEmpty(
-        ::VoxelShapes::VoxelShape const& first,
-        ::VoxelShapes::VoxelShape const& second,
-        ::VoxelShapes::JoinOperation     operation
-    );
-
     MCNAPI static ::VoxelShapes::VoxelShape joinUnoptimized(
         ::VoxelShapes::VoxelShape const& first,
         ::VoxelShapes::VoxelShape const& second,
@@ -104,9 +98,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::VoxelShapes::VoxelShape&&);
-
     MCNAPI void* $ctor(::VoxelShapes::VoxelShape const&);
+
+    MCNAPI void* $ctor(::VoxelShapes::VoxelShape&&);
 
     MCNAPI void* $ctor(
         ::VoxelShapes::Cells               cells,

@@ -26,8 +26,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RateTracker();
 
+    // vIndex: 1
     virtual int64 Time() const;
     // NOLINTEND
 
@@ -65,8 +67,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI int64 $Time() const;
-
-
     // NOLINTEND
 
 public:

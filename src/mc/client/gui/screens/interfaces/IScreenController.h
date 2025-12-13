@@ -15,16 +15,22 @@ class IScreenController {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IScreenController() = default;
 
+    // vIndex: 1
     virtual void preFrameTick() = 0;
 
+    // vIndex: 2
     virtual ::ui::DirtyFlag tick() = 0;
 
+    // vIndex: 3
     virtual ::ui::ViewRequest handleEvent(::ScreenEvent&) = 0;
 
+    // vIndex: 4
     virtual ::std::optional<::std::string> getRoute() const = 0;
 
+    // vIndex: 5
     virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) = 0;
     // NOLINTEND
 

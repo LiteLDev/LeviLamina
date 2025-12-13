@@ -15,8 +15,10 @@ class Snowball : public ::Throwable {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 8
     virtual ~Snowball() /*override*/ = default;
     // NOLINTEND
 
@@ -24,8 +26,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
-
-
     // NOLINTEND
 
 public:

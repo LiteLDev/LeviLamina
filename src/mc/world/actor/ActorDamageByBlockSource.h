@@ -21,13 +21,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual bool isBlockSource() const /*override*/;
 
+    // vIndex: 10
     virtual ::std::pair<::std::string, ::std::vector<::std::string>>
     getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
 
+    // vIndex: 21
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
 
+    // vIndex: 0
     virtual ~ActorDamageByBlockSource() /*override*/ = default;
     // NOLINTEND
 
@@ -40,8 +44,6 @@ public:
     $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
     MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
-
-
     // NOLINTEND
 
 public:

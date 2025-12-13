@@ -15,17 +15,17 @@ class RepeatUntilFailureDefinition : public ::DecoratorDefinition {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
+    // vIndex: 0
     virtual ~RepeatUntilFailureDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
-
-
+    MCFOLD void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:

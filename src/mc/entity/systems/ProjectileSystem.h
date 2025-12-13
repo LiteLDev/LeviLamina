@@ -16,8 +16,10 @@ class ProjectileSystem : public ::ITickingSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
+    // vIndex: 0
     virtual ~ProjectileSystem() /*override*/ = default;
     // NOLINTEND
 
@@ -31,8 +33,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $tick(::EntityRegistry& registry);
-
-
     // NOLINTEND
 
 public:

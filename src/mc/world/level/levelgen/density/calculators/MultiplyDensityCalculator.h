@@ -16,21 +16,17 @@ class MultiplyDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk1ef791;
-    ::ll::UntypedStorage<2, 2> mUnk69456a;
+    ::ll::TypedStorage<2, 2, ushort> mInputA;
+    ::ll::TypedStorage<2, 2, ushort> mInputB;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MultiplyDensityCalculator& operator=(MultiplyDensityCalculator const&);
-    MultiplyDensityCalculator(MultiplyDensityCalculator const&);
-    MultiplyDensityCalculator();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MultiplyDensityCalculator() /*override*/ = default;
 
+    // vIndex: 1
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
     // NOLINTEND
 

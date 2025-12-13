@@ -24,21 +24,9 @@ public:
     ParticleEmitterDirection();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ParticleEmitterDirection();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
     // NOLINTEND
 };
 

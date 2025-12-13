@@ -16,6 +16,7 @@ class ScriptWidgetComponentGuideSensorOptions : public ::Editor::ScriptModule::S
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptWidgetComponentGuideSensorOptions() /*override*/ = default;
     // NOLINTEND
 

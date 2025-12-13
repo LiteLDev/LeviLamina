@@ -16,26 +16,20 @@ class AutomationObserver : public ::Core::Observer<::Automation::AutomationObser
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void onConnected(::std::string const&) = 0;
 
+    // vIndex: 3
     virtual void onConnectionFailed(::std::string const&) = 0;
 
+    // vIndex: 4
     virtual void onConnectionClosed() = 0;
 
+    // vIndex: 5
     virtual void onDuplicateRequestCancel() = 0;
 
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~AutomationObserver() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~AutomationObserver() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

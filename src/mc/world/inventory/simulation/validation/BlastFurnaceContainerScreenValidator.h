@@ -9,6 +9,7 @@ class BlastFurnaceContainerScreenValidator : public ::FurnaceContainerScreenVali
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BlastFurnaceContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

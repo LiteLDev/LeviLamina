@@ -29,14 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::InsideGenericBlockComponent& operator=(::InsideGenericBlockComponent&&);
-
-    MCNAPI_C ~InsideGenericBlockComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI ::InsideGenericBlockComponent& operator=(::InsideGenericBlockComponent&&);
     // NOLINTEND
 };

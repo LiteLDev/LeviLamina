@@ -11,6 +11,7 @@ class GoogCcFeedbackNetworkControllerFactory : public ::webrtc::GoogCcNetworkCon
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~GoogCcFeedbackNetworkControllerFactory() /*override*/ = default;
     // NOLINTEND
 };

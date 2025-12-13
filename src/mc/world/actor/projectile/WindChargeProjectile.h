@@ -18,18 +18,25 @@ class WindChargeProjectile : public ::PredictableProjectile {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual void initializeComponents(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
+    // vIndex: 1
     virtual void outOfWorld() /*override*/;
 
+    // vIndex: 8
     virtual ~WindChargeProjectile() /*override*/ = default;
     // NOLINTEND
 
@@ -43,8 +50,6 @@ public:
     MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
     MCAPI void $outOfWorld();
-
-
     // NOLINTEND
 
 public:

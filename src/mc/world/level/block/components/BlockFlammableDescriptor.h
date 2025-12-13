@@ -10,7 +10,7 @@ struct BlockFlammableDescription;
 namespace BlockFlammableDescriptor {
 // functions
 // NOLINTBEGIN
-MCNAPI void fromBool(::BlockFlammableDescription& desc, bool flammable);
+MCAPI void fromBool(::BlockFlammableDescription& desc, bool flammable);
 // NOLINTEND
 
 } // namespace BlockFlammableDescriptor

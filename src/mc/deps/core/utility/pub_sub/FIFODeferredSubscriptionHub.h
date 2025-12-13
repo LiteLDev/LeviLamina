@@ -26,15 +26,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual void flushPendingEvents() /*override*/;
 
+    // vIndex: 8
     virtual ::Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const /*override*/;
 
+    // vIndex: 11
     virtual bool _runOneEvent() /*override*/;
 
+    // vIndex: 10
     virtual void
         _enqueue(::std::function<void()>, ::Bedrock::PubSub::ConnectPosition, ::std::optional<int>) /*override*/;
 
+    // vIndex: 0
     virtual ~FIFODeferredSubscriptionHub() /*override*/ = default;
     // NOLINTEND
 

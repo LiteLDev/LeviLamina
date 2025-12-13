@@ -35,16 +35,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AsyncTCPSocketBase() /*override*/;
 
+    // vIndex: 3
     virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) = 0;
 
+    // vIndex: 11
     virtual uint64 ProcessInput(::rtc::ArrayView<uchar const>) = 0;
 
+    // vIndex: 1
     virtual ::rtc::SocketAddress GetLocalAddress() const /*override*/;
 
+    // vIndex: 2
     virtual ::rtc::SocketAddress GetRemoteAddress() const /*override*/;
 
+    // vIndex: 4
     virtual int SendTo(
         void const*                 pv,
         uint64                      cb,
@@ -52,16 +58,22 @@ public:
         ::rtc::PacketOptions const& options
     ) /*override*/;
 
+    // vIndex: 5
     virtual int Close() /*override*/;
 
+    // vIndex: 6
     virtual ::rtc::AsyncPacketSocket::State GetState() const /*override*/;
 
+    // vIndex: 7
     virtual int GetOption(::rtc::Socket::Option opt, int* value) /*override*/;
 
+    // vIndex: 8
     virtual int SetOption(::rtc::Socket::Option opt, int value) /*override*/;
 
+    // vIndex: 9
     virtual int GetError() const /*override*/;
 
+    // vIndex: 10
     virtual void SetError(int error) /*override*/;
     // NOLINTEND
 
@@ -116,8 +128,6 @@ public:
     MCNAPI int $GetError() const;
 
     MCNAPI void $SetError(int error);
-
-
     // NOLINTEND
 
 public:

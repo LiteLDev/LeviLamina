@@ -18,14 +18,19 @@ class StructurePoolBlockPredicateAlwaysTrue : public ::IStructurePoolBlockPredic
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual bool test(::Block const& block, ::Randomize& randomize) const /*override*/;
 
+    // vIndex: 1
     virtual bool test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const /*override*/;
 
+    // vIndex: 5
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
+    // vIndex: 6
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
     virtual ~StructurePoolBlockPredicateAlwaysTrue() /*override*/ = default;
     // NOLINTEND
 
@@ -39,8 +44,6 @@ public:
     MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 
     MCFOLD void $appendMetadataKey(::Util::XXHash& hash) const;
-
-
     // NOLINTEND
 
 public:

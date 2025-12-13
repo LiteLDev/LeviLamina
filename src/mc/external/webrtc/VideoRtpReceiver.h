@@ -51,10 +51,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~SourceCallback() /*override*/ = default;
 
+        // vIndex: 1
         virtual void OnGenerateKeyFrame() /*override*/;
 
+        // vIndex: 2
         virtual void OnEncodedSinkEnabled(bool enable) /*override*/;
         // NOLINTEND
 
@@ -64,8 +67,6 @@ public:
         MCNAPI void $OnGenerateKeyFrame();
 
         MCNAPI void $OnEncodedSinkEnabled(bool enable);
-
-
         // NOLINTEND
 
     public:
@@ -107,56 +108,80 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ~VideoRtpReceiver() /*override*/;
 
+    // vIndex: 3
     virtual ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track() const /*override*/;
 
+    // vIndex: 4
     virtual ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport() const /*override*/;
 
+    // vIndex: 5
     virtual ::std::vector<::std::string> stream_ids() const /*override*/;
 
+    // vIndex: 6
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> streams() const /*override*/;
 
+    // vIndex: 7
     virtual ::cricket::MediaType media_type() const /*override*/;
 
+    // vIndex: 8
     virtual ::std::string id() const /*override*/;
 
+    // vIndex: 9
     virtual ::webrtc::RtpParameters GetParameters() const /*override*/;
 
+    // vIndex: 14
     virtual void
     SetFrameDecryptor(::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface> frame_decryptor) /*override*/;
 
+    // vIndex: 15
     virtual ::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface> GetFrameDecryptor() const /*override*/;
 
+    // vIndex: 16
     virtual void SetDepacketizerToDecoderFrameTransformer(
         ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
     ) /*override*/;
 
+    // vIndex: 17
     virtual void Stop() /*override*/;
 
+    // vIndex: 19
     virtual void SetupMediaChannel(uint ssrc) /*override*/;
 
+    // vIndex: 20
     virtual void SetupUnsignaledMediaChannel() /*override*/;
 
+    // vIndex: 22
     virtual ::std::optional<uint> ssrc() const /*override*/;
 
+    // vIndex: 23
     virtual void NotifyFirstPacketReceived() /*override*/;
 
+    // vIndex: 24
     virtual void set_stream_ids(::std::vector<::std::string> stream_ids) /*override*/;
 
+    // vIndex: 21
     virtual void set_transport(::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport) /*override*/;
 
+    // vIndex: 25
     virtual void
     SetStreams(::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const& streams) /*override*/;
 
+    // vIndex: 11
     virtual void SetObserver(::webrtc::RtpReceiverObserverInterface* observer) /*override*/;
 
+    // vIndex: 12
     virtual void SetJitterBufferMinimumDelay(::std::optional<double> delay_seconds) /*override*/;
 
+    // vIndex: 18
     virtual void SetMediaChannel(::cricket::MediaReceiveChannelInterface* media_channel) /*override*/;
 
+    // vIndex: 26
     virtual int AttachmentId() const /*override*/;
 
+    // vIndex: 13
     virtual ::std::vector<::webrtc::RtpSource> GetSources() const /*override*/;
     // NOLINTEND
 
@@ -258,8 +283,6 @@ public:
     MCNAPI int $AttachmentId() const;
 
     MCNAPI ::std::vector<::webrtc::RtpSource> $GetSources() const;
-
-
     // NOLINTEND
 
 public:

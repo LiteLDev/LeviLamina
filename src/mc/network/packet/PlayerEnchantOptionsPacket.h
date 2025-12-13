@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class ItemEnchantOption;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -17,26 +18,25 @@ class PlayerEnchantOptionsPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3dde41;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemEnchantOption>> mOptions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerEnchantOptionsPacket& operator=(PlayerEnchantOptionsPacket const&);
-    PlayerEnchantOptionsPacket(PlayerEnchantOptionsPacket const&);
-    PlayerEnchantOptionsPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PlayerEnchantOptionsPacket() /*override*/;
 
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
@@ -56,8 +56,6 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

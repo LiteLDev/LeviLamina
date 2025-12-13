@@ -6,8 +6,10 @@ class IUIEventTelemetry {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IUIEventTelemetry() = default;
 
+    // vIndex: 1
     virtual void fireScreenLoadTimeUpdateEvent(
         uint const&,
         ::std::string const&,

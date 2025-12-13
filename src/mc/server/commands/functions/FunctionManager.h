@@ -29,6 +29,36 @@ public:
     // clang-format on
 
     // FunctionManager inner types define
+    struct TickFunction {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk482e9d;
+        ::ll::UntypedStorage<1, 1> mUnk4d0171;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TickFunction& operator=(TickFunction const&);
+        TickFunction(TickFunction const&);
+        TickFunction();
+    };
+
+    struct QueuedCommand {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkcf60d0;
+        ::ll::UntypedStorage<8, 8> mUnkf29853;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        QueuedCommand& operator=(QueuedCommand const&);
+        QueuedCommand(QueuedCommand const&);
+        QueuedCommand();
+    };
+
     struct OriginMapping {
     public:
         // member variables
@@ -56,36 +86,6 @@ public:
         // NOLINTEND
     };
 
-    struct QueuedCommand {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkcf60d0;
-        ::ll::UntypedStorage<8, 8> mUnkf29853;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        QueuedCommand& operator=(QueuedCommand const&);
-        QueuedCommand(QueuedCommand const&);
-        QueuedCommand();
-    };
-
-    struct TickFunction {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk482e9d;
-        ::ll::UntypedStorage<1, 1> mUnk4d0171;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TickFunction& operator=(TickFunction const&);
-        TickFunction(TickFunction const&);
-        TickFunction();
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -110,6 +110,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FunctionManager();
     // NOLINTEND
 

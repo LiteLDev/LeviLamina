@@ -22,13 +22,13 @@ public:
     // clang-format off
     struct ActiveStreamComparator;
     class InverseWeight;
+    class Stream;
     class StreamProducer;
     class VirtualTime;
-    class Stream;
     // clang-format on
 
     // StreamScheduler inner types define
-    struct ActiveStreamComparator {};
+    class VirtualTime : public ::webrtc::StrongAlias<::dcsctp::VirtualTimeTag, double> {};
 
     class InverseWeight : public ::webrtc::StrongAlias<::dcsctp::InverseWeightTag, double> {};
 
@@ -36,10 +36,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~StreamProducer() = default;
 
+        // vIndex: 1
         virtual ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp, uint64) = 0;
 
+        // vIndex: 2
         virtual uint64 bytes_to_send_in_next_message() const = 0;
         // NOLINTEND
 
@@ -49,8 +52,6 @@ public:
 
         // NOLINTEND
     };
-
-    class VirtualTime : public ::webrtc::StrongAlias<::dcsctp::VirtualTimeTag, double> {};
 
     class Stream {
     public:
@@ -89,6 +90,8 @@ public:
         MCNAPI void SetPriority(::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort> priority);
         // NOLINTEND
     };
+
+    struct ActiveStreamComparator {};
 
 public:
     // member variables

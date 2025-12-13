@@ -38,63 +38,69 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 5
     virtual void stop() /*override*/;
 
+    // vIndex: 6
     virtual void tick() /*override*/;
 
+    // vIndex: 18
     virtual void useWorkstation();
 
+    // vIndex: 0
     virtual ~WorkGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit WorkGoal(::Mob& mob);
+    MCAPI explicit WorkGoal(::Mob& mob);
 
-    MCNAPI bool _isInsideOrIsNotRaining();
+    MCAPI bool _isInsideOrIsNotRaining();
 
-    MCNAPI void playPOISoundEvent() const;
+    MCAPI void playPOISoundEvent() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $useWorkstation();
-
-
+    MCAPI void $useWorkstation();
     // NOLINTEND
 
 public:

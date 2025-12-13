@@ -21,6 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::StackRefResult<::BlockSource> tryGetBlockSource() const;
+    MCAPI ::StackRefResult<::BlockSource> tryGetBlockSource() const;
     // NOLINTEND
 };

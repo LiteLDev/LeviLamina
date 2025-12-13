@@ -20,6 +20,7 @@ class RTPVideoFrameSenderInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual bool SendVideo(
         int,
         ::std::optional<::webrtc::VideoCodecType>,
@@ -32,10 +33,13 @@ public:
         ::std::vector<uint>
     ) = 0;
 
+    // vIndex: 1
     virtual void SetVideoStructureAfterTransformation(::webrtc::FrameDependencyStructure const*) = 0;
 
+    // vIndex: 2
     virtual void SetVideoLayersAllocationAfterTransformation(::webrtc::VideoLayersAllocation) = 0;
 
+    // vIndex: 3
     virtual ~RTPVideoFrameSenderInterface() = default;
     // NOLINTEND
 

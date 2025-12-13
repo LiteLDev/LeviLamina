@@ -18,29 +18,32 @@ class DisconnectPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk6178a2;
-    ::ll::UntypedStorage<8, 32> mUnkcbf35f;
-    ::ll::UntypedStorage<8, 40> mUnke9e813;
-    ::ll::UntypedStorage<4, 4>  mUnk2cce66;
+    ::ll::TypedStorage<1, 1, bool>                               mSkipMessage;
+    ::ll::TypedStorage<8, 32, ::std::string>                     mMessage;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>    mFilteredMessage;
+    ::ll::TypedStorage<4, 4, ::Connection::DisconnectFailReason> mReason;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DisconnectPacket& operator=(DisconnectPacket const&);
-    DisconnectPacket(DisconnectPacket const&);
     DisconnectPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
     virtual ~DisconnectPacket() /*override*/;
     // NOLINTEND
 
@@ -82,8 +85,6 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

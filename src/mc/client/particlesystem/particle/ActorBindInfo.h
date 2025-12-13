@@ -18,18 +18,6 @@ public:
     ActorBindInfo& operator=(ActorBindInfo const&);
     ActorBindInfo(ActorBindInfo const&);
     ActorBindInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ActorBindInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ParticleSystem

@@ -96,9 +96,9 @@ public:
 
     MCNAPI void messageDelivered(::std::string const& messageId);
 
-    MCNAPI void messageError(::std::string const& messageId, ::JsonRpc::JsonRpcError const& error);
-
     MCNAPI void messageError(::std::string const& messageId, ::NetherNet::ESessionError error);
+
+    MCNAPI void messageError(::std::string const& messageId, ::JsonRpc::JsonRpcError const& error);
 
     MCNAPI void messageSent(
         ::MessageTracker::Destination to,

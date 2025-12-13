@@ -64,8 +64,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual ::Core::CrossStorageCopyMode getCrossStorageCopyMode() /*override*/;
 
+    // vIndex: 6
     virtual ::Core::Result _openFile(
         ::std::unique_ptr<::Core::FileImpl>&,
         ::Core::PathView,
@@ -73,42 +75,59 @@ public:
         ::Core::FileBufferingMode
     ) /*override*/;
 
+    // vIndex: 7
     virtual bool _fileExists(::Core::PathView) /*override*/;
 
+    // vIndex: 8
     virtual ::Core::Result _deleteFile(::Core::PathView) /*override*/;
 
+    // vIndex: 10
     virtual ::Core::Result _getFileSize(::Core::PathView, uint64*) /*override*/;
 
+    // vIndex: 11
     virtual ::Core::Result _renameFile(::Core::PathView, ::Core::PathView) /*override*/;
 
+    // vIndex: 16
     virtual ::Core::Result _createOneDirectory(::Core::PathView) /*override*/;
 
+    // vIndex: 19
     virtual bool _directoryExists(::Core::PathView) /*override*/;
 
+    // vIndex: 20
     virtual ::Core::Result _deleteEmptyDirectory(::Core::PathView) /*override*/;
 
+    // vIndex: 21
     virtual ::Core::Result _deleteDirectoryAndContentsRecursively(::Core::PathView directoryPath) /*override*/;
 
+    // vIndex: 32
     virtual ::Core::Result _getFileOrDirectorySize(::Core::PathView entryName, uint64* pFileSizeOut) /*override*/;
 
+    // vIndex: 24
     virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) /*override*/;
 
+    // vIndex: 25
     virtual ::Core::Result _iterateOverDirectory(
         ::Core::PathView,
         ::Core::DirectoryIterationFlags,
         ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
     ) /*override*/;
 
+    // vIndex: 31
     virtual bool _fileOrDirectoryExists(::Core::PathView) /*override*/;
 
+    // vIndex: 33
     virtual ::Core::Result _getEntryType(::Core::PathView, ::Core::FileType&) /*override*/;
 
+    // vIndex: 44
     virtual ::Core::Result _getLastModificationTime(::Core::PathView, int64*) /*override*/;
 
+    // vIndex: 45
     virtual ::Core::Result _copyTimeAndAccessRights(::Core::PathView, ::Core::PathView) /*override*/;
 
+    // vIndex: 46
     virtual ::Core::Result _endTransaction() /*override*/;
 
+    // vIndex: 0
     virtual ~WriteBufferedTransaction() /*override*/ = default;
     // NOLINTEND
 

@@ -29,26 +29,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MoveTowardsRestrictionGoal() /*override*/ = default;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 4
     virtual void start() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _randomizeWantedPositionTowardsRestriction(::Vec3 const& restrictionCenter);
+    MCAPI bool _randomizeWantedPositionTowardsRestriction(::Vec3 const& restrictionCenter);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
-    MCNAPI void $start();
-
-
+    MCFOLD void $start();
     // NOLINTEND
 };

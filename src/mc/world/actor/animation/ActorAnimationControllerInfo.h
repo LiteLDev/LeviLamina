@@ -2,17 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorAnimationController;
+// clang-format on
+
 class ActorAnimationControllerInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnke34435;
-    ::ll::UntypedStorage<8, 8>  mUnk5935ac;
+    ::ll::TypedStorage<8, 48, ::HashedString>                               mName;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorAnimationController>> mPtr;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorAnimationControllerInfo& operator=(ActorAnimationControllerInfo const&);
-    ActorAnimationControllerInfo(ActorAnimationControllerInfo const&);
-    ActorAnimationControllerInfo();
 };

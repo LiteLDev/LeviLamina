@@ -27,28 +27,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::ContentTierInfo getContentTierInfo() const /*override*/;
 
+    // vIndex: 2
     virtual bool shouldDeviceAllowAnimation() const /*override*/;
 
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~ContentTierManager() /*override*/;
-#else // LL_PLAT_C
-    virtual ~ContentTierManager() /*override*/ = default;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit ContentTierManager(::std::function<bool()> isHardwareRayTracingCompatible);
+    MCNAPI explicit ContentTierManager(::std::function<bool()> isHardwareRayTracingCompatible);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::std::function<bool()> isHardwareRayTracingCompatible);
+    MCNAPI void* $ctor(::std::function<bool()> isHardwareRayTracingCompatible);
     // NOLINTEND
 
 public:
@@ -63,8 +61,6 @@ public:
     MCNAPI ::ContentTierInfo $getContentTierInfo() const;
 
     MCNAPI bool $shouldDeviceAllowAnimation() const;
-
-
     // NOLINTEND
 
 public:

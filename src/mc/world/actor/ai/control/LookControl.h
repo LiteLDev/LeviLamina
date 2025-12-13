@@ -14,21 +14,22 @@ class LookControl : public ::Control {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LookControl() /*override*/ = default;
 
+    // vIndex: 1
     virtual void initializeInternal(::Mob& mob);
 
+    // vIndex: 2
     virtual void tick(::Mob& mob);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeInternal(::Mob& mob);
+    MCFOLD void $initializeInternal(::Mob& mob);
 
-    MCNAPI void $tick(::Mob& mob);
-
-
+    MCAPI void $tick(::Mob& mob);
     // NOLINTEND
 
 public:

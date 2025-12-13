@@ -18,6 +18,16 @@ public:
     // clang-format on
 
     // CallStack inner types define
+    struct Frame {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64>              mFilenameHash;
+        ::ll::TypedStorage<8, 16, ::std::string_view> mFilename;
+        ::ll::TypedStorage<4, 4, uint>                mLine;
+        // NOLINTEND
+    };
+
     struct Context {
     public:
         // member variables
@@ -51,16 +61,6 @@ public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
-    struct Frame {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64>              mFilenameHash;
-        ::ll::TypedStorage<8, 16, ::std::string_view> mFilename;
-        ::ll::TypedStorage<4, 4, uint>                mLine;
         // NOLINTEND
     };
 

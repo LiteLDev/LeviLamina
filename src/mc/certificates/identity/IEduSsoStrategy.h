@@ -23,10 +23,13 @@ class IEduSsoStrategy {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IEduSsoStrategy() = default;
 
+    // vIndex: 1
     virtual ::Json::Value clientConfig(::Json::Value const&) const = 0;
 
+    // vIndex: 2
     virtual ::Identity::_TokenRefreshState::Enum refreshToken(
         ::Identity::IEduAuth&,
         ::AccessTokenInfo const&,
@@ -36,8 +39,10 @@ public:
         ::std::function<void()>
     ) = 0;
 
+    // vIndex: 3
     virtual void onRefreshedToken(bool, ::Identity::EduResourceType) = 0;
 
+    // vIndex: 4
     virtual ::Identity::SsoPromptMode signIn(
         ::Identity::IEduAuth&,
         int64,
@@ -45,14 +50,19 @@ public:
         ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
     ) = 0;
 
+    // vIndex: 5
     virtual void signInSuccess(::std::string const&) = 0;
 
+    // vIndex: 6
     virtual void demoSignInSuccess() = 0;
 
+    // vIndex: 7
     virtual void resetAuthentication(::Identity::IEduAuth&, bool) = 0;
 
+    // vIndex: 8
     virtual bool isDemoConversion() const = 0;
 
+    // vIndex: 9
     virtual void signInGraph(
         ::Identity::IEduAuth&,
         ::std::string const&,

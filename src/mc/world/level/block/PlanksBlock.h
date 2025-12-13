@@ -21,8 +21,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
+    // vIndex: 0
     virtual ~PlanksBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -36,8 +38,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string $buildDescriptionId(::Block const&) const;
-
-
     // NOLINTEND
 
 public:

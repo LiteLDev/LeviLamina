@@ -31,6 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptPackConfigurationManager() /*override*/;
     // NOLINTEND
 
@@ -45,7 +46,7 @@ public:
 
     MCNAPI ::ScriptPackConfiguration const& getPackConfiguration(::std::string const& packIdentifier) const;
 
-    MCNAPI_S void loadConfigs(::cereal::ReflectionCtx const& ctx);
+    MCNAPI void loadConfigs(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:

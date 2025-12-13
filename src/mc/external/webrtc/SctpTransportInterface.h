@@ -19,14 +19,19 @@ class SctpTransportInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport() const = 0;
 
+    // vIndex: 4
     virtual ::webrtc::SctpTransportInformation Information() const = 0;
 
+    // vIndex: 5
     virtual void RegisterObserver(::webrtc::SctpTransportObserverInterface*) = 0;
 
+    // vIndex: 6
     virtual void UnregisterObserver() = 0;
 
+    // vIndex: 2
     virtual ~SctpTransportInterface() /*override*/;
     // NOLINTEND
 

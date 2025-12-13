@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 struct MovementEffectsComponent;
 namespace History { struct EntityWithCache; }
 // clang-format on
@@ -21,8 +20,6 @@ MCNAPI void addMovementEffectsToEntity(
     ::MovementEffectsComponent&                        movementEffects,
     ::Bedrock::EnumSet<::MovementEffectType, 2> const& toSet
 );
-
-MCNAPI_C void runExtractors(::EntityContext const& fromLive, ::EntityContext& toHistory, bool removeIfMissing);
 // NOLINTEND
 
 } // namespace History

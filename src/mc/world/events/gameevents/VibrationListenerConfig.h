@@ -15,29 +15,33 @@ class VibrationListenerConfig {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~VibrationListenerConfig() = default;
 
+    // vIndex: 1
     virtual void
     onSignalReceive(::BlockSource&, ::BlockPos const&, ::GameEvent const&, ::Actor*, float, uint, ::Actor*) = 0;
 
+    // vIndex: 2
     virtual bool isValidVibration(::GameEvent const& gameEvent);
 
+    // vIndex: 3
     virtual bool shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&) = 0;
 
+    // vIndex: 4
     virtual void onSerializableDataChanged(::BlockSource&);
 
+    // vIndex: 5
     virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValidVibration(::GameEvent const& gameEvent);
+    MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCNAPI void $onSerializableDataChanged(::BlockSource&);
+    MCFOLD void $onSerializableDataChanged(::BlockSource&);
 
-    MCNAPI bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
-
-
+    MCFOLD bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
     // NOLINTEND
 };

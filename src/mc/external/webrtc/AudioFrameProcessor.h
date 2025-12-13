@@ -13,10 +13,13 @@ class AudioFrameProcessor {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AudioFrameProcessor() = default;
 
+    // vIndex: 1
     virtual void Process(::std::unique_ptr<::webrtc::AudioFrame>) = 0;
 
+    // vIndex: 2
     virtual void SetSink(::std::function<void(::std::unique_ptr<::webrtc::AudioFrame>)>) = 0;
     // NOLINTEND
 

@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class EntityContext;
 class MobEffectInstance;
 class MobEffectPacket;
@@ -16,8 +15,6 @@ class MobEffectPacket;
 namespace MobEffectPacketUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI_C void applyPacket(::Actor& actor, ::MobEffectPacket const& packet);
-
 MCNAPI ::std::optional<::MobEffectPacket> createPacket(
     ::MobEffectPacketPayload::Event eventType,
     ::MobEffectInstance const&      effect,

@@ -30,46 +30,67 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::rtc::SocketAddress GetLocalAddress() const /*override*/;
 
+    // vIndex: 2
     virtual ::rtc::SocketAddress GetRemoteAddress() const /*override*/;
 
+    // vIndex: 3
     virtual int Bind(::rtc::SocketAddress const& addr) /*override*/;
 
+    // vIndex: 4
     virtual int Connect(::rtc::SocketAddress const& addr) /*override*/;
 
+    // vIndex: 5
     virtual int Send(void const* pv, uint64 cb) /*override*/;
 
+    // vIndex: 6
     virtual int SendTo(void const* pv, uint64 cb, ::rtc::SocketAddress const& addr) /*override*/;
 
+    // vIndex: 7
     virtual int Recv(void* pv, uint64 cb, int64* timestamp) /*override*/;
 
+    // vIndex: 9
     virtual int RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp) /*override*/;
 
+    // vIndex: 10
     virtual int Listen(int backlog) /*override*/;
 
+    // vIndex: 11
     virtual ::rtc::Socket* Accept(::rtc::SocketAddress* paddr) /*override*/;
 
+    // vIndex: 12
     virtual int Close() /*override*/;
 
+    // vIndex: 13
     virtual int GetError() const /*override*/;
 
+    // vIndex: 14
     virtual void SetError(int error) /*override*/;
 
+    // vIndex: 15
     virtual ::rtc::Socket::ConnState GetState() const /*override*/;
 
+    // vIndex: 16
     virtual int GetOption(::rtc::Socket::Option opt, int* value) /*override*/;
 
+    // vIndex: 17
     virtual int SetOption(::rtc::Socket::Option opt, int value) /*override*/;
 
+    // vIndex: 18
     virtual void OnConnectEvent(::rtc::Socket* socket);
 
+    // vIndex: 19
     virtual void OnReadEvent(::rtc::Socket* socket);
 
+    // vIndex: 20
     virtual void OnWriteEvent(::rtc::Socket* socket);
 
+    // vIndex: 21
     virtual void OnCloseEvent(::rtc::Socket* socket, int err);
 
+    // vIndex: 0
     virtual ~AsyncSocketAdapter() /*override*/ = default;
     // NOLINTEND
 
@@ -127,8 +148,6 @@ public:
     MCNAPI void $OnWriteEvent(::rtc::Socket* socket);
 
     MCNAPI void $OnCloseEvent(::rtc::Socket* socket, int err);
-
-
     // NOLINTEND
 
 public:

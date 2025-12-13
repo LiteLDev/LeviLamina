@@ -33,20 +33,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StunRequest();
 
+    // vIndex: 1
     virtual bool CheckSkip();
 
+    // vIndex: 2
     virtual void OnResponse(::cricket::StunMessage* response);
 
+    // vIndex: 3
     virtual void OnErrorResponse(::cricket::StunMessage* response);
 
+    // vIndex: 4
     virtual void OnSkip();
 
+    // vIndex: 5
     virtual void OnTimeout();
 
+    // vIndex: 6
     virtual void OnSent();
 
+    // vIndex: 7
     virtual int resend_delay();
     // NOLINTEND
 
@@ -98,8 +106,6 @@ public:
     MCNAPI void $OnSent();
 
     MCNAPI int $resend_delay();
-
-
     // NOLINTEND
 
 public:

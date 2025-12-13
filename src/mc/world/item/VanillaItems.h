@@ -22,12 +22,6 @@ class VanillaItems {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void initClientData(
-        ::ItemRegistryRef        itemRegistry,
-        ::BaseGameVersion const& baseGameVersion,
-        ::Experiments const&     experiments
-    );
-
     MCAPI static void registerHardCodedItemTags(::ItemRegistryRef itemRegistry);
 
     MCAPI static void registerItems(

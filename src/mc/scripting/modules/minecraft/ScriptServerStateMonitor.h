@@ -28,12 +28,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptServerStateMonitor();
 
+    // vIndex: 1
     virtual void _onReload();
 
+    // vIndex: 2
     virtual void _onScriptInitializationComplete();
 
+    // vIndex: 3
     virtual void _onScriptModuleStartupComplete();
     // NOLINTEND
 
@@ -63,8 +67,6 @@ public:
     MCNAPI void $_onScriptInitializationComplete();
 
     MCNAPI void $_onScriptModuleStartupComplete();
-
-
     // NOLINTEND
 
 public:

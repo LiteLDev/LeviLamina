@@ -11,10 +11,13 @@ class ResponseVerifier {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ResponseVerifier() = default;
 
+    // vIndex: 1
     virtual void setRequest(::Json::Value&) = 0;
 
+    // vIndex: 2
     virtual ::std::optional<::Json::Value> verify(::Json::Value&&) = 0;
     // NOLINTEND
 

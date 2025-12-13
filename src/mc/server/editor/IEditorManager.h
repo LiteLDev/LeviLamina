@@ -26,14 +26,19 @@ class IEditorManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IEditorManager() /*override*/;
 
+    // vIndex: 1
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() = 0;
 
+    // vIndex: 2
     virtual bool isClientSide() const = 0;
 
+    // vIndex: 3
     virtual ::std::unique_ptr<::Editor::IEditorPlayer> createPlayer(::Player&) = 0;
 
+    // vIndex: 4
     virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
         ::ILevelListCache&,
         ::Scheduler&,
@@ -41,14 +46,19 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>
     ) = 0;
 
+    // vIndex: 5
     virtual void cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache&) const = 0;
 
+    // vIndex: 6
     virtual void cleanupOrphanedTemporaryRealmsUploadWorlds() = 0;
 
+    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> scriptingTeardown() = 0;
 
+    // vIndex: 8
     virtual ::Scripting::Result_deprecated<void> scriptingRebuild(::Scripting::ContextId, bool) = 0;
 
+    // vIndex: 9
     virtual void tryClearPlaytestRoundtripInfo() = 0;
     // NOLINTEND
 

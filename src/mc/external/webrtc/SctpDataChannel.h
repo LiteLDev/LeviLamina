@@ -34,14 +34,6 @@ public:
     // clang-format on
 
     // SctpDataChannel inner types define
-    enum class HandshakeState : int {
-        KHandshakeInit           = 0,
-        KHandshakeShouldSendOpen = 1,
-        KHandshakeShouldSendAck  = 2,
-        KHandshakeWaitingForAck  = 3,
-        KHandshakeReady          = 4,
-    };
-
     class ObserverAdapter : public ::webrtc::DataChannelObserver {
     public:
         // ObserverAdapter inner types declare
@@ -87,14 +79,19 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual void OnStateChange() /*override*/;
 
+        // vIndex: 1
         virtual void OnMessage(::webrtc::DataBuffer const& buffer) /*override*/;
 
+        // vIndex: 2
         virtual void OnBufferedAmountChange(uint64 sent_data_size) /*override*/;
 
+        // vIndex: 3
         virtual bool IsOkToCallOnTheNetworkThread() /*override*/;
 
+        // vIndex: 4
         virtual ~ObserverAdapter() /*override*/ = default;
         // NOLINTEND
 
@@ -114,8 +111,6 @@ public:
         MCNAPI void $OnBufferedAmountChange(uint64 sent_data_size);
 
         MCNAPI bool $IsOkToCallOnTheNetworkThread();
-
-
         // NOLINTEND
 
     public:
@@ -123,6 +118,14 @@ public:
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    };
+
+    enum class HandshakeState : int {
+        KHandshakeInit           = 0,
+        KHandshakeShouldSendOpen = 1,
+        KHandshakeShouldSendAck  = 2,
+        KHandshakeWaitingForAck  = 3,
+        KHandshakeReady          = 4,
     };
 
 public:
@@ -164,55 +167,80 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual void RegisterObserver(::webrtc::DataChannelObserver* observer) /*override*/;
 
+    // vIndex: 4
     virtual void UnregisterObserver() /*override*/;
 
+    // vIndex: 5
     virtual ::std::string label() const /*override*/;
 
+    // vIndex: 6
     virtual bool reliable() const /*override*/;
 
+    // vIndex: 7
     virtual bool ordered() const /*override*/;
 
+    // vIndex: 8
     virtual ushort maxRetransmitTime() const /*override*/;
 
+    // vIndex: 9
     virtual ushort maxRetransmits() const /*override*/;
 
+    // vIndex: 11
     virtual ::std::optional<int> maxPacketLifeTime() const /*override*/;
 
+    // vIndex: 10
     virtual ::std::optional<int> maxRetransmitsOpt() const /*override*/;
 
+    // vIndex: 12
     virtual ::std::string protocol() const /*override*/;
 
+    // vIndex: 13
     virtual bool negotiated() const /*override*/;
 
+    // vIndex: 14
     virtual int id() const /*override*/;
 
+    // vIndex: 15
     virtual ::webrtc::Priority priority() const /*override*/;
 
+    // vIndex: 23
     virtual uint64 buffered_amount() const /*override*/;
 
+    // vIndex: 24
     virtual void Close() /*override*/;
 
+    // vIndex: 16
     virtual ::webrtc::DataChannelInterface::DataState state() const /*override*/;
 
+    // vIndex: 17
     virtual ::webrtc::RTCError error() const /*override*/;
 
+    // vIndex: 18
     virtual uint messages_sent() const /*override*/;
 
+    // vIndex: 19
     virtual uint64 bytes_sent() const /*override*/;
 
+    // vIndex: 21
     virtual uint messages_received() const /*override*/;
 
+    // vIndex: 22
     virtual uint64 bytes_received() const /*override*/;
 
+    // vIndex: 20
     virtual uint64 bytes_send_buffer() const /*override*/;
 
+    // vIndex: 25
     virtual bool Send(::webrtc::DataBuffer const& buffer) /*override*/;
 
+    // vIndex: 26
     virtual void
     SendAsync(::webrtc::DataBuffer buffer, ::absl::AnyInvocable<void(::webrtc::RTCError) &&> on_complete) /*override*/;
 
+    // vIndex: 2
     virtual ~SctpDataChannel() /*override*/;
     // NOLINTEND
 
@@ -352,8 +380,6 @@ public:
     MCNAPI bool $Send(::webrtc::DataBuffer const& buffer);
 
     MCNAPI void $SendAsync(::webrtc::DataBuffer buffer, ::absl::AnyInvocable<void(::webrtc::RTCError) &&> on_complete);
-
-
     // NOLINTEND
 
 public:

@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/FloatRange.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
 // auto generated forward declare list
@@ -13,36 +15,35 @@ class TimerActorFlagBaseGoal;
 
 class TimerActorFlagBaseDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>   mUnk76f887;
-    ::ll::UntypedStorage<4, 8>   mUnkfe75c9;
-    ::ll::UntypedStorage<8, 104> mUnk4ebed7;
-    ::ll::UntypedStorage<8, 104> mUnk8570b2;
-    // NOLINTEND
+    // TimerActorFlagBaseDefinition inner types define
+    using self = ::TimerActorFlagBaseDefinition;
 
 public:
-    // prevent constructor by default
-    TimerActorFlagBaseDefinition& operator=(TimerActorFlagBaseDefinition const&);
-    TimerActorFlagBaseDefinition(TimerActorFlagBaseDefinition const&);
-    TimerActorFlagBaseDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 8, ::FloatRange>               mDurationRangeSeconds;
+    ::ll::TypedStorage<4, 8, ::FloatRange>               mCooldownRangeSeconds;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnStartEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnEndEvent;
+    // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TimerActorFlagBaseDefinition() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void initialize(::EntityContext& entity, ::TimerActorFlagBaseGoal& goal) const;
+    MCAPI void initialize(::EntityContext& entity, ::TimerActorFlagBaseGoal& goal) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

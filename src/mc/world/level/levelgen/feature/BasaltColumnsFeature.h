@@ -16,23 +16,23 @@ class BasaltColumnsFeature : public ::Feature {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
+    // vIndex: 0
     virtual ~BasaltColumnsFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _placeColumnCluster(::BlockSource& region, ::BlockPos origin, int columnHeight, int reach) const;
+    MCAPI void _placeColumnCluster(::BlockSource& region, ::BlockPos origin, int columnHeight, int reach) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

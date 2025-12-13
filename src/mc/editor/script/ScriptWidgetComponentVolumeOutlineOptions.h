@@ -41,9 +41,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void>
     validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptWidgetComponentVolumeOutlineOptions() /*override*/;
     // NOLINTEND
 
@@ -57,10 +59,10 @@ public:
     ScriptWidgetComponentVolumeOutlineOptions(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&&);
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions const&);
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&&);
     // NOLINTEND
 
 public:
@@ -116,8 +118,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void>
     $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
-
-
     // NOLINTEND
 
 public:

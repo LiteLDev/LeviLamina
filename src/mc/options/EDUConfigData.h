@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/options/EduConfigPreset.h"
-
-// auto generated forward declare list
-// clang-format off
-struct DemoConfig;
-struct ServicePacksConfig;
-namespace Json { class Value; }
-// clang-format on
-
 struct EDUConfigData {
 public:
     // member variables
@@ -34,44 +24,6 @@ public:
 public:
     // prevent constructor by default
     EDUConfigData& operator=(EDUConfigData const&);
+    EDUConfigData(EDUConfigData const&);
     EDUConfigData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C EDUConfigData(::EDUConfigData&&);
-
-    MCNAPI_C EDUConfigData(::EDUConfigData const&);
-
-    MCNAPI_C explicit EDUConfigData(::Json::Value const& config);
-
-    MCNAPI_C ~EDUConfigData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::optional<::DemoConfig>
-    _parseDemoConfig(::Json::Value const& config, ::EduConfigPreset eduPreset);
-
-    MCNAPI_C static ::EduConfigPreset _parseEduPreset(::Json::Value const& config);
-
-    MCNAPI_C static ::std::optional<::ServicePacksConfig> parseServicePacks(::Json::Value const& config);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::EDUConfigData&&);
-
-    MCNAPI_C void* $ctor(::EDUConfigData const&);
-
-    MCNAPI_C void* $ctor(::Json::Value const& config);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

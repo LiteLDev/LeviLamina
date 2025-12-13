@@ -34,18 +34,6 @@ public:
     // clang-format on
 
     // SpawnPlacements inner types define
-    struct EntityRecord {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, ::br::spawn::HeightmapToken>            mHeightmap;
-        ::ll::TypedStorage<2, 2, ::br::spawn::PlacementTypeToken>        mPlacement;
-        ::ll::TypedStorage<2, 2, ::br::spawn::EntityPredicateToken>      mEntity;
-        ::ll::TypedStorage<2, 2, ::br::spawn::ObstructionPredicateToken> mObstruction;
-        ::ll::TypedStorage<2, 2, ::br::spawn::FinalizeMobToken>          mFinalizeMob;
-        // NOLINTEND
-    };
-
     class PlacementRecord {
     public:
         // member variables
@@ -59,6 +47,18 @@ public:
         PlacementRecord& operator=(PlacementRecord const&);
         PlacementRecord(PlacementRecord const&);
         PlacementRecord();
+    };
+
+    struct EntityRecord {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, ::br::spawn::HeightmapToken>            mHeightmap;
+        ::ll::TypedStorage<2, 2, ::br::spawn::PlacementTypeToken>        mPlacement;
+        ::ll::TypedStorage<2, 2, ::br::spawn::EntityPredicateToken>      mEntity;
+        ::ll::TypedStorage<2, 2, ::br::spawn::ObstructionPredicateToken> mObstruction;
+        ::ll::TypedStorage<2, 2, ::br::spawn::FinalizeMobToken>          mFinalizeMob;
+        // NOLINTEND
     };
 
 public:

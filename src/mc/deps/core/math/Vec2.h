@@ -13,8 +13,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::Vec2 const& LOWEST();
-
     MCAPI static ::Vec2 const& MAX();
 
     MCAPI static ::Vec2 const& MIN();

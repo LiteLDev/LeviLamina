@@ -14,32 +14,22 @@ class CheckReceiptDetailsWindowsOneStore : public ::CheckReceiptDetails {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual char const* getPath() const /*override*/;
 
+    // vIndex: 2
     virtual ::Json::Value toPostBody() const /*override*/;
 
+    // vIndex: 3
     virtual void fromJsonResponse(::Json::Value const&) /*override*/;
 
+    // vIndex: 0
     virtual ~CheckReceiptDetailsWindowsOneStore() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI char const* $getPath() const;
 
-    MCNAPI ::Json::Value $toPostBody() const;
-
-    MCNAPI void $fromJsonResponse(::Json::Value const&);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

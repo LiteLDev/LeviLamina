@@ -17,31 +17,33 @@ class PillagerOutpostStart : public ::StructureStart {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
+    // vIndex: 3
     virtual int getMaxYSpawnOffset() const /*override*/;
 
+    // vIndex: 4
     virtual ::std::string_view getStructureName() const /*override*/;
 
+    // vIndex: 0
     virtual ~PillagerOutpostStart() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void createOutpost(::Dimension& dim, ::Random& random, int x, int z);
+    MCAPI void createOutpost(::Dimension& dim, ::Random& random, int x, int z);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI int $getMaxYSpawnOffset() const;
+    MCAPI int $getMaxYSpawnOffset() const;
 
-    MCNAPI ::std::string_view $getStructureName() const;
-
-
+    MCAPI ::std::string_view $getStructureName() const;
     // NOLINTEND
 
 public:

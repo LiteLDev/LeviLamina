@@ -35,40 +35,56 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 20
     virtual int getContainerSize() const /*override*/;
 
+    // vIndex: 31
     virtual ::Container* getContainer() /*override*/;
 
+    // vIndex: 30
     virtual ::Container const* getContainer() const /*override*/;
 
+    // vIndex: 7
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
+    // vIndex: 12
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
+    // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
+    // vIndex: 25
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 22
     virtual void startOpen(::Actor& actor) /*override*/;
 
+    // vIndex: 23
     virtual void stopOpen(::Actor& actor) /*override*/;
 
+    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
+    // vIndex: 12
     virtual void onMove() /*override*/;
 
+    // vIndex: 2
     virtual void serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
+    // vIndex: 0
     virtual ~DispenserBlockActor() /*override*/ = default;
     // NOLINTEND
 
@@ -126,8 +142,6 @@ public:
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
-
-
     // NOLINTEND
 
 public:

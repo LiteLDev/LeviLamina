@@ -16,9 +16,11 @@ class GlowstoneBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 59
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~GlowstoneBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -26,8 +28,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
-
-
     // NOLINTEND
 
 public:

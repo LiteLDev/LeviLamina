@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_21_40 { struct AmbientSoundsClientBiomeJsonComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -78,16 +77,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
 
+    // vIndex: 0
     virtual ~AmbientSoundsClientBiomeJsonComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&&);
-
     MCNAPI ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&
     operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&&);
     // NOLINTEND
@@ -96,9 +95,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCNAPI_C static ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent
-    upgrade(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent const& oldComponent);
     // NOLINTEND
 
 public:
@@ -107,12 +103,6 @@ public:
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&&);
     // NOLINTEND
 
 public:
@@ -125,8 +115,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::ClientBiomeComponentVersion $getType() const;
-
-
     // NOLINTEND
 
 public:

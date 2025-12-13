@@ -30,10 +30,10 @@ public:
     MCNAPI ScriptBlockEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
 
     MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
-    operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&&);
+    operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
 
     MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
-    operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
+    operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&&);
 
     MCNAPI void process();
 

@@ -32,12 +32,16 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ::webrtc::AudioMixer::Source::AudioFrameInfo GetAudioFrameWithInfo(int, ::webrtc::AudioFrame*) = 0;
 
+        // vIndex: 1
         virtual int Ssrc() const = 0;
 
+        // vIndex: 2
         virtual int PreferredSampleRate() const = 0;
 
+        // vIndex: 3
         virtual ~Source() = default;
         // NOLINTEND
 
@@ -51,12 +55,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual bool AddSource(::webrtc::AudioMixer::Source*) = 0;
 
+    // vIndex: 4
     virtual void RemoveSource(::webrtc::AudioMixer::Source*) = 0;
 
+    // vIndex: 5
     virtual void Mix(uint64, ::webrtc::AudioFrame*) = 0;
 
+    // vIndex: 2
     virtual ~AudioMixer() /*override*/ = default;
     // NOLINTEND
 

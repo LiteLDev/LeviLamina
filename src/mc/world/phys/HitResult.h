@@ -42,8 +42,6 @@ public:
 
     MCAPI HitResult(::HitResult const&);
 
-    MCAPI_C HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
-
     MCAPI HitResult(
         ::Vec3 const& startPos,
         ::Vec3 const& rayDir,
@@ -58,8 +56,6 @@ public:
 
     MCAPI ::HitResult& operator=(::HitResult const&);
 
-    MCAPI_C void resetHitEntity();
-
     MCAPI ~HitResult();
     // NOLINTEND
 
@@ -72,8 +68,6 @@ public:
 
     MCAPI void* $ctor(::HitResult const&);
 
-    MCAPI_C void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
-
     MCAPI void*
     $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos, ::AABB const& entityAABB);
     // NOLINTEND
@@ -81,6 +75,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

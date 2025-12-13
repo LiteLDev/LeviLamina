@@ -24,26 +24,37 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PacketSender() /*override*/ = default;
 
+    // vIndex: 1
     virtual bool isInitialized() const = 0;
 
+    // vIndex: 2
     virtual void send(::Packet&) = 0;
 
+    // vIndex: 3
     virtual void sendTo(::NetworkIdentifier const&, ::SubClientId, ::Packet&) = 0;
 
+    // vIndex: 4
     virtual void sendToServer(::Packet&) = 0;
 
+    // vIndex: 6
     virtual void sendToClient(::UserEntityIdentifierComponent const*, ::Packet const&) = 0;
 
+    // vIndex: 5
     virtual void sendToClient(::NetworkIdentifier const&, ::Packet const&, ::SubClientId) = 0;
 
+    // vIndex: 7
     virtual void sendToClients(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&) = 0;
 
+    // vIndex: 9
     virtual void sendBroadcast(::Packet const&) = 0;
 
+    // vIndex: 8
     virtual void sendBroadcast(::NetworkIdentifier const&, ::SubClientId, ::Packet const&) = 0;
 
+    // vIndex: 10
     virtual void flush(::NetworkIdentifier const&, ::std::function<void()>&&) = 0;
     // NOLINTEND
 

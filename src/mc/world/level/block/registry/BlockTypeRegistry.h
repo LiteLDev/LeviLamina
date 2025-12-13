@@ -20,9 +20,7 @@ class BlockTypeRegistryModificationsLock;
 class BlockTypeRegistryRWLock;
 class BlockTypeRegistryReadLock;
 class Experiments;
-class LinkedAssetValidator;
 class ServerScriptManager;
-struct BlockComponentFinalizerForRendererContext;
 namespace VoxelShapes { class VoxelShapeRegistry; }
 // clang-format on
 
@@ -37,10 +35,9 @@ public:
     // clang-format on
 
     // BlockTypeRegistry inner types define
-    enum class LookupByNameImplResolve : int {
-        BlockType = 0,
-        Block     = 1,
-    };
+    using BlockLookupMap = ::std::map<::HashedString, ::SharedPtr<::BlockType>>;
+
+    using BlockAliasLookupMap = ::std::unordered_map<::HashedString, ::HashedString>;
 
     struct BlockComplexAliasBlockState {
     public:
@@ -62,6 +59,8 @@ public:
         MCFOLD void $dtor();
         // NOLINTEND
     };
+
+    using BlockComplexAliasCallback = ::std::function<::Block const*(int)>;
 
     class BlockComplexAliasContent {
     public:
@@ -96,19 +95,7 @@ public:
         // NOLINTEND
     };
 
-    struct DirectAccessBlocks {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::BlockType const&> mAirBlock;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DirectAccessBlocks& operator=(DirectAccessBlocks const&);
-        DirectAccessBlocks(DirectAccessBlocks const&);
-        DirectAccessBlocks();
-    };
+    using BlockComplexAliasLookupMap = ::entt::dense_map<::HashedString, ::BlockTypeRegistry::BlockComplexAliasContent>;
 
     struct LookupByNameImplReturnType {
     public:
@@ -143,12 +130,6 @@ public:
         // NOLINTEND
     };
 
-    using BlockAliasLookupMap = ::std::unordered_map<::HashedString, ::HashedString>;
-
-    using BlockComplexAliasCallback = ::std::function<::Block const*(int)>;
-
-    using BlockComplexAliasLookupMap = ::entt::dense_map<::HashedString, ::BlockTypeRegistry::BlockComplexAliasContent>;
-
     using BlockComplexAliasPostSplitBlockNames = ::std::vector<::std::reference_wrapper<::HashedString const>>;
 
     using BlockComplexAliasPostSplitBlockNamesList =
@@ -156,9 +137,26 @@ public:
 
     using BlockComplexAliasPostSplitBlockNamesLookupMap = ::entt::dense_map<uint64, uint64>;
 
-    using BlockLookupMap = ::std::map<::HashedString, ::SharedPtr<::BlockType>>;
-
     using BlockNameHashToHashedStringMap = ::entt::dense_map<uint64, ::HashedString>;
+
+    struct DirectAccessBlocks {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::BlockType const&> mAirBlock;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DirectAccessBlocks& operator=(DirectAccessBlocks const&);
+        DirectAccessBlocks(DirectAccessBlocks const&);
+        DirectAccessBlocks();
+    };
+
+    enum class LookupByNameImplResolve : int {
+        BlockType = 0,
+        Block     = 1,
+    };
 
 public:
     // member variables
@@ -193,23 +191,15 @@ public:
         bool                                         logNotFound
     ) const;
 
-    MCAPI_C void
-    addBlocksToValidator(::LinkedAssetValidator& validator, ::BaseGameVersion const& baseGameVersion) const;
-
     MCAPI void checkBlockPermutationCap() const;
 
     MCAPI uint64 computeBlockTypeRegistryChecksum(::BaseGameVersion const& worldBaseGameVersion) const;
 
     MCAPI void finalizeBlockComponentStorage();
 
-    MCAPI_C void
-    finalizeBlockComponentStorageForRendering(::BlockComponentFinalizerForRendererContext& finalizerContext);
-
     MCAPI void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
 
-    MCFOLD_C void forEachBlockDEPRECATED(::brstd::function_ref<bool(::BlockType&)> callback);
-
-    MCFOLD void forEachBlockType(::brstd::function_ref<bool(::BlockType const&)> callback) const;
+    MCAPI void forEachBlockType(::brstd::function_ref<bool(::BlockType const&)> callback) const;
 
     MCAPI ::HashedString const& getBlockNameFromNameHash(uint64 hash) const;
 
@@ -220,14 +210,9 @@ public:
 
     MCAPI ::BlockTypeRegistry::DirectAccessBlocks const& getDirectAccessBlocks() const;
 
-    MCAPI_C int getStartVariantForComplexAliasBlock(::HashedString const& blockName) const;
-
     MCAPI void initHardCodedBlockComponents(::Experiments const& experiments);
 
     MCAPI bool isComplexAliasBlock(::HashedString const& blockName) const;
-
-    MCAPI_C bool
-    isExpectFlattenedInBlocksJson(::HashedString const& blockName, ::SemVersion const& currentVersion) const;
 
     MCAPI ::WeakPtr<::BlockType> lookupByName(::HashedString const& name, bool logNotFound) const;
 

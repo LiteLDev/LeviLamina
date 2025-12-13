@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Input {
 
 class KeyBinding {
@@ -23,12 +18,6 @@ public:
     KeyBinding& operator=(KeyBinding const&);
     KeyBinding(KeyBinding const&);
     KeyBinding();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
 };
 
 } // namespace Editor::Input

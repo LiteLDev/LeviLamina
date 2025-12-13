@@ -29,16 +29,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::leveldb::Status NewSequentialFile(::std::string const& f, ::leveldb::SequentialFile** r) /*override*/;
 
+    // vIndex: 2
     virtual ::leveldb::Status NewRandomAccessFile(::std::string const& f, ::leveldb::RandomAccessFile** r) /*override*/;
 
+    // vIndex: 3
     virtual ::leveldb::Status NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r) /*override*/;
 
+    // vIndex: 7
     virtual ::leveldb::Status RemoveFile(::std::string const& fname) /*override*/;
 
+    // vIndex: 13
     virtual ::leveldb::Status RenameFile(::std::string const& from, ::std::string const& to) /*override*/;
 
+    // vIndex: 0
     virtual ~EncryptedProxyEnv() /*override*/ = default;
     // NOLINTEND
 
@@ -76,8 +82,6 @@ public:
     MCNAPI ::leveldb::Status $RemoveFile(::std::string const& fname);
 
     MCNAPI ::leveldb::Status $RenameFile(::std::string const& from, ::std::string const& to);
-
-
     // NOLINTEND
 
 public:

@@ -16,12 +16,12 @@ namespace BiomeChunkVolume { struct BiomeSamplesContainer; }
 namespace BiomeChunkVolume {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::vector<bool> calculateBlendingNeeds(::BiomeChunkVolume::BiomeSamplesContainer const& biomeData);
+MCAPI ::std::vector<bool> calculateBlendingNeeds(::BiomeChunkVolume::BiomeSamplesContainer const& biomeData);
 
-MCNAPI ::std::vector<::Vec3> const
+MCAPI ::std::vector<::Vec3> const
 calculateVoronoiOffsets(uint levelSeed, ::BlockPos bufferWorldOrigin, int bufferSizeXZ, int bufferSizeY);
 
-MCNAPI ::ClientBlockPipeline::VolumeOf<::Biome const*> makeBiomeVolumeForChunk(
+MCAPI ::ClientBlockPipeline::VolumeOf<::Biome const*> makeBiomeVolumeForChunk(
     ::BiomeChunkVolume::BiomeSamplesContainer const& biomeData,
     short                                            chunkHeight,
     ::BlockPos                                       chunkMin,

@@ -22,43 +22,53 @@ class Boat : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc0f659;
-    ::ll::UntypedStorage<4, 4> mUnk93e40b;
-    ::ll::UntypedStorage<4, 4> mUnk700165;
+    ::ll::TypedStorage<4, 4, float> mBubbleMultiplier;
+    ::ll::TypedStorage<4, 4, float> mBubbleAngle;
+    ::ll::TypedStorage<4, 4, float> mBubbleAngleOld;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Boat& operator=(Boat const&);
-    Boat(Boat const&);
     Boat();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
+    // vIndex: 138
     virtual void destroy(::Actor* source);
 
+    // vIndex: 24
     virtual void normalTick() /*override*/;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 29
     virtual ::std::string getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const
         /*override*/;
 
+    // vIndex: 94
     virtual bool canAddPassenger(::Actor& passenger) const /*override*/;
 
+    // vIndex: 91
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
+    // vIndex: 115
     virtual float getPassengerYRotation(::Actor const& passenger) const /*override*/;
 
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
 
+    // vIndex: 8
     virtual ~Boat() /*override*/ = default;
     // NOLINTEND
 
@@ -70,8 +80,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI_C ::std::string getExitText(bool isPocket) const;
 
     MCFOLD uchar getWoodID() const;
     // NOLINTEND
@@ -110,8 +118,6 @@ public:
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
-
-
     // NOLINTEND
 
 public:

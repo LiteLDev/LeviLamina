@@ -27,10 +27,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool isServerAuthBlockBreakingEnabled() const /*override*/;
 
+    // vIndex: 2
     virtual bool destroyBlock(::BlockPos const& pos, uchar face) /*override*/;
 
+    // vIndex: 0
     virtual ~LegacyPlayerTransactionSubject() /*override*/ = default;
     // NOLINTEND
 
@@ -40,8 +43,6 @@ public:
     MCAPI bool $isServerAuthBlockBreakingEnabled() const;
 
     MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
-
-
     // NOLINTEND
 
 public:

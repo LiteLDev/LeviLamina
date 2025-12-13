@@ -6,10 +6,10 @@ class TickingQueue {
 public:
     // TickingQueue inner types declare
     // clang-format off
-    class Stage;
     class OneshotStage;
     class PollingStage;
     class SleepStage;
+    class Stage;
     class WaitForCallbackStage;
     class WaitForSignalStage;
     // clang-format on
@@ -31,10 +31,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~Stage() = default;
 
+        // vIndex: 1
         virtual void init() = 0;
 
+        // vIndex: 2
         virtual bool tick() = 0;
         // NOLINTEND
 
@@ -61,10 +64,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 1
         virtual void init() /*override*/;
 
+        // vIndex: 2
         virtual bool tick() /*override*/;
 
+        // vIndex: 0
         virtual ~OneshotStage() /*override*/ = default;
         // NOLINTEND
 
@@ -92,41 +98,14 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 1
         virtual void init() /*override*/;
 
+        // vIndex: 2
         virtual bool tick() /*override*/;
 
+        // vIndex: 0
         virtual ~PollingStage() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-    };
-
-    class SleepStage : public ::TickingQueue::Stage {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnkbe3fd7;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SleepStage& operator=(SleepStage const&);
-        SleepStage(SleepStage const&);
-        SleepStage();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual void init() /*override*/;
-
-        virtual bool tick() /*override*/;
-
-        virtual ~SleepStage() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -153,10 +132,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 1
         virtual void init() /*override*/;
 
+        // vIndex: 2
         virtual bool tick() /*override*/;
 
+        // vIndex: 0
         virtual ~WaitForCallbackStage() /*override*/ = default;
         // NOLINTEND
 
@@ -183,11 +165,47 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 1
         virtual void init() /*override*/;
 
+        // vIndex: 2
         virtual bool tick() /*override*/;
 
+        // vIndex: 0
         virtual ~WaitForSignalStage() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
+    };
+
+    class SleepStage : public ::TickingQueue::Stage {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 80> mUnkbe3fd7;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SleepStage& operator=(SleepStage const&);
+        SleepStage(SleepStage const&);
+        SleepStage();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 1
+        virtual void init() /*override*/;
+
+        // vIndex: 2
+        virtual bool tick() /*override*/;
+
+        // vIndex: 0
+        virtual ~SleepStage() /*override*/ = default;
         // NOLINTEND
 
     public:

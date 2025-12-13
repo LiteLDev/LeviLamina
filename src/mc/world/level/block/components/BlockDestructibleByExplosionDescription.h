@@ -14,61 +14,61 @@ struct BlockDestructibleByExplosionDescription : public ::BlockComponentDescript
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkae8417;
+    ::ll::TypedStorage<4, 4, float> mExplosionResistance;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockDestructibleByExplosionDescription& operator=(BlockDestructibleByExplosionDescription const&);
-    BlockDestructibleByExplosionDescription(BlockDestructibleByExplosionDescription const&);
     BlockDestructibleByExplosionDescription();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
+    // vIndex: 2
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    // vIndex: 4
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    // vIndex: 0
     virtual ~BlockDestructibleByExplosionDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockDestructibleByExplosionDescription(float explosionResistance);
+    MCAPI explicit BlockDestructibleByExplosionDescription(float explosionResistance);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(float explosionResistance);
+    MCAPI void* $ctor(float explosionResistance);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
-
-
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
     // NOLINTEND
 
 public:

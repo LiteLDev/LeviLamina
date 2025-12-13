@@ -3,12 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/world/actor/player/AbilitiesIndex.h"
-
-// auto generated forward declare list
-// clang-format off
-class Abilities;
-// clang-format on
 
 struct RequestPermissionsPacketPayload {
 public:
@@ -28,22 +25,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd654a8;
-    ::ll::UntypedStorage<1, 1> mUnkd7c3d4;
-    ::ll::UntypedStorage<2, 2> mUnkc5f44e;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>         mTargetPlayerId;
+    ::ll::TypedStorage<1, 1, ::PlayerPermissionLevel> mPlayerPermissions;
+    ::ll::TypedStorage<2, 2, ushort>                  mCustomPermissionFlags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RequestPermissionsPacketPayload& operator=(RequestPermissionsPacketPayload const&);
-    RequestPermissionsPacketPayload(RequestPermissionsPacketPayload const&);
-    RequestPermissionsPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _setFromAbilities(::Abilities const& abilities);
-
-    MCNAPI bool getCustomAbilityValue(::AbilitiesIndex ability) const;
+    MCAPI bool getCustomAbilityValue(::AbilitiesIndex ability) const;
     // NOLINTEND
 };

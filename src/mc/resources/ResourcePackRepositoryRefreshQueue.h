@@ -21,24 +21,6 @@ public:
     // clang-format on
 
     // ResourcePackRepositoryRefreshQueue inner types define
-    struct PreviousTasks {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk29b357;
-        ::ll::UntypedStorage<1, 1>  mUnk3395ad;
-        ::ll::UntypedStorage<1, 1>  mUnkd0e979;
-        ::ll::UntypedStorage<1, 1>  mUnkb4cbcb;
-        ::ll::UntypedStorage<1, 1>  mUnk79b162;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PreviousTasks& operator=(PreviousTasks const&);
-        PreviousTasks(PreviousTasks const&);
-        PreviousTasks();
-    };
-
     struct RefreshResult {
     public:
         // member variables
@@ -64,6 +46,24 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    };
+
+    struct PreviousTasks {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk29b357;
+        ::ll::UntypedStorage<1, 1>  mUnk3395ad;
+        ::ll::UntypedStorage<1, 1>  mUnkd0e979;
+        ::ll::UntypedStorage<1, 1>  mUnkb4cbcb;
+        ::ll::UntypedStorage<1, 1>  mUnk79b162;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PreviousTasks& operator=(PreviousTasks const&);
+        PreviousTasks(PreviousTasks const&);
+        PreviousTasks();
     };
 
 public:

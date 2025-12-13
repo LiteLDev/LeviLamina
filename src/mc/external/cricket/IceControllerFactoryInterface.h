@@ -14,8 +14,10 @@ class IceControllerFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IceControllerFactoryInterface() = default;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::cricket::IceControllerInterface> Create(::cricket::IceControllerFactoryArgs const&) = 0;
     // NOLINTEND
 

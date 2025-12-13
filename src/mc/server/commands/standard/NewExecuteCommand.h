@@ -39,6 +39,22 @@ public:
     class ExecuteChainedSubcommand : public ::CommandChainedSubcommand {
     public:
         // ExecuteChainedSubcommand inner types define
+        enum class Subcommand : int {
+            None       = 0,
+            As         = 1,
+            At         = 2,
+            In         = 3,
+            Positioned = 4,
+            Rotated    = 5,
+            Facing     = 6,
+            Entity     = 7,
+            Align      = 8,
+            Anchored   = 9,
+            If         = 10,
+            Unless     = 11,
+            Run        = 12,
+        };
+
         enum class ConditionSubcommand : int {
             None   = 0,
             Block  = 1,
@@ -57,27 +73,13 @@ public:
             On  = 1,
         };
 
-        enum class Subcommand : int {
-            None       = 0,
-            As         = 1,
-            At         = 2,
-            In         = 3,
-            Positioned = 4,
-            Rotated    = 5,
-            Facing     = 6,
-            Entity     = 7,
-            Align      = 8,
-            Anchored   = 9,
-            If         = 10,
-            Unless     = 11,
-            Run        = 12,
-        };
-
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 1
         virtual ::std::string getCommandName() const /*override*/;
 
+        // vIndex: 0
         virtual ~ExecuteChainedSubcommand() /*override*/ = default;
         // NOLINTEND
 
@@ -160,8 +162,6 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI ::std::string $getCommandName() const;
-
-
         // NOLINTEND
 
     public:
@@ -205,8 +205,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
+    // vIndex: 0
     virtual ~NewExecuteCommand() /*override*/;
     // NOLINTEND
 
@@ -263,8 +265,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-
     // NOLINTEND
 
 public:

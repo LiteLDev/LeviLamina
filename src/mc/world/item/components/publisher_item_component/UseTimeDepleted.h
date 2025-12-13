@@ -26,6 +26,7 @@ struct UseTimeDepleted : public ::ItemComponent,
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~UseTimeDepleted() /*override*/ = default;
     // NOLINTEND
 

@@ -39,22 +39,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SimpleSparseContainer() /*override*/ = default;
 
+    // vIndex: 7
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    // vIndex: 12
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
+    // vIndex: 22
     virtual void startOpen(::Actor& actor) /*override*/;
 
+    // vIndex: 23
     virtual void stopOpen(::Actor& actor) /*override*/;
 
+    // vIndex: 20
     virtual int getContainerSize() const /*override*/;
 
+    // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
+    // vIndex: 0
     virtual void containerContentChanged(int slot) /*override*/;
 
+    // vIndex: 2
     virtual void serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
@@ -91,7 +100,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI void $startOpen(::Actor& actor);
 
@@ -108,8 +117,6 @@ public:
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
-
-
     // NOLINTEND
 
 public:

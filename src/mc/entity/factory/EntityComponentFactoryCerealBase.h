@@ -5,14 +5,6 @@
 // auto generated inclusion list
 #include "mc/entity/factory/EntityComponentFactoryBase.h"
 
-// auto generated forward declare list
-// clang-format off
-class CompoundTag;
-class DefinitionInstanceGroup;
-class ICerealDefinitionSerializer;
-class MinEngineVersion;
-// clang-format on
-
 class EntityComponentFactoryCerealBase : public ::EntityComponentFactoryBase {
 public:
     // member variables
@@ -30,35 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~EntityComponentFactoryCerealBase() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~EntityComponentFactoryCerealBase() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void serializeComponentDefinitions(
-        ::DefinitionInstanceGroup& outputDefinitions,
-        ::CompoundTag const&       input,
-        ::MinEngineVersion const&  minEngineVersion
-    ) const;
-
-    MCNAPI_C ::ICerealDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

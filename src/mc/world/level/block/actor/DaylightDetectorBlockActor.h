@@ -14,17 +14,17 @@ class DaylightDetectorBlockActor : public ::BlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
+    // vIndex: 0
     virtual ~DaylightDetectorBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::BlockSource& region);
-
-
+    MCAPI void $tick(::BlockSource& region);
     // NOLINTEND
 
 public:

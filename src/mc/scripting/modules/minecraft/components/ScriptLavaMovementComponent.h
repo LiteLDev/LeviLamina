@@ -17,6 +17,7 @@ class ScriptLavaMovementComponent : public ::ScriptModuleMinecraft::AttributeScr
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptLavaMovementComponent() /*override*/ = default;
     // NOLINTEND
 

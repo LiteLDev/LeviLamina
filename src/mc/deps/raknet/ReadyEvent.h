@@ -20,8 +20,8 @@ class ReadyEvent : public ::RakNet::PluginInterface2 {
 public:
     // ReadyEvent inner types declare
     // clang-format off
-    struct RemoteSystem;
     struct ReadyEventNode;
+    struct RemoteSystem;
     // clang-format on
 
     // ReadyEvent inner types define
@@ -73,16 +73,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ReadyEvent() /*override*/ = default;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
+    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,
         ::RakNet::PI2_LostConnectionReason
     ) /*override*/;
 
+    // vIndex: 6
     virtual void OnRakPeerShutdown() /*override*/;
     // NOLINTEND
 

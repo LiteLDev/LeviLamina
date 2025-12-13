@@ -16,18 +16,6 @@ public:
     CredentialsRefreshSuccess& operator=(CredentialsRefreshSuccess const&);
     CredentialsRefreshSuccess(CredentialsRefreshSuccess const&);
     CredentialsRefreshSuccess();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~CredentialsRefreshSuccess();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace edu::auth

@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/DefinitionTrigger.h"
+#include "mc/world/item/ItemDescriptor.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -16,11 +18,11 @@ struct FoodItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactory
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk31717e;
-    ::ll::UntypedStorage<4, 4>  mUnkda2c2f;
-    ::ll::UntypedStorage<8, 16> mUnkd22262;
-    ::ll::UntypedStorage<1, 1>  mUnk82f616;
-    ::ll::UntypedStorage<8, 56> mUnk178e77;
+    ::ll::TypedStorage<4, 4, int>                  mNutrition;
+    ::ll::TypedStorage<4, 4, float>                mSaturationModifier;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor>    mUsingConvertsTo;
+    ::ll::TypedStorage<1, 1, bool>                 mCanAlwaysEat;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnConsume;
     // NOLINTEND
 
 public:
@@ -31,6 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FoodItemComponentLegacyFactoryData() /*override*/ = default;
     // NOLINTEND
 

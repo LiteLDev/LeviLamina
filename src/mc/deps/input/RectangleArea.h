@@ -17,10 +17,4 @@ public:
     RectangleArea& operator=(RectangleArea const&);
     RectangleArea(RectangleArea const&);
     RectangleArea();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C bool isOverlapping(::RectangleArea const& rect) const;
-    // NOLINTEND
 };

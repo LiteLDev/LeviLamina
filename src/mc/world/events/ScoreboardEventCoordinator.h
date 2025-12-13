@@ -14,13 +14,14 @@ class ScoreboardEventCoordinator : public ::EventCoordinator<::ScoreboardEventLi
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScoreboardEventCoordinator() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

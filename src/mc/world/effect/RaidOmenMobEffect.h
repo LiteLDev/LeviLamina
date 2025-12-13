@@ -15,10 +15,13 @@ class RaidOmenMobEffect : public ::MobEffect {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const /*override*/;
 
+    // vIndex: 3
     virtual void onEffectExpired(::Actor& target) const /*override*/;
 
+    // vIndex: 0
     virtual ~RaidOmenMobEffect() /*override*/ = default;
     // NOLINTEND
 
@@ -28,8 +31,6 @@ public:
     MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
     MCAPI void $onEffectExpired(::Actor& target) const;
-
-
     // NOLINTEND
 
 public:

@@ -13,8 +13,6 @@ public:
     // clang-format on
 
     // SequenceLock inner types define
-    class LockAlgorithm {};
-
     class SequenceId {
     public:
         // member variables
@@ -28,6 +26,8 @@ public:
         SequenceId(SequenceId const&);
         SequenceId();
     };
+
+    class LockAlgorithm {};
 
 public:
     // member variables

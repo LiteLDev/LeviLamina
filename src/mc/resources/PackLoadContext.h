@@ -42,28 +42,40 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::MinEngineVersion const& getMinEngineVersion() const /*override*/;
 
+    // vIndex: 2
     virtual ::MolangVersion getMolangVersion() const /*override*/;
 
+    // vIndex: 3
     virtual bool isBaseGamePack() const /*override*/;
 
+    // vIndex: 4
     virtual bool isTrustedPack() const /*override*/;
 
+    // vIndex: 5
     virtual ::mce::UUID const& getPackUUID() const /*override*/;
 
+    // vIndex: 6
     virtual ::Experiments const& getExperiments() const /*override*/;
 
+    // vIndex: 7
     virtual ::PackType getPackType() const /*override*/;
 
+    // vIndex: 8
     virtual ::PackLoadStorage& getStorage() /*override*/;
 
+    // vIndex: 9
     virtual ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const getLinkedAssetValidator() const /*override*/;
 
+    // vIndex: 10
     virtual void setMinEngineVersion(::MinEngineVersion const& minEngineVersion) /*override*/;
 
+    // vIndex: 11
     virtual ::BedrockLoadContext toBedrockLoadContext() const /*override*/;
 
+    // vIndex: 0
     virtual ~PackLoadContext() /*override*/;
     // NOLINTEND
 
@@ -123,8 +135,6 @@ public:
     MCNAPI void $setMinEngineVersion(::MinEngineVersion const& minEngineVersion);
 
     MCNAPI ::BedrockLoadContext $toBedrockLoadContext() const;
-
-
     // NOLINTEND
 
 public:

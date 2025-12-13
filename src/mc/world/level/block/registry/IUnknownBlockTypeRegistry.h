@@ -15,8 +15,10 @@ class IUnknownBlockTypeRegistry : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IUnknownBlockTypeRegistry() = 0;
 
+    // vIndex: 1
     virtual ::Block const& getUnknownBlock(::CompoundTag const&) = 0;
     // NOLINTEND
 

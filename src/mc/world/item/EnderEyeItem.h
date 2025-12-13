@@ -16,10 +16,13 @@ class EnderEyeItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
+    // vIndex: 20
     virtual bool isThrowable() const /*override*/;
 
+    // vIndex: 0
     virtual ~EnderEyeItem() /*override*/ = default;
     // NOLINTEND
 
@@ -35,8 +38,6 @@ public:
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCFOLD bool $isThrowable() const;
-
-
     // NOLINTEND
 
 public:

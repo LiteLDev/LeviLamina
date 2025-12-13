@@ -29,8 +29,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptDataDrivenActorTriggerEventFilter() /*override*/;
 
+    // vIndex: 1
     virtual bool
     shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData) /*override*/;
     // NOLINTEND
@@ -70,8 +72,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData);
-
-
     // NOLINTEND
 
 public:

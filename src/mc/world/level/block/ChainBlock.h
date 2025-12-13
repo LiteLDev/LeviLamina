@@ -16,10 +16,13 @@ class ChainBlock : public ::RotatedPillarBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
 
+    // vIndex: 0
     virtual ~ChainBlock() /*override*/;
     // NOLINTEND
 
@@ -35,8 +38,6 @@ public:
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
-
-
     // NOLINTEND
 
 public:

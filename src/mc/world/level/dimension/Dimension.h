@@ -7,7 +7,6 @@
 #include "mc/common/BrightnessPair.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/WeakRef.h"
@@ -72,7 +71,6 @@ struct BiomeIdType;
 struct DimensionArguments;
 struct NetworkIdentifierWithSubId;
 struct UpdateSubChunkBlocksChangedInfo;
-struct UpdateSubChunkNetworkBlockInfo;
 namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
 // clang-format on
@@ -91,23 +89,6 @@ public:
     // clang-format on
 
     // Dimension inner types define
-    struct ChaoticDirectionalLightControls {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkcec13a;
-        ::ll::UntypedStorage<4, 4> mUnkcf25a7;
-        ::ll::UntypedStorage<4, 4> mUnkaf1fb7;
-        ::ll::UntypedStorage<4, 4> mUnkb93f34;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChaoticDirectionalLightControls& operator=(ChaoticDirectionalLightControls const&);
-        ChaoticDirectionalLightControls(ChaoticDirectionalLightControls const&);
-        ChaoticDirectionalLightControls();
-    };
-
     struct DirectionalLightState {
     public:
         // member variables
@@ -125,11 +106,28 @@ public:
         DirectionalLightState();
     };
 
+    struct ChaoticDirectionalLightControls {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnkcec13a;
+        ::ll::UntypedStorage<4, 4> mUnkcf25a7;
+        ::ll::UntypedStorage<4, 4> mUnkaf1fb7;
+        ::ll::UntypedStorage<4, 4> mUnkb93f34;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ChaoticDirectionalLightControls& operator=(ChaoticDirectionalLightControls const&);
+        ChaoticDirectionalLightControls(ChaoticDirectionalLightControls const&);
+        ChaoticDirectionalLightControls();
+    };
+
+    using DirectionalLightControls = ::std::variant<::Dimension::ChaoticDirectionalLightControls>;
+
     using ActorTagList = ::std::vector<::std::unique_ptr<::CompoundTag>>;
 
     using ChunkPosToActorListMap = ::std::unordered_map<::ChunkPos, ::std::vector<::std::unique_ptr<::CompoundTag>>>;
-
-    using DirectionalLightControls = ::std::variant<::Dimension::ChaoticDirectionalLightControls>;
 
 public:
     // member variables
@@ -204,88 +202,126 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Dimension() /*override*/;
 
+    // vIndex: 14
     virtual void init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
+    // vIndex: 15
     virtual void tick();
 
+    // vIndex: 16
     virtual void tickRedstone();
 
+    // vIndex: 17
     virtual ::std::unique_ptr<::WorldGenerator> createGenerator(::br::worldgen::StructureSetRegistry const&) = 0;
 
+    // vIndex: 18
     virtual void upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&) = 0;
 
+    // vIndex: 19
     virtual void fixWallChunk(::ChunkSource&, ::LevelChunk&) = 0;
 
+    // vIndex: 6
     virtual void initializeWithLevelStorageManagerConnector(
         ::ILevelStorageManagerConnector& levelStorageManagerConnector
     ) /*override*/;
 
+    // vIndex: 20
     virtual bool levelChunkNeedsUpgrade(::LevelChunk const&) const = 0;
 
+    // vIndex: 1
     virtual bool isNaturalDimension() const /*override*/;
 
+    // vIndex: 21
     virtual bool isValidSpawn(int x, int z) const;
 
+    // vIndex: 22
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
+    // vIndex: 23
     virtual short getCloudHeight() const;
 
+    // vIndex: 24
     virtual ::BiomeIdType getDefaultBiomeId() const;
 
+    // vIndex: 25
     virtual bool mayRespawnViaBed() const;
 
+    // vIndex: 26
     virtual ::BlockPos getSpawnPos() const;
 
+    // vIndex: 27
     virtual int getSpawnYPosition() const;
 
+    // vIndex: 28
     virtual bool showSky() const;
 
+    // vIndex: 29
     virtual float getTimeOfDay(int time, float a) const;
 
+    // vIndex: 30
     virtual void
     setDimensionDirectionalLightControls(::std::variant<::Dimension::ChaoticDirectionalLightControls> const&);
 
+    // vIndex: 31
     virtual ::Dimension::DirectionalLightState getDimensionDirectionalLightSourceState(float a) const;
 
+    // vIndex: 2
     virtual ::DimensionType getDimensionId() const /*override*/;
 
+    // vIndex: 10
     virtual void forEachPlayer(::brstd::function_ref<bool(::Player&)> callback) const /*override*/;
 
+    // vIndex: 8
     virtual ::BiomeRegistry& getBiomeRegistry() /*override*/;
 
+    // vIndex: 7
     virtual ::BiomeRegistry const& getBiomeRegistry() const /*override*/;
 
+    // vIndex: 12
     virtual ::BlockSource& getBlockSourceFromMainChunkSource() const /*override*/;
 
+    // vIndex: 11
     virtual ::Actor* fetchEntity(::ActorUniqueID actorID, bool getRemoved) const /*override*/;
 
+    // vIndex: 20
     virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
+    // vIndex: 1
     virtual void deserialize(::CompoundTag const& tag) /*override*/;
 
+    // vIndex: 2
     virtual void serialize(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 32
     virtual void sendBroadcast(::Packet const& packet, ::Player* except);
 
+    // vIndex: 33
     virtual bool is2DPositionRelevantForPlayer(::BlockPos const& position, ::Player& player) const;
 
+    // vIndex: 13
     virtual void buildPlayersForPositionPacket(
         ::BlockPos const&                            position,
         ::Player const*                              except,
         ::std::vector<::NetworkIdentifierWithSubId>& result
     ) const /*override*/;
 
+    // vIndex: 3
     virtual void
     sendPacketForPosition(::BlockPos const& position, ::Packet const& packet, ::Player const* except) /*override*/;
 
+    // vIndex: 4
     virtual void sendPacketForEntity(::Actor const& actor, ::Packet const& packet, ::Player const* except) /*override*/;
 
+    // vIndex: 34
     virtual bool isActorRelevantForPlayer(::Player& player, ::Actor const& actor) const;
 
+    // vIndex: 8
     virtual void onBlockEvent(::BlockSource& source, int x, int y, int z, int b0, int b1) /*override*/;
 
+    // vIndex: 4
     virtual void onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              pos,
@@ -298,24 +334,34 @@ public:
         ::Actor*                       blockChangeSource
     ) /*override*/;
 
+    // vIndex: 24
     virtual void onLevelDestruction(::std::string const&) /*override*/;
 
+    // vIndex: 35
     virtual ::BaseLightTextureImageBuilder* getLightTextureImageBuilder() const;
 
+    // vIndex: 36
     virtual ::DimensionBrightnessRamp const& getBrightnessRamp() const;
 
+    // vIndex: 37
     virtual ::std::vector<::std::string> const getStructuresFromChunkRegistry(::Vec3 const& location) const;
 
+    // vIndex: 38
     virtual ::std::optional<::std::string> const getStructureFromStructureRegistry(::Vec3 const& location) const;
 
+    // vIndex: 39
     virtual void startLeaveGame();
 
+    // vIndex: 5
     virtual void flushLevelChunkGarbageCollector() /*override*/;
 
+    // vIndex: 40
     virtual ::std::unique_ptr<::ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
 
+    // vIndex: 41
     virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) = 0;
 
+    // vIndex: 42
     virtual ::std::unique_ptr<::ChunkSource>
         _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) = 0;
     // NOLINTEND
@@ -335,15 +381,9 @@ public:
 
     MCAPI void _completeEntityTransfer(::OwnerPtr<::EntityContext> entity);
 
-    MCAPI_C ::Bedrock::NonOwnerPointer<::ChunkSource> _getOrCreateClientServerMainChunkSource() const;
-
     MCAPI void _processEntityChunkTransfers();
 
-    MCAPI_C void _runChunkGenerationWatchdog();
-
     MCAPI void _sendBlocksChangedPackets();
-
-    MCAPI_C void _sendUpdateBlockPacket(::UpdateSubChunkNetworkBlockInfo const& info, uint const& layer);
 
     MCAPI void _tickEntityChunkMoves();
 
@@ -374,23 +414,13 @@ public:
 
     MCAPI float getMoonBrightness() const;
 
-    MCAPI_C int getMoonPhase() const;
-
     MCAPI ::Brightness getOldSkyDarken(float a);
-
-    MCAPI_C float getSkyDarken(float a) const;
-
-    MCAPI_C float getSunAngle(float a) const;
-
-    MCAPI_C float getTimeOfDay(float a) const;
 
     MCAPI bool isBrightOutside() const;
 
     MCAPI void neighborAwareChunkUpgrade(::ChunkSource& source, ::LevelChunk& levelChunk);
 
     MCAPI bool operator==(::Dimension const& rhs) const;
-
-    MCAPI_C void registerDisplayEntity(::WeakRef<::EntityContext> entityRef);
 
     MCAPI void removeActorByID(::ActorUniqueID const& id);
 
@@ -534,8 +564,6 @@ public:
     MCAPI void $flushLevelChunkGarbageCollector();
 
     MCAPI ::std::unique_ptr<::ChunkBuildOrderPolicyBase> $_createChunkBuildOrderPolicy();
-
-
     // NOLINTEND
 
 public:

@@ -11,9 +11,9 @@ public:
     struct Capabilities;
     struct OrderedStream;
     struct OutgoingStream;
+    struct Receive;
     struct Transmission;
     struct UnorderedStream;
-    struct Receive;
     // clang-format on
 
     // DcSctpSocketHandoverState inner types define
@@ -39,21 +39,6 @@ public:
         Capabilities& operator=(Capabilities const&);
         Capabilities(Capabilities const&);
         Capabilities();
-    };
-
-    struct OrderedStream {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk77295c;
-        ::ll::UntypedStorage<4, 4> mUnk9b0497;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OrderedStream& operator=(OrderedStream const&);
-        OrderedStream(OrderedStream const&);
-        OrderedStream();
     };
 
     struct OutgoingStream {
@@ -92,6 +77,21 @@ public:
         Transmission& operator=(Transmission const&);
         Transmission(Transmission const&);
         Transmission();
+    };
+
+    struct OrderedStream {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk77295c;
+        ::ll::UntypedStorage<4, 4> mUnk9b0497;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        OrderedStream& operator=(OrderedStream const&);
+        OrderedStream(OrderedStream const&);
+        OrderedStream();
     };
 
     struct UnorderedStream {

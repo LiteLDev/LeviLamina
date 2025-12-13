@@ -47,6 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void archiveAndUploadFileToRealmStorage(
         ::std::string const& uploadId,
         ::Core::Path const&  path,
@@ -54,9 +55,11 @@ public:
         ::std::string const& realmsGuid
     ) /*override*/;
 
+    // vIndex: 3
     virtual void
     uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex) /*override*/;
 
+    // vIndex: 0
     virtual ~ResourcePackFileUploadManager() /*override*/ = default;
     // NOLINTEND
 
@@ -119,8 +122,6 @@ public:
     );
 
     MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
-
-
     // NOLINTEND
 
 public:

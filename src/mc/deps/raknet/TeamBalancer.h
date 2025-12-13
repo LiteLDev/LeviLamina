@@ -30,22 +30,6 @@ public:
         FillInOrder  = 1,
     };
 
-    struct MyTeamMembers {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk12a3ab;
-        ::ll::UntypedStorage<1, 1> mUnkf3d3ae;
-        ::ll::UntypedStorage<1, 1> mUnk9d2edf;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MyTeamMembers& operator=(MyTeamMembers const&);
-        MyTeamMembers(MyTeamMembers const&);
-        MyTeamMembers();
-    };
-
     struct TeamMember {
     public:
         // member variables
@@ -61,6 +45,22 @@ public:
         TeamMember& operator=(TeamMember const&);
         TeamMember(TeamMember const&);
         TeamMember();
+    };
+
+    struct MyTeamMembers {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk12a3ab;
+        ::ll::UntypedStorage<1, 1> mUnkf3d3ae;
+        ::ll::UntypedStorage<1, 1> mUnk9d2edf;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MyTeamMembers& operator=(MyTeamMembers const&);
+        MyTeamMembers(MyTeamMembers const&);
+        MyTeamMembers();
     };
 
 public:
@@ -85,16 +85,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TeamBalancer() /*override*/ = default;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
+    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,
         ::RakNet::PI2_LostConnectionReason
     ) /*override*/;
 
+    // vIndex: 1
     virtual void OnAttach() /*override*/;
     // NOLINTEND
 

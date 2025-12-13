@@ -14,8 +14,10 @@ class SoulTorchBlock : public ::TorchBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 0
     virtual ~SoulTorchBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -23,8 +25,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-
     // NOLINTEND
 
 public:

@@ -28,14 +28,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::PackManifest const& getManifest() /*override*/;
 
+    // vIndex: 2
     virtual ::std::vector<::std::string> enumerateScripts(::std::string const& extension) /*override*/;
 
+    // vIndex: 3
     virtual ::std::optional<::std::string> loadScript(::std::string const& path) /*override*/;
 
+    // vIndex: 4
     virtual ::std::string removeRootFromPath(::std::string const& path) /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptPluginPackSource() /*override*/ = default;
     // NOLINTEND
 
@@ -55,8 +60,6 @@ public:
     MCNAPI ::std::optional<::std::string> $loadScript(::std::string const& path);
 
     MCNAPI ::std::string $removeRootFromPath(::std::string const& path);
-
-
     // NOLINTEND
 
 public:

@@ -25,21 +25,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool test(::Block const& block, ::IRandom& random) const /*override*/;
 
+    // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
     virtual ~RandomBlockStateMatch() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $test(::Block const& block, ::IRandom& random) const;
+    MCAPI bool $test(::Block const& block, ::IRandom& random) const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
-
-
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

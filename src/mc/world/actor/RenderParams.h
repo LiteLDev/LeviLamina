@@ -14,17 +14,17 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorRenderData;
 class AnimationComponent;
 class BaseActorRenderContext;
 class Block;
 class BlockSource;
+class DataDrivenModel;
 class IBlockWorldGenAPI;
 class ILevel;
 class ItemStackBase;
 class MolangVariableMap;
 namespace ParticleSystem { class ParticleEmitter; }
-class DataDrivenModel;
-struct ActorRenderData;
 // clang-format on
 
 class RenderParams {
@@ -39,14 +39,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk5467f0;
+        ::ll::TypedStorage<4, 4, uint> mIsChild;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Flags& operator=(Flags const&);
-        Flags(Flags const&);
-        Flags();
     };
 
 public:
@@ -78,17 +72,12 @@ public:
     ::ll::TypedStorage<4, 4, float>                               mCameraDistance;
     ::ll::TypedStorage<1, 1, ::ShadowContext>                     mShadowContext;
     ::ll::TypedStorage<4, 32, float[8]>                           mParams;
-#ifdef LL_PLAT_S
-    ::ll::TypedStorage<8, 88, ::MolangScriptArg> mThisValue;
-    ::ll::TypedStorage<8, 88, ::MolangScriptArg> mScratchValue;
-#else // LL_PLAT_C
-    ::ll::TypedStorage<8, 96, ::MolangScriptArg> mThisValue;
-    ::ll::TypedStorage<8, 96, ::MolangScriptArg> mScratchValue;
-#endif
-    ::ll::TypedStorage<4, 4, ::RenderParams::Flags> mFlags;
-    ::ll::TypedStorage<4, 12, ::Vec3>               mClickPos;
-    ::ll::TypedStorage<4, 4, ::AttachableSlotIndex> mSlotIndex;
-    ::ll::TypedStorage<1, 1, bool>                  mIsDitheringEnabled;
+    ::ll::TypedStorage<8, 88, ::MolangScriptArg>                  mThisValue;
+    ::ll::TypedStorage<8, 88, ::MolangScriptArg>                  mScratchValue;
+    ::ll::TypedStorage<4, 4, ::RenderParams::Flags>               mFlags;
+    ::ll::TypedStorage<4, 12, ::Vec3>                             mClickPos;
+    ::ll::TypedStorage<4, 4, ::AttachableSlotIndex>               mSlotIndex;
+    ::ll::TypedStorage<1, 1, bool>                                mIsDitheringEnabled;
     // NOLINTEND
 
 public:
@@ -113,9 +102,9 @@ public:
         bool                                 isDitheringEnabled
     );
 
-    MCAPI ::RenderParams& operator=(::RenderParams&&);
-
     MCAPI ::RenderParams& operator=(::RenderParams const&);
+
+    MCAPI ::RenderParams& operator=(::RenderParams&&);
 
     MCAPI ~RenderParams();
     // NOLINTEND

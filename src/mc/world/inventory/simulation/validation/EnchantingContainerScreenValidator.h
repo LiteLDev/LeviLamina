@@ -9,6 +9,7 @@ class EnchantingContainerScreenValidator : public ::ContainerScreenValidatorBase
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EnchantingContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

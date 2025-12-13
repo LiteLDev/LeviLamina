@@ -13,10 +13,13 @@ class FieldTrialListWrapper {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FieldTrialListWrapper() = default;
 
+    // vIndex: 1
     virtual void WriteElement(void*, int) = 0;
 
+    // vIndex: 2
     virtual ::webrtc::FieldTrialListBase* GetList() = 0;
     // NOLINTEND
 

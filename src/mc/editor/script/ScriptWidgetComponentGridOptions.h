@@ -36,9 +36,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void>
     validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptWidgetComponentGridOptions() /*override*/;
     // NOLINTEND
 
@@ -99,8 +101,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void>
     $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
-
-
     // NOLINTEND
 
 public:

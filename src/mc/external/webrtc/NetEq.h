@@ -23,43 +23,6 @@ public:
     // clang-format on
 
     // NetEq inner types define
-    enum class Mode : int {
-        KNormal                    = 0,
-        KExpand                    = 1,
-        KMerge                     = 2,
-        KAccelerateSuccess         = 3,
-        KAccelerateLowEnergy       = 4,
-        KAccelerateFail            = 5,
-        KPreemptiveExpandSuccess   = 6,
-        KPreemptiveExpandLowEnergy = 7,
-        KPreemptiveExpandFail      = 8,
-        KRfc3389Cng                = 9,
-        KCodecInternalCng          = 10,
-        KCodecPlc                  = 11,
-        KDtmf                      = 12,
-        KError                     = 13,
-        KUndefined                 = 14,
-    };
-
-    enum class Operation : int {
-        KNormal             = 0,
-        KMerge              = 1,
-        KExpand             = 2,
-        KAccelerate         = 3,
-        KFastAccelerate     = 4,
-        KPreemptiveExpand   = 5,
-        KRfc3389Cng         = 6,
-        KRfc3389CngNoPacket = 7,
-        KCodecInternalCng   = 8,
-        KDtmf               = 9,
-        KUndefined          = 10,
-    };
-
-    enum class ReturnCodes : int {
-        KOK   = 0,
-        KFail = -1,
-    };
-
     struct Config {
     public:
         // member variables
@@ -82,6 +45,43 @@ public:
         Config();
     };
 
+    enum class ReturnCodes : int {
+        KOK   = 0,
+        KFail = -1,
+    };
+
+    enum class Operation : int {
+        KNormal             = 0,
+        KMerge              = 1,
+        KExpand             = 2,
+        KAccelerate         = 3,
+        KFastAccelerate     = 4,
+        KPreemptiveExpand   = 5,
+        KRfc3389Cng         = 6,
+        KRfc3389CngNoPacket = 7,
+        KCodecInternalCng   = 8,
+        KDtmf               = 9,
+        KUndefined          = 10,
+    };
+
+    enum class Mode : int {
+        KNormal                    = 0,
+        KExpand                    = 1,
+        KMerge                     = 2,
+        KAccelerateSuccess         = 3,
+        KAccelerateLowEnergy       = 4,
+        KAccelerateFail            = 5,
+        KPreemptiveExpandSuccess   = 6,
+        KPreemptiveExpandLowEnergy = 7,
+        KPreemptiveExpandFail      = 8,
+        KRfc3389Cng                = 9,
+        KCodecInternalCng          = 10,
+        KCodecPlc                  = 11,
+        KDtmf                      = 12,
+        KError                     = 13,
+        KUndefined                 = 14,
+    };
+
     struct DecoderFormat {
     public:
         // member variables
@@ -101,56 +101,82 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetEq() = default;
 
+    // vIndex: 1
     virtual int InsertPacket(::webrtc::RTPHeader const&, ::rtc::ArrayView<uchar const>) = 0;
 
+    // vIndex: 2
     virtual void InsertEmptyPacket(::webrtc::RTPHeader const&) = 0;
 
+    // vIndex: 3
     virtual int GetAudio(::webrtc::AudioFrame*, bool*, int*, ::std::optional<::webrtc::NetEq::Operation>) = 0;
 
+    // vIndex: 4
     virtual void SetCodecs(::std::map<int, ::webrtc::SdpAudioFormat> const&) = 0;
 
+    // vIndex: 5
     virtual bool RegisterPayloadType(int, ::webrtc::SdpAudioFormat const&) = 0;
 
+    // vIndex: 6
     virtual int RemovePayloadType(uchar) = 0;
 
+    // vIndex: 7
     virtual void RemoveAllPayloadTypes() = 0;
 
+    // vIndex: 8
     virtual bool SetMinimumDelay(int) = 0;
 
+    // vIndex: 9
     virtual bool SetMaximumDelay(int) = 0;
 
+    // vIndex: 10
     virtual bool SetBaseMinimumDelayMs(int) = 0;
 
+    // vIndex: 11
     virtual int GetBaseMinimumDelayMs() const = 0;
 
+    // vIndex: 12
     virtual int TargetDelayMs() const = 0;
 
+    // vIndex: 13
     virtual int FilteredCurrentDelayMs() const = 0;
 
+    // vIndex: 14
     virtual int NetworkStatistics(::webrtc::NetEqNetworkStatistics*) = 0;
 
+    // vIndex: 15
     virtual ::webrtc::NetEqNetworkStatistics CurrentNetworkStatistics() const = 0;
 
+    // vIndex: 16
     virtual ::webrtc::NetEqLifetimeStatistics GetLifetimeStatistics() const = 0;
 
+    // vIndex: 17
     virtual ::webrtc::NetEqOperationsAndState GetOperationsAndState() const = 0;
 
+    // vIndex: 18
     virtual ::std::optional<uint> GetPlayoutTimestamp() const = 0;
 
+    // vIndex: 19
     virtual int last_output_sample_rate_hz() const = 0;
 
+    // vIndex: 20
     virtual ::std::optional<::webrtc::NetEq::DecoderFormat> GetDecoderFormat(int) const = 0;
 
+    // vIndex: 21
     virtual void FlushBuffers() = 0;
 
+    // vIndex: 22
     virtual void EnableNack(uint64) = 0;
 
+    // vIndex: 23
     virtual void DisableNack() = 0;
 
+    // vIndex: 24
     virtual ::std::vector<ushort> GetNackList(int64) const = 0;
 
+    // vIndex: 25
     virtual int SyncBufferSizeMs() const = 0;
     // NOLINTEND
 

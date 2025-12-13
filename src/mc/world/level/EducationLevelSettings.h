@@ -10,17 +10,16 @@
 
 // auto generated forward declare list
 // clang-format off
-class LevelLooseFileStorage;
 struct CommandFlag;
 // clang-format on
 
 struct EducationLevelSettings {
 public:
     // EducationLevelSettings inner types define
+    using HiddenCommands = ::std::string;
+
     using CommandOverrideFunctor =
         ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>;
-
-    using HiddenCommands = ::std::string;
 
 public:
     // member variables
@@ -50,12 +49,6 @@ public:
     MCNAPI ::EducationLevelSettings& operator=(::EducationLevelSettings const&);
 
     MCNAPI ~EducationLevelSettings();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::optional<::EducationLevelSettings> load(::LevelLooseFileStorage const& storage);
     // NOLINTEND
 
 public:

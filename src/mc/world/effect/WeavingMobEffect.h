@@ -15,8 +15,10 @@ class WeavingMobEffect : public ::MobEffect {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual void onActorDied(::Actor& target, int amplifier) const /*override*/;
 
+    // vIndex: 0
     virtual ~WeavingMobEffect() /*override*/ = default;
     // NOLINTEND
 
@@ -30,8 +32,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onActorDied(::Actor& target, int amplifier) const;
-
-
     // NOLINTEND
 
 public:

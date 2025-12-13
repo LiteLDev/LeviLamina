@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/SocketAddress.h"
 #include "mc/external/sigslot/has_slots.h"
 #include "mc/external/sigslot/single_threaded.h"
 #include "mc/external/webrtc/PortPrunePolicy.h"
@@ -17,6 +16,7 @@ namespace cricket { class PortAllocatorSession; }
 namespace cricket { struct IceParameters; }
 namespace cricket { struct RelayServerConfig; }
 namespace rtc { class NetworkMask; }
+namespace rtc { class SocketAddress; }
 namespace webrtc { class TurnCustomizer; }
 // clang-format on
 
@@ -58,23 +58,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PortAllocator() /*override*/;
 
+    // vIndex: 1
     virtual void Initialize();
 
+    // vIndex: 2
     virtual void set_restrict_ice_credentials_change(bool value);
 
+    // vIndex: 3
     virtual void SetNetworkIgnoreMask(int) = 0;
 
+    // vIndex: 4
     virtual void SetVpnPreference(::webrtc::VpnPreference preference);
 
+    // vIndex: 5
     virtual void SetVpnList(::std::vector<::rtc::NetworkMask> const& vpn_list);
 
+    // vIndex: 6
     virtual void GetCandidateStatsFromPooledSessions(::std::vector<::cricket::CandidateStats>* candidate_stats_list);
 
+    // vIndex: 7
     virtual ::cricket::PortAllocatorSession*
     CreateSessionInternal(::std::string_view, int, ::std::string_view, ::std::string_view) = 0;
 
+    // vIndex: 8
     virtual bool MdnsObfuscationEnabled() const;
     // NOLINTEND
 
@@ -146,8 +155,6 @@ public:
     MCNAPI void $GetCandidateStatsFromPooledSessions(::std::vector<::cricket::CandidateStats>* candidate_stats_list);
 
     MCNAPI bool $MdnsObfuscationEnabled() const;
-
-
     // NOLINTEND
 
 public:

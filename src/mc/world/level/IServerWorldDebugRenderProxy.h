@@ -13,16 +13,22 @@ class IServerWorldDebugRenderProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IServerWorldDebugRenderProxy() = default;
 
+    // vIndex: 1
     virtual void renderActorsDebugServerState(::IOptionsReader const&, ::Dimension const&) = 0;
 
+    // vIndex: 2
     virtual void renderSimulatedPlayerDebugServerState(::IOptionsReader const&, ::Player&) = 0;
 
+    // vIndex: 3
     virtual void debugRenderDimension(::Dimension&) = 0;
 
+    // vIndex: 4
     virtual void debugRendererStartTick() = 0;
 
+    // vIndex: 5
     virtual void debugRendererEndTick() = 0;
     // NOLINTEND
 

@@ -13,8 +13,10 @@ class TransportFeedbackObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TransportFeedbackObserver() = default;
 
+    // vIndex: 1
     virtual void OnAddPacket(::webrtc::RtpPacketSendInfo const&) = 0;
     // NOLINTEND
 

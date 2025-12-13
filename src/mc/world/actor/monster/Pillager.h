@@ -23,12 +23,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
+    // vIndex: 8
     virtual ~Pillager() /*override*/ = default;
     // NOLINTEND
 
@@ -60,8 +64,6 @@ public:
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
-
-
     // NOLINTEND
 
 public:

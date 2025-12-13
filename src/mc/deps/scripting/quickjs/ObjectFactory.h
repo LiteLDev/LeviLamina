@@ -31,11 +31,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> makePromise() /*override*/;
 
+    // vIndex: 2
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
     makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type const& dataType) /*override*/;
 
+    // vIndex: 0
     virtual ~ObjectFactory() /*override*/ = default;
     // NOLINTEND
 
@@ -46,8 +49,6 @@ public:
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
     $makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type const& dataType);
-
-
     // NOLINTEND
 
 public:

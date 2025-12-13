@@ -27,10 +27,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Int64Option() /*override*/ = default;
 
+    // vIndex: 1
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
 
+    // vIndex: 4
     virtual void load(::std::string const&) /*override*/;
     // NOLINTEND
 

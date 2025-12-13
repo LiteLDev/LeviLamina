@@ -7,8 +7,13 @@
 
 class MoveTowardsDwellingRestrictionDefinition : public ::MoveTowardsRestrictionDefinition {
 public:
+    // MoveTowardsDwellingRestrictionDefinition inner types define
+    using self = ::MoveTowardsDwellingRestrictionDefinition;
+
+public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MoveTowardsDwellingRestrictionDefinition() /*override*/ = default;
     // NOLINTEND
 

@@ -24,16 +24,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
+    // vIndex: 8
     virtual ~Ghast() /*override*/ = default;
     // NOLINTEND
 
@@ -69,8 +75,6 @@ public:
     MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-
     // NOLINTEND
 
 public:

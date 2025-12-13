@@ -8,11 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
-class Mob;
 class SpawnData;
 // clang-format on
 
@@ -46,14 +44,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BaseMobSpawner() = default;
 
+    // vIndex: 1
     virtual void tick(::BlockSource& source);
 
+    // vIndex: 2
     virtual void load(::CompoundTag const& data);
 
+    // vIndex: 3
     virtual void save(::CompoundTag& tag);
 
+    // vIndex: 4
     virtual ::BlockPos const& getPos() = 0;
     // NOLINTEND
 
@@ -64,15 +67,11 @@ public:
 
     MCAPI void _delay(::BlockSource& source);
 
-    MCAPI_C ::Actor* createAndAddDisplayEntity(::BlockSource& region);
-
     MCAPI ::ActorDefinitionIdentifier getSpawnTypeId() const;
 
     MCAPI void removeDisplayEntity();
 
     MCAPI void setEntityId(::ActorDefinitionIdentifier actorDefId);
-
-    MCAPI_C ::Mob* tryGetOrCreateDisplayEntity(::BlockSource& region);
     // NOLINTEND
 
 public:
@@ -89,8 +88,6 @@ public:
     MCAPI void $load(::CompoundTag const& data);
 
     MCAPI void $save(::CompoundTag& tag);
-
-
     // NOLINTEND
 
 public:

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/ContentIdentity.h"
 #include "mc/deps/core/resource/PackCategory.h"
 #include "mc/deps/core/resource/PackIdVersion.h"
@@ -100,13 +99,16 @@ public:
 
 public:
     // prevent constructor by default
+    PackManifest& operator=(PackManifest const&);
     PackManifest();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PackManifest() /*override*/;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::PackManifest> clone() const;
     // NOLINTEND
 
@@ -132,10 +134,6 @@ public:
 
     MCAPI void addPackDependency(::PackIdVersion const& packId);
 
-    MCAPI_C ::Core::PathBuffer<::std::string> generateBaseIconPath() const;
-
-    MCAPI_C ::Core::PathBuffer<::std::string> generateIconPath() const;
-
     MCAPI ::std::string getDescription() const;
 
     MCAPI ::std::string getName() const;
@@ -144,19 +142,9 @@ public:
 
     MCAPI ::std::string getNameWithVersionForTelemetry() const;
 
-    MCAPI_C ::std::unordered_map<::std::string, ::std::string> getPackNameLocalization() const;
-
     MCAPI ::std::optional<::std::vector<::std::string>> getPackSettingsLocKeys() const;
 
-    MCAPI_C ::Core::PathBuffer<::std::string> getZipFolderPath() const;
-
     MCAPI bool hasPackCapability(::std::string_view capability) const;
-
-    MCAPI_C bool isRestrictedPack() const;
-
-    MCAPI_C bool isUsingPackNameKeyword() const;
-
-    MCAPI_C ::PackManifest& operator=(::PackManifest const&);
 
     MCAPI void serialize(::PackManifestFormat formatVersion, ::Json::Value& destination) const;
 
@@ -168,11 +156,11 @@ public:
 
     MCAPI void setLocalizedNameKeywords(::std::unordered_map<::std::string, ::std::string> const& localizationNameMap);
 
-    MCAPI_S void setMetadata(::ResourceMetadata const& metadata);
+    MCAPI void setMetadata(::ResourceMetadata const& metadata);
 
     MCAPI void setMinEngineVersion(::MinEngineVersion const& engineVersion);
 
-    MCFOLD void setName(::std::string const& name);
+    MCAPI void setName(::std::string const& name);
 
     MCAPI void setOptimizationVersion(::SemVersion const& optimizationVersion);
 
@@ -215,8 +203,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::PackManifest> $clone() const;
-
-
     // NOLINTEND
 
 public:

@@ -5,18 +5,12 @@
 namespace Core {
 
 enum class WriteOperation : int {
-    WriteFile   = 0,
-    FlushFile   = 1,
-    SetFileSize = 2,
-#ifdef LL_PLAT_S
-    CreateFileA      = 3,
-    DeleteFileA      = 4,
-    CreateDirectoryA = 5,
-#else // LL_PLAT_C
-    CreateFileW      = 3,
-    DeleteFileW      = 4,
-    CreateDirectoryW = 5,
-#endif
+    WriteFile                  = 0,
+    FlushFile                  = 1,
+    SetFileSize                = 2,
+    CreateFileA                = 3,
+    DeleteFileA                = 4,
+    CreateDirectoryA           = 5,
     DeleteDirectory            = 6,
     DeleteDirectoryRecursively = 7,
     CleanDirectoryRecursively  = 8,
@@ -35,4 +29,4 @@ enum class WriteOperation : int {
     MountCacheStorage          = 21,
 };
 
-} // namespace Core
+}

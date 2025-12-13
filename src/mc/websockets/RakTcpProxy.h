@@ -27,26 +27,37 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RakTcpProxy() /*override*/ = default;
 
+    // vIndex: 1
     virtual bool start(ushort port, ushort maxIncomming, ushort maxOutgoing) /*override*/;
 
+    // vIndex: 2
     virtual ::RakNet::SystemAddress connect(::std::string const& host, ushort port) /*override*/;
 
+    // vIndex: 3
     virtual void send(char const* data, uint length, ::RakNet::SystemAddress address) /*override*/;
 
+    // vIndex: 4
     virtual void close(::RakNet::SystemAddress address) /*override*/;
 
+    // vIndex: 5
     virtual bool packetsAvailable() /*override*/;
 
+    // vIndex: 6
     virtual ::RakNet::Packet* nextPacket() /*override*/;
 
+    // vIndex: 7
     virtual void deallocatePacket(::RakNet::Packet* packet) /*override*/;
 
+    // vIndex: 8
     virtual ::RakNet::SystemAddress nextCompletedConnectionAttempt() /*override*/;
 
+    // vIndex: 9
     virtual ::RakNet::SystemAddress nextFailedConnectionAttempt() /*override*/;
 
+    // vIndex: 10
     virtual ::RakNet::SystemAddress nextLostConnection() /*override*/;
     // NOLINTEND
 
@@ -72,8 +83,6 @@ public:
     MCNAPI ::RakNet::SystemAddress $nextFailedConnectionAttempt();
 
     MCNAPI ::RakNet::SystemAddress $nextLostConnection();
-
-
     // NOLINTEND
 
 public:

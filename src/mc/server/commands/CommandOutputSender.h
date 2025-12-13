@@ -7,10 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class AutomationCmdOutput;
 class CommandOrigin;
 class CommandOutput;
-namespace Json { class Value; }
-struct AutomationCmdOutput;
 // clang-format on
 
 class CommandOutputSender {
@@ -25,26 +24,24 @@ public:
     // prevent constructor by default
     CommandOutputSender& operator=(CommandOutputSender const&);
     CommandOutputSender(CommandOutputSender const&);
+    CommandOutputSender();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CommandOutputSender() = default;
 
+    // vIndex: 1
     virtual void send(::CommandOrigin const& origin, ::CommandOutput const& output);
 
+    // vIndex: 2
     virtual void registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C CommandOutputSender();
-
-    MCNAPI_C void _sendToCodeBuilder(::CommandOrigin const& origin, ::CommandOutput const& commandOutput);
-
-    MCNAPI_C ::Json::Value _toJson(::CommandOutput const& commandOutput) const;
-
     MCNAPI void
     sendToAdmins(::CommandOrigin const& origin, ::CommandOutput const& output, ::CommandPermissionLevel opPermLevel);
     // NOLINTEND
@@ -56,19 +53,11 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $send(::CommandOrigin const& origin, ::CommandOutput const& output);
 
     MCNAPI void $registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
-
-
     // NOLINTEND
 
 public:

@@ -28,10 +28,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual int getAvailableSetCount(int slot, ::ItemStackBase const& item) const /*override*/;
 
+    // vIndex: 4
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
+    // vIndex: 2
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const&,
         int const              slot,
@@ -40,9 +43,11 @@ public:
         bool
     ) const /*override*/;
 
+    // vIndex: 9
     virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~HorseEquipContainerValidation() /*override*/;
     // NOLINTEND
 
@@ -80,8 +85,6 @@ public:
     ) const;
 
     MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
-
-
     // NOLINTEND
 
 public:

@@ -16,36 +16,25 @@ class CreativeContainerController : public ::CraftingContainerController {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CreativeContainerController() /*override*/ = default;
 
-    virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
+    // vIndex: 5
+    virtual int getBackgroundStyle(int, bool) const /*override*/;
 
-    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const /*override*/;
+    // vIndex: 4
+    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const&) const /*override*/;
 
-    virtual ::ItemInstance const& getRecipeItem(int index) const /*override*/;
+    // vIndex: 1
+    virtual ::ItemInstance const& getRecipeItem(int) const /*override*/;
 
-    virtual bool canRemove(int slot, int removeCount) const /*override*/;
+    // vIndex: 2
+    virtual bool canRemove(int, int) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 
-    MCNAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
-
-    MCNAPI ::ItemInstance const& $getRecipeItem(int index) const;
-
-    MCNAPI bool $canRemove(int slot, int removeCount) const;
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

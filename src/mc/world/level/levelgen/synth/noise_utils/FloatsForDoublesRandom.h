@@ -11,8 +11,10 @@ class FloatsForDoublesRandom : public ::NoiseUtils::DelegatingRandom {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual double nextDouble() /*override*/;
 
+    // vIndex: 0
     virtual ~FloatsForDoublesRandom() /*override*/ = default;
     // NOLINTEND
 

@@ -32,11 +32,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void
     RegisterStreamFeedbackObserver(::std::vector<uint> ssrcs, ::webrtc::StreamFeedbackObserver* observer) /*override*/;
 
+    // vIndex: 1
     virtual void DeRegisterStreamFeedbackObserver(::webrtc::StreamFeedbackObserver* observer) /*override*/;
 
+    // vIndex: 2
     virtual ~TransportFeedbackDemuxer() /*override*/;
     // NOLINTEND
 
@@ -68,8 +71,6 @@ public:
     MCNAPI void $RegisterStreamFeedbackObserver(::std::vector<uint> ssrcs, ::webrtc::StreamFeedbackObserver* observer);
 
     MCNAPI void $DeRegisterStreamFeedbackObserver(::webrtc::StreamFeedbackObserver* observer);
-
-
     // NOLINTEND
 
 public:

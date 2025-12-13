@@ -9,15 +9,17 @@ struct BlockPartVisibilityDescription : public ::BlockComponentDescription {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
+    // vIndex: 0
     virtual ~BlockPartVisibilityDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:

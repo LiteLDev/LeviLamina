@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/file/WriteOperation.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Core { class DiskAccessDiagnostics; }
 namespace Core { class PathView; }
-namespace Core::WriteThrottledOS { class OSWriteThrottleTracker; }
 // clang-format on
 
 namespace Core {
@@ -24,6 +22,22 @@ public:
     // clang-format on
 
     // DiskAccessTracker inner types define
+    struct WriteOperation {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk45f898;
+        ::ll::UntypedStorage<8, 8> mUnkdacc78;
+        ::ll::UntypedStorage<8, 8> mUnk8312bc;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        WriteOperation& operator=(WriteOperation const&);
+        WriteOperation(WriteOperation const&);
+        WriteOperation();
+    };
+
     struct TrackerStats {
     public:
         // member variables
@@ -42,22 +56,6 @@ public:
         TrackerStats& operator=(TrackerStats const&);
         TrackerStats(TrackerStats const&);
         TrackerStats();
-    };
-
-    struct WriteOperation {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk45f898;
-        ::ll::UntypedStorage<8, 8> mUnkdacc78;
-        ::ll::UntypedStorage<8, 8> mUnk8312bc;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WriteOperation& operator=(WriteOperation const&);
-        WriteOperation(WriteOperation const&);
-        WriteOperation();
     };
 
 public:
@@ -91,26 +89,6 @@ public:
     MCNAPI explicit DiskAccessTracker(::std::unique_ptr<::Core::DiskAccessDiagnostics> diagnostics);
 
     MCNAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation writeOperation, ::Core::PathView path);
-
-    MCNAPI_C void _computeTrackerStats(
-        ::Core::DiskAccessTracker::TrackerStats& trackerStats,
-        ::std::chrono::steady_clock::time_point  byteWriteCalculationWindow,
-        ::std::chrono::steady_clock::time_point  writeCountCalculationWindow
-    );
-
-    MCNAPI_C ::std::_Deque_const_iterator<
-        ::std::_Deque_val<::std::_Deque_simple_types<::Core::DiskAccessTracker::WriteOperation>>>
-    _findOldestWriteOperation(::std::chrono::steady_clock::time_point oldestAllowedTime, uint64 hint) const;
-
-    MCNAPI_C void _setCurrentWriteThrottleTracker(
-        ::std::shared_ptr<::Core::WriteThrottledOS::OSWriteThrottleTracker> osWriteThrottleTracker
-    );
-
-    MCNAPI_C void setOSWriteThrottleTracker(
-        ::std::shared_ptr<::Core::WriteThrottledOS::OSWriteThrottleTracker> osWriteThrottleTracker
-    );
-
-    MCNAPI_C void update();
 
     MCNAPI ~DiskAccessTracker();
     // NOLINTEND

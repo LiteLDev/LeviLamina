@@ -31,10 +31,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool GetResolvedAddress(int family, ::rtc::SocketAddress* addr) const /*override*/;
 
+    // vIndex: 2
     virtual int GetError() const /*override*/;
 
+    // vIndex: 0
     virtual ~AsyncDnsResolverResultImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -44,8 +47,6 @@ public:
     MCNAPI bool $GetResolvedAddress(int family, ::rtc::SocketAddress* addr) const;
 
     MCNAPI int $GetError() const;
-
-
     // NOLINTEND
 
 public:

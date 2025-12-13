@@ -11,12 +11,16 @@ class UriListener {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~UriListener();
 
+    // vIndex: 1
     virtual void onUri(::ActivationUri const&) = 0;
 
+    // vIndex: 2
     virtual void tick() = 0;
 
+    // vIndex: 3
     virtual void executeStartupUris() = 0;
     // NOLINTEND
 

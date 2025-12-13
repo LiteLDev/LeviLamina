@@ -32,13 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _fireExtendDiskSpaceEvent(
-        bool                                            bSet,
-        ::std::weak_ptr<::Core::FileStorageArea> const& fileStorageAreaWeakPtr,
-        uint64                                          freeSpace,
-        ::std::function<void()>                         onHandledEventCallback
-    );
-
     MCNAPI void checkUserStorage(
         ::std::shared_ptr<::Core::FileStorageArea> const& fileStorageArea,
         uint64                                            freeSpace,

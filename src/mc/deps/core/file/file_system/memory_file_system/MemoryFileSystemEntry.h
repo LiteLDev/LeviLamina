@@ -29,10 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MemoryFileSystemEntry() = default;
 
+    // vIndex: 1
     virtual ::Core::Result canRemove() = 0;
 
+    // vIndex: 2
     virtual uint64 getSize() const = 0;
     // NOLINTEND
 

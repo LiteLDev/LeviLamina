@@ -33,14 +33,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual void Initialize(int, int, int, int) = 0;
 
+    // vIndex: 4
     virtual void AnalyzeRenderAudio(::rtc::ArrayView<float const>) = 0;
 
+    // vIndex: 5
     virtual void AnalyzeCaptureAudio(::rtc::ArrayView<float const>) = 0;
 
+    // vIndex: 6
     virtual ::webrtc::EchoDetector::Metrics GetMetrics() const = 0;
 
+    // vIndex: 2
     virtual ~EchoDetector() /*override*/ = default;
     // NOLINTEND
 

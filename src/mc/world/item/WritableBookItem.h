@@ -18,12 +18,16 @@ class WritableBookItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
+    // vIndex: 51
     virtual bool requiresInteract() const /*override*/;
 
+    // vIndex: 112
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
+    // vIndex: 0
     virtual ~WritableBookItem() /*override*/ = default;
     // NOLINTEND
 
@@ -53,8 +57,6 @@ public:
 
     MCAPI static ::PageContent deletePage(::ItemStack& book, int index);
 
-    MCAPI_C static void replacePage(::ItemStack& book, int index, ::PageContent const& page);
-
     MCAPI static void signBook(
         ::ItemStack&                   book,
         ::std::string                  title,
@@ -75,8 +77,6 @@ public:
     MCFOLD bool $requiresInteract() const;
 
     MCAPI ::std::string $getInteractText(::Player const& player) const;
-
-
     // NOLINTEND
 
 public:

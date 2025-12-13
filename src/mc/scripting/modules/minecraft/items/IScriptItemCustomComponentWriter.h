@@ -22,8 +22,10 @@ class IScriptItemCustomComponentWriter {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IScriptItemCustomComponentWriter() = default;
 
+    // vIndex: 1
     virtual ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
@@ -33,6 +35,7 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
     tryRegisterComponentV1(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
 
+    // vIndex: 2
     virtual ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,

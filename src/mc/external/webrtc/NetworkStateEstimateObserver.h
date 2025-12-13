@@ -13,8 +13,10 @@ class NetworkStateEstimateObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void OnRemoteNetworkEstimate(::webrtc::NetworkStateEstimate) = 0;
 
+    // vIndex: 1
     virtual ~NetworkStateEstimateObserver() = default;
     // NOLINTEND
 

@@ -22,10 +22,10 @@ public:
 
     MCNAPI Rule(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
 
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::Rule& operator=(::SharedTypes::v1_21_20::JigsawStructure::Rule&&);
-
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::Rule&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
+
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::Rule& operator=(::SharedTypes::v1_21_20::JigsawStructure::Rule&&);
 
     MCNAPI ~Rule();
     // NOLINTEND

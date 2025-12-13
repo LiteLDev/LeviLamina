@@ -2,13 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { struct ScriptAfterEventSignalHandle; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptAfterEventList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7862ac;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptAfterEventSignalHandle>> mSignalHandles;
     // NOLINTEND
 
 public:
@@ -20,15 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptAfterEventList& operator=(::ScriptModuleMinecraft::ScriptAfterEventList&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptAfterEventList& operator=(::ScriptModuleMinecraft::ScriptAfterEventList&&);
 
-    MCNAPI ~ScriptAfterEventList();
+    MCAPI ~ScriptAfterEventList();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

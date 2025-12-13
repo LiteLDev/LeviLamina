@@ -29,10 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MinecraftScriptSentryPlugin() /*override*/ = default;
 
+    // vIndex: 1
     virtual void setSentryLogger(::std::unique_ptr<::ScriptSentryLogger> sentryLogger) /*override*/;
 
+    // vIndex: 2
     virtual ::std::string const& getPlatformName() const /*override*/;
     // NOLINTEND
 
@@ -42,8 +45,6 @@ public:
     MCNAPI void $setSentryLogger(::std::unique_ptr<::ScriptSentryLogger> sentryLogger);
 
     MCNAPI ::std::string const& $getPlatformName() const;
-
-
     // NOLINTEND
 
 public:

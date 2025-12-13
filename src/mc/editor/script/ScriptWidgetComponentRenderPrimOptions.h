@@ -16,6 +16,7 @@ class ScriptWidgetComponentRenderPrimOptions : public ::Editor::ScriptModule::Sc
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptWidgetComponentRenderPrimOptions() /*override*/ = default;
     // NOLINTEND
 

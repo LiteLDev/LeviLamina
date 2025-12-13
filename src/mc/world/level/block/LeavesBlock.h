@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
+#include "mc/deps/core/math/Color.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
@@ -43,15 +45,13 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 20> mUnk6794b1;
-        ::ll::UntypedStorage<4, 4>  mUnk885c5b;
+        ::ll::TypedStorage<
+            4,
+            20,
+            ::std::variant<::ParticleType, ::mce::Color, ::LeavesBlock::ParticleParams::BiomeTintedColor>>
+                                      mParticle;
+        ::ll::TypedStorage<4, 4, int> mOneOutOfChance;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ParticleParams& operator=(ParticleParams const&);
-        ParticleParams(ParticleParams const&);
-        ParticleParams();
     };
 
 public:
@@ -71,33 +71,46 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
+    // vIndex: 113
     virtual bool isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const /*override*/;
 
+    // vIndex: 138
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
+    // vIndex: 140
     virtual ::HashedString const& getCullingLayer() const /*override*/;
 
+    // vIndex: 123
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
+    // vIndex: 114
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
+    // vIndex: 23
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~LeavesBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -153,8 +166,6 @@ public:
     MCFOLD bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

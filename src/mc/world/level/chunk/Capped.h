@@ -29,6 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::std::vector<::br::worldgen::StructureBlockInfo> finalize(
         ::IBlockSource&                                          region,
         ::BlockPos                                               pos,
@@ -38,10 +39,13 @@ public:
         ::br::worldgen::StructurePlaceSettings const&            settings
     ) const /*override*/;
 
+    // vIndex: 3
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
+    // vIndex: 4
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
     virtual ~Capped() /*override*/;
     // NOLINTEND
 
@@ -73,8 +77,6 @@ public:
     MCNAPI ::br::worldgen::StructureProcessorType $type() const;
 
     MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
-
-
     // NOLINTEND
 
 public:

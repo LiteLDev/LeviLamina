@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/projectile/AbstractArrow.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +14,6 @@ class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class ItemStack;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -30,40 +30,49 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk5a0d0e;
-    ::ll::UntypedStorage<4, 4>   mUnk1626c9;
-    ::ll::UntypedStorage<8, 152> mUnkfcbd41;
+    ::ll::TypedStorage<1, 1, bool>          mDealtDamage;
+    ::ll::TypedStorage<4, 4, int>           mClientSideReturnTridentTickCount;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mTrident;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ThrownTrident& operator=(ThrownTrident const&);
-    ThrownTrident(ThrownTrident const&);
     ThrownTrident();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
+    // vIndex: 138
     virtual void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed) /*override*/;
 
+    // vIndex: 39
     virtual void playerTouch(::Player& player) /*override*/;
 
+    // vIndex: 71
     virtual void despawn() /*override*/;
 
+    // vIndex: 1
     virtual void outOfWorld() /*override*/;
 
+    // vIndex: 61
     virtual bool isEnchanted() const /*override*/;
 
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 139
     virtual ::ItemStack _getPickupItem() const /*override*/;
 
+    // vIndex: 8
     virtual ~ThrownTrident() /*override*/ = default;
     // NOLINTEND
 
@@ -109,12 +118,6 @@ public:
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI ::ItemStack $_getPickupItem() const;
-
-#ifdef LL_PLAT_C
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
-#endif
-
-
     // NOLINTEND
 
 public:

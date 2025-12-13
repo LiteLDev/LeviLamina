@@ -22,49 +22,69 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LevelDbEnv() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::leveldb::Status
     NewSequentialFile(::std::string const& fname, ::leveldb::SequentialFile** result) /*override*/;
 
+    // vIndex: 2
     virtual ::leveldb::Status
     NewRandomAccessFile(::std::string const& fname, ::leveldb::RandomAccessFile** result) /*override*/;
 
+    // vIndex: 3
     virtual ::leveldb::Status
     NewWritableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
 
+    // vIndex: 4
     virtual ::leveldb::Status
     NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
 
+    // vIndex: 5
     virtual bool FileExists(::std::string const& fname) /*override*/;
 
+    // vIndex: 6
     virtual ::leveldb::Status
     GetChildren(::std::string const& dir, ::std::vector<::std::string>* pChildrenOut) /*override*/;
 
+    // vIndex: 7
     virtual ::leveldb::Status RemoveFile(::std::string const& fname) /*override*/;
 
+    // vIndex: 9
     virtual ::leveldb::Status CreateDir(::std::string const& path) /*override*/;
 
-    virtual ::leveldb::Status RemoveDir(::std::string const& dirname) /*override*/;
+    // vIndex: 10
+    virtual ::leveldb::Status RemoveDir(::std::string const& name) /*override*/;
 
+    // vIndex: 12
     virtual ::leveldb::Status GetFileSize(::std::string const& fname, uint64* size) /*override*/;
 
+    // vIndex: 13
     virtual ::leveldb::Status RenameFile(::std::string const& src, ::std::string const& target) /*override*/;
 
+    // vIndex: 14
     virtual ::leveldb::Status LockFile(::std::string const& fname, ::leveldb::FileLock** lock) /*override*/;
 
+    // vIndex: 15
     virtual ::leveldb::Status UnlockFile(::leveldb::FileLock* lock) /*override*/;
 
+    // vIndex: 16
     virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
 
+    // vIndex: 17
     virtual void StartThread(void (*function)(void*), void* arg) /*override*/;
 
+    // vIndex: 18
     virtual ::leveldb::Status GetTestDirectory(::std::string* result) /*override*/;
 
+    // vIndex: 19
     virtual ::leveldb::Status NewLogger(::std::string const& fname, ::leveldb::Logger** result) /*override*/;
 
+    // vIndex: 20
     virtual uint64 NowMicros() /*override*/;
 
+    // vIndex: 21
     virtual void SleepForMicroseconds(int microseconds) /*override*/;
     // NOLINTEND
 
@@ -93,7 +113,7 @@ public:
 
     MCNAPI ::leveldb::Status $CreateDir(::std::string const& path);
 
-    MCNAPI ::leveldb::Status $RemoveDir(::std::string const& dirname);
+    MCNAPI ::leveldb::Status $RemoveDir(::std::string const& name);
 
     MCNAPI ::leveldb::Status $GetFileSize(::std::string const& fname, uint64* size);
 
@@ -114,8 +134,6 @@ public:
     MCNAPI uint64 $NowMicros();
 
     MCNAPI void $SleepForMicroseconds(int microseconds);
-
-
     // NOLINTEND
 
 public:

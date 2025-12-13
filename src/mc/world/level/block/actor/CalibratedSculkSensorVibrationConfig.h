@@ -16,22 +16,22 @@ class CalibratedSculkSensorVibrationConfig : public ::SculkSensorVibrationConfig
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual bool shouldListen(
         ::BlockSource&            region,
         ::GameEvent const&        gameEvent,
         ::GameEventContext const& gameEventContext
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~CalibratedSculkSensorVibrationConfig() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool
+    MCAPI bool
     $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
-
-
     // NOLINTEND
 
 public:

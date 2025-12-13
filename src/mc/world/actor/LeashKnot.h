@@ -21,28 +21,40 @@ class LeashKnot : public ::HangingActor {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
+    // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 138
     virtual int getWidth() const /*override*/;
 
+    // vIndex: 139
     virtual int getHeight() const /*override*/;
 
+    // vIndex: 140
     virtual void dropItem() /*override*/;
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 142
     virtual bool wouldSurvive(::BlockSource& region) /*override*/;
 
+    // vIndex: 11
     virtual void remove() /*override*/;
 
+    // vIndex: 118
     virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
+    // vIndex: 21
     virtual void teleportTo(
         ::Vec3 const& pos,
         bool          shouldStopRiding,
@@ -51,6 +63,7 @@ public:
         bool          keepVelocity
     ) /*override*/;
 
+    // vIndex: 8
     virtual ~LeashKnot() /*override*/ = default;
     // NOLINTEND
 
@@ -81,8 +94,6 @@ public:
 
     MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
-
-
     // NOLINTEND
 
 public:

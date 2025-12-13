@@ -17,34 +17,37 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 17
     virtual bool findTargetBlock();
 
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 14
     virtual void _moveToBlock() /*override*/;
 
+    // vIndex: 0
     virtual ~BaseMoveToBlockGoal() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $findTargetBlock();
+    MCAPI bool $findTargetBlock();
 
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $_moveToBlock();
-
-
+    MCAPI void $_moveToBlock();
     // NOLINTEND
 };

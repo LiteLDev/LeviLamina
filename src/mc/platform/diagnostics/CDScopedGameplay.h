@@ -17,16 +17,4 @@ public:
     CDScopedGameplay& operator=(CDScopedGameplay const&);
     CDScopedGameplay(CDScopedGameplay const&);
     CDScopedGameplay();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~CDScopedGameplay();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

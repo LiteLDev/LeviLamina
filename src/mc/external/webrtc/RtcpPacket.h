@@ -23,10 +23,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RtcpPacket() = default;
 
+    // vIndex: 1
     virtual uint64 BlockLength() const = 0;
 
+    // vIndex: 2
     virtual bool Create(uchar*, uint64*, uint64, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>) const = 0;
     // NOLINTEND
 

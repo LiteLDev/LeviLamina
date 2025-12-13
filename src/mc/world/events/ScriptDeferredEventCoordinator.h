@@ -11,6 +11,8 @@
 class ScriptDeferredEventListener;
 class ScriptDeferredFlushTracker;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace Json { class Value; }
+namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 class ScriptDeferredEventCoordinator : public ::EventCoordinatorNoTracking<::ScriptDeferredEventListener> {
@@ -25,26 +27,22 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk6fef1a;
-        ::ll::UntypedStorage<8, 64> mUnkce87df;
+        ::ll::TypedStorage<8, 8, void (::ScriptDeferredEventCoordinator::*)(::ScriptDeferredFlushTracker&)>
+            mExecuteEventsFn;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::Scripting::ModuleDescriptor const&, ::Json::Value&)>>
+            mDocumentationGenerationFn;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DocumentableEventExecution& operator=(DocumentableEventExecution const&);
-        DocumentableEventExecution(DocumentableEventExecution const&);
-        DocumentableEventExecution();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~DocumentableEventExecution();
+        MCAPI ~DocumentableEventExecution();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -63,40 +61,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptDeferredEventCoordinator() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDeferredEventCoordinator();
+    MCAPI ScriptDeferredEventCoordinator();
 
-    MCNAPI void _sendFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void _sendFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void _sendFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void _sendFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void _sendFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void _sendFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void _sendFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void _sendFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
+    MCAPI static ::std::vector<::ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
     sEventExecutionOrder();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

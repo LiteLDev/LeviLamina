@@ -26,19 +26,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ItemStackDescriptor() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ItemStackDescriptor& operator=(::ItemStackDescriptor&& other);
+    MCAPI ::ItemStackDescriptor& operator=(::ItemStackDescriptor&& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

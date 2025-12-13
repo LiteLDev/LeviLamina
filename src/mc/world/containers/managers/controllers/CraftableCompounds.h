@@ -27,17 +27,20 @@ public:
 public:
     // prevent constructor by default
     CraftableCompounds& operator=(CraftableCompounds const&);
+    CraftableCompounds(CraftableCompounds const&);
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CraftableCompounds();
 
+    // vIndex: 1
     virtual void _registerCompound(
-        ::std::vector<::ItemStack> const& input,
-        ::ItemStack const&                result,
-        ::LabTableReactionType            reaction,
-        ::CompoundContainerType           containerOverride
+        ::std::vector<::ItemStack> const&,
+        ::ItemStack const&,
+        ::LabTableReactionType,
+        ::CompoundContainerType
     );
     // NOLINTEND
 
@@ -45,8 +48,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI CraftableCompounds();
-
-    MCNAPI_C CraftableCompounds(::CraftableCompounds const&);
 
     MCNAPI ::std::string _getCompoundId(::std::vector<::ItemStack> const& input);
 
@@ -67,8 +68,6 @@ public:
 
     MCNAPI ::std::vector<::ItemStack> const* getComponents(::ItemDescriptor const& compound) const;
 
-    MCNAPI_C ::CompoundContainerType getContainerType(::std::vector<::ItemStack> const& components);
-
     MCNAPI ::LabTableReactionType getReaction(::std::vector<::ItemStack> const& components);
 
     MCNAPI void registerCompounds();
@@ -78,8 +77,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-
-    MCNAPI_C void* $ctor(::CraftableCompounds const&);
     // NOLINTEND
 
 public:
@@ -91,15 +88,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $_registerCompound(
-        ::std::vector<::ItemStack> const& input,
-        ::ItemStack const&                result,
-        ::LabTableReactionType            reaction,
-        ::CompoundContainerType           containerOverride
-    );
-#endif
-
 
     // NOLINTEND
 

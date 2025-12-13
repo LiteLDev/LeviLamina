@@ -32,6 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PublisherBase() /*override*/ = default;
     // NOLINTEND
 
@@ -45,12 +46,6 @@ public:
         ::Bedrock::PubSub::ConnectPosition                                        at,
         ::std::optional<int>                                                      group
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

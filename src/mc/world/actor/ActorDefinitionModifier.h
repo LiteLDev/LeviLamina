@@ -27,9 +27,9 @@ public:
     // NOLINTBEGIN
     MCAPI ActorDefinitionModifier(::ActorDefinitionModifier const&);
 
-    MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
-
     MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier const&);
+
+    MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
 
     MCAPI ~ActorDefinitionModifier();
     // NOLINTEND

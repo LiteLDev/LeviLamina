@@ -31,16 +31,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ParticleCurveBase() = default;
 
+    // vIndex: 1
     virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleCurveBase&, ::HashedString const&) = 0;
 
+    // vIndex: 2
     virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleCurveBase&) = 0;
 
+    // vIndex: 3
     virtual void parseJson(::ConstDeserializeDataParams const&, ::HashedString const&) = 0;
 
+    // vIndex: 4
     virtual void evaluateCurve(::RenderParams&) = 0;
 
+    // vIndex: 5
     virtual ::ParticleSystem::ParticleCurveType getCurveType() const;
     // NOLINTEND
 

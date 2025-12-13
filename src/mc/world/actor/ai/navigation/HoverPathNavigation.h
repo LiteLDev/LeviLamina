@@ -25,47 +25,54 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initializeInternal(::Mob& mob, ::NavigationDescription* description) /*override*/;
 
+    // vIndex: 2
     virtual void tick(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
+    // vIndex: 3
     virtual ::Vec3 getTempMobPos(::Mob const& mob) const /*override*/;
 
+    // vIndex: 5
     virtual ::std::unique_ptr<::Path>
     createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos) /*override*/;
 
+    // vIndex: 4
     virtual ::std::unique_ptr<::Path>
     createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target) /*override*/;
 
+    // vIndex: 9
     virtual void stop(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
+    // vIndex: 11
     virtual bool canUpdatePath(::Mob const& mob) const /*override*/;
 
+    // vIndex: 12
     virtual void updatePath(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
+    // vIndex: 0
     virtual ~HoverPathNavigation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
+    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
 
-    MCNAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
+    MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 
-    MCNAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
+    MCAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
 
-    MCNAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
+    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
 
-    MCNAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
+    MCFOLD ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
 
-    MCNAPI void $stop(::NavigationComponent& parent, ::Mob& mob);
+    MCFOLD void $stop(::NavigationComponent& parent, ::Mob& mob);
 
-    MCNAPI bool $canUpdatePath(::Mob const& mob) const;
+    MCAPI bool $canUpdatePath(::Mob const& mob) const;
 
-    MCNAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
-
-
+    MCAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
     // NOLINTEND
 
 public:

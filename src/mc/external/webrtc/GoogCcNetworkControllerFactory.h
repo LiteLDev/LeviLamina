@@ -32,11 +32,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::NetworkControllerInterface>
     Create(::webrtc::NetworkControllerConfig config) /*override*/;
 
+    // vIndex: 2
     virtual ::webrtc::TimeDelta GetProcessInterval() const /*override*/;
 
+    // vIndex: 0
     virtual ~GoogCcNetworkControllerFactory() /*override*/ = default;
     // NOLINTEND
 
@@ -60,8 +63,6 @@ public:
     MCNAPI ::std::unique_ptr<::webrtc::NetworkControllerInterface> $Create(::webrtc::NetworkControllerConfig config);
 
     MCNAPI ::webrtc::TimeDelta $GetProcessInterval() const;
-
-
     // NOLINTEND
 
 public:

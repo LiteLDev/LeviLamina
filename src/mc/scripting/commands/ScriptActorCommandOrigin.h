@@ -28,10 +28,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptActorCommandOrigin() /*override*/;
 
+    // vIndex: 8
     virtual ::Actor* getEntity() const /*override*/;
 
+    // vIndex: 10
     virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
     // NOLINTEND
 
@@ -67,8 +70,6 @@ public:
     MCNAPI ::Actor* $getEntity() const;
 
     MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
-
-
     // NOLINTEND
 
 public:

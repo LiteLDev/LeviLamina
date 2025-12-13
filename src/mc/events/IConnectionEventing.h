@@ -10,6 +10,14 @@ class MultiPlayerLevel;
 class IConnectionEventing {
 public:
     // IConnectionEventing inner types define
+    enum class ServerConnectionOutcome : int {
+        Success             = 0,
+        Failed              = 1,
+        FailedUserOffline   = 2,
+        FailedServerFull    = 3,
+        FailedServerOffline = 4,
+    };
+
     enum class ConnectionFailureReason : int {
         Unknown                     = -1,
         MismatchedMinecraftProtocol = 1,
@@ -25,19 +33,13 @@ public:
         Canceled               = 5,
     };
 
-    enum class ServerConnectionOutcome : int {
-        Success             = 0,
-        Failed              = 1,
-        FailedUserOffline   = 2,
-        FailedServerFull    = 3,
-        FailedServerOffline = 4,
-    };
-
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IConnectionEventing() = default;
 
+    // vIndex: 1
     virtual void fireServerConnectionEvent(
         ::IConnectionEventing::ServerConnectionOutcome,
         uint,
@@ -46,6 +48,7 @@ public:
         ::std::string const&
     ) = 0;
 
+    // vIndex: 2
     virtual void fireEventOnSuccessfulClientLogin(::MultiPlayerLevel const*) = 0;
     // NOLINTEND
 

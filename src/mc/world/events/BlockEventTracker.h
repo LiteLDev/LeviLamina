@@ -28,8 +28,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BlockEventTracker() /*override*/ = default;
 
+    // vIndex: 4
     virtual void onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              pos,

@@ -12,10 +12,13 @@ class IContainerTransfer {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IContainerTransfer() = default;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::ContainerTransferScope> preTransfer() = 0;
 
+    // vIndex: 2
     virtual void postTransfer(::ContainerTransferScope*, ::ContainerScreenActionResult const&) = 0;
     // NOLINTEND
 

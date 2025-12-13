@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Identifier.h"
+#include "mc/world/item/components/ComponentItemMenuCategoryData_v1_21_110.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -11,8 +15,8 @@ struct ComponentItemDescriptionData_v1_21_110 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke4d61a;
-    ::ll::UntypedStorage<8, 56> mUnkdcebc4;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<10>>             mIdentifier;
+    ::ll::TypedStorage<8, 56, ::ComponentItemMenuCategoryData_v1_21_110> mCategory;
     // NOLINTEND
 
 public:
@@ -24,20 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ComponentItemDescriptionData_v1_21_110& operator=(::ComponentItemDescriptionData_v1_21_110&&);
+    MCFOLD ::ComponentItemDescriptionData_v1_21_110& operator=(::ComponentItemDescriptionData_v1_21_110&&);
 
-    MCNAPI ~ComponentItemDescriptionData_v1_21_110();
+    MCAPI ~ComponentItemDescriptionData_v1_21_110();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -27,21 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit Graphics(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
-
-    MCNAPI_S void updateSettings(::Editor::Settings::GraphicsProps const& props, bool notifyUpdate);
+    MCNAPI void updateSettings(::Editor::Settings::GraphicsProps const& props, bool notifyUpdate);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
     // NOLINTEND
 };
 

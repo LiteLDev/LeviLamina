@@ -5,18 +5,19 @@
 class Ability {
 public:
     // Ability inner types define
-    enum class Options : uchar {
-        None                        = 0,
-        NoSave                      = 1,
-        CommandExposed              = 2,
-        PermissionsInterfaceExposed = 4,
-    };
-
     enum class Type : uchar {
         Invalid = 0,
         Unset   = 1,
         Bool    = 2,
         Float   = 3,
+    };
+
+    enum class Options : uchar {
+        // bitfield representation
+        None                        = 0,
+        NoSave                      = 1 << 0,
+        CommandExposed              = 1 << 1,
+        PermissionsInterfaceExposed = 1 << 2,
     };
 
     union Value {

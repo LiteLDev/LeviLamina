@@ -25,12 +25,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ContainerValidationCommitObject() = default;
 
+    // vIndex: 1
     virtual bool append(::ContainerValidationCommitObject*) = 0;
 
+    // vIndex: 2
     virtual bool canCommit(::ContainerScreenContext const&) const = 0;
 
+    // vIndex: 3
     virtual void commit(::ContainerScreenContext const&) = 0;
     // NOLINTEND
 

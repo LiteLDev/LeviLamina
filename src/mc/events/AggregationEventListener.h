@@ -45,23 +45,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AggregationEventListener() /*override*/;
 
+    // vIndex: 1
     virtual void recordEvent(
         ::Social::Events::Event const&                   event,
         ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform
     ) /*override*/;
 
+    // vIndex: 2
     virtual void sendEvents(bool forceSend) /*override*/;
 
+    // vIndex: 5
     virtual void sendEvent(::Social::Events::Event const&) = 0;
 
+    // vIndex: 4
     virtual void stopDebugEventLogging() /*override*/;
 
+    // vIndex: 6
     virtual void _flushEventQueue();
 
+    // vIndex: 7
     virtual bool _checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
 
+    // vIndex: 8
     virtual bool _isListenerReadyForEvents() const;
     // NOLINTEND
 
@@ -69,13 +77,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
-
-    MCNAPI_C AggregationEventListener(
-        uint                regBatchSize,
-        uint                regSendInterval,
-        uint                throttledSendInterval,
-        ::Core::Path const& logFileName
-    );
 
     MCNAPI bool _needToSendAggregatedEvents() const;
 
@@ -95,9 +96,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Core::Path const& logFileName);
-
-    MCNAPI_C void*
-    $ctor(uint regBatchSize, uint regSendInterval, uint throttledSendInterval, ::Core::Path const& logFileName);
     // NOLINTEND
 
 public:
@@ -121,8 +119,6 @@ public:
     MCNAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
 
     MCNAPI bool $_isListenerReadyForEvents() const;
-
-
     // NOLINTEND
 
 public:

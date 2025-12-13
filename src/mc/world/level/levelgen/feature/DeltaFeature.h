@@ -16,23 +16,23 @@ class DeltaFeature : public ::Feature {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& centerPos, ::Random& random) const /*override*/;
 
+    // vIndex: 0
     virtual ~DeltaFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _isValidPlacement(::BlockSource& region, ::BlockPos cursor) const;
+    MCAPI bool _isValidPlacement(::BlockSource& region, ::BlockPos cursor) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& centerPos, ::Random& random) const;
-
-
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& centerPos, ::Random& random) const;
     // NOLINTEND
 
 public:

@@ -80,68 +80,100 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DataBackedAppConfigs() /*override*/ = default;
 
+    // vIndex: 2
     virtual bool arePremiumSkinPacksAllowed() const /*override*/;
 
+    // vIndex: 3
     virtual bool areResourcePacksAllowed() const /*override*/;
 
+    // vIndex: 4
     virtual bool isPlayScreenAllowed() const /*override*/;
 
+    // vIndex: 7
     virtual bool areEmotesSupported() const /*override*/;
 
+    // vIndex: 27
     virtual bool canUseAzureNotebooks() const /*override*/;
 
+    // vIndex: 28
     virtual ::AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const /*override*/;
 
+    // vIndex: 8
     virtual bool useNormalizedFontSize() const /*override*/;
 
+    // vIndex: 9
     virtual bool useFullScreenByDefault() const /*override*/;
 
+    // vIndex: 10
     virtual bool muteByDefault() const /*override*/;
 
+    // vIndex: 11
     virtual bool isCoursesCacheEnabled() const /*override*/;
 
+    // vIndex: 5
     virtual bool isChatScreenAllowed() const /*override*/;
 
+    // vIndex: 12
     virtual bool shouldPromptBeforeExit() const /*override*/;
 
+    // vIndex: 13
     virtual bool gameArgumentsNeedAuthentication() const /*override*/;
 
+    // vIndex: 16
     virtual ::EducationEditionOffer getEducationEditionOffering() const /*override*/;
 
+    // vIndex: 15
     virtual bool worldsAreSingleUse() const /*override*/;
 
+    // vIndex: 29
     virtual bool isSaveToCloudOn() const /*override*/;
 
+    // vIndex: 30
     virtual bool isEduAIOn() const /*override*/;
 
+    // vIndex: 31
     virtual bool isDedicatedServerOn() const /*override*/;
 
+    // vIndex: 20
     virtual bool requireEduLevelSettings() const /*override*/;
 
+    // vIndex: 17
     virtual bool requireTrustedContent() const /*override*/;
 
+    // vIndex: 19
     virtual bool supports3DExport() const /*override*/;
 
+    // vIndex: 18
     virtual bool isExternalPlayerCommunicationAllowed() const /*override*/;
 
+    // vIndex: 21
     virtual ::ConnectionDefinition getConnectionDefinition() const /*override*/;
 
+    // vIndex: 22
     virtual bool supportsChangingMultiplayerDuringPlay() const /*override*/;
 
+    // vIndex: 14
     virtual bool worldBuilderDisabled() const /*override*/;
 
+    // vIndex: 23
     virtual bool webSocketsDisabled() const /*override*/;
 
+    // vIndex: 24
     virtual bool sendPermissionsTelemetry() const /*override*/;
 
+    // vIndex: 25
     virtual bool useEduDemoUpsellDialog() const /*override*/;
 
+    // vIndex: 32
     virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const /*override*/;
 
+    // vIndex: 35
     virtual ::std::string getFeedbackURL() const /*override*/;
 
+    // vIndex: 38
     virtual void applyLevelDataOverride(::LevelData&) const /*override*/;
     // NOLINTEND
 

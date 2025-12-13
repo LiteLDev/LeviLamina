@@ -7,18 +7,6 @@
 
 namespace Social {
 
-struct AuthToken : public ::NewType<::std::string> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~AuthToken();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
-};
+struct AuthToken : public ::NewType<::std::string> {};
 
 } // namespace Social

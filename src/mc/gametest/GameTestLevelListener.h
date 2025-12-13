@@ -28,10 +28,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 7
     virtual ::EventResult onLevelTickEnd(::Level&) /*override*/;
 
+    // vIndex: 9
     virtual ::EventResult onEvent(::LevelNotificationEvent const& event) /*override*/;
 
+    // vIndex: 0
     virtual ~GameTestLevelListener() /*override*/ = default;
     // NOLINTEND
 
@@ -41,8 +44,6 @@ public:
     MCNAPI ::EventResult $onLevelTickEnd(::Level&);
 
     MCNAPI ::EventResult $onEvent(::LevelNotificationEvent const& event);
-
-
     // NOLINTEND
 
 public:

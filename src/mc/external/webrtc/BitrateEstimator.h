@@ -40,12 +40,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BitrateEstimator();
 
+    // vIndex: 1
     virtual void Update(::webrtc::Timestamp at_time, ::webrtc::DataSize amount, bool in_alr);
 
+    // vIndex: 2
     virtual ::std::optional<::webrtc::DataRate> bitrate() const;
 
+    // vIndex: 3
     virtual void ExpectFastRateChange();
     // NOLINTEND
 
@@ -79,8 +83,6 @@ public:
     MCNAPI ::std::optional<::webrtc::DataRate> $bitrate() const;
 
     MCNAPI void $ExpectFastRateChange();
-
-
     // NOLINTEND
 
 public:

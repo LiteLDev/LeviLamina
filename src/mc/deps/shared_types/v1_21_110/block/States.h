@@ -65,11 +65,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S States();
+    MCNAPI States();
 
-    MCNAPI_S States(::SharedTypes::v1_21_110::BlockDefinition::States const&);
+    MCNAPI States(::SharedTypes::v1_21_110::BlockDefinition::States const&);
 
-    MCNAPI_S ::std::unordered_map<
+    MCNAPI ::std::unordered_map<
         ::std::string,
         ::std::variant<
             ::std::vector<::std::string>,
@@ -78,13 +78,13 @@ public:
             ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange>>
     getter() const;
 
-    MCNAPI_S ::SharedTypes::v1_21_110::BlockDefinition::States&
-    operator=(::SharedTypes::v1_21_110::BlockDefinition::States&&);
-
-    MCNAPI_S ::SharedTypes::v1_21_110::BlockDefinition::States&
+    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::States&
     operator=(::SharedTypes::v1_21_110::BlockDefinition::States const&);
 
-    MCNAPI_S void setter(
+    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::States&
+    operator=(::SharedTypes::v1_21_110::BlockDefinition::States&&);
+
+    MCNAPI void setter(
         ::std::unordered_map<
             ::std::string,
             ::std::variant<
@@ -94,27 +94,27 @@ public:
                 ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange>>& value
     );
 
-    MCNAPI_S ~States();
+    MCNAPI ~States();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCNAPI_S void* $ctor(::SharedTypes::v1_21_110::BlockDefinition::States const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_110::BlockDefinition::States const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_S void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

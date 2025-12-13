@@ -23,34 +23,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
+    // vIndex: 1
+    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
 
-    virtual void load(::std::string const& valueString) /*override*/;
+    // vIndex: 4
+    virtual void load(::std::string const&) /*override*/;
 
+    // vIndex: 0
     virtual ~StringOption() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void set(::std::string const& value, bool saveOptionChange);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
-    MCNAPI void $load(::std::string const& valueString);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

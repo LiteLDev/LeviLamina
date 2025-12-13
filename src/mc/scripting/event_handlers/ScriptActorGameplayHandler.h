@@ -24,11 +24,14 @@ class ScriptActorGameplayHandler : public ::EventHandlerDispatcher<::ActorGamepl
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent) /*override*/;
 
+    // vIndex: 17
     virtual ::HandlerResult handleEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptActorGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
@@ -54,8 +57,6 @@ public:
     MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent);
 
     MCNAPI ::HandlerResult $handleEvent(::ActorRemovedEvent const& actorRemovedEvent);
-
-
     // NOLINTEND
 
 public:

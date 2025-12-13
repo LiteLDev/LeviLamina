@@ -46,16 +46,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PacketReplayNetworkHandler() /*override*/ = default;
 
+    // vIndex: 8
     virtual ::IncomingPacketFilterResult
     allowIncomingPacketId(::NetworkIdentifierWithSubId const&, ::MinecraftPacketIds, uint64) /*override*/;
 
+    // vIndex: 9
     virtual ::OutgoingPacketFilterResult
     allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&) /*override*/;
 
+    // vIndex: 3
     virtual void onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&) /*override*/;
 
+    // vIndex: 7
     virtual void onDisconnect(
         ::NetworkIdentifier const&,
         ::Connection::DisconnectFailReason const,
@@ -65,18 +70,25 @@ public:
         ::std::string const&
     ) /*override*/;
 
+    // vIndex: 231
     virtual void handle(::NetworkIdentifier const&, ::DisconnectPacket const&) /*override*/;
 
+    // vIndex: 71
     virtual void handle(::NetworkIdentifier const&, ::NetworkStackLatencyPacket const&) /*override*/;
 
+    // vIndex: 224
     virtual void handle(::NetworkIdentifier const&, ::ResourcePacksInfoPacket const&) /*override*/;
 
+    // vIndex: 223
     virtual void handle(::NetworkIdentifier const&, ::ResourcePackStackPacket const&) /*override*/;
 
+    // vIndex: 225
     virtual void handle(::NetworkIdentifier const&, ::ServerToClientHandshakePacket const&) /*override*/;
 
+    // vIndex: 216
     virtual void handle(::NetworkIdentifier const&, ::StartGamePacket const&) /*override*/;
 
+    // vIndex: 2
     virtual void onConnect(::NetworkIdentifier const&) /*override*/;
     // NOLINTEND
 

@@ -15,12 +15,16 @@ class ITrait {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ITrait() = default;
 
+    // vIndex: 1
     virtual void applyToBlockType(::BlockType&) const = 0;
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const = 0;
 
+    // vIndex: 3
     virtual void initializeFromNetwork(::CompoundTag const&, ::cereal::ReflectionCtx const&) = 0;
     // NOLINTEND
 

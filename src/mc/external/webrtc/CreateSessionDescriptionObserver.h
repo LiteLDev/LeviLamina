@@ -17,10 +17,13 @@ class CreateSessionDescriptionObserver : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual void OnSuccess(::webrtc::SessionDescriptionInterface*) = 0;
 
+    // vIndex: 4
     virtual void OnFailure(::webrtc::RTCError) = 0;
 
+    // vIndex: 2
     virtual ~CreateSessionDescriptionObserver() /*override*/ = default;
     // NOLINTEND
 

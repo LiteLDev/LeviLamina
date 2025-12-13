@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class LocalConnectivitySystem;
-class LocalNetworkPeer;
 class NetworkIdentifier;
 namespace Social { class GameConnectionInfo; }
 // clang-format on
@@ -33,22 +32,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LocalConnector() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::std::string getLocalIp() /*override*/;
 
+    // vIndex: 2
     virtual ushort getPort() const /*override*/;
 
+    // vIndex: 3
     virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const /*override*/;
 
+    // vIndex: 4
     virtual bool isIPv4Supported() const /*override*/;
 
+    // vIndex: 5
     virtual bool isIPv6Supported() const /*override*/;
 
+    // vIndex: 6
     virtual ushort getIPv4Port() const /*override*/;
 
+    // vIndex: 7
     virtual ushort getIPv6Port() const /*override*/;
 
+    // vIndex: 8
     virtual ::TransportLayer getNetworkType() const /*override*/;
     // NOLINTEND
 
@@ -56,10 +64,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI LocalConnector(::Connector::ConnectionCallbacks& callbacks, ::NetworkIdentifier const& localId);
-
-    MCNAPI_C bool connect(::NetworkIdentifier const& id);
-
-    MCNAPI_C void connectToClient(::LocalConnector& clientConnector, ::std::shared_ptr<::LocalNetworkPeer> clientPeer);
 
     MCNAPI void disconnect();
 
@@ -96,8 +100,6 @@ public:
     MCNAPI ushort $getIPv4Port() const;
 
     MCNAPI ushort $getIPv6Port() const;
-
-
     // NOLINTEND
 
 public:

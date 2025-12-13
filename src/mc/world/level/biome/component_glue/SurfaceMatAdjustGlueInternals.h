@@ -15,7 +15,7 @@ namespace SharedTypes::Util { struct MolangJsonContainer; }
 namespace SurfaceMatAdjustGlueInternals {
 // functions
 // NOLINTBEGIN
-MCNAPI bool resolveAndVerifyMolang(
+MCAPI bool resolveAndVerifyMolang(
     ::std::optional<::ExpressionNode>&              expressionNode,
     ::SharedTypes::Util::MolangJsonContainer const& molangJson,
     ::MolangVersion                                 molangVersion,

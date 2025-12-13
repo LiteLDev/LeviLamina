@@ -6,6 +6,7 @@ class GameplayHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~GameplayHandler() = default;
     // NOLINTEND
 };

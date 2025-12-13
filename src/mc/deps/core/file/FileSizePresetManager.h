@@ -14,10 +14,13 @@ class FileSizePresetManager {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FileSizePresetManager();
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::Core::FileSizePresetToken> presetInitialSizeForFile(::Core::PathView, uint64) = 0;
 
+    // vIndex: 2
     virtual ::std::optional<uint64> checkFileInitialSize(::Core::PathView) = 0;
     // NOLINTEND
 

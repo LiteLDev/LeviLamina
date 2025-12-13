@@ -39,44 +39,64 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BinaryStream() /*override*/;
 
+    // vIndex: 2
     virtual void writeBool(bool value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 3
     virtual void writeByte(uchar value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 4
     virtual void writeUnsignedShort(ushort value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 5
     virtual void writeSignedShort(short value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 6
     virtual void writeUnsignedInt(uint value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 7
     virtual void writeSignedBigEndianInt(int value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 8
     virtual void writeSignedInt(int value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 9
     virtual void writeUnsignedInt64(uint64 value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 10
     virtual void writeSignedInt64(int64 value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 11
     virtual void writeUnsignedVarInt(uint uvalue, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 12
     virtual void writeUnsignedVarInt64(uint64 uvalue, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 13
     virtual void writeVarInt(int value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 14
     virtual void writeVarInt64(int64 value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 15
     virtual void writeDouble(double value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 16
     virtual void writeFloat(float value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 17
     virtual void writeFixedFloat(float value, char const* docFieldName, char const* docFieldNotes, double size);
 
+    // vIndex: 18
     virtual void writeNormalizedFloat(float value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 19
     virtual void writeString(::std::string_view value, char const* docFieldName, char const* docFieldNotes);
 
+    // vIndex: 20
     virtual void writeIf(
         bool                                                                 controlValue,
         char const*                                                          docFieldName,
@@ -84,12 +104,14 @@ public:
         ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeIfFalse
     );
 
+    // vIndex: 21
     virtual void writeConditional(
         char const*                                                          docFieldName,
         ::std::initializer_list<::BinaryStream::ConditionBlock>&&            conditions,
         ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeDefault
     );
 
+    // vIndex: 23
     virtual void branchingWrite_DEPRECATED(
         ::std::function<void(::BinaryStream&, int)>&& branchWriter,
         int                                           controlValue,
@@ -98,6 +120,7 @@ public:
         char const*                                   controlDocFieldName
     );
 
+    // vIndex: 22
     virtual void branchingWrite_DEPRECATED(
         ::std::function<void(::BinaryStream&, int)>&& branchWriter,
         int                                           controlValue,
@@ -105,6 +128,7 @@ public:
         char const*                                   controlDocFieldName
     );
 
+    // vIndex: 24
     virtual void _writeArray(
         ::std::function<void(::BinaryStream&)>&& sizeWriter,
         ::std::function<void(::BinaryStream&)>&& writer,
@@ -204,8 +228,6 @@ public:
         char const*                              docFieldName,
         char const*                              docFieldNotes
     );
-
-
     // NOLINTEND
 
 public:

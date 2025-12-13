@@ -29,12 +29,6 @@ public:
     // clang-format on
 
     // RTPSenderVideo inner types define
-    enum class SendVideoLayersAllocation : int {
-        KSendWithResolution    = 0,
-        KSendWithoutResolution = 1,
-        KDontSend              = 2,
-    };
-
     struct Config {
     public:
         // member variables
@@ -86,6 +80,12 @@ public:
         TemporalLayerStats();
     };
 
+    enum class SendVideoLayersAllocation : int {
+        KSendWithResolution    = 0,
+        KSendWithoutResolution = 1,
+        KDontSend              = 2,
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -128,8 +128,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ~RTPSenderVideo() /*override*/;
 
+    // vIndex: 0
     virtual bool SendVideo(
         int                                       payload_type,
         ::std::optional<::webrtc::VideoCodecType> codec_type,
@@ -142,9 +144,11 @@ public:
         ::std::vector<uint>                       csrcs
     ) /*override*/;
 
+    // vIndex: 1
     virtual void
     SetVideoStructureAfterTransformation(::webrtc::FrameDependencyStructure const* video_structure) /*override*/;
 
+    // vIndex: 2
     virtual void SetVideoLayersAllocationAfterTransformation(::webrtc::VideoLayersAllocation allocation) /*override*/;
     // NOLINTEND
 
@@ -241,8 +245,6 @@ public:
     MCNAPI void $SetVideoStructureAfterTransformation(::webrtc::FrameDependencyStructure const* video_structure);
 
     MCNAPI void $SetVideoLayersAllocationAfterTransformation(::webrtc::VideoLayersAllocation allocation);
-
-
     // NOLINTEND
 
 public:

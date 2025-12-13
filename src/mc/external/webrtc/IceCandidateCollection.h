@@ -13,12 +13,16 @@ class IceCandidateCollection {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IceCandidateCollection() = default;
 
+    // vIndex: 1
     virtual uint64 count() const = 0;
 
+    // vIndex: 2
     virtual bool HasCandidate(::webrtc::IceCandidateInterface const*) const = 0;
 
+    // vIndex: 3
     virtual ::webrtc::IceCandidateInterface const* at(uint64) const = 0;
     // NOLINTEND
 

@@ -3,13 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/store/DisplayLoggedErrorType.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-
-// auto generated forward declare list
-// clang-format off
-struct DisplayLoggedError;
-// clang-format on
 
 class DisplayLoggedErrorManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
@@ -32,56 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~DisplayLoggedErrorManager() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~DisplayLoggedErrorManager() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit DisplayLoggedErrorManager(bool writeToLogFile);
-
-    MCNAPI_C void _writeLogMessage(::std::string const& logMessage);
-
-    MCNAPI_C ::std::string buildFullErrorLogMessage(::DisplayLoggedError error) const;
-
-    MCNAPI_C void logErrorImpl(
-        ::DisplayLoggedErrorType errorType,
-        bool                     isAutomationRun,
-        ::std::string const&     errorMessage,
-        ::std::string const&     messageTemplate,
-        ::std::string const&     errorParameters,
-        char const*              fileName,
-        int                      lineNumber,
-        bool                     sendTelemetry
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static bool isAutomationRun();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(bool writeToLogFile);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

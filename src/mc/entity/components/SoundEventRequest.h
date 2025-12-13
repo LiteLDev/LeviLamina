@@ -28,21 +28,6 @@ public:
     // clang-format on
 
     // SoundEventRequest inner types define
-    struct ActorLocationData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 8> mUnk5be6b0;
-        ::ll::UntypedStorage<4, 4> mUnk68bc8c;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ActorLocationData& operator=(ActorLocationData const&);
-        ActorLocationData(ActorLocationData const&);
-        ActorLocationData();
-    };
-
     struct PlainData {
     public:
         // member variables
@@ -96,12 +81,27 @@ public:
         SynchronizedPlainData();
     };
 
-    using PositionVariant = ::std::variant<::Vec3, ::SoundEventRequest::ActorLocationData>;
+    struct ActorLocationData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 8> mUnk5be6b0;
+        ::ll::UntypedStorage<4, 4> mUnk68bc8c;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ActorLocationData& operator=(ActorLocationData const&);
+        ActorLocationData(ActorLocationData const&);
+        ActorLocationData();
+    };
 
     using SoundDataVariant = ::std::variant<
         ::SoundEventRequest::PlainData,
         ::SoundEventRequest::SoundData,
         ::SoundEventRequest::SynchronizedPlainData>;
+
+    using PositionVariant = ::std::variant<::Vec3, ::SoundEventRequest::ActorLocationData>;
 
 public:
     // member variables
@@ -127,13 +127,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SoundEventRequest(::SoundEventRequest&&);
+    MCAPI SoundEventRequest(::SoundEventRequest&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
+    MCAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
         ::ActorDataFlagComponent const&        actorFlags,
         ::ActorDefinitionIdentifier const&     identifier,
         ::ActorUniqueID                        actorId,
@@ -144,7 +144,7 @@ public:
         bool                                   isGlobal
     );
 
-    MCNAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
+    MCAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
         ::ActorDataFlagComponent const&        actorFlags,
         ::ActorDefinitionIdentifier const&     identifier,
         ::ActorUniqueID                        actorId,
@@ -156,7 +156,7 @@ public:
         bool                                   isGlobal
     );
 
-    MCNAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
+    MCAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
         ::ActorDataFlagComponent const&        actorFlags,
         ::ActorDefinitionIdentifier const&     identifier,
         ::ActorUniqueID                        actorId,
@@ -171,6 +171,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SoundEventRequest&&);
+    MCAPI void* $ctor(::SoundEventRequest&&);
     // NOLINTEND
 };

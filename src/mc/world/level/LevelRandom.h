@@ -21,12 +21,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::IRandom& getIRandom() /*override*/;
 
+    // vIndex: 2
     virtual ::Random& getRandom() /*override*/;
 
+    // vIndex: 3
     virtual ::Random& getThreadRandom() /*override*/;
 
+    // vIndex: 0
     virtual ~LevelRandom() /*override*/ = default;
     // NOLINTEND
 
@@ -38,8 +42,6 @@ public:
     MCFOLD ::Random& $getRandom();
 
     MCFOLD ::Random& $getThreadRandom();
-
-
     // NOLINTEND
 
 public:

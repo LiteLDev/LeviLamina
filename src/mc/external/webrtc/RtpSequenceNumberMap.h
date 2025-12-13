@@ -8,8 +8,8 @@ class RtpSequenceNumberMap {
 public:
     // RtpSequenceNumberMap inner types declare
     // clang-format off
-    struct Info;
     struct Association;
+    struct Info;
     // clang-format on
 
     // RtpSequenceNumberMap inner types define

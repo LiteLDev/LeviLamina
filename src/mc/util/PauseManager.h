@@ -6,11 +6,6 @@
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/world/SimulationType.h"
 
-// auto generated forward declare list
-// clang-format off
-class ILocalServerPauseCommunication;
-// clang-format on
-
 class PauseManager {
 public:
     // member variables
@@ -31,17 +26,8 @@ public:
     PauseManager();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C bool requestInGamePause(::ILocalServerPauseCommunication& pauseCommunication, bool status) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::SimulationType getSimulationType(::StackRefResult<::PauseManager const> pauseManager);
-
-    MCNAPI_C static void
-    setSimulationType(::StackRefResult<::PauseManager> pauseManager, ::SimulationType simulationType);
     // NOLINTEND
 };

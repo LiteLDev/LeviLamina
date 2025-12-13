@@ -5,13 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/buffer_span.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/saveddata/maps/MapDecoration.h"
 #include "mc/world/level/saveddata/maps/MapItemTrackedActor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Dimension;
@@ -23,8 +24,9 @@ class MapItemTrackedActor;
 class Packet;
 class Player;
 class Random;
+class SpinLockImpl;
 class Vec3;
-struct ActorUniqueID;
+struct ClientTerrainPixel;
 namespace mce { class Color; }
 // clang-format on
 
@@ -42,80 +44,67 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkb62bc1;
-        ::ll::UntypedStorage<4, 4> mUnk19082b;
-        ::ll::UntypedStorage<4, 4> mUnk8e087d;
-        ::ll::UntypedStorage<4, 4> mUnk7e8fed;
+        ::ll::TypedStorage<4, 4, uint> x0;
+        ::ll::TypedStorage<4, 4, uint> z0;
+        ::ll::TypedStorage<4, 4, uint> x1;
+        ::ll::TypedStorage<4, 4, uint> z1;
         // NOLINTEND
+    };
 
+    using DecorationCollection =
+        ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>>;
+
+    struct MapDecorationTypeAndRotation {
     public:
-        // prevent constructor by default
-        ChunkBounds& operator=(ChunkBounds const&);
-        ChunkBounds(ChunkBounds const&);
-        ChunkBounds();
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, ::MapDecoration::Type> type;
+        ::ll::TypedStorage<4, 4, int>                   rotation;
+        // NOLINTEND
     };
 
     struct MapDecorationContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk821781;
-        ::ll::UntypedStorage<4, 4> mUnk7d9d48;
-        ::ll::UntypedStorage<4, 4> mUnk417032;
-        ::ll::UntypedStorage<4, 4> mUnkef3488;
+        ::ll::TypedStorage<1, 1, ::MapDecoration::Type> type;
+        ::ll::TypedStorage<4, 4, int>                   x;
+        ::ll::TypedStorage<4, 4, int>                   y;
+        ::ll::TypedStorage<4, 4, int>                   rot;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MapDecorationContext& operator=(MapDecorationContext const&);
-        MapDecorationContext(MapDecorationContext const&);
-        MapDecorationContext();
-    };
-
-    struct MapDecorationTypeAndRotation {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk542a5a;
-        ::ll::UntypedStorage<4, 4> mUnkd03173;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MapDecorationTypeAndRotation& operator=(MapDecorationTypeAndRotation const&);
-        MapDecorationTypeAndRotation(MapDecorationTypeAndRotation const&);
-        MapDecorationTypeAndRotation();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk75af2b;
-    ::ll::UntypedStorage<8, 8>  mUnk9ef9c7;
-    ::ll::UntypedStorage<8, 8>  mUnkcec791;
-    ::ll::UntypedStorage<1, 1>  mUnkd97511;
-    ::ll::UntypedStorage<1, 1>  mUnk321d33;
-    ::ll::UntypedStorage<4, 12> mUnk8fe42a;
-    ::ll::UntypedStorage<4, 4>  mUnk1124f9;
-    ::ll::UntypedStorage<1, 1>  mUnk6b22d5;
-    ::ll::UntypedStorage<8, 24> mUnkedc92c;
-    ::ll::UntypedStorage<8, 24> mUnkd864b3;
-    ::ll::UntypedStorage<8, 24> mUnkad59b1;
-    ::ll::UntypedStorage<1, 1>  mUnk99a310;
-    ::ll::UntypedStorage<1, 1>  mUnk33dae3;
-    ::ll::UntypedStorage<1, 1>  mUnkaa89b9;
-    ::ll::UntypedStorage<1, 1>  mUnk3709d4;
-    ::ll::UntypedStorage<8, 24> mUnkdffa4a;
-    ::ll::UntypedStorage<1, 1>  mUnk7f273b;
-    ::ll::UntypedStorage<8, 8>  mUnk31063e;
-    ::ll::UntypedStorage<1, 1>  mUnke63e1f;
-    ::ll::UntypedStorage<1, 1>  mUnkf77c62;
+    ::ll::TypedStorage<8, 8, uint64>                                                   mUpdateInterval;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                          mMapId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                          mParentMapId;
+    ::ll::TypedStorage<1, 1, bool>                                                     mIsFullyExplored;
+    ::ll::TypedStorage<1, 1, bool>                                                     mPreviewIncomplete;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                              mOrigin;
+    ::ll::TypedStorage<4, 4, ::DimensionType>                                          mDimension;
+    ::ll::TypedStorage<1, 1, char>                                                     mScale;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>                                     mPixels;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ClientTerrainPixel>>                     mClientPixels;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::MapItemTrackedActor>>> mTrackedEntities;
+    ::ll::TypedStorage<1, 1, bool>                                                     mUnlimitedTracking;
+    ::ll::TypedStorage<1, 1, bool>                                                     mDirtyForSave;
+    ::ll::TypedStorage<1, 1, bool>                                                     mDirtyPixelData;
+    ::ll::TypedStorage<1, 1, bool>                                                     mLocked;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>>>
+                                                                mDecorations;
+    ::ll::TypedStorage<1, 1, bool>                              mHasDirtyClientPixels;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SpinLockImpl>> mClientSamplingLock;
+    ::ll::TypedStorage<1, 1, bool>                              mNeedsResampling;
+    ::ll::TypedStorage<1, 1, bool>                              mIsDLCWorld;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    MapItemSavedData& operator=(MapItemSavedData const&);
-    MapItemSavedData(MapItemSavedData const&);
     MapItemSavedData();
 
 public:
@@ -160,11 +149,6 @@ public:
 
     MCAPI void _removeTrackedMapEntity(::MapItemTrackedActor::UniqueId const& key);
 
-    MCAPI_C bool _replaceExistingDecoration(
-        ::MapItemTrackedActor::UniqueId const&    id,
-        ::std::shared_ptr<::MapDecoration> const& newDecoration
-    );
-
     MCAPI bool
     _updateTrackedEntityDecoration(::BlockSource& region, ::std::shared_ptr<::MapItemTrackedActor> trackedActor);
 
@@ -192,11 +176,6 @@ public:
     MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::Level&, ::BlockPos const& pos) const;
 
     MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const&, ::Level&, ::Actor& entity) const;
-
-    MCAPI_C void replaceDecorations(
-        ::std::vector<::std::shared_ptr<::MapDecoration>>     decorations,
-        ::std::vector<::MapItemTrackedActor::UniqueId> const& uniqueIds
-    );
 
     MCAPI void save(::LevelStorage& storage);
 

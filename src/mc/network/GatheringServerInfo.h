@@ -20,17 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C GatheringServerInfo(::std::string const& gatheringId, ::std::string const& gatheringTitle);
-
-    MCNAPI_C ::GatheringServerInfo& operator=(::GatheringServerInfo&&);
-
     MCNAPI ~GatheringServerInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string const& gatheringId, ::std::string const& gatheringTitle);
     // NOLINTEND
 
 public:

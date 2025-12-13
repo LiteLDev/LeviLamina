@@ -19,18 +19,16 @@ public:
     // clang-format on
 
     // PoolAliasBinding inner types define
+    using Ptr = ::std::shared_ptr<::PoolAliasBinding>;
+
+    using BoundAliasGroup = ::std::vector<::std::shared_ptr<::PoolAliasBinding>>;
+
     class PoolAliasLookup {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnkbb4557;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::std::string>>> mLookupTable;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PoolAliasLookup& operator=(PoolAliasLookup const&);
-        PoolAliasLookup(PoolAliasLookup const&);
-        PoolAliasLookup();
 
     public:
         // member functions
@@ -48,26 +46,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void appendResolvedAliases(::IRandom&, ::PoolAliasBinding::PoolAliasLookup&) const = 0;
 
+    // vIndex: 1
     virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const&) const = 0;
 
+    // vIndex: 2
     virtual ~PoolAliasBinding() = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::shared_ptr<::PoolAliasBinding> direct(::std::string&& id, ::std::string&& target);
+    MCAPI static ::std::shared_ptr<::PoolAliasBinding> direct(::std::string&& id, ::std::string&& target);
 
-    MCNAPI static ::std::shared_ptr<::PoolAliasBinding>
+    MCAPI static ::std::shared_ptr<::PoolAliasBinding>
     random(::std::string&& id, ::std::vector<::Core::SimpleWeightedEntry<::std::string>>&& targets);
 
-    MCNAPI static ::std::shared_ptr<::PoolAliasBinding> randomGroup(
+    MCAPI static ::std::shared_ptr<::PoolAliasBinding> randomGroup(
         ::std::vector<::Core::SimpleWeightedEntry<::std::vector<::std::shared_ptr<::PoolAliasBinding>>>>&& targets
     );
 
-    MCNAPI static ::PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
+    MCAPI static ::PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
         ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliases,
         ::BlockPos const&                                           structureStartPosition,
         int64                                                       levelSeed

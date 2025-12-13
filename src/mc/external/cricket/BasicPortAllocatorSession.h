@@ -84,42 +84,60 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BasicPortAllocatorSession() /*override*/;
 
+    // vIndex: 18
     virtual ::cricket::BasicPortAllocator* allocator();
 
+    // vIndex: 1
     virtual void SetCandidateFilter(uint filter) /*override*/;
 
+    // vIndex: 2
     virtual void StartGettingPorts() /*override*/;
 
+    // vIndex: 3
     virtual void StopGettingPorts() /*override*/;
 
+    // vIndex: 5
     virtual void ClearGettingPorts() /*override*/;
 
+    // vIndex: 4
     virtual bool IsGettingPorts() /*override*/;
 
+    // vIndex: 6
     virtual bool IsCleared() const /*override*/;
 
+    // vIndex: 7
     virtual bool IsStopped() const /*override*/;
 
+    // vIndex: 11
     virtual ::std::vector<::cricket::PortInterface*> ReadyPorts() const /*override*/;
 
+    // vIndex: 12
     virtual ::std::vector<::cricket::Candidate> ReadyCandidates() const /*override*/;
 
+    // vIndex: 13
     virtual bool CandidatesAllocationDone() const /*override*/;
 
+    // vIndex: 8
     virtual void RegatherOnFailedNetworks() /*override*/;
 
+    // vIndex: 9
     virtual void GetCandidateStatsFromReadyPorts(::std::vector<::cricket::CandidateStats>* candidate_stats_list) const
         /*override*/;
 
+    // vIndex: 10
     virtual void
     SetStunKeepaliveIntervalForReadyPorts(::std::optional<int> const& stun_keepalive_interval) /*override*/;
 
+    // vIndex: 14
     virtual void PruneAllPorts() /*override*/;
 
+    // vIndex: 17
     virtual void UpdateIceParametersInternal() /*override*/;
 
+    // vIndex: 19
     virtual void GetPortConfigurations();
     // NOLINTEND
 
@@ -264,8 +282,6 @@ public:
     MCNAPI void $UpdateIceParametersInternal();
 
     MCNAPI void $GetPortConfigurations();
-
-
     // NOLINTEND
 
 public:

@@ -19,11 +19,14 @@ class IPayload {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IPayload() = default;
 
+    // vIndex: 2
     virtual ::Scripting::ResultAny
     runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
 
+    // vIndex: 1
     virtual ::Scripting::ResultAny
     runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
     // NOLINTEND
@@ -31,15 +34,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::ResultAny
+    MCAPI ::Scripting::ResultAny
     $runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
 
-#ifdef LL_PLAT_S
-    MCNAPI ::Scripting::ResultAny
+    MCAPI ::Scripting::ResultAny
     $runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
-#endif
-
-
     // NOLINTEND
 };
 

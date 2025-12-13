@@ -2,21 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
 namespace AgentComponents {
 
 struct BlockQueryResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkb4afae;
-    ::ll::UntypedStorage<8, 8>  mUnkaf9152;
+    ::ll::TypedStorage<4, 12, ::Vec3>        position;
+    ::ll::TypedStorage<8, 8, ::Block const*> block;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockQueryResult& operator=(BlockQueryResult const&);
-    BlockQueryResult(BlockQueryResult const&);
-    BlockQueryResult();
 };
 
 } // namespace AgentComponents

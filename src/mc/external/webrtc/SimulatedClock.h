@@ -29,10 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SimulatedClock() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::webrtc::Timestamp CurrentTime() /*override*/;
 
+    // vIndex: 2
     virtual ::webrtc::NtpTime ConvertTimestampToNtpTime(::webrtc::Timestamp) /*override*/;
     // NOLINTEND
 

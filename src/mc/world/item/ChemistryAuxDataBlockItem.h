@@ -14,8 +14,10 @@ class ChemistryAuxDataBlockItem : public ::AuxDataBlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 100
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
+    // vIndex: 0
     virtual ~ChemistryAuxDataBlockItem() /*override*/ = default;
     // NOLINTEND
 

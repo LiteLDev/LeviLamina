@@ -22,18 +22,4 @@ public:
     AutoCompleteOption& operator=(AutoCompleteOption const&);
     AutoCompleteOption(AutoCompleteOption const&);
     AutoCompleteOption();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::AutoCompleteOption& operator=(::AutoCompleteOption&&);
-
-    MCNAPI_C ~AutoCompleteOption();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

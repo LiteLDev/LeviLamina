@@ -15,7 +15,6 @@ namespace Core { class FileStats; }
 namespace Core { class FileSystemImpl; }
 namespace Core { class PathView; }
 namespace Core { class Result; }
-namespace Core { class StorageAreaStateListener; }
 namespace Core { class StorageAreasTree; }
 // clang-format on
 
@@ -83,87 +82,126 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FileStorageArea();
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) = 0;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::Core::FileSystemImpl>
     createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
 
+    // vIndex: 3
     virtual bool supportsSizeQuery() const = 0;
 
+    // vIndex: 4
     virtual uint64 getTotalSize() const = 0;
 
+    // vIndex: 5
     virtual ::Core::Result getUsedSize(uint64&) = 0;
 
+    // vIndex: 6
     virtual void setUsedSizeOverride(uint64);
 
+    // vIndex: 7
     virtual void clearUsedSizeOverride();
 
+    // vIndex: 8
     virtual void notifyChangeInFileSize(int64 changeInSize, int64 changeInAllocatedSize);
 
+    // vIndex: 9
     virtual bool handlesPendingWrites() const;
 
+    // vIndex: 10
     virtual void informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
 
+    // vIndex: 11
     virtual uint64 estimatePendingWriteDiskSize(uint64 rawFileSize) const;
 
+    // vIndex: 12
     virtual void informStorageAreaCopy(uint64 storageAreaSize);
 
+    // vIndex: 13
     virtual bool supportsExtendSize() const;
 
+    // vIndex: 14
     virtual bool canExtendSize() const;
 
+    // vIndex: 15
     virtual void resetCanAttemptExtendSize();
 
+    // vIndex: 16
     virtual ::Core::Result getExtendSizeThreshold(uint64&) const;
 
+    // vIndex: 17
     virtual void attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
+    // vIndex: 18
     virtual void preemptiveExtendSize(
         uint64 const            expectedContentSize,
         ::std::function<void()> successCallback,
         ::std::function<void()> failureCallback
     );
 
+    // vIndex: 19
     virtual uint64 getAvailableUserStorageSize();
 
+    // vIndex: 20
     virtual void unloadFlatFileManifests(bool shouldClearManifests);
 
+    // vIndex: 21
     virtual void tick();
 
+    // vIndex: 22
     virtual void flushImmediately();
 
+    // vIndex: 23
     virtual void enableFlushToDisk(bool);
 
+    // vIndex: 24
     virtual void enableSequentialWrites(bool);
 
+    // vIndex: 25
     virtual bool checkCorrupt(bool handleCorruption);
 
+    // vIndex: 26
     virtual ::Bedrock::NonOwnerPointer<::Core::FileIndexLru> getFileIndexLru();
 
+    // vIndex: 27
     virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const;
 
+    // vIndex: 28
     virtual uint64 getTransactionWriteSizeLimit() const;
 
+    // vIndex: 29
     virtual ::Core::Result setSaveDataIcon(::Core::PathView);
 
+    // vIndex: 30
     virtual bool shouldAllowCommit() const;
 
+    // vIndex: 31
     virtual void trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
 
+    // vIndex: 32
     virtual void trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
 
+    // vIndex: 33
     virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
+    // vIndex: 34
     virtual ::std::optional<::std::string> getIntegrityResults() const;
 
+    // vIndex: 35
     virtual bool shouldRecordFileError(::Core::PathView, ::std::error_code) const;
 
+    // vIndex: 36
     virtual ::Core::Result _commit();
 
+    // vIndex: 37
     virtual ::Core::Result _onTransactionsEmpty(bool fromChild);
 
+    // vIndex: 38
     virtual void _onTeardown();
     // NOLINTEND
 
@@ -186,8 +224,6 @@ public:
 
     MCNAPI ::Core::Result _endTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
 
-    MCNAPI_C void addStateListener(::Core::StorageAreaStateListener* l);
-
     MCNAPI bool canWrite() const;
 
     MCNAPI void checkUserStorage();
@@ -198,9 +234,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Core::Result
     _getStorageAreaForPathImpl(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
-
-    MCNAPI_C static ::Core::Result
-    getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
     // NOLINTEND
 
 public:
@@ -306,8 +339,6 @@ public:
     MCNAPI ::Core::Result $_onTransactionsEmpty(bool fromChild);
 
     MCNAPI void $_onTeardown();
-
-
     // NOLINTEND
 
 public:

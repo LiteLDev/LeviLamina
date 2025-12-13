@@ -17,6 +17,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool addCommand(::std::unique_ptr<::AgentCommands::Command> commandObj);
+    MCAPI bool addCommand(::std::unique_ptr<::AgentCommands::Command> commandObj);
     // NOLINTEND
 };

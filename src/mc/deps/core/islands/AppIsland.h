@@ -28,24 +28,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~AppIsland() /*override*/;
-#else // LL_PLAT_C
-    virtual ~AppIsland() /*override*/ = default;
-#endif
 
+    // vIndex: 1
     virtual ushort getId() /*override*/;
 
+    // vIndex: 2
     virtual bool start() /*override*/;
 
+    // vIndex: 3
     virtual bool suspend() /*override*/;
 
+    // vIndex: 4
     virtual bool resume() /*override*/;
 
+    // vIndex: 5
     virtual bool stop() /*override*/;
 
+    // vIndex: 6
     virtual void mainUpdate() /*override*/;
 
+    // vIndex: 7
     virtual void processActivationArguments(::Bedrock::ActivationArguments const& args) /*override*/;
     // NOLINTEND
 
@@ -71,8 +75,6 @@ public:
     MCNAPI void $mainUpdate();
 
     MCNAPI void $processActivationArguments(::Bedrock::ActivationArguments const& args);
-
-
     // NOLINTEND
 
 public:

@@ -16,6 +16,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CustomTemperatureCategoryAttributes() /*override*/ = default;
     // NOLINTEND
 };

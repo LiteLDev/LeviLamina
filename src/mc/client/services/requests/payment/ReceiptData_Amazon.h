@@ -15,16 +15,4 @@ public:
     ReceiptData_Amazon& operator=(ReceiptData_Amazon const&);
     ReceiptData_Amazon(ReceiptData_Amazon const&);
     ReceiptData_Amazon();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ReceiptData_Amazon();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

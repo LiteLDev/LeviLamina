@@ -10,7 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes {
 // functions
 // NOLINTBEGIN
-MCNAPI_S void bindAll(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
 MCNAPI void bindColor(::cereal::ReflectionCtx& ctx);
 

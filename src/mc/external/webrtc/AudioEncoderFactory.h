@@ -20,13 +20,17 @@ class AudioEncoderFactory : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::std::vector<::webrtc::AudioCodecSpec> GetSupportedEncoders() = 0;
 
+    // vIndex: 4
     virtual ::std::optional<::webrtc::AudioCodecInfo> QueryAudioEncoder(::webrtc::SdpAudioFormat const&) = 0;
 
+    // vIndex: 5
     virtual ::std::unique_ptr<::webrtc::AudioEncoder>
     MakeAudioEncoder(int, ::webrtc::SdpAudioFormat const&, ::std::optional<::webrtc::AudioCodecPairId>) = 0;
 
+    // vIndex: 2
     virtual ~AudioEncoderFactory() /*override*/ = default;
     // NOLINTEND
 

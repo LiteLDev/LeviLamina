@@ -120,28 +120,9 @@ public:
 
     MCNAPI bool _isScreenshotIconPath(::Core::PathBuffer<::std::string> const& file);
 
-    MCNAPI_C bool cloudSaveForWorldIsEnabled() const;
-
-    MCNAPI_C bool isEditionCompatible() const;
-
-    MCNAPI_C bool isVersionCompatible() const;
-
     MCNAPI ::LevelSummary& operator=(::LevelSummary const&);
 
-    MCNAPI_C bool operator==(::LevelSummary const& rhs) const;
-
-    MCNAPI_C ::LevelSummary& setId(::std::string Id);
-
-    MCNAPI_C ::LevelSummary& setName(::std::string Name);
-
     MCNAPI ~LevelSummary();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::Core::PathBuffer<::std::string>
-    buildScreenshotIconPath(::Core::Path const& worldDirectory, ::Core::Path const& previousScreenshotIconPath);
     // NOLINTEND
 
 public:

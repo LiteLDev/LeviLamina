@@ -3,14 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/simulation/ContainerScreenActionResultData.h"
-
-// auto generated forward declare list
-// clang-format off
-struct ContainerScreenActionResult;
-struct RecipeNetIdTag;
-// clang-format on
 
 struct CraftResultData : public ::ContainerScreenActionResultData {
 public:
@@ -24,10 +17,4 @@ public:
     CraftResultData& operator=(CraftResultData const&);
     CraftResultData(CraftResultData const&);
     CraftResultData();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::optional<::RecipeNetId> getRecipeId(::ContainerScreenActionResult const& result);
-    // NOLINTEND
 };

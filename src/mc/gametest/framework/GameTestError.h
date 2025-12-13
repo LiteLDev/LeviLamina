@@ -31,9 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GameTestError(::gametest::GameTestError&&);
-
     MCNAPI GameTestError(::gametest::GameTestError const&);
+
+    MCNAPI GameTestError(::gametest::GameTestError&&);
 
     MCNAPI GameTestError(::gametest::GameTestErrorType type_, ::std::string const& message_);
 
@@ -62,9 +62,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::gametest::GameTestError&&);
-
     MCNAPI void* $ctor(::gametest::GameTestError const&);
+
+    MCNAPI void* $ctor(::gametest::GameTestError&&);
 
     MCNAPI void* $ctor(::gametest::GameTestErrorType type_, ::std::string const& message_);
 

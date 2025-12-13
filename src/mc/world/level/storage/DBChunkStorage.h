@@ -37,12 +37,6 @@ public:
     // clang-format on
 
     // DBChunkStorage inner types define
-    enum class ChunkCacheStatus : int {
-        Missing   = 0,
-        Available = 1,
-        DontCache = 2,
-    };
-
     struct PreCavesAndCliffsMetaData {
     public:
         // member variables
@@ -56,6 +50,12 @@ public:
         PreCavesAndCliffsMetaData& operator=(PreCavesAndCliffsMetaData const&);
         PreCavesAndCliffsMetaData(PreCavesAndCliffsMetaData const&);
         PreCavesAndCliffsMetaData();
+    };
+
+    enum class ChunkCacheStatus : int {
+        Missing   = 0,
+        Available = 1,
+        DontCache = 2,
     };
 
 public:
@@ -89,53 +89,76 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DBChunkStorage() /*override*/;
 
+    // vIndex: 1
     virtual void shutdown() /*override*/;
 
+    // vIndex: 2
     virtual bool isShutdownDone() /*override*/;
 
+    // vIndex: 14
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
+    // vIndex: 5
     virtual bool isChunkKnown(::ChunkPos const& chunkPos) /*override*/;
 
+    // vIndex: 6
     virtual bool isChunkSaved(::ChunkPos const& chunkPos) /*override*/;
 
+    // vIndex: 9
     virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhood) /*override*/;
 
+    // vIndex: 10
     virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood) /*override*/;
 
+    // vIndex: 11
     virtual void checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc) /*override*/;
 
+    // vIndex: 12
     virtual bool verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& lc) /*override*/;
 
+    // vIndex: 13
     virtual void neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood) /*override*/;
 
+    // vIndex: 17
     virtual bool saveLiveChunk(::LevelChunk& lc) /*override*/;
 
+    // vIndex: 18
     virtual void writeEntityChunkTransfer(::LevelChunk& lc) /*override*/;
 
+    // vIndex: 19
     virtual void writeEntityChunkTransfersToUnloadedChunk(
         ::ChunkKey const&                                       chunkKey,
         ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers
     ) /*override*/;
 
+    // vIndex: 23
     virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr) /*override*/;
 
+    // vIndex: 21
     virtual void hintDiscardBatchBegin() /*override*/;
 
+    // vIndex: 22
     virtual void hintDiscardBatchEnd() /*override*/;
 
+    // vIndex: 25
     virtual void flushPendingDiscardedChunkWrites() /*override*/;
 
+    // vIndex: 26
     virtual void flushThreadBatch() /*override*/;
 
+    // vIndex: 32
     virtual ::std::unique_ptr<::BlendingDataProvider> tryGetBlendingDataProvider() /*override*/;
 
+    // vIndex: 33
     virtual ::std::shared_ptr<::LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary() /*override*/;
 
+    // vIndex: 20
     virtual void deserializeActorStorageToLevelChunk(::LevelChunk& levelChunk) /*override*/;
 
+    // vIndex: 36
     virtual bool chunkPosNeedsBlending(::ChunkPos const& cp) /*override*/;
     // NOLINTEND
 
@@ -305,8 +328,6 @@ public:
     MCAPI void $deserializeActorStorageToLevelChunk(::LevelChunk& levelChunk);
 
     MCAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
-
-
     // NOLINTEND
 
 public:

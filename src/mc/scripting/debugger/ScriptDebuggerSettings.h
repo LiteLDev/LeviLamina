@@ -20,39 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptDebuggerSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ScriptDebuggerSettings(
-        bool                           allowOutbound,
-        bool                           allowInbound,
-        ::ScriptDebuggerAttachMode     attachMode,
-        uint                           autoAttachTimeoutSec,
-        bool                           forcePort,
-        ::std::optional<::std::string> host,
-        ::std::optional<uint>          port,
-        ::std::optional<::std::string> passcode
-    );
-
     MCNAPI ~ScriptDebuggerSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        bool                           allowOutbound,
-        bool                           allowInbound,
-        ::ScriptDebuggerAttachMode     attachMode,
-        uint                           autoAttachTimeoutSec,
-        bool                           forcePort,
-        ::std::optional<::std::string> host,
-        ::std::optional<uint>          port,
-        ::std::optional<::std::string> passcode
-    );
     // NOLINTEND
 
 public:

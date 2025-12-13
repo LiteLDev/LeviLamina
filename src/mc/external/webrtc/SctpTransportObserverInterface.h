@@ -13,8 +13,10 @@ class SctpTransportObserverInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void OnStateChange(::webrtc::SctpTransportInformation) = 0;
 
+    // vIndex: 1
     virtual ~SctpTransportObserverInterface() = default;
     // NOLINTEND
 

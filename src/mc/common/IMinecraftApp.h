@@ -8,11 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class EDUSystems;
 class FileArchiver;
 class IGameModuleShared;
 class Minecraft;
-class Options;
 namespace Automation { class AutomationClient; }
 // clang-format on
 
@@ -20,36 +18,34 @@ class IMinecraftApp {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~IMinecraftApp();
-#else // LL_PLAT_C
-    virtual ~IMinecraftApp() = default;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems> getEDUSystems() = 0;
-
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems const> getEDUSystems() const = 0;
-
-    virtual ::std::shared_ptr<::Options> getPrimaryUserOptions() = 0;
-
-    virtual ::std::shared_ptr<::Options const> getPrimaryUserOptions() const = 0;
-#endif
-
+    // vIndex: 1
     virtual ::Bedrock::NotNullNonOwnerPtr<::Minecraft> getPrimaryMinecraft() = 0;
 
+    // vIndex: 2
     virtual ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> getAutomationClient() const = 0;
 
+    // vIndex: 3
     virtual bool isEduMode() const = 0;
 
+    // vIndex: 4
     virtual bool isDedicatedServer() const = 0;
 
+    // vIndex: 5
     virtual void onNetworkMaxPlayersChanged(uint) = 0;
 
+    // vIndex: 6
     virtual ::IGameModuleShared& getGameModuleShared() = 0;
 
+    // vIndex: 7
     virtual void requestServerShutdown(::std::string const&) = 0;
 
+    // vIndex: 8
     virtual ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const = 0;
 
+    // vIndex: 9
     virtual bool requestInGamePause(::SubClientId const&, bool) = 0;
     // NOLINTEND
 

@@ -15,32 +15,22 @@ class EmptyChunkSource : public ::ChunkSource {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 14
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
+    // vIndex: 9
     virtual bool structurePostProcessChunk(::ChunkViewSource&) /*override*/;
 
+    // vIndex: 10
     virtual bool decorationPostProcessChunk(::ChunkViewSource&) /*override*/;
 
+    // vIndex: 0
     virtual ~EmptyChunkSource() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCNAPI bool $structurePostProcessChunk(::ChunkViewSource&);
-
-    MCNAPI bool $decorationPostProcessChunk(::ChunkViewSource&);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

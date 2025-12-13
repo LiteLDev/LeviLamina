@@ -18,11 +18,6 @@ public:
     // clang-format on
 
     // EncodedImageCallback inner types define
-    enum class DropReason : uchar {
-        KDroppedByMediaOptimizations = 0,
-        KDroppedByEncoder            = 1,
-    };
-
     struct Result {
     public:
         // Result inner types define
@@ -46,14 +41,22 @@ public:
         Result();
     };
 
+    enum class DropReason : uchar {
+        KDroppedByMediaOptimizations = 0,
+        KDroppedByEncoder            = 1,
+    };
+
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EncodedImageCallback() = default;
 
+    // vIndex: 1
     virtual ::webrtc::EncodedImageCallback::Result
     OnEncodedImage(::webrtc::EncodedImage const&, ::webrtc::CodecSpecificInfo const*) = 0;
 
+    // vIndex: 2
     virtual void OnDroppedFrame(::webrtc::EncodedImageCallback::DropReason reason);
     // NOLINTEND
 
@@ -61,8 +64,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $OnDroppedFrame(::webrtc::EncodedImageCallback::DropReason reason);
-
-
     // NOLINTEND
 
 public:

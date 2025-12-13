@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/checked_resource_service/ResourceValidatorDebugTraits.h"
-#include "mc/deps/core/checked_resource_service/ValidityCheckType.h"
 
 namespace mce {
 
@@ -21,12 +20,6 @@ public:
     PerFrameHandleTracker& operator=(PerFrameHandleTracker const&);
     PerFrameHandleTracker(PerFrameHandleTracker const&);
     PerFrameHandleTracker();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::std::tuple<bool, bool> Validate(::mce::ValidityCheckType validityCheckType) const;
-    // NOLINTEND
 };
 
 } // namespace mce

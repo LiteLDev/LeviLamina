@@ -15,23 +15,17 @@ class NpcDialogueStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkf24f0c;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::NpcDialogueScene>> mScenes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NpcDialogueStorage& operator=(NpcDialogueStorage const&);
-    NpcDialogueStorage(NpcDialogueStorage const&);
-    NpcDialogueStorage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::NpcDialogueScene const* getScene(::std::string const& sceneName) const;
+    MCAPI ::NpcDialogueScene const* getScene(::std::string const& sceneName) const;
 
-    MCNAPI void init(::ResourcePackManager& resourcePackManager);
+    MCAPI void init(::ResourcePackManager& resourcePackManager);
 
-    MCNAPI bool
+    MCAPI bool
     parseFile(::std::string const& fileData, ::std::string const& fileName, ::CurrentCmdVersion packCommandVersion);
     // NOLINTEND
 };

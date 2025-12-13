@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class HorseContainerManagerModel;
 struct SelectedSlotInfo;
 struct SlotData;
@@ -22,50 +21,18 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HorseContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~HorseContainerManagerController() /*override*/ = default;
 
-    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit HorseContainerManagerController(::std::weak_ptr<::HorseContainerManagerModel> ptrModel);
-
-    MCNAPI_C bool canWearCarpet() const;
-
-    MCNAPI_C bool canWearSaddle() const;
-
-    MCNAPI_C ::Actor* getEntity() const;
-
-    MCNAPI_C void getInventoryGridSize(int& outDimX, int& outDimY) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::HorseContainerManagerModel> ptrModel);
+    // vIndex: 11
+    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
-#endif
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

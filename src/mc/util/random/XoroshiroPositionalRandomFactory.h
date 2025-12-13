@@ -24,10 +24,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::unique_ptr<::IRandom> forBlockPos(::BlockPos const& blockPos) const /*override*/;
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::IRandom> forString(::std::string const& s) const /*override*/;
 
+    // vIndex: 0
     virtual ~XoroshiroPositionalRandomFactory() /*override*/;
     // NOLINTEND
 
@@ -63,8 +66,6 @@ public:
     MCNAPI ::std::unique_ptr<::IRandom> $forBlockPos(::BlockPos const& blockPos) const;
 
     MCNAPI ::std::unique_ptr<::IRandom> $forString(::std::string const& s) const;
-
-
     // NOLINTEND
 
 public:

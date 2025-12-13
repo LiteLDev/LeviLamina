@@ -27,12 +27,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PlayerContainerSetter() /*override*/ = default;
 
+    // vIndex: 1
     virtual void setArmor(int slot, ::ItemStack const& item) /*override*/;
 
+    // vIndex: 2
     virtual void setOffhandSlot(::ItemStack const& item) /*override*/;
 
+    // vIndex: 3
     virtual void setPlayerUIItem(int slot, ::ItemStack const& item) /*override*/;
     // NOLINTEND
 
@@ -44,8 +48,6 @@ public:
     MCNAPI void $setOffhandSlot(::ItemStack const& item);
 
     MCNAPI void $setPlayerUIItem(int slot, ::ItemStack const& item);
-
-
     // NOLINTEND
 
 public:

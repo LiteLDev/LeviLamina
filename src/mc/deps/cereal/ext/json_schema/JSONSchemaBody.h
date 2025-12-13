@@ -53,9 +53,9 @@ public:
 
     MCNAPI void fillBodyIfEnum(::cereal::SchemaDescription const& schemaInfo);
 
-    MCNAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody&&);
-
     MCNAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody const&);
+
+    MCNAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody&&);
 
     MCNAPI ~JSONSchemaBody();
     // NOLINTEND

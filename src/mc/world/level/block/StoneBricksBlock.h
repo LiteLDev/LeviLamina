@@ -23,10 +23,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 128
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
+    // vIndex: 0
     virtual ~StoneBricksBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -36,8 +39,6 @@ public:
     MCFOLD ::Block const* $tryGetInfested(::Block const& block) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
-
-
     // NOLINTEND
 
 public:

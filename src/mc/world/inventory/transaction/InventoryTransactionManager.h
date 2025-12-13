@@ -33,8 +33,6 @@ public:
 
     MCAPI void addAction(::InventoryAction const& action, bool forceBalanced);
 
-    MCAPI_C void addExpectedAction(::InventoryAction const& action);
-
     MCAPI void forceBalanceTransaction();
 
     MCAPI ~InventoryTransactionManager();

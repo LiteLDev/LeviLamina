@@ -33,9 +33,9 @@ public:
     // NOLINTBEGIN
     MCNAPI SpawnActorParameters();
 
-    MCNAPI SpawnActorParameters(::SpawnActorParameters&&);
-
     MCNAPI SpawnActorParameters(::SpawnActorParameters const&);
+
+    MCNAPI SpawnActorParameters(::SpawnActorParameters&&);
 
     MCNAPI void setItem(::ItemDescriptor const& itemDescriptor);
 
@@ -57,9 +57,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SpawnActorParameters&&);
-
     MCNAPI void* $ctor(::SpawnActorParameters const&);
+
+    MCNAPI void* $ctor(::SpawnActorParameters&&);
     // NOLINTEND
 
 public:

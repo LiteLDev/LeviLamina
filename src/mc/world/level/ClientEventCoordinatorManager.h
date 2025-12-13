@@ -30,12 +30,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ClientEventCoordinatorManager() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::Bedrock::NonOwnerPointer<::PlayerEventCoordinator> getRemotePlayerEventCoordinator() /*override*/;
 
+    // vIndex: 2
     virtual ::Bedrock::NonOwnerPointer<::ClientPlayerEventCoordinator> getClientPlayerEventCoordinator() /*override*/;
 
+    // vIndex: 4
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> getLevelEventCoordinator() /*override*/;
     // NOLINTEND
 
@@ -59,8 +63,6 @@ public:
     MCNAPI ::Bedrock::NonOwnerPointer<::ClientPlayerEventCoordinator> $getClientPlayerEventCoordinator();
 
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> $getLevelEventCoordinator();
-
-
     // NOLINTEND
 
 public:

@@ -26,26 +26,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit JigsawStructureDataPacketPayload(
+    MCAPI explicit JigsawStructureDataPacketPayload(
         ::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData
     );
 
-    MCNAPI_C ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData> getJigsawStrutureData() const;
+    MCFOLD ::JigsawStructureDataPacketPayload& operator=(::JigsawStructureDataPacketPayload&&);
 
-    MCNAPI ::JigsawStructureDataPacketPayload& operator=(::JigsawStructureDataPacketPayload&&);
-
-    MCNAPI ~JigsawStructureDataPacketPayload();
+    MCAPI ~JigsawStructureDataPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData);
+    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

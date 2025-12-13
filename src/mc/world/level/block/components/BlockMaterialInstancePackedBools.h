@@ -6,16 +6,10 @@ struct BlockMaterialInstancePackedBools {
 public:
     // member variables
     // NOLINTBEGIN
-    bool mUnk69783e : 1;
-    bool mUnk2d3038 : 1;
-    bool mUnk824bf7 : 1;
-    bool mUnk7834cf : 1;
-    bool mUnk7d39d1 : 1;
+    bool mFaceDimming               : 1;
+    bool mRandomizeUVRotation       : 1;
+    bool mSupportsTextureVariations : 1;
+    bool mAlphaMaskedTint           : 1;
+    bool mEmissive                  : 1;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockMaterialInstancePackedBools& operator=(BlockMaterialInstancePackedBools const&);
-    BlockMaterialInstancePackedBools(BlockMaterialInstancePackedBools const&);
-    BlockMaterialInstancePackedBools();
 };

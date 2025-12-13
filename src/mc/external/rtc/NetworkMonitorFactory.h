@@ -14,8 +14,10 @@ class NetworkMonitorFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ::rtc::NetworkMonitorInterface* CreateNetworkMonitor(::webrtc::FieldTrialsView const&) = 0;
 
+    // vIndex: 1
     virtual ~NetworkMonitorFactory() = default;
     // NOLINTEND
 

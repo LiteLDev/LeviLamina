@@ -24,12 +24,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual bool SendPacket(::rtc::CopyOnWriteBuffer*, ::rtc::PacketOptions const&) = 0;
 
+    // vIndex: 1
     virtual bool SendRtcp(::rtc::CopyOnWriteBuffer*, ::rtc::PacketOptions const&) = 0;
 
+    // vIndex: 2
     virtual int SetOption(::cricket::MediaChannelNetworkInterface::SocketType, ::rtc::Socket::Option, int) = 0;
 
+    // vIndex: 3
     virtual ~MediaChannelNetworkInterface();
     // NOLINTEND
 

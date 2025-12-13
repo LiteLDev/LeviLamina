@@ -19,8 +19,10 @@ class WebSocketInterfaceInternal : public ::Bedrock::Http::WebSocketInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~WebSocketInterfaceInternal() /*override*/ = default;
 
+    // vIndex: 1
     virtual HRESULT connect(
         char const*,
         char const*,
@@ -29,18 +31,21 @@ public:
         ::HC_PERFORM_ENV*
     ) /*override*/;
 
+    // vIndex: 2
     virtual HRESULT sendMessage(
         ::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>,
         ::std::string_view,
         ::gsl::not_null<::XAsyncBlock*>
     ) /*override*/;
 
+    // vIndex: 3
     virtual HRESULT sendBinaryMessage(
         ::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>,
         ::gsl::span<uchar const>,
         ::gsl::not_null<::XAsyncBlock*>
     ) /*override*/;
 
+    // vIndex: 4
     virtual HRESULT
     disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status) /*override*/;
     // NOLINTEND
@@ -66,8 +71,6 @@ public:
     );
 
     MCNAPI HRESULT $disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
-
-
     // NOLINTEND
 
 public:

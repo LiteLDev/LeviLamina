@@ -36,19 +36,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& pos) /*override*/;
 
+    // vIndex: 4
     virtual ::std::shared_ptr<::LevelChunk> getRandomChunk(::Random& random) /*override*/;
 
+    // vIndex: 23
     virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr) /*override*/;
 
+    // vIndex: 7
     virtual ::std::shared_ptr<::LevelChunk>
     createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
 
+    // vIndex: 27
     virtual bool isWithinWorldLimit(::ChunkPos const& cp) const /*override*/;
 
+    // vIndex: 34
     virtual void setLevelChunk(::std::shared_ptr<::LevelChunk> lc) /*override*/;
 
+    // vIndex: 0
     virtual ~ChunkViewSource() /*override*/;
     // NOLINTEND
 
@@ -125,8 +132,6 @@ public:
     MCAPI bool $isWithinWorldLimit(::ChunkPos const& cp) const;
 
     MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
-
-
     // NOLINTEND
 
 public:

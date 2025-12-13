@@ -12,20 +12,16 @@ class IDensityFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkfeea6c;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IDensityFunction& operator=(IDensityFunction const&);
-    IDensityFunction(IDensityFunction const&);
-    IDensityFunction();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IDensityFunction() = default;
 
+    // vIndex: 1
     virtual ushort addToCalculators(::DensityCalculators&, ::DensityFunctionRegistry const&) const = 0;
     // NOLINTEND
 

@@ -14,8 +14,10 @@ class AttackDamageMobEffect : public ::MobEffect {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual float getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const /*override*/;
 
+    // vIndex: 0
     virtual ~AttackDamageMobEffect() /*override*/ = default;
     // NOLINTEND
 
@@ -23,8 +25,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
-
-
     // NOLINTEND
 
 public:

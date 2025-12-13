@@ -21,18 +21,12 @@ public:
         Unknown = 5,
     };
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::string getStringFromType(::persona::BodySize::Type bodySizeType);
-
-    MCNAPI_C static ::persona::BodySize::Type getTypeFromString(::std::string_view bodySizeStr);
-    // NOLINTEND
+    using SizeInfoList = ::std::unordered_map<::persona::BodySize::Type, ::persona::SizeInfo>;
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::persona::BodySize::Type, ::persona::SizeInfo> const& mInfoList();
+    MCAPI static ::std::unordered_map<::persona::BodySize::Type, ::persona::SizeInfo> const& mInfoList();
     // NOLINTEND
 };
 

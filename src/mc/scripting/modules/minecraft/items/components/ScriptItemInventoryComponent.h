@@ -35,6 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptItemInventoryComponent() /*override*/ = default;
     // NOLINTEND
 

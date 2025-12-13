@@ -18,10 +18,13 @@ class Reader
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool isValid() const = 0;
 
+    // vIndex: 2
     virtual void forEachIn(::brstd::function_ref<void(::std::string_view, ::gsl::span<uchar const>)>) const = 0;
 
+    // vIndex: 0
     virtual ~Reader() /*override*/ = default;
     // NOLINTEND
 

@@ -18,6 +18,8 @@ public:
     // clang-format on
 
     // DynamicProperties inner types define
+    using PropertyVariant = ::std::variant<double, float, bool, ::std::string, ::Vec3>;
+
     struct PropertyCollection {
     public:
         // member variables
@@ -55,8 +57,6 @@ public:
         toVariantMap(::DynamicProperties::PropertyCollection const& collection);
         // NOLINTEND
     };
-
-    using PropertyVariant = ::std::variant<double, float, bool, ::std::string, ::Vec3>;
 
 public:
     // member variables

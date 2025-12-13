@@ -6,13 +6,12 @@
 #include "mc/deps/cereal/ReflectionCtx.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/puv/SlicedLoader.h"
 
 // auto generated forward declare list
 // clang-format off
 class PackManifest;
 class PackSettings;
-struct PackSettingValueAndDefault;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Core { class Path; }
 namespace Core { class PathView; }
@@ -91,8 +90,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PackSettingsFactory();
 
+    // vIndex: 1
     virtual uint64 getAccessTimestamp() const;
     // NOLINTEND
 
@@ -109,34 +110,9 @@ public:
     MCAPI ::std::unique_ptr<::SharedTypes::v1_21_100::PackSettingsDefinition::Document>
     _loadUserOverridesFromFile(::Core::Path const& path) const;
 
-    MCAPI_C bool _saveUserOverridesToFile(
-        ::SharedTypes::v1_21_100::PackSettingsDefinition::Document doc,
-        ::Core::Path const&                                        path
-    ) const;
-
-    MCAPI_C void _syncPackSettingsToSaveDoc(
-        ::mce::UUID                                                 packId,
-        ::PackSettings*                                             packSettings,
-        ::SharedTypes::v1_21_100::PackSettingsDefinition::Document& settingsDoc,
-        bool                                                        includeTimestamp
-    ) const;
-
     MCAPI ::PackSettings* getPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
 
     MCAPI bool loadPerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
-
-    MCAPI_C ::Bedrock::PubSub::Subscription registerObserver(
-        ::std::function<
-            void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&)> callback
-    );
-
-    MCAPI_C bool saveGlobalUserOverrides();
-
-    MCAPI_C bool savePerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
-
-    MCAPI_C ::std::string serializePackSettingsNameValueMap(
-        ::std::unordered_map<::std::string, ::PackSettingValueAndDefault> const& packSettingsNameValueMap
-    ) const;
     // NOLINTEND
 
 public:
@@ -163,8 +139,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI uint64 $getAccessTimestamp() const;
-
-
     // NOLINTEND
 
 public:

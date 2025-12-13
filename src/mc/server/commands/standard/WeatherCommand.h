@@ -15,15 +15,15 @@ class CommandRegistry;
 class WeatherCommand : public ::Command {
 public:
     // WeatherCommand inner types define
-    enum class WeatherRequest : int {
-        Set   = 0,
-        Query = 1,
-    };
-
     enum class WeatherType : int {
         Clear   = 0,
         Rain    = 1,
         Thunder = 2,
+    };
+
+    enum class WeatherRequest : int {
+        Set   = 0,
+        Query = 1,
     };
 
 public:
@@ -43,8 +43,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
+    // vIndex: 0
     virtual ~WeatherCommand() /*override*/ = default;
     // NOLINTEND
 
@@ -58,8 +60,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-
     // NOLINTEND
 
 public:

@@ -20,10 +20,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual int overflow(int c) /*override*/;
 
+    // vIndex: 9
     virtual int64 xsputn(char const* s, int64 n) /*override*/;
 
+    // vIndex: 0
     virtual ~StringAppendBuffer() /*override*/;
     // NOLINTEND
 
@@ -39,8 +42,6 @@ public:
     MCNAPI int $overflow(int c);
 
     MCNAPI int64 $xsputn(char const* s, int64 n);
-
-
     // NOLINTEND
 
 public:

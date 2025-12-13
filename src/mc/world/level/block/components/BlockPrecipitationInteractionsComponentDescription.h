@@ -17,68 +17,67 @@ struct BlockPrecipitationInteractionsComponentDescription
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk337d05;
+    ::ll::TypedStorage<1, 1, ::PrecipitationBehavior> mBehavior;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockPrecipitationInteractionsComponentDescription&
-    operator=(BlockPrecipitationInteractionsComponentDescription const&);
-    BlockPrecipitationInteractionsComponentDescription(BlockPrecipitationInteractionsComponentDescription const&);
     BlockPrecipitationInteractionsComponentDescription();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
+    // vIndex: 2
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    // vIndex: 4
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    // vIndex: 0
     virtual ~BlockPrecipitationInteractionsComponentDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockPrecipitationInteractionsComponentDescription(::PrecipitationBehavior behavior);
+    MCAPI explicit BlockPrecipitationInteractionsComponentDescription(::PrecipitationBehavior behavior);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
 
-    MCNAPI static ::std::string const& PrecipitationBehaviorID();
+    MCAPI static ::std::string const& PrecipitationBehaviorID();
 
-    MCNAPI static ::std::string const& SchemaID();
+    MCAPI static ::std::string const& SchemaID();
 
-    MCNAPI static ::SemVersion const& Version1_21_120();
+    MCAPI static ::SemVersion const& Version1_21_120();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PrecipitationBehavior behavior);
+    MCAPI void* $ctor(::PrecipitationBehavior behavior);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
-
-
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
     // NOLINTEND
 
 public:

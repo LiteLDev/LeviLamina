@@ -19,16 +19,4 @@ public:
     TransactionContext& operator=(TransactionContext const&);
     TransactionContext(TransactionContext const&);
     TransactionContext();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~TransactionContext();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

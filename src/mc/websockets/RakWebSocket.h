@@ -17,6 +17,12 @@ namespace RakNet { class BitStream; }
 class RakWebSocket {
 public:
     // RakWebSocket inner types define
+    enum class PacketDirection : int {
+        Inward   = 1,
+        Outward  = 2,
+        Bothways = 3,
+    };
+
     enum class ConnectionState : int {
         None               = 0,
         CloseHandshake     = 1,
@@ -25,12 +31,6 @@ public:
         OpenHandshakeInit  = 4,
         OpenHandshakeAwait = 5,
         OpenAndProcessing  = 6,
-    };
-
-    enum class PacketDirection : int {
-        Inward   = 1,
-        Outward  = 2,
-        Bothways = 3,
     };
 
 public:
@@ -74,24 +74,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RakWebSocket();
 
+    // vIndex: 2
     virtual ::WSConnectionResult connect(::std::string const& uri, ::std::vector<::std::string> const& subProtocols);
 
+    // vIndex: 1
     virtual ::WSConnectionResult connect(::std::string const& uri);
 
+    // vIndex: 3
     virtual bool isReady() const;
 
+    // vIndex: 4
     virtual void setOnMessageReceivedHandler(::std::function<void(::RakWebSocketDataFrame const&)> const& handler);
 
+    // vIndex: 5
     virtual void setOnCloseHandler(::std::function<void(::CloseStatusCode, ::std::string const&)> const& handler);
 
+    // vIndex: 6
     virtual void setOnConnectedHandler(::std::function<void(::std::string const&)> const& handler);
 
+    // vIndex: 7
     virtual void tick();
 
+    // vIndex: 8
     virtual void _updateState() = 0;
 
+    // vIndex: 9
     virtual uint _genMaskingKey() const = 0;
     // NOLINTEND
 
@@ -163,8 +173,6 @@ public:
     MCNAPI void $setOnConnectedHandler(::std::function<void(::std::string const&)> const& handler);
 
     MCNAPI void $tick();
-
-
     // NOLINTEND
 
 public:

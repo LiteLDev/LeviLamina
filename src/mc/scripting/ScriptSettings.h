@@ -40,9 +40,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptSettings(::ScriptSettings&&);
+    MCNAPI ScriptSettings(::ScriptSettings const&);
 
-    MCNAPI_S ScriptSettings(::ScriptSettings const&);
+    MCNAPI ScriptSettings(::ScriptSettings&&);
 
     MCNAPI ~ScriptSettings();
     // NOLINTEND
@@ -50,9 +50,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptSettings&&);
+    MCNAPI void* $ctor(::ScriptSettings const&);
 
-    MCNAPI_S void* $ctor(::ScriptSettings const&);
+    MCNAPI void* $ctor(::ScriptSettings&&);
     // NOLINTEND
 
 public:

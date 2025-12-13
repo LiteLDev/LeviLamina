@@ -50,15 +50,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ::Bedrock::Result<::Bedrock::Memory::IVirtualAllocator::ReservationInfo>
     reserve(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64, uint64) = 0;
 
+    // vIndex: 1
     virtual ::Bedrock::Result<void> commit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64, uint64, int) = 0;
 
+    // vIndex: 2
     virtual ::Bedrock::Result<void> decommit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64) = 0;
 
+    // vIndex: 3
     virtual ::Bedrock::Result<void> release(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64) = 0;
 
+    // vIndex: 4
     virtual ::Bedrock::Memory::IVirtualAllocator::Flags getDefaultFlags() = 0;
     // NOLINTEND
 

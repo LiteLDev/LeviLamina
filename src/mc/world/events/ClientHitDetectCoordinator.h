@@ -14,12 +14,7 @@ class ClientHitDetectCoordinator : public ::EventCoordinator<::ClientHitDetectLi
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ClientHitDetectCoordinator() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

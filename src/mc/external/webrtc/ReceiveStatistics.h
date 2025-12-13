@@ -17,14 +17,19 @@ class ReceiveStatistics : public ::webrtc::ReceiveStatisticsProvider, public ::w
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ReceiveStatistics() /*override*/ = default;
 
+    // vIndex: 2
     virtual ::webrtc::StreamStatistician* GetStatistician(uint) const = 0;
 
+    // vIndex: 4
     virtual void SetMaxReorderingThreshold(int) = 0;
 
+    // vIndex: 3
     virtual void SetMaxReorderingThreshold(uint, int) = 0;
 
+    // vIndex: 5
     virtual void EnableRetransmitDetection(uint, bool) = 0;
     // NOLINTEND
 

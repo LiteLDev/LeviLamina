@@ -12,12 +12,16 @@ struct IServerNetworkController {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IServerNetworkController() = default;
 
+    // vIndex: 1
     virtual bool isDedicatedServer() const = 0;
 
+    // vIndex: 2
     virtual bool isHost(::mce::UUID const&) const = 0;
 
+    // vIndex: 3
     virtual bool canChangePermission(::mce::UUID const&, ::ServerPlayer const&) const = 0;
     // NOLINTEND
 

@@ -40,8 +40,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ~DimensionManager() = default;
 
+    // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::Dimension&)>& getOnNewDimensionCreatedConnector() /*override*/;
     // NOLINTEND
 
@@ -57,7 +59,7 @@ public:
 
     MCNAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
 
-    MCNAPI_S void setDimensionDefinitionGroup(::std::optional<::DimensionDefinitionGroup> dimensionDefinitions);
+    MCNAPI void setDimensionDefinitionGroup(::std::optional<::DimensionDefinitionGroup> dimensionDefinitions);
     // NOLINTEND
 
 public:
@@ -73,8 +75,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
-
-
     // NOLINTEND
 
 public:

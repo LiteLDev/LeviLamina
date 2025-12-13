@@ -15,16 +15,4 @@ public:
     ReviewByUserParams& operator=(ReviewByUserParams const&);
     ReviewByUserParams(ReviewByUserParams const&);
     ReviewByUserParams();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ReviewByUserParams();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

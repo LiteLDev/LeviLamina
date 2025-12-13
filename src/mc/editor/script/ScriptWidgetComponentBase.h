@@ -50,13 +50,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ~ScriptWidgetComponentBase();
 
+    // vIndex: 3
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const = 0;
 
+    // vIndex: 0
     virtual void
     _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const&) /*override*/;
 
+    // vIndex: 1
     virtual void _onOwnerPositionUpdate() /*override*/;
     // NOLINTEND
 
@@ -117,8 +121,6 @@ public:
     MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const&);
 
     MCNAPI void $_onOwnerPositionUpdate();
-
-
     // NOLINTEND
 
 public:

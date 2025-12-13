@@ -14,10 +14,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~InstantaneousAttributeBuff() /*override*/;
 
+    // vIndex: 1
     virtual bool isInstantaneous() const /*override*/;
 
+    // vIndex: 2
     virtual bool isSerializable() const /*override*/;
     // NOLINTEND
 
@@ -45,8 +48,6 @@ public:
     MCFOLD bool $isInstantaneous() const;
 
     MCFOLD bool $isSerializable() const;
-
-
     // NOLINTEND
 
 public:

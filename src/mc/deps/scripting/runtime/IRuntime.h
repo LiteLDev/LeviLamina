@@ -37,12 +37,16 @@ class IRuntime {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IRuntime() = default;
 
+    // vIndex: 1
     virtual ::Scripting::IRuntimeMetadata* getMetadata() const;
 
+    // vIndex: 2
     virtual void moveToThread();
 
+    // vIndex: 3
     virtual ::std::optional<::Scripting::ScriptContext> createContext(
         ::Scripting::ModuleBindingBundle&&,
         ::Scripting::IDependencyLoader*,
@@ -50,11 +54,14 @@ public:
         ::Scripting::ContextConfig const&
     ) = 0;
 
+    // vIndex: 4
     virtual void destroyContext(::Scripting::ContextId) = 0;
 
+    // vIndex: 5
     virtual ::Scripting::ResultAny
     run(::Scripting::ContextId, ::Scripting::IPayload*, ::std::optional<::Scripting::Privilege>) = 0;
 
+    // vIndex: 6
     virtual ::Scripting::ResultAny call(
         ::Scripting::ContextId,
         ::Scripting::TypedObjectHandle<::Scripting::ClosureType>,
@@ -64,45 +71,60 @@ public:
         ::std::optional<::Scripting::Privilege>
     ) = 0;
 
+    // vIndex: 7
     virtual ::Scripting::ResultAny
     resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) = 0;
 
+    // vIndex: 8
     virtual ::Scripting::ResultAny
     reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) = 0;
 
+    // vIndex: 9
     virtual ::Scripting::FutureStatus
         getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const = 0;
 
+    // vIndex: 10
     virtual ::Scripting::ResultAny getFutureResult(
         ::Scripting::ContextId,
         ::Scripting::TypedObjectHandle<::Scripting::FutureType>,
         ::entt::meta_type const&
     ) const = 0;
 
+    // vIndex: 11
     virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
         executeCoroutines(::std::optional<::std::chrono::microseconds>, ::std::optional<::Scripting::Privilege>) = 0;
 
+    // vIndex: 12
     virtual bool hasPendingJobs() = 0;
 
+    // vIndex: 13
     virtual ::Scripting::IDebuggerController* enableDebugger(::Scripting::IDebuggerTransport&) = 0;
 
+    // vIndex: 14
     virtual void disableDebugger() = 0;
 
+    // vIndex: 15
     virtual void startProfiler() = 0;
 
+    // vIndex: 16
     virtual void stopProfiler(
         ::std::function<void(::std::string_view)>,
         ::std::optional<::std::reference_wrapper<::std::string const>>
     ) = 0;
 
+    // vIndex: 17
     virtual ::Scripting::RuntimeStats computeRuntimeStats() const = 0;
 
+    // vIndex: 18
     virtual ::Scripting::IWatchdog* enableWatchdog(::Scripting::WatchdogSettings) = 0;
 
+    // vIndex: 19
     virtual void disableWatchdog() = 0;
 
+    // vIndex: 20
     virtual ::Scripting::IWatchdog* getWatchdog() const = 0;
 
+    // vIndex: 21
     virtual ::std::optional<::Scripting::TypeNameInfo>
     getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const = 0;
     // NOLINTEND
@@ -110,13 +132,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI ::Scripting::IRuntimeMetadata* $getMetadata() const;
+    MCFOLD ::Scripting::IRuntimeMetadata* $getMetadata() const;
 
-    MCNAPI void $moveToThread();
-#endif
-
-
+    MCFOLD void $moveToThread();
     // NOLINTEND
 };
 

@@ -28,10 +28,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 28
     virtual void SetLogCommandParser(::RakNet::LogCommandParser*);
 
+    // vIndex: 20
     virtual void WriteLog(char const*) /*override*/;
 
+    // vIndex: 0
     virtual ~PacketConsoleLogger() /*override*/ = default;
     // NOLINTEND
 

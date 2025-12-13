@@ -28,12 +28,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IRequestAction();
 
+    // vIndex: 1
     virtual void execute(::ServerLevel&, ::Dimension&) = 0;
 
+    // vIndex: 2
     virtual void serialize(::CompoundTag& tag);
 
+    // vIndex: 3
     virtual bool operator==(::IRequestAction const& action) const;
     // NOLINTEND
 
@@ -47,8 +51,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $serialize(::CompoundTag& tag);
-
-
     // NOLINTEND
 
 public:

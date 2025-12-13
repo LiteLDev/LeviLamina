@@ -28,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PingedCompatibleServer& operator=(PingedCompatibleServer const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PingedCompatibleServer();
@@ -35,12 +39,6 @@ public:
     MCNAPI PingedCompatibleServer(::PingedCompatibleServer&&);
 
     MCNAPI PingedCompatibleServer(::PingedCompatibleServer const&);
-
-    MCNAPI_C ::std::string getId() const;
-
-    MCNAPI_C ::PingedCompatibleServer& operator=(::PingedCompatibleServer&&);
-
-    MCNAPI_C ::PingedCompatibleServer& operator=(::PingedCompatibleServer const&);
 
     MCNAPI ~PingedCompatibleServer();
     // NOLINTEND

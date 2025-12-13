@@ -17,8 +17,9 @@ class FlatFileManifestInfo {
 public:
     // FlatFileManifestInfo inner types define
     enum class FlatFileManifestInfoFlags : uchar {
-        File    = 1,
-        Deleted = 128,
+        // bitfield representation
+        File    = 1 << 0,
+        Deleted = 1 << 7,
     };
 
 public:

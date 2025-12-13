@@ -42,1234 +42,916 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~BaseOptions() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~BaseOptions() /*override*/;
-#endif
 
+    // vIndex: 14
     virtual ::std::shared_ptr<::IOptions> sharedFromThis() /*override*/;
 
+    // vIndex: 13
     virtual ::std::shared_ptr<::IOptions const> sharedFromThis() const /*override*/;
 
-    virtual bool isValidOption(::OptionID optionId) const /*override*/;
+    // vIndex: 25
+    virtual bool isValidOption(::OptionID) const /*override*/;
 
-    virtual ::gsl::not_null<::Option*> get(::OptionID optionId) /*override*/;
+    // vIndex: 26
+    virtual ::gsl::not_null<::Option*> get(::OptionID) /*override*/;
 
-    virtual ::gsl::not_null<::Option const*> get(::OptionID optionId) const /*override*/;
+    // vIndex: 1
+    virtual ::gsl::not_null<::Option const*> get(::OptionID) const /*override*/;
 
-    virtual ::std::optional<::Option*> getIfValid(::OptionID optionId) /*override*/;
+    // vIndex: 28
+    virtual ::std::optional<::Option*> getIfValid(::OptionID) /*override*/;
 
-    virtual ::std::optional<::Option const*> getIfValid(::OptionID optionId) const /*override*/;
+    // vIndex: 27
+    virtual ::std::optional<::Option const*> getIfValid(::OptionID) const /*override*/;
 
+    // vIndex: 37
     virtual ::std::array<::std::unique_ptr<::Option>, 772> const& getAllRegisteredOptions() /*override*/;
 
-    virtual void forEachOption(::std::function<void(::Option*)> callback) /*override*/;
+    // vIndex: 38
+    virtual void forEachOption(::std::function<void(::Option*)>) /*override*/;
 
+    // vIndex: 39
     virtual bool consumeDevOptionsDirty() /*override*/;
 
+    // vIndex: 40
     virtual void dumpOptionsToLogFile() const /*override*/;
 
-    virtual ::Option& _registerOption(::std::unique_ptr<::Option> option) /*override*/;
+    // vIndex: 15
+    virtual ::Option& _registerOption(::std::unique_ptr<::Option>) /*override*/;
 
-    virtual void updateInputMode(::InputMode inputMode) /*override*/;
+    // vIndex: 41
+    virtual void updateInputMode(::InputMode) /*override*/;
 
-    virtual void setMainVolume(float volume) /*override*/;
+    // vIndex: 42
+    virtual void setMainVolume(float) /*override*/;
 
+    // vIndex: 43
     virtual float getMainVolume() const /*override*/;
 
-    virtual void setMusicVolume(float volume) /*override*/;
+    // vIndex: 44
+    virtual void setMusicVolume(float) /*override*/;
 
+    // vIndex: 45
     virtual float getMusicVolume() const /*override*/;
 
-    virtual void setSoundVolume(float volume) /*override*/;
+    // vIndex: 46
+    virtual void setSoundVolume(float) /*override*/;
 
+    // vIndex: 47
     virtual float getSoundVolume() const /*override*/;
 
-    virtual void setTTSVolume(float volume) /*override*/;
+    // vIndex: 48
+    virtual void setTTSVolume(float) /*override*/;
 
+    // vIndex: 49
     virtual float getTTSVolume() const /*override*/;
 
+    // vIndex: 50
     virtual float getChatMessageDuration() const /*override*/;
 
+    // vIndex: 51
     virtual float getToastNotificationDuration() const /*override*/;
 
-    virtual void setSensitivity(float sensitivity, ::InputMode inputMode) /*override*/;
+    // vIndex: 52
+    virtual void setSensitivity(float, ::InputMode) /*override*/;
 
-    virtual float getSensitivity(::InputMode inputMode) const /*override*/;
+    // vIndex: 53
+    virtual float getSensitivity(::InputMode) const /*override*/;
 
-    virtual void setSpyglassDamping(float value, ::InputMode inputMode) /*override*/;
+    // vIndex: 54
+    virtual void setSpyglassDamping(float, ::InputMode) /*override*/;
 
-    virtual float getSpyglassDamping(::InputMode inputMode) const /*override*/;
+    // vIndex: 55
+    virtual float getSpyglassDamping(::InputMode) const /*override*/;
 
-    virtual void setDwellBeforeDrag(float value) /*override*/;
+    // vIndex: 56
+    virtual void setDwellBeforeDrag(float) /*override*/;
 
+    // vIndex: 57
     virtual float getDwellBeforeDrag() const /*override*/;
 
-    virtual void setStackSplittingTrigger(float value) /*override*/;
+    // vIndex: 58
+    virtual void setStackSplittingTrigger(float) /*override*/;
 
+    // vIndex: 59
     virtual float getStackSplittingTrigger() const /*override*/;
 
-    virtual float getGameSensitivity(::InputMode inputmode) const /*override*/;
+    // vIndex: 60
+    virtual float getGameSensitivity(::InputMode) const /*override*/;
 
-    virtual bool getInvertYMouse(::InputMode inputMode) const /*override*/;
+    // vIndex: 63
+    virtual bool getInvertYMouse(::InputMode) const /*override*/;
 
+    // vIndex: 67
     virtual float getParticleViewDistance() const /*override*/;
 
+    // vIndex: 68
     virtual bool getBobView() const /*override*/;
 
+    // vIndex: 69
     virtual bool getCameraShake() const /*override*/;
 
+    // vIndex: 70
     virtual bool getHideEndFlash() const /*override*/;
 
+    // vIndex: 71
     virtual bool getIsDitheringEnabledBlocks() const /*override*/;
 
+    // vIndex: 72
     virtual bool getIsDitheringEnabledMobs() const /*override*/;
 
-    virtual void setResetPlayerAlignment(bool reset) /*override*/;
+    // vIndex: 73
+    virtual void setResetPlayerAlignment(bool) /*override*/;
 
+    // vIndex: 74
     virtual bool getResetPlayerAlignment() const /*override*/;
 
+    // vIndex: 11
     virtual ::GraphicsMode getGraphicsMode() const /*override*/;
 
+    // vIndex: 75
     virtual ::TargetRenderAPI getTargetRenderAPI() const /*override*/;
 
+    // vIndex: 76
     virtual bool getTransparentLeaves() const /*override*/;
 
+    // vIndex: 77
     virtual bool getFancyBubbles() const /*override*/;
 
+    // vIndex: 78
     virtual bool getSmoothLighting() const /*override*/;
 
+    // vIndex: 79
     virtual bool getGuiAccessibilityScaling() const /*override*/;
 
+    // vIndex: 84
     virtual bool getUseMouseForDigging() const /*override*/;
 
+    // vIndex: 85
     virtual bool isLeftHanded() const /*override*/;
 
+    // vIndex: 86
     virtual bool isHotbarOnlyTouch() const /*override*/;
 
-    virtual bool getDestroyVibration(::InputMode inputMode) const /*override*/;
+    // vIndex: 87
+    virtual bool getDestroyVibration(::InputMode) const /*override*/;
 
-    virtual bool getSplitVibration(::InputMode inputMode) const /*override*/;
+    // vIndex: 88
+    virtual bool getSplitVibration(::InputMode) const /*override*/;
 
-    virtual bool getAutoJump(::InputMode inputMode) const /*override*/;
+    // vIndex: 89
+    virtual bool getAutoJump(::InputMode) const /*override*/;
 
-    virtual void setFullscreen(bool fullscreen) /*override*/;
+    // vIndex: 90
+    virtual void setFullscreen(bool) /*override*/;
 
+    // vIndex: 91
     virtual bool getFullscreen() const /*override*/;
 
+    // vIndex: 92
     virtual void toggleFullscreen() /*override*/;
 
-    virtual void setDifficulty(int difficulty) /*override*/;
+    // vIndex: 98
+    virtual void setDifficulty(int) /*override*/;
 
-    virtual void setHideGUI(bool hideGUI) /*override*/;
+    // vIndex: 99
+    virtual void setHideGUI(bool) /*override*/;
 
+    // vIndex: 100
     virtual bool getHideHud() const /*override*/;
 
+    // vIndex: 101
     virtual bool getHideHand() const /*override*/;
 
-    virtual void setHideToolTips(bool hideToolTips) /*override*/;
+    // vIndex: 102
+    virtual void setHideToolTips(bool) /*override*/;
 
+    // vIndex: 103
     virtual bool getHideToolTips() const /*override*/;
 
-    virtual void setHidePaperDoll(bool hidePaperDoll) /*override*/;
+    // vIndex: 104
+    virtual void setHidePaperDoll(bool) /*override*/;
 
+    // vIndex: 105
     virtual bool getHidePaperDoll() const /*override*/;
 
-    virtual void setIngamePlayerNames(bool useNameTag) /*override*/;
+    // vIndex: 106
+    virtual void setIngamePlayerNames(bool) /*override*/;
 
+    // vIndex: 107
     virtual bool getIngamePlayerNames() const /*override*/;
 
-    virtual void setSplitscreenIngamePlayerNames(bool useNameTag) /*override*/;
+    // vIndex: 108
+    virtual void setSplitscreenIngamePlayerNames(bool) /*override*/;
 
+    // vIndex: 109
     virtual bool getSplitscreenIngamePlayerNames() const /*override*/;
 
-    virtual void setInterfaceOpacity(float opacity) /*override*/;
+    // vIndex: 110
+    virtual void setInterfaceOpacity(float) /*override*/;
 
+    // vIndex: 111
     virtual float getInterfaceOpacity() const /*override*/;
 
-    virtual void setSplitscreenInterfaceOpacity(float opacity) /*override*/;
+    // vIndex: 112
+    virtual void setSplitscreenInterfaceOpacity(float) /*override*/;
 
+    // vIndex: 113
     virtual float getSplitscreenInterfaceOpacity() const /*override*/;
 
-    virtual void setShowAutoSaveIcon(bool ShowAutoSaveIcon) /*override*/;
+    // vIndex: 114
+    virtual void setShowAutoSaveIcon(bool) /*override*/;
 
+    // vIndex: 115
     virtual bool getShowAutoSaveIcon() const /*override*/;
 
-    virtual void setSplitscreenDirection(int splitScreenDirection) /*override*/;
+    // vIndex: 116
+    virtual void setSplitscreenDirection(int) /*override*/;
 
+    // vIndex: 117
     virtual ::SplitScreenDirection getSplitscreenDirection() const /*override*/;
 
-    virtual void setHideScreens(bool hideScreens) /*override*/;
+    // vIndex: 118
+    virtual void setHideScreens(bool) /*override*/;
 
+    // vIndex: 119
     virtual bool getHideScreens() const /*override*/;
 
-    virtual void setHideItemInHand(bool hideItemInHand) /*override*/;
+    // vIndex: 120
+    virtual void setHideItemInHand(bool) /*override*/;
 
+    // vIndex: 121
     virtual bool getHideItemInHand() const /*override*/;
 
+    // vIndex: 122
     virtual bool getScreenAnimations() const /*override*/;
 
+    // vIndex: 12
     virtual ::UIProfile getUIProfile() const /*override*/;
 
-    virtual void setForceUseUnsortedPolys(bool renderUnsorted) /*override*/;
+    // vIndex: 125
+    virtual void setForceUseUnsortedPolys(bool) /*override*/;
 
+    // vIndex: 126
     virtual bool getForceUseUnsortedPolys() const /*override*/;
 
-    virtual void setRenderDebug(::DebugHudOptions renderDebug) /*override*/;
+    // vIndex: 127
+    virtual void setRenderDebug(::DebugHudOptions) /*override*/;
 
+    // vIndex: 128
     virtual ::DebugHudOptions getRenderDebug() const /*override*/;
 
+    // vIndex: 129
     virtual bool getRemoteImguiEnabled() const /*override*/;
 
-    virtual void setRemoteImguiEnabled(bool remoteImguiEnabled) /*override*/;
+    // vIndex: 130
+    virtual void setRemoteImguiEnabled(bool) /*override*/;
 
+    // vIndex: 131
     virtual float getGamma() const /*override*/;
 
-    virtual void setMSAA(int msaa) /*override*/;
+    // vIndex: 132
+    virtual void setMSAA(int) /*override*/;
 
-    virtual void setTexelAA(bool texelAA) /*override*/;
+    // vIndex: 133
+    virtual void setTexelAA(bool) /*override*/;
 
-    virtual void setFixedCamera(bool fixedCamera) /*override*/;
+    // vIndex: 134
+    virtual void setFixedCamera(bool) /*override*/;
 
+    // vIndex: 135
     virtual bool getFixedCamera() const /*override*/;
 
-    virtual void setSkinId(::std::string const& skinId) /*override*/;
+    // vIndex: 136
+    virtual void setSkinId(::std::string const&) /*override*/;
 
+    // vIndex: 137
     virtual ::std::string const& getSkinId() const /*override*/;
 
-    virtual void setLastCustomSkinId(::std::string const& lastCustomSkinId) /*override*/;
+    // vIndex: 138
+    virtual void setLastCustomSkinId(::std::string const&) /*override*/;
 
+    // vIndex: 139
     virtual ::std::string const& getLastCustomSkinId() const /*override*/;
 
+    // vIndex: 142
     virtual bool getFovToggle() const /*override*/;
 
-    virtual void setServerVisible(bool serverVisible) /*override*/;
+    // vIndex: 143
+    virtual void setServerVisible(bool) /*override*/;
 
+    // vIndex: 144
     virtual bool getServerVisible() const /*override*/;
 
-    virtual void setSplitControls(bool splitControls) /*override*/;
+    // vIndex: 145
+    virtual void setSplitControls(bool) /*override*/;
 
+    // vIndex: 146
     virtual bool getSplitControls() const /*override*/;
 
+    // vIndex: 147
     virtual bool getSwapJumpAndSneak() const /*override*/;
 
+    // vIndex: 148
     virtual bool getFancySkies() const /*override*/;
 
-    virtual void setRenderClouds(bool renderClouds) /*override*/;
+    // vIndex: 149
+    virtual void setRenderClouds(bool) /*override*/;
 
+    // vIndex: 150
     virtual bool getRenderClouds() const /*override*/;
 
+    // vIndex: 151
     virtual bool getDevAutoLoadLevel() const /*override*/;
 
+    // vIndex: 152
     virtual bool getDevAssertionsDebugBreak() const /*override*/;
 
+    // vIndex: 153
     virtual bool getDevAssertionsShowDialog() const /*override*/;
 
+    // vIndex: 155
     virtual bool getDevShowDisplayLoggedError() const /*override*/;
 
-    virtual bool getDevShowDisplayLoggedError(::DisplayLoggedErrorType errortype) const /*override*/;
+    // vIndex: 154
+    virtual bool getDevShowDisplayLoggedError(::DisplayLoggedErrorType) const /*override*/;
 
-    virtual void setDevShowDevConsoleButton(bool dev_showDevConsoleButton) /*override*/;
+    // vIndex: 156
+    virtual void setDevShowDevConsoleButton(bool) /*override*/;
 
+    // vIndex: 157
     virtual bool getDevShowDevConsoleButton() const /*override*/;
 
+    // vIndex: 158
     virtual bool getDevIgnoreUserInput() const /*override*/;
 
+    // vIndex: 159
     virtual bool getDevDisplayTreatmentPanel() const /*override*/;
 
-    virtual void setDevDisplayTreatmentPanel(bool dev_displayTreatmentPanel) /*override*/;
+    // vIndex: 160
+    virtual void setDevDisplayTreatmentPanel(bool) /*override*/;
 
-    virtual void setDevShowMinecraftTCUIReplacement(bool dev_showMinecraftTCUIReplacement) /*override*/;
+    // vIndex: 161
+    virtual void setDevShowMinecraftTCUIReplacement(bool) /*override*/;
 
+    // vIndex: 162
     virtual bool getDevShowMinecraftTCUIReplacement() const /*override*/;
 
+    // vIndex: 163
     virtual bool getDevCreateRealmWithoutPurchase() const /*override*/;
 
+    // vIndex: 164
     virtual bool getDevDisableConnectedStoragePush() const /*override*/;
 
+    // vIndex: 165
     virtual bool getDevDisableConnectedStoragePull() const /*override*/;
 
-    virtual void setDevFindMobs(bool dev_findMobs) /*override*/;
+    // vIndex: 166
+    virtual void setDevFindMobs(bool) /*override*/;
 
+    // vIndex: 167
     virtual bool getDevFindMobs() const /*override*/;
 
-    virtual void setDevRenderBoundingBoxes(bool dev_renderBoundingBoxes) /*override*/;
+    // vIndex: 168
+    virtual void setDevRenderBoundingBoxes(bool) /*override*/;
 
+    // vIndex: 2
     virtual bool getDevRenderBoundingBoxes() const /*override*/;
 
-    virtual void setDevRenderPaths(bool dev_renderPaths) /*override*/;
+    // vIndex: 169
+    virtual void setDevRenderPaths(bool) /*override*/;
 
+    // vIndex: 3
     virtual bool getDevRenderPaths() const /*override*/;
 
-    virtual void setDevRenderMobInfoState(bool dev_renderMobInfoState) /*override*/;
+    // vIndex: 170
+    virtual void setDevRenderMobInfoState(bool) /*override*/;
 
+    // vIndex: 4
     virtual bool getDevRenderMobInfoState() const /*override*/;
 
-    virtual void setDevRenderGoalState(bool dev_renderGoalState) /*override*/;
+    // vIndex: 171
+    virtual void setDevRenderGoalState(bool) /*override*/;
 
+    // vIndex: 6
     virtual bool getDevRenderGoalState() const /*override*/;
 
-    virtual void setDevRenderSchedulerInfo(bool dev_renderSchedulerState) /*override*/;
+    // vIndex: 172
+    virtual void setDevRenderSchedulerInfo(bool) /*override*/;
 
+    // vIndex: 5
     virtual bool getDevRenderSchedulerInfo() const /*override*/;
 
-    virtual void setDevRenderCoordinateSystems(bool dev_renderCoords) /*override*/;
+    // vIndex: 173
+    virtual void setDevRenderCoordinateSystems(bool) /*override*/;
 
+    // vIndex: 174
     virtual bool getDevRenderCoordinateSystems() const /*override*/;
 
+    // vIndex: 175
     virtual bool getDevResetClientId() const /*override*/;
 
-    virtual void setDevLogFlushImmediate(bool dev_FlushLogOnWrite) /*override*/;
+    // vIndex: 176
+    virtual void setDevLogFlushImmediate(bool) /*override*/;
 
+    // vIndex: 177
     virtual bool getDevLogFlushImmediate() const /*override*/;
 
-    virtual void setDevLogTimestamp(bool dev_timestamp) /*override*/;
+    // vIndex: 178
+    virtual void setDevLogTimestamp(bool) /*override*/;
 
+    // vIndex: 179
     virtual bool getDevLogTimestamp() const /*override*/;
 
-    virtual void setDevLogTrace(bool dev_trace) /*override*/;
+    // vIndex: 180
+    virtual void setDevLogTrace(bool) /*override*/;
 
+    // vIndex: 181
     virtual bool getDevLogTrace() const /*override*/;
 
-    virtual void setDevLogArea(bool dev_logArea) /*override*/;
+    // vIndex: 182
+    virtual void setDevLogArea(bool) /*override*/;
 
+    // vIndex: 183
     virtual bool getDevLogArea() const /*override*/;
 
-    virtual void setDevLogPriority(bool dev_logPriority) /*override*/;
+    // vIndex: 184
+    virtual void setDevLogPriority(bool) /*override*/;
 
+    // vIndex: 185
     virtual bool getDevLogPriority() const /*override*/;
 
-    virtual void setDevLogThread(bool dev_logThread) /*override*/;
+    // vIndex: 186
+    virtual void setDevLogThread(bool) /*override*/;
 
+    // vIndex: 187
     virtual bool getDevLogThread() const /*override*/;
 
-    virtual void setDevLogAppend(bool dev_append) /*override*/;
+    // vIndex: 188
+    virtual void setDevLogAppend(bool) /*override*/;
 
+    // vIndex: 189
     virtual bool getDevLogAppend() const /*override*/;
 
-    virtual void setDevLogProcessId(bool enable) /*override*/;
+    // vIndex: 190
+    virtual void setDevLogProcessId(bool) /*override*/;
 
+    // vIndex: 191
     virtual bool getDevLogProcessId() const /*override*/;
 
-    virtual void setDevLogThreadId(bool enable) /*override*/;
+    // vIndex: 192
+    virtual void setDevLogThreadId(bool) /*override*/;
 
+    // vIndex: 193
     virtual bool getDevLogThreadId() const /*override*/;
 
-    virtual void setDevLogMessageId(bool enable) /*override*/;
+    // vIndex: 194
+    virtual void setDevLogMessageId(bool) /*override*/;
 
+    // vIndex: 195
     virtual bool getDevLogMessageId() const /*override*/;
 
-    virtual void setDevLogSilentLogging(bool silent) /*override*/;
+    // vIndex: 196
+    virtual void setDevLogSilentLogging(bool) /*override*/;
 
+    // vIndex: 197
     virtual bool getDevLogSilentLogging() const /*override*/;
 
-    virtual void setDevLogPriorityFilter(::std::string const& devFilter) /*override*/;
+    // vIndex: 198
+    virtual void setDevLogPriorityFilter(::std::string const&) /*override*/;
 
+    // vIndex: 199
     virtual ::std::string const& getDevLogPriorityFilter() const /*override*/;
 
-    virtual void setDevLogAreaFilter(::std::string const& devFilter) /*override*/;
+    // vIndex: 200
+    virtual void setDevLogAreaFilter(::std::string const&) /*override*/;
 
+    // vIndex: 201
     virtual ::std::string const& getDevLogAreaFilter() const /*override*/;
 
-    virtual void setDevGameEventRetentionTicks(ushort retentionTicks) /*override*/;
+    // vIndex: 202
+    virtual void setDevGameEventRetentionTicks(ushort) /*override*/;
 
+    // vIndex: 8
     virtual ushort getDevGameEventRetentionTicks() const /*override*/;
 
-    virtual void setDevDeepDarkDebugRender(bool render) /*override*/;
+    // vIndex: 203
+    virtual void setDevDeepDarkDebugRender(bool) /*override*/;
 
+    // vIndex: 7
     virtual bool getDevDeepDarkDebugRender() const /*override*/;
 
-    virtual bool isLogCategoryEnabled(::BedrockLog::LogCategory category) const /*override*/;
+    // vIndex: 204
+    virtual bool isLogCategoryEnabled(::BedrockLog::LogCategory) const /*override*/;
 
+    // vIndex: 205
     virtual bool getDevEnableProfilerOutput() /*override*/;
 
+    // vIndex: 206
     virtual bool getDevAddUsersSilently() const /*override*/;
 
+    // vIndex: 207
     virtual int getDevBenchmarkModeTime() /*override*/;
 
+    // vIndex: 208
     virtual bool getDevDisableClientBlobCache() const /*override*/;
 
+    // vIndex: 209
     virtual bool getDevClientBlobCacheOnLocalServer() const /*override*/;
 
-    virtual void setLogFlushDelay(int delay_time) /*override*/;
+    // vIndex: 210
+    virtual void setLogFlushDelay(int) /*override*/;
 
+    // vIndex: 211
     virtual int getLogFlushDelay() /*override*/;
 
+    // vIndex: 212
     virtual int getAutomationParallelSlices() const /*override*/;
 
+    // vIndex: 213
     virtual int getAutomationParallelCurrentSlice() const /*override*/;
 
+    // vIndex: 214
     virtual bool getIsAutomationRun() const /*override*/;
 
+    // vIndex: 215
     virtual bool getShouldQuitAppAfterTesting() const /*override*/;
 
+    // vIndex: 216
     virtual bool shouldUploadTestArtifacts() const /*override*/;
 
+    // vIndex: 217
     virtual bool hasAutomationTestRunTimedOut() const /*override*/;
 
+    // vIndex: 218
     virtual bool hasAutomationTestRunReachedCrashLimit() const /*override*/;
 
+    // vIndex: 219
     virtual bool shouldAppendDebugLogTimestamp() const /*override*/;
 
+    // vIndex: 220
     virtual ::std::string getAutomationServerIp() const /*override*/;
 
+    // vIndex: 221
     virtual ::std::string getAutomationServerPort() const /*override*/;
 
+    // vIndex: 222
     virtual ::std::string getAutomationArtifactUploadSas() const /*override*/;
 
+    // vIndex: 223
     virtual ::std::string getAutomationArtifactUploadUrl() const /*override*/;
 
+    // vIndex: 224
     virtual ::std::string getAutomationRelativeBlobpath() const /*override*/;
 
+    // vIndex: 225
     virtual ::std::string getAutomationFunctionalTestTags() const /*override*/;
 
+    // vIndex: 226
     virtual ::std::string getAutomationServerTestTags() const /*override*/;
 
+    // vIndex: 227
     virtual ::std::string getAutomationUnitTestTags() const /*override*/;
 
+    // vIndex: 228
     virtual ::std::string getAutomationFunctionalBrokenTestTags() const /*override*/;
 
+    // vIndex: 229
     virtual ::std::string getAutomationServerBrokenTestTags() const /*override*/;
 
+    // vIndex: 230
     virtual ::std::string getAutomationUnitBrokenTestTags() const /*override*/;
 
+    // vIndex: 231
     virtual ::std::string getAutomationTestBuildID() const /*override*/;
 
+    // vIndex: 232
     virtual ::std::string getAutomationUploadToken() const /*override*/;
 
+    // vIndex: 233
     virtual ::std::string getAutomationEnabledFeatures() const /*override*/;
 
+    // vIndex: 234
     virtual ::std::string getAutomationEnabledExperiments() const /*override*/;
 
+    // vIndex: 235
     virtual bool getAutomationShouldGroupServerTests() const /*override*/;
 
+    // vIndex: 236
     virtual bool getAutomationUnrandomTestsEnabled() const /*override*/;
 
+    // vIndex: 237
     virtual bool getAutomationRunEntireServerTestGroup() const /*override*/;
 
+    // vIndex: 238
     virtual bool getAutomationRunServerTestAfterEachTest() const /*override*/;
 
+    // vIndex: 239
     virtual ::std::string const& getTestBranchName() const /*override*/;
 
+    // vIndex: 240
     virtual bool getFunctionalTestBlockInput() const /*override*/;
 
+    // vIndex: 241
     virtual bool shouldBlockUserInput() const /*override*/;
 
+    // vIndex: 242
     virtual bool hasSetSafeZone() const /*override*/;
 
+    // vIndex: 243
     virtual bool getAutomationDisableTreatmentPackDownloads() const /*override*/;
 
+    // vIndex: 244
     virtual bool getAutomationProfilerCaptureEnabled() const /*override*/;
 
+    // vIndex: 245
     virtual bool getAutomationProfilerFlipEnabled() const /*override*/;
 
+    // vIndex: 246
     virtual int getAutomationRepeatCount() const /*override*/;
 
+    // vIndex: 247
     virtual int getAutomationSoakTestRunDurationMinutes() const /*override*/;
 
+    // vIndex: 248
     virtual bool getAutomationRerunFailuresOnly() const /*override*/;
 
+    // vIndex: 249
     virtual int getAutomationUnitPerTestcaseTimeout() const /*override*/;
 
+    // vIndex: 250
     virtual int getAutomationFunctionalPerTestcaseTimeout() const /*override*/;
 
+    // vIndex: 251
     virtual int getAutomationServerPerTestcaseTimeout() const /*override*/;
 
-    virtual void setAutomationFunctionalBrokenTestTags(::std::string const& tags) /*override*/;
+    // vIndex: 252
+    virtual void setAutomationFunctionalBrokenTestTags(::std::string const&) /*override*/;
 
-    virtual void setAutomationUnitBrokenTestTags(::std::string const& tags) /*override*/;
+    // vIndex: 253
+    virtual void setAutomationUnitBrokenTestTags(::std::string const&) /*override*/;
 
-    virtual void setAutomationUploadToken(::std::string const& token) /*override*/;
+    // vIndex: 254
+    virtual void setAutomationUploadToken(::std::string const&) /*override*/;
 
+    // vIndex: 255
     virtual bool getDevAchievmentsAlwaysEnabled() /*override*/;
 
+    // vIndex: 256
     virtual bool shouldServerTestsLogWorlds() const /*override*/;
 
+    // vIndex: 257
     virtual bool shouldServerTestsAssertOnLevelDiff() const /*override*/;
 
+    // vIndex: 258
     virtual ::std::string getAutomationMultiplayerSessionName() const /*override*/;
 
+    // vIndex: 259
     virtual int getAutomationMultiplayerDeviceIndex() const /*override*/;
 
+    // vIndex: 260
     virtual ::std::vector<::std::string> getAutomationMultiplayerUserAccounts() const /*override*/;
 
+    // vIndex: 261
     virtual ::DevConnectionQuality getDevConnectionQuality() const /*override*/;
 
+    // vIndex: 262
     virtual int getDevRenderAttachPos() const /*override*/;
 
-    virtual void setMultiPlayerGame(bool multiPlayerGame) /*override*/;
+    // vIndex: 263
+    virtual void setMultiPlayerGame(bool) /*override*/;
 
+    // vIndex: 264
     virtual bool getMultiPlayerGame() const /*override*/;
 
-    virtual void setXboxLiveVisible(bool xboxLiveVisible) /*override*/;
+    // vIndex: 265
+    virtual void setXboxLiveVisible(bool) /*override*/;
 
+    // vIndex: 266
     virtual bool wasLoggedInLastSession() /*override*/;
 
-    virtual void setHasEverLoggedIntoXbl(bool hasEverLoggedIntoXbl) /*override*/;
+    // vIndex: 267
+    virtual void setHasEverLoggedIntoXbl(bool) /*override*/;
 
+    // vIndex: 268
     virtual bool getHasEverLoggedIntoXbl() const /*override*/;
 
-    virtual void setHasShownFirstLaunchWelcomeModal(bool hasShownModal) /*override*/;
+    // vIndex: 269
+    virtual void setHasShownFirstLaunchWelcomeModal(bool) /*override*/;
 
+    // vIndex: 270
     virtual bool getHasShownFirstLaunchWelcomeModal() const /*override*/;
 
-    virtual void setHasShownFirstSocialWelcomeModal(bool hasShownModal) /*override*/;
+    // vIndex: 271
+    virtual void setHasShownFirstSocialWelcomeModal(bool) /*override*/;
 
+    // vIndex: 272
     virtual bool getHasShownFirstSocialWelcomeModal() const /*override*/;
 
-    virtual void setDoNotShowFriendsListFTUE(bool hasShownModal) /*override*/;
+    // vIndex: 273
+    virtual void setDoNotShowFriendsListFTUE(bool) /*override*/;
 
+    // vIndex: 274
     virtual bool getDoNotShowFriendsListFTUE() const /*override*/;
 
-    virtual void setHasShownBannedModalAtStartup(bool hasShownModal) /*override*/;
+    // vIndex: 275
+    virtual void setHasShownBannedModalAtStartup(bool) /*override*/;
 
+    // vIndex: 276
     virtual bool getHasShownBannedModalAtStartup() const /*override*/;
 
-    virtual void setAcknowledgedAutoSave(bool acknowledgedAutoSave) /*override*/;
+    // vIndex: 277
+    virtual void setAcknowledgedAutoSave(bool) /*override*/;
 
+    // vIndex: 278
     virtual bool getAcknowledgedAutoSave() const /*override*/;
 
-    virtual void setRealmsInviteShowFriendsOption(bool showFriendInvitesOnly) /*override*/;
+    // vIndex: 279
+    virtual void setRealmsInviteShowFriendsOption(bool) /*override*/;
 
+    // vIndex: 280
     virtual bool getRealmsInviteShowFriendsOption() const /*override*/;
 
-    virtual void setNumberOfOwnedRealms(int numberOfOwnedRealms) /*override*/;
+    // vIndex: 281
+    virtual void setNumberOfOwnedRealms(int) /*override*/;
 
+    // vIndex: 282
     virtual int getNumberOfOwnedRealms() const /*override*/;
 
-    virtual void setNumberOfFriendsRealms(int numberOfOwnedRealms) /*override*/;
+    // vIndex: 283
+    virtual void setNumberOfFriendsRealms(int) /*override*/;
 
+    // vIndex: 284
     virtual int getNumberOfFriendsRealms() const /*override*/;
 
-    virtual void setCreateRealmUpsellCount(int value) /*override*/;
+    // vIndex: 285
+    virtual void setCreateRealmUpsellCount(int) /*override*/;
 
+    // vIndex: 286
     virtual int getCreateRealmUpsellCount() const /*override*/;
 
-    virtual void setSaveAndQuitCount(int value) /*override*/;
+    // vIndex: 287
+    virtual void setSaveAndQuitCount(int) /*override*/;
 
+    // vIndex: 288
     virtual int getSaveAndQuitCount() const /*override*/;
 
-    virtual void setIsRatingsPromptShown(bool value) /*override*/;
+    // vIndex: 289
+    virtual void setIsRatingsPromptShown(bool) /*override*/;
 
+    // vIndex: 290
     virtual bool getIsRatingsPromptShown() const /*override*/;
 
-    virtual void setShowRealmsTrialButtonFromPlayScreen(bool value) /*override*/;
+    // vIndex: 291
+    virtual void setShowRealmsTrialButtonFromPlayScreen(bool) /*override*/;
 
+    // vIndex: 292
     virtual bool getShowRealmsTrialButtonFromPlayScreen() const /*override*/;
 
+    // vIndex: 293
     virtual ::AutoUpdateMode getAutoUpdateMode() const /*override*/;
 
-    virtual void setCanUseCellularData(bool useNetworkData) /*override*/;
+    // vIndex: 294
+    virtual void setCanUseCellularData(bool) /*override*/;
 
+    // vIndex: 295
     virtual bool getCanUseCellularData() const /*override*/;
 
+    // vIndex: 124
     virtual int getPlayerViewPerspective() const /*override*/;
 
-    virtual void setRequireWebsocketEncryption(bool require) /*override*/;
+    // vIndex: 296
+    virtual void setRequireWebsocketEncryption(bool) /*override*/;
 
+    // vIndex: 297
     virtual bool getRequireWebsocketEncryption() const /*override*/;
 
-    virtual void setWebsocketsEnabled(bool enabled) /*override*/;
+    // vIndex: 298
+    virtual void setWebsocketsEnabled(bool) /*override*/;
 
+    // vIndex: 299
     virtual bool getWebsocketsEnabled() const /*override*/;
 
-    virtual void setUseIPv6Only(bool useIPv6Only) /*override*/;
+    // vIndex: 300
+    virtual void setUseIPv6Only(bool) /*override*/;
 
+    // vIndex: 301
     virtual bool getUseIPv6Only() const /*override*/;
 
-    virtual void setUseRetailXboxSandbox(bool const retail) /*override*/;
+    // vIndex: 302
+    virtual void setUseRetailXboxSandbox(bool const) /*override*/;
 
+    // vIndex: 303
     virtual bool getUseRetailXboxSandbox() const /*override*/;
 
-    virtual void setXboxLiveSandbox(::XboxSandboxEnvironment environment) /*override*/;
+    // vIndex: 304
+    virtual void setXboxLiveSandbox(::XboxSandboxEnvironment) /*override*/;
 
+    // vIndex: 305
     virtual ::std::string const& getXboxLiveSandbox() const /*override*/;
 
-    virtual void setRealmsEnvironment(::RealmsEnvironment realmsEnvironment) /*override*/;
+    // vIndex: 306
+    virtual void setRealmsEnvironment(::RealmsEnvironment) /*override*/;
 
+    // vIndex: 307
     virtual ::RealmsEnvironment getRealmsEnvironment() const /*override*/;
 
-    virtual void setRealmsEndpoint(::std::string const& realmsEndpoint) /*override*/;
+    // vIndex: 308
+    virtual void setRealmsEndpoint(::std::string const&) /*override*/;
 
+    // vIndex: 309
     virtual ::std::string const& getRealmsEndpoint() const /*override*/;
 
+    // vIndex: 310
     virtual ::std::string const& getRealmsV2Endpoint() const /*override*/;
 
-    virtual void setRealmsEndpointPayment(::std::string const& realmsEndpointPayment) /*override*/;
+    // vIndex: 311
+    virtual void setRealmsEndpointPayment(::std::string const&) /*override*/;
 
+    // vIndex: 312
     virtual ::std::string const& getRealmsEndpointPayment() const /*override*/;
 
-    virtual void setRealmsRelyingParty(::std::string const& realmsRelyingParty) /*override*/;
+    // vIndex: 313
+    virtual void setRealmsRelyingParty(::std::string const&) /*override*/;
 
+    // vIndex: 314
     virtual ::std::string const& getRealmsRelyingParty() const /*override*/;
 
-    virtual void setRealmsRelyingPartyPayment(::std::string const& realmsRelyingPartyPayment) /*override*/;
+    // vIndex: 315
+    virtual void setRealmsRelyingPartyPayment(::std::string const&) /*override*/;
 
+    // vIndex: 316
     virtual ::std::string const& getRealmsRelyingPartyPayment() const /*override*/;
 
-    virtual void setStoreHasPurchasedCoins(bool value) /*override*/;
+    // vIndex: 317
+    virtual void setStoreHasPurchasedCoins(bool) /*override*/;
 
+    // vIndex: 318
     virtual bool getStoreHasPurchasedCoins() const /*override*/;
 
-    virtual void setShowUnfulfilledPurchaseModal(bool value) /*override*/;
+    // vIndex: 319
+    virtual void setShowUnfulfilledPurchaseModal(bool) /*override*/;
 
+    // vIndex: 320
     virtual bool getShowUnfulfilledPurchaseModal() const /*override*/;
 
-    virtual void setSwitchCoinDebug(bool value) /*override*/;
+    // vIndex: 321
+    virtual void setSwitchCoinDebug(bool) /*override*/;
 
+    // vIndex: 322
     virtual bool getSwitchCoinDebug() const /*override*/;
 
-    virtual void setEduHasLoggedIn(bool hasEduLoggedIn) /*override*/;
+    // vIndex: 328
+    virtual void setEduHasLoggedIn(bool) /*override*/;
 
+    // vIndex: 329
     virtual bool getEduHasLoggedIn() const /*override*/;
 
-    virtual void setShownPlatformNetworkConnectConfirmation(bool value) /*override*/;
+    // vIndex: 330
+    virtual void setShownPlatformNetworkConnectConfirmation(bool) /*override*/;
 
+    // vIndex: 331
     virtual bool getShownPlatformNetworkConnectConfirmation() const /*override*/;
 
-    virtual void setShownPlatformPremiumUpsell(bool value) /*override*/;
+    // vIndex: 332
+    virtual void setShownPlatformPremiumUpsell(bool) /*override*/;
 
+    // vIndex: 333
     virtual bool getShownPlatformPremiumUpsell() const /*override*/;
 
-    virtual void setAppLaunchedCount(int value) /*override*/;
+    // vIndex: 334
+    virtual void setAppLaunchedCount(int) /*override*/;
 
+    // vIndex: 335
     virtual int getAppLaunchedCount() const /*override*/;
 
-    virtual void setEcoMode(bool value) /*override*/;
+    // vIndex: 336
+    virtual void setEcoMode(bool) /*override*/;
 
+    // vIndex: 337
     virtual bool getEcoMode() const /*override*/;
 
-    virtual void setEduCloudBackupToggle(bool cloudBackup) /*override*/;
+    // vIndex: 338
+    virtual void setEduCloudBackupToggle(bool) /*override*/;
 
+    // vIndex: 339
     virtual bool getEduCloudBackupToggle() const /*override*/;
 
-    virtual void setUseFontOverrides(bool value) /*override*/;
+    // vIndex: 340
+    virtual void setUseFontOverrides(bool) /*override*/;
 
+    // vIndex: 341
     virtual bool getUseFontOverrides() const /*override*/;
 
+    // vIndex: 342
     virtual ::NewInteractionModel getEffectiveTouchScheme() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::Option* _getOptionAndAssertIfNotPresent(::OptionID optionId) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::shared_ptr<::IOptions> $sharedFromThis();
 
-    MCNAPI ::std::shared_ptr<::IOptions const> $sharedFromThis() const;
-
-    MCNAPI bool $isValidOption(::OptionID optionId) const;
-
-    MCNAPI ::gsl::not_null<::Option*> $get(::OptionID optionId);
-
-    MCNAPI ::gsl::not_null<::Option const*> $get(::OptionID optionId) const;
-
-    MCNAPI ::std::optional<::Option*> $getIfValid(::OptionID optionId);
-
-    MCNAPI ::std::optional<::Option const*> $getIfValid(::OptionID optionId) const;
-
-    MCNAPI ::std::array<::std::unique_ptr<::Option>, 772> const& $getAllRegisteredOptions();
-
-    MCNAPI void $forEachOption(::std::function<void(::Option*)> callback);
-
-    MCNAPI bool $consumeDevOptionsDirty();
-
-    MCNAPI void $dumpOptionsToLogFile() const;
-
-    MCNAPI ::Option& $_registerOption(::std::unique_ptr<::Option> option);
-
-    MCNAPI void $updateInputMode(::InputMode inputMode);
-
-    MCNAPI void $setMainVolume(float volume);
-
-    MCNAPI float $getMainVolume() const;
-
-    MCNAPI void $setMusicVolume(float volume);
-
-    MCNAPI float $getMusicVolume() const;
-
-    MCNAPI void $setSoundVolume(float volume);
-
-    MCNAPI float $getSoundVolume() const;
-
-    MCNAPI void $setTTSVolume(float volume);
-
-    MCNAPI float $getTTSVolume() const;
-
-    MCNAPI float $getChatMessageDuration() const;
-
-    MCNAPI float $getToastNotificationDuration() const;
-
-    MCNAPI void $setSensitivity(float sensitivity, ::InputMode inputMode);
-
-    MCNAPI float $getSensitivity(::InputMode inputMode) const;
-
-    MCNAPI void $setSpyglassDamping(float value, ::InputMode inputMode);
-
-    MCNAPI float $getSpyglassDamping(::InputMode inputMode) const;
-
-    MCNAPI void $setDwellBeforeDrag(float value);
-
-    MCNAPI float $getDwellBeforeDrag() const;
-
-    MCNAPI void $setStackSplittingTrigger(float value);
-
-    MCNAPI float $getStackSplittingTrigger() const;
-
-    MCNAPI float $getGameSensitivity(::InputMode inputmode) const;
-
-    MCNAPI bool $getInvertYMouse(::InputMode inputMode) const;
-
-    MCNAPI float $getParticleViewDistance() const;
-
-    MCNAPI bool $getBobView() const;
-
-    MCNAPI bool $getCameraShake() const;
-
-    MCNAPI bool $getHideEndFlash() const;
-
-    MCNAPI bool $getIsDitheringEnabledBlocks() const;
-
-    MCNAPI bool $getIsDitheringEnabledMobs() const;
-
-    MCNAPI void $setResetPlayerAlignment(bool reset);
-
-    MCNAPI bool $getResetPlayerAlignment() const;
-
-    MCNAPI ::GraphicsMode $getGraphicsMode() const;
-
-    MCNAPI ::TargetRenderAPI $getTargetRenderAPI() const;
-
-    MCNAPI bool $getTransparentLeaves() const;
-
-    MCNAPI bool $getFancyBubbles() const;
-
-    MCNAPI bool $getSmoothLighting() const;
-
-    MCNAPI bool $getGuiAccessibilityScaling() const;
-
-    MCNAPI bool $getUseMouseForDigging() const;
-
-    MCNAPI bool $isLeftHanded() const;
-
-    MCNAPI bool $isHotbarOnlyTouch() const;
-
-    MCNAPI bool $getDestroyVibration(::InputMode inputMode) const;
-
-    MCNAPI bool $getSplitVibration(::InputMode inputMode) const;
-
-    MCNAPI bool $getAutoJump(::InputMode inputMode) const;
-
-    MCNAPI void $setFullscreen(bool fullscreen);
-
-    MCNAPI bool $getFullscreen() const;
-
-    MCNAPI void $toggleFullscreen();
-
-    MCNAPI void $setDifficulty(int difficulty);
-
-    MCNAPI void $setHideGUI(bool hideGUI);
-
-    MCNAPI bool $getHideHud() const;
-
-    MCNAPI bool $getHideHand() const;
-
-    MCNAPI void $setHideToolTips(bool hideToolTips);
-
-    MCNAPI bool $getHideToolTips() const;
-
-    MCNAPI void $setHidePaperDoll(bool hidePaperDoll);
-
-    MCNAPI bool $getHidePaperDoll() const;
-
-    MCNAPI void $setIngamePlayerNames(bool useNameTag);
-
-    MCNAPI bool $getIngamePlayerNames() const;
-
-    MCNAPI void $setSplitscreenIngamePlayerNames(bool useNameTag);
-
-    MCNAPI bool $getSplitscreenIngamePlayerNames() const;
-
-    MCNAPI void $setInterfaceOpacity(float opacity);
-
-    MCNAPI float $getInterfaceOpacity() const;
-
-    MCNAPI void $setSplitscreenInterfaceOpacity(float opacity);
-
-    MCNAPI float $getSplitscreenInterfaceOpacity() const;
-
-    MCNAPI void $setShowAutoSaveIcon(bool ShowAutoSaveIcon);
-
-    MCNAPI bool $getShowAutoSaveIcon() const;
-
-    MCNAPI void $setSplitscreenDirection(int splitScreenDirection);
-
-    MCNAPI ::SplitScreenDirection $getSplitscreenDirection() const;
-
-    MCNAPI void $setHideScreens(bool hideScreens);
-
-    MCNAPI bool $getHideScreens() const;
-
-    MCNAPI void $setHideItemInHand(bool hideItemInHand);
-
-    MCNAPI bool $getHideItemInHand() const;
-
-    MCNAPI bool $getScreenAnimations() const;
-
-    MCNAPI void $setForceUseUnsortedPolys(bool renderUnsorted);
-
-    MCNAPI bool $getForceUseUnsortedPolys() const;
-
-    MCNAPI void $setRenderDebug(::DebugHudOptions renderDebug);
-
-    MCNAPI ::DebugHudOptions $getRenderDebug() const;
-
-    MCNAPI bool $getRemoteImguiEnabled() const;
-
-    MCNAPI void $setRemoteImguiEnabled(bool remoteImguiEnabled);
-
-    MCNAPI float $getGamma() const;
-
-    MCNAPI void $setMSAA(int msaa);
-
-    MCNAPI void $setTexelAA(bool texelAA);
-
-    MCNAPI void $setFixedCamera(bool fixedCamera);
-
-    MCNAPI bool $getFixedCamera() const;
-
-    MCNAPI void $setSkinId(::std::string const& skinId);
-
-    MCNAPI ::std::string const& $getSkinId() const;
-
-    MCNAPI void $setLastCustomSkinId(::std::string const& lastCustomSkinId);
-
-    MCNAPI ::std::string const& $getLastCustomSkinId() const;
-
-    MCNAPI bool $getFovToggle() const;
-
-    MCNAPI void $setServerVisible(bool serverVisible);
-
-    MCNAPI bool $getServerVisible() const;
-
-    MCNAPI void $setSplitControls(bool splitControls);
-
-    MCNAPI bool $getSplitControls() const;
-
-    MCNAPI bool $getSwapJumpAndSneak() const;
-
-    MCNAPI bool $getFancySkies() const;
-
-    MCNAPI void $setRenderClouds(bool renderClouds);
-
-    MCNAPI bool $getRenderClouds() const;
-
-    MCNAPI bool $getDevAutoLoadLevel() const;
-
-    MCNAPI bool $getDevAssertionsDebugBreak() const;
-
-    MCNAPI bool $getDevAssertionsShowDialog() const;
-
-    MCNAPI bool $getDevShowDisplayLoggedError() const;
-
-    MCNAPI bool $getDevShowDisplayLoggedError(::DisplayLoggedErrorType errortype) const;
-
-    MCNAPI void $setDevShowDevConsoleButton(bool dev_showDevConsoleButton);
-
-    MCNAPI bool $getDevShowDevConsoleButton() const;
-
-    MCNAPI bool $getDevIgnoreUserInput() const;
-
-    MCNAPI bool $getDevDisplayTreatmentPanel() const;
-
-    MCNAPI void $setDevDisplayTreatmentPanel(bool dev_displayTreatmentPanel);
-
-    MCNAPI void $setDevShowMinecraftTCUIReplacement(bool dev_showMinecraftTCUIReplacement);
-
-    MCNAPI bool $getDevShowMinecraftTCUIReplacement() const;
-
-    MCNAPI bool $getDevCreateRealmWithoutPurchase() const;
-
-    MCNAPI bool $getDevDisableConnectedStoragePush() const;
-
-    MCNAPI bool $getDevDisableConnectedStoragePull() const;
-
-    MCNAPI void $setDevFindMobs(bool dev_findMobs);
-
-    MCNAPI bool $getDevFindMobs() const;
-
-    MCNAPI void $setDevRenderBoundingBoxes(bool dev_renderBoundingBoxes);
-
-    MCNAPI bool $getDevRenderBoundingBoxes() const;
-
-    MCNAPI void $setDevRenderPaths(bool dev_renderPaths);
-
-    MCNAPI bool $getDevRenderPaths() const;
-
-    MCNAPI void $setDevRenderMobInfoState(bool dev_renderMobInfoState);
-
-    MCNAPI bool $getDevRenderMobInfoState() const;
-
-    MCNAPI void $setDevRenderGoalState(bool dev_renderGoalState);
-
-    MCNAPI bool $getDevRenderGoalState() const;
-
-    MCNAPI void $setDevRenderSchedulerInfo(bool dev_renderSchedulerState);
-
-    MCNAPI bool $getDevRenderSchedulerInfo() const;
-
-    MCNAPI void $setDevRenderCoordinateSystems(bool dev_renderCoords);
-
-    MCNAPI bool $getDevRenderCoordinateSystems() const;
-
-    MCNAPI bool $getDevResetClientId() const;
-
-    MCNAPI void $setDevLogFlushImmediate(bool dev_FlushLogOnWrite);
-
-    MCNAPI bool $getDevLogFlushImmediate() const;
-
-    MCNAPI void $setDevLogTimestamp(bool dev_timestamp);
-
-    MCNAPI bool $getDevLogTimestamp() const;
-
-    MCNAPI void $setDevLogTrace(bool dev_trace);
-
-    MCNAPI bool $getDevLogTrace() const;
-
-    MCNAPI void $setDevLogArea(bool dev_logArea);
-
-    MCNAPI bool $getDevLogArea() const;
-
-    MCNAPI void $setDevLogPriority(bool dev_logPriority);
-
-    MCNAPI bool $getDevLogPriority() const;
-
-    MCNAPI void $setDevLogThread(bool dev_logThread);
-
-    MCNAPI bool $getDevLogThread() const;
-
-    MCNAPI void $setDevLogAppend(bool dev_append);
-
-    MCNAPI bool $getDevLogAppend() const;
-
-    MCNAPI void $setDevLogProcessId(bool enable);
-
-    MCNAPI bool $getDevLogProcessId() const;
-
-    MCNAPI void $setDevLogThreadId(bool enable);
-
-    MCNAPI bool $getDevLogThreadId() const;
-
-    MCNAPI void $setDevLogMessageId(bool enable);
-
-    MCNAPI bool $getDevLogMessageId() const;
-
-    MCNAPI void $setDevLogSilentLogging(bool silent);
-
-    MCNAPI bool $getDevLogSilentLogging() const;
-
-    MCNAPI void $setDevLogPriorityFilter(::std::string const& devFilter);
-
-    MCNAPI ::std::string const& $getDevLogPriorityFilter() const;
-
-    MCNAPI void $setDevLogAreaFilter(::std::string const& devFilter);
-
-    MCNAPI ::std::string const& $getDevLogAreaFilter() const;
-
-    MCNAPI void $setDevGameEventRetentionTicks(ushort retentionTicks);
-
-    MCNAPI ushort $getDevGameEventRetentionTicks() const;
-
-    MCNAPI void $setDevDeepDarkDebugRender(bool render);
-
-    MCNAPI bool $getDevDeepDarkDebugRender() const;
-
-    MCNAPI bool $isLogCategoryEnabled(::BedrockLog::LogCategory category) const;
-
-    MCNAPI bool $getDevEnableProfilerOutput();
-
-    MCNAPI bool $getDevAddUsersSilently() const;
-
-    MCNAPI int $getDevBenchmarkModeTime();
-
-    MCNAPI bool $getDevDisableClientBlobCache() const;
-
-    MCNAPI bool $getDevClientBlobCacheOnLocalServer() const;
-
-    MCNAPI void $setLogFlushDelay(int delay_time);
-
-    MCNAPI int $getLogFlushDelay();
-
-    MCNAPI int $getAutomationParallelSlices() const;
-
-    MCNAPI int $getAutomationParallelCurrentSlice() const;
-
-    MCNAPI bool $getIsAutomationRun() const;
-
-    MCNAPI bool $getShouldQuitAppAfterTesting() const;
-
-    MCNAPI bool $shouldUploadTestArtifacts() const;
-
-    MCNAPI bool $hasAutomationTestRunTimedOut() const;
-
-    MCNAPI bool $hasAutomationTestRunReachedCrashLimit() const;
-
-    MCNAPI bool $shouldAppendDebugLogTimestamp() const;
-
-    MCNAPI ::std::string $getAutomationServerIp() const;
-
-    MCNAPI ::std::string $getAutomationServerPort() const;
-
-    MCNAPI ::std::string $getAutomationArtifactUploadSas() const;
-
-    MCNAPI ::std::string $getAutomationArtifactUploadUrl() const;
-
-    MCNAPI ::std::string $getAutomationRelativeBlobpath() const;
-
-    MCNAPI ::std::string $getAutomationFunctionalTestTags() const;
-
-    MCNAPI ::std::string $getAutomationServerTestTags() const;
-
-    MCNAPI ::std::string $getAutomationUnitTestTags() const;
-
-    MCNAPI ::std::string $getAutomationFunctionalBrokenTestTags() const;
-
-    MCNAPI ::std::string $getAutomationServerBrokenTestTags() const;
-
-    MCNAPI ::std::string $getAutomationUnitBrokenTestTags() const;
-
-    MCNAPI ::std::string $getAutomationTestBuildID() const;
-
-    MCNAPI ::std::string $getAutomationUploadToken() const;
-
-    MCNAPI ::std::string $getAutomationEnabledFeatures() const;
-
-    MCNAPI ::std::string $getAutomationEnabledExperiments() const;
-
-    MCNAPI bool $getAutomationShouldGroupServerTests() const;
-
-    MCNAPI bool $getAutomationUnrandomTestsEnabled() const;
-
-    MCNAPI bool $getAutomationRunEntireServerTestGroup() const;
-
-    MCNAPI bool $getAutomationRunServerTestAfterEachTest() const;
-
-    MCNAPI ::std::string const& $getTestBranchName() const;
-
-    MCNAPI bool $getFunctionalTestBlockInput() const;
-
-    MCNAPI bool $shouldBlockUserInput() const;
-
-    MCNAPI bool $hasSetSafeZone() const;
-
-    MCNAPI bool $getAutomationDisableTreatmentPackDownloads() const;
-
-    MCNAPI bool $getAutomationProfilerCaptureEnabled() const;
-
-    MCNAPI bool $getAutomationProfilerFlipEnabled() const;
-
-    MCNAPI int $getAutomationRepeatCount() const;
-
-    MCNAPI int $getAutomationSoakTestRunDurationMinutes() const;
-
-    MCNAPI bool $getAutomationRerunFailuresOnly() const;
-
-    MCNAPI int $getAutomationUnitPerTestcaseTimeout() const;
-
-    MCNAPI int $getAutomationFunctionalPerTestcaseTimeout() const;
-
-    MCNAPI int $getAutomationServerPerTestcaseTimeout() const;
-
-    MCNAPI void $setAutomationFunctionalBrokenTestTags(::std::string const& tags);
-
-    MCNAPI void $setAutomationUnitBrokenTestTags(::std::string const& tags);
-
-    MCNAPI void $setAutomationUploadToken(::std::string const& token);
-
-    MCNAPI bool $getDevAchievmentsAlwaysEnabled();
-
-    MCNAPI bool $shouldServerTestsLogWorlds() const;
-
-    MCNAPI bool $shouldServerTestsAssertOnLevelDiff() const;
-
-    MCNAPI ::std::string $getAutomationMultiplayerSessionName() const;
-
-    MCNAPI int $getAutomationMultiplayerDeviceIndex() const;
-
-    MCNAPI ::std::vector<::std::string> $getAutomationMultiplayerUserAccounts() const;
-
-    MCNAPI int $getDevRenderAttachPos() const;
-
-    MCNAPI void $setMultiPlayerGame(bool multiPlayerGame);
-
-    MCNAPI bool $getMultiPlayerGame() const;
-
-    MCNAPI void $setXboxLiveVisible(bool xboxLiveVisible);
-
-    MCNAPI bool $wasLoggedInLastSession();
-
-    MCNAPI void $setHasEverLoggedIntoXbl(bool hasEverLoggedIntoXbl);
-
-    MCNAPI bool $getHasEverLoggedIntoXbl() const;
-
-    MCNAPI void $setHasShownFirstLaunchWelcomeModal(bool hasShownModal);
-
-    MCNAPI bool $getHasShownFirstLaunchWelcomeModal() const;
-
-    MCNAPI void $setHasShownFirstSocialWelcomeModal(bool hasShownModal);
-
-    MCNAPI bool $getHasShownFirstSocialWelcomeModal() const;
-
-    MCNAPI void $setDoNotShowFriendsListFTUE(bool hasShownModal);
-
-    MCNAPI bool $getDoNotShowFriendsListFTUE() const;
-
-    MCNAPI void $setHasShownBannedModalAtStartup(bool hasShownModal);
-
-    MCNAPI bool $getHasShownBannedModalAtStartup() const;
-
-    MCNAPI void $setAcknowledgedAutoSave(bool acknowledgedAutoSave);
-
-    MCNAPI bool $getAcknowledgedAutoSave() const;
-
-    MCNAPI void $setRealmsInviteShowFriendsOption(bool showFriendInvitesOnly);
-
-    MCNAPI bool $getRealmsInviteShowFriendsOption() const;
-
-    MCNAPI void $setNumberOfOwnedRealms(int numberOfOwnedRealms);
-
-    MCNAPI int $getNumberOfOwnedRealms() const;
-
-    MCNAPI void $setNumberOfFriendsRealms(int numberOfOwnedRealms);
-
-    MCNAPI int $getNumberOfFriendsRealms() const;
-
-    MCNAPI void $setCreateRealmUpsellCount(int value);
-
-    MCNAPI int $getCreateRealmUpsellCount() const;
-
-    MCNAPI void $setSaveAndQuitCount(int value);
-
-    MCNAPI int $getSaveAndQuitCount() const;
-
-    MCNAPI void $setIsRatingsPromptShown(bool value);
-
-    MCNAPI bool $getIsRatingsPromptShown() const;
-
-    MCNAPI void $setShowRealmsTrialButtonFromPlayScreen(bool value);
-
-    MCNAPI bool $getShowRealmsTrialButtonFromPlayScreen() const;
-
-    MCNAPI ::AutoUpdateMode $getAutoUpdateMode() const;
-
-    MCNAPI void $setCanUseCellularData(bool useNetworkData);
-
-    MCNAPI bool $getCanUseCellularData() const;
-
-    MCNAPI int $getPlayerViewPerspective() const;
-
-    MCNAPI void $setRequireWebsocketEncryption(bool require);
-
-    MCNAPI bool $getRequireWebsocketEncryption() const;
-
-    MCNAPI void $setWebsocketsEnabled(bool enabled);
-
-    MCNAPI bool $getWebsocketsEnabled() const;
-
-    MCNAPI void $setUseIPv6Only(bool useIPv6Only);
-
-    MCNAPI bool $getUseIPv6Only() const;
-
-    MCNAPI void $setUseRetailXboxSandbox(bool const retail);
-
-    MCNAPI bool $getUseRetailXboxSandbox() const;
-
-    MCNAPI void $setXboxLiveSandbox(::XboxSandboxEnvironment environment);
-
-    MCNAPI ::std::string const& $getXboxLiveSandbox() const;
-
-    MCNAPI void $setRealmsEnvironment(::RealmsEnvironment realmsEnvironment);
-
-    MCNAPI ::RealmsEnvironment $getRealmsEnvironment() const;
-
-    MCNAPI void $setRealmsEndpoint(::std::string const& realmsEndpoint);
-
-    MCNAPI ::std::string const& $getRealmsEndpoint() const;
-
-    MCNAPI ::std::string const& $getRealmsV2Endpoint() const;
-
-    MCNAPI void $setRealmsEndpointPayment(::std::string const& realmsEndpointPayment);
-
-    MCNAPI ::std::string const& $getRealmsEndpointPayment() const;
-
-    MCNAPI void $setRealmsRelyingParty(::std::string const& realmsRelyingParty);
-
-    MCNAPI ::std::string const& $getRealmsRelyingParty() const;
-
-    MCNAPI void $setRealmsRelyingPartyPayment(::std::string const& realmsRelyingPartyPayment);
-
-    MCNAPI ::std::string const& $getRealmsRelyingPartyPayment() const;
-
-    MCNAPI void $setStoreHasPurchasedCoins(bool value);
-
-    MCNAPI bool $getStoreHasPurchasedCoins() const;
-
-    MCNAPI void $setShowUnfulfilledPurchaseModal(bool value);
-
-    MCNAPI bool $getShowUnfulfilledPurchaseModal() const;
-
-    MCNAPI void $setSwitchCoinDebug(bool value);
-
-    MCNAPI bool $getSwitchCoinDebug() const;
-
-    MCNAPI void $setEduHasLoggedIn(bool hasEduLoggedIn);
-
-    MCNAPI bool $getEduHasLoggedIn() const;
-
-    MCNAPI void $setShownPlatformNetworkConnectConfirmation(bool value);
-
-    MCNAPI bool $getShownPlatformNetworkConnectConfirmation() const;
-
-    MCNAPI void $setShownPlatformPremiumUpsell(bool value);
-
-    MCNAPI bool $getShownPlatformPremiumUpsell() const;
-
-    MCNAPI void $setAppLaunchedCount(int value);
-
-    MCNAPI int $getAppLaunchedCount() const;
-
-    MCNAPI void $setEcoMode(bool value);
-
-    MCNAPI bool $getEcoMode() const;
-
-    MCNAPI void $setEduCloudBackupToggle(bool cloudBackup);
-
-    MCNAPI bool $getEduCloudBackupToggle() const;
-
-    MCNAPI void $setUseFontOverrides(bool value);
-
-    MCNAPI bool $getUseFontOverrides() const;
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

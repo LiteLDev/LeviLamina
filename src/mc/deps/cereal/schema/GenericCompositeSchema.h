@@ -19,6 +19,7 @@ struct GenericCompositeSchema : public ::cereal::internal::DefaultCompositeSchem
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual void doLoad(
         ::cereal::SchemaReader&              reader,
         ::entt::meta_any&                    any,
@@ -26,12 +27,14 @@ public:
         ::cereal::internal::LoadState const& state
     ) const /*override*/;
 
+    // vIndex: 7
     virtual void doSave(
         ::cereal::SchemaWriter&              writer,
         ::entt::meta_any const&              any,
         ::cereal::internal::SaveState const& state
     ) const /*override*/;
 
+    // vIndex: 0
     virtual ~GenericCompositeSchema() /*override*/ = default;
     // NOLINTEND
 
@@ -50,8 +53,6 @@ public:
         ::entt::meta_any const&              any,
         ::cereal::internal::SaveState const& state
     ) const;
-
-
     // NOLINTEND
 };
 

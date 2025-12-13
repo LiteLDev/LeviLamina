@@ -29,12 +29,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DefaultCommandsContextProvider() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::ILevel* getLevel() /*override*/;
 
+    // vIndex: 2
     virtual ::NetworkIdentifier getLocalNetworkId() const /*override*/;
 
+    // vIndex: 3
     virtual void onCommandExecuted(
         ::MCRESULT           result,
         ::CommandOriginType  originType,
@@ -56,8 +60,6 @@ public:
         ::std::string const& commandName,
         ::std::string const& commandString
     );
-
-
     // NOLINTEND
 
 public:

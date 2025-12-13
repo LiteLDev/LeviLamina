@@ -90,8 +90,6 @@ public:
 
     MCAPI void _openLogFile();
 
-    MCAPI_C void _updateAllSettings(::LogSettingsUpdater& _settings);
-
     MCAPI void closeLog();
 
     MCAPI void createLog(
@@ -103,7 +101,7 @@ public:
         double                _logCycleInS
     );
 
-    MCAPI_S void updateLogFilter(
+    MCAPI void updateLogFilter(
         ::std::unique_ptr<::LogSettingsUpdater> options,
         ::std::string const&                    filterType,
         ::std::vector<::std::string> const&     filters,

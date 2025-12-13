@@ -16,29 +16,23 @@ class FireflyBushClusterFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnka77822;
+    ::ll::TypedStorage<1, 1, bool> mNeedsAdjacentWater;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FireflyBushClusterFeature& operator=(FireflyBushClusterFeature const&);
-    FireflyBushClusterFeature(FireflyBushClusterFeature const&);
-    FireflyBushClusterFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
+    // vIndex: 0
     virtual ~FireflyBushClusterFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

@@ -19,14 +19,19 @@ class BlockSourceListener {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BlockSourceListener();
 
+    // vIndex: 1
     virtual void onSourceCreated(::BlockSource& source);
 
+    // vIndex: 2
     virtual void onSourceDestroyed(::BlockSource& source);
 
+    // vIndex: 3
     virtual void onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
+    // vIndex: 4
     virtual void onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              pos,
@@ -39,12 +44,16 @@ public:
         ::Actor*                       blockChangeSource
     );
 
+    // vIndex: 5
     virtual void onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 
+    // vIndex: 6
     virtual void onBlockEntityChanged(::BlockSource& source, ::BlockActor& te);
 
+    // vIndex: 7
     virtual void onEntityChanged(::BlockSource& source, ::Actor& entity);
 
+    // vIndex: 8
     virtual void onBlockEvent(::BlockSource& source, int x, int y, int z, int b0, int b1);
     // NOLINTEND
 
@@ -82,8 +91,6 @@ public:
     MCFOLD void $onEntityChanged(::BlockSource& source, ::Actor& entity);
 
     MCFOLD void $onBlockEvent(::BlockSource& source, int x, int y, int z, int b0, int b1);
-
-
     // NOLINTEND
 
 public:

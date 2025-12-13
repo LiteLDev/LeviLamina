@@ -16,63 +16,6 @@ struct EnchantSlotEnumHasher;
 class Enchant {
 public:
     // Enchant inner types define
-    enum class Activation : int {
-        Equipped       = 0,
-        Held           = 1,
-        Self           = 2,
-        NumActivations = 3,
-        Invalid        = 4,
-    };
-
-    enum class CompatibilityID : int {
-        NonConflict  = 0,
-        Damage       = 1,
-        Gathering    = 2,
-        Protection   = 3,
-        Froststrider = 4,
-        Mendfinity   = 5,
-        Loyalriptide = 6,
-    };
-
-    enum class Frequency : int {
-        Common   = 30,
-        Uncommon = 10,
-        Rare     = 3,
-        VeryRare = 1,
-    };
-
-    enum class Slot : uint {
-        // bitfield representation
-        None          = 0,
-        ArmorHead     = 1u << 0,
-        ArmorTorso    = 1u << 1,
-        ArmorFeet     = 1u << 2,
-        ArmorLegs     = 1u << 3,
-        Sword         = 1u << 4,
-        Bow           = 1u << 5,
-        Hoe           = 1u << 6,
-        Shears        = 1u << 7,
-        Flintsteel    = 1u << 8,
-        Axe           = 1u << 9,
-        Pickaxe       = 1u << 10,
-        Shovel        = 1u << 11,
-        FishingRod    = 1u << 12,
-        CarrotStick   = 1u << 13,
-        Elytra        = 1u << 14,
-        Spear         = 1u << 15,
-        Crossbow      = 1u << 16,
-        Shield        = 1u << 17,
-        CosmeticHead  = 1u << 18,
-        Compass       = 1u << 19,
-        MushroomStick = 1u << 20,
-        Brush         = 1u << 21,
-        HeavyWeapon   = 1u << 22,
-        GArmor        = ArmorHead | ArmorTorso | ArmorFeet | ArmorLegs,
-        GDigging      = Hoe | Axe | Pickaxe | Shovel,
-        GTool         = Hoe | Shears | Flintsteel | Shield,
-        All           = 4294967295,
-    };
-
     enum class Type : uchar {
         Protection           = 0,
         FireProtection       = 1,
@@ -119,6 +62,63 @@ public:
         InvalidEnchantment   = 42,
     };
 
+    enum class Frequency : int {
+        Common   = 30,
+        Uncommon = 10,
+        Rare     = 3,
+        VeryRare = 1,
+    };
+
+    enum class Slot : uint {
+        // bitfield representation
+        None          = 0,
+        ArmorHead     = 1u << 0,
+        ArmorTorso    = 1u << 1,
+        ArmorFeet     = 1u << 2,
+        ArmorLegs     = 1u << 3,
+        Sword         = 1u << 4,
+        Bow           = 1u << 5,
+        Hoe           = 1u << 6,
+        Shears        = 1u << 7,
+        Flintsteel    = 1u << 8,
+        Axe           = 1u << 9,
+        Pickaxe       = 1u << 10,
+        Shovel        = 1u << 11,
+        FishingRod    = 1u << 12,
+        CarrotStick   = 1u << 13,
+        Elytra        = 1u << 14,
+        Spear         = 1u << 15,
+        Crossbow      = 1u << 16,
+        Shield        = 1u << 17,
+        CosmeticHead  = 1u << 18,
+        Compass       = 1u << 19,
+        MushroomStick = 1u << 20,
+        Brush         = 1u << 21,
+        HeavyWeapon   = 1u << 22,
+        GArmor        = ArmorHead | ArmorTorso | ArmorFeet | ArmorLegs,
+        GDigging      = Hoe | Axe | Pickaxe | Shovel,
+        GTool         = Hoe | Shears | Flintsteel | Shield,
+        All           = 4294967295,
+    };
+
+    enum class Activation : int {
+        Equipped       = 0,
+        Held           = 1,
+        Self           = 2,
+        NumActivations = 3,
+        Invalid        = 4,
+    };
+
+    enum class CompatibilityID : int {
+        NonConflict  = 0,
+        Damage       = 1,
+        Gathering    = 2,
+        Protection   = 3,
+        Froststrider = 4,
+        Mendfinity   = 5,
+        Loyalriptide = 6,
+    };
+
     enum class VillagerTrading : int {
         NotAvailable = 0,
         Available    = 1,
@@ -146,38 +146,55 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Enchant();
 
+    // vIndex: 1
     virtual bool isCompatibleWith(::Enchant::Type type) const;
 
+    // vIndex: 2
     virtual int getMinCost(int level) const;
 
+    // vIndex: 3
     virtual int getMaxCost(int level) const;
 
+    // vIndex: 4
     virtual int getMinLevel() const;
 
+    // vIndex: 5
     virtual int getMaxLevel() const;
 
+    // vIndex: 6
     virtual int getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
+    // vIndex: 7
     virtual float getAfterBreachArmorFraction(int, float) const;
 
+    // vIndex: 8
     virtual float getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
+    // vIndex: 9
     virtual void doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
+    // vIndex: 10
     virtual void doPostItemHurtActor(::Actor&, ::Actor&, int) const;
 
+    // vIndex: 11
     virtual void doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
+    // vIndex: 12
     virtual bool isMeleeDamageEnchant() const;
 
+    // vIndex: 13
     virtual bool isProtectionEnchant() const;
 
+    // vIndex: 14
     virtual bool isTreasureOnly() const;
 
+    // vIndex: 15
     virtual bool isDiscoverable() const;
 
+    // vIndex: 16
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
     // NOLINTEND
 
@@ -295,8 +312,6 @@ public:
     MCFOLD bool $isDiscoverable() const;
 
     MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
-
-
     // NOLINTEND
 
 public:

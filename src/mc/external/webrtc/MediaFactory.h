@@ -17,10 +17,13 @@ class MediaFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MediaFactory() = default;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::Call> CreateCall(::webrtc::CallConfig const&) = 0;
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::cricket::MediaEngineInterface>
     CreateMediaEngine(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies&) = 0;
     // NOLINTEND

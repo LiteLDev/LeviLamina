@@ -20,17 +20,23 @@ class StoneBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 46
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
+    // vIndex: 143
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
+    // vIndex: 128
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
+    // vIndex: 0
     virtual ~StoneBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -46,8 +52,6 @@ public:
     MCFOLD ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI ::Block const* $tryGetInfested(::Block const& block) const;
-
-
     // NOLINTEND
 
 public:

@@ -2,25 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 struct ArrowDataPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk1680f6;
-    ::ll::UntypedStorage<4, 8>  mUnkfb4751;
-    ::ll::UntypedStorage<4, 8>  mUnkf6bcd8;
-    ::ll::UntypedStorage<1, 2>  mUnka50de1;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mEndLocation;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>   mArrowHeadLength;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>   mArrowHeadRadius;
+    ::ll::TypedStorage<1, 2, ::std::optional<uchar>>   mNumSegments;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ArrowDataPayload& operator=(ArrowDataPayload const&);
-    ArrowDataPayload(ArrowDataPayload const&);
-    ArrowDataPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::ArrowDataPayload const&) const;
+    MCAPI bool operator==(::ArrowDataPayload const&) const;
     // NOLINTEND
 };

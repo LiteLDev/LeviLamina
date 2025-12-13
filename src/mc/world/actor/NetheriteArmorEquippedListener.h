@@ -16,8 +16,10 @@ class NetheriteArmorEquippedListener : public ::EventListenerDispatcher<::ActorE
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetheriteArmorEquippedListener() /*override*/ = default;
 
+    // vIndex: 35
     virtual ::EventResult onEvent(::ActorEquippedArmorEvent const& actorEquippedArmorEvent) /*override*/;
     // NOLINTEND
 
@@ -25,8 +27,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::EventResult $onEvent(::ActorEquippedArmorEvent const& actorEquippedArmorEvent);
-
-
     // NOLINTEND
 
 public:

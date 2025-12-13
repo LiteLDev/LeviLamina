@@ -24,14 +24,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Hash() /*override*/;
 
+    // vIndex: 1
     virtual void reset() /*override*/;
 
+    // vIndex: 2
     virtual void update(void const* data, uint size) /*override*/;
 
+    // vIndex: 3
     virtual void final(uchar* result) /*override*/;
 
+    // vIndex: 4
     virtual uint64 resultSize() const /*override*/;
     // NOLINTEND
 
@@ -57,8 +62,6 @@ public:
     MCAPI void $final(uchar* result);
 
     MCAPI uint64 $resultSize() const;
-
-
     // NOLINTEND
 
 public:

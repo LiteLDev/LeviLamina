@@ -20,8 +20,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
+    // vIndex: 1
     virtual ~MoveControlDescription() /*override*/ = default;
     // NOLINTEND
 
@@ -29,7 +31,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
-
-
     // NOLINTEND
 };

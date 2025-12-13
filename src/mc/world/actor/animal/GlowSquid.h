@@ -17,29 +17,29 @@ class GlowSquid : public ::Squid {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3a0a2a;
-    ::ll::UntypedStorage<1, 1> mUnk29ae7c;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mStartTime;
+    ::ll::TypedStorage<1, 1, bool>                                    mGoingDark;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GlowSquid& operator=(GlowSquid const&);
-    GlowSquid(GlowSquid const&);
-    GlowSquid();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 24
     virtual void normalTick() /*override*/;
 
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
+    // vIndex: 178
     virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const /*override*/;
 
+    // vIndex: 8
     virtual ~GlowSquid() /*override*/ = default;
     // NOLINTEND
 
@@ -61,8 +61,6 @@ public:
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
-
-
     // NOLINTEND
 
 public:

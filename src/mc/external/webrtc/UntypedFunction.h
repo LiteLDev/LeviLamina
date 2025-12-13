@@ -13,8 +13,20 @@ public:
     // clang-format on
 
     // UntypedFunction inner types define
-    enum : uint64 {
-        KInlineStorageSize = 32,
+    struct NontrivialUntypedFunctionArgs {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnke220ec;
+        ::ll::UntypedStorage<8, 8> mUnk5a11a4;
+        ::ll::UntypedStorage<8, 8> mUnk70eaf6;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        NontrivialUntypedFunctionArgs& operator=(NontrivialUntypedFunctionArgs const&);
+        NontrivialUntypedFunctionArgs(NontrivialUntypedFunctionArgs const&);
+        NontrivialUntypedFunctionArgs();
     };
 
     struct FunctionPointerUntypedFunctionArgs {
@@ -32,20 +44,9 @@ public:
         FunctionPointerUntypedFunctionArgs();
     };
 
-    struct NontrivialUntypedFunctionArgs {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnke220ec;
-        ::ll::UntypedStorage<8, 8> mUnk5a11a4;
-        ::ll::UntypedStorage<8, 8> mUnk70eaf6;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        NontrivialUntypedFunctionArgs& operator=(NontrivialUntypedFunctionArgs const&);
-        NontrivialUntypedFunctionArgs(NontrivialUntypedFunctionArgs const&);
-        NontrivialUntypedFunctionArgs();
+    enum : uint64 {
+        // bitfield representation
+        KInlineStorageSize = 1ull << 5,
     };
 
 public:

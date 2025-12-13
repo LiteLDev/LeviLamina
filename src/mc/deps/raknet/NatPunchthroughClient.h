@@ -26,36 +26,6 @@ public:
     // clang-format on
 
     // NatPunchthroughClient inner types define
-    struct AddrAndGuid {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 136> mUnk2032bb;
-        ::ll::UntypedStorage<8, 16>  mUnkcbce59;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        AddrAndGuid& operator=(AddrAndGuid const&);
-        AddrAndGuid(AddrAndGuid const&);
-        AddrAndGuid();
-    };
-
-    struct DSTAndFac {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>  mUnk16424d;
-        ::ll::UntypedStorage<8, 136> mUnkdc19cd;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DSTAndFac& operator=(DSTAndFac const&);
-        DSTAndFac(DSTAndFac const&);
-        DSTAndFac();
-    };
-
     struct SendPing {
     public:
         // SendPing inner types define
@@ -94,6 +64,36 @@ public:
         SendPing();
     };
 
+    struct AddrAndGuid {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 136> mUnk2032bb;
+        ::ll::UntypedStorage<8, 16>  mUnkcbce59;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        AddrAndGuid& operator=(AddrAndGuid const&);
+        AddrAndGuid(AddrAndGuid const&);
+        AddrAndGuid();
+    };
+
+    struct DSTAndFac {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16>  mUnk16424d;
+        ::ll::UntypedStorage<8, 136> mUnkdc19cd;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DSTAndFac& operator=(DSTAndFac const&);
+        DSTAndFac(DSTAndFac const&);
+        DSTAndFac();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -117,24 +117,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NatPunchthroughClient() /*override*/ = default;
 
+    // vIndex: 3
     virtual void Update() /*override*/;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
+    // vIndex: 8
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
 
+    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,
         ::RakNet::PI2_LostConnectionReason
     ) /*override*/;
 
+    // vIndex: 1
     virtual void OnAttach() /*override*/;
 
+    // vIndex: 2
     virtual void OnDetach() /*override*/;
 
+    // vIndex: 6
     virtual void OnRakPeerShutdown() /*override*/;
     // NOLINTEND
 

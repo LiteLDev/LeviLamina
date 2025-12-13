@@ -12,12 +12,16 @@ class I410BufferInterface : public ::webrtc::PlanarYuv16BBuffer {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::webrtc::VideoFrameBuffer::Type type() const /*override*/;
 
+    // vIndex: 10
     virtual int ChromaWidth() const /*override*/;
 
+    // vIndex: 11
     virtual int ChromaHeight() const /*override*/;
 
+    // vIndex: 2
     virtual ~I410BufferInterface() /*override*/ = default;
     // NOLINTEND
 

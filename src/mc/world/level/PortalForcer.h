@@ -60,10 +60,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void deserialize(::CompoundTag const& tag) /*override*/;
 
+    // vIndex: 2
     virtual void serialize(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 0
     virtual ~PortalForcer() /*override*/ = default;
     // NOLINTEND
 
@@ -112,8 +115,6 @@ public:
     MCAPI void $deserialize(::CompoundTag const& tag);
 
     MCAPI void $serialize(::CompoundTag& tag) const;
-
-
     // NOLINTEND
 
 public:

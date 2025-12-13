@@ -19,12 +19,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::MutableScriptingGameplayEvent<::CoordinatorResult>&) = 0;
 
+    // vIndex: 1
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::ScriptingGameplayEvent<::CoordinatorResult> const&) = 0;
 
+    // vIndex: 0
     virtual ~ScriptingEventHandler() /*override*/ = default;
     // NOLINTEND
 

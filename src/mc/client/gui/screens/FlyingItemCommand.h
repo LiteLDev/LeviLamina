@@ -19,16 +19,4 @@ public:
     FlyingItemCommand& operator=(FlyingItemCommand const&);
     FlyingItemCommand(FlyingItemCommand const&);
     FlyingItemCommand();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~FlyingItemCommand();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

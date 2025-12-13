@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
+class Block;
+class PerlinSimplexNoise;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
@@ -16,8 +18,8 @@ class SwampSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkbdc47e;
-    ::ll::UntypedStorage<8, 8> mUnk197c24;
+    ::ll::TypedStorage<8, 8, ::Block const&>                          mWaterBlock;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mPuddleNoise;
     // NOLINTEND
 
 public:
@@ -29,29 +31,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initBuilder(uint levelSeed) /*override*/;
 
+    // vIndex: 2
     virtual void initBiomeSurface(::Biome& biome) const /*override*/;
 
+    // vIndex: 3
     virtual bool isBestBuilder(::Biome const& biome) const /*override*/;
 
+    // vIndex: 4
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
+    // vIndex: 0
     virtual ~SwampSurfaceBuilder() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initBuilder(uint levelSeed);
+    MCAPI void $initBuilder(uint levelSeed);
 
-    MCNAPI void $initBiomeSurface(::Biome& biome) const;
+    MCFOLD void $initBiomeSurface(::Biome& biome) const;
 
-    MCNAPI bool $isBestBuilder(::Biome const& biome) const;
+    MCAPI bool $isBestBuilder(::Biome const& biome) const;
 
-    MCNAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
-
-
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
     // NOLINTEND
 
 public:

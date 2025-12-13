@@ -33,9 +33,9 @@ public:
     // NOLINTBEGIN
     MCNAPI CameraAimAssistCategoryPriorities();
 
-    MCNAPI CameraAimAssistCategoryPriorities(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
-
     MCNAPI CameraAimAssistCategoryPriorities(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities const&);
+
+    MCNAPI CameraAimAssistCategoryPriorities(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
 
     MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
@@ -61,9 +61,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities const&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
     // NOLINTEND
 
 public:

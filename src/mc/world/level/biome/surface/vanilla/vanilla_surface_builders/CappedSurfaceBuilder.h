@@ -9,6 +9,7 @@
 // clang-format off
 class Biome;
 class Block;
+class PerlinNoise;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
@@ -25,29 +26,32 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~MaterialHelper() = default;
 
+        // vIndex: 1
         virtual bool isFoundationBlock(::Block const& block) const;
 
+        // vIndex: 2
         virtual bool isWaterBlock(::Block const& block) const;
 
+        // vIndex: 3
         virtual bool isLavaBlock(::Block const& block) const;
 
+        // vIndex: 4
         virtual bool isSolidBlock(::Block const& block) const;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI bool $isFoundationBlock(::Block const& block) const;
+        MCAPI bool $isFoundationBlock(::Block const& block) const;
 
-        MCNAPI bool $isWaterBlock(::Block const& block) const;
+        MCAPI bool $isWaterBlock(::Block const& block) const;
 
-        MCNAPI bool $isLavaBlock(::Block const& block) const;
+        MCAPI bool $isLavaBlock(::Block const& block) const;
 
-        MCNAPI bool $isSolidBlock(::Block const& block) const;
-
-
+        MCAPI bool $isSolidBlock(::Block const& block) const;
         // NOLINTEND
 
     public:
@@ -60,43 +64,41 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1ee40d;
-    ::ll::UntypedStorage<8, 8> mUnk5234e5;
-    ::ll::UntypedStorage<8, 8> mUnkdfa19e;
+    ::ll::TypedStorage<4, 4, uint>                             mLevelSeed;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>> mBeachNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VanillaSurfaceBuilders::CappedSurfaceBuilder::MaterialHelper>>
+        mMaterialHelper;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CappedSurfaceBuilder& operator=(CappedSurfaceBuilder const&);
-    CappedSurfaceBuilder(CappedSurfaceBuilder const&);
-    CappedSurfaceBuilder();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initBuilder(uint levelSeed) /*override*/;
 
+    // vIndex: 2
     virtual void initBiomeSurface(::Biome& biome) const /*override*/;
 
+    // vIndex: 3
     virtual bool isBestBuilder(::Biome const& biome) const /*override*/;
 
+    // vIndex: 4
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
+    // vIndex: 0
     virtual ~CappedSurfaceBuilder() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initBuilder(uint levelSeed);
+    MCAPI void $initBuilder(uint levelSeed);
 
-    MCNAPI void $initBiomeSurface(::Biome& biome) const;
+    MCAPI void $initBiomeSurface(::Biome& biome) const;
 
-    MCNAPI bool $isBestBuilder(::Biome const& biome) const;
+    MCAPI bool $isBestBuilder(::Biome const& biome) const;
 
-    MCNAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
-
-
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
     // NOLINTEND
 
 public:

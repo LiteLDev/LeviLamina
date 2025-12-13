@@ -10,10 +10,13 @@ class FakeBatteryMonitorInterface : public ::BatteryMonitorInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FakeBatteryMonitorInterface() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::BatteryStatus getBatteryStatus() const /*override*/;
 
+    // vIndex: 2
     virtual float getBatteryLevel() const /*override*/;
     // NOLINTEND
 
@@ -23,8 +26,6 @@ public:
     MCNAPI ::BatteryStatus $getBatteryStatus() const;
 
     MCNAPI float $getBatteryLevel() const;
-
-
     // NOLINTEND
 
 public:

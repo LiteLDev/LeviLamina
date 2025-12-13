@@ -9,6 +9,7 @@ struct TheEndBiomeSurfaceFlag : public ::BiomeComponentBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TheEndBiomeSurfaceFlag() /*override*/ = default;
     // NOLINTEND
 

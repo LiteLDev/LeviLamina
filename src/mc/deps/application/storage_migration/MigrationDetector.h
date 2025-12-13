@@ -15,18 +15,14 @@ class MigrationDetector : public ::std::enable_shared_from_this<::Bedrock::Stora
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MigrationDetector() = default;
 
+    // vIndex: 1
     virtual ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles> getFoundFiles() const = 0;
 
+    // vIndex: 2
     virtual void _runDetector(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>) = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::std::function<::TaskResult()>
-    createDetectionTask(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData> manifest);
     // NOLINTEND
 
 public:

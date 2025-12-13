@@ -68,13 +68,17 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 1
         virtual ::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData>
         buildTaskData(::RepositoryLoading::BuildTaskDataOptions const& ops) /*override*/;
 
+        // vIndex: 2
         virtual void applyTaskResults(::RepositoryLoading::AllRefreshTaskData&& taskData) /*override*/;
 
+        // vIndex: 3
         virtual ::std::shared_ptr<::RepositoryPacks const> getPacks() const /*override*/;
 
+        // vIndex: 0
         virtual ~RepositoryLoaderImpl() /*override*/ = default;
         // NOLINTEND
 
@@ -87,8 +91,6 @@ public:
         MCNAPI void $applyTaskResults(::RepositoryLoading::AllRefreshTaskData&& taskData);
 
         MCNAPI ::std::shared_ptr<::RepositoryPacks const> $getPacks() const;
-
-
         // NOLINTEND
 
     public:
@@ -131,128 +133,181 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ResourcePackRepository() /*override*/;
 
+    // vIndex: 1
     virtual void getResourcePacksByPackId(
         ::std::vector<::PackInstanceId> const& packInstanceIds,
         ::std::vector<::PackInstance>&         result
     ) const /*override*/;
 
+    // vIndex: 2
     virtual ::std::shared_ptr<::ResourcePack> getResourcePackForPackId(::PackIdVersion const& idAndVersion) const
         /*override*/;
 
+    // vIndex: 3
     virtual ::ResourcePack* getResourcePackOfDifferentVersionForPackId(::PackIdVersion const& idAndVersion) const
         /*override*/;
 
+    // vIndex: 4
     virtual ::ResourcePack*
     getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const
         /*override*/;
 
+    // vIndex: 5
     virtual ::ResourcePack* getResourcePackByUUID(::mce::UUID const& id) const /*override*/;
 
+    // vIndex: 6
     virtual ::ResourcePack* getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const /*override*/;
 
+    // vIndex: 7
     virtual ::std::shared_ptr<::ResourcePack>
     getResourcePackSatisfiesPackId(::PackIdVersion const& idAndVersion, bool requireOwnership) const /*override*/;
 
+    // vIndex: 8
     virtual ::ResourcePack* getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const /*override*/;
 
+    // vIndex: 9
     virtual ::Bedrock::Threading::Async<::std::shared_ptr<::ResourcePack>>
     getResourcePackInPath(::Core::Path const& path) const /*override*/;
 
+    // vIndex: 10
     virtual bool isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location) /*override*/;
 
+    // vIndex: 11
     virtual ::PackSourceReport const* getPackLoadingReport() const /*override*/;
 
+    // vIndex: 12
     virtual ::std::shared_ptr<::ResourcePack> getEditorPack() const /*override*/;
 
+    // vIndex: 13
     virtual ::std::shared_ptr<::ResourcePack> getVanillaPack() const /*override*/;
 
+    // vIndex: 14
     virtual bool setServicePacks(::std::vector<::PackIdVersion> servicePackIds) /*override*/;
 
+    // vIndex: 15
     virtual bool hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const /*override*/;
 
+    // vIndex: 16
     virtual ::std::vector<::PackIdVersion> const& getServicePacks() const /*override*/;
 
+    // vIndex: 17
     virtual void addServicePacksToStack(::ResourcePackStack& stack) const /*override*/;
 
+    // vIndex: 18
     virtual void
     addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys) /*override*/;
 
+    // vIndex: 19
     virtual void addWorldResourcePacks(::Core::Path const& levelPath) /*override*/;
 
+    // vIndex: 20
     virtual void addPremiumWorldTemplateResourcePacks(
         ::Core::Path const&      worldTemplatePath,
         ::ContentIdentity const& premiumWorldIdentity
     ) /*override*/;
 
+    // vIndex: 23
     virtual void addTempWorldTemplateResourcePacks(::mce::UUID const& worldTemplateUUID) /*override*/;
 
+    // vIndex: 21
     virtual void addWorldPackSource(::Core::Path const& levelPath) /*override*/;
 
+    // vIndex: 22
     virtual void addPremiumWorldTemplatePackSource(
         ::Core::Path const&      worldTemplatePath,
         ::ContentIdentity const& premiumWorldIdentity
     ) /*override*/;
 
+    // vIndex: 24
     virtual void removePacksLoadedFromCache() /*override*/;
 
+    // vIndex: 25
     virtual void removePacksLoadedFromWorld() /*override*/;
 
+    // vIndex: 26
     virtual ::Core::PathBuffer<::std::string> const getResourcePacksPath() const /*override*/;
 
+    // vIndex: 27
     virtual ::Core::PathBuffer<::std::string> const getBehaviorPacksPath() const /*override*/;
 
+    // vIndex: 28
     virtual ::Core::PathBuffer<::std::string> const getSkinPacksPath() const /*override*/;
 
+    // vIndex: 29
     virtual ::Core::PathBuffer<::std::string> const getDevelopmentResourcePacksPath() const /*override*/;
 
+    // vIndex: 30
     virtual ::Core::PathBuffer<::std::string> const getDevelopmentBehaviorPacksPath() const /*override*/;
 
+    // vIndex: 31
     virtual ::Core::PathBuffer<::std::string> const getDevelopmentSkinPacksPath() const /*override*/;
 
+    // vIndex: 32
     virtual ::Core::PathBuffer<::std::string> const getTreatmentPacksPath() const /*override*/;
 
+    // vIndex: 33
     virtual void refreshPacks() /*override*/;
 
+    // vIndex: 34
     virtual ::Bedrock::Threading::Async<void> refreshPacksAsync() /*override*/;
 
+    // vIndex: 35
     virtual void requestReloadUserPacks() /*override*/;
 
+    // vIndex: 36
     virtual ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> getKeyProvider() const /*override*/;
 
+    // vIndex: 37
     virtual ::PackManifestFactory& getPackManifestFactory() /*override*/;
 
+    // vIndex: 38
     virtual ::PackSettingsFactory& getPackSettingsFactory() const /*override*/;
 
+    // vIndex: 39
     virtual ::PackSourceFactory& getPackSourceFactory() /*override*/;
 
+    // vIndex: 40
     virtual ::std::vector<::ResourcePack*> getPacksByResourceLocation(::PackOrigin type) const /*override*/;
 
+    // vIndex: 41
     virtual ::std::vector<::ResourcePack*> getPacksByType(::PackType type) const /*override*/;
 
+    // vIndex: 42
     virtual ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>>
     getPacksByCategory(::PackCategory category) const /*override*/;
 
+    // vIndex: 43
     virtual void forEachPack(::std::function<void(::ResourcePack const&)> const& callback) const /*override*/;
 
+    // vIndex: 45
     virtual ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType type) const /*override*/;
 
+    // vIndex: 44
     virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const
         /*override*/;
 
+    // vIndex: 46
     virtual void deletePack(::ResourceLocation const& packLocation) /*override*/;
 
+    // vIndex: 47
     virtual void deletePackFiles(::ResourceLocation const& packLocation) /*override*/;
 
+    // vIndex: 48
     virtual void postDeletePack(::ResourceLocation const& packLocation) /*override*/;
 
+    // vIndex: 49
     virtual void untrackInvalidPack(::ResourceLocation const& packLocation) /*override*/;
 
+    // vIndex: 50
     virtual bool isInitialized() const /*override*/;
 
+    // vIndex: 4
     virtual ::ResourcePackStack createStack(::std::vector<::PackInstanceId> const& identities) /*override*/;
 
+    // vIndex: 51
     virtual ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> getContentSourceRepository() /*override*/;
     // NOLINTEND
 
@@ -269,13 +324,6 @@ public:
         bool                                                                  initAsync,
         ::std::unique_ptr<::IRepositoryFactory>                               factory
     );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI_C static ::Core::PathBuffer<::std::string>
-    getDevelopmentBehaviorPacksPath(::Core::FilePathManager const& paths);
     // NOLINTEND
 
 public:
@@ -418,8 +466,6 @@ public:
     MCAPI ::ResourcePackStack $createStack(::std::vector<::PackInstanceId> const& identities);
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> $getContentSourceRepository();
-
-
     // NOLINTEND
 
 public:

@@ -9,8 +9,10 @@ class HoeItem : public ::DiggerItem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
+    // vIndex: 0
     virtual ~HoeItem() /*override*/ = default;
     // NOLINTEND
 
@@ -18,8 +20,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD int $getEnchantSlot() const;
-
-
     // NOLINTEND
 
 public:

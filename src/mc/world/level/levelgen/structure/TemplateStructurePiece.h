@@ -32,44 +32,46 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
+    // vIndex: 1
     virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
 
+    // vIndex: 13
     virtual void
     _handleDataMarker(::std::string const&, ::BlockPos const&, ::BlockSource&, ::Random&, ::BoundingBox const&) = 0;
 
+    // vIndex: 0
     virtual ~TemplateStructurePiece() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit TemplateStructurePiece(int depth);
+    MCAPI explicit TemplateStructurePiece(int depth);
 
-    MCNAPI void _setBoundingBoxFromTemplate();
+    MCAPI void _setBoundingBoxFromTemplate();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(int depth);
+    MCAPI void* $ctor(int depth);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $moveBoundingBox(int dx, int dy, int dz);
-
-
+    MCAPI void $moveBoundingBox(int dx, int dy, int dz);
     // NOLINTEND
 
 public:

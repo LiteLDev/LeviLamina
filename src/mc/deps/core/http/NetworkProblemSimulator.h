@@ -32,12 +32,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetworkProblemSimulator() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::Bedrock::Http::Request&&) /*override*/;
 
+    // vIndex: 2
     virtual void initialize() /*override*/;
 
+    // vIndex: 3
     virtual void shutdown() /*override*/;
     // NOLINTEND
 

@@ -15,6 +15,7 @@ class OffhandContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const                       slot,
@@ -23,13 +24,17 @@ public:
         bool
     ) const /*override*/;
 
+    // vIndex: 5
     virtual bool isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const
         /*override*/;
 
+    // vIndex: 6
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
 
+    // vIndex: 8
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
+    // vIndex: 0
     virtual ~OffhandContainerValidation() /*override*/ = default;
     // NOLINTEND
 
@@ -50,8 +55,6 @@ public:
     MCNAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
     MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
-
-
     // NOLINTEND
 
 public:

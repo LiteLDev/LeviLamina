@@ -23,6 +23,14 @@ public:
     // clang-format on
 
     // FeatureToggles inner types define
+    using SetupFunction = ::std::function<void(::Option&)>;
+
+    using LockFunction = ::std::function<void(bool&)>;
+
+    using ExpectedDisabled = ::std::vector<::FeatureOptionID>;
+
+    using ExpectedEnabled = ::std::vector<::FeatureOptionID>;
+
     struct FeatureToggle {
     public:
         // member variables
@@ -64,15 +72,7 @@ public:
         // NOLINTEND
     };
 
-    using ExpectedDisabled = ::std::vector<::FeatureOptionID>;
-
-    using ExpectedEnabled = ::std::vector<::FeatureOptionID>;
-
     using FeatureTogglesArray = ::std::vector<::FeatureToggles::FeatureToggle>;
-
-    using LockFunction = ::std::function<void(bool&)>;
-
-    using SetupFunction = ::std::function<void(::Option&)>;
 
 public:
     // member variables
@@ -86,6 +86,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FeatureToggles() /*override*/;
     // NOLINTEND
 
@@ -124,8 +125,6 @@ public:
     MCAPI void _registerFeatures();
 
     MCAPI void _setupDependencies();
-
-    MCAPI_C ::Option* get(::FeatureOptionID featureID);
 
     MCAPI bool isEnabled(::FeatureOptionID featureID) const;
     // NOLINTEND

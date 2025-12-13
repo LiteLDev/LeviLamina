@@ -69,24 +69,6 @@ public:
         ConnnectRequest();
     };
 
-    struct ForwardedConnection {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>  mUnk56a891;
-        ::ll::UntypedStorage<8, 16>  mUnk23fa29;
-        ::ll::UntypedStorage<8, 136> mUnkf5d213;
-        ::ll::UntypedStorage<1, 1>   mUnkee5cf2;
-        ::ll::UntypedStorage<1, 1>   mUnkd88e9a;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ForwardedConnection& operator=(ForwardedConnection const&);
-        ForwardedConnection(ForwardedConnection const&);
-        ForwardedConnection();
-    };
-
     struct MiniPunchRequest {
     public:
         // member variables
@@ -108,6 +90,24 @@ public:
         MiniPunchRequest& operator=(MiniPunchRequest const&);
         MiniPunchRequest(MiniPunchRequest const&);
         MiniPunchRequest();
+    };
+
+    struct ForwardedConnection {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16>  mUnk56a891;
+        ::ll::UntypedStorage<8, 16>  mUnk23fa29;
+        ::ll::UntypedStorage<8, 136> mUnkf5d213;
+        ::ll::UntypedStorage<1, 1>   mUnkee5cf2;
+        ::ll::UntypedStorage<1, 1>   mUnkd88e9a;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ForwardedConnection& operator=(ForwardedConnection const&);
+        ForwardedConnection(ForwardedConnection const&);
+        ForwardedConnection();
     };
 
 public:
@@ -134,20 +134,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Router2() /*override*/ = default;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
+    // vIndex: 3
     virtual void Update() /*override*/;
 
+    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,
         ::RakNet::PI2_LostConnectionReason
     ) /*override*/;
 
+    // vIndex: 9
     virtual void OnFailedConnectionAttempt(::RakNet::Packet*, ::RakNet::PI2_FailedConnectionAttemptReason) /*override*/;
 
+    // vIndex: 6
     virtual void OnRakPeerShutdown() /*override*/;
     // NOLINTEND
 

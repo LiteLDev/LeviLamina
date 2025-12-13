@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 class PropertyMetadata {
 public:
     // PropertyMetadata inner types define
@@ -17,28 +20,22 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkb31e60;
-    ::ll::UntypedStorage<1, 1>  mUnkf835bf;
-    ::ll::UntypedStorage<8, 8>  mUnkec4683;
-    ::ll::UntypedStorage<8, 8>  mUnkf0318d;
-    ::ll::UntypedStorage<1, 1>  mUnk94ae84;
+    ::ll::TypedStorage<8, 48, ::HashedString>                   mName;
+    ::ll::TypedStorage<1, 1, ::PropertyMetadata::ContainedType> mType;
+    ::ll::TypedStorage<8, 8, uint64>                            mOverallIndex;
+    ::ll::TypedStorage<8, 8, uint64>                            mTypeArrayIndex;
+    ::ll::TypedStorage<1, 1, bool>                              mClientSync;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PropertyMetadata& operator=(PropertyMetadata const&);
-    PropertyMetadata(PropertyMetadata const&);
-    PropertyMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~PropertyMetadata();
+    MCAPI ~PropertyMetadata();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

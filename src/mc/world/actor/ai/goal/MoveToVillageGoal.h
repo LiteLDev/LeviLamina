@@ -28,59 +28,66 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 11
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
+    // vIndex: 6
     virtual void tick() /*override*/;
 
+    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 14
     virtual void _moveToBlock() /*override*/;
 
+    // vIndex: 17
     virtual ::BlockPos _selectRandomPosInVillage();
 
+    // vIndex: 0
     virtual ~MoveToVillageGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MoveToVillageGoal(::Mob& mob, float speedModifier, float goalRadius, float cooldown, int searchRange);
+    MCAPI MoveToVillageGoal(::Mob& mob, float speedModifier, float goalRadius, float cooldown, int searchRange);
 
-    MCNAPI ::std::shared_ptr<::Village> _tryGetCurrentVillage();
+    MCAPI ::std::shared_ptr<::Village> _tryGetCurrentVillage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Mob& mob, float speedModifier, float goalRadius, float cooldown, int searchRange);
+    MCAPI void* $ctor(::Mob& mob, float speedModifier, float goalRadius, float cooldown, int searchRange);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI void $_moveToBlock();
+    MCAPI void $_moveToBlock();
 
-    MCNAPI ::BlockPos $_selectRandomPosInVillage();
-
-
+    MCAPI ::BlockPos $_selectRandomPosInVillage();
     // NOLINTEND
 
 public:

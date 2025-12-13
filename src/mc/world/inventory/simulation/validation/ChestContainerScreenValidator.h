@@ -9,6 +9,7 @@ class ChestContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ChestContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

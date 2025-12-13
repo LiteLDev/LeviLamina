@@ -79,7 +79,8 @@ namespace webrtc { struct SsrcInfo; }
 namespace webrtc {
 // inner types
 enum : int {
-    KMaxEncoderBuffers = 8,
+    // bitfield representation
+    KMaxEncoderBuffers = 1 << 3,
 };
 
 enum : int {
@@ -95,7 +96,8 @@ enum : int {
 };
 
 enum : int {
-    KMaxTemporalStreams = 4,
+    // bitfield representation
+    KMaxTemporalStreams = 1 << 2,
 };
 
 enum : int {
@@ -345,15 +347,15 @@ MCNAPI ::webrtc::RtpCapabilities ToRtpCapabilities(
 
 MCNAPI ::webrtc::RtpCodecCapability ToRtpCodecCapability(::cricket::Codec const& cricket_codec);
 
-MCNAPI ::std::string_view ToString(::webrtc::RTCErrorDetailType error);
-
 MCNAPI ::std::string_view ToString(::webrtc::RTCErrorType error);
+
+MCNAPI ::std::string_view ToString(::webrtc::RTCErrorDetailType error);
 
 MCNAPI ::std::string ToString(::webrtc::DataRate value);
 
-MCNAPI ::std::string ToString(::webrtc::DataSize value);
-
 MCNAPI ::std::string ToString(::webrtc::TimeDelta value);
+
+MCNAPI ::std::string ToString(::webrtc::DataSize value);
 
 MCNAPI ::std::string ToString(::webrtc::Timestamp);
 
@@ -427,31 +429,36 @@ MCNAPI void WritePacketizationHeader(int payload_type, ::rtc::StringBuilder* os)
 
 MCNAPI void WriteRtcpFbHeader(int payload_type, ::rtc::StringBuilder* os);
 
-MCNAPI bool operator!=(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> const& a, nullptr_t);
+MCNAPI bool operator!=(::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& a, nullptr_t);
 
 MCNAPI bool operator!=(::webrtc::scoped_refptr<::rtc::RTCCertificate> const& a, nullptr_t);
 
-MCNAPI bool operator!=(::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& a, nullptr_t);
+MCNAPI bool operator!=(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> const& a, nullptr_t);
 
 MCNAPI bool operator<(
     ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const& a,
     ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const& b
 );
 
-MCNAPI bool operator==(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> const& a, nullptr_t);
+MCNAPI bool operator==(::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& a, nullptr_t);
 
 MCNAPI bool operator==(::webrtc::scoped_refptr<::rtc::RTCCertificate> const& a, nullptr_t);
 
-MCNAPI bool operator==(::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& a, nullptr_t);
+MCNAPI bool operator==(::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag> const& a, nullptr_t);
 
 MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> const& a,
-    ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface> const&                                        b
+    ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> const& a,
+    ::webrtc::MediaStreamTrackInterface const*                          b
 );
 
 MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> const& a,
-    ::webrtc::RtpReceiverInterface const*                                                                 b
+    ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> const& a,
+    ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> const& b
+);
+
+MCNAPI bool operator==(
+    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const& a,
+    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const& b
 );
 
 MCNAPI bool operator==(
@@ -465,23 +472,18 @@ MCNAPI bool operator==(
 );
 
 MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const& a,
-    ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>> const& b
+    ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> const& a,
+    ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface> const&                                        b
 );
 
 MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> const& a,
-    ::webrtc::MediaStreamTrackInterface const*                          b
+    ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> const& a,
+    ::webrtc::RtpReceiverInterface const*                                                                 b
 );
 
 MCNAPI bool operator==(
     ::webrtc::scoped_refptr<::rtc::RTCCertificate> const& a,
     ::webrtc::scoped_refptr<::rtc::RTCCertificate> const& b
-);
-
-MCNAPI bool operator==(
-    ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> const& a,
-    ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> const& b
 );
 // NOLINTEND
 

@@ -15,7 +15,6 @@ class IContentKeyProvider;
 class IPackManifestFactory;
 class Pack;
 class PackSourceReport;
-struct PackIdVersion;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 struct PackSourceOptions;
@@ -33,6 +32,48 @@ public:
     // clang-format on
 
     // PackSource inner types define
+    class RequiredPackType {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnka29ba2;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RequiredPackType& operator=(RequiredPackType const&);
+        RequiredPackType(RequiredPackType const&);
+        RequiredPackType();
+    };
+
+    class RequiredPackOrigin {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk6149af;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RequiredPackOrigin& operator=(RequiredPackOrigin const&);
+        RequiredPackOrigin(RequiredPackOrigin const&);
+        RequiredPackOrigin();
+    };
+
+    class RequiredResourceOrBehaviorPackType {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk2a81d8;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RequiredResourceOrBehaviorPackType& operator=(RequiredResourceOrBehaviorPackType const&);
+        RequiredResourceOrBehaviorPackType(RequiredResourceOrBehaviorPackType const&);
+        RequiredResourceOrBehaviorPackType();
+    };
+
     struct PackTaskData {
     public:
         // member variables
@@ -62,48 +103,6 @@ public:
         // NOLINTEND
     };
 
-    class RequiredPackOrigin {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk6149af;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RequiredPackOrigin& operator=(RequiredPackOrigin const&);
-        RequiredPackOrigin(RequiredPackOrigin const&);
-        RequiredPackOrigin();
-    };
-
-    class RequiredPackType {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnka29ba2;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RequiredPackType& operator=(RequiredPackType const&);
-        RequiredPackType(RequiredPackType const&);
-        RequiredPackType();
-    };
-
-    class RequiredResourceOrBehaviorPackType {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk2a81d8;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RequiredResourceOrBehaviorPackType& operator=(RequiredResourceOrBehaviorPackType const&);
-        RequiredResourceOrBehaviorPackType(RequiredResourceOrBehaviorPackType const&);
-        RequiredResourceOrBehaviorPackType();
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -121,16 +120,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PackSource() = 0;
 
+    // vIndex: 1
     virtual void forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback);
 
+    // vIndex: 2
     virtual ::PackOrigin getPackOrigin() const;
 
+    // vIndex: 3
     virtual ::PackType getPackType() const;
 
+    // vIndex: 4
     virtual void _buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
 
+    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) = 0;
     // NOLINTEND
 
@@ -138,8 +143,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit PackSource(::PackSourceOptions options);
-
-    MCNAPI_C void _addPack(::std::shared_ptr<::Pack> pack);
 
     MCNAPI ::PackSourceLoadResult _createImmediateLoadResult();
 
@@ -151,12 +154,6 @@ public:
     MCNAPI ::PackSourceLoadResult _returnOriginalPacks(::std::shared_ptr<::PackSource::PackTaskData> task);
 
     MCNAPI void _setPacks(::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& packs);
-
-    MCNAPI_C ::std::shared_ptr<::Pack> fetchPack(::PackIdVersion const& packId);
-
-    MCNAPI_C void forEachPack(::std::function<void(::Pack&)> callback);
-
-    MCNAPI_C void forEachPackConst(::std::function<void(::Pack const&)> callback) const;
 
     MCNAPI ::PackSourceReport load(
         ::IPackManifestFactory&                                           manifestFactory,
@@ -185,8 +182,6 @@ public:
     MCNAPI ::PackType $getPackType() const;
 
     MCNAPI void $_buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
-
-
     // NOLINTEND
 
 public:

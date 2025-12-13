@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/SpawnParticleEffectPacketPayload.h"
 #include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
@@ -12,7 +13,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct SpawnParticleEffectPacketPayload;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,52 +20,65 @@ class SpawnParticleEffectPacket : public ::ll::PayloadPacket<::SpawnParticleEffe
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6e6d22;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    SpawnParticleEffectPacket& operator=(SpawnParticleEffectPacket const&);
-    SpawnParticleEffectPacket(SpawnParticleEffectPacket const&);
     SpawnParticleEffectPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 12
     virtual ::SerializationMode getSerializationMode() const /*override*/;
 
+    // vIndex: 13
     virtual void setSerializationMode(::SerializationMode mode) /*override*/;
 
+    // vIndex: 5
     virtual void writeWithSerializationMode(
         ::BinaryStream&                      stream,
         ::cereal::ReflectionCtx const&       reflectionCtx,
         ::std::optional<::SerializationMode> overrideMode
     ) const /*override*/;
 
+    // vIndex: 7
     virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 9
     virtual ::Bedrock::Result<void>
     read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
+    // vIndex: 10
     virtual bool disallowBatching() const /*override*/;
 
+    // vIndex: 11
     virtual bool isValid() const /*override*/;
 
+    // vIndex: 3
     virtual uint64 getMaxSize() const /*override*/;
 
+    // vIndex: 14
     virtual ::std::string toString() const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 16
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
+    // vIndex: 0
     virtual ~SpawnParticleEffectPacket() /*override*/;
     // NOLINTEND
 
@@ -123,8 +136,6 @@ public:
 
     MCAPI ::Bedrock::Result<void>
     $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
-
-
     // NOLINTEND
 
 public:

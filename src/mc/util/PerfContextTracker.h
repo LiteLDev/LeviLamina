@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/util/PerfContextEvent.h"
 
-// auto generated forward declare list
-// clang-format off
-class IMinecraftEventing;
-// clang-format on
-
 class PerfContextTracker {
 public:
     // PerfContextTracker inner types declare
@@ -36,8 +31,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~Duration();
 
+        // vIndex: 1
         virtual void reset();
         // NOLINTEND
 
@@ -63,8 +60,43 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $reset();
+        // NOLINTEND
 
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
 
+    class Timer : public ::PerfContextTracker::Duration {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk93228d;
+        ::ll::UntypedStorage<8, 8> mUnk5ef954;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Timer& operator=(Timer const&);
+        Timer(Timer const&);
+        Timer();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 1
+        virtual void reset() /*override*/;
+
+        // vIndex: 0
+        virtual ~Timer() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI void $reset();
         // NOLINTEND
 
     public:
@@ -109,43 +141,6 @@ public:
         // NOLINTEND
     };
 
-    class Timer : public ::PerfContextTracker::Duration {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk93228d;
-        ::ll::UntypedStorage<8, 8> mUnk5ef954;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Timer& operator=(Timer const&);
-        Timer(Timer const&);
-        Timer();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual void reset() /*override*/;
-
-        virtual ~Timer() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $reset();
-
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -174,22 +169,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _reset();
-
-    MCNAPI_C void _resetStats();
-
-    MCNAPI_C void _tryEndContext(::std::chrono::steady_clock::time_point const& now);
-
-    MCNAPI_C bool _tryRestartContext(::std::chrono::steady_clock::time_point const& now);
-
-    MCNAPI_C void tick(
-        ::std::string const&  currentContext,
-        uint                  clientCount,
-        uint                  renderDistance,
-        uint                  simDistance,
-        bool                  IsEcoFrameThrottled,
-        int                   fpsThrottle,
-        ::IMinecraftEventing& eventing
-    );
     // NOLINTEND
 
 public:

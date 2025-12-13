@@ -28,42 +28,37 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnkae121c;
-        ::ll::UntypedStorage<4, 4>   mUnk94efa3;
-        ::ll::UntypedStorage<4, 4>   mUnk5618a4;
-        ::ll::UntypedStorage<4, 4>   mUnkbf90f4;
-        ::ll::UntypedStorage<4, 4>   mUnk846fd7;
-        ::ll::UntypedStorage<4, 4>   mUnk83f7b0;
-        ::ll::UntypedStorage<4, 4>   mUnk9c3129;
-        ::ll::UntypedStorage<4, 4>   mUnk7f7582;
-        ::ll::UntypedStorage<8, 64>  mUnkf3008d;
-        ::ll::UntypedStorage<8, 64>  mUnkeede97;
-        ::ll::UntypedStorage<8, 104> mUnkd904c6;
-        ::ll::UntypedStorage<1, 1>   mUnk2f039f;
+        ::ll::TypedStorage<4, 4, float>                      mMaxRoarDurationSeconds;
+        ::ll::TypedStorage<4, 4, float>                      mMaxSecondsUntilAttack;
+        ::ll::TypedStorage<4, 4, int>                        mKnockbackDamage;
+        ::ll::TypedStorage<4, 4, int>                        mKnockbackHorizontalStrength;
+        ::ll::TypedStorage<4, 4, int>                        mKnockbackVerticalStrength;
+        ::ll::TypedStorage<4, 4, float>                      mHeightCap;
+        ::ll::TypedStorage<4, 4, int>                        mKnockbackEffectRange;
+        ::ll::TypedStorage<4, 4, float>                      mMaxCooldownSeconds;
+        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mKnockbackFilterGroup;
+        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mDamageFilterGroup;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnRoarEnd;
+        ::ll::TypedStorage<1, 1, bool>                       mFilterEvaluateFix;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        KnockbackRoarDefinition& operator=(KnockbackRoarDefinition const&);
-        KnockbackRoarDefinition(KnockbackRoarDefinition const&);
-        KnockbackRoarDefinition();
 
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~KnockbackRoarDefinition() /*override*/;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void initialize(::EntityContext& entity, ::KnockbackRoarGoal& goal) const;
+        MCAPI void initialize(::EntityContext& entity, ::KnockbackRoarGoal& goal) const;
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::KnockbackRoarGoal::KnockbackRoarDefinition>>&
@@ -74,7 +69,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -113,37 +108,42 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 5
     virtual void stop() /*override*/;
 
+    // vIndex: 6
     virtual void tick() /*override*/;
 
+    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 0
     virtual ~KnockbackRoarGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
-
-
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

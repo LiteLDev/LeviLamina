@@ -17,12 +17,15 @@ class GlazedTerracottaBlock : public ::FaceDirectionalBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
+    // vIndex: 48
     virtual bool isValidAuxValue(int value) const /*override*/;
 
+    // vIndex: 0
     virtual ~GlazedTerracottaBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -38,8 +41,6 @@ public:
     ) const;
 
     MCFOLD bool $isValidAuxValue(int value) const;
-
-
     // NOLINTEND
 
 public:

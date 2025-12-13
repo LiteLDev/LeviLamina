@@ -36,22 +36,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void AnalyzeRender(::webrtc::AudioBuffer*) = 0;
 
+    // vIndex: 1
     virtual void AnalyzeCapture(::webrtc::AudioBuffer*) = 0;
 
+    // vIndex: 3
     virtual void ProcessCapture(::webrtc::AudioBuffer*, bool) = 0;
 
+    // vIndex: 2
     virtual void ProcessCapture(::webrtc::AudioBuffer*, ::webrtc::AudioBuffer*, bool) = 0;
 
+    // vIndex: 4
     virtual ::webrtc::EchoControl::Metrics GetMetrics() const = 0;
 
+    // vIndex: 5
     virtual void SetAudioBufferDelay(int) = 0;
 
+    // vIndex: 6
     virtual void SetCaptureOutputUsage(bool);
 
+    // vIndex: 7
     virtual bool ActiveProcessing() const = 0;
 
+    // vIndex: 8
     virtual ~EchoControl() = default;
     // NOLINTEND
 

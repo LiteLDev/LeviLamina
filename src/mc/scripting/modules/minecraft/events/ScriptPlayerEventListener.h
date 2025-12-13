@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/PlayerEventListener.h"
@@ -23,6 +25,7 @@ struct PlayerRespawnEvent;
 struct PlayerScriptInputEvent;
 struct PlayerSwingStartEvent;
 struct PlayerUseNameTagEvent;
+namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -31,83 +34,91 @@ class ScriptPlayerEventListener : public ::EventListenerDispatcher<::PlayerEvent
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk2b131e;
-    ::ll::UntypedStorage<8, 16> mUnkc53dfc;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
+        mScriptEventsHandle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptPlayerEventListener& operator=(ScriptPlayerEventListener const&);
-    ScriptPlayerEventListener(ScriptPlayerEventListener const&);
-    ScriptPlayerEventListener();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 60
     virtual ::EventResult onEvent(::PlayerRespawnEvent const& respawnEvent) /*override*/;
 
+    // vIndex: 65
     virtual ::EventResult onEvent(::PlayerInitialSpawnEvent const& initialSpawnEvent) /*override*/;
 
+    // vIndex: 54
     virtual ::EventResult onEvent(::PlayerDimensionChangeAfterEvent const& playerDimensionChangeEvent) /*override*/;
 
+    // vIndex: 66
     virtual ::EventResult onEvent(::PlayerInputModeChangeEvent const& playerInputModeChangeEvent) /*override*/;
 
+    // vIndex: 47
     virtual ::EventResult onEvent(::PlayerInputPermissionCategoryChangeEvent const& event) /*override*/;
 
+    // vIndex: 53
     virtual ::EventResult
     onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent) /*override*/;
 
+    // vIndex: 52
     virtual ::EventResult onEvent(::PlayerInteractWithBlockAfterEvent const& playerInteractWithBlockEvent) /*override*/;
 
+    // vIndex: 41
     virtual ::EventResult onEvent(::PlayerGameModeChangeEvent const& playerGameModeChangeEvent) /*override*/;
 
+    // vIndex: 51
     virtual ::EventResult onEvent(::PlayerEmoteEvent const& playerEmoteEvent) /*override*/;
 
+    // vIndex: 50
     virtual ::EventResult onEvent(::PlayerScriptInputEvent const& e) /*override*/;
 
+    // vIndex: 49
     virtual ::EventResult onEvent(::PlayerInventoryItemChangeEvent const& e) /*override*/;
 
+    // vIndex: 48
     virtual ::EventResult onEvent(::PlayerHotbarSelectedSlotChangeEvent const& e) /*override*/;
 
+    // vIndex: 73
     virtual ::EventResult onEvent(::PlayerUseNameTagEvent const& nameTagEvent) /*override*/;
 
+    // vIndex: 61
     virtual ::EventResult onEvent(::PlayerSwingStartEvent const& e) /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptPlayerEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::PlayerRespawnEvent const& respawnEvent);
+    MCAPI ::EventResult $onEvent(::PlayerRespawnEvent const& respawnEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerInitialSpawnEvent const& initialSpawnEvent);
+    MCAPI ::EventResult $onEvent(::PlayerInitialSpawnEvent const& initialSpawnEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerDimensionChangeAfterEvent const& playerDimensionChangeEvent);
+    MCAPI ::EventResult $onEvent(::PlayerDimensionChangeAfterEvent const& playerDimensionChangeEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerInputModeChangeEvent const& playerInputModeChangeEvent);
+    MCAPI ::EventResult $onEvent(::PlayerInputModeChangeEvent const& playerInputModeChangeEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerInputPermissionCategoryChangeEvent const& event);
+    MCAPI ::EventResult $onEvent(::PlayerInputPermissionCategoryChangeEvent const& event);
 
-    MCNAPI ::EventResult $onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent);
+    MCAPI ::EventResult $onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerInteractWithBlockAfterEvent const& playerInteractWithBlockEvent);
+    MCAPI ::EventResult $onEvent(::PlayerInteractWithBlockAfterEvent const& playerInteractWithBlockEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerGameModeChangeEvent const& playerGameModeChangeEvent);
+    MCAPI ::EventResult $onEvent(::PlayerGameModeChangeEvent const& playerGameModeChangeEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerEmoteEvent const& playerEmoteEvent);
+    MCAPI ::EventResult $onEvent(::PlayerEmoteEvent const& playerEmoteEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerScriptInputEvent const& e);
+    MCAPI ::EventResult $onEvent(::PlayerScriptInputEvent const& e);
 
-    MCNAPI ::EventResult $onEvent(::PlayerInventoryItemChangeEvent const& e);
+    MCAPI ::EventResult $onEvent(::PlayerInventoryItemChangeEvent const& e);
 
-    MCNAPI ::EventResult $onEvent(::PlayerHotbarSelectedSlotChangeEvent const& e);
+    MCAPI ::EventResult $onEvent(::PlayerHotbarSelectedSlotChangeEvent const& e);
 
-    MCNAPI ::EventResult $onEvent(::PlayerUseNameTagEvent const& nameTagEvent);
+    MCAPI ::EventResult $onEvent(::PlayerUseNameTagEvent const& nameTagEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerSwingStartEvent const& e);
-
-
+    MCAPI ::EventResult $onEvent(::PlayerSwingStartEvent const& e);
     // NOLINTEND
 
 public:

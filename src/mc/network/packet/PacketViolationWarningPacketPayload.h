@@ -2,14 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/packet/PacketViolationSeverity.h"
+#include "mc/network/packet/PacketViolationType.h"
+
 struct PacketViolationWarningPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk46bd65;
-    ::ll::UntypedStorage<4, 4>  mUnkb40a21;
-    ::ll::UntypedStorage<4, 4>  mUnk79d3b4;
-    ::ll::UntypedStorage<8, 32> mUnk31c58f;
+    ::ll::TypedStorage<4, 4, ::PacketViolationType>     mViolationType;
+    ::ll::TypedStorage<4, 4, ::PacketViolationSeverity> mViolationSeverity;
+    ::ll::TypedStorage<4, 4, ::MinecraftPacketIds>      mViolatingPacketId;
+    ::ll::TypedStorage<8, 32, ::std::string>            mViolationContext;
     // NOLINTEND
 
 public:
@@ -21,14 +26,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::PacketViolationWarningPacketPayload& operator=(::PacketViolationWarningPacketPayload&&);
+    MCFOLD ::PacketViolationWarningPacketPayload& operator=(::PacketViolationWarningPacketPayload&&);
 
-    MCNAPI ~PacketViolationWarningPacketPayload();
+    MCAPI ~PacketViolationWarningPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

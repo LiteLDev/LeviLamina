@@ -17,26 +17,6 @@ public:
     UserData& operator=(UserData const&);
     UserData(UserData const&);
     UserData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C int getInt() const;
-
-    MCNAPI_C ~UserData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::Social::UserData const boolValue(bool value);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Social

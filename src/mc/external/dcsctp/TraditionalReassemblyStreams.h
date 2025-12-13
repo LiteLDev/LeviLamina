@@ -25,8 +25,8 @@ class TraditionalReassemblyStreams : public ::dcsctp::ReassemblyStreams {
 public:
     // TraditionalReassemblyStreams inner types declare
     // clang-format off
-    class StreamBase;
     class OrderedStream;
+    class StreamBase;
     class UnorderedStream;
     // clang-format on
 
@@ -59,6 +59,35 @@ public:
         MCNAPI uint64 AssembleMessage(
             ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn,
             ::dcsctp::Data                                                                   data
+        );
+        // NOLINTEND
+    };
+
+    class UnorderedStream : public ::dcsctp::TraditionalReassemblyStreams::StreamBase {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk3eedb6;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        UnorderedStream& operator=(UnorderedStream const&);
+        UnorderedStream(UnorderedStream const&);
+        UnorderedStream();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI int
+        Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
+
+        MCNAPI uint64 EraseTo(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn);
+
+        MCNAPI uint64 TryToAssembleMessage(
+            ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<
+                ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const,
+                ::dcsctp::Data>>>> iter
         );
         // NOLINTEND
     };
@@ -110,35 +139,6 @@ public:
         // NOLINTEND
     };
 
-    class UnorderedStream : public ::dcsctp::TraditionalReassemblyStreams::StreamBase {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk3eedb6;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        UnorderedStream& operator=(UnorderedStream const&);
-        UnorderedStream(UnorderedStream const&);
-        UnorderedStream();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI int
-        Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
-
-        MCNAPI uint64 EraseTo(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn);
-
-        MCNAPI uint64 TryToAssembleMessage(
-            ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<
-                ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const,
-                ::dcsctp::Data>>>> iter
-        );
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -157,24 +157,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual int
     Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn,
         ::dcsctp::Data                                                                   data) /*override*/;
 
+    // vIndex: 2
     virtual uint64 HandleForwardTsn(
         ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> new_cumulative_ack_tsn,
         ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>              skipped_streams
     ) /*override*/;
 
+    // vIndex: 3
     virtual void
     ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> stream_ids) /*override*/;
 
+    // vIndex: 4
     virtual ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const /*override*/;
 
+    // vIndex: 5
     virtual void AddHandoverState(::dcsctp::DcSctpSocketHandoverState& state) /*override*/;
 
+    // vIndex: 6
     virtual void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const& state) /*override*/;
 
+    // vIndex: 0
     virtual ~TraditionalReassemblyStreams() /*override*/ = default;
     // NOLINTEND
 
@@ -220,8 +227,6 @@ public:
     MCNAPI void $AddHandoverState(::dcsctp::DcSctpSocketHandoverState& state);
 
     MCNAPI void $RestoreFromState(::dcsctp::DcSctpSocketHandoverState const& state);
-
-
     // NOLINTEND
 
 public:

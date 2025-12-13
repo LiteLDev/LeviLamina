@@ -12,18 +12,25 @@ class ChunkBuildOrderPolicyBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ChunkBuildOrderPolicyBase();
 
+    // vIndex: 1
     virtual int getChunkRebuildPriority(::ChunkPos const&) const = 0;
 
+    // vIndex: 2
     virtual uint registerForUpdates();
 
+    // vIndex: 3
     virtual void unregisterForUpdates(uint) = 0;
 
+    // vIndex: 4
     virtual void setPlayerInfluence(uint, ::ChunkPos const&, ::Vec3 const&) = 0;
 
+    // vIndex: 5
     virtual void setTickingAreaInfluence(uint, ::ChunkPos const&, int, int, bool, bool) = 0;
 
+    // vIndex: 6
     virtual void updateInfluences() = 0;
     // NOLINTEND
 
@@ -37,8 +44,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD uint $registerForUpdates();
-
-
     // NOLINTEND
 
 public:

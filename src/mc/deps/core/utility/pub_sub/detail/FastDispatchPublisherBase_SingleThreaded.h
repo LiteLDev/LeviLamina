@@ -14,6 +14,7 @@ class FastDispatchPublisherBase_SingleThreaded : public ::Bedrock::PubSub::Detai
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FastDispatchPublisherBase_SingleThreaded() /*override*/ = default;
     // NOLINTEND
 };

@@ -23,16 +23,4 @@ public:
     RopePointsRef& operator=(RopePointsRef const&);
     RopePointsRef(RopePointsRef const&);
     RopePointsRef();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~RopePointsRef();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

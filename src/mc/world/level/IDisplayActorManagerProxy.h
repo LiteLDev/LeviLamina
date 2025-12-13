@@ -11,10 +11,13 @@ class IDisplayActorManagerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IDisplayActorManagerProxy() = default;
 
+    // vIndex: 1
     virtual void initializeActor(::Actor&) const = 0;
 
+    // vIndex: 2
     virtual void unregisterDisplayEntityFromDimension(::Actor const&) const = 0;
     // NOLINTEND
 

@@ -49,22 +49,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
+    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
+    // vIndex: 29
     virtual ::PistonBlockActor* getOwningPiston(::BlockSource&) /*override*/;
 
+    // vIndex: 28
     virtual ::PistonBlockActor const* getOwningPiston(::BlockSource&) const /*override*/;
 
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
+    // vIndex: 0
     virtual ~PistonBlockActor() /*override*/;
     // NOLINTEND
 
@@ -157,8 +166,6 @@ public:
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
-
-
     // NOLINTEND
 
 public:

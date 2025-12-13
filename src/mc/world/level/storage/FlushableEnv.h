@@ -6,8 +6,10 @@ class FlushableEnv : public ::leveldb::EnvWrapper {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FlushableEnv() /*override*/;
 
+    // vIndex: 22
     virtual void flushToPermanentStorage() = 0;
     // NOLINTEND
 

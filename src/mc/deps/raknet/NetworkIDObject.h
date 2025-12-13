@@ -28,18 +28,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetworkIDObject() = default;
 
+    // vIndex: 1
     virtual void SetNetworkIDManager(::RakNet::NetworkIDManager*);
 
+    // vIndex: 2
     virtual ::RakNet::NetworkIDManager* GetNetworkIDManager() const;
 
+    // vIndex: 3
     virtual uint64 GetNetworkID();
 
+    // vIndex: 4
     virtual void SetNetworkID(uint64);
 
+    // vIndex: 5
     virtual void SetParent(void*);
 
+    // vIndex: 6
     virtual void* GetParent() const;
     // NOLINTEND
 

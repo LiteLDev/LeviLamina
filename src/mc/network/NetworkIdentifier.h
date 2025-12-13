@@ -28,6 +28,7 @@ public:
 
 public:
     // prevent constructor by default
+    NetworkIdentifier& operator=(NetworkIdentifier const&);
     NetworkIdentifier(NetworkIdentifier const&);
 
 public:
@@ -47,9 +48,7 @@ public:
 
     MCAPI bool isUnassigned() const;
 
-    MCAPI_S ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
-
-    MCAPI_C ::NetworkIdentifier& operator=(::NetworkIdentifier const&);
+    MCAPI ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
 
     MCAPI ::std::string toString() const;
     // NOLINTEND

@@ -18,13 +18,16 @@ class TurnPortFactory : public ::cricket::RelayPortFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TurnPortFactory() /*override*/;
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::cricket::Port> Create(
         ::cricket::CreateRelayPortArgs const&       args,
         ::std::shared_ptr<::rtc::AsyncPacketSocket> udp_socket
     ) /*override*/;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::cricket::Port>
     Create(::cricket::CreateRelayPortArgs const& args, int min_port, int max_port) /*override*/;
     // NOLINTEND
@@ -43,8 +46,6 @@ public:
 
     MCNAPI ::std::unique_ptr<::cricket::Port>
     $Create(::cricket::CreateRelayPortArgs const& args, int min_port, int max_port);
-
-
     // NOLINTEND
 
 public:

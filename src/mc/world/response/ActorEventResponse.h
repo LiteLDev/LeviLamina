@@ -17,12 +17,16 @@ class ActorEventResponse {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ActorEventResponse() = default;
 
+    // vIndex: 1
     virtual ::std::string const& getName() const;
 
+    // vIndex: 2
     virtual void executeAction(::RenderParams&) const = 0;
 
+    // vIndex: 3
     virtual void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
                                                schema,
@@ -40,8 +44,6 @@ public:
                                                schema,
         ::Factory<::ActorEventResponse> const& factory
     ) const;
-
-
     // NOLINTEND
 
 public:

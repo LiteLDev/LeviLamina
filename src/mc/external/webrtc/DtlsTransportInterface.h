@@ -19,14 +19,19 @@ class DtlsTransportInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::webrtc::scoped_refptr<::webrtc::IceTransportInterface> ice_transport() = 0;
 
+    // vIndex: 4
     virtual ::webrtc::DtlsTransportInformation Information() = 0;
 
+    // vIndex: 5
     virtual void RegisterObserver(::webrtc::DtlsTransportObserverInterface*) = 0;
 
+    // vIndex: 6
     virtual void UnregisterObserver() = 0;
 
+    // vIndex: 2
     virtual ~DtlsTransportInterface() /*override*/;
     // NOLINTEND
 

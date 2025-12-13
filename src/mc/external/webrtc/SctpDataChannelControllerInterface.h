@@ -20,21 +20,29 @@ class SctpDataChannelControllerInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ::webrtc::RTCError
     SendData(::webrtc::StreamId, ::webrtc::SendDataParams const&, ::rtc::CopyOnWriteBuffer const&) = 0;
 
+    // vIndex: 1
     virtual void AddSctpDataStream(::webrtc::StreamId) = 0;
 
+    // vIndex: 2
     virtual void RemoveSctpDataStream(::webrtc::StreamId) = 0;
 
+    // vIndex: 3
     virtual void OnChannelStateChanged(::webrtc::SctpDataChannel*, ::webrtc::DataChannelInterface::DataState) = 0;
 
+    // vIndex: 4
     virtual uint64 buffered_amount(::webrtc::StreamId) const = 0;
 
+    // vIndex: 5
     virtual uint64 buffered_amount_low_threshold(::webrtc::StreamId) const = 0;
 
+    // vIndex: 6
     virtual void SetBufferedAmountLowThreshold(::webrtc::StreamId, uint64) = 0;
 
+    // vIndex: 7
     virtual ~SctpDataChannelControllerInterface();
     // NOLINTEND
 

@@ -9,9 +9,9 @@
 // auto generated forward declare list
 // clang-format off
 class TaskGroup;
-namespace Social { struct XUID; }
 namespace Screenshots { struct GallerySize; }
 namespace Screenshots { struct RawShowcasedScreenshot; }
+namespace Social { struct XUID; }
 // clang-format on
 
 namespace Screenshots {
@@ -20,27 +20,36 @@ class IScreenshotGalleryHttpCall {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IScreenshotGalleryHttpCall() = default;
 
+    // vIndex: 1
     virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<::Screenshots::RawShowcasedScreenshot>>>
     getGallery(::TaskGroup&, ::Social::XUID) = 0;
 
+    // vIndex: 2
     virtual ::Bedrock::Threading::Async<::std::optional<::Screenshots::GallerySize>>
     getGallerySize(::TaskGroup&, ::Social::XUID) = 0;
 
+    // vIndex: 3
     virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<uchar>>>
     getImage(::TaskGroup&, ::std::string const&) = 0;
 
+    // vIndex: 4
     virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<uchar>>>
     getFeaturedImage(::TaskGroup&, ::Social::XUID) = 0;
 
+    // vIndex: 5
     virtual ::Bedrock::Threading::Async<::std::optional<::Screenshots::RawShowcasedScreenshot>>
     addImageToShowcase(::TaskGroup&, int64, bool, ::Core::PathBuffer<::std::string> const&) = 0;
 
+    // vIndex: 6
     virtual ::Bedrock::Threading::Async<bool> removeShowcasedImage(::TaskGroup&, ::std::string const&) = 0;
 
+    // vIndex: 7
     virtual ::Bedrock::Threading::Async<bool> setFeaturedImage(::TaskGroup&, ::std::string const&) = 0;
 
+    // vIndex: 8
     virtual ::Bedrock::Threading::Async<bool> removeFeaturedImage(::TaskGroup&) = 0;
     // NOLINTEND
 

@@ -17,18 +17,25 @@ class IModuleBindingFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IModuleBindingFactory() = default;
 
+    // vIndex: 1
     virtual ::std::string getName() const = 0;
 
+    // vIndex: 2
     virtual ::mce::UUID getUUID() const = 0;
 
+    // vIndex: 3
     virtual bool hasAlias(::std::string const&) const = 0;
 
+    // vIndex: 4
     virtual ::std::vector<::Scripting::Version> getSupportedVersions() const = 0;
 
+    // vIndex: 5
     virtual ::std::vector<::Scripting::ModuleDependency> getDependencies(::Scripting::Version) const = 0;
 
+    // vIndex: 6
     virtual ::std::optional<::Scripting::ModuleBinding>
     createModuleBinding(::Scripting::Version, ::std::optional<::Scripting::ContextConfig> const&) = 0;
     // NOLINTEND

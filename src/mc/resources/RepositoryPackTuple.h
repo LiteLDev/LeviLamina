@@ -18,9 +18,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::RepositoryPackTuple& operator=(::RepositoryPackTuple&&);
-
     MCNAPI ::RepositoryPackTuple& operator=(::RepositoryPackTuple const&);
+
+    MCNAPI ::RepositoryPackTuple& operator=(::RepositoryPackTuple&&);
 
     MCNAPI ~RepositoryPackTuple();
     // NOLINTEND

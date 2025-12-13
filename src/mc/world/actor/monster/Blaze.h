@@ -16,33 +16,42 @@ struct ActorDefinitionIdentifier;
 
 class Blaze : public ::Monster {
 public:
+    // Blaze inner types define
+    using DataFlagIdType = char;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8bbde8;
-    ::ll::UntypedStorage<4, 4> mUnk54d31f;
+    ::ll::TypedStorage<4, 4, float> mAllowedHeightOffset;
+    ::ll::TypedStorage<4, 4, int>   mNextHeightOffsetChangeTick;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Blaze& operator=(Blaze const&);
-    Blaze(Blaze const&);
     Blaze();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
+    // vIndex: 38
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
+    // vIndex: 146
     virtual void aiStep() /*override*/;
 
+    // vIndex: 48
     virtual bool isOnFire() const /*override*/;
 
+    // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
+    // vIndex: 24
     virtual void normalTick() /*override*/;
 
+    // vIndex: 8
     virtual ~Blaze() /*override*/ = default;
     // NOLINTEND
 
@@ -82,8 +91,6 @@ public:
     MCFOLD bool $isDarkEnoughToSpawn() const;
 
     MCAPI void $normalTick();
-
-
     // NOLINTEND
 
 public:

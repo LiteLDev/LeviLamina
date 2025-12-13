@@ -18,17 +18,23 @@ class FrameTransformerInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual void Transform(::std::unique_ptr<::webrtc::TransformableFrameInterface>) = 0;
 
+    // vIndex: 4
     virtual void RegisterTransformedFrameCallback(::webrtc::scoped_refptr<::webrtc::TransformedFrameCallback>);
 
+    // vIndex: 5
     virtual void
         RegisterTransformedFrameSinkCallback(::webrtc::scoped_refptr<::webrtc::TransformedFrameCallback>, uint);
 
+    // vIndex: 6
     virtual void UnregisterTransformedFrameCallback();
 
+    // vIndex: 7
     virtual void UnregisterTransformedFrameSinkCallback(uint);
 
+    // vIndex: 2
     virtual ~FrameTransformerInterface() /*override*/ = default;
     // NOLINTEND
 

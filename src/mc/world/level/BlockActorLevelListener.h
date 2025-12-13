@@ -15,10 +15,13 @@ class BlockActorLevelListener : public ::LevelListener {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BlockActorLevelListener() /*override*/ = default;
 
+    // vIndex: 20
     virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
+    // vIndex: 22
     virtual void onSubChunkLoaded(
         ::ChunkSource&,
         ::LevelChunk& lc,
@@ -26,6 +29,7 @@ public:
         bool          subChunkVisibilityChanged
     ) /*override*/;
 
+    // vIndex: 23
     virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
     // NOLINTEND
 
@@ -38,8 +42,6 @@ public:
     $onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged);
 
     MCAPI void $onChunkUnloaded(::LevelChunk& lc);
-
-
     // NOLINTEND
 
 public:

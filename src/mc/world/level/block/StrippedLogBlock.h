@@ -24,11 +24,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
+    // vIndex: 143
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~StrippedLogBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -38,8 +41,6 @@ public:
     MCFOLD int $getVariant(::Block const& block) const;
 
     MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
-
-
     // NOLINTEND
 
 public:

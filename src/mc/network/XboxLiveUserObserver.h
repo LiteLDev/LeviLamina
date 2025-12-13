@@ -16,10 +16,13 @@ class XboxLiveUserObserver : public ::Core::Observer<::Social::XboxLiveUserObser
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void onXboxUserBlocked(::std::string const&) = 0;
 
+    // vIndex: 3
     virtual void onXboxUserUnblocked(::std::string const&) = 0;
 
+    // vIndex: 0
     virtual ~XboxLiveUserObserver() /*override*/;
     // NOLINTEND
 

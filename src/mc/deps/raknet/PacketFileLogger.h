@@ -23,8 +23,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PacketFileLogger() /*override*/ = default;
 
+    // vIndex: 20
     virtual void WriteLog(char const*) /*override*/;
     // NOLINTEND
 

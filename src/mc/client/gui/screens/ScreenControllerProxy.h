@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct MainMenuScreenModel;
+class MainMenuScreenModel;
 // clang-format on
 
 class ScreenControllerProxy {
@@ -23,34 +23,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~ScreenControllerProxy() = default;
-#else // LL_PLAT_C
-    virtual ~ScreenControllerProxy();
-#endif
 
+    // vIndex: 1
     virtual ::std::shared_ptr<::MainMenuScreenModel> getMainMenuScreenModel();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::shared_ptr<::MainMenuScreenModel> $getMainMenuScreenModel();
-#endif
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

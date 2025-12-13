@@ -11,6 +11,7 @@ class RedoOperationPayload : public ::Editor::Network::NetworkPayload<::Editor::
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RedoOperationPayload() /*override*/ = default;
     // NOLINTEND
 

@@ -28,12 +28,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
 
+    // vIndex: 2
     virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
+    // vIndex: 4
     virtual ::std::string_view getName() const /*override*/;
 
+    // vIndex: 0
     virtual ~FilterTestHourlyClock() /*override*/;
     // NOLINTEND
 
@@ -51,8 +55,6 @@ public:
     MCNAPI bool $evaluate(::FilterContext const& context) const;
 
     MCNAPI ::std::string_view $getName() const;
-
-
     // NOLINTEND
 
 public:

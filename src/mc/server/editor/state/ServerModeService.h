@@ -18,12 +18,16 @@ class ServerModeService : public ::Editor::Services::ModeService {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
+    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> _doSwitchMode(::Editor::Mode newMode) /*override*/;
 
+    // vIndex: 8
     virtual void _handleModeChangedPayload(::Editor::Network::ModeChangedPayload const& payload) /*override*/;
 
+    // vIndex: 0
     virtual ~ServerModeService() /*override*/ = default;
     // NOLINTEND
 
@@ -35,8 +39,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $_doSwitchMode(::Editor::Mode newMode);
 
     MCNAPI void $_handleModeChangedPayload(::Editor::Network::ModeChangedPayload const& payload);
-
-
     // NOLINTEND
 
 public:

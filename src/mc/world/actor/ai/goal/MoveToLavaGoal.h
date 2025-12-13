@@ -9,6 +9,7 @@ class MoveToLavaGoal : public ::MoveToLiquidGoal {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MoveToLavaGoal() /*override*/ = default;
     // NOLINTEND
 

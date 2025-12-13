@@ -20,8 +20,8 @@ class ConnectionGraph2 : public ::RakNet::PluginInterface2 {
 public:
     // ConnectionGraph2 inner types declare
     // clang-format off
-    struct SystemAddressAndGuid;
     struct RemoteSystem;
+    struct SystemAddressAndGuid;
     // clang-format on
 
     // ConnectionGraph2 inner types define
@@ -72,16 +72,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ConnectionGraph2() /*override*/ = default;
 
+    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,
         ::RakNet::PI2_LostConnectionReason
     ) /*override*/;
 
+    // vIndex: 8
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
     // NOLINTEND
 

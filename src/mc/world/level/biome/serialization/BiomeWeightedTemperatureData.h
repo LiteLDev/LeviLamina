@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
+#include "mc/world/level/biome/BiomeTemperatureCategory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,19 +15,13 @@ struct BiomeWeightedTemperatureData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk39f777;
-    ::ll::UntypedStorage<4, 4> mUnkb80f9b;
+    ::ll::TypedStorage<1, 1, ::BiomeTemperatureCategory> mTemperature;
+    ::ll::TypedStorage<4, 4, uint>                       mWeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeWeightedTemperatureData& operator=(BiomeWeightedTemperatureData const&);
-    BiomeWeightedTemperatureData(BiomeWeightedTemperatureData const&);
-    BiomeWeightedTemperatureData();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::BiomeWeightedTemperatureData> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::BiomeWeightedTemperatureData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

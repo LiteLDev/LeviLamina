@@ -15,11 +15,14 @@ class CraftingInputContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
+    // vIndex: 9
     virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~CraftingInputContainerValidation() /*override*/ = default;
     // NOLINTEND
 
@@ -29,8 +32,6 @@ public:
     MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
     MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
-
-
     // NOLINTEND
 
 public:

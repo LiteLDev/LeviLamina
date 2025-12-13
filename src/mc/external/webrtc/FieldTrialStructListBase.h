@@ -23,8 +23,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool Parse(::std::optional<::std::string>) /*override*/;
 
+    // vIndex: 0
     virtual ~FieldTrialStructListBase() /*override*/ = default;
     // NOLINTEND
 

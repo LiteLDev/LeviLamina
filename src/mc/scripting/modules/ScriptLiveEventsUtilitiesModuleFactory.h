@@ -14,6 +14,7 @@ class ScriptLiveEventsUtilitiesModuleFactory : public ::Scripting::GenericModule
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptLiveEventsUtilitiesModuleFactory() /*override*/ = default;
     // NOLINTEND
 

@@ -31,25 +31,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 49
     virtual bool isLiquidClipItem() const /*override*/;
 
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
 
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
+    // vIndex: 34
     virtual bool isStackedByData() const /*override*/;
 
+    // vIndex: 81
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
+    // vIndex: 123
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
+    // vIndex: 124
     virtual ::ActorType _getActorType() const;
 
+    // vIndex: 0
     virtual ~BoatItem() /*override*/ = default;
     // NOLINTEND
 
@@ -71,11 +80,7 @@ public:
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-#ifdef LL_PLAT_S
     MCFOLD ::ActorType $_getActorType() const;
-#endif
-
-
     // NOLINTEND
 
 public:

@@ -16,20 +16,14 @@ struct ScriptPressurePlatePopAfterEvent : public ::ScriptModuleMinecraft::Script
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd262ca;
-    ::ll::UntypedStorage<4, 4> mUnke83056;
+    ::ll::TypedStorage<4, 4, int> mPreviousRedstonePower;
+    ::ll::TypedStorage<4, 4, int> mRedstonePower;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptPressurePlatePopAfterEvent& operator=(ScriptPressurePlatePopAfterEvent const&);
-    ScriptPressurePlatePopAfterEvent(ScriptPressurePlatePopAfterEvent const&);
-    ScriptPressurePlatePopAfterEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

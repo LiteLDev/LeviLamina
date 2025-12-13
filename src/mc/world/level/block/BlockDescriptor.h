@@ -27,41 +27,7 @@ public:
     // clang-format on
 
     // BlockDescriptor inner types define
-    enum class CompareType : int {
-        AnyTag    = 0,
-        BlockName = 1,
-        States    = 2,
-        Unknown   = 3,
-    };
-
-    class ResolveHelper {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::BlockDescriptor&> mBlockDescriptor;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ResolveHelper& operator=(ResolveHelper const&);
-        ResolveHelper(ResolveHelper const&);
-        ResolveHelper();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void resolve(bool logInvalidBlocks);
-        // NOLINTEND
-    };
-
-    class ResolvedState {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockState const*>> mBlockState;
-        ::ll::TypedStorage<4, 4, int>                                  mValue;
-        // NOLINTEND
-    };
+    using CompoundProxy = ::SharedTypes::Legacy::BlockDescriptor::Compound;
 
     struct State {
     public:
@@ -96,7 +62,41 @@ public:
         // NOLINTEND
     };
 
-    using CompoundProxy = ::SharedTypes::Legacy::BlockDescriptor::Compound;
+    class ResolvedState {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockState const*>> mBlockState;
+        ::ll::TypedStorage<4, 4, int>                                  mValue;
+        // NOLINTEND
+    };
+
+    enum class CompareType : int {
+        AnyTag    = 0,
+        BlockName = 1,
+        States    = 2,
+        Unknown   = 3,
+    };
+
+    class ResolveHelper {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::BlockDescriptor&> mBlockDescriptor;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ResolveHelper& operator=(ResolveHelper const&);
+        ResolveHelper(ResolveHelper const&);
+        ResolveHelper();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void resolve(bool logInvalidBlocks);
+        // NOLINTEND
+    };
 
 public:
     // member variables

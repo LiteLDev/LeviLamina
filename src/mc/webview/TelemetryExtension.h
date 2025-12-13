@@ -31,61 +31,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void
-    setupMessageSender(::std::function<void(::std::string, ::std::string, ::std::string)> messageSender) /*override*/;
+    // vIndex: 1
+    virtual void setupMessageSender(::std::function<void(::std::string, ::std::string, ::std::string)>) /*override*/;
 
-    virtual bool shouldProcessMessage(::std::string const& _namespace, ::std::string const& func) /*override*/;
+    // vIndex: 2
+    virtual bool shouldProcessMessage(::std::string const&, ::std::string const&) /*override*/;
 
-    virtual bool onMessageReceived(
-        ::std::string const&           _namespace,
-        ::std::string const&           func,
-        ::std::optional<::Json::Value> arguments
-    ) /*override*/;
+    // vIndex: 3
+    virtual bool
+    onMessageReceived(::std::string const&, ::std::string const&, ::std::optional<::Json::Value>) /*override*/;
 
-    virtual void onLoadingBegin(::std::function<void(::std::string)> handler) /*override*/;
+    // vIndex: 6
+    virtual void onLoadingBegin(::std::function<void(::std::string)>) /*override*/;
 
+    // vIndex: 0
     virtual ~TelemetryExtension() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit TelemetryExtension(
-        ::std::function<void(::Webview::TelemetryCommonProperties&, ::std::string, ::std::string)> log
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void*
-    $ctor(::std::function<void(::Webview::TelemetryCommonProperties&, ::std::string, ::std::string)> log);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $setupMessageSender(::std::function<void(::std::string, ::std::string, ::std::string)> messageSender);
 
-    MCNAPI bool $shouldProcessMessage(::std::string const& _namespace, ::std::string const& func);
-
-    MCNAPI bool $onMessageReceived(
-        ::std::string const&           _namespace,
-        ::std::string const&           func,
-        ::std::optional<::Json::Value> arguments
-    );
-
-    MCNAPI void $onLoadingBegin(::std::function<void(::std::string)> handler);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

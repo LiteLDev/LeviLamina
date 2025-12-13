@@ -22,14 +22,11 @@ public:
 public:
     // prevent constructor by default
     WorldPackHistory& operator=(WorldPackHistory const&);
+    WorldPackHistory();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C WorldPackHistory();
-
-    MCNAPI_C WorldPackHistory(::WorldPackHistory&&);
-
     MCNAPI WorldPackHistory(::WorldPackHistory const&);
 
     MCNAPI bool initializeFromJson(::Json::Value const& value);
@@ -42,10 +39,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::WorldPackHistory&&);
-
     MCNAPI void* $ctor(::WorldPackHistory const&);
     // NOLINTEND
 

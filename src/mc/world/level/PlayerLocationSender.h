@@ -28,10 +28,6 @@ public:
     // clang-format on
 
     // PlayerLocationSender inner types define
-    struct ActorUniqueIDCompare {};
-
-    struct ActorUniqueIDPairCompare {};
-
     struct PlayerLocationData {
     public:
         // member variables
@@ -43,6 +39,10 @@ public:
     };
 
     using OptionalPosition = ::std::optional<::Vec3>;
+
+    struct ActorUniqueIDCompare {};
+
+    struct ActorUniqueIDPairCompare {};
 
 public:
     // member variables

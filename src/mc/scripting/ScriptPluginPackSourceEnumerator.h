@@ -27,8 +27,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::vector<::std::shared_ptr<::IScriptPluginSource>> const& getPluginSources() const /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptPluginPackSourceEnumerator() /*override*/;
     // NOLINTEND
 
@@ -55,8 +57,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::vector<::std::shared_ptr<::IScriptPluginSource>> const& $getPluginSources() const;
-
-
     // NOLINTEND
 
 public:

@@ -29,29 +29,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 7
     virtual void appendDebugInfo(::std::string& debugInfo) const /*override*/;
 
+    // vIndex: 0
     virtual ~RunAroundLikeCrazyGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $start();
+    MCFOLD void $start();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $appendDebugInfo(::std::string& debugInfo) const;
-
-
+    MCAPI void $appendDebugInfo(::std::string& debugInfo) const;
     // NOLINTEND
 
 public:

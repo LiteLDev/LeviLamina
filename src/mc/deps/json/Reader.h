@@ -17,11 +17,15 @@ class Reader {
 public:
     // Reader inner types declare
     // clang-format off
-    class Token;
     class ErrorInfo;
+    class Token;
     // clang-format on
 
     // Reader inner types define
+    using Char = char;
+
+    using Location = char const*;
+
     enum class TokenType : int {
         TokenEndOfStream     = 0,
         TokenObjectBegin     = 1,
@@ -72,11 +76,7 @@ public:
         // NOLINTEND
     };
 
-    using Char = char;
-
     using Errors = ::std::deque<::Json::Reader::ErrorInfo>;
-
-    using Location = char const*;
 
     using Nodes = ::std::stack<::Json::Value*, ::std::deque<::Json::Value*>>;
 

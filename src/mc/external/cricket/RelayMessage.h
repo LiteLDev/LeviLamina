@@ -12,10 +12,13 @@ class RelayMessage : public ::cricket::StunMessage {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::cricket::StunAttributeValueType GetAttributeValueType(int type) const /*override*/;
 
+    // vIndex: 1
     virtual ::cricket::StunMessage* CreateNew() const /*override*/;
 
+    // vIndex: 0
     virtual ~RelayMessage() /*override*/ = default;
     // NOLINTEND
 

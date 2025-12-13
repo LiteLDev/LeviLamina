@@ -45,6 +45,7 @@ struct DiscardSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::ActorMovementTickNeededComponent>,
@@ -61,6 +62,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~DiscardSystem() /*override*/ = default;
     // NOLINTEND
 
@@ -98,8 +100,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
     );
-
-
     // NOLINTEND
 
 public:

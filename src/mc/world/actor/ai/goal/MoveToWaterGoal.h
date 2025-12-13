@@ -9,6 +9,7 @@ class MoveToWaterGoal : public ::MoveToLiquidGoal {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MoveToWaterGoal() /*override*/ = default;
     // NOLINTEND
 

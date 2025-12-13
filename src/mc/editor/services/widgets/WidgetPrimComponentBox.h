@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/game_refs/OwnerPtr.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Scripting::RenderHelper { class BasePrimitive; }
-// clang-format on
-
 namespace Editor::Network {
 
 class WidgetPrimComponentBox {
@@ -31,13 +23,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentBox const& other) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
-    createPrimitive(::Editor::Network::WidgetPrimComponentBox const& data);
     // NOLINTEND
 };
 

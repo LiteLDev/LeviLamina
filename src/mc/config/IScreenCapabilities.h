@@ -9,8 +9,10 @@ class IScreenCapabilities {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IScreenCapabilities() = default;
 
+    // vIndex: 1
     virtual bool isOfType(::Bedrock::typeid_t<::IScreenCapabilities>) const = 0;
     // NOLINTEND
 

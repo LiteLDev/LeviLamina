@@ -13,12 +13,16 @@ class DecodedImageCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DecodedImageCallback() = default;
 
+    // vIndex: 3
     virtual int Decoded(::webrtc::VideoFrame&) = 0;
 
+    // vIndex: 2
     virtual int Decoded(::webrtc::VideoFrame&, int64);
 
+    // vIndex: 1
     virtual void Decoded(::webrtc::VideoFrame&, ::std::optional<int>, ::std::optional<uchar>);
     // NOLINTEND
 

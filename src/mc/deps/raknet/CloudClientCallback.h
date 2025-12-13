@@ -14,10 +14,13 @@ class CloudClientCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CloudClientCallback() = default;
 
+    // vIndex: 1
     virtual void OnGet(::RakNet::CloudQueryResult*, bool*);
 
+    // vIndex: 2
     virtual void OnSubscriptionNotification(::RakNet::CloudQueryRow*, bool, bool*);
     // NOLINTEND
 

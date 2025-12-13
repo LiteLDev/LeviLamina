@@ -31,39 +31,54 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual bool supportsSizeQuery() const /*override*/;
 
+    // vIndex: 4
     virtual uint64 getTotalSize() const /*override*/;
 
+    // vIndex: 5
     virtual ::Core::Result getUsedSize(uint64& outUsedSize) /*override*/;
 
+    // vIndex: 6
     virtual void setUsedSizeOverride(uint64 fileSize) /*override*/;
 
+    // vIndex: 7
     virtual void clearUsedSizeOverride() /*override*/;
 
+    // vIndex: 13
     virtual bool supportsExtendSize() const /*override*/;
 
+    // vIndex: 14
     virtual bool canExtendSize() const /*override*/;
 
+    // vIndex: 15
     virtual void resetCanAttemptExtendSize() /*override*/;
 
+    // vIndex: 16
     virtual ::Core::Result getExtendSizeThreshold(uint64& outExtendSizeThreshold) const /*override*/;
 
+    // vIndex: 17
     virtual void
     attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback) /*override*/;
 
+    // vIndex: 18
     virtual void preemptiveExtendSize(
         uint64 const            expectedContentSize,
         ::std::function<void()> successCallback,
         ::std::function<void()> failureCallback
     ) /*override*/;
 
+    // vIndex: 19
     virtual uint64 getAvailableUserStorageSize() /*override*/;
 
+    // vIndex: 33
     virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo() /*override*/;
 
+    // vIndex: 35
     virtual bool shouldRecordFileError(::Core::PathView path, ::std::error_code error) const /*override*/;
 
+    // vIndex: 0
     virtual ~StorageArea_windows() /*override*/ = default;
     // NOLINTEND
 
@@ -101,8 +116,6 @@ public:
     MCNAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
 
     MCNAPI bool $shouldRecordFileError(::Core::PathView path, ::std::error_code error) const;
-
-
     // NOLINTEND
 
 public:

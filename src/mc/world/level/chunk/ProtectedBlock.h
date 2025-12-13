@@ -28,6 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
         ::IBlockSource& region,
         ::BlockPos,
@@ -37,10 +38,13 @@ public:
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
+    // vIndex: 3
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
+    // vIndex: 4
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
     virtual ~ProtectedBlock() /*override*/;
     // NOLINTEND
 
@@ -71,8 +75,6 @@ public:
     MCNAPI ::br::worldgen::StructureProcessorType $type() const;
 
     MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
-
-
     // NOLINTEND
 
 public:

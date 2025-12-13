@@ -35,37 +35,28 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk8d4369;
-        ::ll::UntypedStorage<4, 4>  mUnk580c82;
+        ::ll::TypedStorage<8, 32, ::std::string> text;
+        ::ll::TypedStorage<4, 4, int>            lineLength;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CachedLineData& operator=(CachedLineData const&);
-        CachedLineData(CachedLineData const&);
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI CachedLineData();
+        MCAPI CachedLineData();
 
-        MCNAPI_C CachedLineData(::ChalkboardBlockActor::CachedLineData&&);
-
-        MCNAPI ~CachedLineData();
+        MCAPI ~CachedLineData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
-
-        MCNAPI_C void* $ctor(::ChalkboardBlockActor::CachedLineData&&);
+        MCFOLD void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -73,29 +64,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 640> mUnk163d4e;
-        ::ll::UntypedStorage<4, 4>   mUnkb8325f;
-        ::ll::UntypedStorage<8, 32>  mUnk422df7;
-        ::ll::UntypedStorage<8, 8>   mUnk3044e8;
-        ::ll::UntypedStorage<1, 1>   mUnk16bfc2;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CachedMessageData& operator=(CachedMessageData const&);
-        CachedMessageData(CachedMessageData const&);
-        CachedMessageData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ~CachedMessageData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+        ::ll::TypedStorage<8, 640, ::std::array<::ChalkboardBlockActor::CachedLineData, 16>> lineData;
+        ::ll::TypedStorage<4, 4, uint>                                                       numLines;
+        ::ll::TypedStorage<8, 32, ::std::string>                                             filteredMessage;
+        ::ll::TypedStorage<8, 8, void const*>                                                cachedFontCompare;
+        ::ll::TypedStorage<1, 1, bool>                                                       dirty;
         // NOLINTEND
     };
 
@@ -103,20 +76,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk1a5700;
-        ::ll::UntypedStorage<8, 8> mUnk92f7b0;
+        ::ll::TypedStorage<1, 1, bool>                    mChunkFound;
+        ::ll::TypedStorage<8, 8, ::ChalkboardBlockActor*> mBoard;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChalkboardFinder& operator=(ChalkboardFinder const&);
-        ChalkboardFinder(ChalkboardFinder const&);
-        ChalkboardFinder();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool confirmedBroken(::ChalkboardBlockActor& compare, ::BlockSource& region) const;
+        MCAPI bool confirmedBroken(::ChalkboardBlockActor& compare, ::BlockSource& region) const;
         // NOLINTEND
     };
 
@@ -144,24 +111,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ChalkboardBlockActor() /*override*/;
 
+    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
+    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
+    // vIndex: 27
     virtual ::std::string getImmersiveReaderText(::BlockSource& region) /*override*/;
 
+    // vIndex: 36
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const& tag) const /*override*/;
 
+    // vIndex: 38
     virtual void setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
@@ -170,14 +147,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChalkboardBlockActor(::BlockPos const& pos);
 
-    MCAPI_S ::std::vector<::BlockPos> const& _getSiblings(::BlockSource& region);
+    MCAPI ::std::vector<::BlockPos> const& _getSiblings(::BlockSource& region);
 
     MCAPI ::ChalkboardBlockActor* getBaseChalkboard(::BlockSource& region) const;
 
     MCAPI ::std::string const& getText() const;
-
-    MCAPI_C ::ChalkboardBlockActor::CachedMessageData&
-    setCachedMessage(::ChalkboardBlockActor::CachedMessageData cachedMessage);
 
     MCAPI void setText(::std::string const& text);
 
@@ -251,8 +225,6 @@ public:
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
-
-
     // NOLINTEND
 
 public:

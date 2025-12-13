@@ -21,46 +21,41 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MainChunkSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MainChunkSource() /*override*/ = default;
 
+    // vIndex: 3
     virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& cp) /*override*/;
 
+    // vIndex: 5
     virtual bool isChunkKnown(::ChunkPos const& chunkPos) /*override*/;
 
+    // vIndex: 4
     virtual ::std::shared_ptr<::LevelChunk> getRandomChunk(::Random& random) /*override*/;
 
+    // vIndex: 7
     virtual ::std::shared_ptr<::LevelChunk>
     createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
 
+    // vIndex: 23
     virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr) /*override*/;
 
+    // vIndex: 29
     virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const& getStorage() const /*override*/;
 
+    // vIndex: 30
     virtual void clearDeletedEntities() /*override*/;
 
+    // vIndex: 28
     virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* getChunkMap() /*override*/;
 
+    // vIndex: 31
     virtual bool canCreateViews() const /*override*/;
 
+    // vIndex: 34
     virtual void setLevelChunk(::std::shared_ptr<::LevelChunk> lc) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI_C explicit MainChunkSource(::std::unique_ptr<::ChunkSource> storage);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(::std::unique_ptr<::ChunkSource> storage);
     // NOLINTEND
 
 public:
@@ -86,8 +81,6 @@ public:
     MCFOLD bool $canCreateViews() const;
 
     MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
-
-
     // NOLINTEND
 
 public:

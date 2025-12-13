@@ -42,22 +42,21 @@ public:
 
 public:
     // prevent constructor by default
+    DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&);
     DimensionDefinitionGroup();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DimensionDefinitionGroup(::DimensionDefinitionGroup&&);
-
     MCAPI DimensionDefinitionGroup(::DimensionDefinitionGroup const&);
+
+    MCAPI DimensionDefinitionGroup(::DimensionDefinitionGroup&&);
 
     MCAPI DimensionDefinitionGroup(
         ::cereal::ReflectionCtx const& ctx,
         ::ResourcePackManager* const   rpm,
         ::IMinecraftEventing&          eventing
     );
-
-    MCAPI_C ::DimensionDefinitionGroup& operator=(::DimensionDefinitionGroup const&);
 
     MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
     tryAddDimensionDefinitionByString(
@@ -71,9 +70,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DimensionDefinitionGroup&&);
-
     MCAPI void* $ctor(::DimensionDefinitionGroup const&);
+
+    MCAPI void* $ctor(::DimensionDefinitionGroup&&);
 
     MCAPI void*
     $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm, ::IMinecraftEventing& eventing);

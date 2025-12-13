@@ -9,6 +9,7 @@ class MangroveRootsBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MangroveRootsBlock() /*override*/ = default;
     // NOLINTEND
 

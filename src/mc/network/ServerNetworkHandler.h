@@ -174,6 +174,20 @@ public:
     // clang-format on
 
     // ServerNetworkHandler inner types define
+    class TransferBuilderBatcher {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 248> mUnke6ab0b;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TransferBuilderBatcher& operator=(TransferBuilderBatcher const&);
+        TransferBuilderBatcher(TransferBuilderBatcher const&);
+        TransferBuilderBatcher();
+    };
+
     class Client {
     public:
         // member variables
@@ -188,20 +202,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void removeSubClientRequest(::SubClientId subClientId);
         // NOLINTEND
-    };
-
-    class TransferBuilderBatcher {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 248> mUnke6ab0b;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TransferBuilderBatcher& operator=(TransferBuilderBatcher const&);
-        TransferBuilderBatcher(TransferBuilderBatcher const&);
-        TransferBuilderBatcher();
     };
 
 public:
@@ -286,8 +286,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ServerNetworkHandler() /*override*/;
 
+    // vIndex: 5
     virtual void onValidPacketReceived(
         ::NetworkIdentifier const& netId,
         ::MinecraftPacketIds       packetId,
@@ -295,20 +297,26 @@ public:
         ::SubClientId
     ) /*override*/;
 
+    // vIndex: 10
     virtual void onWebsocketRequest(
         ::std::string const&    serverAddress,
         ::std::string const&    payload,
         ::std::function<void()> errorCallback
     ) /*override*/;
 
+    // vIndex: 2
     virtual void onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid) /*override*/;
 
+    // vIndex: 2
     virtual void onXboxUserBlocked(::std::string const& xuid) /*override*/;
 
+    // vIndex: 3
     virtual void onXboxUserUnblocked(::std::string const& xuid) /*override*/;
 
+    // vIndex: 1
     virtual void onPlayerReady(::Player& player) /*override*/;
 
+    // vIndex: 11
     virtual void handlePacketViolation(
         ::std::shared_ptr<::IPacketSecurityController> const& packetSecurityController,
         ::std::error_code const&                              errorCode,
@@ -321,6 +329,7 @@ public:
         uint const                                            packetSize
     ) /*override*/;
 
+    // vIndex: 12
     virtual void sendPacketViolationWarningPacket(
         ::std::error_code const&   errorCode,
         ::PacketViolationResponse  violationResponse,
@@ -330,11 +339,14 @@ public:
         ::SubClientId              clientSubId
     ) /*override*/;
 
+    // vIndex: 10
     virtual void sendServerLegacyParticle(::ParticleType name, ::Vec3 const& pos, ::Vec3 const&, int data) /*override*/;
 
+    // vIndex: 13
     virtual void
     onTransferRequest(::NetworkIdentifier const& id, ::Social::GameConnectionInfo const& destination) /*override*/;
 
+    // vIndex: 7
     virtual void onDisconnect(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
@@ -344,197 +356,282 @@ public:
         ::std::string const&                     telemetryOverride
     ) /*override*/;
 
+    // vIndex: 8
     virtual ::IncomingPacketFilterResult allowIncomingPacketId(
         ::NetworkIdentifierWithSubId const& sender,
         ::MinecraftPacketIds                packetId,
         uint64                              packetSize
     ) /*override*/;
 
+    // vIndex: 9
     virtual ::OutgoingPacketFilterResult
     allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) /*override*/;
 
+    // vIndex: 192
     virtual void handle(::NetworkIdentifier const& source, ::ActorEventPacket const& packet) /*override*/;
 
+    // vIndex: 194
     virtual void handle(::NetworkIdentifier const& source, ::ActorPickRequestPacket const& packet) /*override*/;
 
+    // vIndex: 166
     virtual void handle(::NetworkIdentifier const& source, ::AnimatePacket const& packet) /*override*/;
 
+    // vIndex: 165
     virtual void
     handle(::NetworkIdentifier const& source, ::std::shared_ptr<::BlockActorDataPacket> packet) /*override*/;
 
+    // vIndex: 195
     virtual void handle(::NetworkIdentifier const& source, ::BlockPickRequestPacket const& packet) /*override*/;
 
+    // vIndex: 79
     virtual void handle(::NetworkIdentifier const& source, ::LecternUpdatePacket const& packet) /*override*/;
 
+    // vIndex: 78
     virtual void handle(::NetworkIdentifier const& source, ::BookEditPacket const& packet) /*override*/;
 
+    // vIndex: 140
     virtual void handle(::NetworkIdentifier const& source, ::BossEventPacket const& packet) /*override*/;
 
+    // vIndex: 149
     virtual void handle(::NetworkIdentifier const& source, ::ClientCameraAimAssistPacket const& packet) /*override*/;
 
+    // vIndex: 145
     virtual void handle(::NetworkIdentifier const& source, ::ClientCacheStatusPacket const& packet) /*override*/;
 
+    // vIndex: 159
     virtual void handle(::NetworkIdentifier const& source, ::ClientCacheBlobStatusPacket const& packet) /*override*/;
 
+    // vIndex: 163
     virtual void
     handle(::NetworkIdentifier const& source, ::ClientMovementPredictionSyncPacket const& packet) /*override*/;
 
+    // vIndex: 226
     virtual void handle(::NetworkIdentifier const& source, ::ClientToServerHandshakePacket const& packet) /*override*/;
 
+    // vIndex: 134
     virtual void handle(::NetworkIdentifier const& source, ::CommandBlockUpdatePacket const& packet) /*override*/;
 
+    // vIndex: 136
     virtual void handle(::NetworkIdentifier const& source, ::CommandRequestPacket const& packet) /*override*/;
 
+    // vIndex: 133
     virtual void handle(::NetworkIdentifier const& source, ::CompletedUsingItemPacket const& packet) /*override*/;
 
+    // vIndex: 173
     virtual void handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet) /*override*/;
 
+    // vIndex: 58
     virtual void handle(::NetworkIdentifier const& source, ::DebugInfoPacket const& packet) /*override*/;
 
+    // vIndex: 47
     virtual void handle(::NetworkIdentifier const& source, ::CreatePhotoPacket const& packet) /*override*/;
 
+    // vIndex: 231
     virtual void handle(::NetworkIdentifier const& source, ::DisconnectPacket const& packet) /*override*/;
 
+    // vIndex: 230
     virtual void handle(::NetworkIdentifier const& source, ::EmoteListPacket const& packet) /*override*/;
 
+    // vIndex: 229
     virtual void handle(::NetworkIdentifier const& source, ::EmotePacket const& packet) /*override*/;
 
+    // vIndex: 181
     virtual void handle(::NetworkIdentifier const& source, ::InteractPacket const& packet) /*override*/;
 
+    // vIndex: 112
     virtual void
     handle(::NetworkIdentifier const& source, ::std::shared_ptr<::InventoryTransactionPacket> packet) /*override*/;
 
+    // vIndex: 176
     virtual void handle(::NetworkIdentifier const& source, ::ItemStackRequestPacket const& packet) /*override*/;
 
+    // vIndex: 73
     virtual void handle(::NetworkIdentifier const& source, ::LabTablePacket const& packet) /*override*/;
 
+    // vIndex: 199
     virtual void handle(::NetworkIdentifier const& source, ::LevelSoundEventPacket const& packet) /*override*/;
 
+    // vIndex: 228
     virtual void handle(::NetworkIdentifier const& source, ::std::shared_ptr<::LoginPacket> packet) /*override*/;
 
+    // vIndex: 143
     virtual void handle(::NetworkIdentifier const& source, ::MapCreateLockedCopyPacket const& packet) /*override*/;
 
+    // vIndex: 142
     virtual void handle(::NetworkIdentifier const& source, ::MapInfoRequestPacket const& packet) /*override*/;
 
+    // vIndex: 189
     virtual void handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packet) /*override*/;
 
+    // vIndex: 104
     virtual void handle(::NetworkIdentifier const& source, ::ModalFormResponsePacket const& packet) /*override*/;
 
+    // vIndex: 71
     virtual void handle(::NetworkIdentifier const& source, ::NetworkStackLatencyPacket const& packet) /*override*/;
 
+    // vIndex: 75
     virtual void handle(::NetworkIdentifier const& source, ::NpcRequestPacket const& packet) /*override*/;
 
+    // vIndex: 74
     virtual void handle(::NetworkIdentifier const& source, ::PhotoTransferPacket const& packet) /*override*/;
 
+    // vIndex: 180
     virtual void handle(::NetworkIdentifier const& source, ::PlayerActionPacket const& packet) /*override*/;
 
+    // vIndex: 164
     virtual void handle(::NetworkIdentifier const& source, ::PlayerAuthInputPacket const& packet) /*override*/;
 
+    // vIndex: 170
     virtual void handle(::NetworkIdentifier const& source, ::PlayerHotbarPacket const& packet) /*override*/;
 
+    // vIndex: 85
     virtual void handle(::NetworkIdentifier const& source, ::PlayerSkinPacket const& packet) /*override*/;
 
+    // vIndex: 83
     virtual void
     handle(::NetworkIdentifier const& source, ::PlayerToggleCrafterSlotRequestPacket const& packet) /*override*/;
 
+    // vIndex: 221
     virtual void
     handle(::NetworkIdentifier const& source, ::PositionTrackingDBClientRequestPacket const& packet) /*override*/;
 
+    // vIndex: 109
     virtual void handle(::NetworkIdentifier const& source, ::PurchaseReceiptPacket const& packet) /*override*/;
 
+    // vIndex: 144
     virtual void handle(::NetworkIdentifier const& source, ::RequestChunkRadiusPacket const& packet) /*override*/;
 
+    // vIndex: 121
     virtual void handle(::NetworkIdentifier const& source, ::ResourcePackChunkRequestPacket const& packet) /*override*/;
 
+    // vIndex: 87
     virtual void handle(::NetworkIdentifier const& source, ::RespawnPacket const& packet) /*override*/;
 
+    // vIndex: 203
     virtual void handle(::NetworkIdentifier const& source, ::SetDefaultGameTypePacket const& packet) /*override*/;
 
+    // vIndex: 156
     virtual void handle(::NetworkIdentifier const& source, ::SetDifficultyPacket const& packet) /*override*/;
 
+    // vIndex: 69
     virtual void
     handle(::NetworkIdentifier const& source, ::SetLocalPlayerAsInitializedPacket const& packet) /*override*/;
 
+    // vIndex: 205
     virtual void handle(::NetworkIdentifier const& source, ::SetPlayerGameTypePacket const& packet) /*override*/;
 
+    // vIndex: 204
     virtual void handle(::NetworkIdentifier const& source, ::UpdatePlayerGameTypePacket const& packet) /*override*/;
 
+    // vIndex: 68
     virtual void handle(::NetworkIdentifier const& source, ::ScriptMessagePacket const& packet) /*override*/;
 
+    // vIndex: 86
     virtual void handle(::NetworkIdentifier const& source, ::ShowCreditsPacket const& packet) /*override*/;
 
+    // vIndex: 155
     virtual void handle(::NetworkIdentifier const& source, ::SimpleEventPacket const& packet) /*override*/;
 
+    // vIndex: 150
     virtual void handle(::NetworkIdentifier const& source, ::SpawnExperienceOrbPacket const& packet) /*override*/;
 
+    // vIndex: 119
     virtual void handle(::NetworkIdentifier const& source, ::StructureBlockUpdatePacket const& packet) /*override*/;
 
+    // vIndex: 118
     virtual void
     handle(::NetworkIdentifier const& source, ::StructureTemplateDataRequestPacket const& packet) /*override*/;
 
+    // vIndex: 227
     virtual void
     handle(::NetworkIdentifier const& source, ::std::shared_ptr<::SubClientLoginPacket> packet) /*override*/;
 
+    // vIndex: 217
     virtual void handle(::NetworkIdentifier const& source, ::TextPacket const& packet) /*override*/;
 
+    // vIndex: 64
     virtual void handle(::NetworkIdentifier const& source, ::MultiplayerSettingsPacket const& packet) /*override*/;
 
+    // vIndex: 63
     virtual void handle(::NetworkIdentifier const& source, ::SettingsCommandPacket const& packet) /*override*/;
 
+    // vIndex: 62
     virtual void handle(::NetworkIdentifier const& source, ::AnvilDamagePacket const& packet) /*override*/;
 
+    // vIndex: 160
     virtual void handle(::NetworkIdentifier const& source, ::SubChunkRequestPacket const& packet) /*override*/;
 
+    // vIndex: 45
     virtual void handle(::NetworkIdentifier const& source, ::CodeBuilderSourcePacket const& packet) /*override*/;
 
+    // vIndex: 57
     virtual void handle(::NetworkIdentifier const&, ::ChangeMobPropertyPacket const& packet) /*override*/;
 
+    // vIndex: 42
     virtual void handle(::NetworkIdentifier const& source, ::RequestAbilityPacket const& packet) /*override*/;
 
+    // vIndex: 38
     virtual void handle(::NetworkIdentifier const& source, ::RequestNetworkSettingsPacket const& packet) /*override*/;
 
+    // vIndex: 41
     virtual void handle(::NetworkIdentifier const& source, ::RequestPermissionsPacket const& packet) /*override*/;
 
+    // vIndex: 90
     virtual void handle(::NetworkIdentifier const& source, ::EditorNetworkPacket const& packet) /*override*/;
 
+    // vIndex: 37
     virtual void handle(::NetworkIdentifier const& source, ::GameTestRequestPacket const& packet) /*override*/;
 
+    // vIndex: 30
     virtual void
     handle(::NetworkIdentifier const& source, ::SetPlayerInventoryOptionsPacket const& packet) /*override*/;
 
+    // vIndex: 27
     virtual void handle(::NetworkIdentifier const& source, ::ServerboundLoadingScreenPacket const& packet) /*override*/;
 
+    // vIndex: 26
     virtual void handle(::NetworkIdentifier const& source, ::ServerboundDiagnosticsPacket const& packet) /*override*/;
 
+    // vIndex: 23
     virtual void handle(::NetworkIdentifier const& source, ::UpdateClientOptionsPacket const& packet) /*override*/;
 
+    // vIndex: 18
     virtual void
     handle(::NetworkIdentifier const& source, ::ServerboundPackSettingChangePacket const& packet) /*override*/;
 
+    // vIndex: 17
     virtual void handle(::NetworkIdentifier const& source, ::DataStoreSyncPacket const& packet) /*override*/;
 
+    // vIndex: 1
     virtual void sendSubClientLoginMessageLocal(
         ::NetworkIdentifier const&          source,
         ::SubClientConnectionRequest const& connectionRequest,
         ::SubClientId                       subid
     );
 
+    // vIndex: 4
     virtual void onTick() /*override*/;
 
+    // vIndex: 15
     virtual ::GameSpecificNetEventCallback* getGameSpecificNetEventCallback() /*override*/;
 
+    // vIndex: 2
     virtual void onConnect(::NetworkIdentifier const& id) /*override*/;
 
+    // vIndex: 2
     virtual void completeHandshake(::NetworkIdentifier const& source);
 
+    // vIndex: 3
     virtual bool _validateLoginPacket(::NetworkIdentifier const& source, ::LoginPacket const& packet);
 
+    // vIndex: 4
     virtual void _onClientAsyncAuthorized(
         ::NetworkIdentifier const&          source,
         ::ConnectionRequest const&          request,
         ::std::optional<::MessToken> const& hostMessToken
     );
 
+    // vIndex: 5
     virtual ::ServerPlayer* _getServerPlayer(::NetworkIdentifier const& source, ::SubClientId subId);
     // NOLINTEND
 
@@ -707,11 +804,6 @@ public:
         ::ResourcePackClientResponsePacket const& packet
     );
 
-    MCAPI_C void engineDownloadingResponseHelper(
-        ::NetworkIdentifier const&                source,
-        ::ResourcePackClientResponsePacket const& packet
-    );
-
     MCAPI void onReady_ClientGeneration(::Player& newPlayer, ::NetworkIdentifier const& source);
 
     MCAPI void persistPlayerPermissionsToDisk(
@@ -727,9 +819,7 @@ public:
         ::ServerPlayer&            player
     );
 
-    MCAPI_S void setAutomationClient(::Bedrock::NonOwnerPointer<::Automation::AutomationClient> client);
-
-    MCAPI_C void setEduSystems(::Bedrock::NonOwnerPointer<::IEDUSystems> eduSystems);
+    MCAPI void setAutomationClient(::Bedrock::NonOwnerPointer<::Automation::AutomationClient> client);
 
     MCAPI void setNewPlayerPermissions(::ServerPlayer& newPlayer);
 
@@ -788,14 +878,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void $onValidPacketReceived(
         ::NetworkIdentifier const& netId,
         ::MinecraftPacketIds       packetId,
         ::SubClientId              senderSubId,
         ::SubClientId
     );
-#endif
 
     MCAPI void $onWebsocketRequest(
         ::std::string const&    serverAddress,
@@ -811,7 +899,6 @@ public:
 
     MCFOLD void $onPlayerReady(::Player& player);
 
-#ifdef LL_PLAT_S
     MCAPI void $handlePacketViolation(
         ::std::shared_ptr<::IPacketSecurityController> const& packetSecurityController,
         ::std::error_code const&                              errorCode,
@@ -832,7 +919,6 @@ public:
         ::NetworkIdentifier const& netId,
         ::SubClientId              clientSubId
     );
-#endif
 
     MCAPI void $sendServerLegacyParticle(::ParticleType name, ::Vec3 const& pos, ::Vec3 const&, int data);
 
@@ -1029,8 +1115,6 @@ public:
     );
 
     MCAPI ::ServerPlayer* $_getServerPlayer(::NetworkIdentifier const& source, ::SubClientId subId);
-
-
     // NOLINTEND
 
 public:

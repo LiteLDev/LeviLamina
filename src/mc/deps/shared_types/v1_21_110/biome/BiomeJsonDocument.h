@@ -45,8 +45,10 @@ public:
             public:
                 // virtual functions
                 // NOLINTBEGIN
+                // vIndex: 3
                 virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
+                // vIndex: 1
                 virtual ~BiomeIdentifierReferenceConstraint() /*override*/ = default;
                 // NOLINTEND
 
@@ -162,9 +164,9 @@ public:
     // NOLINTBEGIN
     MCNAPI BiomeJsonDocument();
 
-    MCNAPI BiomeJsonDocument(::SharedTypes::v1_21_110::BiomeJsonDocument&&);
-
     MCNAPI BiomeJsonDocument(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
+
+    MCNAPI BiomeJsonDocument(::SharedTypes::v1_21_110::BiomeJsonDocument&&);
 
     MCNAPI ~BiomeJsonDocument();
     // NOLINTEND
@@ -186,9 +188,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_110::BiomeJsonDocument&&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_21_110::BiomeJsonDocument&&);
     // NOLINTEND
 
 public:

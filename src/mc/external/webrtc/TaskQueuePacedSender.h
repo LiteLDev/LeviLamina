@@ -73,36 +73,52 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TaskQueuePacedSender() /*override*/;
 
+    // vIndex: 1
     virtual void EnqueuePackets(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> packets) /*override*/;
 
+    // vIndex: 2
     virtual void RemovePacketsForSsrc(uint ssrc) /*override*/;
 
+    // vIndex: 1
     virtual void CreateProbeClusters(::std::vector<::webrtc::ProbeClusterConfig> probe_cluster_configs) /*override*/;
 
+    // vIndex: 2
     virtual void Pause() /*override*/;
 
+    // vIndex: 3
     virtual void Resume() /*override*/;
 
+    // vIndex: 4
     virtual void SetCongested(bool congested) /*override*/;
 
+    // vIndex: 5
     virtual void SetPacingRates(::webrtc::DataRate pacing_rate, ::webrtc::DataRate padding_rate) /*override*/;
 
+    // vIndex: 11
     virtual void SetAccountForAudioPackets(bool account_for_audio) /*override*/;
 
+    // vIndex: 12
     virtual void SetIncludeOverhead() /*override*/;
 
+    // vIndex: 13
     virtual void SetTransportOverhead(::webrtc::DataSize overhead_per_packet) /*override*/;
 
+    // vIndex: 6
     virtual ::webrtc::TimeDelta OldestPacketWaitTime() const /*override*/;
 
+    // vIndex: 7
     virtual ::webrtc::DataSize QueueSizeData() const /*override*/;
 
+    // vIndex: 8
     virtual ::std::optional<::webrtc::Timestamp> FirstSentPacketTime() const /*override*/;
 
+    // vIndex: 9
     virtual ::webrtc::TimeDelta ExpectedQueueTime() const /*override*/;
 
+    // vIndex: 10
     virtual void SetQueueTimeLimit(::webrtc::TimeDelta limit) /*override*/;
     // NOLINTEND
 
@@ -190,8 +206,6 @@ public:
     MCNAPI ::webrtc::TimeDelta $ExpectedQueueTime() const;
 
     MCNAPI void $SetQueueTimeLimit(::webrtc::TimeDelta limit);
-
-
     // NOLINTEND
 
 public:

@@ -21,18 +21,7 @@ public:
     // prevent constructor by default
     BlockSchematic& operator=(BlockSchematic const&);
     BlockSchematic(BlockSchematic const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C BlockSchematic();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-    // NOLINTEND
+    BlockSchematic();
 };
 
 } // namespace ClientBlockPipeline

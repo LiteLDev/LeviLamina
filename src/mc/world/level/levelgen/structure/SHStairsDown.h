@@ -18,35 +18,33 @@ class SHStairsDown : public ::StrongholdPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk630c43;
+    ::ll::TypedStorage<1, 1, bool> isSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHStairsDown& operator=(SHStairsDown const&);
-    SHStairsDown(SHStairsDown const&);
-    SHStairsDown();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::StructurePieceType getType() const /*override*/;
 
+    // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
+    // vIndex: 3
     virtual void addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~SHStairsDown() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
+    MCAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         int                                                 footX,
@@ -60,17 +58,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCFOLD ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $addChildren(
+    MCAPI void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     );
-
-
     // NOLINTEND
 
 public:

@@ -29,12 +29,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::unique_ptr<::gametest::IGameTestFunctionContext> createContext(::gametest::BaseGameTestHelper&) const
         /*override*/;
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
     run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext&) const /*override*/;
 
+    // vIndex: 0
     virtual ~NativeGameTestFunction() /*override*/ = default;
     // NOLINTEND
 

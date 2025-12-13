@@ -29,34 +29,49 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual int nextInt() /*override*/;
 
+    // vIndex: 1
     virtual int nextInt(int bound) /*override*/;
 
+    // vIndex: 3
     virtual int64 nextLong() /*override*/;
 
+    // vIndex: 4
     virtual bool nextBoolean() /*override*/;
 
+    // vIndex: 5
     virtual float nextFloat() /*override*/;
 
+    // vIndex: 6
     virtual double nextDouble() /*override*/;
 
+    // vIndex: 7
     virtual double nextGaussianDouble() /*override*/;
 
+    // vIndex: 9
     virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
 
+    // vIndex: 10
     virtual ::std::unique_ptr<::IPositionalRandomFactory> forkPositional() /*override*/;
 
+    // vIndex: 8
     virtual void consumeCount(uint rounds) /*override*/;
 
+    // vIndex: 2
     virtual void setSeed(int64 seed) /*override*/;
 
+    // vIndex: 1
     virtual void setSeed(::Seed128Bit seed) /*override*/;
 
+    // vIndex: 3
     virtual int64 seed64() const /*override*/;
 
+    // vIndex: 4
     virtual ::Seed128Bit seed128() const /*override*/;
 
+    // vIndex: 0
     virtual ~XoroshiroRandom() /*override*/;
     // NOLINTEND
 
@@ -102,8 +117,6 @@ public:
     MCNAPI int64 $seed64() const;
 
     MCNAPI ::Seed128Bit $seed128() const;
-
-
     // NOLINTEND
 
 public:

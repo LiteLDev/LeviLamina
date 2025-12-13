@@ -2,13 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ButtonData;
-struct ImageData;
-namespace Json { class Value; }
-// clang-format on
-
 struct MessageData {
 public:
     // member variables
@@ -33,54 +26,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C MessageData();
-
-    MCNAPI_C MessageData(::MessageData&&);
-
-    MCNAPI_C MessageData(::MessageData const&);
-
-    MCNAPI_C explicit MessageData(::Json::Value const& json);
-
-    MCNAPI_C void _getButtonArtFromJson(::Json::Value const& json);
-
-    MCNAPI_C void _getButtonDataFromJson(::Json::Value const& json);
-
-    MCNAPI_C void _getGamedropFromJson(::Json::Value const& json);
-
-    MCNAPI_C void _getImagesFromJson(::Json::Value const& json);
-
-    MCNAPI_C void _getItemDataFromJson(::Json::Value const& json);
-
-    MCNAPI_C void _getStyleFromJson(::Json::Value const& json);
-
-    MCNAPI_C ::ButtonData getButtonById(::std::string const& id) const;
-
-    MCNAPI_C ::ImageData getImageById(::std::string const& id) const;
-
-    MCNAPI_C ::MessageData& operator=(::MessageData&&);
-
-    MCNAPI_C ::MessageData& operator=(::MessageData const&);
-
-    MCNAPI_C ~MessageData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::MessageData&&);
-
-    MCNAPI_C void* $ctor(::MessageData const&);
-
-    MCNAPI_C void* $ctor(::Json::Value const& json);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+    // prevent constructor by default
+    MessageData& operator=(MessageData const&);
+    MessageData(MessageData const&);
+    MessageData();
 };

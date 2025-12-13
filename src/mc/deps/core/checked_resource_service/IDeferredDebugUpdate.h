@@ -8,8 +8,10 @@ class IDeferredDebugUpdate {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IDeferredDebugUpdate() = default;
 
+    // vIndex: 1
     virtual void apply() = 0;
     // NOLINTEND
 

@@ -31,6 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual ::Core::Result _openFile(
         ::std::unique_ptr<::Core::FileImpl>& uptFileOut,
         ::Core::PathView                     filename,
@@ -38,38 +39,52 @@ public:
         ::Core::FileBufferingMode            bufferingMode
     ) /*override*/;
 
+    // vIndex: 7
     virtual bool _fileExists(::Core::PathView filePath) /*override*/;
 
+    // vIndex: 8
     virtual ::Core::Result _deleteFile(::Core::PathView path) /*override*/;
 
+    // vIndex: 10
     virtual ::Core::Result _getFileSize(::Core::PathView filePath, uint64* pFileSizeOut) /*override*/;
 
+    // vIndex: 11
     virtual ::Core::Result _renameFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath) /*override*/;
 
+    // vIndex: 16
     virtual ::Core::Result _createOneDirectory(::Core::PathView directoryPath) /*override*/;
 
+    // vIndex: 20
     virtual ::Core::Result _deleteEmptyDirectory(::Core::PathView directoryPath) /*override*/;
 
+    // vIndex: 19
     virtual bool _directoryExists(::Core::PathView directoryPath) /*override*/;
 
+    // vIndex: 24
     virtual ::Core::Result
     _renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath) /*override*/;
 
+    // vIndex: 25
     virtual ::Core::Result _iterateOverDirectory(
         ::Core::PathView                                                             directoryPath,
         ::Core::DirectoryIterationFlags                                              flags,
         ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx
     ) /*override*/;
 
+    // vIndex: 31
     virtual bool _fileOrDirectoryExists(::Core::PathView entryPath) /*override*/;
 
+    // vIndex: 44
     virtual ::Core::Result _getLastModificationTime(::Core::PathView filePath, int64* pModificationTime) /*override*/;
 
+    // vIndex: 33
     virtual ::Core::Result _getEntryType(::Core::PathView entryPath, ::Core::FileType& fileTypeOut) /*override*/;
 
+    // vIndex: 45
     virtual ::Core::Result
     _copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath) /*override*/;
 
+    // vIndex: 0
     virtual ~FileSystem_windows() /*override*/ = default;
     // NOLINTEND
 
@@ -135,8 +150,6 @@ public:
     MCNAPI ::Core::Result $_getEntryType(::Core::PathView entryPath, ::Core::FileType& fileTypeOut);
 
     MCNAPI ::Core::Result $_copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath);
-
-
     // NOLINTEND
 
 public:

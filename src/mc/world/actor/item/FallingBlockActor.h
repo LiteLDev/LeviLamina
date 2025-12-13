@@ -53,14 +53,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 24
     virtual void normalTick() /*override*/;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 92
     virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
 
+    // vIndex: 21
     virtual void teleportTo(
         ::Vec3 const& pos,
         bool          shouldStopRiding,
@@ -69,16 +74,22 @@ public:
         bool          keepVelocity
     ) /*override*/;
 
+    // vIndex: 88
     virtual bool canChangeDimensionsUsingPortal() const /*override*/;
 
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 8
     virtual ~FallingBlockActor() /*override*/ = default;
     // NOLINTEND
 
@@ -133,8 +144,6 @@ public:
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-
     // NOLINTEND
 
 public:

@@ -22,27 +22,5 @@ public:
     // prevent constructor by default
     MouseDevice& operator=(MouseDevice const&);
     MouseDevice(MouseDevice const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C MouseDevice();
-
-    MCNAPI_C void
-    feed(char actionButtonId, schar buttonData, short x, short y, short dx, short dy, bool forceMotionlessPointer);
-
-    MCNAPI_C ~MouseDevice();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+    MouseDevice();
 };

@@ -14,8 +14,10 @@ class TripodCameraTakePictureSystem : public ::ITickingSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void tick(::EntityRegistry& registry) /*override*/;
+    // vIndex: 2
+    virtual void tick(::EntityRegistry&) /*override*/;
 
+    // vIndex: 0
     virtual ~TripodCameraTakePictureSystem() /*override*/ = default;
     // NOLINTEND
 

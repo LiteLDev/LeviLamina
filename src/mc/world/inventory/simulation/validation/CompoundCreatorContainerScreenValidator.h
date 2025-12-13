@@ -9,6 +9,7 @@ class CompoundCreatorContainerScreenValidator : public ::ContainerScreenValidato
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CompoundCreatorContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

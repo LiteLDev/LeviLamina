@@ -35,15 +35,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands) /*override*/;
 
+    // vIndex: 2
     virtual ::PackCommand::PackCommandHandle
     submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&) /*override*/;
 
+    // vIndex: 3
     virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&& commands) /*override*/;
 
+    // vIndex: 4
     virtual ::TaskGroup& getTaskGroup() /*override*/;
 
+    // vIndex: 0
     virtual ~PackCommandIntercept() /*override*/;
     // NOLINTEND
 
@@ -70,8 +75,6 @@ public:
     MCNAPI ::PackCommand::PackCommandHandle $submitRemove(::PackCommand::RemoveBatch&& commands);
 
     MCNAPI ::TaskGroup& $getTaskGroup();
-
-
     // NOLINTEND
 
 public:

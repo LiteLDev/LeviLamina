@@ -16,23 +16,19 @@ class YClampedGradientDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk556253;
-    ::ll::UntypedStorage<4, 4> mUnk5e7705;
-    ::ll::UntypedStorage<4, 4> mUnk8bcb72;
-    ::ll::UntypedStorage<4, 4> mUnk47f867;
+    ::ll::TypedStorage<4, 4, float const> mGradientStartY;
+    ::ll::TypedStorage<4, 4, float const> mGradientEndY;
+    ::ll::TypedStorage<4, 4, float const> mStartValue;
+    ::ll::TypedStorage<4, 4, float const> mEndValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    YClampedGradientDensityCalculator& operator=(YClampedGradientDensityCalculator const&);
-    YClampedGradientDensityCalculator(YClampedGradientDensityCalculator const&);
-    YClampedGradientDensityCalculator();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~YClampedGradientDensityCalculator() /*override*/ = default;
 
+    // vIndex: 1
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
     // NOLINTEND
 

@@ -33,28 +33,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DefinitionEvent(::DefinitionEvent&&);
+    MCAPI DefinitionEvent(::DefinitionEvent const&);
 
-    MCNAPI DefinitionEvent(::DefinitionEvent const&);
+    MCAPI DefinitionEvent(::DefinitionEvent&&);
 
-    MCNAPI void evaluateEvent(::RenderParams& params, ::std::vector<::DefinitionModifier>& modifications) const;
+    MCAPI void evaluateEvent(::RenderParams& params, ::std::vector<::DefinitionModifier>& modifications) const;
 
-    MCNAPI ::DefinitionEvent& operator=(::DefinitionEvent const&);
+    MCAPI ::DefinitionEvent& operator=(::DefinitionEvent const&);
 
-    MCNAPI ~DefinitionEvent();
+    MCAPI ~DefinitionEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::DefinitionEvent&&);
+    MCAPI void* $ctor(::DefinitionEvent const&);
 
-    MCNAPI void* $ctor(::DefinitionEvent const&);
+    MCAPI void* $ctor(::DefinitionEvent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

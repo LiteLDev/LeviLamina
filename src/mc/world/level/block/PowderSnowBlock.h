@@ -25,10 +25,13 @@ class PowderSnowBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
+    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
@@ -36,14 +39,19 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
+    // vIndex: 110
     virtual bool causesFreezeEffect() const /*override*/;
 
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
+    // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
+    // vIndex: 0
     virtual ~PowderSnowBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -77,13 +85,9 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-#ifdef LL_PLAT_S
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
-#endif
 
     MCFOLD bool $isLavaBlocking() const;
-
-
     // NOLINTEND
 
 public:

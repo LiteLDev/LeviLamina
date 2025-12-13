@@ -6,8 +6,8 @@ struct SettingsCommandPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke5b2ff;
-    ::ll::UntypedStorage<1, 1>  mUnk4453b9;
+    ::ll::TypedStorage<8, 32, ::std::string> mCommandString;
+    ::ll::TypedStorage<1, 1, bool>           mSuppressOutput;
     // NOLINTEND
 
 public:
@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SettingsCommandPacketPayload& operator=(::SettingsCommandPacketPayload&&);
+    MCFOLD ::SettingsCommandPacketPayload& operator=(::SettingsCommandPacketPayload&&);
 
-    MCNAPI ~SettingsCommandPacketPayload();
+    MCAPI ~SettingsCommandPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -30,8 +30,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
 
+    // vIndex: 0
     virtual ~MusicClientBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -53,8 +55,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::ClientBiomeComponentVersion $getType() const;
-
-
     // NOLINTEND
 
 public:

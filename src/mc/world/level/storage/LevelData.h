@@ -42,7 +42,6 @@ class LevelSeed64;
 class LevelSettings;
 struct EduSharedUriResource;
 struct LevelDataValue;
-struct PackIdVersion;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace RakNet { class BitStream; }
 // clang-format on
@@ -162,31 +161,17 @@ public:
 
     MCAPI void _determineMaxBaseGameVersion();
 
-    MCAPI_C void _resetDefaultAdvancedSettingsData(bool isTrial);
-
-    MCAPI_C void _resetDefaultGeneralSettingsData();
-
-    MCAPI_C void _resetDefaultScriptingCodingSettingsData();
-
     MCAPI void _setValue(::HashedString const& key, ::LevelDataValue&& value);
 
     MCAPI void _updateLimitedWorldOrigin(::BlockPos const& pos);
 
-    MCAPI_C bool achievementsWillBeDisabledOnLoad() const;
-
-    MCAPI_C void applyPolicyBasedSettings(bool hasBehaviourPack);
-
     MCAPI ::std::optional<::SemVersion> checkServerAuthOptOutVersion() const;
-
-    MCAPI_C void clearCloudSaveInfo();
 
     MCAPI bool cloudSaveForWorldIsEnabled() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> createTag() const;
 
     MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
-
-    MCAPI_C ::CloudSaveLevelInfo& getCloudSaveInfo();
 
     MCAPI ::CompoundTag const& getEduSharedUriResource() const;
 
@@ -198,33 +183,13 @@ public:
 
     MCAPI ::LevelSeed64 getSeed() const;
 
-    MCAPI_C ::BlockPos const& getSpawnPos() const;
-
     MCAPI void getTagData(::CompoundTag const& tag);
 
     MCAPI ::WorldVersion getWorldVersion() const;
 
-    MCAPI_C bool isAlwaysDay() const;
-
-    MCAPI_C bool isEditionCompatible() const;
-
-    MCAPI_C ::LevelData& operator=(::LevelData&&);
-
-    MCAPI_C ::Bedrock::PubSub::Subscription registerIsHardcoreListener(::std::function<void(bool)> callback) const;
-
     MCAPI void registerWithLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI_C void resetDefaultCheatSettingsData();
-
-    MCAPI_C void resetSettingsForRandomSeed();
-
-    MCAPI_C void resetToDefaultSettings();
-
-    MCAPI_C void setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
-
     MCAPI void setBiomeOverride(::std::string const& biomeName);
-
-    MCAPI_C void setCloudSaveInfo(::CloudSaveLevelInfo const& cloudSaveInfo);
 
     MCAPI void setDaylightCycle(::DaylightCycle daylightCycle);
 
@@ -250,11 +215,7 @@ public:
 
     MCAPI void setTagData(::CompoundTag& tag) const;
 
-    MCAPI_C void setWorldTemplateIdentity(::PackIdVersion const& packIdVersion);
-
     MCAPI void setWorldVersion(::WorldVersion version);
-
-    MCAPI_C bool shouldAchievementsBeDisabled(bool isTrialMode, bool hasBehaviourPack) const;
 
     MCAPI void v1_read(::RakNet::BitStream& bitStream, ::StorageVersion storageVersion);
 

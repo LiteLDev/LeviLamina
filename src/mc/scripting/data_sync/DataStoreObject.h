@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     MCNAPI DataStoreObject(::Bedrock::DDUI::DataStoreObject&&);
 
-    MCNAPI_S DataStoreObject(::Bedrock::DDUI::DataStoreObject const&);
+    MCNAPI DataStoreObject(::Bedrock::DDUI::DataStoreObject const&);
 
     MCNAPI ~DataStoreObject();
     // NOLINTEND
@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Bedrock::DDUI::DataStoreObject&&);
 
-    MCNAPI_S void* $ctor(::Bedrock::DDUI::DataStoreObject const&);
+    MCNAPI void* $ctor(::Bedrock::DDUI::DataStoreObject const&);
     // NOLINTEND
 
 public:

@@ -10,17 +10,17 @@ class HashedString;
 namespace CreakingStates {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::HashedString const& CRUMBLING();
+MCAPI ::HashedString const& CRUMBLING();
 
-MCNAPI ::HashedString const& HOSTILE_OBSERVED();
+MCAPI ::HashedString const& HOSTILE_OBSERVED();
 
-MCNAPI ::HashedString const& HOSTILE_UNOBSERVED();
+MCAPI ::HashedString const& HOSTILE_UNOBSERVED();
 
-MCNAPI ::HashedString const& NEUTRAL();
+MCAPI ::HashedString const& NEUTRAL();
 
-MCNAPI ::HashedString const& PROPERTY_NAME();
+MCAPI ::HashedString const& PROPERTY_NAME();
 
-MCNAPI ::HashedString const& TWITCHING();
+MCAPI ::HashedString const& TWITCHING();
 // NOLINTEND
 
 } // namespace CreakingStates

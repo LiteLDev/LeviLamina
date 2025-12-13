@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+
 struct RemoveActorPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk522a23;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RemoveActorPacketPayload& operator=(RemoveActorPacketPayload const&);
-    RemoveActorPacketPayload(RemoveActorPacketPayload const&);
-    RemoveActorPacketPayload();
 };

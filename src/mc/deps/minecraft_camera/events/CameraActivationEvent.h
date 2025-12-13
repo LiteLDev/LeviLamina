@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<4, 4, ::EasingType>           mEasingType;
     ::ll::TypedStorage<4, 4, float>                  mEasingTime;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~CameraActivationEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

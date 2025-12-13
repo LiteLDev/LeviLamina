@@ -15,15 +15,13 @@ class AnimationComponentGroup {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::AnimationComponentID, ::std::weak_ptr<::AnimationComponent>>&
+    MCAPI static ::std::unordered_map<::AnimationComponentID, ::std::weak_ptr<::AnimationComponent>>&
     _getAllAnimationComponents(::AnimationComponentGroupType groupType);
 
-    MCNAPI static ::std::shared_ptr<::AnimationComponent>
+    MCAPI static ::std::shared_ptr<::AnimationComponent>
     getAnimationComponent(::AnimationComponentGroupType groupType, ::AnimationComponentID ownerUUID);
 
-    MCNAPI_C static void onFrameRendered();
-
-    MCNAPI static void
+    MCAPI static void
     releaseAnimationComponent(::AnimationComponentGroupType groupType, ::AnimationComponentID ownerUUID);
     // NOLINTEND
 };

@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/IntRange.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeCanopy.h"
 
 // auto generated forward declare list
@@ -26,49 +28,39 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 184> mUnkcfe7ff;
-        ::ll::UntypedStorage<4, 4>   mUnk732e3f;
+        ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockDescriptor;
+        ::ll::TypedStorage<4, 4, float>               mWeight;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WeightedBlockReference& operator=(WeightedBlockReference const&);
-        WeightedBlockReference(WeightedBlockReference const&);
-        WeightedBlockReference();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~WeightedBlockReference();
+        MCAPI ~WeightedBlockReference();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnk616e41;
-    ::ll::UntypedStorage<4, 8>  mUnkcb02c6;
-    ::ll::UntypedStorage<4, 4>  mUnke19657;
-    ::ll::UntypedStorage<8, 24> mUnk654fad;
+    ::ll::TypedStorage<4, 8, ::IntRange>                                                       mCanopyHeight;
+    ::ll::TypedStorage<4, 8, ::IntRange>                                                       mCanopyRadius;
+    ::ll::TypedStorage<4, 4, int>                                                              mLeafPlacementAttempts;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RandomSpreadTreeCanopy::WeightedBlockReference>> mLeavesBlockDescriptors;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomSpreadTreeCanopy& operator=(RandomSpreadTreeCanopy const&);
-    RandomSpreadTreeCanopy(RandomSpreadTreeCanopy const&);
-    RandomSpreadTreeCanopy();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RandomSpreadTreeCanopy() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::std::optional<::BlockPos> placeCanopy(
         ::IBlockWorldGenAPI&             target,
         ::BlockPos const&                pos,
@@ -82,7 +74,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI&             target,
         ::BlockPos const&                pos,
         ::Random&                        random,
@@ -90,8 +82,6 @@ public:
         ::TreeHelper::TreeParams const&  treeParams,
         ::std::vector<::BlockPos> const& attachmentPositions
     ) const;
-
-
     // NOLINTEND
 
 public:

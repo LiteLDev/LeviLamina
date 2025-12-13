@@ -23,6 +23,22 @@ public:
     // clang-format on
 
     // SctpPacket inner types define
+    struct ChunkDescriptor {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnkfc7a17;
+        ::ll::UntypedStorage<1, 1>  mUnk5a7a37;
+        ::ll::UntypedStorage<8, 16> mUnk1d4891;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ChunkDescriptor& operator=(ChunkDescriptor const&);
+        ChunkDescriptor(ChunkDescriptor const&);
+        ChunkDescriptor();
+    };
+
     class Builder {
     public:
         // member variables
@@ -71,22 +87,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    };
-
-    struct ChunkDescriptor {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkfc7a17;
-        ::ll::UntypedStorage<1, 1>  mUnk5a7a37;
-        ::ll::UntypedStorage<8, 16> mUnk1d4891;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChunkDescriptor& operator=(ChunkDescriptor const&);
-        ChunkDescriptor(ChunkDescriptor const&);
-        ChunkDescriptor();
     };
 
 public:

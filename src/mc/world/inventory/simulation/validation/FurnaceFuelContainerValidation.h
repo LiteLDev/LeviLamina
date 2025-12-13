@@ -15,6 +15,7 @@ class FurnaceFuelContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const                       slot,
@@ -23,13 +24,17 @@ public:
         bool
     ) const /*override*/;
 
+    // vIndex: 4
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const& itemInSlot) const
         /*override*/;
 
+    // vIndex: 3
     virtual int getAvailableSetCount(int slot, ::ItemStackBase const& item) const /*override*/;
 
+    // vIndex: 8
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
+    // vIndex: 0
     virtual ~FurnaceFuelContainerValidation() /*override*/ = default;
     // NOLINTEND
 
@@ -49,8 +54,6 @@ public:
     MCNAPI int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
 
     MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
-
-
     // NOLINTEND
 
 public:

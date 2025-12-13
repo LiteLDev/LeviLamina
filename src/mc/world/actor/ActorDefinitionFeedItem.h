@@ -20,22 +20,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorDefinitionFeedItem(::ActorDefinitionFeedItem const&);
+    MCAPI ActorDefinitionFeedItem(::ActorDefinitionFeedItem const&);
 
-    MCNAPI ::ActorDefinitionFeedItem& operator=(::ActorDefinitionFeedItem const&);
+    MCFOLD ::ActorDefinitionFeedItem& operator=(::ActorDefinitionFeedItem const&);
 
-    MCNAPI ~ActorDefinitionFeedItem();
+    MCAPI ~ActorDefinitionFeedItem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorDefinitionFeedItem const&);
+    MCFOLD void* $ctor(::ActorDefinitionFeedItem const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

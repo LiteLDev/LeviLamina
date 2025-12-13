@@ -50,9 +50,9 @@ public:
 
     MCNAPI ::ScriptStat& addChild(::ScriptStat&& child);
 
-    MCNAPI ::ScriptStat& operator=(::ScriptStat&&);
-
     MCNAPI ::ScriptStat& operator=(::ScriptStat const&);
+
+    MCNAPI ::ScriptStat& operator=(::ScriptStat&&);
 
     MCNAPI ~ScriptStat();
     // NOLINTEND

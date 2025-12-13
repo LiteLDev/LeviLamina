@@ -32,11 +32,12 @@ namespace webrtc { struct RtpParameters; }
 namespace cricket {
 // inner types
 enum : uint {
+    // bitfield representation
     None      = 0,
-    Host      = 1,
-    Reflexive = 2,
-    Relay     = 4,
-    All       = 7,
+    Host      = 1u << 0,
+    Reflexive = 1u << 1,
+    Relay     = 1u << 2,
+    All       = Host | Reflexive | Relay,
 };
 
 enum : int {

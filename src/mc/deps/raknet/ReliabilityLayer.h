@@ -26,8 +26,8 @@ class ReliabilityLayer {
 public:
     // ReliabilityLayer inner types declare
     // clang-format off
-    struct MessageNumberNode;
     struct DatagramHistoryNode;
+    struct MessageNumberNode;
     struct UnreliableWithAckReceiptNode;
     // clang-format on
 

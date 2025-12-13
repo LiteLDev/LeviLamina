@@ -11,17 +11,17 @@ namespace SharedTypes::v1_21_110::BlockDefinition { struct BlockComponents; }
 namespace BlockDefinitionUpgradeImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void transformDisplayName(
+MCAPI void transformDisplayName(
     ::BlockComponentDescription const&                          blockComponentDescription,
     ::SharedTypes::v1_21_110::BlockDefinition::BlockComponents& blockComponents
 );
 
-MCNAPI void transformLightDampening(
+MCAPI void transformLightDampening(
     ::BlockComponentDescription const&                          blockComponentDescription,
     ::SharedTypes::v1_21_110::BlockDefinition::BlockComponents& blockComponents
 );
 
-MCNAPI void transformLightEmission(
+MCAPI void transformLightEmission(
     ::BlockComponentDescription const&                          blockComponentDescription,
     ::SharedTypes::v1_21_110::BlockDefinition::BlockComponents& blockComponents
 );

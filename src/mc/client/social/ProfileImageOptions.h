@@ -37,37 +37,6 @@ public:
     ProfileImageOptions& operator=(ProfileImageOptions const&);
     ProfileImageOptions(ProfileImageOptions const&);
     ProfileImageOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C uint64 hash() const;
-
-    MCNAPI_C ::Social::ProfileImageOptions& operator=(::Social::ProfileImageOptions&&);
-
-    MCNAPI_C ::std::string toString() const;
-
-    MCNAPI_C ~ProfileImageOptions();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::Social::ProfileImageOptions fromString(::std::string_view serializedContent);
-
-    MCNAPI_C static ::Social::ProfileImageOptions getMinecraftHeadshotByPlayfabId(::std::string const& playfabId);
-
-    MCNAPI_C static ::Social::ProfileImageOptions getXboxLiveFullClubsImageByUrl(::std::string const& url);
-
-    MCNAPI_C static ::Social::ProfileImageOptions
-    getXboxLiveSmallGamerpicByXuid(::std::string const& xuid, ::std::string const& url);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Social

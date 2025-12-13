@@ -16,18 +16,6 @@ public:
     Extractors& operator=(Extractors const&);
     Extractors(Extractors const&);
     Extractors();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~Extractors();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace MovementDataExtractionUtility

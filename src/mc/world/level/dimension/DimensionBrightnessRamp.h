@@ -12,10 +12,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DimensionBrightnessRamp() = default;
 
+    // vIndex: 1
     virtual void buildBrightnessRamp();
 
+    // vIndex: 2
     virtual float getBaseAmbientValue() const;
     // NOLINTEND
 
@@ -25,8 +28,6 @@ public:
     MCAPI void $buildBrightnessRamp();
 
     MCFOLD float $getBaseAmbientValue() const;
-
-
     // NOLINTEND
 
 public:

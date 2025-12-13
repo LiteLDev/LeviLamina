@@ -15,32 +15,24 @@ class UseActorNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbeecf9;
-    ::ll::UntypedStorage<1, 1> mUnk2a1fb1;
-    ::ll::UntypedStorage<1, 1> mUnk2bb931;
+    ::ll::TypedStorage<4, 4, int>  mDelayCounter;
+    ::ll::TypedStorage<1, 1, bool> mRightMouseDown;
+    ::ll::TypedStorage<1, 1, bool> mPreActionDone;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UseActorNode& operator=(UseActorNode const&);
-    UseActorNode(UseActorNode const&);
-    UseActorNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
+    // vIndex: 1
+    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
+    // vIndex: 0
     virtual ~UseActorNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
-#endif
-
 
     // NOLINTEND
 

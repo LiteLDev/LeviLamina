@@ -18,48 +18,45 @@ class SwamplandHut : public ::ScatteredFeaturePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkbead7a;
+    ::ll::TypedStorage<1, 1, bool> mSpawnedWitch;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwamplandHut& operator=(SwamplandHut const&);
-    SwamplandHut(SwamplandHut const&);
-    SwamplandHut();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::StructurePieceType getType() const /*override*/;
 
+    // vIndex: 12
     virtual void addHardcodedSpawnAreas(::LevelChunk& chunk) const /*override*/;
 
+    // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
+    // vIndex: 5
     virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
+    // vIndex: 0
     virtual ~SwamplandHut() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     placeCauldron(::BlockSource& region, ::Random& random, int x, int y, int z, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
-
-
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:

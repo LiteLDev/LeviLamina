@@ -20,21 +20,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 10
     virtual bool _setWantedPosition() /*override*/;
 
+    // vIndex: 0
     virtual ~RandomSwimmingGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _getWaterHeights(
+    MCAPI void _getWaterHeights(
         ::BlockPos testPos,
         short&     groundLevel,
         float&     waterLevel,
@@ -46,15 +51,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI bool $_setWantedPosition();
-
-
+    MCAPI bool $_setWantedPosition();
     // NOLINTEND
 
 public:

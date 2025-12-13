@@ -8,8 +8,10 @@ class ObserverInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void OnChanged() = 0;
 
+    // vIndex: 1
     virtual ~ObserverInterface();
     // NOLINTEND
 

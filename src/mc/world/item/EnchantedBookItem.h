@@ -20,12 +20,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
+    // vIndex: 56
     virtual int getEnchantValue() const /*override*/;
 
+    // vIndex: 39
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
 
+    // vIndex: 0
     virtual ~EnchantedBookItem() /*override*/ = default;
     // NOLINTEND
 
@@ -37,8 +41,6 @@ public:
     MCFOLD int $getEnchantValue() const;
 
     MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
-
-
     // NOLINTEND
 
 public:

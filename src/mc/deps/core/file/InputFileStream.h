@@ -16,6 +16,7 @@ class InputFileStream : public ::Core::FileStream, public virtual ::std::ios {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~InputFileStream() /*override*/ = default;
     // NOLINTEND
 

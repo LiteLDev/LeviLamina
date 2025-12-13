@@ -23,26 +23,4 @@ public:
     PlayerJoinWorldTelemetryInfo& operator=(PlayerJoinWorldTelemetryInfo const&);
     PlayerJoinWorldTelemetryInfo(PlayerJoinWorldTelemetryInfo const&);
     PlayerJoinWorldTelemetryInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C PlayerJoinWorldTelemetryInfo(::PlayerJoinWorldTelemetryInfo&&);
-
-    MCNAPI_C ::PlayerJoinWorldTelemetryInfo& operator=(::PlayerJoinWorldTelemetryInfo&&);
-
-    MCNAPI_C ~PlayerJoinWorldTelemetryInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::PlayerJoinWorldTelemetryInfo&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

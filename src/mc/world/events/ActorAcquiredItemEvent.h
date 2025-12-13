@@ -31,20 +31,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorAcquiredItemEvent(::ActorAcquiredItemEvent const&);
+    MCAPI ActorAcquiredItemEvent(::ActorAcquiredItemEvent const&);
 
-    MCNAPI ~ActorAcquiredItemEvent();
+    MCAPI ~ActorAcquiredItemEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorAcquiredItemEvent const&);
+    MCAPI void* $ctor(::ActorAcquiredItemEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

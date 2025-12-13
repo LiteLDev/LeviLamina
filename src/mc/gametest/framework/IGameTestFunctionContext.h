@@ -8,6 +8,7 @@ class IGameTestFunctionContext {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IGameTestFunctionContext() = default;
     // NOLINTEND
 };

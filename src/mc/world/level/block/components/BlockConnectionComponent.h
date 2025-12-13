@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/NeighborBlockDirections.h"
+
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockPos;
 class BlockSource;
-class NeighborBlockDirections;
+namespace BlockTrait { class IConnectionUpdateCallback; }
 // clang-format on
 
 class BlockConnectionComponent {
@@ -23,31 +26,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk34a507;
-        ::ll::UntypedStorage<4, 4> mUnk938fbc;
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mBlock;
+        ::ll::TypedStorage<4, 4, int>                             mUpdateFlags;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockConnectionResult& operator=(BlockConnectionResult const&);
-        BlockConnectionResult(BlockConnectionResult const&);
-        BlockConnectionResult();
     };
 
     struct ConnectionData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2> mUnkc22181;
-        ::ll::UntypedStorage<8, 8> mUnk41e115;
-        ::ll::UntypedStorage<4, 4> mUnkc367ac;
+        ::ll::TypedStorage<2, 2, ::NeighborBlockDirections>                                  mDirections;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTrait::IConnectionUpdateCallback>> mUpdateCallback;
+        ::ll::TypedStorage<4, 4, int>                                                        mUpdateFlags;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ConnectionData& operator=(ConnectionData const&);
-        ConnectionData(ConnectionData const&);
-        ConnectionData();
     };
 
 public:
@@ -59,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Block const& handleConnectionUpdate(
+    MCAPI ::Block const& handleConnectionUpdate(
         ::BlockSource&            region,
         ::Block const&            block,
         ::BlockPos const&         pos,

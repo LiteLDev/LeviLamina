@@ -16,22 +16,23 @@ struct FrozenNoiseBasedBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool
     resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&) /*override*/;
 
+    // vIndex: 2
     virtual void applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const&) const /*override*/;
 
+    // vIndex: 0
     virtual ~FrozenNoiseBasedBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&);
+    MCFOLD bool $resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&);
 
-    MCNAPI void $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const&) const;
-
-
+    MCAPI void $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const&) const;
     // NOLINTEND
 
 public:

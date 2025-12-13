@@ -11,12 +11,16 @@ struct IHitResultContainer {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IHitResultContainer() = default;
 
+    // vIndex: 1
     virtual void addHitResult(::HitResult, ::HitResult) = 0;
 
+    // vIndex: 2
     virtual void clear() = 0;
 
+    // vIndex: 3
     virtual ::gsl::span<::std::pair<::HitResult, ::HitResult> const> getHits() const = 0;
     // NOLINTEND
 

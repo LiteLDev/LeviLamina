@@ -29,6 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ParticleCurveBezierChain() /*override*/;
     // NOLINTEND
 
@@ -38,10 +39,10 @@ public:
     MCNAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
-    operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
-
-    MCNAPI_S ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
     operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
+
+    MCNAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
+    operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
     // NOLINTEND
 
 public:

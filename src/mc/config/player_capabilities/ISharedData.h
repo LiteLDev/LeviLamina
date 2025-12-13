@@ -16,10 +16,13 @@ struct ISharedData {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ISharedData() = default;
 
+    // vIndex: 1
     virtual ::std::optional<bool> isGameRuleEnabled(::GameRuleId) const = 0;
 
+    // vIndex: 2
     virtual ::ChatRestrictionLevel getChatRestrictionLevel() const = 0;
     // NOLINTEND
 

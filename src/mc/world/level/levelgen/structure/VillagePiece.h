@@ -24,6 +24,7 @@ class VillagePiece : public ::PoolElementStructurePiece {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 13
     virtual int generateHeightAtPosition(
         ::BlockPos const&                                                          pos,
         ::Dimension&                                                               dim,
@@ -31,22 +32,27 @@ public:
         ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
     ) const /*override*/;
 
+    // vIndex: 14
     virtual ::Block const*
     getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
 
+    // vIndex: 15
     virtual ::Block const& getBeardStabilizeBlock(::Block const& foundationBlock) const /*override*/;
 
+    // vIndex: 16
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const /*override*/;
 
+    // vIndex: 17
     virtual bool _needsPostProcessing(::BlockSource& region) /*override*/;
 
+    // vIndex: 0
     virtual ~VillagePiece() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void addPieces(
+    MCAPI static void addPieces(
         ::BlockPos                                          position,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -59,23 +65,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $generateHeightAtPosition(
+    MCAPI int $generateHeightAtPosition(
         ::BlockPos const&                                                          pos,
         ::Dimension&                                                               dim,
         ::BlockVolume&                                                             box,
         ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
     ) const;
 
-    MCNAPI ::Block const*
+    MCAPI ::Block const*
     $getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCNAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
+    MCAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
 
-    MCNAPI ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
+    MCFOLD ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
 
-    MCNAPI bool $_needsPostProcessing(::BlockSource& region);
-
-
+    MCAPI bool $_needsPostProcessing(::BlockSource& region);
     // NOLINTEND
 
 public:

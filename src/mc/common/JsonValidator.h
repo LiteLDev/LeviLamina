@@ -34,18 +34,18 @@ public:
         // NOLINTBEGIN
         MCNAPI Property();
 
-        MCNAPI Property(::JsonValidator::Property&&);
-
         MCNAPI Property(::JsonValidator::Property const&);
+
+        MCNAPI Property(::JsonValidator::Property&&);
 
         MCNAPI ::JsonValidator::Property& addChildProperty(::JsonValidator::Property const& prop);
 
         MCNAPI ::JsonValidator::Property&
         addConditionalProperty(::Json::Value const& value, ::JsonValidator::Property const& prop);
 
-        MCNAPI ::JsonValidator::Property& operator=(::JsonValidator::Property&&);
-
         MCNAPI ::JsonValidator::Property& operator=(::JsonValidator::Property const&);
+
+        MCNAPI ::JsonValidator::Property& operator=(::JsonValidator::Property&&);
 
         MCNAPI ::JsonValidator::Property& operator[](::std::string const& propName);
 
@@ -57,9 +57,9 @@ public:
         // NOLINTBEGIN
         MCNAPI void* $ctor();
 
-        MCNAPI void* $ctor(::JsonValidator::Property&&);
-
         MCNAPI void* $ctor(::JsonValidator::Property const&);
+
+        MCNAPI void* $ctor(::JsonValidator::Property&&);
         // NOLINTEND
 
     public:

@@ -23,20 +23,11 @@ class ItemDescriptor {
 public:
     // ItemDescriptor inner types declare
     // clang-format off
-    struct ItemEntry;
     struct BaseDescriptor;
+    struct ItemEntry;
     // clang-format on
 
     // ItemDescriptor inner types define
-    enum class InternalType : uchar {
-        Invalid      = 0,
-        Default      = 1,
-        Molang       = 2,
-        ItemTag      = 3,
-        Deferred     = 4,
-        ComplexAlias = 5,
-    };
-
     struct ItemEntry {
     public:
         // member variables
@@ -52,42 +43,68 @@ public:
         // NOLINTEND
     };
 
+    enum class InternalType : uchar {
+        Invalid      = 0,
+        Default      = 1,
+        Molang       = 2,
+        ItemTag      = 3,
+        Deferred     = 4,
+        ComplexAlias = 5,
+    };
+
     struct BaseDescriptor {
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> clone() const = 0;
 
+        // vIndex: 1
         virtual bool sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
+        // vIndex: 2
         virtual bool sameItem(::ItemDescriptor::ItemEntry const&, bool) const = 0;
 
+        // vIndex: 3
         virtual ::std::string getFullName() const;
 
+        // vIndex: 4
         virtual ::std::string toString() const;
 
+        // vIndex: 5
         virtual ::ItemDescriptor::ItemEntry getItem() const;
 
+        // vIndex: 6
         virtual bool forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
+        // vIndex: 7
         virtual ::std::map<::std::string, ::std::string> toMap() const = 0;
 
+        // vIndex: 8
         virtual ::std::optional<::CompoundTag> save() const = 0;
 
+        // vIndex: 10
         virtual void serialize(::Json::Value& val) const;
 
+        // vIndex: 9
         virtual void serialize(::BinaryStream&) const = 0;
 
+        // vIndex: 11
         virtual ::ItemDescriptor::InternalType getType() const = 0;
 
+        // vIndex: 12
         virtual bool isValid() const;
 
+        // vIndex: 13
         virtual uint64 getHash() const = 0;
 
+        // vIndex: 14
         virtual bool shouldResolve() const;
 
+        // vIndex: 15
         virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> resolve() const;
 
+        // vIndex: 16
         virtual ~BaseDescriptor();
         // NOLINTEND
 
@@ -117,8 +134,6 @@ public:
         MCFOLD bool $shouldResolve() const;
 
         MCFOLD ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $resolve() const;
-
-
         // NOLINTEND
 
     public:
@@ -142,10 +157,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ItemDescriptor();
 
+    // vIndex: 2
     virtual void serialize(::Json::Value& val) const;
 
+    // vIndex: 1
     virtual void serialize(::BinaryStream& stream) const;
     // NOLINTEND
 
@@ -192,9 +210,9 @@ public:
 
     MCAPI bool isValid(bool shouldResolve) const;
 
-    MCAPI void operator=(::ItemDescriptor&& rhs);
-
     MCAPI void operator=(::ItemDescriptor const& rhs);
+
+    MCAPI void operator=(::ItemDescriptor&& rhs);
 
     MCAPI bool sameItem(::ItemDescriptor const& otherItemDescriptor, bool compareAux) const;
 
@@ -239,8 +257,6 @@ public:
     MCAPI void $serialize(::Json::Value& val) const;
 
     MCAPI void $serialize(::BinaryStream& stream) const;
-
-
     // NOLINTEND
 
 public:

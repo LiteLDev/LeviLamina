@@ -31,10 +31,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual int Send(void const* data, uint64 size, ::rtc::PacketOptions const& options) /*override*/;
 
+    // vIndex: 7
     virtual int GetError() /*override*/;
 
+    // vIndex: 0
     virtual ~ProxyConnection() /*override*/ = default;
     // NOLINTEND
 
@@ -61,8 +64,6 @@ public:
     MCNAPI int $Send(void const* data, uint64 size, ::rtc::PacketOptions const& options);
 
     MCNAPI int $GetError();
-
-
     // NOLINTEND
 
 public:

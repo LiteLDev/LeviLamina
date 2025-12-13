@@ -23,6 +23,7 @@ class AgentAbilitiesSyncSystem : public ::ITickingSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AgentAbilitiesSyncSystem() /*override*/ = default;
     // NOLINTEND
 

@@ -14,8 +14,10 @@ class Trade2Ingredient1ContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
+    // vIndex: 0
     virtual ~Trade2Ingredient1ContainerValidation() /*override*/ = default;
     // NOLINTEND
 
@@ -23,8 +25,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
-
-
     // NOLINTEND
 
 public:

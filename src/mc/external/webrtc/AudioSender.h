@@ -13,8 +13,10 @@ class AudioSender {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void SendAudioData(::std::unique_ptr<::webrtc::AudioFrame>) = 0;
 
+    // vIndex: 1
     virtual ~AudioSender() = default;
     // NOLINTEND
 

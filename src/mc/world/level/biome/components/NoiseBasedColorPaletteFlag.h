@@ -9,6 +9,7 @@ struct NoiseBasedColorPaletteFlag : public ::BiomeComponentBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NoiseBasedColorPaletteFlag() /*override*/ = default;
     // NOLINTEND
 

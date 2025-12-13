@@ -16,19 +16,13 @@ struct ScriptPlayerGameModeChangeBeforeEvent : public ::ScriptModuleMinecraft::S
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk78c7d3;
+    ::ll::TypedStorage<1, 1, bool> mCancel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptPlayerGameModeChangeBeforeEvent& operator=(ScriptPlayerGameModeChangeBeforeEvent const&);
-    ScriptPlayerGameModeChangeBeforeEvent(ScriptPlayerGameModeChangeBeforeEvent const&);
-    ScriptPlayerGameModeChangeBeforeEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

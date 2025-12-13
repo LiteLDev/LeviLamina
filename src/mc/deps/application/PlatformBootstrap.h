@@ -14,11 +14,6 @@ public:
     // clang-format on
 
     // PlatformBootstrap inner types define
-    enum class CreateDirectoryResultCode : int {
-        Success = 0,
-        Failure = 1,
-    };
-
     enum class LoadResultCode : int {
         Success        = 0,
         FailedToOpen   = 1,
@@ -33,18 +28,9 @@ public:
         IncorrectBytesWrittenCount = 3,
     };
 
-    struct CreateDirectoryResult {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk1dc224;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CreateDirectoryResult& operator=(CreateDirectoryResult const&);
-        CreateDirectoryResult(CreateDirectoryResult const&);
-        CreateDirectoryResult();
+    enum class CreateDirectoryResultCode : int {
+        Success = 0,
+        Failure = 1,
     };
 
     struct LoadResult {
@@ -77,27 +63,50 @@ public:
         SaveResult();
     };
 
+    struct CreateDirectoryResult {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk1dc224;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CreateDirectoryResult& operator=(CreateDirectoryResult const&);
+        CreateDirectoryResult(CreateDirectoryResult const&);
+        CreateDirectoryResult();
+    };
+
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PlatformBootstrap() = default;
 
+    // vIndex: 1
     virtual void initialize() = 0;
 
+    // vIndex: 2
     virtual ::std::string_view getAssetRoot() = 0;
 
+    // vIndex: 3
     virtual ::std::string_view getSaveDataRoot() = 0;
 
+    // vIndex: 4
     virtual ::Bedrock::PlatformBootstrap::LoadResult rawLoadAssetFile(char*, uint64, char const*, char*, uint64) = 0;
 
+    // vIndex: 5
     virtual ::Bedrock::PlatformBootstrap::LoadResult rawLoadDataFile(char*, uint64, char const*, char*, uint64) = 0;
 
+    // vIndex: 6
     virtual ::Bedrock::PlatformBootstrap::SaveResult
     rawSaveDataFile(char const*, uint64, char const*, bool, char*, uint64) = 0;
 
+    // vIndex: 7
     virtual ::Bedrock::PlatformBootstrap::LoadResult
     rawLoadFromCustomRoot(char*, uint64, char const*, char*, uint64) = 0;
 
+    // vIndex: 8
     virtual ::Bedrock::PlatformBootstrap::CreateDirectoryResult rawCreateDirectory(char const*, char*, uint64) = 0;
     // NOLINTEND
 
@@ -109,15 +118,6 @@ public:
 
     MCNAPI ::Bedrock::PlatformBootstrap::LoadResult _rawLoadFile_cstdio(
         char*              buffer,
-        uint64             bufferSize,
-        ::std::string_view root,
-        char const*        path,
-        char*              errorBuffer,
-        uint64             errorBufferSize
-    );
-
-    MCNAPI_C ::Bedrock::PlatformBootstrap::SaveResult _rawSaveFile_cstdio(
-        char const*        buffer,
         uint64             bufferSize,
         ::std::string_view root,
         char const*        path,

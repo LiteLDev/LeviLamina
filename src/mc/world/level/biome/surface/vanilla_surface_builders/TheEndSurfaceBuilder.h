@@ -16,29 +16,32 @@ class TheEndSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initBuilder(uint) /*override*/;
 
+    // vIndex: 2
     virtual void initBiomeSurface(::Biome&) const /*override*/;
 
+    // vIndex: 3
     virtual bool isBestBuilder(::Biome const& biome) const /*override*/;
 
+    // vIndex: 4
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
+    // vIndex: 0
     virtual ~TheEndSurfaceBuilder() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initBuilder(uint);
+    MCFOLD void $initBuilder(uint);
 
-    MCNAPI void $initBiomeSurface(::Biome&) const;
+    MCFOLD void $initBiomeSurface(::Biome&) const;
 
-    MCNAPI bool $isBestBuilder(::Biome const& biome) const;
+    MCAPI bool $isBestBuilder(::Biome const& biome) const;
 
-    MCNAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
-
-
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
     // NOLINTEND
 
 public:

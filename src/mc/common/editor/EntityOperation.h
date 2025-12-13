@@ -40,12 +40,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EntityOperation() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::std::string_view getName() /*override*/;
 
+    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& services) /*override*/;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& services) /*override*/;
     // NOLINTEND
 
@@ -80,8 +84,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $_undo(::Editor::ServiceProviderCollection& services);
 
     MCNAPI ::Scripting::Result_deprecated<void> $_redo(::Editor::ServiceProviderCollection& services);
-
-
     // NOLINTEND
 
 public:

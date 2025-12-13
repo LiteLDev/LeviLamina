@@ -54,10 +54,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~NonPacedPacketSender() /*override*/;
 
+        // vIndex: 1
         virtual void EnqueuePackets(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> packets) /*override*/;
 
+        // vIndex: 2
         virtual void RemovePacketsForSsrc(uint ssrc) /*override*/;
         // NOLINTEND
 
@@ -95,8 +98,6 @@ public:
         MCNAPI void $EnqueuePackets(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> packets);
 
         MCNAPI void $RemovePacketsForSsrc(uint ssrc);
-
-
         // NOLINTEND
 
     public:

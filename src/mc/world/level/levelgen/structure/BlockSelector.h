@@ -12,15 +12,17 @@ class BlockSelector {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BlockSelector();
 
+    // vIndex: 1
     virtual ::Block const& next(::Random&, int, int, int, bool) const = 0;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

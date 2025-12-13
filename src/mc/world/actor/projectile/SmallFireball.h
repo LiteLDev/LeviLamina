@@ -14,8 +14,10 @@ class SmallFireball : public ::Fireball {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
 
+    // vIndex: 8
     virtual ~SmallFireball() /*override*/ = default;
     // NOLINTEND
 
@@ -23,8 +25,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
-
-
     // NOLINTEND
 
 public:

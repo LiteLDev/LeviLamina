@@ -2,27 +2,34 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/MultidimensionalArray.h"
+#include "mc/world/level/levelgen/v1/NoiseCellInterpolator.h"
+
 // auto generated forward declare list
 // clang-format off
-class NoiseCellInterpolator;
 class NoodleCavifierNoises;
 class Vec3;
 // clang-format on
 
 class NoodleCavifier {
 public:
+    // NoodleCavifier inner types define
+    using InterpolatorArray = ::std::array<::NoiseCellInterpolator*, 4>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>    mUnk68118f;
-    ::ll::UntypedStorage<2, 2>    mUnka98d85;
-    ::ll::UntypedStorage<8, 88>   mUnkd8ce48;
-    ::ll::UntypedStorage<8, 88>   mUnk44f08f;
-    ::ll::UntypedStorage<8, 88>   mUnk7d652b;
-    ::ll::UntypedStorage<8, 88>   mUnk8526bd;
-    ::ll::UntypedStorage<4, 4100> mUnk6e1419;
-    ::ll::UntypedStorage<4, 4100> mUnk9eda1f;
-    ::ll::UntypedStorage<4, 4100> mUnka76d48;
-    ::ll::UntypedStorage<4, 4100> mUnk1997c2;
+    ::ll::TypedStorage<8, 8, ::NoodleCavifierNoises const&>                     mNoises;
+    ::ll::TypedStorage<2, 2, short const>                                       mNoodlesMinHeight;
+    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator>                          mToggleInterpolator;
+    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator>                          mThicknessInterpolator;
+    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator>                          mRidgeAInterpolator;
+    ::ll::TypedStorage<8, 88, ::NoiseCellInterpolator>                          mRidgeBInterpolator;
+    ::ll::TypedStorage<4, 4100, ::Util::MultidimensionalArray<float, 5, 5, 41>> mToggleNoiseBuffer;
+    ::ll::TypedStorage<4, 4100, ::Util::MultidimensionalArray<float, 5, 5, 41>> mThicknessNoiseBuffer;
+    ::ll::TypedStorage<4, 4100, ::Util::MultidimensionalArray<float, 5, 5, 41>> mRidgeANoiseBuffer;
+    ::ll::TypedStorage<4, 4100, ::Util::MultidimensionalArray<float, 5, 5, 41>> mRidgeBNoiseBuffer;
     // NOLINTEND
 
 public:
@@ -34,16 +41,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NoodleCavifier(::NoodleCavifierNoises const& noises, short minWorldHeight);
+    MCAPI NoodleCavifier(::NoodleCavifierNoises const& noises, short minWorldHeight);
 
-    MCNAPI void fillNoiseAtPos(::Vec3 const& worldPos, int bufferIndex, float noiseValue);
+    MCAPI void fillNoiseAtPos(::Vec3 const& worldPos, int bufferIndex, float noiseValue);
 
-    MCNAPI ::std::array<::NoiseCellInterpolator*, 4> getInterpolators(int blocksPerCellXZ, int blocksPerCellY);
+    MCAPI ::std::array<::NoiseCellInterpolator*, 4> getInterpolators(int blocksPerCellXZ, int blocksPerCellY);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::NoodleCavifierNoises const& noises, short minWorldHeight);
+    MCAPI void* $ctor(::NoodleCavifierNoises const& noises, short minWorldHeight);
     // NOLINTEND
 };

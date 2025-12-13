@@ -23,6 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EditorServerModuleFactory() /*override*/ = default;
     // NOLINTEND
 

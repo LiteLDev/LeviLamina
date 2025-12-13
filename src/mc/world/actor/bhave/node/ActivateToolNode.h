@@ -5,46 +5,43 @@
 // auto generated inclusion list
 #include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Block;
 // clang-format on
 
 class ActivateToolNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk7cb3c7;
-    ::ll::UntypedStorage<8, 8>  mUnkfdd462;
-    ::ll::UntypedStorage<1, 1>  mUnk191185;
-    ::ll::UntypedStorage<4, 4>  mUnk3d9e37;
-    ::ll::UntypedStorage<4, 4>  mUnk318957;
-    ::ll::UntypedStorage<1, 1>  mUnk3b0ef6;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mBlockPos;
+    ::ll::TypedStorage<8, 8, ::Block const*> mStartingBlock;
+    ::ll::TypedStorage<1, 1, bool>           mRightMouseDown;
+    ::ll::TypedStorage<4, 4, int>            mDelayTicks;
+    ::ll::TypedStorage<4, 4, int>            mDelayCounter;
+    ::ll::TypedStorage<1, 1, bool>           mPreActionDone;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActivateToolNode& operator=(ActivateToolNode const&);
-    ActivateToolNode(ActivateToolNode const&);
-    ActivateToolNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
+    // vIndex: 2
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
+    // vIndex: 0
     virtual ~ActivateToolNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFromDefinition(::Actor& owner);
-
-
+    MCFOLD void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
 public:

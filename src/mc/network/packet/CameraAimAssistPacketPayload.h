@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+
 struct CameraAimAssistPacketPayload {
 public:
     // CameraAimAssistPacketPayload inner types define
@@ -20,12 +23,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke19d04;
-    ::ll::UntypedStorage<4, 8>  mUnk6e5ec0;
-    ::ll::UntypedStorage<4, 4>  mUnk51c43c;
-    ::ll::UntypedStorage<1, 1>  mUnk737299;
-    ::ll::UntypedStorage<1, 1>  mUnk27de9d;
-    ::ll::UntypedStorage<1, 1>  mUnk8dc1c7;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mPresetId;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                     mViewAngle;
+    ::ll::TypedStorage<4, 4, float>                                      mDistance;
+    ::ll::TypedStorage<1, 1, ::CameraAimAssistPacketPayload::TargetMode> mTargetMode;
+    ::ll::TypedStorage<1, 1, ::CameraAimAssistPacketPayload::Action>     mAction;
+    ::ll::TypedStorage<1, 1, bool>                                       mShowDebugRender;
     // NOLINTEND
 
 public:
@@ -37,14 +40,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CameraAimAssistPacketPayload& operator=(::CameraAimAssistPacketPayload&&);
+    MCAPI ::CameraAimAssistPacketPayload& operator=(::CameraAimAssistPacketPayload&&);
 
-    MCNAPI ~CameraAimAssistPacketPayload();
+    MCAPI ~CameraAimAssistPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -44,18 +44,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual ~FishingHook() /*override*/ = default;
 
+    // vIndex: 11
     virtual void remove() /*override*/;
 
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
+    // vIndex: 124
     virtual bool shouldDropDeathLoot() const /*override*/;
 
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
     // NOLINTEND
 
@@ -98,12 +105,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI_C static float const& BOBBER_SIZE();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
@@ -127,8 +128,6 @@ public:
     MCFOLD bool $shouldDropDeathLoot() const;
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
-
-
     // NOLINTEND
 
 public:

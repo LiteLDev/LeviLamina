@@ -9,6 +9,7 @@ class GlobalTextureGroupStateSystem : public ::ISystem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~GlobalTextureGroupStateSystem() /*override*/ = default;
     // NOLINTEND
 };

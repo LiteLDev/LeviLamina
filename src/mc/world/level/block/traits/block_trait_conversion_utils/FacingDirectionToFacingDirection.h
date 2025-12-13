@@ -10,7 +10,7 @@ namespace BlockTraitConversionUtils { struct ConvertedSet; }
 namespace BlockTraitConversionUtils::FacingDirectionToFacingDirection {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::BlockTraitConversionUtils::ConvertedSet& R20U2();
+MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U2();
 // NOLINTEND
 
 } // namespace BlockTraitConversionUtils::FacingDirectionToFacingDirection

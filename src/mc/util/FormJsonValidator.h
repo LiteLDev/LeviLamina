@@ -24,13 +24,6 @@ public:
 
     MCNAPI static ::JsonValidator::Property getDropdownProperty(bool requiresDefault);
 
-    MCNAPI_C static ::JsonValidator::Property getElementItemProperty(
-        ::JsonValidator::Property const& buttonType,
-        ::JsonValidator::Property const& headerType,
-        ::JsonValidator::Property const& labelType,
-        ::JsonValidator::Property const& dividerType
-    );
-
     MCNAPI static ::JsonValidator::Property getSliderProperty(bool requiresDefault);
 
     MCNAPI static ::JsonValidator::Property getStepSliderProperty(bool requiresDefault);
@@ -40,7 +33,5 @@ public:
     MCNAPI static ::JsonValidator::Property getTextInputProperty(bool requiresDefault);
 
     MCNAPI static ::JsonValidator::Property getToggleProperty(bool requiresDefault);
-
-    MCNAPI_C static ::JsonValidator::Property getValidator();
     // NOLINTEND
 };

@@ -23,6 +23,7 @@ class ScriptBlockMapColorComponent : public ::ScriptModuleMinecraft::BaseScriptB
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptBlockMapColorComponent() /*override*/ = default;
     // NOLINTEND
 

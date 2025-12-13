@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/puv/LoadResult.h"
+#include "mc/deps/puv/SlicedLoader.h"
 #include "mc/world/level/GeneratorType.h"
 
 // auto generated forward declare list

@@ -37,10 +37,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void SetRtcpMuxEnabled(bool enable) /*override*/;
 
+    // vIndex: 17
     virtual void OnWritableState(::rtc::PacketTransportInternal* packet_transport) /*override*/;
 
+    // vIndex: 0
     virtual ~DtlsSrtpTransport() /*override*/ = default;
     // NOLINTEND
 
@@ -105,8 +108,6 @@ public:
     MCNAPI void $SetRtcpMuxEnabled(bool enable);
 
     MCNAPI void $OnWritableState(::rtc::PacketTransportInternal* packet_transport);
-
-
     // NOLINTEND
 
 public:

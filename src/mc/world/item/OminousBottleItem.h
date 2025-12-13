@@ -35,10 +35,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 124
     virtual ::Potion::PotionType getPotionType() const;
 
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
+    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -46,21 +49,29 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
+    // vIndex: 91
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& item, bool) const /*override*/;
 
+    // vIndex: 64
     virtual bool uniqueAuxValues() const /*override*/;
 
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
 
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
+    // vIndex: 82
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
+    // vIndex: 48
     virtual bool isDestructive(int) const /*override*/;
 
+    // vIndex: 0
     virtual ~OminousBottleItem() /*override*/ = default;
     // NOLINTEND
 
@@ -109,8 +120,6 @@ public:
     MCAPI bool $isValidAuxValue(int auxValue) const;
 
     MCFOLD bool $isDestructive(int) const;
-
-
     // NOLINTEND
 
 public:

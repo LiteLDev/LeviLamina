@@ -57,10 +57,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RtpPacketizerH264() /*override*/;
 
+    // vIndex: 1
     virtual uint64 NumPackets() const /*override*/;
 
+    // vIndex: 2
     virtual bool NextPacket(::webrtc::RtpPacketToSend* rtp_packet) /*override*/;
     // NOLINTEND
 
@@ -108,8 +111,6 @@ public:
     MCNAPI uint64 $NumPackets() const;
 
     MCNAPI bool $NextPacket(::webrtc::RtpPacketToSend* rtp_packet);
-
-
     // NOLINTEND
 
 public:

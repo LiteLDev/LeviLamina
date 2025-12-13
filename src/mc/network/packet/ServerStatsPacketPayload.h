@@ -6,13 +6,7 @@ struct ServerStatsPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk17d37b;
-    ::ll::UntypedStorage<4, 4> mUnk4834a2;
+    ::ll::TypedStorage<4, 4, float> mServerTime;
+    ::ll::TypedStorage<4, 4, float> mNetworkTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerStatsPacketPayload& operator=(ServerStatsPacketPayload const&);
-    ServerStatsPacketPayload(ServerStatsPacketPayload const&);
-    ServerStatsPacketPayload();
 };

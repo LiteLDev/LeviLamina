@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class CraftableCompounds;
 class LabTableContainerManagerModel;
 // clang-format on
@@ -23,40 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LabTableContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LabTableContainerManagerController() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit LabTableContainerManagerController(
-        ::std::weak_ptr<::LabTableContainerManagerModel> containerManagerModel
-    );
-
-    MCNAPI_C void _setupCallbacks();
-
-    MCNAPI_C void _updateResult();
-
-    MCNAPI_C void combineInputs(::BlockPos const& blockPos);
-
-    MCNAPI_C bool hasInput();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::LabTableContainerManagerModel> containerManagerModel);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

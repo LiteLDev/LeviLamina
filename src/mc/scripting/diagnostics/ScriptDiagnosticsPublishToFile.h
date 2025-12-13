@@ -39,8 +39,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~StreamFlusher() /*override*/ = default;
 
+        // vIndex: 1
         virtual ::Core::Result _flushBuffer(void const* data, uint64 amount) /*override*/;
         // NOLINTEND
 
@@ -48,8 +50,6 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI ::Core::Result $_flushBuffer(void const* data, uint64 amount);
-
-
         // NOLINTEND
 
     public:
@@ -80,10 +80,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptDiagnosticsPublishToFile() /*override*/ = default;
 
+    // vIndex: 1
     virtual bool isStatPublisherEnabled() const /*override*/;
 
+    // vIndex: 2
     virtual void publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats) /*override*/;
     // NOLINTEND
 
@@ -109,8 +112,6 @@ public:
     MCNAPI bool $isStatPublisherEnabled() const;
 
     MCNAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats);
-
-
     // NOLINTEND
 
 public:

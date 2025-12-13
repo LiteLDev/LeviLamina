@@ -14,23 +14,23 @@ class OnPlayerDestroyedTriggerDescription : public ::BlockTriggerDescription<::O
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
+    // vIndex: 0
     virtual ~OnPlayerDestroyedTriggerDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
-
-
+    MCAPI ::std::string const& $getName() const;
     // NOLINTEND
 
 public:

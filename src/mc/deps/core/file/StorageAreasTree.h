@@ -19,6 +19,21 @@ public:
     // clang-format on
 
     // StorageAreasTree inner types define
+    struct TreeNode {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnk4a01cf;
+        ::ll::UntypedStorage<8, 8>  mUnk37f7a2;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TreeNode& operator=(TreeNode const&);
+        TreeNode(TreeNode const&);
+        TreeNode();
+    };
+
     struct TreeChild {
     public:
         // member variables
@@ -46,21 +61,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    };
-
-    struct TreeNode {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk4a01cf;
-        ::ll::UntypedStorage<8, 8>  mUnk37f7a2;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TreeNode& operator=(TreeNode const&);
-        TreeNode(TreeNode const&);
-        TreeNode();
     };
 
 public:

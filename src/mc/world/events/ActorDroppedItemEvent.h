@@ -22,20 +22,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorDroppedItemEvent(::ActorDroppedItemEvent const&);
+    MCAPI ActorDroppedItemEvent(::ActorDroppedItemEvent const&);
 
-    MCNAPI ~ActorDroppedItemEvent();
+    MCAPI ~ActorDroppedItemEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorDroppedItemEvent const&);
+    MCFOLD void* $ctor(::ActorDroppedItemEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

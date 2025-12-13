@@ -27,10 +27,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetworkEnableDisableListener();
 
+    // vIndex: 1
     virtual void _onDisable() = 0;
 
+    // vIndex: 2
     virtual void _onEnable() = 0;
     // NOLINTEND
 

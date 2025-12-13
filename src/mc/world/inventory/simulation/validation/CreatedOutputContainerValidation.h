@@ -15,6 +15,7 @@ class CreatedOutputContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const                       slot,
@@ -23,12 +24,16 @@ public:
         bool
     ) const /*override*/;
 
+    // vIndex: 4
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
+    // vIndex: 8
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
+    // vIndex: 6
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
 
+    // vIndex: 0
     virtual ~CreatedOutputContainerValidation() /*override*/ = default;
     // NOLINTEND
 
@@ -48,8 +53,6 @@ public:
     MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
     MCNAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
-
-
     // NOLINTEND
 
 public:

@@ -17,16 +17,22 @@ class IEditorPlayer : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IEditorPlayer() /*override*/;
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() = 0;
 
+    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() = 0;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() = 0;
 
+    // vIndex: 4
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() = 0;
 
+    // vIndex: 5
     virtual void _onTick() = 0;
     // NOLINTEND
 

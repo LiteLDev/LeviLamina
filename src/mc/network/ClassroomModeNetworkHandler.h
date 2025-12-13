@@ -37,17 +37,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ClassroomModeNetworkHandler() /*override*/;
 
+    // vIndex: 8
     virtual ::IncomingPacketFilterResult allowIncomingPacketId(
         ::NetworkIdentifierWithSubId const& id,
         ::MinecraftPacketIds                packetId,
         uint64                              packetSize
     ) /*override*/;
 
+    // vIndex: 9
     virtual ::OutgoingPacketFilterResult
     allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) /*override*/;
 
+    // vIndex: 10
     virtual void onWebsocketRequest(
         ::std::string const&    serverAddress,
         ::std::string const&    payload,
@@ -62,7 +66,7 @@ public:
 
     MCNAPI void _connect(::std::string const& address);
 
-    MCNAPI_S void setAutomationClient(::Bedrock::NonOwnerPointer<::Automation::AutomationClient> client);
+    MCNAPI void setAutomationClient(::Bedrock::NonOwnerPointer<::Automation::AutomationClient> client);
     // NOLINTEND
 
 public:
@@ -91,8 +95,6 @@ public:
         ::std::string const&    payload,
         ::std::function<void()> errorCallback
     );
-
-
     // NOLINTEND
 
 public:

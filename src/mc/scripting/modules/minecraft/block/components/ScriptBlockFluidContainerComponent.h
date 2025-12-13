@@ -26,12 +26,16 @@ class ScriptBlockFluidContainerComponent : public ::ScriptModuleMinecraft::BaseS
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string const& getTypeId_V1() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string const& getTypeId_V2() const /*override*/;
 
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptBlockFluidContainerComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -88,8 +92,6 @@ public:
     MCNAPI ::std::string const& $getTypeId_V2() const;
 
     MCNAPI bool $_isValid() const;
-
-
     // NOLINTEND
 
 public:

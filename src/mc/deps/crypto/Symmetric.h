@@ -25,20 +25,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Symmetric() /*override*/;
 
+    // vIndex: 1
     virtual void init(::std::string const& key, ::std::string const& IV) /*override*/;
 
+    // vIndex: 2
     virtual void encrypt(::std::string const& plaintext, ::std::string& output) /*override*/;
 
+    // vIndex: 3
     virtual void decrypt(::std::string const& ciphertext, ::std::string& output) /*override*/;
 
+    // vIndex: 4
     virtual uint64 getKeySize() const /*override*/;
 
+    // vIndex: 5
     virtual uint64 getBlockSize() const /*override*/;
 
+    // vIndex: 6
     virtual uint64 getEncryptionBufferSize(uint64 inputSize) const /*override*/;
 
+    // vIndex: 7
     virtual bool
     encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
     // NOLINTEND
@@ -77,8 +85,6 @@ public:
     MCNAPI uint64 $getEncryptionBufferSize(uint64 inputSize) const;
 
     MCNAPI bool $encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten);
-
-
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@ class ItemStackRequestActionDestroy : public ::ItemStackRequestActionTransferBas
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ItemStackRequestActionDestroy() /*override*/ = default;
     // NOLINTEND
 

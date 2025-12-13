@@ -13,13 +13,16 @@ class MdnsResponderInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MdnsResponderInterface() = default;
 
+    // vIndex: 1
     virtual void CreateNameForAddress(
         ::rtc::IPAddress const&,
         ::std::function<void(::rtc::IPAddress const&, ::std::string_view)>
     ) = 0;
 
+    // vIndex: 2
     virtual void RemoveNameForAddress(::rtc::IPAddress const&, ::std::function<void(bool)>) = 0;
     // NOLINTEND
 

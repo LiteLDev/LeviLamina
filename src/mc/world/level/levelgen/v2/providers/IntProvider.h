@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/v2/providers/ConstantInt.h"
 #include "mc/world/level/levelgen/v2/providers/IntProviderType.h"
+#include "mc/world/level/levelgen/v2/providers/UniformInt.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +16,7 @@ struct IntProvider : public ::IntProviderType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnke97976;
+    ::ll::TypedStorage<4, 24, ::std::variant<::ConstantInt, ::UniformInt>> mProvider;
     // NOLINTEND
 
 public:
@@ -26,37 +28,39 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual int sample(::IRandom& random) const /*override*/;
 
+    // vIndex: 2
     virtual int maxValue() const /*override*/;
 
+    // vIndex: 3
     virtual int minValue() const /*override*/;
 
+    // vIndex: 0
     virtual ~IntProvider() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::IntProvider& operator=(::IntProvider&&);
+    MCAPI ::IntProvider& operator=(::IntProvider&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $sample(::IRandom& random) const;
+    MCAPI int $sample(::IRandom& random) const;
 
-    MCNAPI int $maxValue() const;
+    MCAPI int $maxValue() const;
 
-    MCNAPI int $minValue() const;
-
-
+    MCAPI int $minValue() const;
     // NOLINTEND
 
 public:

@@ -19,18 +19,25 @@ class IStructurePoolBlockPredicate {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IStructurePoolBlockPredicate() = default;
 
+    // vIndex: 2
     virtual bool test(::Block const&, ::Randomize&) const = 0;
 
+    // vIndex: 1
     virtual bool test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const = 0;
 
+    // vIndex: 3
     virtual bool finalize(::BlockSource&, ::IRandom&);
 
+    // vIndex: 4
     virtual ::std::string validate() const;
 
+    // vIndex: 5
     virtual ::StructurePoolBlockPredicateType getType() const = 0;
 
+    // vIndex: 6
     virtual void appendMetadataKey(::Util::XXHash&) const = 0;
     // NOLINTEND
 
@@ -40,7 +47,5 @@ public:
     MCFOLD bool $finalize(::BlockSource&, ::IRandom&);
 
     MCFOLD ::std::string $validate() const;
-
-
     // NOLINTEND
 };

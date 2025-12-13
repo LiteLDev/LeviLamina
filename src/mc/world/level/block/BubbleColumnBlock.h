@@ -34,20 +34,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
+    // vIndex: 69
     virtual bool isPreservingMediumWhenPlaced(::BlockType const* medium) const /*override*/;
 
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
+    // vIndex: 76
     virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
+    // vIndex: 8
     virtual void addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -56,6 +63,7 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const /*override*/;
 
+    // vIndex: 7
     virtual bool addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
@@ -65,6 +73,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
+    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
@@ -72,14 +81,19 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
+    // vIndex: 134
     virtual bool shouldTickOnSetBlock() const /*override*/;
 
+    // vIndex: 53
     virtual ::std::optional<::HashedString> getRequiredMedium() const /*override*/;
 
+    // vIndex: 114
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~BubbleColumnBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -147,8 +161,6 @@ public:
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

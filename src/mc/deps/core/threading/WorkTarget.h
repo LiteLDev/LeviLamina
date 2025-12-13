@@ -18,26 +18,6 @@ public:
     WorkTarget& operator=(WorkTarget const&);
     WorkTarget(WorkTarget const&);
     WorkTarget();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit WorkTarget(uint64 secondaryWorkersCount);
-
-    MCNAPI_C ~WorkTarget();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(uint64 secondaryWorkersCount);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Threading::Burst::Details

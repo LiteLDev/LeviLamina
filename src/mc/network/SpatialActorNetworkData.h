@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorRuntimeID;
-class MoveActorAbsoluteData;
 class Player;
 class Vec2;
 class Vec3;
@@ -97,23 +95,9 @@ public:
 
     MCNAPI bool _shouldUpdateBasedOptimizationOnScore(::Player& player) const;
 
-    MCNAPI_C bool didTeleportEntity(::MoveActorAbsoluteData const& moveData);
-
     MCNAPI uint64 getLastSpatialTick(::ActorUniqueID const& playerID) const;
 
-    MCNAPI_C void handleServerData(
-        ::MoveActorAbsoluteData const&                 moveData,
-        ::std::chrono::steady_clock::time_point const& receiveTimepoint
-    );
-
     MCNAPI void sendUpdate(bool forceTeleport, bool forceMoveLocalEntity, bool forceAbsoluteMovement);
-
-    MCNAPI_C void setLastReceivedMoveDataForAddedEntity(
-        ::ActorRuntimeID runtimeId,
-        ::Vec3           position,
-        ::Vec2           rotation,
-        float            yHeadRotation
-    );
 
     MCNAPI bool shouldSendMotionPredictionHintsPacket() const;
 

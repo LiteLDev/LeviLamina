@@ -4,20 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/services/ServiceClient.h"
-#include "mc/client/services/flighting/TagType.h"
-#include "mc/deps/core/utility/ServiceRegistrationToken.h"
-#include "mc/platform/brstd/function_ref.h"
-
-// auto generated forward declare list
-// clang-format off
-class IMinecraftEventing;
-namespace Bedrock::PubSub { class Subscription; }
-namespace Core { class FileSystem; }
-namespace Core { class Path; }
-namespace flighting { class IFlightReader; }
-namespace flighting { struct ConfigurationToggles; }
-namespace flighting { struct TreatmentToggles; }
-// clang-format on
 
 class FlightingService : public ::ServiceClient, public ::std::enable_shared_from_this<::FlightingService> {
 public:
@@ -49,76 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~FlightingService() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~FlightingService() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C FlightingService(
-        ::IMinecraftEventing& eventing,
-        ::Core::Path const&   cacheLocation,
-        ::std::string const&  clientId,
-        bool
-    );
-
-    MCNAPI_C FlightingService(
-        ::IMinecraftEventing&                                                           eventing,
-        ::std::shared_ptr<::flighting::ConfigurationToggles>                            configurations,
-        ::std::shared_ptr<::flighting::TreatmentToggles>                                treatments,
-        ::Core::Path const&                                                             cacheLocation,
-        ::std::string                                                                   clientID,
-        ::std::function<::ServiceRegistrationToken<::FlightingService>()> const&        registerToken,
-        ::brstd::function_ref<::ServiceRegistrationToken<::flighting::IFlightReader>()> registerFlightReader,
-        ::Core::FileSystem&                                                             fileSystem
-    );
-
-    MCNAPI_C void getCurrentTagsByTagTypeAsync(
-        ::flighting::TagType                                       tagType,
-        ::std::function<void(::std::vector<::std::string> const&)> callback
-    );
-
-    MCNAPI_C ::Bedrock::PubSub::Subscription monitorTagsByTagType(
-        ::flighting::TagType const&                                tagType,
-        ::std::function<void(::std::vector<::std::string> const&)> callback
-    );
-
-    MCNAPI_C ::Bedrock::PubSub::Subscription
-    monitorTreatments(::std::function<void(::std::vector<::std::string> const&)> callback);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void*
-    $ctor(::IMinecraftEventing& eventing, ::Core::Path const& cacheLocation, ::std::string const& clientId, bool);
-
-    MCNAPI_C void* $ctor(
-        ::IMinecraftEventing&                                                           eventing,
-        ::std::shared_ptr<::flighting::ConfigurationToggles>                            configurations,
-        ::std::shared_ptr<::flighting::TreatmentToggles>                                treatments,
-        ::Core::Path const&                                                             cacheLocation,
-        ::std::string                                                                   clientID,
-        ::std::function<::ServiceRegistrationToken<::FlightingService>()> const&        registerToken,
-        ::brstd::function_ref<::ServiceRegistrationToken<::flighting::IFlightReader>()> registerFlightReader,
-        ::Core::FileSystem&                                                             fileSystem
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

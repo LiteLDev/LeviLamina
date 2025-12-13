@@ -35,6 +35,8 @@ public:
     // clang-format on
 
     // NetherGenerator inner types define
+    using NoiseBuffer = ::Util::MultidimensionalArray<float, 5, 5, 17>;
+
     struct ThreadData {
     public:
         // member variables
@@ -43,8 +45,6 @@ public:
         ::ll::TypedStorage<8, 262144, ::std::array<::Block const*, 32768>> blockBuffer;
         // NOLINTEND
     };
-
-    using NoiseBuffer = ::Util::MultidimensionalArray<float, 5, 5, 17>;
 
 public:
     // member variables
@@ -73,14 +73,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetherGenerator() /*override*/;
 
-    virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
+    // vIndex: 14
+    virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
 
+    // vIndex: 9
     virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhoodIn) /*override*/;
 
+    // vIndex: 10
     virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood) /*override*/;
 
+    // vIndex: 42
     virtual void prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
@@ -88,14 +93,19 @@ public:
         bool                  factorInBeardsAndShavers
     ) /*override*/;
 
+    // vIndex: 43
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
+    // vIndex: 44
     virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 
+    // vIndex: 45
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
+    // vIndex: 46
     virtual ::BlockPos findSpawnPosition() const /*override*/;
 
+    // vIndex: 49
     virtual void decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
@@ -104,6 +114,7 @@ public:
         ::ChunkPos const&    pos
     ) const /*override*/;
 
+    // vIndex: 50
     virtual void
     decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
         /*override*/;
@@ -136,7 +147,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
 
     MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
@@ -167,8 +178,6 @@ public:
 
     MCFOLD void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
-
-
     // NOLINTEND
 
 public:

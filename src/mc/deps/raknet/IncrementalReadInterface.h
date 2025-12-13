@@ -13,8 +13,10 @@ class IncrementalReadInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IncrementalReadInterface() = default;
 
+    // vIndex: 1
     virtual uint GetFilePart(char const*, uint, uint, void*, ::FileListNodeContext);
     // NOLINTEND
 

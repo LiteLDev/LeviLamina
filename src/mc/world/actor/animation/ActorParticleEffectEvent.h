@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ActorParticleEffectEvent& operator=(::ActorParticleEffectEvent&&);
+    MCAPI ::ActorParticleEffectEvent& operator=(::ActorParticleEffectEvent&&);
     // NOLINTEND
 };

@@ -20,13 +20,7 @@ public:
 
     MCNAPI static void logKeyValue(::CrashDumpKeyValueData const& keyValueData);
 
-    MCNAPI_C static bool setDeviceID(::std::string const& str);
-
     MCNAPI static bool setDeviceSessionID(::std::string const& str);
-
-    MCNAPI_C static void setMainSceneStack(::std::vector<::std::string> const& sceneNames);
-
-    MCNAPI_C static void setPlayerSceneStack(int playerIndex, ::std::vector<::std::string> const& sceneNames);
 
     MCNAPI static bool startCrashDumpLogThread();
     // NOLINTEND

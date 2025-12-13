@@ -39,10 +39,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BasicPortAllocator() /*override*/;
 
+    // vIndex: 3
     virtual void SetNetworkIgnoreMask(int network_ignore_mask) /*override*/;
 
+    // vIndex: 7
     virtual ::cricket::PortAllocatorSession* CreateSessionInternal(
         ::std::string_view content_name,
         int                component,
@@ -50,8 +53,10 @@ public:
         ::std::string_view ice_pwd
     ) /*override*/;
 
+    // vIndex: 5
     virtual void SetVpnList(::std::vector<::rtc::NetworkMask> const& vpn_list) /*override*/;
 
+    // vIndex: 8
     virtual bool MdnsObfuscationEnabled() const /*override*/;
     // NOLINTEND
 
@@ -102,8 +107,6 @@ public:
     MCNAPI void $SetVpnList(::std::vector<::rtc::NetworkMask> const& vpn_list);
 
     MCNAPI bool $MdnsObfuscationEnabled() const;
-
-
     // NOLINTEND
 
 public:

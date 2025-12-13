@@ -27,8 +27,6 @@ public:
         Noise = 1,
     };
 
-    struct GrassNoise {};
-
     struct GrassTint {
     public:
         // member variables
@@ -42,6 +40,8 @@ public:
         GrassTint(GrassTint const&);
         GrassTint();
     };
+
+    struct GrassNoise {};
 
 public:
     // member variables
@@ -59,8 +59,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::BiomeComponentVersion getType() const /*override*/;
 
+    // vIndex: 0
     virtual ~CustomMapTintBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -82,8 +84,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::BiomeComponentVersion $getType() const;
-
-
     // NOLINTEND
 
 public:

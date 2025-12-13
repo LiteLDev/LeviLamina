@@ -18,10 +18,13 @@ class BlastFurnaceBlock : public ::FurnaceBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~BlastFurnaceBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -37,8 +40,6 @@ public:
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

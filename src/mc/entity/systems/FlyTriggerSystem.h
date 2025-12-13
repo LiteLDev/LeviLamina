@@ -25,7 +25,7 @@ struct VanillaClientGameplayComponent;
 namespace FlyTriggerSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI_S ::TickingSystemWithInfo createActionSystem();
+MCNAPI ::TickingSystemWithInfo createActionSystem();
 
 MCNAPI ::TickingSystemWithInfo createIntentSystem();
 

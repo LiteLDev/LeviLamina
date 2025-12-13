@@ -18,10 +18,13 @@ class IManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IManager() /*override*/;
 
+    // vIndex: 1
     virtual ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> getAutomationClient() const = 0;
 
+    // vIndex: 2
     virtual ::Bedrock::NotNullNonOwnerPtr<::CodeBuilder::IMessenger> getEventing() const = 0;
     // NOLINTEND
 

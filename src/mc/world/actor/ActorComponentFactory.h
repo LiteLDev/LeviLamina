@@ -14,6 +14,7 @@ class ActorComponentFactory : public ::EntityComponentFactoryJson {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ActorComponentFactory() /*override*/ = default;
     // NOLINTEND
 

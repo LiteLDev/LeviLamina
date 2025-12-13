@@ -16,10 +16,13 @@ class IVillageManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IVillageManager() /*override*/;
 
+    // vIndex: 1
     virtual ::std::weak_ptr<::Village> fetchClosestVillage(::BlockPos const&, int, uint) const = 0;
 
+    // vIndex: 2
     virtual ::std::weak_ptr<::Village> getVillageByID(::mce::UUID const&) const = 0;
     // NOLINTEND
 

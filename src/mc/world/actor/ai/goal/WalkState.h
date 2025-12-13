@@ -9,17 +9,17 @@ class WalkState : public ::PetSleepWithOwnerState {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void tick() /*override*/;
 
+    // vIndex: 0
     virtual ~WalkState() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick();
-
-
+    MCAPI void $tick();
     // NOLINTEND
 
 public:

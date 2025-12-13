@@ -55,13 +55,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CameraAimAssistDataRegistryComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> _categoriesPackForEachCallback(
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> _categoriesPackForEachCallback(
         ::EntityContext&                                                             levelEntity,
         ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> const& loader,
         ::PackInstance const&                                                        pack,
@@ -69,19 +70,19 @@ public:
         ::Core::Path const&                                                          filenameWithExtension
     );
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> _parseAndLoadAimAssistCategories(
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> _parseAndLoadAimAssistCategories(
         ::EntityContext&                                                             levelEntity,
         ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> const& loader,
         ::std::string const&                                                         fileData
     );
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistPresetFile> _parseAndLoadAimAssistPreset(
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistPresetFile> _parseAndLoadAimAssistPreset(
         ::EntityContext&                                                         levelEntity,
         ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistPresetFile> const& loader,
         ::std::string const&                                                     fileData
     );
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistPresetFile> _presetsPackForEachCallback(
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistPresetFile> _presetsPackForEachCallback(
         ::EntityContext&                                                         levelEntity,
         ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistPresetFile> const& loader,
         ::PackInstance const&                                                    pack,
@@ -89,36 +90,36 @@ public:
         ::Core::Path const&                                                      filenameWithExtension
     );
 
-    MCNAPI bool _validatePresetCategorySetting(::std::string const& categoryId) const;
+    MCAPI bool _validatePresetCategorySetting(::std::string const& categoryId) const;
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&
+    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&
     addCategory(::EntityContext& levelEntity, ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&& category);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&
+    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&
     addPreset(::EntityContext& levelEntity, ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&& preset);
 
-    MCNAPI void loadJsonFilesForServer(
+    MCAPI void loadJsonFilesForServer(
         ::EntityContext&                                   levelEntity,
         ::cereal::ReflectionCtx const&                     ctx,
         ::ResourcePackManager const&                       resourcePackManager,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCNAPI ::CameraAimAssistPresetsPacket makePresetsPacketFromFullRegistry() const;
+    MCAPI ::CameraAimAssistPresetsPacket makePresetsPacketFromFullRegistry() const;
 
-    MCNAPI ::CameraAimAssistPresetsPacket makeUpdatePresetsPacketFromDirtyRegistry(
+    MCAPI ::CameraAimAssistPresetsPacket makeUpdatePresetsPacketFromDirtyRegistry(
         ::CameraAimAssistDataRegistryDirtyComponent const& registryDirtyComponent
     ) const;
 
-    MCNAPI void synchronizeWithClients(
+    MCAPI void synchronizeWithClients(
         ::CameraAimAssistDataRegistryDirtyComponent const& registryDirtyComponent,
         ::PacketSender&                                    packetSender
     );
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const*
+    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const*
     tryGetCategory(::HashedString const& id) const;
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const* tryGetPreset(::HashedString const& id) const;
+    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const* tryGetPreset(::HashedString const& id) const;
     // NOLINTEND
 
 public:

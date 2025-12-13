@@ -11,8 +11,6 @@ class BlockSource;
 namespace WeatherHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI_C ::BlockPos const getTopSnowBlockPos(::BlockSource& region, ::BlockPos const& pos);
-
 MCAPI bool shouldFreeze(::BlockSource& region, ::BlockPos const& pos, bool checkNeighbors);
 // NOLINTEND
 

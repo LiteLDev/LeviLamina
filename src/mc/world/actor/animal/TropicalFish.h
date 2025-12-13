@@ -23,15 +23,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 27
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
+    // vIndex: 168
     virtual bool createAIGoals() /*override*/;
 
+    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
+    // vIndex: 8
     virtual ~TropicalFish() /*override*/ = default;
     // NOLINTEND
 
@@ -65,8 +70,6 @@ public:
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $onSynchedDataUpdate(int dataId);
-
-
     // NOLINTEND
 
 public:

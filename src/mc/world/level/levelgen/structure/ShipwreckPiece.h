@@ -19,37 +19,38 @@ class ShipwreckPiece : public ::StructurePiece {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::StructurePieceType getType() const /*override*/;
 
+    // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
+    // vIndex: 0
     virtual ~ShipwreckPiece() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BlockPos
+    MCAPI static ::BlockPos
     _calculateTargetPos(::BlockSource& region, ::BlockPos origin, ::Rotation rot, ::BlockPos size);
 
-    MCNAPI static ::BlockPos
+    MCAPI static ::BlockPos
     _calculateTargetPosLegacy(::BlockSource& region, ::BlockPos origin, ::Rotation rot, ::BlockPos size);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_SHIPWRECK_TYPES();
+    MCAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_SHIPWRECK_TYPES();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
-
-
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:

@@ -11,8 +11,10 @@ class IScriptPluginSourceEnumerator {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IScriptPluginSourceEnumerator() = default;
 
+    // vIndex: 1
     virtual ::std::vector<::std::shared_ptr<::IScriptPluginSource>> const& getPluginSources() const = 0;
     // NOLINTEND
 

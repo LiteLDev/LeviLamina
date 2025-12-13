@@ -14,8 +14,10 @@ class Pig : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
 
+    // vIndex: 8
     virtual ~Pig() /*override*/ = default;
     // NOLINTEND
 
@@ -23,8 +25,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
-
-
     // NOLINTEND
 
 public:

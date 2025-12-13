@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class LogSettingsUpdater;
-namespace Bedrock { class ScopeExit; }
 namespace BedrockLog { class LogAreaFilter; }
 namespace Core { class Path; }
 // clang-format on
@@ -25,8 +24,6 @@ MCAPI bool
 _constructAreaFilterFromString(::std::string const& filterString, ::BedrockLog::LogAreaFilter& logAreaFilter);
 
 MCAPI ::std::string _constructAreaFilterStringFromFilter(::BedrockLog::LogAreaFilter const& filter);
-
-MCAPI_C bool _constructPriorityFilterFromString(::std::string const& filterString, uint& logPriority);
 
 MCAPI ::std::string _constructPriorityFilterStringFromFilter(uint filter);
 
@@ -64,8 +61,6 @@ MCAPI void createLog(
     double                    _logCycleInS
 );
 
-MCAPI_C ::Bedrock::ScopeExit initialize();
-
 MCAPI void log_va(
     ::BedrockLog::LogCategory _category,
     ::std::bitset<3>          channelMask,
@@ -80,19 +75,12 @@ MCAPI void log_va(
 
 MCAPI int rakDebugLog(char const*, ...);
 
-MCAPI_S void updateLogFilter(
+MCAPI void updateLogFilter(
     ::std::unique_ptr<::LogSettingsUpdater> options,
     ::std::string const&                    filterType,
     ::std::vector<::std::string> const&     filters,
     ::std::string&                          result,
     bool                                    toggle
-);
-
-MCAPI_C void updateLogSetting(
-    ::BedrockLog::LogCategory _category,
-    ::BedrockLog::LogChannel  _channel,
-    ::std::string const&      setting,
-    bool                      newValue
 );
 // NOLINTEND
 

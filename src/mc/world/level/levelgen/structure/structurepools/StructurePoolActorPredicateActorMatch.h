@@ -20,21 +20,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool test(::std::string const& actor) const /*override*/;
 
+    // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
     virtual ~StructurePoolActorPredicateActorMatch() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $test(::std::string const& actor) const;
+    MCAPI bool $test(::std::string const& actor) const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
-
-
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

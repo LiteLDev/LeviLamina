@@ -25,49 +25,71 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ActorDamageSource() = default;
 
+    // vIndex: 1
     virtual bool isEntitySource() const;
 
+    // vIndex: 2
     virtual bool isChildEntitySource() const;
 
+    // vIndex: 3
     virtual bool isBlockSource() const;
 
+    // vIndex: 4
     virtual bool isFire() const;
 
+    // vIndex: 5
     virtual bool isReducedByResistanceEffect() const;
 
+    // vIndex: 6
     virtual bool isReducedByEnchantReduction() const;
 
+    // vIndex: 7
     virtual bool isReducedByArmorReduction() const;
 
+    // vIndex: 8
     virtual bool isFallingBlockDamage() const;
 
+    // vIndex: 9
     virtual bool isFallDamage() const;
 
+    // vIndex: 10
     virtual ::std::pair<::std::string, ::std::vector<::std::string>>
     getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
+    // vIndex: 11
     virtual bool getIsCreative() const;
 
+    // vIndex: 12
     virtual bool getIsWorldBuilder() const;
 
+    // vIndex: 13
     virtual ::ActorUniqueID getEntityUniqueID() const;
 
+    // vIndex: 14
     virtual ::ActorType getEntityType() const;
 
+    // vIndex: 15
     virtual ::ActorCategory getEntityCategories() const;
 
+    // vIndex: 16
     virtual bool getDamagingEntityIsCreative() const;
 
+    // vIndex: 17
     virtual bool getDamagingEntityIsWorldBuilder() const;
 
+    // vIndex: 18
     virtual ::ActorUniqueID getDamagingEntityUniqueID() const;
 
+    // vIndex: 19
     virtual ::ActorType getDamagingEntityType() const;
 
+    // vIndex: 20
     virtual ::ActorCategory getDamagingEntityCategories() const;
 
+    // vIndex: 21
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const;
     // NOLINTEND
 
@@ -135,8 +157,6 @@ public:
     MCFOLD ::ActorCategory $getDamagingEntityCategories() const;
 
     MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
-
-
     // NOLINTEND
 
 public:

@@ -23,25 +23,35 @@ class RespawnAnchorBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
+    // vIndex: 125
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
+    // vIndex: 108
     virtual bool canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 109
     virtual void notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 104
     virtual bool hasComparatorSignal() const /*override*/;
 
+    // vIndex: 105
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~RespawnAnchorBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -85,8 +95,6 @@ public:
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

@@ -18,11 +18,14 @@ class IComponentFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IComponentFactory() = default;
 
+    // vIndex: 1
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
     createComponent(::WeakEntityRef, ::Scripting::WeakLifetimeScope const&, ::std::string const&) = 0;
 
+    // vIndex: 2
     virtual bool hasComponent(::WeakEntityRef) const = 0;
     // NOLINTEND
 

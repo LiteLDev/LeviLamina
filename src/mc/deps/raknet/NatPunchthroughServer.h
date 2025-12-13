@@ -25,24 +25,6 @@ public:
     // clang-format on
 
     // NatPunchthroughServer inner types define
-    struct ConnectionAttempt {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk76dcd7;
-        ::ll::UntypedStorage<8, 8> mUnkf4d438;
-        ::ll::UntypedStorage<2, 2> mUnk9f35dc;
-        ::ll::UntypedStorage<8, 8> mUnk256c45;
-        ::ll::UntypedStorage<4, 4> mUnk5d3658;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ConnectionAttempt& operator=(ConnectionAttempt const&);
-        ConnectionAttempt(ConnectionAttempt const&);
-        ConnectionAttempt();
-    };
-
     struct User {
     public:
         // member variables
@@ -60,6 +42,24 @@ public:
         User& operator=(User const&);
         User(User const&);
         User();
+    };
+
+    struct ConnectionAttempt {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk76dcd7;
+        ::ll::UntypedStorage<8, 8> mUnkf4d438;
+        ::ll::UntypedStorage<2, 2> mUnk9f35dc;
+        ::ll::UntypedStorage<8, 8> mUnk256c45;
+        ::ll::UntypedStorage<4, 4> mUnk5d3658;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ConnectionAttempt& operator=(ConnectionAttempt const&);
+        ConnectionAttempt(ConnectionAttempt const&);
+        ConnectionAttempt();
     };
 
 public:
@@ -82,18 +82,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NatPunchthroughServer() /*override*/ = default;
 
+    // vIndex: 3
     virtual void Update() /*override*/;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
+    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,
         ::RakNet::PI2_LostConnectionReason
     ) /*override*/;
 
+    // vIndex: 8
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
     // NOLINTEND
 

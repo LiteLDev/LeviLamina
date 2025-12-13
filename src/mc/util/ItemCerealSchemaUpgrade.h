@@ -9,6 +9,7 @@ class ItemCerealSchemaUpgrade : public ::CerealSchemaUpgrade {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ItemCerealSchemaUpgrade() /*override*/ = default;
     // NOLINTEND
 

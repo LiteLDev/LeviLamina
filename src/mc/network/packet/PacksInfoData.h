@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContentIdentity;
 struct PackInfoData;
 // clang-format on
 
@@ -26,14 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::unordered_map<::ContentIdentity, ::std::string> collectKeys() const;
-
-    MCNAPI ~PacksInfoData();
+    MCAPI ~PacksInfoData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

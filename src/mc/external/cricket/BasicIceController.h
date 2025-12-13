@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cricket/Connection.h"
 #include "mc/external/cricket/IceControllerInterface.h"
 #include "mc/external/cricket/IceMode.h"
 #include "mc/external/cricket/IceSwitchReason.h"
@@ -12,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cricket { class Connection; }
 namespace cricket { struct IceConfig; }
 namespace cricket { struct IceControllerFactoryArgs; }
 namespace rtc { class Network; }
@@ -44,40 +44,55 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BasicIceController() /*override*/;
 
+    // vIndex: 1
     virtual void SetIceConfig(::cricket::IceConfig const& config) /*override*/;
 
+    // vIndex: 2
     virtual void SetSelectedConnection(::cricket::Connection const* selected_connection) /*override*/;
 
+    // vIndex: 3
     virtual void AddConnection(::cricket::Connection const* connection) /*override*/;
 
+    // vIndex: 4
     virtual void OnConnectionDestroyed(::cricket::Connection const* connection) /*override*/;
 
+    // vIndex: 5
     virtual ::rtc::ArrayView<::cricket::Connection const* const> GetConnections() const /*override*/;
 
+    // vIndex: 6
     virtual ::rtc::ArrayView<::cricket::Connection const*> connections() const /*override*/;
 
+    // vIndex: 7
     virtual bool HasPingableConnection() const /*override*/;
 
+    // vIndex: 8
     virtual ::cricket::IceControllerInterface::PingResult SelectConnectionToPing(int64 last_ping_sent_ms) /*override*/;
 
+    // vIndex: 9
     virtual bool GetUseCandidateAttr(
         ::cricket::Connection const* conn,
         ::cricket::NominationMode    mode,
         ::cricket::IceMode           remote_ice_mode
     ) const /*override*/;
 
+    // vIndex: 12
     virtual ::cricket::IceControllerInterface::SwitchResult
     ShouldSwitchConnection(::cricket::IceSwitchReason reason, ::cricket::Connection const* new_connection) /*override*/;
 
+    // vIndex: 13
     virtual ::cricket::IceControllerInterface::SwitchResult
     SortAndSwitchConnection(::cricket::IceSwitchReason reason) /*override*/;
 
+    // vIndex: 14
     virtual ::std::vector<::cricket::Connection const*> PruneConnections() /*override*/;
 
+    // vIndex: 10
     virtual ::cricket::Connection const* FindNextPingableConnection() /*override*/;
 
+    // vIndex: 11
     virtual void MarkConnectionPinged(::cricket::Connection const* conn) /*override*/;
     // NOLINTEND
 
@@ -186,8 +201,6 @@ public:
     MCNAPI ::cricket::Connection const* $FindNextPingableConnection();
 
     MCNAPI void $MarkConnectionPinged(::cricket::Connection const* conn);
-
-
     // NOLINTEND
 
 public:

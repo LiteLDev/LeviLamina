@@ -18,30 +18,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BrazeSDKManager() = default;
 
+    // vIndex: 1
     virtual void enableBrazeSDK();
 
+    // vIndex: 2
     virtual void disableBrazeSDK();
 
+    // vIndex: 3
     virtual void setBrazeId(::std::string const&);
 
+    // vIndex: 4
     virtual void _enableBrazeSDK();
 
+    // vIndex: 5
     virtual void _disableBrazeSDK();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::shared_ptr<::BrazeSDKManager> getShared();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static bool& mInitialized();
-
     MCNAPI static ::std::shared_ptr<::BrazeSDKManager>& mInstance();
     // NOLINTEND
 
@@ -57,8 +55,6 @@ public:
     MCNAPI void $_enableBrazeSDK();
 
     MCNAPI void $_disableBrazeSDK();
-
-
     // NOLINTEND
 
 public:

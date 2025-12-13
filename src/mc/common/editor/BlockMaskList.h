@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-class HashedString;
-// clang-format on
-
 namespace Editor::BlockMask {
 
 class BlockMaskList {
@@ -28,11 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool containsBlock(::HashedString const& blockName) const;
-
     MCNAPI void fromStringList(::std::vector<::std::string> const& blockNames);
-
-    MCNAPI_C bool match(::Block const* block) const;
 
     MCNAPI ::std::vector<::std::string> toStringList() const;
 

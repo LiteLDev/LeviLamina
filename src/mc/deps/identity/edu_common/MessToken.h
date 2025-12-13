@@ -27,8 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C MessToken(::MessToken&&);
-
     MCNAPI ::MessToken& operator=(::MessToken&&);
 
     MCNAPI ::std::string toString() const;
@@ -44,12 +42,6 @@ public:
 
     MCNAPI static ::std::optional<::std::pair<::Json::Value, ::MessToken>>
     unpackChainIfTrusted(::WebToken const& selfSignedToken, ::std::vector<::std::string> const& messPublicKeys);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::MessToken&&);
     // NOLINTEND
 
 public:

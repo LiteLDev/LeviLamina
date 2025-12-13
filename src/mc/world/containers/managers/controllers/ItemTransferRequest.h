@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct AutoPlaceResult;
-// clang-format on
-
 struct ItemTransferRequest {
 public:
     // ItemTransferRequest inner types declare
@@ -29,18 +24,6 @@ public:
         Entry& operator=(Entry const&);
         Entry(Entry const&);
         Entry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ~Entry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -55,18 +38,4 @@ public:
     ItemTransferRequest& operator=(ItemTransferRequest const&);
     ItemTransferRequest(ItemTransferRequest const&);
     ItemTransferRequest();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void _addOutputsAsDestinations(::std::vector<::AutoPlaceResult>& destinations) const;
-
-    MCNAPI_C ~ItemTransferRequest();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

@@ -13,14 +13,6 @@ public:
     // clang-format on
 
     // HTTPConnection inner types define
-    enum class ConnectionState : int {
-        None          = 0,
-        Disconnecting = 1,
-        Connecting    = 2,
-        Connected     = 3,
-        Processing    = 4,
-    };
-
     enum class ResponseCodes : int {
         NoBody  = 1001,
         Ok      = 200,
@@ -59,6 +51,14 @@ public:
         OutgoingCommand();
     };
 
+    enum class ConnectionState : int {
+        None          = 0,
+        Disconnecting = 1,
+        Connecting    = 2,
+        Connected     = 3,
+        Processing    = 4,
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -83,6 +83,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~HTTPConnection() = default;
     // NOLINTEND
 };

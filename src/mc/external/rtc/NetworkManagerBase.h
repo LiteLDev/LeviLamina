@@ -40,14 +40,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual ::std::vector<::rtc::Network const*> GetNetworks() const /*override*/;
 
+    // vIndex: 7
     virtual ::std::vector<::rtc::Network const*> GetAnyAddressNetworks() /*override*/;
 
+    // vIndex: 6
     virtual ::rtc::NetworkManager::EnumerationPermission enumeration_permission() const /*override*/;
 
+    // vIndex: 1
     virtual bool GetDefaultLocalAddress(int family, ::rtc::IPAddress* ipaddr) const /*override*/;
 
+    // vIndex: 1
     virtual ~NetworkManagerBase() /*override*/;
     // NOLINTEND
 
@@ -103,8 +108,6 @@ public:
     MCNAPI ::rtc::NetworkManager::EnumerationPermission $enumeration_permission() const;
 
     MCNAPI bool $GetDefaultLocalAddress(int family, ::rtc::IPAddress* ipaddr) const;
-
-
     // NOLINTEND
 
 public:

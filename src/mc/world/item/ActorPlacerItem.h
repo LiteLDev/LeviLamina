@@ -40,35 +40,49 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void tearDown() /*override*/;
 
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
 
+    // vIndex: 74
     virtual ::ActorDefinitionIdentifier getActorIdentifier(::ItemStack const&) const /*override*/;
 
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
+    // vIndex: 49
     virtual bool isLiquidClipItem() const /*override*/;
 
+    // vIndex: 50
     virtual bool shouldInteractionWithBlockBypassLiquid(::Block const& block) const /*override*/;
 
+    // vIndex: 81
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
+    // vIndex: 66
     virtual bool isMultiColorTinted(::ItemStack const&) const /*override*/;
 
+    // vIndex: 72
     virtual ::mce::Color getBaseColor(::ItemStack const&) const /*override*/;
 
+    // vIndex: 73
     virtual ::mce::Color getSecondaryColor(::ItemStack const&) const /*override*/;
 
+    // vIndex: 65
     virtual bool isActorPlacerItem() const /*override*/;
 
+    // vIndex: 123
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~ActorPlacerItem() /*override*/ = default;
     // NOLINTEND
 
@@ -93,8 +107,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
-
-    MCAPI_C static void initializeIcons();
 
     MCAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
 
@@ -144,8 +156,6 @@ public:
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
-
-
     // NOLINTEND
 
 public:

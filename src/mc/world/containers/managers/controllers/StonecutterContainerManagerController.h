@@ -6,7 +6,6 @@
 #include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
 #include "mc/world/containers/managers/controllers/ItemResultPreview.h"
-#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
 
 // auto generated forward declare list
@@ -20,7 +19,6 @@ struct ContainerScreenActionResult;
 struct CreateContainerItemScope;
 struct ItemStackRequestScope;
 struct ItemTransferAmount;
-struct RecipeNetIdTag;
 struct SelectedSlotInfo;
 // clang-format on
 
@@ -35,131 +33,64 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StonecutterContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StonecutterContainerManagerController() /*override*/ = default;
 
-    virtual void postInit(::std::weak_ptr<::ContainerManagerController> self) /*override*/;
+    // vIndex: 1
+    virtual void postInit(::std::weak_ptr<::ContainerManagerController>) /*override*/;
 
-    virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
+    // vIndex: 27
+    virtual bool isOutputSlot(::std::string const&) const /*override*/;
 
-    virtual void handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot) /*override*/;
+    // vIndex: 9
+    virtual void handleTakeAmount(::SlotData const&, int, ::SlotData const&) /*override*/;
 
-    virtual void handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
+    // vIndex: 10
+    virtual void handleTakeAll(::SlotData const&, ::SlotData const&) /*override*/;
 
-    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
+    // vIndex: 11
+    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
 
-    virtual void handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
+    // vIndex: 12
+    virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
 
-    virtual void handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot) /*override*/;
+    // vIndex: 13
+    virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
 
+    // vIndex: 15
     virtual int handleAutoPlace(
-        ::SlotData const&                     srcSlot,
-        int                                   amount,
-        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
-        ::std::vector<::AutoPlaceResult>&     destinations
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
     ) /*override*/;
 
-    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const& slot) const /*override*/;
+    // vIndex: 8
+    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
 
-    virtual void _onContainerScreenAction(::ContainerScreenActionResult const& result) /*override*/;
+    // vIndex: 34
+    virtual void _onContainerScreenAction(::ContainerScreenActionResult const&) /*override*/;
 
+    // vIndex: 29
     virtual ::CreateContainerItemScope
-    _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount) /*override*/;
+    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
 
-    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
+    // vIndex: 32
+    virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
 
+    // vIndex: 28
     virtual void _updateItemStackRequest(
         ::ContainerScreenRequestActionType,
-        ::ContainerScreenActionResult const& result,
-        ::ItemStackRequestScope&             requestScope
+        ::ContainerScreenActionResult const&,
+        ::ItemStackRequestScope&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit StonecutterContainerManagerController(
-        ::std::weak_ptr<::StonecutterContainerManagerModel> containerManagerModel
-    );
-
-    MCNAPI_C ::std::pair<::ItemInstance, ::RecipeNetId> _buildResultItem();
-
-    MCNAPI_C bool
-    _createCraftItem(::ItemInstance& instance, ::ItemStackRequestScope const& requestScope, uchar craftCount);
-
-    MCNAPI_C bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
-
-    MCNAPI_C void _setupCallbacks();
-
-    MCNAPI_C void _updateResultItem();
-
-    MCNAPI_C int getItemIdAuxForStonePattern(int collectionIndex) const;
-
-    MCNAPI_C ::ItemInstance getItemInstanceForStonePattern(int collectionIndex) const;
-
-    MCNAPI_C int getNumberOfStonePatterns() const;
-
-    MCNAPI_C int getStackCountForStonePattern(int collectionIndex) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::StonecutterContainerManagerModel> containerManagerModel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $postInit(::std::weak_ptr<::ContainerManagerController> self);
 
-    MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
-
-    MCNAPI void $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
-
-    MCNAPI void $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
-
-    MCNAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
-
-    MCNAPI void $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
-
-    MCNAPI void $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
-
-    MCNAPI int $handleAutoPlace(
-        ::SlotData const&                     srcSlot,
-        int                                   amount,
-        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
-        ::std::vector<::AutoPlaceResult>&     destinations
-    );
-
-    MCNAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
-
-    MCNAPI void $_onContainerScreenAction(::ContainerScreenActionResult const& result);
-
-    MCNAPI ::CreateContainerItemScope
-    $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
-
-    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
-
-    MCNAPI void $_updateItemStackRequest(
-        ::ContainerScreenRequestActionType,
-        ::ContainerScreenActionResult const& result,
-        ::ItemStackRequestScope&             requestScope
-    );
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

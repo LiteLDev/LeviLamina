@@ -32,34 +32,6 @@ public:
 public:
     // prevent constructor by default
     ScreenshotOptions& operator=(ScreenshotOptions const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ScreenshotOptions();
-
-    MCNAPI_C ScreenshotOptions(::ScreenshotOptions&&);
-
-    MCNAPI_C ScreenshotOptions(::ScreenshotOptions const&);
-
-    MCNAPI_C ::ScreenshotOptions& operator=(::ScreenshotOptions&&);
-
-    MCNAPI_C ~ScreenshotOptions();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::ScreenshotOptions&&);
-
-    MCNAPI_C void* $ctor(::ScreenshotOptions const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+    ScreenshotOptions(ScreenshotOptions const&);
+    ScreenshotOptions();
 };

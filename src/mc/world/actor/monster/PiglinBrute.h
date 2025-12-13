@@ -9,6 +9,7 @@ class PiglinBrute : public ::Piglin {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual ~PiglinBrute() /*override*/ = default;
     // NOLINTEND
 

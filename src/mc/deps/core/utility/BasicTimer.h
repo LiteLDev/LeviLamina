@@ -12,22 +12,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BasicTimer& operator=(BasicTimer const&);
-    BasicTimer(BasicTimer const&);
-    BasicTimer();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C BasicTimer(double timeDelay, ::std::function<double()> getTimeCallback);
-
-    MCAPI_C bool hasExpired() const;
-
-    MCAPI_C ::BasicTimer& operator=(::BasicTimer&&);
-
-    MCAPI_C void resetTime();
-
     MCAPI ~BasicTimer();
     // NOLINTEND
 
@@ -35,12 +21,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static double getSecondsSinceLaunch();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(double timeDelay, ::std::function<double()> getTimeCallback);
     // NOLINTEND
 
 public:

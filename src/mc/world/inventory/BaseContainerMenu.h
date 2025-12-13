@@ -50,40 +50,57 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ~BaseContainerMenu() /*override*/;
 
+    // vIndex: 2
     virtual void removeSlot(int, int) = 0;
 
+    // vIndex: 3
     virtual bool isSlotDirty(int slot);
 
+    // vIndex: 4
     virtual bool isResultSlot(int slot);
 
+    // vIndex: 0
     virtual void containerContentChanged(int slot) /*override*/;
 
+    // vIndex: 6
     virtual void serverInitItemStackIds() = 0;
 
+    // vIndex: 7
     virtual ::std::vector<::ItemStack> getItemCopies() const = 0;
 
+    // vIndex: 8
     virtual void setSlot(int, ::ItemStack const&, bool) = 0;
 
+    // vIndex: 9
     virtual ::ItemStack const& getSlot(int) const = 0;
 
+    // vIndex: 10
     virtual void setData(int id, int value) /*override*/;
 
+    // vIndex: 1
     virtual ::ContainerID getContainerId() const /*override*/;
 
+    // vIndex: 2
     virtual void setContainerId(::ContainerID id) /*override*/;
 
+    // vIndex: 3
     virtual ::SharedTypes::Legacy::ContainerType getContainerType() const /*override*/;
 
+    // vIndex: 4
     virtual void setContainerType(::SharedTypes::Legacy::ContainerType type) /*override*/;
 
+    // vIndex: 5
     virtual ::Bedrock::PubSub::Subscription
     registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const
         /*override*/;
 
+    // vIndex: 13
     virtual void broadcastChanges() /*override*/;
 
+    // vIndex: 5
     virtual ::Container* _getContainer() const = 0;
     // NOLINTEND
 
@@ -130,8 +147,6 @@ public:
     $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
 
     MCAPI void $broadcastChanges();
-
-
     // NOLINTEND
 
 public:

@@ -28,17 +28,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
+    // vIndex: 1
     virtual ~StringConstraint() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StringConstraint(::cereal::StringConstraint&&);
-
     MCNAPI StringConstraint(::cereal::StringConstraint const&);
+
+    MCNAPI StringConstraint(::cereal::StringConstraint&&);
 
     MCNAPI ::cereal::StringConstraint& regex(::std::string str, ::std::regex_constants::syntax_option_type flag);
 
@@ -54,9 +56,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::StringConstraint&&);
-
     MCNAPI void* $ctor(::cereal::StringConstraint const&);
+
+    MCNAPI void* $ctor(::cereal::StringConstraint&&);
     // NOLINTEND
 
 public:
@@ -69,8 +71,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::cereal::internal::ConstraintDescription $description() const;
-
-
     // NOLINTEND
 
 public:

@@ -29,12 +29,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void SetMessageQueue(::rtc::Thread* queue);
 
+    // vIndex: 3
     virtual bool Wait(::webrtc::TimeDelta, bool) = 0;
 
+    // vIndex: 4
     virtual void WakeUp() = 0;
 
+    // vIndex: 0
     virtual ~SocketServer() /*override*/;
     // NOLINTEND
 
@@ -48,8 +52,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $SetMessageQueue(::rtc::Thread* queue);
-
-
     // NOLINTEND
 };
 

@@ -17,6 +17,7 @@ class ScriptExhaustionComponent : public ::ScriptModuleMinecraft::AttributeScrip
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptExhaustionComponent() /*override*/ = default;
     // NOLINTEND
 

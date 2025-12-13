@@ -53,44 +53,24 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AllowList();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void serialize(::Json::Value& root) /*override*/;
 
+    // vIndex: 2
     virtual void deserialize(::Json::Value& root) /*override*/;
 
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~AllowList() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~AllowList() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit AllowList(::std::function<void()> syncCallback);
-
     MCAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string const& xuid) const;
 
     MCAPI void tryUpdateEntries(::mce::UUID const& uuid, ::std::string const& xuid, ::std::string const& name);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(::std::function<void()> syncCallback);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -99,8 +79,6 @@ public:
     MCAPI void $serialize(::Json::Value& root);
 
     MCAPI void $deserialize(::Json::Value& root);
-
-
     // NOLINTEND
 
 public:

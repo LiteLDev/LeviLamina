@@ -30,6 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LibHttpClientInstance() = default;
     // NOLINTEND
 

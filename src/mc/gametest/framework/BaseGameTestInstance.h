@@ -65,32 +65,46 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BaseGameTestInstance();
 
+    // vIndex: 1
     virtual void initialize();
 
+    // vIndex: 2
     virtual bool hasStructureBlock() const = 0;
 
+    // vIndex: 3
     virtual void clearStructure() = 0;
 
+    // vIndex: 4
     virtual void spawnStructure();
 
+    // vIndex: 5
     virtual ::std::optional<::AABB> getStructureBounds() const = 0;
 
+    // vIndex: 6
     virtual ::std::optional<::Vec3> getStructureBlockPivot() const = 0;
 
+    // vIndex: 7
     virtual ::std::optional<::Vec3> getStructureBlockPosPivot() const = 0;
 
+    // vIndex: 8
     virtual ::BoundingBox getStructureBoundingBox() const = 0;
 
+    // vIndex: 9
     virtual ::DimensionType getStructureDimension() const = 0;
 
+    // vIndex: 10
     virtual int _getLevelTick() const = 0;
 
+    // vIndex: 11
     virtual bool _isTestReady() = 0;
 
+    // vIndex: 12
     virtual void _rerun();
 
+    // vIndex: 13
     virtual void _removeSimulatedPlayers();
     // NOLINTEND
 
@@ -144,8 +158,6 @@ public:
     MCNAPI void $_rerun();
 
     MCNAPI void $_removeSimulatedPlayers();
-
-
     // NOLINTEND
 
 public:

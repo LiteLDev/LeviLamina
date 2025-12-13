@@ -9,39 +9,19 @@ class UIPackError : public ::PackError {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::std::unordered_map<int, ::std::string> const& getLocErrorMessageMap() const /*override*/;
 
+    // vIndex: 3
     virtual ::std::unordered_map<int, ::std::string> const& getEventErrorMessageMap() const /*override*/;
 
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~UIPackError() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~UIPackError() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
 
-    MCNAPI ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

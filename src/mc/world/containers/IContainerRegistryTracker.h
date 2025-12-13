@@ -16,6 +16,7 @@ class IContainerRegistryTracker {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ::std::unique_ptr<::DynamicContainerManager> createContainerManager(
         ::FullContainerName const&,
         ::ItemStack const&,
@@ -23,14 +24,19 @@ public:
         ::StorageWeightLimitItemComponent*
     ) = 0;
 
+    // vIndex: 1
     virtual uint generateNewID() = 0;
 
+    // vIndex: 2
     virtual void tryLoadSavedStorageItem(::ListTag const&, ::FullContainerName const&) = 0;
 
+    // vIndex: 3
     virtual void setExpired(::std::vector<::FullContainerName> const&) = 0;
 
+    // vIndex: 4
     virtual uint64 getSize() = 0;
 
+    // vIndex: 5
     virtual ~IContainerRegistryTracker();
     // NOLINTEND
 

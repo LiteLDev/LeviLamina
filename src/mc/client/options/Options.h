@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/input/KeyboardType.h"
 #include "mc/client/options/BaseOptions.h"
-#include "mc/client/options/GraphicsQualityPresetMode.h"
 #include "mc/client/options/IOptions.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
@@ -18,18 +17,15 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChatOptions;
 class ClientInstanceEventCoordinator;
 class GamePadRemappingLayout;
-class IAdvancedGraphicsOptions;
-class IOptions;
+class KeyboardRemappingLayout;
 class Option;
+class OptionSaveDeferral;
 class OptionsObserver;
 struct ScriptDebuggerSettings;
 namespace Scripting { struct WatchdogSettings; }
-struct ChatOptions;
-struct KeyboardRemappingLayout;
-struct OptionSaveDeferral;
-struct OptionValueInterface;
 // clang-format on
 
 class Options : public ::BaseOptions {
@@ -79,323 +75,170 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~Options() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~Options() /*override*/;
-#endif
 
-    virtual void load(::Core::PathBuffer<::std::string> filePath) /*override*/;
+    // vIndex: 16
+    virtual void load(::Core::PathBuffer<::std::string>) /*override*/;
 
+    // vIndex: 17
     virtual void tickSaveTimer() /*override*/;
 
+    // vIndex: 18
     virtual void notifySaveAllowed() /*override*/;
 
+    // vIndex: 19
     virtual void saveIfNeeded() /*override*/;
 
+    // vIndex: 20
     virtual ::OptionSaveDeferral requestSaveDeferral() /*override*/;
 
-    virtual void reset(::OptionResetFlags flags, ::InputMode inputMode) /*override*/;
+    // vIndex: 21
+    virtual void reset(::OptionResetFlags, ::InputMode) /*override*/;
 
+    // vIndex: 22
     virtual bool getPrimaryUserStatus() const /*override*/;
 
-    virtual void setClientInstanceCoordinator(
-        ::Bedrock::NonOwnerPointer<::ClientInstanceEventCoordinator> const& coordinator
-    ) /*override*/;
+    // vIndex: 23
+    virtual void
+    setClientInstanceCoordinator(::Bedrock::NonOwnerPointer<::ClientInstanceEventCoordinator> const&) /*override*/;
 
+    // vIndex: 62
     virtual ::FileStorageDirectory getFileStorageLocation() const /*override*/;
 
-    virtual void setFileStorageLocation(
-        ::FileStorageDirectory      fileStorageDirectory,
-        ::std::function<void(bool)> onComplete
-    ) /*override*/;
+    // vIndex: 61
+    virtual void setFileStorageLocation(::FileStorageDirectory, ::std::function<void(bool)>) /*override*/;
 
-    virtual void onScreenSizeChanged(int width, int height) /*override*/;
+    // vIndex: 24
+    virtual void onScreenSizeChanged(int, int) /*override*/;
 
-    virtual bool isValidOption(::OptionID optionId) const /*override*/;
+    // vIndex: 25
+    virtual bool isValidOption(::OptionID) const /*override*/;
 
-    virtual ::gsl::not_null<::Option*> get(::OptionID optionId) /*override*/;
+    // vIndex: 26
+    virtual ::gsl::not_null<::Option*> get(::OptionID) /*override*/;
 
-    virtual ::gsl::not_null<::Option const*> get(::OptionID optionId) const /*override*/;
+    // vIndex: 1
+    virtual ::gsl::not_null<::Option const*> get(::OptionID) const /*override*/;
 
-    virtual ::std::optional<::Option*> getIfValid(::OptionID optionId) /*override*/;
+    // vIndex: 28
+    virtual ::std::optional<::Option*> getIfValid(::OptionID) /*override*/;
 
-    virtual ::std::optional<::Option const*> getIfValid(::OptionID optionId) const /*override*/;
+    // vIndex: 27
+    virtual ::std::optional<::Option const*> getIfValid(::OptionID) const /*override*/;
 
-    virtual void getTelemetryOptions(::std::vector<::OptionID>& output) /*override*/;
+    // vIndex: 29
+    virtual void getTelemetryOptions(::std::vector<::OptionID>&) /*override*/;
 
+    // vIndex: 30
     virtual void refreshRenderDistanceLevels() /*override*/;
 
+    // vIndex: 31
     virtual bool isLoadInProgress() /*override*/;
 
-    virtual void addObserver(::OptionsObserver& observer) /*override*/;
+    // vIndex: 32
+    virtual void addObserver(::OptionsObserver&) /*override*/;
 
-    virtual void loadOptionsFromString(::std::string options) /*override*/;
+    // vIndex: 33
+    virtual void loadOptionsFromString(::std::string) /*override*/;
 
-    virtual void elevateSaveRequestMode(::IOptions::SaveRequestMode saveRequestMode) /*override*/;
+    // vIndex: 34
+    virtual void elevateSaveRequestMode(::IOptions::SaveRequestMode) /*override*/;
 
+    // vIndex: 36
     virtual ::ChatOptions const& getChatOptions() const /*override*/;
 
+    // vIndex: 35
     virtual ::ChatOptions& getChatOptions() /*override*/;
 
+    // vIndex: 37
     virtual ::std::array<::std::unique_ptr<::Option>, 772> const& getAllRegisteredOptions() /*override*/;
 
-    virtual void forEachOption(::std::function<void(::Option*)> callback) /*override*/;
+    // vIndex: 38
+    virtual void forEachOption(::std::function<void(::Option*)>) /*override*/;
 
+    // vIndex: 64
     virtual int getViewDistanceChunks() const /*override*/;
 
-    virtual int getDefaultViewDistanceChunks(::GraphicsMode graphicsMode) const /*override*/;
+    // vIndex: 65
+    virtual int getDefaultViewDistanceChunks(::GraphicsMode) const /*override*/;
 
+    // vIndex: 10
     virtual int getMaxViewDistanceChunks() const /*override*/;
 
+    // vIndex: 66
     virtual int getMaxViewDistanceChunksRaw() const /*override*/;
 
+    // vIndex: 80
     virtual bool getRayTracing() const /*override*/;
 
+    // vIndex: 81
     virtual bool getDeferred() const /*override*/;
 
+    // vIndex: 93
     virtual ::GamePadRemappingLayout& getGamePadRemapping() /*override*/;
 
+    // vIndex: 94
     virtual ::std::shared_ptr<::KeyboardRemappingLayout> getCurrentKeyboardRemapping() const /*override*/;
 
+    // vIndex: 95
     virtual ::std::shared_ptr<::KeyboardRemappingLayout> getKeyboardRemappingByType(::KeyboardType) const /*override*/;
 
-    virtual void setLanguage(::std::string const& language) /*override*/;
+    // vIndex: 96
+    virtual void setLanguage(::std::string const&) /*override*/;
 
+    // vIndex: 97
     virtual ::std::string getLanguage() const /*override*/;
 
-    virtual void setPlayerViewPerspective(int playerViewPerspective) /*override*/;
+    // vIndex: 123
+    virtual void setPlayerViewPerspective(int) /*override*/;
 
-    virtual void setRecentSkinIds(::std::vector<::std::string> const& recentSkinIds) /*override*/;
+    // vIndex: 140
+    virtual void setRecentSkinIds(::std::vector<::std::string> const&) /*override*/;
 
+    // vIndex: 141
     virtual ::std::vector<::std::string> const& getRecentSkinIds() /*override*/;
 
+    // vIndex: 323
     virtual float getDefaultPlatformSafeZoneX() const /*override*/;
 
+    // vIndex: 324
     virtual float getDefaultPlatformSafeZoneY() const /*override*/;
 
+    // vIndex: 325
     virtual bool getServerboundClientDiagnosticsEnabled() const /*override*/;
 
+    // vIndex: 326
     virtual ::ScriptDebuggerSettings getScriptDebuggerSettings() const /*override*/;
 
+    // vIndex: 327
     virtual ::Scripting::WatchdogSettings getScriptWatchdogSettings() const /*override*/;
 
+    // vIndex: 11
     virtual ::GraphicsMode getGraphicsMode() const /*override*/;
 
+    // vIndex: 82
     virtual int getGraphicsQualityPresetMode() const /*override*/;
 
+    // vIndex: 83
     virtual int getDeferredTargetFrameRate() const /*override*/;
 
-    virtual void setSaveDeferralCount(int value) /*override*/;
+    // vIndex: 343
+    virtual void setSaveDeferralCount(int) /*override*/;
 
+    // vIndex: 344
     virtual int getSaveDeferralCount() const /*override*/;
 
+    // vIndex: 9
     virtual ::std::optional<::DeviceMemoryTier> getScriptingMemoryTierOverride() const /*override*/;
 
-    virtual void setForceVibrantVisualsDisabled(bool value) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C Options(
-        ::std::unique_ptr<::OptionValueInterface> optionValues,
-        bool,
-        bool                                                             isPrimaryUser,
-        ::std::weak_ptr<::IOptions> const&                               perMachineOptionsSource,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
-    );
-
-    MCNAPI_C ::std::string _cleanPlayerName(::std::string const& name) const;
-
-    MCNAPI_C void _loadInputMapping(::std::map<::std::string, ::std::string>& propertyMap);
-
-    MCNAPI_C void _loadOptions(::std::map<::std::string, ::std::string>& propertyMap);
-
-    MCNAPI_C void _loadSpecialOptions(::std::map<::std::string, ::std::string>& propertyMap);
-
-    MCNAPI_C void _parseFilesAndLoadOptions();
-
-    MCNAPI_C void _readGamepadMapping(::std::string const& optionKey, ::std::string const& value);
-
-    MCNAPI_C void _readKeyboardMapping(::std::string const& optionKey, ::std::string const& value);
-
-    MCNAPI_C void _registerAccessibilityOptions();
-
-    MCNAPI_C void _registerChatOptions();
-
-    MCNAPI_C void _registerHiddenFeatureOptions();
-
-    MCNAPI_C void _registerOptions();
-
-    MCNAPI_C void _registerSelfLock(::OptionID id, ::std::function<void(bool&)> isModifiableCondition);
-
-    MCNAPI_C void _registerSelfObserver(
-        ::OptionID                                          id,
-        ::std::function<void(::Option const&, ::InputMode)> onInputModeValueChangeCallback
-    );
-
-    MCNAPI_C void _registerSelfObserver(::OptionID id, ::std::function<void(::Option const&)> onValueChangeCallback);
-
-    MCNAPI_C void _registerSelfObservers();
-
-    MCNAPI_C void
-    _resolveMultipleSwitchRealmsEnabled(bool doOverride, ::std::vector<::std::string> featureList, bool currentSetting);
-
-    MCNAPI_C bool _save();
-
-    MCNAPI_C void _saveAsync();
-
-    MCNAPI_C void _saveInputMapping(::std::vector<::std::pair<::std::string, ::std::string>>& settingsVec) const;
-
-    MCNAPI_C void _setAGFXValuesForPreset(::GraphicsQualityPresetMode preset);
-
-    MCNAPI_C void _setOptionCallbacks();
-
-    MCNAPI_C bool _shouldLoadGamepadMapping(::std::map<::std::string, ::std::string>& propertyMap) const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::string const& do_not_save();
-
-    MCNAPI_C static ::std::string const& not_available();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        ::std::unique_ptr<::OptionValueInterface> optionValues,
-        bool,
-        bool                                                             isPrimaryUser,
-        ::std::weak_ptr<::IOptions> const&                               perMachineOptionsSource,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    // vIndex: 345
+    virtual void setForceVibrantVisualsDisabled(bool) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $load(::Core::PathBuffer<::std::string> filePath);
 
-    MCNAPI void $tickSaveTimer();
-
-    MCNAPI void $notifySaveAllowed();
-
-    MCNAPI void $saveIfNeeded();
-
-    MCNAPI ::OptionSaveDeferral $requestSaveDeferral();
-
-    MCNAPI void $reset(::OptionResetFlags flags, ::InputMode inputMode);
-
-    MCNAPI bool $getPrimaryUserStatus() const;
-
-    MCNAPI void
-    $setClientInstanceCoordinator(::Bedrock::NonOwnerPointer<::ClientInstanceEventCoordinator> const& coordinator);
-
-    MCNAPI ::FileStorageDirectory $getFileStorageLocation() const;
-
-    MCNAPI void
-    $setFileStorageLocation(::FileStorageDirectory fileStorageDirectory, ::std::function<void(bool)> onComplete);
-
-    MCNAPI void $onScreenSizeChanged(int width, int height);
-
-    MCNAPI bool $isValidOption(::OptionID optionId) const;
-
-    MCNAPI ::gsl::not_null<::Option*> $get(::OptionID optionId);
-
-    MCNAPI ::gsl::not_null<::Option const*> $get(::OptionID optionId) const;
-
-    MCNAPI ::std::optional<::Option*> $getIfValid(::OptionID optionId);
-
-    MCNAPI ::std::optional<::Option const*> $getIfValid(::OptionID optionId) const;
-
-    MCNAPI void $getTelemetryOptions(::std::vector<::OptionID>& output);
-
-    MCNAPI void $refreshRenderDistanceLevels();
-
-    MCNAPI bool $isLoadInProgress();
-
-    MCNAPI void $addObserver(::OptionsObserver& observer);
-
-    MCNAPI void $loadOptionsFromString(::std::string options);
-
-    MCNAPI void $elevateSaveRequestMode(::IOptions::SaveRequestMode saveRequestMode);
-
-    MCNAPI ::ChatOptions const& $getChatOptions() const;
-
-    MCNAPI ::ChatOptions& $getChatOptions();
-
-    MCNAPI ::std::array<::std::unique_ptr<::Option>, 772> const& $getAllRegisteredOptions();
-
-    MCNAPI void $forEachOption(::std::function<void(::Option*)> callback);
-
-    MCNAPI int $getViewDistanceChunks() const;
-
-    MCNAPI int $getDefaultViewDistanceChunks(::GraphicsMode graphicsMode) const;
-
-    MCNAPI int $getMaxViewDistanceChunks() const;
-
-    MCNAPI int $getMaxViewDistanceChunksRaw() const;
-
-    MCNAPI bool $getRayTracing() const;
-
-    MCNAPI bool $getDeferred() const;
-
-    MCNAPI ::GamePadRemappingLayout& $getGamePadRemapping();
-
-    MCNAPI ::std::shared_ptr<::KeyboardRemappingLayout> $getCurrentKeyboardRemapping() const;
-
-    MCNAPI void $setLanguage(::std::string const& language);
-
-    MCNAPI ::std::string $getLanguage() const;
-
-    MCNAPI void $setPlayerViewPerspective(int playerViewPerspective);
-
-    MCNAPI void $setRecentSkinIds(::std::vector<::std::string> const& recentSkinIds);
-
-    MCNAPI ::std::vector<::std::string> const& $getRecentSkinIds();
-
-    MCNAPI float $getDefaultPlatformSafeZoneX() const;
-
-    MCNAPI float $getDefaultPlatformSafeZoneY() const;
-
-    MCNAPI bool $getServerboundClientDiagnosticsEnabled() const;
-
-    MCNAPI ::ScriptDebuggerSettings $getScriptDebuggerSettings() const;
-
-    MCNAPI ::Scripting::WatchdogSettings $getScriptWatchdogSettings() const;
-
-    MCNAPI ::GraphicsMode $getGraphicsMode() const;
-
-    MCNAPI int $getGraphicsQualityPresetMode() const;
-
-    MCNAPI int $getDeferredTargetFrameRate() const;
-
-    MCNAPI void $setSaveDeferralCount(int value);
-
-    MCNAPI int $getSaveDeferralCount() const;
-
-    MCNAPI ::std::optional<::DeviceMemoryTier> $getScriptingMemoryTierOverride() const;
-
-    MCNAPI void $setForceVibrantVisualsDisabled(bool value);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit Vec3(::glm::vec3 const& glm);
-
     MCAPI explicit Vec3(float s);
 
     MCAPI Vec3(float x_, float y_, float z_);
@@ -33,31 +31,13 @@ public:
 
     MCAPI bool isNear(::Vec3 const& rhs, float e) const;
 
-    MCFOLD_C float length() const;
-
     MCFOLD ::Vec3 normalized() const;
 
     MCAPI ::Vec3 operator*(float k) const;
 
-    MCFOLD_C ::Vec3 operator+(::glm::vec3 const& rhs) const;
-
-    MCAPI_C ::Vec3 operator+(::Vec3 const&) const;
-
-    MCAPI_C ::Vec3 operator+(float f) const;
-
-    MCAPI_C ::Vec3& operator+=(::Vec3 const& rhs);
-
     MCAPI ::Vec3 operator-() const;
 
-    MCAPI_C ::Vec3 operator-(float f) const;
-
-    MCAPI_C ::Vec3 operator-(::Vec3 const& rhs) const;
-
-    MCAPI_C ::Vec3& operator-=(::Vec3 const& rhs);
-
     MCFOLD bool operator==(::Vec3 const& rhs) const;
-
-    MCAPI_C ::Vec3 round() const;
 
     MCAPI ::std::string toString() const;
     // NOLINTEND
@@ -65,8 +45,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::Vec3 clamp(::Vec3 const& v, ::Vec3 const& clipMin, ::Vec3 const& clipMax);
-
     MCAPI static ::Vec3 directionFromRotation(::Vec2 const& rot);
     // NOLINTEND
 
@@ -79,11 +57,7 @@ public:
 
     MCAPI static ::Vec3 const& MIN();
 
-    MCAPI_C static ::Vec3 const& NEG_UNIT_X();
-
     MCAPI static ::Vec3 const& NEG_UNIT_Y();
-
-    MCAPI_C static ::Vec3 const& NEG_UNIT_Z();
 
     MCAPI static ::Vec3 const& ONE();
 
@@ -99,10 +73,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD_C void* $ctor(::glm::vec3 const& glm);
-
     MCAPI void* $ctor(float s);
 
-    MCFOLD void* $ctor(float x_, float y_, float z_);
+    MCAPI void* $ctor(float x_, float y_, float z_);
     // NOLINTEND
 };

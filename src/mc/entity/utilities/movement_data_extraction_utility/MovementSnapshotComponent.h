@@ -86,37 +86,8 @@ public:
 public:
     // prevent constructor by default
     MovementSnapshotComponent& operator=(MovementSnapshotComponent const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C MovementSnapshotComponent();
-
-    MCNAPI_C MovementSnapshotComponent(::MovementDataExtractionUtility::MovementSnapshotComponent&&);
-
-    MCNAPI_C MovementSnapshotComponent(::MovementDataExtractionUtility::MovementSnapshotComponent const&);
-
-    MCNAPI_C ::MovementDataExtractionUtility::MovementSnapshotComponent&
-    operator=(::MovementDataExtractionUtility::MovementSnapshotComponent&&);
-
-    MCNAPI_C ~MovementSnapshotComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::MovementDataExtractionUtility::MovementSnapshotComponent&&);
-
-    MCNAPI_C void* $ctor(::MovementDataExtractionUtility::MovementSnapshotComponent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+    MovementSnapshotComponent(MovementSnapshotComponent const&);
+    MovementSnapshotComponent();
 };
 
 } // namespace MovementDataExtractionUtility

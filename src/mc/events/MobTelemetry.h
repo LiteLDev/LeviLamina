@@ -19,6 +19,48 @@ public:
     // clang-format on
 
     // MobTelemetry inner types define
+    struct MobSpawnData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk3e4262;
+        ::ll::UntypedStorage<8, 32> mUnk9852a2;
+        ::ll::UntypedStorage<8, 32> mUnk82407e;
+        ::ll::UntypedStorage<8, 32> mUnke04d34;
+        ::ll::UntypedStorage<8, 32> mUnkc59ab3;
+        ::ll::UntypedStorage<8, 32> mUnk75451b;
+        ::ll::UntypedStorage<4, 4>  mUnk52c416;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MobSpawnData& operator=(MobSpawnData const&);
+        MobSpawnData(MobSpawnData const&);
+        MobSpawnData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI MobSpawnData(::Social::Events::MobTelemetry::MobSpawnData&&);
+
+        MCNAPI ::Social::Events::MobTelemetry::MobSpawnData& operator=(::Social::Events::MobTelemetry::MobSpawnData&&);
+
+        MCNAPI ~MobSpawnData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::Social::Events::MobTelemetry::MobSpawnData&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
     struct MobDeathData {
     public:
         // member variables
@@ -77,48 +119,6 @@ public:
         MCNAPI ::Social::Events::MobTelemetry::MobItemData& operator=(::Social::Events::MobTelemetry::MobItemData&&);
 
         MCNAPI ~MobItemData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
-    struct MobSpawnData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk3e4262;
-        ::ll::UntypedStorage<8, 32> mUnk9852a2;
-        ::ll::UntypedStorage<8, 32> mUnk82407e;
-        ::ll::UntypedStorage<8, 32> mUnke04d34;
-        ::ll::UntypedStorage<8, 32> mUnkc59ab3;
-        ::ll::UntypedStorage<8, 32> mUnk75451b;
-        ::ll::UntypedStorage<4, 4>  mUnk52c416;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MobSpawnData& operator=(MobSpawnData const&);
-        MobSpawnData(MobSpawnData const&);
-        MobSpawnData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI MobSpawnData(::Social::Events::MobTelemetry::MobSpawnData&&);
-
-        MCNAPI ::Social::Events::MobTelemetry::MobSpawnData& operator=(::Social::Events::MobTelemetry::MobSpawnData&&);
-
-        MCNAPI ~MobSpawnData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Social::Events::MobTelemetry::MobSpawnData&&);
         // NOLINTEND
 
     public:

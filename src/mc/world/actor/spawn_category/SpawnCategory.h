@@ -10,7 +10,7 @@ namespace SpawnCategory { struct Config; }
 namespace SpawnCategory {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::array<::SpawnCategory::Config const, 8> const& CONFIG();
+MCAPI ::std::array<::SpawnCategory::Config const, 8> const& CONFIG();
 // NOLINTEND
 
 } // namespace SpawnCategory

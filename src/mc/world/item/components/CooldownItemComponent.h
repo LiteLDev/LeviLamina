@@ -31,6 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CooldownItemComponent() /*override*/ = default;
     // NOLINTEND
 

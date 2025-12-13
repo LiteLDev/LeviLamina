@@ -55,27 +55,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool canUse() /*override*/;
 
+    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
+    // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 5
     virtual void stop() /*override*/;
 
+    // vIndex: 6
     virtual void tick() /*override*/;
 
+    // vIndex: 10
     virtual void updateMovement() = 0;
 
+    // vIndex: 11
     virtual void stopMovement() = 0;
 
+    // vIndex: 0
     virtual ~TemptBaseGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TemptBaseGoal(
+    MCAPI TemptBaseGoal(
         ::Mob&                                 mob,
         float                                  speed,
         ::std::vector<::ItemDescriptor> const& itemList,
@@ -94,7 +102,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Mob&                                 mob,
         float                                  speed,
         ::std::vector<::ItemDescriptor> const& itemList,
@@ -113,23 +121,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
-
-
+    MCAPI void $tick();
     // NOLINTEND
 
 public:

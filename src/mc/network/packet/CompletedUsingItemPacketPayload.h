@@ -6,13 +6,7 @@ struct CompletedUsingItemPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkf9525a;
-    ::ll::UntypedStorage<4, 4> mUnk70cc83;
+    ::ll::TypedStorage<2, 2, short> mItemId;
+    ::ll::TypedStorage<4, 4, int>   mItemUseMethod;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CompletedUsingItemPacketPayload& operator=(CompletedUsingItemPacketPayload const&);
-    CompletedUsingItemPacketPayload(CompletedUsingItemPacketPayload const&);
-    CompletedUsingItemPacketPayload();
 };

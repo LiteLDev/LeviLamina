@@ -24,18 +24,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~StructureCopyToClipboardPayload() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~StructureCopyToClipboardPayload() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

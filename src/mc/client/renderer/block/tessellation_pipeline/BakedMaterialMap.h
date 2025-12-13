@@ -4,9 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct BlockMaterialInstancesComponent;
 namespace ClientBlockPipeline { class Material; }
-namespace ClientBlockPipeline { struct BlockSchematic; }
 // clang-format on
 
 namespace ClientBlockPipeline {
@@ -28,27 +26,6 @@ public:
     BakedMaterialMap& operator=(BakedMaterialMap const&);
     BakedMaterialMap(BakedMaterialMap const&);
     BakedMaterialMap();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::std::shared_ptr<::ClientBlockPipeline::Material const> _lookupMaterialInfo(
-        ::ClientBlockPipeline::BlockSchematic const& blockSchematic,
-        ::BlockMaterialInstancesComponent const&     materialInstance,
-        ::std::string const&                         materialInstanceName
-    );
-
-    MCNAPI_C void bake(
-        ::ClientBlockPipeline::BlockSchematic const& blockSchematic,
-        ::BlockMaterialInstancesComponent const&     materialInstance
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::add_lvalue_reference_t<char const[]> MATERIAL_INSTANCE_FIND_ERROR();
-    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

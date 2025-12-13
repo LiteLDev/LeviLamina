@@ -20,6 +20,17 @@ public:
     // clang-format on
 
     // LevelStorageWriteBatch inner types define
+    class PerfContext {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64>         mOperation;
+        ::ll::TypedStorage<8, 8, uint64>         mSize;
+        ::ll::TypedStorage<8, 32, ::std::string> mKey;
+        ::ll::TypedStorage<8, 8, char const*>    mReason;
+        // NOLINTEND
+    };
+
     struct BatchEntry {
     public:
         // member variables
@@ -42,23 +53,12 @@ public:
         // NOLINTEND
     };
 
-    class PerfContext {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64>         mOperation;
-        ::ll::TypedStorage<8, 8, uint64>         mSize;
-        ::ll::TypedStorage<8, 32, ::std::string> mKey;
-        ::ll::TypedStorage<8, 8, char const*>    mReason;
-        // NOLINTEND
-    };
-
     using BatchContainerType = ::std::map<::std::string, ::LevelStorageWriteBatch::BatchEntry>;
 
-    using const_iterator = ::std::_Tree_const_iterator<::std::_Tree_val<
+    using iterator = ::std::_Tree_iterator<::std::_Tree_val<
         ::std::_Tree_simple_types<::std::pair<::std::string const, ::LevelStorageWriteBatch::BatchEntry>>>>;
 
-    using iterator = ::std::_Tree_iterator<::std::_Tree_val<
+    using const_iterator = ::std::_Tree_const_iterator<::std::_Tree_val<
         ::std::_Tree_simple_types<::std::pair<::std::string const, ::LevelStorageWriteBatch::BatchEntry>>>>;
 
 public:
@@ -77,19 +77,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LevelStorageWriteBatch();
 
+    // vIndex: 4
     virtual void putKey(::std::string const& key, ::std::string_view data, ::DBHelpers::Category category);
 
+    // vIndex: 3
     virtual void putKey(::std::string const& key, ::std::string const& data, ::DBHelpers::Category category);
 
+    // vIndex: 2
     virtual void putKey(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
 
+    // vIndex: 1
     virtual void
     putKey(::std::string const& key, ::std::shared_ptr<::std::string> data, ::DBHelpers::Category category);
 
+    // vIndex: 5
     virtual void deleteKey(::std::string const& key, ::DBHelpers::Category category);
 
+    // vIndex: 6
     virtual void flush(::LevelStorage& db);
     // NOLINTEND
 
@@ -131,8 +138,6 @@ public:
     MCAPI void $deleteKey(::std::string const& key, ::DBHelpers::Category category);
 
     MCAPI void $flush(::LevelStorage& db);
-
-
     // NOLINTEND
 
 public:

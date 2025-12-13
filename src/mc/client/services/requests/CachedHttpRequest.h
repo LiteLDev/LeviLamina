@@ -8,11 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class ServiceClient;
 namespace Bedrock::Http { class HeaderCollection; }
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
-namespace Core { class Path; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -62,94 +60,43 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~CachedHttpRequest() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CachedHttpRequest() /*override*/;
-#endif
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::std::string authToken) /*override*/;
+    // vIndex: 3
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::std::string) /*override*/;
 
+    // vIndex: 10
     virtual ::Bedrock::Http::Request _createRequest(::std::string) = 0;
 
-    virtual void processResponse(::Bedrock::Http::Response response) /*override*/;
+    // vIndex: 4
+    virtual void processResponse(::Bedrock::Http::Response) /*override*/;
 
-    virtual void _recordTelemetry(::Bedrock::Http::Response const& response) const;
+    // vIndex: 11
+    virtual void _recordTelemetry(::Bedrock::Http::Response const&) const;
 
+    // vIndex: 12
     virtual void _responseHeaders(::Bedrock::Http::HeaderCollection const&) = 0;
 
+    // vIndex: 13
     virtual bool _parseJsonResponse(::Json::Value const&) = 0;
 
+    // vIndex: 14
     virtual void _parseJsonMetadata(::Json::Value const&) = 0;
 
+    // vIndex: 15
     virtual ::Json::Value _createMetadata() const = 0;
 
+    // vIndex: 16
     virtual bool _tryUseCachedResponse();
 
-    virtual void _writeToCache(::Json::Value const& metadataJson, ::Json::Value const& responseJson) const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C CachedHttpRequest(
-        ::ServiceClient const& owner,
-        ::Core::Path const&    cacheLocation,
-        ::std::string const&   cachedFilename,
-        uint,
-        uint,
-        int timeoutSeconds
-    );
-
-    MCNAPI_C ::Json::Value const& _loadFromCache();
-
-    MCNAPI_C bool _populateFromResponse(::Json::Value const& responseJson);
-
-    MCNAPI_C ::Json::Value const& _readMetadataFromCache();
-
-    MCNAPI_C ::Json::Value const& _readResponseFromCache();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        ::ServiceClient const& owner,
-        ::Core::Path const&    cacheLocation,
-        ::std::string const&   cachedFilename,
-        uint,
-        uint,
-        int timeoutSeconds
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    // vIndex: 17
+    virtual void _writeToCache(::Json::Value const&, ::Json::Value const&) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> $send(::std::string authToken);
 
-    MCNAPI void $processResponse(::Bedrock::Http::Response response);
-
-    MCNAPI void $_recordTelemetry(::Bedrock::Http::Response const& response) const;
-
-    MCNAPI bool $_tryUseCachedResponse();
-
-    MCNAPI void $_writeToCache(::Json::Value const& metadataJson, ::Json::Value const& responseJson) const;
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -13,18 +13,25 @@ class IGameTestListener {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IGameTestListener() = default;
 
+    // vIndex: 1
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance&);
 
+    // vIndex: 2
     virtual void onTestPassed(::gametest::BaseGameTestInstance&);
 
+    // vIndex: 3
     virtual void onTestFailed(::gametest::BaseGameTestInstance&);
 
+    // vIndex: 4
     virtual void onTestStarted(::gametest::BaseGameTestInstance&);
 
+    // vIndex: 5
     virtual void onTestRetryStarted(::gametest::BaseGameTestInstance&);
 
+    // vIndex: 6
     virtual void onTestRetryFinished(::gametest::BaseGameTestInstance&);
     // NOLINTEND
 
@@ -42,8 +49,6 @@ public:
     MCNAPI void $onTestRetryStarted(::gametest::BaseGameTestInstance&);
 
     MCNAPI void $onTestRetryFinished(::gametest::BaseGameTestInstance&);
-
-
     // NOLINTEND
 };
 

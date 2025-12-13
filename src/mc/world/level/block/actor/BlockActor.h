@@ -41,11 +41,11 @@ public:
         Count               = 5,
     };
 
+    using Properties = ::Bedrock::EnumSet<::BlockActor::Property, 5>;
+
     using MapIdType = ::std::unordered_map<::std::string, ::BlockActorType>;
 
     using MapTypeId = ::std::unordered_map<::BlockActorType, ::std::string>;
-
-    using Properties = ::Bedrock::EnumSet<::BlockActor::Property, 5>;
 
 public:
     // member variables
@@ -68,98 +68,143 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BlockActor();
 
+    // vIndex: 1
     virtual void load(::ILevel&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
+    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const&) const;
 
+    // vIndex: 3
     virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
+    // vIndex: 4
     virtual void saveBlockData(::CompoundTag&, ::BlockSource&) const;
 
+    // vIndex: 5
     virtual void loadBlockData(::CompoundTag const&, ::BlockSource&, ::DataLoadHelper&);
 
+    // vIndex: 6
     virtual void onCustomTagLoadDone(::BlockSource&);
 
+    // vIndex: 7
     virtual bool isPermanentlyRendered() const;
 
+    // vIndex: 8
     virtual bool isWithinRenderDistance(::Vec3 const& cameraPosition) const;
 
+    // vIndex: 9
     virtual void tick(::BlockSource& region);
 
+    // vIndex: 10
     virtual void onChanged(::BlockSource&);
 
+    // vIndex: 11
     virtual void onPlace(::BlockSource&);
 
+    // vIndex: 12
     virtual void onMove();
 
+    // vIndex: 13
     virtual void onRemoved(::BlockSource&);
 
+    // vIndex: 14
     virtual bool isPreserved(::BlockSource&) const;
 
+    // vIndex: 15
     virtual bool shouldPreserve(::BlockSource&);
 
+    // vIndex: 16
     virtual void triggerEvent(int, int);
 
+    // vIndex: 17
     virtual void executeEvent(::BlockSource&, ::BlockPos const&, ::Block const&, ::std::string const&, ::Actor&);
 
+    // vIndex: 18
     virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&);
 
+    // vIndex: 19
     virtual float getShadowRadius(::BlockSource&) const;
 
+    // vIndex: 20
     virtual bool hasAlphaLayer() const;
 
+    // vIndex: 21
     virtual ::BlockActor* getCrackEntity(::BlockSource&, ::BlockPos const&);
 
+    // vIndex: 22
     virtual ::AABB getCollisionShape(::IConstBlockSource const&) const;
 
+    // vIndex: 23
     virtual void getDebugText(
         ::std::vector<::std::string>& outputInfo,
         ::BlockPos const&             debugPos,
         ::BlockSource const*          region
     ) const;
 
+    // vIndex: 24
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const;
 
+    // vIndex: 25
     virtual ::std::string getName() const;
 
+    // vIndex: 26
     virtual void setCustomName(::Bedrock::Safety::RedactableString const& name);
 
+    // vIndex: 27
     virtual ::std::string getImmersiveReaderText(::BlockSource&);
 
+    // vIndex: 29
     virtual ::PistonBlockActor* getOwningPiston(::BlockSource&);
 
+    // vIndex: 28
     virtual ::PistonBlockActor const* getOwningPiston(::BlockSource&) const;
 
+    // vIndex: 31
     virtual ::Container* getContainer();
 
+    // vIndex: 30
     virtual ::Container const* getContainer() const;
 
+    // vIndex: 32
     virtual void eraseLootTable();
 
+    // vIndex: 33
     virtual void onChunkLoaded(::LevelChunk&);
 
+    // vIndex: 34
     virtual void onChunkUnloaded(::LevelChunk&);
 
+    // vIndex: 35
     virtual void onSubChunkLoaded(::LevelChunk&, short, bool);
 
+    // vIndex: 36
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const&) const;
 
+    // vIndex: 37
     virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const&) const;
 
+    // vIndex: 38
     virtual void setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
+    // vIndex: 39
     virtual void setFilteredUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
+    // vIndex: 40
     virtual bool validateData(::CompoundTag const&) const;
 
+    // vIndex: 41
     virtual void fixupOnLoad(::LevelChunk&);
 
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&);
 
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&);
 
+    // vIndex: 44
     virtual bool _playerCanUpdate(::Player const&) const;
     // NOLINTEND
 
@@ -167,8 +212,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockActor(::BlockActorType type, ::BlockPos const& pos, ::BlockActorRendererId rendererId);
-
-    MCAPI_C ::Bedrock::Safety::RedactableString getDisplayName() const;
 
     MCAPI bool onUpdatePacket(::CompoundTag const& data, ::BlockSource& region, ::Player const* fromPlayer);
     // NOLINTEND
@@ -288,8 +331,6 @@ public:
     MCFOLD void $_onUpdatePacket(::CompoundTag const&, ::BlockSource&);
 
     MCFOLD bool $_playerCanUpdate(::Player const&) const;
-
-
     // NOLINTEND
 
 public:

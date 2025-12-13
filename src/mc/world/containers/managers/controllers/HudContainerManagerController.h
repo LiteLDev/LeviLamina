@@ -20,44 +20,18 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HudContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~HudContainerManagerController() /*override*/ = default;
 
+    // vIndex: 2
     virtual void registerContainerCallbacks() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit HudContainerManagerController(::std::weak_ptr<::HudContainerManagerModel> containerManagerModel);
-
-    MCNAPI_C void refreshHotbar();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::HudContainerManagerModel> containerManagerModel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $registerContainerCallbacks();
-#endif
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

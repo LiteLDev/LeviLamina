@@ -33,26 +33,36 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::std::string id() const /*override*/;
 
+    // vIndex: 11
     virtual bool AddTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track) /*override*/;
 
+    // vIndex: 10
     virtual bool AddTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> track) /*override*/;
 
+    // vIndex: 15
     virtual bool RemoveTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track) /*override*/;
 
+    // vIndex: 14
     virtual bool RemoveTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> track) /*override*/;
 
+    // vIndex: 6
     virtual ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
     FindAudioTrack(::std::string const& track_id) /*override*/;
 
+    // vIndex: 7
     virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
     FindVideoTrack(::std::string const& track_id) /*override*/;
 
+    // vIndex: 4
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>> GetAudioTracks() /*override*/;
 
+    // vIndex: 5
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>> GetVideoTracks() /*override*/;
 
+    // vIndex: 2
     virtual ~MediaStream() /*override*/;
     // NOLINTEND
 
@@ -100,8 +110,6 @@ public:
     MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>> $GetAudioTracks();
 
     MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>> $GetVideoTracks();
-
-
     // NOLINTEND
 
 public:

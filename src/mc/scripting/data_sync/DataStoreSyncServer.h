@@ -29,15 +29,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DataStoreSyncServer() /*override*/ = default;
 
+    // vIndex: 1
     virtual void clear(::std::string const& datastoreName, bool addToOutgoingChanges) /*override*/;
 
+    // vIndex: 2
     virtual void applyChanges(
         ::std::vector<::std::variant<::Bedrock::DDUI::DataStoreChange, ::Bedrock::DDUI::DataStoreRemoval>> const&
             changes
     ) /*override*/;
 
+    // vIndex: 3
     virtual void assertAppropriateThread() const /*override*/;
     // NOLINTEND
 
@@ -52,8 +56,6 @@ public:
     );
 
     MCNAPI void $assertAppropriateThread() const;
-
-
     // NOLINTEND
 
 public:

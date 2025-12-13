@@ -22,20 +22,6 @@ public:
         VolumeDescription& operator=(VolumeDescription const&);
         VolumeDescription(VolumeDescription const&);
         VolumeDescription();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ::VolumeDefinition::VolumeDescription& operator=(::VolumeDefinition::VolumeDescription&&);
-
-        MCNAPI_C ~VolumeDescription();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -53,20 +39,8 @@ public:
     VolumeDefinition();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~VolumeDefinition();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
     // NOLINTEND
 };

@@ -17,18 +17,6 @@ public:
     SignOutResult& operator=(SignOutResult const&);
     SignOutResult(SignOutResult const&);
     SignOutResult();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~SignOutResult();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Identity

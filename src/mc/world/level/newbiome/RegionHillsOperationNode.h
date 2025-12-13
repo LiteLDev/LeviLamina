@@ -31,6 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual void _fillArea(
         ::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData,
         ::Pos2d const&                                                       origin,
@@ -38,8 +39,10 @@ public:
         int                                                                  pw
     ) const /*override*/;
 
+    // vIndex: 4
     virtual ::std::tuple<::Pos2d, ::Pos2d> _getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const /*override*/;
 
+    // vIndex: 0
     virtual ~RegionHillsOperationNode() /*override*/ = default;
     // NOLINTEND
 
@@ -76,8 +79,6 @@ public:
     ) const;
 
     MCNAPI ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
-
-
     // NOLINTEND
 
 public:

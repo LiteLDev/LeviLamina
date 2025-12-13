@@ -7,6 +7,52 @@
 #include "mc/platform/brstd/flat_map.h"
 #include "mc/platform/brstd/flat_set.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockConnectionComponent;
+class BlockCustomComponentsComponent;
+class BlockEntityFallOnConfigurationComponent;
+class BlockRandomOffsetComponent;
+class BlockTickConfigurationComponent;
+class BlockTransformationComponent;
+class OnFallOnTrigger;
+class OnInteractTrigger;
+class OnPlacedTrigger;
+class OnPlayerDestroyedTrigger;
+class OnPlayerPlacingTrigger;
+class OnStepOffTrigger;
+class OnStepOnTrigger;
+struct BlockAmbientSoundComponent;
+struct BlockBakedMaterialDataComponent;
+struct BlockCollisionBoxComponent;
+struct BlockCraftingTableComponent;
+struct BlockDestructibleByExplosionComponent;
+struct BlockDestructibleByMiningComponent;
+struct BlockDestructionParticlesComponent;
+struct BlockDisplayNameComponent;
+struct BlockEmbeddedVisualComponent;
+struct BlockFlammableComponent;
+struct BlockFrictionComponent;
+struct BlockGeometryComponent;
+struct BlockItemVisualComponent;
+struct BlockLightDampeningComponent;
+struct BlockLightEmissionComponent;
+struct BlockLiquidDetectionComponent;
+struct BlockLootComponent;
+struct BlockMapColorComponent;
+struct BlockMaterialInstancesComponent;
+struct BlockMovableComponent;
+struct BlockPlacementFilterComponent;
+struct BlockPrecipitationInteractionsComponent;
+struct BlockQueuedTickingComponent;
+struct BlockRandomTickingComponent;
+struct BlockRedstoneComponent;
+struct BlockRedstoneProducerComponent;
+struct BlockSelectionBoxComponent;
+struct BlockSupportComponent;
+struct BlockVoxelShapesCullingComponent;
+// clang-format on
+
 class BlockComponentStorage {
 public:
     // BlockComponentStorage inner types declare
@@ -20,6 +66,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~ComponentBase() = default;
         // NOLINTEND
     };

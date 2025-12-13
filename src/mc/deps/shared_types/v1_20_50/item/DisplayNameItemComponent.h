@@ -27,20 +27,12 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_20_50::DisplayNameItemComponent&
     operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent&&);
-
-    MCNAPI_C ~DisplayNameItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
     // NOLINTEND
 };
 

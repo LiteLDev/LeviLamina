@@ -21,28 +21,13 @@ public:
 public:
     // prevent constructor by default
     ZipFileRestrictions& operator=(ZipFileRestrictions const&);
+    ZipFileRestrictions(ZipFileRestrictions const&);
     ZipFileRestrictions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ZipFileRestrictions(::Core::ZipUtils::ZipFileRestrictions const&);
-
     MCNAPI bool allowFile(::Core::PathView file) const;
-
-    MCNAPI_C ~ZipFileRestrictions();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Core::ZipUtils::ZipFileRestrictions const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
     // NOLINTEND
 };
 

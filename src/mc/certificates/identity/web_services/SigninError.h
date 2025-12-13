@@ -18,18 +18,6 @@ public:
     SigninError& operator=(SigninError const&);
     SigninError(SigninError const&);
     SigninError();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~SigninError();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace WebServices::EduSignin

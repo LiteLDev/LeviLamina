@@ -14,13 +14,9 @@ class HashedString;
 
 class MolangVariable {
 public:
-// member variables
-// NOLINTBEGIN
-#ifdef LL_PLAT_S
-    ::ll::TypedStorage<8, 88, ::MolangScriptArg> mValue;
-#else // LL_PLAT_C
-    ::ll::TypedStorage<8, 96, ::MolangScriptArg> mValue;
-#endif
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 88, ::MolangScriptArg>                   mValue;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MolangScriptArg>> mPublicValue;
     ::ll::TypedStorage<4, 8, ::MolangVariableSettings>             mSettings;
     // NOLINTEND

@@ -42,6 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual ::HitResult clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
@@ -52,10 +53,12 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
+    // vIndex: 9
     virtual ::AABB const&
     getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
+    // vIndex: 8
     virtual void addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -64,6 +67,7 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const /*override*/;
 
+    // vIndex: 7
     virtual bool addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
@@ -73,52 +77,71 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
+    // vIndex: 13
     virtual bool
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
 
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const /*override*/;
 
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
+    // vIndex: 123
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
+    // vIndex: 94
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 84
     virtual void
     destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const
         /*override*/;
 
+    // vIndex: 77
     virtual bool mayPick() const /*override*/;
 
+    // vIndex: 76
     virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 133
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 132
     virtual void onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const /*override*/;
 
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
+    // vIndex: 35
     virtual bool isStairBlock() const /*override*/;
 
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
+    // vIndex: 18
     virtual bool liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos
     ) const /*override*/;
 
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 0
     virtual ~StairBlock() /*override*/;
     // NOLINTEND
 
@@ -140,8 +163,6 @@ public:
         ::AABB&                    shape,
         bool                       shrink
     ) const;
-
-    MCAPI_C void shapeZFightShrink(::AABB& shape) const;
     // NOLINTEND
 
 public:
@@ -236,8 +257,6 @@ public:
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-
     // NOLINTEND
 
 public:

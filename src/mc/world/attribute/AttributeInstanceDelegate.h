@@ -22,16 +22,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AttributeInstanceDelegate() = default;
 
+    // vIndex: 1
     virtual void tick(::AttributeInstance&, ::AttributeModificationContext&);
 
+    // vIndex: 2
     virtual void notify(int64, ::AttributeModificationContext&);
 
+    // vIndex: 3
     virtual bool willChange(float, float, ::AttributeBuff const&);
 
+    // vIndex: 4
     virtual float change(float, float newValue, ::AttributeBuff const&);
 
+    // vIndex: 5
     virtual float getBuffValueWithModifiers(::AttributeBuff const& buff) const;
     // NOLINTEND
 
@@ -53,8 +59,6 @@ public:
     MCAPI float $change(float, float newValue, ::AttributeBuff const&);
 
     MCAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
-
-
     // NOLINTEND
 
 public:

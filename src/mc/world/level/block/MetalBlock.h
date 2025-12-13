@@ -9,6 +9,7 @@ class MetalBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MetalBlock() /*override*/ = default;
     // NOLINTEND
 

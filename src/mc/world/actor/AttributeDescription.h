@@ -9,6 +9,7 @@ struct AttributeDescription : public ::Description {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ~AttributeDescription() /*override*/ = default;
     // NOLINTEND
 };

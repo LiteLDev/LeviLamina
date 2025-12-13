@@ -40,16 +40,14 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 1
         virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) /*override*/;
 
+        // vIndex: 5
         virtual void onResourceManagerDestroyed(::ResourcePackManager& mgr) /*override*/;
 
-#ifdef LL_PLAT_S
+        // vIndex: 0
         virtual ~VanillaWorldChecker() /*override*/;
-#else // LL_PLAT_C
-        virtual ~VanillaWorldChecker() /*override*/ = default;
-#endif
-
         // NOLINTEND
 
     public:
@@ -67,13 +65,15 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-#ifdef LL_PLAT_S
         MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
 
         MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
-#endif
+        // NOLINTEND
 
-
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -94,30 +94,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
 
+    // vIndex: 2
     virtual void flush() /*override*/;
 
+    // vIndex: 3
     virtual void setEnabled(bool newState) /*override*/;
 
+    // vIndex: 4
     virtual bool isEnabled() const /*override*/;
 
+    // vIndex: 2
     virtual bool logOnlyOnce() const /*override*/;
 
+    // vIndex: 3
     virtual void contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
 
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~DebugEndPoint() /*override*/;
-#else // LL_PLAT_C
-    virtual ~DebugEndPoint() /*override*/ = default;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit DebugEndPoint(::std::optional<::LogLevel> minLogLevel);
+    MCNAPI explicit DebugEndPoint(::std::optional<::LogLevel> minLogLevel);
 
     MCNAPI void initializeContentLogging(::ResourcePackManager& mgr, ::Core::Path const& levelPath);
     // NOLINTEND
@@ -131,7 +133,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::std::optional<::LogLevel> minLogLevel);
+    MCNAPI void* $ctor(::std::optional<::LogLevel> minLogLevel);
     // NOLINTEND
 
 public:
@@ -143,7 +145,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
 
     MCNAPI void $flush();
@@ -155,8 +156,13 @@ public:
     MCNAPI bool $logOnlyOnce() const;
 
     MCNAPI void $contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
-#endif
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForLogEndPoint();
 
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

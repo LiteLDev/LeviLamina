@@ -15,29 +15,6 @@ public:
 public:
     // prevent constructor by default
     Keymapping& operator=(Keymapping const&);
+    Keymapping(Keymapping const&);
     Keymapping();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C Keymapping(::Keymapping const&);
-
-    MCNAPI_C Keymapping(::std::string const& action, int defaultKey);
-
-    MCNAPI_C ~Keymapping();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Keymapping const&);
-
-    MCNAPI_C void* $ctor(::std::string const& action, int defaultKey);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

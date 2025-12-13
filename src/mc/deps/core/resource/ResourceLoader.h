@@ -11,7 +11,6 @@
 class LoadedResourceData;
 class ResourceLocation;
 class ResourceLocationPair;
-namespace mce { struct Image; }
 // clang-format on
 
 class ResourceLoader : public ::Bedrock::EnableNonOwnerReferences {
@@ -30,46 +29,55 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ResourceLoader() /*override*/;
 
+    // vIndex: 3
     virtual bool load(::ResourceLocation const&, ::std::string&) const = 0;
 
+    // vIndex: 2
     virtual bool load(::ResourceLocation const&, ::std::string&, ::gsl::span<::std::string const>) const = 0;
 
+    // vIndex: 1
     virtual bool load(
         ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensions
     ) const;
 
+    // vIndex: 4
     virtual bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
+    // vIndex: 5
     virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const&) const = 0;
 
-#ifdef LL_PLAT_C
-    virtual ::mce::Image loadTexture(::ResourceLocation const&) const = 0;
-
-#endif
+    // vIndex: 7
     virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
 
+    // vIndex: 6
     virtual bool isInStreamableLocation(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;
 
+    // vIndex: 9
     virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation) const;
 
+    // vIndex: 8
     virtual ::Core::PathBuffer<::std::string>
     getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
+    // vIndex: 11
     virtual ::Core::PathBuffer<::std::string>
     getPathContainingResource(::ResourceLocation const& resourceLocation) const;
 
+    // vIndex: 10
     virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;
 
+    // vIndex: 12
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
@@ -117,8 +125,6 @@ public:
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;
-
-
     // NOLINTEND
 
 public:

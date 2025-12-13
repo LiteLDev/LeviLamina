@@ -15,10 +15,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class HashedString;
-class MaterialVariants;
 class RenderParams;
-struct MolangClientTextureSet;
-struct MolangDataDrivenGeometry;
 struct MolangParseConfig;
 struct MolangQueryFunction;
 struct MolangScriptArg;
@@ -37,54 +34,28 @@ public:
     // ExpressionNode inner types define
     struct ResourceReference {
     public:
-// member variables
-// NOLINTBEGIN
-#ifdef LL_PLAT_S
+        // member variables
+        // NOLINTBEGIN
         ::ll::UntypedStorage<8, 88> mUnkdeb2d8;
-#else // LL_PLAT_C
-        ::ll::UntypedStorage<8, 96> mUnkdeb2d8;
-#endif
-        ::ll::UntypedStorage<2, 2> mUnk80cca4;
-        ::ll::UntypedStorage<1, 1> mUnk749abb;
+        ::ll::UntypedStorage<2, 2>  mUnk80cca4;
+        ::ll::UntypedStorage<1, 1>  mUnk749abb;
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ResourceReference();
-
-        MCNAPI_C explicit ResourceReference(::MolangDataDrivenGeometry const& geometry);
-
-        MCNAPI_C explicit ResourceReference(::MolangClientTextureSet const& textureSet);
-
-        MCNAPI_C ~ResourceReference();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI_C void* $ctor();
-
-        MCNAPI_C void* $ctor(::MolangDataDrivenGeometry const& geometry);
-
-        MCNAPI_C void* $ctor(::MolangClientTextureSet const& textureSet);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
+        // prevent constructor by default
+        ResourceReference& operator=(ResourceReference const&);
+        ResourceReference(ResourceReference const&);
+        ResourceReference();
     };
 
-    using GetParticleTintFunc = ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>;
-
-    using IComplexExpression = ::Molang::details::IComplexExpression;
+    using ResourceTable = ::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>;
 
     using MissingResourceSet =
         ::brstd::flat_set<::HashedString, ::std::less<::HashedString>, ::std::vector<::HashedString>>;
 
-    using ResourceTable = ::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>;
+    using IComplexExpression = ::Molang::details::IComplexExpression;
+
+    using GetParticleTintFunc = ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>;
 
 public:
     // member variables
@@ -93,19 +64,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ExpressionNode();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ExpressionNode();
-
     MCAPI ExpressionNode(::ExpressionNode&&);
-
-    MCAPI_C explicit ExpressionNode(::MaterialVariants const& materialVariants);
 
     MCAPI ExpressionNode(::ExpressionNode const& rhs);
 
     MCAPI ExpressionNode(::std::string const& expression, ::MolangVersion molangVersion);
-
-    MCAPI_C ExpressionNode(char const* expression, ::MolangVersion molangVersion);
 
     MCAPI ExpressionNode(::Json::Value const& value, ::MolangParseConfig const& config);
 
@@ -119,22 +88,15 @@ public:
 
     MCAPI ::std::string getExpressionString() const;
 
-    MCAPI_C bool hasVariableAssignments() const;
-
     MCAPI ::MolangCompileResult link();
 
     MCAPI ::ExpressionNode& operator=(::ExpressionNode&&);
-
-    MCAPI_C ::ExpressionNode& operator=(::MaterialVariants const& materialVariants);
 
     MCAPI ::ExpressionNode& operator=(::ExpressionNode const& rhs);
 
     MCAPI ::ExpressionNode& operator=(float value);
 
     MCAPI bool parse(::std::string_view expression, ::MolangParseConfig const& config);
-
-    MCAPI_C void
-    replaceArrayVariables(::std::unordered_map<::HashedString, ::ExpressionNode>& dataMap, bool compileProgram);
 
     MCAPI ~ExpressionNode();
     // NOLINTEND
@@ -187,17 +149,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
-
-    MCFOLD void* $ctor(::ExpressionNode&&);
-
-    MCAPI_C void* $ctor(::MaterialVariants const& materialVariants);
+    MCAPI void* $ctor(::ExpressionNode&&);
 
     MCAPI void* $ctor(::ExpressionNode const& rhs);
 
     MCAPI void* $ctor(::std::string const& expression, ::MolangVersion molangVersion);
-
-    MCAPI_C void* $ctor(char const* expression, ::MolangVersion molangVersion);
 
     MCAPI void* $ctor(::Json::Value const& value, ::MolangParseConfig const& config);
 

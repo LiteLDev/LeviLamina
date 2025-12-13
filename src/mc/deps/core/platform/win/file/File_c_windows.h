@@ -34,35 +34,50 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~File_c_windows() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::Core::PathBuffer<::std::string> _getPath() const /*override*/;
 
+    // vIndex: 2
     virtual uint64 _getBlockSize() const /*override*/;
 
+    // vIndex: 3
     virtual bool _isOpen() /*override*/;
 
+    // vIndex: 4
     virtual ::Core::Result _close() /*override*/;
 
+    // vIndex: 5
     virtual ::Core::Result _read(void* buf, uint64 numBytes, uint64* pNumBytesRead) /*override*/;
 
+    // vIndex: 6
     virtual ::Core::Result _readExactly(void* buf, uint64 numBytes) /*override*/;
 
+    // vIndex: 8
     virtual ::Core::Result
     _readAtPosition(uint64 position, void* buf, uint64 numBytes, uint64* pNumBytesRead) /*override*/;
 
+    // vIndex: 11
     virtual ::Core::Result _write(void const* buf, uint64 numBytes) /*override*/;
 
+    // vIndex: 10
     virtual ::Core::Result _setPosition(uint64 position) /*override*/;
 
+    // vIndex: 9
     virtual ::Core::Result _getPosition(uint64* pSizeOut) /*override*/;
 
+    // vIndex: 7
     virtual ::Core::Result _skip(uint64 numBytes) /*override*/;
 
+    // vIndex: 12
     virtual ::Core::Result _flush() /*override*/;
 
+    // vIndex: 13
     virtual ::Core::Result _getSize(uint64* pSizeOut) /*override*/;
 
+    // vIndex: 14
     virtual ::Core::Result _getRemainingSize(uint64* pSizeOut) /*override*/;
     // NOLINTEND
 
@@ -110,8 +125,6 @@ public:
     MCNAPI ::Core::Result $_getSize(uint64* pSizeOut);
 
     MCNAPI ::Core::Result $_getRemainingSize(uint64* pSizeOut);
-
-
     // NOLINTEND
 
 public:

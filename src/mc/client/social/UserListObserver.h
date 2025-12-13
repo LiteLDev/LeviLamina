@@ -18,30 +18,23 @@ class UserListObserver : public ::Core::Observer<::Social::UserListObserver, ::C
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onUserAdded(::std::shared_ptr<::Social::User> const& user);
+    // vIndex: 2
+    virtual void onUserAdded(::std::shared_ptr<::Social::User> const&);
 
+    // vIndex: 3
     virtual void onUserRemoved(::std::shared_ptr<::Social::User> const&);
 
-    virtual void onUserStorageAreaChanged(
-        ::std::shared_ptr<::Social::User> const&    user,
-        ::std::shared_ptr<::Core::FileStorageArea>& oldStorageArea
-    );
+    // vIndex: 4
+    virtual void
+    onUserStorageAreaChanged(::std::shared_ptr<::Social::User> const&, ::std::shared_ptr<::Core::FileStorageArea>&);
 
+    // vIndex: 0
     virtual ~UserListObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $onUserAdded(::std::shared_ptr<::Social::User> const& user);
-
-    MCNAPI void $onUserStorageAreaChanged(
-        ::std::shared_ptr<::Social::User> const&    user,
-        ::std::shared_ptr<::Core::FileStorageArea>& oldStorageArea
-    );
-#endif
-
 
     // NOLINTEND
 };

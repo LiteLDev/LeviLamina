@@ -41,11 +41,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 82
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 
+    // vIndex: 64
     virtual bool uniqueAuxValues() const /*override*/;
 
+    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -53,9 +56,11 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
+    // vIndex: 91
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool const playerIsCreative) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~SuspiciousStewItem() /*override*/ = default;
     // NOLINTEND
 
@@ -80,8 +85,6 @@ public:
     ) const;
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool const playerIsCreative) const;
-
-
     // NOLINTEND
 
 public:

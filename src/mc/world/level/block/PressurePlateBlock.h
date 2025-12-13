@@ -30,14 +30,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 147
     virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 148
     virtual int getSignalForData(int data) const /*override*/;
 
+    // vIndex: 149
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 0
     virtual ~PressurePlateBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -51,8 +56,6 @@ public:
     MCAPI int $getRedstoneSignal(int signal) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-
     // NOLINTEND
 
 public:

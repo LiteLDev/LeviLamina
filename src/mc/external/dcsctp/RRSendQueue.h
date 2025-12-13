@@ -29,8 +29,8 @@ public:
     // RRSendQueue inner types declare
     // clang-format off
     struct MessageAttributes;
-    class ThresholdWatcher;
     class OutgoingStream;
+    class ThresholdWatcher;
     // clang-format on
 
     // RRSendQueue inner types define
@@ -169,11 +169,14 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 1
         virtual ::std::optional<::dcsctp::SendQueue::DataToSend>
         Produce(::webrtc::Timestamp now, uint64 max_size) /*override*/;
 
+        // vIndex: 2
         virtual uint64 bytes_to_send_in_next_message() const /*override*/;
 
+        // vIndex: 0
         virtual ~OutgoingStream() /*override*/;
         // NOLINTEND
 
@@ -229,8 +232,6 @@ public:
         MCNAPI ::std::optional<::dcsctp::SendQueue::DataToSend> $Produce(::webrtc::Timestamp now, uint64 max_size);
 
         MCNAPI uint64 $bytes_to_send_in_next_message() const;
-
-
         // NOLINTEND
 
     public:
@@ -261,40 +262,54 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::optional<::dcsctp::SendQueue::DataToSend>
     Produce(::webrtc::Timestamp now, uint64 max_size) /*override*/;
 
+    // vIndex: 2
     virtual bool Discard(
         ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>        stream_id,
         ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint> message_id
     ) /*override*/;
 
+    // vIndex: 3
     virtual void PrepareResetStream(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) /*override*/;
 
+    // vIndex: 4
     virtual bool HasStreamsReadyToBeReset() const /*override*/;
 
+    // vIndex: 5
     virtual ::std::vector<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>> GetStreamsReadyToBeReset() /*override*/;
 
+    // vIndex: 6
     virtual void CommitResetStreams() /*override*/;
 
+    // vIndex: 7
     virtual void RollbackResetStreams() /*override*/;
 
+    // vIndex: 8
     virtual void Reset() /*override*/;
 
+    // vIndex: 9
     virtual uint64 buffered_amount(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const /*override*/;
 
+    // vIndex: 10
     virtual uint64 total_buffered_amount() const /*override*/;
 
+    // vIndex: 11
     virtual uint64 buffered_amount_low_threshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const
         /*override*/;
 
+    // vIndex: 12
     virtual void SetBufferedAmountLowThreshold(
         ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id,
         uint64                                               bytes
     ) /*override*/;
 
+    // vIndex: 13
     virtual void EnableMessageInterleaving(bool enabled) /*override*/;
 
+    // vIndex: 0
     virtual ~RRSendQueue() /*override*/;
     // NOLINTEND
 
@@ -382,8 +397,6 @@ public:
     $SetBufferedAmountLowThreshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id, uint64 bytes);
 
     MCNAPI void $EnableMessageInterleaving(bool enabled);
-
-
     // NOLINTEND
 
 public:

@@ -25,18 +25,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EmitterLifetimeEventsComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+    // vIndex: 0
     virtual ~EmitterLifetimeEventsComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C EmitterLifetimeEventsComponent();
-
     MCNAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
 
     MCNAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
@@ -63,8 +67,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
 
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
@@ -80,8 +82,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::HashedString const& $getIdentifier() const;
-
-
     // NOLINTEND
 
 public:

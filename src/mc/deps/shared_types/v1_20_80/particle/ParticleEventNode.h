@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode&&);
-
     MCNAPI ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleEventNode& operator=(::SharedTypes::v1_20_80::ParticleEventNode&&);
+    MCNAPI ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode&&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleEventNode& operator=(::SharedTypes::v1_20_80::ParticleEventNode const&);
+
+    MCNAPI ::SharedTypes::v1_20_80::ParticleEventNode& operator=(::SharedTypes::v1_20_80::ParticleEventNode&&);
 
     MCNAPI ~ParticleEventNode();
     // NOLINTEND
@@ -48,9 +48,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEventNode&&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEventNode const&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEventNode&&);
     // NOLINTEND
 
 public:

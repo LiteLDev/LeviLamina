@@ -14,10 +14,13 @@ class LevelGameplayHandler : public ::GameplayHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LevelGameplayHandler() /*override*/ = default;
 
+    // vIndex: 2
     virtual ::HandlerResult handleEvent(::LevelGameplayEvent<void> const&) = 0;
 
+    // vIndex: 1
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::MutableLevelGameplayEvent<::CoordinatorResult>&) = 0;
     // NOLINTEND

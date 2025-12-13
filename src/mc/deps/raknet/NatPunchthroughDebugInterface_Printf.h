@@ -11,8 +11,10 @@ struct NatPunchthroughDebugInterface_Printf : public ::RakNet::NatPunchthroughDe
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void OnClientMessage(char const*) /*override*/;
 
+    // vIndex: 0
     virtual ~NatPunchthroughDebugInterface_Printf() /*override*/ = default;
     // NOLINTEND
 

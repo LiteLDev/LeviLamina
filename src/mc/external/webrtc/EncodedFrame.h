@@ -30,12 +30,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EncodedFrame() = default;
 
+    // vIndex: 1
     virtual int64 ReceivedTime() const;
 
+    // vIndex: 2
     virtual int64 RenderTime() const;
 
+    // vIndex: 3
     virtual bool delayed_by_retransmission() const;
     // NOLINTEND
 

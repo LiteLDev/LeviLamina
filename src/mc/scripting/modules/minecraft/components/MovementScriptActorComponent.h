@@ -29,8 +29,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MovementScriptActorComponent() /*override*/ = default;
 
+    // vIndex: 4
     virtual ::Scripting::Result_deprecated<float> getMaxTurn() const;
     // NOLINTEND
 
@@ -44,8 +46,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<float> $getMaxTurn() const;
-
-
     // NOLINTEND
 
 public:

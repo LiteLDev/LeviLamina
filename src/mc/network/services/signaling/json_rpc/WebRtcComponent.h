@@ -38,8 +38,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider> provider) /*override*/;
 
+    // vIndex: 0
     virtual ~WebRtcComponent() /*override*/;
     // NOLINTEND
 
@@ -79,8 +81,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider> provider);
-
-
     // NOLINTEND
 
 public:

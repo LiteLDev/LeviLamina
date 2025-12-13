@@ -17,18 +17,4 @@ public:
     MessageGamedropData& operator=(MessageGamedropData const&);
     MessageGamedropData(MessageGamedropData const&);
     MessageGamedropData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::MessageGamedropData& operator=(::MessageGamedropData&&);
-
-    MCNAPI_C ~MessageGamedropData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

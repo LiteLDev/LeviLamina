@@ -51,6 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NpcComponent();
     // NOLINTEND
 
@@ -67,8 +68,6 @@ public:
 
     MCAPI void _loadData(::Actor& owner);
 
-    MCAPI_C void addAction(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
 
     MCAPI void executeClosingCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
@@ -82,11 +81,7 @@ public:
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI_C ::std::string const& getInteractiveRawText(::Actor const& owner) const;
-
     MCAPI ::std::string const& getInteractiveText(::Actor& owner) const;
-
-    MCAPI_C ::std::string const& getName(::Actor const& owner) const;
 
     MCAPI ::std::string const& getSceneStateForPlayer(::ActorUniqueID const& playerID) const;
 
@@ -110,9 +105,6 @@ public:
     MCAPI bool setDialogueScene(::Actor& owner, ::std::string const& sceneName);
 
     MCAPI void setInteractiveText(::Actor& owner, ::std::string const& text, bool setLocal);
-
-    MCAPI_C void
-    setInteractiveTextFilter(::std::function<::std::string(::std::string const&)> filter, bool shouldRunFilter);
 
     MCAPI void setName(::Actor& owner, ::std::string const& name, bool setLocal);
 

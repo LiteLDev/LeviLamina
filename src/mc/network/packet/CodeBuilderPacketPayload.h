@@ -6,8 +6,8 @@ struct CodeBuilderPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4955bf;
-    ::ll::UntypedStorage<1, 1>  mUnk3fee18;
+    ::ll::TypedStorage<8, 32, ::std::string> mURL;
+    ::ll::TypedStorage<1, 1, bool>           mShouldOpenCodeBuilder;
     // NOLINTEND
 
 public:
@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CodeBuilderPacketPayload& operator=(::CodeBuilderPacketPayload&&);
+    MCFOLD ::CodeBuilderPacketPayload& operator=(::CodeBuilderPacketPayload&&);
 
-    MCNAPI ~CodeBuilderPacketPayload();
+    MCAPI ~CodeBuilderPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

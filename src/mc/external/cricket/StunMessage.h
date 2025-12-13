@@ -53,10 +53,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StunMessage();
 
+    // vIndex: 1
     virtual ::cricket::StunMessage* CreateNew() const;
 
+    // vIndex: 2
     virtual ::cricket::StunAttributeValueType GetAttributeValueType(int type) const;
     // NOLINTEND
 
@@ -155,8 +158,6 @@ public:
     MCNAPI ::cricket::StunMessage* $CreateNew() const;
 
     MCNAPI ::cricket::StunAttributeValueType $GetAttributeValueType(int type) const;
-
-
     // NOLINTEND
 
 public:

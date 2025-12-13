@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/LoadResult.h"
 #include "mc/resources/JsonBetaState.h"
+#include "mc/world/item/components/CerealComponentItemDataLoader.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,13 +23,17 @@ namespace cereal { struct ReflectionCtx; }
 
 class ComponentItemDataLoader {
 public:
+    // ComponentItemDataLoader inner types define
+    using Validator = ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnkffd516;
-    ::ll::UntypedStorage<8, 216> mUnk281520;
-    ::ll::UntypedStorage<8, 8>   mUnk64a026;
-    ::ll::UntypedStorage<1, 1>   mUnk87b58c;
-    ::ll::UntypedStorage<8, 64>  mUnk58eec3;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
+    ::ll::TypedStorage<8, 216, ::CerealComponentItemDataLoader>                             mLoader;
+    ::ll::TypedStorage<8, 8, ::IPackLoadContext&>                                           mPackLoadContext;
+    ::ll::TypedStorage<1, 1, bool>                                                          mIsServer;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)>> mValidatorFn;
     // NOLINTEND
 
 public:
@@ -39,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemDataLoader(
+    MCAPI ComponentItemDataLoader(
         ::SemVersion const&                                                      documentVersion,
         ::IPackLoadContext&                                                      packLoadContext,
         bool                                                                     isServer,
@@ -47,25 +53,25 @@ public:
         ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)> validatorFn
     );
 
-    MCNAPI ::Puv::LoadResult<::BetaItemComponentData>
+    MCAPI ::Puv::LoadResult<::BetaItemComponentData>
     _parseBeta(::Json::Value const& input, ::JsonBetaState canUseBeta) const;
 
-    MCNAPI ::Puv::LoadResult<::ComponentItemData_v1_21_110> _parseCereal(::Json::Value const& input) const;
+    MCAPI ::Puv::LoadResult<::ComponentItemData_v1_21_110> _parseCereal(::Json::Value const& input) const;
 
-    MCNAPI ::std::optional<::LegacyEventItemComponentData> _parseEvents(::Json::Value const& input) const;
+    MCAPI ::std::optional<::LegacyEventItemComponentData> _parseEvents(::Json::Value const& input) const;
 
-    MCNAPI ::std::pair<::ComponentItemData_Legacy, bool> _parseLegacyComponents(::Json::Value input) const;
+    MCAPI ::std::pair<::ComponentItemData_Legacy, bool> _parseLegacyComponents(::Json::Value input) const;
 
-    MCNAPI ::Puv::LoadResult<::ComponentItemDataAll_Latest>
+    MCAPI ::Puv::LoadResult<::ComponentItemDataAll_Latest>
     load(::Json::Value const& input, ::JsonBetaState canUseBeta) const;
 
-    MCNAPI ~ComponentItemDataLoader();
+    MCAPI ~ComponentItemDataLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::SemVersion const&                                                      documentVersion,
         ::IPackLoadContext&                                                      packLoadContext,
         bool                                                                     isServer,
@@ -77,6 +83,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

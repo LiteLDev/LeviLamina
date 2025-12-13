@@ -16,14 +16,19 @@ struct ILanEventHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ILanEventHandler() = default;
 
+    // vIndex: 4
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
 
+    // vIndex: 3
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const&);
 
+    // vIndex: 2
     virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const&);
 
+    // vIndex: 1
     virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const&);
     // NOLINTEND
 
@@ -31,14 +36,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
-
-#ifdef LL_PLAT_C
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const&);
-
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const&);
-#endif
-
-
     // NOLINTEND
 };
 

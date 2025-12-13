@@ -23,10 +23,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BlockEventBase() = default;
 
+    // vIndex: 1
     virtual ::Block const& getBlock() const;
 
+    // vIndex: 2
     virtual ::BlockSource const& getBlockSource() const = 0;
     // NOLINTEND
 
@@ -34,8 +37,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Block const& $getBlock() const;
-
-
     // NOLINTEND
 
 public:

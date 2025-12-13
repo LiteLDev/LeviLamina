@@ -21,23 +21,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual char const* getJsonName() const /*override*/;
 
+    // vIndex: 1
     virtual ~BehaviorTreeDescription() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
-
-
+    MCFOLD char const* $getJsonName() const;
     // NOLINTEND
 
 public:

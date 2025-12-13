@@ -27,6 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FileSizePresetTokenImpl() /*override*/;
     // NOLINTEND
 

@@ -9,6 +9,7 @@ class LabTableContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LabTableContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

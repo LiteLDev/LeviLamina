@@ -13,20 +13,6 @@ public:
     // clang-format on
 
     // MediaConfig inner types define
-    struct Audio {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk7162c1;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Audio& operator=(Audio const&);
-        Audio(Audio const&);
-        Audio();
-    };
-
     struct Video {
     public:
         // member variables
@@ -45,6 +31,20 @@ public:
         Video& operator=(Video const&);
         Video(Video const&);
         Video();
+    };
+
+    struct Audio {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk7162c1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Audio& operator=(Audio const&);
+        Audio(Audio const&);
+        Audio();
     };
 
 public:

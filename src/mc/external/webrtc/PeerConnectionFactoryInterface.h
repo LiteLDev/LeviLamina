@@ -68,19 +68,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual void SetOptions(::webrtc::PeerConnectionFactoryInterface::Options const&) = 0;
 
+    // vIndex: 4
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>>
     CreatePeerConnectionOrError(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
         ::webrtc::PeerConnectionDependencies
     );
 
+    // vIndex: 6
     virtual ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> CreatePeerConnection(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
         ::webrtc::PeerConnectionDependencies                       dependencies
     );
 
+    // vIndex: 5
     virtual ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> CreatePeerConnection(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
         ::std::unique_ptr<::cricket::PortAllocator>                allocator,
@@ -88,28 +92,38 @@ public:
         ::webrtc::PeerConnectionObserver*                          observer
     );
 
+    // vIndex: 7
     virtual ::webrtc::RtpCapabilities GetRtpSenderCapabilities(::cricket::MediaType) const;
 
+    // vIndex: 8
     virtual ::webrtc::RtpCapabilities GetRtpReceiverCapabilities(::cricket::MediaType) const;
 
+    // vIndex: 9
     virtual ::webrtc::scoped_refptr<::webrtc::MediaStreamInterface> CreateLocalMediaStream(::std::string const&) = 0;
 
+    // vIndex: 10
     virtual ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface>
     CreateAudioSource(::cricket::AudioOptions const&) = 0;
 
+    // vIndex: 12
     virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
         CreateVideoTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface>, ::std::string_view) = 0;
 
+    // vIndex: 11
     virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
     CreateVideoTrack(::std::string const&, ::webrtc::VideoTrackSourceInterface*);
 
+    // vIndex: 13
     virtual ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
     CreateAudioTrack(::std::string const&, ::webrtc::AudioSourceInterface*) = 0;
 
+    // vIndex: 14
     virtual bool StartAecDump(::_iobuf*, int64);
 
+    // vIndex: 15
     virtual void StopAecDump() = 0;
 
+    // vIndex: 2
     virtual ~PeerConnectionFactoryInterface() /*override*/;
     // NOLINTEND
 
@@ -133,8 +147,6 @@ public:
         ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface> cert_generator,
         ::webrtc::PeerConnectionObserver*                          observer
     );
-
-
     // NOLINTEND
 };
 

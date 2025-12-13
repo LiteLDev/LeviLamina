@@ -8,8 +8,10 @@ class FecControllerOverride {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void SetFecAllowed(bool) = 0;
 
+    // vIndex: 1
     virtual ~FecControllerOverride() = default;
     // NOLINTEND
 

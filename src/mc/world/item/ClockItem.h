@@ -24,11 +24,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
+    // vIndex: 113
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool const) const /*override*/;
 
+    // vIndex: 0
     virtual ~ClockItem() /*override*/ = default;
     // NOLINTEND
 
@@ -39,8 +42,6 @@ public:
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool const) const;
-
-
     // NOLINTEND
 
 public:

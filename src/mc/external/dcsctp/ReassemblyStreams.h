@@ -23,22 +23,29 @@ class ReassemblyStreams {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ReassemblyStreams() = default;
 
+    // vIndex: 1
     virtual int
         Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::dcsctp::Data) = 0;
 
+    // vIndex: 2
     virtual uint64 HandleForwardTsn(
         ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>,
         ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>
     ) = 0;
 
+    // vIndex: 3
     virtual void ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
 
+    // vIndex: 4
     virtual ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const = 0;
 
+    // vIndex: 5
     virtual void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&) = 0;
 
+    // vIndex: 6
     virtual void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&) = 0;
     // NOLINTEND
 

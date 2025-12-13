@@ -29,48 +29,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ExternalDataSnapshot() /*override*/ = default;
 
+    // vIndex: 1
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const /*override*/;
 
+    // vIndex: 2
     virtual bool isPausingGame() const /*override*/;
 
+    // vIndex: 3
     virtual ::AdventureSettings const& getAdventureSettings() const /*override*/;
 
+    // vIndex: 4
     virtual ::ClientPlayMode getPlayMode() const /*override*/;
 
+    // vIndex: 5
     virtual ::InputMode getInputMode() const /*override*/;
 
+    // vIndex: 6
     virtual ::GameType getDefaultGameType() const /*override*/;
 
+    // vIndex: 7
     virtual float getSmoothRotationSpeed() const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI bool $isInWorldAndNotShowingAnyMenuScreens() const;
 
-    MCNAPI bool $isPausingGame() const;
-
-    MCNAPI ::AdventureSettings const& $getAdventureSettings() const;
-
-    MCNAPI ::ClientPlayMode $getPlayMode() const;
-
-    MCNAPI ::InputMode $getInputMode() const;
-
-    MCNAPI ::GameType $getDefaultGameType() const;
-
-    MCNAPI float $getSmoothRotationSpeed() const;
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -95,8 +95,6 @@ public:
 
     MCNAPI void setCurrentTradeExp(int currentTradeExp);
 
-    MCNAPI_C void setDataFromPacket(::UpdateTradePacket const& packet);
-
     MCNAPI void setNearbyCuredDiscount(int discount);
 
     MCNAPI void tryIncrementCuredDiscount();

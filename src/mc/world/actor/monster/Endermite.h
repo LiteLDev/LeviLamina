@@ -18,28 +18,32 @@ class Endermite : public ::Monster {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk611d5a;
+    ::ll::TypedStorage<4, 4, int> mLifeTime;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Endermite& operator=(Endermite const&);
-    Endermite(Endermite const&);
     Endermite();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 146
     virtual void aiStep() /*override*/;
 
+    // vIndex: 24
     virtual void normalTick() /*override*/;
 
+    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 8
     virtual ~Endermite() /*override*/ = default;
     // NOLINTEND
 
@@ -75,8 +79,6 @@ public:
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
-
-
     // NOLINTEND
 
 public:

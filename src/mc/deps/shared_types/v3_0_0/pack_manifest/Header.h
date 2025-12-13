@@ -38,10 +38,10 @@ public:
     MCNAPI Header(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
 
     MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Header&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Header&&);
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
 
     MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Header&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Header&&);
 
     MCNAPI ~Header();
     // NOLINTEND

@@ -11,10 +11,13 @@ class DelayIncreaseDetectorInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DelayIncreaseDetectorInterface();
 
+    // vIndex: 1
     virtual void Update(double, double, int64, int64, uint64, bool) = 0;
 
+    // vIndex: 2
     virtual ::webrtc::BandwidthUsage State() const = 0;
     // NOLINTEND
 

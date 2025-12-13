@@ -16,25 +16,26 @@ struct TagsBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool
     resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&) /*override*/;
 
+    // vIndex: 2
     virtual void
     applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~TagsBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&);
+    MCFOLD bool $resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&);
 
-    MCNAPI void
+    MCAPI void
     $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const;
-
-
     // NOLINTEND
 
 public:

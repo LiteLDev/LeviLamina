@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/inventory/simulation/ContainerScreenActionResultData.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ContainerScreenActionResult;
-// clang-format on
-
 struct ItemNameResultData : public ::ContainerScreenActionResultData {
 public:
     // member variables
@@ -22,10 +17,4 @@ public:
     ItemNameResultData& operator=(ItemNameResultData const&);
     ItemNameResultData(ItemNameResultData const&);
     ItemNameResultData();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::optional<::std::string> getItemName(::ContainerScreenActionResult const& result);
-    // NOLINTEND
 };

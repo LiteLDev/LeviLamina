@@ -16,12 +16,14 @@ class BlockDestructibleByMining12130Upgrade : public ::BlockCerealSchemaUpgrade 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool previousSchema(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
     ) const /*override*/;
 
+    // vIndex: 2
     virtual void upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
@@ -30,39 +32,38 @@ public:
         ::SemVersion const&
     ) const /*override*/;
 
+    // vIndex: 0
     virtual ~BlockDestructibleByMining12130Upgrade() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockDestructibleByMining12130Upgrade();
+    MCAPI BlockDestructibleByMining12130Upgrade();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $previousSchema(
+    MCAPI bool $previousSchema(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
     ) const;
 
-    MCNAPI void $upgradeToNext(
+    MCAPI void $upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&
     ) const;
-
-
     // NOLINTEND
 
 public:

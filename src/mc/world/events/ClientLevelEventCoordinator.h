@@ -9,6 +9,7 @@ class ClientLevelEventCoordinator : public ::LevelEventCoordinator {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ClientLevelEventCoordinator() /*override*/ = default;
     // NOLINTEND
 

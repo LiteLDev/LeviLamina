@@ -17,24 +17,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onContinuousHitResult(::HitResult& hitResult) /*override*/;
+    // vIndex: 2
+    virtual ::EventResult onContinuousHitResult(::HitResult&) /*override*/;
 
+    // vIndex: 0
     virtual ~HitDetectEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::EventResult $onContinuousHitResult(::HitResult& hitResult);
-#endif
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+
 struct MapInfoRequestPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc0e196;
-    ::ll::UntypedStorage<8, 24> mUnk807366;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                           mMapId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint, ushort>>> mClientPixels;
     // NOLINTEND
 
 public:
@@ -18,22 +21,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MapInfoRequestPacketPayload(::MapInfoRequestPacketPayload const&);
+    MCAPI MapInfoRequestPacketPayload(::MapInfoRequestPacketPayload const&);
 
-    MCNAPI ::MapInfoRequestPacketPayload& operator=(::MapInfoRequestPacketPayload&&);
+    MCAPI ::MapInfoRequestPacketPayload& operator=(::MapInfoRequestPacketPayload&&);
 
-    MCNAPI ~MapInfoRequestPacketPayload();
+    MCAPI ~MapInfoRequestPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::MapInfoRequestPacketPayload const&);
+    MCAPI void* $ctor(::MapInfoRequestPacketPayload const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

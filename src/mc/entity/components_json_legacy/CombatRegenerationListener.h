@@ -30,8 +30,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CombatRegenerationListener() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::EventResult onEvent(::ActorNotificationEvent const& event) /*override*/;
     // NOLINTEND
 
@@ -39,8 +41,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::EventResult $onEvent(::ActorNotificationEvent const& event);
-
-
     // NOLINTEND
 
 public:

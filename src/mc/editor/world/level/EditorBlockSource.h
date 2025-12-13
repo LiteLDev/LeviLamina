@@ -31,49 +31,36 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EditorBlockSource() /*override*/ = default;
 
-    virtual void addListener(::BlockSourceListener& l) /*override*/;
+    // vIndex: 28
+    virtual void addListener(::BlockSourceListener&) /*override*/;
 
-    virtual void removeListener(::BlockSourceListener& l) /*override*/;
+    // vIndex: 29
+    virtual void removeListener(::BlockSourceListener&) /*override*/;
 
+    // vIndex: 31
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
-    fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities) /*override*/;
+    fetchEntities(::Actor const*, ::AABB const&, bool, bool) /*override*/;
 
+    // vIndex: 30
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) /*override*/;
 
-    virtual bool hasChunksAt(::Bounds const& bounds, bool ignoreClientChunk) const /*override*/;
+    // vIndex: 16
+    virtual bool hasChunksAt(::Bounds const&, bool) const /*override*/;
 
-    virtual bool hasChunksAt(::BlockPos const& pos, int r, bool ignoreClientChunk) const /*override*/;
+    // vIndex: 15
+    virtual bool hasChunksAt(::BlockPos const&, int, bool) const /*override*/;
 
-    virtual bool hasChunksAt(::AABB const& bb, bool ignoreClientChunk) const /*override*/;
+    // vIndex: 14
+    virtual bool hasChunksAt(::AABB const&, bool) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $addListener(::BlockSourceListener& l);
 
-    MCNAPI void $removeListener(::BlockSourceListener& l);
-
-    MCNAPI ::gsl::span<::gsl::not_null<::Actor*>>
-    $fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities);
-
-    MCNAPI bool $hasChunksAt(::Bounds const& bounds, bool ignoreClientChunk) const;
-
-    MCNAPI bool $hasChunksAt(::BlockPos const& pos, int r, bool ignoreClientChunk) const;
-
-    MCNAPI bool $hasChunksAt(::AABB const& bb, bool ignoreClientChunk) const;
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

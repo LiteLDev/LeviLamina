@@ -34,8 +34,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
 
+    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -45,6 +47,7 @@ public:
         ::Dimension const&
     ) /*override*/;
 
+    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -55,8 +58,10 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
+    // vIndex: 2
     virtual bool shouldPostProcessMobs() const /*override*/;
 
+    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&                         generator,
         ::BiomeSource const&                 biomeSource,
@@ -65,6 +70,7 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~VillageFeature() /*override*/ = default;
     // NOLINTEND
 
@@ -113,8 +119,6 @@ public:
         ::ChunkPos const&                    chunkPos,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
-
-
     // NOLINTEND
 
 public:

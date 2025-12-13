@@ -16,12 +16,14 @@ class AddOceanTemperatureOperationNode : public ::RootOperationNode<::BiomeTempe
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual void _fillArea(
         ::OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>& operationNodeData,
         ::Pos2d const&                                                         origin,
         ::Pos2d const&                                                         size
     ) const /*override*/;
 
+    // vIndex: 0
     virtual ~AddOceanTemperatureOperationNode() /*override*/ = default;
     // NOLINTEND
 
@@ -33,8 +35,6 @@ public:
         ::Pos2d const&                                                         origin,
         ::Pos2d const&                                                         size
     ) const;
-
-
     // NOLINTEND
 
 public:

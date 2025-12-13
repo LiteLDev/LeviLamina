@@ -20,15 +20,19 @@ class IScriptItemComponentFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IScriptItemComponentFactory() = default;
 
+    // vIndex: 1
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent> createComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>,
         ::Scripting::WeakLifetimeScope const&
     ) const = 0;
 
+    // vIndex: 2
     virtual ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&) const = 0;
 
+    // vIndex: 3
     virtual bool canAddOn(::ScriptModuleMinecraft::ScriptItemStack&) const = 0;
     // NOLINTEND
 

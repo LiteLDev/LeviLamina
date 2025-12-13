@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/FilterSubject.h"
 #include "mc/world/filters/FilterGroup.h"
+#include "mc/world/filters/FilterOperator.h"
+#include "mc/world/filters/FilterTest.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -35,11 +38,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnka773d2;
-        ::ll::UntypedStorage<8, 8> mUnka45b28;
-        ::ll::UntypedStorage<2, 2> mUnkd9e8c2;
-        ::ll::UntypedStorage<2, 2> mUnk25aff8;
-        ::ll::UntypedStorage<4, 4> mUnk33deca;
+        ::ll::TypedStorage<4, 4, ::FilterGroup::CollectionType>        mType;
+        ::ll::TypedStorage<8, 8, ::FilterTest::Definition const&>      mFilterDef;
+        ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::FilterSubject> mSubject;
+        ::ll::TypedStorage<2, 2, ::FilterOperator>                     mOperator;
+        ::ll::TypedStorage<4, 4, ::ActorFilterGroup::Processing>       mProcess;
         // NOLINTEND
 
     public:
@@ -52,66 +55,67 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool parse(::Json::Value const& jsonVal) /*override*/;
 
+    // vIndex: 2
     virtual ::std::shared_ptr<::FilterGroup> _createSubgroup(::FilterGroup::CollectionType type) const /*override*/;
 
+    // vIndex: 0
     virtual ~ActorFilterGroup() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _addLegacyFilter(
+    MCAPI bool _addLegacyFilter(
         ::std::string const&                     name,
         ::ActorFilterGroup::LegacyMapping const& legacy,
         ::FilterInput const&                     filterInput
     );
 
-    MCNAPI bool _handleUnknownMember(::std::string const& name, ::Json::Value const& jsonVal);
+    MCAPI bool _handleUnknownMember(::std::string const& name, ::Json::Value const& jsonVal);
 
-    MCNAPI bool
+    MCAPI bool
     _parseMemberCollectionJSONCpp(::FilterGroup::CollectionType collectionType, ::Json::Value const& jsonVal);
 
-    MCNAPI bool _parseMemberJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
+    MCAPI bool _parseMemberJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
 
-    MCNAPI bool _parseObjectJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
+    MCAPI bool _parseObjectJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
 
-    MCNAPI bool _processLegacyArray(
+    MCAPI bool _processLegacyArray(
         ::std::string const&                     name,
         ::Json::Value const&                     jsonVal,
         ::ActorFilterGroup::LegacyMapping const& legacy
     );
 
-    MCNAPI bool _processLegacyMember(
+    MCAPI bool _processLegacyMember(
         ::std::string const&                     name,
         ::Json::Value const&                     jsonVal,
         ::ActorFilterGroup::LegacyMapping const& legacy
     );
 
-    MCNAPI bool evaluateActor(::Actor const& e, ::VariantParameterListConst const& params) const;
+    MCAPI bool evaluateActor(::Actor const& e, ::VariantParameterListConst const& params) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void initialize();
+    MCAPI static void initialize();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $parse(::Json::Value const& jsonVal);
+    MCAPI bool $parse(::Json::Value const& jsonVal);
 
-    MCNAPI ::std::shared_ptr<::FilterGroup> $_createSubgroup(::FilterGroup::CollectionType type) const;
-
-
+    MCAPI ::std::shared_ptr<::FilterGroup> $_createSubgroup(::FilterGroup::CollectionType type) const;
     // NOLINTEND
 
 public:

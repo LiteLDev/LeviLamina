@@ -16,10 +16,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TickDeltaTimeManagerProxy() /*override*/ = default;
 
+    // vIndex: 1
     virtual void start() /*override*/;
 
+    // vIndex: 2
     virtual double calculateDeltaTimeAndReset() /*override*/;
     // NOLINTEND
 
@@ -29,8 +32,6 @@ public:
     MCAPI void $start();
 
     MCAPI double $calculateDeltaTimeAndReset();
-
-
     // NOLINTEND
 
 public:

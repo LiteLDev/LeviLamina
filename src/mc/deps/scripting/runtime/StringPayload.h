@@ -19,21 +19,17 @@ class StringPayload : public ::Scripting::IPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk98b6d3;
-    ::ll::UntypedStorage<8, 32> mUnkea571c;
+    ::ll::TypedStorage<8, 32, ::std::string> mScriptName;
+    ::ll::TypedStorage<8, 32, ::std::string> mScriptData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StringPayload& operator=(StringPayload const&);
-    StringPayload(StringPayload const&);
-    StringPayload();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StringPayload() /*override*/;
 
+    // vIndex: 1
     virtual ::Scripting::ResultAny runOn(
         ::Scripting::ContextId                  contextId,
         ::Scripting::StringBasedRuntime&        runtime,
@@ -44,19 +40,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::ResultAny $runOn(
+    MCAPI ::Scripting::ResultAny $runOn(
         ::Scripting::ContextId                  contextId,
         ::Scripting::StringBasedRuntime&        runtime,
         ::std::optional<::Scripting::Privilege> privilege
     );
-
-
     // NOLINTEND
 
 public:

@@ -34,14 +34,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~WebSocket() = default;
 
+    // vIndex: 1
     virtual ::Bedrock::Threading::Async<::std::error_code> send(::std::string const& message) const;
 
+    // vIndex: 2
     virtual void onMessage(::std::string_view);
 
+    // vIndex: 3
     virtual void onBinaryMessage(::gsl::span<uchar const>);
 
+    // vIndex: 4
     virtual void onClose(uint);
     // NOLINTEND
 
@@ -78,8 +83,6 @@ public:
     MCNAPI void $onBinaryMessage(::gsl::span<uchar const>);
 
     MCNAPI void $onClose(uint);
-
-
     // NOLINTEND
 
 public:

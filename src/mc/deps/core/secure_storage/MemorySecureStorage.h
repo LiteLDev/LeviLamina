@@ -21,14 +21,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MemorySecureStorage() /*override*/ = default;
 
+    // vIndex: 1
     virtual bool add(::std::string const&, ::std::string const&) /*override*/;
 
+    // vIndex: 2
     virtual bool addOrUpdate(::std::string const&, ::std::string const&) /*override*/;
 
+    // vIndex: 3
     virtual bool remove(::std::string const&) /*override*/;
 
+    // vIndex: 4
     virtual bool get(::std::string const&, ::std::string&) /*override*/;
     // NOLINTEND
 

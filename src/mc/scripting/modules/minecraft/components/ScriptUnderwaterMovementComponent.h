@@ -17,6 +17,7 @@ class ScriptUnderwaterMovementComponent : public ::ScriptModuleMinecraft::Attrib
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptUnderwaterMovementComponent() /*override*/ = default;
     // NOLINTEND
 

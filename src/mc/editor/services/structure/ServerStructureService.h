@@ -51,40 +51,52 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ServerStructureService() /*override*/;
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
+    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
+    // vIndex: 1
     virtual ::std::optional<::Editor::EditorStructureTemplate> loadStructure(::std::string const& id) /*override*/;
 
+    // vIndex: 2
     virtual ::std::optional<::std::string> createNewEditorProjectStructure(
         ::Editor::EditorStructureTemplate const& editorStructure,
         ::mce::UUID const&                       guid,
         ::std::string const&                     structureName
     ) /*override*/;
 
+    // vIndex: 3
     virtual ::std::vector<::Editor::EditorStructureDBMetadata> queryDB(
         ::Editor::EditorStructureMetadataQueryParams const& params,
         bool const                                          reprocessLevelStructures
     ) /*override*/;
 
+    // vIndex: 4
     virtual ::Editor::EditorStructureMetadataDeleteEditResult const
     editStructureMetadata(::Editor::EditorStructureMetadataEditParams& params) /*override*/;
 
+    // vIndex: 5
     virtual bool replaceMCStructureFromTemplate(
         ::mce::UUID const&                       guid,
         ::Editor::EditorStructureTemplate const& structureTemplate
     ) /*override*/;
 
+    // vIndex: 6
     virtual ::std::optional<::Editor::EditorStructureTemplate> load(::mce::UUID const& guid) /*override*/;
 
+    // vIndex: 7
     virtual ::std::optional<::Editor::EditorStructureDBMetadata> const
     getMetadataByGuid(::mce::UUID const& guid) /*override*/;
 
+    // vIndex: 8
     virtual ::Editor::EditorStructureMetadataDeleteEditResult const
     deleteEditorStructure(::mce::UUID const& guid) /*override*/;
     // NOLINTEND
@@ -160,8 +172,6 @@ public:
     MCNAPI ::std::optional<::Editor::EditorStructureDBMetadata> const $getMetadataByGuid(::mce::UUID const& guid);
 
     MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult const $deleteEditorStructure(::mce::UUID const& guid);
-
-
     // NOLINTEND
 
 public:

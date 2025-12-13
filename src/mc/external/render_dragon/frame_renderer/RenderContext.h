@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace bgfx { struct Encoder; }
-namespace dragon::framerenderer { struct CommandContext; }
+namespace dragon::framerenderer { class CommandContext; }
 // clang-format on
 
 namespace dragon::framerenderer {

@@ -24,6 +24,7 @@ struct OnHurtActor
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~OnHurtActor() /*override*/ = default;
     // NOLINTEND
 

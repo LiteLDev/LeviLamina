@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/monster/Monster.h"
@@ -30,45 +31,56 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk874ac2;
-    ::ll::UntypedStorage<4, 4> mUnkc3abae;
-    ::ll::UntypedStorage<4, 4> mUnkba9a10;
-    ::ll::UntypedStorage<4, 4> mUnk90285c;
+    ::ll::TypedStorage<4, 4, float>          mTargetSquish;
+    ::ll::TypedStorage<4, 4, ::ParticleType> mParticleType;
+    ::ll::TypedStorage<4, 4, float>          mSquish;
+    ::ll::TypedStorage<4, 4, float>          mOldSquish;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Slime& operator=(Slime const&);
-    Slime(Slime const&);
     Slime();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
+    // vIndex: 11
     virtual void remove() /*override*/;
 
+    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
+    // vIndex: 179
     virtual bool doPlayLandSound();
 
+    // vIndex: 180
     virtual void playJumpSound();
 
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
+    // vIndex: 181
     virtual void decreaseSquish();
 
+    // vIndex: 182
     virtual ::OwnerPtr<::EntityContext> createChild(int i);
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 8
     virtual ~Slime() /*override*/;
     // NOLINTEND
 
@@ -134,8 +146,6 @@ public:
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-
     // NOLINTEND
 
 public:

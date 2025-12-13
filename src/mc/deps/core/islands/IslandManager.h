@@ -35,22 +35,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IslandManager() /*override*/ = default;
 
+    // vIndex: 1
     virtual bool registerIsland(::Bedrock::IslandRegistrationInfo&) /*override*/;
 
+    // vIndex: 2
     virtual ::std::shared_ptr<::Bedrock::IIslandCore> getIsland(ushort) const /*override*/;
 
+    // vIndex: 3
     virtual void start() /*override*/;
 
+    // vIndex: 4
     virtual void suspend() /*override*/;
 
+    // vIndex: 5
     virtual void resume() /*override*/;
 
+    // vIndex: 6
     virtual void stop() /*override*/;
 
+    // vIndex: 7
     virtual bool isTransitionComplete() const /*override*/;
 
+    // vIndex: 8
     virtual void update() /*override*/;
     // NOLINTEND
 

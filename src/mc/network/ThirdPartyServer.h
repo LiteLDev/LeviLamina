@@ -25,18 +25,6 @@ public:
         AvailableGame& operator=(AvailableGame const&);
         AvailableGame(AvailableGame const&);
         AvailableGame();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ~AvailableGame();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -68,24 +56,5 @@ public:
     // prevent constructor by default
     ThirdPartyServer& operator=(ThirdPartyServer const&);
     ThirdPartyServer(ThirdPartyServer const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ThirdPartyServer();
-
-    MCNAPI_C ~ThirdPartyServer();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+    ThirdPartyServer();
 };

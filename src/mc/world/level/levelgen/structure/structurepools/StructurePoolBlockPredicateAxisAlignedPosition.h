@@ -28,29 +28,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual bool test(::Block const& block, ::Randomize& randomize) const /*override*/;
 
+    // vIndex: 1
     virtual bool test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::Randomize& randomize) const /*override*/;
 
+    // vIndex: 5
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
+    // vIndex: 6
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
     virtual ~StructurePoolBlockPredicateAxisAlignedPosition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $test(::Block const& block, ::Randomize& randomize) const;
+    MCFOLD bool $test(::Block const& block, ::Randomize& randomize) const;
 
-    MCNAPI bool $test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::Randomize& randomize) const;
+    MCAPI bool $test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::Randomize& randomize) const;
 
-    MCNAPI ::StructurePoolBlockPredicateType $getType() const;
+    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
-
-
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

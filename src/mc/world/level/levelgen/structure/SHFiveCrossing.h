@@ -18,38 +18,36 @@ class SHFiveCrossing : public ::StrongholdPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkff6a70;
-    ::ll::UntypedStorage<1, 1> mUnkd06ed4;
-    ::ll::UntypedStorage<1, 1> mUnke25ef6;
-    ::ll::UntypedStorage<1, 1> mUnk852500;
+    ::ll::TypedStorage<1, 1, bool> leftHigh;
+    ::ll::TypedStorage<1, 1, bool> leftLow;
+    ::ll::TypedStorage<1, 1, bool> rightHigh;
+    ::ll::TypedStorage<1, 1, bool> rightLow;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHFiveCrossing& operator=(SHFiveCrossing const&);
-    SHFiveCrossing(SHFiveCrossing const&);
-    SHFiveCrossing();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::StructurePieceType getType() const /*override*/;
 
+    // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
+    // vIndex: 3
     virtual void addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~SHFiveCrossing() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
+    MCAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         int                                                 footX,
@@ -63,17 +61,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $addChildren(
+    MCAPI void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     );
-
-
     // NOLINTEND
 
 public:

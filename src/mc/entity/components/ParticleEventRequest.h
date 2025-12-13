@@ -40,22 +40,6 @@ public:
         BasicData();
     };
 
-    struct BreakingItemData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk5a4bf7;
-        ::ll::UntypedStorage<4, 16> mUnkb9e8fd;
-        ::ll::UntypedStorage<8, 64> mUnka77f79;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BreakingItemData& operator=(BreakingItemData const&);
-        BreakingItemData(BreakingItemData const&);
-        BreakingItemData();
-    };
-
     struct MolangData {
     public:
         // member variables
@@ -93,6 +77,22 @@ public:
 
     struct TerrainSlideData : public ::ParticleEventRequest::TerrainData {};
 
+    struct BreakingItemData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnk5a4bf7;
+        ::ll::UntypedStorage<4, 16> mUnkb9e8fd;
+        ::ll::UntypedStorage<8, 64> mUnka77f79;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BreakingItemData& operator=(BreakingItemData const&);
+        BreakingItemData(BreakingItemData const&);
+        BreakingItemData();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -111,19 +111,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ParticleEventRequest();
+    MCAPI ~ParticleEventRequest();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ParticleEventRequest
+    MCAPI static ::ParticleEventRequest
     addParticleEffect(::HashedString effect, ::Vec3 const& emitterPosition, ::MolangVariableMap molangVariables);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

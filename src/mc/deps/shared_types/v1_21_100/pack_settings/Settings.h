@@ -24,14 +24,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&
     operator=(::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&&);
-
-    MCNAPI_C ~Settings();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
     // NOLINTEND
 };
 

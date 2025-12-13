@@ -30,8 +30,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) /*override*/;
 
+    // vIndex: 0
     virtual ~MemoryFileStorageArea() /*override*/ = default;
     // NOLINTEND
 

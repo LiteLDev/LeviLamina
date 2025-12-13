@@ -26,14 +26,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IPropertySetter() = default;
 
+    // vIndex: 1
     virtual ::Scripting::ResultAny set(::entt::meta_handle, ::entt::meta_any) = 0;
 
+    // vIndex: 2
     virtual ::entt::meta_type type() const = 0;
 
+    // vIndex: 3
     virtual ::std::optional<::entt::meta_type> ownerType() const = 0;
 
+    // vIndex: 4
     virtual bool isMemberFunction() const;
     // NOLINTEND
 
@@ -41,8 +46,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $isMemberFunction() const;
-
-
     // NOLINTEND
 
 public:

@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class PackReport;
-struct PackIdVersion;
-// clang-format on
-
 class PackSourceReport {
 public:
     // member variables
@@ -24,13 +18,11 @@ public:
     // NOLINTBEGIN
     MCNAPI PackSourceReport();
 
-    MCNAPI PackSourceReport(::PackSourceReport&&);
-
     MCNAPI PackSourceReport(::PackSourceReport const&);
 
-    MCNAPI_C ::PackReport const* getReport(::PackIdVersion const& packId) const;
+    MCNAPI PackSourceReport(::PackSourceReport&&);
 
-    MCNAPI_S bool hasErrors() const;
+    MCNAPI bool hasErrors() const;
 
     MCNAPI ::PackSourceReport& operator=(::PackSourceReport&&);
 
@@ -42,9 +34,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::PackSourceReport&&);
-
     MCNAPI void* $ctor(::PackSourceReport const&);
+
+    MCNAPI void* $ctor(::PackSourceReport&&);
     // NOLINTEND
 
 public:

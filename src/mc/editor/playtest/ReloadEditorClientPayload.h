@@ -12,6 +12,7 @@ class ReloadEditorClientPayload
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ReloadEditorClientPayload() /*override*/ = default;
     // NOLINTEND
 

@@ -13,10 +13,13 @@ class StreamFeedbackProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void RegisterStreamFeedbackObserver(::std::vector<uint>, ::webrtc::StreamFeedbackObserver*) = 0;
 
+    // vIndex: 1
     virtual void DeRegisterStreamFeedbackObserver(::webrtc::StreamFeedbackObserver*) = 0;
 
+    // vIndex: 2
     virtual ~StreamFeedbackProvider() = default;
     // NOLINTEND
 

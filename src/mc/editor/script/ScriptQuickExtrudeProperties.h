@@ -32,10 +32,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::ScriptModule::ScriptQuickExtrudeProperties&
-    operator=(::Editor::ScriptModule::ScriptQuickExtrudeProperties&&);
+    operator=(::Editor::ScriptModule::ScriptQuickExtrudeProperties const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptQuickExtrudeProperties&
-    operator=(::Editor::ScriptModule::ScriptQuickExtrudeProperties const&);
+    operator=(::Editor::ScriptModule::ScriptQuickExtrudeProperties&&);
 
     MCNAPI ~ScriptQuickExtrudeProperties();
     // NOLINTEND

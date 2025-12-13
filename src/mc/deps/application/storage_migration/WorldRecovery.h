@@ -24,35 +24,6 @@ public:
     // clang-format on
 
     // WorldRecovery inner types define
-    struct RecoveryResult {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk6d2037;
-        ::ll::UntypedStorage<8, 32> mUnk2315b7;
-        ::ll::UntypedStorage<8, 8>  mUnk990243;
-        ::ll::UntypedStorage<8, 8>  mUnk3d5990;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RecoveryResult& operator=(RecoveryResult const&);
-        RecoveryResult(RecoveryResult const&);
-        RecoveryResult();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ~RecoveryResult();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
-    };
-
     struct RecoveryUpdate {
     public:
         // member variables
@@ -69,25 +40,32 @@ public:
         RecoveryUpdate& operator=(RecoveryUpdate const&);
         RecoveryUpdate(RecoveryUpdate const&);
         RecoveryUpdate();
+    };
 
+    struct RecoveryResult {
     public:
-        // member functions
+        // member variables
         // NOLINTBEGIN
-        MCNAPI_C ~RecoveryUpdate();
+        ::ll::UntypedStorage<8, 32> mUnk6d2037;
+        ::ll::UntypedStorage<8, 32> mUnk2315b7;
+        ::ll::UntypedStorage<8, 8>  mUnk990243;
+        ::ll::UntypedStorage<8, 8>  mUnk3d5990;
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
+        // prevent constructor by default
+        RecoveryResult& operator=(RecoveryResult const&);
+        RecoveryResult(RecoveryResult const&);
+        RecoveryResult();
     };
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initialize() = 0;
 
+    // vIndex: 2
     virtual ::std::tuple<
         ::Bedrock::Threading::Async<::Bedrock::WorldRecovery::RecoveryResult>,
         ::Bedrock::PubSub::DeferredSubscription>
@@ -97,8 +75,10 @@ public:
             ::Bedrock::PubSub::DeferralType
         ) = 0;
 
+    // vIndex: 3
     virtual ::Core::PathBuffer<::std::string> const& getRecoveryDestinationPath() const = 0;
 
+    // vIndex: 0
     virtual ~WorldRecovery() /*override*/ = default;
     // NOLINTEND
 

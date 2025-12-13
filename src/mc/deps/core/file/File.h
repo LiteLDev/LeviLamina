@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/FileBufferingMode.h"
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,20 +34,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C File(::Core::File&& rhs);
-
     MCNAPI
     File(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
 
     MCNAPI ::Core::Result close();
 
-    MCNAPI_C ::Core::Result flush();
-
     MCNAPI ::Core::Result getRemainingSize(uint64* pSize);
 
     MCNAPI ::Core::Result getSize(uint64* pSize);
-
-    MCNAPI_C bool isNearTransactionLimit(uint64 windowSize) const;
 
     MCNAPI ::Core::Result
     open(::Core::PathView fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
@@ -70,8 +62,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> cleanPath(::Core::PathView entryPath);
-
     MCNAPI static ::Core::Result writeCreateOrAppendFileData(
         ::Core::PathView         path,
         uint64                   offset,
@@ -84,8 +74,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Core::File&& rhs);
-
     MCNAPI void*
     $ctor(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
     // NOLINTEND

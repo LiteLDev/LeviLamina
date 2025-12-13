@@ -51,16 +51,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 14
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
+    // vIndex: 9
     virtual bool structurePostProcessChunk(::ChunkViewSource&) /*override*/;
 
+    // vIndex: 10
     virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood) /*override*/;
 
+    // vIndex: 37
     virtual ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos) /*override*/;
 
+    // vIndex: 38
     virtual bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const /*override*/;
 
+    // vIndex: 39
     virtual bool findNearestStructureFeature(
         ::HashedString                  feature,
         ::BlockPos const&               origin,
@@ -69,26 +75,35 @@ public:
         ::std::optional<::HashedString> biomeTag
     ) /*override*/;
 
+    // vIndex: 42
     virtual void
     prepareHeights(::BlockVolume& box, ::ChunkPos const&, ::std::vector<short>* zxHeights, bool) /*override*/;
 
+    // vIndex: 41
     virtual void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks) /*override*/;
 
+    // vIndex: 43
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
+    // vIndex: 46
     virtual ::BlockPos findSpawnPosition() const /*override*/;
 
+    // vIndex: 44
     virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 
+    // vIndex: 45
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
+    // vIndex: 49
     virtual void
     decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const
         /*override*/;
 
+    // vIndex: 50
     virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~FlatWorldGenerator() /*override*/ = default;
     // NOLINTEND
 
@@ -143,8 +158,6 @@ public:
     $decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const;
 
     MCFOLD void $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const;
-
-
     // NOLINTEND
 
 public:

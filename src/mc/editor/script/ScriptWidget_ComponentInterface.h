@@ -15,10 +15,13 @@ class ScriptWidget_ComponentInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ::Scripting::WeakLifetimeScope& _getScope() = 0;
 
+    // vIndex: 1
     virtual void _deleteComponent(::mce::UUID const&) = 0;
 
+    // vIndex: 2
     virtual ::AABB const& _getWorldBounds() const = 0;
     // NOLINTEND
 

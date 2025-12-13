@@ -23,10 +23,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ThreadsafePacketLogger() /*override*/ = default;
 
+    // vIndex: 3
     virtual void Update() /*override*/;
 
+    // vIndex: 26
     virtual void AddToLog(char const*) /*override*/;
     // NOLINTEND
 

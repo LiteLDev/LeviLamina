@@ -31,8 +31,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MenuContainer() /*override*/ = default;
 
+    // vIndex: 1
     virtual void clear() /*override*/;
     // NOLINTEND
 
@@ -68,8 +70,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $clear();
-
-
     // NOLINTEND
 
 public:

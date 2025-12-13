@@ -3,55 +3,66 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/state/PropertySyncData.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class AttributeInstanceHandle;
+class BaseAttributeMap;
 class BinaryStream;
+class DataItem;
 class ReadOnlyBinaryStream;
-struct ActorDefinitionIdentifier;
+class SynchedActorDataEntityWrapper;
+struct ActorLink;
+struct SyncedAttribute;
 // clang-format on
 
 class AddActorPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk14e52d;
-    ::ll::UntypedStorage<4, 12>  mUnk6704db;
-    ::ll::UntypedStorage<4, 12>  mUnk6d2c35;
-    ::ll::UntypedStorage<4, 8>   mUnk89ef78;
-    ::ll::UntypedStorage<4, 4>   mUnk8426bc;
-    ::ll::UntypedStorage<4, 4>   mUnk3f9153;
-    ::ll::UntypedStorage<8, 8>   mUnk878b32;
-    ::ll::UntypedStorage<8, 8>   mUnk28240b;
-    ::ll::UntypedStorage<8, 24>  mUnk76c063;
-    ::ll::UntypedStorage<8, 176> mUnk1cf58a;
-    ::ll::UntypedStorage<8, 24>  mUnk52f751;
-    ::ll::UntypedStorage<8, 48>  mUnkf1b7a7;
-    ::ll::UntypedStorage<8, 24>  mUnk4f9804;
-    ::ll::UntypedStorage<8, 8>   mUnk4eb6ae;
-    ::ll::UntypedStorage<8, 8>   mUnk4d0e7a;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>>                   mLinks;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mVelocity;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                        mRot;
+    ::ll::TypedStorage<4, 4, float>                                         mYHeadRotation;
+    ::ll::TypedStorage<4, 4, float>                                         mYBodyRotation;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                               mEntityId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mRuntimeId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mData;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>                 mType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SyncedAttribute>>             mAttributes;
+    ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>>     mAttributeHandles;
+    ::ll::TypedStorage<8, 8, ::BaseAttributeMap const*>                     mMap;
+    ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper*>              mEntityData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AddActorPacket& operator=(AddActorPacket const&);
-    AddActorPacket(AddActorPacket const&);
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AddActorPacket() /*override*/;
 
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
@@ -61,8 +72,6 @@ public:
     MCAPI AddActorPacket();
 
     MCAPI explicit AddActorPacket(::Actor& e);
-
-    MCAPI_C ::ActorDefinitionIdentifier getType() const;
     // NOLINTEND
 
 public:
@@ -89,8 +98,6 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

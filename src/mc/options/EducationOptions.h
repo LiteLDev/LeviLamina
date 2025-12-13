@@ -31,8 +31,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EducationOptions() /*override*/;
 
+    // vIndex: 1
     virtual void onActiveResourcePacksChanged(::ResourcePackManager& manager) /*override*/;
     // NOLINTEND
 
@@ -76,8 +78,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager& manager);
-
-
     // NOLINTEND
 
 public:

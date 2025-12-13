@@ -15,13 +15,17 @@ class IRepositoryLoader {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IRepositoryLoader() = default;
 
+    // vIndex: 1
     virtual ::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData>
     buildTaskData(::RepositoryLoading::BuildTaskDataOptions const&) = 0;
 
+    // vIndex: 2
     virtual void applyTaskResults(::RepositoryLoading::AllRefreshTaskData&&) = 0;
 
+    // vIndex: 3
     virtual ::std::shared_ptr<::RepositoryPacks const> getPacks() const = 0;
     // NOLINTEND
 

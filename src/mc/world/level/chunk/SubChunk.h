@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/level/chunk/DirtyTicksCounter.h"
-#include "mc/world/level/chunk/SubChunkBrightnessStorage.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
 #include "mc/world/level/chunk/sub_chunk_storage_unit/PruneType.h"
 
@@ -25,6 +24,8 @@ struct DeserializationChanges;
 struct SubChunk {
 public:
     // SubChunk inner types define
+    using Layer = uchar;
+
     enum class BlockLayer : uchar {
         Standard = 0,
         Extra    = 1,
@@ -42,8 +43,6 @@ public:
         ProcessedSubChunk          = 6,
         RequestFinished            = 7,
     };
-
-    using Layer = uchar;
 
 public:
     // member variables
@@ -98,10 +97,6 @@ public:
         short             dimensionMinHeight,
         ::BlockVolume&    volume
     ) const;
-
-    MCAPI_C ::SubChunkBrightnessStorage::LightPair getLight(ushort idx) const;
-
-    MCAPI_C bool isPlaceHolderSubChunk() const;
 
     MCAPI bool isUniform(::Block const& block) const;
 

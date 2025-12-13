@@ -14,15 +14,20 @@ class OperationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~OperationBase() = default;
 
+    // vIndex: 1
     virtual bool
     tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&) = 0;
 
+    // vIndex: 2
     virtual char const* getDescription() const = 0;
 
+    // vIndex: 3
     virtual bool isAsync() const;
 
+    // vIndex: 4
     virtual bool isComplete() const;
     // NOLINTEND
 

@@ -11,8 +11,10 @@ class PacketOutputWindowLogger : public ::RakNet::PacketLogger {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PacketOutputWindowLogger() /*override*/ = default;
 
+    // vIndex: 20
     virtual void WriteLog(char const*) /*override*/;
     // NOLINTEND
 

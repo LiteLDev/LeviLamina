@@ -20,15 +20,20 @@ class IPackCommandPipeline : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IPackCommandPipeline() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&&) = 0;
 
+    // vIndex: 2
     virtual ::PackCommand::PackCommandHandle
     submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&) = 0;
 
+    // vIndex: 3
     virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&&) = 0;
 
+    // vIndex: 4
     virtual ::TaskGroup& getTaskGroup() = 0;
     // NOLINTEND
 

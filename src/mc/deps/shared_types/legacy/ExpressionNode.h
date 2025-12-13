@@ -62,9 +62,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ExpressionNode();
 
-    MCNAPI ExpressionNode(::SharedTypes::Legacy::ExpressionNode&&);
-
     MCNAPI ExpressionNode(::SharedTypes::Legacy::ExpressionNode const&);
+
+    MCNAPI ExpressionNode(::SharedTypes::Legacy::ExpressionNode&&);
 
     MCNAPI ExpressionNode(::std::string string, short molangVersion);
 
@@ -82,9 +82,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::Legacy::ExpressionNode&&);
-
     MCNAPI void* $ctor(::SharedTypes::Legacy::ExpressionNode const&);
+
+    MCNAPI void* $ctor(::SharedTypes::Legacy::ExpressionNode&&);
 
     MCNAPI void* $ctor(::std::string string, short molangVersion);
     // NOLINTEND

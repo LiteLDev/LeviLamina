@@ -34,26 +34,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IEduAuth() /*override*/ = default;
 
+    // vIndex: 1
     virtual void Authenticate(
         ::Identity::AuthArgs const&,
         ::std::function<void()>,
         ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
     ) = 0;
 
+    // vIndex: 2
     virtual void resetAuthenticationState() = 0;
 
+    // vIndex: 3
     virtual void clearCookies() = 0;
 
+    // vIndex: 4
     virtual void signOut(::std::string_view, ::std::function<void(::Identity::SignOutResult)>) = 0;
 
+    // vIndex: 5
     virtual void authenticateSilently(
         ::std::string_view,
         ::std::string const&,
         ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>
     ) = 0;
 
+    // vIndex: 6
     virtual void authenticateSilentlyCredentialed();
     // NOLINTEND
 
@@ -62,9 +69,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Identity::EduAuthTokenPair getTokens() const;
 
-    MCNAPI_S bool hasValidMessToken() const;
-
-    MCNAPI_C void setTokens(::Identity::EduAuthTokenPair tokens);
+    MCNAPI bool hasValidMessToken() const;
     // NOLINTEND
 
 public:

@@ -13,32 +13,25 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActionValue& operator=(ActionValue const&);
-    ActionValue(ActionValue const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActionValue();
+    MCAPI ActionValue();
 
-    MCNAPI_C ::npc::ActionValue& operator=(::npc::ActionValue&&);
+    MCAPI ::npc::ActionValue& operator=(::std::string_view newName);
 
-    MCNAPI ::npc::ActionValue& operator=(::std::string_view newName);
-
-    MCNAPI ~ActionValue();
+    MCAPI ~ActionValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

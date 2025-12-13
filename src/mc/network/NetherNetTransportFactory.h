@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Option;
 struct NetworkSystemToggles;
 struct PortMappingInfo;
 namespace NetherNet { class INetherNetTransportInterface; }
@@ -33,8 +32,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetherNetTransportFactory();
 
+    // vIndex: 1
     virtual ::std::unique_ptr<
         ::NetherNet::INetherNetTransportInterface,
         ::std::function<void(::NetherNet::INetherNetTransportInterface*)>>
@@ -52,12 +53,6 @@ public:
         ::PortMappingInfo             portMappingInfo,
         ::NetherNet::LogSeverity      defaultLogSeverity
     );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static void setLoggingVerbosity(::Option const& loggingOption);
     // NOLINTEND
 
 public:
@@ -86,8 +81,6 @@ public:
         ::NetherNet::NetworkID const&                       id,
         ::NetherNet::INetherNetTransportInterfaceCallbacks* callbacks
     ) const;
-
-
     // NOLINTEND
 
 public:

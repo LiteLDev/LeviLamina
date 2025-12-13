@@ -21,8 +21,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~OperationNodeBase() = default;
 
+    // vIndex: 1
     virtual void init(int64 seed);
     // NOLINTEND
 
@@ -30,8 +32,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $init(int64 seed);
-
-
     // NOLINTEND
 };
 

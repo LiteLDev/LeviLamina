@@ -31,34 +31,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool test(::Block const& block, ::CompoundTag const& tag) const /*override*/;
 
+    // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
     virtual ~StructurePoolBlockTagPredicateBlockTagStringMatches() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
+    MCAPI
     StructurePoolBlockTagPredicateBlockTagStringMatches(::Block const& block, ::std::string tag, ::std::string value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Block const& block, ::std::string tag, ::std::string value);
+    MCAPI void* $ctor(::Block const& block, ::std::string tag, ::std::string value);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $test(::Block const& block, ::CompoundTag const& tag) const;
+    MCAPI bool $test(::Block const& block, ::CompoundTag const& tag) const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
-
-
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

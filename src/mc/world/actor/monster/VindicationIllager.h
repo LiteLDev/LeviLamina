@@ -14,8 +14,10 @@ class VindicationIllager : public ::HumanoidMonster {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
+    // vIndex: 8
     virtual ~VindicationIllager() /*override*/ = default;
     // NOLINTEND
 
@@ -23,8 +25,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
-
-
     // NOLINTEND
 
 public:

@@ -22,21 +22,27 @@ class BedItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 90
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
+    // vIndex: 61
     virtual bool isValidAuxValue(int value) const /*override*/;
 
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
+    // vIndex: 123
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
+    // vIndex: 120
     virtual bool
     _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~BedItem() /*override*/ = default;
     // NOLINTEND
 
@@ -62,8 +68,6 @@ public:
 
     MCAPI bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
-
-
     // NOLINTEND
 
 public:

@@ -40,13 +40,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~Listener();
+        MCAPI ~Listener();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -69,31 +69,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 39
     virtual ::EventResult onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent) /*override*/;
 
+    // vIndex: 0
     virtual ~DebugInfoComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DebugInfoComponent(::DebugInfoComponent&&);
+    MCAPI DebugInfoComponent(::DebugInfoComponent&&);
 
-    MCNAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
+    MCAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::DebugInfoComponent&&);
+    MCAPI void* $ctor(::DebugInfoComponent&&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent);
-
-
+    MCAPI ::EventResult $onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent);
     // NOLINTEND
 
 public:

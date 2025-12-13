@@ -6,6 +6,8 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/server/commands/CommandOriginData.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,29 +19,28 @@ class CommandRequestPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6d7723;
-    ::ll::UntypedStorage<8, 64> mUnk8ae95c;
-    ::ll::UntypedStorage<4, 4>  mUnk3b8809;
-    ::ll::UntypedStorage<1, 1>  mUnkb6580d;
+    ::ll::TypedStorage<8, 32, ::std::string>       mCommand;
+    ::ll::TypedStorage<8, 64, ::CommandOriginData> mOrigin;
+    ::ll::TypedStorage<4, 4, ::CurrentCmdVersion>  mVersion;
+    ::ll::TypedStorage<1, 1, bool>                 mInternalSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandRequestPacket& operator=(CommandRequestPacket const&);
-    CommandRequestPacket(CommandRequestPacket const&);
-    CommandRequestPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CommandRequestPacket() /*override*/;
 
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
@@ -59,8 +60,6 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

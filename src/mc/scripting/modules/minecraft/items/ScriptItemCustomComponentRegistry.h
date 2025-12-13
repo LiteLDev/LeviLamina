@@ -89,8 +89,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptItemCustomComponentRegistry() /*override*/;
 
+    // vIndex: 1
     virtual ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
@@ -103,6 +105,7 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     ) /*override*/;
 
+    // vIndex: 2
     virtual ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
@@ -115,10 +118,12 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     ) /*override*/;
 
+    // vIndex: 1
     virtual ::std::vector<::std::string_view> getValidComponentsForItem(
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
     ) const /*override*/;
 
+    // vIndex: 2
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     tryGetCustomComponentParametersForItem(
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
@@ -126,12 +131,16 @@ public:
         ::Scripting::WeakLifetimeScope const&                                        scope
     ) const /*override*/;
 
+    // vIndex: 3
     virtual ::ScriptDeferredEventListener& getEventListener() /*override*/;
 
+    // vIndex: 4
     virtual void setCerealContext(::cereal::ReflectionCtx& ctx) /*override*/;
 
+    // vIndex: 1
     virtual void _onReload() /*override*/;
 
+    // vIndex: 2
     virtual void _onScriptInitializationComplete() /*override*/;
     // NOLINTEND
 
@@ -228,8 +237,6 @@ public:
     MCNAPI void $_onReload();
 
     MCNAPI void $_onScriptInitializationComplete();
-
-
     // NOLINTEND
 
 public:

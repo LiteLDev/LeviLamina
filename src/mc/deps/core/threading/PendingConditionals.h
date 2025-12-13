@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Threading::Details { class PendingConditional; }
-// clang-format on
-
 namespace Bedrock::Threading {
 
 class PendingConditionals : public ::Bedrock::EnableNonOwnerReferences {
@@ -29,22 +24,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PendingConditionals() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void _flushCompletedConditionals();
-
-    MCNAPI_C void
-    _forAll(::std::function<void(::std::shared_ptr<::Bedrock::Threading::Details::PendingConditional>&)> pred);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

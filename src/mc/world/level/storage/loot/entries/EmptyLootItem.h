@@ -16,11 +16,14 @@ class EmptyLootItem : public ::LootPoolEntry {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const
         /*override*/;
 
+    // vIndex: 1
     virtual ~EmptyLootItem() /*override*/ = default;
 
+    // vIndex: 2
     virtual ::LootPoolEntry::EntryType getEntryType() const /*override*/;
     // NOLINTEND
 
@@ -30,8 +33,6 @@ public:
     MCNAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
 
     MCNAPI ::LootPoolEntry::EntryType $getEntryType() const;
-
-
     // NOLINTEND
 
 public:

@@ -22,19 +22,26 @@ class MagmaBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
+    // vIndex: 142
     virtual ::Brightness getEmissiveBrightness(::Block const&) const /*override*/;
 
+    // vIndex: 134
     virtual bool shouldTickOnSetBlock() const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~MagmaBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -62,8 +69,6 @@ public:
     MCFOLD bool $shouldTickOnSetBlock() const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

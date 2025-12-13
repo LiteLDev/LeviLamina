@@ -18,12 +18,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S MappedPorts();
+    MCNAPI MappedPorts();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

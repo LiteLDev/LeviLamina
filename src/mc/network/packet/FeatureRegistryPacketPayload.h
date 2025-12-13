@@ -2,11 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/feature/registry/FeatureRegistry.h"
+
 struct FeatureRegistryPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9848e3;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FeatureRegistry::FeatureBinaryJsonFormat>> mFeaturesData;
     // NOLINTEND
 
 public:
@@ -18,14 +21,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::FeatureRegistryPacketPayload& operator=(::FeatureRegistryPacketPayload&&);
+    MCAPI ::FeatureRegistryPacketPayload& operator=(::FeatureRegistryPacketPayload&&);
 
-    MCNAPI ~FeatureRegistryPacketPayload();
+    MCAPI ~FeatureRegistryPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

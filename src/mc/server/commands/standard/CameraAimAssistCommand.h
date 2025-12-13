@@ -15,14 +15,14 @@ class CommandRegistry;
 class CameraAimAssistCommand : public ::Command {
 public:
     // CameraAimAssistCommand inner types define
-    enum class Action : uchar {
-        Set   = 0,
-        Clear = 1,
-    };
-
     enum class TargetMode : uchar {
         Distance = 0,
         Angle    = 1,
+    };
+
+    enum class Action : uchar {
+        Set   = 0,
+        Clear = 1,
     };
 
 public:
@@ -47,8 +47,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
+    // vIndex: 0
     virtual ~CameraAimAssistCommand() /*override*/ = default;
     // NOLINTEND
 
@@ -62,8 +64,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-
     // NOLINTEND
 
 public:

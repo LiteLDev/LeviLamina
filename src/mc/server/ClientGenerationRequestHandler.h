@@ -16,25 +16,6 @@ public:
 public:
     // prevent constructor by default
     ClientGenerationRequestHandler& operator=(ClientGenerationRequestHandler const&);
+    ClientGenerationRequestHandler(ClientGenerationRequestHandler const&);
     ClientGenerationRequestHandler();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ClientGenerationRequestHandler(::ClientGenerationRequestHandler const&);
-
-    MCNAPI_C ~ClientGenerationRequestHandler();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::ClientGenerationRequestHandler const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

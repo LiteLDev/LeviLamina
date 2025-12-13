@@ -33,6 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Objective() /*override*/;
     // NOLINTEND
 

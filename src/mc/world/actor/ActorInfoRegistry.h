@@ -21,9 +21,9 @@ public:
     // NOLINTBEGIN
     MCAPI ActorInfoRegistry();
 
-    MCAPI uint getActorInfoId(::std::string const& name) const;
-
     MCAPI uint getActorInfoId(uint64 const& name) const;
+
+    MCAPI uint getActorInfoId(::std::string const& name) const;
 
     MCAPI bool isSpawnEggAvailable(::std::string identifier);
 

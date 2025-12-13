@@ -22,13 +22,15 @@ public:
             ::ll::UntypedStorage<2, 2> mUnk75f0aa;
         };
     };
-    ::ll::UntypedStorage<8, 8> mUnka29aee;
-    ::ll::UntypedStorage<8, 8> mUnk1e0882;
-    ::ll::UntypedStorage<8, 8> mUnk71bf10;
-#ifdef LL_PLAT_S
+    ::ll::UntypedStorage<8, 8>  mUnka29aee;
+    ::ll::UntypedStorage<8, 8>  mUnk1e0882;
+    ::ll::UntypedStorage<8, 8>  mUnk71bf10;
     ::ll::UntypedStorage<8, 24> mUnkb8d1a8;
-#else // LL_PLAT_C
-    ::ll::UntypedStorage<8, 24> mUnk88d05a;
-#endif
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    JSObject& operator=(JSObject const&);
+    JSObject(JSObject const&);
+    JSObject();
 };

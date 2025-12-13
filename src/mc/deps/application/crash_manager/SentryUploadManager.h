@@ -23,13 +23,17 @@ class SentryUploadManager : public ::Bedrock::EnableNonOwnerReferences,
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string getParameters(::Bedrock::SessionInfo const&, ::Bedrock::PlatformRuntimeInfo const*) const = 0;
 
+    // vIndex: 2
     virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<void>>>
     uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const = 0;
 
+    // vIndex: 3
     virtual ::std::string const& getMinidumpUploadUri() const = 0;
 
+    // vIndex: 0
     virtual ~SentryUploadManager() /*override*/ = default;
     // NOLINTEND
 

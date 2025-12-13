@@ -13,12 +13,16 @@ class RNS2EventHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RNS2EventHandler();
 
+    // vIndex: 1
     virtual void OnRNS2Recv(::RakNet::RNS2RecvStruct*) = 0;
 
+    // vIndex: 2
     virtual void DeallocRNS2RecvStruct(::RakNet::RNS2RecvStruct*, char const*, uint) = 0;
 
+    // vIndex: 3
     virtual ::RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const*, uint) = 0;
     // NOLINTEND
 

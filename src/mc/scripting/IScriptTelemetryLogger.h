@@ -11,14 +11,19 @@ class IScriptTelemetryLogger {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IScriptTelemetryLogger() = default;
 
+    // vIndex: 1
     virtual void onPluginDiscovery(::ScriptPluginManagerResult const&);
 
+    // vIndex: 2
     virtual void onPluginRun(::ScriptPluginManagerResult const&);
 
+    // vIndex: 3
     virtual void onDebuggerListen(bool);
 
+    // vIndex: 4
     virtual void onDebuggerConnect(bool, int);
     // NOLINTEND
 

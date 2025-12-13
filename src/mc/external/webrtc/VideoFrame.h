@@ -20,13 +20,30 @@ class VideoFrame {
 public:
     // VideoFrame inner types declare
     // clang-format off
+    class Builder;
     struct ProcessingTime;
     struct RenderParameters;
     struct UpdateRect;
-    class Builder;
     // clang-format on
 
     // VideoFrame inner types define
+    struct UpdateRect {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk313848;
+        ::ll::UntypedStorage<4, 4> mUnk7afa9a;
+        ::ll::UntypedStorage<4, 4> mUnka6df84;
+        ::ll::UntypedStorage<4, 4> mUnk98638b;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        UpdateRect& operator=(UpdateRect const&);
+        UpdateRect(UpdateRect const&);
+        UpdateRect();
+    };
+
     struct ProcessingTime {
     public:
         // member variables
@@ -55,23 +72,6 @@ public:
         RenderParameters& operator=(RenderParameters const&);
         RenderParameters(RenderParameters const&);
         RenderParameters();
-    };
-
-    struct UpdateRect {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk313848;
-        ::ll::UntypedStorage<4, 4> mUnk7afa9a;
-        ::ll::UntypedStorage<4, 4> mUnka6df84;
-        ::ll::UntypedStorage<4, 4> mUnk98638b;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        UpdateRect& operator=(UpdateRect const&);
-        UpdateRect(UpdateRect const&);
-        UpdateRect();
     };
 
     class Builder {

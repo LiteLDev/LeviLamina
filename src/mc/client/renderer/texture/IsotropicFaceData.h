@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 class IsotropicFaceData {
 public:
     // member variables
@@ -19,10 +14,4 @@ public:
     IsotropicFaceData& operator=(IsotropicFaceData const&);
     IsotropicFaceData(IsotropicFaceData const&);
     IsotropicFaceData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C bool setTextureIsotropic(::Json::Value const& isotropicData);
-    // NOLINTEND
 };

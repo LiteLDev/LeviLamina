@@ -19,12 +19,15 @@ class IScriptItemCustomComponentReader {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IScriptItemCustomComponentReader() = default;
 
+    // vIndex: 1
     virtual ::std::vector<::std::string_view> getValidComponentsForItem(
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
     ) const = 0;
 
+    // vIndex: 2
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     tryGetCustomComponentParametersForItem(
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>,

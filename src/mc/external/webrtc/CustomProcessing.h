@@ -16,14 +16,19 @@ class CustomProcessing {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void Initialize(int, int) = 0;
 
+    // vIndex: 1
     virtual void Process(::webrtc::AudioBuffer*) = 0;
 
+    // vIndex: 2
     virtual ::std::string ToString() const = 0;
 
+    // vIndex: 3
     virtual void SetRuntimeSetting(::webrtc::AudioProcessing::RuntimeSetting);
 
+    // vIndex: 4
     virtual ~CustomProcessing() = default;
     // NOLINTEND
 

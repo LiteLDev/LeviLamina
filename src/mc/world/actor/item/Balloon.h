@@ -16,12 +16,16 @@ class Balloon : public ::PredictableProjectile {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
+    // vIndex: 11
     virtual void remove() /*override*/;
 
+    // vIndex: 8
     virtual ~Balloon() /*override*/ = default;
     // NOLINTEND
 
@@ -33,8 +37,6 @@ public:
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI void $remove();
-
-
     // NOLINTEND
 
 public:

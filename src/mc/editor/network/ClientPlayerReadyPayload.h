@@ -11,6 +11,7 @@ class ClientPlayerReadyPayload : public ::Editor::Network::NetworkPayload<::Edit
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ClientPlayerReadyPayload() /*override*/ = default;
     // NOLINTEND
 

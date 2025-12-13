@@ -19,7 +19,6 @@ class ItemStack;
 class ItemStackBase;
 class SparseContainerClient;
 struct SlotData;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
@@ -63,56 +62,82 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ~ContainerModel() /*override*/;
 
+    // vIndex: 2
     virtual void postInit();
 
+    // vIndex: 3
     virtual void releaseResources();
 
+    // vIndex: 0
     virtual void containerContentChanged(int slot) /*override*/;
 
+    // vIndex: 4
     virtual int getContainerSize() const;
 
+    // vIndex: 5
     virtual int getFilteredContainerSize() const;
 
+    // vIndex: 6
     virtual void tick(int selectedSlot);
 
+    // vIndex: 7
     virtual ::ContainerWeakRef getContainerWeakRef() const;
 
+    // vIndex: 8
     virtual ::ItemStack const& getItemStack(int modelSlot) const;
 
+    // vIndex: 9
     virtual ::std::vector<::ItemStack> const& getItems() const;
 
+    // vIndex: 10
     virtual ::ItemInstance const& getItemInstance(int modelSlot) const;
 
+    // vIndex: 11
     virtual ::ItemStackBase const& getItemStackBase(int modelSlot) const;
 
+    // vIndex: 12
     virtual bool isItemInstanceBased() const;
 
+    // vIndex: 13
     virtual void setItem(int modelSlot, ::ItemStack const& item);
 
+    // vIndex: 14
     virtual bool isValid();
 
+    // vIndex: 15
     virtual bool isItemFiltered(::ItemStackBase const& item) const;
 
+    // vIndex: 16
     virtual bool isExpanableItemFiltered(int index) const;
 
+    // vIndex: 17
     virtual ::ContainerExpandStatus getItemExpandStatus(int itemId) const;
 
+    // vIndex: 18
     virtual ::std::string const& getItemGroupName(int itemId) const;
 
+    // vIndex: 19
     virtual void switchItemExpando(int itemId);
 
+    // vIndex: 20
     virtual bool isSlotDisabled(int) const;
 
+    // vIndex: 21
     virtual void refreshContainer(bool);
 
+    // vIndex: 22
     virtual ::Container* _getContainer() const;
 
+    // vIndex: 23
     virtual int _getContainerOffset() const;
 
+    // vIndex: 24
     virtual void _init();
 
+    // vIndex: 25
     virtual void _onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
     // NOLINTEND
 
@@ -128,12 +153,7 @@ public:
 
     MCAPI void _onClientUIItemNetworkChanged(int containerSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCAPI_C ::SlotData const& getItemSource(int slot) const;
-
     MCAPI void networkUpdateItem(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
-
-    MCAPI_C ::Bedrock::PubSub::Subscription
-    registerContainerSlotChangedListener(int slot, ::std::function<void(::ItemStackBase const&)> callback);
 
     MCAPI void
     registerOnContainerChangedCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
@@ -142,10 +162,6 @@ public:
     registerPlayerNotificationCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
 
     MCAPI void setClientUIContainer(::SparseContainerClient* clientUIContainer);
-
-    MCAPI_C void setItemSource(int slot, ::SlotData const& srcSlot);
-
-    MCAPI_C void unregisterTrackedOnContainerChangedCallback(::SharedTypes::Legacy::ContainerType containerType);
     // NOLINTEND
 
 public:
@@ -217,8 +233,6 @@ public:
     MCAPI void $_init();
 
     MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
-
-
     // NOLINTEND
 
 public:

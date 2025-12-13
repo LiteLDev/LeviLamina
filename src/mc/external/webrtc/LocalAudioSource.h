@@ -32,16 +32,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::webrtc::MediaSourceInterface::SourceState state() const /*override*/;
 
+    // vIndex: 4
     virtual bool remote() const /*override*/;
 
+    // vIndex: 10
     virtual ::cricket::AudioOptions const options() const /*override*/;
 
+    // vIndex: 8
     virtual void AddSink(::webrtc::AudioTrackSinkInterface* sink) /*override*/;
 
+    // vIndex: 9
     virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* sink) /*override*/;
 
+    // vIndex: 2
     virtual ~LocalAudioSource() /*override*/ = default;
     // NOLINTEND
 
@@ -70,8 +76,6 @@ public:
     MCNAPI void $AddSink(::webrtc::AudioTrackSinkInterface* sink);
 
     MCNAPI void $RemoveSink(::webrtc::AudioTrackSinkInterface* sink);
-
-
     // NOLINTEND
 
 public:

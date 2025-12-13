@@ -23,6 +23,8 @@ public:
     // clang-format on
 
     // PreloadCache inner types define
+    struct SharedOnlyConstructionTag {};
+
     struct PreloadedContentMaps {
     public:
         // member variables
@@ -37,8 +39,6 @@ public:
         PreloadedContentMaps(PreloadedContentMaps const&);
         PreloadedContentMaps();
     };
-
-    struct SharedOnlyConstructionTag {};
 
 public:
     // member variables

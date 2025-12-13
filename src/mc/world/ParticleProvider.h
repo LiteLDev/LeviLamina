@@ -25,17 +25,17 @@ namespace mce { class Color; }
 class ParticleProvider {
 public:
     // ParticleProvider inner types define
-    using AddBiomeTintedParticleFunction =
-        void(::HashedString const&, ::BlockPos const&, ::Block const&, ::std::optional<::mce::Color>);
-
-    using AddBreakingItemParticleFunction =
-        void(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
+    using SendLegacyParticleFunction = void(::ParticleType, ::Vec3 const&, ::Vec3 const&, int);
 
     using AddTerrainParticleFunction = void(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
 
     using AddTerrainSlideFunction = void(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
 
-    using SendLegacyParticleFunction = void(::ParticleType, ::Vec3 const&, ::Vec3 const&, int);
+    using AddBreakingItemParticleFunction =
+        void(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
+
+    using AddBiomeTintedParticleFunction =
+        void(::HashedString const&, ::BlockPos const&, ::Block const&, ::std::optional<::mce::Color>);
 
 public:
     // member variables
@@ -86,8 +86,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ParticleProvider() = default;
 
+    // vIndex: 1
     virtual void addSprintParticleEffect(::Actor const&, ::IConstBlockSource const&, ::IRandom&);
     // NOLINTEND
 
@@ -107,8 +109,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $addSprintParticleEffect(::Actor const&, ::IConstBlockSource const&, ::IRandom&);
-
-
     // NOLINTEND
 
 public:

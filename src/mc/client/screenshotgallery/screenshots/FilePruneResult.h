@@ -17,18 +17,6 @@ public:
     FilePruneResult& operator=(FilePruneResult const&);
     FilePruneResult(FilePruneResult const&);
     FilePruneResult();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~FilePruneResult();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Screenshots

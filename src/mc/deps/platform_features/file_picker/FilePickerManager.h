@@ -52,11 +52,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool directoryPickingEnabledForPlatform() const = 0;
 
+    // vIndex: 2
     virtual ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult>
     pickDirectory(::Bedrock::DirectoryPickerConfig const&) = 0;
 
+    // vIndex: 0
     virtual ~FilePickerManager() /*override*/ = default;
     // NOLINTEND
 

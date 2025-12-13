@@ -5,13 +5,9 @@
 namespace ArmorTrimTexturePath {
 // static variables
 // NOLINTBEGIN
-MCNAPI_C ::std::string const& ARMOR_ICON_LOCATION_ROOT();
-
 MCNAPI ::std::string const& PALETTE_LOCATION_ROOT();
 
 MCNAPI ::std::string const& TRIM_ICON_LOCATION_ROOT();
-
-MCNAPI_C ::std::string const& TRIM_LOCATION_ROOT();
 
 MCNAPI ::std::string const& TRIM_SUBSTR();
 // NOLINTEND

@@ -68,8 +68,6 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> deleteTheme(::std::string const& id, bool notifyUpdate);
 
-    MCNAPI_C ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> getAllThemesMap() const;
-
     MCNAPI ::std::optional<::Editor::Settings::ThemePalette> getThemeColors(::std::string const& id) const;
 
     MCNAPI ::Scripting::Result_deprecated<::Editor::Settings::ThemePalette>

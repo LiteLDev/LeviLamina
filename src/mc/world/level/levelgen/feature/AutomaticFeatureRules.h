@@ -5,10 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/ServiceReference.h"
 #include "mc/deps/puv/LoadResult.h"
+#include "mc/deps/puv/SlicedLoader.h"
+#include "mc/world/level/BiomeFilterGroup.h"
+#include "mc/world/level/biome/components/BiomeDecorationFeature.h"
 
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
+class BedrockLoadContext;
 class FeatureRegistry;
 class HashedString;
 class IMinecraftEventing;
@@ -16,7 +20,6 @@ class IWorldRegistriesProvider;
 class MinEngineVersion;
 class ResourcePackManager;
 class SemVersionConstant;
-struct BiomeDecorationFeature;
 namespace SharedTypes::v1_21_20 { struct AutomaticFeatureRulesData; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -33,34 +36,36 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 328> mUnk6ed10e;
-        ::ll::UntypedStorage<8, 64>  mUnk9f3a19;
+        ::ll::TypedStorage<8, 328, ::BiomeDecorationFeature> mAutoFeature;
+        ::ll::TypedStorage<8, 64, ::BiomeFilterGroup>        mBiomeFilter;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        AutomaticFeatureRule& operator=(AutomaticFeatureRule const&);
-        AutomaticFeatureRule(AutomaticFeatureRule const&);
-        AutomaticFeatureRule();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~AutomaticFeatureRule();
+        MCAPI ~AutomaticFeatureRule();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+    using AutomaticFeaturePriorityList = ::std::unordered_map<
+        ::std::string,
+        ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnka8c11c;
-    ::ll::UntypedStorage<8, 8>   mUnkd6d3f6;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::SlicedLoader<::SharedTypes::v1_21_20::AutomaticFeatureRulesData, ::BedrockLoadContext, nullptr_t>>
+                                                    mLoader;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&> mEventing;
     // NOLINTEND
 
 public:

@@ -30,6 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptWidgetComponentRenderPrimType_AxialSphere() /*override*/;
     // NOLINTEND
 
@@ -37,10 +38,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&&);
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere const&);
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&&);
     // NOLINTEND
 
 public:

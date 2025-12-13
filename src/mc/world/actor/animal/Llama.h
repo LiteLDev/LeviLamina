@@ -21,10 +21,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 58
     virtual void onFailedTame() /*override*/;
 
+    // vIndex: 92
     virtual float causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source) /*override*/;
 
+    // vIndex: 8
     virtual ~Llama() /*override*/ = default;
     // NOLINTEND
 
@@ -54,8 +57,6 @@ public:
     MCAPI void $onFailedTame();
 
     MCAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
-
-
     // NOLINTEND
 
 public:

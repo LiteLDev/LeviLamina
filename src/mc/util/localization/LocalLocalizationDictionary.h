@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Localization;
 class PackManifest;
 // clang-format on
 
@@ -30,64 +29,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~LocalLocalizationDictionary() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~LocalLocalizationDictionary() /*override*/;
-#endif
 
-    virtual ::std::string getLocString(::std::string const& locKey) const /*override*/;
+    // vIndex: 1
+    virtual ::std::string getLocString(::std::string const&) const /*override*/;
 
+    // vIndex: 2
     virtual bool isLocalizationReady() const /*override*/;
 
-    virtual void onLanguageChanged(::std::string const& locCode, bool) /*override*/;
+    // vIndex: 2
+    virtual void onLanguageChanged(::std::string const&, bool) /*override*/;
 
+    // vIndex: 3
     virtual void onLanguageKeywordsLoadedFromPack(::PackManifest const&) /*override*/;
 
+    // vIndex: 4
     virtual void onLanguagesLoaded() /*override*/;
 
+    // vIndex: 3
     virtual void _updateLoc() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C bool _appendLoc(::std::string const& locCode, ::Localization& localizationObjToAppendLoc);
-
-    MCNAPI_C void _initialize();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::string $getLocString(::std::string const& locKey) const;
 
-    MCNAPI bool $isLocalizationReady() const;
-
-    MCNAPI void $onLanguageChanged(::std::string const& locCode, bool);
-
-    MCNAPI void $onLanguageKeywordsLoadedFromPack(::PackManifest const&);
-
-    MCNAPI void $onLanguagesLoaded();
-
-    MCNAPI void $_updateLoc();
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForILocalizationDictionary();
-
-    MCNAPI static void** $vftableForI18nObserver();
     // NOLINTEND
 };

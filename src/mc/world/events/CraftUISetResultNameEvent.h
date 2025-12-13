@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<4, 4, ::CraftUISetResultNameEvent::BlockType const> mType;
     ::ll::TypedStorage<8, 32, ::std::string const>                         mName;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~CraftUISetResultNameEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

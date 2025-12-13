@@ -45,34 +45,47 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport() const /*override*/;
 
+    // vIndex: 4
     virtual ::webrtc::SctpTransportInformation Information() const /*override*/;
 
+    // vIndex: 5
     virtual void RegisterObserver(::webrtc::SctpTransportObserverInterface* observer) /*override*/;
 
+    // vIndex: 6
     virtual void UnregisterObserver() /*override*/;
 
+    // vIndex: 1
     virtual ::webrtc::RTCError OpenChannel(int channel_id) /*override*/;
 
+    // vIndex: 2
     virtual ::webrtc::RTCError SendData(
         int                             channel_id,
         ::webrtc::SendDataParams const& params,
         ::rtc::CopyOnWriteBuffer const& buffer
     ) /*override*/;
 
+    // vIndex: 3
     virtual ::webrtc::RTCError CloseChannel(int channel_id) /*override*/;
 
+    // vIndex: 4
     virtual void SetDataSink(::webrtc::DataChannelSink* sink) /*override*/;
 
+    // vIndex: 5
     virtual bool IsReadyToSend() const /*override*/;
 
+    // vIndex: 6
     virtual uint64 buffered_amount(int channel_id) const /*override*/;
 
+    // vIndex: 7
     virtual uint64 buffered_amount_low_threshold(int channel_id) const /*override*/;
 
+    // vIndex: 8
     virtual void SetBufferedAmountLowThreshold(int channel_id, uint64 bytes) /*override*/;
 
+    // vIndex: 0
     virtual ~SctpTransport() /*override*/;
     // NOLINTEND
 
@@ -137,8 +150,6 @@ public:
     MCNAPI uint64 $buffered_amount_low_threshold(int channel_id) const;
 
     MCNAPI void $SetBufferedAmountLowThreshold(int channel_id, uint64 bytes);
-
-
     // NOLINTEND
 
 public:

@@ -23,15 +23,14 @@ public:
 public:
     // prevent constructor by default
     PlayerAuthenticationInfo& operator=(PlayerAuthenticationInfo const&);
+    PlayerAuthenticationInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C PlayerAuthenticationInfo();
+    MCAPI PlayerAuthenticationInfo(::PlayerAuthenticationInfo const&);
 
     MCAPI PlayerAuthenticationInfo(::PlayerAuthenticationInfo&&);
-
-    MCAPI PlayerAuthenticationInfo(::PlayerAuthenticationInfo const&);
 
     MCAPI ::PlayerAuthenticationInfo& operator=(::PlayerAuthenticationInfo&&);
 
@@ -41,11 +40,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+    MCAPI void* $ctor(::PlayerAuthenticationInfo const&);
 
     MCAPI void* $ctor(::PlayerAuthenticationInfo&&);
-
-    MCAPI void* $ctor(::PlayerAuthenticationInfo const&);
     // NOLINTEND
 
 public:

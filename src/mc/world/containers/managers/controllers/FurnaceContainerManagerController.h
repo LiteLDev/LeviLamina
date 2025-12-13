@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class FurnaceContainerManagerModel;
-class HashedString;
 class ItemInstance;
 struct SelectedSlotInfo;
 struct SlotData;
@@ -24,58 +23,24 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FurnaceContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FurnaceContainerManagerController() /*override*/ = default;
 
-    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
+    // vIndex: 11
+    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
 
-    virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
+    // vIndex: 27
+    virtual bool isOutputSlot(::std::string const&) const /*override*/;
 
-    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C FurnaceContainerManagerController(
-        ::std::weak_ptr<::FurnaceContainerManagerModel> containerManagerModel,
-        ::HashedString const&                           recipeTag
-    );
-
-    MCNAPI_C int getBurnProgress(int max);
-
-    MCNAPI_C int getLitProgress(int max);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void*
-    $ctor(::std::weak_ptr<::FurnaceContainerManagerModel> containerManagerModel, ::HashedString const& recipeTag);
+    // vIndex: 32
+    virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 
-    MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
-
-    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

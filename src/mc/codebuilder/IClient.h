@@ -20,16 +20,22 @@ class IClient : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IClient() /*override*/;
 
+    // vIndex: 5
     virtual void send(::CodeBuilder::AgentMessage const&) = 0;
 
+    // vIndex: 4
     virtual void send(::CodeBuilder::CommandMessage const&) = 0;
 
+    // vIndex: 3
     virtual void send(::CodeBuilder::ErrorMessage const&) = 0;
 
+    // vIndex: 2
     virtual void send(::CodeBuilder::EventMessage const&) = 0;
 
+    // vIndex: 1
     virtual void send(::CodeBuilder::ChatMessage const&) = 0;
     // NOLINTEND
 

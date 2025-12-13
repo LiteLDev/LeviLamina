@@ -2,13 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class NetworkIdentifier;
-class SerializedSkin;
-struct ActorUniqueID;
-// clang-format on
-
 class TrustedSkinHelper {
 public:
     // member variables
@@ -24,22 +17,4 @@ public:
     TrustedSkinHelper& operator=(TrustedSkinHelper const&);
     TrustedSkinHelper(TrustedSkinHelper const&);
     TrustedSkinHelper();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C bool canUseSkin(
-        ::SerializedSkin const&    skin,
-        ::NetworkIdentifier const& networkIdentifier,
-        ::ActorUniqueID const&     playerId
-    ) const;
-
-    MCNAPI_C ~TrustedSkinHelper();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

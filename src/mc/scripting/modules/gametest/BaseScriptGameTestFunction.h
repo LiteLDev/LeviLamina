@@ -30,8 +30,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BaseScriptGameTestFunction() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::gametest::IGameTestFunctionContext>
     createContext(::gametest::BaseGameTestHelper& helper) const /*override*/;
     // NOLINTEND
@@ -53,8 +55,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::gametest::IGameTestFunctionContext>
     $createContext(::gametest::BaseGameTestHelper& helper) const;
-
-
     // NOLINTEND
 
 public:

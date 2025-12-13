@@ -37,33 +37,46 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::webrtc::MediaSourceInterface::SourceState state() const /*override*/;
 
+    // vIndex: 4
     virtual bool remote() const /*override*/;
 
+    // vIndex: 5
     virtual bool is_screencast() const /*override*/;
 
+    // vIndex: 6
     virtual ::std::optional<bool> needs_denoising() const /*override*/;
 
+    // vIndex: 7
     virtual bool GetStats(::webrtc::VideoTrackSourceInterface::Stats* stats) /*override*/;
 
+    // vIndex: 1
     virtual void AddOrUpdateSink(
         ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
         ::rtc::VideoSinkWants const&                     wants
     ) /*override*/;
 
+    // vIndex: 2
     virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
 
+    // vIndex: 8
     virtual bool SupportsEncodedOutput() const /*override*/;
 
+    // vIndex: 9
     virtual void GenerateKeyFrame() /*override*/;
 
+    // vIndex: 10
     virtual void AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink) /*override*/;
 
+    // vIndex: 11
     virtual void RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink) /*override*/;
 
+    // vIndex: 13
     virtual ::rtc::VideoSourceInterface<::webrtc::VideoFrame>* source() = 0;
 
+    // vIndex: 0
     virtual ~VideoTrackSource() /*override*/;
     // NOLINTEND
 
@@ -112,8 +125,6 @@ public:
     MCNAPI void $AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink);
 
     MCNAPI void $RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink);
-
-
     // NOLINTEND
 
 public:

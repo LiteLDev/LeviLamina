@@ -17,16 +17,5 @@ public:
     // prevent constructor by default
     ReviewSummaryData& operator=(ReviewSummaryData const&);
     ReviewSummaryData(ReviewSummaryData const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ReviewSummaryData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-    // NOLINTEND
+    ReviewSummaryData();
 };

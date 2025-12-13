@@ -35,7 +35,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::MolangScriptArgType> mType;
     ::ll::TypedStorage<8, 8, ::MolangScriptArgPOD>  mPOD;
-#ifdef LL_PLAT_S
     ::ll::TypedStorage<
         8,
         72,
@@ -59,31 +58,6 @@ public:
             ::MolangOffsetPlaceholder,
             ::MolangResourceOffset>>
         mData;
-#else // LL_PLAT_C
-    ::ll::TypedStorage<
-        8,
-        80,
-        ::std::variant<
-            ::MolangMatrix,
-            ::MaterialVariants,
-            ::MolangActorArrayPtr,
-            ::MolangActorIdArrayPtr,
-            ::MolangArrayVariable,
-            ::MolangClientTextureSet,
-            ::MolangContextVariable,
-            ::MolangDataDrivenGeometry,
-            ::MolangEntityVariable,
-            ::MolangGeometryVariable,
-            ::MolangMaterialVariable,
-            ::MolangMemberAccessor,
-            ::MolangMemberArray,
-            ::MolangQueryFunctionPtr,
-            ::MolangTempVariable,
-            ::MolangTextureVariable,
-            ::MolangOffsetPlaceholder,
-            ::MolangResourceOffset>>
-        mData;
-#endif
     // NOLINTEND
 
 public:
@@ -99,15 +73,13 @@ public:
 
     MCAPI ::MolangMemberArray* getAsNonConstMolangMemberArray();
 
-    MCAPI_S ::HashedString const& getName() const;
-
-    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&& other);
+    MCAPI ::HashedString const& getName() const;
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const& other);
 
-    MCAPI ::MolangScriptArg& operator=(::MolangMemberArray&& value);
+    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&& other);
 
-    MCAPI_C ::MolangScriptArg& operator=(::MolangOffsetPlaceholder&& value);
+    MCAPI ::MolangScriptArg& operator=(::MolangMemberArray&& value);
 
     MCAPI bool operator==(::MolangScriptArg const& rhs) const;
 
@@ -145,6 +117,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -37,12 +37,15 @@ class ScriptSimulatedPlayer : public ::ScriptModuleMinecraft::ScriptPlayer {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 12
     virtual ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
         remove(::Actor& self) /*override*/;
 
+    // vIndex: 13
     virtual bool isValid() const /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptSimulatedPlayer() /*override*/ = default;
     // NOLINTEND
 
@@ -225,8 +228,6 @@ public:
     $remove(::Actor& self);
 
     MCNAPI bool $isValid() const;
-
-
     // NOLINTEND
 
 public:

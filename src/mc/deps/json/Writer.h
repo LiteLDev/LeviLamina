@@ -13,8 +13,10 @@ class Writer {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Writer();
 
+    // vIndex: 1
     virtual ::std::string write(::Json::Value const&) = 0;
     // NOLINTEND
 

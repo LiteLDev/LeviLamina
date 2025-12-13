@@ -30,9 +30,9 @@ public:
     // NOLINTBEGIN
     MCNAPI SentryEnvelopePayloadExceptionMechanism(::SentryEnvelopePayloadExceptionMechanism const&);
 
-    MCNAPI ::SentryEnvelopePayloadExceptionMechanism& operator=(::SentryEnvelopePayloadExceptionMechanism&&);
-
     MCNAPI ::SentryEnvelopePayloadExceptionMechanism& operator=(::SentryEnvelopePayloadExceptionMechanism const&);
+
+    MCNAPI ::SentryEnvelopePayloadExceptionMechanism& operator=(::SentryEnvelopePayloadExceptionMechanism&&);
 
     MCNAPI ~SentryEnvelopePayloadExceptionMechanism();
     // NOLINTEND

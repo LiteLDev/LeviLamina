@@ -23,13 +23,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PistonConsumer() /*override*/ = default;
 
+    // vIndex: 6
     virtual bool canConsumePowerAnyDirection() const /*override*/;
 
+    // vIndex: 12
     virtual bool
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
+    // vIndex: 11
     virtual bool addSource(
         ::CircuitSceneGraph&         graph,
         ::CircuitTrackingInfo const& info,
@@ -37,6 +41,7 @@ public:
         bool&                        bDirectlyPowered
     ) /*override*/;
 
+    // vIndex: 24
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
     // NOLINTEND
 
@@ -51,8 +56,6 @@ public:
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCAPI ::CircuitComponentType $getCircuitComponentType() const;
-
-
     // NOLINTEND
 
 public:

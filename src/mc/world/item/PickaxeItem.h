@@ -15,10 +15,13 @@ class PickaxeItem : public ::DiggerItem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
+    // vIndex: 8
     virtual void executeEvent(::ItemStackBase&, ::std::string const&, ::RenderParams&) const /*override*/;
 
+    // vIndex: 0
     virtual ~PickaxeItem() /*override*/ = default;
     // NOLINTEND
 
@@ -28,8 +31,6 @@ public:
     MCAPI int $getEnchantSlot() const;
 
     MCFOLD void $executeEvent(::ItemStackBase&, ::std::string const&, ::RenderParams&) const;
-
-
     // NOLINTEND
 
 public:

@@ -20,6 +20,8 @@ public:
         Cave   = 1,
     };
 
+    using DataFlagIdType = char;
+
 public:
     // prevent constructor by default
     Spider();
@@ -27,12 +29,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
+    // vIndex: 179
     virtual float getModelScale() const;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 8
     virtual ~Spider() /*override*/ = default;
     // NOLINTEND
 
@@ -64,8 +70,6 @@ public:
     MCFOLD float $getModelScale() const;
 
     MCFOLD float $getShadowRadius() const;
-
-
     // NOLINTEND
 
 public:

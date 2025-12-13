@@ -16,24 +16,25 @@ struct IMovementCorrection {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IMovementCorrection() = default;
 
+    // vIndex: 1
     virtual ::AdvanceFrameResult getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const&);
 
+    // vIndex: 2
     virtual void advanceLiveFrame(::Actor&, ::std::optional<uint64>) = 0;
 
+    // vIndex: 3
     virtual ::std::bitset<2> getCorrectionTypeBitset() const = 0;
 
+    // vIndex: 4
     virtual void advanceFrame(::EntityContext&) const = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::AdvanceFrameResult $getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const&);
-#endif
-
 
     // NOLINTEND
 };

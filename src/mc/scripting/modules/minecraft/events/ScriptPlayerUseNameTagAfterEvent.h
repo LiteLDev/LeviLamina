@@ -2,10 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Player;
+namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -16,10 +21,11 @@ struct ScriptPlayerUseNameTagAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkcf33a9;
-    ::ll::UntypedStorage<8, 32> mUnkc0bba3;
-    ::ll::UntypedStorage<8, 40> mUnk998f69;
-    ::ll::UntypedStorage<8, 32> mUnke881ae;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+                                                                                                          mPlayerHandle;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mEntityNamed;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                                             mPreviousName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                              mNewName;
     // NOLINTEND
 
 public:
@@ -30,11 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPlayerUseNameTagAfterEvent(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
+    MCAPI ScriptPlayerUseNameTagAfterEvent(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
-    MCNAPI ScriptPlayerUseNameTagAfterEvent(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
+    MCAPI ScriptPlayerUseNameTagAfterEvent(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
 
-    MCNAPI ScriptPlayerUseNameTagAfterEvent(
+    MCAPI ScriptPlayerUseNameTagAfterEvent(
         ::Player const&                       player,
         ::Actor const&                        entityNamed,
         ::std::string                         newName,
@@ -42,26 +48,26 @@ public:
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
 
-    MCNAPI ~ScriptPlayerUseNameTagAfterEvent();
+    MCAPI ~ScriptPlayerUseNameTagAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Player const&                       player,
         ::Actor const&                        entityNamed,
         ::std::string                         newName,
@@ -73,7 +79,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

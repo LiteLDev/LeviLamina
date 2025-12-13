@@ -22,22 +22,22 @@ class WoodlandMansionFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkab848b;
-    ::ll::UntypedStorage<4, 4>  mUnk7a5b05;
-    ::ll::UntypedStorage<8, 24> mUnk8a68ff;
+    ::ll::TypedStorage<4, 4, int>                           mFeatureSpacing;
+    ::ll::TypedStorage<4, 4, int>                           mMinFeatureSeparation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    WoodlandMansionFeature& operator=(WoodlandMansionFeature const&);
-    WoodlandMansionFeature(WoodlandMansionFeature const&);
     WoodlandMansionFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
 
+    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -48,8 +48,10 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
+    // vIndex: 2
     virtual bool shouldPostProcessMobs() const /*override*/;
 
+    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -59,6 +61,7 @@ public:
         ::Dimension const&
     ) /*override*/;
 
+    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension& dimension,
         ::BiomeSource const&,
@@ -67,6 +70,7 @@ public:
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~WoodlandMansionFeature() /*override*/ = default;
     // NOLINTEND
 
@@ -115,8 +119,6 @@ public:
         ::ChunkPos const& lc,
         ::IPreliminarySurfaceProvider const&
     );
-
-
     // NOLINTEND
 
 public:

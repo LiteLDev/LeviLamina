@@ -43,21 +43,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 57
     virtual int getArmorValue() const /*override*/;
 
+    // vIndex: 68
     virtual bool hasCustomColor(::CompoundTag const* userData) const /*override*/;
 
+    // vIndex: 67
     virtual ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const /*override*/;
 
+    // vIndex: 70
     virtual void clearColor(::ItemStackBase& item) const /*override*/;
 
+    // vIndex: 71
     virtual void setColor(::ItemStackBase& item, ::mce::Color const& color) const /*override*/;
 
+    // vIndex: 15
     virtual bool isDyeable() const /*override*/;
 
+    // vIndex: 81
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
 
+    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -65,6 +73,7 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
+    // vIndex: 0
     virtual ~HorseArmorItem() /*override*/ = default;
     // NOLINTEND
 
@@ -97,8 +106,6 @@ public:
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
-
-
     // NOLINTEND
 
 public:

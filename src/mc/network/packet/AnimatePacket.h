@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
@@ -27,28 +28,27 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk95703f;
-    ::ll::UntypedStorage<4, 4> mUnk7046d1;
-    ::ll::UntypedStorage<4, 4> mUnk2225d1;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>        mRuntimeId;
+    ::ll::TypedStorage<4, 4, ::AnimatePacket::Action> mAction;
+    ::ll::TypedStorage<4, 4, float>                   mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AnimatePacket& operator=(AnimatePacket const&);
-    AnimatePacket(AnimatePacket const&);
-    AnimatePacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
     virtual ~AnimatePacket() /*override*/;
     // NOLINTEND
 
@@ -68,8 +68,6 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

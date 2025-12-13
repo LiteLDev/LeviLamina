@@ -31,12 +31,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MinecraftReportGameListener() /*override*/ = default;
 
+    // vIndex: 1
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
+    // vIndex: 2
     virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
+    // vIndex: 3
     virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
     // NOLINTEND
 
@@ -64,8 +68,6 @@ public:
     MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
     MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
-
-
     // NOLINTEND
 
 public:

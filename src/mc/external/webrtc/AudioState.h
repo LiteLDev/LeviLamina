@@ -41,16 +41,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::webrtc::AudioProcessing* audio_processing() = 0;
 
+    // vIndex: 4
     virtual ::webrtc::AudioTransport* audio_transport() = 0;
 
+    // vIndex: 5
     virtual void SetPlayout(bool) = 0;
 
+    // vIndex: 6
     virtual void SetRecording(bool) = 0;
 
+    // vIndex: 7
     virtual void SetStereoChannelSwapping(bool) = 0;
 
+    // vIndex: 2
     virtual ~AudioState() /*override*/ = default;
     // NOLINTEND
 

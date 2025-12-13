@@ -32,12 +32,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RealmsServicePackSource() /*override*/ = default;
 
+    // vIndex: 2
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
+    // vIndex: 3
     virtual ::PackType getPackType() const /*override*/;
 
+    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
     // NOLINTEND
 
@@ -49,8 +53,6 @@ public:
     MCNAPI ::PackType $getPackType() const;
 
     MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
-
-
     // NOLINTEND
 
 public:

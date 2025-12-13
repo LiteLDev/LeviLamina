@@ -14,16 +14,4 @@ public:
     CustomDocumentModifier& operator=(CustomDocumentModifier const&);
     CustomDocumentModifier(CustomDocumentModifier const&);
     CustomDocumentModifier();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~CustomDocumentModifier();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

@@ -25,28 +25,6 @@ public:
     IntegerSequenceCodec& operator=(IntegerSequenceCodec const&);
     IntegerSequenceCodec(IntegerSequenceCodec const&);
     IntegerSequenceCodec();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit IntegerSequenceCodec(int range);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static int GetBitCount(int num_vals, int trits, int quints, int bits);
-
-    MCNAPI_C static int GetBitCountForRange(int num_vals, int range);
-
-    MCNAPI_C static void GetCountsForRange(int range, int* trits, int* quints, int* bits);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(int range);
-    // NOLINTEND
 };
 
 } // namespace astc_codec

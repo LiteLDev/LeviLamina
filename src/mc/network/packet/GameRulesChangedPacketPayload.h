@@ -2,11 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/packet/GameRulesChangedPacketData.h"
+
 struct GameRulesChangedPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk6240e9;
+    ::ll::TypedStorage<8, 24, ::GameRulesChangedPacketData> mRuleData;
     // NOLINTEND
 
 public:
@@ -18,6 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::GameRulesChangedPacketPayload& operator=(::GameRulesChangedPacketPayload&&);
+    MCFOLD ::GameRulesChangedPacketPayload& operator=(::GameRulesChangedPacketPayload&&);
     // NOLINTEND
 };

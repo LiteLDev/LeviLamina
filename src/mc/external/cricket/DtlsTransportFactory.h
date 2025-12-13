@@ -18,8 +18,10 @@ class DtlsTransportFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DtlsTransportFactory() = default;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::cricket::DtlsTransportInternal> CreateDtlsTransport(
         ::cricket::IceTransportInternal*,
         ::webrtc::CryptoOptions const&,

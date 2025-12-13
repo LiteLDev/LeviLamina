@@ -24,8 +24,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StorageAreaStateListener();
 
+    // vIndex: 1
     virtual void onExtendDiskSpace(
         bool const                                      bSet,
         ::std::weak_ptr<::Core::FileStorageArea> const& fileStorageAreaWeakPtr,
@@ -33,10 +35,13 @@ public:
         ::std::function<void()>                         onHandledEventCallback
     );
 
+    // vIndex: 2
     virtual void onLowDiskSpace(bool const bSet);
 
+    // vIndex: 3
     virtual void onOutOfDiskSpace(bool const bSet);
 
+    // vIndex: 4
     virtual void onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
     // NOLINTEND
 
@@ -69,8 +74,6 @@ public:
     MCNAPI void $onOutOfDiskSpace(bool const bSet);
 
     MCNAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
-
-
     // NOLINTEND
 
 public:

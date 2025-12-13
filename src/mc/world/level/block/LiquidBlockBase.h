@@ -28,8 +28,10 @@ class LiquidBlockBase : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 76
     virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
+    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
@@ -37,18 +39,24 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
+    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
+    // vIndex: 114
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~LiquidBlockBase() /*override*/ = default;
     // NOLINTEND
 
@@ -72,8 +80,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Vec3 _getFlow(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
-
-    MCAPI_C static float getSlopeAngle(::BlockSource& region, ::BlockPos const& pos, ::Material const& m);
     // NOLINTEND
 
 public:
@@ -97,8 +103,6 @@ public:
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

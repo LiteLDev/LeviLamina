@@ -21,8 +21,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FlushableStorageAreaEnv() /*override*/ = default;
 
+    // vIndex: 22
     virtual void flushToPermanentStorage() /*override*/;
     // NOLINTEND
 
@@ -30,8 +32,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $flushToPermanentStorage();
-
-
     // NOLINTEND
 
 public:

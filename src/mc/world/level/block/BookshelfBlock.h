@@ -14,8 +14,10 @@ class BookshelfBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
+    // vIndex: 0
     virtual ~BookshelfBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -23,8 +25,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
-
-
     // NOLINTEND
 
 public:

@@ -50,20 +50,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ChunkBuildOrderPolicy() /*override*/ = default;
 
+    // vIndex: 1
     virtual int getChunkRebuildPriority(::ChunkPos const& cp) const /*override*/;
 
+    // vIndex: 2
     virtual uint registerForUpdates() /*override*/;
 
+    // vIndex: 3
     virtual void unregisterForUpdates(uint handle) /*override*/;
 
+    // vIndex: 4
     virtual void setPlayerInfluence(
         uint              handle,
         ::ChunkPos const& playerPosition,
         ::Vec3 const&     playerMovementDirection
     ) /*override*/;
 
+    // vIndex: 5
     virtual void setTickingAreaInfluence(
         uint              handle,
         ::ChunkPos const& tickingAreaPosition,
@@ -73,6 +79,7 @@ public:
         bool              preload
     ) /*override*/;
 
+    // vIndex: 6
     virtual void updateInfluences() /*override*/;
     // NOLINTEND
 
@@ -98,8 +105,6 @@ public:
     );
 
     MCAPI void $updateInfluences();
-
-
     // NOLINTEND
 
 public:

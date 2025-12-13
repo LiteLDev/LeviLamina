@@ -85,16 +85,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetworkStatistics() /*override*/;
 
+    // vIndex: 1
     virtual void packetSentTo(::NetworkIdentifier const& target, ::Packet const& packet, uint size) /*override*/;
 
+    // vIndex: 2
     virtual void packetReceivedFrom(::NetworkIdentifier const& source, ::Packet const& packet, uint size) /*override*/;
 
+    // vIndex: 3
     virtual void dataSentTo(::NetworkIdentifier const& target, ::std::string_view data) /*override*/;
 
+    // vIndex: 4
     virtual void dataReceivedFrom(::NetworkIdentifier const& source, ::std::string const& data) /*override*/;
 
+    // vIndex: 5
     virtual void reset() /*override*/;
     // NOLINTEND
 
@@ -119,11 +125,9 @@ public:
 
     MCAPI void _logPeerConnectionInfo(::std::vector<::WeakEntityRef> const& userList, bool includeAverages) const;
 
-    MCAPI_S ::std::string getVerboseInfo() const;
+    MCAPI ::std::string getVerboseInfo() const;
 
     MCAPI void tick(::std::vector<::WeakEntityRef> const* userList);
-
-    MCAPI_C void updateCSV(double time);
     // NOLINTEND
 
 public:
@@ -162,8 +166,6 @@ public:
     MCAPI void $dataReceivedFrom(::NetworkIdentifier const& source, ::std::string const& data);
 
     MCAPI void $reset();
-
-
     // NOLINTEND
 
 public:

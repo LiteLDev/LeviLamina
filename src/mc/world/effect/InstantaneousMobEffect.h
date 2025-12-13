@@ -9,10 +9,13 @@ class InstantaneousMobEffect : public ::MobEffect {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~InstantaneousMobEffect() /*override*/ = default;
 
+    // vIndex: 7
     virtual bool isInstantaneous() const /*override*/;
 
+    // vIndex: 9
     virtual bool isDurationEffectTick(int remainingDuration, int) const;
     // NOLINTEND
 
@@ -22,8 +25,6 @@ public:
     MCFOLD bool $isInstantaneous() const;
 
     MCAPI bool $isDurationEffectTick(int remainingDuration, int) const;
-
-
     // NOLINTEND
 
 public:

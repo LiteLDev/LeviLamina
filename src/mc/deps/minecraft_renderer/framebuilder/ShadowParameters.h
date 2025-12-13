@@ -7,18 +7,6 @@
 
 namespace mce::framebuilder {
 
-struct ShadowParameters : public ::mce::framebuilder::ShadowParametersImpl<1, 21, 60> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ShadowParameters();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
-};
+struct ShadowParameters : public ::mce::framebuilder::ShadowParametersImpl<1, 21, 60> {};
 
 } // namespace mce::framebuilder

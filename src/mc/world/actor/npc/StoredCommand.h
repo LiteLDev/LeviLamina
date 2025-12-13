@@ -2,33 +2,35 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/CurrentCmdVersion.h"
+
+// auto generated forward declare list
+// clang-format off
+class Command;
+// clang-format on
+
 namespace npc {
 
 struct StoredCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk1b59fb;
-    ::ll::UntypedStorage<8, 32> mUnk879303;
-    ::ll::UntypedStorage<8, 8>  mUnk53dd7c;
+    ::ll::TypedStorage<4, 4, ::CurrentCmdVersion> version;
+    ::ll::TypedStorage<8, 32, ::std::string>      rawCommand;
+    ::ll::TypedStorage<8, 8, ::Command*>          command;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StoredCommand& operator=(StoredCommand const&);
-    StoredCommand(StoredCommand const&);
-    StoredCommand();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~StoredCommand();
+    MCAPI ~StoredCommand();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

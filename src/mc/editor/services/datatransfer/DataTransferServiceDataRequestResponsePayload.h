@@ -26,18 +26,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~DataTransferServiceDataRequestResponsePayload() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~DataTransferServiceDataRequestResponsePayload() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

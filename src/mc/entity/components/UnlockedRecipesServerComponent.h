@@ -43,13 +43,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~UnlockingInstruction();
+        MCAPI ~UnlockingInstruction();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -73,30 +73,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI UnlockedRecipesServerComponent(::UnlockedRecipesServerComponent const&);
+    MCAPI UnlockedRecipesServerComponent(::UnlockedRecipesServerComponent const&);
 
-    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void addUnlockingInstruction(::UnlockedRecipesServerComponent::UnlockingInstruction instruction);
+    MCAPI void addUnlockingInstruction(::UnlockedRecipesServerComponent::UnlockingInstruction instruction);
 
-    MCNAPI ::UnlockedRecipesServerComponent& operator=(::UnlockedRecipesServerComponent&&);
+    MCAPI ::UnlockedRecipesServerComponent& operator=(::UnlockedRecipesServerComponent&&);
 
-    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& COMPONENT_TAG();
+    MCAPI static ::std::string const& COMPONENT_TAG();
 
-    MCNAPI static ::std::string const& UNLOCKED_RECIPES_TAG();
+    MCAPI static ::std::string const& UNLOCKED_RECIPES_TAG();
 
-    MCNAPI static ::std::string const& USED_CONTEXTS_TAG();
+    MCAPI static ::std::string const& USED_CONTEXTS_TAG();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::UnlockedRecipesServerComponent const&);
+    MCAPI void* $ctor(::UnlockedRecipesServerComponent const&);
     // NOLINTEND
 };

@@ -4,10 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class MainMenuScreenModel;
 class StoreUIComponent;
 namespace Json { class Value; }
-struct MainMenuScreenModel;
-struct StoreDataDrivenScreenController;
 // clang-format on
 
 class StoreVisualStyle {
@@ -57,64 +56,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~StoreVisualStyle() = default;
-#else // LL_PLAT_C
-    virtual ~StoreVisualStyle();
-#endif
-
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void _addComponent(ushort id, ::std::shared_ptr<::StoreUIComponent> newComp);
-
-    MCNAPI_C void _addStyleSpecificComponents(::std::shared_ptr<::MainMenuScreenModel> model);
-
-    MCNAPI_C void _parseComponentData(::std::shared_ptr<::MainMenuScreenModel> model, ::Json::Value const& sectionJson);
-
-    MCNAPI_C void _parseQueryInfo(::Json::Value const& customObject);
-
-    MCNAPI_C void _parseStyleData(::std::shared_ptr<::MainMenuScreenModel> model, ::Json::Value const& styleJson);
-
-    MCNAPI_C void _removeItemOrderDuplicates();
-
-    MCNAPI_C void addComponentDependancies();
-
-    MCNAPI_C ::std::string const& getVisualStyleHeader() const;
-
-    MCNAPI_C void initialize(::StoreDataDrivenScreenController& controller);
-
-    MCNAPI_C void parseCustom(::std::shared_ptr<::MainMenuScreenModel> model, ::Json::Value const& customObject);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::string const& HERO_ROW();
-
-    MCNAPI_C static ::std::string const& HERO_ROW_L2();
-
-    MCNAPI_C static ::std::string const& SINGLE_PAGE_ROW();
-
-    MCNAPI_C static ::std::string const& STORE_ROW();
-
-    MCNAPI_C static ::std::unordered_map<
-        ::std::string,
-        ::std::function<void(::StoreVisualStyle&, ::std::shared_ptr<::MainMenuScreenModel>, ::Json::Value const&)>>&
-    mAddComponentStrMap();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

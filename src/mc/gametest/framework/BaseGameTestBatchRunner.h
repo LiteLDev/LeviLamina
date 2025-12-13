@@ -41,11 +41,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BaseGameTestBatchRunner();
 
+    // vIndex: 1
     virtual ::std::shared_ptr<::gametest::BaseGameTestInstance>
     _createGameTestInstance(::gametest::BaseGameTestFunction&) = 0;
 
+    // vIndex: 2
     virtual void _runTest(::std::shared_ptr<::gametest::BaseGameTestInstance>, ::gametest::GameTestTicker&) = 0;
     // NOLINTEND
 

@@ -13,7 +13,6 @@ class CommandOrigin;
 class CompoundTag;
 class DataLoadHelper;
 class Level;
-struct ActorUniqueID;
 // clang-format on
 
 class BaseCommandBlock {
@@ -55,8 +54,6 @@ public:
     MCAPI ::BaseCommandBlock& operator=(::BaseCommandBlock&&);
 
     MCAPI bool save(::CompoundTag& tag) const;
-
-    MCAPI_C void setCommand(::BlockSource& region, ::ActorUniqueID const& entityId, ::std::string const& command);
 
     MCAPI void setLastOutput(::std::string const& lastOutput, ::std::vector<::std::string> const& params);
 

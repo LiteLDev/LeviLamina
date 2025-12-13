@@ -54,6 +54,7 @@ struct MovementSoundRequestSystemImpl : public ::IStrictTickingSystem<::StrictEx
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::ShouldPlayMovementSoundComponent>,
@@ -74,6 +75,7 @@ public:
             ::EntityFactoryT<>>& context
     ) /*override*/;
 
+    // vIndex: 6
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<::ShouldPlayMovementSoundComponent>,
@@ -95,6 +97,7 @@ public:
         ::StrictEntityContext&   entityContext
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~MovementSoundRequestSystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -168,8 +171,6 @@ public:
             ::EntityFactoryT<>>& context,
         ::StrictEntityContext&   entityContext
     );
-
-
     // NOLINTEND
 
 public:

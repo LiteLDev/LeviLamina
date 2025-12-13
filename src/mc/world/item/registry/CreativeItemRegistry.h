@@ -10,8 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPalette;
-class CreativeContentPacket;
 class CreativeGroupInfo;
 class CreativeItemEntry;
 class CreativeItemGroupCategory;
@@ -34,13 +32,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CreativeItemRegistry() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::brstd::flat_map<
+    MCAPI ::brstd::flat_map<
         ::CreativeItemCategory,
         ::gsl::not_null<::CreativeItemGroupCategory*>,
         ::std::less<::CreativeItemCategory>,
@@ -48,27 +47,20 @@ public:
         ::std::vector<::gsl::not_null<::CreativeItemGroupCategory*>>>
     createCategories();
 
-    MCNAPI void forEachCreativeItemInstance(::std::function<bool(::ItemInstance const&)> func) const;
+    MCAPI void forEachCreativeItemInstance(::std::function<bool(::ItemInstance const&)> func) const;
 
-    MCNAPI_C ::CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory category);
+    MCAPI ::CreativeItemGroupCategory* newCreativeCategory(::std::string const& name, ::CreativeItemCategory category);
 
-    MCNAPI_C void initializeFromCreativeContentPacket(
-        ::CreativeContentPacket const& creativeContentPacket,
-        ::BlockPalette const&          blockPalette
-    );
-
-    MCNAPI ::CreativeItemGroupCategory* newCreativeCategory(::std::string const& name, ::CreativeItemCategory category);
-
-    MCNAPI ::CreativeGroupInfo*
+    MCAPI ::CreativeGroupInfo*
     newCreativeGroup(::CreativeItemCategory category, ::HashedString const& name, ::ItemInstance const& icon);
 
-    MCNAPI void updateNetIdMap();
+    MCAPI void updateNetIdMap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

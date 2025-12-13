@@ -15,12 +15,16 @@ class FilterTestBiomeHasTag : public ::SimpleTagIDFilterTest {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
+    // vIndex: 3
     virtual void finalizeParsedValue(::IWorldRegistriesProvider& registries) /*override*/;
 
+    // vIndex: 4
     virtual ::std::string_view getName() const /*override*/;
 
+    // vIndex: 0
     virtual ~FilterTestBiomeHasTag() /*override*/;
     // NOLINTEND
 
@@ -38,8 +42,6 @@ public:
     MCNAPI void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
 
     MCNAPI ::std::string_view $getName() const;
-
-
     // NOLINTEND
 
 public:

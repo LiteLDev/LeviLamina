@@ -10,8 +10,10 @@ class MinecartRideable : public ::Minecart {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 139
     virtual ::MinecartType getType() /*override*/;
 
+    // vIndex: 8
     virtual ~MinecartRideable() /*override*/ = default;
     // NOLINTEND
 
@@ -19,8 +21,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::MinecartType $getType();
-
-
     // NOLINTEND
 
 public:

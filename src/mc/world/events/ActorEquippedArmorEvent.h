@@ -24,20 +24,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorEquippedArmorEvent(::ActorEquippedArmorEvent const&);
+    MCAPI ActorEquippedArmorEvent(::ActorEquippedArmorEvent const&);
 
-    MCNAPI ~ActorEquippedArmorEvent();
+    MCAPI ~ActorEquippedArmorEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorEquippedArmorEvent const&);
+    MCAPI void* $ctor(::ActorEquippedArmorEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

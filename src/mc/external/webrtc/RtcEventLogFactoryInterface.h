@@ -14,8 +14,10 @@ class RtcEventLogFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RtcEventLogFactoryInterface() = default;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::RtcEventLog> Create(::webrtc::Environment const&) const = 0;
     // NOLINTEND
 

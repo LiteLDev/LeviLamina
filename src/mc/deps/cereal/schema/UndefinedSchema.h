@@ -20,6 +20,7 @@ class UndefinedSchema : public ::cereal::internal::BasicSchema {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual void doLoad(
         ::cereal::SchemaReader&,
         ::entt::meta_any&,
@@ -27,13 +28,16 @@ public:
         ::cereal::internal::LoadState const& state
     ) const /*override*/;
 
+    // vIndex: 7
     virtual void
     doSave(::cereal::SchemaWriter&, ::entt::meta_any const& any, ::cereal::internal::SaveState const& state) const
         /*override*/;
 
+    // vIndex: 8
     virtual ::cereal::SchemaDescription
     makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const /*override*/;
 
+    // vIndex: 0
     virtual ~UndefinedSchema() /*override*/ = default;
     // NOLINTEND
 
@@ -52,8 +56,6 @@ public:
 
     MCNAPI ::cereal::SchemaDescription
     $makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const;
-
-
     // NOLINTEND
 
 public:

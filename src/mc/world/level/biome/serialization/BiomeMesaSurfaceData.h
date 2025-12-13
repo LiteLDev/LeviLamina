@@ -14,21 +14,15 @@ struct BiomeMesaSurfaceData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkeb3def;
-    ::ll::UntypedStorage<4, 4> mUnkfdfd75;
-    ::ll::UntypedStorage<1, 1> mUnke4de75;
-    ::ll::UntypedStorage<1, 1> mUnk13c1ee;
+    ::ll::TypedStorage<4, 4, uint> mClayMaterial;
+    ::ll::TypedStorage<4, 4, uint> mHardClayMaterial;
+    ::ll::TypedStorage<1, 1, bool> mBrycePillars;
+    ::ll::TypedStorage<1, 1, bool> mHasForest;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeMesaSurfaceData& operator=(BiomeMesaSurfaceData const&);
-    BiomeMesaSurfaceData(BiomeMesaSurfaceData const&);
-    BiomeMesaSurfaceData();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::BiomeMesaSurfaceData> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::BiomeMesaSurfaceData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

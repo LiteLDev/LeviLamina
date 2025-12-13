@@ -16,8 +16,10 @@ class ActorHeldItemUpdater : public ::EventListenerDispatcher<::ActorEventListen
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 40
     virtual ::EventResult onEvent(::ActorCarriedItemChangedEvent const& actorCarriedItemChangedEvent) /*override*/;
 
+    // vIndex: 0
     virtual ~ActorHeldItemUpdater() /*override*/ = default;
     // NOLINTEND
 
@@ -25,8 +27,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::EventResult $onEvent(::ActorCarriedItemChangedEvent const& actorCarriedItemChangedEvent);
-
-
     // NOLINTEND
 
 public:

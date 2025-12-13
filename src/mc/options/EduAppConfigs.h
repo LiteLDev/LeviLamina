@@ -29,14 +29,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void loadFromData(::IAppConfigData const&) /*override*/;
 
+    // vIndex: 16
     virtual ::EducationEditionOffer getEducationEditionOffering() const /*override*/;
 
+    // vIndex: 34
     virtual ::std::unique_ptr<::IContentAccessibilityProvider> createContentAccessibility() const /*override*/;
 
+    // vIndex: 27
     virtual bool canUseAzureNotebooks() const /*override*/;
 
+    // vIndex: 0
     virtual ~EduAppConfigs() /*override*/ = default;
     // NOLINTEND
 

@@ -4,30 +4,26 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/BasicLoader.h"
+#include "mc/network/packet/cerealize/core/serializers/PacketSchemaReader.h"
 
 class PacketLoader : public ::cereal::BasicLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd9bfbb;
+    ::ll::TypedStorage<8, 24, ::PacketSchemaReader> mReader;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PacketLoader& operator=(PacketLoader const&);
-    PacketLoader(PacketLoader const&);
-    PacketLoader();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PacketLoader() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

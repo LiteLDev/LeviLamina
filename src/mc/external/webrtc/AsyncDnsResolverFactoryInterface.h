@@ -17,14 +17,18 @@ class AsyncDnsResolverFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AsyncDnsResolverFactoryInterface() = default;
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
     CreateAndResolve(::rtc::SocketAddress const&, ::absl::AnyInvocable<void()>) = 0;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
     CreateAndResolve(::rtc::SocketAddress const&, int, ::absl::AnyInvocable<void()>) = 0;
 
+    // vIndex: 3
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> Create() = 0;
     // NOLINTEND
 

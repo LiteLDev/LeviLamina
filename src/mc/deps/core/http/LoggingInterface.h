@@ -11,10 +11,13 @@ class LoggingInterface : public ::Bedrock::ImplBase<::Bedrock::Http::LoggingInte
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LoggingInterface() /*override*/ = default;
 
+    // vIndex: 1
     virtual uint64 threadId() = 0;
 
+    // vIndex: 2
     virtual void writeToDebugger(char const*, ::HCTraceLevel, char const*) = 0;
     // NOLINTEND
 

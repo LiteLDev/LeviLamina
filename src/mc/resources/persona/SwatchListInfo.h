@@ -17,20 +17,6 @@ public:
     SwatchListInfo& operator=(SwatchListInfo const&);
     SwatchListInfo(SwatchListInfo const&);
     SwatchListInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::persona::color::SwatchListInfo& operator=(::persona::color::SwatchListInfo&&);
-
-    MCNAPI_C ~SwatchListInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace persona::color

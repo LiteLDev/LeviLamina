@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class KeyboardAction;
-class TextInput;
-// clang-format on
-
 class Keyboard {
 public:
     // Keyboard inner types define
@@ -114,36 +108,4 @@ public:
         AndroidMenu = 255,
         Count       = 256,
     };
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static void reset();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI_C static int& _caretLocationIndex();
-
-    MCNAPI_C static int& _gameControllerId();
-
-    MCNAPI_C static int& _index();
-
-    MCNAPI_C static ::std::vector<int>& _inputCaretLocation();
-
-    MCNAPI_C static ::std::vector<::TextInput>& _inputText();
-
-    MCNAPI_C static ::std::vector<::KeyboardAction>& _inputs();
-
-    MCNAPI_C static ::std::array<::std::string_view, 256>& _keyNames();
-
-    MCNAPI_C static ::std::array<::std::string_view, 256>& _shortKeyNames();
-
-    MCNAPI_C static ::std::add_lvalue_reference_t<int[]> _states();
-
-    MCNAPI_C static int& _textIndex();
-
-    MCNAPI_C static ::std::array<::std::string_view, 256>& _ttsKeyNames();
-    // NOLINTEND
 };

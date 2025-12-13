@@ -30,13 +30,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
+    // vIndex: 113
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const /*override*/;
 
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
+    // vIndex: 0
     virtual ~AbstractCompassItem() /*override*/ = default;
     // NOLINTEND
 
@@ -49,7 +53,5 @@ public:
     MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
 
     MCAPI int $getEnchantSlot() const;
-
-
     // NOLINTEND
 };

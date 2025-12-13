@@ -23,8 +23,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MediaChannelParameters();
 
+    // vIndex: 1
     virtual ::std::map<::std::string, ::std::string> ToStringMap() const;
     // NOLINTEND
 
@@ -38,8 +40,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::map<::std::string, ::std::string> $ToStringMap() const;
-
-
     // NOLINTEND
 
 public:

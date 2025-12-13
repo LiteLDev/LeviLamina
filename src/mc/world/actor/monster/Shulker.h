@@ -30,28 +30,40 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
+    // vIndex: 148
     virtual bool checkSpawnRules(bool) /*override*/;
 
+    // vIndex: 156
     virtual int getArmorValue() const /*override*/;
 
+    // vIndex: 7
     virtual void _doInitialMove() /*override*/;
 
+    // vIndex: 175
     virtual ::std::unique_ptr<::BodyControl> initBodyControl() /*override*/;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 153
     virtual float getMaxHeadXRot() /*override*/;
 
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
+    // vIndex: 8
     virtual ~Shulker() /*override*/ = default;
     // NOLINTEND
 
@@ -131,8 +143,6 @@ public:
     MCFOLD float $getMaxHeadXRot();
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-
     // NOLINTEND
 
 public:

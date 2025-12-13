@@ -16,10 +16,10 @@ struct ArgumentOutOfBoundsError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkc8e614;
-    ::ll::UntypedStorage<8, 16> mUnk676da1;
-    ::ll::UntypedStorage<8, 16> mUnk952d53;
-    ::ll::UntypedStorage<4, 4>  mUnk34f2c4;
+    ::ll::TypedStorage<8, 16, ::std::optional<double>> value;
+    ::ll::TypedStorage<8, 16, ::std::optional<double>> minValue;
+    ::ll::TypedStorage<8, 16, ::std::optional<double>> maxValue;
+    ::ll::TypedStorage<4, 4, int>                      index;
     // NOLINTEND
 
 public:
@@ -30,9 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError const&);
+    MCAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError const&);
 
-    MCNAPI ArgumentOutOfBoundsError(
+    MCAPI ArgumentOutOfBoundsError(
         ::std::string const&    propertyName,
         int                     index_,
         ::std::optional<double> value_,
@@ -40,21 +40,21 @@ public:
         ::std::optional<double> maxValue_
     );
 
-    MCNAPI ~ArgumentOutOfBoundsError();
+    MCAPI ~ArgumentOutOfBoundsError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::ArgumentOutOfBoundsError const&);
+    MCAPI void* $ctor(::Scripting::ArgumentOutOfBoundsError const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string const&    propertyName,
         int                     index_,
         ::std::optional<double> value_,
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

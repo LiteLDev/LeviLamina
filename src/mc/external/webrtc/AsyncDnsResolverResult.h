@@ -13,10 +13,13 @@ class AsyncDnsResolverResult {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AsyncDnsResolverResult() = default;
 
+    // vIndex: 1
     virtual bool GetResolvedAddress(int, ::rtc::SocketAddress*) const = 0;
 
+    // vIndex: 2
     virtual int GetError() const = 0;
     // NOLINTEND
 

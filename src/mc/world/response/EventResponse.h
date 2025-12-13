@@ -17,12 +17,16 @@ class EventResponse {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EventResponse();
 
+    // vIndex: 1
     virtual ::std::string const& getName() const;
 
+    // vIndex: 2
     virtual void executeAction(::RenderParams&) const = 0;
 
+    // vIndex: 3
     virtual void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
         ::Factory<::EventResponse> const&                                                                       factory
@@ -44,8 +48,6 @@ public:
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const;
-
-
     // NOLINTEND
 
 public:

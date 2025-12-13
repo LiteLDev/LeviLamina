@@ -9,6 +9,7 @@ class SnowBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SnowBlock() /*override*/ = default;
     // NOLINTEND
 

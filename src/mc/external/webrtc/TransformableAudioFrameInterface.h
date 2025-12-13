@@ -19,14 +19,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TransformableAudioFrameInterface() /*override*/ = default;
 
+    // vIndex: 10
     virtual ::rtc::ArrayView<uint const> GetContributingSources() const = 0;
 
+    // vIndex: 11
     virtual ::std::optional<ushort> const SequenceNumber() const = 0;
 
+    // vIndex: 12
     virtual ::std::optional<uint64> AbsoluteCaptureTimestamp() const = 0;
 
+    // vIndex: 13
     virtual ::webrtc::TransformableAudioFrameInterface::FrameType Type() const;
     // NOLINTEND
 

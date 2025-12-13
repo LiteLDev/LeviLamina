@@ -2,65 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class JsonValueHierarchy;
-class SemVersionConstant;
-class Vec2;
-class Vec3;
-struct TextureUVCoordinateSet;
-namespace Json { class Value; }
-// clang-format on
-
 class Geometry {
 public:
     // Geometry inner types declare
     // clang-format off
     struct Box;
     struct ItemDisplayTransform;
+    struct Node;
+    struct NodePolyMesh;
     struct NodeTextureMesh;
     struct NodeVertex;
-    struct NodePolyMesh;
-    struct Node;
     // clang-format on
 
     // Geometry inner types define
-    struct Box {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>   mUnk4aa1ba;
-        ::ll::UntypedStorage<4, 12>  mUnk1852fe;
-        ::ll::UntypedStorage<4, 12>  mUnk264da6;
-        ::ll::UntypedStorage<4, 12>  mUnk9b1536;
-        ::ll::UntypedStorage<4, 12>  mUnkf15bf2;
-        ::ll::UntypedStorage<4, 16>  mUnk2743f4;
-        ::ll::UntypedStorage<4, 144> mUnkd1b83a;
-        ::ll::UntypedStorage<4, 4>   mUnk528b69;
-        ::ll::UntypedStorage<1, 1>   mUnk461d11;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Box(Box const&);
-        Box();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C void _boxFaceUVToJson(
-            ::Json::Value&                      uvNode,
-            uchar                               facing,
-            ::std::string const&                faceName,
-            ::std::vector<::std::string> const& materialInstanceList
-        ) const;
-
-        MCNAPI_C ::Geometry::Box& operator=(::Geometry::Box const&);
-
-        MCNAPI_C void toJson(::Json::Value& root, ::std::vector<::std::string> const& materialInstanceList) const;
-        // NOLINTEND
-    };
-
     struct ItemDisplayTransform {
     public:
         // member variables
@@ -78,37 +32,28 @@ public:
         ItemDisplayTransform& operator=(ItemDisplayTransform const&);
         ItemDisplayTransform(ItemDisplayTransform const&);
         ItemDisplayTransform();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ~ItemDisplayTransform();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
     };
 
-    struct NodeTextureMesh {
+    struct Box {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk7cf4c5;
-        ::ll::UntypedStorage<4, 12> mUnk4092eb;
-        ::ll::UntypedStorage<4, 12> mUnkbb23f5;
-        ::ll::UntypedStorage<4, 12> mUnkb94fd4;
-        ::ll::UntypedStorage<4, 12> mUnkee92c6;
-        ::ll::UntypedStorage<1, 1>  mUnk353bfe;
+        ::ll::UntypedStorage<1, 1>   mUnk4aa1ba;
+        ::ll::UntypedStorage<4, 12>  mUnk1852fe;
+        ::ll::UntypedStorage<4, 12>  mUnk264da6;
+        ::ll::UntypedStorage<4, 12>  mUnk9b1536;
+        ::ll::UntypedStorage<4, 12>  mUnkf15bf2;
+        ::ll::UntypedStorage<4, 16>  mUnk2743f4;
+        ::ll::UntypedStorage<4, 144> mUnkd1b83a;
+        ::ll::UntypedStorage<4, 4>   mUnk528b69;
+        ::ll::UntypedStorage<1, 1>   mUnk461d11;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        NodeTextureMesh& operator=(NodeTextureMesh const&);
-        NodeTextureMesh(NodeTextureMesh const&);
-        NodeTextureMesh();
+        Box& operator=(Box const&);
+        Box(Box const&);
+        Box();
     };
 
     struct NodeVertex {
@@ -142,31 +87,27 @@ public:
     public:
         // prevent constructor by default
         NodePolyMesh& operator=(NodePolyMesh const&);
+        NodePolyMesh(NodePolyMesh const&);
         NodePolyMesh();
+    };
 
+    struct NodeTextureMesh {
     public:
-        // member functions
+        // member variables
         // NOLINTBEGIN
-        MCNAPI_C NodePolyMesh(::Geometry::NodePolyMesh const&);
-
-        MCNAPI_C ::Geometry::NodePolyMesh& operator=(::Geometry::NodePolyMesh&&);
-
-        MCNAPI_C void toJson(::Json::Value& root) const;
-
-        MCNAPI_C ~NodePolyMesh();
+        ::ll::UntypedStorage<8, 32> mUnk7cf4c5;
+        ::ll::UntypedStorage<4, 12> mUnk4092eb;
+        ::ll::UntypedStorage<4, 12> mUnkbb23f5;
+        ::ll::UntypedStorage<4, 12> mUnkb94fd4;
+        ::ll::UntypedStorage<4, 12> mUnkee92c6;
+        ::ll::UntypedStorage<1, 1>  mUnk353bfe;
         // NOLINTEND
 
     public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI_C void* $ctor(::Geometry::NodePolyMesh const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
+        // prevent constructor by default
+        NodeTextureMesh& operator=(NodeTextureMesh const&);
+        NodeTextureMesh(NodeTextureMesh const&);
+        NodeTextureMesh();
     };
 
     struct Node {
@@ -197,43 +138,8 @@ public:
     public:
         // prevent constructor by default
         Node& operator=(Node const&);
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C Node();
-
-        MCNAPI_C Node(::Geometry::Node const&);
-
-        MCNAPI_C void
-        _textureMeshToJson(::std::vector<::Geometry::NodeTextureMesh> const& textureMeshes, ::Json::Value& node) const;
-
-        MCNAPI_C void addLocator(
-            ::std::string const& name,
-            ::std::string const& boneName,
-            ::Vec3 const&        localOffset,
-            bool                 ignoreInheritedScale,
-            bool                 errorIfIdenticalLocatorAlreadyExists
-        );
-
-        MCNAPI_C void toJson(::Json::Value& root, ::std::vector<::std::string> const& materialInstanceList) const;
-
-        MCNAPI_C ~Node();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI_C void* $ctor();
-
-        MCNAPI_C void* $ctor(::Geometry::Node const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
+        Node(Node const&);
+        Node();
     };
 
 public:
@@ -262,101 +168,4 @@ public:
     Geometry& operator=(Geometry const&);
     Geometry(Geometry const&);
     Geometry();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C Geometry(
-        ::std::string const& serializableName,
-        ::std::string const& sourceFilePathWithExtension,
-        bool                 isFromBaseGamePack,
-        int                  texw,
-        int                  texh
-    );
-
-    MCNAPI_C Geometry(
-        ::std::string const& serializableName,
-        ::std::string const& sourceFilePathWithExtension,
-        ::Geometry const&    source,
-        bool                 isFromBaseGamePack,
-        int                  texw,
-        int                  texh
-    );
-
-    MCNAPI_C void _convertPreV1_8MobArmorOffsetsToLocators();
-
-    MCNAPI_C void _fixEnderDragonLegacyBones(::Geometry::Node& newNode, ::std::string const& name);
-
-    MCNAPI_C void _fixPreDataDrivenMobGeometry(
-        ::std::string const&                       name,
-        ::std::vector<::JsonValueHierarchy> const& bones,
-        ::JsonValueHierarchy&                      sourceNode,
-        ::Geometry::Node*                          newNode
-    );
-
-    MCNAPI_C void
-    _parseBones(::JsonValueHierarchy const& root, bool applyBindPoseRotation, ::TextureUVCoordinateSet const& uvOffset);
-
-    MCNAPI_C void _parseBoxFaceUV(
-        ::Geometry::Box&                box,
-        ::Json::Value const&            uvNode,
-        uchar                           facing,
-        ::std::string const&            faceName,
-        ::Vec2 const&                   defaultUVSize,
-        ::TextureUVCoordinateSet const& uvOffset
-    );
-
-    MCNAPI_C void
-    _parseBoxFaceUVs(::Geometry::Box& box, ::Json::Value const& uvNode, ::TextureUVCoordinateSet const& uvOffset);
-
-    MCNAPI_C void _parseItemDisplayTransforms(::Json::Value const& itemTransformNode);
-
-    MCNAPI_C ::Geometry::Node const* getNode(::std::string_view name) const;
-
-    MCNAPI_C void
-    parse(::JsonValueHierarchy const& root, bool applyBindPoseRotation, ::TextureUVCoordinateSet const& uvOffset);
-
-    MCNAPI_C void toJson(::Json::Value& root) const;
-
-    MCNAPI_C ~Geometry();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI_C static ::SemVersionConstant const& mDataDrivenEnderDragonSupportedVersion();
-
-    MCNAPI_C static ::SemVersionConstant const& mDataDrivenRenderingSupportedVersion();
-
-    MCNAPI_C static ::SemVersionConstant const& mDrownedParentFieldSupportedVersion();
-
-    MCNAPI_C static ::SemVersionConstant const& mParentFieldSupportedVersion();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        ::std::string const& serializableName,
-        ::std::string const& sourceFilePathWithExtension,
-        bool                 isFromBaseGamePack,
-        int                  texw,
-        int                  texh
-    );
-
-    MCNAPI_C void* $ctor(
-        ::std::string const& serializableName,
-        ::std::string const& sourceFilePathWithExtension,
-        ::Geometry const&    source,
-        bool                 isFromBaseGamePack,
-        int                  texw,
-        int                  texh
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

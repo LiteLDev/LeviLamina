@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/block/TintMethod.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-// clang-format on
-
 struct BlockDestructionParticlesComponent {
 public:
     // BlockDestructionParticlesComponent inner types declare
@@ -22,9 +17,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkf744bf;
-        ::ll::UntypedStorage<2, 2> mUnkb2ee17;
-        ::ll::UntypedStorage<1, 1> mUnk9eba7a;
+        ::ll::TypedStorage<8, 8, ::std::string const&> mTexture;
+        ::ll::TypedStorage<2, 2, ushort const>         mPreFlatteningAux;
+        ::ll::TypedStorage<1, 1, ::TintMethod const>   mTintMethod;
         // NOLINTEND
 
     public:
@@ -41,11 +36,5 @@ public:
     ::ll::TypedStorage<2, 2, ushort>         mPreFlatteningAux;
     ::ll::TypedStorage<1, 1, ::TintMethod>   mTintMethod;
     ::ll::TypedStorage<1, 1, uchar>          mParticleCount;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::BlockDestructionParticlesComponent::TextureInfo getTextureInfo(::Block const& block);
     // NOLINTEND
 };

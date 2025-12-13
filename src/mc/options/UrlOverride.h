@@ -16,18 +16,4 @@ public:
     UrlOverride& operator=(UrlOverride const&);
     UrlOverride(UrlOverride const&);
     UrlOverride();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::UrlOverride& operator=(::UrlOverride&&);
-
-    MCNAPI_C ~UrlOverride();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

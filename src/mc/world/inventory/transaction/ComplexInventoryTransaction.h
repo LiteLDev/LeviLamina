@@ -37,16 +37,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ComplexInventoryTransaction();
 
+    // vIndex: 1
     virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream&);
 
+    // vIndex: 2
     virtual void write(::BinaryStream& stream) const;
 
+    // vIndex: 3
     virtual void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
+    // vIndex: 4
     virtual ::InventoryTransactionError handle(::Player& player, bool isSenderAuthority) const;
 
+    // vIndex: 5
     virtual void onTransactionError(::Player& player, ::InventoryTransactionError error) const;
     // NOLINTEND
 
@@ -82,8 +88,6 @@ public:
     MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
 
     MCFOLD void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
-
-
     // NOLINTEND
 
 public:

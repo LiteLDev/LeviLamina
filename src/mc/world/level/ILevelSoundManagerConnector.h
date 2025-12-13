@@ -19,19 +19,25 @@ class ILevelSoundManagerConnector : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ILevelSoundManagerConnector() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<
         void(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>&
     getOnLevelSoundEventConnector() = 0;
 
+    // vIndex: 2
     virtual ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
     getOnLevelSoundEventWithVolumeAndPitchConnector() = 0;
 
+    // vIndex: 3
     virtual ::Bedrock::PubSub::Connector<void(::std::string const&)>& getOnStopLevelSoundEventConnector() = 0;
 
+    // vIndex: 4
     virtual ::Bedrock::PubSub::Connector<void()>& getOnStopAllLevelSoundsEventConnector() = 0;
 
+    // vIndex: 5
     virtual ::Bedrock::PubSub::Connector<void()>& getOnStopMusicEventConnector() = 0;
     // NOLINTEND
 

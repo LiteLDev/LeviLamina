@@ -12,18 +12,18 @@ namespace cereal { struct ReflectionCtx; }
 namespace ItemDynamicPropertiesHelper {
 // functions
 // NOLINTBEGIN
-MCNAPI bool clearAllDynamicProperties(::ItemStackBase& item, ::std::string const& collection);
+MCAPI bool clearAllDynamicProperties(::ItemStackBase& item, ::std::string const& collection);
 
-MCNAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> getDynamicProperty(
+MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> getDynamicProperty(
     ::ItemStackBase const&         item,
     ::std::string const&           key,
     ::std::string const&           collectionName,
     ::cereal::ReflectionCtx const& ctx
 );
 
-MCNAPI bool removeDynamicProperty(::ItemStackBase& item, ::std::string const& key, ::std::string const& collectionName);
+MCAPI bool removeDynamicProperty(::ItemStackBase& item, ::std::string const& key, ::std::string const& collectionName);
 
-MCNAPI void setDynamicProperty(
+MCAPI void setDynamicProperty(
     ::ItemStackBase&                                                  item,
     ::std::string const&                                              key,
     ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value,

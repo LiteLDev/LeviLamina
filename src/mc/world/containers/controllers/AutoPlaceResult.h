@@ -16,16 +16,4 @@ public:
     AutoPlaceResult& operator=(AutoPlaceResult const&);
     AutoPlaceResult(AutoPlaceResult const&);
     AutoPlaceResult();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~AutoPlaceResult();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

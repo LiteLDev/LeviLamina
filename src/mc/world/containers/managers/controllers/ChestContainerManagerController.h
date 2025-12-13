@@ -20,52 +20,21 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChestContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ChestContainerManagerController() /*override*/ = default;
 
-    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
+    // vIndex: 32
+    virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
 
-    virtual void _onItemPlaced(::ItemInstance const& stack, ::SlotData const& dstSlot) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit ChestContainerManagerController(
-        ::std::weak_ptr<::ChestContainerManagerModel> containerManagerModel
-    );
-
-    MCNAPI_C void _calculateFullCobblestoneAchievement();
-
-    MCNAPI_C void _setupCallbacks();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::ChestContainerManagerModel> containerManagerModel);
+    // vIndex: 33
+    virtual void _onItemPlaced(::ItemInstance const&, ::SlotData const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
 
-    MCNAPI void $_onItemPlaced(::ItemInstance const& stack, ::SlotData const& dstSlot);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

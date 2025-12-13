@@ -18,8 +18,10 @@ class IEntitySystems {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IEntitySystems() = default;
 
+    // vIndex: 1
     virtual void registerTickingSystem(
         ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const>,
         ::std::unique_ptr<::ITickingSystem>,
@@ -27,10 +29,13 @@ public:
         ::EntitySystemTickingMode
     ) = 0;
 
+    // vIndex: 2
     virtual bool _hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const) const = 0;
 
+    // vIndex: 3
     virtual void tickMovementCatchup(::EntityRegistry&) = 0;
 
+    // vIndex: 4
     virtual void tickMovementCorrectionReplay(::EntityRegistry&) = 0;
     // NOLINTEND
 

@@ -24,15 +24,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 33
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
+    // vIndex: 90
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
+    // vIndex: 100
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
+    // vIndex: 99
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
 
+    // vIndex: 0
     virtual ~LeavesBlockItem() /*override*/ = default;
     // NOLINTEND
 
@@ -47,8 +52,6 @@ public:
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
 
     MCFOLD void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
-
-
     // NOLINTEND
 
 public:

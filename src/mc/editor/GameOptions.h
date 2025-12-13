@@ -85,9 +85,9 @@ public:
 
     MCNAPI void applyToLevelData(::LevelData& levelData) const;
 
-    MCNAPI ::Editor::GameOptions& operator=(::Editor::GameOptions&&);
-
     MCNAPI ::Editor::GameOptions& operator=(::Editor::GameOptions const&);
+
+    MCNAPI ::Editor::GameOptions& operator=(::Editor::GameOptions&&);
 
     MCNAPI ~GameOptions();
     // NOLINTEND

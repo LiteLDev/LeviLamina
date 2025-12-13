@@ -18,8 +18,10 @@ class ScriptMovementGlideComponent : public ::ScriptModuleMinecraft::MovementScr
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptMovementGlideComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -48,8 +50,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $_isValid() const;
-
-
     // NOLINTEND
 
 public:

@@ -31,6 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -38,6 +39,7 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
+    // vIndex: 0
     virtual ~SmithingTemplateItem() /*override*/ = default;
     // NOLINTEND
 
@@ -50,8 +52,6 @@ public:
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
-
-
     // NOLINTEND
 
 public:

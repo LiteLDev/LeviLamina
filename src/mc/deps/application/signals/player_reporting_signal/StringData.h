@@ -17,26 +17,6 @@ public:
     StringData& operator=(StringData const&);
     StringData(StringData const&);
     StringData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C StringData(::std::string key, ::std::string value);
-
-    MCNAPI_C ~StringData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string key, ::std::string value);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace PlayerReportingSignal

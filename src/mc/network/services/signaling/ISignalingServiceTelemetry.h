@@ -15,14 +15,19 @@ class ISignalingServiceTelemetry {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ISignalingServiceTelemetry() = default;
 
+    // vIndex: 1
     virtual void fireEventSignalServiceConnect(::SignalServiceConnectStage, ::Json::Value const&) const = 0;
 
+    // vIndex: 2
     virtual void fireEventSignalMessagePerformance(::MessagePerformance const&) const = 0;
 
+    // vIndex: 3
     virtual ::std::string getAppSessionId() const = 0;
 
+    // vIndex: 4
     virtual ::std::string getCorrelationId() const = 0;
     // NOLINTEND
 

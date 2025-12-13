@@ -18,24 +18,23 @@ class ThrownPotion : public ::Throwable {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void
-    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    // vIndex: 4
+    virtual void initializeComponents(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 120
     virtual void setAuxValue(int aux) /*override*/;
 
+    // vIndex: 83
     virtual ::HashedString const& queryEntityRenderer() const /*override*/;
 
+    // vIndex: 8
     virtual ~ThrownPotion() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI_C static float const& SPLASH_RANGE();
     // NOLINTEND
 
 public:
@@ -48,12 +47,6 @@ public:
     MCFOLD void $setAuxValue(int aux);
 
     MCAPI ::HashedString const& $queryEntityRenderer() const;
-
-#ifdef LL_PLAT_C
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
-#endif
-
-
     // NOLINTEND
 
 public:

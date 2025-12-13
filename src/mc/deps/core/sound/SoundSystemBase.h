@@ -8,14 +8,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class SoundEvent;
+class SoundItem;
 struct LoopingSoundAttributes;
 struct LoopingSoundState;
 struct PlayingSoundAttributes;
 struct SoundInstanceProperties;
 struct SoundSystemGUID;
 namespace Core { class Path; }
-struct SoundEvent;
-struct SoundItem;
 // clang-format on
 
 class SoundSystemBase {
@@ -35,360 +35,222 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~SoundSystemBase() = default;
-#else // LL_PLAT_C
-    virtual ~SoundSystemBase();
-#endif
 
+    // vIndex: 1
     virtual bool preinit();
 
+    // vIndex: 2
     virtual void init();
 
+    // vIndex: 3
     virtual void destroy();
 
-    virtual void setOutputDevice(::SoundSystemGUID& outputDevice);
+    // vIndex: 4
+    virtual void setOutputDevice(::SoundSystemGUID&);
 
-    virtual void setAsyncLoadFunction(::std::function<void(::SoundItem const&, ::std::function<void()>)> asyncLoad);
+    // vIndex: 5
+    virtual void setAsyncLoadFunction(::std::function<void(::SoundItem const&, ::std::function<void()>)>);
 
-    virtual void enable(bool status);
+    // vIndex: 6
+    virtual void enable(bool);
 
-    virtual void mute(bool muted);
+    // vIndex: 7
+    virtual void mute(bool);
 
-    virtual bool addListener(int const handle);
+    // vIndex: 8
+    virtual bool addListener(int const);
 
-    virtual void removeListener(int const handle);
+    // vIndex: 9
+    virtual void removeListener(int const);
 
-    virtual void setListenerDirection(int const listenerHandle, ::glm::vec3 const& forward, ::glm::vec3 const& up);
+    // vIndex: 10
+    virtual void setListenerDirection(int const, ::glm::vec3 const&, ::glm::vec3 const&);
 
-    virtual void setListenerPos(int const listenerHandle, float x, float y, float z);
+    // vIndex: 11
+    virtual void setListenerPos(int const, float, float, float);
 
-    virtual void setListenerVelocity(int const listenerHandle, float x, float y, float z);
+    // vIndex: 12
+    virtual void setListenerVelocity(int const, float, float, float);
 
-    virtual void setMainVolume(float vol);
+    // vIndex: 13
+    virtual void setMainVolume(float);
 
-    virtual void setMusicVolume(float vol);
+    // vIndex: 14
+    virtual void setMusicVolume(float);
 
-    virtual void setSoundVolume(float vol);
+    // vIndex: 15
+    virtual void setSoundVolume(float);
 
-    virtual void setSoundCategoryVolume(::std::string const& category, float vol);
+    // vIndex: 16
+    virtual void setSoundCategoryVolume(::std::string const&, float);
 
-    virtual void setTTSVolume(float vol);
+    // vIndex: 17
+    virtual void setTTSVolume(float);
 
-    virtual bool load(::Core::Path const& soundName, bool isStream);
+    // vIndex: 18
+    virtual bool load(::Core::Path const&, bool);
 
-    virtual bool loadRawFromMemory(
-        ::Core::Path const& soundName,
-        char const*         data,
-        uint64              dataSize,
-        int                 numchannels,
-        int                 defaultfrequency,
-        ::SoundFormat       format
-    );
+    // vIndex: 19
+    virtual bool loadRawFromMemory(::Core::Path const&, char const*, uint64, int, int, ::SoundFormat);
 
-    virtual bool loadFromMemory(::Core::Path const& soundName, char const* data, uint64 dataSize);
+    // vIndex: 20
+    virtual bool loadFromMemory(::Core::Path const&, char const*, uint64);
 
-    virtual bool loadExternalEvent(::std::string const& soundName);
+    // vIndex: 21
+    virtual bool loadExternalEvent(::std::string const&);
 
-    virtual void unload(::Core::Path const& soundName);
+    // vIndex: 22
+    virtual void unload(::Core::Path const&);
 
+    // vIndex: 23
     virtual void unloadAll();
 
-    virtual bool isSoundLoaded(::Core::Path const& name);
+    // vIndex: 24
+    virtual bool isSoundLoaded(::Core::Path const&);
 
+    // vIndex: 25
     virtual bool usesSoundBanks();
 
-    virtual void loadSoundBank(::std::string const& name, bool isNonBlocking);
+    // vIndex: 26
+    virtual void loadSoundBank(::std::string const&, bool);
 
-    virtual void unloadSoundBank(::std::string const& name);
+    // vIndex: 27
+    virtual void unloadSoundBank(::std::string const&);
 
-    virtual void play(::std::string const& name);
+    // vIndex: 28
+    virtual void play(::std::string const&);
 
-    virtual void pause(::std::string const& name);
+    // vIndex: 29
+    virtual void pause(::std::string const&);
 
-    virtual void stop(::std::string const& name);
+    // vIndex: 31
+    virtual void stop(::std::string const&);
 
-    virtual void stop(uint64 handle);
+    // vIndex: 30
+    virtual void stop(uint64);
 
-    virtual uint64 playEvent(::SoundEvent const& soundEvent, ::std::string const& eventName, float volume, float pitch);
+    // vIndex: 32
+    virtual uint64 playEvent(::SoundEvent const&, ::std::string const&, float, float);
 
-    virtual uint64 playEventAt(
-        ::SoundEvent const&  soundEvent,
-        ::std::string const& eventName,
-        float                x,
-        float                y,
-        float                z,
-        float                volume,
-        float                pitch
-    );
+    // vIndex: 33
+    virtual uint64 playEventAt(::SoundEvent const&, ::std::string const&, float, float, float, float, float);
 
+    // vIndex: 34
     virtual uint64 playAt(
-        ::Core::Path const&  soundName,
-        ::SoundEvent const*  soundEvent,
-        ::std::string const& eventName,
-        uint64               soundHandle,
-        float                x,
-        float                y,
-        float                z,
-        float                volume,
-        float                pitch,
-        bool                 is3D,
-        float                minDistance,
-        float                maxDistance,
-        bool                 useLegacyMaxDistance,
-        bool                 isTTS
+        ::Core::Path const&,
+        ::SoundEvent const*,
+        ::std::string const&,
+        uint64,
+        float,
+        float,
+        float,
+        float,
+        float,
+        bool,
+        float,
+        float,
+        bool,
+        bool
     );
 
-    virtual uint64 playEventAttached(
-        ::SoundEvent const&                                 soundEvent,
-        ::std::string const&                                eventName,
-        ::std::function<void(::SoundInstanceProperties&)>&& getSoundProperties
-    );
+    // vIndex: 35
+    virtual uint64
+    playEventAttached(::SoundEvent const&, ::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&);
 
-    virtual bool isPlayingSound(uint64 handle) const;
+    // vIndex: 36
+    virtual bool isPlayingSound(uint64) const;
 
-    virtual void fadeOut(uint64 handle, float duration) const;
+    // vIndex: 37
+    virtual void fadeOut(uint64, float) const;
 
-    virtual void playMusic(::std::string const& eventName, ::SoundItem const& soundItem);
+    // vIndex: 38
+    virtual void playMusic(::std::string const&, ::SoundItem const&);
 
-    virtual bool isPlayingMusicEvent(::std::string const& eventName) const;
+    // vIndex: 39
+    virtual bool isPlayingMusicEvent(::std::string const&) const;
 
-    virtual bool isPlayingMusic(::Core::Path const& soundName) const;
+    // vIndex: 40
+    virtual bool isPlayingMusic(::Core::Path const&) const;
 
+    // vIndex: 41
     virtual bool isLoadingMusic() const;
 
+    // vIndex: 42
     virtual void cancelLoadMusic();
 
+    // vIndex: 43
     virtual ::Core::PathBuffer<::std::string> const& getCurrentlyPlayingMusicName() const;
 
+    // vIndex: 44
     virtual ::std::string getCurrentlyPlayingEventName() const;
 
+    // vIndex: 45
     virtual void stopMusic();
 
+    // vIndex: 46
     virtual void stopRecords();
 
+    // vIndex: 47
     virtual void stopAllSounds();
 
+    // vIndex: 48
     virtual void pauseAllPlayingSounds();
 
+    // vIndex: 49
     virtual void resumeAllPreviouslyPlayingSounds();
 
-    virtual void fadeMusicOut(float time);
+    // vIndex: 50
+    virtual void fadeMusicOut(float);
 
+    // vIndex: 51
     virtual bool isMusicChannelPlaying() const;
 
-    virtual void pauseMusic(bool state);
+    // vIndex: 52
+    virtual void pauseMusic(bool);
 
-    virtual void update(float elapsedTime);
+    // vIndex: 53
+    virtual void update(float);
 
+    // vIndex: 54
     virtual uint64 registerLoop(
-        ::SoundItem const&                          soundItem,
-        ::std::weak_ptr<::SoundEvent> const         soundEvent,
-        ::std::string const&                        eventName,
-        ::std::function<void(::LoopingSoundState&)> getSoundState,
-        float                                       fadeInDuration,
-        float                                       fadeOutDuration
+        ::SoundItem const&,
+        ::std::weak_ptr<::SoundEvent> const,
+        ::std::string const&,
+        ::std::function<void(::LoopingSoundState&)>,
+        float,
+        float
     );
 
-    virtual void unregisterLoop(uint64 handle, bool hard);
+    // vIndex: 55
+    virtual void unregisterLoop(uint64, bool);
 
-    virtual void displayDebugStats(::std::string& debugOutputFormat) const;
+    // vIndex: 56
+    virtual void displayDebugStats(::std::string&) const;
 
-    virtual void startSnapshot(::std::string const& name);
+    // vIndex: 57
+    virtual void startSnapshot(::std::string const&);
 
-    virtual void stopSnapshot(::std::string const& name);
+    // vIndex: 58
+    virtual void stopSnapshot(::std::string const&);
 
+    // vIndex: 59
     virtual void stopAllSnapshots();
 
+    // vIndex: 60
     virtual uint64 getNewSoundHandle();
 
-    virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64 handle) const;
+    // vIndex: 61
+    virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const;
 
-    virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64 handle) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    // vIndex: 62
+    virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI bool $preinit();
 
-    MCNAPI void $init();
-
-    MCNAPI void $destroy();
-
-    MCNAPI void $setOutputDevice(::SoundSystemGUID& outputDevice);
-
-    MCNAPI void $setAsyncLoadFunction(::std::function<void(::SoundItem const&, ::std::function<void()>)> asyncLoad);
-
-    MCNAPI void $enable(bool status);
-
-    MCNAPI void $mute(bool muted);
-
-    MCNAPI bool $addListener(int const handle);
-
-    MCNAPI void $removeListener(int const handle);
-
-    MCNAPI void $setListenerDirection(int const listenerHandle, ::glm::vec3 const& forward, ::glm::vec3 const& up);
-
-    MCNAPI void $setListenerPos(int const listenerHandle, float x, float y, float z);
-
-    MCNAPI void $setListenerVelocity(int const listenerHandle, float x, float y, float z);
-
-    MCNAPI void $setMainVolume(float vol);
-
-    MCNAPI void $setMusicVolume(float vol);
-
-    MCNAPI void $setSoundVolume(float vol);
-
-    MCNAPI void $setSoundCategoryVolume(::std::string const& category, float vol);
-
-    MCNAPI void $setTTSVolume(float vol);
-
-    MCNAPI bool $load(::Core::Path const& soundName, bool isStream);
-
-    MCNAPI bool $loadRawFromMemory(
-        ::Core::Path const& soundName,
-        char const*         data,
-        uint64              dataSize,
-        int                 numchannels,
-        int                 defaultfrequency,
-        ::SoundFormat       format
-    );
-
-    MCNAPI bool $loadFromMemory(::Core::Path const& soundName, char const* data, uint64 dataSize);
-
-    MCNAPI bool $loadExternalEvent(::std::string const& soundName);
-
-    MCNAPI void $unload(::Core::Path const& soundName);
-
-    MCNAPI void $unloadAll();
-
-    MCNAPI bool $isSoundLoaded(::Core::Path const& name);
-
-    MCNAPI bool $usesSoundBanks();
-
-    MCNAPI void $loadSoundBank(::std::string const& name, bool isNonBlocking);
-
-    MCNAPI void $unloadSoundBank(::std::string const& name);
-
-    MCNAPI void $play(::std::string const& name);
-
-    MCNAPI void $pause(::std::string const& name);
-
-    MCNAPI void $stop(::std::string const& name);
-
-    MCNAPI void $stop(uint64 handle);
-
-    MCNAPI uint64 $playEvent(::SoundEvent const& soundEvent, ::std::string const& eventName, float volume, float pitch);
-
-    MCNAPI uint64 $playEventAt(
-        ::SoundEvent const&  soundEvent,
-        ::std::string const& eventName,
-        float                x,
-        float                y,
-        float                z,
-        float                volume,
-        float                pitch
-    );
-
-    MCNAPI uint64 $playAt(
-        ::Core::Path const&  soundName,
-        ::SoundEvent const*  soundEvent,
-        ::std::string const& eventName,
-        uint64               soundHandle,
-        float                x,
-        float                y,
-        float                z,
-        float                volume,
-        float                pitch,
-        bool                 is3D,
-        float                minDistance,
-        float                maxDistance,
-        bool                 useLegacyMaxDistance,
-        bool                 isTTS
-    );
-
-    MCNAPI uint64 $playEventAttached(
-        ::SoundEvent const&                                 soundEvent,
-        ::std::string const&                                eventName,
-        ::std::function<void(::SoundInstanceProperties&)>&& getSoundProperties
-    );
-
-    MCNAPI bool $isPlayingSound(uint64 handle) const;
-
-    MCNAPI void $fadeOut(uint64 handle, float duration) const;
-
-    MCNAPI void $playMusic(::std::string const& eventName, ::SoundItem const& soundItem);
-
-    MCNAPI bool $isPlayingMusicEvent(::std::string const& eventName) const;
-
-    MCNAPI bool $isPlayingMusic(::Core::Path const& soundName) const;
-
-    MCNAPI bool $isLoadingMusic() const;
-
-    MCNAPI void $cancelLoadMusic();
-
-    MCNAPI ::Core::PathBuffer<::std::string> const& $getCurrentlyPlayingMusicName() const;
-
-    MCNAPI ::std::string $getCurrentlyPlayingEventName() const;
-
-    MCNAPI void $stopMusic();
-
-    MCNAPI void $stopRecords();
-
-    MCNAPI void $stopAllSounds();
-
-    MCNAPI void $pauseAllPlayingSounds();
-
-    MCNAPI void $resumeAllPreviouslyPlayingSounds();
-
-    MCNAPI void $fadeMusicOut(float time);
-
-    MCNAPI bool $isMusicChannelPlaying() const;
-
-    MCNAPI void $pauseMusic(bool state);
-
-    MCNAPI void $update(float elapsedTime);
-
-    MCNAPI uint64 $registerLoop(
-        ::SoundItem const&                          soundItem,
-        ::std::weak_ptr<::SoundEvent> const         soundEvent,
-        ::std::string const&                        eventName,
-        ::std::function<void(::LoopingSoundState&)> getSoundState,
-        float                                       fadeInDuration,
-        float                                       fadeOutDuration
-    );
-
-    MCNAPI void $unregisterLoop(uint64 handle, bool hard);
-
-    MCNAPI void $displayDebugStats(::std::string& debugOutputFormat) const;
-
-    MCNAPI void $startSnapshot(::std::string const& name);
-
-    MCNAPI void $stopSnapshot(::std::string const& name);
-
-    MCNAPI void $stopAllSnapshots();
-
-    MCNAPI uint64 $getNewSoundHandle();
-
-    MCNAPI ::std::optional<::PlayingSoundAttributes> $tryGetPlayingSoundAttributes(uint64 handle) const;
-
-    MCNAPI ::std::optional<::LoopingSoundAttributes> $tryGetLoopingSoundAttributes(uint64 handle) const;
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

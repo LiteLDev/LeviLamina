@@ -9,7 +9,6 @@
 #include "mc/external/cricket/TlsCertPolicy.h"
 #include "mc/external/rtc/DiffServCodePoint.h"
 #include "mc/external/rtc/Socket.h"
-#include "mc/external/rtc/SocketAddress.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,6 +26,7 @@ namespace rtc { class Network; }
 namespace rtc { class PacketSocketFactory; }
 namespace rtc { class ReceivedPacket; }
 namespace rtc { class SSLCertificateVerifier; }
+namespace rtc { class SocketAddress; }
 namespace rtc { struct PacketOptions; }
 namespace rtc { struct SentPacket; }
 namespace webrtc { class FieldTrialsView; }
@@ -56,12 +56,16 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~CallbacksForTest() = default;
 
+        // vIndex: 1
         virtual void OnTurnCreatePermissionResult(int) = 0;
 
+        // vIndex: 2
         virtual void OnTurnRefreshResult(int) = 0;
 
+        // vIndex: 3
         virtual void OnTurnPortClosed() = 0;
         // NOLINTEND
 
@@ -112,25 +116,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TurnPort() /*override*/;
 
+    // vIndex: 15
     virtual ::cricket::ProtocolType GetProtocol() const /*override*/;
 
+    // vIndex: 46
     virtual ::cricket::TlsCertPolicy GetTlsCertPolicy() const;
 
+    // vIndex: 47
     virtual void SetTlsCertPolicy(::cricket::TlsCertPolicy tls_cert_policy);
 
+    // vIndex: 48
     virtual ::std::vector<::std::string> GetTlsAlpnProtocols() const;
 
+    // vIndex: 49
     virtual ::std::vector<::std::string> GetTlsEllipticCurves() const;
 
+    // vIndex: 9
     virtual void PrepareAddress() /*override*/;
 
+    // vIndex: 11
     virtual ::cricket::Connection* CreateConnection(
         ::cricket::Candidate const&               remote_candidate,
         ::cricket::PortInterface::CandidateOrigin origin
     ) /*override*/;
 
+    // vIndex: 17
     virtual int SendTo(
         void const*                 data,
         uint64                      size,
@@ -139,17 +152,23 @@ public:
         bool                        payload
     ) /*override*/;
 
+    // vIndex: 12
     virtual int SetOption(::rtc::Socket::Option opt, int value) /*override*/;
 
+    // vIndex: 13
     virtual int GetOption(::rtc::Socket::Option opt, int* value) /*override*/;
 
+    // vIndex: 14
     virtual int GetError() /*override*/;
 
+    // vIndex: 41
     virtual bool
     HandleIncomingPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet) /*override*/;
 
+    // vIndex: 42
     virtual bool CanHandleIncomingPacketsFrom(::rtc::SocketAddress const& addr) const /*override*/;
 
+    // vIndex: 18
     virtual void SendBindingErrorResponse(
         ::cricket::StunMessage*     message,
         ::rtc::SocketAddress const& addr,
@@ -157,16 +176,22 @@ public:
         ::std::string_view          reason
     ) /*override*/;
 
+    // vIndex: 50
     virtual void OnReadPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet);
 
+    // vIndex: 43
     virtual void OnSentPacket(::rtc::AsyncPacketSocket* socket, ::rtc::SentPacket const& sent_packet) /*override*/;
 
+    // vIndex: 51
     virtual void OnReadyToSend(::rtc::AsyncPacketSocket* socket);
 
+    // vIndex: 8
     virtual bool SupportsProtocol(::std::string_view protocol) const /*override*/;
 
+    // vIndex: 45
     virtual void HandleConnectionDestroyed(::cricket::Connection* conn) /*override*/;
 
+    // vIndex: 35
     virtual ::rtc::DiffServCodePoint StunDscpValue() const /*override*/;
     // NOLINTEND
 
@@ -401,8 +426,6 @@ public:
     MCNAPI void $HandleConnectionDestroyed(::cricket::Connection* conn);
 
     MCNAPI ::rtc::DiffServCodePoint $StunDscpValue() const;
-
-
     // NOLINTEND
 
 public:

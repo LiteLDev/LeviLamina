@@ -57,35 +57,49 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EditorBlockPaletteService() /*override*/;
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
+    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
+    // vIndex: 1
     virtual ::std::vector<::std::shared_ptr<::Editor::EditorBlockPalette>> const& getPaletteList() const /*override*/;
 
+    // vIndex: 2
     virtual ::Editor::EditorBlockPalette const& getActivePalette() const /*override*/;
 
+    // vIndex: 14
     virtual void forEachBlockType(::std::function<void(::BlockType const&, bool)> callback) const /*override*/;
 
+    // vIndex: 7
     virtual int getSelectedPaletteItemIndex() const /*override*/;
 
+    // vIndex: 9
     virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const&) = 0;
 
+    // vIndex: 10
     virtual ::Scripting::Result_deprecated<::BlockType const*> getSelectedBlockType() const /*override*/;
 
+    // vIndex: 11
     virtual ::std::vector<::std::string> getPaletteIdList() const /*override*/;
 
+    // vIndex: 12
     virtual ::std::optional<::Editor::EditorBlockPalette> getPalette(::HashedString const& paletteId) const
         /*override*/;
 
+    // vIndex: 13
     virtual ::Scripting::Result_deprecated<
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>>
     getPaletteItem(::HashedString const& paletteId, int index) const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::PubSub::Subscription registerEventListener(
         ::std::function<void(::std::variant<
                              ::Editor::EditorBlockPaletteEventItemUpdated,
@@ -95,18 +109,23 @@ public:
                              ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback
     ) /*override*/;
 
+    // vIndex: 7
     virtual void _handleBlockPaletteActivePaletteChangedPayload(
         ::Editor::Network::BlockPaletteActivePaletteChangedPayload const&
     ) = 0;
 
+    // vIndex: 8
     virtual void _handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const&) = 0;
 
+    // vIndex: 9
     virtual void _handleBlockPaletteSelectedIndexChangedPayload(
         ::Editor::Network::BlockPaletteSelectedIndexChangedPayload const&
     ) = 0;
 
+    // vIndex: 10
     virtual void _handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const&) = 0;
 
+    // vIndex: 11
     virtual void _handleBlockPaletteRemovedPayload(::Editor::Network::BlockPaletteRemovedPayload const&) = 0;
     // NOLINTEND
 
@@ -116,9 +135,6 @@ public:
     MCNAPI explicit EditorBlockPaletteService(::Editor::ServiceProviderCollection& serviceProviders);
 
     MCNAPI void _addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
-
-    MCNAPI_C ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
-    _checkAndClampWeights(::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> item);
 
     MCNAPI ::Scripting::Result_deprecated<void> _checkForDuplicateBlocks(
         ::HashedString const&                                                                          paletteId,
@@ -193,8 +209,6 @@ public:
                              ::Editor::EditorBlockPaletteEventPaletteUpdated,
                              ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback
     );
-
-
     // NOLINTEND
 
 public:

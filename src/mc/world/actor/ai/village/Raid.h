@@ -16,6 +16,34 @@ class CompoundTag;
 class Raid {
 public:
     // Raid inner types define
+    using GroupNumberType = uchar;
+
+    using RaiderCountType = uchar;
+
+    using FailureCountType = uchar;
+
+    using CallbackCallCountType = uint64;
+
+    using DurationType = int;
+
+    using ActorIDCollection = ::std::unordered_set<::ActorUniqueID>;
+
+    using PickSpawnPointCallback = ::std::function<bool(uint64, ::Vec3&)>;
+
+    using SpawnGroupCallback = ::std::function<bool(uint64, ::Vec3, uchar, ::std::unordered_set<::ActorUniqueID>&)>;
+
+    using DoesActorExistCallback = ::std::function<bool(::ActorUniqueID const&)>;
+
+    using ApplyHeroOfTheVillageCallback = ::std::function<void(::ActorUniqueID const&)>;
+
+    using ActorRemovedFromRaidCallback = ::std::function<void(::ActorUniqueID const&)>;
+
+    using IsVillageDefeatedCallback = ::std::function<bool()>;
+
+    using NotificationCallback = ::std::function<void(::Raid const&)>;
+
+    using RaiderHealthCallback = ::std::function<float(::ActorUniqueID const&)>;
+
     enum class RaidState : int {
         PreparingGroup    = 0,
         PickingSpawnPoint = 1,
@@ -31,34 +59,6 @@ public:
         Victory = 1,
         Defeat  = 2,
     };
-
-    using ActorIDCollection = ::std::unordered_set<::ActorUniqueID>;
-
-    using ActorRemovedFromRaidCallback = ::std::function<void(::ActorUniqueID const&)>;
-
-    using ApplyHeroOfTheVillageCallback = ::std::function<void(::ActorUniqueID const&)>;
-
-    using CallbackCallCountType = uint64;
-
-    using DoesActorExistCallback = ::std::function<bool(::ActorUniqueID const&)>;
-
-    using DurationType = int;
-
-    using FailureCountType = uchar;
-
-    using GroupNumberType = uchar;
-
-    using IsVillageDefeatedCallback = ::std::function<bool()>;
-
-    using NotificationCallback = ::std::function<void(::Raid const&)>;
-
-    using PickSpawnPointCallback = ::std::function<bool(uint64, ::Vec3&)>;
-
-    using RaiderCountType = uchar;
-
-    using RaiderHealthCallback = ::std::function<float(::ActorUniqueID const&)>;
-
-    using SpawnGroupCallback = ::std::function<bool(uint64, ::Vec3, uchar, ::std::unordered_set<::ActorUniqueID>&)>;
 
 public:
     // member variables

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/webrtc/RtpCodec.h"
-#include "mc/external/webrtc/ScalabilityMode.h"
 
 namespace webrtc {
 
@@ -23,6 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RtpCodecCapability() /*override*/;
     // NOLINTEND
 

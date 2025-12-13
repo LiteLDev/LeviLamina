@@ -14,10 +14,13 @@ class TurnCustomizer {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void MaybeModifyOutgoingStunMessage(::cricket::PortInterface*, ::cricket::StunMessage*) = 0;
 
+    // vIndex: 1
     virtual bool AllowChannelData(::cricket::PortInterface*, void const*, uint64, bool) = 0;
 
+    // vIndex: 2
     virtual ~TurnCustomizer() = default;
     // NOLINTEND
 

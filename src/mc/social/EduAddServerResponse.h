@@ -16,18 +16,6 @@ public:
     EduAddServerResponse& operator=(EduAddServerResponse const&);
     EduAddServerResponse(EduAddServerResponse const&);
     EduAddServerResponse();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~EduAddServerResponse();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Social

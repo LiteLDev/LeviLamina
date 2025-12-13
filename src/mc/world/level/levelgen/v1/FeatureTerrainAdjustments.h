@@ -21,6 +21,8 @@ public:
     // clang-format on
 
     // FeatureTerrainAdjustments inner types define
+    using TerrainAdjustmentToken = ::std::shared_ptr<bool>;
+
     struct Descriptions {
     public:
         // member variables
@@ -39,27 +41,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Descriptions(::FeatureTerrainAdjustments::Descriptions const&);
+        MCAPI Descriptions(::FeatureTerrainAdjustments::Descriptions const&);
 
-        MCNAPI ::FeatureTerrainAdjustments::Descriptions& operator=(::FeatureTerrainAdjustments::Descriptions&&);
+        MCAPI ::FeatureTerrainAdjustments::Descriptions& operator=(::FeatureTerrainAdjustments::Descriptions&&);
 
-        MCNAPI ~Descriptions();
+        MCAPI ~Descriptions();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::FeatureTerrainAdjustments::Descriptions const&);
+        MCAPI void* $ctor(::FeatureTerrainAdjustments::Descriptions const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
-
-    using TerrainAdjustmentToken = ::std::shared_ptr<bool>;
 
 public:
     // member variables
@@ -72,29 +72,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<bool> _insertDescriptions(
+    MCAPI ::std::shared_ptr<bool> _insertDescriptions(
         ::std::vector<::ChunkPos> const&                                                           intersectingChunks,
         ::std::function<void(::FeatureTerrainAdjustments::Descriptions&, ::std::weak_ptr<bool>)>&& modifyFn
     );
 
-    MCNAPI ::FeatureTerrainAdjustments::Descriptions at(::ChunkPos const& chunkPos);
+    MCAPI ::FeatureTerrainAdjustments::Descriptions at(::ChunkPos const& chunkPos);
 
-    MCNAPI void garbageCollectDescriptions();
+    MCAPI void garbageCollectDescriptions();
 
-    MCNAPI ::std::shared_ptr<bool>
+    MCAPI ::std::shared_ptr<bool>
     setBeardAndShaver(::BoundingBox const& bb, int deltaY, float minBeardWidth, float maxBeardWidth);
 
-    MCNAPI ::std::shared_ptr<bool> setBeardifier(::BoundingBox const& bb, int deltaY);
+    MCAPI ::std::shared_ptr<bool> setBeardifier(::BoundingBox const& bb, int deltaY);
 
-    MCNAPI ::std::shared_ptr<bool> setBury(::BoundingBox const& bb);
+    MCAPI ::std::shared_ptr<bool> setBury(::BoundingBox const& bb);
 
-    MCNAPI ~FeatureTerrainAdjustments();
+    MCAPI ~FeatureTerrainAdjustments();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static float calculateContribution(
+    MCAPI static float calculateContribution(
         ::FeatureTerrainAdjustments::Descriptions const& descriptions,
         ::BlockPos const&                                currentPos,
         float                                            noiseValue
@@ -104,12 +104,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BeardKernel& mBeardKernel();
+    MCAPI static ::BeardKernel& mBeardKernel();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -15,6 +15,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CustomMapGrassColorAttributes() /*override*/ = default;
     // NOLINTEND
 

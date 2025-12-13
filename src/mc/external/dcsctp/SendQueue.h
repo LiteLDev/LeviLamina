@@ -64,35 +64,49 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SendQueue() = default;
 
+    // vIndex: 1
     virtual ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp, uint64) = 0;
 
+    // vIndex: 2
     virtual bool Discard(
         ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>,
         ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>
     ) = 0;
 
+    // vIndex: 3
     virtual void PrepareResetStream(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>) = 0;
 
+    // vIndex: 4
     virtual bool HasStreamsReadyToBeReset() const = 0;
 
+    // vIndex: 5
     virtual ::std::vector<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>> GetStreamsReadyToBeReset() = 0;
 
+    // vIndex: 6
     virtual void CommitResetStreams() = 0;
 
+    // vIndex: 7
     virtual void RollbackResetStreams() = 0;
 
+    // vIndex: 8
     virtual void Reset() = 0;
 
+    // vIndex: 9
     virtual uint64 buffered_amount(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>) const = 0;
 
+    // vIndex: 10
     virtual uint64 total_buffered_amount() const = 0;
 
+    // vIndex: 11
     virtual uint64 buffered_amount_low_threshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>) const = 0;
 
+    // vIndex: 12
     virtual void SetBufferedAmountLowThreshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, uint64) = 0;
 
+    // vIndex: 13
     virtual void EnableMessageInterleaving(bool) = 0;
     // NOLINTEND
 

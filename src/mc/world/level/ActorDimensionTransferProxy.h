@@ -17,12 +17,16 @@ class ActorDimensionTransferProxy : public ::IActorDimensionTransferProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ActorDimensionTransferProxy() /*override*/ = default;
 
+    // vIndex: 1
     virtual void transferTickingArea(::Actor& actor, ::Dimension& dimension) const /*override*/;
 
+    // vIndex: 2
     virtual void removeActorFromLevelChunk(::Actor& actor) const /*override*/;
 
+    // vIndex: 3
     virtual void transferActorToDimension(
         ::Actor const&                   actor,
         ::Dimension&                     dimension,
@@ -44,8 +48,6 @@ public:
         ::Vec3 const&                    targetPosition,
         ::std::unique_ptr<::CompoundTag> saveTag
     ) const;
-
-
     // NOLINTEND
 
 public:

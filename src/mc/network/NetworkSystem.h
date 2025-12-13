@@ -21,7 +21,6 @@
 class IPacketObserver;
 class IPacketSerializationController;
 class LocalConnector;
-class NetEventCallback;
 class NetworkConnection;
 class NetworkIdentifier;
 class NetworkPeer;
@@ -144,26 +143,36 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool useIPv4Only() const /*override*/;
 
+    // vIndex: 2
     virtual bool useIPv6Only() const /*override*/;
 
+    // vIndex: 3
     virtual ushort getDefaultGamePort() const /*override*/;
 
+    // vIndex: 4
     virtual ushort getDefaultGamePortv6() const /*override*/;
 
+    // vIndex: 0
     virtual ~NetworkSystem() /*override*/;
 
+    // vIndex: 1
     virtual void _onDisable() /*override*/;
 
+    // vIndex: 2
     virtual void _onEnable() /*override*/;
 
+    // vIndex: 1
     virtual bool
     onNewIncomingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) /*override*/;
 
+    // vIndex: 2
     virtual bool
     onNewOutgoingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) /*override*/;
 
+    // vIndex: 3
     virtual void onConnectionClosed(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
@@ -172,23 +181,27 @@ public:
         ::Json::Value const&                     sessionSummary
     ) /*override*/;
 
+    // vIndex: 4
     virtual void onAllConnectionsClosed(
         ::Connection::DisconnectFailReason discoReason,
         ::std::string const&               reasonMessage,
         bool                               skipDisconnectMessage
     ) /*override*/;
 
+    // vIndex: 5
     virtual void onAllRemoteConnectionsClosed(
         ::Connection::DisconnectFailReason discoReason,
         ::std::string const&               reasonMessage,
         bool                               skipDisconnectMessage
     ) /*override*/;
 
+    // vIndex: 6
     virtual void onOutgoingConnectionFailed(
         ::Connection::DisconnectFailReason discoReason,
         ::std::string const&               reasonMessage
     ) /*override*/;
 
+    // vIndex: 7
     virtual void onWebsocketRequest(
         ::std::string const&    serverAddress,
         ::std::string const&    payload,
@@ -206,12 +219,6 @@ public:
     MCAPI bool
     _sortAndPacketizeEvents(::NetworkConnection& connection, ::std::chrono::steady_clock::time_point endTime);
 
-    MCAPI_C void closeConnection(
-        ::NetworkIdentifier const&         id,
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage
-    );
-
     MCAPI void disconnect();
 
     MCAPI void enableAsyncFlush(::NetworkIdentifier const& id);
@@ -221,8 +228,6 @@ public:
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector> getRemoteConnector();
 
     MCAPI bool isServer() const;
-
-    MCAPI_C void registerClientInstance(::NetEventCallback& callback, ::SubClientId subID);
 
     MCAPI void runEvents(bool networkIsCritical);
 
@@ -274,7 +279,6 @@ public:
         ::Json::Value const&                     sessionSummary
     );
 
-#ifdef LL_PLAT_S
     MCAPI void $onAllConnectionsClosed(
         ::Connection::DisconnectFailReason discoReason,
         ::std::string const&               reasonMessage,
@@ -286,7 +290,6 @@ public:
         ::std::string const&               reasonMessage,
         bool                               skipDisconnectMessage
     );
-#endif
 
     MCAPI void
     $onOutgoingConnectionFailed(::Connection::DisconnectFailReason discoReason, ::std::string const& reasonMessage);
@@ -296,8 +299,6 @@ public:
         ::std::string const&    payload,
         ::std::function<void()> errorCallback
     );
-
-
     // NOLINTEND
 
 public:

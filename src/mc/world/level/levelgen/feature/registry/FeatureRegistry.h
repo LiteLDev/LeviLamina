@@ -40,25 +40,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI FeatureBinaryJsonFormat(::FeatureRegistry::FeatureBinaryJsonFormat&&);
+        MCAPI FeatureBinaryJsonFormat(::FeatureRegistry::FeatureBinaryJsonFormat&&);
 
-        MCNAPI ::FeatureRegistry::FeatureBinaryJsonFormat& operator=(::FeatureRegistry::FeatureBinaryJsonFormat&&);
+        MCFOLD ::FeatureRegistry::FeatureBinaryJsonFormat& operator=(::FeatureRegistry::FeatureBinaryJsonFormat&&);
 
-        MCNAPI bool operator==(::FeatureRegistry::FeatureBinaryJsonFormat const& rhs) const;
+        MCFOLD bool operator==(::FeatureRegistry::FeatureBinaryJsonFormat const& rhs) const;
 
-        MCNAPI ~FeatureBinaryJsonFormat();
+        MCAPI ~FeatureBinaryJsonFormat();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::FeatureRegistry::FeatureBinaryJsonFormat&&);
+        MCFOLD void* $ctor(::FeatureRegistry::FeatureBinaryJsonFormat&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -83,7 +83,7 @@ public:
 
     MCAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
 
-    MCAPI_S ::std::string const& _reverseLookup(uint64 index) const;
+    MCAPI ::std::string const& _reverseLookup(uint64 index) const;
 
     MCAPI bool _setupFeature(
         ::IWorldRegistriesProvider&  worldRegistries,
@@ -101,21 +101,11 @@ public:
         bool                         clientSideGenEnabled
     );
 
-    MCAPI_C void loadFromJsonData(
-        ::IWorldRegistriesProvider&                                      worldRegistries,
-        ::ResourcePackManager const&                                     rpm,
-        ::std::vector<::FeatureRegistry::FeatureBinaryJsonFormat> const& jsonData
-    );
-
     MCAPI ::WeakRef<::IFeature> lookupByName(::std::string const& name) const;
 
     MCAPI ::WeakRef<::IFeature> lookupOrReserveFeature(::std::string const& featureName);
 
     MCAPI ::WeakRef<::IFeature> reserveFeature(::std::string const& name);
-
-    MCAPI_C void setLargeFeaturePasses(::std::vector<::std::string> largeFeaturePasses);
-
-    MCAPI_C void setSmallFeaturePasses(::std::vector<::std::string> smallFeaturePasses);
 
     MCAPI ~FeatureRegistry();
     // NOLINTEND

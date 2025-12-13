@@ -16,12 +16,14 @@ class BlockAimCollision118Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool previousSchema(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
     ) const /*override*/;
 
+    // vIndex: 2
     virtual void upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
@@ -30,39 +32,38 @@ public:
         ::SemVersion const&
     ) const /*override*/;
 
+    // vIndex: 0
     virtual ~BlockAimCollision118Upgrade() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockAimCollision118Upgrade();
+    MCAPI BlockAimCollision118Upgrade();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $previousSchema(
+    MCFOLD bool $previousSchema(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
     ) const;
 
-    MCNAPI void $upgradeToNext(
+    MCAPI void $upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&
     ) const;
-
-
     // NOLINTEND
 
 public:

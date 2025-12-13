@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/Filter.h"
@@ -18,7 +16,6 @@
 // auto generated forward declare list
 // clang-format off
 class ReplayStateComponent;
-class StrictEntityContext;
 struct ActorDataBoundingBoxComponent;
 struct ActorDataFlagComponent;
 struct ActorDataHorseFlagComponent;
@@ -46,6 +43,7 @@ struct PublishSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::ActorMovementTickNeededComponent>,
@@ -59,57 +57,17 @@ public:
             ::AddRemove<>,
             ::GlobalRead<>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext
+            ::EntityFactoryT<>>&
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~PublishSystem() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static void tickEntity(
-        ::StrictEntityContext const&   entity,
-        ::ReplayStateComponent&        replay,
-        ::ReplayStateTrackerComponent& tracker,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::ActorDataFlagComponent const,
-            ::Optional<::ActorDataHorseFlagComponent const>,
-            ::Optional<::ActorDataJumpDurationComponent const>,
-            ::Optional<::ActorDataBoundingBoxComponent const>,
-            ::Optional<::ActorDataSeatOffsetComponent const>> const& tracked
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
-            ::Read<
-                ::ActorDataFlagComponent,
-                ::ActorDataHorseFlagComponent,
-                ::ActorDataJumpDurationComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataSeatOffsetComponent>,
-            ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext
-    );
-#endif
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

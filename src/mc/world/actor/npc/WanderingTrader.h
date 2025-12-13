@@ -20,6 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual ~WanderingTrader() /*override*/ = default;
     // NOLINTEND
 

@@ -69,73 +69,100 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EditorSettingsService() /*override*/;
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
+    // vIndex: 2
     virtual ::Editor::Settings::Audio& getAudioSettings() /*override*/;
 
+    // vIndex: 1
     virtual ::Editor::Settings::Audio const& getAudioSettings() const /*override*/;
 
+    // vIndex: 5
     virtual ::Editor::Settings::Graphics& getGraphicsSettings() /*override*/;
 
+    // vIndex: 4
     virtual ::Editor::Settings::Graphics const& getGraphicsSettings() const /*override*/;
 
+    // vIndex: 8
     virtual ::Editor::Settings::Speed& getSpeedSettings() /*override*/;
 
+    // vIndex: 7
     virtual ::Editor::Settings::Speed const& getSpeedSettings() const /*override*/;
 
+    // vIndex: 11
     virtual ::Editor::Settings::Theme& getThemeSettings() /*override*/;
 
+    // vIndex: 10
     virtual ::Editor::Settings::Theme const& getThemeSettings() const /*override*/;
 
+    // vIndex: 3
     virtual ::Bedrock::PubSub::Subscription
     listenForAudioSettingsChanged(::std::function<void(::Editor::Settings::AudioProps const&)> func) /*override*/;
 
+    // vIndex: 6
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     listenForGraphicsSettingsChanged(::std::function<void(::Editor::Settings::GraphicsProps const&)> func) /*override*/;
 
+    // vIndex: 9
     virtual ::Bedrock::PubSub::Subscription
     listenForSpeedSettingsChanged(::std::function<void(::Editor::Settings::SpeedProps const&)> func) /*override*/;
 
+    // vIndex: 12
     virtual ::Bedrock::PubSub::Subscription
     listenForThemeSettingsChanged(::std::function<void(::Editor::Settings::ThemeProps const&)> func) /*override*/;
 
+    // vIndex: 13
     virtual ::Bedrock::PubSub::Subscription
     listenForCurrentThemeChanged(::std::function<void(::std::string const&)> func) /*override*/;
 
+    // vIndex: 14
     virtual ::Bedrock::PubSub::Subscription listenForNewThemeCreated(
         ::std::function<
             void(::std::string const&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&)>
             func
     ) /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::PubSub::Subscription listenForThemeColorUpdated(
         ::std::function<void(::std::string const&, ::Editor::Settings::ThemeSettingsColorKey, ::mce::Color const&)> func
     ) /*override*/;
 
+    // vIndex: 16
     virtual ::Bedrock::PubSub::Subscription
     listenForThemeDeleted(::std::function<void(::std::string const&)> func) /*override*/;
 
+    // vIndex: 7
     virtual void _handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const&);
 
+    // vIndex: 8
     virtual void _handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const&);
 
+    // vIndex: 9
     virtual void _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const&);
 
+    // vIndex: 10
     virtual void _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const&);
 
+    // vIndex: 11
     virtual void
     _handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const&);
 
+    // vIndex: 12
     virtual void
     _handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
 
+    // vIndex: 13
     virtual void
     _handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const&);
 
+    // vIndex: 14
     virtual void _handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const&);
     // NOLINTEND
 
@@ -225,8 +252,6 @@ public:
     $_handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const&);
 
     MCNAPI void $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const&);
-
-
     // NOLINTEND
 
 public:

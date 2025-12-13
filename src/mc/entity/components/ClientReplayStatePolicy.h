@@ -27,13 +27,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool isReplayNeeded(::AdvanceFrameResult result) const /*override*/;
 
+    // vIndex: 2
     virtual ::MovementCorrection
     shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool) /*override*/;
 
+    // vIndex: 3
     virtual void notifyOfExternalCorrection(uint64) /*override*/;
 
+    // vIndex: 0
     virtual ~ClientReplayStatePolicy() /*override*/ = default;
     // NOLINTEND
 
@@ -46,8 +50,6 @@ public:
     $shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool);
 
     MCFOLD void $notifyOfExternalCorrection(uint64);
-
-
     // NOLINTEND
 
 public:

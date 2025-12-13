@@ -17,8 +17,10 @@ class ScriptNavigationWalkComponent : public ::ScriptModuleMinecraft::Navigation
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual bool _isValid() const /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptNavigationWalkComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -39,8 +41,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $_isValid() const;
-
-
     // NOLINTEND
 
 public:

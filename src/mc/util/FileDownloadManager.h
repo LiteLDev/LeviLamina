@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/DownloaderResult.h"
-
-// auto generated forward declare list
-// clang-format off
-class IFileChunkDownloader;
-class IFilePicker;
-namespace Core { class Path; }
-// clang-format on
-
 class FileDownloadManager : public ::std::enable_shared_from_this<::FileDownloadManager> {
 public:
     // member variables
@@ -39,77 +29,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~FileDownloadManager() = default;
-#else // LL_PLAT_C
-    virtual ~FileDownloadManager();
-#endif
 
+    // vIndex: 1
     virtual void update();
 
+    // vIndex: 2
     virtual void cancelDownload();
 
+    // vIndex: 3
     virtual float getDownloadProgress() const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C FileDownloadManager(
-        ::std::shared_ptr<::IFilePicker>          filePicker,
-        ::std::shared_ptr<::IFileChunkDownloader> fileDownloader
-    );
-
-    MCNAPI_C void _writeData(
-        ::std::vector<uchar>                data,
-        uint64                              writeBytes,
-        uint64                              offset,
-        uint64                              progress,
-        ::std::function<void(uint64, bool)> writeComplete
-    );
-
-    MCNAPI_C void downloadFile(
-        ::std::string const&                                           downloadId,
-        ::std::string const&                                           downloadUrl,
-        ::Core::Path const&                                            downloadPath,
-        uint64                                                         expectedFileSize,
-        uint64                                                         fromByteOffset,
-        ::std::string const&                                           downloadVersion,
-        ::std::function<void(::Core::Path const&, ::DownloaderResult)> onCompleteCallback,
-        int                                                            slotIndex
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void*
-    $ctor(::std::shared_ptr<::IFilePicker> filePicker, ::std::shared_ptr<::IFileChunkDownloader> fileDownloader);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $update();
 
-    MCNAPI void $cancelDownload();
-
-    MCNAPI float $getDownloadProgress() const;
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

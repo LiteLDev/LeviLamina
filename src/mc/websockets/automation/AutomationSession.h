@@ -55,29 +55,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AutomationSession() /*override*/;
 
+    // vIndex: 10
     virtual void onMessageRecieved(::std::string const& message) /*override*/;
 
+    // vIndex: 0
     virtual void agentCommand(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request) /*override*/;
 
+    // vIndex: 1
     virtual void command(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request) /*override*/;
 
+    // vIndex: 2
     virtual void
     chatSubscribe(::std::string const& requestId, ::CodeBuilder::ChatSubscription&& subscription) /*override*/;
 
+    // vIndex: 3
     virtual void chatUnsubscribe(::std::string const&, ::std::string const& subscriptionId) /*override*/;
 
+    // vIndex: 4
     virtual void chatUnsubscribeAll(::std::string const&) /*override*/;
 
+    // vIndex: 5
     virtual void dataBlock(::std::string const& requestId) /*override*/;
 
+    // vIndex: 6
     virtual void dataItem(::std::string const& requestId) /*override*/;
 
+    // vIndex: 7
     virtual void dataMob(::std::string const& requestId) /*override*/;
 
+    // vIndex: 8
     virtual void dataTutorial(::std::string const& requestId, ::std::string const& tutorialPath) /*override*/;
 
+    // vIndex: 9
     virtual void dataFile(
         ::std::string const& requestId,
         bool const           isRead,
@@ -85,17 +97,23 @@ public:
         ::std::string const& fileContents
     ) /*override*/;
 
+    // vIndex: 10
     virtual void dataFilePath(::std::string const& requestId, ::std::string const& filePath) /*override*/;
 
+    // vIndex: 11
     virtual bool
     encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request) /*override*/;
 
+    // vIndex: 12
     virtual void subscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
+    // vIndex: 13
     virtual void unsubscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
+    // vIndex: 14
     virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const& message) /*override*/;
 
+    // vIndex: 15
     virtual bool tutorialCached(::std::string const& tutorialPath) /*override*/;
     // NOLINTEND
 
@@ -125,7 +143,7 @@ public:
     MCNAPI ::WSConnectionResult
     connect(::std::string const& serverUri, ::std::vector<::std::string> const& subProtocols);
 
-    MCNAPI_S bool isSubscribedtoEvent(::std::string const& eventName);
+    MCNAPI bool isSubscribedtoEvent(::std::string const& eventName);
 
     MCNAPI void receive(::std::string const& payload);
     // NOLINTEND
@@ -183,8 +201,6 @@ public:
     MCNAPI void $error(::std::string const&, ::CodeBuilder::ErrorMessage const& message);
 
     MCNAPI bool $tutorialCached(::std::string const& tutorialPath);
-
-
     // NOLINTEND
 
 public:

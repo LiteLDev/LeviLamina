@@ -31,8 +31,6 @@ public:
 
     MCAPI void addToChain(::Json::Value& chain) const;
 
-    MCAPI_C void addToEnd(::UnverifiedCertificate const& unverifiedCertificate);
-
     MCAPI ::std::string getIdentityPublicKey() const;
 
     MCAPI ::std::string toString() const;

@@ -52,44 +52,19 @@ public:
     // clang-format on
 
     // PeerConnectionInterface inner types define
-    enum class BundlePolicy : int {
-        KBundlePolicyBalanced  = 0,
-        KBundlePolicyMaxBundle = 1,
-        KBundlePolicyMaxCompat = 2,
-    };
-
-    enum class CandidateNetworkPolicy : int {
-        KCandidateNetworkPolicyAll     = 0,
-        KCandidateNetworkPolicyLowCost = 1,
-    };
-
-    enum class ContinualGatheringPolicy : int {
-        Once        = 0,
-        Continually = 1,
-    };
-
-    enum class IceConnectionState : int {
-        KIceConnectionNew          = 0,
-        KIceConnectionChecking     = 1,
-        KIceConnectionConnected    = 2,
-        KIceConnectionCompleted    = 3,
-        KIceConnectionFailed       = 4,
-        KIceConnectionDisconnected = 5,
-        KIceConnectionClosed       = 6,
-        KIceConnectionMax          = 7,
+    enum class SignalingState : int {
+        KStable             = 0,
+        KHaveLocalOffer     = 1,
+        KHaveLocalPrAnswer  = 2,
+        KHaveRemoteOffer    = 3,
+        KHaveRemotePrAnswer = 4,
+        KClosed             = 5,
     };
 
     enum class IceGatheringState : int {
         KIceGatheringNew       = 0,
         KIceGatheringGathering = 1,
         KIceGatheringComplete  = 2,
-    };
-
-    enum class IceTransportsType : int {
-        KNone   = 0,
-        KRelay  = 1,
-        KNoHost = 2,
-        KAll    = 3,
     };
 
     enum class PeerConnectionState : int {
@@ -101,33 +76,15 @@ public:
         KClosed       = 5,
     };
 
-    enum class RTCConfigurationType : int {
-        KSafe       = 0,
-        KAggressive = 1,
-    };
-
-    enum class RtcpMuxPolicy : int {
-        KRtcpMuxPolicyNegotiate = 0,
-        KRtcpMuxPolicyRequire   = 1,
-    };
-
-    enum class SignalingState : int {
-        KStable             = 0,
-        KHaveLocalOffer     = 1,
-        KHaveLocalPrAnswer  = 2,
-        KHaveRemoteOffer    = 3,
-        KHaveRemotePrAnswer = 4,
-        KClosed             = 5,
-    };
-
-    enum class StatsOutputLevel : int {
-        KStatsOutputLevelStandard = 0,
-        KStatsOutputLevelDebug    = 1,
-    };
-
-    enum class TcpCandidatePolicy : int {
-        KTcpCandidatePolicyEnabled  = 0,
-        KTcpCandidatePolicyDisabled = 1,
+    enum class IceConnectionState : int {
+        KIceConnectionNew          = 0,
+        KIceConnectionChecking     = 1,
+        KIceConnectionConnected    = 2,
+        KIceConnectionCompleted    = 3,
+        KIceConnectionFailed       = 4,
+        KIceConnectionDisconnected = 5,
+        KIceConnectionClosed       = 6,
+        KIceConnectionMax          = 7,
     };
 
     enum class TlsCertPolicy : int {
@@ -179,6 +136,39 @@ public:
         // NOLINTEND
     };
 
+    enum class IceTransportsType : int {
+        KNone   = 0,
+        KRelay  = 1,
+        KNoHost = 2,
+        KAll    = 3,
+    };
+
+    enum class BundlePolicy : int {
+        KBundlePolicyBalanced  = 0,
+        KBundlePolicyMaxBundle = 1,
+        KBundlePolicyMaxCompat = 2,
+    };
+
+    enum class RtcpMuxPolicy : int {
+        KRtcpMuxPolicyNegotiate = 0,
+        KRtcpMuxPolicyRequire   = 1,
+    };
+
+    enum class TcpCandidatePolicy : int {
+        KTcpCandidatePolicyEnabled  = 0,
+        KTcpCandidatePolicyDisabled = 1,
+    };
+
+    enum class CandidateNetworkPolicy : int {
+        KCandidateNetworkPolicyAll     = 0,
+        KCandidateNetworkPolicyLowCost = 1,
+    };
+
+    enum class ContinualGatheringPolicy : int {
+        Once        = 0,
+        Continually = 1,
+    };
+
     struct PortAllocatorConfig {
     public:
         // member variables
@@ -193,6 +183,11 @@ public:
         PortAllocatorConfig& operator=(PortAllocatorConfig const&);
         PortAllocatorConfig(PortAllocatorConfig const&);
         PortAllocatorConfig();
+    };
+
+    enum class RTCConfigurationType : int {
+        KSafe       = 0,
+        KAggressive = 1,
     };
 
     struct RTCConfiguration {
@@ -313,170 +308,237 @@ public:
         // NOLINTEND
     };
 
+    enum class StatsOutputLevel : int {
+        KStatsOutputLevelStandard = 0,
+        KStatsOutputLevelDebug    = 1,
+    };
+
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::webrtc::scoped_refptr<::webrtc::StreamCollectionInterface> local_streams() = 0;
 
+    // vIndex: 4
     virtual ::webrtc::scoped_refptr<::webrtc::StreamCollectionInterface> remote_streams() = 0;
 
+    // vIndex: 5
     virtual bool AddStream(::webrtc::MediaStreamInterface*) = 0;
 
+    // vIndex: 6
     virtual void RemoveStream(::webrtc::MediaStreamInterface* remove_stream) = 0;
 
+    // vIndex: 8
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>>
     AddTrack(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>, ::std::vector<::std::string> const&) = 0;
 
+    // vIndex: 7
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(
         ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
         ::std::vector<::std::string> const&,
         ::std::vector<::webrtc::RtpEncodingParameters> const&
     ) = 0;
 
+    // vIndex: 9
     virtual ::webrtc::RTCError RemoveTrackOrError(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>);
 
+    // vIndex: 13
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
         AddTransceiver(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>) = 0;
 
+    // vIndex: 12
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(
         ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
         ::webrtc::RtpTransceiverInit const&
     ) = 0;
 
+    // vIndex: 11
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
         AddTransceiver(::cricket::MediaType) = 0;
 
+    // vIndex: 10
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
     AddTransceiver(::cricket::MediaType, ::webrtc::RtpTransceiverInit const&) = 0;
 
+    // vIndex: 14
     virtual ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>
     CreateSender(::std::string const&, ::std::string const&) = 0;
 
+    // vIndex: 15
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> GetSenders() const = 0;
 
+    // vIndex: 16
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>> GetReceivers() const = 0;
 
+    // vIndex: 17
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> GetTransceivers() const = 0;
 
+    // vIndex: 21
     virtual bool GetStats(
         ::webrtc::StatsObserver*,
         ::webrtc::MediaStreamTrackInterface*,
         ::webrtc::PeerConnectionInterface::StatsOutputLevel
     ) = 0;
 
+    // vIndex: 20
     virtual void GetStats(::webrtc::RTCStatsCollectorCallback*) = 0;
 
+    // vIndex: 19
     virtual void GetStats(
         ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>,
         ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>
     ) = 0;
 
+    // vIndex: 18
     virtual void GetStats(
         ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>,
         ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback>
     ) = 0;
 
+    // vIndex: 22
     virtual void ClearStatsCache();
 
+    // vIndex: 23
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>>
     CreateDataChannelOrError(::std::string const&, ::webrtc::DataChannelInit const*);
 
+    // vIndex: 24
     virtual ::webrtc::scoped_refptr<::webrtc::DataChannelInterface>
     CreateDataChannel(::std::string const& label, ::webrtc::DataChannelInit const* config);
 
+    // vIndex: 25
     virtual ::webrtc::SessionDescriptionInterface const* local_description() const = 0;
 
+    // vIndex: 26
     virtual ::webrtc::SessionDescriptionInterface const* remote_description() const = 0;
 
+    // vIndex: 27
     virtual ::webrtc::SessionDescriptionInterface const* current_local_description() const = 0;
 
+    // vIndex: 28
     virtual ::webrtc::SessionDescriptionInterface const* current_remote_description() const = 0;
 
+    // vIndex: 29
     virtual ::webrtc::SessionDescriptionInterface const* pending_local_description() const = 0;
 
+    // vIndex: 30
     virtual ::webrtc::SessionDescriptionInterface const* pending_remote_description() const = 0;
 
+    // vIndex: 31
     virtual void RestartIce() = 0;
 
+    // vIndex: 32
     virtual void CreateOffer(
         ::webrtc::CreateSessionDescriptionObserver*,
         ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&
     ) = 0;
 
+    // vIndex: 33
     virtual void CreateAnswer(
         ::webrtc::CreateSessionDescriptionObserver*,
         ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const&
     ) = 0;
 
+    // vIndex: 37
     virtual void SetLocalDescription(
         ::std::unique_ptr<::webrtc::SessionDescriptionInterface>,
         ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface>
     );
 
+    // vIndex: 36
     virtual void SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface>);
 
+    // vIndex: 35
     virtual void
     SetLocalDescription(::webrtc::SetSessionDescriptionObserver*, ::webrtc::SessionDescriptionInterface*) = 0;
 
+    // vIndex: 34
     virtual void SetLocalDescription(::webrtc::SetSessionDescriptionObserver*);
 
+    // vIndex: 39
     virtual void SetRemoteDescription(
         ::std::unique_ptr<::webrtc::SessionDescriptionInterface>,
         ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface>
     ) = 0;
 
+    // vIndex: 38
     virtual void SetRemoteDescription(::webrtc::SetSessionDescriptionObserver*, ::webrtc::SessionDescriptionInterface*);
 
+    // vIndex: 40
     virtual bool ShouldFireNegotiationNeededEvent(uint) = 0;
 
+    // vIndex: 41
     virtual ::webrtc::PeerConnectionInterface::RTCConfiguration GetConfiguration() = 0;
 
+    // vIndex: 42
     virtual ::webrtc::RTCError SetConfiguration(::webrtc::PeerConnectionInterface::RTCConfiguration const&) = 0;
 
+    // vIndex: 44
     virtual bool AddIceCandidate(::webrtc::IceCandidateInterface const*) = 0;
 
+    // vIndex: 43
     virtual void
         AddIceCandidate(::std::unique_ptr<::webrtc::IceCandidateInterface>, ::std::function<void(::webrtc::RTCError)>);
 
+    // vIndex: 45
     virtual bool RemoveIceCandidates(::std::vector<::cricket::Candidate> const&) = 0;
 
+    // vIndex: 46
     virtual ::webrtc::RTCError SetBitrate(::webrtc::BitrateSettings const&) = 0;
 
+    // vIndex: 47
     virtual void ReconfigureBandwidthEstimation(::webrtc::BandwidthEstimationSettings const&) = 0;
 
+    // vIndex: 48
     virtual void SetAudioPlayout(bool) = 0;
 
+    // vIndex: 49
     virtual void SetAudioRecording(bool) = 0;
 
+    // vIndex: 50
     virtual ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface>
     LookupDtlsTransportByMid(::std::string const&) = 0;
 
+    // vIndex: 51
     virtual ::webrtc::scoped_refptr<::webrtc::SctpTransportInterface> GetSctpTransport() const = 0;
 
+    // vIndex: 52
     virtual ::webrtc::PeerConnectionInterface::SignalingState signaling_state() = 0;
 
+    // vIndex: 53
     virtual ::webrtc::PeerConnectionInterface::IceConnectionState ice_connection_state() = 0;
 
+    // vIndex: 54
     virtual ::webrtc::PeerConnectionInterface::IceConnectionState standardized_ice_connection_state() = 0;
 
+    // vIndex: 55
     virtual ::webrtc::PeerConnectionInterface::PeerConnectionState peer_connection_state() = 0;
 
+    // vIndex: 56
     virtual ::webrtc::PeerConnectionInterface::IceGatheringState ice_gathering_state() = 0;
 
+    // vIndex: 57
     virtual ::std::optional<bool> can_trickle_ice_candidates() = 0;
 
+    // vIndex: 58
     virtual void AddAdaptationResource(::webrtc::scoped_refptr<::webrtc::Resource>) = 0;
 
+    // vIndex: 60
     virtual bool StartRtcEventLog(::std::unique_ptr<::webrtc::RtcEventLogOutput>, int64) = 0;
 
+    // vIndex: 59
     virtual bool StartRtcEventLog(::std::unique_ptr<::webrtc::RtcEventLogOutput>) = 0;
 
+    // vIndex: 61
     virtual void StopRtcEventLog() = 0;
 
+    // vIndex: 62
     virtual void Close() = 0;
 
+    // vIndex: 63
     virtual ::rtc::Thread* signaling_thread() const = 0;
 
+    // vIndex: 2
     virtual ~PeerConnectionInterface() /*override*/ = default;
     // NOLINTEND
 
@@ -491,8 +553,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::webrtc::scoped_refptr<::webrtc::DataChannelInterface>
     $CreateDataChannel(::std::string const& label, ::webrtc::DataChannelInit const* config);
-
-
     // NOLINTEND
 };
 

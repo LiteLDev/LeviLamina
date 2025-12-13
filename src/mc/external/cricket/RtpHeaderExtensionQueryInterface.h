@@ -13,8 +13,10 @@ class RtpHeaderExtensionQueryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RtpHeaderExtensionQueryInterface() = default;
 
+    // vIndex: 1
     virtual ::std::vector<::webrtc::RtpHeaderExtensionCapability> GetRtpHeaderExtensions() const = 0;
     // NOLINTEND
 

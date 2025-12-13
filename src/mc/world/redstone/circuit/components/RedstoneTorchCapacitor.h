@@ -28,16 +28,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkea9d51;
-        ::ll::UntypedStorage<1, 1> mUnk58ecb8;
-        ::ll::UntypedStorage<1, 1> mUnk8cada1;
+        ::ll::TypedStorage<1, 1, bool> mOn;
+        ::ll::TypedStorage<1, 1, bool> mHalfFrame;
+        ::ll::TypedStorage<1, 1, bool> mChanged;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        State& operator=(State const&);
-        State(State const&);
-        State();
     };
 
 public:
@@ -53,13 +47,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RedstoneTorchCapacitor() /*override*/ = default;
 
+    // vIndex: 26
     virtual uchar getPoweroutDirection() const /*override*/;
 
+    // vIndex: 12
     virtual bool
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
+    // vIndex: 11
     virtual bool addSource(
         ::CircuitSceneGraph&         graph,
         ::CircuitTrackingInfo const& info,
@@ -67,20 +65,28 @@ public:
         bool&                        bDirectlyPowered
     ) /*override*/;
 
+    // vIndex: 10
     virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent) /*override*/;
 
+    // vIndex: 14
     virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
+    // vIndex: 15
     virtual void cacheValues(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
+    // vIndex: 1
     virtual int getStrength() const /*override*/;
 
+    // vIndex: 19
     virtual bool isHalfPulse() const /*override*/;
 
+    // vIndex: 24
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
+    // vIndex: 17
     virtual ::RedstoneLogicExecutionFlags getLogicExecutionFlags() const /*override*/;
 
+    // vIndex: 16
     virtual void updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos) /*override*/;
     // NOLINTEND
 
@@ -115,8 +121,6 @@ public:
     MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 
     MCAPI void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
-
-
     // NOLINTEND
 
 public:

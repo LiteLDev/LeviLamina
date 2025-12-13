@@ -2,28 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_camera/CameraInstruction.h"
+
 struct CameraInstructionPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 296> mUnkffade6;
+    ::ll::TypedStorage<8, 296, ::CameraInstruction> mCameraInstruction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraInstructionPacketPayload& operator=(CameraInstructionPacketPayload const&);
-    CameraInstructionPacketPayload(CameraInstructionPacketPayload const&);
-    CameraInstructionPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~CameraInstructionPacketPayload();
+    MCAPI ~CameraInstructionPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

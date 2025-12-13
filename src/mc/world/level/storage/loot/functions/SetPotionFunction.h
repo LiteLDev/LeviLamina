@@ -32,12 +32,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SetPotionFunction() /*override*/ = default;
 
+    // vIndex: 4
     virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
 
+    // vIndex: 2
     virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext& context) /*override*/;
 
+    // vIndex: 5
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
@@ -62,8 +66,6 @@ public:
     MCNAPI void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
 
     MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
-
-
     // NOLINTEND
 
 public:

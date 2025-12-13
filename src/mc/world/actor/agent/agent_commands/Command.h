@@ -3,10 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/network/packet/AgentActionType.h"
 #include "mc/world/actor/agent/agent_components/Direction.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Player;
 class Vec3;
 // clang-format on
 
@@ -16,11 +19,11 @@ class Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk933fb1;
-    ::ll::UntypedStorage<8, 8> mUnkfc621f;
-    ::ll::UntypedStorage<4, 4> mUnk84ca51;
-    ::ll::UntypedStorage<1, 1> mUnkc9ad03;
-    ::ll::UntypedStorage<1, 1> mUnka8287b;
+    ::ll::TypedStorage<8, 8, ::Actor&>          mTarget;
+    ::ll::TypedStorage<8, 8, ::Player&>         mCommander;
+    ::ll::TypedStorage<4, 4, ::AgentActionType> mActionType;
+    ::ll::TypedStorage<1, 1, bool>              mResult;
+    ::ll::TypedStorage<1, 1, bool>              mIsQueryResult;
     // NOLINTEND
 
 public:
@@ -32,39 +35,42 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Command();
 
+    // vIndex: 1
     virtual void execute();
 
+    // vIndex: 2
     virtual bool isDone() = 0;
 
+    // vIndex: 3
     virtual void tick();
 
+    // vIndex: 4
     virtual void fireCommandDoneEvent();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Vec3 _getNextPosFromDirection(::AgentComponents::Direction dir);
+    MCAPI ::Vec3 _getNextPosFromDirection(::AgentComponents::Direction dir);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute();
+    MCAPI void $execute();
 
-    MCNAPI void $tick();
+    MCFOLD void $tick();
 
-    MCNAPI void $fireCommandDoneEvent();
-
-
+    MCAPI void $fireCommandDoneEvent();
     // NOLINTEND
 
 public:

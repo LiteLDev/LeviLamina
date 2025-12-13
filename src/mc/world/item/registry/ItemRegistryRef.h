@@ -12,8 +12,6 @@
 class ActorInfoRegistry;
 class BaseGameVersion;
 class BlockDefinitionGroup;
-class BlockPalette;
-class CreativeContentPacket;
 class CreativeItemRegistry;
 class Experiments;
 class HashedString;
@@ -29,6 +27,7 @@ class ResourcePackManager;
 struct ItemData;
 struct ItemRegistryComplexAlias;
 struct ItemTag;
+namespace Bedrock::Threading { class Mutex; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -40,32 +39,6 @@ public:
     // clang-format on
 
     // ItemRegistryRef inner types define
-    class LockGuard {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkeb2627;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LockGuard& operator=(LockGuard const&);
-        LockGuard(LockGuard const&);
-        LockGuard();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~LockGuard();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
     using CreativeItemsServerInitCallbackSignature = void(
         ::ItemRegistryRef,
         ::BlockDefinitionGroup const&,
@@ -77,6 +50,26 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const,
         ::IMinecraftEventing&
     );
+
+    class LockGuard {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::Mutex>> mMutex;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~LockGuard();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables
@@ -122,11 +115,6 @@ public:
 
     MCAPI ::BaseGameVersion getWorldBaseGameVersion() const;
 
-    MCAPI_C void initCreativeItemsClient(
-        ::CreativeContentPacket const& creativeContentPacket,
-        ::BlockPalette const&          blockPalette
-    ) const;
-
     MCAPI void initCreativeItemsServer(
         ::BlockDefinitionGroup const&                      blockDefinitionGroup,
         ::Experiments const&                               experiment,
@@ -162,9 +150,9 @@ public:
 
     MCAPI ::WeakPtr<::Item> lookupByName(int& outItemId, int& outItemAux, ::std::string_view inString) const;
 
-    MCAPI ::WeakPtr<::Item> lookupByNameNoAlias(::HashedString const& inString) const;
-
     MCAPI ::WeakPtr<::Item> lookupByNameNoAlias(::std::string_view inString) const;
+
+    MCAPI ::WeakPtr<::Item> lookupByNameNoAlias(::HashedString const& inString) const;
 
     MCAPI ::std::unordered_set<::Item const*> lookupByTag(::ItemTag const& tag) const;
 

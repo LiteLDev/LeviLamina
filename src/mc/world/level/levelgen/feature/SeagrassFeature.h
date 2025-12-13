@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -16,9 +17,9 @@ class SeagrassFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk91d3bb;
-    ::ll::UntypedStorage<4, 4> mUnkeb19ab;
-    ::ll::UntypedStorage<8, 8> mUnkcf9df4;
+    ::ll::TypedStorage<4, 4, int const>      mIterations;
+    ::ll::TypedStorage<4, 4, float const>    mTallSeagrassChance;
+    ::ll::TypedStorage<8, 8, ::Block const&> mSeagrassBlock;
     // NOLINTEND
 
 public:
@@ -30,26 +31,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
+    // vIndex: 0
     virtual ~SeagrassFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     _tryPlaceSeagrass(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool isColdEnoughForIce) const;
 
-    MCNAPI void _tryPlaceTallSeagrass(::BlockSource& region, ::BlockPos const& pos, bool isColdEnoughForIce) const;
+    MCAPI void _tryPlaceTallSeagrass(::BlockSource& region, ::BlockPos const& pos, bool isColdEnoughForIce) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

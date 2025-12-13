@@ -33,29 +33,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~UnzipFileMinizip() /*override*/;
 
+    // vIndex: 1
     virtual ::Core::ZipUtils::UnzipResult locateFile(char const* fileName, int caseSensitivity) /*override*/;
 
+    // vIndex: 2
     virtual ::Core::ZipUtils::UnzipResult goToFirstFile() /*override*/;
 
+    // vIndex: 3
     virtual ::Core::ZipUtils::UnzipResult goToNextFile() /*override*/;
 
+    // vIndex: 4
     virtual ::std::string getCurrentFileName() const /*override*/;
 
+    // vIndex: 5
     virtual ::Core::ZipUtils::UnzipResult openCurrentFileForReading() /*override*/;
 
+    // vIndex: 6
     virtual ::Core::ZipUtils::UnzipResult closeCurrentFile() /*override*/;
 
+    // vIndex: 7
     virtual void readCurrentFileContentsIntoMemory(::std::string& str) /*override*/;
 
+    // vIndex: 8
     virtual void
     readCurrentFileContents(uint64 bufferSize, ::std::function<void(int, void const*)> onReadCallback) /*override*/;
 
+    // vIndex: 9
     virtual uint64 getTotalFilesInZip() /*override*/;
 
+    // vIndex: 10
     virtual uint64 getCurrentFileUncompressedSize() /*override*/;
 
+    // vIndex: 11
     virtual bool _isGood() const /*override*/;
     // NOLINTEND
 
@@ -101,8 +113,6 @@ public:
     MCNAPI uint64 $getCurrentFileUncompressedSize();
 
     MCNAPI bool $_isGood() const;
-
-
     // NOLINTEND
 
 public:

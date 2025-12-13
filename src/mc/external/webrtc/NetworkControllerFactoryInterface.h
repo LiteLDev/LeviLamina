@@ -15,10 +15,13 @@ class NetworkControllerFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetworkControllerFactoryInterface() = default;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::NetworkControllerInterface> Create(::webrtc::NetworkControllerConfig) = 0;
 
+    // vIndex: 2
     virtual ::webrtc::TimeDelta GetProcessInterval() const = 0;
     // NOLINTEND
 

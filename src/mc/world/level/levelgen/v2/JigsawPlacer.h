@@ -60,15 +60,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void tryPlacingChildren(::br::worldgen::JigsawPieceState state);
+    MCAPI void tryPlacingChildren(::br::worldgen::JigsawPieceState state);
 
-    MCNAPI ~JigsawPlacer();
+    MCAPI ~JigsawPlacer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -11,6 +11,7 @@ struct AudioReceiverParameters : public ::cricket::MediaChannelParameters {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AudioReceiverParameters() /*override*/;
     // NOLINTEND
 

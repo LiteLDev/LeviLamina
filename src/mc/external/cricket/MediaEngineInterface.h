@@ -14,16 +14,22 @@ class MediaEngineInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MediaEngineInterface() = default;
 
+    // vIndex: 1
     virtual bool Init() = 0;
 
+    // vIndex: 3
     virtual ::cricket::VoiceEngineInterface& voice() = 0;
 
+    // vIndex: 2
     virtual ::cricket::VoiceEngineInterface const& voice() const = 0;
 
+    // vIndex: 5
     virtual ::cricket::VideoEngineInterface& video() = 0;
 
+    // vIndex: 4
     virtual ::cricket::VideoEngineInterface const& video() const = 0;
     // NOLINTEND
 

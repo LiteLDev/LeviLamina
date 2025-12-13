@@ -17,16 +17,5 @@ public:
     // prevent constructor by default
     ContextMessageLoggerOptions& operator=(ContextMessageLoggerOptions const&);
     ContextMessageLoggerOptions(ContextMessageLoggerOptions const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ContextMessageLoggerOptions();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-    // NOLINTEND
+    ContextMessageLoggerOptions();
 };

@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/threading/Mutex.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorAnimationInfo;
-class ActorSkeletalAnimationPtr;
 class HashedString;
 class MinEngineVersion;
 class PackStats;
@@ -26,37 +26,30 @@ class ActorAnimationGroup : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkcc69e4;
-    ::ll::UntypedStorage<8, 64> mUnk6df89c;
-    ::ll::UntypedStorage<8, 80> mUnkc78eae;
-    ::ll::UntypedStorage<8, 24> mUnk6b4a97;
+    ::ll::TypedStorage<8, 8, int64 const> mResourceLoadTimeStamp;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::shared_ptr<::ActorAnimationInfo>>>
+                                                                                 mAnimations;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                       mActorAnimationMutex;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourceLoadManager>> mResourceLoadManager;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorAnimationGroup& operator=(ActorAnimationGroup const&);
-    ActorAnimationGroup(ActorAnimationGroup const&);
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ActorAnimationGroup() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ActorAnimationGroup();
-
-    MCNAPI ::std::shared_ptr<
+    MCAPI ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationGroupParseMetaData>>
     _buildAnimationFileSchema_v1_8(bool isPersonaPack);
 
-    MCNAPI_C ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
+    MCAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
 
-    MCNAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
-
-    MCNAPI void loadActorAnimation(
+    MCAPI void loadActorAnimation(
         ::std::string const&      fileData,
         ::Core::Path const&       filenameWithExtension,
         ::PackStats&              stats,
@@ -66,24 +59,13 @@ public:
         ::std::string const&      personaPieceId
     );
 
-    MCNAPI_C void loadActorAnimationsAsync(
-        ::ResourcePackManager&                               resourcePackManager,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager
-    );
-
-    MCNAPI void loadActorAnimationsSync(::ResourcePackManager& resourcePackManager);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI void loadActorAnimationsSync(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -42,33 +42,45 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~WrappingActiveIceController() /*override*/;
 
+    // vIndex: 1
     virtual void SetIceConfig(::cricket::IceConfig const& config) /*override*/;
 
+    // vIndex: 7
     virtual bool GetUseCandidateAttribute(
         ::cricket::Connection const* connection,
         ::cricket::NominationMode    mode,
         ::cricket::IceMode           remote_ice_mode
     ) const /*override*/;
 
+    // vIndex: 2
     virtual void OnConnectionAdded(::cricket::Connection const* connection) /*override*/;
 
+    // vIndex: 5
     virtual void OnConnectionPinged(::cricket::Connection const* connection) /*override*/;
 
+    // vIndex: 6
     virtual void OnConnectionUpdated(::cricket::Connection const* connection) /*override*/;
 
+    // vIndex: 3
     virtual void OnConnectionSwitched(::cricket::Connection const* connection) /*override*/;
 
+    // vIndex: 4
     virtual void OnConnectionDestroyed(::cricket::Connection const* connection) /*override*/;
 
+    // vIndex: 8
     virtual void OnSortAndSwitchRequest(::cricket::IceSwitchReason reason) /*override*/;
 
+    // vIndex: 9
     virtual void OnImmediateSortAndSwitchRequest(::cricket::IceSwitchReason reason) /*override*/;
 
+    // vIndex: 10
     virtual bool
     OnImmediateSwitchRequest(::cricket::IceSwitchReason reason, ::cricket::Connection const* selected) /*override*/;
 
+    // vIndex: 11
     virtual ::cricket::Connection const* FindNextPingableConnection() /*override*/;
     // NOLINTEND
 
@@ -143,8 +155,6 @@ public:
     MCNAPI bool $OnImmediateSwitchRequest(::cricket::IceSwitchReason reason, ::cricket::Connection const* selected);
 
     MCNAPI ::cricket::Connection const* $FindNextPingableConnection();
-
-
     // NOLINTEND
 
 public:

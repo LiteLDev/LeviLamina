@@ -22,8 +22,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~VideoSenderParameters() /*override*/;
 
+    // vIndex: 1
     virtual ::std::map<::std::string, ::std::string> ToStringMap() const /*override*/;
     // NOLINTEND
 
@@ -49,8 +51,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::map<::std::string, ::std::string> $ToStringMap() const;
-
-
     // NOLINTEND
 
 public:

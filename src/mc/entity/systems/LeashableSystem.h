@@ -15,8 +15,6 @@ MCNAPI ::TickingSystemWithInfo createHandleAddToLeashedEntitiesRequestSystem();
 
 MCNAPI ::TickingSystemWithInfo createHandleRemoveFromLeashedEntitiesRequestSystem();
 
-MCNAPI_C void registerClientSystems(::EntitySystems& systemRegistry);
-
 MCNAPI void registerServerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 

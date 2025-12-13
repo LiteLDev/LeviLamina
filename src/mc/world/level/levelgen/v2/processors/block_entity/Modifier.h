@@ -43,44 +43,45 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom& random, ::CompoundTag const* existingTag) const
         /*override*/;
 
+    // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
     virtual ~Modifier() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier&&);
+    MCAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier const&);
 
-    MCNAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier const&);
+    MCAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier&&);
+    MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier const&);
 
-    MCNAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier const&);
+    MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::CompoundTag> $apply(::IRandom& random, ::CompoundTag const* existingTag) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $apply(::IRandom& random, ::CompoundTag const* existingTag) const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
-
-
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

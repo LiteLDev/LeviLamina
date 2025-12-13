@@ -17,18 +17,13 @@ struct UseModifiersItemComponentLegacyFactoryData : public ::IItemComponentLegac
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb625fc;
+    ::ll::TypedStorage<4, 4, float> mUseDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UseModifiersItemComponentLegacyFactoryData& operator=(UseModifiersItemComponentLegacyFactoryData const&);
-    UseModifiersItemComponentLegacyFactoryData(UseModifiersItemComponentLegacyFactoryData const&);
-    UseModifiersItemComponentLegacyFactoryData();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~UseModifiersItemComponentLegacyFactoryData() /*override*/ = default;
     // NOLINTEND
 

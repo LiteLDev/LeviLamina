@@ -17,12 +17,6 @@ public:
     Status& operator=(Status const&);
     Status(Status const&);
     Status();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C bool isSuccess() const;
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

@@ -17,18 +17,6 @@ public:
     AuthArgs& operator=(AuthArgs const&);
     AuthArgs(AuthArgs const&);
     AuthArgs();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~AuthArgs();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Identity

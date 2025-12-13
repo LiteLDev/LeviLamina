@@ -22,29 +22,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ContainerTransferClient() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::ContainerTransferScope> preTransfer() /*override*/;
 
-    virtual void
-    postTransfer(::ContainerTransferScope* transferScope, ::ContainerScreenActionResult const& result) /*override*/;
+    // vIndex: 2
+    virtual void postTransfer(::ContainerTransferScope*, ::ContainerScreenActionResult const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::unique_ptr<::ContainerTransferScope> $preTransfer();
 
-    MCNAPI void $postTransfer(::ContainerTransferScope* transferScope, ::ContainerScreenActionResult const& result);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

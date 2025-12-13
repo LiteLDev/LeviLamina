@@ -23,6 +23,7 @@ class ScriptAgeableComponent
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptAgeableComponent() /*override*/ = default;
     // NOLINTEND
 

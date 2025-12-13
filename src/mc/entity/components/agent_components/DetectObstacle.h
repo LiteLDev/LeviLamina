@@ -49,7 +49,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCFOLD static void
     setup(::AgentComponents::DetectObstacle& detect, ::EntityContext& entity, ::AgentComponents::Direction dir);
     // NOLINTEND
 };

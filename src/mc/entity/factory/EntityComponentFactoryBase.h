@@ -15,6 +15,7 @@ class EntityComponentFactoryBase : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EntityComponentFactoryBase() /*override*/;
     // NOLINTEND
 

@@ -31,8 +31,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::IConstBlockSource const* updateBlockSourceForEntity(::StrictEntityContext const& entity) /*override*/;
 
+    // vIndex: 0
     virtual ~SelfOwningLocalConstBlockSource() /*override*/ = default;
     // NOLINTEND
 
@@ -40,8 +42,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::IConstBlockSource const* $updateBlockSourceForEntity(::StrictEntityContext const& entity);
-
-
     // NOLINTEND
 
 public:

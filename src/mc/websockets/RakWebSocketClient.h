@@ -9,10 +9,13 @@ class RakWebSocketClient : public ::RakWebSocket {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual void _updateState() /*override*/;
 
+    // vIndex: 9
     virtual uint _genMaskingKey() const /*override*/;
 
+    // vIndex: 0
     virtual ~RakWebSocketClient() /*override*/;
     // NOLINTEND
 
@@ -28,8 +31,6 @@ public:
     MCNAPI void $_updateState();
 
     MCNAPI uint $_genMaskingKey() const;
-
-
     // NOLINTEND
 
 public:

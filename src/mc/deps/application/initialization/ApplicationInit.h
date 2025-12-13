@@ -26,18 +26,6 @@ public:
         Objects& operator=(Objects const&);
         Objects(Objects const&);
         Objects();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ~Objects();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -53,20 +41,6 @@ public:
     ApplicationInit& operator=(ApplicationInit const&);
     ApplicationInit(ApplicationInit const&);
     ApplicationInit();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void run();
-
-    MCNAPI_C ~ApplicationInit();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Bedrock

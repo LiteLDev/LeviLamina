@@ -15,10 +15,13 @@ class PlacementType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PlacementType() = default;
 
+    // vIndex: 1
     virtual bool isSpawnPositionOk(::BlockSource&, ::BlockPos, ::br::spawn::EntityType const&) const = 0;
 
+    // vIndex: 2
     virtual ::BlockPos adjustSpawnPos(::BlockSource&, ::BlockPos candidate) const;
     // NOLINTEND
 
@@ -26,8 +29,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::BlockPos $adjustSpawnPos(::BlockSource&, ::BlockPos candidate) const;
-
-
     // NOLINTEND
 
 public:

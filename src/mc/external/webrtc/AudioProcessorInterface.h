@@ -45,8 +45,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::webrtc::AudioProcessorInterface::AudioProcessorStatistics GetStats(bool) = 0;
 
+    // vIndex: 2
     virtual ~AudioProcessorInterface() /*override*/ = default;
     // NOLINTEND
 

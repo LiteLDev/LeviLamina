@@ -22,17 +22,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 110
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
         /*override*/;
 
+    // vIndex: 16
     virtual bool isDye() const /*override*/;
 
+    // vIndex: 17
     virtual ::ItemColor getItemColor() const /*override*/;
 
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
+    // vIndex: 0
     virtual ~DyePowderItem() /*override*/ = default;
     // NOLINTEND
 
@@ -46,8 +52,6 @@ public:
     MCFOLD bool $isDye() const;
 
     MCFOLD bool $isValidAuxValue(int auxValue) const;
-
-
     // NOLINTEND
 
 public:

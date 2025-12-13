@@ -13,10 +13,13 @@ class IRepositoryFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IRepositoryFactory() = default;
 
+    // vIndex: 1
     virtual ::std::shared_ptr<::RepositorySources> createSources(::IResourcePackRepository const&) const = 0;
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::IPackIOProvider> createIO() const = 0;
     // NOLINTEND
 

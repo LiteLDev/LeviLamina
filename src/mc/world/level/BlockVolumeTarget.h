@@ -46,55 +46,80 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BlockVolumeTarget() /*override*/;
 
+    // vIndex: 4
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 5
     virtual ::Block const& getBlockNoBoundsCheck(::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 6
     virtual ::Block const& getExtraBlock(::BlockPos const&) const /*override*/;
 
+    // vIndex: 3
     virtual ::Block const* tryGetLiquidBlock(::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 7
     virtual ::gsl::span<::BlockDataFetchResult<::Block> const>
     fetchBlocksInBox(::BoundingBox const&, ::std::function<bool(::Block const&)>) /*override*/;
 
+    // vIndex: 8
     virtual bool hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 9
     virtual bool setBlock(::BlockPos const& pos, ::Block const& newBlock, int) /*override*/;
 
+    // vIndex: 10
     virtual bool setBlockSimple(::BlockPos const& pos, ::Block const& block) /*override*/;
 
+    // vIndex: 11
     virtual bool apply() const /*override*/;
 
+    // vIndex: 12
     virtual bool placeStructure(::BlockPos const&, ::StructureTemplate&, ::StructureSettings&) /*override*/;
 
+    // vIndex: 13
     virtual bool mayPlace(::BlockPos const&, ::Block const&) const /*override*/;
 
+    // vIndex: 14
     virtual bool canSurvive(::BlockPos const&, ::Block const&) const /*override*/;
 
+    // vIndex: 15
     virtual bool canBeBuiltOver(::BlockPos const&, ::Block const&) const /*override*/;
 
+    // vIndex: 16
     virtual short getMaxHeight() const /*override*/;
 
+    // vIndex: 17
     virtual short getMinHeight() const /*override*/;
 
+    // vIndex: 18
     virtual bool shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const /*override*/;
 
+    // vIndex: 19
     virtual short getHeightmap(int x, int z) /*override*/;
 
+    // vIndex: 20
     virtual bool isLegacyLevel() /*override*/;
 
+    // vIndex: 21
     virtual ::Biome const* getBiome(::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 22
     virtual bool isInBounds(::Pos const& pos) const /*override*/;
 
+    // vIndex: 23
     virtual short getLocalWaterLevel(::BlockPos const&) const /*override*/;
 
+    // vIndex: 24
     virtual ::LevelData const& getLevelData() const /*override*/;
 
+    // vIndex: 25
     virtual ::WorldGenContext const& getContext() /*override*/;
 
+    // vIndex: 26
     virtual void disableBlockSimple() /*override*/;
     // NOLINTEND
 
@@ -155,8 +180,6 @@ public:
     MCFOLD ::WorldGenContext const& $getContext();
 
     MCFOLD void $disableBlockSimple();
-
-
     // NOLINTEND
 
 public:

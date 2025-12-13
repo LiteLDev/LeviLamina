@@ -23,53 +23,6 @@ public:
     // clang-format on
 
     // AudioReceiveStreamInterface inner types define
-    struct Config {
-    public:
-        // Config inner types declare
-        // clang-format off
-        struct Rtp;
-        // clang-format on
-
-        // Config inner types define
-        struct Rtp : public ::webrtc::ReceiveStreamInterface::ReceiveStreamRtpConfig {
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::UntypedStorage<4, 4> mUnkba2619;
-            // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            Rtp& operator=(Rtp const&);
-            Rtp(Rtp const&);
-            Rtp();
-        };
-
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk34be58;
-        ::ll::UntypedStorage<1, 1>  mUnk64629b;
-        ::ll::UntypedStorage<8, 8>  mUnk8cd4b6;
-        ::ll::UntypedStorage<8, 8>  mUnk37c9d4;
-        ::ll::UntypedStorage<1, 1>  mUnk7aa421;
-        ::ll::UntypedStorage<4, 4>  mUnk33f5bd;
-        ::ll::UntypedStorage<8, 32> mUnke6da72;
-        ::ll::UntypedStorage<8, 16> mUnk6d2910;
-        ::ll::UntypedStorage<8, 8>  mUnk512466;
-        ::ll::UntypedStorage<8, 16> mUnk9d307f;
-        ::ll::UntypedStorage<1, 5>  mUnk2ed8d5;
-        ::ll::UntypedStorage<8, 8>  mUnka5a032;
-        ::ll::UntypedStorage<8, 8>  mUnkff47e7;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Config& operator=(Config const&);
-        Config(Config const&);
-        Config();
-    };
-
     struct Stats {
     public:
         // member variables
@@ -141,29 +94,87 @@ public:
         Stats();
     };
 
+    struct Config {
+    public:
+        // Config inner types declare
+        // clang-format off
+        struct Rtp;
+        // clang-format on
+
+        // Config inner types define
+        struct Rtp : public ::webrtc::ReceiveStreamInterface::ReceiveStreamRtpConfig {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::UntypedStorage<4, 4> mUnkba2619;
+            // NOLINTEND
+
+        public:
+            // prevent constructor by default
+            Rtp& operator=(Rtp const&);
+            Rtp(Rtp const&);
+            Rtp();
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnk34be58;
+        ::ll::UntypedStorage<1, 1>  mUnk64629b;
+        ::ll::UntypedStorage<8, 8>  mUnk8cd4b6;
+        ::ll::UntypedStorage<8, 8>  mUnk37c9d4;
+        ::ll::UntypedStorage<1, 1>  mUnk7aa421;
+        ::ll::UntypedStorage<4, 4>  mUnk33f5bd;
+        ::ll::UntypedStorage<8, 32> mUnke6da72;
+        ::ll::UntypedStorage<8, 16> mUnk6d2910;
+        ::ll::UntypedStorage<8, 8>  mUnk512466;
+        ::ll::UntypedStorage<8, 16> mUnk9d307f;
+        ::ll::UntypedStorage<1, 5>  mUnk2ed8d5;
+        ::ll::UntypedStorage<8, 8>  mUnka5a032;
+        ::ll::UntypedStorage<8, 8>  mUnkff47e7;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Config& operator=(Config const&);
+        Config(Config const&);
+        Config();
+    };
+
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual void SetDecoderMap(::std::map<int, ::webrtc::SdpAudioFormat>) = 0;
 
+    // vIndex: 7
     virtual void SetNackHistory(int) = 0;
 
+    // vIndex: 8
     virtual void SetNonSenderRttMeasurement(bool) = 0;
 
+    // vIndex: 9
     virtual bool IsRunning() const = 0;
 
+    // vIndex: 10
     virtual ::webrtc::AudioReceiveStreamInterface::Stats GetStats(bool) const = 0;
 
+    // vIndex: 11
     virtual void SetSink(::webrtc::AudioSinkInterface*) = 0;
 
+    // vIndex: 12
     virtual void SetGain(float) = 0;
 
+    // vIndex: 13
     virtual bool SetBaseMinimumPlayoutDelayMs(int) = 0;
 
+    // vIndex: 14
     virtual int GetBaseMinimumPlayoutDelayMs() const = 0;
 
+    // vIndex: 15
     virtual uint remote_ssrc() const = 0;
 
+    // vIndex: 0
     virtual ~AudioReceiveStreamInterface() /*override*/ = default;
     // NOLINTEND
 

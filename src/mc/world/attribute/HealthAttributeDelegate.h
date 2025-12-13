@@ -24,14 +24,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context) /*override*/;
 
+    // vIndex: 3
     virtual bool willChange(float oldValue, float newValue, ::AttributeBuff const& buff) /*override*/;
 
+    // vIndex: 4
     virtual float change(float oldValue, float newValue, ::AttributeBuff const& buff) /*override*/;
 
+    // vIndex: 5
     virtual float getBuffValueWithModifiers(::AttributeBuff const& buff) const /*override*/;
 
+    // vIndex: 0
     virtual ~HealthAttributeDelegate() /*override*/ = default;
     // NOLINTEND
 
@@ -45,8 +50,6 @@ public:
     MCAPI float $change(float oldValue, float newValue, ::AttributeBuff const& buff);
 
     MCAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
-
-
     // NOLINTEND
 
 public:

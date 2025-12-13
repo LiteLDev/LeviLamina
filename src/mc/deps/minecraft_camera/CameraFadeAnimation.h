@@ -38,14 +38,4 @@ public:
     CameraFadeAnimation& operator=(CameraFadeAnimation const&);
     CameraFadeAnimation(CameraFadeAnimation const&);
     CameraFadeAnimation();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void _addKeyframe(float time, float value);
-
-    MCNAPI_C void addFade(float inTime, float requestedHoldTime, float outTime, float targetAlpha);
-
-    MCNAPI_C float evaluate(float time) const;
-    // NOLINTEND
 };

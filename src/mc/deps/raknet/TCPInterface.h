@@ -73,10 +73,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TCPInterface();
 
+    // vIndex: 1
     virtual void Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast);
 
+    // vIndex: 2
     virtual bool SendList(
         char const**                   data,
         uint const*                    lengths,
@@ -85,10 +88,13 @@ public:
         bool                           broadcast
     );
 
+    // vIndex: 3
     virtual bool ReceiveHasPackets();
 
+    // vIndex: 4
     virtual ::RakNet::Packet* Receive();
 
+    // vIndex: 5
     virtual void PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
     // NOLINTEND
 
@@ -161,8 +167,6 @@ public:
     MCAPI ::RakNet::Packet* $Receive();
 
     MCAPI void $PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
-
-
     // NOLINTEND
 
 public:

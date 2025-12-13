@@ -2,45 +2,38 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/Block.h"
-
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
 class IBlockWorldGenAPI;
 class Random;
+class SculkChargeCursor;
 // clang-format on
 
 class SculkSpreader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk12233c;
-    ::ll::UntypedStorage<4, 4>  mUnk794889;
-    ::ll::UntypedStorage<4, 4>  mUnkded1eb;
-    ::ll::UntypedStorage<4, 4>  mUnk7ef054;
-    ::ll::UntypedStorage<4, 4>  mUnkf04999;
-    ::ll::UntypedStorage<8, 24> mUnka74eae;
-    ::ll::UntypedStorage<8, 16> mUnk4093a2;
+    ::ll::TypedStorage<1, 1, bool>                                mIsWorldGen;
+    ::ll::TypedStorage<4, 4, int>                                 mGrowthSpawnCost;
+    ::ll::TypedStorage<4, 4, int>                                 mNoGrowthRadius;
+    ::ll::TypedStorage<4, 4, int>                                 mChargeDecayRate;
+    ::ll::TypedStorage<4, 4, int>                                 mAdditionalDecayRate;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SculkChargeCursor>> mCursors;
+    ::ll::TypedStorage<8, 16, ::std::set<::Block const*>>         mSculkReplaceableBlocks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SculkSpreader& operator=(SculkSpreader const&);
-    SculkSpreader(SculkSpreader const&);
-    SculkSpreader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addCursors(::BlockPos const& pos, int charge);
+    MCAPI void addCursors(::BlockPos const& pos, int charge);
 
-    MCNAPI void save(::CompoundTag& tag) const;
+    MCAPI void save(::CompoundTag& tag) const;
 
-    MCNAPI void updateCursors(
+    MCAPI void updateCursors(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::BlockPos const&    originPos,
@@ -48,12 +41,12 @@ public:
         bool                 spreadVeins
     );
 
-    MCNAPI ~SculkSpreader();
+    MCAPI ~SculkSpreader();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

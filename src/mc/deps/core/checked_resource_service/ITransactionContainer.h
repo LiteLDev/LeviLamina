@@ -13,31 +13,17 @@ struct ITransactionContainer {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~ITransactionContainer() = default;
-#else // LL_PLAT_C
-    virtual ~ITransactionContainer();
-#endif
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::mce::IDeferredDebugUpdate> apply() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

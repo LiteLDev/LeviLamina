@@ -7,16 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
-struct PDFOptions;
 struct PDFError;
+struct PDFOptions;
 // clang-format on
 
 class PDFWriterWindows : public ::PDFWriter {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual void exportImagesToAlbum(::PDFOptions, ::std::function<void(::std::optional<::PDFError>)>) /*override*/;
 
+    // vIndex: 1
     virtual ~PDFWriterWindows() /*override*/ = default;
     // NOLINTEND
 

@@ -25,16 +25,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CompressedNetworkPeer() /*override*/ = default;
 
+    // vIndex: 1
     virtual void sendPacket(
         ::std::string const&       data,
         ::NetworkPeer::Reliability reliability,
         ::Compressibility          compressible
     ) /*override*/;
 
+    // vIndex: 2
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
+    // vIndex: 7
     virtual ::NetworkPeer::DataStatus _receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
@@ -65,8 +69,6 @@ public:
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );
-
-
     // NOLINTEND
 
 public:

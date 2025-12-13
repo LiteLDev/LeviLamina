@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 struct MessageItemData {
 public:
     // member variables
@@ -18,28 +13,7 @@ public:
 
 public:
     // prevent constructor by default
+    MessageItemData& operator=(MessageItemData const&);
     MessageItemData(MessageItemData const&);
     MessageItemData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit MessageItemData(::Json::Value const& json);
-
-    MCNAPI_C ::MessageItemData& operator=(::MessageItemData const&);
-
-    MCNAPI_C ~MessageItemData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Json::Value const& json);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

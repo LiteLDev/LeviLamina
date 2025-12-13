@@ -28,22 +28,6 @@ public:
     DeferredTask& operator=(DeferredTask const&);
     DeferredTask(DeferredTask const&);
     DeferredTask();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C DeferredTask(::std::function<void()> const& callback, bool canSkipExecution);
-
-    MCNAPI_C bool tryExecute();
-
-    MCNAPI_C bool wait(::std::chrono::nanoseconds const& duration) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::function<void()> const& callback, bool canSkipExecution);
-    // NOLINTEND
 };
 
 } // namespace Core

@@ -144,36 +144,52 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ServerInstance() /*override*/;
 
+    // vIndex: 19
     virtual void onLowMemory(::LowMemorySeverity) /*override*/;
 
+    // vIndex: 1
     virtual void onLevelCorrupt() /*override*/;
 
+    // vIndex: 2
     virtual void onCriticalScriptError(char const* clientDisconnectMessage, char const* logMessage) /*override*/;
 
+    // vIndex: 3
     virtual void onGameModeChanged() /*override*/;
 
+    // vIndex: 5
     virtual void onTick(int nTick, int maxTick) /*override*/;
 
+    // vIndex: 6
     virtual void onInternetUpdate() /*override*/;
 
+    // vIndex: 7
     virtual void onGameSessionReset() /*override*/;
 
+    // vIndex: 8
     virtual void onLevelExit() /*override*/;
 
+    // vIndex: 9
     virtual void onRequestResourceReload() /*override*/;
 
+    // vIndex: 2
     virtual void onLowDiskSpace(bool const bSet) /*override*/;
 
+    // vIndex: 3
     virtual void onOutOfDiskSpace(bool const bSet) /*override*/;
 
+    // vIndex: 4
     virtual void onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode) /*override*/;
 
+    // vIndex: 4
     virtual void onAppSuspended() /*override*/;
 
+    // vIndex: 5
     virtual void onAppResumed() /*override*/;
 
+    // vIndex: 10
     virtual void updateScreens() /*override*/;
     // NOLINTEND
 
@@ -185,8 +201,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ServerInstanceEventCoordinator> const& coordinator
     );
 
-    MCAPI_C void _finishLoadingLinkedAssets(::ResourcePackManager& rpm);
-
     MCAPI void _resetServerScriptManager();
 
     MCAPI void _shutdownStorage(::Bedrock::UniqueOwnerPointer<::LevelStorage>& storage);
@@ -197,7 +211,7 @@ public:
 
     MCAPI void disconnectAllClientsWithMessage(::std::string msg);
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> getEditorManager() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> getEditorManager() const;
 
     MCAPI ::ItemRegistryRef getServerItemRegistry() const;
 
@@ -259,24 +273,22 @@ public:
         ::brstd::move_only_function<bool() const>                                    shouldDisableNetworkOnSuspend
     );
 
-    MCAPI_S void leaveGameSync();
+    MCAPI void leaveGameSync();
 
     MCAPI void queueForServerThread(::std::function<void()> command);
 
-    MCAPI_S void setScriptWatchdogCriticalErrorCallback(::std::function<void(char const*)> criticalErrorCallback);
+    MCAPI void setScriptWatchdogCriticalErrorCallback(::std::function<void(char const*)> criticalErrorCallback);
 
-    MCAPI_S void
+    MCAPI void
     setUnrecoverableErrorCallback(::std::function<void(char const*, char const*)> unrecoverableErrorCallback);
 
-    MCAPI_C void startLeaveGame();
-
-    MCAPI_S void startServerThread();
+    MCAPI void startServerThread();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_S static bool forceOffClientChunkGeneration(::LevelData& levelData);
+    MCAPI static bool forceOffClientChunkGeneration(::LevelData& levelData);
     // NOLINTEND
 
 public:
@@ -328,8 +340,6 @@ public:
     MCAPI void $onAppResumed();
 
     MCFOLD void $updateScreens();
-
-
     // NOLINTEND
 
 public:

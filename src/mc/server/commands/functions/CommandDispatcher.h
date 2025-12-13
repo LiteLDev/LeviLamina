@@ -15,8 +15,10 @@ class CommandDispatcher : public ::ICommandDispatcher {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CommandDispatcher() /*override*/ = default;
 
+    // vIndex: 1
     virtual int performCommand(::CommandOrigin const& origin, ::Command& command) /*override*/;
     // NOLINTEND
 
@@ -24,8 +26,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI int $performCommand(::CommandOrigin const& origin, ::Command& command);
-
-
     // NOLINTEND
 
 public:

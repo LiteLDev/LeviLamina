@@ -9,6 +9,7 @@ class PhotoItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PhotoItem() /*override*/ = default;
     // NOLINTEND
 

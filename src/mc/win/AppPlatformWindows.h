@@ -3,16 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/deps/application/AppPlatform.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/MPMCQueue.h"
 
 // auto generated forward declare list
 // clang-format off
-class PDFWriter;
 namespace Core { class Path; }
-namespace Social { struct MultiplayerService; }
 // clang-format on
 
 class AppPlatformWindows : public ::AppPlatform {
@@ -28,87 +25,82 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AppPlatformWindows& operator=(AppPlatformWindows const&);
+    AppPlatformWindows(AppPlatformWindows const&);
+    AppPlatformWindows();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    virtual ::std::string getSystemLocale() const /*override*/;
-
-    virtual void collectGraphicsHardwareDetails() /*override*/;
-
-    virtual bool supportsMSAA() const /*override*/;
-
-#endif
+    // vIndex: 29
     virtual uint64 getTotalHardwareThreadsCount() const /*override*/;
 
+    // vIndex: 28
     virtual uint64 getHighPerformanceThreadsCount() const /*override*/;
 
+    // vIndex: 30
     virtual void initializeGraphicsDeviceTier() /*override*/;
 
+    // vIndex: 240
     virtual ::Core::PathBuffer<::std::string> getPlatformTempPath() const /*override*/;
 
+    // vIndex: 69
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
+    // vIndex: 175
     virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const& rootPath) /*override*/;
 
+    // vIndex: 80
     virtual bool allowContentLogWriteToDisk() /*override*/;
 
+    // vIndex: 178
     virtual bool devHotReloadRenderResources() const /*override*/;
 
+    // vIndex: 82
     virtual void queueForMainThread_DEPRECATED(::std::function<void()> callback) /*override*/;
 
+    // vIndex: 83
     virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() /*override*/;
 
-#ifdef LL_PLAT_C
-    virtual bool supportsAlbumExport() const /*override*/;
-
-    virtual bool supportsPDFExport() const /*override*/;
-
-    virtual ::std::shared_ptr<::PDFWriter> createPlatformPDFWriter() /*override*/;
-
-    virtual ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> getMultiplayerServiceListToRegister() const
-        /*override*/;
-
-    virtual ::std::vector<::Social::MultiplayerServiceIdentifier>
-    getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const /*override*/;
-
-    virtual bool isTablet() const /*override*/;
-
-    virtual double getTimeSFromProcessStart() const /*override*/;
-
-#endif
+    // vIndex: 209
     virtual bool canAppSelfTerminate() const /*override*/;
 
+    // vIndex: 210
     virtual bool getPlatformTTSExists() const /*override*/;
 
+    // vIndex: 211
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
+    // vIndex: 71
     virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const
         /*override*/;
 
-#ifdef LL_PLAT_C
-    virtual void showXboxLiveUserSettings() /*override*/;
-
-#endif
+    // vIndex: 228
     virtual bool is24HourTimeFormat() const /*override*/;
 
+    // vIndex: 230
     virtual ::Core::PathBuffer<::std::string> _getCurrentStoragePath() const /*override*/;
 
+    // vIndex: 231
     virtual ::Core::PathBuffer<::std::string> _getExternalStoragePath() const /*override*/;
 
+    // vIndex: 232
     virtual ::Core::PathBuffer<::std::string> _getInternalStoragePath() const /*override*/;
 
+    // vIndex: 233
     virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const /*override*/;
 
+    // vIndex: 49
     virtual ::Core::PathBuffer<::std::string> getPackagedShaderCachePath() /*override*/;
 
+    // vIndex: 0
     virtual ~AppPlatformWindows() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C AppPlatformWindows();
-
     MCNAPI uint64 _findHighPerformanceThreadsCount() const;
     // NOLINTEND
 
@@ -116,12 +108,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& EXPERIMENTS_ACTIVE_KEY();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
     // NOLINTEND
 
 public:
@@ -172,33 +158,6 @@ public:
     MCNAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
 
     MCNAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
-
-#ifdef LL_PLAT_C
-    MCNAPI ::std::string $getSystemLocale() const;
-
-    MCNAPI void $collectGraphicsHardwareDetails();
-
-    MCNAPI bool $supportsMSAA() const;
-
-    MCNAPI bool $supportsAlbumExport() const;
-
-    MCNAPI bool $supportsPDFExport() const;
-
-    MCNAPI ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
-
-    MCNAPI ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> $getMultiplayerServiceListToRegister() const;
-
-    MCNAPI ::std::vector<::Social::MultiplayerServiceIdentifier>
-    $getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const;
-
-    MCNAPI bool $isTablet() const;
-
-    MCNAPI double $getTimeSFromProcessStart() const;
-
-    MCNAPI void $showXboxLiveUserSettings();
-#endif
-
-
     // NOLINTEND
 
 public:

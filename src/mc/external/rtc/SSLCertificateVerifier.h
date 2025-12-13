@@ -13,8 +13,10 @@ class SSLCertificateVerifier {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SSLCertificateVerifier() = default;
 
+    // vIndex: 1
     virtual bool Verify(::rtc::SSLCertificate const&) = 0;
     // NOLINTEND
 

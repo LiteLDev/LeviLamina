@@ -2,11 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/Difficulty.h"
+
 // auto generated forward declare list
 // clang-format off
+class BlockDescriptor;
 class BlockSource;
 class IRandom;
 class MobSpawnerData;
+class MobSpawnerPermutation;
 class Random;
 class SpawnConditions;
 struct ActorDefinitionIdentifier;
@@ -15,96 +20,101 @@ struct MobSpawnHerdInfo;
 
 class MobSpawnRules {
 public:
+    // MobSpawnRules inner types define
+    using OnGetSpawnCountCallback =
+        ::std::function<int(::SpawnConditions const&, ::BlockSource&, ::Random&, ::MobSpawnerData const&)>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk9c06bc;
-    ::ll::UntypedStorage<4, 4>  mUnkd8718f;
-    ::ll::UntypedStorage<4, 4>  mUnk10240b;
-    ::ll::UntypedStorage<4, 4>  mUnk8c1335;
-    ::ll::UntypedStorage<4, 4>  mUnk8e1387;
-    ::ll::UntypedStorage<1, 1>  mUnk6eb12e;
-    ::ll::UntypedStorage<4, 4>  mUnkf7398d;
-    ::ll::UntypedStorage<4, 4>  mUnk3309d0;
-    ::ll::UntypedStorage<4, 4>  mUnk1e8675;
-    ::ll::UntypedStorage<4, 4>  mUnk3ade4e;
-    ::ll::UntypedStorage<4, 4>  mUnk75c012;
-    ::ll::UntypedStorage<4, 4>  mUnkb7ca7e;
-    ::ll::UntypedStorage<4, 4>  mUnk64e3da;
-    ::ll::UntypedStorage<4, 4>  mUnk8fd342;
-    ::ll::UntypedStorage<4, 4>  mUnke5872a;
-    ::ll::UntypedStorage<4, 4>  mUnk6e66eb;
-    ::ll::UntypedStorage<1, 1>  mUnk2563fa;
-    ::ll::UntypedStorage<1, 1>  mUnk6bd693;
-    ::ll::UntypedStorage<1, 1>  mUnkef850c;
-    ::ll::UntypedStorage<1, 1>  mUnkab1106;
-    ::ll::UntypedStorage<1, 1>  mUnk7ef38d;
-    ::ll::UntypedStorage<4, 4>  mUnk72fc26;
-    ::ll::UntypedStorage<4, 4>  mUnk46f75e;
-    ::ll::UntypedStorage<1, 1>  mUnk18ecd0;
-    ::ll::UntypedStorage<8, 8>  mUnka90688;
-    ::ll::UntypedStorage<8, 8>  mUnke11f7c;
-    ::ll::UntypedStorage<4, 4>  mUnk7ca176;
-    ::ll::UntypedStorage<4, 4>  mUnk371bf6;
-    ::ll::UntypedStorage<8, 24> mUnk3c801b;
-    ::ll::UntypedStorage<8, 24> mUnkeb5390;
-    ::ll::UntypedStorage<8, 32> mUnk90cf78;
-    ::ll::UntypedStorage<8, 24> mUnk4d674b;
-    ::ll::UntypedStorage<8, 24> mUnk3ece83;
-    ::ll::UntypedStorage<8, 24> mUnk1d4d01;
-    ::ll::UntypedStorage<4, 4>  mUnk45133a;
-    ::ll::UntypedStorage<8, 24> mUnk87ca41;
-    ::ll::UntypedStorage<8, 32> mUnkf0a3ab;
-    ::ll::UntypedStorage<4, 4>  mUnkda3621;
-    ::ll::UntypedStorage<1, 1>  mUnkf5d9fe;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::SpawnConditions const&, ::BlockSource&)>> mHardcodedCallbackRule;
+    ::ll::TypedStorage<4, 4, int>                                                              mMinBrightness;
+    ::ll::TypedStorage<4, 4, int>                                                              mMaxBrightness;
+    ::ll::TypedStorage<4, 4, float>                                                            mMinMoonBrightness;
+    ::ll::TypedStorage<4, 4, float>                                                            mMaxMoonBrightness;
+    ::ll::TypedStorage<1, 1, bool>                                                             mAdjustForWeather;
+    ::ll::TypedStorage<4, 4, int>                                                              mMinHeight;
+    ::ll::TypedStorage<4, 4, int>                                                              mMaxHeight;
+    ::ll::TypedStorage<4, 4, int>                                                              mRarity;
+    ::ll::TypedStorage<4, 4, int>                                                              mSurfaceCap;
+    ::ll::TypedStorage<4, 4, int>                                                              mUndergroundCap;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::Difficulty>                                mMinDifficulty;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::Difficulty>                                mMaxDifficulty;
+    ::ll::TypedStorage<4, 4, int>                                                              mMinSpawnDistance;
+    ::ll::TypedStorage<4, 4, int>                                                              mMaxSpawnDistance;
+    ::ll::TypedStorage<4, 4, int>                                                              mSpawnDistanceCap;
+    ::ll::TypedStorage<1, 1, bool>                                                             mSurfaceSpawner;
+    ::ll::TypedStorage<1, 1, bool>                                                             mUndergroundSpawner;
+    ::ll::TypedStorage<1, 1, bool>                                                             mWaterSpawner;
+    ::ll::TypedStorage<1, 1, bool>                                                             mBubbleSpawner;
+    ::ll::TypedStorage<1, 1, bool>                                                             mLavaSpawner;
+    ::ll::TypedStorage<4, 4, uint>                                                             mPlayerInVillageDistance;
+    ::ll::TypedStorage<4, 4, uint>                                    mPlayerInVillageBorderTolerance;
+    ::ll::TypedStorage<1, 1, bool>                                    mExperimentalSpawner;
+    ::ll::TypedStorage<8, 8, uint64>                                  mMinWorldAge;
+    ::ll::TypedStorage<8, 8, uint64>                                  mMaxWorldAge;
+    ::ll::TypedStorage<4, 4, int>                                     mMinDelay;
+    ::ll::TypedStorage<4, 4, int>                                     mMaxDelay;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobSpawnHerdInfo>>      mHerdList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobSpawnerPermutation>> mPermutationList;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mMobEventName;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>>       mSpawnOnBlockList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>>       mSpawnAboveBlockList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>>       mSpawnOnBlockPreventedList;
+    ::ll::TypedStorage<4, 4, int>                                     mAboveBlockDistance;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobSpawnerPermutation>> mGuaranteedList;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mMobToDelayId;
+    ::ll::TypedStorage<4, 4, int>                                     mDelaySpawnChance;
+    ::ll::TypedStorage<1, 1, bool>                                    mPersistence;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MobSpawnRules();
+    MCAPI MobSpawnRules();
 
-    MCNAPI MobSpawnRules(::MobSpawnRules&&);
+    MCAPI MobSpawnRules(::MobSpawnRules&&);
 
-    MCNAPI MobSpawnRules(::MobSpawnRules const&);
+    MCAPI MobSpawnRules(::MobSpawnRules const&);
 
-    MCNAPI ::MobSpawnRules& addPermutation(int weight, int guaranteedCount, ::ActorDefinitionIdentifier const& id);
+    MCAPI ::MobSpawnRules& addPermutation(int weight, int guaranteedCount, ::ActorDefinitionIdentifier const& id);
 
-    MCNAPI bool canSpawnInConditions(::SpawnConditions const& conditions, ::BlockSource& region) const;
+    MCAPI bool canSpawnInConditions(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
-    MCNAPI ::MobSpawnRules& operator=(::MobSpawnRules&&);
+    MCAPI ::MobSpawnRules& operator=(::MobSpawnRules&&);
 
-    MCNAPI ::MobSpawnRules& operator=(::MobSpawnRules const&);
+    MCAPI ::MobSpawnRules& operator=(::MobSpawnRules const&);
 
-    MCNAPI ::MobSpawnHerdInfo const& selectRandomHerd(::IRandom& random) const;
+    MCAPI ::MobSpawnHerdInfo const& selectRandomHerd(::IRandom& random) const;
 
-    MCNAPI ~MobSpawnRules();
+    MCAPI ~MobSpawnRules();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static int const& LOW_END_MAX_SPAWN_DISTANCE();
+    MCAPI static int const& LOW_END_MAX_SPAWN_DISTANCE();
 
-    MCNAPI static int const& MAX_DEFAULT_SPAWN_DISTANCE();
+    MCAPI static int const& MAX_DEFAULT_SPAWN_DISTANCE();
 
-    MCNAPI static uint64 const& MAX_WORLD_AGE();
+    MCAPI static uint64 const& MAX_WORLD_AGE();
 
-    MCNAPI static int const& MIN_DEFAULT_SPAWN_DISTANCE();
+    MCAPI static int const& MIN_DEFAULT_SPAWN_DISTANCE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::MobSpawnRules&&);
+    MCAPI void* $ctor(::MobSpawnRules&&);
 
-    MCNAPI void* $ctor(::MobSpawnRules const&);
+    MCAPI void* $ctor(::MobSpawnRules const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

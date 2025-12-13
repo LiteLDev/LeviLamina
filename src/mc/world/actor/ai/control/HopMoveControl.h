@@ -22,22 +22,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
 
+    // vIndex: 3
     virtual void
     setWantedPosition(::MoveControlComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed) /*override*/;
 
+    // vIndex: 0
     virtual ~HopMoveControl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 
-    MCNAPI void $setWantedPosition(::MoveControlComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed);
-
-
+    MCAPI void $setWantedPosition(::MoveControlComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed);
     // NOLINTEND
 
 public:

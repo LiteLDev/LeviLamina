@@ -19,24 +19,34 @@ class IContext : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IContext() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::NetherNet::RtcThreadManager const& getSignalThread() const = 0;
 
+    // vIndex: 2
     virtual ::NetherNet::RtcThreadManager const& getNetworkThread() const = 0;
 
+    // vIndex: 3
     virtual ::NetherNet::RtcThreadManager const& getWorkerThread() const = 0;
 
+    // vIndex: 4
     virtual ::NetherNet::ILanDiscovery& getLanDiscovery() = 0;
 
+    // vIndex: 5
     virtual void onSuspend() = 0;
 
+    // vIndex: 6
     virtual void onResume() = 0;
 
+    // vIndex: 7
     virtual ::NetherNet::GlobalConfiguration const& getGlobalConfig() const = 0;
 
+    // vIndex: 8
     virtual void _logMessage(::NetherNet::LogSeverity, char const*, char*) const = 0;
 
+    // vIndex: 9
     virtual void setLoggingLevel(::NetherNet::LogSeverity) = 0;
     // NOLINTEND
 

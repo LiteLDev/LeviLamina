@@ -9,26 +9,37 @@ class IDataInput {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IDataInput() = default;
 
+    // vIndex: 1
     virtual ::Bedrock::Result<::std::string> readStringResult() = 0;
 
+    // vIndex: 2
     virtual ::Bedrock::Result<::std::string> readLongStringResult() = 0;
 
+    // vIndex: 3
     virtual ::Bedrock::Result<float> readFloatResult() = 0;
 
+    // vIndex: 4
     virtual ::Bedrock::Result<double> readDoubleResult() = 0;
 
+    // vIndex: 5
     virtual ::Bedrock::Result<uchar> readByteResult() = 0;
 
+    // vIndex: 6
     virtual ::Bedrock::Result<short> readShortResult() = 0;
 
+    // vIndex: 7
     virtual ::Bedrock::Result<int> readIntResult() = 0;
 
+    // vIndex: 8
     virtual ::Bedrock::Result<int64> readLongLongResult() = 0;
 
+    // vIndex: 9
     virtual ::Bedrock::Result<void> readBytesResult(void*, uint64) = 0;
 
+    // vIndex: 10
     virtual uint64 numBytesLeft() const = 0;
     // NOLINTEND
 

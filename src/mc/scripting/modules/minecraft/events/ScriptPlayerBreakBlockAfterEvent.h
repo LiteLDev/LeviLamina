@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 // auto generated forward declare list
@@ -11,6 +12,9 @@ class Block;
 class BlockPos;
 class ItemStackBase;
 class Player;
+namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -21,10 +25,19 @@ struct ScriptPlayerBreakBlockAfterEvent : public ::ScriptModuleMinecraft::Script
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnka28136;
-    ::ll::UntypedStorage<8, 32> mUnk4947a8;
-    ::ll::UntypedStorage<8, 40> mUnka29e34;
-    ::ll::UntypedStorage<8, 40> mUnk4f7293;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayer;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
+        mBrokenBlockPermutation;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+        mAfterBreakItemStack;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+        mBeforeBreakItemStack;
     // NOLINTEND
 
 public:
@@ -35,11 +48,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPlayerBreakBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
+    MCAPI ScriptPlayerBreakBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
 
-    MCNAPI ScriptPlayerBreakBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
+    MCAPI ScriptPlayerBreakBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
 
-    MCNAPI ScriptPlayerBreakBlockAfterEvent(
+    MCAPI ScriptPlayerBreakBlockAfterEvent(
         ::Player&                             player,
         ::BlockPos const&                     pos,
         ::Block const&                        destroyedBlock,
@@ -48,23 +61,23 @@ public:
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCNAPI ~ScriptPlayerBreakBlockAfterEvent();
+    MCAPI ~ScriptPlayerBreakBlockAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Player&                             player,
         ::BlockPos const&                     pos,
         ::Block const&                        destroyedBlock,
@@ -77,7 +90,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

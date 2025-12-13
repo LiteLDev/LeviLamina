@@ -27,7 +27,6 @@ class Vec2;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorFactoryData;
-struct ActorInfo;
 struct VanillaActorData;
 // clang-format on
 
@@ -52,6 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ActorFactory();
     // NOLINTEND
 
@@ -121,8 +121,6 @@ public:
     MCAPI ::OwnerPtr<::EntityContext>
     createTransformedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* from);
 
-    MCAPI_C void digestIdentifierListFromServer(::std::vector<::ActorInfo> const& identifierList);
-
     MCAPI void init(::Experiments const& experiments);
 
     MCAPI ::OwnerPtr<::EntityContext> loadActor(
@@ -133,8 +131,6 @@ public:
     );
 
     MCAPI ::ActorType lookupEntityType(::ActorDefinitionIdentifier const& identifier) const;
-
-    MCAPI_C void setEntityInitializer(::std::shared_ptr<::IEntityInitializer> entityInitializer);
     // NOLINTEND
 
 public:

@@ -2,28 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ITreeCanopy;
+// clang-format on
+
 class ITreeCanopyWrapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb352c6;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ITreeCanopy>> mPtr;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ITreeCanopyWrapper& operator=(ITreeCanopyWrapper const&);
-    ITreeCanopyWrapper(ITreeCanopyWrapper const&);
-    ITreeCanopyWrapper();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ITreeCanopyWrapper();
+    MCAPI ~ITreeCanopyWrapper();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -26,31 +26,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual uint64 getMaxTickCount(uint64 const creditTicks, bool hasQueuedInput) const /*override*/;
 
+    // vIndex: 2
     virtual ::IPlayerTickPolicy::TickAction
     shouldTickPlayer(uint64 const creditTicks, uint64 unprocessedTicksSize) const /*override*/;
 
+    // vIndex: 3
     virtual bool isStrictMovement() const /*override*/;
 
+    // vIndex: 4
     virtual bool isStrictDismount() const /*override*/;
 
+    // vIndex: 0
     virtual ~ThrottledTickPolicy() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uint64 $getMaxTickCount(uint64 const creditTicks, bool hasQueuedInput) const;
+    MCAPI uint64 $getMaxTickCount(uint64 const creditTicks, bool hasQueuedInput) const;
 
-    MCNAPI ::IPlayerTickPolicy::TickAction
+    MCAPI ::IPlayerTickPolicy::TickAction
     $shouldTickPlayer(uint64 const creditTicks, uint64 unprocessedTicksSize) const;
 
-    MCNAPI bool $isStrictMovement() const;
+    MCFOLD bool $isStrictMovement() const;
 
-    MCNAPI bool $isStrictDismount() const;
-
-
+    MCFOLD bool $isStrictDismount() const;
     // NOLINTEND
 
 public:

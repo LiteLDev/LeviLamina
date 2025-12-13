@@ -28,8 +28,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::optional<::gametest::GameTestError> run() /*override*/;
 
+    // vIndex: 0
     virtual ~NativeFunctionGameTestAction() /*override*/ = default;
     // NOLINTEND
 
@@ -37,8 +39,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::optional<::gametest::GameTestError> $run();
-
-
     // NOLINTEND
 
 public:

@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/GameType.h"
+
 struct SetDefaultGameTypePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkadc8cc;
+    ::ll::TypedStorage<4, 4, ::GameType> mDefaultGameType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetDefaultGameTypePacketPayload& operator=(SetDefaultGameTypePacketPayload const&);
-    SetDefaultGameTypePacketPayload(SetDefaultGameTypePacketPayload const&);
-    SetDefaultGameTypePacketPayload();
 };

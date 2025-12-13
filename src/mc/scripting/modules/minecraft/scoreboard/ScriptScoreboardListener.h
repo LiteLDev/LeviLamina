@@ -29,10 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::EventResult onObjectiveRemoved(::std::string const& objective) /*override*/;
 
+    // vIndex: 3
     virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const& id) /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptScoreboardListener() /*override*/ = default;
     // NOLINTEND
 
@@ -42,8 +45,6 @@ public:
     MCNAPI ::EventResult $onObjectiveRemoved(::std::string const& objective);
 
     MCNAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
-
-
     // NOLINTEND
 
 public:

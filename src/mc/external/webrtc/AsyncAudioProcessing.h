@@ -33,6 +33,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 2
         virtual ~Factory() /*override*/ = default;
         // NOLINTEND
     };

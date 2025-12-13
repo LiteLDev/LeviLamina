@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 struct PlatformConfiguration {
 public:
     // PlatformConfiguration inner types declare
@@ -45,12 +40,6 @@ public:
             LODs& operator=(LODs const&);
             LODs(LODs const&);
             LODs();
-
-        public:
-            // static functions
-            // NOLINTBEGIN
-            MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
-            // NOLINTEND
         };
 
     public:
@@ -65,13 +54,6 @@ public:
         GraphicsQualityPreset& operator=(GraphicsQualityPreset const&);
         GraphicsQualityPreset(GraphicsQualityPreset const&);
         GraphicsQualityPreset();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ::PlatformConfiguration::GraphicsQualityPreset&
-        operator=(::PlatformConfiguration::GraphicsQualityPreset&&);
-        // NOLINTEND
     };
 
 public:
@@ -92,39 +74,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C PlatformConfiguration();
-
-    MCNAPI_C PlatformConfiguration(::PlatformConfiguration const&);
-
-    MCNAPI_C ::std::vector<::PlatformConfiguration::GraphicsQualityPreset> const&
-    getQualityPresetsForTier(::std::optional<::std::string_view> tier) const;
-
-    MCNAPI_C ::PlatformConfiguration& operator=(::PlatformConfiguration&&);
-
-    MCNAPI_C ::PlatformConfiguration& operator=(::PlatformConfiguration const&);
-
-    MCNAPI_C ~PlatformConfiguration();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::PlatformConfiguration const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+    // prevent constructor by default
+    PlatformConfiguration& operator=(PlatformConfiguration const&);
+    PlatformConfiguration(PlatformConfiguration const&);
+    PlatformConfiguration();
 };

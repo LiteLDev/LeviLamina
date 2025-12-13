@@ -14,8 +14,10 @@ class IOwnedConstBlockSource {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IOwnedConstBlockSource() = default;
 
+    // vIndex: 1
     virtual ::IConstBlockSource const* updateBlockSourceForEntity(::StrictEntityContext const&) = 0;
     // NOLINTEND
 

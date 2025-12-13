@@ -24,10 +24,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::webrtc::RtcEvent::Type GetType() const /*override*/;
 
+    // vIndex: 2
     virtual bool IsConfigEvent() const /*override*/;
 
+    // vIndex: 0
     virtual ~RtcEventRemoteEstimate() /*override*/ = default;
     // NOLINTEND
 
@@ -37,8 +40,6 @@ public:
     MCNAPI ::webrtc::RtcEvent::Type $GetType() const;
 
     MCNAPI bool $IsConfigEvent() const;
-
-
     // NOLINTEND
 
 public:

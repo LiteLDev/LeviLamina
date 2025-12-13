@@ -16,23 +16,20 @@ class ItemStackRequestActionBeaconPayment : public ::ItemStackRequestAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4d0b04;
-    ::ll::UntypedStorage<4, 4> mUnk2cb397;
+    ::ll::TypedStorage<4, 4, int> mPrimaryEffectId;
+    ::ll::TypedStorage<4, 4, int> mSecondaryEffectId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestActionBeaconPayment& operator=(ItemStackRequestActionBeaconPayment const&);
-    ItemStackRequestActionBeaconPayment(ItemStackRequestActionBeaconPayment const&);
-    ItemStackRequestActionBeaconPayment();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 5
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
     virtual ~ItemStackRequestActionBeaconPayment() /*override*/ = default;
     // NOLINTEND
 
@@ -42,8 +39,6 @@ public:
     MCNAPI void $_write(::BinaryStream& stream) const;
 
     MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

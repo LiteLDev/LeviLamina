@@ -13,35 +13,23 @@ class IUserDataObject {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~IUserDataObject() = default;
-#else // LL_PLAT_C
-    virtual ~IUserDataObject();
-#endif
 
+    // vIndex: 1
     virtual ::std::string const& getObjectName() const = 0;
 
+    // vIndex: 2
     virtual bool fillFromJSON(::Json::Value const&) = 0;
 
+    // vIndex: 3
     virtual ::Json::Value toJSONObject() const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

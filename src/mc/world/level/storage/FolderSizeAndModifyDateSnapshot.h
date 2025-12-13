@@ -49,9 +49,9 @@ public:
     // NOLINTBEGIN
     MCNAPI FolderSizeAndModifyDateSnapshot();
 
-    MCNAPI ::FolderSizeAndModifyDateSnapshot& operator=(::FolderSizeAndModifyDateSnapshot&&);
-
     MCNAPI ::FolderSizeAndModifyDateSnapshot& operator=(::FolderSizeAndModifyDateSnapshot const&);
+
+    MCNAPI ::FolderSizeAndModifyDateSnapshot& operator=(::FolderSizeAndModifyDateSnapshot&&);
 
     MCNAPI ~FolderSizeAndModifyDateSnapshot();
     // NOLINTEND

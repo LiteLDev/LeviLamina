@@ -32,23 +32,30 @@ class ShieldItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 95
     virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const
         /*override*/;
 
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
+    // vIndex: 54
     virtual bool isValidRepairItem(
         ::ItemStackBase const&   source,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const /*override*/;
 
+    // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
+    // vIndex: 105
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
+    // vIndex: 85
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
+    // vIndex: 101
     virtual ::InHandUpdateType getInHandUpdateType(
         ::Player const&    player,
         ::ItemStack const& oldItem,
@@ -57,23 +64,31 @@ public:
         bool const         slotChanged
     ) const /*override*/;
 
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
+    // vIndex: 81
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
 
+    // vIndex: 92
     virtual void
     readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const
         /*override*/;
 
+    // vIndex: 93
     virtual void writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const /*override*/;
 
+    // vIndex: 97
     virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
+    // vIndex: 98
     virtual int getCooldownDuration() const /*override*/;
 
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const /*override*/;
 
+    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -81,21 +96,14 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
+    // vIndex: 0
     virtual ~ShieldItem() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI_C static int const getBaseColor(::CompoundTag const* data);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static int const& EFFECTIVE_BLOCK_DELAY();
-
-    MCAPI_C static int const& NO_SHIELD_PATTERN();
 
     MCAPI static ::std::string const& TIMESTAMP_TAG();
     // NOLINTEND
@@ -148,8 +156,6 @@ public:
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
-
-
     // NOLINTEND
 
 public:

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { struct MeshDataVertexFieldCounts; }
-// clang-format on
-
 namespace mce {
 
 class MeshData {
@@ -30,40 +25,7 @@ public:
     // prevent constructor by default
     MeshData& operator=(MeshData const&);
     MeshData(MeshData const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C MeshData();
-
-    MCNAPI_C MeshData(::mce::MeshData&&);
-
-    MCNAPI_C void clear();
-
-    MCNAPI_C ::mce::MeshData clone() const;
-
-    MCNAPI_C void freeMemory();
-
-    MCNAPI_C ::mce::MeshDataVertexFieldCounts getVertexFieldCount() const;
-
-    MCNAPI_C ::mce::MeshData& operator=(::mce::MeshData&&);
-
-    MCNAPI_C ~MeshData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::mce::MeshData&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+    MeshData();
 };
 
 } // namespace mce

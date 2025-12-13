@@ -7,17 +7,20 @@
 
 // auto generated forward declare list
 // clang-format off
-struct AbstractScene;
+class AbstractScene;
 // clang-format on
 
 class UIEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~UIEventListener() = default;
 
+    // vIndex: 1
     virtual ::EventResult onPushedScreen(::AbstractScene&);
 
+    // vIndex: 2
     virtual ::EventResult onPoppedScreen(::AbstractScene&);
     // NOLINTEND
 

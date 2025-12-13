@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/identity/IdentitySignInTrigger.h"
-#include "mc/identity/IdentityType.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Social { struct MultiIdentitySigninResult; }
-// clang-format on
-
 namespace Social {
 
 struct UserSignInProperties {
@@ -30,40 +21,6 @@ public:
     UserSignInProperties& operator=(UserSignInProperties const&);
     UserSignInProperties(UserSignInProperties const&);
     UserSignInProperties();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C UserSignInProperties(
-        ::Social::IdentityType                                     identitySigningIn,
-        bool                                                       allowUI,
-        ::Social::IdentitySignInTrigger                            signInTrigger,
-        ::std::string const&                                       signInSource,
-        ::std::function<void(::Social::MultiIdentitySigninResult)> callback,
-        ::std::function<void(::std::string, ::std::string)>        displayDelegate
-    );
-
-    MCNAPI_C ~UserSignInProperties();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        ::Social::IdentityType                                     identitySigningIn,
-        bool                                                       allowUI,
-        ::Social::IdentitySignInTrigger                            signInTrigger,
-        ::std::string const&                                       signInSource,
-        ::std::function<void(::Social::MultiIdentitySigninResult)> callback,
-        ::std::function<void(::std::string, ::std::string)>        displayDelegate
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Social

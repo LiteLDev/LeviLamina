@@ -15,27 +15,28 @@ class BlockEventResponseFactory : public ::EventResponseFactory, public ::IPackL
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BlockEventResponseFactory() /*override*/;
 
+    // vIndex: 1
     virtual void initializeFactory(::IPackLoadContext const& packLoadContext) /*override*/;
 
+    // vIndex: 2
     virtual void initSchema() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFactory(::IPackLoadContext const& packLoadContext);
+    MCAPI void $initializeFactory(::IPackLoadContext const& packLoadContext);
 
-    MCNAPI void $initSchema();
-
-
+    MCAPI void $initSchema();
     // NOLINTEND
 
 public:

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 namespace glTF {
 
 struct Accessor {
@@ -42,20 +37,6 @@ public:
     Accessor& operator=(Accessor const&);
     Accessor(Accessor const&);
     Accessor();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::Json::Value serialize() const;
-
-    MCNAPI_C ~Accessor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace glTF

@@ -12,12 +12,12 @@ struct BetaItemComponentData {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
+    MCAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
     // NOLINTEND
 };

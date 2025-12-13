@@ -9,6 +9,7 @@ class ItemStackRequestActionPlace : public ::ItemStackRequestActionTransferBase 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ItemStackRequestActionPlace() /*override*/ = default;
     // NOLINTEND
 

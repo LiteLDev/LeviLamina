@@ -16,20 +16,6 @@ public:
     TelemetryError& operator=(TelemetryError const&);
     TelemetryError(TelemetryError const&);
     TelemetryError();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C auto toJsonStr() const;
-
-    MCNAPI_C ~TelemetryError();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace TelemtetryEvents

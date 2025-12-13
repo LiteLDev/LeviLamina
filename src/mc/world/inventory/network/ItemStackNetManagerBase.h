@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 
@@ -11,27 +13,36 @@
 class BlockSource;
 class ContainerScreenContext;
 class ContainerWeakRef;
+class EntityRegistry;
 class ItemStack;
 class ItemStackNetManagerScreen;
+class ItemStackNetManagerScreenStack;
 class ItemStackRequestAction;
 class Player;
 class SparseContainer;
 struct FullContainerName;
+struct ItemStackLegacyRequestIdTag;
 struct ItemStackRequestIdTag;
 // clang-format on
 
 class ItemStackNetManagerBase {
 public:
+    // ItemStackNetManagerBase inner types define
+    using LegacyRequestScope = ::gsl::final_action<::std::function<void()>>;
+
+    using BaseContainerSetter = ::std::function<void(::ItemStack const&)>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk1a7334;
-    ::ll::UntypedStorage<1, 1>  mUnk784de5;
-    ::ll::UntypedStorage<8, 8>  mUnkecd0f2;
-    ::ll::UntypedStorage<8, 16> mUnk6169ac;
-    ::ll::UntypedStorage<8, 16> mUnk29720d;
-    ::ll::UntypedStorage<8, 8>  mUnkc005c3;
-    ::ll::UntypedStorage<1, 1>  mUnk568e3c;
-    ::ll::UntypedStorage<4, 16> mUnka42c09;
+    ::ll::TypedStorage<1, 1, bool const>                                          mIsEnabled;
+    ::ll::TypedStorage<1, 1, bool const>                                          mIsClientSide;
+    ::ll::TypedStorage<8, 8, ::Player&>                                           mPlayer;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry>>                        mLevelWeakRegistry;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::EntityRegistry>>                       mEntityRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackNetManagerScreenStack>> mScreenStack;
+    ::ll::TypedStorage<1, 1, bool>                                                mCurrentRequestHasCraftAction;
+    ::ll::TypedStorage<4, 16, ::ItemStackLegacyRequestId>                         mLegacyTransactionRequestId;
     // NOLINTEND
 
 public:
@@ -43,30 +54,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ItemStackNetManagerBase();
 
+    // vIndex: 1
     virtual bool isEnabled() const;
 
+    // vIndex: 2
     virtual ::ItemStackRequestId getRequestId() const = 0;
 
+    // vIndex: 3
     virtual bool retainSetItemStackNetIdVariant() const;
 
+    // vIndex: 4
     virtual bool allowInventoryTransactionManager() const = 0;
 
+    // vIndex: 5
     virtual ::gsl::final_action<::std::function<void()>> _tryBeginClientLegacyTransactionRequest();
 
+    // vIndex: 6
     virtual void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
+    // vIndex: 7
     virtual void onContainerScreenClose();
 
+    // vIndex: 8
     virtual ::SparseContainer* initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
 
+    // vIndex: 9
     virtual void _addLegacyTransactionRequestSetItemSlot(
         ::ItemStackNetManagerScreen&,
         ::SharedTypes::Legacy::ContainerType containerType,
         int                                  slot
     );
 
+    // vIndex: 10
     virtual void _initScreen(::ItemStackNetManagerScreen&);
     // NOLINTEND
 
@@ -131,8 +153,6 @@ public:
     );
 
     MCFOLD void $_initScreen(::ItemStackNetManagerScreen&);
-
-
     // NOLINTEND
 
 public:

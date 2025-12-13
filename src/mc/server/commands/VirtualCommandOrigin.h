@@ -43,53 +43,77 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string const& getRequestId() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 3
     virtual ::BlockPos getBlockPosition() const /*override*/;
 
+    // vIndex: 4
     virtual ::Vec3 getWorldPosition() const /*override*/;
 
+    // vIndex: 5
     virtual ::std::optional<::Vec2> getRotation() const /*override*/;
 
+    // vIndex: 6
     virtual ::Level* getLevel() const /*override*/;
 
+    // vIndex: 7
     virtual ::Dimension* getDimension() const /*override*/;
 
+    // vIndex: 8
     virtual ::Actor* getEntity() const /*override*/;
 
+    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const /*override*/;
 
+    // vIndex: 10
     virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
+    // vIndex: 21
     virtual ::CommandOrigin const& getOutputReceiver() const /*override*/;
 
+    // vIndex: 13
     virtual bool hasChatPerms() const /*override*/;
 
+    // vIndex: 14
     virtual bool hasTellPerms() const /*override*/;
 
-    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
+    // vIndex: 15
+    virtual bool canUseAbility(::AbilitiesIndex) const /*override*/;
 
+    // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const /*override*/;
 
+    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const /*override*/;
 
+    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const /*override*/;
 
+    // vIndex: 19
     virtual ::NetworkIdentifier const& getSourceId() const /*override*/;
 
+    // vIndex: 22
     virtual ::CommandOriginIdentity getIdentity() const /*override*/;
 
+    // vIndex: 27
     virtual void updateValues() /*override*/;
 
+    // vIndex: 28
     virtual ::Vec3 const getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const
         /*override*/;
 
+    // vIndex: 29
     virtual ::CompoundTag serialize() const /*override*/;
 
+    // vIndex: 30
     virtual bool isValid() const /*override*/;
 
+    // vIndex: 0
     virtual ~VirtualCommandOrigin() /*override*/ = default;
     // NOLINTEND
 
@@ -104,17 +128,17 @@ public:
     );
 
     MCNAPI VirtualCommandOrigin(
-        ::CommandOrigin const&        outputReceiver,
-        ::CommandOrigin const&        source,
-        ::CommandPositionFloat const& commandPosition,
-        int                           version
-    );
-
-    MCNAPI VirtualCommandOrigin(
         ::std::unique_ptr<::CommandOrigin> outputReceiver,
         ::std::unique_ptr<::CommandOrigin> source,
         ::CommandPositionFloat const&      commandPosition,
         int                                version
+    );
+
+    MCNAPI VirtualCommandOrigin(
+        ::CommandOrigin const&        outputReceiver,
+        ::CommandOrigin const&        source,
+        ::CommandPositionFloat const& commandPosition,
+        int                           version
     );
     // NOLINTEND
 
@@ -135,17 +159,17 @@ public:
     );
 
     MCNAPI void* $ctor(
-        ::CommandOrigin const&        outputReceiver,
-        ::CommandOrigin const&        source,
-        ::CommandPositionFloat const& commandPosition,
-        int                           version
-    );
-
-    MCNAPI void* $ctor(
         ::std::unique_ptr<::CommandOrigin> outputReceiver,
         ::std::unique_ptr<::CommandOrigin> source,
         ::CommandPositionFloat const&      commandPosition,
         int                                version
+    );
+
+    MCNAPI void* $ctor(
+        ::CommandOrigin const&        outputReceiver,
+        ::CommandOrigin const&        source,
+        ::CommandPositionFloat const& commandPosition,
+        int                           version
     );
     // NOLINTEND
 
@@ -195,12 +219,6 @@ public:
     MCNAPI ::CompoundTag $serialize() const;
 
     MCNAPI bool $isValid() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
-#endif
-
-
     // NOLINTEND
 
 public:

@@ -28,8 +28,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void dropHangingActor(::StrictEntityContext const& entity) /*override*/;
 
+    // vIndex: 0
     virtual ~ActorAdapter() /*override*/ = default;
     // NOLINTEND
 
@@ -37,8 +39,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $dropHangingActor(::StrictEntityContext const& entity);
-
-
     // NOLINTEND
 
 public:

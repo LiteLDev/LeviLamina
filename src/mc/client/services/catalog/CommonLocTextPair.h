@@ -15,18 +15,4 @@ public:
     CommonLocTextPair& operator=(CommonLocTextPair const&);
     CommonLocTextPair(CommonLocTextPair const&);
     CommonLocTextPair();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::CommonLocTextPair& operator=(::CommonLocTextPair&&);
-
-    MCNAPI_C ~CommonLocTextPair();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

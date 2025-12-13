@@ -19,46 +19,41 @@ class CrashManager : public ::Bedrock::EnableNonOwnerReferences, public ::Bedroc
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void initialize(::std::string_view) = 0;
 
+    // vIndex: 2
     virtual void setCrashProcessorForFileType(::std::string_view, ::std::shared_ptr<::Bedrock::CrashFileProcessor>) = 0;
 
+    // vIndex: 3
     virtual void setCrashTelemetryProcessor(::gsl::not_null<::Bedrock::CrashTelemetryProcessor*>) = 0;
 
+    // vIndex: 4
     virtual void processCrashes(::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>, ::Scheduler&, bool) = 0;
 
+    // vIndex: 5
     virtual void notifyCrashed() = 0;
 
+    // vIndex: 6
     virtual void notifySystemError(uint, ::std::string const&) = 0;
 
+    // vIndex: 7
     virtual void recordCrashedSession(::std::string_view, ::std::string_view, int64) = 0;
 
+    // vIndex: 8
     virtual void stopProcessingCrashes() = 0;
 
+    // vIndex: 9
     virtual bool isCrashProcessingActive() const = 0;
 
+    // vIndex: 10
     virtual ::std::string const& getCrashDataRoot() const = 0;
 
+    // vIndex: 11
     virtual ::std::string const& getCrashedSessionFileSuffix() const = 0;
 
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~CrashManager() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CrashManager() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI_C static ::std::add_lvalue_reference_t<char const[]> DEFAULT_CRASH_DIRECTORY_NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

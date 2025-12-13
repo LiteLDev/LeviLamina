@@ -63,13 +63,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ~ActorManager();
 
+    // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::Actor&)>& getRegisterEntityAddedConnector() /*override*/;
 
+    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
     getRegisterPostReloadActorConnector() /*override*/;
 
+    // vIndex: 2
     virtual ::Bedrock::PubSub::Connector<void(::Actor&)>&
     getRegisterOnRemoveActorEntityReferenceConnector() /*override*/;
     // NOLINTEND
@@ -143,8 +147,6 @@ public:
     $getRegisterPostReloadActorConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();
-
-
     // NOLINTEND
 
 public:

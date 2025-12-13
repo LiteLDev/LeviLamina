@@ -15,14 +15,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BoundingBox();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C BoundingBox(::BlockPos const& min, ::BlockPos const& size, ::Rotation rotation);
-
     MCAPI void applyTransformation(::BlockPos const& pivot, ::Rotation rotationXZ, bool mirrorX, bool mirrorZ);
     // NOLINTEND
 
@@ -43,11 +37,5 @@ public:
         int depth,
         int orientation
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(::BlockPos const& min, ::BlockPos const& size, ::Rotation rotation);
     // NOLINTEND
 };

@@ -15,20 +15,28 @@ class LevelChunkEventManagerProxy : public ::ILevelChunkEventManagerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool isReadOnly(::LevelChunk const& levelChunk) const /*override*/;
 
+    // vIndex: 2
     virtual bool setOnChunkLoadedCalled(::LevelChunk& levelChunk) /*override*/;
 
+    // vIndex: 3
     virtual void onTickingStarted(::LevelChunk& levelChunk) /*override*/;
 
+    // vIndex: 4
     virtual void setupRedstoneCircuit(::ChunkSource& chunkSource, ::LevelChunk& levelChunk) /*override*/;
 
+    // vIndex: 5
     virtual int getClosestPlayerDistanceSquared(::LevelChunk const& levelChunk) const /*override*/;
 
+    // vIndex: 6
     virtual bool isOwnedByTickingThread(::LevelChunk const& levelChunk) const /*override*/;
 
+    // vIndex: 7
     virtual void onTickingStopped(::LevelChunk& levelChunk) /*override*/;
 
+    // vIndex: 0
     virtual ~LevelChunkEventManagerProxy() /*override*/ = default;
     // NOLINTEND
 
@@ -48,8 +56,6 @@ public:
     MCAPI bool $isOwnedByTickingThread(::LevelChunk const& levelChunk) const;
 
     MCAPI void $onTickingStopped(::LevelChunk& levelChunk);
-
-
     // NOLINTEND
 
 public:

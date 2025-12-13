@@ -16,8 +16,10 @@ class WorldRecoveryTelemetryHandler : public ::Bedrock::EnableNonOwnerReferences
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void fireWorldRecoveryTelemetryEvent(::Bedrock::WorldRecoveryTelemetryEvent const&) = 0;
 
+    // vIndex: 0
     virtual ~WorldRecoveryTelemetryHandler() /*override*/;
     // NOLINTEND
 

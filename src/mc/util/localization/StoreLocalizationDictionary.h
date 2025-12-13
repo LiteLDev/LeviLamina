@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContentCatalogService;
 class PackManifest;
-namespace Json { class Value; }
 // clang-format on
 
 class StoreLocalizationDictionary : public ::ILocalizationDictionary,
@@ -27,80 +25,36 @@ public:
     // prevent constructor by default
     StoreLocalizationDictionary& operator=(StoreLocalizationDictionary const&);
     StoreLocalizationDictionary(StoreLocalizationDictionary const&);
+    StoreLocalizationDictionary();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~StoreLocalizationDictionary() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~StoreLocalizationDictionary() /*override*/;
-#endif
 
-    virtual ::std::string getLocString(::std::string const& locKey) const /*override*/;
+    // vIndex: 1
+    virtual ::std::string getLocString(::std::string const&) const /*override*/;
 
+    // vIndex: 2
     virtual bool isLocalizationReady() const /*override*/;
 
+    // vIndex: 2
     virtual void onLanguageChanged(::std::string const&, bool) /*override*/;
 
+    // vIndex: 3
     virtual void onLanguageKeywordsLoadedFromPack(::PackManifest const&) /*override*/;
 
+    // vIndex: 4
     virtual void onLanguagesLoaded() /*override*/;
 
+    // vIndex: 3
     virtual void _updateLoc() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C StoreLocalizationDictionary();
-
-    MCNAPI_C ::Json::Value _getDictionaryJsonFromLangFile();
-
-    MCNAPI_C void fetchLocalizationBinary(
-        ::std::string const&     url,
-        ::ContentCatalogService& catalogService,
-        uint                     currentFetchAttempt
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::string $getLocString(::std::string const& locKey) const;
 
-    MCNAPI bool $isLocalizationReady() const;
-
-    MCNAPI void $onLanguageChanged(::std::string const&, bool);
-
-    MCNAPI void $onLanguageKeywordsLoadedFromPack(::PackManifest const&);
-
-    MCNAPI void $onLanguagesLoaded();
-
-    MCNAPI void $_updateLoc();
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForI18nObserver();
-
-    MCNAPI static void** $vftableForILocalizationDictionary();
     // NOLINTEND
 };

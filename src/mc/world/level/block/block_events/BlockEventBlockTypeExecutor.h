@@ -18,6 +18,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BlockEventBlockTypeExecutor() /*override*/ = default;
     // NOLINTEND
 };

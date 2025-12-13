@@ -14,23 +14,24 @@ public:
     // clang-format on
 
     // PackModifications inner types define
-    struct CurrentWorldTemplatePacks {
+    struct ReportError {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkc30c03;
+        ::ll::UntypedStorage<8, 56> mUnk4a5203;
+        ::ll::UntypedStorage<1, 1>  mUnkfadfc9;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        CurrentWorldTemplatePacks& operator=(CurrentWorldTemplatePacks const&);
-        CurrentWorldTemplatePacks(CurrentWorldTemplatePacks const&);
-        CurrentWorldTemplatePacks();
+        ReportError& operator=(ReportError const&);
+        ReportError(ReportError const&);
+        ReportError();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~CurrentWorldTemplatePacks();
+        MCNAPI ~ReportError();
         // NOLINTEND
 
     public:
@@ -66,24 +67,23 @@ public:
         // NOLINTEND
     };
 
-    struct ReportError {
+    struct CurrentWorldTemplatePacks {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 56> mUnk4a5203;
-        ::ll::UntypedStorage<1, 1>  mUnkfadfc9;
+        ::ll::UntypedStorage<8, 16> mUnkc30c03;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        ReportError& operator=(ReportError const&);
-        ReportError(ReportError const&);
-        ReportError();
+        CurrentWorldTemplatePacks& operator=(CurrentWorldTemplatePacks const&);
+        CurrentWorldTemplatePacks(CurrentWorldTemplatePacks const&);
+        CurrentWorldTemplatePacks();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ReportError();
+        MCNAPI ~CurrentWorldTemplatePacks();
         // NOLINTEND
 
     public:

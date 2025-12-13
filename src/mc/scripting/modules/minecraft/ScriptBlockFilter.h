@@ -62,9 +62,9 @@ public:
 
     MCNAPI bool operator()(::Block const& block) const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptBlockFilter& operator=(::ScriptModuleMinecraft::ScriptBlockFilter&&);
-
     MCNAPI ::ScriptModuleMinecraft::ScriptBlockFilter& operator=(::ScriptModuleMinecraft::ScriptBlockFilter const&);
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptBlockFilter& operator=(::ScriptModuleMinecraft::ScriptBlockFilter&&);
 
     MCNAPI ::Scripting::Result_deprecated<void> setExcludePermutations(
         ::std::optional<

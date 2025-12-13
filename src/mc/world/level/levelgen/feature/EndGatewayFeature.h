@@ -16,23 +16,23 @@ class EndGatewayFeature : public ::Feature {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random&) const /*override*/;
 
+    // vIndex: 0
     virtual ~EndGatewayFeature() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random&) const;
-
-
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random&) const;
     // NOLINTEND
 
 public:

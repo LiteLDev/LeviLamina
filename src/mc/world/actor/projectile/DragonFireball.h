@@ -15,12 +15,16 @@ class DragonFireball : public ::Fireball {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 139
     virtual ::ParticleType getTrailParticle() /*override*/;
 
+    // vIndex: 140
     virtual bool shouldBurn() /*override*/;
 
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
 
+    // vIndex: 8
     virtual ~DragonFireball() /*override*/ = default;
     // NOLINTEND
 
@@ -32,8 +36,6 @@ public:
     MCFOLD bool $shouldBurn();
 
     MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
-
-
     // NOLINTEND
 
 public:

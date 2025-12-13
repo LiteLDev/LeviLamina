@@ -19,18 +19,6 @@ public:
     Buffer& operator=(Buffer const&);
     Buffer(Buffer const&);
     Buffer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~Buffer();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace glTF

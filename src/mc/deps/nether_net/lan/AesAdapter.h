@@ -12,8 +12,10 @@ class AesAdapter : public ::rtc::AsyncSocketAdapter {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AesAdapter() /*override*/ = default;
 
+    // vIndex: 22
     virtual ::NetherNet::ErrorOr<void, ::std::error_code> SetKey(uint64) = 0;
     // NOLINTEND
 

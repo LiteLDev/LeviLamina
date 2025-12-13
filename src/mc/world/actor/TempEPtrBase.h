@@ -3,59 +3,55 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/_TickPtr.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Level;
 // clang-format on
 
 class TempEPtrBase : public ::_TickPtr {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc97d37;
-    ::ll::UntypedStorage<8, 8> mUnkbeaa8f;
-    ::ll::UntypedStorage<8, 8> mUnka5c9cc;
-    ::ll::UntypedStorage<1, 1> mUnkadee2c;
+    ::ll::TypedStorage<8, 8, ::Actor*>        tmp;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityId;
+    ::ll::TypedStorage<8, 8, ::Level*>        mLevel;
+    ::ll::TypedStorage<1, 1, bool>            mHasLocked;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TempEPtrBase& operator=(TempEPtrBase const&);
-    TempEPtrBase(TempEPtrBase const&);
-    TempEPtrBase();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ~TempEPtrBase() /*override*/;
 
+    // vIndex: 0
     virtual void invalidate() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _set(::Actor* e);
+    MCAPI void _set(::Actor* e);
 
-    MCNAPI bool isValid() const;
+    MCAPI bool isValid() const;
 
-    MCNAPI void unset();
+    MCAPI void unset();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $invalidate();
-
-
+    MCAPI void $invalidate();
     // NOLINTEND
 
 public:

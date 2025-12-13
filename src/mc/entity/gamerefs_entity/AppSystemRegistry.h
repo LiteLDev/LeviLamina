@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ITickingSystem;
-struct TickingSystemRegistrationToken;
-// clang-format on
-
 class AppSystemRegistry {
 public:
     // member variables
@@ -21,22 +15,4 @@ public:
     AppSystemRegistry& operator=(AppSystemRegistry const&);
     AppSystemRegistry(AppSystemRegistry const&);
     AppSystemRegistry();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::entt::dispatcher& getDispatcher() const;
-
-    MCNAPI_C ::TickingSystemRegistrationToken registerTickingSystem(::std::unique_ptr<::ITickingSystem> tickingSystem);
-
-    MCNAPI_C void tick();
-
-    MCNAPI_C ~AppSystemRegistry();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

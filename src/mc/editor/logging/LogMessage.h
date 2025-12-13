@@ -30,11 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::string getAreaTagsString() const;
+    MCNAPI ::Editor::LogMessage& operator=(::Editor::LogMessage const&);
 
     MCNAPI ::Editor::LogMessage& operator=(::Editor::LogMessage&&);
-
-    MCNAPI ::Editor::LogMessage& operator=(::Editor::LogMessage const&);
 
     MCNAPI ~LogMessage();
     // NOLINTEND

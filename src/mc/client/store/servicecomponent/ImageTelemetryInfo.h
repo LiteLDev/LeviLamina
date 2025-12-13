@@ -19,16 +19,4 @@ public:
     ImageTelemetryInfo& operator=(ImageTelemetryInfo const&);
     ImageTelemetryInfo(ImageTelemetryInfo const&);
     ImageTelemetryInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ImageTelemetryInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

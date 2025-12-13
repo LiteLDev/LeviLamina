@@ -40,6 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 11
     virtual bool addSource(
         ::CircuitSceneGraph&         graph,
         ::CircuitTrackingInfo const& info,
@@ -47,16 +48,22 @@ public:
         bool&                        bDirectlyPowered
     ) /*override*/;
 
+    // vIndex: 14
     virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
+    // vIndex: 15
     virtual void cacheValues(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
+    // vIndex: 16
     virtual void updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos) /*override*/;
 
+    // vIndex: 17
     virtual ::RedstoneLogicExecutionFlags getLogicExecutionFlags() const /*override*/;
 
+    // vIndex: 24
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
+    // vIndex: 0
     virtual ~ComparatorCapacitor() /*override*/ = default;
     // NOLINTEND
 
@@ -75,8 +82,6 @@ public:
     MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 
     MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
-
-
     // NOLINTEND
 
 public:

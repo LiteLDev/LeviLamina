@@ -2,39 +2,39 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/ai/goal/SummonShape.h"
+#include "mc/world/actor/ai/goal/SummonTarget.h"
+
 struct SummonSpellStage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk69b1f1;
-    ::ll::UntypedStorage<4, 4>   mUnk91f981;
-    ::ll::UntypedStorage<4, 4>   mUnkd4cd24;
-    ::ll::UntypedStorage<4, 4>   mUnkfc0a5b;
-    ::ll::UntypedStorage<4, 4>   mUnk628fad;
-    ::ll::UntypedStorage<4, 4>   mUnk9aac1f;
-    ::ll::UntypedStorage<4, 4>   mUnk6f04b4;
-    ::ll::UntypedStorage<8, 176> mUnkdcf734;
-    ::ll::UntypedStorage<4, 4>   mUnkef7c0c;
-    ::ll::UntypedStorage<4, 4>   mUnkf5ce6a;
-    ::ll::UntypedStorage<4, 4>   mUnke574aa;
-    ::ll::UntypedStorage<8, 32>  mUnkd9a9e1;
+    ::ll::TypedStorage<4, 4, ::SummonShape>                          shape;
+    ::ll::TypedStorage<4, 4, ::SummonTarget>                         target;
+    ::ll::TypedStorage<4, 4, float>                                  size;
+    ::ll::TypedStorage<4, 4, int>                                    baseDelay;
+    ::ll::TypedStorage<4, 4, int>                                    delayPerSummoning;
+    ::ll::TypedStorage<4, 4, int>                                    summonCap;
+    ::ll::TypedStorage<4, 4, float>                                  summonCapRadius;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>          entityIdentifier;
+    ::ll::TypedStorage<4, 4, int>                                    entityLifespan;
+    ::ll::TypedStorage<4, 4, int>                                    entityCount;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> stageSoundEvent;
+    ::ll::TypedStorage<8, 32, ::std::string>                         summonEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SummonSpellStage& operator=(SummonSpellStage const&);
-    SummonSpellStage(SummonSpellStage const&);
-    SummonSpellStage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~SummonSpellStage();
+    MCAPI ~SummonSpellStage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

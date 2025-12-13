@@ -16,16 +16,4 @@ public:
     ReceiptData_Google& operator=(ReceiptData_Google const&);
     ReceiptData_Google(ReceiptData_Google const&);
     ReceiptData_Google();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ReceiptData_Google();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

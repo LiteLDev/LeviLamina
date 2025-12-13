@@ -14,6 +14,21 @@ public:
     // clang-format on
 
     // GenerationDeterminismTestData inner types define
+    struct SerializedChunk {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnk8004dd;
+        ::ll::UntypedStorage<8, 24> mUnkc223db;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SerializedChunk& operator=(SerializedChunk const&);
+        SerializedChunk(SerializedChunk const&);
+        SerializedChunk();
+    };
+
     struct ChunkComparisonData {
     public:
         // member variables
@@ -30,21 +45,6 @@ public:
         ChunkComparisonData& operator=(ChunkComparisonData const&);
         ChunkComparisonData(ChunkComparisonData const&);
         ChunkComparisonData();
-    };
-
-    struct SerializedChunk {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk8004dd;
-        ::ll::UntypedStorage<8, 24> mUnkc223db;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SerializedChunk& operator=(SerializedChunk const&);
-        SerializedChunk(SerializedChunk const&);
-        SerializedChunk();
     };
 
 public:
@@ -65,6 +65,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~GenerationDeterminismTestData() /*override*/ = default;
     // NOLINTEND
 };

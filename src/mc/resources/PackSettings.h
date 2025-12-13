@@ -54,8 +54,6 @@ public:
             0>>                                                                      publisher,
         uint64                                                                       lastUsed
     );
-
-    MCNAPI_C void setValue(::std::string const& name, ::std::variant<float, bool, ::std::string> const& value);
     // NOLINTEND
 
 public:

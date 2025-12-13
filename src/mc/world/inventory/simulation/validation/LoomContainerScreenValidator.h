@@ -9,6 +9,7 @@ class LoomContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LoomContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

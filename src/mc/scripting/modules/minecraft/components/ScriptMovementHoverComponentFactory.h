@@ -19,14 +19,17 @@ class ScriptMovementHoverComponentFactory : public ::ScriptModuleMinecraft::ICom
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptMovementHoverComponentFactory() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent> createComponent(
         ::WeakEntityRef                       entity,
         ::Scripting::WeakLifetimeScope const& scope,
         ::std::string const&                  id
     ) /*override*/;
 
+    // vIndex: 2
     virtual bool hasComponent(::WeakEntityRef entity) const /*override*/;
     // NOLINTEND
 
@@ -37,8 +40,6 @@ public:
     $createComponent(::WeakEntityRef entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
 
     MCNAPI bool $hasComponent(::WeakEntityRef entity) const;
-
-
     // NOLINTEND
 
 public:

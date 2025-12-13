@@ -9,23 +9,7 @@ class ContainerScreenTemporaryActionScope : public ::ContainerScreenActionScope 
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~ContainerScreenTemporaryActionScope() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ContainerScreenTemporaryActionScope() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

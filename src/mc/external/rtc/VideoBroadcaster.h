@@ -35,17 +35,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~VideoBroadcaster() /*override*/;
 
+    // vIndex: 1
     virtual void AddOrUpdateSink(
         ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
         ::rtc::VideoSinkWants const&                     wants
     ) /*override*/;
 
+    // vIndex: 2
     virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
 
+    // vIndex: 1
     virtual void OnFrame(::webrtc::VideoFrame const& frame) /*override*/;
 
+    // vIndex: 2
     virtual void OnDiscardedFrame() /*override*/;
     // NOLINTEND
 
@@ -82,8 +87,6 @@ public:
     MCNAPI void $OnFrame(::webrtc::VideoFrame const& frame);
 
     MCNAPI void $OnDiscardedFrame();
-
-
     // NOLINTEND
 
 public:

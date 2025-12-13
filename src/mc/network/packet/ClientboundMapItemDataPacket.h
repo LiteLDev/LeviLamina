@@ -8,12 +8,12 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/saveddata/maps/MapItemTrackedActor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPos;
 class Dimension;
 class Level;
 class MapDecoration;
@@ -26,46 +26,47 @@ class ClientboundMapItemDataPacket : public ::Packet {
 public:
     // ClientboundMapItemDataPacket inner types define
     enum class Type : int {
+        // bitfield representation
         Invalid          = 0,
-        TextureUpdate    = 2,
-        DecorationUpdate = 4,
-        Creation         = 8,
+        TextureUpdate    = 1 << 1,
+        DecorationUpdate = 1 << 2,
+        Creation         = 1 << 3,
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkff55ba;
-    ::ll::UntypedStorage<1, 1>  mUnk8f5a9d;
-    ::ll::UntypedStorage<8, 24> mUnkc304ec;
-    ::ll::UntypedStorage<8, 24> mUnkd14dcf;
-    ::ll::UntypedStorage<4, 4>  mUnkc56175;
-    ::ll::UntypedStorage<4, 4>  mUnkcb2ae3;
-    ::ll::UntypedStorage<4, 12> mUnkbd7f60;
-    ::ll::UntypedStorage<1, 1>  mUnk870b9d;
-    ::ll::UntypedStorage<4, 4>  mUnkeae51e;
-    ::ll::UntypedStorage<4, 4>  mUnk514fe0;
-    ::ll::UntypedStorage<4, 4>  mUnk9045cd;
-    ::ll::UntypedStorage<8, 24> mUnkcdbd42;
-    ::ll::UntypedStorage<1, 1>  mUnkb7f0b7;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>>                    mMapIds;
+    ::ll::TypedStorage<1, 1, char>                                               mScale;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::MapDecoration>>> mDecorations;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MapItemTrackedActor::UniqueId>>    mUniqueIds;
+    ::ll::TypedStorage<4, 4, int>                                                mStartX;
+    ::ll::TypedStorage<4, 4, int>                                                mStartY;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                        mMapOrigin;
+    ::ll::TypedStorage<1, 1, uchar>                                              mDimension;
+    ::ll::TypedStorage<4, 4, int>                                                mWidth;
+    ::ll::TypedStorage<4, 4, int>                                                mHeight;
+    ::ll::TypedStorage<4, 4, ::ClientboundMapItemDataPacket::Type>               mType;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>                               mMapPixels;
+    ::ll::TypedStorage<1, 1, bool>                                               mLocked;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientboundMapItemDataPacket& operator=(ClientboundMapItemDataPacket const&);
-    ClientboundMapItemDataPacket(ClientboundMapItemDataPacket const&);
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
     virtual ~ClientboundMapItemDataPacket() /*override*/;
     // NOLINTEND
 
@@ -90,8 +91,6 @@ public:
         bool                isLocked,
         ::BlockPos const&   mapOrigin
     );
-
-    MCAPI_C void applyToMap(::MapItemSavedData& map, bool resampleMap) const;
 
     MCAPI bool isOfType(::ClientboundMapItemDataPacket::Type type) const;
     // NOLINTEND
@@ -135,8 +134,6 @@ public:
     MCAPI ::std::string $getName() const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

@@ -14,22 +14,13 @@ class BlockTintResolver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::mce::Color resolve(::BlockSource&, ::BlockPos const&, ::Block const&, ::mce::Color const& preColor) const;
+    // vIndex: 0
+    virtual ::mce::Color resolve(::BlockSource&, ::BlockPos const&, ::Block const&, ::mce::Color const&) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::mce::Color $resolve(::BlockSource&, ::BlockPos const&, ::Block const&, ::mce::Color const& preColor) const;
-#endif
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

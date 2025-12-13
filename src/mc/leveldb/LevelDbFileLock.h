@@ -6,6 +6,7 @@ class LevelDbFileLock : public ::leveldb::FileLock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LevelDbFileLock() /*override*/ = default;
     // NOLINTEND
 

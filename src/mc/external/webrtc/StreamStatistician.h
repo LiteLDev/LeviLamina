@@ -14,14 +14,19 @@ class StreamStatistician {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StreamStatistician() = default;
 
+    // vIndex: 1
     virtual ::webrtc::RtpReceiveStats GetStats() const = 0;
 
+    // vIndex: 2
     virtual ::std::optional<int> GetFractionLostInPercent() const = 0;
 
+    // vIndex: 3
     virtual ::webrtc::StreamDataCounters GetReceiveStreamDataCounters() const = 0;
 
+    // vIndex: 4
     virtual uint BitrateReceived() const = 0;
     // NOLINTEND
 

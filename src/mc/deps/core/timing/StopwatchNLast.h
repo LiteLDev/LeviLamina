@@ -25,10 +25,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StopwatchNLast() /*override*/ = default;
 
+    // vIndex: 1
     virtual double stop() /*override*/;
 
+    // vIndex: 3
     virtual void print(::std::string const& prepend) /*override*/;
     // NOLINTEND
 

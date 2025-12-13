@@ -104,12 +104,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 67
     virtual ::EventResult onEvent(::PlayerFormResponseEvent const& formResponseEvent) /*override*/;
 
+    // vIndex: 68
     virtual ::EventResult onEvent(::PlayerFormCloseEvent const& formCloseEvent) /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptFormPromiseTracker() /*override*/;
 
+    // vIndex: 3
     virtual ::EventResult onLevelRemovedPlayer(::Player& player) /*override*/;
     // NOLINTEND
 
@@ -155,8 +159,6 @@ public:
     MCNAPI ::EventResult $onEvent(::PlayerFormCloseEvent const& formCloseEvent);
 
     MCNAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
-
-
     // NOLINTEND
 
 public:

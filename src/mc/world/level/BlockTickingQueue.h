@@ -15,11 +15,9 @@ class BlockPalette;
 class BlockPos;
 class BlockSource;
 class BlockType;
-class BoundingBox;
 class CompoundTag;
 class LevelChunk;
 class ListTag;
-struct TickDelayBlock;
 // clang-format on
 
 class BlockTickingQueue {
@@ -56,7 +54,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -99,9 +97,6 @@ public:
     MCAPI void finishInstaticking();
 
     MCAPI bool getNextUpdateForPos(::BlockPos const& pos, ::Tick& tick) const;
-
-    MCAPI_C ::std::unordered_multimap<::BlockPos, ::TickDelayBlock>
-    getTickDelaysInArea(::BoundingBox const& boundingBox) const;
 
     MCAPI void load(::CompoundTag const& tag, ::BlockPalette const& palette);
 

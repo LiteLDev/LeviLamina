@@ -11,21 +11,6 @@ public:
     // clang-format on
 
     // ActorPathingData inner types define
-    struct HomeRestrictionInfo {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk4a556d;
-        ::ll::UntypedStorage<4, 4>  mUnk8baac2;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        HomeRestrictionInfo& operator=(HomeRestrictionInfo const&);
-        HomeRestrictionInfo(HomeRestrictionInfo const&);
-        HomeRestrictionInfo();
-    };
-
     struct MinMaxHeightCacheEntry {
     public:
         // member variables
@@ -39,6 +24,21 @@ public:
         MinMaxHeightCacheEntry& operator=(MinMaxHeightCacheEntry const&);
         MinMaxHeightCacheEntry(MinMaxHeightCacheEntry const&);
         MinMaxHeightCacheEntry();
+    };
+
+    struct HomeRestrictionInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnk4a556d;
+        ::ll::UntypedStorage<4, 4>  mUnk8baac2;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        HomeRestrictionInfo& operator=(HomeRestrictionInfo const&);
+        HomeRestrictionInfo(HomeRestrictionInfo const&);
+        HomeRestrictionInfo();
     };
 
 public:

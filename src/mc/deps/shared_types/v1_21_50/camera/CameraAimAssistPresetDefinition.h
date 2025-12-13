@@ -31,9 +31,9 @@ public:
     // NOLINTBEGIN
     MCNAPI CameraAimAssistPresetDefinition();
 
-    MCNAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
-
     MCNAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
+
+    MCNAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
 
     MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
@@ -62,9 +62,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
     // NOLINTEND
 
 public:

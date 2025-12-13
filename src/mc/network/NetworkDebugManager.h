@@ -4,8 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/network/NetworkStatistics.h"
 #include "mc/network/TrackerType.h"
+
+// auto generated forward declare list
+// clang-format off
+class NetworkStatistics;
+// clang-format on
 
 class NetworkDebugManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
@@ -16,21 +20,6 @@ public:
     // clang-format on
 
     // NetworkDebugManager inner types define
-    class NetherNetStats {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkb551f9;
-        ::ll::UntypedStorage<8, 64> mUnk9eb8b0;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        NetherNetStats& operator=(NetherNetStats const&);
-        NetherNetStats(NetherNetStats const&);
-        NetherNetStats();
-    };
-
     class Tracker {
     public:
         // member variables
@@ -68,6 +57,21 @@ public:
         // NOLINTEND
     };
 
+    class NetherNetStats {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnkb551f9;
+        ::ll::UntypedStorage<8, 64> mUnk9eb8b0;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        NetherNetStats& operator=(NetherNetStats const&);
+        NetherNetStats(NetherNetStats const&);
+        NetherNetStats();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -86,6 +90,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetworkDebugManager() /*override*/ = default;
     // NOLINTEND
 
@@ -93,15 +98,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::NetworkStatistics* getNetworkStatistics(::TrackerType type);
-
-    MCNAPI_C void update();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static int const& MAX_NUMBER_OF_SAMPLES();
-
     MCNAPI static int const& UPDATE_INTERVAL_MILLISECONDS();
     // NOLINTEND
 

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 namespace glTF {
 
 struct Mesh {
@@ -44,18 +39,6 @@ public:
         Primitive& operator=(Primitive const&);
         Primitive(Primitive const&);
         Primitive();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C ~Primitive();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -72,20 +55,6 @@ public:
     Mesh& operator=(Mesh const&);
     Mesh(Mesh const&);
     Mesh();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::Json::Value serialize() const;
-
-    MCNAPI_C ~Mesh();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace glTF

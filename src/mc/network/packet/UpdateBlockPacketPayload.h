@@ -2,19 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/NetworkBlockPosition.h"
+
 struct UpdateBlockPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk996a79;
-    ::ll::UntypedStorage<4, 4>  mUnke03551;
-    ::ll::UntypedStorage<1, 1>  mUnk39b2fd;
-    ::ll::UntypedStorage<4, 4>  mUnk7a0612;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
+    ::ll::TypedStorage<4, 4, uint>                    mLayer;
+    ::ll::TypedStorage<1, 1, uchar>                   mUpdateFlags;
+    ::ll::TypedStorage<4, 4, uint>                    mRuntimeId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UpdateBlockPacketPayload& operator=(UpdateBlockPacketPayload const&);
-    UpdateBlockPacketPayload(UpdateBlockPacketPayload const&);
-    UpdateBlockPacketPayload();
 };

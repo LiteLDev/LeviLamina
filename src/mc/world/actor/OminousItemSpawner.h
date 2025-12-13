@@ -33,14 +33,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 11
     virtual void remove() /*override*/;
 
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 25
     virtual void baseTick() /*override*/;
 
+    // vIndex: 8
     virtual ~OminousItemSpawner() /*override*/ = default;
     // NOLINTEND
 
@@ -60,8 +65,6 @@ public:
     MCAPI void _onTimePassed();
 
     MCAPI void init(::ItemStack const& itemToSpawn, int ticksBeforeRemoval);
-
-    MCAPI_C ::Actor* tryGetOrCreateDisplayEntity();
     // NOLINTEND
 
 public:
@@ -84,8 +87,6 @@ public:
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void $baseTick();
-
-
     // NOLINTEND
 
 public:

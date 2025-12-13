@@ -17,18 +17,6 @@ public:
     EduFetchServersResponse& operator=(EduFetchServersResponse const&);
     EduFetchServersResponse(EduFetchServersResponse const&);
     EduFetchServersResponse();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~EduFetchServersResponse();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Social

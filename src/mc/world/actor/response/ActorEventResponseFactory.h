@@ -29,21 +29,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ActorEventResponseFactory() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void initSchema();
+    MCAPI void initSchema();
 
-    MCNAPI void initializeFactory(::IPackLoadContext const& packLoadContext);
+    MCAPI void initializeFactory(::IPackLoadContext const& packLoadContext);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

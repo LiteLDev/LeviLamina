@@ -32,10 +32,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void SerializeTo(::std::vector<uchar>&) const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string ToString() const /*override*/;
 
+    // vIndex: 0
     virtual ~AddIncomingStreamsRequestParameter() /*override*/ = default;
     // NOLINTEND
 

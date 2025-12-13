@@ -50,7 +50,6 @@ struct ConnectionDefinition;
 struct NetworkServerConfig;
 struct PackIdVersion;
 struct ServerNetworkHandlerDependencies;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace Core { class FilePathManager; }
 namespace mce { class UUID; }
@@ -107,18 +106,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Minecraft() /*override*/;
 
+    // vIndex: 3
     virtual void setSimTimePause(bool pause);
 
+    // vIndex: 4
     virtual void setSimTimeScale(float scale);
 
+    // vIndex: 5
     virtual bool getSimPaused() const;
 
+    // vIndex: 6
     virtual bool isOnlineClient() const;
 
+    // vIndex: 2
     virtual ::StackRefResult<::EntityRegistry> getEntityRegistry() /*override*/;
 
+    // vIndex: 1
     virtual ::StackRefResult<::EntityRegistry const> getEntityRegistry() const /*override*/;
     // NOLINTEND
 
@@ -144,15 +150,13 @@ public:
 
     MCAPI void _tryCatchupMovementTicks();
 
-    MCAPI_S void activateAllowList();
+    MCAPI void activateAllowList();
 
     MCAPI void configureGameTest(::Level& level, ::Experiments const& experiments);
 
     MCAPI void disconnectClient(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason disconnectReason);
 
     MCAPI ::Level* getLevel() const;
-
-    MCAPI_C ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
 
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
 
@@ -180,15 +184,7 @@ public:
 
     MCAPI void initCommands();
 
-    MCAPI_C ::Bedrock::PubSub::Subscription registerLevelListener(::std::function<void(::Level*)> callback) const;
-
-    MCAPI_C bool requestInGamePause(bool status);
-
-    MCAPI_C void resetGameSession();
-
     MCAPI void setupServerCommands(::std::string const& networkCommands, ::std::string const& networkTestCommands);
-
-    MCAPI_C void startClientGame(::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler);
 
     MCAPI void startLeaveGame(bool stopNetwork);
 
@@ -248,8 +244,6 @@ public:
     MCFOLD ::StackRefResult<::EntityRegistry> $getEntityRegistry();
 
     MCFOLD ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
-
-
     // NOLINTEND
 
 public:

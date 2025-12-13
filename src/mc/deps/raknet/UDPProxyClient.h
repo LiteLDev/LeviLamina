@@ -17,27 +17,12 @@ class UDPProxyClient : public ::RakNet::PluginInterface2 {
 public:
     // UDPProxyClient inner types declare
     // clang-format off
+    struct PingServerGroup;
     struct SenderAndTargetAddress;
     struct ServerWithPing;
-    struct PingServerGroup;
     // clang-format on
 
     // UDPProxyClient inner types define
-    struct SenderAndTargetAddress {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 136> mUnk29cc9a;
-        ::ll::UntypedStorage<8, 136> mUnk884631;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SenderAndTargetAddress& operator=(SenderAndTargetAddress const&);
-        SenderAndTargetAddress(SenderAndTargetAddress const&);
-        SenderAndTargetAddress();
-    };
-
     struct ServerWithPing {
     public:
         // member variables
@@ -51,6 +36,21 @@ public:
         ServerWithPing& operator=(ServerWithPing const&);
         ServerWithPing(ServerWithPing const&);
         ServerWithPing();
+    };
+
+    struct SenderAndTargetAddress {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 136> mUnk29cc9a;
+        ::ll::UntypedStorage<8, 136> mUnk884631;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SenderAndTargetAddress& operator=(SenderAndTargetAddress const&);
+        SenderAndTargetAddress(SenderAndTargetAddress const&);
+        SenderAndTargetAddress();
     };
 
     struct PingServerGroup {
@@ -86,12 +86,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~UDPProxyClient() /*override*/ = default;
 
+    // vIndex: 3
     virtual void Update() /*override*/;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
+    // vIndex: 6
     virtual void OnRakPeerShutdown() /*override*/;
     // NOLINTEND
 

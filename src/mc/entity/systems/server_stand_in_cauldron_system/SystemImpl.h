@@ -33,6 +33,7 @@ class SystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::UpdateWaterStateRequestComponent>,
@@ -44,6 +45,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
 
+    // vIndex: 6
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<::UpdateWaterStateRequestComponent>,
@@ -56,6 +58,7 @@ public:
         ::StrictEntityContext&   entityContext
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~SystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -90,8 +93,6 @@ public:
             ::EntityFactoryT<>>& executionContext,
         ::StrictEntityContext&   entityContext
     );
-
-
     // NOLINTEND
 
 public:

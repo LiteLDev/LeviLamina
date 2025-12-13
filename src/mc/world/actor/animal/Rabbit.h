@@ -20,8 +20,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
+    // vIndex: 8
     virtual ~Rabbit() /*override*/ = default;
     // NOLINTEND
 
@@ -49,8 +51,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onSynchedDataUpdate(int dataId);
-
-
     // NOLINTEND
 
 public:

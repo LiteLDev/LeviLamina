@@ -12,10 +12,13 @@ struct Description {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual char const* getJsonName() const = 0;
 
+    // vIndex: 1
     virtual ~Description() = default;
 
+    // vIndex: 2
     virtual void deserializeData(::DeserializeDataParams);
     // NOLINTEND
 
@@ -31,8 +34,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $deserializeData(::DeserializeDataParams);
-
-
     // NOLINTEND
 
 public:

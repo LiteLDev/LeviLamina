@@ -8,10 +8,7 @@
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/safety/RedactableString.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
-#include "mc/world/ContainerCloseListener.h"
-#include "mc/world/ContainerContentChangeListener.h"
 #include "mc/world/ContainerOwner.h"
-#include "mc/world/ContainerSizeChangeListener.h"
 #include "mc/world/TypedRuntimeId.h"
 
 // auto generated forward declare list
@@ -19,6 +16,9 @@
 class Actor;
 class BlockSource;
 class CompoundTag;
+class ContainerCloseListener;
+class ContainerContentChangeListener;
+class ContainerSizeChangeListener;
 class ItemDescriptor;
 class ItemStack;
 class Random;
@@ -86,95 +86,139 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Container();
 
+    // vIndex: 1
     virtual void init();
 
+    // vIndex: 2
     virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) = 0;
 
+    // vIndex: 3
     virtual void addContentChangeListener(::ContainerContentChangeListener* listener);
 
+    // vIndex: 4
     virtual void removeContentChangeListener(::ContainerContentChangeListener* listener);
 
+    // vIndex: 5
     virtual ::Bedrock::PubSub::Connector<void()>* getContainerRemovedConnector();
 
+    // vIndex: 6
     virtual bool hasRemovedSubscribers() const;
 
-    virtual ::ItemStack const& getItem(int slot) const = 0;
+    // vIndex: 7
+    virtual ::ItemStack const& getItem(int) const = 0;
 
+    // vIndex: 8
     virtual bool hasRoomForItem(::ItemStack const& item) const;
 
+    // vIndex: 9
     virtual bool addItem(::ItemStack& item);
 
+    // vIndex: 10
     virtual bool addItemWithForceBalance(::ItemStack& item);
 
+    // vIndex: 11
     virtual bool addItemToFirstEmptySlot(::ItemStack const& item);
 
+    // vIndex: 12
     virtual void setItem(int modelSlot, ::ItemStack const& item) = 0;
 
+    // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
+    // vIndex: 14
     virtual void removeItem(int slot, int count);
 
+    // vIndex: 15
     virtual void removeAllItems();
 
+    // vIndex: 16
     virtual void removeAllItemsWithForceBalance();
 
+    // vIndex: 17
     virtual void containerRemoved();
 
+    // vIndex: 18
     virtual void dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
+    // vIndex: 19
     virtual void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
+    // vIndex: 20
     virtual int getContainerSize() const = 0;
 
+    // vIndex: 21
     virtual int getMaxStackSize() const = 0;
 
+    // vIndex: 22
     virtual void startOpen(::Actor&) = 0;
 
+    // vIndex: 23
     virtual void stopOpen(::Actor& actor);
 
+    // vIndex: 24
     virtual ::std::vector<::ItemStack> getSlotCopies() const;
 
+    // vIndex: 25
     virtual ::std::vector<::ItemStack const*> const getSlots() const;
 
+    // vIndex: 26
     virtual int getEmptySlotsCount() const;
 
+    // vIndex: 27
     virtual int getItemCount(::ItemStack const& compare) const;
 
+    // vIndex: 28
     virtual int firstEmptySlot() const;
 
+    // vIndex: 29
     virtual int firstItem() const;
 
+    // vIndex: 30
     virtual int findFirstSlotForItem(::ItemStack const& item) const;
 
+    // vIndex: 31
     virtual int reverseFindFirstSlotForItem(::ItemStack const& item) const;
 
+    // vIndex: 32
     virtual bool canPushInItem(int, int, ::ItemStack const&) const;
 
+    // vIndex: 33
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const;
 
+    // vIndex: 34
     virtual void setContainerChanged(int slot);
 
+    // vIndex: 35
     virtual void setContainerMoved();
 
+    // vIndex: 36
     virtual void setCustomName(::Bedrock::Safety::RedactableString const& name);
 
+    // vIndex: 37
     virtual bool hasCustomName() const;
 
+    // vIndex: 38
     virtual void readAdditionalSaveData(::CompoundTag const& tag);
 
+    // vIndex: 39
     virtual void addAdditionalSaveData(::CompoundTag& tag);
 
+    // vIndex: 40
     virtual void createTransactionContext(
         ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
         ::std::function<void()>                                                          execute
     );
 
+    // vIndex: 41
     virtual void initializeContainerContents(::BlockSource& region);
 
+    // vIndex: 42
     virtual bool isEmpty() const;
 
+    // vIndex: 43
     virtual bool isSlotDisabled(int) const;
     // NOLINTEND
 
@@ -186,12 +230,6 @@ public:
     MCAPI explicit Container(::SharedTypes::Legacy::ContainerType type);
 
     MCAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
-
-    MCAPI_C Container(
-        ::SharedTypes::Legacy::ContainerType       type,
-        ::Bedrock::Safety::RedactableString const& name,
-        bool                                       customName
-    );
 
     MCAPI void
     _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
@@ -233,9 +271,6 @@ public:
     MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type);
 
     MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
-
-    MCAPI_C void*
-    $ctor(::SharedTypes::Legacy::ContainerType type, ::Bedrock::Safety::RedactableString const& name, bool customName);
     // NOLINTEND
 
 public:
@@ -323,8 +358,6 @@ public:
     MCAPI bool $isEmpty() const;
 
     MCFOLD bool $isSlotDisabled(int) const;
-
-
     // NOLINTEND
 
 public:

@@ -16,26 +16,6 @@ public:
     ValidationFail& operator=(ValidationFail const&);
     ValidationFail(ValidationFail const&);
     ValidationFail();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ValidationFail(::Bedrock::DeviceIdErrorType::ValidationFail&&);
-
-    MCNAPI_C ~ValidationFail();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Bedrock::DeviceIdErrorType::ValidationFail&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Bedrock::DeviceIdErrorType

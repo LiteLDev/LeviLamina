@@ -19,14 +19,14 @@ class TextPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkab94fb;
-    ::ll::UntypedStorage<8, 32> mUnkbb20f6;
-    ::ll::UntypedStorage<8, 32> mUnk978ee5;
-    ::ll::UntypedStorage<8, 40> mUnke96a68;
-    ::ll::UntypedStorage<8, 24> mUnk8d0123;
-    ::ll::UntypedStorage<1, 1>  mUnkc6bb41;
-    ::ll::UntypedStorage<8, 32> mUnk274c5d;
-    ::ll::UntypedStorage<8, 32> mUnkaf9c9a;
+    ::ll::TypedStorage<1, 1, ::TextPacketType>                mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mAuthor;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mMessage;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mFilteredMessage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>   params;
+    ::ll::TypedStorage<1, 1, bool>                            mLocalize;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mXuid;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mPlatformId;
     // NOLINTEND
 
 public:
@@ -36,14 +36,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TextPacket() /*override*/;
 
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
+    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
@@ -87,8 +92,6 @@ public:
 
     MCAPI static ::TextPacket
     createJukeboxPopup(::std::string const& message, ::std::vector<::std::string> const& params);
-
-    MCAPI_C static ::TextPacket createRaw(::std::string const& raw);
 
     MCAPI static ::TextPacket createRawJsonObjectMessage(::std::string const& rawJson);
 
@@ -165,8 +168,6 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-
     // NOLINTEND
 
 public:

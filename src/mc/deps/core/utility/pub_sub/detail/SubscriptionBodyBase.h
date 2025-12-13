@@ -23,11 +23,11 @@ public:
     // clang-format on
 
     // SubscriptionBodyBase inner types define
-    struct CompareEntries {};
-
     using ListHookType = ::Bedrock::Intrusive::list_base_hook<::Bedrock::PubSub::Detail::SubscriptionBodyBase>;
 
     using SubscriptionType = ::Bedrock::PubSub::Subscription;
+
+    struct CompareEntries {};
 
 public:
     // member variables
@@ -41,6 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SubscriptionBodyBase() = default;
     // NOLINTEND
 

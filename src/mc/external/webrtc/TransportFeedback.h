@@ -24,6 +24,21 @@ public:
     // clang-format on
 
     // TransportFeedback inner types define
+    class ReceivedPacket {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<2, 2> mUnk9fd3e8;
+        ::ll::UntypedStorage<2, 2> mUnk675b5c;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ReceivedPacket& operator=(ReceivedPacket const&);
+        ReceivedPacket(ReceivedPacket const&);
+        ReceivedPacket();
+    };
+
     class LastChunk {
     public:
         // member variables
@@ -74,21 +89,6 @@ public:
         // NOLINTEND
     };
 
-    class ReceivedPacket {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2> mUnk9fd3e8;
-        ::ll::UntypedStorage<2, 2> mUnk675b5c;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ReceivedPacket& operator=(ReceivedPacket const&);
-        ReceivedPacket(ReceivedPacket const&);
-        ReceivedPacket();
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -113,10 +113,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TransportFeedback() /*override*/;
 
+    // vIndex: 1
     virtual uint64 BlockLength() const /*override*/;
 
+    // vIndex: 2
     virtual bool Create(
         uchar*                                                   packet,
         uint64*                                                  position,
@@ -170,8 +173,6 @@ public:
         uint64                                                   max_length,
         ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
     ) const;
-
-
     // NOLINTEND
 
 public:

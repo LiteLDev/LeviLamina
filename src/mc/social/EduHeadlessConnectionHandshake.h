@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 namespace Social {
 
 struct EduHeadlessConnectionHandshake {
@@ -26,26 +21,6 @@ public:
     EduHeadlessConnectionHandshake& operator=(EduHeadlessConnectionHandshake const&);
     EduHeadlessConnectionHandshake(EduHeadlessConnectionHandshake const&);
     EduHeadlessConnectionHandshake();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C EduHeadlessConnectionHandshake(::std::string const& id, ::Json::Value const& json);
-
-    MCNAPI_C ~EduHeadlessConnectionHandshake();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string const& id, ::Json::Value const& json);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Social

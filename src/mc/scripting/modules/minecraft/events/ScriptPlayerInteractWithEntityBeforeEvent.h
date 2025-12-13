@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptPlayerInteractWithEntityEvent.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -16,20 +18,18 @@ struct ScriptPlayerInteractWithEntityBeforeEvent : public ::ScriptModuleMinecraf
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkc52d6b;
-    ::ll::UntypedStorage<1, 1>  mUnkb6ad5b;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+                                   mItemStack;
+    ::ll::TypedStorage<1, 1, bool> mCancel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptPlayerInteractWithEntityBeforeEvent& operator=(ScriptPlayerInteractWithEntityBeforeEvent const&);
-    ScriptPlayerInteractWithEntityBeforeEvent(ScriptPlayerInteractWithEntityBeforeEvent const&);
-    ScriptPlayerInteractWithEntityBeforeEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

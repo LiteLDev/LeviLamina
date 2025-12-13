@@ -24,8 +24,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual int Size() = 0;
 
+    // vIndex: 0
     virtual ~FieldTrialListBase() /*override*/;
     // NOLINTEND
 

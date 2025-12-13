@@ -42,9 +42,9 @@ public:
 
     MCNAPI ::cricket::JsepTransport* GetTransportByName(::std::string const& transport_name);
 
-    MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string const&) const;
-
     MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string_view mid) const;
+
+    MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string const&) const;
 
     MCNAPI ::cricket::JsepTransport* GetTransportForMid(::std::string const& mid);
 

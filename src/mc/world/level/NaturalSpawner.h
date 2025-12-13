@@ -34,9 +34,9 @@ namespace br::spawn { struct State; }
 class NaturalSpawner : public ::Spawner {
 public:
     // NaturalSpawner inner types define
-    using AfterSpawnCallback = ::std::function<void(::Mob&, ::LevelChunkVolumeData const&)>;
-
     using SpawnPredicate = ::std::function<bool(::ActorType, ::BlockPos, ::LevelChunkVolumeData const&)>;
+
+    using AfterSpawnCallback = ::std::function<void(::Mob&, ::LevelChunkVolumeData const&)>;
 
 public:
     // member variables
@@ -59,11 +59,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NaturalSpawner() /*override*/ = default;
 
+    // vIndex: 18
     virtual ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
     filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const /*override*/;
 
+    // vIndex: 19
     virtual void spawnForChunk(
         ::BlockSource&,
         ::LevelChunkVolumeData const&,
@@ -72,34 +75,49 @@ public:
         ::IRandom&
     ) const /*override*/;
 
+    // vIndex: 20
     virtual void spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const /*override*/;
 
+    // vIndex: 17
     virtual ::br::spawn::SpawnPlacements& getSpawnPlacements() /*override*/;
 
+    // vIndex: 1
     virtual void initializeServerSide(::ResourcePackManager&, ::IWorldRegistriesProvider&) /*override*/;
 
+    // vIndex: 2
     virtual ::SpawnSettings const& getSpawnSettings() const /*override*/;
 
+    // vIndex: 3
     virtual void setSpawnSettings(::SpawnSettings const&) /*override*/;
 
+    // vIndex: 4
     virtual ::ActorSpawnRuleGroup const* getSpawnRules() const /*override*/;
 
+    // vIndex: 5
     virtual ::ActorSpawnRuleGroup* getSpawnRulesMutable() const /*override*/;
 
+    // vIndex: 6
     virtual ::SpawnGroupRegistry const* getSpawnGroupRegistry() const /*override*/;
 
+    // vIndex: 7
     virtual ::br::spawn::EntityTypeCache* getEntityTypeCache() const /*override*/;
 
+    // vIndex: 11
     virtual void postProcessSpawnMobs(::BlockSource&, int, int, ::Random&) /*override*/;
 
+    // vIndex: 12
     virtual void tick(::BlockSource&, ::LevelChunkVolumeData const&, ::ChunkPos const) /*override*/;
 
+    // vIndex: 13
     virtual void tickMobCount() /*override*/;
 
+    // vIndex: 14
     virtual void incrementSpawnableTickedMob() /*override*/;
 
+    // vIndex: 15
     virtual uint getSpawnableTickedMobCountPrevious() const /*override*/;
 
+    // vIndex: 16
     virtual ::std::unordered_set<::ActorUniqueID> spawnMobGroup(
         ::BlockSource&,
         ::std::string const&,

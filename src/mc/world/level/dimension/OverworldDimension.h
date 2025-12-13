@@ -28,26 +28,36 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~OverworldDimension() /*override*/ = default;
 
+    // vIndex: 9
     virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
 
+    // vIndex: 17
     virtual ::std::unique_ptr<::WorldGenerator>
     createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
+    // vIndex: 20
     virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
 
+    // vIndex: 18
     virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
 
+    // vIndex: 19
     virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
+    // vIndex: 23
     virtual short getCloudHeight() const /*override*/;
 
+    // vIndex: 22
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const
         /*override*/;
 
+    // vIndex: 41
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
+    // vIndex: 42
     virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion
@@ -88,8 +98,6 @@ public:
 
     MCAPI ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
-
-
     // NOLINTEND
 
 public:

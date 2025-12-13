@@ -10,12 +10,12 @@ class ItemUseMethodMap {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& getItemUseMethodName(::ItemUseMethod useMethod);
+    MCAPI static ::std::string const& getItemUseMethodName(::ItemUseMethod useMethod);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BidirectionalUnorderedMap<::ItemUseMethod, ::std::string> const& mMap();
+    MCAPI static ::BidirectionalUnorderedMap<::ItemUseMethod, ::std::string> const& mMap();
     // NOLINTEND
 };

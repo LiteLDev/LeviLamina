@@ -15,12 +15,15 @@ class BrewingStandFuelContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BrewingStandFuelContainerValidation() /*override*/ = default;
 
+    // vIndex: 2
     virtual bool
     isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool) const
         /*override*/;
 
+    // vIndex: 8
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
     // NOLINTEND
 
@@ -36,8 +39,6 @@ public:
     ) const;
 
     MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
-
-
     // NOLINTEND
 
 public:

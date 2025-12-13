@@ -19,17 +19,23 @@ class MediaReceiveStreamInterface : public ::webrtc::ReceiveStreamInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void Start() = 0;
 
+    // vIndex: 2
     virtual void Stop() = 0;
 
+    // vIndex: 3
     virtual void
         SetDepacketizerToDecoderFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>) = 0;
 
+    // vIndex: 4
     virtual void SetFrameDecryptor(::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface>) = 0;
 
+    // vIndex: 5
     virtual ::std::vector<::webrtc::RtpSource> GetSources() const = 0;
 
+    // vIndex: 0
     virtual ~MediaReceiveStreamInterface() /*override*/ = default;
     // NOLINTEND
 

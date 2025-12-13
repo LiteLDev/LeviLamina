@@ -106,6 +106,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptDimension() = default;
     // NOLINTEND
 

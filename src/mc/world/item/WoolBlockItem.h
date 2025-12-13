@@ -21,9 +21,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~WoolBlockItem() /*override*/ = default;
     // NOLINTEND
 
@@ -31,8 +33,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
-
-
     // NOLINTEND
 
 public:

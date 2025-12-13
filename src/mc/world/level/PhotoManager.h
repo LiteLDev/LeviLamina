@@ -51,8 +51,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ~PhotoManager() = default;
 
+    // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(
         ::cg::ImageBuffer&,
         ::Actor*,
@@ -90,8 +92,6 @@ public:
         ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
     )>&
     $getPictureTakenConnector();
-
-
     // NOLINTEND
 
 public:

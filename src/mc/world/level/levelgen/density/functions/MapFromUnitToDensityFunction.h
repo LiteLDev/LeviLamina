@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/density/DensityFunctionPtr.h"
 #include "mc/world/level/levelgen/density/IDensityFunction.h"
 
 // auto generated forward declare list
@@ -15,22 +16,18 @@ class MapFromUnitToDensityFunction : public ::IDensityFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkaef6bb;
-    ::ll::UntypedStorage<4, 4>  mUnk886cc2;
-    ::ll::UntypedStorage<4, 4>  mUnk5df474;
+    ::ll::TypedStorage<8, 16, ::DensityFunctionPtr const> mInput;
+    ::ll::TypedStorage<4, 4, float const>                 mToMin;
+    ::ll::TypedStorage<4, 4, float const>                 mToMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MapFromUnitToDensityFunction& operator=(MapFromUnitToDensityFunction const&);
-    MapFromUnitToDensityFunction(MapFromUnitToDensityFunction const&);
-    MapFromUnitToDensityFunction();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MapFromUnitToDensityFunction() /*override*/ = default;
 
+    // vIndex: 1
     virtual ushort addToCalculators(::DensityCalculators&, ::DensityFunctionRegistry const&) const /*override*/;
     // NOLINTEND
 

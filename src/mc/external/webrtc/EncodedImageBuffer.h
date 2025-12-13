@@ -25,12 +25,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual uchar const* data() const /*override*/;
 
+    // vIndex: 3
     virtual uchar* data() /*override*/;
 
+    // vIndex: 5
     virtual uint64 size() const /*override*/;
 
+    // vIndex: 2
     virtual ~EncodedImageBuffer() /*override*/;
     // NOLINTEND
 
@@ -70,8 +74,6 @@ public:
     MCNAPI uchar* $data();
 
     MCNAPI uint64 $size() const;
-
-
     // NOLINTEND
 
 public:

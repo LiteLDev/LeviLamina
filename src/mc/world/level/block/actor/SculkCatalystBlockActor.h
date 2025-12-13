@@ -38,26 +38,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
+    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
+    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
+    // vIndex: 1
     virtual void handleGameEvent(
         ::GameEvent const&        gameEvent,
         ::GameEventContext const& gameEventContext,
         ::BlockSource&            region
     ) /*override*/;
 
+    // vIndex: 2
     virtual ::GameEvents::PositionSource const& getPositionSource() const /*override*/;
 
+    // vIndex: 3
     virtual uint getRange() const /*override*/;
 
+    // vIndex: 4
     virtual ::GameEventListener::DeliveryMode getDeliveryMode() const /*override*/;
 
+    // vIndex: 0
     virtual ~SculkCatalystBlockActor() /*override*/;
     // NOLINTEND
 
@@ -106,8 +115,6 @@ public:
     MCFOLD uint $getRange() const;
 
     MCFOLD ::GameEventListener::DeliveryMode $getDeliveryMode() const;
-
-
     // NOLINTEND
 
 public:

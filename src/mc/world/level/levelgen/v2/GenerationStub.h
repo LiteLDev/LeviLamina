@@ -33,13 +33,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~BuildResult();
+        MCAPI ~BuildResult();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

@@ -32,19 +32,24 @@ class WallBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
+    // vIndex: 65
     virtual void onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
+    // vIndex: 10
     virtual ::AABB const&
     getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
         /*override*/;
 
+    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -52,6 +57,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
+    // vIndex: 9
     virtual ::AABB const& getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -59,18 +65,24 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
+    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
+    // vIndex: 24
     virtual bool canConnect(::Block const& otherBlock, uchar, ::Block const&) const /*override*/;
 
+    // vIndex: 13
     virtual bool
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
 
+    // vIndex: 34
     virtual bool isWallBlock() const /*override*/;
 
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
+    // vIndex: 4
     virtual ::HitResult clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
@@ -81,11 +93,14 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
+    // vIndex: 88
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~WallBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -115,13 +130,7 @@ public:
     // NOLINTBEGIN
     MCAPI static float const& POST_HEIGHT();
 
-    MCAPI_C static float const& POST_WIDTH();
-
     MCAPI static ::BaseGameVersion const& WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION();
-
-    MCAPI_C static float const& WALL_HEIGHT();
-
-    MCAPI_C static float const& WALL_WIDTH();
     // NOLINTEND
 
 public:
@@ -174,8 +183,6 @@ public:
     MCFOLD ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

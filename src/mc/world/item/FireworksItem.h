@@ -25,24 +25,30 @@ class FireworksItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 123
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
+    // vIndex: 81
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
+    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool const                           advancedToolTips
     ) const /*override*/;
 
+    // vIndex: 48
     virtual bool isDestructive(int) const /*override*/;
 
+    // vIndex: 0
     virtual ~FireworksItem() /*override*/ = default;
     // NOLINTEND
 
@@ -83,12 +89,10 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool const                           advancedToolTips
     ) const;
 
     MCFOLD bool $isDestructive(int) const;
-
-
     // NOLINTEND
 
 public:

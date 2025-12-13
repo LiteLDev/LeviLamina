@@ -17,12 +17,12 @@ struct ServerNetworkGameplayNotificationEvent
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ServerNetworkGameplayNotificationEvent();
+    MCAPI ~ServerNetworkGameplayNotificationEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

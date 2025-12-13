@@ -9,6 +9,7 @@ class MaterialReducerContainerScreenValidator : public ::ContainerScreenValidato
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MaterialReducerContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

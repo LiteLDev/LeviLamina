@@ -34,100 +34,66 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ServerLocatorComposite() /*override*/ = default;
 
+    // vIndex: 3
     virtual void startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                worldGameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
+        ::std::string const&,
+        ::std::string const&,
+        ::Bedrock::NonOwnerPointer<::AppPlatform>,
+        ::GameType,
+        int,
+        int,
+        bool,
+        bool,
+        bool
     ) /*override*/;
 
-    virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform) /*override*/;
+    // vIndex: 4
+    virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform>) /*override*/;
 
-    virtual void startServerDiscovery(::PortPair ports) /*override*/;
+    // vIndex: 5
+    virtual void startServerDiscovery(::PortPair) /*override*/;
 
+    // vIndex: 6
     virtual void stopServerDiscovery() /*override*/;
 
-    virtual void addCustomServer(::AsynchronousIPResolver const& futureIP, int port) /*override*/;
+    // vIndex: 8
+    virtual void addCustomServer(::AsynchronousIPResolver const&, int) /*override*/;
 
-    virtual void addCustomServer(::std::string const& address, int port) /*override*/;
+    // vIndex: 7
+    virtual void addCustomServer(::std::string const&, int) /*override*/;
 
+    // vIndex: 9
     virtual ::std::vector<::PingedCompatibleServer> getServerList() const /*override*/;
 
+    // vIndex: 10
     virtual void clearServerList() /*override*/;
 
+    // vIndex: 11
     virtual void update() /*override*/;
 
-    virtual float getPingTimeForGUID(::std::string const& guid) /*override*/;
+    // vIndex: 12
+    virtual float getPingTimeForGUID(::std::string const&) /*override*/;
 
+    // vIndex: 13
     virtual void checkCanConnectToCustomServerAsync(
-        ::std::string                                         hostIpAddress,
-        int                                                   port,
-        ::std::function<void(::ServerConnectivityTestResult)> callback
+        ::std::string,
+        int,
+        ::std::function<void(::ServerConnectivityTestResult)>
     ) /*override*/;
 
+    // vIndex: 1
     virtual void _onDisable() /*override*/;
 
+    // vIndex: 2
     virtual void _onEnable() /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                worldGameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
-    );
 
-    MCNAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
-
-    MCNAPI void $startServerDiscovery(::PortPair ports);
-
-    MCNAPI void $stopServerDiscovery();
-
-    MCNAPI void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
-
-    MCNAPI void $addCustomServer(::std::string const& address, int port);
-
-    MCNAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
-
-    MCNAPI void $clearServerList();
-
-    MCNAPI void $update();
-
-    MCNAPI float $getPingTimeForGUID(::std::string const& guid);
-
-    MCNAPI void $checkCanConnectToCustomServerAsync(
-        ::std::string                                         hostIpAddress,
-        int                                                   port,
-        ::std::function<void(::ServerConnectivityTestResult)> callback
-    );
-
-    MCNAPI void $_onDisable();
-
-    MCNAPI void $_onEnable();
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

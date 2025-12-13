@@ -30,25 +30,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 49
     virtual int clearInventory(int resizeTo) /*override*/;
 
+    // vIndex: 45
     virtual void swapSlots(int from, int to) /*override*/;
 
+    // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
+    // vIndex: 50
     virtual ::std::unique_ptr<::ListTag> saveToTag(::SaveContext const& saveContext) const /*override*/;
 
+    // vIndex: 7
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
+    // vIndex: 2
     virtual void serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
+    // vIndex: 52
     virtual void
     _trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset) /*override*/;
 
+    // vIndex: 0
     virtual ~LockingFillingContainer() /*override*/ = default;
     // NOLINTEND
 
@@ -96,8 +104,6 @@ public:
     );
 
     MCAPI void $_trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
-
-
     // NOLINTEND
 
 public:

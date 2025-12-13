@@ -18,17 +18,17 @@ struct TickingAreaDescription;
 class TickingAreaCommand : public ::Command {
 public:
     // TickingAreaCommand inner types define
-    enum class AddAreaType : int {
-        Bounds = 0,
-        Circle = 1,
-    };
-
     enum class Mode : int {
         Add       = 0,
         Remove    = 1,
         RemoveAll = 2,
         List      = 3,
         Preload   = 4,
+    };
+
+    enum class AddAreaType : int {
+        Bounds = 0,
+        Circle = 1,
     };
 
     enum class TargetDimensions : int {
@@ -60,8 +60,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
+    // vIndex: 0
     virtual ~TickingAreaCommand() /*override*/ = default;
     // NOLINTEND
 
@@ -96,8 +98,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-
     // NOLINTEND
 
 public:

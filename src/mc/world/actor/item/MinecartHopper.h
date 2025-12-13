@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/item/Minecart.h"
 #include "mc/world/actor/item/MinecartType.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,28 +18,28 @@ class MinecartHopper : public ::Minecart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkfdb702;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mLastPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MinecartHopper& operator=(MinecartHopper const&);
-    MinecartHopper(MinecartHopper const&);
-    MinecartHopper();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 138
     virtual void destroy(::ActorDamageSource const& source, bool dropMinecartComponents) /*override*/;
 
+    // vIndex: 142
     virtual void applyNaturalSlowdown(::BlockSource& region) /*override*/;
 
+    // vIndex: 139
     virtual ::MinecartType getType() /*override*/;
 
+    // vIndex: 140
     virtual ::Block const* getDefaultDisplayBlock() const /*override*/;
 
+    // vIndex: 141
     virtual int getDefaultDisplayOffset() const /*override*/;
 
+    // vIndex: 8
     virtual ~MinecartHopper() /*override*/ = default;
     // NOLINTEND
 
@@ -54,8 +55,6 @@ public:
     MCAPI ::Block const* $getDefaultDisplayBlock() const;
 
     MCFOLD int $getDefaultDisplayOffset() const;
-
-
     // NOLINTEND
 
 public:

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/actor/DefinitionTrigger.h"
 
 // auto generated forward declare list
@@ -15,33 +16,28 @@ class OnStepOnTrigger : public ::DefinitionTrigger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkf4b4fe;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mEventSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OnStepOnTrigger& operator=(OnStepOnTrigger const&);
-    OnStepOnTrigger(OnStepOnTrigger const&);
-    OnStepOnTrigger();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~OnStepOnTrigger();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void finalize(::BlockEvents::BlockEventManager& manager);
+    MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
-    MCNAPI void onStepOn(::BlockEvents::BlockStepOnEvent const& eventData) const;
+    MCAPI void onStepOn(::BlockEvents::BlockStepOnEvent const& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

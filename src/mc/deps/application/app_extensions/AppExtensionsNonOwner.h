@@ -29,23 +29,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::Bedrock::NonOwnerPointer<::AppExtensions::IAppExtensions> tryGetExtensions() const /*override*/;
 
+    // vIndex: 0
     virtual ~AppExtensionsNonOwner() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void setExtensions(::AppExtensions::IAppExtensionsNonOwner const& owner);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Bedrock::NonOwnerPointer<::AppExtensions::IAppExtensions> $tryGetExtensions() const;
-
-
     // NOLINTEND
 };
 

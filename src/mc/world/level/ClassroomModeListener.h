@@ -21,10 +21,13 @@ class ClassroomModeListener : public ::LevelListener {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 18
     virtual void onEntityAdded(::Actor& entity) /*override*/;
 
+    // vIndex: 19
     virtual void onEntityRemoved(::Actor& entity) /*override*/;
 
+    // vIndex: 4
     virtual void onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              pos,
@@ -37,19 +40,22 @@ public:
         ::Actor*                       blockChangeSource
     ) /*override*/;
 
+    // vIndex: 3
     virtual void onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max) /*override*/;
 
+    // vIndex: 20
     virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
+    // vIndex: 23
     virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
 
+    // vIndex: 0
     virtual ~ClassroomModeListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI void $onEntityAdded(::Actor& entity);
 
     MCNAPI void $onEntityRemoved(::Actor& entity);
@@ -71,8 +77,11 @@ public:
     MCNAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
     MCNAPI void $onChunkUnloaded(::LevelChunk& lc);
-#endif
+    // NOLINTEND
 
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

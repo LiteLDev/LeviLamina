@@ -24,16 +24,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 90
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
+    // vIndex: 110
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
+    // vIndex: 3
     virtual ::RecordItem& setDescriptionId(::std::string const& description) /*override*/;
 
+    // vIndex: 0
     virtual ~RecordItem() /*override*/ = default;
     // NOLINTEND
 
@@ -71,8 +76,6 @@ public:
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCFOLD ::RecordItem& $setDescriptionId(::std::string const& description);
-
-
     // NOLINTEND
 
 public:

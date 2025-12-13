@@ -8,16 +8,16 @@
 struct StartScreenCapabilities : public ::TypedScreenCapabilities<::StartScreenCapabilities> {
 public:
     // StartScreenCapabilities inner types define
-    enum class EduManageAccountOptions : uchar {
-        Upsell = 0,
-        Prompt = 1,
-        SignIn = 2,
-    };
-
     enum class PlayButtonTarget : uchar {
         None    = 0,
         Vanilla = 1,
         Edu     = 2,
+    };
+
+    enum class EduManageAccountOptions : uchar {
+        Upsell = 0,
+        Prompt = 1,
+        SignIn = 2,
     };
 
 public:
@@ -41,6 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~StartScreenCapabilities() /*override*/ = default;
     // NOLINTEND
 

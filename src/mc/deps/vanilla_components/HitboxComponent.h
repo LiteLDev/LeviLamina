@@ -22,20 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI HitboxComponent(::HitboxComponent const& rhs);
-
-    MCNAPI_C ~HitboxComponent();
+    MCAPI HitboxComponent(::HitboxComponent const& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::HitboxComponent const& rhs);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI void* $ctor(::HitboxComponent const& rhs);
     // NOLINTEND
 };

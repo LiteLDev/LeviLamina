@@ -31,62 +31,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~MutsVerifier() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~MutsVerifier() /*override*/;
-#endif
 
-    virtual void setRequest(::Json::Value& request) /*override*/;
+    // vIndex: 1
+    virtual void setRequest(::Json::Value&) /*override*/;
 
-    virtual ::std::optional<::Json::Value> verify(::Json::Value&& response) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C MutsVerifier(
-        ::std::string                    responseField,
-        ::std::string                    payloadField,
-        ::std::string                    publicKey,
-        ::std::function<int64()>         getTime,
-        ::std::function<::std::string()> createRequestId
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        ::std::string                    responseField,
-        ::std::string                    payloadField,
-        ::std::string                    publicKey,
-        ::std::function<int64()>         getTime,
-        ::std::function<::std::string()> createRequestId
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    // vIndex: 2
+    virtual ::std::optional<::Json::Value> verify(::Json::Value&&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $setRequest(::Json::Value& request);
 
-    MCNAPI ::std::optional<::Json::Value> $verify(::Json::Value&& response);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

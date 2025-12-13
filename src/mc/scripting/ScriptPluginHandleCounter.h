@@ -69,6 +69,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void onMakeObject(
         ::Scripting::LifetimeRegistry&,
         ::Scripting::ObjectHandle,
@@ -76,6 +77,7 @@ public:
         uint                     size
     ) /*override*/;
 
+    // vIndex: 2
     virtual void onDestroyObject(
         ::Scripting::LifetimeRegistry&,
         ::Scripting::ObjectHandle,
@@ -83,6 +85,7 @@ public:
         uint                     size
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~ScriptPluginHandleCounter() /*override*/ = default;
     // NOLINTEND
 
@@ -104,8 +107,6 @@ public:
         ::entt::meta_type const& type,
         uint                     size
     );
-
-
     // NOLINTEND
 
 public:

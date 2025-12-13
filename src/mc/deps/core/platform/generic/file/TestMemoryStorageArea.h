@@ -30,24 +30,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) /*override*/;
 
+    // vIndex: 3
     virtual bool supportsSizeQuery() const /*override*/;
 
+    // vIndex: 5
     virtual ::Core::Result getUsedSize(uint64&) /*override*/;
 
+    // vIndex: 4
     virtual uint64 getTotalSize() const /*override*/;
 
+    // vIndex: 13
     virtual bool supportsExtendSize() const /*override*/;
 
+    // vIndex: 14
     virtual bool canExtendSize() const /*override*/;
 
+    // vIndex: 18
     virtual void preemptiveExtendSize(
         uint64 const            expectedContentSize,
         ::std::function<void()> successCallback,
         ::std::function<void()> failureCallback
     ) /*override*/;
 
+    // vIndex: 0
     virtual ~TestMemoryStorageArea() /*override*/ = default;
     // NOLINTEND
 

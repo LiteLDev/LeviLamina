@@ -17,24 +17,25 @@ class Bee : public ::Animal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk4f7897;
-    ::ll::UntypedStorage<8, 8> mUnka3e2c3;
-    ::ll::UntypedStorage<4, 4> mUnka93c64;
+    ::ll::TypedStorage<8, 8, uint64> mNormalLoop;
+    ::ll::TypedStorage<8, 8, uint64> mAggressiveLoop;
+    ::ll::TypedStorage<4, 4, float>  mLoopSoundSpeed;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Bee& operator=(Bee const&);
-    Bee(Bee const&);
     Bee();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual ~Bee() /*override*/ = default;
 
+    // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
     // NOLINTEND
 
@@ -67,8 +68,6 @@ public:
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
     MCAPI void $onSynchedDataUpdate(int dataId);
-
-
     // NOLINTEND
 
 public:

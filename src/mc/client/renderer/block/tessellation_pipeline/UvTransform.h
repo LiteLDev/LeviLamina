@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/Flip.h"
-
 namespace ClientBlockPipeline {
 
 class UvTransform {
@@ -27,12 +24,6 @@ public:
     UvTransform& operator=(UvTransform const&);
     UvTransform(UvTransform const&);
     UvTransform();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void flipTransform(::Flip flip);
-    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

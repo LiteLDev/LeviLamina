@@ -32,31 +32,27 @@ public:
     // clang-format on
 
     // ScatterParams inner types define
-    enum class NeedsMolang : int {
-        No  = 0,
-        Yes = 1,
-    };
-
-    struct ChanceInformation {
+    class ScatteredPositions {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::ExpressionNode> mChancePercent;
-        ::ll::TypedStorage<4, 4, int>               mNumerator;
-        ::ll::TypedStorage<4, 4, int>               mDenominator;
+        ::ll::TypedStorage<8, 8, ::RenderParams&>        mMolangParams;
+        ::ll::TypedStorage<8, 8, ::Random&>              mRandom;
+        ::ll::TypedStorage<8, 8, ::ScatterParams const&> mScatterParams;
+        ::ll::TypedStorage<4, 12, ::BlockPos>            mOrigin;
+        ::ll::TypedStorage<4, 4, uint>                   mIterations;
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ChanceInformation();
-        // NOLINTEND
+        // prevent constructor by default
+        ScatteredPositions& operator=(ScatteredPositions const&);
+        ScatteredPositions(ScatteredPositions const&);
+        ScatteredPositions();
+    };
 
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
+    enum class NeedsMolang : int {
+        No  = 0,
+        Yes = 1,
     };
 
     struct CoordinateRange {
@@ -80,9 +76,9 @@ public:
         // NOLINTBEGIN
         MCNAPI CoordinateRange();
 
-        MCNAPI CoordinateRange(::ScatterParams::CoordinateRange&&);
-
         MCNAPI CoordinateRange(::ScatterParams::CoordinateRange const&);
+
+        MCNAPI CoordinateRange(::ScatterParams::CoordinateRange&&);
 
         MCNAPI int _eval(int evaluatedMin, int evaluatedMax, uint& stepIndex, ::Random& random) const;
 
@@ -94,9 +90,9 @@ public:
         // NOLINTBEGIN
         MCNAPI void* $ctor();
 
-        MCNAPI void* $ctor(::ScatterParams::CoordinateRange&&);
-
         MCNAPI void* $ctor(::ScatterParams::CoordinateRange const&);
+
+        MCNAPI void* $ctor(::ScatterParams::CoordinateRange&&);
         // NOLINTEND
 
     public:
@@ -106,22 +102,26 @@ public:
         // NOLINTEND
     };
 
-    class ScatteredPositions {
+    struct ChanceInformation {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::RenderParams&>        mMolangParams;
-        ::ll::TypedStorage<8, 8, ::Random&>              mRandom;
-        ::ll::TypedStorage<8, 8, ::ScatterParams const&> mScatterParams;
-        ::ll::TypedStorage<4, 12, ::BlockPos>            mOrigin;
-        ::ll::TypedStorage<4, 4, uint>                   mIterations;
+        ::ll::TypedStorage<8, 16, ::ExpressionNode> mChancePercent;
+        ::ll::TypedStorage<4, 4, int>               mNumerator;
+        ::ll::TypedStorage<4, 4, int>               mDenominator;
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ScatteredPositions& operator=(ScatteredPositions const&);
-        ScatteredPositions(ScatteredPositions const&);
-        ScatteredPositions();
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~ChanceInformation();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
     };
 
 public:

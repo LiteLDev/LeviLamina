@@ -37,18 +37,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 11
     virtual void onPlace(::BlockSource& region) /*override*/;
 
+    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
+    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
+    // vIndex: 0
     virtual ~BannerBlockActor() /*override*/;
     // NOLINTEND
 
@@ -67,23 +74,11 @@ public:
 
     MCAPI static int getBaseColor(::ItemStack const& item);
 
-    MCAPI_C static ::std::string getColors(::CompoundTag const* tag);
-
     MCAPI static int getPatternCount(::CompoundTag const* tagElement);
-
-    MCAPI_C static ::std::string getPatterns(::CompoundTag const* tag);
 
     MCAPI static bool isDefaultBanner(::ItemStackBase const& instance);
 
     MCAPI static void removeLastPattern(::ItemStack& instance);
-
-    MCAPI_C static void setBannerDetails(
-        ::ItemStack&         instance,
-        int                  customColor,
-        ::std::string const& patterns,
-        ::std::string const& colors,
-        ::BannerBlockType    bannerType
-    );
     // NOLINTEND
 
 public:
@@ -128,8 +123,6 @@ public:
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
-
-
     // NOLINTEND
 
 public:

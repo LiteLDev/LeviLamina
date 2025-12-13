@@ -12,16 +12,22 @@ class VideoContentDescription : public ::cricket::RtpMediaContentDescription {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 10
     virtual void set_protocol(::std::string_view protocol) /*override*/;
 
+    // vIndex: 1
     virtual ::cricket::MediaType type() const /*override*/;
 
+    // vIndex: 5
     virtual ::cricket::VideoContentDescription* as_video() /*override*/;
 
+    // vIndex: 4
     virtual ::cricket::VideoContentDescription const* as_video() const /*override*/;
 
+    // vIndex: 12
     virtual ::cricket::VideoContentDescription* CloneInternal() const /*override*/;
 
+    // vIndex: 0
     virtual ~VideoContentDescription() /*override*/ = default;
     // NOLINTEND
 
@@ -37,8 +43,6 @@ public:
     MCNAPI ::cricket::VideoContentDescription const* $as_video() const;
 
     MCNAPI ::cricket::VideoContentDescription* $CloneInternal() const;
-
-
     // NOLINTEND
 
 public:

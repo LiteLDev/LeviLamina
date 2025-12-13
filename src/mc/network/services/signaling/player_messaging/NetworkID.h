@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 namespace PlayerMessaging {
 
 struct NetworkID {
@@ -26,10 +21,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit NetworkID(::std::string const& str);
-
-    MCNAPI_C ::Json::Value toJson() const;
-
-    MCNAPI_C ::std::string toString() const;
     // NOLINTEND
 
 public:

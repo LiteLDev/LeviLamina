@@ -35,18 +35,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 36
     virtual int getAttackDamage() const /*override*/;
 
+    // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
+    // vIndex: 56
     virtual int getEnchantValue() const /*override*/;
 
+    // vIndex: 54
     virtual bool isValidRepairItem(
         ::ItemStackBase const&,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const /*override*/;
 
+    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -54,13 +59,17 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
+    // vIndex: 32
     virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
+    // vIndex: 84
     virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
+    // vIndex: 8
     virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
         /*override*/;
 
+    // vIndex: 0
     virtual ~DiggerItem() /*override*/;
     // NOLINTEND
 
@@ -97,8 +106,6 @@ public:
     MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
     MCAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
-
-
     // NOLINTEND
 
 public:

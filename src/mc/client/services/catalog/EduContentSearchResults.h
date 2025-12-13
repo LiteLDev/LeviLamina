@@ -17,16 +17,4 @@ public:
     EduContentSearchResults& operator=(EduContentSearchResults const&);
     EduContentSearchResults(EduContentSearchResults const&);
     EduContentSearchResults();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~EduContentSearchResults();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

@@ -8,6 +8,7 @@ class AudioTrackSinkInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void OnData(
         void const* audio_data,
         int         bits_per_sample,
@@ -16,6 +17,7 @@ public:
         uint64      number_of_frames
     );
 
+    // vIndex: 0
     virtual void OnData(
         void const*            audio_data,
         int                    bits_per_sample,
@@ -25,8 +27,10 @@ public:
         ::std::optional<int64> absolute_capture_timestamp_ms
     );
 
+    // vIndex: 2
     virtual int NumPreferredChannels() const;
 
+    // vIndex: 3
     virtual ~AudioTrackSinkInterface() = default;
     // NOLINTEND
 
@@ -51,8 +55,6 @@ public:
     );
 
     MCNAPI int $NumPreferredChannels() const;
-
-
     // NOLINTEND
 
 public:

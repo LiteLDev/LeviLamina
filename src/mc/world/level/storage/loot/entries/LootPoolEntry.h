@@ -38,10 +38,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual bool _createItem(::std::vector<::ItemStack>&, ::Random&, ::LootTableContext&) const = 0;
 
+    // vIndex: 1
     virtual ~LootPoolEntry();
 
+    // vIndex: 2
     virtual ::LootPoolEntry::EntryType getEntryType() const = 0;
     // NOLINTEND
 

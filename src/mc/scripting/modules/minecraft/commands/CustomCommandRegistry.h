@@ -118,8 +118,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CustomCommandRegistry() /*override*/;
 
+    // vIndex: 2
     virtual void _onScriptInitializationComplete() /*override*/;
     // NOLINTEND
 
@@ -186,8 +188,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $_onScriptInitializationComplete();
-
-
     // NOLINTEND
 
 public:

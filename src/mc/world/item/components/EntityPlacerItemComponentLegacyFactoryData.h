@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockDescriptor;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -16,9 +18,9 @@ struct EntityPlacerItemComponentLegacyFactoryData : public ::IItemComponentLegac
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 176> mUnk2e1cec;
-    ::ll::UntypedStorage<8, 24>  mUnke0635e;
-    ::ll::UntypedStorage<8, 24>  mUnk21f542;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>     mIdentifier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedUseBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedDispenseBlocks;
     // NOLINTEND
 
 public:
@@ -29,15 +31,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EntityPlacerItemComponentLegacyFactoryData() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntityPlacerItemComponentLegacyFactoryData(::EntityPlacerItemComponentLegacyFactoryData&&);
-
     MCAPI EntityPlacerItemComponentLegacyFactoryData(::EntityPlacerItemComponentLegacyFactoryData const&);
+
+    MCAPI EntityPlacerItemComponentLegacyFactoryData(::EntityPlacerItemComponentLegacyFactoryData&&);
     // NOLINTEND
 
 public:
@@ -53,9 +56,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EntityPlacerItemComponentLegacyFactoryData&&);
-
     MCAPI void* $ctor(::EntityPlacerItemComponentLegacyFactoryData const&);
+
+    MCAPI void* $ctor(::EntityPlacerItemComponentLegacyFactoryData&&);
     // NOLINTEND
 
 public:

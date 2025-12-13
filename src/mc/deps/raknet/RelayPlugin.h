@@ -20,12 +20,28 @@ class RelayPlugin : public ::RakNet::PluginInterface2 {
 public:
     // RelayPlugin inner types declare
     // clang-format off
-    struct StrAndGuid;
     struct RP_Group;
+    struct StrAndGuid;
     struct StrAndGuidAndRoom;
     // clang-format on
 
     // RelayPlugin inner types define
+    struct StrAndGuidAndRoom {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnk8f48d6;
+        ::ll::UntypedStorage<8, 16> mUnkc73f21;
+        ::ll::UntypedStorage<8, 8>  mUnk3039ae;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        StrAndGuidAndRoom& operator=(StrAndGuidAndRoom const&);
+        StrAndGuidAndRoom(StrAndGuidAndRoom const&);
+        StrAndGuidAndRoom();
+    };
+
     struct StrAndGuid {
     public:
         // member variables
@@ -56,22 +72,6 @@ public:
         RP_Group();
     };
 
-    struct StrAndGuidAndRoom {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk8f48d6;
-        ::ll::UntypedStorage<8, 16> mUnkc73f21;
-        ::ll::UntypedStorage<8, 8>  mUnk3039ae;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        StrAndGuidAndRoom& operator=(StrAndGuidAndRoom const&);
-        StrAndGuidAndRoom(StrAndGuidAndRoom const&);
-        StrAndGuidAndRoom();
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -90,10 +90,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RelayPlugin() /*override*/ = default;
 
+    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
+    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,

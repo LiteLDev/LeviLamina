@@ -14,8 +14,10 @@ class MelonBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 24
     virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
 
+    // vIndex: 0
     virtual ~MelonBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -23,8 +25,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $canConnect(::Block const&, uchar, ::Block const&) const;
-
-
     // NOLINTEND
 
 public:

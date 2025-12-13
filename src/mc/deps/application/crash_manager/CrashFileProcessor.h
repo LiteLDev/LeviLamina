@@ -23,11 +23,6 @@ public:
     // clang-format on
 
     // CrashFileProcessor inner types define
-    enum class ProcessMode : int {
-        Synchronous  = 0,
-        Asynchronous = 1,
-    };
-
     class CrashHandler {
     public:
         // CrashHandler inner types declare
@@ -55,12 +50,16 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+        // vIndex: 0
         virtual ~CrashHandler() = default;
 
+        // vIndex: 1
         virtual ::std::shared_ptr<::Bedrock::SessionInfo> findCrashedSessionInfo(::std::string_view) const = 0;
 
+        // vIndex: 2
         virtual void notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const&) = 0;
 
+        // vIndex: 3
         virtual void notifyDoneWithSession(::std::string_view) = 0;
         // NOLINTEND
 
@@ -71,21 +70,31 @@ public:
         // NOLINTEND
     };
 
+    enum class ProcessMode : int {
+        Synchronous  = 0,
+        Asynchronous = 1,
+    };
+
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CrashFileProcessor() = default;
 
+    // vIndex: 1
     virtual bool getSessionIDFromFile(::std::string&, ::Core::PathBuffer<::std::string> const&) const = 0;
 
+    // vIndex: 2
     virtual ::Bedrock::CrashFileProcessor::ProcessMode
     beginCrashProcessing(uint64, ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>, ::Scheduler&) = 0;
 
+    // vIndex: 3
     virtual ::Bedrock::Threading::Async<bool> processCrash(
         ::gsl::not_null<::std::shared_ptr<::Bedrock::CrashFileProcessor::CrashHandler>> const&,
         ::Core::PathBuffer<::std::string> const&
     ) = 0;
 
+    // vIndex: 4
     virtual void doneCrashProcessing() = 0;
     // NOLINTEND
 

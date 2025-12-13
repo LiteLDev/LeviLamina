@@ -17,35 +17,22 @@ class DataStoreSyncClient : public ::Bedrock::DDUI::DataStoreSync {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void applyChanges(
         ::std::vector<::std::variant<::Bedrock::DDUI::DataStoreChange, ::Bedrock::DDUI::DataStoreRemoval>> const&
-            changes
     ) /*override*/;
 
+    // vIndex: 3
     virtual void assertAppropriateThread() const /*override*/;
 
+    // vIndex: 0
     virtual ~DataStoreSyncClient() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $applyChanges(
-        ::std::vector<::std::variant<::Bedrock::DDUI::DataStoreChange, ::Bedrock::DDUI::DataStoreRemoval>> const&
-            changes
-    );
 
-    MCNAPI void $assertAppropriateThread() const;
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -29,6 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SaveTransactionManager() /*override*/ = default;
     // NOLINTEND
 

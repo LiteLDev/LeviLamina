@@ -19,12 +19,16 @@ class DropperBlockActor : public ::DispenserBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 25
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
+    // vIndex: 0
     virtual ~DropperBlockActor() /*override*/ = default;
     // NOLINTEND
 
@@ -53,8 +57,6 @@ public:
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
-
-
     // NOLINTEND
 
 public:

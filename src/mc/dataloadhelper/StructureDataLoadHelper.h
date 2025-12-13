@@ -40,45 +40,64 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::Vec3 loadPosition(::Vec3 const& position) /*override*/;
 
+    // vIndex: 2
     virtual ::BlockPos loadBlockPosition(::BlockPos const& blockPos) /*override*/;
 
+    // vIndex: 3
     virtual ::BlockPos loadBlockPositionOffset(::BlockPos const& blockPosOffset) /*override*/;
 
+    // vIndex: 4
     virtual float loadRotationDegreesX(float x) /*override*/;
 
+    // vIndex: 5
     virtual float loadRotationDegreesY(float y) /*override*/;
 
+    // vIndex: 6
     virtual float loadRotationRadiansX(float x) /*override*/;
 
+    // vIndex: 7
     virtual float loadRotationRadiansY(float y) /*override*/;
 
+    // vIndex: 8
     virtual uchar loadFacingID(uchar facing) /*override*/;
 
+    // vIndex: 10
     virtual ::Vec3 loadDirection(::Vec3 const& direction) /*override*/;
 
+    // vIndex: 9
     virtual ::Direction::Type loadDirection(::Direction::Type direction) /*override*/;
 
+    // vIndex: 11
     virtual ::Rotation loadRotation(::Rotation rotation) /*override*/;
 
+    // vIndex: 12
     virtual ::Mirror loadMirror(::Mirror mirror) /*override*/;
 
+    // vIndex: 13
     virtual ::ActorUniqueID loadActorUniqueID(::ActorUniqueID id) /*override*/;
 
+    // vIndex: 14
     virtual ::ActorUniqueID loadOwnerID(::ActorUniqueID id) /*override*/;
 
+    // vIndex: 15
     virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
         ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
         ::std::string const&                                                                    componentName
     ) /*override*/;
 
+    // vIndex: 17
     virtual bool shouldResetTime() /*override*/;
 
+    // vIndex: 16
     virtual ::DataLoadHelperType getType() const /*override*/;
 
+    // vIndex: 18
     virtual ::ActorUniqueID _generateNewID();
 
+    // vIndex: 0
     virtual ~StructureDataLoadHelper() /*override*/;
     // NOLINTEND
 
@@ -141,9 +160,7 @@ public:
 
     MCNAPI ::Rotation $loadRotation(::Rotation rotation);
 
-#ifdef LL_PLAT_S
     MCNAPI ::Mirror $loadMirror(::Mirror mirror);
-#endif
 
     MCNAPI ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
 
@@ -159,8 +176,6 @@ public:
     MCNAPI ::DataLoadHelperType $getType() const;
 
     MCNAPI ::ActorUniqueID $_generateNewID();
-
-
     // NOLINTEND
 
 public:

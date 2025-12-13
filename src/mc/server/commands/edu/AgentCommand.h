@@ -23,12 +23,6 @@ public:
     // clang-format on
 
     // AgentCommand inner types define
-    enum class FacingResult : int {
-        HaveFacing = 0,
-        NoFacing   = 1,
-        Error      = 2,
-    };
-
     enum class Mode : int {
         Attack         = 0,
         Collect        = 1,
@@ -49,6 +43,12 @@ public:
         Tp             = 16,
         Transfer       = 17,
         Turn           = 18,
+    };
+
+    enum class FacingResult : int {
+        HaveFacing = 0,
+        NoFacing   = 1,
+        Error      = 2,
     };
 
     struct CommandInfo {
@@ -95,8 +95,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
+    // vIndex: 0
     virtual ~AgentCommand() /*override*/ = default;
     // NOLINTEND
 
@@ -140,8 +142,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-
     // NOLINTEND
 
 public:

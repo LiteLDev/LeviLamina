@@ -22,11 +22,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ::rtc::StringBuilder& AppendFormat(char const*, ...);
 
-    MCNAPI ::rtc::StringBuilder& operator<<(int i);
+    MCNAPI ::rtc::StringBuilder& operator<<(ulong i);
 
     MCNAPI ::rtc::StringBuilder& operator<<(uint i);
 
-    MCNAPI ::rtc::StringBuilder& operator<<(ulong i);
+    MCNAPI ::rtc::StringBuilder& operator<<(int i);
 
     MCNAPI ::rtc::StringBuilder& operator<<(uint64 i);
 

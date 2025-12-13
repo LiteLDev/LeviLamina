@@ -9,29 +9,23 @@ class MultiplyValueAmplifier : public ::Amplifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke2d1df;
+    ::ll::TypedStorage<4, 4, float> mScalar;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MultiplyValueAmplifier& operator=(MultiplyValueAmplifier const&);
-    MultiplyValueAmplifier(MultiplyValueAmplifier const&);
-    MultiplyValueAmplifier();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual float getAmount(int amplification, float scale) const /*override*/;
 
+    // vIndex: 0
     virtual ~MultiplyValueAmplifier() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $getAmount(int amplification, float scale) const;
-
-
+    MCAPI float $getAmount(int amplification, float scale) const;
     // NOLINTEND
 
 public:

@@ -2,19 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_camera/CameraShakeAction.h"
+#include "mc/deps/minecraft_camera/CameraShakeType.h"
+
 struct CameraShakePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk10f52c;
-    ::ll::UntypedStorage<4, 4> mUnk5a9da6;
-    ::ll::UntypedStorage<1, 1> mUnkf39f59;
-    ::ll::UntypedStorage<1, 1> mUnk990b5e;
+    ::ll::TypedStorage<4, 4, float>               mIntensity;
+    ::ll::TypedStorage<4, 4, float>               mSeconds;
+    ::ll::TypedStorage<1, 1, ::CameraShakeType>   mShakeType;
+    ::ll::TypedStorage<1, 1, ::CameraShakeAction> mShakeAction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraShakePacketPayload& operator=(CameraShakePacketPayload const&);
-    CameraShakePacketPayload(CameraShakePacketPayload const&);
-    CameraShakePacketPayload();
 };

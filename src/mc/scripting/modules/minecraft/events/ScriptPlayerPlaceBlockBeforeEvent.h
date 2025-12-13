@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 // auto generated forward declare list
@@ -11,7 +14,8 @@ class Block;
 class BlockPos;
 class Dimension;
 class Player;
-class Vec3;
+namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -22,11 +26,12 @@ struct ScriptPlayerPlaceBlockBeforeEvent : public ::ScriptModuleMinecraft::Scrip
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk61e710;
-    ::ll::UntypedStorage<4, 4>  mUnkacb8dc;
-    ::ll::UntypedStorage<4, 12> mUnk8bfeb8;
-    ::ll::UntypedStorage<1, 1>  mUnk272646;
-    ::ll::UntypedStorage<8, 32> mUnk2632b2;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayer;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptFacing>                                        mFace;
+    ::ll::TypedStorage<4, 12, ::Vec3> mFaceLocation;
+    ::ll::TypedStorage<1, 1, bool>    mCancel;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
+        mPermutation;
     // NOLINTEND
 
 public:
@@ -37,11 +42,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPlayerPlaceBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&&);
+    MCAPI ScriptPlayerPlaceBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&&);
 
-    MCNAPI ScriptPlayerPlaceBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
+    MCAPI ScriptPlayerPlaceBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
 
-    MCNAPI ScriptPlayerPlaceBlockBeforeEvent(
+    MCAPI ScriptPlayerPlaceBlockBeforeEvent(
         ::Player const&                       player,
         ::Dimension&                          dimension,
         ::BlockPos const&                     pos,
@@ -51,23 +56,23 @@ public:
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCNAPI ~ScriptPlayerPlaceBlockBeforeEvent();
+    MCAPI ~ScriptPlayerPlaceBlockBeforeEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Player const&                       player,
         ::Dimension&                          dimension,
         ::BlockPos const&                     pos,
@@ -81,7 +86,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

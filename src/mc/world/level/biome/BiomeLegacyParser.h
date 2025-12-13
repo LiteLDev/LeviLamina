@@ -18,7 +18,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace BiomeLegacyParser {
 // functions
 // NOLINTBEGIN
-MCNAPI ::SharedTypes::v1_21_110::BiomeJsonDocument parseBiomeLegacy(
+MCAPI ::SharedTypes::v1_21_110::BiomeJsonDocument parseBiomeLegacy(
     ::Puv::Input const&                                input,
     ::Puv::Logger&                                     logger,
     ::cereal::ReflectionCtx&                           ctx,

@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/nbt/CompoundTag.h"
+#include "mc/world/level/PositionTrackingId.h"
+
 struct PositionTrackingDBServerBroadcastPacketPayload {
 public:
     // PositionTrackingDBServerBroadcastPacketPayload inner types define
@@ -14,9 +18,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk4e4306;
-    ::ll::UntypedStorage<4, 4>  mUnk4b1a04;
-    ::ll::UntypedStorage<8, 24> mUnk226d7d;
+    ::ll::TypedStorage<1, 1, ::PositionTrackingDBServerBroadcastPacketPayload::Action> mAction;
+    ::ll::TypedStorage<4, 4, ::PositionTrackingId>                                     mId;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>                                           mData;
     // NOLINTEND
 
 public:
@@ -28,15 +32,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::PositionTrackingDBServerBroadcastPacketPayload&
+    MCAPI ::PositionTrackingDBServerBroadcastPacketPayload&
     operator=(::PositionTrackingDBServerBroadcastPacketPayload&&);
 
-    MCNAPI ~PositionTrackingDBServerBroadcastPacketPayload();
+    MCAPI ~PositionTrackingDBServerBroadcastPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

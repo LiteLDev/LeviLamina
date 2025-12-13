@@ -31,11 +31,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::unique_ptr<::Core::FileSizePresetToken>
     presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize) /*override*/;
 
+    // vIndex: 2
     virtual ::std::optional<uint64> checkFileInitialSize(::Core::PathView filePath) /*override*/;
 
+    // vIndex: 0
     virtual ~FileSizePresetManagerImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -46,8 +49,6 @@ public:
     $presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize);
 
     MCNAPI ::std::optional<uint64> $checkFileInitialSize(::Core::PathView filePath);
-
-
     // NOLINTEND
 
 public:

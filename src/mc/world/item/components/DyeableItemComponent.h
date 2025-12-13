@@ -29,6 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DyeableItemComponent() /*override*/ = default;
     // NOLINTEND
 

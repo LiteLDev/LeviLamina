@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/application/crash_manager/CrashFileProcessor.h"
-#include "mc/deps/core/file/PathBuffer.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class CrashManagerImpl; }
 namespace Bedrock { class SessionInfo; }
 // clang-format on
 
@@ -32,47 +30,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::shared_ptr<::Bedrock::SessionInfo> findCrashedSessionInfo(::std::string_view sessionId) const
-        /*override*/;
+    // vIndex: 1
+    virtual ::std::shared_ptr<::Bedrock::SessionInfo> findCrashedSessionInfo(::std::string_view) const /*override*/;
 
-    virtual void
-    notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const& status) /*override*/;
+    // vIndex: 2
+    virtual void notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const&) /*override*/;
 
-    virtual void notifyDoneWithSession(::std::string_view sessionId) /*override*/;
+    // vIndex: 3
+    virtual void notifyDoneWithSession(::std::string_view) /*override*/;
 
+    // vIndex: 0
     virtual ~CrashHandlerImpl() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C CrashHandlerImpl(::Bedrock::CrashManagerImpl& manager, ::Core::PathBuffer<::std::string> const& filePath);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Bedrock::CrashManagerImpl& manager, ::Core::PathBuffer<::std::string> const& filePath);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo> $findCrashedSessionInfo(::std::string_view sessionId) const;
 
-    MCNAPI void $notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const& status);
-
-    MCNAPI void $notifyDoneWithSession(::std::string_view sessionId);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -37,10 +37,10 @@ public:
     MCNAPI void buildJsonObject(::Json::Value& val) const;
 
     MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
-    operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface&& other);
+    operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
 
     MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
-    operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
+    operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface&& other);
 
     MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other) const;
 

@@ -38,65 +38,84 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TheEndDimension() /*override*/ = default;
 
+    // vIndex: 39
     virtual void startLeaveGame() /*override*/;
 
+    // vIndex: 14
     virtual void init(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
+    // vIndex: 15
     virtual void tick() /*override*/;
 
+    // vIndex: 24
     virtual ::BiomeIdType getDefaultBiomeId() const /*override*/;
 
+    // vIndex: 1
     virtual bool isNaturalDimension() const /*override*/;
 
+    // vIndex: 21
     virtual bool isValidSpawn(int x, int z) const /*override*/;
 
+    // vIndex: 23
     virtual short getCloudHeight() const /*override*/;
 
+    // vIndex: 25
     virtual bool mayRespawnViaBed() const /*override*/;
 
+    // vIndex: 26
     virtual ::BlockPos getSpawnPos() const /*override*/;
 
+    // vIndex: 27
     virtual int getSpawnYPosition() const /*override*/;
 
+    // vIndex: 9
     virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
 
+    // vIndex: 1
     virtual void deserialize(::CompoundTag const& tag) /*override*/;
 
+    // vIndex: 2
     virtual void serialize(::CompoundTag& tag) const /*override*/;
 
+    // vIndex: 29
     virtual float getTimeOfDay(int time, float a) const /*override*/;
 
+    // vIndex: 17
     virtual ::std::unique_ptr<::WorldGenerator>
     createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
+    // vIndex: 20
     virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
 
+    // vIndex: 18
     virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
 
+    // vIndex: 19
     virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
+    // vIndex: 31
     virtual ::Dimension::DirectionalLightState getDimensionDirectionalLightSourceState(float a) const /*override*/;
 
+    // vIndex: 30
     virtual void setDimensionDirectionalLightControls(
         ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
     ) /*override*/;
 
+    // vIndex: 41
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
-        ::std::unique_ptr<::ChunkSource> storageSource,
-        ::StorageVersion                 levelVersion
-    ) /*override*/;
+    // vIndex: 42
+    virtual ::std::unique_ptr<::ChunkSource>
+        _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit TheEndDimension(::DerivedDimensionArguments&& args);
-
-    MCAPI_C void _handleSoundEffects() const;
     // NOLINTEND
 
 public:
@@ -152,13 +171,6 @@ public:
     );
 
     MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::unique_ptr<::ChunkSource>
-    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
-#endif
-
-
     // NOLINTEND
 
 public:

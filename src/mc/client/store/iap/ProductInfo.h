@@ -18,24 +18,4 @@ public:
     ProductInfo& operator=(ProductInfo const&);
     ProductInfo(ProductInfo const&);
     ProductInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ProductInfo(::ProductInfo&&);
-
-    MCNAPI_C ~ProductInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::ProductInfo&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

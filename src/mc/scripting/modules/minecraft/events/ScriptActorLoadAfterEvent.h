@@ -17,19 +17,17 @@ struct ScriptActorLoadAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk701682;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mActor;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptActorLoadAfterEvent& operator=(ScriptActorLoadAfterEvent const&);
-    ScriptActorLoadAfterEvent(ScriptActorLoadAfterEvent const&);
     ScriptActorLoadAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptActorLoadAfterEvent(
+    MCAPI explicit ScriptActorLoadAfterEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle
     );
     // NOLINTEND
@@ -37,13 +35,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle);
+    MCFOLD void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle);
     // NOLINTEND
 };
 

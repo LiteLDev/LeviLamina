@@ -16,16 +16,4 @@ public:
     SoundParameter& operator=(SoundParameter const&);
     SoundParameter(SoundParameter const&);
     SoundParameter();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~SoundParameter();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/levelgen/structure/StructureTemplate.h"
 
 // auto generated forward declare list
@@ -17,7 +16,6 @@ class BlockSource;
 class BlockVolumeBase;
 class BoundingBox;
 class CompoundTag;
-class IUnknownBlockTypeRegistry;
 class StructureSettings;
 class Vec3;
 namespace Editor { class RelativeVolumeListBlockVolume; }
@@ -42,37 +40,40 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EditorStructureTemplate() /*override*/;
 
+    // vIndex: 6
     virtual void clear() /*override*/;
 
+    // vIndex: 4
     virtual bool load(::CompoundTag const& tag) /*override*/;
 
+    // vIndex: 5
     virtual ::std::unique_ptr<::CompoundTag> save() const /*override*/;
 
+    // vIndex: 7
     virtual ::BoundingBox
     getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const /*override*/;
 
+    // vIndex: 8
     virtual void fillEmpty(::BlockPos const& size) /*override*/;
 
+    // vIndex: 9
     virtual bool _allowReadBlock(::BlockPos const& position, ::Block const& block) const /*override*/;
 
+    // vIndex: 10
     virtual bool _allowReadActor(::Actor const& actor) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorStructureTemplate(::Editor::EditorStructureTemplate&&);
-
     MCNAPI EditorStructureTemplate(::Editor::EditorStructureTemplate const&);
 
-    MCNAPI explicit EditorStructureTemplate(::std::string_view name);
+    MCNAPI EditorStructureTemplate(::Editor::EditorStructureTemplate&&);
 
-    MCNAPI_C EditorStructureTemplate(
-        ::StructureTemplate const&                              temp,
-        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
-    );
+    MCNAPI explicit EditorStructureTemplate(::std::string_view name);
 
     MCNAPI void _editorFillBlockInfo(
         ::BlockSource&                                 region,
@@ -115,16 +116,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::EditorStructureTemplate&&);
-
     MCNAPI void* $ctor(::Editor::EditorStructureTemplate const&);
 
-    MCNAPI void* $ctor(::std::string_view name);
+    MCNAPI void* $ctor(::Editor::EditorStructureTemplate&&);
 
-    MCNAPI_C void* $ctor(
-        ::StructureTemplate const&                              temp,
-        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
-    );
+    MCNAPI void* $ctor(::std::string_view name);
     // NOLINTEND
 
 public:
@@ -150,8 +146,6 @@ public:
     MCNAPI bool $_allowReadBlock(::BlockPos const& position, ::Block const& block) const;
 
     MCNAPI bool $_allowReadActor(::Actor const& actor) const;
-
-
     // NOLINTEND
 
 public:

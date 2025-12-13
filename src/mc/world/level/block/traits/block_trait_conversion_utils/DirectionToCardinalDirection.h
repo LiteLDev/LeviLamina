@@ -10,11 +10,11 @@ namespace BlockTraitConversionUtils { struct ConvertedSet; }
 namespace BlockTraitConversionUtils::DirectionToCardinalDirection {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::BlockTraitConversionUtils::ConvertedSet& R20();
+MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20();
 
-MCNAPI ::BlockTraitConversionUtils::ConvertedSet& R20U3();
+MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U3();
 
-MCNAPI ::BlockTraitConversionUtils::ConvertedSet& R21U6();
+MCAPI ::BlockTraitConversionUtils::ConvertedSet& R21U6();
 // NOLINTEND
 
 } // namespace BlockTraitConversionUtils::DirectionToCardinalDirection

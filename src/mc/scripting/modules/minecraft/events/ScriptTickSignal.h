@@ -16,9 +16,9 @@ class ScriptTickSignal {
 public:
     // ScriptTickSignal inner types declare
     // clang-format off
+    struct PendingSubscribe;
     struct PendingUnsubscribe;
     struct Slot;
-    struct PendingSubscribe;
     // clang-format on
 
     // ScriptTickSignal inner types define
@@ -28,30 +28,16 @@ public:
         Expired = 2,
     };
 
-    struct PendingUnsubscribe {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk9795b9;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PendingUnsubscribe& operator=(PendingUnsubscribe const&);
-        PendingUnsubscribe(PendingUnsubscribe const&);
-        PendingUnsubscribe();
-    };
-
     struct Slot {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnk1c2039;
-        ::ll::UntypedStorage<4, 4>   mUnkeea401;
-        ::ll::UntypedStorage<4, 4>   mUnkde3b98;
-        ::ll::UntypedStorage<4, 4>   mUnk976984;
-        ::ll::UntypedStorage<4, 4>   mUnk56aa7d;
-        ::ll::UntypedStorage<8, 256> mUnka96bda;
+        ::ll::TypedStorage<4, 4, uint>                                                      id;
+        ::ll::TypedStorage<4, 4, uint>                                                      lastTick;
+        ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptTickSignal::IntervalStatus> status;
+        ::ll::TypedStorage<4, 4, uint>                                                      initialInterval;
+        ::ll::TypedStorage<4, 4, uint>                                                      currentInterval;
+        ::ll::TypedStorage<8, 256, ::std::variant<::Scripting::Closure<void()>, ::std::function<void()>>> closure;
         // NOLINTEND
 
     public:
@@ -63,21 +49,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Slot(::ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
+        MCAPI Slot(::ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
 
-        MCNAPI ~Slot();
+        MCAPI ~Slot();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
+        MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -85,66 +71,68 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 280> mUnk888667;
+        ::ll::TypedStorage<8, 280, ::ScriptModuleMinecraft::ScriptTickSignal::Slot> slot;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PendingSubscribe& operator=(PendingSubscribe const&);
-        PendingSubscribe(PendingSubscribe const&);
-        PendingSubscribe();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~PendingSubscribe();
+        MCAPI ~PendingSubscribe();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
+    struct PendingUnsubscribe {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, uint> id;
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk1c2e4e;
-    ::ll::UntypedStorage<1, 1>  mUnkd41d18;
-    ::ll::UntypedStorage<8, 24> mUnk1f3f86;
-    ::ll::UntypedStorage<8, 24> mUnkf23b52;
+    ::ll::TypedStorage<4, 4, uint>                                                            mNextId;
+    ::ll::TypedStorage<1, 1, bool>                                                            mDispatching;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>> mActive;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::variant<
+            ::ScriptModuleMinecraft::ScriptTickSignal::PendingSubscribe,
+            ::ScriptModuleMinecraft::ScriptTickSignal::PendingUnsubscribe>>>
+        mPending;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptTickSignal& operator=(ScriptTickSignal const&);
-    ScriptTickSignal(ScriptTickSignal const&);
-    ScriptTickSignal();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _processActive(
+    MCAPI void _processActive(
         ::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>& slots,
         uint                                                            currentTick,
         ::ScriptDeferredFlushTracker&                                   deferredTracker
     );
 
-    MCNAPI void _processPending(
+    MCAPI void _processPending(
         ::std::vector<::std::variant<
             ::ScriptModuleMinecraft::ScriptTickSignal::PendingSubscribe,
             ::ScriptModuleMinecraft::ScriptTickSignal::PendingUnsubscribe>>& pendingList,
         ::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>&      activeList
     );
 
-    MCNAPI uint scheduleInterval(::Scripting::Closure<void()>&& closure, uint interval, uint currentTick);
+    MCAPI uint scheduleInterval(::Scripting::Closure<void()>&& closure, uint interval, uint currentTick);
 
-    MCNAPI uint scheduleTimeout(::Scripting::Closure<void()>&& closure, uint delay, uint currentTick);
+    MCAPI uint scheduleTimeout(::Scripting::Closure<void()>&& closure, uint delay, uint currentTick);
 
-    MCNAPI uint scheduleTimeout(::std::function<void()> function, uint delay, uint currentTick);
+    MCAPI uint scheduleTimeout(::std::function<void()> function, uint delay, uint currentTick);
 
-    MCNAPI uint scheduleTimeoutSafe(::Scripting::Closure<void()>&& closure, uint currentTick);
+    MCAPI uint scheduleTimeoutSafe(::Scripting::Closure<void()>&& closure, uint currentTick);
     // NOLINTEND
 };
 

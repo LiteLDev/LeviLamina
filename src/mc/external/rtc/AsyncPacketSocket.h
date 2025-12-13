@@ -48,26 +48,37 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AsyncPacketSocket() /*override*/;
 
+    // vIndex: 1
     virtual ::rtc::SocketAddress GetLocalAddress() const = 0;
 
+    // vIndex: 2
     virtual ::rtc::SocketAddress GetRemoteAddress() const = 0;
 
+    // vIndex: 3
     virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) = 0;
 
+    // vIndex: 4
     virtual int SendTo(void const*, uint64, ::rtc::SocketAddress const&, ::rtc::PacketOptions const&) = 0;
 
+    // vIndex: 5
     virtual int Close() = 0;
 
+    // vIndex: 6
     virtual ::rtc::AsyncPacketSocket::State GetState() const = 0;
 
+    // vIndex: 7
     virtual int GetOption(::rtc::Socket::Option opt, int* value) = 0;
 
+    // vIndex: 8
     virtual int SetOption(::rtc::Socket::Option, int) = 0;
 
+    // vIndex: 9
     virtual int GetError() const = 0;
 
+    // vIndex: 10
     virtual void SetError(int) = 0;
     // NOLINTEND
 

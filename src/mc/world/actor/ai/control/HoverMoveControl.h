@@ -15,17 +15,17 @@ class HoverMoveControl : public ::MoveControl {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
 
+    // vIndex: 0
     virtual ~HoverMoveControl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
-
-
+    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
     // NOLINTEND
 
 public:

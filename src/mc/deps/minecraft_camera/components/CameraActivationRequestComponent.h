@@ -16,12 +16,6 @@ public:
     CameraActivationRequestComponent& operator=(CameraActivationRequestComponent const&);
     CameraActivationRequestComponent(CameraActivationRequestComponent const&);
     CameraActivationRequestComponent();
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI_C static uint const& TRIPOD_CAMERA_MODE_PRIORITY();
-    // NOLINTEND
 };
 
 } // namespace MinecraftCamera

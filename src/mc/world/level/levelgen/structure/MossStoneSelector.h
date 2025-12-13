@@ -23,49 +23,37 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk927816;
-        ::ll::UntypedStorage<8, 8> mUnk5492bf;
+        ::ll::TypedStorage<8, 8, ::Block const*> mCobblestone;
+        ::ll::TypedStorage<8, 8, ::Block const*> mMossyCobblestone;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LocalRegistry& operator=(LocalRegistry const&);
-        LocalRegistry(LocalRegistry const&);
-        LocalRegistry();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkd83ee1;
+    ::ll::TypedStorage<8, 16, ::MossStoneSelector::LocalRegistry> mLocalRegistry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MossStoneSelector& operator=(MossStoneSelector const&);
-    MossStoneSelector(MossStoneSelector const&);
-    MossStoneSelector();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::Block const& next(::Random& random, int, int, int, bool) const /*override*/;
 
+    // vIndex: 0
     virtual ~MossStoneSelector() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const& $next(::Random& random, int, int, int, bool) const;
-
-
+    MCAPI ::Block const& $next(::Random& random, int, int, int, bool) const;
     // NOLINTEND
 
 public:

@@ -29,12 +29,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RandomizableBlockActorContainerBase() /*override*/;
 
+    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
+    // vIndex: 32
     virtual void eraseLootTable() /*override*/;
     // NOLINTEND
 
@@ -60,8 +64,6 @@ public:
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCAPI void $eraseLootTable();
-
-
     // NOLINTEND
 
 public:

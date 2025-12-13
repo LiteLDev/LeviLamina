@@ -3,16 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/network/RakNetConnector.h"
 #include "mc/network/RemoteConnector.h"
 #include "mc/network/TransportLayer.h"
 
 // auto generated forward declare list
 // clang-format off
-class AppPlatform;
 class NetworkIdentifier;
-class NetworkSessionOwner;
 struct ConnectionDefinition;
 namespace Social { class GameConnectionInfo; }
 // clang-format on
@@ -35,130 +31,73 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RemoteConnectorComposite() /*override*/ = default;
 
-    virtual void setDisableLanSignaling(bool disableLanSignaling) /*override*/;
+    // vIndex: 18
+    virtual void setDisableLanSignaling(bool) /*override*/;
 
+    // vIndex: 1
     virtual ::std::string getLocalIp() /*override*/;
 
+    // vIndex: 2
     virtual ushort getPort() const /*override*/;
 
+    // vIndex: 3
     virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const /*override*/;
 
+    // vIndex: 4
     virtual bool isIPv4Supported() const /*override*/;
 
+    // vIndex: 5
     virtual bool isIPv6Supported() const /*override*/;
 
+    // vIndex: 6
     virtual ushort getIPv4Port() const /*override*/;
 
+    // vIndex: 7
     virtual ushort getIPv6Port() const /*override*/;
 
+    // vIndex: 9
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
-    virtual bool connect(
-        ::Social::GameConnectionInfo const& gameConnection,
-        ::Social::GameConnectionInfo const& backupConnection
-    ) /*override*/;
+    // vIndex: 10
+    virtual bool connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&) /*override*/;
 
+    // vIndex: 11
     virtual void disconnect() /*override*/;
 
+    // vIndex: 12
     virtual void tick() /*override*/;
 
+    // vIndex: 13
     virtual void runEvents() /*override*/;
 
+    // vIndex: 14
     virtual bool isServer() const /*override*/;
 
-    virtual void closeNetworkConnection(::NetworkIdentifier const& id) /*override*/;
+    // vIndex: 15
+    virtual void closeNetworkConnection(::NetworkIdentifier const&) /*override*/;
 
-    virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const& id) /*override*/;
+    // vIndex: 17
+    virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const&) /*override*/;
 
+    // vIndex: 16
     virtual ::NetworkIdentifier getNetworkIdentifier() const /*override*/;
 
+    // vIndex: 1
     virtual void _onDisable() /*override*/;
 
+    // vIndex: 2
     virtual void _onEnable() /*override*/;
 
+    // vIndex: 8
     virtual ::TransportLayer getNetworkType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C RemoteConnectorComposite(
-        ::RakNetConnector::ConnectionCallbacks&              callbacks,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const&     appPlatform,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner
-    );
-
-    MCNAPI_C ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector> getActiveConnector() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        ::RakNetConnector::ConnectionCallbacks&              callbacks,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const&     appPlatform,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $setDisableLanSignaling(bool disableLanSignaling);
 
-    MCNAPI ::std::string $getLocalIp();
-
-    MCNAPI ushort $getPort() const;
-
-    MCNAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
-
-    MCNAPI bool $isIPv4Supported() const;
-
-    MCNAPI bool $isIPv6Supported() const;
-
-    MCNAPI ushort $getIPv4Port() const;
-
-    MCNAPI ushort $getIPv6Port() const;
-
-    MCNAPI bool $host(::ConnectionDefinition const& definition);
-
-    MCNAPI bool
-    $connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
-
-    MCNAPI void $disconnect();
-
-    MCNAPI void $tick();
-
-    MCNAPI void $runEvents();
-
-    MCNAPI bool $isServer() const;
-
-    MCNAPI void $closeNetworkConnection(::NetworkIdentifier const& id);
-
-    MCNAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const& id);
-
-    MCNAPI ::NetworkIdentifier $getNetworkIdentifier() const;
-
-    MCNAPI void $_onDisable();
-
-    MCNAPI void $_onEnable();
-
-    MCNAPI ::TransportLayer $getNetworkType() const;
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForNetworkEnableDisableListener();
-
-    MCNAPI static void** $vftableForConnector();
     // NOLINTEND
 };

@@ -11,16 +11,16 @@ namespace br::worldgen { struct StructureProcessor; }
 class JigsawStructureBlockRulesRegistry {
 public:
     // JigsawStructureBlockRulesRegistry inner types define
-    using BlockRulesLookupMap =
-        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*>;
-
-    using BlockRulesRegistryMap =
-        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockRule>>>>;
+    using StructureProcessorPtr = ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>;
 
     using StructureProcessorList =
         ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>;
 
-    using StructureProcessorPtr = ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>;
+    using BlockRulesRegistryMap =
+        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockRule>>>>;
+
+    using BlockRulesLookupMap =
+        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*>;
 
 public:
     // member variables

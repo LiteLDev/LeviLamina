@@ -31,29 +31,27 @@ public:
     // clang-format on
 
     // BasicSchema inner types define
-    enum class DescriptionMode : int {
-        Brief    = 0,
-        Detailed = 1,
-    };
-
-    struct DynamicSetterArg {
+    struct TypeDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 208> mUnka33fb1;
-        ::ll::UntypedStorage<8, 8>   mUnkcc227c;
+        ::ll::UntypedStorage<8, 8>  mUnk25883b;
+        ::ll::UntypedStorage<8, 32> mUnka7498e;
+        ::ll::UntypedStorage<8, 72> mUnkfb7a42;
+        ::ll::UntypedStorage<8, 32> mUnk5fc8e6;
+        ::ll::UntypedStorage<1, 1>  mUnk7fcb00;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        DynamicSetterArg& operator=(DynamicSetterArg const&);
-        DynamicSetterArg(DynamicSetterArg const&);
-        DynamicSetterArg();
+        TypeDescriptor& operator=(TypeDescriptor const&);
+        TypeDescriptor(TypeDescriptor const&);
+        TypeDescriptor();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~DynamicSetterArg();
+        MCNAPI ~TypeDescriptor();
         // NOLINTEND
 
     public:
@@ -61,6 +59,21 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    };
+
+    struct SetterDescriptor {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkc28d37;
+        ::ll::UntypedStorage<8, 8> mUnk7833a6;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SetterDescriptor& operator=(SetterDescriptor const&);
+        SetterDescriptor(SetterDescriptor const&);
+        SetterDescriptor();
     };
 
     struct MemberDescriptor {
@@ -106,42 +119,24 @@ public:
         // NOLINTEND
     };
 
-    struct SetterDescriptor {
+    struct DynamicSetterArg {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkc28d37;
-        ::ll::UntypedStorage<8, 8> mUnk7833a6;
+        ::ll::UntypedStorage<8, 208> mUnka33fb1;
+        ::ll::UntypedStorage<8, 8>   mUnkcc227c;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        SetterDescriptor& operator=(SetterDescriptor const&);
-        SetterDescriptor(SetterDescriptor const&);
-        SetterDescriptor();
-    };
-
-    struct TypeDescriptor {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk25883b;
-        ::ll::UntypedStorage<8, 32> mUnka7498e;
-        ::ll::UntypedStorage<8, 72> mUnkfb7a42;
-        ::ll::UntypedStorage<8, 32> mUnk5fc8e6;
-        ::ll::UntypedStorage<1, 1>  mUnk7fcb00;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TypeDescriptor& operator=(TypeDescriptor const&);
-        TypeDescriptor(TypeDescriptor const&);
-        TypeDescriptor();
+        DynamicSetterArg& operator=(DynamicSetterArg const&);
+        DynamicSetterArg(DynamicSetterArg const&);
+        DynamicSetterArg();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~TypeDescriptor();
+        MCNAPI ~DynamicSetterArg();
         // NOLINTEND
 
     public:
@@ -151,25 +146,37 @@ public:
         // NOLINTEND
     };
 
+    enum class DescriptionMode : int {
+        Brief    = 0,
+        Detailed = 1,
+    };
+
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BasicSchema() = default;
 
+    // vIndex: 1
     virtual bool isGreedy(::entt::meta_ctx const&) const;
 
+    // vIndex: 2
     virtual void members(::entt::meta_ctx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
 
+    // vIndex: 3
     virtual ::cereal::internal::BasicSchema::MemberDescriptor const* member(::entt::meta_ctx const&, uint) const;
 
+    // vIndex: 4
     virtual ::cereal::internal::VariantPriorityLevel minVariantPriorityLevel(::entt::meta_ctx const&) const;
 
+    // vIndex: 5
     virtual void validateConstraint(
         ::cereal::Constraint const&  constraint,
         ::entt::meta_any const&      any,
         ::cereal::SerializerContext& context
     ) const;
 
+    // vIndex: 6
     virtual void doLoad(
         ::cereal::SchemaReader&,
         ::entt::meta_any&,
@@ -177,8 +184,10 @@ public:
         ::cereal::internal::LoadState const&
     ) const;
 
+    // vIndex: 7
     virtual void doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::internal::SaveState const&) const;
 
+    // vIndex: 8
     virtual ::cereal::SchemaDescription
     makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const = 0;
     // NOLINTEND
@@ -210,8 +219,6 @@ public:
         ::entt::meta_any const&      any,
         ::cereal::SerializerContext& context
     ) const;
-
-
     // NOLINTEND
 };
 

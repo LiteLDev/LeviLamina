@@ -16,22 +16,18 @@ class LerpDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkd0e1ad;
-    ::ll::UntypedStorage<2, 2> mUnkc95b1e;
-    ::ll::UntypedStorage<4, 4> mUnk739bd0;
+    ::ll::TypedStorage<2, 2, ushort> mInputA;
+    ::ll::TypedStorage<2, 2, ushort> mInputB;
+    ::ll::TypedStorage<4, 4, float>  mAlpha;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LerpDensityCalculator& operator=(LerpDensityCalculator const&);
-    LerpDensityCalculator(LerpDensityCalculator const&);
-    LerpDensityCalculator();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~LerpDensityCalculator() /*override*/ = default;
 
+    // vIndex: 1
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
     // NOLINTEND
 

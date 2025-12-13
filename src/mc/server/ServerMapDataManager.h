@@ -40,17 +40,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ServerMapDataManager() /*override*/ = default;
 
+    // vIndex: 1
     virtual void
     registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector) /*override*/;
 
+    // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& getOnCreateMapSavedDataConnector() /*override*/;
 
+    // vIndex: 2
     virtual ::MapItemSavedData& createMapSavedData(::ActorUniqueID const& uuid) /*override*/;
 
+    // vIndex: 3
     virtual void requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate) /*override*/;
 
+    // vIndex: 4
     virtual void _copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid) /*override*/;
     // NOLINTEND
 
@@ -90,8 +96,6 @@ public:
     MCFOLD void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
 
     MCAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
-
-
     // NOLINTEND
 
 public:

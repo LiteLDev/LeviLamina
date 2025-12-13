@@ -41,8 +41,6 @@ public:
 
     MCNAPI GameVersion(uint major, uint minor, uint patch, uint revision, uint isBeta);
 
-    MCNAPI_C bool operator!=(::GameVersion const& other) const;
-
     MCNAPI bool operator<(::GameVersion const& other) const;
 
     MCNAPI ::GameVersion& operator=(::GameVersion&&);

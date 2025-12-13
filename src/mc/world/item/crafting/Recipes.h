@@ -6,6 +6,7 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/molang/MolangVersion.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
+#include "mc/world/item/ItemInstance.h"
 #include "mc/world/item/SortItemInstanceIdAux.h"
 #include "mc/world/item/crafting/ExternalRecipeStore.h"
 #include "mc/world/item/crafting/RecipeIngredient.h"
@@ -16,7 +17,6 @@ class BaseGameVersion;
 class Block;
 class Experiments;
 class Item;
-class ItemInstance;
 class ItemStackBase;
 class Level;
 class MinEngineVersion;
@@ -63,29 +63,6 @@ public:
         // NOLINTEND
     };
 
-    struct NormalizedRectangularRecipeResults {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>            mWidth;
-        ::ll::TypedStorage<4, 4, int>            mHeight;
-        ::ll::TypedStorage<8, 32, ::std::string> mNormalizedResult;
-        ::ll::TypedStorage<8, 32, ::std::string> mWarning;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~NormalizedRectangularRecipeResults();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
     class Type {
     public:
         // member variables
@@ -110,6 +87,29 @@ public:
     };
 
     using TypeList = ::std::vector<::Recipes::Type>;
+
+    struct NormalizedRectangularRecipeResults {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int>            mWidth;
+        ::ll::TypedStorage<4, 4, int>            mHeight;
+        ::ll::TypedStorage<8, 32, ::std::string> mNormalizedResult;
+        ::ll::TypedStorage<8, 32, ::std::string> mWarning;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~NormalizedRectangularRecipeResults();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables
@@ -203,10 +203,6 @@ public:
         ::std::vector<::HashedString> const& tags
     );
 
-    MCAPI_C void addNetMappedRecipe(::RecipeNetId const& recipeNetId, ::std::unique_ptr<::Recipe> recipe);
-
-    MCAPI_C void addRecipeListener(::std::weak_ptr<bool> lifePtr, ::std::function<void()> callback);
-
     MCAPI void addShapedRecipe(
         ::std::string                         recipeId,
         ::ItemInstance const&                 result,
@@ -234,7 +230,7 @@ public:
 
     MCAPI void addShapedRecipe(
         ::std::string                         recipeId,
-        ::std::vector<::ItemInstance> const&  result,
+        ::ItemInstance const&                 result,
         ::std::vector<::std::string> const&   rows,
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,
@@ -259,7 +255,7 @@ public:
 
     MCAPI void addShapedRecipe(
         ::std::string                         recipeId,
-        ::ItemInstance const&                 result,
+        ::std::vector<::ItemInstance> const&  result,
         ::std::vector<::std::string> const&   rows,
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,
@@ -370,26 +366,6 @@ public:
 
     MCAPI ::std::pair<::std::string, ::Json::Value> extractRecipeObjInfo(::Json::Value const& obj);
 
-    MCAPI_C void
-    forEachRecipeFor(::HashedString const& tag, ::std::function<void(::Recipe const&)> const& callback) const;
-
-    MCAPI_C void forEachRecipeFor(
-        ::std::vector<::std::string> const&           tags,
-        ::std::function<void(::Recipe const&)> const& callback
-    ) const;
-
-    MCAPI_C void forEachRecipeFor(
-        ::ItemInstance const&                         result,
-        ::std::vector<::std::string> const&           tags,
-        ::std::function<void(::Recipe const&)> const& callback
-    ) const;
-
-    MCAPI_C void forEachRecipeUntil(
-        ::ItemInstance const&                         result,
-        ::std::vector<::std::string> const&           tags,
-        ::std::function<bool(::Recipe const&)> const& callback
-    ) const;
-
     MCAPI ::ItemInstance getFurnaceRecipeResult(::ItemStackBase const& item, ::HashedString const& tag) const;
 
     MCAPI ::Recipe const* getRecipeByNetId(::RecipeNetId const& netId) const;
@@ -409,8 +385,6 @@ public:
         ::SemVersion const&                              formatVersion,
         bool                                             isBaseGamePack
     );
-
-    MCAPI_C void notifyRecipeListeners();
 
     MCAPI ~Recipes();
     // NOLINTEND

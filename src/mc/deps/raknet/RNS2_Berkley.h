@@ -33,8 +33,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RNS2_Berkley() /*override*/ = default;
 
+    // vIndex: 2
     virtual void SetMulticastInterface(int interfaceIndex) /*override*/;
     // NOLINTEND
 
@@ -68,8 +70,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $SetMulticastInterface(int interfaceIndex);
-
-
     // NOLINTEND
 
 public:

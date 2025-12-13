@@ -30,12 +30,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FunctionAction() /*override*/;
 
+    // vIndex: 1
     virtual void execute(::ServerLevel& level, ::Dimension& dimension) /*override*/;
 
+    // vIndex: 2
     virtual void serialize(::CompoundTag& tag) /*override*/;
 
+    // vIndex: 3
     virtual bool operator==(::IRequestAction const& action) const /*override*/;
     // NOLINTEND
 
@@ -65,8 +69,6 @@ public:
     MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
 
     MCNAPI void $serialize(::CompoundTag& tag);
-
-
     // NOLINTEND
 
 public:

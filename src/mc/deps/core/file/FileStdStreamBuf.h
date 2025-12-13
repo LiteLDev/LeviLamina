@@ -29,16 +29,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~FileStdStreamBuf() /*override*/;
 
+    // vIndex: 6
     virtual int underflow() /*override*/;
 
+    // vIndex: 3
     virtual int overflow(int c) /*override*/;
 
+    // vIndex: 10
     virtual ::std::fpos<::_Mbstatet> seekoff(int64 off, int way, int) /*override*/;
 
+    // vIndex: 11
     virtual ::std::fpos<::_Mbstatet> seekpos(::std::fpos<::_Mbstatet> pos, int) /*override*/;
 
+    // vIndex: 13
     virtual int sync() /*override*/;
     // NOLINTEND
 
@@ -74,8 +80,6 @@ public:
     MCNAPI ::std::fpos<::_Mbstatet> $seekpos(::std::fpos<::_Mbstatet> pos, int);
 
     MCNAPI int $sync();
-
-
     // NOLINTEND
 
 public:

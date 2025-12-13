@@ -37,17 +37,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~CraftHandlerTrade() /*override*/ = default;
 
+    // vIndex: 4
     virtual ::ItemStackNetResult
     _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
+    // vIndex: 1
     virtual ::ItemStackNetResult handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
         uchar const                slot,
         ::ItemStack const&         consumedItem
     ) /*override*/;
 
+    // vIndex: 5
     virtual void _postCraftRequest(bool const wasSuccess) /*override*/;
     // NOLINTEND
 
@@ -76,8 +80,6 @@ public:
     );
 
     MCAPI void $_postCraftRequest(bool const wasSuccess);
-
-
     // NOLINTEND
 
 public:

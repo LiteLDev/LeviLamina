@@ -22,12 +22,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptDebuggerWatchdog() /*override*/ = default;
 
+    // vIndex: 1
     virtual bool requireClose() const /*override*/;
 
+    // vIndex: 2
     virtual void startListenTimeout(::std::chrono::seconds duration) /*override*/;
 
+    // vIndex: 3
     virtual bool listenTimeoutExpired() const /*override*/;
     // NOLINTEND
 
@@ -39,8 +43,6 @@ public:
     MCNAPI void $startListenTimeout(::std::chrono::seconds duration);
 
     MCNAPI bool $listenTimeoutExpired() const;
-
-
     // NOLINTEND
 
 public:

@@ -53,27 +53,12 @@ public:
         // prevent constructor by default
         AtomicAccumulator& operator=(AtomicAccumulator const&);
         AtomicAccumulator(AtomicAccumulator const&);
+        AtomicAccumulator();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C AtomicAccumulator();
-
-        MCNAPI_S void reset();
-
-        MCNAPI_C ~AtomicAccumulator();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI_C void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+        MCNAPI void reset();
         // NOLINTEND
     };
 
@@ -88,26 +73,7 @@ public:
         // prevent constructor by default
         DBStorageAccumulator& operator=(DBStorageAccumulator const&);
         DBStorageAccumulator(DBStorageAccumulator const&);
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI_C DBStorageAccumulator();
-
-        MCNAPI_C ~DBStorageAccumulator();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI_C void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
-        // NOLINTEND
+        DBStorageAccumulator();
     };
 
 public:
@@ -126,6 +92,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DBStoragePerformanceData() /*override*/ = default;
     // NOLINTEND
 
@@ -133,11 +100,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void resetAll();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

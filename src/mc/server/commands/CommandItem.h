@@ -25,8 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::ItemInstance createInstance(int count) const;
-
     MCAPI ::std::optional<::ItemInstance>
     createInstance(int count, int aux, ::CommandOutput& output, bool requireExactAux) const;
     // NOLINTEND

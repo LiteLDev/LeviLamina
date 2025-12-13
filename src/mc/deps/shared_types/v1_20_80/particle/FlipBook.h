@@ -29,15 +29,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FlipBook(::SharedTypes::v1_20_80::FlipBook&&);
-
     MCNAPI FlipBook(::SharedTypes::v1_20_80::FlipBook const&);
+
+    MCNAPI FlipBook(::SharedTypes::v1_20_80::FlipBook&&);
 
     MCNAPI ::SharedTypes::v1_20_80::FlipBook& operator=(::SharedTypes::v1_20_80::FlipBook&&);
 
     MCNAPI ::SharedTypes::v1_20_80::FlipBook& operator=(::SharedTypes::v1_20_80::FlipBook const&);
-
-    MCNAPI_C ~FlipBook();
     // NOLINTEND
 
 public:
@@ -49,15 +47,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::FlipBook&&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::FlipBook const&);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::FlipBook&&);
     // NOLINTEND
 };
 

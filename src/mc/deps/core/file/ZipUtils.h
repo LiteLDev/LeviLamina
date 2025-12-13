@@ -40,16 +40,6 @@ MCNAPI ::Core::ZipUtils::ZipResult getTranslatedZipResult(int inputResult);
 MCNAPI ::Core::Result
 isFolderDepthValid(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& filePath, uint64 maxFileDepth);
 
-MCNAPI_C ::std::string readAssetFileZipped_DEPRECATED(::Core::PathView zippedFolder, ::Core::PathView filename);
-
-MCNAPI_C ::Core::ZipUtils::UnzipResult unzipInTransaction(
-    ::Core::PathView                       zipInputPath,
-    ::Core::PathView                       outputFolderPath,
-    ::Core::ZipUtils::ZipProgress&         progress,
-    bool                                   useLowMemMode,
-    ::Core::ZipUtils::UnzipSettings const& unzipSettings
-);
-
 MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Core::PathView                       zipInputPath,
     ::Core::PathView                       outputFolderPath,

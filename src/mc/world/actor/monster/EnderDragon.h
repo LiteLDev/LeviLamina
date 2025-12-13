@@ -64,32 +64,46 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 8
     virtual ~EnderDragon() /*override*/;
 
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 11
     virtual void remove() /*override*/;
 
+    // vIndex: 56
     virtual void setSitting(bool value) /*override*/;
 
+    // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
+    // vIndex: 40
     virtual bool isImmobile() const /*override*/;
 
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
+    // vIndex: 36
     virtual ::Vec3 getHeadLookVector(float a) const /*override*/;
 
+    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
+    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
+    // vIndex: 174
     virtual void tickDeath() /*override*/;
 
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
     // NOLINTEND
 
@@ -186,8 +200,6 @@ public:
     MCAPI void $tickDeath();
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-
     // NOLINTEND
 
 public:

@@ -26,34 +26,46 @@ class BambooStalkBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
+    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
+    // vIndex: 74
     virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
+    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    virtual bool isValidAuxValue(int value) const /*override*/;
+    // vIndex: 48
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
+    // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB&) const /*override*/;
 
+    // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    // vIndex: 0
     virtual ~BambooStalkBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -62,9 +74,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::Block const& _determineNewBlockState(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI_S ::LeafSize _getLeafSize(::Block const& block) const;
+    MCAPI ::LeafSize _getLeafSize(::Block const& block) const;
 
-    MCAPI_S ::StalkThickness _getStalkThickness(::Block const& block) const;
+    MCAPI ::StalkThickness _getStalkThickness(::Block const& block) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -95,7 +107,7 @@ public:
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $isValidAuxValue(int value) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
 
@@ -104,8 +116,6 @@ public:
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-
     // NOLINTEND
 
 public:

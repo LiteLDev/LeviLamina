@@ -18,18 +18,6 @@ public:
     ShowcasedScreenshotsData& operator=(ShowcasedScreenshotsData const&);
     ShowcasedScreenshotsData(ShowcasedScreenshotsData const&);
     ShowcasedScreenshotsData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~ShowcasedScreenshotsData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Screenshots

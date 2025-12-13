@@ -61,16 +61,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::unique_ptr<::Pack> createPack(
-        ::ResourceLocation const&                               fileLocation,
-        ::PackType                                              type,
-        ::PackOrigin                                            origin,
-        ::IPackManifestFactory&                                 manifestFactory,
-        ::Bedrock::NonOwnerPointer<::IContentKeyProvider const> keyProvider,
-        ::PackSourceReport*                                     report,
-        ::Core::Path const&                                     zipSubDir
-    );
-
     MCAPI static ::std::unique_ptr<::Pack> createPack(
         ::IPackIOProvider const&                                io,
         ::ResourceLocation const&                               fileLocation,

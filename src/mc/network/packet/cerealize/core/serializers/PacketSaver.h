@@ -4,30 +4,26 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/BasicSaver.h"
+#include "mc/network/packet/cerealize/core/serializers/PacketSchemaWriter.h"
 
 class PacketSaver : public ::cereal::BasicSaver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk830bd9;
+    ::ll::TypedStorage<8, 24, ::PacketSchemaWriter> mWriter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PacketSaver& operator=(PacketSaver const&);
-    PacketSaver(PacketSaver const&);
-    PacketSaver();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PacketSaver() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

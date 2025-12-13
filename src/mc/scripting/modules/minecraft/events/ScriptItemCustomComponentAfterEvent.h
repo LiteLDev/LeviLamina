@@ -18,6 +18,7 @@ struct ScriptItemCustomComponentAfterEvent
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptItemCustomComponentAfterEvent() /*override*/ = default;
     // NOLINTEND
 };

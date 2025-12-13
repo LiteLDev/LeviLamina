@@ -22,90 +22,14 @@ class DataStore : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // DataStore inner types declare
     // clang-format off
-    struct CustomFileHandlers;
-    class Viewer;
     template<typename T0, typename T1> class AccessHandle;
+    struct CustomFileHandlers;
     class Editor;
     class Impl;
+    class Viewer;
     // clang-format on
 
     // DataStore inner types define
-    struct CustomFileHandlers {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnk28b7e8;
-        ::ll::UntypedStorage<8, 64> mUnke4ea96;
-        ::ll::UntypedStorage<8, 64> mUnk216882;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CustomFileHandlers& operator=(CustomFileHandlers const&);
-        CustomFileHandlers(CustomFileHandlers const&);
-        CustomFileHandlers();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~CustomFileHandlers();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
-    class Viewer {
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~Viewer() = default;
-
-        virtual ::gsl::not_null<::Bedrock::DataStore const*> getOwningDataStore() const = 0;
-
-        virtual ::gsl::not_null<::Bedrock::DataStore*> getOwningDataStore() = 0;
-
-        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view) const = 0;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
-    template <typename T0, typename T1>
-    class AccessHandle {};
-
-    class Editor : public ::Bedrock::DataStore::Viewer {
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ::Bedrock::JSONObject::Node* getValueForKey(::std::string_view) = 0;
-
-        virtual ::Bedrock::JSONObject::Node*
-        setValueForKey(::std::string_view, ::Bedrock::JSONObject::ValueWrapper const&) = 0;
-
-        virtual ~Editor() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-    };
-
     class Impl {
     public:
         // member variables
@@ -139,8 +63,6 @@ public:
 
         MCNAPI void load();
 
-        MCNAPI_C void save();
-
         MCNAPI void setCustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers handlers);
 
         MCNAPI ~Impl();
@@ -159,6 +81,89 @@ public:
         // NOLINTEND
     };
 
+    class Viewer {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 0
+        virtual ~Viewer() = default;
+
+        // vIndex: 2
+        virtual ::gsl::not_null<::Bedrock::DataStore const*> getOwningDataStore() const = 0;
+
+        // vIndex: 1
+        virtual ::gsl::not_null<::Bedrock::DataStore*> getOwningDataStore() = 0;
+
+        // vIndex: 3
+        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view) const = 0;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+    class Editor : public ::Bedrock::DataStore::Viewer {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 4
+        virtual ::Bedrock::JSONObject::Node* getValueForKey(::std::string_view) = 0;
+
+        // vIndex: 5
+        virtual ::Bedrock::JSONObject::Node*
+        setValueForKey(::std::string_view, ::Bedrock::JSONObject::ValueWrapper const&) = 0;
+
+        // vIndex: 0
+        virtual ~Editor() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
+    };
+
+    struct CustomFileHandlers {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnk28b7e8;
+        ::ll::UntypedStorage<8, 64> mUnke4ea96;
+        ::ll::UntypedStorage<8, 64> mUnk216882;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CustomFileHandlers& operator=(CustomFileHandlers const&);
+        CustomFileHandlers(CustomFileHandlers const&);
+        CustomFileHandlers();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~CustomFileHandlers();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    template <typename T0, typename T1>
+    class AccessHandle {};
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -173,6 +178,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DataStore() /*override*/;
     // NOLINTEND
 

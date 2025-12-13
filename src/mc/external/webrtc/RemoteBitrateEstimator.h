@@ -18,14 +18,19 @@ class RemoteBitrateEstimator : public ::webrtc::CallStatsObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ~RemoteBitrateEstimator() /*override*/ = default;
 
+    // vIndex: 2
     virtual void IncomingPacket(::webrtc::RtpPacketReceived const&) = 0;
 
+    // vIndex: 3
     virtual void RemoveStream(uint) = 0;
 
+    // vIndex: 4
     virtual ::webrtc::DataRate LatestEstimate() const = 0;
 
+    // vIndex: 5
     virtual ::webrtc::TimeDelta Process() = 0;
     // NOLINTEND
 

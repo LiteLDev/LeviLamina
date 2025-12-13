@@ -2,24 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/EntityId.h"
-#include "mc/deps/vanilla_components/VehicleInputIntentComponent.h"
-#include "mc/entity/components/ActorRotationComponent.h"
-#include "mc/entity/components/BlockPosTrackerComponent.h"
-#include "mc/entity/components/InsideSlowingSweetBerryBushBlockComponent.h"
-#include "mc/entity/components/IsSolidMobNearbyComponent.h"
-#include "mc/entity/components/ItemUseSlowdownModifierComponent.h"
-#include "mc/entity/components/MoveInputComponent.h"
-#include "mc/entity/components/MovementEffectsComponent.h"
-#include "mc/entity/components/MovementInterpolatorComponent.h"
-#include "mc/entity/components/ReplayStateTrackerComponent.h"
-#include "mc/entity/components/RewindCollisionShapesComponent.h"
-#include "mc/entity/components/RiptideTridentSpinAttackComponent.h"
-#include "mc/entity/components/SpinAttackResultsComponent.h"
-#include "mc/entity/components_json_legacy/BuoyancyComponent.h"
-#include "mc/entity/components_json_legacy/BuoyancyFloatRequestComponent.h"
-#include "mc/entity/systems/block_collisions_system/BlockCollisionResolutionVectorComponent.h"
+// auto generated forward declare list
+// clang-format off
+class BuoyancyComponent;
+class EntityId;
+struct ActorRotationComponent;
+struct BlockPosTrackerComponent;
+struct BuoyancyFloatRequestComponent;
+struct InsideSlowingSweetBerryBushBlockComponent;
+struct IsSolidMobNearbyComponent;
+struct ItemUseSlowdownModifierComponent;
+struct MoveInputComponent;
+struct MovementEffectsComponent;
+struct MovementInterpolatorComponent;
+struct ReplayStateTrackerComponent;
+struct RewindCollisionShapesComponent;
+struct RiptideTridentSpinAttackComponent;
+struct SpinAttackResultsComponent;
+struct VehicleInputIntentComponent;
+namespace BlockCollisionsSystem { struct BlockCollisionResolutionVectorComponent; }
+// clang-format on
 
 namespace History {
 

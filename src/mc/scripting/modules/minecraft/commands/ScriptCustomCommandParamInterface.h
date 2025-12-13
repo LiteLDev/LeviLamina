@@ -27,10 +27,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&
-    operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&&);
+    operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface const&);
 
     MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&
-    operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface const&);
+    operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&&);
     // NOLINTEND
 
 public:

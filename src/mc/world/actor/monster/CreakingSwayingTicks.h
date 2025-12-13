@@ -10,7 +10,7 @@ class HashedString;
 namespace CreakingSwayingTicks {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::HashedString const& PROPERTY_NAME();
+MCAPI ::HashedString const& PROPERTY_NAME();
 // NOLINTEND
 
 } // namespace CreakingSwayingTicks

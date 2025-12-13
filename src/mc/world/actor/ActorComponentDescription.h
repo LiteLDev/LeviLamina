@@ -9,12 +9,13 @@ struct ActorComponentDescription : public ::Description {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ~ActorComponentDescription() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

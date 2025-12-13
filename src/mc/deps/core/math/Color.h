@@ -19,21 +19,11 @@ public:
     // NOLINTBEGIN
     MCAPI Color();
 
-    MCAPI_C Color(::glm::vec3 const& color, float a_);
-
-    MCAPI_C Color(::mce::Color const& color, float a_);
-
     MCAPI Color(float r_, float g_, float b_, float a_);
-
-    MCAPI_C bool isNan() const;
 
     MCAPI bool operator!=(::mce::Color const& c) const;
 
-    MCAPI_C ::mce::Color& operator*=(float s);
-
     MCAPI bool operator==(::mce::Color const& c) const;
-
-    MCAPI_C int toARGB() const;
 
     MCAPI ::std::string toHexString() const;
     // NOLINTEND
@@ -41,10 +31,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::mce::Color fromARGB(int col);
-
-    MCAPI_C static ::mce::Color fromHSB(float hue, float saturation, float brightness);
-
     MCAPI static ::mce::Color fromHexString(::std::string const& hexStr);
 
     MCAPI static ::mce::Color fromRGBHexString(::std::string const& hexStr);
@@ -57,15 +43,9 @@ public:
 
     MCAPI static ::mce::Color const& BLUE();
 
-    MCAPI_C static ::mce::Color const& CYAN();
-
     MCAPI static ::mce::Color const& GREEN();
 
-    MCAPI_C static ::mce::Color const& GREY();
-
     MCAPI static ::mce::Color const& NIL();
-
-    MCAPI_C static ::mce::Color const& ORANGE();
 
     MCAPI static ::mce::Color const& PINK();
 
@@ -93,11 +73,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor();
 
-    MCAPI_C void* $ctor(::glm::vec3 const& color, float a_);
-
-    MCFOLD_C void* $ctor(::mce::Color const& color, float a_);
-
-    MCFOLD void* $ctor(float r_, float g_, float b_, float a_);
+    MCAPI void* $ctor(float r_, float g_, float b_, float a_);
     // NOLINTEND
 };
 

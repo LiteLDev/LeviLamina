@@ -11,7 +11,6 @@
 // clang-format off
 class BlockPos;
 class ContainerScreenContext;
-class ItemInstance;
 class Player;
 struct ActorUniqueID;
 // clang-format on
@@ -30,10 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ChestContainerManagerModel() /*override*/ = default;
 
+    // vIndex: 19
     virtual bool isValid(float pickRange) /*override*/;
 
+    // vIndex: 20
     virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
@@ -48,8 +50,6 @@ public:
         ::BlockPos const& blockPos,
         ::BlockActorType  blockActorType
     );
-
-    MCAPI_C void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
     // NOLINTEND
 
 public:
@@ -67,8 +67,6 @@ public:
     MCAPI bool $isValid(float pickRange);
 
     MCAPI ::ContainerScreenContext $_postInit();
-
-
     // NOLINTEND
 
 public:

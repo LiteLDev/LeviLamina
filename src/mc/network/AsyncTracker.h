@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                    mHasRetryBeenRequested;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mRetryTime;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C bool hasAsyncOperationTimedOut();
-
-    MCNAPI_C void retryCallInSeconds(int seconds);
-
-    MCNAPI_C bool shouldCallBeRetried();
-
-    MCNAPI_C void trackNewAsyncOperation(int timeoutInSeconds);
-    // NOLINTEND
 };

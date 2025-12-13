@@ -39,26 +39,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool tick(
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
         ::PositionTrackingDB::TrackingRecord&                           record
     ) /*override*/;
 
+    // vIndex: 3
     virtual bool isAsync() const /*override*/;
 
+    // vIndex: 4
     virtual bool isComplete() const /*override*/;
 
+    // vIndex: 5
     virtual bool
     _init(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
+    // vIndex: 6
     virtual bool
     _tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
+    // vIndex: 7
     virtual bool _quit(
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
         ::PositionTrackingDB::TrackingRecord&
     );
 
+    // vIndex: 0
     virtual ~AsyncOperationBase() /*override*/ = default;
     // NOLINTEND
 
@@ -78,8 +85,6 @@ public:
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
         ::PositionTrackingDB::TrackingRecord&
     );
-
-
     // NOLINTEND
 };
 

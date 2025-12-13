@@ -9,6 +9,7 @@ class EntityStorageKeySystem : public ::ISystem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~EntityStorageKeySystem() /*override*/ = default;
     // NOLINTEND
 

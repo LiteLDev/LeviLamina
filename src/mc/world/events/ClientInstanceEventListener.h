@@ -21,70 +21,43 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~ClientInstanceEventListener() = default;
-#else // LL_PLAT_C
-    virtual ~ClientInstanceEventListener();
-#endif
 
-    virtual ::EventResult onClientInitializeStart(::ClientInstance& instance);
+    // vIndex: 1
+    virtual ::EventResult onClientInitializeStart(::ClientInstance&);
 
-    virtual ::EventResult onClientInitializeEnd(::ClientInstance& instance);
+    // vIndex: 2
+    virtual ::EventResult onClientInitializeEnd(::ClientInstance&);
 
-    virtual ::EventResult onClientMinecraftInitialized(::ClientInstance& instance, ::Minecraft& minecraft);
+    // vIndex: 3
+    virtual ::EventResult onClientMinecraftInitialized(::ClientInstance&, ::Minecraft&);
 
-    virtual ::EventResult onClientCreatedLevel(::ClientInstance& instance, ::Level& level);
+    // vIndex: 4
+    virtual ::EventResult onClientCreatedLevel(::ClientInstance&, ::Level&);
 
-    virtual ::EventResult onClientUpdateStart(::ClientInstance& instance);
+    // vIndex: 5
+    virtual ::EventResult onClientUpdateStart(::ClientInstance&);
 
-    virtual ::EventResult onClientUpdateEnd(::ClientInstance& instance);
+    // vIndex: 6
+    virtual ::EventResult onClientUpdateEnd(::ClientInstance&);
 
-    virtual ::EventResult onClientSuspend(::ClientInstance& instance);
+    // vIndex: 7
+    virtual ::EventResult onClientSuspend(::ClientInstance&);
 
-    virtual ::EventResult onClientEnteredWorld(::ClientInstance& instance);
+    // vIndex: 8
+    virtual ::EventResult onClientEnteredWorld(::ClientInstance&);
 
-    virtual ::EventResult onStartLeaveGame(::ClientInstance& instance);
+    // vIndex: 9
+    virtual ::EventResult onStartLeaveGame(::ClientInstance&);
 
-    virtual ::EventResult onEvent(::ClientInstanceNotificationEvent const& playerViewPerspectiveChangedEvent);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    // vIndex: 10
+    virtual ::EventResult onEvent(::ClientInstanceNotificationEvent const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::EventResult $onClientInitializeStart(::ClientInstance& instance);
 
-    MCNAPI ::EventResult $onClientInitializeEnd(::ClientInstance& instance);
-
-    MCNAPI ::EventResult $onClientMinecraftInitialized(::ClientInstance& instance, ::Minecraft& minecraft);
-
-    MCNAPI ::EventResult $onClientCreatedLevel(::ClientInstance& instance, ::Level& level);
-
-    MCNAPI ::EventResult $onClientUpdateStart(::ClientInstance& instance);
-
-    MCNAPI ::EventResult $onClientUpdateEnd(::ClientInstance& instance);
-
-    MCNAPI ::EventResult $onClientSuspend(::ClientInstance& instance);
-
-    MCNAPI ::EventResult $onClientEnteredWorld(::ClientInstance& instance);
-
-    MCNAPI ::EventResult $onStartLeaveGame(::ClientInstance& instance);
-
-    MCNAPI ::EventResult $onEvent(::ClientInstanceNotificationEvent const& playerViewPerspectiveChangedEvent);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

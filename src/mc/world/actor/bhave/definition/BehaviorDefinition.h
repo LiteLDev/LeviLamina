@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/bhave/BehaviorTreeDefinitionPtr.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -15,23 +18,20 @@ class BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkdacf89;
-    ::ll::UntypedStorage<8, 16> mUnk91fff8;
+    ::ll::TypedStorage<8, 32, ::std::string>               mName;
+    ::ll::TypedStorage<8, 16, ::BehaviorTreeDefinitionPtr> mTreeDefinition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BehaviorDefinition& operator=(BehaviorDefinition const&);
-    BehaviorDefinition(BehaviorDefinition const&);
-    BehaviorDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~BehaviorDefinition() = default;
 
+    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory);
 
+    // vIndex: 2
     virtual ::std::unique_ptr<::BehaviorNode>
     createNode(::Actor& owner, ::BehaviorFactory const& factory, ::BehaviorNode* parent, ::BehaviorData* data) const;
     // NOLINTEND
@@ -39,12 +39,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
 
-    MCNAPI ::std::unique_ptr<::BehaviorNode>
+    MCAPI ::std::unique_ptr<::BehaviorNode>
     $createNode(::Actor& owner, ::BehaviorFactory const& factory, ::BehaviorNode* parent, ::BehaviorData* data) const;
-
-
     // NOLINTEND
 
 public:

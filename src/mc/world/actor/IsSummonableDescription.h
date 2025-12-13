@@ -9,30 +9,24 @@ struct IsSummonableDescription : public ::DefintionDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkbcddf4;
-    ::ll::UntypedStorage<1, 1> mUnk7842db;
+    ::ll::TypedStorage<1, 1, bool> mIsSummonable;
+    ::ll::TypedStorage<1, 1, bool> mIsSet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IsSummonableDescription& operator=(IsSummonableDescription const&);
-    IsSummonableDescription(IsSummonableDescription const&);
-    IsSummonableDescription();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual char const* getJsonName() const /*override*/;
 
+    // vIndex: 0
     virtual ~IsSummonableDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
-
-
+    MCAPI char const* $getJsonName() const;
     // NOLINTEND
 
 public:

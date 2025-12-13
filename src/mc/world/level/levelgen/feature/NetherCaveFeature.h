@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/levelgen/feature/CaveFeature.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
@@ -13,7 +14,6 @@ class ChunkPos;
 class IBlockWorldGenAPI;
 class Random;
 class RenderParams;
-class Vec3;
 namespace CaveFeatureUtils { struct CarverConfiguration; }
 namespace CaveFeatureUtils { struct CarvingParameters; }
 // clang-format on
@@ -22,21 +22,17 @@ class NetherCaveFeature : public ::CaveFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkab7bcc;
-    ::ll::UntypedStorage<4, 4>  mUnk8cb074;
+    ::ll::TypedStorage<4, 12, ::Vec3 const> EMPTY_VEC;
+    ::ll::TypedStorage<4, 4, int const>     HELL_CAVE_COUNT_BASE_FACTOR;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetherCaveFeature& operator=(NetherCaveFeature const&);
-    NetherCaveFeature(NetherCaveFeature const&);
-    NetherCaveFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
+    // vIndex: 4
     virtual void addRoom(
         ::IBlockWorldGenAPI&                                                target,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
@@ -48,6 +44,7 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const /*override*/;
 
+    // vIndex: 5
     virtual void addTunnel(
         ::IBlockWorldGenAPI&                                                target,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
@@ -65,6 +62,7 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const /*override*/;
 
+    // vIndex: 7
     virtual void addFeature(
         ::IBlockWorldGenAPI&                                                target,
         ::ChunkPos const&                                                   pos,
@@ -74,15 +72,16 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const /*override*/;
 
+    // vIndex: 0
     virtual ~NetherCaveFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
-    MCNAPI void $addRoom(
+    MCAPI void $addRoom(
         ::IBlockWorldGenAPI&                                                target,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
         ::Random&                                                           random,
@@ -93,7 +92,7 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    MCNAPI void $addTunnel(
+    MCAPI void $addTunnel(
         ::IBlockWorldGenAPI&                                                target,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
         ::Random&                                                           random,
@@ -110,7 +109,7 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    MCNAPI void $addFeature(
+    MCAPI void $addFeature(
         ::IBlockWorldGenAPI&                                                target,
         ::ChunkPos const&                                                   pos,
         ::Random&                                                           random,
@@ -118,8 +117,6 @@ public:
         ::RenderParams&                                                     renderParams,
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
-
-
     // NOLINTEND
 
 public:

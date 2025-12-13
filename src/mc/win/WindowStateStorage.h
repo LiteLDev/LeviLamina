@@ -6,36 +6,25 @@ class WindowStateStorage {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~WindowStateStorage() = default;
-#else // LL_PLAT_C
-    virtual ~WindowStateStorage();
-#endif
 
+    // vIndex: 1
     virtual void writeRect(::tagRECT const&) = 0;
 
+    // vIndex: 2
     virtual void writeShowCommand(int) = 0;
 
+    // vIndex: 3
     virtual bool readRect(::tagRECT&) const = 0;
 
+    // vIndex: 4
     virtual bool readShowCommand(int&) const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

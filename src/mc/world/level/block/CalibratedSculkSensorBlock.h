@@ -18,14 +18,19 @@ class CalibratedSculkSensorBlock : public ::SculkSensorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
+    // vIndex: 121
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 0
     virtual ~CalibratedSculkSensorBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -46,12 +51,6 @@ public:
     MCAPI int $getVariant(::Block const& block) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
-#endif
-
-
     // NOLINTEND
 
 public:

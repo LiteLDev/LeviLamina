@@ -15,15 +15,15 @@ namespace Json {
 class ValueConstIterator : public ::Json::ValueIteratorBase {
 public:
     // ValueConstIterator inner types define
-    using SelfType = ::Json::ValueConstIterator;
+    using size_t = uint;
 
     using difference_type = int;
 
-    using pointer = ::Json::Value const*;
-
     using reference = ::Json::Value const&;
 
-    using size_t = uint;
+    using pointer = ::Json::Value const*;
+
+    using SelfType = ::Json::ValueConstIterator;
 
     using value_type = ::Json::Value;
 

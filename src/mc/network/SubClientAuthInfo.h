@@ -17,16 +17,4 @@ public:
     SubClientAuthInfo& operator=(SubClientAuthInfo const&);
     SubClientAuthInfo(SubClientAuthInfo const&);
     SubClientAuthInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~SubClientAuthInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

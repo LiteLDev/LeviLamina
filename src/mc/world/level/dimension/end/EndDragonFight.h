@@ -30,12 +30,6 @@ public:
     // clang-format on
 
     // EndDragonFight inner types define
-    enum class GatewayTask : uchar {
-        GeneratePair = 0,
-        VerifyPair   = 1,
-        NoTask       = 2,
-    };
-
     struct GateWayGenerator {
     public:
         // member variables
@@ -62,6 +56,12 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    };
+
+    enum class GatewayTask : uchar {
+        GeneratePair = 0,
+        VerifyPair   = 1,
+        NoTask       = 2,
     };
 
 public:

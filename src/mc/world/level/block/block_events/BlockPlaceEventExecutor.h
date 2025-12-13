@@ -16,8 +16,10 @@ class BlockPlaceEventExecutor : public ::BlockEvents::BlockEventExecutor<::Block
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void dispatch(::BlockEvents::BlockPlaceEvent& eventData) const /*override*/;
 
+    // vIndex: 0
     virtual ~BlockPlaceEventExecutor() /*override*/ = default;
     // NOLINTEND
 
@@ -25,8 +27,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $dispatch(::BlockEvents::BlockPlaceEvent& eventData) const;
-
-
     // NOLINTEND
 
 public:

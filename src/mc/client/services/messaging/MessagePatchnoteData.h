@@ -16,16 +16,4 @@ public:
     MessagePatchnoteData& operator=(MessagePatchnoteData const&);
     MessagePatchnoteData(MessagePatchnoteData const&);
     MessagePatchnoteData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~MessagePatchnoteData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

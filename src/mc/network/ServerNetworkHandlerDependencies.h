@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ServerNetworkHandlerDependencies(::ServerNetworkHandlerDependencies&&);
+    MCNAPI ServerNetworkHandlerDependencies(::ServerNetworkHandlerDependencies&&);
 
     MCNAPI ~ServerNetworkHandlerDependencies();
     // NOLINTEND
@@ -28,7 +28,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::ServerNetworkHandlerDependencies&&);
+    MCNAPI void* $ctor(::ServerNetworkHandlerDependencies&&);
     // NOLINTEND
 
 public:

@@ -32,6 +32,10 @@ public:
     // clang-format on
 
     // MobEffect inner types define
+    using AttributeBuffPair = ::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeBuff>>;
+
+    using AttributeModPair = ::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeModifier>>;
+
     struct FactorCalculationData {
     public:
         // member variables
@@ -76,10 +80,6 @@ public:
         // NOLINTEND
     };
 
-    using AttributeBuffPair = ::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeBuff>>;
-
-    using AttributeModPair = ::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeModifier>>;
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -113,23 +113,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MobEffect();
 
+    // vIndex: 1
     virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
+    // vIndex: 2
     virtual void removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
 
+    // vIndex: 3
     virtual void onEffectExpired(::Actor&) const;
 
+    // vIndex: 4
     virtual void onActorDied(::Actor&, int) const;
 
+    // vIndex: 5
     virtual void onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
 
+    // vIndex: 6
     virtual void
     applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
 
+    // vIndex: 7
     virtual bool isInstantaneous() const;
 
+    // vIndex: 8
     virtual float getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
     // NOLINTEND
 
@@ -164,8 +173,6 @@ public:
         ::EffectDuration    durationTicks,
         int                 amplification
     ) const;
-
-    MCAPI_C ::std::string const& getIconName() const;
 
     MCAPI void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
@@ -315,8 +322,6 @@ public:
     MCFOLD bool $isInstantaneous() const;
 
     MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
-
-
     // NOLINTEND
 
 public:

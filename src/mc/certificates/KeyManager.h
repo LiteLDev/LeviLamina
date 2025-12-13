@@ -22,8 +22,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~KeyManager();
 
+    // vIndex: 1
     virtual bool isValid() const;
     // NOLINTEND
 
@@ -49,8 +51,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $isValid() const;
-
-
     // NOLINTEND
 
 public:

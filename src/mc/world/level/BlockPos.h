@@ -33,21 +33,7 @@ public:
 
     MCAPI ::BlockPos above() const;
 
-    MCAPI_C ::BlockPos below() const;
-
-    MCAPI_C ::Vec3 center() const;
-
-    MCAPI_C uint64 hashCode() const;
-
-    MCAPI_C explicit operator ::Vec3() const;
-
-    MCFOLD bool operator!=(::BlockPos const& rhs) const;
-
-    MCAPI_C ::BlockPos operator+(::BlockPos const& rhs) const;
-
-    MCAPI_C ::BlockPos operator+(int s) const;
-
-    MCAPI_C ::BlockPos operator-(::BlockPos const& rhs) const;
+    MCAPI bool operator!=(::BlockPos const& rhs) const;
 
     MCFOLD bool operator==(::BlockPos const& rhs) const;
 

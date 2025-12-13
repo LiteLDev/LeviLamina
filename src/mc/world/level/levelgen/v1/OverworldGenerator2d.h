@@ -53,23 +53,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 44
     virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 
+    // vIndex: 46
     virtual ::BlockPos findSpawnPosition() const /*override*/;
 
+    // vIndex: 52
     virtual int getLevelGenHeight() const /*override*/;
 
+    // vIndex: 51
     virtual ::Util::MultidimensionalArray<float, 5, 5, 41>
     generateDensityCellsForChunk(::ChunkPos const& chunkPos) const /*override*/;
 
+    // vIndex: 56
     virtual ::PerlinSimplexNoise const& getSurfaceNoise() /*override*/;
 
+    // vIndex: 57
     virtual ::std::unique_ptr<::PerlinSimplexNoise> const& getMaterialAdjNoise() const /*override*/;
 
+    // vIndex: 50
     virtual void
     decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
         /*override*/;
 
+    // vIndex: 58
     virtual void _prepareHeights(
         ::BlockVolume&                                                  box,
         ::ChunkPos const&                                               chunkPos,
@@ -80,53 +88,55 @@ public:
         ::std::vector<short>*                                           ZXheights
     ) /*override*/;
 
+    // vIndex: 53
     virtual ::std::optional<::XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const
         /*override*/;
 
+    // vIndex: 0
     virtual ~OverworldGenerator2d() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI OverworldGenerator2d(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
+    MCAPI OverworldGenerator2d(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
 
-    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
+    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
     _generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
+    MCAPI void* $ctor(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BiomeSource const& $getBiomeSource() const;
+    MCFOLD ::BiomeSource const& $getBiomeSource() const;
 
-    MCNAPI ::BlockPos $findSpawnPosition() const;
+    MCAPI ::BlockPos $findSpawnPosition() const;
 
-    MCNAPI int $getLevelGenHeight() const;
+    MCFOLD int $getLevelGenHeight() const;
 
-    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
+    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
     $generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
 
-    MCNAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
+    MCAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
 
-    MCNAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
+    MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 
-    MCNAPI void
+    MCFOLD void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
-    MCNAPI void $_prepareHeights(
+    MCAPI void $_prepareHeights(
         ::BlockVolume&                                                  box,
         ::ChunkPos const&                                               chunkPos,
         ::ChunkLocalNoiseCache const&                                   chunkLocalNoiseCache,
@@ -136,9 +146,7 @@ public:
         ::std::vector<short>*                                           ZXheights
     );
 
-    MCNAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
-
-
+    MCAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
     // NOLINTEND
 
 public:

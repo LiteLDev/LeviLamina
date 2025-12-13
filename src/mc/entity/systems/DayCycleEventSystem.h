@@ -14,9 +14,11 @@ class DayCycleEventSystem : public ::ITickingSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DayCycleEventSystem() /*override*/ = default;
 
-    virtual void tick(::EntityRegistry& registry) /*override*/;
+    // vIndex: 2
+    virtual void tick(::EntityRegistry&) /*override*/;
     // NOLINTEND
 
 public:

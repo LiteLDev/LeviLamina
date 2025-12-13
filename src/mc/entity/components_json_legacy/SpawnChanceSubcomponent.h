@@ -34,14 +34,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SpawnChanceSubcomponent() /*override*/ = default;
 
+    // vIndex: 1
     virtual void readfromJSON(::Json::Value& component) /*override*/;
 
+    // vIndex: 2
     virtual void writetoJSON(::Json::Value& component) const /*override*/;
 
+    // vIndex: 3
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent&) /*override*/;
 
+    // vIndex: 4
     virtual char const* getName() const /*override*/;
     // NOLINTEND
 
@@ -55,8 +60,6 @@ public:
     MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent&);
 
     MCNAPI char const* $getName() const;
-
-
     // NOLINTEND
 
 public:

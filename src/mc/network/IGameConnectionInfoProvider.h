@@ -13,33 +13,20 @@ class IGameConnectionInfoProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    // vIndex: 0
     virtual ~IGameConnectionInfoProvider() = default;
-#else // LL_PLAT_C
-    virtual ~IGameConnectionInfoProvider();
-#endif
 
+    // vIndex: 1
     virtual ::Social::GameConnectionInfo const& getConnectionInfo() const = 0;
 
+    // vIndex: 2
     virtual ::std::optional<::std::string> getNetworkInfoString() const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

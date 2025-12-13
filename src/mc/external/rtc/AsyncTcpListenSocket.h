@@ -29,12 +29,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::rtc::AsyncListenSocket::State GetState() const /*override*/;
 
+    // vIndex: 2
     virtual ::rtc::SocketAddress GetLocalAddress() const /*override*/;
 
+    // vIndex: 3
     virtual void HandleIncomingConnection(::rtc::Socket* socket);
 
+    // vIndex: 0
     virtual ~AsyncTcpListenSocket() /*override*/ = default;
     // NOLINTEND
 
@@ -60,8 +64,6 @@ public:
     MCNAPI ::rtc::SocketAddress $GetLocalAddress() const;
 
     MCNAPI void $HandleIncomingConnection(::rtc::Socket* socket);
-
-
     // NOLINTEND
 
 public:

@@ -21,8 +21,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 9
     virtual void writeBytes(void const* data, uint64 bytes) /*override*/;
 
+    // vIndex: 0
     virtual ~StringByteOutput() /*override*/;
     // NOLINTEND
 
@@ -36,8 +38,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $writeBytes(void const* data, uint64 bytes);
-
-
     // NOLINTEND
 
 public:

@@ -11,10 +11,13 @@ class ILegacyItemUseTransactionSubject {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ILegacyItemUseTransactionSubject() = default;
 
+    // vIndex: 1
     virtual bool isServerAuthBlockBreakingEnabled() const = 0;
 
+    // vIndex: 2
     virtual bool destroyBlock(::BlockPos const&, uchar) = 0;
     // NOLINTEND
 

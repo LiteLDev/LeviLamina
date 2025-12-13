@@ -23,14 +23,10 @@ public:
     // clang-format on
 
     // ScheduleCommand inner types define
-    enum class ClearType : int {
-        FunctionName    = 0,
-        TickingAreaName = 1,
-    };
-
-    enum class DelayMode : int {
-        Append  = 0,
-        Replace = 1,
+    enum class ScheduleAction : int {
+        Clear        = 0,
+        Delay        = 1,
+        OnAreaLoaded = 2,
     };
 
     enum class RequestAction : int {
@@ -38,10 +34,14 @@ public:
         Clear = 1,
     };
 
-    enum class ScheduleAction : int {
-        Clear        = 0,
-        Delay        = 1,
-        OnAreaLoaded = 2,
+    enum class DelayMode : int {
+        Append  = 0,
+        Replace = 1,
+    };
+
+    enum class ClearType : int {
+        FunctionName    = 0,
+        TickingAreaName = 1,
     };
 
     struct FunctionInfo {
@@ -99,8 +99,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
+    // vIndex: 0
     virtual ~ScheduleCommand() /*override*/ = default;
     // NOLINTEND
 
@@ -136,8 +138,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-
     // NOLINTEND
 
 public:

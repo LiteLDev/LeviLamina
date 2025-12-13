@@ -23,44 +23,64 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AppPlatformListener();
 
+    // vIndex: 1
     virtual void onAppPaused();
 
+    // vIndex: 2
     virtual void onAppUnpaused();
 
+    // vIndex: 3
     virtual void onAppPreSuspended();
 
+    // vIndex: 4
     virtual void onAppSuspended();
 
+    // vIndex: 5
     virtual void onAppResumed();
 
+    // vIndex: 6
     virtual void onAppFocusLost();
 
+    // vIndex: 7
     virtual void onAppFocusGained();
 
+    // vIndex: 8
     virtual void onAppTerminated();
 
+    // vIndex: 9
     virtual void onOperationModeChanged(::OperationMode const operationMode);
 
+    // vIndex: 10
     virtual void onPerformanceModeChanged(bool const boost);
 
+    // vIndex: 11
     virtual void onPushNotificationReceived(::PushNotificationMessage const& msg);
 
+    // vIndex: 12
     virtual void onResizeBegin();
 
+    // vIndex: 13
     virtual void onResizeEnd();
 
+    // vIndex: 14
     virtual void onDeviceLost();
 
+    // vIndex: 15
     virtual void onAppSurfaceCreated();
 
+    // vIndex: 16
     virtual void onAppSurfaceDestroyed();
 
+    // vIndex: 17
     virtual void onClipboardCopy(::std::string const&);
 
+    // vIndex: 18
     virtual void onClipboardPaste(::std::string const&);
 
+    // vIndex: 19
     virtual void onLowMemory(::LowMemorySeverity);
     // NOLINTEND
 
@@ -116,8 +136,6 @@ public:
     MCNAPI void $onClipboardPaste(::std::string const&);
 
     MCNAPI void $onLowMemory(::LowMemorySeverity);
-
-
     // NOLINTEND
 
 public:

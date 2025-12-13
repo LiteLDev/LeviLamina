@@ -17,20 +17,6 @@ public:
     SortParams& operator=(SortParams const&);
     SortParams(SortParams const&);
     SortParams();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C SortParams(::std::string const& sortByStr, ::std::string const& sortDirectionStr);
-
-    MCNAPI_C ::std::string getSortByAsStr() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string const& sortByStr, ::std::string const& sortDirectionStr);
-    // NOLINTEND
 };
 
 } // namespace catalog

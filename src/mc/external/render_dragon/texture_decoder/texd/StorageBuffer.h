@@ -38,26 +38,6 @@ public:
     StorageBuffer& operator=(StorageBuffer const&);
     StorageBuffer(StorageBuffer const&);
     StorageBuffer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C StorageBuffer(uchar const* data, uint64 size);
-
-    MCNAPI_C ~StorageBuffer();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(uchar const* data, uint64 size);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace texd

@@ -15,10 +15,13 @@ class IECSModule {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IECSModule() = default;
 
+    // vIndex: 1
     virtual void initRegistry(::EntityRegistry&) = 0;
 
+    // vIndex: 2
     virtual void registerSystems(::IEntitySystems&, ::ECSModule::ModuleInitArgs const&) = 0;
     // NOLINTEND
 

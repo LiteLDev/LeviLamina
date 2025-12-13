@@ -16,12 +16,16 @@ class TransformableVideoFrameInterface : public ::webrtc::TransformableFrameInte
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TransformableVideoFrameInterface() /*override*/ = default;
 
+    // vIndex: 10
     virtual bool IsKeyFrame() const = 0;
 
+    // vIndex: 11
     virtual ::webrtc::VideoFrameMetadata Metadata() const = 0;
 
+    // vIndex: 12
     virtual void SetMetadata(::webrtc::VideoFrameMetadata const&) = 0;
     // NOLINTEND
 

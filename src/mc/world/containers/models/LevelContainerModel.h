@@ -39,24 +39,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ~LevelContainerModel() /*override*/ = default;
 
+    // vIndex: 3
     virtual void releaseResources() /*override*/;
 
+    // vIndex: 0
     virtual void containerContentChanged(int slot) /*override*/;
 
+    // vIndex: 14
     virtual bool isValid() /*override*/;
 
+    // vIndex: 7
     virtual ::ContainerWeakRef getContainerWeakRef() const /*override*/;
 
+    // vIndex: 2
     virtual void postInit() /*override*/;
 
+    // vIndex: 20
     virtual bool isSlotDisabled(int slot) const /*override*/;
 
+    // vIndex: 23
     virtual int _getContainerOffset() const /*override*/;
 
+    // vIndex: 25
     virtual void _onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem) /*override*/;
 
+    // vIndex: 22
     virtual ::Container* _getContainer() const /*override*/;
     // NOLINTEND
 
@@ -133,8 +143,6 @@ public:
     MCFOLD void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
     MCAPI ::Container* $_getContainer() const;
-
-
     // NOLINTEND
 
 public:

@@ -11,6 +11,7 @@ class RtpMediaContentDescription : public ::cricket::MediaContentDescription {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~RtpMediaContentDescription() /*override*/ = default;
     // NOLINTEND
 };

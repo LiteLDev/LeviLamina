@@ -10,6 +10,7 @@ class NetherReactorBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetherReactorBlock() /*override*/ = default;
     // NOLINTEND
 

@@ -24,12 +24,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::Bedrock::Threading::Async<void> initialize() /*override*/;
 
+    // vIndex: 2
     virtual ::Bedrock::Threading::Async<void> refreshPacks() /*override*/;
 
+    // vIndex: 3
     virtual ::Bedrock::Threading::Async<void> reloadUserPacks() /*override*/;
 
+    // vIndex: 0
     virtual ~RefresherImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -41,8 +45,6 @@ public:
     MCNAPI ::Bedrock::Threading::Async<void> $refreshPacks();
 
     MCNAPI ::Bedrock::Threading::Async<void> $reloadUserPacks();
-
-
     // NOLINTEND
 
 public:

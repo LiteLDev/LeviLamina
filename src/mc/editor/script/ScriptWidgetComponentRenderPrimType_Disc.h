@@ -31,6 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ScriptWidgetComponentRenderPrimType_Disc() /*override*/ = default;
     // NOLINTEND
 

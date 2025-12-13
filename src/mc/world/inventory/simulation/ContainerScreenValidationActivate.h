@@ -14,8 +14,10 @@ class ContainerScreenValidationActivate : public ::ContainerScreenValidation {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::ContainerValidationResult tryActivate() /*override*/;
 
+    // vIndex: 0
     virtual ~ContainerScreenValidationActivate() /*override*/ = default;
     // NOLINTEND
 
@@ -23,8 +25,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::ContainerValidationResult $tryActivate();
-
-
     // NOLINTEND
 
 public:

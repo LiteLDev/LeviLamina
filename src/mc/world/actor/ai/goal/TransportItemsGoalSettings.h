@@ -2,52 +2,55 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockDescriptor;
+class ItemDescriptor;
+// clang-format on
+
 struct TransportItemsGoalSettings {
 public:
     // TransportItemsGoalSettings inner types define
+    enum class SearchStrategy : int {
+        Nearest = 0,
+        Random  = 1,
+    };
+
     enum class PlaceStrategy : int {
         Any                 = 0,
         WithMatching        = 1,
         WithMatchingOrEmpty = 2,
     };
 
-    enum class SearchStrategy : int {
-        Nearest = 0,
-        Random  = 1,
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk32ee8c;
-    ::ll::UntypedStorage<8, 24> mUnka13beb;
-    ::ll::UntypedStorage<4, 4>  mUnk3bc8f4;
-    ::ll::UntypedStorage<4, 4>  mUnk87fd46;
-    ::ll::UntypedStorage<1, 1>  mUnk4d5e83;
-    ::ll::UntypedStorage<4, 4>  mUnk634183;
-    ::ll::UntypedStorage<4, 8>  mUnk2c2882;
-    ::ll::UntypedStorage<4, 4>  mUnk1277c8;
-    ::ll::UntypedStorage<4, 4>  mUnk7a1a0d;
-    ::ll::UntypedStorage<4, 4>  mUnk64ba13;
-    ::ll::UntypedStorage<8, 24> mUnk296f17;
-    ::ll::UntypedStorage<8, 24> mUnka62701;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>>            mSourceContainerTypes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>>            mDestinationContainerTypes;
+    ::ll::TypedStorage<4, 4, uint>                                         mMaxStackSize;
+    ::ll::TypedStorage<4, 4, float>                                        mInteractionTime;
+    ::ll::TypedStorage<1, 1, bool>                                         mAllowSimultaneousInteraction;
+    ::ll::TypedStorage<4, 4, ::TransportItemsGoalSettings::SearchStrategy> mSearchStrategy;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                       mSearchDistance;
+    ::ll::TypedStorage<4, 4, uint>                                         mMaxVisitedContainers;
+    ::ll::TypedStorage<4, 4, uint>                                         mIdleCooldown;
+    ::ll::TypedStorage<4, 4, ::TransportItemsGoalSettings::PlaceStrategy>  mPlaceStrategy;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>             mAllowedItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>             mDisallowedItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TransportItemsGoalSettings& operator=(TransportItemsGoalSettings const&);
-    TransportItemsGoalSettings(TransportItemsGoalSettings const&);
-    TransportItemsGoalSettings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~TransportItemsGoalSettings();
+    MCAPI ~TransportItemsGoalSettings();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

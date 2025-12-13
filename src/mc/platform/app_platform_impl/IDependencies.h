@@ -21,18 +21,25 @@ class IDependencies {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~IDependencies() = default;
 
+    // vIndex: 1
     virtual ::ServiceReference<::IMinecraftEventing> getEventing() = 0;
 
+    // vIndex: 2
     virtual ::ServiceReference<::FeatureToggles> getFeatureToggles() = 0;
 
+    // vIndex: 3
     virtual ::Bedrock::NonOwnerPointer<::ThrottledFileWriteManager> getFileWriteManager() = 0;
 
+    // vIndex: 4
     virtual ::ServiceReference<::flighting::IFlightReader> getTreatmentToggles() = 0;
 
+    // vIndex: 5
     virtual ::I18n& getI18n() = 0;
 
+    // vIndex: 6
     virtual bool& getUseSuspendHandler() = 0;
     // NOLINTEND
 

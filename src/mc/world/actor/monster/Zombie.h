@@ -35,14 +35,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 95
     virtual bool canPickupItem(::ItemStack const& item) const /*override*/;
 
+    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
+    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
+    // vIndex: 156
     virtual int getArmorValue() const /*override*/;
 
+    // vIndex: 8
     virtual ~Zombie() /*override*/;
     // NOLINTEND
 
@@ -92,8 +97,6 @@ public:
     MCAPI bool $checkSpawnRules(bool fromSpawner);
 
     MCFOLD int $getArmorValue() const;
-
-
     // NOLINTEND
 
 public:

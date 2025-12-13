@@ -16,8 +16,10 @@ class PreviewContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~PreviewContainerValidation() /*override*/ = default;
 
+    // vIndex: 2
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const                       slot,
@@ -26,8 +28,10 @@ public:
         bool
     ) const /*override*/;
 
+    // vIndex: 4
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
+    // vIndex: 1
     virtual bool isValidSlotForContainer(
         ::ContainerScreenContext const& screenContext,
         ::Container const&              container,
@@ -53,8 +57,6 @@ public:
         ::Container const&              container,
         int const                       slot
     ) const;
-
-
     // NOLINTEND
 
 public:

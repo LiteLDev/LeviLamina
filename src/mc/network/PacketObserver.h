@@ -53,16 +53,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual void packetSentTo(::NetworkIdentifier const&, ::Packet const&, uint size) /*override*/;
 
+    // vIndex: 2
     virtual void packetReceivedFrom(::NetworkIdentifier const&, ::Packet const&, uint size) /*override*/;
 
+    // vIndex: 3
     virtual void dataSentTo(::NetworkIdentifier const&, ::std::string_view) /*override*/;
 
+    // vIndex: 4
     virtual void dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&) /*override*/;
 
+    // vIndex: 5
     virtual void reset();
 
+    // vIndex: 0
     virtual ~PacketObserver() /*override*/;
     // NOLINTEND
 
@@ -84,8 +90,6 @@ public:
     MCNAPI void $dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&);
 
     MCNAPI void $reset();
-
-
     // NOLINTEND
 
 public:

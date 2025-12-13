@@ -18,6 +18,7 @@ class CopperGrateBlock : public ::CopperBlock<::BlockType> {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual bool getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
@@ -25,6 +26,7 @@ public:
         ::BlockPos const&          pos
     ) const /*override*/;
 
+    // vIndex: 0
     virtual ~CopperGrateBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -37,8 +39,6 @@ public:
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos
     ) const;
-
-
     // NOLINTEND
 
 public:

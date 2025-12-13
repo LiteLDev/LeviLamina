@@ -3,7 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/ChanceInformation.h"
+#include "mc/util/IntRange.h"
+#include "mc/world/level/block/BlockDescriptor.h"
+#include "mc/world/level/levelgen/feature/helpers/ITreeCanopyWrapper.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeTrunk.h"
+#include "mc/world/level/levelgen/feature/helpers/tree_helper/AttachableDecoration.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,35 +24,32 @@ class AcaciaTreeTrunk : public ::ITreeTrunk {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk4d62b1;
-    ::ll::UntypedStorage<4, 4>   mUnka05513;
-    ::ll::UntypedStorage<4, 4>   mUnk6f1803;
-    ::ll::UntypedStorage<4, 8>   mUnk9420a3;
-    ::ll::UntypedStorage<4, 8>   mUnk3cfdf0;
-    ::ll::UntypedStorage<4, 8>   mUnkb664e7;
-    ::ll::UntypedStorage<1, 1>   mUnk49554a;
-    ::ll::UntypedStorage<4, 8>   mUnk86d32d;
-    ::ll::UntypedStorage<4, 8>   mUnk41073d;
-    ::ll::UntypedStorage<4, 12>  mUnk56e93f;
-    ::ll::UntypedStorage<8, 184> mUnk5e1bc2;
-    ::ll::UntypedStorage<8, 8>   mUnkf85fc0;
-    ::ll::UntypedStorage<8, 208> mUnka16826;
-    ::ll::UntypedStorage<8, 24>  mUnka54eb5;
+    ::ll::TypedStorage<4, 4, int>                                  mBaseHeight;
+    ::ll::TypedStorage<4, 4, int>                                  mTrunkWidth;
+    ::ll::TypedStorage<4, 4, int>                                  mMinHeightForCanopy;
+    ::ll::TypedStorage<4, 8, ::IntRange>                           mLeanHeight;
+    ::ll::TypedStorage<4, 8, ::IntRange>                           mLeanSteps;
+    ::ll::TypedStorage<4, 8, ::IntRange>                           mLeanLength;
+    ::ll::TypedStorage<1, 1, bool>                                 mAllowDiagonalGrowth;
+    ::ll::TypedStorage<4, 8, ::IntRange>                           mBranchLength;
+    ::ll::TypedStorage<4, 8, ::IntRange>                           mBranchPos;
+    ::ll::TypedStorage<4, 12, ::ChanceInformation>                 mBranchChance;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mTrunkBlockDescriptor;
+    ::ll::TypedStorage<8, 8, ::ITreeCanopyWrapper>                 mBranchCanopy;
+    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                  mHeightIntervals;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AcaciaTreeTrunk& operator=(AcaciaTreeTrunk const&);
-    AcaciaTreeTrunk(AcaciaTreeTrunk const&);
-    AcaciaTreeTrunk();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~AcaciaTreeTrunk() /*override*/ = default;
 
+    // vIndex: 2
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
+    // vIndex: 1
     virtual ::std::optional<::BlockPos> placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
@@ -62,7 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _placeLeaningBranches(
+    MCAPI void _placeLeaningBranches(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::BlockPos const&               branchPos,
@@ -74,7 +76,7 @@ public:
         ::TreeHelper::TreeParams const& treeParams
     ) const;
 
-    MCNAPI void _placeVerticalBranches(
+    MCAPI void _placeVerticalBranches(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::BlockPos const&               branchPos,
@@ -87,9 +89,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getTreeHeight(::Random& random) const;
+    MCAPI int $getTreeHeight(::Random& random) const;
 
-    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,
@@ -98,8 +100,6 @@ public:
         ::TreeHelper::TreeParams const& treeParams,
         ::ITreeCanopy const*            canopy
     ) const;
-
-
     // NOLINTEND
 
 public:

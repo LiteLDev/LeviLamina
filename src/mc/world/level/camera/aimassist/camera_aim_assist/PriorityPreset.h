@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/string/HashedString.h"
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
 
 namespace CameraAimAssist {
 
@@ -22,14 +24,12 @@ public:
 public:
     // prevent constructor by default
     PriorityPreset& operator=(PriorityPreset const&);
+    PriorityPreset(PriorityPreset const&);
+    PriorityPreset();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C PriorityPreset();
-
-    MCNAPI_C PriorityPreset(::CameraAimAssist::PriorityPreset const&);
-
     MCNAPI PriorityPreset(
         ::HashedString const&                                       id,
         ::std::unordered_set<::HashedString> const&                 exclusionList,
@@ -38,8 +38,6 @@ public:
         ::HashedString const&                                       handCategory,
         ::HashedString const&                                       defaultCategory
     );
-
-    MCNAPI_C ::CameraAimAssist::PriorityPreset& operator=(::CameraAimAssist::PriorityPreset&&);
 
     MCNAPI ~PriorityPreset();
     // NOLINTEND
@@ -53,10 +51,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::CameraAimAssist::PriorityPreset const&);
-
     MCNAPI void* $ctor(
         ::HashedString const&                                       id,
         ::std::unordered_set<::HashedString> const&                 exclusionList,

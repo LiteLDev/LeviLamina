@@ -11,6 +11,7 @@ class UndoOperationPayload : public ::Editor::Network::NetworkPayload<::Editor::
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~UndoOperationPayload() /*override*/ = default;
     // NOLINTEND
 

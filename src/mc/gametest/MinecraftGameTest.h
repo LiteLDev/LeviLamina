@@ -37,8 +37,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~MinecraftGameTest() /*override*/ = default;
 
+    // vIndex: 24
     virtual void onLevelDestruction(::std::string const&) /*override*/;
     // NOLINTEND
 
@@ -78,8 +80,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $onLevelDestruction(::std::string const&);
-
-
     // NOLINTEND
 
 public:

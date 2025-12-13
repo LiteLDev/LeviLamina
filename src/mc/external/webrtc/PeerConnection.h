@@ -157,42 +157,54 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
     virtual ::webrtc::scoped_refptr<::webrtc::StreamCollectionInterface> local_streams() /*override*/;
 
+    // vIndex: 4
     virtual ::webrtc::scoped_refptr<::webrtc::StreamCollectionInterface> remote_streams() /*override*/;
 
+    // vIndex: 5
     virtual bool AddStream(::webrtc::MediaStreamInterface* local_stream) /*override*/;
 
+    // vIndex: 6
     virtual void RemoveStream(::webrtc::MediaStreamInterface* remove_stream) /*override*/;
 
+    // vIndex: 8
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(
         ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
         ::std::vector<::std::string> const&                          stream_ids
     ) /*override*/;
 
+    // vIndex: 7
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(
         ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
         ::std::vector<::std::string> const&                          stream_ids,
         ::std::vector<::webrtc::RtpEncodingParameters> const&        init_send_encodings
     ) /*override*/;
 
+    // vIndex: 9
     virtual ::webrtc::RTCError
     RemoveTrackOrError(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> sender) /*override*/;
 
+    // vIndex: 13
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
     AddTransceiver(::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track) /*override*/;
 
+    // vIndex: 12
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(
         ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
         ::webrtc::RtpTransceiverInit const&                          init
     ) /*override*/;
 
+    // vIndex: 11
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
     AddTransceiver(::cricket::MediaType media_type) /*override*/;
 
+    // vIndex: 10
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>>
     AddTransceiver(::cricket::MediaType media_type, ::webrtc::RtpTransceiverInit const& init) /*override*/;
 
+    // vIndex: 25
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(
         ::cricket::MediaType                                         media_type,
         ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
@@ -200,248 +212,346 @@ public:
         bool                                                         update_negotiation_needed
     ) /*override*/;
 
+    // vIndex: 14
     virtual ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>
     CreateSender(::std::string const& kind, ::std::string const& stream_id) /*override*/;
 
+    // vIndex: 15
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> GetSenders() const /*override*/;
 
+    // vIndex: 16
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>> GetReceivers() const /*override*/;
 
+    // vIndex: 17
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> GetTransceivers() const
         /*override*/;
 
+    // vIndex: 23
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>>
     CreateDataChannelOrError(::std::string const& label, ::webrtc::DataChannelInit const* config) /*override*/;
 
+    // vIndex: 21
     virtual bool GetStats(
         ::webrtc::StatsObserver*                            observer,
         ::webrtc::MediaStreamTrackInterface*                track,
         ::webrtc::PeerConnectionInterface::StatsOutputLevel level
     ) /*override*/;
 
+    // vIndex: 20
     virtual void GetStats(::webrtc::RTCStatsCollectorCallback* callback) /*override*/;
 
+    // vIndex: 19
     virtual void GetStats(
         ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>        selector,
         ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
     ) /*override*/;
 
+    // vIndex: 18
     virtual void GetStats(
         ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>      selector,
         ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
     ) /*override*/;
 
+    // vIndex: 22
     virtual void ClearStatsCache() /*override*/;
 
+    // vIndex: 52
     virtual ::webrtc::PeerConnectionInterface::SignalingState signaling_state() /*override*/;
 
+    // vIndex: 53
     virtual ::webrtc::PeerConnectionInterface::IceConnectionState ice_connection_state() /*override*/;
 
+    // vIndex: 19
     virtual ::webrtc::PeerConnectionInterface::IceConnectionState ice_connection_state_internal() /*override*/;
 
+    // vIndex: 54
     virtual ::webrtc::PeerConnectionInterface::IceConnectionState standardized_ice_connection_state() /*override*/;
 
+    // vIndex: 55
     virtual ::webrtc::PeerConnectionInterface::PeerConnectionState peer_connection_state() /*override*/;
 
+    // vIndex: 56
     virtual ::webrtc::PeerConnectionInterface::IceGatheringState ice_gathering_state() /*override*/;
 
+    // vIndex: 57
     virtual ::std::optional<bool> can_trickle_ice_candidates() /*override*/;
 
+    // vIndex: 25
     virtual ::webrtc::SessionDescriptionInterface const* local_description() const /*override*/;
 
+    // vIndex: 26
     virtual ::webrtc::SessionDescriptionInterface const* remote_description() const /*override*/;
 
+    // vIndex: 27
     virtual ::webrtc::SessionDescriptionInterface const* current_local_description() const /*override*/;
 
+    // vIndex: 28
     virtual ::webrtc::SessionDescriptionInterface const* current_remote_description() const /*override*/;
 
+    // vIndex: 29
     virtual ::webrtc::SessionDescriptionInterface const* pending_local_description() const /*override*/;
 
+    // vIndex: 30
     virtual ::webrtc::SessionDescriptionInterface const* pending_remote_description() const /*override*/;
 
+    // vIndex: 31
     virtual void RestartIce() /*override*/;
 
+    // vIndex: 32
     virtual void CreateOffer(
         ::webrtc::CreateSessionDescriptionObserver*                     observer,
         ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options
     ) /*override*/;
 
+    // vIndex: 33
     virtual void CreateAnswer(
         ::webrtc::CreateSessionDescriptionObserver*                     observer,
         ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options
     ) /*override*/;
 
+    // vIndex: 37
     virtual void SetLocalDescription(
         ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                desc,
         ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer
     ) /*override*/;
 
+    // vIndex: 36
     virtual void
     SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer) /*override*/;
 
+    // vIndex: 35
     virtual void SetLocalDescription(
         ::webrtc::SetSessionDescriptionObserver* observer,
         ::webrtc::SessionDescriptionInterface*   desc_ptr
     ) /*override*/;
 
+    // vIndex: 34
     virtual void SetLocalDescription(::webrtc::SetSessionDescriptionObserver* observer) /*override*/;
 
+    // vIndex: 39
     virtual void SetRemoteDescription(
         ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                 desc,
         ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface> observer
     ) /*override*/;
 
+    // vIndex: 38
     virtual void SetRemoteDescription(
         ::webrtc::SetSessionDescriptionObserver* observer,
         ::webrtc::SessionDescriptionInterface*   desc_ptr
     ) /*override*/;
 
+    // vIndex: 41
     virtual ::webrtc::PeerConnectionInterface::RTCConfiguration GetConfiguration() /*override*/;
 
+    // vIndex: 42
     virtual ::webrtc::RTCError
     SetConfiguration(::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration) /*override*/;
 
+    // vIndex: 44
     virtual bool AddIceCandidate(::webrtc::IceCandidateInterface const* ice_candidate) /*override*/;
 
+    // vIndex: 43
     virtual void AddIceCandidate(
         ::std::unique_ptr<::webrtc::IceCandidateInterface> candidate,
         ::std::function<void(::webrtc::RTCError)>          callback
     ) /*override*/;
 
+    // vIndex: 45
     virtual bool RemoveIceCandidates(::std::vector<::cricket::Candidate> const& candidates) /*override*/;
 
+    // vIndex: 46
     virtual ::webrtc::RTCError SetBitrate(::webrtc::BitrateSettings const& bitrate) /*override*/;
 
+    // vIndex: 47
     virtual void ReconfigureBandwidthEstimation(::webrtc::BandwidthEstimationSettings const& settings) /*override*/;
 
+    // vIndex: 48
     virtual void SetAudioPlayout(bool playout) /*override*/;
 
+    // vIndex: 49
     virtual void SetAudioRecording(bool recording) /*override*/;
 
+    // vIndex: 50
     virtual ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface>
     LookupDtlsTransportByMid(::std::string const& mid) /*override*/;
 
+    // vIndex: 51
     virtual ::webrtc::scoped_refptr<::webrtc::SctpTransportInterface> GetSctpTransport() const /*override*/;
 
+    // vIndex: 58
     virtual void AddAdaptationResource(::webrtc::scoped_refptr<::webrtc::Resource> resource) /*override*/;
 
+    // vIndex: 60
     virtual bool
     StartRtcEventLog(::std::unique_ptr<::webrtc::RtcEventLogOutput> output, int64 output_period_ms) /*override*/;
 
+    // vIndex: 59
     virtual bool StartRtcEventLog(::std::unique_ptr<::webrtc::RtcEventLogOutput> output) /*override*/;
 
+    // vIndex: 61
     virtual void StopRtcEventLog() /*override*/;
 
+    // vIndex: 62
     virtual void Close() /*override*/;
 
+    // vIndex: 63
     virtual ::rtc::Thread* signaling_thread() const /*override*/;
 
+    // vIndex: 64
     virtual ::rtc::Thread* network_thread() const /*override*/;
 
+    // vIndex: 65
     virtual ::rtc::Thread* worker_thread() const /*override*/;
 
+    // vIndex: 1
     virtual ::std::string session_id() const /*override*/;
 
+    // vIndex: 66
     virtual bool initial_offerer() const /*override*/;
 
+    // vIndex: 67
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>
     GetTransceiversInternal() const /*override*/;
 
+    // vIndex: 68
     virtual ::std::vector<::webrtc::DataChannelStats> GetDataChannelStats() const /*override*/;
 
+    // vIndex: 69
     virtual ::std::optional<::std::string> sctp_transport_name() const /*override*/;
 
+    // vIndex: 3
     virtual ::std::optional<::std::string> sctp_mid() const /*override*/;
 
+    // vIndex: 70
     virtual ::std::vector<::cricket::CandidateStats> GetPooledCandidateStats() const /*override*/;
 
+    // vIndex: 71
     virtual ::std::map<::std::string, ::cricket::TransportStats>
     GetTransportStatsByNames(::std::set<::std::string> const& transport_names) /*override*/;
 
+    // vIndex: 72
     virtual ::webrtc::Call::Stats GetCallStats() /*override*/;
 
+    // vIndex: 73
     virtual ::std::optional<::webrtc::AudioDeviceModule::Stats> GetAudioDeviceStats() /*override*/;
 
+    // vIndex: 74
     virtual bool GetLocalCertificate(
         ::std::string const&                            transport_name,
         ::webrtc::scoped_refptr<::rtc::RTCCertificate>* certificate
     ) /*override*/;
 
+    // vIndex: 75
     virtual ::std::unique_ptr<::rtc::SSLCertChain>
     GetRemoteSSLCertChain(::std::string const& transport_name) /*override*/;
 
+    // vIndex: 76
     virtual bool IceRestartPending(::std::string const& content_name) const /*override*/;
 
+    // vIndex: 2
     virtual bool NeedsIceRestart(::std::string const& content_name) const /*override*/;
 
+    // vIndex: 77
     virtual bool GetSslRole(::std::string const& content_name, ::rtc::SSLRole* role) /*override*/;
 
+    // vIndex: 78
     virtual void NoteDataAddedEvent() /*override*/;
 
+    // vIndex: 17
     virtual ::webrtc::PeerConnectionObserver* Observer() const /*override*/;
 
+    // vIndex: 22
     virtual bool IsClosed() const /*override*/;
 
+    // vIndex: 18
     virtual ::std::optional<::rtc::SSLRole> GetSctpSslRole_n() /*override*/;
 
+    // vIndex: 79
     virtual void
     OnSctpDataChannelStateChanged(int channel_id, ::webrtc::DataChannelInterface::DataState state) /*override*/;
 
+    // vIndex: 40
     virtual bool ShouldFireNegotiationNeededEvent(uint event_id) /*override*/;
 
+    // vIndex: 16
     virtual ::webrtc::LegacyStatsCollector* legacy_stats() /*override*/;
 
+    // vIndex: 14
     virtual ::webrtc::DataChannelController* data_channel_controller() /*override*/;
 
+    // vIndex: 9
     virtual bool dtls_enabled() const /*override*/;
 
+    // vIndex: 4
     virtual ::webrtc::PeerConnectionInterface::RTCConfiguration const* configuration() const /*override*/;
 
+    // vIndex: 6
     virtual ::webrtc::PeerConnectionMessageHandler* message_handler() /*override*/;
 
+    // vIndex: 8
     virtual ::webrtc::RtpTransmissionManager* rtp_manager() /*override*/;
 
+    // vIndex: 7
     virtual ::webrtc::RtpTransmissionManager const* rtp_manager() const /*override*/;
 
+    // vIndex: 12
     virtual ::webrtc::JsepTransportController* transport_controller_s() /*override*/;
 
+    // vIndex: 13
     virtual ::webrtc::JsepTransportController* transport_controller_n() /*override*/;
 
+    // vIndex: 15
     virtual ::cricket::PortAllocator* port_allocator() /*override*/;
 
+    // vIndex: 28
     virtual ::webrtc::Call* call_ptr() /*override*/;
 
+    // vIndex: 10
     virtual ::webrtc::PeerConnectionFactoryInterface::Options const* options() const /*override*/;
 
+    // vIndex: 20
     virtual void SetIceConnectionState(::webrtc::PeerConnectionInterface::IceConnectionState new_state) /*override*/;
 
+    // vIndex: 21
     virtual void NoteUsageEvent(::webrtc::UsageEvent event) /*override*/;
 
+    // vIndex: 27
     virtual void AddRemoteCandidate(::std::string const& mid, ::cricket::Candidate const& candidate) /*override*/;
 
+    // vIndex: 5
     virtual void ReportSdpBundleUsage(::webrtc::SessionDescriptionInterface const& remote_description) /*override*/;
 
+    // vIndex: 23
     virtual bool IsUnifiedPlan() const /*override*/;
 
+    // vIndex: 24
     virtual bool ValidateBundleSettings(
         ::cricket::SessionDescription const*                             desc,
         ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid
     ) /*override*/;
 
+    // vIndex: 30
     virtual bool CreateDataChannelTransport(::std::string_view mid) /*override*/;
 
+    // vIndex: 31
     virtual void DestroyDataChannelTransport(::webrtc::RTCError error) /*override*/;
 
+    // vIndex: 26
     virtual void StartSctpTransport(int local_port, int remote_port, int max_message_size) /*override*/;
 
+    // vIndex: 11
     virtual ::webrtc::CryptoOptions GetCryptoOptions() /*override*/;
 
+    // vIndex: 29
     virtual bool SrtpRequired() const /*override*/;
 
+    // vIndex: 32
     virtual ::webrtc::FieldTrialsView const& trials() const /*override*/;
 
+    // vIndex: 0
     virtual ~PeerConnection() /*override*/;
 
+    // vIndex: 1
     virtual bool OnTransportChanged(
         ::std::string const&                             mid,
         ::webrtc::RtpTransportInternal*                  rtp_transport,
@@ -897,8 +1007,6 @@ public:
         ::webrtc::scoped_refptr<::webrtc::DtlsTransport> dtls_transport,
         ::webrtc::DataChannelTransportInterface*         data_channel_transport
     );
-
-
     // NOLINTEND
 
 public:

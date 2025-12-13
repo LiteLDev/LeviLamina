@@ -24,16 +24,4 @@ public:
     glTFExportData& operator=(glTFExportData const&);
     glTFExportData(glTFExportData const&);
     glTFExportData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~glTFExportData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

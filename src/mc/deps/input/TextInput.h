@@ -16,16 +16,4 @@ public:
     TextInput& operator=(TextInput const&);
     TextInput(TextInput const&);
     TextInput();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~TextInput();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };

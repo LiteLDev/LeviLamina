@@ -21,10 +21,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual bool readTransform(::std::vector<uchar>& stream) const /*override*/;
 
+    // vIndex: 2
     virtual bool writeTransform(::std::vector<uchar>& stream) const /*override*/;
 
+    // vIndex: 0
     virtual ~EncryptedZipTransforms() /*override*/ = default;
     // NOLINTEND
 
@@ -34,8 +37,6 @@ public:
     MCNAPI bool $readTransform(::std::vector<uchar>& stream) const;
 
     MCNAPI bool $writeTransform(::std::vector<uchar>& stream) const;
-
-
     // NOLINTEND
 
 public:

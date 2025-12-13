@@ -23,8 +23,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~Pkcs7Verifier() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::std::vector<uchar> verifyAndReadPKCS7Data(::std::string const&) const /*override*/;
     // NOLINTEND
 

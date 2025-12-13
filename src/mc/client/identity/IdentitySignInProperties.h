@@ -21,18 +21,6 @@ public:
     IdentitySignInProperties& operator=(IdentitySignInProperties const&);
     IdentitySignInProperties(IdentitySignInProperties const&);
     IdentitySignInProperties();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ~IdentitySignInProperties();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Social

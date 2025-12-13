@@ -10,6 +10,6 @@ class ItemAcquisitionMethodMap {
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BidirectionalUnorderedMap<::ItemAcquisitionMethod, ::std::string> const& mMap();
+    MCAPI static ::BidirectionalUnorderedMap<::ItemAcquisitionMethod, ::std::string> const& mMap();
     // NOLINTEND
 };

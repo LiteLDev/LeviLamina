@@ -2,32 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/CommandIntegerRange.h"
+
 struct HasItemFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk102e2b;
-    ::ll::UntypedStorage<4, 8>  mUnkc272aa;
-    ::ll::UntypedStorage<4, 12> mUnkb1d382;
-    ::ll::UntypedStorage<8, 32> mUnkc777c4;
-    ::ll::UntypedStorage<4, 12> mUnk3132f4;
+    ::ll::TypedStorage<8, 32, ::std::string>         itemName;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>   auxValue;
+    ::ll::TypedStorage<4, 12, ::CommandIntegerRange> quantity;
+    ::ll::TypedStorage<8, 32, ::std::string>         location;
+    ::ll::TypedStorage<4, 12, ::CommandIntegerRange> slot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HasItemFilter& operator=(HasItemFilter const&);
-    HasItemFilter(HasItemFilter const&);
-    HasItemFilter();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~HasItemFilter();
+    MCAPI ~HasItemFilter();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

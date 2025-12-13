@@ -19,8 +19,10 @@ class NetEqFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~NetEqFactory() = default;
 
+    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::NetEq> CreateNetEq(
         ::webrtc::NetEq::Config const&,
         ::webrtc::scoped_refptr<::webrtc::AudioDecoderFactory> const&,

@@ -35,33 +35,47 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~SSLStreamAdapter() /*override*/;
 
+    // vIndex: 6
     virtual void SetIdentity(::std::unique_ptr<::rtc::SSLIdentity>) = 0;
 
+    // vIndex: 7
     virtual ::rtc::SSLIdentity* GetIdentityForTesting() const = 0;
 
+    // vIndex: 8
     virtual void SetServerRole(::rtc::SSLRole) = 0;
 
+    // vIndex: 9
     virtual void SetMode(::rtc::SSLMode) = 0;
 
+    // vIndex: 10
     virtual void SetMaxProtocolVersion(::rtc::SSLProtocolVersion) = 0;
 
+    // vIndex: 11
     virtual void SetInitialRetransmissionTimeout(int) = 0;
 
+    // vIndex: 12
     virtual int StartSSL() = 0;
 
+    // vIndex: 13
     virtual bool
     SetPeerCertificateDigest(::std::string_view, uchar const*, uint64, ::rtc::SSLPeerCertificateDigestError*) = 0;
 
+    // vIndex: 14
     virtual ::std::unique_ptr<::rtc::SSLCertChain> GetPeerSSLCertChain() const = 0;
 
+    // vIndex: 15
     virtual bool GetSslCipherSuite(int* cipher_suite);
 
+    // vIndex: 16
     virtual ::rtc::SSLProtocolVersion GetSslVersion() const = 0;
 
+    // vIndex: 17
     virtual bool GetSslVersionBytes(int*) const = 0;
 
+    // vIndex: 18
     virtual bool ExportKeyingMaterial(
         ::std::string_view label,
         uchar const*       context,
@@ -71,12 +85,16 @@ public:
         uint64             result_len
     );
 
+    // vIndex: 19
     virtual ushort GetPeerSignatureAlgorithm() const = 0;
 
+    // vIndex: 20
     virtual bool SetDtlsSrtpCryptoSuites(::std::vector<int> const& crypto_suites);
 
+    // vIndex: 21
     virtual bool GetDtlsSrtpCryptoSuite(int* crypto_suite);
 
+    // vIndex: 22
     virtual bool IsTlsConnected() = 0;
     // NOLINTEND
 
@@ -114,8 +132,6 @@ public:
     MCNAPI bool $SetDtlsSrtpCryptoSuites(::std::vector<int> const& crypto_suites);
 
     MCNAPI bool $GetDtlsSrtpCryptoSuite(int* crypto_suite);
-
-
     // NOLINTEND
 
 public:

@@ -26,31 +26,42 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~TelemetryService() /*override*/ = default;
 
+    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
+    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
+    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
+    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
+    // vIndex: 1
     virtual void fireEditorEventToolActivated(::std::string const& toolName) /*override*/;
 
+    // vIndex: 2
     virtual void fireUndoEvent(::std::string const& transactionName) /*override*/;
 
+    // vIndex: 3
     virtual void fireRedoEvent(::std::string const& transactionName) /*override*/;
 
+    // vIndex: 4
     virtual void
     fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers) /*override*/;
 
+    // vIndex: 5
     virtual void fireEditorScriptEvent(
         ::std::string const& source,
         ::std::string const& eventName,
         ::std::string const& metadata
     ) /*override*/;
 
+    // vIndex: 6
     virtual void fireTutorialEvent(
         ::std::string_view                    type,
         ::std::optional<::std::string> const& state,
@@ -87,8 +98,6 @@ public:
         ::std::string const&                  currentStage,
         ::std::optional<::std::string> const& previousStage
     );
-
-
     // NOLINTEND
 
 public:

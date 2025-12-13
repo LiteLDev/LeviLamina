@@ -15,22 +15,19 @@ class Recipe2x2Node : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd73652;
+    ::ll::TypedStorage<8, 32, ::std::string> mItemName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Recipe2x2Node& operator=(Recipe2x2Node const&);
-    Recipe2x2Node(Recipe2x2Node const&);
-    Recipe2x2Node();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
+    // vIndex: 2
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
+    // vIndex: 0
     virtual ~Recipe2x2Node() /*override*/ = default;
     // NOLINTEND
 

@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ExpressionNode;
 class RenderParams;
 struct EventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
@@ -18,49 +19,45 @@ class SetBlockState : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkabc2cc;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::ExpressionNode>>> mPropertyExpressions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetBlockState& operator=(SetBlockState const&);
-    SetBlockState(SetBlockState const&);
-    SetBlockState();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
+    // vIndex: 2
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
+    // vIndex: 3
     virtual void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const /*override*/;
 
+    // vIndex: 0
     virtual ~SetBlockState() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $executeAction(::RenderParams& params) const;
+    MCAPI void $executeAction(::RenderParams& params) const;
 
-    MCNAPI void $buildSchema(
+    MCAPI void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const;
-
-
     // NOLINTEND
 
 public:

@@ -48,19 +48,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 6
     virtual ~GameplayUserManager();
 
+    // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::EntityContext&)>& getGameplayUserAddedConnector() /*override*/;
 
+    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& getGameplayUserResumedConnector() /*override*/;
 
+    // vIndex: 2
     virtual ::Bedrock::PubSub::Connector<void(::EntityContext const&)>&
     getGameplayUserSuspendedConnector() /*override*/;
 
+    // vIndex: 3
     virtual ::Bedrock::PubSub::Connector<void(::Player const&)>& getPlayerRenamedConnector() /*override*/;
 
+    // vIndex: 4
     virtual ::Bedrock::PubSub::Connector<void(::EntityContext&)>& getGameplayUserRemovedConnector() /*override*/;
 
+    // vIndex: 5
     virtual ::Bedrock::PubSub::Connector<void()>& getAnyGameplayUsersRemovedConnector() /*override*/;
     // NOLINTEND
 
@@ -128,8 +135,6 @@ public:
     MCNAPI ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserRemovedConnector();
 
     MCNAPI ::Bedrock::PubSub::Connector<void()>& $getAnyGameplayUsersRemovedConnector();
-
-
     // NOLINTEND
 
 public:

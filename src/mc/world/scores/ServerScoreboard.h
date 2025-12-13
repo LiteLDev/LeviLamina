@@ -62,40 +62,56 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ServerScoreboard() /*override*/;
 
+    // vIndex: 6
     virtual void onObjectiveAdded(::Objective const& objective) /*override*/;
 
+    // vIndex: 7
     virtual void onObjectiveRemoved(::Objective& objective) /*override*/;
 
+    // vIndex: 8
     virtual void onScoreChanged(::ScoreboardId const& id, ::Objective const& obj) /*override*/;
 
+    // vIndex: 9
     virtual void onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective) /*override*/;
 
+    // vIndex: 13
     virtual void setPacketSender(::PacketSender* sender) /*override*/;
 
+    // vIndex: 1
     virtual ::DisplayObjective const* setDisplayObjective(
         ::std::string const&       displaySlotName,
         ::Objective const&         objective,
         ::ObjectiveSortOrder const order
     ) /*override*/;
 
+    // vIndex: 2
     virtual ::Objective* clearDisplayObjective(::std::string const& displaySlotName) /*override*/;
 
+    // vIndex: 10
     virtual void onPlayerJoined(::Player const& player) /*override*/;
 
+    // vIndex: 11
     virtual void onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId) /*override*/;
 
+    // vIndex: 12
     virtual void tick() /*override*/;
 
+    // vIndex: 5
     virtual ::ScoreboardId const& createScoreboardId(::Player const& player) /*override*/;
 
+    // vIndex: 4
     virtual ::ScoreboardId const& createScoreboardId(::Actor const& entity) /*override*/;
 
+    // vIndex: 3
     virtual ::ScoreboardId const& createScoreboardId(::std::string const& fakePlayer) /*override*/;
 
+    // vIndex: 14
     virtual void writeToLevelStorage() /*override*/;
 
+    // vIndex: 15
     virtual bool isClientSide() const /*override*/;
     // NOLINTEND
 
@@ -192,8 +208,6 @@ public:
     MCAPI void $writeToLevelStorage();
 
     MCFOLD bool $isClientSide() const;
-
-
     // NOLINTEND
 
 public:

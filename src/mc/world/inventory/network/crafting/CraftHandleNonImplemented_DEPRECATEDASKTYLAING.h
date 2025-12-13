@@ -15,8 +15,10 @@ class CraftHandleNonImplemented_DEPRECATEDASKTYLAING : public ::CraftHandlerBase
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
     virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) /*override*/;
 
+    // vIndex: 0
     virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING() /*override*/ = default;
     // NOLINTEND
 
@@ -24,8 +26,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const&);
-
-
     // NOLINTEND
 
 public:

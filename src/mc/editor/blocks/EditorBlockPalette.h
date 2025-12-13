@@ -28,8 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C EditorBlockPalette(::Editor::EditorBlockPalette&&);
-
     MCNAPI EditorBlockPalette(::Editor::EditorBlockPalette const&);
 
     MCNAPI EditorBlockPalette(
@@ -64,8 +62,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Editor::EditorBlockPalette&&);
-
     MCNAPI void* $ctor(::Editor::EditorBlockPalette const&);
 
     MCNAPI void* $ctor(

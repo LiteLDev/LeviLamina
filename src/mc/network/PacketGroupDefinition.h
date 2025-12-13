@@ -59,7 +59,7 @@ public:
 
         MCAPI ::std::unique_ptr<::PacketGroupDefinition> createGroupDefinition() const;
 
-        MCAPI_S ~PacketGroupBuilder();
+        MCAPI ~PacketGroupBuilder();
         // NOLINTEND
 
     public:
@@ -71,7 +71,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI_S void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

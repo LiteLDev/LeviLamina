@@ -16,28 +16,25 @@ namespace Json {
 class ValueIterator : public ::Json::ValueIteratorBase {
 public:
     // ValueIterator inner types define
-    using SelfType = ::Json::ValueIterator;
+    using size_t = uint;
 
     using difference_type = int;
 
-    using pointer = ::Json::Value*;
-
     using reference = ::Json::Value&;
 
-    using size_t = uint;
+    using pointer = ::Json::Value*;
+
+    using SelfType = ::Json::ValueIterator;
 
     using value_type = ::Json::Value;
 
 public:
     // prevent constructor by default
-    ValueIterator& operator=(ValueIterator const&);
     ValueIterator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ValueIterator(::Json::ValueIterator const& other);
-
     MCAPI explicit ValueIterator(::Json::ValueConstIterator const& other);
 
     MCAPI ~ValueIterator();
@@ -46,8 +43,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD_C void* $ctor(::Json::ValueIterator const& other);
-
     MCFOLD void* $ctor(::Json::ValueConstIterator const& other);
     // NOLINTEND
 

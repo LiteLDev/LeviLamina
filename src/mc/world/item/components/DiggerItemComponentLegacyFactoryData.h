@@ -3,12 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/DefinitionTrigger.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
+struct DiggerBlockTypeInfo;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -16,9 +18,9 @@ struct DiggerItemComponentLegacyFactoryData : public ::IItemComponentLegacyFacto
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3f3f82;
-    ::ll::UntypedStorage<8, 24> mUnkcfe5b5;
-    ::ll::UntypedStorage<8, 56> mUnk19543e;
+    ::ll::TypedStorage<1, 1, bool>                                  mUseEfficiency;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DiggerBlockTypeInfo>> mDestroySpeeds;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger>                  mOnDigDefault;
     // NOLINTEND
 
 public:
@@ -29,6 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DiggerItemComponentLegacyFactoryData() /*override*/;
     // NOLINTEND
 

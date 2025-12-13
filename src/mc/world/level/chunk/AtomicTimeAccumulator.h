@@ -16,10 +16,4 @@ public:
     AtomicTimeAccumulator& operator=(AtomicTimeAccumulator const&);
     AtomicTimeAccumulator(AtomicTimeAccumulator const&);
     AtomicTimeAccumulator();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C void addTime(::std::chrono::nanoseconds const& time);
-    // NOLINTEND
 };
