@@ -28,22 +28,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlockQueuedTickingComponent();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
+    MCNAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
-    MCAPI void onTick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
+    MCNAPI void onTick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

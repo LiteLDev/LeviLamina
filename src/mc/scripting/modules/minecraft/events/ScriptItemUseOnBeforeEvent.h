@@ -19,7 +19,7 @@ struct ScriptItemUseOnBeforeEvent : public ::ScriptModuleMinecraft::ScriptItemUs
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mCancel;
+    ::ll::UntypedStorage<1, 1> mUnkd6a9de;
     // NOLINTEND
 
 public:
@@ -30,36 +30,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemUseOnBeforeEvent(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent const&);
+    MCNAPI ScriptItemUseOnBeforeEvent(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
 
-    MCAPI ScriptItemUseOnBeforeEvent(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
+    MCNAPI ScriptItemUseOnBeforeEvent(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent const&);
 
-    MCAPI ScriptItemUseOnBeforeEvent(
+    MCNAPI ScriptItemUseOnBeforeEvent(
         ::ItemUseOnEvent const&               itemEvent,
         ::Player const&                       player,
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&
     operator=(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent const&);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ItemUseOnEvent const& itemEvent, ::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };

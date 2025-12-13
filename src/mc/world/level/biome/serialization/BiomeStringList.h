@@ -12,14 +12,10 @@ class ReadOnlyBinaryStream;
 
 struct BiomeStringList {
 public:
-    // BiomeStringList inner types define
-    using BiomeStringIndex = ushort;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ushort>> mAllStrings;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                mStrings;
+    ::ll::UntypedStorage<8, 64> mUnk3b6c84;
+    ::ll::UntypedStorage<8, 24> mUnk41c6ec;
     // NOLINTEND
 
 public:
@@ -31,26 +27,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeStringList(::BiomeStringList&&);
+    MCNAPI BiomeStringList(::BiomeStringList&&);
 
-    MCAPI ~BiomeStringList();
+    MCNAPI ~BiomeStringList();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeStringList> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeStringList> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeStringList&&);
+    MCNAPI void* $ctor(::BiomeStringList&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

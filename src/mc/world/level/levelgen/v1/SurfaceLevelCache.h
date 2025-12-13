@@ -10,10 +10,10 @@ class SurfaceLevelCache : public ::IPreliminarySurfaceProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                               mBufferSizeXZ;
-    ::ll::TypedStorage<4, 8, ::DividedPos2d<4> const>              mMinPos;
-    ::ll::TypedStorage<8, 8, ::IPreliminarySurfaceProvider const&> mPreliminarySurfaceProvider;
-    ::ll::TypedStorage<8, 24, ::std::vector<short>>                mSurfaceLevelBuffer;
+    ::ll::UntypedStorage<8, 8>  mUnk85e53a;
+    ::ll::UntypedStorage<4, 8>  mUnk3dc6be;
+    ::ll::UntypedStorage<8, 8>  mUnkc9b411;
+    ::ll::UntypedStorage<8, 24> mUnk64de65;
     // NOLINTEND
 
 public:
@@ -25,23 +25,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const /*override*/;
 
-    // vIndex: 0
     virtual ~SurfaceLevelCache() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
+    MCNAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
+
+
     // NOLINTEND
 
 public:

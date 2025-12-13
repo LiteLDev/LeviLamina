@@ -113,25 +113,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 9
     virtual void onPreFlushAfterEvents() /*override*/;
 
-    // vIndex: 6
     virtual void onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
-    // vIndex: 10
     virtual void onPostFlushAfterEvents() /*override*/;
 
-    // vIndex: 2
     virtual void _onScriptInitializationComplete() /*override*/;
 
-    // vIndex: 1
     virtual void _onReload() /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptBlockCustomComponentsRegistry() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     tryGetCustomComponentParametersForItem(
         ::IBlockSource const&                 region,
@@ -289,6 +282,8 @@ public:
         ::std::string_view                    componentName,
         ::Scripting::WeakLifetimeScope const& scope
     ) const;
+
+
     // NOLINTEND
 
 public:

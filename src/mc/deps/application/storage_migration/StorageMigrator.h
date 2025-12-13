@@ -38,24 +38,44 @@ public:
         MigrationProgress& operator=(MigrationProgress const&);
         MigrationProgress(MigrationProgress const&);
         MigrationProgress();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ~MigrationProgress();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~StorageMigrator() = default;
 
-    // vIndex: 1
     virtual bool doQuickCompletionCheck() = 0;
 
-    // vIndex: 2
     virtual void _runMigration(
         ::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>,
         ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>,
         ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)>,
         ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>
     ) const = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::std::function<::TaskResult()> createMigrationTask(
+        ::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>                           manifest,
+        ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>                             filesToMigrate,
+        ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)> progressCallback,
+        ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>                    completeCallback
+    );
     // NOLINTEND
 
 public:

@@ -60,37 +60,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void Initialize();
 
-    // vIndex: 3
     virtual void StartUpdating() = 0;
 
-    // vIndex: 4
     virtual void StopUpdating() = 0;
 
-    // vIndex: 5
     virtual ::std::vector<::rtc::Network const*> GetNetworks() const = 0;
 
-    // vIndex: 6
     virtual ::rtc::NetworkManager::EnumerationPermission enumeration_permission() const;
 
-    // vIndex: 7
     virtual ::std::vector<::rtc::Network const*> GetAnyAddressNetworks() = 0;
 
-    // vIndex: 8
     virtual void DumpNetworks();
 
-    // vIndex: 1
     virtual bool GetDefaultLocalAddress(int family, ::rtc::IPAddress* addr) const /*override*/;
 
-    // vIndex: 1
     virtual ::webrtc::MdnsResponderInterface* GetMdnsResponder() const /*override*/;
 
-    // vIndex: 9
     virtual void set_vpn_list(::std::vector<::rtc::NetworkMask> const& vpn);
 
-    // vIndex: 0
     virtual ~NetworkManager() /*override*/;
     // NOLINTEND
 
@@ -114,6 +103,8 @@ public:
     MCNAPI ::webrtc::MdnsResponderInterface* $GetMdnsResponder() const;
 
     MCNAPI void $set_vpn_list(::std::vector<::rtc::NetworkMask> const& vpn);
+
+
     // NOLINTEND
 
 public:

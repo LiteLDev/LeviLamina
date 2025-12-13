@@ -2,29 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/string/HashedString.h"
-#include "mc/util/molang/ExpressionNode.h"
-
 class ActorParticleEffect {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString>   mParticleEffectName;
-    ::ll::TypedStorage<8, 48, ::HashedString>   mLocatorName;
-    ::ll::TypedStorage<8, 16, ::ExpressionNode> mInitializationScripts;
-    ::ll::TypedStorage<1, 1, bool>              mBindToActor;
+    ::ll::UntypedStorage<8, 48> mUnk24c8e5;
+    ::ll::UntypedStorage<8, 48> mUnkf336e5;
+    ::ll::UntypedStorage<8, 16> mUnke3c0a6;
+    ::ll::UntypedStorage<1, 1>  mUnkaa1bb5;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ActorParticleEffect& operator=(ActorParticleEffect const&);
+    ActorParticleEffect(ActorParticleEffect const&);
+    ActorParticleEffect();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ActorParticleEffect();
+    MCNAPI ~ActorParticleEffect();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

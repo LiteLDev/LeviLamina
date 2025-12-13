@@ -32,7 +32,36 @@ public:
 
 public:
     // prevent constructor by default
-    Frustum& operator=(Frustum const&);
-    Frustum(Frustum const&);
     Frustum();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C Frustum(::Frustum&&);
+
+    MCNAPI_C Frustum(::Frustum const&);
+
+    MCNAPI_C void calculateFrustum(::glm::mat4x4 const& mvp);
+
+    MCNAPI_C bool cubeInFrustum(::glm::vec3 const& min, ::glm::vec3 const& max) const;
+
+    MCNAPI_C ::Frustum& operator=(::Frustum&&);
+
+    MCNAPI_C ::Frustum& operator=(::Frustum const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::Frustum
+    getFrustum(::glm::mat4x4 const& projection, ::glm::mat4x4 const& view, ::glm::mat4x4 const& world);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::Frustum&&);
+
+    MCNAPI_C void* $ctor(::Frustum const&);
+    // NOLINTEND
 };

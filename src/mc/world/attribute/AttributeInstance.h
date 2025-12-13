@@ -46,16 +46,13 @@ public:
 
 public:
     // prevent constructor by default
-    AttributeInstance& operator=(AttributeInstance const&);
     AttributeInstance();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AttributeInstance();
 
-    // vIndex: 1
     virtual void tick(::AttributeModificationContext context);
     // NOLINTEND
 
@@ -77,6 +74,8 @@ public:
     MCAPI bool hasModifier(::AttributeModifier const& modifier) const;
 
     MCAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
+
+    MCAPI_C ::AttributeInstance& operator=(::AttributeInstance const&);
 
     MCAPI void removeBuff(::AttributeBuff const& buff);
 
@@ -105,6 +104,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::AttributeModificationContext context);
+
+
     // NOLINTEND
 
 public:

@@ -23,5 +23,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::MolangOffsetPlaceholder& operator=(::MolangOffsetPlaceholder&&);
+
+    MCAPI_C ~MolangOffsetPlaceholder();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

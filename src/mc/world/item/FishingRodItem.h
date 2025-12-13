@@ -27,46 +27,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int newAnimationFrame, bool) const /*override*/;
 
-    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 51
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 112
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 113
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const /*override*/;
 
-    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 56
     virtual int getEnchantValue() const /*override*/;
 
-    // vIndex: 85
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 106
     virtual bool shouldEmitInUseGameEvents() const /*override*/;
 
-    // vIndex: 126
     virtual bool shouldUseJsonForRenderMatrix() const /*override*/;
 
-    // vIndex: 110
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
-    // vIndex: 0
     virtual ~FishingRodItem() /*override*/ = default;
     // NOLINTEND
 
@@ -110,6 +96,8 @@ public:
     MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+
+
     // NOLINTEND
 
 public:

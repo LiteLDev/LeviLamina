@@ -2,19 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { class IWatchdog; }
-// clang-format on
-
 namespace Scripting {
 
 class WatchdogPhaseScope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Scripting::IWatchdog*> mWatchdog;
+    ::ll::UntypedStorage<8, 8> mUnk95f4d5;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WatchdogPhaseScope& operator=(WatchdogPhaseScope const&);
+    WatchdogPhaseScope(WatchdogPhaseScope const&);
+    WatchdogPhaseScope();
 };
 
 } // namespace Scripting

@@ -38,16 +38,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Input() = default;
 
-    // vIndex: 1
     virtual ::SemVersion version() const = 0;
 
-    // vIndex: 2
     virtual ::Puv::Input::Data data() const = 0;
 
-    // vIndex: 3
     virtual ::Puv::Logger const& getErrors() const;
     // NOLINTEND
 
@@ -55,6 +51,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Puv::Logger const& $getErrors() const;
+
+
     // NOLINTEND
 };
 

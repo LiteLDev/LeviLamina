@@ -2,16 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/molang/ExpressionNode.h"
-#include "mc/world/level/block/definition/BlockComponentGroupDescription.h"
-
 struct BlockPermutationDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::ExpressionNode>                  mCondition;
-    ::ll::TypedStorage<8, 112, ::BlockComponentGroupDescription> mComponents;
+    ::ll::UntypedStorage<8, 16>  mUnkf3a51e;
+    ::ll::UntypedStorage<8, 112> mUnkcb77fb;
     // NOLINTEND
 
 public:
@@ -22,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockPermutationDescription& operator=(::BlockPermutationDescription const&);
+    MCNAPI ::BlockPermutationDescription& operator=(::BlockPermutationDescription const&);
 
-    MCAPI ~BlockPermutationDescription();
+    MCNAPI ~BlockPermutationDescription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -15,14 +15,18 @@ namespace Molang::details {
 
 class SourceTree {
 public:
-    // member variables
-    // NOLINTBEGIN
+// member variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_S
     ::ll::UntypedStorage<8, 128> mUnk23c850;
-    ::ll::UntypedStorage<8, 8>   mUnk640833;
-    ::ll::UntypedStorage<4, 4>   mUnkcb966c;
-    ::ll::UntypedStorage<2, 2>   mUnk4771d0;
-    ::ll::UntypedStorage<1, 1>   mUnk65ee2d;
-    ::ll::UntypedStorage<1, 1>   mUnk4d1a0b;
+#else // LL_PLAT_C
+    ::ll::UntypedStorage<8, 136> mUnk23c850;
+#endif
+    ::ll::UntypedStorage<8, 8> mUnk640833;
+    ::ll::UntypedStorage<4, 4> mUnkcb966c;
+    ::ll::UntypedStorage<2, 2> mUnk4771d0;
+    ::ll::UntypedStorage<1, 1> mUnk65ee2d;
+    ::ll::UntypedStorage<1, 1> mUnk4d1a0b;
     // NOLINTEND
 
 public:

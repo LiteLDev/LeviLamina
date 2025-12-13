@@ -18,34 +18,39 @@ class BuriedTreasurePiece : public ::StructurePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mRadius;
+    ::ll::UntypedStorage<4, 4> mUnk34a6c1;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BuriedTreasurePiece& operator=(BuriedTreasurePiece const&);
+    BuriedTreasurePiece(BuriedTreasurePiece const&);
+    BuriedTreasurePiece();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::StructurePieceType getType() const /*override*/;
 
-    // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-    // vIndex: 0
     virtual ~BuriedTreasurePiece() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isCovered(::BlockSource const& region, ::BlockPos const& blockPos) const;
+    MCNAPI bool _isCovered(::BlockSource const& region, ::BlockPos const& blockPos) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+
     // NOLINTEND
 
 public:

@@ -30,7 +30,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ActorEventCoordinator() /*override*/ = default;
     // NOLINTEND
 
@@ -41,13 +40,13 @@ public:
 
     MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableActorGameplayEvent<::CoordinatorResult>> event);
-
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::ActorGameplayEvent<::CoordinatorResult>> const& event);
 
-    MCAPI void sendEvent(::EventRef<::MutableActorGameplayEvent<void>> event);
+    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableActorGameplayEvent<::CoordinatorResult>> event);
 
     MCAPI void sendEvent(::EventRef<::ActorGameplayEvent<void>> const& event);
+
+    MCAPI void sendEvent(::EventRef<::MutableActorGameplayEvent<void>> event);
     // NOLINTEND
 
 public:

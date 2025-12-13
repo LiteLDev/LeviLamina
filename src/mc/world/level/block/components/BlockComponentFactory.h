@@ -3,21 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/resources/IPackLoadScoped.h"
-#include "mc/util/CerealSchemaUpgradeSet.h"
 #include "mc/util/Factory.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
 class Experiments;
 class IPackLoadContext;
-class PackLoadRequirement;
+class SemVersion;
 struct BlockComponentDescription;
-struct BlockComponentGroupDescription;
 namespace Json { class Value; }
-namespace JsonUtil { class EmptyClass; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -31,25 +26,14 @@ public:
     // BlockComponentFactory inner types define
     struct ComponentMetadata {
     public:
-        // ComponentMetadata inner types define
-        using ParseFunction =
-            ::std::function<bool(::Experiments const&, ::Json::Value const&, ::SemVersion const&, bool)>;
-
-        using Ctor = ::std::unique_ptr<::BlockComponentDescription> (*)();
-
-    public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockComponentDescription> (*)()> makeUnique;
-        ::ll::TypedStorage<8, 24, ::std::vector<::PackLoadRequirement>>                requirements;
-        ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>>                       releasedMinFormatVersion;
-        ::ll::TypedStorage<8, 24, ::CerealSchemaUpgradeSet>                            versionUpgrades;
-        ::ll::TypedStorage<
-            8,
-            64,
-            ::std::function<bool(::Experiments const&, ::Json::Value const&, ::SemVersion const&, bool)>>
-                                       onParseCallback;
-        ::ll::TypedStorage<1, 1, bool> mIsCustomComponent;
+        ::ll::UntypedStorage<8, 8>  mUnka06669;
+        ::ll::UntypedStorage<8, 24> mUnkfbf74d;
+        ::ll::UntypedStorage<8, 32> mUnk6beadb;
+        ::ll::UntypedStorage<8, 24> mUnk445a76;
+        ::ll::UntypedStorage<8, 64> mUnkeca053;
+        ::ll::UntypedStorage<1, 1>  mUnk5e7d13;
         // NOLINTEND
 
     public:
@@ -61,28 +45,22 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::BlockComponentFactory::ComponentMetadata& operator=(::BlockComponentFactory::ComponentMetadata&&);
+        MCNAPI ::BlockComponentFactory::ComponentMetadata& operator=(::BlockComponentFactory::ComponentMetadata&&);
 
-        MCAPI ~ComponentMetadata();
+        MCNAPI ~ComponentMetadata();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
-
-    using CerealComponentsMap = ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>>
-        mBlockComponentsSchema;
+    ::ll::UntypedStorage<8, 16> mUnkb8c428;
     // NOLINTEND
 
 public:
@@ -93,44 +71,43 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlockComponentFactory() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockComponentFactory(::IPackLoadContext const* packLoadContext);
+    MCNAPI explicit BlockComponentFactory(::IPackLoadContext const* packLoadContext);
 
-    MCAPI void _buildBlockComponentsSchema();
+    MCNAPI void _buildBlockComponentsSchema();
 
-    MCAPI void _registerLegacyDescriptions(::IPackLoadContext const* packLoadContext);
+    MCNAPI void _registerLegacyDescriptions(::IPackLoadContext const* packLoadContext);
 
-    MCAPI ::std::unique_ptr<::BlockComponentDescription>
+    MCNAPI ::std::unique_ptr<::BlockComponentDescription>
     createDescription(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI ::BlockComponentFactory& operator=(::BlockComponentFactory const&);
+    MCNAPI ::BlockComponentFactory& operator=(::BlockComponentFactory const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>*
+    MCNAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>*
     contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IPackLoadContext const* packLoadContext);
+    MCNAPI void* $ctor(::IPackLoadContext const* packLoadContext);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

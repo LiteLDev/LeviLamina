@@ -47,9 +47,9 @@ public:
     // NOLINTBEGIN
     MCNAPI Interaction();
 
-    MCNAPI Interaction(::Interaction const&);
-
     MCNAPI Interaction(::Interaction&&);
+
+    MCNAPI Interaction(::Interaction const&);
 
     MCNAPI void addActorDefinitionIdentifierByName(::std::string const& name);
 
@@ -85,9 +85,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::Interaction const&);
-
     MCNAPI void* $ctor(::Interaction&&);
+
+    MCNAPI void* $ctor(::Interaction const&);
     // NOLINTEND
 
 public:

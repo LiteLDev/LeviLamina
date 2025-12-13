@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/events/PrivacyTagEnterprise.h"
+#include "mc/world/level/storage/DBStorageFolderWatcherSnapshotKind.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Social::Events { class Event; }
+// clang-format on
+
 class DBStorageFolderWatcher {
 public:
     // member variables
@@ -29,5 +38,11 @@ public:
     MCNAPI void captureWorldStartSnapshot();
 
     MCNAPI void pushSnapshot();
+
+    MCNAPI_C void toTelemetryEvent(
+        ::Social::Events::Event&               event,
+        ::DBStorageFolderWatcherSnapshotKind   kind,
+        ::Social::Events::PrivacyTagEnterprise privacyTag
+    ) const;
     // NOLINTEND
 };

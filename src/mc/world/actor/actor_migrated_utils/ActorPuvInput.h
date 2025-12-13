@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/Value.h"
 #include "mc/deps/puv/Input.h"
 
 // auto generated forward declare list
@@ -17,34 +16,39 @@ class ActorPuvInput : public ::Puv::Input {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Json::Value> mJsonValue;
+    ::ll::UntypedStorage<8, 16> mUnk68914d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ActorPuvInput& operator=(ActorPuvInput const&);
+    ActorPuvInput(ActorPuvInput const&);
+    ActorPuvInput();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::SemVersion version() const /*override*/;
 
-    // vIndex: 2
     virtual ::Puv::Input::Data data() const /*override*/;
 
-    // vIndex: 0
     virtual ~ActorPuvInput() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::SemVersion $version() const;
+    MCNAPI ::SemVersion $version() const;
 
-    MCFOLD ::Puv::Input::Data $data() const;
+    MCNAPI ::Puv::Input::Data $data() const;
+
+
     // NOLINTEND
 
 public:

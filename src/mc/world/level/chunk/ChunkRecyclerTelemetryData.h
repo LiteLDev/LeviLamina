@@ -18,30 +18,13 @@ class ChunkRecyclerTelemetryData : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ChunkRecyclerTelemetryData inner types declare
     // clang-format off
-    struct BucketContext;
-    struct ChunkData;
     class TaskInfo;
     class TimeAccumulator;
+    struct BucketContext;
+    struct ChunkData;
     // clang-format on
 
     // ChunkRecyclerTelemetryData inner types define
-    class TimeAccumulator {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64> mNanoseconds;
-        // NOLINTEND
-    };
-
-    struct ChunkData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::ChunkRecyclerTelemetryData::TimeAccumulator> mTimeAccumulator;
-        ::ll::TypedStorage<8, 8, int64>                                         mSequence;
-        // NOLINTEND
-    };
-
     enum class Bucket : int {
         GenTimeSavedByCacheSize100   = 0,
         GenTimeSavedByCacheSize250   = 1,
@@ -54,6 +37,22 @@ public:
         GenTimeSavedByCacheSize50000 = 8,
         GenTimeSavedByCacheSizeINF   = 9,
         Count                        = 10,
+    };
+
+    class TaskInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mTimeStart;
+        // NOLINTEND
+    };
+
+    class TimeAccumulator {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64> mNanoseconds;
+        // NOLINTEND
     };
 
     struct BucketContext {
@@ -69,21 +68,22 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~BucketContext();
+        MCAPI_S ~BucketContext();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCFOLD_S void $dtor();
         // NOLINTEND
     };
 
-    class TaskInfo {
+    struct ChunkData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mTimeStart;
+        ::ll::TypedStorage<8, 8, ::ChunkRecyclerTelemetryData::TimeAccumulator> mTimeAccumulator;
+        ::ll::TypedStorage<8, 8, int64>                                         mSequence;
         // NOLINTEND
     };
 
@@ -112,14 +112,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ChunkRecyclerTelemetryData() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChunkRecyclerTelemetryData();
+    MCAPI_S ChunkRecyclerTelemetryData();
 
     MCAPI void _reset();
 
@@ -139,12 +138,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI_S void* $ctor();
     // NOLINTEND
 };

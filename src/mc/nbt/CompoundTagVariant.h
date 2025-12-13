@@ -1,18 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/nbt/ByteArrayTag.h"
-#include "mc/nbt/ByteTag.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/nbt/DoubleTag.h"
-#include "mc/nbt/EndTag.h"
-#include "mc/nbt/FloatTag.h"
-#include "mc/nbt/Int64Tag.h"
-#include "mc/nbt/IntArrayTag.h"
-#include "mc/nbt/IntTag.h"
-#include "mc/nbt/ListTag.h"
-#include "mc/nbt/ShortTag.h"
-#include "mc/nbt/StringTag.h"
 
 #include "ll/api/Expected.h"
 #include "ll/api/base/Concepts.h"

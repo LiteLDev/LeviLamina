@@ -11,10 +11,8 @@ class NullSSLpkcs7Interface : public ::Crypto::Pkcs7::ISystemInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~NullSSLpkcs7Interface() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::std::vector<uchar> verifyAndReadPKCS7Data(::std::string const&) const /*override*/;
     // NOLINTEND
 

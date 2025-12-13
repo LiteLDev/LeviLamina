@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Keymapping;
+struct DuplicateKey;
 // clang-format on
 
 class RemappingLayout {
@@ -28,40 +29,81 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~RemappingLayout() = default;
+#else // LL_PLAT_C
+    virtual ~RemappingLayout();
+#endif
 
-    // vIndex: 1
     virtual void setMappingWithRawInput(::std::string const&, int, ::RawInputType);
 
-    // vIndex: 2
-    virtual int getAdjustedKey(int) const;
+    virtual int getAdjustedKey(int key) const;
 
-    // vIndex: 3
-    virtual ::std::string getSaveString(::std::string const&) const;
+    virtual ::std::string getSaveString(::std::string const& action) const;
 
-    // vIndex: 6
-    virtual ::std::string getMappedKeyName(int) const;
+    virtual ::std::string getMappedKeyName(int key) const;
 
-    // vIndex: 5
-    virtual ::std::string getMappedKeyName(int, bool) const;
+    virtual ::std::string getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
 
-    // vIndex: 4
-    virtual ::std::string getMappedKeyName(::Keymapping const&) const;
+    virtual ::std::string getMappedKeyName(::Keymapping const& keyMapping) const;
 
-    // vIndex: 8
-    virtual ::std::string getKeySpriteLocation(int, ::IconSize) const;
+    virtual ::std::string getKeySpriteLocation(int key, ::IconSize iconSize) const;
 
-    // vIndex: 7
-    virtual ::std::string getKeySpriteLocation(::Keymapping const&) const;
+    virtual ::std::string getKeySpriteLocation(::Keymapping const& keyMapping) const;
 
-    // vIndex: 9
     virtual int _rawKeyToKey(int, ::RawInputType) const = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void assignDefaultMapping(::std::vector<::Keymapping>&& newDefaultMapping);
+
+    MCNAPI_C ::Keymapping const& getKeymappingByAction(::std::string const& action) const;
+
+    MCNAPI_C void setMapping(::std::string const& action, ::std::vector<int> const& keys);
+
+    MCNAPI_C void unassignDuplicateKeys(int index);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::std::vector<::DuplicateKey>
+    _generateIndicesOfDuplicatesForMappings(::std::vector<::Keymapping> const& mappings);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI int $getAdjustedKey(int key) const;
 
+    MCNAPI ::std::string $getSaveString(::std::string const& action) const;
+
+    MCNAPI ::std::string $getMappedKeyName(int key) const;
+
+    MCNAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
+
+    MCNAPI ::std::string $getMappedKeyName(::Keymapping const& keyMapping) const;
+
+    MCNAPI ::std::string $getKeySpriteLocation(int key, ::IconSize iconSize) const;
+
+    MCNAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

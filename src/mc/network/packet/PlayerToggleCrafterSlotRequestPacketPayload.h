@@ -2,15 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
-
 struct PlayerToggleCrafterSlotRequestPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::BlockPos> mPos;
-    ::ll::TypedStorage<4, 4, int>         mSlotIndex;
-    ::ll::TypedStorage<1, 1, bool>        mIsDisabled;
+    ::ll::UntypedStorage<4, 12> mUnk237615;
+    ::ll::UntypedStorage<4, 4>  mUnk2dde60;
+    ::ll::UntypedStorage<1, 1>  mUnk652897;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlayerToggleCrafterSlotRequestPacketPayload& operator=(PlayerToggleCrafterSlotRequestPacketPayload const&);
+    PlayerToggleCrafterSlotRequestPacketPayload(PlayerToggleCrafterSlotRequestPacketPayload const&);
+    PlayerToggleCrafterSlotRequestPacketPayload();
 };

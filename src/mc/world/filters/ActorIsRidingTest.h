@@ -14,13 +14,10 @@ class ActorIsRidingTest : public ::SimpleBoolFilterTest {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getName() const /*override*/;
 
-    // vIndex: 0
     virtual ~ActorIsRidingTest() /*override*/;
     // NOLINTEND
 
@@ -36,6 +33,8 @@ public:
     MCNAPI bool $evaluate(::FilterContext const& context) const;
 
     MCNAPI ::std::string_view $getName() const;
+
+
     // NOLINTEND
 
 public:

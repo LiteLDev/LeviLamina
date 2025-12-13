@@ -13,7 +13,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AirBlockItem() /*override*/ = default;
     // NOLINTEND
 

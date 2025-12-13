@@ -28,13 +28,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool isComplete() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::optional<::gametest::GameTestError> getError() /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptAsyncGameTestFunctionRunResult() /*override*/ = default;
     // NOLINTEND
 
@@ -44,6 +41,8 @@ public:
     MCNAPI bool $isComplete() const;
 
     MCNAPI ::std::optional<::gametest::GameTestError> $getError();
+
+
     // NOLINTEND
 
 public:

@@ -27,7 +27,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RecordItemComponent() /*override*/ = default;
     // NOLINTEND
 

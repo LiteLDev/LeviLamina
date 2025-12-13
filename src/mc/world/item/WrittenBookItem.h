@@ -28,20 +28,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 51
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 112
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const
         /*override*/;
 
-    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -49,13 +44,10 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 95
     virtual bool inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const /*override*/;
 
-    // vIndex: 39
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
 
-    // vIndex: 0
     virtual ~WrittenBookItem() /*override*/ = default;
     // NOLINTEND
 
@@ -64,13 +56,21 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& getAuthor(::ItemStackBase const& book);
 
+    MCAPI_C static ::std::optional<::std::string> getFilteredAuthor(::ItemStack const& book);
+
+    MCAPI_C static ::std::optional<::std::string> getFilteredTitle(::ItemStack const& book);
+
     MCAPI static ::PageContent getPage(::ItemStackBase const& book, int index);
 
     MCAPI static int getPageCount(::ItemStackBase const& book);
 
+    MCAPI_C static ::std::vector<int> getPageCountByType(::ItemStack const& book);
+
     MCAPI static ::std::vector<::PageContent> getPages(::ItemStackBase const& book);
 
     MCAPI static ::std::string const& getTitle(::ItemStackBase const& book);
+
+    MCAPI_C static ::std::string const& getXUID(::ItemStackBase const& book);
     // NOLINTEND
 
 public:
@@ -128,6 +128,8 @@ public:
     MCAPI bool $inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const;
 
     MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
+
+
     // NOLINTEND
 
 public:

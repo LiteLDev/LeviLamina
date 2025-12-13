@@ -14,10 +14,8 @@ class DeregisterTagsFromActorProxy : public ::IDeregisterTagsFromActorProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DeregisterTagsFromActorProxy() /*override*/ = default;
 
-    // vIndex: 1
     virtual void deregisterTagsFromActor(::Actor& actor) /*override*/;
     // NOLINTEND
 
@@ -25,6 +23,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $deregisterTagsFromActor(::Actor& actor);
+
+
     // NOLINTEND
 
 public:

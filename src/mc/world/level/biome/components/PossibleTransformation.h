@@ -2,21 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/BiomeFilterGroup.h"
-
-// auto generated forward declare list
-// clang-format off
-class Biome;
-// clang-format on
-
 struct PossibleTransformation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Biome const*, uint>>> mTransformsInto;
-    ::ll::TypedStorage<8, 64, ::BiomeFilterGroup>                               mCondition;
-    ::ll::TypedStorage<4, 4, uint>                                              mMinPassingNeighbors;
+    ::ll::UntypedStorage<8, 24> mUnk41a036;
+    ::ll::UntypedStorage<8, 64> mUnkd7f184;
+    ::ll::UntypedStorage<4, 4>  mUnk7996f9;
     // NOLINTEND
 
 public:
@@ -26,22 +18,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PossibleTransformation(::PossibleTransformation const&);
+    MCNAPI PossibleTransformation(::PossibleTransformation const&);
 
-    MCAPI ::PossibleTransformation& operator=(::PossibleTransformation const&);
+    MCNAPI ::PossibleTransformation& operator=(::PossibleTransformation const&);
 
-    MCAPI ~PossibleTransformation();
+    MCNAPI ~PossibleTransformation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PossibleTransformation const&);
+    MCNAPI void* $ctor(::PossibleTransformation const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

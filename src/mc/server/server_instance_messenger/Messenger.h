@@ -29,28 +29,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void enqueueMessage(
         ::brstd::move_only_function<void()>      message,
         ::ServerInstanceMessenger::MessageAction action
     ) /*override*/;
 
-    // vIndex: 2
     virtual void enqueueAndAwaitExecution(
         ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)> message,
         ::ServerInstanceMessenger::MessageAction                                     action
     ) /*override*/;
 
-    // vIndex: 1
     virtual void processMessages() /*override*/;
 
-    // vIndex: 1
     virtual ::ServerInstanceMessenger::IMessageProducer& getProducer() /*override*/;
 
-    // vIndex: 2
     virtual ::ServerInstanceMessenger::IMessageConsumer& getConsumer() /*override*/;
 
-    // vIndex: 0
     virtual ~Messenger() /*override*/ = default;
     // NOLINTEND
 
@@ -70,6 +64,8 @@ public:
     MCNAPI ::ServerInstanceMessenger::IMessageProducer& $getProducer();
 
     MCNAPI ::ServerInstanceMessenger::IMessageConsumer& $getConsumer();
+
+
     // NOLINTEND
 
 public:

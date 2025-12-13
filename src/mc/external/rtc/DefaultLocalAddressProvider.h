@@ -13,10 +13,8 @@ class DefaultLocalAddressProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DefaultLocalAddressProvider() = default;
 
-    // vIndex: 1
     virtual bool GetDefaultLocalAddress(int, ::rtc::IPAddress*) const = 0;
     // NOLINTEND
 

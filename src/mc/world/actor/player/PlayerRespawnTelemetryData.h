@@ -6,17 +6,23 @@ class PlayerRespawnTelemetryData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>   mSearchTimeMS;
-    ::ll::TypedStorage<4, 4, uint>   mLongJumpCount;
-    ::ll::TypedStorage<4, 4, uint>   mShortJumpCount;
-    ::ll::TypedStorage<8, 8, double> mJumpDistance;
-    ::ll::TypedStorage<4, 4, uint>   mPositionSourceType;
-    ::ll::TypedStorage<1, 1, bool>   mChangedDimension;
+    ::ll::UntypedStorage<4, 4> mUnk5667ce;
+    ::ll::UntypedStorage<4, 4> mUnk3f14d4;
+    ::ll::UntypedStorage<4, 4> mUnk361052;
+    ::ll::UntypedStorage<8, 8> mUnkc2107a;
+    ::ll::UntypedStorage<4, 4> mUnk6cf02f;
+    ::ll::UntypedStorage<1, 1> mUnkb612bb;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlayerRespawnTelemetryData& operator=(PlayerRespawnTelemetryData const&);
+    PlayerRespawnTelemetryData(PlayerRespawnTelemetryData const&);
+    PlayerRespawnTelemetryData();
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& mEventName();
+    MCNAPI static ::std::string const& mEventName();
     // NOLINTEND
 };

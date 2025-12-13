@@ -30,23 +30,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual ~TextPrimitive() /*override*/ = default;
 
-    // vIndex: 0
     virtual ::Scripting::RenderHelper::PrimitiveType getType() const /*override*/;
 
-    // vIndex: 5
     virtual void _rebuild() /*override*/;
 
-    // vIndex: 6
     virtual void _getVertices(::std::vector<::Scripting::RenderHelper::Vertex>&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::Scripting::RenderHelper::PrimitiveType $getType() const;
 
+    MCNAPI void $_rebuild();
+
+    MCNAPI void $_getVertices(::std::vector<::Scripting::RenderHelper::Vertex>&);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

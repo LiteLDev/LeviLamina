@@ -29,28 +29,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ExternalDataServerLevel() /*override*/ = default;
 
-    // vIndex: 1
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const /*override*/;
 
-    // vIndex: 2
     virtual bool isPausingGame() const /*override*/;
 
-    // vIndex: 3
     virtual ::AdventureSettings const& getAdventureSettings() const /*override*/;
 
-    // vIndex: 4
     virtual ::ClientPlayMode getPlayMode() const /*override*/;
 
-    // vIndex: 7
     virtual float getSmoothRotationSpeed() const /*override*/;
 
-    // vIndex: 5
     virtual ::InputMode getInputMode() const /*override*/;
 
-    // vIndex: 6
     virtual ::GameType getDefaultGameType() const /*override*/;
     // NOLINTEND
 
@@ -70,6 +62,8 @@ public:
     MCNAPI ::InputMode $getInputMode() const;
 
     MCNAPI ::GameType $getDefaultGameType() const;
+
+
     // NOLINTEND
 
 public:

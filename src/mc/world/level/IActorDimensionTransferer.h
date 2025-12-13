@@ -18,13 +18,10 @@ class IActorDimensionTransferer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IActorDimensionTransferer() = default;
 
-    // vIndex: 1
     virtual void setupActorForTransfer(::Actor&) = 0;
 
-    // vIndex: 2
     virtual ::Vec3 findTargetPositionAndSetPosition(
         ::Actor&,
         ::DimensionType,
@@ -34,7 +31,6 @@ public:
         ::std::optional<::Vec3> const&
     ) = 0;
 
-    // vIndex: 3
     virtual void transferActor(::Actor&, ::Dimension&, ::Vec3 const&) = 0;
     // NOLINTEND
 

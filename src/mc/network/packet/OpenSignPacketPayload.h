@@ -2,14 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/NetworkBlockPosition.h"
-
 struct OpenSignPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
-    ::ll::TypedStorage<1, 1, bool>                    mIsFrontSide;
+    ::ll::UntypedStorage<4, 12> mUnkc5d6fc;
+    ::ll::UntypedStorage<1, 1>  mUnk55156d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    OpenSignPacketPayload& operator=(OpenSignPacketPayload const&);
+    OpenSignPacketPayload(OpenSignPacketPayload const&);
+    OpenSignPacketPayload();
 };

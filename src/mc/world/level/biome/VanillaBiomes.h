@@ -13,6 +13,7 @@ class BiomeRegistry;
 class Dimension;
 class Experiments;
 class IWorldRegistriesProvider;
+class SurfaceBuilderRegistry;
 struct BiomeIdType;
 struct BiomeJsonDocumentGlue;
 struct SpawnSettings;
@@ -40,6 +41,9 @@ public:
     );
 
     MCAPI static void initDefaultWorldGenComponents(::IWorldRegistriesProvider& registries);
+
+    MCAPI_C static void
+    initSurfaceBuilders(::SurfaceBuilderRegistry& registry, ::BaseGameVersion const& baseGameVersion);
 
     MCAPI static void initVanillaBiomeTypeComponent(::BiomeRegistry& registry);
     // NOLINTEND

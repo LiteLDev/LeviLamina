@@ -23,10 +23,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool isRemoved() /*override*/;
 
-    // vIndex: 0
     virtual ~LegacyActorDependencies() /*override*/ = default;
     // NOLINTEND
 
@@ -34,6 +32,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $isRemoved();
+
+
     // NOLINTEND
 
 public:

@@ -17,25 +17,18 @@ class RandomizableBlockActorContainer : public ::RandomizableBlockActorContainer
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RandomizableBlockActorContainer() /*override*/;
 
-    // vIndex: 34
     virtual void setContainerChanged(int slot) /*override*/;
 
-    // vIndex: 22
     virtual void startOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 18
     virtual void dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot) /*override*/;
 
-    // vIndex: 19
     virtual void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop) /*override*/;
 
-    // vIndex: 13
     virtual void onRemoved(::BlockSource&) /*override*/;
 
-    // vIndex: 41
     virtual void initializeContainerContents(::BlockSource& region) /*override*/;
     // NOLINTEND
 
@@ -59,6 +52,8 @@ public:
     MCFOLD void $onRemoved(::BlockSource&);
 
     MCFOLD void $initializeContainerContents(::BlockSource& region);
+
+
     // NOLINTEND
 
 public:

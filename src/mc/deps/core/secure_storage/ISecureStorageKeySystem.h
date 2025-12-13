@@ -11,13 +11,10 @@ class ISecureStorageKeySystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ISecureStorageKeySystem();
 
-    // vIndex: 1
     virtual ::SecureStorageKey getSecureStorageKey(::std::string const&) = 0;
 
-    // vIndex: 2
     virtual void setSecureStorageKey(::std::string const&, ::SecureStorageKey const&) = 0;
     // NOLINTEND
 

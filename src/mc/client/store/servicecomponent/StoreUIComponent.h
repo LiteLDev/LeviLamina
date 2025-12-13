@@ -9,11 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class MainMenuScreenModel;
-class StoreDataDrivenScreenController;
 class StoreVisualStyle;
 struct ImageTelemetryInfo;
 namespace Json { class Value; }
+struct MainMenuScreenModel;
+struct StoreDataDrivenScreenController;
 // clang-format on
 
 class StoreUIComponent : public ::std::enable_shared_from_this<::StoreUIComponent> {
@@ -39,67 +39,94 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~StoreUIComponent() = default;
+#else // LL_PLAT_C
+    virtual ~StoreUIComponent();
+#endif
 
-    // vIndex: 1
     virtual void onScreenClosed(::StoreDataDrivenScreenController&);
 
-    // vIndex: 2
     virtual void onScreenEntered();
 
-    // vIndex: 3
     virtual void onScreenEntering();
 
-    // vIndex: 4
     virtual void onScreenOpened();
 
-    // vIndex: 5
     virtual void getComponentDependanciesToAdd(::std::vector<::std::shared_ptr<::StoreUIComponent>>&);
 
-    // vIndex: 6
     virtual bool isValid() const;
 
-    // vIndex: 8
     virtual void tick(::ui::DirtyFlag&);
 
-    // vIndex: 7
     virtual void tick(::StoreDataDrivenScreenController&, ::ui::DirtyFlag&);
 
-    // vIndex: 9
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification);
 
-    // vIndex: 11
     virtual bool canRemove() const;
 
-    // vIndex: 10
     virtual bool canRemove(::StoreDataDrivenScreenController&) const;
 
-    // vIndex: 12
     virtual int getReadyCount() const;
 
-    // vIndex: 13
     virtual ::std::string getTelemetryData() const;
 
-    // vIndex: 14
     virtual ::ImageTelemetryInfo getImageTelemetry() const;
 
-    // vIndex: 15
     virtual void _onInit(::StoreDataDrivenScreenController&);
 
-    // vIndex: 16
     virtual void _onPostInit(::StoreDataDrivenScreenController&);
 
-    // vIndex: 17
     virtual void _parseData(::Json::Value const&);
 
-    // vIndex: 18
     virtual void _registerBindsAndEvents(::StoreDataDrivenScreenController&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $onScreenClosed(::StoreDataDrivenScreenController&);
 
+    MCNAPI void $onScreenEntered();
+
+    MCNAPI void $onScreenEntering();
+
+    MCNAPI void $onScreenOpened();
+
+    MCNAPI void $getComponentDependanciesToAdd(::std::vector<::std::shared_ptr<::StoreUIComponent>>&);
+
+    MCNAPI bool $isValid() const;
+
+    MCNAPI bool $canRemove() const;
+
+    MCNAPI bool $canRemove(::StoreDataDrivenScreenController&) const;
+
+    MCNAPI int $getReadyCount() const;
+
+    MCNAPI ::std::string $getTelemetryData() const;
+
+    MCNAPI ::ImageTelemetryInfo $getImageTelemetry() const;
+
+    MCNAPI void $_onInit(::StoreDataDrivenScreenController&);
+
+    MCNAPI void $_onPostInit(::StoreDataDrivenScreenController&);
+
+    MCNAPI void $_parseData(::Json::Value const&);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

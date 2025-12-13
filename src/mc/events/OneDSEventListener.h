@@ -43,19 +43,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~OneDSEventListener() /*override*/;
 
-    // vIndex: 5
     virtual void sendEvent(::Social::Events::Event const& event) /*override*/;
 
-    // vIndex: 3
     virtual int getEventTagsFilter() const /*override*/;
 
-    // vIndex: 7
     virtual bool _checkAgainstEventAllowlist(::Social::Events::Event const& event) const /*override*/;
 
-    // vIndex: 6
     virtual void _flushEventQueue() /*override*/;
     // NOLINTEND
 
@@ -117,6 +112,8 @@ public:
     MCNAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
 
     MCNAPI void $_flushEventQueue();
+
+
     // NOLINTEND
 
 public:

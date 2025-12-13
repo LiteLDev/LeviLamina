@@ -18,16 +18,6 @@ public:
     // clang-format on
 
     // CallStack inner types define
-    struct Frame {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        uint64             mFilenameHash;
-        ::std::string_view mFilename;
-        uint               mLine;
-        // NOLINTEND
-    };
-
     struct Context {
     public:
         // member variables
@@ -35,6 +25,16 @@ public:
         ::std::string                        mValue;
         ::std::optional<::Bedrock::LogLevel> mLogLevel;
         ::std::optional<::LogAreaID>         mLogArea;
+        // NOLINTEND
+    };
+
+    struct Frame {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64>              mFilenameHash;
+        ::ll::TypedStorage<8, 16, ::std::string_view> mFilename;
+        ::ll::TypedStorage<4, 4, uint>                mLine;
         // NOLINTEND
     };
 

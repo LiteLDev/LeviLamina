@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Player;
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -20,20 +18,21 @@ struct ScriptPlayerGameModeChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
-                                         mPlayerHandle;
-    ::ll::TypedStorage<4, 4, ::GameType> mFromGameMode;
-    ::ll::TypedStorage<4, 4, ::GameType> mToGameMode;
+    ::ll::UntypedStorage<8, 32> mUnk9bd5b7;
+    ::ll::UntypedStorage<4, 4>  mUnkec4eba;
+    ::ll::UntypedStorage<4, 4>  mUnke5adc4;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptPlayerGameModeChangeAfterEvent& operator=(ScriptPlayerGameModeChangeAfterEvent const&);
+    ScriptPlayerGameModeChangeAfterEvent(ScriptPlayerGameModeChangeAfterEvent const&);
     ScriptPlayerGameModeChangeAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerGameModeChangeAfterEvent(
+    MCNAPI ScriptPlayerGameModeChangeAfterEvent(
         ::Player const&                       player,
         ::GameType                            fromGameMode,
         ::GameType                            toGameMode,
@@ -44,13 +43,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Player const&                       player,
         ::GameType                            fromGameMode,
         ::GameType                            toGameMode,

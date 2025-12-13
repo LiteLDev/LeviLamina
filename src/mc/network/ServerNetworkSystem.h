@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/nether_net/LogSeverity.h"
@@ -21,11 +22,13 @@ class NetworkSessionOwner;
 class NetworkStatistics;
 class Scheduler;
 class SignalingService;
+class SignalingServiceSignInJob;
 struct ConnectionDefinition;
 struct NetworkSettingOptions;
 struct NetworkSystemToggles;
 struct PortMappingInfo;
 namespace NetherNet { struct NetworkID; }
+namespace PlayerMessaging { struct NetworkID; }
 // clang-format on
 
 class ServerNetworkSystem : public ::Bedrock::EnableNonOwnerReferences, public ::NetworkSystem {
@@ -36,7 +39,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ServerNetworkSystem() /*override*/;
     // NOLINTEND
 
@@ -62,6 +64,12 @@ public:
     MCAPI ::std::unique_ptr<::NetworkStatistics> _createNetworkStatistics(
         ::NetworkSystemToggles const&                            networkToggles,
         ::Bedrock::NonOwnerPointer<::NetworkDebugManager> const& networkDebugManager
+    );
+
+    MCAPI_C ::std::shared_ptr<::SignalingServiceSignInJob> createSignalingServiceSigninJobIfNeeded(
+        ::std::shared_ptr<::SignalingService>                                        signalingService,
+        bool                                                                         useJsonRpc,
+        ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
 
     MCAPI ::NetworkIdentifier getLocalNetworkId() const;

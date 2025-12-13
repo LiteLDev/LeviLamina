@@ -30,13 +30,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ActorDimensionTransferer() /*override*/ = default;
 
-    // vIndex: 1
     virtual void setupActorForTransfer(::Actor& actor) /*override*/;
 
-    // vIndex: 2
     virtual ::Vec3 findTargetPositionAndSetPosition(
         ::Actor&                       actor,
         ::DimensionType                toId,
@@ -46,7 +43,6 @@ public:
         ::std::optional<::Vec3> const& actorPosition
     ) /*override*/;
 
-    // vIndex: 3
     virtual void transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition) /*override*/;
     // NOLINTEND
 
@@ -65,6 +61,8 @@ public:
     );
 
     MCAPI void $transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition);
+
+
     // NOLINTEND
 
 public:

@@ -17,17 +17,13 @@ class IDiscoveryService {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IDiscoveryService() = default;
 
-    // vIndex: 1
     virtual ::Bedrock::Threading::CachedAsync<::std::shared_ptr<::Bedrock::Services::EnvironmentQueryResponse const>>
     getServiceEndpoints() const = 0;
 
-    // vIndex: 2
     virtual void reset() = 0;
 
-    // vIndex: 3
     virtual ::Bedrock::Http::Status const& getStatus() const = 0;
     // NOLINTEND
 

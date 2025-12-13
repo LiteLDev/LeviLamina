@@ -17,10 +17,8 @@ class IECSModulesCollection {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IECSModulesCollection() = default;
 
-    // vIndex: 1
     virtual void init(
         ::WeakRef<::EntityRegistry>,
         ::VanillaSystemsRegistration::RegistrationOptions&,

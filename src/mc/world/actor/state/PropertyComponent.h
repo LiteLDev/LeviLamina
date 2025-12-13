@@ -56,9 +56,9 @@ public:
 
     MCAPI int getInt(uint64 h) const;
 
-    MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
-
     MCAPI ::PropertyMetadata::ContainedType getPropertyType(::HashedString const& h) const;
+
+    MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
 
     MCAPI ::HashedString const& getString(uint64 h) const;
 

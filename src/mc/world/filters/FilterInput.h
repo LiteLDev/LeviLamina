@@ -24,9 +24,9 @@ public:
 
     MCNAPI explicit FilterInput(::std::string const& s);
 
-    MCNAPI ::FilterInput& operator=(::FilterInput const&);
-
     MCNAPI ::FilterInput& operator=(::FilterInput&&);
+
+    MCNAPI ::FilterInput& operator=(::FilterInput const&);
 
     MCNAPI ~FilterInput();
     // NOLINTEND

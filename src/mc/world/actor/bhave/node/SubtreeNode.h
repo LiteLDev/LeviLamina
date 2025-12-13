@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/bhave/BehaviorData.h"
 #include "mc/world/actor/bhave/BehaviorStatus.h"
-#include "mc/world/actor/bhave/BehaviorTreeDefinitionPtr.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 
 // auto generated forward declare list
@@ -17,28 +15,37 @@ class SubtreeNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::BehaviorTreeDefinitionPtr>      mSubtreePtr;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorNode>> mSubtreeHead;
-    ::ll::TypedStorage<8, 88, ::BehaviorData>                   mSubtreeData;
+    ::ll::UntypedStorage<8, 16> mUnkb9afe0;
+    ::ll::UntypedStorage<8, 8>  mUnkaab666;
+    ::ll::UntypedStorage<8, 88> mUnkba9609;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SubtreeNode& operator=(SubtreeNode const&);
+    SubtreeNode(SubtreeNode const&);
+    SubtreeNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
-    // vIndex: 2
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
-    // vIndex: 0
     virtual ~SubtreeNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromDefinition(::Actor& owner);
+    MCNAPI void $initializeFromDefinition(::Actor& owner);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
+#endif
+
+
     // NOLINTEND
 
 public:

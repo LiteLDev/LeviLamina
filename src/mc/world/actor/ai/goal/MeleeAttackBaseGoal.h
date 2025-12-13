@@ -13,7 +13,6 @@
 // clang-format off
 class Actor;
 class Mob;
-class Path;
 // clang-format on
 
 class MeleeAttackBaseGoal : public ::Goal {
@@ -28,30 +27,36 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
-        ::ll::TypedStorage<4, 4, int>                       mMinPathTicks;
-        ::ll::TypedStorage<4, 4, int>                       mMaxPathTicks;
-        ::ll::TypedStorage<4, 4, int>                       mPathFailTickIncrease;
-        ::ll::TypedStorage<4, 4, int>                       mInnerBoundaryTickIncrease;
-        ::ll::TypedStorage<4, 4, int>                       mOuterBoundaryTickIncrease;
-        ::ll::TypedStorage<4, 4, int>                       mTicksToRecalculatePath;
-        ::ll::TypedStorage<4, 4, float>                     mPathInnerBoundarySq;
-        ::ll::TypedStorage<4, 4, float>                     mPathOuterBoundarySq;
-        ::ll::TypedStorage<4, 4, float>                     mSpeedMultiplier;
-        ::ll::TypedStorage<1, 1, bool>                      mRequireCompletePath;
-        ::ll::TypedStorage<1, 1, bool>                      mTrackTarget;
+        ::ll::UntypedStorage<8, 8> mUnk44eb04;
+        ::ll::UntypedStorage<4, 4> mUnk683a7b;
+        ::ll::UntypedStorage<4, 4> mUnk59707a;
+        ::ll::UntypedStorage<4, 4> mUnk56002d;
+        ::ll::UntypedStorage<4, 4> mUnk214efe;
+        ::ll::UntypedStorage<4, 4> mUnk6d7a31;
+        ::ll::UntypedStorage<4, 4> mUnk50af2b;
+        ::ll::UntypedStorage<4, 4> mUnk14c021;
+        ::ll::UntypedStorage<4, 4> mUnk8929b8;
+        ::ll::UntypedStorage<4, 4> mUnkaf621b;
+        ::ll::UntypedStorage<1, 1> mUnkde00d6;
+        ::ll::UntypedStorage<1, 1> mUnk74162c;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Navigation& operator=(Navigation const&);
+        Navigation(Navigation const&);
+        Navigation();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Navigation();
+        MCNAPI ~Navigation();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -86,62 +91,57 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MeleeAttackBaseGoal() /*override*/;
 
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 6
     virtual void tick() = 0;
 
-    // vIndex: 10
     virtual int getAttackTicksResetValue() const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MeleeAttackBaseGoal(::Mob& mob);
+    MCNAPI explicit MeleeAttackBaseGoal(::Mob& mob);
 
-    MCAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
+    MCNAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
 
-    MCAPI void _attemptMoveToTargetPosition(::Actor const& target, bool canReachTarget, float targetDistanceSq);
+    MCNAPI void _attemptMoveToTargetPosition(::Actor const& target, bool canReachTarget, float targetDistanceSq);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCNAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCFOLD void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCFOLD int $getAttackTicksResetValue() const;
+    MCNAPI int $getAttackTicksResetValue() const;
+
+
     // NOLINTEND
 
 public:

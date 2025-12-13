@@ -17,7 +17,6 @@ class BasicGenericTypeSchema : public ::cereal::internal::BasicSchema {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BasicGenericTypeSchema() /*override*/ = default;
     // NOLINTEND
 

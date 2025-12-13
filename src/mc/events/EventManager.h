@@ -55,7 +55,7 @@ public:
 
     MCNAPI ::std::string _buildDnAPlatformString();
 
-    MCNAPI void addListener(::std::unique_ptr<::Social::Events::IEventListener> listener);
+    MCNAPI_S void addListener(::std::unique_ptr<::Social::Events::IEventListener> listener);
 
     MCNAPI ::std::unordered_map<::std::string, ::Social::Events::Property>
     buildCommonProperties(uint userId, ::std::vector<::std::string> const& exclude) const;
@@ -65,6 +65,8 @@ public:
         uint                                                             userId,
         ::std::vector<::std::string> const&                              exclude
     ) const;
+
+    MCNAPI_C ::std::optional<::Social::Events::Property> getCommonProperty(::std::string const& name) const;
 
     MCNAPI ::Social::Events::Property getGlobalProperty(::std::string const& name) const;
 
@@ -81,6 +83,12 @@ public:
     MCNAPI void setupCommonProperties();
 
     MCNAPI ~EventManager();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::std::string getPlatformCategory(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
     // NOLINTEND
 
 public:

@@ -8,11 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Block;
-class BlockDescriptor;
 class BlockPos;
 class CompoundTag;
-class Item;
 class ItemStack;
 class Vec3;
 namespace Json { class Value; }
@@ -22,12 +19,12 @@ class SeedItemComponentLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Item&>                           mOwner;
-    ::ll::TypedStorage<8, 8, ::Block const*>                    mResult;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mTargetLandBlocks;
-    ::ll::TypedStorage<1, 1, bool>                              mPlantAtAnyVisibleSolidSurface;
-    ::ll::TypedStorage<1, 1, bool>                              mIsPlanting;
-    ::ll::TypedStorage<1, 1, uchar>                             mFaceToPlantAt;
+    ::ll::UntypedStorage<8, 8>  mUnk3fb095;
+    ::ll::UntypedStorage<8, 8>  mUnk6a0e61;
+    ::ll::UntypedStorage<8, 24> mUnk1053b9;
+    ::ll::UntypedStorage<1, 1>  mUnkd08ce0;
+    ::ll::UntypedStorage<1, 1>  mUnk4cb68b;
+    ::ll::UntypedStorage<1, 1>  mUnk18829c;
     // NOLINTEND
 
 public:
@@ -39,17 +36,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
-    MCAPI bool init(::Json::Value const& data, ::MolangVersion molangVersion);
+    MCNAPI bool init(::Json::Value const& data, ::MolangVersion molangVersion);
 
-    MCAPI bool
+    MCNAPI bool
     useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const& clickPos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
+    MCNAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 };

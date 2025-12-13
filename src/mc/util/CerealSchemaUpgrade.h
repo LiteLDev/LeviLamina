@@ -26,16 +26,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CerealSchemaUpgrade();
 
-    // vIndex: 1
     virtual bool previousSchema(
         ::rapidjson::
             GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
     ) const = 0;
 
-    // vIndex: 2
     virtual void upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
@@ -91,6 +88,8 @@ public:
             ::rapidjson::CrtAllocator>&,
         ::SemVersion const&
     ) const;
+
+
     // NOLINTEND
 
 public:

@@ -2,22 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/sem_ver/SemVersion.h"
-
-// auto generated forward declare list
-// clang-format off
-struct ActorSpawnConditionData;
-// clang-format on
-
 struct ActorSpawnRuleData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::SemVersion>                             mFormatVersion;
-    ::ll::TypedStorage<8, 32, ::std::string>                            mIdentifier;
-    ::ll::TypedStorage<8, 32, ::std::string>                            mPopulationControl;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorSpawnConditionData>> mSpawnConditions;
+    ::ll::UntypedStorage<8, 24> mUnk6c0b21;
+    ::ll::UntypedStorage<8, 32> mUnkc611ea;
+    ::ll::UntypedStorage<8, 32> mUnk2ec7ef;
+    ::ll::UntypedStorage<8, 24> mUnk92659c;
     // NOLINTEND
 
 public:
@@ -28,26 +20,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSpawnRuleData(::ActorSpawnRuleData&&);
+    MCNAPI ActorSpawnRuleData(::ActorSpawnRuleData&&);
 
-    MCAPI ActorSpawnRuleData(::ActorSpawnRuleData const&);
+    MCNAPI ActorSpawnRuleData(::ActorSpawnRuleData const&);
 
-    MCAPI ::ActorSpawnRuleData& operator=(::ActorSpawnRuleData&&);
+    MCNAPI ::ActorSpawnRuleData& operator=(::ActorSpawnRuleData&&);
 
-    MCAPI ~ActorSpawnRuleData();
+    MCNAPI ~ActorSpawnRuleData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorSpawnRuleData&&);
+    MCNAPI void* $ctor(::ActorSpawnRuleData&&);
 
-    MCAPI void* $ctor(::ActorSpawnRuleData const&);
+    MCNAPI void* $ctor(::ActorSpawnRuleData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -15,16 +15,12 @@ class HumanoidMonster : public ::Monster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 150
     virtual int getItemUseDuration() const /*override*/;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 8
     virtual ~HumanoidMonster() /*override*/;
     // NOLINTEND
 
@@ -42,6 +38,8 @@ public:
     MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCFOLD void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+
     // NOLINTEND
 
 public:

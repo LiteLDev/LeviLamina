@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/util/Factory.h"
 
 // auto generated forward declare list
 // clang-format off
-class PackLoadRequirement;
 namespace BlockTrait { class ITrait; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -23,15 +21,11 @@ public:
     // BlockTraitFactory inner types define
     struct TraitMetadata {
     public:
-        // TraitMetadata inner types define
-        using Ctor = ::std::unique_ptr<::BlockTrait::ITrait> (*)();
-
-    public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTrait::ITrait> (*)()> makeUnique;
-        ::ll::TypedStorage<8, 24, ::std::vector<::PackLoadRequirement>>         requirements;
-        ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>>                releasedMinFormatVersion;
+        ::ll::UntypedStorage<8, 8>  mUnkb113c1;
+        ::ll::UntypedStorage<8, 24> mUnkeca172;
+        ::ll::UntypedStorage<8, 32> mUnkbe701a;
         // NOLINTEND
 
     public:
@@ -43,57 +37,59 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::BlockTraitFactory::TraitMetadata& operator=(::BlockTraitFactory::TraitMetadata&&);
+        MCNAPI ::BlockTraitFactory::TraitMetadata& operator=(::BlockTraitFactory::TraitMetadata&&);
 
-        MCAPI ~TraitMetadata();
+        MCNAPI ~TraitMetadata();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
-
-    using RegisteredTraitsMap = ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata>>
-        mRegisteredTraits;
+    ::ll::UntypedStorage<8, 64> mUnk6fcb72;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockTraitFactory& operator=(BlockTraitFactory const&);
+    BlockTraitFactory(BlockTraitFactory const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockTraitFactory();
+    MCNAPI BlockTraitFactory();
 
-    MCAPI ::std::unique_ptr<::BlockTrait::ITrait>
+    MCNAPI ::std::unique_ptr<::BlockTrait::ITrait>
     createTrait(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI ~BlockTraitFactory();
+    MCNAPI ~BlockTraitFactory();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockTraitFactory* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
+    MCNAPI static ::BlockTraitFactory* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void registerAllTraits(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void registerAllTraits(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
+    MCNAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

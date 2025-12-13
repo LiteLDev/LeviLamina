@@ -18,7 +18,22 @@ public:
     // prevent constructor by default
     TextureDescription& operator=(TextureDescription const&);
     TextureDescription(TextureDescription const&);
-    TextureDescription();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C TextureDescription();
+
+    MCNAPI_C explicit TextureDescription(::cg::ImageDescription const& imageDescription);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::cg::ImageDescription const& imageDescription);
+    // NOLINTEND
 };
 
 } // namespace cg

@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActivationUri;
+class IMinecraftApp;
 namespace Automation { class AutomationSession; }
 namespace CodeBuilder { class GameContext; }
 namespace CodeBuilder { struct AgentMessage; }
@@ -50,52 +51,53 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AutomationClient() /*override*/;
 
-    // vIndex: 1
     virtual void onUri(::ActivationUri const& uri) /*override*/;
 
-    // vIndex: 5
     virtual void send(::CodeBuilder::AgentMessage const& message) /*override*/;
 
-    // vIndex: 4
     virtual void send(::CodeBuilder::CommandMessage const& message) /*override*/;
 
-    // vIndex: 3
     virtual void send(::CodeBuilder::ErrorMessage const& message) /*override*/;
 
-    // vIndex: 2
     virtual void send(::CodeBuilder::EventMessage const& message) /*override*/;
 
-    // vIndex: 1
     virtual void send(::CodeBuilder::ChatMessage const& message) /*override*/;
 
-    // vIndex: 2
     virtual void tick() /*override*/;
 
-    // vIndex: 3
     virtual void executeStartupUris() /*override*/;
 
-    // vIndex: 24
     virtual void onLevelDestruction(::std::string const&) /*override*/;
 
-    // vIndex: 28
     virtual void playerListChanged() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C explicit AutomationClient(::IMinecraftApp& minecraft);
+
     MCNAPI void _forEachSession(::std::function<bool(::Automation::AutomationSession&)> const& callback);
 
     MCNAPI void _removeSession(::Automation::AutomationSession const& session);
 
     MCNAPI bool _tryAddCommand(::CodeBuilder::CommandRequest&& commandRequest);
 
+    MCNAPI_C ::std::shared_ptr<::Automation::AutomationSession> createSession();
+
     MCNAPI ::std::shared_ptr<::Automation::AutomationSession> getDefaultSession();
 
     MCNAPI ::std::shared_ptr<::CodeBuilder::GameContext> getGameContext() const;
+
+    MCNAPI_C bool isReady();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::IMinecraftApp& minecraft);
     // NOLINTEND
 
 public:
@@ -126,6 +128,8 @@ public:
     MCNAPI void $onLevelDestruction(::std::string const&);
 
     MCNAPI void $playerListChanged();
+
+
     // NOLINTEND
 
 public:

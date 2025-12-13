@@ -10,9 +10,15 @@
 // clang-format off
 class BlockReducer;
 class CraftableCompounds;
+class ItemInstance;
+class ItemStack;
+class ItemStackBase;
 class MaterialReducerContainerManagerModel;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
+struct CreateContainerItemScope;
+struct ItemStackRequestScope;
+struct ItemTransferAmount;
 // clang-format on
 
 class MaterialReducerContainerManagerController : public ::ContainerManagerController {
@@ -31,35 +37,90 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MaterialReducerContainerManagerController();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MaterialReducerContainerManagerController() /*override*/ = default;
 
-    // vIndex: 27
-    virtual bool isOutputSlot(::std::string const&) const /*override*/;
+    virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
 
-    // vIndex: 26
     virtual void closeContainers() /*override*/;
 
-    // vIndex: 13
-    virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
+    virtual void handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot) /*override*/;
 
-    // vIndex: 15
     virtual int handleAutoPlace(
-        ::SlotData const&,
-        int,
-        ::std::vector<::AutoPlaceItem> const&,
-        ::std::vector<::AutoPlaceResult>&
+        ::SlotData const&                     srcSlot,
+        int                                   amount,
+        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
+        ::std::vector<::AutoPlaceResult>&     destinations
     ) /*override*/;
 
-    // vIndex: 20
-    virtual bool handleSwap(::SlotData const&, ::SlotData const&) /*override*/;
+    virtual bool handleSwap(::SlotData const& slotA, ::SlotData const& slotB) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit MaterialReducerContainerManagerController(
+        ::std::weak_ptr<::MaterialReducerContainerManagerModel> containerManagerModel
+    );
+
+    MCNAPI_C void _consumeInputItem();
+
+    MCNAPI_C void _destroySlot(::SlotData const& slot, ::ItemTransferAmount amount);
+
+    MCNAPI_C void _fireReducerBlockEntered(::ItemStackBase const& input);
+
+    MCNAPI_C bool _hasAnyInput();
+
+    MCNAPI_C bool _hasAnyOutput();
+
+    MCNAPI_C ::CreateContainerItemScope _makeCreateOutputItemScope(
+        ::ItemStackRequestScope const& requestScope,
+        ::SlotData const&              srcSlot,
+        ::ItemInstance const&          instance
+    );
+
+    MCNAPI_C void _setupCallbacks();
+
+    MCNAPI_C void _updateResult(::ItemStack const& input);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::weak_ptr<::MaterialReducerContainerManagerModel> containerManagerModel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
 
+    MCNAPI void $closeContainers();
+
+    MCNAPI void $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    MCNAPI int $handleAutoPlace(
+        ::SlotData const&                     srcSlot,
+        int                                   amount,
+        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
+        ::std::vector<::AutoPlaceResult>&     destinations
+    );
+
+    MCNAPI bool $handleSwap(::SlotData const& slotA, ::SlotData const& slotB);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

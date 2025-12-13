@@ -21,16 +21,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
-    virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const&) /*override*/;
+    virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& pos) /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~ChunkSingleViewSource() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ChunkSingleViewSource() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& pos);
+#endif
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

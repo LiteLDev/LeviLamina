@@ -18,6 +18,18 @@ public:
     EduResponseError& operator=(EduResponseError const&);
     EduResponseError(EduResponseError const&);
     EduResponseError();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~EduResponseError();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Social

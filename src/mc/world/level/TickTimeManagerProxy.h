@@ -22,22 +22,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TickTimeManagerProxy() /*override*/ = default;
 
-    // vIndex: 1
     virtual bool shouldUpdateWorldTime() const /*override*/;
 
-    // vIndex: 2
     virtual void setWorldTickTime(int time) /*override*/;
 
-    // vIndex: 3
     virtual int getWorldTickTime() const /*override*/;
 
-    // vIndex: 4
     virtual void incrementCurrentTick() /*override*/;
 
-    // vIndex: 5
     virtual ::Tick getCurrentTick() const /*override*/;
     // NOLINTEND
 
@@ -53,6 +47,8 @@ public:
     MCAPI void $incrementCurrentTick();
 
     MCAPI ::Tick $getCurrentTick() const;
+
+
     // NOLINTEND
 
 public:

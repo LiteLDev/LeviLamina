@@ -33,25 +33,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IEditorService() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() = 0;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready();
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() = 0;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const = 0;
 
-    // vIndex: 5
     virtual bool isServiceInitialized() const;
 
-    // vIndex: 6
     virtual bool isServiceReady() const;
     // NOLINTEND
 
@@ -69,6 +62,8 @@ public:
     MCNAPI bool $isServiceInitialized() const;
 
     MCNAPI bool $isServiceReady() const;
+
+
     // NOLINTEND
 
 public:

@@ -17,8 +17,8 @@ class NetworkItemInstanceDescriptor : public ::ItemDescriptorCount {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>           mBlockRuntimeId;
-    ::ll::TypedStorage<8, 32, ::std::string> mUserDataBuffer;
+    ::ll::UntypedStorage<4, 4>  mUnkcdd6df;
+    ::ll::UntypedStorage<8, 32> mUnka0ca51;
     // NOLINTEND
 
 public:
@@ -30,7 +30,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~NetworkItemInstanceDescriptor() /*override*/;
     // NOLINTEND
 
@@ -42,6 +41,8 @@ public:
     MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
 
     MCAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
+
+    MCAPI_C ::NetworkItemInstanceDescriptor& operator=(::NetworkItemInstanceDescriptor&&);
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND

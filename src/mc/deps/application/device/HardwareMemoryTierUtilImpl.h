@@ -22,10 +22,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::HardwareMemoryTier getHardwareMemoryTier() const /*override*/;
 
-    // vIndex: 0
     virtual ~HardwareMemoryTierUtilImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -33,6 +31,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::HardwareMemoryTier $getHardwareMemoryTier() const;
+
+
     // NOLINTEND
 
 public:

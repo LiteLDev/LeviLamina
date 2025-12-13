@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/scripting/modules/minecraft/actor/ScriptActorData.h"
-
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -18,25 +14,27 @@ struct ScriptActorAddEffectAfterEventIntermediateData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                          mWeakActorRef;
-    ::ll::TypedStorage<8, 96, ::ScriptModuleMinecraft::ScriptActorData> mActorData;
-    ::ll::TypedStorage<4, 4, int>                                       mMobEffectId;
+    ::ll::UntypedStorage<8, 24> mUnk55ac51;
+    ::ll::UntypedStorage<8, 96> mUnkae0ff3;
+    ::ll::UntypedStorage<4, 4>  mUnkd5188a;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptActorAddEffectAfterEventIntermediateData& operator=(ScriptActorAddEffectAfterEventIntermediateData const&);
+    ScriptActorAddEffectAfterEventIntermediateData(ScriptActorAddEffectAfterEventIntermediateData const&);
     ScriptActorAddEffectAfterEventIntermediateData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorAddEffectAfterEventIntermediateData(::Actor const& actor, ::MobEffectInstance mobEffect);
+    MCNAPI ScriptActorAddEffectAfterEventIntermediateData(::Actor const& actor, ::MobEffectInstance mobEffect);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& actor, ::MobEffectInstance mobEffect);
+    MCNAPI void* $ctor(::Actor const& actor, ::MobEffectInstance mobEffect);
     // NOLINTEND
 };
 

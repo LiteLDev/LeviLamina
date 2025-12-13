@@ -30,8 +30,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int> threatLevel;
+        ::ll::UntypedStorage<4, 4> mUnk55c338;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        QueuedResponse& operator=(QueuedResponse const&);
+        QueuedResponse(QueuedResponse const&);
+        QueuedResponse();
     };
 
 public:
@@ -49,62 +55,59 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 0
     virtual ~SculkShriekerBlockActor() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SculkShriekerBlockActor(::BlockPos const& pos);
+    MCNAPI explicit SculkShriekerBlockActor(::BlockPos const& pos);
 
-    MCAPI void tryRespond(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI void tryRespond(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI bool tryShriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
+    MCNAPI bool tryShriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
+    MCNAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
+    MCNAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCFOLD void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+
     // NOLINTEND
 
 public:

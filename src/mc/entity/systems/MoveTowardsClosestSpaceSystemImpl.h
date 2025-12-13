@@ -102,7 +102,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
@@ -142,7 +141,6 @@ public:
             ::EntityFactoryT<>>& context
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~MoveTowardsClosestSpaceSystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -238,6 +236,8 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     );
+
+
     // NOLINTEND
 
 public:

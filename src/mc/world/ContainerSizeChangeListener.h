@@ -6,10 +6,8 @@ class ContainerSizeChangeListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual void containerSizeChanged(int) = 0;
 
-    // vIndex: 1
     virtual ~ContainerSizeChangeListener();
     // NOLINTEND
 

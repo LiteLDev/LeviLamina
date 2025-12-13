@@ -34,19 +34,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~StunAttribute();
 
-    // vIndex: 1
     virtual ::cricket::StunAttributeValueType value_type() const = 0;
 
-    // vIndex: 2
     virtual void SetOwner(::cricket::StunMessage* owner);
 
-    // vIndex: 3
     virtual bool Read(::rtc::ByteBufferReader*) = 0;
 
-    // vIndex: 4
     virtual bool Write(::rtc::ByteBufferWriter*) const = 0;
     // NOLINTEND
 
@@ -91,6 +86,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $SetOwner(::cricket::StunMessage* owner);
+
+
     // NOLINTEND
 
 public:

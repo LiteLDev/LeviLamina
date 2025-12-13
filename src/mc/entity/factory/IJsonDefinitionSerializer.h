@@ -29,14 +29,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IJsonDefinitionSerializer();
 
-    // vIndex: 2
     virtual ::std::shared_ptr<::IDefinitionInstance>
     serializeDefinitionInstance(::Json::Value const&, ::MinEngineVersion const&) = 0;
 
-    // vIndex: 1
     virtual ::std::shared_ptr<::IDefinitionInstance> serializeDefinitionInstance(
         ::Json::Value const&,
         ::MinEngineVersion const&,
@@ -45,10 +42,8 @@ public:
         ::JsonBetaState const
     ) = 0;
 
-    // vIndex: 3
     virtual bool hasGetStrictParsingVersion() = 0;
 
-    // vIndex: 4
     virtual ::std::shared_ptr<::IDefinitionInstance> _serializeDefinitionInstance(
         ::Json::Value const&,
         ::MinEngineVersion const&,

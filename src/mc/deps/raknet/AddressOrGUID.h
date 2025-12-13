@@ -32,11 +32,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::RakNet::AddressOrGUID const& input);
+
     MCAPI void* $ctor(::RakNet::RakNetGUID const& input);
 
     MCAPI void* $ctor(::RakNet::SystemAddress const& input);
-
-    MCAPI void* $ctor(::RakNet::AddressOrGUID const& input);
     // NOLINTEND
 };
 

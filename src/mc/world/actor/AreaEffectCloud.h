@@ -44,25 +44,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 55
-    virtual void setOwner(::ActorUniqueID const ownerID) /*override*/;
+    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 8
     virtual ~AreaEffectCloud() /*override*/ = default;
     // NOLINTEND
 
@@ -113,7 +106,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $setOwner(::ActorUniqueID const ownerID);
+    MCAPI void $setOwner(::ActorUniqueID const ownerId);
 
     MCAPI void $normalTick();
 
@@ -122,6 +115,8 @@ public:
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+
     // NOLINTEND
 
 public:

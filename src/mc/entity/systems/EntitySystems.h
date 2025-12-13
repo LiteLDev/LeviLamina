@@ -33,18 +33,18 @@ public:
     // clang-format on
 
     // EntitySystems inner types define
-    struct UsedInServerPlayerMovement {};
-
-    struct UsedInClientMovementCorrections {};
-
-    using MovementSystemCategory = ::entt::
-        type_list<::EntitySystems::UsedInServerPlayerMovement, ::EntitySystems::UsedInClientMovementCorrections>;
+    struct EditorSystemCategory {};
 
     struct GameSystemCategory {};
 
-    struct EditorSystemCategory {};
-
     struct RuntimeInitialize {};
+
+    struct UsedInClientMovementCorrections {};
+
+    struct UsedInServerPlayerMovement {};
+
+    using MovementSystemCategory = ::entt::
+        type_list<::EntitySystems::UsedInServerPlayerMovement, ::EntitySystems::UsedInClientMovementCorrections>;
 
 public:
     // member variables
@@ -63,16 +63,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EntitySystems() /*override*/;
 
-    // vIndex: 3
     virtual void tickMovementCatchup(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 4
     virtual void tickMovementCorrectionReplay(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 1
     virtual void registerTickingSystem(
         ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
         ::std::unique_ptr<::ITickingSystem>                      system,
@@ -80,7 +76,6 @@ public:
         ::EntitySystemTickingMode                                tickingMode
     ) /*override*/;
 
-    // vIndex: 2
     virtual bool _hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const /*override*/;
     // NOLINTEND
 
@@ -101,6 +96,8 @@ public:
     MCNAPI void registerMovementTickingSystem(::TickingSystemWithInfo&& system);
 
     MCNAPI void registerTickingSystem(::TickingSystemWithInfo&& system);
+
+    MCNAPI_C void tick(::EntityRegistry& registry);
     // NOLINTEND
 
 public:
@@ -130,6 +127,8 @@ public:
     );
 
     MCNAPI bool $_hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const;
+
+
     // NOLINTEND
 
 public:

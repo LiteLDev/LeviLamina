@@ -3,18 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentPubSubConnectors.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentAfterEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentIntermediateStorage.h"
-#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
+class ItemStack;
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -29,36 +25,38 @@ public:
     // clang-format on
 
     // ScriptItemCustomComponentConsumeEvent inner types define
-    using EventConnectorsType = ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<
-        void(::ItemStack const&, ::ItemStack&, ::Actor&)>;
-
     struct IntermediateStorage : public ::ScriptModuleMinecraft::ScriptItemCustomComponentIntermediateStorage {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 152, ::ItemStack const>    mItemStack;
-        ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mEntity;
+        ::ll::UntypedStorage<8, 152> mUnk849eea;
+        ::ll::UntypedStorage<8, 24>  mUnk55f5dd;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        IntermediateStorage& operator=(IntermediateStorage const&);
+        IntermediateStorage(IntermediateStorage const&);
+        IntermediateStorage();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~IntermediateStorage();
+        MCNAPI ~IntermediateStorage();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
-                                                                                                          mScriptItem;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mEntity;
+    ::ll::UntypedStorage<8, 32> mUnka924ce;
+    ::ll::UntypedStorage<8, 32> mUnk918613;
     // NOLINTEND
 
 public:
@@ -69,16 +67,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptItemCustomComponentConsumeEvent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentConsumeEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent const&);
+    MCNAPI ScriptItemCustomComponentConsumeEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent const&);
 
-    MCAPI ScriptItemCustomComponentConsumeEvent(
+    MCNAPI ScriptItemCustomComponentConsumeEvent(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                      scope
     );
@@ -87,15 +84,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                      scope
     );
@@ -104,7 +101,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

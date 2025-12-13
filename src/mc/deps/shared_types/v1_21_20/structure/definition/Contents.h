@@ -39,10 +39,10 @@ public:
     MCNAPI Contents(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
 
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
+    operator=(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
 
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
+    operator=(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
 
     MCNAPI ~Contents();
     // NOLINTEND

@@ -15,14 +15,11 @@ class IActorManagerConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::Actor&)>& getRegisterEntityAddedConnector() = 0;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
     getRegisterPostReloadActorConnector() = 0;
 
-    // vIndex: 2
     virtual ::Bedrock::PubSub::Connector<void(::Actor&)>& getRegisterOnRemoveActorEntityReferenceConnector() = 0;
     // NOLINTEND
 

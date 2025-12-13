@@ -26,18 +26,14 @@ class ScriptPlayerGameplayHandler : public ::EventHandlerDispatcher<::PlayerGame
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 32
     virtual ::HandlerResult handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent) /*override*/;
 
-    // vIndex: 1
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event) /*override*/;
 
-    // vIndex: 2
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptPlayerGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
@@ -79,6 +75,8 @@ public:
 
     MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event);
+
+
     // NOLINTEND
 
 public:

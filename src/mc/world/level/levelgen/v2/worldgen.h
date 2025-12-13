@@ -26,7 +26,7 @@ namespace br::worldgen { struct StructureTemplateBlockPalette; }
 namespace br::worldgen {
 // functions
 // NOLINTBEGIN
-MCAPI int expansionHackCalc(
+MCNAPI int expansionHackCalc(
     ::JigsawStructureUtils::MetadataCache&                             cache,
     ::BlockPos const&                                                  offset,
     ::Rotation                                                         rotation,
@@ -36,11 +36,11 @@ MCAPI int expansionHackCalc(
     ::JigsawStructureRegistry const&                                   pools
 );
 
-MCAPI void expansionHackEval(int expandTo, ::BoundingBox& box);
+MCNAPI void expansionHackEval(int expandTo, ::BoundingBox& box);
 
-MCAPI bool isEmptyPool(::StructureTemplatePool const& pool);
+MCNAPI bool isEmptyPool(::StructureTemplatePool const& pool);
 
-MCFOLD int noopCalc(
+MCNAPI int noopCalc(
     ::JigsawStructureUtils::MetadataCache&,
     ::BlockPos const&,
     ::Rotation,
@@ -50,9 +50,9 @@ MCFOLD int noopCalc(
     ::JigsawStructureRegistry const&
 );
 
-MCFOLD void noopEval(int, ::BoundingBox&);
+MCNAPI void noopEval(int, ::BoundingBox&);
 
-MCAPI bool placeInWorld(
+MCNAPI bool placeInWorld(
     ::IStructureTemplate const&                   tmpl,
     ::BlockSource&                                region,
     ::BlockPos                                    position,
@@ -61,7 +61,7 @@ MCAPI bool placeInWorld(
     ::IRandom&                                    random
 );
 
-MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> processBlockInfos(
+MCNAPI ::std::vector<::br::worldgen::StructureBlockInfo> processBlockInfos(
     ::BlockSource&                                region,
     ::BlockPos                                    position,
     ::BlockPos                                    structureOrigin,
@@ -69,7 +69,7 @@ MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> processBlockInfos(
     ::br::worldgen::StructureTemplateBlockPalette sourceBlockInfos
 );
 
-MCAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
+MCNAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
     ::StructurePoolElement const& source,
     ::std::string_view            name,
     ::BlockPos                    pos,
@@ -77,9 +77,9 @@ MCAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
     ::IRandom&                    random
 );
 
-MCAPI ::std::vector<uint64> shuffledJigsawBlockId(::StructureTemplatePool const& pool, ::IRandom& random);
+MCNAPI ::std::vector<uint64> shuffledJigsawBlockId(::StructureTemplatePool const& pool, ::IRandom& random);
 
-MCAPI ::std::vector<uint64>
+MCNAPI ::std::vector<uint64>
 shuffledJigsawBlockIndexes(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata, ::IRandom& random);
 // NOLINTEND
 

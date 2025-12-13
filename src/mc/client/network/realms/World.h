@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class LevelData;
+struct GameRuleId;
+namespace Json { class Value; }
+// clang-format on
+
 namespace Realms {
 
 struct World {
@@ -55,10 +62,87 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    World& operator=(World const&);
-    World(World const&);
-    World();
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C World();
+
+    MCNAPI_C World(::Realms::World&&);
+
+    MCNAPI_C World(::Realms::World const&);
+
+    MCNAPI_C explicit World(bool valid);
+
+    MCNAPI_C void
+    _gameRuleBoolFromJson(::Json::Value const& setting, ::GameRuleId const& id, ::std::string const& name);
+
+    MCNAPI_C void _gameRuleIntFromJson(::Json::Value const& setting, ::GameRuleId const& id, ::std::string const& name);
+
+    MCNAPI_C void applyGameRulesToSlotOptionsJson();
+
+    MCNAPI_C bool areBasicSettingsEqual(::Realms::World const& rhs) const;
+
+    MCNAPI_C int64 getId() const;
+
+    MCNAPI_C ::std::optional<int64> const& getLastSaved() const;
+
+    MCNAPI_C bool const isClosed() const;
+
+    MCNAPI_C bool isInitialized() const;
+
+    MCNAPI_C ::Realms::World& operator=(::Realms::World&&);
+
+    MCNAPI_C ::Realms::World& operator=(::Realms::World const&);
+
+    MCNAPI_C void resetToDefaultSettings_DEPRECATED();
+
+    MCNAPI_C void setLevelDataPointer_DEPRECATED(::std::shared_ptr<::LevelData> levelData);
+
+    MCNAPI_C ~World();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::Realms::World fromJson(::Json::Value const& json);
+
+    MCNAPI_C static void gameRuleBoolToJson(::Json::Value& json, ::std::string const& name, bool value);
+
+    MCNAPI_C static void gameRuleIntToJson(::Json::Value& json, ::std::string const& name, int value);
+
+    MCNAPI_C static ::Realms::World::State stringToWorldState(::std::string const& stateString);
+
+    MCNAPI_C static ::std::string worldStateToString(::Realms::World::State const& state);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI_C static ::std::vector<::std::pair<::std::string, ::GameRuleId>> const& CHEAT_SETTING_RULES();
+
+    MCNAPI_C static ::std::vector<::std::pair<bool, ::GameRuleId>> const& HARDCORE_SETTING_VALUES();
+
+    MCNAPI_C static ::std::vector<::std::pair<::std::string, ::GameRuleId>> const& INT_SETTING_RULES();
+
+    MCNAPI_C static ::std::vector<::std::pair<::std::string, ::GameRuleId>> const& WORLD_SETTING_RULES();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::Realms::World&&);
+
+    MCNAPI_C void* $ctor(::Realms::World const&);
+
+    MCNAPI_C void* $ctor(bool valid);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Realms

@@ -22,6 +22,18 @@ public:
     InboxSummaryData& operator=(InboxSummaryData const&);
     InboxSummaryData(InboxSummaryData const&);
     InboxSummaryData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~InboxSummaryData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Social::Events

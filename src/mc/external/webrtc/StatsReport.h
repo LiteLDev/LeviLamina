@@ -200,13 +200,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 2
         virtual ~IdBase() /*override*/;
 
-        // vIndex: 3
         virtual bool Equals(::webrtc::StatsReport::IdBase const& other) const;
 
-        // vIndex: 4
         virtual ::std::string ToString() const = 0;
         // NOLINTEND
 
@@ -234,6 +231,8 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI bool $Equals(::webrtc::StatsReport::IdBase const& other) const;
+
+
         // NOLINTEND
 
     public:
@@ -293,6 +292,8 @@ public:
 
         MCNAPI Value(::webrtc::StatsReport::StatsValueName name, float f);
 
+        MCNAPI Value(::webrtc::StatsReport::StatsValueName name, ::std::string const& value);
+
         MCNAPI Value(
             ::webrtc::StatsReport::StatsValueName                         name,
             ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& value
@@ -300,22 +301,20 @@ public:
 
         MCNAPI Value(::webrtc::StatsReport::StatsValueName name, char const* value);
 
-        MCNAPI Value(::webrtc::StatsReport::StatsValueName name, ::std::string const& value);
-
         MCNAPI
         Value(::webrtc::StatsReport::StatsValueName name, int64 value, ::webrtc::StatsReport::Value::Type int_type);
 
         MCNAPI bool operator==(::std::string const& value) const;
 
-        MCNAPI bool operator==(float value) const;
-
         MCNAPI bool operator==(::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& value) const;
 
-        MCNAPI bool operator==(bool value) const;
+        MCNAPI bool operator==(float value) const;
+
+        MCNAPI bool operator==(char const* value) const;
 
         MCNAPI bool operator==(int64 value) const;
 
-        MCNAPI bool operator==(char const* value) const;
+        MCNAPI bool operator==(bool value) const;
 
         MCNAPI ::std::string const& string_val() const;
 
@@ -329,14 +328,14 @@ public:
 
         MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName name, float f);
 
+        MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName name, ::std::string const& value);
+
         MCNAPI void* $ctor(
             ::webrtc::StatsReport::StatsValueName                         name,
             ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& value
         );
 
         MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName name, char const* value);
-
-        MCNAPI void* $ctor(::webrtc::StatsReport::StatsValueName name, ::std::string const& value);
 
         MCNAPI void*
         $ctor(::webrtc::StatsReport::StatsValueName name, int64 value, ::webrtc::StatsReport::Value::Type int_type);

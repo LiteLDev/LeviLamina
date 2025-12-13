@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/common/SharedPtr.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/block/registry/IUnknownBlockTypeRegistry.h"
 
 // auto generated forward declare list
@@ -16,36 +15,38 @@ class CompoundTag;
 
 class UnknownBlockTypeRegistry : public ::IUnknownBlockTypeRegistry {
 public:
-    // UnknownBlockTypeRegistry inner types define
-    using UnknownBlockLookupMap = ::std::map<uint64, ::SharedPtr<::BlockType>>;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                  mMutex;
-    ::ll::TypedStorage<8, 16, ::std::map<uint64, ::SharedPtr<::BlockType>>> mUnknownBlockLookupMap;
+    ::ll::UntypedStorage<8, 80> mUnkfa461f;
+    ::ll::UntypedStorage<8, 16> mUnk65fe59;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UnknownBlockTypeRegistry& operator=(UnknownBlockTypeRegistry const&);
+    UnknownBlockTypeRegistry(UnknownBlockTypeRegistry const&);
+    UnknownBlockTypeRegistry();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~UnknownBlockTypeRegistry() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Block const& getUnknownBlock(::CompoundTag const& serId) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _registerBlock(::std::string const& name, uint64 serIdHash);
+    MCNAPI void _registerBlock(::std::string const& name, uint64 serIdHash);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $getUnknownBlock(::CompoundTag const& serId);
+    MCNAPI ::Block const& $getUnknownBlock(::CompoundTag const& serId);
+
+
     // NOLINTEND
 
 public:

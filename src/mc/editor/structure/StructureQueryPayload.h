@@ -24,14 +24,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~StructureQueryPayload() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~StructureQueryPayload() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::Network::StructureQueryPayload& operator=(::Editor::Network::StructureQueryPayload const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

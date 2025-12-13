@@ -47,13 +47,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual void containerContentChanged(int iSlot) /*override*/;
 
-    // vIndex: 0
     virtual void containerClosed(::Actor& actor) /*override*/;
 
-    // vIndex: 1
     virtual ~ContainerComponent() /*override*/;
     // NOLINTEND
 
@@ -120,6 +117,8 @@ public:
     MCAPI void $containerContentChanged(int iSlot);
 
     MCAPI void $containerClosed(::Actor& actor);
+
+
     // NOLINTEND
 
 public:

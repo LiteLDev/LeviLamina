@@ -19,6 +19,24 @@ public:
     // clang-format on
 
     // Logger inner types define
+    enum class UpgradeResultCode : uchar {
+        // bitfield representation
+        UnsupportedVersion = 1 << 0,
+        SrcError           = 1 << 1,
+        DstError           = 1 << 2,
+        InternalError      = 1 << 3,
+        CopyError          = 1 << 4,
+        EnttEnumAsBitmask  = 255,
+        All                = 255,
+    };
+
+    enum class ValidationResultCode : uchar {
+        Warning           = 1,
+        Error             = 2,
+        All               = 255,
+        EnttEnumAsBitmask = 255,
+    };
+
     struct ParseLogEntry {
     public:
         // member variables
@@ -45,17 +63,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    };
-
-    enum class UpgradeResultCode : uchar {
-        // bitfield representation
-        UnsupportedVersion = 1 << 0,
-        SrcError           = 1 << 1,
-        DstError           = 1 << 2,
-        InternalError      = 1 << 3,
-        CopyError          = 1 << 4,
-        EnttEnumAsBitmask  = 255,
-        All                = 255,
     };
 
     struct UpgradeLogEntry {
@@ -85,13 +92,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    };
-
-    enum class ValidationResultCode : uchar {
-        Warning           = 1,
-        Error             = 2,
-        All               = 255,
-        EnttEnumAsBitmask = 255,
     };
 
     struct ValidationLogEntry {
@@ -138,9 +138,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Logger(::Puv::Logger const&);
-
     MCNAPI Logger(::Puv::Logger&&);
+
+    MCNAPI Logger(::Puv::Logger const&);
 
     MCNAPI ::Puv::Logger& log(::Puv::Logger::ValidationResultCode res, ::std::string msg);
 
@@ -171,9 +171,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Puv::Logger const&);
-
     MCNAPI void* $ctor(::Puv::Logger&&);
+
+    MCNAPI void* $ctor(::Puv::Logger const&);
     // NOLINTEND
 
 public:

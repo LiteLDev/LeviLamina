@@ -6,19 +6,27 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
+#include "mc/world/containers/managers/controllers/ItemSpecialLocation.h"
+#include "mc/world/containers/managers/controllers/ItemTransferType.h"
 #include "mc/world/inventory/network/ContainerScreenContext.h"
 #include "mc/world/inventory/simulation/ContainerScreenAutoplaceBehaviour.h"
+#include "mc/world/inventory/simulation/ContainerScreenTransferBehaviour.h"
+#include "mc/world/inventory/simulation/ContainerValidationCaller.h"
 
 // auto generated forward declare list
 // clang-format off
+class Container;
 class ContainerScreenActionScope;
+class ContainerScreenTemporaryActionScope;
 class ContainerScreenValidation;
 class IContainerTransfer;
 class ItemInstance;
 struct AutoPlaceTarget;
 struct ContainerScreenActionResult;
 struct ContainerSimulationSplitStack;
+struct ContainerValidationResult;
 struct ContainerValidationSlotData;
+struct FullContainerName;
 struct ItemTransferAmount;
 // clang-format on
 
@@ -37,90 +45,224 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ContainerScreenSimulation();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~ContainerScreenSimulation() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ContainerScreenSimulation() /*override*/;
+#endif
 
-    // vIndex: 1
     virtual ::ContainerScreenActionResult
-    tryPlaceOne(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+    tryPlaceOne(::ContainerValidationSlotData const& srcSlot, ::ContainerValidationSlotData const& dstSlot);
 
-    // vIndex: 2
+    virtual ::ContainerScreenActionResult tryPlaceAmount(
+        ::ContainerValidationSlotData const& srcSlot,
+        int                                  amount,
+        ::ContainerValidationSlotData const& dstSlot
+    );
+
     virtual ::ContainerScreenActionResult
-    tryPlaceAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&);
+    tryPlaceAll(::ContainerValidationSlotData const& srcSlot, ::ContainerValidationSlotData const& dstSlot);
 
-    // vIndex: 3
+    virtual ::ContainerScreenActionResult tryTakeAmount(
+        ::ContainerValidationSlotData const& dstSlot,
+        int                                  amount,
+        ::ContainerValidationSlotData const& srcSlot
+    );
+
     virtual ::ContainerScreenActionResult
-    tryPlaceAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+    tryTakeAll(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
 
-    // vIndex: 4
     virtual ::ContainerScreenActionResult
-    tryTakeAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&);
+    tryTakeHalf(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
 
-    // vIndex: 5
     virtual ::ContainerScreenActionResult
-    tryTakeAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+    trySwap(::ContainerValidationSlotData const& slotA, ::ContainerValidationSlotData const& slotB);
 
-    // vIndex: 6
+    virtual ::ContainerScreenActionResult tryAddToStack(
+        ::ContainerValidationSlotData const& dstSlot,
+        ::ContainerValidationSlotData const& srcSlot,
+        ::ItemTakeType                       type
+    );
+
     virtual ::ContainerScreenActionResult
-    tryTakeHalf(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+    tryCoalesce(::ContainerValidationSlotData const& dstSlot, ::ContainerEnumName coalesceContainerEnum);
 
-    // vIndex: 7
-    virtual ::ContainerScreenActionResult
-    trySwap(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+    virtual ::ContainerScreenActionResult tryAutoPlace(
+        ::ContainerValidationSlotData const& srcSlot,
+        ::ItemTransferAmount                 amount,
+        ::ContainerScreenAutoplaceBehaviour  autoplaceBehaviour
+    );
 
-    // vIndex: 8
-    virtual ::ContainerScreenActionResult
-    tryAddToStack(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&, ::ItemTakeType);
-
-    // vIndex: 9
-    virtual ::ContainerScreenActionResult tryCoalesce(::ContainerValidationSlotData const&, ::ContainerEnumName);
-
-    // vIndex: 10
-    virtual ::ContainerScreenActionResult
-    tryAutoPlace(::ContainerValidationSlotData const&, ::ItemTransferAmount, ::ContainerScreenAutoplaceBehaviour);
-
-    // vIndex: 11
     virtual ::ContainerScreenActionResult trySplitSingle(
-        ::ContainerValidationSlotData const&,
-        ::ContainerValidationSlotData const&,
-        ::std::vector<::ContainerSimulationSplitStack>&
+        ::ContainerValidationSlotData const&            srcSlot,
+        ::ContainerValidationSlotData const&            dstSlot,
+        ::std::vector<::ContainerSimulationSplitStack>& containerSplitItemStackItems
     );
 
-    // vIndex: 12
     virtual ::ContainerScreenActionResult trySplitMultiple(
-        ::ContainerValidationSlotData const&,
-        int,
-        ::ItemInstance const&,
-        ::ContainerValidationSlotData const&,
-        ::std::vector<::ContainerSimulationSplitStack>&,
-        int&
+        ::ContainerValidationSlotData const&            srcSlot,
+        int                                             progressiveTake,
+        ::ItemInstance const&                           itemTemplate,
+        ::ContainerValidationSlotData const&            dstSlot,
+        ::std::vector<::ContainerSimulationSplitStack>& containerSplitItemStackItems,
+        int&                                            splitItemRemainder
     );
 
-    // vIndex: 13
     virtual ::ContainerScreenActionResult
-    tryDrop(::ContainerValidationSlotData const&, ::ItemTransferAmount const, bool);
+    tryDrop(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount, bool randomly);
 
-    // vIndex: 14
-    virtual ::ContainerScreenActionResult tryDestroy(::ContainerValidationSlotData const&, ::ItemTransferAmount const);
+    virtual ::ContainerScreenActionResult
+    tryDestroy(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
 
-    // vIndex: 15
-    virtual ::ContainerScreenActionResult tryConsume(::ContainerValidationSlotData const&, ::ItemTransferAmount const);
+    virtual ::ContainerScreenActionResult
+    tryConsume(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
 
-    // vIndex: 16
-    virtual ::ContainerScreenActionResult tryConsumeExpected(::ContainerValidationSlotData const&);
+    virtual ::ContainerScreenActionResult tryConsumeExpected(::ContainerValidationSlotData const& srcSlot);
 
-    // vIndex: 17
     virtual void _registerCoalesceOrder();
 
-    // vIndex: 18
     virtual void _registerAutoPlaceOrder();
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ContainerScreenSimulation(
+        ::ContainerScreenContext const&                                           screenContext,
+        ::ContainerValidationCaller                                               caller,
+        ::std::unique_ptr<::IContainerTransfer>&&                                 containerTransferInterface,
+        ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
+    );
+
+    MCNAPI_C ::ContainerScreenTemporaryActionScope _createTemporaryScope();
+
+    MCNAPI_C void _leaveActionScope(::ContainerScreenActionResult& result);
+
+    MCNAPI_C ::ContainerScreenActionResult _tryTransfer(
+        ::ItemTransferType                   transferType,
+        ::ContainerValidationSlotData const& srcSlot,
+        ::ContainerValidationSlotData const& dstSlot,
+        ::ItemTransferAmount                 transferAmount,
+        ::ContainerScreenTransferBehaviour   transferBehaviour
+    );
+
+    MCNAPI_C ::ContainerScreenActionResult _tryTransferSpecial(
+        ::ContainerValidationSlotData const& srcSlot,
+        ::ItemTransferAmount                 transferAmount,
+        ::ItemSpecialLocation                location
+    );
+
+    MCNAPI_C ::ContainerScreenActionResult _updateCurrentScope(::ContainerScreenActionResult result);
+
+    MCNAPI_C ::ContainerScreenActionResult _updateCurrentScope(::ContainerValidationResult result);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::ContainerScreenContext const&                                           screenContext,
+        ::ContainerValidationCaller                                               caller,
+        ::std::unique_ptr<::IContainerTransfer>&&                                 containerTransferInterface,
+        ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::ContainerScreenActionResult
+    $tryPlaceOne(::ContainerValidationSlotData const& srcSlot, ::ContainerValidationSlotData const& dstSlot);
 
+    MCNAPI ::ContainerScreenActionResult $tryPlaceAmount(
+        ::ContainerValidationSlotData const& srcSlot,
+        int                                  amount,
+        ::ContainerValidationSlotData const& dstSlot
+    );
+
+    MCNAPI ::ContainerScreenActionResult
+    $tryPlaceAll(::ContainerValidationSlotData const& srcSlot, ::ContainerValidationSlotData const& dstSlot);
+
+    MCNAPI ::ContainerScreenActionResult $tryTakeAmount(
+        ::ContainerValidationSlotData const& dstSlot,
+        int                                  amount,
+        ::ContainerValidationSlotData const& srcSlot
+    );
+
+    MCNAPI ::ContainerScreenActionResult
+    $tryTakeAll(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
+
+    MCNAPI ::ContainerScreenActionResult
+    $tryTakeHalf(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
+
+    MCNAPI ::ContainerScreenActionResult
+    $trySwap(::ContainerValidationSlotData const& slotA, ::ContainerValidationSlotData const& slotB);
+
+    MCNAPI ::ContainerScreenActionResult $tryAddToStack(
+        ::ContainerValidationSlotData const& dstSlot,
+        ::ContainerValidationSlotData const& srcSlot,
+        ::ItemTakeType                       type
+    );
+
+    MCNAPI ::ContainerScreenActionResult
+    $tryCoalesce(::ContainerValidationSlotData const& dstSlot, ::ContainerEnumName coalesceContainerEnum);
+
+    MCNAPI ::ContainerScreenActionResult $tryAutoPlace(
+        ::ContainerValidationSlotData const& srcSlot,
+        ::ItemTransferAmount                 amount,
+        ::ContainerScreenAutoplaceBehaviour  autoplaceBehaviour
+    );
+
+    MCNAPI ::ContainerScreenActionResult $trySplitSingle(
+        ::ContainerValidationSlotData const&            srcSlot,
+        ::ContainerValidationSlotData const&            dstSlot,
+        ::std::vector<::ContainerSimulationSplitStack>& containerSplitItemStackItems
+    );
+
+    MCNAPI ::ContainerScreenActionResult $trySplitMultiple(
+        ::ContainerValidationSlotData const&            srcSlot,
+        int                                             progressiveTake,
+        ::ItemInstance const&                           itemTemplate,
+        ::ContainerValidationSlotData const&            dstSlot,
+        ::std::vector<::ContainerSimulationSplitStack>& containerSplitItemStackItems,
+        int&                                            splitItemRemainder
+    );
+
+    MCNAPI ::ContainerScreenActionResult
+    $tryDrop(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount, bool randomly);
+
+    MCNAPI ::ContainerScreenActionResult
+    $tryDestroy(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
+
+    MCNAPI ::ContainerScreenActionResult
+    $tryConsume(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
+
+    MCNAPI ::ContainerScreenActionResult $tryConsumeExpected(::ContainerValidationSlotData const& srcSlot);
+
+    MCNAPI void $_registerCoalesceOrder();
+
+    MCNAPI void $_registerAutoPlaceOrder();
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

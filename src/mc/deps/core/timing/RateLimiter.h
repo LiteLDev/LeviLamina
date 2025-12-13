@@ -16,4 +16,10 @@ public:
     RateLimiter& operator=(RateLimiter const&);
     RateLimiter(RateLimiter const&);
     RateLimiter();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C bool tryAddInstance();
+    // NOLINTEND
 };

@@ -45,7 +45,6 @@ struct SwimControlSystemImpl
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::MobTravelComponent, ::WasInWaterFlagComponent, ::MobIsJumpingFlagComponent>,
@@ -62,7 +61,6 @@ public:
             ::EntityFactoryT<>>& context
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~SwimControlSystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -84,6 +82,8 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     );
+
+
     // NOLINTEND
 
 public:

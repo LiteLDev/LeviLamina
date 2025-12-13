@@ -6,8 +6,12 @@ struct zip_source {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk521670;
-    ::ll::UntypedStorage<8, 8>  mUnk6530b9;
+    ::ll::UntypedStorage<8, 8> mUnk521670;
+#ifdef LL_PLAT_S
+    ::ll::UntypedStorage<8, 8> mUnk6530b9;
+#else // LL_PLAT_C
+    ::ll::UntypedStorage<8, 8> mUnk258247;
+#endif
     ::ll::UntypedStorage<8, 8>  mUnk869415;
     ::ll::UntypedStorage<8, 16> mUnk51eaf9;
     ::ll::UntypedStorage<8, 8>  mUnk3c7c2d;
@@ -20,10 +24,4 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk186f5d;
     ::ll::UntypedStorage<8, 8>  mUnk47d29a;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    zip_source& operator=(zip_source const&);
-    zip_source(zip_source const&);
-    zip_source();
 };

@@ -2,18 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-class Vec3;
-// clang-format on
-
 class BehaviorData {
 public:
     // BehaviorData inner types declare
     // clang-format off
-    template<typename T0> struct Data;
     struct DataProxy;
+    template<typename T0> struct Data;
     // clang-format on
 
     // BehaviorData inner types define
@@ -31,17 +25,21 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>           mId;
-        ::ll::TypedStorage<1, 1, ::BehaviorData::DataType> mType;
+        ::ll::UntypedStorage<8, 32> mUnk4b5161;
+        ::ll::UntypedStorage<1, 1>  mUnka1c5c0;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DataProxy& operator=(DataProxy const&);
+        DataProxy(DataProxy const&);
+        DataProxy();
 
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~DataProxy() = default;
 
-        // vIndex: 1
         virtual ::std::unique_ptr<::BehaviorData::DataProxy> copy() = 0;
         // NOLINTEND
 
@@ -64,8 +62,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::BehaviorData::DataProxy>>> mData;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::BehaviorData::DataProxy>>> mDataStack;
+    ::ll::UntypedStorage<8, 64> mUnkdfa4a1;
+    ::ll::UntypedStorage<8, 24> mUnke4e167;
     // NOLINTEND
 
 public:
@@ -77,14 +75,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BehaviorData& operator=(::BehaviorData&&);
+    MCNAPI ::BehaviorData& operator=(::BehaviorData&&);
 
-    MCAPI ~BehaviorData();
+    MCNAPI ~BehaviorData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -32,29 +32,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorServerPersistenceService() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 8
     virtual ::std::string const& getPlayerSaveId() const /*override*/;
 
-    // vIndex: 7
     virtual void
     _removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) /*override*/;
 
-    // vIndex: 8
     virtual void _tick(::Editor::ServiceProviderCollection& serviceProvider) /*override*/;
     // NOLINTEND
 
@@ -92,6 +84,8 @@ public:
     MCNAPI void $_removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType);
 
     MCNAPI void $_tick(::Editor::ServiceProviderCollection& serviceProvider);
+
+
     // NOLINTEND
 
 public:

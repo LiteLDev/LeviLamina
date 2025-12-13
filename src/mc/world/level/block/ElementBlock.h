@@ -13,6 +13,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class ItemInstance;
+class ItemStackBase;
 class RecipeIngredient;
 struct ElementInfo;
 namespace mce { class Color; }
@@ -28,25 +29,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 143
     virtual ::mce::Color getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const /*override*/;
 
-    // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const& block) const /*override*/;
 
-    // vIndex: 56
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    // vIndex: 126
     virtual ::Block const* tryLegacyUpgrade(ushort extraData) const /*override*/;
 
-    // vIndex: 0
     virtual ~ElementBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI_C static ::ElementType getElement(::ItemStackBase const& item);
+
     MCAPI static ::ElementInfo getElementInfo(::ElementType e);
 
     MCAPI static ::RecipeIngredient getIngredientForElement(::ElementType e, int stackCount);
@@ -72,6 +70,8 @@ public:
     MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
     MCAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
+
+
     // NOLINTEND
 
 public:

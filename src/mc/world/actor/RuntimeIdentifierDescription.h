@@ -14,35 +14,41 @@ struct RuntimeIdentifierDescription : public ::DefintionDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mRuntimeId;
+    ::ll::UntypedStorage<8, 32> mUnkde4a2e;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RuntimeIdentifierDescription& operator=(RuntimeIdentifierDescription const&);
+    RuntimeIdentifierDescription(RuntimeIdentifierDescription const&);
+    RuntimeIdentifierDescription();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual char const* getJsonName() const /*override*/;
 
-    // vIndex: 0
     virtual ~RuntimeIdentifierDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void parse(::Json::Value const& root);
+    MCNAPI void parse(::Json::Value const& root);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
+
+
     // NOLINTEND
 
 public:

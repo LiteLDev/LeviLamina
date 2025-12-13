@@ -13,48 +13,42 @@ struct INpcDialogueData {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~INpcDialogueData() = default;
 
-    // vIndex: 1
     virtual ::std::string const& getDialogueText() const = 0;
 
-    // vIndex: 2
     virtual ::std::string const& getRawDialogueText() const;
 
-    // vIndex: 3
     virtual ::std::string const& getNameText() const = 0;
 
-    // vIndex: 4
     virtual ::std::string const& getNameRawText() const;
 
-    // vIndex: 5
     virtual ::std::string const& getSceneName() const = 0;
 
-    // vIndex: 7
     virtual ::npc::ActionContainer* getActionsContainer() = 0;
 
-    // vIndex: 6
     virtual ::npc::ActionContainer const* getActionsContainer() const = 0;
 
-    // vIndex: 8
     virtual ::ActorUniqueID getActorUniqueID() = 0;
 
-    // vIndex: 10
     virtual ::Actor* getActor() = 0;
 
-    // vIndex: 9
     virtual ::Actor const* getActor() const = 0;
 
-    // vIndex: 11
     virtual bool isRemoteFire();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string const& $getRawDialogueText() const;
+    MCNAPI ::std::string const& $getRawDialogueText() const;
 
-    MCFOLD bool $isRemoteFire();
+    MCNAPI bool $isRemoteFire();
+
+#ifdef LL_PLAT_C
+    MCNAPI ::std::string const& $getNameRawText() const;
+#endif
+
+
     // NOLINTEND
 };

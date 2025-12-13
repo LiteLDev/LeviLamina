@@ -3,13 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/containers/models/ContainerCategory.h"
 #include "mc/world/containers/models/ExpandoContainerModel.h"
 #include "mc/world/containers/models/FilterResult.h"
 
 // auto generated forward declare list
 // clang-format off
+class CreativeItemRegistry;
 class ItemInstance;
 class ItemStackBase;
+struct FullContainerName;
 // clang-format on
 
 class FilteredContainerModel : public ::ExpandoContainerModel {
@@ -29,42 +33,102 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FilteredContainerModel();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+#ifdef LL_PLAT_S
     virtual ~FilteredContainerModel() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~FilteredContainerModel() /*override*/;
+#endif
 
-    // vIndex: 0
     virtual void containerContentChanged(int) /*override*/;
 
-    // vIndex: 10
     virtual ::ItemInstance const& getItemInstance(int modelSlot) const /*override*/;
 
-    // vIndex: 26
-    virtual void setItemInstance(int, ::ItemInstance const&) /*override*/;
+    virtual void setItemInstance(int modelSlot, ::ItemInstance const& item) /*override*/;
 
-    // vIndex: 21
-    virtual void refreshContainer(bool) /*override*/;
+    virtual void refreshContainer(bool fullRefresh) /*override*/;
 
-    // vIndex: 4
     virtual int getContainerSize() const /*override*/;
 
-    // vIndex: 5
     virtual int getFilteredContainerSize() const /*override*/;
 
-    // vIndex: 16
     virtual bool isExpanableItemFiltered(int index) const /*override*/;
 
-    // vIndex: 27
-    virtual int getIndexForCreativeItem(::ItemStackBase const&) const /*override*/;
+    virtual int getIndexForCreativeItem(::ItemStackBase const& item) const /*override*/;
 
-    // vIndex: 24
     virtual void _init() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C FilteredContainerModel(
+        ::FullContainerName const&                                   containerName,
+        int                                                          size,
+        ::ContainerCategory                                          containerCategory,
+        ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry>        creativeItemRegistry,
+        bool                                                         doExpandoGroups,
+        bool                                                         filter,
+        ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
+    );
+
+    MCNAPI_C void _refreshContainer(bool fullRefresh);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::FullContainerName const&                                   containerName,
+        int                                                          size,
+        ::ContainerCategory                                          containerCategory,
+        ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry>        creativeItemRegistry,
+        bool                                                         doExpandoGroups,
+        bool                                                         filter,
+        ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $containerContentChanged(int);
 
+    MCNAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
+
+    MCNAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
+
+    MCNAPI void $refreshContainer(bool fullRefresh);
+
+    MCNAPI int $getContainerSize() const;
+
+    MCNAPI int $getFilteredContainerSize() const;
+
+    MCNAPI bool $isExpanableItemFiltered(int index) const;
+
+    MCNAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
+
+    MCNAPI void $_init();
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -18,27 +18,51 @@ class ResourcePackClientResponsePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::set<::std::string>> mDownloadingPacks;
-    ::ll::TypedStorage<1, 1, ::ResourcePackResponse>     mResponse;
+    ::ll::UntypedStorage<8, 16> mUnk70c76c;
+    ::ll::UntypedStorage<1, 1>  mUnke0df5b;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ResourcePackClientResponsePacket& operator=(ResourcePackClientResponsePacket const&);
+    ResourcePackClientResponsePacket(ResourcePackClientResponsePacket const&);
+    ResourcePackClientResponsePacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~ResourcePackClientResponsePacket() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ResourcePackClientResponsePacket() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI_C explicit ResourcePackClientResponsePacket(::ResourcePackResponse response);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI_C void* $ctor(::ResourcePackResponse response);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -51,6 +75,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

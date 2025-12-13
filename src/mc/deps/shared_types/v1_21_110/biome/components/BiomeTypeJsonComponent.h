@@ -24,10 +24,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::BiomeComponentVersion getType() const /*override*/;
 
-    // vIndex: 0
     virtual ~BiomeTypeJsonComponent() /*override*/ = default;
     // NOLINTEND
 

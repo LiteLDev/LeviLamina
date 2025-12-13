@@ -63,16 +63,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WorldGenerator() /*override*/;
 
-    // vIndex: 37
     virtual ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos);
 
-    // vIndex: 38
     virtual bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
 
-    // vIndex: 39
     virtual bool findNearestStructureFeature(
         ::HashedString                  feature,
         ::BlockPos const&               origin,
@@ -81,44 +77,31 @@ public:
         ::std::optional<::HashedString> biomeTag
     );
 
-    // vIndex: 40
     virtual ::StructureFeature* getStructureFeatureOfType(::HashedString type) const;
 
-    // vIndex: 41
     virtual void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
 
-    // vIndex: 42
     virtual void prepareHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>*, bool) = 0;
 
-    // vIndex: 43
     virtual ::BiomeArea getBiomeArea(::BoundingBox const&, uint) const = 0;
 
-    // vIndex: 44
     virtual ::BiomeSource const& getBiomeSource() const = 0;
 
-    // vIndex: 45
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const = 0;
 
-    // vIndex: 46
     virtual ::BlockPos findSpawnPosition() const = 0;
 
-    // vIndex: 16
     virtual void
     postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random) /*override*/;
 
-    // vIndex: 15
     virtual void postProcessMobsAt(::BlockSource& region, ::BoundingBox const& chunkBB) const /*override*/;
 
-    // vIndex: 1
     virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4>) const /*override*/;
 
-    // vIndex: 47
     virtual void debugRender();
 
-    // vIndex: 48
     virtual void propagateCombinedChunkSource(::ChunkSource*);
 
-    // vIndex: 49
     virtual void decorateWorldGenLoadChunk(
         ::Biome const&,
         ::LevelChunk&,
@@ -127,7 +110,6 @@ public:
         ::ChunkPos const&
     ) const = 0;
 
-    // vIndex: 50
     virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const = 0;
     // NOLINTEND
 
@@ -203,6 +185,8 @@ public:
     MCFOLD void $debugRender();
 
     MCFOLD void $propagateCombinedChunkSource(::ChunkSource*);
+
+
     // NOLINTEND
 
 public:

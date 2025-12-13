@@ -15,16 +15,16 @@ class CommandRegistry;
 class CloneCommand : public ::Command {
 public:
     // CloneCommand inner types define
-    enum class MaskMode : int {
-        Replace  = 0,
-        Filtered = 1,
-        Masked   = 2,
-    };
-
     enum class CloneMode : int {
         Normal = 0,
         Force  = 1,
         Move   = 2,
+    };
+
+    enum class MaskMode : int {
+        Replace  = 0,
+        Filtered = 1,
+        Masked   = 2,
     };
 
 public:
@@ -49,10 +49,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    // vIndex: 0
     virtual ~CloneCommand() /*override*/ = default;
     // NOLINTEND
 
@@ -66,6 +64,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
+
     // NOLINTEND
 
 public:

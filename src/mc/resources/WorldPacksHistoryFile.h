@@ -25,15 +25,26 @@ public:
 public:
     // prevent constructor by default
     WorldPacksHistoryFile& operator=(WorldPacksHistoryFile const&);
-    WorldPacksHistoryFile(WorldPacksHistoryFile const&);
     WorldPacksHistoryFile();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C WorldPacksHistoryFile(::WorldPacksHistoryFile const&);
+
     MCNAPI ::WorldPacksHistoryFile::ParseResult initializeFromJson(::Json::Value const& value);
 
+    MCNAPI_C ::WorldPacksHistoryFile& operator=(::WorldPacksHistoryFile&&);
+
+    MCNAPI_C ::Json::Value toJsonValue() const;
+
     MCNAPI ~WorldPacksHistoryFile();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::WorldPacksHistoryFile const&);
     // NOLINTEND
 
 public:

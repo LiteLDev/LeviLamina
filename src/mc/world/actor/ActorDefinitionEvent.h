@@ -37,28 +37,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionEvent(::ActorDefinitionEvent const&);
+    MCNAPI ActorDefinitionEvent(::ActorDefinitionEvent const&);
 
-    MCAPI void _evaluateGroups(
+    MCNAPI void _evaluateGroups(
         ::Actor&                                  entity,
         ::std::vector<::ActorDefinitionModifier>& modifications,
         ::VariantParameterListConst const&        list
     ) const;
 
-    MCAPI ::ActorDefinitionEvent& operator=(::ActorDefinitionEvent const&);
+    MCNAPI ::ActorDefinitionEvent& operator=(::ActorDefinitionEvent const&);
 
-    MCAPI ~ActorDefinitionEvent();
+    MCNAPI ~ActorDefinitionEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionEvent const&);
+    MCNAPI void* $ctor(::ActorDefinitionEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

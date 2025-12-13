@@ -11,13 +11,10 @@ struct ParticleCurveCatmullRom : public ::SharedTypes::v1_20_80::ParticleCurveSi
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual uint64 _getMinCurveNodesAllowed() /*override*/;
 
-    // vIndex: 2
     virtual uint64 _getMaxCurveNodesAllowed() /*override*/;
 
-    // vIndex: 0
     virtual ~ParticleCurveCatmullRom() /*override*/ = default;
     // NOLINTEND
 
@@ -27,6 +24,8 @@ public:
     MCNAPI uint64 $_getMinCurveNodesAllowed();
 
     MCNAPI uint64 $_getMaxCurveNodesAllowed();
+
+
     // NOLINTEND
 
 public:

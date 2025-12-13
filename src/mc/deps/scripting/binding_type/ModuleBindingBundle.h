@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ModuleBindingBundle(::Scripting::ModuleBindingBundle&&);
+    MCNAPI_S ModuleBindingBundle(::Scripting::ModuleBindingBundle&&);
 
     MCNAPI ~ModuleBindingBundle();
     // NOLINTEND
@@ -37,7 +37,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::ModuleBindingBundle&&);
+    MCNAPI_S void* $ctor(::Scripting::ModuleBindingBundle&&);
     // NOLINTEND
 
 public:

@@ -22,22 +22,22 @@ class PillagerOutpostFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int const>                     OUTPOST_SPACING;
-    ::ll::TypedStorage<4, 4, int const>                     MIN_OUTPOST_SEPARATION;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
+    ::ll::UntypedStorage<4, 4>  mUnk2efe6c;
+    ::ll::UntypedStorage<4, 4>  mUnk52e76e;
+    ::ll::UntypedStorage<8, 24> mUnkc8f87c;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    PillagerOutpostFeature& operator=(PillagerOutpostFeature const&);
+    PillagerOutpostFeature(PillagerOutpostFeature const&);
     PillagerOutpostFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
 
-    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -48,7 +48,6 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
-    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -58,13 +57,10 @@ public:
         ::Dimension const&
     ) /*override*/;
 
-    // vIndex: 1
     virtual bool shouldAddHardcodedSpawnAreas() const /*override*/;
 
-    // vIndex: 2
     virtual bool shouldPostProcessMobs() const /*override*/;
 
-    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension& generator,
         ::BiomeSource const&,
@@ -73,7 +69,6 @@ public:
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~PillagerOutpostFeature() /*override*/ = default;
     // NOLINTEND
 
@@ -124,6 +119,8 @@ public:
         ::ChunkPos const& lc,
         ::IPreliminarySurfaceProvider const&
     );
+
+
     // NOLINTEND
 
 public:

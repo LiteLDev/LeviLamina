@@ -34,8 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getRandomTime(::Actor& actor);
+    MCNAPI int getRandomTime(::Actor& actor);
 
-    MCAPI ::TimerComponent& operator=(::TimerComponent&&);
+    MCNAPI ::TimerComponent& operator=(::TimerComponent&&);
     // NOLINTEND
 };

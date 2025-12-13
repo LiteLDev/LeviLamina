@@ -2,6 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/model/geom/QuadUVRotation.h"
+
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class TextureOffset;
+class Vec2;
+class Vec3;
+class VertexPT;
+namespace mce { class Color; }
+class Tessellator;
+// clang-format on
+
 class Cube {
 public:
     // Cube inner types declare
@@ -46,4 +60,71 @@ public:
     Cube& operator=(Cube const&);
     Cube(Cube const&);
     Cube();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C Cube(::Cube&&);
+
+    MCNAPI_C Cube(
+        ::Vec3 const&                              point,
+        ::Vec3 const&                              extents,
+        float                                      growAmount,
+        bool                                       shouldMirror,
+        ::std::array<::Cube::FaceUVData, 6> const& faceUVData,
+        ::Vec2 const&                              inTexExtents,
+        ::mce::Color const&                        color
+    );
+
+    MCNAPI_C Cube(
+        ::Vec3 const&          point,
+        ::Vec3 const&          extents,
+        float                  growAmount,
+        bool                   shouldMirror,
+        ::Vec2 const&          inTexExtents,
+        ::TextureOffset const& inTexOffs,
+        ::mce::Color const&    color
+    );
+
+    MCNAPI_C void compile(::Tessellator& t) const;
+
+    MCNAPI_C void expandAABB(::AABB& aabb) const;
+
+    MCNAPI_C void
+    setQuad(uchar facing, float u0, float v0, float u1, float v1, ::VertexPT* vertices, ::QuadUVRotation uvRotation);
+
+    MCNAPI_C ~Cube();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::Cube&&);
+
+    MCNAPI_C void* $ctor(
+        ::Vec3 const&                              point,
+        ::Vec3 const&                              extents,
+        float                                      growAmount,
+        bool                                       shouldMirror,
+        ::std::array<::Cube::FaceUVData, 6> const& faceUVData,
+        ::Vec2 const&                              inTexExtents,
+        ::mce::Color const&                        color
+    );
+
+    MCNAPI_C void* $ctor(
+        ::Vec3 const&          point,
+        ::Vec3 const&          extents,
+        float                  growAmount,
+        bool                   shouldMirror,
+        ::Vec2 const&          inTexExtents,
+        ::TextureOffset const& inTexOffs,
+        ::mce::Color const&    color
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

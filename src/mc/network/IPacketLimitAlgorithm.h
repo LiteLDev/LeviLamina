@@ -9,13 +9,10 @@ class IPacketLimitAlgorithm {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IPacketLimitAlgorithm() = default;
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::IPacketLimitAlgorithm> copy() const = 0;
 
-    // vIndex: 2
     virtual uint checkPacket(::MinecraftPacketIds) = 0;
     // NOLINTEND
 

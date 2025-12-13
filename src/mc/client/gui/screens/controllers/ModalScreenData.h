@@ -32,6 +32,32 @@ public:
 public:
     // prevent constructor by default
     ModalScreenData& operator=(ModalScreenData const&);
-    ModalScreenData(ModalScreenData const&);
-    ModalScreenData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ModalScreenData();
+
+    MCNAPI_C ModalScreenData(::ModalScreenData&&);
+
+    MCNAPI_C ModalScreenData(::ModalScreenData const&);
+
+    MCNAPI_C ~ModalScreenData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::ModalScreenData&&);
+
+    MCNAPI_C void* $ctor(::ModalScreenData const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

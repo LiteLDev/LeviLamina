@@ -5,15 +5,15 @@
 namespace AmbientSoundInternals {
 // static variables
 // NOLINTBEGIN
-MCAPI char const*& EVENT_NAMES_KEY();
+MCNAPI char const*& EVENT_NAMES_KEY();
 
-MCAPI char const*& EVENT_NAME_DEFAULT();
+MCNAPI char const*& EVENT_NAME_DEFAULT();
 
-MCAPI char const*& EVENT_NAME_KEY();
+MCNAPI char const*& EVENT_NAME_KEY();
 
-MCAPI char const*& RANGE_KEY();
+MCNAPI char const*& RANGE_KEY();
 
-MCAPI char const*& VALUE_KEY();
+MCNAPI char const*& VALUE_KEY();
 // NOLINTEND
 
 } // namespace AmbientSoundInternals

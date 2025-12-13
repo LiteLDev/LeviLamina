@@ -21,6 +21,18 @@ public:
     CredentialsAcquired& operator=(CredentialsAcquired const&);
     CredentialsAcquired(CredentialsAcquired const&);
     CredentialsAcquired();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~CredentialsAcquired();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace edu::auth

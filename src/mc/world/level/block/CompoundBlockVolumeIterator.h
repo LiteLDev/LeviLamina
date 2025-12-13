@@ -14,52 +14,51 @@ class CompoundBlockVolumeIterator : public ::BaseBlockLocationIterator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::CompoundBlockVolume const*> mCompoundVolume;
+    ::ll::UntypedStorage<8, 8> mUnk2ba183;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    CompoundBlockVolumeIterator& operator=(CompoundBlockVolumeIterator const&);
+    CompoundBlockVolumeIterator(CompoundBlockVolumeIterator const&);
     CompoundBlockVolumeIterator();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CompoundBlockVolumeIterator() /*override*/ = default;
 
-    // vIndex: 3
     virtual ::BaseBlockLocationIterator& operator++() /*override*/;
 
-    // vIndex: 4
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 5
     virtual void _begin() /*override*/;
 
-    // vIndex: 6
     virtual void _end() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompoundBlockVolumeIterator(::CompoundBlockVolume const& vol, bool begin);
+    MCNAPI CompoundBlockVolumeIterator(::CompoundBlockVolume const& vol, bool begin);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CompoundBlockVolume const& vol, bool begin);
+    MCNAPI void* $ctor(::CompoundBlockVolume const& vol, bool begin);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI void $_begin();
+    MCNAPI void $_begin();
 
-    MCFOLD void $_end();
+    MCNAPI void $_end();
+
+
     // NOLINTEND
 
 public:

@@ -8,41 +8,41 @@
 
 // auto generated forward declare list
 // clang-format off
-struct MobDescriptor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class SwimWithEntityDefinition : public ::BaseGoalDefinition {
 public:
-    // SwimWithEntityDefinition inner types define
-    using self = ::SwimWithEntityDefinition;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                           mSuccessRate;
-    ::ll::TypedStorage<4, 4, float>                           mChanceToStop;
-    ::ll::TypedStorage<4, 4, float>                           mIntervalRefreshTime;
-    ::ll::TypedStorage<4, 4, float>                           mCatchUpThreshold;
-    ::ll::TypedStorage<4, 4, float>                           mMatchDirectionThreshold;
-    ::ll::TypedStorage<4, 4, float>                           mCatchUpMultiplier;
-    ::ll::TypedStorage<4, 4, float>                           mSpeedMultiplier;
-    ::ll::TypedStorage<4, 4, float>                           mSearchRange;
-    ::ll::TypedStorage<4, 4, float>                           mStopDistance;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetTypes;
+    ::ll::UntypedStorage<4, 4>  mUnk69761f;
+    ::ll::UntypedStorage<4, 4>  mUnkf1369d;
+    ::ll::UntypedStorage<4, 4>  mUnkd52906;
+    ::ll::UntypedStorage<4, 4>  mUnk8dd378;
+    ::ll::UntypedStorage<4, 4>  mUnkdaae3f;
+    ::ll::UntypedStorage<4, 4>  mUnkeca960;
+    ::ll::UntypedStorage<4, 4>  mUnkcf534f;
+    ::ll::UntypedStorage<4, 4>  mUnkf7cf58;
+    ::ll::UntypedStorage<4, 4>  mUnk36a010;
+    ::ll::UntypedStorage<8, 24> mUnk7ce515;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SwimWithEntityDefinition& operator=(SwimWithEntityDefinition const&);
+    SwimWithEntityDefinition(SwimWithEntityDefinition const&);
+    SwimWithEntityDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SwimWithEntityDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::string const&                                                                                     name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SwimWithEntityDefinition>>& root
     );

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/puv/LoadResult.h"
-#include "mc/deps/puv/SlicedLoader.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,28 +15,34 @@ class SpawnGroupDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::ActorSpawnRuleData, nullptr_t, nullptr_t>> mLoader;
+    ::ll::UntypedStorage<8, 192> mUnkff76e9;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SpawnGroupDataLoader& operator=(SpawnGroupDataLoader const&);
+    SpawnGroupDataLoader(SpawnGroupDataLoader const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnGroupDataLoader();
+    MCNAPI SpawnGroupDataLoader();
 
-    MCAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
+    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData>
+    load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
-    MCAPI ~SpawnGroupDataLoader();
+    MCNAPI ~SpawnGroupDataLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

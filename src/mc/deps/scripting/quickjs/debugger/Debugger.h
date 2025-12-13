@@ -34,23 +34,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Debugger() /*override*/ = default;
 
-    // vIndex: 1
     virtual bool attach(
         bool                                      performHandshake,
         ::std::optional<::std::string>            targetModuleUuid,
         ::std::function<void(::std::string_view)> handler
     ) /*override*/;
 
-    // vIndex: 2
     virtual void detach() /*override*/;
 
-    // vIndex: 3
     virtual bool closed() const /*override*/;
 
-    // vIndex: 4
     virtual void pumpMessages() /*override*/;
     // NOLINTEND
 
@@ -90,6 +85,8 @@ public:
     MCNAPI bool $closed() const;
 
     MCNAPI void $pumpMessages();
+
+
     // NOLINTEND
 
 public:

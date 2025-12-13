@@ -13,20 +13,6 @@ public:
     // clang-format on
 
     // CameraTimeComponent inner types define
-    struct ElapsedTime {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk4cdc0e;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ElapsedTime& operator=(ElapsedTime const&);
-        ElapsedTime(ElapsedTime const&);
-        ElapsedTime();
-    };
-
     struct DeltaTime {
     public:
         // member variables
@@ -40,6 +26,20 @@ public:
         DeltaTime& operator=(DeltaTime const&);
         DeltaTime(DeltaTime const&);
         DeltaTime();
+    };
+
+    struct ElapsedTime {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk4cdc0e;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ElapsedTime& operator=(ElapsedTime const&);
+        ElapsedTime(ElapsedTime const&);
+        ElapsedTime();
     };
 
 public:

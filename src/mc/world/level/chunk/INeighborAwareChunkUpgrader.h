@@ -17,14 +17,11 @@ class INeighborAwareChunkUpgrader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~INeighborAwareChunkUpgrader() = default;
 
-    // vIndex: 1
     virtual ::NeighborAwareBlockUpdateType
     getUpdateType(::Block const&, ::NeighborAwareBlockUpgradeVersionType) const = 0;
 
-    // vIndex: 2
     virtual void doLevelChunkNeighborAwareUpgrade(
         ::NeighborAwareBlockUpdateType,
         ::BlockSource&,

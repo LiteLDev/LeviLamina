@@ -14,23 +14,24 @@ struct FileInfo;
 class IFileChunkDownloader {
 public:
     // IFileChunkDownloader inner types define
-    using WriteCompleteCallback = ::std::function<void(uint64, bool)>;
-
     using DataCallback =
         ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>;
 
     using EndCallback = ::std::function<void(::DownloaderState)>;
 
+    using WriteCompleteCallback = ::std::function<void(uint64, bool)>;
+
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~IFileChunkDownloader() = default;
+#else // LL_PLAT_C
+    virtual ~IFileChunkDownloader();
+#endif
 
-    // vIndex: 1
     virtual void update() = 0;
 
-    // vIndex: 2
     virtual void initRealmsFileDownloader(
         ::std::string const&,
         int const,
@@ -41,7 +42,6 @@ public:
         ::std::function<void(::DownloaderResult)>
     ) = 0;
 
-    // vIndex: 3
     virtual void initFileDownloader(
         ::std::string const&,
         ::std::string const&,
@@ -52,31 +52,43 @@ public:
         ::std::function<void(::DownloaderResult)>
     ) = 0;
 
-    // vIndex: 4
     virtual void downloadFile(
         ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>,
         ::std::function<void(::DownloaderState)>
     ) = 0;
 
-    // vIndex: 5
     virtual bool canCancelDownload() const = 0;
 
-    // vIndex: 6
     virtual void cancelDownload() = 0;
 
-    // vIndex: 7
     virtual uint64 getDownloadTotalSize() const = 0;
 
-    // vIndex: 8
     virtual uint64 getDownloadReceivedSize() const = 0;
 
-    // vIndex: 9
     virtual float getDownloadProgress() const = 0;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI_C static ::std::add_lvalue_reference_t<char const* const[]> DownloaderResultStrings();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

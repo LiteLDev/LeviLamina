@@ -31,32 +31,6 @@ public:
     // clang-format on
 
     // CallbackDeferrer inner types define
-    class ScopedDeferrer {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkb10993;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ScopedDeferrer& operator=(ScopedDeferrer const&);
-        ScopedDeferrer(ScopedDeferrer const&);
-        ScopedDeferrer();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ScopedDeferrer();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
     struct Error {
     public:
         // member variables
@@ -75,6 +49,32 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Error();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    class ScopedDeferrer {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkb10993;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ScopedDeferrer& operator=(ScopedDeferrer const&);
+        ScopedDeferrer(ScopedDeferrer const&);
+        ScopedDeferrer();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~ScopedDeferrer();
         // NOLINTEND
 
     public:
@@ -128,75 +128,54 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::dcsctp::SendPacketStatus SendPacketWithStatus(::rtc::ArrayView<uchar const> data) /*override*/;
 
-    // vIndex: 4
     virtual ::std::unique_ptr<::dcsctp::Timeout>
     CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision) /*override*/;
 
-    // vIndex: 5
     virtual ::dcsctp::TimeMs TimeMillis() /*override*/;
 
-    // vIndex: 6
     virtual ::webrtc::Timestamp Now() /*override*/;
 
-    // vIndex: 7
     virtual uint GetRandomInt(uint low, uint high) /*override*/;
 
-    // vIndex: 9
     virtual void OnMessageReceived(::dcsctp::DcSctpMessage message) /*override*/;
 
-    // vIndex: 10
     virtual void OnError(::dcsctp::ErrorKind error, ::std::string_view message) /*override*/;
 
-    // vIndex: 11
     virtual void OnAborted(::dcsctp::ErrorKind error, ::std::string_view message) /*override*/;
 
-    // vIndex: 12
     virtual void OnConnected() /*override*/;
 
-    // vIndex: 13
     virtual void OnClosed() /*override*/;
 
-    // vIndex: 14
     virtual void OnConnectionRestarted() /*override*/;
 
-    // vIndex: 15
     virtual void OnStreamsResetFailed(
         ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams,
         ::std::string_view                                                           reason
     ) /*override*/;
 
-    // vIndex: 16
     virtual void OnStreamsResetPerformed(
         ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
     ) /*override*/;
 
-    // vIndex: 17
     virtual void OnIncomingStreamsReset(
         ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
     ) /*override*/;
 
-    // vIndex: 18
     virtual void OnBufferedAmountLow(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) /*override*/;
 
-    // vIndex: 19
     virtual void OnTotalBufferedAmountLow() /*override*/;
 
-    // vIndex: 21
     virtual void OnLifecycleMessageExpired(::dcsctp::LifecycleId lifecycle_id, bool maybe_delivered) /*override*/;
 
-    // vIndex: 20
     virtual void OnLifecycleMessageFullySent(::dcsctp::LifecycleId lifecycle_id) /*override*/;
 
-    // vIndex: 22
     virtual void OnLifecycleMessageDelivered(::dcsctp::LifecycleId lifecycle_id) /*override*/;
 
-    // vIndex: 23
     virtual void OnLifecycleEnd(::dcsctp::LifecycleId lifecycle_id) /*override*/;
 
-    // vIndex: 0
     virtual ~CallbackDeferrer() /*override*/;
     // NOLINTEND
 
@@ -263,6 +242,8 @@ public:
     MCNAPI void $OnLifecycleMessageDelivered(::dcsctp::LifecycleId lifecycle_id);
 
     MCNAPI void $OnLifecycleEnd(::dcsctp::LifecycleId lifecycle_id);
+
+
     // NOLINTEND
 
 public:

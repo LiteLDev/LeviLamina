@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Scheduler;
+class TaskResult;
+class WorkerPool;
+// clang-format on
+
 class WatchdogTimer {
 public:
     // member variables
@@ -23,4 +30,38 @@ public:
     WatchdogTimer& operator=(WatchdogTimer const&);
     WatchdogTimer(WatchdogTimer const&);
     WatchdogTimer();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C WatchdogTimer(
+        ::WorkerPool&                                              workerPool,
+        ::Scheduler&                                               scheduler,
+        ::std::chrono::nanoseconds                                 timeout,
+        bool                                                       startPaused,
+        ::std::function<::std::chrono::steady_clock::time_point()> timeoutCallback,
+        ::std::chrono::nanoseconds                                 deadline,
+        bool                                                       assertOnDeadline
+    );
+
+    MCNAPI_C void _queueTaskWithoutLock();
+
+    MCNAPI_C ::TaskResult _watchdogTimerThreadRoutine();
+
+    MCNAPI_C void terminateWatchdogTimer();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::WorkerPool&                                              workerPool,
+        ::Scheduler&                                               scheduler,
+        ::std::chrono::nanoseconds                                 timeout,
+        bool                                                       startPaused,
+        ::std::function<::std::chrono::steady_clock::time_point()> timeoutCallback,
+        ::std::chrono::nanoseconds                                 deadline,
+        bool                                                       assertOnDeadline
+    );
+    // NOLINTEND
 };

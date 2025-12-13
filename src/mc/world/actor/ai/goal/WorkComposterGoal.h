@@ -18,30 +18,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 18
     virtual void useWorkstation() /*override*/;
 
-    // vIndex: 0
     virtual ~WorkComposterGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _tryCompostItems();
+    MCNAPI bool _tryCompostItems();
 
-    MCAPI bool _tryEmptyComposter();
+    MCNAPI bool _tryEmptyComposter();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $useWorkstation();
+    MCNAPI void $useWorkstation();
+
+
     // NOLINTEND
 
 public:

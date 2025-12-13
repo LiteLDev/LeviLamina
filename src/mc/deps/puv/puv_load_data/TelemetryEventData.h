@@ -59,6 +59,8 @@ public:
 
     MCNAPI void addLoadTime(::PuvLoadData::LoadResultWithTiming const& loadTime);
 
+    MCNAPI_C void tryAddPackName(::std::string const& packName);
+
     MCNAPI ~TelemetryEventData();
     // NOLINTEND
 

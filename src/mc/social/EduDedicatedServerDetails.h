@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/Result.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace Social {
 
 struct EduDedicatedServerDetails {
@@ -27,6 +35,24 @@ public:
     EduDedicatedServerDetails& operator=(EduDedicatedServerDetails const&);
     EduDedicatedServerDetails(EduDedicatedServerDetails const&);
     EduDedicatedServerDetails();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::Bedrock::Result<void> fromJsonValue(::Json::Value const& details);
+
+    MCNAPI_C ::Social::EduDedicatedServerDetails& operator=(::Social::EduDedicatedServerDetails&&);
+
+    MCNAPI_C ::Json::Value toJsonValue() const;
+
+    MCNAPI_C ~EduDedicatedServerDetails();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Social

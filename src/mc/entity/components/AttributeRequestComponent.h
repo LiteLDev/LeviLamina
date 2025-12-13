@@ -12,6 +12,21 @@ public:
     // clang-format on
 
     // AttributeRequestComponent inner types define
+    struct AddBuffModifier {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk960a83;
+        ::ll::UntypedStorage<4, 4> mUnkb25e71;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        AddBuffModifier& operator=(AddBuffModifier const&);
+        AddBuffModifier(AddBuffModifier const&);
+        AddBuffModifier();
+    };
+
     struct AddModifier {
     public:
         // member variables
@@ -29,13 +44,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~AddModifier();
+        MCNAPI ~AddModifier();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -56,29 +71,14 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~RemoveModifier();
+        MCNAPI ~RemoveModifier();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
-    };
-
-    struct AddBuffModifier {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk960a83;
-        ::ll::UntypedStorage<4, 4> mUnkb25e71;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        AddBuffModifier& operator=(AddBuffModifier const&);
-        AddBuffModifier(AddBuffModifier const&);
-        AddBuffModifier();
     };
 
     using Variant = ::std::variant<

@@ -88,70 +88,48 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Port() /*override*/;
 
-    // vIndex: 1
     virtual ::webrtc::IceCandidateType Type() const /*override*/;
 
-    // vIndex: 2
     virtual ::rtc::Network const* Network() const /*override*/;
 
-    // vIndex: 4
     virtual ::cricket::IceRole GetIceRole() const /*override*/;
 
-    // vIndex: 3
     virtual void SetIceRole(::cricket::IceRole role) /*override*/;
 
-    // vIndex: 5
     virtual void SetIceTiebreaker(uint64 tiebreaker) /*override*/;
 
-    // vIndex: 6
     virtual uint64 IceTiebreaker() const /*override*/;
 
-    // vIndex: 7
     virtual bool SharedSocket() const /*override*/;
 
-    // vIndex: 25
     virtual ::webrtc::TaskQueueBase* thread() /*override*/;
 
-    // vIndex: 26
     virtual ::rtc::PacketSocketFactory* socket_factory() const /*override*/;
 
-    // vIndex: 32
     virtual ::std::string const& content_name() const /*override*/;
 
-    // vIndex: 31
     virtual bool send_retransmit_count_attribute() const /*override*/;
 
-    // vIndex: 29
     virtual uint generation() const /*override*/;
 
-    // vIndex: 30
     virtual void set_generation(uint generation) /*override*/;
 
-    // vIndex: 16
     virtual ::std::vector<::cricket::Candidate> const& Candidates() const /*override*/;
 
-    // vIndex: 19
     virtual void SubscribePortDestroyed(::std::function<void(::cricket::PortInterface*)> callback) /*override*/;
 
-    // vIndex: 10
     virtual ::cricket::Connection* GetConnection(::rtc::SocketAddress const& remote_addr) /*override*/;
 
-    // vIndex: 23
     virtual void DestroyConnection(::cricket::Connection* conn) /*override*/;
 
-    // vIndex: 24
     virtual void DestroyConnectionAsync(::cricket::Connection* conn) /*override*/;
 
-    // vIndex: 41
     virtual bool HandleIncomingPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet);
 
-    // vIndex: 42
     virtual bool CanHandleIncomingPacketsFrom(::rtc::SocketAddress const&) const;
 
-    // vIndex: 18
     virtual void SendBindingErrorResponse(
         ::cricket::StunMessage*     message,
         ::rtc::SocketAddress const& addr,
@@ -159,54 +137,40 @@ public:
         ::std::string_view          reason
     ) /*override*/;
 
-    // vIndex: 27
     virtual ::std::string const& user_agent() /*override*/;
 
-    // vIndex: 28
     virtual ::rtc::ProxyInfo const& proxy() /*override*/;
 
-    // vIndex: 20
     virtual void EnablePortPackets() /*override*/;
 
-    // vIndex: 21
     virtual ::std::string ToString() const /*override*/;
 
-    // vIndex: 37
     virtual bool ParseStunUsername(
         ::cricket::StunMessage const* stun_msg,
         ::std::string*                local_ufrag,
         ::std::string*                remote_ufrag
     ) const /*override*/;
 
-    // vIndex: 38
     virtual ::std::string CreateStunUsername(::std::string_view remote_username) const /*override*/;
 
-    // vIndex: 39
     virtual bool MaybeIceRoleConflict(
         ::rtc::SocketAddress const& addr,
         ::cricket::IceMessage*      stun_msg,
         ::std::string_view          remote_ufrag
     ) /*override*/;
 
-    // vIndex: 43
     virtual void OnSentPacket(::rtc::AsyncPacketSocket*, ::rtc::SentPacket const&) = 0;
 
-    // vIndex: 33
     virtual void AddPrflxCandidate(::cricket::Candidate const& local) /*override*/;
 
-    // vIndex: 40
     virtual short network_cost() const /*override*/;
 
-    // vIndex: 22
     virtual void GetStunStats(::std::optional<::cricket::StunStats>* stats) /*override*/;
 
-    // vIndex: 34
     virtual void UpdateNetworkCost() /*override*/;
 
-    // vIndex: 44
     virtual void PostAddAddress(bool is_final);
 
-    // vIndex: 36
     virtual bool GetStunMessage(
         char const*                               data,
         uint64                                    size,
@@ -215,10 +179,8 @@ public:
         ::std::string*                            out_username
     ) /*override*/;
 
-    // vIndex: 35
     virtual ::rtc::DiffServCodePoint StunDscpValue() const /*override*/;
 
-    // vIndex: 45
     virtual void HandleConnectionDestroyed(::cricket::Connection* conn);
     // NOLINTEND
 
@@ -439,6 +401,8 @@ public:
     MCNAPI ::rtc::DiffServCodePoint $StunDscpValue() const;
 
     MCNAPI void $HandleConnectionDestroyed(::cricket::Connection* conn);
+
+
     // NOLINTEND
 
 public:

@@ -15,24 +15,30 @@ class WaitDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>            mDuration;
-    ::ll::TypedStorage<8, 32, ::std::string> mDurationId;
+    ::ll::UntypedStorage<4, 4>  mUnkd96fe0;
+    ::ll::UntypedStorage<8, 32> mUnka62b49;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WaitDefinition& operator=(WaitDefinition const&);
+    WaitDefinition(WaitDefinition const&);
+    WaitDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
-    // vIndex: 0
     virtual ~WaitDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+
+
     // NOLINTEND
 
 public:

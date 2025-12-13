@@ -11,6 +11,6 @@ class TagsComponentBase {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _writeAdditionalSaveData(::CompoundTag& tag, ::std::vector<::std::string> const& componentTags);
+    MCNAPI static void _writeAdditionalSaveData(::CompoundTag& tag, ::std::vector<::std::string> const& componentTags);
     // NOLINTEND
 };

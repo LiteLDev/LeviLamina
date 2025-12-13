@@ -39,25 +39,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Trade2ContainerManagerModel() /*override*/ = default;
 
-    // vIndex: 7
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    // vIndex: 8
     virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
 
-    // vIndex: 9
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    // vIndex: 19
     virtual bool isValid(float pickRange) /*override*/;
 
-    // vIndex: 13
     virtual void broadcastChanges() /*override*/;
 
-    // vIndex: 20
     virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
@@ -67,6 +60,18 @@ public:
     MCAPI Trade2ContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
 
     MCFOLD ::Actor* getEntity() const;
+
+    MCAPI_C int getEntityMaxTradeTier() const;
+
+    MCAPI_C int getEntityTradeTier() const;
+
+    MCAPI_C ::std::vector<int> getNumberOfTradesByTier() const;
+
+    MCAPI_C int getTradeExpForCurrentRequirement(uint currentExp) const;
+
+    MCAPI_C int getTradeExpToNextRequirement(uint currentExp) const;
+
+    MCAPI_C void setSelectedTrade(int index);
     // NOLINTEND
 
 public:
@@ -89,6 +94,8 @@ public:
     MCFOLD void $broadcastChanges();
 
     MCAPI ::ContainerScreenContext $_postInit();
+
+
     // NOLINTEND
 
 public:

@@ -36,9 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ConstraintDescription(::cereal::internal::ConstraintDescription const&);
-
     MCNAPI ConstraintDescription(::cereal::internal::ConstraintDescription&&);
+
+    MCNAPI ConstraintDescription(::cereal::internal::ConstraintDescription const&);
 
     MCNAPI void merge(::cereal::internal::ConstraintDescription const& other);
 
@@ -54,9 +54,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::internal::ConstraintDescription const&);
-
     MCNAPI void* $ctor(::cereal::internal::ConstraintDescription&&);
+
+    MCNAPI void* $ctor(::cereal::internal::ConstraintDescription const&);
     // NOLINTEND
 
 public:

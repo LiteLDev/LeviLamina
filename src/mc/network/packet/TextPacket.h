@@ -40,19 +40,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TextPacket() /*override*/;
 
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
@@ -94,6 +89,8 @@ public:
 
     MCAPI static ::TextPacket
     createJukeboxPopup(::std::string const& message, ::std::vector<::std::string> const& params);
+
+    MCAPI_C static ::TextPacket createRaw(::std::string const& raw);
 
     MCAPI static ::TextPacket createRawJsonObjectMessage(::std::string const& rawJson);
 
@@ -170,6 +167,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

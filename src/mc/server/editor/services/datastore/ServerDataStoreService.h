@@ -25,16 +25,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ServerDataStoreService() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> _handleEvents(
         ::HashedString const& dataTag,
         ::Editor::DataStore::EventType,
@@ -43,7 +39,6 @@ public:
         bool
     ) /*override*/;
 
-    // vIndex: 8
     virtual ::Json::Value
     _getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const /*override*/;
     // NOLINTEND
@@ -77,6 +72,8 @@ public:
 
     MCNAPI ::Json::Value
     $_getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const;
+
+
     // NOLINTEND
 
 public:

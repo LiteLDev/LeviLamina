@@ -23,7 +23,6 @@ class ScriptBreathableComponent
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptBreathableComponent() /*override*/ = default;
     // NOLINTEND
 

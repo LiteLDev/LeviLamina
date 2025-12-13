@@ -22,7 +22,6 @@ struct OnUse : public ::ItemComponent,
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~OnUse() /*override*/ = default;
     // NOLINTEND
 

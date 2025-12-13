@@ -17,13 +17,10 @@ class ComplexItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ComplexItem() /*override*/ = default;
 
-    // vIndex: 60
     virtual bool isComplex() const /*override*/;
 
-    // vIndex: 124
     virtual ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const;
     // NOLINTEND
 
@@ -33,6 +30,8 @@ public:
     MCFOLD bool $isComplex() const;
 
     MCFOLD ::std::unique_ptr<::Packet> $getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const;
+
+
     // NOLINTEND
 
 public:

@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ResourcePackChunkRequestPacketPayload& operator=(::ResourcePackChunkRequestPacketPayload&&);
+    MCNAPI ::ResourcePackChunkRequestPacketPayload& operator=(::ResourcePackChunkRequestPacketPayload&&);
 
-    MCAPI ~ResourcePackChunkRequestPacketPayload();
+    MCNAPI ~ResourcePackChunkRequestPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

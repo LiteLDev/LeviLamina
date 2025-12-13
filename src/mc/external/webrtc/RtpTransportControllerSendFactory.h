@@ -17,11 +17,9 @@ class RtpTransportControllerSendFactory : public ::webrtc::RtpTransportControlle
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::RtpTransportControllerSendInterface>
     Create(::webrtc::RtpTransportConfig const& config) /*override*/;
 
-    // vIndex: 0
     virtual ~RtpTransportControllerSendFactory() /*override*/ = default;
     // NOLINTEND
 
@@ -30,6 +28,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::webrtc::RtpTransportControllerSendInterface>
     $Create(::webrtc::RtpTransportConfig const& config);
+
+
     // NOLINTEND
 
 public:

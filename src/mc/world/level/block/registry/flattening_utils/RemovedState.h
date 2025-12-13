@@ -14,22 +14,24 @@ class RemovedState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string const> mName;
+    ::ll::UntypedStorage<8, 32> mUnk40dd8d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RemovedState& operator=(RemovedState const&);
+    RemovedState(RemovedState const&);
+    RemovedState();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RemovedState() = default;
 
-    // vIndex: 1
     virtual void addValue(::CompoundTag const&) = 0;
 
-    // vIndex: 2
     virtual void match(::CompoundTagUpdaterNodeBuilder&, uint64) const = 0;
 
-    // vIndex: 3
     virtual uint64 valueCount() const = 0;
     // NOLINTEND
 

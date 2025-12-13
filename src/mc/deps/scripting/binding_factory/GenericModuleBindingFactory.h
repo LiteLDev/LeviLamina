@@ -90,26 +90,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~GenericModuleBindingFactory() /*override*/;
 
-    // vIndex: 1
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 2
     virtual ::mce::UUID getUUID() const /*override*/;
 
-    // vIndex: 3
     virtual bool hasAlias(::std::string const& alias) const /*override*/;
 
-    // vIndex: 4
     virtual ::std::vector<::Scripting::Version> getSupportedVersions() const /*override*/;
 
-    // vIndex: 5
     virtual ::std::vector<::Scripting::ModuleDependency> getDependencies(::Scripting::Version version) const
         /*override*/;
 
-    // vIndex: 6
     virtual ::std::optional<::Scripting::ModuleBinding> createModuleBinding(
         ::Scripting::Version                               version,
         ::std::optional<::Scripting::ContextConfig> const& config
@@ -177,6 +170,8 @@ public:
 
     MCNAPI ::std::optional<::Scripting::ModuleBinding>
     $createModuleBinding(::Scripting::Version version, ::std::optional<::Scripting::ContextConfig> const& config);
+
+
     // NOLINTEND
 
 public:

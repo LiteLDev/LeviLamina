@@ -14,13 +14,10 @@ class EvocationIllager : public ::HumanoidMonster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 154
     virtual bool isAlliedTo(::Mob* other) /*override*/;
 
-    // vIndex: 156
     virtual int getArmorValue() const /*override*/;
 
-    // vIndex: 8
     virtual ~EvocationIllager() /*override*/ = default;
     // NOLINTEND
 
@@ -30,6 +27,8 @@ public:
     MCAPI bool $isAlliedTo(::Mob* other);
 
     MCFOLD int $getArmorValue() const;
+
+
     // NOLINTEND
 
 public:

@@ -31,10 +31,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::LootPoolEntry const& _getEntry() const /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptLootTableEntry() /*override*/ = default;
     // NOLINTEND
 
@@ -54,6 +52,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::LootPoolEntry const& $_getEntry() const;
+
+
     // NOLINTEND
 
 public:

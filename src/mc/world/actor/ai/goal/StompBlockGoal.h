@@ -24,71 +24,58 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 17
     virtual bool findTargetBlock() /*override*/;
 
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string&) const /*override*/;
 
-    // vIndex: 11
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
-    // vIndex: 14
     virtual void _moveToBlock() /*override*/;
 
-    // vIndex: 13
     virtual bool _canReach(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 18
     virtual void _createBreakProgressParticles(::Level&, ::BlockSource&, ::BlockPos);
 
-    // vIndex: 19
     virtual void _createDestroyParticles(::Level&, ::BlockSource&, ::BlockPos);
 
-    // vIndex: 20
     virtual void _playBreakProgressSound(::Level&, ::BlockSource&, ::BlockPos);
 
-    // vIndex: 21
     virtual void _playDestroySound(::Level&, ::BlockSource&, ::BlockPos);
 
-    // vIndex: 0
     virtual ~StompBlockGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $findTargetBlock();
+    MCNAPI bool $findTargetBlock();
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCFOLD void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void $_moveToBlock();
+    MCNAPI void $_moveToBlock();
 
-    MCAPI bool $_canReach(::BlockPos const& pos);
+    MCNAPI bool $_canReach(::BlockPos const& pos);
+
+
     // NOLINTEND
 };

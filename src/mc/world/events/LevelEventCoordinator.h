@@ -36,32 +36,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelEventCoordinator() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+    MCNAPI void _onGameplayUserAdded(::EntityContext& entity);
 
-    MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod);
+    MCNAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod);
 
-    MCAPI void registerGameRules(::GameRules& gameRules);
+    MCNAPI void registerGameRules(::GameRules& gameRules);
 
-    MCFOLD void registerLevelGameplayHandler(::std::unique_ptr<::LevelGameplayHandler>&& handler);
+    MCNAPI void registerLevelGameplayHandler(::std::unique_ptr<::LevelGameplayHandler>&& handler);
 
-    MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector, bool isClientSide);
+    MCNAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector, bool isClientSide);
 
-    MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCNAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableLevelGameplayEvent<::CoordinatorResult>> event);
+    MCNAPI ::CoordinatorResult sendEvent(::EventRef<::MutableLevelGameplayEvent<::CoordinatorResult>> event);
 
-    MCAPI void sendEvent(::EventRef<::LevelGameplayEvent<void>> const& event);
+    MCNAPI void sendEvent(::EventRef<::LevelGameplayEvent<void>> const& event);
 
-    MCAPI void sendLevelRemovedActor(::Actor& actor);
+    MCNAPI void sendLevelRemovedActor(::Actor& actor);
 
-    MCAPI void sendLevelWeatherChanged(
+    MCNAPI void sendLevelWeatherChanged(
         ::std::string const& dimension,
         bool                 wasRaining,
         bool                 wasLightning,
@@ -73,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

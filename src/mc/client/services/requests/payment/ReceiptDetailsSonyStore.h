@@ -31,19 +31,39 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual char const* getPath() const /*override*/;
 
-    // vIndex: 2
     virtual ::Json::Value toPostBody() const /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~ReceiptDetailsSonyStore() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ReceiptDetailsSonyStore() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI char const* $getPath() const;
 
+    MCNAPI ::Json::Value $toPostBody() const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

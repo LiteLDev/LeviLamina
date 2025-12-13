@@ -6,7 +6,6 @@ class Control {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Control() = default;
     // NOLINTEND
 

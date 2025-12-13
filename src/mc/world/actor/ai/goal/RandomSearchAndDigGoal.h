@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/FloatRange.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/actor/ai/util/ExpiringTick.h"
@@ -14,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionTrigger;
 class BlockDescriptor;
 class BlockSource;
 class EntityContext;
@@ -30,86 +29,6 @@ public:
     // clang-format on
 
     // RandomSearchAndDigGoal inner types define
-    class Definition : public ::BaseGoalDefinition {
-    public:
-        // Definition inner types define
-        using self = ::RandomSearchAndDigGoal::Definition;
-
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                             mSpeedMod;
-        ::ll::TypedStorage<4, 4, float>                             mGoalRadius;
-        ::ll::TypedStorage<4, 4, float>                             mDigSpawnItemPosOffset;
-        ::ll::TypedStorage<4, 4, float>                             mDigSpawnItemAfterSeconds;
-        ::ll::TypedStorage<4, 4, int>                               mFindWantedPosRetries;
-        ::ll::TypedStorage<4, 4, int>                               mSearchRangeXZ;
-        ::ll::TypedStorage<4, 4, int>                               mSearchRangeY;
-        ::ll::TypedStorage<4, 4, float>                             mTargetDigPositionOffset;
-        ::ll::TypedStorage<4, 8, ::FloatRange>                      mDiggingDurationRange;
-        ::ll::TypedStorage<4, 8, ::FloatRange>                      mCooldownRangeSeconds;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnSearchingStartEvent;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnFailDuringSearchingEvent;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnDiggingStartEvent;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnItemFoundEvent;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnFailDuringDiggingEvent;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnSuccessEvent;
-        ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mTargetBlocks;
-        ::ll::TypedStorage<8, 32, ::std::string>                    mItemTable;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Definition(Definition const&);
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~Definition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Definition();
-
-        MCAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
-
-        MCAPI void initialize(::EntityContext& entity, ::RandomSearchAndDigGoal& goal) const;
-
-        MCAPI ::RandomSearchAndDigGoal::Definition& operator=(::RandomSearchAndDigGoal::Definition const&);
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RandomSearchAndDigGoal::Definition>>& root
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
     enum class CanUseOutcome : int {
         Ok                    = 0,
         InCooldown            = 1,
@@ -124,6 +43,81 @@ public:
         Digging   = 1,
         Success   = 2,
         Done      = 3,
+    };
+
+    class Definition : public ::BaseGoalDefinition {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>   mUnk4238e5;
+        ::ll::UntypedStorage<4, 4>   mUnka8d56d;
+        ::ll::UntypedStorage<4, 4>   mUnkfb237e;
+        ::ll::UntypedStorage<4, 4>   mUnk76bbab;
+        ::ll::UntypedStorage<4, 4>   mUnk7ee553;
+        ::ll::UntypedStorage<4, 4>   mUnkabc13c;
+        ::ll::UntypedStorage<4, 4>   mUnk982b6b;
+        ::ll::UntypedStorage<4, 4>   mUnk1a41fe;
+        ::ll::UntypedStorage<4, 8>   mUnk6fd5b8;
+        ::ll::UntypedStorage<4, 8>   mUnk3568bb;
+        ::ll::UntypedStorage<8, 104> mUnka78a58;
+        ::ll::UntypedStorage<8, 104> mUnkb75651;
+        ::ll::UntypedStorage<8, 104> mUnkab4305;
+        ::ll::UntypedStorage<8, 104> mUnk6d29d0;
+        ::ll::UntypedStorage<8, 104> mUnkaa0a4f;
+        ::ll::UntypedStorage<8, 104> mUnk2873e0;
+        ::ll::UntypedStorage<8, 24>  mUnk8c296b;
+        ::ll::UntypedStorage<8, 32>  mUnk75129d;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Definition(Definition const&);
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ~Definition() /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI Definition();
+
+        MCNAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
+
+        MCNAPI void initialize(::EntityContext& entity, ::RandomSearchAndDigGoal& goal) const;
+
+        MCNAPI ::RandomSearchAndDigGoal::Definition& operator=(::RandomSearchAndDigGoal::Definition const&);
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static void buildSchema(
+            ::std::string const& name,
+            ::std::shared_ptr<
+                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RandomSearchAndDigGoal::Definition>>& root
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
     };
 
 public:
@@ -154,58 +148,53 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 0
     virtual ~RandomSearchAndDigGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::RandomSearchAndDigGoal::CanUseOutcome _canUse();
+    MCNAPI ::RandomSearchAndDigGoal::CanUseOutcome _canUse();
 
-    MCAPI void _digUpItems();
+    MCNAPI void _digUpItems();
 
-    MCAPI void _emitDiggingParticles();
+    MCNAPI void _emitDiggingParticles();
 
-    MCAPI ::std::optional<::BlockPos> _findWantedTargetPos() const;
+    MCNAPI ::std::optional<::BlockPos> _findWantedTargetPos() const;
 
-    MCAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos pos) const;
+    MCNAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos pos) const;
 
-    MCAPI void _triggerEvent(::ActorDefinitionTrigger const& eventTrigger) const;
+    MCNAPI void _triggerEvent(::ActorDefinitionTrigger const& eventTrigger) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
+
+
     // NOLINTEND
 
 public:

@@ -33,19 +33,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::cricket::StunAttributeValueType value_type() const /*override*/;
 
-    // vIndex: 2
     virtual void SetOwner(::cricket::StunMessage* owner) /*override*/;
 
-    // vIndex: 3
     virtual bool Read(::rtc::ByteBufferReader* buf) /*override*/;
 
-    // vIndex: 4
     virtual bool Write(::rtc::ByteBufferWriter* buf) const /*override*/;
 
-    // vIndex: 0
     virtual ~StunXorAddressAttribute() /*override*/ = default;
     // NOLINTEND
 
@@ -77,6 +72,8 @@ public:
     MCNAPI bool $Read(::rtc::ByteBufferReader* buf);
 
     MCNAPI bool $Write(::rtc::ByteBufferWriter* buf) const;
+
+
     // NOLINTEND
 
 public:

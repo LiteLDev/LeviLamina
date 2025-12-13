@@ -29,25 +29,30 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>               mMaxOfferFlowerDurationSeconds;
-        ::ll::TypedStorage<4, 4, float>               mChanceToStart;
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-        ::ll::TypedStorage<4, 12, ::Vec3>             mSearchArea;
-        ::ll::TypedStorage<4, 4, float>               mMaxRotationX;
-        ::ll::TypedStorage<4, 4, float>               mMaxHeadRotationY;
+        ::ll::UntypedStorage<4, 4>  mUnkb53867;
+        ::ll::UntypedStorage<4, 4>  mUnk27c5f9;
+        ::ll::UntypedStorage<8, 64> mUnkd106a1;
+        ::ll::UntypedStorage<4, 12> mUnkc20c91;
+        ::ll::UntypedStorage<4, 4>  mUnke4f2cb;
+        ::ll::UntypedStorage<4, 4>  mUnk6ce882;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        OfferFlowerDefinition& operator=(OfferFlowerDefinition const&);
+        OfferFlowerDefinition(OfferFlowerDefinition const&);
+        OfferFlowerDefinition();
 
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~OfferFlowerDefinition() /*override*/ = default;
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
+        MCNAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OfferFlowerGoal::OfferFlowerDefinition>>&
@@ -85,42 +90,37 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 0
     virtual ~OfferFlowerGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
+
+
     // NOLINTEND
 
 public:

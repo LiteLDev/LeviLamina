@@ -11,22 +11,42 @@ class PlayerListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~PlayerListener() = default;
+#else // LL_PLAT_C
+    virtual ~PlayerListener();
+#endif
 
-    // vIndex: 1
-    virtual void onWillChangeDimension(::Player&);
+    virtual void onWillChangeDimension(::Player& player);
 
-    // vIndex: 2
-    virtual void onDimensionChanged(::Player&);
+    virtual void onDimensionChanged(::Player& player);
 
-    // vIndex: 3
-    virtual void onPlayerDestruction(::Player&);
+    virtual void onPlayerDestruction(::Player& player);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $onWillChangeDimension(::Player& player);
 
+    MCNAPI void $onDimensionChanged(::Player& player);
+
+    MCNAPI void $onPlayerDestruction(::Player& player);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

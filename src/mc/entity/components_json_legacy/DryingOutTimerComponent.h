@@ -18,6 +18,12 @@ public:
     // clang-format on
 
     // DryingOutTimerComponent inner types define
+    enum class DryingOutState : int {
+        DryingOut             = 0,
+        ExceededDryingOutTime = 1,
+        StoppedDryingOut      = 2,
+    };
+
     class DryingOutTimerDefinition {
     public:
         // member variables
@@ -58,12 +64,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    };
-
-    enum class DryingOutState : int {
-        DryingOut             = 0,
-        ExceededDryingOutTime = 1,
-        StoppedDryingOut      = 2,
     };
 
 public:

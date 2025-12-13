@@ -21,21 +21,16 @@ class CompoundItem : public ::ChemistryItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 90
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 110
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 111
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 0
     virtual ~CompoundItem() /*override*/ = default;
     // NOLINTEND
 
@@ -49,6 +44,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string _getName(::CompoundType type);
+
+    MCAPI_C static ::std::string getCompoundFormula(::ItemInstance const& instance);
 
     MCAPI static ::CompoundType getCompoundType(::ItemDescriptor const& itemDescriptor);
 
@@ -75,10 +72,12 @@ public:
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+
     // NOLINTEND
 
 public:

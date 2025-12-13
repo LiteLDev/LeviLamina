@@ -10,14 +10,14 @@ struct ActorDataFlagComponent : public ::ActorDataComponentBase<::std::bitset<12
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getStatusFlag(::ActorFlags flag) const;
+    MCNAPI bool getStatusFlag(::ActorFlags flag) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::bitset<126> const& ALL_HIGHER_ONES();
+    MCNAPI static ::std::bitset<126> const& ALL_HIGHER_ONES();
 
-    MCAPI static ::std::bitset<126> const& ALL_LOWER_ONES();
+    MCNAPI static ::std::bitset<126> const& ALL_LOWER_ONES();
     // NOLINTEND
 };

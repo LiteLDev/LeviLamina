@@ -3,11 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/ChanceInformation.h"
-#include "mc/util/IntRange.h"
-#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeTrunk.h"
-#include "mc/world/level/levelgen/feature/helpers/tree_helper/AttachableDecoration.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,28 +20,31 @@ class MangroveTreeTrunk : public ::ITreeTrunk {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                  mBaseHeight;
-    ::ll::TypedStorage<4, 4, int>                                  mTrunkWidth;
-    ::ll::TypedStorage<4, 4, int>                                  mHeightRandA;
-    ::ll::TypedStorage<4, 4, int>                                  mHeightRandB;
-    ::ll::TypedStorage<4, 8, ::IntRange>                           mBranchLength;
-    ::ll::TypedStorage<4, 8, ::IntRange>                           mBranchSteps;
-    ::ll::TypedStorage<4, 12, ::ChanceInformation>                 mBranchChance;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mTrunkBlockDescriptor;
-    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
-    ::ll::TypedStorage<8, 24, ::std::vector<int>>                  mHeightIntervals;
+    ::ll::UntypedStorage<4, 4>   mUnk78fa10;
+    ::ll::UntypedStorage<4, 4>   mUnkaa8a70;
+    ::ll::UntypedStorage<4, 4>   mUnk4f02dd;
+    ::ll::UntypedStorage<4, 4>   mUnk462300;
+    ::ll::UntypedStorage<4, 8>   mUnka4a1d8;
+    ::ll::UntypedStorage<4, 8>   mUnk737bc2;
+    ::ll::UntypedStorage<4, 12>  mUnk5c917f;
+    ::ll::UntypedStorage<8, 184> mUnk89830f;
+    ::ll::UntypedStorage<8, 208> mUnk2307c2;
+    ::ll::UntypedStorage<8, 24>  mUnkfe7711;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MangroveTreeTrunk& operator=(MangroveTreeTrunk const&);
+    MangroveTreeTrunk(MangroveTreeTrunk const&);
+    MangroveTreeTrunk();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MangroveTreeTrunk() /*override*/ = default;
 
-    // vIndex: 2
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
@@ -60,7 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _placeBranch(
+    MCNAPI void _placeBranch(
         ::IBlockWorldGenAPI&       target,
         ::std::vector<::BlockPos>* canopyAttachmentPositions,
         ::Random&                  random,
@@ -79,9 +78,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getTreeHeight(::Random& random) const;
+    MCNAPI int $getTreeHeight(::Random& random) const;
 
-    MCAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,
@@ -90,6 +89,8 @@ public:
         ::TreeHelper::TreeParams const& treeParams,
         ::ITreeCanopy const*            canopy
     ) const;
+
+
     // NOLINTEND
 
 public:

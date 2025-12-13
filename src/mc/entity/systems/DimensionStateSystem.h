@@ -9,7 +9,6 @@ class DimensionStateSystem : public ::ISystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DimensionStateSystem() /*override*/ = default;
     // NOLINTEND
 };

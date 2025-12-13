@@ -20,13 +20,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 8
     virtual ~Phantom() /*override*/ = default;
     // NOLINTEND
 
@@ -56,6 +53,8 @@ public:
     MCAPI void $normalTick();
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
+
+
     // NOLINTEND
 
 public:

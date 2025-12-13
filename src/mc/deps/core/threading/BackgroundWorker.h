@@ -60,13 +60,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BackgroundWorker() /*override*/;
 
-    // vIndex: 1
     virtual bool isAsync() const /*override*/;
 
-    // vIndex: 2
     virtual bool canTaskRunAgain() const /*override*/;
     // NOLINTEND
 
@@ -126,6 +123,8 @@ public:
     MCNAPI bool $isAsync() const;
 
     MCNAPI bool $canTaskRunAgain() const;
+
+
     // NOLINTEND
 
 public:

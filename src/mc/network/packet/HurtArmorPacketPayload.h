@@ -2,15 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
-
 struct HurtArmorPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mCause;
-    ::ll::TypedStorage<4, 4, int>                                     mDmg;
-    ::ll::TypedStorage<4, 4, ::std::bitset<5>>                        mArmorSlots;
+    ::ll::UntypedStorage<4, 4> mUnk4613f6;
+    ::ll::UntypedStorage<4, 4> mUnk45fcc3;
+    ::ll::UntypedStorage<4, 4> mUnke46025;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    HurtArmorPacketPayload& operator=(HurtArmorPacketPayload const&);
+    HurtArmorPacketPayload(HurtArmorPacketPayload const&);
+    HurtArmorPacketPayload();
 };

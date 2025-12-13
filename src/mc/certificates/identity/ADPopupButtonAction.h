@@ -27,4 +27,18 @@ public:
     ADPopupButtonAction& operator=(ADPopupButtonAction const&);
     ADPopupButtonAction(ADPopupButtonAction const&);
     ADPopupButtonAction();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::ADPopupButtonAction& operator=(::ADPopupButtonAction&&);
+
+    MCNAPI_C ~ADPopupButtonAction();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

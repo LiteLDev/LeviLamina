@@ -15,17 +15,17 @@ class DropperBlock : public ::DispenserBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 147
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 0
     virtual ~DropperBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
+
+
     // NOLINTEND
 
 public:

@@ -9,7 +9,6 @@ struct DefaultOverworldBiomeSurfaceFlag : public ::BiomeComponentBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DefaultOverworldBiomeSurfaceFlag() /*override*/ = default;
     // NOLINTEND
 

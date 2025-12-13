@@ -23,22 +23,51 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~SkinInfoData() = default;
+#else // LL_PLAT_C
+    virtual ~SkinInfoData();
+#endif
 
-    // vIndex: 1
     virtual void updateSkin(::SerializedSkin const&, ::mce::Image const*, ::mce::Image const*) = 0;
 
-    // vIndex: 2
     virtual bool hasValidTexture() = 0;
 
-    // vIndex: 3
-    virtual bool validateAndResizeSkinData(::mce::Image&, bool);
+    virtual bool validateAndResizeSkinData(::mce::Image& image, bool isPremium);
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI_C void
+    copySkinPart(::mce::Image& image, int dx1, int dy1, int dx2, int dy2, int sx1, int sy1, int sx2, int sy2);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static bool verifyIsPremiumGeometry(::std::string const& geometryName);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI bool $validateAndResizeSkinData(::mce::Image& image, bool isPremium);
+#endif
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

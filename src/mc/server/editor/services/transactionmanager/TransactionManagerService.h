@@ -49,74 +49,52 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 55
     virtual ::EventResult onEvent(::PlayerDimensionChangeBeforeEvent const&) /*override*/;
 
-    // vIndex: 0
     virtual ~TransactionManagerService() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 1
     virtual void
     addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext) /*override*/;
 
-    // vIndex: 2
     virtual void clearTransactions() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> undo() /*override*/;
 
-    // vIndex: 4
     virtual ::Scripting::Result_deprecated<void> redo() /*override*/;
 
-    // vIndex: 5
     virtual uint64 undoSize() const /*override*/;
 
-    // vIndex: 6
     virtual uint64 redoSize() const /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<bool>
     trackBlockChangeList(::std::vector<::BlockPos> const& locations) /*override*/;
 
-    // vIndex: 8
     virtual ::Scripting::Result_deprecated<bool>
     trackBlockChangeArea(::BlockPos const& from, ::BlockPos const& to) /*override*/;
 
-    // vIndex: 9
     virtual ::Scripting::Result_deprecated<bool> trackBlockChangeVolume(::BlockVolumeBase const& volume) /*override*/;
 
-    // vIndex: 10
     virtual ::Scripting::Result_deprecated<bool>
     addEntityOperation(::Actor* entity, ::Editor::Transactions::EntityOperation::OperationType type) /*override*/;
 
-    // vIndex: 11
     virtual ::Scripting::Result_deprecated<int> commitTrackedChanges() /*override*/;
 
-    // vIndex: 12
     virtual ::Scripting::Result_deprecated<int> discardTrackedChanges() /*override*/;
 
-    // vIndex: 13
     virtual ::Scripting::Result_deprecated<bool> openTransaction(::std::string const& name) /*override*/;
 
-    // vIndex: 14
     virtual ::Scripting::Result_deprecated<bool> commitOpenTransaction() /*override*/;
 
-    // vIndex: 15
     virtual ::Scripting::Result_deprecated<bool> discardOpenTransaction() /*override*/;
 
-    // vIndex: 16
     virtual ::Scripting::Result_deprecated<bool> addUserDefinedOperation(
         ::std::string const&                                                        payload,
         ::std::string const&                                                        operationName,
@@ -124,16 +102,12 @@ public:
         ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo
     ) /*override*/;
 
-    // vIndex: 17
     virtual uint64 pendingOperationsSize() const /*override*/;
 
-    // vIndex: 18
     virtual bool hasOpenTransaction() const /*override*/;
 
-    // vIndex: 19
     virtual void clearAllTransactionData() /*override*/;
 
-    // vIndex: 20
     virtual bool isBusy() const /*override*/;
     // NOLINTEND
 
@@ -216,6 +190,8 @@ public:
     MCNAPI void $clearAllTransactionData();
 
     MCNAPI bool $isBusy() const;
+
+
     // NOLINTEND
 
 public:

@@ -43,16 +43,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TCPConnection() /*override*/;
 
-    // vIndex: 6
     virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) /*override*/;
 
-    // vIndex: 7
     virtual int GetError() /*override*/;
 
-    // vIndex: 8
     virtual void
     OnConnectionRequestResponse(::cricket::StunRequest* request, ::cricket::StunMessage* response) /*override*/;
     // NOLINTEND
@@ -109,6 +105,8 @@ public:
     MCNAPI int $GetError();
 
     MCNAPI void $OnConnectionRequestResponse(::cricket::StunRequest* request, ::cricket::StunMessage* response);
+
+
     // NOLINTEND
 
 public:

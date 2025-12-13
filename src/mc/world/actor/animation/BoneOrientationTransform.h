@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-
 class BoneOrientationTransform {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 36, ::Vec3[3]> mData;
+    ::ll::UntypedStorage<4, 36> mUnkba50ae;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BoneOrientationTransform& operator=(BoneOrientationTransform const&);
+    BoneOrientationTransform(BoneOrientationTransform const&);
+    BoneOrientationTransform();
 };

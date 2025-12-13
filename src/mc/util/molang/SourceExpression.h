@@ -21,68 +21,54 @@ namespace Molang::details {
 
 class SourceExpression : public ::Molang::details::IComplexExpression {
 public:
-    // member variables
-    // NOLINTBEGIN
+// member variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_S
     ::ll::UntypedStorage<8, 144> mUnk33d9ea;
+#else // LL_PLAT_C
+    ::ll::UntypedStorage<8, 152> mUnk33d9ea;
+#endif
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    SourceExpression& operator=(SourceExpression const&);
-    SourceExpression(SourceExpression const&);
     SourceExpression();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::unique_ptr<::Molang::details::IComplexExpression> clone() const /*override*/;
 
-    // vIndex: 2
     virtual ::MolangScriptArg const& evalGeneric(::RenderParams&) const /*override*/;
 
-    // vIndex: 3
     virtual bool isInitialized() const /*override*/;
 
-    // vIndex: 4
     virtual ::Json::Value toJson() const /*override*/;
 
-    // vIndex: 5
     virtual ::std::string getExpressionString() const /*override*/;
 
-    // vIndex: 6
     virtual ::MolangVersion getMolangVersion() const /*override*/;
 
-    // vIndex: 7
     virtual void replaceArrayVariables(
         ::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap
     ) /*override*/;
 
-    // vIndex: 8
     virtual void validateArrayVariables() const /*override*/;
 
-    // vIndex: 9
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 10
     virtual bool isConstantValue() const /*override*/;
 
-    // vIndex: 11
     virtual bool hasVariableAssignments() const /*override*/;
 
-    // vIndex: 12
     virtual ::ExpressionOp getOp() const /*override*/;
 
-    // vIndex: 13
     virtual bool needsToCompile() const /*override*/;
 
-    // vIndex: 14
     virtual ::std::optional<::MolangScriptArg> getValueIfConstant() const /*override*/;
 
-    // vIndex: 15
     virtual ::Molang::details::SourceTree* getSource() /*override*/;
 
-    // vIndex: 0
     virtual ~SourceExpression() /*override*/ = default;
     // NOLINTEND
 
@@ -131,6 +117,8 @@ public:
     MCNAPI ::std::optional<::MolangScriptArg> $getValueIfConstant() const;
 
     MCNAPI ::Molang::details::SourceTree* $getSource();
+
+
     // NOLINTEND
 
 public:

@@ -34,19 +34,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ServerPlayerInputService() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> registerKeyBinding(
         ::HashedString const&               contextId,
         ::HashedString const&               eventId,
@@ -54,33 +49,27 @@ public:
         ::Editor::Input::BindingInfo const& info
     ) /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void>
     unregisterKeyBinding(::HashedString const& contextId, ::HashedString const& eventId) /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> registerMouseBinding(
         ::HashedString const&                contextId,
         ::HashedString const&                eventId,
         ::Editor::Input::MouseBinding const& binding
     ) /*override*/;
 
-    // vIndex: 4
     virtual ::Scripting::Result_deprecated<void>
     unregisterMouseBinding(::HashedString const& contextId, ::HashedString const& eventId) /*override*/;
 
-    // vIndex: 5
     virtual ::Scripting::Result_deprecated<void> updateKeyBindingProcessingState(
         ::HashedString const& contextId,
         ::HashedString const& bindingId,
         ::std::optional<int>  state
     ) /*override*/;
 
-    // vIndex: 6
     virtual ::std::optional<int>
     getKeyBindingProcessingState(::HashedString const& contextId, ::HashedString const& bindingId) const /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> setViewportFocus(bool focused) /*override*/;
     // NOLINTEND
 
@@ -122,6 +111,8 @@ public:
     $getKeyBindingProcessingState(::HashedString const& contextId, ::HashedString const& bindingId) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> $setViewportFocus(bool focused);
+
+
     // NOLINTEND
 
 public:

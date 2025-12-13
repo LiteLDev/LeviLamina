@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Identity { struct AuthToken; }
+// clang-format on
+
 class TenantInfo {
 public:
     // TenantInfo inner types define
@@ -31,4 +36,10 @@ public:
     TenantInfo& operator=(TenantInfo const&);
     TenantInfo(TenantInfo const&);
     TenantInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void updateEntraToken(::Identity::AuthToken const& token, ::TenantInfo::TokenState state);
+    // NOLINTEND
 };

@@ -278,9 +278,15 @@ public:
 
     MCAPI static ::mce::Color const& BLUE();
 
+    MCAPI_C static ::mce::Color const& CYAN();
+
     MCAPI static ::mce::Color const& GREEN();
 
+    MCAPI_C static ::mce::Color const& GREY();
+
     MCAPI static ::mce::Color const& NIL();
+
+    MCAPI_C static ::mce::Color const& ORANGE();
 
     MCAPI static ::mce::Color const& PINK();
 
@@ -308,7 +314,11 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(float r_, float g_, float b_, float a_);
+    MCAPI_C void* $ctor(::glm::vec3 const& color, float a_);
+
+    MCFOLD_C void* $ctor(::mce::Color const& color, float a_);
+
+    MCFOLD void* $ctor(float r_, float g_, float b_, float a_);
     // NOLINTEND
 };
 

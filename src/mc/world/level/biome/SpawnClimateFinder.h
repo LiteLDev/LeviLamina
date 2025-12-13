@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
-
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class DimensionHeightRange;
 struct ClimateParameters;
 struct OverworldNoises3d;
@@ -24,18 +22,24 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 12, ::BlockPos> position;
-        ::ll::TypedStorage<4, 4, int>         iterations;
-        ::ll::TypedStorage<8, 8, int64>       fitness;
+        ::ll::UntypedStorage<4, 12> mUnk51c2d9;
+        ::ll::UntypedStorage<4, 4>  mUnkee84af;
+        ::ll::UntypedStorage<8, 8>  mUnkddab9c;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ResultDetails& operator=(ResultDetails const&);
+        ResultDetails(ResultDetails const&);
+        ResultDetails();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::OverworldNoises3d const&>                mNoiseSampler;
-    ::ll::TypedStorage<8, 8, ::DimensionHeightRange const&>             mDimensionHeightRange;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ClimateParameters> const> mTargetClimates;
+    ::ll::UntypedStorage<8, 8>  mUnk9e17ef;
+    ::ll::UntypedStorage<8, 8>  mUnk849964;
+    ::ll::UntypedStorage<8, 24> mUnk31f9ef;
     // NOLINTEND
 
 public:
@@ -47,23 +51,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnClimateFinder(
+    MCNAPI SpawnClimateFinder(
         ::std::vector<::ClimateParameters> targetClimates,
         ::OverworldNoises3d const&         noiseSampler,
         ::DimensionHeightRange const&      dimensionHeightRange
     );
 
-    MCAPI int64 _calculateClimateMinFitness(::BlockPos pos) const;
+    MCNAPI int64 _calculateClimateMinFitness(::BlockPos pos) const;
 
-    MCAPI ::SpawnClimateFinder::ResultDetails _findSpawnPositionDetailedResult() const;
+    MCNAPI ::SpawnClimateFinder::ResultDetails _findSpawnPositionDetailedResult() const;
 
-    MCAPI ~SpawnClimateFinder();
+    MCNAPI ~SpawnClimateFinder();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::ClimateParameters> targetClimates,
         ::OverworldNoises3d const&         noiseSampler,
         ::DimensionHeightRange const&      dimensionHeightRange
@@ -73,6 +77,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

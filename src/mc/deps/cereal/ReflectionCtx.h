@@ -12,7 +12,6 @@ struct ReflectionCtx : public ::Bedrock::EnableNonOwnerReferences, public ::cere
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ReflectionCtx() /*override*/;
     // NOLINTEND
 

@@ -13,8 +13,8 @@ struct ScriptActorRemoveAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mRemovedActorId;
-    ::ll::TypedStorage<8, 32, ::std::string> mTypeId;
+    ::ll::UntypedStorage<8, 32> mUnkec1221;
+    ::ll::UntypedStorage<8, 32> mUnkb5b28c;
     // NOLINTEND
 
 public:
@@ -26,22 +26,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&&);
 
-    MCAPI ~ScriptActorRemoveAfterEvent();
+    MCNAPI ~ScriptActorRemoveAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

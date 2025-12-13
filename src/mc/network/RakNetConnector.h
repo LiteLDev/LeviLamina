@@ -40,19 +40,14 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~ConnectionCallbacks() /*override*/ = default;
 
-        // vIndex: 4
         virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) = 0;
 
-        // vIndex: 5
         virtual void onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) = 0;
 
-        // vIndex: 6
         virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason, ::std::string const&) = 0;
 
-        // vIndex: 7
         virtual void onWebsocketRequest(::std::string const&, ::std::string const&, ::std::function<void()>) = 0;
         // NOLINTEND
 
@@ -66,6 +61,27 @@ public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+    struct PingCallbackData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>               mAddress;
+        ::ll::TypedStorage<8, 64, ::std::function<void(uint)>> mAction;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI_C ~PingCallbackData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD_C void $dtor();
         // NOLINTEND
     };
 
@@ -119,27 +135,22 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 1
         virtual void
         sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
-        // vIndex: 7
+
         virtual ::NetworkPeer::DataStatus _receivePacket(
             ::std::string&                                                    outData,
             ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
         ) /*override*/;
-        // vIndex: 2
+
         virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
-        // vIndex: 3
         virtual void update() /*override*/;
 
-        // vIndex: 5
         virtual bool isLocal() const /*override*/;
 
-        // vIndex: 6
         virtual bool isEncrypted() const /*override*/;
 
-        // vIndex: 0
         virtual ~RakNetNetworkPeer() /*override*/ = default;
         // NOLINTEND
 
@@ -173,21 +184,14 @@ public:
         MCFOLD bool $isLocal() const;
 
         MCFOLD bool $isEncrypted() const;
+
+
         // NOLINTEND
 
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
-    struct PingCallbackData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>               mAddress;
-        ::ll::TypedStorage<8, 64, ::std::function<void(uint)>> mAction;
         // NOLINTEND
     };
 
@@ -228,76 +232,53 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RakNetConnector() /*override*/;
 
-    // vIndex: 9
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
-    // vIndex: 10
     virtual bool connect(
-        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& gameConnection,
         ::Social::GameConnectionInfo const& backupConnection
     ) /*override*/;
 
-    // vIndex: 11
     virtual void disconnect() /*override*/;
 
-    // vIndex: 12
     virtual void tick() /*override*/;
 
-    // vIndex: 13
     virtual void runEvents() /*override*/;
 
-    // vIndex: 15
     virtual void closeNetworkConnection(::NetworkIdentifier const& id) /*override*/;
 
-    // vIndex: 17
     virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const& id) /*override*/;
 
-    // vIndex: 14
     virtual bool isServer() const /*override*/;
 
-    // vIndex: 1
     virtual ::std::string getLocalIp() /*override*/;
 
-    // vIndex: 2
     virtual ushort getPort() const /*override*/;
 
-    // vIndex: 3
     virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const /*override*/;
 
-    // vIndex: 4
     virtual bool isIPv4Supported() const /*override*/;
 
-    // vIndex: 5
     virtual bool isIPv6Supported() const /*override*/;
 
-    // vIndex: 6
     virtual ushort getIPv4Port() const /*override*/;
 
-    // vIndex: 7
     virtual ushort getIPv6Port() const /*override*/;
 
-    // vIndex: 16
     virtual ::NetworkIdentifier getNetworkIdentifier() const /*override*/;
 
-    // vIndex: 20
     virtual ::RakNet::RakPeerInterface* getPeer();
 
-    // vIndex: 19
     virtual ::RakNet::RakPeerInterface const* getPeer() const;
 
-    // vIndex: 8
     virtual ::TransportLayer getNetworkType() const /*override*/;
 
-    // vIndex: 18
     virtual void setDisableLanSignaling(bool) /*override*/;
 
-    // vIndex: 1
     virtual void _onDisable() /*override*/;
 
-    // vIndex: 2
     virtual void _onEnable() /*override*/;
     // NOLINTEND
 
@@ -318,6 +299,9 @@ public:
     MCAPI ::std::vector<::RakNet::SystemAddress> _getRefinedLocalIps() const;
 
     MCAPI void _storeLocalIP();
+
+    MCAPI_C void
+    getPingTimeForConnection(::std::string const& address, int port, ::std::function<void(uint)> pingTimeCallback);
 
     MCAPI bool getStatistics(::RakNet::RakNetStatistics& rns);
     // NOLINTEND
@@ -344,10 +328,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCAPI bool $connect(
-        ::Social::GameConnectionInfo const& primaryConnection,
-        ::Social::GameConnectionInfo const& backupConnection
-    );
+    MCAPI bool
+    $connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
 
     MCAPI void $disconnect();
 
@@ -381,13 +363,17 @@ public:
 
     MCFOLD ::RakNet::RakPeerInterface const* $getPeer() const;
 
+#ifdef LL_PLAT_S
     MCFOLD ::TransportLayer $getNetworkType() const;
+#endif
 
     MCFOLD void $setDisableLanSignaling(bool);
 
     MCAPI void $_onDisable();
 
     MCAPI void $_onEnable();
+
+
     // NOLINTEND
 
 public:

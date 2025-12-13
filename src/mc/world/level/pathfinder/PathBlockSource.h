@@ -28,22 +28,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PathBlockSource() /*override*/;
 
-    // vIndex: 1
     virtual bool isInWater() const /*override*/;
 
-    // vIndex: 2
     virtual bool isInLava() const /*override*/;
 
-    // vIndex: 3
     virtual bool isWaterBlock(::BlockPos const& blockPos) const /*override*/;
 
-    // vIndex: 4
     virtual bool isLavaBlock(::BlockPos const& blockPos) const /*override*/;
 
-    // vIndex: 5
     virtual bool isSolidBlock(::BlockPos const& blockPos) const /*override*/;
     // NOLINTEND
 
@@ -65,6 +59,8 @@ public:
     MCNAPI bool $isLavaBlock(::BlockPos const& blockPos) const;
 
     MCNAPI bool $isSolidBlock(::BlockPos const& blockPos) const;
+
+
     // NOLINTEND
 
 public:

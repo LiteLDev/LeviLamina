@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/Result.h"
 
@@ -45,6 +46,9 @@ MCNAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::strin
 
 MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
 
+MCNAPI_C ::Bedrock::Result<bool>
+readLevelDataFromFile(::Core::Path const& directory, ::std::string const& levelId, ::LevelData& levelData);
+
 MCNAPI ::Bedrock::Result<bool> readLevelDataFromFile(
     ::Core::Path const&   directory,
     ::std::string const&  levelId,
@@ -73,6 +77,8 @@ MCNAPI void saveLevelDisplayDataToCache(
     ::LevelData const&            levelData,
     ::gsl::not_null<::TaskGroup*> taskGroup
 );
+
+MCNAPI_C void syncLevelInfoCache(::std::unordered_set<::Core::PathBuffer<::std::string>> const& levelRootPaths);
 
 MCNAPI ::Core::Result validateLevelDat(::Core::Path filePath);
 // NOLINTEND

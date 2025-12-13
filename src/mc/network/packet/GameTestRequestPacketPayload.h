@@ -2,15 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/gametest/framework/TestParameters.h"
-
 struct GameTestRequestPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>              mTestName;
-    ::ll::TypedStorage<8, 64, ::gametest::TestParameters> mParams;
+    ::ll::UntypedStorage<8, 32> mUnk43fb4a;
+    ::ll::UntypedStorage<8, 64> mUnka9b812;
     // NOLINTEND
 
 public:
@@ -21,16 +18,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::GameTestRequestPacketPayload& operator=(::GameTestRequestPacketPayload&&);
+    MCNAPI ::GameTestRequestPacketPayload& operator=(::GameTestRequestPacketPayload&&);
 
-    MCAPI ::GameTestRequestPacketPayload& operator=(::GameTestRequestPacketPayload const&);
+    MCNAPI ::GameTestRequestPacketPayload& operator=(::GameTestRequestPacketPayload const&);
 
-    MCAPI ~GameTestRequestPacketPayload();
+    MCNAPI ~GameTestRequestPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

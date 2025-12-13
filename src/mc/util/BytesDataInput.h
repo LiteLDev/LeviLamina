@@ -10,34 +10,24 @@ class BytesDataInput : public ::IDataInput {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Bedrock::Result<::std::string> readStringResult() /*override*/;
 
-    // vIndex: 2
     virtual ::Bedrock::Result<::std::string> readLongStringResult() /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::Result<float> readFloatResult() /*override*/;
 
-    // vIndex: 4
     virtual ::Bedrock::Result<double> readDoubleResult() /*override*/;
 
-    // vIndex: 5
     virtual ::Bedrock::Result<uchar> readByteResult() /*override*/;
 
-    // vIndex: 6
     virtual ::Bedrock::Result<short> readShortResult() /*override*/;
 
-    // vIndex: 7
     virtual ::Bedrock::Result<int> readIntResult() /*override*/;
 
-    // vIndex: 8
     virtual ::Bedrock::Result<int64> readLongLongResult() /*override*/;
 
-    // vIndex: 9
     virtual ::Bedrock::Result<void> readBytesResult(void*, uint64) = 0;
 
-    // vIndex: 0
     virtual ~BytesDataInput() /*override*/ = default;
     // NOLINTEND
 
@@ -59,5 +49,7 @@ public:
     MCAPI ::Bedrock::Result<int> $readIntResult();
 
     MCAPI ::Bedrock::Result<int64> $readLongLongResult();
+
+
     // NOLINTEND
 };

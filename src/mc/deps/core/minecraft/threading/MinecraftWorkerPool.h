@@ -21,13 +21,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void configureMainThread();
+    MCNAPI_S static void configureMainThread();
 
     MCNAPI static void createSingletons();
 
     MCNAPI static void destroySingletons();
 
-    MCNAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
+    MCNAPI_S static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
     // NOLINTEND
 
 public:

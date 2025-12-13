@@ -28,13 +28,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::SemVersion version() const /*override*/;
 
-    // vIndex: 2
     virtual ::Puv::Input::Data data() const /*override*/;
 
-    // vIndex: 0
     virtual ~DynamicValueInput() /*override*/ = default;
     // NOLINTEND
 

@@ -10,7 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace PacketSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void bindPackets(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindPackets(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace PacketSerialization

@@ -8,20 +8,26 @@ struct SignalNameSubscriberCount {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> name;
-    ::ll::TypedStorage<8, 8, uint64>         count;
+    ::ll::UntypedStorage<8, 32> mUnkf469ef;
+    ::ll::UntypedStorage<8, 8>  mUnk79fb51;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SignalNameSubscriberCount& operator=(SignalNameSubscriberCount const&);
+    SignalNameSubscriberCount(SignalNameSubscriberCount const&);
+    SignalNameSubscriberCount();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~SignalNameSubscriberCount();
+    MCNAPI ~SignalNameSubscriberCount();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -23,20 +23,20 @@ struct BiomeDecorationFeature;
 namespace FeatureHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::gsl::not_null<::Block const*> makeCompareBlock(::Block const& block);
+MCNAPI ::gsl::not_null<::Block const*> makeCompareBlock(::Block const& block);
 
-MCAPI ::RenderParams
+MCNAPI ::RenderParams
 makeFeatureRenderParams(::BlockSource& source, ::BlockPos const& pos, ::MolangVariableMap& molangVariables);
 
-MCAPI bool passesAllowList(
+MCNAPI bool passesAllowList(
     ::IBlockWorldGenAPI const&              target,
     ::BlockPos const&                       pos,
     ::std::vector<::BlockDescriptor> const& allowList
 );
 
-MCAPI ::std::optional<::BlockPos> placeBlock(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block);
+MCNAPI ::std::optional<::BlockPos> placeBlock(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block);
 
-MCAPI ::FeatureHelper::PlaceFeatureResult placeFeature(
+MCNAPI ::FeatureHelper::PlaceFeatureResult placeFeature(
     ::IFeature const&                 feature,
     ::BlockSource&                    source,
     ::BlockPos const&                 pos,
@@ -44,7 +44,7 @@ MCAPI ::FeatureHelper::PlaceFeatureResult placeFeature(
     ::FeaturePlacementFailureLogProxy logger
 );
 
-MCAPI ::FeatureHelper::PlaceFeatureResult
+MCNAPI ::FeatureHelper::PlaceFeatureResult
 placeFeatureRule(::BiomeDecorationFeature const& rule, ::BlockSource& source, ::BlockPos const& pos, ::Random& random);
 // NOLINTEND
 

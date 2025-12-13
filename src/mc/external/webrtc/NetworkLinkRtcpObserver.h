@@ -17,19 +17,14 @@ class NetworkLinkRtcpObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~NetworkLinkRtcpObserver() = default;
 
-    // vIndex: 1
     virtual void OnTransportFeedback(::webrtc::Timestamp, ::webrtc::rtcp::TransportFeedback const&);
 
-    // vIndex: 2
     virtual void OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp, ::webrtc::DataRate);
 
-    // vIndex: 3
     virtual void OnReport(::webrtc::Timestamp, ::rtc::ArrayView<::webrtc::ReportBlockData const>);
 
-    // vIndex: 4
     virtual void OnRttUpdate(::webrtc::Timestamp, ::webrtc::TimeDelta);
     // NOLINTEND
 

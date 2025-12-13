@@ -56,25 +56,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 0
     virtual ~MoveToBlockGoal() /*override*/;
     // NOLINTEND
 
@@ -148,6 +141,8 @@ public:
     MCAPI void $start();
 
     MCAPI void $stop();
+
+
     // NOLINTEND
 
 public:

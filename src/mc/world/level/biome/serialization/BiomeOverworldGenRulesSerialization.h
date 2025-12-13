@@ -24,14 +24,14 @@ struct ShoreTransformation;
 namespace BiomeOverworldGenRulesSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void applySerializedOverworldGenRules(
+MCNAPI void applySerializedOverworldGenRules(
     ::BiomeOverworldGenRulesData const& data,
     ::Biome&                            biome,
     ::BiomeRegistry const&              biomeRegistry,
     ::BiomeStringList const&            stringList
 );
 
-MCAPI ::std::optional<::BiomeOverworldGenRulesData> maybeSerializeOverworldGenRules(
+MCNAPI ::std::optional<::BiomeOverworldGenRulesData> maybeSerializeOverworldGenRules(
     ::WeightedBiomeAttributes<::HillsTransformation> const*                  hills,
     ::WeightedBiomeAttributes<::MutateBiomeTransformation> const*            mutate,
     ::WeightedBiomeAttributes<::RiverTransformation> const*                  river,

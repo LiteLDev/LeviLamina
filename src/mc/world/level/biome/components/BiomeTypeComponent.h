@@ -16,7 +16,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BiomeTypeComponent() /*override*/ = default;
     // NOLINTEND
 };

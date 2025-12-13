@@ -14,20 +14,33 @@ class RenderMaterialGroupBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~RenderMaterialGroupBase() = default;
+#else // LL_PLAT_C
+    virtual ~RenderMaterialGroupBase();
+#endif
 
-    // vIndex: 1
     virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const&) = 0;
 
-    // vIndex: 2
     virtual void clearMaterial(::HashedString const&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -12,7 +12,6 @@
 class BinaryStream;
 class BlockPalette;
 class ItemInstance;
-class NetworkItemInstanceDescriptor;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -21,25 +20,51 @@ class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING : public ::ItemSta
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar>                                           mNumCrafts;
-    ::ll::TypedStorage<8, 24, ::std::vector<::NetworkItemInstanceDescriptor>> mCraftResults;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>>                  mLoadedCraftResults;
+    ::ll::UntypedStorage<1, 1>  mUnk5c8ddd;
+    ::ll::UntypedStorage<8, 24> mUnk77cf9a;
+    ::ll::UntypedStorage<8, 24> mUnk85931f;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING&
+    operator=(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&);
+    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(
+        ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&
+    );
+    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide) /*override*/;
 
-    // vIndex: 4
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 5
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    // vIndex: 0
     virtual ~ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(::ItemInstance craftResult);
+
+    MCNAPI_C ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(
+        ::std::vector<::ItemInstance> const& craftResults,
+        uchar                                numCrafts
+    );
+
+    MCNAPI_C void _updateCraftResults(::std::vector<::ItemInstance> const& craftResults);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::ItemInstance craftResult);
+
+    MCNAPI_C void* $ctor(::std::vector<::ItemInstance> const& craftResults, uchar numCrafts);
     // NOLINTEND
 
 public:
@@ -56,6 +81,8 @@ public:
     MCNAPI void $_write(::BinaryStream& stream) const;
 
     MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

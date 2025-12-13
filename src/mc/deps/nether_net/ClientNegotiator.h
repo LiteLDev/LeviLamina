@@ -48,32 +48,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
     virtual ::NetherNet::ESessionError checkTimeout(::std::chrono::seconds timeout) const /*override*/;
 
-    // vIndex: 14
     virtual void
     _onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const& offerOrError) /*override*/;
 
-    // vIndex: 15
     virtual void _onSetLocalDescription(::webrtc::RTCError result) /*override*/;
 
-    // vIndex: 11
     virtual void onRemoteAnswer(::NetherNet::ConnectResponse const& answer) /*override*/;
 
-    // vIndex: 12
     virtual void onRemoteError(::NetherNet::ConnectError const& error) /*override*/;
 
-    // vIndex: 16
     virtual void _onSetRemoteDescription(::webrtc::RTCError result) /*override*/;
 
-    // vIndex: 17
     virtual void _onLocalIceCandidate(::webrtc::IceCandidateInterface const* iceCandidate);
 
-    // vIndex: 13
     virtual void onRemoteIceCandidate(::NetherNet::CandidateAdd const& candidate) /*override*/;
 
-    // vIndex: 0
     virtual ~ClientNegotiator() /*override*/;
     // NOLINTEND
 
@@ -142,6 +133,8 @@ public:
     MCNAPI void $_onLocalIceCandidate(::webrtc::IceCandidateInterface const* iceCandidate);
 
     MCNAPI void $onRemoteIceCandidate(::NetherNet::CandidateAdd const& candidate);
+
+
     // NOLINTEND
 
 public:

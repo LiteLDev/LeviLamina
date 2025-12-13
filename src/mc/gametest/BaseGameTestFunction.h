@@ -39,14 +39,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BaseGameTestFunction();
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::gametest::IGameTestFunctionContext>
     createContext(::gametest::BaseGameTestHelper&) const = 0;
 
-    // vIndex: 2
     virtual ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
     run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext&) const = 0;
     // NOLINTEND

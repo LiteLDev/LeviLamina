@@ -16,10 +16,8 @@ class NoopConstraint : public ::cereal::ConstraintHandle<::cereal::NoopConstrain
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
-    // vIndex: 1
     virtual ~NoopConstraint() /*override*/;
     // NOLINTEND
 
@@ -33,6 +31,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+
+
     // NOLINTEND
 
 public:

@@ -30,13 +30,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
 
-    // vIndex: 3
     virtual bool _hasPropertyValue(::PropertyComponent const& component) const /*override*/;
 
-    // vIndex: 0
     virtual ~LootItemEnumPropertyValueCondition() /*override*/ = default;
     // NOLINTEND
 
@@ -64,6 +61,8 @@ public:
     MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
 
     MCNAPI bool $_hasPropertyValue(::PropertyComponent const& component) const;
+
+
     // NOLINTEND
 
 public:

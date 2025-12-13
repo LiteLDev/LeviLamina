@@ -9,7 +9,6 @@ class ShulkerBoxContainerScreenValidator : public ::ContainerScreenValidatorBase
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ShulkerBoxContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

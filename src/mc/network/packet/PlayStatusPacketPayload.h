@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/packet/PlayStatus.h"
-
 struct PlayStatusPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::PlayStatus> mStatus;
+    ::ll::UntypedStorage<4, 4> mUnk6645d6;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlayStatusPacketPayload& operator=(PlayStatusPacketPayload const&);
+    PlayStatusPacketPayload(PlayStatusPacketPayload const&);
+    PlayStatusPacketPayload();
 };

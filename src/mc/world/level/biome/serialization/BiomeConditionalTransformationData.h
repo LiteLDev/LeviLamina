@@ -8,16 +8,15 @@
 // auto generated forward declare list
 // clang-format off
 class ReadOnlyBinaryStream;
-struct BiomeWeightedData;
 // clang-format on
 
 struct BiomeConditionalTransformationData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>> mTransformsInto;
-    ::ll::TypedStorage<2, 2, ushort>                              mConditionJson;
-    ::ll::TypedStorage<4, 4, uint>                                mMinPassingNeighbors;
+    ::ll::UntypedStorage<8, 24> mUnk22864f;
+    ::ll::UntypedStorage<2, 2>  mUnk67a5e0;
+    ::ll::UntypedStorage<4, 4>  mUnk367620;
     // NOLINTEND
 
 public:
@@ -29,26 +28,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeConditionalTransformationData(::BiomeConditionalTransformationData&&);
+    MCNAPI BiomeConditionalTransformationData(::BiomeConditionalTransformationData&&);
 
-    MCAPI ~BiomeConditionalTransformationData();
+    MCNAPI ~BiomeConditionalTransformationData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeConditionalTransformationData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeConditionalTransformationData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeConditionalTransformationData&&);
+    MCNAPI void* $ctor(::BiomeConditionalTransformationData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -14,13 +14,10 @@ class DtlsTransportObserverInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual void OnStateChange(::webrtc::DtlsTransportInformation) = 0;
 
-    // vIndex: 1
     virtual void OnError(::webrtc::RTCError) = 0;
 
-    // vIndex: 2
     virtual ~DtlsTransportObserverInterface() = default;
     // NOLINTEND
 

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 struct CommonContent {
 public:
     // member variables
@@ -19,4 +24,28 @@ public:
     CommonContent& operator=(CommonContent const&);
     CommonContent(CommonContent const&);
     CommonContent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C CommonContent(::CommonContent&&);
+
+    MCNAPI_C CommonContent(::Json::Value const& commonContentJson, bool pascalCase);
+
+    MCNAPI_C ~CommonContent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::CommonContent&&);
+
+    MCNAPI_C void* $ctor(::Json::Value const& commonContentJson, bool pascalCase);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

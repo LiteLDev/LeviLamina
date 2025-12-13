@@ -36,46 +36,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 15
     virtual ::PackAccessAssetGenerationResult generateAssetSet() /*override*/;
 
-    // vIndex: 5
     virtual bool isTrusted() const /*override*/;
 
-    // vIndex: 4
     virtual bool isWritable() const /*override*/;
 
-    // vIndex: 6
     virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
         /*override*/;
 
-    // vIndex: 8
     virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
         /*override*/;
 
-    // vIndex: 14
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 20
     virtual bool isAssetExtractionViable() const /*override*/;
 
-    // vIndex: 11
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
-    // vIndex: 19
     virtual ::ContentIdentity readContentIdentity() const /*override*/;
 
-    // vIndex: 23
     virtual ::std::string _getContentsFile();
 
-    // vIndex: 24
     virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
 
-    // vIndex: 21
     virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
     _loadArchive(::Core::Path const& packRelativePath) const /*override*/;
 
-    // vIndex: 0
     virtual ~EncryptedFileAccessStrategy() /*override*/;
     // NOLINTEND
 
@@ -155,6 +142,8 @@ public:
 
     MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
     $_loadArchive(::Core::Path const& packRelativePath) const;
+
+
     // NOLINTEND
 
 public:

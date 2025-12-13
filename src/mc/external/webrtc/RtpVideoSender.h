@@ -79,28 +79,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ~RtpVideoSender() /*override*/;
 
-    // vIndex: 3
     virtual void SetSending(bool enabled) /*override*/;
 
-    // vIndex: 4
     virtual bool IsActive() /*override*/;
 
-    // vIndex: 5
     virtual void OnNetworkAvailability(bool network_available) /*override*/;
 
-    // vIndex: 6
     virtual ::std::map<uint, ::webrtc::RtpState> GetRtpStates() const /*override*/;
 
-    // vIndex: 7
     virtual ::std::map<uint, ::webrtc::RtpPayloadState> GetRtpPayloadStates() const /*override*/;
 
-    // vIndex: 8
     virtual void DeliverRtcp(uchar const* packet, uint64 length) /*override*/;
 
-    // vIndex: 0
     virtual int ProtectionRequest(
         ::webrtc::FecProtectionParams const* delta_params,
         ::webrtc::FecProtectionParams const* key_params,
@@ -109,44 +101,32 @@ public:
         uint*                                sent_fec_rate_bps
     ) /*override*/;
 
-    // vIndex: 1
     virtual void SetRetransmissionMode(int retransmission_mode) /*override*/;
 
-    // vIndex: 0
     virtual void SetFecAllowed(bool fec_allowed) /*override*/;
 
-    // vIndex: 1
     virtual ::webrtc::EncodedImageCallback::Result OnEncodedImage(
         ::webrtc::EncodedImage const&      encoded_image,
         ::webrtc::CodecSpecificInfo const* codec_specific_info
     ) /*override*/;
 
-    // vIndex: 9
     virtual void OnBitrateAllocationUpdated(::webrtc::VideoBitrateAllocation const& bitrate) /*override*/;
 
-    // vIndex: 10
     virtual void OnVideoLayersAllocationUpdated(::webrtc::VideoLayersAllocation const& allocation) /*override*/;
 
-    // vIndex: 12
     virtual void OnTransportOverheadChanged(uint64 transport_overhead_bytes_per_packet) /*override*/;
 
-    // vIndex: 11
     virtual void OnBitrateUpdated(::webrtc::BitrateAllocationUpdate update, int framerate) /*override*/;
 
-    // vIndex: 13
     virtual uint GetPayloadBitrateBps() const /*override*/;
 
-    // vIndex: 14
     virtual uint GetProtectionBitrateBps() const /*override*/;
 
-    // vIndex: 15
     virtual void SetEncodingData(uint64 width, uint64 height, uint64 num_temporal_layers) /*override*/;
 
-    // vIndex: 16
     virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
     GetSentRtpPacketInfos(uint ssrc, ::rtc::ArrayView<ushort const> sequence_numbers) const /*override*/;
 
-    // vIndex: 1
     virtual void OnPacketFeedbackVector(
         ::std::vector<::webrtc::StreamFeedbackObserver::StreamPacketInfo> packet_feedback_vector
     ) /*override*/;
@@ -272,6 +252,8 @@ public:
 
     MCNAPI void
     $OnPacketFeedbackVector(::std::vector<::webrtc::StreamFeedbackObserver::StreamPacketInfo> packet_feedback_vector);
+
+
     // NOLINTEND
 
 public:

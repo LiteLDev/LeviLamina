@@ -43,31 +43,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual bool is_screencast() const = 0;
 
-    // vIndex: 6
     virtual ::std::optional<bool> needs_denoising() const = 0;
 
-    // vIndex: 7
     virtual bool GetStats(::webrtc::VideoTrackSourceInterface::Stats*) = 0;
 
-    // vIndex: 8
     virtual bool SupportsEncodedOutput() const = 0;
 
-    // vIndex: 9
     virtual void GenerateKeyFrame() = 0;
 
-    // vIndex: 10
     virtual void AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>*) = 0;
 
-    // vIndex: 11
     virtual void RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>*) = 0;
 
-    // vIndex: 12
     virtual void ProcessConstraints(::webrtc::VideoTrackSourceConstraints const& constraints);
 
-    // vIndex: 0
     virtual ~VideoTrackSourceInterface() /*override*/;
     // NOLINTEND
 
@@ -81,6 +72,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $ProcessConstraints(::webrtc::VideoTrackSourceConstraints const& constraints);
+
+
     // NOLINTEND
 };
 

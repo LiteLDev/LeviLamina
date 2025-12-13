@@ -33,35 +33,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PersistentWebSocket() /*override*/;
 
-    // vIndex: 5
     virtual bool shouldReconnect() const;
 
-    // vIndex: 6
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() = 0;
 
-    // vIndex: 7
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::HeaderCollection> getHeaders();
 
-    // vIndex: 8
     virtual ::Bedrock::Http::RetryPolicy getReconnectPolicy();
 
-    // vIndex: 9
     virtual void onConnect();
 
-    // vIndex: 10
     virtual void onDisconnect(bool, uint);
 
-    // vIndex: 4
     virtual void onClose(uint status) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PersistentWebSocket();
+    MCNAPI_S PersistentWebSocket();
 
     MCNAPI void _connectWithRetry(
         ::std::string const&                                               uri,
@@ -86,7 +78,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI_S void* $ctor();
     // NOLINTEND
 
 public:
@@ -109,6 +101,8 @@ public:
     MCNAPI void $onDisconnect(bool, uint);
 
     MCNAPI void $onClose(uint status);
+
+
     // NOLINTEND
 
 public:

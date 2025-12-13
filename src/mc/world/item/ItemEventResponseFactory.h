@@ -15,28 +15,27 @@ class ItemEventResponseFactory : public ::EventResponseFactory, public ::IPackLo
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ItemEventResponseFactory() /*override*/;
 
-    // vIndex: 1
     virtual void initializeFactory(::IPackLoadContext const& packLoadContext) /*override*/;
 
-    // vIndex: 2
     virtual void initSchema() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFactory(::IPackLoadContext const& packLoadContext);
+    MCNAPI void $initializeFactory(::IPackLoadContext const& packLoadContext);
 
-    MCAPI void $initSchema();
+    MCNAPI void $initSchema();
+
+
     // NOLINTEND
 
 public:

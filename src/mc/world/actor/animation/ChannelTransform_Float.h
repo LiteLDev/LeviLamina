@@ -6,6 +6,12 @@ class ChannelTransform_Float {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, float[3]> mXYZ;
+    ::ll::UntypedStorage<4, 12> mUnk6680bd;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ChannelTransform_Float& operator=(ChannelTransform_Float const&);
+    ChannelTransform_Float(ChannelTransform_Float const&);
+    ChannelTransform_Float();
 };

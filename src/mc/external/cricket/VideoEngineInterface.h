@@ -23,10 +23,8 @@ class VideoEngineInterface : public ::cricket::RtpHeaderExtensionQueryInterface 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~VideoEngineInterface() /*override*/ = default;
 
-    // vIndex: 2
     virtual ::std::unique_ptr<::cricket::VideoMediaSendChannelInterface> CreateSendChannel(
         ::webrtc::Call*,
         ::cricket::MediaConfig const&,
@@ -35,7 +33,6 @@ public:
         ::webrtc::VideoBitrateAllocatorFactory*
     );
 
-    // vIndex: 3
     virtual ::std::unique_ptr<::cricket::VideoMediaReceiveChannelInterface> CreateReceiveChannel(
         ::webrtc::Call*,
         ::cricket::MediaConfig const&,
@@ -43,16 +40,12 @@ public:
         ::webrtc::CryptoOptions const&
     );
 
-    // vIndex: 5
     virtual ::std::vector<::cricket::Codec> send_codecs() const = 0;
 
-    // vIndex: 4
     virtual ::std::vector<::cricket::Codec> send_codecs(bool) const;
 
-    // vIndex: 7
     virtual ::std::vector<::cricket::Codec> recv_codecs() const = 0;
 
-    // vIndex: 6
     virtual ::std::vector<::cricket::Codec> recv_codecs(bool) const;
     // NOLINTEND
 

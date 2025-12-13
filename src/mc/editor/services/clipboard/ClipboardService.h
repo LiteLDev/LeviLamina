@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/IStructureDataProvider.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ClipboardServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
+#include "mc/server/editor/services/structures/IStructureDataProvider.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,87 +46,64 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClipboardService() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 1
     virtual ::mce::UUID const& getPrimaryItemId() /*override*/;
 
-    // vIndex: 2
     virtual ::mce::UUID const& create() /*override*/;
 
-    // vIndex: 3
     virtual bool destroy(::mce::UUID const& id) /*override*/;
 
-    // vIndex: 4
     virtual void setPrimaryItem(::mce::UUID const& id) /*override*/;
 
-    // vIndex: 5
     virtual ::Editor::Services::ClipboardItem* getPrimaryItem() /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void>
     readFromWorld(::mce::UUID const& itemId, ::Editor::RelativeVolumeListBlockVolume const& volume) /*override*/;
 
-    // vIndex: 6
     virtual ::Scripting::Result_deprecated<void>
     readFromWorld(::mce::UUID const& itemId, ::BlockVolumeBase const& volume) /*override*/;
 
-    // vIndex: 8
     virtual ::Scripting::Result_deprecated<void> readFromEditorStructure(
         ::mce::UUID const&                       itemId,
         ::Editor::EditorStructureTemplate const& editorStructure
     ) /*override*/;
 
-    // vIndex: 9
     virtual ::Scripting::Result_deprecated<bool> writeToWorld(
         ::mce::UUID const&                               itemId,
         ::BlockPos const&                                position,
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const /*override*/;
 
-    // vIndex: 10
     virtual ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> getPredictedWriteVolume(
         ::mce::UUID const&                               itemId,
         ::BlockPos const&                                position,
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const /*override*/;
 
-    // vIndex: 11
     virtual ::Scripting::Result_deprecated<void> clear(::mce::UUID const& itemId) /*override*/;
 
-    // vIndex: 12
     virtual bool isEmpty(::mce::UUID const& itemId) const /*override*/;
 
-    // vIndex: 13
     virtual ::BlockPos getSize(::mce::UUID const& itemId) const /*override*/;
 
-    // vIndex: 14
     virtual ::Vec3 const& getNormalizedOrigin(::mce::UUID const& itemId) const /*override*/;
 
-    // vIndex: 15
     virtual ::Vec3 getOriginalWorldLocation(::mce::UUID const& itemId) const /*override*/;
 
-    // vIndex: 16
     virtual ::Bedrock::PubSub::Subscription
     listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)> callback) /*override*/;
 
-    // vIndex: 0
     virtual bool hasStructureData(::mce::UUID const& id) const /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<::std::variant<
         ::StructureTemplate const*,
         ::Editor::EditorStructureTemplate const*,
@@ -218,6 +195,8 @@ public:
         ::std::shared_ptr<::StructureTemplate const>,
         ::std::shared_ptr<::Editor::EditorStructureTemplate const>>>
     $getStructureData(::mce::UUID const& id) const;
+
+
     // NOLINTEND
 
 public:

@@ -2,23 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/spawn_category/Type.h"
-
 namespace SpawnCategory {
 
 struct Config {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SpawnCategory::Type> mType;
-    ::ll::TypedStorage<8, 16, ::std::string_view>   mName;
-    ::ll::TypedStorage<1, 1, bool>                  mIsFriendly;
-    ::ll::TypedStorage<1, 1, bool>                  mIsPersistent;
-    ::ll::TypedStorage<4, 4, int>                   mMax;
-    ::ll::TypedStorage<4, 4, int>                   mDespawnDist;
-    ::ll::TypedStorage<4, 4, int>                   mNoDespawnDist;
+    ::ll::UntypedStorage<4, 4>  mUnk83ee0f;
+    ::ll::UntypedStorage<8, 16> mUnkb75eac;
+    ::ll::UntypedStorage<1, 1>  mUnkc7ba97;
+    ::ll::UntypedStorage<1, 1>  mUnk2df162;
+    ::ll::UntypedStorage<4, 4>  mUnkde02a5;
+    ::ll::UntypedStorage<4, 4>  mUnk8ae398;
+    ::ll::UntypedStorage<4, 4>  mUnkc2c7f6;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Config& operator=(Config const&);
+    Config(Config const&);
+    Config();
 };
 
 } // namespace SpawnCategory

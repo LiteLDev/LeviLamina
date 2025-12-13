@@ -27,16 +27,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void onLanguageChanged(::std::string const& code, bool languageSystemInitializing) /*override*/;
 
-    // vIndex: 3
     virtual void onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest) /*override*/;
 
-    // vIndex: 4
     virtual void onLanguagesLoaded() /*override*/;
 
-    // vIndex: 0
     virtual ~NpcI18nObserver() /*override*/ = default;
     // NOLINTEND
 
@@ -54,6 +50,8 @@ public:
     MCNAPI void $onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest);
 
     MCNAPI void $onLanguagesLoaded();
+
+
     // NOLINTEND
 
 public:

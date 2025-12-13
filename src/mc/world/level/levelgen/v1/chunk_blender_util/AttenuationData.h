@@ -2,23 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/BiomeIdType.h"
-#include "mc/world/level/ScalarOptional.h"
-#include "mc/world/level/storage/BlendingBlockType.h"
-
 namespace ChunkBlenderUtil {
 
 struct AttenuationData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                                                    mDistanceToBlendTarget;
-    ::ll::TypedStorage<4, 4, ::ScalarOptional<float>>                                  mBlendTargetHeight;
-    ::ll::TypedStorage<4, 164, ::std::array<::ScalarOptional<float>, 41>>              mBlendTargetDensities;
-    ::ll::TypedStorage<2, 192, ::std::array<::ScalarOptional<::BiomeIdType>, 96>>      mBiomes;
-    ::ll::TypedStorage<1, 41, ::std::array<::ScalarOptional<::BlendingBlockType>, 41>> mBorderBlocks;
+    ::ll::UntypedStorage<4, 4>   mUnk9ea586;
+    ::ll::UntypedStorage<4, 4>   mUnk38a120;
+    ::ll::UntypedStorage<4, 164> mUnk47ef9b;
+    ::ll::UntypedStorage<2, 192> mUnkd68cef;
+    ::ll::UntypedStorage<1, 41>  mUnk8e6bab;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AttenuationData& operator=(AttenuationData const&);
+    AttenuationData(AttenuationData const&);
+    AttenuationData();
 };
 
 } // namespace ChunkBlenderUtil

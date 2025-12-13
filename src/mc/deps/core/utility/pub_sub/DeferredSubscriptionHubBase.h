@@ -29,31 +29,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DeferredSubscriptionHubBase() /*override*/;
 
-    // vIndex: 1
     virtual uint64 runDeferredEvents(uint64 maxToRun) /*override*/;
 
-    // vIndex: 2
     virtual uint64 runDeferredEventsForDuration(::std::chrono::milliseconds msec) /*override*/;
 
-    // vIndex: 4
     virtual void clear() /*override*/;
 
-    // vIndex: 5
     virtual uint64 erase(::Bedrock::PubSub::RawSubscription& subscription) /*override*/;
 
-    // vIndex: 6
     virtual uint64 size() const /*override*/;
 
-    // vIndex: 7
     virtual bool empty() const /*override*/;
 
-    // vIndex: 9
     virtual void _join(::Bedrock::PubSub::DeferredSubscription&& subscription) /*override*/;
 
-    // vIndex: 11
     virtual bool _runOneEvent() = 0;
     // NOLINTEND
 
@@ -79,6 +70,8 @@ public:
     MCNAPI bool $empty() const;
 
     MCNAPI void $_join(::Bedrock::PubSub::DeferredSubscription&& subscription);
+
+
     // NOLINTEND
 
 public:

@@ -2,25 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/EducationLevelSettings.h"
-
 struct EducationSettingsPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 320, ::EducationLevelSettings> mEducationLevelSettings;
+    ::ll::UntypedStorage<8, 320> mUnk594559;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    EducationSettingsPacketPayload& operator=(EducationSettingsPacketPayload const&);
+    EducationSettingsPacketPayload(EducationSettingsPacketPayload const&);
+    EducationSettingsPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~EducationSettingsPacketPayload();
+    MCNAPI ~EducationSettingsPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

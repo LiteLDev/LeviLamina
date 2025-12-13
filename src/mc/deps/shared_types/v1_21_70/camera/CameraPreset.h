@@ -51,33 +51,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CameraPreset(::SharedTypes::v1_21_70::CameraPreset const&);
+    MCNAPI_S CameraPreset(::SharedTypes::v1_21_70::CameraPreset const&);
 
-    MCNAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset&&);
+    MCNAPI_S ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset&&);
 
-    MCNAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset const&);
+    MCNAPI_S ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset const&);
 
-    MCNAPI void setVerticalRotationLimit(::std::optional<::std::array<float, 2>> opt);
+    MCNAPI_S void setVerticalRotationLimit(::std::optional<::std::array<float, 2>> opt);
 
-    MCNAPI ~CameraPreset();
+    MCNAPI_S ~CameraPreset();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_70::CameraPreset const&);
+    MCNAPI_S void* $ctor(::SharedTypes::v1_21_70::CameraPreset const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI_S void $dtor();
     // NOLINTEND
 };
 

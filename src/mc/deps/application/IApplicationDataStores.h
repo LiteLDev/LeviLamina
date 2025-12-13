@@ -26,17 +26,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IApplicationDataStores() /*override*/;
 
-    // vIndex: 1
     virtual void init() = 0;
 
-    // vIndex: 3
     virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
         getDataStore(::Bedrock::IApplicationDataStores::DataStores) = 0;
 
-    // vIndex: 2
     virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
         getDataStore(::Bedrock::IApplicationDataStores::DataStores) const = 0;
     // NOLINTEND

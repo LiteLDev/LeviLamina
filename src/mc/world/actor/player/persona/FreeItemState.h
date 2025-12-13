@@ -8,10 +8,16 @@ struct FreeItemState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsFreeItem;
-    ::ll::TypedStorage<1, 1, bool> mIsAchievementItem;
-    ::ll::TypedStorage<1, 1, bool> mIsRedeemable;
+    ::ll::UntypedStorage<1, 1> mUnk16ca34;
+    ::ll::UntypedStorage<1, 1> mUnkb06e99;
+    ::ll::UntypedStorage<1, 1> mUnka2853a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FreeItemState& operator=(FreeItemState const&);
+    FreeItemState(FreeItemState const&);
+    FreeItemState();
 };
 
 } // namespace persona

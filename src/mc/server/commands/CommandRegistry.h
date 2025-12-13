@@ -29,6 +29,7 @@
 // clang-format off
 class Actor;
 class AvailableCommandsPacket;
+class BlockType;
 class Command;
 class CommandOrigin;
 class CommandParameterData;
@@ -37,6 +38,7 @@ class CommandSelectorBase;
 class IMinecraftEventing;
 class Packet;
 struct ActorSelectorArgs;
+struct AutoCompleteInformation;
 struct CommandSyntaxInformation;
 namespace Json { class Value; }
 // clang-format on
@@ -45,55 +47,37 @@ class CommandRegistry {
 public:
     // CommandRegistry inner types declare
     // clang-format off
+    struct RegistryState;
+    struct SoftEnum;
+    class Symbol;
+    struct Overload;
+    struct SemanticInfo;
+    struct SymbolHasher;
+    struct SymbolPairHasher;
+    struct ParseTable;
     struct ChainedSubcommand;
     struct ConstrainedValue;
     struct Enum;
     struct Factorization;
     struct LexicalToken;
     struct OptionalParameterChain;
-    struct Overload;
     struct ParamSymbols;
     struct ParseRule;
-    struct ParseTable;
     struct ParseToken;
-    class Parser;
-    struct RegistryState;
-    struct SemanticInfo;
     struct Signature;
-    struct SoftEnum;
-    class Symbol;
-    struct SymbolHasher;
-    struct SymbolPairHasher;
+    class Parser;
     // clang-format on
 
     // CommandRegistry inner types define
-    using ValueTypeID = uint64;
 
-    using EnumValueID = uint64;
-
-    using EnumID = uint;
-
-    using SoftEnumID = uint;
-
-    using ChainedSubcommandValueID = uint64;
-
-    using ChainedSubcommandID = uint;
-
-    using SemanticConstraintID = uchar;
-
-    using ConstrainedValueID = uint;
-
-    using ConstrainedValueLookupKey = ::std::pair<uint64, uint>;
-
-    using CustomStorageGetFn = void* (*)(::Command*, int);
-
-    using CustomStorageIsSetFn = bool* (*)(::Command*, int);
-
-    using CommandOverrideFunctor =
-        ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>;
-    using ScoreboardScoreAccessor = ::std::function<int(bool&, ::std::string const&, ::Actor const&)>;
-
-    using HardTerminal = ::CommandLexer::TokenType;
+    using ParseFunction = bool (::CommandRegistry::*)(
+        void*,
+        ::CommandRegistry::ParseToken const&,
+        ::CommandOrigin const&,
+        int,
+        ::std::string&,
+        ::std::vector<::std::string>&
+    ) const;
 
     enum class HardNonTerminal : int {
         Epsilon                   = 1048576,
@@ -190,6 +174,50 @@ public:
         CodeBuilderSelector       = 1048667,
     };
 
+    struct RegistryState {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, uint>                 signatureCount;
+        ::ll::TypedStorage<4, 4, uint>                 enumValueCount;
+        ::ll::TypedStorage<4, 4, uint>                 postfixCount;
+        ::ll::TypedStorage<4, 4, uint>                 enumCount;
+        ::ll::TypedStorage<4, 4, uint>                 enumLookupCount;
+        ::ll::TypedStorage<4, 4, uint>                 typeLookupCount;
+        ::ll::TypedStorage<4, 4, uint>                 factorizationCount;
+        ::ll::TypedStorage<4, 4, uint>                 optionalCount;
+        ::ll::TypedStorage<4, 4, uint>                 ruleCount;
+        ::ll::TypedStorage<4, 4, uint>                 softEnumCount;
+        ::ll::TypedStorage<4, 4, uint>                 constraintCount;
+        ::ll::TypedStorage<4, 4, uint>                 chainedSubcommandCount;
+        ::ll::TypedStorage<4, 4, uint>                 chainedSubcommandValueCount;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>> enumValuesCount;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>> constrainedValueCount;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>> softEnumValuesCount;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~RegistryState();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct SoftEnum {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::std::string                mName;
+        ::std::vector<::std::string> mValues;
+        // NOLINTEND
+    };
+
     class Symbol {
     public:
         int mValue{-1}; // this+0x0
@@ -223,25 +251,6 @@ public:
         uint64 toIndex() const { return mValue & 0xffffffffe00fffffull; }
     };
 
-    struct SymbolHasher {};
-
-    struct SymbolPairHasher {
-    public:
-        uint64 operator()(::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol> const&) const;
-    };
-
-    using NonTerminal = ::CommandRegistry::Symbol;
-
-    using Terminal = ::CommandRegistry::Symbol;
-
-    using SymbolVector = ::std::vector<::CommandRegistry::Symbol>;
-
-    using SymbolSet =
-        ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>;
-
-    using ParseMap = ::std::map<
-        ::CommandRegistry::Symbol,
-        ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>;
     struct Overload {
     public:
         // Overload inner types define
@@ -259,49 +268,120 @@ public:
         // NOLINTEND
     };
 
-    struct Signature {
+    struct SemanticInfo {
     public:
         // member variables
         // NOLINTBEGIN
-        ::std::string                              name;
-        ::std::string                              description;
-        ::std::vector<::CommandRegistry::Overload> overloads;
-        ::std::vector<uint>                        chainedSubcommandIndexes;
-        ::CommandPermissionLevel                   permissionLevel;
-        ::CommandRegistry::Symbol                  commandSymbol;
-        ::CommandRegistry::Symbol                  commandAliasEnum;
-        ::CommandFlag                              flags;
-        int                                        firstRule;
-        int                                        firstFactorization;
-        int                                        firstOptional;
-        bool                                       runnable;
-        uint64                                     ruleCounter;
+        ::ll::TypedStorage<1, 1, bool>                                      mIsValid;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> mConstrainedParams;
+        ::ll::TypedStorage<8, 32, ::std::string>                            mSoftEnumText;
+        ::ll::TypedStorage<8, 32, ::std::string>                            mSoftEnumEscapeCharExceptions;
+        ::ll::TypedStorage<8, 16, ::std::set<::CommandRegistry::Symbol>>    mAlreadyCompletedSymbols;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Signature& operator=(Signature const&);
-        Signature(Signature const&);
-        Signature();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Signature(::CommandRegistry::Signature&&);
-
-        MCAPI ~Signature();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::CommandRegistry::Signature&&);
+        MCAPI_C ~SemanticInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCAPI_C void $dtor();
+        // NOLINTEND
+    };
+
+    struct SymbolHasher {};
+
+    struct SymbolPairHasher {};
+
+    struct ParseTable {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::std::map<
+            ::CommandRegistry::Symbol,
+            ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>
+
+            first;
+        ::std::map<
+            ::CommandRegistry::Symbol,
+            ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>
+
+            follow;
+        ::entt::dense_map<
+            ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
+            int,
+            ::CommandRegistry::SymbolPairHasher,
+            ::std::equal_to<void>>
+
+                                   predict;
+        ::std::chrono::nanoseconds buildDuration;
+        // NOLINTEND
+    };
+
+    struct ChainedSubcommand {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::std::string                            name;
+        ::Bedrock::typeid_t<::CommandRegistry>   type;
+        ParseFunction                            parse;
+        ::std::vector<::std::pair<uint64, uint>> values;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ChainedSubcommand();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
+    struct ConstrainedValue {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> mValue;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> mEnum;
+        ::ll::TypedStorage<8, 24, ::std::vector<uchar>>     mConstraints;
+        // NOLINTEND
+    };
+
+    struct Enum {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::std::string                              name;
+        ::Bedrock::typeid_t<::CommandRegistry>     type;
+        ParseFunction                              parse;
+        ::std::vector<::std::pair<uint64, uint64>> values;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~Enum();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
+    struct Factorization {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> commandSymbol;
         // NOLINTEND
     };
 
@@ -329,56 +409,6 @@ public:
         // NOLINTEND
     };
 
-    struct ParseToken {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::std::unique_ptr<::CommandRegistry::ParseToken> child;
-        ::std::unique_ptr<::CommandRegistry::ParseToken> next;
-        ::CommandRegistry::ParseToken*                   parent;
-        char const*                                      text;
-        uint                                             length;
-        ::CommandRegistry::Symbol                        type;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::std::string toString() const;
-        // NOLINTEND
-    };
-
-    using ProcessFunction =
-        ::std::function<::CommandRegistry::ParseToken*(::CommandRegistry::ParseToken&, ::CommandRegistry::Symbol)>;
-    struct ParseRule {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> nonTerminal;
-        ::ll::TypedStorage<
-            8,
-            64,
-            ::std::function<::CommandRegistry::ParseToken*(::CommandRegistry::ParseToken&, ::CommandRegistry::Symbol)>>
-                                                                            process;
-        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> derivation;
-        ::ll::TypedStorage<4, 8, ::CommandVersion>                          versions;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ParseRule& operator=(ParseRule const&);
-        ParseRule(ParseRule const&);
-        ParseRule();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::CommandRegistry::ParseRule& operator=(::CommandRegistry::ParseRule&& rhs);
-        // NOLINTEND
-    };
-
-    using RuleIndex = int;
-
     struct OptionalParameterChain {
     public:
         // member variables
@@ -386,91 +416,6 @@ public:
         ::ll::TypedStorage<4, 4, int>                       parameterCount;
         ::ll::TypedStorage<4, 4, int>                       followingRuleIndex;
         ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> paramSymbol;
-        // NOLINTEND
-    };
-
-    struct Factorization {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> commandSymbol;
-        // NOLINTEND
-    };
-
-    using ParseFunction = bool (::CommandRegistry::*)(
-        void*,
-        ::CommandRegistry::ParseToken const&,
-        ::CommandOrigin const&,
-        int,
-        ::std::string&,
-        ::std::vector<::std::string>&
-    ) const;
-    using EnumConversionFunction = ::std::function<void(void*, uint64)>;
-
-    struct Enum {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::std::string                              name;
-        ::Bedrock::typeid_t<::CommandRegistry>     type;
-        ParseFunction                              parse;
-        ::std::vector<::std::pair<uint64, uint64>> values;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~Enum();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
-    };
-
-    using ChainedSubcommandConversionFunction = ::std::function<void(void*, uint64)>;
-
-    struct ChainedSubcommand {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::std::string                            name;
-        ::Bedrock::typeid_t<::CommandRegistry>   type;
-        ParseFunction                            parse;
-        ::std::vector<::std::pair<uint64, uint>> values;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ChainedSubcommand();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
-    };
-
-    struct SoftEnum {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::std::string                mName;
-        ::std::vector<::std::string> mValues;
-        // NOLINTEND
-    };
-
-    struct ConstrainedValue {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> mValue;
-        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> mEnum;
-        ::ll::TypedStorage<8, 24, ::std::vector<uchar>>     mConstraints;
         // NOLINTEND
     };
 
@@ -518,32 +463,89 @@ public:
         // NOLINTEND
     };
 
-    struct RegistryState {
+    struct ParseRule {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, uint>                 signatureCount;
-        ::ll::TypedStorage<4, 4, uint>                 enumValueCount;
-        ::ll::TypedStorage<4, 4, uint>                 postfixCount;
-        ::ll::TypedStorage<4, 4, uint>                 enumCount;
-        ::ll::TypedStorage<4, 4, uint>                 enumLookupCount;
-        ::ll::TypedStorage<4, 4, uint>                 typeLookupCount;
-        ::ll::TypedStorage<4, 4, uint>                 factorizationCount;
-        ::ll::TypedStorage<4, 4, uint>                 optionalCount;
-        ::ll::TypedStorage<4, 4, uint>                 ruleCount;
-        ::ll::TypedStorage<4, 4, uint>                 softEnumCount;
-        ::ll::TypedStorage<4, 4, uint>                 constraintCount;
-        ::ll::TypedStorage<4, 4, uint>                 chainedSubcommandCount;
-        ::ll::TypedStorage<4, 4, uint>                 chainedSubcommandValueCount;
-        ::ll::TypedStorage<8, 24, ::std::vector<uint>> enumValuesCount;
-        ::ll::TypedStorage<8, 24, ::std::vector<uint>> constrainedValueCount;
-        ::ll::TypedStorage<8, 24, ::std::vector<uint>> softEnumValuesCount;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> nonTerminal;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::function<::CommandRegistry::ParseToken*(::CommandRegistry::ParseToken&, ::CommandRegistry::Symbol)>>
+                                                                            process;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> derivation;
+        ::ll::TypedStorage<4, 8, ::CommandVersion>                          versions;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ParseRule& operator=(ParseRule const&);
+        ParseRule(ParseRule const&);
+        ParseRule();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::CommandRegistry::ParseRule& operator=(::CommandRegistry::ParseRule&& rhs);
+        // NOLINTEND
+    };
+
+    struct ParseToken {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::std::unique_ptr<::CommandRegistry::ParseToken> child;
+        ::std::unique_ptr<::CommandRegistry::ParseToken> next;
+        ::CommandRegistry::ParseToken*                   parent;
+        char const*                                      text;
+        uint                                             length;
+        ::CommandRegistry::Symbol                        type;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~RegistryState();
+        MCAPI ::std::string toString() const;
+        // NOLINTEND
+    };
+
+    struct Signature {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                              name;
+        ::ll::TypedStorage<8, 32, ::std::string>                              description;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Overload>> overloads;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>>                        chainedSubcommandIndexes;
+        ::ll::TypedStorage<1, 1, ::CommandPermissionLevel>                    permissionLevel;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                   commandSymbol;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                   commandAliasEnum;
+        ::ll::TypedStorage<2, 2, ::CommandFlag>                               flags;
+        ::ll::TypedStorage<4, 4, int>                                         firstRule;
+        ::ll::TypedStorage<4, 4, int>                                         firstFactorization;
+        ::ll::TypedStorage<4, 4, int>                                         firstOptional;
+        ::ll::TypedStorage<1, 1, bool>                                        runnable;
+        ::ll::TypedStorage<8, 8, uint64>                                      ruleCounter;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Signature& operator=(Signature const&);
+        Signature(Signature const&);
+        Signature();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI Signature(::CommandRegistry::Signature&&);
+
+        MCAPI ~Signature();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::CommandRegistry::Signature&&);
         // NOLINTEND
 
     public:
@@ -552,54 +554,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-    using PredictTable = ::entt::dense_map<
-        ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
-        int,
-        ::CommandRegistry::SymbolPairHasher,
-        ::std::equal_to<void>>;
-    struct ParseTable {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::std::map<
-            ::CommandRegistry::Symbol,
-            ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>
-
-            first;
-        ::std::map<
-            ::CommandRegistry::Symbol,
-            ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>
-
-            follow;
-        ::entt::dense_map<
-            ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
-            int,
-            ::CommandRegistry::SymbolPairHasher,
-            ::std::equal_to<void>>
-
-                                   predict;
-        ::std::chrono::nanoseconds buildDuration;
-        // NOLINTEND
-    };
-
-    struct SemanticInfo {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                                      mIsValid;
-        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> mConstrainedParams;
-        ::ll::TypedStorage<8, 32, ::std::string>                            mSoftEnumText;
-        ::ll::TypedStorage<8, 32, ::std::string>                            mSoftEnumEscapeCharExceptions;
-        ::ll::TypedStorage<8, 16, ::std::set<::CommandRegistry::Symbol>>    mAlreadyCompletedSymbols;
-        // NOLINTEND
-    };
-
-    using ParamVisitCallback = ::std::function<
-        bool(::CommandParameterData const&, ::CommandOrigin const&, ::CommandRegistry::ParseToken const*)>;
-    using CommandVisitCallback = ::std::function<bool(::CommandRegistry::ParseToken const*, ::CommandOrigin const&)>;
-
-    using ParseTableMap = ::std::map<uint, ::CommandRegistry::ParseTable>;
 
     class Parser {
     public:
@@ -634,6 +588,7 @@ public:
 
         MCAPI ::std::unique_ptr<::CommandSelector<::Actor>>
         createSelector(::std::string const& selectorString, ::CommandOrigin const& origin);
+
         MCAPI ::std::vector<::std::string> getErrorParams() const;
 
         MCAPI bool parseCommand(::std::string const& in);
@@ -655,6 +610,70 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
+
+    using ChainedSubcommandConversionFunction = ::std::function<void(void*, uint64)>;
+
+    using ChainedSubcommandID = uint;
+
+    using ChainedSubcommandValueID = uint64;
+
+    using CommandOverrideFunctor =
+        ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>;
+
+    using CommandVisitCallback = ::std::function<bool(::CommandRegistry::ParseToken const*, ::CommandOrigin const&)>;
+
+    using ConstrainedValueID = uint;
+
+    using ConstrainedValueLookupKey = ::std::pair<uint64, uint>;
+
+    using CustomStorageGetFn = void* (*)(::Command*, int);
+
+    using CustomStorageIsSetFn = bool* (*)(::Command*, int);
+
+    using EnumConversionFunction = ::std::function<void(void*, uint64)>;
+
+    using EnumID = uint;
+
+    using EnumValueID = uint64;
+
+    using HardTerminal = ::CommandLexer::TokenType;
+
+    using NonTerminal = ::CommandRegistry::Symbol;
+
+    using ParamVisitCallback = ::std::function<
+        bool(::CommandParameterData const&, ::CommandOrigin const&, ::CommandRegistry::ParseToken const*)>;
+
+    using ParseMap = ::std::map<
+        ::CommandRegistry::Symbol,
+        ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>;
+
+    using ParseTableMap = ::std::map<uint, ::CommandRegistry::ParseTable>;
+
+    using PredictTable = ::entt::dense_map<
+        ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
+        int,
+        ::CommandRegistry::SymbolPairHasher,
+        ::std::equal_to<void>>;
+
+    using ProcessFunction =
+        ::std::function<::CommandRegistry::ParseToken*(::CommandRegistry::ParseToken&, ::CommandRegistry::Symbol)>;
+
+    using RuleIndex = int;
+
+    using ScoreboardScoreAccessor = ::std::function<int(bool&, ::std::string const&, ::Actor const&)>;
+
+    using SemanticConstraintID = uchar;
+
+    using SoftEnumID = uint;
+
+    using SymbolSet =
+        ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>;
+
+    using SymbolVector = ::std::vector<::CommandRegistry::Symbol>;
+
+    using Terminal = ::CommandRegistry::Symbol;
+
+    using ValueTypeID = uint64;
 
 public:
     // member variables
@@ -809,6 +828,18 @@ public:
         ::SemanticConstraint             requiredConstraints
     ) const;
 
+    MCAPI_C ::std::vector<::CommandRegistry::Symbol> _reconstructParseStack(
+        ::CommandRegistry::ParseToken const* paramTree,
+        ::CommandRegistry::SemanticInfo&     semanticInfo
+    ) const;
+
+    MCAPI_C ::std::vector<::CommandRegistry::Symbol> _reconstructParseStack(
+        ::std::vector<::CommandParameterData> const& params,
+        uint                                         matchedParams,
+        ::CommandRegistry::ParseToken const*         commandParseTree,
+        ::CommandRegistry::SemanticInfo&             semanticInfo
+    ) const;
+
     MCAPI void addChainedSubcommandValuesToExisting(uint index, ::std::vector<::std::pair<uint64, uint>> const& values);
 
     MCAPI void addEnumValueConstraints(
@@ -838,6 +869,22 @@ public:
     MCAPI void addSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
     MCAPI ::CommandRegistry::Symbol addSoftTerminal(::std::string const& name);
+
+    MCAPI_C void autoComplete(
+        ::CommandRegistry::Symbol        symbol,
+        ::std::string const&             cmdLine,
+        ::std::string const&             partialMatch,
+        bool                             newWord,
+        ::CommandOrigin const&           origin,
+        ::AutoCompleteInformation&       info,
+        ::CommandRegistry::SemanticInfo& semanticInfo
+    ) const;
+
+    MCAPI_C void autoCompleteCommand(
+        ::std::string const&       partialMatch,
+        ::CommandOrigin const&     origin,
+        ::AutoCompleteInformation& info
+    ) const;
 
     MCAPI void buildFirstSet(::CommandRegistry::ParseTable& table, ::CommandRegistry::Symbol t, uint version) const;
 
@@ -898,6 +945,8 @@ public:
 
     MCAPI ::CommandRegistry::Symbol findPostfix(::std::string const& input) const;
 
+    MCAPI_C ::CommandRegistry::Symbol findSoftEnum(::std::string const& name) const;
+
     MCAPI void fireCommandParseTableTelemetry(::IMinecraftEventing const& eventing, bool isServer) const;
 
     MCAPI void forEachNonTerminal(::std::function<void(::CommandRegistry::Symbol)> func) const;
@@ -908,6 +957,12 @@ public:
 
     MCAPI ::std::vector<::std::string> getAlphabeticalLookup(::CommandOrigin const& origin) const;
 
+    MCAPI_C ::std::unique_ptr<::AutoCompleteInformation> getAutoCompleteOptions(
+        ::CommandOrigin const& origin,
+        ::std::string const&   _cmdLine,
+        uint                   cursorPositionUnsafe
+    ) const;
+
     MCAPI ::std::string getCommandName(::std::string const& commandLine) const;
 
     MCAPI ::CommandSyntaxInformation
@@ -915,11 +970,29 @@ public:
 
     MCAPI ::InvertableFilter<::std::string> getInvertableFilter(::CommandRegistry::ParseToken const& token) const;
 
+    MCAPI_C ::CommandSyntaxInformation getOverloadSyntaxInformation(
+        ::CommandOrigin const& origin,
+        ::std::string const&   cmdLine,
+        uint                   cursorPosition
+    ) const;
+
     MCAPI bool isValid(::CommandRegistry::Symbol symbol) const;
+
+    MCAPI_C void loadRemoteCommands(::AvailableCommandsPacket const& packet);
 
     MCAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Signature const& command) const;
 
     MCAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Overload const& overload) const;
+
+    MCAPI_C bool
+    originCanRunOverloadWithParam(::CommandOrigin const& origin, ::CommandParameterData const& param) const;
+
+    MCAPI_C ::std::string parsePartialCommand(
+        ::CommandRegistry::Parser& parser,
+        ::std::string const&       _cmdLine,
+        uint                       cursorPosition,
+        bool                       cutLastToken
+    ) const;
 
     MCAPI bool parseSelector(
         ::ActorSelectorArgs&                 args,
@@ -929,6 +1002,10 @@ public:
         ::std::string&                       error,
         ::std::vector<::std::string>&        errorParams
     ) const;
+
+    MCAPI_C void popState();
+
+    MCAPI_C void pushState();
 
     MCAPI void registerAlias(::std::string name, ::std::string alias);
 
@@ -969,6 +1046,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI_C static ::BlockType const* _getBlockFromCmdParameters(::std::string const& parameters);
+
     MCAPI static ::std::string _removeStringQuotes(::std::string const& str);
 
     MCFOLD static ::CommandRegistry::ParseToken*

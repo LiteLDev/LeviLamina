@@ -24,14 +24,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AgentActionEventPacketPayload& operator=(::AgentActionEventPacketPayload&&);
+    MCNAPI ::AgentActionEventPacketPayload& operator=(::AgentActionEventPacketPayload&&);
 
-    MCAPI ~AgentActionEventPacketPayload();
+    MCNAPI ~AgentActionEventPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

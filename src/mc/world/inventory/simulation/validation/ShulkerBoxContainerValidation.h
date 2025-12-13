@@ -16,7 +16,6 @@ class ShulkerBoxContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const&,
         int const              slot,
@@ -25,11 +24,9 @@ public:
         bool
     ) const /*override*/;
 
-    // vIndex: 9
     virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
         /*override*/;
 
-    // vIndex: 0
     virtual ~ShulkerBoxContainerValidation() /*override*/ = default;
     // NOLINTEND
 
@@ -45,6 +42,8 @@ public:
     ) const;
 
     MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+
+
     // NOLINTEND
 
 public:

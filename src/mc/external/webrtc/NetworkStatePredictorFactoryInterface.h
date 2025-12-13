@@ -13,10 +13,8 @@ class NetworkStatePredictorFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::std::unique_ptr<::webrtc::NetworkStatePredictor> CreateNetworkStatePredictor() = 0;
 
-    // vIndex: 1
     virtual ~NetworkStatePredictorFactoryInterface() = default;
     // NOLINTEND
 

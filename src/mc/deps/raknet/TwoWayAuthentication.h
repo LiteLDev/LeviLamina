@@ -26,23 +26,6 @@ public:
     // clang-format on
 
     // TwoWayAuthentication inner types define
-    struct PendingChallenge {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnkc24a01;
-        ::ll::UntypedStorage<8, 152> mUnk64b3eb;
-        ::ll::UntypedStorage<8, 8>   mUnkc5550f;
-        ::ll::UntypedStorage<1, 1>   mUnkf2031a;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PendingChallenge& operator=(PendingChallenge const&);
-        PendingChallenge(PendingChallenge const&);
-        PendingChallenge();
-    };
-
     struct NonceAndRemoteSystemRequest {
     public:
         // member variables
@@ -75,6 +58,23 @@ public:
         NonceGenerator();
     };
 
+    struct PendingChallenge {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>   mUnkc24a01;
+        ::ll::UntypedStorage<8, 152> mUnk64b3eb;
+        ::ll::UntypedStorage<8, 8>   mUnkc5550f;
+        ::ll::UntypedStorage<1, 1>   mUnkf2031a;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PendingChallenge& operator=(PendingChallenge const&);
+        PendingChallenge(PendingChallenge const&);
+        PendingChallenge();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -93,19 +93,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TwoWayAuthentication() /*override*/ = default;
 
-    // vIndex: 3
     virtual void Update() /*override*/;
 
-    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
-    // vIndex: 6
     virtual void OnRakPeerShutdown() /*override*/;
 
-    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,

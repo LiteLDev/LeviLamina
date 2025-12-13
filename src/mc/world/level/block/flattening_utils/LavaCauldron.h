@@ -10,7 +10,7 @@ class Block;
 namespace FlatteningUtils::LavaCauldron {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
+MCNAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 // NOLINTEND
 
 } // namespace FlatteningUtils::LavaCauldron

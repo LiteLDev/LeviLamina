@@ -27,16 +27,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptComponent();
 
-    // vIndex: 1
     virtual ::std::string const& getTypeId_V1() const;
 
-    // vIndex: 2
     virtual ::std::string const& getTypeId_V2() const;
 
-    // vIndex: 3
     virtual bool _isValid() const = 0;
     // NOLINTEND
 
@@ -70,6 +66,8 @@ public:
     MCNAPI ::std::string const& $getTypeId_V1() const;
 
     MCNAPI ::std::string const& $getTypeId_V2() const;
+
+
     // NOLINTEND
 
 public:

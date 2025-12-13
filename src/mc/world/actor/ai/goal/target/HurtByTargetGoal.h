@@ -14,32 +14,29 @@ class HurtByTargetGoal : public ::TargetGoal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 11
     virtual void alertOther(::Mob* other, ::Mob* hurtByMob);
 
-    // vIndex: 0
     virtual ~HurtByTargetGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void $alertOther(::Mob* other, ::Mob* hurtByMob);
+    MCNAPI void $alertOther(::Mob* other, ::Mob* hurtByMob);
+
+
     // NOLINTEND
 
 public:

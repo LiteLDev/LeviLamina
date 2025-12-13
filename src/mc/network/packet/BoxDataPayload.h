@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-
 struct BoxDataPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3> mBoxBound;
+    ::ll::UntypedStorage<4, 12> mUnkd6a61f;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BoxDataPayload& operator=(BoxDataPayload const&);
+    BoxDataPayload(BoxDataPayload const&);
+    BoxDataPayload();
 };

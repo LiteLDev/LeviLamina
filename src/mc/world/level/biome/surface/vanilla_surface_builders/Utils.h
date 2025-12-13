@@ -21,7 +21,7 @@ struct SurfaceMaterialBlocks;
 namespace VanillaSurfaceBuilders::Utils {
 // functions
 // NOLINTBEGIN
-MCAPI void _buildSurface(
+MCNAPI void _buildSurface(
     ::SurfaceMaterialBlocks const&              initialBlockPalette,
     ::Block const*                              steepBlock,
     ::SurfaceMaterialAdjustmentEvaluated const& evaluatedAdjustments,
@@ -37,11 +37,11 @@ MCAPI void _buildSurface(
     bool                                        useCCOrLater
 );
 
-MCAPI void buildSurface(::ISurfaceBuilder::BuildParameters const& buildParameters);
+MCNAPI void buildSurface(::ISurfaceBuilder::BuildParameters const& buildParameters);
 
-MCAPI short findGroundHeight(::BlockVolume const& blocks, ::Pos p, ::HeightmapWrapper const& preWorldGenHeightmap);
+MCNAPI short findGroundHeight(::BlockVolume const& blocks, ::Pos p, ::HeightmapWrapper const& preWorldGenHeightmap);
 
-MCAPI bool isSteepTerrain(
+MCNAPI bool isSteepTerrain(
     ::BlockVolume const&                       blocks,
     ::BlockPos const&                          pos,
     ::MountainAttributes::SteepMaterial const& steepMaterial,

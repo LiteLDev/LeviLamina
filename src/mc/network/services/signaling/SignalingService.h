@@ -19,6 +19,7 @@
 // clang-format off
 class IMinecraftEventing;
 class ISignalingServiceConfigProvider;
+class ISignalingServiceTelemetry;
 class MessageTracker;
 class Scheduler;
 class WorkerPool;
@@ -39,25 +40,25 @@ class SignalingService : public ::Bedrock::EnableNonOwnerReferences,
 public:
     // SignalingService inner types declare
     // clang-format off
-    class Channel;
     class Connection;
-    class JsonRpcConnection;
+    class Channel;
     class JsonRpcConnectionSpy;
-    class JsonRpcInterop;
     class SignalingServiceSpy;
+    class JsonRpcConnection;
+    class JsonRpcInterop;
     // clang-format on
 
     // SignalingService inner types define
+    enum class ConnectionStatus : uchar {
+        Connected    = 0,
+        Disconnected = 1,
+    };
+
     enum class SignInError : int {
         Ok                       = 0,
         EmptyAuthFromDiscovery   = 100,
         EmptyUrlFromDiscovery    = 101,
         ExpiredAuthFromDiscovery = 102,
-    };
-
-    enum class ConnectionStatus : uchar {
-        Connected    = 0,
-        Disconnected = 1,
     };
 
     class Connection : public ::Bedrock::Http::PersistentWebSocket, public ::AppPlatformListener {
@@ -96,40 +97,28 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~Connection() /*override*/;
 
-        // vIndex: 2
         virtual void onMessage(::std::string_view incomingMessage) /*override*/;
 
-        // vIndex: 5
         virtual bool shouldReconnect() const /*override*/;
 
-        // vIndex: 6
         virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() /*override*/;
 
-        // vIndex: 7
         virtual ::Bedrock::Threading::Async<::Bedrock::Http::HeaderCollection> getHeaders() /*override*/;
 
-        // vIndex: 8
         virtual ::Bedrock::Http::RetryPolicy getReconnectPolicy() /*override*/;
 
-        // vIndex: 9
         virtual void onConnect() /*override*/;
 
-        // vIndex: 10
         virtual void onDisconnect(bool, uint closeStatus) /*override*/;
 
-        // vIndex: 11
         virtual void _requestTurnConfig() const;
 
-        // vIndex: 12
         virtual void _sendPing() const;
 
-        // vIndex: 4
         virtual void onAppSuspended() /*override*/;
 
-        // vIndex: 5
         virtual void onAppResumed() /*override*/;
         // NOLINTEND
 
@@ -216,6 +205,8 @@ public:
         MCNAPI void $onAppSuspended();
 
         MCNAPI void $onAppResumed();
+
+
         // NOLINTEND
 
     public:
@@ -226,6 +217,72 @@ public:
         MCNAPI static void** $vftableForAppPlatformListener();
         // NOLINTEND
     };
+
+    class Channel : public ::NetherNet::ISignalingInterface {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk4edbb4;
+        ::ll::UntypedStorage<8, 16> mUnkb6642a;
+        ::ll::UntypedStorage<8, 8>  mUnk2976c4;
+        ::ll::UntypedStorage<1, 1>  mUnk5f0073;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Channel& operator=(Channel const&);
+        Channel(Channel const&);
+        Channel();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ~Channel() /*override*/ = default;
+
+        virtual void SendSignal(
+            ::NetherNet::NetworkID                              to,
+            ::std::string const&                                message,
+            ::std::function<void(::NetherNet::ESessionError)>&& onComplete
+        ) /*override*/;
+
+        virtual ::Bedrock::PubSub::Subscription
+        RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI void _SendJsonRpcSignal(
+            ::NetherNet::NetworkID                              networkIDTo,
+            ::std::string const&                                message,
+            ::std::function<void(::NetherNet::ESessionError)>&& onComplete
+        );
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI void $SendSignal(
+            ::NetherNet::NetworkID                              to,
+            ::std::string const&                                message,
+            ::std::function<void(::NetherNet::ESessionError)>&& onComplete
+        );
+
+        MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
+
+
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+    class JsonRpcConnectionSpy {};
+
+    class SignalingServiceSpy {};
 
     class JsonRpcConnection : public ::SignalingService::Connection {
     public:
@@ -244,22 +301,16 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 6
         virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() /*override*/;
 
-        // vIndex: 2
         virtual void onMessage(::std::string_view incomingMessage) /*override*/;
 
-        // vIndex: 9
         virtual void onConnect() /*override*/;
 
-        // vIndex: 0
         virtual ~JsonRpcConnection() /*override*/ = default;
 
-        // vIndex: 12
         virtual void _sendPing() const /*override*/;
 
-        // vIndex: 11
         virtual void _requestTurnConfig() const /*override*/;
         // NOLINTEND
 
@@ -291,6 +342,8 @@ public:
         MCNAPI void $_sendPing() const;
 
         MCNAPI void $_requestTurnConfig() const;
+
+
         // NOLINTEND
 
     public:
@@ -299,73 +352,6 @@ public:
         MCNAPI static void** $vftableForPersistentWebSocket();
 
         MCNAPI static void** $vftableForAppPlatformListener();
-        // NOLINTEND
-    };
-
-    class JsonRpcConnectionSpy {};
-
-    class SignalingServiceSpy {};
-
-    class Channel : public ::NetherNet::ISignalingInterface {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk4edbb4;
-        ::ll::UntypedStorage<8, 16> mUnkb6642a;
-        ::ll::UntypedStorage<8, 8>  mUnk2976c4;
-        ::ll::UntypedStorage<1, 1>  mUnk5f0073;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Channel& operator=(Channel const&);
-        Channel(Channel const&);
-        Channel();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~Channel() /*override*/ = default;
-
-        // vIndex: 1
-        virtual void SendSignal(
-            ::NetherNet::NetworkID                              to,
-            ::std::string const&                                message,
-            ::std::function<void(::NetherNet::ESessionError)>&& onComplete
-        ) /*override*/;
-
-        // vIndex: 2
-        virtual ::Bedrock::PubSub::Subscription
-        RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void _SendJsonRpcSignal(
-            ::NetherNet::NetworkID                              networkIDTo,
-            ::std::string const&                                message,
-            ::std::function<void(::NetherNet::ESessionError)>&& onComplete
-        );
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $SendSignal(
-            ::NetherNet::NetworkID                              to,
-            ::std::string const&                                message,
-            ::std::function<void(::NetherNet::ESessionError)>&& onComplete
-        );
-
-        MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -385,10 +371,8 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~JsonRpcInterop() /*override*/ = default;
 
-        // vIndex: 1
         virtual ::Bedrock::Threading::Async<
             ::Bedrock::Copyable<::Bedrock::Result<::std::monostate, ::NetherNet::ESessionError>>>
         sendJsonRpcTo(
@@ -397,28 +381,22 @@ public:
             ::std::string const&                  message
         ) const /*override*/;
 
-        // vIndex: 2
         virtual ::Bedrock::Threading::Async<
             ::Bedrock::Copyable<::Bedrock::Result<::std::monostate, ::NetherNet::ESessionError>>>
         sendJsonRpc(::std::string const& message) const /*override*/;
 
-        // vIndex: 3
         virtual ::gsl::not_null<::std::shared_ptr<::MessageTracker>> getMessageTracker() /*override*/;
 
-        // vIndex: 4
         virtual void
         parseSignal(::NetherNet::NetworkID fromNetworkID, ::std::string message, ::std::string messageId) /*override*/;
 
-        // vIndex: 5
         virtual void parseTurnConfig(::Json::Value const& config) /*override*/;
 
-        // vIndex: 6
         virtual void setTurnConfig(
             ::std::vector<::NetherNet::StunRelayServer>&& config,
             ::std::chrono::steady_clock::time_point       expiration
         ) /*override*/;
 
-        // vIndex: 7
         virtual void onTurnConfigFailure(::Bedrock::ErrorInfo<::NetherNet::ESessionError> const& error) /*override*/;
         // NOLINTEND
 
@@ -449,6 +427,8 @@ public:
         );
 
         MCNAPI void $onTurnConfigFailure(::Bedrock::ErrorInfo<::NetherNet::ESessionError> const& error);
+
+
         // NOLINTEND
 
     public:
@@ -484,7 +464,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SignalingService() /*override*/;
     // NOLINTEND
 
@@ -500,6 +479,8 @@ public:
     MCNAPI ::std::shared_ptr<::SignalingService::Connection> _makeConnection(::PlayerMessaging::SigninID id);
 
     MCNAPI ::Bedrock::Threading::Async<::std::vector<::NetherNet::StunRelayServer>> getRelayConfig() const;
+
+    MCNAPI_C ::std::shared_ptr<::ISignalingServiceTelemetry const> getTelemetry() const;
 
     MCNAPI ::Bedrock::Threading::Async<::std::error_code> signIn(::PlayerMessaging::SigninID localId);
     // NOLINTEND

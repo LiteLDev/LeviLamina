@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/identity/PlayFabStatus.h"
+#include "mc/deps/core/threading/Async.h"
+
 namespace Social {
 
 struct PlayFabSignInResult {
@@ -26,8 +30,38 @@ public:
 public:
     // prevent constructor by default
     PlayFabSignInResult& operator=(PlayFabSignInResult const&);
-    PlayFabSignInResult(PlayFabSignInResult const&);
     PlayFabSignInResult();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C PlayFabSignInResult(::Social::PlayFabSignInResult&&);
+
+    MCNAPI_C PlayFabSignInResult(::Social::PlayFabSignInResult const&);
+
+    MCNAPI_C ~PlayFabSignInResult();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::Bedrock::Threading::Async<::Social::PlayFabSignInResult>
+    taskResult(::Social::PlayFabStatus status);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::Social::PlayFabSignInResult&&);
+
+    MCNAPI_C void* $ctor(::Social::PlayFabSignInResult const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Social

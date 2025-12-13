@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/world/events/BlockEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
@@ -15,7 +13,6 @@ class Actor;
 class Block;
 class BlockPos;
 class Dimension;
-namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -32,23 +29,32 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-        ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-            mScriptEventsHandle;
+        ::ll::UntypedStorage<8, 16> mUnkb195e1;
+        ::ll::UntypedStorage<8, 16> mUnkfa128e;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Listener& operator=(Listener const&);
+        Listener(Listener const&);
+        Listener();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptBlockGlobalEventListener::Listener>>
-        mListeners;
+    ::ll::UntypedStorage<8, 24> mUnk65e894;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptBlockGlobalEventListener& operator=(ScriptBlockGlobalEventListener const&);
+    ScriptBlockGlobalEventListener(ScriptBlockGlobalEventListener const&);
+    ScriptBlockGlobalEventListener();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 8
     virtual ::EventResult onBlockExploded(
         ::Dimension&      dimension,
         ::BlockPos const& blockPos,
@@ -56,7 +62,6 @@ public:
         ::Actor*          source
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptBlockGlobalEventListener() /*override*/ = default;
     // NOLINTEND
 
@@ -69,6 +74,8 @@ public:
         ::Block const&    destroyedBlock,
         ::Actor*          source
     );
+
+
     // NOLINTEND
 
 public:

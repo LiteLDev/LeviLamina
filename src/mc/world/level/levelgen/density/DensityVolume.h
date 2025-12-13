@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/Pos.h"
-
-// auto generated forward declare list
-// clang-format off
-class DensityAllocator;
-// clang-format on
-
 class DensityVolume {
 public:
     // DensityVolume inner types declare
@@ -22,19 +14,31 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<2, 2, ushort> mX;
-        ::ll::TypedStorage<2, 2, ushort> mY;
-        ::ll::TypedStorage<2, 2, ushort> mZ;
+        ::ll::UntypedStorage<2, 2> mUnkfcd293;
+        ::ll::UntypedStorage<2, 2> mUnkb04a74;
+        ::ll::UntypedStorage<2, 2> mUnk19f5bc;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Dimensions& operator=(Dimensions const&);
+        Dimensions(Dimensions const&);
+        Dimensions();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Pos const>                      mMin;
-    ::ll::TypedStorage<4, 12, ::Pos const>                      mStep;
-    ::ll::TypedStorage<2, 6, ::DensityVolume::Dimensions const> mDimensions;
-    ::ll::TypedStorage<8, 16, ::gsl::span<float>>               mValues;
-    ::ll::TypedStorage<8, 8, ::DensityAllocator*>               mAllocator;
+    ::ll::UntypedStorage<4, 12> mUnk9bef5a;
+    ::ll::UntypedStorage<4, 12> mUnk208a1c;
+    ::ll::UntypedStorage<2, 6>  mUnk8adae8;
+    ::ll::UntypedStorage<8, 16> mUnk56307f;
+    ::ll::UntypedStorage<8, 8>  mUnkcfccc2;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DensityVolume& operator=(DensityVolume const&);
+    DensityVolume(DensityVolume const&);
+    DensityVolume();
 };

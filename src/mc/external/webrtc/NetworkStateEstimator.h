@@ -16,19 +16,14 @@ class NetworkStateEstimator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::std::optional<::webrtc::NetworkStateEstimate> GetCurrentEstimate() = 0;
 
-    // vIndex: 1
     virtual void OnTransportPacketsFeedback(::webrtc::TransportPacketsFeedback const&) = 0;
 
-    // vIndex: 2
     virtual void OnReceivedPacket(::webrtc::PacketResult const&);
 
-    // vIndex: 3
     virtual void OnRouteChange(::webrtc::NetworkRouteChange const&) = 0;
 
-    // vIndex: 4
     virtual ~NetworkStateEstimator() = default;
     // NOLINTEND
 

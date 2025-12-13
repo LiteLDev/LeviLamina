@@ -15,28 +15,39 @@ class RecipeIngredient;
 
 class ShapelessRecipe : public ::Recipe {
 public:
+    // prevent constructor by default
+    ShapelessRecipe& operator=(ShapelessRecipe const&);
+    ShapelessRecipe(ShapelessRecipe const&);
+    ShapelessRecipe();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer&, ::CraftingContext&) const /*override*/;
 
-    // vIndex: 2
     virtual int getCraftingSize() const /*override*/;
 
-    // vIndex: 3
     virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
 
-    // vIndex: 4
     virtual bool isShapeless() const /*override*/;
 
-    // vIndex: 5
     virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const /*override*/;
 
-    // vIndex: 6
     virtual int size() const /*override*/;
 
-    // vIndex: 0
     virtual ~ShapelessRecipe() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI_C ShapelessRecipe(::ShapelessRecipe&& recipe);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI_C void* $ctor(::ShapelessRecipe&& recipe);
     // NOLINTEND
 
 public:
@@ -59,6 +70,8 @@ public:
     MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
     MCAPI int $size() const;
+
+
     // NOLINTEND
 
 public:

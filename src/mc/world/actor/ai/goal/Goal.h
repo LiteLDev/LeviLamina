@@ -23,34 +23,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Goal();
 
-    // vIndex: 1
     virtual bool canUse() = 0;
 
-    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 3
     virtual bool canBeInterrupted();
 
-    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string&) const = 0;
 
-    // vIndex: 8
     virtual bool isTargetGoal() const;
 
-    // vIndex: 9
     virtual void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
     // NOLINTEND
 
@@ -76,6 +66,8 @@ public:
     MCFOLD bool $isTargetGoal() const;
 
     MCFOLD void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+
+
     // NOLINTEND
 
 public:

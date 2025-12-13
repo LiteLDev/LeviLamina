@@ -40,6 +40,11 @@ namespace br::spawn { struct State; }
 class Spawner {
 public:
     // Spawner inner types define
+    using AncientCityPredicate = ::std::function<bool(::BlockSource const&, ::BlockPos)>;
+
+    using GetSpawningAreasCallback =
+        ::std::function<::gsl::span<::LevelChunk::SpawningArea const>(::LevelChunk const&)>;
+
     using MobSpawnedCallback = ::std::function<void(::Mob&)>;
 
     using SpawnMobClusterCallback = ::std::function<void(::BlockPos const&, ::SpawnConditions&)>;
@@ -47,41 +52,27 @@ public:
     using SpawnStructureMobCallback =
         ::std::function<void(::BlockPos const&, ::LevelChunk::SpawningArea const&, ::SpawnConditions const&)>;
 
-    using GetSpawningAreasCallback =
-        ::std::function<::gsl::span<::LevelChunk::SpawningArea const>(::LevelChunk const&)>;
-
-    using AncientCityPredicate = ::std::function<bool(::BlockSource const&, ::BlockPos)>;
-
     using SpawnTickCallback = ::std::function<void(::BlockPos, ::SpawnConditions)>;
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Spawner();
 
-    // vIndex: 1
     virtual void initializeServerSide(::ResourcePackManager&, ::IWorldRegistriesProvider&) = 0;
 
-    // vIndex: 2
     virtual ::SpawnSettings const& getSpawnSettings() const = 0;
 
-    // vIndex: 3
     virtual void setSpawnSettings(::SpawnSettings const&) = 0;
 
-    // vIndex: 4
     virtual ::ActorSpawnRuleGroup const* getSpawnRules() const = 0;
 
-    // vIndex: 5
     virtual ::ActorSpawnRuleGroup* getSpawnRulesMutable() const = 0;
 
-    // vIndex: 6
     virtual ::SpawnGroupRegistry const* getSpawnGroupRegistry() const = 0;
 
-    // vIndex: 7
     virtual ::br::spawn::EntityTypeCache* getEntityTypeCache() const = 0;
 
-    // vIndex: 8
     virtual ::Mob* spawnMob(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
@@ -92,11 +83,9 @@ public:
         bool                               fromSpawner
     );
 
-    // vIndex: 9
     virtual ::ItemActor*
     spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
 
-    // vIndex: 10
     virtual ::Actor* spawnProjectile(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
@@ -105,33 +94,24 @@ public:
         ::Vec3 const&                      direction
     );
 
-    // vIndex: 11
     virtual void postProcessSpawnMobs(::BlockSource&, int, int, ::Random&) = 0;
 
-    // vIndex: 12
     virtual void tick(::BlockSource&, ::LevelChunkVolumeData const&, ::ChunkPos const) = 0;
 
-    // vIndex: 13
     virtual void tickMobCount() = 0;
 
-    // vIndex: 14
     virtual void incrementSpawnableTickedMob() = 0;
 
-    // vIndex: 15
     virtual uint getSpawnableTickedMobCountPrevious() const = 0;
 
-    // vIndex: 16
     virtual ::std::unordered_set<::ActorUniqueID>
     spawnMobGroup(::BlockSource&, ::std::string const&, ::Vec3 const&, bool, bool, ::std::function<void(::Mob&)>&&) = 0;
 
-    // vIndex: 17
     virtual ::br::spawn::SpawnPlacements& getSpawnPlacements() = 0;
 
-    // vIndex: 18
     virtual ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
     filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const;
 
-    // vIndex: 19
     virtual void spawnForChunk(
         ::BlockSource&,
         ::LevelChunkVolumeData const&,
@@ -140,7 +120,6 @@ public:
         ::IRandom&
     ) const;
 
-    // vIndex: 20
     virtual void spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
     // NOLINTEND
 
@@ -204,6 +183,8 @@ public:
     ) const;
 
     MCFOLD void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
+
+
     // NOLINTEND
 
 public:

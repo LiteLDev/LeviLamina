@@ -18,22 +18,17 @@ class ClayBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 73
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 74
     virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
-    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 46
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
-    // vIndex: 0
     virtual ~ClayBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -48,6 +43,8 @@ public:
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCFOLD bool $canBeOriginalSurface(bool) const;
+
+
     // NOLINTEND
 
 public:

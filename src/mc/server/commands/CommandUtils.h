@@ -14,6 +14,7 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class CommandFilePath;
+class CommandOrigin;
 class CommandOutput;
 class CompoundTag;
 class EntityContext;
@@ -74,6 +75,8 @@ MCAPI ::std::string getActorName(::Actor const& actor);
 MCAPI ::Vec3 getFeetPos(::Actor const* entity);
 
 MCAPI ::std::vector<::ActorType> getInvalidCommandEntities(bool isChemistryEnabled, bool isCodeBuilderEnabled);
+
+MCAPI_C ::Player const* getOriginPlayer(::CommandOrigin const& origin);
 
 MCAPI ::std::string getTelemetryErrorList(::CommandOutput const& output);
 

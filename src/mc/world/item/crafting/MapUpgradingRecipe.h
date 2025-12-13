@@ -18,37 +18,32 @@ class MapUpgradingRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
+    ::ll::UntypedStorage<8, 24> mUnk2eabcc;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    MapUpgradingRecipe& operator=(MapUpgradingRecipe const&);
+    MapUpgradingRecipe(MapUpgradingRecipe const&);
     MapUpgradingRecipe();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
         /*override*/;
 
-    // vIndex: 1
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
         /*override*/;
 
-    // vIndex: 8
     virtual ::std::vector<::ItemInstance> const& getResultItems() const /*override*/;
 
-    // vIndex: 2
     virtual int getCraftingSize() const /*override*/;
 
-    // vIndex: 3
     virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
 
-    // vIndex: 6
     virtual int size() const /*override*/;
 
-    // vIndex: 0
     virtual ~MapUpgradingRecipe() /*override*/ = default;
     // NOLINTEND
 
@@ -86,6 +81,8 @@ public:
     MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
     MCFOLD int $size() const;
+
+
     // NOLINTEND
 
 public:

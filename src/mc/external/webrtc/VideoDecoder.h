@@ -54,28 +54,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~VideoDecoder() = default;
 
-    // vIndex: 1
     virtual bool Configure(::webrtc::VideoDecoder::Settings const&) = 0;
 
-    // vIndex: 3
     virtual int Decode(::webrtc::EncodedImage const&, int64);
 
-    // vIndex: 2
     virtual int Decode(::webrtc::EncodedImage const&, bool, int64);
 
-    // vIndex: 4
     virtual int RegisterDecodeCompleteCallback(::webrtc::DecodedImageCallback*) = 0;
 
-    // vIndex: 5
     virtual int Release() = 0;
 
-    // vIndex: 6
     virtual ::webrtc::VideoDecoder::DecoderInfo GetDecoderInfo() const;
 
-    // vIndex: 7
     virtual char const* ImplementationName() const;
     // NOLINTEND
 

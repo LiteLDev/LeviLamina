@@ -9,6 +9,8 @@
 #include "mc/certificates/identity/PlayerAuthenticationInfo.h"
 #include "mc/certificates/identity/PlayerAuthenticationType.h"
 #include "mc/certificates/identity/RawGameServerToken.h"
+#include "mc/certificates/identity/edu/Role.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
@@ -17,11 +19,15 @@ class AnimatedImageData;
 class Certificate;
 class MinEngineVersion;
 class MinecraftServiceKeyManager;
+class PrivateKeyManager;
 class SerializedPersonaPieceHandle;
+class SerializedSkin;
 class TintMapColor;
 class UnverifiedCertificate;
+struct SyncedClientOptionsComponent;
 namespace Json { class Value; }
 namespace mce { class Color; }
+namespace mce { struct Image; }
 // clang-format on
 
 class ConnectionRequest {
@@ -128,6 +134,46 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI_C static void _fillPersonaJson(
+        ::Json::Value&          root,
+        ::std::string const&    skinId,
+        ::mce::Image const&     skinImageData,
+        ::std::string const&    capeId,
+        ::mce::Image const&     capeImageData,
+        ::SerializedSkin const& serializedSkin
+    );
+
+    MCAPI_C static ::ConnectionRequest create(
+        ::PrivateKeyManager&                  userSigner,
+        ::PlayerAuthenticationType            authenticationType,
+        ::LegacyMultiplayerToken const&       legacyMultiplayerToken,
+        ::RawGameServerToken const&           gameServerToken,
+        ::std::string const&                  selfSignedId,
+        ::std::string const&                  serverAddress,
+        uint64                                clientRandomId,
+        ::std::string const&                  skinId,
+        ::mce::Image const&                   skinImageData,
+        ::mce::Image const&                   capeImageData,
+        ::SerializedSkin const&               serializedSkin,
+        ::std::string const&                  deviceId,
+        ::InputMode                           currentInputMode,
+        int                                   guiScale,
+        ::std::string const&                  languageCode,
+        bool                                  isEditorMode,
+        bool                                  isEduMode,
+        ::std::unique_ptr<::WebToken>         eduTokenChain,
+        ::std::string                         eduSessionToken,
+        ::std::string                         eduJoinerToHostNonce,
+        ::edu::Role                           classRole,
+        ::std::string const&                  platformId,
+        ::std::string const&                  thirdPartyName,
+        ::std::string const&                  platformOnlineId,
+        ::std::string const&                  platformOfflineId,
+        ::std::string const&                  capeId,
+        bool                                  compatibleWithClientSideChunkGen,
+        ::SyncedClientOptionsComponent const& options
+    );
+
     MCAPI static ::ConnectionRequest fromString(::std::string const& str);
     // NOLINTEND
 

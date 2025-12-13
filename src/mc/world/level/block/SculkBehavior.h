@@ -16,20 +16,15 @@ class SculkBehavior {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual int updateDecayDelay(int const) const = 0;
 
-    // vIndex: 1
     virtual int updateFacingData(int const, ::Block const&) const = 0;
 
-    // vIndex: 2
     virtual bool canChangeBlockOnSpread() const = 0;
 
-    // vIndex: 3
     virtual bool
     attemptSpreadVeins(::IBlockWorldGenAPI&, ::BlockPos const&, ::Block const&, int, ::SculkSpreader&) const = 0;
 
-    // vIndex: 4
     virtual int attemptUseCharge(
         ::IBlockWorldGenAPI&,
         ::BlockSource*,
@@ -42,7 +37,6 @@ public:
         bool const
     ) const = 0;
 
-    // vIndex: 5
     virtual void onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const = 0;
     // NOLINTEND
 

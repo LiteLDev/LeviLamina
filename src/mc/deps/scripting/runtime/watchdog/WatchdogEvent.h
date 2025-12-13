@@ -3,8 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/ContextId.h"
 #include "mc/deps/scripting/runtime/watchdog/WatchdogEventType.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ContextId; }
+// clang-format on
 
 namespace Scripting {
 
@@ -12,21 +16,23 @@ struct WatchdogEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::Scripting::WatchdogEventType> mType;
-    ::ll::TypedStorage<1, 1, ::Scripting::ContextId>         mContextId;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mPhaseName;
-    ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds>    mTimeMs;
-    ::ll::TypedStorage<8, 8, uint64>                         mMemoryUsageMB;
+    ::ll::UntypedStorage<4, 4>  mUnka61f79;
+    ::ll::UntypedStorage<1, 1>  mUnk2ce2d5;
+    ::ll::UntypedStorage<8, 32> mUnk7e6484;
+    ::ll::UntypedStorage<8, 8>  mUnk636071;
+    ::ll::UntypedStorage<8, 8>  mUnkff37ad;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    WatchdogEvent& operator=(WatchdogEvent const&);
+    WatchdogEvent(WatchdogEvent const&);
     WatchdogEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WatchdogEvent(
+    MCNAPI WatchdogEvent(
         ::Scripting::WatchdogEventType eventType,
         ::Scripting::ContextId         contextId,
         ::std::string                  phaseName,
@@ -34,13 +40,13 @@ public:
         uint64                         memoryUsageMB
     );
 
-    MCAPI ~WatchdogEvent();
+    MCNAPI ~WatchdogEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::WatchdogEventType eventType,
         ::Scripting::ContextId         contextId,
         ::std::string                  phaseName,
@@ -52,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

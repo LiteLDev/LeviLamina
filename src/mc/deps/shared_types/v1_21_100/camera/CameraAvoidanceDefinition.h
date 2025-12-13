@@ -26,6 +26,12 @@ public:
     CameraAvoidanceDefinition();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~CameraAvoidanceDefinition();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -35,6 +41,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
     // NOLINTEND
 };
 

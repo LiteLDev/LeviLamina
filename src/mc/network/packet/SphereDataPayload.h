@@ -6,6 +6,12 @@ struct SphereDataPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar> mNumSegments;
+    ::ll::UntypedStorage<1, 1> mUnkeb2430;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SphereDataPayload& operator=(SphereDataPayload const&);
+    SphereDataPayload(SphereDataPayload const&);
+    SphereDataPayload();
 };

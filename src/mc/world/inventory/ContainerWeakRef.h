@@ -10,8 +10,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class BlockSource;
 class Container;
 struct ContainerRuntimeIdTag;
+struct ContainerWeakRefData;
 // clang-format on
 
 class ContainerWeakRef {
@@ -30,7 +33,15 @@ public:
     // NOLINTBEGIN
     MCAPI explicit operator bool() const;
 
+    MCAPI_C ::ContainerWeakRefData tryGetContainer(::BlockSource& region) const;
+
     MCAPI ~ContainerWeakRef();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static ::Container* tryGetActorContainer(::Actor& actor, ::ActorContainerType containerType);
     // NOLINTEND
 
 public:

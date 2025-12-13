@@ -22,13 +22,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::unique_ptr<::IPacketLimitAlgorithm> copy() const /*override*/;
 
-    // vIndex: 2
     virtual uint checkPacket(::MinecraftPacketIds packet) /*override*/;
 
-    // vIndex: 0
     virtual ~CompositePacketLimitAlgorithm() /*override*/ = default;
     // NOLINTEND
 
@@ -38,6 +35,8 @@ public:
     MCNAPI ::std::unique_ptr<::IPacketLimitAlgorithm> $copy() const;
 
     MCNAPI uint $checkPacket(::MinecraftPacketIds packet);
+
+
     // NOLINTEND
 
 public:

@@ -13,29 +13,30 @@ namespace JsonUtil { class EmptyClass; }
 
 class DragonStrafePlayerDefinition : public ::DragonBaseGoalDefinition {
 public:
-    // DragonStrafePlayerDefinition inner types define
-    using self = ::DragonStrafePlayerDefinition;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mSwitchDirectionProbability;
-    ::ll::TypedStorage<4, 4, float> mRangeAndViewTime;
-    ::ll::TypedStorage<4, 4, float> mFireballRange;
-    ::ll::TypedStorage<4, 4, float> mViewAngle;
+    ::ll::UntypedStorage<4, 4> mUnk9a6d5d;
+    ::ll::UntypedStorage<4, 4> mUnk621e17;
+    ::ll::UntypedStorage<4, 4> mUnk46f52c;
+    ::ll::UntypedStorage<4, 4> mUnk3da9f4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DragonStrafePlayerDefinition& operator=(DragonStrafePlayerDefinition const&);
+    DragonStrafePlayerDefinition(DragonStrafePlayerDefinition const&);
+    DragonStrafePlayerDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DragonStrafePlayerDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::string const& name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DragonStrafePlayerDefinition>>&
             root

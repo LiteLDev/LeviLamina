@@ -56,9 +56,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CameraPreset(::SharedTypes::v1_21_90::CameraPreset const&);
-
     MCNAPI CameraPreset(::SharedTypes::v1_21_90::CameraPreset&&);
+
+    MCNAPI CameraPreset(::SharedTypes::v1_21_90::CameraPreset const&);
 
     MCNAPI ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset&&);
 
@@ -80,9 +80,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_90::CameraPreset const&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_21_90::CameraPreset&&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_21_90::CameraPreset const&);
     // NOLINTEND
 
 public:

@@ -43,42 +43,6 @@ public:
         Ipv6 = 6,
     };
 
-    class PingRateRecorder {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk4c52e9;
-        ::ll::UntypedStorage<4, 4>  mUnke4ceed;
-        ::ll::UntypedStorage<4, 4>  mUnkafd9c7;
-        ::ll::UntypedStorage<4, 4>  mUnkc2e940;
-        ::ll::UntypedStorage<4, 4>  mUnk7e5467;
-        ::ll::UntypedStorage<4, 4>  mUnk55e198;
-        ::ll::UntypedStorage<4, 4>  mUnk4b04bf;
-        ::ll::UntypedStorage<1, 1>  mUnk762855;
-        ::ll::UntypedStorage<1, 1>  mUnkca8a9c;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PingRateRecorder& operator=(PingRateRecorder const&);
-        PingRateRecorder(PingRateRecorder const&);
-        PingRateRecorder();
-    };
-
-    class NatHolePuncherFunctor {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk4e485b;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        NatHolePuncherFunctor& operator=(NatHolePuncherFunctor const&);
-        NatHolePuncherFunctor(NatHolePuncherFunctor const&);
-        NatHolePuncherFunctor();
-    };
-
     struct AnnounceServerData {
     public:
         // member variables
@@ -117,6 +81,42 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    };
+
+    class NatHolePuncherFunctor {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk4e485b;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        NatHolePuncherFunctor& operator=(NatHolePuncherFunctor const&);
+        NatHolePuncherFunctor(NatHolePuncherFunctor const&);
+        NatHolePuncherFunctor();
+    };
+
+    class PingRateRecorder {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnk4c52e9;
+        ::ll::UntypedStorage<4, 4>  mUnke4ceed;
+        ::ll::UntypedStorage<4, 4>  mUnkafd9c7;
+        ::ll::UntypedStorage<4, 4>  mUnkc2e940;
+        ::ll::UntypedStorage<4, 4>  mUnk7e5467;
+        ::ll::UntypedStorage<4, 4>  mUnk55e198;
+        ::ll::UntypedStorage<4, 4>  mUnk4b04bf;
+        ::ll::UntypedStorage<1, 1>  mUnk762855;
+        ::ll::UntypedStorage<1, 1>  mUnkca8a9c;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PingRateRecorder& operator=(PingRateRecorder const&);
+        PingRateRecorder(PingRateRecorder const&);
+        PingRateRecorder();
     };
 
     struct StateChangeRequestData {
@@ -216,10 +216,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RakNetServerLocator() /*override*/;
 
-    // vIndex: 3
     virtual void startAnnouncingServer(
         ::std::string const&                      playerName,
         ::std::string const&                      worldName,
@@ -232,44 +230,32 @@ public:
         bool                                      isHardcore
     ) /*override*/;
 
-    // vIndex: 4
     virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform) /*override*/;
 
-    // vIndex: 5
     virtual void startServerDiscovery(::PortPair ports) /*override*/;
 
-    // vIndex: 6
     virtual void stopServerDiscovery() /*override*/;
 
-    // vIndex: 8
     virtual void addCustomServer(::AsynchronousIPResolver const& futureIP, int port) /*override*/;
 
-    // vIndex: 7
     virtual void addCustomServer(::std::string const& address, int port) /*override*/;
 
-    // vIndex: 9
     virtual ::std::vector<::PingedCompatibleServer> getServerList() const /*override*/;
 
-    // vIndex: 10
     virtual void clearServerList() /*override*/;
 
-    // vIndex: 11
     virtual void update() /*override*/;
 
-    // vIndex: 12
     virtual float getPingTimeForGUID(::std::string const& guid) /*override*/;
 
-    // vIndex: 13
     virtual void checkCanConnectToCustomServerAsync(
         ::std::string                                         hostIpAddress,
         int                                                   port,
         ::std::function<void(::ServerConnectivityTestResult)> callback
     ) /*override*/;
 
-    // vIndex: 1
     virtual void _onDisable() /*override*/;
 
-    // vIndex: 2
     virtual void _onEnable() /*override*/;
     // NOLINTEND
 
@@ -297,6 +283,8 @@ public:
 
     MCNAPI bool _addCustomServerV6(::AsynchronousIPResolver const& futureIP, int port);
 
+    MCNAPI_C void _announceServer(::RakNetServerLocator::AnnounceServerData const& serverData);
+
     MCNAPI void _enqueueStateChangeRequest(
         ::LocatorStateChangeRequest               newState,
         ::RakNetServerLocator::AnnounceServerData newAnnounceData,
@@ -320,6 +308,8 @@ public:
 
     MCNAPI bool
     _onPongReceive(float& latencyToSet, ::RakNet::RakNetGUID const& guid, uint const& receivedTime, int ipVersion);
+
+    MCNAPI_C void _punchHoles();
 
     MCNAPI void _setPingResponder(::RakNetServerLocator::AnnounceServerData const& serverData);
 
@@ -410,6 +400,8 @@ public:
     MCNAPI void $_onDisable();
 
     MCNAPI void $_onEnable();
+
+
     // NOLINTEND
 
 public:

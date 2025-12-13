@@ -28,40 +28,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 82
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 
-    // vIndex: 64
     virtual bool uniqueAuxValues() const /*override*/;
 
-    // vIndex: 95
     virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
         /*override*/;
 
-    // vIndex: 25
     virtual ::Item& setMaxDamage(int maxDamage) /*override*/;
 
-    // vIndex: 85
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 54
     virtual bool isValidRepairItem(
         ::ItemStackBase const&   source,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const /*override*/;
 
-    // vIndex: 45
     virtual bool showsDurabilityInCreative() const /*override*/;
 
-    // vIndex: 100
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
-    // vIndex: 0
     virtual ~ChemistryStickItem() /*override*/ = default;
     // NOLINTEND
 
@@ -109,5 +99,7 @@ public:
     MCFOLD bool $showsDurabilityInCreative() const;
 
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
+
+
     // NOLINTEND
 };

@@ -22,22 +22,22 @@ class RandomScatteredLargeFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
-    ::ll::TypedStorage<4, 4, int>                           mSpacing;
-    ::ll::TypedStorage<4, 4, int>                           mMinSeparation;
+    ::ll::UntypedStorage<8, 24> mUnk98de65;
+    ::ll::UntypedStorage<4, 4>  mUnk8f09d8;
+    ::ll::UntypedStorage<4, 4>  mUnke95172;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    RandomScatteredLargeFeature& operator=(RandomScatteredLargeFeature const&);
+    RandomScatteredLargeFeature(RandomScatteredLargeFeature const&);
     RandomScatteredLargeFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
 
-    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -48,13 +48,10 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
-    // vIndex: 1
     virtual bool shouldAddHardcodedSpawnAreas() const /*override*/;
 
-    // vIndex: 2
     virtual bool shouldPostProcessMobs() const /*override*/;
 
-    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -64,7 +61,6 @@ public:
         ::Dimension const&                   dimension
     ) /*override*/;
 
-    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&                         dimension,
         ::BiomeSource const&                 biomeSource,
@@ -73,7 +69,6 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~RandomScatteredLargeFeature() /*override*/ = default;
     // NOLINTEND
 
@@ -124,6 +119,8 @@ public:
         ::ChunkPos const&                    cp,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
+
+
     // NOLINTEND
 
 public:

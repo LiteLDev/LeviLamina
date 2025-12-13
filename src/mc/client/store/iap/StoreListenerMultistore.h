@@ -14,14 +14,21 @@ class StoreListenerMultistore : public ::StoreListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~StoreListenerMultistore() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~StoreListenerMultistore() /*override*/;
+#endif
 
-    // vIndex: 15
     virtual void onQueryPurchasesSuccessMultistore(::std::string const&, ::std::vector<::PurchaseInfo> const&) = 0;
 
-    // vIndex: 16
     virtual void onQueryPurchasesFailMultistore(::std::string const&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

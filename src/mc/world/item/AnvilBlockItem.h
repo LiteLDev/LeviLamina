@@ -9,10 +9,8 @@ class AnvilBlockItem : public ::AuxDataBlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 33
     virtual int getLevelDataForAuxValue(int) const /*override*/;
 
-    // vIndex: 0
     virtual ~AnvilBlockItem() /*override*/ = default;
     // NOLINTEND
 

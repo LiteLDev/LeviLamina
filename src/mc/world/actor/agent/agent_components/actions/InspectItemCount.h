@@ -8,8 +8,14 @@ struct InspectItemCount {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> slot;
+    ::ll::UntypedStorage<4, 4> mUnkaa474d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    InspectItemCount& operator=(InspectItemCount const&);
+    InspectItemCount(InspectItemCount const&);
+    InspectItemCount();
 };
 
 } // namespace AgentComponents::Actions

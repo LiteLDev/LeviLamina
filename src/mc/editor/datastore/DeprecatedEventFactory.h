@@ -17,6 +17,19 @@ public:
     // clang-format on
 
     // DeprecatedEventFactory inner types define
+    enum class ClientActionEventType : int {
+        ActionExecute = 1,
+    };
+
+    enum class ServerUXEventType : int {
+        UpdateMenu                     = 3,
+        DestroyMenu                    = 4,
+        UpdateModalToolOption          = 7,
+        DestroyModalToolOption         = 8,
+        BindActionToControl            = 11,
+        RemoveActionBindingFromControl = 12,
+    };
+
     struct SerializedEvent {
     public:
         // member variables
@@ -42,19 +55,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    };
-
-    enum class ClientActionEventType : int {
-        ActionExecute = 1,
-    };
-
-    enum class ServerUXEventType : int {
-        UpdateMenu                     = 3,
-        DestroyMenu                    = 4,
-        UpdateModalToolOption          = 7,
-        DestroyModalToolOption         = 8,
-        BindActionToControl            = 11,
-        RemoveActionBindingFromControl = 12,
     };
 
 public:

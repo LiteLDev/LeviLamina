@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
@@ -29,46 +28,58 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 48, ::HashedString> mId;
+        ::ll::UntypedStorage<8, 48> mUnkb0097b;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Key& operator=(Key const&);
+        Key(Key const&);
+        Key();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Key();
+        MCNAPI ~Key();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::ActorDefinition>> mActorDefinition;
+    ::ll::UntypedStorage<8, 8> mUnk8cd362;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptActorType& operator=(ScriptActorType const&);
+    ScriptActorType(ScriptActorType const&);
+    ScriptActorType();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<void> addDynamicPropertiesDefinition(
+    MCNAPI ::Scripting::Result_deprecated<void> addDynamicPropertiesDefinition(
         ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
     );
 
-    MCAPI ::std::string getId() const;
+    MCNAPI ::std::string getId() const;
 
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorType const& other) const;
+    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptActorType const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::ActorDefinition& actorDef);
     // NOLINTEND
 };

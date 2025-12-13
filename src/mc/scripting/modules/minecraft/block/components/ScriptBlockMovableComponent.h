@@ -22,7 +22,6 @@ class ScriptBlockMovableComponent : public ::ScriptModuleMinecraft::BaseScriptBl
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptBlockMovableComponent() /*override*/ = default;
     // NOLINTEND
 

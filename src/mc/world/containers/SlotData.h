@@ -13,6 +13,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C bool matches(::SlotData const& other) const;
+
+    MCAPI_C void set(::std::string const& collectionName, int collectionIndex);
+
     MCAPI ~SlotData();
     // NOLINTEND
 

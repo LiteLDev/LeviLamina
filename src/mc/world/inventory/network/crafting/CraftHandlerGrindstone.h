@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 #include "mc/world/inventory/network/ItemStackNetResult.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
 
@@ -12,7 +11,7 @@
 // clang-format off
 class ItemStack;
 class ItemStackRequestActionCraftBase;
-class Player;
+struct ItemStackNetIdVariant;
 // clang-format on
 
 class CraftHandlerGrindstone : public ::CraftHandlerBase {
@@ -27,17 +26,23 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int> mInput;
-        ::ll::TypedStorage<4, 4, int> mAdditional;
+        ::ll::UntypedStorage<4, 4> mUnk7394fb;
+        ::ll::UntypedStorage<4, 4> mUnkb0404b;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ExperienceAmount& operator=(ExperienceAmount const&);
+        ExperienceAmount(ExperienceAmount const&);
+        ExperienceAmount();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Player&>                                  mPlayer;
-    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant>                   mSrcItemNetId;
-    ::ll::TypedStorage<4, 8, ::CraftHandlerGrindstone::ExperienceAmount> mExperienceAmount;
+    ::ll::UntypedStorage<8, 8>  mUnke00968;
+    ::ll::UntypedStorage<4, 24> mUnkbf07a4;
+    ::ll::UntypedStorage<4, 8>  mUnk98602c;
     // NOLINTEND
 
 public:
@@ -49,13 +54,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CraftHandlerGrindstone() /*override*/ = default;
 
-    // vIndex: 4
     virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) /*override*/;
 
-    // vIndex: 5
     virtual void _postCraftRequest(bool const wasSuccess) /*override*/;
     // NOLINTEND
 
@@ -85,6 +87,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $_postCraftRequest(bool const wasSuccess);
+
+
     // NOLINTEND
 
 public:

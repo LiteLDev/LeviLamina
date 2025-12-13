@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
+#include "mc/events/IMinecraftEventing.h"
 #include "mc/identity/IdentityEventResponse.h"
 #include "mc/identity/IdentityType.h"
 #include "mc/identity/PermissionDenyReason.h"
@@ -15,8 +16,8 @@ namespace Social { class User; }
 namespace Social { class UserData; }
 namespace Social { struct AuthToken; }
 namespace Social { struct IdentitySignInProperties; }
-namespace Social { struct PlatformUserProfileData; }
 namespace Social { struct PlayerIDs; }
+namespace Social { struct PlatformUserProfileData; }
 // clang-format on
 
 namespace Social {
@@ -41,176 +42,252 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~Identity() = default;
+#else // LL_PLAT_C
+    virtual ~Identity();
+#endif
 
-    // vIndex: 1
-    virtual ::Social::IdentityEventResponse initialize(::std::weak_ptr<::Social::User>);
+    virtual ::Social::IdentityEventResponse initialize(::std::weak_ptr<::Social::User> weakOwner);
 
-    // vIndex: 2
     virtual ::Social::IdentityType getType() const = 0;
 
-    // vIndex: 3
     virtual void tick();
 
-    // vIndex: 4
-    virtual void signIn(::Social::IdentitySignInProperties const&);
+    virtual void signIn(::Social::IdentitySignInProperties const& signInProperties);
 
-    // vIndex: 5
     virtual void cancelSignIn();
 
-    // vIndex: 6
     virtual ::Bedrock::Threading::Async<bool> signOut();
 
-    // vIndex: 7
     virtual void doDisconnect();
 
-    // vIndex: 8
     virtual bool isSignedIn() const;
 
-    // vIndex: 9
     virtual bool isNewAccount() const;
 
-    // vIndex: 10
     virtual bool isSignInInProgress() const;
 
-    // vIndex: 11
     virtual bool isGuest() const;
 
-    // vIndex: 12
     virtual bool isRemote() const;
 
-    // vIndex: 13
     virtual ::gsl::span<::Social::IdentityType const> getDependencies() const;
 
-    // vIndex: 14
-    virtual ::Social::IdentityEventResponse onIdentitySignIn(::Social::Identity&);
+    virtual ::Social::IdentityEventResponse onIdentitySignIn(::Social::Identity& justSignedIn);
 
-    // vIndex: 15
-    virtual ::Social::IdentityEventResponse onIdentitySignOut(::Social::IdentityType);
+    virtual ::Social::IdentityEventResponse onIdentitySignOut(::Social::IdentityType justSignedOut);
 
-    // vIndex: 16
     virtual ::std::string const& getId() const;
 
-    // vIndex: 17
     virtual ::Social::PlayerIDs getIds() const;
 
-    // vIndex: 18
-    virtual ::Bedrock::Threading::Async<::Social::AuthToken> getAuthToken(::std::string const&) const;
+    virtual ::Bedrock::Threading::Async<::Social::AuthToken> getAuthToken(::std::string const& url) const;
 
-    // vIndex: 19
     virtual void getUserDataObject(::Social::IUserDataObject&) const;
 
-    // vIndex: 20
-    virtual void setUserDataObject(::Social::IUserDataObject const&);
+    virtual void setUserDataObject(::Social::IUserDataObject const& userDataObject);
 
-    // vIndex: 21
-    virtual ::Social::UserData const getUserData(::std::string const&) const;
+    virtual ::Social::UserData const getUserData(::std::string const& key) const;
 
-    // vIndex: 22
-    virtual void setUserData(::std::string const&, ::Social::UserData const&);
+    virtual void setUserData(::std::string const& key, ::Social::UserData const& value);
 
-    // vIndex: 23
     virtual bool hasCachedCredentials() const;
 
-    // vIndex: 24
     virtual void clearCachedCredentials();
 
-    // vIndex: 25
     virtual ::std::string getDisplayName() const;
 
-    // vIndex: 26
-    virtual void setPresence(::std::string const&);
+    virtual void setPresence(::std::string const& presenceData);
 
-    // vIndex: 27
     virtual void clearPresence();
 
-    // vIndex: 28
     virtual bool hasPlayedLegacyGame() const;
 
-    // vIndex: 29
-    virtual bool getLegacyOptionsData(::std::vector<uchar>&);
+    virtual bool getLegacyOptionsData(::std::vector<uchar>& outBuffer);
 
-    // vIndex: 30
-    virtual void checkIsLegacyPlayer(::std::weak_ptr<::Social::User>);
+    virtual void checkIsLegacyPlayer(::std::weak_ptr<::Social::User> weakOwner);
 
-    // vIndex: 31
     virtual bool hasPremiumPlatformAccess() const;
 
-    // vIndex: 32
-    virtual void checkPremiumPlatformStatusAsync(::std::function<void(bool)>);
+    virtual void checkPremiumPlatformStatusAsync(::std::function<void(bool)> callback);
 
-    // vIndex: 33
     virtual bool hasPlatformIcons() const;
 
-    // vIndex: 34
     virtual bool hasPlatformProfileCards() const;
 
-    // vIndex: 35
     virtual ::std::string getPlatformId() const;
 
-    // vIndex: 36
     virtual ::std::string getPlatformOfflineID() const;
 
-    // vIndex: 37
     virtual ::std::string getPlatformOnlineID() const;
 
-    // vIndex: 38
     virtual ::Social::PermissionDenyReason isMultiplayerAllowed() const;
 
-    // vIndex: 39
     virtual ::Social::PermissionDenyReason isChatAllowed() const;
 
-    // vIndex: 40
     virtual ::Social::PermissionDenyReason isAddFriendAllowed() const;
 
-    // vIndex: 41
     virtual ::Social::PermissionDenyReason isUserGeneratedContentAllowed() const;
 
-    // vIndex: 42
     virtual ::Social::PermissionDenyReason isCreateAndJoinClubsAllowed() const;
 
-    // vIndex: 43
     virtual ::Social::PermissionDenyReason isViewingProfilesAllowed() const;
 
-    // vIndex: 44
     virtual ::Social::PermissionDenyReason isUploadCapturesAllowed() const;
 
-    // vIndex: 45
     virtual int addPermissionsChangeListener(::std::function<void()>);
 
-    // vIndex: 46
     virtual void removePermissionsChangeListener(int);
 
-    // vIndex: 47
     virtual bool isPlatformParentalControlsEnabled() const;
 
-    // vIndex: 48
     virtual void refreshPlatformParentalControlsSetting();
 
-    // vIndex: 49
     virtual void refreshFriendListProfileDataIfAllowed();
 
-    // vIndex: 50
     virtual bool isBlockingUser(::std::string const&) const;
 
-    // vIndex: 51
     virtual ::Bedrock::Threading::Async<::Social::PlatformUserProfileData> getProfile(::std::string const&);
 
-    // vIndex: 52
     virtual ::Bedrock::Threading::Async<::std::vector<::Social::PlatformUserProfileData>>
     getProfiles(::std::vector<::std::string> const&);
 
-    // vIndex: 53
     virtual ::Bedrock::Threading::Async<::std::vector<::Social::PlatformUserProfileData>> getFriendProfiles();
 
-    // vIndex: 54
     virtual void pruneProfileImageCache();
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void _triggerSignInCallback(
+        ::IMinecraftEventing::SignInAccountType   accountType,
+        ::Social::IdentitySignInProperties const& signInProperties,
+        ::std::error_code                         error,
+        ::std::string                             gamertagHint,
+        bool                                      getMultipleIDs
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::Social::IdentityEventResponse $initialize(::std::weak_ptr<::Social::User> weakOwner);
+
+    MCNAPI void $tick();
+
+    MCNAPI void $signIn(::Social::IdentitySignInProperties const& signInProperties);
+
+    MCNAPI void $cancelSignIn();
+
+    MCNAPI ::Bedrock::Threading::Async<bool> $signOut();
+
+    MCNAPI void $doDisconnect();
+
+    MCNAPI bool $isSignedIn() const;
+
+    MCNAPI bool $isNewAccount() const;
+
+    MCNAPI bool $isSignInInProgress() const;
+
+    MCNAPI bool $isGuest() const;
+
+    MCNAPI bool $isRemote() const;
+
+    MCNAPI ::gsl::span<::Social::IdentityType const> $getDependencies() const;
+
+    MCNAPI ::Social::IdentityEventResponse $onIdentitySignIn(::Social::Identity& justSignedIn);
+
+    MCNAPI ::Social::IdentityEventResponse $onIdentitySignOut(::Social::IdentityType justSignedOut);
+
+    MCNAPI ::std::string const& $getId() const;
+
+    MCNAPI ::Social::PlayerIDs $getIds() const;
+
+    MCNAPI ::Bedrock::Threading::Async<::Social::AuthToken> $getAuthToken(::std::string const& url) const;
+
+    MCNAPI void $getUserDataObject(::Social::IUserDataObject&) const;
+
+    MCNAPI void $setUserDataObject(::Social::IUserDataObject const& userDataObject);
+
+    MCNAPI ::Social::UserData const $getUserData(::std::string const& key) const;
+
+    MCNAPI void $setUserData(::std::string const& key, ::Social::UserData const& value);
+
+    MCNAPI bool $hasCachedCredentials() const;
+
+    MCNAPI void $clearCachedCredentials();
+
+    MCNAPI ::std::string $getDisplayName() const;
+
+    MCNAPI void $setPresence(::std::string const& presenceData);
+
+    MCNAPI void $clearPresence();
+
+    MCNAPI bool $hasPlayedLegacyGame() const;
+
+    MCNAPI bool $getLegacyOptionsData(::std::vector<uchar>& outBuffer);
+
+    MCNAPI void $checkIsLegacyPlayer(::std::weak_ptr<::Social::User> weakOwner);
+
+    MCNAPI bool $hasPremiumPlatformAccess() const;
+
+    MCNAPI void $checkPremiumPlatformStatusAsync(::std::function<void(bool)> callback);
+
+    MCNAPI bool $hasPlatformIcons() const;
+
+    MCNAPI bool $hasPlatformProfileCards() const;
+
+    MCNAPI ::std::string $getPlatformId() const;
+
+    MCNAPI ::std::string $getPlatformOfflineID() const;
+
+    MCNAPI ::std::string $getPlatformOnlineID() const;
+
+    MCNAPI ::Social::PermissionDenyReason $isMultiplayerAllowed() const;
+
+    MCNAPI ::Social::PermissionDenyReason $isChatAllowed() const;
+
+    MCNAPI ::Social::PermissionDenyReason $isAddFriendAllowed() const;
+
+    MCNAPI ::Social::PermissionDenyReason $isUserGeneratedContentAllowed() const;
+
+    MCNAPI ::Social::PermissionDenyReason $isCreateAndJoinClubsAllowed() const;
+
+    MCNAPI ::Social::PermissionDenyReason $isViewingProfilesAllowed() const;
+
+    MCNAPI ::Social::PermissionDenyReason $isUploadCapturesAllowed() const;
+
+    MCNAPI int $addPermissionsChangeListener(::std::function<void()>);
+
+    MCNAPI void $removePermissionsChangeListener(int);
+
+    MCNAPI bool $isPlatformParentalControlsEnabled() const;
+
+    MCNAPI void $refreshPlatformParentalControlsSetting();
+
+    MCNAPI void $refreshFriendListProfileDataIfAllowed();
+
+    MCNAPI bool $isBlockingUser(::std::string const&) const;
+
+    MCNAPI ::Bedrock::Threading::Async<::Social::PlatformUserProfileData> $getProfile(::std::string const&);
+
+    MCNAPI ::Bedrock::Threading::Async<::std::vector<::Social::PlatformUserProfileData>>
+    $getProfiles(::std::vector<::std::string> const&);
+
+    MCNAPI ::Bedrock::Threading::Async<::std::vector<::Social::PlatformUserProfileData>> $getFriendProfiles();
+
+    MCNAPI void $pruneProfileImageCache();
+#endif
+
 
     // NOLINTEND
 };

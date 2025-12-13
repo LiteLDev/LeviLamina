@@ -20,40 +20,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 24
     virtual bool _allowAsBool() /*override*/;
 
-    // vIndex: 25
     virtual bool _allowAsInt8() /*override*/;
 
-    // vIndex: 26
     virtual bool _allowAsUInt8() /*override*/;
 
-    // vIndex: 27
     virtual bool _allowAsInt16() /*override*/;
 
-    // vIndex: 28
     virtual bool _allowAsUInt16() /*override*/;
 
-    // vIndex: 29
     virtual bool _allowAsInt32() /*override*/;
 
-    // vIndex: 30
     virtual bool _allowAsUInt32() /*override*/;
 
-    // vIndex: 31
     virtual bool _allowAsInt64() /*override*/;
 
-    // vIndex: 32
     virtual bool _allowAsUInt64() /*override*/;
 
-    // vIndex: 33
     virtual bool _allowAsFloat() /*override*/;
 
-    // vIndex: 34
     virtual bool _allowAsDouble() /*override*/;
 
-    // vIndex: 0
     virtual ~StrictJSONCppSchemaReader() /*override*/;
     // NOLINTEND
 
@@ -99,6 +87,8 @@ public:
     MCNAPI bool $_allowAsFloat();
 
     MCNAPI bool $_allowAsDouble();
+
+
     // NOLINTEND
 
 public:

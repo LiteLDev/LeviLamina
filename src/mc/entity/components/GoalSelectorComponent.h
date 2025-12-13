@@ -11,9 +11,9 @@ class PrioritizedGoal;
 class GoalSelectorComponent {
 public:
     // GoalSelectorComponent inner types define
-    using GoalElement = ::std::pair<ushort, ::PrioritizedGoal>;
-
     using GoalCondition = bool (*)(::std::pair<ushort, ::PrioritizedGoal>&);
+
+    using GoalElement = ::std::pair<ushort, ::PrioritizedGoal>;
 
     using GoalMap = ::std::vector<::std::pair<ushort, ::PrioritizedGoal>>;
 
@@ -32,16 +32,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _eraseGoals(bool (*condition)(::std::pair<ushort, ::PrioritizedGoal>&));
+    MCNAPI void _eraseGoals(bool (*condition)(::std::pair<ushort, ::PrioritizedGoal>&));
 
-    MCAPI void addGoal(int priority, ::std::unique_ptr<::Goal> goal);
+    MCNAPI void addGoal(int priority, ::std::unique_ptr<::Goal> goal);
 
-    MCAPI void buildDebugInfo(::std::string& out) const;
+    MCNAPI void buildDebugInfo(::std::string& out) const;
 
-    MCAPI ::GoalSelectorComponent& operator=(::GoalSelectorComponent&&);
+    MCNAPI ::GoalSelectorComponent& operator=(::GoalSelectorComponent&&);
 
-    MCAPI bool removeGoal(ushort typeId);
+    MCNAPI bool removeGoal(ushort typeId);
 
-    MCAPI void stopNonTargetedGoals();
+    MCNAPI void stopNonTargetedGoals();
     // NOLINTEND
 };

@@ -14,10 +14,8 @@ class CameraBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 56
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    // vIndex: 0
     virtual ~CameraBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -25,6 +23,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+
+
     // NOLINTEND
 
 public:

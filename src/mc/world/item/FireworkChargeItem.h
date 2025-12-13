@@ -32,27 +32,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
+        bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 108
     virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const /*override*/;
 
-    // vIndex: 15
     virtual bool isDyeable() const /*override*/;
 
-    // vIndex: 67
     virtual ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const /*override*/;
 
-    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 0
     virtual ~FireworkChargeItem() /*override*/ = default;
     // NOLINTEND
 
@@ -121,7 +115,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
+        bool const                           showCategory
     ) const;
 
     MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
@@ -131,6 +125,8 @@ public:
     MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
     MCFOLD bool $isValidAuxValue(int auxValue) const;
+
+
     // NOLINTEND
 
 public:

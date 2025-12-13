@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/store/iap/PurchasePath.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ProductSku;
+// clang-format on
+
 struct PurchaseInfo {
 public:
     // member variables
@@ -18,7 +26,49 @@ public:
 
 public:
     // prevent constructor by default
-    PurchaseInfo& operator=(PurchaseInfo const&);
     PurchaseInfo(PurchaseInfo const&);
-    PurchaseInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C PurchaseInfo();
+
+    MCNAPI_C PurchaseInfo(
+        ::ProductSku         productSku,
+        ::std::string        platformPurchaseId,
+        ::std::string        receipt,
+        bool                 active,
+        ::PurchasePath       path,
+        bool                 renewal,
+        ::std::string const& correlationId,
+        bool                 passSubscription
+    );
+
+    MCNAPI_C ::PurchaseInfo& operator=(::PurchaseInfo const&);
+
+    MCNAPI_C ~PurchaseInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(
+        ::ProductSku         productSku,
+        ::std::string        platformPurchaseId,
+        ::std::string        receipt,
+        bool                 active,
+        ::PurchasePath       path,
+        bool                 renewal,
+        ::std::string const& correlationId,
+        bool                 passSubscription
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

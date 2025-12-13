@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/legacy/ActorRuntimeID.h"
-
 struct EmotePacketPayload {
 public:
     // EmotePacketPayload inner types define
@@ -16,12 +13,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
-    ::ll::TypedStorage<8, 32, ::std::string>   mPieceId;
-    ::ll::TypedStorage<4, 4, uint>             mEmoteTicks;
-    ::ll::TypedStorage<8, 32, ::std::string>   mXuid;
-    ::ll::TypedStorage<8, 32, ::std::string>   mPlatformId;
-    ::ll::TypedStorage<1, 1, uchar>            mFlags;
+    ::ll::UntypedStorage<8, 8>  mUnk691c9c;
+    ::ll::UntypedStorage<8, 32> mUnkc0d6c9;
+    ::ll::UntypedStorage<4, 4>  mUnk54c44d;
+    ::ll::UntypedStorage<8, 32> mUnkf74a0a;
+    ::ll::UntypedStorage<8, 32> mUnk7ff573;
+    ::ll::UntypedStorage<1, 1>  mUnk2ca166;
     // NOLINTEND
 
 public:
@@ -32,16 +29,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EmotePacketPayload& operator=(::EmotePacketPayload&&);
+    MCNAPI ::EmotePacketPayload& operator=(::EmotePacketPayload&&);
 
-    MCAPI ::EmotePacketPayload& operator=(::EmotePacketPayload const&);
+    MCNAPI ::EmotePacketPayload& operator=(::EmotePacketPayload const&);
 
-    MCAPI ~EmotePacketPayload();
+    MCNAPI ~EmotePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

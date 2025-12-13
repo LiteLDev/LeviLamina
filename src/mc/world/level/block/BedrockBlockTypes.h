@@ -10,7 +10,7 @@ class BaseGameVersion;
 namespace BedrockBlockTypes {
 // functions
 // NOLINTBEGIN
-MCAPI void registerBlocks(::BaseGameVersion const& baseGameVersion);
+MCNAPI void registerBlocks(::BaseGameVersion const& baseGameVersion);
 // NOLINTEND
 
 } // namespace BedrockBlockTypes

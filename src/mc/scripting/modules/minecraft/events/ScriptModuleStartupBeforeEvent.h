@@ -7,9 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptBlockComponentRegistry; }
-namespace ScriptModuleMinecraft { class ScriptCustomCommandRegistry; }
-namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptSpawnRulesRegistry; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -20,17 +17,10 @@ struct ScriptModuleStartupBeforeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::
-        TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry>>
-            mBlockComponentRegistry;
-    ::ll::
-        TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry>>
-            mItemComponentRegistry;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSpawnRulesRegistry>>
-        mSpawnRulesRegistry;
-    ::ll::
-        TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomCommandRegistry>>
-            mCustomCommandRegistry;
+    ::ll::UntypedStorage<8, 32> mUnk7edc14;
+    ::ll::UntypedStorage<8, 32> mUnkd5888e;
+    ::ll::UntypedStorage<8, 32> mUnk85d31c;
+    ::ll::UntypedStorage<8, 32> mUnkcbd0db;
     // NOLINTEND
 
 public:
@@ -41,30 +31,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptModuleStartupBeforeEvent(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
+    MCNAPI ScriptModuleStartupBeforeEvent(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSpawnRulesRegistry>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSpawnRulesRegistry>
     _getSpawnRulesRegistry() const;
 
-    MCAPI ~ScriptModuleStartupBeforeEvent();
+    MCNAPI ~ScriptModuleStartupBeforeEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

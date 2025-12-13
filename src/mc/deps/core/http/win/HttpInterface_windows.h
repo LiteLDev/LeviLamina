@@ -11,7 +11,6 @@ class HttpInterface_windows : public ::Bedrock::Http::HttpInterfaceInternal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~HttpInterface_windows() /*override*/ = default;
     // NOLINTEND
 

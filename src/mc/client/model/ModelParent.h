@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+class MinEngineVersion;
+class SemVersion;
+namespace Json { class Value; }
+// clang-format on
+
 struct ModelParent {
 public:
     // member variables
@@ -17,4 +25,38 @@ public:
     ModelParent& operator=(ModelParent const&);
     ModelParent(ModelParent const&);
     ModelParent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ModelParent(
+        ::HashedString const&     parentName,
+        ::Json::Value&            value,
+        ::SemVersion const&       fileVersion,
+        ::MinEngineVersion const& minEngineVersion,
+        ::std::string const&      sourceFilePathWithExtension,
+        bool                      isFromBaseGamePack
+    );
+
+    MCNAPI_C ~ModelParent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::HashedString const&     parentName,
+        ::Json::Value&            value,
+        ::SemVersion const&       fileVersion,
+        ::MinEngineVersion const& minEngineVersion,
+        ::std::string const&      sourceFilePathWithExtension,
+        bool                      isFromBaseGamePack
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

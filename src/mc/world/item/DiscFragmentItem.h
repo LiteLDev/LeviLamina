@@ -18,10 +18,8 @@ class DiscFragmentItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
-    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -29,7 +27,6 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~DiscFragmentItem() /*override*/ = default;
     // NOLINTEND
 
@@ -44,6 +41,8 @@ public:
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
+
+
     // NOLINTEND
 
 public:

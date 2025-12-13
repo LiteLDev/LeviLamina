@@ -9,16 +9,12 @@ class ExperiencePotion : public ::Throwable {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 140
     virtual float getGravity() /*override*/;
 
-    // vIndex: 138
     virtual float getThrowPower() /*override*/;
 
-    // vIndex: 139
     virtual float getThrowUpAngleOffset() /*override*/;
 
-    // vIndex: 8
     virtual ~ExperiencePotion() /*override*/ = default;
     // NOLINTEND
 
@@ -30,6 +26,8 @@ public:
     MCFOLD float $getThrowPower();
 
     MCAPI float $getThrowUpAngleOffset();
+
+
     // NOLINTEND
 
 public:

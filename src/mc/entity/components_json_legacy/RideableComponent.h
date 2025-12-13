@@ -35,5 +35,13 @@ public:
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction) const;
 
     MCAPI bool pullInEntity(::Actor& vehicle, ::Actor& passenger) const;
+
+    MCAPI_C ~RideableComponent();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI_C void $dtor();
     // NOLINTEND
 };

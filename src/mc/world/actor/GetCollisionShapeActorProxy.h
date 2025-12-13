@@ -9,14 +9,13 @@
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class Actor;
 // clang-format on
 
 class GetCollisionShapeActorProxy : public ::GetCollisionShapeInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Actor const&> mActor;
+    ::ll::UntypedStorage<8, 8> mUnkd7fbd7;
     // NOLINTEND
 
 public:
@@ -28,62 +27,53 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual float getFeetAttachPosY() const /*override*/;
 
-    // vIndex: 2
     virtual bool canDescendThroughBlock() const /*override*/;
 
-    // vIndex: 3
     virtual float getFallDistance() const /*override*/;
 
-    // vIndex: 4
     virtual ::ActorType getEntityTypeId() const /*override*/;
 
-    // vIndex: 5
     virtual bool isWearingLeatherBoots() const /*override*/;
 
-    // vIndex: 6
     virtual bool hasLightWeightFamilyTag() const /*override*/;
 
-    // vIndex: 8
     virtual bool isWorldBuilder() const /*override*/;
 
-    // vIndex: 7
     virtual ::AABB const& getAABB() const /*override*/;
 
-    // vIndex: 9
     virtual bool isRiding() const /*override*/;
 
-    // vIndex: 10
     virtual bool hasPassenger() const /*override*/;
 
-    // vIndex: 0
     virtual ~GetCollisionShapeActorProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getFeetAttachPosY() const;
+    MCNAPI float $getFeetAttachPosY() const;
 
-    MCAPI bool $canDescendThroughBlock() const;
+    MCNAPI bool $canDescendThroughBlock() const;
 
-    MCAPI float $getFallDistance() const;
+    MCNAPI float $getFallDistance() const;
 
-    MCAPI ::ActorType $getEntityTypeId() const;
+    MCNAPI ::ActorType $getEntityTypeId() const;
 
-    MCAPI bool $isWearingLeatherBoots() const;
+    MCNAPI bool $isWearingLeatherBoots() const;
 
-    MCAPI bool $hasLightWeightFamilyTag() const;
+    MCNAPI bool $hasLightWeightFamilyTag() const;
 
-    MCAPI bool $isWorldBuilder() const;
+    MCNAPI bool $isWorldBuilder() const;
 
-    MCAPI ::AABB const& $getAABB() const;
+    MCNAPI ::AABB const& $getAABB() const;
 
-    MCAPI bool $isRiding() const;
+    MCNAPI bool $isRiding() const;
 
-    MCAPI bool $hasPassenger() const;
+    MCNAPI bool $hasPassenger() const;
+
+
     // NOLINTEND
 
 public:

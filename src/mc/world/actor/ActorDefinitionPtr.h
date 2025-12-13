@@ -12,8 +12,8 @@ class ActorDefinitionPtr {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorDefinitionGroup*> mGroup;
-    ::ll::TypedStorage<8, 8, ::ActorDefinition*>      mPtr;
+    ::ll::UntypedStorage<8, 8> mUnkb8e0f6;
+    ::ll::UntypedStorage<8, 8> mUnk4098dc;
     // NOLINTEND
 
 public:
@@ -24,30 +24,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionPtr(::ActorDefinitionPtr const& rhs);
+    MCNAPI ActorDefinitionPtr(::ActorDefinitionPtr const& rhs);
 
-    MCAPI ActorDefinitionPtr(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
+    MCNAPI ActorDefinitionPtr(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
 
-    MCAPI ~ActorDefinitionPtr();
+    MCNAPI ~ActorDefinitionPtr();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ActorDefinitionPtr const& NONE();
+    MCNAPI static ::ActorDefinitionPtr const& NONE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionPtr const& rhs);
+    MCNAPI void* $ctor(::ActorDefinitionPtr const& rhs);
 
-    MCAPI void* $ctor(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
+    MCNAPI void* $ctor(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

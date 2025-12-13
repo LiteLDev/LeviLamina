@@ -3,7 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/input/InputMode.h"
 #include "mc/options/option_types/Option.h"
+#include "mc/options/option_types/OptionID.h"
+#include "mc/options/option_types/OptionOwnerType.h"
+#include "mc/options/option_types/OptionResetFlags.h"
 
 class InputModeFloatOption : public ::Option {
 public:
@@ -25,22 +29,78 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
+    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
 
-    // vIndex: 4
-    virtual void load(::std::string const&) /*override*/;
+    virtual void load(::std::string const& valueString) /*override*/;
 
-    // vIndex: 3
     virtual void load(::std::map<::std::string, ::std::string>& propertyMap) /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~InputModeFloatOption() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~InputModeFloatOption() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C InputModeFloatOption(
+        ::OptionID           id,
+        ::OptionOwnerType    ownerType,
+        ::OptionResetFlags   resetFlags,
+        ::std::string const& captionId,
+        ::std::string const& saveTag,
+        float                value,
+        float                valueMin,
+        float                rangeMax
+    );
+
+    MCNAPI_C void
+    _saveForInputMode(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::InputMode mode);
+
+    MCNAPI_C void set(::InputMode inputmode, float value, bool saveOptionChange);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::OptionID           id,
+        ::OptionOwnerType    ownerType,
+        ::OptionResetFlags   resetFlags,
+        ::std::string const& captionId,
+        ::std::string const& saveTag,
+        float                value,
+        float                valueMin,
+        float                rangeMax
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
+    MCNAPI void $load(::std::string const& valueString);
+
+    MCNAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

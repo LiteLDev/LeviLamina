@@ -19,13 +19,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 9
     virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) /*override*/;
 
-    // vIndex: 10
     virtual uint64 numBytesLeft() const /*override*/;
 
-    // vIndex: 0
     virtual ~StringByteInput() /*override*/;
     // NOLINTEND
 
@@ -41,6 +38,8 @@ public:
     MCAPI ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
 
     MCAPI uint64 $numBytesLeft() const;
+
+
     // NOLINTEND
 
 public:

@@ -33,10 +33,8 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 4
         virtual void onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
-        // vIndex: 0
         virtual ~ScriptProjectAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
 
@@ -44,6 +42,8 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+
+
         // NOLINTEND
 
     public:

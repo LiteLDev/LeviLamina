@@ -25,9 +25,9 @@ public:
 
     MCNAPI bool operator<(::Scripting::Version const& rhs) const;
 
-    MCNAPI ::Scripting::Version& operator=(::Scripting::Version const&);
-
     MCNAPI ::Scripting::Version& operator=(::Scripting::Version&&);
+
+    MCNAPI ::Scripting::Version& operator=(::Scripting::Version const&);
 
     MCNAPI bool operator==(::Scripting::Version const& rhs) const;
 

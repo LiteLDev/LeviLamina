@@ -2,15 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/string/HashedString.h"
-
 struct TrimPattern {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString> mPatternId;
-    ::ll::TypedStorage<8, 48, ::HashedString> mItemName;
+    ::ll::UntypedStorage<8, 48> mUnk39f162;
+    ::ll::UntypedStorage<8, 48> mUnkc3364d;
     // NOLINTEND
 
 public:
@@ -22,20 +19,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TrimPattern(::TrimPattern&&);
+    MCNAPI TrimPattern(::TrimPattern&&);
 
-    MCAPI ~TrimPattern();
+    MCNAPI ~TrimPattern();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TrimPattern&&);
+    MCNAPI void* $ctor(::TrimPattern&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

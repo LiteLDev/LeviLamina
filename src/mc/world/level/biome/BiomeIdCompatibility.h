@@ -10,7 +10,7 @@ struct BiomeIdType;
 namespace BiomeIdCompatibility {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string_view getFixedBiomeName(::BiomeIdType biomeId);
+MCNAPI ::std::string_view getFixedBiomeName(::BiomeIdType biomeId);
 // NOLINTEND
 
 } // namespace BiomeIdCompatibility

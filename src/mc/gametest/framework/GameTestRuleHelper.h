@@ -48,16 +48,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~GameTestRuleHelper() /*override*/ = default;
 
-    // vIndex: 1
     virtual void addRuleToClear(int ruleID) /*override*/;
 
-    // vIndex: 2
     virtual void clearRules() /*override*/;
 
-    // vIndex: 3
     virtual void restoreRules() /*override*/;
     // NOLINTEND
 
@@ -69,6 +65,8 @@ public:
     MCNAPI void $clearRules();
 
     MCNAPI void $restoreRules();
+
+
     // NOLINTEND
 
 public:

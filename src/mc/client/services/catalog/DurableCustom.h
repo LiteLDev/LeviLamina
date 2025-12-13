@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CustomDocumentModifier;
+struct HardwareCompatibilityContext;
+namespace Json { class Value; }
+// clang-format on
+
 struct DurableCustom {
 public:
     // member variables
@@ -59,8 +66,62 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DurableCustom& operator=(DurableCustom const&);
-    DurableCustom(DurableCustom const&);
-    DurableCustom();
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C DurableCustom();
+
+    MCNAPI_C DurableCustom(::DurableCustom&&);
+
+    MCNAPI_C DurableCustom(::DurableCustom const&);
+
+    MCNAPI_C void _parseAchievementDataIfValid(
+        ::std::string const& productId,
+        ::Json::Value const& customJson,
+        bool const&          pascalCase
+    );
+
+    MCNAPI_C void _parseSubscriptionFromCommonJson(::Json::Value const& customJson);
+
+    MCNAPI_C void fromCommonJson(
+        ::Json::Value const&                  customJson,
+        bool                                  pascalCase,
+        ::CustomDocumentModifier*             modifier,
+        ::HardwareCompatibilityContext const& hwCompContext
+    );
+
+    MCNAPI_C void fromJson(
+        ::Json::Value const&                  customObject,
+        bool                                  pascalCase,
+        ::CustomDocumentModifier*             modifier,
+        ::HardwareCompatibilityContext const& hwCompContext
+    );
+
+    MCNAPI_C ::DurableCustom& operator=(::DurableCustom&&);
+
+    MCNAPI_C ::DurableCustom& operator=(::DurableCustom const&);
+
+    MCNAPI_C void parsePerformanceJson(
+        ::Json::Value const&                  customJson,
+        ::std::string const&                  productId,
+        ::HardwareCompatibilityContext const& hwCompContext
+    );
+
+    MCNAPI_C ~DurableCustom();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::DurableCustom&&);
+
+    MCNAPI_C void* $ctor(::DurableCustom const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

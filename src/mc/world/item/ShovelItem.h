@@ -18,15 +18,12 @@ class ShovelItem : public ::DiggerItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 123
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
-    // vIndex: 0
     virtual ~ShovelItem() /*override*/ = default;
     // NOLINTEND
 
@@ -37,6 +34,8 @@ public:
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+
+
     // NOLINTEND
 
 public:

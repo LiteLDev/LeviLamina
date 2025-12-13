@@ -32,32 +32,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::unique_ptr<::IPacketLimitAlgorithm> copy() const /*override*/;
 
-    // vIndex: 2
     virtual uint checkPacket(::MinecraftPacketIds) /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~BucketPacketLimitAlgorithm() /*override*/;
+#else // LL_PLAT_C
+    virtual ~BucketPacketLimitAlgorithm() /*override*/ = default;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BucketPacketLimitAlgorithm(float drainRatePerSec, uint maxBucketSize);
+    MCNAPI_S BucketPacketLimitAlgorithm(float drainRatePerSec, uint maxBucketSize);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::BucketPacketLimitAlgorithm> createFromJsonParams(::Json::Value& paramsNode);
+    MCNAPI_S static ::Bedrock::Result<::BucketPacketLimitAlgorithm> createFromJsonParams(::Json::Value& paramsNode);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(float drainRatePerSec, uint maxBucketSize);
+    MCNAPI_S void* $ctor(float drainRatePerSec, uint maxBucketSize);
     // NOLINTEND
 
 public:
@@ -69,12 +71,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI ::std::unique_ptr<::IPacketLimitAlgorithm> $copy() const;
-    // NOLINTEND
+#endif
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };

@@ -20,6 +20,8 @@ class LogUtils {
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI_C static ::std::string getTimeStamp();
+
     MCNAPI static void
     log(::Player&                       player,
         ::Editor::LogLevel              level,

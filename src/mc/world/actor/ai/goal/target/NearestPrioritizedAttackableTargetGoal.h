@@ -15,22 +15,21 @@ class NearestPrioritizedAttackableTargetGoal : public ::NearestAttackableTargetG
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 11
     virtual ::ActorUniqueID _findTarget(::MobDescriptor const** outMobDescriptor) /*override*/;
 
-    // vIndex: 0
     virtual ~NearestPrioritizedAttackableTargetGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
+    MCNAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
+
+
     // NOLINTEND
 
 public:

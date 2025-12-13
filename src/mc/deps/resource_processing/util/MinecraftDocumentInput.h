@@ -23,8 +23,6 @@ public:
     // clang-format on
 
     // MinecraftDocumentInput inner types define
-    struct NoPayloadCheck {};
-
     struct Binary {
     public:
         // member variables
@@ -39,6 +37,8 @@ public:
         Binary(Binary const&);
         Binary();
     };
+
+    struct NoPayloadCheck {};
 
 public:
     // member variables
@@ -59,30 +59,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::SemVersion version() const /*override*/;
 
-    // vIndex: 2
     virtual ::Puv::Input::Data data() const /*override*/;
 
-    // vIndex: 3
     virtual ::Puv::Logger const& getErrors() const /*override*/;
 
-    // vIndex: 0
     virtual ~MinecraftDocumentInput() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    MinecraftDocumentInput(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
-
     MCNAPI MinecraftDocumentInput(
         ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck,
         ::SemVersion const&,
         ::std::string
     );
+
+    MCNAPI
+    MinecraftDocumentInput(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
 
     MCNAPI void init(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
 
@@ -95,10 +91,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
-
     MCNAPI void*
     $ctor(::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck, ::SemVersion const&, ::std::string);
+
+    MCNAPI void* $ctor(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
     // NOLINTEND
 
 public:
@@ -115,6 +111,8 @@ public:
     MCNAPI ::Puv::Input::Data $data() const;
 
     MCNAPI ::Puv::Logger const& $getErrors() const;
+
+
     // NOLINTEND
 
 public:

@@ -32,22 +32,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerActionComponent(::PlayerActionComponent&&);
+    MCNAPI PlayerActionComponent(::PlayerActionComponent&&);
 
-    MCAPI ::PlayerActionComponent& operator=(::PlayerActionComponent&&);
+    MCNAPI ::PlayerActionComponent& operator=(::PlayerActionComponent&&);
 
-    MCAPI ~PlayerActionComponent();
+    MCNAPI ~PlayerActionComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerActionComponent&&);
+    MCNAPI void* $ctor(::PlayerActionComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

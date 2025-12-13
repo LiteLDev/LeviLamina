@@ -29,10 +29,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void onRunSystemTick(::ScriptDeferredFlushTracker&) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptAdminBeforeEventsTickListener() /*override*/ = default;
     // NOLINTEND
 
@@ -40,6 +38,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $onRunSystemTick(::ScriptDeferredFlushTracker&);
+
+
     // NOLINTEND
 
 public:

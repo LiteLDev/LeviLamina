@@ -20,17 +20,17 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleCurve();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C ParticleCurve();
+
     MCNAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve const&);
+
+    MCNAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve&&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve&&);
+    MCNAPI_C ~ParticleCurve();
     // NOLINTEND
 
 public:
@@ -42,7 +42,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
     // NOLINTEND
 };
 

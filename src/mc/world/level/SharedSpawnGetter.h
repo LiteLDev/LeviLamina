@@ -22,10 +22,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SharedSpawnGetter() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::BlockPos const& getSharedSpawnPosition() const /*override*/;
     // NOLINTEND
 
@@ -33,6 +31,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::BlockPos const& $getSharedSpawnPosition() const;
+
+
     // NOLINTEND
 
 public:

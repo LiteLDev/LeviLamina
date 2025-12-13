@@ -9,7 +9,6 @@ class ConsumeItemDefinition : public ::BehaviorDefinition {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ConsumeItemDefinition() /*override*/ = default;
     // NOLINTEND
 

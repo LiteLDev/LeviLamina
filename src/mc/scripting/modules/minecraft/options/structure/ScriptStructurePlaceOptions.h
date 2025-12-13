@@ -33,10 +33,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleMinecraft::ScriptStructurePlaceOptions&
-    operator=(::ScriptModuleMinecraft::ScriptStructurePlaceOptions const&);
+    operator=(::ScriptModuleMinecraft::ScriptStructurePlaceOptions&&);
 
     MCNAPI ::ScriptModuleMinecraft::ScriptStructurePlaceOptions&
-    operator=(::ScriptModuleMinecraft::ScriptStructurePlaceOptions&&);
+    operator=(::ScriptModuleMinecraft::ScriptStructurePlaceOptions const&);
 
     MCNAPI ~ScriptStructurePlaceOptions();
     // NOLINTEND

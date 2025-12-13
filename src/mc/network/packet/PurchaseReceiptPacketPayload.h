@@ -6,18 +6,24 @@ struct PurchaseReceiptPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mPurchaseReceipts;
+    ::ll::UntypedStorage<8, 24> mUnk56791d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PurchaseReceiptPacketPayload& operator=(PurchaseReceiptPacketPayload const&);
+    PurchaseReceiptPacketPayload(PurchaseReceiptPacketPayload const&);
+    PurchaseReceiptPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PurchaseReceiptPacketPayload();
+    MCNAPI ~PurchaseReceiptPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

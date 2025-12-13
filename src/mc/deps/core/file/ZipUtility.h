@@ -23,7 +23,6 @@ class ZipUtility : public ::Core::ZipUtils::IZipUtility {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::Bedrock::Result<void>
     zip(::Core::Path const&                  inputPath,
         ::Core::Path const&                  zipOutputPath,
@@ -31,7 +30,6 @@ public:
         bool                                 useLowMemMode,
         ::Core::ZipUtils::ZipSettings const& zipSettings) const /*override*/;
 
-    // vIndex: 1
     virtual ::Bedrock::Result<void>
     zip(::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
         ::Core::PathView                                        zipOutputPath,
@@ -40,7 +38,6 @@ public:
         ::std::function<::std::string(::Core::PathView)>        overrideNameCallback,
         ::Core::ZipUtils::ZipSettings const&                    zipSettings) const /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::Result<void> unzipInTransaction(
         ::Core::Path const&                    zipInputPath,
         ::Core::Path const&                    outputFolderPath,
@@ -49,7 +46,6 @@ public:
         ::Core::ZipUtils::UnzipSettings const& unzipSettings
     ) const /*override*/;
 
-    // vIndex: 4
     virtual ::Bedrock::Result<void> unzipToFlatFile(
         ::Core::Path const&                    zipInputPath,
         ::Core::Path const&                    outputFolderPath,
@@ -58,21 +54,18 @@ public:
         ::Core::ZipUtils::UnzipSettings const& unzipSettings
     ) const /*override*/;
 
-    // vIndex: 5
     virtual bool getFilenames(
         ::Core::Path const&                               zipPath,
         ::std::vector<::Core::PathBuffer<::std::string>>& result,
         ::Core::ZipUtils::UnzipSettings const&            unzipSettings
     ) const /*override*/;
 
-    // vIndex: 6
     virtual bool exists(
         ::Core::Path const&                    zipPath,
         ::Core::Path const&                    filePath,
         ::Core::ZipUtils::UnzipSettings const& unzipSettings
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~ZipUtility() /*override*/ = default;
     // NOLINTEND
 
@@ -123,6 +116,8 @@ public:
         ::Core::Path const&                    filePath,
         ::Core::ZipUtils::UnzipSettings const& unzipSettings
     ) const;
+
+
     // NOLINTEND
 
 public:

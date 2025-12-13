@@ -63,10 +63,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void init() /*override*/;
 
-    // vIndex: 2
     virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(
         ::std::string                                 name,
         uint64                                        threadCount,
@@ -76,10 +74,8 @@ public:
         ::std::optional<int> const                    idealCore
     ) /*override*/;
 
-    // vIndex: 3
     virtual void tick() /*override*/;
 
-    // vIndex: 0
     virtual ~WorkerPoolManagerImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -110,6 +106,8 @@ public:
     );
 
     MCNAPI void $tick();
+
+
     // NOLINTEND
 
 public:

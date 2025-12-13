@@ -24,6 +24,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI_C static ::Vec3 clamp(::Vec3 const& v, ::Vec3 const& clipMin, ::Vec3 const& clipMax);
+
     MCAPI static ::Vec3 directionFromRotation(::Vec2 const& rot);
     // NOLINTEND
 
@@ -36,7 +38,11 @@ public:
 
     MCAPI static ::Vec3 const& MIN();
 
+    MCAPI_C static ::Vec3 const& NEG_UNIT_X();
+
     MCAPI static ::Vec3 const& NEG_UNIT_Y();
+
+    MCAPI_C static ::Vec3 const& NEG_UNIT_Z();
 
     MCAPI static ::Vec3 const& ONE();
 
@@ -52,8 +58,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD_C void* $ctor(::glm::vec3 const& glm);
+
     MCAPI void* $ctor(float s);
 
-    MCAPI void* $ctor(float x_, float y_, float z_);
+    MCFOLD void* $ctor(float x_, float y_, float z_);
     // NOLINTEND
 };

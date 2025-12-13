@@ -14,16 +14,24 @@ class ClientNetworkEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClientNetworkEventListener() = default;
 
-    // vIndex: 1
     virtual ::EventResult onMessage(::ClientMessageEvent const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::EventResult $onMessage(::ClientMessageEvent const&);
+#endif
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

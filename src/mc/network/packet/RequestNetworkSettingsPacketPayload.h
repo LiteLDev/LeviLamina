@@ -6,6 +6,12 @@ struct RequestNetworkSettingsPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mClientNetworkVersion;
+    ::ll::UntypedStorage<4, 4> mUnke8c79e;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RequestNetworkSettingsPacketPayload& operator=(RequestNetworkSettingsPacketPayload const&);
+    RequestNetworkSettingsPacketPayload(RequestNetworkSettingsPacketPayload const&);
+    RequestNetworkSettingsPacketPayload();
 };

@@ -14,7 +14,12 @@ class ClientNetworkEventCoordinator : public ::EventCoordinator<::ClientNetworkE
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClientNetworkEventCoordinator() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

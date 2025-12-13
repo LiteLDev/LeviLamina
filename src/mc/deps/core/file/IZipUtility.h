@@ -22,10 +22,8 @@ class IZipUtility {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IZipUtility() = default;
 
-    // vIndex: 2
     virtual ::Bedrock::Result<void>
     zip(::Core::Path const&,
         ::Core::Path const&,
@@ -33,7 +31,6 @@ public:
         bool,
         ::Core::ZipUtils::ZipSettings const&) const = 0;
 
-    // vIndex: 1
     virtual ::Bedrock::Result<void>
     zip(::std::vector<::Core::PathBuffer<::std::string>> const&,
         ::Core::PathView,
@@ -42,7 +39,6 @@ public:
         ::std::function<::std::string(::Core::PathView)>,
         ::Core::ZipUtils::ZipSettings const&) const = 0;
 
-    // vIndex: 3
     virtual ::Bedrock::Result<void> unzipInTransaction(
         ::Core::Path const&,
         ::Core::Path const&,
@@ -51,7 +47,6 @@ public:
         ::Core::ZipUtils::UnzipSettings const&
     ) const = 0;
 
-    // vIndex: 4
     virtual ::Bedrock::Result<void> unzipToFlatFile(
         ::Core::Path const&,
         ::Core::Path const&,
@@ -60,14 +55,12 @@ public:
         ::Core::ZipUtils::UnzipSettings const&
     ) const = 0;
 
-    // vIndex: 5
     virtual bool getFilenames(
         ::Core::Path const&,
         ::std::vector<::Core::PathBuffer<::std::string>>&,
         ::Core::ZipUtils::UnzipSettings const&
     ) const = 0;
 
-    // vIndex: 6
     virtual bool exists(::Core::Path const&, ::Core::Path const&, ::Core::ZipUtils::UnzipSettings const&) const = 0;
     // NOLINTEND
 

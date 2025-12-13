@@ -29,10 +29,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::BlockSource const& getBlockSource() const /*override*/;
 
-    // vIndex: 0
     virtual ~BlockRandomTickEvent() /*override*/;
     // NOLINTEND
 
@@ -46,6 +44,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::BlockSource const& $getBlockSource() const;
+
+
     // NOLINTEND
 
 public:

@@ -29,22 +29,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ~HudContainerModel() /*override*/ = default;
 
-    // vIndex: 0
     virtual void containerContentChanged(int slot) /*override*/;
 
-    // vIndex: 14
     virtual bool isValid() /*override*/;
 
-    // vIndex: 7
     virtual ::ContainerWeakRef getContainerWeakRef() const /*override*/;
 
-    // vIndex: 22
     virtual ::Container* _getContainer() const /*override*/;
 
-    // vIndex: 24
     virtual void _init() /*override*/;
     // NOLINTEND
 
@@ -72,6 +66,8 @@ public:
     MCFOLD ::Container* $_getContainer() const;
 
     MCAPI void $_init();
+
+
     // NOLINTEND
 
 public:

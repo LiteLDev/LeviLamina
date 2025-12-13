@@ -8,23 +8,18 @@ class MessageDigest {
 public:
     // MessageDigest inner types define
     enum : int {
-        // bitfield representation
-        KMaxSize = 1 << 6,
+        KMaxSize = 64,
     };
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MessageDigest();
 
-    // vIndex: 1
     virtual uint64 Size() const = 0;
 
-    // vIndex: 2
     virtual void Update(void const*, uint64) = 0;
 
-    // vIndex: 3
     virtual uint64 Finish(void*, uint64) = 0;
     // NOLINTEND
 

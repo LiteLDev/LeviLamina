@@ -27,6 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C ::Bedrock::JSONObject::ArrayNode::iterator_base<1> begin() const;
+
     MCNAPI bool setContents(::Bedrock::JSONObject::ValueWrapper const& contents);
     // NOLINTEND
 };

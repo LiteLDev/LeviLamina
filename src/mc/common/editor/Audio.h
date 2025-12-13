@@ -25,9 +25,21 @@ public:
     Audio();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit Audio(::std::function<void(::Editor::Settings::AudioProps const&)> callback);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::function<void(::Editor::Settings::AudioProps const&)> callback);
     // NOLINTEND
 };
 

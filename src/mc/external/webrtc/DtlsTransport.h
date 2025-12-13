@@ -38,19 +38,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::webrtc::scoped_refptr<::webrtc::IceTransportInterface> ice_transport() /*override*/;
 
-    // vIndex: 4
     virtual ::webrtc::DtlsTransportInformation Information() /*override*/;
 
-    // vIndex: 5
     virtual void RegisterObserver(::webrtc::DtlsTransportObserverInterface* observer) /*override*/;
 
-    // vIndex: 6
     virtual void UnregisterObserver() /*override*/;
 
-    // vIndex: 2
     virtual ~DtlsTransport() /*override*/;
     // NOLINTEND
 
@@ -90,6 +85,8 @@ public:
     MCNAPI void $RegisterObserver(::webrtc::DtlsTransportObserverInterface* observer);
 
     MCNAPI void $UnregisterObserver();
+
+
     // NOLINTEND
 
 public:

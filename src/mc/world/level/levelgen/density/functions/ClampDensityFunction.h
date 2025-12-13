@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/levelgen/density/DensityFunctionPtr.h"
 #include "mc/world/level/levelgen/density/IDensityFunction.h"
 
 // auto generated forward declare list
@@ -16,18 +15,22 @@ class ClampDensityFunction : public ::IDensityFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::DensityFunctionPtr const> mInput;
-    ::ll::TypedStorage<4, 4, float const>                 mMin;
-    ::ll::TypedStorage<4, 4, float const>                 mMax;
+    ::ll::UntypedStorage<8, 16> mUnk705656;
+    ::ll::UntypedStorage<4, 4>  mUnk70deaa;
+    ::ll::UntypedStorage<4, 4>  mUnkfde417;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ClampDensityFunction& operator=(ClampDensityFunction const&);
+    ClampDensityFunction(ClampDensityFunction const&);
+    ClampDensityFunction();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClampDensityFunction() /*override*/ = default;
 
-    // vIndex: 1
     virtual ushort addToCalculators(::DensityCalculators&, ::DensityFunctionRegistry const&) const /*override*/;
     // NOLINTEND
 

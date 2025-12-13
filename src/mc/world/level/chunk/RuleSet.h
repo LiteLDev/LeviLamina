@@ -33,9 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RuleSet(::br::worldgen::processors::RuleSet const&);
-
     MCNAPI RuleSet(::br::worldgen::processors::RuleSet&&);
+
+    MCNAPI RuleSet(::br::worldgen::processors::RuleSet const&);
 
     MCNAPI ::br::worldgen::processors::RuleSet& operator=(::br::worldgen::processors::RuleSet&&);
 
@@ -58,9 +58,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::br::worldgen::processors::RuleSet const&);
-
     MCNAPI void* $ctor(::br::worldgen::processors::RuleSet&&);
+
+    MCNAPI void* $ctor(::br::worldgen::processors::RuleSet const&);
     // NOLINTEND
 
 public:

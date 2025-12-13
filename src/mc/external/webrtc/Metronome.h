@@ -16,13 +16,10 @@ class Metronome {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Metronome() = default;
 
-    // vIndex: 1
     virtual void RequestCallOnNextTick(::absl::AnyInvocable<void() &&>);
 
-    // vIndex: 2
     virtual ::webrtc::TimeDelta TickPeriod() const = 0;
     // NOLINTEND
 

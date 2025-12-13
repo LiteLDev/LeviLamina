@@ -44,19 +44,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent event, int data) /*override*/;
 
-    // vIndex: 67
     virtual void onLightningHit() /*override*/;
 
-    // vIndex: 8
     virtual ~VillagerBase() /*override*/;
     // NOLINTEND
 
@@ -99,9 +94,11 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent event, int data);
 
     MCAPI void $onLightningHit();
+
+
     // NOLINTEND
 
 public:

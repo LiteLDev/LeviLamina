@@ -3,38 +3,39 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/world/level/levelgen/feature/feature_loading/FeatureVersion.h"
 
 class FeatureTypeVersion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::SemVersion> mFormatVersion;
-    ::ll::TypedStorage<1, 1, bool>          mIsInternal;
+    ::ll::UntypedStorage<8, 24> mUnk8bb473;
+    ::ll::UntypedStorage<1, 1>  mUnkbafaa0;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    FeatureTypeVersion& operator=(FeatureTypeVersion const&);
+    FeatureTypeVersion(FeatureTypeVersion const&);
     FeatureTypeVersion();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion version, bool isInternal);
+    MCNAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion version, bool isInternal);
 
-    MCAPI ~FeatureTypeVersion();
+    MCNAPI ~FeatureTypeVersion();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FeatureLoading::FeatureVersion version, bool isInternal);
+    MCNAPI void* $ctor(::FeatureLoading::FeatureVersion version, bool isInternal);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

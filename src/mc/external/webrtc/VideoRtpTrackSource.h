@@ -27,13 +27,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~Callback() = default;
 
-        // vIndex: 1
         virtual void OnGenerateKeyFrame() = 0;
 
-        // vIndex: 2
         virtual void OnEncodedSinkEnabled(bool) = 0;
         // NOLINTEND
 
@@ -63,22 +60,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 13
     virtual ::rtc::VideoSourceInterface<::webrtc::VideoFrame>* source() /*override*/;
 
-    // vIndex: 8
     virtual bool SupportsEncodedOutput() const /*override*/;
 
-    // vIndex: 9
     virtual void GenerateKeyFrame() /*override*/;
 
-    // vIndex: 10
     virtual void AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink) /*override*/;
 
-    // vIndex: 11
     virtual void RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink) /*override*/;
 
-    // vIndex: 0
     virtual ~VideoRtpTrackSource() /*override*/;
     // NOLINTEND
 
@@ -118,6 +109,8 @@ public:
     MCNAPI void $AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink);
 
     MCNAPI void $RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink);
+
+
     // NOLINTEND
 
 public:

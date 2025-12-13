@@ -11,16 +11,12 @@ class PumpkinBlockItem : public ::BlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 104
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
-    // vIndex: 105
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
-    // vIndex: 0
     virtual ~PumpkinBlockItem() /*override*/ = default;
     // NOLINTEND
 
@@ -32,6 +28,8 @@ public:
     MCFOLD ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
     MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+
+
     // NOLINTEND
 
 public:

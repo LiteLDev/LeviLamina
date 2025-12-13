@@ -32,6 +32,22 @@ public:
     // clang-format on
 
     // CloudServer inner types define
+    struct BufferedGetResponseFromServer {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk7816d1;
+        ::ll::UntypedStorage<8, 72> mUnkd7e6c9;
+        ::ll::UntypedStorage<1, 1>  mUnk740942;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BufferedGetResponseFromServer& operator=(BufferedGetResponseFromServer const&);
+        BufferedGetResponseFromServer(BufferedGetResponseFromServer const&);
+        BufferedGetResponseFromServer();
+    };
+
     struct CloudData {
     public:
         // member variables
@@ -71,6 +87,39 @@ public:
         CloudDataList& operator=(CloudDataList const&);
         CloudDataList(CloudDataList const&);
         CloudDataList();
+    };
+
+    struct CloudQueryWithAddresses {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnkaf427c;
+        ::ll::UntypedStorage<8, 16> mUnke33067;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CloudQueryWithAddresses& operator=(CloudQueryWithAddresses const&);
+        CloudQueryWithAddresses(CloudQueryWithAddresses const&);
+        CloudQueryWithAddresses();
+    };
+
+    struct GetRequest {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 48> mUnk33c3b1;
+        ::ll::UntypedStorage<8, 8>  mUnk656c97;
+        ::ll::UntypedStorage<4, 4>  mUnkc0d6cd;
+        ::ll::UntypedStorage<8, 16> mUnked6604;
+        ::ll::UntypedStorage<8, 16> mUnk1f848a;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        GetRequest& operator=(GetRequest const&);
+        GetRequest(GetRequest const&);
+        GetRequest();
     };
 
     struct KeySubscriberID {
@@ -122,55 +171,6 @@ public:
         RemoteServer();
     };
 
-    struct BufferedGetResponseFromServer {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk7816d1;
-        ::ll::UntypedStorage<8, 72> mUnkd7e6c9;
-        ::ll::UntypedStorage<1, 1>  mUnk740942;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BufferedGetResponseFromServer& operator=(BufferedGetResponseFromServer const&);
-        BufferedGetResponseFromServer(BufferedGetResponseFromServer const&);
-        BufferedGetResponseFromServer();
-    };
-
-    struct CloudQueryWithAddresses {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkaf427c;
-        ::ll::UntypedStorage<8, 16> mUnke33067;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CloudQueryWithAddresses& operator=(CloudQueryWithAddresses const&);
-        CloudQueryWithAddresses(CloudQueryWithAddresses const&);
-        CloudQueryWithAddresses();
-    };
-
-    struct GetRequest {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48> mUnk33c3b1;
-        ::ll::UntypedStorage<8, 8>  mUnk656c97;
-        ::ll::UntypedStorage<4, 4>  mUnkc0d6cd;
-        ::ll::UntypedStorage<8, 16> mUnked6604;
-        ::ll::UntypedStorage<8, 16> mUnk1f848a;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        GetRequest& operator=(GetRequest const&);
-        GetRequest(GetRequest const&);
-        GetRequest();
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -195,41 +195,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CloudServer() /*override*/ = default;
 
-    // vIndex: 3
     virtual void Update() /*override*/;
 
-    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
-    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,
         ::RakNet::PI2_LostConnectionReason
     ) /*override*/;
 
-    // vIndex: 6
     virtual void OnRakPeerShutdown() /*override*/;
 
-    // vIndex: 17
     virtual void OnPostRequest(::RakNet::Packet*);
 
-    // vIndex: 18
     virtual void OnReleaseRequest(::RakNet::Packet*);
 
-    // vIndex: 19
     virtual void OnGetRequest(::RakNet::Packet*);
 
-    // vIndex: 20
     virtual void OnUnsubscribeRequest(::RakNet::Packet*);
 
-    // vIndex: 21
     virtual void OnServerToServerGetRequest(::RakNet::Packet*);
 
-    // vIndex: 22
     virtual void OnServerToServerGetResponse(::RakNet::Packet*);
     // NOLINTEND
 

@@ -16,4 +16,16 @@ public:
     WorldTransferActionContext& operator=(WorldTransferActionContext const&);
     WorldTransferActionContext(WorldTransferActionContext const&);
     WorldTransferActionContext();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~WorldTransferActionContext();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

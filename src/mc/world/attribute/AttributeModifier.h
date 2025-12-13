@@ -26,10 +26,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AttributeModifier();
 
-    // vIndex: 1
     virtual bool isInstantaneous() const;
     // NOLINTEND
 
@@ -63,6 +61,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isInstantaneous() const;
+
+
     // NOLINTEND
 
 public:

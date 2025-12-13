@@ -14,6 +14,7 @@ class IDataInput;
 // clang-format off
 class Actor;
 class Block;
+class BlockPalette;
 class BlockType;
 class ComponentItem;
 class CompoundTag;
@@ -24,10 +25,14 @@ class Item;
 class ItemDescriptor;
 class ItemEnchants;
 class ItemInstance;
+class ItemStack;
+class Level;
+class NetworkItemStackDescriptor;
 class RecipeIngredient;
 class RenderParams;
 class SaveContext;
 class Vec3;
+struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
 namespace mce { class Color; }
@@ -81,25 +86,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ItemStackBase();
 
-    // vIndex: 3
     virtual void reinit(::Item const&, int, int);
 
-    // vIndex: 2
     virtual void reinit(::Block const&, int);
 
-    // vIndex: 1
     virtual void reinit(::std::string_view const, int, int);
 
-    // vIndex: 4
     virtual void setNull(::std::optional<::std::string> reason);
 
-    // vIndex: 5
     virtual ::std::string toString() const;
 
-    // vIndex: 6
     virtual ::std::string toDebugString() const;
     // NOLINTEND
 
@@ -122,6 +120,8 @@ public:
     MCAPI void _checkForItemWorldCompatibility();
 
     MCAPI ::std::string _getHoverFormattingPrefix() const;
+
+    MCAPI_C bool _hasFullOrPartialTag(::HashedString const& string) const;
 
     MCAPI void _loadComponents(::CompoundTag const& compoundTag);
 
@@ -153,7 +153,11 @@ public:
 
     MCAPI int getBaseRepairCost() const;
 
+    MCAPI_C ::Block const* getBlockForRendering() const;
+
     MCAPI ::WeakPtr<::BlockType const> const& getBlockType() const;
+
+    MCAPI_C ::WeakPtr<::BlockType const> const& getBlockTypeForRendering() const;
 
     MCAPI ::mce::Color getColor() const;
 
@@ -174,13 +178,25 @@ public:
     MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
     getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
 
+    MCAPI_C ::Bedrock::Safety::RedactableString getFormattedHovertext(::Level& level, bool showCategory) const;
+
     MCAPI ::HashedString const& getFullNameHash() const;
+
+    MCAPI_C ::std::string getHoverName() const;
+
+    MCAPI_C ::ResolvedItemIconInfo getIconInfo(int newAnimationFrame, bool inInventoryPane) const;
 
     MCAPI short getId() const;
 
     MCAPI int getIdAux() const;
 
+    MCAPI_C int getIdAuxEnchanted() const;
+
+    MCAPI_C bool getIsValidPickupTime() const;
+
     MCAPI ::Item const* getItem() const;
+
+    MCAPI_C short getMaxDamage() const;
 
     MCAPI uchar getMaxStackSize() const;
 
@@ -197,6 +213,10 @@ public:
     MCAPI ::Bedrock::Safety::RedactableString getRedactedHoverName() const;
 
     MCAPI ::Bedrock::Safety::RedactableString getRedactedName() const;
+
+    MCAPI_C bool hasChargedItem() const;
+
+    MCAPI_C bool hasComponent(::std::string const& name) const;
 
     MCAPI bool hasContainerData() const;
 
@@ -216,19 +236,29 @@ public:
 
     MCAPI bool isArmorItem() const;
 
+    MCAPI_C bool isAttachableEquipment() const;
+
     MCAPI bool isBlock() const;
+
+    MCAPI_C bool isBlockInstance(::HashedString const& blockName) const;
 
     MCAPI bool isDamageableItem() const;
 
     MCAPI bool isDamaged() const;
 
+    MCAPI_C bool isEnchanted() const;
+
     MCAPI bool isEnchantingBook() const;
+
+    MCAPI_C bool isGlint() const;
 
     MCAPI bool isHorseArmorItem() const;
 
     MCAPI bool isHumanoidWearableBlockItem() const;
 
     MCAPI bool isInstance(::HashedString const& itemName, bool useItemLookup) const;
+
+    MCAPI_C bool isLiquidClipItem() const;
 
     MCAPI bool isNull() const;
 
@@ -302,6 +332,13 @@ public:
     // NOLINTBEGIN
     MCAPI static bool
     _loadBlocksForCanPlaceOnCanDestroy(::std::vector<::BlockType const*>& blockList, ::std::string const& blockName);
+
+    MCAPI_C static void loadItemStacksFromDescriptor(
+        ::std::vector<::ItemStack>&                        outItems,
+        ::std::vector<::NetworkItemStackDescriptor> const& descriptors,
+        ::BlockPalette&                                    blockPalette,
+        bool                                               isClientSide
+    );
     // NOLINTEND
 
 public:
@@ -366,6 +403,8 @@ public:
     MCAPI ::std::string $toString() const;
 
     MCAPI ::std::string $toDebugString() const;
+
+
     // NOLINTEND
 
 public:

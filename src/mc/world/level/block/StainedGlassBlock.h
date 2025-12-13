@@ -25,7 +25,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
     virtual bool getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
@@ -33,10 +32,8 @@ public:
         ::BlockPos const&          pos
     ) const /*override*/;
 
-    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 0
     virtual ~StainedGlassBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -57,6 +54,8 @@ public:
     ) const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+
+
     // NOLINTEND
 
 public:

@@ -36,22 +36,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 11
     virtual ::ActorUniqueID _findTarget(::MobDescriptor const** outMobDescriptor);
 
-    // vIndex: 0
     virtual ~NearestAttackableTargetGoal() /*override*/;
     // NOLINTEND
 
@@ -93,6 +87,8 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
     MCAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
+
+
     // NOLINTEND
 
 public:

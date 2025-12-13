@@ -20,17 +20,13 @@ class LiquidBlock : public ::LiquidBlockBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 145
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
-    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    // vIndex: 0
     virtual ~LiquidBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -73,6 +69,8 @@ public:
     MCFOLD void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+
+
     // NOLINTEND
 
 public:

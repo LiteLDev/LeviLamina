@@ -31,7 +31,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptWidgetComponentRenderPrimType_Line() /*override*/ = default;
     // NOLINTEND
 

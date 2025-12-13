@@ -16,10 +16,8 @@ class IceTransportInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::cricket::IceTransportInternal* internal() = 0;
 
-    // vIndex: 2
     virtual ~IceTransportInterface() /*override*/;
     // NOLINTEND
 

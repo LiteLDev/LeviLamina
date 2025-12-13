@@ -29,23 +29,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Vec3 const& getPosition() const /*override*/;
 
-    // vIndex: 2
-    virtual void setPosition(::Vec3 const&) /*override*/;
+    virtual void setPosition(::Vec3 const& position) /*override*/;
 
-    // vIndex: 3
-    virtual void updateBoundingBox(::Vec3 const&, ::AABB&) const /*override*/;
+    virtual void updateBoundingBox(::Vec3 const& ownerOffset, ::AABB& bounds) const /*override*/;
 
-    // vIndex: 4
     virtual ~BasePrimitivePosition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::Vec3 const& $getPosition() const;
 
+    MCNAPI void $setPosition(::Vec3 const& position);
+
+    MCNAPI void $updateBoundingBox(::Vec3 const& ownerOffset, ::AABB& bounds) const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

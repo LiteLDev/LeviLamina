@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class PerlinNoise;
 // clang-format on
 
 struct CappedSurfaceAttributes : public ::BiomeComponentBase {
@@ -23,9 +22,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Block const*>                   block;
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>> noise;
+        ::ll::UntypedStorage<8, 8> mUnk4166de;
+        ::ll::UntypedStorage<8, 8> mUnkf958c1;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MaterialLayer& operator=(MaterialLayer const&);
+        MaterialLayer(MaterialLayer const&);
+        MaterialLayer();
     };
 
 public:
@@ -41,14 +46,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CappedSurfaceAttributes() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initializeNoise(uint levelSeed);
+    MCNAPI void initializeNoise(uint levelSeed);
     // NOLINTEND
 
 public:

@@ -9,7 +9,6 @@ class ItemStackRequestActionConsume : public ::ItemStackRequestActionTransferBas
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ItemStackRequestActionConsume() /*override*/ = default;
     // NOLINTEND
 

@@ -47,36 +47,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SrtpTransport() /*override*/;
 
-    // vIndex: 8
     virtual bool
     SendRtpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
 
-    // vIndex: 9
     virtual bool
     SendRtcpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
 
-    // vIndex: 11
     virtual bool IsSrtpActive() const /*override*/;
 
-    // vIndex: 7
     virtual bool IsWritable(bool rtcp) const /*override*/;
 
-    // vIndex: 13
     virtual bool UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink) /*override*/;
 
-    // vIndex: 15
-    virtual void OnRtpPacketReceived(::rtc::ReceivedPacket const& packet) /*override*/;
+    virtual void OnRtpPacketReceived(::rtc::ReceivedPacket const& received_packet) /*override*/;
 
-    // vIndex: 16
-    virtual void OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet) /*override*/;
+    virtual void OnRtcpPacketReceived(::rtc::ReceivedPacket const& received_packet) /*override*/;
 
-    // vIndex: 14
     virtual void OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route) /*override*/;
 
-    // vIndex: 17
     virtual void OnWritableState(::rtc::PacketTransportInternal* packet_transport) /*override*/;
     // NOLINTEND
 
@@ -151,13 +141,15 @@ public:
 
     MCNAPI bool $UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink);
 
-    MCNAPI void $OnRtpPacketReceived(::rtc::ReceivedPacket const& packet);
+    MCNAPI void $OnRtpPacketReceived(::rtc::ReceivedPacket const& received_packet);
 
-    MCNAPI void $OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet);
+    MCNAPI void $OnRtcpPacketReceived(::rtc::ReceivedPacket const& received_packet);
 
     MCNAPI void $OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route);
 
     MCNAPI void $OnWritableState(::rtc::PacketTransportInternal* packet_transport);
+
+
     // NOLINTEND
 
 public:

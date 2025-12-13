@@ -15,17 +15,21 @@ class Recipe2x2Definition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mItemName;
-    ::ll::TypedStorage<8, 32, ::std::string> mItemNameId;
+    ::ll::UntypedStorage<8, 32> mUnk37cc5b;
+    ::ll::UntypedStorage<8, 32> mUnk683b14;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Recipe2x2Definition& operator=(Recipe2x2Definition const&);
+    Recipe2x2Definition(Recipe2x2Definition const&);
+    Recipe2x2Definition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
-    // vIndex: 0
     virtual ~Recipe2x2Definition() /*override*/ = default;
     // NOLINTEND
 

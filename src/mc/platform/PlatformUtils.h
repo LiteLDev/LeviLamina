@@ -14,7 +14,11 @@ MCNAPI ::Core::PathBuffer<::std::string> const& getExternalStoragePath();
 
 MCNAPI ::std::string const& getPackageFamilyName();
 
+MCNAPI_C ::Core::PathBuffer<::std::string> getUWPInstallationPath();
+
 MCNAPI void initializeDeviceIdForDev(::std::string& deviceId, bool isAnonymous);
+
+MCNAPI_C void setAppDataFolderName(::std::string_view folderName);
 // NOLINTEND
 
 } // namespace Bedrock::PlatformUtils

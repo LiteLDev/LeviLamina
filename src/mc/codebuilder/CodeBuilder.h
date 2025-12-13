@@ -30,19 +30,19 @@ MCNAPI bool fromString(::std::string const& messagePurpose, ::CodeBuilder::Reque
 
 MCNAPI bool fromString(::std::string const& modeString, ::CodeBuilder::EncryptionCipherMode& mode);
 
+MCNAPI ::std::string serialize(::CodeBuilder::AgentMessage const& message);
+
 MCNAPI ::std::string serialize(::CodeBuilder::ChatMessage const& message);
 
 MCNAPI ::std::string serialize(::CodeBuilder::CommandMessage const& message);
+
+MCNAPI ::std::string serialize(::CodeBuilder::DataMessage const& message);
 
 MCNAPI ::std::string serialize(::CodeBuilder::EncryptionResult const& message);
 
 MCNAPI ::std::string serialize(::CodeBuilder::ErrorMessage const& message);
 
-MCNAPI ::std::string serialize(::CodeBuilder::DataMessage const& message);
-
 MCNAPI ::std::string serialize(::CodeBuilder::EventMessage const& message);
-
-MCNAPI ::std::string serialize(::CodeBuilder::AgentMessage const& message);
 
 MCNAPI ::std::string serialize(::CodeBuilder::ChatMessage const& message, ::std::string const& requestId);
 

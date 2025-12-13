@@ -6,15 +6,13 @@ struct JSToken {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkd302b9;
-    ::ll::UntypedStorage<4, 4>  mUnka2a2d5;
-    ::ll::UntypedStorage<8, 8>  mUnke4e888;
+    ::ll::UntypedStorage<4, 4> mUnkd302b9;
+    ::ll::UntypedStorage<4, 4> mUnka2a2d5;
+    ::ll::UntypedStorage<8, 8> mUnke4e888;
+#ifdef LL_PLAT_S
     ::ll::UntypedStorage<8, 32> mUnk31e284;
+#else // LL_PLAT_C
+    ::ll::UntypedStorage<8, 32> mUnkddbbe0;
+#endif
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JSToken& operator=(JSToken const&);
-    JSToken(JSToken const&);
-    JSToken();
 };

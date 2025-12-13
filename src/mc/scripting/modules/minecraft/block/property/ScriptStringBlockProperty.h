@@ -32,7 +32,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptStringBlockProperty() /*override*/ = default;
     // NOLINTEND
 

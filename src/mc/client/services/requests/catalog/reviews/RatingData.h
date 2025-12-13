@@ -16,4 +16,16 @@ public:
     RatingData& operator=(RatingData const&);
     RatingData(RatingData const&);
     RatingData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~RatingData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

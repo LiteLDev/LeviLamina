@@ -26,9 +26,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, uint>           mFrameRate;
-        ::ll::TypedStorage<8, 32, ::std::string> mFilePrefix;
+        ::ll::UntypedStorage<4, 4>  mUnk43f159;
+        ::ll::UntypedStorage<8, 32> mUnk6b0e79;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        StartVideoCapture& operator=(StartVideoCapture const&);
+        StartVideoCapture(StartVideoCapture const&);
+        StartVideoCapture();
     };
 
     struct StopVideoCapture {};
@@ -36,29 +42,26 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        48,
-        ::std::variant<::PlayerVideoCapturePacket::StartVideoCapture, ::PlayerVideoCapturePacket::StopVideoCapture>>
-        mParams;
+    ::ll::UntypedStorage<8, 48> mUnk964563;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlayerVideoCapturePacket& operator=(PlayerVideoCapturePacket const&);
+    PlayerVideoCapturePacket(PlayerVideoCapturePacket const&);
+    PlayerVideoCapturePacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream&) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
 
-    // vIndex: 0
     virtual ~PlayerVideoCapturePacket() /*override*/ = default;
     // NOLINTEND
 

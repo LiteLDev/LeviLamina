@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/actor/DefinitionTrigger.h"
 
 // auto generated forward declare list
@@ -16,28 +15,33 @@ class OnPlayerPlacingTrigger : public ::DefinitionTrigger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mEventSubscription;
+    ::ll::UntypedStorage<8, 16> mUnk53bf4e;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    OnPlayerPlacingTrigger& operator=(OnPlayerPlacingTrigger const&);
+    OnPlayerPlacingTrigger(OnPlayerPlacingTrigger const&);
+    OnPlayerPlacingTrigger();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~OnPlayerPlacingTrigger();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
+    MCNAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
-    MCAPI void onPlayerPlacing(::BlockEvents::BlockPlayerPlacingEvent& eventData) const;
+    MCNAPI void onPlayerPlacing(::BlockEvents::BlockPlayerPlacingEvent& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

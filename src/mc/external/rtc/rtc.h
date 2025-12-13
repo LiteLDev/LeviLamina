@@ -177,25 +177,25 @@ MCNAPI ::std::string ToHex(int i);
 
 MCNAPI ::std::string ToString(bool b);
 
-MCNAPI ::std::string ToString(long double d);
-
 MCNAPI ::std::string ToString(double d);
 
+MCNAPI ::std::string ToString(long double d);
+
 MCNAPI ::std::string ToString(ushort s);
+
+MCNAPI ::std::string ToString(int s);
+
+MCNAPI ::std::string ToString(uint s);
+
+MCNAPI ::std::string ToString(long s);
+
+MCNAPI ::std::string ToString(ulong s);
+
+MCNAPI ::std::string ToString(::std::string_view s);
 
 MCNAPI ::std::string ToString(int64 s);
 
 MCNAPI ::std::string ToString(uint64 s);
-
-MCNAPI ::std::string ToString(ulong s);
-
-MCNAPI ::std::string ToString(long s);
-
-MCNAPI ::std::string ToString(::std::string_view s);
-
-MCNAPI ::std::string ToString(uint s);
-
-MCNAPI ::std::string ToString(int s);
 
 MCNAPI ::std::string TransformAlpnProtocols(::std::vector<::std::string> const& alpn_protocols);
 
@@ -215,13 +215,13 @@ MCNAPI char const* inet_ntop(int af, void const* src, char* dst, int size);
 
 MCNAPI int inet_pton(int af, ::std::string_view src, void* dst);
 
-MCNAPI bool operator!=(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> const& weak_ptr, nullptr_t);
-
 MCNAPI bool operator!=(::rtc::WeakPtr<::cricket::Port> const& weak_ptr, nullptr_t);
 
-MCNAPI bool operator==(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> const& weak_ptr, nullptr_t);
+MCNAPI bool operator!=(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> const& weak_ptr, nullptr_t);
 
 MCNAPI bool operator==(::rtc::WeakPtr<::cricket::Port> const& weak_ptr, nullptr_t);
+
+MCNAPI bool operator==(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> const& weak_ptr, nullptr_t);
 
 MCNAPI ::std::vector<::std::string_view> split(::std::string_view source, char delimiter);
 

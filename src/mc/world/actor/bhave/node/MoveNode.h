@@ -15,35 +15,44 @@ class MoveNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar> mDirectionToMove;
-    ::ll::TypedStorage<1, 1, uchar> mSecondDirectionToMove;
-    ::ll::TypedStorage<4, 4, int>   mNumTicksToMove;
-    ::ll::TypedStorage<4, 4, int>   mNumTicksMoved;
+    ::ll::UntypedStorage<1, 1> mUnk713d75;
+    ::ll::UntypedStorage<1, 1> mUnk7392f0;
+    ::ll::UntypedStorage<4, 4> mUnk1a598c;
+    ::ll::UntypedStorage<4, 4> mUnk2a2c4e;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveNode& operator=(MoveNode const&);
+    MoveNode(MoveNode const&);
+    MoveNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
-    // vIndex: 2
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
-    // vIndex: 0
     virtual ~MoveNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uchar convertDirectionStringToKeyPress(::std::string directionString);
+    MCNAPI uchar convertDirectionStringToKeyPress(::std::string directionString);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromDefinition(::Actor& owner);
+    MCNAPI void $initializeFromDefinition(::Actor& owner);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
+#endif
+
+
     // NOLINTEND
 
 public:

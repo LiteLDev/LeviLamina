@@ -2,15 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/OceanTempCategory.h"
-
 struct OceanRuinConfiguration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::OceanTempCategory> mType;
-    ::ll::TypedStorage<4, 4, float>               mLargeProbability;
-    ::ll::TypedStorage<4, 4, float>               mClusterProbability;
+    ::ll::UntypedStorage<4, 4> mUnk86475e;
+    ::ll::UntypedStorage<4, 4> mUnk293a95;
+    ::ll::UntypedStorage<4, 4> mUnk1b3872;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    OceanRuinConfiguration& operator=(OceanRuinConfiguration const&);
+    OceanRuinConfiguration(OceanRuinConfiguration const&);
+    OceanRuinConfiguration();
 };

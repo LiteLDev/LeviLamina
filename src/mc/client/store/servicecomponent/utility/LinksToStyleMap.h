@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct LinksToStyle;
+namespace Json { class Value; }
+// clang-format on
+
 class LinksToStyleMap {
 public:
     // member variables
@@ -14,4 +20,12 @@ public:
     LinksToStyleMap& operator=(LinksToStyleMap const&);
     LinksToStyleMap(LinksToStyleMap const&);
     LinksToStyleMap();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::LinksToStyle const& getLinksToStyleFromMap(::std::string key);
+
+    MCNAPI_C void parse(::Json::Value const& customJson);
+    // NOLINTEND
 };

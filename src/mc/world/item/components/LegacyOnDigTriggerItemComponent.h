@@ -37,13 +37,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
-    // vIndex: 7
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
-    // vIndex: 0
     virtual ~LegacyOnDigTriggerItemComponent() /*override*/;
     // NOLINTEND
 
@@ -79,6 +76,8 @@ public:
     MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
     MCAPI void $_initializeComponent(::ComponentItem& owner);
+
+
     // NOLINTEND
 
 public:

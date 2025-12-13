@@ -93,61 +93,44 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Packet();
 
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const = 0;
 
-    // vIndex: 2
     virtual ::std::string getName() const = 0;
 
-    // vIndex: 3
     virtual uint64 getMaxSize() const;
 
-    // vIndex: 4
     virtual ::Bedrock::Result<void> checkSize(uint64 packetSize, bool receiverIsServer) const;
 
-    // vIndex: 5
     virtual void writeWithSerializationMode(
         ::BinaryStream&                bitStream,
         ::cereal::ReflectionCtx const& reflectionCtx,
         ::std::optional<::SerializationMode>
     ) const;
 
-    // vIndex: 7
     virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
-    // vIndex: 6
     virtual void write(::BinaryStream&) const = 0;
 
-    // vIndex: 9
     virtual ::Bedrock::Result<void>
     read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
-    // vIndex: 8
     virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream);
 
-    // vIndex: 10
     virtual bool disallowBatching() const;
 
-    // vIndex: 11
     virtual bool isValid() const;
 
-    // vIndex: 12
     virtual ::SerializationMode getSerializationMode() const;
 
-    // vIndex: 13
     virtual void setSerializationMode(::SerializationMode);
 
-    // vIndex: 14
     virtual ::std::string toString() const;
 
-    // vIndex: 16
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) = 0;
     // NOLINTEND
 
@@ -199,6 +182,8 @@ public:
 
     MCFOLD ::Bedrock::Result<void>
     $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+
     // NOLINTEND
 
 public:

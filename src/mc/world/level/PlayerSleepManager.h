@@ -17,10 +17,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PlayerSleepManager();
 
-    // vIndex: 1
     virtual void updateSleepingPlayerList();
     // NOLINTEND
 
@@ -34,6 +32,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $updateSleepingPlayerList();
+
+
     // NOLINTEND
 
 public:

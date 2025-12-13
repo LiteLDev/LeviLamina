@@ -87,13 +87,15 @@ public:
 
     MCAPI ::MolangMemberArray* getAsNonConstMolangMemberArray();
 
-    MCAPI ::HashedString const& getName() const;
-
-    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const& other);
+    MCAPI_S ::HashedString const& getName() const;
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&& other);
 
+    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const& other);
+
     MCAPI ::MolangScriptArg& operator=(::MolangMemberArray&& value);
+
+    MCAPI_C ::MolangScriptArg& operator=(::MolangOffsetPlaceholder&& value);
 
     MCAPI bool operator==(::MolangScriptArg const& rhs) const;
 
@@ -131,6 +133,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

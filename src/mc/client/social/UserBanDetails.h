@@ -18,6 +18,18 @@ public:
     UserBanDetails& operator=(UserBanDetails const&);
     UserBanDetails(UserBanDetails const&);
     UserBanDetails();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~UserBanDetails();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Social

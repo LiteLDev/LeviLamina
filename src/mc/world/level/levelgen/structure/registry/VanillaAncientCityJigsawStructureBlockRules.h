@@ -11,6 +11,6 @@ class VanillaAncientCityJigsawStructureBlockRules {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initialize(::JigsawStructureRegistry& jigsawRegistry);
+    MCNAPI static void initialize(::JigsawStructureRegistry& jigsawRegistry);
     // NOLINTEND
 };

@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/UUID.h"
-
 struct ServerboundPackSettingChangePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID>                                mPackId;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mSettingName;
-    ::ll::TypedStorage<8, 40, ::std::variant<float, bool, ::std::string>> mSettingValue;
+    ::ll::UntypedStorage<8, 16> mUnka3e0f1;
+    ::ll::UntypedStorage<8, 32> mUnk216542;
+    ::ll::UntypedStorage<8, 40> mUnkdd452e;
     // NOLINTEND
 
 public:
@@ -23,14 +20,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ServerboundPackSettingChangePacketPayload& operator=(::ServerboundPackSettingChangePacketPayload&&);
+    MCNAPI ::ServerboundPackSettingChangePacketPayload& operator=(::ServerboundPackSettingChangePacketPayload&&);
 
-    MCAPI ~ServerboundPackSettingChangePacketPayload();
+    MCNAPI ~ServerboundPackSettingChangePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

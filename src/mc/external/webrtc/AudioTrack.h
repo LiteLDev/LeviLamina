@@ -34,22 +34,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ~AudioTrack() /*override*/;
 
-    // vIndex: 3
     virtual ::std::string kind() const /*override*/;
 
-    // vIndex: 8
     virtual ::webrtc::AudioSourceInterface* GetSource() const /*override*/;
 
-    // vIndex: 9
     virtual void AddSink(::webrtc::AudioTrackSinkInterface* sink) /*override*/;
 
-    // vIndex: 10
     virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* sink) /*override*/;
 
-    // vIndex: 0
     virtual void OnChanged() /*override*/;
     // NOLINTEND
 
@@ -90,6 +84,8 @@ public:
     MCNAPI void $RemoveSink(::webrtc::AudioTrackSinkInterface* sink);
 
     MCNAPI void $OnChanged();
+
+
     // NOLINTEND
 
 public:

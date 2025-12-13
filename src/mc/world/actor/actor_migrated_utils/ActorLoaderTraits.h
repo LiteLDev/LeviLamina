@@ -19,51 +19,37 @@ namespace ActorMigratedUtils {
 
 struct ActorLoaderTraits {
 public:
-    // ActorLoaderTraits inner types define
-    using Slices = ::std::tuple<
-        ::SharedTypes::Legacy::ActorDocument,
-        ::SharedTypes::Legacy::ActorDocumentCorrected,
-        ::SharedTypes::v1_21_90::ActorDocument,
-        ::SharedTypes::v1_21_100::ActorDocument,
-        ::SharedTypes::v1_21_110::ActorDocument,
-        ::SharedTypes::v1_21_120::ActorDocument>;
-
-    using CustomParseData = ::BedrockLoadContext;
-
-    using CustomUpgradeData = ::ActorMigratedUtils::CustomUpgradeData;
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void upgrade_v1_21_100(
+    MCNAPI static void upgrade_v1_21_100(
         ::Puv::CerealUpgrader<
             ::SharedTypes::v1_21_90::ActorDocument,
             ::SharedTypes::v1_21_100::ActorDocument,
             ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader
     );
 
-    MCAPI static void upgrade_v1_21_110(
+    MCNAPI static void upgrade_v1_21_110(
         ::Puv::CerealUpgrader<
             ::SharedTypes::v1_21_100::ActorDocument,
             ::SharedTypes::v1_21_110::ActorDocument,
             ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader
     );
 
-    MCAPI static void upgrade_v1_21_120(
+    MCNAPI static void upgrade_v1_21_120(
         ::Puv::CerealUpgrader<
             ::SharedTypes::v1_21_110::ActorDocument,
             ::SharedTypes::v1_21_120::ActorDocument,
             ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader
     );
 
-    MCAPI static void upgrade_v1_21_89(
+    MCNAPI static void upgrade_v1_21_89(
         ::Puv::CerealUpgrader<
             ::SharedTypes::Legacy::ActorDocument,
             ::SharedTypes::Legacy::ActorDocumentCorrected,
             ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader
     );
 
-    MCAPI static void upgrade_v1_21_90(
+    MCNAPI static void upgrade_v1_21_90(
         ::Puv::CerealUpgrader<
             ::SharedTypes::Legacy::ActorDocumentCorrected,
             ::SharedTypes::v1_21_90::ActorDocument,
@@ -74,7 +60,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ActorMigratedDefinitionFactory const*& mFactoryPtr();
+    MCNAPI static ::ActorMigratedDefinitionFactory const*& mFactoryPtr();
     // NOLINTEND
 };
 

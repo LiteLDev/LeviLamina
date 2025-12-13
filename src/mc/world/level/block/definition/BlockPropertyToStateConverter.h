@@ -12,26 +12,26 @@ namespace Json { class Value; }
 namespace BlockPropertyToStateConverter {
 // functions
 // NOLINTBEGIN
-MCAPI void _convertPropertyToStateInBoneVisibility(::Json::Value& obj);
+MCNAPI void _convertPropertyToStateInBoneVisibility(::Json::Value& obj);
 
-MCAPI void _convertPropertyToStateInDescription(::Json::Value& root);
+MCNAPI void _convertPropertyToStateInDescription(::Json::Value& root);
 
-MCAPI void _convertPropertyToStateInEventSequence(::Json::Value& obj);
+MCNAPI void _convertPropertyToStateInEventSequence(::Json::Value& obj);
 
-MCAPI void _convertPropertyToStateInEvents(::Json::Value& root);
+MCNAPI void _convertPropertyToStateInEvents(::Json::Value& root);
 
-MCAPI void _convertPropertyToStateInObjectContainsConditionObject(::Json::Value& obj);
+MCNAPI void _convertPropertyToStateInObjectContainsConditionObject(::Json::Value& obj);
 
-MCAPI void _convertPropertyToStateInObjectContainsSetBlockStateObject(::Json::Value& obj);
+MCNAPI void _convertPropertyToStateInObjectContainsSetBlockStateObject(::Json::Value& obj);
 
-MCAPI void _copyMembers(::Json::Value& from, ::Json::Value& to);
+MCNAPI void _copyMembers(::Json::Value& from, ::Json::Value& to);
 
-MCAPI void checkAndConvertInBlock(::SemVersion const& version, ::Json::Value& root);
+MCNAPI void checkAndConvertInBlock(::SemVersion const& version, ::Json::Value& root);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::SemVersionConstant const& BLOCK_PROPERTY_RENAMED_TO_STATE_1_20_20();
+MCNAPI ::SemVersionConstant const& BLOCK_PROPERTY_RENAMED_TO_STATE_1_20_20();
 // NOLINTEND
 
 } // namespace BlockPropertyToStateConverter

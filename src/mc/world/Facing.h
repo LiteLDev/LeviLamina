@@ -50,6 +50,8 @@ MCAPI ::std::array<::Facing::Name, 6> const& DIRECTIONS();
 
 MCAPI ::std::array<uchar, 6> const& FACINGMASK();
 
+MCAPI_C ::std::array<uchar, 6> const& FACINGMASK_INV();
+
 MCAPI ::Facing::StringMap const& FROM_STRING_MAP();
 
 MCAPI ::std::array<::Vec3, 6> const& NORMAL();

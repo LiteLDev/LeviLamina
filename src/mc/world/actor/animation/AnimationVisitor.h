@@ -2,24 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/brstd/function_ref.h"
-
-// auto generated forward declare list
-// clang-format off
-class ActorAnimationControllerPlayer;
-class ActorAnimationControllerStatePlayer;
-class ActorAnimationPlayer;
-class ActorSkeletalAnimationPlayer;
-// clang-format on
-
 struct AnimationVisitor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::brstd::function_ref<void(::ActorAnimationPlayer&)>>                mBase;
-    ::ll::TypedStorage<8, 16, ::brstd::function_ref<void(::ActorSkeletalAnimationPlayer&)>>        mSkeletal;
-    ::ll::TypedStorage<8, 16, ::brstd::function_ref<void(::ActorAnimationControllerPlayer&)>>      mController;
-    ::ll::TypedStorage<8, 16, ::brstd::function_ref<void(::ActorAnimationControllerStatePlayer&)>> mControllerState;
+    ::ll::UntypedStorage<8, 16> mUnkc19d5e;
+    ::ll::UntypedStorage<8, 16> mUnk5d01ff;
+    ::ll::UntypedStorage<8, 16> mUnk9515ad;
+    ::ll::UntypedStorage<8, 16> mUnkb45c81;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AnimationVisitor& operator=(AnimationVisitor const&);
+    AnimationVisitor(AnimationVisitor const&);
+    AnimationVisitor();
 };

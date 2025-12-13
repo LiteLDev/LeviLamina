@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
@@ -23,35 +22,47 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeatureRef;
-        ::ll::TypedStorage<4, 4, int>                    mX;
-        ::ll::TypedStorage<4, 4, int>                    mY;
-        ::ll::TypedStorage<4, 4, int>                    mWidth;
-        ::ll::TypedStorage<4, 4, int>                    mHeight;
+        ::ll::UntypedStorage<8, 24> mUnk48c921;
+        ::ll::UntypedStorage<4, 4>  mUnkf431fe;
+        ::ll::UntypedStorage<4, 4>  mUnk4931ae;
+        ::ll::UntypedStorage<4, 4>  mUnka34aac;
+        ::ll::UntypedStorage<4, 4>  mUnkd456f6;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FeatureArea& operator=(FeatureArea const&);
+        FeatureArea(FeatureArea const&);
+        FeatureArea();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::RectLayoutFeature::FeatureArea>> mFeatureAreaCollection;
-    ::ll::TypedStorage<4, 4, float>                                            mPercentageEmptySpace;
+    ::ll::UntypedStorage<8, 24> mUnk525c6f;
+    ::ll::UntypedStorage<4, 4>  mUnk27c366;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RectLayoutFeature& operator=(RectLayoutFeature const&);
+    RectLayoutFeature(RectLayoutFeature const&);
+    RectLayoutFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
-    // vIndex: 0
     virtual ~RectLayoutFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+
+
     // NOLINTEND
 
 public:

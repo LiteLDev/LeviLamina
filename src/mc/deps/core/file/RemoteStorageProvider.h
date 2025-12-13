@@ -31,47 +31,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RemoteStorageProvider() = default;
 
-    // vIndex: 1
     virtual void shutdown();
 
-    // vIndex: 2
     virtual ::std::string const& getWorldsPrefix() const = 0;
 
-    // vIndex: 3
     virtual ::std::string encodeWorldName(::std::string const&) = 0;
 
-    // vIndex: 4
     virtual ::std::string encodeFileName(::std::string const&) = 0;
 
-    // vIndex: 5
     virtual float getSyncProgress() = 0;
 
-    // vIndex: 6
     virtual void tick() = 0;
 
-    // vIndex: 7
     virtual void onAppSuspend() = 0;
 
-    // vIndex: 8
     virtual void onAppResume() = 0;
 
-    // vIndex: 9
     virtual void onSignOut() = 0;
 
-    // vIndex: 10
     virtual ::CallbackToken
         onSignIn(::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>) = 0;
 
-    // vIndex: 11
     virtual ::CallbackToken deleteContainer(
         ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>,
         ::std::string const&
     ) = 0;
 
-    // vIndex: 12
     virtual ::CallbackToken commit(
         ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result, ::Core::StorageResult)>>>,
         ::std::string const&,
@@ -81,7 +68,6 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 13
     virtual ::CallbackToken sync(
         ::std::string const&,
         ::std::string const&,
@@ -89,21 +75,18 @@ public:
         ::std::function<void(::std::string const&, bool)>
     ) = 0;
 
-    // vIndex: 14
     virtual ::CallbackToken syncMeta(
         ::std::string const&,
         ::std::string const&,
         ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>
     ) = 0;
 
-    // vIndex: 15
     virtual ::CallbackToken syncContainerManifest(
         ::std::string const&,
         ::std::string const&,
         ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>
     ) = 0;
 
-    // vIndex: 16
     virtual ::Core::RemoteStorageManifest getManifest(::std::string const&) = 0;
     // NOLINTEND
 

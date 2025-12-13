@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/Item.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorInteraction;
-class Item;
 class Player;
 // clang-format on
 
@@ -21,8 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _becomeTrusting(::Actor& owner);
+    MCNAPI void _becomeTrusting(::Actor& owner);
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

@@ -33,29 +33,39 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual ~LinePrimitive() /*override*/ = default;
 
-    // vIndex: 2
-    virtual void setPosition(::Vec3 const&) /*override*/;
+    virtual void setPosition(::Vec3 const& position) /*override*/;
 
-    // vIndex: 0
     virtual ::Scripting::RenderHelper::PrimitiveType getType() const /*override*/;
 
-    // vIndex: 3
-    virtual void updateBoundingBox(::Vec3 const&, ::AABB&) const /*override*/;
+    virtual void updateBoundingBox(::Vec3 const& ownerOffset, ::AABB& bounds) const /*override*/;
 
-    // vIndex: 5
     virtual void _rebuild() /*override*/;
 
-    // vIndex: 6
-    virtual void _getVertices(::std::vector<::Scripting::RenderHelper::Vertex>&) /*override*/;
+    virtual void _getVertices(::std::vector<::Scripting::RenderHelper::Vertex>& vertices) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $setPosition(::Vec3 const& position);
 
+    MCNAPI void $updateBoundingBox(::Vec3 const& ownerOffset, ::AABB& bounds) const;
+
+    MCNAPI void $_rebuild();
+
+    MCNAPI void $_getVertices(::std::vector<::Scripting::RenderHelper::Vertex>& vertices);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -20,4 +20,10 @@ public:
     RetryDelay& operator=(RetryDelay const&);
     RetryDelay(RetryDelay const&);
     RetryDelay();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void restart(bool now);
+    // NOLINTEND
 };

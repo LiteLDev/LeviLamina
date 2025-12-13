@@ -15,18 +15,22 @@ class ConsumeItemNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mRightMouseDown;
-    ::ll::TypedStorage<4, 4, int>  mDelayTicks;
-    ::ll::TypedStorage<4, 4, int>  mDelayCounter;
+    ::ll::UntypedStorage<1, 1> mUnk918960;
+    ::ll::UntypedStorage<4, 4> mUnk7048e8;
+    ::ll::UntypedStorage<4, 4> mUnk3b8c4c;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ConsumeItemNode& operator=(ConsumeItemNode const&);
+    ConsumeItemNode(ConsumeItemNode const&);
+    ConsumeItemNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
-    // vIndex: 0
     virtual ~ConsumeItemNode() /*override*/ = default;
     // NOLINTEND
 

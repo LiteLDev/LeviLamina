@@ -15,22 +15,16 @@ class SoulSpeedEnchant : public ::Enchant {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual int getMinCost(int level) const /*override*/;
 
-    // vIndex: 3
     virtual int getMaxCost(int level) const /*override*/;
 
-    // vIndex: 5
     virtual int getMaxLevel() const /*override*/;
 
-    // vIndex: 14
     virtual bool isTreasureOnly() const /*override*/;
 
-    // vIndex: 15
     virtual bool isDiscoverable() const /*override*/;
 
-    // vIndex: 0
     virtual ~SoulSpeedEnchant() /*override*/ = default;
     // NOLINTEND
 
@@ -58,6 +52,8 @@ public:
     MCFOLD bool $isTreasureOnly() const;
 
     MCFOLD bool $isDiscoverable() const;
+
+
     // NOLINTEND
 
 public:

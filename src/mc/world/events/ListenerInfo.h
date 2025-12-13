@@ -24,6 +24,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& SQRT_FLT_MAX();
+    MCNAPI static float const& SQRT_FLT_MAX();
     // NOLINTEND
 };

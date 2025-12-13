@@ -21,40 +21,28 @@ class IPackLoadContext {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IPackLoadContext() = default;
 
-    // vIndex: 1
     virtual ::MinEngineVersion const& getMinEngineVersion() const = 0;
 
-    // vIndex: 2
     virtual ::MolangVersion getMolangVersion() const = 0;
 
-    // vIndex: 3
     virtual bool isBaseGamePack() const = 0;
 
-    // vIndex: 4
     virtual bool isTrustedPack() const = 0;
 
-    // vIndex: 5
     virtual ::mce::UUID const& getPackUUID() const = 0;
 
-    // vIndex: 6
     virtual ::Experiments const& getExperiments() const = 0;
 
-    // vIndex: 7
     virtual ::PackType getPackType() const = 0;
 
-    // vIndex: 8
     virtual ::PackLoadStorage& getStorage() = 0;
 
-    // vIndex: 9
     virtual ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const getLinkedAssetValidator() const = 0;
 
-    // vIndex: 10
     virtual void setMinEngineVersion(::MinEngineVersion const&) = 0;
 
-    // vIndex: 11
     virtual ::BedrockLoadContext toBedrockLoadContext() const = 0;
     // NOLINTEND
 

@@ -27,10 +27,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual void containerContentChanged(int) /*override*/;
 
-    // vIndex: 1
     virtual ~LegacyActorArmorChangedListener() /*override*/ = default;
     // NOLINTEND
 
@@ -52,6 +50,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $containerContentChanged(int);
+
+
     // NOLINTEND
 
 public:

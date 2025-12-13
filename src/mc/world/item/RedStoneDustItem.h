@@ -19,15 +19,12 @@ class RedStoneDustItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 123
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
-    // vIndex: 121
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
 
-    // vIndex: 0
     virtual ~RedStoneDustItem() /*override*/ = default;
     // NOLINTEND
 
@@ -38,6 +35,8 @@ public:
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
     MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+
+
     // NOLINTEND
 
 public:

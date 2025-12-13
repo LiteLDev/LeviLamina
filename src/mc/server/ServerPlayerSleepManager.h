@@ -53,16 +53,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ServerPlayerSleepManager() /*override*/;
 
-    // vIndex: 1
     virtual void updateSleepingPlayerList() /*override*/;
 
-    // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::Player&)>& getPlayerWakeUpConnector() /*override*/;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void()>& getOnWakeUpAllPlayersConnector() /*override*/;
     // NOLINTEND
 
@@ -111,6 +107,8 @@ public:
     MCFOLD ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
 
     MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
+
+
     // NOLINTEND
 
 public:

@@ -33,13 +33,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::unique_ptr<::Molang::details::IComplexExpression> clone() const /*override*/;
 
-    // vIndex: 2
     virtual ::MolangScriptArg const& evalGeneric(::RenderParams& params) const /*override*/;
 
-    // vIndex: 0
     virtual ~CompiledExpressionWithContentScope() /*override*/ = default;
     // NOLINTEND
 
@@ -71,6 +68,8 @@ public:
     MCNAPI ::std::unique_ptr<::Molang::details::IComplexExpression> $clone() const;
 
     MCNAPI ::MolangScriptArg const& $evalGeneric(::RenderParams& params) const;
+
+
     // NOLINTEND
 
 public:

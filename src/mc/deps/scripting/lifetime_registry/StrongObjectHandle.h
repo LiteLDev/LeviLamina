@@ -30,9 +30,9 @@ public:
 
     MCNAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
 
-    MCNAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle const& rhs);
-
     MCNAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle&& rhs);
+
+    MCNAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle const& rhs);
 
     MCNAPI ~StrongObjectHandle();
     // NOLINTEND

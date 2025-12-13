@@ -33,18 +33,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DataStoreSync();
 
-    // vIndex: 1
     virtual void clear(::std::string const& datastoreName, bool addToOutgoingChanges);
 
-    // vIndex: 2
     virtual void applyChanges(
         ::std::vector<::std::variant<::Bedrock::DDUI::DataStoreChange, ::Bedrock::DDUI::DataStoreRemoval>> const&
     ) = 0;
 
-    // vIndex: 3
     virtual void assertAppropriateThread() const = 0;
     // NOLINTEND
 
@@ -76,6 +72,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $clear(::std::string const& datastoreName, bool addToOutgoingChanges);
+
+
     // NOLINTEND
 
 public:

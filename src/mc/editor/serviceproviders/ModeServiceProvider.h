@@ -17,16 +17,12 @@ class ModeServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ModeServiceProvider() = default;
 
-    // vIndex: 1
     virtual ::Editor::Mode getMode() const = 0;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> trySetMode(::Editor::Mode) = 0;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
         listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)>) = 0;
     // NOLINTEND

@@ -71,29 +71,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
         lookAt(::Actor& self, ::Vec3 const& targetLocation) /*override*/;
 
-    // vIndex: 12
     virtual ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
         remove(::Actor& self) /*override*/;
 
-    // vIndex: 2
     virtual void setUnloaded(::Actor& actor) /*override*/;
 
-    // vIndex: 1
     virtual void setLoading(::Actor const& actor) /*override*/;
 
-    // vIndex: 13
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 14
     virtual ::ScoreboardId const& _getScoreboardId(::Scoreboard const& scoreboard) const /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptPlayer() /*override*/;
     // NOLINTEND
 
@@ -318,6 +311,8 @@ public:
     MCNAPI bool $isValid() const;
 
     MCNAPI ::ScoreboardId const& $_getScoreboardId(::Scoreboard const& scoreboard) const;
+
+
     // NOLINTEND
 
 public:

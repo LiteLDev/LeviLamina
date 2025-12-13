@@ -15,10 +15,8 @@ class ITreeRoot {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ITreeRoot() = default;
 
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> placeRoots(
         ::IBlockWorldGenAPI&,
         ::BlockPos const&,

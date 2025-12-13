@@ -9,13 +9,19 @@ struct BlockedDirections {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar> mStopsFlowDirectionsMask;
+    ::ll::UntypedStorage<1, 1> mUnk8fb8b9;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockedDirections& operator=(BlockedDirections const&);
+    BlockedDirections(BlockedDirections const&);
+    BlockedDirections();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     facingVectorToMask(::BlockedDirections& instance, ::std::vector<::SharedTypes::Facing> const& faces);
     // NOLINTEND
 };

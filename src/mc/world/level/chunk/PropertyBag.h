@@ -7,13 +7,13 @@ namespace br::spawn::transform {
 class PropertyBag {
 public:
     // PropertyBag inner types define
-    using u64 = uint64;
+    using Entry = ::std::variant<uint64, double, ::std::string>;
 
     using f64 = double;
 
     using str = ::std::string;
 
-    using Entry = ::std::variant<uint64, double, ::std::string>;
+    using u64 = uint64;
 
 public:
     // member variables

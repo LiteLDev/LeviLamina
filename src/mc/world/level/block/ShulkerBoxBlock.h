@@ -26,23 +26,18 @@ class ShulkerBoxBlock : public ::ChestBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 88
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 59
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
-    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
@@ -50,7 +45,6 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 9
     virtual ::AABB const& getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -58,13 +52,10 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
-    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 0
     virtual ~ShulkerBoxBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -108,6 +99,8 @@ public:
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+
+
     // NOLINTEND
 
 public:

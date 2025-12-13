@@ -17,20 +17,20 @@ class UnburiedConstraint : public ::IStructureConstraint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mCeilingOffsets;
+    ::ll::UntypedStorage<8, 24> mUnk2ab619;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    UnburiedConstraint& operator=(UnburiedConstraint const&);
+    UnburiedConstraint(UnburiedConstraint const&);
     UnburiedConstraint();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~UnburiedConstraint() /*override*/ = default;
 
-    // vIndex: 1
     virtual bool
     isSatisfied(::IBlockWorldGenAPI const& target, ::BlockPos const& structurePos, ::Rotation const& structureRot) const
         /*override*/;
@@ -39,23 +39,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit UnburiedConstraint(::StructureTemplate& structure);
+    MCNAPI explicit UnburiedConstraint(::StructureTemplate& structure);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureTemplate& structure);
+    MCNAPI void* $ctor(::StructureTemplate& structure);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSatisfied(
+    MCNAPI bool $isSatisfied(
         ::IBlockWorldGenAPI const& target,
         ::BlockPos const&          structurePos,
         ::Rotation const&          structureRot
     ) const;
+
+
     // NOLINTEND
 
 public:

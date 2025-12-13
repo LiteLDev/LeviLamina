@@ -47,22 +47,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorExtensionService() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>>
     registerExtension(
         ::std::string const&           extensionName,
@@ -75,41 +69,32 @@ public:
         ::Editor::API::ServerScriptPackType                               packType
     ) /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>>
     getExtension(::std::string const& extensionName) /*override*/;
 
-    // vIndex: 3
     virtual bool hasExtension(::std::string const& extensionName) /*override*/;
 
-    // vIndex: 4
     virtual void forEachExtension(
         ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
 
-    // vIndex: 5
     virtual void forEachExtensionOrdered(
         ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
 
-    // vIndex: 6
     virtual void forEachExtensionReverse(
         ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemRebuildEvent(
         ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)> handler
     ) /*override*/;
 
-    // vIndex: 8
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()> handler) /*override*/;
 
-    // vIndex: 9
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() /*override*/;
 
-    // vIndex: 10
     virtual ::Scripting::Result_deprecated<void>
     createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
     // NOLINTEND
@@ -174,6 +159,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void>
     $createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent);
+
+
     // NOLINTEND
 
 public:

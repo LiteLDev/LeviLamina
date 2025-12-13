@@ -14,10 +14,8 @@ class ElementBlockItem : public ::ChemistryAuxDataBlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 100
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
-    // vIndex: 0
     virtual ~ElementBlockItem() /*override*/ = default;
     // NOLINTEND
 
@@ -25,6 +23,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
+
+
     // NOLINTEND
 
 public:

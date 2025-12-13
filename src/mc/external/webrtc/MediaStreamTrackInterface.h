@@ -19,22 +19,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::std::string kind() const = 0;
 
-    // vIndex: 4
     virtual ::std::string id() const = 0;
 
-    // vIndex: 5
     virtual bool enabled() const = 0;
 
-    // vIndex: 6
     virtual bool set_enabled(bool) = 0;
 
-    // vIndex: 7
     virtual ::webrtc::MediaStreamTrackInterface::TrackState state() const = 0;
 
-    // vIndex: 2
     virtual ~MediaStreamTrackInterface() /*override*/ = default;
     // NOLINTEND
 

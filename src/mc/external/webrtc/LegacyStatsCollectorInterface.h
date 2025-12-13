@@ -15,16 +15,12 @@ class LegacyStatsCollectorInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LegacyStatsCollectorInterface();
 
-    // vIndex: 1
     virtual void AddLocalAudioTrack(::webrtc::AudioTrackInterface*, uint) = 0;
 
-    // vIndex: 2
     virtual void RemoveLocalAudioTrack(::webrtc::AudioTrackInterface*, uint) = 0;
 
-    // vIndex: 3
     virtual void GetStats(::webrtc::MediaStreamTrackInterface*, ::std::vector<::webrtc::StatsReport const*>*) = 0;
     // NOLINTEND
 

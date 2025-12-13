@@ -6,6 +6,12 @@ struct SetTimePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mTime;
+    ::ll::UntypedStorage<4, 4> mUnkca28b6;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SetTimePacketPayload& operator=(SetTimePacketPayload const&);
+    SetTimePacketPayload(SetTimePacketPayload const&);
+    SetTimePacketPayload();
 };

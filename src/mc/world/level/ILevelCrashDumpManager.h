@@ -9,10 +9,8 @@ class ILevelCrashDumpManager {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ILevelCrashDumpManager() = default;
 
-    // vIndex: 1
     virtual void setCrashDumpLogStringID(::CrashDumpLogStringID) const = 0;
     // NOLINTEND
 

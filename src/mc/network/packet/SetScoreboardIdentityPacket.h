@@ -5,40 +5,39 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
-#include "mc/network/packet/ScoreboardIdentityPacketType.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct ScoreboardIdentityPacketInfo;
 // clang-format on
 
 class SetScoreboardIdentityPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ScoreboardIdentityPacketType>                 mType;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ScoreboardIdentityPacketInfo>> mIdentityInfo;
+    ::ll::UntypedStorage<1, 1>  mUnk33fa00;
+    ::ll::UntypedStorage<8, 24> mUnk34f8df;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SetScoreboardIdentityPacket& operator=(SetScoreboardIdentityPacket const&);
+    SetScoreboardIdentityPacket(SetScoreboardIdentityPacket const&);
+    SetScoreboardIdentityPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SetScoreboardIdentityPacket() /*override*/;
 
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
@@ -58,6 +57,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

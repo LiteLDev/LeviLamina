@@ -15,12 +15,12 @@ class ClientOrServerNetworkSystemRef
       variant<::std::reference_wrapper<::ClientNetworkSystem>, ::std::reference_wrapper<::ServerNetworkSystem>> {
 public:
     // ClientOrServerNetworkSystemRef inner types define
+    using BaseT = ::std::
+        variant<::std::reference_wrapper<::ClientNetworkSystem>, ::std::reference_wrapper<::ServerNetworkSystem>>;
+
     using ClientRefT = ::std::reference_wrapper<::ClientNetworkSystem>;
 
     using ServerRefT = ::std::reference_wrapper<::ServerNetworkSystem>;
-
-    using BaseT = ::std::
-        variant<::std::reference_wrapper<::ClientNetworkSystem>, ::std::reference_wrapper<::ServerNetworkSystem>>;
 
 public:
     using ClientRefT = std::reference_wrapper<ClientNetworkSystem>;
@@ -31,6 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C ::ClientNetworkSystem& toClientNetworkSystem();
+
     MCAPI ::ServerNetworkSystem& toServerNetworkSystem();
     // NOLINTEND
 };

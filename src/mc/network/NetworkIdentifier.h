@@ -51,7 +51,9 @@ public:
 
     MCAPI bool isUnassigned() const;
 
-    MCAPI ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
+    MCAPI_S ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
+
+    MCAPI_C ::NetworkIdentifier& operator=(::NetworkIdentifier const&);
 
     MCAPI ::std::string toString() const;
     // NOLINTEND

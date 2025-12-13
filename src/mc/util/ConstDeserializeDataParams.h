@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class MinEngineVersion;
+class SemVersion;
+namespace Json { class Value; }
+// clang-format on
+
 struct ConstDeserializeDataParams {
 public:
     // member variables
@@ -20,7 +27,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C ConstDeserializeDataParams(::Json::Value const& value, ::ConstDeserializeDataParams const& parent);
+
+    MCNAPI_C ConstDeserializeDataParams(
+        ::Json::Value const&      value,
+        ::SemVersion const&       formatVersion,
+        ::MinEngineVersion const& minEngineVersion
+    );
+
     MCNAPI ~ConstDeserializeDataParams();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::Json::Value const& value, ::ConstDeserializeDataParams const& parent);
+
+    MCNAPI_C void*
+    $ctor(::Json::Value const& value, ::SemVersion const& formatVersion, ::MinEngineVersion const& minEngineVersion);
     // NOLINTEND
 
 public:

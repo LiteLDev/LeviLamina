@@ -63,7 +63,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Biome() = default;
     // NOLINTEND
 

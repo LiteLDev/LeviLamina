@@ -9,7 +9,6 @@ class CopperGolem : public ::Mob {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 8
     virtual ~CopperGolem() /*override*/ = default;
     // NOLINTEND
 

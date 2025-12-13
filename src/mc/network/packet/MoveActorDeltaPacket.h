@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
-#include "mc/network/packet/MoveActorDeltaData.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -18,25 +17,26 @@ class MoveActorDeltaPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::MoveActorDeltaData> mMoveData;
+    ::ll::UntypedStorage<8, 64> mUnk3b4969;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveActorDeltaPacket& operator=(MoveActorDeltaPacket const&);
+    MoveActorDeltaPacket(MoveActorDeltaPacket const&);
+    MoveActorDeltaPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MoveActorDeltaPacket() /*override*/;
 
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
@@ -56,6 +56,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

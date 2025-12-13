@@ -6,10 +6,8 @@ class IRealmEventLogger {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IRealmEventLogger() = default;
 
-    // vIndex: 1
     virtual void logEvent(::std::string const&) = 0;
     // NOLINTEND
 

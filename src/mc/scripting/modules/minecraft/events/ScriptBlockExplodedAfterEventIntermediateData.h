@@ -2,14 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/scripting/modules/minecraft/actor/ScriptActorData.h"
-#include "mc/world/level/BlockPos.h"
-
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
+class BlockPos;
 class Dimension;
 // clang-format on
 
@@ -19,10 +16,10 @@ struct ScriptBlockExplodedAfterEventIntermediateData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Dimension&>                                                mDimension;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                                                 mBlockPos;
-    ::ll::TypedStorage<8, 8, ::Block const&>                                              mDestroyedBlock;
-    ::ll::TypedStorage<8, 104, ::std::optional<::ScriptModuleMinecraft::ScriptActorData>> mActorData;
+    ::ll::UntypedStorage<8, 8>   mUnk402313;
+    ::ll::UntypedStorage<4, 12>  mUnk742de2;
+    ::ll::UntypedStorage<8, 8>   mUnk484250;
+    ::ll::UntypedStorage<8, 104> mUnk62bcc1;
     // NOLINTEND
 
 public:
@@ -34,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockExplodedAfterEventIntermediateData(
+    MCNAPI ScriptBlockExplodedAfterEventIntermediateData(
         ::Dimension&      dimension,
         ::BlockPos const& blockPos,
         ::Block const&    destroyedBlock,
@@ -45,7 +42,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Dimension& dimension, ::BlockPos const& blockPos, ::Block const& destroyedBlock, ::Actor* source);
     // NOLINTEND
 };

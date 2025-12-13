@@ -9,6 +9,7 @@
 // clang-format off
 class Actor;
 class BlockPos;
+class BlockSource;
 class CompoundTag;
 class InteractionResult;
 class ItemDescriptor;
@@ -21,23 +22,24 @@ class BalloonItem : public ::ChemistryItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
         /*override*/;
 
-    // vIndex: 67
     virtual ::mce::Color getColor(::CompoundTag const*, ::ItemDescriptor const& instance) const /*override*/;
 
-    // vIndex: 15
     virtual bool isDyeable() const /*override*/;
 
-    // vIndex: 123
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
-    // vIndex: 0
     virtual ~BalloonItem() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static bool canAttachToBlock(::BlockPos const& blockPos, ::BlockSource const& region);
     // NOLINTEND
 
 public:
@@ -51,6 +53,8 @@ public:
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+
+
     // NOLINTEND
 
 public:

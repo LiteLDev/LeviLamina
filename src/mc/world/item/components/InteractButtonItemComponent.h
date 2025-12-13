@@ -33,19 +33,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual bool isNetworkComponent() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
-    // vIndex: 5
     virtual bool initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
-    // vIndex: 7
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
-    // vIndex: 0
     virtual ~InteractButtonItemComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -85,6 +80,8 @@ public:
     MCAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
     MCAPI void $_initializeComponent(::ComponentItem& owner);
+
+
     // NOLINTEND
 
 public:

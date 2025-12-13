@@ -14,13 +14,10 @@ struct ISynchedActorDataAdapter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ISynchedActorDataAdapter() = default;
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::DataItem> serialize(::EntityContext const&) const = 0;
 
-    // vIndex: 2
     virtual ::SynchedActorDataSerializer::DeserializeResult
     deserialize(::DataItem const&, ::SynchedActorDataSerializer::DeserializeArgs&) const = 0;
     // NOLINTEND

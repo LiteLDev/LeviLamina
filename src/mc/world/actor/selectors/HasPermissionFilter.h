@@ -2,14 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/entity/enums/ClientInputLockCategory.h"
-
 struct HasPermissionFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ClientInputLockCategory> lockCategory;
-    ::ll::TypedStorage<1, 1, bool>                      hasLockSet;
+    ::ll::UntypedStorage<1, 1> mUnk9f6529;
+    ::ll::UntypedStorage<1, 1> mUnk2a34f6;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    HasPermissionFilter& operator=(HasPermissionFilter const&);
+    HasPermissionFilter(HasPermissionFilter const&);
+    HasPermissionFilter();
 };

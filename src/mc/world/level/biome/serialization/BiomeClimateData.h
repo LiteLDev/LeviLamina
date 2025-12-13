@@ -14,15 +14,21 @@ struct BiomeClimateData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mTemperature;
-    ::ll::TypedStorage<4, 4, float> mDownfall;
-    ::ll::TypedStorage<4, 4, float> mSnowAccumulationMin;
-    ::ll::TypedStorage<4, 4, float> mSnowAccumulationMax;
+    ::ll::UntypedStorage<4, 4> mUnk28493c;
+    ::ll::UntypedStorage<4, 4> mUnk68bc90;
+    ::ll::UntypedStorage<4, 4> mUnk61e4b8;
+    ::ll::UntypedStorage<4, 4> mUnkb72cd7;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BiomeClimateData& operator=(BiomeClimateData const&);
+    BiomeClimateData(BiomeClimateData const&);
+    BiomeClimateData();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeClimateData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeClimateData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

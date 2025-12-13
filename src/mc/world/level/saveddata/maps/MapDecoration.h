@@ -56,12 +56,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~MapDecoration();
+    MCNAPI ~MapDecoration();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

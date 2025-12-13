@@ -23,26 +23,19 @@ class ConcretePowderBlock : public ::FallingBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 146
     virtual ::mce::Color getDustColor(::Block const& block) const /*override*/;
 
-    // vIndex: 147
     virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
 
-    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 101
     virtual bool shouldStopFalling(::Actor& entity) const /*override*/;
 
-    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 0
     virtual ~ConcretePowderBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -68,6 +61,8 @@ public:
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+
+
     // NOLINTEND
 
 public:

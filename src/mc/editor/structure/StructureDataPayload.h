@@ -30,13 +30,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~StructureDataPayload() /*override*/;
 
-    // vIndex: 2
     virtual bool load(::CompoundTag const* tag) /*override*/;
 
-    // vIndex: 3
     virtual ::CompoundTag save() const /*override*/;
     // NOLINTEND
 
@@ -52,6 +49,8 @@ public:
     MCNAPI bool $load(::CompoundTag const* tag);
 
     MCNAPI ::CompoundTag $save() const;
+
+
     // NOLINTEND
 
 public:

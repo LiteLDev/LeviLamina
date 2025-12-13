@@ -14,13 +14,10 @@ class IDimensionFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IDimensionFactory() = default;
 
-    // vIndex: 1
     virtual ::OwnerPtr<::Dimension> create(::std::string const&) const = 0;
 
-    // vIndex: 2
     virtual void initializeDimension(::Dimension&) const = 0;
     // NOLINTEND
 

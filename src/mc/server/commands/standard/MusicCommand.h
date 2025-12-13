@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/server/commands/Command.h"
 
 // auto generated forward declare list
@@ -45,6 +46,20 @@ public:
         CommandData& operator=(CommandData const&);
         CommandData(CommandData const&);
         CommandData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C bool decodeMusicCommand(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+
+        MCNAPI_C ~CommandData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -66,10 +81,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    // vIndex: 0
     virtual ~MusicCommand() /*override*/ = default;
     // NOLINTEND
 
@@ -93,6 +106,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
+
     // NOLINTEND
 
 public:

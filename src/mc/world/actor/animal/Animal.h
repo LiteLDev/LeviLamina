@@ -24,16 +24,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 8
     virtual ~Animal() /*override*/;
     // NOLINTEND
 
@@ -71,6 +67,8 @@ public:
     MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+
+
     // NOLINTEND
 
 public:

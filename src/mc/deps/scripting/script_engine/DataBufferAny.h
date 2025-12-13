@@ -36,7 +36,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DataBufferAny() /*override*/;
     // NOLINTEND
 

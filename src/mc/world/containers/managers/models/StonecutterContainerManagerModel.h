@@ -5,13 +5,16 @@
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class ContainerScreenContext;
+class ItemInstance;
 class ItemStack;
 class Player;
+struct RecipeNetIdTag;
 // clang-format on
 
 class StonecutterContainerManagerModel : public ::ContainerManagerModel {
@@ -28,28 +31,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~StonecutterContainerManagerModel() /*override*/ = default;
 
-    // vIndex: 7
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    // vIndex: 8
     virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
-    // vIndex: 9
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    // vIndex: 10
     virtual void setData(int, int) /*override*/;
 
-    // vIndex: 13
     virtual void broadcastChanges() /*override*/;
 
-    // vIndex: 19
     virtual bool isValid(float pickRange) /*override*/;
 
-    // vIndex: 20
     virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
@@ -57,6 +52,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI StonecutterContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+
+    MCFOLD_C void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+
+    MCAPI_C ::std::vector<::std::pair<::ItemInstance, ::RecipeNetId>> getResultForItem(::ItemStack const& item);
     // NOLINTEND
 
 public:
@@ -81,6 +80,8 @@ public:
     MCAPI bool $isValid(float pickRange);
 
     MCAPI ::ContainerScreenContext $_postInit();
+
+
     // NOLINTEND
 
 public:

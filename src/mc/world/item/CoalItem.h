@@ -36,21 +36,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 110
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 111
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 90
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 118
     virtual float getFurnaceXPmultiplier(::ItemStackBase const& instance) const /*override*/;
 
-    // vIndex: 0
     virtual ~CoalItem() /*override*/ = default;
     // NOLINTEND
 
@@ -78,6 +73,8 @@ public:
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
+
+
     // NOLINTEND
 
 public:

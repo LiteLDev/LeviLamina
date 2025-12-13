@@ -27,16 +27,12 @@ class ScriptServerNetworkEventHandler
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ChatEvent& chatEvent) /*override*/;
 
-    // vIndex: 3
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::IncomingPacketEvent& packetEvent) /*override*/;
 
-    // vIndex: 2
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::OutgoingPacketEvent& packetEvent) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptServerNetworkEventHandler() /*override*/ = default;
     // NOLINTEND
 
@@ -70,6 +66,8 @@ public:
     MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::IncomingPacketEvent& packetEvent);
 
     MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::OutgoingPacketEvent& packetEvent);
+
+
     // NOLINTEND
 
 public:

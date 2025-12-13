@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/world/level/levelgen/structure/JigsawJointType.h"
-
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
@@ -15,43 +12,44 @@ class JigsawEditorData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                 mName;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mTarget;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mTargetPool;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mFinalBlock;
-    ::ll::TypedStorage<1, 1, ::SharedTypes::JigsawJointType> mJointType;
-    ::ll::TypedStorage<4, 4, int>                            mPlacementPriority;
-    ::ll::TypedStorage<4, 4, int>                            mSelectionPriority;
-    ::ll::TypedStorage<1, 1, bool>                           mJointTypeVisible;
+    ::ll::UntypedStorage<8, 32> mUnk14f849;
+    ::ll::UntypedStorage<8, 32> mUnk9a047e;
+    ::ll::UntypedStorage<8, 32> mUnkefcf5c;
+    ::ll::UntypedStorage<8, 32> mUnkaafd6f;
+    ::ll::UntypedStorage<1, 1>  mUnke28605;
+    ::ll::UntypedStorage<4, 4>  mUnk4bc52b;
+    ::ll::UntypedStorage<4, 4>  mUnk16e2c5;
+    ::ll::UntypedStorage<1, 1>  mUnk96f87d;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    JigsawEditorData& operator=(JigsawEditorData const&);
     JigsawEditorData(JigsawEditorData const&);
     JigsawEditorData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
+    MCNAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI_C ::JigsawEditorData& operator=(::JigsawEditorData const&);
 
-    MCAPI ~JigsawEditorData();
+    MCNAPI void save(::CompoundTag& tag) const;
+
+    MCNAPI ~JigsawEditorData();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
+    MCNAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

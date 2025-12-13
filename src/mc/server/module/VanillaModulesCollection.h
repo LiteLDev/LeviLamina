@@ -33,14 +33,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void init(
         ::WeakRef<::EntityRegistry>                        registry,
         ::VanillaSystemsRegistration::RegistrationOptions& options,
         ::Bedrock::NonOwnerPointer<::IMinecraftEventing>   eventing
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~VanillaModulesCollection() /*override*/ = default;
     // NOLINTEND
 
@@ -64,6 +62,8 @@ public:
         ::VanillaSystemsRegistration::RegistrationOptions& options,
         ::Bedrock::NonOwnerPointer<::IMinecraftEventing>   eventing
     );
+
+
     // NOLINTEND
 
 public:

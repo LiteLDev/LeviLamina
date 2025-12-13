@@ -3,17 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 // auto generated forward declare list
 // clang-format off
-class Biome;
-class BiomeRegistry;
 class Block;
 class BlockPos;
 class BlockSource;
+class BoundingBox;
 class Random;
 struct PortalEnvironmentModifiers;
 // clang-format on
@@ -30,11 +28,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Block const&> mCrackedStoneBrick;
-        ::ll::TypedStorage<8, 8, ::Block const&> mMossyStoneBrick;
-        ::ll::TypedStorage<8, 8, ::Block const&> mPolishedBlackstoneBricks;
-        ::ll::TypedStorage<8, 8, ::Block const&> mCrackedPolishedBlackstoneBricks;
-        ::ll::TypedStorage<8, 8, ::Block const&> mAirBlock;
+        ::ll::UntypedStorage<8, 8> mUnkeaaa70;
+        ::ll::UntypedStorage<8, 8> mUnkfd8969;
+        ::ll::UntypedStorage<8, 8> mUnka2b0b5;
+        ::ll::UntypedStorage<8, 8> mUnk3a2dda;
+        ::ll::UntypedStorage<8, 8> mUnka02b91;
         // NOLINTEND
 
     public:
@@ -47,12 +45,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                 mStructureOriginX;
-    ::ll::TypedStorage<4, 4, int>                                 mStructureOriginZ;
-    ::ll::TypedStorage<4, 24, ::BoundingBox>                      mStructureBounds;
-    ::ll::TypedStorage<8, 8, ::BiomeRegistry&>                    mBiomeRegistry;
-    ::ll::TypedStorage<8, 8, ::Biome const&>                      mBiome;
-    ::ll::TypedStorage<8, 40, ::RuinedPortalPiece::LocalRegistry> mLocalRegistry;
+    ::ll::UntypedStorage<4, 4>  mUnkf291cc;
+    ::ll::UntypedStorage<4, 4>  mUnk6bf10e;
+    ::ll::UntypedStorage<4, 24> mUnk2de189;
+    ::ll::UntypedStorage<8, 8>  mUnk22646c;
+    ::ll::UntypedStorage<8, 8>  mUnkddbd71;
+    ::ll::UntypedStorage<8, 40> mUnke5e647;
     // NOLINTEND
 
 public:
@@ -64,29 +62,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::StructurePieceType getType() const /*override*/;
 
-    // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-    // vIndex: 0
     virtual ~RuinedPortalPiece() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addNetherrackDripColumn(::Random& random, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void _addNetherrackDripColumn(::Random& random, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void _maybeReplaceBlock(
+    MCNAPI void _maybeReplaceBlock(
         ::Random&                           random,
         ::BlockSource&                      region,
         ::BlockPos                          pos,
         ::PortalEnvironmentModifiers const& modifiers
     );
 
-    MCAPI void _maybeReplaceFullStoneBlock(
+    MCNAPI void _maybeReplaceFullStoneBlock(
         ::Random&                           random,
         ::BlockSource&                      region,
         ::BlockPos                          pos,
@@ -94,37 +89,39 @@ public:
         ::PortalEnvironmentModifiers const& modifiers
     );
 
-    MCAPI void _maybeReplaceGoldBlock(::Random& random, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void _maybeReplaceGoldBlock(::Random& random, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void _maybeReplaceStairs(
+    MCNAPI void _maybeReplaceStairs(
         ::Random&                           random,
         ::BlockSource&                      region,
         ::BlockPos                          pos,
         ::PortalEnvironmentModifiers const& modifiers
     );
 
-    MCAPI void _moveStructureBoundsToSuitableY(
+    MCNAPI void _moveStructureBoundsToSuitableY(
         ::Random&                           random,
         ::BlockSource&                      region,
         ::PortalEnvironmentModifiers const& modifiers
     );
 
-    MCAPI void
+    MCNAPI void
     _spreadNetherrack(::Random& random, ::BlockSource& region, ::PortalEnvironmentModifiers const& modifiers);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Block const& _getRandomFacingStairs(::Random& random, ::Block const& stairBlock);
+    MCNAPI static ::Block const& _getRandomFacingStairs(::Random& random, ::Block const& stairBlock);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+
     // NOLINTEND
 
 public:

@@ -22,10 +22,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~HopperContainerManagerModel() /*override*/ = default;
 
-    // vIndex: 20
     virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
@@ -49,6 +47,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ContainerScreenContext $_postInit();
+
+
     // NOLINTEND
 
 public:

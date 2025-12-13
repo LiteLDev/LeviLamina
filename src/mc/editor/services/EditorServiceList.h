@@ -29,10 +29,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorServiceList();
 
-    // vIndex: 1
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() = 0;
     // NOLINTEND
 

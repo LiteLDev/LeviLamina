@@ -16,10 +16,8 @@ class DcSctpSocketFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DcSctpSocketFactory();
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::dcsctp::DcSctpSocketInterface> Create(
         ::std::string_view                          log_prefix,
         ::dcsctp::DcSctpSocketCallbacks&            callbacks,
@@ -43,6 +41,8 @@ public:
         ::std::unique_ptr<::dcsctp::PacketObserver> packet_observer,
         ::dcsctp::DcSctpOptions const&              options
     );
+
+
     // NOLINTEND
 
 public:

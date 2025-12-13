@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/input/InputMode.h"
+#include "mc/events/PrivacyTagEnterprise.h"
 #include "mc/options/option_types/OptionID.h"
 #include "mc/options/option_types/OptionOwnerType.h"
 #include "mc/options/option_types/OptionResetFlags.h"
@@ -103,19 +105,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~Option() = default;
+#else // LL_PLAT_C
+    virtual ~Option();
+#endif
 
-    // vIndex: 1
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) = 0;
 
-    // vIndex: 4
     virtual void load(::std::string const&) = 0;
 
-    // vIndex: 3
     virtual void load(::std::map<::std::string, ::std::string>& propertyMap);
 
-    // vIndex: 2
     virtual void load(::Json::Value const& valueJson);
     // NOLINTEND
 
@@ -132,22 +133,76 @@ public:
         ::GameVersion        version
     );
 
+    MCNAPI_C void _resetOption(::InputMode inputMode, bool saveOptionChange);
+
     MCNAPI void _updatePropertyVector(
         ::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector,
         ::std::string const&                                      value
     );
 
+    MCNAPI_C bool canModify() const;
+
     MCNAPI bool getBool() const;
+
+    MCNAPI_C bool getBool(::InputMode inputMode) const;
+
+    MCNAPI_C float getFloat() const;
+
+    MCNAPI_C float getFloat(::InputMode inputMode) const;
+
+    MCNAPI_C float getFloatMax() const;
+
+    MCNAPI_C float getFloatMin() const;
+
+    MCNAPI_C int getInt() const;
+
+    MCNAPI_C int64 getInt64() const;
+
+    MCNAPI_C int getIntMax() const;
+
+    MCNAPI_C int getIntMin() const;
+
+    MCNAPI_C ::std::string const& getString() const;
+
+    MCNAPI_C ::std::vector<::std::string> getStringList() const;
+
+    MCNAPI_C uint64 getUInt64() const;
+
+    MCNAPI_C ::std::vector<int> const& getValues() const;
+
+    MCNAPI_C ::glm::vec3 getVec3() const;
+
+    MCNAPI_C bool isDefaultValue(::InputMode inputMode) const;
+
+    MCNAPI_C bool isNewVersion(::GameVersion currentVersion) const;
 
     MCNAPI ::Bedrock::PubSub::Subscription registerLock(::std::function<void(bool&)> isModifiableCondition);
 
+    MCNAPI_C ::Bedrock::PubSub::Subscription
+    registerObserver(::std::function<void(::Option const&, ::InputMode)> onInputModeChangedCallback);
+
     MCNAPI ::Bedrock::PubSub::Subscription
     registerObserver(::std::function<void(::Option const&)> onValueChangedCallback);
+
+    MCNAPI_C ::Option&
+    registerTelemetryProperty(::std::string const& propertyName, ::Social::Events::PrivacyTagEnterprise propertyTag);
+
+    MCNAPI_C void set(int value);
+
+    MCNAPI_C void setOverrideSource(::Option* overrideSource);
+
+    MCNAPI_C void toggle();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI_C static bool read(::std::string const& valueString, int& output);
+
+    MCNAPI_C static bool read(::std::string const& valueString, float& output);
+
+    MCNAPI_C static bool read(::std::string const& valueString, ::std::vector<::std::string>& output);
+
     MCNAPI static bool read(::std::string const& valueString, bool& output);
     // NOLINTEND
 
@@ -166,11 +221,19 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
 
     MCNAPI void $load(::Json::Value const& valueJson);
+
+
     // NOLINTEND
 
 public:

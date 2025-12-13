@@ -23,6 +23,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C explicit TaskStartInfo(char const* name);
+
+    MCNAPI_C explicit TaskStartInfo(::std::string_view name);
+
     MCNAPI ::TaskStartInfo& startWithDelay(::std::chrono::nanoseconds delay);
     // NOLINTEND
 
@@ -30,5 +34,13 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::thread::id const& NoAffinity();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(char const* name);
+
+    MCNAPI_C void* $ctor(::std::string_view name);
     // NOLINTEND
 };

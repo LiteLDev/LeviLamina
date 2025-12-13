@@ -17,22 +17,21 @@ class DesertPyramidPiece : public ::ScatteredFeaturePiece {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-    // vIndex: 2
     virtual ::StructurePieceType getType() const /*override*/;
 
-    // vIndex: 0
     virtual ~DesertPyramidPiece() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
+
+
     // NOLINTEND
 
 public:

@@ -2,14 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/nbt/CompoundTag.h"
-
 struct SyncActorPropertyPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::CompoundTag> mPropertyData;
+    ::ll::UntypedStorage<8, 24> mUnk6fbb23;
     // NOLINTEND
 
 public:
@@ -21,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SyncActorPropertyPacketPayload& operator=(::SyncActorPropertyPacketPayload&&);
+    MCNAPI ::SyncActorPropertyPacketPayload& operator=(::SyncActorPropertyPacketPayload&&);
 
-    MCAPI ~SyncActorPropertyPacketPayload();
+    MCNAPI ~SyncActorPropertyPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

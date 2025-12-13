@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -18,16 +13,21 @@ struct ScriptPlayerInputModeChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
-                                          mPlayerHandle;
-    ::ll::TypedStorage<4, 4, ::InputMode> mNewInputModeUsed;
-    ::ll::TypedStorage<4, 4, ::InputMode> mPreviousInputModeUsed;
+    ::ll::UntypedStorage<8, 32> mUnkfcaa3c;
+    ::ll::UntypedStorage<4, 4>  mUnk1cb62c;
+    ::ll::UntypedStorage<4, 4>  mUnk7e28de;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptPlayerInputModeChangeAfterEvent& operator=(ScriptPlayerInputModeChangeAfterEvent const&);
+    ScriptPlayerInputModeChangeAfterEvent(ScriptPlayerInputModeChangeAfterEvent const&);
+    ScriptPlayerInputModeChangeAfterEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

@@ -8,13 +8,10 @@ class DtmfProviderInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual bool CanInsertDtmf() = 0;
 
-    // vIndex: 1
     virtual bool InsertDtmf(int, int) = 0;
 
-    // vIndex: 2
     virtual ~DtmfProviderInterface();
     // NOLINTEND
 

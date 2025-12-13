@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace Realms::Stories {
 
 class RealmEvent {
@@ -20,9 +25,38 @@ public:
 
 public:
     // prevent constructor by default
-    RealmEvent& operator=(RealmEvent const&);
     RealmEvent(RealmEvent const&);
     RealmEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C RealmEvent(::Realms::Stories::RealmEvent&&);
+
+    MCNAPI_C ::Realms::Stories::RealmEvent& operator=(::Realms::Stories::RealmEvent&&);
+
+    MCNAPI_C ::Realms::Stories::RealmEvent& operator=(::Realms::Stories::RealmEvent const&);
+
+    MCNAPI_C ~RealmEvent();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::Realms::Stories::RealmEvent fromJson(::Json::Value const& json);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::Realms::Stories::RealmEvent&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Realms::Stories

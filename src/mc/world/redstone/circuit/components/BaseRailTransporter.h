@@ -32,11 +32,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 12
     virtual bool
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
-    // vIndex: 11
     virtual bool addSource(
         ::CircuitSceneGraph&         graph,
         ::CircuitTrackingInfo const& info,
@@ -44,13 +42,10 @@ public:
         bool&                        bDirectlyPowered
     ) /*override*/;
 
-    // vIndex: 14
     virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
-    // vIndex: 24
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
-    // vIndex: 0
     virtual ~BaseRailTransporter() /*override*/ = default;
     // NOLINTEND
 
@@ -65,6 +60,8 @@ public:
     MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
     MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+
+
     // NOLINTEND
 
 public:

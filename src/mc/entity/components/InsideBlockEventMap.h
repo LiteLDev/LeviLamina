@@ -31,9 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InsideBlockEventMap(::InsideBlockEventMap const&);
+    MCNAPI InsideBlockEventMap(::InsideBlockEventMap const&);
 
-    MCAPI InsideBlockEventMap(
+    MCNAPI InsideBlockEventMap(
         ::Block const&                  block,
         bool                            watchEnter,
         bool                            watchExit,
@@ -42,17 +42,17 @@ public:
         ::ActorDefinitionTrigger const& exitedEvent
     );
 
-    MCAPI ::InsideBlockEventMap& operator=(::InsideBlockEventMap const&);
+    MCNAPI ::InsideBlockEventMap& operator=(::InsideBlockEventMap const&);
 
-    MCAPI ~InsideBlockEventMap();
+    MCNAPI ~InsideBlockEventMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::InsideBlockEventMap const&);
+    MCNAPI void* $ctor(::InsideBlockEventMap const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Block const&                  block,
         bool                            watchEnter,
         bool                            watchExit,
@@ -65,6 +65,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

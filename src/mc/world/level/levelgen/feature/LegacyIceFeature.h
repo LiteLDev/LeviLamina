@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
-#include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,40 +17,42 @@ class LegacyIceFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mIcebergFeature;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mBlueIceFeature;
+    ::ll::UntypedStorage<8, 24> mUnke8d47e;
+    ::ll::UntypedStorage<8, 24> mUnkc824af;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    LegacyIceFeature& operator=(LegacyIceFeature const&);
+    LegacyIceFeature(LegacyIceFeature const&);
     LegacyIceFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LegacyIceFeature() /*override*/ = default;
 
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyIceFeature(::FeatureRegistry const& registry);
+    MCNAPI explicit LegacyIceFeature(::FeatureRegistry const& registry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FeatureRegistry const& registry);
+    MCNAPI void* $ctor(::FeatureRegistry const& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

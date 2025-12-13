@@ -69,6 +69,8 @@ public:
     );
 
     MCAPI static bool getPos(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos);
+
+    MCAPI_C static bool getPosOffs(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos, float offs);
     // NOLINTEND
 
 public:

@@ -2,15 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/resource/PackType.h"
-
 struct StackStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::PackType> mStackType;
-    ::ll::TypedStorage<4, 4, uint>       mPackCount;
-    ::ll::TypedStorage<8, 8, double>     mParseTime;
+    ::ll::UntypedStorage<1, 1> mUnkf5aed9;
+    ::ll::UntypedStorage<4, 4> mUnk5af3f4;
+    ::ll::UntypedStorage<8, 8> mUnk460b61;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StackStats& operator=(StackStats const&);
+    StackStats(StackStats const&);
+    StackStats();
 };

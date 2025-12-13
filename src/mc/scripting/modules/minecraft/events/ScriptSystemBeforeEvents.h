@@ -3,19 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/scripting/modules/minecraft/events/ScriptFilteredEventSignal.h"
 
 // auto generated forward declare list
 // clang-format off
-class ServerLevel;
-namespace ScriptModuleMinecraft { struct EmptyFilter; }
-namespace ScriptModuleMinecraft { struct ScriptModuleShutdownBeforeEvent; }
-namespace ScriptModuleMinecraft { struct ScriptModuleStartupBeforeEvent; }
-namespace ScriptModuleMinecraft { struct ScriptWatchdogTerminateBeforeEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
@@ -34,54 +25,38 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string> name;
-        ::ll::TypedStorage<8, 8, uint64>         count;
+        ::ll::UntypedStorage<8, 32> mUnkacdf6b;
+        ::ll::UntypedStorage<8, 8>  mUnk5d02c5;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SignalNameSubscriberCount& operator=(SignalNameSubscriberCount const&);
+        SignalNameSubscriberCount(SignalNameSubscriberCount const&);
+        SignalNameSubscriberCount();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SignalNameSubscriberCount();
+        MCNAPI ~SignalNameSubscriberCount();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents>>
-                                                              mHandle;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ServerLevel*>> mLevel;
-    ::ll::TypedStorage<
-        8,
-        32,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
-            ::ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent,
-            1,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
-        mBeforeWatchdogTerminateSignal;
-    ::ll::TypedStorage<
-        8,
-        32,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
-            ::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent,
-            2,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
-        mBeforeModuleStartupSignal;
-    ::ll::TypedStorage<
-        8,
-        32,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
-            ::ScriptModuleMinecraft::ScriptModuleShutdownBeforeEvent,
-            1,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
-        mBeforeModuleShutdownSignal;
+    ::ll::UntypedStorage<8, 16> mUnke94250;
+    ::ll::UntypedStorage<8, 16> mUnk1881fb;
+    ::ll::UntypedStorage<8, 8>  mUnk578908;
+    ::ll::UntypedStorage<8, 32> mUnkb07964;
+    ::ll::UntypedStorage<8, 32> mUnkd8d158;
+    ::ll::UntypedStorage<8, 32> mUnkc1b293;
     // NOLINTEND
 
 public:
@@ -93,33 +68,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSystemBeforeEvents(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
+    MCNAPI ScriptSystemBeforeEvents(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
 
-    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemBeforeEvents::SignalNameSubscriberCount>
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemBeforeEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSystemBeforeEvents&
+    MCNAPI ::ScriptModuleMinecraft::ScriptSystemBeforeEvents&
     operator=(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
 
-    MCAPI ~ScriptSystemBeforeEvents();
+    MCNAPI ~ScriptSystemBeforeEvents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

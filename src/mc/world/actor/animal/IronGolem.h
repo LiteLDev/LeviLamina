@@ -33,22 +33,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 155
     virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
 
-    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 144
     virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 8
     virtual ~IronGolem() /*override*/ = default;
     // NOLINTEND
 
@@ -82,6 +76,8 @@ public:
     MCFOLD float $getShadowRadius() const;
 
     MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+
     // NOLINTEND
 
 public:

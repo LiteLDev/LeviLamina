@@ -6,6 +6,12 @@
 #include "mc/nbt/Tag.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class IDataInput;
+class IDataOutput;
+// clang-format on
+
 class FloatTag : public ::Tag {
 public:
     float data;
@@ -22,28 +28,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void write(::IDataOutput& dos) const /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::Result<void> load(::IDataInput& dis) /*override*/;
 
-    // vIndex: 5
     virtual ::Tag::Type getId() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::string toString() const /*override*/;
 
-    // vIndex: 9
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
 
-    // vIndex: 6
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
-    // vIndex: 10
     virtual uint64 hash() const /*override*/;
 
-    // vIndex: 0
     virtual ~FloatTag() /*override*/ = default;
     // NOLINTEND
 
@@ -69,6 +67,8 @@ public:
     MCAPI bool $equals(::Tag const& rhs) const;
 
     MCAPI uint64 $hash() const;
+
+
     // NOLINTEND
 
 public:

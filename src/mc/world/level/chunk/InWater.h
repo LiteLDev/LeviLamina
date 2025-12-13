@@ -18,11 +18,9 @@ class InWater : public ::br::spawn::PlacementType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const&) const
         /*override*/;
 
-    // vIndex: 0
     virtual ~InWater() /*override*/ = default;
     // NOLINTEND
 
@@ -30,6 +28,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const&) const;
+
+
     // NOLINTEND
 
 public:

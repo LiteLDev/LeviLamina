@@ -33,28 +33,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void initialize(::Bedrock::NonOwnerPointer<::Core::FileSystem> fileSystem) /*override*/;
 
-    // vIndex: 2
     virtual void updateDeviceId(bool const isAnonymous) /*override*/;
 
-    // vIndex: 3
     virtual ::std::string const& getDeviceId() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::string const& getDeviceIdWarning() const /*override*/;
 
-    // vIndex: 5
     virtual ::Bedrock::DeviceIdContext const& getDeviceIdContext() const /*override*/;
 
-    // vIndex: 6
     virtual bool isDeviceIdValid() const /*override*/;
 
-    // vIndex: 7
     virtual void _initializePlatform(bool const) = 0;
 
-    // vIndex: 0
     virtual ~DeviceIdManager_Common() /*override*/;
     // NOLINTEND
 
@@ -77,7 +69,11 @@ public:
 
     MCNAPI ::Bedrock::DeviceIdContext const& $getDeviceIdContext() const;
 
+#ifdef LL_PLAT_S
     MCNAPI bool $isDeviceIdValid() const;
+#endif
+
+
     // NOLINTEND
 };
 

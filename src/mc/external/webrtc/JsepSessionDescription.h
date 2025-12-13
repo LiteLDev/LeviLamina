@@ -36,43 +36,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~JsepSessionDescription() /*override*/;
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::SessionDescriptionInterface> Clone() const /*override*/;
 
-    // vIndex: 3
     virtual ::cricket::SessionDescription* description() /*override*/;
 
-    // vIndex: 2
     virtual ::cricket::SessionDescription const* description() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::string session_id() const /*override*/;
 
-    // vIndex: 5
     virtual ::std::string session_version() const /*override*/;
 
-    // vIndex: 6
     virtual ::webrtc::SdpType GetType() const /*override*/;
 
-    // vIndex: 7
     virtual ::std::string type() const /*override*/;
 
-    // vIndex: 8
     virtual bool AddCandidate(::webrtc::IceCandidateInterface const* candidate) /*override*/;
 
-    // vIndex: 9
     virtual uint64 RemoveCandidates(::std::vector<::cricket::Candidate> const& candidates) /*override*/;
 
-    // vIndex: 10
     virtual uint64 number_of_mediasections() const /*override*/;
 
-    // vIndex: 11
     virtual ::webrtc::IceCandidateCollection const* candidates(uint64 mediasection_index) const /*override*/;
 
-    // vIndex: 12
     virtual bool ToString(::std::string* out) const /*override*/;
     // NOLINTEND
 
@@ -144,6 +131,8 @@ public:
     MCNAPI ::webrtc::IceCandidateCollection const* $candidates(uint64 mediasection_index) const;
 
     MCNAPI bool $ToString(::std::string* out) const;
+
+
     // NOLINTEND
 
 public:

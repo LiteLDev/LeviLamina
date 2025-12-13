@@ -33,15 +33,37 @@ MCAPI ::StorageVersion const& CurrentStorageVersion();
 
 MCAPI ::SubChunkFormat const& CurrentSubChunkFormat();
 
+MCAPI_C bool const& DevInitiallyMuteMusic();
+
 MCAPI uint64 const& DeviceIdMaxLength();
+
+MCAPI_C int const& EduDiscoveryProtocolVersion();
 
 MCAPI bool const& IsAnyBeta();
 
+MCAPI_C bool const& IsBeta();
+
+MCAPI_C bool const& IsCreatorEditorBuild();
+
 MCAPI bool const& IsDevBuild();
+
+MCAPI_C bool const& IsNxPlatform();
+
+MCAPI_C bool const& IsPS5Platform();
+
+MCAPI_C bool const& IsPlaytest();
+
+MCAPI_C bool const& IsPreviewApp();
+
+MCAPI_C bool const& IsSonyPlatform();
+
+MCAPI_C bool const& IsXboxPlatform();
 
 MCAPI int const& MajorVersion();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> MajorVersionStringFormated();
+
+MCAPI_C int const& MaxChatLength();
 
 MCAPI uint const& MinTickingChunksRadius();
 
@@ -69,7 +91,13 @@ MCAPI ::std::add_lvalue_reference_t<char const[]> PatchVersionStringFormated();
 
 MCAPI int const& RevisionVersion();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> RevisionVersionStringFormated();
+MCAPI_S ::std::add_lvalue_reference_t<char const[]> RevisionVersionStringFormated();
+
+MCAPI_C int const& StoreVersion();
+
+MCAPI_C bool const& TestInfraEnabled();
+
+MCAPI_C bool const& XboxLiveEnabled();
 // NOLINTEND
 
 } // namespace SharedConstants

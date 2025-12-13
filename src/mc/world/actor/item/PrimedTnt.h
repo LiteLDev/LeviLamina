@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/projectile/PredictableProjectile.h"
@@ -17,6 +16,7 @@ class DataLoadHelper;
 class EntityContext;
 class Vec3;
 struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
 struct VariantParameterList;
 // clang-format on
 
@@ -24,40 +24,34 @@ class PrimedTnt : public ::PredictableProjectile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOwnerID;
-    ::ll::TypedStorage<4, 4, ::ActorType>     mOwnerEntityType;
+    ::ll::UntypedStorage<8, 8> mUnk783b5f;
+    ::ll::UntypedStorage<4, 4> mUnkb08415;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    PrimedTnt& operator=(PrimedTnt const&);
+    PrimedTnt(PrimedTnt const&);
     PrimedTnt();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
-    // vIndex: 10
     virtual ::ActorType getOwnerEntityType() /*override*/;
 
-    // vIndex: 21
     virtual void teleportTo(
         ::Vec3 const& pos,
         bool          shouldStopRiding,
@@ -66,16 +60,12 @@ public:
         bool          keepVelocity
     ) /*override*/;
 
-    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 8
     virtual ~PrimedTnt() /*override*/ = default;
     // NOLINTEND
 
@@ -126,6 +116,8 @@ public:
     MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCFOLD void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+
     // NOLINTEND
 
 public:

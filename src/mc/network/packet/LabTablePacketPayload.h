@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/level/block/actor/LabTableReactionType.h"
-
 struct LabTablePacketPayload {
 public:
     // LabTablePacketPayload inner types define
@@ -18,8 +14,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::LabTablePacketPayload::Type> mType;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                   mPos;
-    ::ll::TypedStorage<1, 1, ::LabTableReactionType>        mReaction;
+    ::ll::UntypedStorage<1, 1>  mUnkc3f2c1;
+    ::ll::UntypedStorage<4, 12> mUnkce119c;
+    ::ll::UntypedStorage<1, 1>  mUnk679d09;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LabTablePacketPayload& operator=(LabTablePacketPayload const&);
+    LabTablePacketPayload(LabTablePacketPayload const&);
+    LabTablePacketPayload();
 };

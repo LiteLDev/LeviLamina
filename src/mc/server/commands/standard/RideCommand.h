@@ -15,6 +15,17 @@ class CommandRegistry;
 class RideCommand : public ::Command {
 public:
     // RideCommand inner types define
+    enum class RideRules : uchar {
+        NoVehicleChange  = 0,
+        ReassignVehicles = 1,
+        SkipPassengers   = 2,
+    };
+
+    enum class TeleportRules : uchar {
+        TeleportPassenger = 0,
+        TeleportVehicle   = 1,
+    };
+
     enum class VehicleAction : uchar {
         StartRiding     = 0,
         StopRiding      = 1,
@@ -23,20 +34,9 @@ public:
         SummonVehicle   = 4,
     };
 
-    enum class TeleportRules : uchar {
-        TeleportPassenger = 0,
-        TeleportVehicle   = 1,
-    };
-
     enum class VehicleFillType : uchar {
         UntilFull   = 0,
         IfGroupFits = 1,
-    };
-
-    enum class RideRules : uchar {
-        NoVehicleChange  = 0,
-        ReassignVehicles = 1,
-        SkipPassengers   = 2,
     };
 
 public:
@@ -62,10 +62,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    // vIndex: 0
     virtual ~RideCommand() /*override*/ = default;
     // NOLINTEND
 
@@ -101,6 +99,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
+
     // NOLINTEND
 
 public:

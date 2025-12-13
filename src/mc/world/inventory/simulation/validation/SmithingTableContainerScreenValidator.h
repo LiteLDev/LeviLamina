@@ -9,7 +9,6 @@ class SmithingTableContainerScreenValidator : public ::ContainerScreenValidatorB
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SmithingTableContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

@@ -23,16 +23,13 @@ public:
 public:
     // prevent constructor by default
     ParticleAppearanceTintingComponent& operator=(ParticleAppearanceTintingComponent const&);
-    ParticleAppearanceTintingComponent(ParticleAppearanceTintingComponent const&);
     ParticleAppearanceTintingComponent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
-    // vIndex: 0
     virtual ~ParticleAppearanceTintingComponent() /*override*/;
     // NOLINTEND
 
@@ -40,6 +37,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ParticleAppearanceTintingComponent(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent&&);
+
+    MCNAPI_C ParticleAppearanceTintingComponent(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent const&);
     // NOLINTEND
 
 public:
@@ -58,6 +57,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent&&);
+
+    MCNAPI_C void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent const&);
     // NOLINTEND
 
 public:
@@ -70,6 +71,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::HashedString const& $getIdentifier() const;
+
+
     // NOLINTEND
 
 public:

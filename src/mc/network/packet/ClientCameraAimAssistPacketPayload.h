@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/packet/ClientCameraAimAssistPacketAction.h"
-
 struct ClientCameraAimAssistPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                      mCameraPresetId;
-    ::ll::TypedStorage<1, 1, ::ClientCameraAimAssistPacketAction> mAction;
-    ::ll::TypedStorage<1, 1, bool>                                mAllowAimAssist;
+    ::ll::UntypedStorage<8, 32> mUnk288b0a;
+    ::ll::UntypedStorage<1, 1>  mUnkb6032d;
+    ::ll::UntypedStorage<1, 1>  mUnk829b92;
     // NOLINTEND
 
 public:
@@ -23,14 +20,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ClientCameraAimAssistPacketPayload& operator=(::ClientCameraAimAssistPacketPayload&&);
+    MCNAPI ::ClientCameraAimAssistPacketPayload& operator=(::ClientCameraAimAssistPacketPayload&&);
 
-    MCAPI ~ClientCameraAimAssistPacketPayload();
+    MCNAPI ~ClientCameraAimAssistPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

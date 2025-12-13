@@ -26,16 +26,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SimplexNoise(::IRandom& random, bool parityInitialization);
+    MCNAPI SimplexNoise(::IRandom& random, bool parityInitialization);
 
-    MCAPI float _getValue(::Vec2 const& vin) const;
+    MCNAPI float _getValue(::Vec2 const& vin) const;
 
-    MCAPI float _getValue(::Vec3 const& vin) const;
+    MCNAPI float _getValue(::Vec3 const& vin) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IRandom& random, bool parityInitialization);
+    MCNAPI void* $ctor(::IRandom& random, bool parityInitialization);
     // NOLINTEND
 };

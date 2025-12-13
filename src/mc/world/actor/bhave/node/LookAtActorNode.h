@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 
@@ -16,29 +15,38 @@ class LookAtActorNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>         mDelayTicks;
-    ::ll::TypedStorage<4, 4, int>         mDelayCounter;
-    ::ll::TypedStorage<4, 4, ::ActorType> mEntityType;
-    ::ll::TypedStorage<4, 4, int>         mSearchRadius;
+    ::ll::UntypedStorage<4, 4> mUnk2222ee;
+    ::ll::UntypedStorage<4, 4> mUnk652ac4;
+    ::ll::UntypedStorage<4, 4> mUnkb90fbd;
+    ::ll::UntypedStorage<4, 4> mUnkf1bc2e;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LookAtActorNode& operator=(LookAtActorNode const&);
+    LookAtActorNode(LookAtActorNode const&);
+    LookAtActorNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
-    // vIndex: 2
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
-    // vIndex: 0
     virtual ~LookAtActorNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromDefinition(::Actor& owner);
+    MCNAPI void $initializeFromDefinition(::Actor& owner);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
+#endif
+
+
     // NOLINTEND
 
 public:

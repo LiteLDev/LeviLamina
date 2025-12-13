@@ -30,18 +30,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 54
     virtual bool
     isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const
         /*override*/;
 
-    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    // vIndex: 113
     virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const /*override*/;
 
-    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -49,16 +45,12 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
-    // vIndex: 57
     virtual int getArmorValue() const /*override*/;
 
-    // vIndex: 59
     virtual ::SharedTypes::Legacy::LevelSoundEvent getBreakSound() const /*override*/;
 
-    // vIndex: 0
     virtual ~WolfArmorItem() /*override*/ = default;
     // NOLINTEND
 
@@ -104,6 +96,8 @@ public:
     MCFOLD int $getArmorValue() const;
 
     MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getBreakSound() const;
+
+
     // NOLINTEND
 
 public:

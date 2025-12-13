@@ -5,31 +5,31 @@
 namespace StructureTag {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& BLOCK_ENTITY_DATA();
+MCNAPI ::std::string const& BLOCK_ENTITY_DATA();
 
-MCAPI ::std::string const& BLOCK_INDICES();
+MCNAPI ::std::string const& BLOCK_INDICES();
 
-MCAPI ::std::string const& BLOCK_PALETTE();
+MCNAPI ::std::string const& BLOCK_PALETTE();
 
-MCAPI ::std::string const& BLOCK_POSITION_DATA();
+MCNAPI ::std::string const& BLOCK_POSITION_DATA();
 
-MCAPI ::std::string const& ENTITIES();
+MCNAPI ::std::string const& ENTITIES();
 
-MCAPI ::std::string const& FORMAT_VERSION();
+MCNAPI ::std::string const& FORMAT_VERSION();
 
-MCAPI ::std::string const& NEIGHBOR_AWARE_BLOCK_UPGRADE_VERSION();
+MCNAPI ::std::string const& NEIGHBOR_AWARE_BLOCK_UPGRADE_VERSION();
 
-MCAPI ::std::string const& PALETTE();
+MCNAPI ::std::string const& PALETTE();
 
-MCAPI ::std::string const& SIZE();
+MCNAPI ::std::string const& SIZE();
 
-MCAPI ::std::string const& STRUCTURE();
+MCNAPI ::std::string const& STRUCTURE();
 
-MCAPI ::std::string const& STRUCTURE_WORLD_ORIGIN();
+MCNAPI ::std::string const& STRUCTURE_WORLD_ORIGIN();
 
-MCAPI ::std::string const& TICK_DELAY();
+MCNAPI ::std::string const& TICK_DELAY();
 
-MCAPI ::std::string const& TICK_QUEUE_DATA();
+MCNAPI ::std::string const& TICK_QUEUE_DATA();
 // NOLINTEND
 
 } // namespace StructureTag

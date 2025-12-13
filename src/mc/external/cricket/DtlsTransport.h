@@ -61,32 +61,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DtlsTransport() /*override*/;
 
-    // vIndex: 9
     virtual ::webrtc::DtlsTransportState dtls_state() const /*override*/;
 
-    // vIndex: 1
     virtual ::std::string const& transport_name() const /*override*/;
 
-    // vIndex: 10
     virtual int component() const /*override*/;
 
-    // vIndex: 11
     virtual bool IsDtlsActive() const /*override*/;
 
-    // vIndex: 19
     virtual bool SetLocalCertificate(::webrtc::scoped_refptr<::rtc::RTCCertificate> const& certificate) /*override*/;
 
-    // vIndex: 18
     virtual ::webrtc::scoped_refptr<::rtc::RTCCertificate> GetLocalCertificate() const /*override*/;
 
-    // vIndex: 22
     virtual bool
     SetRemoteFingerprint(::std::string_view digest_alg, uchar const* digest, uint64 digest_len) /*override*/;
 
-    // vIndex: 23
     virtual ::webrtc::RTCError SetRemoteParameters(
         ::std::string_view              digest_alg,
         uchar const*                    digest,
@@ -94,34 +85,24 @@ public:
         ::std::optional<::rtc::SSLRole> role
     ) /*override*/;
 
-    // vIndex: 4
     virtual int SendPacket(char const* data, uint64 size, ::rtc::PacketOptions const& options, int flags) /*override*/;
 
-    // vIndex: 6
     virtual bool GetOption(::rtc::Socket::Option opt, int* value) /*override*/;
 
-    // vIndex: 14
     virtual bool GetSslVersionBytes(int* version) const /*override*/;
 
-    // vIndex: 15
     virtual bool GetSrtpCryptoSuite(int* cipher) /*override*/;
 
-    // vIndex: 17
     virtual ushort GetSslPeerSignatureAlgorithm() const /*override*/;
 
-    // vIndex: 12
     virtual bool GetDtlsRole(::rtc::SSLRole* role) const /*override*/;
 
-    // vIndex: 13
     virtual bool SetDtlsRole(::rtc::SSLRole role) /*override*/;
 
-    // vIndex: 16
-    virtual bool GetSslCipherSuite(int* cipher_suite) /*override*/;
+    virtual bool GetSslCipherSuite(int* cipher) /*override*/;
 
-    // vIndex: 20
     virtual ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain() const /*override*/;
 
-    // vIndex: 21
     virtual bool ExportKeyingMaterial(
         ::std::string_view label,
         uchar const*       context,
@@ -131,22 +112,16 @@ public:
         uint64             result_len
     ) /*override*/;
 
-    // vIndex: 24
     virtual ::cricket::IceTransportInternal* ice_transport() /*override*/;
 
-    // vIndex: 3
     virtual bool receiving() const /*override*/;
 
-    // vIndex: 2
     virtual bool writable() const /*override*/;
 
-    // vIndex: 7
     virtual int GetError() /*override*/;
 
-    // vIndex: 8
     virtual ::std::optional<::rtc::NetworkRoute> network_route() const /*override*/;
 
-    // vIndex: 5
     virtual int SetOption(::rtc::Socket::Option opt, int value) /*override*/;
     // NOLINTEND
 
@@ -250,7 +225,7 @@ public:
 
     MCNAPI bool $SetDtlsRole(::rtc::SSLRole role);
 
-    MCNAPI bool $GetSslCipherSuite(int* cipher_suite);
+    MCNAPI bool $GetSslCipherSuite(int* cipher);
 
     MCNAPI ::std::unique_ptr<::rtc::SSLCertChain> $GetRemoteSSLCertChain() const;
 
@@ -274,6 +249,8 @@ public:
     MCNAPI ::std::optional<::rtc::NetworkRoute> $network_route() const;
 
     MCNAPI int $SetOption(::rtc::Socket::Option opt, int value);
+
+
     // NOLINTEND
 
 public:

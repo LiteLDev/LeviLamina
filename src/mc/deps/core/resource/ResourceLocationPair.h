@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ResourceLocation;
+struct PackIdVersion;
+// clang-format on
+
 class ResourceLocationPair {
 public:
     // member variables
@@ -15,5 +21,30 @@ public:
     // prevent constructor by default
     ResourceLocationPair& operator=(ResourceLocationPair const&);
     ResourceLocationPair(ResourceLocationPair const&);
-    ResourceLocationPair();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ResourceLocationPair();
+
+    MCNAPI_C ResourceLocationPair(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
+
+    MCNAPI_C ::ResourceLocationPair& operator=(::ResourceLocationPair&&);
+
+    MCNAPI_C ~ResourceLocationPair();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

@@ -49,7 +49,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void
+    MCNAPI static void
     setup(::AgentComponents::DetectRedstone& detect, ::EntityContext& entity, ::AgentComponents::Direction dir);
     // NOLINTEND
 };

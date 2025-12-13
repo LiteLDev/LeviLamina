@@ -19,28 +19,29 @@ namespace Util::Agent { struct SimulatedMoveResult; }
 namespace Util::Agent {
 // functions
 // NOLINTBEGIN
-MCAPI ::AgentComponents::BlockQueryResult
+MCNAPI ::AgentComponents::BlockQueryResult
 getNextBlock(::BlockSource& source, ::Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
 
-MCAPI ::AgentComponents::BlockQueryResult
+MCNAPI ::AgentComponents::BlockQueryResult
 getNextBlockSweep(::BlockSource& source, ::Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
 
-MCAPI ::AgentComponents::BlockQueryResult
+MCNAPI ::AgentComponents::BlockQueryResult
 getNextBlockUnfiltered(::BlockSource& source, ::Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
 
-MCAPI ::AgentComponents::BlockQueryResult getNextBlockUnfilteredSweep(
+MCNAPI ::AgentComponents::BlockQueryResult getNextBlockUnfilteredSweep(
     ::BlockSource&               source,
     ::Vec3                       curPos,
     float                        bodyRot,
     ::AgentComponents::Direction direction
 );
 
-MCAPI ::Vec3 getNextPosFromDirection(::Vec3 const& startPosition, float bodyRotation, ::AgentComponents::Direction dir);
+MCNAPI ::Vec3
+getNextPosFromDirection(::Vec3 const& startPosition, float bodyRotation, ::AgentComponents::Direction dir);
 
-MCAPI ::Util::Agent::SimulatedMoveResult
+MCNAPI ::Util::Agent::SimulatedMoveResult
 simulateMove(::EntityContext& entity, ::AgentComponents::Direction dir, ::Vec3 destination);
 
-MCAPI void testForCollidableMobs(
+MCNAPI void testForCollidableMobs(
     ::Actor const&         actor,
     ::BlockSource&         region,
     ::AABB const&          intersectTestBox,
@@ -50,9 +51,9 @@ MCAPI void testForCollidableMobs(
 
 // static variables
 // NOLINTBEGIN
-MCAPI float const& COMMAND_INTERVAL();
+MCNAPI float const& COMMAND_INTERVAL();
 
-MCAPI float const& MOVE_EPSILON();
+MCNAPI float const& MOVE_EPSILON();
 // NOLINTEND
 
 } // namespace Util::Agent

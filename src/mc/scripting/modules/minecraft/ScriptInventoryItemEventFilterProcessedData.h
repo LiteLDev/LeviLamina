@@ -28,7 +28,7 @@ public:
         ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&
     );
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&
+    MCNAPI_S ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&&);
 
     MCNAPI ~ScriptInventoryItemEventFilterProcessedData();

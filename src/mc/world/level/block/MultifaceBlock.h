@@ -39,15 +39,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MultifaceBlock() /*override*/ = default;
 
-    // vIndex: 10
     virtual ::AABB const&
     getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
         /*override*/;
 
-    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
@@ -55,7 +52,6 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 9
     virtual ::AABB const& getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -63,7 +59,6 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
-    // vIndex: 4
     virtual ::HitResult clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
@@ -74,31 +69,23 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 91
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 43
     virtual bool isMultifaceBlock() const /*override*/;
 
-    // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 50
     virtual ::Block const& sanitizeFillBlock(::Block const& block) const /*override*/;
 
-    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 
@@ -160,6 +147,8 @@ public:
         ::BlockPos const&    placementPos,
         uchar                placementDirection
     );
+
+    MCAPI_C static ::std::vector<uchar> getFacingListFromMask(uchar faceDirectionBits);
 
     MCAPI static bool hasFace(::Block const& block, uchar faceDirection);
     // NOLINTEND
@@ -250,6 +239,8 @@ public:
     MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+
+
     // NOLINTEND
 
 public:

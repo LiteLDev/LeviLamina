@@ -19,10 +19,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ~PlayerUIContainerModel() /*override*/ = default;
 
-    // vIndex: 23
     virtual int _getContainerOffset() const /*override*/;
     // NOLINTEND
 
@@ -42,6 +40,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI int $_getContainerOffset() const;
+
+
     // NOLINTEND
 
 public:

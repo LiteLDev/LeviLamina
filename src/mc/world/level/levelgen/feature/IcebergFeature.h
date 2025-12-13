@@ -17,11 +17,11 @@ class IcebergFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const&> mAirBlock;
-    ::ll::TypedStorage<8, 8, ::Block const&> mWaterBlock;
-    ::ll::TypedStorage<8, 8, ::Block const&> mSnowBlock;
-    ::ll::TypedStorage<8, 8, ::Block const&> mPackedIceBlock;
-    ::ll::TypedStorage<8, 8, ::Block const&> mBlueIceBlock;
+    ::ll::UntypedStorage<8, 8> mUnk6e424d;
+    ::ll::UntypedStorage<8, 8> mUnk713ba3;
+    ::ll::UntypedStorage<8, 8> mUnkd7a0a0;
+    ::ll::UntypedStorage<8, 8> mUnk785d56;
+    ::ll::UntypedStorage<8, 8> mUnk6ef3df;
     // NOLINTEND
 
 public:
@@ -33,17 +33,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 0
     virtual ~IcebergFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _generateIcebergBlock(
+    MCNAPI void _generateIcebergBlock(
         ::BlockSource&    region,
         ::Random&         random,
         ::BlockPos const& origin,
@@ -60,7 +58,7 @@ public:
         ::Block const&    blockToPlace
     ) const;
 
-    MCAPI void carve(
+    MCNAPI void carve(
         int               radius,
         int               yOff,
         ::BlockPos const& globalOrigin,
@@ -76,7 +74,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

@@ -13,13 +13,10 @@ class IClientFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IClientFactory() = default;
 
-    // vIndex: 1
     virtual ::TickingSystemWithInfo clientLoadingScreenSystem() const = 0;
 
-    // vIndex: 2
     virtual ::TickingSystemWithInfo clientPushDimensionLoadingScreenSystem() const = 0;
     // NOLINTEND
 

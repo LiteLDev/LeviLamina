@@ -35,10 +35,8 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 7
         virtual void onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
-        // vIndex: 0
         virtual ~ScriptDataStoreAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
 
@@ -46,6 +44,8 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+
+
         // NOLINTEND
 
     public:

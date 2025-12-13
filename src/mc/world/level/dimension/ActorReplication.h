@@ -21,8 +21,6 @@ public:
     // clang-format on
 
     // ActorReplication inner types define
-    using PlayerIndex = ushort;
-
     struct PlayerAtChunk {
     public:
         // member variables
@@ -31,6 +29,8 @@ public:
         ::ll::TypedStorage<2, 2, ushort>     mPlayerIndex;
         // NOLINTEND
     };
+
+    using PlayerIndex = ushort;
 
 public:
     // member variables

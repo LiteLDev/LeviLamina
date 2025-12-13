@@ -21,13 +21,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::RTCStats> copy() const /*override*/;
 
-    // vIndex: 2
     virtual char const* type() const /*override*/;
 
-    // vIndex: 0
     virtual ~RTCLocalIceCandidateStats() /*override*/ = default;
     // NOLINTEND
 
@@ -55,6 +52,8 @@ public:
     MCNAPI ::std::unique_ptr<::webrtc::RTCStats> $copy() const;
 
     MCNAPI char const* $type() const;
+
+
     // NOLINTEND
 
 public:

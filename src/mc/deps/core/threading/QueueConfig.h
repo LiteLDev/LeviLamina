@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Scheduler;
+class WorkerPool;
+// clang-format on
+
 namespace Bedrock::Threading::Burst {
 
 struct QueueConfig {
@@ -21,6 +27,40 @@ public:
     QueueConfig& operator=(QueueConfig const&);
     QueueConfig(QueueConfig const&);
     QueueConfig();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C QueueConfig(
+        ::std::string_view                                              name,
+        uint                                                            priority,
+        ::Scheduler&                                                    scheduler,
+        ::WorkerPool&                                                   primaryWorkerPool,
+        ::std::initializer_list<::std::reference_wrapper<::WorkerPool>> secondaryWorkerPools,
+        ::gsl::span<::std::thread::id const>                            affinities
+    );
+
+    MCNAPI_C ~QueueConfig();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::std::string_view                                              name,
+        uint                                                            priority,
+        ::Scheduler&                                                    scheduler,
+        ::WorkerPool&                                                   primaryWorkerPool,
+        ::std::initializer_list<::std::reference_wrapper<::WorkerPool>> secondaryWorkerPools,
+        ::gsl::span<::std::thread::id const>                            affinities
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Bedrock::Threading::Burst

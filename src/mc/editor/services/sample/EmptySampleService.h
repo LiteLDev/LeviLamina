@@ -14,19 +14,14 @@ class EmptySampleService : public ::Editor::Services::IEditorService,
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EmptySampleService() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 1
     virtual void SampleMethod() const /*override*/;
     // NOLINTEND
 
@@ -40,6 +35,8 @@ public:
     MCNAPI ::std::string_view $getServiceName() const;
 
     MCNAPI void $SampleMethod() const;
+
+
     // NOLINTEND
 
 public:

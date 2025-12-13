@@ -22,38 +22,38 @@ namespace br::worldgen { struct SpawnerData; }
 namespace br {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
+MCNAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
 dynamicStructureMobs(::br::LevelChunkDataRegistry const& reg, ::BlockPos pos, ::SpawnCategory::Type category);
 
-MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
+MCNAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
 findMobsPiece(::br::LevelChunkDataRegistry const& reg, ::br::StructureKey key, ::SpawnCategory::Type category);
 
-MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
+MCNAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
 findMobsStructure(::br::LevelChunkDataRegistry const& reg, ::br::StructureKey key, ::SpawnCategory::Type category);
 
-MCAPI ::br::StructureKey findStructureKey(::br::LevelChunkDataRegistry const& reg, ::std::string_view name);
+MCNAPI ::br::StructureKey findStructureKey(::br::LevelChunkDataRegistry const& reg, ::std::string_view name);
 
-MCAPI ::std::vector<::std::string> getStructureTypes(::br::LevelChunkDataRegistry const& reg, ::Vec3 pos);
+MCNAPI ::std::vector<::std::string> getStructureTypes(::br::LevelChunkDataRegistry const& reg, ::Vec3 pos);
 
-MCAPI void insertStructure(
-    ::br::LevelChunkDataRegistry& reg,
-    ::BoundingBox                 chunkBB,
-    ::br::StructureKey            key,
-    ::StructureStart const&       instance
-);
-
-MCAPI void insertStructure(
+MCNAPI void insertStructure(
     ::br::LevelChunkDataRegistry&            reg,
     ::BoundingBox                            chunkBB,
     ::br::StructureKey                       key,
     ::br::worldgen::StructureInstance const& instance
 );
 
-MCAPI bool serialize(::IDataOutput& stream, ::br::LevelChunkDataRegistry const& val);
+MCNAPI void insertStructure(
+    ::br::LevelChunkDataRegistry& reg,
+    ::BoundingBox                 chunkBB,
+    ::br::StructureKey            key,
+    ::StructureStart const&       instance
+);
 
-MCAPI ::br::StructureKey spawnStructureKey(::br::LevelChunkDataRegistry& reg, ::std::string_view name);
+MCNAPI bool serialize(::IDataOutput& stream, ::br::LevelChunkDataRegistry const& val);
 
-MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
+MCNAPI ::br::StructureKey spawnStructureKey(::br::LevelChunkDataRegistry& reg, ::std::string_view name);
+
+MCNAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
 staticStructureMobs(::br::LevelChunkDataRegistry const& reg, ::BlockPos pos, ::SpawnCategory::Type category);
 // NOLINTEND
 

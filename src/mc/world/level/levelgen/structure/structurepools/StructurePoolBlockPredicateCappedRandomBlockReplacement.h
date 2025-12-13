@@ -36,66 +36,60 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual bool test(::Block const& block, ::Randomize&) const /*override*/;
 
-    // vIndex: 1
     virtual bool test(::BlockPos const& worldPos, ::BlockPos const&, ::Randomize&) const /*override*/;
 
-    // vIndex: 3
     virtual bool finalize(::BlockSource& region, ::IRandom& random) /*override*/;
 
-    // vIndex: 5
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
-    // vIndex: 6
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
-    // vIndex: 7
     virtual bool operator==(::StructurePoolBlockPredicateCappedRandomBlockReplacement const& other) const;
 
-    // vIndex: 8
     virtual bool operator!=(::StructurePoolBlockPredicateCappedRandomBlockReplacement const& other) const;
 
-    // vIndex: 0
     virtual ~StructurePoolBlockPredicateCappedRandomBlockReplacement() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructurePoolBlockPredicateCappedRandomBlockReplacement(
+    MCNAPI StructurePoolBlockPredicateCappedRandomBlockReplacement(
         ::std::map<::HashedString, ::HashedString> const& blockMappings,
         uint                                              maximumAmount
     );
 
-    MCAPI bool _finalize(::BlockSource& region, ::IRandom& random, ::std::function<void(::BlockPos&)> applyToBlocks);
+    MCNAPI bool _finalize(::BlockSource& region, ::IRandom& random, ::std::function<void(::BlockPos&)> applyToBlocks);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::map<::HashedString, ::HashedString> const& blockMappings, uint maximumAmount);
+    MCNAPI void* $ctor(::std::map<::HashedString, ::HashedString> const& blockMappings, uint maximumAmount);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::Block const& block, ::Randomize&) const;
+    MCNAPI bool $test(::Block const& block, ::Randomize&) const;
 
-    MCAPI bool $test(::BlockPos const& worldPos, ::BlockPos const&, ::Randomize&) const;
+    MCNAPI bool $test(::BlockPos const& worldPos, ::BlockPos const&, ::Randomize&) const;
 
-    MCAPI bool $finalize(::BlockSource& region, ::IRandom& random);
+    MCNAPI bool $finalize(::BlockSource& region, ::IRandom& random);
 
-    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
+    MCNAPI ::StructurePoolBlockPredicateType $getType() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+
+
     // NOLINTEND
 
 public:

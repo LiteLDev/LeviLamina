@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/puv/LoadResult.h"
-#include "mc/deps/puv/Loader.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,29 +18,31 @@ class FeatureLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::Puv::Loader<::FeatureResult>> mLoader;
+    ::ll::UntypedStorage<8, 104> mUnk12e46a;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    FeatureLoader& operator=(FeatureLoader const&);
+    FeatureLoader(FeatureLoader const&);
     FeatureLoader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeatureLoader(
+    MCNAPI FeatureLoader(
         ::FeatureParserContext&                          context,
         ::std::vector<::SupportedFeatureSchema> const&   supportedSchemas,
         ::std::vector<::SupportedFeatureUpgrader> const& supportedUpgraders
     );
 
-    MCAPI ::Puv::LoadResult<::FeatureResult> load(::Puv::Input const& input) const;
+    MCNAPI ::Puv::LoadResult<::FeatureResult> load(::Puv::Input const& input) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::FeatureParserContext&                          context,
         ::std::vector<::SupportedFeatureSchema> const&   supportedSchemas,
         ::std::vector<::SupportedFeatureUpgrader> const& supportedUpgraders

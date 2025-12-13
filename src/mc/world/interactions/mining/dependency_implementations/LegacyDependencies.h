@@ -26,10 +26,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void hurtAndBreak(int damage) /*override*/;
 
-    // vIndex: 0
     virtual ~LegacyDependencies() /*override*/ = default;
     // NOLINTEND
 
@@ -37,6 +35,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $hurtAndBreak(int damage);
+
+
     // NOLINTEND
 
 public:

@@ -37,8 +37,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::NeighborBlockDirections getDirectionsFromExistingBlockToStructure() const;
+    MCNAPI ::NeighborBlockDirections getDirectionsFromExistingBlockToStructure() const;
 
-    MCAPI ::NeighborBlockDirections getDirectionsFromStructureToExistingBlock() const;
+    MCNAPI ::NeighborBlockDirections getDirectionsFromStructureToExistingBlock() const;
     // NOLINTEND
 };

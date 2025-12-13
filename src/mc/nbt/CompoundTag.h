@@ -1,14 +1,24 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "ll/api/Expected.h"
 
 // auto generated inclusion list
 #include "mc/nbt/Tag.h"
 #include "mc/platform/Result.h"
 
-#include "ll/api/Expected.h"
-
+// auto generated forward declare list
+// clang-format off
 class CompoundTagVariant;
+class IDataInput;
+class IDataOutput;
+class Int64Tag;
+class IntTag;
+class ListTag;
+class PrintStream;
+class ShortTag;
+class StringTag;
+// clang-format on
 
 class CompoundTag : public ::Tag {
 public:
@@ -70,31 +80,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CompoundTag() /*override*/ = default;
 
-    // vIndex: 2
     virtual void write(::IDataOutput& dos) const /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::Result<void> load(::IDataInput& dis) /*override*/;
 
-    // vIndex: 5
     virtual ::Tag::Type getId() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::string toString() const /*override*/;
 
-    // vIndex: 7
-    virtual void print(::std::string const& prefix_, ::PrintStream& out) const /*override*/;
+    virtual void print(::std::string const& prefix, ::PrintStream& out) const /*override*/;
 
-    // vIndex: 9
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
 
-    // vIndex: 10
     virtual uint64 hash() const /*override*/;
 
-    // vIndex: 6
     virtual bool equals(::Tag const& obj) const /*override*/;
     // NOLINTEND
 
@@ -136,13 +137,15 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI void $print(::std::string const& prefix_, ::PrintStream& out) const;
+    MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
     MCAPI uint64 $hash() const;
 
     MCAPI bool $equals(::Tag const& obj) const;
+
+
     // NOLINTEND
 
 public:

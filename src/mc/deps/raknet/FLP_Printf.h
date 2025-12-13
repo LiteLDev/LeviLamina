@@ -17,19 +17,14 @@ class FLP_Printf : public ::RakNet::FileListProgress {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FLP_Printf() /*override*/ = default;
 
-    // vIndex: 1
     virtual void OnAddFilesFromDirectoryStarted(::RakNet::FileList*, char*) /*override*/;
 
-    // vIndex: 2
     virtual void OnDirectory(::RakNet::FileList*, char*, uint) /*override*/;
 
-    // vIndex: 5
     virtual void OnFilePushesComplete(::RakNet::SystemAddress, ushort) /*override*/;
 
-    // vIndex: 6
     virtual void OnSendAborted(::RakNet::SystemAddress) /*override*/;
     // NOLINTEND
 

@@ -26,19 +26,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~StructureStart();
 
-    // vIndex: 1
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    // vIndex: 2
     virtual bool isValid() const;
 
-    // vIndex: 3
     virtual int getMaxYSpawnOffset() const;
 
-    // vIndex: 4
     virtual ::std::string_view getStructureName() const = 0;
     // NOLINTEND
 
@@ -62,6 +57,8 @@ public:
     MCFOLD bool $isValid() const;
 
     MCFOLD int $getMaxYSpawnOffset() const;
+
+
     // NOLINTEND
 
 public:

@@ -17,4 +17,16 @@ public:
     EduIdentityData& operator=(EduIdentityData const&);
     EduIdentityData(EduIdentityData const&);
     EduIdentityData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~EduIdentityData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

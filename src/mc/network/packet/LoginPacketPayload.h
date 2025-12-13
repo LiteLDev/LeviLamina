@@ -2,17 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ConnectionRequest;
-// clang-format on
-
 struct LoginPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                    mClientNetworkVersion;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConnectionRequest>> mConnectionRequest;
+    ::ll::UntypedStorage<4, 4> mUnkb3cccc;
+    ::ll::UntypedStorage<8, 8> mUnk597bef;
     // NOLINTEND
 
 public:
@@ -22,22 +17,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LoginPacketPayload(::LoginPacketPayload const& other);
+    MCNAPI LoginPacketPayload(::LoginPacketPayload const& other);
 
-    MCAPI ::LoginPacketPayload& operator=(::LoginPacketPayload const& other);
+    MCNAPI ::LoginPacketPayload& operator=(::LoginPacketPayload const& other);
 
-    MCAPI ~LoginPacketPayload();
+    MCNAPI ~LoginPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LoginPacketPayload const& other);
+    MCNAPI void* $ctor(::LoginPacketPayload const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

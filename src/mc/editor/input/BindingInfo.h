@@ -22,11 +22,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C BindingInfo(
+        ::std::string                  label,
+        bool                           canRebind,
+        ::std::optional<::std::string> tooltip,
+        ::std::optional<::std::string> actionId
+    );
+
     MCNAPI ::Editor::Input::BindingInfo& operator=(::Editor::Input::BindingInfo&&);
 
     MCNAPI ::Editor::Input::BindingInfo& operator=(::Editor::Input::BindingInfo const&);
 
     MCNAPI ~BindingInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::std::string                  label,
+        bool                           canRebind,
+        ::std::optional<::std::string> tooltip,
+        ::std::optional<::std::string> actionId
+    );
     // NOLINTEND
 
 public:

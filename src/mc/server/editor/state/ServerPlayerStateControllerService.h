@@ -40,34 +40,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ~ServerPlayerStateControllerService() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 7
     virtual void _onEditorActivate() /*override*/;
 
-    // vIndex: 8
     virtual void _onEditorDeactivate() /*override*/;
 
-    // vIndex: 9
     virtual void _onEnterToolMode() /*override*/;
 
-    // vIndex: 10
     virtual void _onExitToolMode() /*override*/;
 
-    // vIndex: 11
     virtual void _onEnterCrosshairMode() /*override*/;
 
-    // vIndex: 12
     virtual void _onExitCrosshairMode() /*override*/;
     // NOLINTEND
 
@@ -109,6 +99,8 @@ public:
     MCNAPI void $_onEnterCrosshairMode();
 
     MCNAPI void $_onExitCrosshairMode();
+
+
     // NOLINTEND
 
 public:

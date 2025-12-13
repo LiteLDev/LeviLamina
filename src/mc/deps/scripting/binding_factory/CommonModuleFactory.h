@@ -18,7 +18,6 @@ class CommonModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CommonModuleFactory() /*override*/ = default;
     // NOLINTEND
 

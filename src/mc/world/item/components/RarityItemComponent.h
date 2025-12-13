@@ -25,10 +25,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
-    // vIndex: 0
     virtual ~RarityItemComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -50,6 +48,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $_initializeComponent(::ComponentItem& owner);
+
+
     // NOLINTEND
 
 public:

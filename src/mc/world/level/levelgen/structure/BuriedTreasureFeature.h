@@ -22,18 +22,22 @@ class BuriedTreasureFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                           mSpacing;
-    ::ll::TypedStorage<4, 4, int>                           mMinSeparation;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
+    ::ll::UntypedStorage<4, 4>  mUnk1183a0;
+    ::ll::UntypedStorage<4, 4>  mUnk111efd;
+    ::ll::UntypedStorage<8, 24> mUnk5fc56f;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BuriedTreasureFeature& operator=(BuriedTreasureFeature const&);
+    BuriedTreasureFeature(BuriedTreasureFeature const&);
+    BuriedTreasureFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
 
-    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -44,7 +48,6 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
-    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension& generator,
         ::BiomeSource const&,
@@ -53,7 +56,6 @@ public:
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
-    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -63,7 +65,6 @@ public:
         ::Dimension const&
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~BuriedTreasureFeature() /*override*/ = default;
     // NOLINTEND
 
@@ -98,6 +99,8 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
         ::Dimension const&
     );
+
+
     // NOLINTEND
 
 public:

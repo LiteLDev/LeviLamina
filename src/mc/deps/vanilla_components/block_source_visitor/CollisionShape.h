@@ -2,26 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/phys/AABB.h"
-
-// auto generated forward declare list
-// clang-format off
-class Block;
-// clang-format on
-
 namespace BlockSourceVisitor {
 
 struct CollisionShape {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const*> mMaybeBlock;
-    ::ll::TypedStorage<4, 24, ::AABB>        mAABB;
-    ::ll::TypedStorage<4, 12, ::BlockPos>    mBlockPos;
-    ::ll::TypedStorage<1, 1, bool>           mIsUnloadedChunk;
+    ::ll::UntypedStorage<8, 8>  mUnke17b59;
+    ::ll::UntypedStorage<4, 24> mUnk2ec68c;
+    ::ll::UntypedStorage<4, 12> mUnkf7ce13;
+    ::ll::UntypedStorage<1, 1>  mUnkd77dd4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CollisionShape& operator=(CollisionShape const&);
+    CollisionShape(CollisionShape const&);
+    CollisionShape();
 };
 
 } // namespace BlockSourceVisitor

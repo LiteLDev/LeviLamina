@@ -30,14 +30,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DisplayNameItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DisplayNameItemComponent(::SharedTypes::v1_20_50::DisplayNameItemComponent component);
+    MCAPI_S explicit DisplayNameItemComponent(::SharedTypes::v1_20_50::DisplayNameItemComponent component);
 
     MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent&&);
     // NOLINTEND
@@ -57,7 +56,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::DisplayNameItemComponent component);
+    MCAPI_S void* $ctor(::SharedTypes::v1_20_50::DisplayNameItemComponent component);
     // NOLINTEND
 
 public:

@@ -21,10 +21,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void onAppResumed() /*override*/;
 
-    // vIndex: 0
     virtual ~SuspendResumeTracker() /*override*/ = default;
     // NOLINTEND
 
@@ -46,6 +44,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $onAppResumed();
+
+
     // NOLINTEND
 
 public:

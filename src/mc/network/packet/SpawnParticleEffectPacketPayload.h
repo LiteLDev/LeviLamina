@@ -2,20 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/legacy/ActorUniqueID.h"
-#include "mc/util/MolangVariableMap.h"
+// auto generated forward declare list
+// clang-format off
+class MolangVariableMap;
+class Vec3;
+// clang-format on
 
 struct SpawnParticleEffectPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar>                                 mVanillaDimensionId;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                       mActorId;
-    ::ll::TypedStorage<4, 12, ::Vec3>                               mPos;
-    ::ll::TypedStorage<8, 32, ::std::string>                        mEffectName;
-    ::ll::TypedStorage<8, 64, ::std::optional<::MolangVariableMap>> mMolangVariables;
+    ::ll::UntypedStorage<1, 1>  mUnk304a31;
+    ::ll::UntypedStorage<8, 8>  mUnkbae22c;
+    ::ll::UntypedStorage<4, 12> mUnk4da4a4;
+    ::ll::UntypedStorage<8, 32> mUnk50164a;
+    ::ll::UntypedStorage<8, 64> mUnkd277a2;
     // NOLINTEND
 
 public:
@@ -25,24 +26,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnParticleEffectPacketPayload(
+    MCNAPI SpawnParticleEffectPacketPayload(
         ::Vec3 const&                        pos,
         ::std::string const&                 name,
         uchar                                vanillaDimensionId,
         ::std::optional<::MolangVariableMap> molangVariables
     );
 
-    MCAPI ::SpawnParticleEffectPacketPayload& operator=(::SpawnParticleEffectPacketPayload const&);
+    MCNAPI ::SpawnParticleEffectPacketPayload& operator=(::SpawnParticleEffectPacketPayload&&);
 
-    MCAPI ::SpawnParticleEffectPacketPayload& operator=(::SpawnParticleEffectPacketPayload&&);
+    MCNAPI ::SpawnParticleEffectPacketPayload& operator=(::SpawnParticleEffectPacketPayload const&);
 
-    MCAPI ~SpawnParticleEffectPacketPayload();
+    MCNAPI ~SpawnParticleEffectPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Vec3 const&                        pos,
         ::std::string const&                 name,
         uchar                                vanillaDimensionId,
@@ -53,6 +54,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

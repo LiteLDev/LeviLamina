@@ -20,9 +20,9 @@ class UDPProxyCoordinator : public ::RakNet::PluginInterface2 {
 public:
     // UDPProxyCoordinator inner types declare
     // clang-format off
-    struct ForwardingRequest;
     struct SenderAndTargetAddress;
     struct ServerWithPing;
+    struct ForwardingRequest;
     // clang-format on
 
     // UDPProxyCoordinator inner types define
@@ -98,16 +98,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~UDPProxyCoordinator() /*override*/ = default;
 
-    // vIndex: 3
     virtual void Update() /*override*/;
 
-    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
-    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,

@@ -13,34 +13,33 @@ class BinaryStream;
 class ReadOnlyBinaryStream;
 class TrimMaterialRegistry;
 class TrimPatternRegistry;
-struct TrimMaterial;
-struct TrimPattern;
 // clang-format on
 
 class TrimDataPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::TrimPattern>>  mTrimPatterns;
-    ::ll::TypedStorage<8, 24, ::std::vector<::TrimMaterial>> mTrimMaterials;
+    ::ll::UntypedStorage<8, 24> mUnkd9969a;
+    ::ll::UntypedStorage<8, 24> mUnk8fefc4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TrimDataPacket& operator=(TrimDataPacket const&);
+    TrimDataPacket(TrimDataPacket const&);
+    TrimDataPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    // vIndex: 0
     virtual ~TrimDataPacket() /*override*/;
     // NOLINTEND
 
@@ -67,6 +66,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

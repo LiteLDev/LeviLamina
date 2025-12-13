@@ -7,8 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class UIControl;
 namespace Json { class Value; }
+namespace mce { class Color; }
+struct UIControl;
 // clang-format on
 
 class UIPropertyBag : public ::PropertyBag {
@@ -34,13 +35,6 @@ public:
         ContextObject();
     };
 
-    using PropertyChangedNotificationCallback = ::std::function<void(
-        ::std::weak_ptr<::UIControl> const&,
-        ::std::string_view,
-        ::Json::Value const&,
-        ::UIPropertyBag::ContextObject
-    )>;
-
     struct PropertyChangedNotificationInfo {
     public:
         // member variables
@@ -55,7 +49,26 @@ public:
         PropertyChangedNotificationInfo& operator=(PropertyChangedNotificationInfo const&);
         PropertyChangedNotificationInfo(PropertyChangedNotificationInfo const&);
         PropertyChangedNotificationInfo();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ~PropertyChangedNotificationInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
+
+    using PropertyChangedNotificationCallback = ::std::function<void(
+        ::std::weak_ptr<::UIControl> const&,
+        ::std::string_view,
+        ::Json::Value const&,
+        ::UIPropertyBag::ContextObject
+    )>;
 
     using PropertyChangedNotificationInfoVector = ::std::vector<::UIPropertyBag::PropertyChangedNotificationInfo>;
 
@@ -75,7 +88,63 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~UIPropertyBag() = default;
+#else // LL_PLAT_C
+    virtual ~UIPropertyBag();
+#endif
+
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C UIPropertyBag();
+
+    MCNAPI_C void _handlePropertyChangedNotifications(
+        ::std::string_view             sourcePropertyName,
+        ::Json::Value const&           newValue,
+        ::UIPropertyBag::ContextObject context
+    );
+
+    MCNAPI_C void clearWeakRegistrations();
+
+    MCNAPI_C ::std::unique_ptr<::UIPropertyBag> clone() const;
+
+    MCNAPI_C void registerForPropertyChangedNotification(
+        ::std::string const&         sourcePropertyName,
+        ::std::string const&         targetPropertyName,
+        ::std::weak_ptr<::UIControl> targetControl,
+        ::std::function<void(
+            ::std::weak_ptr<::UIControl> const&,
+            ::std::string_view,
+            ::Json::Value const&,
+            ::UIPropertyBag::ContextObject
+        )>                           callback
+    );
+
+    MCNAPI_C void set(::std::string_view key, ::mce::Color color);
+
+    MCNAPI_C void set(::std::string_view key, ::glm::ivec2 gridSize);
+
+    MCNAPI_C void set(::std::string_view key, ::glm::vec2 uv);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

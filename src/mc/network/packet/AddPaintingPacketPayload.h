@@ -2,20 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/legacy/ActorRuntimeID.h"
-#include "mc/legacy/ActorUniqueID.h"
-
 struct AddPaintingPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>  mEntityId;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
-    ::ll::TypedStorage<4, 12, ::Vec3>          mPos;
-    ::ll::TypedStorage<4, 4, int>              mDir;
-    ::ll::TypedStorage<8, 32, ::std::string>   mMotif;
+    ::ll::UntypedStorage<8, 8>  mUnk65b8b0;
+    ::ll::UntypedStorage<8, 8>  mUnkde564e;
+    ::ll::UntypedStorage<4, 12> mUnkb66789;
+    ::ll::UntypedStorage<4, 4>  mUnk8e3057;
+    ::ll::UntypedStorage<8, 32> mUnk9905a9;
     // NOLINTEND
 
 public:
@@ -27,14 +22,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AddPaintingPacketPayload& operator=(::AddPaintingPacketPayload&&);
+    MCNAPI ::AddPaintingPacketPayload& operator=(::AddPaintingPacketPayload&&);
 
-    MCAPI ~AddPaintingPacketPayload();
+    MCNAPI ~AddPaintingPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -51,15 +51,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ~ScriptWidgetService();
 
-    // vIndex: 0
     virtual ::Scripting::Result_deprecated<void> _groupDeleteGroup(
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete
     ) /*override*/;
 
-    // vIndex: 1
     virtual ::AABB const& _getDimensionBounds() const /*override*/;
     // NOLINTEND
 
@@ -115,6 +112,8 @@ public:
     $_groupDeleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete);
 
     MCNAPI ::AABB const& $_getDimensionBounds() const;
+
+
     // NOLINTEND
 
 public:

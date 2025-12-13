@@ -2,13 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
 // auto generated forward declare list
 // clang-format off
 struct ActorDefinitionModifier;
-namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEventIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -17,15 +13,11 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptDataDrivenActorTriggerAfterEvent {
 public:
-    // ScriptDataDrivenActorTriggerAfterEvent inner types define
-    using QueueType = ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mActor;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                              mEvent;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionModifier>>                                   mModifiers;
+    ::ll::UntypedStorage<8, 32> mUnk170378;
+    ::ll::UntypedStorage<8, 32> mUnkeb0b82;
+    ::ll::UntypedStorage<8, 24> mUnkbc44a9;
     // NOLINTEND
 
 public:
@@ -37,26 +29,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ActorDefinitionModifier> getModifiers() const;
+    MCNAPI ::std::vector<::ActorDefinitionModifier> getModifiers() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&&);
 
-    MCAPI ~ScriptDataDrivenActorTriggerAfterEvent();
+    MCNAPI ~ScriptDataDrivenActorTriggerAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

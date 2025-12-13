@@ -18,18 +18,14 @@ class CarrotBlock : public ::CropBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 149
     virtual ::ItemInstance const getBaseSeed() const /*override*/;
 
-    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 9
     virtual ::AABB const&
     getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
-    // vIndex: 0
     virtual ~CarrotBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -42,6 +38,8 @@ public:
 
     MCAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+
+
     // NOLINTEND
 
 public:

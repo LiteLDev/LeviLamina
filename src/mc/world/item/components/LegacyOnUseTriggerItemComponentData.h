@@ -2,14 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/DefinitionTrigger.h"
-
 struct LegacyOnUseTriggerItemComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnUseTrigger;
+    ::ll::UntypedStorage<8, 64> mUnk858714;
     // NOLINTEND
 
 public:
@@ -20,16 +17,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData const&);
+    MCNAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData&&);
 
-    MCAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData&&);
+    MCNAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::LegacyOnUseTriggerItemComponentData const&);
+    MCNAPI void* $ctor(::LegacyOnUseTriggerItemComponentData&&);
 
-    MCFOLD void* $ctor(::LegacyOnUseTriggerItemComponentData&&);
+    MCNAPI void* $ctor(::LegacyOnUseTriggerItemComponentData const&);
     // NOLINTEND
 };

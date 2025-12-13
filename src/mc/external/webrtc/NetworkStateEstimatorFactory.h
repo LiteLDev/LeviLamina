@@ -14,10 +14,8 @@ class NetworkStateEstimatorFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::std::unique_ptr<::webrtc::NetworkStateEstimator> Create(::webrtc::FieldTrialsView const*) = 0;
 
-    // vIndex: 1
     virtual ~NetworkStateEstimatorFactory() = default;
     // NOLINTEND
 

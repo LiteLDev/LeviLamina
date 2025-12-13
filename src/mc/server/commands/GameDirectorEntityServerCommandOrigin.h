@@ -21,22 +21,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~GameDirectorEntityServerCommandOrigin() /*override*/ = default;
 
-    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const /*override*/;
 
-    // vIndex: 10
     virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
-    // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const /*override*/;
 
-    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const /*override*/;
 
-    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const /*override*/;
     // NOLINTEND
 
@@ -64,6 +58,8 @@ public:
     MCNAPI ::CommandOriginType $getOriginType() const;
 
     MCNAPI bool $isSelectorExpansionAllowed() const;
+
+
     // NOLINTEND
 
 public:

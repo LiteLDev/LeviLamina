@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace catalog {
 
 class PositiveRange {
@@ -17,6 +22,12 @@ public:
     PositiveRange& operator=(PositiveRange const&);
     PositiveRange(PositiveRange const&);
     PositiveRange();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void parse(::Json::Value const& rangeJson);
+    // NOLINTEND
 };
 
 } // namespace catalog

@@ -15,16 +15,24 @@ class ClientUnknownBlockTypeRegistry : public ::IUnknownBlockTypeRegistry {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClientUnknownBlockTypeRegistry() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Block const& getUnknownBlock(::CompoundTag const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::Block const& $getUnknownBlock(::CompoundTag const&);
+#endif
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

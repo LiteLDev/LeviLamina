@@ -37,35 +37,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~NatTypeDetectionClient() /*override*/ = default;
 
-    // vIndex: 3
     virtual void Update() /*override*/;
 
-    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
-    // vIndex: 7
     virtual void OnClosedConnection(
         ::RakNet::SystemAddress const&,
         ::RakNet::RakNetGUID,
         ::RakNet::PI2_LostConnectionReason
     ) /*override*/;
 
-    // vIndex: 6
     virtual void OnRakPeerShutdown() /*override*/;
 
-    // vIndex: 2
     virtual void OnDetach() /*override*/;
 
-    // vIndex: 1
     virtual void OnRNS2Recv(::RakNet::RNS2RecvStruct*) /*override*/;
 
-    // vIndex: 2
     virtual void DeallocRNS2RecvStruct(::RakNet::RNS2RecvStruct*, char const*, uint) /*override*/;
 
-    // vIndex: 3
     virtual ::RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const*, uint) /*override*/;
     // NOLINTEND
 

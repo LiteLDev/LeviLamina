@@ -24,6 +24,21 @@ public:
     // clang-format on
 
     // IceControllerInterface inner types define
+    struct PingResult {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk6c85f3;
+        ::ll::UntypedStorage<4, 4>  mUnkce886a;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PingResult& operator=(PingResult const&);
+        PingResult(PingResult const&);
+        PingResult();
+    };
+
     struct SwitchResult {
     public:
         // member variables
@@ -59,69 +74,39 @@ public:
         // NOLINTEND
     };
 
-    struct PingResult {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk6c85f3;
-        ::ll::UntypedStorage<4, 4>  mUnkce886a;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PingResult& operator=(PingResult const&);
-        PingResult(PingResult const&);
-        PingResult();
-    };
-
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IceControllerInterface() = default;
 
-    // vIndex: 1
     virtual void SetIceConfig(::cricket::IceConfig const&) = 0;
 
-    // vIndex: 2
     virtual void SetSelectedConnection(::cricket::Connection const*) = 0;
 
-    // vIndex: 3
     virtual void AddConnection(::cricket::Connection const*) = 0;
 
-    // vIndex: 4
     virtual void OnConnectionDestroyed(::cricket::Connection const*) = 0;
 
-    // vIndex: 5
     virtual ::rtc::ArrayView<::cricket::Connection const* const> GetConnections() const;
 
-    // vIndex: 6
     virtual ::rtc::ArrayView<::cricket::Connection const*> connections() const;
 
-    // vIndex: 7
     virtual bool HasPingableConnection() const = 0;
 
-    // vIndex: 8
     virtual ::cricket::IceControllerInterface::PingResult SelectConnectionToPing(int64) = 0;
 
-    // vIndex: 9
     virtual bool
     GetUseCandidateAttr(::cricket::Connection const*, ::cricket::NominationMode, ::cricket::IceMode) const = 0;
 
-    // vIndex: 10
     virtual ::cricket::Connection const* FindNextPingableConnection() = 0;
 
-    // vIndex: 11
     virtual void MarkConnectionPinged(::cricket::Connection const*) = 0;
 
-    // vIndex: 12
     virtual ::cricket::IceControllerInterface::SwitchResult
     ShouldSwitchConnection(::cricket::IceSwitchReason, ::cricket::Connection const*) = 0;
 
-    // vIndex: 13
     virtual ::cricket::IceControllerInterface::SwitchResult SortAndSwitchConnection(::cricket::IceSwitchReason) = 0;
 
-    // vIndex: 14
     virtual ::std::vector<::cricket::Connection const*> PruneConnections() = 0;
     // NOLINTEND
 

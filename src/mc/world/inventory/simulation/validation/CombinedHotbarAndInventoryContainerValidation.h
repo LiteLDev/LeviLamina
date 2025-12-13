@@ -16,18 +16,14 @@ class CombinedHotbarAndInventoryContainerValidation : public ::ContainerValidati
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual bool isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const
         /*override*/;
 
-    // vIndex: 9
     virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
         /*override*/;
 
-    // vIndex: 6
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
 
-    // vIndex: 0
     virtual ~CombinedHotbarAndInventoryContainerValidation() /*override*/ = default;
     // NOLINTEND
 
@@ -40,6 +36,8 @@ public:
     MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
     MCNAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
+
+
     // NOLINTEND
 
 public:

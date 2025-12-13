@@ -2,14 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace ScriptModuleMinecraft { class ScriptMobEffectInstance; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectAfterEventIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -18,16 +12,11 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorAddEffectAfterEvent {
 public:
-    // ScriptActorAddEffectAfterEvent inner types define
-    using QueueType = ::ScriptModuleMinecraft::ScriptActorAddEffectAfterEventIntermediateData;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                                             mScope;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mActor;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMobEffectInstance>>
-        mEffect;
+    ::ll::UntypedStorage<8, 16> mUnk3b0c4e;
+    ::ll::UntypedStorage<8, 32> mUnke1bb0a;
+    ::ll::UntypedStorage<8, 32> mUnk30529e;
     // NOLINTEND
 
 public:
@@ -38,27 +27,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorAddEffectAfterEvent(::ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent const&);
+    MCNAPI ScriptActorAddEffectAfterEvent(::ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent const&);
 
-    MCAPI ~ScriptActorAddEffectAfterEvent();
+    MCNAPI ~ScriptActorAddEffectAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

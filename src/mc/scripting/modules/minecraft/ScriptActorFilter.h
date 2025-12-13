@@ -44,9 +44,9 @@ public:
 
     MCNAPI ScriptActorFilter(::ScriptModuleMinecraft::ScriptActorFilter const&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter const&);
-
     MCNAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter&&);
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter const&);
 
     MCNAPI ~ScriptActorFilter();
     // NOLINTEND

@@ -16,20 +16,25 @@ class CompositeDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::BehaviorDefinition>>> mChildren;
+    ::ll::UntypedStorage<8, 24> mUnke01eb4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CompositeDefinition& operator=(CompositeDefinition const&);
+    CompositeDefinition(CompositeDefinition const&);
+    CompositeDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CompositeDefinition() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _compositeLoadChildrenBehaviors(
+    MCNAPI static void _compositeLoadChildrenBehaviors(
         ::Json::Value                                           value,
         ::std::vector<::std::unique_ptr<::BehaviorDefinition>>& childList,
         ::BehaviorFactory const&                                factory,
@@ -40,6 +45,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

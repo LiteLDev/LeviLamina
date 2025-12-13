@@ -54,7 +54,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TM_TeamMember() = default;
     // NOLINTEND
 };

@@ -21,6 +21,7 @@ class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
+class Player;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
@@ -28,7 +29,6 @@ class ChalkboardBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
     virtual ::AABB const& getVisualShapeInWorld(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -36,7 +36,6 @@ public:
         ::AABB&                    bufferAABB
     ) const /*override*/;
 
-    // vIndex: 9
     virtual ::AABB const& getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -44,7 +43,6 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
-    // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
@@ -52,30 +50,22 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const* blockActor) const /*override*/;
 
-    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 85
     virtual bool getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 0
     virtual ~ChalkboardBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -91,6 +81,8 @@ public:
     MCAPI static ::ChalkboardBlockActor* _getBaseChalkboard(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void _getShape(::ChalkboardSize size, bool isOnGround, int dir, ::AABB& bufferValue);
+
+    MCAPI_C static bool mayPlayerEdit(::Player& player, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -130,6 +122,8 @@ public:
     MCAPI bool $getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+
+
     // NOLINTEND
 
 public:

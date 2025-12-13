@@ -26,28 +26,20 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~IWorldAccessor();
 
-        // vIndex: 1
         virtual ::Player* fetchAnyInteractablePlayer(::Vec3 const&, float) const = 0;
 
-        // vIndex: 2
         virtual uint getChunkTickRange() const = 0;
 
-        // vIndex: 3
         virtual bool areChunksFullyLoaded(::BlockPos const&, int) const = 0;
 
-        // vIndex: 4
         virtual bool hasUntickedNeighborChunk(::ChunkPos const&, int) const = 0;
 
-        // vIndex: 5
         virtual ::Randomize& getChanceRandomize() = 0;
 
-        // vIndex: 6
         virtual ::std::optional<int> getActorNoActionTime(::Actor const&) const = 0;
 
-        // vIndex: 7
         virtual void resetActorNoActionTime(::Actor&) = 0;
         // NOLINTEND
 
@@ -87,28 +79,20 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 1
         virtual ::Player* fetchAnyInteractablePlayer(::Vec3 const& searchPos, float maxDist) const /*override*/;
 
-        // vIndex: 2
         virtual uint getChunkTickRange() const /*override*/;
 
-        // vIndex: 3
         virtual bool areChunksFullyLoaded(::BlockPos const& min, int r) const /*override*/;
 
-        // vIndex: 4
         virtual bool hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const /*override*/;
 
-        // vIndex: 5
         virtual ::Randomize& getChanceRandomize() /*override*/;
 
-        // vIndex: 6
         virtual ::std::optional<int> getActorNoActionTime(::Actor const& actor) const /*override*/;
 
-        // vIndex: 7
         virtual void resetActorNoActionTime(::Actor& actor) /*override*/;
 
-        // vIndex: 0
         virtual ~WorldAccessor() /*override*/;
         // NOLINTEND
 
@@ -134,6 +118,8 @@ public:
         MCNAPI ::std::optional<int> $getActorNoActionTime(::Actor const& actor) const;
 
         MCNAPI void $resetActorNoActionTime(::Actor& actor);
+
+
         // NOLINTEND
 
     public:

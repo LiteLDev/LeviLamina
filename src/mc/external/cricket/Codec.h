@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/ScalabilityMode.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cricket { class FeedbackParam; }
@@ -14,17 +17,17 @@ namespace cricket {
 struct Codec {
 public:
     // Codec inner types define
-    enum class Type : int {
-        KAudio = 0,
-        KVideo = 1,
-    };
-
     enum class ResiliencyType : int {
         KNone    = 0,
         KRed     = 1,
         KUlpfec  = 2,
         KFlexfec = 3,
         KRtx     = 4,
+    };
+
+    enum class Type : int {
+        KAudio = 0,
+        KVideo = 1,
     };
 
 public:
@@ -50,10 +53,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Codec();
 
-    // vIndex: 1
     virtual ::webrtc::RtpCodecParameters ToCodecParameters() const;
     // NOLINTEND
 
@@ -86,15 +87,15 @@ public:
 
     MCNAPI bool MatchesRtpCodec(::webrtc::RtpCodec const& codec_capability) const;
 
-    MCNAPI void SetParam(::std::string const& name, int value);
-
     MCNAPI void SetParam(::std::string const& name, ::std::string const& value);
+
+    MCNAPI void SetParam(::std::string const& name, int value);
 
     MCNAPI ::std::string ToString() const;
 
-    MCNAPI ::cricket::Codec& operator=(::cricket::Codec const&);
-
     MCNAPI ::cricket::Codec& operator=(::cricket::Codec&&);
+
+    MCNAPI ::cricket::Codec& operator=(::cricket::Codec const&);
     // NOLINTEND
 
 public:
@@ -119,6 +120,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::webrtc::RtpCodecParameters $ToCodecParameters() const;
+
+
     // NOLINTEND
 
 public:

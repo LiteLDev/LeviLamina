@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -17,15 +13,20 @@ struct ScriptPlayerSpawnAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
-                                   mPlayerHandle;
-    ::ll::TypedStorage<1, 1, bool> mInitialSpawn;
+    ::ll::UntypedStorage<8, 32> mUnk585cf2;
+    ::ll::UntypedStorage<1, 1>  mUnk5293b3;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptPlayerSpawnAfterEvent& operator=(ScriptPlayerSpawnAfterEvent const&);
+    ScriptPlayerSpawnAfterEvent(ScriptPlayerSpawnAfterEvent const&);
+    ScriptPlayerSpawnAfterEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

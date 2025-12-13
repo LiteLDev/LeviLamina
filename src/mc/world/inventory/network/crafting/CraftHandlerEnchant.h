@@ -12,7 +12,6 @@
 // clang-format off
 class EnchantingContainerManagerModel;
 class ItemStackRequestActionCraftBase;
-class Player;
 struct RecipeNetIdTag;
 // clang-format on
 
@@ -20,9 +19,9 @@ class CraftHandlerEnchant : public ::CraftHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>       mEnchantCost;
-    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
-    ::ll::TypedStorage<1, 1, bool>      mRecalculateOptions;
+    ::ll::UntypedStorage<4, 4> mUnkf0b4c6;
+    ::ll::UntypedStorage<8, 8> mUnk72a4f8;
+    ::ll::UntypedStorage<1, 1> mUnkc44064;
     // NOLINTEND
 
 public:
@@ -34,17 +33,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CraftHandlerEnchant() /*override*/ = default;
 
-    // vIndex: 4
     virtual ::ItemStackNetResult
     _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
-    // vIndex: 5
     virtual void _postCraftRequest(bool const wasSuccess) /*override*/;
 
-    // vIndex: 3
     virtual void endRequestBatch() /*override*/;
     // NOLINTEND
 
@@ -64,6 +59,8 @@ public:
     MCNAPI void $_postCraftRequest(bool const wasSuccess);
 
     MCNAPI void $endRequestBatch();
+
+
     // NOLINTEND
 
 public:

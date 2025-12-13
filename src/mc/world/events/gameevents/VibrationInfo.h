@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/legacy/ActorUniqueID.h"
-#include "mc/world/level/BlockPos.h"
-
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
@@ -18,30 +14,32 @@ class VibrationInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                                       mDistance;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                                 mPos;
-    ::ll::TypedStorage<8, 16, ::std::optional<::ActorUniqueID>>           mSourceID;
-    ::ll::TypedStorage<8, 16, ::std::optional<::ActorUniqueID>>           mProjectileOwnerID;
-    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::GameEvent const>> mVibration;
+    ::ll::UntypedStorage<4, 4>  mUnk217e58;
+    ::ll::UntypedStorage<4, 12> mUnkdf5e59;
+    ::ll::UntypedStorage<8, 16> mUnk5edab9;
+    ::ll::UntypedStorage<8, 16> mUnkc5439b;
+    ::ll::UntypedStorage<8, 8>  mUnk49dc37;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    VibrationInfo& operator=(VibrationInfo const&);
+    VibrationInfo(VibrationInfo const&);
     VibrationInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VibrationInfo(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
+    MCNAPI VibrationInfo(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
 
-    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
+    MCNAPI void* $ctor(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
     // NOLINTEND
 };

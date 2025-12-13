@@ -9,10 +9,8 @@ class NetherBrightnessRamp : public ::DimensionBrightnessRamp {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual float getBaseAmbientValue() const /*override*/;
 
-    // vIndex: 0
     virtual ~NetherBrightnessRamp() /*override*/ = default;
     // NOLINTEND
 
@@ -20,6 +18,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI float $getBaseAmbientValue() const;
+
+
     // NOLINTEND
 
 public:

@@ -13,7 +13,7 @@ class BlockSource;
 namespace ActorBlockDelegate {
 // functions
 // NOLINTBEGIN
-MCAPI void executeEvent(
+MCNAPI void executeEvent(
     ::BlockSource&       region,
     ::BlockPos const&    pos,
     ::Block const&       block,

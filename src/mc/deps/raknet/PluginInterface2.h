@@ -34,56 +34,39 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PluginInterface2() = default;
 
-    // vIndex: 1
     virtual void OnAttach();
 
-    // vIndex: 2
     virtual void OnDetach();
 
-    // vIndex: 3
     virtual void Update();
 
-    // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*);
 
-    // vIndex: 5
     virtual void OnRakPeerStartup();
 
-    // vIndex: 6
     virtual void OnRakPeerShutdown();
 
-    // vIndex: 7
     virtual void
     OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason);
 
-    // vIndex: 8
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool);
 
-    // vIndex: 9
     virtual void OnFailedConnectionAttempt(::RakNet::Packet*, ::RakNet::PI2_FailedConnectionAttemptReason);
 
-    // vIndex: 10
     virtual bool UsesReliabilityLayer() const;
 
-    // vIndex: 11
     virtual void OnDirectSocketSend(char const*, uint const, ::RakNet::SystemAddress);
 
-    // vIndex: 12
     virtual void OnDirectSocketReceive(char const*, uint const, ::RakNet::SystemAddress);
 
-    // vIndex: 13
     virtual void OnReliabilityLayerNotification(char const*, uint const, ::RakNet::SystemAddress, bool);
 
-    // vIndex: 14
     virtual void OnInternalPacket(::RakNet::InternalPacket*, uint, ::RakNet::SystemAddress, uint, int);
 
-    // vIndex: 15
     virtual void OnAck(uint, ::RakNet::SystemAddress, uint);
 
-    // vIndex: 16
     virtual void OnPushBackPacket(char const*, uint const, ::RakNet::SystemAddress);
     // NOLINTEND
 

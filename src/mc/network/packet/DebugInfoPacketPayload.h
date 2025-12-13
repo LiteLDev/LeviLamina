@@ -2,15 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/legacy/ActorUniqueID.h"
-
 struct DebugInfoPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>  mData;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorId;
+    ::ll::UntypedStorage<8, 32> mUnke1a4f0;
+    ::ll::UntypedStorage<8, 8>  mUnkabf8fb;
     // NOLINTEND
 
 public:
@@ -22,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::DebugInfoPacketPayload& operator=(::DebugInfoPacketPayload&&);
+    MCNAPI ::DebugInfoPacketPayload& operator=(::DebugInfoPacketPayload&&);
 
-    MCAPI ~DebugInfoPacketPayload();
+    MCNAPI ~DebugInfoPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

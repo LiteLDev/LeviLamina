@@ -30,12 +30,13 @@ public:
 
 public:
     // prevent constructor by default
+    PackInfoData(PackInfoData const&);
     PackInfoData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackInfoData(
+    MCNAPI PackInfoData(
         ::mce::UUID const&       guid,
         ::SemVersion const&      version,
         uint64                   packSize,
@@ -48,13 +49,15 @@ public:
         ::std::string const&     cdnUrl
     );
 
-    MCAPI ~PackInfoData();
+    MCNAPI_C ::PackInfoData& operator=(::PackInfoData const&);
+
+    MCNAPI ~PackInfoData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::UUID const&       guid,
         ::SemVersion const&      version,
         uint64                   packSize,
@@ -71,6 +74,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

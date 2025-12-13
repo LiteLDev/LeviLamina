@@ -13,13 +13,10 @@ class NotifierInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual void RegisterObserver(::webrtc::ObserverInterface*) = 0;
 
-    // vIndex: 1
     virtual void UnregisterObserver(::webrtc::ObserverInterface*) = 0;
 
-    // vIndex: 2
     virtual ~NotifierInterface() = default;
     // NOLINTEND
 

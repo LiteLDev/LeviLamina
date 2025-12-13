@@ -22,6 +22,12 @@ public:
     CommandVersion(int from = 0, int to = 0x7FFFFFFF) : mFrom(from), mTo(to) {}
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI_C bool isCompatible(int version) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::CurrentCmdVersion const getVersionMapping(::SemVersion const& engineVersion);

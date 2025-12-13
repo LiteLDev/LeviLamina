@@ -38,57 +38,89 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::Json::Value clientConfig(::Json::Value const&) const /*override*/;
+    virtual ::Json::Value clientConfig(::Json::Value const& loginResponse) const /*override*/;
 
-    // vIndex: 2
     virtual ::Identity::_TokenRefreshState::Enum refreshToken(
-        ::Identity::IEduAuth&,
-        ::AccessTokenInfo const&,
-        int64,
-        ::Identity::EduResourceType,
-        ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>,
-        ::std::function<void()>
+        ::Identity::IEduAuth&                                                                  auth,
+        ::AccessTokenInfo const&                                                               info,
+        int64                                                                                  currentTime,
+        ::Identity::EduResourceType                                                            eduIdentityResource,
+        ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)> callback,
+        ::std::function<void()>                                                                refreshingToken
     ) /*override*/;
 
-    // vIndex: 3
-    virtual void onRefreshedToken(bool, ::Identity::EduResourceType) /*override*/;
+    virtual void onRefreshedToken(bool failed, ::Identity::EduResourceType eduIdentityResource) /*override*/;
 
-    // vIndex: 4
     virtual ::Identity::SsoPromptMode signIn(
-        ::Identity::IEduAuth&,
-        int64,
-        ::std::function<void()>,
-        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
+        ::Identity::IEduAuth&   auth,
+        int64                   currentTime,
+        ::std::function<void()> showingDialogBoxCallback,
+        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)> callback
     ) /*override*/;
 
-    // vIndex: 5
-    virtual void signInSuccess(::std::string const&) /*override*/;
+    virtual void signInSuccess(::std::string const& userHint) /*override*/;
 
-    // vIndex: 6
     virtual void demoSignInSuccess() /*override*/;
 
-    // vIndex: 7
-    virtual void resetAuthentication(::Identity::IEduAuth&, bool) /*override*/;
+    virtual void resetAuthentication(::Identity::IEduAuth& auth, bool resetUIState) /*override*/;
 
-    // vIndex: 8
     virtual bool isDemoConversion() const /*override*/;
 
-    // vIndex: 9
     virtual void signInGraph(
-        ::Identity::IEduAuth&,
-        ::std::string const&,
-        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
+        ::Identity::IEduAuth&                                                                                   auth,
+        ::std::string const&                                                                                    userId,
+        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)> callback
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~EduSso() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::Json::Value $clientConfig(::Json::Value const& loginResponse) const;
 
+    MCNAPI ::Identity::_TokenRefreshState::Enum $refreshToken(
+        ::Identity::IEduAuth&                                                                  auth,
+        ::AccessTokenInfo const&                                                               info,
+        int64                                                                                  currentTime,
+        ::Identity::EduResourceType                                                            eduIdentityResource,
+        ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)> callback,
+        ::std::function<void()>                                                                refreshingToken
+    );
+
+    MCNAPI void $onRefreshedToken(bool failed, ::Identity::EduResourceType eduIdentityResource);
+
+    MCNAPI ::Identity::SsoPromptMode $signIn(
+        ::Identity::IEduAuth&   auth,
+        int64                   currentTime,
+        ::std::function<void()> showingDialogBoxCallback,
+        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)> callback
+    );
+
+    MCNAPI void $signInSuccess(::std::string const& userHint);
+
+    MCNAPI void $demoSignInSuccess();
+
+    MCNAPI void $resetAuthentication(::Identity::IEduAuth& auth, bool resetUIState);
+
+    MCNAPI bool $isDemoConversion() const;
+
+    MCNAPI void $signInGraph(
+        ::Identity::IEduAuth&                                                                                   auth,
+        ::std::string const&                                                                                    userId,
+        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)> callback
+    );
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

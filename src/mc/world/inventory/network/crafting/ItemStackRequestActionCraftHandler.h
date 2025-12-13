@@ -8,14 +8,10 @@
 // auto generated forward declare list
 // clang-format off
 class ContainerScreenContext;
-class CraftHandlerBase;
 class ItemInstance;
 class ItemStackRequestActionConsume;
 class ItemStackRequestActionCraftBase;
 class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING;
-class ItemStackRequestActionHandler;
-class Player;
-class SimpleSparseContainer;
 struct ContainerValidationCraftInputs;
 // clang-format on
 
@@ -23,12 +19,12 @@ class ItemStackRequestActionCraftHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ItemStackRequestActionHandler&>                  mRequestActionHandler;
-    ::ll::TypedStorage<8, 8, ::Player&>                                         mPlayer;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CraftHandlerBase>>             mCraftHandler;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsCraftRequest;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SimpleSparseContainer>>       mCreatedOutputSparseContainer;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemInstance, uint>>> mCraftResults;
+    ::ll::UntypedStorage<8, 8>  mUnk72b8ee;
+    ::ll::UntypedStorage<8, 8>  mUnk4e7e4a;
+    ::ll::UntypedStorage<8, 8>  mUnk3298c2;
+    ::ll::UntypedStorage<1, 1>  mUnk538af3;
+    ::ll::UntypedStorage<8, 16> mUnkad4014;
+    ::ll::UntypedStorage<8, 24> mUnka15e54;
     // NOLINTEND
 
 public:
@@ -40,7 +36,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ItemStackRequestActionCraftHandler() = default;
     // NOLINTEND
 

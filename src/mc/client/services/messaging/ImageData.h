@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 struct ImageData {
 public:
     // member variables
@@ -19,4 +24,26 @@ public:
     ImageData& operator=(ImageData const&);
     ImageData(ImageData const&);
     ImageData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ImageData(::std::string name, ::Json::Value const& json);
+
+    MCNAPI_C bool generateNonAnimatedImage();
+
+    MCNAPI_C ~ImageData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::string name, ::Json::Value const& json);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

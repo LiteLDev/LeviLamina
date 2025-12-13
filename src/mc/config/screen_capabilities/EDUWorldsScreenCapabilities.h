@@ -22,7 +22,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EDUWorldsScreenCapabilities() /*override*/ = default;
     // NOLINTEND
 

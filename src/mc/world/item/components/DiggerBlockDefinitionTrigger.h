@@ -2,27 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/DefinitionTrigger.h"
-#include "mc/world/level/block/BlockDescriptor.h"
-
 struct DiggerBlockDefinitionTrigger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>  filter;
-    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> onDig;
+    ::ll::UntypedStorage<8, 184> mUnk4a908c;
+    ::ll::UntypedStorage<8, 56>  mUnk57ba97;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DiggerBlockDefinitionTrigger& operator=(DiggerBlockDefinitionTrigger const&);
+    DiggerBlockDefinitionTrigger(DiggerBlockDefinitionTrigger const&);
+    DiggerBlockDefinitionTrigger();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~DiggerBlockDefinitionTrigger();
+    MCNAPI ~DiggerBlockDefinitionTrigger();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

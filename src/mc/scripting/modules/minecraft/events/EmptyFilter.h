@@ -9,10 +9,6 @@ namespace ScriptModuleMinecraft { struct EmptyFilterData; }
 
 namespace ScriptModuleMinecraft {
 
-struct EmptyFilter {
-public:
-    // EmptyFilter inner types define
-    using Data = ::ScriptModuleMinecraft::EmptyFilterData;
-};
+struct EmptyFilter {};
 
 } // namespace ScriptModuleMinecraft

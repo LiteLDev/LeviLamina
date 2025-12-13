@@ -14,10 +14,8 @@ class Breeze : public ::Monster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 92
     virtual float causeFallDamageToActor(float fallDistance, float, ::ActorDamageSource) /*override*/;
 
-    // vIndex: 8
     virtual ~Breeze() /*override*/ = default;
     // NOLINTEND
 
@@ -25,6 +23,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI float $causeFallDamageToActor(float fallDistance, float, ::ActorDamageSource);
+
+
     // NOLINTEND
 
 public:

@@ -35,66 +35,65 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~StructureTemplateData();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateData();
+    MCNAPI StructureTemplateData();
 
-    MCAPI StructureTemplateData(::StructureTemplateData&&);
+    MCNAPI StructureTemplateData(::StructureTemplateData&&);
 
-    MCAPI ::StructureLoadResult _parseBlockIndices(::CompoundTag const& structureTag);
+    MCNAPI ::StructureLoadResult _parseBlockIndices(::CompoundTag const& structureTag);
 
-    MCAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
+    MCNAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
 
-    MCAPI ::StructureLoadResult _parseNeighborAwareBlockUpgradeVersion(::CompoundTag const& tag);
+    MCNAPI ::StructureLoadResult _parseNeighborAwareBlockUpgradeVersion(::CompoundTag const& tag);
 
-    MCAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
+    MCNAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
 
-    MCAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);
+    MCNAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);
 
-    MCAPI ::StructureLoadResult _parseStructureWorldOrigin(::CompoundTag const& tag);
+    MCNAPI ::StructureLoadResult _parseStructureWorldOrigin(::CompoundTag const& tag);
 
-    MCAPI void _saveBlockIndices(::CompoundTag& structureTag) const;
+    MCNAPI void _saveBlockIndices(::CompoundTag& structureTag) const;
 
-    MCAPI void _saveEntities(::CompoundTag& structureTag) const;
+    MCNAPI void _saveEntities(::CompoundTag& structureTag) const;
 
-    MCAPI void _savePalettes(::CompoundTag& structureTag) const;
+    MCNAPI void _savePalettes(::CompoundTag& structureTag) const;
 
-    MCAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
+    MCNAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
 
-    MCAPI bool load(::CompoundTag const& tag);
+    MCNAPI bool load(::CompoundTag const& tag);
 
-    MCAPI ::StructureTemplateData& operator=(::StructureTemplateData&&);
+    MCNAPI ::StructureTemplateData& operator=(::StructureTemplateData&&);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
 
-    MCAPI void setBlockIndices(::std::vector<int> blockIndices);
+    MCNAPI void setBlockIndices(::std::vector<int> blockIndices);
 
-    MCAPI void setExtraBlockIndices(::std::vector<int> extraBlockIndices);
+    MCNAPI void setExtraBlockIndices(::std::vector<int> extraBlockIndices);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DEFAULT_PALETTE_NAME();
+    MCNAPI static ::std::string const& DEFAULT_PALETTE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::StructureTemplateData&&);
+    MCNAPI void* $ctor(::StructureTemplateData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

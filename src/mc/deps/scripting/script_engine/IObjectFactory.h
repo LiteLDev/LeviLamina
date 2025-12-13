@@ -17,13 +17,10 @@ class IObjectFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IObjectFactory() = default;
 
-    // vIndex: 1
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> makePromise() = 0;
 
-    // vIndex: 2
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
     makeDataBuffer(uchar const*, uint64, ::entt::meta_type const&) = 0;
     // NOLINTEND

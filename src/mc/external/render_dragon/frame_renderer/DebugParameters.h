@@ -22,6 +22,18 @@ public:
     DebugParameters& operator=(DebugParameters const&);
     DebugParameters(DebugParameters const&);
     DebugParameters();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~DebugParameters();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace dragon::framerenderer

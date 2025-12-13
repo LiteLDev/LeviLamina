@@ -15,18 +15,14 @@ class SystemFilePicker : public ::IFilePicker, public ::std::enable_shared_from_
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SystemFilePicker() /*override*/ = default;
 
-    // vIndex: 1
     virtual void
     initFilePick(::Core::Path const& filePath, ::std::function<void(bool, ::FileInfo)> callback) /*override*/;
 
-    // vIndex: 2
     virtual uint64
     readBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar>& buffer) /*override*/;
 
-    // vIndex: 3
     virtual bool writeBytes(
         ::FileInfo const&           file,
         uint64                      offset,
@@ -50,6 +46,8 @@ public:
 
     MCNAPI bool
     $writeBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar> const& buffer);
+
+
     // NOLINTEND
 
 public:

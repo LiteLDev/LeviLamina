@@ -30,16 +30,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool isDedicatedServer() const /*override*/;
 
-    // vIndex: 2
     virtual bool isHost(::mce::UUID const& playerID) const /*override*/;
 
-    // vIndex: 3
     virtual bool canChangePermission(::mce::UUID const& playerId, ::ServerPlayer const& player) const /*override*/;
 
-    // vIndex: 0
     virtual ~ServerNetworkController() /*override*/ = default;
     // NOLINTEND
 
@@ -51,6 +47,8 @@ public:
     MCNAPI bool $isHost(::mce::UUID const& playerID) const;
 
     MCNAPI bool $canChangePermission(::mce::UUID const& playerId, ::ServerPlayer const& player) const;
+
+
     // NOLINTEND
 
 public:

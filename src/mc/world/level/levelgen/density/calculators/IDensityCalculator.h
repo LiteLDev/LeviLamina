@@ -13,10 +13,8 @@ class IDensityCalculator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IDensityCalculator() = default;
 
-    // vIndex: 1
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const = 0;
     // NOLINTEND
 

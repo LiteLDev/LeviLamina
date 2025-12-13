@@ -21,11 +21,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::BlockMenuCategory&
-    operator=(::SharedTypes::v1_21_110::BlockDefinition::BlockMenuCategory const&);
-
-    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::BlockMenuCategory&
+    MCNAPI_S ::SharedTypes::v1_21_110::BlockDefinition::BlockMenuCategory&
     operator=(::SharedTypes::v1_21_110::BlockDefinition::BlockMenuCategory&&);
+
+    MCNAPI_S ::SharedTypes::v1_21_110::BlockDefinition::BlockMenuCategory&
+    operator=(::SharedTypes::v1_21_110::BlockDefinition::BlockMenuCategory const&);
     // NOLINTEND
 };
 

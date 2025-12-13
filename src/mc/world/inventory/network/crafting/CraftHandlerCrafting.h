@@ -15,7 +15,6 @@ class ItemInstance;
 class ItemStack;
 class ItemStackRequestActionCraftBase;
 class ItemStackRequestActionCraftRecipeAuto;
-class Player;
 class Recipes;
 struct CreativeItemNetIdTag;
 struct FullContainerName;
@@ -26,11 +25,11 @@ class CraftHandlerCrafting : public ::CraftHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                        mWorkbench;
-    ::ll::TypedStorage<8, 8, ::Player&>                   mPlayer;
-    ::ll::TypedStorage<4, 4, ::RecipeNetId>               mRecipeNetId;
-    ::ll::TypedStorage<1, 1, uchar>                       mDeferredCraftCount;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mConsumedItems;
+    ::ll::UntypedStorage<1, 1>  mUnkaaf6bb;
+    ::ll::UntypedStorage<8, 8>  mUnk23321f;
+    ::ll::UntypedStorage<4, 4>  mUnk891d76;
+    ::ll::UntypedStorage<1, 1>  mUnk42f2ad;
+    ::ll::UntypedStorage<8, 24> mUnk87fec4;
     // NOLINTEND
 
 public:
@@ -42,24 +41,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CraftHandlerCrafting() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::ItemStackNetResult handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
         uchar const                slot,
         ::ItemStack const&         consumedItem
     ) /*override*/;
 
-    // vIndex: 2
     virtual ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType) /*override*/;
 
-    // vIndex: 4
     virtual ::ItemStackNetResult
     _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
-    // vIndex: 6
     virtual ::Recipes const* _getLevelRecipes() const /*override*/;
     // NOLINTEND
 
@@ -91,6 +85,8 @@ public:
     MCNAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
     MCNAPI ::Recipes const* $_getLevelRecipes() const;
+
+
     // NOLINTEND
 
 public:

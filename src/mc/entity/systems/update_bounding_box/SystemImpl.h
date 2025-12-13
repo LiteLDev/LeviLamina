@@ -58,7 +58,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
@@ -75,7 +74,6 @@ public:
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
 
-    // vIndex: 6
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
@@ -93,7 +91,6 @@ public:
         ::StrictEntityContext&   entityContext
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~SystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -132,6 +129,8 @@ public:
             ::EntityFactoryT<>>& executionContext,
         ::StrictEntityContext&   entityContext
     );
+
+
     // NOLINTEND
 
 public:

@@ -12,10 +12,8 @@ class UlpfecHeaderReader : public ::webrtc::FecHeaderReader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~UlpfecHeaderReader() /*override*/;
 
-    // vIndex: 1
     virtual bool ReadFecHeader(::webrtc::ForwardErrorCorrection::ReceivedFecPacket* fec_packet) const /*override*/;
     // NOLINTEND
 
@@ -41,6 +39,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $ReadFecHeader(::webrtc::ForwardErrorCorrection::ReceivedFecPacket* fec_packet) const;
+
+
     // NOLINTEND
 
 public:

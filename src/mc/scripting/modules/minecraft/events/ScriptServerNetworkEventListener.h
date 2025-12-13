@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ServerNetworkEventListener.h"
@@ -13,7 +11,6 @@
 // clang-format off
 struct ChatEvent;
 struct MessageEvent;
-namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -22,30 +19,34 @@ class ScriptServerNetworkEventListener : public ::EventListenerDispatcher<::Serv
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-        mScriptEventsHandle;
+    ::ll::UntypedStorage<8, 16> mUnkab21db;
+    ::ll::UntypedStorage<8, 16> mUnk45e805;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptServerNetworkEventListener& operator=(ScriptServerNetworkEventListener const&);
+    ScriptServerNetworkEventListener(ScriptServerNetworkEventListener const&);
+    ScriptServerNetworkEventListener();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
     virtual ::EventResult onEvent(::ChatEvent const& chatEvent) /*override*/;
 
-    // vIndex: 2
     virtual ::EventResult onMessage(::MessageEvent const& messageEvent) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptServerNetworkEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ChatEvent const& chatEvent);
+    MCNAPI ::EventResult $onEvent(::ChatEvent const& chatEvent);
 
-    MCAPI ::EventResult $onMessage(::MessageEvent const& messageEvent);
+    MCNAPI ::EventResult $onMessage(::MessageEvent const& messageEvent);
+
+
     // NOLINTEND
 
 public:

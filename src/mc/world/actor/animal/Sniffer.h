@@ -10,10 +10,8 @@ class Sniffer : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 8
     virtual ~Sniffer() /*override*/ = default;
     // NOLINTEND
 
@@ -21,6 +19,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+
+
     // NOLINTEND
 
 public:

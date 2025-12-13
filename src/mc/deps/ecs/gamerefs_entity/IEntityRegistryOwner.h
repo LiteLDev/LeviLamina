@@ -15,13 +15,10 @@ class IEntityRegistryOwner : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IEntityRegistryOwner() /*override*/;
 
-    // vIndex: 2
     virtual ::StackRefResult<::EntityRegistry> getEntityRegistry() = 0;
 
-    // vIndex: 1
     virtual ::StackRefResult<::EntityRegistry const> getEntityRegistry() const = 0;
     // NOLINTEND
 

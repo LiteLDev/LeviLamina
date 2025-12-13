@@ -18,10 +18,8 @@ class WorkerPoolManager : public ::Bedrock::EnableNonOwnerReferences,
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void init() = 0;
 
-    // vIndex: 2
     virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(
         ::std::string,
         uint64,
@@ -31,10 +29,8 @@ public:
         ::std::optional<int> const
     ) = 0;
 
-    // vIndex: 3
     virtual void tick() = 0;
 
-    // vIndex: 0
     virtual ~WorkerPoolManager() /*override*/;
     // NOLINTEND
 

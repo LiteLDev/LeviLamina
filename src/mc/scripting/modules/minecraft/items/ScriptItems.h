@@ -83,7 +83,7 @@ public:
     MCNAPI static ::std::unordered_map<::std::string, ::std::string>
     generateItemPropertyNameToRawNameMap(::ItemRegistryRef itemRegistry, bool allowAirBlockItem);
 
-    MCNAPI static ::std::vector<::std::string> generatetItemCooldownCategories(::ItemRegistryRef itemRegistry);
+    MCNAPI_S static ::std::vector<::std::string> generatetItemCooldownCategories(::ItemRegistryRef itemRegistry);
 
     MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     getOrCreateItemTypeHandle(::Scripting::WeakLifetimeScope scope, ::std::string const& identifier);

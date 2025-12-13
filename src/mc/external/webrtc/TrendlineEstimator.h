@@ -72,10 +72,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~TrendlineEstimator() /*override*/;
 
-    // vIndex: 1
     virtual void Update(
         double recv_delta_ms,
         double send_delta_ms,
@@ -85,7 +83,6 @@ public:
         bool   calculated_deltas
     ) /*override*/;
 
-    // vIndex: 2
     virtual ::webrtc::BandwidthUsage State() const /*override*/;
     // NOLINTEND
 
@@ -136,6 +133,8 @@ public:
     );
 
     MCNAPI ::webrtc::BandwidthUsage $State() const;
+
+
     // NOLINTEND
 
 public:

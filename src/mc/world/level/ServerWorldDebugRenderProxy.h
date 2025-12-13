@@ -16,22 +16,16 @@ class ServerWorldDebugRenderProxy : public ::IServerWorldDebugRenderProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void renderActorsDebugServerState(::IOptionsReader const&, ::Dimension const&) /*override*/;
 
-    // vIndex: 2
     virtual void renderSimulatedPlayerDebugServerState(::IOptionsReader const&, ::Player&) /*override*/;
 
-    // vIndex: 3
     virtual void debugRenderDimension(::Dimension&) /*override*/;
 
-    // vIndex: 4
     virtual void debugRendererStartTick() /*override*/;
 
-    // vIndex: 5
     virtual void debugRendererEndTick() /*override*/;
 
-    // vIndex: 0
     virtual ~ServerWorldDebugRenderProxy() /*override*/ = default;
     // NOLINTEND
 

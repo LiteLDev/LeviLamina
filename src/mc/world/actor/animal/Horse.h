@@ -29,67 +29,46 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 8
     virtual ~Horse() /*override*/ = default;
 
-    // vIndex: 123
-    virtual void die(::ActorDamageSource const& source) /*override*/;
+    virtual void die(::ActorDamageSource const& damagesource) /*override*/;
 
-    // vIndex: 178
     virtual void setHorseEating(bool state);
 
-    // vIndex: 179
     virtual float getStandAnim(float a) const;
 
-    // vIndex: 180
     virtual bool isHorseEating() const;
 
-    // vIndex: 181
     virtual bool isMouthOpen() const;
 
-    // vIndex: 59
     virtual void setStanding(bool value) /*override*/;
 
-    // vIndex: 58
     virtual void onFailedTame() /*override*/;
 
-    // vIndex: 182
     virtual void makeMad();
 
-    // vIndex: 91
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
-    // vIndex: 183
     virtual bool tameToPlayer(::Player& player, bool tamingParticles);
 
-    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    // vIndex: 110
     virtual void openContainerComponent(::Player& player) /*override*/;
 
-    // vIndex: 17
     virtual ::Vec3 getInterpolatedRidingOffset(float a, int const) const /*override*/;
 
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 68
     virtual void feed(int itemId) /*override*/;
 
-    // vIndex: 85
     virtual bool canFreeze() const /*override*/;
 
-    // vIndex: 40
     virtual bool isImmobile() const /*override*/;
 
-    // vIndex: 92
     virtual float causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source) /*override*/;
 
-    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
     // NOLINTEND
 
@@ -135,7 +114,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCAPI void $die(::ActorDamageSource const& damagesource);
 
     MCAPI void $setHorseEating(bool state);
 
@@ -174,6 +153,8 @@ public:
     MCAPI bool $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+
     // NOLINTEND
 
 public:

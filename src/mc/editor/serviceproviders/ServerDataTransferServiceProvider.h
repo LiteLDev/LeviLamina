@@ -16,33 +16,25 @@ class ServerDataTransferServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ServerDataTransferServiceProvider() = default;
 
-    // vIndex: 1
     virtual void requestData(
         ::std::string const&,
         ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const&,
         bool
     ) = 0;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<::std::string const> requestSchema(::std::string const&) = 0;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> sendData(::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 4
     virtual ::Scripting::Result_deprecated<void> sendDataToClipboard(::std::string const&) = 0;
 
-    // vIndex: 5
     virtual ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData>
     getRegisteredCollections() const = 0;
 
-    // vIndex: 6
     virtual ::Scripting::Result_deprecated<void> openSession(::std::string const&) = 0;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> closeSession(::std::string const&) = 0;
     // NOLINTEND
 

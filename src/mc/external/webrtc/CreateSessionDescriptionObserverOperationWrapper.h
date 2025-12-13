@@ -31,13 +31,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ~CreateSessionDescriptionObserverOperationWrapper() /*override*/ = default;
 
-    // vIndex: 3
     virtual void OnSuccess(::webrtc::SessionDescriptionInterface* desc) /*override*/;
 
-    // vIndex: 4
     virtual void OnFailure(::webrtc::RTCError error) /*override*/;
     // NOLINTEND
 
@@ -47,6 +44,8 @@ public:
     MCNAPI void $OnSuccess(::webrtc::SessionDescriptionInterface* desc);
 
     MCNAPI void $OnFailure(::webrtc::RTCError error);
+
+
     // NOLINTEND
 
 public:

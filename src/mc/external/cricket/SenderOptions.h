@@ -23,9 +23,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SenderOptions(::cricket::SenderOptions const&);
-
     MCNAPI SenderOptions(::cricket::SenderOptions&&);
+
+    MCNAPI SenderOptions(::cricket::SenderOptions const&);
 
     MCNAPI ::cricket::SenderOptions& operator=(::cricket::SenderOptions&&);
 
@@ -35,9 +35,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cricket::SenderOptions const&);
-
     MCNAPI void* $ctor(::cricket::SenderOptions&&);
+
+    MCNAPI void* $ctor(::cricket::SenderOptions const&);
     // NOLINTEND
 
 public:

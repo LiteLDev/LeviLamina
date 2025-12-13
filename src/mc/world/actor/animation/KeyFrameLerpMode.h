@@ -2,15 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/animation/KeyFrameLerpStyle.h"
-
 class KeyFrameLerpMode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::glm::mat4x4>> mPrecomputedCubicCoeffs;
-    ::ll::TypedStorage<4, 4, ::KeyFrameLerpStyle>              mLerpStyle;
+    ::ll::UntypedStorage<8, 8> mUnke3f104;
+    ::ll::UntypedStorage<4, 4> mUnke4dc40;
     // NOLINTEND
 
 public:
@@ -21,8 +18,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::glm::mat4x4 const& getPrecomputedCubicCoeffs() const;
+    MCNAPI ::glm::mat4x4 const& getPrecomputedCubicCoeffs() const;
 
-    MCAPI ::KeyFrameLerpMode& operator=(::KeyFrameLerpMode const& rhs);
+    MCNAPI ::KeyFrameLerpMode& operator=(::KeyFrameLerpMode const& rhs);
     // NOLINTEND
 };

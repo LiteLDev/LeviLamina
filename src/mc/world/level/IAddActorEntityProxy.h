@@ -11,13 +11,10 @@ class IAddActorEntityProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IAddActorEntityProxy() = default;
 
-    // vIndex: 1
     virtual void initializeActor(::Actor&) = 0;
 
-    // vIndex: 2
     virtual void reloadActor(::Actor&) = 0;
     // NOLINTEND
 

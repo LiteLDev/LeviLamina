@@ -39,20 +39,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void
     appendJunctions(::BoundingBox const& box, ::std::vector<::br::worldgen::JigsawJunction>& junctions) /*override*/;
 
-    // vIndex: 2
     virtual void appendRigid(
         ::br::worldgen::TerrainAdjustment::Type type,
         ::std::vector<::br::worldgen::Rigid>&   rigids
     ) /*override*/;
 
-    // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) const /*override*/;
 
-    // vIndex: 3
     virtual bool postProcess(
         ::BlockSource&                    region,
         ::IRandom&                        random,
@@ -61,29 +57,28 @@ public:
         ::br::worldgen::JigsawReplacement replacement
     ) const /*override*/;
 
-    // vIndex: 5
     virtual void placeEntities(::BlockSource& region, ::BoundingBox const& overlapBB) const /*override*/;
 
-    // vIndex: 0
     virtual ~PoolElementStructureSection() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_50::PoolElementStructureSection serialize() const;
+    MCNAPI ::SharedTypes::v1_21_50::PoolElementStructureSection serialize() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendJunctions(::BoundingBox const& box, ::std::vector<::br::worldgen::JigsawJunction>& junctions);
+    MCNAPI void $appendJunctions(::BoundingBox const& box, ::std::vector<::br::worldgen::JigsawJunction>& junctions);
 
-    MCAPI void $appendRigid(::br::worldgen::TerrainAdjustment::Type type, ::std::vector<::br::worldgen::Rigid>& rigids);
+    MCNAPI void
+    $appendRigid(::br::worldgen::TerrainAdjustment::Type type, ::std::vector<::br::worldgen::Rigid>& rigids);
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) const;
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) const;
 
-    MCAPI bool $postProcess(
+    MCNAPI bool $postProcess(
         ::BlockSource&                    region,
         ::IRandom&                        random,
         ::BlockPos                        structurePos,
@@ -91,7 +86,9 @@ public:
         ::br::worldgen::JigsawReplacement replacement
     ) const;
 
-    MCAPI void $placeEntities(::BlockSource& region, ::BoundingBox const& overlapBB) const;
+    MCNAPI void $placeEntities(::BlockSource& region, ::BoundingBox const& overlapBB) const;
+
+
     // NOLINTEND
 
 public:

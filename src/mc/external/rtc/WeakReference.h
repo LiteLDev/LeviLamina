@@ -31,7 +31,6 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 2
         virtual ~Flag() /*override*/;
         // NOLINTEND
 

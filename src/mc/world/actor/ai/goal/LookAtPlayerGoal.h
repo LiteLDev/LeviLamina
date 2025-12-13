@@ -9,7 +9,6 @@ class LookAtPlayerGoal : public ::LookAtActorGoal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LookAtPlayerGoal() /*override*/ = default;
     // NOLINTEND
 

@@ -17,145 +17,148 @@ namespace FlatteningUtils { struct LegacyBlockInfo; }
 namespace FlatteningUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void addUpdate(
+MCNAPI void addUpdate(
     ::CompoundTagUpdaterContext&                                             context,
     uchar const* const                                                       version,
     ::FlatteningUtils::LegacyBlockInfo const&                                legacyBlockInfo,
     ::std::vector<::std::shared_ptr<::FlatteningUtils::RemovedState>> const& removedStates
 );
 
-MCAPI ::std::vector<::WeakPtr<::BlockType const>>
+MCNAPI_C void
+assignPreFlatteningDestructionParticlesTexture(::Block const& block, ::std::string& texture, ushort& auxValue);
+
+MCNAPI ::std::vector<::WeakPtr<::BlockType const>>
 getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 
-MCAPI ::std::function<::Block const*(int)>
+MCNAPI ::std::function<::Block const*(int)>
 getSimpleBlockComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyAnvilInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyAnvilInfo();
 
-MCAPI ::std::vector<::std::reference_wrapper<::FlatteningUtils::LegacyBlockInfo const>> const& LegacyBlockInfos();
+MCNAPI ::std::vector<::std::reference_wrapper<::FlatteningUtils::LegacyBlockInfo const>> const& LegacyBlockInfos();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyBrownMushroomInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyBrownMushroomInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCarpetInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCarpetInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyChemistryTableInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyChemistryTableInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCobblestoneWallInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCobblestoneWallInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyColoredTorchBPInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyColoredTorchBPInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyColoredTorchRGInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyColoredTorchRGInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyConcreteInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyConcreteInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyConcretePowderInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyConcretePowderInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralBlockInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralBlockInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralFanInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralFanInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralWallFan1Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralWallFan1Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralWallFan2Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralWallFan2Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralWallFan3Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralWallFan3Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyDeadCoralFanInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyDeadCoralFanInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyDirtInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyDirtInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyDoublePlantInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyDoublePlantInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyFenceInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyFenceInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyHardStainedGlassInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyHardStainedGlassInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyHardStainedGlassPaneInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyHardStainedGlassPaneInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyInfestedBlockInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyInfestedBlockInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLavaCauldronInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLavaCauldronInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLeaves2Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLeaves2Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLeavesInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLeavesInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLightBlockInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLightBlockInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLog2Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLog2Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLogInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLogInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyPlanksInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyPlanksInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyPrismarineInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyPrismarineInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyPurpurInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyPurpurInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyQuartzInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyQuartzInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyRedFlowerInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyRedFlowerInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyRedMushroomInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyRedMushroomInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyRedSandstoneInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyRedSandstoneInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySandInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySandInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySandstoneInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySandstoneInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySaplingInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySaplingInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyShulkerBoxInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyShulkerBoxInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySkullInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySkullInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySpongeInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySpongeInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStainedGlassInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStainedGlassInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStainedGlassPaneInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStainedGlassPaneInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneBricksInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneBricksInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab1Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab1Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab2Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab2Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab3Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab3Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab4Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab4Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab1Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab1Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab2Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab2Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab3Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab3Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab4Info();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab4Info();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStructureVoidInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStructureVoidInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyTallGrassInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyTallGrassInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyTerracottaInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyTerracottaInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyTntInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyTntInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoodInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoodInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoodenDoubleSlabInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoodenDoubleSlabInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoodenSlabInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoodenSlabInfo();
 
-MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoolInfo();
+MCNAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoolInfo();
 // NOLINTEND
 
 } // namespace FlatteningUtils

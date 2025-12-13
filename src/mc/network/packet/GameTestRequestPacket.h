@@ -14,28 +14,21 @@ struct GameTestRequestPacketInfo;
 class GameTestRequestPacket
 : public ::SerializedPayloadPacket<::GameTestRequestPacketInfo, ::GameTestRequestPacketPayload> {
 public:
-    // GameTestRequestPacket inner types define
-    using PayloadType = ::GameTestRequestPacketPayload;
-
-    using PacketInfo = ::GameTestRequestPacketInfo;
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~GameTestRequestPacket() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameTestRequestPacket();
+    MCNAPI GameTestRequestPacket();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

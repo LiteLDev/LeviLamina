@@ -13,8 +13,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& LEGACY_FIRE_TAG();
+    MCNAPI static ::std::string const& LEGACY_FIRE_TAG();
 
-    MCAPI static ::std::string const& ON_FIRE_TAG();
+    MCNAPI static ::std::string const& ON_FIRE_TAG();
     // NOLINTEND
 };

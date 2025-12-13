@@ -6,16 +6,12 @@ class Amplifier {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Amplifier() = default;
 
-    // vIndex: 1
     virtual float getAmount(int amplification, float scale) const;
 
-    // vIndex: 2
     virtual bool shouldBuff(int remainingDuration, int amplification) const;
 
-    // vIndex: 3
     virtual int getTickInterval(int amplification) const;
     // NOLINTEND
 
@@ -27,6 +23,8 @@ public:
     MCFOLD bool $shouldBuff(int remainingDuration, int amplification) const;
 
     MCFOLD int $getTickInterval(int amplification) const;
+
+
     // NOLINTEND
 
 public:

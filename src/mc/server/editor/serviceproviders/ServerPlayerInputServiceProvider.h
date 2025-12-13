@@ -19,10 +19,8 @@ class ServerPlayerInputServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ServerPlayerInputServiceProvider() = default;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> registerKeyBinding(
         ::HashedString const&,
         ::HashedString const&,
@@ -30,26 +28,20 @@ public:
         ::Editor::Input::BindingInfo const&
     ) = 0;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> unregisterKeyBinding(::HashedString const&, ::HashedString const&) = 0;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void>
     registerMouseBinding(::HashedString const&, ::HashedString const&, ::Editor::Input::MouseBinding const&) = 0;
 
-    // vIndex: 4
     virtual ::Scripting::Result_deprecated<void>
     unregisterMouseBinding(::HashedString const&, ::HashedString const&) = 0;
 
-    // vIndex: 5
     virtual ::Scripting::Result_deprecated<void>
     updateKeyBindingProcessingState(::HashedString const&, ::HashedString const&, ::std::optional<int>) = 0;
 
-    // vIndex: 6
     virtual ::std::optional<int> getKeyBindingProcessingState(::HashedString const&, ::HashedString const&) const = 0;
 
-    // vIndex: 7
-    virtual ::Scripting::Result_deprecated<void> setViewportFocus(bool) = 0;
+    virtual ::Scripting::Result_deprecated<void> setViewportFocus(bool isFocused) = 0;
     // NOLINTEND
 
 public:

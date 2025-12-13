@@ -15,29 +15,38 @@ class InteractActionNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>  mNumTicksToInteract;
-    ::ll::TypedStorage<4, 4, int>  mDelayCounter;
-    ::ll::TypedStorage<1, 1, bool> mRightMouseDown;
-    ::ll::TypedStorage<1, 1, bool> mPreActionDone;
+    ::ll::UntypedStorage<4, 4> mUnk8a0f82;
+    ::ll::UntypedStorage<4, 4> mUnk1c03bd;
+    ::ll::UntypedStorage<1, 1> mUnk4f68bd;
+    ::ll::UntypedStorage<1, 1> mUnk937f3b;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    InteractActionNode& operator=(InteractActionNode const&);
+    InteractActionNode(InteractActionNode const&);
+    InteractActionNode();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
-    // vIndex: 2
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
-    // vIndex: 0
     virtual ~InteractActionNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeFromDefinition(::Actor& owner);
+    MCNAPI void $initializeFromDefinition(::Actor& owner);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
+#endif
+
+
     // NOLINTEND
 
 public:

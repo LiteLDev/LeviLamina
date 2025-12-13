@@ -6,9 +6,9 @@ struct GameTestResultsPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mTestName;
-    ::ll::TypedStorage<8, 32, ::std::string> mError;
-    ::ll::TypedStorage<1, 1, bool>           mSucceeded;
+    ::ll::UntypedStorage<8, 32> mUnk622262;
+    ::ll::UntypedStorage<8, 32> mUnkace44e;
+    ::ll::UntypedStorage<1, 1>  mUnk429669;
     // NOLINTEND
 
 public:
@@ -20,14 +20,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::GameTestResultsPacketPayload& operator=(::GameTestResultsPacketPayload&&);
+    MCNAPI ::GameTestResultsPacketPayload& operator=(::GameTestResultsPacketPayload&&);
 
-    MCAPI ~GameTestResultsPacketPayload();
+    MCNAPI ~GameTestResultsPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

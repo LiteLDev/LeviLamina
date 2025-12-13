@@ -15,10 +15,8 @@ class ITreeCanopy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ITreeCanopy() = default;
 
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> placeCanopy(
         ::IBlockWorldGenAPI&,
         ::BlockPos const&,

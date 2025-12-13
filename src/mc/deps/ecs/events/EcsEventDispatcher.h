@@ -28,14 +28,14 @@ public:
     // clang-format on
 
     // EcsEventDispatcher inner types define
-    using BaseWeak = ::EnableGetWeakRef<::EcsEventDispatcher>;
+    template <typename T0>
+    struct ExpandedEvent {};
 
     using BaseShared = ::std::enable_shared_from_this<::EcsEventDispatcher>;
 
-    using Token = ::gsl::final_action<::std::function<void()>>;
+    using BaseWeak = ::EnableGetWeakRef<::EcsEventDispatcher>;
 
-    template <typename T0>
-    struct ExpandedEvent {};
+    using Token = ::gsl::final_action<::std::function<void()>>;
 
 public:
     // member variables

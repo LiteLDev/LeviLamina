@@ -30,10 +30,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
-    // vIndex: 0
     virtual ~GameTestInstanceLedger() /*override*/ = default;
     // NOLINTEND
 
@@ -61,6 +59,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
+
+
     // NOLINTEND
 
 public:

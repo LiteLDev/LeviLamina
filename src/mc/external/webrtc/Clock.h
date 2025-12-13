@@ -14,13 +14,10 @@ class Clock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Clock() = default;
 
-    // vIndex: 1
     virtual ::webrtc::Timestamp CurrentTime() = 0;
 
-    // vIndex: 2
     virtual ::webrtc::NtpTime ConvertTimestampToNtpTime(::webrtc::Timestamp) = 0;
     // NOLINTEND
 

@@ -12,14 +12,14 @@ namespace ColumnUtils { struct ColumnRange; }
 namespace ColumnUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::ColumnUtils::ColumnRange> scanColumn(
+MCNAPI ::std::optional<::ColumnUtils::ColumnRange> scanColumn(
     ::BlockPos const&                        pos,
     int                                      searchRange,
     ::std::function<bool(::BlockPos const&)> insideColumnPredicate,
     ::std::function<bool(::BlockPos const&)> validEdgePredicate
 );
 
-MCAPI ::std::optional<::ColumnUtils::ColumnRange> scanColumnWithinPosBiome(
+MCNAPI ::std::optional<::ColumnUtils::ColumnRange> scanColumnWithinPosBiome(
     ::IBlockWorldGenAPI&                     target,
     ::BlockPos const&                        pos,
     int                                      searchRange,

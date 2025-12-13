@@ -42,10 +42,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Structure();
 
-    // vIndex: 1
     virtual ::std::optional<::br::worldgen::GenerationStub>
     findValidGenerationPoint(::br::worldgen::GenerationContext&) const = 0;
     // NOLINTEND
@@ -53,22 +51,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Structure(::br::worldgen::Structure const&);
+    MCNAPI Structure(::br::worldgen::Structure const&);
 
-    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
     generate(::br::worldgen::GenerationContext& context) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::Structure const&);
+    MCNAPI void* $ctor(::br::worldgen::Structure const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

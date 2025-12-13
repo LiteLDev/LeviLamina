@@ -22,6 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C bool tryLock3x3x3(::SubChunkPos const& center);
+
     MCNAPI bool tryLock3x3xN(::SubChunkPos const& bottom, int top);
 
     MCNAPI void unlock3x3xN(::SubChunkPos const& bottom, int top);

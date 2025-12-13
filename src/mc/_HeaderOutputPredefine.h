@@ -16,6 +16,26 @@
 #define MCNAPI [[deprecated("This API is not available. Open an issue if you need it. "\
                             "https://github.com/LiteLDev/mcapi-requests/issues/new")]] MCAPI
 
+#if defined(LL_PLAT_S)
+#define MCAPI_C  [[deprecated("Client API not available on SERVER")]] MCAPI
+#define MCAPI_S  MCAPI
+#define MCTAPI_C [[deprecated("Client API not available on SERVER")]] MCTAPI
+#define MCTAPI_S MCTAPI
+#define MCFOLD_C [[deprecated("Client API not available on SERVER")]] MCFOLD
+#define MCFOLD_S MCFOLD
+#define MCNAPI_C MCNAPI
+#define MCNAPI_S MCNAPI
+#elif defined(LL_PLAT_C)
+#define MCAPI_C  MCAPI
+#define MCAPI_S  [[deprecated("Server API not available on CLIENT")]] MCAPI
+#define MCTAPI_C MCTAPI
+#define MCTAPI_S [[deprecated("Server API not available on CLIENT")]] MCTAPI
+#define MCFOLD_C MCFOLD
+#define MCFOLD_S [[deprecated("Server API not available on CLIENT")]] MCFOLD
+#define MCNAPI_C MCNAPI
+#define MCNAPI_S MCNAPI
+#endif
+
 #include <algorithm>          // STL general algorithms
 #include <array>              // STL array container
 #include <bitset>             // STL bitset container
@@ -153,6 +173,7 @@ struct sockaddr_in6;
 struct evp_md_ctx_st;
 struct asn1_string_st;
 struct bio_st;
+struct XUser;
 
 #include "mc/deps/core/utility/optional_ref.h" // replace optional<reference_wrapper<>>
 #include "mc/platform/brstd/function_ref.h"    // function reference
@@ -246,6 +267,9 @@ public:
 namespace Puv {
 template <typename From, typename To, typename CustomData>
 class CerealUpgrader;
+
+template <typename T0, typename T1, typename T2>
+class SlicedLoader;
 }
 
 namespace Social {

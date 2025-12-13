@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/SubClientId.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
+
 class PlatformStoreIconModel {
 public:
     // PlatformStoreIconModel inner types declare
@@ -37,4 +45,36 @@ public:
     PlatformStoreIconModel& operator=(PlatformStoreIconModel const&);
     PlatformStoreIconModel(PlatformStoreIconModel const&);
     PlatformStoreIconModel();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit PlatformStoreIconModel(::SubClientId subClientId);
+
+    MCNAPI_C ~PlatformStoreIconModel();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI_C static bool& sIsIconVisible();
+
+    MCNAPI_C static ::std::
+        unordered_map<::SubClientId, ::std::vector<::PlatformStoreIconModel::PlatformStoreIconVisibility*>>&
+        sPlatformStoreIconVisibilityStacks();
+
+    MCNAPI_C static ::Bedrock::Threading::Mutex& sStacksMutex();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::SubClientId subClientId);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

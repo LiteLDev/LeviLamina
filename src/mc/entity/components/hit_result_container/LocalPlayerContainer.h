@@ -28,23 +28,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual void addHitResult(::HitResult, ::HitResult) /*override*/;
+    virtual void addHitResult(::HitResult solidHit, ::HitResult liquidHit) /*override*/;
 
-    // vIndex: 2
     virtual void clear() /*override*/;
 
-    // vIndex: 3
     virtual ::gsl::span<::std::pair<::HitResult, ::HitResult> const> getHits() const /*override*/;
 
-    // vIndex: 0
     virtual ~LocalPlayerContainer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $addHitResult(::HitResult solidHit, ::HitResult liquidHit);
 
+    MCNAPI void $clear();
+
+    MCNAPI ::gsl::span<::std::pair<::HitResult, ::HitResult> const> $getHits() const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

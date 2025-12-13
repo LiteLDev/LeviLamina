@@ -8,7 +8,6 @@ struct AbstractFeatureHolder {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AbstractFeatureHolder() = default;
     // NOLINTEND
 };

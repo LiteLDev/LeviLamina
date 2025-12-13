@@ -33,6 +33,10 @@ public:
     // NOLINTBEGIN
     MCNAPI ActivationArguments();
 
+    MCNAPI_C ActivationArguments(int argc, char** const argv);
+
+    MCNAPI_C void parseURLArgument(::std::string const& url);
+
     MCNAPI void preParseArguments();
 
     MCNAPI ~ActivationArguments();
@@ -42,6 +46,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+
+    MCNAPI_C void* $ctor(int argc, char** const argv);
     // NOLINTEND
 
 public:

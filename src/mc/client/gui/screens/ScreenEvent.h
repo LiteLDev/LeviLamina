@@ -17,4 +17,16 @@ public:
     ::ll::TypedStorage<1, 1, bool>                   localEvent;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<void>> lifetimeCheck;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~ScreenEvent();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

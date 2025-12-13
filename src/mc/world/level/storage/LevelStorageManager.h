@@ -75,25 +75,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelStorageManager() /*override*/;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnSaveConnector() /*override*/;
 
-    // vIndex: 2
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnSaveGameDataConnector() /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnSaveLevelDataConnector() /*override*/;
 
-    // vIndex: 4
     virtual ::Bedrock::PubSub::Connector<void(bool&)>& getOnCanStartGameSaveTimerCheckConnector() /*override*/;
 
-    // vIndex: 5
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnStartLeaveGameConnector() /*override*/;
 
-    // vIndex: 6
     virtual ::Bedrock::PubSub::Connector<void()>& getOnAppSuspendConnector() /*override*/;
     // NOLINTEND
 
@@ -157,6 +150,8 @@ public:
     MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnStartLeaveGameConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
+
+
     // NOLINTEND
 
 public:

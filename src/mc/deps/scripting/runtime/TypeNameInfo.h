@@ -8,33 +8,35 @@ struct TypeNameInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mBindingName;
-    ::ll::TypedStorage<8, 32, ::std::string> mTypeName;
-    ::ll::TypedStorage<1, 1, bool>           mIsBound;
+    ::ll::UntypedStorage<8, 32> mUnk5be577;
+    ::ll::UntypedStorage<8, 32> mUnk3c36f3;
+    ::ll::UntypedStorage<1, 1>  mUnk8b3241;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    TypeNameInfo& operator=(TypeNameInfo const&);
+    TypeNameInfo(TypeNameInfo const&);
     TypeNameInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TypeNameInfo(::std::string bindingName, ::std::string typeName, bool bound);
+    MCNAPI TypeNameInfo(::std::string bindingName, ::std::string typeName, bool bound);
 
-    MCAPI ~TypeNameInfo();
+    MCNAPI ~TypeNameInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string bindingName, ::std::string typeName, bool bound);
+    MCNAPI void* $ctor(::std::string bindingName, ::std::string typeName, bool bound);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

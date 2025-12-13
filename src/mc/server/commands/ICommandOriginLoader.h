@@ -12,10 +12,8 @@ class ICommandOriginLoader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ICommandOriginLoader() = default;
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const&) = 0;
     // NOLINTEND
 

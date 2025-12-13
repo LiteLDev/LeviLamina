@@ -17,34 +17,38 @@ class OceanMonumentWingRoom : public ::OceanMonumentPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>  mMainDesign;
-    ::ll::TypedStorage<1, 1, bool> mIsRightWing;
+    ::ll::UntypedStorage<4, 4> mUnk28f997;
+    ::ll::UntypedStorage<1, 1> mUnk29e2e4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    OceanMonumentWingRoom& operator=(OceanMonumentWingRoom const&);
+    OceanMonumentWingRoom(OceanMonumentWingRoom const&);
+    OceanMonumentWingRoom();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::StructurePieceType getType() const /*override*/;
 
-    // vIndex: 4
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-    // vIndex: 5
     virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-    // vIndex: 0
     virtual ~OceanMonumentWingRoom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+
     // NOLINTEND
 
 public:

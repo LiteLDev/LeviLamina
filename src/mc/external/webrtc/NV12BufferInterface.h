@@ -18,16 +18,12 @@ class NV12BufferInterface : public ::webrtc::BiplanarYuv8Buffer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::webrtc::VideoFrameBuffer::Type type() const /*override*/;
 
-    // vIndex: 10
     virtual int ChromaWidth() const /*override*/;
 
-    // vIndex: 11
     virtual int ChromaHeight() const /*override*/;
 
-    // vIndex: 8
     virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> CropAndScale(
         int offset_x,
         int offset_y,
@@ -37,7 +33,6 @@ public:
         int scaled_height
     ) /*override*/;
 
-    // vIndex: 2
     virtual ~NV12BufferInterface() /*override*/ = default;
     // NOLINTEND
 

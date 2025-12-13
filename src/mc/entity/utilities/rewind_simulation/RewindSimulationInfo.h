@@ -13,21 +13,6 @@ public:
     // clang-format on
 
     // RewindSimulationInfo inner types define
-    struct History {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk82dc3f;
-        ::ll::UntypedStorage<8, 8> mUnk310db5;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        History& operator=(History const&);
-        History(History const&);
-        History();
-    };
-
     struct ConstHistory {
     public:
         // member variables
@@ -41,6 +26,21 @@ public:
         ConstHistory& operator=(ConstHistory const&);
         ConstHistory(ConstHistory const&);
         ConstHistory();
+    };
+
+    struct History {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk82dc3f;
+        ::ll::UntypedStorage<8, 8> mUnk310db5;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        History& operator=(History const&);
+        History(History const&);
+        History();
     };
 
 public:
@@ -60,6 +60,18 @@ public:
     RewindSimulationInfo& operator=(RewindSimulationInfo const&);
     RewindSimulationInfo(RewindSimulationInfo const&);
     RewindSimulationInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~RewindSimulationInfo();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace RewindSimulation

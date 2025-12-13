@@ -31,9 +31,9 @@ class TrialSpawner {
 public:
     // TrialSpawner inner types declare
     // clang-format off
-    struct Data;
     struct PlayerScanResult;
     struct WeightedItemStack;
+    struct Data;
     // clang-format on
 
     // TrialSpawner inner types define
@@ -45,6 +45,27 @@ public:
         EjectingRewards          = 4,
         Cooldown                 = 5,
         Count                    = 6,
+    };
+
+    struct PlayerScanResult {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool>                            haveTrialOmen;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> foundPlayers;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~PlayerScanResult();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
     };
 
     struct WeightedItemStack {
@@ -100,27 +121,6 @@ public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
-        // NOLINTEND
-    };
-
-    struct PlayerScanResult {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                            haveTrialOmen;
-        ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> foundPlayers;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~PlayerScanResult();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -220,6 +220,10 @@ public:
     MCAPI static void _removeMobByGameplay(::Level& level, ::Actor& mob);
 
     MCAPI static ::std::unique_ptr<::Tag> _saveConfig(::TrialSpawnerConfig& config);
+
+    MCAPI_C static void addSpawnParticles(::Level& level, ::Vec3 pos, bool isOminous);
+
+    MCAPI_C static void sendEjectItemParticles(::Level& level, ::BlockPos pos, bool isOminous);
     // NOLINTEND
 
 public:

@@ -23,16 +23,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void onNetworkConfigurationChanged() /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~NetworkConnectionTypeChangeObserver() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~NetworkConnectionTypeChangeObserver() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $onNetworkConfigurationChanged();
+#endif
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

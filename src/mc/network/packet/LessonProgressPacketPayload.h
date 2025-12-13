@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/packet/LessonAction.h"
-
 struct LessonProgressPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::LessonAction> mAction;
-    ::ll::TypedStorage<4, 4, int>            mScore;
-    ::ll::TypedStorage<8, 32, ::std::string> mActivityId;
+    ::ll::UntypedStorage<1, 1>  mUnk8abf6a;
+    ::ll::UntypedStorage<4, 4>  mUnkad250e;
+    ::ll::UntypedStorage<8, 32> mUnk702fbd;
     // NOLINTEND
 
 public:
@@ -23,14 +20,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::LessonProgressPacketPayload& operator=(::LessonProgressPacketPayload&&);
+    MCNAPI ::LessonProgressPacketPayload& operator=(::LessonProgressPacketPayload&&);
 
-    MCAPI ~LessonProgressPacketPayload();
+    MCNAPI ~LessonProgressPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

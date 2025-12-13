@@ -3,9 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class TransportLayer : int {
-    // bitfield representation
     RakNet           = 0,
-    NetherWebSockets = 1 << 1,
-    Default          = 1 << 1,
-    Unknown          = 1 << 2,
+    NetherWebSockets = 2,
+    Unknown          = 4,
+    Default          = 2,
 };

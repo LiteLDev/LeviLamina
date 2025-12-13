@@ -40,9 +40,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptPotions();
 
-    MCNAPI ScriptPotions(::ScriptModuleMinecraft::ScriptPotions const&);
-
     MCNAPI ScriptPotions(::ScriptModuleMinecraft::ScriptPotions&&);
+
+    MCNAPI ScriptPotions(::ScriptModuleMinecraft::ScriptPotions const&);
 
     MCNAPI ::ScriptModuleMinecraft::ScriptPotions& operator=(::ScriptModuleMinecraft::ScriptPotions&&);
     // NOLINTEND
@@ -98,9 +98,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPotions const&);
-
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPotions&&);
+
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPotions const&);
     // NOLINTEND
 };
 

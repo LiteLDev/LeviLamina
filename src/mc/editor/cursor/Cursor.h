@@ -29,28 +29,33 @@ public:
     // prevent constructor by default
     Cursor& operator=(Cursor const&);
     Cursor(Cursor const&);
-    Cursor();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Cursor() = default;
 
-    // vIndex: 2
     virtual void setCursorState(::Editor::Cursor::CursorState&& state);
 
-    // vIndex: 1
     virtual void setCursorState(::Editor::Cursor::CursorState const& state);
 
-    // vIndex: 4
     virtual void setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props);
 
-    // vIndex: 3
     virtual void setAttachmentProperties(::Editor::Cursor::AttachmentProperties const& props);
 
-    // vIndex: 5
     virtual ::Scripting::Result_deprecated<::BlockPos> moveCursor(::glm::ivec3 const& offset);
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C Cursor();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
     // NOLINTEND
 
 public:
@@ -65,6 +70,8 @@ public:
     MCNAPI void $setAttachmentProperties(::Editor::Cursor::AttachmentProperties const& props);
 
     MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveCursor(::glm::ivec3 const& offset);
+
+
     // NOLINTEND
 
 public:

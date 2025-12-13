@@ -31,13 +31,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 40
     virtual bool isPattern() const /*override*/;
 
-    // vIndex: 41
     virtual int getPatternIndex() const /*override*/;
 
-    // vIndex: 0
     virtual ~BannerPatternItem() /*override*/ = default;
     // NOLINTEND
 
@@ -47,6 +44,8 @@ public:
     MCFOLD bool $isPattern() const;
 
     MCFOLD int $getPatternIndex() const;
+
+
     // NOLINTEND
 
 public:

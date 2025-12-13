@@ -9,22 +9,21 @@ class SleepState : public ::PetSleepWithOwnerState {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void stop() /*override*/;
 
-    // vIndex: 1
     virtual void tick() /*override*/;
 
-    // vIndex: 0
     virtual ~SleepState() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCFOLD void $tick();
+    MCNAPI void $tick();
+
+
     // NOLINTEND
 
 public:

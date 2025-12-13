@@ -9,11 +9,15 @@ class BlockPos;
 class IBlockSource;
 class LevelSoundManager;
 class Player;
+namespace Core { class Path; }
+namespace Core { class Result; }
 // clang-format on
 
 namespace LevelUtils {
 // functions
 // NOLINTBEGIN
+MCNAPI_C ::Core::Result createNewLevelDirectory(::Core::Path const& pathToLevel);
+
 MCNAPI bool extinguishFire(
     ::IBlockSource&      region,
     ::BlockPos const&    pos,

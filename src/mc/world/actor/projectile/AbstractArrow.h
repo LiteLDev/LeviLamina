@@ -29,46 +29,41 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>  mFavoredSlot;
-    ::ll::TypedStorage<1, 1, bool> mIsPlayerOwned;
-    ::ll::TypedStorage<1, 1, bool> mIsCreative;
+    ::ll::UntypedStorage<4, 4> mUnk4ea9fa;
+    ::ll::UntypedStorage<1, 1> mUnk49a741;
+    ::ll::UntypedStorage<1, 1> mUnk38a4b9;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AbstractArrow& operator=(AbstractArrow const&);
+    AbstractArrow(AbstractArrow const&);
+    AbstractArrow();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 22
     virtual void lerpMotion(::Vec3 const& delta) /*override*/;
 
-    // vIndex: 138
     virtual void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
-    // vIndex: 39
     virtual void playerTouch(::Player& player) /*override*/;
 
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 139
     virtual ::ItemStack _getPickupItem() const = 0;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
-    // vIndex: 8
     virtual ~AbstractArrow() /*override*/;
     // NOLINTEND
 
@@ -104,6 +99,8 @@ public:
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
+
+
     // NOLINTEND
 
 public:

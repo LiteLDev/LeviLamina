@@ -35,13 +35,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommandOutputParameter(::std::vector<::Player const*> const& players);
-
-    MCAPI explicit CommandOutputParameter(::std::vector<::Actor const*> const&);
+    MCAPI explicit CommandOutputParameter(::CommandSelectorResults<::Actor> const&);
 
     MCAPI explicit CommandOutputParameter(::CommandSelectorResults<::Player> const& players);
 
-    MCAPI explicit CommandOutputParameter(::CommandSelectorResults<::Actor> const&);
+    MCAPI explicit CommandOutputParameter(::std::vector<::Actor const*> const&);
+
+    MCAPI explicit CommandOutputParameter(::std::vector<::Player const*> const& players);
 
     MCAPI explicit CommandOutputParameter(::std::vector<::std::string> const& strings);
 
@@ -57,13 +57,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::std::vector<::Player const*> const& players);
-
-    MCAPI void* $ctor(::std::vector<::Actor const*> const&);
+    MCAPI void* $ctor(::CommandSelectorResults<::Actor> const&);
 
     MCFOLD void* $ctor(::CommandSelectorResults<::Player> const& players);
 
-    MCAPI void* $ctor(::CommandSelectorResults<::Actor> const&);
+    MCAPI void* $ctor(::std::vector<::Actor const*> const&);
+
+    MCFOLD void* $ctor(::std::vector<::Player const*> const& players);
 
     MCAPI void* $ctor(::std::vector<::std::string> const& strings);
 

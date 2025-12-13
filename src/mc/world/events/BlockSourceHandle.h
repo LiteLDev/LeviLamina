@@ -14,16 +14,20 @@ class BlockSourceHandle : public ::BlockSourceListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockSource*> mSource;
+    ::ll::UntypedStorage<8, 8> mUnk525e9e;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockSourceHandle& operator=(BlockSourceHandle const&);
+    BlockSourceHandle(BlockSourceHandle const&);
+    BlockSourceHandle();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlockSourceHandle() /*override*/ = default;
 
-    // vIndex: 2
     virtual void onSourceDestroyed(::BlockSource& source) /*override*/;
     // NOLINTEND
 
@@ -31,6 +35,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $onSourceDestroyed(::BlockSource& source);
+
+
     // NOLINTEND
 
 public:

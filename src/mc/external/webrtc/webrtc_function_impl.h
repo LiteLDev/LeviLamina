@@ -5,8 +5,7 @@
 namespace webrtc::webrtc_function_impl {
 // inner types
 enum : uint64 {
-    // bitfield representation
-    KInlineStorageWords = 1ull << 2,
+    KInlineStorageWords = 4,
 };
 
 } // namespace webrtc::webrtc_function_impl

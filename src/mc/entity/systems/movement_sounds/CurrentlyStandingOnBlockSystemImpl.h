@@ -39,7 +39,6 @@ struct CurrentlyStandingOnBlockSystemImpl
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::ShouldPlayMovementSoundComponent>,
@@ -51,7 +50,6 @@ public:
             ::EntityFactoryT<>>& context
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~CurrentlyStandingOnBlockSystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -81,6 +79,8 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     );
+
+
     // NOLINTEND
 
 public:

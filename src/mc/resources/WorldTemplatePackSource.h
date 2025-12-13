@@ -36,10 +36,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WorldTemplatePackSource() /*override*/ = default;
 
-    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
     // NOLINTEND
 
@@ -67,6 +65,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
+
+
     // NOLINTEND
 
 public:

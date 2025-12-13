@@ -5,7 +5,7 @@
 namespace ShelfBlockActorKeys {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string_view const& ITEMS();
+MCNAPI ::std::string_view const& ITEMS();
 // NOLINTEND
 
 } // namespace ShelfBlockActorKeys

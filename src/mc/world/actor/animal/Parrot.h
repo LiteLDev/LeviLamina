@@ -24,31 +24,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 62
     virtual void playAmbientSound() /*override*/;
 
-    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 56
     virtual void setSitting(bool value) /*override*/;
 
-    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 8
     virtual ~Parrot() /*override*/ = default;
     // NOLINTEND
 
@@ -92,6 +83,8 @@ public:
     MCAPI float $getShadowRadius() const;
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+
+
     // NOLINTEND
 
 public:

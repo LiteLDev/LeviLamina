@@ -2,16 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/level/levelgen/feature/FeaturePlacementFailureLogProxy.h"
-
 // auto generated forward declare list
 // clang-format off
 class BlockDescriptor;
+class BlockPos;
 class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 class SemVersion;
 // clang-format on
 
@@ -27,11 +22,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::IBlockWorldGenAPI&>              mTarget;
-        ::ll::TypedStorage<4, 12, ::BlockPos>                       mPos;
-        ::ll::TypedStorage<8, 8, ::Random&>                         mRandom;
-        ::ll::TypedStorage<8, 8, ::RenderParams&>                   mRenderParams;
-        ::ll::TypedStorage<8, 8, ::FeaturePlacementFailureLogProxy> mLogger;
+        ::ll::UntypedStorage<8, 8>  mUnk82d3a6;
+        ::ll::UntypedStorage<4, 12> mUnke9f615;
+        ::ll::UntypedStorage<8, 8>  mUnk7c4004;
+        ::ll::UntypedStorage<8, 8>  mUnk7b914f;
+        ::ll::UntypedStorage<8, 8>  mUnk45ed6b;
         // NOLINTEND
 
     public:
@@ -51,16 +46,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IFeature();
 
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const&) const = 0;
 
-    // vIndex: 2
     virtual bool isValidPlacement(::std::string const& pass);
 
-    // vIndex: 3
     virtual void upgradeFormat(::SemVersion const&);
     // NOLINTEND
 
@@ -89,6 +80,8 @@ public:
     MCAPI bool $isValidPlacement(::std::string const& pass);
 
     MCFOLD void $upgradeFormat(::SemVersion const&);
+
+
     // NOLINTEND
 
 public:

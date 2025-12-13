@@ -9,19 +9,14 @@ class BowEnchant : public ::Enchant {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual int getMinCost(int level) const /*override*/;
 
-    // vIndex: 3
     virtual int getMaxCost(int level) const /*override*/;
 
-    // vIndex: 5
     virtual int getMaxLevel() const /*override*/;
 
-    // vIndex: 16
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const /*override*/;
 
-    // vIndex: 0
     virtual ~BowEnchant() /*override*/ = default;
     // NOLINTEND
 
@@ -41,6 +36,8 @@ public:
     MCAPI int $getMaxLevel() const;
 
     MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+
+
     // NOLINTEND
 
 public:

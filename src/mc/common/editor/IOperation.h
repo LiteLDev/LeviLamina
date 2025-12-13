@@ -16,16 +16,12 @@ class IOperation {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IOperation();
 
-    // vIndex: 1
     virtual ::std::string_view getName() = 0;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection&) = 0;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection&) = 0;
     // NOLINTEND
 

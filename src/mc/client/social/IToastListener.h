@@ -11,16 +11,12 @@ class IToastListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual void showToast(::ToastMessage, bool) = 0;
 
-    // vIndex: 1
     virtual void removeToast() = 0;
 
-    // vIndex: 2
     virtual void refreshToast() = 0;
 
-    // vIndex: 3
     virtual ~IToastListener() = default;
     // NOLINTEND
 

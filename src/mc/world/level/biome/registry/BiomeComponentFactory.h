@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/util/IDType.h"
 #include "mc/util/TagRegistry.h"
-#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,61 +20,23 @@ struct BiomeTagSetIDType;
 
 class BiomeComponentFactory {
 public:
-    // BiomeComponentFactory inner types define
-    using SerializeToDataFunc = ::std::function<void(
-        ::Biome const&,
-        ::BiomeDefinitionData&,
-        bool,
-        ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const&,
-        ::FeatureRegistry const&,
-        ::BiomeStringList&
-    )>;
-
-    using ApplySerializedDataFunc = ::std::function<void(
-        ::BiomeDefinitionData const&,
-        ::Biome&,
-        ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>&,
-        ::BlockPalette const&,
-        ::BiomeRegistry const&,
-        ::FeatureRegistry&,
-        ::BiomeStringList const&
-    )>;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::BiomeJsonDocumentGlue> mBiomeJsonDocumentGlue;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::function<void(
-            ::Biome const&,
-            ::BiomeDefinitionData&,
-            bool,
-            ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const&,
-            ::FeatureRegistry const&,
-            ::BiomeStringList&
-        )>>
-        mSerializeToDataFunc;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::function<void(
-            ::BiomeDefinitionData const&,
-            ::Biome&,
-            ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>&,
-            ::BlockPalette const&,
-            ::BiomeRegistry const&,
-            ::FeatureRegistry&,
-            ::BiomeStringList const&
-        )>>
-        mApplyFromDataFunc;
+    ::ll::UntypedStorage<8, 16> mUnk7fbe74;
+    ::ll::UntypedStorage<8, 64> mUnk9cfa41;
+    ::ll::UntypedStorage<8, 64> mUnkfd048a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BiomeComponentFactory& operator=(BiomeComponentFactory const&);
+    BiomeComponentFactory(BiomeComponentFactory const&);
+    BiomeComponentFactory();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void registerBiomeDefinitionSerializers(
+    MCNAPI void registerBiomeDefinitionSerializers(
         ::std::function<void(
             ::Biome const&,
             ::BiomeDefinitionData&,

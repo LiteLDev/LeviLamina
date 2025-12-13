@@ -7,20 +7,19 @@ namespace webrtc {
 class AudioFrame {
 public:
     // AudioFrame inner types define
+    enum class SpeechType : int {
+        KNormalSpeech = 0,
+        KPLC          = 1,
+        KCNG          = 2,
+        KPLCCNG       = 3,
+        KCodecPLC     = 5,
+        KUndefined    = 4,
+    };
+
     enum class VADActivity : int {
         KVadActive  = 0,
         KVadPassive = 1,
         KVadUnknown = 2,
-    };
-
-    enum class SpeechType : int {
-        // bitfield representation
-        KNormalSpeech = 0,
-        KPLC          = 1 << 0,
-        KCNG          = 1 << 1,
-        KUndefined    = 1 << 2,
-        KPLCCNG       = KPLC | KCNG,
-        KCodecPLC     = KPLC | KUndefined,
     };
 
     enum : uint64 {

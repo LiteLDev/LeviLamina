@@ -17,13 +17,10 @@ class IPendingOperation {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IPendingOperation() = default;
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::Editor::Transactions::IOperation> _commit(::Editor::ServiceProviderCollection&) = 0;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<bool> _discard(::Editor::ServiceProviderCollection&) = 0;
     // NOLINTEND
 

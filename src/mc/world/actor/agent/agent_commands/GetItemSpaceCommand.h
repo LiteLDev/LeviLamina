@@ -11,34 +11,38 @@ class GetItemSpaceCommand : public ::AgentCommands::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mCount;
-    ::ll::TypedStorage<4, 4, int> mMaxCount;
+    ::ll::UntypedStorage<4, 4> mUnk32ea42;
+    ::ll::UntypedStorage<4, 4> mUnkb32faa;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    GetItemSpaceCommand& operator=(GetItemSpaceCommand const&);
+    GetItemSpaceCommand(GetItemSpaceCommand const&);
+    GetItemSpaceCommand();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void execute() /*override*/;
 
-    // vIndex: 2
     virtual bool isDone() /*override*/;
 
-    // vIndex: 4
     virtual void fireCommandDoneEvent() /*override*/;
 
-    // vIndex: 0
     virtual ~GetItemSpaceCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $execute();
+    MCNAPI void $execute();
 
-    MCFOLD bool $isDone();
+    MCNAPI bool $isDone();
 
-    MCAPI void $fireCommandDoneEvent();
+    MCNAPI void $fireCommandDoneEvent();
+
+
     // NOLINTEND
 
 public:

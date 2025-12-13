@@ -2,6 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class HashedString;
+class IClientInstance;
+class IMinecraftGame;
+class DataDrivenRenderer;
+class ScreenContext;
+namespace mce { class TextureGroup; }
+// clang-format on
+
 class BaseActorRenderContext {
 public:
     // member variables
@@ -41,13 +52,57 @@ public:
 public:
     // prevent constructor by default
     BaseActorRenderContext& operator=(BaseActorRenderContext const&);
-    BaseActorRenderContext(BaseActorRenderContext const&);
     BaseActorRenderContext();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~BaseActorRenderContext() = default;
+#else // LL_PLAT_C
+    virtual ~BaseActorRenderContext();
+#endif
+
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C BaseActorRenderContext(::BaseActorRenderContext const&);
+
+    MCNAPI_C BaseActorRenderContext(
+        ::ScreenContext&   screenContext,
+        ::IClientInstance& clientInstance,
+        ::IMinecraftGame&  minecraftGame
+    );
+
+    MCNAPI_C ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
+
+    MCNAPI_C float getFrameAlpha(::Actor const& actor) const;
+
+    MCNAPI_C ::std::shared_ptr<::mce::TextureGroup> getTextureGroup();
+
+    MCNAPI_C bool isDeferredUpscaling() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::BaseActorRenderContext const&);
+
+    MCNAPI_C void*
+    $ctor(::ScreenContext& screenContext, ::IClientInstance& clientInstance, ::IMinecraftGame& minecraftGame);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

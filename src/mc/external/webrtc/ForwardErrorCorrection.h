@@ -19,15 +19,29 @@ public:
     // clang-format off
     struct DecodeFecResult;
     class Packet;
-    class ProtectedPacket;
     struct ProtectedStream;
+    class SortablePacket;
+    class ProtectedPacket;
     class ReceivedFecPacket;
     class ReceivedPacket;
     class RecoveredPacket;
-    class SortablePacket;
     // clang-format on
 
     // ForwardErrorCorrection inner types define
+    struct DecodeFecResult {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnke71362;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DecodeFecResult& operator=(DecodeFecResult const&);
+        DecodeFecResult(DecodeFecResult const&);
+        DecodeFecResult();
+    };
+
     class Packet {
     public:
         // member variables
@@ -44,13 +58,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~Packet();
 
-        // vIndex: 1
         virtual int AddRef();
 
-        // vIndex: 2
         virtual int Release();
         // NOLINTEND
 
@@ -78,6 +89,8 @@ public:
         MCNAPI int $AddRef();
 
         MCNAPI int $Release();
+
+
         // NOLINTEND
 
     public:
@@ -85,6 +98,23 @@ public:
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    };
+
+    struct ProtectedStream {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnke8464e;
+        ::ll::UntypedStorage<2, 2> mUnke0a5cf;
+        ::ll::UntypedStorage<8, 8> mUnk980d83;
+        ::ll::UntypedStorage<8, 8> mUnk5f94e6;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ProtectedStream& operator=(ProtectedStream const&);
+        ProtectedStream(ProtectedStream const&);
+        ProtectedStream();
     };
 
     class SortablePacket {
@@ -111,39 +141,6 @@ public:
         SortablePacket();
     };
 
-    class ReceivedPacket : public ::webrtc::ForwardErrorCorrection::SortablePacket {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkb81145;
-        ::ll::UntypedStorage<1, 1>  mUnk7b9065;
-        ::ll::UntypedStorage<1, 22> mUnk255cb8;
-        ::ll::UntypedStorage<8, 8>  mUnkd84dab;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ReceivedPacket& operator=(ReceivedPacket const&);
-        ReceivedPacket(ReceivedPacket const&);
-        ReceivedPacket();
-    };
-
-    class RecoveredPacket : public ::webrtc::ForwardErrorCorrection::SortablePacket {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkca17c0;
-        ::ll::UntypedStorage<1, 1> mUnk34911e;
-        ::ll::UntypedStorage<8, 8> mUnk278bd2;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RecoveredPacket& operator=(RecoveredPacket const&);
-        RecoveredPacket(RecoveredPacket const&);
-        RecoveredPacket();
-    };
-
     class ProtectedPacket : public ::webrtc::ForwardErrorCorrection::SortablePacket {
     public:
         // member variables
@@ -168,23 +165,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    };
-
-    struct ProtectedStream {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnke8464e;
-        ::ll::UntypedStorage<2, 2> mUnke0a5cf;
-        ::ll::UntypedStorage<8, 8> mUnk980d83;
-        ::ll::UntypedStorage<8, 8> mUnk5f94e6;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ProtectedStream& operator=(ProtectedStream const&);
-        ProtectedStream(ProtectedStream const&);
-        ProtectedStream();
     };
 
     class ReceivedFecPacket : public ::webrtc::ForwardErrorCorrection::SortablePacket {
@@ -218,18 +198,37 @@ public:
         // NOLINTEND
     };
 
-    struct DecodeFecResult {
+    class ReceivedPacket : public ::webrtc::ForwardErrorCorrection::SortablePacket {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnke71362;
+        ::ll::UntypedStorage<1, 1>  mUnkb81145;
+        ::ll::UntypedStorage<1, 1>  mUnk7b9065;
+        ::ll::UntypedStorage<1, 22> mUnk255cb8;
+        ::ll::UntypedStorage<8, 8>  mUnkd84dab;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        DecodeFecResult& operator=(DecodeFecResult const&);
-        DecodeFecResult(DecodeFecResult const&);
-        DecodeFecResult();
+        ReceivedPacket& operator=(ReceivedPacket const&);
+        ReceivedPacket(ReceivedPacket const&);
+        ReceivedPacket();
+    };
+
+    class RecoveredPacket : public ::webrtc::ForwardErrorCorrection::SortablePacket {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnkca17c0;
+        ::ll::UntypedStorage<1, 1> mUnk34911e;
+        ::ll::UntypedStorage<8, 8> mUnk278bd2;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RecoveredPacket& operator=(RecoveredPacket const&);
+        RecoveredPacket(RecoveredPacket const&);
+        RecoveredPacket();
     };
 
 public:

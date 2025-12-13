@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Detail { class SignalPublisher; }
 namespace Bedrock::PubSub { class DeferredSubscriptionHub; }
 namespace Bedrock::PubSub { class RawSubscription; }
 namespace Bedrock::Threading { class Mutex; }
@@ -35,6 +36,18 @@ public:
         ConnectionRecord& operator=(ConnectionRecord const&);
         ConnectionRecord(ConnectionRecord const&);
         ConnectionRecord();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ~ConnectionRecord();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -50,6 +63,17 @@ public:
     SignalReceiver& operator=(SignalReceiver const&);
     SignalReceiver(SignalReceiver const&);
     SignalReceiver();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C bool _connectSignal(
+        ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)> const&
+                                            connectOp,
+        ::Bedrock::Detail::SignalPublisher* signalID,
+        int                                 priority
+    );
+    // NOLINTEND
 };
 
 } // namespace Bedrock

@@ -40,11 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PathView(::Core::Path const& src);
+    MCNAPI PathView(::Core::PathView&&);
 
     MCNAPI explicit PathView(::Core::PathBuffer<::std::string> const&);
 
-    MCNAPI PathView(::Core::PathView&&);
+    MCNAPI explicit PathView(::Core::Path const& src);
 
     MCNAPI bool isAbsolute() const;
 
@@ -56,11 +56,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::Path const& src);
+    MCNAPI void* $ctor(::Core::PathView&&);
 
     MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const&);
 
-    MCNAPI void* $ctor(::Core::PathView&&);
+    MCNAPI void* $ctor(::Core::Path const& src);
     // NOLINTEND
 
 public:

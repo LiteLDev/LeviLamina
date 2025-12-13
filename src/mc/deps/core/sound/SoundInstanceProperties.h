@@ -15,4 +15,16 @@ public:
     SoundInstanceProperties& operator=(SoundInstanceProperties const&);
     SoundInstanceProperties(SoundInstanceProperties const&);
     SoundInstanceProperties();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~SoundInstanceProperties();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

@@ -21,17 +21,22 @@ class RuinedPortalFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool const> mNether;
-    ::ll::TypedStorage<4, 4, int const>  mOverworldSpacing;
-    ::ll::TypedStorage<4, 4, int const>  mOverworldMinSeparation;
-    ::ll::TypedStorage<4, 4, int const>  mNetherSpacing;
-    ::ll::TypedStorage<4, 4, int const>  mNetherMinSeparation;
+    ::ll::UntypedStorage<1, 1> mUnkf8ef32;
+    ::ll::UntypedStorage<4, 4> mUnke90a4d;
+    ::ll::UntypedStorage<4, 4> mUnk85f0e5;
+    ::ll::UntypedStorage<4, 4> mUnk44103c;
+    ::ll::UntypedStorage<4, 4> mUnk28ba39;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RuinedPortalFeature& operator=(RuinedPortalFeature const&);
+    RuinedPortalFeature(RuinedPortalFeature const&);
+    RuinedPortalFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -42,7 +47,6 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
-    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&         dimension,
         ::BiomeSource const& biomeSource,
@@ -51,7 +55,6 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
 
-    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&,
         ::Random&         random,
@@ -61,7 +64,6 @@ public:
         ::Dimension const&
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~RuinedPortalFeature() /*override*/ = default;
     // NOLINTEND
 
@@ -94,6 +96,8 @@ public:
         ::IPreliminarySurfaceProvider const&,
         ::Dimension const&
     );
+
+
     // NOLINTEND
 
 public:

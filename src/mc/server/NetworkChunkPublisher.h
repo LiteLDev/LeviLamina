@@ -67,7 +67,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~NetworkChunkPublisher() = default;
     // NOLINTEND
 
@@ -91,9 +90,18 @@ public:
 
     MCAPI void clearRegion();
 
+    MCAPI_C void handleGenerationRequests();
+
     MCAPI void moveRegion(::BlockPos const& position, uint blockRadius, ::Vec3 const& direction, float minDistance);
 
     MCAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos const& center);
+
+    MCAPI_C void queueChunkGenerationRequests(
+        ::ChunkPos                       moveCenter,
+        int                              chunkRadius,
+        ::Vec3 const&                    direction,
+        ::std::vector<::ChunkPos> const& serverChunks
+    );
 
     MCAPI void sendQueuedChunks();
     // NOLINTEND

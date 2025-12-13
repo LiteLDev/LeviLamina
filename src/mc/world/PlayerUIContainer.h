@@ -16,7 +16,6 @@ class PlayerUIContainer : public ::SimpleContainer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PlayerUIContainer() /*override*/;
     // NOLINTEND
 

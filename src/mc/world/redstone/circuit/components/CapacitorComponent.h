@@ -16,13 +16,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 26
     virtual uchar getPoweroutDirection() const;
 
-    // vIndex: 24
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
-    // vIndex: 0
     virtual ~CapacitorComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -44,6 +41,8 @@ public:
     MCFOLD uchar $getPoweroutDirection() const;
 
     MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+
+
     // NOLINTEND
 
 public:

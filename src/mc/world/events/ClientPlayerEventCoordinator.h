@@ -9,7 +9,6 @@ class ClientPlayerEventCoordinator : public ::PlayerEventCoordinator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClientPlayerEventCoordinator() /*override*/ = default;
     // NOLINTEND
 

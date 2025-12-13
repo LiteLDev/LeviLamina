@@ -13,9 +13,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ReflectionContext& operator=(ReflectionContext const&);
+    ReflectionContext();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C ReflectionContext(::cereal::internal::ReflectionContext const&);
+
     MCAPI ~ReflectionContext();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI_C void* $ctor(::cereal::internal::ReflectionContext const&);
     // NOLINTEND
 
 public:

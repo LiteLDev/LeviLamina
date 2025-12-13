@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Social::Events { class Event; }
+// clang-format on
+
 namespace Social::eventData {
 
 class StoreOfferClickedData {
@@ -19,6 +24,12 @@ public:
     StoreOfferClickedData& operator=(StoreOfferClickedData const&);
     StoreOfferClickedData(StoreOfferClickedData const&);
     StoreOfferClickedData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void addDataToEvent(::Social::Events::Event& eventToAddTo) const;
+    // NOLINTEND
 };
 
 } // namespace Social::eventData

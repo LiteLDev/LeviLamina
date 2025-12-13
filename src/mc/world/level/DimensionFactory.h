@@ -29,13 +29,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::OwnerPtr<::Dimension> create(::std::string const& dimensionName) const /*override*/;
 
-    // vIndex: 2
     virtual void initializeDimension(::Dimension& dimension) const /*override*/;
 
-    // vIndex: 0
     virtual ~DimensionFactory() /*override*/ = default;
     // NOLINTEND
 
@@ -45,6 +42,8 @@ public:
     MCNAPI ::OwnerPtr<::Dimension> $create(::std::string const& dimensionName) const;
 
     MCNAPI void $initializeDimension(::Dimension& dimension) const;
+
+
     // NOLINTEND
 
 public:

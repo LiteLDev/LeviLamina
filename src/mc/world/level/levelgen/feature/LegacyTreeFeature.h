@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
-#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class FeatureRegistry;
-class Random;
 // clang-format on
 
 class LegacyTreeFeature : public ::IFeature {
@@ -40,44 +37,47 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise const>                        mBiomeInfoNoise;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>                             mTallGrassFeature;
-    ::ll::TypedStorage<4, 4, float>                                              mTreeChance;
-    ::ll::TypedStorage<8, 24, ::std::vector<::WeakRef<::IFeature>>>              mFeatureRefs;
-    ::ll::TypedStorage<8, 64, ::std::function<::WeakRef<::IFeature>(::Random&)>> mGetTreeFeature;
+    ::ll::UntypedStorage<8, 40> mUnke9ef65;
+    ::ll::UntypedStorage<8, 24> mUnk387478;
+    ::ll::UntypedStorage<4, 4>  mUnkbddbf3;
+    ::ll::UntypedStorage<8, 24> mUnk4ed60b;
+    ::ll::UntypedStorage<8, 64> mUnkd9a533;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    LegacyTreeFeature& operator=(LegacyTreeFeature const&);
+    LegacyTreeFeature(LegacyTreeFeature const&);
     LegacyTreeFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
-    // vIndex: 0
     virtual ~LegacyTreeFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     LegacyTreeFeature(::LegacyTreeFeature::Type placementType, ::FeatureRegistry& registry, bool shouldPlaceLeafLitter);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyTreeFeature::Type placementType, ::FeatureRegistry& registry, bool shouldPlaceLeafLitter);
+    MCNAPI void*
+    $ctor(::LegacyTreeFeature::Type placementType, ::FeatureRegistry& registry, bool shouldPlaceLeafLitter);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+
+
     // NOLINTEND
 
 public:

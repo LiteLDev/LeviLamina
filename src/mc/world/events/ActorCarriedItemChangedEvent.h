@@ -25,20 +25,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorCarriedItemChangedEvent(::ActorCarriedItemChangedEvent const&);
+    MCNAPI ActorCarriedItemChangedEvent(::ActorCarriedItemChangedEvent const&);
 
-    MCAPI ~ActorCarriedItemChangedEvent();
+    MCNAPI ~ActorCarriedItemChangedEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorCarriedItemChangedEvent const&);
+    MCNAPI void* $ctor(::ActorCarriedItemChangedEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

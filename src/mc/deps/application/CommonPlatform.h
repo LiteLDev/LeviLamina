@@ -41,107 +41,149 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~CommonPlatform() = default;
+#else // LL_PLAT_C
+    virtual ~CommonPlatform();
+#endif
 
-    // vIndex: 1
     virtual bool updatePlatformInfo() = 0;
 
-    // vIndex: 2
     virtual bool updatePlatformGraphicsInfo() = 0;
 
-    // vIndex: 3
     virtual void issueShutdown();
 
-    // vIndex: 4
     virtual void issueSuspend();
 
-    // vIndex: 5
     virtual void issueResume();
 
-    // vIndex: 6
     virtual void issueBack();
 
-    // vIndex: 7
     virtual void issueLowMemory();
 
-    // vIndex: 8
     virtual void issueFocusLost();
 
-    // vIndex: 9
     virtual void issueFocusGained();
 
-    // vIndex: 10
     virtual void issueInputPaneVisible();
 
-    // vIndex: 11
     virtual void issueInputPaneHidden();
 
-    // vIndex: 12
     virtual void issueSuspendWarning();
 
-    // vIndex: 13
-    virtual void issueVisibilityChange(bool);
+    virtual void issueVisibilityChange(bool visible);
 
-    // vIndex: 14
-    virtual void issueWindowSizeChange(int, int);
+    virtual void issueWindowSizeChange(int width, int height);
 
-    // vIndex: 15
-    virtual void issueDPIChange(float);
+    virtual void issueDPIChange(float dpi);
 
-    // vIndex: 16
     virtual void issueOrientationChange(::DisplayOrientation const&);
 
-    // vIndex: 17
-    virtual void feedButtonPress(int const&);
+    virtual void feedButtonPress(int const& button);
 
-    // vIndex: 18
-    virtual void feedKeyPress(char const);
+    virtual void feedKeyPress(char const key);
 
-    // vIndex: 19
-    virtual void setTextboxText(::std::string const&);
+    virtual void setTextboxText(::std::string const& text);
 
-    // vIndex: 20
-    virtual void setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>);
+    virtual void setStorageDirectory(
+        ::FileStorageDirectory dir,
+        bool                   isCallback,
+        ::PropertyBag const&   extraData,
+        ::std::function<void(bool)>
+    );
 
-    // vIndex: 21
-    virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory);
+    virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory dir);
 
-    // vIndex: 22
     virtual ::FileStorageDirectory getStorageDirectory() const;
 
-    // vIndex: 23
     virtual bool _preAppCreation(::Bedrock::ActivationArguments const&) = 0;
 
-    // vIndex: 24
     virtual bool _postAppCreation(::Bedrock::ActivationArguments const&) = 0;
 
-    // vIndex: 25
     virtual void _processActivationArguments(::Bedrock::ActivationArguments const&) = 0;
 
-    // vIndex: 26
     virtual bool _update(bool) = 0;
 
-    // vIndex: 27
     virtual bool _isShuttingDown() = 0;
 
-    // vIndex: 28
     virtual bool _isShutdown() = 0;
 
-    // vIndex: 29
     virtual void pushNotificationReceived_Shim(::PushNotificationMessage const&) = 0;
 
-    // vIndex: 30
     virtual void notifyUriListeners_Shim(::ActivationUri const&) = 0;
 
-    // vIndex: 31
     virtual ::std::string getDeviceId_Shim() const = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C bool _createApp();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $issueShutdown();
 
+    MCNAPI void $issueSuspend();
+
+    MCNAPI void $issueResume();
+
+    MCNAPI void $issueBack();
+
+    MCNAPI void $issueLowMemory();
+
+    MCNAPI void $issueFocusLost();
+
+    MCNAPI void $issueFocusGained();
+
+    MCNAPI void $issueInputPaneVisible();
+
+    MCNAPI void $issueInputPaneHidden();
+
+    MCNAPI void $issueSuspendWarning();
+
+    MCNAPI void $issueVisibilityChange(bool visible);
+
+    MCNAPI void $issueWindowSizeChange(int width, int height);
+
+    MCNAPI void $issueDPIChange(float dpi);
+
+    MCNAPI void $issueOrientationChange(::DisplayOrientation const&);
+
+    MCNAPI void $feedButtonPress(int const& button);
+
+    MCNAPI void $feedKeyPress(char const key);
+
+    MCNAPI void $setTextboxText(::std::string const& text);
+
+    MCNAPI void $setStorageDirectory(
+        ::FileStorageDirectory dir,
+        bool                   isCallback,
+        ::PropertyBag const&   extraData,
+        ::std::function<void(bool)>
+    );
+
+    MCNAPI ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory dir);
+
+    MCNAPI ::FileStorageDirectory $getStorageDirectory() const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

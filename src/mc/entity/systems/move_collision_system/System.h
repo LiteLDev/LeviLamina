@@ -99,21 +99,6 @@ public:
     // clang-format on
 
     // System inner types define
-    struct SpatialQueryFactories {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkd29fef;
-        ::ll::UntypedStorage<8, 8> mUnkb8d19a;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SpatialQueryFactories& operator=(SpatialQueryFactories const&);
-        SpatialQueryFactories(SpatialQueryFactories const&);
-        SpatialQueryFactories();
-    };
-
     struct SpatialQueries {
     public:
         // member variables
@@ -141,6 +126,21 @@ public:
         // NOLINTEND
     };
 
+    struct SpatialQueryFactories {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkd29fef;
+        ::ll::UntypedStorage<8, 8> mUnkb8d19a;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SpatialQueryFactories& operator=(SpatialQueryFactories const&);
+        SpatialQueryFactories(SpatialQueryFactories const&);
+        SpatialQueryFactories();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -158,7 +158,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
@@ -201,7 +200,6 @@ public:
             ::EntityFactoryT<>>& context
     ) /*override*/;
 
-    // vIndex: 6
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<
@@ -245,7 +243,6 @@ public:
         ::StrictEntityContext&   entityContext
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~System() /*override*/;
     // NOLINTEND
 
@@ -342,6 +339,8 @@ public:
             ::EntityFactoryT<>>& executionContext,
         ::StrictEntityContext&   entityContext
     );
+
+
     // NOLINTEND
 
 public:

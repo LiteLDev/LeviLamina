@@ -46,16 +46,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~DataStoreService() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> dispatchEvent(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
@@ -63,11 +59,9 @@ public:
         ::Editor::DataStore::PayloadDescription const& desc
     ) /*override*/;
 
-    // vIndex: 2
     virtual ::Json::Value
     getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const& desc) const /*override*/;
 
-    // vIndex: 3
     virtual ::Bedrock::PubSub::Subscription listenForEvent(
         ::std::function<void(
             ::HashedString const&,
@@ -77,7 +71,6 @@ public:
         )> callback
     ) /*override*/;
 
-    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> _handleEvents(
         ::HashedString const&,
         ::Editor::DataStore::EventType,
@@ -86,7 +79,6 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 8
     virtual ::Json::Value _getPayload(::HashedString const&, ::Editor::DataStore::PayloadDescription const&) const = 0;
     // NOLINTEND
 
@@ -159,6 +151,8 @@ public:
             ::Editor::DataStore::PayloadDescription const&
         )> callback
     );
+
+
     // NOLINTEND
 
 public:

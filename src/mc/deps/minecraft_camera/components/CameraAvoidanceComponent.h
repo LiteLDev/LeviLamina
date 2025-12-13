@@ -26,6 +26,12 @@ public:
     CameraAvoidanceComponent& operator=(CameraAvoidanceComponent const&);
     CameraAvoidanceComponent(CameraAvoidanceComponent const&);
     CameraAvoidanceComponent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::MinecraftCamera::CameraAvoidanceComponent& operator=(::MinecraftCamera::CameraAvoidanceComponent&&);
+    // NOLINTEND
 };
 
 } // namespace MinecraftCamera

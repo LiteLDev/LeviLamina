@@ -30,13 +30,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void initRegistry(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 2
     virtual void registerSystems(::IEntitySystems& systems, ::ECSModule::ModuleInitArgs const& args) /*override*/;
 
-    // vIndex: 0
     virtual ~ActorMoveModule() /*override*/ = default;
     // NOLINTEND
 
@@ -46,6 +43,8 @@ public:
     MCNAPI void $initRegistry(::EntityRegistry& registry);
 
     MCNAPI void $registerSystems(::IEntitySystems& systems, ::ECSModule::ModuleInitArgs const& args);
+
+
     // NOLINTEND
 
 public:

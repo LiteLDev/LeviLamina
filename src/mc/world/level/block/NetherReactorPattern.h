@@ -2,15 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockType;
-// clang-format on
-
 class NetherReactorPattern {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 216, ::BlockType const* [3][3][3]> pattern;
+    ::ll::UntypedStorage<8, 216> mUnke35cca;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    NetherReactorPattern& operator=(NetherReactorPattern const&);
+    NetherReactorPattern(NetherReactorPattern const&);
+    NetherReactorPattern();
 };

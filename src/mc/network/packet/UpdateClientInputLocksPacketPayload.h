@@ -2,14 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-
 struct UpdateClientInputLocksPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>    mInputLockComponentData;
-    ::ll::TypedStorage<4, 12, ::Vec3> mServerPos;
+    ::ll::UntypedStorage<4, 4>  mUnk62abda;
+    ::ll::UntypedStorage<4, 12> mUnk8ec6da;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UpdateClientInputLocksPacketPayload& operator=(UpdateClientInputLocksPacketPayload const&);
+    UpdateClientInputLocksPacketPayload(UpdateClientInputLocksPacketPayload const&);
+    UpdateClientInputLocksPacketPayload();
 };

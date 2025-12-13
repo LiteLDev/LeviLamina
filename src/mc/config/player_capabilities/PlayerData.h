@@ -29,27 +29,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool isAbilityEnabled(::AbilitiesIndex ability) const /*override*/;
 
-    // vIndex: 2
     virtual bool isTeacher() const /*override*/;
 
-    // vIndex: 3
     virtual bool isOperator() const /*override*/;
 
-    // vIndex: 0
     virtual ~PlayerData() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI bool $isAbilityEnabled(::AbilitiesIndex ability) const;
+#endif
 
     MCNAPI bool $isTeacher() const;
 
     MCNAPI bool $isOperator() const;
+
+
     // NOLINTEND
 
 public:

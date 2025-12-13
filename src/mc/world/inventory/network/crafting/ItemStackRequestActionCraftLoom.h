@@ -16,19 +16,22 @@ class ItemStackRequestActionCraftLoom : public ::ItemStackRequestActionCraftBase
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mPatternNameId;
+    ::ll::UntypedStorage<8, 32> mUnk169021;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ItemStackRequestActionCraftLoom& operator=(ItemStackRequestActionCraftLoom const&);
+    ItemStackRequestActionCraftLoom(ItemStackRequestActionCraftLoom const&);
+    ItemStackRequestActionCraftLoom();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 5
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    // vIndex: 0
     virtual ~ItemStackRequestActionCraftLoom() /*override*/ = default;
     // NOLINTEND
 
@@ -38,6 +41,8 @@ public:
     MCNAPI void $_write(::BinaryStream& stream) const;
 
     MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/inventory/transaction/InventorySource.h"
 #include "mc/world/inventory/transaction/InventoryTransactionError.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class InventoryAction;
-class InventorySource;
 class InventoryTransactionItemGroup;
 class ItemStack;
 class Player;

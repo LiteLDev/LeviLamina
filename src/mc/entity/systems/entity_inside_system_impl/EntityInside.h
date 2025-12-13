@@ -96,7 +96,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
@@ -134,7 +133,6 @@ public:
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
 
-    // vIndex: 6
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<
@@ -173,7 +171,6 @@ public:
         ::StrictEntityContext&   entityContext
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~EntityInside() /*override*/ = default;
     // NOLINTEND
 
@@ -332,6 +329,8 @@ public:
             ::EntityFactoryT<>>& executionContext,
         ::StrictEntityContext&   entityContext
     );
+
+
     // NOLINTEND
 
 public:

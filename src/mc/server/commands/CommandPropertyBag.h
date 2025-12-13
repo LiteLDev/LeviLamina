@@ -9,7 +9,6 @@ class CommandPropertyBag : public ::PropertyBag {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CommandPropertyBag() = default;
     // NOLINTEND
 

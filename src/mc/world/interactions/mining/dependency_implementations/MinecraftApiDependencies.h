@@ -26,10 +26,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void finishMiningHook() /*override*/;
 
-    // vIndex: 0
     virtual ~MinecraftApiDependencies() /*override*/ = default;
     // NOLINTEND
 
@@ -37,6 +35,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $finishMiningHook();
+
+
     // NOLINTEND
 
 public:

@@ -17,33 +17,37 @@ class RemovedStringState : public ::FlatteningUtils::RemovedState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mValues;
+    ::ll::UntypedStorage<8, 24> mUnk843fe7;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RemovedStringState& operator=(RemovedStringState const&);
+    RemovedStringState(RemovedStringState const&);
+    RemovedStringState();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void addValue(::CompoundTag const& tag) /*override*/;
 
-    // vIndex: 2
     virtual void match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const /*override*/;
 
-    // vIndex: 3
     virtual uint64 valueCount() const /*override*/;
 
-    // vIndex: 0
     virtual ~RemovedStringState() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addValue(::CompoundTag const& tag);
+    MCNAPI void $addValue(::CompoundTag const& tag);
 
-    MCAPI void $match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
+    MCNAPI void $match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
 
-    MCAPI uint64 $valueCount() const;
+    MCNAPI uint64 $valueCount() const;
+
+
     // NOLINTEND
 
 public:

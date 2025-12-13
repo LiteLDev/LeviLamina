@@ -6,6 +6,7 @@
 // clang-format off
 class Block;
 class BlockPos;
+class Vec3;
 // clang-format on
 
 struct ClientChunkGenerationDifferenceData {
@@ -18,5 +19,11 @@ public:
     ::ll::TypedStorage<8, 16, ::std::map<::std::pair<::Block const*, ::Block const*>, uint>> mDifferentBlocksMap;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<float, ::BlockPos>>>                 mDifferentBlockList;
     ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                            mSharedMutex;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void sortDifferentBlockListByDistance(::Vec3 const& currentBlockPos);
     // NOLINTEND
 };

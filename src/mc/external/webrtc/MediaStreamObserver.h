@@ -36,10 +36,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ~MediaStreamObserver() /*override*/;
 
-    // vIndex: 0
     virtual void OnChanged() /*override*/;
     // NOLINTEND
 
@@ -85,6 +83,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $OnChanged();
+
+
     // NOLINTEND
 
 public:

@@ -34,16 +34,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ~PlayerInventory() /*override*/;
 
-    // vIndex: 0
     virtual void containerSizeChanged(int size) /*override*/;
 
-    // vIndex: 0
     virtual void containerContentChanged(int slot) /*override*/;
 
-    // vIndex: 2
     virtual void createTransactionContext(
         ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
         ::std::function<void()>                                                          execute
@@ -54,6 +50,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PlayerInventory(::std::unique_ptr<::Inventory> inv);
+
+    MCAPI_C bool dropSlot(int slot, bool onlyClearContainer, bool dropAll, ::ContainerID containerId, bool randomly);
 
     MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
@@ -89,6 +87,8 @@ public:
         ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
         ::std::function<void()>                                                          execute
     );
+
+
     // NOLINTEND
 
 public:

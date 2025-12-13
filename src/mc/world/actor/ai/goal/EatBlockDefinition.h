@@ -4,12 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockType;
 class EatBlockGoal;
 class EntityContext;
 class ExpressionNode;
@@ -18,37 +16,38 @@ namespace JsonUtil { class EmptyClass; }
 
 class EatBlockDefinition : public ::BaseGoalDefinition {
 public:
-    // EatBlockDefinition inner types define
-    using self = ::EatBlockDefinition;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                                                         mTimeUntilEat;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>                                    mOnEat;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>>                              mSuccessChance;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockType const*, ::BlockType const*>> mEatAndReplaceBlockPairs;
+    ::ll::UntypedStorage<4, 4>   mUnk32f382;
+    ::ll::UntypedStorage<8, 104> mUnk536a98;
+    ::ll::UntypedStorage<8, 24>  mUnka0b6bd;
+    ::ll::UntypedStorage<8, 64>  mUnk968c7c;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    EatBlockDefinition& operator=(EatBlockDefinition const&);
+    EatBlockDefinition(EatBlockDefinition const&);
+    EatBlockDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EatBlockDefinition() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addSuccessChanceExpressionNode(::ExpressionNode const& node);
+    MCNAPI void addSuccessChanceExpressionNode(::ExpressionNode const& node);
 
-    MCAPI void initialize(::EntityContext& entity, ::EatBlockGoal& goal) const;
+    MCNAPI void initialize(::EntityContext& entity, ::EatBlockGoal& goal) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::string const&                                                                               name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EatBlockDefinition>>& root
     );
@@ -57,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

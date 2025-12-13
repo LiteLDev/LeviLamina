@@ -86,45 +86,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~GoogCcNetworkController() /*override*/;
 
-    // vIndex: 1
     virtual ::webrtc::NetworkControlUpdate OnNetworkAvailability(::webrtc::NetworkAvailability msg) /*override*/;
 
-    // vIndex: 2
     virtual ::webrtc::NetworkControlUpdate OnNetworkRouteChange(::webrtc::NetworkRouteChange msg) /*override*/;
 
-    // vIndex: 3
     virtual ::webrtc::NetworkControlUpdate OnProcessInterval(::webrtc::ProcessInterval msg) /*override*/;
 
-    // vIndex: 4
     virtual ::webrtc::NetworkControlUpdate OnRemoteBitrateReport(::webrtc::RemoteBitrateReport msg) /*override*/;
 
-    // vIndex: 5
     virtual ::webrtc::NetworkControlUpdate OnRoundTripTimeUpdate(::webrtc::RoundTripTimeUpdate msg) /*override*/;
 
-    // vIndex: 6
     virtual ::webrtc::NetworkControlUpdate OnSentPacket(::webrtc::SentPacket sent_packet) /*override*/;
 
-    // vIndex: 7
     virtual ::webrtc::NetworkControlUpdate OnReceivedPacket(::webrtc::ReceivedPacket received_packet) /*override*/;
 
-    // vIndex: 8
     virtual ::webrtc::NetworkControlUpdate OnStreamsConfig(::webrtc::StreamsConfig msg) /*override*/;
 
-    // vIndex: 9
     virtual ::webrtc::NetworkControlUpdate
     OnTargetRateConstraints(::webrtc::TargetRateConstraints constraints) /*override*/;
 
-    // vIndex: 10
     virtual ::webrtc::NetworkControlUpdate OnTransportLossReport(::webrtc::TransportLossReport msg) /*override*/;
 
-    // vIndex: 11
     virtual ::webrtc::NetworkControlUpdate
     OnTransportPacketsFeedback(::webrtc::TransportPacketsFeedback report) /*override*/;
 
-    // vIndex: 12
     virtual ::webrtc::NetworkControlUpdate OnNetworkStateEstimate(::webrtc::NetworkStateEstimate msg) /*override*/;
     // NOLINTEND
 
@@ -183,6 +170,8 @@ public:
     MCNAPI ::webrtc::NetworkControlUpdate $OnTransportPacketsFeedback(::webrtc::TransportPacketsFeedback report);
 
     MCNAPI ::webrtc::NetworkControlUpdate $OnNetworkStateEstimate(::webrtc::NetworkStateEstimate msg);
+
+
     // NOLINTEND
 
 public:

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/file/PathPart.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathPart.h"
@@ -19,6 +18,12 @@ public:
     struct path_less {};
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::Core::PathPart mPathPart;
+    // NOLINTEND
+
+public:
     Path(std::filesystem::path const& path) : Path(path.u8string()) {}
     Path(std::u8string&& path) { mPathPart.mUtf8StdString = std::move(*reinterpret_cast<std::string*>(&path)); }
     Path(std::string&& path) { mPathPart.mUtf8StdString = std::move(path); }
@@ -26,17 +31,6 @@ public:
     Path(std::string const& path) { mPathPart.mUtf8StdString = path; }
     Path(char const* path) { mPathPart.mUtf8StdString = path; }
     Path() = default;
-
-public:
-    // prevent constructor by default
-    Path& operator=(Path const&);
-    Path(Path const&);
-
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::Core::PathPart mPathPart;
-    // NOLINTEND
 
 public:
     // static variables
@@ -49,9 +43,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::std::string&& str);
+    MCNAPI_S void* $ctor(::std::string&& str);
 
-    MCNAPI void* $ctor(char const* str);
+    MCNAPI_S void* $ctor(char const* str);
     // NOLINTEND
 
 public:

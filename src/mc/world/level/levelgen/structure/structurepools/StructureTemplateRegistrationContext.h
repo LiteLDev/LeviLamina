@@ -33,24 +33,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext const&);
+    MCNAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext&&);
 
-    MCAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext&&);
+    MCNAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext const&);
 
-    MCAPI ~StructureTemplateRegistrationContext();
+    MCNAPI ~StructureTemplateRegistrationContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureTemplateRegistrationContext const&);
+    MCNAPI void* $ctor(::StructureTemplateRegistrationContext&&);
 
-    MCAPI void* $ctor(::StructureTemplateRegistrationContext&&);
+    MCNAPI void* $ctor(::StructureTemplateRegistrationContext const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

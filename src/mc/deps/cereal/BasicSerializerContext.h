@@ -51,6 +51,21 @@ public:
         // NOLINTEND
     };
 
+    struct ContextStack {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk3c1044;
+        ::ll::UntypedStorage<8, 64> mUnka1cc7c;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ContextStack& operator=(ContextStack const&);
+        ContextStack(ContextStack const&);
+        ContextStack();
+    };
+
     struct LogEntry {
     public:
         // member variables
@@ -78,21 +93,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    };
-
-    struct ContextStack {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk3c1044;
-        ::ll::UntypedStorage<8, 64> mUnka1cc7c;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ContextStack& operator=(ContextStack const&);
-        ContextStack(ContextStack const&);
-        ContextStack();
     };
 
 public:

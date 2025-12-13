@@ -9,7 +9,6 @@ class CraftingContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CraftingContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 

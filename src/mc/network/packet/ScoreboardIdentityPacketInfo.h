@@ -2,15 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/scores/PlayerScoreboardId.h"
-#include "mc/world/scores/ScoreboardId.h"
-
 struct ScoreboardIdentityPacketInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::ScoreboardId>      mScoreboardId;
-    ::ll::TypedStorage<8, 8, ::PlayerScoreboardId> mPlayerId;
+    ::ll::UntypedStorage<8, 16> mUnka1a5a8;
+    ::ll::UntypedStorage<8, 8>  mUnked4ff0;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScoreboardIdentityPacketInfo& operator=(ScoreboardIdentityPacketInfo const&);
+    ScoreboardIdentityPacketInfo(ScoreboardIdentityPacketInfo const&);
+    ScoreboardIdentityPacketInfo();
 };

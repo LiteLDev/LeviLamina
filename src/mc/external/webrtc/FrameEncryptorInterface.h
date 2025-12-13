@@ -12,10 +12,8 @@ class FrameEncryptorInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ~FrameEncryptorInterface() /*override*/ = default;
 
-    // vIndex: 3
     virtual int Encrypt(
         ::cricket::MediaType,
         uint,
@@ -25,7 +23,6 @@ public:
         uint64*
     ) = 0;
 
-    // vIndex: 4
     virtual uint64 GetMaxCiphertextByteSize(::cricket::MediaType, uint64) = 0;
     // NOLINTEND
 

@@ -37,6 +37,8 @@ public:
     // NOLINTBEGIN
     MCAPI void _onAttributeModified(::AttributeInstance const& attributeInstance);
 
+    MCFOLD_C void _onAttributeModifiedDisabled(::AttributeInstance const&);
+
     MCAPI ::AttributeInstance const& getInstance(::Attribute const& attribute) const;
 
     MCAPI ::AttributeInstance const& getInstance(uint idValue) const;
@@ -50,6 +52,8 @@ public:
     MCAPI ::BaseAttributeMap& operator=(::BaseAttributeMap&&);
 
     MCAPI ::AttributeInstance& registerAttribute(::Attribute const& baseAttribute);
+
+    MCAPI_C void updateOrCreateAttribute(::AttributeData const& attributeData);
     // NOLINTEND
 
 public:

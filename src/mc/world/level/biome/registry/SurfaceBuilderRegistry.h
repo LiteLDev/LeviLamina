@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/registry/SurfaceBuilderType.h"
-
 // auto generated forward declare list
 // clang-format off
 class ISurfaceBuilder;
@@ -14,12 +11,18 @@ class SurfaceBuilderRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::map<::SurfaceBuilderType, ::std::unique_ptr<::ISurfaceBuilder>>> mSurfaceBuilders;
+    ::ll::UntypedStorage<8, 16> mUnk94cbce;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SurfaceBuilderRegistry& operator=(SurfaceBuilderRegistry const&);
+    SurfaceBuilderRegistry(SurfaceBuilderRegistry const&);
+    SurfaceBuilderRegistry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void forEachSurfaceBuilder(::std::function<bool(::ISurfaceBuilder&)> callback) const;
+    MCNAPI void forEachSurfaceBuilder(::std::function<bool(::ISurfaceBuilder&)> callback) const;
     // NOLINTEND
 };

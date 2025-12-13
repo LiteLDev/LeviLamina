@@ -38,10 +38,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ServerFileChunkUploader() /*override*/;
 
-    // vIndex: 1
     virtual void initFileUploader(
         ::std::string const&        uploadId,
         ::FileInfo const&           file,
@@ -50,15 +48,12 @@ public:
         ::std::function<void(bool)> callback
     ) /*override*/;
 
-    // vIndex: 2
     virtual void
     getServerMissingChunks(::FileInfo const& file, ::std::function<void(::std::vector<::FileChunkInfo>)> callback) const
         /*override*/;
 
-    // vIndex: 3
     virtual void confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk) /*override*/;
 
-    // vIndex: 4
     virtual void uploadChunk(
         ::FileInfo const&           file,
         ::FileChunkInfo const&      chunk,
@@ -66,19 +61,14 @@ public:
         ::std::function<void(bool)> onCompleteCallback
     ) /*override*/;
 
-    // vIndex: 6
     virtual bool canCancelUpload(::FileInfo const& file) const /*override*/;
 
-    // vIndex: 7
     virtual void cancelUpload(::FileInfo const& file) /*override*/;
 
-    // vIndex: 8
     virtual ::UploadError getInitErrorCode() const /*override*/;
 
-    // vIndex: 9
     virtual float getUploadProgress(::FileInfo const& file) const /*override*/;
 
-    // vIndex: 10
     virtual ::FileChunkInfo getChunkInfo(::FileInfo const& file, int chunkID) const /*override*/;
     // NOLINTEND
 
@@ -122,6 +112,8 @@ public:
     MCNAPI float $getUploadProgress(::FileInfo const& file) const;
 
     MCNAPI ::FileChunkInfo $getChunkInfo(::FileInfo const& file, int chunkID) const;
+
+
     // NOLINTEND
 
 public:

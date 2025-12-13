@@ -12,6 +12,7 @@
 class ContainerScreenContext;
 class ItemStack;
 class Player;
+struct FullContainerName;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -42,25 +43,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~HudContainerManagerModel() /*override*/ = default;
 
-    // vIndex: 7
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    // vIndex: 8
     virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
 
-    // vIndex: 9
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    // vIndex: 10
     virtual void setData(int id, int value) /*override*/;
 
-    // vIndex: 13
     virtual void broadcastChanges() /*override*/;
 
-    // vIndex: 20
     virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
@@ -68,6 +62,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI HudContainerManagerModel(::ContainerID containerId, ::Player& player);
+
+    MCAPI_C ::std::unordered_set<::FullContainerName> _getDynamicContainersInHotbar();
+
+    MCAPI_C void cleanUpDynamicContainers();
     // NOLINTEND
 
 public:
@@ -90,6 +88,8 @@ public:
     MCAPI void $broadcastChanges();
 
     MCAPI ::ContainerScreenContext $_postInit();
+
+
     // NOLINTEND
 
 public:

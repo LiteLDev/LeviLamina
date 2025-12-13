@@ -12,6 +12,25 @@ public:
 public:
     // prevent constructor by default
     InvalidPacksFilterGroup& operator=(InvalidPacksFilterGroup const&);
-    InvalidPacksFilterGroup(InvalidPacksFilterGroup const&);
     InvalidPacksFilterGroup();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C InvalidPacksFilterGroup(::InvalidPacksFilterGroup const&);
+
+    MCNAPI_C ~InvalidPacksFilterGroup();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::InvalidPacksFilterGroup const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

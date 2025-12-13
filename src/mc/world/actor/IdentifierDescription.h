@@ -9,29 +9,35 @@ struct IdentifierDescription : public ::DefintionDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mId;
+    ::ll::UntypedStorage<8, 32> mUnk2b5641;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    IdentifierDescription& operator=(IdentifierDescription const&);
+    IdentifierDescription(IdentifierDescription const&);
+    IdentifierDescription();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual char const* getJsonName() const /*override*/;
 
-    // vIndex: 0
     virtual ~IdentifierDescription() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
+
+
     // NOLINTEND
 
 public:

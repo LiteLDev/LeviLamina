@@ -3,24 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/events/TextProcessingEventOrigin.h"
-#include "mc/util/CallbackToken.h"
-#include "mc/util/CallbackTokenContext.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/network/ItemStackNetManagerBase.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
-#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
+class CallbackToken;
 class ContainerScreenContext;
 class ItemStackNetManagerScreen;
-class ItemStackRequestActionHandler;
 class ItemStackRequestBatch;
 class ItemStackRequestData;
 class ServerPlayer;
-class TextFilteringProcessor;
 struct ItemStackLegacyRequestIdTag;
 struct ItemStackRequestIdTag;
 struct ItemStackResponseInfo;
@@ -35,51 +30,39 @@ public:
         Timedout = 2,
     };
 
-    using RetainScope = ::gsl::final_action<::std::function<void()>>;
-
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestActionHandler>> mRequestActionHandler;
-    ::ll::TypedStorage<1, 1, bool>                                               mRetainSetItemStackNetIdVariants;
-    ::ll::TypedStorage<4, 4, ::ItemStackNetManagerServer::TextFilterState>       mTextFilterState;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::
-            queue<::std::unique_ptr<::ItemStackRequestData>, ::std::deque<::std::unique_ptr<::ItemStackRequestData>>>>
-                                                                                    mRequestsQueue;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>> mTextFilteringProcessor;
-    ::ll::TypedStorage<8, 8, ::Tick>                                                mTextFilterRequestTimer;
-    ::ll::TypedStorage<8, 8, ::Tick const>                                          mTextFilterRequestTimeout;
-    ::ll::TypedStorage<8, 16, ::CallbackToken>                                      mTextFilterRequestToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CallbackTokenContext<::std::function<void()>>>>
-        mOnContainerScreenCloseCB;
+    ::ll::UntypedStorage<8, 8>  mUnk665462;
+    ::ll::UntypedStorage<1, 1>  mUnk966e15;
+    ::ll::UntypedStorage<4, 4>  mUnka08a28;
+    ::ll::UntypedStorage<8, 40> mUnkf9ef98;
+    ::ll::UntypedStorage<8, 24> mUnk9fc890;
+    ::ll::UntypedStorage<8, 8>  mUnkf725ea;
+    ::ll::UntypedStorage<8, 8>  mUnkb46219;
+    ::ll::UntypedStorage<8, 16> mUnk6c6706;
+    ::ll::UntypedStorage<8, 8>  mUnk67387a;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ItemStackNetManagerServer& operator=(ItemStackNetManagerServer const&);
+    ItemStackNetManagerServer(ItemStackNetManagerServer const&);
     ItemStackNetManagerServer();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ItemStackNetManagerServer() /*override*/ = default;
 
-    // vIndex: 2
     virtual ::ItemStackRequestId getRequestId() const /*override*/;
 
-    // vIndex: 3
     virtual bool retainSetItemStackNetIdVariant() const /*override*/;
 
-    // vIndex: 4
     virtual bool allowInventoryTransactionManager() const /*override*/;
 
-    // vIndex: 6
     virtual void onContainerScreenOpen(::ContainerScreenContext const& screenContext) /*override*/;
 
-    // vIndex: 10
     virtual void _initScreen(::ItemStackNetManagerScreen& screen) /*override*/;
     // NOLINTEND
 
@@ -135,6 +118,8 @@ public:
     MCNAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
     MCNAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
+
+
     // NOLINTEND
 
 public:

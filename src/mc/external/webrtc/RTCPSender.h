@@ -114,23 +114,6 @@ public:
         // NOLINTEND
     };
 
-    class RtcpContext {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkf0921b;
-        ::ll::UntypedStorage<4, 4> mUnk47c83c;
-        ::ll::UntypedStorage<8, 8> mUnkfbc631;
-        ::ll::UntypedStorage<8, 8> mUnk645408;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RtcpContext& operator=(RtcpContext const&);
-        RtcpContext(RtcpContext const&);
-        RtcpContext();
-    };
-
     class PacketSender {
     public:
         // member variables
@@ -181,6 +164,23 @@ public:
         ReportFlag& operator=(ReportFlag const&);
         ReportFlag(ReportFlag const&);
         ReportFlag();
+    };
+
+    class RtcpContext {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkf0921b;
+        ::ll::UntypedStorage<4, 4> mUnk47c83c;
+        ::ll::UntypedStorage<8, 8> mUnkfbc631;
+        ::ll::UntypedStorage<8, 8> mUnk645408;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RtcpContext& operator=(RtcpContext const&);
+        RtcpContext(RtcpContext const&);
+        RtcpContext();
     };
 
 public:
@@ -234,7 +234,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RTCPSender();
     // NOLINTEND
 

@@ -48,18 +48,58 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BeaconContainerManagerController();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BeaconContainerManagerController() /*override*/ = default;
 
-    // vIndex: 11
-    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
+    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit BeaconContainerManagerController(::std::weak_ptr<::BeaconContainerManagerModel> ptrModel);
+
+    MCNAPI_C void _confirmTransaction();
+
+    MCNAPI_C void _setupCallbacks();
+
+    MCNAPI_C ::std::string getButtonHoverText(::std::string const& buttonName) const;
+
+    MCNAPI_C ::BeaconContainerManagerController::ButtonStatus getButtonStatus(::std::string const& buttonName) const;
+
+    MCNAPI_C bool isSecondaryEffect(::std::string const& buttonName) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::BeaconContainerManagerController::ButtonId buttonNameToButtonId(::std::string const& buttonName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::weak_ptr<::BeaconContainerManagerModel> ptrModel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+#endif
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

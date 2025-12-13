@@ -8,7 +8,6 @@ class EditorPlaytestManagerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorPlaytestManagerServiceProvider() = default;
     // NOLINTEND
 

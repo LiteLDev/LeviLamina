@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/levelgen/density/DensityFunctionPtr.h"
 #include "mc/world/level/levelgen/density/IDensityFunction.h"
 
 // auto generated forward declare list
@@ -16,16 +15,20 @@ class CacheDensityFunction : public ::IDensityFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::DensityFunctionPtr> mInput;
+    ::ll::UntypedStorage<8, 16> mUnk5decb4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CacheDensityFunction& operator=(CacheDensityFunction const&);
+    CacheDensityFunction(CacheDensityFunction const&);
+    CacheDensityFunction();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CacheDensityFunction() /*override*/ = default;
 
-    // vIndex: 1
     virtual ushort addToCalculators(::DensityCalculators&, ::DensityFunctionRegistry const&) const /*override*/;
     // NOLINTEND
 

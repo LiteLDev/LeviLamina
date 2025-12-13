@@ -12,13 +12,13 @@ struct SurfaceMaterialAttributes;
 namespace BiomeSurfaceMaterialSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void applySerializedSurfaceMaterialAttributeData(
+MCNAPI void applySerializedSurfaceMaterialAttributeData(
     ::BiomeSurfaceMaterialData const& data,
     ::SurfaceMaterialAttributes&      surfaceMaterialAttributes,
     ::BlockPalette const&             blockPalette
 );
 
-MCAPI void serializeSurfaceMaterialAttributeData(
+MCNAPI void serializeSurfaceMaterialAttributeData(
     ::SurfaceMaterialAttributes const& surfaceMaterialAttributes,
     ::BiomeSurfaceMaterialData&        data
 );

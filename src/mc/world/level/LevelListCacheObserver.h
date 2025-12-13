@@ -14,28 +14,45 @@ class LevelListCacheObserver : public ::Core::Observer<::LevelListCacheObserver,
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
-    virtual void onLevelAdded(::std::string const&);
+    virtual void onLevelAdded(::std::string const& levelId);
 
-    // vIndex: 3
-    virtual void onLevelUpdated(::std::string const&);
+    virtual void onLevelUpdated(::std::string const& levelId);
 
-    // vIndex: 4
-    virtual void onLevelDeleted(::std::string const&);
+    virtual void onLevelDeleted(::std::string const& levelId);
 
-    // vIndex: 5
-    virtual void onSummaryUpdated(::std::string const&);
+    virtual void onSummaryUpdated(::std::string const& levelId);
 
-    // vIndex: 6
     virtual void onStorageChanged();
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~LevelListCacheObserver() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~LevelListCacheObserver() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $onLevelAdded(::std::string const& levelId);
+
+    MCNAPI void $onLevelUpdated(::std::string const& levelId);
+
+    MCNAPI void $onLevelDeleted(::std::string const& levelId);
+
+    MCNAPI void $onSummaryUpdated(::std::string const& levelId);
+
+    MCNAPI void $onStorageChanged();
+#endif
+
 
     // NOLINTEND
 };

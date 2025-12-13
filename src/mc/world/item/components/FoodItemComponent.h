@@ -58,30 +58,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FoodItemComponent() /*override*/ = default;
 
-    // vIndex: 7
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
-    // vIndex: 1
     virtual int getNutrition() const /*override*/;
 
-    // vIndex: 2
     virtual float getSaturationModifier() const /*override*/;
 
-    // vIndex: 3
     virtual bool canAlwaysEat() const /*override*/;
 
-    // vIndex: 4
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
 
-    // vIndex: 5
-    virtual void use(bool& result, ::ItemStack& instance, ::Player& player) /*override*/;
+    virtual void use(bool& result, ::ItemStack& item, ::Player& player) /*override*/;
 
-    // vIndex: 6
-    virtual ::Item const*
-    useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&) /*override*/;
+    virtual ::Item const* useTimeDepleted(
+        ::ItemUseMethod&   itemUseMethod,
+        ::ItemStack const& initialInstance,
+        ::ItemStack&       instance,
+        ::Player&          player,
+        ::Level&           level
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -123,7 +120,19 @@ public:
 
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(bool& result, ::ItemStack& instance, ::Player& player);
+    MCAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
+
+#ifdef LL_PLAT_C
+    MCAPI ::Item const* $useTimeDepleted(
+        ::ItemUseMethod&   itemUseMethod,
+        ::ItemStack const& initialInstance,
+        ::ItemStack&       instance,
+        ::Player&          player,
+        ::Level&           level
+    );
+#endif
+
+
     // NOLINTEND
 
 public:

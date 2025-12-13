@@ -14,19 +14,14 @@ class IContentSourceRepository {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IContentSourceRepository() = default;
 
-    // vIndex: 1
     virtual void deletePackFiles(::ResourceLocation const&) = 0;
 
-    // vIndex: 2
     virtual void postDeletePack(::ResourceLocation const&) = 0;
 
-    // vIndex: 3
     virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const&) const = 0;
 
-    // vIndex: 4
     virtual ::ResourcePackStack createStack(::std::vector<::PackInstanceId> const&) = 0;
     // NOLINTEND
 

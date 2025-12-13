@@ -24,15 +24,6 @@ public:
     // clang-format on
 
     // SpawnerData inner types define
-    struct Population {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<2, 2, short> surface;
-        ::ll::TypedStorage<2, 2, short> underground;
-        // NOLINTEND
-    };
-
     struct Brightness {
     public:
         // member variables
@@ -40,6 +31,15 @@ public:
         ::ll::TypedStorage<2, 2, short> min;
         ::ll::TypedStorage<2, 2, short> max;
         ::ll::TypedStorage<1, 1, bool>  raw;
+        // NOLINTEND
+    };
+
+    struct Population {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<2, 2, short> surface;
+        ::ll::TypedStorage<2, 2, short> underground;
         // NOLINTEND
     };
 
@@ -67,35 +67,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnerData(::br::worldgen::SpawnerData const&);
+    MCNAPI SpawnerData(::br::worldgen::SpawnerData&&);
 
-    MCAPI SpawnerData(::br::worldgen::SpawnerData&&);
+    MCNAPI SpawnerData(::br::worldgen::SpawnerData const&);
 
-    MCAPI ~SpawnerData();
+    MCNAPI ~SpawnerData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::SpawnerData
+    MCNAPI static ::br::worldgen::SpawnerData
     make(::std::string_view id, short probabilityWeight, short minCount, short maxCount);
 
-    MCAPI static ::br::worldgen::SpawnerData
+    MCNAPI static ::br::worldgen::SpawnerData
     make(::ActorType id, short probabilityWeight, short minCount, short maxCount);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::SpawnerData const&);
+    MCNAPI void* $ctor(::br::worldgen::SpawnerData&&);
 
-    MCAPI void* $ctor(::br::worldgen::SpawnerData&&);
+    MCNAPI void* $ctor(::br::worldgen::SpawnerData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

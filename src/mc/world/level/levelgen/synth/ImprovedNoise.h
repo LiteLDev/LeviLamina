@@ -18,10 +18,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float const> startY;
-        ::ll::TypedStorage<4, 4, int const>   startYUnit;
-        ::ll::TypedStorage<4, 4, float const> startYFraction;
+        ::ll::UntypedStorage<4, 4> mUnkdbae5b;
+        ::ll::UntypedStorage<4, 4> mUnke0eb3a;
+        ::ll::UntypedStorage<4, 4> mUnk4bc513;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LegacyWorldgenYStart& operator=(LegacyWorldgenYStart const&);
+        LegacyWorldgenYStart(LegacyWorldgenYStart const&);
+        LegacyWorldgenYStart();
     };
 
 public:
@@ -35,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _blendCubeCorners(
+    MCNAPI void _blendCubeCorners(
         ::Vec3 const& origin,
         int           X,
         int           Y,
@@ -47,7 +53,7 @@ public:
         float&        vv3
     ) const;
 
-    MCAPI void readArea(
+    MCNAPI void readArea(
         float*        buffer,
         ::Vec3 const& pos,
         int           xCount,

@@ -30,7 +30,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
         ::IBlockSource&,
         ::BlockPos,
@@ -40,13 +39,10 @@ public:
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
-    // vIndex: 3
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
-    // vIndex: 4
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
-    // vIndex: 0
     virtual ~BlockIgnore() /*override*/;
     // NOLINTEND
 
@@ -55,10 +51,10 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bootstrap();
 
-    MCNAPI static ::br::worldgen::processors::BlockIgnore from(::std::vector<::HashedString> const& toIgnore);
-
     MCNAPI static ::br::worldgen::processors::BlockIgnore
     from(::std::vector<::SharedTypes::Reference<0>> const& toIgnore);
+
+    MCNAPI static ::br::worldgen::processors::BlockIgnore from(::std::vector<::HashedString> const& toIgnore);
     // NOLINTEND
 
 public:
@@ -88,6 +84,8 @@ public:
     MCNAPI ::br::worldgen::StructureProcessorType $type() const;
 
     MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+
+
     // NOLINTEND
 
 public:

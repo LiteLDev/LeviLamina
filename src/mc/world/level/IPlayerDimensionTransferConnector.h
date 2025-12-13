@@ -15,11 +15,9 @@ class IPlayerDimensionTransferConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::DimensionType)>&
     getOnAnyPlayerChangeDimensionPreSuspendRegionConnector() = 0;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void()>& getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector() = 0;
     // NOLINTEND
 

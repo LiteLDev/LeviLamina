@@ -8,8 +8,8 @@ class OSWriteThrottleTracker {
 public:
     // OSWriteThrottleTracker inner types declare
     // clang-format off
-    struct OSWriteThrottleStats;
     struct WriteThrottleTierInfo;
+    struct OSWriteThrottleStats;
     // clang-format on
 
     // OSWriteThrottleTracker inner types define
@@ -49,39 +49,55 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~OSWriteThrottleTracker() = default;
 
-    // vIndex: 1
     virtual bool isWriteThrottledOS() const;
 
-    // vIndex: 2
     virtual ::Core::WriteThrottledOS::OSWriteThrottleTracker::OSWriteThrottleStats
         getCurrentWriteThrottleStats(::std::optional<uint64>) const;
 
-    // vIndex: 3
     virtual uint64 getEstimatedUnthrottledWriteSpeedBytes() const;
 
-    // vIndex: 4
     virtual uint64 getBudgetAccrualBytesPerSecond() const;
 
-    // vIndex: 5
     virtual uint64 getMaxBudgetBytes() const;
 
-    // vIndex: 6
-    virtual uint64 getMinBudgetForPlayableExperience(int) const;
+    virtual uint64 getMinBudgetForPlayableExperience(int recoverLeewayHintMb) const;
 
-    // vIndex: 7
     virtual uint64 getBudgetForWriteBudgetReplenished() const;
 
-    // vIndex: 8
     virtual uint64 getBudgetForWriteBudgetLow() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool $isWriteThrottledOS() const;
 
+    MCNAPI ::Core::WriteThrottledOS::OSWriteThrottleTracker::OSWriteThrottleStats
+        $getCurrentWriteThrottleStats(::std::optional<uint64>) const;
+
+    MCNAPI uint64 $getEstimatedUnthrottledWriteSpeedBytes() const;
+
+    MCNAPI uint64 $getBudgetAccrualBytesPerSecond() const;
+
+    MCNAPI uint64 $getMaxBudgetBytes() const;
+
+    MCNAPI uint64 $getMinBudgetForPlayableExperience(int recoverLeewayHintMb) const;
+
+    MCNAPI uint64 $getBudgetForWriteBudgetReplenished() const;
+
+    MCNAPI uint64 $getBudgetForWriteBudgetLow() const;
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

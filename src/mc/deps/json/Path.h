@@ -12,9 +12,9 @@ namespace Json {
 class Path {
 public:
     // Path inner types define
-    using InArgs = ::std::vector<::Json::PathArgument const*>;
-
     using Args = ::std::vector<::Json::PathArgument>;
+
+    using InArgs = ::std::vector<::Json::PathArgument const*>;
 
 public:
     // member variables

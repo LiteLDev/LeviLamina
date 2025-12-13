@@ -25,63 +25,55 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::string const& getDialogueText() const /*override*/;
 
-    // vIndex: 5
     virtual ::std::string const& getSceneName() const /*override*/;
 
-    // vIndex: 3
     virtual ::std::string const& getNameText() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::string const& getNameRawText() const /*override*/;
 
-    // vIndex: 7
     virtual ::npc::ActionContainer* getActionsContainer() /*override*/;
 
-    // vIndex: 6
     virtual ::npc::ActionContainer const* getActionsContainer() const /*override*/;
 
-    // vIndex: 8
     virtual ::ActorUniqueID getActorUniqueID() /*override*/;
 
-    // vIndex: 10
     virtual ::Actor* getActor() /*override*/;
 
-    // vIndex: 9
     virtual ::Actor const* getActor() const /*override*/;
 
-    // vIndex: 0
     virtual ~NpcSceneDialogueData() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getDialogueText() const;
+    MCNAPI ::std::string const& $getDialogueText() const;
 
-    MCFOLD ::std::string const& $getSceneName() const;
+    MCNAPI ::std::string const& $getSceneName() const;
 
-    MCAPI ::std::string const& $getNameText() const;
+    MCNAPI ::std::string const& $getNameText() const;
 
-    MCAPI ::std::string const& $getNameRawText() const;
+    MCNAPI ::std::string const& $getNameRawText() const;
 
-    MCFOLD ::npc::ActionContainer* $getActionsContainer();
+    MCNAPI ::npc::ActionContainer* $getActionsContainer();
 
-    MCFOLD ::npc::ActionContainer const* $getActionsContainer() const;
+    MCNAPI ::npc::ActionContainer const* $getActionsContainer() const;
 
-    MCAPI ::ActorUniqueID $getActorUniqueID();
+    MCNAPI ::ActorUniqueID $getActorUniqueID();
 
-    MCFOLD ::Actor* $getActor();
+    MCNAPI ::Actor* $getActor();
 
-    MCFOLD ::Actor const* $getActor() const;
+    MCNAPI ::Actor const* $getActor() const;
+
+
     // NOLINTEND
 
 public:

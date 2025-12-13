@@ -16,19 +16,17 @@ class DripstoneClusterFeature : public ::IFeature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
-    // vIndex: 0
     virtual ~DripstoneClusterFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int _getDripstoneHeight(::Random& random, int dx, int dz, float density, int maxHeight);
+    MCNAPI static int _getDripstoneHeight(::Random& random, int dx, int dz, float density, int maxHeight);
 
-    MCAPI static bool _placeColumn(
+    MCNAPI static bool _placeColumn(
         ::IBlockWorldGenAPI& target,
         ::Random&            random,
         ::BlockPos const&    pos,
@@ -44,7 +42,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+
+
     // NOLINTEND
 
 public:

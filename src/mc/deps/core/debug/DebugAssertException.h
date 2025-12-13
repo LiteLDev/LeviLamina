@@ -23,10 +23,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual char const* what() const /*override*/;
 
-    // vIndex: 0
     virtual ~DebugAssertException() /*override*/;
     // NOLINTEND
 
@@ -56,6 +54,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI char const* $what() const;
+
+
     // NOLINTEND
 
 public:

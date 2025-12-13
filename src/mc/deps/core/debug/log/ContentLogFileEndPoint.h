@@ -33,22 +33,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ContentLogFileEndPoint() /*override*/;
 
-    // vIndex: 1
     virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
 
-    // vIndex: 2
     virtual void flush() /*override*/;
 
-    // vIndex: 3
     virtual void setEnabled(bool newState) /*override*/;
 
-    // vIndex: 4
     virtual bool isEnabled() const /*override*/;
 
-    // vIndex: 2
     virtual bool logOnlyOnce() const /*override*/;
     // NOLINTEND
 
@@ -92,6 +86,8 @@ public:
     MCNAPI bool $isEnabled() const;
 
     MCNAPI bool $logOnlyOnce() const;
+
+
     // NOLINTEND
 
 public:

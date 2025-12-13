@@ -29,19 +29,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual uint64 count() const /*override*/;
 
-    // vIndex: 2
     virtual bool HasCandidate(::webrtc::IceCandidateInterface const* candidate) const /*override*/;
 
-    // vIndex: 4
     virtual void add(::webrtc::JsepIceCandidate* candidate);
 
-    // vIndex: 3
     virtual ::webrtc::IceCandidateInterface const* at(uint64 index) const /*override*/;
 
-    // vIndex: 0
     virtual ~JsepCandidateCollection() /*override*/;
     // NOLINTEND
 
@@ -81,6 +76,8 @@ public:
     MCNAPI void $add(::webrtc::JsepIceCandidate* candidate);
 
     MCNAPI ::webrtc::IceCandidateInterface const* $at(uint64 index) const;
+
+
     // NOLINTEND
 
 public:

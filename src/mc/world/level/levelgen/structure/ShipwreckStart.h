@@ -19,29 +19,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual ::std::string_view getStructureName() const /*override*/;
 
-    // vIndex: 0
     virtual ~ShipwreckStart() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShipwreckStart(::BiomeSource const& source, ::Random&, int x, int z, short seaLevel);
+    MCNAPI ShipwreckStart(::BiomeSource const& source, ::Random&, int x, int z, short seaLevel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeSource const& source, ::Random&, int x, int z, short seaLevel);
+    MCNAPI void* $ctor(::BiomeSource const& source, ::Random&, int x, int z, short seaLevel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view $getStructureName() const;
+    MCNAPI ::std::string_view $getStructureName() const;
+
+
     // NOLINTEND
 
 public:

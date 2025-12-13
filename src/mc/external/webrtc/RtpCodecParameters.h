@@ -21,7 +21,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RtpCodecParameters() /*override*/;
     // NOLINTEND
 

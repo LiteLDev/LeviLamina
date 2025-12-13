@@ -11,7 +11,6 @@ struct VideoReceiverParameters : public ::cricket::MediaChannelParameters {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~VideoReceiverParameters() /*override*/;
     // NOLINTEND
 

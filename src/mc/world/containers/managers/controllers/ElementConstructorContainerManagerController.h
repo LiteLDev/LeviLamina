@@ -7,11 +7,13 @@
 #include "mc/world/containers/controllers/ItemTakeType.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
 #include "mc/world/item/ItemInstance.h"
+#include "mc/world/level/block/ElementType.h"
 
 // auto generated forward declare list
 // clang-format off
 class CraftableElements;
 class ElementConstructorContainerManagerModel;
+class ItemStack;
 class ItemStackBase;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
@@ -31,45 +33,98 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ElementConstructorContainerManagerController();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ElementConstructorContainerManagerController() /*override*/ = default;
 
-    // vIndex: 8
-    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
+    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const& slot) const /*override*/;
 
-    // vIndex: 10
-    virtual void handleTakeAll(::SlotData const&, ::SlotData const&) /*override*/;
+    virtual void handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
 
-    // vIndex: 12
-    virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
+    virtual void handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
 
-    // vIndex: 15
     virtual int handleAutoPlace(
-        ::SlotData const&,
-        int,
-        ::std::vector<::AutoPlaceItem> const&,
-        ::std::vector<::AutoPlaceResult>&
+        ::SlotData const&                     srcSlot,
+        int                                   amount,
+        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
+        ::std::vector<::AutoPlaceResult>&     destinations
     ) /*override*/;
 
-    // vIndex: 25
-    virtual void handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType) /*override*/;
+    virtual void
+    handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type) /*override*/;
 
-    // vIndex: 32
-    virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
+    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
 
-    // vIndex: 27
-    virtual bool isOutputSlot(::std::string const&) const /*override*/;
+    virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
 
-    // vIndex: 29
     virtual ::CreateContainerItemScope
-    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+    _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& amount) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit ElementConstructorContainerManagerController(
+        ::std::weak_ptr<::ElementConstructorContainerManagerModel> containerManagerModel
+    );
+
+    MCNAPI_C ::ItemInstance _getElementItem(::ElementType type) const;
+
+    MCNAPI_C bool _handleOutputSwap(::SlotData const& src, ::SlotData const& dest, ::ItemTransferAmount amount);
+
+    MCNAPI_C bool
+    _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot, ::ItemTransferAmount amount);
+
+    MCNAPI_C bool _updateOutputPreview(::ItemStack const& stack);
+
+    MCNAPI_C void _updateParticleInputsFromOutputSlot();
+
+    MCNAPI_C void updateOutput(int protons, int electrons, int neutrons);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::weak_ptr<::ElementConstructorContainerManagerModel> containerManagerModel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
 
+    MCNAPI void $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+
+    MCNAPI void $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+
+    MCNAPI int $handleAutoPlace(
+        ::SlotData const&                     srcSlot,
+        int                                   amount,
+        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
+        ::std::vector<::AutoPlaceResult>&     destinations
+    );
+
+    MCNAPI void $handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type);
+
+    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
+
+    MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
+
+    MCNAPI ::CreateContainerItemScope
+    $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& amount);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,11 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/OutputFileStream.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/network/TrackerType.h"
 #include "mc/util/ProfilerLiteTelemetry.h"
 
 // auto generated forward declare list
 // clang-format off
 class _ProfilerLiteTimer;
+struct NetworkStatMetrics;
+struct ProfilerResourceUsage;
+namespace Bedrock { class ScopeExit; }
+namespace Core { class Path; }
 // clang-format on
 
 class ProfilerLite {
@@ -47,6 +52,20 @@ public:
         RenderTickLast  = 15,
     };
 
+    struct RealtimeFrameData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, uint>                       mGameUpdates;
+        ::ll::TypedStorage<4, 4, uint>                       mFrames;
+        ::ll::TypedStorage<4, 4, float>                      mFPS;
+        ::ll::TypedStorage<4, 4, float>                      mGameUpdateFPS;
+        ::ll::TypedStorage<4, 4, float>                      mFrameTime;
+        ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> mLastFrame;
+        ::ll::TypedStorage<1, 1, bool>                       mFirstFrame;
+        // NOLINTEND
+    };
+
     struct ScopedData {
     public:
         // member variables
@@ -67,6 +86,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI_C void resetRecursive();
+
         MCNAPI ~ScopedData();
         // NOLINTEND
 
@@ -74,20 +95,6 @@ public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
-    struct RealtimeFrameData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, uint>                       mGameUpdates;
-        ::ll::TypedStorage<4, 4, uint>                       mFrames;
-        ::ll::TypedStorage<4, 4, float>                      mFPS;
-        ::ll::TypedStorage<4, 4, float>                      mGameUpdateFPS;
-        ::ll::TypedStorage<4, 4, float>                      mFrameTime;
-        ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> mLastFrame;
-        ::ll::TypedStorage<1, 1, bool>                       mFirstFrame;
         // NOLINTEND
     };
 
@@ -140,7 +147,42 @@ public:
     // NOLINTBEGIN
     MCAPI ProfilerLite();
 
+    MCAPI_C void _calculateRealtimeFrameData();
+
+    MCAPI_C void _getProfileStringRecursive(
+        ::ProfilerLite::ScopedData& scope,
+        uint64&                     writeCount,
+        uint64&                     remainingLength,
+        char*&                      stringBuilderTemp
+    );
+
+    MCFOLD_C void _shutdown();
+
+    MCAPI_C ::Bedrock::ScopeExit init(::Core::Path const& logFilePath);
+
+    MCAPI_C void logScreenCreationEvent(::std::string const& screenName, double creationTime, uchar clientID);
+
+    MCAPI_C void reset();
+
+    MCAPI_C bool tick(
+        bool                           isVSynced,
+        bool                           frameDiscarded,
+        bool                           outputProfilerInfo,
+        int                            benchmarkModeStartTime,
+        ::ProfilerResourceUsage const& resources,
+        bool                           logPackets
+    );
+
     MCAPI ~ProfilerLite();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static void
+    _writeHeadersIfEmpty(::std::string const& header, ::Core::Path logFileName, ::Core::OutputFileStream& file);
+
+    MCAPI_C static void getNetworkStats(::NetworkStatMetrics& stats, uint& lastSampleNum, ::TrackerType type);
     // NOLINTEND
 
 public:

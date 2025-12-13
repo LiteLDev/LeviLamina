@@ -13,7 +13,7 @@ namespace SharedTypes::v1_21_110 { struct BiomeJsonDocument; }
 namespace BiomeLegacyUpgrader {
 // functions
 // NOLINTBEGIN
-MCAPI ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject
+MCNAPI ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject
 upgradeBiomeLegacy(::SharedTypes::v1_21_110::BiomeJsonDocument oldDocument);
 // NOLINTEND
 

@@ -16,40 +16,45 @@ class EndCityStart : public ::StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsValid;
+    ::ll::UntypedStorage<1, 1> mUnkbd36dc;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    EndCityStart& operator=(EndCityStart const&);
+    EndCityStart(EndCityStart const&);
+    EndCityStart();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EndCityStart() /*override*/ = default;
 
-    // vIndex: 2
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getStructureName() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _create(::Dimension& dimension, ::Random& random, ::ChunkPos const& pos);
+    MCNAPI void _create(::Dimension& dimension, ::Random& random, ::ChunkPos const& pos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int getYPositionForFeature(::ChunkPos const& pos, ::Dimension& dimension);
+    MCNAPI static int getYPositionForFeature(::ChunkPos const& pos, ::Dimension& dimension);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI ::std::string_view $getStructureName() const;
+    MCNAPI ::std::string_view $getStructureName() const;
+
+
     // NOLINTEND
 
 public:

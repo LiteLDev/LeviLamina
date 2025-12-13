@@ -85,7 +85,11 @@ public:
     // clang-format on
 
     // LevelChunk inner types define
-    using BiomeSmallVector = ::Bedrock::small_vector<::gsl::not_null<::Biome const*>, 4>;
+    enum class DeserializeEntityResult : int {
+        FailedToLoadActor  = 0,
+        FailedToAddToLevel = 1,
+        Succeeded          = 2,
+    };
 
     enum class Finalization : int {
         NeedsInstaticking = 0,
@@ -107,6 +111,15 @@ public:
         // NOLINTEND
     };
 
+    struct SpawningArea {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 24, ::BoundingBox>           aabb;
+        ::ll::TypedStorage<1, 1, ::HardcodedSpawnAreaType> type;
+        // NOLINTEND
+    };
+
     struct Telemetry {
     public:
         // member variables
@@ -118,26 +131,13 @@ public:
         // NOLINTEND
     };
 
-    using BlockList = ::std::vector<::BlockPos>;
+    using BBorder = bool;
+
+    using BiomeSmallVector = ::Bedrock::small_vector<::gsl::not_null<::Biome const*>, 4>;
 
     using BlockActorVector = ::std::vector<::std::shared_ptr<::BlockActor>>;
 
-    struct SpawningArea {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 24, ::BoundingBox>           aabb;
-        ::ll::TypedStorage<1, 1, ::HardcodedSpawnAreaType> type;
-        // NOLINTEND
-    };
-
-    using BBorder = bool;
-
-    enum class DeserializeEntityResult : int {
-        FailedToLoadActor  = 0,
-        FailedToAddToLevel = 1,
-        Succeeded          = 2,
-    };
+    using BlockList = ::std::vector<::BlockPos>;
 
 public:
     // member variables
@@ -287,6 +287,11 @@ public:
 
     MCAPI ::gsl::not_null<::Biome const*> const _getDefaultBiome() const;
 
+    MCAPI_C void _handleHeightmapDataFromSubChunkPacketWithDeserializationChanges(
+        short                                       subChunkIndex,
+        ::SubChunkPacket::SubChunkPacketData const& subChunkPacketData
+    );
+
     MCAPI void _lightingCallbacks(
         ::ChunkBlockPos const& pos,
         ::Block const&         old,
@@ -346,11 +351,17 @@ public:
 
     MCAPI bool checkSeasonsPostProcessDirty();
 
+    MCAPI_C void clearBlockEntitiesInSubChunk(schar absoluteIndex);
+
     MCAPI void clientSubChunkRequestGenerateLightingForSubChunk(::ChunkViewSource& neighborhood, short absoluteIndex);
 
-    MCAPI void deserialize2DMaps(::IDataInput& stream);
+    MCAPI_S void deserialize2DMaps(::IDataInput& stream);
+
+    MCAPI_C void deserializeBiomes(::IDataInput& stream, bool fromNetwork);
 
     MCAPI void deserializeBlockEntities(::IDataInput& stream);
+
+    MCAPI_C void deserializeBorderBlocks(::IDataInput& stream);
 
     MCAPI bool deserializeKey(::std::string_view key, ::std::string_view value);
 
@@ -403,6 +414,8 @@ public:
 
     MCAPI ::BrightnessPair getBrightness(::ChunkBlockPos const& pos) const;
 
+    MCAPI_C ::std::array<::ChunkLocalHeight, 256> getEntireLightingHeightMap() const;
+
     MCAPI void getEntities(
         ::gsl::span<::gsl::not_null<::Actor const*>> ignoredEntities,
         ::AABB const&                                bb,
@@ -419,7 +432,15 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunkMetaData> getMetaDataCopy() const;
 
+    MCAPI_C ::SubChunk* getSubChunk(short absoluteIndex);
+
     MCAPI ::BlockPos const getTopRainBlockPos(::ChunkBlockPos const& pos);
+
+    MCAPI_C void handleHeightmapDataFromSubChunkPacket(
+        short                                       subChunkAbsoluteIndex,
+        ::SubChunkPacket::SubChunkPacketData const& subChunkPacketData,
+        ::std::optional<::DeserializationChanges*>  deserializationChanges
+    );
 
     MCAPI bool hasEntity(::WeakEntityRef entityRef);
 
@@ -447,6 +468,8 @@ public:
         short                                 subChunkAbsoluteIndex,
         ::SubChunkPacket::SubChunkPacketData& subChunkPacketData
     ) const;
+
+    MCAPI_C void recalculateChunkSkyLight();
 
     MCAPI void recomputeHeightMap(bool resetLighting);
 
@@ -492,6 +515,8 @@ public:
 
     MCAPI void setBlockVolume(::BlockVolume const& box, uint yOffset);
 
+    MCAPI_C void setClientNeedsToRequestSubchunks(::std::optional<uint64> requestLimit);
+
     MCAPI ::Block const&
     setExtraBlock(::ChunkBlockPos const& localPos, ::Block const& block, ::BlockSource* issuingSource);
 
@@ -523,6 +548,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI_C static ::std::unique_ptr<::LevelChunk>
+    createNewNoCustomDeleter(::Dimension& dimension, ::ChunkPos cp, bool readOnly, ::SubChunkInitMode initBlocks);
+
     MCAPI static ::std::pair<ushort, ::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>>> deserialize3DBiomes(
         ::IDataInput&          stream,
         ::BiomeRegistry const& biomeRegistry,

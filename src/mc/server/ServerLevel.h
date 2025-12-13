@@ -96,10 +96,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ServerLevel() /*override*/;
 
-    // vIndex: 1
     virtual bool initialize(
         ::std::string const&   levelName,
         ::LevelSettings const& levelSettings,
@@ -110,91 +108,70 @@ public:
             biomeIdToResolvedData
     ) /*override*/;
 
-    // vIndex: 392
     virtual ::PlayerSleepManager const& getPlayerSleepManager() const /*override*/;
 
-    // vIndex: 391
     virtual ::PlayerSleepManager& getPlayerSleepManager() /*override*/;
 
-    // vIndex: 159
     virtual ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> getServerPlayerSleepManager() /*override*/;
 
-    // vIndex: 158
     virtual ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> getServerPlayerSleepManager() const
         /*override*/;
 
-    // vIndex: 160
     virtual void setCommandsEnabled(bool commandsEnabled) /*override*/;
 
-    // vIndex: 161
     virtual void setWorldTemplateOptionsUnlocked() /*override*/;
 
-    // vIndex: 274
     virtual ::ResourcePackManager* getClientResourcePackManager() const /*override*/;
 
-    // vIndex: 275
     virtual ::ResourcePackManager* getServerResourcePackManager() const /*override*/;
 
-    // vIndex: 276
     virtual ::TradeTables* getTradeTables() /*override*/;
 
-    // vIndex: 291
+    virtual void runCommand(
+        ::HashedString const&     commandStr,
+        ::CommandOrigin&          origin,
+        ::CommandOriginSystem     originSystem,
+        ::CurrentCmdVersion const commandVersion
+    ) /*override*/;
+
     virtual void
-    runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const) /*override*/;
+    runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem) /*override*/;
 
-    // vIndex: 290
-    virtual void runCommand(::Command&, ::CommandOrigin&, ::CommandOriginSystem) /*override*/;
-
-    // vIndex: 277
     virtual void decrementTagCache(
         ::std::string const& tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) /*override*/;
 
-    // vIndex: 278
     virtual void incrementTagCache(
         ::std::string const& tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) /*override*/;
 
-    // vIndex: 279
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
 
-    // vIndex: 230
     virtual ::LevelChunkMetaDataManager* getLevelChunkMetaDataManager() /*override*/;
 
-    // vIndex: 237
     virtual void loadFunctionManager() /*override*/;
 
-    // vIndex: 324
     virtual ::Random& getThreadRandom() const /*override*/;
 
-    // vIndex: 303
     virtual ::PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer() const /*override*/;
 
-    // vIndex: 289
     virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const
         /*override*/;
 
-    // vIndex: 370
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() /*override*/;
 
-    // vIndex: 369
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const /*override*/;
 
-    // vIndex: 371
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() /*override*/;
 
-    // vIndex: 393
     virtual void _subTick() /*override*/;
 
-    // vIndex: 386
     virtual ::PlayerDeathManager* _getPlayerDeathManager() /*override*/;
 
-    // vIndex: 387
     virtual ::MapDataManager& _getMapDataManager() /*override*/;
 
-    // vIndex: 394
     virtual void _initializeMapDataManager() /*override*/;
     // NOLINTEND
 
@@ -332,6 +309,19 @@ public:
     MCAPI ::MapDataManager& $_getMapDataManager();
 
     MCAPI void $_initializeMapDataManager();
+
+#ifdef LL_PLAT_C
+    MCAPI void $runCommand(
+        ::HashedString const&     commandStr,
+        ::CommandOrigin&          origin,
+        ::CommandOriginSystem     originSystem,
+        ::CurrentCmdVersion const commandVersion
+    );
+
+    MCAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
+#endif
+
+
     // NOLINTEND
 
 public:

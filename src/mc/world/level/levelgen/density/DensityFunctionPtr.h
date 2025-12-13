@@ -2,15 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class IDensityFunction;
-// clang-format on
-
 struct DensityFunctionPtr {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::IDensityFunction>>> mDensityFunction;
+    ::ll::UntypedStorage<8, 16> mUnk9282e3;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DensityFunctionPtr& operator=(DensityFunctionPtr const&);
+    DensityFunctionPtr(DensityFunctionPtr const&);
+    DensityFunctionPtr();
 };

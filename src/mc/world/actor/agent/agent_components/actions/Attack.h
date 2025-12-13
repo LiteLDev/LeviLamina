@@ -2,17 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/agent/agent_components/Direction.h"
-
 namespace AgentComponents::Actions {
 
 struct Attack {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::AgentComponents::Direction> dir;
+    ::ll::UntypedStorage<1, 1> mUnkf5c726;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Attack& operator=(Attack const&);
+    Attack(Attack const&);
+    Attack();
 };
 
 } // namespace AgentComponents::Actions

@@ -12,16 +12,12 @@ class DeferredSubscriptionBase : public ::Bedrock::PubSub::Detail::SubscriptionB
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual uint64 runDeferredEvents(uint64) = 0;
 
-    // vIndex: 2
     virtual uint64 runDeferredEventsForDuration(::std::chrono::milliseconds) = 0;
 
-    // vIndex: 3
     virtual ::Bedrock::PubSub::DeferralType getDeferralType() const = 0;
 
-    // vIndex: 0
     virtual ~DeferredSubscriptionBase() /*override*/ = default;
     // NOLINTEND
 

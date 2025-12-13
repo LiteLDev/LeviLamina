@@ -19,16 +19,12 @@ class DefaultSculkBehavior : public ::SculkBehavior {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual int updateDecayDelay(int const currentValue) const /*override*/;
 
-    // vIndex: 1
     virtual int updateFacingData(int const currentValue, ::Block const&) const /*override*/;
 
-    // vIndex: 2
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
-    // vIndex: 3
     virtual bool attemptSpreadVeins(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
@@ -37,7 +33,6 @@ public:
         ::SculkSpreader&
     ) const /*override*/;
 
-    // vIndex: 4
     virtual int attemptUseCharge(
         ::IBlockWorldGenAPI&,
         ::BlockSource*,
@@ -50,20 +45,19 @@ public:
         bool const
     ) const /*override*/;
 
-    // vIndex: 5
     virtual void onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $updateDecayDelay(int const currentValue) const;
+    MCNAPI int $updateDecayDelay(int const currentValue) const;
 
-    MCFOLD int $updateFacingData(int const currentValue, ::Block const&) const;
+    MCNAPI int $updateFacingData(int const currentValue, ::Block const&) const;
 
-    MCFOLD bool $canChangeBlockOnSpread() const;
+    MCNAPI bool $canChangeBlockOnSpread() const;
 
-    MCAPI bool $attemptSpreadVeins(
+    MCNAPI bool $attemptSpreadVeins(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Block const&       block,
@@ -71,7 +65,7 @@ public:
         ::SculkSpreader&
     ) const;
 
-    MCAPI int $attemptUseCharge(
+    MCNAPI int $attemptUseCharge(
         ::IBlockWorldGenAPI&,
         ::BlockSource*,
         ::BlockPos const&,
@@ -83,7 +77,9 @@ public:
         bool const
     ) const;
 
-    MCFOLD void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
+    MCNAPI void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
+
+
     // NOLINTEND
 
 public:

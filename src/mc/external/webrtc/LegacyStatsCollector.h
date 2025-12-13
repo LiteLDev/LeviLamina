@@ -30,8 +30,8 @@ class LegacyStatsCollector : public ::webrtc::LegacyStatsCollectorInterface {
 public:
     // LegacyStatsCollector inner types declare
     // clang-format off
-    struct SessionStats;
     struct TransportStats;
+    struct SessionStats;
     // clang-format on
 
     // LegacyStatsCollector inner types define
@@ -120,22 +120,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LegacyStatsCollector() /*override*/;
 
-    // vIndex: 1
     virtual void AddLocalAudioTrack(::webrtc::AudioTrackInterface* audio_track, uint ssrc) /*override*/;
 
-    // vIndex: 2
     virtual void RemoveLocalAudioTrack(::webrtc::AudioTrackInterface* audio_track, uint ssrc) /*override*/;
 
-    // vIndex: 3
     virtual void GetStats(
         ::webrtc::MediaStreamTrackInterface*         track,
         ::std::vector<::webrtc::StatsReport const*>* reports
     ) /*override*/;
 
-    // vIndex: 4
     virtual double GetTimeNow();
     // NOLINTEND
 
@@ -235,6 +230,8 @@ public:
     $GetStats(::webrtc::MediaStreamTrackInterface* track, ::std::vector<::webrtc::StatsReport const*>* reports);
 
     MCNAPI double $GetTimeNow();
+
+
     // NOLINTEND
 
 public:

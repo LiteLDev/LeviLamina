@@ -31,11 +31,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~MusicClientBiomeJsonComponent() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~MusicClientBiomeJsonComponent() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -53,9 +56,17 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::ClientBiomeComponentVersion $getType() const;
+
+
     // NOLINTEND
 
 public:

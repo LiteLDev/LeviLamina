@@ -4,13 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/puv/SlicedLoader.h"
-#include "mc/deps/shared_types/v1_21_120/biome/BiomeJsonDocument.h"
 #include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 
 // auto generated forward declare list
 // clang-format off
-class BedrockLoadContext;
 class BiomeRegistry;
 class LinkedAssetValidator;
 struct BiomeJsonDocumentGlue;
@@ -23,22 +20,19 @@ class BiomeJsonDocumentLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        192,
-        ::Puv::
-            SlicedLoader<::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject, ::BedrockLoadContext, nullptr_t>>
-        mPuvBiomeLoader;
+    ::ll::UntypedStorage<8, 192> mUnk6b4d50;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    BiomeJsonDocumentLoader& operator=(BiomeJsonDocumentLoader const&);
+    BiomeJsonDocumentLoader(BiomeJsonDocumentLoader const&);
     BiomeJsonDocumentLoader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeJsonDocumentLoader(
+    MCNAPI BiomeJsonDocumentLoader(
         ::cereal::ReflectionCtx&                           ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
         ::BiomeJsonDocumentGlue&                           biomeJsonDocumentGlue,
@@ -49,15 +43,15 @@ public:
             biomeIdToResolvedData
     );
 
-    MCAPI void load(::Puv::Input const& input) const;
+    MCNAPI void load(::Puv::Input const& input) const;
 
-    MCAPI ~BiomeJsonDocumentLoader();
+    MCNAPI ~BiomeJsonDocumentLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::cereal::ReflectionCtx&                           ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
         ::BiomeJsonDocumentGlue&                           biomeJsonDocumentGlue,
@@ -72,6 +66,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

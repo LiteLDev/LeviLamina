@@ -12,7 +12,7 @@ class Player;
 namespace SculkShriekerBlockActorInternal {
 // functions
 // NOLINTBEGIN
-MCAPI void _shriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
+MCNAPI void _shriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
 // NOLINTEND
 
 } // namespace SculkShriekerBlockActorInternal

@@ -33,12 +33,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~BlockTryPlaceByPlayerEvent();
+    MCNAPI ~BlockTryPlaceByPlayerEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

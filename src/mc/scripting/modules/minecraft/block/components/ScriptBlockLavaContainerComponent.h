@@ -25,7 +25,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptBlockLavaContainerComponent() /*override*/ = default;
     // NOLINTEND
 

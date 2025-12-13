@@ -2,17 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/legacy/ActorUniqueID.h"
-#include "mc/network/packet/PlayerInputTick.h"
-#include "mc/world/level/GameType.h"
-
 struct UpdatePlayerGameTypePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::GameType>        mPlayerGameType;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>   mTargetPlayer;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick> mTick;
+    ::ll::UntypedStorage<4, 4> mUnk93e49d;
+    ::ll::UntypedStorage<8, 8> mUnkc00c48;
+    ::ll::UntypedStorage<8, 8> mUnk6ab1a2;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UpdatePlayerGameTypePacketPayload& operator=(UpdatePlayerGameTypePacketPayload const&);
+    UpdatePlayerGameTypePacketPayload(UpdatePlayerGameTypePacketPayload const&);
+    UpdatePlayerGameTypePacketPayload();
 };

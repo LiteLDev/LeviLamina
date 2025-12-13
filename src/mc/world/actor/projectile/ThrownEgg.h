@@ -15,16 +15,18 @@ class ThrownEgg : public ::Throwable {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 8
     virtual ~ThrownEgg() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+#endif
+
 
     // NOLINTEND
 

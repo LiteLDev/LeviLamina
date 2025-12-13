@@ -68,6 +68,85 @@ public:
     // clang-format on
 
     // SdpOfferAnswerHandler inner types define
+    enum class SessionError : int {
+        KNone      = 0,
+        KContent   = 1,
+        KTransport = 2,
+    };
+
+    class ImplicitCreateSessionDescriptionObserver : public ::webrtc::CreateSessionDescriptionObserver {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnk1972e1;
+        ::ll::UntypedStorage<8, 16> mUnkb3ce39;
+        ::ll::UntypedStorage<8, 8>  mUnkcb15ee;
+        ::ll::UntypedStorage<8, 64> mUnk801993;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ImplicitCreateSessionDescriptionObserver& operator=(ImplicitCreateSessionDescriptionObserver const&);
+        ImplicitCreateSessionDescriptionObserver(ImplicitCreateSessionDescriptionObserver const&);
+        ImplicitCreateSessionDescriptionObserver();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ~ImplicitCreateSessionDescriptionObserver() /*override*/;
+
+        virtual void OnSuccess(::webrtc::SessionDescriptionInterface* desc_ptr) /*override*/;
+
+        virtual void OnFailure(::webrtc::RTCError error) /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI void $OnSuccess(::webrtc::SessionDescriptionInterface* desc_ptr);
+
+        MCNAPI void $OnFailure(::webrtc::RTCError error);
+
+
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+    class LocalIceCredentialsToReplace {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk44201b;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LocalIceCredentialsToReplace& operator=(LocalIceCredentialsToReplace const&);
+        LocalIceCredentialsToReplace(LocalIceCredentialsToReplace const&);
+        LocalIceCredentialsToReplace();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI void AppendIceCredentialsFromSessionDescription(::webrtc::SessionDescriptionInterface const& desc);
+
+        MCNAPI void ClearIceCredentials();
+
+        MCNAPI bool SatisfiesIceRestart(::webrtc::SessionDescriptionInterface const& local_description) const;
+        // NOLINTEND
+    };
+
     class RemoteDescriptionOperation {
     public:
         // member variables
@@ -126,56 +205,6 @@ public:
         // NOLINTEND
     };
 
-    class ImplicitCreateSessionDescriptionObserver : public ::webrtc::CreateSessionDescriptionObserver {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk1972e1;
-        ::ll::UntypedStorage<8, 16> mUnkb3ce39;
-        ::ll::UntypedStorage<8, 8>  mUnkcb15ee;
-        ::ll::UntypedStorage<8, 64> mUnk801993;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ImplicitCreateSessionDescriptionObserver& operator=(ImplicitCreateSessionDescriptionObserver const&);
-        ImplicitCreateSessionDescriptionObserver(ImplicitCreateSessionDescriptionObserver const&);
-        ImplicitCreateSessionDescriptionObserver();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 2
-        virtual ~ImplicitCreateSessionDescriptionObserver() /*override*/;
-
-        // vIndex: 3
-        virtual void OnSuccess(::webrtc::SessionDescriptionInterface* desc_ptr) /*override*/;
-
-        // vIndex: 4
-        virtual void OnFailure(::webrtc::RTCError error) /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $OnSuccess(::webrtc::SessionDescriptionInterface* desc_ptr);
-
-        MCNAPI void $OnFailure(::webrtc::RTCError error);
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
     class SetSessionDescriptionObserverAdapter : public ::webrtc::SetLocalDescriptionObserverInterface,
                                                  public ::webrtc::SetRemoteDescriptionObserverInterface {
     public:
@@ -194,13 +223,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 3
         virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError error) /*override*/;
 
-        // vIndex: 3
         virtual void OnSetRemoteDescriptionComplete(::webrtc::RTCError error) /*override*/;
 
-        // vIndex: 2
         virtual ~SetSessionDescriptionObserverAdapter() /*override*/ = default;
         // NOLINTEND
 
@@ -216,6 +242,8 @@ public:
         MCNAPI void $OnSetLocalDescriptionComplete(::webrtc::RTCError error);
 
         MCNAPI void $OnSetRemoteDescriptionComplete(::webrtc::RTCError error);
+
+
         // NOLINTEND
 
     public:
@@ -224,36 +252,6 @@ public:
         MCNAPI static void** $vftableForSetLocalDescriptionObserverInterface();
 
         MCNAPI static void** $vftableForSetRemoteDescriptionObserverInterface();
-        // NOLINTEND
-    };
-
-    enum class SessionError : int {
-        KNone      = 0,
-        KContent   = 1,
-        KTransport = 2,
-    };
-
-    class LocalIceCredentialsToReplace {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk44201b;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LocalIceCredentialsToReplace& operator=(LocalIceCredentialsToReplace const&);
-        LocalIceCredentialsToReplace(LocalIceCredentialsToReplace const&);
-        LocalIceCredentialsToReplace();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void AppendIceCredentialsFromSessionDescription(::webrtc::SessionDescriptionInterface const& desc);
-
-        MCNAPI void ClearIceCredentials();
-
-        MCNAPI bool SatisfiesIceRestart(::webrtc::SessionDescriptionInterface const& local_description) const;
         // NOLINTEND
     };
 
@@ -302,37 +300,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SdpOfferAnswerHandler() /*override*/;
 
-    // vIndex: 1
     virtual ::webrtc::PeerConnectionInterface::SignalingState signaling_state() const /*override*/;
 
-    // vIndex: 2
     virtual ::webrtc::SessionDescriptionInterface const* local_description() const /*override*/;
 
-    // vIndex: 3
     virtual ::webrtc::SessionDescriptionInterface const* remote_description() const /*override*/;
 
-    // vIndex: 4
     virtual ::webrtc::SessionDescriptionInterface const* current_local_description() const /*override*/;
 
-    // vIndex: 5
     virtual ::webrtc::SessionDescriptionInterface const* current_remote_description() const /*override*/;
 
-    // vIndex: 6
     virtual ::webrtc::SessionDescriptionInterface const* pending_local_description() const /*override*/;
 
-    // vIndex: 7
     virtual ::webrtc::SessionDescriptionInterface const* pending_remote_description() const /*override*/;
 
-    // vIndex: 8
     virtual bool NeedsIceRestart(::std::string const& content_name) const /*override*/;
 
-    // vIndex: 9
     virtual bool IceRestartPending(::std::string const& content_name) const /*override*/;
 
-    // vIndex: 10
     virtual ::std::optional<::rtc::SSLRole> GetDtlsRole(::std::string const& mid) const /*override*/;
     // NOLINTEND
 
@@ -584,9 +571,9 @@ public:
         ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>* removed_streams
     );
 
-    MCNAPI void SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer);
-
     MCNAPI void SetLocalDescription(::webrtc::SetSessionDescriptionObserver* observer);
+
+    MCNAPI void SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> observer);
 
     MCNAPI void SetLocalDescription(
         ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                desc,
@@ -742,6 +729,8 @@ public:
     MCNAPI bool $IceRestartPending(::std::string const& content_name) const;
 
     MCNAPI ::std::optional<::rtc::SSLRole> $GetDtlsRole(::std::string const& mid) const;
+
+
     // NOLINTEND
 
 public:

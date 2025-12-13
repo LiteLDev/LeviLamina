@@ -16,10 +16,8 @@ class UsedPayloadTypes : public ::cricket::UsedIds<::cricket::Codec> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool IsIdUsed(int new_id) /*override*/;
 
-    // vIndex: 0
     virtual ~UsedPayloadTypes() /*override*/;
     // NOLINTEND
 
@@ -33,6 +31,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $IsIdUsed(int new_id);
+
+
     // NOLINTEND
 
 public:

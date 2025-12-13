@@ -20,9 +20,9 @@ class SubChunkPacket : public ::Packet {
 public:
     // SubChunkPacket inner types declare
     // clang-format off
+    struct SubChunkPosOffset;
     struct HeightmapData;
     struct SubChunkPacketData;
-    struct SubChunkPosOffset;
     // clang-format on
 
     // SubChunkPacket inner types define
@@ -44,6 +44,16 @@ public:
         SuccessAllAir         = 6,
     };
 
+    struct SubChunkPosOffset {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, char> mX;
+        ::ll::TypedStorage<1, 1, char> mY;
+        ::ll::TypedStorage<1, 1, char> mZ;
+        // NOLINTEND
+    };
+
     struct HeightmapData {
     public:
         // member variables
@@ -57,19 +67,9 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
+        MCNAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
 
-        MCAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
-        // NOLINTEND
-    };
-
-    struct SubChunkPosOffset {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, char> mX;
-        ::ll::TypedStorage<1, 1, char> mY;
-        ::ll::TypedStorage<1, 1, char> mZ;
+        MCNAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
         // NOLINTEND
     };
 
@@ -135,19 +135,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SubChunkPacket() /*override*/;
 
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
@@ -179,6 +174,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

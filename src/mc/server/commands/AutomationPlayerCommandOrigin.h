@@ -33,31 +33,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~AutomationPlayerCommandOrigin() /*override*/ = default;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 1
     virtual ::std::string const& getRequestId() const /*override*/;
 
-    // vIndex: 10
     virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
-    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const /*override*/;
 
-    // vIndex: 24
     virtual ::CommandOriginData toCommandOriginData() const /*override*/;
 
-    // vIndex: 19
     virtual ::NetworkIdentifier const& getSourceId() const /*override*/;
 
-    // vIndex: 29
     virtual ::CompoundTag serialize() const /*override*/;
 
-    // vIndex: 30
     virtual bool isValid() const /*override*/;
     // NOLINTEND
 
@@ -101,6 +92,8 @@ public:
     MCNAPI ::CompoundTag $serialize() const;
 
     MCNAPI bool $isValid() const;
+
+
     // NOLINTEND
 
 public:

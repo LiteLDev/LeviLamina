@@ -19,31 +19,22 @@ class VoiceMediaSendChannelInterface : public ::cricket::MediaSendChannelInterfa
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 22
     virtual bool SetSenderParameters(::cricket::AudioSenderParameter const&) = 0;
 
-    // vIndex: 23
     virtual void SetSend(bool) = 0;
 
-    // vIndex: 24
     virtual bool SetAudioSend(uint, bool, ::cricket::AudioOptions const*, ::cricket::AudioSource*) = 0;
 
-    // vIndex: 25
     virtual bool CanInsertDtmf() = 0;
 
-    // vIndex: 26
     virtual bool InsertDtmf(uint, int, int) = 0;
 
-    // vIndex: 27
     virtual bool GetStats(::cricket::VoiceMediaSendInfo*) = 0;
 
-    // vIndex: 28
     virtual bool SenderNackEnabled() const = 0;
 
-    // vIndex: 29
     virtual bool SenderNonSenderRttEnabled() const = 0;
 
-    // vIndex: 0
     virtual ~VoiceMediaSendChannelInterface() /*override*/ = default;
     // NOLINTEND
 

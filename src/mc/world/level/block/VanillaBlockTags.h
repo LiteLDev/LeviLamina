@@ -10,89 +10,89 @@ class HashedString;
 namespace VanillaBlockTags {
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString const& Acacia();
+MCNAPI ::HashedString const& Acacia();
 
-MCAPI ::HashedString const& Birch();
+MCNAPI ::HashedString const& Birch();
 
-MCAPI ::HashedString const& Crop();
+MCNAPI ::HashedString const& Crop();
 
-MCAPI ::HashedString const& DarkOak();
+MCNAPI ::HashedString const& DarkOak();
 
-MCAPI ::HashedString const& DiamondDiggable();
+MCNAPI ::HashedString const& DiamondDiggable();
 
-MCAPI ::HashedString const& Dirt();
+MCNAPI ::HashedString const& Dirt();
 
-MCAPI ::HashedString const& FertilizeArea();
+MCNAPI ::HashedString const& FertilizeArea();
 
-MCAPI ::HashedString const& GoldDiggable();
+MCNAPI ::HashedString const& GoldDiggable();
 
-MCAPI ::HashedString const& Grass();
+MCNAPI ::HashedString const& Grass();
 
-MCAPI ::HashedString const& Gravel();
+MCNAPI ::HashedString const& Gravel();
 
-MCAPI ::HashedString const& IronDiggable();
+MCNAPI ::HashedString const& IronDiggable();
 
-MCAPI ::HashedString const& IsAxeItemDestructible();
+MCNAPI ::HashedString const& IsAxeItemDestructible();
 
-MCAPI ::HashedString const& IsDestructibleByDiamondTier();
+MCNAPI ::HashedString const& IsDestructibleByDiamondTier();
 
-MCAPI ::HashedString const& IsDestructibleByIronTier();
+MCNAPI ::HashedString const& IsDestructibleByIronTier();
 
-MCAPI ::HashedString const& IsDestructibleByNetheriteTier();
+MCNAPI ::HashedString const& IsDestructibleByNetheriteTier();
 
-MCAPI ::HashedString const& IsDestructibleByStoneTier();
+MCNAPI ::HashedString const& IsDestructibleByStoneTier();
 
-MCAPI ::HashedString const& IsHoeItemDestructible();
+MCNAPI ::HashedString const& IsHoeItemDestructible();
 
-MCAPI ::HashedString const& IsMaceItemDestructible();
+MCNAPI ::HashedString const& IsMaceItemDestructible();
 
-MCAPI ::HashedString const& IsPickaxeItemDestructible();
+MCNAPI ::HashedString const& IsPickaxeItemDestructible();
 
-MCAPI ::HashedString const& IsShearsItemDestructible();
+MCNAPI ::HashedString const& IsShearsItemDestructible();
 
-MCAPI ::HashedString const& IsShovelItemDestructible();
+MCNAPI ::HashedString const& IsShovelItemDestructible();
 
-MCAPI ::HashedString const& IsSwordItemDestructible();
+MCNAPI ::HashedString const& IsSwordItemDestructible();
 
-MCAPI ::HashedString const& Jungle();
+MCNAPI ::HashedString const& Jungle();
 
-MCAPI ::HashedString const& Log();
+MCNAPI ::HashedString const& Log();
 
-MCAPI ::HashedString const& Metal();
+MCNAPI ::HashedString const& Metal();
 
-MCAPI ::HashedString const& MobSpawner();
+MCNAPI ::HashedString const& MobSpawner();
 
-MCAPI ::HashedString const& NotFeatureReplaceable();
+MCNAPI ::HashedString const& NotFeatureReplaceable();
 
-MCAPI ::HashedString const& Oak();
+MCNAPI ::HashedString const& Oak();
 
-MCAPI ::HashedString const& OneWayCollidable();
+MCNAPI ::HashedString const& OneWayCollidable();
 
-MCAPI ::HashedString const& Plant();
+MCNAPI ::HashedString const& Plant();
 
-MCAPI ::HashedString const& Pumpkin();
+MCNAPI ::HashedString const& Pumpkin();
 
-MCAPI ::HashedString const& Rail();
+MCNAPI ::HashedString const& Rail();
 
-MCAPI ::HashedString const& Sand();
+MCNAPI ::HashedString const& Sand();
 
-MCAPI ::HashedString const& Snow();
+MCNAPI ::HashedString const& Snow();
 
-MCAPI ::HashedString const& Spruce();
+MCNAPI ::HashedString const& Spruce();
 
-MCAPI ::HashedString const& Stone();
+MCNAPI ::HashedString const& Stone();
 
-MCAPI ::HashedString const& StoneDiggable();
+MCNAPI ::HashedString const& StoneDiggable();
 
-MCAPI ::HashedString const& TextSign();
+MCNAPI ::HashedString const& TextSign();
 
-MCAPI ::HashedString const& Trapdoors();
+MCNAPI ::HashedString const& Trapdoors();
 
-MCAPI ::HashedString const& Water();
+MCNAPI ::HashedString const& Water();
 
-MCAPI ::HashedString const& Wood();
+MCNAPI ::HashedString const& Wood();
 
-MCAPI ::HashedString const& WoodDiggable();
+MCNAPI ::HashedString const& WoodDiggable();
 // NOLINTEND
 
 } // namespace VanillaBlockTags

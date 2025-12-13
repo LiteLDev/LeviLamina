@@ -11,10 +11,8 @@ class FieldTrialBasedConfig : public ::webrtc::FieldTrialsRegistry {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ::std::string GetValue(::std::string_view key) const /*override*/;
 
-    // vIndex: 0
     virtual ~FieldTrialBasedConfig() /*override*/;
     // NOLINTEND
 
@@ -28,6 +26,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::string $GetValue(::std::string_view key) const;
+
+
     // NOLINTEND
 
 public:

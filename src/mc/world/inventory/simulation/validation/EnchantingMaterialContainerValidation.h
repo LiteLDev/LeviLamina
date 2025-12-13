@@ -15,7 +15,6 @@ class EnchantingMaterialContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const                       slot,
@@ -24,10 +23,8 @@ public:
         bool
     ) const /*override*/;
 
-    // vIndex: 8
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
-    // vIndex: 0
     virtual ~EnchantingMaterialContainerValidation() /*override*/ = default;
     // NOLINTEND
 
@@ -43,6 +40,8 @@ public:
     ) const;
 
     MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+
+
     // NOLINTEND
 
 public:

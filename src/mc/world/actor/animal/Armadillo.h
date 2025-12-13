@@ -15,10 +15,8 @@ class Armadillo : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 8
     virtual ~Armadillo() /*override*/ = default;
     // NOLINTEND
 
@@ -32,6 +30,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI float $getShadowRadius() const;
+
+
     // NOLINTEND
 
 public:

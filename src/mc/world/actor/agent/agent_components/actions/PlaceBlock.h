@@ -2,31 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/agent/agent_components/Direction.h"
-#include "mc/world/item/ItemStack.h"
-
 namespace AgentComponents::Actions {
 
 struct PlaceBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::AgentComponents::Direction> dir;
-    ::ll::TypedStorage<4, 4, int>                          slot;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                item;
+    ::ll::UntypedStorage<1, 1>   mUnk89eb99;
+    ::ll::UntypedStorage<4, 4>   mUnk93e46e;
+    ::ll::UntypedStorage<8, 152> mUnk728042;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlaceBlock& operator=(PlaceBlock const&);
+    PlaceBlock(PlaceBlock const&);
+    PlaceBlock();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PlaceBlock();
+    MCNAPI ~PlaceBlock();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

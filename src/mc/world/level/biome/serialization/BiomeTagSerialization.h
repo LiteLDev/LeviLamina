@@ -18,7 +18,7 @@ struct BiomeTagsData;
 namespace BiomeTagSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void serializeTagsData(
+MCNAPI void serializeTagsData(
     ::BiomeTagComponent const&                                                      tagComponent,
     ::BiomeTagsData&                                                                data,
     ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& tagRegistry,

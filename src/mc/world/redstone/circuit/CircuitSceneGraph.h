@@ -23,12 +23,6 @@ public:
     // clang-format on
 
     // CircuitSceneGraph inner types define
-    using ComponentMap = ::std::unordered_map<::BlockPos, ::std::unique_ptr<::BaseCircuitComponent>>;
-
-    using ComponentsPerPosMap = ::std::unordered_map<::BlockPos, ::CircuitComponentList>;
-
-    using ComponentsPerChunkMap = ::std::unordered_map<::BlockPos, ::ChunkCircuitComponentList>;
-
     class PendingEntry {
     public:
         // member variables
@@ -50,6 +44,12 @@ public:
         MCFOLD void $dtor();
         // NOLINTEND
     };
+
+    using ComponentMap = ::std::unordered_map<::BlockPos, ::std::unique_ptr<::BaseCircuitComponent>>;
+
+    using ComponentsPerChunkMap = ::std::unordered_map<::BlockPos, ::ChunkCircuitComponentList>;
+
+    using ComponentsPerPosMap = ::std::unordered_map<::BlockPos, ::CircuitComponentList>;
 
 public:
     // member variables

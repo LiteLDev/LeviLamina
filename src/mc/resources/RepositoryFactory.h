@@ -16,14 +16,11 @@ class RepositoryFactory : public ::IRepositoryFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::shared_ptr<::RepositorySources> createSources(::IResourcePackRepository const& repository) const
         /*override*/;
 
-    // vIndex: 2
     virtual ::std::unique_ptr<::IPackIOProvider> createIO() const /*override*/;
 
-    // vIndex: 0
     virtual ~RepositoryFactory() /*override*/ = default;
     // NOLINTEND
 
@@ -33,6 +30,8 @@ public:
     MCNAPI ::std::shared_ptr<::RepositorySources> $createSources(::IResourcePackRepository const& repository) const;
 
     MCNAPI ::std::unique_ptr<::IPackIOProvider> $createIO() const;
+
+
     // NOLINTEND
 
 public:

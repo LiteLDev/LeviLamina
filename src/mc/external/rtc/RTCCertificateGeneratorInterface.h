@@ -18,10 +18,8 @@ class RTCCertificateGeneratorInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~RTCCertificateGeneratorInterface() = default;
 
-    // vIndex: 1
     virtual void GenerateCertificateAsync(
         ::rtc::KeyParams const&,
         ::std::optional<uint64> const&,

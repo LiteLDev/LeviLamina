@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/agent/agent_commands/Command.h"
-#include "mc/world/item/ItemStack.h"
 
 namespace AgentCommands {
 
@@ -12,33 +11,37 @@ class GetItemDetailsCommand : public ::AgentCommands::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
+    ::ll::UntypedStorage<8, 152> mUnk61b09b;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    GetItemDetailsCommand& operator=(GetItemDetailsCommand const&);
+    GetItemDetailsCommand(GetItemDetailsCommand const&);
+    GetItemDetailsCommand();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void execute() /*override*/;
 
-    // vIndex: 2
     virtual bool isDone() /*override*/;
 
-    // vIndex: 4
     virtual void fireCommandDoneEvent() /*override*/;
 
-    // vIndex: 0
     virtual ~GetItemDetailsCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $execute();
+    MCNAPI void $execute();
 
-    MCFOLD bool $isDone();
+    MCNAPI bool $isDone();
 
-    MCAPI void $fireCommandDoneEvent();
+    MCNAPI void $fireCommandDoneEvent();
+
+
     // NOLINTEND
 
 public:

@@ -36,10 +36,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual int FindUnusedId() /*override*/;
 
-    // vIndex: 0
     virtual ~UsedRtpHeaderExtensionIds() /*override*/;
     // NOLINTEND
 
@@ -53,6 +51,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI int $FindUnusedId();
+
+
     // NOLINTEND
 
 public:

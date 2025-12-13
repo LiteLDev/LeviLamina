@@ -33,22 +33,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 0
     virtual ~BreedGoal() /*override*/ = default;
     // NOLINTEND
 
@@ -72,6 +66,8 @@ public:
     MCAPI void $tick();
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
+
+
     // NOLINTEND
 
 public:

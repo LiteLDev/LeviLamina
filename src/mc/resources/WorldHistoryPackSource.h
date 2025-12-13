@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/resources/PackSource.h"
 
 // auto generated forward declare list
@@ -35,16 +36,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WorldHistoryPackSource() /*override*/ = default;
 
-    // vIndex: 2
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
-    // vIndex: 3
     virtual ::PackType getPackType() const /*override*/;
 
-    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
     // NOLINTEND
 
@@ -59,6 +56,8 @@ public:
     MCNAPI ::std::unique_ptr<::Pack> _createPackFromHistoryPack(::WorldPackHistory const& worldPackHistory) const;
 
     MCNAPI bool _readWorldHistoryFile(::WorldPacksHistoryFile& file) const;
+
+    MCNAPI_C ::Bedrock::Threading::Async<void> saveHistoryFile();
     // NOLINTEND
 
 public:
@@ -69,6 +68,8 @@ public:
     MCNAPI ::PackType $getPackType() const;
 
     MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
+
+
     // NOLINTEND
 
 public:

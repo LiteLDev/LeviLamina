@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/level/levelgen/structure/Projection.h"
-
 struct JigsawJunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::BlockPos>  mSourceBlockPos;
-    ::ll::TypedStorage<4, 4, int>          mDeltaSourceY;
-    ::ll::TypedStorage<4, 4, int>          mDeltaTargetY;
-    ::ll::TypedStorage<1, 1, ::Projection> mSourceProjection;
-    ::ll::TypedStorage<1, 1, ::Projection> mTargetProjection;
+    ::ll::UntypedStorage<4, 12> mUnk4d5c4c;
+    ::ll::UntypedStorage<4, 4>  mUnk43184a;
+    ::ll::UntypedStorage<4, 4>  mUnkdb77fd;
+    ::ll::UntypedStorage<1, 1>  mUnkbf844f;
+    ::ll::UntypedStorage<1, 1>  mUnk4368b8;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    JigsawJunction& operator=(JigsawJunction const&);
+    JigsawJunction(JigsawJunction const&);
+    JigsawJunction();
 };

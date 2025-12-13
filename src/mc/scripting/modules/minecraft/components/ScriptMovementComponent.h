@@ -17,7 +17,6 @@ class ScriptMovementComponent : public ::ScriptModuleMinecraft::AttributeScriptA
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptMovementComponent() /*override*/ = default;
     // NOLINTEND
 

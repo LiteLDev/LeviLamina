@@ -21,7 +21,6 @@ class ClientRequestPlaceholderBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual ::HitResult clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
@@ -32,7 +31,6 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~ClientRequestPlaceholderBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -48,6 +46,8 @@ public:
         ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
+
+
     // NOLINTEND
 
 public:

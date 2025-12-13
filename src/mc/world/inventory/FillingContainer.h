@@ -29,62 +29,44 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FillingContainer() /*override*/;
 
-    // vIndex: 44
     virtual int removeResource(::ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
 
-    // vIndex: 45
     virtual void swapSlots(int from, int to);
 
-    // vIndex: 46
     virtual bool add(::ItemStack& item);
 
-    // vIndex: 47
     virtual bool canAdd(::ItemStack const& item) const;
 
-    // vIndex: 14
     virtual void removeItem(int slot, int count) /*override*/;
 
-    // vIndex: 48
     virtual void clearSlot(int slot);
 
-    // vIndex: 49
     virtual int clearInventory(int resizeTo);
 
-    // vIndex: 50
     virtual ::std::unique_ptr<::ListTag> saveToTag(::SaveContext const& saveContext) const;
 
-    // vIndex: 51
     virtual void loadFromTag(::ListTag const& inventoryList);
 
-    // vIndex: 12
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
-    // vIndex: 7
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
-    // vIndex: 20
     virtual int getContainerSize() const /*override*/;
 
-    // vIndex: 22
     virtual void startOpen(::Actor&) /*override*/;
 
-    // vIndex: 2
     virtual void serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 52
     virtual void _trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
     // NOLINTEND
 
@@ -152,6 +134,8 @@ public:
     );
 
     MCAPI void $_trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
+
+
     // NOLINTEND
 
 public:

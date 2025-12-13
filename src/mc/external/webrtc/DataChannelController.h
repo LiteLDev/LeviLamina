@@ -57,54 +57,40 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
     virtual ~DataChannelController() /*override*/;
 
-    // vIndex: 0
     virtual ::webrtc::RTCError SendData(
         ::webrtc::StreamId              sid,
         ::webrtc::SendDataParams const& params,
         ::rtc::CopyOnWriteBuffer const& payload
     ) /*override*/;
 
-    // vIndex: 1
     virtual void AddSctpDataStream(::webrtc::StreamId sid) /*override*/;
 
-    // vIndex: 2
     virtual void RemoveSctpDataStream(::webrtc::StreamId sid) /*override*/;
 
-    // vIndex: 3
     virtual void OnChannelStateChanged(
         ::webrtc::SctpDataChannel*                channel,
         ::webrtc::DataChannelInterface::DataState state
     ) /*override*/;
 
-    // vIndex: 4
     virtual uint64 buffered_amount(::webrtc::StreamId sid) const /*override*/;
 
-    // vIndex: 5
     virtual uint64 buffered_amount_low_threshold(::webrtc::StreamId sid) const /*override*/;
 
-    // vIndex: 6
     virtual void SetBufferedAmountLowThreshold(::webrtc::StreamId sid, uint64 bytes) /*override*/;
 
-    // vIndex: 1
     virtual void
     OnDataReceived(int channel_id, ::webrtc::DataMessageType type, ::rtc::CopyOnWriteBuffer const& buffer) /*override*/;
 
-    // vIndex: 2
     virtual void OnChannelClosing(int channel_id) /*override*/;
 
-    // vIndex: 3
     virtual void OnChannelClosed(int channel_id) /*override*/;
 
-    // vIndex: 4
     virtual void OnReadyToSend() /*override*/;
 
-    // vIndex: 5
     virtual void OnTransportClosed(::webrtc::RTCError error) /*override*/;
 
-    // vIndex: 6
     virtual void OnBufferedAmountLow(int channel_id) /*override*/;
     // NOLINTEND
 
@@ -189,6 +175,8 @@ public:
     MCNAPI void $OnTransportClosed(::webrtc::RTCError error);
 
     MCNAPI void $OnBufferedAmountLow(int channel_id);
+
+
     // NOLINTEND
 
 public:

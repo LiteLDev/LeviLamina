@@ -15,4 +15,16 @@ public:
     DateRange& operator=(DateRange const&);
     DateRange(DateRange const&);
     DateRange();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~DateRange();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

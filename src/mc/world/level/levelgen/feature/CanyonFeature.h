@@ -25,7 +25,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual bool _carve(
         ::BlockVolume&                                   blocks,
         ::BiomeSource const&                             localBiomeSource,
@@ -46,14 +45,13 @@ public:
         ::WorldGenContext const& context
     ) const;
 
-    // vIndex: 1
     virtual bool _isDiggable(::BlockType const& block) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addFeature(
+    MCNAPI void _addFeature(
         ::BlockVolume&                                   blocks,
         ::BiomeSource const&                             localBiomeSource,
         ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
@@ -64,7 +62,7 @@ public:
         ::WorldGenContext const&                         context
     );
 
-    MCAPI void _addTunnel(
+    MCNAPI void _addTunnel(
         ::BlockVolume&                                   blocks,
         ::BiomeSource const&                             localBiomeSource,
         ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
@@ -81,7 +79,7 @@ public:
         ::WorldGenContext const&                         context
     ) const;
 
-    MCAPI void apply(
+    MCNAPI void apply(
         ::BlockVolume&                                   blocks,
         ::ChunkPos const&                                pos,
         ::BiomeSource const&                             localBiomeSource,
@@ -95,7 +93,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_carve(
+    MCNAPI bool $_carve(
         ::BlockVolume&                                   blocks,
         ::BiomeSource const&                             localBiomeSource,
         ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
@@ -115,7 +113,9 @@ public:
         ::WorldGenContext const& context
     ) const;
 
-    MCAPI bool $_isDiggable(::BlockType const& block) const;
+    MCNAPI bool $_isDiggable(::BlockType const& block) const;
+
+
     // NOLINTEND
 
 public:

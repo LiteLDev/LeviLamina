@@ -2,29 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/threading/InstancedThreadLocal.h"
-
 class BlockTypeRegistryRWLock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex> mSharedMutex;
-    ::ll::TypedStorage<8, 168, ::Bedrock::Threading::InstancedThreadLocal<bool, ::std::allocator<bool>>>
-        mSharedLockIsLockedForModifications;
-    ::ll::TypedStorage<8, 168, ::Bedrock::Threading::InstancedThreadLocal<bool, ::std::allocator<bool>>>
-        mSharedLockIsLockedForRead;
+    ::ll::UntypedStorage<8, 8>   mUnk1aa754;
+    ::ll::UntypedStorage<8, 168> mUnk17c690;
+    ::ll::UntypedStorage<8, 168> mUnk997168;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockTypeRegistryRWLock& operator=(BlockTypeRegistryRWLock const&);
+    BlockTypeRegistryRWLock(BlockTypeRegistryRWLock const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockTypeRegistryRWLock();
+    MCNAPI BlockTypeRegistryRWLock();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

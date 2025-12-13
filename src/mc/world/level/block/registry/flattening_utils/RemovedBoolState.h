@@ -17,33 +17,37 @@ class RemovedBoolState : public ::FlatteningUtils::RemovedState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<int>> mValues;
+    ::ll::UntypedStorage<8, 24> mUnk56d17b;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RemovedBoolState& operator=(RemovedBoolState const&);
+    RemovedBoolState(RemovedBoolState const&);
+    RemovedBoolState();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void addValue(::CompoundTag const& tag) /*override*/;
 
-    // vIndex: 2
     virtual void match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const /*override*/;
 
-    // vIndex: 3
     virtual uint64 valueCount() const /*override*/;
 
-    // vIndex: 0
     virtual ~RemovedBoolState() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addValue(::CompoundTag const& tag);
+    MCNAPI void $addValue(::CompoundTag const& tag);
 
-    MCFOLD void $match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
+    MCNAPI void $match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
 
-    MCFOLD uint64 $valueCount() const;
+    MCNAPI uint64 $valueCount() const;
+
+
     // NOLINTEND
 
 public:

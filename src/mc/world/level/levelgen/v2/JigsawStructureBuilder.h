@@ -43,30 +43,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~JigsawStructureBuilder() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawStructureBuilder(::std::string_view key, ::HashedString type);
+    MCNAPI JigsawStructureBuilder(::std::string_view key, ::HashedString type);
 
-    MCAPI ::br::worldgen::JigsawStructure build();
+    MCNAPI ::br::worldgen::JigsawStructure build();
 
-    MCAPI ::br::worldgen::JigsawStructureBuilder& startPool(::std::string_view key);
+    MCNAPI ::br::worldgen::JigsawStructureBuilder& startPool(::std::string_view key);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view key, ::HashedString type);
+    MCNAPI void* $ctor(::std::string_view key, ::HashedString type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

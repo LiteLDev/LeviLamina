@@ -17,76 +17,76 @@ struct BlockMovableDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::MovementType> mMovementType;
-    ::ll::TypedStorage<1, 1, ::StickyType>   mStickyType;
+    ::ll::UntypedStorage<1, 1> mUnk37d400;
+    ::ll::UntypedStorage<1, 1> mUnk79867d;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    BlockMovableDescription& operator=(BlockMovableDescription const&);
+    BlockMovableDescription(BlockMovableDescription const&);
     BlockMovableDescription();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
-    // vIndex: 4
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
-    // vIndex: 2
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
-    // vIndex: 0
     virtual ~BlockMovableDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockMovableDescription(::MovementType movableType);
+    MCNAPI explicit BlockMovableDescription(::MovementType movableType);
 
-    MCAPI BlockMovableDescription(::MovementType movableType, ::StickyType stickyType);
+    MCNAPI BlockMovableDescription(::MovementType movableType, ::StickyType stickyType);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::MovementType const& DEFAULT_MOVEMENT_TYPE();
+    MCNAPI static ::MovementType const& DEFAULT_MOVEMENT_TYPE();
 
-    MCAPI static ::StickyType const& DEFAULT_STICKY_TYPE();
+    MCNAPI static ::StickyType const& DEFAULT_STICKY_TYPE();
 
-    MCAPI static ::std::string const& NameID();
+    MCNAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MovementType movableType);
+    MCNAPI void* $ctor(::MovementType movableType);
 
-    MCAPI void* $ctor(::MovementType movableType, ::StickyType stickyType);
+    MCNAPI void* $ctor(::MovementType movableType, ::StickyType stickyType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+
+
     // NOLINTEND
 
 public:

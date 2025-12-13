@@ -36,9 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DynamicValue(::cereal::DynamicValue const&);
-
     MCNAPI DynamicValue(::cereal::DynamicValue&&);
+
+    MCNAPI DynamicValue(::cereal::DynamicValue const&);
 
     MCNAPI uint64 hash() const;
 
@@ -50,9 +50,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::DynamicValue const&);
-
     MCNAPI void* $ctor(::cereal::DynamicValue&&);
+
+    MCNAPI void* $ctor(::cereal::DynamicValue const&);
     // NOLINTEND
 
 public:

@@ -27,31 +27,54 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const /*override*/;
 
-    // vIndex: 10
-    virtual bool connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&) /*override*/;
+    virtual bool connect(
+        ::Social::GameConnectionInfo const& gameConnection,
+        ::Social::GameConnectionInfo const& backupConnection
+    ) /*override*/;
 
-    // vIndex: 11
     virtual void disconnect() /*override*/;
 
-    // vIndex: 14
     virtual bool isServer() const /*override*/;
 
-    // vIndex: 2
     virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64) /*override*/;
 
-    // vIndex: 3
-    virtual void OnSessionOpen(::NetherNet::NetworkID, uint64) /*override*/;
+    virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId) /*override*/;
 
-    // vIndex: 0
     virtual ~ClientNetherNetConnector() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
+    MCNAPI bool
+    $connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
+
+    MCNAPI void $disconnect();
+
+    MCNAPI bool $isServer() const;
+
+    MCNAPI bool $OnSessionRequested(::NetherNet::NetworkID, uint64);
+
+    MCNAPI void $OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForConnector();
+
+    MCNAPI static void** $vftableForNetworkEnableDisableListener();
+
+    MCNAPI static void** $vftable();
+
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

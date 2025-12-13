@@ -28,7 +28,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EditorBootstrapper() /*override*/ = default;
     // NOLINTEND
 
@@ -37,7 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void processActivationArguments(::Bedrock::ActivationArguments const& args);
 
-    MCNAPI void processLoadedLevel(::LevelData& levelData, bool levelLoadSucceeded);
+    MCNAPI_S void processLoadedLevel(::LevelData& levelData, bool levelLoadSucceeded);
     // NOLINTEND
 
 public:

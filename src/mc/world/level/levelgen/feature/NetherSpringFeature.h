@@ -17,8 +17,8 @@ class NetherSpringFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
-    ::ll::TypedStorage<1, 1, bool>           mInsideRock;
+    ::ll::UntypedStorage<8, 8> mUnk95b2fc;
+    ::ll::UntypedStorage<1, 1> mUnk4595c4;
     // NOLINTEND
 
 public:
@@ -30,35 +30,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 0
     virtual ~NetherSpringFeature() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetherSpringFeature(::Block const& block, bool insideRock);
+    MCNAPI NetherSpringFeature(::Block const& block, bool insideRock);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block, bool insideRock);
+    MCNAPI void* $ctor(::Block const& block, bool insideRock);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+
     // NOLINTEND
 
 public:

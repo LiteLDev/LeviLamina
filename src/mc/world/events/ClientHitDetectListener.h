@@ -14,25 +14,36 @@ class ClientHitDetectListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClientHitDetectListener() = default;
 
-    // vIndex: 1
-    virtual ::EventResult onChangedHitResult(::HitResult&);
+    virtual ::EventResult onChangedHitResult(::HitResult& hitResult);
 
-    // vIndex: 2
-    virtual ::EventResult onContinuousHitResult(::HitResult&);
+    virtual ::EventResult onContinuousHitResult(::HitResult& hitResult);
 
-    // vIndex: 3
-    virtual ::EventResult onChangedPickHitResult(::HitResult&);
+    virtual ::EventResult onChangedPickHitResult(::HitResult& hitResult);
 
-    // vIndex: 4
-    virtual ::EventResult onContinuousPickHitResult(::HitResult&);
+    virtual ::EventResult onContinuousPickHitResult(::HitResult& hitResult);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::EventResult $onChangedHitResult(::HitResult& hitResult);
 
+    MCNAPI ::EventResult $onContinuousHitResult(::HitResult& hitResult);
+
+    MCNAPI ::EventResult $onChangedPickHitResult(::HitResult& hitResult);
+
+    MCNAPI ::EventResult $onContinuousPickHitResult(::HitResult& hitResult);
+#endif
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -10,15 +10,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentTierIncompatibleReason;
 class IContentTierManager;
+class LinkedAssetValidator;
 class LoadedResourceData;
 class PackInstance;
 class PackSourceReport;
 class ResourceGroup;
 class ResourceLocation;
 class ResourceLocationPair;
+class ResourcePack;
 class ResourcePackStack;
+struct PackIdVersion;
 namespace Core { class Path; }
+namespace mce { struct Image; }
 // clang-format on
 
 class ResourcePackManager : public ::ResourceLoader {
@@ -52,66 +57,56 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ResourcePackManager() /*override*/;
 
-    // vIndex: 3
     virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
 
-    // vIndex: 2
     virtual bool load(
         ::ResourceLocation const&        resourceLocation,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
 
-    // vIndex: 1
     virtual bool load(
         ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
-    // vIndex: 4
     virtual bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
 
-    // vIndex: 5
     virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const
         /*override*/;
 
-    // vIndex: 7
+#ifdef LL_PLAT_C
+    virtual ::mce::Image loadTexture(::ResourceLocation const& resourceLocation) const /*override*/;
+
+#endif
     virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    // vIndex: 6
     virtual bool isInStreamableLocation(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
-    // vIndex: 9
     virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    // vIndex: 8
     virtual ::Core::PathBuffer<::std::string>
     getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const /*override*/;
 
-    // vIndex: 11
     virtual ::Core::PathBuffer<::std::string>
     getPathContainingResource(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    // vIndex: 10
     virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
-    // vIndex: 12
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
-    // vIndex: 13
     virtual bool hasCapability(::std::string_view requiredCapability) const;
     // NOLINTEND
 
@@ -136,6 +131,8 @@ public:
 
     MCNAPI void _updateLanguageSubpacks();
 
+    MCNAPI_C ::ContentTierIncompatibleReason canSupportPacks();
+
     MCNAPI int composeFullStack(
         ::ResourcePackStack&       output,
         ::ResourcePackStack const& globalStack,
@@ -143,15 +140,39 @@ public:
         ::ResourcePackStack const& addonStack
     ) const;
 
+    MCNAPI_C void ensureSupportedSubpacks();
+
+    MCNAPI_C ::std::vector<::ResourceLocationPair> findAllTexturesInUse() const;
+
+    MCNAPI_C ::std::vector<::PackIdVersion> findInPacks(::ResourceLocation const& resourceLocation) const;
+
+    MCNAPI_C void finishLoadingLinkedAssets(::LinkedAssetValidator& validator);
+
+    MCNAPI_C ::std::vector<::PackInstance> getIncompatiblePacks() const;
+
     MCNAPI ::ResourceGroup getResourcesOfGroup(::std::string const& group) const;
 
     MCNAPI ::ResourceGroup getResourcesOfGroup(::PackInstance const& packInstance, ::std::string const& group) const;
 
     MCNAPI ::ResourcePackStack const& getStack(::ResourcePackStackType stackType) const;
 
+    MCNAPI_C bool hasResource(::ResourceLocation const& resourceLocation) const;
+
+    MCNAPI_C bool hasResource(
+        ::ResourcePackStack const&       resourcePackStack,
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
+
     MCNAPI void iteratePacks(::std::function<void(::PackInstance const&)> const& pred) const;
 
+    MCNAPI_C void onLanguageChanged();
+
     MCNAPI void removeIf(::std::function<bool(::PackInstance const&)> const& pred);
+
+    MCNAPI_C void removePacks(::std::vector<::gsl::not_null<::ResourcePack const*>> const& packs);
+
+    MCNAPI_C void removeUnsupportedPacks();
 
     MCNAPI void setPackSourceReport(::PackSourceReport&& report);
 
@@ -221,6 +242,12 @@ public:
     ) const;
 
     MCNAPI bool $hasCapability(::std::string_view requiredCapability) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::mce::Image $loadTexture(::ResourceLocation const& resourceLocation) const;
+#endif
+
+
     // NOLINTEND
 
 public:

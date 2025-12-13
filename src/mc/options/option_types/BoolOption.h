@@ -23,14 +23,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
 
-    // vIndex: 4
     virtual void load(::std::string const& valueString) /*override*/;
 
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~BoolOption() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~BoolOption() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -40,11 +42,19 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
     MCNAPI void $load(::std::string const& valueString);
+
+
     // NOLINTEND
 
 public:

@@ -10,23 +10,23 @@ class ItemRegistryRef;
 
 class TrimPatternRegistry {
 public:
-    // TrimPatternRegistry inner types define
-    using TemplateItemIdToPatternIdMap = ::std::unordered_map<::HashedString, ::HashedString>;
-
-    using PatternIdMapToTemplateItemId = ::std::unordered_map<::HashedString, ::HashedString>;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::HashedString>> mTemplateItemToPatternIdMap;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::HashedString>> mPatternIdToTemplateItemMap;
+    ::ll::UntypedStorage<8, 64> mUnkc90b11;
+    ::ll::UntypedStorage<8, 64> mUnk54fbf2;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TrimPatternRegistry& operator=(TrimPatternRegistry const&);
+    TrimPatternRegistry(TrimPatternRegistry const&);
+    TrimPatternRegistry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::HashedString> getPatternIdByItem(::HashedString const& itemId) const;
+    MCNAPI ::std::optional<::HashedString> getPatternIdByItem(::HashedString const& itemId) const;
 
-    MCAPI void initializeServer(::ItemRegistryRef itemRegistry);
+    MCNAPI void initializeServer(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 };

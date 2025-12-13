@@ -35,40 +35,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LevelChunkSaveManagerProxy() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::WeakRef<::Dimension> getRandomDimension(::DimensionManager& dimensionManager) const /*override*/;
 
-    // vIndex: 2
     virtual ::std::shared_ptr<::LevelChunk> getRandomChunk(::Dimension& dimension) const /*override*/;
 
-    // vIndex: 3
     virtual ::std::shared_ptr<::LevelChunk> getChunk(::Dimension& dimension, ::ChunkPos const& chunkPos) const
         /*override*/;
 
-    // vIndex: 4
     virtual bool doesNonActorDataInLevelChunkNeedSaving(
         ::LevelChunk const& levelChunk,
         int                 minTicksBeforeLiveSave,
         int                 maxTicksBeforeLiveSave
     ) const /*override*/;
 
-    // vIndex: 5
     virtual bool doesLevelChunkNeedSaving(
         ::LevelChunk const& levelChunk,
         int                 minTicksBeforeLiveSave,
         int                 maxTicksBeforeLiveSave
     ) const /*override*/;
 
-    // vIndex: 6
     virtual void saveLiveChunk(::Dimension& dimension, ::LevelChunk& levelChunk) /*override*/;
 
-    // vIndex: 7
     virtual void queueTaskForChunkSave(::brstd::move_only_function<::TaskResult()>&& task) /*override*/;
 
-    // vIndex: 8
     virtual void startLeaveGame() /*override*/;
     // NOLINTEND
 
@@ -98,6 +89,8 @@ public:
     MCAPI void $queueTaskForChunkSave(::brstd::move_only_function<::TaskResult()>&& task);
 
     MCAPI void $startLeaveGame();
+
+
     // NOLINTEND
 
 public:

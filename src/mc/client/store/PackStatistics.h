@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 class PackStatistics {
 public:
     // member variables
@@ -18,4 +23,20 @@ public:
     PackStatistics& operator=(PackStatistics const&);
     PackStatistics(PackStatistics const&);
     PackStatistics();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void fromJson(::Json::Value const& documentJson);
+
+    MCNAPI_C ::std::string getBehaviorPackCountFormattedString() const;
+
+    MCNAPI_C ::std::string getPersonaPieceCountFormattedString() const;
+
+    MCNAPI_C ::std::string getResourcePackCountFormattedString() const;
+
+    MCNAPI_C ::std::string getSkinPackCountFormattedString() const;
+
+    MCNAPI_C ::std::string getWorldTemplateCountFormattedString() const;
+    // NOLINTEND
 };

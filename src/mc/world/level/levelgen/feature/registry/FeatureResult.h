@@ -2,28 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class IFeature;
-// clang-format on
-
 struct FeatureResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mFeatureName;
-    ::ll::TypedStorage<8, 8, ::IFeature*>    mFeature;
+    ::ll::UntypedStorage<8, 32> mUnk87a851;
+    ::ll::UntypedStorage<8, 8>  mUnk11560b;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FeatureResult& operator=(FeatureResult const&);
+    FeatureResult(FeatureResult const&);
+    FeatureResult();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~FeatureResult();
+    MCNAPI ~FeatureResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -15,6 +15,8 @@ namespace SynchedActorDataAccess {
 LLAPI bool getActorFlag(::EntityContext const& entity, ::ActorFlags flag);
 // functions
 // NOLINTBEGIN
+MCAPI_C float getBoundingBoxScale(::EntityContext const& entity);
+
 MCAPI int getControllingSeatIndex(::EntityContext const& entity);
 
 MCAPI int getJumpDuration(::EntityContext const& entity);

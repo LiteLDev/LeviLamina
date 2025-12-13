@@ -16,14 +16,12 @@ class NetherOperationNode : public ::RootOperationNode<::OperationNodeValues::Te
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void _fillArea(
         ::OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>&,
         ::Pos2d const&,
         ::Pos2d const&
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~NetherOperationNode() /*override*/ = default;
     // NOLINTEND
 

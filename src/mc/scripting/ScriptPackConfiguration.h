@@ -28,11 +28,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptPackConfiguration();
 
-    MCNAPI ScriptPackConfiguration(::ScriptPackConfiguration const&);
-
     MCNAPI ScriptPackConfiguration(::ScriptPackConfiguration&&);
 
-    MCNAPI ::ScriptPackConfiguration& operator=(::ScriptPackConfiguration&&);
+    MCNAPI ScriptPackConfiguration(::ScriptPackConfiguration const&);
+
+    MCNAPI_S ::ScriptPackConfiguration& operator=(::ScriptPackConfiguration&&);
 
     MCNAPI ~ScriptPackConfiguration();
     // NOLINTEND
@@ -42,9 +42,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ScriptPackConfiguration const&);
-
     MCNAPI void* $ctor(::ScriptPackConfiguration&&);
+
+    MCNAPI void* $ctor(::ScriptPackConfiguration const&);
     // NOLINTEND
 
 public:

@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/TransportItemsGoalSettings.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
-#include "mc/world/level/block/actor/ChestBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,6 +24,14 @@ public:
     // clang-format on
 
     // TransportItemsGoal inner types define
+    enum class Event : int {
+        StartTakeInteractionWillFail     = 0,
+        StartTakeInteractionWillSucceed  = 1,
+        StartPlaceInteractionWillFail    = 2,
+        StartPlaceInteractionWillSucceed = 3,
+        FinishedInteraction              = 4,
+    };
+
     enum class State : int {
         Idle        = 0,
         Travelling  = 1,
@@ -36,16 +43,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ChestBlockActor::ChestCloser>> mChestCloser;
+        ::ll::UntypedStorage<8, 16> mUnkeb420c;
         // NOLINTEND
-    };
 
-    enum class Event : int {
-        StartTakeInteractionWillFail     = 0,
-        StartTakeInteractionWillSucceed  = 1,
-        StartPlaceInteractionWillFail    = 2,
-        StartPlaceInteractionWillSucceed = 3,
-        FinishedInteraction              = 4,
+    public:
+        // prevent constructor by default
+        ContainerCloser& operator=(ContainerCloser const&);
+        ContainerCloser(ContainerCloser const&);
+        ContainerCloser();
     };
 
 public:
@@ -73,46 +78,39 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    // vIndex: 0
     virtual ~TransportItemsGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canSeeTarget(::BlockPos const& targetPosition) const;
+    MCNAPI bool _canSeeTarget(::BlockPos const& targetPosition) const;
 
-    MCAPI void _executeEvent(::TransportItemsGoal::Event event) const;
+    MCNAPI void _executeEvent(::TransportItemsGoal::Event event) const;
 
-    MCAPI void _tickIdle();
+    MCNAPI void _tickIdle();
 
-    MCAPI void _tickQueuing(::BlockPos const& targetPos);
+    MCNAPI void _tickQueuing(::BlockPos const& targetPos);
 
-    MCAPI void _tickTravelling(::BlockPos const& targetPos);
+    MCNAPI void _tickTravelling(::BlockPos const& targetPos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canSeeTarget(
+    MCNAPI static bool _canSeeTarget(
         ::BlockSource const& region,
         ::Vec3 const&        mobHeadPosition,
         ::AABB const&        visualShape,
@@ -123,17 +121,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
+
+
     // NOLINTEND
 
 public:

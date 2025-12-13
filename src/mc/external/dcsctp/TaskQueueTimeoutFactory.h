@@ -44,16 +44,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual ~TaskQueueTimeout() /*override*/;
 
-        // vIndex: 1
         virtual void Start(
             ::dcsctp::DurationMs                                duration_ms,
             ::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64> timeout_id
         ) /*override*/;
 
-        // vIndex: 2
         virtual void Stop() /*override*/;
         // NOLINTEND
 
@@ -84,6 +81,8 @@ public:
         $Start(::dcsctp::DurationMs duration_ms, ::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64> timeout_id);
 
         MCNAPI void $Stop();
+
+
         // NOLINTEND
 
     public:

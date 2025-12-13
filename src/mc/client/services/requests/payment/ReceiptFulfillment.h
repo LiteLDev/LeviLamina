@@ -25,6 +25,26 @@ public:
         ReceiptData& operator=(ReceiptData const&);
         ReceiptData(ReceiptData const&);
         ReceiptData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ReceiptData(::ReceiptFulfillment::ReceiptData&&);
+
+        MCNAPI_C ~ReceiptData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI_C void* $ctor(::ReceiptFulfillment::ReceiptData&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -38,4 +58,16 @@ public:
     ReceiptFulfillment& operator=(ReceiptFulfillment const&);
     ReceiptFulfillment(ReceiptFulfillment const&);
     ReceiptFulfillment();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~ReceiptFulfillment();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

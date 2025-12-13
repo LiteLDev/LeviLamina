@@ -3,10 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/brstd/flat_set.h"
 #include "mc/world/level/biome/source/BiomeSource.h"
 #include "mc/world/level/biome/source/BiomeSourceType.h"
-#include "mc/world/level/levelgen/synth/SimplexNoise.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,103 +31,98 @@ public:
     // clang-format on
 
     // ReplacementBiomeSource inner types define
-    struct BiomeReplacementNoise {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 2060, ::SimplexNoise const> mNoise;
-        ::ll::TypedStorage<4, 4, float>                   mAmount;
-        ::ll::TypedStorage<4, 4, float>                   mNoiseFrequencyScale;
-        // NOLINTEND
-    };
-
     struct BiomeReplacementIndex {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::gsl::not_null<::Biome const*>> mBiome;
-        ::ll::TypedStorage<8, 16, ::std::optional<uint64>>        mNoiseIndex;
+        ::ll::UntypedStorage<8, 8>  mUnk13891a;
+        ::ll::UntypedStorage<8, 16> mUnk719d7c;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BiomeReplacementIndex& operator=(BiomeReplacementIndex const&);
+        BiomeReplacementIndex(BiomeReplacementIndex const&);
+        BiomeReplacementIndex();
+    };
+
+    struct BiomeReplacementNoise {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 2060> mUnka5c5f2;
+        ::ll::UntypedStorage<4, 4>    mUnk676c16;
+        ::ll::UntypedStorage<4, 4>    mUnkce81bd;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BiomeReplacementNoise& operator=(BiomeReplacementNoise const&);
+        BiomeReplacementNoise(BiomeReplacementNoise const&);
+        BiomeReplacementNoise();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeSource3d>> mWrappedBiomeSource;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::unordered_map<::BiomeIdType, ::std::vector<::ReplacementBiomeSource::BiomeReplacementIndex>>>
-        mVanillaBiomeToReplacementNoiseIndex;
-    ::ll::
-        TypedStorage<8, 40, ::brstd::flat_set<::BiomeIdType, ::std::less<::BiomeIdType>, ::std::vector<::BiomeIdType>>>
-            mFullyReplacedBiomeIds;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::brstd::flat_set<::BiomeHashType, ::std::less<::BiomeHashType>, ::std::vector<::BiomeHashType>>>
-        mFullyReplacedBiomeNameHashes;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ReplacementBiomeSource::BiomeReplacementNoise>> mNoiseEntries;
+    ::ll::UntypedStorage<8, 8>  mUnk5d4fd5;
+    ::ll::UntypedStorage<8, 64> mUnkfe4142;
+    ::ll::UntypedStorage<8, 40> mUnk5890e1;
+    ::ll::UntypedStorage<8, 40> mUnk6ec4f8;
+    ::ll::UntypedStorage<8, 24> mUnk908bc6;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ReplacementBiomeSource& operator=(ReplacementBiomeSource const&);
+    ReplacementBiomeSource(ReplacementBiomeSource const&);
     ReplacementBiomeSource();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const
         /*override*/;
 
-    // vIndex: 3
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
-    // vIndex: 2
     virtual ::BiomeArea
     getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const /*override*/;
 
-    // vIndex: 4
     virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const
         /*override*/;
 
-    // vIndex: 5
     virtual bool hasBiomeById(::BiomeIdType id) const /*override*/;
 
-    // vIndex: 6
     virtual bool hasBiomeByNameHash(::BiomeHashType hash) const /*override*/;
 
-    // vIndex: 7
     virtual ::BiomeSourceType const getType() const /*override*/;
 
-    // vIndex: 8
     virtual ::Biome const* _getBiome(::GetBiomeOptions const& getBiomeOptions) const /*override*/;
 
-    // vIndex: 0
     virtual ~ReplacementBiomeSource() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ReplacementBiomeSource(
+    MCNAPI ReplacementBiomeSource(
         ::XoroshiroPositionalRandomFactory const& random,
         ::std::vector<::BiomeReplacement> const&  biomeReplacements,
         ::std::unique_ptr<::BiomeSource3d>        wrappedBiomeSource
     );
 
-    MCAPI bool fullyReplacesBiomeById(::BiomeIdType id) const;
+    MCNAPI bool fullyReplacesBiomeById(::BiomeIdType id) const;
 
-    MCAPI bool fullyReplacesBiomeByNameHash(::BiomeHashType hash) const;
+    MCNAPI bool fullyReplacesBiomeByNameHash(::BiomeHashType hash) const;
 
-    MCAPI ::Biome const* tryReplace(::Biome const* targetBiome, ::BlockPos const& position) const;
+    MCNAPI ::Biome const* tryReplace(::Biome const* targetBiome, ::BlockPos const& position) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::XoroshiroPositionalRandomFactory const& random,
         ::std::vector<::BiomeReplacement> const&  biomeReplacements,
         ::std::unique_ptr<::BiomeSource3d>        wrappedBiomeSource
@@ -139,28 +132,30 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const;
+    MCNAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const;
 
-    MCFOLD ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
+    MCNAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCAPI ::BiomeArea
+    MCNAPI ::BiomeArea
     $getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const;
 
-    MCAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const;
+    MCNAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const;
 
-    MCAPI bool $hasBiomeById(::BiomeIdType id) const;
+    MCNAPI bool $hasBiomeById(::BiomeIdType id) const;
 
-    MCAPI bool $hasBiomeByNameHash(::BiomeHashType hash) const;
+    MCNAPI bool $hasBiomeByNameHash(::BiomeHashType hash) const;
 
-    MCFOLD ::BiomeSourceType const $getType() const;
+    MCNAPI ::BiomeSourceType const $getType() const;
 
-    MCAPI ::Biome const* $_getBiome(::GetBiomeOptions const& getBiomeOptions) const;
+    MCNAPI ::Biome const* $_getBiome(::GetBiomeOptions const& getBiomeOptions) const;
+
+
     // NOLINTEND
 
 public:

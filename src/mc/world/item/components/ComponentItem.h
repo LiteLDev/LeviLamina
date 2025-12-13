@@ -79,95 +79,65 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ComponentItem() /*override*/;
 
-    // vIndex: 1
     virtual ::PuvLoadData::LoadResultWithTiming
     initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const) /*override*/;
 
-    // vIndex: 2
     virtual void tearDown() /*override*/;
 
-    // vIndex: 9
     virtual bool isComponentBased() const /*override*/;
 
-    // vIndex: 10
     virtual bool isHumanoidArmor() const /*override*/;
 
-    // vIndex: 11
     virtual bool isBlockPlanterItem() const /*override*/;
 
-    // vIndex: 14
     virtual bool isDamageable() const /*override*/;
 
-    // vIndex: 15
     virtual bool isDyeable() const /*override*/;
 
-    // vIndex: 19
     virtual bool isFood() const /*override*/;
 
-    // vIndex: 20
     virtual bool isThrowable() const /*override*/;
 
-    // vIndex: 21
     virtual bool isUseable() const /*override*/;
 
-    // vIndex: 7
     virtual bool isMusicDisk() const /*override*/;
 
-    // vIndex: 22
     virtual bool isTrimAllowed() const /*override*/;
 
-    // vIndex: 6
     virtual ::WeakPtr<::BlockType const> const& getBlockTypeForRendering() const /*override*/;
 
-    // vIndex: 23
     virtual ::ItemComponent* getComponent(::HashedString const& id) const /*override*/;
 
-    // vIndex: 24
     virtual ::IFoodItemComponent* getFood() const /*override*/;
 
-    // vIndex: 25
     virtual ::Item& setMaxDamage(int maxDamage) /*override*/;
 
-    // vIndex: 4
     virtual ::std::string const& getDescriptionId() const /*override*/;
 
-    // vIndex: 30
     virtual ::BlockShape getBlockShape() const /*override*/;
 
-    // vIndex: 31
     virtual bool canBeDepleted() const /*override*/;
 
-    // vIndex: 32
     virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
-    // vIndex: 33
     virtual int getLevelDataForAuxValue(int) const /*override*/;
 
-    // vIndex: 35
     virtual short getMaxDamage() const /*override*/;
 
-    // vIndex: 36
     virtual int getAttackDamage() const /*override*/;
 
-    // vIndex: 39
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
 
-    // vIndex: 47
     virtual bool canDestroyInCreative() const /*override*/;
 
-    // vIndex: 48
     virtual bool isDestructive(int) const /*override*/;
 
-    // vIndex: 49
     virtual bool isLiquidClipItem() const /*override*/;
 
-    // vIndex: 51
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -175,53 +145,38 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 54
     virtual bool isValidRepairItem(
         ::ItemStackBase const&   source,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const /*override*/;
 
-    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 56
     virtual int getEnchantValue() const /*override*/;
 
-    // vIndex: 57
     virtual int getArmorValue() const /*override*/;
 
-    // vIndex: 62
     virtual int getDamageChance(int unbreaking) const /*override*/;
 
-    // vIndex: 44
     virtual uint getSwingDuration() const /*override*/;
 
-    // vIndex: 106
     virtual bool shouldEmitInUseGameEvents() const /*override*/;
 
-    // vIndex: 67
     virtual ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const /*override*/;
 
-    // vIndex: 69
     virtual bool hasCustomColor(::ItemStackBase const& instance) const /*override*/;
 
-    // vIndex: 70
     virtual void clearColor(::ItemStackBase& instance) const /*override*/;
 
-    // vIndex: 71
     virtual void setColor(::ItemStackBase& instance, ::mce::Color const& color) const /*override*/;
 
-    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 78
     virtual bool canUseAsAttack() const /*override*/;
 
-    // vIndex: 79
     virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 80
     virtual ::Actor* createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
@@ -229,109 +184,77 @@ public:
         ::Vec3 const&      direction
     ) const /*override*/;
 
-    // vIndex: 81
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
-    // vIndex: 82
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 
-    // vIndex: 83
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    // vIndex: 84
     virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
-    // vIndex: 85
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 86
     virtual void hitActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 87
     virtual void hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const
         /*override*/;
 
-    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
-    // vIndex: 91
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const
         /*override*/;
 
-    // vIndex: 94
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const /*override*/;
 
-    // vIndex: 97
     virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
-    // vIndex: 98
     virtual int getCooldownDuration() const /*override*/;
 
-    // vIndex: 104
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
-    // vIndex: 105
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
-    // vIndex: 124
     virtual bool useVariant(int, int, bool) const;
 
-    // vIndex: 125
     virtual int getVariant(int, int, bool) const;
 
-    // vIndex: 109
     virtual ::PuvLoadData::LoadResultWithTiming
     initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&) /*override*/;
 
-    // vIndex: 112
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 113
     virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const /*override*/;
 
-    // vIndex: 114
     virtual bool isEmissive(int auxValue) const /*override*/;
 
-    // vIndex: 111
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 110
-    virtual ::Item& setIconInfo(::std::string const& name, int frame) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 116
     virtual bool canBeCharged() const /*override*/;
 
-    // vIndex: 3
-    virtual ::ComponentItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
+    virtual ::ComponentItem& setDescriptionId(::std::string const& description) /*override*/;
 
-    // vIndex: 126
     virtual bool shouldUseJsonForRenderMatrix() const;
 
-    // vIndex: 27
     virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag() const /*override*/;
 
-    // vIndex: 28
     virtual void initializeFromNetwork(::CompoundTag const& tag) /*override*/;
 
-    // vIndex: 29
     virtual ::std::vector<::std::string> validateFromNetwork(::CompoundTag const& tag) /*override*/;
 
-    // vIndex: 120
     virtual bool
     _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const
         /*override*/;
 
-    // vIndex: 121
     virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const
         /*override*/;
 
-    // vIndex: 122
     virtual bool _shouldAutoCalculatePlacePos() const /*override*/;
 
-    // vIndex: 123
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
@@ -444,7 +367,9 @@ public:
 
     MCAPI ::std::string const& $getDescriptionId() const;
 
+#ifdef LL_PLAT_S
     MCFOLD ::BlockShape $getBlockShape() const;
+#endif
 
     MCAPI bool $canBeDepleted() const;
 
@@ -549,11 +474,11 @@ public:
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int frame);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI bool $canBeCharged() const;
 
-    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
+    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& description);
 
     MCAPI bool $shouldUseJsonForRenderMatrix() const;
 
@@ -572,6 +497,12 @@ public:
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+#endif
+
+
     // NOLINTEND
 
 public:

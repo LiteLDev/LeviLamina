@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ChemistryStickItem.h"
-#include "mc/world/item/CompoundType.h"
-#include "mc/world/item/ItemColor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,38 +30,37 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, ::ItemColor>    mDyeId;
-        ::ll::TypedStorage<1, 1, ::CompoundType> mColorCompound;
-        ::ll::TypedStorage<4, 4, int>            mVariantIndex;
-        ::ll::TypedStorage<4, 4, int>            mRGB;
+        ::ll::UntypedStorage<1, 1> mUnk2e1fb2;
+        ::ll::UntypedStorage<1, 1> mUnkb0e483;
+        ::ll::UntypedStorage<4, 4> mUnka60ccd;
+        ::ll::UntypedStorage<4, 4> mUnk6e75e8;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ColorInfo& operator=(ColorInfo const&);
+        ColorInfo(ColorInfo const&);
+        ColorInfo();
     };
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 90
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 111
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 95
     virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
         /*override*/;
 
-    // vIndex: 110
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 115
     virtual ::Brightness getLightEmission(int auxValue) const /*override*/;
 
-    // vIndex: 0
     virtual ~SparklerItem() /*override*/ = default;
     // NOLINTEND
 
@@ -89,6 +86,8 @@ public:
     MCFOLD bool $isHandEquipped() const;
 
     MCFOLD ::Brightness $getLightEmission(int auxValue) const;
+
+
     // NOLINTEND
 
 public:

@@ -38,7 +38,6 @@ struct ClientWitherBossTickDeathSystemImpl
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::WitherBossFlagComponent>,
@@ -50,7 +49,6 @@ public:
             ::EntityFactoryT<>>& context
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~ClientWitherBossTickDeathSystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -80,6 +78,8 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     );
+
+
     // NOLINTEND
 
 public:

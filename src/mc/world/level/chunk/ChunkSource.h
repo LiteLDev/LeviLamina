@@ -15,6 +15,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlendingDataProvider;
+class BlockPos;
 class BlockSource;
 class BoundingBox;
 class ChunkKey;
@@ -62,120 +63,83 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ChunkSource() /*override*/;
 
-    // vIndex: 1
     virtual void shutdown();
 
-    // vIndex: 2
     virtual bool isShutdownDone();
 
-    // vIndex: 3
     virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const&);
 
-    // vIndex: 4
     virtual ::std::shared_ptr<::LevelChunk> getRandomChunk(::Random& random);
 
-    // vIndex: 5
     virtual bool isChunkKnown(::ChunkPos const& chunkPos);
 
-    // vIndex: 6
     virtual bool isChunkSaved(::ChunkPos const& chunkPos);
 
-    // vIndex: 7
     virtual ::std::shared_ptr<::LevelChunk>
     createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    // vIndex: 8
     virtual ::std::shared_ptr<::LevelChunk>
     getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    // vIndex: 9
     virtual bool structurePostProcessChunk(::ChunkViewSource&);
 
-    // vIndex: 10
     virtual bool decorationPostProcessChunk(::ChunkViewSource&);
 
-    // vIndex: 11
     virtual void checkAndReplaceChunk(::ChunkViewSource&, ::LevelChunk&);
 
-    // vIndex: 12
     virtual bool verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk&);
 
-    // vIndex: 13
     virtual void neighborAwareChunkUpgrade(::LevelChunk&, ::ChunkViewSource&);
 
-    // vIndex: 14
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    // vIndex: 16
     virtual void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
 
-    // vIndex: 15
     virtual void postProcessMobsAt(::BlockSource& region, ::BoundingBox const& chunkBB) const;
 
-    // vIndex: 17
     virtual bool saveLiveChunk(::LevelChunk& lc);
 
-    // vIndex: 18
     virtual void writeEntityChunkTransfer(::LevelChunk& levelChunk);
 
-    // vIndex: 19
     virtual void writeEntityChunkTransfersToUnloadedChunk(
         ::ChunkKey const&                                       chunkKey,
         ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers
     );
 
-    // vIndex: 20
     virtual void deserializeActorStorageToLevelChunk(::LevelChunk& levelChunk);
 
-    // vIndex: 21
     virtual void hintDiscardBatchBegin();
 
-    // vIndex: 22
     virtual void hintDiscardBatchEnd();
 
-    // vIndex: 23
     virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
-    // vIndex: 24
     virtual void compact();
 
-    // vIndex: 25
     virtual void flushPendingDiscardedChunkWrites();
 
-    // vIndex: 26
     virtual void flushThreadBatch();
 
-    // vIndex: 27
     virtual bool isWithinWorldLimit(::ChunkPos const& cp) const;
 
-    // vIndex: 28
     virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* getChunkMap();
 
-    // vIndex: 29
     virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const& getStorage() const;
 
-    // vIndex: 30
     virtual void clearDeletedEntities();
 
-    // vIndex: 31
     virtual bool canCreateViews() const;
 
-    // vIndex: 32
     virtual ::std::unique_ptr<::BlendingDataProvider> tryGetBlendingDataProvider();
 
-    // vIndex: 33
     virtual ::std::shared_ptr<::LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
 
-    // vIndex: 34
     virtual void setLevelChunk(::std::shared_ptr<::LevelChunk>);
 
-    // vIndex: 35
     virtual bool canLaunchTasks() const;
 
-    // vIndex: 36
     virtual bool chunkPosNeedsBlending(::ChunkPos const& cp);
     // NOLINTEND
 
@@ -267,6 +231,8 @@ public:
 
     MCAPI void _spawnChunkGenerationTasks(int numTasks, bool calledFromTask);
 
+    MCAPI_C void addEmptyChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
+
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
 
     MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>> createEmptyView(
@@ -278,6 +244,8 @@ public:
     );
 
     MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const& cp);
+
+    MCAPI_C ::std::shared_ptr<::LevelChunk> getAvailableChunkAt(::BlockPos const& pos);
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
@@ -382,6 +350,8 @@ public:
     MCAPI bool $canLaunchTasks() const;
 
     MCAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
+
+
     // NOLINTEND
 
 public:

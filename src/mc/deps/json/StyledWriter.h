@@ -31,10 +31,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~StyledWriter() /*override*/;
 
-    // vIndex: 1
     virtual ::std::string write(::Json::Value const& root) /*override*/;
     // NOLINTEND
 
@@ -74,6 +72,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string $write(::Json::Value const& root);
+
+
     // NOLINTEND
 
 public:

@@ -8,44 +8,49 @@ class ResultAny {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>               mIsError;
-    ::ll::TypedStorage<8, 208, ::entt::meta_any> mValue;
+    ::ll::UntypedStorage<1, 1>   mUnk92ee80;
+    ::ll::UntypedStorage<8, 208> mUnk3edf86;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ResultAny& operator=(ResultAny const&);
+    ResultAny(ResultAny const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResultAny();
+    MCNAPI ResultAny();
 
-    MCAPI explicit ResultAny(::entt::meta_any&& resultAny);
+    MCNAPI explicit ResultAny(::entt::meta_any&& resultAny);
 
-    MCAPI ::entt::meta_any toAny() const;
+    MCNAPI ::entt::meta_any toAny() const;
 
-    MCAPI ::entt::meta_any toErrorAny() const;
+    MCNAPI ::entt::meta_any toErrorAny() const;
 
-    MCAPI ~ResultAny();
+    MCNAPI ~ResultAny();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ResultAny makeErrorFromAny(::entt::meta_any&& errorAny);
+    MCNAPI static ::Scripting::ResultAny makeErrorFromAny(::entt::meta_any&& errorAny);
 
-    MCAPI static ::Scripting::ResultAny makeResultFromAny(::entt::meta_any const& resultAny);
+    MCNAPI static ::Scripting::ResultAny makeResultFromAny(::entt::meta_any const& resultAny);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::entt::meta_any&& resultAny);
+    MCNAPI void* $ctor(::entt::meta_any&& resultAny);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

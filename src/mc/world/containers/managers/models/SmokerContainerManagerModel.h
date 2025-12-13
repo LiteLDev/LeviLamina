@@ -9,7 +9,6 @@ class SmokerContainerManagerModel : public ::FurnaceContainerManagerModel {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SmokerContainerManagerModel() /*override*/ = default;
     // NOLINTEND
 

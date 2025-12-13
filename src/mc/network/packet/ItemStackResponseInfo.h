@@ -2,23 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/inventory/network/ItemStackNetResult.h"
-#include "mc/world/inventory/network/TypedClientNetId.h"
-
-// auto generated forward declare list
-// clang-format off
-struct ItemStackRequestIdTag;
-struct ItemStackResponseContainerInfo;
-// clang-format on
-
 struct ItemStackResponseInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ItemStackNetResult>                             mResult;
-    ::ll::TypedStorage<4, 16, ::ItemStackRequestId>                            mClientRequestId;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStackResponseContainerInfo>> mContainers;
+    ::ll::UntypedStorage<1, 1>  mUnkf9e13b;
+    ::ll::UntypedStorage<4, 16> mUnk48f8f3;
+    ::ll::UntypedStorage<8, 24> mUnkb244b8;
     // NOLINTEND
 
 public:
@@ -30,20 +20,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackResponseInfo(::ItemStackResponseInfo&&);
+    MCNAPI ItemStackResponseInfo(::ItemStackResponseInfo&&);
 
-    MCAPI ~ItemStackResponseInfo();
+    MCNAPI ~ItemStackResponseInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackResponseInfo&&);
+    MCNAPI void* $ctor(::ItemStackResponseInfo&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

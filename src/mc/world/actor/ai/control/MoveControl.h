@@ -17,16 +17,12 @@ class MoveControl : public ::Control {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MoveControl() /*override*/ = default;
 
-    // vIndex: 1
     virtual void initializeInternal(::Mob& mob, ::MoveControlDescription* description);
 
-    // vIndex: 2
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob);
 
-    // vIndex: 3
     virtual void setWantedPosition(::MoveControlComponent& parent, ::Mob&, ::Vec3 const& position, float speed);
     // NOLINTEND
 
@@ -66,6 +62,8 @@ public:
     MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 
     MCAPI void $setWantedPosition(::MoveControlComponent& parent, ::Mob&, ::Vec3 const& position, float speed);
+
+
     // NOLINTEND
 
 public:

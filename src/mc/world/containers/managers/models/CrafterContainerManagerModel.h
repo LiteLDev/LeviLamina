@@ -29,13 +29,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CrafterContainerManagerModel() /*override*/ = default;
 
-    // vIndex: 8
     virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
-    // vIndex: 20
     virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
@@ -57,6 +54,8 @@ public:
     MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
     MCAPI ::ContainerScreenContext $_postInit();
+
+
     // NOLINTEND
 
 public:

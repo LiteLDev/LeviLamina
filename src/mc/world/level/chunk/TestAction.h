@@ -28,13 +28,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void execute(::ServerLevel& level, ::Dimension& dimension) /*override*/;
 
-    // vIndex: 3
     virtual bool operator==(::IRequestAction const& action) const /*override*/;
 
-    // vIndex: 0
     virtual ~TestAction() /*override*/ = default;
     // NOLINTEND
 
@@ -42,6 +39,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+
+
     // NOLINTEND
 
 public:

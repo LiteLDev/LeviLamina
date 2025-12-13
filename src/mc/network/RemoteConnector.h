@@ -20,37 +20,29 @@ class RemoteConnector : public ::Connector,
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 9
     virtual bool host(::ConnectionDefinition const& definition) = 0;
 
-    // vIndex: 10
-    virtual bool connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&) = 0;
+    virtual bool connect(
+        ::Social::GameConnectionInfo const& gameConnection,
+        ::Social::GameConnectionInfo const& backupConnection
+    ) = 0;
 
-    // vIndex: 11
     virtual void disconnect() = 0;
 
-    // vIndex: 12
     virtual void tick() = 0;
 
-    // vIndex: 13
     virtual void runEvents() = 0;
 
-    // vIndex: 14
     virtual bool isServer() const = 0;
 
-    // vIndex: 15
     virtual void closeNetworkConnection(::NetworkIdentifier const&) = 0;
 
-    // vIndex: 16
     virtual ::NetworkIdentifier getNetworkIdentifier() const = 0;
 
-    // vIndex: 17
     virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const&) = 0;
 
-    // vIndex: 18
     virtual void setDisableLanSignaling(bool) = 0;
 
-    // vIndex: 0
     virtual ~RemoteConnector() /*override*/;
     // NOLINTEND
 

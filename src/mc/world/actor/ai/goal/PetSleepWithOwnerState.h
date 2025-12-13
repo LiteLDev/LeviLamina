@@ -2,16 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class PetSleepWithOwnerGoal;
-// clang-format on
-
 class PetSleepWithOwnerState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::PetSleepWithOwnerGoal&> mGoal;
+    ::ll::UntypedStorage<8, 8> mUnk6df5f9;
     // NOLINTEND
 
 public:
@@ -23,30 +18,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PetSleepWithOwnerState() = default;
 
-    // vIndex: 1
     virtual void tick();
 
-    // vIndex: 2
     virtual void start();
 
-    // vIndex: 3
     virtual void stop();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void dampenSpeed();
+    MCNAPI void dampenSpeed();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
+
+
     // NOLINTEND
 };

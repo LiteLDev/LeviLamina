@@ -39,14 +39,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptRelativeVolumeListBlockVolume() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
     getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
 
-    // vIndex: 2
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> createBlockLocationIterator() /*override*/;
     // NOLINTEND
 
@@ -123,6 +120,8 @@ public:
     $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
 
     MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
+
+
     // NOLINTEND
 
 public:

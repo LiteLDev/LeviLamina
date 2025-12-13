@@ -14,7 +14,12 @@ class UIEventCoordinator : public ::EventCoordinator<::UIEventListener> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~UIEventCoordinator() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

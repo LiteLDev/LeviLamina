@@ -17,4 +17,23 @@ public:
     LocalAuthentication& operator=(LocalAuthentication const&);
     LocalAuthentication(LocalAuthentication const&);
     LocalAuthentication();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void regenerateSelfSigned(
+        ::std::string const& playerName,
+        ::std::string const& xuid,
+        bool                 isSignedIn,
+        uint64               clientRandomId
+    );
+
+    MCNAPI_C ~LocalAuthentication();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

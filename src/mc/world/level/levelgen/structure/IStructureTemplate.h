@@ -16,16 +16,12 @@ class IStructureTemplate {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IStructureTemplate() = default;
 
-    // vIndex: 1
     virtual ::br::worldgen::StructureTemplateBlockPalette randomPalette(::BlockPos) const = 0;
 
-    // vIndex: 2
     virtual ::BlockPos rawSize() const = 0;
 
-    // vIndex: 3
     virtual ::NeighborAwareBlockUpdateType shouldHandleUpgradeForBlock(::Block const&) const = 0;
     // NOLINTEND
 

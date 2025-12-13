@@ -18,7 +18,6 @@ class VehicleStateProvider : public ::RideableComponentHelpers::IVehicleStatePro
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canAddPassenger(
         ::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers,
         ::RideableComponentData const&                         vehicleData,
@@ -26,7 +25,6 @@ public:
         ::RideableComponentHelpers::IRideableActor const&      passengerActor
     ) const /*override*/;
 
-    // vIndex: 0
     virtual ~VehicleStateProvider() /*override*/ = default;
     // NOLINTEND
 
@@ -39,6 +37,8 @@ public:
         ::RideableComponentHelpers::IRideableActor const&      vehicleActor,
         ::RideableComponentHelpers::IRideableActor const&      passengerActor
     ) const;
+
+
     // NOLINTEND
 
 public:

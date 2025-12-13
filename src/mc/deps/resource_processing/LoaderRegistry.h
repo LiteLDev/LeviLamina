@@ -31,19 +31,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LoaderRegistry() = default;
 
-    // vIndex: 1
     virtual ::Puv::Loader<::SharedTypes::v1_20_80::ParticleEffectData> const& getParticleLoader() const = 0;
 
-    // vIndex: 2
     virtual ::Puv::Loader<::SharedTypes::v1_21_100::CameraDocument> const& getCameraLoader() const = 0;
 
-    // vIndex: 3
     virtual ::Puv::Loader<::SharedTypes::v1_21_110::VoxelShapeDocument> const& getVoxelShapeLoader() const = 0;
 
-    // vIndex: 4
     virtual ::Puv::Loader<::SharedTypes::v1_21_30::TradeTableData> const& getTradeTableLoader() const = 0;
     // NOLINTEND
 

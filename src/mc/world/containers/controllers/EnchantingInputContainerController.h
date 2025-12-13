@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemDescriptor;
 class ItemStackBase;
 class Recipes;
 // clang-format on
@@ -15,16 +16,30 @@ class EnchantingInputContainerController : public ::ContainerController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~EnchantingInputContainerController() /*override*/ = default;
 
-    // vIndex: 4
-    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const&) const /*override*/;
+    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C bool _isEnchantingInputItem(::ItemDescriptor const& item) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
+#endif
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

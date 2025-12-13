@@ -23,7 +23,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LogMessageListPayload() /*override*/;
     // NOLINTEND
 

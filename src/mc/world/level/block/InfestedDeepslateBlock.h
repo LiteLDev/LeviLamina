@@ -14,10 +14,8 @@ class InfestedDeepslateBlock : public ::RotatedPillarInfestedBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 129
     virtual ::Block const* tryGetUninfested(::Block const& block) const /*override*/;
 
-    // vIndex: 0
     virtual ~InfestedDeepslateBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -25,6 +23,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Block const* $tryGetUninfested(::Block const& block) const;
+
+
     // NOLINTEND
 
 public:

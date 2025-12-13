@@ -6,7 +6,13 @@ struct MaterialReducerEntryOutput {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> itemId;
-    ::ll::TypedStorage<4, 4, int> itemCount;
+    ::ll::UntypedStorage<4, 4> mUnk5198b3;
+    ::ll::UntypedStorage<4, 4> mUnkceeacf;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MaterialReducerEntryOutput& operator=(MaterialReducerEntryOutput const&);
+    MaterialReducerEntryOutput(MaterialReducerEntryOutput const&);
+    MaterialReducerEntryOutput();
 };

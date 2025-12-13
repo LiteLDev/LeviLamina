@@ -14,11 +14,19 @@ class IContentAccessibilityProvider : public ::IContentKeyProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~IContentAccessibilityProvider() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~IContentAccessibilityProvider() /*override*/;
+#endif
 
-    // vIndex: 6
     virtual bool canAccess(::ContentIdentity const&) const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -27,14 +27,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::CameraAimAssistSettingsComponent& operator=(::CameraAimAssistSettingsComponent&&);
+    MCNAPI ::CameraAimAssistSettingsComponent& operator=(::CameraAimAssistSettingsComponent&&);
 
-    MCAPI ~CameraAimAssistSettingsComponent();
+    MCNAPI ~CameraAimAssistSettingsComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

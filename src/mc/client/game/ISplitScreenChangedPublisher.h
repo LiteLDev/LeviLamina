@@ -11,10 +11,8 @@ class ISplitScreenChangedPublisher {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ::Bedrock::PubSub::Subscription registerSplitScreenChangedListener(::std::function<void(uchar)>) const = 0;
 
-    // vIndex: 1
     virtual uchar getSplitScreenCount() const = 0;
     // NOLINTEND
 

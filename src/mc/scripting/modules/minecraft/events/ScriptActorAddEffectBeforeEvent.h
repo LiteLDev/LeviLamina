@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -17,10 +13,10 @@ struct ScriptActorAddEffectBeforeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mActor;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                              mEffectType;
-    ::ll::TypedStorage<4, 4, int>                                                                         mDuration;
-    ::ll::TypedStorage<1, 1, bool>                                                                        mCancel;
+    ::ll::UntypedStorage<8, 32> mUnk16e3d4;
+    ::ll::UntypedStorage<8, 32> mUnk47c299;
+    ::ll::UntypedStorage<4, 4>  mUnka997a7;
+    ::ll::UntypedStorage<1, 1>  mUnk651043;
     // NOLINTEND
 
 public:
@@ -32,22 +28,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&
     operator=(::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&&);
 
-    MCAPI ~ScriptActorAddEffectBeforeEvent();
+    MCNAPI ~ScriptActorAddEffectBeforeEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

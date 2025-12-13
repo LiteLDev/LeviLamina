@@ -18,36 +18,31 @@ class BannerDuplicateRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
+    ::ll::UntypedStorage<8, 24> mUnke750dc;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    BannerDuplicateRecipe& operator=(BannerDuplicateRecipe const&);
+    BannerDuplicateRecipe(BannerDuplicateRecipe const&);
     BannerDuplicateRecipe();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
         /*override*/;
 
-    // vIndex: 2
     virtual int getCraftingSize() const /*override*/;
 
-    // vIndex: 3
     virtual ::RecipeIngredient const& getIngredient(int, int) const /*override*/;
 
-    // vIndex: 8
     virtual ::std::vector<::ItemInstance> const& getResultItems() const /*override*/;
 
-    // vIndex: 5
     virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const /*override*/;
 
-    // vIndex: 6
     virtual int size() const /*override*/;
 
-    // vIndex: 0
     virtual ~BannerDuplicateRecipe() /*override*/ = default;
     // NOLINTEND
 
@@ -83,6 +78,8 @@ public:
     MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
     MCFOLD int $size() const;
+
+
     // NOLINTEND
 
 public:

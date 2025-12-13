@@ -18,20 +18,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~SavedData();
 
-    // vIndex: 1
     virtual void deserialize(::CompoundTag const&) = 0;
 
-    // vIndex: 2
     virtual void serialize(::CompoundTag&) const = 0;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

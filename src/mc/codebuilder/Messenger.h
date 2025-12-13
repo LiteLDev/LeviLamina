@@ -34,51 +34,37 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Messenger() /*override*/ = default;
 
-    // vIndex: 1
     virtual void
     onAgentAction(::AgentActionType actionType, ::std::string const& requestId, ::Json::Value const& result) const
         /*override*/;
 
-    // vIndex: 2
     virtual void onCommand(::CommandOrigin const& origin, ::CommandOutput const& output) /*override*/;
 
-    // vIndex: 2
     virtual void
     blockBroken(::Player const* player, ::Block const& block, int method, int variantData, ushort auxType) const
         /*override*/;
 
-    // vIndex: 3
     virtual void blockPlaced(::Player const* player, ::Block const& block, bool underWater, ushort auxType) const
         /*override*/;
 
-    // vIndex: 4
     virtual void cameraUsed(bool isSelfie) const /*override*/;
 
-    // vIndex: 5
     virtual void codeBuilderRuntimeAction(::std::string const& action) const /*override*/;
 
-    // vIndex: 6
     virtual void codeBuilderScoreChanged(::std::string const& objective, int const score) const /*override*/;
 
-    // vIndex: 7
     virtual void chunkChanged(::LevelChunk& chunk) const /*override*/;
 
-    // vIndex: 8
     virtual void chunkLoaded(::LevelChunk& chunk) const /*override*/;
 
-    // vIndex: 9
     virtual void chunkUnloaded(::LevelChunk& chunk) const /*override*/;
 
-    // vIndex: 10
     virtual void endOfDay(::Player const* player) const /*override*/;
 
-    // vIndex: 11
     virtual void entitySpawned(::Player const* player, int mobType, uint spawnMethod) const /*override*/;
 
-    // vIndex: 12
     virtual void itemAcquired(
         ::Player const*         player,
         ::ItemDescriptor const& item,
@@ -87,7 +73,6 @@ public:
         int  acquisitionMethod
     ) const /*override*/;
 
-    // vIndex: 13
     virtual void itemCrafted(
         ::Player const*       player,
         bool                  craftingTable,
@@ -102,24 +87,18 @@ public:
         bool                  recipeBookShown
     ) const /*override*/;
 
-    // vIndex: 14
     virtual void itemDropped(::Player const* player, ::ItemDescriptor const& item) const /*override*/;
 
-    // vIndex: 15
     virtual void itemEquipped(::Player const* player, ::ItemInstance const& item, int slot) const /*override*/;
 
-    // vIndex: 16
     virtual void itemInteracted(::Player const* player, ::ItemInstance const& item, int method) const /*override*/;
 
-    // vIndex: 17
     virtual void
     itemSmelted(::Player const* player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem) const
         /*override*/;
 
-    // vIndex: 18
     virtual void itemUsed(::Player const* player, ::ItemDescriptor const& item, int useMethod) const /*override*/;
 
-    // vIndex: 19
     virtual void mobInteracted(
         ::Player const* player,
         int             legacyInteractedEntityType,
@@ -128,7 +107,6 @@ public:
         uchar           interactedEntityColor
     ) const /*override*/;
 
-    // vIndex: 20
     virtual void mobKilled(
         ::Player const* player,
         ::Actor*        entKiller,
@@ -138,26 +116,20 @@ public:
         int traderTier
     ) const /*override*/;
 
-    // vIndex: 21
     virtual void
     piglinBarter(::Player const* player, ::std::string const& itemUsed, bool wasTargetingBarteringPlayer) const
         /*override*/;
 
-    // vIndex: 22
     virtual void playerBounced(::Player const* player, ::Block const& block, int bounceHeight, int auxType) const
         /*override*/;
 
-    // vIndex: 23
     virtual void playerDied(::Player const* player, int killerId, int killerVariant, int reason, bool inRaid) const
         /*override*/;
 
-    // vIndex: 24
     virtual void playerJoined(::Player const* player) const /*override*/;
 
-    // vIndex: 25
     virtual void playerLeave(::Player const* player) const /*override*/;
 
-    // vIndex: 26
     virtual void playerMessage(
         ::std::string const& fromName,
         ::std::string const& toName,
@@ -165,14 +137,11 @@ public:
         ::std::string const& messageType
     ) const /*override*/;
 
-    // vIndex: 27
     virtual void playerTeleported(::Player const* player, float metersTravelled, int cause, int sourceType) const
         /*override*/;
 
-    // vIndex: 28
     virtual void playerTransform(::Player const* player) const /*override*/;
 
-    // vIndex: 29
     virtual void playerTravelled(
         ::Player const* player,
         float           metersTravelledSinceLastEvent,
@@ -180,10 +149,8 @@ public:
         int             newBiome
     ) const /*override*/;
 
-    // vIndex: 30
     virtual void targetBlockHit(::Player const* player, int const redstoneLevel) const /*override*/;
 
-    // vIndex: 31
     virtual void tradeCompleted(
         ::Player const*         player,
         ::Actor*                trader,
@@ -312,6 +279,8 @@ public:
         ::ItemInstance const&   tradedFor,
         int                     traderEmeraldCount
     ) const;
+
+
     // NOLINTEND
 
 public:

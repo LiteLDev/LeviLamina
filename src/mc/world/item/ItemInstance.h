@@ -16,16 +16,12 @@ class ItemInstance : public ::ItemStackBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void reinit(::Block const& block, int count) /*override*/;
 
-    // vIndex: 3
     virtual void reinit(::Item const& item, int count, int auxValue) /*override*/;
 
-    // vIndex: 1
     virtual void reinit(::std::string_view const name, int count, int auxValue) /*override*/;
 
-    // vIndex: 0
     virtual ~ItemInstance() /*override*/;
     // NOLINTEND
 
@@ -34,9 +30,9 @@ public:
     // NOLINTBEGIN
     MCAPI ItemInstance();
 
-    MCAPI explicit ItemInstance(::ItemStackBase const& rhs);
+    MCAPI ItemInstance(::ItemInstance const& rhs);
 
-    MCAPI ItemInstance(::ItemInstance const&);
+    MCAPI explicit ItemInstance(::ItemStackBase const& rhs);
 
     MCAPI ItemInstance(::Block const& block, int count = 1, ::CompoundTag const* _userData = nullptr);
 
@@ -63,9 +59,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCFOLD void* $ctor(::ItemStackBase const& rhs);
+    MCAPI void* $ctor(::ItemInstance const& rhs);
 
-    MCAPI void* $ctor(::ItemInstance const&);
+    MCFOLD void* $ctor(::ItemStackBase const& rhs);
 
     MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
 
@@ -88,6 +84,8 @@ public:
     MCAPI void $reinit(::Item const& item, int count, int auxValue);
 
     MCAPI void $reinit(::std::string_view const name, int count, int auxValue);
+
+
     // NOLINTEND
 
 public:

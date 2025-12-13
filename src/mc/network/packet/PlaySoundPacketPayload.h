@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/NetworkBlockPosition.h"
-
 // auto generated forward declare list
 // clang-format off
 class Vec3;
@@ -14,10 +11,10 @@ struct PlaySoundPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>          mName;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
-    ::ll::TypedStorage<4, 4, float>                   mVolume;
-    ::ll::TypedStorage<4, 4, float>                   mPitch;
+    ::ll::UntypedStorage<8, 32> mUnkafec0d;
+    ::ll::UntypedStorage<4, 12> mUnk903060;
+    ::ll::UntypedStorage<4, 4>  mUnk1e9c80;
+    ::ll::UntypedStorage<4, 4>  mUnk465107;
     // NOLINTEND
 
 public:
@@ -29,22 +26,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlaySoundPacketPayload(::std::string name, ::Vec3 const& pos, float volume, float pitch);
+    MCNAPI PlaySoundPacketPayload(::std::string name, ::Vec3 const& pos, float volume, float pitch);
 
-    MCAPI ::PlaySoundPacketPayload& operator=(::PlaySoundPacketPayload&&);
+    MCNAPI ::PlaySoundPacketPayload& operator=(::PlaySoundPacketPayload&&);
 
-    MCAPI ~PlaySoundPacketPayload();
+    MCNAPI ~PlaySoundPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string name, ::Vec3 const& pos, float volume, float pitch);
+    MCNAPI void* $ctor(::std::string name, ::Vec3 const& pos, float volume, float pitch);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

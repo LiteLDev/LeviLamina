@@ -30,13 +30,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void populatePacketData(::ShapeDataPayload& packet) const /*override*/;
 
-    // vIndex: 2
     virtual void applyUpdatedData(::ShapeDataPayload const& packet) /*override*/;
 
-    // vIndex: 0
     virtual ~ScriptArrowShape() /*override*/;
     // NOLINTEND
 
@@ -65,6 +62,8 @@ public:
     MCAPI void $populatePacketData(::ShapeDataPayload& packet) const;
 
     MCAPI void $applyUpdatedData(::ShapeDataPayload const& packet);
+
+
     // NOLINTEND
 
 public:

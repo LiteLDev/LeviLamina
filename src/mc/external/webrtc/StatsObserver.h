@@ -16,10 +16,8 @@ class StatsObserver : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void OnComplete(::std::vector<::webrtc::StatsReport const*> const&) = 0;
 
-    // vIndex: 2
     virtual ~StatsObserver() /*override*/ = default;
     // NOLINTEND
 

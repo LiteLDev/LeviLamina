@@ -17,10 +17,10 @@ namespace ScriptResultUtil {
 // functions
 // NOLINTBEGIN
 MCNAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError>
-GametestResultToScriptingValueResult(::std::variant<::gametest::GameTestError, ::Vec3> const& result);
+GametestResultToScriptingValueResult(::std::variant<::gametest::GameTestError, ::BlockPos> const& result);
 
 MCNAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError>
-GametestResultToScriptingValueResult(::std::variant<::gametest::GameTestError, ::BlockPos> const& result);
+GametestResultToScriptingValueResult(::std::variant<::gametest::GameTestError, ::Vec3> const& result);
 
 MCNAPI ::std::optional<::gametest::GameTestError> ScriptingResultToGameTestResult(::Scripting::ResultAny const& result);
 // NOLINTEND

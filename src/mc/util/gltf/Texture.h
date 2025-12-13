@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace glTF {
 
 struct Texture {
@@ -44,6 +49,20 @@ public:
     Texture& operator=(Texture const&);
     Texture(Texture const&);
     Texture();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::Json::Value serialize() const;
+
+    MCNAPI_C ~Texture();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace glTF

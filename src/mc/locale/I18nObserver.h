@@ -15,22 +15,34 @@ class I18nObserver : public ::Core::Observer<::I18nObserver, ::Bedrock::Threadin
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~I18nObserver() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~I18nObserver() /*override*/;
+#endif
 
-    // vIndex: 2
     virtual void onLanguageChanged(::std::string const&, bool) = 0;
 
-    // vIndex: 3
     virtual void onLanguageKeywordsLoadedFromPack(::PackManifest const&) = 0;
 
-    // vIndex: 4
     virtual void onLanguagesLoaded() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct CloudConfiguration {
 public:
     // member variables
@@ -16,5 +21,22 @@ public:
     // prevent constructor by default
     CloudConfiguration& operator=(CloudConfiguration const&);
     CloudConfiguration(CloudConfiguration const&);
-    CloudConfiguration();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C CloudConfiguration();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+    // NOLINTEND
 };

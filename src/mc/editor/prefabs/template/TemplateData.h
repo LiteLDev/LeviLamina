@@ -25,10 +25,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&
-    operator=(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData const&);
+    operator=(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&&);
 
     MCNAPI ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&
-    operator=(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&&);
+    operator=(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData const&);
 
     MCNAPI ~TemplateData();
     // NOLINTEND

@@ -2,28 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/json/Value.h"
-#include "mc/network/packet/ModalFormCancelReason.h"
-
 struct ModalFormResponsePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>                                     mFormId;
-    ::ll::TypedStorage<8, 24, ::std::optional<::Json::Value>>          mJSONResponse;
-    ::ll::TypedStorage<1, 2, ::std::optional<::ModalFormCancelReason>> mFormCancelReason;
+    ::ll::UntypedStorage<4, 4>  mUnk4825e0;
+    ::ll::UntypedStorage<8, 24> mUnk8599f0;
+    ::ll::UntypedStorage<1, 2>  mUnk6287d5;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ModalFormResponsePacketPayload& operator=(ModalFormResponsePacketPayload const&);
+    ModalFormResponsePacketPayload(ModalFormResponsePacketPayload const&);
+    ModalFormResponsePacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ModalFormResponsePacketPayload();
+    MCNAPI ~ModalFormResponsePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

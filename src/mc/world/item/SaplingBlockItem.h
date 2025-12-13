@@ -15,11 +15,9 @@ class SaplingBlockItem : public ::BlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 90
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 0
     virtual ~SaplingBlockItem() /*override*/ = default;
     // NOLINTEND
 
@@ -28,6 +26,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+
+
     // NOLINTEND
 
 public:

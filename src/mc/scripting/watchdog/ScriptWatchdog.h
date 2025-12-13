@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/runtime/ContextId.h"
+
 class ScriptWatchdog {
 public:
     // member variables

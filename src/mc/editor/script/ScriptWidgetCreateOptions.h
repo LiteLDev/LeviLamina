@@ -34,9 +34,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetCreateOptions(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
-
     MCNAPI ScriptWidgetCreateOptions(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
+
+    MCNAPI ScriptWidgetCreateOptions(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetCreateOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
@@ -56,9 +56,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
-
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
+
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
     // NOLINTEND
 
 public:

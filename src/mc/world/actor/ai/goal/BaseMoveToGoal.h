@@ -44,43 +44,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool canUse() /*override*/;
 
-    // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
 
-    // vIndex: 4
     virtual void start() /*override*/;
 
-    // vIndex: 5
     virtual void stop() /*override*/;
 
-    // vIndex: 6
     virtual void tick() /*override*/;
 
-    // vIndex: 10
     virtual bool hasReachedTarget() const;
 
-    // vIndex: 11
     virtual bool isValidTarget(::BlockSource&, ::BlockPos const&) = 0;
 
-    // vIndex: 12
     virtual int _nextStartTick();
 
-    // vIndex: 13
     virtual bool _canReach(::BlockPos const& pos);
 
-    // vIndex: 14
     virtual void _moveToBlock() = 0;
 
-    // vIndex: 15
     virtual ::Vec3 _getTargetPosition() const;
 
-    // vIndex: 16
     virtual uint64 _getRepathTime() const;
 
-    // vIndex: 0
     virtual ~BaseMoveToGoal() /*override*/ = default;
     // NOLINTEND
 
@@ -112,6 +99,8 @@ public:
     MCAPI ::Vec3 $_getTargetPosition() const;
 
     MCFOLD uint64 $_getRepathTime() const;
+
+
     // NOLINTEND
 
 public:

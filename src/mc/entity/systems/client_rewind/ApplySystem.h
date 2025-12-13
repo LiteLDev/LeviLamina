@@ -47,7 +47,6 @@ struct ApplySystem : public ::IStrictTickingSystem<::StrictExecutionContext<
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::ActorMovementTickNeededComponent>,
@@ -65,7 +64,6 @@ public:
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
 
-    // vIndex: 6
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<::ActorMovementTickNeededComponent>,
@@ -84,7 +82,6 @@ public:
         ::StrictEntityContext&   entityContext
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~ApplySystem() /*override*/ = default;
     // NOLINTEND
 
@@ -142,6 +139,8 @@ public:
             ::EntityFactoryT<>>& executionContext,
         ::StrictEntityContext&   entityContext
     );
+
+
     // NOLINTEND
 
 public:

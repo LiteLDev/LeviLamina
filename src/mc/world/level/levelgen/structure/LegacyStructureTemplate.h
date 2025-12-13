@@ -38,14 +38,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LegacyStructureTemplate() /*override*/;
 
-    // vIndex: 0
     virtual ::std::unordered_map<::BlockPos, ::std::string>
     getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const /*override*/;
 
-    // vIndex: 1
     virtual void placeInWorld(
         ::BlockSource&             region,
         ::BlockPos const&          pos,
@@ -53,118 +50,117 @@ public:
         ::Random&                  random
     ) const /*override*/;
 
-    // vIndex: 3
     virtual ::NeighborAwareBlockUpdateType shouldHandleUpgradeForBlock(::Block const& block) const /*override*/;
 
-    // vIndex: 2
     virtual ::BlockPos rawSize() const /*override*/;
 
-    // vIndex: 1
     virtual ::br::worldgen::StructureTemplateBlockPalette randomPalette(::BlockPos) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyStructureTemplate();
+    MCNAPI LegacyStructureTemplate();
 
-    MCAPI ::BlockPos _calculateRelativePosition(::BlockPos pos, ::LegacyStructureSettings const& settings) const;
+    MCNAPI ::BlockPos _calculateRelativePosition(::BlockPos pos, ::LegacyStructureSettings const& settings) const;
 
-    MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
+    MCNAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 
-    MCAPI void load(::CompoundTag const& tag);
+    MCNAPI void load(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _fixItemStack(::CompoundTag& itemTag, int dataVersion);
+    MCNAPI static void _fixItemStack(::CompoundTag& itemTag, int dataVersion);
 
-    MCAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
+    MCNAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
 
-    MCAPI static void _mapPropertyToTag(
+    MCNAPI static void _mapPropertyToTag(
         ::CompoundTag&       originalTag,
         ::std::string const& propertyString,
         ::std::string const& valueString
     );
 
-    MCAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
+    MCNAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
         ::std::unique_ptr<::CompoundTag> originalTag,
         ::std::string const&             javaBlockName,
         int                              dataVersion,
         ::Block const*&                  block
     );
 
-    MCAPI static ::Block const* _mapToBlock(::std::string const& blockName);
+    MCNAPI static ::Block const* _mapToBlock(::std::string const& blockName);
 
-    MCAPI static ::Block const& _mapToData(::Block const& curr, ::LegacyStructureSettings const& settings);
+    MCNAPI static ::Block const& _mapToData(::Block const& curr, ::LegacyStructureSettings const& settings);
 
-    MCAPI static ::Block const*
+    MCNAPI static ::Block const*
     _mapToProperty(::std::string const& propertyString, ::std::string const& valueString, ::Block const& block);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& AUTHOR_TAG();
+    MCNAPI static ::std::string const& AUTHOR_TAG();
 
-    MCAPI static ::std::string const& BLOCKS_TAG();
+    MCNAPI static ::std::string const& BLOCKS_TAG();
 
-    MCAPI static ::std::string const& BLOCK_TAG_NBT();
+    MCNAPI static ::std::string const& BLOCK_TAG_NBT();
 
-    MCAPI static ::std::string const& BLOCK_TAG_POS();
+    MCNAPI static ::std::string const& BLOCK_TAG_POS();
 
-    MCAPI static ::std::string const& BLOCK_TAG_STATE();
+    MCNAPI static ::std::string const& BLOCK_TAG_STATE();
 
-    MCAPI static ::std::string const& DATA_VERSION_TAG();
+    MCNAPI static ::std::string const& DATA_VERSION_TAG();
 
-    MCAPI static ::std::string const& ENTITIES_TAG();
+    MCNAPI static ::std::string const& ENTITIES_TAG();
 
-    MCAPI static ::std::string const& ENTITY_TAG_BLOCKPOS();
+    MCNAPI static ::std::string const& ENTITY_TAG_BLOCKPOS();
 
-    MCAPI static ::std::string const& ENTITY_TAG_NBT();
+    MCNAPI static ::std::string const& ENTITY_TAG_NBT();
 
-    MCAPI static ::std::string const& ENTITY_TAG_POS();
+    MCNAPI static ::std::string const& ENTITY_TAG_POS();
 
-    MCAPI static ::std::string const& MINECRAFT_PREFIX();
+    MCNAPI static ::std::string const& MINECRAFT_PREFIX();
 
-    MCAPI static ::std::string const& PALETTE_TAG();
+    MCNAPI static ::std::string const& PALETTE_TAG();
 
-    MCAPI static ::std::string const& SIZE_TAG();
+    MCNAPI static ::std::string const& SIZE_TAG();
 
-    MCAPI static ::std::string const& VERSION_TAG();
+    MCNAPI static ::std::string const& VERSION_TAG();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<::BlockPos, ::std::string>
+    MCNAPI ::std::unordered_map<::BlockPos, ::std::string>
     $getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const;
 
-    MCAPI void $placeInWorld(
+    MCNAPI void $placeInWorld(
         ::BlockSource&             region,
         ::BlockPos const&          pos,
         ::LegacyStructureSettings& settings,
         ::Random&                  random
     ) const;
 
-    MCAPI ::NeighborAwareBlockUpdateType $shouldHandleUpgradeForBlock(::Block const& block) const;
+    MCNAPI ::NeighborAwareBlockUpdateType $shouldHandleUpgradeForBlock(::Block const& block) const;
 
-    MCAPI ::BlockPos $rawSize() const;
+    MCNAPI ::BlockPos $rawSize() const;
 
-    MCAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos) const;
+    MCNAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos) const;
+
+
     // NOLINTEND
 
 public:

@@ -2,6 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/certificates/identity/ActiveDirectoryAction.h"
+#include "mc/certificates/identity/ActiveDirectoryExperience.h"
+#include "mc/certificates/identity/edu/Role.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActiveDirectoryIdentity;
+// clang-format on
+
 class ActiveDirectoryPopup {
 public:
     // member variables
@@ -23,8 +34,69 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActiveDirectoryPopup& operator=(ActiveDirectoryPopup const&);
-    ActiveDirectoryPopup(ActiveDirectoryPopup const&);
-    ActiveDirectoryPopup();
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ActiveDirectoryPopup();
+
+    MCNAPI_C ActiveDirectoryPopup(::ActiveDirectoryPopup&&);
+
+    MCNAPI_C ActiveDirectoryPopup(::ActiveDirectoryPopup const&);
+
+    MCNAPI_C ActiveDirectoryPopup(
+        ::std::string&&             id,
+        ::std::string&&             title,
+        ::std::string&&             popupText,
+        ::std::string&&             hyperlinkIntroText,
+        ::std::string&&             hyperlinkLabelText,
+        ::std::string&&             hyperlinkUri,
+        ::ActiveDirectoryAction     postPopupAction,
+        ::ActiveDirectoryExperience experienceType
+    );
+
+    MCNAPI_C ::std::string getTTSMessageBody() const;
+
+    MCNAPI_C ::ActiveDirectoryPopup& operator=(::ActiveDirectoryPopup const&);
+
+    MCNAPI_C ~ActiveDirectoryPopup();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::ActiveDirectoryPopup
+    get(::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity const> identity,
+        ::ActiveDirectoryExperience                                    experience);
+
+    MCNAPI_C static ::ActiveDirectoryPopup
+    get(::edu::Role, int trialsRemaining, ::ActiveDirectoryExperience experience, ::std::string const& email);
+
+    MCNAPI_C static ::ActiveDirectoryPopup getVerificationInProgressPopup(::std::string const& verificationUri);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::ActiveDirectoryPopup&&);
+
+    MCNAPI_C void* $ctor(::ActiveDirectoryPopup const&);
+
+    MCNAPI_C void* $ctor(
+        ::std::string&&             id,
+        ::std::string&&             title,
+        ::std::string&&             popupText,
+        ::std::string&&             hyperlinkIntroText,
+        ::std::string&&             hyperlinkLabelText,
+        ::std::string&&             hyperlinkUri,
+        ::ActiveDirectoryAction     postPopupAction,
+        ::ActiveDirectoryExperience experienceType
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

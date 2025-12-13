@@ -19,20 +19,32 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>     x;
-        ::ll::TypedStorage<4, 4, int>     y;
-        ::ll::TypedStorage<4, 4, int>     z;
-        ::ll::TypedStorage<4, 12, ::Vec3> pivot;
+        ::ll::UntypedStorage<4, 4>  mUnka67572;
+        ::ll::UntypedStorage<4, 4>  mUnk5c5919;
+        ::ll::UntypedStorage<4, 4>  mUnkb59fca;
+        ::ll::UntypedStorage<4, 12> mUnk414d5a;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RotationType& operator=(RotationType const&);
+        RotationType(RotationType const&);
+        RotationType();
     };
 
     struct ScaleType {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 12, ::Vec3> value;
-        ::ll::TypedStorage<4, 12, ::Vec3> pivot;
+        ::ll::UntypedStorage<4, 12> mUnk32f679;
+        ::ll::UntypedStorage<4, 12> mUnk5dbe5e;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ScaleType& operator=(ScaleType const&);
+        ScaleType(ScaleType const&);
+        ScaleType();
     };
 
 public:

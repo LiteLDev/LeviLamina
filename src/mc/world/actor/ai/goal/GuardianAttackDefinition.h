@@ -14,35 +14,35 @@ namespace JsonUtil { class EmptyClass; }
 
 class GuardianAttackDefinition : public ::BaseGoalDefinition {
 public:
-    // GuardianAttackDefinition inner types define
-    using self = ::GuardianAttackDefinition;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>   mMagicDamage;
-    ::ll::TypedStorage<4, 4, int>   mHardModeExtraMagicDamage;
-    ::ll::TypedStorage<4, 4, int>   mElderExtraMagicDamage;
-    ::ll::TypedStorage<4, 4, float> mMaxRotationX;
-    ::ll::TypedStorage<4, 4, float> mMaxHeadRotationY;
-    ::ll::TypedStorage<4, 4, float> mMinDistance;
-    ::ll::TypedStorage<4, 4, float> mSoundDelayTime;
+    ::ll::UntypedStorage<4, 4> mUnk6326c4;
+    ::ll::UntypedStorage<4, 4> mUnk26cedf;
+    ::ll::UntypedStorage<4, 4> mUnkb4f3cd;
+    ::ll::UntypedStorage<4, 4> mUnk6dc843;
+    ::ll::UntypedStorage<4, 4> mUnk1c79c3;
+    ::ll::UntypedStorage<4, 4> mUnkf1d257;
+    ::ll::UntypedStorage<4, 4> mUnkd1de50;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    GuardianAttackDefinition& operator=(GuardianAttackDefinition const&);
+    GuardianAttackDefinition(GuardianAttackDefinition const&);
+    GuardianAttackDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool validateMobType(::Mob& mob) const /*override*/;
 
-    // vIndex: 0
     virtual ~GuardianAttackDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::string const&                                                                                     name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GuardianAttackDefinition>>& root
     );
@@ -51,7 +51,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $validateMobType(::Mob& mob) const;
+    MCNAPI bool $validateMobType(::Mob& mob) const;
+
+
     // NOLINTEND
 
 public:

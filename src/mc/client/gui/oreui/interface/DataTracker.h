@@ -25,6 +25,28 @@ public:
     DataTracker& operator=(DataTracker const&);
     DataTracker(DataTracker const&);
     DataTracker();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C DataTracker(::OreUI::DataTracker&&);
+
+    MCNAPI_C ::OreUI::DataTracker& operator=(::OreUI::DataTracker&&);
+
+    MCNAPI_C ~DataTracker();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::OreUI::DataTracker&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace OreUI

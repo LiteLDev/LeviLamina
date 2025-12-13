@@ -22,7 +22,6 @@ class ScriptHealableComponent
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptHealableComponent() /*override*/ = default;
     // NOLINTEND
 

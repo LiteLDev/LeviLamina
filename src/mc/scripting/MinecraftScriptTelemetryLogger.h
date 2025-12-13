@@ -27,19 +27,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void onPluginDiscovery(::ScriptPluginManagerResult const& pluginManagerResult) /*override*/;
 
-    // vIndex: 2
     virtual void onPluginRun(::ScriptPluginManagerResult const& pluginManagerResult) /*override*/;
 
-    // vIndex: 3
     virtual void onDebuggerListen(bool autoAttach) /*override*/;
 
-    // vIndex: 4
     virtual void onDebuggerConnect(bool autoAttach, int retries) /*override*/;
 
-    // vIndex: 0
     virtual ~MinecraftScriptTelemetryLogger() /*override*/ = default;
     // NOLINTEND
 
@@ -53,6 +48,8 @@ public:
     MCNAPI void $onDebuggerListen(bool autoAttach);
 
     MCNAPI void $onDebuggerConnect(bool autoAttach, int retries);
+
+
     // NOLINTEND
 
 public:

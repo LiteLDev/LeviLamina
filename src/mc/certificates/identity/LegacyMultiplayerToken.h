@@ -5,7 +5,9 @@
 // auto generated forward declare list
 // clang-format off
 class Certificate;
+class PrivateKeyManager;
 struct PlayerAuthenticationInfo;
+namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -32,6 +34,8 @@ public:
     // NOLINTBEGIN
     MCAPI LegacyMultiplayerToken(::LegacyMultiplayerToken const& other);
 
+    MCAPI_C ::Json::Value _getExtraData(::std::string const& key, ::Json::Value const& defaultValue) const;
+
     MCAPI ::mce::UUID getIdentity() const;
 
     MCAPI ::std::string getIdentityName() const;
@@ -45,6 +49,23 @@ public:
     MCAPI ::std::string toString() const;
 
     MCAPI ~LegacyMultiplayerToken();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static ::LegacyMultiplayerToken createSelfSigned(
+        ::PrivateKeyManager& signer,
+        int64                creationDate,
+        int64                expirationDate,
+        ::mce::UUID const&   identity,
+        ::std::string const& displayName,
+        ::std::string const& identityPublicKey,
+        ::Json::Value const* extraInfo
+    );
+
+    MCAPI_C static ::PlayerAuthenticationInfo
+    trustTokenWeAreAbsolutelySureIsLocal(::LegacyMultiplayerToken const& token);
     // NOLINTEND
 
 public:

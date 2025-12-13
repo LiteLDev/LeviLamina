@@ -15,10 +15,8 @@ class ISubChunkManagerConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ISubChunkManagerConnector() = default;
 
-    // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, short, bool)>&
     getOnSubChunkLoadedConnector() = 0;
     // NOLINTEND

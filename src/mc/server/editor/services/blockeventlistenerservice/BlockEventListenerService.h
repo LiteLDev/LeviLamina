@@ -25,19 +25,14 @@ class BlockEventListenerService : public ::Editor::Services::IEditorService,
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlockEventListenerService() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
-    // vIndex: 3
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
-    // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    // vIndex: 1
     virtual ::EventResult onBlockPlacedByPlayer(
         ::Player&         player,
         ::Block const&    placedBlock,
@@ -45,7 +40,6 @@ public:
         bool              isUnderwater
     ) /*override*/;
 
-    // vIndex: 3
     virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos) /*override*/;
     // NOLINTEND
 
@@ -74,6 +68,8 @@ public:
     $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
     MCNAPI ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
+
+
     // NOLINTEND
 
 public:

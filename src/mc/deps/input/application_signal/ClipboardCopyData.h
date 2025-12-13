@@ -16,6 +16,18 @@ public:
     ClipboardCopyData& operator=(ClipboardCopyData const&);
     ClipboardCopyData(ClipboardCopyData const&);
     ClipboardCopyData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~ClipboardCopyData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace ApplicationSignal

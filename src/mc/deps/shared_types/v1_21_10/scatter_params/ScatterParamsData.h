@@ -26,13 +26,13 @@ public:
     // NOLINTBEGIN
     MCNAPI ScatterParamsData();
 
-    MCNAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData const&);
-
     MCNAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData&&);
 
-    MCNAPI ::SharedTypes::v1_21_10::ScatterParamsData& operator=(::SharedTypes::v1_21_10::ScatterParamsData const&);
+    MCNAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData const&);
 
     MCNAPI ::SharedTypes::v1_21_10::ScatterParamsData& operator=(::SharedTypes::v1_21_10::ScatterParamsData&&);
+
+    MCNAPI ::SharedTypes::v1_21_10::ScatterParamsData& operator=(::SharedTypes::v1_21_10::ScatterParamsData const&);
 
     MCNAPI ~ScatterParamsData();
     // NOLINTEND
@@ -48,9 +48,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData const&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData&&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData const&);
     // NOLINTEND
 
 public:

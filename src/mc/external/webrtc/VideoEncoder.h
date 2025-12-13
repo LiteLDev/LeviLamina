@@ -20,16 +20,47 @@ public:
     // VideoEncoder inner types declare
     // clang-format off
     struct Capabilities;
-    struct EncoderInfo;
     struct LossNotification;
     struct QpThresholds;
     struct RateControlParameters;
     struct ResolutionBitrateLimits;
     struct ScalingSettings;
+    struct EncoderInfo;
     struct Settings;
     // clang-format on
 
     // VideoEncoder inner types define
+    struct Capabilities {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk2f0cd1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Capabilities& operator=(Capabilities const&);
+        Capabilities(Capabilities const&);
+        Capabilities();
+    };
+
+    struct LossNotification {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnkf2a1b2;
+        ::ll::UntypedStorage<4, 4> mUnkbce05b;
+        ::ll::UntypedStorage<1, 2> mUnk849bfb;
+        ::ll::UntypedStorage<1, 2> mUnk803218;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LossNotification& operator=(LossNotification const&);
+        LossNotification(LossNotification const&);
+        LossNotification();
+    };
+
     struct QpThresholds {
     public:
         // member variables
@@ -43,6 +74,46 @@ public:
         QpThresholds& operator=(QpThresholds const&);
         QpThresholds(QpThresholds const&);
         QpThresholds();
+    };
+
+    struct RateControlParameters {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 168> mUnk88beae;
+        ::ll::UntypedStorage<4, 168> mUnk7f026f;
+        ::ll::UntypedStorage<8, 8>   mUnkf17317;
+        ::ll::UntypedStorage<8, 8>   mUnka186d5;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RateControlParameters& operator=(RateControlParameters const&);
+        RateControlParameters(RateControlParameters const&);
+        RateControlParameters();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ~RateControlParameters() = default;
+        // NOLINTEND
+    };
+
+    struct ResolutionBitrateLimits {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk9e7e3f;
+        ::ll::UntypedStorage<4, 4> mUnk8c7e9a;
+        ::ll::UntypedStorage<4, 4> mUnkb47c68;
+        ::ll::UntypedStorage<4, 4> mUnke3bcf5;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ResolutionBitrateLimits& operator=(ResolutionBitrateLimits const&);
+        ResolutionBitrateLimits(ResolutionBitrateLimits const&);
+        ResolutionBitrateLimits();
     };
 
     struct ScalingSettings {
@@ -67,23 +138,6 @@ public:
         ScalingSettings& operator=(ScalingSettings const&);
         ScalingSettings(ScalingSettings const&);
         ScalingSettings();
-    };
-
-    struct ResolutionBitrateLimits {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk9e7e3f;
-        ::ll::UntypedStorage<4, 4> mUnk8c7e9a;
-        ::ll::UntypedStorage<4, 4> mUnkb47c68;
-        ::ll::UntypedStorage<4, 4> mUnke3bcf5;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ResolutionBitrateLimits& operator=(ResolutionBitrateLimits const&);
-        ResolutionBitrateLimits(ResolutionBitrateLimits const&);
-        ResolutionBitrateLimits();
     };
 
     struct EncoderInfo {
@@ -111,61 +165,6 @@ public:
         EncoderInfo();
     };
 
-    struct RateControlParameters {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 168> mUnk88beae;
-        ::ll::UntypedStorage<4, 168> mUnk7f026f;
-        ::ll::UntypedStorage<8, 8>   mUnkf17317;
-        ::ll::UntypedStorage<8, 8>   mUnka186d5;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RateControlParameters& operator=(RateControlParameters const&);
-        RateControlParameters(RateControlParameters const&);
-        RateControlParameters();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~RateControlParameters() = default;
-        // NOLINTEND
-    };
-
-    struct LossNotification {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkf2a1b2;
-        ::ll::UntypedStorage<4, 4> mUnkbce05b;
-        ::ll::UntypedStorage<1, 2> mUnk849bfb;
-        ::ll::UntypedStorage<1, 2> mUnk803218;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LossNotification& operator=(LossNotification const&);
-        LossNotification(LossNotification const&);
-        LossNotification();
-    };
-
-    struct Capabilities {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk2f0cd1;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Capabilities& operator=(Capabilities const&);
-        Capabilities(Capabilities const&);
-        Capabilities();
-    };
-
     struct Settings {
     public:
         // member variables
@@ -186,40 +185,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~VideoEncoder() = default;
 
-    // vIndex: 1
     virtual void SetFecControllerOverride(::webrtc::FecControllerOverride*);
 
-    // vIndex: 3
     virtual int InitEncode(::webrtc::VideoCodec const*, int, uint64);
 
-    // vIndex: 2
     virtual int InitEncode(::webrtc::VideoCodec const*, ::webrtc::VideoEncoder::Settings const&);
 
-    // vIndex: 4
     virtual int RegisterEncodeCompleteCallback(::webrtc::EncodedImageCallback*) = 0;
 
-    // vIndex: 5
     virtual int Release() = 0;
 
-    // vIndex: 6
     virtual int Encode(::webrtc::VideoFrame const&, ::std::vector<::webrtc::VideoFrameType> const*) = 0;
 
-    // vIndex: 7
     virtual void SetRates(::webrtc::VideoEncoder::RateControlParameters const&) = 0;
 
-    // vIndex: 8
     virtual void OnPacketLossRateUpdate(float);
 
-    // vIndex: 9
     virtual void OnRttUpdate(int64);
 
-    // vIndex: 10
     virtual void OnLossNotification(::webrtc::VideoEncoder::LossNotification const&);
 
-    // vIndex: 11
     virtual ::webrtc::VideoEncoder::EncoderInfo GetEncoderInfo() const = 0;
     // NOLINTEND
 

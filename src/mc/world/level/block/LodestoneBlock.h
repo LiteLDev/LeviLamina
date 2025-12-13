@@ -10,7 +10,6 @@ class LodestoneBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LodestoneBlock() /*override*/ = default;
     // NOLINTEND
 

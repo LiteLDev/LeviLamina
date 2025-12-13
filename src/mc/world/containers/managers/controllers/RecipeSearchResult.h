@@ -18,4 +18,16 @@ public:
     RecipeSearchResult& operator=(RecipeSearchResult const&);
     RecipeSearchResult(RecipeSearchResult const&);
     RecipeSearchResult();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~RecipeSearchResult();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

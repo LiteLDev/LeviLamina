@@ -19,6 +19,18 @@ public:
     AuthError& operator=(AuthError const&);
     AuthError(AuthError const&);
     AuthError();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~AuthError();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Identity

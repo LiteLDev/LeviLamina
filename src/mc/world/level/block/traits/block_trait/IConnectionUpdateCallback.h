@@ -16,10 +16,8 @@ class IConnectionUpdateCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IConnectionUpdateCallback() = default;
 
-    // vIndex: 1
     virtual ::Block const&
     updateConnection(::BlockSource const&, ::Block const&, ::BlockPos const&, ::NeighborBlockDirections) const = 0;
     // NOLINTEND

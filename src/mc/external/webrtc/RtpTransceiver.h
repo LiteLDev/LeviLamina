@@ -72,59 +72,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual ~RtpTransceiver() /*override*/;
 
-    // vIndex: 3
     virtual ::cricket::MediaType media_type() const /*override*/;
 
-    // vIndex: 4
     virtual ::std::optional<::std::string> mid() const /*override*/;
 
-    // vIndex: 5
     virtual ::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> sender() const /*override*/;
 
-    // vIndex: 6
     virtual ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface> receiver() const /*override*/;
 
-    // vIndex: 7
     virtual bool stopped() const /*override*/;
 
-    // vIndex: 8
     virtual bool stopping() const /*override*/;
 
-    // vIndex: 9
     virtual ::webrtc::RtpTransceiverDirection direction() const /*override*/;
 
-    // vIndex: 11
     virtual ::webrtc::RTCError SetDirectionWithError(::webrtc::RtpTransceiverDirection new_direction) /*override*/;
 
-    // vIndex: 12
     virtual ::std::optional<::webrtc::RtpTransceiverDirection> current_direction() const /*override*/;
 
-    // vIndex: 13
     virtual ::std::optional<::webrtc::RtpTransceiverDirection> fired_direction() const /*override*/;
 
-    // vIndex: 14
     virtual ::webrtc::RTCError StopStandard() /*override*/;
 
-    // vIndex: 15
     virtual void StopInternal() /*override*/;
 
-    // vIndex: 17
     virtual ::webrtc::RTCError
     SetCodecPreferences(::rtc::ArrayView<::webrtc::RtpCodecCapability> codec_capabilities) /*override*/;
 
-    // vIndex: 18
     virtual ::std::vector<::webrtc::RtpCodecCapability> codec_preferences() const /*override*/;
 
-    // vIndex: 19
     virtual ::std::vector<::webrtc::RtpHeaderExtensionCapability> GetHeaderExtensionsToNegotiate() const /*override*/;
 
-    // vIndex: 20
     virtual ::std::vector<::webrtc::RtpHeaderExtensionCapability> GetNegotiatedHeaderExtensions() const /*override*/;
 
-    // vIndex: 21
     virtual ::webrtc::RTCError SetHeaderExtensionsToNegotiate(
         ::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const> header_extensions
     ) /*override*/;
@@ -256,6 +238,8 @@ public:
 
     MCNAPI ::webrtc::RTCError
     $SetHeaderExtensionsToNegotiate(::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const> header_extensions);
+
+
     // NOLINTEND
 
 public:

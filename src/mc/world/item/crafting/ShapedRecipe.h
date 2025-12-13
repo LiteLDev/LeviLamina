@@ -17,40 +17,57 @@ class ShapedRecipe : public ::Recipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mAssumeSymmetry;
+    ::ll::UntypedStorage<1, 1> mUnk8214d9;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ShapedRecipe& operator=(ShapedRecipe const&);
+    ShapedRecipe(ShapedRecipe const&);
+    ShapedRecipe();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~ShapedRecipe() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ShapedRecipe() /*override*/;
+#endif
 
-    // vIndex: 1
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer&, ::CraftingContext&) const /*override*/;
 
-    // vIndex: 2
     virtual int getCraftingSize() const /*override*/;
 
-    // vIndex: 3
     virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
 
-    // vIndex: 4
     virtual bool isShapeless() const /*override*/;
 
-    // vIndex: 5
     virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const /*override*/;
 
-    // vIndex: 6
     virtual int size() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C ShapedRecipe(::ShapedRecipe&& recipe);
+
     MCAPI uint64 getIngredientsHashOffset(int simulatedWidth, int simulatedHeight, int offsetX, int offsetY) const;
 
     MCAPI bool matches(::CraftingContainer const& craftSlots, int xOffs, int yOffs, bool xFlip) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI_C void* $ctor(::ShapedRecipe&& recipe);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -67,6 +84,8 @@ public:
     MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
     MCAPI int $size() const;
+
+
     // NOLINTEND
 
 public:

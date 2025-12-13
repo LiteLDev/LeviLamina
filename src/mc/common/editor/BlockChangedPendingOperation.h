@@ -33,14 +33,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BlockChangedPendingOperation() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::std::unique_ptr<::Editor::Transactions::IOperation>
     _commit(::Editor::ServiceProviderCollection& services) /*override*/;
 
-    // vIndex: 2
     virtual ::Scripting::Result_deprecated<bool> _discard(::Editor::ServiceProviderCollection&) /*override*/;
     // NOLINTEND
 
@@ -61,6 +58,8 @@ public:
     $_commit(::Editor::ServiceProviderCollection& services);
 
     MCNAPI ::Scripting::Result_deprecated<bool> $_discard(::Editor::ServiceProviderCollection&);
+
+
     // NOLINTEND
 
 public:

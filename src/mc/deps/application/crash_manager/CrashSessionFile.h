@@ -16,10 +16,8 @@ class CrashSessionFile {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CrashSessionFile() = default;
 
-    // vIndex: 1
     virtual ::Core::PathBuffer<::std::string> const& configure(::Core::Path const&) = 0;
     // NOLINTEND
 

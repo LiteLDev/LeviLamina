@@ -32,22 +32,17 @@ class MapItem : public ::ComplexItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 95
     virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
         /*override*/;
 
-    // vIndex: 96
     virtual void refreshedInContainer(::ItemStackBase const& stack, ::Level& level) const /*override*/;
 
-    // vIndex: 124
     virtual ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const
         /*override*/;
 
-    // vIndex: 90
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 53
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
@@ -55,19 +50,14 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 108
     virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const /*override*/;
 
-    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    // vIndex: 110
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 99
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
 
-    // vIndex: 0
     virtual ~MapItem() /*override*/ = default;
     // NOLINTEND
 
@@ -154,6 +144,8 @@ public:
     MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
+
+
     // NOLINTEND
 
 public:

@@ -38,31 +38,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual void RegisterObserver(::webrtc::DtmfSenderObserverInterface* observer) /*override*/;
 
-    // vIndex: 4
     virtual void UnregisterObserver() /*override*/;
 
-    // vIndex: 5
     virtual bool CanInsertDtmf() /*override*/;
 
-    // vIndex: 6
     virtual bool InsertDtmf(::std::string const& tones, int duration, int inter_tone_gap, int comma_delay) /*override*/;
 
-    // vIndex: 8
     virtual ::std::string tones() const /*override*/;
 
-    // vIndex: 9
     virtual int duration() const /*override*/;
 
-    // vIndex: 10
     virtual int inter_tone_gap() const /*override*/;
 
-    // vIndex: 11
     virtual int comma_delay() const /*override*/;
 
-    // vIndex: 2
     virtual ~DtmfSender() /*override*/;
     // NOLINTEND
 
@@ -117,6 +108,8 @@ public:
     MCNAPI int $inter_tone_gap() const;
 
     MCNAPI int $comma_delay() const;
+
+
     // NOLINTEND
 
 public:

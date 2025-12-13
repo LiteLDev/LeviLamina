@@ -62,22 +62,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LootItemFunction();
 
-    // vIndex: 4
     virtual void apply(::ItemStack&, ::Random&, ::LootTableContext&) = 0;
 
-    // vIndex: 3
     virtual int apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    // vIndex: 2
     virtual void apply(::ItemInstance&, ::Random&, ::LootTableContext&) = 0;
 
-    // vIndex: 1
     virtual int apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    // vIndex: 5
     virtual ::LootItemFunction::FunctionType getFunctionType() const = 0;
     // NOLINTEND
 
@@ -110,6 +104,8 @@ public:
     MCNAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
     MCNAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+
+
     // NOLINTEND
 
 public:

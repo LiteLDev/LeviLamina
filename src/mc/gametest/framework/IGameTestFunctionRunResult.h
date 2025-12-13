@@ -13,13 +13,10 @@ class IGameTestFunctionRunResult {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IGameTestFunctionRunResult() = default;
 
-    // vIndex: 1
     virtual bool isComplete() const = 0;
 
-    // vIndex: 2
     virtual ::std::optional<::gametest::GameTestError> getError() = 0;
     // NOLINTEND
 

@@ -38,11 +38,11 @@ public:
 
     MCNAPI explicit EnvironmentFactory(::webrtc::Environment const& env);
 
+    MCNAPI void Set(::std::unique_ptr<::webrtc::FieldTrialsView const> utility);
+
     MCNAPI void Set(::std::unique_ptr<::webrtc::RtcEventLog> utility);
 
     MCNAPI void Set(::std::unique_ptr<::webrtc::TaskQueueFactory> utility);
-
-    MCNAPI void Set(::std::unique_ptr<::webrtc::FieldTrialsView const> utility);
 
     MCNAPI ~EnvironmentFactory();
     // NOLINTEND

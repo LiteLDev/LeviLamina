@@ -18,13 +18,10 @@ class IForwardTsnChunk : public ::dcsctp::AnyForwardTsnChunk,
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual void SerializeTo(::std::vector<uchar>& out) const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string ToString() const /*override*/;
 
-    // vIndex: 0
     virtual ~IForwardTsnChunk() /*override*/;
     // NOLINTEND
 
@@ -46,6 +43,8 @@ public:
     MCNAPI void $SerializeTo(::std::vector<uchar>& out) const;
 
     MCNAPI ::std::string $ToString() const;
+
+
     // NOLINTEND
 
 public:

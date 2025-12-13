@@ -18,11 +18,9 @@ class SaddleItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 81
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
 
-    // vIndex: 0
     virtual ~SaddleItem() /*override*/ = default;
     // NOLINTEND
 
@@ -38,6 +36,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+
+
     // NOLINTEND
 
 public:

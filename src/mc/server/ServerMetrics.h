@@ -11,16 +11,16 @@ class ServerMetrics {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~ServerMetrics();
+#else // LL_PLAT_C
+    virtual ~ServerMetrics() = default;
+#endif
 
-    // vIndex: 1
     virtual void sendPeriodicMetrics(::ServerInstance&) = 0;
 
-    // vIndex: 2
     virtual void sendServerTickTime(::std::chrono::nanoseconds const&) = 0;
 
-    // vIndex: 3
     virtual void sendChunkLoadTelemetryData() = 0;
     // NOLINTEND
 
@@ -34,11 +34,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

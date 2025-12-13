@@ -8,7 +8,7 @@
 namespace GameTypeConv {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::string gameTypeToNonLocString(::GameType type);
+MCNAPI_S ::std::string gameTypeToNonLocString(::GameType type);
 
 MCNAPI ::std::string gameTypeToString(::GameType type);
 

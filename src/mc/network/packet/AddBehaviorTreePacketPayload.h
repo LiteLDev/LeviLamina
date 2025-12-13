@@ -6,7 +6,7 @@ struct AddBehaviorTreePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mJsonInput;
+    ::ll::UntypedStorage<8, 32> mUnk752b5e;
     // NOLINTEND
 
 public:
@@ -18,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::AddBehaviorTreePacketPayload& operator=(::AddBehaviorTreePacketPayload&&);
+    MCNAPI ::AddBehaviorTreePacketPayload& operator=(::AddBehaviorTreePacketPayload&&);
 
-    MCAPI ~AddBehaviorTreePacketPayload();
+    MCNAPI ~AddBehaviorTreePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

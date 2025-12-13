@@ -9,11 +9,29 @@ public:
     // FileListTransferCBInterface inner types declare
     // clang-format off
     struct DownloadCompleteStruct;
-    struct FileProgressStruct;
     struct OnFileStruct;
+    struct FileProgressStruct;
     // clang-format on
 
     // FileListTransferCBInterface inner types define
+    struct DownloadCompleteStruct {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<2, 2>   mUnkf4442c;
+        ::ll::UntypedStorage<4, 4>   mUnkcdd8e2;
+        ::ll::UntypedStorage<4, 4>   mUnkda73b5;
+        ::ll::UntypedStorage<8, 136> mUnk307aa2;
+        ::ll::UntypedStorage<8, 16>  mUnk825424;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DownloadCompleteStruct& operator=(DownloadCompleteStruct const&);
+        DownloadCompleteStruct(DownloadCompleteStruct const&);
+        DownloadCompleteStruct();
+    };
+
     struct OnFileStruct {
     public:
         // member variables
@@ -62,43 +80,19 @@ public:
         FileProgressStruct();
     };
 
-    struct DownloadCompleteStruct {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2>   mUnkf4442c;
-        ::ll::UntypedStorage<4, 4>   mUnkcdd8e2;
-        ::ll::UntypedStorage<4, 4>   mUnkda73b5;
-        ::ll::UntypedStorage<8, 136> mUnk307aa2;
-        ::ll::UntypedStorage<8, 16>  mUnk825424;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DownloadCompleteStruct& operator=(DownloadCompleteStruct const&);
-        DownloadCompleteStruct(DownloadCompleteStruct const&);
-        DownloadCompleteStruct();
-    };
-
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FileListTransferCBInterface() = default;
 
-    // vIndex: 1
     virtual bool OnFile(::RakNet::FileListTransferCBInterface::OnFileStruct*) = 0;
 
-    // vIndex: 2
     virtual void OnFileProgress(::RakNet::FileListTransferCBInterface::FileProgressStruct*) = 0;
 
-    // vIndex: 3
     virtual bool Update();
 
-    // vIndex: 4
     virtual bool OnDownloadComplete(::RakNet::FileListTransferCBInterface::DownloadCompleteStruct*);
 
-    // vIndex: 5
     virtual void OnDereference();
     // NOLINTEND
 

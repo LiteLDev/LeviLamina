@@ -30,28 +30,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ObjectInspector() /*override*/ = default;
 
-    // vIndex: 1
     virtual bool isSameObject(::Scripting::ObjectHandle handleA, ::Scripting::ObjectHandle handleB) const /*override*/;
 
-    // vIndex: 2
     virtual bool hasBooleanPropertyValue(::Scripting::ObjectHandle handle, char const* name, bool expectedValue) const
         /*override*/;
 
-    // vIndex: 3
     virtual ::std::optional<::Scripting::ResultAny>
     getPropertyValue(::Scripting::ObjectHandle handle, char const* name, ::entt::meta_type const& expectedType) const
         /*override*/;
 
-    // vIndex: 4
     virtual uint getDataBufferLength(::Scripting::ObjectHandle handle) const /*override*/;
 
-    // vIndex: 5
     virtual uint getDataBufferByteLength(::Scripting::ObjectHandle handle) const /*override*/;
 
-    // vIndex: 6
     virtual uchar* getDataBufferBytes(::Scripting::ObjectHandle handle) const /*override*/;
     // NOLINTEND
 
@@ -76,6 +69,8 @@ public:
     MCNAPI uint $getDataBufferByteLength(::Scripting::ObjectHandle handle) const;
 
     MCNAPI uchar* $getDataBufferBytes(::Scripting::ObjectHandle handle) const;
+
+
     // NOLINTEND
 
 public:

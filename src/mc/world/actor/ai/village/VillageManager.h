@@ -31,17 +31,11 @@ class VillageManager : public ::IVillageManager {
 public:
     // VillageManager inner types declare
     // clang-format off
-    struct DwellerTestVillageInfo;
     struct VillageInfo;
+    struct DwellerTestVillageInfo;
     // clang-format on
 
     // VillageManager inner types define
-    using POIBlueprintMap = ::std::unordered_map<::BlockType const*, ::std::unique_ptr<::POIBlueprint>>;
-
-    using VillageMap = ::std::unordered_map<::mce::UUID, ::std::shared_ptr<::Village>>;
-
-    using POIMap = ::std::unordered_map<::BlockPos, ::std::shared_ptr<::POIInstance>>;
-
     enum class BedAvailabilityState : int {
         Unknown       = 0,
         SomeAvailable = 1,
@@ -78,6 +72,12 @@ public:
         // NOLINTEND
     };
 
+    using POIBlueprintMap = ::std::unordered_map<::BlockType const*, ::std::unique_ptr<::POIBlueprint>>;
+
+    using POIMap = ::std::unordered_map<::BlockPos, ::std::shared_ptr<::POIInstance>>;
+
+    using VillageMap = ::std::unordered_map<::mce::UUID, ::std::shared_ptr<::Village>>;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -108,14 +108,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~VillageManager() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::std::weak_ptr<::Village>
     fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const /*override*/;
 
-    // vIndex: 2
     virtual ::std::weak_ptr<::Village> getVillageByID(::mce::UUID const& villageID) const /*override*/;
     // NOLINTEND
 
@@ -199,6 +196,8 @@ public:
     $fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const;
 
     MCAPI ::std::weak_ptr<::Village> $getVillageByID(::mce::UUID const& villageID) const;
+
+
     // NOLINTEND
 
 public:

@@ -2,15 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/packet/ServerboundLoadingScreenPacketType.h"
-#include "mc/util/LoadingScreenId.h"
-
 struct ServerboundLoadingScreenPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ServerboundLoadingScreenPacketType> mServerboundLoadingScreenPacketType;
-    ::ll::TypedStorage<4, 8, ::LoadingScreenId>                    mLoadingScreenId;
+    ::ll::UntypedStorage<4, 4> mUnk1aeb99;
+    ::ll::UntypedStorage<4, 8> mUnk9e2a0e;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ServerboundLoadingScreenPacketPayload& operator=(ServerboundLoadingScreenPacketPayload const&);
+    ServerboundLoadingScreenPacketPayload(ServerboundLoadingScreenPacketPayload const&);
+    ServerboundLoadingScreenPacketPayload();
 };

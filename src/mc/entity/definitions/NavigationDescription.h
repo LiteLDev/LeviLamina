@@ -46,10 +46,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
-    // vIndex: 1
     virtual ~NavigationDescription() /*override*/;
     // NOLINTEND
 
@@ -63,6 +61,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+
+
     // NOLINTEND
 
 public:

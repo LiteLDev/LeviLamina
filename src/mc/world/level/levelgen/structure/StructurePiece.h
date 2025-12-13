@@ -28,45 +28,33 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~StructurePiece();
 
-    // vIndex: 1
     virtual void moveBoundingBox(int dx, int dy, int dz);
 
-    // vIndex: 2
     virtual ::StructurePieceType getType() const;
 
-    // vIndex: 3
     virtual void addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     );
 
-    // vIndex: 4
     virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) = 0;
 
-    // vIndex: 5
     virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    // vIndex: 6
     virtual bool isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
 
-    // vIndex: 7
     virtual int getWorldX(int x, int z);
 
-    // vIndex: 8
     virtual int getWorldZ(int x, int z);
 
-    // vIndex: 9
     virtual void
     placeBlock(::BlockSource& region, ::Block const& block, int x, int y, int z, ::BoundingBox const& chunkBB);
 
-    // vIndex: 10
     virtual bool canBeReplaced(::BlockSource&, int const, int const, int const, ::BoundingBox const&);
 
-    // vIndex: 11
     virtual void generateBox(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
@@ -81,7 +69,6 @@ public:
         bool                 skipAir
     );
 
-    // vIndex: 12
     virtual void addHardcodedSpawnAreas(::LevelChunk& chunk) const;
     // NOLINTEND
 
@@ -175,6 +162,8 @@ public:
     );
 
     MCFOLD void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+
+
     // NOLINTEND
 
 public:

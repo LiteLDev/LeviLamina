@@ -3,18 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/InventoryPacket.h"
 #include "mc/platform/Result.h"
 #include "mc/world/ContainerID.h"
-#include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorRuntimeID;
 class BinaryStream;
 class BlockPalette;
 class ItemStack;
+class NetworkItemStackDescriptor;
 class ReadOnlyBinaryStream;
 class ServerPlayer;
 struct ActorRotationComponent;
@@ -25,14 +25,14 @@ class MobEquipmentPacket : public ::InventoryPacket {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>              mRuntimeId;
-    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mItem;
-    ::ll::TypedStorage<4, 4, int>                           mSlot;
-    ::ll::TypedStorage<4, 4, int>                           mSelectedSlot;
-    ::ll::TypedStorage<1, 1, ::ContainerID>                 mContainerId;
-    ::ll::TypedStorage<1, 1, uchar>                         mSlotByte;
-    ::ll::TypedStorage<1, 1, uchar>                         mSelectedSlotByte;
-    ::ll::TypedStorage<1, 1, uchar>                         mContainerIdByte;
+    ::ll::UntypedStorage<8, 8>  mUnk96ab1f;
+    ::ll::UntypedStorage<8, 96> mUnk9ef7d1;
+    ::ll::UntypedStorage<4, 4>  mUnk9fc086;
+    ::ll::UntypedStorage<4, 4>  mUnk5c3c96;
+    ::ll::UntypedStorage<1, 1>  mUnk4cf603;
+    ::ll::UntypedStorage<1, 1>  mUnk48662b;
+    ::ll::UntypedStorage<1, 1>  mUnk1f529a;
+    ::ll::UntypedStorage<1, 1>  mUnke5dbd5;
     // NOLINTEND
 
 public:
@@ -44,24 +44,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 17
     virtual void
     handle(::ServerPlayer& player, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const
         /*override*/;
 
-    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    // vIndex: 0
     virtual ~MobEquipmentPacket() /*override*/;
     // NOLINTEND
 
@@ -71,19 +65,19 @@ public:
     MCAPI MobEquipmentPacket(::MobEquipmentPacket&&);
 
     MCAPI MobEquipmentPacket(
-        ::ActorRuntimeID                    runtimeId,
-        ::NetworkItemStackDescriptor const& item,
-        int                                 slot,
-        int                                 selectedSlot,
-        ::ContainerID                       containerId
-    );
-
-    MCAPI MobEquipmentPacket(
         ::ActorRuntimeID   runtimeId,
         ::ItemStack const& item,
         int                slot,
         int                selectedSlot,
         ::ContainerID      containerId
+    );
+
+    MCAPI MobEquipmentPacket(
+        ::ActorRuntimeID                    runtimeId,
+        ::NetworkItemStackDescriptor const& item,
+        int                                 slot,
+        int                                 selectedSlot,
+        ::ContainerID                       containerId
     );
     // NOLINTEND
 
@@ -92,6 +86,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::MobEquipmentPacket&&);
 
+    MCAPI void*
+    $ctor(::ActorRuntimeID runtimeId, ::ItemStack const& item, int slot, int selectedSlot, ::ContainerID containerId);
+
     MCAPI void* $ctor(
         ::ActorRuntimeID                    runtimeId,
         ::NetworkItemStackDescriptor const& item,
@@ -99,9 +96,6 @@ public:
         int                                 selectedSlot,
         ::ContainerID                       containerId
     );
-
-    MCAPI void*
-    $ctor(::ActorRuntimeID runtimeId, ::ItemStack const& item, int slot, int selectedSlot, ::ContainerID containerId);
     // NOLINTEND
 
 public:
@@ -128,6 +122,8 @@ public:
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+
     // NOLINTEND
 
 public:

@@ -8,19 +8,25 @@ struct RuntimeCondition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> id;
+    ::ll::UntypedStorage<8, 32> mUnk99c771;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RuntimeCondition& operator=(RuntimeCondition const&);
+    RuntimeCondition(RuntimeCondition const&);
+    RuntimeCondition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~RuntimeCondition();
+    MCNAPI ~RuntimeCondition();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

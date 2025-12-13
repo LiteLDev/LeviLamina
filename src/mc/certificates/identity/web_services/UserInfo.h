@@ -25,6 +25,28 @@ public:
     UserInfo& operator=(UserInfo const&);
     UserInfo(UserInfo const&);
     UserInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C UserInfo(::WebServices::EduSignin::UserInfo&&);
+
+    MCNAPI_C ::WebServices::EduSignin::UserInfo& operator=(::WebServices::EduSignin::UserInfo&&);
+
+    MCNAPI_C ~UserInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::WebServices::EduSignin::UserInfo&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace WebServices::EduSignin

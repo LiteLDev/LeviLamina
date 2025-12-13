@@ -12,10 +12,8 @@ class IEntityInitializer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IEntityInitializer() = default;
 
-    // vIndex: 1
     virtual void entityInitializer(::std::unique_ptr<::Actor>, ::EntityContext&, ::EntityContext const&) = 0;
     // NOLINTEND
 

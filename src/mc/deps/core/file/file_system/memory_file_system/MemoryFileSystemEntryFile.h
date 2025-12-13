@@ -29,13 +29,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Core::Result canRemove() /*override*/;
 
-    // vIndex: 2
     virtual uint64 getSize() const /*override*/;
 
-    // vIndex: 0
     virtual ~MemoryFileSystemEntryFile() /*override*/ = default;
     // NOLINTEND
 

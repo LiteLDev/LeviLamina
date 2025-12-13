@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace astc_codec { class Footprint; }
+namespace astc_codec { struct IntermediateBlockData; }
+namespace astc_codec { struct VoidExtentData; }
+// clang-format on
+
 namespace astc_codec {
 
 class LogicalASTCBlock {
@@ -39,8 +46,36 @@ public:
 public:
     // prevent constructor by default
     LogicalASTCBlock& operator=(LogicalASTCBlock const&);
-    LogicalASTCBlock(LogicalASTCBlock const&);
     LogicalASTCBlock();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void CalculateWeights(::astc_codec::Footprint const& footprint, ::astc_codec::VoidExtentData const&);
+
+    MCNAPI_C void
+    CalculateWeights(::astc_codec::Footprint const& footprint, ::astc_codec::IntermediateBlockData const& block);
+
+    MCNAPI_C ::std::array<int, 4> ColorAt(int x, int y) const;
+
+    MCNAPI_C LogicalASTCBlock(::astc_codec::LogicalASTCBlock const&);
+
+    MCNAPI_C void SetDualPlaneChannel(int channel);
+
+    MCNAPI_C ~LogicalASTCBlock();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::astc_codec::LogicalASTCBlock const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace astc_codec

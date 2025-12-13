@@ -39,8 +39,6 @@ public:
         TimeDelta();
     };
 
-    using TimeStamp = ::std::chrono::steady_clock::time_point;
-
     struct TimeMarker {
     public:
         // member variables
@@ -54,7 +52,21 @@ public:
         TimeMarker& operator=(TimeMarker const&);
         TimeMarker(TimeMarker const&);
         TimeMarker();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ~TimeMarker();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
+
+    using TimeStamp = ::std::chrono::steady_clock::time_point;
 
 public:
     // member variables
@@ -70,7 +82,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PlayerRenderChunkModificationLatencyTracker() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C void addTimeMarker(::std::string_view name);
+
+    MCNAPI_C void clearData();
+
+    MCNAPI_C bool shouldTrackNearbyPosition(::BlockPos const& blockToTrack);
+
+    MCNAPI_C bool shouldTrackPosition(::BlockPos const& blockToTrack);
+
+    MCNAPI_C bool shouldTrackPosition(::SubChunkPos const& renderChunkPos);
+
+    MCNAPI_C void startTimer(::BlockPos const& blockToTrack);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

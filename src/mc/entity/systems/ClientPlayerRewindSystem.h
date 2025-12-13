@@ -20,6 +20,14 @@ public:
         ::EntityContext&                     liveData
     );
 
+    MCNAPI_C static ::TickingSystemWithInfo createCorrectionInterpolationSystem();
+
+    MCNAPI_C static ::TickingSystemWithInfo createRewindHistorySystem();
+
+    MCNAPI_C static ::TickingSystemWithInfo createSystem();
+
     MCNAPI static ::TickingSystemWithInfo discardHistoryChangesSystem();
+
+    MCNAPI_C static ::TickingSystemWithInfo publishHistoryChangesSystem();
     // NOLINTEND
 };

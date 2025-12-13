@@ -18,15 +18,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addChild(::BoundingBox box);
+    MCNAPI void addChild(::BoundingBox box);
 
-    MCAPI ~JigsawSpace();
+    MCNAPI ~JigsawSpace();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -15,39 +15,39 @@ struct ResourceDropsContext;
 namespace VanillaBlockDrops::Registration {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 add(::HashedString const&                                                                         blockId,
     ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy);
 
-MCAPI void dropExperience(::HashedString const& blockId);
+MCNAPI void dropExperience(::HashedString const& blockId);
 
-MCAPI void dropNothing(::HashedString const& blockId);
+MCNAPI void dropNothing(::HashedString const& blockId);
 
-MCAPI void dropOther(
+MCNAPI void dropOther(
     ::HashedString const&                                                             blockId,
     ::HashedString const&                                                             itemId,
     ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider
 );
 
-MCAPI void dropOtherNoExplosionDecay(
+MCNAPI void dropOtherNoExplosionDecay(
     ::HashedString const&                                                             blockId,
     ::HashedString const&                                                             itemId,
     ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider
 );
 
-MCAPI void dropOtherWhenSilkTouch(::HashedString const& blockId, ::HashedString const& itemId);
+MCNAPI void dropOtherWhenSilkTouch(::HashedString const& blockId, ::HashedString const& itemId);
 
-MCAPI void dropSelf(
+MCNAPI void dropSelf(
     ::HashedString const&                                                             blockId,
     ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider
 );
 
-MCAPI void dropSelfNoExplosionDecay(
+MCNAPI void dropSelfNoExplosionDecay(
     ::HashedString const&                                                             blockId,
     ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider
 );
 
-MCAPI void dropWhenSilkTouch(::HashedString const& blockId, ::std::vector<::BlockState const*> statesToKeep);
+MCNAPI void dropWhenSilkTouch(::HashedString const& blockId, ::std::vector<::BlockState const*> statesToKeep);
 // NOLINTEND
 
 } // namespace VanillaBlockDrops::Registration

@@ -16,13 +16,10 @@ class StructurePoolBlockTagPredicateAlwaysTrue : public ::IStructurePoolBlockTag
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual bool test(::Block const&, ::CompoundTag const&) const /*override*/;
 
-    // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash&) const /*override*/;
 
-    // vIndex: 0
     virtual ~StructurePoolBlockTagPredicateAlwaysTrue() /*override*/ = default;
     // NOLINTEND
 

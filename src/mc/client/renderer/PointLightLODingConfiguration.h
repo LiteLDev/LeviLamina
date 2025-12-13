@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct PointLightLODingConfiguration {
 public:
     // member variables
@@ -13,8 +18,34 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PointLightLODingConfiguration& operator=(PointLightLODingConfiguration const&);
-    PointLightLODingConfiguration(PointLightLODingConfiguration const&);
-    PointLightLODingConfiguration();
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C PointLightLODingConfiguration();
+
+    MCNAPI_C PointLightLODingConfiguration(::PointLightLODingConfiguration const&);
+
+    MCNAPI_C ::PointLightLODingConfiguration& operator=(::PointLightLODingConfiguration const&);
+
+    MCNAPI_C ~PointLightLODingConfiguration();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::PointLightLODingConfiguration const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

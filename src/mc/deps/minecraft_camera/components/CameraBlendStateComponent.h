@@ -13,20 +13,6 @@ public:
     // clang-format on
 
     // CameraBlendStateComponent inner types define
-    struct SnapShotEaseValues {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkb15ad3;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SnapShotEaseValues& operator=(SnapShotEaseValues const&);
-        SnapShotEaseValues(SnapShotEaseValues const&);
-        SnapShotEaseValues();
-    };
-
     struct EaseState {
     public:
         // member variables
@@ -42,6 +28,20 @@ public:
         EaseState& operator=(EaseState const&);
         EaseState(EaseState const&);
         EaseState();
+    };
+
+    struct SnapShotEaseValues {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnkb15ad3;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SnapShotEaseValues& operator=(SnapShotEaseValues const&);
+        SnapShotEaseValues(SnapShotEaseValues const&);
+        SnapShotEaseValues();
     };
 
 public:
@@ -63,6 +63,12 @@ public:
     CameraBlendStateComponent& operator=(CameraBlendStateComponent const&);
     CameraBlendStateComponent(CameraBlendStateComponent const&);
     CameraBlendStateComponent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::MinecraftCamera::CameraBlendStateComponent& operator=(::MinecraftCamera::CameraBlendStateComponent&&);
+    // NOLINTEND
 };
 
 } // namespace MinecraftCamera

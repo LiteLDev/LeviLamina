@@ -15,20 +15,25 @@ class MeleeBoxAttackDefinition : public ::MeleeAttackBaseDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mHorizontalReach;
+    ::ll::UntypedStorage<4, 4> mUnk8562e8;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MeleeBoxAttackDefinition& operator=(MeleeBoxAttackDefinition const&);
+    MeleeBoxAttackDefinition(MeleeBoxAttackDefinition const&);
+    MeleeBoxAttackDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MeleeBoxAttackDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::string const&                                                                                     name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MeleeBoxAttackDefinition>>& root
     );

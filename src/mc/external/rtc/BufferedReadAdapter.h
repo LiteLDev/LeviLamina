@@ -31,19 +31,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BufferedReadAdapter() /*override*/;
 
-    // vIndex: 5
     virtual int Send(void const* pv, uint64 cb) /*override*/;
 
-    // vIndex: 7
     virtual int Recv(void* pv, uint64 cb, int64* timestamp) /*override*/;
 
-    // vIndex: 22
     virtual void ProcessInput(char*, uint64*) = 0;
 
-    // vIndex: 19
     virtual void OnReadEvent(::rtc::Socket* socket) /*override*/;
     // NOLINTEND
 
@@ -75,6 +70,8 @@ public:
     MCNAPI int $Recv(void* pv, uint64 cb, int64* timestamp);
 
     MCNAPI void $OnReadEvent(::rtc::Socket* socket);
+
+
     // NOLINTEND
 
 public:

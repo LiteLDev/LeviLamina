@@ -11,10 +11,8 @@ class RtpReceiverObserverInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual void OnFirstPacketReceived(::cricket::MediaType) = 0;
 
-    // vIndex: 1
     virtual ~RtpReceiverObserverInterface() = default;
     // NOLINTEND
 

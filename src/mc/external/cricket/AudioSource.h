@@ -16,16 +16,12 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
         virtual void OnData(void const*, int, int, uint64, uint64, ::std::optional<int64>) = 0;
 
-        // vIndex: 1
         virtual void OnClose() = 0;
 
-        // vIndex: 2
         virtual int NumPreferredChannels() const = 0;
 
-        // vIndex: 3
         virtual ~Sink() = default;
         // NOLINTEND
 
@@ -39,10 +35,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual void SetSink(::cricket::AudioSource::Sink*) = 0;
 
-    // vIndex: 1
     virtual ~AudioSource() = default;
     // NOLINTEND
 

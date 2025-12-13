@@ -11,7 +11,6 @@ class AutoThread : public ::rtc::Thread {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ~AutoThread() /*override*/ = default;
     // NOLINTEND
 };

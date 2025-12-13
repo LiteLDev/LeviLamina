@@ -55,7 +55,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ClientChunkGenerationValidationData() /*override*/ = default;
     // NOLINTEND
 

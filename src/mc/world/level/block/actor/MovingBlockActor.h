@@ -42,37 +42,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~MovingBlockActor() /*override*/ = default;
 
-    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 29
     virtual ::PistonBlockActor* getOwningPiston(::BlockSource& region) /*override*/;
 
-    // vIndex: 28
     virtual ::PistonBlockActor const* getOwningPiston(::BlockSource& region) const /*override*/;
 
-    // vIndex: 22
     virtual ::AABB getCollisionShape(::IConstBlockSource const& region) const /*override*/;
 
-    // vIndex: 14
     virtual bool isPreserved(::BlockSource& region) const /*override*/;
 
-    // vIndex: 15
     virtual bool shouldPreserve(::BlockSource& region) /*override*/;
 
-    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
@@ -116,6 +105,8 @@ public:
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
+
     // NOLINTEND
 
 public:

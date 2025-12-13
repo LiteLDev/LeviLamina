@@ -15,7 +15,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~BiomeTagAttributes() /*override*/ = default;
     // NOLINTEND
 

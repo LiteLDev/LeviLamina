@@ -57,37 +57,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 118
     virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
-    // vIndex: 122
     virtual void kill() /*override*/;
 
-    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
 
-    // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 147
     virtual void pushActors() /*override*/;
 
-    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 8
     virtual ~ArmorStand() /*override*/ = default;
     // NOLINTEND
 
@@ -177,6 +166,8 @@ public:
     MCAPI void $pushActors();
 
     MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+
+
     // NOLINTEND
 
 public:

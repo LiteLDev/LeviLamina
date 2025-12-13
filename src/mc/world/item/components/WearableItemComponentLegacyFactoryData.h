@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -17,14 +16,19 @@ struct WearableItemComponentLegacyFactoryData : public ::IItemComponentLegacyFac
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::EquipmentSlot> mEquipmentSlot;
-    ::ll::TypedStorage<4, 4, int>                                  mProtection;
+    ::ll::UntypedStorage<4, 4> mUnk71a359;
+    ::ll::UntypedStorage<4, 4> mUnkd3fd9a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WearableItemComponentLegacyFactoryData& operator=(WearableItemComponentLegacyFactoryData const&);
+    WearableItemComponentLegacyFactoryData(WearableItemComponentLegacyFactoryData const&);
+    WearableItemComponentLegacyFactoryData();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WearableItemComponentLegacyFactoryData() /*override*/ = default;
     // NOLINTEND
 

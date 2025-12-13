@@ -33,13 +33,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::Block const& getBlock() const /*override*/;
 
-    // vIndex: 2
     virtual ::BlockSource const& getBlockSource() const /*override*/;
 
-    // vIndex: 0
     virtual ~BlockIsValidSpawnEvent() /*override*/;
     // NOLINTEND
 
@@ -55,6 +52,8 @@ public:
     MCFOLD ::Block const& $getBlock() const;
 
     MCFOLD ::BlockSource const& $getBlockSource() const;
+
+
     // NOLINTEND
 
 public:

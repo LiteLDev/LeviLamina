@@ -6,7 +6,7 @@ struct TextDataPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mText;
+    ::ll::UntypedStorage<8, 32> mUnk7e650c;
     // NOLINTEND
 
 public:
@@ -18,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::TextDataPayload& operator=(::TextDataPayload&&);
+    MCNAPI ::TextDataPayload& operator=(::TextDataPayload&&);
 
-    MCAPI ~TextDataPayload();
+    MCNAPI ~TextDataPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

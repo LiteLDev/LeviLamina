@@ -2,14 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/camera/CameraPresets.h"
-
 struct CameraPresetsPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::CameraPresets> mCameraPresets;
+    ::ll::UntypedStorage<8, 48> mUnk370942;
     // NOLINTEND
 
 public:
@@ -21,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::CameraPresetsPacketPayload& operator=(::CameraPresetsPacketPayload&&);
+    MCNAPI ::CameraPresetsPacketPayload& operator=(::CameraPresetsPacketPayload&&);
 
-    MCAPI ~CameraPresetsPacketPayload();
+    MCNAPI ~CameraPresetsPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

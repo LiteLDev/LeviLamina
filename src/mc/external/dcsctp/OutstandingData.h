@@ -73,10 +73,10 @@ public:
     class Item {
     public:
         // Item inner types define
-        enum class NackAction : int {
-            KNothing    = 0,
-            KRetransmit = 1,
-            KAbandon    = 2,
+        enum class AckState : uchar {
+            KUnacked = 0,
+            KAcked   = 1,
+            KNacked  = 2,
         };
 
         enum class Lifecycle : uchar {
@@ -85,10 +85,10 @@ public:
             KAbandoned         = 2,
         };
 
-        enum class AckState : uchar {
-            KUnacked = 0,
-            KAcked   = 1,
-            KNacked  = 2,
+        enum class NackAction : int {
+            KNothing    = 0,
+            KRetransmit = 1,
+            KAbandon    = 2,
         };
 
     public:

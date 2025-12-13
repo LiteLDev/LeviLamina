@@ -11,19 +11,14 @@ class IScriptGeneratorStats {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~IScriptGeneratorStats() = default;
 
-    // vIndex: 1
     virtual void bucketAddedForPlugin() = 0;
 
-    // vIndex: 2
     virtual void bucketRemovedForPlugin() = 0;
 
-    // vIndex: 3
     virtual void bucketRan(::Scripting::ContextId, uint64) = 0;
 
-    // vIndex: 4
     virtual void generatorRan(
         ::Scripting::ContextId,
         uint,

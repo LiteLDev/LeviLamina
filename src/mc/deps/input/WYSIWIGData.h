@@ -18,4 +18,16 @@ public:
     WYSIWIGData& operator=(WYSIWIGData const&);
     WYSIWIGData(WYSIWIGData const&);
     WYSIWIGData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~WYSIWIGData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

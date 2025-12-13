@@ -34,44 +34,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 110
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 111
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 113
     virtual int
     getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const
         /*override*/;
 
-    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
-    // vIndex: 82
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 
-    // vIndex: 83
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    // vIndex: 117
     virtual void playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const /*override*/;
 
-    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 116
     virtual bool canBeCharged() const /*override*/;
 
-    // vIndex: 5
     virtual int getMaxUseDuration(::ItemStack const* instance) const /*override*/;
 
-    // vIndex: 103
     virtual void enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const /*override*/;
 
-    // vIndex: 0
     virtual ~CrossbowItem() /*override*/ = default;
     // NOLINTEND
 
@@ -89,7 +77,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
@@ -112,6 +100,8 @@ public:
     MCAPI int $getMaxUseDuration(::ItemStack const* instance) const;
 
     MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
+
+
     // NOLINTEND
 
 public:

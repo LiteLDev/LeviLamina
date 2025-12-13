@@ -2,15 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/events/gameevents/VibrationInfo.h"
-#include "mc/world/level/Tick.h"
-
 class VibrationSelector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Tick>                            mFirstCandidateTick;
-    ::ll::TypedStorage<8, 64, ::std::optional<::VibrationInfo>> mCandidateVibrationInfo;
+    ::ll::UntypedStorage<8, 8>  mUnkeb3a60;
+    ::ll::UntypedStorage<8, 64> mUnkd0de32;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    VibrationSelector& operator=(VibrationSelector const&);
+    VibrationSelector(VibrationSelector const&);
+    VibrationSelector();
 };

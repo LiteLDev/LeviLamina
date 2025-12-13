@@ -23,23 +23,21 @@ class VanillaTreeFeature : public ::ITreeFeature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~VanillaTreeFeature() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _buildSchema(
+    MCNAPI static void _buildSchema(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
             ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode
     );
 
-    MCAPI static void _buildVanillaCanopyVariants(
+    MCNAPI static void _buildVanillaCanopyVariants(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
             ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
@@ -47,7 +45,7 @@ public:
             canopyAccessor
     );
 
-    MCAPI static void _buildVanillaTrunkVariants(
+    MCNAPI static void _buildVanillaTrunkVariants(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
             ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
@@ -59,7 +57,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+
+
     // NOLINTEND
 
 public:

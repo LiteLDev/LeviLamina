@@ -2,15 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/deps/puv/SlicedLoader.h"
-
 // auto generated forward declare list
 // clang-format off
-class BedrockLoadContext;
 class IPackLoadContext;
-struct ComponentItemData_v1_21_110;
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -18,37 +13,38 @@ class CerealComponentItemDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::ComponentItemData_v1_21_110, ::BedrockLoadContext, nullptr_t>>
-                                            mLoader;
-    ::ll::TypedStorage<8, 24, ::SemVersion> mDocumentVersion;
+    ::ll::UntypedStorage<8, 192> mUnkc1853c;
+    ::ll::UntypedStorage<8, 24>  mUnkaa5bf5;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    CerealComponentItemDataLoader& operator=(CerealComponentItemDataLoader const&);
+    CerealComponentItemDataLoader(CerealComponentItemDataLoader const&);
     CerealComponentItemDataLoader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CerealComponentItemDataLoader(
+    MCNAPI CerealComponentItemDataLoader(
         ::SemVersion                   documentVersion,
         ::IPackLoadContext const&      packLoadContext,
         ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI ~CerealComponentItemDataLoader();
+    MCNAPI ~CerealComponentItemDataLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::SemVersion documentVersion, ::IPackLoadContext const& packLoadContext, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

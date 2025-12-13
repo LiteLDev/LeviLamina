@@ -33,73 +33,50 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~PackAccessStrategy();
 
-    // vIndex: 1
     virtual uint64 getPackSize() const = 0;
 
-    // vIndex: 2
     virtual ::ResourceLocation const& getPackLocation() const = 0;
 
-    // vIndex: 3
     virtual ::std::string const& getPackName() const = 0;
 
-    // vIndex: 4
     virtual bool isWritable() const = 0;
 
-    // vIndex: 5
     virtual bool isTrusted() const = 0;
 
-    // vIndex: 6
     virtual bool hasAsset(::Core::Path const&, bool, bool) const = 0;
 
-    // vIndex: 7
     virtual bool hasFolder(::Core::Path const&) const = 0;
 
-    // vIndex: 8
     virtual bool getAsset(::Core::Path const&, ::std::string&, bool) const = 0;
 
-    // vIndex: 9
     virtual void forEachIn(::Core::Path const&, ::std::function<void(::Core::Path const&)>, bool) const = 0;
 
-    // vIndex: 10
     virtual void forEachInAssetSet(::Core::Path const&, ::std::function<void(::Core::Path const&)>) const;
 
-    // vIndex: 11
     virtual ::PackAccessStrategyType getStrategyType() const = 0;
 
-    // vIndex: 12
     virtual ::Core::PathBuffer<::std::string> const& getSubPath() const;
 
-    // vIndex: 13
     virtual bool supportsSignatureVerification() const;
 
-    // vIndex: 14
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const&) const = 0;
 
-    // vIndex: 15
     virtual ::PackAccessAssetGenerationResult generateAssetSet();
 
-    // vIndex: 16
     virtual ::PackAccessAssetGenerationResult regenerateAssetSet();
 
-    // vIndex: 17
     virtual bool canRecurse() const;
 
-    // vIndex: 18
     virtual void unload() = 0;
 
-    // vIndex: 19
     virtual ::ContentIdentity readContentIdentity() const;
 
-    // vIndex: 20
     virtual bool isAssetExtractionViable() const;
 
-    // vIndex: 21
     virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::Path const&) const;
 
-    // vIndex: 22
     virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle> _preloadSubFolders(::Core::Path const&) const;
     // NOLINTEND
 
@@ -162,6 +139,8 @@ public:
     MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const&) const;
 
     MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle> $_preloadSubFolders(::Core::Path const&) const;
+
+
     // NOLINTEND
 
 public:

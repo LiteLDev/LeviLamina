@@ -3,17 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/string/HashedString.h"
+#include "mc/molang/MolangVersion.h"
 #include "mc/world/actor/animation/ActorAnimationBase.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorAnimationControllerStateTransition;
-class ActorAnimationEvent;
-class ActorParticleEffect;
-class ActorSoundEffect;
-class AnimationValueCurveKeyFrame;
-class ExpressionNode;
+class HashedString;
 class RenderParams;
 class StateAnimationVariable;
 // clang-format on
@@ -22,42 +17,51 @@ class ActorAnimationControllerState : public ::ActorAnimationBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString>                                               mName;
-    ::ll::TypedStorage<8, 24, ::std::vector<::StateAnimationVariable>>                      mVariables;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::HashedString, ::ExpressionNode>>> mAnimations;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorParticleEffect>>                         mParticleEffects;
-    ::ll::TypedStorage<8, 48, ::std::vector<::ActorAnimationEvent>[2]>                      mEvents;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorAnimationControllerStateTransition>>     mTransitions;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorSoundEffect>>                            mSoundEffects;
-    ::ll::TypedStorage<1, 1, bool>                                                          mBlendViaShortestPath;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AnimationValueCurveKeyFrame>>                 mBlendTransitionKeyFrames;
+    ::ll::UntypedStorage<8, 48> mUnkbdbeca;
+    ::ll::UntypedStorage<8, 24> mUnkb721a7;
+    ::ll::UntypedStorage<8, 24> mUnke5f286;
+    ::ll::UntypedStorage<8, 24> mUnk60ea74;
+    ::ll::UntypedStorage<8, 48> mUnk875dec;
+    ::ll::UntypedStorage<8, 24> mUnk247f4c;
+    ::ll::UntypedStorage<8, 24> mUnk849be1;
+    ::ll::UntypedStorage<1, 1>  mUnkf6716f;
+    ::ll::UntypedStorage<8, 24> mUnke33750;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ActorAnimationControllerState& operator=(ActorAnimationControllerState const&);
+    ActorAnimationControllerState(ActorAnimationControllerState const&);
     ActorAnimationControllerState();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorAnimationControllerState(::HashedString const& name);
+    MCNAPI explicit ActorAnimationControllerState(::HashedString const& name);
 
-    MCAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
+    MCNAPI_C void addTransition(
+        ::std::string const& stateName,
+        ::std::string const& expression,
+        ::MolangVersion      molangVersion,
+        bool                 createEvenIfAlreadyExists
+    );
 
-    MCAPI void setVariables(::RenderParams& renderParams) const;
+    MCNAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
 
-    MCAPI ~ActorAnimationControllerState();
+    MCNAPI void setVariables(::RenderParams& renderParams) const;
+
+    MCNAPI ~ActorAnimationControllerState();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString const& name);
+    MCNAPI void* $ctor(::HashedString const& name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

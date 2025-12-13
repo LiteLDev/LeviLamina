@@ -19,10 +19,8 @@ class EventIdentifierReferenceConstraint
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
-    // vIndex: 1
     virtual ~EventIdentifierReferenceConstraint() /*override*/ = default;
     // NOLINTEND
 
@@ -36,6 +34,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+
+
     // NOLINTEND
 
 public:

@@ -2,15 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/item/ItemStack.h"
-
 struct RepairItemResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 152, ::ItemStack> mResultItem;
-    ::ll::TypedStorage<4, 4, int>           mMaterialUsed;
+    ::ll::UntypedStorage<8, 152> mUnk4745cd;
+    ::ll::UntypedStorage<4, 4>   mUnk757275;
     // NOLINTEND
 
 public:
@@ -21,22 +18,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RepairItemResult();
+    MCNAPI RepairItemResult();
 
-    MCAPI ::RepairItemResult& operator=(::RepairItemResult&&);
+    MCNAPI ::RepairItemResult& operator=(::RepairItemResult&&);
 
-    MCAPI ~RepairItemResult();
+    MCNAPI ~RepairItemResult();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

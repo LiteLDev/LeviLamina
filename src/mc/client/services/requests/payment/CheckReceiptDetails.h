@@ -24,22 +24,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~CheckReceiptDetails() = default;
+#else // LL_PLAT_C
+    virtual ~CheckReceiptDetails();
+#endif
 
-    // vIndex: 1
     virtual char const* getPath() const = 0;
 
-    // vIndex: 2
     virtual ::Json::Value toPostBody() const = 0;
 
-    // vIndex: 3
     virtual void fromJsonResponse(::Json::Value const&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

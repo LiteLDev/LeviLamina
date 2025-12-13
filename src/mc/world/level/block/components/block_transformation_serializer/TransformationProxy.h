@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/world/level/block/components/block_transformation_serializer/RotationBindingType.h"
-
 // auto generated forward declare list
 // clang-format off
 struct BlockTransformationDescription;
@@ -17,17 +13,23 @@ struct TransformationProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3>                                               mTranslation;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                               mScaleValue;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                               mScalePivot;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                               mRotationPivot;
-    ::ll::TypedStorage<4, 12, ::BlockTransformationSerializer::RotationBindingType> mRotation;
+    ::ll::UntypedStorage<4, 12> mUnk2161ac;
+    ::ll::UntypedStorage<4, 12> mUnk90e008;
+    ::ll::UntypedStorage<4, 12> mUnk281b69;
+    ::ll::UntypedStorage<4, 12> mUnk6ff7b0;
+    ::ll::UntypedStorage<4, 12> mUnkde9247;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TransformationProxy& operator=(TransformationProxy const&);
+    TransformationProxy(TransformationProxy const&);
+    TransformationProxy();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     from(::BlockTransformationDescription& desc, ::BlockTransformationSerializer::TransformationProxy proxy);
     // NOLINTEND
 };

@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/IntRange.h"
-#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
@@ -16,26 +14,32 @@ class NoSurfaceOreFeature : public ::IFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::IntRange>          mCount;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mPlaceBlock;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mReplaceBlock;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mAvoidsBlock;
+    ::ll::UntypedStorage<4, 8>   mUnk7a39e3;
+    ::ll::UntypedStorage<8, 184> mUnkd47633;
+    ::ll::UntypedStorage<8, 184> mUnkcdc6eb;
+    ::ll::UntypedStorage<8, 184> mUnk480c75;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    NoSurfaceOreFeature& operator=(NoSurfaceOreFeature const&);
+    NoSurfaceOreFeature(NoSurfaceOreFeature const&);
+    NoSurfaceOreFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
-    // vIndex: 0
     virtual ~NoSurfaceOreFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+
+
     // NOLINTEND
 
 public:

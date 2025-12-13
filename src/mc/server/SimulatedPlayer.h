@@ -113,23 +113,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 146
     virtual void aiStep() /*override*/;
 
-    // vIndex: 233
     virtual bool isSimulated() const /*override*/;
 
-    // vIndex: 234
     virtual ::std::string getXuid() const /*override*/;
 
-    // vIndex: 235
     virtual ::PlayerMovementSettings const& getMovementSettings() const /*override*/;
 
-    // vIndex: 21
     virtual void teleportTo(
         ::Vec3 const& pos,
         bool          shouldStopRiding,
@@ -138,16 +132,12 @@ public:
         bool          keepVelocity
     ) /*override*/;
 
-    // vIndex: 245
     virtual int _getSpawnChunkLimit() const /*override*/;
 
-    // vIndex: 241
     virtual ::std::shared_ptr<::ChunkViewSource> _createChunkSource(::ChunkSource& mainChunkSource) /*override*/;
 
-    // vIndex: 246
     virtual void _updateChunkPublisherView(::Vec3 const& position, float minDistance) /*override*/;
 
-    // vIndex: 8
     virtual ~SimulatedPlayer() /*override*/;
     // NOLINTEND
 
@@ -289,6 +279,8 @@ public:
     MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
 
     MCFOLD void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
+
+
     // NOLINTEND
 
 public:

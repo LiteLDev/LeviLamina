@@ -2,15 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/nbt/CompoundTag.h"
-
 struct EditorNetworkPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::CompoundTag> mBinaryPayload;
-    ::ll::TypedStorage<1, 1, bool>           mRouteToManager;
+    ::ll::UntypedStorage<8, 24> mUnk7deb75;
+    ::ll::UntypedStorage<1, 1>  mUnk3bdbee;
     // NOLINTEND
 
 public:
@@ -22,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EditorNetworkPacketPayload& operator=(::EditorNetworkPacketPayload&&);
+    MCNAPI ::EditorNetworkPacketPayload& operator=(::EditorNetworkPacketPayload&&);
 
-    MCAPI ~EditorNetworkPacketPayload();
+    MCNAPI ~EditorNetworkPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

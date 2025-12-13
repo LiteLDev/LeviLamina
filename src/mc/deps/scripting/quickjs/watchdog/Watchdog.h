@@ -43,29 +43,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~Watchdog() /*override*/ = default;
 
-    // vIndex: 1
     virtual void
     setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler) /*override*/;
 
-    // vIndex: 2
     virtual void beginTiming(::Scripting::ContextId contextId) /*override*/;
 
-    // vIndex: 3
     virtual void endTiming(::Scripting::ContextId contextId) /*override*/;
 
-    // vIndex: 4
     virtual void pushPhase(::std::string const& namedPhase, ::std::chrono::microseconds frameBaseLine) /*override*/;
 
-    // vIndex: 5
     virtual void popPhase() /*override*/;
 
-    // vIndex: 6
     virtual void endFrame() /*override*/;
 
-    // vIndex: 7
     virtual void resetTimings() /*override*/;
     // NOLINTEND
 
@@ -113,6 +105,8 @@ public:
     MCNAPI void $endFrame();
 
     MCNAPI void $resetTimings();
+
+
     // NOLINTEND
 
 public:

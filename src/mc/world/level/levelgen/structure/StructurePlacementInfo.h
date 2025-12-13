@@ -33,18 +33,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructurePlacementInfo(::BlockPos const& size, ::BlockPos const& origin);
+    MCNAPI StructurePlacementInfo(::BlockPos const& size, ::BlockPos const& origin);
 
-    MCAPI uint _findOrInsertPlacementIndex(::StructureBlockPlacementInfo const& info);
+    MCNAPI uint _findOrInsertPlacementIndex(::StructureBlockPlacementInfo const& info);
 
-    MCAPI void _handleBlockPostPlacedStructure(
+    MCNAPI void _handleBlockPostPlacedStructure(
         ::BlockSource&    region,
         ::BlockPos const& localPosition,
         ::BlockPos const& worldPosition,
         ::Rotation        rotation
     );
 
-    MCAPI void _handlePlacedConnectionBlock(
+    MCNAPI void _handlePlacedConnectionBlock(
         ::BlockSource&                 region,
         ::BlockPos const&              localPosition,
         ::BlockPos const&              worldPosition,
@@ -52,25 +52,25 @@ public:
         ::PlacedConnectionBlock const& connectionBlock
     );
 
-    MCAPI void _setBlockPlacementInfo(::BlockPos const& pos, ::StructureBlockPlacementInfo const& info);
+    MCNAPI void _setBlockPlacementInfo(::BlockPos const& pos, ::StructureBlockPlacementInfo const& info);
 
-    MCAPI ::StructurePlacementNeighbors getNeighbors(::BlockPos const& relativePos, ::Rotation rotation);
+    MCNAPI ::StructurePlacementNeighbors getNeighbors(::BlockPos const& relativePos, ::Rotation rotation);
 
-    MCAPI void
+    MCNAPI void
     setBlockPlacementInfo(::BlockPos const& pos, ::Block const& block, ::NeighborAwareBlockUpdateType updateType);
 
-    MCAPI ~StructurePlacementInfo();
+    MCNAPI ~StructurePlacementInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& size, ::BlockPos const& origin);
+    MCNAPI void* $ctor(::BlockPos const& size, ::BlockPos const& origin);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

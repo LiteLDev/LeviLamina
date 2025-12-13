@@ -6,13 +6,10 @@ class FileAccessTransforms {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FileAccessTransforms() = default;
 
-    // vIndex: 1
     virtual bool readTransform(::std::vector<uchar>& stream) const;
 
-    // vIndex: 2
     virtual bool writeTransform(::std::vector<uchar>& stream) const;
     // NOLINTEND
 
@@ -22,6 +19,8 @@ public:
     MCNAPI bool $readTransform(::std::vector<uchar>& stream) const;
 
     MCNAPI bool $writeTransform(::std::vector<uchar>& stream) const;
+
+
     // NOLINTEND
 
 public:

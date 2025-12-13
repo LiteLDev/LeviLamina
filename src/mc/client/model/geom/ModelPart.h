@@ -2,6 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/model/Geometry.h"
+
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class BoneOrientation;
+class DataDrivenGeometry;
+class ExpressionNode;
+class GeometryPtr;
+class Matrix;
+class RenderController;
+class RenderParams;
+class TextureOffset;
+class Vec2;
+class Vec3;
+namespace mce { class Color; }
+namespace mce { class MaterialPtr; }
+class Model;
+class ScreenContext;
+class Tessellator;
+struct ActorResourceDefinition;
+struct MinecraftGameplayGraphicsResources;
+// clang-format on
+
 class ModelPart {
 public:
     // ModelPart inner types declare
@@ -72,4 +97,154 @@ public:
     ModelPart& operator=(ModelPart const&);
     ModelPart(ModelPart const&);
     ModelPart();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ModelPart(::ModelPart&& rhs);
+
+    MCNAPI_C ModelPart(int xTexOffs, int yTexOffs, int texWidth, int texHeight);
+
+    MCNAPI_C void _adjustUVsInward(
+        ::std::vector<::Vec2>&                                        uvs,
+        ::std::vector<::std::array<::Geometry::NodeVertex, 3>> const& tris,
+        ::std::vector<::std::array<::Geometry::NodeVertex, 4>> const& quads,
+        ::Vec2 const&                                                 textureSize
+    );
+
+    MCNAPI_C void _copyBoneMatricesToSkinnedMeshes(
+        ::RenderParams&                      renderParams,
+        ::gsl::span<::BoneOrientation const> boneOrientations,
+        ::RenderController const*            renderControllerId,
+        ::DataDrivenGeometry&                geo,
+        bool                                 deferred
+    );
+
+    MCNAPI_C void addBox(::Vec3 const& point0, ::Vec3 const& extents, bool mirror, float g, ::mce::Color const& color);
+
+    MCNAPI_C ::ModelPart&
+    addBoxMapTex(::Vec3 const& point0, ::Vec3 const& extents, ::TextureOffset const& inTexOffset, bool mirror, float g);
+
+    MCNAPI_C void assignPartToGroup(::Model& model, bool forceToUniqueGroup);
+
+    MCNAPI_C void assignPartToGroup(::Model& model, bool forceToUniqueGroup, ::DataDrivenGeometry* owningGeometry);
+
+    MCNAPI_C void clearBoxes();
+
+    MCNAPI_C void compileCubes(::Tessellator& tessellator);
+
+    MCNAPI_C void compileQuads(::MinecraftGameplayGraphicsResources& gameplayResources, ::Tessellator& tessellator);
+
+    MCNAPI_C void compileTris(::Tessellator& tessellator);
+
+    MCNAPI_C void copyBoneMatricesToActor(
+        ::RenderParams&                      renderParams,
+        ::gsl::span<::BoneOrientation const> boneOrientations,
+        ::RenderController const*            renderControllerId,
+        ::DataDrivenGeometry&                geo
+    );
+
+    MCNAPI_C void expandAABB(::AABB& bb) const;
+
+    MCNAPI_C void generateBoneTransformMatrices(
+        ::RenderParams&                renderParams,
+        ::gsl::span<::BoneOrientation> boneOrientations,
+        ::RenderController const*      renderControllerId,
+        ::Matrix                       boneToEntitySpaceMatrix
+    );
+
+    MCNAPI_C void getPolyCounts(int& triVertexCount, int& quadVertexCount);
+
+    MCNAPI_C bool isVisible(::RenderParams& renderParams, ::RenderController const* renderControllerId) const;
+
+    MCNAPI_C bool load(::GeometryPtr source, ::std::string_view nodeName, ::ModelPart* parentPart);
+
+    MCNAPI_C bool load(
+        ::std::shared_ptr<::ActorResourceDefinition> resourceDefinition,
+        ::GeometryPtr                                source,
+        ::std::string_view                           nodeName,
+        ::ModelPart*                                 parentPart
+    );
+
+    MCNAPI_C void loadBoxes(
+        ::Vec3 const&                         newPivot,
+        ::Vec3 const&                         offset,
+        ::std::vector<::Geometry::Box> const& boxes,
+        ::Vec3 const&                         bindPoseRotation
+    );
+
+    MCNAPI_C void
+    loadPolyMesh(::Vec3 const& newPivot, ::Vec3 const& bindPoseRotation, ::Geometry::NodePolyMesh const& sourceMesh);
+
+    MCNAPI_C void loadPos(::Vec3 const& newPivot, ::ModelPart* parentPart, bool pivotSubtractsParentPivot);
+
+    MCNAPI_C void loadTextureMeshes(
+        ::std::shared_ptr<::ActorResourceDefinition> resourceDefinition,
+        ::Vec3 const&                                newPivot,
+        ::Vec3 const&,
+        ::std::vector<::Geometry::NodeTextureMesh> const& sourceTextureMeshes
+    );
+
+    MCNAPI_C bool loadWithOrientation(
+        ::std::shared_ptr<::ActorResourceDefinition> resourceDefinition,
+        ::GeometryPtr                                source,
+        ::std::string_view                           nodeName,
+        ::Vec3 const&                                basePos,
+        ::Vec3 const&                                pivot,
+        ::ModelPart*                                 parentPart
+    );
+
+    MCNAPI_C bool loadWithOrientation_(
+        ::GeometryPtr      source,
+        ::std::string_view nodeName,
+        ::Vec3 const&      basePos,
+        ::Vec3 const&      pivot,
+        ::ModelPart*       parentPart
+    );
+
+    MCNAPI_C uint64 numCubes() const;
+
+    MCNAPI_C ::ModelPart& operator=(::ModelPart&& rhs);
+
+    MCNAPI_C void render(
+        ::ScreenContext& screenContext,
+        ::Model&         model,
+        float            scale,
+        bool             hideParentBodyPart,
+        uint             count,
+        ::Matrix         boneToEntitySpaceMatrix
+    );
+
+    MCNAPI_C void renderAtPosition(
+        ::ScreenContext& screenContext,
+        ::Model&         model,
+        ::Vec3 const&    position,
+        float            scale,
+        bool             hideParentBodyPart,
+        uint             count,
+        ::Matrix         boneToEntitySpaceMatrix
+    );
+
+    MCNAPI_C void setModelPartMaterial(::mce::MaterialPtr const& mat, ::RenderController const* renderControllerId);
+
+    MCNAPI_C void setVisibility(::ExpressionNode const& visibility, ::RenderController const* renderControllerId);
+
+    MCNAPI_C void translateTo(::Matrix& mv, float scale);
+
+    MCNAPI_C ~ModelPart();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::ModelPart&& rhs);
+
+    MCNAPI_C void* $ctor(int xTexOffs, int yTexOffs, int texWidth, int texHeight);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

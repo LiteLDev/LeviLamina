@@ -3,23 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/platform/threading/Mutex.h"
-#include "mc/util/FloatRange.h"
-#include "mc/util/molang/ExpressionNode.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
-#include "mc/world/level/levelgen/feature/cave_feature_utils/CarvingParameters.h"
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class BoundingBox;
 class ChunkPos;
 class IBlockWorldGenAPI;
 class Random;
 class RenderParams;
+class Vec3;
 namespace CaveFeatureUtils { struct CarverConfiguration; }
+namespace CaveFeatureUtils { struct CarvingParameters; }
 // clang-format on
 
 class CaveFeature : public ::IFeature {
@@ -42,69 +38,77 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::TypedStorage<4, 12, ::Vec3 const>                                mStartPos;
-            ::ll::TypedStorage<4, 4, float const>                                  mHorizontalRadius;
-            ::ll::TypedStorage<4, 4, float const>                                  mVerticalRadius;
-            ::ll::TypedStorage<4, 24, ::CaveFeatureUtils::CarvingParameters const> mCarvingParameters;
-            ::ll::TypedStorage<4, 4, int const>                                    mCurrentStep;
-            ::ll::TypedStorage<4, 4, int const>                                    mTotalSteps;
-            ::ll::TypedStorage<4, 4, float const>                                  mThickness;
+            ::ll::UntypedStorage<4, 12> mUnk888168;
+            ::ll::UntypedStorage<4, 4>  mUnk1b1c1f;
+            ::ll::UntypedStorage<4, 4>  mUnk9ffee6;
+            ::ll::UntypedStorage<4, 24> mUnke9f983;
+            ::ll::UntypedStorage<4, 4>  mUnk79e5d4;
+            ::ll::UntypedStorage<4, 4>  mUnke8ce81;
+            ::ll::UntypedStorage<4, 4>  mUnkab1357;
             // NOLINTEND
+
+        public:
+            // prevent constructor by default
+            CarveEllipsoidParams& operator=(CarveEllipsoidParams const&);
+            CarveEllipsoidParams(CarveEllipsoidParams const&);
+            CarveEllipsoidParams();
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::std::atomic<uint>> mUseCount;
-        ::ll::TypedStorage<8, 24, ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>>
-            mCarveEllipsoidParamsVector;
+        ::ll::UntypedStorage<4, 4>  mUnk169e4e;
+        ::ll::UntypedStorage<8, 24> mUnk6ff166;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CachedMetaData& operator=(CachedMetaData const&);
+        CachedMetaData(CachedMetaData const&);
+        CachedMetaData();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const*>       mFillWithBlock;
-    ::ll::TypedStorage<8, 16, ::ExpressionNode>    mWidthMod;
-    ::ll::TypedStorage<4, 4, int>                  mSkipCarveChance;
-    ::ll::TypedStorage<4, 4, int>                  mHeightLimit;
-    ::ll::TypedStorage<4, 8, ::FloatRange>         mYScale;
-    ::ll::TypedStorage<4, 8, ::FloatRange>         mHorizontalRadiusMultiplier;
-    ::ll::TypedStorage<4, 8, ::FloatRange>         mVerticalRadiusMultiplier;
-    ::ll::TypedStorage<4, 8, ::FloatRange>         mFloorLevel;
-    ::ll::TypedStorage<8, 32, ::std::string const> VALID_PASS;
-    ::ll::TypedStorage<4, 4, float const>          X_DAMPENING_FACTOR;
-    ::ll::TypedStorage<4, 4, float const>          Y_DAMPENING_FACTOR;
-    ::ll::TypedStorage<4, 4, float const>          STEEP_FLATTENING_FACTOR;
-    ::ll::TypedStorage<4, 4, float const>          FLATTENING_FACTOR;
-    ::ll::TypedStorage<4, 4, int const>            STEEP_CHANCE;
-    ::ll::TypedStorage<4, 4, int const>            TUNNEL_SKIP_CHANCE;
-    ::ll::TypedStorage<4, 4, int const>            CAVE_COUNT_BASE_FACTOR;
-    ::ll::TypedStorage<4, 4, int const>            ROOM_CARVE_CHANCE;
-    ::ll::TypedStorage<4, 4, int const>            MAX_NUM_TUNNELS_ADDED_ON_ROOM_CARVE;
-    ::ll::TypedStorage<1, 1, bool>                 mCacheEnabled;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::unordered_map<int, ::std::unordered_map<int, ::std::shared_ptr<::CaveFeature::CachedMetaData>>>>
-                                                           mCachedMetaDataMap;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mCacheMutex;
-    ::ll::TypedStorage<4, 4, ::std::atomic<uint>>          mPlaceCount;
+    ::ll::UntypedStorage<8, 8>  mUnkb22c58;
+    ::ll::UntypedStorage<8, 16> mUnk517d2c;
+    ::ll::UntypedStorage<4, 4>  mUnkc4a96b;
+    ::ll::UntypedStorage<4, 4>  mUnk309cc7;
+    ::ll::UntypedStorage<4, 8>  mUnkc49fd4;
+    ::ll::UntypedStorage<4, 8>  mUnkfcde6a;
+    ::ll::UntypedStorage<4, 8>  mUnk7fcf24;
+    ::ll::UntypedStorage<4, 8>  mUnkd31917;
+    ::ll::UntypedStorage<8, 32> mUnk2b3090;
+    ::ll::UntypedStorage<4, 4>  mUnk981efd;
+    ::ll::UntypedStorage<4, 4>  mUnk92ad90;
+    ::ll::UntypedStorage<4, 4>  mUnkfe575b;
+    ::ll::UntypedStorage<4, 4>  mUnk2cca96;
+    ::ll::UntypedStorage<4, 4>  mUnk1f73a7;
+    ::ll::UntypedStorage<4, 4>  mUnk1b5461;
+    ::ll::UntypedStorage<4, 4>  mUnkc07cc0;
+    ::ll::UntypedStorage<4, 4>  mUnk2d5fac;
+    ::ll::UntypedStorage<4, 4>  mUnkb74db5;
+    ::ll::UntypedStorage<1, 1>  mUnke54e3a;
+    ::ll::UntypedStorage<8, 64> mUnk72d7de;
+    ::ll::UntypedStorage<8, 80> mUnkd9c652;
+    ::ll::UntypedStorage<4, 4>  mUnk31fc06;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CaveFeature& operator=(CaveFeature const&);
+    CaveFeature(CaveFeature const&);
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~CaveFeature() /*override*/ = default;
 
-    // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
-    // vIndex: 2
     virtual bool isValidPlacement(::std::string const& pass) /*override*/;
 
-    // vIndex: 4
     virtual void addRoom(
         ::IBlockWorldGenAPI&                                                target,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
@@ -116,7 +120,6 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    // vIndex: 5
     virtual void addTunnel(
         ::IBlockWorldGenAPI&                                                target,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
@@ -134,7 +137,6 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    // vIndex: 6
     virtual bool carveEllipsoidVolume(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
@@ -147,7 +149,6 @@ public:
         ::CaveFeatureUtils::CarvingParameters const& carvingParameters
     ) const;
 
-    // vIndex: 7
     virtual void addFeature(
         ::IBlockWorldGenAPI&                                                target,
         ::ChunkPos const&                                                   pos,
@@ -161,9 +162,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CaveFeature();
+    MCNAPI CaveFeature();
 
-    MCAPI bool carveBlock(
+    MCNAPI bool carveBlock(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
         ::BlockPos                                     currentBlockPos,
@@ -173,7 +174,7 @@ public:
         ::BlockPos                                     worldPos
     ) const;
 
-    MCAPI bool carveEllipsoid(
+    MCNAPI bool carveEllipsoid(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
         ::Random&                                      random,
@@ -184,23 +185,23 @@ public:
         ::CaveFeatureUtils::CarvingParameters const&   carvingParameters
     ) const;
 
-    MCAPI bool detectWater(::IBlockWorldGenAPI& target, ::BoundingBox const& volume) const;
+    MCNAPI bool detectWater(::IBlockWorldGenAPI& target, ::BoundingBox const& volume) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
-    MCAPI bool $isValidPlacement(::std::string const& pass);
+    MCNAPI bool $isValidPlacement(::std::string const& pass);
 
-    MCAPI void $addRoom(
+    MCNAPI void $addRoom(
         ::IBlockWorldGenAPI&                                                target,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
         ::Random&                                                           random,
@@ -211,7 +212,7 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    MCAPI void $addTunnel(
+    MCNAPI void $addTunnel(
         ::IBlockWorldGenAPI&                                                target,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
         ::Random&                                                           random,
@@ -228,7 +229,7 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    MCAPI bool $carveEllipsoidVolume(
+    MCNAPI bool $carveEllipsoidVolume(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
         ::Random&,
@@ -240,7 +241,7 @@ public:
         ::CaveFeatureUtils::CarvingParameters const& carvingParameters
     ) const;
 
-    MCAPI void $addFeature(
+    MCNAPI void $addFeature(
         ::IBlockWorldGenAPI&                                                target,
         ::ChunkPos const&                                                   pos,
         ::Random&                                                           random,
@@ -248,6 +249,8 @@ public:
         ::RenderParams&                                                     renderParams,
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
+
+
     // NOLINTEND
 
 public:

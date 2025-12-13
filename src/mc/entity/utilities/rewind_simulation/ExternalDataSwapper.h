@@ -19,6 +19,18 @@ public:
     ExternalDataSwapper& operator=(ExternalDataSwapper const&);
     ExternalDataSwapper(ExternalDataSwapper const&);
     ExternalDataSwapper();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~ExternalDataSwapper();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };
 
 } // namespace RewindSimulation

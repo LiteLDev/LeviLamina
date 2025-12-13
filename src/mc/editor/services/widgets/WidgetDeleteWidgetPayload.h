@@ -14,7 +14,6 @@ class WidgetDeleteWidgetPayload
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~WidgetDeleteWidgetPayload() /*override*/ = default;
     // NOLINTEND
 

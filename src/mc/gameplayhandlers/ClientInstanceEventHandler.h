@@ -15,10 +15,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::HandlerResult handleEvent(::ClientInstanceGameplayEvent<void> const&) = 0;
 
-    // vIndex: 0
     virtual ~ClientInstanceEventHandler() /*override*/ = default;
     // NOLINTEND
 

@@ -10,11 +10,11 @@ class StructurePoolActorRule;
 class JigsawStructureActorRulesRegistry {
 public:
     // JigsawStructureActorRulesRegistry inner types define
-    using ActorRulesRegistryMap =
-        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>>;
-
     using ActorRulesLookupMap =
         ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*>;
+
+    using ActorRulesRegistryMap =
+        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>>;
 
 public:
     // member variables
@@ -34,19 +34,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const* lookupByName(::std::string name) const;
+    MCNAPI ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const* lookupByName(::std::string name) const;
 
-    MCAPI void registerActorRules(
+    MCNAPI void registerActorRules(
         ::std::string                                                                   name,
         ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>&& ruleList
     );
 
-    MCAPI ~JigsawStructureActorRulesRegistry();
+    MCNAPI ~JigsawStructureActorRulesRegistry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

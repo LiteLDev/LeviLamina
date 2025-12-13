@@ -28,10 +28,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual ::std::unique_ptr<::VanillaSystems::IOwnedConstBlockSource> createBlockSource() /*override*/;
 
-    // vIndex: 0
     virtual ~VanillaBlockSourceFactoryAdapter() /*override*/ = default;
     // NOLINTEND
 
@@ -39,6 +37,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::VanillaSystems::IOwnedConstBlockSource> $createBlockSource();
+
+
     // NOLINTEND
 
 public:

@@ -2,30 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/npc/ActionValue.h"
-#include "mc/world/actor/npc/Button.h"
-
 namespace npc {
 
 struct UrlAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::npc::ActionValue> action;
-    ::ll::TypedStorage<8, 64, ::npc::Button>      button;
+    ::ll::UntypedStorage<8, 64> mUnka9cf98;
+    ::ll::UntypedStorage<8, 64> mUnk2810c4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UrlAction& operator=(UrlAction const&);
+    UrlAction(UrlAction const&);
+    UrlAction();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~UrlAction();
+    MCNAPI ~UrlAction();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -13,11 +13,11 @@ class Player;
 namespace PlayerUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool canAttackActor(::Player const& player, ::Actor const& actor);
+MCNAPI bool canAttackActor(::Player const& player, ::Actor const& actor);
 
-MCAPI bool canUseItemToIgnite(::ItemStack const& item, ::BaseGameVersion const& baseGameVersion);
+MCNAPI bool canUseItemToIgnite(::ItemStack const& item, ::BaseGameVersion const& baseGameVersion);
 
-MCAPI void onAttackAwardAchievements(::Player& player, float damage);
+MCNAPI void onAttackAwardAchievements(::Player& player, float damage);
 // NOLINTEND
 
 } // namespace PlayerUtils

@@ -29,10 +29,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~FunctionEntry() /*override*/ = default;
 
-    // vIndex: 1
     virtual void
     execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) /*override*/;
     // NOLINTEND
@@ -41,6 +39,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
+
+
     // NOLINTEND
 
 public:

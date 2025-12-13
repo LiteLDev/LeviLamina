@@ -22,6 +22,18 @@ public:
     Speed& operator=(Speed const&);
     Speed(Speed const&);
     Speed();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit Speed(::std::function<void(::Editor::Settings::SpeedProps const&)> callback);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::function<void(::Editor::Settings::SpeedProps const&)> callback);
+    // NOLINTEND
 };
 
 } // namespace Editor::Settings

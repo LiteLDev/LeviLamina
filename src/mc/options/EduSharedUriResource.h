@@ -26,6 +26,8 @@ public:
     // NOLINTBEGIN
     MCNAPI EduSharedUriResource(::EduSharedUriResource&&);
 
+    MCNAPI_C bool operator!=(::EduSharedUriResource const& rhs) const;
+
     MCNAPI ::EduSharedUriResource& operator=(::EduSharedUriResource&&);
 
     MCNAPI bool operator==(::EduSharedUriResource const& rhs) const;
@@ -36,6 +38,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI_C static ::std::optional<::EduSharedUriResource>
+    create(::std::unordered_map<::std::string, ::std::string> const& values);
+
     MCNAPI static ::EduSharedUriResource fromTag(::CompoundTag const& tag);
     // NOLINTEND
 

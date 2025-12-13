@@ -8,9 +8,15 @@ struct PatternLayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar> mPatternId;
-    ::ll::TypedStorage<1, 1, uchar> mColor;
+    ::ll::UntypedStorage<1, 1> mUnk9296bf;
+    ::ll::UntypedStorage<1, 1> mUnka359ff;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PatternLayer& operator=(PatternLayer const&);
+    PatternLayer(PatternLayer const&);
+    PatternLayer();
 };
 
 } // namespace PatternUtil

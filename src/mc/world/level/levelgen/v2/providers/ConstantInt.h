@@ -14,33 +14,37 @@ struct ConstantInt : public ::IntProviderType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mConstant;
+    ::ll::UntypedStorage<4, 4> mUnk145d32;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ConstantInt& operator=(ConstantInt const&);
+    ConstantInt(ConstantInt const&);
+    ConstantInt();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
     virtual int sample(::IRandom&) const /*override*/;
 
-    // vIndex: 2
     virtual int maxValue() const /*override*/;
 
-    // vIndex: 3
     virtual int minValue() const /*override*/;
 
-    // vIndex: 0
     virtual ~ConstantInt() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $sample(::IRandom&) const;
+    MCNAPI int $sample(::IRandom&) const;
 
-    MCFOLD int $maxValue() const;
+    MCNAPI int $maxValue() const;
 
-    MCFOLD int $minValue() const;
+    MCNAPI int $minValue() const;
+
+
     // NOLINTEND
 
 public:

@@ -21,7 +21,6 @@ class ScriptAddRiderComponent
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptAddRiderComponent() /*override*/ = default;
     // NOLINTEND
 

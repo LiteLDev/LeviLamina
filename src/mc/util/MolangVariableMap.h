@@ -43,6 +43,8 @@ public:
     // NOLINTBEGIN
     MCAPI MolangVariableMap();
 
+    MCAPI_C MolangVariableMap(::MolangVariableMap&&);
+
     MCAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
 
     MCAPI ::MolangVariableMap& clear();
@@ -63,6 +65,8 @@ public:
 
     MCAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, ::MolangScriptArg const& value);
 
+    MCAPI_C void updatePublicVariables();
+
     MCAPI ~MolangVariableMap();
     // NOLINTEND
 
@@ -70,6 +74,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI_C void* $ctor(::MolangVariableMap&&);
     // NOLINTEND
 
 public:

@@ -28,10 +28,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptClientDiagnosticsListener() /*override*/ = default;
 
-    // vIndex: 3
     virtual ::EventResult onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent) /*override*/;
     // NOLINTEND
 
@@ -39,6 +37,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::EventResult $onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
+
+
     // NOLINTEND
 
 public:

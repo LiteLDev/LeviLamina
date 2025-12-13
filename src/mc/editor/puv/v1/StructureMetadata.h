@@ -43,9 +43,9 @@ public:
     // NOLINTBEGIN
     MCNAPI StructureMetadata();
 
-    MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v1::StructureMetadata const&);
-
     MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v1::StructureMetadata&&);
+
+    MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v1::StructureMetadata const&);
 
     MCNAPI ::Editor::Structures::PUVLoader::v1::StructureMetadata&
     operator=(::Editor::Structures::PUVLoader::v1::StructureMetadata&&);
@@ -76,9 +76,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::Editor::Structures::PUVLoader::v1::StructureMetadata const&);
-
     MCNAPI void* $ctor(::Editor::Structures::PUVLoader::v1::StructureMetadata&&);
+
+    MCNAPI void* $ctor(::Editor::Structures::PUVLoader::v1::StructureMetadata const&);
     // NOLINTEND
 
 public:

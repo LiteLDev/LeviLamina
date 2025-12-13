@@ -9,16 +9,12 @@ class ThermalMonitorInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ThermalMonitorInterface() = default;
 
-    // vIndex: 1
     virtual ::ThermalState getThermalState() const = 0;
 
-    // vIndex: 2
     virtual float getThermalValueCelsius() const = 0;
 
-    // vIndex: 3
     virtual bool isLowBatteryModeEnabled() const = 0;
     // NOLINTEND
 

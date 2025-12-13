@@ -60,7 +60,6 @@ struct ClientMobTickDeathSystemImpl
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>,
@@ -84,7 +83,6 @@ public:
             ::EntityFactoryT<>>& context
     ) /*override*/;
 
-    // vIndex: 0
     virtual ~ClientMobTickDeathSystemImpl() /*override*/ = default;
     // NOLINTEND
 
@@ -134,6 +132,8 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     );
+
+
     // NOLINTEND
 
 public:

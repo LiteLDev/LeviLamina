@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+namespace mce { class Color; }
 // clang-format on
 
 struct StyleData {
@@ -30,24 +31,66 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StyleData& operator=(StyleData const&);
-    StyleData(StyleData const&);
-    StyleData();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+#ifdef LL_PLAT_S
     virtual ~StyleData() = default;
+#else // LL_PLAT_C
+    virtual ~StyleData();
+#endif
 
-    // vIndex: 1
-    virtual void parse(::Json::Value const&);
+    virtual void parse(::Json::Value const& customObject);
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C StyleData();
+
+    MCNAPI_C StyleData(::StyleData const&);
+
+    MCNAPI_C ::mce::Color _getColorFromObject(
+        ::Json::Value const& customObject,
+        ::std::string const& fieldName,
+        ::mce::Color         defaultColor
+    ) const;
+
+    MCNAPI_C ::StyleData& operator=(::StyleData const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::std::string sanitizeStringForPlatform(::std::string const& label);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor();
+
+    MCNAPI_C void* $ctor(::StyleData const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $parse(::Json::Value const& customObject);
+#endif
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

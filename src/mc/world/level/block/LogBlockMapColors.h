@@ -2,14 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/Color.h"
-
 struct LogBlockMapColors {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 16, ::mce::Color> mTopColor;
-    ::ll::TypedStorage<4, 16, ::mce::Color> mSideColor;
+    ::ll::UntypedStorage<4, 16> mUnk81de28;
+    ::ll::UntypedStorage<4, 16> mUnkd3c7ea;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LogBlockMapColors& operator=(LogBlockMapColors const&);
+    LogBlockMapColors(LogBlockMapColors const&);
+    LogBlockMapColors();
 };

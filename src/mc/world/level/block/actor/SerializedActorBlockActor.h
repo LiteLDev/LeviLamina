@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/nbt/CompoundTag.h"
 #include "mc/world/Direction.h"
-#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -16,8 +14,10 @@ class Block;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
+class CompoundTag;
 class DataLoadHelper;
 class ILevel;
+class ItemStackBase;
 class SaveContext;
 class Vec2;
 class Vec3;
@@ -35,9 +35,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mActorIdentifier;
-        ::ll::TypedStorage<8, 24, ::CompoundTag>                mSaveData;
+        ::ll::UntypedStorage<8, 176> mUnk6e28f9;
+        ::ll::UntypedStorage<8, 24>  mUnk4d5cb5;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SerializedActor& operator=(SerializedActor const&);
+        SerializedActor(SerializedActor const&);
+        SerializedActor();
     };
 
 public:
@@ -50,16 +56,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 17
     virtual void executeEvent(
         ::BlockSource&,
         ::BlockPos const& pos,
@@ -68,62 +70,64 @@ public:
         ::Actor&             actor
     ) /*override*/;
 
-    // vIndex: 23
     virtual void getDebugText(
         ::std::vector<::std::string>& outputInfo,
         ::BlockPos const&             debugPos,
         ::BlockSource const*          region
     ) const /*override*/;
 
-    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    // vIndex: 0
     virtual ~SerializedActorBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Actor* _loadSerializedActor(
+    MCNAPI ::Actor* _loadSerializedActor(
         ::BlockSource&  region,
         ::ActorFactory& actorFactory,
         ::Vec3 const&   pos,
         ::Vec2 const&   rotation
     ) const;
 
-    MCAPI void loadUserData(::CompoundTag const& tag);
+    MCNAPI void loadUserData(::CompoundTag const& tag);
 
-    MCAPI void saveUserData(::CompoundTag& tag) const;
+    MCNAPI void saveUserData(::CompoundTag& tag) const;
 
-    MCAPI ::Actor* spawnActor(::BlockSource& region, ::Direction::Type direction);
+    MCNAPI ::Actor* spawnActor(::BlockSource& region, ::Direction::Type direction);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static void savePoseToItemForInventoryRendering(::ItemStackBase& item, int pose);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& ACTOR_IDENTIFIER_TAG_NAME();
+    MCNAPI static ::std::string_view const& ACTOR_IDENTIFIER_TAG_NAME();
 
-    MCAPI static ::std::string_view const& ACTOR_TAG_NAME();
+    MCNAPI static ::std::string_view const& ACTOR_TAG_NAME();
 
-    MCAPI static ::std::string_view const& POSE_TAG_NAME();
+    MCNAPI static ::std::string_view const& POSE_TAG_NAME();
 
-    MCAPI static ::std::string_view const& SAVE_DATA_TAG_NAME();
+    MCNAPI static ::std::string_view const& SAVE_DATA_TAG_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $onChanged(::BlockSource& region);
+    MCNAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $executeEvent(
+    MCNAPI void $executeEvent(
         ::BlockSource&,
         ::BlockPos const& pos,
         ::Block const&,
@@ -131,15 +135,17 @@ public:
         ::Actor&             actor
     );
 
-    MCAPI void $getDebugText(
+    MCNAPI void $getDebugText(
         ::std::vector<::std::string>& outputInfo,
         ::BlockPos const&             debugPos,
         ::BlockSource const*          region
     ) const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
+
     // NOLINTEND
 
 public:

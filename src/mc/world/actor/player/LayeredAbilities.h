@@ -13,6 +13,7 @@
 // auto generated forward declare list
 // clang-format off
 class Ability;
+class CompoundTag;
 // clang-format on
 
 class LayeredAbilities {
@@ -36,10 +37,27 @@ public:
 
     MCAPI void _handlePlayerPermissionsChange(::PlayerPermissionLevel from, ::PlayerPermissionLevel to);
 
+    MCAPI_C void forEachAbility(
+        ::std::function<void(::Ability const&, char const*)> const& callback,
+        ::Ability::Options                                          requiredOptions
+    ) const;
+
     MCAPI void forEachAbility(
         ::std::function<void(::Ability const&, ::AbilitiesIndex)> const& callback,
         ::Ability::Options                                               requiredOptions
     ) const;
+
+    MCAPI_C bool getBool(::AbilitiesIndex val) const;
+
+    MCAPI_C bool loadSaveData(::CompoundTag const& parentTag);
+
+    MCAPI_C void onSwitchToCustom();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static ::std::optional<::std::string> getDiff(::LayeredAbilities const& lhs, ::LayeredAbilities const& rhs);
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClimateParameters(
+    MCNAPI ClimateParameters(
         ::ClimateUtils::Parameter temperature,
         ::ClimateUtils::Parameter humidity,
         ::ClimateUtils::Parameter continentalness,
@@ -40,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ClimateUtils::Parameter temperature,
         ::ClimateUtils::Parameter humidity,
         ::ClimateUtils::Parameter continentalness,

@@ -81,31 +81,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~ScriptDebugger() /*override*/;
 
-    // vIndex: 3
     virtual ::ScriptDebuggerSettings const& getSettings() const /*override*/;
 
-    // vIndex: 0
     virtual bool connect(::std::string const& host, ushort port) /*override*/;
 
-    // vIndex: 1
     virtual bool listen(ushort port) /*override*/;
 
-    // vIndex: 2
     virtual void stop() /*override*/;
 
-    // vIndex: 4
     virtual void startProfiler() /*override*/;
 
-    // vIndex: 5
     virtual ::std::vector<::Core::Path> stopProfiler() /*override*/;
 
-    // vIndex: 1
     virtual bool isStatPublisherEnabled() const /*override*/;
 
-    // vIndex: 2
     virtual void publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats) /*override*/;
     // NOLINTEND
 
@@ -181,6 +172,8 @@ public:
     MCNAPI bool $isStatPublisherEnabled() const;
 
     MCNAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats);
+
+
     // NOLINTEND
 
 public:

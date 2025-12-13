@@ -35,16 +35,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
     virtual ~LibHttpClientImpl() /*override*/ = default;
 
-    // vIndex: 2
     virtual void initialize() /*override*/;
 
-    // vIndex: 3
     virtual void shutdown() /*override*/;
 
-    // vIndex: 1
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response>
     send(::Bedrock::Http::Request&& request) /*override*/;
     // NOLINTEND
@@ -114,6 +110,8 @@ public:
     MCNAPI void $shutdown();
 
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> $send(::Bedrock::Http::Request&& request);
+
+
     // NOLINTEND
 
 public:
