@@ -1,9 +1,0 @@
-#pragma once
-
-#include "mc/_HeaderOutputPredefine.h"
-
-namespace Editor {
-
-struct IEditorPlayer {};
-
-} // namespace Editor
