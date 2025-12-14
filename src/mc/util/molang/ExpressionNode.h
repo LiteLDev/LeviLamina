@@ -113,8 +113,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ExpressionNode();
-
     MCAPI ExpressionNode(::ExpressionNode&&);
 
     MCAPI_C explicit ExpressionNode(::MaterialVariants const& materialVariants);

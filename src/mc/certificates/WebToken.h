@@ -25,24 +25,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WebToken& operator=(WebToken const&);
-    WebToken(WebToken const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI WebToken();
-
-    MCAPI_C WebToken(::WebToken&&);
 
     MCAPI explicit WebToken(::std::string token);
 
     MCAPI ::std::string _signatureToDER() const;
 
     MCAPI_C ::std::string getSignerPublicKey() const;
-
-    MCAPI_C ::WebToken& operator=(::WebToken&&);
 
     MCAPI_S ::std::string toString() const;
 
@@ -69,8 +60,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI_C void* $ctor(::WebToken&&);
 
     MCAPI void* $ctor(::std::string token);
     // NOLINTEND

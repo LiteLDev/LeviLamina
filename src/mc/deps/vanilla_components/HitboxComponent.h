@@ -23,8 +23,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI HitboxComponent(::HitboxComponent const& rhs);
-
-    MCAPI_C ~HitboxComponent();
     // NOLINTEND
 
 public:

@@ -23,12 +23,11 @@ public:
 public:
     // prevent constructor by default
     PlayerAuthenticationInfo& operator=(PlayerAuthenticationInfo const&);
-
+    PlayerAuthenticationInfo();
+    
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C PlayerAuthenticationInfo();
-
     MCAPI PlayerAuthenticationInfo(::PlayerAuthenticationInfo&&);
 
     MCAPI PlayerAuthenticationInfo(::PlayerAuthenticationInfo const&);
