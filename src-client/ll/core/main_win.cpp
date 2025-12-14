@@ -19,7 +19,7 @@
 #include "mc/world/level/Level.h"
 
 #include "mc/deps/core/string/StringHash.h"
-#include "mc/gui/screens/controllers/StartMenuScreenController.h"
+#include "mc/client/gui/screens/controllers/StartMenuScreenController.h"
 
 #include "windows.h"
 
@@ -47,7 +47,7 @@ void leviLaminaMain() {
 
     printWelcomeMsg();
 
-    command::registerCommands();
+    //command::registerCommands();
 
     mod::ModRegistrar::getInstance().loadAllMods();
 }
