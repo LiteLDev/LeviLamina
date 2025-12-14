@@ -4,8 +4,8 @@
 namespace mce {
 template <class J>
 static inline ll::Expected<J> serialize(Color const& c) {
-    return std::format("#{:06x}", (uint)c.toARGB() % (1u << 24))
-         + (c.a == 1 ? "" : std::format("{:02x}", (uint)c.toARGB() / (1u << 24)));
+    return std::format("#{:06x}", int(c.r * 255.0f) * (1u << 16) + int(c.g * 255.0f) * (1u << 8) + int(c.b * 255.0f))
+         + (c.a == 1 ? "" : std::format("{:02x}", static_cast<int>(c.a * 255.0f)));
 }
 template <class T, class J>
     requires(std::same_as<Color, T>)
