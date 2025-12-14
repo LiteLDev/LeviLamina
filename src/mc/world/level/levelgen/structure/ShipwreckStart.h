@@ -27,19 +27,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ShipwreckStart(::BiomeSource const& source, ::Random&, int x, int z, short seaLevel);
+    MCAPI ShipwreckStart(::BiomeSource const& source, ::Random&, int x, int z, short seaLevel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BiomeSource const& source, ::Random&, int x, int z, short seaLevel);
+    MCAPI void* $ctor(::BiomeSource const& source, ::Random&, int x, int z, short seaLevel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
 
 
     // NOLINTEND

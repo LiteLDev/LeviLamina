@@ -8,7 +8,7 @@ struct TagsProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk45d9de;
+    ::ll::TypedStorage<8, 32, ::std::string> mTagExpression;
     // NOLINTEND
 
 public:
@@ -20,19 +20,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void fromString(::std::string const& expression);
+    MCFOLD void fromString(::std::string const& expression);
 
-    MCNAPI ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy&&);
+    MCFOLD ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy&&);
 
-    MCNAPI ::std::string const& toString() const;
+    MCFOLD ::std::string const& toString() const;
 
-    MCNAPI ~TagsProxy();
+    MCAPI ~TagsProxy();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

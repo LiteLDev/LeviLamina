@@ -10,7 +10,7 @@ class EntityContext;
 namespace ActorPermission {
 // functions
 // NOLINTBEGIN
-MCNAPI void initialize(::EntityContext& provider);
+MCAPI void initialize(::EntityContext& provider);
 // NOLINTEND
 
 } // namespace ActorPermission

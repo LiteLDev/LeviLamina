@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/MeleeAttackDefinition.h"
 
@@ -13,18 +14,16 @@ namespace JsonUtil { class EmptyClass; }
 
 class DelayedAttackDefinition : public ::MeleeAttackDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3dfb91;
-    ::ll::UntypedStorage<4, 4> mUnkba6f16;
-    ::ll::UntypedStorage<4, 4> mUnkfe2157;
-    // NOLINTEND
+    // DelayedAttackDefinition inner types define
+    using self = ::DelayedAttackDefinition;
 
 public:
-    // prevent constructor by default
-    DelayedAttackDefinition& operator=(DelayedAttackDefinition const&);
-    DelayedAttackDefinition(DelayedAttackDefinition const&);
-    DelayedAttackDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float>                                  mAttackDuration;
+    ::ll::TypedStorage<4, 4, float>                                  mHitDelayPercent;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSound;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -35,7 +34,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                    name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DelayedAttackDefinition>>& root
     );

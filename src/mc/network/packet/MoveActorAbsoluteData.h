@@ -19,10 +19,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk1384a9;
-        ::ll::UntypedStorage<1, 1> mUnkc935f2;
-        ::ll::UntypedStorage<1, 1> mUnke80ecf;
-        ::ll::UntypedStorage<1, 1> mUnk482754;
+        ::ll::TypedStorage<1, 1, uchar> mRaw;
+        bool                            mIsOnGround           : 1;
+        bool                            mTeleported           : 1;
+        bool                            mForceMoveLocalEntity : 1;
         // NOLINTEND
     };
 
@@ -45,14 +45,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MoveActorAbsoluteData(::Actor const& entity);
+    MCAPI explicit MoveActorAbsoluteData(::Actor const& entity);
 
-    MCNAPI ::MoveActorDeltaData calculateDelta(::MoveActorAbsoluteData const& previousAbsoluteMoveData) const;
+    MCAPI ::MoveActorDeltaData calculateDelta(::MoveActorAbsoluteData const& previousAbsoluteMoveData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Actor const& entity);
+    MCAPI void* $ctor(::Actor const& entity);
     // NOLINTEND
 };

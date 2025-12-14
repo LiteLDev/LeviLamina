@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HIDControllerWin32 {};
+class HIDControllerWin32 {};

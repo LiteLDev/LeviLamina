@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/util/molang/ExpressionNode.h"
 #include "mc/world/actor/SkeletalHierarchyIndex.h"
 #include "mc/world/actor/animation/ActorAnimationType.h"
 
@@ -10,8 +12,6 @@
 // clang-format off
 class AnimationComponent;
 class BoneOrientation;
-class ExpressionNode;
-class HashedString;
 class RenderParams;
 struct AnimationVisitor;
 // clang-format on
@@ -20,16 +20,14 @@ class ActorAnimationPlayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkd5fe13;
-    ::ll::UntypedStorage<8, 16> mUnkad5060;
-    ::ll::UntypedStorage<1, 1>  mUnk923d16;
-    ::ll::UntypedStorage<1, 1>  mUnkdcf6cd;
+    ::ll::TypedStorage<8, 48, ::HashedString const>   mFriendlyName;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode const> mBlendExpression;
+    ::ll::TypedStorage<1, 1, bool>                    mExpanded;
+    ::ll::TypedStorage<1, 1, bool>                    mAnimationFinished;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ActorAnimationPlayer& operator=(ActorAnimationPlayer const&);
-    ActorAnimationPlayer(ActorAnimationPlayer const&);
     ActorAnimationPlayer();
 
 public:
@@ -65,31 +63,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorAnimationPlayer(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
+    MCAPI ActorAnimationPlayer(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
+    MCAPI void* $ctor(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $buildBoneToPartMapping(::AnimationComponent&);
+    MCFOLD void $buildBoneToPartMapping(::AnimationComponent&);
 
-    MCNAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
+    MCFOLD void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
 
-    MCNAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
+    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
 
-    MCNAPI void $visit(::AnimationVisitor&& dispatcher);
+    MCAPI void $visit(::AnimationVisitor&& dispatcher);
 
 
     // NOLINTEND

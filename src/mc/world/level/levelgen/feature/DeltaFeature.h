@@ -24,13 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _isValidPlacement(::BlockSource& region, ::BlockPos cursor) const;
+    MCAPI bool _isValidPlacement(::BlockSource& region, ::BlockPos cursor) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& centerPos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& centerPos, ::Random& random) const;
 
 
     // NOLINTEND

@@ -32,28 +32,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChatEvent(::ChatEvent&&);
+    MCAPI ChatEvent(::ChatEvent&&);
 
-    MCNAPI ChatEvent(::ChatEvent const&);
+    MCAPI ChatEvent(::ChatEvent const&);
 
-    MCNAPI ChatEvent(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
+    MCAPI ChatEvent(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
 
-    MCNAPI ~ChatEvent();
+    MCAPI ~ChatEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ChatEvent&&);
+    MCAPI void* $ctor(::ChatEvent&&);
 
-    MCNAPI void* $ctor(::ChatEvent const&);
+    MCAPI void* $ctor(::ChatEvent const&);
 
-    MCNAPI void* $ctor(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
+    MCAPI void* $ctor(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

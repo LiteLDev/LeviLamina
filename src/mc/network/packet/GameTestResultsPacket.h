@@ -14,6 +14,12 @@ struct GameTestResultsPacketInfo;
 class GameTestResultsPacket
 : public ::SerializedPayloadPacket<::GameTestResultsPacketInfo, ::GameTestResultsPacketPayload> {
 public:
+    // GameTestResultsPacket inner types define
+    using PacketInfo = ::GameTestResultsPacketInfo;
+
+    using PayloadType = ::GameTestResultsPacketPayload;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~GameTestResultsPacket() /*override*/;
@@ -22,7 +28,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

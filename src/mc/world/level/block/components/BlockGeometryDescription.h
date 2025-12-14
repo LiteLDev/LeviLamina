@@ -4,14 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/world/level/block/components/BlockRendererDescription.h"
 #include "mc/world/level/block/components/NetworkedBlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
+class ExpressionNode;
 class SemVersion;
-struct BlockRendererDescription;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -27,28 +28,23 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48> mUnk334de9;
-        ::ll::UntypedStorage<8, 16> mUnkc0ae00;
+        ::ll::TypedStorage<8, 48, ::HashedString>                              mCullingName;
+        ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::ExpressionNode>> mBoneVisibilities;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SharedInitializationData& operator=(SharedInitializationData const&);
-        SharedInitializationData(SharedInitializationData const&);
-        SharedInitializationData();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk82c02d;
-    ::ll::UntypedStorage<1, 1>  mUnkc74705;
-    ::ll::UntypedStorage<1, 1>  mUnk95c3d2;
-    ::ll::UntypedStorage<1, 1>  mUnke7f60d;
-    ::ll::UntypedStorage<8, 48> mUnkddf5e8;
-    ::ll::UntypedStorage<8, 16> mUnk32eaa1;
-    ::ll::UntypedStorage<8, 24> mUnk16741f;
-    ::ll::UntypedStorage<4, 52> mUnkc6f067;
+    ::ll::TypedStorage<8, 48, ::HashedString> mGeometryName;
+    ::ll::TypedStorage<1, 1, bool>            mNeedsLegacyTopRotation;
+    ::ll::TypedStorage<1, 1, bool>            mUseBlockTypeLightAbsorption;
+    ::ll::TypedStorage<1, 1, bool>            mIgnoreGeometryForIsSolid;
+    ::ll::TypedStorage<8, 48, ::HashedString> mCullingLayer;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockGeometryDescription::SharedInitializationData>>
+                                                                                mSharedInitializationData;
+    ::ll::TypedStorage<8, 24, ::std::variant<bool, ::std::set<::HashedString>>> mUVsLocked;
+    ::ll::TypedStorage<4, 52, ::BlockRendererDescription>                       mRenderer;
     // NOLINTEND
 
 public:
@@ -72,11 +68,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockGeometryDescription();
+    MCAPI BlockGeometryDescription();
 
-    MCNAPI BlockGeometryDescription(::BlockGeometryDescription const&);
+    MCAPI BlockGeometryDescription(::BlockGeometryDescription const&);
 
-    MCNAPI BlockGeometryDescription(
+    MCAPI BlockGeometryDescription(
         ::HashedString const&                                   geometryName,
         ::HashedString const&                                   cullingName,
         ::HashedString const&                                   cullingLayer,
@@ -84,47 +80,47 @@ public:
         ::BlockRendererDescription const&                       renderer
     );
 
-    MCNAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
+    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
 
-    MCNAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription const&);
+    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& CROSS_GEO_NAME();
+    MCAPI static ::HashedString const& CROSS_GEO_NAME();
 
-    MCNAPI static ::std::string const& CULLING_LAYER_DOCUMENTATION();
+    MCAPI static ::std::string const& CULLING_LAYER_DOCUMENTATION();
 
-    MCNAPI static ::HashedString const& CULLING_LAYER_LEAVES();
+    MCAPI static ::HashedString const& CULLING_LAYER_LEAVES();
 
-    MCNAPI static ::std::string const& CULLING_LAYER_NAME_CONSTRAINT();
+    MCAPI static ::std::string const& CULLING_LAYER_NAME_CONSTRAINT();
 
-    MCNAPI static ::HashedString const& CULLING_LAYER_UNDEFINED();
+    MCAPI static ::HashedString const& CULLING_LAYER_UNDEFINED();
 
-    MCNAPI static ::HashedString const& FULL_BLOCK_GEO_NAME();
+    MCAPI static ::HashedString const& FULL_BLOCK_GEO_NAME();
 
-    MCNAPI static ::std::string const& GEO_NAME_CONSTRAINT();
+    MCAPI static ::std::string const& GEO_NAME_CONSTRAINT();
 
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
 
-    MCNAPI static ::std::string const& UV_LOCKING_CONSTRAINT();
+    MCAPI static ::std::string const& UV_LOCKING_CONSTRAINT();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::BlockGeometryDescription const&);
+    MCAPI void* $ctor(::BlockGeometryDescription const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::HashedString const&                                   geometryName,
         ::HashedString const&                                   cullingName,
         ::HashedString const&                                   cullingLayer,
@@ -136,23 +132,23 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCNAPI ::CompoundTag $buildUnboundDataNetworkTag() const;
+    MCAPI ::CompoundTag $buildUnboundDataNetworkTag() const;
 
-    MCNAPI void $initializeUnboundDataFromNetwork(::CompoundTag const& tag);
+    MCAPI void $initializeUnboundDataFromNetwork(::CompoundTag const& tag);
 
 
     // NOLINTEND

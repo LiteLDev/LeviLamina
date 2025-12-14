@@ -20,24 +20,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RenderingRidingOffsetInfo(::RenderingRidingOffsetInfo const&);
+    MCAPI RenderingRidingOffsetInfo(::RenderingRidingOffsetInfo const&);
 
-    MCNAPI_S RenderingRidingOffsetInfo(::std::string const& baseLocator, ::std::string const& seatLocator);
+    MCAPI_S RenderingRidingOffsetInfo(::std::string const& baseLocator, ::std::string const& seatLocator);
 
-    MCNAPI ~RenderingRidingOffsetInfo();
+    MCAPI ~RenderingRidingOffsetInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::RenderingRidingOffsetInfo const&);
+    MCAPI void* $ctor(::RenderingRidingOffsetInfo const&);
 
-    MCNAPI_S void* $ctor(::std::string const& baseLocator, ::std::string const& seatLocator);
+    MCAPI_S void* $ctor(::std::string const& baseLocator, ::std::string const& seatLocator);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -40,13 +40,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $serialize(::CompoundTag& tag);
+    MCAPI void $serialize(::CompoundTag& tag);
 
 
     // NOLINTEND

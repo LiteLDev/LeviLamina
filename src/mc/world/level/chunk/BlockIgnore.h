@@ -49,30 +49,30 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bootstrap();
+    MCAPI static void bootstrap();
 
-    MCNAPI static ::br::worldgen::processors::BlockIgnore
+    MCAPI static ::br::worldgen::processors::BlockIgnore
     from(::std::vector<::SharedTypes::Reference<0>> const& toIgnore);
 
-    MCNAPI static ::br::worldgen::processors::BlockIgnore from(::std::vector<::HashedString> const& toIgnore);
+    MCAPI static ::br::worldgen::processors::BlockIgnore from(::std::vector<::HashedString> const& toIgnore);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> const& STRUCTURE_BLOCK();
+    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> const& STRUCTURE_BLOCK();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
+    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
         ::IBlockSource&,
         ::BlockPos,
         ::BlockPos,
@@ -81,9 +81,9 @@ public:
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
-    MCNAPI ::br::worldgen::StructureProcessorType $type() const;
+    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

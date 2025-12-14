@@ -13,6 +13,7 @@
 class BinaryStream;
 class Objective;
 class ReadOnlyBinaryStream;
+struct ScorePacketInfo;
 struct ScoreboardId;
 // clang-format on
 
@@ -20,14 +21,12 @@ class SetScorePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk4769b0;
-    ::ll::UntypedStorage<8, 24> mUnkb35691;
+    ::ll::TypedStorage<1, 1, ::ScorePacketType>                 mType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScorePacketInfo>> mScoreInfo;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    SetScorePacket& operator=(SetScorePacket const&);
-    SetScorePacket(SetScorePacket const&);
     SetScorePacket();
 
 public:

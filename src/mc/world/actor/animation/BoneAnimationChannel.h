@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/animation/BoneTransformType.h"
+
 // auto generated forward declare list
 // clang-format off
 class BoneOrientation;
@@ -14,22 +17,16 @@ class BoneAnimationChannel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk639e19;
-    ::ll::UntypedStorage<8, 24> mUnk746181;
+    ::ll::TypedStorage<4, 4, ::BoneTransformType>                 mBoneTransformType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::KeyFrameTransform>> mKeyFrames;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BoneAnimationChannel& operator=(BoneAnimationChannel const&);
-    BoneAnimationChannel(BoneAnimationChannel const&);
-    BoneAnimationChannel();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::KeyFrameTransform& addKeyFrame(float time);
+    MCAPI ::KeyFrameTransform& addKeyFrame(float time);
 
-    MCNAPI_C void animate(
+    MCAPI_C void animate(
         ::RenderParams&               renderParams,
         ::BoneOrientation&            destBoneOrientation,
         float                         scale,

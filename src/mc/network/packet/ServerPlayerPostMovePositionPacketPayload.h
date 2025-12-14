@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 struct ServerPlayerPostMovePositionPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkfe90eb;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerPlayerPostMovePositionPacketPayload& operator=(ServerPlayerPostMovePositionPacketPayload const&);
-    ServerPlayerPostMovePositionPacketPayload(ServerPlayerPostMovePositionPacketPayload const&);
-    ServerPlayerPostMovePositionPacketPayload();
 };

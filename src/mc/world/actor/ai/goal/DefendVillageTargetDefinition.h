@@ -13,16 +13,14 @@ namespace JsonUtil { class EmptyClass; }
 
 class DefendVillageTargetDefinition : public ::TargetGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk580179;
-    // NOLINTEND
+    // DefendVillageTargetDefinition inner types define
+    using self = ::DefendVillageTargetDefinition;
 
 public:
-    // prevent constructor by default
-    DefendVillageTargetDefinition& operator=(DefendVillageTargetDefinition const&);
-    DefendVillageTargetDefinition(DefendVillageTargetDefinition const&);
-    DefendVillageTargetDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mAttackChance;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -33,7 +31,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const& name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DefendVillageTargetDefinition>>&
             root

@@ -15,14 +15,8 @@ class RemovedActorDamageByType : public ::ActorDamageSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5e9bfe;
+    ::ll::TypedStorage<4, 4, ::ActorType> mEntityType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RemovedActorDamageByType& operator=(RemovedActorDamageByType const&);
-    RemovedActorDamageByType(RemovedActorDamageByType const&);
-    RemovedActorDamageByType();
 
 public:
     // virtual functions

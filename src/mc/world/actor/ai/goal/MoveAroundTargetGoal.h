@@ -27,20 +27,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnk589d9d;
-        ::ll::UntypedStorage<4, 4>  mUnka1b7e9;
-        ::ll::UntypedStorage<4, 4>  mUnk979048;
-        ::ll::UntypedStorage<4, 8>  mUnk7863ae;
-        ::ll::UntypedStorage<4, 4>  mUnk9feb00;
-        ::ll::UntypedStorage<4, 4>  mUnk3e86b6;
-        ::ll::UntypedStorage<4, 4>  mUnk17aa2c;
+        ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
+        ::ll::TypedStorage<4, 4, float>               mSpeed;
+        ::ll::TypedStorage<4, 4, float>               mSpreadDegrees;
+        ::ll::TypedStorage<4, 8, ::FloatRange>        mDestinationRange;
+        ::ll::TypedStorage<4, 4, float>               mHeightDifferenceLimit;
+        ::ll::TypedStorage<4, 4, int>                 mHorizontalSearchDistance;
+        ::ll::TypedStorage<4, 4, int>                 mVerticalSearchDistance;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
 
     public:
         // virtual functions
@@ -51,7 +45,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveAroundTargetGoal::Definition>>& root
@@ -106,17 +100,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

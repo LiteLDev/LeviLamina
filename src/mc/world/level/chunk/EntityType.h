@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool isBlockDangerous(::Block const& block) const;
+    MCAPI bool isBlockDangerous(::Block const& block) const;
 
-    MCNAPI ~EntityType();
+    MCAPI ~EntityType();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

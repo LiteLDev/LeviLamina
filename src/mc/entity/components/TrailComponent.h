@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void initFromDefinition(::Actor const& actor);
+    MCAPI void initFromDefinition(::Actor const& actor);
     // NOLINTEND
 };

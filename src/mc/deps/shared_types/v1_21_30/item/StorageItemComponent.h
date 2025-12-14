@@ -29,8 +29,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_30::StorageItemComponent&
-    operator=(::SharedTypes::v1_21_30::StorageItemComponent const&);
+    MCNAPI ::SharedTypes::v1_21_30::StorageItemComponent& operator=(::SharedTypes::v1_21_30::StorageItemComponent const&
+    );
     // NOLINTEND
 
 public:

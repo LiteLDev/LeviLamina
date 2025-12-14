@@ -10,13 +10,13 @@ class Block;
 namespace Heightmap {
 // functions
 // NOLINTBEGIN
-MCNAPI bool motionBlocking(::Block const& state);
+MCAPI bool motionBlocking(::Block const& state);
 
-MCNAPI bool motionBlockingNoLeaves(::Block const& state);
+MCAPI bool motionBlockingNoLeaves(::Block const& state);
 
-MCNAPI bool oceanFloor(::Block const& state);
+MCAPI bool oceanFloor(::Block const& state);
 
-MCNAPI bool worldSurface(::Block const& state);
+MCAPI bool worldSurface(::Block const& state);
 // NOLINTEND
 
 } // namespace Heightmap

@@ -6,6 +6,7 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/actor/SerializedAbilitiesData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,14 +18,8 @@ class UpdateAbilitiesPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk92c2ba;
+    ::ll::TypedStorage<8, 40, ::SerializedAbilitiesData> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UpdateAbilitiesPacket& operator=(UpdateAbilitiesPacket const&);
-    UpdateAbilitiesPacket(UpdateAbilitiesPacket const&);
-    UpdateAbilitiesPacket();
 
 public:
     // virtual functions

@@ -10,7 +10,7 @@ class HashedString;
 namespace HappyGhastProperties {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::HashedString const& CAN_MOVE();
+MCAPI ::HashedString const& CAN_MOVE();
 // NOLINTEND
 
 } // namespace HappyGhastProperties

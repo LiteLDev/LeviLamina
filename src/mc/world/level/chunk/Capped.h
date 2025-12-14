@@ -48,20 +48,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::br::worldgen::processors::Capped
+    MCAPI static ::br::worldgen::processors::Capped
     from(::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> delegate, ::IntProvider limit);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(
+    MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(
         ::IBlockSource&                                          region,
         ::BlockPos                                               pos,
         ::BlockPos                                               structurePos,
@@ -70,9 +70,9 @@ public:
         ::br::worldgen::StructurePlaceSettings const&            settings
     ) const;
 
-    MCNAPI ::br::worldgen::StructureProcessorType $type() const;
+    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

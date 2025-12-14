@@ -29,20 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerUseNameTagEvent(::PlayerUseNameTagEvent const&);
+    MCAPI PlayerUseNameTagEvent(::PlayerUseNameTagEvent const&);
 
-    MCNAPI ~PlayerUseNameTagEvent();
+    MCAPI ~PlayerUseNameTagEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PlayerUseNameTagEvent const&);
+    MCAPI void* $ctor(::PlayerUseNameTagEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

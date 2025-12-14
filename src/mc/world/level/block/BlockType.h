@@ -110,7 +110,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static bool _checkVersioningRequirements(::SemVersion const& removedSupportVersion);
+        MCAPI static bool _checkVersioningRequirements(::SemVersion const& removedSupportVersion);
         // NOLINTEND
 
     public:
@@ -150,15 +150,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::BlockType::NameInfo& operator=(::BlockType::NameInfo&&);
+        MCAPI ::BlockType::NameInfo& operator=(::BlockType::NameInfo&&);
 
-        MCNAPI ~NameInfo();
+        MCAPI ~NameInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -193,7 +193,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI RearrangedStateCollection(
+        MCAPI RearrangedStateCollection(
             ::BlockState const&                                            stateRef,
             ::std::function<::std::optional<int>(::BlockType const&, int)> getter,
             ::std::function<::Block const*(::BlockType const&, int, int)>  setter
@@ -203,7 +203,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void
+        MCAPI static void
         add(::BlockType&                                                   blockType,
             ::BlockState const&                                            stateRef,
             ::std::function<::std::optional<int>(::BlockType const&, int)> getter,
@@ -214,7 +214,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(
+        MCAPI void* $ctor(
             ::BlockState const&                                            stateRef,
             ::std::function<::std::optional<int>(::BlockType const&, int)> getter,
             ::std::function<::Block const*(::BlockType const&, int, int)>  setter
@@ -224,9 +224,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::std::optional<int> $getState(::BlockType const& blockType, int blockData) const;
+        MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int blockData) const;
 
-        MCNAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
+        MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
 
 
         // NOLINTEND
@@ -274,7 +274,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void
+        MCAPI static void
         add(::BlockState const&                                              stateRef,
             ::std::vector<::BlockType::RemovedStateCollection::SplitBlock>&& splitBlocks,
             ::SemVersion const&                                              removedSupportVersion);
@@ -283,9 +283,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::std::optional<int> $getState(::BlockType const& blockType, int) const;
+        MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int) const;
 
-        MCNAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
+        MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
 
 
         // NOLINTEND

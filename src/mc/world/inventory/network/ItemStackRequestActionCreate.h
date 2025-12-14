@@ -16,14 +16,8 @@ class ItemStackRequestActionCreate : public ::ItemStackRequestAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk9c8a7c;
+    ::ll::TypedStorage<1, 1, uchar> mResultsIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestActionCreate& operator=(ItemStackRequestActionCreate const&);
-    ItemStackRequestActionCreate(ItemStackRequestActionCreate const&);
-    ItemStackRequestActionCreate();
 
 public:
     // virtual functions

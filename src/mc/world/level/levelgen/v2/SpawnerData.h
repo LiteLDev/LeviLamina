@@ -59,35 +59,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SpawnerData(::br::worldgen::SpawnerData&&);
+    MCAPI SpawnerData(::br::worldgen::SpawnerData&&);
 
-    MCNAPI SpawnerData(::br::worldgen::SpawnerData const&);
+    MCAPI SpawnerData(::br::worldgen::SpawnerData const&);
 
-    MCNAPI ~SpawnerData();
+    MCAPI ~SpawnerData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::br::worldgen::SpawnerData
+    MCAPI static ::br::worldgen::SpawnerData
     make(::std::string_view id, short probabilityWeight, short minCount, short maxCount);
 
-    MCNAPI static ::br::worldgen::SpawnerData
+    MCAPI static ::br::worldgen::SpawnerData
     make(::ActorType id, short probabilityWeight, short minCount, short maxCount);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::br::worldgen::SpawnerData&&);
+    MCAPI void* $ctor(::br::worldgen::SpawnerData&&);
 
-    MCNAPI void* $ctor(::br::worldgen::SpawnerData const&);
+    MCAPI void* $ctor(::br::worldgen::SpawnerData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -14,20 +14,14 @@ struct ControllerIDtoClientMap : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk13e3ff;
-    ::ll::UntypedStorage<1, 1>  mUnk1fa8dc;
-    ::ll::UntypedStorage<1, 1>  mUnkb49184;
-    ::ll::UntypedStorage<1, 1>  mUnk8688aa;
-    ::ll::UntypedStorage<4, 4>  mUnk8808ae;
-    ::ll::UntypedStorage<4, 4>  mUnk157027;
-    ::ll::UntypedStorage<8, 16> mUnk134e68;
+    ::ll::TypedStorage<1, 1, bool>                                                 useGameControllerId;
+    ::ll::TypedStorage<1, 1, bool>                                                 onScreenAcceptingAllControllerInput;
+    ::ll::TypedStorage<1, 1, bool>                                                 acceptInputFromAllControllers;
+    ::ll::TypedStorage<1, 1, bool>                                                 inGame;
+    ::ll::TypedStorage<4, 4, int>                                                  primaryUserControllerId;
+    ::ll::TypedStorage<4, 4, int>                                                  lastInputUserControllerId;
+    ::ll::TypedStorage<8, 16, ::std::map<int, ::std::weak_ptr<::IClientInstance>>> controllerIDtoClientMap;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ControllerIDtoClientMap& operator=(ControllerIDtoClientMap const&);
-    ControllerIDtoClientMap(ControllerIDtoClientMap const&);
-    ControllerIDtoClientMap();
 
 public:
     // virtual functions
@@ -43,15 +37,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void insertClientInstance(int id, ::std::shared_ptr<::IClientInstance> clientInstance);
+    MCAPI_C void insertClientInstance(int id, ::std::shared_ptr<::IClientInstance> clientInstance);
 
-    MCNAPI_C void removeClientInstance(::std::shared_ptr<::IClientInstance> const& clientInstance);
+    MCAPI_C void removeClientInstance(::std::shared_ptr<::IClientInstance> const& clientInstance);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

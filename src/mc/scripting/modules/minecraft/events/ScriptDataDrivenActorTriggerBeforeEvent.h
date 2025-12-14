@@ -2,16 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ActorDefinitionModifier;
+namespace ScriptModuleMinecraft { class ScriptActor; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 struct ScriptDataDrivenActorTriggerBeforeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk62b8ec;
-    ::ll::UntypedStorage<8, 32> mUnkcaaaa6;
-    ::ll::UntypedStorage<1, 1>  mUnkb4f60c;
-    ::ll::UntypedStorage<8, 8>  mUnk3c0d54;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mActor;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                              mEvent;
+    ::ll::TypedStorage<1, 1, bool>                                                                        mCancel;
+    ::ll::TypedStorage<8, 8, ::std::vector<::ActorDefinitionModifier>&>                                   mModifiers;
     // NOLINTEND
 
 public:

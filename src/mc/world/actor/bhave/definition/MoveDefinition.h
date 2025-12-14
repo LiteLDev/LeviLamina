@@ -15,19 +15,13 @@ class MoveDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc89ac6;
-    ::ll::UntypedStorage<8, 32> mUnk5907c5;
-    ::ll::UntypedStorage<8, 32> mUnk7672fc;
-    ::ll::UntypedStorage<8, 32> mUnk2a3353;
-    ::ll::UntypedStorage<4, 4>  mUnk18fcf2;
-    ::ll::UntypedStorage<8, 32> mUnk12f277;
+    ::ll::TypedStorage<8, 32, ::std::string> mDirectionToMove;
+    ::ll::TypedStorage<8, 32, ::std::string> mDirectionToMoveId;
+    ::ll::TypedStorage<8, 32, ::std::string> mSecondDirectionToMove;
+    ::ll::TypedStorage<8, 32, ::std::string> mSecondDirectionToMoveId;
+    ::ll::TypedStorage<4, 4, int>            mNumberOfTicksToMove;
+    ::ll::TypedStorage<8, 32, ::std::string> mNumberOfTicksToMoveId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveDefinition& operator=(MoveDefinition const&);
-    MoveDefinition(MoveDefinition const&);
-    MoveDefinition();
 
 public:
     // virtual functions
@@ -40,13 +34,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
 
 
     // NOLINTEND

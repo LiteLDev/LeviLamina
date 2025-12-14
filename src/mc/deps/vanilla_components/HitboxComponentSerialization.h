@@ -11,9 +11,9 @@ class HitboxComponent;
 namespace HitboxComponentSerialization {
 // functions
 // NOLINTBEGIN
-MCNAPI void fromCompoundTag(::HitboxComponent& result, ::CompoundTag const& tag);
+MCAPI void fromCompoundTag(::HitboxComponent& result, ::CompoundTag const& tag);
 
-MCNAPI void toCompoundTag(::HitboxComponent const& source, ::CompoundTag& tag);
+MCAPI void toCompoundTag(::HitboxComponent const& source, ::CompoundTag& tag);
 // NOLINTEND
 
 } // namespace HitboxComponentSerialization

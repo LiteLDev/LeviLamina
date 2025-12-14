@@ -6,9 +6,9 @@ struct StopSoundPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke75bb6;
-    ::ll::UntypedStorage<1, 1>  mUnk958cc6;
-    ::ll::UntypedStorage<1, 1>  mUnkda5e68;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<1, 1, bool>           mStopAll;
+    ::ll::TypedStorage<1, 1, bool>           mStopMusicLegacy;
     // NOLINTEND
 
 public:
@@ -20,14 +20,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::StopSoundPacketPayload& operator=(::StopSoundPacketPayload&&);
+    MCFOLD ::StopSoundPacketPayload& operator=(::StopSoundPacketPayload&&);
 
-    MCNAPI ~StopSoundPacketPayload();
+    MCAPI ~StopSoundPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

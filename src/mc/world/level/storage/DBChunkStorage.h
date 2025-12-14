@@ -113,7 +113,7 @@ public:
 
     virtual bool saveLiveChunk(::LevelChunk& lc) /*override*/;
 
-    virtual void writeEntityChunkTransfer(::LevelChunk& lc) /*override*/;
+    virtual void writeEntityChunkTransfer(::LevelChunk& levelChunk) /*override*/;
 
     virtual void writeEntityChunkTransfersToUnloadedChunk(
         ::ChunkKey const&                                       chunkKey,
@@ -281,7 +281,7 @@ public:
 
     MCAPI bool $saveLiveChunk(::LevelChunk& lc);
 
-    MCAPI void $writeEntityChunkTransfer(::LevelChunk& lc);
+    MCAPI void $writeEntityChunkTransfer(::LevelChunk& levelChunk);
 
     MCAPI void $writeEntityChunkTransfersToUnloadedChunk(
         ::ChunkKey const&                                       chunkKey,

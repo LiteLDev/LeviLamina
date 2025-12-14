@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 
@@ -34,17 +35,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk639d93;
-    ::ll::UntypedStorage<4, 4> mUnk4bc834;
-    ::ll::UntypedStorage<4, 4> mUnk853b57;
-    ::ll::UntypedStorage<4, 4> mUnk6573f5;
-    ::ll::UntypedStorage<4, 4> mUnkdc8fbb;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mFollowingPlayer;
+    ::ll::TypedStorage<4, 4, int>             mFollowingTime;
+    ::ll::TypedStorage<4, 4, int>             mAge;
+    ::ll::TypedStorage<4, 4, int>             mHealth;
+    ::ll::TypedStorage<4, 4, int>             mRandomPickupValue;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ExperienceOrb& operator=(ExperienceOrb const&);
-    ExperienceOrb(ExperienceOrb const&);
     ExperienceOrb();
 
 public:

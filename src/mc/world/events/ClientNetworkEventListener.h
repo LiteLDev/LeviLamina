@@ -23,7 +23,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::EventResult $onMessage(::ClientMessageEvent const&);
+    MCFOLD ::EventResult $onMessage(::ClientMessageEvent const&);
 #endif
 
 

@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/packet/MoveActorAbsoluteData.h"
+
 struct MoveActorAbsolutePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk70a94c;
+    ::ll::TypedStorage<8, 32, ::MoveActorAbsoluteData> mMoveData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveActorAbsolutePacketPayload& operator=(MoveActorAbsolutePacketPayload const&);
-    MoveActorAbsolutePacketPayload(MoveActorAbsolutePacketPayload const&);
-    MoveActorAbsolutePacketPayload();
 };

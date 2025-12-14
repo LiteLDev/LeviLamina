@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
+
 struct ShowCreditsPacketPayload {
 public:
     // ShowCreditsPacketPayload inner types define
@@ -13,13 +16,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk50cea0;
-    ::ll::UntypedStorage<4, 4> mUnke1dfb9;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                         mPlayerID;
+    ::ll::TypedStorage<4, 4, ::ShowCreditsPacketPayload::CreditsState> mCreditsState;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShowCreditsPacketPayload& operator=(ShowCreditsPacketPayload const&);
-    ShowCreditsPacketPayload(ShowCreditsPacketPayload const&);
-    ShowCreditsPacketPayload();
 };

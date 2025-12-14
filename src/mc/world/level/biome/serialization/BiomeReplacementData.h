@@ -14,35 +14,29 @@ struct BiomeReplacementData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2>  mUnkaad449;
-    ::ll::UntypedStorage<2, 2>  mUnk1cc353;
-    ::ll::UntypedStorage<8, 24> mUnk2eda6a;
-    ::ll::UntypedStorage<4, 4>  mUnk183706;
-    ::ll::UntypedStorage<4, 4>  mUnk708bd2;
-    ::ll::UntypedStorage<4, 4>  mUnkd77b9a;
+    ::ll::TypedStorage<2, 2, ushort>                 mReplacementBiome;
+    ::ll::TypedStorage<2, 2, ushort>                 mDimension;
+    ::ll::TypedStorage<8, 24, ::std::vector<ushort>> mTargetBiomes;
+    ::ll::TypedStorage<4, 4, float>                  mAmount;
+    ::ll::TypedStorage<4, 4, float>                  mNoiseFrequencyScale;
+    ::ll::TypedStorage<4, 4, uint>                   mReplacementIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeReplacementData& operator=(BiomeReplacementData const&);
-    BiomeReplacementData(BiomeReplacementData const&);
-    BiomeReplacementData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BiomeReplacementData();
+    MCAPI ~BiomeReplacementData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::BiomeReplacementData> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::BiomeReplacementData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

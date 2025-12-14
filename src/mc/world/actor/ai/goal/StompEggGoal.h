@@ -32,15 +32,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCAPI void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCNAPI void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCAPI void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCNAPI void $_playBreakProgressSound(::Level&, ::BlockSource&, ::BlockPos pos);
+    MCAPI void $_playBreakProgressSound(::Level&, ::BlockSource&, ::BlockPos pos);
 
-    MCNAPI void $_playDestroySound(::Level&, ::BlockSource&, ::BlockPos pos);
+    MCAPI void $_playDestroySound(::Level&, ::BlockSource&, ::BlockPos pos);
 
 
     // NOLINTEND

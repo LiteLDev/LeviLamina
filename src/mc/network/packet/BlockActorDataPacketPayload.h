@@ -2,18 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/nbt/CompoundTag.h"
+#include "mc/network/NetworkBlockPosition.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class CompoundTag;
 // clang-format on
 
 struct BlockActorDataPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkbc9524;
-    ::ll::UntypedStorage<8, 24> mUnk31cea8;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>          mData;
     // NOLINTEND
 
 public:
@@ -25,22 +28,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockActorDataPacketPayload(::BlockPos const& pos, ::CompoundTag tag);
+    MCAPI BlockActorDataPacketPayload(::BlockPos const& pos, ::CompoundTag tag);
 
-    MCNAPI ::BlockActorDataPacketPayload& operator=(::BlockActorDataPacketPayload&&);
+    MCAPI ::BlockActorDataPacketPayload& operator=(::BlockActorDataPacketPayload&&);
 
-    MCNAPI ~BlockActorDataPacketPayload();
+    MCAPI ~BlockActorDataPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos, ::CompoundTag tag);
+    MCAPI void* $ctor(::BlockPos const& pos, ::CompoundTag tag);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

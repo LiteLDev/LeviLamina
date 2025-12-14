@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/SimpleWeightedEntry.h"
 #include "mc/world/level/levelgen/structure/structurepools/alias/PoolAliasBinding.h"
 
 // auto generated forward declare list
@@ -16,15 +17,9 @@ class RandomPoolAliasBinding : public ::PoolAliasBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2d5346;
-    ::ll::UntypedStorage<8, 24> mUnk9a1ea3;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Core::SimpleWeightedEntry<::std::string>>> mTargets;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomPoolAliasBinding& operator=(RandomPoolAliasBinding const&);
-    RandomPoolAliasBinding(RandomPoolAliasBinding const&);
-    RandomPoolAliasBinding();
 
 public:
     // virtual functions
@@ -42,10 +37,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     $appendResolvedAliases(::IRandom& random, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const;
 
-    MCNAPI void $forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const;
+    MCAPI void $forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const;
 
 
     // NOLINTEND

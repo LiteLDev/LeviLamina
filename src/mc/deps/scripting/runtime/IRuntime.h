@@ -111,9 +111,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCNAPI ::Scripting::IRuntimeMetadata* $getMetadata() const;
+    MCFOLD ::Scripting::IRuntimeMetadata* $getMetadata() const;
 
-    MCNAPI void $moveToThread();
+    MCFOLD void $moveToThread();
 #endif
 
 

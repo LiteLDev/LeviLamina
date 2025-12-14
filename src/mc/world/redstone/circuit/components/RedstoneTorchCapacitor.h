@@ -28,16 +28,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkea9d51;
-        ::ll::UntypedStorage<1, 1> mUnk58ecb8;
-        ::ll::UntypedStorage<1, 1> mUnk8cada1;
+        ::ll::TypedStorage<1, 1, bool> mOn;
+        ::ll::TypedStorage<1, 1, bool> mHalfFrame;
+        ::ll::TypedStorage<1, 1, bool> mChanged;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        State& operator=(State const&);
-        State(State const&);
-        State();
     };
 
 public:

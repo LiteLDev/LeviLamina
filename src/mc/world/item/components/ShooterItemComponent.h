@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/item/ItemDescriptor.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -31,21 +32,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkab3a3e;
+        ::ll::TypedStorage<4, 4, float> mDuration;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DrawDuration& operator=(DrawDuration const&);
-        DrawDuration(DrawDuration const&);
-        DrawDuration();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI float getData() const;
+        MCFOLD float getData() const;
 
-        MCNAPI void setValue(float duration);
+        MCAPI void setValue(float duration);
         // NOLINTEND
     };
 
@@ -53,10 +48,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk247bf5;
-        ::ll::UntypedStorage<1, 1>  mUnk4a1ba9;
-        ::ll::UntypedStorage<1, 1>  mUnk3c5257;
-        ::ll::UntypedStorage<1, 1>  mUnk851fe8;
+        ::ll::TypedStorage<8, 16, ::ItemDescriptor> itemDesc;
+        ::ll::TypedStorage<1, 1, bool>              useOffhand;
+        ::ll::TypedStorage<1, 1, bool>              searchInventory;
+        ::ll::TypedStorage<1, 1, bool>              useInCreative;
         // NOLINTEND
 
     public:
@@ -66,24 +61,24 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ShooterAmmunitionEntry(::ShooterItemComponent::ShooterAmmunitionEntry const&);
+        MCAPI ShooterAmmunitionEntry(::ShooterItemComponent::ShooterAmmunitionEntry const&);
 
-        MCNAPI ::ShooterItemComponent::ShooterAmmunitionEntry&
+        MCFOLD ::ShooterItemComponent::ShooterAmmunitionEntry&
         operator=(::ShooterItemComponent::ShooterAmmunitionEntry const&);
 
-        MCNAPI ~ShooterAmmunitionEntry();
+        MCAPI ~ShooterAmmunitionEntry();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::ShooterItemComponent::ShooterAmmunitionEntry const&);
+        MCFOLD void* $ctor(::ShooterItemComponent::ShooterAmmunitionEntry const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

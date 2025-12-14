@@ -9,6 +9,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChemistryTableBlockActor;
+class ContainerScreenContext;
+class ItemStack;
 class ItemStackRequestAction;
 // clang-format on
 
@@ -16,9 +19,9 @@ class ScreenHandlerLabTable : public ::ScreenHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk66a3ac;
-    ::ll::UntypedStorage<8, 8>  mUnk9700fd;
-    ::ll::UntypedStorage<8, 24> mUnkbd0017;
+    ::ll::TypedStorage<8, 8, ::ContainerScreenContext const&> mScreenContext;
+    ::ll::TypedStorage<8, 8, ::ChemistryTableBlockActor*>     mChemistryTableBlockActor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>     mConsumedInput;
     // NOLINTEND
 
 public:

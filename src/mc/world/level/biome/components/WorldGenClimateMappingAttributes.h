@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/biome/BiomeTemperatureCategory.h"
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
 
 class WorldGenClimateMappingAttributes : public ::BiomeComponentBase {
@@ -17,15 +18,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkf1f83a;
-        ::ll::UntypedStorage<4, 4> mUnkd21ec1;
+        ::ll::TypedStorage<1, 1, ::BiomeTemperatureCategory> mTemperature;
+        ::ll::TypedStorage<4, 4, uint>                       mWeight;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WeightedTemperatureCategory& operator=(WeightedTemperatureCategory const&);
-        WeightedTemperatureCategory(WeightedTemperatureCategory const&);
-        WeightedTemperatureCategory();
     };
 
 public:

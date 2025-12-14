@@ -5,11 +5,11 @@
 namespace HeartbeatComponentInternal {
 // static variables
 // NOLINTBEGIN
-MCNAPI char const*& INTERVAL_KEY();
+MCAPI char const*& INTERVAL_KEY();
 
-MCNAPI char const*& SOUND_EVENT_DEFAULT_VALUE();
+MCAPI char const*& SOUND_EVENT_DEFAULT_VALUE();
 
-MCNAPI char const*& SOUND_EVENT_KEY();
+MCAPI char const*& SOUND_EVENT_KEY();
 // NOLINTEND
 
 } // namespace HeartbeatComponentInternal

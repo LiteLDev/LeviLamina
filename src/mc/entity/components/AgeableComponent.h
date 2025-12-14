@@ -19,6 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

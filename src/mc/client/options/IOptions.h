@@ -31,8 +31,8 @@ class Option;
 class OptionsObserver;
 struct ScriptDebuggerSettings;
 namespace Scripting { struct WatchdogSettings; }
+class KeyboardRemappingLayout;
 struct ChatOptions;
-struct KeyboardRemappingLayout;
 struct OptionSaveDeferral;
 // clang-format on
 

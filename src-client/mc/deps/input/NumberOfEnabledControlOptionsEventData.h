@@ -2,4 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct NumberOfEnabledControlOptionsEventData {};
+struct NumberOfEnabledControlOptionsEventData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int> numberOfEnabledConfigs;
+    // NOLINTEND
+};

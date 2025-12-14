@@ -13,9 +13,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class HIDController;
 class SecureStorage;
 class SecureStorageKey;
-struct HIDController;
 struct OSInformation;
 struct WebviewInterface;
 namespace Core { class Path; }

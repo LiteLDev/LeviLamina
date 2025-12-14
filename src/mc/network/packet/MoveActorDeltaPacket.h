@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/MoveActorDeltaData.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -17,14 +18,8 @@ class MoveActorDeltaPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk3b4969;
+    ::ll::TypedStorage<8, 64, ::MoveActorDeltaData> mMoveData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveActorDeltaPacket& operator=(MoveActorDeltaPacket const&);
-    MoveActorDeltaPacket(MoveActorDeltaPacket const&);
-    MoveActorDeltaPacket();
 
 public:
     // virtual functions

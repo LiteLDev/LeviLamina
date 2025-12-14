@@ -29,13 +29,13 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::EventResult $onChangedHitResult(::HitResult& hitResult);
+    MCFOLD ::EventResult $onChangedHitResult(::HitResult& hitResult);
 
-    MCNAPI ::EventResult $onContinuousHitResult(::HitResult& hitResult);
+    MCFOLD ::EventResult $onContinuousHitResult(::HitResult& hitResult);
 
-    MCNAPI ::EventResult $onChangedPickHitResult(::HitResult& hitResult);
+    MCFOLD ::EventResult $onChangedPickHitResult(::HitResult& hitResult);
 
-    MCNAPI ::EventResult $onContinuousPickHitResult(::HitResult& hitResult);
+    MCFOLD ::EventResult $onContinuousPickHitResult(::HitResult& hitResult);
 #endif
 
 

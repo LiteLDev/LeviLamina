@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/Mob.h"
 #include "mc/world/actor/agent/AgentAnimation.h"
+#include "mc/world/actor/agent/AgentRenderData.h"
 #include "mc/world/actor/agent/AgentTravelType.h"
 
 // auto generated forward declare list
@@ -39,19 +41,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk618b0a;
-    ::ll::UntypedStorage<4, 8>  mUnka894c6;
-    ::ll::UntypedStorage<4, 4>  mUnkb25082;
-    ::ll::UntypedStorage<4, 4>  mUnk8eff9b;
-    ::ll::UntypedStorage<1, 1>  mUnk666d92;
-    ::ll::UntypedStorage<1, 1>  mUnkb09f58;
-    ::ll::UntypedStorage<8, 16> mUnk306c02;
+    ::ll::TypedStorage<1, 1, bool>               mIsHovering;
+    ::ll::TypedStorage<4, 8, ::Vec2>             mHorizontalTarget;
+    ::ll::TypedStorage<4, 4, float>              mVerticalTarget;
+    ::ll::TypedStorage<4, 4, int>                mSelectedSlot;
+    ::ll::TypedStorage<1, 1, bool>               mHasSetName;
+    ::ll::TypedStorage<1, 1, bool>               mHasFiredCreationEvent;
+    ::ll::TypedStorage<8, 16, ::AgentRenderData> mRenderData;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Agent& operator=(Agent const&);
-    Agent(Agent const&);
     Agent();
 
 public:

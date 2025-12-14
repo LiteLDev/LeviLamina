@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/events/gameevents/VibrationListenerConfig.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockPos;
 class BlockSource;
 class GameEvent;
 struct GameEventContext;
@@ -18,14 +18,8 @@ class SculkSensorVibrationConfig : public ::VibrationListenerConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk7187e1;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SculkSensorVibrationConfig& operator=(SculkSensorVibrationConfig const&);
-    SculkSensorVibrationConfig(SculkSensorVibrationConfig const&);
-    SculkSensorVibrationConfig();
 
 public:
     // virtual functions
@@ -56,7 +50,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onSignalReceive(
+    MCAPI void $onSignalReceive(
         ::BlockSource& region,
         ::BlockPos const&,
         ::GameEvent const& gameEvent,
@@ -66,12 +60,12 @@ public:
         ::Actor*
     );
 
-    MCNAPI bool
+    MCAPI bool
     $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
 
-    MCNAPI void $onSerializableDataChanged(::BlockSource& region);
+    MCFOLD void $onSerializableDataChanged(::BlockSource& region);
 
-    MCNAPI bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    MCFOLD bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
 
 
     // NOLINTEND

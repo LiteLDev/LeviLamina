@@ -10,6 +10,7 @@
 class Actor;
 class Mob;
 class Player;
+class WitherBoss;
 struct MobDescriptor;
 // clang-format on
 
@@ -17,8 +18,8 @@ class WitherTargetHighestDamage : public ::TargetGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk52787d;
-    ::ll::UntypedStorage<8, 8> mUnk99d285;
+    ::ll::TypedStorage<8, 8, ::WitherBoss&> mWitherBoss;
+    ::ll::TypedStorage<8, 8, ::Mob*>        mTarget;
     // NOLINTEND
 
 public:
@@ -52,21 +53,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Player* getHighestDamageTarget();
+    MCAPI ::Player* getHighestDamageTarget();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI bool $_canAttack(
+    MCAPI bool $_canAttack(
         ::Mob*                  testMob,
         ::Actor*                target,
         bool                    allowInvulnerable,

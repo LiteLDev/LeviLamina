@@ -15,21 +15,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit UnsupportedAPIError(::std::string const& msg);
+    MCAPI explicit UnsupportedAPIError(::std::string const& msg);
 
-    MCNAPI ~UnsupportedAPIError();
+    MCAPI ~UnsupportedAPIError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& msg);
+    MCAPI void* $ctor(::std::string const& msg);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

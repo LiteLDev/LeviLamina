@@ -2,14 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/DeserializeDataSettings.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorMigratedDefinitionFactory;
+// clang-format on
+
 namespace ActorMigratedUtils {
 
 struct CustomUpgradeData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk8a4ed1;
-    ::ll::UntypedStorage<8, 8>  mUnk873a28;
+    ::ll::TypedStorage<8, 64, ::DeserializeDataSettings>                               mDeserializeDataSettings;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorMigratedDefinitionFactory const*>> mFactory;
     // NOLINTEND
 
 public:
@@ -21,21 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CustomUpgradeData(::ActorMigratedUtils::CustomUpgradeData&&);
+    MCAPI CustomUpgradeData(::ActorMigratedUtils::CustomUpgradeData&&);
 
-    MCNAPI ~CustomUpgradeData();
+    MCAPI ~CustomUpgradeData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorMigratedUtils::CustomUpgradeData&&);
+    MCAPI void* $ctor(::ActorMigratedUtils::CustomUpgradeData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

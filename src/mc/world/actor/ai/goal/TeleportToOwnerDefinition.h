@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
 // auto generated forward declare list
@@ -15,15 +16,9 @@ class TeleportToOwnerDefinition : public ::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkd69f35;
-    ::ll::UntypedStorage<4, 4>  mUnk5c4bc9;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
+    ::ll::TypedStorage<4, 4, float>               mCooldownInSeconds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TeleportToOwnerDefinition& operator=(TeleportToOwnerDefinition const&);
-    TeleportToOwnerDefinition(TeleportToOwnerDefinition const&);
-    TeleportToOwnerDefinition();
 
 public:
     // virtual functions
@@ -34,7 +29,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                      name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TeleportToOwnerDefinition>>& root
     );

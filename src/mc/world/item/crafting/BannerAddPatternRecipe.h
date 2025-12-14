@@ -20,13 +20,11 @@ class BannerAddPatternRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc91759;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BannerAddPatternRecipe& operator=(BannerAddPatternRecipe const&);
-    BannerAddPatternRecipe(BannerAddPatternRecipe const&);
     BannerAddPatternRecipe();
 
 public:

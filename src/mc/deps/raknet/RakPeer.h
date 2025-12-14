@@ -46,10 +46,10 @@ public:
     // clang-format off
     struct BanStruct;
     struct PingAndClockDifferential;
-    struct RequestedConnectionStruct;
-    struct SocketQueryOutput;
     struct RemoteSystemStruct;
     struct BufferedCommandStruct;
+    struct RequestedConnectionStruct;
+    struct SocketQueryOutput;
     // clang-format on
 
     // RakPeer inner types define
@@ -74,38 +74,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<2, 2, ushort> pingTime;
         ::ll::TypedStorage<8, 8, uint64> clockDifferential;
-        // NOLINTEND
-    };
-
-    struct RequestedConnectionStruct {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
-        ::ll::TypedStorage<8, 8, uint64>                    nextRequestTime;
-        ::ll::TypedStorage<1, 1, uchar>                     requestsMade;
-        ::ll::TypedStorage<8, 8, char*>                     data;
-        ::ll::TypedStorage<2, 2, ushort>                    dataLength;
-        ::ll::TypedStorage<1, 256, char[256]>               outgoingPassword;
-        ::ll::TypedStorage<1, 1, uchar>                     outgoingPasswordLength;
-        ::ll::TypedStorage<4, 4, uint>                      socketIndex;
-        ::ll::TypedStorage<4, 4, uint>                      extraData;
-        ::ll::TypedStorage<4, 4, uint>                      sendConnectionAttemptCount;
-        ::ll::TypedStorage<4, 4, uint>                      timeBetweenSendConnectionAttemptsMS;
-        ::ll::TypedStorage<4, 4, uint>                      timeoutTime;
-        ::ll::TypedStorage<4, 4, ::RakNet::PublicKeyMode>   publicKeyMode;
-        ::ll::TypedStorage<8, 8, ::RakNet::RakNetSocket2*>  socket;
-        enum : int {
-            Connect = 1,
-        } actionToTake;
-        // NOLINTEND
-    };
-
-    struct SocketQueryOutput {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::RakNetSocket2*>> sockets;
         // NOLINTEND
     };
 
@@ -195,6 +163,38 @@ public:
             ChangeSystemAddress = 3,
             DoNothing           = 4,
         } command;
+        // NOLINTEND
+    };
+
+    struct RequestedConnectionStruct {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
+        ::ll::TypedStorage<8, 8, uint64>                    nextRequestTime;
+        ::ll::TypedStorage<1, 1, uchar>                     requestsMade;
+        ::ll::TypedStorage<8, 8, char*>                     data;
+        ::ll::TypedStorage<2, 2, ushort>                    dataLength;
+        ::ll::TypedStorage<1, 256, char[256]>               outgoingPassword;
+        ::ll::TypedStorage<1, 1, uchar>                     outgoingPasswordLength;
+        ::ll::TypedStorage<4, 4, uint>                      socketIndex;
+        ::ll::TypedStorage<4, 4, uint>                      extraData;
+        ::ll::TypedStorage<4, 4, uint>                      sendConnectionAttemptCount;
+        ::ll::TypedStorage<4, 4, uint>                      timeBetweenSendConnectionAttemptsMS;
+        ::ll::TypedStorage<4, 4, uint>                      timeoutTime;
+        ::ll::TypedStorage<4, 4, ::RakNet::PublicKeyMode>   publicKeyMode;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakNetSocket2*>  socket;
+        enum : int {
+            Connect = 1,
+        } actionToTake;
+        // NOLINTEND
+    };
+
+    struct SocketQueryOutput {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::RakNetSocket2*>> sockets;
         // NOLINTEND
     };
 

@@ -24,7 +24,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::br::spawn::EntityTypeCache> from(::Level& level);
+    MCAPI static ::std::unique_ptr<::br::spawn::EntityTypeCache> from(::Level& level);
     // NOLINTEND
 };
 

@@ -37,20 +37,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptingWorldInitializeEvent(::ScriptingWorldInitializeEvent const&);
+    MCAPI ScriptingWorldInitializeEvent(::ScriptingWorldInitializeEvent const&);
 
-    MCNAPI ~ScriptingWorldInitializeEvent();
+    MCAPI ~ScriptingWorldInitializeEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptingWorldInitializeEvent const&);
+    MCAPI void* $ctor(::ScriptingWorldInitializeEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

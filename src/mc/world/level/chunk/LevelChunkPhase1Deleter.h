@@ -11,6 +11,6 @@ struct LevelChunkPhase1Deleter {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void operator()(::LevelChunk* lc);
+    MCAPI void operator()(::LevelChunk* lc);
     // NOLINTEND
 };

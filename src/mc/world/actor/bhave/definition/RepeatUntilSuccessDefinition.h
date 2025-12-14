@@ -15,15 +15,9 @@ class RepeatUntilSuccessDefinition : public ::DecoratorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk3cbfb8;
-    ::ll::UntypedStorage<8, 32> mUnk519e19;
+    ::ll::TypedStorage<4, 4, int>            mMaxNumberOfAttempts;
+    ::ll::TypedStorage<8, 32, ::std::string> mMaxNumberOfAttemptsId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RepeatUntilSuccessDefinition& operator=(RepeatUntilSuccessDefinition const&);
-    RepeatUntilSuccessDefinition(RepeatUntilSuccessDefinition const&);
-    RepeatUntilSuccessDefinition();
 
 public:
     // virtual functions
@@ -36,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
 
 
     // NOLINTEND

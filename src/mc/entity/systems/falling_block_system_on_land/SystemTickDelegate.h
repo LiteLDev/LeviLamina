@@ -11,6 +11,7 @@ class BlockPos;
 class FallingBlock;
 class FallingBlockActor;
 class IBlockSource;
+namespace FallingBlockSystemOnLand { struct DelayDelegateData; }
 // clang-format on
 
 namespace FallingBlockSystemOnLand {
@@ -19,14 +20,8 @@ class SystemTickDelegate : public ::ITickDelegate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3f25b4;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FallingBlockSystemOnLand::DelayDelegateData>> mOnLandDataQueue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SystemTickDelegate& operator=(SystemTickDelegate const&);
-    SystemTickDelegate(SystemTickDelegate const&);
-    SystemTickDelegate();
 
 public:
     // virtual functions

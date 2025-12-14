@@ -27,17 +27,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::StructureTemplateDataResponsePacketPayload& operator=(::StructureTemplateDataResponsePacketPayload&&);
+    MCAPI ::StructureTemplateDataResponsePacketPayload& operator=(::StructureTemplateDataResponsePacketPayload&&);
 
-    MCNAPI ::StructureTemplateDataResponsePacketPayload&
+    MCAPI ::StructureTemplateDataResponsePacketPayload&
     operator=(::StructureTemplateDataResponsePacketPayload const& other);
 
-    MCNAPI ~StructureTemplateDataResponsePacketPayload();
+    MCAPI ~StructureTemplateDataResponsePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -4,12 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-
-// auto generated forward declare list
-// clang-format off
-class TimeAccumulator;
-namespace Bedrock::Threading { class Mutex; }
-// clang-format on
+#include "mc/platform/threading/Mutex.h"
+#include "mc/world/level/chunk/AverageTracker.h"
+#include "mc/world/level/chunk/TimeAccumulator.h"
 
 struct ImguiProfiler : public ::Bedrock::EnableNonOwnerReferences {
 public:
@@ -27,17 +24,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk4babaf;
-        ::ll::UntypedStorage<8, 8> mUnk1951ec;
-        ::ll::UntypedStorage<1, 1> mUnk567e65;
-        ::ll::UntypedStorage<8, 8> mUnk73e8db;
+        ::ll::TypedStorage<8, 8, char const*>                mGroup;
+        ::ll::TypedStorage<8, 8, char const*>                mName;
+        ::ll::TypedStorage<1, 1, bool>                       mIsClient;
+        ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> mElapsed;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Record& operator=(Record const&);
-        Record(Record const&);
-        Record();
     };
 
     struct RecordGroup {
@@ -62,8 +53,8 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 24> mUnk593129;
-            ::ll::UntypedStorage<8, 48> mUnkdd6783;
+            ::ll::TypedStorage<8, 24, ::TimeAccumulator> mTimeAccumulator;
+            ::ll::TypedStorage<8, 48, ::AverageTracker>  mAverageTracker;
             // NOLINTEND
 
         public:
@@ -74,23 +65,23 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCNAPI_S Record(::ImguiProfiler::RecordGroup::Record const&);
+            MCAPI_S Record(::ImguiProfiler::RecordGroup::Record const&);
 
-            MCNAPI ::ImguiProfiler::RecordGroup::Record& operator=(::ImguiProfiler::RecordGroup::Record&&);
+            MCAPI ::ImguiProfiler::RecordGroup::Record& operator=(::ImguiProfiler::RecordGroup::Record&&);
 
-            MCNAPI ~Record();
+            MCAPI ~Record();
             // NOLINTEND
 
         public:
             // constructor thunks
             // NOLINTBEGIN
-            MCNAPI_S void* $ctor(::ImguiProfiler::RecordGroup::Record const&);
+            MCAPI_S void* $ctor(::ImguiProfiler::RecordGroup::Record const&);
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCNAPI void $dtor();
+            MCAPI void $dtor();
             // NOLINTEND
         };
 
@@ -98,10 +89,10 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 32> mUnk99b2c9;
-            ::ll::UntypedStorage<1, 1>  mUnk5fd0a9;
-            ::ll::UntypedStorage<8, 72> mUnkfc04e9;
-            ::ll::UntypedStorage<8, 72> mUnkc08c94;
+            ::ll::TypedStorage<8, 32, ::std::string>                        mName;
+            ::ll::TypedStorage<1, 1, bool>                                  bUseAverageTracker;
+            ::ll::TypedStorage<8, 72, ::ImguiProfiler::RecordGroup::Record> mClient;
+            ::ll::TypedStorage<8, 72, ::ImguiProfiler::RecordGroup::Record> mServer;
             // NOLINTEND
 
         public:
@@ -112,53 +103,47 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCNAPI FullStackRecord(::ImguiProfiler::RecordGroup::FullStackRecord&&);
+            MCAPI FullStackRecord(::ImguiProfiler::RecordGroup::FullStackRecord&&);
 
-            MCNAPI_C FullStackRecord(::ImguiProfiler::RecordGroup::FullStackRecord const&);
+            MCAPI_C FullStackRecord(::ImguiProfiler::RecordGroup::FullStackRecord const&);
 
-            MCNAPI ::ImguiProfiler::RecordGroup::FullStackRecord&
+            MCAPI ::ImguiProfiler::RecordGroup::FullStackRecord&
             operator=(::ImguiProfiler::RecordGroup::FullStackRecord&&);
 
-            MCNAPI ~FullStackRecord();
+            MCAPI ~FullStackRecord();
             // NOLINTEND
 
         public:
             // constructor thunks
             // NOLINTBEGIN
-            MCNAPI void* $ctor(::ImguiProfiler::RecordGroup::FullStackRecord&&);
+            MCAPI void* $ctor(::ImguiProfiler::RecordGroup::FullStackRecord&&);
 
-            MCNAPI_C void* $ctor(::ImguiProfiler::RecordGroup::FullStackRecord const&);
+            MCAPI_C void* $ctor(::ImguiProfiler::RecordGroup::FullStackRecord const&);
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCNAPI void $dtor();
+            MCAPI void $dtor();
             // NOLINTEND
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk803bd9;
-        ::ll::UntypedStorage<4, 4>  mUnk93e489;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ImguiProfiler::RecordGroup::FullStackRecord>> mRecords;
+        ::ll::TypedStorage<4, 4, ::ImguiProfiler::RecordGroup::SortType>                        mSortType;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RecordGroup& operator=(RecordGroup const&);
-        RecordGroup(RecordGroup const&);
-        RecordGroup();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool isGreaterThan(
+        MCAPI bool isGreaterThan(
             ::ImguiProfiler::RecordGroup::FullStackRecord const& lhs,
             ::ImguiProfiler::RecordGroup::FullStackRecord const& rhs
         );
 
-        MCNAPI ::ImguiProfiler::RecordGroup::FullStackRecord& operator[](::std::string const& name);
+        MCAPI ::ImguiProfiler::RecordGroup::FullStackRecord& operator[](::std::string const& name);
         // NOLINTEND
     };
 
@@ -174,31 +159,19 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 8> mUnk4d5828;
-            ::ll::UntypedStorage<8, 8> mUnkfe5c3e;
+            ::ll::TypedStorage<8, 8, char const*> mGroup;
+            ::ll::TypedStorage<8, 8, char const*> mName;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            Signature& operator=(Signature const&);
-            Signature(Signature const&);
-            Signature();
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk89b778;
-        ::ll::UntypedStorage<8, 8> mUnkc6ac67;
-        ::ll::UntypedStorage<1, 1> mUnkf7b3e1;
-        ::ll::UntypedStorage<8, 8> mUnka440c2;
+        ::ll::TypedStorage<8, 8, char const*>                             mGroup;
+        ::ll::TypedStorage<8, 8, char const*>                             mName;
+        ::ll::TypedStorage<1, 1, bool>                                    mIsClient;
+        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mStart;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Timer& operator=(Timer const&);
-        Timer(Timer const&);
-        Timer();
 
     public:
         // virtual functions
@@ -217,14 +190,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk309a6a;
+        ::ll::TypedStorage<1, 1, bool> mHasAddedRecord;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ManualTimer& operator=(ManualTimer const&);
-        ManualTimer(ManualTimer const&);
-        ManualTimer();
 
     public:
         // virtual functions
@@ -240,13 +207,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C void mark();
+        MCAPI_C void mark();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -266,7 +233,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -279,15 +246,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk5210a3;
-    ::ll::UntypedStorage<8, 80> mUnke06fd6;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::ImguiProfiler::RecordGroup>> mRecordGroups;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                             mRecordGroupMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ImguiProfiler& operator=(ImguiProfiler const&);
-    ImguiProfiler(ImguiProfiler const&);
-    ImguiProfiler();
 
 public:
     // virtual functions
@@ -298,20 +259,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::TimeAccumulator
+    MCAPI ::TimeAccumulator
     getTimeAccumulator(::std::string const& group, ::std::string const& name, bool isClientSide);
 
-    MCNAPI void update();
+    MCAPI void update();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::ImguiProfiler::Record>& sPendingRecords();
+    MCAPI static ::std::vector<::ImguiProfiler::Record>& sPendingRecords();
 
-    MCNAPI static int& sProduceRecords();
+    MCAPI static int& sProduceRecords();
 
-    MCNAPI static ::Bedrock::Threading::Mutex& sRecordMutex();
+    MCAPI static ::Bedrock::Threading::Mutex& sRecordMutex();
     // NOLINTEND
 
 public:

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_90/item/ComponentItemComponentData.h"
+#include "mc/world/item/components/ComponentItemDeprecatedComponentData_v1_20_80.h"
+#include "mc/world/item/components/ComponentItemDescriptionData_v1_21_110.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -13,9 +18,9 @@ struct ComponentItemData_v1_21_110 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88>   mUnk6e74e5;
-    ::ll::UntypedStorage<8, 1096> mUnkb1fe0c;
-    ::ll::UntypedStorage<8, 840>  mUnk6275d1;
+    ::ll::TypedStorage<8, 88, ::ComponentItemDescriptionData_v1_21_110>              mDescription;
+    ::ll::TypedStorage<8, 1096, ::SharedTypes::v1_21_90::ComponentItemComponentData> mItemComponents;
+    ::ll::TypedStorage<8, 840, ::ComponentItemDeprecatedComponentData_v1_20_80>      mDeprecatedItemComponents;
     // NOLINTEND
 
 public:
@@ -26,42 +31,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemData_v1_21_110(::ComponentItemData_v1_21_110&&);
+    MCAPI ComponentItemData_v1_21_110(::ComponentItemData_v1_21_110&&);
 
-    MCNAPI ComponentItemData_v1_21_110(::ComponentItemData_v1_21_110 const&);
+    MCAPI ComponentItemData_v1_21_110(::ComponentItemData_v1_21_110 const&);
 
-    MCNAPI ~ComponentItemData_v1_21_110();
+    MCAPI ~ComponentItemData_v1_21_110();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void
-    moveDeprecatedData(::ComponentItemData_v1_21_90& oldData, ::ComponentItemData_v1_21_110& newData);
+    MCAPI static void moveDeprecatedData(::ComponentItemData_v1_21_90& oldData, ::ComponentItemData_v1_21_110& newData);
 
-    MCNAPI static void
+    MCAPI static void
     upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_21_90, ::ComponentItemData_v1_21_110, nullptr_t>& upgrader);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ComponentItemData_v1_21_110&&);
+    MCAPI void* $ctor(::ComponentItemData_v1_21_110&&);
 
-    MCNAPI void* $ctor(::ComponentItemData_v1_21_110 const&);
+    MCFOLD void* $ctor(::ComponentItemData_v1_21_110 const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

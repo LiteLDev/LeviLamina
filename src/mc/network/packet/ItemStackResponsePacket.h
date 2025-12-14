@@ -11,20 +11,15 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+struct ItemStackResponseInfo;
 // clang-format on
 
 class ItemStackResponsePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk80864f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStackResponseInfo>> mResponses;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackResponsePacket& operator=(ItemStackResponsePacket const&);
-    ItemStackResponsePacket(ItemStackResponsePacket const&);
-    ItemStackResponsePacket();
 
 public:
     // virtual functions

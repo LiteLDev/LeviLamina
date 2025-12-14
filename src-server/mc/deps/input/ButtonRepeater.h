@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ButtonRepeater {
+class ButtonRepeater {
 public:
     // ButtonRepeater inner types declare
     // clang-format off

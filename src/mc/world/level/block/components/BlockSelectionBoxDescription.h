@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
-class Vec3;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,15 +17,13 @@ struct BlockSelectionBoxDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkf634c9;
-    ::ll::UntypedStorage<4, 12> mUnkafd780;
-    ::ll::UntypedStorage<4, 12> mUnk50d3e2;
+    ::ll::TypedStorage<1, 1, bool>    mEnabled;
+    ::ll::TypedStorage<4, 12, ::Vec3> mOrigin;
+    ::ll::TypedStorage<4, 12, ::Vec3> mSize;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockSelectionBoxDescription& operator=(BlockSelectionBoxDescription const&);
-    BlockSelectionBoxDescription(BlockSelectionBoxDescription const&);
     BlockSelectionBoxDescription();
 
 public:
@@ -49,45 +47,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockSelectionBoxDescription(bool enabled);
+    MCAPI explicit BlockSelectionBoxDescription(bool enabled);
 
-    MCNAPI BlockSelectionBoxDescription(::Vec3 const& origin, ::Vec3 const& size);
+    MCAPI BlockSelectionBoxDescription(::Vec3 const& origin, ::Vec3 const& size);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(bool enabled);
+    MCAPI void* $ctor(bool enabled);
 
-    MCNAPI void* $ctor(::Vec3 const& origin, ::Vec3 const& size);
+    MCAPI void* $ctor(::Vec3 const& origin, ::Vec3 const& size);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCFOLD ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCFOLD void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
 
     // NOLINTEND

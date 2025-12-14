@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/EnumSet.h"
 #include "mc/world/level/block/traits/block_trait/ITrait.h"
 
 // auto generated forward declare list
@@ -33,16 +34,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf54a26;
-    ::ll::UntypedStorage<4, 4> mUnka74308;
-    ::ll::UntypedStorage<1, 1> mUnk1f35c0;
+    ::ll::TypedStorage<4, 4, int>                            mUpdateFlags;
+    ::ll::TypedStorage<4, 4, ::BlockTrait::Connection::Type> mType;
+    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockTrait::Connection::EnabledConnectionStates, 1>>
+        mEnabledConnectionStates;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Connection& operator=(Connection const&);
-    Connection(Connection const&);
-    Connection();
 
 public:
     // virtual functions
@@ -59,7 +55,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::NeighborBlockDirections getConnectedDirections(
+    MCAPI static ::NeighborBlockDirections getConnectedDirections(
         ::IConstBlockSource const& region,
         ::Block const&             block,
         ::BlockPos const&          pos,

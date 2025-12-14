@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
+
 struct NpcRequestPacketPayload {
 public:
     // NpcRequestPacketPayload inner types define
@@ -18,11 +21,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk22a7d6;
-    ::ll::UntypedStorage<1, 1>  mUnke62af5;
-    ::ll::UntypedStorage<8, 32> mUnk7e9a5f;
-    ::ll::UntypedStorage<1, 1>  mUnk45ff77;
-    ::ll::UntypedStorage<8, 32> mUnk328665;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                       mId;
+    ::ll::TypedStorage<1, 1, ::NpcRequestPacketPayload::RequestType> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mActions;
+    ::ll::TypedStorage<1, 1, uchar>                                  mActionIndex;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mSceneName;
     // NOLINTEND
 
 public:
@@ -34,14 +37,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::NpcRequestPacketPayload& operator=(::NpcRequestPacketPayload&&);
+    MCAPI ::NpcRequestPacketPayload& operator=(::NpcRequestPacketPayload&&);
 
-    MCNAPI ~NpcRequestPacketPayload();
+    MCAPI ~NpcRequestPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

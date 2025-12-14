@@ -29,6 +29,7 @@ struct BiomeIdType;
 struct BiomeJsonDocumentGlue;
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
+namespace SharedTypes::v1_21_120 { struct BiomeJsonDocument; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -42,36 +43,28 @@ public:
     // clang-format on
 
     // BiomeRegistry inner types define
-    struct BiomeComparator {};
+    struct BiomeComparator {
+    public:
+        // BiomeComparator inner types define
+        using is_transparent = void;
+    };
 
     struct LoadedBiomeDocument {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk2dd6b9;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_120::BiomeJsonDocument>> mBiomeDocument;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LoadedBiomeDocument& operator=(LoadedBiomeDocument const&);
-        LoadedBiomeDocument(LoadedBiomeDocument const&);
-        LoadedBiomeDocument();
     };
 
     struct SeasonTextureRowSettings {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk660be0;
-        ::ll::UntypedStorage<4, 4> mUnk222da8;
-        ::ll::UntypedStorage<4, 4> mUnk4607e5;
+        ::ll::TypedStorage<4, 4, float> mTemperature;
+        ::ll::TypedStorage<4, 4, float> mDownfall;
+        ::ll::TypedStorage<4, 4, float> mFoliageSnow;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SeasonTextureRowSettings& operator=(SeasonTextureRowSettings const&);
-        SeasonTextureRowSettings(SeasonTextureRowSettings const&);
-        SeasonTextureRowSettings();
     };
 
     using BiomeNameLookupMap = ::std::unordered_map<uint64, ::std::unique_ptr<::Biome>>;

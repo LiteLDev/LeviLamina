@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_10/item/ComponentItemComponentData.h"
+#include "mc/world/item/components/ComponentItemDeprecatedComponentData_v1_20_80.h"
+#include "mc/world/item/components/ComponentItemDescriptionData_v1_20_20.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -13,50 +18,45 @@ struct ComponentItemData_v1_21_10 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96>  mUnka7776c;
-    ::ll::UntypedStorage<8, 928> mUnk9ae327;
-    ::ll::UntypedStorage<8, 840> mUnk8a1d59;
+    ::ll::TypedStorage<8, 96, ::ComponentItemDescriptionData_v1_20_20>              mDescription;
+    ::ll::TypedStorage<8, 928, ::SharedTypes::v1_21_10::ComponentItemComponentData> mItemComponents;
+    ::ll::TypedStorage<8, 840, ::ComponentItemDeprecatedComponentData_v1_20_80>     mDeprecatedItemComponents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ComponentItemData_v1_21_10& operator=(ComponentItemData_v1_21_10 const&);
-    ComponentItemData_v1_21_10(ComponentItemData_v1_21_10 const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemData_v1_21_10();
+    MCAPI ComponentItemData_v1_21_10();
 
-    MCNAPI ~ComponentItemData_v1_21_10();
+    MCAPI ~ComponentItemData_v1_21_10();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void moveDeprecatedData(::ComponentItemData_v1_20_80& oldData, ::ComponentItemData_v1_21_10& newData);
+    MCAPI static void moveDeprecatedData(::ComponentItemData_v1_20_80& oldData, ::ComponentItemData_v1_21_10& newData);
 
-    MCNAPI static void
+    MCAPI static void
     upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_20_80, ::ComponentItemData_v1_21_10, nullptr_t>& upgrader);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

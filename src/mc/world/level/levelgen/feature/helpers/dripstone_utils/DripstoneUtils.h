@@ -14,7 +14,7 @@ namespace DripstoneUtils { struct PointedDripstoneBasePos; }
 namespace DripstoneUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void buildBaseToTipColumn(
+MCAPI void buildBaseToTipColumn(
     ::IBlockWorldGenAPI& target,
     ::BlockPos const&    basePos,
     uchar                direction,
@@ -22,14 +22,14 @@ MCNAPI void buildBaseToTipColumn(
     bool                 mergeTips
 );
 
-MCNAPI bool canPlacePool(::IBlockWorldGenAPI& target, ::BlockPos const& pos);
+MCAPI bool canPlacePool(::IBlockWorldGenAPI& target, ::BlockPos const& pos);
 
-MCNAPI ::std::optional<::DripstoneUtils::PointedDripstoneBasePos>
+MCAPI ::std::optional<::DripstoneUtils::PointedDripstoneBasePos>
 getPointedDripstoneBasePos(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random);
 
-MCNAPI bool isCircleMostlyEmbeddedInStone(::IBlockWorldGenAPI& target, ::BlockPos const& center, int xzRadius);
+MCAPI bool isCircleMostlyEmbeddedInStone(::IBlockWorldGenAPI& target, ::BlockPos const& center, int xzRadius);
 
-MCNAPI bool replaceableByDripstone(::BlockType const& block);
+MCAPI bool replaceableByDripstone(::BlockType const& block);
 // NOLINTEND
 
 } // namespace DripstoneUtils

@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ChemistryStickItem.h"
+#include "mc/world/item/CompoundType.h"
+#include "mc/world/item/ItemColor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,17 +32,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk2e1fb2;
-        ::ll::UntypedStorage<1, 1> mUnkb0e483;
-        ::ll::UntypedStorage<4, 4> mUnka60ccd;
-        ::ll::UntypedStorage<4, 4> mUnk6e75e8;
+        ::ll::TypedStorage<1, 1, ::ItemColor>    mDyeId;
+        ::ll::TypedStorage<1, 1, ::CompoundType> mColorCompound;
+        ::ll::TypedStorage<4, 4, int>            mVariantIndex;
+        ::ll::TypedStorage<4, 4, int>            mRGB;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ColorInfo& operator=(ColorInfo const&);
-        ColorInfo(ColorInfo const&);
-        ColorInfo();
     };
 
 public:

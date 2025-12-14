@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorRuntimeID;
 class BinaryStream;
 class ReadOnlyBinaryStream;
-class Vec3;
 // clang-format on
 
 class InteractPacket : public ::Packet {
@@ -29,15 +29,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkefc1ef;
-    ::ll::UntypedStorage<8, 8>  mUnkd57cde;
-    ::ll::UntypedStorage<4, 12> mUnk4455a4;
+    ::ll::TypedStorage<1, 1, ::InteractPacket::Action> mAction;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>         mTargetId;
+    ::ll::TypedStorage<4, 12, ::Vec3>                  mPos;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    InteractPacket& operator=(InteractPacket const&);
-    InteractPacket(InteractPacket const&);
     InteractPacket();
 
 public:

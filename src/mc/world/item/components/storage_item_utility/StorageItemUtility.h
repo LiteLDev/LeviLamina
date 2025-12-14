@@ -15,27 +15,27 @@ namespace StorageItemUtility { class StorageItemWeightData; }
 namespace StorageItemUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tryFlattenStorageItem(::ItemStackBase& item, ::SaveContext const& context);
+MCAPI void _tryFlattenStorageItem(::ItemStackBase& item, ::SaveContext const& context);
 
-MCNAPI int getItemWeightInStorageItem(::ItemStackBase const& item, ::std::optional<uchar> amount);
+MCAPI int getItemWeightInStorageItem(::ItemStackBase const& item, ::std::optional<uchar> amount);
 
-MCNAPI ::std::optional<::FullContainerName> getStorageItemID(::ItemStackBase const& storageItem);
+MCAPI ::std::optional<::FullContainerName> getStorageItemID(::ItemStackBase const& storageItem);
 
-MCNAPI_C ::std::optional<::StorageItemUtility::StorageItemWeightData>
+MCAPI_C ::std::optional<::StorageItemUtility::StorageItemWeightData>
 getStorageItemWeightDataClient(::ItemStackBase const& item, ::ContainerManagerController& containerManagerController);
 
-MCNAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>
+MCAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>
 getStorageItemWeightDataServer(::ItemStackBase const& item);
 
-MCNAPI ::std::unique_ptr<::CompoundTag> saveDataFixupBySaveContext(
+MCAPI ::std::unique_ptr<::CompoundTag> saveDataFixupBySaveContext(
     ::std::unique_ptr<::CompoundTag> tag,
     ::SaveContext const&             saveContext,
     ::ItemStackBase const&           item
 );
 
-MCNAPI void tryFlattenStorageItem(::ItemStackBase& item);
+MCAPI void tryFlattenStorageItem(::ItemStackBase& item);
 
-MCNAPI void tryMoveStorageItem(::ItemStackBase& item);
+MCAPI void tryMoveStorageItem(::ItemStackBase& item);
 // NOLINTEND
 
 } // namespace StorageItemUtility

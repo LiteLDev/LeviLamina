@@ -2,17 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/resource/PackType.h"
+
 struct ResourcePackDataInfoPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk31789a;
-    ::ll::UntypedStorage<4, 4>  mUnkaa5067;
-    ::ll::UntypedStorage<4, 4>  mUnk4b939f;
-    ::ll::UntypedStorage<8, 8>  mUnkdfa288;
-    ::ll::UntypedStorage<8, 32> mUnk9eea6b;
-    ::ll::UntypedStorage<1, 1>  mUnk7b4dd6;
-    ::ll::UntypedStorage<1, 1>  mUnkec6725;
+    ::ll::TypedStorage<8, 32, ::std::string> mResourceName;
+    ::ll::TypedStorage<4, 4, uint>           mChunkSize;
+    ::ll::TypedStorage<4, 4, int>            mNbChunks;
+    ::ll::TypedStorage<8, 8, uint64>         mFileSize;
+    ::ll::TypedStorage<8, 32, ::std::string> mFileHash;
+    ::ll::TypedStorage<1, 1, ::PackType>     mPackType;
+    ::ll::TypedStorage<1, 1, bool>           mIsPremium;
     // NOLINTEND
 
 public:
@@ -24,14 +27,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ResourcePackDataInfoPacketPayload& operator=(::ResourcePackDataInfoPacketPayload&&);
+    MCAPI ::ResourcePackDataInfoPacketPayload& operator=(::ResourcePackDataInfoPacketPayload&&);
 
-    MCNAPI ~ResourcePackDataInfoPacketPayload();
+    MCAPI ~ResourcePackDataInfoPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

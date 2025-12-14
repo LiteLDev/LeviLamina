@@ -22,14 +22,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MovementEffectsComponent(::MovementEffectsComponent const&);
+    MCAPI MovementEffectsComponent(::MovementEffectsComponent const&);
 
-    MCNAPI_C void setEffect(::MovementEffect movementEffect);
+    MCAPI_C void setEffect(::MovementEffect movementEffect);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::MovementEffectsComponent const&);
+    MCAPI void* $ctor(::MovementEffectsComponent const&);
     // NOLINTEND
 };

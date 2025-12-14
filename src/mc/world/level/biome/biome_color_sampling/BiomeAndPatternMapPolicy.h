@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Biome;
 class BlockPos;
 class BlockSource;
 namespace mce { class Color; }
@@ -18,15 +19,9 @@ class BiomeAndPatternMapPolicy : public ::BiomeColorSampling::MapPolicy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkbadad7;
-    ::ll::UntypedStorage<8, 24> mUnka67583;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<int (*)(::Biome const&, ::BlockPos const&)> const> mSampler;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos> const>                                  mPattern;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeAndPatternMapPolicy& operator=(BiomeAndPatternMapPolicy const&);
-    BiomeAndPatternMapPolicy(BiomeAndPatternMapPolicy const&);
-    BiomeAndPatternMapPolicy();
 
 public:
     // virtual functions
@@ -39,7 +34,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::mce::Color $get(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI ::mce::Color $get(::BlockSource& region, ::BlockPos const& pos) const;
 
 
     // NOLINTEND

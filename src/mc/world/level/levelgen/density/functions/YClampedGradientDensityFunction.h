@@ -15,17 +15,11 @@ class YClampedGradientDensityFunction : public ::IDensityFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdb4408;
-    ::ll::UntypedStorage<4, 4> mUnk18b339;
-    ::ll::UntypedStorage<4, 4> mUnk873a48;
-    ::ll::UntypedStorage<4, 4> mUnk8bd3c2;
+    ::ll::TypedStorage<4, 4, float const> mGradientStartY;
+    ::ll::TypedStorage<4, 4, float const> mGradientEndY;
+    ::ll::TypedStorage<4, 4, float const> mStartValue;
+    ::ll::TypedStorage<4, 4, float const> mEndValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    YClampedGradientDensityFunction& operator=(YClampedGradientDensityFunction const&);
-    YClampedGradientDensityFunction(YClampedGradientDensityFunction const&);
-    YClampedGradientDensityFunction();
 
 public:
     // virtual functions

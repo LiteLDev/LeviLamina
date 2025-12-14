@@ -21,19 +21,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk8569e1;
-    ::ll::UntypedStorage<2, 2> mUnk441867;
-    ::ll::UntypedStorage<2, 2> mUnkf4e196;
-    ::ll::UntypedStorage<2, 2> mUnk75b318;
-    ::ll::UntypedStorage<1, 1> mUnkc283d0;
-    ::ll::UntypedStorage<1, 1> mUnk4a5e6d;
-    ::ll::UntypedStorage<4, 4> mUnkf3e98f;
-    ::ll::UntypedStorage<1, 1> mUnk6c972e;
+    ::ll::TypedStorage<2, 2, short> x;
+    ::ll::TypedStorage<2, 2, short> y;
+    ::ll::TypedStorage<2, 2, short> dx;
+    ::ll::TypedStorage<2, 2, short> dy;
+    ::ll::TypedStorage<1, 1, char>  action;
+    ::ll::TypedStorage<1, 1, char>  data;
+    ::ll::TypedStorage<4, 4, int>   pointerId;
+    ::ll::TypedStorage<1, 1, bool>  forceMotionlessPointer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MouseAction& operator=(MouseAction const&);
-    MouseAction(MouseAction const&);
-    MouseAction();
 };

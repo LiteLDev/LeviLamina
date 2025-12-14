@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/item/Minecart.h"
 #include "mc/world/actor/item/MinecartType.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,14 +18,8 @@ class MinecartHopper : public ::Minecart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkfdb702;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mLastPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MinecartHopper& operator=(MinecartHopper const&);
-    MinecartHopper(MinecartHopper const&);
-    MinecartHopper();
 
 public:
     // virtual functions

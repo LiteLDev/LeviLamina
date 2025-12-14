@@ -42,25 +42,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _onGameplayUserAdded(::EntityContext& entity);
+    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
 
-    MCNAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod);
+    MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod);
 
-    MCNAPI void registerGameRules(::GameRules& gameRules);
+    MCAPI void registerGameRules(::GameRules& gameRules);
 
-    MCNAPI void registerLevelGameplayHandler(::std::unique_ptr<::LevelGameplayHandler>&& handler);
+    MCFOLD void registerLevelGameplayHandler(::std::unique_ptr<::LevelGameplayHandler>&& handler);
 
-    MCNAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector, bool isClientSide);
+    MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector, bool isClientSide);
 
-    MCNAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCNAPI ::CoordinatorResult sendEvent(::EventRef<::MutableLevelGameplayEvent<::CoordinatorResult>> event);
+    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableLevelGameplayEvent<::CoordinatorResult>> event);
 
-    MCNAPI void sendEvent(::EventRef<::LevelGameplayEvent<void>> const& event);
+    MCAPI void sendEvent(::EventRef<::LevelGameplayEvent<void>> const& event);
 
-    MCNAPI void sendLevelRemovedActor(::Actor& actor);
+    MCAPI void sendLevelRemovedActor(::Actor& actor);
 
-    MCNAPI void sendLevelWeatherChanged(
+    MCAPI void sendLevelWeatherChanged(
         ::std::string const& dimension,
         bool                 wasRaining,
         bool                 wasLightning,
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

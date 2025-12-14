@@ -26,7 +26,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::ScriptingNotificationEvent const&);
+    MCFOLD ::EventResult $onEvent(::ScriptingNotificationEvent const&);
 
 
     // NOLINTEND

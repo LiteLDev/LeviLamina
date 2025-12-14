@@ -46,12 +46,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureAnimationAction(
+    MCAPI StructureAnimationAction(
         ::std::unique_ptr<::StructureAnimationData> structureAnimationData,
         ::DimensionType                             dimensionType
     );
 
-    MCNAPI StructureAnimationAction(
+    MCAPI StructureAnimationAction(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,
         ::BlockPos const&          loadPosition,
@@ -62,17 +62,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::StructureAnimationAction>
+    MCAPI static ::std::unique_ptr<::StructureAnimationAction>
     load(::CompoundTag const& tag, ::std::string const& dimensionPrefix);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
+    MCAPI void*
     $ctor(::std::unique_ptr<::StructureAnimationData> structureAnimationData, ::DimensionType dimensionType);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,
         ::BlockPos const&          loadPosition,
@@ -83,9 +83,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
 
-    MCNAPI void $serialize(::CompoundTag& tag);
+    MCAPI void $serialize(::CompoundTag& tag);
 
 
     // NOLINTEND

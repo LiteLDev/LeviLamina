@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCNAPI ::BlockPos _getCropOffsetFromRot(int rot, int type) const;
+    MCAPI ::BlockPos _getCropOffsetFromRot(int rot, int type) const;
 
-    MCNAPI ::BlockPos _getOffsetFromRot(int rot, int type) const;
+    MCAPI ::BlockPos _getOffsetFromRot(int rot, int type) const;
 
-    MCNAPI void _placeCoral(
+    MCAPI void _placeCoral(
         ::BlockSource&                                 region,
         ::BlockPos const&                              pos,
         ::Random&                                      random,
@@ -41,7 +41,7 @@ public:
         int                                            color
     ) const;
 
-    MCNAPI void _placeCoralBase(
+    MCAPI void _placeCoralBase(
         ::BlockSource&             region,
         ::BlockPos const&          pos,
         ::Random&                  random,
@@ -49,15 +49,15 @@ public:
         ::LegacyStructureSettings& settings
     ) const;
 
-    MCNAPI void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
+    MCFOLD void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
 
-    MCNAPI void _placeTopDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void _placeTopDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
     // NOLINTEND

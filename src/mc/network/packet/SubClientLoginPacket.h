@@ -11,20 +11,15 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+class SubClientConnectionRequest;
 // clang-format on
 
 class SubClientLoginPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk819d67;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubClientConnectionRequest>> mConnectionRequest;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubClientLoginPacket& operator=(SubClientLoginPacket const&);
-    SubClientLoginPacket(SubClientLoginPacket const&);
-    SubClientLoginPacket();
 
 public:
     // virtual functions

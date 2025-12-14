@@ -15,12 +15,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~PlayerSkinLoadedClientEvent();
+    MCAPI_C ~PlayerSkinLoadedClientEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

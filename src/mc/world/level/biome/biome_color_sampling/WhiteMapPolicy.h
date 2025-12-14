@@ -26,7 +26,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::mce::Color $get(::BlockSource&, ::BlockPos const&) const;
+    MCFOLD ::mce::Color $get(::BlockSource&, ::BlockPos const&) const;
 
 
     // NOLINTEND

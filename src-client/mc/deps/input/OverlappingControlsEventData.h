@@ -2,4 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct OverlappingControlsEventData {};
+struct OverlappingControlsEventData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> overlappingControlsExist;
+    // NOLINTEND
+};

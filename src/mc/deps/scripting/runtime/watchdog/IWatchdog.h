@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/runtime/watchdog/WatchdogSettings.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ContextId; }
@@ -12,16 +15,14 @@ namespace Scripting {
 
 class IWatchdog {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32> mUnk4aaa86;
-    // NOLINTEND
+    // IWatchdog inner types define
+    using WatchdogEventHandler = ::std::function<void(::Scripting::WatchdogEvent)>;
 
 public:
-    // prevent constructor by default
-    IWatchdog& operator=(IWatchdog const&);
-    IWatchdog(IWatchdog const&);
-    IWatchdog();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 32, ::Scripting::WatchdogSettings> mSettings;
+    // NOLINTEND
 
 public:
     // virtual functions

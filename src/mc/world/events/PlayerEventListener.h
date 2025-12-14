@@ -150,61 +150,61 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onPlayerAwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievement);
+    MCFOLD ::EventResult $onPlayerAwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievement);
 
-    MCNAPI ::EventResult $onPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
+    MCFOLD ::EventResult $onPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
 
-    MCNAPI ::EventResult
+    MCFOLD ::EventResult
     $onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    MCNAPI ::EventResult $onPlayerPoweredBeacon(::Player const& player, int const level);
+    MCFOLD ::EventResult $onPlayerPoweredBeacon(::Player const& player, int const level);
 
-    MCNAPI ::EventResult $onPlayerCaravanChanged(::Actor const& mob, int caravanCount);
+    MCFOLD ::EventResult $onPlayerCaravanChanged(::Actor const& mob, int caravanCount);
 
-    MCNAPI ::EventResult $onPlayerSaved(::Player& player);
+    MCFOLD ::EventResult $onPlayerSaved(::Player& player);
 
-    MCNAPI ::EventResult $onPlayerInput(::EntityContext&);
+    MCFOLD ::EventResult $onPlayerInput(::EntityContext&);
 
-    MCNAPI ::EventResult $onPlayerAuthInputReceived(::Player&);
+    MCFOLD ::EventResult $onPlayerAuthInputReceived(::Player&);
 
-    MCNAPI ::EventResult $onPlayerAuthInputApplied(::Player&);
+    MCFOLD ::EventResult $onPlayerAuthInputApplied(::Player&);
 
-    MCNAPI ::EventResult $onPlayerTurn(::Player& player, ::Vec2& turnDelta);
+    MCFOLD ::EventResult $onPlayerTurn(::Player& player, ::Vec2& turnDelta);
 
-    MCNAPI ::EventResult $onCameraSetPlayerRot(::Player&, ::Vec2 const&);
+    MCFOLD ::EventResult $onCameraSetPlayerRot(::Player&, ::Vec2 const&);
 
-    MCNAPI ::EventResult $onStartDestroyBlock(::Player& player, ::BlockPos const& pos, uchar& face);
+    MCFOLD ::EventResult $onStartDestroyBlock(::Player& player, ::BlockPos const& pos, uchar& face);
 
-    MCNAPI ::EventResult $onPlayerAction(::Player& player, ::PlayerActionType type, ::BlockPos const& pos, int data);
+    MCFOLD ::EventResult $onPlayerAction(::Player& player, ::PlayerActionType type, ::BlockPos const& pos, int data);
 
-    MCNAPI ::EventResult $onLocalPlayerDeath(::IClientInstance& client, ::LocalPlayer& player);
+    MCFOLD ::EventResult $onLocalPlayerDeath(::IClientInstance& client, ::LocalPlayer& player);
 
-    MCNAPI ::EventResult $onLocalPlayerRespawn(::IClientInstance& client, ::LocalPlayer& player);
+    MCFOLD ::EventResult $onLocalPlayerRespawn(::IClientInstance& client, ::LocalPlayer& player);
 
-    MCNAPI ::EventResult $onLocalPlayerOpenInventory(::IClientInstance&, ::LocalPlayer&);
+    MCFOLD ::EventResult $onLocalPlayerOpenInventory(::IClientInstance&, ::LocalPlayer&);
 
-    MCNAPI ::EventResult $onLocalPlayerOpenTrading(::IClientInstance&, ::LocalPlayer&, ::ActorUniqueID const&, bool);
+    MCFOLD ::EventResult $onLocalPlayerOpenTrading(::IClientInstance&, ::LocalPlayer&, ::ActorUniqueID const&, bool);
 
-    MCNAPI ::EventResult $onPlayerMove(::Player& player);
+    MCFOLD ::EventResult $onPlayerMove(::Player& player);
 
-    MCNAPI ::EventResult $onPlayerSlide(::Player& player);
+    MCFOLD ::EventResult $onPlayerSlide(::Player& player);
 
-    MCNAPI ::EventResult $onPlayerTargetBlockHit(::Player& player, int const signalStrength);
+    MCFOLD ::EventResult $onPlayerTargetBlockHit(::Player& player, int const signalStrength);
 
-    MCNAPI ::EventResult $onPlayerTick(::Player& player);
+    MCFOLD ::EventResult $onPlayerTick(::Player& player);
 
-    MCNAPI ::EventResult $onPlayerStartRiding(::Player& player, ::Actor& vehicle);
+    MCFOLD ::EventResult $onPlayerStartRiding(::Player& player, ::Actor& vehicle);
 
-    MCNAPI ::EventResult
+    MCFOLD ::EventResult
     $onPlayerStopRiding(::Player& player, bool exitFromPassenger, bool entityIsBeingDestroyed, bool switchingVehicles);
 
-    MCNAPI ::EventResult $onPlayerCreated(
+    MCFOLD ::EventResult $onPlayerCreated(
         ::LocalPlayer&               player,
         ::persona::ProfileType const personaSlot,
         ::std::string const&         classicSkinId,
@@ -212,28 +212,28 @@ public:
         ::NetworkType                networkType
     );
 
-    MCNAPI ::EventResult $onPlayerTeleported(::Player& player);
+    MCFOLD ::EventResult $onPlayerTeleported(::Player& player);
 
-    MCNAPI ::EventResult $onPlayerTeleported(::Player&, float);
+    MCFOLD ::EventResult $onPlayerTeleported(::Player&, float);
 
-    MCNAPI ::EventResult $onPlayerAttackedActor(::Player& player, ::Actor& target);
+    MCFOLD ::EventResult $onPlayerAttackedActor(::Player& player, ::Actor& target);
 
-    MCNAPI ::EventResult $onPlayerDestroyedBlock(::Player& player, int x, int y, int z);
+    MCFOLD ::EventResult $onPlayerDestroyedBlock(::Player& player, int x, int y, int z);
 
-    MCNAPI ::EventResult $onPlayerDestroyedBlock(::Player& player, ::Block const& block);
+    MCFOLD ::EventResult $onPlayerDestroyedBlock(::Player& player, ::Block const& block);
 
-    MCNAPI ::EventResult $onPlayerEquippedArmor(::Player& player, ::ItemDescriptor const& item);
+    MCFOLD ::EventResult $onPlayerEquippedArmor(::Player& player, ::ItemDescriptor const& item);
 
-    MCNAPI ::EventResult
+    MCFOLD ::EventResult
     $onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
 
-    MCNAPI ::EventResult $onPlayerNamedItem(::Player& player, ::ItemDescriptor const& item);
+    MCFOLD ::EventResult $onPlayerNamedItem(::Player& player, ::ItemDescriptor const& item);
 
-    MCNAPI ::EventResult $onPlayerItemUseInteraction(::Player& player, ::ItemInstance const& itemBeforeUse);
+    MCFOLD ::EventResult $onPlayerItemUseInteraction(::Player& player, ::ItemInstance const& itemBeforeUse);
 
-    MCNAPI ::EventResult $onPlayerItemPlaceInteraction(::Player& player, ::ItemInstance const& itemBeforeUse);
+    MCFOLD ::EventResult $onPlayerItemPlaceInteraction(::Player& player, ::ItemInstance const& itemBeforeUse);
 
-    MCNAPI ::EventResult $onPlayerCraftedItem(
+    MCFOLD ::EventResult $onPlayerCraftedItem(
         ::Player&                   player,
         ::ItemInstance const&       craftedItem,
         bool                        recipeBook,
@@ -247,17 +247,17 @@ public:
         ::std::vector<short> const& ingredientItemIDs
     );
 
-    MCNAPI ::EventResult $onPlayerSmithiedItem(::Player&, ::ItemDescriptor const&);
+    MCFOLD ::EventResult $onPlayerSmithiedItem(::Player&, ::ItemDescriptor const&);
 
-    MCNAPI ::EventResult
+    MCFOLD ::EventResult
     $onPlayerItemEquipped(::Player& player, ::ItemInstance const& equippedItem, int equipmentSlotId);
 
-    MCNAPI ::EventResult
+    MCFOLD ::EventResult
     $onPlayerPiglinBarter(::Player& player, ::std::string const& item, bool wasTargetingBarteringPlayer);
 
-    MCNAPI ::EventResult $onPlayerWaxOnWaxOff(::Player& player, int const blockID);
+    MCFOLD ::EventResult $onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
-    MCNAPI ::EventResult $onEvent(::PlayerNotificationEvent const& event);
+    MCFOLD ::EventResult $onEvent(::PlayerNotificationEvent const& event);
 
 
     // NOLINTEND

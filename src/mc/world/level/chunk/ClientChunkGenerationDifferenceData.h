@@ -24,6 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void sortDifferentBlockListByDistance(::Vec3 const& currentBlockPos);
+    MCAPI_C void sortDifferentBlockListByDistance(::Vec3 const& currentBlockPos);
     // NOLINTEND
 };

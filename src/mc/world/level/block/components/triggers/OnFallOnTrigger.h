@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/actor/DefinitionTrigger.h"
 
 // auto generated forward declare list
@@ -15,15 +16,9 @@ class OnFallOnTrigger : public ::DefinitionTrigger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnka07b73;
-    ::ll::UntypedStorage<4, 4>  mUnk9d6684;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mEventSubscription;
+    ::ll::TypedStorage<4, 4, float>                            mMinimumFallDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OnFallOnTrigger& operator=(OnFallOnTrigger const&);
-    OnFallOnTrigger(OnFallOnTrigger const&);
-    OnFallOnTrigger();
 
 public:
     // virtual functions
@@ -34,15 +29,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void finalize(::BlockEvents::BlockEventManager& manager);
+    MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
-    MCNAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent const& eventData) const;
+    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent const& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

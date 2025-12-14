@@ -2,23 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
 class SpawnConditions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkd46e1b;
-    ::ll::UntypedStorage<1, 1>  mUnkbd6d37;
-    ::ll::UntypedStorage<1, 1>  mUnkbccb63;
-    ::ll::UntypedStorage<1, 1>  mUnkfc022f;
-    ::ll::UntypedStorage<1, 1>  mUnk6a1038;
-    ::ll::UntypedStorage<8, 8>  mUnk6dd58a;
-    ::ll::UntypedStorage<4, 4>  mUnk409342;
-    ::ll::UntypedStorage<4, 12> mUnk338b71;
+    ::ll::TypedStorage<1, 1, bool>        isOnSurface;
+    ::ll::TypedStorage<1, 1, bool>        isInWater;
+    ::ll::TypedStorage<1, 1, bool>        isInBubble;
+    ::ll::TypedStorage<1, 1, bool>        isInLava;
+    ::ll::TypedStorage<1, 1, bool>        isUnderground;
+    ::ll::TypedStorage<8, 8, uint64>      delayEndWorldAge;
+    ::ll::TypedStorage<4, 4, int>         rawBrightness;
+    ::ll::TypedStorage<4, 12, ::BlockPos> pos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SpawnConditions& operator=(SpawnConditions const&);
-    SpawnConditions(SpawnConditions const&);
-    SpawnConditions();
 };

@@ -18,18 +18,16 @@ struct BlockRedstoneProducerDescription
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke6a3fa;
-    ::ll::UntypedStorage<1, 1> mUnkaa3794;
-    ::ll::UntypedStorage<1, 1> mUnk1d9ab0;
-    ::ll::UntypedStorage<1, 1> mUnk417b22;
-    ::ll::UntypedStorage<1, 1> mUnk88f635;
-    ::ll::UntypedStorage<1, 1> mUnk2fb6ff;
+    ::ll::TypedStorage<1, 1, char>                                  mPower;
+    ::ll::TypedStorage<1, 1, uchar>                                 mStronglyPoweredFace;
+    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::Facing::Name, 6>> mConnectedFaces;
+    ::ll::TypedStorage<1, 1, bool>                                  mIsTransformRelative;
+    ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerUp;
+    ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerDown;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockRedstoneProducerDescription& operator=(BlockRedstoneProducerDescription const&);
-    BlockRedstoneProducerDescription(BlockRedstoneProducerDescription const&);
     BlockRedstoneProducerDescription();
 
 public:
@@ -51,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockRedstoneProducerDescription(
+    MCAPI BlockRedstoneProducerDescription(
         int                                   outputPower,
         uchar                                 stronglyPoweredFace,
         ::Bedrock::EnumSet<::Facing::Name, 6> connectedFaces,
@@ -64,13 +62,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         int                                   outputPower,
         uchar                                 stronglyPoweredFace,
         ::Bedrock::EnumSet<::Facing::Name, 6> connectedFaces,
@@ -83,21 +81,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI ::CompoundTag $buildUnboundDataNetworkTag() const;
+    MCAPI ::CompoundTag $buildUnboundDataNetworkTag() const;
 
-    MCNAPI void $initializeUnboundDataFromNetwork(::CompoundTag const& tag);
+    MCAPI void $initializeUnboundDataFromNetwork(::CompoundTag const& tag);
 
 
     // NOLINTEND

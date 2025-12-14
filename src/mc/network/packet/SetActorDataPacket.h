@@ -3,14 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/PlayerInputTick.h"
 #include "mc/platform/Result.h"
+#include "mc/world/actor/state/PropertySyncData.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorRuntimeID;
 class BinaryStream;
+class DataItem;
 class PropertyComponent;
 class ReadOnlyBinaryStream;
 class SynchedActorDataEntityWrapper;
@@ -20,16 +23,14 @@ class SetActorDataPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf2a08f;
-    ::ll::UntypedStorage<8, 24> mUnk31c611;
-    ::ll::UntypedStorage<8, 48> mUnk9f1376;
-    ::ll::UntypedStorage<8, 8>  mUnk87bf06;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mPackedItems;
+    ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick>                             mTick;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    SetActorDataPacket& operator=(SetActorDataPacket const&);
-    SetActorDataPacket(SetActorDataPacket const&);
     SetActorDataPacket();
 
 public:

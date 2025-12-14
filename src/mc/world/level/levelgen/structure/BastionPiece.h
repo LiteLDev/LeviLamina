@@ -43,7 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void addPieces(
+    MCAPI static void addPieces(
         ::BlockPos                                          position,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -55,19 +55,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $generateHeightAtPosition(
+    MCAPI int $generateHeightAtPosition(
         ::BlockPos const&                                                          pos,
         ::Dimension&                                                               dim,
         ::BlockVolume&                                                             box,
         ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
     ) const;
 
-    MCNAPI ::Block const*
+    MCFOLD ::Block const*
     $getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCNAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
+    MCAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
 
-    MCNAPI ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
+    MCFOLD ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
 
 
     // NOLINTEND

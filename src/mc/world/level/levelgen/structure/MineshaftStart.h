@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MineshaftStart(
+    MCAPI MineshaftStart(
         ::Dimension const&                   dimension,
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -42,7 +42,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Dimension const&                   dimension,
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -54,7 +54,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
 
 
     // NOLINTEND

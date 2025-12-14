@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,9 +18,13 @@ struct ScriptActorDamageSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk6adf29;
-    ::ll::UntypedStorage<8, 40> mUnk9a9c16;
-    ::ll::UntypedStorage<8, 40> mUnkafa60d;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mCause;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mDamagingEntity;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mDamagingProjectile;
     // NOLINTEND
 
 public:
@@ -26,27 +35,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptActorDamageSource(::ScriptModuleMinecraft::ScriptActorDamageSource const&);
+    MCAPI ScriptActorDamageSource(::ScriptModuleMinecraft::ScriptActorDamageSource const&);
 
-    MCNAPI ~ScriptActorDamageSource();
+    MCAPI ~ScriptActorDamageSource();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorDamageSource const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorDamageSource const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

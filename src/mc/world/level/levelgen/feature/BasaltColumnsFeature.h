@@ -24,13 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _placeColumnCluster(::BlockSource& region, ::BlockPos origin, int columnHeight, int reach) const;
+    MCAPI void _placeColumnCluster(::BlockSource& region, ::BlockPos origin, int columnHeight, int reach) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
     // NOLINTEND

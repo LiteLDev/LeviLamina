@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/PacksInfoData.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -19,13 +20,11 @@ class ResourcePacksInfoPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk117fec;
+    ::ll::TypedStorage<8, 80, ::PacksInfoData> mData;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ResourcePacksInfoPacket& operator=(ResourcePacksInfoPacket const&);
-    ResourcePacksInfoPacket(ResourcePacksInfoPacket const&);
     ResourcePacksInfoPacket();
 
 public:

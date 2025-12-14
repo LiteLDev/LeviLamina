@@ -12,28 +12,28 @@ class BlockComponentStorageFinalizer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S void _checkForMissingGeometryComponent(::Block& block);
+    MCAPI_S void _checkForMissingGeometryComponent(::Block& block);
 
-    MCNAPI void _finalizeBlockTriggerComponents(::Block& block);
+    MCAPI void _finalizeBlockTriggerComponents(::Block& block);
 
-    MCNAPI_C void _finalizeGeometryComponentForRendering(
+    MCAPI_C void _finalizeGeometryComponentForRendering(
         ::BlockComponentFinalizerForRendererContext& finalizerContext,
         ::Block&                                     block
     );
 
-    MCNAPI_C bool _validatePotentialFullBlockGeometry(::Block const& block);
+    MCAPI_C bool _validatePotentialFullBlockGeometry(::Block const& block);
 
-    MCNAPI void addRemainingComponents(::Block& block);
+    MCAPI void addRemainingComponents(::Block& block);
 
-    MCNAPI void finalizeComponentData(::Block& block);
+    MCAPI void finalizeComponentData(::Block& block);
 
-    MCNAPI_C void
+    MCAPI_C void
     finalizeComponentDataForRendering(::Block& block, ::BlockComponentFinalizerForRendererContext& finalizerContext);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _addMissingVoxelShapesComponent(::Block& block);
+    MCAPI static void _addMissingVoxelShapesComponent(::Block& block);
     // NOLINTEND
 };

@@ -15,14 +15,8 @@ class InverterNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk486803;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorNode>> mActiveChild;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InverterNode& operator=(InverterNode const&);
-    InverterNode(InverterNode const&);
-    InverterNode();
 
 public:
     // virtual functions
@@ -37,10 +31,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFromDefinition(::Actor& owner);
+    MCFOLD void $initializeFromDefinition(::Actor& owner);
 
 #ifdef LL_PLAT_C
-    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
+    MCAPI ::BehaviorStatus $tick(::Actor& owner);
 #endif
 
 

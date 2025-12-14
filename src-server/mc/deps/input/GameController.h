@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GameController {
+class GameController {
 public:
     // GameController inner types declare
     // clang-format off

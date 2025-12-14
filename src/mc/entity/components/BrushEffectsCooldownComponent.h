@@ -15,6 +15,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::ExpiringTick const& EXPIRED_TICK();
+    MCAPI static ::ExpiringTick const& EXPIRED_TICK();
     // NOLINTEND
 };

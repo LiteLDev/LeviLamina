@@ -13,16 +13,14 @@ namespace JsonUtil { class EmptyClass; }
 
 class DragonChargePlayerDefinition : public ::DragonBaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2d7789;
-    // NOLINTEND
+    // DragonChargePlayerDefinition inner types define
+    using self = ::DragonChargePlayerDefinition;
 
 public:
-    // prevent constructor by default
-    DragonChargePlayerDefinition& operator=(DragonChargePlayerDefinition const&);
-    DragonChargePlayerDefinition(DragonChargePlayerDefinition const&);
-    DragonChargePlayerDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mContinueChargeThresholdTime;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -33,7 +31,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const& name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DragonChargePlayerDefinition>>&
             root

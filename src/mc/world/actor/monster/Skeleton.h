@@ -12,6 +12,7 @@ class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class EntityContext;
+class WitherBoss;
 struct ActorDefinitionIdentifier;
 // clang-format on
 
@@ -28,13 +29,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8992a7;
+    ::ll::TypedStorage<8, 8, ::WitherBoss*> mParentWither;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Skeleton& operator=(Skeleton const&);
-    Skeleton(Skeleton const&);
     Skeleton();
 
 public:

@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/Rotation.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 class BlockSource;
 class BoundingBox;
 class Dimension;
@@ -19,15 +20,9 @@ class WoodlandMansionStart : public ::StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3df6c3;
-    ::ll::UntypedStorage<4, 12> mUnk62ee6c;
+    ::ll::TypedStorage<1, 1, ::Rotation>  mRotationGenerated;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mPositionGenerated;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WoodlandMansionStart& operator=(WoodlandMansionStart const&);
-    WoodlandMansionStart(WoodlandMansionStart const&);
-    WoodlandMansionStart();
 
 public:
     // virtual functions
@@ -42,9 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _create(::Dimension& dimension, ::Random& random, int x, int z);
+    MCAPI void _create(::Dimension& dimension, ::Random& random, int x, int z);
 
-    MCNAPI void _makeStairs(
+    MCAPI void _makeStairs(
         ::BlockPos const&    startPos,
         ::Block const&       stairBlock,
         uchar                xStepDir,
@@ -57,9 +52,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
 
 
     // NOLINTEND

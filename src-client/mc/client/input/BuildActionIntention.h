@@ -2,4 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BuildActionIntention {};
+class BuildActionIntention {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int> mAction;
+    // NOLINTEND
+};

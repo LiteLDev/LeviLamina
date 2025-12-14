@@ -3,42 +3,44 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/util/FloatRange.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
+struct MobDescriptor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class DropItemForDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk67be66;
-    ::ll::UntypedStorage<4, 4>   mUnked3ead;
-    ::ll::UntypedStorage<4, 4>   mUnk5174ac;
-    ::ll::UntypedStorage<4, 4>   mUnk119df8;
-    ::ll::UntypedStorage<4, 4>   mUnkfb8560;
-    ::ll::UntypedStorage<4, 4>   mUnkeae76b;
-    ::ll::UntypedStorage<8, 32>  mUnk84e2e5;
-    ::ll::UntypedStorage<8, 104> mUnk851417;
-    ::ll::UntypedStorage<4, 8>   mUnk4e495e;
-    ::ll::UntypedStorage<4, 12>  mUnk17d251;
-    ::ll::UntypedStorage<4, 12>  mUnk2e0d55;
-    ::ll::UntypedStorage<8, 24>  mUnkf803a0;
-    ::ll::UntypedStorage<4, 4>   mUnk8209d6;
-    ::ll::UntypedStorage<4, 4>   mUnk702c2a;
-    ::ll::UntypedStorage<4, 4>   mUnk54b877;
-    ::ll::UntypedStorage<4, 4>   mUnk48efb2;
-    ::ll::UntypedStorage<4, 4>   mUnk33da71;
-    // NOLINTEND
+    // DropItemForDefinition inner types define
+    using self = ::DropItemForDefinition;
 
 public:
-    // prevent constructor by default
-    DropItemForDefinition& operator=(DropItemForDefinition const&);
-    DropItemForDefinition(DropItemForDefinition const&);
-    DropItemForDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float>                           mSecondsBeforePickup;
+    ::ll::TypedStorage<4, 4, float>                           mTotalCooldownSeconds;
+    ::ll::TypedStorage<4, 4, float>                           mDropItemChance;
+    ::ll::TypedStorage<4, 4, float>                           mOfferingDistance;
+    ::ll::TypedStorage<4, 4, float>                           mMinimumTeleportDistance;
+    ::ll::TypedStorage<4, 4, float>                           mLookAtTargetMaxHeadHeight;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mLootTable;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>      mOnDropAttempt;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                    mTimeOfDayRange;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mTargetRange;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mTeleportDistanceFromTarget;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetFilter;
+    ::ll::TypedStorage<4, 4, int>                             mSearchCount;
+    ::ll::TypedStorage<4, 4, int>                             mSearchHeight;
+    ::ll::TypedStorage<4, 4, int>                             mSearchRange;
+    ::ll::TypedStorage<4, 4, float>                           mGoalRadius;
+    ::ll::TypedStorage<4, 4, float>                           mSpeedModifier;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -49,7 +51,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                  name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DropItemForDefinition>>& root
     );
@@ -58,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

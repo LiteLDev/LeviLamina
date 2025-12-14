@@ -2,17 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+// clang-format on
+
 struct BlockObject {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkac485a;
-    ::ll::UntypedStorage<4, 12> mUnkb8bfcb;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockSource*>> mRegion;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                     mPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockObject& operator=(BlockObject const&);
-    BlockObject(BlockObject const&);
-    BlockObject();
 };

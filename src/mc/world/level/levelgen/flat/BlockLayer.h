@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
 struct BlockLayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1ebe98;
-    ::ll::UntypedStorage<4, 4> mUnkdbadf3;
+    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
+    ::ll::TypedStorage<4, 4, int>            mNumLayers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockLayer& operator=(BlockLayer const&);
-    BlockLayer(BlockLayer const&);
-    BlockLayer();
 };

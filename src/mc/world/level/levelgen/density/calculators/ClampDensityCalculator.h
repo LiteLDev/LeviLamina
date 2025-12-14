@@ -16,16 +16,10 @@ class ClampDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkb4d96e;
-    ::ll::UntypedStorage<4, 4> mUnkb1e0fa;
-    ::ll::UntypedStorage<4, 4> mUnk22693f;
+    ::ll::TypedStorage<2, 2, ushort const> mInput;
+    ::ll::TypedStorage<4, 4, float const>  mMin;
+    ::ll::TypedStorage<4, 4, float const>  mMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClampDensityCalculator& operator=(ClampDensityCalculator const&);
-    ClampDensityCalculator(ClampDensityCalculator const&);
-    ClampDensityCalculator();
 
 public:
     // virtual functions

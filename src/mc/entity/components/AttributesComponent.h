@@ -21,20 +21,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AttributesComponent(::AttributesComponent&&);
+    MCAPI AttributesComponent(::AttributesComponent&&);
 
-    MCNAPI_C ~AttributesComponent();
+    MCAPI_C ~AttributesComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::AttributesComponent&&);
+    MCAPI void* $ctor(::AttributesComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };

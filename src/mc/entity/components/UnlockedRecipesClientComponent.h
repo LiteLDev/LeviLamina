@@ -25,34 +25,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C UnlockedRecipesClientComponent();
+    MCAPI_C UnlockedRecipesClientComponent();
 
-    MCNAPI_C UnlockedRecipesClientComponent(::UnlockedRecipesClientComponent const&);
+    MCAPI_C UnlockedRecipesClientComponent(::UnlockedRecipesClientComponent const&);
 
-    MCNAPI_C void addUnlockedRecipes(
+    MCAPI_C void addUnlockedRecipes(
         ::Recipes const&                    recipes,
         ::std::vector<::std::string> const& unlockedRecipeIds,
         bool                                newlyUnlocked
     );
 
-    MCNAPI_C ::UnlockedRecipesClientComponent& operator=(::UnlockedRecipesClientComponent&&);
+    MCAPI_C ::UnlockedRecipesClientComponent& operator=(::UnlockedRecipesClientComponent&&);
 
-    MCNAPI_C void removeRecipes(::Recipes const& recipes, ::std::vector<::std::string> const& unlockedRecipeIds);
+    MCAPI_C void removeRecipes(::Recipes const& recipes, ::std::vector<::std::string> const& unlockedRecipeIds);
 
-    MCNAPI_C ~UnlockedRecipesClientComponent();
+    MCAPI_C ~UnlockedRecipesClientComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI_C void* $ctor();
 
-    MCNAPI_C void* $ctor(::UnlockedRecipesClientComponent const&);
+    MCAPI_C void* $ctor(::UnlockedRecipesClientComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };

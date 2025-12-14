@@ -55,32 +55,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onServerInitializeStart(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerInitializeStart(::ServerInstance& instance);
 
-    MCNAPI ::EventResult $onServerInitializeEnd(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerInitializeEnd(::ServerInstance& instance);
 
-    MCNAPI ::EventResult $onServerMinecraftInitialized(
+    MCFOLD ::EventResult $onServerMinecraftInitialized(
         ::ServerInstance&                                 instance,
         ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft
     );
 
-    MCNAPI ::EventResult $onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
+    MCFOLD ::EventResult $onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
 
-    MCNAPI ::EventResult $onServerUpdateStart(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerUpdateStart(::ServerInstance& instance);
 
-    MCNAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
 
-    MCNAPI ::EventResult $onServerSuspend(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerSuspend(::ServerInstance& instance);
 
-    MCNAPI ::EventResult $onServerResume(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerResume(::ServerInstance& instance);
 
-    MCNAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerThreadStarted(::ServerInstance& instance);
 
-    MCNAPI ::EventResult $onServerThreadStopped(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerThreadStopped(::ServerInstance& instance);
 
-    MCNAPI ::EventResult $onStartLeaveGame(::ServerInstance& instance);
+    MCFOLD ::EventResult $onStartLeaveGame(::ServerInstance& instance);
 
-    MCNAPI ::EventResult $onEvent(::ServerInstanceNotificationEvent const& event);
+    MCFOLD ::EventResult $onEvent(::ServerInstanceNotificationEvent const& event);
 
 
     // NOLINTEND

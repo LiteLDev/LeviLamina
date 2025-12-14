@@ -17,7 +17,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace CraftingItemCatalogPackStackLoadUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::vector<::CraftingItemCatalogPackStackLoadUtils::LoadResult> load(
+MCAPI ::std::vector<::CraftingItemCatalogPackStackLoadUtils::LoadResult> load(
     ::ResourcePackStack const&                         packStack,
     ::cereal::ReflectionCtx const&                     ctx,
     ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,

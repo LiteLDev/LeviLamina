@@ -28,6 +28,7 @@ namespace Scripting { struct ContextId; }
 namespace Scripting { struct FutureType; }
 namespace Scripting { struct ModuleBindingBundle; }
 namespace Scripting { struct PromiseType; }
+namespace Scripting { struct RuntimeContextData; }
 namespace Scripting { struct RuntimeStats; }
 namespace Scripting { struct TypeNameInfo; }
 namespace Scripting { struct WatchdogSettings; }
@@ -39,8 +40,9 @@ class NativeRuntime : public ::Scripting::IRuntime, public ::std::enable_shared_
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkff21cf;
-    ::ll::UntypedStorage<8, 64> mUnk59e9d2;
+    ::ll::TypedStorage<8, 8, ::Scripting::RegistryManager&> mRegistryManager;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::std::unique_ptr<::Scripting::RuntimeContextData>>>
+        mContextObjects;
     // NOLINTEND
 
 public:
@@ -132,9 +134,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit NativeRuntime(::Scripting::RegistryManager& registryManager);
+    MCAPI_S explicit NativeRuntime(::Scripting::RegistryManager& registryManager);
 
-    MCNAPI_S ::Scripting::ResultAny runFunction(
+    MCAPI_S ::Scripting::ResultAny runFunction(
         ::Scripting::ContextId contextId,
         ::std::function<::Scripting::ResultAny(
             ::Scripting::NativeRuntime&,
@@ -150,29 +152,29 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::Scripting::RegistryManager& registryManager);
+    MCAPI_S void* $ctor(::Scripting::RegistryManager& registryManager);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCNAPI ::std::optional<::Scripting::ScriptContext> $createContext(
+    MCAPI ::std::optional<::Scripting::ScriptContext> $createContext(
         ::Scripting::ModuleBindingBundle&& bindings,
         ::Scripting::IDependencyLoader*    loader,
         ::Scripting::IPrinter*             printer,
         ::Scripting::ContextConfig const&
     );
 
-    MCNAPI void $destroyContext(::Scripting::ContextId contextId);
+    MCAPI void $destroyContext(::Scripting::ContextId contextId);
 
-    MCNAPI ::Scripting::ResultAny $run(
+    MCAPI ::Scripting::ResultAny $run(
         ::Scripting::ContextId                  contextId,
         ::Scripting::IPayload*                  payload,
         ::std::optional<::Scripting::Privilege> privilege
     );
 
-    MCNAPI ::Scripting::ResultAny $call(
+    MCFOLD ::Scripting::ResultAny $call(
         ::Scripting::ContextId,
         ::Scripting::TypedObjectHandle<::Scripting::ClosureType>,
         ::entt::meta_any*,
@@ -181,46 +183,46 @@ public:
         ::std::optional<::Scripting::Privilege>
     );
 
-    MCNAPI ::Scripting::ResultAny
+    MCFOLD ::Scripting::ResultAny
     $resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&);
 
-    MCNAPI ::Scripting::ResultAny
+    MCFOLD ::Scripting::ResultAny
     $reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&);
 
-    MCNAPI ::Scripting::FutureStatus
+    MCFOLD ::Scripting::FutureStatus
         $getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const;
 
-    MCNAPI ::Scripting::ResultAny $getFutureResult(
+    MCFOLD ::Scripting::ResultAny $getFutureResult(
         ::Scripting::ContextId,
         ::Scripting::TypedObjectHandle<::Scripting::FutureType>,
         ::entt::meta_type const&
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
+    MCFOLD ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
         $executeCoroutines(::std::optional<::std::chrono::microseconds>, ::std::optional<::Scripting::Privilege>);
 
-    MCNAPI bool $hasPendingJobs();
+    MCFOLD bool $hasPendingJobs();
 
-    MCNAPI ::Scripting::IDebuggerController* $enableDebugger(::Scripting::IDebuggerTransport&);
+    MCFOLD ::Scripting::IDebuggerController* $enableDebugger(::Scripting::IDebuggerTransport&);
 
-    MCNAPI void $disableDebugger();
+    MCFOLD void $disableDebugger();
 
-    MCNAPI void $startProfiler();
+    MCFOLD void $startProfiler();
 
-    MCNAPI void $stopProfiler(
+    MCFOLD void $stopProfiler(
         ::std::function<void(::std::string_view)>,
         ::std::optional<::std::reference_wrapper<::std::string const>>
     );
 
-    MCNAPI ::Scripting::RuntimeStats $computeRuntimeStats() const;
+    MCAPI ::Scripting::RuntimeStats $computeRuntimeStats() const;
 
-    MCNAPI ::Scripting::IWatchdog* $enableWatchdog(::Scripting::WatchdogSettings);
+    MCFOLD ::Scripting::IWatchdog* $enableWatchdog(::Scripting::WatchdogSettings);
 
-    MCNAPI void $disableWatchdog();
+    MCFOLD void $disableWatchdog();
 
-    MCNAPI ::Scripting::IWatchdog* $getWatchdog() const;
+    MCFOLD ::Scripting::IWatchdog* $getWatchdog() const;
 
-    MCNAPI ::std::optional<::Scripting::TypeNameInfo>
+    MCAPI ::std::optional<::Scripting::TypeNameInfo>
     $getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const;
 #endif
 

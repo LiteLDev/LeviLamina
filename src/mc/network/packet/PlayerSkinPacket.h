@@ -6,6 +6,8 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/platform/UUID.h"
+#include "mc/world/actor/player/SerializedSkin.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,17 +19,11 @@ class PlayerSkinPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkd75fff;
-    ::ll::UntypedStorage<8, 16> mUnkf7718a;
-    ::ll::UntypedStorage<8, 32> mUnk51128d;
-    ::ll::UntypedStorage<8, 32> mUnk7011a8;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>      mUUID;
+    ::ll::TypedStorage<8, 16, ::SerializedSkin> mSkin;
+    ::ll::TypedStorage<8, 32, ::std::string>    mLocalizedNewSkinName;
+    ::ll::TypedStorage<8, 32, ::std::string>    mLocalizedOldSkinName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerSkinPacket& operator=(PlayerSkinPacket const&);
-    PlayerSkinPacket(PlayerSkinPacket const&);
-    PlayerSkinPacket();
 
 public:
     // virtual functions

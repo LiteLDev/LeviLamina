@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+
 struct CreatePhotoPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkb65664;
-    ::ll::UntypedStorage<8, 32> mUnkeddaa1;
-    ::ll::UntypedStorage<8, 32> mUnkf8e142;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mId;
+    ::ll::TypedStorage<8, 32, ::std::string>  mPhotoName;
+    ::ll::TypedStorage<8, 32, ::std::string>  mPhotoItemName;
     // NOLINTEND
 
 public:
@@ -20,14 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CreatePhotoPacketPayload& operator=(::CreatePhotoPacketPayload&&);
+    MCAPI ::CreatePhotoPacketPayload& operator=(::CreatePhotoPacketPayload&&);
 
-    MCNAPI ~CreatePhotoPacketPayload();
+    MCAPI ~CreatePhotoPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

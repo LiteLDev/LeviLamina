@@ -43,13 +43,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $start();
+    MCFOLD void $start();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $appendDebugInfo(::std::string& debugInfo) const;
+    MCAPI void $appendDebugInfo(::std::string& debugInfo) const;
 
 
     // NOLINTEND

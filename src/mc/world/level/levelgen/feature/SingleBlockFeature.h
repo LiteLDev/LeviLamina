@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/DenseEnumMap.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockDescriptor;
 class BlockPos;
 class IBlockWorldGenAPI;
 // clang-format on
@@ -44,49 +44,48 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 184> mUnk32ff74;
-        ::ll::UntypedStorage<4, 4>   mUnkb978f3;
+        ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockDescriptor;
+        ::ll::TypedStorage<4, 4, float>               mWeight;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WeightedBlockDescriptor& operator=(WeightedBlockDescriptor const&);
-        WeightedBlockDescriptor(WeightedBlockDescriptor const&);
-        WeightedBlockDescriptor();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~WeightedBlockDescriptor();
+        MCAPI ~WeightedBlockDescriptor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
+
+    using PlacementConditions =
+        ::Bedrock::DenseEnumMap<::SingleBlockFeature::CheckDirection, ::std::vector<::BlockDescriptor>, 9>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk555a95;
-    ::ll::UntypedStorage<8, 216> mUnkc9a2b5;
-    ::ll::UntypedStorage<8, 216> mUnkf8af0a;
-    ::ll::UntypedStorage<8, 24>  mUnke73e15;
-    ::ll::UntypedStorage<4, 4>   mUnk947893;
-    ::ll::UntypedStorage<1, 1>   mUnk3fe127;
-    ::ll::UntypedStorage<1, 1>   mUnkcbde6a;
-    ::ll::UntypedStorage<1, 1>   mUnk59b549;
-    ::ll::UntypedStorage<1, 1>   mUnke1aa00;
-    ::ll::UntypedStorage<1, 1>   mUnk770dd3;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SingleBlockFeature::WeightedBlockDescriptor>> mPossibleBlocks;
+    ::ll::TypedStorage<
+        8,
+        216,
+        ::Bedrock::DenseEnumMap<::SingleBlockFeature::CheckDirection, ::std::vector<::BlockDescriptor>, 9>>
+        mMayAttachTo;
+    ::ll::TypedStorage<
+        8,
+        216,
+        ::Bedrock::DenseEnumMap<::SingleBlockFeature::CheckDirection, ::std::vector<::BlockDescriptor>, 9>>
+                                                                mMayNotAttachTo;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mMayReplace;
+    ::ll::TypedStorage<4, 4, int>                               mMinAttachedSides;
+    ::ll::TypedStorage<1, 1, bool>                              mEnforcePlacementRules;
+    ::ll::TypedStorage<1, 1, bool>                              mEnforceSurvivabilityRules;
+    ::ll::TypedStorage<1, 1, bool>                              mAutoRotate;
+    ::ll::TypedStorage<1, 1, bool>                              mRandomRotation;
+    ::ll::TypedStorage<1, 1, bool>                              mEnforceAttachmentRules;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SingleBlockFeature& operator=(SingleBlockFeature const&);
-    SingleBlockFeature(SingleBlockFeature const&);
-    SingleBlockFeature();
 
 public:
     // virtual functions
@@ -99,22 +98,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Block const*
+    MCAPI ::Block const*
     _mayAttach(::BlockDescriptor const& blockDescriptor, ::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
 
-    MCNAPI bool _mayNotAttach(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
+    MCAPI bool _mayNotAttach(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
     // NOLINTEND

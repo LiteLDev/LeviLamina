@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     virtual ~Horse() /*override*/ = default;
 
-    virtual void die(::ActorDamageSource const& damagesource) /*override*/;
+    virtual void die(::ActorDamageSource const& source) /*override*/;
 
     virtual void setHorseEating(bool state);
 
@@ -114,7 +114,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $die(::ActorDamageSource const& damagesource);
+    MCAPI void $die(::ActorDamageSource const& source);
 
     MCAPI void $setHorseEating(bool state);
 

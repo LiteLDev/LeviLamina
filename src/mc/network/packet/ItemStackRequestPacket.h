@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class ItemStackRequestBatch;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -17,14 +18,8 @@ class ItemStackRequestPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7c3640;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestBatch>> mRequestBatch;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestPacket& operator=(ItemStackRequestPacket const&);
-    ItemStackRequestPacket(ItemStackRequestPacket const&);
-    ItemStackRequestPacket();
 
 public:
     // virtual functions

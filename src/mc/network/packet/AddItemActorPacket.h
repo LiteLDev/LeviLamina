@@ -3,35 +3,35 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class DataItem;
 class ReadOnlyBinaryStream;
+class SynchedActorDataEntityWrapper;
 // clang-format on
 
 class AddItemActorPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk12ebb9;
-    ::ll::UntypedStorage<8, 8>  mUnk3251ed;
-    ::ll::UntypedStorage<8, 8>  mUnkecb905;
-    ::ll::UntypedStorage<8, 8>  mUnk737e6e;
-    ::ll::UntypedStorage<8, 96> mUnk25c3ad;
-    ::ll::UntypedStorage<4, 12> mUnk9148b5;
-    ::ll::UntypedStorage<4, 12> mUnk3b7883;
-    ::ll::UntypedStorage<1, 1>  mUnk100849;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mData;
+    ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper*>              mEntityData;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                               mId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mRuntimeId;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                 mItem;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mVelocity;
+    ::ll::TypedStorage<1, 1, bool>                                          mIsFromFishing;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AddItemActorPacket& operator=(AddItemActorPacket const&);
-    AddItemActorPacket(AddItemActorPacket const&);
-    AddItemActorPacket();
 
 public:
     // virtual functions

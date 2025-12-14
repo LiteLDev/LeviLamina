@@ -15,14 +15,14 @@ namespace br::spawn { struct EntityType; }
 namespace br::spawn::ObstructionTypes {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::vector<
+MCAPI ::std::vector<
     ::std::tuple<::std::string, ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)>>>
 defaults();
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::br::spawn::ObstructionPredicateToken const& MOB();
+MCAPI ::br::spawn::ObstructionPredicateToken const& MOB();
 // NOLINTEND
 
 } // namespace br::spawn::ObstructionTypes

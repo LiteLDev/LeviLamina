@@ -9,15 +9,9 @@ class RotateState : public ::PetSleepWithOwnerState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk344b15;
-    ::ll::UntypedStorage<4, 4> mUnk6f6bea;
+    ::ll::TypedStorage<4, 4, int const> SETTLE_TICKS;
+    ::ll::TypedStorage<4, 4, int>       mSettleTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RotateState& operator=(RotateState const&);
-    RotateState(RotateState const&);
-    RotateState();
 
 public:
     // virtual functions
@@ -30,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
 
     // NOLINTEND

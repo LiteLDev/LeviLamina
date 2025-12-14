@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/levelgen/density/calculators/IDensityCalculator.h"
+#include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
+#include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,15 +19,10 @@ class NormalNoiseDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk7c3bbd;
-    ::ll::UntypedStorage<4, 12> mUnk17f9b8;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+                                            mNoise;
+    ::ll::TypedStorage<4, 12, ::Vec3 const> mScale;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NormalNoiseDensityCalculator& operator=(NormalNoiseDensityCalculator const&);
-    NormalNoiseDensityCalculator(NormalNoiseDensityCalculator const&);
-    NormalNoiseDensityCalculator();
 
 public:
     // virtual functions

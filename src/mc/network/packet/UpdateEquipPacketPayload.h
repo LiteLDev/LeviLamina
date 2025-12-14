@@ -2,15 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/world/ContainerID.h"
+
 struct UpdateEquipPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnke73a62;
-    ::ll::UntypedStorage<1, 1>  mUnk1198fc;
-    ::ll::UntypedStorage<4, 4>  mUnkc83cf2;
-    ::ll::UntypedStorage<8, 8>  mUnk7ab5c8;
-    ::ll::UntypedStorage<8, 24> mUnkc31e3f;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                        mContainerId;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mType;
+    ::ll::TypedStorage<4, 4, int>                                  mSize;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mEntityUniqueID;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>                       mData;
     // NOLINTEND
 
 public:
@@ -22,14 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::UpdateEquipPacketPayload& operator=(::UpdateEquipPacketPayload&&);
+    MCAPI ::UpdateEquipPacketPayload& operator=(::UpdateEquipPacketPayload&&);
 
-    MCNAPI ~UpdateEquipPacketPayload();
+    MCAPI ~UpdateEquipPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

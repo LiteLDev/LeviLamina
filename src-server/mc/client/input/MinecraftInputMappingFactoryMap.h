@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MinecraftInputMappingFactoryMap {
+class MinecraftInputMappingFactoryMap {
 public:
     // MinecraftInputMappingFactoryMap inner types declare
     // clang-format off

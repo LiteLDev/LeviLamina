@@ -2,28 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BannerPattern;
+// clang-format on
+
 struct BannerPatternRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3d7479;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BannerPattern>> mStorage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BannerPatternRegistry& operator=(BannerPatternRegistry const&);
-    BannerPatternRegistry(BannerPatternRegistry const&);
-    BannerPatternRegistry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BannerPatternRegistry();
+    MCAPI ~BannerPatternRegistry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

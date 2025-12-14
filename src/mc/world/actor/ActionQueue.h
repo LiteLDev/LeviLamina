@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActionEvent;
+// clang-format on
+
 class ActionQueue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkc868c7;
+    ::ll::TypedStorage<8, 40, ::std::deque<::ActionEvent>> mQueue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActionQueue& operator=(ActionQueue const&);
-    ActionQueue(ActionQueue const&);
-    ActionQueue();
 };

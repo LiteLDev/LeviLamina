@@ -37,21 +37,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk51bcea;
-        ::ll::UntypedStorage<4, 12> mUnk899447;
-        ::ll::UntypedStorage<4, 12> mUnk7e2076;
+        ::ll::TypedStorage<4, 12, ::std::array<float, 3>> mTranslation;
+        ::ll::TypedStorage<4, 12, ::std::array<float, 3>> mRotation;
+        ::ll::TypedStorage<4, 12, ::std::array<float, 3>> mScale;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TRS& operator=(TRS const&);
-        TRS(TRS const&);
-        TRS();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool operator==(::RenderOffsetsItemComponent::TRS const& other) const;
+        MCAPI bool operator==(::RenderOffsetsItemComponent::TRS const& other) const;
         // NOLINTEND
     };
 
@@ -59,20 +53,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 36> mUnka00cee;
-        ::ll::UntypedStorage<4, 36> mUnk5e1775;
+        ::ll::TypedStorage<4, 36, ::RenderOffsetsItemComponent::TRS> mFirstPerson;
+        ::ll::TypedStorage<4, 36, ::RenderOffsetsItemComponent::TRS> mThirdPerson;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ItemTransforms& operator=(ItemTransforms const&);
-        ItemTransforms(ItemTransforms const&);
-        ItemTransforms();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool operator==(::RenderOffsetsItemComponent::ItemTransforms const& other) const;
+        MCAPI bool operator==(::RenderOffsetsItemComponent::ItemTransforms const& other) const;
         // NOLINTEND
     };
 

@@ -22,15 +22,13 @@ class WoodlandMansionFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkab848b;
-    ::ll::UntypedStorage<4, 4>  mUnk7a5b05;
-    ::ll::UntypedStorage<8, 24> mUnk8a68ff;
+    ::ll::TypedStorage<4, 4, int>                           mFeatureSpacing;
+    ::ll::TypedStorage<4, 4, int>                           mMinFeatureSeparation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    WoodlandMansionFeature& operator=(WoodlandMansionFeature const&);
-    WoodlandMansionFeature(WoodlandMansionFeature const&);
     WoodlandMansionFeature();
 
 public:

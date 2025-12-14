@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentPubSubConnectors.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentBeforeEvent.h"
 
@@ -11,6 +12,8 @@
 class Actor;
 class ItemStack;
 class Mob;
+namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -19,12 +22,22 @@ namespace ScriptModuleMinecraft {
 struct ScriptItemCustomComponentBeforeDurabilityDamageEvent
 : public ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeEvent<int&, ::ItemStack&, ::Actor&, ::Mob&> {
 public:
+    // ScriptItemCustomComponentBeforeDurabilityDamageEvent inner types define
+    using EventConnectorsType =
+        ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<void(int&, ::ItemStack&, ::Actor&, ::Mob&)>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke129c5;
-    ::ll::UntypedStorage<8, 40> mUnk250afe;
-    ::ll::UntypedStorage<8, 32> mUnk2bc6c4;
-    ::ll::UntypedStorage<8, 32> mUnk38cd6b;
+    ::ll::TypedStorage<4, 4, int> mDurabilityDamage;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+                                                                                                          mScriptItem;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mHitEntity;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+        mAttackingEntity;
     // NOLINTEND
 
 public:
@@ -46,11 +59,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(
+    MCAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&
     );
 
-    MCNAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(
+    MCAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent const&
     );
     // NOLINTEND
@@ -58,29 +71,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $updateEngineEvent(int& durabilityDamage, ::ItemStack& item, ::Actor&, ::Mob&) const;
+    MCAPI void $updateEngineEvent(int& durabilityDamage, ::ItemStack& item, ::Actor&, ::Mob&) const;
 
-    MCNAPI bool $shouldCancel() const;
+    MCFOLD bool $shouldCancel() const;
 
 
     // NOLINTEND

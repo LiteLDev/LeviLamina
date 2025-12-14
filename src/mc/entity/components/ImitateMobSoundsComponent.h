@@ -16,12 +16,12 @@ class ImitateMobSoundsComponent {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool imitateNearbyMobs(::Actor& actor, ::Randomize const& randomize);
+    MCAPI static bool imitateNearbyMobs(::Actor& actor, ::Randomize const& randomize);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::ActorType, ::SharedTypes::Legacy::LevelSoundEvent> const& imitateMobMap();
+    MCAPI static ::std::unordered_map<::ActorType, ::SharedTypes::Legacy::LevelSoundEvent> const& imitateMobMap();
     // NOLINTEND
 };

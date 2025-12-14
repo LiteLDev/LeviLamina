@@ -2,19 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/network/packet/PlayerInputTick.h"
+#include "mc/world/effect/MovementEffectType.h"
+
 struct MovementEffectPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2502a5;
-    ::ll::UntypedStorage<4, 4> mUnka8e819;
-    ::ll::UntypedStorage<4, 4> mUnkaa7cfb;
-    ::ll::UntypedStorage<8, 8> mUnkbe1bb5;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>     mRuntimeId;
+    ::ll::TypedStorage<4, 4, ::MovementEffectType> mEffectType;
+    ::ll::TypedStorage<4, 4, int>                  mEffectDuration;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick>    mTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MovementEffectPacketPayload& operator=(MovementEffectPacketPayload const&);
-    MovementEffectPacketPayload(MovementEffectPacketPayload const&);
-    MovementEffectPacketPayload();
 };

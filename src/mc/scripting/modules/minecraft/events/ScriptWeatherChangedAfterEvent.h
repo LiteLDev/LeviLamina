@@ -13,11 +13,11 @@ struct ScriptWeatherChangedAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk75306a;
-    ::ll::UntypedStorage<1, 1>  mUnka3b6b9;
-    ::ll::UntypedStorage<1, 1>  mUnk828c22;
-    ::ll::UntypedStorage<1, 1>  mUnke1be0a;
-    ::ll::UntypedStorage<1, 1>  mUnk3b9aa1;
+    ::ll::TypedStorage<8, 32, ::std::string> mDimension;
+    ::ll::TypedStorage<1, 1, bool>           mWasRaining;
+    ::ll::TypedStorage<1, 1, bool>           mWasLightning;
+    ::ll::TypedStorage<1, 1, bool>           mIsRaining;
+    ::ll::TypedStorage<1, 1, bool>           mIsLightning;
     // NOLINTEND
 
 public:
@@ -29,16 +29,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&
+    MCAPI ::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 };
 

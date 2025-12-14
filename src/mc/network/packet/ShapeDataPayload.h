@@ -2,19 +2,46 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/schema/dynamic/NullType.h"
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/network/packet/ArrowDataPayload.h"
+#include "mc/network/packet/BoxDataPayload.h"
+#include "mc/network/packet/LineDataPayload.h"
+#include "mc/network/packet/SphereDataPayload.h"
+#include "mc/network/packet/TextDataPayload.h"
+#include "mc/scripting/modules/minecraft/debugdrawer/ScriptDebugShapeType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+// clang-format on
+
 struct ShapeDataPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8aab05;
-    ::ll::UntypedStorage<1, 2>  mUnk5efd96;
-    ::ll::UntypedStorage<4, 16> mUnk9a8660;
-    ::ll::UntypedStorage<4, 16> mUnk5ed2f3;
-    ::ll::UntypedStorage<4, 8>  mUnk514279;
-    ::ll::UntypedStorage<4, 20> mUnk862ebe;
-    ::ll::UntypedStorage<4, 8>  mUnkb50fca;
-    ::ll::UntypedStorage<4, 4>  mUnk47f65b;
-    ::ll::UntypedStorage<8, 48> mUnkbeac95;
+    ::ll::TypedStorage<8, 8, uint64>                                                              mNetworkId;
+    ::ll::TypedStorage<1, 2, ::std::optional<::ScriptModuleDebugUtilities::ScriptDebugShapeType>> mShapeType;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>>                                            mLocation;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>>                                            mRotation;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                                              mScale;
+    ::ll::TypedStorage<4, 20, ::std::optional<::mce::Color>>                                      mColor;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                                              mTimeLeftTotalSec;
+    ::ll::TypedStorage<4, 4, ::DimensionType>                                                     mDimensionId;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::std::variant<
+            ::cereal::NullType,
+            ::ArrowDataPayload,
+            ::TextDataPayload,
+            ::BoxDataPayload,
+            ::LineDataPayload,
+            ::SphereDataPayload>>
+        mExtraDataPayload;
     // NOLINTEND
 
 public:
@@ -25,12 +52,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ShapeDataPayload(::ShapeDataPayload const&);
+    MCAPI ShapeDataPayload(::ShapeDataPayload const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ShapeDataPayload const&);
+    MCAPI void* $ctor(::ShapeDataPayload const&);
     // NOLINTEND
 };

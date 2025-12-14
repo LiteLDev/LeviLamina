@@ -14,20 +14,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk778fb2;
-    ::ll::UntypedStorage<8, 8> mUnkfb4f13;
-    ::ll::UntypedStorage<1, 1> mUnk9605eb;
+    ::ll::TypedStorage<1, 1, ::ActorTerrainInterlockData::VisibilityState> mRenderVisibilityState;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>      mCreationTime;
+    ::ll::TypedStorage<1, 1, bool>                                         mHasBeenDelayedDeleted;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorTerrainInterlockData& operator=(ActorTerrainInterlockData const&);
-    ActorTerrainInterlockData(ActorTerrainInterlockData const&);
-    ActorTerrainInterlockData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setCreationTime();
+    MCAPI void setCreationTime();
     // NOLINTEND
 };

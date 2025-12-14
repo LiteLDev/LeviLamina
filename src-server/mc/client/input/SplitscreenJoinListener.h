@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SplitscreenJoinListener {
+class SplitscreenJoinListener {
 public:
     // SplitscreenJoinListener inner types declare
     // clang-format off

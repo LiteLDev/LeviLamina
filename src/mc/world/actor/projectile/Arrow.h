@@ -32,16 +32,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk3d577d;
-    ::ll::UntypedStorage<4, 4>  mUnk5b628b;
-    ::ll::UntypedStorage<4, 4>  mUnkbc8193;
-    ::ll::UntypedStorage<8, 24> mUnk5ddff5;
+    ::ll::TypedStorage<4, 4, int>                                 mLife;
+    ::ll::TypedStorage<4, 4, int>                                 mEnchantFlame;
+    ::ll::TypedStorage<4, 4, int>                                 mEnchantInfinity;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mMobEffects;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Arrow& operator=(Arrow const&);
-    Arrow(Arrow const&);
     Arrow();
 
 public:

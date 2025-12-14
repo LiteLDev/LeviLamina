@@ -33,8 +33,8 @@ public:
 
     MCNAPI ::std::string getPotionNameIdWithPrefix();
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptPotionEffectType&
-    operator=(::ScriptModuleMinecraft::ScriptPotionEffectType&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptPotionEffectType& operator=(::ScriptModuleMinecraft::ScriptPotionEffectType&&
+    );
     // NOLINTEND
 
 public:

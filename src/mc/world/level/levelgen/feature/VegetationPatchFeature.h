@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/util/IntRange.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
@@ -23,24 +26,18 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnkd45ca8;
-    ::ll::UntypedStorage<8, 184> mUnk114c24;
-    ::ll::UntypedStorage<8, 24>  mUnkc4f4d7;
-    ::ll::UntypedStorage<4, 4>   mUnk9ad8d0;
-    ::ll::UntypedStorage<4, 8>   mUnk60f0ce;
-    ::ll::UntypedStorage<4, 4>   mUnk2c0bc3;
-    ::ll::UntypedStorage<4, 4>   mUnk801fe4;
-    ::ll::UntypedStorage<4, 4>   mUnk94f872;
-    ::ll::UntypedStorage<4, 8>   mUnkc946dc;
-    ::ll::UntypedStorage<4, 4>   mUnk9b1729;
-    ::ll::UntypedStorage<1, 1>   mUnk4d1077;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mReplaceableBlocks;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mGroundBlock;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>            mVegetationFeature;
+    ::ll::TypedStorage<4, 4, ::VegetationPatchFeature::Surface> mSurface;
+    ::ll::TypedStorage<4, 8, ::IntRange>                        mDepth;
+    ::ll::TypedStorage<4, 4, float>                             mExtraDeepBlockChance;
+    ::ll::TypedStorage<4, 4, int>                               mVerticalRange;
+    ::ll::TypedStorage<4, 4, float>                             mVegetationChance;
+    ::ll::TypedStorage<4, 8, ::IntRange>                        mHorizontalRadius;
+    ::ll::TypedStorage<4, 4, float>                             mExtraEdgeColumnChance;
+    ::ll::TypedStorage<1, 1, bool>                              mWaterlogged;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VegetationPatchFeature& operator=(VegetationPatchFeature const&);
-    VegetationPatchFeature(VegetationPatchFeature const&);
-    VegetationPatchFeature();
 
 public:
     // virtual functions

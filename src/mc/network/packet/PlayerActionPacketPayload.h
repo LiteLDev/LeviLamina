@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/network/NetworkBlockPosition.h"
+#include "mc/network/packet/PlayerActionType.h"
+
 struct PlayerActionPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk713a3b;
-    ::ll::UntypedStorage<4, 12> mUnk22568e;
-    ::ll::UntypedStorage<4, 4>  mUnke1d25a;
-    ::ll::UntypedStorage<4, 4>  mUnka53ca5;
-    ::ll::UntypedStorage<8, 8>  mUnkaac9f7;
-    ::ll::UntypedStorage<1, 1>  mUnkbf2490;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mResultPos;
+    ::ll::TypedStorage<4, 4, int>                     mFace;
+    ::ll::TypedStorage<4, 4, ::PlayerActionType>      mAction;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>        mRuntimeId;
+    ::ll::TypedStorage<1, 1, bool>                    mIsFromServerPlayerMovementSystem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerActionPacketPayload& operator=(PlayerActionPacketPayload const&);
-    PlayerActionPacketPayload(PlayerActionPacketPayload const&);
-    PlayerActionPacketPayload();
 };

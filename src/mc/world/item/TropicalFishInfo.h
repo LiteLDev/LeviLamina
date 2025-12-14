@@ -6,36 +6,34 @@ struct TropicalFishInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk3b9921;
-    ::ll::UntypedStorage<4, 4>  mUnk2180f3;
-    ::ll::UntypedStorage<4, 4>  mUnkcb6dfe;
-    ::ll::UntypedStorage<4, 4>  mUnkc93f85;
-    ::ll::UntypedStorage<8, 32> mUnkb5a9ab;
+    ::ll::TypedStorage<4, 4, int>            mColor;
+    ::ll::TypedStorage<4, 4, int>            mColor2;
+    ::ll::TypedStorage<4, 4, int>            mVariant;
+    ::ll::TypedStorage<4, 4, int>            mMarkVariant;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    TropicalFishInfo& operator=(TropicalFishInfo const&);
-    TropicalFishInfo(TropicalFishInfo const&);
     TropicalFishInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TropicalFishInfo(int color, int color2, int variant, int markVariant, ::std::string name);
+    MCAPI TropicalFishInfo(int color, int color2, int variant, int markVariant, ::std::string name);
 
-    MCNAPI ~TropicalFishInfo();
+    MCAPI ~TropicalFishInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(int color, int color2, int variant, int markVariant, ::std::string name);
+    MCAPI void* $ctor(int color, int color2, int variant, int markVariant, ::std::string name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

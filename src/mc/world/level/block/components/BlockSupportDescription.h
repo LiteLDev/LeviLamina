@@ -15,13 +15,11 @@ struct BlockSupportDescription : public ::NetworkedBlockComponentDescription<::B
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd23f98;
+    ::ll::TypedStorage<4, 4, ::SupportShape> mShape;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockSupportDescription& operator=(BlockSupportDescription const&);
-    BlockSupportDescription(BlockSupportDescription const&);
     BlockSupportDescription();
 
 public:
@@ -39,35 +37,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockSupportDescription(::SupportShape shapeType);
+    MCAPI explicit BlockSupportDescription(::SupportShape shapeType);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SupportShape shapeType);
+    MCAPI void* $ctor(::SupportShape shapeType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
 
     // NOLINTEND

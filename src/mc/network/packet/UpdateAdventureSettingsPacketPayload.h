@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/storage/AdventureSettings.h"
+
 struct UpdateAdventureSettingsPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 5> mUnk729b1e;
+    ::ll::TypedStorage<1, 5, ::AdventureSettings> mAdventureSettings;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UpdateAdventureSettingsPacketPayload& operator=(UpdateAdventureSettingsPacketPayload const&);
-    UpdateAdventureSettingsPacketPayload(UpdateAdventureSettingsPacketPayload const&);
-    UpdateAdventureSettingsPacketPayload();
 };

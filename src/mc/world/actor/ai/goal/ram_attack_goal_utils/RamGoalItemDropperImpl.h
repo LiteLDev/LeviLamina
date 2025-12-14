@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Mob;
 class Vec3;
 // clang-format on
 
@@ -16,8 +17,8 @@ class RamGoalItemDropperImpl : public ::RamAttackGoalUtils::RamGoalItemDropperIn
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk996b29;
-    ::ll::UntypedStorage<1, 1> mUnk773947;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<1, 1, bool>   mShouldTryToDropHorn;
     // NOLINTEND
 
 public:
@@ -41,11 +42,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tryDropHorn(::Vec3 dropPos) const;
+    MCAPI void $tryDropHorn(::Vec3 dropPos) const;
 
-    MCNAPI void $checkForHornDropOnCollision(::Vec3 collisionPos);
+    MCAPI void $checkForHornDropOnCollision(::Vec3 collisionPos);
 
-    MCNAPI void $dontDropHorn();
+    MCAPI void $dontDropHorn();
 
 
     // NOLINTEND

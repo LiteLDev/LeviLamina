@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 #include "mc/world/item/ItemDescriptor.h"
+#include "mc/world/item/ItemTag.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,14 +20,8 @@ struct ItemTagDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkcef01f;
+    ::ll::TypedStorage<8, 48, ::ItemTag> mItemTag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemTagDescriptor& operator=(ItemTagDescriptor const&);
-    ItemTagDescriptor(ItemTagDescriptor const&);
-    ItemTagDescriptor();
 
 public:
     // virtual functions
@@ -63,37 +58,37 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::std::unique_ptr<::ItemTagDescriptor>> deserialize(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemTagDescriptor>> deserialize(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
 
-    MCNAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
+    MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
-    MCNAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const;
+    MCAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const;
 
-    MCNAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
+    MCAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
-    MCNAPI ::std::string $getFullName() const;
+    MCFOLD ::std::string $getFullName() const;
 
-    MCNAPI ::std::string $toString() const;
+    MCAPI ::std::string $toString() const;
 
-    MCNAPI ::ItemDescriptor::ItemEntry $getItem() const;
+    MCFOLD ::ItemDescriptor::ItemEntry $getItem() const;
 
-    MCNAPI ::std::map<::std::string, ::std::string> $toMap() const;
+    MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 
-    MCNAPI ::std::optional<::CompoundTag> $save() const;
+    MCAPI ::std::optional<::CompoundTag> $save() const;
 
-    MCNAPI void $serialize(::Json::Value& val) const;
+    MCAPI void $serialize(::Json::Value& val) const;
 
-    MCNAPI void $serialize(::BinaryStream& stream) const;
+    MCAPI void $serialize(::BinaryStream& stream) const;
 
-    MCNAPI ::ItemDescriptor::InternalType $getType() const;
+    MCFOLD ::ItemDescriptor::InternalType $getType() const;
 
-    MCNAPI uint64 $getHash() const;
+    MCAPI uint64 $getHash() const;
 
 
     // NOLINTEND

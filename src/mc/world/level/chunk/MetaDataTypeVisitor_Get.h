@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
+class CompoundTag;
 class DimensionHeightRange;
 class LevelSeed64;
 // clang-format on
@@ -17,8 +18,8 @@ struct MetaDataTypeVisitor_Get {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk48f76a;
-    ::ll::UntypedStorage<8, 32> mUnk3d34cb;
+    ::ll::TypedStorage<8, 8, ::CompoundTag const&> mSource;
+    ::ll::TypedStorage<8, 32, ::std::string const> mMetaDataTag;
     // NOLINTEND
 
 public:
@@ -30,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::std::variant<
+    MCAPI ::std::optional<::std::variant<
         ::BaseGameVersion,
         ::std::string,
         ::LevelSeed64,
@@ -41,12 +42,12 @@ public:
         ::NeighborAwareBlockUpgradeVersionType>>
     operator()(::BaseGameVersion const&) const;
 
-    MCNAPI ~MetaDataTypeVisitor_Get();
+    MCAPI ~MetaDataTypeVisitor_Get();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

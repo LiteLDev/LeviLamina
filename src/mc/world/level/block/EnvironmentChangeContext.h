@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
 struct EnvironmentChangeContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnkfb30f0;
+    ::ll::TypedStorage<4, 16, ::std::optional<::BlockPos>> mBlockPosContext;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnvironmentChangeContext& operator=(EnvironmentChangeContext const&);
-    EnvironmentChangeContext(EnvironmentChangeContext const&);
-    EnvironmentChangeContext();
 };

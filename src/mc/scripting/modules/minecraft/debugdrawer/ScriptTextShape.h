@@ -39,8 +39,8 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptTextShape(::ScriptModuleDebugUtilities::ScriptTextShape const&);
 
-    MCAPI ::ScriptModuleDebugUtilities::ScriptTextShape&
-    operator=(::ScriptModuleDebugUtilities::ScriptTextShape const&);
+    MCAPI ::ScriptModuleDebugUtilities::ScriptTextShape& operator=(::ScriptModuleDebugUtilities::ScriptTextShape const&
+    );
 
     MCAPI void setText(::std::string text);
     // NOLINTEND

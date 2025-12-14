@@ -2,21 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 namespace DripstoneUtils {
 
 class WindOffsetter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk5b4900;
-    ::ll::UntypedStorage<4, 16> mUnk688166;
+    ::ll::TypedStorage<4, 4, int>                      originY;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> windSpeed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WindOffsetter& operator=(WindOffsetter const&);
-    WindOffsetter(WindOffsetter const&);
-    WindOffsetter();
 };
 
 } // namespace DripstoneUtils

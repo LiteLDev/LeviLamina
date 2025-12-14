@@ -2,32 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/input/enums/WYSIWYGState.h"
+
 struct WYSIWIGData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkd98f4a;
-    ::ll::UntypedStorage<1, 1>  mUnk44c457;
-    ::ll::UntypedStorage<4, 4>  mUnkf54d51;
-    ::ll::UntypedStorage<4, 4>  mUnk8b90c5;
-    ::ll::UntypedStorage<4, 4>  mUnkfd3ca4;
+    ::ll::TypedStorage<8, 16, ::std::set<uint>> mActiveControlOptions;
+    ::ll::TypedStorage<1, 1, bool>              mOtherConfigsExistInThisCategory;
+    ::ll::TypedStorage<4, 4, int>               mNumberOfActiveConfigs;
+    ::ll::TypedStorage<4, 4, int>               mNumberOfEnabledConfigs;
+    ::ll::TypedStorage<4, 4, ::WYSIWYGState>    mWYSIWYGState;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WYSIWIGData& operator=(WYSIWIGData const&);
-    WYSIWIGData(WYSIWIGData const&);
-    WYSIWIGData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~WYSIWIGData();
+    MCAPI_C ~WYSIWIGData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

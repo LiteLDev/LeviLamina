@@ -16,15 +16,9 @@ class RemappingLayout {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkec8525;
-    ::ll::UntypedStorage<8, 24> mUnkfb6044;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Keymapping>> mKeymappings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Keymapping>> mDefaultMappings;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RemappingLayout& operator=(RemappingLayout const&);
-    RemappingLayout(RemappingLayout const&);
-    RemappingLayout();
 
 public:
     // virtual functions
@@ -57,45 +51,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void assignDefaultMapping(::std::vector<::Keymapping>&& newDefaultMapping);
+    MCAPI_C void assignDefaultMapping(::std::vector<::Keymapping>&& newDefaultMapping);
 
-    MCNAPI_C ::Keymapping const& getKeymappingByAction(::std::string const& action) const;
+    MCAPI_C ::Keymapping const& getKeymappingByAction(::std::string const& action) const;
 
-    MCNAPI_C void setMapping(::std::string const& action, ::std::vector<int> const& keys);
+    MCAPI_C void setMapping(::std::string const& action, ::std::vector<int> const& keys);
 
-    MCNAPI_C void unassignDuplicateKeys(int index);
+    MCAPI_C void unassignDuplicateKeys(int index);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::vector<::DuplicateKey>
+    MCAPI_C static ::std::vector<::DuplicateKey>
     _generateIndicesOfDuplicatesForMappings(::std::vector<::Keymapping> const& mappings);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI int $getAdjustedKey(int key) const;
+    MCFOLD int $getAdjustedKey(int key) const;
 
-    MCNAPI ::std::string $getSaveString(::std::string const& action) const;
+    MCFOLD ::std::string $getSaveString(::std::string const& action) const;
 
-    MCNAPI ::std::string $getMappedKeyName(int key) const;
+    MCFOLD ::std::string $getMappedKeyName(int key) const;
 
-    MCNAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
+    MCFOLD ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
 
-    MCNAPI ::std::string $getMappedKeyName(::Keymapping const& keyMapping) const;
+    MCAPI ::std::string $getMappedKeyName(::Keymapping const& keyMapping) const;
 
-    MCNAPI ::std::string $getKeySpriteLocation(int key, ::IconSize iconSize) const;
+    MCFOLD ::std::string $getKeySpriteLocation(int key, ::IconSize iconSize) const;
 
-    MCNAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
+    MCAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
 #endif
 
 

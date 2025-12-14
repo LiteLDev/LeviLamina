@@ -24,24 +24,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemStopUseOnEvent(::ItemStopUseOnEvent&&);
+    MCAPI ItemStopUseOnEvent(::ItemStopUseOnEvent&&);
 
-    MCNAPI ItemStopUseOnEvent(::ItemStopUseOnEvent const&);
+    MCAPI ItemStopUseOnEvent(::ItemStopUseOnEvent const&);
 
-    MCNAPI ~ItemStopUseOnEvent();
+    MCAPI ~ItemStopUseOnEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemStopUseOnEvent&&);
+    MCAPI void* $ctor(::ItemStopUseOnEvent&&);
 
-    MCNAPI void* $ctor(::ItemStopUseOnEvent const&);
+    MCAPI void* $ctor(::ItemStopUseOnEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

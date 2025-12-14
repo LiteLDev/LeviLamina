@@ -13,23 +13,21 @@ namespace JsonUtil { class EmptyClass; }
 
 class HarvestFarmBlockDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3757db;
-    ::ll::UntypedStorage<4, 4> mUnk9ea904;
-    ::ll::UntypedStorage<4, 4> mUnk63e448;
-    ::ll::UntypedStorage<4, 4> mUnk98cb12;
-    ::ll::UntypedStorage<4, 4> mUnk1c72e6;
-    ::ll::UntypedStorage<4, 4> mUnk3566a3;
-    ::ll::UntypedStorage<4, 4> mUnkb2577b;
-    ::ll::UntypedStorage<4, 4> mUnkfa5710;
-    // NOLINTEND
+    // HarvestFarmBlockDefinition inner types define
+    using self = ::HarvestFarmBlockDefinition;
 
 public:
-    // prevent constructor by default
-    HarvestFarmBlockDefinition& operator=(HarvestFarmBlockDefinition const&);
-    HarvestFarmBlockDefinition(HarvestFarmBlockDefinition const&);
-    HarvestFarmBlockDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mMaximumSecondsUntilSearch;
+    ::ll::TypedStorage<4, 4, float> mSearchCooldownMaximumSeconds;
+    ::ll::TypedStorage<4, 4, float> mTaskCooldownSeconds;
+    ::ll::TypedStorage<4, 4, int>   mSearchCount;
+    ::ll::TypedStorage<4, 4, int>   mSearchHeight;
+    ::ll::TypedStorage<4, 4, int>   mSearchRange;
+    ::ll::TypedStorage<4, 4, float> mGoalRadius;
+    ::ll::TypedStorage<4, 4, float> mSpeedModifier;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -40,7 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                       name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HarvestFarmBlockDefinition>>& root
     );

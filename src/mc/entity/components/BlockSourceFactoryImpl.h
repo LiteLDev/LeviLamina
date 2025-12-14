@@ -27,6 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _createOrUpdate(::MockableOwnedBlockSource& region, ::DimensionType type) const;
+    MCAPI void _createOrUpdate(::MockableOwnedBlockSource& region, ::DimensionType type) const;
     // NOLINTEND
 };

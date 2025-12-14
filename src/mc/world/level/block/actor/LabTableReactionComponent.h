@@ -24,17 +24,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_onStart(::LabTableReaction& owner, ::BlockSource& region);
+    MCFOLD void $_onStart(::LabTableReaction& owner, ::BlockSource& region);
 
-    MCNAPI void $_onTick(::LabTableReaction& owner, ::BlockSource& region);
+    MCFOLD void $_onTick(::LabTableReaction& owner, ::BlockSource& region);
 
-    MCNAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
+    MCFOLD void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
 
 
     // NOLINTEND

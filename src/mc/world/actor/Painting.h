@@ -10,6 +10,7 @@
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class Motif;
 class Packet;
 // clang-format on
 
@@ -17,14 +18,8 @@ class Painting : public ::HangingActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk189c6c;
+    ::ll::TypedStorage<8, 8, ::Motif const*> mMotif;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Painting& operator=(Painting const&);
-    Painting(Painting const&);
-    Painting();
 
 public:
     // virtual functions

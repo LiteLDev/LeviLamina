@@ -14,34 +14,28 @@ struct BiomeCappedSurfaceData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkda3ae2;
-    ::ll::UntypedStorage<8, 24> mUnk22a136;
-    ::ll::UntypedStorage<4, 8>  mUnk7bd1b7;
-    ::ll::UntypedStorage<4, 8>  mUnkdda428;
-    ::ll::UntypedStorage<4, 8>  mUnk6c7cf1;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>  mFloorBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>  mCeilingBlocks;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>> mSeaBlock;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>> mFoundationBlock;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>> mBeachBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeCappedSurfaceData& operator=(BiomeCappedSurfaceData const&);
-    BiomeCappedSurfaceData(BiomeCappedSurfaceData const&);
-    BiomeCappedSurfaceData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BiomeCappedSurfaceData();
+    MCAPI ~BiomeCappedSurfaceData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::BiomeCappedSurfaceData> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::BiomeCappedSurfaceData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -31,24 +31,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockTryDestroyByPlayerEvent(::BlockTryDestroyByPlayerEvent&&);
+    MCAPI BlockTryDestroyByPlayerEvent(::BlockTryDestroyByPlayerEvent&&);
 
-    MCNAPI BlockTryDestroyByPlayerEvent(::BlockTryDestroyByPlayerEvent const&);
+    MCAPI BlockTryDestroyByPlayerEvent(::BlockTryDestroyByPlayerEvent const&);
 
-    MCNAPI ~BlockTryDestroyByPlayerEvent();
+    MCAPI ~BlockTryDestroyByPlayerEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockTryDestroyByPlayerEvent&&);
+    MCAPI void* $ctor(::BlockTryDestroyByPlayerEvent&&);
 
-    MCNAPI void* $ctor(::BlockTryDestroyByPlayerEvent const&);
+    MCAPI void* $ctor(::BlockTryDestroyByPlayerEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

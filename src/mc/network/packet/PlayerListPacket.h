@@ -5,11 +5,13 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/PlayerListPacketType.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class PlayerListEntry;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -17,15 +19,9 @@ class PlayerListPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd3b428;
-    ::ll::UntypedStorage<1, 1>  mUnkd157ad;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PlayerListEntry>> mEntries;
+    ::ll::TypedStorage<1, 1, ::PlayerListPacketType>            mAction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerListPacket& operator=(PlayerListPacket const&);
-    PlayerListPacket(PlayerListPacket const&);
-    PlayerListPacket();
 
 public:
     // virtual functions

@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructurePoolBlockTagRule(
+    MCAPI StructurePoolBlockTagRule(
         ::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate,
         ::std::string                                          resultKey,
         ::std::string                                          resultValue
@@ -33,7 +33,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate,
         ::std::string                                          resultKey,
         ::std::string                                          resultValue

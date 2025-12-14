@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/options/SyncedClientOptionsUpdate.h"
+
 struct UpdateClientOptionsPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnk175c0e;
+    ::ll::TypedStorage<1, 2, ::SyncedClientOptionsUpdate> mUpdate;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UpdateClientOptionsPacketPayload& operator=(UpdateClientOptionsPacketPayload const&);
-    UpdateClientOptionsPacketPayload(UpdateClientOptionsPacketPayload const&);
-    UpdateClientOptionsPacketPayload();
 };

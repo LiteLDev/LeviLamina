@@ -2,11 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/DefinitionTrigger.h"
+
 struct LegacyOnConsumeTriggerItemComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk63b22b;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnConsumeTrigger;
     // NOLINTEND
 
 public:
@@ -17,24 +20,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyOnConsumeTriggerItemComponentData(::LegacyOnConsumeTriggerItemComponentData&&);
+    MCAPI LegacyOnConsumeTriggerItemComponentData(::LegacyOnConsumeTriggerItemComponentData&&);
 
-    MCNAPI LegacyOnConsumeTriggerItemComponentData(::LegacyOnConsumeTriggerItemComponentData const&);
+    MCAPI LegacyOnConsumeTriggerItemComponentData(::LegacyOnConsumeTriggerItemComponentData const&);
 
-    MCNAPI ~LegacyOnConsumeTriggerItemComponentData();
+    MCAPI ~LegacyOnConsumeTriggerItemComponentData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LegacyOnConsumeTriggerItemComponentData&&);
+    MCFOLD void* $ctor(::LegacyOnConsumeTriggerItemComponentData&&);
 
-    MCNAPI void* $ctor(::LegacyOnConsumeTriggerItemComponentData const&);
+    MCFOLD void* $ctor(::LegacyOnConsumeTriggerItemComponentData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -5,7 +5,7 @@
 namespace SculkSensorBlockActorConstants {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::string const& VibrationListenerTag();
+MCAPI ::std::string const& VibrationListenerTag();
 // NOLINTEND
 
 } // namespace SculkSensorBlockActorConstants

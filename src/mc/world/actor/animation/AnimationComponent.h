@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/molang/MolangVersion.h"
+#include "mc/util/MolangVariableMap.h"
 #include "mc/world/actor/RenderParams.h"
 #include "mc/world/actor/SkeletalHierarchyIndex.h"
 #include "mc/world/actor/animation/AnimationComponentGroupType.h"
@@ -25,7 +26,6 @@ class DataDrivenGeometry;
 class ExpressionNode;
 class Matrix;
 class ModelPartLocator;
-class MolangVariableMap;
 class DataDrivenModel;
 struct RenderControllerToProcess;
 // clang-format on
@@ -42,21 +42,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk301dd5;
-        ::ll::UntypedStorage<8, 56> mUnkb77211;
-        ::ll::UntypedStorage<8, 16> mUnka46f8f;
+        ::ll::TypedStorage<8, 8, void const*>                              mChildObjectKey;
+        ::ll::TypedStorage<8, 56, ::MolangVariableMap>                     mMolangVariableMap;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AnimationComponent>> mChildAnimationComponent;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChildAnimationComponentInfo& operator=(ChildAnimationComponentInfo const&);
-        ChildAnimationComponentInfo(ChildAnimationComponentInfo const&);
-        ChildAnimationComponentInfo();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ::std::shared_ptr<::AnimationComponent>&
+        MCAPI_C ::std::shared_ptr<::AnimationComponent>&
         getAnimationComponent(::Actor& owner, ushort attachableDepth, ::AttachableSlotIndex attachableIndex);
         // NOLINTEND
     };
@@ -107,30 +101,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
+    MCAPI
     AnimationComponent(::AnimationComponentGroupType animationComponentGroup, ::AnimationComponentID const& ownerUUID);
 
-    MCNAPI_C void _addAnimationToStatePlayer(
+    MCAPI_C void _addAnimationToStatePlayer(
         ::HashedString const&                                    friendlyName,
         ::std::shared_ptr<::ActorAnimationControllerStatePlayer> player
     );
 
-    MCNAPI_C ::RenderParams& _prepRenderParamsForActor(::Actor& actor);
+    MCAPI_C ::RenderParams& _prepRenderParamsForActor(::Actor& actor);
 
-    MCNAPI void applyAnimations(bool setDefaultPose);
+    MCAPI void applyAnimations(bool setDefaultPose);
 
-    MCNAPI_C bool attemptToSetParentBoneMapping(
+    MCAPI_C bool attemptToSetParentBoneMapping(
         ::AnimationComponent& parentAnimationComponent,
         ::BoneOrientation&    childBoneOrientation
     ) const;
 
-    MCNAPI ::std::shared_ptr<::ActorAnimationPlayer> createAnimationPlayer(
+    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> createAnimationPlayer(
         ::HashedString const&                                    friendlyName,
         ::ExpressionNode const&                                  blendExpression,
         ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
     );
 
-    MCNAPI_C ::std::shared_ptr<::ActorAnimationControllerStatePlayer> editGlobalAnimationData(
+    MCAPI_C ::std::shared_ptr<::ActorAnimationControllerStatePlayer> editGlobalAnimationData(
         ::HashedString const& friendlyName,
         float                 blendOutTime,
         ::std::string const&  stopExpression,
@@ -139,84 +133,84 @@ public:
         ::std::string const&  runtimeController
     );
 
-    MCNAPI_C void ensureClientAnimationComponentIsInitialized();
+    MCAPI_C void ensureClientAnimationComponentIsInitialized();
 
-    MCNAPI_C ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& rawAnimationName);
+    MCAPI_C ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& rawAnimationName);
 
-    MCNAPI_C void forceNextUpdateToApplyAnimations();
+    MCAPI_C void forceNextUpdateToApplyAnimations();
 
-    MCNAPI_C ::std::shared_ptr<::ActorAnimationControllerPlayer>
+    MCAPI_C ::std::shared_ptr<::ActorAnimationControllerPlayer>
     getAnimationControllerPlayer(::HashedString const& destControllerName, bool createIfMissing);
 
-    MCNAPI_C ::std::vector<::BoneOrientation>& getBoneOrientations(::DataDrivenGeometry const& sourceGeo);
+    MCAPI_C ::std::vector<::BoneOrientation>& getBoneOrientations(::DataDrivenGeometry const& sourceGeo);
 
-    MCNAPI ::std::vector<::BoneOrientation>*
+    MCAPI ::std::vector<::BoneOrientation>*
     getBoneOrientations(::SkeletalHierarchyIndex skeletalHierarchyIndex, bool missingIsOkay);
 
-    MCNAPI_C ::ModelPartLocator* getLocator(::HashedString const& locatorNameHash);
+    MCAPI_C ::ModelPartLocator* getLocator(::HashedString const& locatorNameHash);
 
-    MCNAPI_C ::Matrix const* getQueryableBoneOrientation(uint64 boneNameHash) const;
+    MCAPI_C ::Matrix const* getQueryableBoneOrientation(uint64 boneNameHash) const;
 
-    MCNAPI_C float getRegisteredAnimationLength(::std::string const& friendlyName) const;
+    MCAPI_C float getRegisteredAnimationLength(::std::string const& friendlyName) const;
 
-    MCNAPI_C bool haveInitializedScriptsRun() const;
+    MCAPI_C bool haveInitializedScriptsRun() const;
 
-    MCNAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
+    MCAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
 
-    MCNAPI_C void
+    MCAPI_C void
     initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)> animationComponentInitFunction);
 
-    MCNAPI void initializeServerAnimationComponent(
+    MCAPI void initializeServerAnimationComponent(
         ::Actor&                                         actor,
         ::std::shared_ptr<::CommonResourceDefinitionMap> animationResourceDefinition,
         ::std::function<void(::ActorAnimationPlayer&)>   animationComponentInitFunction
     );
 
-    MCNAPI_C bool isAnimationRegistered(::HashedString const& friendlyName) const;
+    MCAPI_C bool isAnimationRegistered(::HashedString const& friendlyName) const;
 
-    MCNAPI_C ::std::shared_ptr<::ActorAnimationControllerStatePlayer> playAnimation(
+    MCAPI_C ::std::shared_ptr<::ActorAnimationControllerStatePlayer> playAnimation(
         ::HashedString const& friendlyName,
         ::HashedString const& owningStateName,
         ::std::string const&  runtimeController
     );
 
-    MCNAPI void setDirty();
+    MCAPI void setDirty();
 
-    MCNAPI_C void setInitializedScriptsRun(bool);
+    MCAPI_C void setInitializedScriptsRun(bool);
 
-    MCNAPI_C void setupDeltaTimeAndLifeTimeParams(bool incrementLifetime);
+    MCAPI_C void setupDeltaTimeAndLifeTimeParams(bool incrementLifetime);
 
-    MCNAPI_C bool tryRegisterAnimation(::HashedString const& friendlyName, ::ActorSkeletalAnimationPtr animation);
+    MCAPI_C bool tryRegisterAnimation(::HashedString const& friendlyName, ::ActorSkeletalAnimationPtr animation);
 
-    MCNAPI_C void updateQueryableGeometryBoneOrientations();
+    MCAPI_C void updateQueryableGeometryBoneOrientations();
 
-    MCNAPI_C void updateRenderControllersToProcess(
+    MCAPI_C void updateRenderControllersToProcess(
         ::std::shared_ptr<::DataDrivenModel> itemModel,
         ::RenderParams&                      renderParamsToUseForRenderControllerEvalulation
     );
 
-    MCNAPI ~AnimationComponent();
+    MCAPI ~AnimationComponent();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::atomic<int64>& mClientFrameIndex();
+    MCAPI static ::std::atomic<int64>& mClientFrameIndex();
 
-    MCNAPI static ::std::atomic<int64>& mReloadTimeStampClient();
+    MCAPI static ::std::atomic<int64>& mReloadTimeStampClient();
 
-    MCNAPI static ::std::atomic<int64>& mServerFrameIndex();
+    MCAPI static ::std::atomic<int64>& mServerFrameIndex();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::AnimationComponentGroupType animationComponentGroup, ::AnimationComponentID const& ownerUUID);
+    MCAPI void* $ctor(::AnimationComponentGroupType animationComponentGroup, ::AnimationComponentID const& ownerUUID);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

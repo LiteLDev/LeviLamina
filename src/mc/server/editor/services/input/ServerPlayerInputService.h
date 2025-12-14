@@ -70,7 +70,7 @@ public:
     virtual ::std::optional<int>
     getKeyBindingProcessingState(::HashedString const& contextId, ::HashedString const& bindingId) const /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> setViewportFocus(bool focused) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setViewportFocus(bool isFocused) /*override*/;
     // NOLINTEND
 
 public:
@@ -110,7 +110,7 @@ public:
     MCNAPI ::std::optional<int>
     $getKeyBindingProcessingState(::HashedString const& contextId, ::HashedString const& bindingId) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $setViewportFocus(bool focused);
+    MCNAPI ::Scripting::Result_deprecated<void> $setViewportFocus(bool isFocused);
 
 
     // NOLINTEND

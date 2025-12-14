@@ -17,7 +17,7 @@ class BlockPileFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkec55b4;
+    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
     // NOLINTEND
 
 public:
@@ -39,9 +39,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI ::Block const& $getBlockToPlace(::Random& random) const;
+    MCAPI ::Block const& $getBlockToPlace(::Random& random) const;
 
 
     // NOLINTEND

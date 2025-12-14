@@ -30,13 +30,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initBuilder(uint);
+    MCFOLD void $initBuilder(uint);
 
-    MCNAPI void $initBiomeSurface(::Biome&) const;
+    MCFOLD void $initBiomeSurface(::Biome&) const;
 
-    MCNAPI bool $isBestBuilder(::Biome const& biome) const;
+    MCAPI bool $isBestBuilder(::Biome const& biome) const;
 
-    MCNAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
 
 
     // NOLINTEND

@@ -24,9 +24,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static int _getDripstoneHeight(::Random& random, int dx, int dz, float density, int maxHeight);
+    MCAPI static int _getDripstoneHeight(::Random& random, int dx, int dz, float density, int maxHeight);
 
-    MCNAPI static bool _placeColumn(
+    MCAPI static bool _placeColumn(
         ::IBlockWorldGenAPI& target,
         ::Random&            random,
         ::BlockPos const&    pos,
@@ -42,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
     // NOLINTEND

@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/nbt/CompoundTag.h"
 #include "mc/world/Direction.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -14,7 +16,6 @@ class Block;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
-class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class ItemStackBase;
@@ -35,15 +36,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 176> mUnk6e28f9;
-        ::ll::UntypedStorage<8, 24>  mUnk4d5cb5;
+        ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mActorIdentifier;
+        ::ll::TypedStorage<8, 24, ::CompoundTag>                mSaveData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SerializedActor& operator=(SerializedActor const&);
-        SerializedActor(SerializedActor const&);
-        SerializedActor();
     };
 
 public:
@@ -86,48 +81,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Actor* _loadSerializedActor(
+    MCAPI ::Actor* _loadSerializedActor(
         ::BlockSource&  region,
         ::ActorFactory& actorFactory,
         ::Vec3 const&   pos,
         ::Vec2 const&   rotation
     ) const;
 
-    MCNAPI void loadUserData(::CompoundTag const& tag);
+    MCAPI void loadUserData(::CompoundTag const& tag);
 
-    MCNAPI void saveUserData(::CompoundTag& tag) const;
+    MCAPI void saveUserData(::CompoundTag& tag) const;
 
-    MCNAPI ::Actor* spawnActor(::BlockSource& region, ::Direction::Type direction);
+    MCAPI ::Actor* spawnActor(::BlockSource& region, ::Direction::Type direction);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void savePoseToItemForInventoryRendering(::ItemStackBase& item, int pose);
+    MCAPI_C static void savePoseToItemForInventoryRendering(::ItemStackBase& item, int pose);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& ACTOR_IDENTIFIER_TAG_NAME();
+    MCAPI static ::std::string_view const& ACTOR_IDENTIFIER_TAG_NAME();
 
-    MCNAPI static ::std::string_view const& ACTOR_TAG_NAME();
+    MCAPI static ::std::string_view const& ACTOR_TAG_NAME();
 
-    MCNAPI static ::std::string_view const& POSE_TAG_NAME();
+    MCAPI static ::std::string_view const& POSE_TAG_NAME();
 
-    MCNAPI static ::std::string_view const& SAVE_DATA_TAG_NAME();
+    MCAPI static ::std::string_view const& SAVE_DATA_TAG_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $onChanged(::BlockSource& region);
+    MCAPI void $onChanged(::BlockSource& region);
 
-    MCNAPI void $executeEvent(
+    MCAPI void $executeEvent(
         ::BlockSource&,
         ::BlockPos const& pos,
         ::Block const&,
@@ -135,15 +130,15 @@ public:
         ::Actor&             actor
     );
 
-    MCNAPI void $getDebugText(
+    MCAPI void $getDebugText(
         ::std::vector<::std::string>& outputInfo,
         ::BlockPos const&             debugPos,
         ::BlockSource const*          region
     ) const;
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

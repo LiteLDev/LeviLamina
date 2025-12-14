@@ -8,23 +8,23 @@
 
 // auto generated forward declare list
 // clang-format off
+class PieceWeight;
 class Random;
+class StructurePiece;
 // clang-format on
 
 class NBStartPiece : public ::NBBridgeCrossing {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf837b7;
-    ::ll::UntypedStorage<8, 24> mUnk50f3f8;
-    ::ll::UntypedStorage<8, 24> mUnk323fd5;
-    ::ll::UntypedStorage<8, 24> mUnka13de3;
+    ::ll::TypedStorage<8, 32, ::std::string>                    previousPiece;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PieceWeight>>     availableBridgePieces;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PieceWeight>>     availableCastlePieces;
+    ::ll::TypedStorage<8, 24, ::std::vector<::StructurePiece*>> pendingChildren;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    NBStartPiece& operator=(NBStartPiece const&);
-    NBStartPiece(NBStartPiece const&);
     NBStartPiece();
 
 public:
@@ -38,19 +38,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NBStartPiece(::Random& random, int west, int north);
+    MCAPI NBStartPiece(::Random& random, int west, int north);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Random& random, int west, int north);
+    MCAPI void* $ctor(::Random& random, int west, int north);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
 
     // NOLINTEND

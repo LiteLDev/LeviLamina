@@ -12,24 +12,24 @@ struct ItemTier;
 namespace VanillaItemTiers {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::vector<::ItemStack> getTierItems(::ItemTier const& tier, ::BaseGameVersion const& baseGameVersion);
+MCAPI ::std::vector<::ItemStack> getTierItems(::ItemTier const& tier, ::BaseGameVersion const& baseGameVersion);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::ItemTier const& COPPER();
+MCAPI ::ItemTier const& COPPER();
 
-MCNAPI ::ItemTier const& DIAMOND();
+MCAPI ::ItemTier const& DIAMOND();
 
-MCNAPI ::ItemTier const& GOLD();
+MCAPI ::ItemTier const& GOLD();
 
-MCNAPI ::ItemTier const& IRON();
+MCAPI ::ItemTier const& IRON();
 
-MCNAPI ::ItemTier const& NETHERITE();
+MCAPI ::ItemTier const& NETHERITE();
 
-MCNAPI ::ItemTier const& STONE();
+MCAPI ::ItemTier const& STONE();
 
-MCNAPI ::ItemTier const& WOOD();
+MCAPI ::ItemTier const& WOOD();
 // NOLINTEND
 
 } // namespace VanillaItemTiers

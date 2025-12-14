@@ -12,34 +12,34 @@ class Multitouch {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void commit();
+    MCAPI_C static void commit();
 
-    MCNAPI_C static void feed(char actionButtonId, char buttonData, short x, short y, int pointerId);
+    MCAPI_C static void feed(char actionButtonId, char buttonData, short x, short y, int pointerId);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static int& _activePointerCount();
+    MCAPI_C static int& _activePointerCount();
 
-    MCNAPI_C static ::std::add_lvalue_reference_t<int[]> _activePointerList();
+    MCAPI_C static ::std::add_lvalue_reference_t<int[]> _activePointerList();
 
-    MCNAPI_C static int& _activePointerThisUpdateCount();
+    MCAPI_C static int& _activePointerThisUpdateCount();
 
-    MCNAPI_C static ::std::add_lvalue_reference_t<int[]> _activePointerThisUpdateList();
+    MCAPI_C static ::std::add_lvalue_reference_t<int[]> _activePointerThisUpdateList();
 
-    MCNAPI_C static ::std::vector<::MouseAction>& _inputs();
+    MCAPI_C static ::std::vector<::MouseAction>& _inputs();
 
-    MCNAPI_C static ::std::add_lvalue_reference_t<::MouseDevice[]> _pointers();
+    MCAPI_C static ::std::add_lvalue_reference_t<::MouseDevice[]> _pointers();
 
-    MCNAPI_C static ::std::add_lvalue_reference_t<bool[]> _wasEdgeTouch();
+    MCAPI_C static ::std::add_lvalue_reference_t<bool[]> _wasEdgeTouch();
 
-    MCNAPI_C static ::std::add_lvalue_reference_t<bool[]> _wasPressed();
+    MCAPI_C static ::std::add_lvalue_reference_t<bool[]> _wasPressed();
 
-    MCNAPI_C static ::std::add_lvalue_reference_t<bool[]> _wasPressedThisUpdate();
+    MCAPI_C static ::std::add_lvalue_reference_t<bool[]> _wasPressedThisUpdate();
 
-    MCNAPI_C static ::std::add_lvalue_reference_t<bool[]> _wasReleased();
+    MCAPI_C static ::std::add_lvalue_reference_t<bool[]> _wasReleased();
 
-    MCNAPI_C static ::std::add_lvalue_reference_t<bool[]> _wasReleasedThisUpdate();
+    MCAPI_C static ::std::add_lvalue_reference_t<bool[]> _wasReleasedThisUpdate();
     // NOLINTEND
 };

@@ -31,11 +31,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uint64 $getSubscriberCount() const;
+    MCFOLD uint64 $getSubscriberCount() const;
 
-    MCNAPI void $enqueueClosureRemovalForActor(::ActorUniqueID const&);
+    MCFOLD void $enqueueClosureRemovalForActor(::ActorUniqueID const&);
 
-    MCNAPI bool $isActorSignal() const;
+    MCFOLD bool $isActorSignal() const;
 
 
     // NOLINTEND

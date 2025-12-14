@@ -10,9 +10,9 @@ struct WeightedBlockName;
 namespace VegetationFeatureBlocks {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::vector<::WeightedBlockName> const& MOSS_PATCH();
+MCAPI ::std::vector<::WeightedBlockName> const& MOSS_PATCH();
 
-MCNAPI ::std::vector<::WeightedBlockName> const& PALE_MOSS_PATCH();
+MCAPI ::std::vector<::WeightedBlockName> const& PALE_MOSS_PATCH();
 // NOLINTEND
 
 } // namespace VegetationFeatureBlocks

@@ -17,8 +17,8 @@ class NetworkItemInstanceDescriptor : public ::ItemDescriptorCount {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkcdd6df;
-    ::ll::UntypedStorage<8, 32> mUnka0ca51;
+    ::ll::TypedStorage<4, 4, uint>           mBlockRuntimeId;
+    ::ll::TypedStorage<8, 32, ::std::string> mUserDataBuffer;
     // NOLINTEND
 
 public:

@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 struct VariantParameterList;
 // clang-format on
 
@@ -16,17 +17,11 @@ class EyeOfEnder : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk9b9c62;
-    ::ll::UntypedStorage<1, 1>  mUnk57d7dd;
-    ::ll::UntypedStorage<4, 4>  mUnkc01906;
-    ::ll::UntypedStorage<4, 12> mUnk1dceb6;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mTarget;
+    ::ll::TypedStorage<1, 1, bool>        mSurviveAfterDeath;
+    ::ll::TypedStorage<4, 4, int>         mLife;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mTargetPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EyeOfEnder& operator=(EyeOfEnder const&);
-    EyeOfEnder(EyeOfEnder const&);
-    EyeOfEnder();
 
 public:
     // virtual functions

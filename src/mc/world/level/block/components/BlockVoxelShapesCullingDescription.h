@@ -15,14 +15,8 @@ struct BlockVoxelShapesCullingDescription
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc9f7ef;
+    ::ll::TypedStorage<8, 32, ::std::string> mOcclusionShapeName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockVoxelShapesCullingDescription& operator=(BlockVoxelShapesCullingDescription const&);
-    BlockVoxelShapesCullingDescription(BlockVoxelShapesCullingDescription const&);
-    BlockVoxelShapesCullingDescription();
 
 public:
     // virtual functions
@@ -39,25 +33,25 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
 
-    MCNAPI static ::std::string const& SHAPE_DEFAULT();
+    MCAPI static ::std::string const& SHAPE_DEFAULT();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
 
     // NOLINTEND

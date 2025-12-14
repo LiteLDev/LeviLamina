@@ -10,7 +10,7 @@ class AABB;
 namespace GrassPathConsts {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::AABB const& GRASS_PATH_BLOCK_VISUAL_SHAPE();
+MCAPI ::AABB const& GRASS_PATH_BLOCK_VISUAL_SHAPE();
 // NOLINTEND
 
 } // namespace GrassPathConsts

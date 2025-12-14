@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStackNetManagerScreen;
+// clang-format on
+
 class ItemStackNetManagerScreenStack {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk748f6f;
+    ::ll::TypedStorage<8, 40, ::std::deque<::std::unique_ptr<::ItemStackNetManagerScreen>>> mStack;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackNetManagerScreenStack& operator=(ItemStackNetManagerScreenStack const&);
-    ItemStackNetManagerScreenStack(ItemStackNetManagerScreenStack const&);
-    ItemStackNetManagerScreenStack();
 };

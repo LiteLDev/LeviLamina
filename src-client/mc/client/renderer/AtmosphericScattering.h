@@ -158,8 +158,7 @@ public:
             operator=(::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings&&);
 
             MCNAPI ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings&
-            operator=(
-                ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const&
+            operator=(::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const&
             );
 
             MCNAPI ~AtmosphericScatteringSettings();

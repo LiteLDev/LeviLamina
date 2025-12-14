@@ -9,6 +9,7 @@
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
+struct BlockCustomComponentData;
 namespace cereal { class DynamicValue; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -17,17 +18,11 @@ class BlockCustomComponentsComponentDescription : public ::BlockComponentDescrip
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2d324e;
-    ::ll::UntypedStorage<1, 1>  mUnkb0463b;
-    ::ll::UntypedStorage<1, 1>  mUnk9ef4ac;
-    ::ll::UntypedStorage<1, 1>  mUnk99a643;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockCustomComponentData>> mCustomComponentData;
+    ::ll::TypedStorage<1, 1, bool>                                       mIsCustomComponentsV1;
+    ::ll::TypedStorage<1, 1, bool>                                       mHasPlayerInteractEvent;
+    ::ll::TypedStorage<1, 1, bool>                                       mHasPlayerPlacingEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockCustomComponentsComponentDescription& operator=(BlockCustomComponentsComponentDescription const&);
-    BlockCustomComponentsComponentDescription(BlockCustomComponentsComponentDescription const&);
-    BlockCustomComponentsComponentDescription();
 
 public:
     // virtual functions
@@ -48,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addCustomComponent(
+    MCAPI void addCustomComponent(
         ::std::string_view     compName,
         ::cereal::DynamicValue compData,
         bool                   overridePlayerInteract,
@@ -59,27 +54,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
 
     // NOLINTEND

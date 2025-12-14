@@ -6,8 +6,8 @@ struct PlayerStartItemCooldownPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3089c8;
-    ::ll::UntypedStorage<4, 4>  mUnkb4118c;
+    ::ll::TypedStorage<8, 32, ::std::string> mItemCategory;
+    ::ll::TypedStorage<4, 4, int>            mDurationTicks;
     // NOLINTEND
 
 public:
@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::PlayerStartItemCooldownPacketPayload& operator=(::PlayerStartItemCooldownPacketPayload&&);
+    MCFOLD ::PlayerStartItemCooldownPacketPayload& operator=(::PlayerStartItemCooldownPacketPayload&&);
 
-    MCNAPI ~PlayerStartItemCooldownPacketPayload();
+    MCAPI ~PlayerStartItemCooldownPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

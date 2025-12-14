@@ -2,18 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/input/enums/FocusImpact.h"
+
 struct KeyboardKeyBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk483432;
-    ::ll::UntypedStorage<4, 4>  mUnk658c84;
-    ::ll::UntypedStorage<1, 1>  mUnk9b62cf;
+    ::ll::TypedStorage<8, 32, ::std::string> buttonName;
+    ::ll::TypedStorage<4, 4, int>            keyNum;
+    ::ll::TypedStorage<1, 1, ::FocusImpact>  focusImpact;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    KeyboardKeyBinding& operator=(KeyboardKeyBinding const&);
-    KeyboardKeyBinding(KeyboardKeyBinding const&);
-    KeyboardKeyBinding();
 };

@@ -49,23 +49,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JigsawStructureBuilder(::std::string_view key, ::HashedString type);
+    MCAPI JigsawStructureBuilder(::std::string_view key, ::HashedString type);
 
-    MCNAPI ::br::worldgen::JigsawStructure build();
+    MCAPI ::br::worldgen::JigsawStructure build();
 
-    MCNAPI ::br::worldgen::JigsawStructureBuilder& startPool(::std::string_view key);
+    MCAPI ::br::worldgen::JigsawStructureBuilder& startPool(::std::string_view key);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view key, ::HashedString type);
+    MCAPI void* $ctor(::std::string_view key, ::HashedString type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

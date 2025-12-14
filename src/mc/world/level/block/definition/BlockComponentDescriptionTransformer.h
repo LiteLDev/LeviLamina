@@ -10,9 +10,14 @@ namespace SharedTypes::v1_21_110::BlockDefinition { struct BlockComponents; }
 
 struct BlockComponentDescriptionTransformer {
 public:
+    // BlockComponentDescriptionTransformer inner types define
+    using TransformFunction = ::std::function<
+        void(::BlockComponentDescription const&, ::SharedTypes::v1_21_110::BlockDefinition::BlockComponents&)>;
+
+public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<
+    MCAPI static ::std::unordered_map<
         ::std::string_view,
         ::std::function<
             void(::BlockComponentDescription const&, ::SharedTypes::v1_21_110::BlockDefinition::BlockComponents&)>>&

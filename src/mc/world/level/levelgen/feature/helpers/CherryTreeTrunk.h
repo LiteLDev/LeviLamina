@@ -3,6 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/IntRange.h"
+#include "mc/util/WeightedRandom.h"
+#include "mc/world/level/block/BlockDescriptor.h"
+#include "mc/world/level/levelgen/feature/helpers/ITreeCanopyWrapper.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeTrunk.h"
 
 // auto generated forward declare list
@@ -20,21 +24,15 @@ class CherryTreeTrunk : public ::ITreeTrunk {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 184> mUnk3fe2aa;
-    ::ll::UntypedStorage<4, 4>   mUnkc38599;
-    ::ll::UntypedStorage<8, 24>  mUnk746501;
-    ::ll::UntypedStorage<8, 24>  mUnk4885d6;
-    ::ll::UntypedStorage<4, 8>   mUnkb9269c;
-    ::ll::UntypedStorage<4, 8>   mUnk5e2d08;
-    ::ll::UntypedStorage<4, 8>   mUnk25263b;
-    ::ll::UntypedStorage<8, 8>   mUnkc7acc9;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                                 mTrunkBlockDescriptor;
+    ::ll::TypedStorage<4, 4, int>                                                 mBaseHeight;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                                 mHeightIntervals;
+    ::ll::TypedStorage<8, 24, ::std::vector<::WeightedRandom::WeighedRandomItem>> mTreeTypeWeights;
+    ::ll::TypedStorage<4, 8, ::IntRange>                                          mBranchHorizontalLength;
+    ::ll::TypedStorage<4, 8, ::IntRange>                                          mBranchStartOffsetFromTop;
+    ::ll::TypedStorage<4, 8, ::IntRange>                                          mBranchEndOffsetFromTop;
+    ::ll::TypedStorage<8, 8, ::ITreeCanopyWrapper>                                mBranchCanopy;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CherryTreeTrunk& operator=(CherryTreeTrunk const&);
-    CherryTreeTrunk(CherryTreeTrunk const&);
-    CherryTreeTrunk();
 
 public:
     // virtual functions
@@ -57,7 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockPos _generateBranch(
+    MCAPI ::BlockPos _generateBranch(
         ::IBlockWorldGenAPI&            target,
         ::Block const&                  trunkBlock,
         ::Block const&                  sidewaysTrunkBlock,
@@ -74,9 +72,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getTreeHeight(::Random& random) const;
+    MCAPI int $getTreeHeight(::Random& random) const;
 
-    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,

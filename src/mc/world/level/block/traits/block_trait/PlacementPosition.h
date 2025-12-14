@@ -33,26 +33,20 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk53c349;
-        ::ll::UntypedStorage<1, 1> mUnkee58d8;
+        ::ll::TypedStorage<1, 1, bool> mBlockFace;
+        ::ll::TypedStorage<1, 1, bool> mVerticalHalf;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        EnabledStates& operator=(EnabledStates const&);
-        EnabledStates(EnabledStates const&);
-        EnabledStates();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+        MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void fromStringVector(
+        MCAPI static void fromStringVector(
             ::BlockTrait::PlacementPosition::EnabledStates& instance,
             ::std::vector<::std::string> const&             states
         );
@@ -77,7 +71,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
             ::gsl::not_null<::Block const*> block,
             ::Actor const&,
             ::BlockPos const&,
@@ -113,7 +107,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
             ::gsl::not_null<::Block const*> block,
             ::Actor const&,
             ::BlockPos const&,
@@ -134,13 +128,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnk2d431d;
+    ::ll::TypedStorage<1, 2, ::BlockTrait::PlacementPosition::EnabledStates> mStates;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PlacementPosition& operator=(PlacementPosition const&);
-    PlacementPosition(PlacementPosition const&);
     PlacementPosition();
 
 public:
@@ -158,39 +150,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlacementPosition(bool blockFace, bool verticalHalf);
+    MCAPI PlacementPosition(bool blockFace, bool verticalHalf);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BlockTrait::PlacementPosition BlockFace();
+    MCAPI static ::BlockTrait::PlacementPosition BlockFace();
 
-    MCNAPI static ::BlockTrait::PlacementPosition VerticalHalf();
+    MCAPI static ::BlockTrait::PlacementPosition VerticalHalf();
 
-    MCNAPI static ::std::string const& getName();
+    MCAPI static ::std::string const& getName();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(bool blockFace, bool verticalHalf);
+    MCAPI void* $ctor(bool blockFace, bool verticalHalf);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const&);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const&);
 
-    MCNAPI void $applyToBlockType(::BlockType& blockType) const;
+    MCAPI void $applyToBlockType(::BlockType& blockType) const;
 
 
     // NOLINTEND

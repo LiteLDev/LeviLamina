@@ -19,14 +19,14 @@ class TextPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkab94fb;
-    ::ll::UntypedStorage<8, 32> mUnkbb20f6;
-    ::ll::UntypedStorage<8, 32> mUnk978ee5;
-    ::ll::UntypedStorage<8, 40> mUnke96a68;
-    ::ll::UntypedStorage<8, 24> mUnk8d0123;
-    ::ll::UntypedStorage<1, 1>  mUnkc6bb41;
-    ::ll::UntypedStorage<8, 32> mUnk274c5d;
-    ::ll::UntypedStorage<8, 32> mUnkaf9c9a;
+    ::ll::TypedStorage<1, 1, ::TextPacketType>                mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mAuthor;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mMessage;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mFilteredMessage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>   params;
+    ::ll::TypedStorage<1, 1, bool>                            mLocalize;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mXuid;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mPlatformId;
     // NOLINTEND
 
 public:

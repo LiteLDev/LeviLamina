@@ -123,7 +123,11 @@ namespace Social { class User; }
 namespace mce { class Camera; }
 namespace mce { class TexturePtr; }
 namespace mce { struct ViewportInfo; }
+class BuildActionIntention;
+class ClientInputHandler;
+class ClientMoveInputHandler;
 class ItemInHandRenderer;
+class KeyboardManager;
 class LevelRenderer;
 class LevelRendererCameraProxy;
 class LightTexture;
@@ -136,11 +140,8 @@ struct ActorResourceDefinitionGroup;
 struct BlockActorRenderDispatcher;
 struct BlockCullingGroup;
 struct BlockTessellator;
-struct BuildActionIntention;
 struct CachedScenes;
 struct CameraRegistry;
-struct ClientInputHandler;
-struct ClientMoveInputHandler;
 struct ClientRequirementVerifier;
 struct ClientScriptManager;
 struct DeferredLighting;
@@ -163,7 +164,6 @@ struct ISettingsRegistry;
 struct ITTSEventManager;
 struct IUIRepository;
 struct ItemRenderer;
-struct KeyboardManager;
 struct LatencyGraphDisplay;
 struct LegacyClientNetworkHandler;
 struct ListenerState;
@@ -491,7 +491,7 @@ public:
 
     virtual void preFrameTick() /*override*/;
 
-    virtual bool update(bool isInWorld) /*override*/;
+    virtual bool update(bool isInitFinished) /*override*/;
 
     virtual void endFrame() /*override*/;
 
@@ -1582,7 +1582,7 @@ public:
 
     MCNAPI void $preFrameTick();
 
-    MCNAPI bool $update(bool isInWorld);
+    MCNAPI bool $update(bool isInitFinished);
 
     MCNAPI void $endFrame();
 

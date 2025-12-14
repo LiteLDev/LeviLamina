@@ -6,36 +6,46 @@
 #include "mc/client/game/IConfigListener.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 
 // auto generated forward declare list
 // clang-format off
+class ClientMoveInputHandler;
 class IAdvancedGraphicsOptions;
 class IClientInstance;
-struct ClientMoveInputHandler;
+class InputHandler;
+class MinecraftBindingFactoryMap;
+class MinecraftInputHandlerProxy;
+class MinecraftInputMappingFactoryMap;
+class MouseMapper;
+class SplitscreenJoinListener;
 struct Config;
 struct IGameModuleApp;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class MinecraftInputHandler : public ::IConfigListener, public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkabd271;
-    ::ll::UntypedStorage<4, 4>   mUnkd5b215;
-    ::ll::UntypedStorage<8, 24>  mUnk271442;
-    ::ll::UntypedStorage<8, 24>  mUnkb64156;
-    ::ll::UntypedStorage<8, 8>   mUnk105ebb;
-    ::ll::UntypedStorage<8, 8>   mUnk9cf787;
-    ::ll::UntypedStorage<8, 8>   mUnk71a0e7;
-    ::ll::UntypedStorage<8, 128> mUnkb46b99;
-    ::ll::UntypedStorage<8, 8>   mUnk58f243;
-    ::ll::UntypedStorage<8, 8>   mUnk27c6b6;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::InputHandler>>                          mInputHandler;
+    ::ll::TypedStorage<4, 4, int>                                                        mControllerId;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>          mClient;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions>> mAdvancedGraphicsOptions;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftBindingFactoryMap>>            mBindingFactoryMap;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftInputMappingFactoryMap>>       mMappingFactoryMap;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SplitscreenJoinListener>>               mSplitscreenJoinListener;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::IClientInstance&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+                                                                              mAnyInputSubscription;
+    ::ll::TypedStorage<8, 8, ::MouseMapper*>                                  mMouseMapper;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftInputHandlerProxy>> mProxy;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    MinecraftInputHandler& operator=(MinecraftInputHandler const&);
-    MinecraftInputHandler(MinecraftInputHandler const&);
     MinecraftInputHandler();
 
 public:
@@ -55,23 +65,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MinecraftInputHandler(
+    MCAPI MinecraftInputHandler(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          client,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
     );
 
-    MCNAPI void _registerMenuButton(::std::string const& buttonName, bool suspendable);
+    MCAPI void _registerMenuButton(::std::string const& buttonName, bool suspendable);
 
-    MCNAPI void init(::IGameModuleApp& gameModuleApp);
+    MCAPI void init(::IGameModuleApp& gameModuleApp);
 
-    MCNAPI ::ClientMoveInputHandler*
+    MCAPI ::ClientMoveInputHandler*
     initClientInput(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client, ::IGameModuleApp& gameModuleApp);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          client,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
     );
@@ -80,17 +90,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onConfigChanged(::Config const& c);
+    MCAPI void $onConfigChanged(::Config const& c);
 
-    MCNAPI void $_registerInputHandlers();
+    MCAPI void $_registerInputHandlers();
 
-    MCNAPI void $_registerDebugInputHandlers();
+    MCAPI void $_registerDebugInputHandlers();
     // NOLINTEND
 
 public:

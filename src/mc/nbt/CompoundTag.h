@@ -48,13 +48,13 @@ public:
 
     virtual ::std::string toString() const /*override*/;
 
-    virtual void print(::std::string const& prefix, ::PrintStream& out) const /*override*/;
+    virtual void print(::std::string const& prefix_, ::PrintStream& out) const /*override*/;
 
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
 
     virtual uint64 hash() const /*override*/;
 
-    virtual bool equals(::Tag const& obj) const /*override*/;
+    virtual bool equals(::Tag const& rhs) const /*override*/;
     // NOLINTEND
 
 public:
@@ -156,13 +156,13 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
+    MCAPI void $print(::std::string const& prefix_, ::PrintStream& out) const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
     MCAPI uint64 $hash() const;
 
-    MCAPI bool $equals(::Tag const& obj) const;
+    MCAPI bool $equals(::Tag const& rhs) const;
 
 
     // NOLINTEND

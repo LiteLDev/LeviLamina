@@ -34,7 +34,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
+    MCAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
 
 
     // NOLINTEND

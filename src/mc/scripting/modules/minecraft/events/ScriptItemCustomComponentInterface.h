@@ -14,6 +14,10 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemCustomComponentInterface : public ::ScriptModuleMinecraft::ScriptCustomComponentScriptInterface<7> {
 public:
+    // ScriptItemCustomComponentInterface inner types define
+    using Flags = ::ScriptModuleMinecraft::ScriptItemCustomComponentClosureFlags;
+
+public:
     // prevent constructor by default
     ScriptItemCustomComponentInterface& operator=(ScriptItemCustomComponentInterface const&);
     ScriptItemCustomComponentInterface(ScriptItemCustomComponentInterface const&);
@@ -22,21 +26,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemCustomComponentInterface(::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&);
+    MCAPI ScriptItemCustomComponentInterface(::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&);
 
-    MCNAPI ~ScriptItemCustomComponentInterface();
+    MCAPI ~ScriptItemCustomComponentInterface();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

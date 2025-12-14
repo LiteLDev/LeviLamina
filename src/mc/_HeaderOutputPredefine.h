@@ -150,6 +150,16 @@ struct evp_md_ctx_st;
 struct asn1_string_st;
 struct bio_st;
 struct XUser;
+struct tagPOINT;
+namespace winrt
+{
+    struct event_token;
+    
+    namespace Windows::UI::Text::Core
+    {
+        struct CoreTextEditContext;
+    }
+}
 
 using uchar  = uint8_t;
 using ushort = uint16_t;
@@ -335,6 +345,18 @@ struct TypedStorageImpl<Align, Size, ::sockaddr_in> {
 };
 template <size_t Align, size_t Size, class... Ts>
 struct TypedStorageImpl<Align, Size, ::Puv::SlicedLoader<Ts...>> {
+    using type = ::ll::UntypedStorage<Align, Size>;
+};
+template <size_t Align, size_t Size>
+struct TypedStorageImpl<Align, Size, ::winrt::event_token> {
+    using type = ::ll::UntypedStorage<Align, Size>;
+};
+template <size_t Align, size_t Size>
+struct TypedStorageImpl<Align, Size, ::winrt::Windows::UI::Text::Core::CoreTextEditContext> {
+    using type = ::ll::UntypedStorage<Align, Size>;
+};
+template <size_t Align, size_t Size>
+struct TypedStorageImpl<Align, Size, ::tagPOINT> {
     using type = ::ll::UntypedStorage<Align, Size>;
 };
 

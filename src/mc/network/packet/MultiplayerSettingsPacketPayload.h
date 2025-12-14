@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/packet/MultiplayerSettingsPacketType.h"
+
 struct MultiplayerSettingsPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka17974;
+    ::ll::TypedStorage<4, 4, ::MultiplayerSettingsPacketType> mPacketType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MultiplayerSettingsPacketPayload& operator=(MultiplayerSettingsPacketPayload const&);
-    MultiplayerSettingsPacketPayload(MultiplayerSettingsPacketPayload const&);
-    MultiplayerSettingsPacketPayload();
 };

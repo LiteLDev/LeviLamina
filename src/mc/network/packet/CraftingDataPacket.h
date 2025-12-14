@@ -10,26 +10,24 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class CraftingDataEntry;
 class ReadOnlyBinaryStream;
 class Recipes;
+struct ContainerMixDataEntry;
+struct MaterialReducerDataEntry;
+struct PotionMixDataEntry;
 // clang-format on
 
 class CraftingDataPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk17699b;
-    ::ll::UntypedStorage<8, 24> mUnkcf7f80;
-    ::ll::UntypedStorage<8, 24> mUnk376e54;
-    ::ll::UntypedStorage<8, 24> mUnk4a57ca;
-    ::ll::UntypedStorage<1, 1>  mUnkb6ac96;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CraftingDataEntry>>        mCraftingEntries;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PotionMixDataEntry>>       mPotionMixEntries;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ContainerMixDataEntry>>    mContainerMixEntries;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MaterialReducerDataEntry>> mMaterialReducerEntries;
+    ::ll::TypedStorage<1, 1, bool>                                       mClearRecipes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CraftingDataPacket& operator=(CraftingDataPacket const&);
-    CraftingDataPacket(CraftingDataPacket const&);
-    CraftingDataPacket();
 
 public:
     // virtual functions

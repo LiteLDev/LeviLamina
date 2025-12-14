@@ -23,20 +23,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemChargeEvent(::ItemChargeEvent&&);
+    MCAPI ItemChargeEvent(::ItemChargeEvent&&);
 
-    MCNAPI ItemChargeEvent(::ItemChargeEvent const&);
+    MCAPI ItemChargeEvent(::ItemChargeEvent const&);
 
-    MCNAPI ItemChargeEvent(::ItemInstance const& inst, ::WeakEntityRef actor, int useDuration);
+    MCAPI ItemChargeEvent(::ItemInstance const& inst, ::WeakEntityRef actor, int useDuration);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemChargeEvent&&);
+    MCAPI void* $ctor(::ItemChargeEvent&&);
 
-    MCNAPI void* $ctor(::ItemChargeEvent const&);
+    MCAPI void* $ctor(::ItemChargeEvent const&);
 
-    MCNAPI void* $ctor(::ItemInstance const& inst, ::WeakEntityRef actor, int useDuration);
+    MCAPI void* $ctor(::ItemInstance const& inst, ::WeakEntityRef actor, int useDuration);
     // NOLINTEND
 };

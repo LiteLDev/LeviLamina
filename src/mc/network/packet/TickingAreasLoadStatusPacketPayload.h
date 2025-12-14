@@ -6,12 +6,6 @@ struct TickingAreasLoadStatusPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk198fa4;
+    ::ll::TypedStorage<1, 1, bool> mWaitingForPreload;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TickingAreasLoadStatusPacketPayload& operator=(TickingAreasLoadStatusPacketPayload const&);
-    TickingAreasLoadStatusPacketPayload(TickingAreasLoadStatusPacketPayload const&);
-    TickingAreasLoadStatusPacketPayload();
 };

@@ -18,14 +18,8 @@ class SHFillerCorridor : public ::StrongholdPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk85234d;
+    ::ll::TypedStorage<4, 4, int> steps;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHFillerCorridor& operator=(SHFillerCorridor const&);
-    SHFillerCorridor(SHFillerCorridor const&);
-    SHFillerCorridor();
 
 public:
     // virtual functions
@@ -40,7 +34,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BoundingBox findPieceBox(
+    MCAPI static ::BoundingBox findPieceBox(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&,
         int footX,
@@ -53,9 +47,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
 
 
     // NOLINTEND

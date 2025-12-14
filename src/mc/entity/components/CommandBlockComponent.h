@@ -31,11 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CommandBlockComponent(::CommandBlockComponent&&);
+    MCAPI CommandBlockComponent(::CommandBlockComponent&&);
 
-    MCNAPI void initFromDefinition(::Actor& owner);
+    MCAPI void initFromDefinition(::Actor& owner);
 
-    MCNAPI void onCommandBlockUpdate(
+    MCAPI void onCommandBlockUpdate(
         ::Actor&                                   owner,
         ::std::string const&                       command,
         bool                                       trackOutput,
@@ -44,15 +44,14 @@ public:
         bool                                       executeOnFirstTick
     );
 
-    MCNAPI void
-    readAdditionalSaveData(::Actor& owner, ::CompoundTag const& entityTag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& entityTag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI_C void setTrackOutput(::Actor& owner, bool trackOutput);
+    MCAPI_C void setTrackOutput(::Actor& owner, bool trackOutput);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CommandBlockComponent&&);
+    MCAPI void* $ctor(::CommandBlockComponent&&);
     // NOLINTEND
 };

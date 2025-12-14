@@ -2,12 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { class UUID; }
+// clang-format on
+
 struct EmoteListPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkfc6f07;
-    ::ll::UntypedStorage<8, 24> mUnk3cec0c;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>            mRuntimeId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::mce::UUID>> mEmotePieceIds;
     // NOLINTEND
 
 public:
@@ -19,20 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::EmoteListPacketPayload& operator=(::EmoteListPacketPayload&&);
+    MCAPI ::EmoteListPacketPayload& operator=(::EmoteListPacketPayload&&);
 
-    MCNAPI ~EmoteListPacketPayload();
+    MCAPI ~EmoteListPacketPayload();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static int const& MAX_EMOTE_PIECE_IDS();
+    MCAPI static int const& MAX_EMOTE_PIECE_IDS();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

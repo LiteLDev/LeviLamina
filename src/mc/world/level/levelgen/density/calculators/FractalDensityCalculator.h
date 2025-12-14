@@ -16,17 +16,11 @@ class FractalDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk31ecd1;
-    ::ll::UntypedStorage<4, 4> mUnk64214d;
-    ::ll::UntypedStorage<4, 4> mUnk1ccf29;
-    ::ll::UntypedStorage<4, 4> mUnkd23911;
+    ::ll::TypedStorage<2, 2, ushort const> mInput;
+    ::ll::TypedStorage<4, 4, float const>  mGain;
+    ::ll::TypedStorage<4, 4, int const>    mOctaves;
+    ::ll::TypedStorage<4, 4, int const>    mLacunarity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FractalDensityCalculator& operator=(FractalDensityCalculator const&);
-    FractalDensityCalculator(FractalDensityCalculator const&);
-    FractalDensityCalculator();
 
 public:
     // virtual functions

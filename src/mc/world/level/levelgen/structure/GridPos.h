@@ -6,13 +6,7 @@ struct GridPos {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk693c88;
-    ::ll::UntypedStorage<4, 4> mUnk7b9656;
+    ::ll::TypedStorage<4, 4, int> x;
+    ::ll::TypedStorage<4, 4, int> z;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GridPos& operator=(GridPos const&);
-    GridPos(GridPos const&);
-    GridPos();
 };

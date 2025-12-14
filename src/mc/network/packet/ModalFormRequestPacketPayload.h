@@ -6,8 +6,8 @@ struct ModalFormRequestPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk2bdf00;
-    ::ll::UntypedStorage<8, 32> mUnk4afd30;
+    ::ll::TypedStorage<4, 4, uint>           mFormId;
+    ::ll::TypedStorage<8, 32, ::std::string> mFormJSON;
     // NOLINTEND
 
 public:
@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ModalFormRequestPacketPayload& operator=(::ModalFormRequestPacketPayload&&);
+    MCFOLD ::ModalFormRequestPacketPayload& operator=(::ModalFormRequestPacketPayload&&);
 
-    MCNAPI ~ModalFormRequestPacketPayload();
+    MCAPI ~ModalFormRequestPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -24,10 +24,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::LevelChunkMetaData> _registerMetaData(::LevelChunkMetaData const& candidateMetaData);
+    MCAPI ::std::shared_ptr<::LevelChunkMetaData> _registerMetaData(::LevelChunkMetaData const& candidateMetaData);
 
-    MCNAPI void checkAndSerialize(::std::function<void(::std::string const&)> postSerializeWriteCallback) const;
+    MCAPI void checkAndSerialize(::std::function<void(::std::string const&)> postSerializeWriteCallback) const;
 
-    MCNAPI void deserialize(::IDataInput& stream);
+    MCAPI void deserialize(::IDataInput& stream);
     // NOLINTEND
 };

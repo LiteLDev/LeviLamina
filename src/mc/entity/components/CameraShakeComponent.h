@@ -37,10 +37,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void initialize(::Random& random);
+    MCAPI_C void initialize(::Random& random);
 
-    MCNAPI_C ::CameraShakeComponent& operator=(::CameraShakeComponent&&);
+    MCAPI_C ::CameraShakeComponent& operator=(::CameraShakeComponent&&);
 
-    MCNAPI_C bool queueShakeEvent(float intensity, float duration);
+    MCAPI_C bool queueShakeEvent(float intensity, float duration);
     // NOLINTEND
 };

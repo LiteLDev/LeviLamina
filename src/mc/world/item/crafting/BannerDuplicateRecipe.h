@@ -18,13 +18,11 @@ class BannerDuplicateRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke750dc;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BannerDuplicateRecipe& operator=(BannerDuplicateRecipe const&);
-    BannerDuplicateRecipe(BannerDuplicateRecipe const&);
     BannerDuplicateRecipe();
 
 public:

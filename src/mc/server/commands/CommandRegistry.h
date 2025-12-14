@@ -38,21 +38,21 @@ public:
     struct RegistryState;
     struct SoftEnum;
     class Symbol;
-    struct Overload;
-    struct SemanticInfo;
-    struct SymbolHasher;
-    struct SymbolPairHasher;
-    struct ParseTable;
-    struct ChainedSubcommand;
     struct ConstrainedValue;
-    struct Enum;
     struct Factorization;
     struct LexicalToken;
     struct OptionalParameterChain;
+    struct Overload;
     struct ParamSymbols;
-    struct ParseRule;
     struct ParseToken;
+    struct ChainedSubcommand;
+    struct Enum;
+    struct ParseRule;
+    struct SemanticInfo;
     struct Signature;
+    struct SymbolHasher;
+    struct SymbolPairHasher;
+    struct ParseTable;
     class Parser;
     // clang-format on
 
@@ -210,116 +210,6 @@ public:
         // NOLINTEND
     };
 
-    struct Overload {
-    public:
-        // Overload inner types define
-        using AllocFunction = ::brstd::copyable_function<::std::unique_ptr<::Command>() const>;
-
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 8, ::CommandVersion>                                                  version;
-        ::ll::TypedStorage<8, 64, ::brstd::copyable_function<::std::unique_ptr<::Command>() const>> alloc;
-        ::ll::TypedStorage<8, 24, ::std::vector<::CommandParameterData>>                            params;
-        ::ll::TypedStorage<4, 4, int>                                                               versionOffset;
-        ::ll::TypedStorage<1, 1, bool>                                                              isChaining;
-        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>>                         paramsSymbol;
-        // NOLINTEND
-    };
-
-    struct SemanticInfo {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                                      mIsValid;
-        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> mConstrainedParams;
-        ::ll::TypedStorage<8, 32, ::std::string>                            mSoftEnumText;
-        ::ll::TypedStorage<8, 32, ::std::string>                            mSoftEnumEscapeCharExceptions;
-        ::ll::TypedStorage<8, 16, ::std::set<::CommandRegistry::Symbol>>    mAlreadyCompletedSymbols;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI_C ~SemanticInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI_C void $dtor();
-        // NOLINTEND
-    };
-
-    struct SymbolHasher {};
-
-    struct SymbolPairHasher {};
-
-    struct ParseTable {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<
-            8,
-            16,
-            ::std::map<
-                ::CommandRegistry::Symbol,
-                ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>>
-            first;
-        ::ll::TypedStorage<
-            8,
-            16,
-            ::std::map<
-                ::CommandRegistry::Symbol,
-                ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>>
-            follow;
-        ::ll::TypedStorage<
-            8,
-            72,
-            ::entt::dense_map<
-                ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
-                int,
-                ::CommandRegistry::SymbolPairHasher,
-                ::std::equal_to<void>>>
-                                                             predict;
-        ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> buildDuration;
-        // NOLINTEND
-    };
-
-    struct ChainedSubcommand {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>                         name;
-        ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::CommandRegistry>> type;
-        ::ll::TypedStorage<
-            8,
-            8,
-            bool (::CommandRegistry::*)(
-                void*,
-                ::CommandRegistry::ParseToken const&,
-                ::CommandOrigin const&,
-                int,
-                ::std::string&,
-                ::std::vector<::std::string>&
-            ) const>
-                                                                            parse;
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint64, uint>>> values;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ChainedSubcommand();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
-    };
-
     struct ConstrainedValue {
     public:
         // member variables
@@ -327,40 +217,6 @@ public:
         ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> mValue;
         ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> mEnum;
         ::ll::TypedStorage<8, 24, ::std::vector<uchar>>     mConstraints;
-        // NOLINTEND
-    };
-
-    struct Enum {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>                         name;
-        ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::CommandRegistry>> type;
-        ::ll::TypedStorage<
-            8,
-            8,
-            bool (::CommandRegistry::*)(
-                void*,
-                ::CommandRegistry::ParseToken const&,
-                ::CommandOrigin const&,
-                int,
-                ::std::string&,
-                ::std::vector<::std::string>&
-            ) const>
-                                                                              parse;
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint64, uint64>>> values;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~Enum();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -403,6 +259,23 @@ public:
         ::ll::TypedStorage<4, 4, int>                       parameterCount;
         ::ll::TypedStorage<4, 4, int>                       followingRuleIndex;
         ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> paramSymbol;
+        // NOLINTEND
+    };
+
+    struct Overload {
+    public:
+        // Overload inner types define
+        using AllocFunction = ::brstd::copyable_function<::std::unique_ptr<::Command>() const>;
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 8, ::CommandVersion>                                                  version;
+        ::ll::TypedStorage<8, 64, ::brstd::copyable_function<::std::unique_ptr<::Command>() const>> alloc;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandParameterData>>                            params;
+        ::ll::TypedStorage<4, 4, int>                                                               versionOffset;
+        ::ll::TypedStorage<1, 1, bool>                                                              isChaining;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>>                         paramsSymbol;
         // NOLINTEND
     };
 
@@ -450,6 +323,93 @@ public:
         // NOLINTEND
     };
 
+    struct ParseToken {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry::ParseToken>> child;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry::ParseToken>> next;
+        ::ll::TypedStorage<8, 8, ::CommandRegistry::ParseToken*>                   parent;
+        ::ll::TypedStorage<8, 8, char const*>                                      text;
+        ::ll::TypedStorage<4, 4, uint>                                             length;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                        type;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::std::string toString() const;
+        // NOLINTEND
+    };
+
+    struct ChainedSubcommand {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                         name;
+        ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::CommandRegistry>> type;
+        ::ll::TypedStorage<
+            8,
+            8,
+            bool (::CommandRegistry::*)(
+                void*,
+                ::CommandRegistry::ParseToken const&,
+                ::CommandOrigin const&,
+                int,
+                ::std::string&,
+                ::std::vector<::std::string>&
+            ) const>
+                                                                            parse;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint64, uint>>> values;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ChainedSubcommand();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
+    struct Enum {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                         name;
+        ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::CommandRegistry>> type;
+        ::ll::TypedStorage<
+            8,
+            8,
+            bool (::CommandRegistry::*)(
+                void*,
+                ::CommandRegistry::ParseToken const&,
+                ::CommandOrigin const&,
+                int,
+                ::std::string&,
+                ::std::vector<::std::string>&
+            ) const>
+                                                                              parse;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint64, uint64>>> values;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~Enum();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
     struct ParseRule {
     public:
         // member variables
@@ -477,22 +437,27 @@ public:
         // NOLINTEND
     };
 
-    struct ParseToken {
+    struct SemanticInfo {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry::ParseToken>> child;
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry::ParseToken>> next;
-        ::ll::TypedStorage<8, 8, ::CommandRegistry::ParseToken*>                   parent;
-        ::ll::TypedStorage<8, 8, char const*>                                      text;
-        ::ll::TypedStorage<4, 4, uint>                                             length;
-        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                        type;
+        ::ll::TypedStorage<1, 1, bool>                                      mIsValid;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> mConstrainedParams;
+        ::ll::TypedStorage<8, 32, ::std::string>                            mSoftEnumText;
+        ::ll::TypedStorage<8, 32, ::std::string>                            mSoftEnumEscapeCharExceptions;
+        ::ll::TypedStorage<8, 16, ::std::set<::CommandRegistry::Symbol>>    mAlreadyCompletedSymbols;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::string toString() const;
+        MCAPI_C ~SemanticInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI_C void $dtor();
         // NOLINTEND
     };
 
@@ -539,6 +504,41 @@ public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct SymbolHasher {};
+
+    struct SymbolPairHasher {};
+
+    struct ParseTable {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::std::map<
+                ::CommandRegistry::Symbol,
+                ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>>
+            first;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::std::map<
+                ::CommandRegistry::Symbol,
+                ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>>
+            follow;
+        ::ll::TypedStorage<
+            8,
+            72,
+            ::entt::dense_map<
+                ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
+                int,
+                ::CommandRegistry::SymbolPairHasher,
+                ::std::equal_to<void>>>
+                                                             predict;
+        ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> buildDuration;
         // NOLINTEND
     };
 

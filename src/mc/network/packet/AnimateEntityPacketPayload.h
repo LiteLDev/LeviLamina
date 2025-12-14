@@ -2,17 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorRuntimeID;
+// clang-format on
+
 struct AnimateEntityPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc7bfd8;
-    ::ll::UntypedStorage<8, 32> mUnk50137d;
-    ::ll::UntypedStorage<8, 32> mUnkf5c160;
-    ::ll::UntypedStorage<8, 32> mUnk6e733f;
-    ::ll::UntypedStorage<2, 2>  mUnk63300b;
-    ::ll::UntypedStorage<8, 32> mUnkd84d71;
-    ::ll::UntypedStorage<4, 4>  mUnkbe7bc6;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorRuntimeID>> mRuntimeIds;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mAnimation;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mNextState;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mStopExpression;
+    ::ll::TypedStorage<2, 2, ::MolangVersion>                  mStopExpressionVersion;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mController;
+    ::ll::TypedStorage<4, 4, float>                            mBlendOutTime;
     // NOLINTEND
 
 public:
@@ -23,24 +31,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AnimateEntityPacketPayload(::AnimateEntityPacketPayload&&);
+    MCAPI AnimateEntityPacketPayload(::AnimateEntityPacketPayload&&);
 
-    MCNAPI ::AnimateEntityPacketPayload& operator=(::AnimateEntityPacketPayload&&);
+    MCAPI ::AnimateEntityPacketPayload& operator=(::AnimateEntityPacketPayload&&);
 
-    MCNAPI ::AnimateEntityPacketPayload& operator=(::AnimateEntityPacketPayload const&);
+    MCAPI ::AnimateEntityPacketPayload& operator=(::AnimateEntityPacketPayload const&);
 
-    MCNAPI ~AnimateEntityPacketPayload();
+    MCAPI ~AnimateEntityPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::AnimateEntityPacketPayload&&);
+    MCAPI void* $ctor(::AnimateEntityPacketPayload&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ReflectionCtx.h"
 #include "mc/deps/resource_processing/category/CategoryLoader.h"
 #include "mc/resources/JsonBetaState.h"
 
@@ -11,11 +12,19 @@
 class ActorDefinition;
 class ActorDefinitionDescriptor;
 class BedrockLoadContext;
+class HashedString;
 class IJsonDefinitionSerializer;
+class SemVersion;
 struct DeserializeDataSettings;
 struct LegacyGoalDefinition;
 namespace ActorMigratedUtils { struct ActorLoaderTraits; }
+namespace ActorMigratedUtils { struct CustomUpgradeData; }
+namespace SharedTypes::Legacy { struct ActorDocumentCorrected; }
+namespace SharedTypes::v1_21_100 { struct ActorDocument; }
+namespace SharedTypes::v1_21_110 { struct ActorDocument; }
 namespace SharedTypes::v1_21_120 { struct ActorDefinitions; }
+namespace SharedTypes::v1_21_120 { struct ActorDocument; }
+namespace SharedTypes::v1_21_90 { struct ActorDocument; }
 namespace cereal { class DynamicValue; }
 // clang-format on
 
@@ -27,46 +36,98 @@ public:
         BetaFeaturesNotEnabled = 1,
     };
 
+    using FillDefinitionCb = ::std::function<
+        ::ActorMigratedDefinitionFactory::
+            InitResult(::ActorDefinitionDescriptor&, ::SharedTypes::v1_21_120::ActorDefinitions&, ::JsonBetaState)>;
+
+    using FillDescriptionCb = ::ActorMigratedDefinitionFactory::InitResult (*)(
+        ::ActorDefinition&,
+        ::ActorDefinitionDescriptor&,
+        ::SharedTypes::v1_21_120::ActorDefinitions&
+    );
+
+    using LoaderPtr = ::std::unique_ptr<::Bedrock::Resources::CategoryLoader<::ActorMigratedUtils::ActorLoaderTraits>>;
+
+    using PuvLoader = ::Bedrock::Resources::CategoryLoader<::ActorMigratedUtils::ActorLoaderTraits>;
+
+    using SerializerPtr = ::std::unique_ptr<::IJsonDefinitionSerializer>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnkc17365;
-    ::ll::UntypedStorage<8, 64>  mUnk322222;
-    ::ll::UntypedStorage<8, 24>  mUnk43953f;
-    ::ll::UntypedStorage<8, 24>  mUnk24e3b7;
-    ::ll::UntypedStorage<8, 96>  mUnke046e6;
-    ::ll::UntypedStorage<8, 16>  mUnka1ca7f;
-    ::ll::UntypedStorage<8, 8>   mUnk77c2be;
+    ::ll::TypedStorage<8, 120, ::cereal::ReflectionCtx> mCerealContext;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::unique_ptr<::IJsonDefinitionSerializer>>>
+        mDefinitionSerializers;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::ActorMigratedDefinitionFactory::InitResult (*)(
+            ::ActorDefinition&,
+            ::ActorDefinitionDescriptor&,
+            ::SharedTypes::v1_21_120::ActorDefinitions&
+        )>>
+        mFillActorDescriptionCbs;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::function<::ActorMigratedDefinitionFactory::InitResult(
+            ::ActorDefinitionDescriptor&,
+            ::SharedTypes::v1_21_120::ActorDefinitions&,
+            ::JsonBetaState
+        )>>>
+        mFillActorDefinitionCbs;
+    ::ll::TypedStorage<
+        8,
+        96,
+        ::std::tuple<
+            ::std::vector<void (*)(::Puv::CerealUpgrader<
+                                   ::SharedTypes::Legacy::ActorDocumentCorrected,
+                                   ::SharedTypes::v1_21_90::ActorDocument,
+                                   ::ActorMigratedUtils::CustomUpgradeData const&>&)>,
+            ::std::vector<void (*)(::Puv::CerealUpgrader<
+                                   ::SharedTypes::v1_21_90::ActorDocument,
+                                   ::SharedTypes::v1_21_100::ActorDocument,
+                                   ::ActorMigratedUtils::CustomUpgradeData const&>&)>,
+            ::std::vector<void (*)(::Puv::CerealUpgrader<
+                                   ::SharedTypes::v1_21_100::ActorDocument,
+                                   ::SharedTypes::v1_21_110::ActorDocument,
+                                   ::ActorMigratedUtils::CustomUpgradeData const&>&)>,
+            ::std::vector<void (*)(::Puv::CerealUpgrader<
+                                   ::SharedTypes::v1_21_110::ActorDocument,
+                                   ::SharedTypes::v1_21_120::ActorDocument,
+                                   ::ActorMigratedUtils::CustomUpgradeData const&>&)>>>
+                                                                        mLegacyUpgradeCallbacks;
+    ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::SemVersion>> mVersionedDefinitions;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Bedrock::Resources::CategoryLoader<::ActorMigratedUtils::ActorLoaderTraits>>>
+        mDocumentLoader;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorMigratedDefinitionFactory& operator=(ActorMigratedDefinitionFactory const&);
-    ActorMigratedDefinitionFactory(ActorMigratedDefinitionFactory const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorMigratedDefinitionFactory();
+    MCAPI ActorMigratedDefinitionFactory();
 
-    MCNAPI void _bindActorDocumentTypes();
+    MCAPI void _bindActorDocumentTypes();
 
-    MCNAPI void _initialize();
+    MCAPI void _initialize();
 
-    MCNAPI ::IJsonDefinitionSerializer* _tryGetDefinitionSerializer(::std::string_view name) const;
+    MCAPI ::IJsonDefinitionSerializer* _tryGetDefinitionSerializer(::std::string_view name) const;
 
-    MCNAPI void resetLoader();
+    MCAPI void resetLoader();
 
-    MCNAPI void
+    MCAPI void
     setLoaderCustomData(::BedrockLoadContext customParseData, ::DeserializeDataSettings customUpgradeData) const;
 
-    MCNAPI ~ActorMigratedDefinitionFactory();
+    MCAPI ~ActorMigratedDefinitionFactory();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::LegacyGoalDefinition _parseLegacyGoalDefinition(
+    MCAPI static ::LegacyGoalDefinition _parseLegacyGoalDefinition(
         ::std::string                    name,
         ::cereal::DynamicValue const&    def,
         ::DeserializeDataSettings const& settings
@@ -76,12 +137,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

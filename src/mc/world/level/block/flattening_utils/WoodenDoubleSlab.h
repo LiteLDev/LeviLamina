@@ -10,7 +10,7 @@ class Block;
 namespace FlatteningUtils::WoodenDoubleSlab {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
+MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 // NOLINTEND
 
 } // namespace FlatteningUtils::WoodenDoubleSlab

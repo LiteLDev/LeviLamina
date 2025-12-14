@@ -11,7 +11,7 @@ class ActorMigratedDefinitionFactory;
 namespace VanillaGoalUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerGoalsToFactory(::ActorGoalFactory& factory, ::ActorMigratedDefinitionFactory& migratedFactory);
+MCAPI void registerGoalsToFactory(::ActorGoalFactory& factory, ::ActorMigratedDefinitionFactory& migratedFactory);
 // NOLINTEND
 
 } // namespace VanillaGoalUtility

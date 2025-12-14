@@ -9,13 +9,14 @@
 // auto generated forward declare list
 // clang-format off
 class AABB;
+class Actor;
 // clang-format on
 
 class GetCollisionShapeActorProxy : public ::GetCollisionShapeInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd7fbd7;
+    ::ll::TypedStorage<8, 8, ::Actor const&> mActor;
     // NOLINTEND
 
 public:
@@ -53,25 +54,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $getFeetAttachPosY() const;
+    MCAPI float $getFeetAttachPosY() const;
 
-    MCNAPI bool $canDescendThroughBlock() const;
+    MCAPI bool $canDescendThroughBlock() const;
 
-    MCNAPI float $getFallDistance() const;
+    MCAPI float $getFallDistance() const;
 
-    MCNAPI ::ActorType $getEntityTypeId() const;
+    MCAPI ::ActorType $getEntityTypeId() const;
 
-    MCNAPI bool $isWearingLeatherBoots() const;
+    MCAPI bool $isWearingLeatherBoots() const;
 
-    MCNAPI bool $hasLightWeightFamilyTag() const;
+    MCAPI bool $hasLightWeightFamilyTag() const;
 
-    MCNAPI bool $isWorldBuilder() const;
+    MCAPI bool $isWorldBuilder() const;
 
-    MCNAPI ::AABB const& $getAABB() const;
+    MCAPI ::AABB const& $getAABB() const;
 
-    MCNAPI bool $isRiding() const;
+    MCAPI bool $isRiding() const;
 
-    MCNAPI bool $hasPassenger() const;
+    MCAPI bool $hasPassenger() const;
 
 
     // NOLINTEND

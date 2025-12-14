@@ -14,16 +14,14 @@ struct TickingAreaDescription;
 
 class TickingAreaListBase {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb205b3;
-    // NOLINTEND
+    // TickingAreaListBase inner types define
+    using RequeueAreaFunc = ::std::function<void(::ITickingArea const&)>;
 
 public:
-    // prevent constructor by default
-    TickingAreaListBase& operator=(TickingAreaListBase const&);
-    TickingAreaListBase(TickingAreaListBase const&);
-    TickingAreaListBase();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ITickingArea>>> mTickingAreas;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -40,30 +38,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI uint countEntityTickingAreas() const;
+    MCAPI uint countEntityTickingAreas() const;
 
-    MCNAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasContaining(::BlockPos const& position);
+    MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasContaining(::BlockPos const& position);
 
-    MCNAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasNamed(::std::string const& name) const;
+    MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasNamed(::std::string const& name) const;
 
-    MCNAPI ::std::shared_ptr<::ITickingArea> getAreaFor(::ActorUniqueID const& entityId) const;
+    MCAPI ::std::shared_ptr<::ITickingArea> getAreaFor(::ActorUniqueID const& entityId) const;
 
-    MCNAPI ::std::vector<::TickingAreaDescription> getStandaloneTickingAreaDescriptions() const;
+    MCAPI ::std::vector<::TickingAreaDescription> getStandaloneTickingAreaDescriptions() const;
 
-    MCNAPI bool hasTickingAreaNamed(::std::string const& name) const;
+    MCAPI bool hasTickingAreaNamed(::std::string const& name) const;
 
-    MCNAPI void processRemoves();
+    MCAPI void processRemoves();
 
-    MCNAPI ::std::vector<::TickingAreaDescription> removeAllStandaloneAreas(::LevelStorage& levelStorage);
+    MCAPI ::std::vector<::TickingAreaDescription> removeAllStandaloneAreas(::LevelStorage& levelStorage);
 
-    MCNAPI ::std::vector<::TickingAreaDescription>
+    MCAPI ::std::vector<::TickingAreaDescription>
     removeAreas(::std::vector<::std::shared_ptr<::ITickingArea>> const& areasToRemove, ::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $removeDistantEntityAreasAndCheckForRemoved(
+    MCAPI bool $removeDistantEntityAreasAndCheckForRemoved(
         ::std::vector<::Vec3> const&                 playerPositions,
         ::std::function<void(::ITickingArea const&)> requeue,
         ::LevelStorage&                              levelStorage

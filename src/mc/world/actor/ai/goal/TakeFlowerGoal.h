@@ -29,22 +29,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64>  mUnk23ec8e;
-        ::ll::UntypedStorage<4, 4>   mUnkbb045f;
-        ::ll::UntypedStorage<4, 4>   mUnke048dc;
-        ::ll::UntypedStorage<4, 4>   mUnk3c2b8a;
-        ::ll::UntypedStorage<4, 12>  mUnk11f388;
-        ::ll::UntypedStorage<4, 4>   mUnk69b042;
-        ::ll::UntypedStorage<4, 4>   mUnkbea83f;
-        ::ll::UntypedStorage<4, 4>   mUnke4408c;
-        ::ll::UntypedStorage<8, 104> mUnk9f473f;
+        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mFilters;
+        ::ll::TypedStorage<4, 4, float>                      mSpeedModifier;
+        ::ll::TypedStorage<4, 4, float>                      mMinPickupFlowerWaitSeconds;
+        ::ll::TypedStorage<4, 4, float>                      mMaxPickupFlowerWaitSeconds;
+        ::ll::TypedStorage<4, 12, ::Vec3>                    mSearchArea;
+        ::ll::TypedStorage<4, 4, float>                      mMaxRotationX;
+        ::ll::TypedStorage<4, 4, float>                      mMaxHeadRotationY;
+        ::ll::TypedStorage<4, 4, float>                      mMinDistanceToTarget;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnTakeFlower;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TakeFlowerDefinition& operator=(TakeFlowerDefinition const&);
-        TakeFlowerDefinition(TakeFlowerDefinition const&);
-        TakeFlowerDefinition();
 
     public:
         // virtual functions
@@ -55,7 +49,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TakeFlowerGoal::TakeFlowerDefinition>>& root
@@ -114,17 +108,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

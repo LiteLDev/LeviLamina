@@ -10,7 +10,7 @@ class Vec3;
 namespace PlayDefaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::Vec3 const& FRIEND_SEARCH_AREA();
+MCAPI ::Vec3 const& FRIEND_SEARCH_AREA();
 // NOLINTEND
 
 } // namespace PlayDefaults

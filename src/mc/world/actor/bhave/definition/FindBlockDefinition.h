@@ -15,17 +15,11 @@ class FindBlockDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk9a8a00;
-    ::ll::UntypedStorage<8, 32> mUnk827821;
-    ::ll::UntypedStorage<4, 4>  mUnkaa033c;
-    ::ll::UntypedStorage<8, 32> mUnk54c5d3;
+    ::ll::TypedStorage<8, 32, ::std::string> mBlockName;
+    ::ll::TypedStorage<8, 32, ::std::string> mBlockNameId;
+    ::ll::TypedStorage<4, 4, int>            mSearchRadius;
+    ::ll::TypedStorage<8, 32, ::std::string> mSearchRadiusId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FindBlockDefinition& operator=(FindBlockDefinition const&);
-    FindBlockDefinition(FindBlockDefinition const&);
-    FindBlockDefinition();
 
 public:
     // virtual functions
@@ -38,13 +32,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
 
 
     // NOLINTEND

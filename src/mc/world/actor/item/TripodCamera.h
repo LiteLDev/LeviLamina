@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/Mob.h"
 
@@ -20,15 +21,13 @@ class TripodCamera : public ::Mob {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd137d8;
-    ::ll::UntypedStorage<1, 1>  mUnk9b536d;
-    ::ll::UntypedStorage<4, 4>  mUnkccdabb;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
+    ::ll::TypedStorage<1, 1, bool>             mActivated;
+    ::ll::TypedStorage<4, 4, int>              mCountdown;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    TripodCamera& operator=(TripodCamera const&);
-    TripodCamera(TripodCamera const&);
     TripodCamera();
 
 public:

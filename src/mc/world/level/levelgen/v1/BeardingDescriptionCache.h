@@ -2,20 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
+
 class BeardingDescriptionCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk5237dc;
-    ::ll::UntypedStorage<4, 4>  mUnkb4e738;
-    ::ll::UntypedStorage<4, 4>  mUnk43021d;
-    ::ll::UntypedStorage<4, 4>  mUnk814dbd;
-    ::ll::UntypedStorage<4, 4>  mUnkafcd81;
+    ::ll::TypedStorage<4, 24, ::BoundingBox> mPieceBounds;
+    ::ll::TypedStorage<4, 4, int>            mPieceBaseY;
+    ::ll::TypedStorage<4, 4, int>            mXCenter;
+    ::ll::TypedStorage<4, 4, int>            mZCenter;
+    ::ll::TypedStorage<4, 4, float>          mMaxRadius;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BeardingDescriptionCache& operator=(BeardingDescriptionCache const&);
-    BeardingDescriptionCache(BeardingDescriptionCache const&);
-    BeardingDescriptionCache();
 };

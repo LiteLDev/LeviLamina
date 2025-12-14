@@ -20,8 +20,8 @@ class SubChunkPacket : public ::Packet {
 public:
     // SubChunkPacket inner types declare
     // clang-format off
-    struct SubChunkPosOffset;
     struct HeightmapData;
+    struct SubChunkPosOffset;
     struct SubChunkPacketData;
     // clang-format on
 
@@ -44,16 +44,6 @@ public:
         SuccessAllAir         = 6,
     };
 
-    struct SubChunkPosOffset {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, char> mX;
-        ::ll::TypedStorage<1, 1, char> mY;
-        ::ll::TypedStorage<1, 1, char> mZ;
-        // NOLINTEND
-    };
-
     struct HeightmapData {
     public:
         // member variables
@@ -67,9 +57,19 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCNAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
+        MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
 
-        MCNAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
+        MCAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
+        // NOLINTEND
+    };
+
+    struct SubChunkPosOffset {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, char> mX;
+        ::ll::TypedStorage<1, 1, char> mY;
+        ::ll::TypedStorage<1, 1, char> mZ;
         // NOLINTEND
     };
 

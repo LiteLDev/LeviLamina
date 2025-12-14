@@ -72,7 +72,7 @@ public:
 
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     virtual void removeItem(int slot, int count) /*override*/;
 
@@ -104,94 +104,94 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BeaconBlockActor(::BlockPos const& pos, bool permanentlyRendered);
+    MCAPI BeaconBlockActor(::BlockPos const& pos, bool permanentlyRendered);
 
-    MCNAPI void _applyEffects(::BlockSource& region);
+    MCAPI void _applyEffects(::BlockSource& region);
 
-    MCNAPI void
+    MCAPI void
     _notifyBeamSectionsChange(::BlockSource& region, ::std::vector<::BeaconBeamSection> const& oldBeamSections);
 
-    MCNAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI bool _setEffect(int effectId, int& outEffectId, int& outTier);
+    MCAPI bool _setEffect(int effectId, int& outEffectId, int& outTier);
 
-    MCNAPI void checkAchievement(::BlockSource& region);
+    MCAPI void checkAchievement(::BlockSource& region);
 
-    MCNAPI void checkShape(::BlockSource& region);
+    MCAPI void checkShape(::BlockSource& region);
 
-    MCNAPI void generateBeamSections(::BlockSource& region);
+    MCAPI void generateBeamSections(::BlockSource& region);
 
-    MCNAPI ::CompoundTag getBeaconData(::SaveContext const& saveContext);
+    MCAPI ::CompoundTag getBeaconData(::SaveContext const& saveContext);
 
-    MCNAPI bool isEffectAvailable(int effectId) const;
+    MCAPI bool isEffectAvailable(int effectId) const;
 
-    MCNAPI bool setSecondaryEffect(int effectId);
+    MCAPI bool setSecondaryEffect(int effectId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BlockColor _getMediumColor(::BlockType const& medium);
+    MCAPI static ::BlockColor _getMediumColor(::BlockType const& medium);
 
-    MCNAPI static bool isPaymentItem(::ItemDescriptor const& pItem);
+    MCAPI static bool isPaymentItem(::ItemDescriptor const& pItem);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos, bool permanentlyRendered);
+    MCAPI void* $ctor(::BlockPos const& pos, bool permanentlyRendered);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $hasAlphaLayer() const;
+    MCFOLD bool $hasAlphaLayer() const;
 
-    MCNAPI bool $isPermanentlyRendered() const;
+    MCFOLD bool $isPermanentlyRendered() const;
 
-    MCNAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
+    MCAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
 
-    MCNAPI ::ItemStack const& $getItem(int slot) const;
+    MCFOLD ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCNAPI void $removeItem(int slot, int count);
+    MCFOLD void $removeItem(int slot, int count);
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCNAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCNAPI void $startOpen(::Actor&);
+    MCFOLD void $startOpen(::Actor&);
 
-    MCNAPI void $stopOpen(::Actor& actor);
+    MCFOLD void $stopOpen(::Actor& actor);
 
-    MCNAPI void $serverInitItemStackIds(
+    MCFOLD void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCNAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCNAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

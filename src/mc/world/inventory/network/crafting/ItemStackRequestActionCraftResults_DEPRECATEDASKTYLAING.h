@@ -12,6 +12,7 @@
 class BinaryStream;
 class BlockPalette;
 class ItemInstance;
+class NetworkItemInstanceDescriptor;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -20,18 +21,13 @@ class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING : public ::ItemSta
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk5c8ddd;
-    ::ll::UntypedStorage<8, 24> mUnk77cf9a;
-    ::ll::UntypedStorage<8, 24> mUnk85931f;
+    ::ll::TypedStorage<1, 1, uchar>                                           mNumCrafts;
+    ::ll::TypedStorage<8, 24, ::std::vector<::NetworkItemInstanceDescriptor>> mCraftResults;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>>                  mLoadedCraftResults;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING&
-    operator=(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&);
-    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(
-        ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&
-    );
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
 
 public:

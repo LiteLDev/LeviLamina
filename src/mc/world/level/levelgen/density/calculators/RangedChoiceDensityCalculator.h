@@ -16,18 +16,12 @@ class RangedChoiceDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk5879d9;
-    ::ll::UntypedStorage<4, 4> mUnk5bbc68;
-    ::ll::UntypedStorage<4, 4> mUnkcb2d48;
-    ::ll::UntypedStorage<2, 2> mUnk740755;
-    ::ll::UntypedStorage<2, 2> mUnk147b47;
+    ::ll::TypedStorage<2, 2, ushort> mChoiceInput;
+    ::ll::TypedStorage<4, 4, float>  mMinInclusive;
+    ::ll::TypedStorage<4, 4, float>  mMaxExclusive;
+    ::ll::TypedStorage<2, 2, ushort> mInRangeInput;
+    ::ll::TypedStorage<2, 2, ushort> mOutOfRangeInput;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RangedChoiceDensityCalculator& operator=(RangedChoiceDensityCalculator const&);
-    RangedChoiceDensityCalculator(RangedChoiceDensityCalculator const&);
-    RangedChoiceDensityCalculator();
 
 public:
     // virtual functions

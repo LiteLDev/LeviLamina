@@ -18,15 +18,9 @@ class SHStraight : public ::StrongholdPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke895dd;
-    ::ll::UntypedStorage<1, 1> mUnkd846d6;
+    ::ll::TypedStorage<1, 1, bool> leftChild;
+    ::ll::TypedStorage<1, 1, bool> rightChild;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHStraight& operator=(SHStraight const&);
-    SHStraight(SHStraight const&);
-    SHStraight();
 
 public:
     // virtual functions
@@ -47,7 +41,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
+    MCAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         int                                                 footX,
@@ -61,11 +55,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $addChildren(
+    MCAPI void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random

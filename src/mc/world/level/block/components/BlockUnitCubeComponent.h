@@ -11,6 +11,6 @@ struct BlockUnitCubeComponent {
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>& mBlockSchematic();
+    MCAPI static ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>& mBlockSchematic();
     // NOLINTEND
 };

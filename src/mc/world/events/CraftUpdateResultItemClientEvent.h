@@ -27,20 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C CraftUpdateResultItemClientEvent(::CraftUpdateResultItemClientEvent const&);
+    MCAPI_C CraftUpdateResultItemClientEvent(::CraftUpdateResultItemClientEvent const&);
 
-    MCNAPI_C ~CraftUpdateResultItemClientEvent();
+    MCAPI_C ~CraftUpdateResultItemClientEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::CraftUpdateResultItemClientEvent const&);
+    MCFOLD_C void* $ctor(::CraftUpdateResultItemClientEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

@@ -15,15 +15,9 @@ class PlaceBlockNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk13f3e6;
-    ::ll::UntypedStorage<1, 1> mUnk3fd05f;
+    ::ll::TypedStorage<1, 1, bool> mRightMouseDown;
+    ::ll::TypedStorage<1, 1, bool> mPreActionDone;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlaceBlockNode& operator=(PlaceBlockNode const&);
-    PlaceBlockNode(PlaceBlockNode const&);
-    PlaceBlockNode();
 
 public:
     // virtual functions
@@ -37,7 +31,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
+    MCAPI ::BehaviorStatus $tick(::Actor& owner);
 #endif
 
 

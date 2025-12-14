@@ -2,15 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/scores/ObjectiveSortOrder.h"
+
 struct SetDisplayObjectivePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6a2236;
-    ::ll::UntypedStorage<8, 32> mUnk9ccaba;
-    ::ll::UntypedStorage<8, 32> mUnk4196cc;
-    ::ll::UntypedStorage<8, 32> mUnka7d931;
-    ::ll::UntypedStorage<1, 1>  mUnk8e932c;
+    ::ll::TypedStorage<8, 32, ::std::string>       mDisplaySlotName;
+    ::ll::TypedStorage<8, 32, ::std::string>       mObjectiveName;
+    ::ll::TypedStorage<8, 32, ::std::string>       mObjectiveDisplayName;
+    ::ll::TypedStorage<8, 32, ::std::string>       mCriteriaName;
+    ::ll::TypedStorage<1, 1, ::ObjectiveSortOrder> mSortOrder;
     // NOLINTEND
 
 public:
@@ -21,16 +24,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SetDisplayObjectivePacketPayload& operator=(::SetDisplayObjectivePacketPayload&&);
+    MCAPI ::SetDisplayObjectivePacketPayload& operator=(::SetDisplayObjectivePacketPayload&&);
 
-    MCNAPI ::SetDisplayObjectivePacketPayload& operator=(::SetDisplayObjectivePacketPayload const&);
+    MCAPI ::SetDisplayObjectivePacketPayload& operator=(::SetDisplayObjectivePacketPayload const&);
 
-    MCNAPI ~SetDisplayObjectivePacketPayload();
+    MCAPI ~SetDisplayObjectivePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

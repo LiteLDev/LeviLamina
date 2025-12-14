@@ -17,15 +17,9 @@ class OceanMonumentWingRoom : public ::OceanMonumentPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk28f997;
-    ::ll::UntypedStorage<1, 1> mUnk29e2e4;
+    ::ll::TypedStorage<4, 4, int>  mMainDesign;
+    ::ll::TypedStorage<1, 1, bool> mIsRightWing;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OceanMonumentWingRoom& operator=(OceanMonumentWingRoom const&);
-    OceanMonumentWingRoom(OceanMonumentWingRoom const&);
-    OceanMonumentWingRoom();
 
 public:
     // virtual functions
@@ -42,11 +36,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
 
     // NOLINTEND

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_80/item/ComponentItemComponentData.h"
+#include "mc/world/item/components/ComponentItemDeprecatedComponentData_v1_20_80.h"
+#include "mc/world/item/components/ComponentItemDescriptionData_v1_21_60.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -13,9 +18,9 @@ struct ComponentItemData_v1_21_80 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88>   mUnk748390;
-    ::ll::UntypedStorage<8, 1104> mUnkb54ec5;
-    ::ll::UntypedStorage<8, 840>  mUnk2dc578;
+    ::ll::TypedStorage<8, 88, ::ComponentItemDescriptionData_v1_21_60>               mDescription;
+    ::ll::TypedStorage<8, 1104, ::SharedTypes::v1_21_80::ComponentItemComponentData> mItemComponents;
+    ::ll::TypedStorage<8, 840, ::ComponentItemDeprecatedComponentData_v1_20_80>      mDeprecatedItemComponents;
     // NOLINTEND
 
 public:
@@ -26,37 +31,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemData_v1_21_80(::ComponentItemData_v1_21_80 const&);
+    MCAPI ComponentItemData_v1_21_80(::ComponentItemData_v1_21_80 const&);
 
-    MCNAPI ~ComponentItemData_v1_21_80();
+    MCAPI ~ComponentItemData_v1_21_80();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void moveDeprecatedData(::ComponentItemData_v1_21_60& oldData, ::ComponentItemData_v1_21_80& newData);
+    MCAPI static void moveDeprecatedData(::ComponentItemData_v1_21_60& oldData, ::ComponentItemData_v1_21_80& newData);
 
-    MCNAPI static void
+    MCAPI static void
     upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_21_60, ::ComponentItemData_v1_21_80, nullptr_t>& upgrader);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ComponentItemData_v1_21_80 const&);
+    MCFOLD void* $ctor(::ComponentItemData_v1_21_80 const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

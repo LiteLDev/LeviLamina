@@ -4,17 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/block/tessellation_pipeline/VolumeOf.h"
+#include "mc/world/level/biome/biomeproviders/BlendedMultiNoiseBiomeProvider.h"
 #include "mc/world/level/biome/source/BiomeSource.h"
 #include "mc/world/level/biome/source/BiomeSourceType.h"
+#include "mc/world/level/dimension/DimensionHeightRange.h"
 
 // auto generated forward declare list
 // clang-format off
 class Biome;
 class BiomeArea;
-class BlendedMultiNoiseBiomeProvider;
 class BoundingBox;
 class ChunkLocalNoiseCache;
-class DimensionHeightRange;
 class LevelChunk;
 struct BiomeHashType;
 struct BiomeIdType;
@@ -25,14 +25,12 @@ class BiomeSource3d : public ::BiomeSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnkd8b875;
-    ::ll::UntypedStorage<2, 4>   mUnkdca619;
+    ::ll::TypedStorage<8, 216, ::BlendedMultiNoiseBiomeProvider> mBiomeProvider;
+    ::ll::TypedStorage<2, 4, ::DimensionHeightRange const>       mDimensionHeight;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BiomeSource3d& operator=(BiomeSource3d const&);
-    BiomeSource3d(BiomeSource3d const&);
     BiomeSource3d();
 
 public:
@@ -63,43 +61,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeSource3d(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
+    MCAPI BiomeSource3d(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
 
-    MCNAPI ::ClientBlockPipeline::VolumeOf<::Biome const*>
+    MCAPI ::ClientBlockPipeline::VolumeOf<::Biome const*>
     getBiomeVolumeToFill(::LevelChunk const& levelChunk, ::ChunkLocalNoiseCache const& chunkLocalNoiseCache) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
+    MCAPI void* $ctor(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const;
+    MCAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const;
 
-    MCNAPI ::BiomeArea $getBiomeArea(::BoundingBox const& box, uint scale) const;
+    MCFOLD ::BiomeArea $getBiomeArea(::BoundingBox const& box, uint scale) const;
 
-    MCNAPI ::BiomeArea
+    MCAPI ::BiomeArea
     $getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const;
 
-    MCNAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const;
+    MCAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const;
 
-    MCNAPI bool $hasBiomeById(::BiomeIdType id) const;
+    MCAPI bool $hasBiomeById(::BiomeIdType id) const;
 
-    MCNAPI bool $hasBiomeByNameHash(::BiomeHashType hash) const;
+    MCAPI bool $hasBiomeByNameHash(::BiomeHashType hash) const;
 
-    MCNAPI ::BiomeSourceType const $getType() const;
+    MCFOLD ::BiomeSourceType const $getType() const;
 
-    MCNAPI ::Biome const* $_getBiome(::GetBiomeOptions const& getBiomeOptions) const;
+    MCAPI ::Biome const* $_getBiome(::GetBiomeOptions const& getBiomeOptions) const;
 
 
     // NOLINTEND

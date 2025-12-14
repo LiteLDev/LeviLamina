@@ -36,18 +36,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI IsSolidMobNearbyComponent(::IsSolidMobNearbyComponent&&);
+    MCAPI IsSolidMobNearbyComponent(::IsSolidMobNearbyComponent&&);
 
-    MCNAPI IsSolidMobNearbyComponent(::IsSolidMobNearbyComponent const&);
+    MCAPI IsSolidMobNearbyComponent(::IsSolidMobNearbyComponent const&);
 
-    MCNAPI ::IsSolidMobNearbyComponent& operator=(::IsSolidMobNearbyComponent&&);
+    MCAPI ::IsSolidMobNearbyComponent& operator=(::IsSolidMobNearbyComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::IsSolidMobNearbyComponent&&);
+    MCAPI void* $ctor(::IsSolidMobNearbyComponent&&);
 
-    MCNAPI void* $ctor(::IsSolidMobNearbyComponent const&);
+    MCAPI void* $ctor(::IsSolidMobNearbyComponent const&);
     // NOLINTEND
 };

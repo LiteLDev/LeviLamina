@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _getWaterHeights(
+    MCAPI void _getWaterHeights(
         ::BlockPos testPos,
         short&     groundLevel,
         float&     waterLevel,
@@ -46,13 +46,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI bool $_setWantedPosition();
+    MCAPI bool $_setWantedPosition();
 
 
     // NOLINTEND

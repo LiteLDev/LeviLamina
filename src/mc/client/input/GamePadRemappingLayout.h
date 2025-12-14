@@ -16,16 +16,10 @@ class GamePadRemappingLayout : public ::RemappingLayout {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkba8bff;
-    ::ll::UntypedStorage<1, 1>  mUnk143261;
-    ::ll::UntypedStorage<1, 1>  mUnkff62c4;
+    ::ll::TypedStorage<8, 16, ::std::string_view> mControllerIconPath;
+    ::ll::TypedStorage<1, 1, bool>                mGamepadButtonsXYAreSwapped;
+    ::ll::TypedStorage<1, 1, bool>                mGamepadButtonsABAreSwapped;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GamePadRemappingLayout& operator=(GamePadRemappingLayout const&);
-    GamePadRemappingLayout(GamePadRemappingLayout const&);
-    GamePadRemappingLayout();
 
 public:
     // virtual functions
@@ -54,31 +48,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::string
+    MCAPI_C ::std::string
     _getKeySpriteLocationInternal(int key, bool checkUserConfiguredButtonSwapping, ::IconSize iconSize) const;
 
-    MCNAPI_C ::std::string const _getMappedKeyNameInternal(int key, bool checkUserConfiguredButtonSwapping) const;
+    MCAPI_C ::std::string const _getMappedKeyNameInternal(int key, bool checkUserConfiguredButtonSwapping) const;
 
-    MCNAPI_C void _swapGamepadKeyBindings(int key1, int key2);
+    MCAPI_C void _swapGamepadKeyBindings(int key1, int key2);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::std::string $getMappedKeyName(int key) const;
+    MCAPI ::std::string $getMappedKeyName(int key) const;
 
-    MCNAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
+    MCAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
 
-    MCNAPI ::std::string $getMappedKeyName(::Keymapping const& keyMapping) const;
+    MCAPI ::std::string $getMappedKeyName(::Keymapping const& keyMapping) const;
 
-    MCNAPI ::std::string $getSaveString(::std::string const& action) const;
+    MCAPI ::std::string $getSaveString(::std::string const& action) const;
 
-    MCNAPI int $getAdjustedKey(int key) const;
+    MCAPI int $getAdjustedKey(int key) const;
 
-    MCNAPI ::std::string $getKeySpriteLocation(int key, ::IconSize iconSize) const;
+    MCAPI ::std::string $getKeySpriteLocation(int key, ::IconSize iconSize) const;
 
-    MCNAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
+    MCAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
 #endif
 
 

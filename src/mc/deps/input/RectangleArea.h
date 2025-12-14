@@ -6,21 +6,15 @@ class RectangleArea {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5516f9;
-    ::ll::UntypedStorage<4, 4> mUnk2a58f6;
-    ::ll::UntypedStorage<4, 4> mUnk8868ac;
-    ::ll::UntypedStorage<4, 4> mUnk89600d;
+    ::ll::TypedStorage<4, 4, float> _x0;
+    ::ll::TypedStorage<4, 4, float> _x1;
+    ::ll::TypedStorage<4, 4, float> _y0;
+    ::ll::TypedStorage<4, 4, float> _y1;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RectangleArea& operator=(RectangleArea const&);
-    RectangleArea(RectangleArea const&);
-    RectangleArea();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool isOverlapping(::RectangleArea const& rect) const;
+    MCAPI_C bool isOverlapping(::RectangleArea const& rect) const;
     // NOLINTEND
 };

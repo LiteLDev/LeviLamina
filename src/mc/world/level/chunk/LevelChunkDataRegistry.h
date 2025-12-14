@@ -81,23 +81,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelChunkDataRegistry();
+    MCAPI LevelChunkDataRegistry();
 
-    MCNAPI ::br::LevelChunkDataRegistry& operator=(::br::LevelChunkDataRegistry&& other);
+    MCAPI ::br::LevelChunkDataRegistry& operator=(::br::LevelChunkDataRegistry&& other);
 
-    MCNAPI ~LevelChunkDataRegistry();
+    MCAPI ~LevelChunkDataRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
