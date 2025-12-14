@@ -20,11 +20,11 @@ class Vec2;
 class Vec3;
 namespace mce { class Color; }
 namespace mce { class MaterialPtr; }
+class MinecraftGameplayGraphicsResources;
 class Model;
 class ScreenContext;
 class Tessellator;
 struct ActorResourceDefinition;
-struct MinecraftGameplayGraphicsResources;
 // clang-format on
 
 class ModelPart {

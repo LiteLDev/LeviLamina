@@ -10,8 +10,8 @@
 class BaseLightTextureImageBuilder;
 class Dimension;
 class IClientInstance;
+class MinecraftGameplayGraphicsResources;
 struct FrameUpdateContext;
-struct MinecraftGameplayGraphicsResources;
 namespace mce { class Color; }
 // clang-format on
 
