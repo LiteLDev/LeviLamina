@@ -2,29 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct IngredientSearchInfo;
+// clang-format on
+
 struct IngredientSearchResults {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1b9d47;
-    ::ll::UntypedStorage<4, 4>  mUnkfe87ab;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::IngredientSearchInfo>>> mSearchInfo;
+    ::ll::TypedStorage<4, 4, int>                                                   mTotalCraftable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IngredientSearchResults& operator=(IngredientSearchResults const&);
-    IngredientSearchResults(IngredientSearchResults const&);
-    IngredientSearchResults();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~IngredientSearchResults();
+    MCAPI_C ~IngredientSearchResults();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };

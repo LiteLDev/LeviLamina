@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
+
 struct TakeItemActorPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk11e9b2;
-    ::ll::UntypedStorage<8, 8> mUnk29dc5b;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mItemId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mActorId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TakeItemActorPacketPayload& operator=(TakeItemActorPacketPayload const&);
-    TakeItemActorPacketPayload(TakeItemActorPacketPayload const&);
-    TakeItemActorPacketPayload();
 };

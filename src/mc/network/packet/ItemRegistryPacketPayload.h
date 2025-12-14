@@ -2,28 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ItemData;
+// clang-format on
+
 struct ItemRegistryPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7ab577;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemData>> mItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemRegistryPacketPayload& operator=(ItemRegistryPacketPayload const&);
-    ItemRegistryPacketPayload(ItemRegistryPacketPayload const&);
-    ItemRegistryPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ItemRegistryPacketPayload();
+    MCAPI ~ItemRegistryPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

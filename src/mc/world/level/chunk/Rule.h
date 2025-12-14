@@ -47,13 +47,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
+    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
         ::IBlockSource& region,
         ::BlockPos,
         ::BlockPos                                structurePos,
@@ -62,9 +62,9 @@ public:
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
-    MCNAPI ::br::worldgen::StructureProcessorType $type() const;
+    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

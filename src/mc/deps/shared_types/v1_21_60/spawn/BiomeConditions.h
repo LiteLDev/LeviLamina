@@ -24,8 +24,8 @@ public:
     // NOLINTBEGIN
     MCNAPI BiomeConditions();
 
-    MCNAPI ::SharedTypes::v1_21_60::Spawn::BiomeConditions&
-    operator=(::SharedTypes::v1_21_60::Spawn::BiomeConditions&&);
+    MCNAPI ::SharedTypes::v1_21_60::Spawn::BiomeConditions& operator=(::SharedTypes::v1_21_60::Spawn::BiomeConditions&&
+    );
 
     MCNAPI ::SharedTypes::v1_21_60::Spawn::BiomeConditions&
     operator=(::SharedTypes::v1_21_60::Spawn::BiomeConditions const&);

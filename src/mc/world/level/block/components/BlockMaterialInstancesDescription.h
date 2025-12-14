@@ -6,13 +6,16 @@
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/components/BlockMaterialInstancePackedBools.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
 class Experiments;
+class HashedString;
 class SemVersion;
+struct BlockMaterialInstance;
 namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -30,40 +33,28 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkd404fa;
-        ::ll::UntypedStorage<4, 4>  mUnk560526;
-        ::ll::UntypedStorage<1, 1>  mUnkb5483c;
-        ::ll::UntypedStorage<1, 1>  mUnkc44bf0;
-        ::ll::UntypedStorage<1, 1>  mUnk4f7e4b;
+        ::ll::TypedStorage<8, 32, ::std::string>                     textureName;
+        ::ll::TypedStorage<4, 4, float>                              ambientOcclusion;
+        ::ll::TypedStorage<1, 1, ::BlockRenderLayer>                 renderLayer;
+        ::ll::TypedStorage<1, 1, ::TintMethod>                       tintMethod;
+        ::ll::TypedStorage<1, 1, ::BlockMaterialInstancePackedBools> packedBools;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockMaterialInstanceData& operator=(BlockMaterialInstanceData const&);
-        BlockMaterialInstanceData(BlockMaterialInstanceData const&);
-        BlockMaterialInstanceData();
     };
 
     struct BlockMaterialData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnke0dca5;
-        ::ll::UntypedStorage<8, 40> mUnk6be5e5;
+        ::ll::TypedStorage<8, 32, ::std::string>                                                  materialName;
+        ::ll::TypedStorage<8, 40, ::BlockMaterialInstancesDescription::BlockMaterialInstanceData> materialInstanceData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockMaterialData& operator=(BlockMaterialData const&);
-        BlockMaterialData(BlockMaterialData const&);
-        BlockMaterialData();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk98b178;
-    ::ll::UntypedStorage<8, 64> mUnkfaac49;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::BlockMaterialInstance>> mMaterials;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::string>>           mMaterialMappings;
     // NOLINTEND
 
 public:
@@ -89,11 +80,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockMaterialInstancesDescription();
+    MCAPI BlockMaterialInstancesDescription();
 
-    MCNAPI BlockMaterialInstancesDescription(::BlockMaterialInstancesDescription const&);
+    MCAPI BlockMaterialInstancesDescription(::BlockMaterialInstancesDescription const&);
 
-    MCNAPI BlockMaterialInstancesDescription(
+    MCAPI BlockMaterialInstancesDescription(
         ::std::string const& textureName,
         ::BlockRenderLayer   renderLayer,
         float                ambientOcclusion,
@@ -105,17 +96,17 @@ public:
         bool                 emissive
     );
 
-    MCNAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription&&);
+    MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription&&);
 
-    MCNAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription const&);
+    MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static bool postParseConstraint(
+    MCAPI static bool postParseConstraint(
         ::Experiments const& experiments,
         ::Json::Value const& componentJson,
         ::SemVersion const&  jsonVersion
@@ -125,17 +116,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::BlockMaterialInstancesDescription const&);
+    MCAPI void* $ctor(::BlockMaterialInstancesDescription const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string const& textureName,
         ::BlockRenderLayer   renderLayer,
         float                ambientOcclusion,
@@ -151,25 +142,25 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
 
     // NOLINTEND

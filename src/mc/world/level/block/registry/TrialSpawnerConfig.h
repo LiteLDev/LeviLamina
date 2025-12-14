@@ -5,52 +5,54 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class SpawnData;
+struct TrialSpawnerWeightedLootTable;
 // clang-format on
 
 struct TrialSpawnerConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkb399a8;
-    ::ll::UntypedStorage<4, 4>  mUnkabe3fc;
-    ::ll::UntypedStorage<4, 4>  mUnk2cb48a;
-    ::ll::UntypedStorage<4, 4>  mUnkcf8360;
-    ::ll::UntypedStorage<8, 8>  mUnkdf2560;
-    ::ll::UntypedStorage<4, 4>  mUnk188813;
-    ::ll::UntypedStorage<4, 4>  mUnkda4028;
-    ::ll::UntypedStorage<8, 24> mUnka535e4;
-    ::ll::UntypedStorage<8, 24> mUnk7f6d66;
-    ::ll::UntypedStorage<8, 32> mUnk220541;
-    ::ll::UntypedStorage<8, 32> mUnkaca159;
+    ::ll::TypedStorage<4, 4, float>                                           mTotalMobs;
+    ::ll::TypedStorage<4, 4, float>                                           mSimultaneousMobs;
+    ::ll::TypedStorage<4, 4, float>                                           mTotalMobsAddedPerPlayer;
+    ::ll::TypedStorage<4, 4, float>                                           mSimultaneousMobsAddedPerPlayer;
+    ::ll::TypedStorage<8, 8, uint64>                                          mTargetCooldownLength;
+    ::ll::TypedStorage<4, 4, int>                                             mSpawnRange;
+    ::ll::TypedStorage<4, 4, int>                                             mTicksBetweenSpawns;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SpawnData>>                     mSpawnPotentials;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TrialSpawnerWeightedLootTable>> mLootTables;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mItemsToDropWhenOminous;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mRegistryKey;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TrialSpawnerConfig();
+    MCAPI TrialSpawnerConfig();
 
-    MCNAPI TrialSpawnerConfig(::TrialSpawnerConfig const&);
+    MCAPI TrialSpawnerConfig(::TrialSpawnerConfig const&);
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> asInlineConfig() const;
+    MCAPI ::std::unique_ptr<::CompoundTag> asInlineConfig() const;
 
-    MCNAPI void loadConfig(::CompoundTag const* data);
+    MCAPI void loadConfig(::CompoundTag const* data);
 
-    MCNAPI ::TrialSpawnerConfig& operator=(::TrialSpawnerConfig const&);
+    MCAPI ::TrialSpawnerConfig& operator=(::TrialSpawnerConfig const&);
 
-    MCNAPI ~TrialSpawnerConfig();
+    MCAPI ~TrialSpawnerConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::TrialSpawnerConfig const&);
+    MCAPI void* $ctor(::TrialSpawnerConfig const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -23,14 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::UpdateSubChunkBlocksPacketPayload& operator=(::UpdateSubChunkBlocksPacketPayload&&);
+    MCAPI ::UpdateSubChunkBlocksPacketPayload& operator=(::UpdateSubChunkBlocksPacketPayload&&);
 
-    MCNAPI ~UpdateSubChunkBlocksPacketPayload();
+    MCAPI ~UpdateSubChunkBlocksPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

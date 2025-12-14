@@ -29,11 +29,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _onGameplayUserAdded(::EntityContext& entity);
+    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
 
-    MCNAPI void _onGameplayUserRemoved(::EntityContext& entity);
+    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCNAPI void registerWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCAPI void registerWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
     // NOLINTEND
 
 public:

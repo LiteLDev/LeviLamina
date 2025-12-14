@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/util/FloatRange.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
@@ -13,6 +14,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemDescriptor;
 class Mob;
 class NavigationComponent;
 namespace JsonUtil { class EmptyClass; }
@@ -39,23 +41,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkf951bd;
-        ::ll::UntypedStorage<4, 4>  mUnkca792f;
-        ::ll::UntypedStorage<4, 4>  mUnk408f62;
-        ::ll::UntypedStorage<4, 4>  mUnk7b4fd6;
-        ::ll::UntypedStorage<4, 8>  mUnk835c86;
-        ::ll::UntypedStorage<4, 4>  mUnk35e09f;
-        ::ll::UntypedStorage<4, 4>  mUnkb92dc7;
-        ::ll::UntypedStorage<8, 24> mUnk5db1ed;
-        ::ll::UntypedStorage<4, 4>  mUnkcd10c0;
-        ::ll::UntypedStorage<8, 24> mUnka9f5e1;
+        ::ll::TypedStorage<4, 4, int>                              mSearchWidth;
+        ::ll::TypedStorage<4, 4, int>                              mSearchHeight;
+        ::ll::TypedStorage<4, 4, int>                              mMinPathLength;
+        ::ll::TypedStorage<4, 4, int>                              mMinDistance;
+        ::ll::TypedStorage<4, 8, ::FloatRange>                     mCooldownTime;
+        ::ll::TypedStorage<4, 4, float>                            mScaleFactor;
+        ::ll::TypedStorage<4, 4, float>                            mMaxVelocity;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mPreferredBlocks;
+        ::ll::TypedStorage<4, 4, float>                            mPreferredBlocksChance;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mForbiddenBlocks;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
 
     public:
         // virtual functions
@@ -66,7 +62,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::JumpToBlockGoal::Definition>>&
                 root
@@ -76,7 +72,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -90,16 +86,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkb2bcc9;
-        ::ll::UntypedStorage<4, 12> mUnkdcd117;
-        ::ll::UntypedStorage<4, 4>  mUnk99b073;
+        ::ll::TypedStorage<4, 12, ::BlockPos> targetPos;
+        ::ll::TypedStorage<4, 12, ::Vec3>     velocityVector;
+        ::ll::TypedStorage<4, 4, int>         mWeight;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WeightedJumpToBlockPos& operator=(WeightedJumpToBlockPos const&);
-        WeightedJumpToBlockPos(WeightedJumpToBlockPos const&);
-        WeightedJumpToBlockPos();
     };
 
 public:
@@ -151,47 +141,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit JumpToBlockGoal(::Mob& mob);
+    MCAPI explicit JumpToBlockGoal(::Mob& mob);
 
-    MCNAPI void _clearGoalState();
+    MCAPI void _clearGoalState();
 
-    MCNAPI bool _findCandidateBlocks(::NavigationComponent& navigation);
+    MCAPI bool _findCandidateBlocks(::NavigationComponent& navigation);
 
-    MCNAPI bool _findJumpableBlocks(bool useOnlyPreferredBlocksIfAny);
+    MCAPI bool _findJumpableBlocks(bool useOnlyPreferredBlocksIfAny);
 
-    MCNAPI bool _findTargetBlock();
+    MCAPI bool _findTargetBlock();
 
-    MCNAPI void resetCooldown();
+    MCAPI void resetCooldown();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI bool $canBeInterrupted();
+    MCFOLD bool $canBeInterrupted();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

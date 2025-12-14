@@ -36,17 +36,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ActorUniqueID _findTrustedTarget(::TrustComponent const& trust);
+    MCAPI ::ActorUniqueID _findTrustedTarget(::TrustComponent const& trust);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

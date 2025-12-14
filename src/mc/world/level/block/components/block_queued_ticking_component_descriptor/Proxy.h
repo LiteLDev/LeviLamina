@@ -2,22 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/DefinitionTrigger.h"
+
 namespace BlockQueuedTickingComponentDescriptor {
 
 struct Proxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbe4614;
-    ::ll::UntypedStorage<8, 56> mUnkdad595;
-    ::ll::UntypedStorage<1, 1>  mUnk3358c0;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>  mDelayIntervalRange;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnTimeDown;
+    ::ll::TypedStorage<1, 1, bool>                 mLooping;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Proxy& operator=(Proxy const&);
-    Proxy(Proxy const&);
-    Proxy();
 };
 
 } // namespace BlockQueuedTickingComponentDescriptor

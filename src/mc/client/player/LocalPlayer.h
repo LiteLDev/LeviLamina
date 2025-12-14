@@ -383,7 +383,7 @@ public:
 
     virtual bool isActorRelevant(::Actor const& actor) /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     virtual void checkMovementStats(::Vec3 const& d) /*override*/;
 
@@ -415,7 +415,7 @@ public:
 
     virtual void setBehaviorCommandStatus(::std::string const& name, ::BehaviorStatus status) /*override*/;
 
-    virtual void _emitCriticalHitParticles(::Actor& entity) /*override*/;
+    virtual void _emitCriticalHitParticles(::Actor& actor) /*override*/;
 
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
     // NOLINTEND
@@ -666,7 +666,7 @@ public:
 
     MCFOLD bool $isActorRelevant(::Actor const& actor);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $checkMovementStats(::Vec3 const& d);
 
@@ -697,7 +697,7 @@ public:
 
     MCAPI void $setBehaviorCommandStatus(::std::string const& name, ::BehaviorStatus status);
 
-    MCAPI void $_emitCriticalHitParticles(::Actor& entity);
+    MCAPI void $_emitCriticalHitParticles(::Actor& actor);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 #endif

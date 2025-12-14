@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
 
 // auto generated forward declare list
@@ -16,15 +17,9 @@ class FossilFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 184> mUnka77810;
-    ::ll::UntypedStorage<4, 4>   mUnkba069e;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mOreBlockDescriptor;
+    ::ll::TypedStorage<4, 4, int>                 mMaxEmptyCorners;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FossilFeature& operator=(FossilFeature const&);
-    FossilFeature(FossilFeature const&);
-    FossilFeature();
 
 public:
     // virtual functions
@@ -37,13 +32,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_LOCATION_FOSSIL();
+    MCAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_LOCATION_FOSSIL();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
 
 
     // NOLINTEND

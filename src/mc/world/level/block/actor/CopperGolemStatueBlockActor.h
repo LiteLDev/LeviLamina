@@ -11,7 +11,7 @@ class SerializedActorBlockActor;
 namespace CopperGolemStatueBlockActor {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::unique_ptr<::SerializedActorBlockActor> create(::BlockPos const& pos);
+MCAPI ::std::unique_ptr<::SerializedActorBlockActor> create(::BlockPos const& pos);
 // NOLINTEND
 
 } // namespace CopperGolemStatueBlockActor

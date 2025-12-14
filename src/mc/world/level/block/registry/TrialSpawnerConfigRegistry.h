@@ -11,25 +11,20 @@ class TrialSpawnerConfigRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk2d6f91;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::TrialSpawnerConfig>> mAliasesToConfig;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrialSpawnerConfigRegistry& operator=(TrialSpawnerConfigRegistry const&);
-    TrialSpawnerConfigRegistry(TrialSpawnerConfigRegistry const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TrialSpawnerConfigRegistry();
+    MCAPI TrialSpawnerConfigRegistry();
 
-    MCNAPI ::TrialSpawnerConfig const& getConfig(::std::string const& registryKey) const;
+    MCAPI ::TrialSpawnerConfig const& getConfig(::std::string const& registryKey) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };

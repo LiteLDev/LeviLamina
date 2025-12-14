@@ -18,14 +18,8 @@ class SHLibrary : public ::StrongholdPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk76f366;
+    ::ll::TypedStorage<1, 1, bool> isTall;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHLibrary& operator=(SHLibrary const&);
-    SHLibrary(SHLibrary const&);
-    SHLibrary();
 
 public:
     // virtual functions
@@ -40,7 +34,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
+    MCAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         int                                                 footX,
@@ -54,9 +48,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
 
     // NOLINTEND

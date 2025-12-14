@@ -27,13 +27,11 @@ class FeaturePoolElement : public ::StructurePoolElement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkba215a;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeature;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    FeaturePoolElement& operator=(FeaturePoolElement const&);
-    FeaturePoolElement(FeaturePoolElement const&);
     FeaturePoolElement();
 
 public:
@@ -65,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FeaturePoolElement(
+    MCAPI FeaturePoolElement(
         ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
         ::WeakRef<::IFeature>                                      feature
     );
@@ -74,19 +72,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
+    MCAPI void*
     $ctor(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::WeakRef<::IFeature> feature);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockPos $getSize(::Rotation rotation) const;
+    MCFOLD ::BlockPos $getSize(::Rotation rotation) const;
 
-    MCNAPI ::std::vector<::JigsawBlockInfo>
+    MCAPI ::std::vector<::JigsawBlockInfo>
     $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 
-    MCNAPI bool $place(
+    MCAPI bool $place(
         ::BlockSource&                                                                  region,
         ::BlockPos                                                                      position,
         ::Rotation                                                                      rotation,
@@ -96,9 +94,9 @@ public:
         ::BlockPos                                                                      refPos
     ) const;
 
-    MCNAPI ::StructurePoolElementType $type() const;
+    MCFOLD ::StructurePoolElementType $type() const;
 
-    MCNAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> $createMetadata() const;
+    MCAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> $createMetadata() const;
 
 
     // NOLINTEND

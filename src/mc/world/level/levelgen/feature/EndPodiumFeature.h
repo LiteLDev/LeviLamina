@@ -16,14 +16,8 @@ class EndPodiumFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb86daf;
+    ::ll::TypedStorage<1, 1, bool> mActive;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EndPodiumFeature& operator=(EndPodiumFeature const&);
-    EndPodiumFeature(EndPodiumFeature const&);
-    EndPodiumFeature();
 
 public:
     // virtual functions
@@ -36,21 +30,21 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BlockPos const& END_PODIUM_CHUNK_POSITION();
+    MCAPI static ::BlockPos const& END_PODIUM_CHUNK_POSITION();
 
-    MCNAPI static ::BlockPos const& END_PODIUM_LOCATION();
+    MCAPI static ::BlockPos const& END_PODIUM_LOCATION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
 
 
     // NOLINTEND

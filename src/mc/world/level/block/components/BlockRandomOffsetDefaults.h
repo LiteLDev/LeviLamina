@@ -10,9 +10,9 @@ class BlockRandomOffsetComponent;
 namespace BlockRandomOffsetDefaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::BlockRandomOffsetComponent const& XYZ();
+MCAPI ::BlockRandomOffsetComponent const& XYZ();
 
-MCNAPI ::BlockRandomOffsetComponent const& XZ();
+MCAPI ::BlockRandomOffsetComponent const& XZ();
 // NOLINTEND
 
 } // namespace BlockRandomOffsetDefaults

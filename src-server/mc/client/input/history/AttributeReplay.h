@@ -4,7 +4,7 @@
 
 namespace History {
 
-struct AttributeReplay {
+class AttributeReplay {
 public:
     // AttributeReplay inner types declare
     // clang-format off

@@ -13,21 +13,17 @@ class BinaryStream;
 class ReadOnlyBinaryStream;
 class TrimMaterialRegistry;
 class TrimPatternRegistry;
+struct TrimMaterial;
+struct TrimPattern;
 // clang-format on
 
 class TrimDataPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd9969a;
-    ::ll::UntypedStorage<8, 24> mUnk8fefc4;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TrimPattern>>  mTrimPatterns;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TrimMaterial>> mTrimMaterials;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrimDataPacket& operator=(TrimDataPacket const&);
-    TrimDataPacket(TrimDataPacket const&);
-    TrimDataPacket();
 
 public:
     // virtual functions

@@ -41,11 +41,11 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $addHitResult(::HitResult solidHit, ::HitResult liquidHit);
+    MCAPI void $addHitResult(::HitResult solidHit, ::HitResult liquidHit);
 
-    MCNAPI void $clear();
+    MCAPI void $clear();
 
-    MCNAPI ::gsl::span<::std::pair<::HitResult, ::HitResult> const> $getHits() const;
+    MCAPI ::gsl::span<::std::pair<::HitResult, ::HitResult> const> $getHits() const;
 #endif
 
 

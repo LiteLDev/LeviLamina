@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/density/DensityFunctionPtr.h"
 #include "mc/world/level/levelgen/density/IDensityFunction.h"
 
 // auto generated forward declare list
@@ -15,16 +16,10 @@ class HeightMapDensityFunction : public ::IDensityFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk69a837;
-    ::ll::UntypedStorage<4, 4>  mUnkfe86a2;
-    ::ll::UntypedStorage<4, 4>  mUnk70757b;
+    ::ll::TypedStorage<8, 16, ::DensityFunctionPtr const> mInput;
+    ::ll::TypedStorage<4, 4, float const>                 mAboveDensity;
+    ::ll::TypedStorage<4, 4, float const>                 mBelowDensity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HeightMapDensityFunction& operator=(HeightMapDensityFunction const&);
-    HeightMapDensityFunction(HeightMapDensityFunction const&);
-    HeightMapDensityFunction();
 
 public:
     // virtual functions

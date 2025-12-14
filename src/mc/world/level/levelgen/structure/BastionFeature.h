@@ -23,13 +23,11 @@ class BastionFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk33148d;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BastionFeature& operator=(BastionFeature const&);
-    BastionFeature(BastionFeature const&);
     BastionFeature();
 
 public:

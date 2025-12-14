@@ -6,26 +6,20 @@ class TextInput {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk29e238;
-    ::ll::UntypedStorage<1, 1>  mUnkc5ea61;
-    ::ll::UntypedStorage<4, 4>  mUnk7e9c08;
+    ::ll::TypedStorage<8, 32, ::std::string> text;
+    ::ll::TypedStorage<1, 1, bool>           keepImePosition;
+    ::ll::TypedStorage<4, 4, int>            controllerId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TextInput& operator=(TextInput const&);
-    TextInput(TextInput const&);
-    TextInput();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~TextInput();
+    MCAPI_C ~TextInput();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

@@ -174,6 +174,16 @@ struct evp_md_ctx_st;
 struct asn1_string_st;
 struct bio_st;
 struct XUser;
+struct tagPOINT;
+namespace winrt
+{
+    struct event_token;
+    
+    namespace Windows::UI::Text::Core
+    {
+        struct CoreTextEditContext;
+    }
+}
 
 #include "mc/deps/core/utility/optional_ref.h" // replace optional<reference_wrapper<>>
 #include "mc/platform/brstd/function_ref.h"    // function reference

@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void sendEvent(::EventRef<::ClientInstanceGameplayEvent<void>> const& event);
+    MCAPI_C void sendEvent(::EventRef<::ClientInstanceGameplayEvent<void>> const& event);
     // NOLINTEND
 
 public:

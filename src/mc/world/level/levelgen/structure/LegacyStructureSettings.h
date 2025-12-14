@@ -31,15 +31,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkeeba32;
-        ::ll::UntypedStorage<8, 8> mUnk45196e;
+        ::ll::TypedStorage<8, 8, uint64> mGroupIndex;
+        ::ll::TypedStorage<8, 8, uint64> mBlockIndex;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        IndexedName& operator=(IndexedName const&);
-        IndexedName(IndexedName const&);
-        IndexedName();
     };
 
 public:
@@ -72,42 +66,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyStructureSettings(::LegacyStructureSettings const&);
+    MCAPI LegacyStructureSettings(::LegacyStructureSettings const&);
 
-    MCNAPI LegacyStructureSettings(
+    MCAPI LegacyStructureSettings(
         ::Mirror             mirror,
         ::Rotation           rotation,
         ::Block const*       ignoreBlock,
         ::BoundingBox const& boundingBox
     );
 
-    MCNAPI ::Block const& getSwappedBlock(::BlockPalette const& palette, ::Block const& oldBlock) const;
+    MCAPI ::Block const& getSwappedBlock(::BlockPalette const& palette, ::Block const& oldBlock) const;
 
-    MCNAPI ::LegacyStructureSettings& operator=(::LegacyStructureSettings const&);
+    MCAPI ::LegacyStructureSettings& operator=(::LegacyStructureSettings const&);
 
-    MCNAPI void updateBoundingBoxFromChunkPos();
+    MCAPI void updateBoundingBoxFromChunkPos();
 
-    MCNAPI ~LegacyStructureSettings();
+    MCAPI ~LegacyStructureSettings();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float const& INTEGRITY_MAX();
+    MCAPI static float const& INTEGRITY_MAX();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LegacyStructureSettings const&);
+    MCAPI void* $ctor(::LegacyStructureSettings const&);
 
-    MCNAPI void*
+    MCAPI void*
     $ctor(::Mirror mirror, ::Rotation rotation, ::Block const* ignoreBlock, ::BoundingBox const& boundingBox);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/actor/player/IPlayerDeathManagerProxy.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ServerLevel;
 struct ActorUniqueID;
 // clang-format on
 
@@ -15,14 +17,8 @@ class PlayerDeathManagerProxy : public ::IPlayerDeathManagerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka315bc;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ServerLevel>> mServerLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerDeathManagerProxy& operator=(PlayerDeathManagerProxy const&);
-    PlayerDeathManagerProxy(PlayerDeathManagerProxy const&);
-    PlayerDeathManagerProxy();
 
 public:
     // virtual functions
@@ -39,11 +35,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Actor* $fetchActor(::ActorUniqueID actorUniqueID) const;
+    MCAPI ::Actor* $fetchActor(::ActorUniqueID actorUniqueID) const;
 
-    MCNAPI bool $shouldShowDeathMessages() const;
+    MCAPI bool $shouldShowDeathMessages() const;
 
-    MCNAPI void $onWorldOwnerHasDied();
+    MCAPI void $onWorldOwnerHasDied();
 
 
     // NOLINTEND

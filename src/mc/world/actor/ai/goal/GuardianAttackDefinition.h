@@ -14,22 +14,20 @@ namespace JsonUtil { class EmptyClass; }
 
 class GuardianAttackDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6326c4;
-    ::ll::UntypedStorage<4, 4> mUnk26cedf;
-    ::ll::UntypedStorage<4, 4> mUnkb4f3cd;
-    ::ll::UntypedStorage<4, 4> mUnk6dc843;
-    ::ll::UntypedStorage<4, 4> mUnk1c79c3;
-    ::ll::UntypedStorage<4, 4> mUnkf1d257;
-    ::ll::UntypedStorage<4, 4> mUnkd1de50;
-    // NOLINTEND
+    // GuardianAttackDefinition inner types define
+    using self = ::GuardianAttackDefinition;
 
 public:
-    // prevent constructor by default
-    GuardianAttackDefinition& operator=(GuardianAttackDefinition const&);
-    GuardianAttackDefinition(GuardianAttackDefinition const&);
-    GuardianAttackDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>   mMagicDamage;
+    ::ll::TypedStorage<4, 4, int>   mHardModeExtraMagicDamage;
+    ::ll::TypedStorage<4, 4, int>   mElderExtraMagicDamage;
+    ::ll::TypedStorage<4, 4, float> mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float> mMaxHeadRotationY;
+    ::ll::TypedStorage<4, 4, float> mMinDistance;
+    ::ll::TypedStorage<4, 4, float> mSoundDelayTime;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -42,7 +40,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                     name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GuardianAttackDefinition>>& root
     );
@@ -51,7 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $validateMobType(::Mob& mob) const;
+    MCAPI bool $validateMobType(::Mob& mob) const;
 
 
     // NOLINTEND

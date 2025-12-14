@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Item;
+// clang-format on
+
 class ItemPtr {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke4be41;
+    ::ll::TypedStorage<8, 8, ::Item const*> mItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemPtr& operator=(ItemPtr const&);
-    ItemPtr(ItemPtr const&);
-    ItemPtr();
 };

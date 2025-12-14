@@ -26,20 +26,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~StructureBlockInfo();
+    MCAPI ~StructureBlockInfo();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::br::worldgen::StructureBlockInfo
+    MCAPI static ::br::worldgen::StructureBlockInfo
     from(::BlockPos pos, ::Block const& state, ::Block const* extraBlockState);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

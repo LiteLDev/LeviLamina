@@ -14,28 +14,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk16bfb3;
-        ::ll::UntypedStorage<1, 1> mUnk47ba99;
+        ::ll::TypedStorage<4, 4, int>  mI;
+        ::ll::TypedStorage<1, 1, bool> mReversed;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Iterator& operator=(Iterator const&);
-        Iterator(Iterator const&);
-        Iterator();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd414e2;
-    ::ll::UntypedStorage<4, 4> mUnk417f60;
-    ::ll::UntypedStorage<1, 1> mUnkb6dff4;
+    ::ll::TypedStorage<4, 4, int const>  mStartValue;
+    ::ll::TypedStorage<4, 4, int const>  mEndValue;
+    ::ll::TypedStorage<1, 1, bool const> mReversed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ReverseableIterator& operator=(ReverseableIterator const&);
-    ReverseableIterator(ReverseableIterator const&);
-    ReverseableIterator();
 };

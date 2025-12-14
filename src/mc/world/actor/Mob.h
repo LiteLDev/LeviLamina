@@ -147,7 +147,7 @@ public:
 
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     virtual int getItemUseDuration() const;
 
@@ -163,7 +163,7 @@ public:
 
     virtual void blockedByShield(::ActorDamageSource const& source, ::Actor& blocker) /*override*/;
 
-    virtual void setTarget(::Actor* target) /*override*/;
+    virtual void setTarget(::Actor* entity) /*override*/;
 
     virtual bool attack(::Actor&, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
 
@@ -510,7 +510,7 @@ public:
 
     MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCFOLD int $getItemUseDuration() const;
 
@@ -526,7 +526,7 @@ public:
 
     MCAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
 
-    MCAPI void $setTarget(::Actor* target);
+    MCAPI void $setTarget(::Actor* entity);
 
     MCFOLD bool $isAlliedTo(::Mob*);
 

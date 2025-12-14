@@ -18,27 +18,25 @@ struct ScriptInvalidActorError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkcfcc8a;
-    ::ll::UntypedStorage<8, 32> mUnk4854f1;
+    ::ll::TypedStorage<8, 32, ::std::string> mId;
+    ::ll::TypedStorage<8, 32, ::std::string> mType;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptInvalidActorError& operator=(ScriptInvalidActorError const&);
-    ScriptInvalidActorError(ScriptInvalidActorError const&);
     ScriptInvalidActorError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptInvalidActorError(
+    MCAPI ScriptInvalidActorError(
         ::ScriptModuleMinecraft::ErrorMemberType    memberType,
         ::ScriptModuleMinecraft::ScriptActor const& invalidActor,
         ::std::string_view                          functionName,
         ::std::string_view                          entityName
     );
 
-    MCNAPI ScriptInvalidActorError(
+    MCAPI ScriptInvalidActorError(
         ::ScriptModuleMinecraft::ErrorMemberType memberType,
         ::std::string_view                       typeId,
         ::std::string_view                       id,
@@ -46,26 +44,26 @@ public:
         ::std::string_view                       entityName
     );
 
-    MCNAPI ~ScriptInvalidActorError();
+    MCAPI ~ScriptInvalidActorError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType    memberType,
         ::ScriptModuleMinecraft::ScriptActor const& invalidActor,
         ::std::string_view                          functionName,
         ::std::string_view                          entityName
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType memberType,
         ::std::string_view                       typeId,
         ::std::string_view                       id,
@@ -77,7 +75,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

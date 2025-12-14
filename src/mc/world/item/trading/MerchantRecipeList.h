@@ -40,24 +40,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool isRequiredItem(::ItemInstance const& offer, ::ItemInstance const& requiredItem);
+    MCAPI bool isRequiredItem(::ItemInstance const& offer, ::ItemInstance const& requiredItem);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MerchantRecipe* $getRecipeFor(::ItemInstance const& buyA, ::ItemInstance const& buyB, int selectionHint);
+    MCAPI ::MerchantRecipe* $getRecipeFor(::ItemInstance const& buyA, ::ItemInstance const& buyB, int selectionHint);
 
-    MCNAPI void $addIfNewOrBetter(::MerchantRecipe* toMatch);
+    MCAPI void $addIfNewOrBetter(::MerchantRecipe* toMatch);
 
-    MCNAPI ::MerchantRecipe*
+    MCAPI ::MerchantRecipe*
     $getMatchingRecipeFor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
 
-    MCNAPI ::MerchantRecipe* $getMatchingRecipeFor(::MerchantRecipe const& recipe);
+    MCAPI ::MerchantRecipe* $getMatchingRecipeFor(::MerchantRecipe const& recipe);
 
-    MCNAPI void $load(::CompoundTag const& tag);
+    MCAPI void $load(::CompoundTag const& tag);
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
 
 
     // NOLINTEND

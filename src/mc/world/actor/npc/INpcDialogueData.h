@@ -41,12 +41,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getRawDialogueText() const;
+    MCFOLD ::std::string const& $getRawDialogueText() const;
 
-    MCNAPI bool $isRemoteFire();
+    MCFOLD bool $isRemoteFire();
 
 #ifdef LL_PLAT_C
-    MCNAPI ::std::string const& $getNameRawText() const;
+    MCFOLD ::std::string const& $getNameRawText() const;
 #endif
 
 

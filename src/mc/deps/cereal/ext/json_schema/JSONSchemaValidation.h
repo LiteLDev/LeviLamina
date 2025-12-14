@@ -32,8 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::cereal::ext::internal::JSONSchemaValidation&
-    operator=(::cereal::ext::internal::JSONSchemaValidation const&);
+    MCNAPI ::cereal::ext::internal::JSONSchemaValidation& operator=(::cereal::ext::internal::JSONSchemaValidation const&
+    );
 
     MCNAPI ~JSONSchemaValidation();
     // NOLINTEND

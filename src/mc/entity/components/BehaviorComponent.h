@@ -29,20 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BehaviorComponent(::BehaviorComponent&&);
+    MCAPI BehaviorComponent(::BehaviorComponent&&);
 
-    MCNAPI ~BehaviorComponent();
+    MCAPI ~BehaviorComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BehaviorComponent&&);
+    MCAPI void* $ctor(::BehaviorComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

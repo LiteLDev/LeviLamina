@@ -2,20 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/world/ContainerID.h"
+
 struct UpdateTradePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkc26f28;
-    ::ll::UntypedStorage<1, 1>  mUnk367f34;
-    ::ll::UntypedStorage<8, 32> mUnk9e9fc5;
-    ::ll::UntypedStorage<4, 4>  mUnkc984b3;
-    ::ll::UntypedStorage<4, 4>  mUnk8de02d;
-    ::ll::UntypedStorage<8, 8>  mUnk619313;
-    ::ll::UntypedStorage<8, 8>  mUnke7c3cf;
-    ::ll::UntypedStorage<8, 24> mUnkaf2f33;
-    ::ll::UntypedStorage<1, 1>  mUnk368855;
-    ::ll::UntypedStorage<1, 1>  mUnk41dffa;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                        mContainerId;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mDisplayName;
+    ::ll::TypedStorage<4, 4, int>                                  mSize;
+    ::ll::TypedStorage<4, 4, int>                                  mTraderTier;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mEntityUniqueID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mLastTradingPlayer;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>                       mData;
+    ::ll::TypedStorage<1, 1, bool>                                 mUseNewTradeScreen;
+    ::ll::TypedStorage<1, 1, bool>                                 mUsingEconomyTrade;
     // NOLINTEND
 
 public:
@@ -26,26 +32,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI UpdateTradePacketPayload(::UpdateTradePacketPayload&&);
+    MCAPI UpdateTradePacketPayload(::UpdateTradePacketPayload&&);
 
-    MCNAPI UpdateTradePacketPayload(::UpdateTradePacketPayload const& other);
+    MCAPI UpdateTradePacketPayload(::UpdateTradePacketPayload const& other);
 
-    MCNAPI ::UpdateTradePacketPayload& operator=(::UpdateTradePacketPayload&&);
+    MCAPI ::UpdateTradePacketPayload& operator=(::UpdateTradePacketPayload&&);
 
-    MCNAPI ~UpdateTradePacketPayload();
+    MCAPI ~UpdateTradePacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::UpdateTradePacketPayload&&);
+    MCAPI void* $ctor(::UpdateTradePacketPayload&&);
 
-    MCNAPI void* $ctor(::UpdateTradePacketPayload const& other);
+    MCAPI void* $ctor(::UpdateTradePacketPayload const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

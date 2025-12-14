@@ -26,8 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::WebSocketPacketData& operator=(::WebSocketPacketData&&);
+    MCFOLD ::WebSocketPacketData& operator=(::WebSocketPacketData&&);
 
-    MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

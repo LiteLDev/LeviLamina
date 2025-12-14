@@ -2,22 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/Brightness.h"
+#include "mc/world/level/chunk/SubChunkLightIndex.h"
+
 struct SubtractiveLightInfo {
 public:
     // member variables
     // NOLINTBEGIN
     union {
         struct {
-            ::ll::UntypedStorage<4, 4> mUnk937568;
-            ::ll::UntypedStorage<1, 1> mUnk69f6c0;
+            ::ll::TypedStorage<4, 4, ::SubChunkLightIndex> mCoordIndex;
+            ::ll::TypedStorage<1, 1, ::Brightness>         mOldBrightness;
         };
-        ::ll::UntypedStorage<8, 8> mUnk678e68;
+        ::ll::TypedStorage<8, 8, uint64> mData;
     };
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubtractiveLightInfo& operator=(SubtractiveLightInfo const&);
-    SubtractiveLightInfo(SubtractiveLightInfo const&);
-    SubtractiveLightInfo();
 };

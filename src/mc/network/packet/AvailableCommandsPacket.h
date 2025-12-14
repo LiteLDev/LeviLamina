@@ -55,21 +55,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ConstrainedValueData(::AvailableCommandsPacket::ConstrainedValueData&&);
+        MCAPI ConstrainedValueData(::AvailableCommandsPacket::ConstrainedValueData&&);
 
-        MCNAPI ~ConstrainedValueData();
+        MCAPI ~ConstrainedValueData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::AvailableCommandsPacket::ConstrainedValueData&&);
+        MCAPI void* $ctor(::AvailableCommandsPacket::ConstrainedValueData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -89,25 +89,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI EnumData();
+        MCAPI EnumData();
 
-        MCNAPI EnumData(::AvailableCommandsPacket::EnumData&&);
+        MCAPI EnumData(::AvailableCommandsPacket::EnumData&&);
 
-        MCNAPI ~EnumData();
+        MCAPI ~EnumData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCAPI void* $ctor();
 
-        MCNAPI void* $ctor(::AvailableCommandsPacket::EnumData&&);
+        MCFOLD void* $ctor(::AvailableCommandsPacket::EnumData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -205,21 +205,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI CommandData(::AvailableCommandsPacket::CommandData&&);
+        MCAPI CommandData(::AvailableCommandsPacket::CommandData&&);
 
-        MCNAPI ~CommandData();
+        MCAPI ~CommandData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::AvailableCommandsPacket::CommandData&&);
+        MCAPI void* $ctor(::AvailableCommandsPacket::CommandData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -240,42 +240,36 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI SoftEnumData(::AvailableCommandsPacket::SoftEnumData&&);
+        MCAPI SoftEnumData(::AvailableCommandsPacket::SoftEnumData&&);
 
-        MCNAPI ~SoftEnumData();
+        MCAPI ~SoftEnumData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::AvailableCommandsPacket::SoftEnumData&&);
+        MCFOLD void* $ctor(::AvailableCommandsPacket::SoftEnumData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke9f42a;
-    ::ll::UntypedStorage<8, 24> mUnk986b9e;
-    ::ll::UntypedStorage<8, 24> mUnkded535;
-    ::ll::UntypedStorage<8, 24> mUnkfc48ce;
-    ::ll::UntypedStorage<8, 24> mUnk42e65c;
-    ::ll::UntypedStorage<8, 24> mUnk6cc6ed;
-    ::ll::UntypedStorage<8, 24> mUnkbe33c0;
-    ::ll::UntypedStorage<8, 24> mUnk772b81;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                    mEnumValues;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                    mPostfixes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::EnumData>>              mEnums;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                    mChainedSubcommandValues;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::ChainedSubcommandData>> mChainedSubcommands;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::CommandData>>           mCommands;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::SoftEnumData>>          mSoftEnums;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::ConstrainedValueData>>  mConstraints;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AvailableCommandsPacket& operator=(AvailableCommandsPacket const&);
-    AvailableCommandsPacket(AvailableCommandsPacket const&);
-    AvailableCommandsPacket();
 
 public:
     // virtual functions

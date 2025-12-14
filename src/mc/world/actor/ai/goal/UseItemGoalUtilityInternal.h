@@ -11,7 +11,7 @@ class Mob;
 namespace UseItemGoalUtilityInternal {
 // functions
 // NOLINTBEGIN
-MCNAPI void updateEquipment(::Mob& mob, ::ItemStack const& item);
+MCAPI void updateEquipment(::Mob& mob, ::ItemStack const& item);
 // NOLINTEND
 
 } // namespace UseItemGoalUtilityInternal

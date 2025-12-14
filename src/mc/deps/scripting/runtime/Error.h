@@ -16,29 +16,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Error(::Scripting::Error const&);
+    MCAPI Error(::Scripting::Error const&);
 
-    MCNAPI explicit Error(::Scripting::BaseError const& base);
+    MCAPI explicit Error(::Scripting::BaseError const& base);
 
-    MCNAPI explicit Error(::std::string const& message_);
+    MCAPI explicit Error(::std::string const& message_);
 
-    MCNAPI ~Error();
+    MCAPI ~Error();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::Error const&);
+    MCAPI void* $ctor(::Scripting::Error const&);
 
-    MCNAPI void* $ctor(::Scripting::BaseError const& base);
+    MCFOLD void* $ctor(::Scripting::BaseError const& base);
 
-    MCNAPI void* $ctor(::std::string const& message_);
+    MCAPI void* $ctor(::std::string const& message_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -15,15 +15,9 @@ class TestAction : public ::IRequestAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke48e05;
-    ::ll::UntypedStorage<8, 8>  mUnkc6987d;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<8, 8, ::std::string*> mExecuteString;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TestAction& operator=(TestAction const&);
-    TestAction(TestAction const&);
-    TestAction();
 
 public:
     // virtual functions
@@ -38,7 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
 
 
     // NOLINTEND

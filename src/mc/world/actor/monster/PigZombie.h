@@ -16,16 +16,10 @@ class PigZombie : public ::Zombie {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb480f4;
-    ::ll::UntypedStorage<4, 4> mUnka23cdc;
-    ::ll::UntypedStorage<4, 4> mUnkdf9a1f;
+    ::ll::TypedStorage<4, 4, int> mAngerTime;
+    ::ll::TypedStorage<4, 4, int> mPlayAngrySoundIn;
+    ::ll::TypedStorage<4, 4, int> mStunedTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PigZombie& operator=(PigZombie const&);
-    PigZombie(PigZombie const&);
-    PigZombie();
 
 public:
     // virtual functions

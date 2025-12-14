@@ -56,38 +56,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructurePoolBlockPredicateCappedRandomBlockReplacement(
+    MCAPI StructurePoolBlockPredicateCappedRandomBlockReplacement(
         ::std::map<::HashedString, ::HashedString> const& blockMappings,
         uint                                              maximumAmount
     );
 
-    MCNAPI bool _finalize(::BlockSource& region, ::IRandom& random, ::std::function<void(::BlockPos&)> applyToBlocks);
+    MCAPI bool _finalize(::BlockSource& region, ::IRandom& random, ::std::function<void(::BlockPos&)> applyToBlocks);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::map<::HashedString, ::HashedString> const& blockMappings, uint maximumAmount);
+    MCAPI void* $ctor(::std::map<::HashedString, ::HashedString> const& blockMappings, uint maximumAmount);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $test(::Block const& block, ::Randomize&) const;
+    MCAPI bool $test(::Block const& block, ::Randomize&) const;
 
-    MCNAPI bool $test(::BlockPos const& worldPos, ::BlockPos const&, ::Randomize&) const;
+    MCAPI bool $test(::BlockPos const& worldPos, ::BlockPos const&, ::Randomize&) const;
 
-    MCNAPI bool $finalize(::BlockSource& region, ::IRandom& random);
+    MCAPI bool $finalize(::BlockSource& region, ::IRandom& random);
 
-    MCNAPI ::StructurePoolBlockPredicateType $getType() const;
+    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

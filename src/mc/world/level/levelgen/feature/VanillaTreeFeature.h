@@ -31,13 +31,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _buildSchema(
+    MCAPI static void _buildSchema(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
             ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode
     );
 
-    MCNAPI static void _buildVanillaCanopyVariants(
+    MCAPI static void _buildVanillaCanopyVariants(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
             ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
@@ -45,7 +45,7 @@ public:
             canopyAccessor
     );
 
-    MCNAPI static void _buildVanillaTrunkVariants(
+    MCAPI static void _buildVanillaTrunkVariants(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
             ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
@@ -57,7 +57,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
     // NOLINTEND

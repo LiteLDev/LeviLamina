@@ -35,11 +35,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _onPlace(::BlockEvents::BlockPlaceEvent const& ev) const;
+    MCAPI void _onPlace(::BlockEvents::BlockPlaceEvent const& ev) const;
 
-    MCNAPI void _onStateChange(::BlockEvents::BlockStateChangeEvent const& ev) const;
+    MCAPI void _onStateChange(::BlockEvents::BlockStateChangeEvent const& ev) const;
 
-    MCNAPI void finalize(
+    MCAPI void finalize(
         ::BlockEvents::BlockEventManager&     eventManager,
         ::BlockTransformationComponent const* transformationComponent
     );
@@ -48,8 +48,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void setRedstoneSignal(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
+    MCAPI static void setRedstoneSignal(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
 
-    MCNAPI static void setupRedstoneComponent(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
+    MCAPI static void setupRedstoneComponent(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 };

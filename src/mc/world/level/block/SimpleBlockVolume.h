@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/BlockVolumeBase.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
 class BaseBlockLocationIterator;
-class BlockPos;
 class BoundingBox;
 class ChunkPos;
 class Vec3;
@@ -36,11 +36,13 @@ public:
         Intersects = 2,
     };
 
+    using CornerHandle = uchar;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk1a8f23;
-    ::ll::UntypedStorage<4, 12> mUnk3dd422;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mFrom;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mTo;
     // NOLINTEND
 
 public:
@@ -79,75 +81,75 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C SimpleBlockVolume(::SimpleBlockVolume const& volume);
+    MCAPI_C SimpleBlockVolume(::SimpleBlockVolume const& volume);
 
-    MCNAPI_C SimpleBlockVolume(::BlockPos const& from, ::Vec3 const& size);
+    MCAPI_C SimpleBlockVolume(::BlockPos const& from, ::Vec3 const& size);
 
-    MCNAPI_C SimpleBlockVolume(::BlockPos const& from, ::BlockPos const& to);
+    MCAPI_C SimpleBlockVolume(::BlockPos const& from, ::BlockPos const& to);
 
-    MCNAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
+    MCAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
 
-    MCNAPI_C uchar getCornerHandle(::SimpleBlockVolume::CornerIndex cornerIndex) const;
+    MCAPI_C uchar getCornerHandle(::SimpleBlockVolume::CornerIndex cornerIndex) const;
 
-    MCNAPI_C ::BlockPos getCornerPosition(uchar cornerHandle) const;
+    MCAPI_C ::BlockPos getCornerPosition(uchar cornerHandle) const;
 
-    MCNAPI_C ::AABB getWorldAABB() const;
+    MCAPI_C ::AABB getWorldAABB() const;
 
-    MCNAPI ::SimpleBlockVolume::IntersectionResult intersects(::SimpleBlockVolume const& other) const;
+    MCAPI ::SimpleBlockVolume::IntersectionResult intersects(::SimpleBlockVolume const& other) const;
 
-    MCNAPI_C bool operator==(::SimpleBlockVolume const& other) const;
+    MCAPI_C bool operator==(::SimpleBlockVolume const& other) const;
 
-    MCNAPI_C ::SimpleBlockVolume& setCornerPosition(uchar cornerHandle, ::BlockPos const& pos);
+    MCAPI_C ::SimpleBlockVolume& setCornerPosition(uchar cornerHandle, ::BlockPos const& pos);
 
-    MCNAPI_C ::SimpleBlockVolume& translateCorner(uchar cornerHandle, ::glm::ivec3 const& delta);
+    MCAPI_C ::SimpleBlockVolume& translateCorner(uchar cornerHandle, ::glm::ivec3 const& delta);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void cerealBindTypes(::cereal::ReflectionCtx& ctx);
+    MCAPI static void cerealBindTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::SimpleBlockVolume const& volume);
+    MCAPI_C void* $ctor(::SimpleBlockVolume const& volume);
 
-    MCNAPI_C void* $ctor(::BlockPos const& from, ::Vec3 const& size);
+    MCAPI_C void* $ctor(::BlockPos const& from, ::Vec3 const& size);
 
-    MCNAPI_C void* $ctor(::BlockPos const& from, ::BlockPos const& to);
+    MCAPI_C void* $ctor(::BlockPos const& from, ::BlockPos const& to);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockPos $getMin() const;
+    MCAPI ::BlockPos $getMin() const;
 
-    MCNAPI ::BlockPos $getMax() const;
+    MCAPI ::BlockPos $getMax() const;
 
-    MCNAPI ::BoundingBox $getBoundingBox() const;
+    MCAPI ::BoundingBox $getBoundingBox() const;
 
-    MCNAPI ::glm::ivec3 $getSpan() const;
+    MCAPI ::glm::ivec3 $getSpan() const;
 
-    MCNAPI int $getCapacity() const;
+    MCAPI int $getCapacity() const;
 
-    MCNAPI bool $isInside(::BlockPos const& pos) const;
+    MCAPI bool $isInside(::BlockPos const& pos) const;
 
-    MCNAPI void $translate(::BlockPos const& delta);
+    MCAPI void $translate(::BlockPos const& delta);
 
-    MCNAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
+    MCAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
 
-    MCNAPI ::std::set<::ChunkPos> $getChunks() const;
+    MCAPI ::std::set<::ChunkPos> $getChunks() const;
 
-    MCNAPI ::std::unordered_set<::BlockPos> $getFlattenedBlockPositions() const;
+    MCAPI ::std::unordered_set<::BlockPos> $getFlattenedBlockPositions() const;
 
-    MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $getIterator() const;
+    MCAPI ::std::unique_ptr<::BaseBlockLocationIterator> $getIterator() const;
 
 
     // NOLINTEND

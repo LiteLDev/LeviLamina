@@ -29,20 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ExplosionStartedEvent(::ExplosionStartedEvent const&);
+    MCAPI ExplosionStartedEvent(::ExplosionStartedEvent const&);
 
-    MCNAPI ~ExplosionStartedEvent();
+    MCAPI ~ExplosionStartedEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ExplosionStartedEvent const&);
+    MCAPI void* $ctor(::ExplosionStartedEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

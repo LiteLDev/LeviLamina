@@ -7,11 +7,16 @@
 #include "mc/deps/cereal/schema/SchemaReader.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class PacketSchemaReader : public ::cereal::SchemaReader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkffec09;
+    ::ll::TypedStorage<8, 8, ::ReadOnlyBinaryStream&> mStream;
     // NOLINTEND
 
 public:
@@ -75,51 +80,51 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI ::cereal::SchemaRWType $expectedType() const;
+    MCFOLD ::cereal::SchemaRWType $expectedType() const;
 
-    MCNAPI ::Bedrock::Result<void> $asNull();
+    MCFOLD ::Bedrock::Result<void> $asNull();
 
-    MCNAPI ::Bedrock::Result<bool> $asBool();
+    MCFOLD ::Bedrock::Result<bool> $asBool();
 
-    MCNAPI ::Bedrock::Result<schar> $asInt8();
+    MCAPI ::Bedrock::Result<schar> $asInt8();
 
-    MCNAPI ::Bedrock::Result<uchar> $asUInt8();
+    MCFOLD ::Bedrock::Result<uchar> $asUInt8();
 
-    MCNAPI ::Bedrock::Result<short> $asInt16();
+    MCFOLD ::Bedrock::Result<short> $asInt16();
 
-    MCNAPI ::Bedrock::Result<ushort> $asUInt16();
+    MCFOLD ::Bedrock::Result<ushort> $asUInt16();
 
-    MCNAPI ::Bedrock::Result<int> $asInt32();
+    MCFOLD ::Bedrock::Result<int> $asInt32();
 
-    MCNAPI ::Bedrock::Result<uint> $asUInt32();
+    MCFOLD ::Bedrock::Result<uint> $asUInt32();
 
-    MCNAPI ::Bedrock::Result<int64> $asInt64();
+    MCFOLD ::Bedrock::Result<int64> $asInt64();
 
-    MCNAPI ::Bedrock::Result<uint64> $asUInt64();
+    MCFOLD ::Bedrock::Result<uint64> $asUInt64();
 
-    MCNAPI ::Bedrock::Result<float> $asFloat();
+    MCFOLD ::Bedrock::Result<float> $asFloat();
 
-    MCNAPI ::Bedrock::Result<double> $asDouble();
+    MCFOLD ::Bedrock::Result<double> $asDouble();
 
-    MCNAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
+    MCFOLD ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
 
-    MCNAPI ::std::optional<bool> $readValidityFlag();
+    MCFOLD ::std::optional<bool> $readValidityFlag();
 
-    MCNAPI ::std::optional<uint> $readControlValue();
+    MCFOLD ::std::optional<uint> $readControlValue();
 
-    MCNAPI uint64 $members();
+    MCFOLD uint64 $members();
 
-    MCNAPI uint64 $length(uint64 expectedSize);
+    MCAPI uint64 $length(uint64 expectedSize);
 
-    MCNAPI bool $pushMember(::std::string_view const);
+    MCFOLD bool $pushMember(::std::string_view const);
 
-    MCNAPI ::std::string_view $pushNextMember();
+    MCFOLD ::std::string_view $pushNextMember();
 
-    MCNAPI void $pushElement(uint64);
+    MCFOLD void $pushElement(uint64);
 
-    MCNAPI void $pop();
+    MCFOLD void $pop();
 
 
     // NOLINTEND

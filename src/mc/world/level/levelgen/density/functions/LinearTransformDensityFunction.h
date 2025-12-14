@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/density/DensityFunctionPtr.h"
 #include "mc/world/level/levelgen/density/IDensityFunction.h"
 
 // auto generated forward declare list
@@ -15,16 +16,10 @@ class LinearTransformDensityFunction : public ::IDensityFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk7cac30;
-    ::ll::UntypedStorage<4, 4>  mUnkc058fd;
-    ::ll::UntypedStorage<4, 4>  mUnk96c837;
+    ::ll::TypedStorage<8, 16, ::DensityFunctionPtr const> mInput;
+    ::ll::TypedStorage<4, 4, float const>                 mScale;
+    ::ll::TypedStorage<4, 4, float const>                 mOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LinearTransformDensityFunction& operator=(LinearTransformDensityFunction const&);
-    LinearTransformDensityFunction(LinearTransformDensityFunction const&);
-    LinearTransformDensityFunction();
 
 public:
     // virtual functions

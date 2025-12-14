@@ -31,14 +31,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void flush();
+    MCAPI void flush();
 
-    MCNAPI ~LevelChunkGarbageCollector();
+    MCAPI ~LevelChunkGarbageCollector();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

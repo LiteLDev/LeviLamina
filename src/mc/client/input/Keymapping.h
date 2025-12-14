@@ -6,10 +6,10 @@ class Keymapping {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd08007;
-    ::ll::UntypedStorage<8, 24> mUnke26c80;
-    ::ll::UntypedStorage<1, 1>  mUnk5fae17;
-    ::ll::UntypedStorage<1, 1>  mUnka881be;
+    ::ll::TypedStorage<8, 32, ::std::string>      mAction;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>> mKeys;
+    ::ll::TypedStorage<1, 1, bool>                mAllowRemap;
+    ::ll::TypedStorage<1, 1, bool>                mIsSharedKey;
     // NOLINTEND
 
 public:
@@ -20,24 +20,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C Keymapping(::Keymapping const&);
+    MCAPI_C Keymapping(::Keymapping const&);
 
-    MCNAPI_C Keymapping(::std::string const& action, int defaultKey);
+    MCAPI_C Keymapping(::std::string const& action, int defaultKey);
 
-    MCNAPI_C ~Keymapping();
+    MCAPI_C ~Keymapping();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Keymapping const&);
+    MCAPI_C void* $ctor(::Keymapping const&);
 
-    MCNAPI_C void* $ctor(::std::string const& action, int defaultKey);
+    MCAPI_C void* $ctor(::std::string const& action, int defaultKey);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

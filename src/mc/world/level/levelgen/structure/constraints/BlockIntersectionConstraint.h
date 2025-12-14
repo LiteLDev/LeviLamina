@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockDescriptor;
 class BlockPos;
 class IBlockWorldGenAPI;
 class StructureTemplate;
@@ -17,14 +18,12 @@ class BlockIntersectionConstraint : public ::IStructureConstraint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk74bd7b;
-    ::ll::UntypedStorage<8, 24> mUnk141954;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>        mVolumeOffsets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mBlockDescriptorAllowlist;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockIntersectionConstraint& operator=(BlockIntersectionConstraint const&);
-    BlockIntersectionConstraint(BlockIntersectionConstraint const&);
     BlockIntersectionConstraint();
 
 public:
@@ -40,19 +39,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockIntersectionConstraint(::StructureTemplate& structure);
+    MCAPI explicit BlockIntersectionConstraint(::StructureTemplate& structure);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::StructureTemplate& structure);
+    MCAPI void* $ctor(::StructureTemplate& structure);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isSatisfied(
+    MCAPI bool $isSatisfied(
         ::IBlockWorldGenAPI const& target,
         ::BlockPos const&          structurePos,
         ::Rotation const&          structureRot

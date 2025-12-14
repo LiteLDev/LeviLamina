@@ -2,12 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/DefinitionTrigger.h"
+
+// auto generated forward declare list
+// clang-format off
+struct DiggerBlockDefinitionTrigger;
+// clang-format on
+
 struct LegacyOnDigTriggerItemComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb10ef0;
-    ::ll::UntypedStorage<8, 24> mUnk466236;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>>          mOnDigDefault;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DiggerBlockDefinitionTrigger>> mOnDigTriggers;
     // NOLINTEND
 
 public:
@@ -17,30 +25,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyOnDigTriggerItemComponentData();
+    MCAPI LegacyOnDigTriggerItemComponentData();
 
-    MCNAPI LegacyOnDigTriggerItemComponentData(::LegacyOnDigTriggerItemComponentData&&);
+    MCAPI LegacyOnDigTriggerItemComponentData(::LegacyOnDigTriggerItemComponentData&&);
 
-    MCNAPI LegacyOnDigTriggerItemComponentData(::LegacyOnDigTriggerItemComponentData const&);
+    MCAPI LegacyOnDigTriggerItemComponentData(::LegacyOnDigTriggerItemComponentData const&);
 
-    MCNAPI ::LegacyOnDigTriggerItemComponentData& operator=(::LegacyOnDigTriggerItemComponentData&&);
+    MCAPI ::LegacyOnDigTriggerItemComponentData& operator=(::LegacyOnDigTriggerItemComponentData&&);
 
-    MCNAPI ~LegacyOnDigTriggerItemComponentData();
+    MCAPI ~LegacyOnDigTriggerItemComponentData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::LegacyOnDigTriggerItemComponentData&&);
+    MCAPI void* $ctor(::LegacyOnDigTriggerItemComponentData&&);
 
-    MCNAPI void* $ctor(::LegacyOnDigTriggerItemComponentData const&);
+    MCAPI void* $ctor(::LegacyOnDigTriggerItemComponentData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -20,25 +20,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActionValue();
+    MCAPI ActionValue();
 
-    MCNAPI_C ::npc::ActionValue& operator=(::npc::ActionValue&&);
+    MCFOLD_C ::npc::ActionValue& operator=(::npc::ActionValue&&);
 
-    MCNAPI ::npc::ActionValue& operator=(::std::string_view newName);
+    MCAPI ::npc::ActionValue& operator=(::std::string_view newName);
 
-    MCNAPI ~ActionValue();
+    MCAPI ~ActionValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

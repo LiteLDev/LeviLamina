@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockDescriptor;
 class BlockPos;
 class IBlockWorldGenAPI;
 // clang-format on
@@ -23,19 +25,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkcc3148;
-    ::ll::UntypedStorage<4, 4>  mUnkd9cc9e;
-    ::ll::UntypedStorage<4, 4>  mUnk32934f;
-    ::ll::UntypedStorage<8, 24> mUnkee9932;
-    ::ll::UntypedStorage<1, 1>  mUnk9d4a1e;
-    ::ll::UntypedStorage<1, 1>  mUnk936b03;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>            mFeatureToSnap;
+    ::ll::TypedStorage<4, 4, int>                               mVerticalSearchRange;
+    ::ll::TypedStorage<4, 4, ::SnapToSurfaceFeature::Surface>   mSurface;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedSurfaceBlocks;
+    ::ll::TypedStorage<1, 1, bool>                              mAllowAirPlacement;
+    ::ll::TypedStorage<1, 1, bool>                              mAllowUnderwaterPlacement;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SnapToSurfaceFeature& operator=(SnapToSurfaceFeature const&);
-    SnapToSurfaceFeature(SnapToSurfaceFeature const&);
-    SnapToSurfaceFeature();
 
 public:
     // virtual functions
@@ -48,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> _findSnapPos(
+    MCAPI ::std::optional<::BlockPos> _findSnapPos(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::SnapToSurfaceFeature::Surface targetSurface
@@ -58,7 +54,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
     // NOLINTEND

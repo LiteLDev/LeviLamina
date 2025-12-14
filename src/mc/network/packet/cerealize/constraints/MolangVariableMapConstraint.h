@@ -24,13 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void validateValue(::Json::Value const& parsedJson, ::cereal::SerializerContext& context) const;
+    MCAPI void validateValue(::Json::Value const& parsedJson, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
 
 
     // NOLINTEND

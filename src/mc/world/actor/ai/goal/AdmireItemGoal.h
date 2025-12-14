@@ -59,7 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AdmireItemGoal(
+    MCAPI AdmireItemGoal(
         ::Mob&                                 mob,
         ::SharedTypes::Legacy::LevelSoundEvent sound,
         ::FloatRange                           soundIntervalRange,
@@ -67,16 +67,16 @@ public:
         ::ActorDefinitionTrigger const&        onAdmireItemStop
     );
 
-    MCNAPI void _removeItemFromOffhandSlot() const;
+    MCAPI void _removeItemFromOffhandSlot() const;
 
-    MCNAPI void
+    MCAPI void
     _tryPlaceItemInInventory(::ContainerComponent& containerComponent, ::ShareableComponent const& shareableComponent);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Mob&                                 mob,
         ::SharedTypes::Legacy::LevelSoundEvent sound,
         ::FloatRange                           soundIntervalRange,
@@ -88,23 +88,23 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

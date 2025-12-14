@@ -17,14 +17,8 @@ class WitherSkull : public ::Fireball {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4c40de;
+    ::ll::TypedStorage<4, 4, int> mLifetime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WitherSkull& operator=(WitherSkull const&);
-    WitherSkull(WitherSkull const&);
-    WitherSkull();
 
 public:
     // virtual functions

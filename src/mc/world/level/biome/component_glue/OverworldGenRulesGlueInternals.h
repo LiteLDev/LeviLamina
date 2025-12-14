@@ -14,13 +14,13 @@ class BiomeRegistry;
 namespace OverworldGenRulesGlueInternals {
 // functions
 // NOLINTBEGIN
-MCNAPI void applyWeightedBiomes(
+MCAPI void applyWeightedBiomes(
     ::std::vector<::std::pair<::Biome const*, uint>>&                                                   targetVector,
     ::std::vector<::gsl::not_null<::Biome const*>> const&                                               biomePtrVector,
     ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeNameVector const& jsonBiomeVector
 );
 
-MCNAPI bool resolveAndValidate(
+MCAPI bool resolveAndValidate(
     ::std::vector<::gsl::not_null<::Biome const*>>&                                                     biomePtrVector,
     ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeNameVector const& jsonVector,
     ::BiomeRegistry const&                                                                              biomeRegistry

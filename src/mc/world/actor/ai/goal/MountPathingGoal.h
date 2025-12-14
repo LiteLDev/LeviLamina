@@ -53,19 +53,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $_getAttackReachSqr();
+    MCAPI float $_getAttackReachSqr();
 
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCFOLD void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

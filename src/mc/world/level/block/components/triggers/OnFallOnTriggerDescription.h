@@ -19,14 +19,8 @@ class OnFallOnTriggerDescription : public ::BlockTriggerDescription<::OnFallOnTr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk78c2e0;
+    ::ll::TypedStorage<4, 4, float> mMinimumFallDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OnFallOnTriggerDescription& operator=(OnFallOnTriggerDescription const&);
-    OnFallOnTriggerDescription(OnFallOnTriggerDescription const&);
-    OnFallOnTriggerDescription();
 
 public:
     // virtual functions
@@ -47,17 +41,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $buildSchema(
+    MCAPI void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>&
                                        componentSchema,
         ::BlockComponentFactory const& factory

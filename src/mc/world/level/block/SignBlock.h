@@ -68,14 +68,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk858913;
+        ::ll::TypedStorage<4, 4, ::SignBlock::SignInteractionResult::Result> mResult;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SignInteractionResult& operator=(SignInteractionResult const&);
-        SignInteractionResult(SignInteractionResult const&);
-        SignInteractionResult();
     };
 
 public:

@@ -3,45 +3,53 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/platform/BuildPlatform.h"
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/platform/UUID.h"
+#include "mc/world/actor/player/LayeredAbilities.h"
+#include "mc/world/actor/state/PropertySyncData.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class DataItem;
 class Player;
 class ReadOnlyBinaryStream;
+class SynchedActorDataEntityWrapper;
+struct ActorLink;
 // clang-format on
 
 class AddPlayerPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>   mUnkb66b87;
-    ::ll::UntypedStorage<8, 32>   mUnk6ba9f2;
-    ::ll::UntypedStorage<8, 16>   mUnk240ec2;
-    ::ll::UntypedStorage<8, 8>    mUnkbf1334;
-    ::ll::UntypedStorage<8, 8>    mUnk87ea3a;
-    ::ll::UntypedStorage<8, 32>   mUnk64343b;
-    ::ll::UntypedStorage<4, 12>   mUnkf9c26b;
-    ::ll::UntypedStorage<4, 12>   mUnke450e6;
-    ::ll::UntypedStorage<4, 8>    mUnk5e459d;
-    ::ll::UntypedStorage<4, 4>    mUnkfc3bc0;
-    ::ll::UntypedStorage<8, 24>   mUnk67daf3;
-    ::ll::UntypedStorage<4, 1444> mUnk8614f6;
-    ::ll::UntypedStorage<8, 32>   mUnkc32c94;
-    ::ll::UntypedStorage<4, 4>    mUnkec0760;
-    ::ll::UntypedStorage<4, 4>    mUnk3f0fb7;
-    ::ll::UntypedStorage<8, 96>   mUnkf0ea15;
-    ::ll::UntypedStorage<8, 8>    mUnke2d421;
-    ::ll::UntypedStorage<8, 48>   mUnk11a85c;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>>                   mLinks;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mName;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                                  mUuid;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                               mEntityId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mRuntimeId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mPlatformOnlineId;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mVelocity;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                        mRot;
+    ::ll::TypedStorage<4, 4, float>                                         mYHeadRot;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mUnpack;
+    ::ll::TypedStorage<4, 1444, ::LayeredAbilities>                         mAbilities;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mDeviceId;
+    ::ll::TypedStorage<4, 4, ::BuildPlatform>                               mBuildPlatform;
+    ::ll::TypedStorage<4, 4, ::GameType>                                    mPlayerGameType;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                 mCarriedItem;
+    ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper const*>        mEntityData;
+    ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AddPlayerPacket& operator=(AddPlayerPacket const&);
-    AddPlayerPacket(AddPlayerPacket const&);
 
 public:
     // virtual functions

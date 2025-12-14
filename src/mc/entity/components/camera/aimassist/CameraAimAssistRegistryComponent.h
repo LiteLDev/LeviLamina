@@ -22,8 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool hasPriorityPreset(::HashedString const& id) const;
+    MCAPI_C bool hasPriorityPreset(::HashedString const& id) const;
 
-    MCNAPI_C void updateRegistryFromPacket(::CameraAimAssistPresetsPacket const& aimAssistPresetsPacket);
+    MCAPI_C void updateRegistryFromPacket(::CameraAimAssistPresetsPacket const& aimAssistPresetsPacket);
     // NOLINTEND
 };

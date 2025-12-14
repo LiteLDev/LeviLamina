@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class ItemEnchantOption;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -17,14 +18,8 @@ class PlayerEnchantOptionsPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3dde41;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemEnchantOption>> mOptions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerEnchantOptionsPacket& operator=(PlayerEnchantOptionsPacket const&);
-    PlayerEnchantOptionsPacket(PlayerEnchantOptionsPacket const&);
-    PlayerEnchantOptionsPacket();
 
 public:
     // virtual functions

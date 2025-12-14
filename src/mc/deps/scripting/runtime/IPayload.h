@@ -31,11 +31,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::ResultAny
+    MCAPI ::Scripting::ResultAny
     $runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
 
 #ifdef LL_PLAT_S
-    MCNAPI ::Scripting::ResultAny
+    MCAPI ::Scripting::ResultAny
     $runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
 #endif
 

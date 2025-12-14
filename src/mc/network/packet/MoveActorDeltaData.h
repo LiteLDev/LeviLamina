@@ -13,16 +13,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2> mUnkf843cc;
-        ::ll::UntypedStorage<1, 2> mUnk9db329;
-        ::ll::UntypedStorage<1, 2> mUnk5bbecc;
-        ::ll::UntypedStorage<1, 2> mUnk9923a7;
-        ::ll::UntypedStorage<1, 2> mUnke31c0b;
-        ::ll::UntypedStorage<1, 2> mUnk9f4a86;
-        ::ll::UntypedStorage<1, 2> mUnk996760;
-        ::ll::UntypedStorage<1, 2> mUnk96fd33;
-        ::ll::UntypedStorage<1, 2> mUnk99f021;
-        ::ll::UntypedStorage<1, 2> mUnk10b4d4;
+        ::ll::TypedStorage<2, 2, ushort> mRaw;
+        bool                             mContainsPositionX     : 1;
+        bool                             mContainsPositionY     : 1;
+        bool                             mContainsPositionZ     : 1;
+        bool                             mContainsRotationX     : 1;
+        bool                             mContainsRotationY     : 1;
+        bool                             mContainsRotationYHead : 1;
+        bool                             mIsOnGround            : 1;
+        bool                             mTeleported            : 1;
+        bool                             mForceMoveLocalEntity  : 1;
         // NOLINTEND
     };
 

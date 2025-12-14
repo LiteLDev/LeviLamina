@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStackRequestActionCraftBase;
+class Player;
 class Recipes;
 // clang-format on
 
@@ -16,7 +17,7 @@ class CraftHandlerSmithingTable : public ::CraftHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5fa9a4;
+    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
     // NOLINTEND
 
 public:

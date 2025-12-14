@@ -19,24 +19,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ResourcePackChunkDataPacketPayload(::ResourcePackChunkDataPacketPayload const&);
+    MCAPI ResourcePackChunkDataPacketPayload(::ResourcePackChunkDataPacketPayload const&);
 
-    MCNAPI ::ResourcePackChunkDataPacketPayload& operator=(::ResourcePackChunkDataPacketPayload&&);
+    MCAPI ::ResourcePackChunkDataPacketPayload& operator=(::ResourcePackChunkDataPacketPayload&&);
 
-    MCNAPI ::ResourcePackChunkDataPacketPayload& operator=(::ResourcePackChunkDataPacketPayload const&);
+    MCAPI ::ResourcePackChunkDataPacketPayload& operator=(::ResourcePackChunkDataPacketPayload const&);
 
-    MCNAPI ~ResourcePackChunkDataPacketPayload();
+    MCAPI ~ResourcePackChunkDataPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ResourcePackChunkDataPacketPayload const&);
+    MCAPI void* $ctor(::ResourcePackChunkDataPacketPayload const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

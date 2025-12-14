@@ -19,17 +19,11 @@ class SurvivalMode : public ::GameMode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnke69c28;
-    ::ll::UntypedStorage<1, 1>  mUnk3d88ec;
-    ::ll::UntypedStorage<4, 4>  mUnk812b7b;
-    ::ll::UntypedStorage<8, 64> mUnk7f623c;
+    ::ll::TypedStorage<1, 1, bool>                         mIsTrialMode;
+    ::ll::TypedStorage<1, 1, bool>                         mHasDisplayedIntro;
+    ::ll::TypedStorage<4, 4, int>                          mTrialEndedReminder;
+    ::ll::TypedStorage<8, 64, ::std::function<void(bool)>> mShowUpsellScreenCallback;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SurvivalMode& operator=(SurvivalMode const&);
-    SurvivalMode(SurvivalMode const&);
-    SurvivalMode();
 
 public:
     // virtual functions
@@ -73,37 +67,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _messagePlayers(::std::string message);
+    MCAPI void _messagePlayers(::std::string message);
 
-    MCNAPI void _showTrialReminder(bool force);
+    MCAPI void _showTrialReminder(bool force);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static bool& mTrialHasEnded();
+    MCAPI static bool& mTrialHasEnded();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $attack(::Actor& entity);
+    MCAPI bool $attack(::Actor& entity);
 
-    MCNAPI bool $interact(::Actor& entity, ::Vec3 const& location);
+    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location);
 
-    MCNAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
+    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
 
-    MCNAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+    MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
-    MCNAPI void $startBuildBlock(::BlockPos const& pos, uchar face);
+    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face);
 
-    MCNAPI bool $buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
+    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
 
-    MCNAPI bool $useItem(::ItemStack& item);
+    MCAPI bool $useItem(::ItemStack& item);
 
-    MCNAPI bool $useItemAsAttack(::ItemStack& item);
+    MCAPI bool $useItemAsAttack(::ItemStack& item);
 
-    MCNAPI ::InteractionResult $useItemOn(
+    MCAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
@@ -112,13 +106,13 @@ public:
         bool              isFirstEvent
     );
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $setTrialMode(bool isEnabled);
+    MCAPI void $setTrialMode(bool isEnabled);
 
-    MCNAPI bool $isInTrialMode();
+    MCAPI bool $isInTrialMode();
 
-    MCNAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+    MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
 
 
     // NOLINTEND

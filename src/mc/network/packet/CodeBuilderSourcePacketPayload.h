@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/options/code_builder_storage_query_options/Category.h"
+#include "mc/options/code_builder_storage_query_options/Operation.h"
+#include "mc/world/level/code_builder_execution_state/CodeStatus.h"
+
 struct CodeBuilderSourcePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk84eaa6;
-    ::ll::UntypedStorage<1, 1> mUnke330b2;
-    ::ll::UntypedStorage<1, 1> mUnk57efa6;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderStorageQueryOptions::Operation> mOperation;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderStorageQueryOptions::Category>  mCategory;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderExecutionState::CodeStatus>     mCodeStatus;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CodeBuilderSourcePacketPayload& operator=(CodeBuilderSourcePacketPayload const&);
-    CodeBuilderSourcePacketPayload(CodeBuilderSourcePacketPayload const&);
-    CodeBuilderSourcePacketPayload();
 };

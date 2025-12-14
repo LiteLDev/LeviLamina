@@ -13,6 +13,7 @@
 class Biome;
 class BiomeArea;
 class BiomeSource;
+class Block;
 class BlockPos;
 class BlockSource;
 class BlockVolume;
@@ -41,14 +42,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 262144> mUnk420483;
+        ::ll::TypedStorage<8, 262144, ::std::array<::Block const*, 32768>> blockBuffer;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ThreadData& operator=(ThreadData const&);
-        ThreadData(ThreadData const&);
-        ThreadData();
     };
 
     using CellPos2d = ::DividedPos2d<8>;
@@ -81,7 +76,7 @@ public:
     // NOLINTBEGIN
     virtual ~TheEndGenerator() /*override*/;
 
-    virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
+    virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
     virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhoodIn) /*override*/;
 
@@ -149,7 +144,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
 

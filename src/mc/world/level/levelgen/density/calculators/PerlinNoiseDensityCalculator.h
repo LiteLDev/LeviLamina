@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/levelgen/density/calculators/IDensityCalculator.h"
+#include "mc/world/level/levelgen/synth/PerlinNoise.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,15 +18,9 @@ class PerlinNoiseDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkf6c918;
-    ::ll::UntypedStorage<4, 12> mUnk2e6028;
+    ::ll::TypedStorage<8, 40, ::PerlinNoise const> mNoise;
+    ::ll::TypedStorage<4, 12, ::Vec3 const>        mScale;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PerlinNoiseDensityCalculator& operator=(PerlinNoiseDensityCalculator const&);
-    PerlinNoiseDensityCalculator(PerlinNoiseDensityCalculator const&);
-    PerlinNoiseDensityCalculator();
 
 public:
     // virtual functions

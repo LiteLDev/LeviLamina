@@ -6,20 +6,14 @@ class AtomicTimeAccumulator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7c2fca;
-    ::ll::UntypedStorage<8, 8> mUnka93c31;
-    ::ll::UntypedStorage<8, 8> mUnkfca143;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mCount;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mNanoseconds;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mMaxSample;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AtomicTimeAccumulator& operator=(AtomicTimeAccumulator const&);
-    AtomicTimeAccumulator(AtomicTimeAccumulator const&);
-    AtomicTimeAccumulator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void addTime(::std::chrono::nanoseconds const& time);
+    MCAPI_C void addTime(::std::chrono::nanoseconds const& time);
     // NOLINTEND
 };

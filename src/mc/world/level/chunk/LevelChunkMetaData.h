@@ -17,20 +17,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _recomputeHash() const;
+    MCAPI void _recomputeHash() const;
 
-    MCNAPI ~LevelChunkMetaData();
+    MCAPI ~LevelChunkMetaData();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static uint64 const& INVALID_META_DATA();
+    MCAPI static uint64 const& INVALID_META_DATA();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

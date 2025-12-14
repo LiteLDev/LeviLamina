@@ -6,14 +6,8 @@ struct ClientTerrainPixel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd92530;
-    ::ll::UntypedStorage<1, 1> mUnk5ad246;
-    ::ll::UntypedStorage<1, 1> mUnke2c602;
+    ::ll::TypedStorage<4, 4, uint> mPixel;
+    ::ll::TypedStorage<1, 1, bool> mAssignedToMap;
+    ::ll::TypedStorage<1, 1, bool> mSentToServer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientTerrainPixel& operator=(ClientTerrainPixel const&);
-    ClientTerrainPixel(ClientTerrainPixel const&);
-    ClientTerrainPixel();
 };

@@ -9,12 +9,12 @@ struct BlockPatternPreEvent : public ::BlockPatternEvent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BlockPatternPreEvent();
+    MCAPI ~BlockPatternPreEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ButtonChordTracker {
+class ButtonChordTracker {
 public:
     // ButtonChordTracker inner types declare
     // clang-format off

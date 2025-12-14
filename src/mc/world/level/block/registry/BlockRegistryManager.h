@@ -14,12 +14,12 @@ class BlockRegistryManager {
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::SubClientId, ::std::weak_ptr<::BlockTypeRegistry>>& mClientIdRegistryMap();
+    MCAPI static ::std::unordered_map<::SubClientId, ::std::weak_ptr<::BlockTypeRegistry>>& mClientIdRegistryMap();
 
-    MCNAPI static ::std::weak_ptr<::BlockTypeRegistry>& mClientRegistry();
+    MCAPI static ::std::weak_ptr<::BlockTypeRegistry>& mClientRegistry();
 
-    MCNAPI static ::std::weak_ptr<::BlockTypeRegistry>& mServerRegistry();
+    MCAPI static ::std::weak_ptr<::BlockTypeRegistry>& mServerRegistry();
 
-    MCNAPI static ::std::weak_ptr<::BlockTypeRegistry>& mThreadLocalRegistry();
+    MCAPI static ::std::weak_ptr<::BlockTypeRegistry>& mThreadLocalRegistry();
     // NOLINTEND
 };

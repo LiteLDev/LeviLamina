@@ -17,15 +17,9 @@ class ClientCacheBlobStatusPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk72ef37;
-    ::ll::UntypedStorage<8, 24> mUnke1d3dc;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mMissingIds;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mFoundIds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientCacheBlobStatusPacket& operator=(ClientCacheBlobStatusPacket const&);
-    ClientCacheBlobStatusPacket(ClientCacheBlobStatusPacket const&);
-    ClientCacheBlobStatusPacket();
 
 public:
     // virtual functions

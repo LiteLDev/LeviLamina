@@ -24,7 +24,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::Block const& $getUnknownBlock(::CompoundTag const&);
+    MCAPI ::Block const& $getUnknownBlock(::CompoundTag const&);
 #endif
 
 

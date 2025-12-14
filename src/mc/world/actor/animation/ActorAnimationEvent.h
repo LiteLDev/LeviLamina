@@ -34,30 +34,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorAnimationEvent(
+    MCAPI ActorAnimationEvent(
         float                time,
         ::std::string const& event,
         ::CurrentCmdVersion  commandVersion,
         ::MolangVersion      molangVersion
     );
 
-    MCNAPI void fire(::RenderParams& renderParams, ::Actor* actor) const;
+    MCAPI void fire(::RenderParams& renderParams, ::Actor* actor) const;
 
-    MCNAPI ::ActorAnimationEvent& operator=(::ActorAnimationEvent&&);
+    MCAPI ::ActorAnimationEvent& operator=(::ActorAnimationEvent&&);
 
-    MCNAPI ~ActorAnimationEvent();
+    MCAPI ~ActorAnimationEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
+    MCAPI void*
     $ctor(float time, ::std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion molangVersion);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

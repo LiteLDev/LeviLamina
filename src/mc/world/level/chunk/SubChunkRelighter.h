@@ -58,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SubChunkRelighter(
+    MCAPI SubChunkRelighter(
         ::IBlockSource&   source,
         uint64            centerSubChunkIndex,
         ::ChunkPos const& centerChunkPos,
@@ -67,41 +67,41 @@ public:
         bool              useFullyDarkSubchunk
     );
 
-    MCNAPI void _checkEdgeForSubtractiveBlockLightProcessing(::SubChunkLightIndex const& coordIndex);
+    MCAPI void _checkEdgeForSubtractiveBlockLightProcessing(::SubChunkLightIndex const& coordIndex);
 
-    MCNAPI void _checkEdgeForSubtractiveSkyLightProcessing(::SubChunkLightIndex const& coordIndex);
+    MCAPI void _checkEdgeForSubtractiveSkyLightProcessing(::SubChunkLightIndex const& coordIndex);
 
-    MCNAPI ::SubChunk* _dirtySubChunk(::SubChunkLightIndex coordIndex, uint& subChunkIndex);
+    MCAPI ::SubChunk* _dirtySubChunk(::SubChunkLightIndex coordIndex, uint& subChunkIndex);
 
-    MCNAPI ::SubChunk*
+    MCAPI ::SubChunk*
     _getBlock(::SubChunkLightIndex coordIndex, ::Block const*& block, ::Block const*& extraBlock) const;
 
-    MCNAPI ::SubChunk* _getBlock(
+    MCAPI ::SubChunk* _getBlock(
         ::SubChunkLightIndex coordIndex,
         ::Block const*&      block,
         ::Block const*&      extraBlock,
         uint&                subChunkIndex
     ) const;
 
-    MCNAPI ::SubChunkBrightnessStorage::LightPair _getLightPair(::SubChunkLightIndex coordIndex) const;
+    MCAPI ::SubChunkBrightnessStorage::LightPair _getLightPair(::SubChunkLightIndex coordIndex) const;
 
-    MCNAPI void _propagateBlockLight();
+    MCAPI void _propagateBlockLight();
 
-    MCNAPI void _propagateBlockLight(::SubChunkLightIndex coordIndex, uchar brightness);
+    MCAPI void _propagateBlockLight(::SubChunkLightIndex coordIndex, uchar brightness);
 
-    MCNAPI void _propagateSkyLight();
+    MCAPI void _propagateSkyLight();
 
-    MCNAPI void _propagateSkyLight(::SubChunkLightIndex coordIndex, uchar brightness);
+    MCAPI void _propagateSkyLight(::SubChunkLightIndex coordIndex, uchar brightness);
 
-    MCNAPI void _propagateSubtractiveBlockLight();
+    MCAPI void _propagateSubtractiveBlockLight();
 
-    MCNAPI void _propagateSubtractiveBlockLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
+    MCAPI void _propagateSubtractiveBlockLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
 
-    MCNAPI void _propagateSubtractiveSkyLight(bool shouldCheckForIgnoredAbsorptionValues);
+    MCAPI void _propagateSubtractiveSkyLight(bool shouldCheckForIgnoredAbsorptionValues);
 
-    MCNAPI void _propagateSubtractiveSkyLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
+    MCAPI void _propagateSubtractiveSkyLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
 
-    MCNAPI void _setLightHelper(
+    MCAPI void _setLightHelper(
         ::SubChunkLightIndex coordIndex,
         ::Brightness         oldBrightness,
         ::Brightness         newBrightness,
@@ -111,11 +111,11 @@ public:
         uint                 subChunkIndex
     );
 
-    MCNAPI void _setPropagatedBlockLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
+    MCAPI void _setPropagatedBlockLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
 
-    MCNAPI void _setPropagatedSkyLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
+    MCAPI void _setPropagatedSkyLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
 
-    MCNAPI void _setSkyLight(
+    MCAPI void _setSkyLight(
         ::SubChunkLightIndex coordIndex,
         ::Brightness         oldBrightness,
         ::Brightness         newBrightness,
@@ -123,13 +123,13 @@ public:
         ::Brightness         newAbsorption
     );
 
-    MCNAPI void relightSubChunk(
+    MCAPI void relightSubChunk(
         ::LevelChunk const&                         levelChunk,
         ::std::vector<::SubChunkLightUpdate> const& alteredBlockList,
         ::std::vector<::BlockPos>&                  brightnessChangedList
     );
 
-    MCNAPI void setBlockLight(
+    MCAPI void setBlockLight(
         ::Pos const& pos,
         ::Brightness oldBrightness,
         ::Brightness newBrightness,
@@ -137,39 +137,39 @@ public:
         ::Brightness newAbsorption
     );
 
-    MCNAPI ~SubChunkRelighter();
+    MCAPI ~SubChunkRelighter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::bitset<196608> computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
+    MCAPI static ::std::bitset<196608> computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
 
-    MCNAPI static ::std::bitset<196608> computeOuterEdgeOfComputationBits();
+    MCAPI static ::std::bitset<196608> computeOuterEdgeOfComputationBits();
 
-    MCNAPI static void initializeStatics();
+    MCAPI static void initializeStatics();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::bitset<196608>& mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
+    MCAPI static ::std::bitset<196608>& mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
 
-    MCNAPI static ::std::bitset<196608>& mOuterEdgeOfComputationBits();
+    MCAPI static ::std::bitset<196608>& mOuterEdgeOfComputationBits();
 
-    MCNAPI static ::SpinLockImpl& sDarkSpinLock();
+    MCAPI static ::SpinLockImpl& sDarkSpinLock();
 
-    MCNAPI static ::std::unique_ptr<::SubChunk>& sFullyDarkSubChunk();
+    MCAPI static ::std::unique_ptr<::SubChunk>& sFullyDarkSubChunk();
 
-    MCNAPI static ::std::unique_ptr<::SubChunk>& sFullyLitSubChunk();
+    MCAPI static ::std::unique_ptr<::SubChunk>& sFullyLitSubChunk();
 
-    MCNAPI static ::SpinLockImpl& sLitSpinLock();
+    MCAPI static ::SpinLockImpl& sLitSpinLock();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::IBlockSource&   source,
         uint64            centerSubChunkIndex,
         ::ChunkPos const& centerChunkPos,
@@ -182,6 +182,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

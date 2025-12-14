@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ILegacyItemTriggerHandler.h"
+#include "mc/world/item/LegacyItemTriggerHandlerConfig.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,14 +18,8 @@ class LegacyItemTriggerHandler : public ::ILegacyItemTriggerHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 320> mUnkca5d44;
+    ::ll::TypedStorage<8, 320, ::LegacyItemTriggerHandlerConfig> mConfig;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyItemTriggerHandler& operator=(LegacyItemTriggerHandler const&);
-    LegacyItemTriggerHandler(LegacyItemTriggerHandler const&);
-    LegacyItemTriggerHandler();
 
 public:
     // virtual functions
@@ -42,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _executeEvent(
+    MCAPI void _executeEvent(
         ::std::unordered_map<::std::string, ::DefinitionEvent> const&         eventHandlers,
         ::ItemStackBase&                                                      item,
         ::std::string const&                                                  name,
@@ -50,7 +45,7 @@ public:
         ::RenderParams&                                                       params
     ) const;
 
-    MCNAPI bool _forceExecuteTrigger(
+    MCAPI bool _forceExecuteTrigger(
         ::std::unordered_map<::std::string, ::DefinitionEvent> const&         eventHandlers,
         ::ItemStackBase&                                                      item,
         ::DefinitionTrigger const&                                            trigger,
@@ -62,7 +57,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $executeTrigger(
+    MCAPI bool $executeTrigger(
         ::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers,
         ::ItemStackBase&                                              item,
         ::DefinitionTrigger const&                                    trigger,

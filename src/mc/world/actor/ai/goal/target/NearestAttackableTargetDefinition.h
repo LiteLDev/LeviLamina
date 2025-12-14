@@ -14,22 +14,20 @@ namespace JsonUtil { class EmptyClass; }
 
 class NearestAttackableTargetDefinition : public ::TargetGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk67abec;
-    ::ll::UntypedStorage<4, 4> mUnk5c17f0;
-    ::ll::UntypedStorage<4, 4> mUnk50ac30;
-    ::ll::UntypedStorage<4, 4> mUnk513186;
-    ::ll::UntypedStorage<4, 4> mUnk9805ea;
-    ::ll::UntypedStorage<4, 4> mUnk3439b5;
-    ::ll::UntypedStorage<1, 1> mUnk919701;
-    // NOLINTEND
+    // NearestAttackableTargetDefinition inner types define
+    using self = ::NearestAttackableTargetDefinition;
 
 public:
-    // prevent constructor by default
-    NearestAttackableTargetDefinition& operator=(NearestAttackableTargetDefinition const&);
-    NearestAttackableTargetDefinition(NearestAttackableTargetDefinition const&);
-    NearestAttackableTargetDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>  mReselectTargets;
+    ::ll::TypedStorage<4, 4, int>   mAttackInterval;
+    ::ll::TypedStorage<4, 4, int>   mScanInterval;
+    ::ll::TypedStorage<4, 4, float> mTargetSearchHeight;
+    ::ll::TypedStorage<4, 4, float> mTargetInvisibleMultiplier;
+    ::ll::TypedStorage<4, 4, float> mTargetSneakVisibilityMultiplier;
+    ::ll::TypedStorage<1, 1, bool>  mSetPersistent;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -42,7 +40,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const& name,
         ::std::shared_ptr<
             ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::NearestAttackableTargetDefinition>>& root
@@ -52,7 +50,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $validate(::Mob& mob) const;
+    MCAPI bool $validate(::Mob& mob) const;
 
 
     // NOLINTEND

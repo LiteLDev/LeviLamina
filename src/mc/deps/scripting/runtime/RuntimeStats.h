@@ -8,39 +8,33 @@ struct RuntimeStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk18ea5f;
-    ::ll::UntypedStorage<8, 8> mUnkc3fa10;
-    ::ll::UntypedStorage<8, 8> mUnk3a9a4f;
-    ::ll::UntypedStorage<8, 8> mUnkf1aff5;
-    ::ll::UntypedStorage<8, 8> mUnkb5d2be;
-    ::ll::UntypedStorage<8, 8> mUnk6041c6;
-    ::ll::UntypedStorage<8, 8> mUnk71affa;
-    ::ll::UntypedStorage<8, 8> mUnk1535df;
-    ::ll::UntypedStorage<8, 8> mUnk213684;
-    ::ll::UntypedStorage<8, 8> mUnkaff39d;
-    ::ll::UntypedStorage<8, 8> mUnk49c2b4;
-    ::ll::UntypedStorage<8, 8> mUnkc87a29;
-    ::ll::UntypedStorage<8, 8> mUnk20ffcd;
-    ::ll::UntypedStorage<8, 8> mUnk7c1a6b;
-    ::ll::UntypedStorage<8, 8> mUnkfabf25;
-    ::ll::UntypedStorage<8, 8> mUnkb90a16;
-    ::ll::UntypedStorage<8, 8> mUnkdc9b40;
-    ::ll::UntypedStorage<8, 8> mUnk25a806;
-    ::ll::UntypedStorage<8, 8> mUnk73cf84;
-    ::ll::UntypedStorage<8, 8> mUnk36fb20;
-    ::ll::UntypedStorage<8, 8> mUnk718fa4;
-    ::ll::UntypedStorage<8, 8> mUnk75f18c;
-    ::ll::UntypedStorage<8, 8> mUnk3df75a;
-    ::ll::UntypedStorage<8, 8> mUnkcab120;
-    ::ll::UntypedStorage<8, 8> mUnk83ed76;
-    ::ll::UntypedStorage<8, 8> mUnk498ced;
+    ::ll::TypedStorage<8, 8, int64> mMallocLimit;
+    ::ll::TypedStorage<8, 8, int64> mMemoryUsedCount;
+    ::ll::TypedStorage<8, 8, int64> mMemoryUsedSize;
+    ::ll::TypedStorage<8, 8, int64> mMallocCount;
+    ::ll::TypedStorage<8, 8, int64> mMallocSize;
+    ::ll::TypedStorage<8, 8, int64> mAtomCount;
+    ::ll::TypedStorage<8, 8, int64> mAtomSize;
+    ::ll::TypedStorage<8, 8, int64> mStringCount;
+    ::ll::TypedStorage<8, 8, int64> mStringSize;
+    ::ll::TypedStorage<8, 8, int64> mObjectCount;
+    ::ll::TypedStorage<8, 8, int64> mObjectSize;
+    ::ll::TypedStorage<8, 8, int64> mPropertyCount;
+    ::ll::TypedStorage<8, 8, int64> mPropertySize;
+    ::ll::TypedStorage<8, 8, int64> mShapeCount;
+    ::ll::TypedStorage<8, 8, int64> mShapeSize;
+    ::ll::TypedStorage<8, 8, int64> mFuncCount;
+    ::ll::TypedStorage<8, 8, int64> mFuncSize;
+    ::ll::TypedStorage<8, 8, int64> mFuncCodeSize;
+    ::ll::TypedStorage<8, 8, int64> mFuncPc2lineCount;
+    ::ll::TypedStorage<8, 8, int64> mFuncPc2lineSize;
+    ::ll::TypedStorage<8, 8, int64> mNativeFuncCount;
+    ::ll::TypedStorage<8, 8, int64> mArrayCount;
+    ::ll::TypedStorage<8, 8, int64> mFastArrayCount;
+    ::ll::TypedStorage<8, 8, int64> mFastArrayElements;
+    ::ll::TypedStorage<8, 8, int64> mBinaryObjectCount;
+    ::ll::TypedStorage<8, 8, int64> mBinaryObjectSize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RuntimeStats& operator=(RuntimeStats const&);
-    RuntimeStats(RuntimeStats const&);
-    RuntimeStats();
 };
 
 } // namespace Scripting

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/EmotePacketPayload.h"
 #include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
@@ -12,7 +13,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct EmotePacketPayload;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,7 +20,7 @@ class EmotePacket : public ::ll::PayloadPacket<::EmotePacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8cd574;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
@@ -44,7 +44,7 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const /*override*/;
 
-    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
@@ -70,64 +70,64 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S EmotePacket();
+    MCAPI_S EmotePacket();
 
-    MCNAPI EmotePacket(::EmotePacket const&);
+    MCAPI EmotePacket(::EmotePacket const&);
 
-    MCNAPI_C explicit EmotePacket(::EmotePacketPayload payload);
+    MCAPI_C explicit EmotePacket(::EmotePacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor();
+    MCAPI_S void* $ctor();
 
-    MCNAPI void* $ctor(::EmotePacket const&);
+    MCAPI void* $ctor(::EmotePacket const&);
 
-    MCNAPI_C void* $ctor(::EmotePacketPayload payload);
+    MCAPI_C void* $ctor(::EmotePacketPayload payload);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI ::SerializationMode $getSerializationMode() const;
+    MCFOLD ::SerializationMode $getSerializationMode() const;
 
-    MCNAPI void $setSerializationMode(::SerializationMode mode);
+    MCAPI void $setSerializationMode(::SerializationMode mode);
 
-    MCNAPI void $writeWithSerializationMode(
+    MCAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,
         ::cereal::ReflectionCtx const&       reflectionCtx,
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCNAPI void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCNAPI ::Bedrock::Result<void>
+    MCAPI ::Bedrock::Result<void>
     $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
-    MCNAPI bool $disallowBatching() const;
+    MCFOLD bool $disallowBatching() const;
 
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI uint64 $getMaxSize() const;
+    MCFOLD uint64 $getMaxSize() const;
 
-    MCNAPI ::std::string $toString() const;
+    MCAPI ::std::string $toString() const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCNAPI ::Bedrock::Result<void>
+    MCAPI ::Bedrock::Result<void>
     $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 

@@ -39,44 +39,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CraftingDataEntry(::CraftingDataEntry&& entry);
+    MCAPI CraftingDataEntry(::CraftingDataEntry&& entry);
 
-    MCNAPI_C void addFurnaceAuxRecipe(::Recipes& recipes, ::BlockPalette& blockPalette) const;
+    MCAPI_C void addFurnaceAuxRecipe(::Recipes& recipes, ::BlockPalette& blockPalette) const;
 
-    MCNAPI_C void addFurnaceRecipe(::Recipes& recipes, ::BlockPalette& blockPalette) const;
+    MCAPI_C void addFurnaceRecipe(::Recipes& recipes, ::BlockPalette& blockPalette) const;
 
-    MCNAPI_C void addMultiRecipe(::Recipes& recipes) const;
+    MCAPI_C void addMultiRecipe(::Recipes& recipes) const;
 
-    MCNAPI_C void addShapedChemistryRecipe(::Recipes& recipes) const;
+    MCAPI_C void addShapedChemistryRecipe(::Recipes& recipes) const;
 
-    MCNAPI_C void addShapedRecipe(::Recipes& recipes) const;
+    MCAPI_C void addShapedRecipe(::Recipes& recipes) const;
 
-    MCNAPI_C void addSmithingTransformRecipe(::Recipes& recipes) const;
+    MCAPI_C void addSmithingTransformRecipe(::Recipes& recipes) const;
 
-    MCNAPI_C void addSmithingTrimRecipe(::Recipes& recipes) const;
+    MCAPI_C void addSmithingTrimRecipe(::Recipes& recipes) const;
 
-    MCNAPI_C void addUserDataShapelessRecipe(::Recipes& recipes) const;
+    MCAPI_C void addUserDataShapelessRecipe(::Recipes& recipes) const;
 
-    MCNAPI void fillFromFurnaceAuxRecipe(int itemData, ::ItemInstance const& result, ::HashedString const& tag);
+    MCAPI void fillFromFurnaceAuxRecipe(int itemData, ::ItemInstance const& result, ::HashedString const& tag);
 
-    MCNAPI void fillFromMultiRecipe(::MultiRecipe const& recipe);
+    MCAPI void fillFromMultiRecipe(::MultiRecipe const& recipe);
 
-    MCNAPI void fillFromRecipe(::Recipe const& recipe);
+    MCAPI void fillFromRecipe(::Recipe const& recipe);
 
-    MCNAPI_C ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCAPI_C ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
-    MCNAPI ~CraftingDataEntry();
+    MCAPI ~CraftingDataEntry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CraftingDataEntry&& entry);
+    MCAPI void* $ctor(::CraftingDataEntry&& entry);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

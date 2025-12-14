@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/input/ClientInputMappingFactory.h"
 #include "mc/client/input/vanilla/remapping/ActionEnum.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/input/enums/FocusImpact.h"
 
 // auto generated forward declare list
@@ -25,16 +26,10 @@ class VanillaClientInputMappingFactory : public ::ClientInputMappingFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk5c91ba;
-    ::ll::UntypedStorage<8, 16> mUnk9cb7db;
-    ::ll::UntypedStorage<8, 16> mUnk3679a1;
+    ::ll::TypedStorage<1, 1, bool>                             mIsEdu;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IOptions>>     mOptions;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mRegenerateTemplatesDueToScriptKeys;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VanillaClientInputMappingFactory& operator=(VanillaClientInputMappingFactory const&);
-    VanillaClientInputMappingFactory(VanillaClientInputMappingFactory const&);
-    VanillaClientInputMappingFactory();
 
 public:
     // virtual functions
@@ -53,43 +48,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addBlockSelectButton(::TouchInputMapping& touchMapping) const;
+    MCAPI void _addBlockSelectButton(::TouchInputMapping& touchMapping) const;
 
-    MCNAPI void _addClassicDPadButtons(::TouchInputMapping& touchMapping, bool sneak, bool jump) const;
+    MCAPI void _addClassicDPadButtons(::TouchInputMapping& touchMapping, bool sneak, bool jump) const;
 
-    MCNAPI void _addDebugChords(::std::vector<::ChordButtonMapping>& result);
+    MCAPI void _addDebugChords(::std::vector<::ChordButtonMapping>& result);
 
-    MCNAPI void
+    MCAPI void
     _addDebugKeyboardControls(::KeyboardInputMapping& keyboardMapping, ::MouseInputMapping& mouseMapping) const;
 
-    MCNAPI void _addFullKeyboardGamePlayControls(
+    MCAPI void _addFullKeyboardGamePlayControls(
         ::KeyboardInputMapping& keyboardMapping,
         ::MouseInputMapping&    mouseMapping,
         bool                    withInventoryCycle
     ) const;
 
-    MCNAPI void _addGamePlayTouchFlyingMovementControls(::TouchInputMapping& result) const;
+    MCAPI void _addGamePlayTouchFlyingMovementControls(::TouchInputMapping& result) const;
 
-    MCNAPI void _addGameplayMouseControls(
+    MCAPI void _addGameplayMouseControls(
         ::KeyboardInputMapping& normalGamePlayKeyboardMapping,
         ::MouseInputMapping&    normalGamePlayMouseMapping
     );
 
-    MCNAPI void _addInvariantGamePlayGameControllerControls(::GameControllerInputMapping& gameControllerMapping);
+    MCAPI void _addInvariantGamePlayGameControllerControls(::GameControllerInputMapping& gameControllerMapping);
 
-    MCNAPI void _addInvariantGamePlayTouchControls(::TouchInputMapping& touchMapping) const;
+    MCAPI void _addInvariantGamePlayTouchControls(::TouchInputMapping& touchMapping) const;
 
-    MCNAPI void _addInvariantKeyboardControls(
+    MCAPI void _addInvariantKeyboardControls(
         ::KeyboardInputMapping& keyboardMapping,
         ::MouseInputMapping&    mouseMapping,
         bool                    isEmoteMapping
     ) const;
 
-    MCNAPI void _addNewTouchControlsActionButtons(::TouchInputMapping& touchMapping) const;
+    MCAPI void _addNewTouchControlsActionButtons(::TouchInputMapping& touchMapping) const;
 
-    MCNAPI void _addSharedGamePlayGameControllerControls(::GameControllerInputMapping& gameControllerMapping);
+    MCAPI void _addSharedGamePlayGameControllerControls(::GameControllerInputMapping& gameControllerMapping);
 
-    MCNAPI void _bindActionToGameControllerInput(
+    MCAPI void _bindActionToGameControllerInput(
         ::GameControllerInputMapping&   map,
         ::GamePadRemappingLayout const& layout,
         ::std::string const&            buttonID,
@@ -98,7 +93,7 @@ public:
         float                           repeatInterval
     ) const;
 
-    MCNAPI void _bindActionToKeyboardAndMouseInput(
+    MCAPI void _bindActionToKeyboardAndMouseInput(
         ::KeyboardInputMapping& keyboardMap,
         ::MouseInputMapping&    mouseMap,
         ::std::string const&    buttonID,
@@ -106,123 +101,123 @@ public:
         ::FocusImpact           focusImpact
     ) const;
 
-    MCNAPI void _createBaseNormalGamePlayKeyboardAndMouseMapping(
+    MCAPI void _createBaseNormalGamePlayKeyboardAndMouseMapping(
         ::KeyboardInputMapping& normalGamePlayKeyboardMapping,
         ::MouseInputMapping&    normalGamePlayMouseMapping,
         bool                    isEmoteMapping
     );
 
-    MCNAPI void
+    MCFOLD void
     _createBedKeyboardAndMouseMapping(::KeyboardInputMapping& bedKeyboardMapping, ::MouseInputMapping& bedMouseMapping);
 
-    MCNAPI ::TestAutoInputMapping _createBedTestAutoInputMapping();
+    MCAPI ::TestAutoInputMapping _createBedTestAutoInputMapping();
 
-    MCNAPI ::TouchInputMapping _createBedTouchMapping();
+    MCAPI ::TouchInputMapping _createBedTouchMapping();
 
-    MCNAPI ::GameControllerInputMapping _createBoatAndMinecartGameControllerMapping();
+    MCAPI ::GameControllerInputMapping _createBoatAndMinecartGameControllerMapping();
 
-    MCNAPI void _createBoatKeyboardAndMouseMapping(
+    MCAPI void _createBoatKeyboardAndMouseMapping(
         ::KeyboardInputMapping& boatKeyboardMapping,
         ::MouseInputMapping&    boatMouseMapping
     );
 
-    MCNAPI ::TestAutoInputMapping _createBoatTestAutoInputMapping();
+    MCAPI ::TestAutoInputMapping _createBoatTestAutoInputMapping();
 
-    MCNAPI ::TouchInputMapping _createBoatTouchMapping();
+    MCAPI ::TouchInputMapping _createBoatTouchMapping();
 
-    MCNAPI void
+    MCFOLD void
     _createDeathKeyboardAndMouseMapping(::KeyboardInputMapping& keyboardMapping, ::MouseInputMapping& mouseMapping);
 
-    MCNAPI ::TouchInputMapping _createDeathTouchMapping();
+    MCAPI ::TouchInputMapping _createDeathTouchMapping();
 
-    MCNAPI ::GameControllerInputMapping _createEmoteGameControllerMapping();
+    MCAPI ::GameControllerInputMapping _createEmoteGameControllerMapping();
 
-    MCNAPI void _createExpediateEmoteKeyboardAndMouseMapping(
+    MCAPI void _createExpediateEmoteKeyboardAndMouseMapping(
         ::KeyboardInputMapping& emoteKeyboardMapping,
         ::MouseInputMapping&    emoteMouseMapping
     );
 
-    MCNAPI ::GameControllerInputMapping _createFlyingGameControllerMapping();
+    MCFOLD ::GameControllerInputMapping _createFlyingGameControllerMapping();
 
-    MCNAPI ::TouchInputMapping _createFlyingTouchMapping();
+    MCAPI ::TouchInputMapping _createFlyingTouchMapping();
 
-    MCNAPI ::GameControllerInputMapping _createGazeMouseControllerMapping();
+    MCAPI ::GameControllerInputMapping _createGazeMouseControllerMapping();
 
-    MCNAPI ::GameControllerInputMapping _createGazeScreenGameControllerMapping();
+    MCAPI ::GameControllerInputMapping _createGazeScreenGameControllerMapping();
 
-    MCNAPI ::TouchInputMapping _createInScaffoldingTouchMapping();
+    MCAPI ::TouchInputMapping _createInScaffoldingTouchMapping();
 
-    MCNAPI ::GameControllerInputMapping _createInWaterGameControllerMapping();
+    MCAPI ::GameControllerInputMapping _createInWaterGameControllerMapping();
 
-    MCNAPI ::TouchInputMapping _createInWaterTouchMapping();
+    MCAPI ::TouchInputMapping _createInWaterTouchMapping();
 
-    MCNAPI ::TouchInputMapping _createMinecartTouchMapping();
+    MCAPI ::TouchInputMapping _createMinecartTouchMapping();
 
-    MCNAPI ::std::vector<::ChordButtonMapping> _createNormalGamePlayChordMapping(bool withDropAll);
+    MCAPI ::std::vector<::ChordButtonMapping> _createNormalGamePlayChordMapping(bool withDropAll);
 
-    MCNAPI ::std::vector<::DeviceButtonMapping> _createNormalGamePlayDeviceButtonMapping();
+    MCAPI ::std::vector<::DeviceButtonMapping> _createNormalGamePlayDeviceButtonMapping();
 
-    MCNAPI ::GameControllerInputMapping _createNormalGamePlayGameControllerMapping();
+    MCAPI ::GameControllerInputMapping _createNormalGamePlayGameControllerMapping();
 
-    MCNAPI ::TestAutoInputMapping _createNormalGamePlayTestAutoInputMapping();
+    MCAPI ::TestAutoInputMapping _createNormalGamePlayTestAutoInputMapping();
 
-    MCNAPI ::TouchInputMapping _createNormalGamePlayTouchMapping();
+    MCAPI ::TouchInputMapping _createNormalGamePlayTouchMapping();
 
-    MCNAPI ::GameControllerInputMapping _createRideableGameControllerMapping();
+    MCAPI ::GameControllerInputMapping _createRideableGameControllerMapping();
 
-    MCNAPI void _createRideableKeyboardAndMouseMapping(
+    MCAPI void _createRideableKeyboardAndMouseMapping(
         ::KeyboardInputMapping& rideableKeyboardMapping,
         ::MouseInputMapping&    rideableMouseMapping
     );
 
-    MCNAPI ::TouchInputMapping _createRideableTouchMapping();
+    MCAPI ::TouchInputMapping _createRideableTouchMapping();
 
-    MCNAPI ::std::vector<::ChordButtonMapping> _createScreenChordMapping();
+    MCAPI ::std::vector<::ChordButtonMapping> _createScreenChordMapping();
 
-    MCNAPI ::GameControllerInputMapping _createScreenGameControllerMapping();
+    MCAPI ::GameControllerInputMapping _createScreenGameControllerMapping();
 
-    MCNAPI void _createScreenKeyboardAndMouseMapping(
+    MCAPI void _createScreenKeyboardAndMouseMapping(
         ::KeyboardInputMapping& screenKeyboardMapping,
         ::MouseInputMapping&    screenMouseMapping
     );
 
-    MCNAPI ::KeyboardInputMapping _createScreenKeyboardMapping();
+    MCAPI ::KeyboardInputMapping _createScreenKeyboardMapping();
 
-    MCNAPI ::MouseInputMapping _createScreenMouseMapping();
+    MCAPI ::MouseInputMapping _createScreenMouseMapping();
 
-    MCNAPI ::TestAutoInputMapping _createScreenTestAutoInputMapping();
+    MCAPI ::TestAutoInputMapping _createScreenTestAutoInputMapping();
 
-    MCNAPI ::GameControllerInputMapping _createSpectatorModeGameControllerMapping();
+    MCAPI ::GameControllerInputMapping _createSpectatorModeGameControllerMapping();
 
-    MCNAPI void _createSpectatorModeKeyboardAndMouseMapping(
+    MCAPI void _createSpectatorModeKeyboardAndMouseMapping(
         ::KeyboardInputMapping& spectatorModeGamePlayKeyboardMapping,
         ::MouseInputMapping&    spectatorModeGamePlayMouseMapping
     );
 
-    MCNAPI ::TestAutoInputMapping _createSpectatorModeTestAutoInputMapping();
+    MCAPI ::TestAutoInputMapping _createSpectatorModeTestAutoInputMapping();
 
-    MCNAPI ::TouchInputMapping _createSpectatorModeTouchMapping();
+    MCAPI ::TouchInputMapping _createSpectatorModeTouchMapping();
 
-    MCNAPI ::GameControllerInputMapping _createSwimmingGameControllerMapping();
+    MCFOLD ::GameControllerInputMapping _createSwimmingGameControllerMapping();
 
-    MCNAPI void _createSwimmingKeyboardAndMouseMapping(
+    MCAPI void _createSwimmingKeyboardAndMouseMapping(
         ::KeyboardInputMapping& swimmingKeyboardMapping,
         ::MouseInputMapping&    swimmingMouseMapping
     );
 
-    MCNAPI bool _hasSwappedJumpAndSneak() const;
+    MCAPI bool _hasSwappedJumpAndSneak() const;
 
-    MCNAPI bool _isUsingActionButtons() const;
+    MCAPI bool _isUsingActionButtons() const;
 
-    MCNAPI bool _isUsingNewTouchControls() const;
+    MCAPI bool _isUsingNewTouchControls() const;
 
-    MCNAPI void _populateFullKeyboardDefaults(::RemappingLayout& layout) const;
+    MCAPI void _populateFullKeyboardDefaults(::RemappingLayout& layout) const;
 
-    MCNAPI void _populateGamepadDefaults(::RemappingLayout& layout) const;
+    MCAPI void _populateGamepadDefaults(::RemappingLayout& layout) const;
 
-    MCNAPI void _populateKeyboardDefaults(::RemappingLayout& layout) const;
+    MCAPI void _populateKeyboardDefaults(::RemappingLayout& layout) const;
 
-    MCNAPI bool _shouldAddBinding(
+    MCAPI bool _shouldAddBinding(
         ::std::string                                                   action,
         int                                                             key,
         ::std::unordered_map<::std::string, ::std::unordered_set<int>>& actionToKeyMap
@@ -232,13 +227,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $createInputMappingTemplates(::IOptions& options);
+    MCAPI void $createInputMappingTemplates(::IOptions& options);
 
-    MCNAPI void $_updateKeyboardAndMouseControls(::IOptions& options);
+    MCAPI void $_updateKeyboardAndMouseControls(::IOptions& options);
 
-    MCNAPI void $_updateGameControllerControls();
+    MCAPI void $_updateGameControllerControls();
 
-    MCNAPI void $_updateTouchMappingControls();
+    MCAPI void $_updateTouchMappingControls();
     // NOLINTEND
 
 public:

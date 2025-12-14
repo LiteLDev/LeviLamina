@@ -11,14 +11,8 @@ class IScriptCustomComponentAfterEventSignal : public ::ScriptModuleMinecraft::I
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkea8d97;
+    ::ll::TypedStorage<8, 8, uint64> mEventType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IScriptCustomComponentAfterEventSignal& operator=(IScriptCustomComponentAfterEventSignal const&);
-    IScriptCustomComponentAfterEventSignal(IScriptCustomComponentAfterEventSignal const&);
-    IScriptCustomComponentAfterEventSignal();
 
 public:
     // virtual functions

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct KeyboardMapper {
+class KeyboardMapper {
 public:
     // KeyboardMapper inner types declare
     // clang-format off

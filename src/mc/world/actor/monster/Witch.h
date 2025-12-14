@@ -19,13 +19,11 @@ class Witch : public ::HumanoidMonster {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb0db77;
+    ::ll::TypedStorage<4, 4, int> mUsingTime;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Witch& operator=(Witch const&);
-    Witch(Witch const&);
     Witch();
 
 public:

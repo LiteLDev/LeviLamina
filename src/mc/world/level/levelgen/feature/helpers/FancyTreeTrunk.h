@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeTrunk.h"
 
 // auto generated forward declare list
@@ -27,36 +28,24 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkba726f;
+        ::ll::TypedStorage<4, 4, int> mBranchBase;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FoliageCoords& operator=(FoliageCoords const&);
-        FoliageCoords(FoliageCoords const&);
-        FoliageCoords();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnka29a0e;
-    ::ll::UntypedStorage<4, 4>   mUnkd084db;
-    ::ll::UntypedStorage<4, 4>   mUnkcb2202;
-    ::ll::UntypedStorage<4, 4>   mUnk6a3261;
-    ::ll::UntypedStorage<4, 4>   mUnkdf86e9;
-    ::ll::UntypedStorage<4, 4>   mUnk9e7746;
-    ::ll::UntypedStorage<4, 4>   mUnkfc9b48;
-    ::ll::UntypedStorage<4, 4>   mUnkab8ff5;
-    ::ll::UntypedStorage<8, 184> mUnk5e329f;
-    ::ll::UntypedStorage<4, 4>   mUnkbc7830;
+    ::ll::TypedStorage<4, 4, int>                 mBaseHeight;
+    ::ll::TypedStorage<4, 4, int>                 mHeightVariance;
+    ::ll::TypedStorage<4, 4, int>                 mTrunkWidth;
+    ::ll::TypedStorage<4, 4, float>               mHeightScale;
+    ::ll::TypedStorage<4, 4, float>               mBranchSlope;
+    ::ll::TypedStorage<4, 4, float>               mBranchDensity;
+    ::ll::TypedStorage<4, 4, float>               mBranchAltitudeFactor;
+    ::ll::TypedStorage<4, 4, float>               mFoliageAltitudeFactor;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mTrunkBlockDescriptor;
+    ::ll::TypedStorage<4, 4, float>               mWidthScale;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FancyTreeTrunk& operator=(FancyTreeTrunk const&);
-    FancyTreeTrunk(FancyTreeTrunk const&);
-    FancyTreeTrunk();
 
 public:
     // virtual functions
@@ -79,22 +68,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int _checkLine(
+    MCAPI int _checkLine(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               startPos,
         ::BlockPos const&               endPos,
         ::TreeHelper::TreeParams const& treeParams
     ) const;
 
-    MCNAPI void _placeLimb(::IBlockWorldGenAPI& target, ::BlockPos const& startPos, ::BlockPos const& endPos) const;
+    MCAPI void _placeLimb(::IBlockWorldGenAPI& target, ::BlockPos const& startPos, ::BlockPos const& endPos) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getTreeHeight(::Random& random) const;
+    MCAPI int $getTreeHeight(::Random& random) const;
 
-    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,

@@ -54,31 +54,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier&&);
+    MCAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier&&);
 
-    MCNAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier const&);
+    MCAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier&&);
+    MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier&&);
 
-    MCNAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier const&);
+    MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::CompoundTag> $apply(::IRandom& random, ::CompoundTag const* existingTag) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $apply(::IRandom& random, ::CompoundTag const* existingTag) const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

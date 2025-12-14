@@ -2,22 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/agent/agent_components/Direction.h"
+
 namespace AgentComponents::Actions {
 
 struct Drop {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkddcc45;
-    ::ll::UntypedStorage<4, 4> mUnk6b7ab7;
-    ::ll::UntypedStorage<4, 4> mUnk4ff83f;
+    ::ll::TypedStorage<1, 1, ::AgentComponents::Direction> dir;
+    ::ll::TypedStorage<4, 4, int>                          slot;
+    ::ll::TypedStorage<4, 4, int>                          quantity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Drop& operator=(Drop const&);
-    Drop(Drop const&);
-    Drop();
 };
 
 } // namespace AgentComponents::Actions

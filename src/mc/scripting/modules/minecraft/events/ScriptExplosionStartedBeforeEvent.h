@@ -18,19 +18,13 @@ struct ScriptExplosionStartedBeforeEvent : public ::ScriptModuleMinecraft::Scrip
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkad83b6;
+    ::ll::TypedStorage<1, 1, bool> mCancel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptExplosionStartedBeforeEvent& operator=(ScriptExplosionStartedBeforeEvent const&);
-    ScriptExplosionStartedBeforeEvent(ScriptExplosionStartedBeforeEvent const&);
-    ScriptExplosionStartedBeforeEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setImpactedBlocks(
+    MCAPI void setImpactedBlocks(
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> const& blocks
     );
     // NOLINTEND
@@ -38,7 +32,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

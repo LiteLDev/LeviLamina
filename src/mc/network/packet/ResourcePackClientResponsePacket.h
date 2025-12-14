@@ -18,14 +18,12 @@ class ResourcePackClientResponsePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk70c76c;
-    ::ll::UntypedStorage<1, 1>  mUnke0df5b;
+    ::ll::TypedStorage<8, 16, ::std::set<::std::string>> mDownloadingPacks;
+    ::ll::TypedStorage<1, 1, ::ResourcePackResponse>     mResponse;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ResourcePackClientResponsePacket& operator=(ResourcePackClientResponsePacket const&);
-    ResourcePackClientResponsePacket(ResourcePackClientResponsePacket const&);
     ResourcePackClientResponsePacket();
 
 public:

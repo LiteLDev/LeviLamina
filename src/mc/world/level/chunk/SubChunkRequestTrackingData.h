@@ -63,13 +63,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C SubChunkRequestTrackingData();
+    MCAPI_C SubChunkRequestTrackingData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI_C void* $ctor();
     // NOLINTEND
 
 public:

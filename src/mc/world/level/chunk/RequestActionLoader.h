@@ -16,9 +16,9 @@ class RequestActionLoader {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool isValidTag(::IRequestAction::RequestActionType actionType, ::CompoundTag const& tag);
+    MCAPI static bool isValidTag(::IRequestAction::RequestActionType actionType, ::CompoundTag const& tag);
 
-    MCNAPI static ::std::unique_ptr<::IRequestAction> load(
+    MCAPI static ::std::unique_ptr<::IRequestAction> load(
         ::IRequestAction::RequestActionType actionType,
         ::CompoundTag const&                tag,
         ::ICommandOriginLoader&             loader,

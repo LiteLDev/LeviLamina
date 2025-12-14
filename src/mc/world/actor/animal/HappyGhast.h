@@ -18,13 +18,11 @@ class HappyGhast : public ::Animal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb39d53;
+    ::ll::TypedStorage<8, 8, uint64> mRidingLoop;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    HappyGhast& operator=(HappyGhast const&);
-    HappyGhast(HappyGhast const&);
     HappyGhast();
 
 public:

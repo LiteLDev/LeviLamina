@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
 struct BlockDifference {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkecf8d1;
-    ::ll::UntypedStorage<8, 8> mUnk2fb92e;
+    ::ll::TypedStorage<8, 8, ::Block const*> before;
+    ::ll::TypedStorage<8, 8, ::Block const*> after;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockDifference& operator=(BlockDifference const&);
-    BlockDifference(BlockDifference const&);
-    BlockDifference();
 };

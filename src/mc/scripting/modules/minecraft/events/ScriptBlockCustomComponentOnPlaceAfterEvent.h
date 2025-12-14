@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentAfterEvent.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -17,21 +19,21 @@ namespace ScriptModuleMinecraft {
 struct ScriptBlockCustomComponentOnPlaceAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent,
                                                      public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk379e9b;
-    // NOLINTEND
+    // ScriptBlockCustomComponentOnPlaceAfterEvent inner types define
+    using IntermediateStorage = ::ScriptModuleMinecraft::ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage;
 
 public:
-    // prevent constructor by default
-    ScriptBlockCustomComponentOnPlaceAfterEvent& operator=(ScriptBlockCustomComponentOnPlaceAfterEvent const&);
-    ScriptBlockCustomComponentOnPlaceAfterEvent(ScriptBlockCustomComponentOnPlaceAfterEvent const&);
-    ScriptBlockCustomComponentOnPlaceAfterEvent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::
+        TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> const>
+            mPreviousBlock;
+    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

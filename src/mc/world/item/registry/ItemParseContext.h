@@ -2,31 +2,49 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/WeakPtr.h"
+#include "mc/resources/JsonBetaState.h"
+#include "mc/world/item/registry/ItemVersion.h"
+
+// auto generated forward declare list
+// clang-format off
+class IPackLoadContext;
+class Item;
+class SemVersion;
+namespace Json { class Value; }
+namespace PuvLoadData { struct LoadResultWithTiming; }
+// clang-format on
+
 struct ItemParseContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkdedfcd;
-    ::ll::UntypedStorage<8, 64> mUnk92749f;
-    ::ll::UntypedStorage<8, 64> mUnk40e213;
-    ::ll::UntypedStorage<8, 64> mUnk8b6109;
+    ::ll::TypedStorage<4, 4, ::ItemVersion> mItemVersion;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<::PuvLoadData::LoadResultWithTiming(
+            ::WeakPtr<::Item>&,
+            ::Json::Value const&,
+            ::SemVersion const&,
+            ::JsonBetaState,
+            ::IPackLoadContext&
+        )>>
+                                                                   mItemInitCallback;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mParsedDefinitions;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mUnverifiedItemOverrideNames;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemParseContext& operator=(ItemParseContext const&);
-    ItemParseContext(ItemParseContext const&);
-    ItemParseContext();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ItemParseContext();
+    MCAPI ~ItemParseContext();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

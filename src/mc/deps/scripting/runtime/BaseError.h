@@ -2,18 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct CallStackEntry; }
+// clang-format on
+
 namespace Scripting {
 
 struct BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5972f5;
-    ::ll::UntypedStorage<8, 32> mUnkb897e7;
-    ::ll::UntypedStorage<8, 40> mUnk8466b0;
-    ::ll::UntypedStorage<8, 24> mUnk3003b3;
-    ::ll::UntypedStorage<8, 40> mUnkc6a8a2;
-    ::ll::UntypedStorage<1, 1>  mUnkaf2820;
+    ::ll::TypedStorage<8, 32, ::std::string>                              name;
+    ::ll::TypedStorage<8, 32, ::std::string>                              message;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>             sourceMapDebugId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::CallStackEntry>> mCallStack;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>             mCallStackStr;
+    ::ll::TypedStorage<1, 1, bool>                                        throwAsString;
     // NOLINTEND
 
 public:
@@ -24,33 +29,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BaseError(::Scripting::BaseError&&);
+    MCAPI BaseError(::Scripting::BaseError&&);
 
-    MCNAPI BaseError(::std::string const& name_, ::std::string const& message_);
+    MCAPI BaseError(::std::string const& name_, ::std::string const& message_);
 
-    MCNAPI ::Scripting::BaseError& operator=(::Scripting::BaseError&&);
+    MCAPI ::Scripting::BaseError& operator=(::Scripting::BaseError&&);
 
-    MCNAPI ::Scripting::BaseError& operator=(::Scripting::BaseError const&);
+    MCAPI ::Scripting::BaseError& operator=(::Scripting::BaseError const&);
 
-    MCNAPI void setCallStack(::std::string _backtrace);
+    MCAPI void setCallStack(::std::string _backtrace);
 
-    MCNAPI ::std::string toString() const;
+    MCAPI ::std::string toString() const;
 
-    MCNAPI ~BaseError();
+    MCAPI ~BaseError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::BaseError&&);
+    MCAPI void* $ctor(::Scripting::BaseError&&);
 
-    MCNAPI void* $ctor(::std::string const& name_, ::std::string const& message_);
+    MCAPI void* $ctor(::std::string const& name_, ::std::string const& message_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

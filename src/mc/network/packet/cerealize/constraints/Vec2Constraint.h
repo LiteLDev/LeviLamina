@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/BasicNumericConstraint.h"
 #include "mc/deps/cereal/ConstraintHandle.h"
 
 // auto generated forward declare list
@@ -16,15 +17,9 @@ class Vec2Constraint : public ::cereal::ConstraintHandle<::Vec2Constraint> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk33ccfc;
-    ::ll::UntypedStorage<8, 32> mUnk6c2e7b;
+    ::ll::TypedStorage<8, 32, ::cereal::BasicNumericConstraint<float>> mXConstraint;
+    ::ll::TypedStorage<8, 32, ::cereal::BasicNumericConstraint<float>> mYConstraint;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Vec2Constraint& operator=(Vec2Constraint const&);
-    Vec2Constraint(Vec2Constraint const&);
-    Vec2Constraint();
 
 public:
     // virtual functions
@@ -37,13 +32,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void validateValue(::Vec2 const& comp, ::cereal::SerializerContext& context) const;
+    MCAPI void validateValue(::Vec2 const& comp, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
 
 
     // NOLINTEND

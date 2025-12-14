@@ -2,18 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/EntityId.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+
 class ItemStackNetManagerScreen {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7c9902;
+    ::ll::TypedStorage<8, 32, ::OwnerPtr<::EntityId>> mEntity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackNetManagerScreen& operator=(ItemStackNetManagerScreen const&);
-    ItemStackNetManagerScreen(ItemStackNetManagerScreen const&);
-    ItemStackNetManagerScreen();
 
 public:
     // virtual functions

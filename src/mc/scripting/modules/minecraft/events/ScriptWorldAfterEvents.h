@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
 #include "mc/scripting/modules/minecraft/events/IScriptWorldAfterEvents.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptAfterEventMetadata.h"
@@ -14,7 +16,14 @@
 class Level;
 class ScriptDeferredFlushTracker;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptActorEventListener; }
+namespace ScriptModuleMinecraft { class ScriptAfterEventList; }
+namespace ScriptModuleMinecraft { class ScriptBlockEventListener; }
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
+namespace ScriptModuleMinecraft { class ScriptItemEventListener; }
+namespace ScriptModuleMinecraft { class ScriptLevelEventListener; }
+namespace ScriptModuleMinecraft { class ScriptPlayerEventListener; }
+namespace ScriptModuleMinecraft { class ScriptServerNetworkEventListener; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorDieAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHealthChangedAfterEvent; }
@@ -69,7 +78,6 @@ namespace ScriptModuleMinecraft { struct ScriptWeatherChangedAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWorldInitializeAfterEvent; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
 // clang-format on
 
@@ -100,7 +108,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+        MCAPI void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
 
         // NOLINTEND
@@ -116,51 +124,49 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkee086d;
-        ::ll::UntypedStorage<8, 8>  mUnk791636;
+        ::ll::TypedStorage<8, 32, ::std::string> name;
+        ::ll::TypedStorage<8, 8, uint64>         count;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SignalNameSubscriberCount& operator=(SignalNameSubscriberCount const&);
-        SignalNameSubscriberCount(SignalNameSubscriberCount const&);
-        SignalNameSubscriberCount();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~SignalNameSubscriberCount();
+        MCAPI ~SignalNameSubscriberCount();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkbcbf76;
-    ::ll::UntypedStorage<8, 8>  mUnk6bb12a;
-    ::ll::UntypedStorage<8, 8>  mUnk67b926;
-    ::ll::UntypedStorage<8, 8>  mUnkd29287;
-    ::ll::UntypedStorage<8, 8>  mUnk6c9fd0;
-    ::ll::UntypedStorage<8, 8>  mUnk3b7018;
-    ::ll::UntypedStorage<8, 8>  mUnka84ede;
-    ::ll::UntypedStorage<8, 8>  mUnked6ec2;
-    ::ll::UntypedStorage<8, 8>  mUnk25b6d2;
-    ::ll::UntypedStorage<8, 16> mUnkb3af7f;
-    ::ll::UntypedStorage<8, 16> mUnk3e6d46;
-    ::ll::UntypedStorage<8, 8>  mUnkff6b79;
-    ::ll::UntypedStorage<8, 8>  mUnkbab7ab;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                      mScope;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Level*>>                            mLevel;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptGlobalEventListeners*> mGlobalEventListeners;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptActorEventListener>> mActorEventListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptBlockEventListener>> mBlockEventListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptItemEventListener>>  mItemEventListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptLevelEventListener>> mLevelEventListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptPlayerEventListener>>
+        mPlayerEventListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptServerNetworkEventListener>>
+                                                               mServerNetworkEventListener;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnActorEntityAdded;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPackSettingChange;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptAfterEventList>> mEvents;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::ScriptModuleMinecraft::ScriptWorldAfterEvents::ScriptWorldAfterEventsDeferredEventListener>>
+        mScriptDeferredEventListener;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptWorldAfterEvents& operator=(ScriptWorldAfterEvents const&);
-    ScriptWorldAfterEvents(ScriptWorldAfterEvents const&);
     ScriptWorldAfterEvents();
 
 public:
@@ -395,26 +401,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWorldAfterEvents(
+    MCAPI ScriptWorldAfterEvents(
         ::Scripting::WeakLifetimeScope const& scope,
         ::gsl::not_null<::Level*>             level,
         ::Scripting::DependencyLocator&       locator,
         ::Scripting::ContextConfig const&     config
     );
 
-    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptWorldAfterEvents::SignalNameSubscriberCount>
+    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptWorldAfterEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCNAPI void
+    MCAPI void
     registerListeners(bool worldListener, ::ScriptModuleMinecraft::ScriptGlobalEventListeners& globalEventListeners);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
+    MCAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
         ::ScriptModuleMinecraft::ScriptWorldAfterEvents> const&
     getMetadata();
     // NOLINTEND
@@ -422,13 +428,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& bindingName();
+    MCAPI static char const*& bindingName();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scripting::WeakLifetimeScope const& scope,
         ::gsl::not_null<::Level*>             level,
         ::Scripting::DependencyLocator&       locator,
@@ -439,224 +445,224 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Level& $getLevel() const;
+    MCFOLD ::Level& $getLevel() const;
 
-    MCNAPI void $onGameRuleChange(
+    MCAPI void $onGameRuleChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEvent>&
             gameRulesChangeEvent
     );
 
-    MCNAPI void $onWeatherChanged(
+    MCAPI void $onWeatherChanged(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&
             weatherChangedEvent
     );
 
-    MCNAPI void $onPushButton(
+    MCAPI void $onPushButton(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptButtonPushAfterEvent>& pushedButton
     );
 
-    MCNAPI void
+    MCAPI void
     $onActorLoad(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorLoadAfterEvent>& eventData);
 
-    MCNAPI void
+    MCAPI void
     $onActorSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorSpawnAfterEvent>& eventData);
 
-    MCNAPI void $onDataDrivenActorEventSend(
+    MCAPI void $onDataDrivenActorEventSend(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>& eventData
     );
 
-    MCNAPI void $onActorHitEntity(
+    MCAPI void $onActorHitEntity(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>& eventData
     );
 
-    MCNAPI void $onActorHitBlock(
+    MCAPI void $onActorHitBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEvent>& eventData
     );
 
-    MCNAPI void $onActorAddEffect(
+    MCAPI void $onActorAddEffect(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorAddEffectAfterEventIntermediateData>& eventData
     );
 
-    MCNAPI void $onActivateLever(
+    MCAPI void $onActivateLever(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLeverActionAfterEvent>& leverEvent
     );
 
-    MCNAPI void $onPlayerPlaceBlock(
+    MCAPI void $onPlayerPlaceBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>& blockPlaceEvent
     );
 
-    MCNAPI void $onExplodeBlock(
+    MCAPI void $onExplodeBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData>& eventData
     );
 
-    MCNAPI void $onPlayerBreakBlock(
+    MCAPI void $onPlayerBreakBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>& blockBreakEvent
     );
 
-    MCNAPI void $onActorHurt(
+    MCAPI void $onActorHurt(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>& actorHurtEvent
     );
 
-    MCNAPI void $onActorHealthChanged(
+    MCAPI void $onActorHealthChanged(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&
             actorHealthChangedEvent
     );
 
-    MCNAPI void
+    MCAPI void
     $onActorDie(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorDieAfterEvent>& actorDieEvent);
 
-    MCNAPI void $onActorRemoved(
+    MCAPI void $onActorRemoved(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const&           removedActor,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>& eventData
     );
 
-    MCNAPI void
+    MCAPI void
     $onItemUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseAfterEvent>& eventData);
 
-    MCNAPI void
+    MCAPI void
     $onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>& eventData);
 
-    MCNAPI void $onItemStartUseOn(
+    MCAPI void $onItemStartUseOn(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent>& eventData
     );
 
-    MCNAPI void $onItemStopUseOn(
+    MCAPI void $onItemStopUseOn(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent>& eventData
     );
 
-    MCNAPI void $onItemStartUse(
+    MCAPI void $onItemStartUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>& eventData
     );
 
-    MCNAPI void $onItemCompleteUse(
+    MCAPI void $onItemCompleteUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>& eventData
     );
 
-    MCNAPI void $onItemReleaseUse(
+    MCAPI void $onItemReleaseUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>& eventData
     );
 
-    MCNAPI void $onItemStopUse(
+    MCAPI void $onItemStopUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& eventData
     );
 
-    MCNAPI void
+    MCAPI void
     $onPlayerJoin(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent>& eventData);
 
-    MCNAPI void $onPlayerLeave(
+    MCAPI void $onPlayerLeave(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>& eventData
     );
 
-    MCNAPI void $onPlayerSpawn(
+    MCAPI void $onPlayerSpawn(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>& eventData
     );
 
-    MCNAPI void $onPlayerDimensionChange(
+    MCAPI void $onPlayerDimensionChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>& eventData
     );
 
-    MCNAPI void $onPlayerInputModeChange(
+    MCAPI void $onPlayerInputModeChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInputModeChangeAfterEvent>& eventData
     );
 
-    MCNAPI void $onPlayerInputPermissionCategoryChange(
+    MCAPI void $onPlayerInputPermissionCategoryChange(
         ::Scripting::StrongTypedObjectHandle<
             ::ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent>& eventData
     );
 
-    MCNAPI void $onPlayerInteractWithEntity(
+    MCAPI void $onPlayerInteractWithEntity(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent>&
             eventData
     );
 
-    MCNAPI void $onPlayerInteractWithBlock(
+    MCAPI void $onPlayerInteractWithBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>&
             eventData
     );
 
-    MCNAPI void $onPlayerGameModeChange(
+    MCAPI void $onPlayerGameModeChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeAfterEvent>& eventData
     );
 
-    MCNAPI void $onWorldInitialize(
+    MCAPI void $onWorldInitialize(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>& eventData
     );
 
-    MCNAPI void
+    MCAPI void
     $onChat(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendAfterEvent>& eventData);
 
-    MCNAPI void $onServerMessage(
+    MCAPI void $onServerMessage(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptServerMessageAfterEvent>& eventData
     );
 
-    MCNAPI void $onProjectileHitEntity(
+    MCAPI void $onProjectileHitEntity(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent>& eventData
     );
 
-    MCNAPI void $onProjectileHitBlock(
+    MCAPI void $onProjectileHitBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>& eventData
     );
 
-    MCNAPI void $onActivatePiston(
+    MCAPI void $onActivatePiston(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPistonActionAfterEvent>& eventData
     );
 
-    MCNAPI void $onExplosion(
+    MCAPI void $onExplosion(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent>& eventData
     );
 
-    MCNAPI void $onPushPressurePlate(
+    MCAPI void $onPushPressurePlate(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>&
             pushedPressurePlate
     );
 
-    MCNAPI void $onPopPressurePlate(
+    MCAPI void $onPopPressurePlate(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>&
             poppedPressurePlate
     );
 
-    MCNAPI void $onHitTargetBlock(
+    MCAPI void $onHitTargetBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent>& hitTargetBlock
     );
 
-    MCNAPI void $onTripTripWire(
+    MCAPI void $onTripTripWire(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent>& trippedTripWire
     );
 
-    MCNAPI void $onPlayerEmote(
+    MCAPI void $onPlayerEmote(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent>& emoteEvent
     );
 
-    MCNAPI void $onPlayerButtonInput(
+    MCAPI void $onPlayerButtonInput(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerButtonInputAfterEvent>& inputEvent
     );
 
-    MCNAPI void $onPlayerInventoryItemChange(
+    MCAPI void $onPlayerInventoryItemChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent>&
             inventoryEvent
     );
 
-    MCNAPI void $onPlayerHotbarSelectedSlotChange(
+    MCAPI void $onPlayerHotbarSelectedSlotChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerHotbarSelectedSlotChangeAfterEvent>&
             hotbarEvent
     );
 
-    MCNAPI void $onPackSettingChange(
+    MCAPI void $onPackSettingChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent>&
             packSettingChangeEvent
     );
 
-    MCNAPI void $onPlayerUseNameTag(
+    MCAPI void $onPlayerUseNameTag(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent>& useNameTagEvent
     );
 
-    MCNAPI void $onPlayerSwingStart(
+    MCAPI void $onPlayerSwingStart(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSwingStartAfterEvent>&
             playerSwingStartEvent
     );

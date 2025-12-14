@@ -13,6 +13,12 @@ struct RemoveActorPacketInfo;
 
 class RemoveActorPacket : public ::SerializedPayloadPacket<::RemoveActorPacketInfo, ::RemoveActorPacketPayload> {
 public:
+    // RemoveActorPacket inner types define
+    using PacketInfo = ::RemoveActorPacketInfo;
+
+    using PayloadType = ::RemoveActorPacketPayload;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RemoveActorPacket() /*override*/;

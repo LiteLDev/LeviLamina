@@ -6,8 +6,8 @@ struct ScriptMessagePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd25893;
-    ::ll::UntypedStorage<8, 32> mUnk37683a;
+    ::ll::TypedStorage<8, 32, ::std::string> mMessageId;
+    ::ll::TypedStorage<8, 32, ::std::string> mMessageValue;
     // NOLINTEND
 
 public:
@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptMessagePacketPayload& operator=(::ScriptMessagePacketPayload&&);
+    MCFOLD ::ScriptMessagePacketPayload& operator=(::ScriptMessagePacketPayload&&);
 
-    MCNAPI ~ScriptMessagePacketPayload();
+    MCAPI ~ScriptMessagePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

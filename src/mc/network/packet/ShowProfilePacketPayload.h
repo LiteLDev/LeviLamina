@@ -6,7 +6,7 @@ struct ShowProfilePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2f85ed;
+    ::ll::TypedStorage<8, 32, ::std::string> mPlayerXUID;
     // NOLINTEND
 
 public:
@@ -18,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ShowProfilePacketPayload& operator=(::ShowProfilePacketPayload&&);
+    MCFOLD ::ShowProfilePacketPayload& operator=(::ShowProfilePacketPayload&&);
 
-    MCNAPI ~ShowProfilePacketPayload();
+    MCAPI ~ShowProfilePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

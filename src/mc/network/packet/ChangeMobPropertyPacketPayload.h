@@ -2,16 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+
 struct ChangeMobPropertyPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2adc0c;
-    ::ll::UntypedStorage<1, 1>  mUnkef2316;
-    ::ll::UntypedStorage<4, 4>  mUnk2d2e1e;
-    ::ll::UntypedStorage<4, 4>  mUnka31ae5;
-    ::ll::UntypedStorage<8, 32> mUnk4406ae;
-    ::ll::UntypedStorage<8, 8>  mUnk92518a;
+    ::ll::TypedStorage<8, 32, ::std::string>  mPropName;
+    ::ll::TypedStorage<1, 1, bool>            mBoolComponentVal;
+    ::ll::TypedStorage<4, 4, float>           mFloatComponentVal;
+    ::ll::TypedStorage<4, 4, int>             mIntComponentVal;
+    ::ll::TypedStorage<8, 32, ::std::string>  mStringComponentVal;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorId;
     // NOLINTEND
 
 public:
@@ -23,14 +26,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ChangeMobPropertyPacketPayload& operator=(::ChangeMobPropertyPacketPayload&&);
+    MCAPI ::ChangeMobPropertyPacketPayload& operator=(::ChangeMobPropertyPacketPayload&&);
 
-    MCNAPI ~ChangeMobPropertyPacketPayload();
+    MCAPI ~ChangeMobPropertyPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

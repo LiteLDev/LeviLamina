@@ -299,9 +299,9 @@ public:
     _setBindPositionToBlockCursor(bool bindToBlockCursor);
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _setChangeEventClosure(
-        ::std::optional<::Scripting::Closure<void(
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters>
-        )>> const& closure
+        ::std::optional<::Scripting::Closure<
+            void(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters>
+            )>> const& closure
     );
 
     MCNAPI ::Scripting::Result_deprecated<void> _setCollisionRadius(float radius);

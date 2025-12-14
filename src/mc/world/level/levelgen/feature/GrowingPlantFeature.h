@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/IntRange.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
@@ -23,26 +25,20 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 184> mUnk63f3ab;
-        ::ll::UntypedStorage<4, 4>   mUnka9f6ce;
+        ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockDescriptor;
+        ::ll::TypedStorage<4, 4, float>               mWeight;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WeightedBlockReference& operator=(WeightedBlockReference const&);
-        WeightedBlockReference(WeightedBlockReference const&);
-        WeightedBlockReference();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~WeightedBlockReference();
+        MCAPI ~WeightedBlockReference();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -50,33 +46,21 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 8> mUnk92f875;
-        ::ll::UntypedStorage<4, 4> mUnk7a4752;
+        ::ll::TypedStorage<4, 8, ::IntRange> mRandomNumber;
+        ::ll::TypedStorage<4, 4, float>      mWeight;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WeightedRandomNumberReference& operator=(WeightedRandomNumberReference const&);
-        WeightedRandomNumberReference(WeightedRandomNumberReference const&);
-        WeightedRandomNumberReference();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5f69d8;
-    ::ll::UntypedStorage<1, 1>  mUnk8164c1;
-    ::ll::UntypedStorage<4, 8>  mUnk76831d;
-    ::ll::UntypedStorage<8, 24> mUnkf3ee6d;
-    ::ll::UntypedStorage<8, 24> mUnkbd7ccc;
-    ::ll::UntypedStorage<1, 1>  mUnk102e29;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GrowingPlantFeature::WeightedRandomNumberReference>> mHeightDistribution;
+    ::ll::TypedStorage<1, 1, uchar>                                                                mGrowthDirection;
+    ::ll::TypedStorage<4, 8, ::IntRange>                                                           mAge;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GrowingPlantFeature::WeightedBlockReference>>        mBodyBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GrowingPlantFeature::WeightedBlockReference>>        mHeadBlocks;
+    ::ll::TypedStorage<1, 1, bool>                                                                 mAllowWater;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GrowingPlantFeature& operator=(GrowingPlantFeature const&);
-    GrowingPlantFeature(GrowingPlantFeature const&);
-    GrowingPlantFeature();
 
 public:
     // virtual functions
@@ -89,13 +73,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
     // NOLINTEND

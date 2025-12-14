@@ -10,7 +10,7 @@ class HashedString;
 namespace RemovedVanillaBlockTypeIds {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::HashedString const& LavaCauldron();
+MCAPI ::HashedString const& LavaCauldron();
 // NOLINTEND
 
 } // namespace RemovedVanillaBlockTypeIds

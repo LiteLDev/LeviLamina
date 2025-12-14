@@ -2,14 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/packet/GraphicsOverrideParameterType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct GraphicsOverrideParameterPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk2bfba0;
-    ::ll::UntypedStorage<8, 32> mUnke7f328;
-    ::ll::UntypedStorage<1, 1>  mUnk3429fd;
-    ::ll::UntypedStorage<1, 1>  mUnk32f0a9;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<float, ::Vec3>> mKeyframes;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mBiomeID;
+    ::ll::TypedStorage<1, 1, ::GraphicsOverrideParameterType>      mParameterId;
+    ::ll::TypedStorage<1, 1, bool>                                 mResetParameter;
     // NOLINTEND
 
 public:
@@ -21,22 +29,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GraphicsOverrideParameterPacketPayload(::GraphicsOverrideParameterPacketPayload&&);
+    MCAPI GraphicsOverrideParameterPacketPayload(::GraphicsOverrideParameterPacketPayload&&);
 
-    MCNAPI ::GraphicsOverrideParameterPacketPayload& operator=(::GraphicsOverrideParameterPacketPayload&&);
+    MCAPI ::GraphicsOverrideParameterPacketPayload& operator=(::GraphicsOverrideParameterPacketPayload&&);
 
-    MCNAPI ~GraphicsOverrideParameterPacketPayload();
+    MCAPI ~GraphicsOverrideParameterPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::GraphicsOverrideParameterPacketPayload&&);
+    MCAPI void* $ctor(::GraphicsOverrideParameterPacketPayload&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

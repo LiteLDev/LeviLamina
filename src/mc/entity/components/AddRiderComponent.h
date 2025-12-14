@@ -21,14 +21,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void reloadComponent(::Actor& owner);
+    MCAPI void reloadComponent(::Actor& owner);
 
-    MCNAPI ~AddRiderComponent();
+    MCAPI ~AddRiderComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

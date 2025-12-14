@@ -7,14 +7,17 @@
 #include "mc/world/actor/state/PropertySyncData.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/PlayerInputTick.h"
 #include "mc/platform/Result.h"
+#include "mc/world/actor/state/PropertySyncData.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorRuntimeID;
 class BinaryStream;
+class DataItem;
 class PropertyComponent;
 class ReadOnlyBinaryStream;
 class SynchedActorDataEntityWrapper;

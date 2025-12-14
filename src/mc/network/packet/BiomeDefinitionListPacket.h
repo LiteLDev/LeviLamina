@@ -6,25 +6,22 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/biome/serialization/BiomeStringList.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+struct BiomeDefinitionData;
 // clang-format on
 
 class BiomeDefinitionListPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkac97d5;
-    ::ll::UntypedStorage<8, 88> mUnkb782a6;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<ushort, ::BiomeDefinitionData>> mBiomeData;
+    ::ll::TypedStorage<8, 88, ::BiomeStringList>                                   mStringList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeDefinitionListPacket& operator=(BiomeDefinitionListPacket const&);
-    BiomeDefinitionListPacket(BiomeDefinitionListPacket const&);
 
 public:
     // virtual functions

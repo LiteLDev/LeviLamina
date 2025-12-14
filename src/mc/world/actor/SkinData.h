@@ -11,27 +11,25 @@ struct SkinData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk92d40b;
-    ::ll::UntypedStorage<4, 8> mUnk7c0832;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mVariant;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mMarkVariant;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    SkinData& operator=(SkinData const&);
-    SkinData(SkinData const&);
     SkinData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit SkinData(::Actor const& actor);
+    MCAPI_C explicit SkinData(::Actor const& actor);
 
-    MCNAPI_C void applyToActor(::Actor& actor) const;
+    MCAPI_C void applyToActor(::Actor& actor) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Actor const& actor);
+    MCAPI_C void* $ctor(::Actor const& actor);
     // NOLINTEND
 };

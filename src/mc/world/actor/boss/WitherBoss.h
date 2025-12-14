@@ -95,7 +95,7 @@ public:
 
     virtual bool canFreeze() const /*override*/;
 
-    virtual bool canBeAffected(uint effectId) const /*override*/;
+    virtual bool canBeAffected(uint id) const /*override*/;
 
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
 
@@ -115,7 +115,7 @@ public:
 
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
@@ -195,7 +195,7 @@ public:
 
     MCFOLD bool $canFreeze() const;
 
-    MCAPI bool $canBeAffected(uint effectId) const;
+    MCAPI bool $canBeAffected(uint id) const;
 
     MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
@@ -215,7 +215,7 @@ public:
 
     MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 

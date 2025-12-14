@@ -51,20 +51,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelChunkBuilderData();
+    MCAPI LevelChunkBuilderData();
 
-    MCNAPI ~LevelChunkBuilderData();
+    MCAPI ~LevelChunkBuilderData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

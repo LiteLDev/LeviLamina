@@ -11,7 +11,7 @@ namespace SharedTypes::v1_20_60 { struct BlockSpecifier; }
 namespace BlockSpecifierGlue {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::unique_ptr<::BlockDescriptor>
+MCAPI ::std::unique_ptr<::BlockDescriptor>
 getResolvedBlockDescriptor(::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier);
 // NOLINTEND
 

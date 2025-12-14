@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/network/packet/PlayerRespawnState.h"
+
 struct RespawnPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkc2c250;
-    ::ll::UntypedStorage<1, 1>  mUnk8a3ea8;
-    ::ll::UntypedStorage<8, 8>  mUnk5cdab4;
+    ::ll::TypedStorage<4, 12, ::Vec3>              mPos;
+    ::ll::TypedStorage<1, 1, ::PlayerRespawnState> mState;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>     mRuntimeId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RespawnPacketPayload& operator=(RespawnPacketPayload const&);
-    RespawnPacketPayload(RespawnPacketPayload const&);
-    RespawnPacketPayload();
 };

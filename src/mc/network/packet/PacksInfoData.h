@@ -26,14 +26,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::unordered_map<::ContentIdentity, ::std::string> collectKeys() const;
+    MCAPI_C ::std::unordered_map<::ContentIdentity, ::std::string> collectKeys() const;
 
-    MCNAPI ~PacksInfoData();
+    MCAPI ~PacksInfoData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

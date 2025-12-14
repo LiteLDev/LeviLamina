@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
+#include "mc/deps/core/math/Color.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
@@ -43,15 +45,13 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 20> mUnk6794b1;
-        ::ll::UntypedStorage<4, 4>  mUnk885c5b;
+        ::ll::TypedStorage<
+            4,
+            20,
+            ::std::variant<::ParticleType, ::mce::Color, ::LeavesBlock::ParticleParams::BiomeTintedColor>>
+                                      mParticle;
+        ::ll::TypedStorage<4, 4, int> mOneOutOfChance;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ParticleParams& operator=(ParticleParams const&);
-        ParticleParams(ParticleParams const&);
-        ParticleParams();
     };
 
 public:

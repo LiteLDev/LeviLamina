@@ -3,13 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/StablePriorityQueue.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/block/BlockVolume.h"
 #include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/structurepools/alias/PoolAliasBinding.h"
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
+class ChunkPos;
 class Dimension;
 class JigsawBlockInfo;
 class JigsawStructureRegistry;
@@ -23,20 +27,46 @@ struct JigsawJunction;
 
 class JigsawPlacement {
 public:
+    // JigsawPlacement inner types define
+    using PieceFactory = ::std::function<::std::unique_ptr<::PoolElementStructurePiece>(
+        ::StructurePoolElement const&,
+        ::BlockPos const&,
+        ::Rotation const&,
+        int,
+        ::JigsawJunction&,
+        ::BoundingBox const&,
+        ::BlockPos const&
+    )>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkcc2c4f;
-    ::ll::UntypedStorage<4, 4>  mUnk230fb5;
-    ::ll::UntypedStorage<8, 64> mUnk40c5ee;
-    ::ll::UntypedStorage<8, 8>  mUnke0bb10;
-    ::ll::UntypedStorage<8, 8>  mUnk3c1434;
-    ::ll::UntypedStorage<8, 8>  mUnkfa3181;
-    ::ll::UntypedStorage<8, 8>  mUnk2bf1da;
-    ::ll::UntypedStorage<8, 64> mUnk5862e9;
-    ::ll::UntypedStorage<8, 40> mUnkdd8234;
-    ::ll::UntypedStorage<8, 24> mUnkb1b40e;
-    ::ll::UntypedStorage<8, 24> mUnka60e45;
-    ::ll::UntypedStorage<8, 40> mUnk747941;
+    ::ll::TypedStorage<4, 4, int const> mMaxDepth;
+    ::ll::TypedStorage<4, 4, int const> mGlobalContextSize;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<::std::unique_ptr<::PoolElementStructurePiece>(
+            ::StructurePoolElement const&,
+            ::BlockPos const&,
+            ::Rotation const&,
+            int,
+            ::JigsawJunction&,
+            ::BoundingBox const&,
+            ::BlockPos const&
+        )> const>
+                                                                                  mFactory;
+    ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePiece>>&> mPieceList;
+    ::ll::TypedStorage<8, 8, ::Random&>                                           mRandom;
+    ::ll::TypedStorage<8, 8, ::JigsawStructureRegistry const&>                    mPools;
+    ::ll::TypedStorage<8, 8, ::Dimension&>                                        mDimension;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>>
+                                                                                           mChunkHeightCache;
+    ::ll::TypedStorage<8, 40, ::StablePriorityQueue<::std::function<void()>, ::std::less>> mPlacingQueue;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::vector<::BoundingBox>, ::std::vector<::BoundingBox>>>>
+                                                             mContextStack;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>> mBlockBuffer;
+    ::ll::TypedStorage<8, 40, ::BlockVolume>                 mBlockBufferBox;
     // NOLINTEND
 
 public:

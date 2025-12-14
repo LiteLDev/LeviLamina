@@ -38,15 +38,9 @@ protected:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkb1098f;
-        ::ll::UntypedStorage<4, 4> mUnk754ce8;
+        ::ll::TypedStorage<1, 1, bool>  mUseAdjustments;
+        ::ll::TypedStorage<4, 4, float> mFirstRenderedYaw;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ItemRenderAdjustments& operator=(ItemRenderAdjustments const&);
-        ItemRenderAdjustments(ItemRenderAdjustments const&);
-        ItemRenderAdjustments();
     };
 
 public:

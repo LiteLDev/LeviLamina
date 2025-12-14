@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/RemoveVolumeEntityPacketPayload.h"
 #include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
@@ -12,7 +13,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct RemoveVolumeEntityPacketPayload;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,14 +20,8 @@ class RemoveVolumeEntityPacket : public ::ll::PayloadPacket<::RemoveVolumeEntity
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk222e67;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RemoveVolumeEntityPacket& operator=(RemoveVolumeEntityPacket const&);
-    RemoveVolumeEntityPacket(RemoveVolumeEntityPacket const&);
-    RemoveVolumeEntityPacket();
 
 public:
     // virtual functions

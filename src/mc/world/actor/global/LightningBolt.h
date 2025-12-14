@@ -17,18 +17,12 @@ class LightningBolt : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkcdcb88;
-    ::ll::UntypedStorage<4, 4> mUnkd45498;
-    ::ll::UntypedStorage<4, 4> mUnkcf0099;
-    ::ll::UntypedStorage<1, 1> mUnk97fd43;
-    ::ll::UntypedStorage<1, 1> mUnkf5773f;
+    ::ll::TypedStorage<4, 4, uint> mSeed;
+    ::ll::TypedStorage<4, 4, int>  mLife;
+    ::ll::TypedStorage<4, 4, int>  mFlashes;
+    ::ll::TypedStorage<1, 1, bool> mCanHurt;
+    ::ll::TypedStorage<1, 1, bool> mHasTriedToHurt;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LightningBolt& operator=(LightningBolt const&);
-    LightningBolt(LightningBolt const&);
-    LightningBolt();
 
 public:
     // virtual functions

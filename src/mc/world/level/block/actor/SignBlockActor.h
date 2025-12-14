@@ -34,8 +34,8 @@ public:
     // SignBlockActor inner types declare
     // clang-format off
     struct CachedLineData;
-    struct OpenSignRequest;
     struct CachedMessageData;
+    struct OpenSignRequest;
     class Text;
     // clang-format on
 
@@ -55,51 +55,29 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI CachedLineData();
+        MCAPI CachedLineData();
 
-        MCNAPI CachedLineData(::SignBlockActor::CachedLineData&&);
+        MCAPI CachedLineData(::SignBlockActor::CachedLineData&&);
 
-        MCNAPI_C CachedLineData(::SignBlockActor::CachedLineData const&);
+        MCAPI_C CachedLineData(::SignBlockActor::CachedLineData const&);
 
-        MCNAPI ~CachedLineData();
+        MCAPI ~CachedLineData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCFOLD void* $ctor();
 
-        MCNAPI void* $ctor(::SignBlockActor::CachedLineData&&);
+        MCFOLD void* $ctor(::SignBlockActor::CachedLineData&&);
 
-        MCNAPI_C void* $ctor(::SignBlockActor::CachedLineData const&);
+        MCAPI_C void* $ctor(::SignBlockActor::CachedLineData const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
-    struct OpenSignRequest {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                                                  mIsWaitingForChangeClear;
-        ::ll::TypedStorage<8, 72, ::OpenSignPacket>                                     mOpenSignPacket;
-        ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void(::OpenSignPacket&)>> mSendPacket;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~OpenSignRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -125,21 +103,43 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C CachedMessageData(::SignBlockActor::CachedMessageData&&);
+        MCAPI_C CachedMessageData(::SignBlockActor::CachedMessageData&&);
 
-        MCNAPI_C ~CachedMessageData();
+        MCAPI_C ~CachedMessageData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI_C void* $ctor(::SignBlockActor::CachedMessageData&&);
+        MCAPI_C void* $ctor(::SignBlockActor::CachedMessageData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+        MCAPI_C void $dtor();
+        // NOLINTEND
+    };
+
+    struct OpenSignRequest {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool>                                                  mIsWaitingForChangeClear;
+        ::ll::TypedStorage<8, 72, ::OpenSignPacket>                                     mOpenSignPacket;
+        ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void(::OpenSignPacket&)>> mSendPacket;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~OpenSignRequest();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

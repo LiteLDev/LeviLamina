@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/SetTitlePacketPayload.h"
 #include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
@@ -12,7 +13,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct SetTitlePacketPayload;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,13 +20,11 @@ class SetTitlePacket : public ::ll::PayloadPacket<::SetTitlePacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk46e274;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    SetTitlePacket& operator=(SetTitlePacket const&);
-    SetTitlePacket(SetTitlePacket const&);
     SetTitlePacket();
 
 public:

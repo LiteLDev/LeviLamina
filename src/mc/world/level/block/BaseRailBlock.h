@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockType.h"
 
@@ -12,7 +13,6 @@
 class AABB;
 class Actor;
 class Block;
-class BlockPos;
 class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
@@ -34,10 +34,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk412683;
-        ::ll::UntypedStorage<4, 12> mUnkd97f47;
-        ::ll::UntypedStorage<1, 1>  mUnk590a6e;
-        ::ll::UntypedStorage<8, 24> mUnk82a548;
+        ::ll::TypedStorage<8, 8, ::BlockSource&>             mRegion;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                mPos;
+        ::ll::TypedStorage<1, 1, bool>                       mUsesDataBit;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mConnections;
         // NOLINTEND
 
     public:

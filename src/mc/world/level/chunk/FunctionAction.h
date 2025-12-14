@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CommandOrigin;
 class CompoundTag;
 class Dimension;
 class ICommandOriginLoader;
@@ -17,15 +18,9 @@ class FunctionAction : public ::IRequestAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8bc0e5;
-    ::ll::UntypedStorage<8, 32> mUnkf9238c;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOrigin>> mCommandOrigin;
+    ::ll::TypedStorage<8, 32, ::std::string>                     mFilePath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FunctionAction& operator=(FunctionAction const&);
-    FunctionAction(FunctionAction const&);
-    FunctionAction();
 
 public:
     // virtual functions
@@ -42,29 +37,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _printOriginInvalidError(::ServerLevel& level);
+    MCAPI void _printOriginInvalidError(::ServerLevel& level);
 
-    MCNAPI void _printOutput(::ServerLevel& level, int successCount);
+    MCAPI void _printOutput(::ServerLevel& level, int successCount);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::FunctionAction> load(::CompoundTag const& tag, ::ICommandOriginLoader& loader);
+    MCAPI static ::std::unique_ptr<::FunctionAction> load(::CompoundTag const& tag, ::ICommandOriginLoader& loader);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
 
-    MCNAPI void $serialize(::CompoundTag& tag);
+    MCAPI void $serialize(::CompoundTag& tag);
 
 
     // NOLINTEND

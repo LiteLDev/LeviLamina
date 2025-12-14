@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 
@@ -15,15 +16,9 @@ class FindActorNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkfbc192;
-    ::ll::UntypedStorage<4, 4> mUnk97787e;
+    ::ll::TypedStorage<4, 4, ::ActorType> mActorType;
+    ::ll::TypedStorage<4, 4, int>         mSearchRadius;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FindActorNode& operator=(FindActorNode const&);
-    FindActorNode(FindActorNode const&);
-    FindActorNode();
 
 public:
     // virtual functions
@@ -38,10 +33,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeFromDefinition(::Actor& owner);
+    MCAPI void $initializeFromDefinition(::Actor& owner);
 
 #ifdef LL_PLAT_C
-    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
+    MCAPI ::BehaviorStatus $tick(::Actor& owner);
 #endif
 
 

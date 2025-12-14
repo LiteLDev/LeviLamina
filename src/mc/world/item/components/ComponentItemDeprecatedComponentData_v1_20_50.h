@@ -4,13 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/world/item/components/ComponentItemDeprecatedComponentData_v1_20_40.h"
+#include "mc/world/item/components/LegacyOnCompleteTriggerItemComponentData.h"
+#include "mc/world/item/components/LegacyOnDigTriggerItemComponentData.h"
 
 struct ComponentItemDeprecatedComponentData_v1_20_50 : public ::ComponentItemDeprecatedComponentData_v1_20_40 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnka82b15;
-    ::ll::UntypedStorage<8, 96> mUnke61a10;
+    ::ll::TypedStorage<8, 72, ::std::optional<::LegacyOnCompleteTriggerItemComponentData>>
+        legacyOnCompleteTriggerItemComponent;
+    ::ll::TypedStorage<8, 96, ::std::optional<::LegacyOnDigTriggerItemComponentData>> legacyOnDigTriggerItemComponent;
     // NOLINTEND
 
 public:
@@ -22,23 +25,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemDeprecatedComponentData_v1_20_50(::ComponentItemDeprecatedComponentData_v1_20_50&&);
+    MCAPI ComponentItemDeprecatedComponentData_v1_20_50(::ComponentItemDeprecatedComponentData_v1_20_50&&);
 
-    MCNAPI ::ComponentItemDeprecatedComponentData_v1_20_50&
-    operator=(::ComponentItemDeprecatedComponentData_v1_20_50&&);
+    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_50& operator=(::ComponentItemDeprecatedComponentData_v1_20_50&&);
 
-    MCNAPI ~ComponentItemDeprecatedComponentData_v1_20_50();
+    MCAPI ~ComponentItemDeprecatedComponentData_v1_20_50();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_50&&);
+    MCAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_50&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

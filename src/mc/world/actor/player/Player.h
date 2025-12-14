@@ -200,7 +200,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool
+        MCAPI bool
         setSpawnPoint(::BlockPos const& playerPosition, ::DimensionType dimension, ::BlockPos const& spawnBlock);
         // NOLINTEND
     };
@@ -484,7 +484,7 @@ public:
 
     virtual bool isInTrialMode();
 
-    virtual void setSpeed(float speed) /*override*/;
+    virtual void setSpeed(float _speed) /*override*/;
 
     virtual int getItemUseDuration() const /*override*/;
 
@@ -496,7 +496,7 @@ public:
 
     virtual bool isDamageBlocked(::ActorDamageSource const& source) const /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual ::std::vector<::ItemStack const*> getAllHandEquipment() const /*override*/;
 
@@ -1197,7 +1197,7 @@ public:
 
     MCFOLD bool $isInTrialMode();
 
-    MCAPI void $setSpeed(float speed);
+    MCAPI void $setSpeed(float _speed);
 
     MCAPI int $getItemUseDuration() const;
 
@@ -1209,7 +1209,7 @@ public:
 
     MCAPI bool $isDamageBlocked(::ActorDamageSource const& source) const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI ::std::vector<::ItemStack const*> $getAllHandEquipment() const;
 

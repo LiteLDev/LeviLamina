@@ -2,25 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GameControllerMapper {
+class GameControllerMapper {
 public:
     // GameControllerMapper inner types declare
     // clang-format off
-    struct ButtonAttributes;
+    struct TriggerState;
     struct DirectionAttributes;
+    struct ButtonAttributes;
     struct GameControllerMappingData;
     struct GamepadStickTurnData;
-    struct TriggerState;
     // clang-format on
 
     // GameControllerMapper inner types define
-    struct ButtonAttributes {};
+    struct TriggerState {};
 
     struct DirectionAttributes {};
+
+    struct ButtonAttributes {};
 
     struct GameControllerMappingData {};
 
     struct GamepadStickTurnData {};
-
-    struct TriggerState {};
 };

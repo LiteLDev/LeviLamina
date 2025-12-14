@@ -8,6 +8,7 @@ class ActorAnimationControllerPtr;
 class ActorSkeletalAnimationPtr;
 class DataDrivenGeometry;
 class HashedString;
+struct MolangVariableSettings;
 struct NamedMolangScript;
 // clang-format on
 
@@ -15,14 +16,15 @@ class CommonResourceDefinitionMap {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk1b76f2;
-    ::ll::UntypedStorage<8, 64> mUnkbf67e1;
-    ::ll::UntypedStorage<8, 24> mUnk5f6bfa;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ActorSkeletalAnimationPtr>> mActorAnimationMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ActorAnimationControllerPtr>>
+                                                                  mActorAnimationControllerMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::NamedMolangScript>> mActorAnimateScriptArray;
 #ifdef LL_PLAT_S
-    ::ll::UntypedStorage<8, 24> mUnk5bd786;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MolangVariableSettings>> mVariableSettings;
 #else // LL_PLAT_C
-    ::ll::UntypedStorage<8, 24> mUnk5bd786;
-    ::ll::UntypedStorage<8, 24> mUnk8193a6;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MolangVariableSettings>> mVariableSettings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>           mQueryableGeometryBoneNames;
 #endif
     // NOLINTEND
 
@@ -33,41 +35,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CommonResourceDefinitionMap();
+    MCAPI CommonResourceDefinitionMap();
 
-    MCNAPI_C CommonResourceDefinitionMap(::CommonResourceDefinitionMap&&);
+    MCAPI_C CommonResourceDefinitionMap(::CommonResourceDefinitionMap&&);
 
-    MCNAPI_C CommonResourceDefinitionMap(::CommonResourceDefinitionMap const&);
+    MCAPI_C CommonResourceDefinitionMap(::CommonResourceDefinitionMap const&);
 
-    MCNAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
+    MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
 
-    MCNAPI_C uint64 getQueryableGeometryBoneIndexByNameHash(uint64 boneNameHash) const;
+    MCAPI_C uint64 getQueryableGeometryBoneIndexByNameHash(uint64 boneNameHash) const;
 
-    MCNAPI_C void initQueryableGeometryBoneNames(::std::shared_ptr<::DataDrivenGeometry const> geometry);
+    MCAPI_C void initQueryableGeometryBoneNames(::std::shared_ptr<::DataDrivenGeometry const> geometry);
 
-    MCNAPI_C void mergeActorAnimateScriptArray(::std::vector<::NamedMolangScript> const& actorAnimateScriptArray);
+    MCAPI_C void mergeActorAnimateScriptArray(::std::vector<::NamedMolangScript> const& actorAnimateScriptArray);
 
-    MCNAPI void mergeAnimation(::HashedString const& name, ::ActorSkeletalAnimationPtr animationPtr);
+    MCAPI void mergeAnimation(::HashedString const& name, ::ActorSkeletalAnimationPtr animationPtr);
 
-    MCNAPI void
+    MCAPI void
     mergeAnimationController(::HashedString const& name, ::ActorAnimationControllerPtr animationControllerPtr);
 
-    MCNAPI ~CommonResourceDefinitionMap();
+    MCAPI ~CommonResourceDefinitionMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI_C void* $ctor(::CommonResourceDefinitionMap&&);
+    MCAPI_C void* $ctor(::CommonResourceDefinitionMap&&);
 
-    MCNAPI_C void* $ctor(::CommonResourceDefinitionMap const&);
+    MCAPI_C void* $ctor(::CommonResourceDefinitionMap const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

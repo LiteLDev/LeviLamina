@@ -10,39 +10,39 @@ class HashedString;
 namespace VanillaStructureFeatureType {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::HashedString const& AncientCity();
+MCAPI ::HashedString const& AncientCity();
 
-MCNAPI ::HashedString const& Bastion();
+MCAPI ::HashedString const& Bastion();
 
-MCNAPI ::HashedString const& BuriedTreasure();
+MCAPI ::HashedString const& BuriedTreasure();
 
-MCNAPI ::HashedString const& EndCity();
+MCAPI ::HashedString const& EndCity();
 
-MCNAPI ::HashedString const& Fortress();
+MCAPI ::HashedString const& Fortress();
 
-MCNAPI ::HashedString const& Mineshaft();
+MCAPI ::HashedString const& Mineshaft();
 
-MCNAPI ::HashedString const& Monument();
+MCAPI ::HashedString const& Monument();
 
-MCNAPI ::HashedString const& PillagerOutpost();
+MCAPI ::HashedString const& PillagerOutpost();
 
-MCNAPI ::HashedString const& RuinedPortal();
+MCAPI ::HashedString const& RuinedPortal();
 
-MCNAPI ::HashedString const& Ruins();
+MCAPI ::HashedString const& Ruins();
 
-MCNAPI ::HashedString const& Shipwreck();
+MCAPI ::HashedString const& Shipwreck();
 
-MCNAPI ::HashedString const& Stronghold();
+MCAPI ::HashedString const& Stronghold();
 
-MCNAPI ::HashedString const& Temple();
+MCAPI ::HashedString const& Temple();
 
-MCNAPI ::HashedString const& TrailRuins();
+MCAPI ::HashedString const& TrailRuins();
 
-MCNAPI ::HashedString const& TrialChambers();
+MCAPI ::HashedString const& TrialChambers();
 
-MCNAPI ::HashedString const& Village();
+MCAPI ::HashedString const& Village();
 
-MCNAPI ::HashedString const& WoodlandMansion();
+MCAPI ::HashedString const& WoodlandMansion();
 // NOLINTEND
 
 } // namespace VanillaStructureFeatureType

@@ -6,32 +6,30 @@ class TagUpdateToken {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk3dc2bf;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::std::atomic<int>>> mTokenCount;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    TagUpdateToken& operator=(TagUpdateToken const&);
-    TagUpdateToken(TagUpdateToken const&);
     TagUpdateToken();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit TagUpdateToken(::std::weak_ptr<::std::atomic<int>> tokenCount);
+    MCAPI explicit TagUpdateToken(::std::weak_ptr<::std::atomic<int>> tokenCount);
 
-    MCNAPI ~TagUpdateToken();
+    MCAPI ~TagUpdateToken();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::weak_ptr<::std::atomic<int>> tokenCount);
+    MCAPI void* $ctor(::std::weak_ptr<::std::atomic<int>> tokenCount);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

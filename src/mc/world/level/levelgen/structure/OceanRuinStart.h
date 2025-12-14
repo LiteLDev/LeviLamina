@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/biome/OceanRuinConfiguration.h"
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
 // auto generated forward declare list
@@ -15,14 +16,8 @@ class OceanRuinStart : public ::StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkaab8dc;
+    ::ll::TypedStorage<4, 12, ::OceanRuinConfiguration> mConfig;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OceanRuinStart& operator=(OceanRuinStart const&);
-    OceanRuinStart(OceanRuinStart const&);
-    OceanRuinStart();
 
 public:
     // virtual functions
@@ -35,13 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void createRuin(::Dimension& dim, ::Random& random, int x, int z);
+    MCAPI void createRuin(::Dimension& dim, ::Random& random, int x, int z);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
 
 
     // NOLINTEND

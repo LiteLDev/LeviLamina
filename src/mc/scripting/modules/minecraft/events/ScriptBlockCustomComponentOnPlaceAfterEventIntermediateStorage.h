@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentAfterEventIntermediateStorage.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 struct ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage
@@ -12,7 +17,7 @@ struct ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk286bc7;
+    ::ll::TypedStorage<8, 8, ::Block const&> mPreviousBlock;
     // NOLINTEND
 
 public:

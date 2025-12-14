@@ -24,11 +24,11 @@ class ShipwreckFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkd45d35;
-    ::ll::UntypedStorage<4, 4>  mUnk7f361c;
-    ::ll::UntypedStorage<4, 4>  mUnk4ce55a;
-    ::ll::UntypedStorage<8, 8>  mUnkc7588e;
-    ::ll::UntypedStorage<8, 24> mUnk227c84;
+    ::ll::TypedStorage<1, 1, bool const>                    mUseTiltedSpacing;
+    ::ll::TypedStorage<4, 4, int const>                     mSpacing;
+    ::ll::TypedStorage<4, 4, int const>                     mMinSeparation;
+    ::ll::TypedStorage<8, 8, ::OceanMonumentFeature&>       mMonument;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
 
 public:

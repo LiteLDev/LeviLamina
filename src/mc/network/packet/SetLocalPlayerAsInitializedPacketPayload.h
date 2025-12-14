@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorRuntimeID.h"
+
 struct SetLocalPlayerAsInitializedPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc386ec;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mPlayerID;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetLocalPlayerAsInitializedPacketPayload& operator=(SetLocalPlayerAsInitializedPacketPayload const&);
-    SetLocalPlayerAsInitializedPacketPayload(SetLocalPlayerAsInitializedPacketPayload const&);
-    SetLocalPlayerAsInitializedPacketPayload();
 };

@@ -5,9 +5,9 @@
 namespace TargetNearbyDefaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI float const& INSIDE_RANGE();
+MCAPI float const& INSIDE_RANGE();
 
-MCNAPI float const& OUTSIDE_RANGE();
+MCAPI float const& OUTSIDE_RANGE();
 // NOLINTEND
 
 } // namespace TargetNearbyDefaults

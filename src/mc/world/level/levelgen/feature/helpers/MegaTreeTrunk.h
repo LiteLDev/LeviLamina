@@ -3,7 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/IntRange.h"
+#include "mc/world/level/block/BlockDescriptor.h"
+#include "mc/world/level/levelgen/feature/helpers/ITreeCanopyWrapper.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeTrunk.h"
+#include "mc/world/level/levelgen/feature/helpers/tree_helper/AttachableDecoration.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,24 +23,18 @@ class MegaTreeTrunk : public ::ITreeTrunk {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk483d8f;
-    ::ll::UntypedStorage<4, 4>   mUnkf36806;
-    ::ll::UntypedStorage<4, 4>   mUnkcb39a8;
-    ::ll::UntypedStorage<4, 8>   mUnk5a03d6;
-    ::ll::UntypedStorage<4, 4>   mUnk706496;
-    ::ll::UntypedStorage<4, 4>   mUnkd5a864;
-    ::ll::UntypedStorage<4, 4>   mUnkc3e2d9;
-    ::ll::UntypedStorage<8, 184> mUnk58f724;
-    ::ll::UntypedStorage<8, 8>   mUnkc60f7b;
-    ::ll::UntypedStorage<8, 208> mUnkd46268;
-    ::ll::UntypedStorage<8, 24>  mUnk11dbbd;
+    ::ll::TypedStorage<4, 4, int>                                  mTrunkWidth;
+    ::ll::TypedStorage<4, 4, int>                                  mBaseHeight;
+    ::ll::TypedStorage<4, 4, int>                                  mBranchLength;
+    ::ll::TypedStorage<4, 8, ::IntRange>                           mBranchInterval;
+    ::ll::TypedStorage<4, 4, float>                                mBranchSlope;
+    ::ll::TypedStorage<4, 4, float>                                mMinBranchAltitudeFactor;
+    ::ll::TypedStorage<4, 4, float>                                mMaxBranchAltitudeFactor;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mTrunkBlockDescriptor;
+    ::ll::TypedStorage<8, 8, ::ITreeCanopyWrapper>                 mBranchCanopy;
+    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                  mHeightIntervals;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MegaTreeTrunk& operator=(MegaTreeTrunk const&);
-    MegaTreeTrunk(MegaTreeTrunk const&);
-    MegaTreeTrunk();
 
 public:
     // virtual functions
@@ -59,7 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _prepareSpawn(
+    MCAPI bool _prepareSpawn(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         int                             treeHeight,
@@ -70,9 +68,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getTreeHeight(::Random& random) const;
+    MCAPI int $getTreeHeight(::Random& random) const;
 
-    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,

@@ -15,22 +15,38 @@ class CavifierNoises {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk874752;
-    ::ll::UntypedStorage<8, 56> mUnkfc41ae;
-    ::ll::UntypedStorage<8, 56> mUnkcd02ba;
-    ::ll::UntypedStorage<8, 56> mUnkfafae8;
-    ::ll::UntypedStorage<8, 56> mUnk6628cf;
-    ::ll::UntypedStorage<8, 56> mUnk3210d7;
-    ::ll::UntypedStorage<8, 56> mUnkf107a9;
-    ::ll::UntypedStorage<8, 56> mUnk9d0a55;
-    ::ll::UntypedStorage<8, 56> mUnkd1f749;
-    ::ll::UntypedStorage<8, 56> mUnkae28ef;
-    ::ll::UntypedStorage<8, 56> mUnke471fd;
-    ::ll::UntypedStorage<8, 56> mUnka972b6;
-    ::ll::UntypedStorage<8, 56> mUnk5723bb;
-    ::ll::UntypedStorage<8, 56> mUnkffb34d;
-    ::ll::UntypedStorage<8, 56> mUnk7055a2;
-    ::ll::UntypedStorage<8, 56> mUnk9ba9ad;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mPillarNoiseSource;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mPillarRarenessModulator;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mPillarThicknessModulator;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mSpaghetti2DNoiseSource;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mSpaghetti2DElevationModulator;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mSpaghetti2DRarityModulator;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mSpaghetti2DThicknessModulator;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mSpaghetti3DNoiseSource1;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mSpaghetti3DNoiseSource2;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mSpaghetti3DRarityModulator;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mSpaghetti3DThicknessModulator;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mSpaghettiRoughnessNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mSpaghettiRoughnessModulator;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mBigEntranceNoiseSource;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mLayerNoiseSource;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mCheeseNoise;
     // NOLINTEND
 
 public:
@@ -41,9 +57,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CavifierNoises(::CavifierNoises const&);
+    MCAPI CavifierNoises(::CavifierNoises const&);
 
-    MCNAPI CavifierNoises(
+    MCAPI CavifierNoises(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarNoiseSource,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarRarenessModulator,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarThicknessModulator,
@@ -62,21 +78,21 @@ public:
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mCheeseNoise
     );
 
-    MCNAPI ~CavifierNoises();
+    MCAPI ~CavifierNoises();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::CavifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
+    MCAPI static ::CavifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CavifierNoises const&);
+    MCAPI void* $ctor(::CavifierNoises const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarNoiseSource,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarRarenessModulator,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarThicknessModulator,
@@ -99,6 +115,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/puv/puv_load_data/LoadResultWithTiming.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,45 +28,33 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkf6f6b4;
-        ::ll::UntypedStorage<8, 32> mUnk748cba;
+        ::ll::TypedStorage<8, 32, ::std::string>                       mPackName;
+        ::ll::TypedStorage<8, 32, ::PuvLoadData::LoadResultWithTiming> mLoadTime;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TradeTableLoadData& operator=(TradeTableLoadData const&);
-        TradeTableLoadData(TradeTableLoadData const&);
-        TradeTableLoadData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~TradeTableLoadData();
+        MCAPI ~TradeTableLoadData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk1d798d;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::TradeTable>>> mTradeTables;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TradeTables& operator=(TradeTables const&);
-    TradeTables(TradeTables const&);
-    TradeTables();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::TradeTables::TradeTableLoadData _parseAndStoreTradeTable(
+    MCAPI ::TradeTables::TradeTableLoadData _parseAndStoreTradeTable(
         ::Level&                                           level,
         ::ResourcePackManager*                             resourceLoader,
         ::Core::Path const&                                tradeTablePath,
@@ -73,16 +62,16 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCNAPI ::TradeTable* fetchTable(::std::string const& path);
+    MCAPI ::TradeTable* fetchTable(::std::string const& path);
 
-    MCNAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment, ::IMinecraftEventing& eventing);
+    MCAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment, ::IMinecraftEventing& eventing);
 
-    MCNAPI ~TradeTables();
+    MCAPI ~TradeTables();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

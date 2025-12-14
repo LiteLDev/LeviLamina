@@ -6,12 +6,6 @@ struct SetCommandsEnabledPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk9bbe90;
+    ::ll::TypedStorage<1, 1, bool> mCommandsEnabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetCommandsEnabledPacketPayload& operator=(SetCommandsEnabledPacketPayload const&);
-    SetCommandsEnabledPacketPayload(SetCommandsEnabledPacketPayload const&);
-    SetCommandsEnabledPacketPayload();
 };

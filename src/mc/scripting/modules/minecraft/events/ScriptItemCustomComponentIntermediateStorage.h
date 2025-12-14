@@ -18,13 +18,13 @@ struct ScriptItemCustomComponentIntermediateStorage
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptItemCustomComponentIntermediateStorage();
+    MCAPI ~ScriptItemCustomComponentIntermediateStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
 // auto generated forward declare list
 // clang-format off
 class AABB;
 class Block;
-class BlockPos;
 // clang-format on
 
 struct CollisionShapes {
@@ -21,23 +23,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk110a9c;
-        ::ll::UntypedStorage<4, 12> mUnk52d08b;
+        ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
+        ::ll::TypedStorage<4, 12, ::BlockPos>    mBlockPos;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockAndBlockPos& operator=(BlockAndBlockPos const&);
-        BlockAndBlockPos(BlockAndBlockPos const&);
-        BlockAndBlockPos();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8d7368;
-    ::ll::UntypedStorage<8, 24> mUnke5f742;
-    ::ll::UntypedStorage<1, 1>  mUnke03c26;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>>                              mShapes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CollisionShapes::BlockAndBlockPos>> mBlocks;
+    ::ll::TypedStorage<1, 1, bool>                                                mNearUnloadedChunk;
     // NOLINTEND
 
 public:
@@ -47,26 +43,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CollisionShapes(::CollisionShapes const&);
+    MCAPI CollisionShapes(::CollisionShapes const&);
 
-    MCNAPI ::std::pair<::BlockPos, ::Block const*> getBlockPosCurrentlyStandingOn(::AABB box) const;
+    MCAPI ::std::pair<::BlockPos, ::Block const*> getBlockPosCurrentlyStandingOn(::AABB box) const;
 
-    MCNAPI ::CollisionShapes& operator=(::CollisionShapes&&);
+    MCAPI ::CollisionShapes& operator=(::CollisionShapes&&);
 
-    MCNAPI ::CollisionShapes& operator=(::CollisionShapes const&);
+    MCAPI ::CollisionShapes& operator=(::CollisionShapes const&);
 
-    MCNAPI ~CollisionShapes();
+    MCAPI ~CollisionShapes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CollisionShapes const&);
+    MCAPI void* $ctor(::CollisionShapes const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

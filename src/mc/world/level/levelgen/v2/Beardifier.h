@@ -29,22 +29,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::br::worldgen::Beardifier& operator=(::br::worldgen::Beardifier&&);
+    MCAPI ::br::worldgen::Beardifier& operator=(::br::worldgen::Beardifier&&);
 
-    MCNAPI ~Beardifier();
+    MCAPI ~Beardifier();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::br::worldgen::Beardifier
+    MCAPI static ::br::worldgen::Beardifier
     forStructuresInChunk(::br::worldgen::StructureCache const& structureCache, ::ChunkPos pos);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/ContainerWeakRef.h"
 #include "mc/world/inventory/network/ItemStackNetManagerBase.h"
 #include "mc/world/inventory/network/ItemStackRequestScreen.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
@@ -13,16 +15,21 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
+class ClientScratchContainer;
 class Container;
-class ContainerWeakRef;
+class ContainerModel;
+class EntityContext;
 class IPlayerContainerSetter;
 class ISparseContainerSetListener;
 class ItemStack;
 class ItemStackNetManagerScreen;
 class ItemStackRequestAction;
+class ItemStackRequestBatch;
 class ItemStackRequestData;
 class SparseContainer;
+class SparseContainerClient;
 struct FullContainerName;
+struct HistoricPredictionData;
 struct ItemStackRequestIdTag;
 struct ItemStackResponseInfo;
 struct ItemStackResponseSlotInfo;
@@ -43,15 +50,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk7a9425;
-        ::ll::UntypedStorage<8, 64> mUnk110924;
-        ::ll::UntypedStorage<8, 64> mUnkfedfc3;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SparseContainerClient>> mSparseContainer;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<::ItemStackRequestId, ::std::vector<::HistoricPredictionData>>>
+            mHistoricPredictions;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<::ItemStackRequestId, ::std::vector<::HistoricPredictionData>>>
+            mZeroedOutItems;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        PredictiveContainer& operator=(PredictiveContainer const&);
-        PredictiveContainer(PredictiveContainer const&);
         PredictiveContainer();
 
     public:
@@ -95,15 +102,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48> mUnka0cd1c;
-        ::ll::UntypedStorage<8, 8>  mUnk48493b;
+        ::ll::TypedStorage<8, 48, ::ContainerWeakRef>                               mContainerWeakRef;
+        ::ll::TypedStorage<8, 8, ::ItemStackNetManagerClient::PredictiveContainer*> mContainer;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OpenSessionContainerData& operator=(OpenSessionContainerData const&);
-        OpenSessionContainerData(OpenSessionContainerData const&);
-        OpenSessionContainerData();
 
     public:
         // member functions
@@ -122,13 +123,29 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkb9ad2e;
-        ::ll::UntypedStorage<8, 64> mUnk1a33c8;
-        ::ll::UntypedStorage<8, 24> mUnke9a180;
-        ::ll::UntypedStorage<8, 24> mUnk351137;
-        ::ll::UntypedStorage<8, 24> mUnkd7bd1d;
-        ::ll::UntypedStorage<8, 64> mUnkdfbda4;
-        ::ll::UntypedStorage<8, 64> mUnk1f6cf9;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContainerEnumName, ::std::unordered_set<uchar>>>
+            mLegacyTransactionSetItemSlots;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::
+                unordered_map<::ItemStackRequestId, ::std::vector<::ItemStackNetManagerClient::PredictiveContainer*>>>
+                                                                                              mRequestContainers;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ClientScratchContainer>>> mClientScratchContainers;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ItemStackNetManagerClient::PredictiveContainer>>>
+            mPlayerOwnedPredictiveContainers;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ItemStackNetManagerClient::PredictiveContainer>>>
+            mOpenSessionPredictiveContainers;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::unordered_map<::FullContainerName, ::ItemStackNetManagerClient::OpenSessionContainerData>>
+            mOpenSessionContainerMap;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::unordered_map<::FullContainerName, ::ItemStackNetManagerClient::OpenSessionContainerData>>
+            mHudContainerMap;
         // NOLINTEND
 
     public:
@@ -168,14 +185,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk115914;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerModel>> mOwnedContainer;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OwningPredictiveContainer& operator=(OwningPredictiveContainer const&);
-        OwningPredictiveContainer(OwningPredictiveContainer const&);
-        OwningPredictiveContainer();
 
     public:
         // virtual functions
@@ -193,17 +204,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk8e007b;
-    ::ll::UntypedStorage<8, 8>  mUnkf683f5;
-    ::ll::UntypedStorage<8, 8>  mUnkcc9f3d;
-    ::ll::UntypedStorage<8, 24> mUnkd4fe97;
+    ::ll::TypedStorage<1, 1, bool>                                       mIsHandlingResponse;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>>  mRequest;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestBatch>> mRequestBatch;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                mRequestScreen;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackNetManagerClient& operator=(ItemStackNetManagerClient const&);
-    ItemStackNetManagerClient(ItemStackNetManagerClient const&);
-    ItemStackNetManagerClient();
 
 public:
     // virtual functions

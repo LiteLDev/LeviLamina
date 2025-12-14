@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/ai/util/ExpiringTick.h"
 #include "mc/world/actor/animal/Animal.h"
 
 // auto generated forward declare list
@@ -17,15 +18,13 @@ class Camel : public ::Animal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3467c8;
-    ::ll::UntypedStorage<8, 24> mUnk4d98f9;
-    ::ll::UntypedStorage<1, 1>  mUnk1af48a;
+    ::ll::TypedStorage<1, 1, bool>                             mWasSitting;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mDashCooldown;
+    ::ll::TypedStorage<1, 1, bool>                             mWasInCooldown;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Camel& operator=(Camel const&);
-    Camel(Camel const&);
     Camel();
 
 public:

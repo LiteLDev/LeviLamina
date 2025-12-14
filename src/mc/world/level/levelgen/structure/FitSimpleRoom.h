@@ -27,9 +27,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $fits(::RoomDefinition const& definition) const;
+    MCFOLD bool $fits(::RoomDefinition const& definition) const;
 
-    MCNAPI ::std::unique_ptr<::OceanMonumentPiece>
+    MCAPI ::std::unique_ptr<::OceanMonumentPiece>
     $create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random);
 
 

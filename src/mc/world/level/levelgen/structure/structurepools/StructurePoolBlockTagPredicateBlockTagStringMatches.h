@@ -41,22 +41,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
+    MCAPI
     StructurePoolBlockTagPredicateBlockTagStringMatches(::Block const& block, ::std::string tag, ::std::string value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Block const& block, ::std::string tag, ::std::string value);
+    MCAPI void* $ctor(::Block const& block, ::std::string tag, ::std::string value);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $test(::Block const& block, ::CompoundTag const& tag) const;
+    MCAPI bool $test(::Block const& block, ::CompoundTag const& tag) const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

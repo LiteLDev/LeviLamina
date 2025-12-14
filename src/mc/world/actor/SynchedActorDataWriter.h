@@ -2,18 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct SynchedActorDataComponent;
+// clang-format on
+
 class SynchedActorDataWriter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6cb021;
-    ::ll::UntypedStorage<8, 8> mUnk1f5e09;
-    ::ll::UntypedStorage<8, 8> mUnk292a56;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::SynchedActorDataComponent*>>    mComponent;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorDataFlagComponent*>>       mFlagComponent;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorDataDirtyFlagsComponent*>> mDirtyFlagsComponent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SynchedActorDataWriter& operator=(SynchedActorDataWriter const&);
-    SynchedActorDataWriter(SynchedActorDataWriter const&);
-    SynchedActorDataWriter();
 };

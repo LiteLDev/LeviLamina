@@ -17,14 +17,8 @@ class OceanMonumentStart : public ::StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk1a186e;
+    ::ll::TypedStorage<1, 1, bool> isCreated;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OceanMonumentStart& operator=(OceanMonumentStart const&);
-    OceanMonumentStart(OceanMonumentStart const&);
-    OceanMonumentStart();
 
 public:
     // virtual functions
@@ -39,15 +33,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void createMonument(::Dimension& dim, ::Random& random, int x, int z);
+    MCAPI void createMonument(::Dimension& dim, ::Random& random, int x, int z);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
 
 
     // NOLINTEND

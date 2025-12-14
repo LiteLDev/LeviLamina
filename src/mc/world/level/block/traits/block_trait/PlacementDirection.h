@@ -33,26 +33,20 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk7bcf13;
-        ::ll::UntypedStorage<1, 1> mUnk332cbb;
+        ::ll::TypedStorage<1, 1, bool> mCardinalDirection;
+        ::ll::TypedStorage<1, 1, bool> mFacingDirection;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        EnabledStates& operator=(EnabledStates const&);
-        EnabledStates(EnabledStates const&);
-        EnabledStates();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+        MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void fromStringVector(
+        MCAPI static void fromStringVector(
             ::BlockTrait::PlacementDirection::EnabledStates& instance,
             ::std::vector<::std::string> const&              states
         );
@@ -63,14 +57,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk9a29dc;
+        ::ll::TypedStorage<4, 4, float const> mRotationOffset;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        UpdateCardinalGetPlacementBlockCallback& operator=(UpdateCardinalGetPlacementBlockCallback const&);
-        UpdateCardinalGetPlacementBlockCallback(UpdateCardinalGetPlacementBlockCallback const&);
-        UpdateCardinalGetPlacementBlockCallback();
 
     public:
         // virtual functions
@@ -89,7 +77,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
             ::gsl::not_null<::Block const*> block,
             ::Actor const&                  by,
             ::BlockPos const&,
@@ -111,14 +99,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkef4481;
+        ::ll::TypedStorage<4, 4, float const> mRotationOffset;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        UpdateFacingGetPlacementBlockCallback& operator=(UpdateFacingGetPlacementBlockCallback const&);
-        UpdateFacingGetPlacementBlockCallback(UpdateFacingGetPlacementBlockCallback const&);
-        UpdateFacingGetPlacementBlockCallback();
 
     public:
         // virtual functions
@@ -137,7 +119,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
             ::gsl::not_null<::Block const*> block,
             ::Actor const&                  by,
             ::BlockPos const&               pos,
@@ -158,15 +140,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnk81c19d;
-    ::ll::UntypedStorage<4, 4> mUnk45914d;
+    ::ll::TypedStorage<1, 2, ::BlockTrait::PlacementDirection::EnabledStates> mStates;
+    ::ll::TypedStorage<4, 4, float>                                           mRotationOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlacementDirection& operator=(PlacementDirection const&);
-    PlacementDirection(PlacementDirection const&);
-    PlacementDirection();
 
 public:
     // virtual functions
@@ -183,27 +159,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BlockTrait::PlacementDirection CardinalDirection(float _yRotationOffset);
+    MCAPI static ::BlockTrait::PlacementDirection CardinalDirection(float _yRotationOffset);
 
-    MCNAPI static ::BlockTrait::PlacementDirection FacingDirection(float _yRotationOffset);
+    MCAPI static ::BlockTrait::PlacementDirection FacingDirection(float _yRotationOffset);
 
-    MCNAPI static ::std::string const& getName();
+    MCAPI static ::std::string const& getName();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const&);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const&);
 
-    MCNAPI void $applyToBlockType(::BlockType& blockType) const;
+    MCAPI void $applyToBlockType(::BlockType& blockType) const;
 
 
     // NOLINTEND

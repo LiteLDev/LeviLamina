@@ -8,9 +8,13 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class IDependencyLoader; }
+namespace Scripting { class IPrinter; }
 namespace Scripting { class NativeRuntime; }
 namespace Scripting { class ResultAny; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextId; }
+namespace Scripting { struct ModuleBindingBundle; }
 // clang-format on
 
 namespace Scripting {
@@ -19,14 +23,19 @@ class NativeFunctionPayload : public ::Scripting::IPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk79f943;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<::Scripting::ResultAny(
+            ::Scripting::NativeRuntime&,
+            ::Scripting::ContextId,
+            ::Scripting::WeakLifetimeScope,
+            ::Scripting::ModuleBindingBundle const&,
+            ::Scripting::IDependencyLoader*,
+            ::Scripting::IPrinter*
+        )>>
+        mFunction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NativeFunctionPayload& operator=(NativeFunctionPayload const&);
-    NativeFunctionPayload(NativeFunctionPayload const&);
-    NativeFunctionPayload();
 
 public:
     // virtual functions
@@ -47,14 +56,14 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCNAPI ::Scripting::ResultAny $runOn(
+    MCAPI ::Scripting::ResultAny $runOn(
         ::Scripting::ContextId      contextId,
         ::Scripting::NativeRuntime& runtime,
         ::std::optional<::Scripting::Privilege>

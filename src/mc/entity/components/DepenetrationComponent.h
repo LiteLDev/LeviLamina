@@ -42,14 +42,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::DepenetrationComponent& operator=(::DepenetrationComponent&&);
+    MCAPI ::DepenetrationComponent& operator=(::DepenetrationComponent&&);
 
-    MCNAPI_C ~DepenetrationComponent();
+    MCAPI_C ~DepenetrationComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

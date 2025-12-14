@@ -2,21 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/input/vanilla/remapping/ActionEnum.h"
+
 namespace Remapping {
 
 struct Action {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk75e715;
-    ::ll::UntypedStorage<8, 8> mUnk63bae5;
+    ::ll::TypedStorage<4, 4, ::Remapping::ActionEnum> mAction;
+    ::ll::TypedStorage<8, 8, char const*>             mActionName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Action& operator=(Action const&);
-    Action(Action const&);
-    Action();
 };
 
 } // namespace Remapping

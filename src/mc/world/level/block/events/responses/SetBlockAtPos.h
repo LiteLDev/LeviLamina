@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/util/Factory.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/response/EventResponse.h"
 
 // auto generated forward declare list
@@ -18,15 +20,9 @@ class SetBlockAtPos : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 184> mUnk92098f;
-    ::ll::UntypedStorage<4, 12>  mUnk6e791b;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockType;
+    ::ll::TypedStorage<4, 12, ::Vec3>             mBlockOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetBlockAtPos& operator=(SetBlockAtPos const&);
-    SetBlockAtPos(SetBlockAtPos const&);
-    SetBlockAtPos();
 
 public:
     // virtual functions
@@ -36,7 +32,7 @@ public:
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
     virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const /*override*/;
 
@@ -46,18 +42,18 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $executeAction(::RenderParams& params) const;
+    MCAPI void $executeAction(::RenderParams& params) const;
 
-    MCNAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+    MCAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const;
 

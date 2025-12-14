@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/scripting/modules/minecraft/events/ScriptEntityHitInformation.h"
 #include "mc/scripting/modules/minecraft/events/ScriptProjectileHitInfoAfterEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { struct ScriptEntityHitInformation; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -17,7 +17,7 @@ struct ScriptProjectileHitEntityAfterEvent : public ::ScriptModuleMinecraft::Scr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk7381f4;
+    ::ll::TypedStorage<8, 40, ::ScriptModuleMinecraft::ScriptEntityHitInformation> mEntityHitInfo;
     // NOLINTEND
 
 public:
@@ -28,21 +28,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptProjectileHitEntityAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
+    MCAPI ScriptProjectileHitEntityAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptEntityHitInformation getEntityHit() const;
+    MCAPI ::ScriptModuleMinecraft::ScriptEntityHitInformation getEntityHit() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
     // NOLINTEND
 };
 

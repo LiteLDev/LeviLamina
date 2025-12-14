@@ -161,7 +161,7 @@ public:
     virtual bool swing() /*override*/;
 
     virtual void
-    hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots) /*override*/;
+    hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots) /*override*/;
 
     virtual void sendArmorDamage(::std::bitset<5> const damagedSlots) /*override*/;
 
@@ -185,7 +185,7 @@ public:
     ) /*override*/;
 
     virtual void displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
+        ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     ) /*override*/;
@@ -220,7 +220,7 @@ public:
 
     virtual ::HashedString getCurrentStructureFeature() const /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
 
@@ -433,7 +433,7 @@ public:
 
     MCAPI bool $swing();
 
-    MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots);
+    MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots);
 
     MCAPI void $sendArmorDamage(::std::bitset<5> const damagedSlots);
 
@@ -454,7 +454,7 @@ public:
     );
 
     MCAPI void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
+        ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );
@@ -489,7 +489,7 @@ public:
 
     MCAPI ::HashedString $getCurrentStructureFeature() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $setContainerData(::IContainerManager& menu, int id, int value);
 

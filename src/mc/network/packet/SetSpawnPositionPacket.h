@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/SetSpawnPositionPacketPayload.h"
 #include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
@@ -12,7 +13,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct SetSpawnPositionPacketPayload;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,14 +20,8 @@ class SetSpawnPositionPacket : public ::ll::PayloadPacket<::SetSpawnPositionPack
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6edb37;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetSpawnPositionPacket& operator=(SetSpawnPositionPacket const&);
-    SetSpawnPositionPacket(SetSpawnPositionPacket const&);
-    SetSpawnPositionPacket();
 
 public:
     // virtual functions

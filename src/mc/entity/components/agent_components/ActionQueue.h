@@ -35,13 +35,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::AgentComponents::Actions::QueueItem pop();
+    MCAPI ::AgentComponents::Actions::QueueItem pop();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void schedule(::EntityContext& entity, ::AgentComponents::Actions::QueueItem item);
+    MCAPI static void schedule(::EntityContext& entity, ::AgentComponents::Actions::QueueItem item);
     // NOLINTEND
 };
 

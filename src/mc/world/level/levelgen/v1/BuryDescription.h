@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
+
 class BuryDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk73cda0;
+    ::ll::TypedStorage<4, 24, ::BoundingBox> mCachedPieceBounds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BuryDescription& operator=(BuryDescription const&);
-    BuryDescription(BuryDescription const&);
-    BuryDescription();
 };

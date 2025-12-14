@@ -6,6 +6,7 @@
 #include "mc/world/level/levelgen/feature/ReplaceRule.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/threading/InstancedThreadLocal.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
@@ -37,7 +38,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void setRules(::std::vector<::ReplaceRule> const& replaceRules);
+        MCAPI void setRules(::std::vector<::ReplaceRule> const& replaceRules);
         // NOLINTEND
     };
 
@@ -45,34 +46,22 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk586a41;
-        ::ll::UntypedStorage<4, 4>  mUnkf3395f;
-        ::ll::UntypedStorage<4, 4>  mUnk1118fb;
+        ::ll::TypedStorage<4, 12, ::Vec3> mCenter;
+        ::ll::TypedStorage<4, 4, float>   mHalfRSqr;
+        ::ll::TypedStorage<4, 4, float>   mHalfR;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SphereData& operator=(SphereData const&);
-        SphereData(SphereData const&);
-        SphereData();
     };
 
     struct Helper {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnkce24eb;
-        ::ll::UntypedStorage<8, 24> mUnkca4f0f;
-        ::ll::UntypedStorage<8, 24> mUnkfab9fa;
-        ::ll::UntypedStorage<4, 4>  mUnk4fd06d;
-        ::ll::UntypedStorage<1, 1>  mUnk73ea1f;
+        ::ll::TypedStorage<8, 24, ::OreFeature::ReplaceRulesAccelerator>    mRulesAccelerator;
+        ::ll::TypedStorage<8, 24, ::std::vector<::OreFeature::SphereData>>  mAllSpheres;
+        ::ll::TypedStorage<8, 24, ::std::vector<::OreFeature::SphereData*>> mSpheres;
+        ::ll::TypedStorage<4, 4, uint>                                      mActiveSpheres;
+        ::ll::TypedStorage<1, 1, bool>                                      mInitialized;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Helper& operator=(Helper const&);
-        Helper(Helper const&);
-        Helper();
     };
 
 public:
@@ -101,7 +90,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
     // NOLINTEND

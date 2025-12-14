@@ -18,17 +18,11 @@ class MineshaftCorridor : public ::MineshaftPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk191025;
-    ::ll::UntypedStorage<1, 1> mUnk3560e1;
-    ::ll::UntypedStorage<1, 1> mUnkce0fd5;
-    ::ll::UntypedStorage<4, 4> mUnkd87313;
+    ::ll::TypedStorage<1, 1, bool> hasRails;
+    ::ll::TypedStorage<1, 1, bool> spiderCorridor;
+    ::ll::TypedStorage<1, 1, bool> hasPlacedSpider;
+    ::ll::TypedStorage<4, 4, int>  numSections;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MineshaftCorridor& operator=(MineshaftCorridor const&);
-    MineshaftCorridor(MineshaftCorridor const&);
-    MineshaftCorridor();
 
 public:
     // virtual functions
@@ -51,12 +45,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _fillPillarDownOrChainUp(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
+    MCAPI void _fillPillarDownOrChainUp(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
 
-    MCNAPI void
+    MCAPI void
     _placeCobWeb(::BlockSource& region, ::BoundingBox const& chunkBB, ::Random& random, float p, int x0, int y1, int z);
 
-    MCNAPI void _placeSupport(
+    MCAPI void _placeSupport(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
         int                  x0,
@@ -71,7 +65,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BoundingBox findCorridorSize(
+    MCAPI static ::BoundingBox findCorridorSize(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         int                                                 footX,
@@ -84,17 +78,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI void $addChildren(
+    MCAPI void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     );
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
 
     // NOLINTEND

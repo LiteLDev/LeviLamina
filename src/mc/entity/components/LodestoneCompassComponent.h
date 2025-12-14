@@ -46,25 +46,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LodestoneCompassComponent(::LodestoneCompassComponent&&);
+    MCAPI LodestoneCompassComponent(::LodestoneCompassComponent&&);
 
-    MCNAPI ::LodestoneCompassComponentCalculator* _findCalculator(
+    MCAPI ::LodestoneCompassComponentCalculator* _findCalculator(
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
         bool                                                                             createIfNotFound
     );
 
-    MCNAPI_C bool tick(::Level& level);
+    MCAPI_C bool tick(::Level& level);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::CompassSpriteCalculator& mSpinningLodestone();
+    MCAPI static ::CompassSpriteCalculator& mSpinningLodestone();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LodestoneCompassComponent&&);
+    MCAPI void* $ctor(::LodestoneCompassComponent&&);
     // NOLINTEND
 };

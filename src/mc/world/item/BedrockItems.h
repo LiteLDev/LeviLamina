@@ -11,6 +11,6 @@ class BedrockItems {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void registerItems(::ItemRegistryRef itemRegistry);
+    MCAPI static void registerItems(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 };

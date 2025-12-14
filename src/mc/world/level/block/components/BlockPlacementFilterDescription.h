@@ -9,6 +9,7 @@
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
+struct BlockPlacementCondition;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -16,14 +17,8 @@ struct BlockPlacementFilterDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd479b0;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPlacementCondition>> conditions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPlacementFilterDescription& operator=(BlockPlacementFilterDescription const&);
-    BlockPlacementFilterDescription(BlockPlacementFilterDescription const&);
-    BlockPlacementFilterDescription();
 
 public:
     // virtual functions
@@ -44,21 +39,21 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
 
     // NOLINTEND

@@ -6,22 +6,16 @@ class TimeAccumulator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk53004e;
-    ::ll::UntypedStorage<8, 8> mUnk94cf63;
-    ::ll::UntypedStorage<8, 8> mUnk2f3334;
+    ::ll::TypedStorage<8, 8, uint64> mCount;
+    ::ll::TypedStorage<8, 8, uint64> mNanoseconds;
+    ::ll::TypedStorage<8, 8, uint64> mMaxSample;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TimeAccumulator& operator=(TimeAccumulator const&);
-    TimeAccumulator(TimeAccumulator const&);
-    TimeAccumulator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI float getTimeSumAverageMS() const;
+    MCAPI float getTimeSumAverageMS() const;
 
-    MCNAPI float getTimeSumAverageSeconds() const;
+    MCAPI float getTimeSumAverageSeconds() const;
     // NOLINTEND
 };

@@ -17,14 +17,8 @@ class OceanMonumentSimpleRoom : public ::OceanMonumentPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9e8558;
+    ::ll::TypedStorage<4, 4, int> mMainDesign;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OceanMonumentSimpleRoom& operator=(OceanMonumentSimpleRoom const&);
-    OceanMonumentSimpleRoom(OceanMonumentSimpleRoom const&);
-    OceanMonumentSimpleRoom();
 
 public:
     // virtual functions
@@ -39,9 +33,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
 
     // NOLINTEND

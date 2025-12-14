@@ -109,7 +109,11 @@ namespace Social { class User; }
 namespace mce { class Camera; }
 namespace mce { class TexturePtr; }
 namespace mce { struct ViewportInfo; }
+class BuildActionIntention;
+class ClientInputHandler;
+class ClientMoveInputHandler;
 class ItemInHandRenderer;
+class KeyboardManager;
 class LevelRenderer;
 class LevelRendererCameraProxy;
 class LightTexture;
@@ -122,11 +126,8 @@ struct ActorResourceDefinitionGroup;
 struct BlockActorRenderDispatcher;
 struct BlockCullingGroup;
 struct BlockTessellator;
-struct BuildActionIntention;
 struct CachedScenes;
 struct CameraRegistry;
-struct ClientInputHandler;
-struct ClientMoveInputHandler;
 struct ClientRequirementVerifier;
 struct ClientScriptManager;
 struct DeferredLighting;
@@ -149,7 +150,6 @@ struct ISettingsRegistry;
 struct ITTSEventManager;
 struct IUIRepository;
 struct ItemRenderer;
-struct KeyboardManager;
 struct LatencyGraphDisplay;
 struct ListenerState;
 struct MarketplaceServicesManager;

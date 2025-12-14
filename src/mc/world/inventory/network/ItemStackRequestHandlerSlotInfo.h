@@ -2,16 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/containers/FullContainerName.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
+
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+class SimpleSparseContainer;
+struct ItemStackNetIdTag;
+// clang-format on
+
 struct ItemStackRequestHandlerSlotInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk661135;
-    ::ll::UntypedStorage<1, 1>  mUnkbceef6;
-    ::ll::UntypedStorage<1, 1>  mUnk9fdff4;
-    ::ll::UntypedStorage<8, 8>  mUnk5c6ff0;
-    ::ll::UntypedStorage<4, 4>  mUnk293d3c;
-    ::ll::UntypedStorage<8, 8>  mUnkc7e67b;
+    ::ll::TypedStorage<4, 12, ::FullContainerName const> mOpenContainerNetId;
+    ::ll::TypedStorage<1, 1, uchar const>                mRequestSlot;
+    ::ll::TypedStorage<1, 1, uchar const>                mSlot;
+    ::ll::TypedStorage<8, 8, ::ItemStack const&>         mOldItem;
+    ::ll::TypedStorage<4, 4, ::ItemStackNetId const>     mOldServerNetId;
+    ::ll::TypedStorage<8, 8, ::SimpleSparseContainer*>   mSparseContainer;
     // NOLINTEND
 
 public:

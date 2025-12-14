@@ -28,22 +28,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C MaterialReducerDataEntry(::MaterialReducerDataEntry&&);
+    MCAPI_C MaterialReducerDataEntry(::MaterialReducerDataEntry&&);
 
-    MCNAPI_C ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCAPI_C ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
-    MCNAPI ~MaterialReducerDataEntry();
+    MCAPI ~MaterialReducerDataEntry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::MaterialReducerDataEntry&&);
+    MCAPI_C void* $ctor(::MaterialReducerDataEntry&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

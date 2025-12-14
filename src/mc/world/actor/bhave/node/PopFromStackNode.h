@@ -15,14 +15,8 @@ class PopFromStackNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6b3748;
+    ::ll::TypedStorage<8, 32, ::std::string> mDataId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PopFromStackNode& operator=(PopFromStackNode const&);
-    PopFromStackNode(PopFromStackNode const&);
-    PopFromStackNode();
 
 public:
     // virtual functions

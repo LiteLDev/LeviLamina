@@ -29,20 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerShootArrowEvent(::PlayerShootArrowEvent const&);
+    MCAPI PlayerShootArrowEvent(::PlayerShootArrowEvent const&);
 
-    MCNAPI ~PlayerShootArrowEvent();
+    MCAPI ~PlayerShootArrowEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PlayerShootArrowEvent const&);
+    MCFOLD void* $ctor(::PlayerShootArrowEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

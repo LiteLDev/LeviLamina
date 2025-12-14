@@ -35,8 +35,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk8d4369;
-        ::ll::UntypedStorage<4, 4>  mUnk580c82;
+        ::ll::TypedStorage<8, 32, ::std::string> text;
+        ::ll::TypedStorage<4, 4, int>            lineLength;
         // NOLINTEND
 
     public:
@@ -47,25 +47,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI CachedLineData();
+        MCAPI CachedLineData();
 
-        MCNAPI_C CachedLineData(::ChalkboardBlockActor::CachedLineData&&);
+        MCAPI_C CachedLineData(::ChalkboardBlockActor::CachedLineData&&);
 
-        MCNAPI ~CachedLineData();
+        MCAPI ~CachedLineData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCFOLD void* $ctor();
 
-        MCNAPI_C void* $ctor(::ChalkboardBlockActor::CachedLineData&&);
+        MCFOLD_C void* $ctor(::ChalkboardBlockActor::CachedLineData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -73,29 +73,23 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 640> mUnk163d4e;
-        ::ll::UntypedStorage<4, 4>   mUnkb8325f;
-        ::ll::UntypedStorage<8, 32>  mUnk422df7;
-        ::ll::UntypedStorage<8, 8>   mUnk3044e8;
-        ::ll::UntypedStorage<1, 1>   mUnk16bfc2;
+        ::ll::TypedStorage<8, 640, ::std::array<::ChalkboardBlockActor::CachedLineData, 16>> lineData;
+        ::ll::TypedStorage<4, 4, uint>                                                       numLines;
+        ::ll::TypedStorage<8, 32, ::std::string>                                             filteredMessage;
+        ::ll::TypedStorage<8, 8, void const*>                                                cachedFontCompare;
+        ::ll::TypedStorage<1, 1, bool>                                                       dirty;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CachedMessageData& operator=(CachedMessageData const&);
-        CachedMessageData(CachedMessageData const&);
-        CachedMessageData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~CachedMessageData();
+        MCAPI_C ~CachedMessageData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+        MCAPI_C void $dtor();
         // NOLINTEND
     };
 
@@ -103,20 +97,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk1a5700;
-        ::ll::UntypedStorage<8, 8> mUnk92f7b0;
+        ::ll::TypedStorage<1, 1, bool>                    mChunkFound;
+        ::ll::TypedStorage<8, 8, ::ChalkboardBlockActor*> mBoard;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChalkboardFinder& operator=(ChalkboardFinder const&);
-        ChalkboardFinder(ChalkboardFinder const&);
-        ChalkboardFinder();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool confirmedBroken(::ChalkboardBlockActor& compare, ::BlockSource& region) const;
+        MCAPI bool confirmedBroken(::ChalkboardBlockActor& compare, ::BlockSource& region) const;
         // NOLINTEND
     };
 

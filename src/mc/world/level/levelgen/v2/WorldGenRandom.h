@@ -67,61 +67,61 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit WorldGenRandom(::SimpleRandom source);
+    MCAPI explicit WorldGenRandom(::SimpleRandom source);
 
-    MCNAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
+    MCAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
 
-    MCNAPI ::br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
+    MCAPI ::br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::br::worldgen::WorldGenRandom createDecoration(int64 seed, int chunkX, int chunkZ);
+    MCAPI static ::br::worldgen::WorldGenRandom createDecoration(int64 seed, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SimpleRandom source);
+    MCAPI void* $ctor(::SimpleRandom source);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $nextInt();
+    MCAPI int $nextInt();
 
-    MCNAPI int $nextInt(int bound);
+    MCAPI int $nextInt(int bound);
 
-    MCNAPI int64 $nextLong();
+    MCAPI int64 $nextLong();
 
-    MCNAPI bool $nextBoolean();
+    MCAPI bool $nextBoolean();
 
-    MCNAPI float $nextFloat();
+    MCAPI float $nextFloat();
 
-    MCNAPI double $nextDouble();
+    MCAPI double $nextDouble();
 
-    MCNAPI double $nextGaussianDouble();
+    MCAPI double $nextGaussianDouble();
 
-    MCNAPI void $consumeCount(uint count);
+    MCAPI void $consumeCount(uint count);
 
-    MCNAPI ::std::unique_ptr<::IRandom> $fork();
+    MCAPI ::std::unique_ptr<::IRandom> $fork();
 
-    MCNAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
+    MCFOLD ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
 
-    MCNAPI void $setSeed(int64 seed);
+    MCAPI void $setSeed(int64 seed);
 
-    MCNAPI void $setSeed(::Seed128Bit seed);
+    MCAPI void $setSeed(::Seed128Bit seed);
 
-    MCNAPI int64 $seed64() const;
+    MCAPI int64 $seed64() const;
 
-    MCNAPI ::Seed128Bit $seed128() const;
+    MCAPI ::Seed128Bit $seed128() const;
 
 
     // NOLINTEND

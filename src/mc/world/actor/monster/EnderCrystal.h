@@ -19,13 +19,12 @@ class EnderCrystal : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk387000;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::EnderCrystal&, ::ActorDamageSource const&)>>
+        mCrystalDamagedCallback;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    EnderCrystal& operator=(EnderCrystal const&);
-    EnderCrystal(EnderCrystal const&);
     EnderCrystal();
 
 public:

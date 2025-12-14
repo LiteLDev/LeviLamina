@@ -10,6 +10,7 @@
 // clang-format off
 class Player;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -20,12 +21,21 @@ struct ScriptPlayerInventoryItemChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk46716e;
-    ::ll::UntypedStorage<8, 40> mUnkd7fc2b;
-    ::ll::UntypedStorage<8, 40> mUnk4d00a1;
-    ::ll::UntypedStorage<4, 4>  mUnkebef61;
-    ::ll::UntypedStorage<4, 4>  mUnkb2f621;
-    ::ll::UntypedStorage<1, 1>  mUnkb45fee;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+        mPlayerHandle;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+        mBeforeItemStack;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+                                                                                 mAfterItemStack;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptPlayerInventoryType> mplayerInventoryType;
+    ::ll::TypedStorage<4, 4, int>                                                mSlotNumber;
+    ::ll::TypedStorage<1, 1, bool>                                               mIsQuantityChangedOnly;
     // NOLINTEND
 
 public:
@@ -36,14 +46,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
+    MCAPI
     ScriptPlayerInventoryItemChangeAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent&&);
 
-    MCNAPI ScriptPlayerInventoryItemChangeAfterEvent(
+    MCAPI ScriptPlayerInventoryItemChangeAfterEvent(
         ::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&
     );
 
-    MCNAPI ScriptPlayerInventoryItemChangeAfterEvent(
+    MCAPI ScriptPlayerInventoryItemChangeAfterEvent(
         ::Player const&                                                                                 player,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack,
@@ -53,23 +63,23 @@ public:
         ::Scripting::WeakLifetimeScope const&              scope
     );
 
-    MCNAPI ~ScriptPlayerInventoryItemChangeAfterEvent();
+    MCAPI ~ScriptPlayerInventoryItemChangeAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Player const&                                                                                 player,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack,
@@ -83,7 +93,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

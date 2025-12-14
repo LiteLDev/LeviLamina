@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemStackNetManagerClient;
 class ItemStackRequestAction;
 // clang-format on
 
@@ -14,15 +15,9 @@ struct ItemStackRequestScope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka0dab6;
-    ::ll::UntypedStorage<1, 1> mUnk522815;
+    ::ll::TypedStorage<8, 8, ::ItemStackNetManagerClient*> mItemStackNetManagerClient;
+    ::ll::TypedStorage<1, 1, bool>                         mBeganRequest;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestScope& operator=(ItemStackRequestScope const&);
-    ItemStackRequestScope(ItemStackRequestScope const&);
-    ItemStackRequestScope();
 
 public:
     // member functions

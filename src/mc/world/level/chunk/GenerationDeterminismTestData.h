@@ -4,6 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/world/level/chunk/ClientChunkGenerationDifferenceData.h"
+
+// auto generated forward declare list
+// clang-format off
+class ChunkPos;
+// clang-format on
 
 struct GenerationDeterminismTestData : public ::Bedrock::EnableNonOwnerReferences {
 public:
@@ -18,49 +24,36 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkd0931d;
-        ::ll::UntypedStorage<8, 64> mUnke30910;
-        ::ll::UntypedStorage<4, 4>  mUnke4872a;
-        ::ll::UntypedStorage<4, 4>  mUnk2e703e;
-        ::ll::UntypedStorage<4, 4>  mUnk84ce24;
+        ::ll::TypedStorage<8, 32, ::std::string>                         mSlice;
+        ::ll::TypedStorage<8, 64, ::ClientChunkGenerationDifferenceData> mDifferenceData;
+        ::ll::TypedStorage<4, 4, uint>                                   mClientServerChunks;
+        ::ll::TypedStorage<4, 4, uint>                                   mServerOnlyChunks;
+        ::ll::TypedStorage<4, 4, uint>                                   mClientOnlyChunks;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChunkComparisonData& operator=(ChunkComparisonData const&);
-        ChunkComparisonData(ChunkComparisonData const&);
-        ChunkComparisonData();
     };
 
     struct SerializedChunk {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk8004dd;
-        ::ll::UntypedStorage<8, 24> mUnkc223db;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mClient;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mServer;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SerializedChunk& operator=(SerializedChunk const&);
-        SerializedChunk(SerializedChunk const&);
-        SerializedChunk();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkdef0de;
-    ::ll::UntypedStorage<8, 64> mUnk285b09;
-    ::ll::UntypedStorage<8, 24> mUnkf37cf5;
-    ::ll::UntypedStorage<8, 8>  mUnka461d0;
+    ::ll::TypedStorage<8, 32, ::std::string> mBiomeOverride;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::std::string, ::std::map<::ChunkPos, ::GenerationDeterminismTestData::SerializedChunk>>>
+        mSerializedChunks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GenerationDeterminismTestData::ChunkComparisonData>>
+                                                  mChunkComparisonDataList;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex> mSharedMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GenerationDeterminismTestData& operator=(GenerationDeterminismTestData const&);
-    GenerationDeterminismTestData(GenerationDeterminismTestData const&);
-    GenerationDeterminismTestData();
 
 public:
     // virtual functions

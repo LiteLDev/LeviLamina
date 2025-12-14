@@ -2,20 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/agent/agent_components/Direction.h"
+
 namespace AgentComponents::Actions {
 
 struct Turn {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf8dbcd;
+    ::ll::TypedStorage<1, 1, ::AgentComponents::Direction> dir;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Turn& operator=(Turn const&);
-    Turn(Turn const&);
-    Turn();
 };
 
 } // namespace AgentComponents::Actions

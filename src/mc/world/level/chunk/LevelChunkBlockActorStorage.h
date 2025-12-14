@@ -38,32 +38,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LevelChunkBlockActorStorage(::LevelChunkBlockActorStorage::TrackingMode trackingMode);
+    MCAPI explicit LevelChunkBlockActorStorage(::LevelChunkBlockActorStorage::TrackingMode trackingMode);
 
-    MCNAPI ::std::pair<
+    MCAPI ::std::pair<
         ::std::_List_const_iterator<::std::_List_val<
             ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>,
         bool>
     emplace(::ChunkBlockPos pos, ::std::shared_ptr<::BlockActor> blockActor);
 
-    MCNAPI ::std::_List_const_iterator<::std::_List_val<
+    MCAPI ::std::_List_const_iterator<::std::_List_val<
         ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>
     find(::ChunkBlockPos const& pos) const;
 
-    MCNAPI ::LevelChunkBlockActorStorage& operator=(::LevelChunkBlockActorStorage&& other);
+    MCAPI ::LevelChunkBlockActorStorage& operator=(::LevelChunkBlockActorStorage&& other);
 
-    MCNAPI ~LevelChunkBlockActorStorage();
+    MCAPI ~LevelChunkBlockActorStorage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LevelChunkBlockActorStorage::TrackingMode trackingMode);
+    MCAPI void* $ctor(::LevelChunkBlockActorStorage::TrackingMode trackingMode);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

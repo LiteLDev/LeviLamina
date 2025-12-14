@@ -16,14 +16,8 @@ class FlatSurfaceDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka90f4a;
+    ::ll::TypedStorage<4, 4, int const> mSurfaceHeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FlatSurfaceDensityCalculator& operator=(FlatSurfaceDensityCalculator const&);
-    FlatSurfaceDensityCalculator(FlatSurfaceDensityCalculator const&);
-    FlatSurfaceDensityCalculator();
 
 public:
     // virtual functions

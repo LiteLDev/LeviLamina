@@ -11,6 +11,7 @@ class Actor;
 class BlockPos;
 class BlockSource;
 class Experiments;
+class LiquidBlock;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -19,7 +20,7 @@ class LiquidBlockDynamic : public ::LiquidBlockBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9b9ad6;
+    ::ll::TypedStorage<8, 8, ::LiquidBlock const&> mLiquidBlock;
     // NOLINTEND
 
 public:

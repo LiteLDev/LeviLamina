@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/events/gameevents/VibrationListenerConfig.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,18 +20,16 @@ class WardenVibrationConfig : public ::VibrationListenerConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc166f7;
-    ::ll::UntypedStorage<2, 2>  mUnk95b4ad;
-    ::ll::UntypedStorage<8, 16> mUnka9290d;
-    ::ll::UntypedStorage<8, 8>  mUnkc03bd6;
-    ::ll::UntypedStorage<4, 4>  mUnk4fdb5c;
-    ::ll::UntypedStorage<4, 4>  mUnk98d6d3;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>         mActor;
+    ::ll::TypedStorage<2, 2, ushort>                   mSignalThrottlingTicks;
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>> mLastSignalReceivedTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                   mLastProjectileTick;
+    ::ll::TypedStorage<4, 4, int>                      mProjectileSuspiciousIntervalTicks;
+    ::ll::TypedStorage<4, 4, float>                    mTargetProjectileOwnerRange;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    WardenVibrationConfig& operator=(WardenVibrationConfig const&);
-    WardenVibrationConfig(WardenVibrationConfig const&);
     WardenVibrationConfig();
 
 public:
@@ -56,19 +56,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WardenVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
+    MCAPI WardenVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
+    MCAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onSignalReceive(
+    MCAPI void $onSignalReceive(
         ::BlockSource&    region,
         ::BlockPos const& vibrationSourcePos,
         ::GameEvent const&,
@@ -78,9 +78,9 @@ public:
         ::Actor* projectileOwner
     );
 
-    MCNAPI bool $isValidVibration(::GameEvent const& gameEvent);
+    MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCNAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
+    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
 
 
     // NOLINTEND

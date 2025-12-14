@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/events/ScriptPlayerInteractEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 // clang-format on
@@ -20,11 +20,11 @@ struct ScriptPlayerInteractWithBlockEvent : public ::ScriptModuleMinecraft::Scri
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkcd11ad;
-    ::ll::UntypedStorage<4, 4>  mUnk660964;
-    ::ll::UntypedStorage<4, 12> mUnkd7b813;
-    ::ll::UntypedStorage<4, 12> mUnkf0da35;
-    ::ll::UntypedStorage<1, 1>  mUnkc8e6d8;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> mBlock;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptFacing>                                       mBlockFace;
+    ::ll::TypedStorage<4, 12, ::Vec3> mFaceLocationAbsolute;
+    ::ll::TypedStorage<4, 12, ::Vec3> mFaceLocationRelative;
+    ::ll::TypedStorage<1, 1, bool>    mIsFirstEvent;
     // NOLINTEND
 
 public:
@@ -35,9 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPlayerInteractWithBlockEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockEvent const&);
+    MCAPI ScriptPlayerInteractWithBlockEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockEvent const&);
 
-    MCNAPI ScriptPlayerInteractWithBlockEvent(
+    MCAPI ScriptPlayerInteractWithBlockEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>  block,
         ::ScriptModuleMinecraft::ScriptFacing                                       blockFace,
@@ -45,15 +45,15 @@ public:
         bool                                                                        isFirstEvent
     );
 
-    MCNAPI ~ScriptPlayerInteractWithBlockEvent();
+    MCAPI ~ScriptPlayerInteractWithBlockEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockEvent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockEvent const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>  block,
         ::ScriptModuleMinecraft::ScriptFacing                                       blockFace,
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

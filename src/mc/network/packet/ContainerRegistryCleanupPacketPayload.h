@@ -23,14 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ContainerRegistryCleanupPacketPayload& operator=(::ContainerRegistryCleanupPacketPayload&&);
+    MCFOLD ::ContainerRegistryCleanupPacketPayload& operator=(::ContainerRegistryCleanupPacketPayload&&);
 
-    MCNAPI ~ContainerRegistryCleanupPacketPayload();
+    MCAPI ~ContainerRegistryCleanupPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

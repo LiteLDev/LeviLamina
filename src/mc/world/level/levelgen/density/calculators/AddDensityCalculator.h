@@ -16,15 +16,9 @@ class AddDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkf90ca1;
-    ::ll::UntypedStorage<2, 2> mUnk434fb6;
+    ::ll::TypedStorage<2, 2, ushort> mInputA;
+    ::ll::TypedStorage<2, 2, ushort> mInputB;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AddDensityCalculator& operator=(AddDensityCalculator const&);
-    AddDensityCalculator(AddDensityCalculator const&);
-    AddDensityCalculator();
 
 public:
     // virtual functions

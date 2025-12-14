@@ -15,15 +15,9 @@ class HaveItemNode : public ::BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk21f05a;
-    ::ll::UntypedStorage<4, 4>  mUnkbb1f85;
+    ::ll::TypedStorage<8, 32, ::std::string> mItemName;
+    ::ll::TypedStorage<4, 4, int>            mItemCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HaveItemNode& operator=(HaveItemNode const&);
-    HaveItemNode(HaveItemNode const&);
-    HaveItemNode();
 
 public:
     // virtual functions

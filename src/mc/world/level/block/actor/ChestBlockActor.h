@@ -41,9 +41,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkb4cf5c;
-        ::ll::UntypedStorage<1, 1> mUnk53b96d;
-        ::ll::UntypedStorage<8, 8> mUnk3062dd;
+        ::ll::TypedStorage<8, 8, ::ChestBlockActor&> mChest;
+        ::ll::TypedStorage<1, 1, bool>               mIsUsed;
+        ::ll::TypedStorage<8, 8, ::ActorUniqueID>    mActorId;
         // NOLINTEND
 
     public:
@@ -97,7 +97,7 @@ public:
 
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
@@ -115,7 +115,7 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
@@ -254,7 +254,7 @@ public:
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCFOLD void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
@@ -272,7 +272,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const;
 
     MCAPI void $tick(::BlockSource& region);
 

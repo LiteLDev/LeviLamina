@@ -47,9 +47,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit SculkSensorBlockActor(::BlockPos const& pos);
+    MCAPI explicit SculkSensorBlockActor(::BlockPos const& pos);
 
-    MCNAPI SculkSensorBlockActor(
+    MCAPI SculkSensorBlockActor(
         ::BlockActorType                                  type,
         ::BlockPos const&                                 pos,
         uint                                              listenerRange,
@@ -60,9 +60,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos);
+    MCAPI void* $ctor(::BlockPos const& pos);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::BlockActorType                                  type,
         ::BlockPos const&                                 pos,
         uint                                              listenerRange,
@@ -73,19 +73,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCFOLD void $tick(::BlockSource& region);
 
-    MCNAPI void $onRemoved(::BlockSource& region);
+    MCFOLD void $onRemoved(::BlockSource& region);
 
 
     // NOLINTEND

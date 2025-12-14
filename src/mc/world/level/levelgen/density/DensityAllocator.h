@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/container/small_vector.h"
+#include "mc/world/Pos.h"
+#include "mc/world/level/levelgen/density/DensityVolume.h"
+
 class DensityAllocator {
 public:
     // DensityAllocator inner types declare
@@ -14,27 +19,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkadc38c;
-        ::ll::UntypedStorage<2, 6>  mUnk823348;
-        ::ll::UntypedStorage<8, 24> mUnk24743a;
+        ::ll::TypedStorage<4, 12, ::Pos>                      mMin;
+        ::ll::TypedStorage<2, 6, ::DensityVolume::Dimensions> mDimensions;
+        ::ll::TypedStorage<8, 24, ::std::vector<float>>       mBuffer;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        VolumeEntry& operator=(VolumeEntry const&);
-        VolumeEntry(VolumeEntry const&);
-        VolumeEntry();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 400> mUnka52489;
+    ::ll::TypedStorage<8, 400, ::Bedrock::small_vector<::DensityAllocator::VolumeEntry, 8>> mEntries;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DensityAllocator& operator=(DensityAllocator const&);
-    DensityAllocator(DensityAllocator const&);
-    DensityAllocator();
 };

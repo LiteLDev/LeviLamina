@@ -12,6 +12,6 @@ struct MetaDataTypeVisitor_Set {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CompoundTag operator()(::DimensionHeightRange const& value) const;
+    MCAPI ::CompoundTag operator()(::DimensionHeightRange const& value) const;
     // NOLINTEND
 };

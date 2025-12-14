@@ -31,12 +31,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockPatternEvent(::BlockPatternEvent const&);
+    MCAPI BlockPatternEvent(::BlockPatternEvent const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPatternEvent const&);
+    MCAPI void* $ctor(::BlockPatternEvent const&);
     // NOLINTEND
 };

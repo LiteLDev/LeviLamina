@@ -28,14 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::NetworkChunkPublisherUpdatePacketPayload& operator=(::NetworkChunkPublisherUpdatePacketPayload&&);
+    MCAPI ::NetworkChunkPublisherUpdatePacketPayload& operator=(::NetworkChunkPublisherUpdatePacketPayload&&);
 
-    MCNAPI ~NetworkChunkPublisherUpdatePacketPayload();
+    MCAPI ~NetworkChunkPublisherUpdatePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

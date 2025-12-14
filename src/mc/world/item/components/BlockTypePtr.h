@@ -2,22 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockType;
+// clang-format on
+
 class BlockTypePtr {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk94b04a;
+    ::ll::TypedStorage<8, 8, ::BlockType const*> mBlockType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockTypePtr& operator=(BlockTypePtr const&);
-    BlockTypePtr(BlockTypePtr const&);
-    BlockTypePtr();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string toString() const;
+    MCAPI ::std::string toString() const;
     // NOLINTEND
 };

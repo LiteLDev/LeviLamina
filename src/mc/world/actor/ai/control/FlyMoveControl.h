@@ -23,7 +23,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 
 
     // NOLINTEND

@@ -17,7 +17,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
 
     // NOLINTEND

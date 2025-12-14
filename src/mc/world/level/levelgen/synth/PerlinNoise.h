@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PerlinNoise(::PerlinNoise const&);
+    MCAPI PerlinNoise(::PerlinNoise const&);
 
-    MCNAPI PerlinNoise(uint seed, int levels);
+    MCAPI PerlinNoise(uint seed, int levels);
 
-    MCNAPI void _init(::IRandom& random, ::YBlendingBugSettings yBlendingSettings);
+    MCAPI void _init(::IRandom& random, ::YBlendingBugSettings yBlendingSettings);
 
-    MCNAPI void fillRegion(
+    MCAPI void fillRegion(
         float*        buffer,
         ::Vec3 const& pos,
         int           xSize,
@@ -45,22 +45,22 @@ public:
         int           zStep
     ) const;
 
-    MCNAPI float getValue(::Vec3 const& pos) const;
+    MCAPI float getValue(::Vec3 const& pos) const;
 
-    MCNAPI ~PerlinNoise();
+    MCAPI ~PerlinNoise();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PerlinNoise const&);
+    MCAPI void* $ctor(::PerlinNoise const&);
 
-    MCNAPI void* $ctor(uint seed, int levels);
+    MCAPI void* $ctor(uint seed, int levels);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

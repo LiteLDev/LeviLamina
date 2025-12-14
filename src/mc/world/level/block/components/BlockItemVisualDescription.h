@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/components/BlockGeometryDescription.h"
+#include "mc/world/level/block/components/BlockMaterialInstancesDescription.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,15 +18,9 @@ struct BlockItemVisualDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnk5cb854;
-    ::ll::UntypedStorage<8, 144> mUnk9341c7;
+    ::ll::TypedStorage<8, 216, ::BlockGeometryDescription>          mGeometryDescription;
+    ::ll::TypedStorage<8, 144, ::BlockMaterialInstancesDescription> mMaterialInstanceDescription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockItemVisualDescription& operator=(BlockItemVisualDescription const&);
-    BlockItemVisualDescription(BlockItemVisualDescription const&);
-    BlockItemVisualDescription();
 
 public:
     // virtual functions
@@ -47,23 +43,23 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
 
     // NOLINTEND

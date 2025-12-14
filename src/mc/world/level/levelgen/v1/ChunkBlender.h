@@ -29,10 +29,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::TerrainInfo
+    MCAPI ::TerrainInfo
     attenuateTerrainInfo(::DividedPos2d<4> const& worldQuartPos, ::TerrainInfo const& defaultTerrainInfo) const;
 
-    MCNAPI ::Biome const* tryGetAttenuatedBiome(
+    MCAPI ::Biome const* tryGetAttenuatedBiome(
         ::DividedPos<4> const&                                                               worldQuartPos,
         ::BiomeRegistry const&                                                               biomeRegistry,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const& shiftNoise

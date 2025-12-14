@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/ModalFormRequestPacketPayload.h"
 #include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
@@ -12,7 +13,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct ModalFormRequestPacketPayload;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,13 +20,11 @@ class ModalFormRequestPacket : public ::ll::PayloadPacket<::ModalFormRequestPack
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkfd756b;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ModalFormRequestPacket& operator=(ModalFormRequestPacket const&);
-    ModalFormRequestPacket(ModalFormRequestPacket const&);
     ModalFormRequestPacket();
 
 public:

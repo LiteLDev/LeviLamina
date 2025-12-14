@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RuinedPortalStart(
+    MCAPI RuinedPortalStart(
         ::BiomeRegistry&                     registry,
         ::BiomeSource const&                 source,
         int                                  chunkX,
@@ -40,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::BiomeRegistry&                     registry,
         ::BiomeSource const&                 source,
         int                                  chunkX,
@@ -52,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
 
 
     // NOLINTEND

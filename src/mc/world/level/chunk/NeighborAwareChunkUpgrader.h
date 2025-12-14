@@ -35,16 +35,16 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::NeighborAwareBlockUpdateType
+    MCAPI ::NeighborAwareBlockUpdateType
     $getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const;
 
-    MCNAPI void $doLevelChunkNeighborAwareUpgrade(
+    MCAPI void $doLevelChunkNeighborAwareUpgrade(
         ::NeighborAwareBlockUpdateType updateType,
         ::BlockSource&                 region,
         ::Block const&                 block,

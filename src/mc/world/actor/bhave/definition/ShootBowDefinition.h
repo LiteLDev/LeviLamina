@@ -15,15 +15,9 @@ class ShootBowDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk998208;
-    ::ll::UntypedStorage<8, 32> mUnk5d49a9;
+    ::ll::TypedStorage<4, 4, int>            mNumOfShots;
+    ::ll::TypedStorage<8, 32, ::std::string> mNumOfShotsId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShootBowDefinition& operator=(ShootBowDefinition const&);
-    ShootBowDefinition(ShootBowDefinition const&);
-    ShootBowDefinition();
 
 public:
     // virtual functions
@@ -36,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
 
 
     // NOLINTEND

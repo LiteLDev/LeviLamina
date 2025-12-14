@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/components/BreathingType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,14 +16,8 @@ struct BlockBreathabilityDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk764d09;
+    ::ll::TypedStorage<4, 4, ::BreathingType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockBreathabilityDescription& operator=(BlockBreathabilityDescription const&);
-    BlockBreathabilityDescription(BlockBreathabilityDescription const&);
-    BlockBreathabilityDescription();
 
 public:
     // virtual functions
@@ -41,19 +36,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
 
     // NOLINTEND

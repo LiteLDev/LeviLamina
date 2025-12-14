@@ -3,36 +3,39 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/input/GamePadRemappingLayout.h"
 #include "mc/deps/input/InputMappingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
 class IOptions;
+class KeyboardRemappingLayout;
 struct Config;
 struct DeviceButtonMapping;
 struct InputMapping;
-struct KeyboardRemappingLayout;
 struct TouchInputMapping;
 // clang-format on
 
 class ClientInputMappingFactory : public ::InputMappingFactory {
 public:
+    // ClientInputMappingFactory inner types define
+    using InputMappingMap = ::std::unordered_map<::std::string, ::InputMapping>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnke57b9e;
-    ::ll::UntypedStorage<8, 64> mUnk6b1603;
-    ::ll::UntypedStorage<1, 1>  mUnk56d329;
-    ::ll::UntypedStorage<1, 1>  mUnkb071a6;
-    ::ll::UntypedStorage<1, 1>  mUnk3af224;
-    ::ll::UntypedStorage<4, 4>  mUnkcdef43;
-    ::ll::UntypedStorage<8, 80> mUnkcc87c2;
-    ::ll::UntypedStorage<8, 16> mUnkb3ceb1;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::InputMapping>> mActiveInputMappings;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::InputMapping>> mInputMappingTemplates;
+    ::ll::TypedStorage<1, 1, bool>                                                 mInvertYAxis;
+    ::ll::TypedStorage<1, 1, bool>                                                 mSwapGamepadButtonsXY;
+    ::ll::TypedStorage<1, 1, bool>                                                 mSwapGamepadButtonsAB;
+    ::ll::TypedStorage<4, 4, float>                                                mSensitivity;
+    ::ll::TypedStorage<8, 80, ::GamePadRemappingLayout>                            mGameControllerRemappingLayout;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::KeyboardRemappingLayout>>          mKeyboardRemappingLayout;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ClientInputMappingFactory& operator=(ClientInputMappingFactory const&);
-    ClientInputMappingFactory(ClientInputMappingFactory const&);
     ClientInputMappingFactory();
 
 public:
@@ -58,35 +61,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ClientInputMappingFactory(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout);
+    MCAPI explicit ClientInputMappingFactory(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout);
 
-    MCNAPI void _activateMapping(::std::string const& mappingName);
+    MCAPI void _activateMapping(::std::string const& mappingName);
 
-    MCNAPI ::InputMapping* _getMappingInternal(::std::string const& mappingName);
+    MCFOLD ::InputMapping* _getMappingInternal(::std::string const& mappingName);
 
-    MCNAPI void onConfigChanged(::Config const& config);
+    MCAPI void onConfigChanged(::Config const& config);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout);
+    MCAPI void* $ctor(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::InputMapping const* $getMapping(::std::string const& mappingName);
+    MCFOLD ::InputMapping const* $getMapping(::std::string const& mappingName);
 
-    MCNAPI ::TouchInputMapping $_createScreenTouchMapping() const;
+    MCAPI ::TouchInputMapping $_createScreenTouchMapping() const;
 
-    MCNAPI ::std::vector<::DeviceButtonMapping> $_createScreenDeviceButtonMapping() const;
+    MCAPI ::std::vector<::DeviceButtonMapping> $_createScreenDeviceButtonMapping() const;
     // NOLINTEND
 
 public:

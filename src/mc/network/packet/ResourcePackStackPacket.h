@@ -6,10 +6,11 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/util/BaseGameVersion.h"
+#include "mc/world/level/storage/ExperimentStorage.h"
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class BinaryStream;
 class Experiments;
 class ReadOnlyBinaryStream;
@@ -20,18 +21,13 @@ class ResourcePackStackPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk54136c;
-    ::ll::UntypedStorage<8, 24> mUnkca634f;
-    ::ll::UntypedStorage<8, 32> mUnk9f713b;
-    ::ll::UntypedStorage<1, 1>  mUnk7a05e9;
-    ::ll::UntypedStorage<8, 72> mUnk74df93;
-    ::ll::UntypedStorage<1, 1>  mUnkfdc3d0;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>> mAddOnIdsAndVersions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>> mTexturePackIdsAndVersions;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>               mBaseGameVersion;
+    ::ll::TypedStorage<1, 1, bool>                             mTexturePackRequired;
+    ::ll::TypedStorage<8, 72, ::ExperimentStorage>             mExperiments;
+    ::ll::TypedStorage<1, 1, bool>                             mIncludeEditorPacks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ResourcePackStackPacket& operator=(ResourcePackStackPacket const&);
-    ResourcePackStackPacket(ResourcePackStackPacket const&);
 
 public:
     // virtual functions

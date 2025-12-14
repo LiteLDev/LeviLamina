@@ -12,8 +12,8 @@ class ItemStackBaseComponentsHelper {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool isValidComponent(::std::string const& name);
+    MCAPI static bool isValidComponent(::std::string const& name);
 
-    MCNAPI static bool updateComponent(::ItemStackBase& item, ::std::string const& name, ::Json::Value const& data);
+    MCAPI static bool updateComponent(::ItemStackBase& item, ::std::string const& name, ::Json::Value const& data);
     // NOLINTEND
 };

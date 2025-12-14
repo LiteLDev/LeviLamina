@@ -20,7 +20,7 @@ class RandomPos {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::Vec3> generateRandomPos(
+    MCAPI static ::std::optional<::Vec3> generateRandomPos(
         ::Mob&              mob,
         int                 xzDist,
         int                 yDist,
@@ -31,7 +31,7 @@ public:
         ::SolidityCheckType blockTest
     );
 
-    MCNAPI static ::std::optional<::Vec3> generateRandomPos(
+    MCAPI static ::std::optional<::Vec3> generateRandomPos(
         ::Randomize&        randomize,
         ::Mob&              mob,
         int                 xzDist,
@@ -45,7 +45,7 @@ public:
         ::SolidityCheckType blockTest
     );
 
-    MCNAPI static ::std::optional<::Vec3> generateRandomSpawnPos(
+    MCAPI static ::std::optional<::Vec3> generateRandomSpawnPos(
         ::BlockSource& region,
         ::Random&      random,
         ::Vec3 const&  inPos,
@@ -55,13 +55,13 @@ public:
         ::Vec3*        dir
     );
 
-    MCNAPI static ::std::optional<::Vec3>
+    MCAPI static ::std::optional<::Vec3>
     getPos(::Mob& mob, int xzDist, int yDist, int tries, ::SolidityCheckType blockTest);
 
-    MCNAPI static ::std::optional<::Vec3>
+    MCAPI static ::std::optional<::Vec3>
     getPosAvoid(::Mob& mob, int xzDist, int yDist, ::Vec3 const& avoidPos, ::SolidityCheckType blockTest, int tries);
 
-    MCNAPI static ::std::optional<::Vec3> getPosInDirection(
+    MCAPI static ::std::optional<::Vec3> getPosInDirection(
         ::Mob&              mob,
         int                 xzDist,
         int                 yDist,
@@ -74,12 +74,12 @@ public:
         ::SolidityCheckType blockTest
     );
 
-    MCNAPI static ::std::optional<::Vec3> getPosTowards(::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
+    MCAPI static ::std::optional<::Vec3> getPosTowards(::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
 
-    MCNAPI static ::std::optional<::Vec3>
+    MCAPI static ::std::optional<::Vec3>
     getPosTowards(::Random& random, ::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
 
-    MCNAPI static bool snapToGround(
+    MCAPI static bool snapToGround(
         ::BlockPos&         inOutPos,
         ::Mob&              mob,
         int                 yDist,
@@ -87,6 +87,6 @@ public:
         ::SolidityCheckType blockTest
     );
 
-    MCNAPI static bool spawnSnapToGround(::BlockSource& region, ::BlockPos& inOutPos, float startingY, int yDist);
+    MCAPI static bool spawnSnapToGround(::BlockSource& region, ::BlockPos& inOutPos, float startingY, int yDist);
     // NOLINTEND
 };

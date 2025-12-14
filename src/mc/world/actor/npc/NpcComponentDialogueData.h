@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/actor/npc/INpcDialogueData.h"
 
 // auto generated forward declare list
@@ -16,15 +17,9 @@ struct NpcComponentDialogueData : public ::INpcDialogueData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfdaf47;
-    ::ll::UntypedStorage<1, 1>  mUnk4842f9;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mOwner;
+    ::ll::TypedStorage<1, 1, bool>             mIsRemoteFire;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NpcComponentDialogueData& operator=(NpcComponentDialogueData const&);
-    NpcComponentDialogueData(NpcComponentDialogueData const&);
-    NpcComponentDialogueData();
 
 public:
     // virtual functions
@@ -58,27 +53,27 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::std::string const& $getDialogueText() const;
+    MCAPI ::std::string const& $getDialogueText() const;
 
-    MCNAPI ::std::string const& $getRawDialogueText() const;
+    MCAPI ::std::string const& $getRawDialogueText() const;
 
-    MCNAPI ::std::string const& $getNameText() const;
+    MCAPI ::std::string const& $getNameText() const;
 
-    MCNAPI ::std::string const& $getNameRawText() const;
+    MCAPI ::std::string const& $getNameRawText() const;
 
-    MCNAPI ::std::string const& $getSceneName() const;
+    MCFOLD ::std::string const& $getSceneName() const;
 
-    MCNAPI ::npc::ActionContainer* $getActionsContainer();
+    MCFOLD ::npc::ActionContainer* $getActionsContainer();
 
-    MCNAPI ::npc::ActionContainer const* $getActionsContainer() const;
+    MCFOLD ::npc::ActionContainer const* $getActionsContainer() const;
 
-    MCNAPI ::ActorUniqueID $getActorUniqueID();
+    MCFOLD ::ActorUniqueID $getActorUniqueID();
 
-    MCNAPI ::Actor* $getActor();
+    MCFOLD ::Actor* $getActor();
 
-    MCNAPI ::Actor const* $getActor() const;
+    MCFOLD ::Actor const* $getActor() const;
 
-    MCNAPI bool $isRemoteFire();
+    MCFOLD bool $isRemoteFire();
 #endif
 
 

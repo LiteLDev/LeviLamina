@@ -29,6 +29,7 @@ class ResourcePackManager;
 struct ItemData;
 struct ItemRegistryComplexAlias;
 struct ItemTag;
+namespace Bedrock::Threading { class Mutex; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -44,25 +45,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkeb2627;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::Mutex>> mMutex;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LockGuard& operator=(LockGuard const&);
-        LockGuard(LockGuard const&);
-        LockGuard();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~LockGuard();
+        MCAPI ~LockGuard();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

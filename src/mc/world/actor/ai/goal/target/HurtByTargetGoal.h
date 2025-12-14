@@ -28,13 +28,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI void $alertOther(::Mob* other, ::Mob* hurtByMob);
+    MCAPI void $alertOther(::Mob* other, ::Mob* hurtByMob);
 
 
     // NOLINTEND

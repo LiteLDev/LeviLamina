@@ -109,20 +109,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool
+    MCAPI bool
     _blockHasPoweredShelfType(::BlockSource const& region, ::BlockPos const& pos, ::ShelfBlock::PoweredType type) const;
 
-    MCNAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
+    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
     _getPoweredShelfBlockActors(::BlockPos const& pos, ::BlockSource& region) const;
 
-    MCNAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
+    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
     _getPoweredShelfBlockActorsForDoubleShelf(
         ::BlockSource&    region,
         ::BlockPos const& shelfLeft,
         ::BlockPos const& shelfRight
     ) const;
 
-    MCNAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
+    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
     _getPoweredShelfBlockActorsForTripleShelf(
         ::BlockSource&    region,
         ::BlockPos const& shelfLeft,
@@ -130,24 +130,24 @@ public:
         ::BlockPos const& shelfRight
     ) const;
 
-    MCNAPI ::ShelfBlock::SwapItemResult
+    MCAPI ::ShelfBlock::SwapItemResult
     _getSwapItemWithHandResult(::ShelfBlockActor& shelfActor, int hitSlot, ::Player const& player) const;
 
-    MCNAPI bool _isMatchingPoweredShelfInMatchingDirection(
+    MCAPI bool _isMatchingPoweredShelfInMatchingDirection(
         ::BlockSource const& region,
         ::BlockPos const&    pos,
         ::BlockPos const&    neighbor
     ) const;
 
-    MCNAPI void _powerOnAndTryConnectNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _powerOnAndTryConnectNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void
+    MCAPI void
     _setShelfData(::BlockSource& region, ::BlockPos const& pos, bool powered, ::ShelfBlock::PoweredType type) const;
 
-    MCNAPI void
+    MCAPI void
     _swapItemWithHand(::ShelfBlockActor& shelfActor, int hitSlot, ::Player& player, ::BlockSource const& region) const;
 
-    MCNAPI ::ShelfBlock::SwapItemResult _swapItemsWithHotbar(
+    MCAPI ::ShelfBlock::SwapItemResult _swapItemsWithHotbar(
         ::ShelfBlockActor&   shelfActor,
         int                  shelfSlot,
         ::Player&            player,
@@ -155,9 +155,9 @@ public:
         ::BlockSource const& region
     ) const;
 
-    MCNAPI bool _swapItemsWithPoweredShelf(::Player& player, ::BlockPos const& pos, ::BlockSource& region) const;
+    MCAPI bool _swapItemsWithPoweredShelf(::Player& player, ::BlockPos const& pos, ::BlockSource& region) const;
 
-    MCNAPI bool _swapItemsWithUnpoweredShelf(
+    MCAPI bool _swapItemsWithUnpoweredShelf(
         ::Player&          player,
         ::BlockPos const&  pos,
         ::BlockSource&     region,
@@ -166,71 +166,70 @@ public:
         uchar              hitFace
     ) const;
 
-    MCNAPI void _unpowerAndDisconnectFromNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _unpowerAndDisconnectFromNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void _updatePoweredShelf(::BlockSource& region, ::BlockPos const& pos, bool isPowered) const;
+    MCAPI void _updatePoweredShelf(::BlockSource& region, ::BlockPos const& pos, bool isPowered) const;
 
-    MCNAPI void _validatePoweredShelfCurrentStateFromNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _validatePoweredShelfCurrentStateFromNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
+    MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCNAPI bool $hasComparatorSignal() const;
+    MCFOLD bool $hasComparatorSignal() const;
 
-    MCNAPI int
-    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCNAPI ::AABB $getCollisionShape(
+    MCAPI ::AABB $getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI ::AABB const&
+    MCFOLD ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCNAPI ::AABB const& $getVisualShapeInWorld(
+    MCFOLD ::AABB const& $getVisualShapeInWorld(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const& pos,
         ::AABB&           bufferAABB
     ) const;
 
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
+    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
 
-    MCNAPI bool $liquidCanFlowIntoFromDirection(
+    MCAPI bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos
     ) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

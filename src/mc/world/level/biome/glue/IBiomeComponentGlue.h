@@ -25,10 +25,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Block const*
+    MCAPI static ::Block const*
     _getResolvedBlock(::std::string const& fieldName, ::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier);
 
-    MCNAPI static ::std::vector<::Block const*> _getResolvedBlocks(
+    MCAPI static ::std::vector<::Block const*> _getResolvedBlocks(
         ::std::string const&                                          fieldName,
         ::std::vector<::SharedTypes::v1_20_60::BlockSpecifier> const& blockSpecifiers
     );

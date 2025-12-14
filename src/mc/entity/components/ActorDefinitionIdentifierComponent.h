@@ -15,12 +15,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ActorDefinitionIdentifierComponent();
+    MCAPI ~ActorDefinitionIdentifierComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

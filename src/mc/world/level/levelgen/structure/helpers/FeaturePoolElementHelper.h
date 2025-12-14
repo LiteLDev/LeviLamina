@@ -11,7 +11,7 @@ class JigsawBlockInfo;
 namespace FeaturePoolElementHelper {
 // functions
 // NOLINTBEGIN
-MCNAPI ::JigsawBlockInfo createJigsawBlockInfo(::BlockPos pos);
+MCAPI ::JigsawBlockInfo createJigsawBlockInfo(::BlockPos pos);
 // NOLINTEND
 
 } // namespace FeaturePoolElementHelper

@@ -4,7 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+#include "mc/world/actor/ai/util/ExpiringTick.h"
 #include "mc/world/actor/monster/Monster.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,15 +18,9 @@ class Warden : public ::Monster {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf2c8ff;
-    ::ll::UntypedStorage<8, 24> mUnk5ac932;
+    ::ll::TypedStorage<8, 8, ::Tick>                           mTouchAngerCooldownExpiryTick;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mSonicBoomCooldown;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Warden& operator=(Warden const&);
-    Warden(Warden const&);
-    Warden();
 
 public:
     // virtual functions

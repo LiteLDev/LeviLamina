@@ -13,12 +13,12 @@ class Block;
 namespace br::spawn::HeightmapType {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::vector<::std::tuple<::std::string, ::std::function<bool(::Block const&)>>> defaults();
+MCAPI ::std::vector<::std::tuple<::std::string, ::std::function<bool(::Block const&)>>> defaults();
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::br::spawn::HeightmapToken const& MOTION_BLOCKING_NO_LEAVES();
+MCAPI ::br::spawn::HeightmapToken const& MOTION_BLOCKING_NO_LEAVES();
 // NOLINTEND
 
 } // namespace br::spawn::HeightmapType

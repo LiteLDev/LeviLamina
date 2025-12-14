@@ -26,7 +26,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::EventResult $onContinuousHitResult(::HitResult& hitResult);
+    MCAPI ::EventResult $onContinuousHitResult(::HitResult& hitResult);
 #endif
 
 

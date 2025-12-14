@@ -13,7 +13,7 @@ class BlockState;
 namespace BlockDescriptorStateResolver {
 // functions
 // NOLINTBEGIN
-MCNAPI bool
+MCAPI bool
 helpResolveBlockStateValue(::BlockState const& state, ::BlockDescriptor::State const& stateProxy, int& blockStateValue);
 // NOLINTEND
 

@@ -2,15 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace RecipeIngredientSearchResultsUtil { struct ContainerInfo; }
+// clang-format on
+
 namespace RecipeIngredientSearchResultsUtil {
 
 struct ItemSearchResults {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk371ff1;
-    ::ll::UntypedStorage<8, 24> mUnk837011;
-    ::ll::UntypedStorage<4, 4>  mUnk8bff3d;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RecipeIngredientSearchResultsUtil::ContainerInfo>> mContainerPositions;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>> mIngredientSlotsItemValidFor;
+    ::ll::TypedStorage<4, 4, int>                 mTotalCount;
     // NOLINTEND
 
 public:
@@ -21,24 +26,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ItemSearchResults(::RecipeIngredientSearchResultsUtil::ItemSearchResults const&);
+    MCAPI_C ItemSearchResults(::RecipeIngredientSearchResultsUtil::ItemSearchResults const&);
 
-    MCNAPI_C ::RecipeIngredientSearchResultsUtil::ItemSearchResults&
+    MCAPI_C ::RecipeIngredientSearchResultsUtil::ItemSearchResults&
     operator=(::RecipeIngredientSearchResultsUtil::ItemSearchResults&&);
 
-    MCNAPI_C ~ItemSearchResults();
+    MCAPI_C ~ItemSearchResults();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::RecipeIngredientSearchResultsUtil::ItemSearchResults const&);
+    MCAPI_C void* $ctor(::RecipeIngredientSearchResultsUtil::ItemSearchResults const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };
 

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/comprehensive/ParticleType.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/projectile/PredictableProjectile.h"
 
 // auto generated forward declare list
@@ -15,21 +16,18 @@ class EntityContext;
 class IConstBlockSource;
 class Vec3;
 struct ActorDefinitionIdentifier;
-struct ActorUniqueID;
 // clang-format on
 
 class Fireball : public ::PredictableProjectile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9a01da;
-    ::ll::UntypedStorage<1, 1> mUnkc82155;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> ownerId;
+    ::ll::TypedStorage<1, 1, bool>            mInGround;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Fireball& operator=(Fireball const&);
-    Fireball(Fireball const&);
     Fireball();
 
 public:

@@ -22,7 +22,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk6fe7f1;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mData;
         // NOLINTEND
 
     public:
@@ -33,21 +33,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C CopyableDataList(::SynchedActorData::CopyableDataList const& other);
+        MCAPI_C CopyableDataList(::SynchedActorData::CopyableDataList const& other);
 
-        MCNAPI_C ~CopyableDataList();
+        MCAPI_C ~CopyableDataList();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI_C void* $ctor(::SynchedActorData::CopyableDataList const& other);
+        MCAPI_C void* $ctor(::SynchedActorData::CopyableDataList const& other);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+        MCFOLD_C void $dtor();
         // NOLINTEND
     };
 

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/world/level/block/components/NetworkedBlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -23,30 +24,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 8> mUnk825039;
-        ::ll::UntypedStorage<4, 4> mUnk418573;
+        ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mRange;
+        ::ll::TypedStorage<4, 4, uint>                      mSteps;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RangeAndSteps& operator=(RangeAndSteps const&);
-        RangeAndSteps(RangeAndSteps const&);
-        RangeAndSteps();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkc9049f;
-    ::ll::UntypedStorage<4, 12> mUnk1f530c;
-    ::ll::UntypedStorage<4, 12> mUnk84b246;
+    ::ll::TypedStorage<4, 12, ::BlockRandomOffsetDescription::RangeAndSteps> mRangeX;
+    ::ll::TypedStorage<4, 12, ::BlockRandomOffsetDescription::RangeAndSteps> mRangeY;
+    ::ll::TypedStorage<4, 12, ::BlockRandomOffsetDescription::RangeAndSteps> mRangeZ;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockRandomOffsetDescription& operator=(BlockRandomOffsetDescription const&);
-    BlockRandomOffsetDescription(BlockRandomOffsetDescription const&);
-    BlockRandomOffsetDescription();
 
 public:
     // virtual functions
@@ -63,23 +52,23 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
 
     // NOLINTEND

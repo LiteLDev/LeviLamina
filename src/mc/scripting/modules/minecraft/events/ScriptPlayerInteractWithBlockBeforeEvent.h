@@ -3,12 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptPlayerInteractWithBlockEvent.h"
 
 // auto generated forward declare list
 // clang-format off
 class Player;
 struct PlayerInteractWithBlockBeforeEvent;
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -19,8 +21,12 @@ struct ScriptPlayerInteractWithBlockBeforeEvent : public ::ScriptModuleMinecraft
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk4835fb;
-    ::ll::UntypedStorage<1, 1>  mUnk5e0c46;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+                                   mItemStack;
+    ::ll::TypedStorage<1, 1, bool> mCancel;
     // NOLINTEND
 
 public:
@@ -31,13 +37,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    ScriptPlayerInteractWithBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
+    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
 
-    MCNAPI
+    MCAPI
     ScriptPlayerInteractWithBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent const&);
 
-    MCNAPI ScriptPlayerInteractWithBlockBeforeEvent(
+    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(
         ::Player&                                   player,
         ::PlayerInteractWithBlockBeforeEvent const& eventData,
         ::Scripting::WeakLifetimeScope&             scope
@@ -47,17 +52,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Player&                                   player,
         ::PlayerInteractWithBlockBeforeEvent const& eventData,
         ::Scripting::WeakLifetimeScope&             scope

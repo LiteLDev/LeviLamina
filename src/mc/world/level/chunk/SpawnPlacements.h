@@ -117,20 +117,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SpawnPlacements();
+    MCAPI SpawnPlacements();
 
-    MCNAPI bool isEntityPredicateKeyRecordable(::std::string_view key) const;
+    MCAPI bool isEntityPredicateKeyRecordable(::std::string_view key) const;
 
-    MCNAPI bool isObstructionPredicateKeyRecordable(::std::string_view key) const;
+    MCAPI bool isObstructionPredicateKeyRecordable(::std::string_view key) const;
 
-    MCNAPI ::br::spawn::SpawnPlacements::PlacementRecord record(
+    MCAPI ::br::spawn::SpawnPlacements::PlacementRecord record(
         ::std::string_view                typeId,
         ::br::spawn::PlacementTypeToken   placementType,
         ::br::spawn::HeightmapToken       heightmap,
         ::br::spawn::EntityPredicateToken spawnPlacement
     );
 
-    MCNAPI ::br::spawn::EntityPredicateToken record(
+    MCAPI ::br::spawn::EntityPredicateToken record(
         ::std::string_view key,
         ::std::function<bool(
             ::br::spawn::EntityType const&,
@@ -141,12 +141,12 @@ public:
         )>                 predicate
     );
 
-    MCNAPI ::br::spawn::ObstructionPredicateToken record(
+    MCAPI ::br::spawn::ObstructionPredicateToken record(
         ::std::string_view                                                                  key,
         ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> predicate
     );
 
-    MCNAPI ::br::spawn::EntityPredicateToken recordReloadable(
+    MCAPI ::br::spawn::EntityPredicateToken recordReloadable(
         ::std::string_view key,
         ::std::function<bool(
             ::br::spawn::EntityType const&,
@@ -157,24 +157,24 @@ public:
         )>                 predicate
     );
 
-    MCNAPI ::br::spawn::ObstructionPredicateToken recordReloadable(
+    MCAPI ::br::spawn::ObstructionPredicateToken recordReloadable(
         ::std::string_view                                                                  key,
         ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> predicate
     );
 
-    MCNAPI ~SpawnPlacements();
+    MCAPI ~SpawnPlacements();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

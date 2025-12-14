@@ -16,14 +16,8 @@ class EvocationFang : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk7b33a4;
+    ::ll::TypedStorage<1, 1, bool> mClientSideAttackStarted;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EvocationFang& operator=(EvocationFang const&);
-    EvocationFang(EvocationFang const&);
-    EvocationFang();
 
 public:
     // virtual functions

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MinecraftBindingFactoryMap {
+class MinecraftBindingFactoryMap {
 public:
     // MinecraftBindingFactoryMap inner types declare
     // clang-format off

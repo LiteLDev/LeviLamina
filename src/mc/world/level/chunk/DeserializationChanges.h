@@ -2,29 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+struct BlockDifference;
+struct HeightDifference;
+// clang-format on
+
 struct DeserializationChanges {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkc96fe6;
-    ::ll::UntypedStorage<8, 24> mUnk44c479;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::BlockDifference>> blockChangesMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HeightDifference>>                   heightChanges;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DeserializationChanges& operator=(DeserializationChanges const&);
-    DeserializationChanges(DeserializationChanges const&);
-    DeserializationChanges();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~DeserializationChanges();
+    MCAPI_C ~DeserializationChanges();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };

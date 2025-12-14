@@ -16,16 +16,10 @@ class LinearTransformDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk67ecfb;
-    ::ll::UntypedStorage<4, 4> mUnk5f7dfa;
-    ::ll::UntypedStorage<4, 4> mUnk282278;
+    ::ll::TypedStorage<2, 2, ushort const> mInput;
+    ::ll::TypedStorage<4, 4, float const>  mScale;
+    ::ll::TypedStorage<4, 4, float const>  mOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LinearTransformDensityCalculator& operator=(LinearTransformDensityCalculator const&);
-    LinearTransformDensityCalculator(LinearTransformDensityCalculator const&);
-    LinearTransformDensityCalculator();
 
 public:
     // virtual functions

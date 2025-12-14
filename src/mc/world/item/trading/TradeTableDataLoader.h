@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BedrockLoadContext;
 class LinkedAssetValidator;
 namespace Bedrock::Resources { class MinecraftDocumentInput; }
 namespace SharedTypes::v1_21_30 { struct TradeTableData; }
@@ -18,39 +19,40 @@ class TradeTableDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnk91c026;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::SlicedLoader<::SharedTypes::v1_21_30::TradeTableData, ::BedrockLoadContext, nullptr_t>>
+        mLoader;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    TradeTableDataLoader& operator=(TradeTableDataLoader const&);
-    TradeTableDataLoader(TradeTableDataLoader const&);
     TradeTableDataLoader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TradeTableDataLoader(
+    MCAPI TradeTableDataLoader(
         ::cereal::ReflectionCtx const&                     ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_30::TradeTableData>
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_30::TradeTableData>
     load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
-    MCNAPI ~TradeTableDataLoader();
+    MCAPI ~TradeTableDataLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

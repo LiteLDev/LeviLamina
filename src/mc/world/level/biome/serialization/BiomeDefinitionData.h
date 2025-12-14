@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/BiomeIdType.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/biome/serialization/BiomeDefinitionChunkGenData.h"
+#include "mc/world/level/biome/serialization/BiomeTagsData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,16 +18,16 @@ struct BiomeDefinitionData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2>   mUnkae4840;
-    ::ll::UntypedStorage<4, 4>   mUnk96e0f9;
-    ::ll::UntypedStorage<4, 4>   mUnk74d490;
-    ::ll::UntypedStorage<4, 4>   mUnke8fe62;
-    ::ll::UntypedStorage<4, 4>   mUnk7524be;
-    ::ll::UntypedStorage<4, 4>   mUnk1ff9b3;
-    ::ll::UntypedStorage<4, 4>   mUnkcdd940;
-    ::ll::UntypedStorage<1, 1>   mUnkace5ad;
-    ::ll::UntypedStorage<8, 32>  mUnkd819cb;
-    ::ll::UntypedStorage<8, 504> mUnkd33429;
+    ::ll::TypedStorage<2, 2, ::BiomeIdType>                                    mId;
+    ::ll::TypedStorage<4, 4, float>                                            mTemperature;
+    ::ll::TypedStorage<4, 4, float>                                            mDownfall;
+    ::ll::TypedStorage<4, 4, float>                                            mFoliageSnow;
+    ::ll::TypedStorage<4, 4, float>                                            mDepth;
+    ::ll::TypedStorage<4, 4, float>                                            mScale;
+    ::ll::TypedStorage<4, 4, int>                                              mMapWaterColorARGB;
+    ::ll::TypedStorage<1, 1, bool>                                             mRain;
+    ::ll::TypedStorage<8, 32, ::std::optional<::BiomeTagsData>>                mTags;
+    ::ll::TypedStorage<8, 504, ::std::optional<::BiomeDefinitionChunkGenData>> mChunkGenData;
     // NOLINTEND
 
 public:
@@ -36,28 +39,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeDefinitionData(::BiomeDefinitionData&&);
+    MCAPI BiomeDefinitionData(::BiomeDefinitionData&&);
 
-    MCNAPI void write(::BinaryStream& stream) const;
+    MCAPI void write(::BinaryStream& stream) const;
 
-    MCNAPI ~BiomeDefinitionData();
+    MCAPI ~BiomeDefinitionData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::BiomeDefinitionData> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::BiomeDefinitionData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BiomeDefinitionData&&);
+    MCAPI void* $ctor(::BiomeDefinitionData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

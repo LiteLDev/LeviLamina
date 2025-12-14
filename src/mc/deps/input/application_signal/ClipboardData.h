@@ -8,25 +8,19 @@ struct ClipboardData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk75cb42;
+    ::ll::TypedStorage<8, 32, ::std::wstring> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClipboardData& operator=(ClipboardData const&);
-    ClipboardData(ClipboardData const&);
-    ClipboardData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~ClipboardData();
+    MCAPI_C ~ClipboardData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

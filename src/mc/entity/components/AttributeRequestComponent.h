@@ -44,13 +44,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~AddModifier();
+        MCAPI ~AddModifier();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -71,13 +71,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~RemoveModifier();
+        MCAPI ~RemoveModifier();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

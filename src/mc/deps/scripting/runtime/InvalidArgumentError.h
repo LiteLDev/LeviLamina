@@ -18,8 +18,8 @@ struct InvalidArgumentError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkef90d9;
-    ::ll::UntypedStorage<4, 4> mUnk90d964;
+    ::ll::TypedStorage<1, 1, ::Scripting::InvalidArgumentErrorType> type;
+    ::ll::TypedStorage<4, 4, int>                                   index;
     // NOLINTEND
 
 public:
@@ -30,38 +30,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI InvalidArgumentError(::Scripting::InvalidArgumentError const&);
+    MCAPI InvalidArgumentError(::Scripting::InvalidArgumentError const&);
 
-    MCNAPI InvalidArgumentError(::std::string const& argTypeName, int index_);
+    MCAPI InvalidArgumentError(::std::string const& argTypeName, int index_);
 
-    MCNAPI
+    MCAPI
     InvalidArgumentError(::std::string const& argTypeName, ::Scripting::InvalidArgumentErrorType type_, int index_);
 
-    MCNAPI ~InvalidArgumentError();
+    MCAPI ~InvalidArgumentError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
 
-    MCNAPI static ::Scripting::EnumBinding bindEnum();
+    MCAPI static ::Scripting::EnumBinding bindEnum();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::InvalidArgumentError const&);
+    MCAPI void* $ctor(::Scripting::InvalidArgumentError const&);
 
-    MCNAPI void* $ctor(::std::string const& argTypeName, int index_);
+    MCAPI void* $ctor(::std::string const& argTypeName, int index_);
 
-    MCNAPI void* $ctor(::std::string const& argTypeName, ::Scripting::InvalidArgumentErrorType type_, int index_);
+    MCAPI void* $ctor(::std::string const& argTypeName, ::Scripting::InvalidArgumentErrorType type_, int index_);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

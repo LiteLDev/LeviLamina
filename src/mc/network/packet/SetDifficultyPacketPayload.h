@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/Difficulty.h"
+
 struct SetDifficultyPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc697fb;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::Difficulty> mDifficulty;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetDifficultyPacketPayload& operator=(SetDifficultyPacketPayload const&);
-    SetDifficultyPacketPayload(SetDifficultyPacketPayload const&);
-    SetDifficultyPacketPayload();
 };

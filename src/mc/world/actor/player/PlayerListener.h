@@ -27,18 +27,18 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $onWillChangeDimension(::Player& player);
+    MCFOLD void $onWillChangeDimension(::Player& player);
 
-    MCNAPI void $onDimensionChanged(::Player& player);
+    MCFOLD void $onDimensionChanged(::Player& player);
 
-    MCNAPI void $onPlayerDestruction(::Player& player);
+    MCFOLD void $onPlayerDestruction(::Player& player);
 #endif
 
 

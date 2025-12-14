@@ -57,7 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _createSpellEntity(
+    MCAPI void _createSpellEntity(
         float x,
         float z,
         float minY,
@@ -68,23 +68,23 @@ public:
         ::std::string const&        summonEvent
     ) const;
 
-    MCNAPI int _selectBestSpell(::Actor& target) const;
+    MCAPI int _selectBestSpell(::Actor& target) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
 
     // NOLINTEND

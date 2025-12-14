@@ -13,6 +13,7 @@
 // clang-format off
 class Actor;
 class Mob;
+class Path;
 // clang-format on
 
 class MeleeAttackBaseGoal : public ::Goal {
@@ -27,36 +28,30 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk44eb04;
-        ::ll::UntypedStorage<4, 4> mUnk683a7b;
-        ::ll::UntypedStorage<4, 4> mUnk59707a;
-        ::ll::UntypedStorage<4, 4> mUnk56002d;
-        ::ll::UntypedStorage<4, 4> mUnk214efe;
-        ::ll::UntypedStorage<4, 4> mUnk6d7a31;
-        ::ll::UntypedStorage<4, 4> mUnk50af2b;
-        ::ll::UntypedStorage<4, 4> mUnk14c021;
-        ::ll::UntypedStorage<4, 4> mUnk8929b8;
-        ::ll::UntypedStorage<4, 4> mUnkaf621b;
-        ::ll::UntypedStorage<1, 1> mUnkde00d6;
-        ::ll::UntypedStorage<1, 1> mUnk74162c;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
+        ::ll::TypedStorage<4, 4, int>                       mMinPathTicks;
+        ::ll::TypedStorage<4, 4, int>                       mMaxPathTicks;
+        ::ll::TypedStorage<4, 4, int>                       mPathFailTickIncrease;
+        ::ll::TypedStorage<4, 4, int>                       mInnerBoundaryTickIncrease;
+        ::ll::TypedStorage<4, 4, int>                       mOuterBoundaryTickIncrease;
+        ::ll::TypedStorage<4, 4, int>                       mTicksToRecalculatePath;
+        ::ll::TypedStorage<4, 4, float>                     mPathInnerBoundarySq;
+        ::ll::TypedStorage<4, 4, float>                     mPathOuterBoundarySq;
+        ::ll::TypedStorage<4, 4, float>                     mSpeedMultiplier;
+        ::ll::TypedStorage<1, 1, bool>                      mRequireCompletePath;
+        ::ll::TypedStorage<1, 1, bool>                      mTrackTarget;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Navigation& operator=(Navigation const&);
-        Navigation(Navigation const&);
-        Navigation();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~Navigation();
+        MCAPI ~Navigation();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -109,37 +104,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MeleeAttackBaseGoal(::Mob& mob);
+    MCAPI explicit MeleeAttackBaseGoal(::Mob& mob);
 
-    MCNAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
+    MCAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
 
-    MCNAPI void _attemptMoveToTargetPosition(::Actor const& target, bool canReachTarget, float targetDistanceSq);
+    MCAPI void _attemptMoveToTargetPosition(::Actor const& target, bool canReachTarget, float targetDistanceSq);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCFOLD void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI int $getAttackTicksResetValue() const;
+    MCFOLD int $getAttackTicksResetValue() const;
 
 
     // NOLINTEND

@@ -16,14 +16,8 @@ class DecoratorDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb6b773;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorDefinition>> mChild;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DecoratorDefinition& operator=(DecoratorDefinition const&);
-    DecoratorDefinition(DecoratorDefinition const&);
-    DecoratorDefinition();
 
 public:
     // virtual functions
@@ -34,7 +28,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::BehaviorDefinition>
+    MCAPI static ::std::unique_ptr<::BehaviorDefinition>
     _decoratorLoadChildBehavior(::Json::Value value, ::BehaviorFactory const& factory, ::BehaviorTreeDefinitionPtr ptr);
     // NOLINTEND
 };

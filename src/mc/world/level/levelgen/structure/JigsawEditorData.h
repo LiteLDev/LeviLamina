@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/world/level/levelgen/structure/JigsawJointType.h"
+
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
@@ -12,14 +15,14 @@ class JigsawEditorData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk14f849;
-    ::ll::UntypedStorage<8, 32> mUnk9a047e;
-    ::ll::UntypedStorage<8, 32> mUnkefcf5c;
-    ::ll::UntypedStorage<8, 32> mUnkaafd6f;
-    ::ll::UntypedStorage<1, 1>  mUnke28605;
-    ::ll::UntypedStorage<4, 4>  mUnk4bc52b;
-    ::ll::UntypedStorage<4, 4>  mUnk16e2c5;
-    ::ll::UntypedStorage<1, 1>  mUnk96f87d;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mTarget;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mTargetPool;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mFinalBlock;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::JigsawJointType> mJointType;
+    ::ll::TypedStorage<4, 4, int>                            mPlacementPriority;
+    ::ll::TypedStorage<4, 4, int>                            mSelectionPriority;
+    ::ll::TypedStorage<1, 1, bool>                           mJointTypeVisible;
     // NOLINTEND
 
 public:
@@ -30,26 +33,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
+    MCAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
 
-    MCNAPI_C ::JigsawEditorData& operator=(::JigsawEditorData const&);
+    MCAPI_C ::JigsawEditorData& operator=(::JigsawEditorData const&);
 
-    MCNAPI void save(::CompoundTag& tag) const;
+    MCAPI void save(::CompoundTag& tag) const;
 
-    MCNAPI ~JigsawEditorData();
+    MCAPI ~JigsawEditorData();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
+    MCAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

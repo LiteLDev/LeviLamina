@@ -56,13 +56,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canReach(::Vec3 const& targetPos, float dist) const;
+    MCAPI bool _canReach(::Vec3 const& targetPos, float dist) const;
 
-    MCNAPI ::Vec3 _chooseRandomPosition(::Vec3 const& mobPos, ::Random& random);
+    MCAPI ::Vec3 _chooseRandomPosition(::Vec3 const& mobPos, ::Random& random);
 
-    MCNAPI ::Vec3 const _getSuitableTargetPosition();
+    MCAPI ::Vec3 const _getSuitableTargetPosition();
 
-    MCNAPI bool const _isPosCloseToSurface(
+    MCAPI bool const _isPosCloseToSurface(
         ::BlockSource& region,
         ::Vec3 const&  targetPos,
         int            distanceToBlocksY,
@@ -73,11 +73,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

@@ -2,28 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/ProfilerLiteTelemetry.h"
+
 struct ServerboundDiagnosticsPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnkd6e5c4;
+    ::ll::TypedStorage<8, 72, ::ProfilerLiteTelemetry> mTelemetry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerboundDiagnosticsPacketPayload& operator=(ServerboundDiagnosticsPacketPayload const&);
-    ServerboundDiagnosticsPacketPayload(ServerboundDiagnosticsPacketPayload const&);
-    ServerboundDiagnosticsPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ServerboundDiagnosticsPacketPayload();
+    MCAPI ~ServerboundDiagnosticsPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

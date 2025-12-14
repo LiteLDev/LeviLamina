@@ -2,11 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockType;
+// clang-format on
+
 class VanillaBlockTypeComponentAdder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8e781f;
+    ::ll::TypedStorage<8, 8, ::BlockType&> mBlockType;
     // NOLINTEND
 
 public:
