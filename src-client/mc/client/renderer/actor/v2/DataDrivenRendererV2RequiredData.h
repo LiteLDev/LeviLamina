@@ -7,8 +7,8 @@
 class DataDrivenRenderer;
 class GameVersion;
 class HashedString;
+class MinecraftGameplayGraphicsResources;
 struct DataDrivenRendererPreprocessingContext;
-struct MinecraftGameplayGraphicsResources;
 // clang-format on
 
 class DataDrivenRendererV2RequiredData {

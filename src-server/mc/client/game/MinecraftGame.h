@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MinecraftGame {
+class MinecraftGame {
 public:
     // MinecraftGame inner types declare
     // clang-format off
@@ -10,11 +10,11 @@ public:
     // clang-format on
 
     // MinecraftGame inner types define
+    enum class SuspendState : int {};
+
     enum class DeviceLostState : int {};
 
     enum class SurfaceState : int {};
-
-    enum class SuspendState : int {};
 
     enum class WorkList : uint64 {};
 

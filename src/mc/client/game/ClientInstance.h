@@ -1383,7 +1383,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ClientInstance(
+    MCAPI_C ClientInstance(
         ::IMinecraftGame&                                                      mg,
         ::IMinecraftApp&                                                       app,
         ::LevelListener&                                                       levelListener,
@@ -1396,87 +1396,87 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::VideoCaptureSessionManager>            videoCaptureSessionManager
     );
 
-    MCNAPI_C ::DisconnectionErrorDetails _createDisconnectionErrorDetails(::Connection::DisconnectionStage paramStage);
+    MCAPI_C ::DisconnectionErrorDetails _createDisconnectionErrorDetails(::Connection::DisconnectionStage paramStage);
 
-    MCNAPI_C ::std::unique_ptr<::LegacyClientNetworkHandler> _createNetworkHandler(
+    MCAPI_C ::std::unique_ptr<::LegacyClientNetworkHandler> _createNetworkHandler(
         ::PlayerAuthenticationType authType,
         ::LegacyMultiplayerToken&& token,
         ::RawGameServerToken&&     newToken
     );
 
-    MCNAPI_C void _createSkinRepositoryClientInterface();
+    MCAPI_C void _createSkinRepositoryClientInterface();
 
-    MCNAPI_C void _finishDestroyingGame();
+    MCAPI_C void _finishDestroyingGame();
 
-    MCNAPI_C ::Bedrock::Threading::Async<::std::pair<::LegacyMultiplayerToken, ::RawGameServerToken>>
+    MCAPI_C ::Bedrock::Threading::Async<::std::pair<::LegacyMultiplayerToken, ::RawGameServerToken>>
     _getGlobalTokens(::PlayerAuthentication& playerAuthToUse);
 
-    MCNAPI_C bool _getIsConnectedToApplicationLayer() const;
+    MCAPI_C bool _getIsConnectedToApplicationLayer() const;
 
-    MCNAPI_C void _handleDisconnectionScreenRequests();
+    MCAPI_C void _handleDisconnectionScreenRequests();
 
-    MCNAPI_C void _handlePossibleControllerDisconnect(bool isInitFinished);
+    MCAPI_C void _handlePossibleControllerDisconnect(bool isInitFinished);
 
-    MCNAPI_C void _initSceneStack();
+    MCAPI_C void _initSceneStack();
 
-    MCNAPI_C bool _isEditorModeOrInEditorWorld() const;
+    MCAPI_C bool _isEditorModeOrInEditorWorld() const;
 
-    MCNAPI_C bool _isInEditorTestWorld() const;
+    MCAPI_C bool _isInEditorTestWorld() const;
 
-    MCNAPI_C bool _isShowingScreen(::std::string_view screenName) const;
+    MCAPI_C bool _isShowingScreen(::std::string_view screenName) const;
 
-    MCNAPI_C ::std::optional<bool> _isUsingTurn() const;
+    MCAPI_C ::std::optional<bool> _isUsingTurn() const;
 
-    MCNAPI_C void
+    MCAPI_C void
     _joinWorldInProgressSubclient(::std::optional<::PlayerJoinWorldTelemetryInfo> primaryClientJoinWorldInfo);
 
-    MCNAPI_C void
+    MCAPI_C void
     _leaveGameOnUnrecoverableError(::std::string const& displayMessage, ::std::string const& telemetryMessage);
 
-    MCNAPI_C void _navigateToSDLCharacterCreatorOffer(::std::string const& productId);
+    MCAPI_C void _navigateToSDLCharacterCreatorOffer(::std::string const& productId);
 
-    MCNAPI_C void _notifyTelemetryClientCanceledJoinAttempt();
+    MCAPI_C void _notifyTelemetryClientCanceledJoinAttempt();
 
-    MCNAPI_C void _notifyTelemetryClientStartedJoinAttempt();
+    MCAPI_C void _notifyTelemetryClientStartedJoinAttempt();
 
-    MCNAPI_C void _notifyTelemetryClientSuccessfullyEnteredWorld();
+    MCAPI_C void _notifyTelemetryClientSuccessfullyEnteredWorld();
 
-    MCNAPI_C void _notifyTelemetryOfFlaggedDisconnect(
+    MCAPI_C void _notifyTelemetryOfFlaggedDisconnect(
         ::Connection::DisconnectFailReason failReason,
         ::std::string const&               titleMessage,
         ::std::string const&               errorMessage,
         ::std::string const&               codeword
     );
 
-    MCNAPI_C void _perspectiveOptionChanged(::Option const&);
+    MCAPI_C void _perspectiveOptionChanged(::Option const&);
 
-    MCNAPI_C void _requestLeaveGameImpl(bool switchScreen, bool sync);
+    MCAPI_C void _requestLeaveGameImpl(bool switchScreen, bool sync);
 
-    MCNAPI_C void _startDestroyingGame();
+    MCAPI_C void _startDestroyingGame();
 
-    MCNAPI_C void _startLeaveGame();
+    MCAPI_C void _startLeaveGame();
 
-    MCNAPI_C void _startWorldPrimaryClient(
+    MCAPI_C void _startWorldPrimaryClient(
         ::PlayerAuthenticationType authType,
         ::LegacyMultiplayerToken&& token,
         ::RawGameServerToken&&     newToken
     );
 
-    MCNAPI_C void _startWorldSubClient(
+    MCAPI_C void _startWorldSubClient(
         ::PlayerAuthenticationType authType,
         ::LegacyMultiplayerToken&& token,
         ::RawGameServerToken&&     newToken
     );
 
-    MCNAPI_C void
+    MCAPI_C void
     _tickBuildAction(::HitResult const& solidHitResult_, ::HitResult const& liquidHitResult_, bool advanceTime);
 
-    MCNAPI_C void
+    MCAPI_C void
     _updateScreenSizeVariables(::Vec2 const& totalScreenSize, ::Vec2 const& safeZone, float forcedGuiScale);
 
-    MCNAPI_C void fireEventDiskStatus(::DiskStatus status, ::Core::LevelStorageState errorCode);
+    MCAPI_C void fireEventDiskStatus(::DiskStatus status, ::Core::LevelStorageState errorCode);
 
-    MCNAPI_C void flagDisconnectionAndNotifyWithTarget(
+    MCAPI_C void flagDisconnectionAndNotifyWithTarget(
         ::DisconnectionScreenParams const& params,
         ::Connection::UIReturnTarget       uiReturnTarget
     );
@@ -1485,13 +1485,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static bool tickDestroyBlock(::ClientInstance::ClientDestroyBlockState& state, bool advanceTime);
+    MCAPI_C static bool tickDestroyBlock(::ClientInstance::ClientDestroyBlockState& state, bool advanceTime);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+    MCAPI_C void* $ctor(
         ::IMinecraftGame&                                                      mg,
         ::IMinecraftApp&                                                       app,
         ::LevelListener&                                                       levelListener,
@@ -1508,18 +1508,18 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $onInitMinecraftGame();
+    MCAPI void $onInitMinecraftGame();
 
-    MCNAPI void $onDestroyMinecraftGame();
+    MCAPI void $onDestroyMinecraftGame();
 
-    MCNAPI void $init(
+    MCAPI void $init(
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const& filePathManager,
         ::ClientNetworkSystem&                                        network,
         ::Timer&                                                      simTimer,
@@ -1529,26 +1529,26 @@ public:
         ::IGameModuleApp&                                             gameModuleApp
     );
 
-    MCNAPI void $initSceneFactory(
+    MCAPI void $initSceneFactory(
         ::std::unique_ptr<::SceneFactory>         sceneFactory,
         ::std::unique_ptr<::OreUI::SceneProvider> sceneProvider
     );
 
-    MCNAPI void $setUiRouter(::std::unique_ptr<::OreUI::Router> uiRouter);
+    MCAPI void $setUiRouter(::std::unique_ptr<::OreUI::Router> uiRouter);
 
-    MCNAPI void $initGraphics();
+    MCAPI void $initGraphics();
 
-    MCNAPI void $stop();
+    MCFOLD void $stop();
 
-    MCNAPI void $teardown();
+    MCAPI void $teardown();
 
-    MCNAPI void $preShutDown();
+    MCAPI void $preShutDown();
 
-    MCNAPI void $setGameConnectionInfo(::Social::GameConnectionInfo const& gameConnection);
+    MCAPI void $setGameConnectionInfo(::Social::GameConnectionInfo const& gameConnection);
 
-    MCNAPI ::std::optional<::Social::GameConnectionInfo> $getGameConnectionInfo();
+    MCAPI ::std::optional<::Social::GameConnectionInfo> $getGameConnectionInfo();
 
-    MCNAPI void $onStartJoinGame(
+    MCAPI void $onStartJoinGame(
         bool                                   isJoiningLocalServer,
         ::std::string const&                   multiplayerCorrelationId,
         ::std::string const&                   serverName,
@@ -1558,783 +1558,783 @@ public:
         bool                                   isServerTransfer
     );
 
-    MCNAPI void $onCancelJoinGame();
+    MCAPI void $onCancelJoinGame();
 
-    MCNAPI void $requestLeaveGameAsync();
+    MCAPI void $requestLeaveGameAsync();
 
-    MCNAPI void $requestLeaveGame(bool switchScreen, bool sync);
+    MCAPI void $requestLeaveGame(bool switchScreen, bool sync);
 
-    MCNAPI void $stopPlayScreen();
+    MCAPI void $stopPlayScreen();
 
-    MCNAPI bool $isLeaveGameDone() const;
+    MCAPI bool $isLeaveGameDone() const;
 
-    MCNAPI void $setupPlayScreenForLeaveGame();
+    MCAPI void $setupPlayScreenForLeaveGame();
 
-    MCNAPI void $preCacheOutOfGameViews();
+    MCAPI void $preCacheOutOfGameViews();
 
-    MCNAPI void $resetPrimaryClient();
+    MCAPI void $resetPrimaryClient();
 
-    MCNAPI void $resetGameSession();
+    MCAPI void $resetGameSession();
 
-    MCNAPI void $tick();
+    MCFOLD void $tick();
 
-    MCNAPI void $frameUpdate(::FrameUpdateContext& frameUpdateContext);
+    MCAPI void $frameUpdate(::FrameUpdateContext& frameUpdateContext);
 
-    MCNAPI void $preFrameTick();
+    MCAPI void $preFrameTick();
 
-    MCNAPI bool $update(bool isInitFinished);
+    MCAPI bool $update(bool isInitFinished);
 
-    MCNAPI void $endFrame();
+    MCFOLD void $endFrame();
 
-    MCNAPI float $getFrameAlpha();
+    MCAPI float $getFrameAlpha();
 
-    MCNAPI void $startSubClientLateJoin(
+    MCAPI void $startSubClientLateJoin(
         bool                                            hasXBLBroadcast,
         ::std::unique_ptr<::GameModuleClient>           gameModuleClient,
         ::std::optional<::PlayerJoinWorldTelemetryInfo> primaryClientJoinWorldInfo
     );
 
-    MCNAPI ::Bedrock::Threading::Async<::ClientGameSetupResult>
+    MCAPI ::Bedrock::Threading::Async<::ClientGameSetupResult>
     $setupClientGame(bool joiningLocalServer, ::std::unique_ptr<::GameModuleClient> gameModuleClient);
 
-    MCNAPI ::BlockSource* $getRegion();
+    MCAPI ::BlockSource* $getRegion();
 
-    MCNAPI ::LocalPlayer* $getLocalPlayer() const;
+    MCAPI ::LocalPlayer* $getLocalPlayer() const;
 
-    MCNAPI void $setupPrimaryClientEditorManager();
+    MCAPI void $setupPrimaryClientEditorManager();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> $getLocalEditorPlayer() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> $getLocalEditorPlayer() const;
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> $getEditorManager() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> $getEditorManager() const;
 
-    MCNAPI bool $isPlayerInEditor() const;
+    MCAPI bool $isPlayerInEditor() const;
 
-    MCNAPI ::LocalPlayerChangedConnector $getLocalPlayerChangedConnector();
+    MCAPI ::LocalPlayerChangedConnector $getLocalPlayerChangedConnector();
 
-    MCNAPI ::WeakEntityRef $getLocalUser() const;
+    MCAPI ::WeakEntityRef $getLocalUser() const;
 
-    MCNAPI ::Actor* $getCameraActor() const;
+    MCAPI ::Actor* $getCameraActor() const;
 
-    MCNAPI void $setCameraActor(::Actor* cameraActor);
+    MCAPI void $setCameraActor(::Actor* cameraActor);
 
-    MCNAPI ::ListenerState const* $getListenerState() const;
+    MCAPI ::ListenerState const* $getListenerState() const;
 
-    MCNAPI ::Actor* $getCameraTargetActor() const;
+    MCAPI ::Actor* $getCameraTargetActor() const;
 
-    MCNAPI void $setCameraTargetActor(::Actor* cameraTargetActor);
+    MCAPI void $setCameraTargetActor(::Actor* cameraTargetActor);
 
-    MCNAPI ::WeakEntityRef $getCameraEntity() const;
+    MCAPI ::WeakEntityRef $getCameraEntity() const;
 
-    MCNAPI void $getRawCameraEntities(::WeakEntityRef& cameraEntity, ::WeakEntityRef& cameraTargetEntity) const;
+    MCAPI void $getRawCameraEntities(::WeakEntityRef& cameraEntity, ::WeakEntityRef& cameraTargetEntity) const;
 
-    MCNAPI void $setRawCameraEntities(::WeakEntityRef cameraEntity, ::WeakEntityRef cameraTargetEntity);
+    MCAPI void $setRawCameraEntities(::WeakEntityRef cameraEntity, ::WeakEntityRef cameraTargetEntity);
 
-    MCNAPI ::HitResult const& $getLatestHitResult() const;
+    MCAPI ::HitResult const& $getLatestHitResult() const;
 
-    MCNAPI bool $isLeavingGame() const;
+    MCAPI bool $isLeavingGame() const;
 
-    MCNAPI bool $isDestroyingGame() const;
+    MCAPI bool $isDestroyingGame() const;
 
-    MCNAPI bool $isShuttingDown() const;
+    MCAPI bool $isShuttingDown() const;
 
-    MCNAPI bool $useLowFrequencyUIRender() const;
+    MCAPI bool $useLowFrequencyUIRender() const;
 
-    MCNAPI bool $isSplitScreenActive() const;
+    MCAPI bool $isSplitScreenActive() const;
 
-    MCNAPI bool $isExitingLevel() const;
+    MCAPI bool $isExitingLevel() const;
 
-    MCNAPI bool $isInBedScreen() const;
+    MCAPI bool $isInBedScreen() const;
 
-    MCNAPI bool $isInDeathScreen() const;
+    MCAPI bool $isInDeathScreen() const;
 
-    MCNAPI bool $isKeyboardEnabled() const;
+    MCAPI bool $isKeyboardEnabled() const;
 
-    MCNAPI bool $hasCommands() const;
+    MCAPI bool $hasCommands() const;
 
-    MCNAPI int $getSplitScreenCount() const;
+    MCAPI int $getSplitScreenCount() const;
 
-    MCNAPI bool $isShowingLoadingScreen() const;
+    MCAPI bool $isShowingLoadingScreen() const;
 
-    MCNAPI bool $shouldDisconnectOnAppSuspended() const;
+    MCFOLD bool $shouldDisconnectOnAppSuspended() const;
 
-    MCNAPI bool $isGamePlayTipsEnabled() const;
+    MCAPI bool $isGamePlayTipsEnabled() const;
 
-    MCNAPI bool $isPlatformNX() const;
+    MCAPI bool $isPlatformNX() const;
 
-    MCNAPI bool $isLocalSplitscreenWith(::ActorUniqueID const& id) const;
+    MCAPI bool $isLocalSplitscreenWith(::ActorUniqueID const& id) const;
 
-    MCNAPI bool $isValidCrossPlatformSkin() const;
+    MCAPI bool $isValidCrossPlatformSkin() const;
 
-    MCNAPI bool $isCurrentSkinPlatformLocked() const;
+    MCAPI bool $isCurrentSkinPlatformLocked() const;
 
-    MCNAPI bool $isSelectedSkinInitialized() const;
+    MCAPI bool $isSelectedSkinInitialized() const;
 
-    MCNAPI ::SplitScreenInfo $getSplitScreenInfo() const;
+    MCAPI ::SplitScreenInfo $getSplitScreenInfo() const;
 
-    MCNAPI int $getCurrentMaxGUIScaleIndex() const;
+    MCAPI int $getCurrentMaxGUIScaleIndex() const;
 
-    MCNAPI bool $getHandlingControllerDisconnect();
+    MCAPI bool $getHandlingControllerDisconnect();
 
-    MCNAPI void $setOpenControllerDisconnectScreen(bool open);
+    MCAPI void $setOpenControllerDisconnectScreen(bool open);
 
-    MCNAPI ::ClientPlayMode $getClientPlayMode() const;
+    MCAPI ::ClientPlayMode $getClientPlayMode() const;
 
-    MCNAPI void $setClientPlayMode(::ClientPlayMode const& mode);
+    MCAPI void $setClientPlayMode(::ClientPlayMode const& mode);
 
-    MCNAPI ::std::function<void()> $getCreditsCallback();
+    MCAPI ::std::function<void()> $getCreditsCallback();
 
-    MCNAPI void $setCreditsCallback(::std::function<void()> callback);
+    MCAPI void $setCreditsCallback(::std::function<void()> callback);
 
-    MCNAPI void $setupTransitionForCredits(::std::function<void()> callback);
+    MCAPI void $setupTransitionForCredits(::std::function<void()> callback);
 
-    MCNAPI void $refreshScreenSizeData();
+    MCAPI void $refreshScreenSizeData();
 
-    MCNAPI void $onScreenSizeChanged(int width, int height, float forcedGuiScale);
+    MCAPI void $onScreenSizeChanged(int width, int height, float forcedGuiScale);
 
-    MCNAPI void $onGuiScaleOffsetChanged();
+    MCAPI void $onGuiScaleOffsetChanged();
 
-    MCNAPI void $onSafeZoneChanged();
+    MCAPI void $onSafeZoneChanged();
 
-    MCNAPI bool $hasDismissedNewPlayerFlow() const;
+    MCAPI bool $hasDismissedNewPlayerFlow() const;
 
-    MCNAPI void $quit(::std::string const& src, ::std::string const& reason);
+    MCAPI void $quit(::std::string const& src, ::std::string const& reason);
 
-    MCNAPI ::IMinecraftGame& $getMinecraftGame_DEPRECATED() const;
+    MCFOLD ::IMinecraftGame& $getMinecraftGame_DEPRECATED() const;
 
-    MCNAPI ::IClientInstances& $getClientInstances() const;
+    MCAPI ::IClientInstances& $getClientInstances() const;
 
-    MCNAPI ::World::WorldSystem& $getWorldSystem() const;
+    MCAPI ::World::WorldSystem& $getWorldSystem() const;
 
-    MCNAPI bool $isWorldSystemReady() const;
+    MCAPI bool $isWorldSystemReady() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::EDUSystems> $getEDUSystems();
+    MCAPI ::Bedrock::NonOwnerPointer<::EDUSystems> $getEDUSystems();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::EDUSystems const> $getEDUSystems() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::EDUSystems const> $getEDUSystems() const;
 
-    MCNAPI ::IMinecraftEventing& $getEventing() const;
+    MCAPI ::IMinecraftEventing& $getEventing() const;
 
-    MCNAPI ::IConnectionEventing& $getConnectionEventing() const;
+    MCAPI ::IConnectionEventing& $getConnectionEventing() const;
 
-    MCNAPI ::FontHandle $getFontHandle() const;
+    MCAPI ::FontHandle $getFontHandle() const;
 
-    MCNAPI ::FontHandle $getRuneFontHandle() const;
+    MCAPI ::FontHandle $getRuneFontHandle() const;
 
-    MCNAPI ::FontHandle $getUnicodeFontHandle() const;
+    MCAPI ::FontHandle $getUnicodeFontHandle() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> $getGeometryGroup() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> $getGeometryGroup() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::BlockCullingGroup> $getBlockCullingGroup() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::BlockCullingGroup> $getBlockCullingGroup() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> $getMultiplayerServiceManager() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> $getMultiplayerServiceManager() const;
 
-    MCNAPI ::IResourcePackRepository& $getResourcePackRepository() const;
+    MCAPI ::IResourcePackRepository& $getResourcePackRepository() const;
 
-    MCNAPI ::ResourcePackManager& $getResourcePackManager() const;
+    MCAPI ::ResourcePackManager& $getResourcePackManager() const;
 
-    MCNAPI ::PackManifestFactory& $getPackManifestFactory();
+    MCAPI ::PackManifestFactory& $getPackManifestFactory();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
 
-    MCNAPI ::PacksInfoData const& $getHostSpecifiedPacks() const;
+    MCAPI ::PacksInfoData const& $getHostSpecifiedPacks() const;
 
-    MCNAPI ::std::shared_ptr<::SkinRepository> $getSkinRepository() const;
+    MCAPI ::std::shared_ptr<::SkinRepository> $getSkinRepository() const;
 
-    MCNAPI ::PersonaRepository& $getPersonaRepository() const;
+    MCAPI ::PersonaRepository& $getPersonaRepository() const;
 
-    MCNAPI ::MarketplaceServicesManager& $getMarketplaceServicesManager() const;
+    MCAPI ::MarketplaceServicesManager& $getMarketplaceServicesManager() const;
 
-    MCNAPI ::SkinRepositoryClientInterface& $getSkinRepositoryClientInterface() const;
+    MCFOLD ::SkinRepositoryClientInterface& $getSkinRepositoryClientInterface() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> $getStoreCatalogRepository();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> $getStoreCatalogRepository();
 
-    MCNAPI ::std::shared_ptr<::mce::TextureGroup> $getTextureGroup() const;
+    MCAPI ::std::shared_ptr<::mce::TextureGroup> $getTextureGroup() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::mce::TextureGroup> $getStoreCacheTextures() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::mce::TextureGroup> $getStoreCacheTextures() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> $getMinecraftGraphics() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> $getMinecraftGraphics() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IUIRepository> $getUIRepository() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IUIRepository> $getUIRepository() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> $getUserManager() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> $getUserManager() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::TrialManager> $getTrialManager() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TrialManager> $getTrialManager() const;
 
-    MCNAPI bool $wantToQuit() const;
+    MCAPI bool $wantToQuit() const;
 
-    MCNAPI bool $isPrimaryLevelCrossPlatformMultiplayer() const;
+    MCAPI bool $isPrimaryLevelCrossPlatformMultiplayer() const;
 
-    MCNAPI bool $isPrimaryLevelMultiplayer() const;
+    MCAPI bool $isPrimaryLevelMultiplayer() const;
 
-    MCNAPI bool $isAdhocEnabled() const;
+    MCAPI bool $isAdhocEnabled() const;
 
-    MCNAPI ::std::shared_ptr<::ActorAnimationGroup> $getActorAnimationGroup() const;
+    MCAPI ::std::shared_ptr<::ActorAnimationGroup> $getActorAnimationGroup() const;
 
-    MCNAPI bool $isMarketplaceDisabled() const;
+    MCAPI bool $isMarketplaceDisabled() const;
 
-    MCNAPI ::std::pair<::StoreErrorCodes, ::std::string> const $getMarketplaceDisabledReasonWithErrorCode() const;
+    MCAPI ::std::pair<::StoreErrorCodes, ::std::string> const $getMarketplaceDisabledReasonWithErrorCode() const;
 
-    MCNAPI void $linkToOffer(::std::string const& productId, bool allowWhileInGame);
+    MCAPI void $linkToOffer(::std::string const& productId, bool allowWhileInGame);
 
-    MCNAPI void $linkToPage(::std::string const& pageId);
+    MCAPI void $linkToPage(::std::string const& pageId);
 
-    MCNAPI void $linkTo3PServerOffers(::std::string const& pageId, ::std::string const& creatorName);
+    MCAPI void $linkTo3PServerOffers(::std::string const& pageId, ::std::string const& creatorName);
 
-    MCNAPI void $navigateToMarketplaceInventoryScreen(::InventoryTabIndex tabIndex);
+    MCAPI void $navigateToMarketplaceInventoryScreen(::InventoryTabIndex tabIndex);
 
-    MCNAPI void $navigateToStoreHomeScreen();
+    MCAPI void $navigateToStoreHomeScreen();
 
-    MCNAPI void $navigateToCoinPurchaseScreen(int neededCoins, ::std::function<void(bool, int)> callback);
+    MCAPI void $navigateToCoinPurchaseScreen(int neededCoins, ::std::function<void(bool, int)> callback);
 
-    MCNAPI void $navigateToPurchaseOfferScreen(::StoreCatalogItem& item, ::StoreNavigationOrigin, bool const);
+    MCAPI void $navigateToPurchaseOfferScreen(::StoreCatalogItem& item, ::StoreNavigationOrigin, bool const);
 
-    MCNAPI void $navigateToDressingRoomOfferScreen(::std::string const& offerId);
+    MCAPI void $navigateToDressingRoomOfferScreen(::std::string const& offerId);
 
-    MCNAPI bool $navigateToProfileScreen(::std::string const&, bool const preventProgressScreen);
+    MCAPI bool $navigateToProfileScreen(::std::string const&, bool const preventProgressScreen);
 
-    MCNAPI void $navigateToServersScreen(bool const calledFromHyperlink);
+    MCAPI void $navigateToServersScreen(bool const calledFromHyperlink);
 
-    MCNAPI void $navigateToHowToPlayScreen(::std::string const& startTopic);
+    MCAPI void $navigateToHowToPlayScreen(::std::string const& startTopic);
 
-    MCNAPI void $navigateToGatheringInfoScreen(bool autoConnect);
+    MCAPI void $navigateToGatheringInfoScreen(bool autoConnect);
 
-    MCNAPI void $navigateToMarketplacePassPDPScreen(::MarketplacePassTabIndex tabIndex);
+    MCAPI void $navigateToMarketplacePassPDPScreen(::MarketplacePassTabIndex tabIndex);
 
-    MCNAPI void $navigateToRealmsStoriesTransitionScreen(::Realms::World const& world);
+    MCAPI void $navigateToRealmsStoriesTransitionScreen(::Realms::World const& world);
 
-    MCNAPI void $tryPushLeaveGameScreen();
+    MCAPI void $tryPushLeaveGameScreen();
 
-    MCNAPI void $tryStartDayOneExperience();
+    MCAPI void $tryStartDayOneExperience();
 
-    MCNAPI bool $isReadyToRender() const;
+    MCAPI bool $isReadyToRender() const;
 
-    MCNAPI void $onDimensionChangedEvent();
+    MCAPI void $onDimensionChangedEvent();
 
-    MCNAPI void $onGameEventNotification(::ui::GameEventNotification notification);
+    MCAPI void $onGameEventNotification(::ui::GameEventNotification notification);
 
-    MCNAPI ::std::string $getTopScreenName() const;
+    MCAPI ::std::string $getTopScreenName() const;
 
-    MCNAPI void $setLeaveGameInProgressAsReadyToContinue();
+    MCAPI void $setLeaveGameInProgressAsReadyToContinue();
 
-    MCNAPI void $stopDestroying();
+    MCAPI void $stopDestroying();
 
-    MCNAPI void $onClientCreatedLevel(
+    MCAPI void $onClientCreatedLevel(
         ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
         ::OwnerPtr<::EntityContext>                                          userEntity
     );
 
-    MCNAPI ::PlayerAuthentication& $getPlayerAuthentication();
+    MCAPI ::PlayerAuthentication& $getPlayerAuthentication();
 
-    MCNAPI void $createPlayerAuthentication();
+    MCAPI void $createPlayerAuthentication();
 
-    MCNAPI void $createPlayerAuthentication(uint64 clientRandomId);
+    MCAPI void $createPlayerAuthentication(uint64 clientRandomId);
 
-    MCNAPI ::std::string $getPlatformId() const;
+    MCAPI ::std::string $getPlatformId() const;
 
-    MCNAPI ::std::string $getPlatformOnlineId() const;
+    MCAPI ::std::string $getPlatformOnlineId() const;
 
-    MCNAPI bool $useController() const;
+    MCAPI bool $useController() const;
 
-    MCNAPI bool $useTouchscreen() const;
+    MCAPI bool $useTouchscreen() const;
 
-    MCNAPI bool $getMouseGrabbed() const;
+    MCAPI bool $getMouseGrabbed() const;
 
-    MCNAPI bool $currentInputModeIsMouseAndKeyboard() const;
+    MCAPI bool $currentInputModeIsMouseAndKeyboard() const;
 
-    MCNAPI bool $allowPicking() const;
+    MCAPI bool $allowPicking() const;
 
-    MCNAPI bool $isShowingMenu() const;
+    MCAPI bool $isShowingMenu() const;
 
-    MCNAPI bool $isShowingPauseScreen() const;
+    MCAPI bool $isShowingPauseScreen() const;
 
-    MCNAPI bool $isShowingProgressScreen() const;
+    MCAPI bool $isShowingProgressScreen() const;
 
-    MCNAPI bool $isShowingWorldProgressScreen() const;
+    MCAPI bool $isShowingWorldProgressScreen() const;
 
-    MCNAPI bool $isShowingRealmsProgressScreen() const;
+    MCAPI bool $isShowingRealmsProgressScreen() const;
 
-    MCNAPI bool $isShowingDeathScreen() const;
+    MCAPI bool $isShowingDeathScreen() const;
 
-    MCNAPI bool $isShowingServerForm() const;
+    MCAPI bool $isShowingServerForm() const;
 
-    MCNAPI bool $isScreenReplaceable() const;
+    MCAPI bool $isScreenReplaceable() const;
 
-    MCNAPI bool $isInWorldAndNotShowingAnyMenuScreens() const;
+    MCAPI bool $isInWorldAndNotShowingAnyMenuScreens() const;
 
-    MCNAPI bool $isWorldActive() const;
+    MCAPI bool $isWorldActive() const;
 
-    MCNAPI bool $isInRealm();
+    MCAPI bool $isInRealm();
 
-    MCNAPI bool $readyForShutdown() const;
+    MCAPI bool $readyForShutdown() const;
 
-    MCNAPI bool $isPrimaryClient() const;
+    MCAPI bool $isPrimaryClient() const;
 
-    MCNAPI bool $isEduMode() const;
+    MCAPI bool $isEduMode() const;
 
-    MCNAPI bool $isGamepadCursorEnabled() const;
+    MCFOLD bool $isGamepadCursorEnabled() const;
 
-    MCNAPI bool $isInControlCustomization() const;
+    MCAPI bool $isInControlCustomization() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getServerData();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getServerData();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft const> $getServerData() const;
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::Minecraft const> $getServerData() const;
 
-    MCNAPI ::MultiPlayerLevel* $getLevel();
+    MCFOLD ::MultiPlayerLevel* $getLevel();
 
-    MCNAPI ::MultiPlayerLevel const* $getLevel() const;
+    MCFOLD ::MultiPlayerLevel const* $getLevel() const;
 
-    MCNAPI bool $hasLevel() const;
+    MCAPI bool $hasLevel() const;
 
-    MCNAPI bool $isPreGame() const;
+    MCAPI bool $isPreGame() const;
 
-    MCNAPI bool $isInMultiplayerGame() const;
+    MCAPI bool $isInMultiplayerGame() const;
 
-    MCNAPI bool $isMultiPlayerClient() const;
+    MCAPI bool $isMultiPlayerClient() const;
 
-    MCNAPI ::IOptions& $getOptions();
+    MCFOLD ::IOptions& $getOptions();
 
-    MCNAPI ::IOptions const& $getOptions() const;
+    MCFOLD ::IOptions const& $getOptions() const;
 
-    MCNAPI ::std::shared_ptr<::Options> $getOptionsPtr();
+    MCAPI ::std::shared_ptr<::Options> $getOptionsPtr();
 
-    MCNAPI ::std::shared_ptr<::Options const> const $getOptionsPtr() const;
+    MCAPI ::std::shared_ptr<::Options const> const $getOptionsPtr() const;
 
-    MCNAPI ::std::shared_ptr<::Social::User> const& $getUser() const;
+    MCAPI ::std::shared_ptr<::Social::User> const& $getUser() const;
 
-    MCNAPI ::std::shared_ptr<::ISettingsRegistry> $getSettingsRegistry();
+    MCAPI ::std::shared_ptr<::ISettingsRegistry> $getSettingsRegistry();
 
-    MCNAPI ::Option const& $getShowLearningPromptsOption() const;
+    MCAPI ::Option const& $getShowLearningPromptsOption() const;
 
-    MCNAPI ::Option& $getShowControlTipsOption();
+    MCAPI ::Option& $getShowControlTipsOption();
 
-    MCNAPI ::Option& $getShowControlTipsOverrideOption();
+    MCAPI ::Option& $getShowControlTipsOverrideOption();
 
-    MCNAPI double $getControlTipsTimeElapsed() const;
+    MCAPI double $getControlTipsTimeElapsed() const;
 
-    MCNAPI void $setControlTipsTimeElapsedStart();
+    MCAPI void $setControlTipsTimeElapsedStart();
 
-    MCNAPI ::GameRenderer& $getGameRenderer() const;
+    MCAPI ::GameRenderer& $getGameRenderer() const;
 
-    MCNAPI ::LevelRenderer* $getLevelRenderer() const;
+    MCFOLD ::LevelRenderer* $getLevelRenderer() const;
 
-    MCNAPI ::LevelRendererCameraProxy* $getLevelRendererCameraProxy() const;
+    MCAPI ::LevelRendererCameraProxy* $getLevelRendererCameraProxy() const;
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::CameraRegistry> $getCameraRegistry();
+    MCAPI ::Bedrock::NonOwnerPointer<::CameraRegistry> $getCameraRegistry();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::CameraRegistry const> $getCameraRegistry() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::CameraRegistry const> $getCameraRegistry() const;
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::EntitySystems> $getCameraSystems();
+    MCAPI ::Bedrock::NonOwnerPointer<::EntitySystems> $getCameraSystems();
 
-    MCNAPI ::LightTexture* $getLightTexture();
+    MCAPI ::LightTexture* $getLightTexture();
 
-    MCNAPI void $setupLevelRendering(::MultiPlayerLevel& level, ::WeakEntityRef cameraTargetEntity);
+    MCAPI void $setupLevelRendering(::MultiPlayerLevel& level, ::WeakEntityRef cameraTargetEntity);
 
-    MCNAPI ::mce::ViewportInfo const& $getViewportInfo() const;
+    MCAPI ::mce::ViewportInfo const& $getViewportInfo() const;
 
-    MCNAPI void $setViewportInfo(::mce::ViewportInfo const& viewportInfo);
+    MCAPI void $setViewportInfo(::mce::ViewportInfo const& viewportInfo);
 
-    MCNAPI ::Vec2 $getNormalizedViewportSize() const;
+    MCAPI ::Vec2 $getNormalizedViewportSize() const;
 
-    MCNAPI void $updateChunkRadius();
+    MCAPI void $updateChunkRadius();
 
-    MCNAPI void $setUITexture(::mce::Texture* tex);
+    MCAPI void $setUITexture(::mce::Texture* tex);
 
-    MCNAPI ::mce::Texture* $getUITexture();
+    MCAPI ::mce::Texture* $getUITexture();
 
-    MCNAPI void $setLevelTexture(::mce::Texture* tex);
+    MCAPI void $setLevelTexture(::mce::Texture* tex);
 
-    MCNAPI ::mce::Texture* $getLevelTexture();
+    MCAPI ::mce::Texture* $getLevelTexture();
 
-    MCNAPI void $setUICursorTexture(::mce::TexturePtr tex);
+    MCAPI void $setUICursorTexture(::mce::TexturePtr tex);
 
-    MCNAPI ::mce::TexturePtr $getUICursorTexture() const;
+    MCAPI ::mce::TexturePtr $getUICursorTexture() const;
 
-    MCNAPI ::mce::Camera& $getCamera();
+    MCAPI ::mce::Camera& $getCamera();
 
-    MCNAPI ::ShaderColor& $getShaderColor();
+    MCAPI ::ShaderColor& $getShaderColor();
 
-    MCNAPI ::ShaderColor& $getDarkShaderColor();
+    MCFOLD ::ShaderColor& $getDarkShaderColor();
 
-    MCNAPI void $clearGraphicsCache();
+    MCAPI void $clearGraphicsCache();
 
-    MCNAPI void $getNormalizedUICursorTransform(::MatrixStack::MatrixStackRef& matrix, float cursorHalfSizeTexels);
+    MCAPI void $getNormalizedUICursorTransform(::MatrixStack::MatrixStackRef& matrix, float cursorHalfSizeTexels);
 
-    MCNAPI bool $shouldRenderUICursor() const;
+    MCFOLD bool $shouldRenderUICursor() const;
 
-    MCNAPI bool $getRenderPlayerModel() const;
+    MCAPI bool $getRenderPlayerModel() const;
 
-    MCNAPI ::DeferredLighting& $getDeferredLighting();
+    MCAPI ::DeferredLighting& $getDeferredLighting();
 
-    MCNAPI float $getGuiScale() const;
+    MCAPI float $getGuiScale() const;
 
-    MCNAPI ::Option const& $getGuiScaleOption() const;
+    MCAPI ::Option const& $getGuiScaleOption() const;
 
-    MCNAPI int $getGuiScaleOffset() const;
+    MCAPI int $getGuiScaleOffset() const;
 
-    MCNAPI void $setGuiScaleOffset(int guiScale);
+    MCAPI void $setGuiScaleOffset(int guiScale);
 
-    MCNAPI void $renderImGui(::ScreenContext& screenContext, bool drawMenuBar);
+    MCFOLD void $renderImGui(::ScreenContext& screenContext, bool drawMenuBar);
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData> $getGuiData();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::GuiData> $getGuiData();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData const> $getGuiData() const;
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::GuiData const> $getGuiData() const;
 
-    MCNAPI ::GuidedFlowManager& $getGuidedFlowManager();
+    MCAPI ::GuidedFlowManager& $getGuidedFlowManager();
 
-    MCNAPI ::PixelCalc const& $getDpadScale() const;
+    MCAPI ::PixelCalc const& $getDpadScale() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::DateManager const> $getDateManager() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::DateManager const> $getDateManager() const;
 
-    MCNAPI void $addOverrideHoursToDateTime(uint const hoursToAdd);
+    MCAPI void $addOverrideHoursToDateTime(uint const hoursToAdd);
 
-    MCNAPI ::ToastManager& $getToastManager();
+    MCAPI ::ToastManager& $getToastManager();
 
-    MCNAPI ::ClipboardProxy<::ApplicationSignal::ClipboardCopy, ::ApplicationSignal::ClipboardPasteRequest>&
+    MCAPI ::ClipboardProxy<::ApplicationSignal::ClipboardCopy, ::ApplicationSignal::ClipboardPasteRequest>&
     $getClipboardManager();
 
-    MCNAPI ::AbstractScene* $getTopScene();
+    MCAPI ::AbstractScene* $getTopScene();
 
-    MCNAPI ::AbstractScene const* $getTopScene() const;
+    MCAPI ::AbstractScene const* $getTopScene() const;
 
-    MCNAPI ::AbstractScene* $getActiveScene();
+    MCAPI ::AbstractScene* $getActiveScene();
 
-    MCNAPI ::AbstractScene const* $getActiveScene() const;
+    MCAPI ::AbstractScene const* $getActiveScene() const;
 
-    MCNAPI ::SceneFactory& $getSceneFactory() const;
+    MCFOLD ::SceneFactory& $getSceneFactory() const;
 
-    MCNAPI ::OreUI::SceneProvider& $getSceneProvider() const;
+    MCAPI ::OreUI::SceneProvider& $getSceneProvider() const;
 
-    MCNAPI ::ui::ScreenTechStackSelector& $getScreenTechStackSelector();
+    MCAPI ::ui::ScreenTechStackSelector& $getScreenTechStackSelector();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> $getClientSceneStack() const;
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> $getClientSceneStack() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getClientSceneStack();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getClientSceneStack();
 
-    MCNAPI ::OreUI::Router& $getClientUIRouter() const;
+    MCAPI ::OreUI::Router& $getClientUIRouter() const;
 
-    MCNAPI ::ISceneStack& $getMainSceneStackInterface();
+    MCAPI ::ISceneStack& $getMainSceneStackInterface();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getMainSceneStack();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getMainSceneStack();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> $getMainSceneStack() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> $getMainSceneStack() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> $getCurrentSceneStack() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> $getCurrentSceneStack() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getCurrentSceneStack();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getCurrentSceneStack();
 
-    MCNAPI ::OreUI::Router& $getCurrentUIRouter();
+    MCFOLD ::OreUI::Router& $getCurrentUIRouter();
 
-    MCNAPI ::OreUI::Router const& $getCurrentUIRouter() const;
+    MCFOLD ::OreUI::Router const& $getCurrentUIRouter() const;
 
-    MCNAPI ::OreUI::ITelemetry& $getOreUITelemetry();
+    MCAPI ::OreUI::ITelemetry& $getOreUITelemetry();
 
-    MCNAPI ::WeakRef<::OreUI::UIBlockThumbnailAtlasManager> $getOreUIBlockThumbnailAtlasManager() const;
+    MCAPI ::WeakRef<::OreUI::UIBlockThumbnailAtlasManager> $getOreUIBlockThumbnailAtlasManager() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $prepareSceneFor(
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $prepareSceneFor(
         ::ui::SceneType const                                 sceneTypeToFind,
         ::std::function<::std::shared_ptr<::AbstractScene>()> createScreenCallback
     );
 
-    MCNAPI ::CachedScenes& $getCachedScenes();
+    MCFOLD ::CachedScenes& $getCachedScenes();
 
-    MCNAPI ::std::string $getScreenName() const;
+    MCAPI ::std::string $getScreenName() const;
 
-    MCNAPI ::std::string $getScreenTelemetry() const;
+    MCAPI ::std::string $getScreenTelemetry() const;
 
-    MCNAPI ::MobEffectsLayout& $getMobEffectsLayout();
+    MCFOLD ::MobEffectsLayout& $getMobEffectsLayout();
 
-    MCNAPI ::std::string $emoticonifyText(::std::string const& text) const;
+    MCAPI ::std::string $emoticonifyText(::std::string const& text) const;
 
-    MCNAPI ::std::string $emoticonifyText(::std::string const& text, bool isGameTip);
+    MCAPI ::std::string $emoticonifyText(::std::string const& text, bool isGameTip);
 
-    MCNAPI void $onMobEffectsChange();
+    MCAPI void $onMobEffectsChange();
 
-    MCNAPI void $setUISizeAndScale(int w, int h, float forcedGuiScale);
+    MCAPI void $setUISizeAndScale(int w, int h, float forcedGuiScale);
 
-    MCNAPI void $forEachVisibleScreen(::brstd::function_ref<void(::AbstractScene&)> callback);
+    MCAPI void $forEachVisibleScreen(::brstd::function_ref<void(::AbstractScene&)> callback);
 
-    MCNAPI void $forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown);
+    MCAPI void $forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown);
 
-    MCNAPI void $forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const;
+    MCAPI void $forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const;
 
-    MCNAPI bool $updateSceneStack();
+    MCAPI bool $updateSceneStack();
 
-    MCNAPI void $forEachAlwaysAcceptInputScreen(
+    MCAPI void $forEachAlwaysAcceptInputScreen(
         ::std::function<void(::AbstractScene&)> callback,
         ::AbstractScene const*                  ignoreScreen
     );
 
-    MCNAPI void $forEachAlwaysAcceptInputScreenWithTop(::std::function<void(::AbstractScene&)> callback);
+    MCAPI void $forEachAlwaysAcceptInputScreenWithTop(::std::function<void(::AbstractScene&)> callback);
 
-    MCNAPI void $showPlayerProfile(::std::string const& xuid, ::std::string const& platformId);
+    MCAPI void $showPlayerProfile(::std::string const& xuid, ::std::string const& platformId);
 
-    MCNAPI bool $isInGameInputEnabled() const;
+    MCAPI bool $isInGameInputEnabled() const;
 
-    MCNAPI void $setInGameInputEnabled(bool isEnabled);
+    MCAPI void $setInGameInputEnabled(bool isEnabled);
 
-    MCNAPI ::Vec2 $getSafeZoneScale() const;
+    MCAPI ::Vec2 $getSafeZoneScale() const;
 
-    MCNAPI void $verifySkinApproval(
+    MCAPI void $verifySkinApproval(
         ::std::string const&                        serverType,
         ::std::function<void(::std::string)> const& notApprovedCallback,
         ::std::function<void()> const&              approvedCallback
     ) const;
 
-    MCNAPI ::InputMode $getCurrentInputMode() const;
+    MCAPI ::InputMode $getCurrentInputMode() const;
 
-    MCNAPI bool $isTouchGameplayAllowed() const;
+    MCAPI bool $isTouchGameplayAllowed() const;
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::MinecraftInputHandler> $getMinecraftInput() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::MinecraftInputHandler> $getMinecraftInput() const;
 
-    MCNAPI ::KeyboardManager& $getKeyboardManager();
+    MCAPI ::KeyboardManager& $getKeyboardManager();
 
-    MCNAPI void $setLastPointerLocation(float x, float y, float z);
+    MCAPI void $setLastPointerLocation(float x, float y, float z);
 
-    MCNAPI void $clearTouchPointerLocations();
+    MCAPI void $clearTouchPointerLocations();
 
-    MCNAPI void $clearTouchPointerLocation(int id);
+    MCAPI void $clearTouchPointerLocation(int id);
 
-    MCNAPI void $updateTouchPointerLocation(int id, float x, float y);
+    MCAPI void $updateTouchPointerLocation(int id, float x, float y);
 
-    MCNAPI ::Vec3 $getLastPointerLocation();
+    MCAPI ::Vec3 $getLastPointerLocation();
 
-    MCNAPI ::Vec2 $getTouchPointerLocation(int id) const;
+    MCAPI ::Vec2 $getTouchPointerLocation(int id) const;
 
-    MCNAPI void $updateActionPointerId(int id);
+    MCAPI void $updateActionPointerId(int id);
 
-    MCNAPI int $getActionPointerId() const;
+    MCAPI int $getActionPointerId() const;
 
-    MCNAPI bool $shouldUseLastPointerLocationOnFocusChange();
+    MCAPI bool $shouldUseLastPointerLocationOnFocusChange();
 
-    MCNAPI bool $currentScreenShouldStealMouse();
+    MCAPI bool $currentScreenShouldStealMouse();
 
-    MCNAPI ::BuildActionIntention& $getInProgressBAI() const;
+    MCFOLD ::BuildActionIntention& $getInProgressBAI() const;
 
-    MCNAPI ::PacketSender& $getPacketSender();
+    MCAPI ::PacketSender& $getPacketSender();
 
-    MCNAPI ::ClientNetworkSystem& $getClientNetworkSystem();
+    MCFOLD ::ClientNetworkSystem& $getClientNetworkSystem();
 
-    MCNAPI ::ClientNetworkSystem const& $getClientNetworkSystem() const;
+    MCFOLD ::ClientNetworkSystem const& $getClientNetworkSystem() const;
 
-    MCNAPI ::glm::vec2 $getGamepadCursorPosition() const;
+    MCAPI ::glm::vec2 $getGamepadCursorPosition() const;
 
-    MCNAPI void $updateControlOptionState(uint id, bool active);
+    MCAPI void $updateControlOptionState(uint id, bool active);
 
-    MCNAPI void $clearActiveControlOptions();
+    MCAPI void $clearActiveControlOptions();
 
-    MCNAPI ::std::set<uint> const& $getActiveControlOptions() const;
+    MCAPI ::std::set<uint> const& $getActiveControlOptions() const;
 
-    MCNAPI ::std::vector<::OptionID> $getActiveOptionIDs(::ControlOptionType controlOptionType) const;
+    MCAPI ::std::vector<::OptionID> $getActiveOptionIDs(::ControlOptionType controlOptionType) const;
 
-    MCNAPI void $setNumberOfActiveConfigs(int numberOfActiveConfigs);
+    MCAPI void $setNumberOfActiveConfigs(int numberOfActiveConfigs);
 
-    MCNAPI int $getNumberOfActiveConfigs() const;
+    MCAPI int $getNumberOfActiveConfigs() const;
 
-    MCNAPI bool $isNoConfigSelected() const;
+    MCAPI bool $isNoConfigSelected() const;
 
-    MCNAPI void $setNumberOfEnabledConfigs(int numberOfEnabledConfigs);
+    MCAPI void $setNumberOfEnabledConfigs(int numberOfEnabledConfigs);
 
-    MCNAPI int $getNumberOfEnabledConfigs() const;
+    MCFOLD int $getNumberOfEnabledConfigs() const;
 
-    MCNAPI void $setWYSIWYGState(::WYSIWYGState wysiwygState);
+    MCAPI void $setWYSIWYGState(::WYSIWYGState wysiwygState);
 
-    MCNAPI ::WYSIWYGState $getWYSIWYGState() const;
+    MCAPI ::WYSIWYGState $getWYSIWYGState() const;
 
-    MCNAPI void $setOtherConfigsExistInThisCategory(bool otherConfigsExistInThisCategory);
+    MCAPI void $setOtherConfigsExistInThisCategory(bool otherConfigsExistInThisCategory);
 
-    MCNAPI bool $getOtherConfigsExistInThisCategory() const;
+    MCAPI bool $getOtherConfigsExistInThisCategory() const;
 
-    MCNAPI void $setMoveTurnInput(::std::unique_ptr<::ClientMoveInputHandler> pClientMoveInputHandler);
+    MCAPI void $setMoveTurnInput(::std::unique_ptr<::ClientMoveInputHandler> pClientMoveInputHandler);
 
-    MCNAPI void $setupPersistentControls(::InputMode currentMode);
+    MCAPI void $setupPersistentControls(::InputMode currentMode);
 
-    MCNAPI void $resetPlayerMovement();
+    MCAPI void $resetPlayerMovement();
 
-    MCNAPI void $suspendPredictedMovement();
+    MCAPI void $suspendPredictedMovement();
 
-    MCNAPI void $onClientInputInitComplete();
+    MCAPI void $onClientInputInitComplete();
 
-    MCNAPI void $setClientInputHandler(::std::unique_ptr<::ClientInputHandler> pClientInputHandler);
+    MCAPI void $setClientInputHandler(::std::unique_ptr<::ClientInputHandler> pClientInputHandler);
 
-    MCNAPI ::ClientInputHandler* $getInput() const;
+    MCFOLD ::ClientInputHandler* $getInput() const;
 
-    MCNAPI int $getControllerId() const;
+    MCAPI int $getControllerId() const;
 
-    MCNAPI bool $hasConnectedController() const;
+    MCAPI bool $hasConnectedController() const;
 
-    MCNAPI void $setSuspendInput(bool suspendInput);
+    MCAPI void $setSuspendInput(bool suspendInput);
 
-    MCNAPI void $setSuspendDirectionalInput(bool suspendDirectionalInput);
+    MCAPI void $setSuspendDirectionalInput(bool suspendDirectionalInput);
 
-    MCNAPI void $setDisableInput(bool disableInput);
+    MCAPI void $setDisableInput(bool disableInput);
 
-    MCNAPI void $grabMouse();
+    MCAPI void $grabMouse();
 
-    MCNAPI void $releaseMouse();
+    MCAPI void $releaseMouse();
 
-    MCNAPI void $refocusMouse(bool lostMouse);
+    MCAPI void $refocusMouse(bool lostMouse);
 
-    MCNAPI void $setMouseType(::ui::MousePointerType type);
+    MCAPI void $setMouseType(::ui::MousePointerType type);
 
-    MCNAPI void $resetBai(int baiFlags);
+    MCAPI void $resetBai(int baiFlags);
 
-    MCNAPI void $clearInProgressBAI();
+    MCAPI void $clearInProgressBAI();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::SoundEngine> $getSoundEngine() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::SoundEngine> $getSoundEngine() const;
 
-    MCNAPI ::MusicManager const* $getMusicManager() const;
+    MCAPI ::MusicManager const* $getMusicManager() const;
 
-    MCNAPI ::MusicManager* $getMusicManagerNonConst() const;
+    MCAPI ::MusicManager* $getMusicManagerNonConst() const;
 
-    MCNAPI void $play(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
+    MCAPI void $play(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
 
-    MCNAPI void $playUI(::std::string const& name, float volume, float pitch);
+    MCAPI void $playUI(::std::string const& name, float volume, float pitch);
 
-    MCNAPI void $muteAudio();
+    MCAPI void $muteAudio();
 
-    MCNAPI void $unMuteAudio();
+    MCAPI void $unMuteAudio();
 
-    MCNAPI void $fadeOutMusic() const;
+    MCAPI void $fadeOutMusic() const;
 
-    MCNAPI ::TaskGroup& $getTaskGroup();
+    MCAPI ::TaskGroup& $getTaskGroup();
 
-    MCNAPI void $onFullVanillaPackOnStack();
+    MCAPI void $onFullVanillaPackOnStack();
 
-    MCNAPI bool $isFullVanillaPackOnStack() const;
+    MCFOLD bool $isFullVanillaPackOnStack() const;
 
-    MCNAPI void $onPlayerLoaded(::Player& player);
+    MCAPI void $onPlayerLoaded(::Player& player);
 
-    MCNAPI void $setClientGameMode(::GameType gameType);
+    MCAPI void $setClientGameMode(::GameType gameType);
 
-    MCNAPI void $resetToDefaultGameMode();
+    MCAPI void $resetToDefaultGameMode();
 
-    MCNAPI ::IGameConnectionListener& $getGameConnectionListener();
+    MCAPI ::IGameConnectionListener& $getGameConnectionListener();
 
-    MCNAPI void $connectToThirdPartyServer(::std::string const& ipAddress, int port);
+    MCAPI void $connectToThirdPartyServer(::std::string const& ipAddress, int port);
 
-    MCNAPI void $startExternalNetworkWorld(
+    MCAPI void $startExternalNetworkWorld(
         ::Social::GameConnectionInfo connection,
         ::std::string const&         serverName,
         bool                         isTransfer
     );
 
-    MCNAPI void $connectToExperience(
+    MCAPI void $connectToExperience(
         ::std::string const&                                              experienceId,
         ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)> joinServerCallback,
         ::std::function<void(::World::JoinServerWorldResult)>             onErrorCallback
     );
 
-    MCNAPI bool $isReadyToReconnect() const;
+    MCAPI bool $isReadyToReconnect() const;
 
-    MCNAPI bool $checkForPiracy();
+    MCAPI bool $checkForPiracy();
 
-    MCNAPI void $updateChatFilterStatus(::ProfanityContext& profanityContext);
+    MCAPI void $updateChatFilterStatus(::ProfanityContext& profanityContext);
 
-    MCNAPI void $updateControllerHandling();
+    MCAPI void $updateControllerHandling();
 
-    MCNAPI void $onPlayerDestruction(::Player& player);
+    MCAPI void $onPlayerDestruction(::Player& player);
 
-    MCNAPI void $setBehaviorCommandCallback(::std::function<void(::std::string const&, ::BehaviorStatus)> callback);
+    MCAPI void $setBehaviorCommandCallback(::std::function<void(::std::string const&, ::BehaviorStatus)> callback);
 
-    MCNAPI void $setBehaviorCommandStatus(::std::string const& treeName, ::BehaviorStatus status);
+    MCAPI void $setBehaviorCommandStatus(::std::string const& treeName, ::BehaviorStatus status);
 
-    MCNAPI void $setConnectGamepadScreenActive(bool active);
+    MCAPI void $setConnectGamepadScreenActive(bool active);
 
-    MCNAPI ::Core::PathBuffer<::std::string> $requestScreenshot(::ScreenshotOptions& screenshotOptions);
+    MCAPI ::Core::PathBuffer<::std::string> $requestScreenshot(::ScreenshotOptions& screenshotOptions);
 
-    MCNAPI ::Core::PathBuffer<::std::string>
+    MCAPI ::Core::PathBuffer<::std::string>
     $requestScreenshotAndCreateEncryptedChecksumFile(::ScreenshotOptions& screenshotOptions);
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> $getDevConsoleLogger() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> $getDevConsoleLogger() const;
 
-    MCNAPI ::std::shared_ptr<::FileDataRequest> $requestImageFromUrl(
+    MCAPI ::std::shared_ptr<::FileDataRequest> $requestImageFromUrl(
         ::std::string const&                                                        imageUrl,
         ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)> callback
     );
 
-    MCNAPI void $setActiveFileStorageArea(::std::shared_ptr<::Core::FileStorageArea> storageArea);
+    MCAPI void $setActiveFileStorageArea(::std::shared_ptr<::Core::FileStorageArea> storageArea);
 
-    MCNAPI void $onExtendDiskSpace(
+    MCAPI void $onExtendDiskSpace(
         bool const                                      bSet,
         ::std::weak_ptr<::Core::FileStorageArea> const& storageAreaWeakPtr,
         uint64                                          freeSpace,
         ::std::function<void()>                         onHandledEventCallback
     );
 
-    MCNAPI void $onLowDiskSpace(bool const bSet);
+    MCAPI void $onLowDiskSpace(bool const bSet);
 
-    MCNAPI void $onOutOfDiskSpace(bool const bSet);
+    MCAPI void $onOutOfDiskSpace(bool const bSet);
 
-    MCNAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
+    MCAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
 
-    MCNAPI void $onLevelCorrupt();
+    MCAPI void $onLevelCorrupt();
 
-    MCNAPI void $onCriticalScriptError(char const* clientDisconnectError, char const*);
+    MCAPI void $onCriticalScriptError(char const* clientDisconnectError, char const*);
 
-    MCNAPI void $onGameModeChanged();
+    MCAPI void $onGameModeChanged();
 
-    MCNAPI void $onBeforeSimTick();
+    MCAPI void $onBeforeSimTick();
 
-    MCNAPI void $onTick(int nTick, int maxTick);
+    MCAPI void $onTick(int nTick, int maxTick);
 
-    MCNAPI void $onInternetUpdate();
+    MCAPI void $onInternetUpdate();
 
-    MCNAPI void $onGameSessionReset();
+    MCAPI void $onGameSessionReset();
 
-    MCNAPI void $onLevelExit();
+    MCAPI void $onLevelExit();
 
-    MCNAPI void $onRequestResourceReload();
+    MCFOLD void $onRequestResourceReload();
 
-    MCNAPI void $updateScreens();
+    MCAPI void $updateScreens();
 
-    MCNAPI void $initializeRenderResources();
+    MCAPI void $initializeRenderResources();
 
-    MCNAPI void $postInitRenderResources();
+    MCAPI void $postInitRenderResources();
 
-    MCNAPI void $onAppSuspended();
+    MCAPI void $onAppSuspended();
 
-    MCNAPI void $onAppSuspensionDisconnect();
+    MCAPI void $onAppSuspensionDisconnect();
 
-    MCNAPI void $onAppResumed();
+    MCAPI void $onAppResumed();
 
-    MCNAPI void $onActiveResourcePacksChanged(
+    MCAPI void $onActiveResourcePacksChanged(
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const& entityResourceDefGroup
     );
 
-    MCNAPI void $reloadEntityRenderers(
+    MCAPI void $reloadEntityRenderers(
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const& actorResourceDefinitionGroup
     );
 
-    MCNAPI ::BlockTessellator& $getBlockTessellator();
+    MCAPI ::BlockTessellator& $getBlockTessellator();
 
-    MCNAPI ::BlockActorRenderDispatcher& $getBlockEntityRenderDispatcher();
+    MCAPI ::BlockActorRenderDispatcher& $getBlockEntityRenderDispatcher();
 
-    MCNAPI ::std::shared_ptr<::ActorRenderDispatcher> $getEntityRenderDispatcher();
+    MCAPI ::std::shared_ptr<::ActorRenderDispatcher> $getEntityRenderDispatcher();
 
-    MCNAPI ::ActorBlockRenderer& $getEntityBlockRenderer();
+    MCAPI ::ActorBlockRenderer& $getEntityBlockRenderer();
 
-    MCNAPI ::ItemInHandRenderer* $getItemInHandRenderer();
+    MCAPI ::ItemInHandRenderer* $getItemInHandRenderer();
 
-    MCNAPI ::ItemRenderer* $getItemRenderer();
+    MCAPI ::ItemRenderer* $getItemRenderer();
 
-    MCNAPI ::HudIconActorRenderer* $getHudIconActorRenderer();
+    MCAPI ::HudIconActorRenderer* $getHudIconActorRenderer();
 
-    MCNAPI ::std::deque<::std::string>& $getSentMessageHistory();
+    MCAPI ::std::deque<::std::string>& $getSentMessageHistory();
 
-    MCNAPI ::std::deque<::std::string>& $getDevConsoleMessageHistory();
+    MCAPI ::std::deque<::std::string>& $getDevConsoleMessageHistory();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> $getProfanityContext() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> $getProfanityContext() const;
 
-    MCNAPI void $initTTSClient(::std::shared_ptr<::TextToSpeechClient> textToSpeechClient);
+    MCAPI void $initTTSClient(::std::shared_ptr<::TextToSpeechClient> textToSpeechClient);
 
-    MCNAPI ::std::shared_ptr<::TextToSpeechClient> $getTTSClient();
+    MCFOLD ::std::shared_ptr<::TextToSpeechClient> $getTTSClient();
 
-    MCNAPI ::std::shared_ptr<::TextToSpeechClient const> $getTTSClient() const;
+    MCFOLD ::std::shared_ptr<::TextToSpeechClient const> $getTTSClient() const;
 
-    MCNAPI ::std::shared_ptr<::ITTSEventManager> $getTTSEventManager();
+    MCAPI ::std::shared_ptr<::ITTSEventManager> $getTTSEventManager();
 
-    MCNAPI void $addTTSMessage(
+    MCAPI void $addTTSMessage(
         ::std::string const&     message,
         ::ProfanityFilterContext profanityFilterContext,
         bool                     interruptible,
@@ -2343,117 +2343,117 @@ public:
         bool                     disregardAppFocus
     );
 
-    MCNAPI void $initCommands();
+    MCAPI void $initCommands();
 
-    MCNAPI uint $getUserId() const;
+    MCAPI uint $getUserId() const;
 
-    MCNAPI bool $isPrimaryUser() const;
+    MCAPI bool $isPrimaryUser() const;
 
-    MCNAPI double $getServerConnectionTime() const;
+    MCAPI double $getServerConnectionTime() const;
 
-    MCNAPI void $setServerPingTime(int pingTime);
+    MCAPI void $setServerPingTime(int pingTime);
 
-    MCNAPI int $getServerPingTime() const;
+    MCAPI int $getServerPingTime() const;
 
-    MCNAPI void $setDefaultPlayscreenTab(::PlayScreenDefaultTab defaultTab);
+    MCAPI void $setDefaultPlayscreenTab(::PlayScreenDefaultTab defaultTab);
 
-    MCNAPI void $setClientInstanceState(::ClientInstanceState const& newstate);
+    MCAPI void $setClientInstanceState(::ClientInstanceState const& newstate);
 
-    MCNAPI void $setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& coordinator);
+    MCAPI void $setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& coordinator);
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> $getUIEventCoordinator();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> $getUIEventCoordinator();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ClientInstanceEventCoordinator> $getEventCoordinator();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ClientInstanceEventCoordinator> $getEventCoordinator();
 
-    MCNAPI ::ClientNetworkEventCoordinator& $getClientNetworkEventCoordinator();
+    MCFOLD ::ClientNetworkEventCoordinator& $getClientNetworkEventCoordinator();
 
-    MCNAPI ::ClientScriptEventCoordinator& $getClientScriptEventCoordinator();
+    MCAPI ::ClientScriptEventCoordinator& $getClientScriptEventCoordinator();
 
-    MCNAPI ::std::chrono::steady_clock::time_point $getNoBlockBreakUntil();
+    MCAPI ::std::chrono::steady_clock::time_point $getNoBlockBreakUntil();
 
-    MCNAPI void $setNoBlockBreakUntil(::std::chrono::steady_clock::time_point timePoint);
+    MCAPI void $setNoBlockBreakUntil(::std::chrono::steady_clock::time_point timePoint);
 
-    MCNAPI ::GameCallbacks& $getGameCallbacks();
+    MCFOLD ::GameCallbacks& $getGameCallbacks();
 
-    MCNAPI ::GameModuleClient* $getGameModule();
+    MCAPI ::GameModuleClient* $getGameModule();
 
-    MCNAPI ::ClientHitDetectCoordinator& $getHitEventCoordinator();
+    MCAPI ::ClientHitDetectCoordinator& $getHitEventCoordinator();
 
-    MCNAPI void $sendClientEnteredLevel();
+    MCAPI void $sendClientEnteredLevel();
 
-    MCNAPI ::HitDetectSystem* $getHitDetectSystem();
+    MCAPI ::HitDetectSystem* $getHitDetectSystem();
 
-    MCNAPI bool $isPlaying() const;
+    MCAPI bool $isPlaying() const;
 
-    MCNAPI ::ClientInstanceState $getClientInstanceState() const;
+    MCFOLD ::ClientInstanceState $getClientInstanceState() const;
 
-    MCNAPI ::LatencyGraphDisplay* $getLatencyGraphDisplay() const;
+    MCAPI ::LatencyGraphDisplay* $getLatencyGraphDisplay() const;
 
-    MCNAPI ::PlayerCapabilities::IClientController const& $getClientCapabilities() const;
+    MCAPI ::PlayerCapabilities::IClientController const& $getClientCapabilities() const;
 
-    MCNAPI ::std::weak_ptr<::IClientInstance> $getWeakPtrToThis();
+    MCAPI ::std::weak_ptr<::IClientInstance> $getWeakPtrToThis();
 
-    MCNAPI ::ClientRequirementVerifier const& $getClientRequirementVerifier() const;
+    MCAPI ::ClientRequirementVerifier const& $getClientRequirementVerifier() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FogDefinitionRegistry const> $getFogDefinitionRegistry() const;
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::FogDefinitionRegistry const> $getFogDefinitionRegistry() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FogDefinitionRegistry> $getFogDefinitionRegistry();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::FogDefinitionRegistry> $getFogDefinitionRegistry();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FogManager const> $getFogManager() const;
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::FogManager const> $getFogManager() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FogManager> $getFogManager();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::FogManager> $getFogManager();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ScreenLoadTimeTracker> $getScreenLoadTimeTracker();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ScreenLoadTimeTracker> $getScreenLoadTimeTracker();
 
-    MCNAPI ::ItemRegistryRef $getItemRegistry() const;
+    MCAPI ::ItemRegistryRef $getItemRegistry() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::DisconnectionRequestHandler> $getDisconnectionRequestHandler() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::DisconnectionRequestHandler> $getDisconnectionRequestHandler() const;
 
-    MCNAPI float $getRemoteServerTimeMs() const;
+    MCAPI float $getRemoteServerTimeMs() const;
 
-    MCNAPI void $setRemoteServerTimeMs(float time);
+    MCAPI void $setRemoteServerTimeMs(float time);
 
-    MCNAPI float $getRemoteServerNetworkTimeMs() const;
+    MCAPI float $getRemoteServerNetworkTimeMs() const;
 
-    MCNAPI void $setRemoteServerNetworkTimeMs(float time);
+    MCAPI void $setRemoteServerNetworkTimeMs(float time);
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::ClientScriptManager> $getClientScriptManager();
+    MCAPI ::Bedrock::NonOwnerPointer<::ClientScriptManager> $getClientScriptManager();
 
-    MCNAPI ::Scripting::ScriptEngine* $getScriptingEngine();
+    MCAPI ::Scripting::ScriptEngine* $getScriptingEngine();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::WorldTransferAgent> const $getWorldTransferAgent() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::WorldTransferAgent> const $getWorldTransferAgent() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerReportHandler> $getPlayerReportHandler();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerReportHandler> $getPlayerReportHandler();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> $getLinkedAssetValidator();
+    MCAPI ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> $getLinkedAssetValidator();
 
-    MCNAPI void $flagDisconnectionAndNotify(::Connection::DisconnectFailReason disconnectReason);
+    MCAPI void $flagDisconnectionAndNotify(::Connection::DisconnectFailReason disconnectReason);
 
-    MCNAPI void $flagDisconnectionAndNotifyWithParams(::DisconnectionScreenParams const& params);
+    MCAPI void $flagDisconnectionAndNotifyWithParams(::DisconnectionScreenParams const& params);
 
-    MCNAPI void $disconnectSubClient(::Connection::DisconnectFailReason disconnectReason);
+    MCAPI void $disconnectSubClient(::Connection::DisconnectFailReason disconnectReason);
 
-    MCNAPI void $setClientUpdateAndRenderThrottling(bool enabled, int threshold, float scalar);
+    MCAPI void $setClientUpdateAndRenderThrottling(bool enabled, int threshold, float scalar);
 
-    MCNAPI bool $isClientUpdateAndRenderThrottlingEnabled() const;
+    MCAPI bool $isClientUpdateAndRenderThrottlingEnabled() const;
 
-    MCNAPI int $getClientUpdateAndRenderThrottlingThreshold() const;
+    MCFOLD int $getClientUpdateAndRenderThrottlingThreshold() const;
 
-    MCNAPI float $getClientUpdateAndRenderThrottlingScalar() const;
+    MCAPI float $getClientUpdateAndRenderThrottlingScalar() const;
 
-    MCNAPI bool $isUserBanned() const;
+    MCAPI bool $isUserBanned() const;
 
-    MCNAPI bool $isEligibleForPauseFeature() const;
+    MCAPI bool $isEligibleForPauseFeature() const;
 
-    MCNAPI void $setupPauseManagers();
+    MCAPI void $setupPauseManagers();
 
-    MCNAPI bool $requestInGamePause(bool status);
+    MCAPI bool $requestInGamePause(bool status);
 
-    MCNAPI void $openContentLogHistory();
+    MCAPI void $openContentLogHistory();
 
-    MCNAPI double $getGameUpdateDurationInSeconds() const;
+    MCAPI double $getGameUpdateDurationInSeconds() const;
 
-    MCNAPI ::std::optional<::PlayerJoinWorldTelemetryInfo> $getPlayerJoinWorldTelemetryInfo() const;
+    MCAPI ::std::optional<::PlayerJoinWorldTelemetryInfo> $getPlayerJoinWorldTelemetryInfo() const;
 #endif
 
 
