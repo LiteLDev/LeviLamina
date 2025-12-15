@@ -30,10 +30,10 @@ namespace Realms { struct World; }
 namespace Realms::Stories { class RealmEvent; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class User; }
+namespace Realms { class GenericRequestServiceHandler; }
 namespace Realms { struct Backup; }
 namespace Realms { struct ConfigInfo; }
 namespace Realms { struct Content; }
-namespace Realms { struct GenericRequestServiceHandler; }
 namespace Realms { struct InviteLink; }
 namespace Realms { struct ServerRegion; }
 namespace Realms { struct Session; }

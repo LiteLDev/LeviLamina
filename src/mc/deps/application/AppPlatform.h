@@ -67,7 +67,7 @@ namespace Core { class PathView; }
 namespace Social { struct UserCreationData; }
 namespace mce { class UUID; }
 namespace mce { struct Image; }
-struct WebviewInterface;
+class WebviewInterface;
 namespace Social { struct MultiplayerService; }
 namespace Webview { struct PlatformArguments; }
 // clang-format on

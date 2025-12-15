@@ -84,9 +84,11 @@ class Player;
 class PushNotificationMessage;
 class RealmsAPI;
 class RenderControllerGroup;
+class ResetCallbackObject;
 class ResourceLoadManager;
 class ResourcePackManager;
 class ResourcePackStack;
+class SceneFactory;
 class ServerInstance;
 class ServerInstanceEventCoordinator;
 class ServerNetworkHandler;
@@ -138,8 +140,6 @@ struct PersonaService;
 struct PixelCalc;
 struct PlayerMessagingService;
 struct ProfanityContext;
-struct ResetCallbackObject;
-struct SceneFactory;
 struct ScreenshotOptions;
 struct ScreenshotRecorder;
 struct SeasonsRenderer;
@@ -173,8 +173,8 @@ namespace OreUI { struct IResourceAllowList; }
 namespace OreUI { struct Router; }
 namespace Parties { struct PartySystem; }
 namespace Progress { struct ProgressTips; }
+namespace Realms { class GenericRequestServiceHandler; }
 namespace Realms { struct ContentService; }
-namespace Realms { struct GenericRequestServiceHandler; }
 namespace Realms { struct RealmsServices; }
 namespace Realms { struct RealmsSystem; }
 namespace Realms { struct SubscriptionService; }

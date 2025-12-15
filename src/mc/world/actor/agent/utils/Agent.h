@@ -12,29 +12,12 @@ class Actor;
 class BlockSource;
 class EntityContext;
 class Vec3;
-namespace AgentComponents { struct BlockQueryResult; }
 namespace Util::Agent { struct SimulatedMoveResult; }
 // clang-format on
 
 namespace Util::Agent {
 // functions
 // NOLINTBEGIN
-MCAPI ::AgentComponents::BlockQueryResult
-getNextBlock(::BlockSource& source, ::Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
-
-MCAPI ::AgentComponents::BlockQueryResult
-getNextBlockSweep(::BlockSource& source, ::Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
-
-MCAPI ::AgentComponents::BlockQueryResult
-getNextBlockUnfiltered(::BlockSource& source, ::Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
-
-MCAPI ::AgentComponents::BlockQueryResult getNextBlockUnfilteredSweep(
-    ::BlockSource&               source,
-    ::Vec3                       curPos,
-    float                        bodyRot,
-    ::AgentComponents::Direction direction
-);
-
 MCAPI ::Vec3 getNextPosFromDirection(::Vec3 const& startPosition, float bodyRotation, ::AgentComponents::Direction dir);
 
 MCAPI ::Util::Agent::SimulatedMoveResult

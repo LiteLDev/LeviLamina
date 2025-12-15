@@ -21,7 +21,6 @@
 #include "mc/client/social/UserPlatformConnectionResult.h"
 #include "mc/client/store/StoreCatalogCategory.h"
 #include "mc/client/store/iap/PurchaseResult.h"
-#include "mc/client/store/iap/RealmsOfferTier.h"
 #include "mc/codebuilder/CodeBuilderPerformance.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/file/PathBuffer.h"
@@ -77,13 +76,14 @@ namespace Social { struct MultiIdentitySigninResult; }
 namespace Social { struct PermissionCheckResult; }
 namespace Social { struct XboxLiveUserProfileData; }
 namespace edu::auth { struct CredentialsObserver; }
+class IGameConnectionListener;
+class WebviewInterface;
 struct ContentLogMessage;
 struct DlcId;
 struct DownloadStateObject;
 struct EduDeeplinkObserver;
 struct IDlcBatchModel;
 struct IEDUDiscoveryService;
-struct IGameConnectionListener;
 struct PlatformMultiplayerRestrictions;
 struct PlayerAchievementData;
 struct ProgressHandler;
@@ -91,7 +91,6 @@ struct SkinHandle;
 struct StoreCatalogRepository;
 struct StoreContentSources;
 struct StoreDataDrivenScreenParams;
-struct WebviewInterface;
 namespace Clubs { struct ActivityFeed; }
 namespace Clubs { struct ClubModel; }
 namespace Clubs { struct FeedItem; }
@@ -531,8 +530,6 @@ public:
     MCNAPI_C ::std::string getRandomSearchTermUsingCategory(::StoreCatalogCategory const& category) const;
 
     MCNAPI_C ::Bedrock::NotNullNonOwnerPtr<::Realms::InvitesService> getRealmsInvitesService();
-
-    MCNAPI_C ::std::string getRealmsTerms(::RealmsOfferTier offerTier, int index) const;
 
     MCNAPI_C void getRealmsWorld(
         ::Realms::RealmId                                               worldId,

@@ -123,28 +123,33 @@ namespace Social { class User; }
 namespace mce { class Camera; }
 namespace mce { class TexturePtr; }
 namespace mce { struct ViewportInfo; }
+class AbstractScene;
+class ActorRenderDispatcher;
 class BuildActionIntention;
 class ClientInputHandler;
 class ClientMoveInputHandler;
+class ClientRequirementVerifier;
 class FontHandle;
 class GuiData;
+class IGameConnectionListener;
+class ISettingsRegistry;
 class ItemInHandRenderer;
 class KeyboardManager;
 class LevelRenderer;
 class LevelRendererCameraProxy;
 class LightTexture;
 class MinecraftInputHandler;
+class PlayerReportHandler;
+class SceneFactory;
 class ScreenContext;
-struct AbstractScene;
+class TextToSpeechClient;
 struct ActorBlockRenderer;
-struct ActorRenderDispatcher;
 struct ActorResourceDefinitionGroup;
 struct BlockActorRenderDispatcher;
 struct BlockCullingGroup;
 struct BlockTessellator;
 struct CachedScenes;
 struct CameraRegistry;
-struct ClientRequirementVerifier;
 struct ClientScriptManager;
 struct DeferredLighting;
 struct DevConsoleLogger;
@@ -158,9 +163,7 @@ struct GameRenderer;
 struct GuidedFlowManager;
 struct HitDetectSystem;
 struct HudIconActorRenderer;
-struct IGameConnectionListener;
 struct IGameModuleApp;
-struct ISettingsRegistry;
 struct ITTSEventManager;
 struct IUIRepository;
 struct ItemRenderer;
@@ -174,24 +177,21 @@ struct MusicManager;
 struct PersonaRepository;
 struct PixelCalc;
 struct PlayerAuthentication;
-struct PlayerReportHandler;
 struct ProfanityContext;
 struct ProgressHandler;
-struct SceneFactory;
 struct ScreenLoadTimeTracker;
 struct SkinRepository;
 struct SkinRepositoryClientInterface;
 struct SoundEngine;
 struct StoreCatalogItem;
 struct StoreCatalogRepository;
-struct TextToSpeechClient;
 struct TrialManager;
 struct VideoCaptureSessionManager;
 struct WorldTransferAgent;
 namespace Bedrock::DevTools { struct CommandExecutor; }
+namespace OreUI { class UIBlockThumbnailAtlasManager; }
 namespace OreUI { struct Router; }
 namespace OreUI { struct SceneProvider; }
-namespace OreUI { struct UIBlockThumbnailAtlasManager; }
 namespace PlayerCapabilities { struct IClientController; }
 namespace Social { struct MultiplayerServiceManager; }
 namespace World { struct WorldSystem; }

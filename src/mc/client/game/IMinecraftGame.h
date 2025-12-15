@@ -88,6 +88,8 @@ class FontHandle;
 class GuiData;
 class MinecraftInputHandler;
 class RenderControllerGroup;
+class ResetCallbackObject;
+class SceneFactory;
 class TextureAtlas;
 class UIMeasureStrategy;
 struct ActorResourceDefinitionGroup;
@@ -126,8 +128,6 @@ struct PersonaService;
 struct PixelCalc;
 struct PlayerMessagingService;
 struct ProfanityContext;
-struct ResetCallbackObject;
-struct SceneFactory;
 struct ScreenshotRecorder;
 struct SeasonsRenderer;
 struct ServiceDrivenImageRepository;
@@ -146,8 +146,8 @@ namespace OreUI { struct IResourceAllowList; }
 namespace OreUI { struct Router; }
 namespace Parties { struct PartySystem; }
 namespace Progress { struct ProgressTips; }
+namespace Realms { class GenericRequestServiceHandler; }
 namespace Realms { struct ContentService; }
-namespace Realms { struct GenericRequestServiceHandler; }
 namespace Realms { struct RealmsServices; }
 namespace Realms { struct RealmsSystem; }
 namespace Realms { struct SubscriptionService; }

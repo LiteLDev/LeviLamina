@@ -14,7 +14,7 @@ struct LoopingSoundState;
 struct PlayingSoundAttributes;
 struct SoundInstanceProperties;
 namespace Core { class Path; }
-struct SoundItem;
+class SoundItem;
 // clang-format on
 
 class SoundPlayerInterface : public ::Bedrock::EnableNonOwnerReferences {

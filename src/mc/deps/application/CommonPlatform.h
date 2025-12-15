@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/platform/DisplayOrientation.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
@@ -14,29 +15,31 @@ class IMinecraftGame;
 class PropertyBag;
 class PushNotificationMessage;
 namespace Bedrock { class ActivationArguments; }
+namespace Bedrock { class IIslandCore; }
+namespace Bedrock { class IIslandManager; }
+namespace Bedrock { struct PlatformBuildInfo; }
+namespace Bedrock { struct PlatformRuntimeInfo; }
 // clang-format on
 
 namespace Bedrock {
 
 class CommonPlatform {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnka12996;
-    ::ll::UntypedStorage<8, 8>  mUnk3f8781;
-    ::ll::UntypedStorage<8, 8>  mUnkdc7fc5;
-    ::ll::UntypedStorage<8, 8>  mUnk47147a;
-    ::ll::UntypedStorage<8, 24> mUnk162f42;
-    ::ll::UntypedStorage<8, 64> mUnkae2910;
-    ::ll::UntypedStorage<1, 1>  mUnk377acb;
-    ::ll::UntypedStorage<1, 1>  mUnk850436;
-    // NOLINTEND
+    // CommonPlatform inner types define
+    using MCGameFactory = ::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()>;
 
 public:
-    // prevent constructor by default
-    CommonPlatform& operator=(CommonPlatform const&);
-    CommonPlatform(CommonPlatform const&);
-    CommonPlatform();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::PlatformRuntimeInfo>>                   mPlatformRuntimeInfo;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::PlatformBuildInfo>>                     mPlatformBuildInfo;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::IIslandManager>>                        mIslandMgr;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::IIslandCore>>                           mApp;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IMinecraftGame>>                       mMinecraftGame_Shim;
+    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()>> mCreateGame;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mbQueueRenderParameterSignal;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mHasInitialized;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -118,63 +121,63 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool _createApp();
+    MCAPI_C bool _createApp();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $issueShutdown();
+    MCFOLD void $issueShutdown();
 
-    MCNAPI void $issueSuspend();
+    MCFOLD void $issueSuspend();
 
-    MCNAPI void $issueResume();
+    MCFOLD void $issueResume();
 
-    MCNAPI void $issueBack();
+    MCFOLD void $issueBack();
 
-    MCNAPI void $issueLowMemory();
+    MCFOLD void $issueLowMemory();
 
-    MCNAPI void $issueFocusLost();
+    MCFOLD void $issueFocusLost();
 
-    MCNAPI void $issueFocusGained();
+    MCFOLD void $issueFocusGained();
 
-    MCNAPI void $issueInputPaneVisible();
+    MCFOLD void $issueInputPaneVisible();
 
-    MCNAPI void $issueInputPaneHidden();
+    MCFOLD void $issueInputPaneHidden();
 
-    MCNAPI void $issueSuspendWarning();
+    MCFOLD void $issueSuspendWarning();
 
-    MCNAPI void $issueVisibilityChange(bool visible);
+    MCFOLD void $issueVisibilityChange(bool visible);
 
-    MCNAPI void $issueWindowSizeChange(int width, int height);
+    MCFOLD void $issueWindowSizeChange(int width, int height);
 
-    MCNAPI void $issueDPIChange(float dpi);
+    MCFOLD void $issueDPIChange(float dpi);
 
-    MCNAPI void $issueOrientationChange(::DisplayOrientation const&);
+    MCFOLD void $issueOrientationChange(::DisplayOrientation const&);
 
-    MCNAPI void $feedButtonPress(int const& button);
+    MCAPI void $feedButtonPress(int const& button);
 
-    MCNAPI void $feedKeyPress(char const key);
+    MCAPI void $feedKeyPress(char const key);
 
-    MCNAPI void $setTextboxText(::std::string const& text);
+    MCFOLD void $setTextboxText(::std::string const& text);
 
-    MCNAPI void $setStorageDirectory(
+    MCFOLD void $setStorageDirectory(
         ::FileStorageDirectory dir,
         bool                   isCallback,
         ::PropertyBag const&   extraData,
         ::std::function<void(bool)>
     );
 
-    MCNAPI ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory dir);
+    MCFOLD ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory dir);
 
-    MCNAPI ::FileStorageDirectory $getStorageDirectory() const;
+    MCFOLD ::FileStorageDirectory $getStorageDirectory() const;
 #endif
 
 

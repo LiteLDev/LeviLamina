@@ -9,7 +9,7 @@
 // clang-format off
 namespace Json { class Value; }
 namespace mce { class Color; }
-struct UIControl;
+class UIControl;
 // clang-format on
 
 class UIPropertyBag : public ::PropertyBag {

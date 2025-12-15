@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ScreenRenderer {
+class ScreenRenderer {
 public:
     // ScreenRenderer inner types declare
     // clang-format off

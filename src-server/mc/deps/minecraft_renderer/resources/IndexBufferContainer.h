@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct IndexBufferContainer {};
+class IndexBufferContainer {};
 
 } // namespace mce

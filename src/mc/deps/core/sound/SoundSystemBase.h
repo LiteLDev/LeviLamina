@@ -14,8 +14,8 @@ struct PlayingSoundAttributes;
 struct SoundInstanceProperties;
 struct SoundSystemGUID;
 namespace Core { class Path; }
-struct SoundEvent;
-struct SoundItem;
+class SoundEvent;
+class SoundItem;
 // clang-format on
 
 class SoundSystemBase {

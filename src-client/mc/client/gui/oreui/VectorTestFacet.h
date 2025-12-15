@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace OreUI::Debug { struct DataStruct; }
+// clang-format on
+
 namespace OreUI::Debug {
 
 struct VectorTestFacet {

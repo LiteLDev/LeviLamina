@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct IClientDataTransferSessionStorage {};
+class IClientDataTransferSessionStorage {};
 
 } // namespace Editor::Services

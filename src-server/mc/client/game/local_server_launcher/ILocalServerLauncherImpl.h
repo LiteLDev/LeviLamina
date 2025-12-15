@@ -4,6 +4,6 @@
 
 namespace LocalServerLauncher {
 
-struct ILocalServerLauncherImpl {};
+class ILocalServerLauncherImpl {};
 
 } // namespace LocalServerLauncher
