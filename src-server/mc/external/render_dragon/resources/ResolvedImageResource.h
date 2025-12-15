@@ -4,6 +4,6 @@
 
 namespace dragon {
 
-struct ResolvedImageResource {};
+class ResolvedImageResource {};
 
 } // namespace dragon

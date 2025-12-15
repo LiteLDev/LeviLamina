@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct ResourceServiceRenderContext {};
+class ResourceServiceRenderContext {};
 
 } // namespace mce

@@ -5,11 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/Singleton.h"
 #include "mc/deps/renderer/hal/ResourceBase.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace mce { class RenderDeviceNull; }
-// clang-format on
+#include "mc/deps/renderer/hal/null/RenderDeviceNull.h"
 
 namespace mce {
 

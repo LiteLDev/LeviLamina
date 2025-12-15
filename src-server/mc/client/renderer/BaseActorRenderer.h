@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BaseActorRenderer {
+class BaseActorRenderer {
 public:
     // BaseActorRenderer inner types declare
     // clang-format off

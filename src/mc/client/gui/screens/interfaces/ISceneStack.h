@@ -12,8 +12,8 @@
 // clang-format off
 class Options;
 namespace Bedrock::PubSub { class Subscription; }
+class AbstractScene;
 class SceneStackProxy;
-struct AbstractScene;
 struct ScreenThreshold;
 namespace OreUI { struct RouteAction; }
 // clang-format on

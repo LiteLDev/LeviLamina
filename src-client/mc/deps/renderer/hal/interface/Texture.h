@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/renderer/hal/ResourceBase.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace mce { class TextureNull; }
-// clang-format on
+#include "mc/deps/renderer/hal/null/TextureNull.h"
 
 namespace mce {
 

@@ -17,8 +17,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class MainMenuScreenModel;
 struct IEntitlementManager;
-struct MainMenuScreenModel;
 namespace Json { class Value; }
 namespace Social { class User; }
 namespace edu::auth { struct CredsAuthComplete; }

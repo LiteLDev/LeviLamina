@@ -8,8 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class AnimatedTextureContainer;
+class IImageCache;
 class PackAccessStrategy;
-struct IImageCache;
 struct TextureUVCoordinateSet;
 namespace cg { class ImageBuffer; }
 namespace mce { class TextureGroup; }

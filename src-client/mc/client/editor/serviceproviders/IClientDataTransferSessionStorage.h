@@ -4,6 +4,12 @@
 
 namespace Editor::Services {
 
-struct IClientDataTransferSessionStorage {};
+class IClientDataTransferSessionStorage {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~IClientDataTransferSessionStorage() = default;
+    // NOLINTEND
+};
 
 } // namespace Editor::Services

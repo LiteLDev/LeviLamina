@@ -21,13 +21,15 @@
 
 // auto generated forward declare list
 // clang-format off
+class AbstractScene;
 class KeyboardManager;
 class RectangleArea;
 class ScreenController;
 class ScreenViewProxy;
+class UIControl;
 class UIMeasureStrategy;
 class UIPropertyBag;
-struct AbstractScene;
+class UIRenderContext;
 struct DataBindingComponent;
 struct FocusComponent;
 struct FocusManager;
@@ -42,9 +44,7 @@ struct SliderComponent;
 struct TextEditComponent;
 struct TouchPadTouchEventData;
 struct UIAnimationController;
-struct UIControl;
 struct UIControlFactory;
-struct UIRenderContext;
 struct VisualTree;
 namespace Json { class Value; }
 // clang-format on

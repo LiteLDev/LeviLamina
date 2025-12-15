@@ -4,7 +4,7 @@
 
 namespace Bedrock {
 
-struct Platform_GameCore {
+class Platform_GameCore {
 public:
     // Platform_GameCore inner types define
     enum class ResizeMode : uchar {};

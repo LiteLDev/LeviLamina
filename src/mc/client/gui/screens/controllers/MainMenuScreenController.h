@@ -16,9 +16,9 @@
 struct LevelSummary;
 struct TextEditScreenEventData;
 namespace Realms { struct World; }
+class MainMenuScreenModel;
 struct DlcUIWrapper;
 struct LocalWorldInfo;
-struct MainMenuScreenModel;
 // clang-format on
 
 class MainMenuScreenController : public ::MinecraftScreenController {

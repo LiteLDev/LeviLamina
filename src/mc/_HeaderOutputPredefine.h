@@ -178,11 +178,21 @@ struct tagPOINT;
 namespace winrt
 {
     struct event_token;
-    
-    namespace Windows::UI::Text::Core
+
+    namespace Windows
     {
-        struct CoreTextEditContext;
+        namespace UI::Text::Core
+        {
+            struct CoreTextEditContext;
+        }
+
+        namespace ApplicationModel::DataTransfer
+        {
+            struct DataTransferManager;
+        }
     }
+    
+
 }
 
 #include "mc/deps/core/utility/optional_ref.h" // replace optional<reference_wrapper<>>

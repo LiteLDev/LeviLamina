@@ -17,7 +17,7 @@ class LevelData;
 struct AppConfigsDependencies;
 struct ConnectionDefinition;
 struct PackIdVersion;
-struct SceneFactory;
+class SceneFactory;
 // clang-format on
 
 class AppConfigs : public ::Bedrock::EnableNonOwnerReferences {

@@ -8,12 +8,12 @@ struct ClientThumbnailCacheService {
 public:
     // ClientThumbnailCacheService inner types declare
     // clang-format off
-    struct Hasher;
+    class Hasher;
     struct UUIDThumbnailHash;
     // clang-format on
 
     // ClientThumbnailCacheService inner types define
-    struct Hasher {};
+    class Hasher {};
 
     struct UUIDThumbnailHash {};
 };

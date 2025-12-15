@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct AbstractScene;
+class AbstractScene;
 // clang-format on
 
 class UIEventListener {

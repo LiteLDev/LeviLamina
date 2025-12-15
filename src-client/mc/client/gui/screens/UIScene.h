@@ -16,6 +16,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AbstractScene;
 class IClientInstance;
 class KeyboardManager;
 class RectangleArea;
@@ -24,7 +25,6 @@ class ScreenController;
 class ScreenView;
 class TaskGroup;
 class UIMeasureStrategy;
-struct AbstractScene;
 struct AbstractSceneProxy;
 struct CachedScenes;
 struct FrameRenderObject;

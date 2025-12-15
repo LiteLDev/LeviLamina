@@ -16,8 +16,8 @@
 class HIDController;
 class SecureStorage;
 class SecureStorageKey;
+class WebviewInterface;
 struct OSInformation;
-struct WebviewInterface;
 namespace Core { class Path; }
 namespace Webview { struct PlatformArguments; }
 // clang-format on

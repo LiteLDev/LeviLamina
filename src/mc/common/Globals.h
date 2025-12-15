@@ -182,6 +182,7 @@ namespace mce::framebuilder { struct ShadowRange; }
 class DataDrivenModel;
 class DataDrivenRenderer;
 class Tessellator;
+class UIControl;
 struct ActorAttachableDerivitiveData;
 struct ActorDerivitiveData;
 struct AnimationData;
@@ -210,8 +211,7 @@ struct ResourceOffset;
 struct SharedUniformPhase;
 struct StoreDataDrivenScreenController;
 struct TrialManager;
-struct UIControl;
-namespace Bedrock { struct Platform_GameCore; }
+namespace Bedrock { class Platform_GameCore; }
 namespace ParticleSystem { struct ParticleEffectComponentRegistry; }
 namespace Social { struct MultiplayerServiceManager; }
 namespace mce::framebuilder { struct FrameBuilder; }

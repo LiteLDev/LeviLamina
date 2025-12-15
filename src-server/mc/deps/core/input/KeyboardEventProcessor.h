@@ -4,6 +4,6 @@
 
 namespace Bedrock::Input {
 
-struct KeyboardEventProcessor {};
+class KeyboardEventProcessor {};
 
 } // namespace Bedrock::Input
