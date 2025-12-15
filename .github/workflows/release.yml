@@ -73,7 +73,7 @@ jobs:
           organization: ${{ SECRETS.SENTRY_ORG }}
           project: ${{ SECRETS.SENTRY_PROJECT }}
 
-      - uses: actions/download-artifact@v6
+      - uses: actions/download-artifact@v7
         with:
           name: levilamina-${{ github.sha }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64
           path: artifact
@@ -123,7 +123,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: actions/download-artifact@v6
+      - uses: actions/download-artifact@v7
         with:
           name: levilamina-${{ github.sha }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64
           path: artifact
