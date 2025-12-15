@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class UIMeasureStrategy {};
+namespace mce::Font {
+
+enum class Type : int {};
+
+}

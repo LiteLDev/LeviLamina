@@ -2,19 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MinecraftUIRenderContext {
+class MinecraftUIRenderContext {
 public:
     // MinecraftUIRenderContext inner types declare
     // clang-format off
+    struct TextItem;
     struct ImageItem;
     struct PersistentMeshItem;
-    struct TextItem;
     // clang-format on
 
     // MinecraftUIRenderContext inner types define
+    struct TextItem {};
+
     struct ImageItem {};
 
     struct PersistentMeshItem {};
-
-    struct TextItem {};
 };

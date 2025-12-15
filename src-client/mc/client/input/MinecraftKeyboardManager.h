@@ -8,10 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class GuiData;
 class IClientInstance;
 class RectangleArea;
 class Vec2;
-struct GuiData;
 // clang-format on
 
 class MinecraftKeyboardManager : public ::KeyboardManager {
