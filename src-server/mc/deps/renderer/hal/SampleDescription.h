@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct SampleDescription {};
+class SampleDescription {};
 
 } // namespace mce

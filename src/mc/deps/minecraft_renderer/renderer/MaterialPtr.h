@@ -6,6 +6,7 @@
 // clang-format off
 class HashedString;
 namespace mce { class RenderMaterialGroupBase; }
+namespace mce { class RenderMaterialInfo; }
 namespace mce { class RenderMaterial; }
 // clang-format on
 
@@ -16,44 +17,44 @@ public:
 // member variables
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    ::ll::UntypedStorage<8, 16> mUnk9b791d;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::RenderMaterialInfo>> mRenderMaterialInfoPtr;
 #endif
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C MaterialPtr();
+    MCAPI_C MaterialPtr();
 
-    MCNAPI_C MaterialPtr(::mce::MaterialPtr const&);
+    MCAPI_C MaterialPtr(::mce::MaterialPtr const&);
 
-    MCNAPI_C MaterialPtr(::mce::RenderMaterialGroupBase& group, ::HashedString const& name);
+    MCAPI_C MaterialPtr(::mce::RenderMaterialGroupBase& group, ::HashedString const& name);
 
-    MCNAPI_C ::HashedString const& getHashedName() const;
+    MCAPI_C ::HashedString const& getHashedName() const;
 
-    MCNAPI_C bool isNull() const;
+    MCAPI_C bool isNull() const;
 
-    MCNAPI_C ::mce::RenderMaterial const* operator->() const;
+    MCAPI_C ::mce::RenderMaterial const* operator->() const;
 
-    MCNAPI_C ::mce::MaterialPtr& operator=(::mce::MaterialPtr const&);
+    MCFOLD_C ::mce::MaterialPtr& operator=(::mce::MaterialPtr const&);
 
-    MCNAPI_C ~MaterialPtr();
+    MCAPI_C ~MaterialPtr();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCFOLD_C void* $ctor();
 
-    MCNAPI_C void* $ctor(::mce::MaterialPtr const&);
+    MCFOLD_C void* $ctor(::mce::MaterialPtr const&);
 
-    MCNAPI_C void* $ctor(::mce::RenderMaterialGroupBase& group, ::HashedString const& name);
+    MCAPI_C void* $ctor(::mce::RenderMaterialGroupBase& group, ::HashedString const& name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

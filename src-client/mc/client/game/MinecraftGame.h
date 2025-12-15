@@ -1958,8 +1958,6 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::TrialManager> $getTrialManager() const;
 
-    MCFOLD bool $isTrialManagerInitialized() const;
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::PersonaService> $getPersonaService() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> $getGatheringManager() const;

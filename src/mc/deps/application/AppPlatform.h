@@ -1132,8 +1132,6 @@ public:
 
     MCNAPI bool $isTelemetryAllowed();
 
-    MCNAPI bool $isTrialWorldsTransferToFullGameAllowed() const;
-
     MCNAPI void $buyGame();
 
     MCNAPI void $finish();

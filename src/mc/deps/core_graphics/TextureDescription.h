@@ -11,28 +11,23 @@ struct TextureDescription : public ::cg::ImageDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk60201e;
+    ::ll::TypedStorage<4, 4, uint> mMipCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TextureDescription& operator=(TextureDescription const&);
-    TextureDescription(TextureDescription const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C TextureDescription();
+    MCAPI_C TextureDescription();
 
-    MCNAPI_C explicit TextureDescription(::cg::ImageDescription const& imageDescription);
+    MCAPI_C explicit TextureDescription(::cg::ImageDescription const& imageDescription);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI_C void* $ctor();
 
-    MCNAPI_C void* $ctor(::cg::ImageDescription const& imageDescription);
+    MCAPI_C void* $ctor(::cg::ImageDescription const& imageDescription);
     // NOLINTEND
 };
 
