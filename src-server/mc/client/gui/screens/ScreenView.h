@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ScreenView {
+class ScreenView {
 public:
     // ScreenView inner types declare
     // clang-format off

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct FontAlias {
+class FontAlias {
 public:
     // FontAlias inner types declare
     // clang-format off

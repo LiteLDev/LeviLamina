@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GuiData {
+class GuiData {
 public:
     // GuiData inner types declare
     // clang-format off

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct Font {
+class Font {
 public:
     // Font inner types declare
     // clang-format off

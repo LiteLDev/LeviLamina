@@ -84,9 +84,12 @@ namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
 namespace Social { class User; }
 namespace mce { class UUID; }
+class FontHandle;
+class GuiData;
 class MinecraftInputHandler;
 class RenderControllerGroup;
 class TextureAtlas;
+class UIMeasureStrategy;
 struct ActorResourceDefinitionGroup;
 struct BlockCullingGroup;
 struct CDNService;
@@ -98,11 +101,9 @@ struct DeferredLighting;
 struct DevConsoleLogger;
 struct EmoticonManager;
 struct ExternalContentManager;
-struct FontHandle;
 struct GameRenderer;
 struct GatheringManager;
 struct GlobalResourcesCrashRecovery;
-struct GuiData;
 struct IContentManager;
 struct IDlcValidation;
 struct IEntitlementManager;
@@ -138,7 +139,6 @@ struct SunsettingManager;
 struct TextToIconMapper;
 struct TreatmentPackDownloadMonitor;
 struct TrialManager;
-struct UIMeasureStrategy;
 namespace ClientBlobCache { struct Cache; }
 namespace ClientBlockPipeline { struct SchematicsRepository; }
 namespace OreUI { struct DataProviderManager_DEPRECATED; }

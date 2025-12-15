@@ -8,12 +8,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class FontHandle;
 class ItemStackBase;
 class Option;
 class PlayerCommandOrigin;
 class RectangleArea;
 class Vec2;
-struct FontHandle;
 struct GameRuleId;
 // clang-format on
 
