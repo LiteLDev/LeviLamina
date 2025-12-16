@@ -2,13 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace mce::detail { struct FileWatcherHandleInternal; }
+// clang-format on
+
 namespace mce {
 
 class FileWatcherHandle {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkae7605;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::detail::FileWatcherHandleInternal>> mFileWatcherHandleInternal;
     // NOLINTEND
 
 public:
@@ -20,15 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::mce::FileWatcherHandle& operator=(::mce::FileWatcherHandle&&);
+    MCFOLD_C ::mce::FileWatcherHandle& operator=(::mce::FileWatcherHandle&&);
 
-    MCNAPI_C ~FileWatcherHandle();
+    MCAPI_C ~FileWatcherHandle();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

@@ -11,6 +11,15 @@ namespace cg {
 
 class ImageResource {
 public:
+    // ImageResource inner types define
+    using ImageData =
+        ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>;
+
+    using ImageHash = uint64;
+
+    using StreamedResource = ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ImageResource() = default;

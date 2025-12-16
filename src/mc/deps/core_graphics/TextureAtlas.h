@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core_graphics/MipMapSupport.h"
+#include "mc/deps/core_graphics/TextureDescription.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,28 +21,22 @@ class TextureAtlas {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf286cc;
-    ::ll::UntypedStorage<8, 24> mUnk53586f;
-    ::ll::UntypedStorage<4, 24> mUnk11415f;
-    ::ll::UntypedStorage<4, 4>  mUnk3c2d00;
-    ::ll::UntypedStorage<4, 4>  mUnkb52aed;
-    ::ll::UntypedStorage<8, 8>  mUnk35500e;
+    ::ll::TypedStorage<8, 24, ::std::vector<::cg::ImageBuffer>>         mAtlasMipStorage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::cg::TextureAtlasTileUVs>> mTileUVs;
+    ::ll::TypedStorage<4, 24, ::cg::TextureDescription>                 mAtlasTextureDescription;
+    ::ll::TypedStorage<4, 4, uint>                                      mPadSize;
+    ::ll::TypedStorage<4, 4, uint>                                      mReductionMips;
+    ::ll::TypedStorage<8, 8, uint64>                                    mStorageAllocated;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TextureAtlas& operator=(TextureAtlas const&);
-    TextureAtlas(TextureAtlas const&);
-    TextureAtlas();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _allocateTexture();
+    MCAPI_C void _allocateTexture();
 
-    MCNAPI_C bool _tryCreateAtlasUnderMax(::std::vector<::cg::AtlasCreationTile> const& inTiles, uint maxArea);
+    MCAPI_C bool _tryCreateAtlasUnderMax(::std::vector<::cg::AtlasCreationTile> const& inTiles, uint maxArea);
 
-    MCNAPI_C void createAtlasForTiles(
+    MCAPI_C void createAtlasForTiles(
         ::std::vector<::cg::AtlasCreationTile> const& inTiles,
         uint                                          maxArea,
         uint                                          padSize,
@@ -49,7 +44,7 @@ public:
         uint                                          maxMips
     );
 
-    MCNAPI_C void updateTextureAtUVs(
+    MCAPI_C void updateTextureAtUVs(
         ::cg::TextureAtlasTileUVs const& inUVs,
         ::cg::ImageBuffer const* const   srcImage,
         uint                             mipLevel,
@@ -69,13 +64,13 @@ public:
         ::mce::Color const&              fadeMipColor
     );
 
-    MCNAPI_C ~TextureAtlas();
+    MCAPI_C ~TextureAtlas();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _readTexture(
+    MCAPI_C static void _readTexture(
         ::glm::vec<4, uchar>&    color,
         ::glm::vec2 const&       uv,
         ::cg::ImageBuffer const& textureData,
@@ -83,7 +78,7 @@ public:
         ::glm::ivec2 const&      maxDimensions
     );
 
-    MCNAPI_C static bool _tryCreateUVs(
+    MCAPI_C static bool _tryCreateUVs(
         ::std::vector<::cg::AtlasCreationTile> const& inTiles,
         uint                                          width,
         uint                                          height,
@@ -97,7 +92,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };
 

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core_graphics/enums/PrimitiveMode.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { struct MeshDataVertexFieldCounts; }
@@ -11,19 +14,23 @@ namespace mce {
 
 class MeshData {
 public:
+    // MeshData inner types define
+    using Index = uint;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk42b31e;
-    ::ll::UntypedStorage<8, 24> mUnkb8c839;
-    ::ll::UntypedStorage<8, 24> mUnk1d448f;
-    ::ll::UntypedStorage<8, 24> mUnkd464e6;
-    ::ll::UntypedStorage<8, 24> mUnk45f1c1;
-    ::ll::UntypedStorage<8, 24> mUnk172677;
-    ::ll::UntypedStorage<8, 24> mUnk1e8388;
-    ::ll::UntypedStorage<8, 72> mUnk64f0ad;
-    ::ll::UntypedStorage<8, 24> mUnk9d8524;
-    ::ll::UntypedStorage<8, 24> mUnk83c95a;
-    ::ll::UntypedStorage<1, 14> mUnk51e65b;
+    ::ll::TypedStorage<1, 1, ::mce::PrimitiveMode>           mMode;
+    ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec3>>    mPositions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec4>>    mNormals;
+    ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec4>>    mTangents;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>           mIndices;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>           mColors;
+    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>         mBoneId0s;
+    ::ll::TypedStorage<8, 72, ::std::vector<::glm::vec2>[3]> mTextureUVs;
+    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>         mPBRTextureIndices;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>           mMERS;
+    ::ll::TypedStorage<1, 14, ::std::array<bool, 14>>        mFieldEnabled;
     // NOLINTEND
 
 public:
@@ -34,35 +41,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C MeshData();
+    MCAPI_C MeshData();
 
-    MCNAPI_C MeshData(::mce::MeshData&&);
+    MCAPI_C MeshData(::mce::MeshData&&);
 
-    MCNAPI_C void clear();
+    MCAPI_C void clear();
 
-    MCNAPI_C ::mce::MeshData clone() const;
+    MCAPI_C ::mce::MeshData clone() const;
 
-    MCNAPI_C void freeMemory();
+    MCAPI_C void freeMemory();
 
-    MCNAPI_C ::mce::MeshDataVertexFieldCounts getVertexFieldCount() const;
+    MCAPI_C ::mce::MeshDataVertexFieldCounts getVertexFieldCount() const;
 
-    MCNAPI_C ::mce::MeshData& operator=(::mce::MeshData&&);
+    MCAPI_C ::mce::MeshData& operator=(::mce::MeshData&&);
 
-    MCNAPI_C ~MeshData();
+    MCAPI_C ~MeshData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI_C void* $ctor();
 
-    MCNAPI_C void* $ctor(::mce::MeshData&&);
+    MCAPI_C void* $ctor(::mce::MeshData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };
 

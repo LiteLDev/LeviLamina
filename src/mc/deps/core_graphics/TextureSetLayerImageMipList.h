@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core_graphics/TextureSetLayerType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cg { class ImageBuffer; }
@@ -12,24 +15,22 @@ namespace cg {
 
 class TextureSetLayerImageMipList {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkc6e034;
-    ::ll::UntypedStorage<8, 16> mUnk83b78a;
-    // NOLINTEND
+    // TextureSetLayerImageMipList inner types define
+    using TextureSetImageList = ::std::shared_ptr<::cg::ImageResource>;
 
 public:
-    // prevent constructor by default
-    TextureSetLayerImageMipList& operator=(TextureSetLayerImageMipList const&);
-    TextureSetLayerImageMipList(TextureSetLayerImageMipList const&);
-    TextureSetLayerImageMipList();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::cg::TextureSetLayerType>               mLayerType;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::cg::ImageResource>> mImageList;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
+    MCAPI_C void addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
 
-    MCNAPI_C void addImage(::cg::ImageBuffer imageToAdd);
+    MCAPI_C void addImage(::cg::ImageBuffer imageToAdd);
     // NOLINTEND
 };
 

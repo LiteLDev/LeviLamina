@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core_graphics/ImageType.h"
+#include "mc/deps/core_graphics/enums/ColorSpace.h"
 #include "mc/deps/core_graphics/enums/TextureFormat.h"
 
 // auto generated forward declare list
@@ -16,38 +18,36 @@ struct ImageDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkcf7118;
-    ::ll::UntypedStorage<4, 4> mUnkd51c0d;
-    ::ll::UntypedStorage<4, 4> mUnk5fec4a;
-    ::ll::UntypedStorage<1, 1> mUnke5be67;
-    ::ll::UntypedStorage<1, 1> mUnk667a5a;
-    ::ll::UntypedStorage<4, 4> mUnkfb11c6;
+    ::ll::TypedStorage<4, 4, uint>                 mWidth;
+    ::ll::TypedStorage<4, 4, uint>                 mHeight;
+    ::ll::TypedStorage<4, 4, ::mce::TextureFormat> mTextureFormat;
+    ::ll::TypedStorage<1, 1, ::cg::ColorSpace>     mColorSpace;
+    ::ll::TypedStorage<1, 1, ::cg::ImageType>      mImageType;
+    ::ll::TypedStorage<4, 4, uint>                 mArraySizeOrDepth;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ImageDescription& operator=(ImageDescription const&);
-    ImageDescription(ImageDescription const&);
     ImageDescription();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit ImageDescription(::mce::Image const& image);
+    MCAPI_C explicit ImageDescription(::mce::Image const& image);
 
-    MCNAPI_C uint getStorageSize() const;
+    MCAPI_C uint getStorageSize() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static uint getStrideFromFormat(::mce::TextureFormat textureFormat);
+    MCAPI_C static uint getStrideFromFormat(::mce::TextureFormat textureFormat);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::mce::Image const& image);
+    MCAPI_C void* $ctor(::mce::Image const& image);
     // NOLINTEND
 };
 

@@ -3,30 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/math/ColorChannel.h"
+#include "mc/deps/core/resource/ResourceLocationPair.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-
-// auto generated forward declare list
-// clang-format off
-class ColorChannel;
-class ResourceLocationPair;
-namespace mce { class Color; }
-// clang-format on
+#include "mc/deps/core_graphics/TextureSetLayerType.h"
 
 namespace cg {
 
 class TextureSetLayerDefinition : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnkd9360c;
-    ::ll::UntypedStorage<1, 1>   mUnkf64bec;
-    // NOLINTEND
+    // TextureSetLayerDefinition inner types define
+    using TextureSetLayerInfoVariant = ::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color>;
 
 public:
-    // prevent constructor by default
-    TextureSetLayerDefinition& operator=(TextureSetLayerDefinition const&);
-    TextureSetLayerDefinition(TextureSetLayerDefinition const&);
-    TextureSetLayerDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 120, ::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color>> mData;
+    ::ll::TypedStorage<1, 1, ::cg::TextureSetLayerType>                                              mLayerType;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -42,13 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::optional<::std::string> hasValidationError() const;
+    MCAPI_C ::std::optional<::std::string> hasValidationError() const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

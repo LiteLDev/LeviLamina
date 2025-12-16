@@ -2,10 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cg { struct CompressedImageDescription; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/container/Blob.h"
+#include "mc/deps/core_graphics/CompressedImageDescription.h"
 
 namespace cg {
 
@@ -13,34 +12,32 @@ class CompressedImageBuffer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk19e841;
-    ::ll::UntypedStorage<4, 16> mUnkb02cbf;
+    ::ll::TypedStorage<8, 24, ::mce::Blob>                      mStorage;
+    ::ll::TypedStorage<4, 16, ::cg::CompressedImageDescription> mImageDescription;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    CompressedImageBuffer& operator=(CompressedImageBuffer const&);
-    CompressedImageBuffer(CompressedImageBuffer const&);
     CompressedImageBuffer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C CompressedImageBuffer(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
+    MCAPI_C CompressedImageBuffer(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
 
-    MCNAPI_C ~CompressedImageBuffer();
+    MCAPI_C ~CompressedImageBuffer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
+    MCAPI_C void* $ctor(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

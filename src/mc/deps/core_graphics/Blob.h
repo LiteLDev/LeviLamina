@@ -8,15 +8,9 @@ class Blob {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkafe231;
-    ::ll::UntypedStorage<8, 8> mUnk8b0c63;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<uchar[0]>> mBlobData;
+    ::ll::TypedStorage<8, 8, uint64>                      mBlobSize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Blob& operator=(Blob const&);
-    Blob(Blob const&);
-    Blob();
 };
 
 } // namespace cg

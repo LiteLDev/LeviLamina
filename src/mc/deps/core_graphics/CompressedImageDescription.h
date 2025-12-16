@@ -2,23 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core_graphics/enums/ColorSpace.h"
+#include "mc/deps/core_graphics/enums/TextureFormat.h"
+
 namespace cg {
 
 struct CompressedImageDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc630a3;
-    ::ll::UntypedStorage<4, 4> mUnk592731;
-    ::ll::UntypedStorage<4, 4> mUnkfa7ea8;
-    ::ll::UntypedStorage<1, 1> mUnkd7b0b9;
+    ::ll::TypedStorage<4, 4, uint>                 mWidth;
+    ::ll::TypedStorage<4, 4, uint>                 mHeight;
+    ::ll::TypedStorage<4, 4, ::mce::TextureFormat> mTextureFormat;
+    ::ll::TypedStorage<1, 1, ::cg::ColorSpace>     mColorSpace;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CompressedImageDescription& operator=(CompressedImageDescription const&);
-    CompressedImageDescription(CompressedImageDescription const&);
-    CompressedImageDescription();
 };
 
 } // namespace cg

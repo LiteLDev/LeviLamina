@@ -6,16 +6,14 @@ namespace cg::details {
 
 class WorkToken {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf1745f;
-    // NOLINTEND
+    // WorkToken inner types define
+    using SharedLifetime = ::std::shared_ptr<::gsl::final_action<::std::function<void()>>> const;
 
 public:
-    // prevent constructor by default
-    WorkToken& operator=(WorkToken const&);
-    WorkToken(WorkToken const&);
-    WorkToken();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mIsDone;
+    // NOLINTEND
 };
 
 } // namespace cg::details

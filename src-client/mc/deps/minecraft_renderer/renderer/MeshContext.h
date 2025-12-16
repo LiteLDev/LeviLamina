@@ -2,32 +2,51 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/checked_resource_service/ServerResourcePointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class ShaderColor;
+namespace mce { class Camera; }
+namespace mce { class RenderContext; }
+namespace mce { struct BufferResourceService; }
+namespace mce { struct GlobalConstantBufferManager; }
+namespace mce { struct GlobalConstantBuffers; }
+namespace mce { struct ImmediateBuffer; }
+namespace mce { struct QuadIndexBuffer; }
+// clang-format on
+
 namespace mce {
 
 class MeshContext {
 public:
+    // MeshContext inner types define
+    using SubClientId = uchar;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk1ecfc2;
-    ::ll::UntypedStorage<8, 8>  mUnk6f0b26;
-    ::ll::UntypedStorage<8, 8>  mUnk5c0a3a;
-    ::ll::UntypedStorage<8, 8>  mUnka4e607;
-    ::ll::UntypedStorage<8, 8>  mUnk9baa8e;
-    ::ll::UntypedStorage<8, 8>  mUnke3a0a1;
-    ::ll::UntypedStorage<8, 8>  mUnka98713;
-    ::ll::UntypedStorage<8, 8>  mUnkac255d;
-    ::ll::UntypedStorage<8, 24> mUnkd28e86;
-    ::ll::UntypedStorage<4, 20> mUnk38f9f1;
-    ::ll::UntypedStorage<1, 1>  mUnkb86ed9;
-    ::ll::UntypedStorage<1, 1>  mUnka7d412;
-    ::ll::UntypedStorage<1, 1>  mUnk722167;
-    ::ll::UntypedStorage<1, 1>  mUnke6b8b2;
-    ::ll::UntypedStorage<1, 1>  mUnkd7dad6;
-    ::ll::UntypedStorage<1, 1>  mUnkbea5b6;
-    ::ll::UntypedStorage<1, 1>  mUnk9f6be5;
-    ::ll::UntypedStorage<1, 1>  mUnk87167e;
-    ::ll::UntypedStorage<1, 1>  mUnk9dbe7d;
-    ::ll::UntypedStorage<1, 1>  mUnk1ec87c;
+    ::ll::TypedStorage<8, 8, ::mce::RenderContext&>                                 renderContext;
+    ::ll::TypedStorage<8, 8, ::mce::Camera&>                                        camera;
+    ::ll::TypedStorage<8, 8, ::mce::GlobalConstantBuffers&>                         constantBuffers;
+    ::ll::TypedStorage<8, 8, ::mce::GlobalConstantBufferManager&>                   constantBufferManager;
+    ::ll::TypedStorage<8, 8, ::ShaderColor&>                                        currentShaderColor;
+    ::ll::TypedStorage<8, 8, ::ShaderColor&>                                        currentShaderDarkColor;
+    ::ll::TypedStorage<8, 8, ::mce::BufferResourceService&>                         bufferResourceService;
+    ::ll::TypedStorage<8, 8, ::mce::QuadIndexBuffer&>                               currentQuadIndexBuffer;
+    ::ll::TypedStorage<8, 24, ::mce::ServerResourcePointer<::mce::ImmediateBuffer>> immediateBuffer;
+    ::ll::TypedStorage<4, 20, ::std::optional<::glm::vec4>>                         normalizedClipRegion;
+    ::ll::TypedStorage<1, 1, uchar>                                                 subClientId;
+    ::ll::TypedStorage<1, 1, bool>                                                  isDrawingUI;
+    ::ll::TypedStorage<1, 1, bool>                                                  isDrawingFirstPersonObjects;
+    ::ll::TypedStorage<1, 1, bool>                                                  isDrawingEnvironmentalText;
+    ::ll::TypedStorage<1, 1, bool>                                                  isDrawingPersistentUIElement;
+    ::ll::TypedStorage<1, 1, bool>                                                  isDoingFrameCapture;
+    ::ll::TypedStorage<1, 1, bool>                                                  isDrawingEditorSelectionHighlight;
+    ::ll::TypedStorage<1, 1, bool>                                                  isDrawingMovingBlock;
+    ::ll::TypedStorage<1, 1, bool>                                                  isDitheringEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                  isAlphaMaskedTintEnabled;
     // NOLINTEND
 
 public:
@@ -39,13 +58,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~MeshContext();
+    MCAPI ~MeshContext();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -2,14 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/Value.h"
+
 namespace cg {
 
 struct VariationMap {
 public:
+    // VariationMap inner types define
+    using MaterialJsonVariationMap = ::std::map<::std::string, ::cg::VariationMap>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkdc7e39;
-    ::ll::UntypedStorage<8, 16> mUnkabcbac;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::cg::VariationMap>> mMaterialJsonVariationMap;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                 mVariantJson;
     // NOLINTEND
 
 public:
@@ -20,21 +27,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C VariationMap(::cg::VariationMap const&);
+    MCAPI_C VariationMap(::cg::VariationMap const&);
 
-    MCNAPI_C ~VariationMap();
+    MCAPI_C ~VariationMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::cg::VariationMap const&);
+    MCAPI_C void* $ctor(::cg::VariationMap const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };
 

@@ -16,13 +16,11 @@ class StreamedImageResource : public ::cg::ImageResource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf03a6a;
+    ::ll::TypedStorage<8, 32, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>> mImageData;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    StreamedImageResource& operator=(StreamedImageResource const&);
-    StreamedImageResource(StreamedImageResource const&);
     StreamedImageResource();
 
 public:
@@ -49,32 +47,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C StreamedImageResource(::std::vector<::cg::ImageBuffer>&& imageBuffers, uint64&& hash);
+    MCAPI_C StreamedImageResource(::std::vector<::cg::ImageBuffer>&& imageBuffers, uint64&& hash);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::vector<::cg::ImageBuffer>&& imageBuffers, uint64&& hash);
+    MCAPI_C void* $ctor(::std::vector<::cg::ImageBuffer>&& imageBuffers, uint64&& hash);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI bool $isEmpty() const;
+    MCFOLD bool $isEmpty() const;
 
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI uint $getSize() const;
+    MCFOLD uint $getSize() const;
 
-    MCNAPI ::cg::ImageBuffer const* $getImage(uint mipLevel) const;
+    MCAPI ::cg::ImageBuffer const* $getImage(uint mipLevel) const;
 
-    MCNAPI void $addImage(::cg::ImageBuffer imageToAdd);
+    MCAPI void $addImage(::cg::ImageBuffer imageToAdd);
 
-    MCNAPI void $addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
+    MCAPI void $addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
 
-    MCNAPI ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
+    MCAPI ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
     $unwrapImageData();
 #endif
 

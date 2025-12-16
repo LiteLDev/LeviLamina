@@ -11,9 +11,9 @@ namespace mce { struct VertexLayout; }
 namespace mce::MeshGenUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI ::mce::VertexLayout findVertexLayout(::mce::MeshData const& data, bool splitStream);
+MCAPI ::mce::VertexLayout findVertexLayout(::mce::MeshData const& data, bool splitStream);
 
-MCNAPI void generateOldStyleRenderChunk(
+MCAPI void generateOldStyleRenderChunk(
     ::mce::MeshData const&     data,
     ::mce::VertexLayout const& format,
     uint64                     vertexCount,
@@ -22,7 +22,7 @@ MCNAPI void generateOldStyleRenderChunk(
     ::std::vector<uchar>&      dataOut
 );
 
-MCNAPI void generateOldStyleTintedUIElement(
+MCAPI void generateOldStyleTintedUIElement(
     ::mce::MeshData const&     data,
     ::mce::VertexLayout const& format,
     uint64                     vertexCount,
@@ -31,7 +31,7 @@ MCNAPI void generateOldStyleTintedUIElement(
     ::std::vector<uchar>&      dataOut
 );
 
-MCNAPI void generateOldStyleUIElement(
+MCAPI void generateOldStyleUIElement(
     ::mce::MeshData const&     data,
     ::mce::VertexLayout const& format,
     uint64                     vertexCount,
@@ -40,7 +40,7 @@ MCNAPI void generateOldStyleUIElement(
     ::std::vector<uchar>&      dataOut
 );
 
-MCNAPI void generateOldStyleVertexBufferData(
+MCAPI void generateOldStyleVertexBufferData(
     ::mce::MeshData const&                      data,
     ::mce::VertexLayout const&                  layout,
     ::std::vector<uchar>&                       dataOut,
@@ -49,7 +49,7 @@ MCNAPI void generateOldStyleVertexBufferData(
     ::std::optional<::gsl::span<::glm::mat4x4>> previousBones
 );
 
-MCNAPI void normalizeVerticesToOrthogonalFrame(
+MCAPI void normalizeVerticesToOrthogonalFrame(
     ::mce::MeshData&   meshData,
     uint               startingVertexIndex,
     ::glm::vec2 const& frameMin,
