@@ -4,6 +4,13 @@
 
 namespace mce {
 
-struct SampleDescription {};
+class SampleDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int> count;
+    ::ll::TypedStorage<4, 4, int> quality;
+    // NOLINTEND
+};
 
 } // namespace mce

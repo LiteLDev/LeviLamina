@@ -701,8 +701,6 @@ public:
 
     MCNAPI_C bool isSignedInToXBL() const;
 
-    MCNAPI_C bool isTrial() const;
-
     MCNAPI_C bool isUITTSEnabled() const;
 
     MCNAPI_C bool isUnableToShowXBLLogo() const;
