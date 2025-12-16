@@ -86,6 +86,7 @@ namespace Social { class User; }
 namespace mce { class UUID; }
 class FontHandle;
 class GuiData;
+class MinecraftGraphics;
 class MinecraftInputHandler;
 class RenderControllerGroup;
 class ResetCallbackObject;
@@ -118,7 +119,6 @@ struct IUIRepository;
 struct LevelLoader;
 struct LibraryRepository;
 struct MarketplaceServicesManager;
-struct MinecraftGraphics;
 struct MusicManager;
 struct NewPlayerSystem;
 struct PackDownloadManager;

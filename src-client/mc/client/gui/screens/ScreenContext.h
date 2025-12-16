@@ -11,12 +11,14 @@
 // auto generated forward declare list
 // clang-format off
 class GuiData;
+class MinecraftGraphics;
 class Tessellator;
 struct CommandListQueue;
 struct FrameRenderObject;
-struct MinecraftGraphics;
 struct ProfanityContext;
 namespace mce { class Clock; }
+namespace mce { struct FrameBufferObject; }
+namespace mce { struct FrameDiscardContext; }
 namespace mce { struct ViewportInfo; }
 // clang-format on
 
@@ -24,17 +26,17 @@ class ScreenContext : public ::UIScreenContext, public ::mce::MeshContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk5c8470;
-    ::ll::UntypedStorage<8, 8>  mUnk581e45;
-    ::ll::UntypedStorage<8, 24> mUnkb370b1;
-    ::ll::UntypedStorage<8, 8>  mUnke4f9a0;
-    ::ll::UntypedStorage<8, 8>  mUnk6b3be5;
-    ::ll::UntypedStorage<8, 24> mUnka866e5;
-    ::ll::UntypedStorage<8, 24> mUnk2d720c;
-    ::ll::UntypedStorage<8, 8>  mUnke4f424;
-    ::ll::UntypedStorage<1, 1>  mUnk5771a9;
-    ::ll::UntypedStorage<8, 8>  mUnkb87ac4;
-    ::ll::UntypedStorage<8, 8>  mUnk2b5e18;
+    ::ll::TypedStorage<8, 8, ::mce::FrameBufferObject*>                           frameBufferObject;
+    ::ll::TypedStorage<8, 8, ::mce::ViewportInfo const&>                          viewport;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GuiData>>           guiData;
+    ::ll::TypedStorage<8, 8, ::mce::Clock const&>                                 clock;
+    ::ll::TypedStorage<8, 8, ::Tessellator&>                                      tessellator;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics>> minecraftGraphics;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>>  profanityContext;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::FrameDiscardContext>>       frameDiscardContext;
+    ::ll::TypedStorage<1, 1, bool>                                                isCapturingPanorama;
+    ::ll::TypedStorage<8, 8, ::CommandListQueue&>                                 commandListQueue;
+    ::ll::TypedStorage<8, 8, ::LinearAllocator<::FrameRenderObject>&>             frameAllocator;
     // NOLINTEND
 
 public:
