@@ -19,17 +19,18 @@ namespace cg {
 
 class TextureSetImageContainer : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1331b4;
-    ::ll::UntypedStorage<8, 24> mUnkfe1364;
-    // NOLINTEND
+    // TextureSetImageContainer inner types define
+    using TextureSetCompressedLayer = ::std::pair<::cg::TextureSetLayerType, ::cg::CompressedImageBuffer>;
+
+    using TextureSetImageContainerList = ::std::vector<::cg::TextureSetLayerImageMipList>;
 
 public:
-    // prevent constructor by default
-    TextureSetImageContainer& operator=(TextureSetImageContainer const&);
-    TextureSetImageContainer(TextureSetImageContainer const&);
-    TextureSetImageContainer();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::cg::TextureSetLayerImageMipList>> mLayerImageList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::cg::TextureSetLayerType, ::cg::CompressedImageBuffer>>>
+        mCompressedLayers;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -45,19 +46,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void addImage(::cg::TextureSetLayerType const& layerType, ::cg::ImageBuffer imageBuffer);
+    MCAPI_C void addImage(::cg::TextureSetLayerType const& layerType, ::cg::ImageBuffer imageBuffer);
 
-    MCNAPI_C void
+    MCAPI_C void
     addImage(::cg::TextureSetLayerType const& layerType, ::std::shared_ptr<::cg::ImageResource> imageResource);
 
-    MCNAPI_C ::cg::ImageDescription
+    MCAPI_C ::cg::ImageDescription
     getImageDescription(::cg::TextureSetLayerType const& layerType, uint64 mipLevel) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

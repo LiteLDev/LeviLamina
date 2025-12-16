@@ -2,21 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core_graphics/CacheOrigin.h"
+
 namespace cg {
 
 struct CacheLocation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk43132e;
-    ::ll::UntypedStorage<1, 1>  mUnk6c0f13;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mPath;
+    ::ll::TypedStorage<1, 1, ::cg::CacheOrigin>                  mOrigin;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CacheLocation& operator=(CacheLocation const&);
-    CacheLocation(CacheLocation const&);
-    CacheLocation();
 };
 
 } // namespace cg

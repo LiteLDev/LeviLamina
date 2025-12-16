@@ -8,23 +8,17 @@ struct MeshDataVertexFieldCounts {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf149f1;
-    ::ll::UntypedStorage<1, 1> mUnk4b52d8;
-    ::ll::UntypedStorage<1, 1> mUnk177e14;
-    ::ll::UntypedStorage<1, 1> mUnk6f7655;
-    ::ll::UntypedStorage<1, 1> mUnkf3893c;
-    ::ll::UntypedStorage<1, 1> mUnk9471e5;
-    ::ll::UntypedStorage<1, 1> mUnk53206d;
-    ::ll::UntypedStorage<1, 1> mUnk40b797;
-    ::ll::UntypedStorage<1, 1> mUnk18f01a;
-    ::ll::UntypedStorage<8, 8> mUnk7039d3;
+    ::ll::TypedStorage<1, 1, bool>   mPositions;
+    ::ll::TypedStorage<1, 1, bool>   mNormals;
+    ::ll::TypedStorage<1, 1, bool>   mTangents;
+    ::ll::TypedStorage<1, 1, bool>   mIndices;
+    ::ll::TypedStorage<1, 1, bool>   mColors;
+    ::ll::TypedStorage<1, 1, bool>   mBoneId0s;
+    ::ll::TypedStorage<1, 1, bool>   mTextureUVs;
+    ::ll::TypedStorage<1, 1, bool>   mPBRTextureIndices;
+    ::ll::TypedStorage<1, 1, bool>   mMERSs;
+    ::ll::TypedStorage<8, 8, uint64> mCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MeshDataVertexFieldCounts& operator=(MeshDataVertexFieldCounts const&);
-    MeshDataVertexFieldCounts(MeshDataVertexFieldCounts const&);
-    MeshDataVertexFieldCounts();
 };
 
 } // namespace mce

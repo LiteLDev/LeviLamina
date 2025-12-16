@@ -13,7 +13,7 @@ class TextureConversionUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::optional<::cg::ImageBuffer>
+    MCAPI_C static ::std::optional<::cg::ImageBuffer>
     convertUnsupportedImageToSupportedGPUImage(::cg::ImageBuffer const& sourceImageBuffer);
     // NOLINTEND
 };

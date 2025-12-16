@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/math/ColorChannel.h"
+#include "mc/deps/core_graphics/ImageDescription.h"
+#include "mc/deps/core_graphics/TextureSetLayerType.h"
+
 // auto generated forward declare list
 // clang-format off
-class ColorChannel;
 namespace cg { class TextureSetDefinition; }
-namespace cg { struct ImageDescription; }
-namespace mce { class Color; }
 // clang-format on
 
 namespace cg {
@@ -22,23 +25,26 @@ public:
     // TextureSetImageDescription inner types define
     class LayerInfoVar {
     public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkf70e18;
-        ::ll::UntypedStorage<4, 24> mUnk1eef15;
-        // NOLINTEND
+        // LayerInfoVar inner types define
+        using Var = ::std::variant<::cg::ImageDescription, ::ColorChannel, ::mce::Color>;
 
     public:
-        // prevent constructor by default
-        LayerInfoVar& operator=(LayerInfoVar const&);
-        LayerInfoVar(LayerInfoVar const&);
-        LayerInfoVar();
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, ::cg::TextureSetLayerType>                                             mLayerType;
+        ::ll::TypedStorage<4, 24, ::std::variant<::cg::ImageDescription, ::ColorChannel, ::mce::Color>> mData;
+        // NOLINTEND
     };
+
+    using LayerInfoVarList = ::std::vector<::cg::TextureSetImageDescription::LayerInfoVar>;
+
+    using LayerInfoVarListIterator = ::std::_Vector_const_iterator<
+        ::std::_Vector_val<::std::_Simple_types<::cg::TextureSetImageDescription::LayerInfoVar>>>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkcecc6d;
+    ::ll::TypedStorage<8, 24, ::std::vector<::cg::TextureSetImageDescription::LayerInfoVar>> mLayerInfo;
     // NOLINTEND
 
 public:
@@ -50,27 +56,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit TextureSetImageDescription(::cg::ImageDescription const& imageDesc);
+    MCAPI_C explicit TextureSetImageDescription(::cg::ImageDescription const& imageDesc);
 
-    MCNAPI_C explicit TextureSetImageDescription(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
+    MCAPI_C explicit TextureSetImageDescription(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
 
-    MCNAPI_C ::cg::TextureSetImageDescription& operator=(::cg::TextureSetImageDescription&&);
+    MCAPI_C ::cg::TextureSetImageDescription& operator=(::cg::TextureSetImageDescription&&);
 
-    MCNAPI_C ~TextureSetImageDescription();
+    MCAPI_C ~TextureSetImageDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::cg::ImageDescription const& imageDesc);
+    MCAPI_C void* $ctor(::cg::ImageDescription const& imageDesc);
 
-    MCNAPI_C void* $ctor(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
+    MCAPI_C void* $ctor(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

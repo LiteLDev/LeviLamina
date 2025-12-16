@@ -2,15 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Scheduler;
+class WorkerPool;
+// clang-format on
+
 namespace cg {
 
 struct GroupPoolDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1e0d5a;
-    ::ll::UntypedStorage<8, 8> mUnke6d5c9;
-    ::ll::UntypedStorage<1, 1> mUnkdd8ec4;
+    ::ll::TypedStorage<8, 8, ::WorkerPool&> mPool;
+    ::ll::TypedStorage<8, 8, ::Scheduler&>  mScheduler;
+    ::ll::TypedStorage<1, 1, bool>          mIsHelper;
     // NOLINTEND
 
 public:

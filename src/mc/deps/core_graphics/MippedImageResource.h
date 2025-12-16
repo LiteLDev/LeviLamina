@@ -16,14 +16,8 @@ class MippedImageResource : public ::cg::ImageResource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkaa0e52;
+    ::ll::TypedStorage<8, 24, ::std::vector<::cg::ImageBuffer>> mImageData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MippedImageResource& operator=(MippedImageResource const&);
-    MippedImageResource(MippedImageResource const&);
-    MippedImageResource();
 
 public:
     // virtual functions
@@ -50,19 +44,19 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI bool $isEmpty() const;
+    MCFOLD bool $isEmpty() const;
 
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI uint $getSize() const;
+    MCFOLD uint $getSize() const;
 
-    MCNAPI ::cg::ImageBuffer const* $getImage(uint mipLevel) const;
+    MCAPI ::cg::ImageBuffer const* $getImage(uint mipLevel) const;
 
-    MCNAPI void $addImage(::cg::ImageBuffer imageToAdd);
+    MCAPI void $addImage(::cg::ImageBuffer imageToAdd);
 
-    MCNAPI void $addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
+    MCAPI void $addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
 
-    MCNAPI ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
+    MCAPI ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
     $unwrapImageData();
 #endif
 
