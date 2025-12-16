@@ -34,33 +34,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit Image(::mce::Blob&& contents);
+    MCAPI_C explicit Image(::mce::Blob&& contents);
 
-    MCNAPI Image(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
+    MCAPI Image(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
 
-    MCNAPI ::mce::Image clone() const;
+    MCAPI ::mce::Image clone() const;
 
-    MCNAPI ::mce::Image& operator=(::mce::Image&&);
+    MCAPI ::mce::Image& operator=(::mce::Image&&);
 
-    MCNAPI void resizeImageBytesToFitImageDescription();
+    MCAPI void resizeImageBytesToFitImageDescription();
 
-    MCNAPI_C void setRawImage(::mce::Blob&& contents);
+    MCAPI_C void setRawImage(::mce::Blob&& contents);
 
-    MCNAPI ~Image();
+    MCAPI ~Image();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::mce::Blob&& contents);
+    MCAPI_C void* $ctor(::mce::Blob&& contents);
 
-    MCNAPI void* $ctor(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
+    MCAPI void* $ctor(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,13 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace SharedTypes::v1_20_80 { struct BezierChainNodeMap; }
-namespace SharedTypes::v1_20_80 { struct ColorGradient; }
-namespace SharedTypes::v1_20_80 { struct ParticleCurveBezierChain; }
-namespace SharedTypes::v1_20_80 { struct ParticleCurveSimpleBase; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_20_80/particle/BezierChainNodeMap.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ColorGradient.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveBezierChain.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveSimpleBase.h"
 
 namespace SharedTypes::v1_20_80 {
 // functions
