@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 
+#include "mc/deps/core/file/Path.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
@@ -14,60 +16,38 @@ namespace Core {
 
 class PathView {
 public:
-    // PathView inner types declare
-    // clang-format off
-    struct Hash;
-    struct path_view_less;
-    // clang-format on
+    ~PathView() = default;
 
-    // PathView inner types define
-    struct Hash {};
+    PathView(const PathView& other)            = default;
+    PathView& operator=(const PathView& other) = default;
 
-    struct path_view_less {};
+    PathView(PathView&& other) noexcept            = default;
+    PathView& operator=(PathView&& other) noexcept = default;
 
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::string_view> mSrc;
-    // NOLINTEND
+    explicit PathView(const std::string& s) : mSrc(s) {}
+    explicit PathView(const char* s) : mSrc(s ? s : "") {}
+    explicit PathView(std::string_view s) : mSrc(s) {}
 
-public:
-    // prevent constructor by default
-    PathView& operator=(PathView const&);
-    PathView(PathView const&);
-    PathView();
+    PathView(const Core::Path& src) : mSrc(src.getUtf8StdString()) {}
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI PathView(::Core::PathView&&);
+    [[nodiscard]] size_t size() const { return mSrc.size(); }
+    [[nodiscard]] bool   empty() const { return mSrc.empty(); }
 
-    MCNAPI explicit PathView(::Core::PathBuffer<::std::string> const&);
+    [[nodiscard]] std::string_view getUtf8StringView() const { return mSrc; }
+    [[nodiscard]] const char*      getUtf8CString() const { return mSrc.data(); }
 
-    MCNAPI explicit PathView(::Core::Path const& src);
+    [[nodiscard]] bool isAbsolute() const {
+#ifdef _WIN32
+        if (mSrc.size() >= 2 && std::isalpha((unsigned char)mSrc[0]) && mSrc[1] == ':') return true;
+        if (mSrc.size() >= 2 && mSrc[0] == '\\' && mSrc[1] == '\\') return true;
+        return false;
+#else
+        return !mSrc.empty() && mSrc.front() == '/';
+#endif
+    }
 
-    MCNAPI bool isAbsolute() const;
-
-    MCNAPI auto operator==(::Core::PathView const& rhs) const;
-
-    MCNAPI ~PathView();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::PathView&&);
-
-    MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const&);
-
-    MCNAPI void* $ctor(::Core::Path const& src);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
+private:
+    std::string_view mSrc;
 };
 
 } // namespace Core

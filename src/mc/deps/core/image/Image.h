@@ -10,58 +10,29 @@
 namespace mce {
 
 struct Image {
-public:
-    // Image inner types define
-    using Storage = ::mce::Blob;
-
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::mce::ImageFormat> imageFormat;
-    ::ll::TypedStorage<4, 4, uint>               mWidth;
-    ::ll::TypedStorage<4, 4, uint>               mHeight;
-    ::ll::TypedStorage<4, 4, uint>               mDepth;
-    ::ll::TypedStorage<1, 1, ::mce::ImageUsage>  mUsage;
-    ::ll::TypedStorage<8, 24, ::mce::Blob>       mImageBytes;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Image& operator=(Image const&);
-    Image(Image const&);
+    using Storage = mce::Blob;
     Image();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI_C explicit Image(::mce::Blob&& contents);
-
-    MCAPI Image(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
-
-    MCAPI ::mce::Image clone() const;
-
-    MCAPI ::mce::Image& operator=(::mce::Image&&);
-
-    MCAPI void resizeImageBytesToFitImageDescription();
-
-    MCAPI_C void setRawImage(::mce::Blob&& contents);
-
-    MCAPI ~Image();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(::mce::Blob&& contents);
-
-    MCAPI void* $ctor(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
+    Image(const uint32 w, const uint32 h, const mce::ImageFormat format, const mce::ImageUsage usage);
+    Image(const uint32, const uint32, const uint32, const mce::ImageFormat, const mce::ImageUsage);
+    Image(const mce::Image&);
+    Image(mce::Image&&);
+    Image(mce::Image::Storage&&);
+    ~Image();
+    mce::Image& operator=(const mce::Image&);
+    mce::Image& operator=(mce::Image&&);
+    void        setRawImage(mce::Image::Storage&& contents);
+    void        setImageDescription(const uint32, const uint32, const mce::ImageFormat, const mce::ImageUsage);
+    void setImageDescription(const uint32, const uint32, const uint32, const mce::ImageFormat, const mce::ImageUsage);
+    void copyRawImage(const mce::Image::Storage&);
+    mce::Image          clone() const;
+    bool                isEmpty() const;
+    void                resizeImageBytesToFitImageDescription();
+    mce::ImageFormat    imageFormat;
+    uint32              mWidth;
+    uint32              mHeight;
+    uint32              mDepth;
+    mce::ImageUsage     mUsage;
+    mce::Image::Storage mImageBytes;
 };
 
 } // namespace mce

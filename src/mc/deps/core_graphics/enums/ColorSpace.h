@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+#include "mc/deps/core/image/ImageUsage.h"
+
 namespace cg {
 
 enum class ColorSpace : uchar {
@@ -10,4 +12,6 @@ enum class ColorSpace : uchar {
     Linear  = 2,
 };
 
-}
+cg::ColorSpace translateImageUsage(const mce::ImageUsage imageUsage);
+
+} // namespace cg

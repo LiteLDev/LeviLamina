@@ -8,6 +8,9 @@ namespace mce { class Blob; }
 // clang-format on
 
 namespace mce::BlobHelper {
+
+mce::Blob clone(const mce::Blob& blob);
+
 // functions
 // NOLINTBEGIN
 MCNAPI void copyStringIntoBlob(::mce::Blob& blob, ::std::string const& source);

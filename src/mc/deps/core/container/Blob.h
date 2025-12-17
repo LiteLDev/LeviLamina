@@ -6,84 +6,61 @@ namespace mce {
 
 class Blob {
 public:
-    // Blob inner types declare
-    // clang-format off
-    struct Deleter;
-    // clang-format on
+    using value_type      = std::uint8_t;
+    using delete_function = void (*)(value_type*);
+    using size_type       = std::size_t;
+    using pointer         = value_type*;
+    using const_pointer   = const value_type*;
+    using iterator        = value_type*;
+    using const_iterator  = const value_type*;
 
-    // Blob inner types define
     struct Deleter {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk90cf01;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Deleter& operator=(Deleter const&);
-        Deleter(Deleter const&);
-        Deleter();
+        delete_function m_func;
+        Deleter() noexcept;
+        explicit Deleter(delete_function f) noexcept;
+        void operator()(value_type* p) const noexcept;
     };
 
-    using const_iterator = uchar const*;
+    using pointer_type = std::unique_ptr<value_type[], Deleter>;
 
-    using const_pointer = uchar const*;
-
-    using const_reference = uchar const&;
-
-    using delete_function = void (*)(uchar*);
-
-    using difference_type = int64;
-
-    using iterator = uchar*;
-
-    using pointer = uchar*;
-
-    using pointer_type = ::std::unique_ptr<uchar[0], ::mce::Blob::Deleter>;
-
-    using reference = uchar&;
-
-    using size_type = uint64;
-
-    using value_type = uchar;
+private:
+    pointer_type mBlob;
+    size_type    mSize{0};
 
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::unique_ptr<uchar[0], ::mce::Blob::Deleter>> mBlob;
-    ::ll::TypedStorage<8, 8, uint64>                                             mSize;
-    // NOLINTEND
+    Blob() noexcept;
+    explicit Blob(size_type size);
+    Blob(const value_type* ptr, size_type size);
+    Blob(Blob&& rhs) noexcept;
+    Blob(pointer_type&& ptr, size_type size) noexcept;
+    ~Blob();
 
-public:
-    // prevent constructor by default
-    Blob();
+    Blob(const Blob&);
+    Blob& operator=(const Blob&);
+    Blob& operator=(Blob&& rhs) noexcept;
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit Blob(uint64 size);
+    iterator                     begin() noexcept;
+    iterator                     end() noexcept;
+    [[nodiscard]] const_iterator cbegin() const noexcept;
+    [[nodiscard]] const_iterator cend() const noexcept;
 
-    MCNAPI_C ~Blob();
-    // NOLINTEND
+    [[nodiscard]] bool          empty() const noexcept;
+    [[nodiscard]] size_type     size() const noexcept;
+    [[nodiscard]] size_type     max_size() const noexcept;
+    pointer                     data() noexcept;
+    [[nodiscard]] const_pointer data() const noexcept;
+    pointer                     get() noexcept;
+    [[nodiscard]] const_pointer get() const noexcept;
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void defaultDeleter(uchar* ptr);
-    // NOLINTEND
+    gsl::span<unsigned char>                     getSpan();
+    [[nodiscard]] gsl::span<const unsigned char> getSpan() const;
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(uint64 size);
-    // NOLINTEND
+    void         fillBlob(std::uint8_t val);
+    pointer_type release() noexcept;
+    void         swap(Blob& other) noexcept;
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI_C void $dtor();
-    // NOLINTEND
+private:
+    static void defaultDeleter(value_type* p) noexcept;
 };
 
 } // namespace mce

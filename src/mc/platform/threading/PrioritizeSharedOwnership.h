@@ -8,16 +8,21 @@ class PrioritizeSharedOwnership {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex>            mMutex;
-    ::ll::TypedStorage<8, 88, ::std::condition_variable_any> mZeroReaders;
-    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>          mReaderCount;
+    ::std::shared_mutex           mMutex;
+    ::std::condition_variable_any mZeroReaders;
+    ::std::atomic<uint64>         mReaderCount;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void lock();
-    // NOLINTEND
+    static const size_t mWaitForZeroBit = 1ull << 63;
+
+    LLAPI void   lock_shared();
+    LLNDAPI bool try_lock_shared();
+    LLAPI void   unlock_shared();
+
+    LLAPI void   lock();
+    LLNDAPI bool try_lock();
+    LLAPI void   unlock();
 };
 
 } // namespace Bedrock::Threading

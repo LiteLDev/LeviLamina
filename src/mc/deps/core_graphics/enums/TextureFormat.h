@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+#include "mc/deps/core/image/ImageFormat.h"
+
 namespace mce {
 
 enum class TextureFormat : uint {
@@ -70,4 +72,6 @@ enum class TextureFormat : uint {
     R8g8b8Unorm          = 145,
 };
 
-}
+mce::TextureFormat translateImageFormat(const mce::ImageFormat imageFormat);
+
+} // namespace mce

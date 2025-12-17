@@ -8,9 +8,15 @@
 
 #include "ll/core/LeviLamina.h"
 #include "mc/client/game/ClientInstance.h"
+#include "mc/client/game/IMinecraftGame.h"
 #include "mc/client/game/MinecraftGame.h"
 #include "mc/client/multiplayer/MultiPlayerLevel.h"
 #include "mc/client/network/LegacyClientNetworkHandler.h"
+#include "mc/common/Globals.h"
+#include "mc/deps/application/AppPlatform.h"
+#include "mc/deps/application/gamecore/Platform_GameCore.h"
+#include "mc/deps/core/utility/ServiceLocator.h"
+#include "mc/deps/core/utility/ServiceReference.h"
 #include "mc/deps/raknet/RakPeer.h"
 #include "mc/deps/raknet/RakPeerInterface.h"
 #include "mc/module/VanillaGameModuleClient.h"
@@ -30,68 +36,105 @@
 #include "mc/world/GameSession.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
+#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 #include "mc/world/level/storage/DBStorage.h"
 #include "mc/world/level/storage/DBStorageConfig.h"
-#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
+
 
 namespace ll::service::inline bedrock {
 
-// ServerInstance
-static std::atomic<ServerInstance*> serverInstance;
-// ClientInstance
-static std::atomic<ClientInstance*> clientInstance;
+optional_ref<AppPlatform> getAppPlatform() { return ServiceLocator<AppPlatform>::get().get().get(); }
 
-// Minecraft
-static std::atomic<Minecraft*> serverMinecraft;
-static std::atomic<Minecraft*> clientMinecraft;
+optional_ref<ServerInstance> getServerInstance() { return ServiceLocator<ServerInstance>::get().get().get(); }
+optional_ref<ClientInstance> getClientInstance() {
+    if (auto plat = sPlatform()) {
+        if (auto game = plat->mMinecraftGame_Shim.get()) {
+            return reinterpret_cast<ClientInstance*>(game->getPrimaryClientInstance().get().get());
+        }
+    }
+    return nullptr;
+}
 
-// CommandRegistry
-static std::atomic<CommandRegistry*> serverCommandRegistry;
-static std::atomic<CommandRegistry*> clientCommandRegistry;
+optional_ref<Minecraft> getMinecraft() {
+    if (auto ins = getServerInstance()) {
+        return ins->mMinecraft.get();
+    }
+    return nullptr;
+}
+optional_ref<Minecraft> getClientMinecraft() {
+    if (auto ins = getClientInstance()) {
+        return ins->mUnk599652.as<std::unique_ptr<Minecraft>>().get();
+    }
+    return nullptr;
+}
 
-// Level
-static std::atomic<Level*> serverlevel;
-static std::atomic<Level*> multiPlayerLevel;
+optional_ref<Level> getLevel() {
+    if (auto minecraft = getMinecraft()) {
+        return minecraft->getLevel();
+    }
+    return nullptr;
+}
 
+optional_ref<Level> getMultiPlayerLevel() {
+    if (auto minecraft = getClientMinecraft()) {
+        return minecraft->getLevel();
+    }
+    return nullptr;
+}
 
-// ServerNetworkHandler
-static std::atomic<ServerNetworkHandler*> serverNetworkHandler;
-
-
-// NetworkSystem
-static std::atomic<ClientNetworkSystem*> clientNetworkSystem;
-static std::atomic<ServerNetworkSystem*> serverNetworkSystem;
-static std::atomic<NetworkSystem*> networkSystem;
-// ResourcePackRepository
-static std::atomic<ResourcePackRepository*> resourcePackRepository;
-
-// DBStorage
-static std::atomic<DBStorage*> dBStorage;
-
-
-optional_ref<ServerInstance> getServerInstance() { return serverInstance.load(); }
-optional_ref<ClientInstance> getClientInstance() { return clientInstance.load(); }
-
-optional_ref<Minecraft> getMinecraft() { return serverMinecraft.load(); }
-optional_ref<Minecraft> getClientMinecraft() { return clientMinecraft.load(); }
-
-optional_ref<Level> getLevel() { return serverlevel.load(); }
-optional_ref<Level> getMultiPlayerLevel() { return multiPlayerLevel.load(); }
-
-optional_ref<ServerNetworkHandler> getServerNetworkHandler() { return serverNetworkHandler.load(); }
+optional_ref<ServerNetworkHandler> getServerNetworkHandler() {
+    if (auto minecraft = getMinecraft()) {
+        return minecraft->getServerNetworkHandler().get();
+    }
+    return nullptr;
+}
 
 optional_ref<RakNet::RakPeer> getRakPeer() { return nullptr; }
 
-optional_ref<ResourcePackRepository> getResourcePackRepository() { return resourcePackRepository.load(); }
+optional_ref<ResourcePackRepository> getResourcePackRepository() { return nullptr; }
+optional_ref<ResourcePackRepository> getClientResourcePackRepository() {
+    if (auto ins = getClientInstance()) {
+        return reinterpret_cast<ResourcePackRepository&>(ins->getResourcePackRepository());
+    }
+    return nullptr;
+}
 
-optional_ref<NetworkSystem> getNetworkSystem() { return networkSystem.load(); }
-optional_ref<ServerNetworkSystem> getServerNetworkSystem() { return serverNetworkSystem.load(); }
-optional_ref<ClientNetworkSystem> getClientNetworkSystem() { return clientNetworkSystem.load(); }
+optional_ref<NetworkSystem> getNetworkSystem() {
+    if (auto mc = getMinecraft()) {
+        return mc->getServerNetworkSystem();
+    }
+    return nullptr;
+}
+optional_ref<ServerNetworkSystem> getServerNetworkSystem() {
+    if (auto mc = getMinecraft()) {
+        return mc->getServerNetworkSystem();
+    }
+    return nullptr;
+}
+optional_ref<ClientNetworkSystem> getClientNetworkSystem() {
+    if (auto ins = getClientInstance()) {
+        return ins->getClientNetworkSystem();
+    }
+    return nullptr;
+}
 
-optional_ref<CommandRegistry> getCommandRegistry() { return serverCommandRegistry.load(); }
-optional_ref<CommandRegistry> getClientCommandRegistry() { return clientCommandRegistry.load(); }
+optional_ref<CommandRegistry> getCommandRegistry() {
+    if (auto mc = getMinecraft()) {
+        if (mc->mCommands) {
+            return mc->mCommands->mRegistry.get();
+        }
+    }
+    return nullptr;
+}
+optional_ref<CommandRegistry> getClientCommandRegistry() {
+    if (auto mc = getClientMinecraft()) {
+        if (mc->mCommands) {
+            return mc->mCommands->mRegistry.get();
+        }
+    }
+    return nullptr;
+}
 
-optional_ref<DBStorage> getDBStorage() { return dBStorage.load(); }
 using HookReg = memory::HookRegistrar<>;
 
 static HookReg hookRegister;
