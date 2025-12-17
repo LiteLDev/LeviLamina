@@ -32,15 +32,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ::MatrixStack::MatrixStackRef& operator=(::Matrix const& lhs);
+        MCAPI_C ::MatrixStack::MatrixStackRef& operator=(::Matrix const& lhs);
 
-        MCNAPI_C ~MatrixStackRef();
+        MCAPI_C ~MatrixStackRef();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+        MCAPI_C void $dtor();
         // NOLINTEND
     };
 
