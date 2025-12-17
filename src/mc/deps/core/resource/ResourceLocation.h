@@ -28,42 +28,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ResourceLocation();
+    MCAPI_C ResourceLocation();
 
-    MCNAPI_C ResourceLocation(::ResourceLocation const&);
+    MCAPI_C ResourceLocation(::ResourceLocation const&);
 
-    MCNAPI_C explicit ResourceLocation(::Core::PathView path);
+    MCAPI_C explicit ResourceLocation(::Core::PathView path);
 
-    MCNAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
+    MCAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 
-    MCNAPI ::Core::PathBuffer<::std::string> getFullPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
 
-    MCNAPI_C bool operator==(::ResourceLocation const& rhs) const;
+    MCAPI_C bool operator==(::ResourceLocation const& rhs) const;
 
-    MCNAPI ~ResourceLocation();
+    MCAPI ~ResourceLocation();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::ResourceLocation const& getEmptyLocation();
+    MCAPI_C static ::ResourceLocation const& getEmptyLocation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI_C void* $ctor();
 
-    MCNAPI_C void* $ctor(::ResourceLocation const&);
+    MCAPI_C void* $ctor(::ResourceLocation const&);
 
-    MCNAPI_C void* $ctor(::Core::PathView path);
+    MCAPI_C void* $ctor(::Core::PathView path);
 
-    MCNAPI void* $ctor(::Core::PathView path, ::ResourceFileSystem fileSystem);
+    MCAPI void* $ctor(::Core::PathView path, ::ResourceFileSystem fileSystem);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

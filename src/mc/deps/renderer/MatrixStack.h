@@ -61,20 +61,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Matrix& _pushIdentity();
+    MCAPI_C ::Matrix& _pushIdentity();
 
-    MCNAPI_C ::Matrix& getTop();
+    MCAPI_C ::Matrix& getTop();
 
-    MCNAPI_C ::MatrixStack::MatrixStackRef push(bool isSortOrigin);
+    MCAPI_C ::MatrixStack::MatrixStackRef push(bool isSortOrigin);
 
-    MCNAPI_C ::Matrix const& sortOriginTransform() const;
+    MCAPI_C ::Matrix const& sortOriginTransform() const;
 
-    MCNAPI_C ~MatrixStack();
+    MCAPI_C ~MatrixStack();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
