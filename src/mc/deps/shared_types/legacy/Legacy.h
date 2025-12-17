@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/BlockDescriptor.h"
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::Legacy { struct BlockDescriptor; }
-namespace SharedTypes::Legacy { struct ExpressionNode; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 

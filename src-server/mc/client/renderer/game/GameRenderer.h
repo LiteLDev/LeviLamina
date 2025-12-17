@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GameRenderer {
+class GameRenderer {
 public:
     // GameRenderer inner types define
     enum class FrameCaptureMode : int {};

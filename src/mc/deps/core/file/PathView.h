@@ -28,7 +28,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk5007a0;
+    ::ll::TypedStorage<8, 16, ::std::string_view> mSrc;
     // NOLINTEND
 
 public:

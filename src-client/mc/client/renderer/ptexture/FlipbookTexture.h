@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class MinecraftGraphics;
 class ScreenContext;
 struct FlipbookTextureDescription;
-struct MinecraftGraphics;
 struct TextureUVCoordinateSet;
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }

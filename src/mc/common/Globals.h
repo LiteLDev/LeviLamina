@@ -22,6 +22,8 @@
 #include "mc/deps/core/file/file_system/FileType.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/sem_ver/SemVersionBase.h"
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/core/string/StaticOptimizedString.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/HardwareMemoryTier.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -46,12 +48,14 @@
 #include "mc/util/gltf/Accessor.h"
 #include "mc/util/gltf/Image.h"
 #include "mc/util/gltf/Material.h"
+#include "mc/util/molang/ExpressionNode.h"
 #include "mc/util/molang/ExpressionOp.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/ActorTypeNamespaceRules.h"
+#include "mc/world/actor/DefinitionTrigger.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/filters/FilterGroup.h"
 #include "mc/world/filters/FilterOperator.h"
@@ -61,6 +65,7 @@
 #include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockSlot.h"
 #include "mc/world/level/block/TorchFacing.h"
+#include "mc/world/level/block/components/BlockMaterialInstance.h"
 #include "mc/world/level/chunk/ChunkState.h"
 #include "mc/world/level/chunk/LevelChunkTag.h"
 #include "mc/world/level/chunk/SubChunk.h"
@@ -91,12 +96,9 @@ class CircuitSceneGraph;
 class CircuitTrackingInfo;
 class DataDrivenGeometry;
 class DateManager;
-class DefinitionTrigger;
 class Dimension;
-class ExpressionNode;
 class FeatureRegistry;
 class GatheringServerInfo;
-class HashedString;
 class HitResult;
 class I18n;
 class IAppPlatform;
@@ -132,7 +134,6 @@ struct ActorFactoryData;
 struct AllWorkerConfigurations;
 struct AssertHandlerContext;
 struct BlockLayer;
-struct BlockMaterialInstance;
 struct CommonLocTextPair;
 struct DateRange;
 struct DynDnsResult;
@@ -149,7 +150,6 @@ struct TextProcessingEventOriginEnumHasher;
 struct TypeMapping;
 struct WorkerConfiguration;
 struct srtp_auth_t;
-namespace Bedrock { class StaticOptimizedString; }
 namespace Bedrock { class WorkerPoolHandleInterface; }
 namespace Bedrock::Http { class Status; }
 namespace Bedrock::Services { class IDiscoveryService; }

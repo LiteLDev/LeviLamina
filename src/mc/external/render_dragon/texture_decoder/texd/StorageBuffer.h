@@ -16,47 +16,39 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk7801cd;
-        ::ll::UntypedStorage<8, 8> mUnkc277eb;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<uchar[0]>> mData;
+        ::ll::TypedStorage<8, 8, uint64>                      mSize;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Implementation& operator=(Implementation const&);
-        Implementation(Implementation const&);
-        Implementation();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk890aef;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::texd::StorageBuffer::Implementation>> mImplementation;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    StorageBuffer& operator=(StorageBuffer const&);
-    StorageBuffer(StorageBuffer const&);
     StorageBuffer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C StorageBuffer(uchar const* data, uint64 size);
+    MCAPI_C StorageBuffer(uchar const* data, uint64 size);
 
-    MCNAPI_C ~StorageBuffer();
+    MCAPI_C ~StorageBuffer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(uchar const* data, uint64 size);
+    MCAPI_C void* $ctor(uchar const* data, uint64 size);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

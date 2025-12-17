@@ -6,20 +6,29 @@
 #include "mc/external/absl/AnyInvocable.h"
 #include "mc/external/cricket/MediaType.h"
 #include "mc/external/rtc/AdapterType.h"
+#include "mc/external/rtc/RTCCertificate.h"
 #include "mc/external/webrtc/AV1Profile.h"
 #include "mc/external/webrtc/IceCandidateType.h"
+#include "mc/external/webrtc/MediaStreamTrackInterface.h"
 #include "mc/external/webrtc/PeerConnectionInterface.h"
+#include "mc/external/webrtc/PendingTaskSafetyFlag.h"
 #include "mc/external/webrtc/Priority.h"
 #include "mc/external/webrtc/RTCErrorDetailType.h"
 #include "mc/external/webrtc/RTCErrorType.h"
+#include "mc/external/webrtc/RtpReceiverInterface.h"
+#include "mc/external/webrtc/RtpReceiverInternal.h"
 #include "mc/external/webrtc/RtpReceiverProxyWithInternal.h"
+#include "mc/external/webrtc/RtpSenderInterface.h"
+#include "mc/external/webrtc/RtpSenderInternal.h"
 #include "mc/external/webrtc/RtpSenderProxyWithInternal.h"
+#include "mc/external/webrtc/RtpTransceiver.h"
 #include "mc/external/webrtc/RtpTransceiverDirection.h"
 #include "mc/external/webrtc/RtpTransceiverProxyWithInternal.h"
 #include "mc/external/webrtc/ScalabilityMode.h"
 #include "mc/external/webrtc/SdpType.h"
 #include "mc/external/webrtc/VP9Profile.h"
 #include "mc/external/webrtc/VideoCodecType.h"
+#include "mc/external/webrtc/VideoFrameBuffer.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -36,7 +45,6 @@ namespace cricket { struct RidDescription; }
 namespace cricket { struct StreamParams; }
 namespace rtc { class CopyOnWriteBuffer; }
 namespace rtc { class IPAddress; }
-namespace rtc { class RTCCertificate; }
 namespace rtc { class SocketAddress; }
 namespace rtc { class StringBuilder; }
 namespace webrtc { class DataRate; }
@@ -46,23 +54,15 @@ namespace webrtc { class FieldTrialsView; }
 namespace webrtc { class IceCandidateInterface; }
 namespace webrtc { class JsepIceCandidate; }
 namespace webrtc { class JsepSessionDescription; }
-namespace webrtc { class MediaStreamTrackInterface; }
-namespace webrtc { class PendingTaskSafetyFlag; }
 namespace webrtc { class RTCError; }
 namespace webrtc { class RTCStats; }
 namespace webrtc { class RTCStatsReport; }
 namespace webrtc { class RtpHeaderExtensionMap; }
-namespace webrtc { class RtpReceiverInterface; }
-namespace webrtc { class RtpReceiverInternal; }
-namespace webrtc { class RtpSenderInterface; }
-namespace webrtc { class RtpSenderInternal; }
-namespace webrtc { class RtpTransceiver; }
 namespace webrtc { class SessionDescriptionInterface; }
 namespace webrtc { class TaskQueueFactory; }
 namespace webrtc { class TimeDelta; }
 namespace webrtc { class Timestamp; }
 namespace webrtc { class TransceiverList; }
-namespace webrtc { class VideoFrameBuffer; }
 namespace webrtc { struct DataChannelInit; }
 namespace webrtc { struct H264ProfileLevelId; }
 namespace webrtc { struct RTPVideoHeader; }

@@ -5,12 +5,8 @@
 // auto generated inclusion list
 #include "mc/external/absl/InlinedVector.h"
 #include "mc/external/webrtc/DecodeTargetIndication.h"
+#include "mc/external/webrtc/RenderResolution.h"
 #include "mc/external/webrtc/ScalabilityMode.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace webrtc { class RenderResolution; }
-// clang-format on
 
 namespace absl {
 // functions

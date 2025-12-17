@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/cricket/Port.h"
 #include "mc/external/rtc/AdapterType.h"
 #include "mc/external/rtc/WeakPtr.h"
+#include "mc/external/webrtc/SctpDataChannelControllerInterface.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class Port; }
 namespace rtc { class AsyncPacketSocket; }
 namespace rtc { class ClockInterface; }
 namespace rtc { class IPAddress; }
@@ -16,7 +17,6 @@ namespace rtc { class MessageDigest; }
 namespace rtc { class SocketAddress; }
 namespace rtc { class SocketServer; }
 namespace rtc { struct PacketInfo; }
-namespace webrtc { class SctpDataChannelControllerInterface; }
 // clang-format on
 
 namespace rtc {

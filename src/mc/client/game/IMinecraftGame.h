@@ -85,7 +85,9 @@ namespace Social { class IUserManager; }
 namespace Social { class User; }
 namespace mce { class UUID; }
 class FontHandle;
+class GameRenderer;
 class GuiData;
+class MinecraftGraphics;
 class MinecraftInputHandler;
 class RenderControllerGroup;
 class ResetCallbackObject;
@@ -103,7 +105,6 @@ struct DeferredLighting;
 struct DevConsoleLogger;
 struct EmoticonManager;
 struct ExternalContentManager;
-struct GameRenderer;
 struct GatheringManager;
 struct GlobalResourcesCrashRecovery;
 struct IContentManager;
@@ -118,7 +119,6 @@ struct IUIRepository;
 struct LevelLoader;
 struct LibraryRepository;
 struct MarketplaceServicesManager;
-struct MinecraftGraphics;
 struct MusicManager;
 struct NewPlayerSystem;
 struct PackDownloadManager;

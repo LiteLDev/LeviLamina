@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/schema/dynamic/DynamicValue.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
-namespace cereal { class DynamicValue; }
 namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaDescription; }
 // clang-format on
