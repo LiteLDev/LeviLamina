@@ -18,8 +18,8 @@
 #include "mc/server/ServerInstance.h"
 #include "mc/world/level/Level.h"
 
-#include "mc/deps/core/string/StringHash.h"
 #include "mc/client/gui/screens/controllers/StartMenuScreenController.h"
+#include "mc/deps/core/string/StringHash.h"
 
 #include "windows.h"
 
@@ -32,7 +32,7 @@ std::string& defaultLocaleCode();
 }
 
 void leviLaminaMain() {
-    gui::init();
+    // gui::init();
 
     if (auto res = i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {
         getLogger().error("i18n load failed");
@@ -47,7 +47,7 @@ void leviLaminaMain() {
 
     printWelcomeMsg();
 
-    //command::registerCommands();
+    command::registerCommands();
 
     mod::ModRegistrar::getInstance().loadAllMods();
 }
