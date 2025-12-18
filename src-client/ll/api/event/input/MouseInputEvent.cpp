@@ -1,6 +1,5 @@
 #include "ll/api/event/input/MouseInputEvent.h"
 #include "ll/api/event/Emitter.h"
-#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"

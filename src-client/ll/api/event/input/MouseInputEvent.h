@@ -3,8 +3,6 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/input/InputEvent.h"
 
-class MouseDevice;
-
 namespace ll::event::inline input {
 
 class MouseInputEvent final : public Cancellable<InputEvent> {
