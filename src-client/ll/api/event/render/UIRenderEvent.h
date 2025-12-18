@@ -6,12 +6,12 @@
 
 namespace ll::event::inline render {
 
-class ScreenRenderEvent : public Cancellable<RenderEvent> {
+class UIRenderEvent : public Cancellable<RenderEvent> {
     ScreenView&               mScreenView;
     MinecraftUIRenderContext& mUiRenderContext;
 
 public:
-    explicit ScreenRenderEvent(ScreenView& view, UIRenderContext& context)
+    explicit UIRenderEvent(ScreenView& view, UIRenderContext& context)
     : Cancellable(),
       mScreenView(view),
       mUiRenderContext(reinterpret_cast<MinecraftUIRenderContext&>(context)) {}
@@ -22,14 +22,14 @@ public:
     LLNDAPI MinecraftUIRenderContext& uiRenderContext() const;
 };
 
-class BeforeScreenRenderEvent final : public ScreenRenderEvent {
+class BeforeUIRenderEvent final : public UIRenderEvent {
 public:
-    explicit BeforeScreenRenderEvent(ScreenView& view, UIRenderContext& context) : ScreenRenderEvent(view, context) {}
+    explicit BeforeUIRenderEvent(ScreenView& view, UIRenderContext& context) : UIRenderEvent(view, context) {}
 };
 
-class AfterScreenRenderEvent final : public ScreenRenderEvent {
+class AfterUIRenderEvent final : public UIRenderEvent {
 public:
-    explicit AfterScreenRenderEvent(ScreenView& view, UIRenderContext& context) : ScreenRenderEvent(view, context) {}
+    explicit AfterUIRenderEvent(ScreenView& view, UIRenderContext& context) : UIRenderEvent(view, context) {}
 };
 
 } // namespace ll::event::inline render

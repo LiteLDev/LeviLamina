@@ -160,8 +160,8 @@ void updateImGui() {
                 deltaTime   = io.DeltaTime;
                 updateTimer = 0.5f;
             }
-            //ImGui::Text("Renderer: %s", getRendererType().c_str());
-            //ImGui::Text("Renderer Name: %s", getGPUName().c_str());
+            // ImGui::Text("Renderer: %s", getRendererType().c_str());
+            // ImGui::Text("Renderer Name: %s", getGPUName().c_str());
             ImGui::Text("FPS: %.01f", framerate);
             ImGui::Text("Frame Time: %.01fms", deltaTime * 1000.0f);
         }
