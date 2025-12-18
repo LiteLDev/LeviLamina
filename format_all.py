@@ -48,13 +48,13 @@ def format_file(file_paths, clang_format_path):
 
 
 def convert_line_endings(input_file, output_file):
-    with open(input_file, 'r', encoding='utf-8') as infile:
+    with open(input_file, "r", encoding="utf-8") as infile:
         content = infile.read()
 
     # 先将所有 \r\n 替换为 \n（标准化），再统一替换为 \r\n
-    content = content.replace('\r\n', '\n').replace('\n', '\r\n')
+    content = content.replace("\r\n", "\n").replace("\n", "\r\n")
 
-    with open(output_file, 'w', encoding='utf-8', newline='') as outfile:
+    with open(output_file, "w", encoding="utf-8", newline="") as outfile:
         outfile.write(content)
 
 
@@ -73,8 +73,11 @@ def format_code_files(
 
     with ThreadPoolExecutor(max_workers=threads) as executor:
         for i in range(0, len(code_files), FILE_COUNT_PER_TASK):
-            file_batch = code_files[i: i + FILE_COUNT_PER_TASK]
+            file_batch = code_files[i : i + FILE_COUNT_PER_TASK]
             executor.submit(format_file, file_batch, clang_format_path)
+
+    global formatted_count
+    formatted_count = 0
 
 
 def check_directory_structure():
@@ -82,7 +85,7 @@ def check_directory_structure():
     current_dir = os.getcwd()
     print(f"当前工作目录: {current_dir}")
     print(f"当前目录内容: {os.listdir('.')}")
-    
+
     # 检查目标目录是否存在
     target_dirs = ["./src", "./src-server", "./src-client"]
     for dir_path in target_dirs:
@@ -95,10 +98,12 @@ def check_directory_structure():
             except Exception as e:
                 print(f"  无法读取 {dir_path}: {e}")
 
+
 if __name__ == "__main__":
     clang_format_path = r"clang-format"
 
     import time
+
     check_directory_structure()
     print(f"开始 {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}")
     format_code_files("./src", clang_format_path)
