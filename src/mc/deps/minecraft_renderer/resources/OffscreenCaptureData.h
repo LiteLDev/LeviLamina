@@ -19,20 +19,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C OffscreenCaptureData(::OffscreenCaptureData const&);
+    MCAPI_C OffscreenCaptureData(::OffscreenCaptureData const&);
 
-    MCNAPI_C ~OffscreenCaptureData();
+    MCAPI_C ~OffscreenCaptureData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::OffscreenCaptureData const&);
+    MCAPI_C void* $ctor(::OffscreenCaptureData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
