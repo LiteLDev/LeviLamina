@@ -24,18 +24,21 @@ void RuntimeOverload::addParam(std::string_view name, ParamKindType kind, bool o
         using ParamType = ParamKindList::get<N>;
 
         using Traits = ParamTraits<ParamType>;
-        Traits::transformData(addParamImpl(
-            Traits::typeId(),
-            Traits::parseFn(),
-            name,
-            Traits::dataType(),
-            Traits::enumNameOrPostfix(),
-            Traits::subChain(),
-            offset,
-            offset + OptionalOffsetGetter<ParamStorageType::value_type>::value,
-            optional,
-            Traits::options()
-        ));
+        Traits::transformData(
+            addParamImpl(
+                Traits::typeId(),
+                Traits::parseFn(),
+                name,
+                Traits::dataType(),
+                Traits::enumNameOrPostfix(),
+                Traits::subChain(),
+                offset,
+                offset + OptionalOffsetGetter<ParamStorageType::value_type>::value,
+                optional,
+                Traits::options()
+            ),
+            getRegistrar()
+        );
     });
     impl->params.emplace_back(name, kind);
 }

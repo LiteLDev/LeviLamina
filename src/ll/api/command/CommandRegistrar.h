@@ -33,8 +33,9 @@ class CommandRegistrar {
     friend CommandHandle;
     struct Impl;
     std::unique_ptr<Impl> impl;
+    bool                  isClient;
 
-    CommandRegistrar();
+    CommandRegistrar(bool isClient);
 
     void disableModCommands(std::string_view modName);
 
@@ -43,7 +44,7 @@ class CommandRegistrar {
     [[nodiscard]] CommandRegistry& getRegistry() const;
 
 public:
-    LLNDAPI static CommandRegistrar& getInstance();
+    LLNDAPI static CommandRegistrar& getInstance(bool isClientSide);
 
     void clear();
 

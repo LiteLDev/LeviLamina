@@ -30,6 +30,7 @@ protected:
     LLNDAPI CommandRegistry::Overload::AllocFunction const& getFactory();
     LLNDAPI std::vector<CommandParameterData>& getParams();
     LLNDAPI CommandHandle&                     getHandle();
+    LLNDAPI CommandRegistrar&                  getRegistrar();
     LLNDAPI std::weak_ptr<mod::Mod>& getMod();
     LLNDAPI std::lock_guard<std::recursive_mutex> lock();
 

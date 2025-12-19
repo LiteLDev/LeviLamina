@@ -10,12 +10,13 @@
 #include "mc/server/commands/CommandOutput.h"
 
 namespace ll::command {
-void registerVersionCommand() {
+void registerVersionCommand(bool isClientSide) {
     auto config = ll::getLeviConfig().modules.command.versionCommand;
     if (!config.enabled) {
         return;
     }
-    auto& cmd = CommandRegistrar::getInstance()
+
+    auto& cmd = CommandRegistrar::getInstance(isClientSide)
                     .getOrCreateCommand("version", "Query server version information"_tr(), config.permission);
     cmd.overload().execute([&](CommandOrigin const& origin, CommandOutput& output) {
         output.success(

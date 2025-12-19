@@ -27,7 +27,7 @@ struct ParamTraitsBase {
     static constexpr std::string_view            enumNameOrPostfix() { return {}; }
     static constexpr std::string_view            subChain() { return {}; }
     static Bedrock::typeid_t<CommandRegistry>    typeId() { return Bedrock::type_id<CommandRegistry, T>(); }
-    static constexpr void                        transformData(CommandParameterData&) {}
+    static constexpr void                        transformData(CommandParameterData&, CommandRegistrar&) {}
 };
 template <class T>
 struct ParamTraits : ParamTraitsBase<T> {};
@@ -52,7 +52,7 @@ struct ParamTraits<T> : ParamTraitsBase<T> {
     static constexpr CommandParameterDataType dataType() { return CommandParameterDataType::Enum; }
     static constexpr CommandParameterOption   options() { return CommandParameterOption::EnumAutocompleteExpansion; }
     static constexpr std::string_view         enumNameOrPostfix() { return enum_name_v<T>; }
-    static void transformData(CommandParameterData&) { CommandRegistrar::getInstance().template tryRegisterEnum<T>(); }
+    static void transformData(CommandParameterData&, CommandRegistrar& registrar) { registrar.template tryRegisterEnum<T>(); }
 };
 template <concepts::Specializes<SoftEnum> T>
 struct ParamTraits<T> : ParamTraitsBase<T> {
@@ -61,8 +61,8 @@ struct ParamTraits<T> : ParamTraitsBase<T> {
     static inline CommandRegistry::ParseFunction parseFn() { return &CommandRegistry::parse<std::string>; }
     static constexpr std::string_view            enumNameOrPostfix() { return enum_name_v<T>; }
     static Bedrock::typeid_t<CommandRegistry>    typeId() { return Bedrock::type_id<CommandRegistry, std::string>(); }
-    static void                                  transformData(CommandParameterData&) {
-        CommandRegistrar::getInstance().template tryRegisterSoftEnum<T>();
+    static void                                  transformData(CommandParameterData&, CommandRegistrar& registrar) {
+        registrar.template tryRegisterSoftEnum<T>();
     }
 };
 struct EmptyParser {

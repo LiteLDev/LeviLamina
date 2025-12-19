@@ -46,16 +46,14 @@ struct LeviCommand3 {
     SoftEnum<mod::ModNames> mod;
 };
 
-void registerModManageCommand() {
+void registerModManageCommand(bool isClientSide) {
     auto config = ll::getLeviConfig().modules.command.modManageCommand;
     if (!config.enabled) {
         return;
     }
-    command::CommandRegistrar::getInstance().tryRegisterSoftEnum(
-        std::string{mod::modsEnumName},
-        mod::ModRegistrar::getInstance().getSortedModNames()
-    );
-    auto& cmd = CommandRegistrar::getInstance()
+    command::CommandRegistrar::getInstance(isClientSide)
+        .tryRegisterSoftEnum(std::string{mod::modsEnumName}, mod::ModRegistrar::getInstance().getSortedModNames());
+    auto& cmd = CommandRegistrar::getInstance(isClientSide)
                     .getOrCreateCommand(
                         string_utils::toLowerCase(selfModName),
                         "LeviLamina's main command"_tr(),

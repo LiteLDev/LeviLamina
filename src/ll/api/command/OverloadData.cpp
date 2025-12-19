@@ -36,6 +36,7 @@ OverloadData::~OverloadData()                         = default;
 CommandRegistry::Overload::AllocFunction const& OverloadData::getFactory() { return impl->factoryClosure.value(); }
 std::vector<CommandParameterData>&              OverloadData::getParams() { return impl->params; }
 CommandHandle&                                  OverloadData::getHandle() { return impl->handle; }
+CommandRegistrar&                               OverloadData::getRegistrar() { return impl->handle.getRegistrar(); }
 std::weak_ptr<mod::Mod>&                        OverloadData::getMod() { return impl->mod; }
 
 char const* OverloadData::storeStr(std::string_view str) {

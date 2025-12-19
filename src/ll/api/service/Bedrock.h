@@ -19,17 +19,17 @@ class ServerInstance;
 
 namespace ll::service::inline bedrock {
 
-LLNDAPI optional_ref<Minecraft> getMinecraft();
+LLNDAPI optional_ref<Minecraft> getMinecraft(bool isClientSide = false);
 
 LLNDAPI optional_ref<Level> getLevel();
 
-LLNDAPI optional_ref<ServerNetworkHandler> getServerNetworkHandler();
+LLNDAPI optional_ref<ServerNetworkHandler> getServerNetworkHandler(bool isClientSide = false);
 
 LLNDAPI optional_ref<RakNet::RakPeer> getRakPeer();
 
-LLNDAPI optional_ref<NetworkSystem> getNetworkSystem();
+LLNDAPI optional_ref<NetworkSystem> getNetworkSystem(bool isClientSide = false);
 
-LLNDAPI optional_ref<CommandRegistry> getCommandRegistry();
+LLNDAPI optional_ref<CommandRegistry> getCommandRegistry(bool isClientSide = false);
 
 LLNDAPI optional_ref<ServerInstance> getServerInstance();
 

@@ -22,21 +22,10 @@ class ServerNetworkSystem;
 class AppPlatform;
 
 namespace ll::service::inline bedrock {
-LLNDAPI optional_ref<RakNet::RakPeer> getRakPeer();
 
 LLNDAPI optional_ref<ClientInstance> getClientInstance();
 
-LLNDAPI optional_ref<Minecraft> getClientMinecraft();
-
 LLNDAPI optional_ref<Level> getMultiPlayerLevel();
-
-LLNDAPI optional_ref<ResourcePackRepository> getResourcePackRepository();
-
-LLNDAPI optional_ref<ServerNetworkSystem> getServerNetworkSystem();
-
-LLNDAPI optional_ref<ClientNetworkSystem> getClientNetworkSystem();
-
-LLNDAPI optional_ref<CommandRegistry> getClientCommandRegistry();
 
 LLNDAPI optional_ref<AppPlatform> getAppPlatform();
 } // namespace ll::service::inline bedrock

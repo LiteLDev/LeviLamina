@@ -231,19 +231,19 @@ LL_TYPE_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, ServerInstan
     origin();
 }
 
-optional_ref<Minecraft> getMinecraft() { return minecraft.load(); }
+optional_ref<Minecraft> getMinecraft(bool) { return minecraft.load(); }
 
 optional_ref<Level> getLevel() { return level.load(); }
 
-optional_ref<ServerNetworkHandler> getServerNetworkHandler() { return serverNetworkHandler.load(); }
+optional_ref<ServerNetworkHandler> getServerNetworkHandler(bool) { return serverNetworkHandler.load(); }
 
 optional_ref<RakNet::RakPeer> getRakPeer() { return rakPeer.load(); }
 
-optional_ref<NetworkSystem> getNetworkSystem() { return networkSystem.load(); }
+optional_ref<NetworkSystem> getNetworkSystem(bool) { return networkSystem.load(); }
 
-optional_ref<ResourcePackRepository> getResourcePackRepository() { return resourcePackRepository.load(); }
+optional_ref<ResourcePackRepository> getResourcePackRepository(bool) { return resourcePackRepository.load(); }
 
-optional_ref<CommandRegistry> getCommandRegistry() { return commandRegistry.load(); }
+optional_ref<CommandRegistry> getCommandRegistry(bool) { return commandRegistry.load(); }
 
 optional_ref<ServerInstance> getServerInstance() { return serverInstance.load(); }
 

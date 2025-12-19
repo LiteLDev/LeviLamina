@@ -12,12 +12,13 @@ struct Code {
     int exceptionCode{0};
 };
 
-void registerCrashCommand() {
+void registerCrashCommand(bool isClientSide) {
     auto config = ll::getLeviConfig().modules.command.crashCommand;
     if (!config.enabled) {
         return;
     }
-    auto& cmd = CommandRegistrar::getInstance().getOrCreateCommand("crash", "crash the server"_tr(), config.permission);
+    auto& cmd = CommandRegistrar::getInstance(isClientSide)
+                    .getOrCreateCommand("crash", "crash the server"_tr(), config.permission);
     cmd.overload<Code>()
         .optional("exceptionCode")
         .execute([&](CommandOrigin const&, CommandOutput&, Code const& params) {

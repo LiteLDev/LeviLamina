@@ -76,6 +76,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     setGamingStatus(GamingStatus::Running);
     return result;
 }
+
 LL_AUTO_TYPE_INSTANCE_HOOK(
     DisableAllModsHook,
     HookPriority::Low,
@@ -87,8 +88,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     mod::ModRegistrar::getInstance().disableAllMods();
 
-    command::CommandRegistrar::getInstance().clear();
-
+    command::CommandRegistrar::getInstance(false).clear();
     // service::bedrock::serverInstance = nullptr;
 
     origin();

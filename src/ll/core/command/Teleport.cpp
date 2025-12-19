@@ -29,12 +29,13 @@ struct TpTarget {
     bool                   convert{true};
 };
 
-void registerTpdimCommand() {
+
+void registerTpdimCommand(bool isClientSide) {
     auto config = ll::getLeviConfig().modules.command.tpdimCommand;
     if (!config.enabled) {
         return;
     }
-    auto& cmd = CommandRegistrar::getInstance()
+    auto& cmd = CommandRegistrar::getInstance(isClientSide)
                     .getOrCreateCommand("teleportdim", "commands.tp.description", config.permission)
                     .alias("tpdim");
 

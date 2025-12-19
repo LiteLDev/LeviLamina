@@ -27,23 +27,24 @@ struct CommandRegistrar::Impl {
     std::recursive_mutex         mutex;
 };
 
-CommandRegistrar::CommandRegistrar() : impl(std::make_unique<Impl>()) {
+CommandRegistrar::CommandRegistrar(bool isClientSide) : impl(std::make_unique<Impl>()), isClient(isClientSide) {
     auto& reg = mod::ModManagerRegistry::getInstance();
     reg.executeOnModDisable([this](std::string_view name) {
         if (getGamingStatus() == GamingStatus::Running) {
             disableModCommands(name);
         }
     });
-    reg.executeOnModLoad([this](std::string_view name) {
-        if (ll::service::getCommandRegistry()) {
+    reg.executeOnModLoad([this, isClientSide](std::string_view name) {
+        if (ll::service::getCommandRegistry(isClientSide)) {
             addSoftEnumValues(std::string{mod::modsEnumName}, {std::string{name}});
         }
     });
 }
 
-CommandRegistrar& CommandRegistrar::getInstance() {
-    static CommandRegistrar instance;
-    return instance;
+CommandRegistrar& CommandRegistrar::getInstance(bool isClientSide) {
+    static CommandRegistrar serverInstance(false);
+    static CommandRegistrar clientInstance(true);
+    return isClientSide ? clientInstance : serverInstance;
 }
 
 void CommandRegistrar::clear() {
@@ -52,7 +53,7 @@ void CommandRegistrar::clear() {
     impl->textWithRef.clear();
 }
 
-CommandRegistry& CommandRegistrar::getRegistry() const { return *ll::service::getCommandRegistry(); }
+CommandRegistry& CommandRegistrar::getRegistry() const { return *ll::service::getCommandRegistry(isClient); }
 
 CommandHandle& CommandRegistrar::getOrCreateCommand(
     std::string const&     name,

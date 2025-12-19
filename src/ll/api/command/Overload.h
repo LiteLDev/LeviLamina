@@ -33,18 +33,21 @@ class Overload : private OverloadData {
             flagOffset = offset + OptionalOffsetGetter<RemoveOptionalType>::value;
         }
         using Traits = ParamTraits<RemoveOptionalType>;
-        Traits::transformData(addParamImpl(
-            Traits::typeId(),
-            Traits::parseFn(),
-            name,
-            Traits::dataType(),
-            Traits::enumNameOrPostfix(),
-            Traits::subChain(),
-            offset,
-            flagOffset,
-            Opt,
-            Traits::options()
-        ));
+        Traits::transformData(
+            addParamImpl(
+                Traits::typeId(),
+                Traits::parseFn(),
+                name,
+                Traits::dataType(),
+                Traits::enumNameOrPostfix(),
+                Traits::subChain(),
+                offset,
+                flagOffset,
+                Opt,
+                Traits::options()
+            ),
+            getRegistrar()
+        );
     }
     explicit Overload(CommandHandle& handle, std::weak_ptr<mod::Mod> mod) : OverloadData(handle, std::move(mod)) {}
 

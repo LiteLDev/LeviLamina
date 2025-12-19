@@ -55,35 +55,35 @@ optional_ref<ClientInstance> getClientInstance() {
     return nullptr;
 }
 
-optional_ref<Minecraft> getMinecraft() {
-    if (auto ins = getServerInstance()) {
-        return ins->mMinecraft.get();
-    }
-    return nullptr;
-}
-optional_ref<Minecraft> getClientMinecraft() {
-    if (auto ins = getClientInstance()) {
-        return ins->mUnk599652.as<std::unique_ptr<Minecraft>>().get();
+optional_ref<Minecraft> getMinecraft(bool isClientSide) {
+    if (isClientSide) {
+        if (auto ins = getClientInstance()) {
+            return ins->mUnk599652.as<std::unique_ptr<Minecraft>>().get();
+        }
+    } else {
+        if (auto ins = getServerInstance()) {
+            return ins->mMinecraft.get();
+        }
     }
     return nullptr;
 }
 
 optional_ref<Level> getLevel() {
-    if (auto minecraft = getMinecraft()) {
+    if (auto minecraft = getMinecraft(false)) {
         return minecraft->getLevel();
     }
     return nullptr;
 }
 
 optional_ref<Level> getMultiPlayerLevel() {
-    if (auto minecraft = getClientMinecraft()) {
+    if (auto minecraft = getMinecraft(true)) {
         return minecraft->getLevel();
     }
     return nullptr;
 }
 
-optional_ref<ServerNetworkHandler> getServerNetworkHandler() {
-    if (auto minecraft = getMinecraft()) {
+optional_ref<ServerNetworkHandler> getServerNetworkHandler(bool isClientSide) {
+    if (auto minecraft = getMinecraft(isClientSide)) {
         return minecraft->getServerNetworkHandler().get();
     }
     return nullptr;
@@ -91,43 +91,30 @@ optional_ref<ServerNetworkHandler> getServerNetworkHandler() {
 
 optional_ref<RakNet::RakPeer> getRakPeer() { return nullptr; }
 
-optional_ref<ResourcePackRepository> getResourcePackRepository() { return nullptr; }
-optional_ref<ResourcePackRepository> getClientResourcePackRepository() {
-    if (auto ins = getClientInstance()) {
-        return reinterpret_cast<ResourcePackRepository&>(ins->getResourcePackRepository());
-    }
-    return nullptr;
-}
-
-optional_ref<NetworkSystem> getNetworkSystem() {
-    if (auto mc = getMinecraft()) {
-        return mc->getServerNetworkSystem();
-    }
-    return nullptr;
-}
-optional_ref<ServerNetworkSystem> getServerNetworkSystem() {
-    if (auto mc = getMinecraft()) {
-        return mc->getServerNetworkSystem();
-    }
-    return nullptr;
-}
-optional_ref<ClientNetworkSystem> getClientNetworkSystem() {
-    if (auto ins = getClientInstance()) {
-        return ins->getClientNetworkSystem();
-    }
-    return nullptr;
-}
-
-optional_ref<CommandRegistry> getCommandRegistry() {
-    if (auto mc = getMinecraft()) {
-        if (mc->mCommands) {
-            return mc->mCommands->mRegistry.get();
+optional_ref<ResourcePackRepository> geResourcePackRepository(bool isClientSide) {
+    if (isClientSide) {
+        if (auto ins = getClientInstance()) {
+            return reinterpret_cast<ResourcePackRepository&>(ins->getResourcePackRepository());
         }
     }
     return nullptr;
 }
-optional_ref<CommandRegistry> getClientCommandRegistry() {
-    if (auto mc = getClientMinecraft()) {
+
+optional_ref<NetworkSystem> getNetworkSystem(bool isClientSide) {
+    if (isClientSide) {
+        if (auto ins = getClientInstance()) {
+            return ins->getClientNetworkSystem();
+        }
+    } else {
+        if (auto mc = getMinecraft(isClientSide)) {
+            return mc->getServerNetworkSystem();
+        }
+    }
+    return nullptr;
+}
+
+optional_ref<CommandRegistry> getCommandRegistry(bool isClientSide) {
+    if (auto mc = getMinecraft(isClientSide)) {
         if (mc->mCommands) {
             return mc->mCommands->mRegistry.get();
         }
