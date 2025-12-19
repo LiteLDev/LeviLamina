@@ -16,7 +16,7 @@ void registerVersionCommand() {
         return;
     }
     auto& cmd = CommandRegistrar::getInstance()
-                    .getOrCreateCommand("version", "Query serverversion information"_tr(), config.permission);
+                    .getOrCreateCommand("version", "Query server version information"_tr(), config.permission);
     cmd.overload().execute([&](CommandOrigin const& origin, CommandOutput& output) {
         output.success(
             "Game version {0} with §bLeviLamina-{1}§r."_trl(
