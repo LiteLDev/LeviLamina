@@ -13,6 +13,14 @@ public:
     // NOLINTEND
 
 public:
+    LLNDAPI bool isAssigned() const;
+    LLNDAPI bool isAltKey() const;
+    LLNDAPI bool isRemappable() const;
+    LLNDAPI bool isSharedKey() const;
+
+    Keymapping(std::string const& action, std::vector<int> const& defaultKeys) : mAction(action), mKeys(defaultKeys) {}
+
+public:
     // prevent constructor by default
     Keymapping& operator=(Keymapping const&);
     Keymapping();
