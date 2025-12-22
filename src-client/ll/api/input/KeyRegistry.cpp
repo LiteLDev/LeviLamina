@@ -13,12 +13,13 @@
 #include "mc/deps/input/MouseButtonBinding.h"
 #include "mc/deps/input/MouseInputMapping.h"
 #include <memory>
+#include <string_view>
 
 namespace ll::input {
 
 struct KeyRegistry::Impl {
-    SmallDenseNodeMap<std::string, KeyHandle>    keys;
-    SmallDenseMap<int, std::string>              keyCodeToName;
+    SmallDenseNodeMap<std::string, KeyHandle> keys;
+    SmallDenseMap<int, std::string>           keyCodeToName;
 
     struct PendingKeyMapping {
         std::string      name;
@@ -167,6 +168,7 @@ void KeyRegistry::registerAllKeysToInputHandler(MinecraftInputHandler& inputHand
 
 void KeyRegistry::registerKeyboardInputs(
     VanillaClientInputMappingFactory& inputs,
+    std::string_view                  mappingName,
     KeyboardInputMapping&             keyboardMapping,
     MouseInputMapping&                mouseMapping,
     FocusImpact                       focusImpact
@@ -175,6 +177,8 @@ void KeyRegistry::registerKeyboardInputs(
 
     for (auto& [name, handle] : impl->keys) {
         if (!handle.isValid()) continue;
+
+        if (!handle.containsInputMappingStack(mappingName)) continue;
 
         std::string buttonName = "button." + name;
         std::string keyName    = "key." + name;

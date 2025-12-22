@@ -6,12 +6,13 @@
 namespace ll::input {
 
 struct KeyHandle::Impl {
-    KeyRegistry&            registrar;
-    std::string             name;
-    std::vector<int>        keyCodes;
-    bool                    allowRemap;
-    std::weak_ptr<mod::Mod> mod;
-    bool                    valid;
+    KeyRegistry&             registrar;
+    std::string              name;
+    std::vector<int>         keyCodes;
+    bool                     allowRemap;
+    std::weak_ptr<mod::Mod>  mod;
+    std::vector<std::string> inputMappingStack{"screen", "gamePlayNormal"};
+    bool                     valid;
 
     std::vector<std::pair<KeyHandle::ButtonDownHandler, bool>> buttonDownHandlers;
     std::vector<std::pair<KeyHandle::ButtonUpHandler, bool>>   buttonUpHandlers;
@@ -109,6 +110,13 @@ void KeyHandle::triggerButtonUpHandlers(::FocusImpact focusImpact, ::IClientInst
             } catch (...) {}
         }
     }
+}
+
+void KeyHandle::setInputMappingStack(std::vector<std::string> stacks) { impl->inputMappingStack = std::move(stacks); }
+
+bool KeyHandle::containsInputMappingStack(std::string_view stack) const {
+    return std::find(impl->inputMappingStack.begin(), impl->inputMappingStack.end(), stack)
+        != impl->inputMappingStack.end();
 }
 
 } // namespace ll::input

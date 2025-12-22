@@ -34,6 +34,7 @@ class KeyRegistry {
 
     void registerKeyboardInputs(
         VanillaClientInputMappingFactory& inputs,
+        std::string_view                  mappingName,
         KeyboardInputMapping&             keyboardMapping,
         MouseInputMapping&                mouseMapping,
         FocusImpact                       focusImpact

@@ -5,17 +5,17 @@
 #include "mc/client/input/MinecraftInputHandler.h"
 #include "mc/client/input/VanillaClientInputMappingFactory.h"
 #include "mc/deps/input/InputHandler.h"
+#include "mc/deps/input/InputMapping.h"
 
 namespace ll::input {
+
+
 struct KeyRegistry::Hooks {
     struct KeyHandlerRegisterHook0;
     struct KeyHandlerRegisterHook1;
     struct KeyHandlerRegisterHook2;
 
-    using HookReg = memory::HookRegistrar<
-      KeyHandlerRegisterHook0,
-      KeyHandlerRegisterHook1,
-      KeyHandlerRegisterHook2>;
+    using HookReg = memory::HookRegistrar<KeyHandlerRegisterHook0, KeyHandlerRegisterHook1, KeyHandlerRegisterHook2>;
 
     static HookReg hookRegister;
 };
@@ -47,17 +47,22 @@ LL_TYPE_INSTANCE_HOOK(
     KeyRegistry::Hooks::KeyHandlerRegisterHook2,
     ll::memory::HookPriority::High,
     VanillaClientInputMappingFactory,
-    &VanillaClientInputMappingFactory::_createBaseNormalGamePlayKeyboardAndMouseMapping,
+    &VanillaClientInputMappingFactory::$_updateKeyboardAndMouseControls,
     void,
-    ::KeyboardInputMapping& normalGamePlayKeyboardMapping,
-    ::MouseInputMapping&    normalGamePlayMouseMapping,
-    bool                    isEmoteMapping
+    IOptions& options
 ) {
-
-    ll::input::KeyRegistry::getInstance()
-        .registerKeyboardInputs(*this, normalGamePlayKeyboardMapping, normalGamePlayMouseMapping, FocusImpact::Neutral);
-    origin(normalGamePlayKeyboardMapping, normalGamePlayMouseMapping, isEmoteMapping);
+    origin(options);
+    for (auto& mapping : *mActiveInputMappings) {
+        ll::input::KeyRegistry::getInstance().registerKeyboardInputs(
+            *this,
+            mapping.first,
+            mapping.second.keyboardMapping,
+            mapping.second.mouseMapping,
+            FocusImpact::Neutral
+        );
+    }
 }
+
 
 KeyRegistry::Hooks::HookReg KeyRegistry::Hooks::hookRegister;
 
