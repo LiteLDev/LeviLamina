@@ -34,6 +34,8 @@
 #include "mc/world/level/block/components/BlockComponentStorage.h"
 #include "mc/world/level/block/components/NetEaseBlockComponentStorage.h"
 #include "mc/world/phys/AABB.h"
+#include <optional>
+#include <type_traits>
 
 // auto generated forward declare list
 // clang-format off
@@ -85,22 +87,21 @@ namespace br::spawn { struct EntityType; }
 class BlockType {
 public:
     template <typename T>
+        requires(std::is_integral_v<T> || std::is_enum_v<T>)
     std::optional<T> getState(uint64 id, ushort data) const {
         auto it = mStates->find(id);
 
         if (it == mStates->end()) {
-            {
-                for (const auto& collection : *mAlteredStateCollections) {
-                    if (collection && collection->mBlockState->get().mID == id) {
-                        auto result = collection->getState(*this, data);
-                        if (result) {
-                            return result;
-                        }
+            for (auto const& collection : *mAlteredStateCollections) {
+                if (collection && collection->mBlockState->get().mID == id) {
+                    auto result = collection->getState(*this, data);
+                    if (result) {
+                        return std::optional<T>{static_cast<T>(*result)};
                     }
                 }
-
-                return std::nullopt;
             }
+
+            return std::nullopt;
         }
 
         return it->second.get<T>(data);
