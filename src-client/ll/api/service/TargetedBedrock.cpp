@@ -122,7 +122,4 @@ optional_ref<CommandRegistry> getCommandRegistry(bool isClientSide) {
     return nullptr;
 }
 
-using HookReg = memory::HookRegistrar<>;
-
-static HookReg hookRegister;
 } // namespace ll::service::inline bedrock

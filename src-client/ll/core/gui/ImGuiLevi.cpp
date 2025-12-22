@@ -55,8 +55,8 @@ void          ImGuiLevi::initialize() {
 
     io.BackendFlags |= ImGuiBackendFlags_HasMouseCursors | ImGuiBackendFlags_HasSetMousePos;
 
-    // io.GetClipboardTextFn = ImGuiHelpers::getClipboardTextFromPlatform;
-    // io.SetClipboardTextFn = ImGuiHelpers::setClipboardTextFromPlatform;
+    // io.GetClipboardTextFn = getClipboardTextFromPlatform;
+    // io.SetClipboardTextFn = setClipboardTextFromPlatform;
 
     io.KeyMap[ImGuiKey_Tab]        = 9;
     io.KeyMap[ImGuiKey_LeftArrow]  = 37;

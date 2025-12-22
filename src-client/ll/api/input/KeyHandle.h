@@ -16,52 +16,54 @@ class Mod;
 
 namespace ll::input {
 
-class KeyRegistrar;
+class KeyRegistry;
 
 class KeyHandle {
-    friend KeyRegistrar;
+    friend KeyRegistry;
 
     struct Impl;
     std::unique_ptr<Impl> impl;
 
-public:
     using ButtonDownHandler = std::function<void(::FocusImpact, ::IClientInstance&)>;
     using ButtonUpHandler   = std::function<void(::FocusImpact, ::IClientInstance&)>;
 
     KeyHandle(
-        KeyRegistrar&           registrar,
-        std::string const&      name,
+        KeyRegistry&            registrar,
+        std::string_view        name,
         std::vector<int> const& keyCodes,
         bool                    allowRemap,
         std::weak_ptr<mod::Mod> mod
     );
 
+    void registerButtonDownHandler(ButtonDownHandler handler, bool suspendable = false);
+
+    void registerButtonUpHandler(ButtonUpHandler handler, bool suspendable = false);
+
+    void disableModOverloads(std::string_view modName);
+
+    void triggerButtonDownHandlers(::FocusImpact focusImpact, ::IClientInstance& client);
+
+    void triggerButtonUpHandlers(::FocusImpact focusImpact, ::IClientInstance& client);
+
 public:
     ~KeyHandle();
 
-    LLAPI std::string const& getName() const;
+    KeyHandle(KeyHandle&&) noexcept            ;
+    KeyHandle& operator=(KeyHandle&&) noexcept ;
 
-    LLAPI std::string const& getModName() const;
+    LLNDAPI std::string const& getName() const;
 
-    LLAPI std::string getFullName() const;
+    LLNDAPI std::shared_ptr<mod::Mod> getMod() const;
 
-    LLAPI std::vector<int> getKeyCodes() const;
+    LLNDAPI std::string getFullName() const;
 
-    LLAPI bool isAllowRemap() const;
+    LLNDAPI std::vector<int> const& getKeyCodes() const;
 
-    LLAPI void setAllowRemap(bool allowRemap);
+    LLNDAPI bool isAllowRemap() const;
 
-    LLAPI bool isValid() const;
+    LLNDAPI void setAllowRemap(bool allowRemap);
 
-    LLAPI void registerButtonDownHandler(ButtonDownHandler handler, bool suspendable = false);
-
-    LLAPI void registerButtonUpHandler(ButtonUpHandler handler, bool suspendable = false);
-
-    LLAPI void disableModOverloads(std::string_view modName);
-
-    LLAPI void triggerButtonDownHandlers(::FocusImpact focusImpact, ::IClientInstance& client);
-
-    LLAPI void triggerButtonUpHandlers(::FocusImpact focusImpact, ::IClientInstance& client);
+    LLNDAPI bool isValid() const;
 };
 
 } // namespace ll::input

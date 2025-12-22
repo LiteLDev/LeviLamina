@@ -1,31 +1,24 @@
 #include "ll/core/gui/ImGuiHelpers.h"
 #include "ll/api/service/Bedrock.h"
+#include "ll/api/utils/StringUtils.h"
 #include "mc/deps/application/AppPlatform.h"
 
-namespace ImGuiHelpers {
-std::string clipBoardStr;
+namespace ll::gui {
 
-char const* getClipboardTextFromPlatform(void* userData) {
+char const* getClipboardTextFromPlatform(void* /*userData*/) {
     AppPlatform* platform = ll::service::getAppPlatform();
     std::wstring wstr     = platform->getClipboardText();
 
-    static std::string clipBoardStr;
+    static thread_local std::string clipBoardStr;
     clipBoardStr.clear();
 
     if (!wstr.empty()) {
-        std::mbstate_t state{};
-        const wchar_t* src = wstr.c_str();
-        size_t         len = std::wcsrtombs(nullptr, &src, 0, &state);
-        if (len != static_cast<size_t>(-1)) {
-            clipBoardStr.resize(len);
-            src = wstr.c_str();
-            std::wcsrtombs(clipBoardStr.data(), &src, len, &state);
-        }
+        clipBoardStr = ll::string_utils::wstr2str(wstr);
     }
     return clipBoardStr.c_str();
 }
 
-void setClipboardTextFromPlatform(void* user_data, char const* text) {
+void setClipboardTextFromPlatform(void* /*user_data*/, char const* text) {
     AppPlatform* platform = ll::service::getAppPlatform();
 
     std::string str(text ? text : "");
@@ -33,4 +26,4 @@ void setClipboardTextFromPlatform(void* user_data, char const* text) {
     platform->setClipboard(str);
 }
 
-} // namespace ImGuiHelpers
+} // namespace ll::gui

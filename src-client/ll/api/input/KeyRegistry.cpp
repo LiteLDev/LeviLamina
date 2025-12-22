@@ -1,5 +1,4 @@
-#include "ll/api/input/KeyRegistrar.h"
-#include "ll/api/input/KeyHandle.h"
+#include "ll/api/input/KeyRegistry.h"
 
 #include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/service/Bedrock.h"
@@ -17,10 +16,9 @@
 
 namespace ll::input {
 
-struct KeyRegistrar::Impl {
-    std::unordered_map<std::string, std::unique_ptr<KeyHandle>> keys;
-    std::unordered_map<int, std::string>                        keyCodeToName;
-    std::unordered_map<std::string, std::vector<int>>           nameToKeyCodes;
+struct KeyRegistry::Impl {
+    SmallDenseNodeMap<std::string, KeyHandle>    keys;
+    SmallDenseMap<int, std::string>              keyCodeToName;
 
     struct PendingKeyMapping {
         std::string      name;
@@ -33,61 +31,58 @@ struct KeyRegistrar::Impl {
     std::recursive_mutex mutex;
 };
 
-KeyRegistrar::KeyRegistrar() : impl(std::make_unique<Impl>()) {
+KeyRegistry::KeyRegistry() : impl(std::make_unique<Impl>()) {
     auto& reg = mod::ModManagerRegistry::getInstance();
     reg.executeOnModDisable([this](std::string_view name) { disableModKeys(name); });
 }
 
-KeyRegistrar& KeyRegistrar::getInstance() {
-    static KeyRegistrar instance;
+KeyRegistry& KeyRegistry::getInstance() {
+    static KeyRegistry instance;
     return instance;
 }
 
-void KeyRegistrar::clear() {
+void KeyRegistry::clear() {
     std::lock_guard lock{impl->mutex};
     impl->keys.clear();
     impl->keyCodeToName.clear();
-    impl->nameToKeyCodes.clear();
 }
 
-KeyHandle& KeyRegistrar::getOrCreateKey(
-    std::string const&      name,
-    std::vector<int>        defaultKeyCodes,
+KeyHandle& KeyRegistry::getOrCreateKey(
+    std::string_view        name,
+    std::vector<int> const& defaultKeyCodes,
     bool                    allowRemap,
     std::weak_ptr<mod::Mod> mod
 ) {
     std::lock_guard lock{impl->mutex};
 
-    std::string fullName = name;
+    std::string fullName;
     if (auto modPtr = mod.lock()) {
-        fullName = modPtr->getName() + "." + name;
+        fullName  = modPtr->getName();
+        fullName += '.';
     }
+    fullName += name;
 
     if (impl->keys.contains(fullName)) {
-        return *impl->keys.at(fullName);
+        return impl->keys.at(fullName);
     }
 
-    auto handle = std::make_unique<KeyHandle>(*this, name, defaultKeyCodes, allowRemap, mod);
+    auto handle = KeyHandle{*this, name, defaultKeyCodes, allowRemap, mod};
 
-    auto& ref = *handle;
-
-    impl->keys[fullName] = std::move(handle);
+    auto& ref = impl->keys.insert_or_assign(fullName, std::move(handle)).first->second;
 
     for (int keyCode : defaultKeyCodes) {
         impl->keyCodeToName[keyCode] = fullName;
     }
-
-    impl->nameToKeyCodes[fullName] = defaultKeyCodes;
 
     impl->pendingKeyMappings.push_back({fullName, defaultKeyCodes, allowRemap});
 
     return ref;
 }
 
-bool KeyRegistrar::hasKey(std::string const& name) {
+bool KeyRegistry::hasKey(std::string_view name) {
     std::lock_guard lock{impl->mutex};
 
-    if (impl->keys.contains(name)) {
+    if (impl->keys.find(name) != impl->keys.end()) {
         return true;
     }
 
@@ -104,7 +99,7 @@ bool KeyRegistrar::hasKey(std::string const& name) {
     return false;
 }
 
-std::vector<std::string> KeyRegistrar::getRegisteredKeys() const {
+std::vector<std::string> KeyRegistry::getRegisteredKeys() const {
     std::lock_guard          lock{impl->mutex};
     std::vector<std::string> keys;
     keys.reserve(impl->keys.size());
@@ -116,40 +111,40 @@ std::vector<std::string> KeyRegistrar::getRegisteredKeys() const {
     return keys;
 }
 
-void KeyRegistrar::triggerKeyDownCallback(int keyCode, ::FocusImpact focusImpact, ::IClientInstance& client) {
+void KeyRegistry::triggerKeyDownCallback(int keyCode, ::FocusImpact focusImpact, ::IClientInstance& client) {
     std::lock_guard lock{impl->mutex};
     auto            it = impl->keyCodeToName.find(keyCode);
     if (it != impl->keyCodeToName.end()) {
         auto keyIt = impl->keys.find(it->second);
-        if (keyIt != impl->keys.end() && keyIt->second->isValid()) {
-            keyIt->second->triggerButtonDownHandlers(focusImpact, client);
+        if (keyIt != impl->keys.end() && keyIt->second.isValid()) {
+            keyIt->second.triggerButtonDownHandlers(focusImpact, client);
         }
     }
 }
 
-void KeyRegistrar::triggerKeyUpCallback(int keyCode, ::FocusImpact focusImpact, ::IClientInstance& client) {
+void KeyRegistry::triggerKeyUpCallback(int keyCode, ::FocusImpact focusImpact, ::IClientInstance& client) {
     std::lock_guard lock{impl->mutex};
     auto            it = impl->keyCodeToName.find(keyCode);
     if (it != impl->keyCodeToName.end()) {
         auto keyIt = impl->keys.find(it->second);
-        if (keyIt != impl->keys.end() && keyIt->second->isValid()) {
-            keyIt->second->triggerButtonUpHandlers(focusImpact, client);
+        if (keyIt != impl->keys.end() && keyIt->second.isValid()) {
+            keyIt->second.triggerButtonUpHandlers(focusImpact, client);
         }
     }
 }
 
-void KeyRegistrar::disableModKeys(std::string_view modName) {
+void KeyRegistry::disableModKeys(std::string_view modName) {
     std::lock_guard lock{impl->mutex};
     for (auto& [name, handle] : impl->keys) {
-        handle->disableModOverloads(modName);
+        handle.disableModOverloads(modName);
     }
 }
 
-void KeyRegistrar::registerAllKeysToInputHandler(MinecraftInputHandler& inputHandler) {
+void KeyRegistry::registerAllKeysToInputHandler(MinecraftInputHandler& inputHandler) {
     std::lock_guard lock{impl->mutex};
 
     for (auto& [name, handle] : impl->keys) {
-        auto keyCodes = handle->getKeyCodes();
+        auto keyCodes = handle.getKeyCodes();
         for (int keyCode : keyCodes) {
             inputHandler.mInputHandler->registerButtonDownHandler(
                 "button." + name,
@@ -170,7 +165,7 @@ void KeyRegistrar::registerAllKeysToInputHandler(MinecraftInputHandler& inputHan
     }
 }
 
-void KeyRegistrar::registerKeyboardInputs(
+void KeyRegistry::registerKeyboardInputs(
     VanillaClientInputMappingFactory& inputs,
     KeyboardInputMapping&             keyboardMapping,
     MouseInputMapping&                mouseMapping,
@@ -179,7 +174,7 @@ void KeyRegistrar::registerKeyboardInputs(
     std::lock_guard lock{impl->mutex};
 
     for (auto& [name, handle] : impl->keys) {
-        if (!handle->isValid()) continue;
+        if (!handle.isValid()) continue;
 
         std::string buttonName = "button." + name;
         std::string keyName    = "key." + name;
@@ -196,7 +191,7 @@ void KeyRegistrar::registerKeyboardInputs(
     }
 }
 
-void KeyRegistrar::processPendingKeyMappings(std::vector<::Keymapping>& newDefaultMapping) {
+void KeyRegistry::processPendingKeyMappings(std::vector<::Keymapping>& newDefaultMapping) {
     std::lock_guard lock{impl->mutex};
     for (const auto& pending : impl->pendingKeyMappings) {
         Keymapping map("key." + pending.name, pending.keyCodes);

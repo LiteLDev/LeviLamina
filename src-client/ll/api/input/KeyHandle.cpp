@@ -1,14 +1,13 @@
 #include "ll/api/input/KeyHandle.h"
-#include "ll/api/input/KeyRegistrar.h"
+#include "ll/api/input/KeyRegistry.h"
 
 #include "ll/api/mod/ModManagerRegistry.h"
 
 namespace ll::input {
 
 struct KeyHandle::Impl {
-    KeyRegistrar&           registrar;
+    KeyRegistry&            registrar;
     std::string             name;
-    std::string             modName;
     std::vector<int>        keyCodes;
     bool                    allowRemap;
     std::weak_ptr<mod::Mod> mod;
@@ -18,44 +17,47 @@ struct KeyHandle::Impl {
     std::vector<std::pair<KeyHandle::ButtonUpHandler, bool>>   buttonUpHandlers;
 
     Impl(
-        KeyRegistrar&           registrar,
-        std::string const&      name,
+        KeyRegistry&            registrar,
+        std::string_view        name,
         std::vector<int>        keyCodes,
         bool                    allowRemap,
         std::weak_ptr<mod::Mod> mod
     )
     : registrar(registrar),
       name(name),
-      modName(mod.lock() ? mod.lock()->getName() : ""),
       keyCodes(keyCodes),
       allowRemap(allowRemap),
-      mod(mod),
+      mod(std::move(mod)),
       valid(true) {}
 };
 
 KeyHandle::KeyHandle(
-    KeyRegistrar&           registrar,
-    std::string const&      name,
+    KeyRegistry&            registrar,
+    std::string_view        name,
     std::vector<int> const& keyCodes,
     bool                    allowRemap,
     std::weak_ptr<mod::Mod> mod
 )
-: impl(std::make_unique<Impl>(registrar, name, keyCodes, allowRemap, mod)) {}
+: impl(std::make_unique<Impl>(registrar, name, keyCodes, allowRemap, std::move(mod))) {}
 
 KeyHandle::~KeyHandle() = default;
 
+KeyHandle::KeyHandle(KeyHandle&&) noexcept            = default;
+KeyHandle& KeyHandle::operator=(KeyHandle&&) noexcept = default;
+
 std::string const& KeyHandle::getName() const { return impl->name; }
 
-std::string const& KeyHandle::getModName() const { return impl->modName; }
+std::shared_ptr<mod::Mod> KeyHandle::getMod() const { return impl->mod.lock(); }
 
 std::string KeyHandle::getFullName() const {
-    if (impl->modName.empty()) {
-        return impl->name;
+    if (auto mod = getMod()) {
+        return mod->getName() + "." + getName();
+    } else {
+        return getName();
     }
-    return impl->modName + "." + impl->name;
 }
 
-std::vector<int> KeyHandle::getKeyCodes() const { return impl->keyCodes; }
+std::vector<int> const& KeyHandle::getKeyCodes() const { return impl->keyCodes; }
 
 bool KeyHandle::isAllowRemap() const { return impl->allowRemap; }
 
@@ -76,7 +78,7 @@ void KeyHandle::registerButtonUpHandler(ButtonUpHandler handler, bool suspendabl
 }
 
 void KeyHandle::disableModOverloads(std::string_view modName) {
-    if (auto mod = impl->mod.lock()) {
+    if (auto mod = getMod()) {
         if (mod->getName() == modName) {
             impl->valid = false;
             impl->buttonDownHandlers.clear();
