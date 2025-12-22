@@ -41,13 +41,13 @@ class KeyRegistry {
 
     void processPendingKeyMappings(std::vector<::Keymapping>& newDefaultMapping);
 
+    void clear();
+
 public:
     using ButtonDownHandler = KeyHandle::ButtonDownHandler;
     using ButtonUpHandler   = KeyHandle::ButtonUpHandler;
 
     LLNDAPI static KeyRegistry& getInstance();
-
-    void clear();
 
     LLAPI KeyHandle& getOrCreateKey(
         std::string_view        name,
