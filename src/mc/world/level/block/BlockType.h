@@ -34,8 +34,6 @@
 #include "mc/world/level/block/components/BlockComponentStorage.h"
 #include "mc/world/level/block/components/NetEaseBlockComponentStorage.h"
 #include "mc/world/phys/AABB.h"
-#include <optional>
-#include <type_traits>
 
 // auto generated forward declare list
 // clang-format off

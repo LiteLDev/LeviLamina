@@ -3,6 +3,9 @@
 
 #include "ll/api/mod/ModManagerRegistry.h"
 
+#include "ll/api/utils/ErrorUtils.h"
+#include "ll/core/LeviLamina.h"
+
 namespace ll::input {
 
 struct KeyHandle::Impl {
@@ -95,7 +98,12 @@ void KeyHandle::triggerButtonDownHandlers(::FocusImpact focusImpact, ::IClientIn
         if (handler) {
             try {
                 handler(focusImpact, client);
-            } catch (...) {}
+            } catch (...) {
+                try {
+                    getLogger().error("Error in KeyHandle<{}>:", getFullName());
+                } catch (...) {}
+                error_utils::printCurrentException(getLogger());
+            }
         }
     }
 }
@@ -107,7 +115,12 @@ void KeyHandle::triggerButtonUpHandlers(::FocusImpact focusImpact, ::IClientInst
         if (handler) {
             try {
                 handler(focusImpact, client);
-            } catch (...) {}
+            } catch (...) {
+                try {
+                    getLogger().error("Error in KeyHandle<{}>:", getFullName());
+                } catch (...) {}
+                error_utils::printCurrentException(getLogger());
+            }
         }
     }
 }
