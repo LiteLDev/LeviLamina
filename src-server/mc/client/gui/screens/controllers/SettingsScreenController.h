@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SettingsScreenController {
+class SettingsScreenController {
 public:
     // SettingsScreenController inner types declare
     // clang-format off
