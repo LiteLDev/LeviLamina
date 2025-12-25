@@ -3,6 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
+#include <algorithm>
+#include <concepts>
+#include <mc/math/vector/base/VectorBase.h>
+#include <mc/math/vector/impl/floatN.h>
 
 #include "ll/api/utils/StringUtils.h"
 
@@ -43,6 +47,7 @@ public:
         switch (hex.length()) {
         case 4:
             a = static_cast<float>(digitFromChar(hex[3]) * 17) / 255.0f;
+            [[fallthrough]];
         case 3:
             r = static_cast<float>(digitFromChar(hex[0]) * 17) / 255.0f;
             g = static_cast<float>(digitFromChar(hex[1]) * 17) / 255.0f;
@@ -50,6 +55,7 @@ public:
             break;
         case 8:
             a = static_cast<float>(16 * digitFromChar(hex[6]) + digitFromChar(hex[7])) / 255.0f;
+            [[fallthrough]];
         case 6:
             r = static_cast<float>(16 * digitFromChar(hex[0]) + digitFromChar(hex[1])) / 255.0f;
             g = static_cast<float>(16 * digitFromChar(hex[2]) + digitFromChar(hex[3])) / 255.0f;
@@ -256,6 +262,15 @@ public:
     }
 
     [[nodiscard]] inline double distanceTo(Color const& dst) const noexcept { return deltaE00(dst); }
+
+    [[nodiscard]] uint toARGB() {
+        const auto toByte = [](float component) -> std::uint8_t {
+            return static_cast<std::uint8_t>(std::round(255.0f * std::clamp(component, 0.0f, 1.0f)));
+        };
+
+        return (static_cast<uint>(toByte(a)) << 24) | (static_cast<uint>(toByte(r)) << 16)
+             | (static_cast<uint>(toByte(g)) << 8) | static_cast<uint>(toByte(b));
+    }
 
 public:
     // member functions
