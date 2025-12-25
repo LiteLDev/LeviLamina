@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ClientNetworkHandler {
+class ClientNetworkHandler {
 public:
     // ClientNetworkHandler inner types declare
     // clang-format off
