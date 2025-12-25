@@ -43,6 +43,10 @@ public:
 
     LLNDAPI std::filesystem::path const& getLangDir() const;
 
+    LLNDAPI std::filesystem::path const& getResourceDir() const;
+
+    LLNDAPI std::filesystem::path const& getBehaviorDir() const;
+
     LLNDAPI io::Logger& getLogger() const;
 
     [[nodiscard]] bool isEnabled() const { return getState() == State::Enabled; }

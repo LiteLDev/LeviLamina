@@ -29,19 +29,24 @@ struct Mod::Impl {
     std::filesystem::path dataDir;
     std::filesystem::path configDir;
     std::filesystem::path langDir;
+    std::filesystem::path resourceDir;
+    std::filesystem::path behaviorDir;
 
     ~Impl() { io::LoggerRegistry::getInstance().erase(manifest.name); }
 };
 
 Mod::Mod(Manifest manifest) : mImpl(std::make_unique<Impl>()) {
-    mImpl->manifest  = std::move(manifest);
-    mImpl->state     = State::Disabled;
-    mImpl->logger    = io::LoggerRegistry::getInstance().getOrCreate(mImpl->manifest.name);
-    mImpl->modDir    = getModsRoot() / string_utils::sv2u8sv(mImpl->manifest.name);
-    mImpl->dataDir   = mImpl->modDir / u8"data";
-    mImpl->configDir = mImpl->modDir / u8"config";
-    mImpl->langDir   = mImpl->modDir / u8"lang";
+    mImpl->manifest    = std::move(manifest);
+    mImpl->state       = State::Disabled;
+    mImpl->logger      = io::LoggerRegistry::getInstance().getOrCreate(mImpl->manifest.name);
+    mImpl->modDir      = getModsRoot() / string_utils::sv2u8sv(mImpl->manifest.name);
+    mImpl->dataDir     = mImpl->modDir / u8"data";
+    mImpl->configDir   = mImpl->modDir / u8"config";
+    mImpl->langDir     = mImpl->modDir / u8"lang";
+    mImpl->resourceDir = mImpl->modDir / u8"resource_packs";
+    mImpl->behaviorDir = mImpl->modDir / u8"behavior_packs";
 }
+
 Mod::~Mod() = default;
 
 void Mod::release() noexcept { mImpl.reset(); }
@@ -59,6 +64,10 @@ std::filesystem::path const& Mod::getDataDir() const { return mImpl->dataDir; }
 std::filesystem::path const& Mod::getConfigDir() const { return mImpl->configDir; }
 
 std::filesystem::path const& Mod::getLangDir() const { return mImpl->langDir; }
+
+std::filesystem::path const& Mod::getResourceDir() const { return mImpl->resourceDir; }
+
+std::filesystem::path const& Mod::getBehaviorDir() const { return mImpl->behaviorDir; }
 
 bool Mod::hasOnLoad() const noexcept { return mImpl->onLoad != nullptr; }
 
