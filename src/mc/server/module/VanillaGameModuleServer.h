@@ -91,7 +91,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _configureWorldGen(
+    MCAPI void _configureWorldGen(
         ::IWorldRegistriesProvider&                        worldRegistries,
         ::SpawnSettings const&                             spawnSettings,
         ::Experiments const&                               experiments,
@@ -105,15 +105,15 @@ public:
             biomeIdToResolvedData
     );
 
-    MCNAPI void _registerListeners(::Bedrock::NotNullNonOwnerPtr<::Level> const& level, bool realmsStoriesEnabled);
+    MCAPI void _registerListeners(::Bedrock::NotNullNonOwnerPtr<::Level> const& level, bool realmsStoriesEnabled);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
+    MCAPI void $init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
 
-    MCNAPI void $initializeBehaviorStack(
+    MCAPI void $initializeBehaviorStack(
         ::Experiments const&                                            experiments,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
         ::ResourcePackStack&                                            stack,
@@ -121,7 +121,7 @@ public:
         bool                                                            includeEditorPacks
     );
 
-    MCNAPI void $configureLevel(
+    MCAPI void $configureLevel(
         ::Bedrock::NotNullNonOwnerPtr<::Level>& level,
         ::Experiments const&                    experiments,
         ::ResourcePackManager&                  resourcePackManager,
@@ -132,16 +132,16 @@ public:
             biomeIdToResolvedData
     );
 
-    MCNAPI void $configureNewPlayer(::Player& player);
+    MCFOLD void $configureNewPlayer(::Player& player);
 
-    MCNAPI void
+    MCFOLD void
     $configureDocumentation(::IGameModuleDocumentation& moduleDocumentation, ::ItemRegistryRef const docItemRegistry);
 
-    MCNAPI void $tick();
+    MCFOLD void $tick();
 
-    MCNAPI void $setupCommands(::CommandRegistry& commandRegistry);
+    MCAPI void $setupCommands(::CommandRegistry& commandRegistry);
 
-    MCNAPI void $configureServerNetworkHandler(
+    MCAPI void $configureServerNetworkHandler(
         ::ServerInstance&                                     server,
         ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> handler
     );
