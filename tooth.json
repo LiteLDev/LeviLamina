@@ -53,6 +53,7 @@
             "dependencies": {
                 "github.com/LiteLDev/CrashLogger": "1.3.*",
                 "github.com/LiteLDev/levilamina-loc": "1.5.*",
+                "github.com/LiteLDev/PeEditor": "3.9.*",
                 "github.com/LiteLDev/PreLoader": "1.15.7",
                 "github.com/LiteLDev/bedrock-runtime-data": "1.21.124-client.2"
             },
@@ -70,7 +71,15 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "scripts": {
+                "post_install": [
+                    ".\\PeEditor.exe -mb --exe Minecraft.Windows.exe --inplace"
+                ],
+                "post_uninstall": [
+                    "IF EXIST Minecraft.Windows.exe.bak (DEL Minecraft.Windows.exe && REN Minecraft.Windows.exe.bak Minecraft.Windows.exe)"
+                ]
+            }
         }
     ]
 }
