@@ -19,4 +19,5 @@ data::Version getGameVersion() {
 
 int getNetworkProtocolVersion() { return SharedConstants::NetworkProtocolVersion(); }
 
+bool isClient() { return false; }
 } // namespace ll
