@@ -148,12 +148,12 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             auto packPath = pack.mPack->mManifest->mLocation->mPath->value;
             if (packPath.find(pl::pl_mods_path) != std::string::npos) {
                 auto& identity = pack.mPack->mManifest->mIdentity;
-                auto  pack     = repo->getResourcePackForPackId(identity);
-                if (pack) {
+                auto  newPack  = repo->getResourcePackForPackId(identity);
+                if (newPack) {
                     PackSettingsFactory& factory  = repo->getPackSettingsFactory();
-                    auto&                manifest = pack->mPack->mManifest;
+                    auto&                manifest = newPack->mPack->mManifest;
                     PackSettings*        settings = factory.getPackSettings(*manifest, {});
-                    stack.add({pack, -1, false, settings}, repo, false);
+                    stack.add({newPack, -1, false, settings}, repo, false);
                 }
             }
         }

@@ -1,6 +1,5 @@
 #include "ll/core/mod/ModRegistrar.h"
 
-#include <chrono>
 #include <cstddef>
 #include <filesystem>
 #include <memory>
@@ -12,6 +11,7 @@
 #include <vector>
 
 #include "ll/api/Expected.h"
+#include "ll/api/Versions.h"
 #include "ll/api/base/Containers.h"
 #include "ll/api/data/DependencyGraph.h"
 #include "ll/api/data/Version.h"
@@ -20,7 +20,6 @@
 #include "ll/api/memory/Hook.h"
 #include "ll/api/mod/Manifest.h"
 #include "ll/api/mod/Mod.h"
-#include "ll/api/mod/ModManager.h"
 #include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/reflection/Deserialization.h"
 #include "ll/api/utils/ErrorUtils.h"
@@ -330,6 +329,17 @@ Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
     }
     auto& manifest = *res;
     auto& reg      = impl->registry;
+    if (manifest.platform) {
+        if (isClient()) {
+            if (*manifest.platform != "client" && *manifest.platform != "universal") {
+                return makeStringError("{0} is not compatible with client platform"_tr(name));
+            }
+        } else {
+            if (*manifest.platform != "server" && *manifest.platform != "universal") {
+                return makeStringError("{0} is not compatible with server platform"_tr(name));
+            }
+        }
+    }
     if (manifest.dependencies) {
         for (auto& dependency : *manifest.dependencies) {
             if (!reg.hasMod(dependency.name) || !checkVersion(reg.getMod(dependency.name)->getManifest(), dependency)) {

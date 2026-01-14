@@ -30,6 +30,7 @@ struct Manifest {
     std::string                                entry;
     std::string                                name;
     std::string                                type;
+    std::optional<std::string>                 platform{};
     std::optional<bool>                        passive{};
     std::optional<data::Version>               version{};
     std::optional<std::string>                 author{};
