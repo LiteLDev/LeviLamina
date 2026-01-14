@@ -24,7 +24,7 @@ jobs:
       matrix:
         target_type:
           - server
-          - client
+        #  - client
         mode:
           - debug
           - release

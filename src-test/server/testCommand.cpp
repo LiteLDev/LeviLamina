@@ -88,7 +88,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     auto result = origin(ins);
 
-    auto&       cmd    = CommandRegistrar::getInstance().getOrCreateCommand("t", "test tttttt");
+    auto&       cmd    = CommandRegistrar::getInstance(false).getOrCreateCommand("t", "test tttttt");
     static auto lambda = [](CommandOrigin const&, CommandOutput& output, ParamTest const& param) {
         output.success("overload1");
         output.success("p1: {}", param.p1);
@@ -121,9 +121,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     );
     cmd.overload().text("throw").execute([](CommandOrigin const&, CommandOutput&) { throw std::runtime_error{"hi"}; });
 
-    CommandRegistrar::getInstance().tryRegisterSoftEnum("hello", {"SoftEnum1", "af1451"});
+    CommandRegistrar::getInstance(false).tryRegisterSoftEnum("hello", {"SoftEnum1", "af1451"});
 
-    CommandRegistrar::getInstance().tryRegisterRuntimeEnum(
+    CommandRegistrar::getInstance(false).tryRegisterRuntimeEnum(
         "testenum",
         {
             {"testenumhhhh", 124144},
