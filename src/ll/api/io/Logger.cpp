@@ -8,7 +8,7 @@
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/SystemUtils.h"
-#include "ll/core/io/LoggerArchiver.h"
+#include "ll/core/io/LogArchiver.h"
 #include "ll/core/io/Output.h"
 
 #include "pl/Config.h"
