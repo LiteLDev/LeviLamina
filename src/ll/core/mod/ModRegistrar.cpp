@@ -331,11 +331,11 @@ Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
     auto& reg      = impl->registry;
     if (manifest.platform) {
         if (isClient()) {
-            if (*manifest.platform != "client" && *manifest.platform != "universal") {
+            if (*manifest.platform != "client") {
                 return makeStringError("{0} is not compatible with client platform"_tr(name));
             }
         } else {
-            if (*manifest.platform != "server" && *manifest.platform != "universal") {
+            if (*manifest.platform != "server") {
                 return makeStringError("{0} is not compatible with server platform"_tr(name));
             }
         }

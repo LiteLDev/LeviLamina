@@ -34,15 +34,6 @@
 #define MCFOLD_S [[deprecated("Server API not available on CLIENT")]] MCFOLD
 #define MCNAPI_C MCNAPI
 #define MCNAPI_S MCNAPI
-#else
-#define MCAPI_C [[deprecated("Client API not available on UNIVERSAL")]] MCAPI
-#define MCAPI_S [[deprecated("Server API not available on UNIVERSAL")]] MCAPI
-#define MCTAPI_C [[deprecated("Client API not available on UNIVERSAL")]] MCTAPI
-#define MCTAPI_S [[deprecated("Server API not available on UNIVERSAL")]] MCTAPI
-#define MCFOLD_C [[deprecated("Client API not available on UNIVERSAL")]] MCFOLD
-#define MCFOLD_S [[deprecated("Server API not available on UNIVERSAL")]] MCFOLD
-#define MCNAPI_C MCNAPI
-#define MCNAPI_S MCNAPI
 #endif
 
 #include <algorithm>          // STL general algorithms
