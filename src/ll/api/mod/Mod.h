@@ -41,6 +41,10 @@ public:
 
     LLNDAPI std::filesystem::path const& getConfigDir() const;
 
+    LLNDAPI std::optional<std::filesystem::path> getWorldDataDir() const;
+
+    LLNDAPI std::optional<std::filesystem::path> getWorldConfigDir() const;
+
     LLNDAPI std::filesystem::path const& getLangDir() const;
 
     LLNDAPI std::filesystem::path const& getResourceDir() const;

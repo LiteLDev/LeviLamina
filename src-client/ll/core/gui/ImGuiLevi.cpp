@@ -171,9 +171,9 @@ void ImGuiLevi::_renderDrawData(ScreenContext& screenContext, ImDrawData* draw_d
         return;
     }
 
-    screenContext.camera.mUnkadd7ad.as<MatrixStack>().push(false);
-    screenContext.camera.mUnkc5fde2.as<MatrixStack>().push(false);
-    screenContext.camera.mUnk469690.as<MatrixStack>().push(false);
+    screenContext.camera.projectionMatrixStack->push(false);
+    screenContext.camera.worldMatrixStack->push(false);
+    screenContext.camera.viewMatrixStack->push(false);
 
     float scale = ll::service::getClientInstance()->getGuiScale();
 

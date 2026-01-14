@@ -16,6 +16,7 @@ class ServerNetworkHandler;
 class NetworkSystem;
 class CommandRegistry;
 class ServerInstance;
+class DBStorage;
 
 namespace ll::service::inline bedrock {
 
@@ -32,5 +33,7 @@ LLNDAPI optional_ref<NetworkSystem> getNetworkSystem(bool isClientSide = false);
 LLNDAPI optional_ref<CommandRegistry> getCommandRegistry(bool isClientSide = false);
 
 LLNDAPI optional_ref<ServerInstance> getServerInstance();
+
+LLNDAPI optional_ref<DBStorage> getDBStorage();
 
 } // namespace ll::service::inline bedrock

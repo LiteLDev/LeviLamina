@@ -6,7 +6,6 @@
 
 class PropertiesSettings;
 class ResourcePackRepository;
-class ServerInstance;
 
 namespace ll::service::inline bedrock {
 

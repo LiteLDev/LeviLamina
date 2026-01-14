@@ -4,6 +4,7 @@
 #include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/service/GamingStatus.h"
+#include "ll/api/service/ServerInfo.h"
 
 #include "pl/Config.h"
 
@@ -39,7 +40,7 @@ Mod::Mod(Manifest manifest) : mImpl(std::make_unique<Impl>()) {
     mImpl->manifest    = std::move(manifest);
     mImpl->state       = State::Disabled;
     mImpl->logger      = io::LoggerRegistry::getInstance().getOrCreate(mImpl->manifest.name);
-    mImpl->modDir      = getModsRoot() / string_utils::sv2u8sv(mImpl->manifest.name);
+    mImpl->modDir      = getModsRoot() / string_utils::str2u8str(mImpl->manifest.name);
     mImpl->dataDir     = mImpl->modDir / u8"data";
     mImpl->configDir   = mImpl->modDir / u8"config";
     mImpl->langDir     = mImpl->modDir / u8"lang";
@@ -62,6 +63,22 @@ std::filesystem::path const& Mod::getModDir() const { return mImpl->modDir; }
 std::filesystem::path const& Mod::getDataDir() const { return mImpl->dataDir; }
 
 std::filesystem::path const& Mod::getConfigDir() const { return mImpl->configDir; }
+
+std::optional<std::filesystem::path> Mod::getWorldDataDir() const {
+    auto dataRoot = ll::getWorldDataRoot();
+    if (dataRoot) {
+        return dataRoot.value() / string_utils::str2u8str(getName());
+    }
+    return std::nullopt;
+}
+
+std::optional<std::filesystem::path> Mod::getWorldConfigDir() const {
+    auto configRoot = ll::getWorldConfigRoot();
+    if (configRoot) {
+        return configRoot.value() / string_utils::str2u8str(getName());
+    }
+    return std::nullopt;
+}
 
 std::filesystem::path const& Mod::getLangDir() const { return mImpl->langDir; }
 
