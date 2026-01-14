@@ -40,8 +40,8 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptLineShape(::ScriptModuleDebugUtilities::ScriptLineShape const&);
 
-    MCFOLD ::ScriptModuleDebugUtilities::ScriptLineShape& operator=(::ScriptModuleDebugUtilities::ScriptLineShape const&
-    );
+    MCFOLD ::ScriptModuleDebugUtilities::ScriptLineShape&
+    operator=(::ScriptModuleDebugUtilities::ScriptLineShape const&);
     // NOLINTEND
 
 public:

@@ -23,8 +23,8 @@ public:
 
 public:
     // prevent constructor by default
-    CreateSessionDescriptionObserverOperationWrapper& operator=(CreateSessionDescriptionObserverOperationWrapper const&
-    );
+    CreateSessionDescriptionObserverOperationWrapper&
+    operator=(CreateSessionDescriptionObserverOperationWrapper const&);
     CreateSessionDescriptionObserverOperationWrapper(CreateSessionDescriptionObserverOperationWrapper const&);
     CreateSessionDescriptionObserverOperationWrapper();
 

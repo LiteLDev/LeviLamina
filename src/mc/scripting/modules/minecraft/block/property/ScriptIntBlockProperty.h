@@ -47,8 +47,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<int> getState() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptIntBlockProperty& operator=(::ScriptModuleMinecraft::ScriptIntBlockProperty&&
-    );
+    MCNAPI ::ScriptModuleMinecraft::ScriptIntBlockProperty&
+    operator=(::ScriptModuleMinecraft::ScriptIntBlockProperty&&);
 
     MCNAPI ::Scripting::Result_deprecated<void> setState(int state);
     // NOLINTEND

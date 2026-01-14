@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace OreUI::AllowListProfileImageOreUI::PlayerProfileFacet {
+namespace OreUI::AllowListQRCodeOreUI::PlayerProfileFacet {
 
 class PlayerProfileDataWrapper {};
 
-} // namespace OreUI::AllowListProfileImageOreUI::PlayerProfileFacet
+} // namespace OreUI::AllowListQRCodeOreUI::PlayerProfileFacet

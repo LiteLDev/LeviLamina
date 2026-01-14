@@ -172,9 +172,9 @@ struct StoreCatalogItem;
 struct StoreCatalogRepository;
 struct TrialManager;
 struct WorldTransferAgent;
+namespace OreUI { class SceneProvider; }
 namespace OreUI { class UIBlockThumbnailAtlasManager; }
 namespace OreUI { struct Router; }
-namespace OreUI { struct SceneProvider; }
 namespace PlayerCapabilities { struct IClientController; }
 namespace Social { struct MultiplayerServiceManager; }
 namespace World { struct WorldSystem; }

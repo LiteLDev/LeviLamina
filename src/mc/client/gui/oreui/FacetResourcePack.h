@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace OreUI::AllowListPathOreUI {
+namespace OreUI::FacetResourcePackIdOreUI {
 
-class FacetResourcePack {};
+struct FacetResourcePack {};
 
-} // namespace OreUI::AllowListPathOreUI
+} // namespace OreUI::FacetResourcePackIdOreUI
