@@ -10,25 +10,25 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes {
 // functions
 // NOLINTBEGIN
-MCNAPI_S void bindAll(::cereal::ReflectionCtx& ctx);
+MCAPI_S void bindAll(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindColor(::cereal::ReflectionCtx& ctx);
+MCAPI void bindColor(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindEasing(::cereal::ReflectionCtx& ctx);
+MCAPI void bindEasing(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindFacing(::cereal::ReflectionCtx& ctx);
+MCAPI void bindFacing(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindGlmVec2(::cereal::ReflectionCtx& ctx);
+MCAPI void bindGlmVec2(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindJigsawJointType(::cereal::ReflectionCtx& ctx);
+MCAPI void bindJigsawJointType(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindLinkedAssetTypes(::cereal::ReflectionCtx& ctx);
+MCAPI void bindLinkedAssetTypes(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindSemVersion(::cereal::ReflectionCtx& ctx);
+MCAPI void bindSemVersion(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindVec2(::cereal::ReflectionCtx& ctx);
+MCAPI void bindVec2(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindVec3(::cereal::ReflectionCtx& ctx);
+MCAPI void bindVec3(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes

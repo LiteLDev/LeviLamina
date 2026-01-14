@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
+namespace SharedTypes::v1_21_30 { struct TradeTier; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -14,37 +15,31 @@ struct TradeTableData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk42a30f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_30::TradeTier>> mTiers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TradeTableData& operator=(TradeTableData const&);
-    TradeTableData(TradeTableData const&);
-    TradeTableData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~TradeTableData();
+    MCAPI ~TradeTableData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

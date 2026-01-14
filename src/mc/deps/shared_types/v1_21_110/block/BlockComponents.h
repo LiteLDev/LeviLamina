@@ -16,19 +16,19 @@ struct BlockComponents : public ::cereal::ComponentStorage {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ~BlockComponents();
+    MCAPI_S ~BlockComponents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_S void $dtor();
+    MCFOLD_S void $dtor();
     // NOLINTEND
 };
 

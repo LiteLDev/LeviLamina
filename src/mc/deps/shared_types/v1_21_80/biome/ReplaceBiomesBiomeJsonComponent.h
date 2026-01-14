@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
 #include "mc/v1_20_60/biome/components/BiomeComponentVersion.h"
 
@@ -25,10 +26,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkf6afd7;
-        ::ll::UntypedStorage<8, 24> mUnkb5d95a;
-        ::ll::UntypedStorage<4, 4>  mUnk6d510f;
-        ::ll::UntypedStorage<4, 4>  mUnkbc3bd5;
+        ::ll::TypedStorage<8, 32, ::std::string>                              mDimension;
+        ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Reference<3>>> mTargetBiomes;
+        ::ll::TypedStorage<4, 4, float>                                       mAmount;
+        ::ll::TypedStorage<4, 4, float>                                       mNoiseFrequencyScale;
         // NOLINTEND
 
     public:
@@ -40,30 +41,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&
+        MCAPI ::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&
         operator=(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&&);
 
-        MCNAPI ~BiomeReplacement();
+        MCAPI ~BiomeReplacement();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc4ee2a;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement>>
+        mBiomeReplacements;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ReplaceBiomesBiomeJsonComponent& operator=(ReplaceBiomesBiomeJsonComponent const&);
-    ReplaceBiomesBiomeJsonComponent(ReplaceBiomesBiomeJsonComponent const&);
-    ReplaceBiomesBiomeJsonComponent();
 
 public:
     // virtual functions
@@ -76,21 +72,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BiomeComponentVersion $getType() const;
+    MCFOLD ::BiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

@@ -13,19 +13,13 @@ struct StackedByDataItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk915076;
+    ::ll::TypedStorage<1, 1, bool> mIsStackedByData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StackedByDataItemComponent& operator=(StackedByDataItemComponent const&);
-    StackedByDataItemComponent(StackedByDataItemComponent const&);
-    StackedByDataItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

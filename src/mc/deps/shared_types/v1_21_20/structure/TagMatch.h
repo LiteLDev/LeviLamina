@@ -8,7 +8,7 @@ struct TagMatch {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd1450f;
+    ::ll::TypedStorage<8, 32, ::std::string> mValue;
     // NOLINTEND
 
 public:
@@ -20,16 +20,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&&);
 
-    MCNAPI ~TagMatch();
+    MCAPI ~TagMatch();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

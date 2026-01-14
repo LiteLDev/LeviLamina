@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::Legacy { struct BlockDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -13,9 +17,9 @@ struct EntityPlacerItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk23c980;
-    ::ll::UntypedStorage<8, 24> mUnkadc727;
-    ::ll::UntypedStorage<8, 24> mUnkdba18d;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<1>>                           mEntity;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::BlockDescriptor>> mDispenseOn;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::BlockDescriptor>> mUseOn;
     // NOLINTEND
 
 public:
@@ -26,25 +30,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_50::EntityPlacerItemComponent&
+    MCAPI ::SharedTypes::v1_20_50::EntityPlacerItemComponent&
     operator=(::SharedTypes::v1_20_50::EntityPlacerItemComponent&&);
 
-    MCNAPI ::SharedTypes::v1_20_50::EntityPlacerItemComponent&
+    MCAPI ::SharedTypes::v1_20_50::EntityPlacerItemComponent&
     operator=(::SharedTypes::v1_20_50::EntityPlacerItemComponent const&);
 
-    MCNAPI ~EntityPlacerItemComponent();
+    MCAPI ~EntityPlacerItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

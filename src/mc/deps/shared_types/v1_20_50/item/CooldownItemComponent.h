@@ -13,8 +13,8 @@ struct CooldownItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke83815;
-    ::ll::UntypedStorage<8, 32> mUnk5653b7;
+    ::ll::TypedStorage<4, 4, float>          mDuration;
+    ::ll::TypedStorage<8, 32, ::std::string> mCategory;
     // NOLINTEND
 
 public:
@@ -26,27 +26,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_50::CooldownItemComponent& operator=(::SharedTypes::v1_20_50::CooldownItemComponent&&);
+    MCFOLD ::SharedTypes::v1_20_50::CooldownItemComponent& operator=(::SharedTypes::v1_20_50::CooldownItemComponent&&);
 
-    MCNAPI ~CooldownItemComponent();
+    MCAPI ~CooldownItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& DEFAULT_CATEGORY();
+    MCAPI static ::std::string const& DEFAULT_CATEGORY();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

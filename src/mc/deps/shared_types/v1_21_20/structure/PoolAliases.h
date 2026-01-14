@@ -10,11 +10,11 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_21_20::PoolAliases {
 // functions
 // NOLINTBEGIN
-MCNAPI void bindDirectType(::cereal::ReflectionCtx& ctx);
+MCAPI void bindDirectType(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindRandomGroupType(::cereal::ReflectionCtx& ctx);
+MCAPI void bindRandomGroupType(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindRandomType(::cereal::ReflectionCtx& ctx);
+MCAPI void bindRandomType(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_20::PoolAliases

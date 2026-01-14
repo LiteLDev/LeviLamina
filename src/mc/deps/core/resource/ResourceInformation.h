@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-namespace mce { class UUID; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/platform/UUID.h"
 
 class ResourceInformation {
 public:
@@ -25,12 +23,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3f1ece;
-    ::ll::UntypedStorage<8, 24> mUnk6dfdf0;
-    ::ll::UntypedStorage<8, 16> mUnka8abd4;
-    ::ll::UntypedStorage<4, 4>  mUnk4b07d4;
-    ::ll::UntypedStorage<8, 32> mUnk5a12d9;
-    ::ll::UntypedStorage<8, 32> mUnkd60fb9;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mDescription;
+    ::ll::TypedStorage<8, 24, ::SemVersion>                       mVersion;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                        mUUID;
+    ::ll::TypedStorage<4, 4, ::ResourceInformation::ResourceType> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mLanguage;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mEntry;
     // NOLINTEND
 
 public:
@@ -41,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ResourceInformation(::ResourceInformation const&);
+    MCAPI ResourceInformation(::ResourceInformation const&);
 
-    MCNAPI ResourceInformation(
+    MCAPI ResourceInformation(
         ::std::string const&                description,
         ::SemVersion const&                 version,
         ::mce::UUID const&                  uuid,
@@ -52,21 +50,21 @@ public:
         ::std::string const&                entry
     );
 
-    MCNAPI ~ResourceInformation();
+    MCAPI ~ResourceInformation();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ResourceInformation::ResourceType ResourceTypeFromString(::std::string const& value);
+    MCAPI static ::ResourceInformation::ResourceType ResourceTypeFromString(::std::string const& value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ResourceInformation const&);
+    MCAPI void* $ctor(::ResourceInformation const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string const&                description,
         ::SemVersion const&                 version,
         ::mce::UUID const&                  uuid,
@@ -79,6 +77,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

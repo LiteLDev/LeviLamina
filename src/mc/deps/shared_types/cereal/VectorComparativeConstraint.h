@@ -26,14 +26,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk35a16e;
+    ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::VectorComparativeConstraint::ComparisonRequirement>>
+        mComparison;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VectorComparativeConstraint& operator=(VectorComparativeConstraint const&);
-    VectorComparativeConstraint(VectorComparativeConstraint const&);
-    VectorComparativeConstraint();
 
 public:
     // virtual functions
@@ -46,13 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void validateValue(::Vec2 const& vec, ::cereal::SerializerContext& context) const;
+    MCAPI void validateValue(::Vec2 const& vec, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
 
 
     // NOLINTEND

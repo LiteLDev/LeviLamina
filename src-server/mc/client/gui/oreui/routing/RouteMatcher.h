@@ -4,21 +4,21 @@
 
 namespace OreUI {
 
-struct RouteMatcher {
+class RouteMatcher {
 public:
     // RouteMatcher inner types declare
     // clang-format off
+    struct RouteEntry;
     struct DefaultRouteEntry;
     struct RedirectEntry;
-    struct RouteEntry;
     // clang-format on
 
     // RouteMatcher inner types define
+    struct RouteEntry {};
+
     struct DefaultRouteEntry {};
 
     struct RedirectEntry {};
-
-    struct RouteEntry {};
 };
 
 } // namespace OreUI

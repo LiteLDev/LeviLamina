@@ -134,29 +134,29 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString& defaultErrorValue();
+    MCAPI static ::HashedString& defaultErrorValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI_C void* $ctor();
 
-    MCNAPI void* $ctor(::HashedString&& rhs);
+    MCAPI void* $ctor(::HashedString&& rhs);
 
-    MCNAPI void* $ctor(::HashedString const& rhs);
+    MCAPI void* $ctor(::HashedString const& rhs);
 
-    MCNAPI void* $ctor(::std::string const& str);
+    MCFOLD void* $ctor(::std::string const& str);
 
-    MCNAPI void* $ctor(char const* str);
+    MCAPI void* $ctor(char const* str);
 
-    MCNAPI void* $ctor(uint64 hash, char const* str);
+    MCAPI void* $ctor(uint64 hash, char const* str);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

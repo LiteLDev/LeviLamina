@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::v1_20_80 { struct ColorExpr; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -13,8 +14,8 @@ struct ColorGradient {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk526d91;
-    ::ll::UntypedStorage<8, 24> mUnkc7ccd5;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::SharedTypes::v1_20_80::ColorExpr>>>     mColorArray;
+    ::ll::TypedStorage<8, 24, ::std::optional<::std::map<float, ::SharedTypes::v1_20_80::ColorExpr>>> mColorMap;
     // NOLINTEND
 
 public:
@@ -24,31 +25,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ColorGradient(::SharedTypes::v1_20_80::ColorGradient const&);
+    MCAPI ColorGradient(::SharedTypes::v1_20_80::ColorGradient const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ColorGradient& operator=(::SharedTypes::v1_20_80::ColorGradient&&);
+    MCAPI ::SharedTypes::v1_20_80::ColorGradient& operator=(::SharedTypes::v1_20_80::ColorGradient&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ColorGradient& operator=(::SharedTypes::v1_20_80::ColorGradient const&);
+    MCAPI ::SharedTypes::v1_20_80::ColorGradient& operator=(::SharedTypes::v1_20_80::ColorGradient const&);
 
-    MCNAPI ~ColorGradient();
+    MCAPI ~ColorGradient();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ColorGradient const&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ColorGradient const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

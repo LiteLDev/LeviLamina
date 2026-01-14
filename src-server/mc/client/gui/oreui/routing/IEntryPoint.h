@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct IEntryPoint {};
+class IEntryPoint {};
 
 } // namespace OreUI

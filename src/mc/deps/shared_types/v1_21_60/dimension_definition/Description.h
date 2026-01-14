@@ -8,7 +8,7 @@ struct Description {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc9aee8;
+    ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
     // NOLINTEND
 
 public:
@@ -20,16 +20,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Description&
+    MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::Description&
     operator=(::SharedTypes::v1_21_60::DimensionDefinition::Description&&);
 
-    MCNAPI ~Description();
+    MCAPI ~Description();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

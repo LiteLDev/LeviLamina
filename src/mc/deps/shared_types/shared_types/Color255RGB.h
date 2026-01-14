@@ -20,13 +20,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit Color255RGB(::mce::Color const&);
+    MCAPI explicit Color255RGB(::mce::Color const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::mce::Color const&);
+    MCFOLD void* $ctor(::mce::Color const&);
     // NOLINTEND
 };
 

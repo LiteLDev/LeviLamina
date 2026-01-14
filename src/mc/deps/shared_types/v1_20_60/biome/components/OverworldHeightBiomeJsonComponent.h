@@ -37,15 +37,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnk5dffd9;
-    ::ll::UntypedStorage<4, 12> mUnk347fbf;
+    ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::v1_20_60::OverworldHeightBiomeJsonComponent::NoiseType>>
+                                                                       mNoiseType;
+    ::ll::TypedStorage<4, 12, ::std::optional<::std::array<float, 2>>> mNoiseParams;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OverworldHeightBiomeJsonComponent& operator=(OverworldHeightBiomeJsonComponent const&);
-    OverworldHeightBiomeJsonComponent(OverworldHeightBiomeJsonComponent const&);
-    OverworldHeightBiomeJsonComponent();
 
 public:
     // virtual functions
@@ -58,21 +53,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BiomeComponentVersion $getType() const;
+    MCFOLD ::BiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

@@ -16,37 +16,31 @@ struct SlimeAttackGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc7b897;
-    ::ll::UntypedStorage<4, 4> mUnk5d46a4;
-    ::ll::UntypedStorage<4, 4> mUnk21e0c1;
-    ::ll::UntypedStorage<4, 4> mUnk977e5e;
-    ::ll::UntypedStorage<1, 1> mUnkf43c55;
+    ::ll::TypedStorage<4, 4, float> mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float> mMaxRotationY;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float> mGrowTiredCooldownTime;
+    ::ll::TypedStorage<1, 1, bool>  mSetPersistent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SlimeAttackGoalDefinition& operator=(SlimeAttackGoalDefinition const&);
-    SlimeAttackGoalDefinition(SlimeAttackGoalDefinition const&);
-    SlimeAttackGoalDefinition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static bool const& DEFAULT_SET_PERSISTENT();
+    MCAPI static bool const& DEFAULT_SET_PERSISTENT();
 
-    MCNAPI static float const& DEFAULT_SPEED_MULTIPLIER();
+    MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
 
-    MCNAPI static float const& DEFAULT_X_MAX_ROTATION();
+    MCAPI static float const& DEFAULT_X_MAX_ROTATION();
 
-    MCNAPI static float const& DEFAULT_Y_MAX_ROTATION();
+    MCAPI static float const& DEFAULT_Y_MAX_ROTATION();
 
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

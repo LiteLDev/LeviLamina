@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::Legacy { struct ItemDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,57 +25,46 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk295409;
-        ::ll::UntypedStorage<8, 48> mUnka0916c;
+        ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ItemDescriptor>> mItems;
+        ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>                mRepairAmount;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RepairItemEntry& operator=(RepairItemEntry const&);
-        RepairItemEntry(RepairItemEntry const&);
-        RepairItemEntry();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~RepairItemEntry();
+        MCAPI ~RepairItemEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk51e8dc;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_20_50::RepairableItemComponent::RepairItemEntry>>
+        mRepairItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RepairableItemComponent& operator=(RepairableItemComponent const&);
-    RepairableItemComponent(RepairableItemComponent const&);
-    RepairableItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~RepairableItemComponent();
+    MCAPI ~RepairableItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

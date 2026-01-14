@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoryDefinition; }
+// clang-format on
+
 namespace SharedTypes::v1_21_50 {
 
 struct CameraAimAssistCategoriesDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk71df58;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition>> mCategories;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraAimAssistCategoriesDefinition& operator=(CameraAimAssistCategoriesDefinition const&);
-    CameraAimAssistCategoriesDefinition(CameraAimAssistCategoriesDefinition const&);
-    CameraAimAssistCategoriesDefinition();
 };
 
 } // namespace SharedTypes::v1_21_50

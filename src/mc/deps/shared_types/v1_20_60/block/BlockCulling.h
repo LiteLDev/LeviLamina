@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/Facing.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -23,7 +26,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk7d35d9;
+        ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
         // NOLINTEND
 
     public:
@@ -35,16 +38,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Description&
+        MCFOLD ::SharedTypes::v1_20_60::BlockCulling::Description&
         operator=(::SharedTypes::v1_20_60::BlockCulling::Description&&);
 
-        MCNAPI ~Description();
+        MCAPI ~Description();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -60,9 +63,9 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 32> mUnk1f8b89;
-            ::ll::UntypedStorage<4, 8>  mUnk3ef3e6;
-            ::ll::UntypedStorage<2, 4>  mUnk67ee93;
+            ::ll::TypedStorage<8, 32, ::std::string>                         mBoneName;
+            ::ll::TypedStorage<4, 8, ::std::optional<int>>                   mCubeIndex;
+            ::ll::TypedStorage<2, 4, ::std::optional<::SharedTypes::Facing>> mFace;
             // NOLINTEND
 
         public:
@@ -74,7 +77,7 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&
+            MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&
             operator=(::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&&);
             // NOLINTEND
         };
@@ -82,8 +85,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48> mUnk9db7e3;
-        ::ll::UntypedStorage<2, 2>  mUnk2fc63e;
+        ::ll::TypedStorage<8, 48, ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart> mGeometryPart;
+        ::ll::TypedStorage<2, 2, ::SharedTypes::Facing>                                      mDirectionToCheckAgainst;
         // NOLINTEND
 
     public:
@@ -95,45 +98,39 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Rule& operator=(::SharedTypes::v1_20_60::BlockCulling::Rule&&);
+        MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule& operator=(::SharedTypes::v1_20_60::BlockCulling::Rule&&);
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkcd29ba;
-    ::ll::UntypedStorage<8, 24> mUnk1cf3df;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::v1_20_60::BlockCulling::Description>         mDescription;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_20_60::BlockCulling::Rule>> mRules;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockCulling& operator=(BlockCulling const&);
-    BlockCulling(BlockCulling const&);
-    BlockCulling();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~BlockCulling();
+    MCAPI_C ~BlockCulling();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::SemVersionConstant const& VERSION();
+    MCAPI_C static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };
 

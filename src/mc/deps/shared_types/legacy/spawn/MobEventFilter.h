@@ -8,7 +8,7 @@ struct MobEventFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2be8bc;
+    ::ll::TypedStorage<8, 32, ::std::string> mEvent;
     // NOLINTEND
 
 public:
@@ -20,23 +20,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MobEventFilter(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
+    MCAPI MobEventFilter(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
 
-    MCNAPI ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
+    MCFOLD ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
 
-    MCNAPI ~MobEventFilter();
+    MCAPI ~MobEventFilter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
+    MCFOLD void* $ctor(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

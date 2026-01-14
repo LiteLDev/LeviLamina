@@ -3,7 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/shared_types/util/Identifier.h"
+#include "mc/deps/shared_types/util/Reference.h"
+#include "mc/deps/shared_types/v1_21_50/camera/CameraPresetAimAssistDefinition.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/camera/controlscheme/Scheme.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,28 +31,28 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk659874;
-    ::ll::UntypedStorage<8, 32> mUnk2443c5;
-    ::ll::UntypedStorage<4, 8>  mUnk4a3fd1;
-    ::ll::UntypedStorage<4, 8>  mUnkc7ba64;
-    ::ll::UntypedStorage<4, 8>  mUnk69a72b;
-    ::ll::UntypedStorage<4, 8>  mUnk5239e1;
-    ::ll::UntypedStorage<4, 8>  mUnk5d0d9d;
-    ::ll::UntypedStorage<4, 8>  mUnke8c704;
-    ::ll::UntypedStorage<1, 2>  mUnkee0b06;
-    ::ll::UntypedStorage<4, 12> mUnkf0ddde;
-    ::ll::UntypedStorage<4, 12> mUnk49f7ba;
-    ::ll::UntypedStorage<1, 2>  mUnk66070d;
-    ::ll::UntypedStorage<4, 8>  mUnk79ff9e;
-    ::ll::UntypedStorage<4, 12> mUnkdbcc63;
-    ::ll::UntypedStorage<4, 16> mUnk30034f;
-    ::ll::UntypedStorage<4, 8>  mUnk9feef4;
-    ::ll::UntypedStorage<4, 8>  mUnked89cf;
-    ::ll::UntypedStorage<4, 8>  mUnkf26793;
-    ::ll::UntypedStorage<1, 2>  mUnk2267ee;
-    ::ll::UntypedStorage<1, 2>  mUnkf42f54;
-    ::ll::UntypedStorage<8, 72> mUnk1f91fd;
-    ::ll::UntypedStorage<1, 2>  mUnkcc557d;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<7>> mName;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<7>>  mInheritFrom;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mPosX;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mPosY;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mPosZ;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mRotX;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mRotY;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mCameraRotationSpeed;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>         mSnapToTarget;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>      mHorizontalRotationLimit;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>      mVerticalRotationLimit;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>         mContinueTargeting;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mTrackingRadius;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>      mViewOffset;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>>      mEntityOffset;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mRadius;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mYawLimitMin;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mYawLimitMax;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_21_90::CameraPreset::AudioListener>>      mListener;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                                      mPlayerEffects;
+    ::ll::TypedStorage<8, 72, ::std::optional<::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition>> mAimAssist;
+    ::ll::TypedStorage<1, 2, ::std::optional<::ControlScheme::Scheme>>                                   mControlScheme;
     // NOLINTEND
 
 public:
@@ -56,39 +62,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CameraPreset(::SharedTypes::v1_21_90::CameraPreset&&);
+    MCAPI CameraPreset(::SharedTypes::v1_21_90::CameraPreset&&);
 
-    MCNAPI CameraPreset(::SharedTypes::v1_21_90::CameraPreset const&);
+    MCAPI CameraPreset(::SharedTypes::v1_21_90::CameraPreset const&);
 
-    MCNAPI ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset&&);
+    MCAPI ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset&&);
 
-    MCNAPI ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset const&);
+    MCAPI ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset const&);
 
-    MCNAPI void write(::BinaryStream& stream) const;
+    MCAPI void write(::BinaryStream& stream) const;
 
-    MCNAPI ~CameraPreset();
+    MCAPI ~CameraPreset();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_90::CameraPreset> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::SharedTypes::v1_21_90::CameraPreset> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_90::CameraPreset&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_90::CameraPreset&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_90::CameraPreset const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_90::CameraPreset const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

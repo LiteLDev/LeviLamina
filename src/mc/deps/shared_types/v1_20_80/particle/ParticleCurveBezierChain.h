@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+#include "mc/deps/shared_types/v1_20_80/particle/BezierChainNodeMap.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveBase.h"
 
 // auto generated forward declare list
@@ -16,9 +18,9 @@ struct ParticleCurveBezierChain : public ::SharedTypes::v1_20_80::ParticleCurveB
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7cd049;
-    ::ll::UntypedStorage<8, 24> mUnk307daf;
-    ::ll::UntypedStorage<8, 48> mUnkd7d9ea;
+    ::ll::TypedStorage<8, 32, ::std::string>                               mCurveType;
+    ::ll::TypedStorage<8, 24, ::SharedTypes::v1_20_80::BezierChainNodeMap> mNodeMap;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>       mInputExpr;
     // NOLINTEND
 
 public:
@@ -35,31 +37,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
+    MCAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
+    MCAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
     operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
 
-    MCNAPI_S ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
+    MCAPI_S ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
     operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -2,15 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/FileReference.h"
+#include "mc/deps/shared_types/util/Reference.h"
+#include "mc/deps/shared_types/v1_21_20/structure/template_pool/Projection.h"
+
 namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool {
 
 struct SinglePoolElement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk13a1e0;
-    ::ll::UntypedStorage<8, 32> mUnk4dde6c;
-    ::ll::UntypedStorage<1, 1>  mUnkc4a555;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::FileReference<21>>                                mLocation;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<12>>                                    mProcessors;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Projection> mProjection;
     // NOLINTEND
 
 public:
@@ -22,16 +27,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
+    MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
     operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&&);
 
-    MCNAPI ~SinglePoolElement();
+    MCAPI ~SinglePoolElement();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

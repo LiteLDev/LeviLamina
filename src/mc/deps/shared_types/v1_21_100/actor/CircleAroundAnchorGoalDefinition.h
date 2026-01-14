@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,35 +17,29 @@ struct CircleAroundAnchorGoalDefinition : public ::SharedTypes::BaseGoalDefiniti
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk15e364;
-    ::ll::UntypedStorage<4, 4> mUnke20e00;
-    ::ll::UntypedStorage<4, 4> mUnk63d1b8;
-    ::ll::UntypedStorage<4, 4> mUnk9fd2f2;
-    ::ll::UntypedStorage<4, 4> mUnk2188ef;
-    ::ll::UntypedStorage<4, 4> mUnk2b43a1;
-    ::ll::UntypedStorage<4, 8> mUnk29214e;
-    ::ll::UntypedStorage<4, 8> mUnk3e20f5;
-    ::ll::UntypedStorage<4, 8> mUnk442318;
+    ::ll::TypedStorage<4, 4, float>                     mRadiusModifier;
+    ::ll::TypedStorage<4, 4, float>                     mRadiusAdjustmentChance;
+    ::ll::TypedStorage<4, 4, float>                     mHeightAdjustmentChance;
+    ::ll::TypedStorage<4, 4, float>                     mGoalRadius;
+    ::ll::TypedStorage<4, 4, float>                     mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                     mAngleModifier;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mRadiusBounds;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mHeightOffsetBounds;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mAboveTargetBounds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CircleAroundAnchorGoalDefinition& operator=(CircleAroundAnchorGoalDefinition const&);
-    CircleAroundAnchorGoalDefinition(CircleAroundAnchorGoalDefinition const&);
-    CircleAroundAnchorGoalDefinition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float const& DEFAULT_RADIUS_CHANGE();
+    MCAPI static float const& DEFAULT_RADIUS_CHANGE();
 
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

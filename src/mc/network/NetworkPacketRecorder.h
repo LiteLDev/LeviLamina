@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/File.h"
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
@@ -10,20 +11,14 @@ class NetworkPacketRecorder : public ::NetworkPeer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke97719;
-    ::ll::UntypedStorage<1, 1>  mUnkdac53a;
-    ::ll::UntypedStorage<8, 16> mUnk15c0b2;
-    ::ll::UntypedStorage<1, 1>  mUnkb36a7d;
-    ::ll::UntypedStorage<1, 1>  mUnk85f337;
-    ::ll::UntypedStorage<1, 1>  mUnk4bc6fb;
-    ::ll::UntypedStorage<8, 24> mUnk2a9aea;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastPacketTime;
+    ::ll::TypedStorage<1, 1, bool>                                    mRecordingToFile;
+    ::ll::TypedStorage<8, 16, ::Core::File>                           mFile;
+    ::ll::TypedStorage<1, 1, bool>                                    mIncludeSentPackets;
+    ::ll::TypedStorage<1, 1, bool>                                    mIncludeReceivedPackets;
+    ::ll::TypedStorage<1, 1, bool>                                    mToBase64;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                     mAllowList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkPacketRecorder& operator=(NetworkPacketRecorder const&);
-    NetworkPacketRecorder(NetworkPacketRecorder const&);
-    NetworkPacketRecorder();
 
 public:
     // virtual functions

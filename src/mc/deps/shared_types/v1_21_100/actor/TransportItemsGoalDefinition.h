@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec2;
+namespace SharedTypes::Legacy { struct BlockDescriptor; }
+namespace SharedTypes::Legacy { struct ItemDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -30,19 +32,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf89a5b;
-    ::ll::UntypedStorage<8, 24> mUnk1aea4a;
-    ::ll::UntypedStorage<4, 4>  mUnkfc48cb;
-    ::ll::UntypedStorage<4, 4>  mUnk1a3881;
-    ::ll::UntypedStorage<1, 1>  mUnk8bb02d;
-    ::ll::UntypedStorage<4, 4>  mUnk42aeb8;
-    ::ll::UntypedStorage<4, 8>  mUnkf08f48;
-    ::ll::UntypedStorage<4, 4>  mUnkbd2c3e;
-    ::ll::UntypedStorage<4, 4>  mUnk8d6e39;
-    ::ll::UntypedStorage<4, 4>  mUnkd7b3cb;
-    ::ll::UntypedStorage<4, 4>  mUnk43df3e;
-    ::ll::UntypedStorage<8, 24> mUnk29bf78;
-    ::ll::UntypedStorage<8, 24> mUnk79bee2;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::BlockDescriptor>> mSourceContainerTypes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::BlockDescriptor>> mDestinationContainerTypes;
+    ::ll::TypedStorage<4, 4, uint>                                                   mMaxStackSize;
+    ::ll::TypedStorage<4, 4, float>                                                  mInteractionTime;
+    ::ll::TypedStorage<1, 1, bool>                                                   mAllowSimultaneousInteraction;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_100::TransportItemsGoalDefinition::SearchStrategy> mSearchStrategy;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                                 mSearchDistance;
+    ::ll::TypedStorage<4, 4, uint> mMaxVisitedContainers;
+    ::ll::TypedStorage<4, 4, uint> mInitialCooldown;
+    ::ll::TypedStorage<4, 4, uint> mIdleCooldown;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_100::TransportItemsGoalDefinition::PlaceStrategy> mPlaceStrategy;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ItemDescriptor>>                 mAllowedItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ItemDescriptor>>                 mDisallowedItems;
     // NOLINTEND
 
 public:
@@ -54,50 +56,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TransportItemsGoalDefinition(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
+    MCAPI TransportItemsGoalDefinition(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
 
-    MCNAPI ::SharedTypes::v1_21_100::TransportItemsGoalDefinition&
+    MCAPI ::SharedTypes::v1_21_100::TransportItemsGoalDefinition&
     operator=(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
 
-    MCNAPI ~TransportItemsGoalDefinition();
+    MCAPI ~TransportItemsGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static bool const& ALLOW_SIMULTANEOUS_INTERACTION();
+    MCAPI static bool const& ALLOW_SIMULTANEOUS_INTERACTION();
 
-    MCNAPI static uint const& IDLE_COOLDOWN();
+    MCAPI static uint const& IDLE_COOLDOWN();
 
-    MCNAPI static uint const& INITIAL_COOLDOWN();
+    MCAPI static uint const& INITIAL_COOLDOWN();
 
-    MCNAPI static float const& INTERACTION_TIME();
+    MCAPI static float const& INTERACTION_TIME();
 
-    MCNAPI static uint const& MAX_STACK_SIZE();
+    MCAPI static uint const& MAX_STACK_SIZE();
 
-    MCNAPI static uint const& MAX_VISITED_CONTAINERS();
+    MCAPI static uint const& MAX_VISITED_CONTAINERS();
 
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
 
-    MCNAPI static ::Vec2 const& SEARCH_DISTANCE();
+    MCAPI static ::Vec2 const& SEARCH_DISTANCE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

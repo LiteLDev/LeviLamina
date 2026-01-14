@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+#include "mc/deps/shared_types/v1_21_10/scatter_params/CoordinateEvaluationOrder.h"
+#include "mc/deps/shared_types/v1_21_10/scatter_params/CoordinateRangeData.h"
+#include "mc/deps/shared_types/v1_21_10/scatter_params/ScatterChanceData.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,50 +19,50 @@ struct ScatterParamsData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnkf00ebd;
-    ::ll::UntypedStorage<8, 72>  mUnk5514db;
-    ::ll::UntypedStorage<4, 4>   mUnkf0f0dd;
-    ::ll::UntypedStorage<8, 176> mUnk9d0ec6;
-    ::ll::UntypedStorage<8, 176> mUnkf59f65;
-    ::ll::UntypedStorage<8, 176> mUnk38631a;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>                       mIterations;
+    ::ll::TypedStorage<8, 72, ::std::optional<::SharedTypes::v1_21_10::ScatterChanceData>> mScatterChance;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_10::CoordinateEvaluationOrder>           mCoordinateEvalOrder;
+    ::ll::TypedStorage<8, 176, ::SharedTypes::v1_21_10::CoordinateRangeData>               mX;
+    ::ll::TypedStorage<8, 176, ::SharedTypes::v1_21_10::CoordinateRangeData>               mY;
+    ::ll::TypedStorage<8, 176, ::SharedTypes::v1_21_10::CoordinateRangeData>               mZ;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScatterParamsData();
+    MCAPI ScatterParamsData();
 
-    MCNAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData&&);
+    MCAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData&&);
 
-    MCNAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData const&);
+    MCAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData const&);
 
-    MCNAPI ::SharedTypes::v1_21_10::ScatterParamsData& operator=(::SharedTypes::v1_21_10::ScatterParamsData&&);
+    MCAPI ::SharedTypes::v1_21_10::ScatterParamsData& operator=(::SharedTypes::v1_21_10::ScatterParamsData&&);
 
-    MCNAPI ::SharedTypes::v1_21_10::ScatterParamsData& operator=(::SharedTypes::v1_21_10::ScatterParamsData const&);
+    MCAPI ::SharedTypes::v1_21_10::ScatterParamsData& operator=(::SharedTypes::v1_21_10::ScatterParamsData const&);
 
-    MCNAPI ~ScatterParamsData();
+    MCAPI ~ScatterParamsData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

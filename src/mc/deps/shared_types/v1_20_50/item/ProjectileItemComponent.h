@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,8 +16,8 @@ struct ProjectileItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk79e1ba;
-    ::ll::UntypedStorage<8, 32> mUnk94924e;
+    ::ll::TypedStorage<4, 4, float>                        mMinimumCriticalPower;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<1>> mProjectileEntity;
     // NOLINTEND
 
 public:
@@ -26,22 +29,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_50::ProjectileItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::ProjectileItemComponent&
     operator=(::SharedTypes::v1_20_50::ProjectileItemComponent&&);
 
-    MCNAPI ~ProjectileItemComponent();
+    MCAPI ~ProjectileItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

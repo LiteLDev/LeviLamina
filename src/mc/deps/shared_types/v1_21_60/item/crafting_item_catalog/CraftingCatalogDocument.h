@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
+namespace SharedTypes::v1_21_60 { struct CraftingCatalogCategory; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -14,37 +15,31 @@ struct CraftingCatalogDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk612f0c;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_60::CraftingCatalogCategory>> mCategories;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CraftingCatalogDocument& operator=(CraftingCatalogDocument const&);
-    CraftingCatalogDocument(CraftingCatalogDocument const&);
-    CraftingCatalogDocument();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~CraftingCatalogDocument();
+    MCAPI ~CraftingCatalogDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

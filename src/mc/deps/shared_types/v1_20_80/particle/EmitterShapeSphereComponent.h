@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ParticleEmitterDirection.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,10 +19,10 @@ struct EmitterShapeSphereComponent : public ::SharedTypes::v1_20_80::ParticleEff
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnk5d02bb;
-    ::ll::UntypedStorage<8, 48>  mUnk6c8b56;
-    ::ll::UntypedStorage<1, 1>   mUnk48f640;
-    ::ll::UntypedStorage<8, 168> mUnk7e8e4c;
+    ::ll::TypedStorage<8, 144, ::std::array<::SharedTypes::Legacy::ExpressionNode, 3>>             mOffsetExpr;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>                               mRadiusExpr;
+    ::ll::TypedStorage<1, 1, bool>                                                                 mSurfaceOnly;
+    ::ll::TypedStorage<8, 168, ::std::optional<::SharedTypes::v1_20_80::ParticleEmitterDirection>> mDirection;
     // NOLINTEND
 
 public:
@@ -38,47 +40,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
+    MCAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
 
-    MCNAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
+    MCAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
+    MCAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
     operator=(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
+    MCAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
     operator=(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ColorExpr.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ColorGradient.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,9 +18,9 @@ struct TintingComponentColor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnk5fc71e;
-    ::ll::UntypedStorage<8, 56>  mUnk264d73;
-    ::ll::UntypedStorage<8, 200> mUnk1a193d;
+    ::ll::TypedStorage<8, 64, ::std::optional<::SharedTypes::v1_20_80::ColorGradient>> mInterpolatedColor;
+    ::ll::TypedStorage<8, 56, ::std::optional<::SharedTypes::Legacy::ExpressionNode>>  mInterpolantExpr;
+    ::ll::TypedStorage<8, 200, ::std::optional<::SharedTypes::v1_20_80::ColorExpr>>    mColor;
     // NOLINTEND
 
 public:
@@ -26,24 +31,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_80::TintingComponentColor& operator=(::SharedTypes::v1_20_80::TintingComponentColor&&);
+    MCAPI ::SharedTypes::v1_20_80::TintingComponentColor& operator=(::SharedTypes::v1_20_80::TintingComponentColor&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::TintingComponentColor&
+    MCAPI ::SharedTypes::v1_20_80::TintingComponentColor&
     operator=(::SharedTypes::v1_20_80::TintingComponentColor const&);
 
-    MCNAPI ~TintingComponentColor();
+    MCAPI ~TintingComponentColor();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

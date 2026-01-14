@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
 
 // auto generated forward declare list
@@ -17,9 +18,10 @@ struct ParticleMotionParametricComponent : public ::SharedTypes::v1_20_80::Parti
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 152> mUnkb116c9;
-    ::ll::UntypedStorage<8, 152> mUnk5853e9;
-    ::ll::UntypedStorage<8, 56>  mUnkab6481;
+    ::ll::TypedStorage<8, 152, ::std::optional<::std::array<::SharedTypes::Legacy::ExpressionNode, 3>>>
+        mRelativePositionExpr;
+    ::ll::TypedStorage<8, 152, ::std::optional<::std::array<::SharedTypes::Legacy::ExpressionNode, 3>>> mDirectionExpr;
+    ::ll::TypedStorage<8, 56, ::std::optional<::SharedTypes::Legacy::ExpressionNode>>                   mRotationExpr;
     // NOLINTEND
 
 public:
@@ -38,40 +40,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParticleMotionParametricComponent(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
+    MCAPI ParticleMotionParametricComponent(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleMotionParametricComponent&
+    MCAPI ::SharedTypes::v1_20_80::ParticleMotionParametricComponent&
     operator=(::SharedTypes::v1_20_80::ParticleMotionParametricComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

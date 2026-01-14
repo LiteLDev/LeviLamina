@@ -16,14 +16,8 @@ class UUIDConstraint : public ::cereal::ConstraintHandle<::SharedTypes::UUIDCons
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc6c108;
+    ::ll::TypedStorage<1, 1, bool> mAllowInvalid;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UUIDConstraint& operator=(UUIDConstraint const&);
-    UUIDConstraint(UUIDConstraint const&);
-    UUIDConstraint();
 
 public:
     // virtual functions
@@ -36,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCAPI ::cereal::internal::ConstraintDescription $description() const;
 
 
     // NOLINTEND

@@ -13,8 +13,8 @@ struct InteractButtonItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk98134a;
-    ::ll::UntypedStorage<8, 32> mUnkba59e1;
+    ::ll::TypedStorage<1, 1, bool>           mRequiresInteract;
+    ::ll::TypedStorage<8, 32, ::std::string> mInteractText;
     // NOLINTEND
 
 public:
@@ -26,22 +26,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI InteractButtonItemComponent(::SharedTypes::v1_20_50::InteractButtonItemComponent&&);
+    MCAPI InteractButtonItemComponent(::SharedTypes::v1_20_50::InteractButtonItemComponent&&);
 
-    MCNAPI ::SharedTypes::v1_20_50::InteractButtonItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::InteractButtonItemComponent&
     operator=(::SharedTypes::v1_20_50::InteractButtonItemComponent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_50::InteractButtonItemComponent&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::InteractButtonItemComponent&&);
     // NOLINTEND
 };
 

@@ -13,8 +13,8 @@ struct DropdownOption {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkcdd8b2;
-    ::ll::UntypedStorage<8, 32> mUnkada053;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<8, 32, ::std::string> mText;
     // NOLINTEND
 
 public:
@@ -26,16 +26,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&
+    MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&&);
 
-    MCNAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&) const;
+    MCFOLD bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

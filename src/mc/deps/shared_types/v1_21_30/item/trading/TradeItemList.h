@@ -13,27 +13,21 @@ struct TradeItemList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka875a8;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_30::TradeItem>> mList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TradeItemList& operator=(TradeItemList const&);
-    TradeItemList(TradeItemList const&);
-    TradeItemList();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void fromTradeItem(::SharedTypes::v1_21_30::TradeItem item);
+    MCAPI void fromTradeItem(::SharedTypes::v1_21_30::TradeItem item);
 
-    MCNAPI ~TradeItemList();
+    MCAPI ~TradeItemList();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

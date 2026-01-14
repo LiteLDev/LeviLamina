@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_20_80/particle/VectorEvents.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,32 +16,26 @@ struct DistanceEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk4106c7;
-    ::ll::UntypedStorage<8, 24> mUnke65994;
+    ::ll::TypedStorage<4, 4, float>                                  mDistanceInterval;
+    ::ll::TypedStorage<8, 24, ::SharedTypes::v1_20_80::VectorEvents> mEventNames;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DistanceEvent& operator=(DistanceEvent const&);
-    DistanceEvent(DistanceEvent const&);
-    DistanceEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~DistanceEvent();
+    MCAPI_C ~DistanceEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

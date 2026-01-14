@@ -4,7 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/deps/core/math/PairHash.h"
+#include "mc/deps/core/math/TupleHash.h"
+#include "mc/deps/core/threading/MPMCQueue.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/network/IncomingPacketFilterResult.h"
 #include "mc/network/MinecraftPacketIds.h"
@@ -131,6 +135,7 @@ class StructureTemplateDataResponsePacket;
 class SubChunkPacket;
 class SyncActorPropertyPacket;
 class TakeItemActorPacket;
+class TaskGroup;
 class TextPacket;
 class TickingAreasLoadStatusPacket;
 class ToastRequestPacket;
@@ -145,9 +150,11 @@ class UpdatePlayerGameTypePacket;
 class UpdateSoftEnumPacket;
 class UpdateSubChunkBlocksPacket;
 class UpdateTradePacket;
+struct CachedHostPackIdProvider;
 struct NetworkIdentifierWithSubId;
 struct VideoCaptureSessionManager;
 namespace ClientBlobCache { struct Cache; }
+namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
 // clang-format on
 
 class ClientNetworkHandler : public ::NetEventCallback {
@@ -160,31 +167,51 @@ public:
     // ClientNetworkHandler inner types define
     struct PackDependencies {};
 
+    using ChunkKey = ::std::pair<::Dimension const*, ::ChunkPos>;
+
+    using ChunkCallbackKey = ::std::tuple<::NetworkIdentifier, ::Dimension const*, ::ChunkPos>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk9f1ee4;
-    ::ll::UntypedStorage<8, 16> mUnkb3ddc1;
-    ::ll::UntypedStorage<8, 16> mUnkc25776;
-    ::ll::UntypedStorage<8, 8>  mUnk984473;
-    ::ll::UntypedStorage<8, 8>  mUnk8120fb;
-    ::ll::UntypedStorage<8, 16> mUnk15314e;
-    ::ll::UntypedStorage<8, 8>  mUnk1da9a5;
-    ::ll::UntypedStorage<8, 8>  mUnke9e629;
-    ::ll::UntypedStorage<8, 8>  mUnk30b6ee;
-    ::ll::UntypedStorage<8, 8>  mUnkd88570;
-    ::ll::UntypedStorage<8, 8>  mUnk4fab98;
-    ::ll::UntypedStorage<8, 24> mUnk98b7fd;
-    ::ll::UntypedStorage<1, 1>  mUnk25922b;
-    ::ll::UntypedStorage<1, 1>  mUnk2582f2;
-    ::ll::UntypedStorage<8, 16> mUnk53eada;
-    ::ll::UntypedStorage<8, 64> mUnk7a13ff;
-    ::ll::UntypedStorage<8, 64> mUnkab321c;
-    ::ll::UntypedStorage<8, 8>  mUnk9f1f3f;
-    ::ll::UntypedStorage<8, 24> mUnk330c1a;
-    ::ll::UntypedStorage<8, 72> mUnke1a1f7;
-    ::ll::UntypedStorage<8, 16> mUnk842f18;
-    ::ll::UntypedStorage<8, 16> mUnk3ca05a;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlobCache::Cache>>                    mBlobCache;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MPMCQueue<uint64>>>                         mCacheMisses;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MPMCQueue<uint64>>>                         mCacheHits;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>> mJigsawStructureData;
+    ::ll::TypedStorage<8, 8, ::IClientInstance&>                                              mClient;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IGameConnectionListener>>                     mGameConnectionListener;
+    ::ll::TypedStorage<8, 8, ::IGameServerStartup&>                                           mGameServerStartup;
+    ::ll::TypedStorage<8, 8, ::ClientNetworkSystem&>                                          mNetwork;
+    ::ll::TypedStorage<8, 8, ::PacketSender&>                                                 mPacketSender;
+    ::ll::TypedStorage<8, 8, ::PrivateKeyManager&>                                            mClientKeys;
+    ::ll::TypedStorage<8, 8, ::MinecraftCommands&>                                            mMinecraftCommands;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ILevel>>                           mLevel;
+    ::ll::TypedStorage<1, 1, bool>                                                            mHasMessage;
+    ::ll::TypedStorage<1, 1, bool>                                                            mIsLoggedIn;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                        mExistenceTracker;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::pair<::Dimension const*, ::ChunkPos>,
+            uint64,
+            ::mce::Math::PairHash,
+            ::std::equal_to<::std::pair<::Dimension const*, ::ChunkPos>>>>
+        mPendingChunks;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::tuple<::NetworkIdentifier, ::Dimension const*, ::ChunkPos>,
+            ::std::function<void(::BlockSource&)>,
+            ::mce::Math::TupleHash,
+            ::std::equal_to<::std::tuple<::NetworkIdentifier, ::Dimension const*, ::ChunkPos>>>>
+                                                                                        mConnectionPausedCallbacks;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                            mIOTaskGroup;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::VideoCaptureSessionManager>> mVideoCaptureSessionManager;
+    ::ll::TypedStorage<8, 72, ::ClientNetworkHandler::PackDependencies>                 mPackDependencies;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CachedHostPackIdProvider>>            mCachedHostPackIdProvider;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mHostPacksReceivedSub;
     // NOLINTEND
 
 public:

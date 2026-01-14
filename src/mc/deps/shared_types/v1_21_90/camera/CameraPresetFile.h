@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_90/camera/CameraPreset.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -14,38 +17,32 @@ struct CameraPresetFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk690306;
-    ::ll::UntypedStorage<8, 288> mUnk90f743;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mVersion;
+    ::ll::TypedStorage<8, 288, ::SharedTypes::v1_21_90::CameraPreset> mPreset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraPresetFile& operator=(CameraPresetFile const&);
-    CameraPresetFile(CameraPresetFile const&);
-    CameraPresetFile();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~CameraPresetFile();
+    MCAPI ~CameraPresetFile();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

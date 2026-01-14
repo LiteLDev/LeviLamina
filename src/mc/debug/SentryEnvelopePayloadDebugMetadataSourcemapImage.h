@@ -19,8 +19,8 @@ public:
 
 public:
     // prevent constructor by default
-    SentryEnvelopePayloadDebugMetadataSourcemapImage& operator=(SentryEnvelopePayloadDebugMetadataSourcemapImage const&
-    );
+    SentryEnvelopePayloadDebugMetadataSourcemapImage&
+    operator=(SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
     SentryEnvelopePayloadDebugMetadataSourcemapImage(SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
     SentryEnvelopePayloadDebugMetadataSourcemapImage();
 

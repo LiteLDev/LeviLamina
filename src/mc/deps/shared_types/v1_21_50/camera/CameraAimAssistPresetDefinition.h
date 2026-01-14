@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/util/Identifier.h"
+#include "mc/deps/shared_types/util/Reference.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -18,59 +20,60 @@ struct CameraAimAssistPresetDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk88f949;
-    ::ll::UntypedStorage<8, 24> mUnk39a475;
-    ::ll::UntypedStorage<8, 24> mUnk1499e8;
-    ::ll::UntypedStorage<8, 64> mUnk11a2d8;
-    ::ll::UntypedStorage<8, 40> mUnka8111e;
-    ::ll::UntypedStorage<8, 40> mUnk7970c5;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<5>>                                  mIdentifier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Reference<18446744073709551615>>> mExclusionList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Reference<10>>>                   mLiquidTargetingList;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::SharedTypes::Reference<10>, ::SharedTypes::Reference<6>>>
+                                                                            mItemSettings;
+    ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::Reference<6>>> mDefaultItemSettings;
+    ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::Reference<6>>> mHandSettings;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CameraAimAssistPresetDefinition();
+    MCAPI CameraAimAssistPresetDefinition();
 
-    MCNAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
+    MCAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
 
-    MCNAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
+    MCAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
+    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
+    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
 
-    MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&) const;
+    MCAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&) const;
 
-    MCNAPI void write(::BinaryStream& stream) const;
+    MCAPI void write(::BinaryStream& stream) const;
 
-    MCNAPI ~CameraAimAssistPresetDefinition();
+    MCAPI ~CameraAimAssistPresetDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>
+    MCAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>
     read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

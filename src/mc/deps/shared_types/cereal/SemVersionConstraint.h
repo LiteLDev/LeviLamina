@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/core/sem_ver/SemVersion.h"
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
 namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
@@ -18,8 +18,8 @@ class SemVersionConstraint : public ::cereal::ConstraintHandle<::SharedTypes::Se
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1e1562;
-    ::ll::UntypedStorage<8, 32> mUnkeae1a6;
+    ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>> mMin;
+    ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>> mMax;
     // NOLINTEND
 
 public:
@@ -39,27 +39,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SemVersionConstraint(::SharedTypes::SemVersionConstraint&&);
+    MCAPI SemVersionConstraint(::SharedTypes::SemVersionConstraint&&);
 
-    MCNAPI void validateValue(::SemVersion const& vers, ::cereal::SerializerContext& context) const;
+    MCAPI void validateValue(::SemVersion const& vers, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::SemVersionConstraint&&);
+    MCAPI void* $ctor(::SharedTypes::SemVersionConstraint&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCAPI ::cereal::internal::ConstraintDescription $description() const;
 
 
     // NOLINTEND

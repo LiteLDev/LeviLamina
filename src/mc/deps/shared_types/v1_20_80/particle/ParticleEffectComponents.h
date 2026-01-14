@@ -16,19 +16,19 @@ struct ParticleEffectComponents : public ::cereal::ComponentStorage {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ParticleEffectComponents();
+    MCAPI ~ParticleEffectComponents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

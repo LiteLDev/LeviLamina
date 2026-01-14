@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/shared_types/cereal/SemVersionConstraint.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,14 +17,8 @@ class SemVersionStringConstraint : public ::cereal::ConstraintHandle<::SharedTyp
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnke0f455;
+    ::ll::TypedStorage<8, 80, ::SharedTypes::SemVersionConstraint> mConstraint;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SemVersionStringConstraint& operator=(SemVersionStringConstraint const&);
-    SemVersionStringConstraint(SemVersionStringConstraint const&);
-    SemVersionStringConstraint();
 
 public:
     // virtual functions
@@ -36,13 +31,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
 
 
     // NOLINTEND

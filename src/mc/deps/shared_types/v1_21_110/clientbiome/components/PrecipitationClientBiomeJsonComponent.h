@@ -17,17 +17,11 @@ struct PrecipitationClientBiomeJsonComponent : public ::SharedTypes::v1_21_40::I
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk240998;
-    ::ll::UntypedStorage<4, 8> mUnk603e86;
-    ::ll::UntypedStorage<4, 8> mUnkea7265;
-    ::ll::UntypedStorage<4, 8> mUnkee2247;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mAsh;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mBlueSpores;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mRedSpores;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mWhiteAsh;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PrecipitationClientBiomeJsonComponent& operator=(PrecipitationClientBiomeJsonComponent const&);
-    PrecipitationClientBiomeJsonComponent(PrecipitationClientBiomeJsonComponent const&);
-    PrecipitationClientBiomeJsonComponent();
 
 public:
     // virtual functions
@@ -40,21 +34,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ClientBiomeComponentVersion $getType() const;
+    MCFOLD ::ClientBiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

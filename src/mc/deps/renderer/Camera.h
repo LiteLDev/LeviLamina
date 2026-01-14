@@ -2,53 +2,57 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Frustum.h"
+#include "mc/deps/renderer/MatrixStack.h"
+
 namespace mce {
 
 class Camera {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnk469690;
-    ::ll::UntypedStorage<8, 64>  mUnkc5fde2;
-    ::ll::UntypedStorage<8, 64>  mUnkadd7ad;
-    ::ll::UntypedStorage<4, 64>  mUnkb32d4f;
-    ::ll::UntypedStorage<4, 12>  mUnk6ebded;
-    ::ll::UntypedStorage<4, 12>  mUnk6a4ce8;
-    ::ll::UntypedStorage<4, 12>  mUnk8e696d;
-    ::ll::UntypedStorage<4, 12>  mUnk897dbc;
-    ::ll::UntypedStorage<4, 4>   mUnk30d55f;
-    ::ll::UntypedStorage<4, 4>   mUnk6791f3;
-    ::ll::UntypedStorage<4, 4>   mUnk476215;
-    ::ll::UntypedStorage<4, 4>   mUnk365074;
-    ::ll::UntypedStorage<4, 192> mUnke2deeb;
+    ::ll::TypedStorage<8, 64, ::MatrixStack> viewMatrixStack;
+    ::ll::TypedStorage<8, 64, ::MatrixStack> worldMatrixStack;
+    ::ll::TypedStorage<8, 64, ::MatrixStack> projectionMatrixStack;
+    ::ll::TypedStorage<4, 64, ::glm::mat4x4> mInverseViewMatrix;
+    ::ll::TypedStorage<4, 12, ::glm::vec3>   mRight;
+    ::ll::TypedStorage<4, 12, ::glm::vec3>   mUp;
+    ::ll::TypedStorage<4, 12, ::glm::vec3>   mForward;
+    ::ll::TypedStorage<4, 12, ::glm::vec3>   mPosition;
+    ::ll::TypedStorage<4, 4, float>          mAspectRatio;
+    ::ll::TypedStorage<4, 4, float>          mFov;
+    ::ll::TypedStorage<4, 4, float>          mZNear;
+    ::ll::TypedStorage<4, 4, float>          mZFar;
+    ::ll::TypedStorage<4, 192, ::Frustum>    mFrustum;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C Camera();
+    MCAPI_C Camera();
 
-    MCNAPI_C Camera(::mce::Camera const&);
+    MCAPI_C Camera(::mce::Camera const&);
 
-    MCNAPI_C ::mce::Camera& operator=(::mce::Camera const&);
+    MCAPI_C ::mce::Camera& operator=(::mce::Camera const&);
 
-    MCNAPI_C void updateViewMatrixDependencies();
+    MCAPI_C void updateViewMatrixDependencies();
 
-    MCNAPI_C ~Camera();
+    MCAPI_C ~Camera();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI_C void* $ctor();
 
-    MCNAPI_C void* $ctor(::mce::Camera const&);
+    MCAPI_C void* $ctor(::mce::Camera const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };
 

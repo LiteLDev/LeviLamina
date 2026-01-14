@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveBezier.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveBezierChain.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveCatmullRom.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveLinear.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,44 +19,44 @@ struct ParticleCurve {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 184> mUnka8e25b;
-    ::ll::UntypedStorage<8, 184> mUnkb0fc99;
-    ::ll::UntypedStorage<8, 184> mUnkb873e0;
-    ::ll::UntypedStorage<8, 120> mUnk8f86a3;
+    ::ll::TypedStorage<8, 184, ::std::optional<::SharedTypes::v1_20_80::ParticleCurveLinear>>      mLinear;
+    ::ll::TypedStorage<8, 184, ::std::optional<::SharedTypes::v1_20_80::ParticleCurveBezier>>      mBezier;
+    ::ll::TypedStorage<8, 184, ::std::optional<::SharedTypes::v1_20_80::ParticleCurveCatmullRom>>  mCatmullRom;
+    ::ll::TypedStorage<8, 120, ::std::optional<::SharedTypes::v1_20_80::ParticleCurveBezierChain>> mBezierChain;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ParticleCurve();
+    MCAPI_C ParticleCurve();
 
-    MCNAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve const&);
+    MCAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve&&);
+    MCAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve const&);
+    MCAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve const&);
 
-    MCNAPI_C ~ParticleCurve();
+    MCAPI_C ~ParticleCurve();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI_C void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve const&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };
 

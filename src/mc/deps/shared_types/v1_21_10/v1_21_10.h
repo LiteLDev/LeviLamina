@@ -10,7 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_21_10 {
 // functions
 // NOLINTBEGIN
-MCNAPI void bindCoordinateEvaluationOrder(::cereal::ReflectionCtx& ctx);
+MCAPI void bindCoordinateEvaluationOrder(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_10

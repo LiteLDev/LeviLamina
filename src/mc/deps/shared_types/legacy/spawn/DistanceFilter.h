@@ -8,15 +8,9 @@ struct DistanceFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7e16d2;
-    ::ll::UntypedStorage<4, 4> mUnkec59b4;
+    ::ll::TypedStorage<4, 4, int> mMin;
+    ::ll::TypedStorage<4, 4, int> mMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DistanceFilter& operator=(DistanceFilter const&);
-    DistanceFilter(DistanceFilter const&);
-    DistanceFilter();
 };
 
 } // namespace SharedTypes::Legacy::Spawn

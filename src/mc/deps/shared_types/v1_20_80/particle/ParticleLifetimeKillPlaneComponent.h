@@ -17,14 +17,8 @@ struct ParticleLifetimeKillPlaneComponent : public ::SharedTypes::v1_20_80::Part
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk37f903;
+    ::ll::TypedStorage<4, 16, ::std::array<float, 4>> mKillPlane;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleLifetimeKillPlaneComponent& operator=(ParticleLifetimeKillPlaneComponent const&);
-    ParticleLifetimeKillPlaneComponent(ParticleLifetimeKillPlaneComponent const&);
-    ParticleLifetimeKillPlaneComponent();
 
 public:
     // virtual functions
@@ -37,19 +31,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

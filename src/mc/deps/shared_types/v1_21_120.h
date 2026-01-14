@@ -16,13 +16,13 @@ namespace SharedTypes::v1_21_120 { struct DigGoalDefinition; }
 namespace SharedTypes::v1_21_120 {
 // functions
 // NOLINTBEGIN
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::AvoidBlockGoal& goal, ::SharedTypes::v1_21_120::AvoidBlockGoalDefinition definition);
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::AvoidMobTypeGoal& goal, ::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition definition);
 
-MCNAPI void initialize(::EntityContext&, ::DigGoal& goal, ::SharedTypes::v1_21_120::DigGoalDefinition definition);
+MCAPI void initialize(::EntityContext&, ::DigGoal& goal, ::SharedTypes::v1_21_120::DigGoalDefinition definition);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_120

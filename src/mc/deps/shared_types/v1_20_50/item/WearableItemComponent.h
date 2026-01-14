@@ -14,22 +14,20 @@ namespace SharedTypes::v1_20_50 {
 
 struct WearableItemComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk95fe9b;
-    ::ll::UntypedStorage<4, 4> mUnkee8cf5;
-    // NOLINTEND
+    // WearableItemComponent inner types define
+    using Slot = ::SharedTypes::Legacy::EquipmentSlot;
 
 public:
-    // prevent constructor by default
-    WearableItemComponent& operator=(WearableItemComponent const&);
-    WearableItemComponent(WearableItemComponent const&);
-    WearableItemComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::EquipmentSlot> mSlot;
+    ::ll::TypedStorage<4, 4, int>                                  mProtection;
+    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

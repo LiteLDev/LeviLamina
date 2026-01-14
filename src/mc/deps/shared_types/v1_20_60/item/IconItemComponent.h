@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_20_50 { struct IconItemComponent; }
@@ -14,27 +17,21 @@ struct IconItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk3901f2;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SharedTypes::Reference<11>>> mTextures;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IconItemComponent& operator=(IconItemComponent const&);
-    IconItemComponent(IconItemComponent const&);
-    IconItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~IconItemComponent();
+    MCAPI ~IconItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void upgrade(
+    MCAPI static void upgrade(
         ::std::optional<::SharedTypes::v1_20_50::IconItemComponent>& oldDefinition,
         ::std::optional<::SharedTypes::v1_20_60::IconItemComponent>& newDefinition
     );
@@ -43,7 +40,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

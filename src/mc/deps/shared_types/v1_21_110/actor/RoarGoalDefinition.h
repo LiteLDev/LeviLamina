@@ -16,27 +16,21 @@ struct RoarGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk32cac0;
+    ::ll::TypedStorage<4, 4, float> mDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RoarGoalDefinition& operator=(RoarGoalDefinition const&);
-    RoarGoalDefinition(RoarGoalDefinition const&);
-    RoarGoalDefinition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float const& DEFAULT_DURATION();
+    MCAPI static float const& DEFAULT_DURATION();
 
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

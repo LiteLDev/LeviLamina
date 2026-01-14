@@ -21,7 +21,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& EmptyID();
+    MCAPI static ::HashedString const& EmptyID();
     // NOLINTEND
 
 public:

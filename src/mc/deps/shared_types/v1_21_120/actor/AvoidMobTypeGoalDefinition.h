@@ -4,6 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
+#include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
+#include "mc/deps/shared_types/v1_21_120/actor/EntityTypes.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,21 +20,21 @@ struct AvoidMobTypeGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk7164e0;
-    ::ll::UntypedStorage<4, 4>   mUnk821e39;
-    ::ll::UntypedStorage<4, 4>   mUnkcb6fc6;
-    ::ll::UntypedStorage<4, 4>   mUnkc9f543;
-    ::ll::UntypedStorage<4, 4>   mUnk43c3c4;
-    ::ll::UntypedStorage<4, 4>   mUnk2ddc31;
-    ::ll::UntypedStorage<4, 4>   mUnkae0417;
-    ::ll::UntypedStorage<4, 4>   mUnkd79a76;
-    ::ll::UntypedStorage<4, 4>   mUnkadf7a3;
-    ::ll::UntypedStorage<4, 4>   mUnk40acee;
-    ::ll::UntypedStorage<1, 1>   mUnk17799b;
-    ::ll::UntypedStorage<8, 368> mUnkc0fd4e;
-    ::ll::UntypedStorage<4, 4>   mUnk5d34a1;
-    ::ll::UntypedStorage<4, 8>   mUnkb295d9;
-    ::ll::UntypedStorage<8, 24>  mUnkff506f;
+    ::ll::TypedStorage<1, 1, bool>                                               mIgnoreVisibility;
+    ::ll::TypedStorage<4, 4, int>                                                mAvoidTargetPositionDistanceXZ;
+    ::ll::TypedStorage<4, 4, int>                                                mAvoidTargetPositionDistanceY;
+    ::ll::TypedStorage<4, 4, float>                                              mMaximumDistance;
+    ::ll::TypedStorage<4, 4, float>                                              mMaximumFlee;
+    ::ll::TypedStorage<4, 4, float>                                              mProbabilityPerStrength;
+    ::ll::TypedStorage<4, 4, float>                                              mRiverSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                                              mSprintDistance;
+    ::ll::TypedStorage<4, 4, float>                                              mSprintSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                                              mWalkSpeedModifier;
+    ::ll::TypedStorage<1, 1, bool>                                               mRemoveTarget;
+    ::ll::TypedStorage<8, 368, ::SharedTypes::v1_21_120::ActorDefinitionTrigger> mOnEscapeTrigger;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>             mSoundEvent;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange>                          mSoundIntervalRange;
+    ::ll::TypedStorage<8, 24, ::SharedTypes::v1_21_120::EntityTypes>             mAvoidMobs;
     // NOLINTEND
 
 public:
@@ -40,66 +44,66 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AvoidMobTypeGoalDefinition();
+    MCAPI AvoidMobTypeGoalDefinition();
 
-    MCNAPI AvoidMobTypeGoalDefinition(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
+    MCAPI AvoidMobTypeGoalDefinition(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
 
-    MCNAPI AvoidMobTypeGoalDefinition(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition const&);
+    MCAPI AvoidMobTypeGoalDefinition(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition const&);
 
-    MCNAPI ::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&
+    MCAPI ::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&
     operator=(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
 
-    MCNAPI ~AvoidMobTypeGoalDefinition();
+    MCAPI ~AvoidMobTypeGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static int const& DEFAULT_AVOID_TARGET_XZ();
+    MCAPI static int const& DEFAULT_AVOID_TARGET_XZ();
 
-    MCNAPI static int const& DEFAULT_AVOID_TARGET_Y();
+    MCAPI static int const& DEFAULT_AVOID_TARGET_Y();
 
-    MCNAPI static bool const& DEFAULT_IGNORE_VISIBILITY();
+    MCAPI static bool const& DEFAULT_IGNORE_VISIBILITY();
 
-    MCNAPI static float const& DEFAULT_MAX_DIST();
+    MCAPI static float const& DEFAULT_MAX_DIST();
 
-    MCNAPI static float const& DEFAULT_MAX_FLEE();
+    MCAPI static float const& DEFAULT_MAX_FLEE();
 
-    MCNAPI static float const& DEFAULT_PROBABILITY_PER_STRENGTH();
+    MCAPI static float const& DEFAULT_PROBABILITY_PER_STRENGTH();
 
-    MCNAPI static bool const& DEFAULT_REMOVE_TARGET();
+    MCAPI static bool const& DEFAULT_REMOVE_TARGET();
 
-    MCNAPI static float const& DEFAULT_RIVER_SPEED_MULTIPLIER();
+    MCAPI static float const& DEFAULT_RIVER_SPEED_MULTIPLIER();
 
-    MCNAPI static float const& DEFAULT_SPRINT_DISTANCE();
+    MCAPI static float const& DEFAULT_SPRINT_DISTANCE();
 
-    MCNAPI static float const& DEFAULT_SPRINT_SPEED_MULTIPLIER();
+    MCAPI static float const& DEFAULT_SPRINT_SPEED_MULTIPLIER();
 
-    MCNAPI static float const& DEFAULT_WALK_SPEED_MULTIPLIER();
+    MCAPI static float const& DEFAULT_WALK_SPEED_MULTIPLIER();
 
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

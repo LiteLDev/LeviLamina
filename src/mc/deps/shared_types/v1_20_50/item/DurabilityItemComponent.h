@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/shared_types/IntRange.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,20 +16,14 @@ struct DurabilityItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk3e346e;
-    ::ll::UntypedStorage<4, 4> mUnk29f573;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::IntRange> mDamageChance;
+    ::ll::TypedStorage<4, 4, int>                     mMaxDurability;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DurabilityItemComponent& operator=(DurabilityItemComponent const&);
-    DurabilityItemComponent(DurabilityItemComponent const&);
-    DurabilityItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

@@ -11,51 +11,55 @@ namespace SharedTypes::Util {
 
 struct MolangJsonContainer {
 public:
+    // MolangJsonContainer inner types define
+    using ContainerValue = ::std::variant<float, ::std::string>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk51298a;
+    ::ll::TypedStorage<8, 40, ::std::variant<float, ::std::string>> mValue;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MolangJsonContainer();
+    MCAPI MolangJsonContainer();
 
-    MCNAPI MolangJsonContainer(::SharedTypes::Util::MolangJsonContainer&&);
+    MCAPI MolangJsonContainer(::SharedTypes::Util::MolangJsonContainer&&);
 
-    MCNAPI MolangJsonContainer(::SharedTypes::Util::MolangJsonContainer const&);
+    MCAPI MolangJsonContainer(::SharedTypes::Util::MolangJsonContainer const&);
 
-    MCNAPI ::SharedTypes::Util::MolangJsonContainer& operator=(::SharedTypes::Util::MolangJsonContainer const&);
+    MCFOLD ::SharedTypes::Util::MolangJsonContainer& operator=(::SharedTypes::Util::MolangJsonContainer const&);
 
-    MCNAPI ~MolangJsonContainer();
+    MCAPI ~MolangJsonContainer();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void valueFromBool(::SharedTypes::Util::MolangJsonContainer& instance, bool value);
+    MCAPI static void valueFromBool(::SharedTypes::Util::MolangJsonContainer& instance, bool value);
 
-    MCNAPI static void valueFromFloat(::SharedTypes::Util::MolangJsonContainer& instance, float value);
+    MCAPI static void valueFromFloat(::SharedTypes::Util::MolangJsonContainer& instance, float value);
 
-    MCNAPI static void valueFromString(::SharedTypes::Util::MolangJsonContainer& instance, ::std::string const& str);
+    MCAPI static void valueFromString(::SharedTypes::Util::MolangJsonContainer& instance, ::std::string const& str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::Util::MolangJsonContainer&&);
+    MCAPI void* $ctor(::SharedTypes::Util::MolangJsonContainer&&);
 
-    MCNAPI void* $ctor(::SharedTypes::Util::MolangJsonContainer const&);
+    MCAPI void* $ctor(::SharedTypes::Util::MolangJsonContainer const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

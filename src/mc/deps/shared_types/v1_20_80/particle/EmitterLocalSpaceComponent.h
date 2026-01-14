@@ -17,16 +17,10 @@ struct EmitterLocalSpaceComponent : public ::SharedTypes::v1_20_80::ParticleEffe
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk36b0a5;
-    ::ll::UntypedStorage<1, 1> mUnk569b76;
-    ::ll::UntypedStorage<1, 1> mUnkdd3809;
+    ::ll::TypedStorage<1, 1, bool> mUseActorPosition;
+    ::ll::TypedStorage<1, 1, bool> mUseActorRotation;
+    ::ll::TypedStorage<1, 1, bool> mUseEmitterVelocity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EmitterLocalSpaceComponent& operator=(EmitterLocalSpaceComponent const&);
-    EmitterLocalSpaceComponent(EmitterLocalSpaceComponent const&);
-    EmitterLocalSpaceComponent();
 
 public:
     // virtual functions
@@ -39,19 +33,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

@@ -4,23 +4,32 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
+#include "mc/deps/core/threading/BasicLockbox.h"
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
+#include "mc/platform/threading/Mutex.h"
+
+// auto generated forward declare list
+// clang-format off
+class TaskGroup;
+// clang-format on
 
 class LatencyNetworkPeer : public ::NetworkPeer {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7d0116;
-    ::ll::UntypedStorage<8, 96> mUnk7c2d2e;
-    ::ll::UntypedStorage<8, 8>  mUnk9e18c2;
-    // NOLINTEND
+    // LatencyNetworkPeer inner types define
+    using Content = ::Bedrock::Threading::Async<void>;
 
 public:
-    // prevent constructor by default
-    LatencyNetworkPeer& operator=(LatencyNetworkPeer const&);
-    LatencyNetworkPeer(LatencyNetworkPeer const&);
-    LatencyNetworkPeer();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds> mLatency;
+    ::ll::TypedStorage<
+        8,
+        96,
+        ::Bedrock::Threading::BasicLockbox<::Bedrock::Threading::Async<void>, ::Bedrock::Threading::Mutex>>
+                                                             mPredecessor;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>> mTaskGroup;
+    // NOLINTEND
 
 public:
     // virtual functions

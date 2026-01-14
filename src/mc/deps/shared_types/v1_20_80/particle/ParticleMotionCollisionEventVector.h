@@ -14,27 +14,21 @@ struct ParticleMotionCollisionEventVector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7ec098;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_20_80::ParticleMotionCollisionEvent>> mEventVector;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleMotionCollisionEventVector& operator=(ParticleMotionCollisionEventVector const&);
-    ParticleMotionCollisionEventVector(ParticleMotionCollisionEventVector const&);
-    ParticleMotionCollisionEventVector();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~ParticleMotionCollisionEventVector();
+    MCAPI_C ~ParticleMotionCollisionEventVector();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void fromSingleEvent(
+    MCAPI static void fromSingleEvent(
         ::SharedTypes::v1_20_80::ParticleMotionCollisionEventVector& instance,
         ::SharedTypes::v1_20_80::ParticleMotionCollisionEvent const& event
     );
@@ -43,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

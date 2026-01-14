@@ -2,6 +2,41 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_20_50/item/AllowOffHandItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/CanDestroyInCreativeItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/CooldownItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/DamageItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/DiggerItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/DisplayNameItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/DurabilityItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/EnchantableItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/EntityPlacerItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/FoodItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/FuelItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/GlintItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/HandEquippedItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/HoverTextColorItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/InteractButtonItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/LiquidClippedItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/MaxStackSizeItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/PlanterItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/ProjectileItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/RecordItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/RepairableItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/ShooterItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/ShouldDespawnItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/StackedByDataItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/TagsItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/ThrowableItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/UseAnimationItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/UseModifiersItemComponent.h"
+#include "mc/deps/shared_types/v1_20_50/item/WearableItemComponent.h"
+#include "mc/deps/shared_types/v1_20_60/item/IconItemComponent.h"
+#include "mc/deps/shared_types/v1_20_80/item/CustomComponentsItemComponent.h"
+#include "mc/deps/shared_types/v1_21_10/item/DamageAbsorptionItemComponent.h"
+#include "mc/deps/shared_types/v1_21_10/item/DurabilitySensorItemComponent.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,39 +48,59 @@ struct ComponentItemComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2>  mUnkf2303c;
-    ::ll::UntypedStorage<1, 2>  mUnk657c85;
-    ::ll::UntypedStorage<8, 48> mUnk242ab8;
-    ::ll::UntypedStorage<8, 32> mUnka151ba;
-    ::ll::UntypedStorage<8, 32> mUnkd9fafa;
-    ::ll::UntypedStorage<2, 4>  mUnk3e26ec;
-    ::ll::UntypedStorage<8, 40> mUnkd40e22;
-    ::ll::UntypedStorage<8, 40> mUnkc04e6b;
-    ::ll::UntypedStorage<4, 16> mUnk798e37;
-    ::ll::UntypedStorage<8, 32> mUnk3f32c9;
-    ::ll::UntypedStorage<8, 48> mUnk153022;
-    ::ll::UntypedStorage<8, 88> mUnke7a9de;
-    ::ll::UntypedStorage<8, 48> mUnk8b7c29;
-    ::ll::UntypedStorage<4, 8>  mUnk191877;
-    ::ll::UntypedStorage<1, 2>  mUnkd74d30;
-    ::ll::UntypedStorage<1, 2>  mUnk8eebb6;
-    ::ll::UntypedStorage<8, 40> mUnkaa8199;
-    ::ll::UntypedStorage<8, 72> mUnk1385be;
-    ::ll::UntypedStorage<8, 48> mUnk2bff52;
-    ::ll::UntypedStorage<1, 2>  mUnk7a81b8;
-    ::ll::UntypedStorage<2, 4>  mUnkae1c78;
-    ::ll::UntypedStorage<8, 64> mUnk6bf8e1;
-    ::ll::UntypedStorage<8, 48> mUnk933ee7;
-    ::ll::UntypedStorage<4, 16> mUnkcc9eab;
-    ::ll::UntypedStorage<8, 32> mUnk1be8e5;
-    ::ll::UntypedStorage<8, 40> mUnke2e369;
-    ::ll::UntypedStorage<1, 2>  mUnk396256;
-    ::ll::UntypedStorage<1, 2>  mUnkc38cbd;
-    ::ll::UntypedStorage<8, 32> mUnk74041b;
-    ::ll::UntypedStorage<4, 24> mUnkd7fe00;
-    ::ll::UntypedStorage<1, 2>  mUnk2f7e52;
-    ::ll::UntypedStorage<4, 20> mUnked21c2;
-    ::ll::UntypedStorage<4, 12> mUnk8ab8cf;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_20_50::AllowOffHandItemComponent>>
+        allowOffHandItemComponent;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_20_50::CanDestroyInCreativeItemComponent>>
+        canDestroyInCreativeItemComponent;
+    ::ll::TypedStorage<8, 48, ::std::optional<::SharedTypes::v1_20_50::CooldownItemComponent>> cooldownItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::SharedTypes::v1_20_80::CustomComponentsItemComponent>>
+        customComponentsItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::SharedTypes::v1_21_10::DamageAbsorptionItemComponent>>
+        damageAbsorptionItemComponent;
+    ::ll::TypedStorage<2, 4, ::std::optional<::SharedTypes::v1_20_50::DamageItemComponent>>  damageItemComponent;
+    ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_20_50::DiggerItemComponent>> diggerItemComponent;
+    ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_20_50::DisplayNameItemComponent>>
+        displayNameItemComponent;
+    ::ll::TypedStorage<4, 16, ::std::optional<::SharedTypes::v1_20_50::DurabilityItemComponent>>
+        durabilityItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::SharedTypes::v1_21_10::DurabilitySensorItemComponent>>
+        durabilitySensorItemComponent;
+    ::ll::TypedStorage<8, 48, ::std::optional<::SharedTypes::v1_20_50::EnchantableItemComponent>>
+        enchantableItemComponent;
+    ::ll::TypedStorage<8, 88, ::std::optional<::SharedTypes::v1_20_50::EntityPlacerItemComponent>>
+                                                                                           entityPlacerItemComponent;
+    ::ll::TypedStorage<8, 48, ::std::optional<::SharedTypes::v1_20_50::FoodItemComponent>> foodItemComponent;
+    ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::v1_20_50::FuelItemComponent>>  fuelItemComponent;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_20_50::GlintItemComponent>> glintItemComponent;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_20_50::HandEquippedItemComponent>>
+        handEquippedItemComponent;
+    ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_20_50::HoverTextColorItemComponent>>
+                                                                                           hoverTextColorItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::SharedTypes::v1_20_60::IconItemComponent>> iconItemComponent;
+    ::ll::TypedStorage<8, 48, ::std::optional<::SharedTypes::v1_20_50::InteractButtonItemComponent>>
+        interactButtonItemComponent;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_20_50::LiquidClippedItemComponent>>
+        liquidClippedItemComponent;
+    ::ll::TypedStorage<2, 4, ::std::optional<::SharedTypes::v1_20_50::MaxStackSizeItemComponent>>
+                                                                                              maxStackSizeItemComponent;
+    ::ll::TypedStorage<8, 64, ::std::optional<::SharedTypes::v1_20_50::PlanterItemComponent>> planterItemComponent;
+    ::ll::TypedStorage<8, 48, ::std::optional<::SharedTypes::v1_20_50::ProjectileItemComponent>>
+                                                                                             projectileItemComponent;
+    ::ll::TypedStorage<4, 16, ::std::optional<::SharedTypes::v1_20_50::RecordItemComponent>> recordItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::SharedTypes::v1_20_50::RepairableItemComponent>>
+                                                                                              repairableItemComponent;
+    ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_20_50::ShooterItemComponent>> shooterItemComponent;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_20_50::ShouldDespawnItemComponent>>
+        shouldDespawnItemComponent;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_20_50::StackedByDataItemComponent>>
+                                                                                           stackedByDataItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::SharedTypes::v1_20_50::TagsItemComponent>> tagsItemComponent;
+    ::ll::TypedStorage<4, 24, ::std::optional<::SharedTypes::v1_20_50::ThrowableItemComponent>> throwableItemComponent;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_20_50::UseAnimationItemComponent>>
+        useAnimationItemComponent;
+    ::ll::TypedStorage<4, 20, ::std::optional<::SharedTypes::v1_20_50::UseModifiersItemComponent>>
+        useModifiersItemComponent;
+    ::ll::TypedStorage<4, 12, ::std::optional<::SharedTypes::v1_20_50::WearableItemComponent>> wearableItemComponent;
     // NOLINTEND
 
 public:
@@ -55,37 +110,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemComponentData(::SharedTypes::v1_21_10::ComponentItemComponentData&&);
+    MCAPI ComponentItemComponentData(::SharedTypes::v1_21_10::ComponentItemComponentData&&);
 
-    MCNAPI ComponentItemComponentData(::SharedTypes::v1_21_10::ComponentItemComponentData const&);
+    MCAPI ComponentItemComponentData(::SharedTypes::v1_21_10::ComponentItemComponentData const&);
 
-    MCNAPI ::SharedTypes::v1_21_10::ComponentItemComponentData&
+    MCAPI ::SharedTypes::v1_21_10::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_10::ComponentItemComponentData&&);
 
-    MCNAPI ::SharedTypes::v1_21_10::ComponentItemComponentData&
+    MCAPI ::SharedTypes::v1_21_10::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_10::ComponentItemComponentData const&);
 
-    MCNAPI ~ComponentItemComponentData();
+    MCAPI ~ComponentItemComponentData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ComponentItemComponentData&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_10::ComponentItemComponentData&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ComponentItemComponentData const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_10::ComponentItemComponentData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

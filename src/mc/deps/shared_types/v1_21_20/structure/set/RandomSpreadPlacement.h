@@ -2,24 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_20/structure/set/PlacementType.h"
+#include "mc/deps/shared_types/v1_21_20/structure/set/SpreadType.h"
+
 namespace SharedTypes::v1_21_20::JigsawStructureSet {
 
 struct RandomSpreadPlacement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke76a8b;
-    ::ll::UntypedStorage<4, 4> mUnk3a9dc1;
-    ::ll::UntypedStorage<2, 2> mUnk71bc9e;
-    ::ll::UntypedStorage<2, 2> mUnkf621cc;
-    ::ll::UntypedStorage<1, 1> mUnkc11196;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_20::JigsawStructureSet::PlacementType> mType;
+    ::ll::TypedStorage<4, 4, int>                                                        mSalt;
+    ::ll::TypedStorage<2, 2, ushort>                                                     mSeparation;
+    ::ll::TypedStorage<2, 2, ushort>                                                     mSpacing;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_20::JigsawStructureSet::SpreadType>    mSpreadType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomSpreadPlacement& operator=(RandomSpreadPlacement const&);
-    RandomSpreadPlacement(RandomSpreadPlacement const&);
-    RandomSpreadPlacement();
 };
 
 } // namespace SharedTypes::v1_21_20::JigsawStructureSet

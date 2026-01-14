@@ -16,13 +16,13 @@ struct DragonFlamingGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk534f24;
-    ::ll::UntypedStorage<4, 4>  mUnk3f19db;
-    ::ll::UntypedStorage<4, 4>  mUnk4cdb88;
-    ::ll::UntypedStorage<4, 4>  mUnkfe3d3b;
-    ::ll::UntypedStorage<4, 4>  mUnkc3b153;
-    ::ll::UntypedStorage<4, 4>  mUnkbc99ff;
-    ::ll::UntypedStorage<8, 32> mUnkf188ba;
+    ::ll::TypedStorage<4, 4, int>            mGroundFlameAttackCount;
+    ::ll::TypedStorage<4, 4, float>          mCooldownTime;
+    ::ll::TypedStorage<4, 4, float>          mFlameTime;
+    ::ll::TypedStorage<4, 4, float>          mRoarTime;
+    ::ll::TypedStorage<4, 4, float>          mSmokeRadius;
+    ::ll::TypedStorage<4, 4, float>          mSmokeTime;
+    ::ll::TypedStorage<8, 32, ::std::string> mSmokeColor;
     // NOLINTEND
 
 public:
@@ -34,36 +34,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_100::DragonFlamingGoalDefinition&
+    MCAPI ::SharedTypes::v1_21_100::DragonFlamingGoalDefinition&
     operator=(::SharedTypes::v1_21_100::DragonFlamingGoalDefinition&&);
 
-    MCNAPI ~DragonFlamingGoalDefinition();
+    MCAPI ~DragonFlamingGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static int const& DEFAULT_GROUND_FLAME_COUNT();
+    MCAPI static int const& DEFAULT_GROUND_FLAME_COUNT();
 
-    MCNAPI static ::std::string_view const& DEFAULT_SMOKE_COLOR();
+    MCAPI static ::std::string_view const& DEFAULT_SMOKE_COLOR();
 
-    MCNAPI static float const& DEFAULT_SMOKE_RADIUS();
+    MCAPI static float const& DEFAULT_SMOKE_RADIUS();
 
-    MCNAPI static float const& DEFAULT_SMOKE_TIME();
+    MCAPI static float const& DEFAULT_SMOKE_TIME();
 
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

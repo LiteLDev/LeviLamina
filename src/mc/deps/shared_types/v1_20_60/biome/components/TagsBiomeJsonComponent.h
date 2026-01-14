@@ -17,14 +17,8 @@ struct TagsBiomeJsonComponent : public ::SharedTypes::v1_20_60::IBiomeJsonCompon
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk48429b;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mTags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TagsBiomeJsonComponent& operator=(TagsBiomeJsonComponent const&);
-    TagsBiomeJsonComponent(TagsBiomeJsonComponent const&);
-    TagsBiomeJsonComponent();
 
 public:
     // virtual functions
@@ -37,21 +31,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BiomeComponentVersion $getType() const;
+    MCFOLD ::BiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

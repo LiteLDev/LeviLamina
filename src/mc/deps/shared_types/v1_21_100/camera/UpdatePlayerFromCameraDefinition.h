@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_100/camera/LookMode.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,25 +16,19 @@ struct UpdatePlayerFromCameraDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk233da1;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_100::LookMode> mLookMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UpdatePlayerFromCameraDefinition& operator=(UpdatePlayerFromCameraDefinition const&);
-    UpdatePlayerFromCameraDefinition(UpdatePlayerFromCameraDefinition const&);
-    UpdatePlayerFromCameraDefinition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

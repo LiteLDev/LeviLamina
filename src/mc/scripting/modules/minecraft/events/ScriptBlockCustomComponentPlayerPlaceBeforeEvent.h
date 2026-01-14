@@ -40,8 +40,8 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptBlockCustomComponentPlayerPlaceBeforeEvent& operator=(ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&
-    );
+    ScriptBlockCustomComponentPlayerPlaceBeforeEvent&
+    operator=(ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
     ScriptBlockCustomComponentPlayerPlaceBeforeEvent();
 
 public:

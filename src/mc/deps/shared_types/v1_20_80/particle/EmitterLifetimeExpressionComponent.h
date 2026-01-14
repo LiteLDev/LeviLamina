@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
 
 // auto generated forward declare list
@@ -17,8 +18,8 @@ struct EmitterLifetimeExpressionComponent : public ::SharedTypes::v1_20_80::Part
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk16f21b;
-    ::ll::UntypedStorage<8, 48> mUnk3e8a74;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode> mActivationExpr;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode> mExpirationExpr;
     // NOLINTEND
 
 public:
@@ -38,37 +39,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EmitterLifetimeExpressionComponent(::SharedTypes::v1_20_80::EmitterLifetimeExpressionComponent&&);
+    MCAPI EmitterLifetimeExpressionComponent(::SharedTypes::v1_20_80::EmitterLifetimeExpressionComponent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeExpressionComponent&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeExpressionComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

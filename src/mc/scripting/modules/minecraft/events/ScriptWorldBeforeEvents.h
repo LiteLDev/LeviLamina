@@ -257,8 +257,8 @@ public:
 
     MCAPI ::std::vector<::ScriptModuleMinecraft::SignalNameSubscriberCount> getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptWorldBeforeEvents& operator=(::ScriptModuleMinecraft::ScriptWorldBeforeEvents&&
-    );
+    MCAPI ::ScriptModuleMinecraft::ScriptWorldBeforeEvents&
+    operator=(::ScriptModuleMinecraft::ScriptWorldBeforeEvents&&);
 
     MCAPI void registerListeners();
     // NOLINTEND

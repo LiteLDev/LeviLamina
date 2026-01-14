@@ -44,23 +44,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI DataCallback(::BatchedNetworkPeer::DataCallback&&);
+        MCAPI DataCallback(::BatchedNetworkPeer::DataCallback&&);
 
-        MCNAPI ::BatchedNetworkPeer::DataCallback& operator=(::BatchedNetworkPeer::DataCallback&&);
+        MCAPI ::BatchedNetworkPeer::DataCallback& operator=(::BatchedNetworkPeer::DataCallback&&);
 
-        MCNAPI ~DataCallback();
+        MCAPI ~DataCallback();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::BatchedNetworkPeer::DataCallback&&);
+        MCAPI void* $ctor(::BatchedNetworkPeer::DataCallback&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

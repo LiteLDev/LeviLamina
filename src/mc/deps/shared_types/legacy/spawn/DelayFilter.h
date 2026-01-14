@@ -8,10 +8,10 @@ struct DelayFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk8ae902;
-    ::ll::UntypedStorage<4, 4>  mUnk7d95f6;
-    ::ll::UntypedStorage<4, 4>  mUnke54c92;
-    ::ll::UntypedStorage<8, 32> mUnk2319bc;
+    ::ll::TypedStorage<4, 4, int>            mMin;
+    ::ll::TypedStorage<4, 4, int>            mMax;
+    ::ll::TypedStorage<4, 4, int>            mSpawnChance;
+    ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
     // NOLINTEND
 
 public:
@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::Legacy::Spawn::DelayFilter& operator=(::SharedTypes::Legacy::Spawn::DelayFilter&&);
+    MCFOLD ::SharedTypes::Legacy::Spawn::DelayFilter& operator=(::SharedTypes::Legacy::Spawn::DelayFilter&&);
     // NOLINTEND
 };
 

@@ -3,11 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+#include "mc/deps/shared_types/v1_20_80/particle/DirectionSettings.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
+#include "mc/deps/shared_types/v1_20_80/particle/UV.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,10 +20,10 @@ struct ParticleAppearanceBillboardComponent : public ::SharedTypes::v1_20_80::Pa
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96>  mUnk252f0f;
-    ::ll::UntypedStorage<8, 56>  mUnk551eba;
-    ::ll::UntypedStorage<8, 168> mUnk1ea376;
-    ::ll::UntypedStorage<8, 392> mUnkc1f356;
+    ::ll::TypedStorage<8, 96, ::std::array<::SharedTypes::Legacy::ExpressionNode, 2>>       mSizeExpr;
+    ::ll::TypedStorage<8, 56, ::std::optional<::HashedString>>                              mFacing;
+    ::ll::TypedStorage<8, 168, ::std::optional<::SharedTypes::v1_20_80::DirectionSettings>> mDirection;
+    ::ll::TypedStorage<8, 392, ::std::optional<::SharedTypes::v1_20_80::UV>>                mUV;
     // NOLINTEND
 
 public:
@@ -39,44 +42,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParticleAppearanceBillboardComponent(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
+    MCAPI ParticleAppearanceBillboardComponent(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
 
-    MCNAPI ParticleAppearanceBillboardComponent(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
+    MCAPI ParticleAppearanceBillboardComponent(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&
+    MCAPI ::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&
     operator=(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ILibrary {};
+class ILibrary {};
 
 } // namespace OreUI

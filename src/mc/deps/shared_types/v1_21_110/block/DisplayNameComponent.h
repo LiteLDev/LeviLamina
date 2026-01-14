@@ -8,31 +8,25 @@ struct DisplayNameComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk54cc85;
+    ::ll::TypedStorage<8, 32, ::std::string> mDisplayName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DisplayNameComponent& operator=(DisplayNameComponent const&);
-    DisplayNameComponent(DisplayNameComponent const&);
-    DisplayNameComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~DisplayNameComponent();
+    MCAPI ~DisplayNameComponent();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& NameId();
+    MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

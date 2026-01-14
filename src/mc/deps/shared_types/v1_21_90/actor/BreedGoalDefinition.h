@@ -16,27 +16,21 @@ struct BreedGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk867c6e;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BreedGoalDefinition& operator=(BreedGoalDefinition const&);
-    BreedGoalDefinition(BreedGoalDefinition const&);
-    BreedGoalDefinition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float const& DEFAULT_SPEED_MULTIPLIER();
+    MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
 
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

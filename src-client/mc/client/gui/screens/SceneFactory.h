@@ -79,7 +79,7 @@ struct WorldTemplateInfo;
 namespace Bedrock::StorageMigration { class StorageMigrationService; }
 namespace Core { class Path; }
 namespace Json { class Value; }
-namespace OreUI { struct SceneProvider; }
+namespace OreUI { class SceneProvider; }
 namespace Realms { struct InviteLink; }
 namespace Realms { struct World; }
 // clang-format on

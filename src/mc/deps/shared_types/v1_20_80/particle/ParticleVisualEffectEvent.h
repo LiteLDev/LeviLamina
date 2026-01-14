@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -23,9 +27,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk37423e;
-    ::ll::UntypedStorage<4, 4>  mUnk7bcfc4;
-    ::ll::UntypedStorage<8, 48> mUnk8d12c3;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                                        mEffectName;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_20_80::ParticleVisualEffectEvent::ParticleEffectType> mEffectType;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>                                 mEffectExpression;
     // NOLINTEND
 
 public:
@@ -36,30 +40,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParticleVisualEffectEvent(::SharedTypes::v1_20_80::ParticleVisualEffectEvent const&);
+    MCAPI ParticleVisualEffectEvent(::SharedTypes::v1_20_80::ParticleVisualEffectEvent const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleVisualEffectEvent&
+    MCAPI ::SharedTypes::v1_20_80::ParticleVisualEffectEvent&
     operator=(::SharedTypes::v1_20_80::ParticleVisualEffectEvent&&);
 
-    MCNAPI ~ParticleVisualEffectEvent();
+    MCAPI ~ParticleVisualEffectEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleVisualEffectEvent const&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleVisualEffectEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

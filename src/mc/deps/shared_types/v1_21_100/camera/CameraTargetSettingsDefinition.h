@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,30 +16,24 @@ struct CameraTargetSettingsDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk9bb2d6;
-    ::ll::UntypedStorage<1, 1>  mUnke68408;
-    ::ll::UntypedStorage<4, 4>  mUnkd08a08;
-    ::ll::UntypedStorage<4, 4>  mUnkbc9920;
-    ::ll::UntypedStorage<4, 12> mUnk6c3b39;
-    ::ll::UntypedStorage<4, 12> mUnk38acc9;
+    ::ll::TypedStorage<1, 1, bool>                     mSnapToTarget;
+    ::ll::TypedStorage<1, 1, bool>                     mContinueTargeting;
+    ::ll::TypedStorage<4, 4, float>                    mRotationSpeed;
+    ::ll::TypedStorage<4, 4, float>                    mTrackingRadius;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mHorizontalRotationLimit;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mVerticalRotationLimit;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraTargetSettingsDefinition& operator=(CameraTargetSettingsDefinition const&);
-    CameraTargetSettingsDefinition(CameraTargetSettingsDefinition const&);
-    CameraTargetSettingsDefinition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

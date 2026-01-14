@@ -16,16 +16,14 @@ namespace mce { struct Image; }
 
 class ResourceLoader : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk41e959;
-    // NOLINTEND
+    // ResourceLoader inner types define
+    using ResourceFileExtensionSetType = ::gsl::span<::std::string const>;
 
 public:
-    // prevent constructor by default
-    ResourceLoader& operator=(ResourceLoader const&);
-    ResourceLoader(ResourceLoader const&);
-    ResourceLoader();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::function<::Core::PathBuffer<::std::string>()>> mGetPath;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -79,41 +77,41 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $load(
+    MCFOLD bool $load(
         ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensions
     ) const;
 
-    MCNAPI bool $loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
+    MCFOLD bool $loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
-    MCNAPI bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
+    MCFOLD bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI bool $isInStreamableLocation(
+    MCFOLD bool $isInStreamableLocation(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
+    MCAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string>
+    MCFOLD ::Core::PathBuffer<::std::string>
     $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string>
+    MCFOLD ::Core::PathBuffer<::std::string>
     $getPathContainingResource(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
+    MCFOLD ::Core::PathBuffer<::std::string> $getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;
 
-    MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
+    MCAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;

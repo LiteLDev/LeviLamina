@@ -16,14 +16,8 @@ class Vec2TotalConstraint : public ::cereal::ConstraintHandle<::SharedTypes::Vec
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka32334;
+    ::ll::TypedStorage<4, 4, float> mTotal;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Vec2TotalConstraint& operator=(Vec2TotalConstraint const&);
-    Vec2TotalConstraint(Vec2TotalConstraint const&);
-    Vec2TotalConstraint();
 
 public:
     // virtual functions
@@ -36,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
 
 
     // NOLINTEND

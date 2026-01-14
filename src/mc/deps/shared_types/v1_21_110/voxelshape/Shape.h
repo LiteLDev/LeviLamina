@@ -2,13 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace SharedTypes::v1_21_110 { struct Box; }
+// clang-format on
+
 namespace SharedTypes::v1_21_110 {
 
 struct Shape {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka1d36c;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_110::Box>> mBoxes;
     // NOLINTEND
 
 public:
@@ -20,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_110::Shape& operator=(::SharedTypes::v1_21_110::Shape&&);
+    MCAPI ::SharedTypes::v1_21_110::Shape& operator=(::SharedTypes::v1_21_110::Shape&&);
     // NOLINTEND
 };
 

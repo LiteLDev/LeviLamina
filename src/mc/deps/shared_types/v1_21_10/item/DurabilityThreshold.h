@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,21 +17,15 @@ struct DurabilityThreshold {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkee883e;
-    ::ll::UntypedStorage<4, 4> mUnkaa685b;
-    ::ll::UntypedStorage<4, 4> mUnkb9f3b8;
+    ::ll::TypedStorage<4, 4, int>                                    mDurability;
+    ::ll::TypedStorage<4, 4, ::ParticleType>                         mParticleType;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DurabilityThreshold& operator=(DurabilityThreshold const&);
-    DurabilityThreshold(DurabilityThreshold const&);
-    DurabilityThreshold();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

@@ -14,21 +14,19 @@ namespace SharedTypes::v1_20_50 {
 
 struct UseAnimationItemComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk3675f8;
-    // NOLINTEND
+    // UseAnimationItemComponent inner types define
+    using Animation = ::SharedTypes::Legacy::UseAnimation;
 
 public:
-    // prevent constructor by default
-    UseAnimationItemComponent& operator=(UseAnimationItemComponent const&);
-    UseAnimationItemComponent(UseAnimationItemComponent const&);
-    UseAnimationItemComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::UseAnimation> mAnimation;
+    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

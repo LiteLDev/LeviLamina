@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_80/camera/CameraPreset.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,20 +16,14 @@ struct CameraPresetFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk4e6eb2;
-    ::ll::UntypedStorage<8, 288> mUnkf545ff;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mVersion;
+    ::ll::TypedStorage<8, 288, ::SharedTypes::v1_21_80::CameraPreset> mPreset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraPresetFile& operator=(CameraPresetFile const&);
-    CameraPresetFile(CameraPresetFile const&);
-    CameraPresetFile();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

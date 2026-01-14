@@ -8,9 +8,9 @@ struct Subpack {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk86db54;
-    ::ll::UntypedStorage<8, 32> mUnk4389d1;
-    ::ll::UntypedStorage<4, 4>  mUnk10b66e;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<8, 32, ::std::string> mFolderName;
+    ::ll::TypedStorage<4, 4, int>            mMemoryTier;
     // NOLINTEND
 
 public:
@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Subpack&
+    MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::Subpack&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack&&);
     // NOLINTEND
 };

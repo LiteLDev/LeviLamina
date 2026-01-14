@@ -14,23 +14,21 @@ namespace SharedTypes::v1_20_50 {
 
 struct RecordItemComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6ce206;
-    ::ll::UntypedStorage<4, 4> mUnka285f3;
-    ::ll::UntypedStorage<4, 4> mUnka6a218;
-    // NOLINTEND
+    // RecordItemComponent inner types define
+    using SoundEvent = ::SharedTypes::Legacy::LevelSoundEvent;
 
 public:
-    // prevent constructor by default
-    RecordItemComponent& operator=(RecordItemComponent const&);
-    RecordItemComponent(RecordItemComponent const&);
-    RecordItemComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
+    ::ll::TypedStorage<4, 4, float>                                  mDuration;
+    ::ll::TypedStorage<4, 4, int>                                    mComparatorSignal;
+    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

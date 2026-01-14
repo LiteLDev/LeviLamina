@@ -17,18 +17,12 @@ struct MultinoiseGenerationRulesBiomeJsonComponent : public ::SharedTypes::v1_20
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk1c9d30;
-    ::ll::UntypedStorage<4, 8> mUnk587482;
-    ::ll::UntypedStorage<4, 8> mUnkedb2f1;
-    ::ll::UntypedStorage<4, 8> mUnk44ab52;
-    ::ll::UntypedStorage<4, 8> mUnke73b56;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mTargetTemperature;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mTargetHumidity;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mTargetAltitude;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mTargetWeirdness;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mWeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MultinoiseGenerationRulesBiomeJsonComponent& operator=(MultinoiseGenerationRulesBiomeJsonComponent const&);
-    MultinoiseGenerationRulesBiomeJsonComponent(MultinoiseGenerationRulesBiomeJsonComponent const&);
-    MultinoiseGenerationRulesBiomeJsonComponent();
 
 public:
     // virtual functions
@@ -41,21 +35,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BiomeComponentVersion $getType() const;
+    MCFOLD ::BiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

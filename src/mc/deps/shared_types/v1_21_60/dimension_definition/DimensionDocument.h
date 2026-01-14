@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_60/dimension_definition/Dimension.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -14,37 +17,31 @@ struct DimensionDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnkcbb611;
+    ::ll::TypedStorage<8, 72, ::SharedTypes::v1_21_60::DimensionDefinition::Dimension> mDimension;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DimensionDocument& operator=(DimensionDocument const&);
-    DimensionDocument(DimensionDocument const&);
-    DimensionDocument();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~DimensionDocument();
+    MCAPI ~DimensionDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

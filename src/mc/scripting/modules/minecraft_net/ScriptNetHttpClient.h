@@ -90,8 +90,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
         ::Scripting::BaseError,
         void>
-    get(::Scripting::WeakLifetimeScope const& scope, ::Scripting::ScriptObjectFactory& factory, ::std::string const& uri
-    );
+    get(::Scripting::WeakLifetimeScope const& scope,
+        ::Scripting::ScriptObjectFactory&     factory,
+        ::std::string const&                  uri);
 
     MCNAPI ::ScriptModuleMinecraftNet::ScriptNetHttpClient&
     operator=(::ScriptModuleMinecraftNet::ScriptNetHttpClient const&);

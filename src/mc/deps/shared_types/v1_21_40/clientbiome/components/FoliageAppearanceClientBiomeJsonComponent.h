@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/shared_types/Color255RGB.h"
+#include "mc/deps/shared_types/v1_21_40/clientbiome/ClientBiomeFoliageColorMap.h"
 #include "mc/deps/shared_types/v1_21_40/clientbiome/components/IClientBiomeJsonComponent.h"
 #include "mc/v1_21_40/clientbiome/components/ClientBiomeComponentVersion.h"
 
@@ -25,41 +27,35 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkc2a1e6;
+        ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_40::ClientBiomeFoliageColorMap> mColorMap;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FoliageColorMapContainer& operator=(FoliageColorMapContainer const&);
-        FoliageColorMapContainer(FoliageColorMapContainer const&);
-        FoliageColorMapContainer();
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
         // static variables
         // NOLINTBEGIN
-        MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+        MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-        MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+        MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk82f0e8;
+    ::ll::TypedStorage<
+        4,
+        24,
+        ::std::optional<::std::variant<
+            ::SharedTypes::Color255RGB,
+            ::SharedTypes::v1_21_40::FoliageAppearanceClientBiomeJsonComponent::FoliageColorMapContainer>>>
+        mColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FoliageAppearanceClientBiomeJsonComponent& operator=(FoliageAppearanceClientBiomeJsonComponent const&);
-    FoliageAppearanceClientBiomeJsonComponent(FoliageAppearanceClientBiomeJsonComponent const&);
-    FoliageAppearanceClientBiomeJsonComponent();
 
 public:
     // virtual functions
@@ -72,21 +68,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ClientBiomeComponentVersion $getType() const;
+    MCFOLD ::ClientBiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

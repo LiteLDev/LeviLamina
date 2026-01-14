@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -20,9 +23,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk5e6964;
-    ::ll::UntypedStorage<8, 144> mUnk55469a;
-    ::ll::UntypedStorage<4, 4>   mUnk2e4e4e;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_20_80::DirectionSettings::Mode>         mMode;
+    ::ll::TypedStorage<8, 144, ::std::array<::SharedTypes::Legacy::ExpressionNode, 3>> mCustomDirectionExpr;
+    ::ll::TypedStorage<4, 4, float>                                                    mMinSpeedThreshold;
     // NOLINTEND
 
 public:
@@ -34,21 +37,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_80::DirectionSettings& operator=(::SharedTypes::v1_20_80::DirectionSettings&&);
+    MCAPI ::SharedTypes::v1_20_80::DirectionSettings& operator=(::SharedTypes::v1_20_80::DirectionSettings&&);
 
-    MCNAPI_C ~DirectionSettings();
+    MCAPI_C ~DirectionSettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

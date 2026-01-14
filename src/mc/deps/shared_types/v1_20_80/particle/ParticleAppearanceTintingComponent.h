@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
+#include "mc/deps/shared_types/v1_20_80/particle/TintingComponentColor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +18,7 @@ struct ParticleAppearanceTintingComponent : public ::SharedTypes::v1_20_80::Part
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 320> mUnk3580b9;
+    ::ll::TypedStorage<8, 320, ::SharedTypes::v1_20_80::TintingComponentColor> mColor;
     // NOLINTEND
 
 public:
@@ -36,41 +37,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParticleAppearanceTintingComponent(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent&&);
+    MCAPI ParticleAppearanceTintingComponent(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent&&);
 
-    MCNAPI_C ParticleAppearanceTintingComponent(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent const&);
+    MCAPI_C ParticleAppearanceTintingComponent(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent&&);
 
-    MCNAPI_C void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent const&);
+    MCAPI_C void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

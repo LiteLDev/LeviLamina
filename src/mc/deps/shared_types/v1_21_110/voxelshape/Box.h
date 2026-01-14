@@ -2,21 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 namespace SharedTypes::v1_21_110 {
 
 struct Box {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk184d05;
-    ::ll::UntypedStorage<4, 12> mUnkc6e49a;
+    ::ll::TypedStorage<4, 12, ::Vec3> mMin;
+    ::ll::TypedStorage<4, 12, ::Vec3> mMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Box& operator=(Box const&);
-    Box(Box const&);
-    Box();
 };
 
 } // namespace SharedTypes::v1_21_110

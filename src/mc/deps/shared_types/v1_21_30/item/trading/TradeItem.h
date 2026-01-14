@@ -2,8 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/Value.h"
+#include "mc/deps/shared_types/util/Reference.h"
+#include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace cereal { class DynamicValue; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,27 +27,21 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkc9b79c;
-        ::ll::UntypedStorage<4, 4> mUnk9093d0;
+        ::ll::TypedStorage<4, 4, uint> mMin;
+        ::ll::TypedStorage<4, 4, uint> mMax;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Quantity& operator=(Quantity const&);
-        Quantity(Quantity const&);
-        Quantity();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>   mUnk8037a3;
-    ::ll::UntypedStorage<8, 32>  mUnk64a9a7;
-    ::ll::UntypedStorage<8, 24>  mUnk59ce09;
-    ::ll::UntypedStorage<8, 328> mUnk2aa4f8;
-    ::ll::UntypedStorage<4, 4>   mUnk8f1205;
-    ::ll::UntypedStorage<8, 16>  mUnk78fb7d;
-    ::ll::UntypedStorage<8, 16>  mUnk22212b;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::v1_21_30::TradeItem::Quantity> mQuantity;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<10>>                mItem;
+    ::ll::TypedStorage<8, 24, ::std::vector<::cereal::DynamicValue>>       mFunctions;
+    ::ll::TypedStorage<8, 328, ::SharedTypes::v1_21_20::FilterGroupData>   mFilters;
+    ::ll::TypedStorage<4, 4, float>                                        mPriceMultiplier;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                               mLegacyFunctions;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                               mLegacyFilters;
     // NOLINTEND
 
 public:
@@ -51,39 +51,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TradeItem();
+    MCAPI TradeItem();
 
-    MCNAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem&&);
+    MCAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem&&);
 
-    MCNAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem const&);
+    MCAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem const&);
 
-    MCNAPI ~TradeItem();
+    MCAPI ~TradeItem();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& DEPRECATED_FILTERS_FIELD();
+    MCAPI static ::std::string_view const& DEPRECATED_FILTERS_FIELD();
 
-    MCNAPI static ::std::string_view const& DEPRECATED_FUNCTIONS_FIELD();
+    MCAPI static ::std::string_view const& DEPRECATED_FUNCTIONS_FIELD();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

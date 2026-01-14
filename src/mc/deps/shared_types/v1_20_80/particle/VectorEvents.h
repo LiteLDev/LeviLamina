@@ -13,31 +13,25 @@ struct VectorEvents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbbb7b5;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mEventVector;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VectorEvents& operator=(VectorEvents const&);
-    VectorEvents(VectorEvents const&);
-    VectorEvents();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~VectorEvents();
+    MCAPI ~VectorEvents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void fromString(::SharedTypes::v1_20_80::VectorEvents& instance, ::HashedString const& string);
+    MCAPI static void fromString(::SharedTypes::v1_20_80::VectorEvents& instance, ::HashedString const& string);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

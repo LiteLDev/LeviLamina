@@ -8,15 +8,9 @@ struct Weight {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf7dcc0;
-    ::ll::UntypedStorage<4, 4> mUnk178dc4;
+    ::ll::TypedStorage<4, 4, int> mWeight;
+    ::ll::TypedStorage<4, 4, int> mRarity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Weight& operator=(Weight const&);
-    Weight(Weight const&);
-    Weight();
 };
 
 } // namespace SharedTypes::Legacy::Spawn

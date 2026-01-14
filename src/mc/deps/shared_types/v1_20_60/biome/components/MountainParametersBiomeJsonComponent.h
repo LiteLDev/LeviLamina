@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
+#include "mc/deps/shared_types/v1_20_60/block/BlockSpecifier.h"
 #include "mc/v1_20_60/biome/components/BiomeComponentVersion.h"
 
 // auto generated forward declare list
@@ -26,11 +27,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 104> mUnkfaeed2;
-        ::ll::UntypedStorage<1, 2>   mUnkee83ea;
-        ::ll::UntypedStorage<1, 2>   mUnkc86c61;
-        ::ll::UntypedStorage<1, 2>   mUnk12935d;
-        ::ll::UntypedStorage<1, 2>   mUnk5e5ce6;
+        ::ll::TypedStorage<8, 104, ::std::optional<::SharedTypes::v1_20_60::BlockSpecifier>> mMaterial;
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                      mNorthSlopes;
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                      mSouthSlopes;
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                      mWestSlopes;
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                      mEastSlopes;
         // NOLINTEND
 
     public:
@@ -41,24 +42,24 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI SteepMaterial(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
+        MCAPI SteepMaterial(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
 
-        MCNAPI ::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial&
+        MCAPI ::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial&
         operator=(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial&&);
 
-        MCNAPI ~SteepMaterial();
+        MCAPI ~SteepMaterial();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
+        MCAPI void* $ctor(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -66,28 +67,24 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk99c314;
+        ::ll::TypedStorage<1, 1, bool> mEnabled;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TopSlideSettings& operator=(TopSlideSettings const&);
-        TopSlideSettings(TopSlideSettings const&);
-        TopSlideSettings();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnk3ec318;
-    ::ll::UntypedStorage<1, 2>   mUnk576525;
+    ::ll::TypedStorage<
+        8,
+        120,
+        ::std::optional<::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial>>
+        mSteepMaterialAdjustment;
+    ::ll::TypedStorage<
+        1,
+        2,
+        ::std::optional<::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::TopSlideSettings>>
+        mTopSlide;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MountainParametersBiomeJsonComponent& operator=(MountainParametersBiomeJsonComponent const&);
-    MountainParametersBiomeJsonComponent(MountainParametersBiomeJsonComponent const&);
-    MountainParametersBiomeJsonComponent();
 
 public:
     // virtual functions
@@ -100,21 +97,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BiomeComponentVersion $getType() const;
+    MCFOLD ::BiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

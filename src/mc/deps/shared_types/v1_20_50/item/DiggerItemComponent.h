@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/BlockDescriptor.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -21,8 +24,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnk123bde;
-        ::ll::UntypedStorage<4, 4>  mUnk26934b;
+        ::ll::TypedStorage<8, 80, ::SharedTypes::Legacy::BlockDescriptor> filter;
+        ::ll::TypedStorage<4, 4, int>                                     destroySpeed;
         // NOLINTEND
 
     public:
@@ -33,55 +36,50 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_20_50::DiggerItemComponent::BlockInfo&
+        MCAPI ::SharedTypes::v1_20_50::DiggerItemComponent::BlockInfo&
         operator=(::SharedTypes::v1_20_50::DiggerItemComponent::BlockInfo const&);
 
-        MCNAPI ~BlockInfo();
+        MCAPI ~BlockInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkffd73d;
-    ::ll::UntypedStorage<1, 1>  mUnk674665;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_20_50::DiggerItemComponent::BlockInfo>> mDestroySpeeds;
+    ::ll::TypedStorage<1, 1, bool>                                                                    mUseEfficiency;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DiggerItemComponent& operator=(DiggerItemComponent const&);
-    DiggerItemComponent(DiggerItemComponent const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DiggerItemComponent();
+    MCAPI DiggerItemComponent();
 
-    MCNAPI ~DiggerItemComponent();
+    MCAPI ~DiggerItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

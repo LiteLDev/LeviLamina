@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_20/filter_groups/FilterCollectionGroup.h"
+#include "mc/deps/shared_types/v1_21_20/filter_groups/FilterTestData.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_21_20 { struct FilterTestData; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -14,34 +17,38 @@ struct FilterGroupData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 232> mUnk1c066f;
-    ::ll::UntypedStorage<8, 32>  mUnk156e2f;
-    ::ll::UntypedStorage<8, 64>  mUnkaa6552;
+    ::ll::TypedStorage<8, 232, ::std::optional<::SharedTypes::v1_21_20::FilterTestData>>                mTestNode;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::SharedTypes::v1_21_20::FilterGroupData>>> mChildren;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::SharedTypes::v1_21_20::FilterCollectionGroup, ::SharedTypes::v1_21_20::FilterGroupData>>
+        mCollectionGroups;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FilterGroupData();
+    MCAPI FilterGroupData();
 
-    MCNAPI FilterGroupData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
+    MCAPI FilterGroupData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
 
-    MCNAPI ::SharedTypes::v1_21_20::FilterGroupData& operator=(::SharedTypes::v1_21_20::FilterGroupData const&);
+    MCAPI ::SharedTypes::v1_21_20::FilterGroupData& operator=(::SharedTypes::v1_21_20::FilterGroupData const&);
 
-    MCNAPI ~FilterGroupData();
+    MCAPI ~FilterGroupData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void fromFilterGroupVector(
+    MCAPI static void fromFilterGroupVector(
         ::SharedTypes::v1_21_20::FilterGroupData&                      instance,
         ::std::vector<::SharedTypes::v1_21_20::FilterGroupData> const& filterGroups
     );
 
-    MCNAPI static void fromFilterTestData(
+    MCAPI static void fromFilterTestData(
         ::SharedTypes::v1_21_20::FilterGroupData&      instance,
         ::SharedTypes::v1_21_20::FilterTestData const& filterTestData
     );
@@ -50,15 +57,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
+    MCAPI void* $ctor(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ParticleMotionCollisionEventVector.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,19 +19,13 @@ struct ParticleMotionCollisionComponent : public ::SharedTypes::v1_20_80::Partic
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk14c1ac;
-    ::ll::UntypedStorage<4, 4>  mUnk265bfe;
-    ::ll::UntypedStorage<4, 4>  mUnk92daee;
-    ::ll::UntypedStorage<4, 4>  mUnkf972d4;
-    ::ll::UntypedStorage<1, 1>  mUnk7508e5;
-    ::ll::UntypedStorage<8, 32> mUnk86681f;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode> mCollisionEnabledExpr;
+    ::ll::TypedStorage<4, 4, float>                                  mCollisionDrag;
+    ::ll::TypedStorage<4, 4, float>                                  mCoefficientOfRestitution;
+    ::ll::TypedStorage<4, 4, float>                                  mCollisionRadius;
+    ::ll::TypedStorage<1, 1, bool>                                   mExpireOnContact;
+    ::ll::TypedStorage<8, 32, ::std::optional<::SharedTypes::v1_20_80::ParticleMotionCollisionEventVector>> mEvents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleMotionCollisionComponent& operator=(ParticleMotionCollisionComponent const&);
-    ParticleMotionCollisionComponent(ParticleMotionCollisionComponent const&);
-    ParticleMotionCollisionComponent();
 
 public:
     // virtual functions
@@ -42,25 +38,25 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

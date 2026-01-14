@@ -2,24 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_20/structure/Axis.h"
+
 namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule {
 
 struct AxisAlignedLinear {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdc1521;
-    ::ll::UntypedStorage<4, 4> mUnkef0f99;
-    ::ll::UntypedStorage<4, 4> mUnk98eb54;
-    ::ll::UntypedStorage<4, 4> mUnk6948a0;
-    ::ll::UntypedStorage<1, 1> mUnk3534c1;
+    ::ll::TypedStorage<4, 4, float>                                                         mMinChance;
+    ::ll::TypedStorage<4, 4, float>                                                         mMaxChance;
+    ::ll::TypedStorage<4, 4, int>                                                           mMinDist;
+    ::ll::TypedStorage<4, 4, int>                                                           mMaxDist;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::Axis> mAxis;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AxisAlignedLinear& operator=(AxisAlignedLinear const&);
-    AxisAlignedLinear(AxisAlignedLinear const&);
-    AxisAlignedLinear();
 };
 
 } // namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule

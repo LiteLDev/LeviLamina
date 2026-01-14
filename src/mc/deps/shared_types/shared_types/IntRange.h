@@ -13,20 +13,14 @@ struct IntRange {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk787e1b;
-    ::ll::UntypedStorage<4, 4> mUnk5011e3;
+    ::ll::TypedStorage<4, 4, int> mMin;
+    ::ll::TypedStorage<4, 4, int> mMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IntRange& operator=(IntRange const&);
-    IntRange(IntRange const&);
-    IntRange();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

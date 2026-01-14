@@ -11,6 +11,11 @@ namespace Social::Events {
 
 class Measurement {
 public:
+    // Measurement inner types declare
+    // clang-format off
+    struct AggregationTypeOreUI;
+    // clang-format on
+
     // Measurement inner types define
     enum class AggregationType : int {
         Increment = 0,
@@ -19,6 +24,14 @@ public:
         Max       = 3,
         Average   = 4,
         Latest    = 5,
+    };
+
+    enum class AggregationTypestruct : uint {};
+
+    struct AggregationTypeOreUI {
+    public:
+        // AggregationTypeOreUI inner types define
+        enum class EventMeasurement : uint {};
     };
 
 public:

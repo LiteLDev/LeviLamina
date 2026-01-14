@@ -2,32 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace SharedTypes::v1_21_30 { struct TradeGroup; }
+// clang-format on
+
 namespace SharedTypes::v1_21_30 {
 
 struct TradeTier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkba7225;
-    ::ll::UntypedStorage<4, 4>  mUnk7653df;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_30::TradeGroup>> mGroups;
+    ::ll::TypedStorage<4, 4, uint>                                                mTotalExpRequired;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TradeTier& operator=(TradeTier const&);
-    TradeTier(TradeTier const&);
-    TradeTier();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~TradeTier();
+    MCAPI ~TradeTier();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

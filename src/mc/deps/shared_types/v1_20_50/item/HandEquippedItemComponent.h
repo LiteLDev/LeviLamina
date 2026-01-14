@@ -13,19 +13,13 @@ struct HandEquippedItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk3de180;
+    ::ll::TypedStorage<1, 1, bool> mHandEquipped;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HandEquippedItemComponent& operator=(HandEquippedItemComponent const&);
-    HandEquippedItemComponent(HandEquippedItemComponent const&);
-    HandEquippedItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

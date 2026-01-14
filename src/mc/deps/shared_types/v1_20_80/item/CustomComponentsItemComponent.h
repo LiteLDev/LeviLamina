@@ -13,19 +13,13 @@ struct CustomComponentsItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkdbe64d;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mComponentNames;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CustomComponentsItemComponent& operator=(CustomComponentsItemComponent const&);
-    CustomComponentsItemComponent(CustomComponentsItemComponent const&);
-    CustomComponentsItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

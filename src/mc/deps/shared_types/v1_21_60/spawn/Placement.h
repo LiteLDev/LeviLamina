@@ -8,10 +8,10 @@ struct Placement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkcd9bf4;
-    ::ll::UntypedStorage<8, 32> mUnk16b91c;
-    ::ll::UntypedStorage<8, 32> mUnk737597;
-    ::ll::UntypedStorage<8, 32> mUnkae3745;
+    ::ll::TypedStorage<8, 32, ::std::string> mType;
+    ::ll::TypedStorage<8, 32, ::std::string> mHeightmap;
+    ::ll::TypedStorage<8, 32, ::std::string> mEntitySpawnPredicate;
+    ::ll::TypedStorage<8, 32, ::std::string> mObstructionPredicate;
     // NOLINTEND
 
 public:
@@ -22,17 +22,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::Spawn::Placement& operator=(::SharedTypes::v1_21_60::Spawn::Placement&&);
+    MCFOLD ::SharedTypes::v1_21_60::Spawn::Placement& operator=(::SharedTypes::v1_21_60::Spawn::Placement&&);
 
-    MCNAPI ::SharedTypes::v1_21_60::Spawn::Placement& operator=(::SharedTypes::v1_21_60::Spawn::Placement const&);
+    MCFOLD ::SharedTypes::v1_21_60::Spawn::Placement& operator=(::SharedTypes::v1_21_60::Spawn::Placement const&);
 
-    MCNAPI ~Placement();
+    MCAPI ~Placement();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

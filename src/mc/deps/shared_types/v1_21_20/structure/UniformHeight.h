@@ -2,21 +2,34 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_20/structure/VerticalAnchorValue.h"
+
 namespace SharedTypes::v1_21_20 {
 
 struct UniformHeight {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 4> mUnkfda7b8;
-    ::ll::UntypedStorage<2, 4> mUnkde71a1;
+    ::ll::TypedStorage<
+        2,
+        4,
+        ::std::variant<
+            ::SharedTypes::v1_21_20::VerticalAnchorValue<0>,
+            ::SharedTypes::v1_21_20::VerticalAnchorValue<1>,
+            ::SharedTypes::v1_21_20::VerticalAnchorValue<2>,
+            ::SharedTypes::v1_21_20::VerticalAnchorValue<3>>>
+        mMin;
+    ::ll::TypedStorage<
+        2,
+        4,
+        ::std::variant<
+            ::SharedTypes::v1_21_20::VerticalAnchorValue<0>,
+            ::SharedTypes::v1_21_20::VerticalAnchorValue<1>,
+            ::SharedTypes::v1_21_20::VerticalAnchorValue<2>,
+            ::SharedTypes::v1_21_20::VerticalAnchorValue<3>>>
+        mMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UniformHeight& operator=(UniformHeight const&);
-    UniformHeight(UniformHeight const&);
-    UniformHeight();
 };
 
 } // namespace SharedTypes::v1_21_20

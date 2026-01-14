@@ -19,14 +19,8 @@ class DynamicValueComplexityConstraint
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk8a9743;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mMaxDepth;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DynamicValueComplexityConstraint& operator=(DynamicValueComplexityConstraint const&);
-    DynamicValueComplexityConstraint(DynamicValueComplexityConstraint const&);
-    DynamicValueComplexityConstraint();
 
 public:
     // virtual functions
@@ -39,14 +33,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
-    validateValue(::cereal::DynamicValue const& value, ::cereal::SerializerContext& serializerContext) const;
+    MCAPI void validateValue(::cereal::DynamicValue const& value, ::cereal::SerializerContext& serializerContext) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCAPI ::cereal::internal::ConstraintDescription $description() const;
 
 
     // NOLINTEND

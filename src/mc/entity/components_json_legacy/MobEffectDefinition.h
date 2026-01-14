@@ -26,19 +26,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setCooldownTimeInTicks(int const& seconds);
+    MCAPI void setCooldownTimeInTicks(int const& seconds);
 
-    MCNAPI void setEffectTimeInTicks(int const& seconds);
+    MCAPI void setEffectTimeInTicks(int const& seconds);
 
-    MCNAPI void setEffectTimeWithInfiniteString(::std::string const& duration);
+    MCAPI void setEffectTimeWithInfiniteString(::std::string const& duration);
 
-    MCNAPI void setMobEffectByName(::std::string const& mobEffect);
+    MCAPI void setMobEffectByName(::std::string const& mobEffect);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MobEffectDefinition>>& root
     );
     // NOLINTEND

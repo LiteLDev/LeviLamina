@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,13 +16,13 @@ struct FlipBook {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnk8f79c2;
-    ::ll::UntypedStorage<4, 8>  mUnk593d9e;
-    ::ll::UntypedStorage<4, 8>  mUnk751c51;
-    ::ll::UntypedStorage<4, 4>  mUnk81838b;
-    ::ll::UntypedStorage<8, 48> mUnkc3df1a;
-    ::ll::UntypedStorage<1, 1>  mUnka13aed;
-    ::ll::UntypedStorage<1, 1>  mUnk44a405;
+    ::ll::TypedStorage<8, 96, ::std::array<::SharedTypes::Legacy::ExpressionNode, 2>> mBaseUVExpr;
+    ::ll::TypedStorage<4, 8, ::std::array<float, 2>>                                  mSizeUV;
+    ::ll::TypedStorage<4, 8, ::std::array<float, 2>>                                  mStepUV;
+    ::ll::TypedStorage<4, 4, float>                                                   mFPS;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>                  mMaxFrame;
+    ::ll::TypedStorage<1, 1, bool>                                                    mStretchToLifetime;
+    ::ll::TypedStorage<1, 1, bool>                                                    mLoop;
     // NOLINTEND
 
 public:
@@ -29,35 +32,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FlipBook(::SharedTypes::v1_20_80::FlipBook&&);
+    MCAPI FlipBook(::SharedTypes::v1_20_80::FlipBook&&);
 
-    MCNAPI FlipBook(::SharedTypes::v1_20_80::FlipBook const&);
+    MCAPI FlipBook(::SharedTypes::v1_20_80::FlipBook const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::FlipBook& operator=(::SharedTypes::v1_20_80::FlipBook&&);
+    MCAPI ::SharedTypes::v1_20_80::FlipBook& operator=(::SharedTypes::v1_20_80::FlipBook&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::FlipBook& operator=(::SharedTypes::v1_20_80::FlipBook const&);
+    MCAPI ::SharedTypes::v1_20_80::FlipBook& operator=(::SharedTypes::v1_20_80::FlipBook const&);
 
-    MCNAPI_C ~FlipBook();
+    MCAPI_C ~FlipBook();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::FlipBook&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::FlipBook&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::FlipBook const&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::FlipBook const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };
 

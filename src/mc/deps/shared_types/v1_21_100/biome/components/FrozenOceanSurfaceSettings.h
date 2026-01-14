@@ -11,13 +11,13 @@ struct FrozenOceanSurfaceSettings : public ::SharedTypes::v1_21_100::SurfaceBuil
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~FrozenOceanSurfaceSettings();
+    MCAPI ~FrozenOceanSurfaceSettings();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

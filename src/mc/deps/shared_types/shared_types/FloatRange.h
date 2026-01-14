@@ -13,20 +13,14 @@ struct FloatRange {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk74194f;
-    ::ll::UntypedStorage<4, 4> mUnk6de176;
+    ::ll::TypedStorage<4, 4, float> mMin;
+    ::ll::TypedStorage<4, 4, float> mMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FloatRange& operator=(FloatRange const&);
-    FloatRange(FloatRange const&);
-    FloatRange();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

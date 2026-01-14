@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/shared_types/BiomeTypes.h"
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
 #include "mc/v1_20_60/biome/components/BiomeComponentVersion.h"
 
@@ -12,14 +13,8 @@ struct BiomeTypeJsonComponent : public ::SharedTypes::v1_20_60::IBiomeJsonCompon
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk88917c;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::BiomeTypes> mBiomeType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeTypeJsonComponent& operator=(BiomeTypeJsonComponent const&);
-    BiomeTypeJsonComponent(BiomeTypeJsonComponent const&);
-    BiomeTypeJsonComponent();
 
 public:
     // virtual functions
@@ -32,9 +27,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:

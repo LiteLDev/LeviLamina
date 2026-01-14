@@ -11,20 +11,20 @@
 namespace SharedTypes::v1_20_80 {
 // functions
 // NOLINTBEGIN
-MCNAPI_S bool operator==(
+MCAPI_S bool operator==(
     ::SharedTypes::v1_20_80::BezierChainNodeMap const& lhs,
     ::SharedTypes::v1_20_80::BezierChainNodeMap const& rhs
 );
 
-MCNAPI bool
+MCAPI bool
 operator==(::SharedTypes::v1_20_80::ColorGradient const& lhs, ::SharedTypes::v1_20_80::ColorGradient const& rhs);
 
-MCNAPI bool operator==(
+MCAPI bool operator==(
     ::SharedTypes::v1_20_80::ParticleCurveBezierChain const& lhs,
     ::SharedTypes::v1_20_80::ParticleCurveBezierChain const& rhs
 );
 
-MCNAPI bool operator==(
+MCAPI bool operator==(
     ::SharedTypes::v1_20_80::ParticleCurveSimpleBase const& lhs,
     ::SharedTypes::v1_20_80::ParticleCurveSimpleBase const& rhs
 );

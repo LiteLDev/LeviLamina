@@ -91,8 +91,8 @@ public:
 
     MCNAPI ::std::vector<::std::string> getWorldStructureIds() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptStructureManager& operator=(::ScriptModuleMinecraft::ScriptStructureManager&&
-    );
+    MCNAPI ::ScriptModuleMinecraft::ScriptStructureManager&
+    operator=(::ScriptModuleMinecraft::ScriptStructureManager&&);
 
     MCNAPI ::Scripting::Result<::BoundingBox, ::ScriptModuleMinecraft::ScriptPlaceJigsawError> placeJigsaw(
         ::std::string const&                                                                  pool,

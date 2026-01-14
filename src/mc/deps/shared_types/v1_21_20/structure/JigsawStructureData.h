@@ -4,6 +4,10 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::v1_21_20::JigsawStructureDefinition { struct Contents; }
+namespace SharedTypes::v1_21_20::JigsawStructureProcessorList { struct Contents; }
+namespace SharedTypes::v1_21_20::JigsawStructureSet { struct Contents; }
+namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool { struct Contents; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -13,34 +17,32 @@ struct JigsawStructureData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk12ba3f;
-    ::ll::UntypedStorage<8, 24> mUnkbab4c7;
-    ::ll::UntypedStorage<8, 24> mUnk58265e;
-    ::ll::UntypedStorage<8, 24> mUnkd385ee;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents>>
+        mProcessorLists;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents>>
+        mTemplatePools;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents>>
+        mJigsawDefinitions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_20::JigsawStructureSet::Contents>>
+        mJigsawStructureSets;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawStructureData& operator=(JigsawStructureData const&);
-    JigsawStructureData(JigsawStructureData const&);
-    JigsawStructureData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~JigsawStructureData();
+    MCAPI ~JigsawStructureData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

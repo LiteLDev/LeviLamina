@@ -2,15 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
+
 namespace SharedTypes::Legacy::Spawn {
 
 struct PermuteType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk1ca512;
-    ::ll::UntypedStorage<4, 4>  mUnk8a25aa;
-    ::ll::UntypedStorage<8, 32> mUnk36fe86;
+    ::ll::TypedStorage<4, 4, int>                          mWeight;
+    ::ll::TypedStorage<4, 4, int>                          mMinGuaranteed;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<1>> mEntityType;
     // NOLINTEND
 
 public:
@@ -22,15 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::Legacy::Spawn::PermuteType& operator=(::SharedTypes::Legacy::Spawn::PermuteType&&);
+    MCFOLD ::SharedTypes::Legacy::Spawn::PermuteType& operator=(::SharedTypes::Legacy::Spawn::PermuteType&&);
 
-    MCNAPI ~PermuteType();
+    MCAPI ~PermuteType();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

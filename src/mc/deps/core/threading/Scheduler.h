@@ -76,39 +76,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Scheduler(::std::string name, uint FPS);
+    MCAPI Scheduler(::std::string name, uint FPS);
 
-    MCNAPI ::std::chrono::nanoseconds _calcBaseTimeBudget(
+    MCAPI ::std::chrono::nanoseconds _calcBaseTimeBudget(
         uint                           forFps,
         ::std::chrono::nanoseconds     frameTimeSoFar,
         ::Scheduler::MinimumTimeBudget ensureNonZeroRunTime,
         ::Scheduler::MaximumTimeBudget limitMaxRunTime
     );
 
-    MCNAPI bool _runCoroutines(::std::chrono::nanoseconds timeCap, ::std::function<bool()> const& earlyExit);
+    MCAPI bool _runCoroutines(::std::chrono::nanoseconds timeCap, ::std::function<bool()> const& earlyExit);
 
-    MCNAPI void processCoroutines(
+    MCAPI void processCoroutines(
         ::std::chrono::nanoseconds     timeSinceSwap,
         ::Scheduler::MinimumTimeBudget ensureNonZeroRunTime,
         ::Scheduler::MaximumTimeBudget limitMaxRunTime,
         ::std::function<bool()> const& earlyExit
     );
 
-    MCNAPI void setTargetFPS(uint FPS);
+    MCAPI void setTargetFPS(uint FPS);
 
-    MCNAPI void updateTargetFPS();
+    MCAPI void updateTargetFPS();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name, uint FPS);
+    MCAPI void* $ctor(::std::string name, uint FPS);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -15,9 +15,11 @@
 #include "mc/network/RakNetConnector.h"
 #include "mc/network/RakPeerHelper.h"
 #include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
+class AppPlatform;
 class IPacketObserver;
 class IPacketSerializationController;
 class LocalConnector;
@@ -54,20 +56,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk9c4ba3;
-        ::ll::UntypedStorage<8, 8>  mUnke8cab9;
-        ::ll::UntypedStorage<8, 8>  mUnkdd05b9;
-        ::ll::UntypedStorage<8, 24> mUnk331fbf;
-        ::ll::UntypedStorage<8, 24> mUnkf4c1a6;
-        ::ll::UntypedStorage<4, 20> mUnkfbdc8b;
-        ::ll::UntypedStorage<8, 8>  mUnk3861c4;
+        ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::Scheduler>>                 receiveThread;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RemoteConnector>>                  remoteConnector;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerLocator>>                    serverLocator;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::AppPlatform>>            appPlatform;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>> networkSessionOwner;
+        ::ll::TypedStorage<4, 20, ::NetworkSettingOptions>                              networkSettingOptions;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPacketSerializationController>>   serializationController;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Dependencies& operator=(Dependencies const&);
-        Dependencies(Dependencies const&);
-        Dependencies();
 
     public:
         // member functions
@@ -86,8 +82,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk601258;
-        ::ll::UntypedStorage<8, 80> mUnk83a39b;
+        ::ll::TypedStorage<8, 8, ::NetEventCallback&>          mCallbacksObj;
+        ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
         // NOLINTEND
 
     public:

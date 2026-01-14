@@ -2,14 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/BlockDescriptor.h"
+
 namespace SharedTypes::Legacy::Spawn {
 
 struct SpawnAboveBlockFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88> mUnkdd4fa2;
-    ::ll::UntypedStorage<4, 4>  mUnke69066;
+    ::ll::TypedStorage<
+        8,
+        88,
+        ::std::variant<::std::vector<::SharedTypes::Legacy::BlockDescriptor>, ::SharedTypes::Legacy::BlockDescriptor>>
+                                  mBlocks;
+    ::ll::TypedStorage<4, 4, int> mDistance;
     // NOLINTEND
 
 public:
@@ -20,21 +27,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SpawnAboveBlockFilter(::SharedTypes::Legacy::Spawn::SpawnAboveBlockFilter const&);
+    MCAPI SpawnAboveBlockFilter(::SharedTypes::Legacy::Spawn::SpawnAboveBlockFilter const&);
 
-    MCNAPI ~SpawnAboveBlockFilter();
+    MCAPI ~SpawnAboveBlockFilter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::Legacy::Spawn::SpawnAboveBlockFilter const&);
+    MCAPI void* $ctor(::SharedTypes::Legacy::Spawn::SpawnAboveBlockFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

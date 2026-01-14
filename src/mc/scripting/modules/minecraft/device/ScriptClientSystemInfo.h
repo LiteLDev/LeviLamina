@@ -39,8 +39,8 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ScriptClientSystemInfo(::Player const& player);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptClientSystemInfo& operator=(::ScriptModuleMinecraft::ScriptClientSystemInfo&&
-    );
+    MCNAPI ::ScriptModuleMinecraft::ScriptClientSystemInfo&
+    operator=(::ScriptModuleMinecraft::ScriptClientSystemInfo&&);
     // NOLINTEND
 
 public:
