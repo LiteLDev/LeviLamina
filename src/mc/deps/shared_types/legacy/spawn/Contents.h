@@ -2,9 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/spawn/Description.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
+namespace SharedTypes::Legacy::Spawn { struct BiomeConditions; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -14,38 +18,32 @@ struct Contents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk802e53;
-    ::ll::UntypedStorage<8, 24> mUnkdb64bc;
+    ::ll::TypedStorage<8, 64, ::SharedTypes::Legacy::Spawn::Description>                    mDescription;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::Spawn::BiomeConditions>> mBiomeConditions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Contents& operator=(Contents const&);
-    Contents(Contents const&);
-    Contents();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~Contents();
+    MCAPI ~Contents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersion const& VERSION();
+    MCAPI static ::SemVersion const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

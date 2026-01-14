@@ -13,19 +13,13 @@ struct StorageWeightModifierItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkeefe4b;
+    ::ll::TypedStorage<4, 4, int> mWeightInStorageItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StorageWeightModifierItemComponent& operator=(StorageWeightModifierItemComponent const&);
-    StorageWeightModifierItemComponent(StorageWeightModifierItemComponent const&);
-    StorageWeightModifierItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

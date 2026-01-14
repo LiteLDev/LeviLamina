@@ -11,6 +11,12 @@ namespace Invites {
 
 struct Invite {
 public:
+    // Invite inner types declare
+    // clang-format off
+    struct InvitationStatusOreUI;
+    struct InvitationTypeOreUI;
+    // clang-format on
+
     // Invite inner types define
     enum class InvitationStatus : int {
         Active   = 0,
@@ -29,6 +35,40 @@ public:
         Uninitialized = 0,
         Accepted      = 1,
         Declined      = 2,
+    };
+
+    enum class InvitationStatusstruct : uint {};
+
+    enum class InvitationTypestruct : uint {};
+
+    struct InvitationStatusOreUI {
+    public:
+        // InvitationStatusOreUI inner types declare
+        // clang-format off
+        struct InboxFacet;
+        // clang-format on
+
+        // InvitationStatusOreUI inner types define
+        struct InboxFacet {
+        public:
+            // InboxFacet inner types define
+            enum class InboxMessageData : uint {};
+        };
+    };
+
+    struct InvitationTypeOreUI {
+    public:
+        // InvitationTypeOreUI inner types declare
+        // clang-format off
+        struct InboxFacet;
+        // clang-format on
+
+        // InvitationTypeOreUI inner types define
+        struct InboxFacet {
+        public:
+            // InboxFacet inner types define
+            enum class InboxMessageData : uint {};
+        };
     };
 
 public:

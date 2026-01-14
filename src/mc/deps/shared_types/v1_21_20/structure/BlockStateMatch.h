@@ -2,31 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_20_60/block/BlockSpecifier.h"
+
 namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule {
 
 struct BlockStateMatch {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnk823036;
+    ::ll::TypedStorage<8, 96, ::SharedTypes::v1_20_60::BlockSpecifier> mBlockState;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockStateMatch& operator=(BlockStateMatch const&);
-    BlockStateMatch(BlockStateMatch const&);
-    BlockStateMatch();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BlockStateMatch();
+    MCAPI ~BlockStateMatch();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

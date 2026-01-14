@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
 #include "mc/deps/shared_types/v1_21_40/clientbiome/components/IClientBiomeJsonComponent.h"
 #include "mc/v1_21_40/clientbiome/components/ClientBiomeComponentVersion.h"
 
@@ -17,9 +18,9 @@ struct AmbientSoundsClientBiomeJsonComponent : public ::SharedTypes::v1_21_40::I
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3e7b5d;
-    ::ll::UntypedStorage<8, 32> mUnkb15c28;
-    ::ll::UntypedStorage<8, 32> mUnkb662e2;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<20>> mAddition;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<20>> mLoop;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<20>> mMood;
     // NOLINTEND
 
 public:
@@ -39,28 +40,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
+    MCAPI ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
     operator=(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ClientBiomeComponentVersion $getType() const;
+    MCFOLD ::ClientBiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

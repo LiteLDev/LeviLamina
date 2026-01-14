@@ -10,7 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_21_20::JigsawStructureDefinition {
 // functions
 // NOLINTBEGIN
-MCNAPI void bindTypeMaxDistanceFromCenter(::cereal::ReflectionCtx& ctx);
+MCAPI void bindTypeMaxDistanceFromCenter(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_20::JigsawStructureDefinition

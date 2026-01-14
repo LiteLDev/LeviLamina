@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/schema/dynamic/DynamicValue.h"
+#include "mc/deps/shared_types/v1_21_90/actor/ActorDefinitions.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -14,10 +18,11 @@ struct ActorDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk835386;
-    ::ll::UntypedStorage<8, 56> mUnka01695;
-    ::ll::UntypedStorage<8, 64> mUnkb883d0;
-    ::ll::UntypedStorage<8, 72> mUnk2204fe;
+    ::ll::TypedStorage<8, 72, ::cereal::DynamicValue>                    mDescription;
+    ::ll::TypedStorage<8, 56, ::SharedTypes::v1_21_90::ActorDefinitions> mDefinitions;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SharedTypes::v1_21_90::ActorDefinitions>>
+                                                      mDefinitionGroups;
+    ::ll::TypedStorage<8, 72, ::cereal::DynamicValue> mEvents;
     // NOLINTEND
 
 public:
@@ -28,37 +33,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorDocument();
+    MCAPI ActorDocument();
 
-    MCNAPI ActorDocument(::SharedTypes::v1_21_90::ActorDocument&&);
+    MCAPI ActorDocument(::SharedTypes::v1_21_90::ActorDocument&&);
 
-    MCNAPI ~ActorDocument();
+    MCAPI ~ActorDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_90::ActorDocument&&);
+    MCFOLD void* $ctor(::SharedTypes::v1_21_90::ActorDocument&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

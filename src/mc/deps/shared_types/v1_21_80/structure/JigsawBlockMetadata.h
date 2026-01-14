@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/world/level/levelgen/structure/JigsawJointType.h"
+#include "mc/world/level/BlockPos.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,15 +17,15 @@ class JigsawBlockMetadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk36c73c;
-    ::ll::UntypedStorage<8, 32> mUnkf875ab;
-    ::ll::UntypedStorage<8, 32> mUnk1f60a5;
-    ::ll::UntypedStorage<8, 32> mUnk68a5a0;
-    ::ll::UntypedStorage<8, 32> mUnk537bb0;
-    ::ll::UntypedStorage<1, 1>  mUnkaf233e;
-    ::ll::UntypedStorage<4, 12> mUnkbc00f2;
-    ::ll::UntypedStorage<4, 4>  mUnkc92538;
-    ::ll::UntypedStorage<4, 4>  mUnk739bad;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mPoolName;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mTargetName;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mBlockSerializationId;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mFinalBlockSerializationId;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::JigsawJointType> mJointType;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                    mPosition;
+    ::ll::TypedStorage<4, 4, int>                            mSelectionPriority;
+    ::ll::TypedStorage<4, 4, int>                            mPlacementPriority;
     // NOLINTEND
 
 public:
@@ -32,33 +36,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JigsawBlockMetadata(::SharedTypes::v1_21_80::JigsawBlockMetadata&&);
+    MCAPI JigsawBlockMetadata(::SharedTypes::v1_21_80::JigsawBlockMetadata&&);
 
-    MCNAPI ::SharedTypes::v1_21_80::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_80::JigsawBlockMetadata&&);
+    MCFOLD ::SharedTypes::v1_21_80::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_80::JigsawBlockMetadata&&);
 
-    MCNAPI ::SharedTypes::v1_21_80::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_80::JigsawBlockMetadata const&);
+    MCFOLD ::SharedTypes::v1_21_80::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_80::JigsawBlockMetadata const&);
 
-    MCNAPI bool operator==(::SharedTypes::v1_21_80::JigsawBlockMetadata const&) const;
+    MCFOLD bool operator==(::SharedTypes::v1_21_80::JigsawBlockMetadata const&) const;
 
-    MCNAPI ~JigsawBlockMetadata();
+    MCAPI ~JigsawBlockMetadata();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_80::JigsawBlockMetadata&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_80::JigsawBlockMetadata&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -13,19 +13,13 @@ struct BundleInteractionItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8f26da;
+    ::ll::TypedStorage<4, 4, int> mNumViewableSlots;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BundleInteractionItemComponent& operator=(BundleInteractionItemComponent const&);
-    BundleInteractionItemComponent(BundleInteractionItemComponent const&);
-    BundleInteractionItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

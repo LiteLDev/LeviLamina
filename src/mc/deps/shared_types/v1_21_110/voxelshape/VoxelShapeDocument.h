@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_110/voxelshape/Description.h"
+#include "mc/deps/shared_types/v1_21_110/voxelshape/Shape.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -14,38 +18,32 @@ struct VoxelShapeDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk304f0b;
-    ::ll::UntypedStorage<8, 24> mUnk2e3f86;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_110::Description> mDescription;
+    ::ll::TypedStorage<8, 24, ::SharedTypes::v1_21_110::Shape>       mShape;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VoxelShapeDocument& operator=(VoxelShapeDocument const&);
-    VoxelShapeDocument(VoxelShapeDocument const&);
-    VoxelShapeDocument();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~VoxelShapeDocument();
+    MCAPI ~VoxelShapeDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

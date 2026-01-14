@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_10/scatter_params/ScatterParamsData.h"
+#include "mc/deps/shared_types/v1_21_20/feature_rules/AutomaticFeatureRuleConditions.h"
+#include "mc/deps/shared_types/v1_21_20/feature_rules/AutomaticFeatureRuleDescription.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -14,39 +19,33 @@ struct AutomaticFeatureRulesData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnk9d116f;
-    ::ll::UntypedStorage<8, 368> mUnk23771f;
-    ::ll::UntypedStorage<8, 664> mUnk745e58;
+    ::ll::TypedStorage<8, 64, ::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription>     mDescription;
+    ::ll::TypedStorage<8, 368, ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions>     mConditions;
+    ::ll::TypedStorage<8, 664, ::std::optional<::SharedTypes::v1_21_10::ScatterParamsData>> mDistribution;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AutomaticFeatureRulesData& operator=(AutomaticFeatureRulesData const&);
-    AutomaticFeatureRulesData(AutomaticFeatureRulesData const&);
-    AutomaticFeatureRulesData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~AutomaticFeatureRulesData();
+    MCAPI ~AutomaticFeatureRulesData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

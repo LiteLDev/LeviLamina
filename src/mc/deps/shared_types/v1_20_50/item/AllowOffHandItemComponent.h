@@ -13,19 +13,13 @@ struct AllowOffHandItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk6dbc79;
+    ::ll::TypedStorage<1, 1, bool> mAllowOffHand;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AllowOffHandItemComponent& operator=(AllowOffHandItemComponent const&);
-    AllowOffHandItemComponent(AllowOffHandItemComponent const&);
-    AllowOffHandItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

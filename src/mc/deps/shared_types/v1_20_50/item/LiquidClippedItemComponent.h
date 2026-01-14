@@ -13,19 +13,13 @@ struct LiquidClippedItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk629cbc;
+    ::ll::TypedStorage<1, 1, bool> mIsLiquidClipped;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LiquidClippedItemComponent& operator=(LiquidClippedItemComponent const&);
-    LiquidClippedItemComponent(LiquidClippedItemComponent const&);
-    LiquidClippedItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

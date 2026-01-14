@@ -8,8 +8,8 @@ struct AutomaticFeatureRuleDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk107663;
-    ::ll::UntypedStorage<8, 32> mUnk6c6c80;
+    ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
+    ::ll::TypedStorage<8, 32, ::std::string> mPlacesFeature;
     // NOLINTEND
 
 public:
@@ -21,16 +21,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&
+    MCFOLD ::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&
     operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&&);
 
-    MCNAPI ~AutomaticFeatureRuleDescription();
+    MCAPI ~AutomaticFeatureRuleDescription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

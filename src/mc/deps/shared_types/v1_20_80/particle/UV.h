@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+#include "mc/deps/shared_types/v1_20_80/particle/FlipBook.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,11 +17,11 @@ struct UV {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkaf48d1;
-    ::ll::UntypedStorage<4, 4>   mUnk4a308a;
-    ::ll::UntypedStorage<8, 96>  mUnk9d4c54;
-    ::ll::UntypedStorage<8, 96>  mUnkbb689c;
-    ::ll::UntypedStorage<8, 184> mUnkac8fe7;
+    ::ll::TypedStorage<4, 4, int>                                                     mWidth;
+    ::ll::TypedStorage<4, 4, int>                                                     mHeight;
+    ::ll::TypedStorage<8, 96, ::std::array<::SharedTypes::Legacy::ExpressionNode, 2>> mUVExpr;
+    ::ll::TypedStorage<8, 96, ::std::array<::SharedTypes::Legacy::ExpressionNode, 2>> mUVSizeExpr;
+    ::ll::TypedStorage<8, 184, ::std::optional<::SharedTypes::v1_20_80::FlipBook>>    mFlipBook;
     // NOLINTEND
 
 public:
@@ -27,35 +31,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI UV(::SharedTypes::v1_20_80::UV&&);
+    MCAPI UV(::SharedTypes::v1_20_80::UV&&);
 
-    MCNAPI UV(::SharedTypes::v1_20_80::UV const&);
+    MCAPI UV(::SharedTypes::v1_20_80::UV const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::UV& operator=(::SharedTypes::v1_20_80::UV&&);
+    MCAPI ::SharedTypes::v1_20_80::UV& operator=(::SharedTypes::v1_20_80::UV&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::UV& operator=(::SharedTypes::v1_20_80::UV const&);
+    MCAPI ::SharedTypes::v1_20_80::UV& operator=(::SharedTypes::v1_20_80::UV const&);
 
-    MCNAPI ~UV();
+    MCAPI ~UV();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::UV&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::UV&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::UV const&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::UV const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -21,9 +21,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uint64 $_getMinCurveNodesAllowed();
+    MCFOLD uint64 $_getMinCurveNodesAllowed();
 
-    MCNAPI uint64 $_getMaxCurveNodesAllowed();
+    MCFOLD uint64 $_getMaxCurveNodesAllowed();
 
 
     // NOLINTEND

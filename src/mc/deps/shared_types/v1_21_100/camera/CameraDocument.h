@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_100/camera/CameraDefinitions.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -22,7 +25,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk6051ff;
+        ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
         // NOLINTEND
 
     public:
@@ -34,24 +37,24 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ::SharedTypes::v1_21_100::CameraDocument::Description&
+        MCFOLD_C ::SharedTypes::v1_21_100::CameraDocument::Description&
         operator=(::SharedTypes::v1_21_100::CameraDocument::Description&&);
 
-        MCNAPI_C ~Description();
+        MCAPI_C ~Description();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+        MCFOLD_C void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4c6e47;
-    ::ll::UntypedStorage<8, 56> mUnkb150b1;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_100::CameraDocument::Description> mDescription;
+    ::ll::TypedStorage<8, 56, ::SharedTypes::v1_21_100::CameraDefinitions>           mComponents;
     // NOLINTEND
 
 public:
@@ -63,27 +66,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::SharedTypes::v1_21_100::CameraDocument& operator=(::SharedTypes::v1_21_100::CameraDocument&&);
+    MCAPI_C ::SharedTypes::v1_21_100::CameraDocument& operator=(::SharedTypes::v1_21_100::CameraDocument&&);
 
-    MCNAPI_C ~CameraDocument();
+    MCAPI_C ~CameraDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::SemVersionConstant const& VERSION();
+    MCAPI_C static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };
 

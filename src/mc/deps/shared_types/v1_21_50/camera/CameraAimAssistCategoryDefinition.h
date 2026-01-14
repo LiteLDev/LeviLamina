@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/util/Identifier.h"
+#include "mc/deps/shared_types/v1_21_50/camera/CameraAimAssistCategoryPriorities.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -17,8 +19,8 @@ struct CameraAimAssistCategoryDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnkd65ae8;
-    ::ll::UntypedStorage<8, 144> mUnk779abf;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<6>>                                mName;
+    ::ll::TypedStorage<8, 144, ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities> mPriorities;
     // NOLINTEND
 
 public:
@@ -30,35 +32,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CameraAimAssistCategoryDefinition(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
+    MCAPI CameraAimAssistCategoryDefinition(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&
+    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
 
-    MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&) const;
+    MCAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&) const;
 
-    MCNAPI ~CameraAimAssistCategoryDefinition();
+    MCAPI ~CameraAimAssistCategoryDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition>
+    MCAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition>
     read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

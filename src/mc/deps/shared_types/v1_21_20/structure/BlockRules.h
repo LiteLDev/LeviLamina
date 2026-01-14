@@ -2,31 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace SharedTypes::v1_21_20::JigsawStructure { struct Rule; }
+// clang-format on
+
 namespace SharedTypes::v1_21_20::JigsawStructure::Processors {
 
 struct BlockRules {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkffbc45;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_20::JigsawStructure::Rule>> mRules;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockRules& operator=(BlockRules const&);
-    BlockRules(BlockRules const&);
-    BlockRules();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BlockRules();
+    MCAPI ~BlockRules();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

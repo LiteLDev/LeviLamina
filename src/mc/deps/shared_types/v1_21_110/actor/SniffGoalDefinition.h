@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,37 +17,31 @@ struct SniffGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk119287;
-    ::ll::UntypedStorage<4, 4> mUnk638e20;
-    ::ll::UntypedStorage<4, 4> mUnkb5b9e9;
-    ::ll::UntypedStorage<4, 4> mUnk9d1b85;
-    ::ll::UntypedStorage<4, 8> mUnkbab143;
+    ::ll::TypedStorage<4, 4, float>                     mDuration;
+    ::ll::TypedStorage<4, 4, float>                     mSniffingRadius;
+    ::ll::TypedStorage<4, 4, float>                     mSuspicionRadiusHorizontal;
+    ::ll::TypedStorage<4, 4, float>                     mSuspicionRadiusVertical;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mCooldownRangeSeconds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SniffGoalDefinition& operator=(SniffGoalDefinition const&);
-    SniffGoalDefinition(SniffGoalDefinition const&);
-    SniffGoalDefinition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float const& DEFAULT_DURATION();
+    MCAPI static float const& DEFAULT_DURATION();
 
-    MCNAPI static float const& DEFAULT_SNIFFING_RADIUS();
+    MCAPI static float const& DEFAULT_SNIFFING_RADIUS();
 
-    MCNAPI static float const& DEFAULT_SUSPICION_RADIUS_HORIZONTAL();
+    MCAPI static float const& DEFAULT_SUSPICION_RADIUS_HORIZONTAL();
 
-    MCNAPI static float const& DEFAULT_SUSPICION_RADIUS_VERTICAL();
+    MCAPI static float const& DEFAULT_SUSPICION_RADIUS_VERTICAL();
 
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

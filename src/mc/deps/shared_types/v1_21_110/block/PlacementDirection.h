@@ -13,42 +13,36 @@ struct PlacementDirection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc66640;
-    ::ll::UntypedStorage<4, 8>  mUnkf980db;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mEnabledStates;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mYRotationOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlacementDirection& operator=(PlacementDirection const&);
-    PlacementDirection(PlacementDirection const&);
-    PlacementDirection();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ~PlacementDirection();
+    MCAPI_S ~PlacementDirection();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& CARDINAL_DIRECTION();
+    MCAPI static ::std::string_view const& CARDINAL_DIRECTION();
 
-    MCNAPI static ::std::string_view const& FACING_DIRECTION();
+    MCAPI static ::std::string_view const& FACING_DIRECTION();
 
-    MCNAPI static ::std::string const& VALID_DIRECTION_REGEX();
+    MCAPI static ::std::string const& VALID_DIRECTION_REGEX();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_S void $dtor();
+    MCFOLD_S void $dtor();
     // NOLINTEND
 };
 

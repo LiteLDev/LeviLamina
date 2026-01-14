@@ -16,11 +16,11 @@ struct IsTamedDefinition : public ::SharedTypes::ActorFlagDefinition<::SharedTyp
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
 
-    MCNAPI static ::std::string_view const& TITLE();
+    MCAPI static ::std::string_view const& TITLE();
 
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 };
 

@@ -8,19 +8,13 @@ struct LightEmissionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5f605c;
+    ::ll::TypedStorage<1, 1, char> mLightEmission;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LightEmissionComponent& operator=(LightEmissionComponent const&);
-    LightEmissionComponent(LightEmissionComponent const&);
-    LightEmissionComponent();
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& NameId();
+    MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };
 

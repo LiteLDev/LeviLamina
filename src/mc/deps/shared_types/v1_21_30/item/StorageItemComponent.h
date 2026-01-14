@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::Legacy { struct ItemDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -13,12 +14,12 @@ struct StorageItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkbe2520;
-    ::ll::UntypedStorage<4, 4>  mUnka70db2;
-    ::ll::UntypedStorage<4, 4>  mUnk406ea5;
-    ::ll::UntypedStorage<1, 1>  mUnkd324b3;
-    ::ll::UntypedStorage<8, 24> mUnkb2afe3;
-    ::ll::UntypedStorage<8, 24> mUnkf290f2;
+    ::ll::TypedStorage<4, 4, int>                                                   mNumSlots;
+    ::ll::TypedStorage<4, 4, int>                                                   mWeightLimit;
+    ::ll::TypedStorage<4, 4, int>                                                   mWeightInStorageItem;
+    ::ll::TypedStorage<1, 1, bool>                                                  mAllowNestedStorageItem;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ItemDescriptor>> mBannedItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ItemDescriptor>> mAllowedItems;
     // NOLINTEND
 
 public:
@@ -29,14 +30,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_30::StorageItemComponent& operator=(::SharedTypes::v1_21_30::StorageItemComponent const&
-    );
+    MCAPI ::SharedTypes::v1_21_30::StorageItemComponent&
+    operator=(::SharedTypes::v1_21_30::StorageItemComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

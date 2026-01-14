@@ -8,15 +8,9 @@ struct PlayerInVillageFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk87a673;
-    ::ll::UntypedStorage<4, 4> mUnkf94bbb;
+    ::ll::TypedStorage<4, 4, uint> mDistance;
+    ::ll::TypedStorage<4, 4, uint> mTolerance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerInVillageFilter& operator=(PlayerInVillageFilter const&);
-    PlayerInVillageFilter(PlayerInVillageFilter const&);
-    PlayerInVillageFilter();
 };
 
 } // namespace SharedTypes::Legacy::Spawn

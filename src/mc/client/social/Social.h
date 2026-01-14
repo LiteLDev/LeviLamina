@@ -11,11 +11,15 @@
 // clang-format off
 namespace Social { class GameConnectionInfo; }
 namespace Social { struct XboxLiveUserProfileData; }
+namespace Social { struct PlayerProfileState; }
+namespace cohtml { class Binder; }
 // clang-format on
 
 namespace Social {
 // functions
 // NOLINTBEGIN
+MCNAPI_C void CoherentBind(::cohtml::Binder* binder, ::Social::PlayerProfileState* state);
+
 MCNAPI_C ::std::string bedrockClientErrorToString(int errorCode);
 
 MCNAPI_C bool isSignInError(::std::error_code const& code);

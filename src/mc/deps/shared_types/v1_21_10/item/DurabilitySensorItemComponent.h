@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::v1_21_10 { struct DurabilityThreshold; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -13,7 +14,7 @@ struct DurabilitySensorItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk27f789;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_10::DurabilityThreshold>> mDurabilityThresholds;
     // NOLINTEND
 
 public:
@@ -25,22 +26,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_10::DurabilitySensorItemComponent&
+    MCFOLD ::SharedTypes::v1_21_10::DurabilitySensorItemComponent&
     operator=(::SharedTypes::v1_21_10::DurabilitySensorItemComponent&&);
 
-    MCNAPI ~DurabilitySensorItemComponent();
+    MCAPI ~DurabilitySensorItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -13,19 +13,13 @@ struct CompostableItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkd7ec2f;
+    ::ll::TypedStorage<1, 1, char> mCompostingChance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CompostableItemComponent& operator=(CompostableItemComponent const&);
-    CompostableItemComponent(CompostableItemComponent const&);
-    CompostableItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

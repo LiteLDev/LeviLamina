@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
+namespace SharedTypes::v1_21_40 { struct IClientBiomeJsonComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -31,7 +32,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 32> mUnk1510f8;
+            ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
             // NOLINTEND
 
         public:
@@ -43,23 +44,24 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCNAPI ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
-            operator=(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&&
+            MCFOLD ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
+            operator=(
+                ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&&
             );
 
-            MCNAPI ~ClientBiomeDescription();
+            MCAPI ~ClientBiomeDescription();
             // NOLINTEND
 
         public:
             // static functions
             // NOLINTBEGIN
-            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCNAPI void $dtor();
+            MCFOLD void $dtor();
             // NOLINTEND
         };
 
@@ -67,27 +69,30 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 16> mUnkdc4383;
+            ::ll::TypedStorage<
+                8,
+                16,
+                ::std::map<::std::string, ::std::shared_ptr<::SharedTypes::v1_21_40::IClientBiomeJsonComponent>>>
+                mJsonComponents;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            ComponentMap& operator=(ComponentMap const&);
-            ComponentMap(ComponentMap const&);
-            ComponentMap();
 
         public:
             // static functions
             // NOLINTBEGIN
-            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk28ff8e;
-        ::ll::UntypedStorage<8, 16> mUnk87cf34;
+        ::ll::TypedStorage<
+            8,
+            32,
+            ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription>
+            mDescription;
+        ::ll::TypedStorage<8, 16, ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap>
+            mComponents;
         // NOLINTEND
 
     public:
@@ -99,60 +104,55 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject&
+        MCFOLD ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject&&);
 
-        MCNAPI ~ClientBiomeJsonObject();
+        MCAPI ~ClientBiomeJsonObject();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk81a4c0;
-    ::ll::UntypedStorage<8, 32> mUnk7c8a9a;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject>
+                                             mClientBiomeJsonObject;
+    ::ll::TypedStorage<8, 32, ::std::string> mFormatVersion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientBiomeJsonDocument& operator=(ClientBiomeJsonDocument const&);
-    ClientBiomeJsonDocument(ClientBiomeJsonDocument const&);
-    ClientBiomeJsonDocument();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ClientBiomeJsonDocument();
+    MCAPI ~ClientBiomeJsonDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::SemVersionConstant const& FIRST_VERSION();
+    MCAPI_C static ::SemVersionConstant const& FIRST_VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

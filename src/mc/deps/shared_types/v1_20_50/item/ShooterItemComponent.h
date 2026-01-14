@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/item/ItemDescriptor.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -21,10 +24,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk28c2a6;
-        ::ll::UntypedStorage<1, 1>  mUnk9dd73d;
-        ::ll::UntypedStorage<1, 1>  mUnkdd8904;
-        ::ll::UntypedStorage<1, 1>  mUnk2506ee;
+        ::ll::TypedStorage<8, 24, ::SharedTypes::Legacy::ItemDescriptor> mItem;
+        ::ll::TypedStorage<1, 1, bool>                                   mUseOffhand;
+        ::ll::TypedStorage<1, 1, bool>                                   mSearchInventory;
+        ::ll::TypedStorage<1, 1, bool>                                   mUseInCreative;
         // NOLINTEND
 
     public:
@@ -36,7 +39,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_20_50::ShooterItemComponent::Ammunition&
+        MCAPI ::SharedTypes::v1_20_50::ShooterItemComponent::Ammunition&
         operator=(::SharedTypes::v1_20_50::ShooterItemComponent::Ammunition&&);
         // NOLINTEND
     };
@@ -44,22 +47,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk228070;
-    ::ll::UntypedStorage<4, 4>  mUnk646763;
-    ::ll::UntypedStorage<1, 1>  mUnk80b53f;
-    ::ll::UntypedStorage<1, 1>  mUnk5c8cfa;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_20_50::ShooterItemComponent::Ammunition>> mAmmunition;
+    ::ll::TypedStorage<4, 4, float> mMaxDrawDuration;
+    ::ll::TypedStorage<1, 1, bool>  mChargeOnDraw;
+    ::ll::TypedStorage<1, 1, bool>  mScalePowerByDrawDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShooterItemComponent& operator=(ShooterItemComponent const&);
-    ShooterItemComponent(ShooterItemComponent const&);
-    ShooterItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

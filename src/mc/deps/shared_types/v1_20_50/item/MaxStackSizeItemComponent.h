@@ -13,19 +13,13 @@ struct MaxStackSizeItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkdd0410;
+    ::ll::TypedStorage<2, 2, short> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MaxStackSizeItemComponent& operator=(MaxStackSizeItemComponent const&);
-    MaxStackSizeItemComponent(MaxStackSizeItemComponent const&);
-    MaxStackSizeItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

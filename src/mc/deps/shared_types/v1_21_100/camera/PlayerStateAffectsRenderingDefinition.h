@@ -13,13 +13,13 @@ struct PlayerStateAffectsRenderingDefinition {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

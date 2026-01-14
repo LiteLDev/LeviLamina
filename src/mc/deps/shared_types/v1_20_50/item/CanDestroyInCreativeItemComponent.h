@@ -13,19 +13,13 @@ struct CanDestroyInCreativeItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5814cd;
+    ::ll::TypedStorage<1, 1, bool> mCanDestroyInCreative;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CanDestroyInCreativeItemComponent& operator=(CanDestroyInCreativeItemComponent const&);
-    CanDestroyInCreativeItemComponent(CanDestroyInCreativeItemComponent const&);
-    CanDestroyInCreativeItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

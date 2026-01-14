@@ -13,14 +13,14 @@ namespace Json { class Value; }
 namespace ResourceHelper {
 // functions
 // NOLINTBEGIN
-MCNAPI bool
+MCAPI bool
 deserializePackStackEntry(::Json::Value const& entry, ::PackInstanceId& output, ::std::string const& packIdSalt);
 
-MCNAPI void serializePackStackEntry(::PackInstanceId const& packInstanceId, ::Json::Value& output);
+MCAPI void serializePackStackEntry(::PackInstanceId const& packInstanceId, ::Json::Value& output);
 
-MCNAPI ::std::string stringifyResourceMetadataGeneratedWith(::ResourceMetadata const& resourceMetadata);
+MCAPI ::std::string stringifyResourceMetadataGeneratedWith(::ResourceMetadata const& resourceMetadata);
 
-MCNAPI_C ::PackIdVersion toPackIdAnyVersion(::PackIdVersion const& fromPackIdVersion);
+MCAPI_C ::PackIdVersion toPackIdAnyVersion(::PackIdVersion const& fromPackIdVersion);
 // NOLINTEND
 
 } // namespace ResourceHelper

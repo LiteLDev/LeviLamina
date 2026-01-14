@@ -25,19 +25,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

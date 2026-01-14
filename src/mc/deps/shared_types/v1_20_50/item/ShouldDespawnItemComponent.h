@@ -13,19 +13,13 @@ struct ShouldDespawnItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk257e05;
+    ::ll::TypedStorage<1, 1, bool> mShouldDespawn;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShouldDespawnItemComponent& operator=(ShouldDespawnItemComponent const&);
-    ShouldDespawnItemComponent(ShouldDespawnItemComponent const&);
-    ShouldDespawnItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

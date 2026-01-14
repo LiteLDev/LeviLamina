@@ -8,15 +8,9 @@ struct HeightFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9cfc6f;
-    ::ll::UntypedStorage<4, 4> mUnkce1eb2;
+    ::ll::TypedStorage<4, 4, int> mMin;
+    ::ll::TypedStorage<4, 4, int> mMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HeightFilter& operator=(HeightFilter const&);
-    HeightFilter(HeightFilter const&);
-    HeightFilter();
 };
 
 } // namespace SharedTypes::Legacy::Spawn

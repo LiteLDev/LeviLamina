@@ -13,7 +13,7 @@ struct DisplayNameItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk33f0fc;
+    ::ll::TypedStorage<8, 32, ::std::string> mValue;
     // NOLINTEND
 
 public:
@@ -25,22 +25,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_50::DisplayNameItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::DisplayNameItemComponent&
     operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent&&);
 
-    MCNAPI_C ~DisplayNameItemComponent();
+    MCAPI_C ~DisplayNameItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

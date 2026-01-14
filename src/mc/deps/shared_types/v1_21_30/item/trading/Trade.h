@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::v1_21_30 { struct TradeItemList; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -13,12 +14,12 @@ struct Trade {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1f5616;
-    ::ll::UntypedStorage<8, 24> mUnk6c6c4f;
-    ::ll::UntypedStorage<4, 4>  mUnka1a44d;
-    ::ll::UntypedStorage<4, 4>  mUnkf83b7c;
-    ::ll::UntypedStorage<1, 1>  mUnk7dc036;
-    ::ll::UntypedStorage<4, 4>  mUnke9099a;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_30::TradeItemList>> mWants;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_30::TradeItemList>> mGives;
+    ::ll::TypedStorage<4, 4, uint>                                                   mTraderExp;
+    ::ll::TypedStorage<4, 4, int>                                                    mMaxUses;
+    ::ll::TypedStorage<1, 1, bool>                                                   mRewardExp;
+    ::ll::TypedStorage<4, 4, int>                                                    mWeight;
     // NOLINTEND
 
 public:
@@ -29,23 +30,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_30::Trade& operator=(::SharedTypes::v1_21_30::Trade&&);
+    MCAPI ::SharedTypes::v1_21_30::Trade& operator=(::SharedTypes::v1_21_30::Trade&&);
 
-    MCNAPI ::SharedTypes::v1_21_30::Trade& operator=(::SharedTypes::v1_21_30::Trade const&);
+    MCAPI ::SharedTypes::v1_21_30::Trade& operator=(::SharedTypes::v1_21_30::Trade const&);
 
-    MCNAPI ~Trade();
+    MCAPI ~Trade();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

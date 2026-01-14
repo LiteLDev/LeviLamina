@@ -8,7 +8,7 @@ struct Generation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1a9be7;
+    ::ll::TypedStorage<8, 32, ::std::string> mGeneratorType;
     // NOLINTEND
 
 public:
@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Generation&
+    MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::Generation&
     operator=(::SharedTypes::v1_21_60::DimensionDefinition::Generation&&);
     // NOLINTEND
 };

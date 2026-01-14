@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct Library {};
+class Library {};
 
 } // namespace OreUI

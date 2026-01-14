@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,37 +16,31 @@ struct CameraAttachDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk21ccf9;
+    ::ll::TypedStorage<8, 48, ::HashedString> mLocator;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraAttachDefinition& operator=(CameraAttachDefinition const&);
-    CameraAttachDefinition(CameraAttachDefinition const&);
-    CameraAttachDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~CameraAttachDefinition();
+    MCAPI_C ~CameraAttachDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

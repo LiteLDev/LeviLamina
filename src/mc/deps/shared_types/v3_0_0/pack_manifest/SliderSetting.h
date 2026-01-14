@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v3_0_0/pack_manifest/SettingType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,13 +16,13 @@ struct SliderSetting {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkac0c50;
-    ::ll::UntypedStorage<8, 32> mUnk4031cd;
-    ::ll::UntypedStorage<8, 32> mUnk57defc;
-    ::ll::UntypedStorage<4, 4>  mUnk22aa61;
-    ::ll::UntypedStorage<4, 4>  mUnkcc3264;
-    ::ll::UntypedStorage<4, 4>  mUnk4c4ae8;
-    ::ll::UntypedStorage<4, 4>  mUnk36ac4a;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v3_0_0::PackManifestDefinition::SettingType> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mText;
+    ::ll::TypedStorage<4, 4, float>                                                      mMin;
+    ::ll::TypedStorage<4, 4, float>                                                      mMax;
+    ::ll::TypedStorage<4, 4, float>                                                      mStep;
+    ::ll::TypedStorage<4, 4, float>                                                      mDefault;
     // NOLINTEND
 
 public:
@@ -31,22 +34,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting&
+    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting&&);
 
-    MCNAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const&) const;
+    MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& TYPE_NAME();
+    MCAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 };
 

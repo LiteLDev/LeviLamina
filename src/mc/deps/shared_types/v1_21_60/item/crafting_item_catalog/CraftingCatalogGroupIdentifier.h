@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_60/item/crafting_item_catalog/CraftingCatalogItem.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,8 +16,8 @@ struct CraftingCatalogGroupIdentifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2e83e3;
-    ::ll::UntypedStorage<8, 40> mUnkecabb3;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                 mName;
+    ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_21_60::CraftingCatalogItem>> mItemIcon;
     // NOLINTEND
 
 public:
@@ -25,25 +28,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
+    MCAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
     operator=(::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&&);
 
-    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
+    MCFOLD ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
     operator=(::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier const&);
 
-    MCNAPI ~CraftingCatalogGroupIdentifier();
+    MCAPI ~CraftingCatalogGroupIdentifier();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

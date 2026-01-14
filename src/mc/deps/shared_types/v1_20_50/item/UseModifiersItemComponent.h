@@ -13,29 +13,23 @@ struct UseModifiersItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk546ab3;
-    ::ll::UntypedStorage<1, 1> mUnk69fbff;
-    ::ll::UntypedStorage<4, 8> mUnk51e95b;
+    ::ll::TypedStorage<4, 4, float>                  mUseDuration;
+    ::ll::TypedStorage<1, 1, bool>                   mEmitVibrations;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mMovementModifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UseModifiersItemComponent& operator=(UseModifiersItemComponent const&);
-    UseModifiersItemComponent(UseModifiersItemComponent const&);
-    UseModifiersItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static bool const& DEFAULT_EMIT_VIBRATIONS();
+    MCAPI static bool const& DEFAULT_EMIT_VIBRATIONS();
 
-    MCNAPI static float const& DEFAULT_USE_DURATION();
+    MCAPI static float const& DEFAULT_USE_DURATION();
     // NOLINTEND
 };
 

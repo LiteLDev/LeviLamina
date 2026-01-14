@@ -23,26 +23,20 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf31ef4;
-    ::ll::UntypedStorage<4, 4> mUnkac36cf;
+    ::ll::TypedStorage<4, 4, int>                                     mPriority;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::BaseGoalDefinition::Flag> mControlFlags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseGoalDefinition& operator=(BaseGoalDefinition const&);
-    BaseGoalDefinition(BaseGoalDefinition const&);
-    BaseGoalDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::SharedTypes::BaseGoalDefinition::Flag> flagsVec() const;
+    MCAPI ::std::vector<::SharedTypes::BaseGoalDefinition::Flag> flagsVec() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

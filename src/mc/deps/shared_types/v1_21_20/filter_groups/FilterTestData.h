@@ -11,13 +11,17 @@ namespace SharedTypes::v1_21_20 {
 
 struct FilterTestData {
 public:
+    // FilterTestData inner types define
+    using ParamVariant = ::std::variant<bool, int, float, ::std::string>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke8c975;
-    ::ll::UntypedStorage<8, 48> mUnk666480;
-    ::ll::UntypedStorage<8, 48> mUnk4003b3;
-    ::ll::UntypedStorage<8, 48> mUnkc46ca6;
-    ::ll::UntypedStorage<8, 48> mUnk6a2f0a;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                    mTest;
+    ::ll::TypedStorage<8, 48, ::std::optional<::std::variant<bool, int, float, ::std::string>>> mSubject;
+    ::ll::TypedStorage<8, 48, ::std::optional<::std::variant<bool, int, float, ::std::string>>> mOperator;
+    ::ll::TypedStorage<8, 48, ::std::optional<::std::variant<bool, int, float, ::std::string>>> mDomain;
+    ::ll::TypedStorage<8, 48, ::std::optional<::std::variant<bool, int, float, ::std::string>>> mValue;
     // NOLINTEND
 
 public:
@@ -28,33 +32,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FilterTestData(::SharedTypes::v1_21_20::FilterTestData&&);
+    MCAPI FilterTestData(::SharedTypes::v1_21_20::FilterTestData&&);
 
-    MCNAPI FilterTestData(::SharedTypes::v1_21_20::FilterTestData const&);
+    MCAPI FilterTestData(::SharedTypes::v1_21_20::FilterTestData const&);
 
-    MCNAPI ::SharedTypes::v1_21_20::FilterTestData& operator=(::SharedTypes::v1_21_20::FilterTestData&&);
+    MCAPI ::SharedTypes::v1_21_20::FilterTestData& operator=(::SharedTypes::v1_21_20::FilterTestData&&);
 
-    MCNAPI ~FilterTestData();
+    MCAPI ~FilterTestData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_20::FilterTestData&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_20::FilterTestData&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_20::FilterTestData const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_20::FilterTestData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

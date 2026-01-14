@@ -2,24 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_20/structure/template_pool/Projection.h"
+
 namespace SharedTypes::v1_21_50 {
 
 struct JigsawJunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc59553;
-    ::ll::UntypedStorage<4, 4> mUnkdb02dd;
-    ::ll::UntypedStorage<4, 4> mUnk223bc2;
-    ::ll::UntypedStorage<4, 4> mUnk7130d2;
-    ::ll::UntypedStorage<1, 1> mUnkf8b5f7;
+    ::ll::TypedStorage<4, 4, int>                                                              mSourceX;
+    ::ll::TypedStorage<4, 4, int>                                                              mSourceGroundY;
+    ::ll::TypedStorage<4, 4, int>                                                              mSourceZ;
+    ::ll::TypedStorage<4, 4, int>                                                              mDeltaY;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Projection> mDestProjection;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawJunction& operator=(JigsawJunction const&);
-    JigsawJunction(JigsawJunction const&);
-    JigsawJunction();
 };
 
 } // namespace SharedTypes::v1_21_50

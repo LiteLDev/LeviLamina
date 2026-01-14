@@ -2,9 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
+#include "mc/deps/shared_types/v1_21_20/structure/template_pool/Description.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
+namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool { struct TemplatePoolElement; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -14,9 +19,10 @@ struct Contents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk242ae1;
-    ::ll::UntypedStorage<8, 24> mUnke111d9;
-    ::ll::UntypedStorage<8, 32> mUnk281d77;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Description> mDescription;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_20::JigsawStructureTemplatePool::TemplatePoolElement>>
+                                                            mElements;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<15>> mFallback;
     // NOLINTEND
 
 public:
@@ -28,30 +34,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&
+    MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&&);
 
-    MCNAPI ~Contents();
+    MCAPI ~Contents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& DEFAULT_FALLBACK();
+    MCAPI static ::std::string const& DEFAULT_FALLBACK();
 
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

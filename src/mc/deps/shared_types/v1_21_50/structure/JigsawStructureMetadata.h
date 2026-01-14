@@ -2,27 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace SharedTypes::v1_21_50 { class JigsawBlockMetadata; }
+// clang-format on
+
 namespace SharedTypes::v1_21_50 {
 
 struct JigsawStructureMetadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnke037ee;
-    ::ll::UntypedStorage<8, 24> mUnk5e0ec8;
-    ::ll::UntypedStorage<1, 1>  mUnke4480a;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                                  mSize;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_50::JigsawBlockMetadata>> mJigsawBlocks;
+    ::ll::TypedStorage<1, 1, bool>                                                         mUseLegacyRotation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawStructureMetadata& operator=(JigsawStructureMetadata const&);
-    JigsawStructureMetadata(JigsawStructureMetadata const&);
-    JigsawStructureMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::SharedTypes::v1_21_50::JigsawStructureMetadata const&) const;
+    MCAPI bool operator==(::SharedTypes::v1_21_50::JigsawStructureMetadata const&) const;
     // NOLINTEND
 };
 

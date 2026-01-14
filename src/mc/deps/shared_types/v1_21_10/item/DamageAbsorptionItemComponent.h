@@ -13,31 +13,25 @@ struct DamageAbsorptionItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5e1211;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mAbsorbableDamageCauses;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DamageAbsorptionItemComponent& operator=(DamageAbsorptionItemComponent const&);
-    DamageAbsorptionItemComponent(DamageAbsorptionItemComponent const&);
-    DamageAbsorptionItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~DamageAbsorptionItemComponent();
+    MCAPI ~DamageAbsorptionItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

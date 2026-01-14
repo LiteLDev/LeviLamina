@@ -2,21 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/platform/UUID.h"
+
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
 
 struct PackDependency {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk20eb67;
-    ::ll::UntypedStorage<8, 24> mUnkb8384b;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>  mUUID;
+    ::ll::TypedStorage<8, 24, ::SemVersion> mVersion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PackDependency& operator=(PackDependency const&);
-    PackDependency(PackDependency const&);
-    PackDependency();
 };
 
 } // namespace SharedTypes::v3_0_0::PackManifestDefinition

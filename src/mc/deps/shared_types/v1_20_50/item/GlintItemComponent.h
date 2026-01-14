@@ -13,19 +13,13 @@ struct GlintItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkfd17b2;
+    ::ll::TypedStorage<1, 1, bool> mIsGlint;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GlintItemComponent& operator=(GlintItemComponent const&);
-    GlintItemComponent(GlintItemComponent const&);
-    GlintItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

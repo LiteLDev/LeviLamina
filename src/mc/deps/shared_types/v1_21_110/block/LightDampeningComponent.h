@@ -8,19 +8,13 @@ struct LightDampeningComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkbc15a0;
+    ::ll::TypedStorage<1, 1, char> mLightLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LightDampeningComponent& operator=(LightDampeningComponent const&);
-    LightDampeningComponent(LightDampeningComponent const&);
-    LightDampeningComponent();
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& NameId();
+    MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };
 

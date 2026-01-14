@@ -16,19 +16,19 @@ struct ActorDefinitions : public ::SharedTypes::v1_21_100::ActorDefinitions {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ActorDefinitions();
+    MCAPI ~ActorDefinitions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

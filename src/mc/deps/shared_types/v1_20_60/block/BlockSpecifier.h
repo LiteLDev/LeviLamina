@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -11,10 +14,16 @@ namespace SharedTypes::v1_20_60 {
 
 struct BlockSpecifier {
 public:
+    // BlockSpecifier inner types define
+    using StateMap = ::std::unordered_map<::std::string, ::std::variant<int, bool, ::std::string>>;
+
+    using StateMapValue = ::std::variant<int, bool, ::std::string>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk14f448;
-    ::ll::UntypedStorage<8, 64> mUnk610961;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<0>>                                                   mBlockName;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::variant<int, bool, ::std::string>>> mStates;
     // NOLINTEND
 
 public:
@@ -26,29 +35,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockSpecifier(::SharedTypes::v1_20_60::BlockSpecifier&&);
+    MCAPI BlockSpecifier(::SharedTypes::v1_20_60::BlockSpecifier&&);
 
-    MCNAPI ::SharedTypes::v1_20_60::BlockSpecifier& operator=(::SharedTypes::v1_20_60::BlockSpecifier&&);
+    MCAPI ::SharedTypes::v1_20_60::BlockSpecifier& operator=(::SharedTypes::v1_20_60::BlockSpecifier&&);
 
-    MCNAPI ~BlockSpecifier();
+    MCAPI ~BlockSpecifier();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_60::BlockSpecifier&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_60::BlockSpecifier&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

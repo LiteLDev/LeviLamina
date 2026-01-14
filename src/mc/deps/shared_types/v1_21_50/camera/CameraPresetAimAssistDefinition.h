@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/shared_types/util/Reference.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/camera/aimassist/camera_aim_assist/TargetMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,10 +21,10 @@ struct CameraPresetAimAssistDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk3c4e65;
-    ::ll::UntypedStorage<1, 2>  mUnk60c5a8;
-    ::ll::UntypedStorage<4, 12> mUnk89b38a;
-    ::ll::UntypedStorage<4, 8>  mUnk39024b;
+    ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::Reference<5>>>  mPresetId;
+    ::ll::TypedStorage<1, 2, ::std::optional<::CameraAimAssist::TargetMode>> mTargetMode;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>                       mAngle;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                         mDistance;
     // NOLINTEND
 
 public:
@@ -32,40 +35,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CameraPresetAimAssistDefinition(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
+    MCAPI CameraPresetAimAssistDefinition(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&
+    MCAPI ::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&
     operator=(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&
+    MCAPI ::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&
     operator=(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition const&);
 
-    MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition const& rhs) const;
+    MCAPI bool operator==(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition const& rhs) const;
 
-    MCNAPI void write(::BinaryStream& stream) const;
+    MCAPI void write(::BinaryStream& stream) const;
 
-    MCNAPI ~CameraPresetAimAssistDefinition();
+    MCAPI ~CameraPresetAimAssistDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition>
+    MCAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition>
     read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

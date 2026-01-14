@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+#include "mc/deps/shared_types/v1_20_80/particle/DirectionType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,32 +17,26 @@ struct ParticleEmitterDirection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>   mUnke315a8;
-    ::ll::UntypedStorage<8, 152> mUnkb16ed8;
+    ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::v1_20_80::DirectionType>> mDirectionString;
+    ::ll::TypedStorage<8, 152, ::std::optional<::std::array<::SharedTypes::Legacy::ExpressionNode, 3>>> mDirectionExpr;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleEmitterDirection& operator=(ParticleEmitterDirection const&);
-    ParticleEmitterDirection(ParticleEmitterDirection const&);
-    ParticleEmitterDirection();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~ParticleEmitterDirection();
+    MCAPI_C ~ParticleEmitterDirection();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

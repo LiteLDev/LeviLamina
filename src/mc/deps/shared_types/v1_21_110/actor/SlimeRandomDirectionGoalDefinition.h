@@ -16,33 +16,27 @@ struct SlimeRandomDirectionGoalDefinition : public ::SharedTypes::BaseGoalDefini
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf016da;
-    ::ll::UntypedStorage<4, 4> mUnk56fb64;
-    ::ll::UntypedStorage<4, 4> mUnk49771c;
+    ::ll::TypedStorage<4, 4, int>   mAddRandomTime;
+    ::ll::TypedStorage<4, 4, int>   mTurnRange;
+    ::ll::TypedStorage<4, 4, float> mMinChangeDirectionTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SlimeRandomDirectionGoalDefinition& operator=(SlimeRandomDirectionGoalDefinition const&);
-    SlimeRandomDirectionGoalDefinition(SlimeRandomDirectionGoalDefinition const&);
-    SlimeRandomDirectionGoalDefinition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static int const& DEFAULT_ADD_RANDOM_TIME_RANGE();
+    MCAPI static int const& DEFAULT_ADD_RANDOM_TIME_RANGE();
 
-    MCNAPI static float const& DEFAULT_MIN_CHANGE_DIRECTION_TIME();
+    MCAPI static float const& DEFAULT_MIN_CHANGE_DIRECTION_TIME();
 
-    MCNAPI static int const& DEFAULT_TURN_RANGE();
+    MCAPI static int const& DEFAULT_TURN_RANGE();
 
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

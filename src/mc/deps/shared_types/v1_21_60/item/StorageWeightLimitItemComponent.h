@@ -13,19 +13,13 @@ struct StorageWeightLimitItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7c1012;
+    ::ll::TypedStorage<4, 4, int> mWeightLimit;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StorageWeightLimitItemComponent& operator=(StorageWeightLimitItemComponent const&);
-    StorageWeightLimitItemComponent(StorageWeightLimitItemComponent const&);
-    StorageWeightLimitItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

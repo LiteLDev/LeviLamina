@@ -37,12 +37,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ChangeDimensionRequest();
+    MCAPI ~ChangeDimensionRequest();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

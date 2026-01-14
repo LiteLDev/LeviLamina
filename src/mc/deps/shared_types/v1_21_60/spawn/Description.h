@@ -8,7 +8,7 @@ struct Description {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkfb311f;
+    ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
     // NOLINTEND
 
 public:
@@ -20,15 +20,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::Spawn::Description& operator=(::SharedTypes::v1_21_60::Spawn::Description&&);
+    MCFOLD ::SharedTypes::v1_21_60::Spawn::Description& operator=(::SharedTypes::v1_21_60::Spawn::Description&&);
 
-    MCNAPI ~Description();
+    MCAPI ~Description();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

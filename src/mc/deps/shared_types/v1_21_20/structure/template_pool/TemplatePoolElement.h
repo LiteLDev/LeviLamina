@@ -2,21 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_20/structure/template_pool/EmptyPoolElement.h"
+#include "mc/deps/shared_types/v1_21_20/structure/template_pool/SinglePoolElement.h"
+
 namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool {
 
 struct TemplatePoolElement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk2899a0;
-    ::ll::UntypedStorage<1, 1>  mUnk6ff89c;
+    ::ll::TypedStorage<
+        8,
+        80,
+        ::std::variant<
+            ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::EmptyPoolElement,
+            ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement>>
+                                    mElement;
+    ::ll::TypedStorage<1, 1, uchar> mWeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TemplatePoolElement& operator=(TemplatePoolElement const&);
-    TemplatePoolElement(TemplatePoolElement const&);
-    TemplatePoolElement();
 };
 
 } // namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool

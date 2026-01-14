@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct IRouteMatcher {};
+class IRouteMatcher {};
 
 } // namespace OreUI

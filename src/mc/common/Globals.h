@@ -137,6 +137,7 @@ struct BlockLayer;
 struct CommonLocTextPair;
 struct DateRange;
 struct DynDnsResult;
+struct FlatWorldLayer;
 struct FlatWorldPreset;
 struct HCTraceImplArea;
 struct HC_CALL;
@@ -149,6 +150,7 @@ struct ScatterParamsMolangVariableIndices;
 struct TextProcessingEventOriginEnumHasher;
 struct TypeMapping;
 struct WorkerConfiguration;
+struct WorldTemplateInfo;
 struct srtp_auth_t;
 namespace Bedrock { class WorkerPoolHandleInterface; }
 namespace Bedrock::Http { class Status; }
@@ -204,6 +206,7 @@ struct ModificationOperation;
 struct PreviousTransformationInput;
 struct PreviousTransformationOutput;
 struct ProcessedDataDrivenRenderers;
+struct RealmsWorldInfo;
 struct RenderControllerResources;
 struct RequestedRenderEntries;
 struct ResourceBakingResult;
@@ -211,9 +214,11 @@ struct ResourceOffset;
 struct SharedUniformPhase;
 struct StoreDataDrivenScreenController;
 struct TrialManager;
+struct WorldSeedModel;
 namespace Bedrock { class Platform_GameCore; }
 namespace ParticleSystem { struct ParticleEffectComponentRegistry; }
 namespace Social { struct MultiplayerServiceManager; }
+namespace cohtml { class Binder; }
 namespace mce::framebuilder { struct FrameBuilder; }
 namespace mce::framebuilder { struct RenderBatchActorInstanceDescription; }
 // clang-format on
@@ -221,6 +226,18 @@ namespace mce::framebuilder { struct RenderBatchActorInstanceDescription; }
 // functions
 // NOLINTBEGIN
 MCAPI void BedrockLogOut(uint, char const*, ...);
+
+MCAPI_C void CoherentBind(::cohtml::Binder* binder, ::Vec3* data);
+
+MCAPI_C void CoherentBind(::cohtml::Binder* binder, ::FlatWorldLayer* layer);
+
+MCAPI_C void CoherentBind(::cohtml::Binder* binder, ::FlatWorldPreset* options);
+
+MCAPI_C void CoherentBind(::cohtml::Binder* binder, ::RealmsWorldInfo* realmsWorldInfo);
+
+MCAPI_C void CoherentBind(::cohtml::Binder* binder, ::WorldSeedModel* seedTemplate);
+
+MCAPI_C void CoherentBind(::cohtml::Binder* binder, ::WorldTemplateInfo* worldTemplateInfo);
 
 MCAPI ::CreativeItemCategory
 CreativeItemCategoryComprehensiveToRuntime(::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory category);

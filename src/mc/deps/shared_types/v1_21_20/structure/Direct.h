@@ -2,14 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
+
 namespace SharedTypes::v1_21_20::PoolAliases {
 
 struct Direct {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnka4dfe5;
-    ::ll::UntypedStorage<8, 32> mUnkbbc7b8;
+    ::ll::TypedStorage<8, 32, ::std::string>                mAlias;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<15>> mTarget;
     // NOLINTEND
 
 public:
@@ -21,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::PoolAliases::Direct& operator=(::SharedTypes::v1_21_20::PoolAliases::Direct&&);
+    MCAPI ::SharedTypes::v1_21_20::PoolAliases::Direct& operator=(::SharedTypes::v1_21_20::PoolAliases::Direct&&);
     // NOLINTEND
 };
 

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ParticleEmitterDirection.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,15 +18,9 @@ struct EmitterShapeEntityAABBComponent : public ::SharedTypes::v1_20_80::Particl
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 168> mUnk6b3c05;
-    ::ll::UntypedStorage<1, 1>   mUnkcb5dc5;
+    ::ll::TypedStorage<8, 168, ::std::optional<::SharedTypes::v1_20_80::ParticleEmitterDirection>> mDirection;
+    ::ll::TypedStorage<1, 1, bool>                                                                 mSurfaceOnly;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EmitterShapeEntityAABBComponent& operator=(EmitterShapeEntityAABBComponent const&);
-    EmitterShapeEntityAABBComponent(EmitterShapeEntityAABBComponent const&);
-    EmitterShapeEntityAABBComponent();
 
 public:
     // virtual functions
@@ -38,25 +33,25 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

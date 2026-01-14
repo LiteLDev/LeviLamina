@@ -2,47 +2,50 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_20_60/block/BlockSpecifier.h"
+
 namespace SharedTypes::v1_21_100::SurfaceBuilder {
 
 struct CappedSurfaceSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk1dbfab;
-    ::ll::UntypedStorage<8, 24>  mUnkf477bc;
-    ::ll::UntypedStorage<8, 96>  mUnkb36cd8;
-    ::ll::UntypedStorage<8, 96>  mUnk5ef267;
-    ::ll::UntypedStorage<8, 104> mUnk7c7262;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_20_60::BlockSpecifier>>    mFloorMaterials;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_20_60::BlockSpecifier>>    mCeilingMaterials;
+    ::ll::TypedStorage<8, 96, ::SharedTypes::v1_20_60::BlockSpecifier>                   mSeaMaterial;
+    ::ll::TypedStorage<8, 96, ::SharedTypes::v1_20_60::BlockSpecifier>                   mFoundationMaterial;
+    ::ll::TypedStorage<8, 104, ::std::optional<::SharedTypes::v1_20_60::BlockSpecifier>> mBeachMaterial;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CappedSurfaceSettings();
+    MCAPI CappedSurfaceSettings();
 
-    MCNAPI CappedSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
+    MCAPI CappedSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
 
-    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&
+    MCAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&
     operator=(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&&);
 
-    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&
+    MCAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&
     operator=(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
 
-    MCNAPI ~CappedSurfaceSettings();
+    MCAPI ~CappedSurfaceSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

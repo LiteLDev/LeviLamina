@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/util/MolangJsonContainer.h"
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
+#include "mc/deps/shared_types/v1_20_60/block/BlockSpecifier.h"
 #include "mc/v1_20_60/biome/components/BiomeComponentVersion.h"
 
 // auto generated forward declare list
@@ -26,11 +28,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 104> mUnka47d46;
-        ::ll::UntypedStorage<8, 104> mUnkb67354;
-        ::ll::UntypedStorage<8, 104> mUnkf4cec1;
-        ::ll::UntypedStorage<8, 104> mUnk3287a9;
-        ::ll::UntypedStorage<8, 104> mUnka93f5e;
+        ::ll::TypedStorage<8, 104, ::std::optional<::SharedTypes::v1_20_60::BlockSpecifier>> mTopMaterial;
+        ::ll::TypedStorage<8, 104, ::std::optional<::SharedTypes::v1_20_60::BlockSpecifier>> mMidMaterial;
+        ::ll::TypedStorage<8, 104, ::std::optional<::SharedTypes::v1_20_60::BlockSpecifier>> mSeaFloorMaterial;
+        ::ll::TypedStorage<8, 104, ::std::optional<::SharedTypes::v1_20_60::BlockSpecifier>> mFoundationMaterial;
+        ::ll::TypedStorage<8, 104, ::std::optional<::SharedTypes::v1_20_60::BlockSpecifier>> mSeaMaterial;
         // NOLINTEND
 
     public:
@@ -41,23 +43,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI SurfaceMaterialAdjustmentMaterials(
+        MCAPI SurfaceMaterialAdjustmentMaterials(
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
                 SurfaceMaterialAdjustmentMaterials const&
         );
 
-        MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
-            SurfaceMaterialAdjustmentMaterials&
-            operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
-                          SurfaceMaterialAdjustmentMaterials&&);
+        MCAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&
+        operator=(
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&&
+        );
 
-        MCNAPI ~SurfaceMaterialAdjustmentMaterials();
+        MCAPI ~SurfaceMaterialAdjustmentMaterials();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(
+        MCAPI void* $ctor(
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
                 SurfaceMaterialAdjustmentMaterials const&
         );
@@ -66,7 +68,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -74,10 +76,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 520> mUnk4506f2;
-        ::ll::UntypedStorage<4, 12>  mUnkd193f0;
-        ::ll::UntypedStorage<8, 88>  mUnk46aed7;
-        ::ll::UntypedStorage<4, 8>   mUnk57152d;
+        ::ll::TypedStorage<
+            8,
+            520,
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials>
+                                                                           mMaterials;
+        ::ll::TypedStorage<4, 12, ::std::optional<::std::array<float, 2>>> mNoiseRange;
+        ::ll::TypedStorage<8, 88, ::std::optional<::std::array<::SharedTypes::Util::MolangJsonContainer, 2>>>
+                                                         mHeightRange;
+        ::ll::TypedStorage<4, 8, ::std::optional<float>> mNoiseFrequencyScale;
         // NOLINTEND
 
     public:
@@ -88,11 +95,11 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI SurfaceMaterialAdjustment(
+        MCAPI SurfaceMaterialAdjustment(
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&
         );
 
-        MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&
+        MCAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&
         operator=(
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment const&
         );
@@ -101,7 +108,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void*
+        MCAPI void*
         $ctor(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&);
         // NOLINTEND
     };
@@ -109,14 +116,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4cdba3;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::std::optional<::std::vector<
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment>>>
+        mAdjustments;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SurfaceMaterialAdjustmentsBiomeJsonComponent& operator=(SurfaceMaterialAdjustmentsBiomeJsonComponent const&);
-    SurfaceMaterialAdjustmentsBiomeJsonComponent(SurfaceMaterialAdjustmentsBiomeJsonComponent const&);
-    SurfaceMaterialAdjustmentsBiomeJsonComponent();
 
 public:
     // virtual functions
@@ -129,21 +135,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BiomeComponentVersion $getType() const;
+    MCFOLD ::BiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

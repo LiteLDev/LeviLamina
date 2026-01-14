@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/shared_types/util/Identifier.h"
+#include "mc/deps/shared_types/util/Reference.h"
+#include "mc/deps/shared_types/v1_21_50/camera/CameraPresetAimAssistDefinition.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -20,28 +27,28 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk65857f;
-    ::ll::UntypedStorage<8, 32> mUnke128b3;
-    ::ll::UntypedStorage<4, 8>  mUnka17ee5;
-    ::ll::UntypedStorage<4, 8>  mUnkb1a7ee;
-    ::ll::UntypedStorage<4, 8>  mUnkb3f0f5;
-    ::ll::UntypedStorage<4, 8>  mUnk79e9c4;
-    ::ll::UntypedStorage<4, 8>  mUnkc731a4;
-    ::ll::UntypedStorage<4, 8>  mUnk7dfc7d;
-    ::ll::UntypedStorage<1, 2>  mUnk903cc7;
-    ::ll::UntypedStorage<4, 12> mUnkd1cb9a;
-    ::ll::UntypedStorage<4, 12> mUnk3f2dd3;
-    ::ll::UntypedStorage<1, 2>  mUnk903554;
-    ::ll::UntypedStorage<4, 8>  mUnka709c2;
-    ::ll::UntypedStorage<4, 12> mUnk1a1199;
-    ::ll::UntypedStorage<4, 16> mUnk8251f5;
-    ::ll::UntypedStorage<4, 8>  mUnke6af36;
-    ::ll::UntypedStorage<4, 8>  mUnk5b2b3d;
-    ::ll::UntypedStorage<4, 8>  mUnk62fc6e;
-    ::ll::UntypedStorage<1, 2>  mUnk8488dc;
-    ::ll::UntypedStorage<1, 2>  mUnkeb6766;
-    ::ll::UntypedStorage<1, 2>  mUnkde641e;
-    ::ll::UntypedStorage<8, 72> mUnk2a2d0b;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<7>> mName;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<7>>  mInheritFrom;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mPosX;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mPosY;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mPosZ;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mRotX;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mRotY;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mCameraRotationSpeed;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>         mSnapToTarget;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>      mHorizontalRotationLimit;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>      mVerticalRotationLimit;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>         mContinueTargeting;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mTrackingRadius;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>      mViewOffset;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>>      mEntityOffset;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mRadius;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mYawLimitMin;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mYawLimitMax;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_21_70::CameraPreset::AudioListener>> mListener;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                                 mPlayerEffects;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mAlignTargetAndCameraForward;
+    ::ll::TypedStorage<8, 72, ::std::optional<::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition>> mAimAssist;
     // NOLINTEND
 
 public:
@@ -51,33 +58,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S CameraPreset(::SharedTypes::v1_21_70::CameraPreset const&);
+    MCAPI_S CameraPreset(::SharedTypes::v1_21_70::CameraPreset const&);
 
-    MCNAPI_S ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset&&);
+    MCAPI_S ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset&&);
 
-    MCNAPI_S ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset const&);
+    MCAPI_S ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset const&);
 
-    MCNAPI_S void setVerticalRotationLimit(::std::optional<::std::array<float, 2>> opt);
+    MCFOLD_S void setVerticalRotationLimit(::std::optional<::std::array<float, 2>> opt);
 
-    MCNAPI_S ~CameraPreset();
+    MCAPI_S ~CameraPreset();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::SharedTypes::v1_21_70::CameraPreset const&);
+    MCAPI_S void* $ctor(::SharedTypes::v1_21_70::CameraPreset const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_S void $dtor();
+    MCAPI_S void $dtor();
     // NOLINTEND
 };
 

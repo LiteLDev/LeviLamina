@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/shared_types/util/Identifier.h"
 
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
+namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 namespace cereal { struct ReflectionCtx; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
@@ -60,7 +62,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 32> mUnka17ff8;
+            ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<3>> mIdentifier;
             // NOLINTEND
 
         public:
@@ -72,22 +74,22 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCNAPI ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
+            MCFOLD ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
             operator=(::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&&);
 
-            MCNAPI ~BiomeDescription();
+            MCAPI ~BiomeDescription();
             // NOLINTEND
 
         public:
             // static functions
             // NOLINTBEGIN
-            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCNAPI void $dtor();
+            MCFOLD void $dtor();
             // NOLINTEND
         };
 
@@ -95,27 +97,27 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 16> mUnkaec3a1;
+            ::ll::TypedStorage<
+                8,
+                16,
+                ::std::map<::std::string, ::std::shared_ptr<::SharedTypes::v1_20_60::IBiomeJsonComponent>>>
+                mJsonComponents;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            ComponentMap& operator=(ComponentMap const&);
-            ComponentMap(ComponentMap const&);
-            ComponentMap();
 
         public:
             // static functions
             // NOLINTBEGIN
-            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkfebb30;
-        ::ll::UntypedStorage<8, 16> mUnkbb7186;
+        ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject::BiomeDescription>
+            mDescription;
+        ::ll::TypedStorage<8, 16, ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject::ComponentMap>
+            mComponents;
         // NOLINTEND
 
     public:
@@ -127,48 +129,42 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject&
+        MCFOLD ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject&
         operator=(::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject&&);
 
-        MCNAPI ~BiomeJsonObject();
+        MCAPI ~BiomeJsonObject();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
         // static variables
         // NOLINTBEGIN
-        MCNAPI static ::SemVersionConstant const& VERSION();
+        MCAPI static ::SemVersionConstant const& VERSION();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk662695;
-    ::ll::UntypedStorage<8, 32> mUnk71090b;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject> mBiomeJsonObject;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                mFormatVersion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeJsonDocument& operator=(BiomeJsonDocument const&);
-    BiomeJsonDocument(BiomeJsonDocument const&);
-    BiomeJsonDocument();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

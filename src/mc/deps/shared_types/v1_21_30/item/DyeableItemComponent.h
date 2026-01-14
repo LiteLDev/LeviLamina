@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/shared_types/Color255RGB.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,19 +16,13 @@ struct DyeableItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk8cdc68;
+    ::ll::TypedStorage<4, 16, ::SharedTypes::Color255RGB> mDefaultColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DyeableItemComponent& operator=(DyeableItemComponent const&);
-    DyeableItemComponent(DyeableItemComponent const&);
-    DyeableItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

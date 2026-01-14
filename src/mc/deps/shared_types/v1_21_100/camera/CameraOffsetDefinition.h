@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,26 +16,20 @@ struct CameraOffsetDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnkc308aa;
-    ::ll::UntypedStorage<4, 12> mUnk653314;
+    ::ll::TypedStorage<4, 8, ::glm::vec2> mViewOffset;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mEntityOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraOffsetDefinition& operator=(CameraOffsetDefinition const&);
-    CameraOffsetDefinition(CameraOffsetDefinition const&);
-    CameraOffsetDefinition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace SharedTypes::v1_21_50 { struct JigsawStructureMetadata; }
+// clang-format on
+
 namespace SharedTypes::v1_21_50 {
 
 struct JigsawStructureMetadataRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk5d3c8b;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::SharedTypes::v1_21_50::JigsawStructureMetadata>> mMetadata;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawStructureMetadataRegistry& operator=(JigsawStructureMetadataRegistry const&);
-    JigsawStructureMetadataRegistry(JigsawStructureMetadataRegistry const&);
-    JigsawStructureMetadataRegistry();
 };
 
 } // namespace SharedTypes::v1_21_50

@@ -6,27 +6,31 @@
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Crypto::Hash { class HMAC; }
+namespace Crypto::Symmetric { class Symmetric; }
+// clang-format on
+
 class EncryptedNetworkPeer : public ::NetworkPeer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc8cc56;
-    ::ll::UntypedStorage<8, 8>  mUnk99faeb;
-    ::ll::UntypedStorage<8, 8>  mUnkec58b2;
-    ::ll::UntypedStorage<8, 8>  mUnkbe3a4f;
-    ::ll::UntypedStorage<8, 8>  mUnk6783be;
-    ::ll::UntypedStorage<8, 8>  mUnk6732e8;
-    ::ll::UntypedStorage<8, 32> mUnk2d4ea0;
-    ::ll::UntypedStorage<8, 32> mUnkfcfda9;
-    ::ll::UntypedStorage<8, 32> mUnk741ffc;
-    ::ll::UntypedStorage<8, 32> mUnk38b2f6;
-    ::ll::UntypedStorage<8, 32> mUnk83826f;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Crypto::Symmetric::Symmetric>> mDecryption;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Crypto::Hash::HMAC>>           mEncryptionMAC;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Crypto::Symmetric::Symmetric>> mEncryption;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Crypto::Hash::HMAC>>           mDecryptionMAC;
+    ::ll::TypedStorage<8, 8, uint64>                                            mSendCounter;
+    ::ll::TypedStorage<8, 8, uint64>                                            mReceiveCounter;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mSendEncryptedDataBuffer;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mSendSignedDataBuffer;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mRecvEncryptedDataBuffer;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mRecvSignedDataBuffer;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mRecvDecryptedDataBuffer;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    EncryptedNetworkPeer& operator=(EncryptedNetworkPeer const&);
-    EncryptedNetworkPeer(EncryptedNetworkPeer const&);
     EncryptedNetworkPeer();
 
 public:
@@ -53,34 +57,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EncryptedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer);
+    MCAPI explicit EncryptedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer);
 
-    MCNAPI void enableEncryption(::std::string const& symmetricKey);
+    MCAPI void enableEncryption(::std::string const& symmetricKey);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer);
+    MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
-    MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+    MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-    MCNAPI bool $isEncrypted() const;
+    MCAPI bool $isEncrypted() const;
 
-    MCNAPI ::NetworkPeer::DataStatus $_receivePacket(
+    MCAPI ::NetworkPeer::DataStatus $_receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );

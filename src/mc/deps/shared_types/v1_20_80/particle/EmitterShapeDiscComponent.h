@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_20_80/particle/EmitterShapeSphereComponent.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ParticlePlaneNormal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,14 +18,8 @@ struct EmitterShapeDiscComponent : public ::SharedTypes::v1_20_80::EmitterShapeS
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 152> mUnk70afc7;
+    ::ll::TypedStorage<8, 152, ::SharedTypes::v1_20_80::ParticlePlaneNormal> mPlaneNormal;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EmitterShapeDiscComponent& operator=(EmitterShapeDiscComponent const&);
-    EmitterShapeDiscComponent(EmitterShapeDiscComponent const&);
-    EmitterShapeDiscComponent();
 
 public:
     // virtual functions
@@ -37,25 +32,25 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

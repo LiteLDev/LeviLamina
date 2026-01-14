@@ -2,9 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_90/clientbiome/ClientBiomeJsonDocument.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
+namespace SharedTypes::v1_21_40 { struct IClientBiomeJsonComponent; }
 namespace SharedTypes::v1_21_90 { struct ClientBiomeJsonDocument; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -31,27 +35,31 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 16> mUnk939215;
+            ::ll::TypedStorage<
+                8,
+                16,
+                ::std::map<::std::string, ::std::shared_ptr<::SharedTypes::v1_21_40::IClientBiomeJsonComponent>>>
+                mJsonComponents;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            ComponentMap& operator=(ComponentMap const&);
-            ComponentMap(ComponentMap const&);
-            ComponentMap();
 
         public:
             // static functions
             // NOLINTBEGIN
-            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk201dc5;
-        ::ll::UntypedStorage<8, 16> mUnkd118c8;
+        ::ll::TypedStorage<
+            8,
+            32,
+            ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription>
+            mDescription;
+        ::ll::
+            TypedStorage<8, 16, ::SharedTypes::v1_21_100::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap>
+                mComponents;
         // NOLINTEND
 
     public:
@@ -63,63 +71,58 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_21_100::ClientBiomeJsonDocument::ClientBiomeJsonObject&
+        MCFOLD ::SharedTypes::v1_21_100::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::v1_21_100::ClientBiomeJsonDocument::ClientBiomeJsonObject&&);
 
-        MCNAPI ~ClientBiomeJsonObject();
+        MCAPI ~ClientBiomeJsonObject();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk279947;
-    ::ll::UntypedStorage<8, 32> mUnk9fdebd;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_100::ClientBiomeJsonDocument::ClientBiomeJsonObject>
+                                             mClientBiomeJsonObject;
+    ::ll::TypedStorage<8, 32, ::std::string> mFormatVersion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientBiomeJsonDocument& operator=(ClientBiomeJsonDocument const&);
-    ClientBiomeJsonDocument(ClientBiomeJsonDocument const&);
-    ClientBiomeJsonDocument();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ClientBiomeJsonDocument();
+    MCAPI ~ClientBiomeJsonDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI_C static ::SharedTypes::v1_21_100::ClientBiomeJsonDocument
+    MCAPI_C static ::SharedTypes::v1_21_100::ClientBiomeJsonDocument
     upgrade(::SharedTypes::v1_21_90::ClientBiomeJsonDocument oldDocument);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::SemVersionConstant const& FIRST_VERSION();
+    MCAPI_C static ::SemVersionConstant const& FIRST_VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

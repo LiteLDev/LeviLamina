@@ -2,14 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/shared_types/v3_0_0/pack_manifest/VersionSelectType.h"
+
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
 
 struct NativeModuleDependency {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf84da0;
-    ::ll::UntypedStorage<8, 32> mUnk87e839;
+    ::ll::TypedStorage<8, 32, ::std::string> mModuleName;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::std::variant<::SharedTypes::v3_0_0::PackManifestDefinition::VersionSelectType, ::SemVersion>>
+        mVersion;
     // NOLINTEND
 
 public:
@@ -20,19 +28,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&
+    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&&);
 
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&
+    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
 
-    MCNAPI ~NativeModuleDependency();
+    MCAPI ~NativeModuleDependency();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

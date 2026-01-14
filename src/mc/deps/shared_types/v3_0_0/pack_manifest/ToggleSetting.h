@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v3_0_0/pack_manifest/SettingType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,10 +16,10 @@ struct ToggleSetting {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk641fc3;
-    ::ll::UntypedStorage<8, 32> mUnk29ecba;
-    ::ll::UntypedStorage<8, 32> mUnkbf0ec7;
-    ::ll::UntypedStorage<1, 1>  mUnkba2101;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v3_0_0::PackManifestDefinition::SettingType> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mText;
+    ::ll::TypedStorage<1, 1, bool>                                                       mDefault;
     // NOLINTEND
 
 public:
@@ -28,30 +31,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&
+    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&&);
 
-    MCNAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting const&) const;
+    MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting const&) const;
 
-    MCNAPI ~ToggleSetting();
+    MCAPI ~ToggleSetting();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& TYPE_NAME();
+    MCAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

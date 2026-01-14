@@ -8,31 +8,25 @@ struct Tags {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2fd887;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mTags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Tags& operator=(Tags const&);
-    Tags(Tags const&);
-    Tags();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ~Tags();
+    MCAPI_S ~Tags();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_S static ::std::string_view const& NameId();
+    MCAPI_S static ::std::string_view const& NameId();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_S void $dtor();
+    MCFOLD_S void $dtor();
     // NOLINTEND
 };
 

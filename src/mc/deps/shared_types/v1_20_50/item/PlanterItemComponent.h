@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::Legacy { struct BlockDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -13,8 +17,8 @@ struct PlanterItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk71ce8d;
-    ::ll::UntypedStorage<8, 24> mUnk8b61ff;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<0>>                           mBlock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::BlockDescriptor>> mUseOn;
     // NOLINTEND
 
 public:
@@ -26,21 +30,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_50::PlanterItemComponent& operator=(::SharedTypes::v1_20_50::PlanterItemComponent&&);
+    MCAPI ::SharedTypes::v1_20_50::PlanterItemComponent& operator=(::SharedTypes::v1_20_50::PlanterItemComponent&&);
 
-    MCNAPI ~PlanterItemComponent();
+    MCAPI ~PlanterItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

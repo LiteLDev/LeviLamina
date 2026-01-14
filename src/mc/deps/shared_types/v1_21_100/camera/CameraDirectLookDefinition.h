@@ -13,26 +13,20 @@ struct CameraDirectLookDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkba3032;
-    ::ll::UntypedStorage<4, 4> mUnk5062f0;
+    ::ll::TypedStorage<4, 4, float> mPitchMin;
+    ::ll::TypedStorage<4, 4, float> mPitchMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraDirectLookDefinition& operator=(CameraDirectLookDefinition const&);
-    CameraDirectLookDefinition(CameraDirectLookDefinition const&);
-    CameraDirectLookDefinition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

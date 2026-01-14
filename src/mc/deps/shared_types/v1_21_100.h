@@ -10,11 +10,11 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_21_100 {
 // functions
 // NOLINTBEGIN
-MCNAPI void bindLookMode(::cereal::ReflectionCtx& ctx);
+MCAPI void bindLookMode(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindPlayerViewMode(::cereal::ReflectionCtx& ctx);
+MCAPI void bindPlayerViewMode(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindRotationSpace(::cereal::ReflectionCtx& ctx);
+MCAPI void bindRotationSpace(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_100

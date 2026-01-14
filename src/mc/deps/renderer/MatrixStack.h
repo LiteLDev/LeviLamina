@@ -19,15 +19,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnka8f7f2;
-        ::ll::UntypedStorage<8, 8> mUnk88f465;
+        ::ll::TypedStorage<8, 8, ::MatrixStack*> stack;
+        ::ll::TypedStorage<8, 8, ::Matrix*>      mat;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MatrixStackRef& operator=(MatrixStackRef const&);
-        MatrixStackRef(MatrixStackRef const&);
-        MatrixStackRef();
 
     public:
         // member functions
@@ -47,16 +41,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk898c8e;
-    ::ll::UntypedStorage<8, 16> mUnkce0904;
-    ::ll::UntypedStorage<1, 1>  mUnk796520;
+    ::ll::TypedStorage<8, 40, ::std::deque<::Matrix>>  stack;
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>> sortOrigin;
+    ::ll::TypedStorage<1, 1, bool>                     _isDirty;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MatrixStack& operator=(MatrixStack const&);
-    MatrixStack(MatrixStack const&);
-    MatrixStack();
 
 public:
     // member functions

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/StringConstraint.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,14 +17,8 @@ class HashedStringConstraint : public ::cereal::ConstraintHandle<::SharedTypes::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnkb438f8;
+    ::ll::TypedStorage<8, 96, ::cereal::StringConstraint> mConstraint;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HashedStringConstraint& operator=(HashedStringConstraint const&);
-    HashedStringConstraint(HashedStringConstraint const&);
-    HashedStringConstraint();
 
 public:
     // virtual functions
@@ -36,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
 
 
     // NOLINTEND

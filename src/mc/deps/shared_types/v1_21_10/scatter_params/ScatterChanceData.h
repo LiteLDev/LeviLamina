@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,9 +16,9 @@ struct ScatterChanceData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk5a15ad;
-    ::ll::UntypedStorage<4, 4>  mUnk55abf5;
-    ::ll::UntypedStorage<8, 56> mUnk111f8c;
+    ::ll::TypedStorage<4, 4, int>                                                     mNumerator;
+    ::ll::TypedStorage<4, 4, int>                                                     mDenominator;
+    ::ll::TypedStorage<8, 56, ::std::optional<::SharedTypes::Legacy::ExpressionNode>> mChancePercent;
     // NOLINTEND
 
 public:
@@ -26,33 +29,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScatterChanceData(::SharedTypes::v1_21_10::ScatterChanceData&&);
+    MCAPI ScatterChanceData(::SharedTypes::v1_21_10::ScatterChanceData&&);
 
-    MCNAPI ScatterChanceData(::SharedTypes::v1_21_10::ScatterChanceData const&);
+    MCAPI ScatterChanceData(::SharedTypes::v1_21_10::ScatterChanceData const&);
 
-    MCNAPI ::SharedTypes::v1_21_10::ScatterChanceData& operator=(::SharedTypes::v1_21_10::ScatterChanceData&&);
+    MCAPI ::SharedTypes::v1_21_10::ScatterChanceData& operator=(::SharedTypes::v1_21_10::ScatterChanceData&&);
 
-    MCNAPI ~ScatterChanceData();
+    MCAPI ~ScatterChanceData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterChanceData&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_10::ScatterChanceData&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterChanceData const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_10::ScatterChanceData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

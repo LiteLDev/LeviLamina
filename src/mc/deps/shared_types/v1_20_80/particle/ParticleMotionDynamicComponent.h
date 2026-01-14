@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
 
 // auto generated forward declare list
@@ -17,10 +18,10 @@ struct ParticleMotionDynamicComponent : public ::SharedTypes::v1_20_80::Particle
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnkd970c4;
-    ::ll::UntypedStorage<8, 48>  mUnk51db4d;
-    ::ll::UntypedStorage<8, 48>  mUnkf6dc7e;
-    ::ll::UntypedStorage<8, 48>  mUnkbb78d9;
+    ::ll::TypedStorage<8, 144, ::std::array<::SharedTypes::Legacy::ExpressionNode, 3>> mLinearAccelerationExpr;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>                   mLinearDragCoefficientExpr;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>                   mRotationAccelerationExpr;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>                   mRotationDragCoefficientExpr;
     // NOLINTEND
 
 public:
@@ -40,37 +41,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParticleMotionDynamicComponent(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
+    MCAPI ParticleMotionDynamicComponent(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

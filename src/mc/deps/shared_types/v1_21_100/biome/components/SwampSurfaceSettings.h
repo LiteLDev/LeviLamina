@@ -11,25 +11,19 @@ struct SwampSurfaceSettings : public ::SharedTypes::v1_21_100::SurfaceBuilder::D
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7a2a5a;
+    ::ll::TypedStorage<4, 4, int> mMaxPuddleDepthBelowSeaLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwampSurfaceSettings& operator=(SwampSurfaceSettings const&);
-    SwampSurfaceSettings(SwampSurfaceSettings const&);
-    SwampSurfaceSettings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~SwampSurfaceSettings();
+    MCAPI ~SwampSurfaceSettings();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

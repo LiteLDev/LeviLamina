@@ -2,14 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
+
 namespace SharedTypes::v1_21_20::JigsawStructureSet {
 
 struct Structure {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf3cebc;
-    ::ll::UntypedStorage<1, 1>  mUnk7b112a;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<13>> mStructure;
+    ::ll::TypedStorage<1, 1, uchar>                         mWeight;
     // NOLINTEND
 
 public:
@@ -21,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Structure&
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureSet::Structure&
     operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Structure&&);
     // NOLINTEND
 };

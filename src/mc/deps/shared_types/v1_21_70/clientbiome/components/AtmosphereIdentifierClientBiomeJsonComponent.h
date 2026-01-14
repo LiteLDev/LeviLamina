@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
 #include "mc/deps/shared_types/v1_21_40/clientbiome/components/IClientBiomeJsonComponent.h"
 #include "mc/v1_21_40/clientbiome/components/ClientBiomeComponentVersion.h"
 
@@ -17,14 +18,8 @@ struct AtmosphereIdentifierClientBiomeJsonComponent : public ::SharedTypes::v1_2
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke4b73d;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<2>> mAtmosphereIdentifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AtmosphereIdentifierClientBiomeJsonComponent& operator=(AtmosphereIdentifierClientBiomeJsonComponent const&);
-    AtmosphereIdentifierClientBiomeJsonComponent(AtmosphereIdentifierClientBiomeJsonComponent const&);
-    AtmosphereIdentifierClientBiomeJsonComponent();
 
 public:
     // virtual functions
@@ -37,21 +32,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ClientBiomeComponentVersion $getType() const;
+    MCFOLD ::ClientBiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/util/Reference.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
 
 // auto generated forward declare list
@@ -17,14 +18,8 @@ struct ParticleLifetimeExpireIfNotInBlocksComponent : public ::SharedTypes::v1_2
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7c0ae4;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Reference<0>>> mSurviveBlockList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleLifetimeExpireIfNotInBlocksComponent& operator=(ParticleLifetimeExpireIfNotInBlocksComponent const&);
-    ParticleLifetimeExpireIfNotInBlocksComponent(ParticleLifetimeExpireIfNotInBlocksComponent const&);
-    ParticleLifetimeExpireIfNotInBlocksComponent();
 
 public:
     // virtual functions
@@ -37,25 +32,25 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

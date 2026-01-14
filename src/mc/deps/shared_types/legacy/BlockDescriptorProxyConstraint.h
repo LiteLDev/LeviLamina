@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void validateValue(
+    MCAPI void validateValue(
         ::SharedTypes::Legacy::BlockDescriptorSerializer::BlockDescriptorProxy const& proxy,
         ::cereal::SerializerContext&                                                  context
     ) const;
@@ -36,7 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
 
 
     // NOLINTEND

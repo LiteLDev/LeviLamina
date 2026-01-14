@@ -13,19 +13,13 @@ struct DamageItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkeb88ab;
+    ::ll::TypedStorage<2, 2, short> mDamage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DamageItemComponent& operator=(DamageItemComponent const&);
-    DamageItemComponent(DamageItemComponent const&);
-    DamageItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

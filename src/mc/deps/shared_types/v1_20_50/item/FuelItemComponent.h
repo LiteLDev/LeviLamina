@@ -13,19 +13,13 @@ struct FuelItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkda2685;
+    ::ll::TypedStorage<4, 4, float> mDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FuelItemComponent& operator=(FuelItemComponent const&);
-    FuelItemComponent(FuelItemComponent const&);
-    FuelItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

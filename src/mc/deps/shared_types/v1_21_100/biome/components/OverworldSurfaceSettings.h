@@ -11,13 +11,13 @@ struct OverworldSurfaceSettings : public ::SharedTypes::v1_21_100::SurfaceBuilde
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~OverworldSurfaceSettings();
+    MCAPI ~OverworldSurfaceSettings();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -21,8 +21,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkbe3c14;
-        ::ll::UntypedStorage<2, 2>  mUnk31d04e;
+        ::ll::TypedStorage<8, 32, ::std::string> mValue;
+        ::ll::TypedStorage<2, 2, short>          mMolangVersion;
         // NOLINTEND
 
     public:
@@ -34,23 +34,24 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::Legacy::ExpressionNode::StringRepresentation&
+        MCFOLD ::SharedTypes::Legacy::ExpressionNode::StringRepresentation&
         operator=(::SharedTypes::Legacy::ExpressionNode::StringRepresentation&&);
 
-        MCNAPI ~StringRepresentation();
+        MCAPI ~StringRepresentation();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk59a1d0;
+    ::ll::TypedStorage<8, 48, ::std::variant<::SharedTypes::Legacy::ExpressionNode::StringRepresentation, float>>
+        mExpression;
     // NOLINTEND
 
 public:
@@ -60,39 +61,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ExpressionNode();
+    MCAPI ExpressionNode();
 
-    MCNAPI ExpressionNode(::SharedTypes::Legacy::ExpressionNode&&);
+    MCAPI ExpressionNode(::SharedTypes::Legacy::ExpressionNode&&);
 
-    MCNAPI ExpressionNode(::SharedTypes::Legacy::ExpressionNode const&);
+    MCAPI ExpressionNode(::SharedTypes::Legacy::ExpressionNode const&);
 
-    MCNAPI ExpressionNode(::std::string string, short molangVersion);
+    MCAPI ExpressionNode(::std::string string, short molangVersion);
 
-    MCNAPI ~ExpressionNode();
+    MCAPI ~ExpressionNode();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::SharedTypes::Legacy::ExpressionNode&&);
+    MCAPI void* $ctor(::SharedTypes::Legacy::ExpressionNode&&);
 
-    MCNAPI void* $ctor(::SharedTypes::Legacy::ExpressionNode const&);
+    MCAPI void* $ctor(::SharedTypes::Legacy::ExpressionNode const&);
 
-    MCNAPI void* $ctor(::std::string string, short molangVersion);
+    MCAPI void* $ctor(::std::string string, short molangVersion);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

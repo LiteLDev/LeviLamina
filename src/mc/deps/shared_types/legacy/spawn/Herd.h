@@ -8,12 +8,12 @@ struct Herd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk6569ad;
-    ::ll::UntypedStorage<4, 4>  mUnk5de8b0;
-    ::ll::UntypedStorage<4, 4>  mUnkabfc82;
-    ::ll::UntypedStorage<4, 4>  mUnkd72426;
-    ::ll::UntypedStorage<8, 32> mUnkfbe37f;
-    ::ll::UntypedStorage<8, 32> mUnke39803;
+    ::ll::TypedStorage<4, 4, int>            mMin;
+    ::ll::TypedStorage<4, 4, int>            mMax;
+    ::ll::TypedStorage<4, 4, int>            mInitEventCount;
+    ::ll::TypedStorage<4, 4, int>            mEventSkipCount;
+    ::ll::TypedStorage<8, 32, ::std::string> mInitialEvent;
+    ::ll::TypedStorage<8, 32, ::std::string> mEvent;
     // NOLINTEND
 
 public:
@@ -25,15 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::Legacy::Spawn::Herd& operator=(::SharedTypes::Legacy::Spawn::Herd&&);
+    MCFOLD ::SharedTypes::Legacy::Spawn::Herd& operator=(::SharedTypes::Legacy::Spawn::Herd&&);
 
-    MCNAPI ~Herd();
+    MCAPI ~Herd();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

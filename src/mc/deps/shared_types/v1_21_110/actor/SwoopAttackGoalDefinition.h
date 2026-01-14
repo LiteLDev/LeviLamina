@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,31 +17,25 @@ struct SwoopAttackGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1e454f;
-    ::ll::UntypedStorage<4, 4> mUnk616ec8;
-    ::ll::UntypedStorage<4, 8> mUnk1bc3d6;
+    ::ll::TypedStorage<4, 4, float>                     mDamageReach;
+    ::ll::TypedStorage<4, 4, float>                     mSpeedMultiplier;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mCooldownTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwoopAttackGoalDefinition& operator=(SwoopAttackGoalDefinition const&);
-    SwoopAttackGoalDefinition(SwoopAttackGoalDefinition const&);
-    SwoopAttackGoalDefinition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float const& DEFAULT_DAMAGE_REACH();
+    MCAPI static float const& DEFAULT_DAMAGE_REACH();
 
-    MCNAPI static float const& DEFAULT_SPEED_MULTIPLIER();
+    MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
 
-    MCNAPI static ::std::string_view const& NAME();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

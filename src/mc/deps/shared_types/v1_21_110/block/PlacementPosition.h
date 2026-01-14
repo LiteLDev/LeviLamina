@@ -13,29 +13,23 @@ struct PlacementPosition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7946a7;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mEnabledStates;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlacementPosition& operator=(PlacementPosition const&);
-    PlacementPosition(PlacementPosition const&);
-    PlacementPosition();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& BLOCK_FACE();
+    MCAPI static ::std::string_view const& BLOCK_FACE();
 
-    MCNAPI static ::std::string const& VALID_POSITION_REGEX();
+    MCAPI static ::std::string const& VALID_POSITION_REGEX();
 
-    MCNAPI static ::std::string_view const& VERTICAL_HALF();
+    MCAPI static ::std::string_view const& VERTICAL_HALF();
     // NOLINTEND
 };
 

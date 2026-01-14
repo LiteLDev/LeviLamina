@@ -2,9 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_60/spawn/Description.h"
+#include "mc/deps/shared_types/v1_21_60/spawn/Placement.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
+namespace SharedTypes::v1_21_60::Spawn { struct BiomeConditions; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -14,39 +19,33 @@ struct Contents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnkc7baa9;
-    ::ll::UntypedStorage<8, 136> mUnkf220d5;
-    ::ll::UntypedStorage<8, 24>  mUnkdd0807;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_60::Spawn::Description>                    mDescription;
+    ::ll::TypedStorage<8, 136, ::std::optional<::SharedTypes::v1_21_60::Spawn::Placement>>    mPlacement;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_60::Spawn::BiomeConditions>> mBiomeConditions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Contents& operator=(Contents const&);
-    Contents(Contents const&);
-    Contents();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~Contents();
+    MCAPI ~Contents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersion const& VERSION();
+    MCAPI static ::SemVersion const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

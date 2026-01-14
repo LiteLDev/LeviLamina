@@ -2,14 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
+
 namespace SharedTypes::v1_21_20 {
 
 struct AutomaticFeatureRuleConditions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 336> mUnk30fe52;
-    ::ll::UntypedStorage<8, 32>  mUnk81336f;
+    ::ll::TypedStorage<8, 336, ::std::optional<::SharedTypes::v1_21_20::FilterGroupData>> mBiomeFilter;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mPlacementPass;
     // NOLINTEND
 
 public:
@@ -21,16 +24,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&
+    MCAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&
     operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&&);
 
-    MCNAPI ~AutomaticFeatureRuleConditions();
+    MCAPI ~AutomaticFeatureRuleConditions();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

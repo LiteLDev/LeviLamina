@@ -31,21 +31,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindCreativeItemCategoryType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindCreativeItemCategoryType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::nonstd::expected<
+    MCAPI static ::nonstd::expected<
         ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory,
         ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategoryStringError>
     creativeItemCategoryFromString(::std::string_view str);
 
-    MCNAPI static ::std::string
+    MCAPI static ::std::string
     stringFromCreativeItemCategory(::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory category);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::initializer_list<::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory> const&
+    MCAPI static ::std::initializer_list<::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory> const&
     CREATIVE_ITEM_CATEGORY_MAPPING();
     // NOLINTEND
 };

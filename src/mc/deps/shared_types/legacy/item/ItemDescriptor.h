@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,32 +16,26 @@ struct ItemDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk7bb4fa;
-    ::ll::UntypedStorage<2, 2>  mUnk2c5311;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::string>> mMap;
+    ::ll::TypedStorage<2, 2, ::MolangVersion>                           mMolangVersion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemDescriptor& operator=(ItemDescriptor const&);
-    ItemDescriptor(ItemDescriptor const&);
-    ItemDescriptor();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ItemDescriptor();
+    MCAPI ~ItemDescriptor();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

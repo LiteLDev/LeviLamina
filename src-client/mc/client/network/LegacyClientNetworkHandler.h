@@ -3,11 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/certificates/identity/LegacyMultiplayerToken.h"
 #include "mc/certificates/identity/PlayerAuthenticationType.h"
+#include "mc/certificates/identity/RawGameServerToken.h"
 #include "mc/client/network/ClientNetworkHandler.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/network/NetworkIdentifier.h"
 #include "mc/network/connection/DisconnectFailReason.h"
 #include "mc/world/level/LevelListener.h"
+#include "mc/world/level/dimension/DimensionDefinitionGroup.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,6 +37,7 @@ class ContainerSetDataPacket;
 class CreativeContentPacket;
 class DimensionDataPacket;
 class DisconnectPacket;
+class EntityOverrides;
 class GameRulesChangedPacket;
 class HurtArmorPacket;
 class IBlockSource;
@@ -39,14 +45,15 @@ class IClientInstance;
 class IGameConnectionListener;
 class IGameEventNotifier;
 class IGameServerStartup;
+class ILevel;
 class IMinecraftEventing;
 class IPackSourceFactory;
 class InventoryContentPacket;
 class InventorySlotPacket;
 class InventoryTransactionPacket;
 class ItemRegistryPacket;
-class LegacyMultiplayerToken;
 class LevelChunkPacket;
+class LevelStorage;
 class MinecraftCommands;
 class MobArmorEquipmentPacket;
 class MobEffectPacket;
@@ -56,7 +63,6 @@ class MoveActorAbsolutePacket;
 class MoveActorDeltaPacket;
 class MovePlayerPacket;
 class MovementEffectPacket;
-class NetworkIdentifier;
 class NetworkSettingsPacket;
 class NetworkStackLatencyPacket;
 class PacketSender;
@@ -87,9 +93,10 @@ class UpdateBlockPacket;
 class UpdateBlockSyncedPacket;
 struct ActorBlockSyncMessage;
 struct IContentManager;
+struct IPersonaNetworkHandlerDelegate;
+struct NetworkChunkInserter;
 struct PackDownloadManager;
 struct PersonaService;
-struct RawGameServerToken;
 struct VideoCaptureSessionManager;
 namespace ClientBlobCache { struct Cache; }
 namespace cereal { struct ReflectionCtx; }
@@ -100,25 +107,25 @@ class LegacyClientNetworkHandler : public ::ClientNetworkHandler, public ::Level
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk873f14;
-    ::ll::UntypedStorage<8, 8>   mUnk661502;
-    ::ll::UntypedStorage<8, 24>  mUnk77097a;
-    ::ll::UntypedStorage<8, 24>  mUnkb73a63;
-    ::ll::UntypedStorage<8, 8>   mUnkcba6a0;
-    ::ll::UntypedStorage<4, 4>   mUnkbd399e;
-    ::ll::UntypedStorage<8, 32>  mUnkbed725;
-    ::ll::UntypedStorage<8, 8>   mUnk22f1d0;
-    ::ll::UntypedStorage<8, 176> mUnk497a5e;
-    ::ll::UntypedStorage<4, 4>   mUnkefcc72;
-    ::ll::UntypedStorage<8, 8>   mUnkf8489c;
-    ::ll::UntypedStorage<8, 32>  mUnk776db5;
-    ::ll::UntypedStorage<8, 16>  mUnk58ec78;
-    ::ll::UntypedStorage<8, 8>   mUnkceb450;
-    ::ll::UntypedStorage<8, 16>  mUnkf64ff3;
-    ::ll::UntypedStorage<8, 8>   mUnk45ddad;
-    ::ll::UntypedStorage<1, 1>   mUnk276631;
-    ::ll::UntypedStorage<8, 24>  mUnk384efb;
-    ::ll::UntypedStorage<8, 8>   mUnkc80694;
+    ::ll::TypedStorage<8, 16, ::DimensionDefinitionGroup>                             mDimensionDefinitionGroup;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelStorage>>                       mCacheStorage;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SoundPlayerInterface>>     mSoundPlayer;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ILevel>>                   mMultiPlayerLevel;
+    ::ll::TypedStorage<8, 8, ::PacketSender&>                                         mPacketSender;
+    ::ll::TypedStorage<4, 4, int>                                                     mPendingTime;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mServerIdentifier;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NetworkChunkInserter>>               mChunkInsertQueue;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                                   mServerGuid;
+    ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>                              mPlayerAuthenticationType;
+    ::ll::TypedStorage<8, 8, ::LegacyMultiplayerToken>                                mPlayerLegacyMultiplayerToken;
+    ::ll::TypedStorage<8, 32, ::RawGameServerToken>                                   mGameServerToken;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                        mPackSettingChangeSubscriber;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                 mNextChunkRequestDrainTime;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                mExistanceTracker;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPersonaNetworkHandlerDelegate>>     mPersonaNetworkHandlerDelegate;
+    ::ll::TypedStorage<1, 1, bool>                                                    mIsConnectedToApplicationLayer;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx>> mCtx;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EntityOverrides>>                    mEntityOverrides;
     // NOLINTEND
 
 public:

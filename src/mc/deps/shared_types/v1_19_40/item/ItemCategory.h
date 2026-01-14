@@ -31,13 +31,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindCreativeItemCategoryType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindCreativeItemCategoryType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::initializer_list<::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory> const&
+    MCAPI static ::std::initializer_list<::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory> const&
     CREATIVE_ITEM_CATEGORY_MAPPING();
     // NOLINTEND
 };

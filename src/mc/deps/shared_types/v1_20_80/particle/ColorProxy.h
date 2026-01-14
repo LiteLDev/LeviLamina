@@ -2,14 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+#include "mc/deps/shared_types/v1_20_80/particle/ColorGradient.h"
+
 namespace SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper {
 
 struct ColorProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk9e335b;
-    ::ll::UntypedStorage<8, 48> mUnka0e09e;
+    ::ll::TypedStorage<8, 56, ::SharedTypes::v1_20_80::ColorGradient> mInterpolatedColor;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>  mInterpolantExpr;
     // NOLINTEND
 
 public:
@@ -20,24 +24,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ColorProxy(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const&);
+    MCAPI ColorProxy(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const&);
 
-    MCNAPI bool operator==(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const& other
-    ) const;
+    MCAPI bool
+    operator==(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const& other) const;
 
-    MCNAPI ~ColorProxy();
+    MCAPI ~ColorProxy();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

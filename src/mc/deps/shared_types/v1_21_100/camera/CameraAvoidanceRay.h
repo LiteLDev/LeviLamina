@@ -8,15 +8,9 @@ struct CameraAvoidanceRay {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7eb3fc;
-    ::ll::UntypedStorage<4, 4> mUnkb3074a;
+    ::ll::TypedStorage<4, 4, float> mAngleRadians;
+    ::ll::TypedStorage<4, 4, float> mWeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraAvoidanceRay& operator=(CameraAvoidanceRay const&);
-    CameraAvoidanceRay(CameraAvoidanceRay const&);
-    CameraAvoidanceRay();
 };
 
 } // namespace SharedTypes::v1_21_100

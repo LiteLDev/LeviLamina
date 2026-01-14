@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
 
 // auto generated forward declare list
@@ -17,15 +18,9 @@ struct ParticleInitialSpeedComponent : public ::SharedTypes::v1_20_80::ParticleE
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnk9564db;
-    ::ll::UntypedStorage<1, 1>   mUnk70623a;
+    ::ll::TypedStorage<8, 144, ::std::array<::SharedTypes::Legacy::ExpressionNode, 3>> mSpeedExpr;
+    ::ll::TypedStorage<1, 1, bool>                                                     mOverrideInitialDirection;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleInitialSpeedComponent& operator=(ParticleInitialSpeedComponent const&);
-    ParticleInitialSpeedComponent(ParticleInitialSpeedComponent const&);
-    ParticleInitialSpeedComponent();
 
 public:
     // virtual functions
@@ -38,25 +33,25 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

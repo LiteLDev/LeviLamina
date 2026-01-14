@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,18 +16,18 @@ struct MobDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 328> mUnk5d1c1c;
-    ::ll::UntypedStorage<4, 4>   mUnk3f04ac;
-    ::ll::UntypedStorage<4, 4>   mUnka8872d;
-    ::ll::UntypedStorage<4, 4>   mUnk898ff4;
-    ::ll::UntypedStorage<4, 4>   mUnkad3e37;
-    ::ll::UntypedStorage<4, 4>   mUnk76d8cd;
-    ::ll::UntypedStorage<1, 1>   mUnkcbdf3e;
-    ::ll::UntypedStorage<1, 1>   mUnkaf6d67;
-    ::ll::UntypedStorage<4, 4>   mUnk6ddb4b;
-    ::ll::UntypedStorage<4, 4>   mUnk9beac5;
-    ::ll::UntypedStorage<1, 2>   mUnkdc827c;
-    ::ll::UntypedStorage<4, 4>   mUnkeb6de0;
+    ::ll::TypedStorage<8, 328, ::SharedTypes::v1_21_20::FilterGroupData> mTargetFilter;
+    ::ll::TypedStorage<4, 4, float>                                      mMaxDistance;
+    ::ll::TypedStorage<4, 4, float>                                      mMaxHeight;
+    ::ll::TypedStorage<4, 4, float>                                      mMaxFlee;
+    ::ll::TypedStorage<4, 4, float>                                      mWalkSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                                      mSprintSpeedModifier;
+    ::ll::TypedStorage<1, 1, bool>                                       mCheckIfOutnumbered;
+    ::ll::TypedStorage<1, 1, bool>                                       mReevaluateDescription;
+    ::ll::TypedStorage<4, 4, int>                                        mPriority;
+    ::ll::TypedStorage<4, 4, int>                                        mCooldownInSeconds;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                      mMustSee;
+    ::ll::TypedStorage<4, 4, int>                                        mMustSeeForgetSeconds;
     // NOLINTEND
 
 public:
@@ -34,31 +37,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MobDescriptor();
+    MCAPI MobDescriptor();
 
-    MCNAPI ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor&&);
+    MCAPI ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor&&);
 
-    MCNAPI ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor const&);
+    MCFOLD ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor const&);
 
-    MCNAPI ~MobDescriptor();
+    MCAPI ~MobDescriptor();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

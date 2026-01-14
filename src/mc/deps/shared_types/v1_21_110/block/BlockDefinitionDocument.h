@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_110/block/BlockComponents.h"
+#include "mc/deps/shared_types/v1_21_110/block/Description.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::v1_21_110::BlockDefinition { struct BlockPermutation; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -13,21 +18,15 @@ struct BlockDefinitionDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 408> mUnkbb9602;
-    ::ll::UntypedStorage<8, 56>  mUnk400d63;
-    ::ll::UntypedStorage<8, 24>  mUnk7e6825;
+    ::ll::TypedStorage<8, 408, ::SharedTypes::v1_21_110::BlockDefinition::Description>                    mDescription;
+    ::ll::TypedStorage<8, 56, ::SharedTypes::v1_21_110::BlockDefinition::BlockComponents>                 mComponents;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation>> mPermutations;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockDefinitionDocument& operator=(BlockDefinitionDocument const&);
-    BlockDefinitionDocument(BlockDefinitionDocument const&);
-    BlockDefinitionDocument();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

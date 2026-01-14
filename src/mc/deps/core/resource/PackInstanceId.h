@@ -22,20 +22,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackInstanceId(::PackInstanceId&&);
+    MCAPI PackInstanceId(::PackInstanceId&&);
 
-    MCNAPI ~PackInstanceId();
+    MCAPI ~PackInstanceId();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PackInstanceId&&);
+    MCAPI void* $ctor(::PackInstanceId&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

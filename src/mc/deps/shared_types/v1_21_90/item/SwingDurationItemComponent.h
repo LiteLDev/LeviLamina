@@ -13,25 +13,19 @@ struct SwingDurationItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkcf5caa;
+    ::ll::TypedStorage<4, 4, float> mValueInSeconds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwingDurationItemComponent& operator=(SwingDurationItemComponent const&);
-    SwingDurationItemComponent(SwingDurationItemComponent const&);
-    SwingDurationItemComponent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float const& DEFAULT_VALUE();
+    MCAPI static float const& DEFAULT_VALUE();
     // NOLINTEND
 };
 

@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_60/item/crafting_item_catalog/CraftingCatalogGroupIdentifier.h"
+#include "mc/deps/shared_types/v1_21_60/item/crafting_item_catalog/CraftingCatalogItem.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,8 +17,9 @@ struct CraftingCatalogGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnkffa951;
-    ::ll::UntypedStorage<8, 24> mUnk6275c5;
+    ::ll::TypedStorage<8, 80, ::std::optional<::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier>>
+                                                                                           mGroupIdentifier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_60::CraftingCatalogItem>> mItems;
     // NOLINTEND
 
 public:
@@ -25,16 +30,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroup& operator=(::SharedTypes::v1_21_60::CraftingCatalogGroup&&);
+    MCAPI ::SharedTypes::v1_21_60::CraftingCatalogGroup& operator=(::SharedTypes::v1_21_60::CraftingCatalogGroup&&);
 
-    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroup& operator=(::SharedTypes::v1_21_60::CraftingCatalogGroup const&
-    );
+    MCAPI ::SharedTypes::v1_21_60::CraftingCatalogGroup&
+    operator=(::SharedTypes::v1_21_60::CraftingCatalogGroup const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

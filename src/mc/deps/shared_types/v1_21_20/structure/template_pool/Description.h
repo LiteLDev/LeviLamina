@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Identifier.h"
+
 namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool {
 
 struct Description {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb85b24;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<15>> mIdentifier;
     // NOLINTEND
 
 public:
@@ -20,16 +23,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Description&
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Description&
     operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Description&&);
 
-    MCNAPI ~Description();
+    MCAPI ~Description();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

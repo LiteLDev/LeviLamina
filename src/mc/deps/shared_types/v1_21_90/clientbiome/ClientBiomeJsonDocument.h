@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_70/clientbiome/ClientBiomeJsonDocument.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -31,7 +34,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 32> mUnk31f895;
+            ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
             // NOLINTEND
 
         public:
@@ -43,31 +46,37 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCNAPI ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
-            operator=(::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&&
+            MCFOLD ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
+            operator=(
+                ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&&
             );
 
-            MCNAPI ~ClientBiomeDescription();
+            MCAPI ~ClientBiomeDescription();
             // NOLINTEND
 
         public:
             // static functions
             // NOLINTBEGIN
-            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCNAPI void $dtor();
+            MCFOLD void $dtor();
             // NOLINTEND
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkf999b8;
-        ::ll::UntypedStorage<8, 16> mUnk878596;
+        ::ll::TypedStorage<
+            8,
+            32,
+            ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription>
+            mDescription;
+        ::ll::TypedStorage<8, 16, ::SharedTypes::v1_21_70::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap>
+            mComponents;
         // NOLINTEND
 
     public:
@@ -79,30 +88,31 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject&
+        MCFOLD ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject&&);
 
-        MCNAPI ~ClientBiomeJsonObject();
+        MCAPI ~ClientBiomeJsonObject();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkf7859c;
-    ::ll::UntypedStorage<8, 32> mUnk62e8c9;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject>
+                                             mClientBiomeJsonObject;
+    ::ll::TypedStorage<8, 32, ::std::string> mFormatVersion;
     // NOLINTEND
 
 public:
@@ -113,36 +123,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ClientBiomeJsonDocument(::SharedTypes::v1_21_90::ClientBiomeJsonDocument const&);
+    MCAPI_C ClientBiomeJsonDocument(::SharedTypes::v1_21_90::ClientBiomeJsonDocument const&);
 
-    MCNAPI ~ClientBiomeJsonDocument();
+    MCAPI ~ClientBiomeJsonDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI_C static ::SharedTypes::v1_21_90::ClientBiomeJsonDocument
+    MCAPI_C static ::SharedTypes::v1_21_90::ClientBiomeJsonDocument
     upgrade(::SharedTypes::v1_21_70::ClientBiomeJsonDocument oldDocument);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::SemVersionConstant const& FIRST_VERSION();
+    MCAPI_C static ::SemVersionConstant const& FIRST_VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::SharedTypes::v1_21_90::ClientBiomeJsonDocument const&);
+    MCFOLD_C void* $ctor(::SharedTypes::v1_21_90::ClientBiomeJsonDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

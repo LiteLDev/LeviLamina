@@ -16,19 +16,13 @@ struct ParticleEventRandomNode : public ::SharedTypes::v1_20_80::ParticleEventNo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk45e375;
+    ::ll::TypedStorage<4, 4, float> mWeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleEventRandomNode& operator=(ParticleEventRandomNode const&);
-    ParticleEventRandomNode(ParticleEventRandomNode const&);
-    ParticleEventRandomNode();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

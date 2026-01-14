@@ -17,14 +17,8 @@ class NamespaceConstraint : public ::cereal::ConstraintHandle<::SharedTypes::Nam
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk922a3d;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mDisallowedNamespace;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NamespaceConstraint& operator=(NamespaceConstraint const&);
-    NamespaceConstraint(NamespaceConstraint const&);
-    NamespaceConstraint();
 
 public:
     // virtual functions
@@ -37,21 +31,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string getRegexString(::std::optional<::std::string> disallowedNamespace) const;
+    MCAPI ::std::string getRegexString(::std::optional<::std::string> disallowedNamespace) const;
 
-    MCNAPI void validateValue(::std::string const& value, ::cereal::SerializerContext& context) const;
+    MCAPI void validateValue(::std::string const& value, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCAPI ::cereal::internal::ConstraintDescription $description() const;
 
 
     // NOLINTEND

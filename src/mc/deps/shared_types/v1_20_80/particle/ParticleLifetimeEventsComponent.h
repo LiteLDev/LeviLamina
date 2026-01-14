@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
+#include "mc/deps/shared_types/v1_20_80/particle/VectorEvents.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,9 +18,10 @@ struct ParticleLifetimeEventsComponent : public ::SharedTypes::v1_20_80::Particl
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3d9181;
-    ::ll::UntypedStorage<8, 24> mUnk9bd981;
-    ::ll::UntypedStorage<8, 72> mUnkce77c3;
+    ::ll::TypedStorage<8, 24, ::SharedTypes::v1_20_80::VectorEvents> mCreationEvents;
+    ::ll::TypedStorage<8, 24, ::SharedTypes::v1_20_80::VectorEvents> mExpirationEvents;
+    ::ll::TypedStorage<8, 72, ::std::optional<::std::unordered_map<float, ::SharedTypes::v1_20_80::VectorEvents>>>
+        mTimelineEvents;
     // NOLINTEND
 
 public:
@@ -38,37 +40,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParticleLifetimeEventsComponent(::SharedTypes::v1_20_80::ParticleLifetimeEventsComponent const&);
+    MCAPI ParticleLifetimeEventsComponent(::SharedTypes::v1_20_80::ParticleLifetimeEventsComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& NameID();
+    MCAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleLifetimeEventsComponent const&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleLifetimeEventsComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString const& $getIdentifier() const;
+    MCAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

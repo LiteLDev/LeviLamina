@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ExpressionNode.h"
+#include "mc/deps/shared_types/v1_21_10/scatter_params/RandomDistributionType.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::Legacy { struct ExpressionNode; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -14,11 +17,11 @@ struct CoordinateRangeData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkf04142;
-    ::ll::UntypedStorage<8, 56> mUnka51572;
-    ::ll::UntypedStorage<4, 8>  mUnk287e9b;
-    ::ll::UntypedStorage<4, 8>  mUnkc4ffa8;
-    ::ll::UntypedStorage<8, 96> mUnk369b8d;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_10::RandomDistributionType>         mDistribution;
+    ::ll::TypedStorage<8, 56, ::std::optional<::SharedTypes::Legacy::ExpressionNode>> mMinOrSingleValue;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                                    mStepSize;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                                    mGridOffset;
+    ::ll::TypedStorage<8, 96, ::std::array<::SharedTypes::Legacy::ExpressionNode, 2>> mExtent;
     // NOLINTEND
 
 public:
@@ -28,23 +31,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CoordinateRangeData(::SharedTypes::v1_21_10::CoordinateRangeData&&);
+    MCAPI CoordinateRangeData(::SharedTypes::v1_21_10::CoordinateRangeData&&);
 
-    MCNAPI CoordinateRangeData(::SharedTypes::v1_21_10::CoordinateRangeData const&);
+    MCAPI CoordinateRangeData(::SharedTypes::v1_21_10::CoordinateRangeData const&);
 
-    MCNAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData&&);
+    MCAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData&&);
 
-    MCNAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData const&);
+    MCAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData const&);
 
-    MCNAPI ~CoordinateRangeData();
+    MCAPI ~CoordinateRangeData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void fromExpression(
+    MCAPI static void fromExpression(
         ::SharedTypes::v1_21_10::CoordinateRangeData& instance,
         ::SharedTypes::Legacy::ExpressionNode const&  expression
     );
@@ -53,15 +56,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_10::CoordinateRangeData&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_10::CoordinateRangeData&&);
 
-    MCNAPI void* $ctor(::SharedTypes::v1_21_10::CoordinateRangeData const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_10::CoordinateRangeData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,9 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_20/structure/set/Description.h"
+#include "mc/deps/shared_types/v1_21_20/structure/set/RandomSpreadPlacement.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
+namespace SharedTypes::v1_21_20::JigsawStructureSet { struct Structure; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -14,9 +19,9 @@ struct Contents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk26b7c1;
-    ::ll::UntypedStorage<4, 16> mUnk93bbc2;
-    ::ll::UntypedStorage<8, 24> mUnk348582;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_20::JigsawStructureSet::Description>              mDescription;
+    ::ll::TypedStorage<4, 16, ::SharedTypes::v1_21_20::JigsawStructureSet::RandomSpreadPlacement>    mPlacement;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_20::JigsawStructureSet::Structure>> mStructures;
     // NOLINTEND
 
 public:
@@ -28,28 +33,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Contents&
+    MCAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Contents&&);
 
-    MCNAPI ~Contents();
+    MCAPI ~Contents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
