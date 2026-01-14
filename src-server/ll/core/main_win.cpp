@@ -23,11 +23,6 @@
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 
-#include "mc/scripting/ServerScriptManager.h"
-#include "mc/server/DedicatedServer.h"
-#include "mc/server/ServerInstance.h"
-#include "mc/server/commands/StopCommand.h"
-
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
 #include "ll/core/Version.h"
@@ -35,6 +30,11 @@
 #include "ll/core/io/Output.h"
 #include "ll/core/mod/ModRegistrar.h"
 #include "ll/core/tweak/VulnerabilityFixes.h"
+
+#include "mc/scripting/ServerScriptManager.h"
+#include "mc/server/DedicatedServer.h"
+#include "mc/server/ServerInstance.h"
+#include "mc/server/commands/StopCommand.h"
 
 #include "windows.h"
 

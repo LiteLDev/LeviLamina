@@ -2,7 +2,6 @@
 
 #include "ll/api/Versions.h"
 #include "ll/api/command/CommandRegistrar.h"
-#include "ll/api/event/EventBus.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/GamingStatus.h"
@@ -14,23 +13,15 @@
 #include "ll/core/gui/ImGuiHooks.h"
 #include "ll/core/mod/ModRegistrar.h"
 
-#include "mc/scripting/ServerScriptManager.h"
-#include "mc/server/ServerInstance.h"
-#include "mc/world/level/Level.h"
-
-#include "ll/core/LeviLamina.h"
-#include "ll/core/mod/ModRegistrar.h"
 #include "mc/client/game/MinecraftGame.h"
 #include "mc/client/gui/screens/controllers/StartMenuScreenController.h"
 #include "mc/deps/core/file/Path.h"
-#include "mc/deps/core/resource/PackIdVersion.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/string/StringHash.h"
 #include "mc/module/VanillaGameModuleClient.h"
 #include "mc/resources/CompositePackSource.h"
 #include "mc/resources/DirectoryPackSource.h"
-#include "mc/resources/IRepositoryFactory.h"
 #include "mc/resources/IResourcePackRepository.h"
 #include "mc/resources/Pack.h"
 #include "mc/resources/PackInstance.h"
@@ -42,7 +33,10 @@
 #include "mc/resources/ResourcePack.h"
 #include "mc/resources/ResourcePackRepository.h"
 #include "mc/resources/ResourcePackStack.h"
+#include "mc/scripting/ServerScriptManager.h"
+#include "mc/server/ServerInstance.h"
 #include "mc/server/module/VanillaGameModuleServer.h"
+#include "mc/world/level/Level.h"
 
 #include "pl/Config.h"
 

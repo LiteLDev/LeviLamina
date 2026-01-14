@@ -9,7 +9,7 @@
 namespace ll::io {
 struct DefaultSink::Impl {
     std::mutex       mutex;
-    std::ofstream    logFile{file_utils::u8path(pl::pl_log_path) / u8"latest.log"};
+    std::ofstream    logFile{file_utils::u8path(pl::pl_log_path) / u8"latest.log", std::ios::app};
     PatternFormatter logFileFormatter{"[{3:.3%F %T.} {2}][{1}] {0}", false};
 };
 
