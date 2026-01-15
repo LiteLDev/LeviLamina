@@ -14,20 +14,19 @@ extern std::string_view dataPath;
 extern std::string_view configPath;
 } // namespace worldStoragePath
 
-std::optional<fs::path> createAndReturnPath(fs::path const& base, std::string_view const& subPath) {
-    auto path = base / subPath;
-    if (!fs::exists(path)) {
-        fs::create_directories(path);
-    }
+std::optional<fs::path> createAndReturnPath(fs::path const& base, std::string_view subPath) {
+    fs::path path = base / subPath;
+    if (!fs::exists(path)) fs::create_directories(path);
     return path;
 }
 
 std::optional<fs::path> getWorldDataRoot() {
-    auto client = service::getClientInstance();
-    if (client) {
-        auto info = client->getGameConnectionInfo();
-        if (info && info->mType != Social::ConnectionType::Local) {
-            return createAndReturnPath(worldStoragePath::dataPath, info->mUnresolvedUrl.get());
+    if (auto client = service::getClientInstance()) {
+        if (auto info = client->getGameConnectionInfo(); info && info->mType != Social::ConnectionType::Local) {
+            return createAndReturnPath(
+                worldStoragePath::dataPath,
+                info->mHostIpAddress.get() + "_" + std::to_string(info->mPort)
+            );
         }
     }
     if (auto worldPath = getWorldPath()) {
@@ -37,11 +36,12 @@ std::optional<fs::path> getWorldDataRoot() {
 }
 
 std::optional<fs::path> getWorldConfigRoot() {
-    auto client = service::getClientInstance();
-    if (client) {
-        auto info = client->getGameConnectionInfo();
-        if (info && info->mType != Social::ConnectionType::Local) {
-            return createAndReturnPath(worldStoragePath::configPath, info->mUnresolvedUrl.get());
+    if (auto client = service::getClientInstance()) {
+        if (auto info = client->getGameConnectionInfo(); info && info->mType != Social::ConnectionType::Local) {
+            return createAndReturnPath(
+                worldStoragePath::configPath,
+                info->mHostIpAddress.get() + "_" + std::to_string(info->mPort)
+            );
         }
     }
     if (auto worldPath = getWorldPath()) {
