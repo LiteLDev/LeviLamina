@@ -200,12 +200,11 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     &ServerInstance::startLeaveGame,
     void
 ) {
-    getLogger().debug("ServerInstance::startLeaveGame");
+    setGamingStatus(GamingStatus::Stopping);
 
     mod::ModRegistrar::getInstance().disableAllMods();
 
     command::CommandRegistrar::getInstance(false).clear();
-    // service::bedrock::serverInstance = nullptr;
 
     origin();
 }

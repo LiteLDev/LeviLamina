@@ -258,6 +258,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     void
 ) {
     setGamingStatus(GamingStatus::Stopping);
+
     mod::ModRegistrar::getInstance().disableAllMods();
 
     command::CommandRegistrar::getInstance(false).clear();
