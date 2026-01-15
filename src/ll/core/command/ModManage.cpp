@@ -7,20 +7,16 @@
 #include "ll/api/i18n/I18n.h"
 #include "ll/core/Config.h"
 
-#include "ll/api/mod/Mod.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/mod/ModRegistrar.h"
 
-#include "mc/deps/core/utility/Util.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/server/commands/CommandRegistry.h"
 
 #include <string>
 #include <string_view>
-#include <vector>
 
 
 namespace ll::command {
@@ -53,13 +49,14 @@ void registerModManageCommand(bool isClientSide) {
     }
     command::CommandRegistrar::getInstance(isClientSide)
         .tryRegisterSoftEnum(std::string{mod::modsEnumName}, mod::ModRegistrar::getInstance().getSortedModNames());
-    auto& cmd = CommandRegistrar::getInstance(isClientSide)
-                    .getOrCreateCommand(
-                        string_utils::toLowerCase(selfModName),
-                        "LeviLamina's main command"_tr(),
-                        config.permission
-                    )
-                    .alias("ll");
+    auto& cmd =
+        CommandRegistrar::getInstance(isClientSide)
+            .getOrCreateCommand(
+                isClientSide ? "cli" + string_utils::toLowerCase(selfModName) : string_utils::toLowerCase(selfModName),
+                "LeviLamina's main command"_tr(),
+                isClientSide ? CommandPermissionLevel::Any : config.permission
+            )
+            .alias(isClientSide ? "clill" : "ll");
     cmd.overload<LeviCommand3>().text("load").required("mod").execute(
         [](CommandOrigin const& origin, CommandOutput& output, LeviCommand3 const& param) {
             if (ll::mod::ModManagerRegistry::getInstance().hasMod(param.mod)) {

@@ -4,6 +4,10 @@
 
 namespace ll {
 namespace fs = std::filesystem;
+namespace worldStoragePath {
+extern std::string_view const dataPath;
+extern std::string_view const configPath;
+} // namespace worldStoragePath
 
 std::optional<fs::path> createAndReturnPath(const fs::path& base, const std::string& subPath) {
     auto path = base / subPath;
@@ -15,14 +19,14 @@ std::optional<fs::path> createAndReturnPath(const fs::path& base, const std::str
 
 std::optional<fs::path> getWorldDataRoot() {
     if (auto worldPath = getWorldPath()) {
-        return createAndReturnPath(worldPath.value(), "data");
+        return createAndReturnPath(worldPath.value(), worldStoragePath::dataPath);
     }
     return std::nullopt;
 }
 
 std::optional<fs::path> getWorldConfigRoot() {
     if (auto worldPath = getWorldPath()) {
-        return createAndReturnPath(worldPath.value(), "config");
+        return createAndReturnPath(worldPath.value(), worldStoragePath::configPath);
     }
     return std::nullopt;
 }

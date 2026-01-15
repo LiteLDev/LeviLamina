@@ -3,11 +3,15 @@
 #include "ll/api/utils/StringUtils.h"
 
 #include "mc/network/ServerNetworkHandler.h"
-#include "mc/world/level/storage/DBStorage.h"
 #include "mc/world/Minecraft.h"
+#include "mc/world/level/storage/DBStorage.h"
 
 namespace ll {
 namespace fs = std::filesystem;
+namespace worldStoragePath {
+std::string_view const dataPath   = "ll_data";
+std::string_view const configPath = "ll_config";
+} // namespace worldStoragePath
 
 bool setServerMotd(std::string const& serverName, bool shouldAnnounce) {
     if (!service::getServerNetworkHandler()) return false;

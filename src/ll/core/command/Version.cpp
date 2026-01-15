@@ -16,8 +16,13 @@ void registerVersionCommand(bool isClientSide) {
         return;
     }
 
-    auto& cmd = CommandRegistrar::getInstance(isClientSide)
-                    .getOrCreateCommand("version", "Query server version information"_tr(), config.permission);
+    auto& cmd =
+        CommandRegistrar::getInstance(isClientSide)
+            .getOrCreateCommand(
+                isClientSide ? "cliversion" : "version",
+                isClientSide ? "Query client version information"_tr() : "Query server version information"_tr(),
+                isClientSide ? CommandPermissionLevel::Any : config.permission
+            );
     cmd.overload().execute([&](CommandOrigin const& origin, CommandOutput& output) {
         output.success(
             "Game version {0} with §bLeviLamina-{1}§r."_trl(

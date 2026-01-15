@@ -18,7 +18,11 @@ void registerCrashCommand(bool isClientSide) {
         return;
     }
     auto& cmd = CommandRegistrar::getInstance(isClientSide)
-                    .getOrCreateCommand("crash", "crash the server"_tr(), config.permission);
+                    .getOrCreateCommand(
+                        isClientSide ? "clicrash" : "crash",
+                        isClientSide ? "Crash the client" : "Crash the server"_tr(),
+                        config.permission
+                    );
     cmd.overload<Code>()
         .optional("exceptionCode")
         .execute([&](CommandOrigin const&, CommandOutput&, Code const& params) {

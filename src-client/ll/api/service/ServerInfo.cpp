@@ -9,8 +9,12 @@
 
 namespace ll {
 namespace fs = std::filesystem;
+namespace worldStoragePath {
+extern std::string_view const dataPath;
+extern std::string_view const configPath;
+} // namespace worldStoragePath
 
-std::optional<fs::path> createAndReturnPath(const fs::path& base, const std::string& subPath) {
+std::optional<fs::path> createAndReturnPath(fs::path const& base, std::string_view const& subPath) {
     auto path = base / subPath;
     if (!fs::exists(path)) {
         fs::create_directories(path);
@@ -23,11 +27,11 @@ std::optional<fs::path> getWorldDataRoot() {
     if (client) {
         auto info = client->getGameConnectionInfo();
         if (info && info->mType != Social::ConnectionType::Local) {
-            return createAndReturnPath("data", info->mUnresolvedUrl.get());
+            return createAndReturnPath(worldStoragePath::dataPath, info->mUnresolvedUrl.get());
         }
     }
     if (auto worldPath = getWorldPath()) {
-        return createAndReturnPath(*worldPath, "data");
+        return createAndReturnPath(*worldPath, worldStoragePath::dataPath);
     }
     return std::nullopt;
 }
@@ -37,11 +41,11 @@ std::optional<fs::path> getWorldConfigRoot() {
     if (client) {
         auto info = client->getGameConnectionInfo();
         if (info && info->mType != Social::ConnectionType::Local) {
-            return createAndReturnPath("config", info->mUnresolvedUrl.get());
+            return createAndReturnPath(worldStoragePath::configPath, info->mUnresolvedUrl.get());
         }
     }
     if (auto worldPath = getWorldPath()) {
-        return createAndReturnPath(*worldPath, "config");
+        return createAndReturnPath(*worldPath, worldStoragePath::configPath);
     }
     return std::nullopt;
 }
