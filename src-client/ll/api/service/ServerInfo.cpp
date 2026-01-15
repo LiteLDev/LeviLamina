@@ -10,8 +10,8 @@
 namespace ll {
 namespace fs = std::filesystem;
 namespace worldStoragePath {
-extern std::string_view const dataPath;
-extern std::string_view const configPath;
+extern std::string_view dataPath;
+extern std::string_view configPath;
 } // namespace worldStoragePath
 
 std::optional<fs::path> createAndReturnPath(fs::path const& base, std::string_view const& subPath) {

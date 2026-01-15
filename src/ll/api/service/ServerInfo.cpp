@@ -9,8 +9,8 @@
 namespace ll {
 namespace fs = std::filesystem;
 namespace worldStoragePath {
-std::string_view const dataPath   = "ll_data";
-std::string_view const configPath = "ll_config";
+std::string_view dataPath   = "ll_data";
+std::string_view configPath = "ll_config";
 } // namespace worldStoragePath
 
 bool setServerMotd(std::string const& serverName, bool shouldAnnounce) {

@@ -18,4 +18,5 @@ public:
 
     LLNDAPI Actor& self() const;
 };
+
 } // namespace ll::event::inline entity
