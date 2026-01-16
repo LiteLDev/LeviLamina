@@ -7,6 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.8.0-rc.1] - 2026-01-16
+
+### Added
+
+- Added client support @OEOTYAN @dreamguxiang @ShrBox
+- Added MouseInputEvent @dreamguxiang
+- Added KeyInputEvent @dreamguxiang
+- Added custom shortcut key support @dreamguxiang @OEOTYAN
+- Added `mce::Color::toARGB` @Lovelylavender4
+- Added packs support for mods @dreamguxiang
+- Added `ll::isClient` @ShrBox
+- Added `ll::service::getDBStorage` @ShrBox
+- Added `Mod::getWorldDataDir, Mod::getWorldConfigDir, ll::getWorldPath, ll::getWorldDataRoot, ll::getWorldConfigRoot` @ShrBox
+- Added ClientExitLevelEvent @ShrBox
+- Added ClientStartJoinLevelEvent @ShrBox
+- Added ClientCancelJoinLevelEvent @ShrBox
+- Added ClientJoinLevelEvent @ShrBox
+
+### Changed
+
+- Bumped PreLoader to v1.15.7
+- Bumped bedrock-runtime-data to v1.21.124-server.3
+- Bumped bedrock-runtime-data to v1.21.124-client.1
+- Bumped levilamina-loc to 1.6.*
+
+### Fixed
+
+- Fixed the error when the template parameter of BlockType::getState is an enum class @Lovelylavender4
+
 ## [1.7.7] - 2025-12-03
 
 ### Changed
@@ -1226,7 +1255,8 @@ For lip and tooth-hub test only.
 [#1750]: https://github.com/LiteLDev/LeviLamina/issues/1750
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.7...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.8.0-rc.1...HEAD
+[1.8.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.7...v1.8.0-rc.1
 [1.7.7]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.6...v1.7.7
 [1.7.6]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.5...v1.7.6
 [1.7.5]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.4...v1.7.5
