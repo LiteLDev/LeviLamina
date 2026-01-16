@@ -8,7 +8,6 @@
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/SystemUtils.h"
-#include "ll/core/io/LogArchiver.h"
 #include "ll/core/io/Output.h"
 
 #include "pl/Config.h"
@@ -16,8 +15,6 @@
 #include "ll/api/thread/ThreadPoolExecutor.h"
 
 namespace ll::io {
-
-std::once_flag archiveLogFlag;
 
 static void printLogError(std::string_view msg) noexcept try {
     io::defaultOutput(
@@ -52,7 +49,6 @@ struct Logger::Impl {
 Logger::~Logger() = default;
 
 Logger::Logger(PrivateTag, std::string_view title) : impl(std::make_unique<Impl>(title, getLogPool())) {
-    std::call_once(archiveLogFlag, archiveLatestLog);
     impl->level = (LogLevel)(std::clamp(pl::pl_log_level - 1, 0, 5));
     impl->sinks.push_back(std::make_shared<DefaultSink>());
 }
