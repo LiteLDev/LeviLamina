@@ -25,7 +25,6 @@ add_requires("mimalloc v2.1.7")
 add_requires("cpr[ssl=y] 1.11.1")
 add_requires("parallel-hashmap v2.0.0")
 add_requires("concurrentqueue v1.0.4")
-add_requires("miniz 3.1.0")
 
 -- Dependencies from levimc-repo.
 add_requires("pcg_cpp v1.0.0")
@@ -131,7 +130,6 @@ target("LeviLamina")
         "bedrockdata",
         "parallel-hashmap",
         "concurrentqueue",
-        "miniz",
         {public = true}
     )
     add_defines("LL_EXPORT")
