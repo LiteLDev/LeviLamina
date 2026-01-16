@@ -222,7 +222,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             auto gameVer   = getGameVersion();
             auto loaderVer = getLoaderVersion();
             return fmt::format(
-                "v{}.{}.{}/LL-{}.{}.{}",
+                "v{}.{}.{}/LeviLamina-{}.{}.{}",
                 gameVer.major,
                 gameVer.minor,
                 gameVer.patch,
