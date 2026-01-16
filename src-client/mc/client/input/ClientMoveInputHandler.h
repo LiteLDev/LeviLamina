@@ -39,7 +39,7 @@ public:
     MCAPI static void _registerButtonStateTracking(
         ::InputHandler&      inputHandler,
         ::std::string const& buttonName,
-        unsigned charMoveInputState::* bitfield,
+        uchar MoveInputState::* bitfield,
         uchar                          bitmask
     );
 

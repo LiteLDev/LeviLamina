@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/cohtml__Fonts__FontSDF.h"
-#include "mc/cohtml__IAsyncResourceResponse.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace cohtml { class SystemCacheStats; }
@@ -18,6 +14,8 @@ namespace cohtml { struct SystemRendererSettings; }
 namespace cohtml { struct SystemRendererSettingsWithExternalRenderingLibrary; }
 namespace cohtml { struct UserFontDescription; }
 namespace cohtml { struct ViewSettings; }
+namespace cohtml::Fonts { struct FontSDF; }
+namespace cohtml::IAsyncResourceResponse { struct UserImageData; }
 // clang-format on
 
 namespace cohtml {
