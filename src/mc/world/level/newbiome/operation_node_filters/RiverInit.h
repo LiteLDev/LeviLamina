@@ -16,14 +16,8 @@ struct RiverInit : public ::OperationNodeFilters::FilterBase<1, 1, int, ::Biome 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk541ac1;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Biome const*>> mNoRiverBiomes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RiverInit& operator=(RiverInit const&);
-    RiverInit(RiverInit const&);
-    RiverInit();
 };
 
 } // namespace OperationNodeFilters

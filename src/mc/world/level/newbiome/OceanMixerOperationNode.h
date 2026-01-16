@@ -19,18 +19,20 @@ class Pos2d;
 class OceanMixerOperationNode
 : public ::MixerOperationNode<::Biome const*, ::Pos2d, ::Biome const*, ::BiomeTemperatureCategory> {
 public:
+    // OceanMixerOperationNode inner types define
+    using OceanData = ::OperationGraphResult<::BiomeTemperatureCategory>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkd5644a;
-    ::ll::UntypedStorage<8, 8>   mUnk61f7a3;
-    ::ll::UntypedStorage<8, 120> mUnk7c7f03;
-    ::ll::UntypedStorage<8, 120> mUnk69e35f;
+    ::ll::TypedStorage<8, 8, ::Biome const*>                                        mGenericShallowOcean;
+    ::ll::TypedStorage<8, 8, ::Biome const*>                                        mGenericDeepOcean;
+    ::ll::TypedStorage<8, 120, ::std::vector<::std::pair<::Biome const*, uint>>[5]> mShallowOceanBiomes;
+    ::ll::TypedStorage<8, 120, ::std::vector<::std::pair<::Biome const*, uint>>[5]> mDeepOceanBiomes;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    OceanMixerOperationNode& operator=(OceanMixerOperationNode const&);
-    OceanMixerOperationNode(OceanMixerOperationNode const&);
     OceanMixerOperationNode();
 
 public:
@@ -52,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI OceanMixerOperationNode(
+    MCAPI OceanMixerOperationNode(
         uint                                                                     seedMixup,
         ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>&             biomeLayer,
         ::std::shared_ptr<::OperationNode<::BiomeTemperatureCategory, ::Pos2d>>& oceanLayer,
@@ -65,7 +67,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         uint                                                                     seedMixup,
         ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>&             biomeLayer,
         ::std::shared_ptr<::OperationNode<::BiomeTemperatureCategory, ::Pos2d>>& oceanLayer,
@@ -78,7 +80,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_fillArea(
+    MCAPI void $_fillArea(
         ::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData,
         ::Pos2d const&                                                       origin,
         ::Pos2d const&                                                       size,
@@ -86,7 +88,7 @@ public:
         ::OperationGraphResult<::BiomeTemperatureCategory>                   oceanData
     ) const;
 
-    MCNAPI ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
+    MCFOLD ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
 
 
     // NOLINTEND

@@ -16,15 +16,9 @@ class PromoteCenter : public ::OperationNodeFilters::FilterBase<3, 3, ::Biome co
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2bf212;
-    ::ll::UntypedStorage<8, 8> mUnkd0b3ea;
+    ::ll::TypedStorage<8, 8, ::Biome const*> mFrom;
+    ::ll::TypedStorage<8, 8, ::Biome const*> mTo;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PromoteCenter& operator=(PromoteCenter const&);
-    PromoteCenter(PromoteCenter const&);
-    PromoteCenter();
 };
 
 } // namespace OperationNodeFilters

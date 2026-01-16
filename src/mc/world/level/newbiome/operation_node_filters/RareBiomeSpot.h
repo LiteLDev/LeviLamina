@@ -16,16 +16,10 @@ class RareBiomeSpot : public ::OperationNodeFilters::FilterBase<1, 1, ::Biome co
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4aed31;
-    ::ll::UntypedStorage<8, 8> mUnkaf403b;
-    ::ll::UntypedStorage<8, 8> mUnkd0a5b6;
+    ::ll::TypedStorage<4, 4, uint>           mChance;
+    ::ll::TypedStorage<8, 8, ::Biome const*> mFromBiome;
+    ::ll::TypedStorage<8, 8, ::Biome const*> mToBiome;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RareBiomeSpot& operator=(RareBiomeSpot const&);
-    RareBiomeSpot(RareBiomeSpot const&);
-    RareBiomeSpot();
 };
 
 } // namespace OperationNodeFilters

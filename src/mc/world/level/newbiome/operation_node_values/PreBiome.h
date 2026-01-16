@@ -2,21 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/biome/BiomeTemperatureCategory.h"
+#include "mc/world/level/newbiome/operation_node_values/Terrain.h"
+
 namespace OperationNodeValues {
 
 struct PreBiome {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk9bd0ac;
-    ::ll::UntypedStorage<1, 1> mUnk63eeab;
+    ::ll::TypedStorage<1, 1, ::OperationNodeValues::Terrain> mTerrain;
+    ::ll::TypedStorage<1, 1, ::BiomeTemperatureCategory>     mTemperature;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PreBiome& operator=(PreBiome const&);
-    PreBiome(PreBiome const&);
-    PreBiome();
 };
 
 } // namespace OperationNodeValues

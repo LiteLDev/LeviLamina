@@ -16,16 +16,10 @@ class AddBiomeIsland : public ::OperationNodeFilters::FilterBase<3, 3, ::Biome c
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk12088d;
-    ::ll::UntypedStorage<8, 8>  mUnk8bc886;
-    ::ll::UntypedStorage<8, 24> mUnke6c20c;
+    ::ll::TypedStorage<8, 8, ::Biome const*>                 mDefaultIsland;
+    ::ll::TypedStorage<8, 8, ::Biome const*>                 mSpecialIsland;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Biome const*>> mShallowOceanBiomes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AddBiomeIsland& operator=(AddBiomeIsland const&);
-    AddBiomeIsland(AddBiomeIsland const&);
-    AddBiomeIsland();
 };
 
 } // namespace OperationNodeFilters
