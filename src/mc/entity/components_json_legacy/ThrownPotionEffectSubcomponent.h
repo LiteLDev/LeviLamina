@@ -28,11 +28,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $writetoJSON(::Json::Value&) const;
+    MCFOLD void $writetoJSON(::Json::Value&) const;
 
-    MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
+    MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
-    MCNAPI char const* $getName() const;
+    MCAPI char const* $getName() const;
 
 
     // NOLINTEND
@@ -40,6 +40,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
