@@ -28,8 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Bumped PreLoader to v1.15.7
-- Bumped bedrock-runtime-data to v1.21.124-server.3
-- Bumped bedrock-runtime-data to v1.21.124-client.1
+- Bumped bedrock-runtime-data to v1.21.124-server.4
+- Bumped bedrock-runtime-data to v1.21.124-client.2
 - Bumped levilamina-loc to 1.6.*
 
 ### Fixed
