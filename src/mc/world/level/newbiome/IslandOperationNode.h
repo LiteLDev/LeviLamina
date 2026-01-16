@@ -28,7 +28,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_fillArea(
+    MCAPI void $_fillArea(
         ::OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>& operationNodeData,
         ::Pos2d const&                                                             origin,
         ::Pos2d const&                                                             size

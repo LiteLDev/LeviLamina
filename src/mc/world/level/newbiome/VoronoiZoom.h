@@ -12,9 +12,9 @@ class Vec3;
 namespace VoronoiZoom {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Vec3 getGridOffset(::SimplePositionalRandomFactory const& positionalRandom, ::BlockPos worldPos);
+MCAPI ::Vec3 getGridOffset(::SimplePositionalRandomFactory const& positionalRandom, ::BlockPos worldPos);
 
-MCNAPI uint getZoomedVoronoiCellIndex(
+MCAPI uint getZoomedVoronoiCellIndex(
     ::BlockPos                   inPos,
     ::std::vector<::Vec3> const& voronoiCellOffsets,
     uint                         minCellIndex,

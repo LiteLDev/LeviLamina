@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
+class BiomeRegistry;
 // clang-format on
 
 namespace OperationNodeFilters {
@@ -16,8 +17,8 @@ struct AddMushroomIsland : public ::OperationNodeFilters::FilterBase<3, 3, ::Bio
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk40f27f;
-    ::ll::UntypedStorage<8, 8> mUnk62bcbc;
+    ::ll::TypedStorage<8, 8, ::Biome const&>         mMushroomBiome;
+    ::ll::TypedStorage<8, 8, ::BiomeRegistry const&> mBiomeRegistry;
     // NOLINTEND
 
 public:

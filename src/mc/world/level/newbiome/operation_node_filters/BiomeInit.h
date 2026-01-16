@@ -19,22 +19,20 @@ class BiomeInit : public ::OperationNodeFilters::FilterBase<1, 1, ::Biome const*
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnka14c77;
-    ::ll::UntypedStorage<8, 8>   mUnk7cb23c;
-    ::ll::UntypedStorage<8, 120> mUnk8fe92a;
-    ::ll::UntypedStorage<8, 120> mUnk9dd7ed;
+    ::ll::TypedStorage<8, 8, ::Biome const*>                                        mFallbackBiome;
+    ::ll::TypedStorage<8, 8, ::Biome const*>                                        mDefaultOcean;
+    ::ll::TypedStorage<8, 120, ::std::vector<::std::pair<::Biome const*, uint>>[5]> mRegularBiomes;
+    ::ll::TypedStorage<8, 120, ::std::vector<::std::pair<::Biome const*, uint>>[5]> mSpecialBiomes;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BiomeInit& operator=(BiomeInit const&);
-    BiomeInit(BiomeInit const&);
     BiomeInit();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeInit(
+    MCAPI BiomeInit(
         ::BiomeRegistry const& registry,
         ::Biome const&         defaultOceanBiome,
         ::Biome const&         fallbackBiome,
@@ -45,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::BiomeRegistry const& registry,
         ::Biome const&         defaultOceanBiome,
         ::Biome const&         fallbackBiome,

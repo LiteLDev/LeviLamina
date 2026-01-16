@@ -8,28 +8,26 @@ class Storage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk176941;
-    ::ll::UntypedStorage<8, 8> mUnkebe4ee;
-    ::ll::UntypedStorage<8, 8> mUnk542eab;
-    ::ll::UntypedStorage<8, 8> mUnk9c23b5;
+    ::ll::TypedStorage<8, 8, uint64>                     mReadableBytes;
+    ::ll::TypedStorage<8, 8, uint64>                     mWriteableBytes;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<char[0]>> mReadStorage;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<char[0]>> mWriteStorage;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Storage& operator=(Storage const&);
-    Storage(Storage const&);
     Storage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit Storage(uint64 size);
+    MCAPI explicit Storage(uint64 size);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(uint64 size);
+    MCAPI void* $ctor(uint64 size);
     // NOLINTEND
 };
 

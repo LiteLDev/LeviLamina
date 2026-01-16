@@ -8,15 +8,9 @@ class OperationNodeBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk98fc1b;
-    ::ll::UntypedStorage<8, 8> mUnkdd9c64;
+    ::ll::TypedStorage<8, 8, int64> mSeed;
+    ::ll::TypedStorage<8, 8, int64> mSeedMixup;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OperationNodeBase& operator=(OperationNodeBase const&);
-    OperationNodeBase(OperationNodeBase const&);
-    OperationNodeBase();
 
 public:
     // virtual functions
@@ -29,7 +23,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $init(int64 seed);
+    MCAPI void $init(int64 seed);
 
 
     // NOLINTEND
