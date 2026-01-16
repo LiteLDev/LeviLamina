@@ -1,7 +1,8 @@
 #include "ll/api/Versions.h"
 #include "ll/api/memory/Hook.h"
+#include "mc/client/gui/screens/controllers/StartMenuScreenController.h"
 #include "mc/deps/core/string/StringHash.h"
-#include "mc/gui/screens/controllers/StartMenuScreenController.h"
+#include "mc/safety/RedactableString.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemInstance.h"
 #include "mc/world/item/ItemStackBase.h"
@@ -36,14 +37,19 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     Item,
     &Item::$appendFormattedHovertext,
     void,
-    class ItemStackBase const& stack,
-    Level&                     level,
-    std::string&               hovertext,
-    bool                       showCategory
+    class ItemStackBase const&         stack,
+    Level&                             level,
+    Bedrock::Safety::RedactableString& hovertext,
+    bool                               showCategory
 ) {
     origin(stack, level, hovertext, showCategory);
-    if (!hovertext.empty()) {
-        hovertext.push_back('\n');
+    if (!hovertext.mUnredactedString.empty()) {
+        hovertext.mUnredactedString.push_back('\n');
+    }
+    if (auto redactedString = hovertext.mRedactedString) {
+        if (!redactedString->empty()) {
+            redactedString->push_back('\n');
+        }
     }
     hovertext.append("§8");
     hovertext.append(stack.getTypeName());
