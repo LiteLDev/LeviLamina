@@ -9,13 +9,7 @@ extern std::string_view dataPath;
 extern std::string_view configPath;
 } // namespace worldStoragePath
 
-std::optional<fs::path> createAndReturnPath(fs::path const& base, std::string_view subPath) {
-    auto path = base / subPath;
-    if (!fs::exists(path)) {
-        fs::create_directories(path);
-    }
-    return path;
-}
+std::optional<fs::path> createAndReturnPath(fs::path const& base, std::string_view subPath);
 
 std::optional<fs::path> getWorldDataRoot() {
     if (auto worldPath = getWorldPath()) {
