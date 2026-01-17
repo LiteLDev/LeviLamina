@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+#include "mc/deps/core/math/Matrix.h"
+
 // auto generated forward declare list
 // clang-format off
 class Matrix;
