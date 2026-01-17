@@ -21,17 +21,12 @@ namespace mce { struct Image; }
 class SerializedSkin {
 public:
     // SerializedSkin inner types define
-    using SerializedSkinWrapper =
-        ::Bedrock::Application::ThreadOwner<::SerializedSkinImpl, Bedrock::Application::ThreadOwnerBehavior::Assert>;
+    using SerializedSkinWrapper = ::Bedrock::Application::ThreadOwner<::SerializedSkinImpl, 0>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::std::shared_ptr<::Bedrock::Application::
-                              ThreadOwner<::SerializedSkinImpl, Bedrock::Application::ThreadOwnerBehavior::Assert>>>
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Application::ThreadOwner<::SerializedSkinImpl, 0>>>
         mSkinImpl;
     // NOLINTEND
 

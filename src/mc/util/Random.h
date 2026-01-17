@@ -15,11 +15,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        2552,
-        ::Bedrock::Application::ThreadOwner<::Core::Random, Bedrock::Application::ThreadOwnerBehavior::Assert>>
-        mRandom;
+    ::ll::TypedStorage<8, 2552, ::Bedrock::Application::ThreadOwner<::Core::Random, 0>> mRandom;
     // NOLINTEND
 
 public:

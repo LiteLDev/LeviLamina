@@ -1,11 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/application/common/utility/ThreadOwnerBehavior.h"
 
 namespace Bedrock::Application {
 
-template <typename T0, ThreadOwnerBehavior WrongThreadBehavior = ThreadOwnerBehavior::Assert>
+enum class ThreadOwnerBehavior : int;
+
+template <typename T0, ThreadOwnerBehavior WrongThreadBehavior = 0>
 class ThreadOwner {
 public:
     T0              mObject;
