@@ -1,0 +1,46 @@
+on:
+  push:
+    paths:
+      - .github/workflows/build.yml
+      - src/**
+      - src-server/**
+      - src-client/**
+      - xmake.lua
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        mode:
+          - debug
+          - release
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: xmake-io/github-action-setup-xmake@v1
+        # with:
+        #   xmake-version: branch@master
+
+      - uses: actions/cache@v5
+        with:
+          path: |
+            ~/AppData/Local/.xmake
+          key: xmake-${{ hashFiles('xmake.lua') }}
+          restore-keys: |
+            xmake-
+
+      - uses: microsoft/setup-msbuild@v2
+
+      - run: |
+          xmake repo -u
+
+      - run: |
+          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y
+
+      - run: |
+          xmake -v -y
