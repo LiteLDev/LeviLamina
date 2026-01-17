@@ -49,11 +49,11 @@ end
 
 if is_server then
     if is_windows then
-        add_requires("bedrockdata v1.21.124-server.4")
+        add_requires("bedrockdata v1.21.124-server.5")
     end
 else
     if is_windows then
-        add_requires("bedrockdata v1.21.124-client.2")
+        add_requires("bedrockdata v1.21.124-client.3")
     end
     if is_windows then
         add_requires("imgui[dx11=y,dx12=y] v1.91.0-docking")
