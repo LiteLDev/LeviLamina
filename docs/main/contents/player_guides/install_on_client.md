@@ -27,6 +27,16 @@ For example, to install version 1.8.0-rc.1, run:
 lip install github.com/LiteLDev/LeviLamina#client@1.8.0-rc.1
 ```
 
+### Upgrading LeviLamina
+
+Due to a design limitation in lip, lip currently does not support upgrading a package and its dependencies together; you must manually upgrade the dependencies as well.  
+For example, to upgrade to version 1.8.0-rc.2, run the following command:
+```shell
+lip update github.com/LiteLDev/LeviLamina#client@1.8.0-rc.2 github.com/LiteLDev/bedrock-runtime-data@1.21.124-client.3
+```
+
+Because version 1.8.0-rc.2 depends on bedrock-runtime-data version 1.21.124-client.3, you need to upgrade it together.
+
 ## Automatic Installation via LeviLauncher
 
 Coming soon...
