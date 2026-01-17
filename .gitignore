@@ -7,6 +7,6 @@ src/mc1
 /vsxmake2022
 /.idea
 /bin/
-/cmake-build-release/
+/cmake-build-*/
 /src-test/
 *.txt

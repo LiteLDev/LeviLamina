@@ -40,7 +40,7 @@ public:
         ::InputHandler&      inputHandler,
         ::std::string const& buttonName,
         uchar MoveInputState::* bitfield,
-        uchar                          bitmask
+        uchar                   bitmask
     );
 
     MCAPI static void _registerButtonUpTracking(
