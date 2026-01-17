@@ -146,3 +146,13 @@ jobs:
             | levilamina-${{ github.event.release.tag_name }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
           files: |
             levilamina-${{ github.event.release.tag_name }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64.zip
+
+  dispatch-client-version-db:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch levilamina-client-version-db
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.VERSIONDB_PAT }}
+          repository: LiteLDev/levilamina-client-version-db
+          event-type: update-db
