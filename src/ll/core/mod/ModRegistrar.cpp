@@ -223,6 +223,21 @@ void ModRegistrar::loadAllMods() noexcept try {
     DenseSet<std::string> loadErrored;
     for (auto& name : sort.sorted) {
         auto& manifest = manifests.at(name);
+        if (manifest.platform) {
+            if (isClient()) {
+                if (*manifest.platform != "client" && *manifest.platform != "universal") {
+                    getLogger().error("{0} is not compatible with client platform"_tr(name));
+                    loadErrored.emplace(name);
+                    continue;
+                }
+            } else {
+                if (*manifest.platform != "server" && *manifest.platform != "universal") {
+                    getLogger().error("{0} is not compatible with server platform"_tr(name));
+                    loadErrored.emplace(name);
+                    continue;
+                }
+            }
+        }
         if (manifest.dependencies) {
             bool deniedByDepError = false;
             for (auto& dependency : *manifest.dependencies) {
@@ -331,11 +346,11 @@ Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
     auto& reg      = impl->registry;
     if (manifest.platform) {
         if (isClient()) {
-            if (*manifest.platform != "client") {
+            if (*manifest.platform != "client" && *manifest.platform != "universal") {
                 return makeStringError("{0} is not compatible with client platform"_tr(name));
             }
         } else {
-            if (*manifest.platform != "server") {
+            if (*manifest.platform != "server" && *manifest.platform != "universal") {
                 return makeStringError("{0} is not compatible with server platform"_tr(name));
             }
         }
