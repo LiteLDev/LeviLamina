@@ -207,6 +207,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     command::CommandRegistrar::getInstance(false).clear();
 
     origin();
+
+    // Back to main menu
+    setGamingStatus(GamingStatus::Default);
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
