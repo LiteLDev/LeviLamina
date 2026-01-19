@@ -4,9 +4,7 @@
 
 namespace Bedrock::Application {
 
-enum class ThreadOwnerBehavior : int;
-
-template <typename T0, ThreadOwnerBehavior WrongThreadBehavior = 0>
+template <typename T0, int = 0>
 class ThreadOwner {
 public:
     T0              mObject;
