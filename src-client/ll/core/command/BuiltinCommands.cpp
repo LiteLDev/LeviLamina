@@ -5,6 +5,7 @@
 
 #include "mc/client/commands/ClientCommands.h"
 #include "mc/client/game/MinecraftGame.h"
+#include "mc/platform/threading/Mutex.h"
 #include "mc/scripting/ServerScriptManager.h"
 
 
