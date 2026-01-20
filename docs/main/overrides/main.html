@@ -2,29 +2,72 @@
 
 {% block extrahead %}
 <script>
-    (function() {
+    (function () {
         const langMap = {
-            'zh': '/zh/',
-            'en': '/'
+            'zh': '/zh/'
         };
 
         const storageKey = 'user-language-set';
-        const hasSetLang = sessionStorage.getItem(storageKey);
 
-        if (!hasSetLang) {
-            const userLang = navigator.language || navigator.userLanguage;
-            const isChinese = userLang.startsWith('zh');
-            const targetPath = isChinese ? langMap['zh'] : langMap['en'];
+        // safe storage access
+        function storageGet(key) {
+            try { return sessionStorage.getItem(key); } catch (e) { return null; }
+        }
+        function storageSet(key, val) {
+            try { sessionStorage.setItem(key, val); return true; } catch (e) { return false; }
+        }
 
-            const currentPath = window.location.pathname;
+        if (storageGet(storageKey)) {
+            return;
+        }
 
-            if (!currentPath.includes(targetPath)) {
-                sessionStorage.setItem(storageKey, isChinese ? 'zh' : 'en');
+        const userLang = (navigator.language || navigator.userLanguage || '').split('-')[0].toLowerCase();
+        if (!userLang || !langMap[userLang]) {
+            return;
+        }
+        const targetPath = langMap[userLang]; // e.g. '/zh/'
 
-                let newPath = targetPath + currentPath.replace(/^\/(zh|en)\//, '');
-                window.location.href = newPath.replace(/\/+/g, '/');
+        const pathname = window.location.pathname || '/';
+        const search = window.location.search || '';
+        const hash = window.location.hash || '';
+
+        // ensure targetPath ends with single slash and starts with slash
+        const normalize = (p) => ('/' + p.replace(/^\/+|\/+$/g, '') + '/');
+        const targetNorm = normalize(targetPath);
+
+        // check if pathname already has language prefix as a leading segment
+        // match ^/zh(/|$)
+        const langPrefixRegex = new RegExp('^' + targetNorm.replace(/\/$/,'') + '(?:\\/|$)');
+        if (langPrefixRegex.test(pathname)) {
+            return; // already in the right language prefix
+        }
+
+        // strip any known language prefixes (values of langMap) from the start if present
+        let cleanPath = pathname;
+        for (const p of Object.values(langMap)) {
+            const pNorm = normalize(p);
+            const stripRegex = new RegExp('^' + pNorm.replace(/\/$/,'') + '(?:\\/|$)');
+            if (stripRegex.test(cleanPath)) {
+                cleanPath = cleanPath.replace(stripRegex, '/');
+                break;
             }
         }
+
+        // make sure cleanPath begins with single slash
+        if (!cleanPath.startsWith('/')) cleanPath = '/' + cleanPath;
+        // avoid double slashes when building new path
+        let newPath = targetNorm.replace(/\/+$/,'') + cleanPath.replace(/^\/+/,'/');
+        // normalize multiple slashes
+        newPath = newPath.replace(/\/+/g, '/');
+
+        // append search/hash back
+        newPath = newPath + search + hash;
+
+        // set storage (best effort) before redirect to avoid repeated redirects
+        storageSet(storageKey, userLang);
+
+        // use replace to avoid leaving the previous (un-prefixed) URL in history; change to href if you prefer
+        window.location.replace(newPath);
     })();
 </script>
 {% endblock %}
