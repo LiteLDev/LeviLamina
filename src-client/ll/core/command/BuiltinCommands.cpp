@@ -1,11 +1,10 @@
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/api/command/CommandRegistrar.h"
+#include "ll/api/command/OverloadData.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/client/commands/ClientCommands.h"
-#include "mc/client/game/ClientInstance.h"
 #include "mc/client/game/MinecraftGame.h"
-#include "mc/module/VanillaGameModuleClient.h"
 #include "mc/scripting/ServerScriptManager.h"
 
 
@@ -27,7 +26,7 @@ LL_TYPE_STATIC_HOOK(
     ::Level const&                         level
 ) {
     if (!isHost) {
-        command::CommandRegistrar::getInstance(true).clear();
+        CommandRegistrar::getInstance(true).clear();
         origin(minecraftCommands, minecraftGame, textureGroup, archiver, isHost, adIdentity, scriptingEnabled, level);
         registerVersionCommand(true);
         registerCrashCommand(true);
@@ -45,7 +44,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     EventResult,
     ::ServerInstance& ins
 ) {
-    command::CommandRegistrar::getInstance(false).clear();
+    CommandRegistrar::getInstance(false).clear();
     auto res = origin(ins);
     registerVersionCommand(false);
     registerCrashCommand(false);

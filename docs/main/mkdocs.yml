@@ -13,6 +13,7 @@ nav:
           - player_guides/install_on_docker.md
       - player_guides/install_on_client.md
       - player_guides/troubleshooting.md
+      - common_guides/usage_guidelines.md
 
   - Developer Guides:
       - Tutorials:
@@ -40,6 +41,7 @@ nav:
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - navigation.tabs
     - navigation.tabs.sticky

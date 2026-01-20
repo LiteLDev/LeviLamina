@@ -4,10 +4,6 @@
 #include "ll/api/command/runtime/ParamKind.h"
 #include "ll/api/command/runtime/RuntimeCommand.h"
 
-#include "mc/server/commands/CommandOrigin.h"
-#include "mc/server/commands/CommandOutput.h"
-#include "mc/server/commands/CommandParameterDataType.h"
-
 namespace ll::command {
 class RuntimeOverload : private OverloadData {
     friend CommandHandle;

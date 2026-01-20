@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+<script>
+    (function() {
+        const langMap = {
+            'zh': '/zh/',
+            'en': '/'
+        };
+
+        const storageKey = 'user-language-set';
+        const hasSetLang = sessionStorage.getItem(storageKey);
+
+        if (!hasSetLang) {
+            const userLang = navigator.language || navigator.userLanguage;
+            const isChinese = userLang.startsWith('zh');
+            const targetPath = isChinese ? langMap['zh'] : langMap['en'];
+
+            const currentPath = window.location.pathname;
+
+            if (!currentPath.includes(targetPath)) {
+                sessionStorage.setItem(storageKey, isChinese ? 'zh' : 'en');
+
+                let newPath = targetPath + currentPath.replace(/^\/(zh|en)\//, '');
+                window.location.href = newPath.replace(/\/+/g, '/');
+            }
+        }
+    })();
+</script>
+{% endblock %}
