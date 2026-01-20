@@ -68,7 +68,10 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
-  - toc
+  - toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - tables
   - pymdownx.arithmatex
   - pymdownx.betterem
