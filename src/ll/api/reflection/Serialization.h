@@ -24,7 +24,7 @@ inline Expected<J> serialize_impl(T&& opt, meta::PriorityTag<5>)
     requires(concepts::IsOptional<std::remove_cvref_t<T>>);
 template <class J, class T>
 inline Expected<J> serialize_impl(T&& str, meta::PriorityTag<4>)
-    requires(concepts::IsString<std::remove_cvref_t<T>>);
+    requires(concepts::IsString<std::remove_cvref_t<T>> && std::is_assignable_v<std::remove_cvref_t<T>, std::string>);
 template <class J, class T>
 inline Expected<J> serialize_impl(T&& tuple, meta::PriorityTag<3>)
     requires(concepts::TupleLike<std::remove_cvref_t<T>>);
@@ -98,7 +98,7 @@ inline Expected<J> serialize_impl(T&& opt, meta::PriorityTag<5>)
 }
 template <class J, class T>
 inline Expected<J> serialize_impl(T&& str, meta::PriorityTag<4>)
-    requires(concepts::IsString<std::remove_cvref_t<T>>)
+    requires(concepts::IsString<std::remove_cvref_t<T>> && std::is_assignable_v<std::remove_cvref_t<T>, std::string>)
 {
     return std::string{std::forward<T>(str)};
 }

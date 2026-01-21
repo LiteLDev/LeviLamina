@@ -18,8 +18,9 @@ template <concepts::IsDispatcher T, class J>
 inline Expected<> deserialize_impl(T& d, J&& j, meta::PriorityTag<5>);
 template <concepts::IsOptional T, class J>
 inline Expected<> deserialize_impl(T& opt, J&& j, meta::PriorityTag<5>);
-template <concepts::IsString T, class J>
-inline Expected<> deserialize_impl(T& str, J&& j, meta::PriorityTag<4>);
+template <class T, class J>
+inline Expected<> deserialize_impl(T& str, J&& j, meta::PriorityTag<4>)
+    requires(concepts::IsString<T> && std::is_assignable_v<T, std::string>);
 template <concepts::TupleLike T, class J>
 inline Expected<> deserialize_impl(T& tuple, J&& j, meta::PriorityTag<3>);
 template <concepts::ArrayLike T, class J>
@@ -82,8 +83,10 @@ inline Expected<> deserialize_impl(T& opt, J&& j, meta::PriorityTag<5>) {
     }
     return res;
 }
-template <concepts::IsString T, class J>
-inline Expected<> deserialize_impl(T& str, J&& j, meta::PriorityTag<4>) {
+template <class T, class J>
+inline Expected<> deserialize_impl(T& str, J&& j, meta::PriorityTag<4>)
+    requires(concepts::IsString<T> && std::is_assignable_v<T, std::string>)
+{
     if (!j.is_string()) return makeStringError("field must be a string");
     str = std::string{std::forward<J>(j)};
     return {};

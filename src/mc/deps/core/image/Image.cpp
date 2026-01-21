@@ -138,29 +138,14 @@ static size_t getBytesPerPixel(mce::ImageFormat format) {
 
 void Image::resizeImageBytesToFitImageDescription() {
     unsigned depth         = mDepth ? mDepth : 1;
-    unsigned bytesPerPixel = 0;
-
-    switch (imageFormat) {
-    case ImageFormat::R8Unorm:
-        bytesPerPixel = 1;
-        break;
-    case ImageFormat::RG8Unorm:
-        bytesPerPixel = 2;
-        break;
-    case ImageFormat::RGB8Unorm:
-        bytesPerPixel = 3;
-        break;
-    case ImageFormat::RGBA8Unorm:
-        bytesPerPixel = 4;
-        break;
-    case ImageFormat::RGBA16Float:
-        bytesPerPixel = 8;
-        break;
-    default:
-        return;
-    }
+    unsigned bytesPerPixel = getBytesPerPixel(imageFormat);
 
     std::size_t totalBytes = static_cast<std::size_t>(depth) * mWidth * mHeight * bytesPerPixel;
+
+    if (totalBytes == 0) {
+        mImageBytes = Blob();
+        return;
+    }
 
     mImageBytes = Blob(totalBytes);
 }
