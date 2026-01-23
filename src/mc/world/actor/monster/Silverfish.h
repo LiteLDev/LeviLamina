@@ -15,7 +15,7 @@ class Silverfish : public ::Monster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
@@ -31,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCFOLD bool $isDarkEnoughToSpawn() const;
 

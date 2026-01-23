@@ -50,13 +50,9 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual ::Block const& getPlacementBlock(
-        ::Actor const&    by,
-        ::BlockPos const& pos,
-        uchar             facing,
-        ::Vec3 const&     clickPos,
-        int               itemValue
-    ) const /*override*/;
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
 
     virtual ::AABB getCollisionShape(
         ::Block const&,
@@ -114,7 +110,7 @@ public:
     MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
-        uchar             facing,
+        uchar             face,
         ::Vec3 const&     clickPos,
         int               itemValue
     ) const;

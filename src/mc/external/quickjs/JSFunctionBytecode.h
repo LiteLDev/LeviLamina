@@ -41,4 +41,10 @@ public:
 #endif
     ::ll::UntypedStorage<8, 16> mUnke75f9d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    JSFunctionBytecode& operator=(JSFunctionBytecode const&);
+    JSFunctionBytecode(JSFunctionBytecode const&);
+    JSFunctionBytecode();
 };

@@ -53,7 +53,7 @@ public:
 
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
-    virtual ::ItemStack const& getItem(int index) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
@@ -119,7 +119,7 @@ public:
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
-    MCAPI ::ItemStack const& $getItem(int index) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
     MCFOLD int $getMaxStackSize() const;
 

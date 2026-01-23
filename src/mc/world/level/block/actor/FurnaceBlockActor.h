@@ -72,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
@@ -218,7 +218,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ItemStack const& $getItem(int slot) const;
+    MCFOLD ::ItemStack const& $getItem(int index) const;
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 

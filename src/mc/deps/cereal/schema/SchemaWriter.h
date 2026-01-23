@@ -21,7 +21,7 @@ public:
 
     virtual bool write(bool) = 0;
 
-    virtual bool write(char) = 0;
+    virtual bool write(schar) = 0;
 
     virtual bool write(uchar) = 0;
 

@@ -174,10 +174,10 @@ namespace Social { class IUserManager; }
 namespace Social { struct MultiplayerServiceManager; }
 namespace Social { struct User; }
 namespace World { struct WorldSystem; }
+namespace mce { class Camera; }
 namespace mce { class Texture; }
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
-namespace mce { struct Camera; }
 namespace mce { struct ViewportInfo; }
 namespace ui { struct ScreenTechStackSelector; }
 // clang-format on

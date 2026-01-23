@@ -41,7 +41,7 @@ public:
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
@@ -99,7 +99,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int index) const;
 
     MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 

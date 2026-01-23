@@ -60,7 +60,7 @@ public:
     ::ll::TypedStorage<8, 8, ::SpinLockImpl*>                                   mWriteLock;
     ::ll::TypedStorage<8, 8, uint64>                                            mHash;
     ::ll::TypedStorage<1, 1, bool>                                              mHashDirty;
-    ::ll::TypedStorage<1, 1, char>                                              mAbsoluteIndex;
+    ::ll::TypedStorage<1, 1, schar>                                             mAbsoluteIndex;
     ::ll::TypedStorage<1, 1, bool>                                              mIsReplacementSubChunk;
     ::ll::TypedStorage<1, 1, uchar>                                             mRenderChunkTrackingVersionNumber;
     // NOLINTEND

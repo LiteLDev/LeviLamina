@@ -14,4 +14,10 @@ public:
     ::ll::UntypedStorage<8, 8> mUnk1c0bb3;
 #endif
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ExportedNameEntry& operator=(ExportedNameEntry const&);
+    ExportedNameEntry(ExportedNameEntry const&);
+    ExportedNameEntry();
 };

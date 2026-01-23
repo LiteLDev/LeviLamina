@@ -227,7 +227,7 @@ public:
         // NOLINTEND
     };
 
-    using PlayerFlagIDType = char;
+    using PlayerFlagIDType = schar;
 
     using PlayerListenerList = ::std::vector<::PlayerListener*>;
 
@@ -439,7 +439,7 @@ public:
 
     virtual bool isDamageBlocked(::ActorDamageSource const& source) const /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     virtual ::std::vector<::ItemStack const*> getAllHandEquipment() const /*override*/;
 
@@ -1156,7 +1156,7 @@ public:
 
     MCAPI bool $isDamageBlocked(::ActorDamageSource const& source) const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI ::std::vector<::ItemStack const*> $getAllHandEquipment() const;
 

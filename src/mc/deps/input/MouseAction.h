@@ -26,7 +26,7 @@ public:
     ::ll::TypedStorage<2, 2, short> dx;
     ::ll::TypedStorage<2, 2, short> dy;
     ::ll::TypedStorage<1, 1, char>  action;
-    ::ll::TypedStorage<1, 1, char>  data;
+    ::ll::TypedStorage<1, 1, schar> data;
     ::ll::TypedStorage<4, 4, int>   pointerId;
     ::ll::TypedStorage<1, 1, bool>  forceMotionlessPointer;
     // NOLINTEND

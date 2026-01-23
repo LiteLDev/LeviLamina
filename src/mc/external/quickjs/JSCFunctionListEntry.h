@@ -16,4 +16,10 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk311720;
 #endif
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    JSCFunctionListEntry& operator=(JSCFunctionListEntry const&);
+    JSCFunctionListEntry(JSCFunctionListEntry const&);
+    JSCFunctionListEntry();
 };

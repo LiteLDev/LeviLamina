@@ -34,7 +34,7 @@ public:
 
     virtual bool write(bool) /*override*/;
 
-    virtual bool write(char) /*override*/;
+    virtual bool write(schar) /*override*/;
 
     virtual bool write(uchar) /*override*/;
 

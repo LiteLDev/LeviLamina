@@ -29,9 +29,9 @@ struct Brightness;
 struct ItemInHandRenderFrameId;
 struct ItemRenderCall;
 namespace dragon { struct RenderMetadata; }
+namespace mce { class Camera; }
 namespace mce { class MaterialPtr; }
 namespace mce { class TextureGroup; }
-namespace mce { struct Camera; }
 namespace mce { struct ViewportInfo; }
 // clang-format on
 

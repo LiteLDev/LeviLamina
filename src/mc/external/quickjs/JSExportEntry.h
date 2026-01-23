@@ -15,4 +15,10 @@ public:
     ::ll::UntypedStorage<4, 4> mUnkade76c;
     ::ll::UntypedStorage<4, 4> mUnk40f3bc;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    JSExportEntry& operator=(JSExportEntry const&);
+    JSExportEntry(JSExportEntry const&);
+    JSExportEntry();
 };

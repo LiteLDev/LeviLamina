@@ -24,7 +24,7 @@ class JigsawStructureBuilder : public ::br::worldgen::StructureBuilder<::br::wor
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, char>                                                  mMaxDepth;
+    ::ll::TypedStorage<1, 1, schar>                                                 mMaxDepth;
     ::ll::TypedStorage<4, 8, ::br::worldgen::MaxDistanceFromCenter>                 mMaxDistanceFromCenter;
     ::ll::TypedStorage<4, 8, ::br::worldgen::DimensionPadding>                      mDimensionPadding;
     ::ll::TypedStorage<8, 32, ::std::string>                                        mStart;

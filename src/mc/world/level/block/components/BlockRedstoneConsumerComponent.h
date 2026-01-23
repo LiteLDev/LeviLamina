@@ -18,7 +18,7 @@ class BlockRedstoneConsumerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, char>                             mMinPower;
+    ::ll::TypedStorage<1, 1, schar>                            mMinPower;
     ::ll::TypedStorage<1, 1, bool>                             mPropagatePower;
     ::ll::TypedStorage<1, 1, bool>                             mConsumePowerAnyDirection;
     ::ll::TypedStorage<1, 1, bool>                             mAcceptSameDirection;

@@ -153,7 +153,7 @@ public:
 
     virtual void moveView() /*override*/;
 
-    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension) /*override*/;
+    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType) /*override*/;
 
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
 
@@ -186,7 +186,7 @@ public:
     ) /*override*/;
 
     virtual void displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& textObject,
+        ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     ) /*override*/;
@@ -221,7 +221,7 @@ public:
 
     virtual ::HashedString getCurrentStructureFeature() const /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
 
@@ -430,7 +430,7 @@ public:
 
     MCAPI void $moveView();
 
-    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension);
+    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType);
 
     MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 
@@ -459,7 +459,7 @@ public:
     );
 
     MCAPI void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& textObject,
+        ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );
@@ -494,7 +494,7 @@ public:
 
     MCAPI ::HashedString $getCurrentStructureFeature() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $setContainerData(::IContainerManager& menu, int id, int value);
 

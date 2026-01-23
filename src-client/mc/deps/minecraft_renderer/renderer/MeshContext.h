@@ -8,9 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 class ShaderColor;
+namespace mce { class Camera; }
 namespace mce { class RenderContext; }
 namespace mce { struct BufferResourceService; }
-namespace mce { struct Camera; }
 namespace mce { struct GlobalConstantBufferManager; }
 namespace mce { struct GlobalConstantBuffers; }
 namespace mce { struct ImmediateBuffer; }

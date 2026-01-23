@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                            mStartJigsawName;
     ::ll::TypedStorage<8, 32, ::std::string>                            mStart;
-    ::ll::TypedStorage<1, 1, char>                                      mMaxDepth;
+    ::ll::TypedStorage<1, 1, schar>                                     mMaxDepth;
     ::ll::TypedStorage<8, 56, ::br::worldgen::StructureHeightProvider>  mStartHeight;
     ::ll::TypedStorage<4, 8, ::br::worldgen::MaxDistanceFromCenter>     mMaxDistanceFromCenter;
     ::ll::TypedStorage<4, 8, ::br::worldgen::DimensionPadding>          mDimensionPadding;

@@ -631,7 +631,7 @@ public:
     using ParamVisitCallback = ::std::function<
         bool(::CommandParameterData const&, ::CommandOrigin const&, ::CommandRegistry::ParseToken const*)>;
 
-    using ParseFunction = bool (::CommandRegistry::*)(
+    using ParseFunction = bool (CommandRegistry::*)(
         void*,
         ::CommandRegistry::ParseToken const&,
         ::CommandOrigin const&,

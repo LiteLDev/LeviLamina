@@ -17,7 +17,7 @@ class CompostableItemComponent : public ::NetworkedItemComponent<::CompostableIt
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, char> mCompostingChance;
+    ::ll::TypedStorage<1, 1, schar> mCompostingChance;
     // NOLINTEND
 
 public:

@@ -24,7 +24,7 @@ struct VariantParameterList;
 class Guardian : public ::Monster {
 public:
     // Guardian inner types define
-    using DataFlagIdType = char;
+    using DataFlagIdType = schar;
 
 public:
     // member variables
@@ -58,7 +58,7 @@ public:
 
     virtual bool checkSpawnRules(bool) /*override*/;
 
-    virtual void setTarget(::Actor* target) /*override*/;
+    virtual void setTarget(::Actor* entity) /*override*/;
 
     virtual float getMaxHeadXRot() /*override*/;
 
@@ -116,7 +116,7 @@ public:
 
     MCAPI bool $checkSpawnRules(bool);
 
-    MCFOLD void $setTarget(::Actor* target);
+    MCFOLD void $setTarget(::Actor* entity);
 
     MCFOLD float $getMaxHeadXRot();
 

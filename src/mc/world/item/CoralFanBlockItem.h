@@ -23,7 +23,7 @@ public:
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
     virtual ~CoralFanBlockItem() /*override*/ = default;
@@ -37,7 +37,7 @@ public:
     MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
 
     // NOLINTEND

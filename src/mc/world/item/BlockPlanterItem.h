@@ -32,7 +32,7 @@ public:
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    virtual ::BlockPlanterItem& setDescriptionId(::std::string const& description) /*override*/;
+    virtual ::BlockPlanterItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
     virtual ~BlockPlanterItem() /*override*/ = default;
     // NOLINTEND
@@ -72,7 +72,7 @@ public:
     MCFOLD ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::BlockPlanterItem& $setDescriptionId(::std::string const& description);
+    MCFOLD ::BlockPlanterItem& $setDescriptionId(::std::string const& descriptionId);
 
 
     // NOLINTEND

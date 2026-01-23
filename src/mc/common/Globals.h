@@ -223,7 +223,7 @@ namespace Bedrock { class Platform_GameCore; }
 namespace ParticleSystem { struct ParticleEffectComponentRegistry; }
 namespace Social { struct MultiplayerServiceManager; }
 namespace cohtml { class Binder; }
-namespace mce { struct Camera; }
+namespace mce { class Camera; }
 namespace mce::framebuilder { struct FrameBuilder; }
 namespace mce::framebuilder { struct PerCascadeRenderingParameters; }
 namespace mce::framebuilder { struct RenderBatchActorInstanceDescription; }

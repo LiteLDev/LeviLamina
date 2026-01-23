@@ -186,10 +186,10 @@ namespace Social { class IUserManager; }
 namespace Social { struct MultiplayerServiceManager; }
 namespace Social { struct User; }
 namespace World { struct WorldSystem; }
+namespace mce { class Camera; }
 namespace mce { class Texture; }
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
-namespace mce { struct Camera; }
 namespace mce { struct ViewportInfo; }
 namespace ui { struct ScreenTechStackSelector; }
 // clang-format on
@@ -473,7 +473,7 @@ public:
 
     virtual void preFrameTick() /*override*/;
 
-    virtual bool update(bool isInitFinished) /*override*/;
+    virtual bool update(bool isInWorld) /*override*/;
 
     virtual void endFrame() /*override*/;
 
@@ -1540,7 +1540,7 @@ public:
 
     MCAPI void $preFrameTick();
 
-    MCAPI bool $update(bool isInitFinished);
+    MCAPI bool $update(bool isInWorld);
 
     MCFOLD void $endFrame();
 

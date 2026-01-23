@@ -30,6 +30,8 @@ public:
 
 public:
     // prevent constructor by default
+    CompiledExpressionWithSource& operator=(CompiledExpressionWithSource const&);
+    CompiledExpressionWithSource(CompiledExpressionWithSource const&);
     CompiledExpressionWithSource();
 
 public:

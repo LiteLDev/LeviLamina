@@ -18,4 +18,10 @@ public:
     ::ll::UntypedStorage<2, 2> mUnk279b0e;
 #endif
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    JSString& operator=(JSString const&);
+    JSString(JSString const&);
+    JSString();
 };

@@ -57,9 +57,9 @@ struct SoundMapping;
 struct TextureUVCoordinateSet;
 struct ViewRenderData;
 struct ViewRenderObject;
+namespace mce { class Camera; }
 namespace mce { class Color; }
 namespace mce { class MaterialPtr; }
-namespace mce { struct Camera; }
 namespace mce::framebuilder { struct SkyWeatherParameters; }
 // clang-format on
 

@@ -45,7 +45,7 @@ public:
 
     virtual ::leveldb::Status CreateDir(::std::string const& path) /*override*/;
 
-    virtual ::leveldb::Status RemoveDir(::std::string const& dirname) /*override*/;
+    virtual ::leveldb::Status RemoveDir(::std::string const& name) /*override*/;
 
     virtual ::leveldb::Status GetFileSize(::std::string const& fname, uint64* size) /*override*/;
 
@@ -93,7 +93,7 @@ public:
 
     MCNAPI ::leveldb::Status $CreateDir(::std::string const& path);
 
-    MCNAPI ::leveldb::Status $RemoveDir(::std::string const& dirname);
+    MCNAPI ::leveldb::Status $RemoveDir(::std::string const& name);
 
     MCNAPI ::leveldb::Status $GetFileSize(::std::string const& fname, uint64* size);
 

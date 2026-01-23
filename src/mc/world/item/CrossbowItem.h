@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
@@ -43,7 +43,7 @@ public:
     getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const
         /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
@@ -77,7 +77,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
@@ -85,7 +85,7 @@ public:
     MCAPI int
     $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 

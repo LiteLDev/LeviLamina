@@ -14,7 +14,7 @@ class IConstBlockSource;
 class Blaze : public ::Monster {
 public:
     // Blaze inner types define
-    using DataFlagIdType = char;
+    using DataFlagIdType = schar;
 
 public:
     // member variables

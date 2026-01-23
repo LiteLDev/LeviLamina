@@ -17,4 +17,10 @@ public:
     ::ll::UntypedStorage<1, 1> mUnk63dc85;
     ::ll::UntypedStorage<1, 1> mUnk2f54aa;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TraceState& operator=(TraceState const&);
+    TraceState(TraceState const&);
+    TraceState();
 };

@@ -70,7 +70,7 @@ public:
 
     virtual bool isWithinRenderDistance(::Vec3 const& cameraPosition) const /*override*/;
 
-    virtual ::ItemStack const& getItem(int index) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
@@ -157,7 +157,7 @@ public:
 
     MCAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
 
-    MCFOLD ::ItemStack const& $getItem(int index) const;
+    MCFOLD ::ItemStack const& $getItem(int slot) const;
 
     MCFOLD void $setItem(int slot, ::ItemStack const& item);
 

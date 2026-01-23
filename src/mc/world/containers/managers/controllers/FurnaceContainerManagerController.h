@@ -36,7 +36,7 @@ public:
 
     virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
 
-    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
+    virtual void _onItemAcquired(::ItemInstance const& itemInstance, ::SlotData const& srcSlot) /*override*/;
     // NOLINTEND
 
 public:
@@ -67,7 +67,7 @@ public:
 
     MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
 
-    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
+    MCNAPI void $_onItemAcquired(::ItemInstance const& itemInstance, ::SlotData const& srcSlot);
 #endif
 
 

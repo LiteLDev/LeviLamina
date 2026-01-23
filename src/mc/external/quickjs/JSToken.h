@@ -15,4 +15,10 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk5db923;
 #endif
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    JSToken& operator=(JSToken const&);
+    JSToken(JSToken const&);
+    JSToken();
 };

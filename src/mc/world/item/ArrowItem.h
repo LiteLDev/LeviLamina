@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual ::Actor* createProjectileActor(
         ::BlockSource&     region,
@@ -95,7 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI ::Actor* $createProjectileActor(
         ::BlockSource&     region,

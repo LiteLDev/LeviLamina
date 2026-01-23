@@ -143,6 +143,8 @@ public:
 
 public:
     // prevent constructor by default
+    AppPlatform& operator=(AppPlatform const&);
+    AppPlatform(AppPlatform const&);
     AppPlatform();
 
 public:

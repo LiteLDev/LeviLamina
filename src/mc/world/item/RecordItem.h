@@ -32,7 +32,7 @@ public:
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::RecordItem& setDescriptionId(::std::string const& description) /*override*/;
+    virtual ::RecordItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
     virtual ~RecordItem() /*override*/ = default;
     // NOLINTEND
@@ -70,7 +70,7 @@ public:
     MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCFOLD ::RecordItem& $setDescriptionId(::std::string const& description);
+    MCFOLD ::RecordItem& $setDescriptionId(::std::string const& descriptionId);
 
 
     // NOLINTEND

@@ -99,7 +99,7 @@ public:
 
     virtual void Bind(ulong) = 0;
 
-    virtual void Bind(char) = 0;
+    virtual void Bind(schar) = 0;
 
     virtual void Bind(uchar) = 0;
 
@@ -172,6 +172,8 @@ public:
     virtual void Read(ulong&) = 0;
 
     virtual void Read(char&) = 0;
+
+    virtual void Read(schar&) = 0;
 
     virtual void Read(uchar&) = 0;
 

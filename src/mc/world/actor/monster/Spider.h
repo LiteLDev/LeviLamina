@@ -20,7 +20,7 @@ public:
         Cave   = 1,
     };
 
-    using DataFlagIdType = char;
+    using DataFlagIdType = schar;
 
 public:
     // prevent constructor by default

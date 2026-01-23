@@ -28,6 +28,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AppPlatformWindows& operator=(AppPlatformWindows const&);
+    AppPlatformWindows(AppPlatformWindows const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C

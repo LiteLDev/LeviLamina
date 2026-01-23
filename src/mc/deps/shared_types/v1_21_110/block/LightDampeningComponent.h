@@ -8,7 +8,7 @@ struct LightDampeningComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, char> mLightLevel;
+    ::ll::TypedStorage<1, 1, schar> mLightLevel;
     // NOLINTEND
 
 public:

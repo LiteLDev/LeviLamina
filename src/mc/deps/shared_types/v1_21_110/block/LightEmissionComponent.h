@@ -8,7 +8,7 @@ struct LightEmissionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, char> mLightEmission;
+    ::ll::TypedStorage<1, 1, schar> mLightEmission;
     // NOLINTEND
 
 public:

@@ -72,6 +72,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HC_CALL& operator=(HC_CALL const&);
+    HC_CALL(HC_CALL const&);
+    HC_CALL();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~HC_CALL();

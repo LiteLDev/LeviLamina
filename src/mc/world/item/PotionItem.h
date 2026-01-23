@@ -42,7 +42,7 @@ public:
     // NOLINTBEGIN
     virtual ::Potion::PotionType getPotionType() const;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
         /*override*/;
@@ -60,7 +60,7 @@ public:
 
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
@@ -102,7 +102,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::Potion::PotionType $getPotionType() const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
@@ -119,7 +119,7 @@ public:
 
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
 #ifdef LL_PLAT_S
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;

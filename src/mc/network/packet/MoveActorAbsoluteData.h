@@ -32,10 +32,10 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                mRuntimeId;
     ::ll::TypedStorage<1, 1, ::MoveActorAbsoluteData::Header> mHeader;
     ::ll::TypedStorage<4, 12, ::Vec3>                         mPos;
-    ::ll::TypedStorage<1, 1, char>                            mRotX;
-    ::ll::TypedStorage<1, 1, char>                            mRotY;
-    ::ll::TypedStorage<1, 1, char>                            mRotYHead;
-    ::ll::TypedStorage<1, 1, char>                            mRotYBody;
+    ::ll::TypedStorage<1, 1, schar>                           mRotX;
+    ::ll::TypedStorage<1, 1, schar>                           mRotY;
+    ::ll::TypedStorage<1, 1, schar>                           mRotYHead;
+    ::ll::TypedStorage<1, 1, schar>                           mRotYBody;
     // NOLINTEND
 
 public:
