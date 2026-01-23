@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/ContextArea.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
@@ -31,7 +34,7 @@ public:
     // NOLINTBEGIN
     virtual ~ParserBase() = default;
 
-    virtual ::Puv::LoadResultAny doParse(::Puv::Input const&) const = 0;
+    virtual ::Puv::LoadResultAny doParse(::Puv::Input const&, ::cereal::ContextArea) const = 0;
     // NOLINTEND
 
 public:
@@ -39,7 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ParserBase(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
 
-    MCNAPI ::Puv::LoadResultAny parse(::Puv::Input const& input) const;
+    MCNAPI ::Puv::LoadResultAny parse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const;
     // NOLINTEND
 
 public:

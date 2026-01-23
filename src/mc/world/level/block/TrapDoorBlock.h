@@ -18,12 +18,17 @@ class BlockSource;
 class Experiments;
 class IConstBlockSource;
 class ItemInstance;
+class Material;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class TrapDoorBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    TrapDoorBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -43,8 +48,6 @@ public:
 
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
-
-    virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
@@ -67,6 +70,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TrapDoorBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void toggleOpen(::BlockSource& region, ::Actor* user, ::BlockPos const& pos) const;
@@ -84,6 +89,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -113,8 +124,6 @@ public:
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
-
-    MCAPI bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 

@@ -24,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit FilterInputDefinition(int i);
-
     MCNAPI FilterInputDefinition(::FilterInput f, ::std::string const& d);
 
     MCNAPI ~FilterInputDefinition();
@@ -34,8 +32,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(int i);
-
     MCNAPI void* $ctor(::FilterInput f, ::std::string const& d);
     // NOLINTEND
 

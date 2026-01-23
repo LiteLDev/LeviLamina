@@ -29,31 +29,12 @@ MCNAPI void GeneratePacketMasks(
     uchar*                               packet_mask
 );
 
-MCNAPI void ImportantPacketProtection(
-    int                                  num_fec_for_imp_packets,
-    int                                  num_imp_packets,
-    int                                  num_mask_bytes,
-    uchar*                               packet_mask,
-    ::webrtc::internal::PacketMaskTable* mask_table
-);
-
 MCNAPI void
 InsertZeroColumns(int num_zeros, uchar* new_mask, int new_mask_bytes, int num_fec_packets, int new_bit_index);
 
 MCNAPI ::rtc::ArrayView<uchar const> LookUpInFecTable(uchar const* table, int media_packet_index, int fec_index);
 
 MCNAPI uint64 PacketMaskSize(uint64 num_sequence_numbers);
-
-MCNAPI int SetProtectionAllocation(int num_media_packets, int num_fec_packets, int num_imp_packets);
-
-MCNAPI void UnequalProtectionMask(
-    int                                  num_media_packets,
-    int                                  num_fec_packets,
-    int                                  num_imp_packets,
-    int                                  num_mask_bytes,
-    uchar*                               packet_mask,
-    ::webrtc::internal::PacketMaskTable* mask_table
-);
 // NOLINTEND
 
 } // namespace webrtc::internal

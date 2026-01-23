@@ -11,6 +11,7 @@
 // clang-format off
 class CollisionBoxComponent;
 class StrictEntityContext;
+class Vec2;
 struct AABBRelativeSizeUpdateComponent;
 struct AABBShapeComponent;
 struct AbsoluteSizeUpdateComponent;
@@ -24,12 +25,15 @@ struct OffsetsComponent;
 struct ShouldUpdateBoundingBoxRequestComponent;
 struct StateVectorComponent;
 struct SynchedActorDataComponent;
+namespace UpdateBoundingBox { struct SetSizeArgs; }
 namespace UpdateBoundingBox { struct SystemParams; }
 // clang-format on
 
 namespace UpdateBoundingBox {
 // functions
 // NOLINTBEGIN
+MCNAPI void baseSetSize(::Vec2 const& size, ::UpdateBoundingBox::SetSizeArgs& args);
+
 MCNAPI void onAABBRelativeSizeChanged(
     ::AABBRelativeSizeUpdateComponent const& relative,
     ::AABBShapeComponent const&              aabb,

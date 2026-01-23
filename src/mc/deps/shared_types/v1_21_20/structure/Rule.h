@@ -71,8 +71,6 @@ public:
 
     MCAPI ::SharedTypes::v1_21_20::JigsawStructure::Rule&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
-
-    MCAPI ~Rule();
     // NOLINTEND
 
 public:
@@ -81,12 +79,6 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

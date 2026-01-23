@@ -42,6 +42,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void AddBiomeVisited(::std::string biome);
+
     MCNAPI_C void ItemAcquired(::std::string const& itemName, ::std::string const& acquisitionMethod, int itemCount);
 
     MCNAPI_C void ItemEquipped(::std::string const& itemName, int slot, int enchantCount);

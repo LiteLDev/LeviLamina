@@ -20,6 +20,7 @@ class IConstBlockSource;
 struct BlockGraphicsModeChangeContext;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class BaseRailBlock : public ::BlockType {
@@ -54,8 +55,6 @@ public:
         MCAPI void connectTo(::BaseRailBlock::Rail& rail);
 
         MCAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
-
-        MCAPI bool hasNeighborRail(::BlockPos const& pos);
 
         MCAPI void place(int signalStrength, bool first);
 
@@ -104,9 +103,6 @@ public:
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
-
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
@@ -124,12 +120,16 @@ public:
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
+    virtual void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
     virtual ~BaseRailBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD void _onRedstoneUpdateBase(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
     MCFOLD void _updatePlacement(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -161,8 +161,6 @@ public:
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
-
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCFOLD bool $isRailBlock() const;
@@ -178,6 +176,8 @@ public:
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+
+    MCAPI void $_onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
 
     // NOLINTEND

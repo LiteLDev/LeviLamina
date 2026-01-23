@@ -15,7 +15,6 @@ public:
 
 public:
     // prevent constructor by default
-    PrintEvent& operator=(PrintEvent const&);
     PrintEvent(PrintEvent const&);
     PrintEvent();
 
@@ -23,6 +22,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ScriptDebuggerMessages::PrintEvent& operator=(::ScriptDebuggerMessages::PrintEvent&&);
+
+    MCNAPI ::ScriptDebuggerMessages::PrintEvent& operator=(::ScriptDebuggerMessages::PrintEvent const&);
 
     MCNAPI bool operator==(::ScriptDebuggerMessages::PrintEvent const&) const;
 

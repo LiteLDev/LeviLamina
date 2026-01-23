@@ -32,13 +32,9 @@ public:
 
     MCNAPI explicit ByteBufferReader(::rtc::ArrayView<uchar const> bytes);
 
-    MCNAPI void Construct(uchar const* bytes, uint64 len);
-
     MCNAPI bool Consume(uint64 size);
 
     MCNAPI bool ReadBytes(::rtc::ArrayView<uchar> val);
-
-    MCNAPI bool ReadBytes(uchar* val, uint64 len);
 
     MCNAPI bool ReadString(::std::string* val, uint64 len);
 

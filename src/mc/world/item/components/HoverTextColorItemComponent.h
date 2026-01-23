@@ -24,8 +24,6 @@ public:
 
 public:
     // prevent constructor by default
-    HoverTextColorItemComponent& operator=(HoverTextColorItemComponent const&);
-    HoverTextColorItemComponent(HoverTextColorItemComponent const&);
     HoverTextColorItemComponent();
 
 public:
@@ -39,9 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HoverTextColorItemComponent(::HoverTextColorItemComponent const&);
+
     MCAPI explicit HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
 
     MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent&&);
+
+    MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent const&);
     // NOLINTEND
 
 public:
@@ -59,6 +61,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::HoverTextColorItemComponent const&);
+
     MCAPI void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
     // NOLINTEND
 

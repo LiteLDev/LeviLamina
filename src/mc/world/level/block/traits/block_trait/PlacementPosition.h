@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/block/traits/block_trait/IGetPlacementBlockCallback.h"
 #include "mc/world/level/block/traits/block_trait/ITrait.h"
+#include "mc/world/level/block/traits/block_trait/PlacementCallbackOrder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -65,6 +66,8 @@ public:
             ::Vec3 const&
         ) const /*override*/;
 
+        virtual ::BlockTrait::PlacementCallbackOrder getCallbackOrder() const /*override*/;
+
         virtual ~UpdateBlockFaceGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
@@ -78,6 +81,8 @@ public:
             uchar face,
             ::Vec3 const&
         ) const;
+
+        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
 
 
         // NOLINTEND
@@ -101,6 +106,8 @@ public:
             ::Vec3 const& clickPos
         ) const /*override*/;
 
+        virtual ::BlockTrait::PlacementCallbackOrder getCallbackOrder() const /*override*/;
+
         virtual ~UpdateVerticalHalfGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
@@ -114,6 +121,8 @@ public:
             uchar         face,
             ::Vec3 const& clickPos
         ) const;
+
+        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
 
 
         // NOLINTEND
@@ -159,6 +168,8 @@ public:
     MCAPI static ::BlockTrait::PlacementPosition BlockFace();
 
     MCAPI static ::BlockTrait::PlacementPosition VerticalHalf();
+
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCAPI static ::std::string const& getName();
     // NOLINTEND

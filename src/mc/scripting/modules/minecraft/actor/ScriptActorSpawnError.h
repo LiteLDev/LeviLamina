@@ -6,6 +6,11 @@
 #include "mc/deps/scripting/runtime/BaseError.h"
 #include "mc/world/level/ActorValidationError.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ErrorBinding; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 struct ScriptActorSpawnError : public ::Scripting::BaseError {
@@ -19,6 +24,12 @@ public:
     MCAPI explicit ScriptActorSpawnError(::ActorValidationError error);
 
     MCAPI ~ScriptActorSpawnError();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:

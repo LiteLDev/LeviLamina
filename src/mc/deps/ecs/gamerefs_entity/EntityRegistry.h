@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/EntityId.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
+#include "mc/deps/game_refs/WeakRef.h"
 
 class EntityRegistry : public ::EnableGetWeakRef<::EntityRegistry>,
                        public ::std::enable_shared_from_this<::EntityRegistry> {
@@ -41,7 +42,14 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EntityRegistry(::std::string identifier);
 
+    MCNAPI ::WeakRef<::EntityRegistry> getWeakRef();
+
     MCNAPI void postViewEachCount(uint64 count);
+
+    MCNAPI_C ::std::pair<::std::function<void(::EntityId)>, ::std::function<void(::EntityId)>> setEntityInvokeCallbacks(
+        ::std::function<void(::EntityId)>&& preInvoke,
+        ::std::function<void(::EntityId)>&& postInvoke
+    );
 
     MCNAPI ~EntityRegistry();
     // NOLINTEND

@@ -30,4 +30,16 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::AssignSynchedActorDataComponent::Args>> mValuesToAssign;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AssignSynchedActorDataComponent& operator=(AssignSynchedActorDataComponent const&);
+    AssignSynchedActorDataComponent(AssignSynchedActorDataComponent const&);
+    AssignSynchedActorDataComponent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI_C ::AssignSynchedActorDataComponent& operator=(::AssignSynchedActorDataComponent&&);
+    // NOLINTEND
 };

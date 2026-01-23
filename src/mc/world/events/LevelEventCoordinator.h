@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelEventCoordinator() /*override*/;
+    virtual ~LevelEventCoordinator() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -67,12 +67,6 @@ public:
         bool                 isRaining,
         bool                 isLightning
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

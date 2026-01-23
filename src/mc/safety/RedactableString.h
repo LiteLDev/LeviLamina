@@ -32,6 +32,8 @@ public:
 
     MCAPI ::Bedrock::Result<void> erase(uint64 offset, uint64 count);
 
+    MCAPI ::Bedrock::Safety::RedactableString operator+(::std::string const& str) const;
+
     MCAPI ::Bedrock::Safety::RedactableString& operator+=(::std::string const& unredactedSuffix);
 
     MCAPI void operator+=(::Bedrock::Safety::RedactableString const& rhs);
@@ -41,6 +43,8 @@ public:
     MCAPI bool operator==(::Bedrock::Safety::RedactableString const& rhs) const;
 
     MCAPI void set(::std::string&& unredactedString);
+
+    MCAPI void set(::std::string const& unredactedString);
 
     MCAPI void setRedacted(::std::optional<::std::string>&& redactedString);
     // NOLINTEND

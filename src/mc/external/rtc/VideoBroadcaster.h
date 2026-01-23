@@ -5,13 +5,11 @@
 // auto generated inclusion list
 #include "mc/external/rtc/VideoSinkInterface.h"
 #include "mc/external/rtc/VideoSourceBase.h"
-#include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace rtc { struct VideoSinkWants; }
 namespace webrtc { class VideoFrame; }
-namespace webrtc { class VideoFrameBuffer; }
 // clang-format on
 
 namespace rtc {
@@ -52,8 +50,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& GetBlackFrameBuffer(int width, int height);
-
     MCNAPI void UpdateWants();
 
     MCNAPI VideoBroadcaster();

@@ -20,6 +20,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptSpawnEntityOptions& operator=(ScriptSpawnEntityOptions const&);
     ScriptSpawnEntityOptions(ScriptSpawnEntityOptions const&);
     ScriptSpawnEntityOptions();
 
@@ -28,9 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleMinecraft::ScriptSpawnEntityOptions&
     operator=(::ScriptModuleMinecraft::ScriptSpawnEntityOptions&&);
-
-    MCNAPI ::ScriptModuleMinecraft::ScriptSpawnEntityOptions&
-    operator=(::ScriptModuleMinecraft::ScriptSpawnEntityOptions const&);
 
     MCNAPI ~ScriptSpawnEntityOptions();
     // NOLINTEND

@@ -25,8 +25,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorAnimationController();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorAnimationController(
+        ::HashedString const& name,
+        ::SemVersion const&   version,
+        ::std::string const&  sourceFilePathWithExtension
+    );
+
     MCAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
 
     MCAPI void resolveTransitionStateIndices();
@@ -46,6 +56,13 @@ public:
     ) const;
 
     MCAPI ~ActorAnimationController();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::HashedString const& name, ::SemVersion const& version, ::std::string const& sourceFilePathWithExtension);
     // NOLINTEND
 
 public:

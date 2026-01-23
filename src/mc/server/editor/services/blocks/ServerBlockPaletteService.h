@@ -74,11 +74,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> _setActiveAndSyncPalette(::HashedString const& paletteId);
+
     MCNAPI ::Scripting::Result_deprecated<void> _updateAndSyncPaletteItem(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
+
+    MCNAPI_S ::Scripting::Result_deprecated<void> _updateAndSyncSelectedPaletteIndex(int index);
     // NOLINTEND
 
 public:

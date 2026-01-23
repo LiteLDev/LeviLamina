@@ -89,6 +89,10 @@ public:
 
     MCNAPI void forEachActiveGameplayUser(::std::function<bool(::EntityContext&)> callback) const;
 
+    MCNAPI void forEachActivePlayer(::std::function<bool(::Player&)> callback) const;
+
+    MCNAPI void forEachActivePlayerIncludeRemoved(::std::function<bool(::Player&)> callback) const;
+
     MCNAPI bool isGameplayUserSuspended(::WeakEntityRef weakEntityUser) const;
 
     MCNAPI void queueResumePlayer(::EntityContext const& playerEntity);

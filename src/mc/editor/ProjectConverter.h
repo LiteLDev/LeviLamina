@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/FileArchiver.h"
@@ -14,7 +13,6 @@
 class IContentKeyProvider;
 class ILevelListCache;
 class IResourcePackRepository;
-class LevelData;
 class Scheduler;
 namespace mce { class UUID; }
 // clang-format on
@@ -75,12 +73,10 @@ public:
     virtual bool shouldCopyWorldForConversion(::std::string const& levelId) const /*override*/;
 
     virtual void enqueueConvertExportingWorldTasks(
-        ::std::shared_ptr<::FileArchiver::ExportData>&                  exportData,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::Bedrock::Threading::Async<void>&                              prevTaskHandle,
-        ::std::function<void(::LevelData&)>                             preExportCallback,
-        ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
-            pathCallbacks
+        ::std::shared_ptr<::FileArchiver::ExportData>&                             exportData,
+        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>            progress,
+        ::Bedrock::Threading::Async<void>&                                         prevTaskHandle,
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers
     ) /*override*/;
     // NOLINTEND
 
@@ -144,12 +140,10 @@ public:
     MCNAPI bool $shouldCopyWorldForConversion(::std::string const& levelId) const;
 
     MCNAPI void $enqueueConvertExportingWorldTasks(
-        ::std::shared_ptr<::FileArchiver::ExportData>&                  exportData,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::Bedrock::Threading::Async<void>&                              prevTaskHandle,
-        ::std::function<void(::LevelData&)>                             preExportCallback,
-        ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
-            pathCallbacks
+        ::std::shared_ptr<::FileArchiver::ExportData>&                             exportData,
+        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>            progress,
+        ::Bedrock::Threading::Async<void>&                                         prevTaskHandle,
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers
     );
 
 

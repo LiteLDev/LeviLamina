@@ -16,7 +16,6 @@ public:
 
 public:
     // prevent constructor by default
-    AppendLoot& operator=(AppendLoot const&);
     AppendLoot(AppendLoot const&);
     AppendLoot();
 
@@ -25,6 +24,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot&&);
+
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot&
+    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot const&);
 
     MCAPI ~AppendLoot();
     // NOLINTEND

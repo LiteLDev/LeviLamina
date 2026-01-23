@@ -5,6 +5,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/ReadOnlyBinaryStream.h"
+#include "mc/deps/core/utility/buffer_span.h"
 #include "mc/platform/brstd/function_ref.h"
 
 class BinaryStream : public ::ReadOnlyBinaryStream {
@@ -132,12 +133,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C BinaryStream();
+
     MCAPI BinaryStream(::std::string& buffer, bool copyBuffer);
+
+    MCAPI_C void write(void const* origin, uint64 num);
+
+    MCAPI_C void writeRawBytes(::buffer_span<uchar> bytes, char const* docFieldName, char const* docFieldNotes);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI_C void* $ctor();
+
     MCAPI void* $ctor(::std::string& buffer, bool copyBuffer);
     // NOLINTEND
 

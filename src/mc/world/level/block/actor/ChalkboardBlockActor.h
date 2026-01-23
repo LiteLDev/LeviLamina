@@ -81,8 +81,16 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        CachedMessageData& operator=(CachedMessageData const&);
+        CachedMessageData(CachedMessageData const&);
+        CachedMessageData();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI_C ::ChalkboardBlockActor::CachedMessageData& operator=(::ChalkboardBlockActor::CachedMessageData&&);
+
         MCAPI_C ~CachedMessageData();
         // NOLINTEND
 
@@ -158,8 +166,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChalkboardBlockActor(::BlockPos const& pos);
 
-    MCAPI_S ::std::vector<::BlockPos> const& _getSiblings(::BlockSource& region);
-
     MCAPI ::ChalkboardBlockActor* getBaseChalkboard(::BlockSource& region) const;
 
     MCAPI ::std::string const& getText() const;
@@ -168,6 +174,8 @@ public:
     setCachedMessage(::ChalkboardBlockActor::CachedMessageData cachedMessage);
 
     MCAPI void setText(::std::string const& text);
+
+    MCAPI_C void setText(::std::string const& text, ::TextObjectRoot&& root);
 
     MCAPI void validate(::BlockSource& region);
     // NOLINTEND

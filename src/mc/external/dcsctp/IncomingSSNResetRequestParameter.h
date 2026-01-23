@@ -35,19 +35,13 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~IncomingSSNResetRequestParameter() /*override*/;
+    virtual ~IncomingSSNResetRequestParameter() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::optional<::dcsctp::IncomingSSNResetRequestParameter> Parse(::rtc::ArrayView<uchar const> data);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

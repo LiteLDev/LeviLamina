@@ -20,7 +20,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~PersonaAnimationDefinition();
+    MCNAPI_C PersonaAnimationDefinition(::PersonaAnimationDefinition&&);
+
+    MCNAPI ~PersonaAnimationDefinition();
     // NOLINTEND
 
 public:
@@ -30,8 +32,14 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::PersonaAnimationDefinition&&);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

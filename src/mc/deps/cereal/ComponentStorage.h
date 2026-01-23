@@ -11,7 +11,7 @@ class ComponentStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk417288;
+    ::ll::UntypedStorage<8, 56> mUnk8928d6;
     // NOLINTEND
 
 public:
@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::entt::basic_any<16, 8> getComponent(::std::string_view name);
+    MCNAPI ::entt::meta_any getComponent(::std::string_view name);
 
     MCNAPI bool hasComponent(::std::string_view name) const;
 

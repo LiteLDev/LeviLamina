@@ -56,7 +56,6 @@ class ActorRuntimeIDManager;
 class ActorSoundIdentifier;
 class AutomationBehaviorTreeGroup;
 class AutonomousActorManager;
-class BaseLightTextureImageBuilder;
 class BehaviorFactory;
 class BiomeComponentFactory;
 class BiomeManager;
@@ -86,10 +85,9 @@ class Command;
 class CommandOrigin;
 class CompoundTag;
 class ContainerRegistry;
+class DensityFunctionRegistry;
 class Dimension;
 class DimensionConversionData;
-class DimensionDefinitionGroup;
-class DimensionFactory;
 class DimensionManager;
 class DisplayActorManager;
 class EducationSettingsManager;
@@ -108,6 +106,9 @@ class HashedString;
 class HitResult;
 class HitResultWrapper;
 class IConstBlockSource;
+class IContainerRegistryAccess;
+class IContainerRegistryTracker;
+class IDynamicContainerSerialization;
 class IEntityRegistryOwner;
 class ILevelRandom;
 class IMinecraftEventing;
@@ -179,7 +180,7 @@ class Scheduler;
 class Scoreboard;
 class ScriptDeferredEventCoordinator;
 class ScriptingEventCoordinator;
-class SerializedSkin;
+class SerializedSkinRef;
 class ServerLevelEventCoordinator;
 class ServerNetworkEventCoordinator;
 class ServerParticleManager;
@@ -191,14 +192,12 @@ class StartGamePacket;
 class StrictEntityContext;
 class StructureManager;
 class StructureSpawnRegistry;
-class SubChunkManager;
 class SubChunkPacket;
 class SubChunkRequestManager;
 class SurfaceBuilderRegistry;
 class TagCacheManager;
 class TaskGroup;
 class TempEPtrManager;
-class TickDeathSettingsManager;
 class TickDeltaTimeManager;
 class TickTimeManager;
 class TickingAreaList;
@@ -206,7 +205,6 @@ class TickingAreasManager;
 class TradeTables;
 class TrimMaterialRegistry;
 class TrimPatternRegistry;
-class TrustedSkinHelper;
 class UniqueIDManager;
 class UserEntityIdentifierComponent;
 class VanillaActorEventListenerManager;
@@ -220,15 +218,15 @@ struct AdventureSettings;
 struct Bounds;
 struct BreakingItemParticleData;
 struct DerivedDimensionArguments;
+struct DimensionFactoryAndManager;
+struct LevelArguments;
 struct LevelTagIDType;
 struct LevelTagSetIDType;
-struct NetworkPermissions;
 struct PlayerMovementSettings;
 struct PlayerSleepStatus;
 struct ResolvedItemIconInfo;
 struct ScreenshotOptions;
 struct Tick;
-struct TickDeathSettings;
 namespace PlayerCapabilities { struct ISharedController; }
 namespace PositionTrackingDB { class PositionTrackingDBClient; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
@@ -238,9 +236,12 @@ namespace cereal { struct ReflectionCtx; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
+class BaseLightTextureImageBuilder;
 struct ArmorTrimUnloader;
 struct CameraRegistry;
 struct Particle;
+struct SubChunkManager;
+struct TrustedSkinHelper;
 // clang-format on
 
 class ServerLevel;
@@ -322,14 +323,14 @@ public:
         mJigsawStructureRegistry;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::StructureSpawnRegistry>>>
         mStructureSpawnRegistry;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::DimensionFactory>>> mDimensionFactory;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::DimensionManager>>> mDimensionManager;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                                         mLevelEntity;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner>>              mEntityRegistryOwner;
-    ::ll::TypedStorage<8, 16, ::OwnerPtr<::PauseManager>>                                         mPauseManager;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::EntitySystemsManager>>>                mEntitySystemsManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureRegistry>>                                mFeatureRegistry;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureTypeFactory>>                             mFeatureTypeFactory;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::DimensionFactoryAndManager>>>
+                                                                                     mDimensionFactoryAndManager;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                            mLevelEntity;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner>> mEntityRegistryOwner;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::PauseManager>>                            mPauseManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::EntitySystemsManager>>>   mEntitySystemsManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureRegistry>>                   mFeatureRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureTypeFactory>>                mFeatureTypeFactory;
     ::ll::TypedStorage<8, 64, ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&>>
         mLightTextureImageBuilderFactory;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::EducationSettingsManager>>>
@@ -392,8 +393,6 @@ public:
         mChunkTickOffsetManager;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PlayerMovementSettingsManager>>>
         mPlayerMovementSettingsManager;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::TickDeathSettingsManager>>>
-        mTickDeathSettingsManager;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PlayerAbilitiesManager>>>
         mPlayerAbilitiesManager;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PlayerPermissionsManager>>>
@@ -410,13 +409,14 @@ public:
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::LevelBlockDestroyer>>>
         mLevelBlockDestroyer;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::TickDeltaTimeManager>>>
-                                                                                    mTickDeltaTimeManager;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::TickTimeManager>>>       mTickTimeManager;
-    ::ll::TypedStorage<8, 16, ::OwnerPtr<::LevelChunkSaveManager>>                  mLevelChunkSaveManager;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::WeatherManager>>>        mWeatherManager;
-    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                   mHandleLowMemoryOnTick;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mLowMemorySubscription;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry>> mShapeRegistry;
+                                                                                      mTickDeltaTimeManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::TickTimeManager>>>         mTickTimeManager;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::LevelChunkSaveManager>>                    mLevelChunkSaveManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::WeatherManager>>>          mWeatherManager;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                     mHandleLowMemoryOnTick;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                        mLowMemorySubscription;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry>>   mShapeRegistry;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::DensityFunctionRegistry>>> mDensityFunctionRegistry;
     // NOLINTEND
 
 public:
@@ -601,6 +601,15 @@ public:
 
     virtual ::ArmorTrimUnloader* getArmorTrimUnloader();
 
+    virtual ::gsl::not_null<::StackRefResult<::IContainerRegistryAccess>> getContainerRegistryAccess() const
+        /*override*/;
+
+    virtual ::gsl::not_null<::StackRefResult<::IContainerRegistryTracker>> getContainerRegistryTracker() const
+        /*override*/;
+
+    virtual ::gsl::not_null<::StackRefResult<::IDynamicContainerSerialization>> getDynamicContainerSerialization() const
+        /*override*/;
+
     virtual ::VoxelShapes::VoxelShapeRegistry const* getShapeRegistry() const /*override*/;
 
     virtual ::BiomeRegistry const& getBiomeRegistry() const /*override*/;
@@ -748,25 +757,25 @@ public:
 
     virtual bool getLANBroadcast() const /*override*/;
 
-    virtual void setXBLBroadcastIntent(::Social::GamePublishSetting) /*override*/;
+    virtual void setXBLBroadcastIntent(::Social::GamePublishSetting broadcastMode) /*override*/;
 
     virtual ::Social::GamePublishSetting getXBLBroadcastIntent() const /*override*/;
 
     virtual bool hasXBLBroadcastIntent() const /*override*/;
 
-    virtual void setXBLBroadcastMode(::Social::GamePublishSetting) /*override*/;
+    virtual void setXBLBroadcastMode(::Social::GamePublishSetting broadcastMode) /*override*/;
 
     virtual ::Social::GamePublishSetting getXBLBroadcastMode() const /*override*/;
 
     virtual bool hasXBLBroadcast() const /*override*/;
 
-    virtual void setPlatformBroadcastIntent(::Social::GamePublishSetting) /*override*/;
+    virtual void setPlatformBroadcastIntent(::Social::GamePublishSetting broadcastMode) /*override*/;
 
     virtual ::Social::GamePublishSetting getPlatformBroadcastIntent() const /*override*/;
 
     virtual bool hasPlatformBroadcastIntent() const /*override*/;
 
-    virtual void setPlatformBroadcastMode(::Social::GamePublishSetting) /*override*/;
+    virtual void setPlatformBroadcastMode(::Social::GamePublishSetting broadcastMode) /*override*/;
 
     virtual ::Social::GamePublishSetting getPlatformBroadcastMode() const /*override*/;
 
@@ -873,9 +882,9 @@ public:
 
     virtual ::LevelEventCoordinator& getLevelEventCoordinator() /*override*/;
 
-    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data) /*override*/;
+    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) /*override*/;
 
-    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data) /*override*/;
+    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> getLevelEventManager() /*override*/;
 
@@ -886,31 +895,23 @@ public:
     virtual void handleStopMusicEvent() /*override*/;
 
     virtual void broadcastLevelEvent(
-        ::SharedTypes::Legacy::LevelEvent      type,
-        ::Vec3 const&                          pos,
-        int                                    data,
-        ::UserEntityIdentifierComponent const* userIdentifier
+        ::SharedTypes::Legacy::LevelEvent,
+        ::Vec3 const&,
+        int,
+        ::UserEntityIdentifierComponent const*
     ) /*override*/;
 
     virtual void broadcastLevelEvent(
-        ::SharedTypes::Legacy::LevelEvent      type,
-        ::CompoundTag const&                   tag,
-        ::UserEntityIdentifierComponent const* userIdentifier
+        ::SharedTypes::Legacy::LevelEvent,
+        ::CompoundTag const&,
+        ::UserEntityIdentifierComponent const*
     ) /*override*/;
 
-    virtual void broadcastLocalEvent(
-        ::BlockSource&                    region,
-        ::SharedTypes::Legacy::LevelEvent type,
-        ::Vec3 const&                     pos,
-        int                               data
-    ) /*override*/;
+    virtual void
+    broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) /*override*/;
 
-    virtual void broadcastLocalEvent(
-        ::BlockSource&                    region,
-        ::SharedTypes::Legacy::LevelEvent type,
-        ::Vec3 const&                     pos,
-        ::Block const&                    block
-    ) /*override*/;
+    virtual void
+    broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, ::Block const&) /*override*/;
 
     virtual void broadcastSoundEvent(
         ::BlockSource&                         region,
@@ -1205,12 +1206,8 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager const>
     getPlayerMovementSettingsManager() const /*override*/;
 
-    virtual ::TickDeathSettings const& getTickDeathSettings() const /*override*/;
-
-    virtual void setTickDeathSettings(::TickDeathSettings const& settings) /*override*/;
-
     virtual bool canUseSkin(
-        ::SerializedSkin const&    skin,
+        ::SerializedSkinRef const& skin,
         ::NetworkIdentifier const& networkIdentifier,
         ::ActorUniqueID const&     playerId
     ) const /*override*/;
@@ -1262,6 +1259,8 @@ public:
     virtual ::StackRefResult<::PauseManager const> getPauseManager() const /*override*/;
 
     virtual bool isClientSide() const /*override*/;
+
+    virtual ::SubClientId getSubClientId() const /*override*/;
 
     virtual ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& getPlayerList() const /*override*/;
 
@@ -1395,9 +1394,11 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const /*override*/;
 
+    virtual void clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId) /*override*/;
+
     virtual void digestServerBlockProperties(::StartGamePacket const& packet) /*override*/;
 
-    virtual ::MolangPackSettingsCache* getMolangPackSettingsCache() /*override*/;
+    virtual ::MolangPackSettingsCache const* getMolangPackSettingsCache() const /*override*/;
 
     virtual ::PlayerDeathManager* _getPlayerDeathManager() /*override*/;
 
@@ -1411,28 +1412,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Level(
-        ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
-        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
-        ::Bedrock::UniqueOwnerPointer<::LevelStorage>                levelStorage,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelData>                   levelData,
-        ::IMinecraftEventing&                                        eventing,
-        bool                                                         isClientSide,
-        ::SubClientId                                                subClientId,
-        ::Scheduler&                                                 callbackContext,
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>            structureManager,
-        ::ResourcePackManager&                                       addOnResourcePackManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner,
-        ::WeakRef<::EntityContext>                                   levelEntity,
-        ::ItemRegistryRef                                            itemRegistry,
-        ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry>           blockTypeRegistry,
-        bool                                                         clientSideChunkGenerationEnabled,
-        bool                                                         blockNetworkIdsAreHashes,
-        ::NetworkPermissions const&                                  networkPermissions,
-        ::std::optional<::DimensionDefinitionGroup>                  dimensionDefinitionGroup,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>           validator,
-        ::std::unique_ptr<::ParticleProvider>                        particles
-    );
+    MCAPI explicit Level(::LevelArguments&& args);
 
     MCAPI ::Bedrock::UniqueOwnerPointer<::PhotoManager> _createPhotoManager();
 
@@ -1446,7 +1426,11 @@ public:
 
     MCAPI void _initializeLevelChunkEventManager();
 
+    MCAPI void _initializeLevelChunkSaveManager();
+
     MCAPI void _initializeLevelEventManager();
+
+    MCAPI void _initializeLevelStorageManager();
 
     MCAPI void _initializeParticleProvider();
 
@@ -1509,12 +1493,16 @@ public:
 
     MCAPI void _onSendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
 
+    MCAPI void _setIsTearingDown();
+
     MCAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
     addEntityWithError(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 
     MCAPI void earlyShutdownMainthread();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorManager> getActorManager();
+
+    MCAPI_S ::Bedrock::NotNullNonOwnerPtr<::EventCoordinatorManager> getEventCoordinatorManager();
 
     MCAPI_C ::NpcEventCoordinator& getNpcEventCoordinator();
 
@@ -1542,28 +1530,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
-        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
-        ::Bedrock::UniqueOwnerPointer<::LevelStorage>                levelStorage,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelData>                   levelData,
-        ::IMinecraftEventing&                                        eventing,
-        bool                                                         isClientSide,
-        ::SubClientId                                                subClientId,
-        ::Scheduler&                                                 callbackContext,
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>            structureManager,
-        ::ResourcePackManager&                                       addOnResourcePackManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner,
-        ::WeakRef<::EntityContext>                                   levelEntity,
-        ::ItemRegistryRef                                            itemRegistry,
-        ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry>           blockTypeRegistry,
-        bool                                                         clientSideChunkGenerationEnabled,
-        bool                                                         blockNetworkIdsAreHashes,
-        ::NetworkPermissions const&                                  networkPermissions,
-        ::std::optional<::DimensionDefinitionGroup>                  dimensionDefinitionGroup,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>           validator,
-        ::std::unique_ptr<::ParticleProvider>                        particles
-    );
+    MCAPI void* $ctor(::LevelArguments&& args);
     // NOLINTEND
 
 public:
@@ -1740,6 +1707,12 @@ public:
 
     MCFOLD ::ArmorTrimUnloader* $getArmorTrimUnloader();
 
+    MCAPI ::gsl::not_null<::StackRefResult<::IContainerRegistryAccess>> $getContainerRegistryAccess() const;
+
+    MCAPI ::gsl::not_null<::StackRefResult<::IContainerRegistryTracker>> $getContainerRegistryTracker() const;
+
+    MCAPI ::gsl::not_null<::StackRefResult<::IDynamicContainerSerialization>> $getDynamicContainerSerialization() const;
+
     MCAPI ::VoxelShapes::VoxelShapeRegistry const* $getShapeRegistry() const;
 
     MCFOLD ::BiomeRegistry const& $getBiomeRegistry() const;
@@ -1861,8 +1834,6 @@ public:
     MCAPI void $setDefaultGameType(::GameType gameType);
 #endif
 
-    MCAPI ::GameType $getDefaultGameType() const;
-
     MCAPI void $setDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
 
     MCAPI void $setMultiplayerGameIntent(bool multiplayerGame);
@@ -1881,11 +1852,27 @@ public:
 
     MCAPI bool $getLANBroadcast() const;
 
+    MCAPI void $setXBLBroadcastIntent(::Social::GamePublishSetting broadcastMode);
+
+    MCAPI ::Social::GamePublishSetting $getXBLBroadcastIntent() const;
+
     MCAPI bool $hasXBLBroadcastIntent() const;
+
+    MCAPI void $setXBLBroadcastMode(::Social::GamePublishSetting broadcastMode);
+
+    MCAPI ::Social::GamePublishSetting $getXBLBroadcastMode() const;
 
     MCAPI bool $hasXBLBroadcast() const;
 
+    MCAPI void $setPlatformBroadcastIntent(::Social::GamePublishSetting broadcastMode);
+
+    MCAPI ::Social::GamePublishSetting $getPlatformBroadcastIntent() const;
+
     MCAPI bool $hasPlatformBroadcastIntent() const;
+
+    MCAPI void $setPlatformBroadcastMode(::Social::GamePublishSetting broadcastMode);
+
+    MCAPI ::Social::GamePublishSetting $getPlatformBroadcastMode() const;
 
     MCAPI bool $hasPlatformBroadcast() const;
 
@@ -1927,11 +1914,12 @@ public:
 
     MCAPI ::std::shared_ptr<void*> $requestTimedStorageDeferment();
 
-    MCFOLD ::TickingAreasManager& $getTickingAreasMgr();
+    MCAPI ::TickingAreasManager& $getTickingAreasMgr();
 
     MCAPI void
     $addTickingAreaList(::DimensionType dimensionId, ::std::shared_ptr<::TickingAreaList> const& tickingAreas);
 
+#ifdef LL_PLAT_S
     MCAPI void $playSound(
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -1942,9 +1930,11 @@ public:
 
     MCAPI void
     $playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, float const volume, float const pitch);
+#endif
 
     MCAPI void $playSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
 
+#ifdef LL_PLAT_S
     MCAPI void $playSound(
         ::IConstBlockSource const&             region,
         ::SharedTypes::Legacy::LevelSoundEvent type,
@@ -1962,6 +1952,7 @@ public:
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
         bool                                   isGlobal
     );
+#endif
 
     MCAPI ::PlayerEventCoordinator& $getRemotePlayerEventCoordinator();
 
@@ -1983,12 +1974,6 @@ public:
 
     MCAPI ::LevelEventCoordinator& $getLevelEventCoordinator();
 
-#ifdef LL_PLAT_S
-    MCAPI void $handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
-
-    MCAPI void $handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
-#endif
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> $getLevelEventManager();
 
     MCAPI void $handleStopSoundEvent(::std::string const& name);
@@ -1998,30 +1983,6 @@ public:
     MCAPI void $handleStopMusicEvent();
 
 #ifdef LL_PLAT_S
-    MCAPI void $broadcastLevelEvent(
-        ::SharedTypes::Legacy::LevelEvent      type,
-        ::Vec3 const&                          pos,
-        int                                    data,
-        ::UserEntityIdentifierComponent const* userIdentifier
-    );
-
-    MCAPI void $broadcastLevelEvent(
-        ::SharedTypes::Legacy::LevelEvent      type,
-        ::CompoundTag const&                   tag,
-        ::UserEntityIdentifierComponent const* userIdentifier
-    );
-
-    MCAPI void
-    $broadcastLocalEvent(::BlockSource& region, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
-
-    MCAPI void $broadcastLocalEvent(
-        ::BlockSource&                    region,
-        ::SharedTypes::Legacy::LevelEvent type,
-        ::Vec3 const&                     pos,
-        ::Block const&                    block
-    );
-#endif
-
     MCAPI void $broadcastSoundEvent(
         ::BlockSource&                         region,
         ::SharedTypes::Legacy::LevelSoundEvent type,
@@ -2048,6 +2009,7 @@ public:
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
         bool                                   isGlobal
     );
+#endif
 
     MCAPI void $broadcastActorEvent(::Actor& actor, ::ActorEvent eventId, int data) const;
 
@@ -2139,7 +2101,6 @@ public:
 
     MCAPI void $suspendAndSave();
 
-#ifdef LL_PLAT_S
     MCAPI void $sendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
 
     MCAPI ::Particle* $addParticle(
@@ -2150,7 +2111,6 @@ public:
         ::CompoundTag const* tag,
         bool                 isGlobal
     );
-#endif
 
     MCAPI void
     $spawnParticleEffect(::std::string const& effectName, ::Vec3 const& spawnLocation, ::Dimension* dimension);
@@ -2245,7 +2205,7 @@ public:
 
     MCAPI void $setLevelId(::std::string LevelId);
 
-    MCFOLD ::TaskGroup& $getSyncTasksGroup();
+    MCAPI ::TaskGroup& $getSyncTasksGroup();
 
     MCFOLD ::TaskGroup& $getIOTasksGroup();
 
@@ -2309,12 +2269,8 @@ public:
     MCFOLD ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager const>
     $getPlayerMovementSettingsManager() const;
 
-    MCAPI ::TickDeathSettings const& $getTickDeathSettings() const;
-
-    MCAPI void $setTickDeathSettings(::TickDeathSettings const& settings);
-
     MCFOLD bool $canUseSkin(
-        ::SerializedSkin const&    skin,
+        ::SerializedSkinRef const& skin,
         ::NetworkIdentifier const& networkIdentifier,
         ::ActorUniqueID const&     playerId
     ) const;
@@ -2366,6 +2322,8 @@ public:
     MCFOLD ::StackRefResult<::PauseManager const> $getPauseManager() const;
 
     MCAPI bool $isClientSide() const;
+
+    MCAPI ::SubClientId $getSubClientId() const;
 
     MCAPI ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& $getPlayerList() const;
 
@@ -2475,7 +2433,7 @@ public:
 
     MCFOLD ::Recipes& $getRecipes() const;
 
-    MCFOLD ::BlockReducer* $getBlockReducer() const;
+    MCAPI ::BlockReducer* $getBlockReducer() const;
 
     MCFOLD ::std::weak_ptr<::TrimPatternRegistry const> $getTrimPatternRegistry() const;
 
@@ -2497,9 +2455,11 @@ public:
 
     MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
 
+    MCFOLD void $clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId);
+
     MCAPI void $digestServerBlockProperties(::StartGamePacket const& packet);
 
-    MCAPI ::MolangPackSettingsCache* $getMolangPackSettingsCache();
+    MCAPI ::MolangPackSettingsCache const* $getMolangPackSettingsCache() const;
 
     MCFOLD ::PlayerDeathManager* $_getPlayerDeathManager();
 
@@ -2508,6 +2468,10 @@ public:
     MCFOLD ::cereal::ReflectionCtx& $_cerealContext();
 
     MCAPI void $_onLowMemory();
+
+#ifdef LL_PLAT_C
+    MCAPI ::GameType $getDefaultGameType() const;
+#endif
 
 
     // NOLINTEND

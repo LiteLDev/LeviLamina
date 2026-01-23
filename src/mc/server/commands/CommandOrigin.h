@@ -73,7 +73,7 @@ public:
 
     virtual bool hasTellPerms() const;
 
-    virtual bool canUseAbility(::AbilitiesIndex) const;
+    virtual bool canUseAbility(::AbilitiesIndex ability) const;
 
     virtual bool isWorldBuilder() const;
 
@@ -154,6 +154,10 @@ public:
 
     MCAPI bool $hasTellPerms() const;
 
+#ifdef LL_PLAT_S
+    MCFOLD bool $canUseAbility(::AbilitiesIndex ability) const;
+#endif
+
     MCAPI bool $isWorldBuilder() const;
 
     MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
@@ -182,7 +186,7 @@ public:
 
     MCFOLD bool $requiresValidLevel() const;
 
-    MCFOLD void $_setUUID(::mce::UUID const& uuid);
+    MCAPI void $_setUUID(::mce::UUID const& uuid);
 
 
     // NOLINTEND

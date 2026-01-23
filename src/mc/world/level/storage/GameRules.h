@@ -18,6 +18,7 @@ class HashedString;
 struct GameRuleId;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace cereal { struct NullType; }
 // clang-format on
 
 class GameRules : public ::Bedrock::EnableNonOwnerReferences {
@@ -108,13 +109,13 @@ public:
     MCAPI void _registerRules();
 
     MCAPI ::std::unique_ptr<::GameRulesChangedPacket> _setGameRule(
-        ::GameRule*                                        gameRule,
-        ::std::variant<::std::monostate, bool, int, float> value,
-        ::GameRule::Type                                   type,
-        bool                                               returnPacket,
-        bool*                                              pValueValidated,
-        bool*                                              pValueChanged,
-        ::GameRule::ValidationError*                       errorOutput
+        ::GameRule*                                          gameRule,
+        ::std::variant<::cereal::NullType, bool, int, float> value,
+        ::GameRule::Type                                     type,
+        bool                                                 returnPacket,
+        bool*                                                pValueValidated,
+        bool*                                                pValueChanged,
+        ::GameRule::ValidationError*                         errorOutput
     );
 
     MCAPI ::std::unique_ptr<::GameRulesChangedPacket> createAllGameRulesPacket() const;

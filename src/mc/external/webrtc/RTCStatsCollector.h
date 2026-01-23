@@ -116,49 +116,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI explicit RequestInfo(::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback);
-
-        MCNAPI RequestInfo(
-            ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>       selector,
-            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
-        );
-
-        MCNAPI RequestInfo(
-            ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>         selector,
-            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
-        );
-
-        MCNAPI RequestInfo(
-            ::webrtc::RTCStatsCollector::RequestInfo::FilterMode         filter_mode,
-            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback,
-            ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>         sender_selector,
-            ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>       receiver_selector
-        );
-
         MCNAPI ~RequestInfo();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback);
-
-        MCNAPI void* $ctor(
-            ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>       selector,
-            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
-        );
-
-        MCNAPI void* $ctor(
-            ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>         selector,
-            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback
-        );
-
-        MCNAPI void* $ctor(
-            ::webrtc::RTCStatsCollector::RequestInfo::FilterMode         filter_mode,
-            ::webrtc::scoped_refptr<::webrtc::RTCStatsCollectorCallback> callback,
-            ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>         sender_selector,
-            ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>       receiver_selector
-        );
         // NOLINTEND
 
     public:
@@ -183,23 +141,8 @@ public:
     public:
         // prevent constructor by default
         RtpTransceiverStatsInfo& operator=(RtpTransceiverStatsInfo const&);
+        RtpTransceiverStatsInfo(RtpTransceiverStatsInfo const&);
         RtpTransceiverStatsInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI RtpTransceiverStatsInfo(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo&&);
-
-        MCNAPI RtpTransceiverStatsInfo(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo&&);
-
-        MCNAPI void* $ctor(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&);
-        // NOLINTEND
     };
 
 public:
@@ -290,18 +233,10 @@ public:
         ::std::map<::std::string, ::cricket::TransportStats> const& transport_stats_by_name
     );
 
-    MCNAPI void ProduceAudioPlayoutStats_s(::webrtc::Timestamp timestamp, ::webrtc::RTCStatsReport* report) const;
-
     MCNAPI void ProduceAudioRTPStreamStats_n(
         ::webrtc::Timestamp                                         timestamp,
         ::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const& stats,
         ::webrtc::RTCStatsReport*                                   report
-    ) const;
-
-    MCNAPI void ProduceCertificateStats_n(
-        ::webrtc::Timestamp                                                                 timestamp,
-        ::std::map<::std::string, ::webrtc::RTCStatsCollector::CertificateStatsPair> const& transport_cert_stats,
-        ::webrtc::RTCStatsReport*                                                           report
     ) const;
 
     MCNAPI void ProduceDataChannelStats_n(::webrtc::Timestamp timestamp, ::webrtc::RTCStatsReport* report) const;
@@ -320,16 +255,6 @@ public:
         ::std::optional<::std::string> sctp_transport_name
     );
 
-    MCNAPI void ProducePartialResultsOnSignalingThread(::webrtc::Timestamp timestamp);
-
-    MCNAPI void ProducePeerConnectionStats_s(::webrtc::Timestamp timestamp, ::webrtc::RTCStatsReport* report) const;
-
-    MCNAPI void ProduceRTPStreamStats_n(
-        ::webrtc::Timestamp                                                        timestamp,
-        ::std::vector<::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo> const& transceiver_stats_infos,
-        ::webrtc::RTCStatsReport*                                                  report
-    ) const;
-
     MCNAPI void ProduceTransportStats_n(
         ::webrtc::Timestamp                                                                 timestamp,
         ::std::map<::std::string, ::cricket::TransportStats> const&                         transport_stats_by_name,
@@ -343,8 +268,6 @@ public:
         ::webrtc::RTCStatsReport*                                   report
     ) const;
 
-    MCNAPI RTCStatsCollector(::webrtc::PeerConnectionInternal* pc, int64 cache_lifetime_us);
-
     MCNAPI void WaitForPendingRequest();
     // NOLINTEND
 
@@ -353,12 +276,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::RTCStatsCollector>
     Create(::webrtc::PeerConnectionInternal* pc, int64 cache_lifetime_us);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::PeerConnectionInternal* pc, int64 cache_lifetime_us);
     // NOLINTEND
 
 public:

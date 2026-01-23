@@ -64,9 +64,9 @@ public:
 
     MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCNAPI void reloadComponent(::Actor& actor);
-
     MCNAPI void restockAllRecipes(::Actor& owner);
+
+    MCNAPI_C void setDataFromPacket(::UpdateTradePacket const& packet);
 
     MCNAPI void updateTradeTier(::Actor& owner);
 

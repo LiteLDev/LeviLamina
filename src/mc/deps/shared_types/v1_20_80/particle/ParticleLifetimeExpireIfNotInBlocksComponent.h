@@ -26,7 +26,12 @@ public:
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~ParticleLifetimeExpireIfNotInBlocksComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ParticleLifetimeExpireIfNotInBlocksComponent() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

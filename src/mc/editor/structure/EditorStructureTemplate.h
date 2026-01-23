@@ -20,7 +20,6 @@ class CompoundTag;
 class IUnknownBlockTypeRegistry;
 class StructureSettings;
 class Vec3;
-namespace Editor { class RelativeVolumeListBlockVolume; }
 // clang-format on
 
 namespace Editor {
@@ -91,16 +90,12 @@ public:
     MCNAPI void editorFillFromWorld(
         ::BlockSource&                                 region,
         ::StructureSettings const&                     structureSettings,
-        ::Editor::RelativeVolumeListBlockVolume const& volume
-    );
-
-    MCNAPI void editorFillFromWorld(
-        ::BlockSource&                                 region,
-        ::StructureSettings const&                     structureSettings,
         ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
         ::BlockPos const&                              posMin,
         ::BlockPos const&                              span
     );
+
+    MCNAPI_C ::Editor::EditorStructureTemplate& operator=(::Editor::EditorStructureTemplate&&);
 
     MCNAPI void placeStructureTemplateInWorldForEditor(
         ::BlockSource&             region,

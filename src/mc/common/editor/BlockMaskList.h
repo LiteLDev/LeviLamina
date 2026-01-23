@@ -6,6 +6,7 @@
 // clang-format off
 class Block;
 class HashedString;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::BlockMask {
@@ -37,6 +38,12 @@ public:
     MCNAPI ::std::vector<::std::string> toStringList() const;
 
     MCNAPI ~BlockMaskList();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

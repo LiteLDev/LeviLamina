@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FlexfecSender() /*override*/;
+    virtual ~FlexfecSender() /*override*/ = default;
 
     virtual ::webrtc::VideoFecGenerator::FecType GetFecType() const /*override*/;
 
@@ -97,12 +97,6 @@ public:
         ::webrtc::RtpState const*                          rtp_state,
         ::webrtc::Clock*                                   clock
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

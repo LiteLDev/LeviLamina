@@ -12,7 +12,6 @@ class EntitySystems;
 class Experiments;
 class ILevel;
 struct PlayerMovementSettings;
-struct TickDeathSettings;
 namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 // clang-format on
 
@@ -23,7 +22,6 @@ MCAPI ::VanillaSystemsRegistration::RegistrationOptions getDefault(
     bool                            isClientSide,
     bool                            connectedToThirdPartyServer,
     ::PlayerMovementSettings const& movementSettings,
-    ::TickDeathSettings const&      tickDeathSettings,
     ::BaseGameVersion const&        baseGameVersion,
     ::Experiments const&            experiments
 );
@@ -138,8 +136,8 @@ MCAPI void registerVanillaServerRuntimeInitializers(
 );
 
 MCAPI void registerVanillaServerTickingSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::Bedrock::NotNullNonOwnerPtr<::ILevel const>            level,
+    ::EntitySystems& systemRegistry,
+    ::Bedrock::NotNullNonOwnerPtr<::ILevel const>,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 

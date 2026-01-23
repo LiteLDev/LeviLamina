@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/input/JoystickState.h"
 #include "mc/deps/input/TouchControl.h"
 #include "mc/deps/input/TouchMoveAndTurnControlState.h"
 
@@ -22,11 +23,16 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mCondition;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mIsLeftHanded;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mJoystickAlwaysVisible;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mAltJoystickAlwaysVisible;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mAltStickEnabled;
     ::ll::TypedStorage<8, 64, ::std::function<float()>>                          mThumbstickOpacity;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mStaticJoystick;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mStaticAltJoystick;
     ::ll::TypedStorage<8, 64, ::std::function<::RectangleArea()>>                mDefaultMoveStickArea;
+    ::ll::TypedStorage<8, 64, ::std::function<::RectangleArea()>>                mDefaultAltStickArea;
     ::ll::TypedStorage<8, 64, ::std::function<::RectangleArea()>>                mHotbarArea;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mJoystickVisibleWhenUnused;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mAltJoystickVisibleWhenUnused;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mShowActionButton;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mSprintOnMovement;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           mIsInputSprinting;
@@ -37,7 +43,7 @@ public:
     ::ll::TypedStorage<4, 4, uint const>                                         mTapButtonId;
     ::ll::TypedStorage<4, 4, uint const>                                         mHoldButtonId;
     ::ll::TypedStorage<4, 4, uint const>                                         mSprintButtonId;
-    ::ll::TypedStorage<8, 120, ::TouchMoveAndTurnControlState>                   mState;
+    ::ll::TypedStorage<8, 152, ::TouchMoveAndTurnControlState>                   mState;
     // NOLINTEND
 
 public:
@@ -65,15 +71,76 @@ public:
 
     MCAPI bool _isClientCurrentActivePointer(int processedPointerId) const;
 
+    MCAPI void _renderJoystick(
+        ::InputRenderContext&  context,
+        ::JoystickState        state,
+        bool                   initialized,
+        float                  x,
+        float                  y,
+        float                  x0,
+        float                  y0,
+        ::RectangleArea const& moveArea,
+        ::RectangleArea const& defaultArea,
+        float                  radius,
+        bool                   staticJoystick,
+        bool                   joystickVisibleWhenUnused,
+        bool                   joystickAlwaysVisible
+    ) const;
+
     MCAPI void _setPreviousActionPointer(int processedPointerId);
 
     MCAPI bool _shouldUpdateActivePointer(int processedPointerId) const;
 
+    MCAPI void _tickAltTurn(
+        ::InputEventQueue&     eventQueue,
+        ::TouchPointResults&   touchPointResults,
+        ::RectangleArea const& altTurnArea,
+        ::RectangleArea const& defaultAltTurnArea,
+        float                  maxAltTurnZone,
+        bool                   staticJoystick,
+        bool                   joystickAlwaysVisible,
+        bool                   joystickVisibleWhenUnused
+    );
+
+    MCAPI void _tickHold(
+        ::InputEventQueue&     eventQueue,
+        ::TouchPointResults&   touchPointResults,
+        int                    yAxisInversionFactor,
+        ::RectangleArea const& moveArea,
+        ::RectangleArea const& turnArea,
+        ::RectangleArea const& altTurnArea,
+        ::RectangleArea const& defaultMoveArea,
+        ::RectangleArea const& defaultAltTurnArea,
+        float                  maxMovementZone,
+        bool                   staticJoystick,
+        bool                   staticAltJoystick,
+        bool                   altStickEnabled
+    );
+
+    MCAPI void _tickMove(
+        ::InputEventQueue&     eventQueue,
+        ::TouchPointResults&   touchPointResults,
+        ::RectangleArea const& moveArea,
+        ::RectangleArea const& defaultMoveArea,
+        float                  maxMovementZone,
+        bool                   staticJoystick,
+        bool                   joystickAlwaysVisible,
+        bool                   joystickVisibleWhenUnused
+    );
+
+    MCAPI void _tickTurn(
+        ::InputEventQueue&     eventQueue,
+        ::TouchPointResults&   touchPointResults,
+        int                    yAxisInversionFactor,
+        ::RectangleArea const& turnArea,
+        float                  maxMovementZone
+    );
+
     MCAPI bool calculateTouchDelta(
         float  x,
         float  y,
-        float& x0,
-        float& y0,
+        float  x0,
+        float  y0,
         float& dx,
         float& dy,
         float  deadZone,
@@ -81,20 +148,17 @@ public:
         bool   autoSprint
     );
 
-    MCAPI void calculateTouchDeltaFromLastFrame(
-        float  x,
-        float  y,
-        float& prevX,
-        float& prevY,
-        float& dx,
-        float& dy,
-        int    yAxisInversionFactor
-    );
-
     MCAPI void calibrateMoveDelta(float& dx, float& dy);
 
-    MCAPI void
-    drawJoystick(::InputRenderContext& context, float x, float y, float x0, float y0, float joystickRadius) const;
+    MCAPI void drawJoystick(
+        ::InputRenderContext& context,
+        ::JoystickState       joystickState,
+        float                 x,
+        float                 y,
+        float                 x0,
+        float                 y0,
+        float                 joystickRadius
+    ) const;
     // NOLINTEND
 
 public:

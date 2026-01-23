@@ -29,20 +29,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI IceTransportStats(::cricket::IceTransportStats const&);
-
-    MCNAPI ~IceTransportStats();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::cricket::IceTransportStats const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

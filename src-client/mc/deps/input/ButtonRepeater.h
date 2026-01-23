@@ -32,8 +32,6 @@ public:
     // NOLINTBEGIN
     MCAPI ButtonRepeater();
 
-    MCAPI void clearControllerButtonStates(int controllerId);
-
     MCAPI void tick(::InputEventQueue& queue);
     // NOLINTEND
 

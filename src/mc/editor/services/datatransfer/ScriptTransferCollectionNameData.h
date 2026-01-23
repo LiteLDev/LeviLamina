@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptTransferCollectionNameData& operator=(ScriptTransferCollectionNameData const&);
     ScriptTransferCollectionNameData(ScriptTransferCollectionNameData const&);
     ScriptTransferCollectionNameData();
 
@@ -28,6 +27,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::ScriptModule::ScriptTransferCollectionNameData&
     operator=(::Editor::ScriptModule::ScriptTransferCollectionNameData&&);
+
+    MCNAPI ::Editor::ScriptModule::ScriptTransferCollectionNameData&
+    operator=(::Editor::ScriptModule::ScriptTransferCollectionNameData const&);
 
     MCNAPI ~ScriptTransferCollectionNameData();
     // NOLINTEND

@@ -16,8 +16,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RandomBlockStateMatch(RandomBlockStateMatch const&);
+    RandomBlockStateMatch();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockStateMatch&
+    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockStateMatch const&);
+
     MCAPI ~RandomBlockStateMatch();
     // NOLINTEND
 

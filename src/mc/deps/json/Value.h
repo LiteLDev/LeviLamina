@@ -318,6 +318,8 @@ public:
 
     MCAPI Value(::std::string const& value);
 
+    MCAPI ::std::vector<::Json::Value*>* _copyArray(::std::vector<::Json::Value*> const& values);
+
     MCAPI void _insert(::Json::Value::CZString&& key, ::Json::Value&& value, bool overwrite);
 
     MCAPI ::Json::Value& _resolveReference(char const* key);

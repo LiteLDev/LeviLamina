@@ -6,6 +6,11 @@
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/VersionSelectType.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
 
 struct NativeModuleDependency {
@@ -17,7 +22,8 @@ public:
         8,
         32,
         ::std::variant<::SharedTypes::v3_0_0::PackManifestDefinition::VersionSelectType, ::SemVersion>>
-        mVersion;
+                                   mVersion;
+    ::ll::TypedStorage<1, 1, bool> mOptional;
     // NOLINTEND
 
 public:
@@ -35,6 +41,12 @@ public:
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
 
     MCAPI ~NativeModuleDependency();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

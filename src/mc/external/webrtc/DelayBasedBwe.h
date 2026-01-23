@@ -87,7 +87,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DelayBasedBwe();
+    virtual ~DelayBasedBwe() = default;
     // NOLINTEND
 
 public:
@@ -141,12 +141,6 @@ public:
         ::webrtc::RtcEventLog*           event_log,
         ::webrtc::NetworkStatePredictor* network_state_predictor
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

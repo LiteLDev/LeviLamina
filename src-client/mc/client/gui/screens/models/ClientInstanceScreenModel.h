@@ -14,10 +14,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class CommandOrigin;
 class ItemStack;
 class NpcEventListener;
 class ResourceLocation;
@@ -26,6 +26,7 @@ class StructureSettings;
 class StructureTemplate;
 class Vec3;
 struct ActorUniqueID;
+struct BookScreenManager;
 struct GuiMessage;
 struct MinecartCommandBlockManager;
 struct MinecraftglTFExporter;
@@ -80,6 +81,8 @@ public:
 
     MCNAPI void clearTitleMessages();
 
+    MCNAPI ::std::unique_ptr<::BookScreenManager> createBookScreenManager(int bookSlot, ::BlockActor* lectern);
+
     MCNAPI ::std::unique_ptr<::MinecartCommandBlockManager>
     createCommandBlockManager(bool isMinecart, ::BlockPos pos, ::ActorUniqueID entityUniqueID);
 
@@ -95,9 +98,13 @@ public:
 
     MCNAPI ::ChatMessageRestrictions executeCommand(::std::string const& commandLine);
 
+    MCNAPI bool exportStructureBlock(::std::string const& structureName, ::Core::Path const& filePath);
+
     MCNAPI bool findStructure(::StructureEditorData& structureData);
 
     MCNAPI bool forceAllowEating() const;
+
+    MCNAPI ::Block const& getBlockAt(::BlockPos const& blockPos) const;
 
     MCNAPI ::BlockActor* getBlockEntity(::BlockPos const& pos, ::BlockActorType blockEntityType);
 
@@ -111,11 +118,15 @@ public:
 
     MCNAPI ::std::string const getLastFilteredChatMessage();
 
+    MCNAPI int getNumberOfDaysPlayed() const;
+
     MCNAPI ::ItemStack const& getOffhandSlot() const;
 
     MCNAPI int getPlayerArmorValue() const;
 
-    MCNAPI ::std::unique_ptr<::CommandOrigin> getPlayerCommandOrigin() const;
+    MCNAPI int getPlayerLevel();
+
+    MCNAPI ::Vec3 getPlayerPosition() const;
 
     MCNAPI ::BlockSource* getPlayerRegion() const;
 
@@ -188,6 +199,8 @@ public:
     MCNAPI void sendBlockEntityUpdatePacket(::BlockPos const& pos);
 
     MCNAPI ::ChatMessageRestrictions sendChatMessage(::std::string const& message);
+
+    MCNAPI void sendCommandBlockUpdatePacket(::ActorUniqueID const& entityId);
 
     MCNAPI void sendCommandBlockUpdatePacket(::BlockPos const& pos);
 

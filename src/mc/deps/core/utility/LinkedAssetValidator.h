@@ -98,12 +98,20 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI AssetCollection();
+
+        MCNAPI ~AssetCollection();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

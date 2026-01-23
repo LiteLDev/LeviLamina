@@ -127,7 +127,7 @@ public:
 
     virtual bool hasRemovedSubscribers() const;
 
-    virtual ::ItemStack const& getItem(int slot) const = 0;
+    virtual ::ItemStack const& getItem(int index) const = 0;
 
     virtual bool hasRoomForItem(::ItemStack const& item) const;
 

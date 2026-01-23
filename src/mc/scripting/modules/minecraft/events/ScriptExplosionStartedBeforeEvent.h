@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptExplosionStartedAfterEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptBlock; }
+struct ExplosionStartedEvent;
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -22,10 +22,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptExplosionStartedBeforeEvent();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setImpactedBlocks(
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> const& blocks
+    MCAPI ScriptExplosionStartedBeforeEvent(
+        ::ExplosionStartedEvent const&        eventData,
+        ::Scripting::WeakLifetimeScope const& scope
     );
     // NOLINTEND
 
@@ -33,6 +38,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ExplosionStartedEvent const& eventData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

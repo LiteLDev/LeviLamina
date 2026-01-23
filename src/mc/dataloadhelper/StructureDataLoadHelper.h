@@ -62,7 +62,7 @@ public:
 
     virtual ::Rotation loadRotation(::Rotation rotation) /*override*/;
 
-    virtual ::Mirror loadMirror(::Mirror mirror) /*override*/;
+    virtual ::Mirror loadMirror(::Mirror) /*override*/;
 
     virtual ::ActorUniqueID loadActorUniqueID(::ActorUniqueID id) /*override*/;
 
@@ -140,10 +140,6 @@ public:
     MCNAPI ::Direction::Type $loadDirection(::Direction::Type direction);
 
     MCNAPI ::Rotation $loadRotation(::Rotation rotation);
-
-#ifdef LL_PLAT_S
-    MCNAPI ::Mirror $loadMirror(::Mirror mirror);
-#endif
 
     MCNAPI ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
 

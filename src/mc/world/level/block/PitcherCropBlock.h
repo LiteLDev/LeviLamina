@@ -32,6 +32,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PitcherCropBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
@@ -79,9 +83,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PitcherCropBlock(::std::string const& nameId, int id);
+
     MCAPI bool _grow(::BlockSource& region, ::BlockPos const& pos, bool instantGrowth) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -114,10 +126,8 @@ public:
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-#ifdef LL_PLAT_S
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
-#endif
 
     MCFOLD void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 

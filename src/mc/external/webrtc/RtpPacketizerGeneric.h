@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtpPacketizerGeneric() /*override*/;
+    virtual ~RtpPacketizerGeneric() /*override*/ = default;
 
     virtual uint64 NumPackets() const /*override*/;
 
@@ -43,8 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void BuildHeader(::webrtc::RTPVideoHeader const& rtp_video_header);
-
     MCNAPI
     RtpPacketizerGeneric(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits);
 
@@ -65,12 +63,6 @@ public:
         ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
         ::webrtc::RTPVideoHeader const&            rtp_video_header
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

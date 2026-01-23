@@ -61,16 +61,6 @@ MCNAPI void singleExitingPassengerRemoval(
     ::EntityModifier<::RemovePassengersComponent, ::PendingRemovePassengersComponent> modifier
 );
 
-MCNAPI void singleImmediatePassengerRemoval(
-    ::StrictEntityContext const& passengerEntity,
-    ::PassengerComponent const&  passengerComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>
-        destroyedVehiclePassengers,
-    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::SwitchingVehiclesFlagComponent>>
-                                                  switchingVehiclePassengers,
-    ::EntityModifier<::RemovePassengersComponent> modifier
-);
-
 MCNAPI void singleTickExitingPassengerRemoval(
     ::StrictEntityContext const& passengerEntity,
     ::ViewT<

@@ -73,6 +73,8 @@ public:
         ::std::string const&                keyPrefix
     );
 
+    MCAPI bool get(::std::string const& id, ::std::string& out, ::std::vector<::std::string> const& params) const;
+
     MCAPI void loadFromPack(
         ::std::string const&                keyPrefix,
         ::PackAccessStrategy const&         accessStrategy,
@@ -98,7 +100,7 @@ public:
 
     MCAPI_C static ::Core::PathBuffer<::std::string> getLangFilePath(::std::string const& langCode);
 
-    MCAPI_C static ::std::string getLanguageCode(::std::string const& fullCode);
+    MCAPI static ::std::string getLanguageCode(::std::string const& fullCode);
     // NOLINTEND
 
 public:

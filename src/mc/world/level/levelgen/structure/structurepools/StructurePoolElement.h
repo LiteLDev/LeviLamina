@@ -300,14 +300,6 @@ public:
             ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> const>>
             processors
     );
-
-    MCAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
-    single(
-        ::std::string_view                                                   location,
-        ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*    blockRules,
-        ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* blockTagRules,
-        ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*    actorRules
-    );
     // NOLINTEND
 
 public:

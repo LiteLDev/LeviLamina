@@ -60,18 +60,13 @@ public:
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual ~StructureTemplateDataRequestPacket() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~StructureTemplateDataRequestPacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateDataRequestPacket();
+    MCAPI_S StructureTemplateDataRequestPacket();
 
     MCAPI_C explicit StructureTemplateDataRequestPacket(::StructureTemplateDataRequestPacketPayload payload);
     // NOLINTEND
@@ -79,7 +74,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI_S void* $ctor();
 
     MCAPI_C void* $ctor(::StructureTemplateDataRequestPacketPayload payload);
     // NOLINTEND

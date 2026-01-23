@@ -100,12 +100,6 @@ public:
 
     MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packDirty(::EntityContext& entity);
 
-    MCAPI_C void queueAssignment(
-        ::std::vector<::std::unique_ptr<::DataItem>> const& items,
-        ::Actor&                                            actor,
-        ::std::optional<uint64>                             targetFrame
-    );
-
     MCAPI ~SynchedActorData();
     // NOLINTEND
 

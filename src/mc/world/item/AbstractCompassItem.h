@@ -17,14 +17,14 @@ struct ResolvedItemIconInfo;
 class AbstractCompassItem : public ::Item {
 public:
     // AbstractCompassItem inner types define
-    using GetSpriteCalculatorFunction = ::CompassSpriteCalculator (*)(::Mob&);
+    using GetSpriteCalculatorFunction = ::CompassSpriteCalculator& (*)(::Mob&);
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                   mAtlasWidth;
-    ::ll::TypedStorage<4, 4, int>                                   mAtlasHeight;
-    ::ll::TypedStorage<8, 8, ::CompassSpriteCalculator (*)(::Mob&)> mGetSpriteCalculator;
+    ::ll::TypedStorage<4, 4, int>                                    mAtlasWidth;
+    ::ll::TypedStorage<4, 4, int>                                    mAtlasHeight;
+    ::ll::TypedStorage<8, 8, ::CompassSpriteCalculator& (*)(::Mob&)> mGetSpriteCalculator;
     // NOLINTEND
 
 public:

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/scripting/modules/minecraft/actor/ScriptEntityRefType.h"
 
@@ -12,6 +13,8 @@
 // clang-format off
 class Actor;
 class ServerLevel;
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -29,7 +32,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptActorData& operator=(ScriptActorData const&);
     ScriptActorData();
 
 public:
@@ -39,7 +41,12 @@ public:
 
     MCAPI explicit ScriptActorData(::Actor const& actor);
 
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>
+    getPlayer(::Scripting::WeakLifetimeScope const& scope) const;
+
     MCAPI ::ScriptModuleMinecraft::ScriptActorData& operator=(::ScriptModuleMinecraft::ScriptActorData&&);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptActorData& operator=(::ScriptModuleMinecraft::ScriptActorData const&);
 
     MCAPI ~ScriptActorData();
     // NOLINTEND

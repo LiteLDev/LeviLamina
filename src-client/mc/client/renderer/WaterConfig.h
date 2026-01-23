@@ -14,10 +14,10 @@
 class HashedString;
 class IMinecraftEventing;
 class LinkedAssetValidator;
-class LocalPlayer;
 class ResourcePackManager;
 class SemVersion;
 class SemVersionConstant;
+struct LocalPlayer;
 namespace Editor::Services { struct ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
@@ -57,12 +57,11 @@ public:
             public:
                 // member variables
                 // NOLINTBEGIN
-                ::ll::UntypedStorage<8, 32> mUnkcaeae4;
+                ::ll::UntypedStorage<8, 32> mUnk69d0de;
                 // NOLINTEND
 
             public:
                 // prevent constructor by default
-                WaterDescription& operator=(WaterDescription const&);
                 WaterDescription(WaterDescription const&);
                 WaterDescription();
 
@@ -70,9 +69,18 @@ public:
                 // member functions
                 // NOLINTBEGIN
                 MCNAPI ::WaterConfig::WaterConfigSettingsV0::WaterSettings::WaterDescription&
+                operator=(::WaterConfig::WaterConfigSettingsV0::WaterSettings::WaterDescription const&);
+
+                MCNAPI ::WaterConfig::WaterConfigSettingsV0::WaterSettings::WaterDescription&
                 operator=(::WaterConfig::WaterConfigSettingsV0::WaterSettings::WaterDescription&&);
 
                 MCNAPI ~WaterDescription();
+                // NOLINTEND
+
+            public:
+                // static functions
+                // NOLINTBEGIN
+                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
                 // NOLINTEND
 
             public:
@@ -144,7 +152,6 @@ public:
 
         public:
             // prevent constructor by default
-            WaterSettings& operator=(WaterSettings const&);
             WaterSettings(WaterSettings const&);
             WaterSettings();
 
@@ -153,6 +160,15 @@ public:
             // NOLINTBEGIN
             MCNAPI ::WaterConfig::WaterConfigSettingsV0::WaterSettings&
             operator=(::WaterConfig::WaterConfigSettingsV0::WaterSettings&&);
+
+            MCNAPI ::WaterConfig::WaterConfigSettingsV0::WaterSettings&
+            operator=(::WaterConfig::WaterConfigSettingsV0::WaterSettings const&);
+            // NOLINTEND
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
         };
 
@@ -222,10 +238,6 @@ public:
             // NOLINTEND
 
         public:
-            // prevent constructor by default
-            WaterSettings& operator=(WaterSettings const&);
-
-        public:
             // member functions
             // NOLINTBEGIN
             MCNAPI WaterSettings();
@@ -235,7 +247,8 @@ public:
             MCNAPI ::WaterConfig::WaterConfigSettingsV1::WaterSettings&
             operator=(::WaterConfig::WaterConfigSettingsV1::WaterSettings&&);
 
-            MCNAPI ~WaterSettings();
+            MCNAPI ::WaterConfig::WaterConfigSettingsV1::WaterSettings&
+            operator=(::WaterConfig::WaterConfigSettingsV1::WaterSettings const&);
             // NOLINTEND
 
         public:
@@ -244,12 +257,6 @@ public:
             MCNAPI void* $ctor();
 
             MCNAPI void* $ctor(::WaterConfig::WaterConfigSettingsV1::WaterSettings const&);
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -315,8 +322,6 @@ public:
 
             MCNAPI ::WaterConfig::WaterConfigSettingsV2::WaterSettings&
             operator=(::WaterConfig::WaterConfigSettingsV2::WaterSettings const&);
-
-            MCNAPI ~WaterSettings();
             // NOLINTEND
 
         public:
@@ -325,12 +330,6 @@ public:
             MCNAPI void* $ctor();
 
             MCNAPI void* $ctor(::WaterConfig::WaterConfigSettingsV2::WaterSettings const&);
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
             // NOLINTEND
         };
 

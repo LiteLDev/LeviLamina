@@ -20,7 +20,6 @@ class CompoundTag;
 class Dimension;
 class Level;
 class NetworkIdentifier;
-class Player;
 class Vec2;
 class Vec3;
 struct CommandOriginIdentity;
@@ -67,7 +66,7 @@ public:
 
     virtual ::std::optional<::Vec3> getCursorHitPos() const /*override*/;
 
-    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
+    virtual bool canUseAbility(::AbilitiesIndex ability) const /*override*/;
 
     virtual bool isSelectorExpansionAllowed() const /*override*/;
 
@@ -82,18 +81,6 @@ public:
     virtual ::CompoundTag serialize() const /*override*/;
 
     virtual bool isValid() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PlayerCommandOrigin(::Player& origin);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& origin);
     // NOLINTEND
 
 public:
@@ -124,7 +111,7 @@ public:
     MCAPI ::std::optional<::Vec3> $getCursorHitPos() const;
 
 #ifdef LL_PLAT_S
-    MCAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
+    MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
 #endif
 
     MCFOLD bool $isSelectorExpansionAllowed() const;

@@ -126,18 +126,6 @@ public:
         Receive& operator=(Receive const&);
         Receive(Receive const&);
         Receive();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~Receive();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:

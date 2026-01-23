@@ -22,11 +22,12 @@ public:
 public:
     // prevent constructor by default
     WorldGenContext& operator=(WorldGenContext const&);
-    WorldGenContext();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WorldGenContext();
+
     MCAPI WorldGenContext(::WorldGenContext const&);
 
     MCAPI ~WorldGenContext();
@@ -35,6 +36,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::WorldGenContext const&);
     // NOLINTEND
 

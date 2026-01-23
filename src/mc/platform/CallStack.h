@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/diagnostics/LogAreaID.h"
-#include "mc/diagnostics/LogLevel.h"
+#include "mc/platform/diagnostics/LogAreaID.h"
+#include "mc/platform/diagnostics/LogLevel.h"
 
 namespace Bedrock {
 
@@ -56,14 +56,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI FrameWithContext(::Bedrock::CallStack::FrameWithContext&&);
+
         MCAPI
         FrameWithContext(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
+
         MCAPI ~FrameWithContext();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
+        MCAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&&);
+
         MCAPI void*
         $ctor(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
         // NOLINTEND
@@ -84,7 +89,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CallStack(::Bedrock::CallStack&&);
+
     MCAPI explicit CallStack(::Bedrock::CallStack::FrameWithContext&& frame);
+
+    MCAPI_C ::Bedrock::CallStack& operator=(::Bedrock::CallStack&&);
 
     MCAPI ~CallStack();
     // NOLINTEND
@@ -92,6 +101,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD void* $ctor(::Bedrock::CallStack&&);
+
     MCAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&& frame);
     // NOLINTEND
 

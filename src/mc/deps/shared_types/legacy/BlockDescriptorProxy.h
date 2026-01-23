@@ -17,8 +17,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockDescriptorProxy& operator=(BlockDescriptorProxy const&);
+    BlockDescriptorProxy(BlockDescriptorProxy const&);
+    BlockDescriptorProxy();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::SharedTypes::Legacy::BlockDescriptorSerializer::BlockDescriptorProxy&
+    operator=(::SharedTypes::Legacy::BlockDescriptorSerializer::BlockDescriptorProxy&&);
+
     MCAPI ~BlockDescriptorProxy();
     // NOLINTEND
 

@@ -286,8 +286,6 @@ public:
     MCAPI ::DBStorage::PendingWriteResult
     _readPendingWrite(::std::string const& key, ::DBHelpers::Category category) const;
 
-    MCAPI void _removeCorruptedMark() const;
-
     MCAPI void _scheduleNextAutoCompaction();
 
     MCAPI bool _suspendAndPerformSaveAction(
@@ -319,26 +317,24 @@ public:
 
     MCFOLD ::Core::LevelStorageResult $getState() const;
 
+    MCAPI ::std::unique_ptr<::ChunkSource>
+    $createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion);
+
     MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
 
-#ifdef LL_PLAT_S
     MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
 
     MCAPI bool $hasKey(::std::string_view key, ::DBHelpers::Category category) const;
-#endif
 
     MCAPI bool $loadLevelData(::LevelData& data);
 
     MCAPI void $saveLevelData(::LevelData const& levelData);
 
-#ifdef LL_PLAT_S
     MCAPI ::Bedrock::Threading::Async<void>
     $saveData(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
-#endif
 
     MCAPI ::Bedrock::Threading::Async<void> $saveData(::LevelStorageWriteBatch const& batch);
 
-#ifdef LL_PLAT_S
     MCAPI ::Bedrock::Threading::Async<void> $deleteData(::std::string const& key, ::DBHelpers::Category category);
 
     MCAPI bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
@@ -348,7 +344,6 @@ public:
         ::DBHelpers::Category                                                category,
         ::std::function<void(::std::string_view, ::std::string_view)> const& callback
     ) const;
-#endif
 
     MCFOLD ::Core::LevelStorageResult $getLevelStorageState() const;
 
@@ -382,11 +377,6 @@ public:
     MCAPI void $setCompactionCallback(::std::function<void(::CompactionStatus)> callback);
 
     MCAPI void $setCriticalSyncSaveCallback(::std::function<void()> callback);
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::unique_ptr<::ChunkSource>
-    $createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion);
-#endif
 
 
     // NOLINTEND

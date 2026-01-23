@@ -60,10 +60,8 @@ public:
     MCAPI ::Puv::LoadResult<::ActorSpawnRuleData>
     _readJson(::std::string&& data, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
 
-    MCAPI void readResourceFiles(
-        ::ResourcePackManager&                                     resourcePackManager,
-        ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap
-    );
+    MCAPI void
+    readResourceFiles(::ResourcePackManager&, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
     // NOLINTEND
 
 public:

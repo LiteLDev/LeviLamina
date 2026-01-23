@@ -27,6 +27,8 @@ MCAPI ::std::set<::Block const*> generateSculkReplaceableBlocksWorldgen();
 
 MCAPI void
 requestChargeEffects(::IBlockWorldGenAPI&, ::BlockSource* region, ::BlockPos const& pos, int charge, int facingData);
+
+MCAPI void requestChargePopEffects(::IBlockWorldGenAPI&, ::BlockSource* region, ::BlockPos const& pos);
 // NOLINTEND
 
 } // namespace SculkUtils

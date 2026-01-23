@@ -60,15 +60,6 @@ MCNAPI void _removeSpinAttack(
     ::EntityModifier<::RiptideTridentSpinAttackComponent, ::SpinAttackResultsComponent> modifier
 );
 
-MCNAPI void _stopSpinAttack(
-    ::StrictEntityContext const&                                entity,
-    ::ActorDataFlagComponent&                                   actorData,
-    ::ActorDataDirtyFlagsComponent&                             actorDataDirtyFlags,
-    ::DamageNearbyMobsComponent&                                damageNearbyMobs,
-    ::PlayerActionComponent&                                    playerAction,
-    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
-);
-
 MCNAPI void _tickDamageNearbyMobs(
     ::entt::type_list<::Include<::PlayerComponent>>,
     ::ActorEquipmentComponent const&                      actorEquipment,

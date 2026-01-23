@@ -28,8 +28,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

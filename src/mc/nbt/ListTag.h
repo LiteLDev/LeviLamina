@@ -44,7 +44,7 @@ public:
 
     virtual ::std::string toString() const /*override*/;
 
-    virtual void print(::std::string const& prefix_, ::PrintStream& out) const /*override*/;
+    virtual void print(::std::string const& prefix, ::PrintStream& out) const /*override*/;
 
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
 
@@ -69,8 +69,12 @@ public:
     MCAPI ::Tag* get(int index) const;
 
     MCAPI float getFloat(int index) const;
+    // NOLINTEND
 
-    MCFOLD int size() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -90,7 +94,7 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI void $print(::std::string const& prefix_, ::PrintStream& out) const;
+    MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 

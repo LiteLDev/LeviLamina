@@ -28,13 +28,16 @@ public:
 
 public:
     // prevent constructor by default
-    GameTestReport& operator=(GameTestReport const&);
     GameTestReport(GameTestReport const&);
     GameTestReport();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::GameTestReport& operator=(::GameTestReport const&);
+
+    MCNAPI ::GameTestReport& operator=(::GameTestReport&&);
+
     MCNAPI ~GameTestReport();
     // NOLINTEND
 

@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class LiteralType : int {};
+enum class LiteralType : uchar {};

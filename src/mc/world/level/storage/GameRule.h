@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/schema/dynamic/NullType.h"
+
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
@@ -46,17 +49,17 @@ public:
 
     using TagDataNotFoundCallback = ::std::function<void(::GameRule&, ::BaseGameVersion const&)>;
 
-    using ValidateValueCallback =
-        ::std::function<bool(::std::variant<::std::monostate, bool, int, float> const&, ::GameRule::ValidationError*)>;
+    using ValidateValueCallback = ::std::function<
+        bool(::std::variant<::cereal::NullType, bool, int, float> const&, ::GameRule::ValidationError*)>;
 
-    using Value = ::std::variant<::std::monostate, bool, int, float>;
+    using Value = ::std::variant<::cereal::NullType, bool, int, float>;
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                                          mShouldSave;
     ::ll::TypedStorage<1, 1, ::GameRule::Type>                                              mType;
-    ::ll::TypedStorage<4, 8, ::std::variant<::std::monostate, bool, int, float>>            mValue;
+    ::ll::TypedStorage<4, 8, ::std::variant<::cereal::NullType, bool, int, float>>          mValue;
     ::ll::TypedStorage<8, 32, ::std::string>                                                mName;
     ::ll::TypedStorage<1, 1, bool>                                                          mAllowUseInCommand;
     ::ll::TypedStorage<1, 1, bool>                                                          mAllowUseInScripting;
@@ -67,7 +70,8 @@ public:
     ::ll::TypedStorage<
         8,
         64,
-        ::std::function<bool(::std::variant<::std::monostate, bool, int, float> const&, ::GameRule::ValidationError*)>>
+        ::std::function<
+            bool(::std::variant<::cereal::NullType, bool, int, float> const&, ::GameRule::ValidationError*)>>
         mValidateValueCallback;
     // NOLINTEND
 
@@ -83,6 +87,12 @@ public:
     MCAPI GameRule(::GameRule const&);
 
     MCAPI GameRule(::std::string const& name, bool canBeModifiedByPlayer);
+
+    MCAPI bool _set(
+        ::std::variant<::cereal::NullType, bool, int, float> const& v,
+        bool*                                                       pValidated,
+        ::GameRule::ValidationError*                                errorOutput
+    );
 
     MCAPI ::GameRule& _setDefaultValue(bool b);
 
@@ -102,16 +112,10 @@ public:
 
     MCAPI void resetType(::GameRule::Type type);
 
-    MCAPI bool setBool(bool value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
-
-    MCAPI bool setFloat(float value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
-
-    MCAPI bool setInt(int value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
-
     MCAPI ::GameRule& setTagDataNotFoundCallback(::std::function<void(::GameRule&, ::BaseGameVersion const&)> cb);
 
     MCAPI ::GameRule& setValidateValueCallback(
-        ::std::function<bool(::std::variant<::std::monostate, bool, int, float> const&, ::GameRule::ValidationError*)>
+        ::std::function<bool(::std::variant<::cereal::NullType, bool, int, float> const&, ::GameRule::ValidationError*)>
             cb
     );
 

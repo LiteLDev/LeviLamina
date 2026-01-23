@@ -184,8 +184,6 @@ public:
 
     MCNAPI void ProcessThreadPoolCallback(::OS::ThreadPoolActionStatus& status);
 
-    MCNAPI void ScheduleTermination(::TaskQueuePortImpl::TerminationEntry* term);
-
     MCNAPI void SubmitPendingCallback();
 
     MCNAPI TaskQueuePortImpl();

@@ -31,6 +31,17 @@ MCNAPI void queueRequest(
     ::EntityModifier<::ExecuteEntityEventRequestComponent>                                   modifier
 );
 
+MCNAPI void singleTick(
+    ::StrictEntityContext const& passenger,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::StopRidingRequestComponent>,
+        ::Exclude<::ActorIsBeingDestroyedFlagComponent>,
+        ::PassengerComponent const>                                                          passengerView,
+    ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::RideableComponent const> vehicleView,
+    ::EntityModifier<::ExecuteEntityEventRequestComponent>                                   modifier
+);
+
 MCNAPI void tick(
     ::ViewT<
         ::StrictEntityContext,

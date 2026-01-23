@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
-
 class Matrix {
 public:
     // member variables
@@ -41,23 +36,21 @@ public:
 
     MCAPI_C void rotate(float a, float x, float y, float z);
 
-    MCAPI_C void rotateXYZ(::Vec3 const& rotation);
-
     MCAPI_C void scale(float x);
-
-    MCAPI_C void scale(float x, float y, float z);
-
-    MCAPI_C void setOrtho(float left, float right, float bottom, float top, float zNear, float zFar);
-
-    MCAPI_C void setPerspective(float fovyRadian, float aspect, float zNear, float zFar);
 
     MCAPI_C void transform3(::glm::vec3& outVec) const;
 
     MCAPI void transform3(::glm::vec3& outVec, float& outW) const;
 
-    MCAPI void translate(::glm::vec3 const& t);
+    MCAPI_C void translate(::glm::vec3 const& t);
 
-    MCAPI_C void translate(float x, float y, float z);
+    MCAPI void translate(float x, float y, float z);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static ::Matrix makeOrtho(float left, float right, float bottom, float top, float zNear, float zFar);
     // NOLINTEND
 
 public:

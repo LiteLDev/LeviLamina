@@ -14,7 +14,10 @@ class ContentIdentity;
 class IFileAccess;
 class ResourceLocation;
 struct ZipPackArgs;
+namespace Bedrock::Resources { class PreloadedPathHandle; }
+namespace Bedrock::Resources::Archive { class Reader; }
 namespace Core { class Path; }
+namespace Core { class UnzipFile; }
 // clang-format on
 
 class ZipPackAccessStrategy : public ::PackAccessStrategy {
@@ -77,6 +80,12 @@ public:
     virtual void unload() /*override*/;
 
     virtual ::ContentIdentity readContentIdentity() const /*override*/;
+
+    virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
+    _loadArchive(::Core::Path const& packRelativePath) const /*override*/;
+
+    virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
+    _preloadSubFolders(::Core::Path const& packRelativePath) const /*override*/;
     // NOLINTEND
 
 public:
@@ -87,6 +96,14 @@ public:
                         fileAccess,
         ::ZipPackArgs&& args
     );
+
+    MCNAPI bool _getAsset(
+        ::gsl::not_null<::Core::UnzipFile*> zipFile,
+        ::Core::Path const&                 packRelativePath,
+        ::std::string&                      result
+    ) const;
+
+    MCNAPI bool initZipFile() const;
     // NOLINTEND
 
 public:
@@ -141,6 +158,12 @@ public:
     MCNAPI void $unload();
 
     MCNAPI ::ContentIdentity $readContentIdentity() const;
+
+    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
+    $_loadArchive(::Core::Path const& packRelativePath) const;
+
+    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
+    $_preloadSubFolders(::Core::Path const& packRelativePath) const;
 
 
     // NOLINTEND

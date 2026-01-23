@@ -39,33 +39,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ConstIterator(
-            ::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const&                       report,
-            ::std::_Tree_const_iterator<::std::_Tree_val<::std::_Tree_simple_types<
-                ::std::pair<::std::string const, ::std::unique_ptr<::webrtc::RTCStats const>>>>> it
-        );
-
         MCNAPI bool operator!=(::webrtc::RTCStatsReport::ConstIterator const& other) const;
 
         MCNAPI ::webrtc::RTCStats const& operator*() const;
 
         MCNAPI ::webrtc::RTCStatsReport::ConstIterator& operator++();
 
-        MCNAPI ::webrtc::RTCStats const* operator->() const;
-
-        MCNAPI bool operator==(::webrtc::RTCStatsReport::ConstIterator const& other) const;
-
         MCNAPI ~ConstIterator();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(
-            ::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const&                       report,
-            ::std::_Tree_const_iterator<::std::_Tree_val<::std::_Tree_simple_types<
-                ::std::pair<::std::string const, ::std::unique_ptr<::webrtc::RTCStats const>>>>> it
-        );
         // NOLINTEND
 
     public:
@@ -97,8 +77,6 @@ public:
 
     MCNAPI ::webrtc::RTCStats const* Get(::std::string const& id) const;
 
-    MCNAPI explicit RTCStatsReport(::webrtc::Timestamp timestamp);
-
     MCNAPI ::std::unique_ptr<::webrtc::RTCStats const> Take(::std::string const& id);
 
     MCNAPI void TakeMembersFrom(::webrtc::scoped_refptr<::webrtc::RTCStatsReport> other);
@@ -114,12 +92,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::RTCStatsReport> Create(::webrtc::Timestamp timestamp);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::Timestamp timestamp);
     // NOLINTEND
 };
 

@@ -35,6 +35,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<uchar> getFacingDirection() const;
 
+    MCNAPI ::Scripting::Result_deprecated<int> getMaxViewBlockDistance() const;
+
     MCNAPI ::Scripting::Result_deprecated<::Vec3> getPosition() const;
 
     MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorProperties> getProperties() const;

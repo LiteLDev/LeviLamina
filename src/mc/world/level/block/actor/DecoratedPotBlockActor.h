@@ -64,7 +64,7 @@ public:
 
     virtual int getMaxStackSize() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
@@ -84,8 +84,6 @@ public:
 
     MCAPI void _onInsertFeedback(::BlockSource& region, ::ItemStack const& newContainedItem, ::Player& player);
 
-    MCAPI void _resetSherdItemNames();
-
     MCAPI void _setContainedItem(::ItemStack const& item);
 
     MCAPI_C void fromItem(::ItemStack const& item);
@@ -100,13 +98,13 @@ public:
 
     MCAPI_C static ::std::string getDelimitedConcatenatedSherdNames(::CompoundTag const* userData);
 
+    MCAPI static void removeDefaultSherdsFromUserData(::ItemStackBase& itemInstance);
+
     MCAPI_C static void
     saveSherdsToItemForInventoryRendering(::ItemStack& itemInstance, ::std::string const& screenSherdNames);
 
     MCAPI static void
     saveSherdsToTag(::CompoundTag& tag, ::std::array<::std::string, 4> const& sherds, bool forceSaveDefaultSherds);
-
-    MCAPI static ::DecoratedPotBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static ::std::optional<::std::array<::std::string, 4>> tryGetSherdsFromTag(::CompoundTag const& tag);
     // NOLINTEND
@@ -139,7 +137,7 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCFOLD ::ItemStack const& $getItem(int slot) const;
+    MCFOLD ::ItemStack const& $getItem(int index) const;
 
     MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 

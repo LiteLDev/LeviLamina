@@ -37,12 +37,19 @@ public:
     // prevent constructor by default
     DataDrivenRendererDerivitiveData& operator=(DataDrivenRendererDerivitiveData const&);
     DataDrivenRendererDerivitiveData(DataDrivenRendererDerivitiveData const&);
-    DataDrivenRendererDerivitiveData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DataDrivenRendererDerivitiveData();
+
     MCNAPI ~DataDrivenRendererDerivitiveData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

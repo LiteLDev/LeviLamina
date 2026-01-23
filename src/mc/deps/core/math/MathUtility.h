@@ -13,8 +13,6 @@ namespace mce::MathUtility {
 // NOLINTBEGIN
 MCNAPI ::mce::MathUtility::GramSchmidtResult computeGramSchmidtBasis(::Vec3 const& forward, ::Vec3 const& up);
 
-MCNAPI ::glm::mat4x4 generateRotationAroundPivotMat(::glm::mat4x4 const& rotation, ::glm::vec3 const& pivot);
-
 MCNAPI_C ::glm::vec2 getRotationFromNegZToVector(::glm::vec3 const& vector);
 // NOLINTEND
 

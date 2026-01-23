@@ -8,8 +8,9 @@ class ProfileSectionGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkeb9438;
+    ::ll::UntypedStorage<8, 8> mUnk2306f8;
     ::ll::UntypedStorage<1, 1> mUnkf8f57a;
+    ::ll::UntypedStorage<1, 1> mUnk1533fc;
     // NOLINTEND
 
 public:

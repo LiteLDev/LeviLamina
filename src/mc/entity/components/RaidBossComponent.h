@@ -64,19 +64,11 @@ public:
     MCAPI void updateBossBarStats(::Actor& owner, ::Raid const& raid);
 
     MCAPI void updateHealthBarVisible(bool visible, ::Actor& owner);
-
-    MCAPI ~RaidBossComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::RaidBossComponent&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -10,6 +10,7 @@
 // clang-format off
 class BlockSource;
 class ChunkPos;
+class ChunkSource;
 class ChunkViewSource;
 class Dimension;
 class Level;
@@ -29,6 +30,10 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                  mInfluenceDirty;
     ::ll::TypedStorage<1, 1, bool>                                  mDoneLoading;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TickingAreaView();
 
 public:
     // virtual functions
@@ -63,6 +68,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit TickingAreaView(::ChunkSource& parent);
+
     MCAPI bool _tickChunk(
         ::Tick const&                  currentTick,
         ::BlockSource&                 region,
@@ -70,6 +77,12 @@ public:
         ::ChunkPos const&              cp,
         ::LevelChunkTicking::Registry* registry
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ChunkSource& parent);
     // NOLINTEND
 
 public:

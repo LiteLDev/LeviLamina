@@ -36,6 +36,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ConstantFactory>>  constants;
     ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::TypeMapData>>      typeMaps;
     ::ll::TypedStorage<1, 1, bool>                                          importRestricted;
+    ::ll::TypedStorage<1, 1, bool>                                          requireDynamicImport;
     // NOLINTEND
 
 public:

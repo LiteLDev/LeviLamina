@@ -25,7 +25,6 @@ public:
 
 public:
     // prevent constructor by default
-    AmbientSoundsClientBiomeJsonComponent& operator=(AmbientSoundsClientBiomeJsonComponent const&);
     AmbientSoundsClientBiomeJsonComponent(AmbientSoundsClientBiomeJsonComponent const&);
     AmbientSoundsClientBiomeJsonComponent();
 
@@ -34,7 +33,12 @@ public:
     // NOLINTBEGIN
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
 
+#ifdef LL_PLAT_S
     virtual ~AmbientSoundsClientBiomeJsonComponent() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~AmbientSoundsClientBiomeJsonComponent() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -42,6 +46,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
     operator=(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&&);
+
+    MCFOLD ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
+    operator=(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent const&);
     // NOLINTEND
 
 public:
@@ -56,6 +63,12 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

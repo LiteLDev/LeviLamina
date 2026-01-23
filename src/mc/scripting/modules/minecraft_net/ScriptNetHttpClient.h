@@ -84,8 +84,6 @@ public:
     MCNAPI
     ScriptNetHttpClient(::std::string const& descriptorString, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
 
-    MCNAPI void cancelAll(::std::string const& reason);
-
     MCNAPI ::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
         ::Scripting::BaseError,

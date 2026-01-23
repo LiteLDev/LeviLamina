@@ -48,19 +48,13 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual ~SendEventGoal() /*override*/;
+    virtual ~SendEventGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI int _selectBestSpell();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -6,9 +6,11 @@
 // clang-format off
 class ActorEventCoordinator;
 class BlockEventCoordinator;
+class LevelEventCoordinator;
 class ScriptingEventCoordinator;
 namespace ScriptModuleMinecraft { class ScriptActorGlobalEventListener; }
 namespace ScriptModuleMinecraft { class ScriptBlockGlobalEventListener; }
+namespace ScriptModuleMinecraft { class ScriptLevelGlobalEventListener; }
 namespace ScriptModuleMinecraft { class ScriptScriptingGlobalEventListener; }
 // clang-format on
 
@@ -21,12 +23,15 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorEventCoordinator&>     mActorEventCoordinator;
     ::ll::TypedStorage<8, 8, ::BlockEventCoordinator&>     mBlockEventCoordinator;
     ::ll::TypedStorage<8, 8, ::ScriptingEventCoordinator&> mScriptingEventCoordinator;
+    ::ll::TypedStorage<8, 8, ::LevelEventCoordinator&>     mLevelEventCoordinator;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptActorGlobalEventListener>>
         mActorEventListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptBlockGlobalEventListener>>
         mBlockEventListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptScriptingGlobalEventListener>>
         mScriptingEventListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptLevelGlobalEventListener>>
+        mLevelEventListener;
     // NOLINTEND
 
 public:
@@ -41,7 +46,8 @@ public:
     MCAPI ScriptGlobalEventListeners(
         ::ActorEventCoordinator&     actorEventCoordinator,
         ::BlockEventCoordinator&     blockEventCoordinator,
-        ::ScriptingEventCoordinator& scriptEventCoordinator
+        ::ScriptingEventCoordinator& scriptEventCoordinator,
+        ::LevelEventCoordinator&     levelEventCoordinator
     );
 
     MCAPI ~ScriptGlobalEventListeners();
@@ -53,7 +59,8 @@ public:
     MCAPI void* $ctor(
         ::ActorEventCoordinator&     actorEventCoordinator,
         ::BlockEventCoordinator&     blockEventCoordinator,
-        ::ScriptingEventCoordinator& scriptEventCoordinator
+        ::ScriptingEventCoordinator& scriptEventCoordinator,
+        ::LevelEventCoordinator&     levelEventCoordinator
     );
     // NOLINTEND
 

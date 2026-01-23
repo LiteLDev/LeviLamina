@@ -9,12 +9,18 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { struct ScriptPressurePlatePushAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptPressurePlatePushAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // ScriptPressurePlatePushAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -24,9 +30,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptPressurePlatePushAfterEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptPressurePlatePushAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                                scope
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                                scope
+    );
     // NOLINTEND
 };
 

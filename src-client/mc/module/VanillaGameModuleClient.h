@@ -19,9 +19,9 @@ class IClientInstance;
 class IResourcePackRepository;
 class ItemRegistryRef;
 class Level;
-class MultiPlayerLevel;
 class ResourcePackStack;
 struct GameModuleClientArgs;
+struct MultiPlayerLevel;
 namespace GameplayUI { struct GameplayUIContext; }
 namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 // clang-format on
@@ -39,6 +39,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkdd2cd8;
     ::ll::UntypedStorage<8, 8>  mUnk65e1f5;
     ::ll::UntypedStorage<8, 8>  mUnkbb03b2;
+    ::ll::UntypedStorage<8, 8>  mUnk46e405;
     ::ll::UntypedStorage<8, 8>  mUnkd23d66;
     ::ll::UntypedStorage<8, 16> mUnkd24109;
     ::ll::UntypedStorage<8, 16> mUnk852403;
@@ -76,16 +77,16 @@ public:
 
     virtual void deconfigureLevel(::IClientInstance& client) /*override*/;
 
-    virtual void configureDocumentation(
-        ::GameModuleDocumentation& moduleDocumentation,
-        ::ItemRegistryRef const    docItemRegistry
-    ) /*override*/;
+    virtual void
+    configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry) /*override*/;
 
     virtual void tick() /*override*/;
 
     virtual void setupStandardCommands(::CommandRegistry& commandRegistry) /*override*/;
 
     virtual void setupStartMenuScreenCommands(::CommandRegistry& commandRegistry) /*override*/;
+
+    virtual void setupUI() /*override*/;
 
     virtual void registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client) /*override*/;
 
@@ -149,14 +150,15 @@ public:
 
     MCAPI void $deconfigureLevel(::IClientInstance& client);
 
-    MCFOLD void
-    $configureDocumentation(::GameModuleDocumentation& moduleDocumentation, ::ItemRegistryRef const docItemRegistry);
+    MCFOLD void $configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry);
 
     MCAPI void $tick();
 
     MCAPI void $setupStandardCommands(::CommandRegistry& commandRegistry);
 
     MCFOLD void $setupStartMenuScreenCommands(::CommandRegistry& commandRegistry);
+
+    MCAPI void $setupUI();
 
     MCAPI void $registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 

@@ -88,6 +88,8 @@ public:
     virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
         /*override*/;
 
+    virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     virtual ~HopperBlock() /*override*/ = default;
@@ -100,7 +102,7 @@ public:
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -139,16 +141,6 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCAPI ::HitResult $clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
-
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
     MCAPI ::Block const& $getPlacementBlock(
@@ -169,6 +161,8 @@ public:
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+
+    MCAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

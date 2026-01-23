@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class StructureUpdateFromClipboardPayload
@@ -17,7 +22,6 @@ public:
 
 public:
     // prevent constructor by default
-    StructureUpdateFromClipboardPayload& operator=(StructureUpdateFromClipboardPayload const&);
     StructureUpdateFromClipboardPayload(StructureUpdateFromClipboardPayload const&);
     StructureUpdateFromClipboardPayload();
 
@@ -30,6 +34,19 @@ public:
     virtual ~StructureUpdateFromClipboardPayload() /*override*/;
 #endif
 
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Editor::Network::StructureUpdateFromClipboardPayload&
+    operator=(::Editor::Network::StructureUpdateFromClipboardPayload const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

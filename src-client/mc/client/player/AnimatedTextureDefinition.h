@@ -20,4 +20,16 @@ public:
     AnimatedTextureDefinition& operator=(AnimatedTextureDefinition const&);
     AnimatedTextureDefinition(AnimatedTextureDefinition const&);
     AnimatedTextureDefinition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~AnimatedTextureDefinition();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

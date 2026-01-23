@@ -13,7 +13,6 @@
 class Actor;
 class BlockPos;
 class BlockSource;
-class BlockType;
 class CompoundTag;
 class Container;
 class InteractionResult;
@@ -84,8 +83,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PotionItem(::std::string const& name, int id);
-
-    MCAPI bool const _isBlockConvertibleToMud(::BlockType const& block) const;
     // NOLINTEND
 
 public:

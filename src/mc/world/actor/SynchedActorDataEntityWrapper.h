@@ -36,8 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SynchedActorDataEntityWrapper(::EntityContext& entity);
-
     MCAPI ::CompoundTag const& getCompoundTag(ushort id) const;
 
     MCAPI_C float getFloat(ushort id) const;
@@ -55,12 +53,6 @@ public:
     MCAPI ::SynchedActorDataWriter writer();
 
     MCAPI ~SynchedActorDataEntityWrapper();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::EntityContext& entity);
     // NOLINTEND
 
 public:

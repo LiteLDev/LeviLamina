@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace webrtc { class RtpPacket; }
 namespace webrtc { class RtpPacketToSend; }
 // clang-format on
 
@@ -32,16 +31,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void Add(::webrtc::RtpPacketCounter const& other);
 
-    MCNAPI explicit RtpPacketCounter(::webrtc::RtpPacket const& packet);
-
     MCNAPI explicit RtpPacketCounter(::webrtc::RtpPacketToSend const& packet_to_send);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::RtpPacket const& packet);
-
     MCNAPI void* $ctor(::webrtc::RtpPacketToSend const& packet_to_send);
     // NOLINTEND
 };

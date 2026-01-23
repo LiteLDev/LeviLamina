@@ -26,7 +26,12 @@ public:
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~EmitterRateManualComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~EmitterRateManualComponent() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

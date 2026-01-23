@@ -31,20 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandOutputMessage(::CommandOutputMessage&& rhs);
+    MCAPI ::CommandOutputMessage& operator=(::CommandOutputMessage const& rhs);
 
-    MCAPI ~CommandOutputMessage();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CommandOutputMessage&& rhs);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI bool operator==(::CommandOutputMessage const& other) const;
     // NOLINTEND
 };

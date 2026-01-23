@@ -23,10 +23,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::CompoundTagUpdaterNodeBuilder _addChildNode();
+
     MCNAPI ::CompoundTagUpdaterNodeBuilder&
     edit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
-
-    MCNAPI void fork(uint64 size, ::std::function<void(::CompoundTagUpdaterNodeBuilder&, uint64)>&& function);
 
     MCNAPI ::CompoundTagUpdaterNodeBuilder& match(::std::string const& tagName, ::std::string pattern);
 

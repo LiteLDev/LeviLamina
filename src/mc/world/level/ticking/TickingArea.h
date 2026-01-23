@@ -32,11 +32,13 @@ public:
     ::ll::TypedStorage<8, 16, ::mce::UUID>              mUID;
     ::ll::TypedStorage<8, 32, ::std::string>            mName;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>           mEntityId;
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>>  mScope;
     ::ll::TypedStorage<4, 4, float>                     mMaxDistToPlayers;
     ::ll::TypedStorage<1, 1, bool>                      mAlwaysActive;
     ::ll::TypedStorage<1, 1, bool>                      mEntityFound;
     ::ll::TypedStorage<1, 1, bool>                      mSizeChanged;
     ::ll::TypedStorage<1, 1, bool>                      mRemoved;
+    ::ll::TypedStorage<1, 1, bool>                      mIsDoneLoadingScoped;
     ::ll::TypedStorage<1, 1, ::TickingAreaLoadMode>     mLoadMode;
     ::ll::TypedStorage<4, 12, ::Vec3>                   mLastChunkUpdatePos;
     ::ll::TypedStorage<4, 12, ::Vec3>                   mLastPos;
@@ -109,6 +111,14 @@ public:
         bool            alwaysActive,
         ::LevelStorage& levelStorage
     ) /*override*/;
+
+    virtual bool isScoped() const /*override*/;
+
+    virtual ::std::optional<uint64> const& getScope() const /*override*/;
+
+    virtual bool isDoneLoadingScoped() const /*override*/;
+
+    virtual bool isStandalone() const /*override*/;
     // NOLINTEND
 
 public:
@@ -204,6 +214,14 @@ public:
 
     MCAPI void
     $onComponentChanged(uint radius, float maxDistToPlayers, bool alwaysActive, ::LevelStorage& levelStorage);
+
+    MCFOLD bool $isScoped() const;
+
+    MCFOLD ::std::optional<uint64> const& $getScope() const;
+
+    MCFOLD bool $isDoneLoadingScoped() const;
+
+    MCAPI bool $isStandalone() const;
 
 
     // NOLINTEND

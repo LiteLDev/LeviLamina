@@ -47,8 +47,6 @@ public:
 
     MCAPI explicit CommandOutputParameter(char const* text);
 
-    MCAPI explicit CommandOutputParameter(float value);
-
     MCAPI explicit CommandOutputParameter(::BlockPos value);
 
     MCAPI ~CommandOutputParameter();
@@ -68,8 +66,6 @@ public:
     MCAPI void* $ctor(::std::vector<::std::string> const& strings);
 
     MCAPI void* $ctor(char const* text);
-
-    MCAPI void* $ctor(float value);
 
     MCAPI void* $ctor(::BlockPos value);
     // NOLINTEND

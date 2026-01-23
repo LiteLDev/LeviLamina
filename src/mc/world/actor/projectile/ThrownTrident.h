@@ -90,6 +90,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+#endif
+
     MCFOLD void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
     MCAPI void $playerTouch(::Player& player);
@@ -107,10 +111,6 @@ public:
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI ::ItemStack $_getPickupItem() const;
-
-#ifdef LL_PLAT_C
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
-#endif
 
 
     // NOLINTEND

@@ -23,6 +23,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk84399a;
     ::ll::UntypedStorage<8, 64> mUnk142c77;
     ::ll::UntypedStorage<8, 64> mUnkbbe543;
+    ::ll::UntypedStorage<8, 8>  mUnkfa6a1c;
     // NOLINTEND
 
 public:
@@ -69,6 +70,8 @@ public:
     MCNAPI static uint64 TransportRead(void* udata, char* buffer, uint64 length);
 
     MCNAPI static uint64 TransportWrite(void* udata, char const* buffer, uint64 length);
+
+    MCNAPI static int ValidatePath(void* udata, char const* path);
     // NOLINTEND
 
 public:

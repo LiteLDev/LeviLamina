@@ -14,6 +14,7 @@ struct PlayingSoundAttributes;
 struct SoundInstanceProperties;
 struct SoundSystemGUID;
 namespace Core { class Path; }
+namespace Core { class PathView; }
 class SoundEvent;
 class SoundItem;
 // clang-format on
@@ -153,7 +154,7 @@ public:
 
     virtual bool isPlayingMusicEvent(::std::string const& eventName) const;
 
-    virtual bool isPlayingMusic(::Core::Path const& soundName) const;
+    virtual bool isPlayingMusic(::Core::PathView soundName) const;
 
     virtual bool isLoadingMusic() const;
 
@@ -329,7 +330,7 @@ public:
 
     MCNAPI bool $isPlayingMusicEvent(::std::string const& eventName) const;
 
-    MCNAPI bool $isPlayingMusic(::Core::Path const& soundName) const;
+    MCNAPI bool $isPlayingMusic(::Core::PathView soundName) const;
 
     MCNAPI bool $isLoadingMusic() const;
 

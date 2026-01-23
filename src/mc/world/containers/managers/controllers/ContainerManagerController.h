@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/screens/controllers/FadeInIconBehavior.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/containers/ContainerEnumName.h"
@@ -16,6 +15,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Container;
 class ContainerController;
 class ContainerManagerModel;
@@ -25,6 +25,7 @@ class ContainerScreenSimulation;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
+struct ActorUniqueID;
 struct AutoPlaceItem;
 struct AutoPlaceRequest;
 struct AutoPlaceResult;
@@ -72,7 +73,7 @@ public:
     virtual ~ContainerManagerController();
 #endif
 
-    virtual void postInit(::std::weak_ptr<::ContainerManagerController> self);
+    virtual void postInit(::std::weak_ptr<::ContainerManagerController>);
 
     virtual void registerContainerCallbacks();
 
@@ -217,8 +218,6 @@ public:
 
     MCNAPI_C void _closeContainers(::ContainerManagerModel& containerModel);
 
-    MCNAPI_C ::std::shared_ptr<::ContainerController> _getContainerController(::SlotData const& slot) const;
-
     MCNAPI_C ::ContainerValidationSlotData _getContainerValidationSlotData(::SlotData const& slotData) const;
 
     MCNAPI_C ::ItemStack const& _getItem(::SlotData const& slot, bool canBeEmpty) const;
@@ -294,17 +293,7 @@ public:
     MCNAPI_C bool
     _updatePreviewItem(::ItemInstance& previewItem, ::ItemInstance const& newItem, ::std::string const& collectionName);
 
-    MCNAPI_C void compareStatesAndCollectTransfers(
-        ::std::vector<::ItemStateData> initialState,
-        ::std::vector<::ItemStateData> resultState,
-        ::std::function<
-            void(::ItemStack const&, ::std::string const&, int, ::std::string const&, int, ::FadeInIconBehavior)>
-             transferCallback,
-        bool collectStragglers
-    ) const;
-
-    MCNAPI_C ::std::shared_ptr<::ContainerController>
-    getContainerController(::ContainerEnumName containerEnumName) const;
+    MCNAPI_C ::std::string getBlockName(::BlockPos const& blockPos) const;
 
     MCNAPI_C ::std::shared_ptr<::ContainerController> getContainerController(::std::string const& containerName) const;
 
@@ -316,11 +305,11 @@ public:
 
     MCNAPI_C ::std::shared_ptr<::ContainerModel> getDynamicContainerModel(::FullContainerName const& name);
 
+    MCNAPI_C ::std::string getEntityName(::ActorUniqueID const& entityUniqueID) const;
+
     MCNAPI_C ::std::string getExpandoGroupName(::std::string const& collectionName, int collectionIndex) const;
 
     MCNAPI_C ::ContainerExpandStatus getExpandoStatus(::std::string const& containerName, int collectionIndex) const;
-
-    MCNAPI_C ::ItemStack const& getItemStack(::SlotData const& slot) const;
 
     MCNAPI_C ::ItemStack const& getItemStack(::std::string const& collectionName, int collectionIndex) const;
 
@@ -344,6 +333,8 @@ public:
 
     MCNAPI_C bool handleMoveTopItemFromStorageItem(::ItemStack const& srcStorageItem, ::SlotData const& dstSlot);
 
+    MCNAPI_C bool hasContainerController(::std::string const& containerName) const;
+
     MCNAPI_C bool isExpandoItem(::std::string const& collectionName, int collectionIndex);
 
     MCNAPI_C bool isItemFiltered(::std::vector<::std::string> containerNames, ::ItemStackBase const& item) const;
@@ -360,9 +351,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& TRANSFER_NO_DESTINATION();
+    MCNAPI_C static ::std::string_view const& TRANSFER_NO_DESTINATION();
 
-    MCNAPI static ::std::string_view const& TRANSFER_NO_ORIGIN();
+    MCNAPI_C static ::std::string_view const& TRANSFER_NO_ORIGIN();
     // NOLINTEND
 
 public:
@@ -381,7 +372,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $postInit(::std::weak_ptr<::ContainerManagerController> self);
+    MCNAPI void $postInit(::std::weak_ptr<::ContainerManagerController>);
 
     MCNAPI void $registerContainerCallbacks();
 

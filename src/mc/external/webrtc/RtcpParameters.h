@@ -17,31 +17,13 @@ public:
 public:
     // prevent constructor by default
     RtcpParameters& operator=(RtcpParameters const&);
+    RtcpParameters(RtcpParameters const&);
+    RtcpParameters();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RtcpParameters();
-
-    MCNAPI RtcpParameters(::webrtc::RtcpParameters const&);
-
     MCNAPI bool operator==(::webrtc::RtcpParameters const& o) const;
-
-    MCNAPI ~RtcpParameters();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::webrtc::RtcpParameters const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -32,14 +32,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& DEFAULT_SET_PERSISTENT();
-
-    MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
-
-    MCAPI static float const& DEFAULT_X_MAX_ROTATION();
-
-    MCAPI static float const& DEFAULT_Y_MAX_ROTATION();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

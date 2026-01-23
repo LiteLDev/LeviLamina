@@ -19,6 +19,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::PropertyGeneticData& operator=(::PropertyGeneticData&&);
+
     MCNAPI ~PropertyGeneticData();
     // NOLINTEND
 

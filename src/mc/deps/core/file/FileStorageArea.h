@@ -6,10 +6,12 @@
 #include "mc/deps/core/file/FileAccessType.h"
 #include "mc/deps/core/file/WriteOperation.h"
 #include "mc/deps/core/file/file_system/TransactionFlags.h"
+#include "mc/deps/core/threading/BasicLockbox.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Threading { class Mutex; }
 namespace Core { class FileIndexLru; }
 namespace Core { class FileStats; }
 namespace Core { class FileSystemImpl; }
@@ -156,8 +158,6 @@ public:
 
     virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
-    virtual ::std::optional<::std::string> getIntegrityResults() const;
-
     virtual bool shouldRecordFileError(::Core::PathView, ::std::error_code) const;
 
     virtual ::Core::Result _commit();
@@ -191,6 +191,8 @@ public:
     MCNAPI bool canWrite() const;
 
     MCNAPI void checkUserStorage();
+
+    MCNAPI void removeStateListener(::Core::StorageAreaStateListener* l);
     // NOLINTEND
 
 public:
@@ -206,9 +208,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::Core::FileStats*>& sStorageAreaFileStats();
-
-    MCNAPI static ::std::recursive_mutex& sStorageAreaLock();
+    MCNAPI static ::Bedrock::Threading::BasicLockbox<::std::vector<::Core::FileStats*>, ::Bedrock::Threading::Mutex>&
+    sStorageAreaFileStats();
 
     MCNAPI static ::Core::StorageAreasTree& sStorageAreas();
     // NOLINTEND
@@ -296,8 +297,6 @@ public:
     MCNAPI void $trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
 
     MCNAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
-
-    MCNAPI ::std::optional<::std::string> $getIntegrityResults() const;
 
     MCNAPI bool $shouldRecordFileError(::Core::PathView, ::std::error_code) const;
 

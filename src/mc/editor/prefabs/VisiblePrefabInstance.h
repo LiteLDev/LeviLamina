@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Prefabs {
 
 class VisiblePrefabInstance {
@@ -16,6 +11,8 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk74aa47;
     ::ll::UntypedStorage<8, 16> mUnk755cdf;
     ::ll::UntypedStorage<4, 12> mUnk24bd45;
+    ::ll::UntypedStorage<1, 1>  mUnka66188;
+    ::ll::UntypedStorage<1, 1>  mUnkc7fd93;
     ::ll::UntypedStorage<8, 24> mUnk58e1c7;
     // NOLINTEND
 
@@ -29,12 +26,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::Prefabs::VisiblePrefabInstance& operator=(::Editor::Prefabs::VisiblePrefabInstance&&);
+
+    MCNAPI ~VisiblePrefabInstance();
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

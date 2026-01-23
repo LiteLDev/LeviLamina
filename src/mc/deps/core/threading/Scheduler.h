@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,6 +15,7 @@ class Scheduler : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // Scheduler inner types declare
     // clang-format off
+    struct CoroutinePolicy;
     class ScopedChangeScheduler;
     // clang-format on
 
@@ -26,6 +28,21 @@ public:
     enum class MinimumTimeBudget : int {
         Yes = 0,
         No  = 1,
+    };
+
+    struct CoroutinePolicy {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnkd19b34;
+        ::ll::UntypedStorage<4, 4>  mUnk2b34eb;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CoroutinePolicy& operator=(CoroutinePolicy const&);
+        CoroutinePolicy(CoroutinePolicy const&);
+        CoroutinePolicy();
     };
 
     class ScopedChangeScheduler {
@@ -45,17 +62,18 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>                                    mTotalFrames;
-    ::ll::TypedStorage<4, 4, uint>                                    mStarvedFrames;
-    ::ll::TypedStorage<4, 4, uint>                                    mPromotionFrames;
-    ::ll::TypedStorage<4, 4, uint>                                    mTargetFPS;
-    ::ll::TypedStorage<4, 4, uint>                                    mEffectiveFPS;
-    ::ll::TypedStorage<4, 4, uint>                                    mTotalRunCoroutines;
-    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>              mPredictedCoroutineDuration;
-    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>              mTotalCoroutineDuration;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorkerPool>>         mCoroutinePool;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNextStarveCheckTime;
-    ::ll::TypedStorage<4, 4, ::std::thread::id>                       mThreadID;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Scheduler::CoroutinePolicy>> mCoroutinePolicy;
+    ::ll::TypedStorage<4, 4, uint>                                           mTotalFrames;
+    ::ll::TypedStorage<4, 4, uint>                                           mStarvedFrames;
+    ::ll::TypedStorage<4, 4, uint>                                           mPromotionFrames;
+    ::ll::TypedStorage<4, 4, uint>                                           mTargetFPS;
+    ::ll::TypedStorage<4, 4, uint>                                           mEffectiveFPS;
+    ::ll::TypedStorage<4, 4, uint>                                           mTotalRunCoroutines;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                     mPredictedCoroutineDuration;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                     mTotalCoroutineDuration;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorkerPool>>                mCoroutinePool;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>        mNextStarveCheckTime;
+    ::ll::TypedStorage<4, 4, ::std::thread::id>                              mThreadID;
     // NOLINTEND
 
 public:
@@ -85,14 +103,15 @@ public:
         ::Scheduler::MaximumTimeBudget limitMaxRunTime
     );
 
-    MCAPI bool _runCoroutines(::std::chrono::nanoseconds timeCap, ::std::function<bool()> const& earlyExit);
+    MCAPI bool _runCoroutines(::std::chrono::nanoseconds timeCap);
 
     MCAPI void processCoroutines(
         ::std::chrono::nanoseconds     timeSinceSwap,
         ::Scheduler::MinimumTimeBudget ensureNonZeroRunTime,
-        ::Scheduler::MaximumTimeBudget limitMaxRunTime,
-        ::std::function<bool()> const& earlyExit
+        ::Scheduler::MaximumTimeBudget limitMaxRunTime
     );
+
+    MCAPI_C ::std::shared_ptr<void> setCoroutinePolicy(::brstd::move_only_function<bool() const> policy);
 
     MCAPI void setTargetFPS(uint FPS);
 

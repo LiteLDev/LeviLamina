@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/EcnMarking.h"
 #include "mc/external/rtc/Socket.h"
 #include "mc/external/sigslot/has_slots.h"
 #include "mc/external/sigslot/single_threaded.h"
@@ -12,7 +11,6 @@
 // clang-format off
 namespace rtc { class PhysicalSocketServer; }
 namespace rtc { class SocketAddress; }
-namespace webrtc { class AsyncDnsResolverResult; }
 // clang-format on
 
 namespace rtc {
@@ -72,7 +70,7 @@ public:
 
     virtual int Recv(void* buffer, uint64 length, int64* timestamp) /*override*/;
 
-    virtual int RecvFrom(void* buffer, uint64 length, ::rtc::SocketAddress* out_addr, int64* timestamp) /*override*/;
+    virtual int RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp) /*override*/;
 
     virtual int RecvFrom(::rtc::Socket::ReceiveBuffer& buffer) /*override*/;
 
@@ -100,23 +98,11 @@ public:
     // NOLINTBEGIN
     MCNAPI int DoConnect(::rtc::SocketAddress const& connect_addr);
 
-    MCNAPI int DoReadFromSocket(
-        void*                 buffer,
-        uint64                length,
-        ::rtc::SocketAddress* out_addr,
-        int64*                timestamp,
-        ::rtc::EcnMarking*    ecn
-    );
-
-    MCNAPI void OnResolveResult(::webrtc::AsyncDnsResolverResult const& result);
-
     MCNAPI PhysicalSocket(::rtc::PhysicalSocketServer* ss, uint64 s);
 
     MCNAPI int SetOption(::rtc::Socket::Option opt, void const* value, uint64 size);
 
     MCNAPI int TranslateOption(::rtc::Socket::Option opt, int* slevel, int* sopt);
-
-    MCNAPI void UpdateLastError();
     // NOLINTEND
 
 public:
@@ -160,7 +146,7 @@ public:
 
     MCNAPI int $Recv(void* buffer, uint64 length, int64* timestamp);
 
-    MCNAPI int $RecvFrom(void* buffer, uint64 length, ::rtc::SocketAddress* out_addr, int64* timestamp);
+    MCNAPI int $RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp);
 
     MCNAPI int $RecvFrom(::rtc::Socket::ReceiveBuffer& buffer);
 

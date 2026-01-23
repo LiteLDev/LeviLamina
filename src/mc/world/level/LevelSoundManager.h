@@ -228,6 +228,14 @@ public:
         bool                                   isGlobal
     );
 
+    MCAPI void playSound(
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier,
+        bool                                   isGlobal
+    );
+
     MCAPI void playSynchronizedSound_DEPRECATED(
         ::IDimension&                          dimension,
         ::SharedTypes::Legacy::LevelSoundEvent type,

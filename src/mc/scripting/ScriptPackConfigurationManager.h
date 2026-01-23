@@ -21,6 +21,8 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ScriptPackConfiguration>> mPackConfigurations;
     ::ll::TypedStorage<8, 224, ::ScriptPackConfiguration>                                     mDefaultPackConfiguration;
     ::ll::TypedStorage<8, 104, ::std::optional<::CommandsRegistryConfiguration>> mCommandsRegistryConfiguration;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>>                              mSentryMaxEventsPerWindow;
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::seconds>>           mSentryRateLimitWindow;
     // NOLINTEND
 
 public:

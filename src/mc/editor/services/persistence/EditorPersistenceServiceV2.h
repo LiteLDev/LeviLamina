@@ -17,6 +17,9 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class PersistenceRequestGroupPayload; }
+namespace Editor::Network { class PersistenceResponseGroupPayload; }
+namespace Editor::Network { class SavePersistenceGroupPayload; }
 namespace Editor::Services { class PersistenceGroup; }
 namespace Editor::Services { struct PersistenceGroupManifest; }
 // clang-format on
@@ -33,6 +36,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk1d7142;
     ::ll::UntypedStorage<8, 24> mUnk66e0d5;
     ::ll::UntypedStorage<8, 8>  mUnk831bec;
+    ::ll::UntypedStorage<8, 64> mUnk6a0246;
     // NOLINTEND
 
 public:
@@ -76,7 +80,16 @@ public:
         ::std::optional<int>                                  version
     ) /*override*/;
 
-    virtual bool _validateScope(::Editor::Services::PersistenceScope) const = 0;
+    virtual ::Scripting::Result_deprecated<void> requestGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version,
+        ::std::function<void(::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>>)>
+            callback
+    ) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void>
+    syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup> group) /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> _getGroupRootPath(::Editor::Services::PersistenceScope) const = 0;
     // NOLINTEND
@@ -84,7 +97,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit EditorPersistenceServiceV2(::Editor::ServiceProviderCollection& providers);
+    MCNAPI explicit EditorPersistenceServiceV2(::Editor::ServiceProviderCollection& providers);
 
     MCNAPI ::WeakRef<::Editor::Services::PersistenceGroup> _createCacheGroup(
         ::std::string const&                     namespacedName,
@@ -117,6 +130,12 @@ public:
         ::std::optional<int>                 version
     ) const;
 
+    MCNAPI void _handleRequestGroupPayload(::Editor::Network::PersistenceRequestGroupPayload const& payload);
+
+    MCNAPI void _handleResponseGroupPayload(::Editor::Network::PersistenceResponseGroupPayload const& payload);
+
+    MCNAPI void _handleSaveGroupPayload(::Editor::Network::SavePersistenceGroupPayload const& payload);
+
     MCNAPI void _loadGroupMetaData(::Editor::Services::PersistenceScope scope);
 
     MCNAPI ::std::optional<::Editor::Services::PersistenceGroupManifest> _parseJsonToGroupManifest(::std::string value);
@@ -127,7 +146,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Editor::ServiceProviderCollection& providers);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -168,6 +187,17 @@ public:
         ::std::optional<::Editor::Services::PersistenceScope> scope,
         ::std::optional<int>                                  version
     );
+
+    MCNAPI ::Scripting::Result_deprecated<void> $requestGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version,
+        ::std::function<void(::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>>)>
+            callback
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup> group);
 
 
     // NOLINTEND

@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class IBreakpointValidator; }
 namespace Scripting { class IDebuggerController; }
 namespace Scripting { class IDebuggerTransport; }
 namespace Scripting { class IDependencyLoader; }
@@ -101,14 +102,13 @@ public:
         ::entt::meta_type const&
     ) const /*override*/;
 
-    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> executeCoroutines(
-        ::std::optional<::std::chrono::microseconds>,
-        ::std::optional<::Scripting::Privilege>
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
+        executeCoroutines(::std::optional<::Scripting::Privilege>) /*override*/;
 
     virtual bool hasPendingJobs() /*override*/;
 
-    virtual ::Scripting::IDebuggerController* enableDebugger(::Scripting::IDebuggerTransport&) /*override*/;
+    virtual ::Scripting::IDebuggerController*
+    enableDebugger(::Scripting::IDebuggerTransport&, ::Scripting::IBreakpointValidator&) /*override*/;
 
     virtual void disableDebugger() /*override*/;
 
@@ -199,11 +199,12 @@ public:
     ) const;
 
     MCFOLD ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
-        $executeCoroutines(::std::optional<::std::chrono::microseconds>, ::std::optional<::Scripting::Privilege>);
+        $executeCoroutines(::std::optional<::Scripting::Privilege>);
 
     MCFOLD bool $hasPendingJobs();
 
-    MCFOLD ::Scripting::IDebuggerController* $enableDebugger(::Scripting::IDebuggerTransport&);
+    MCFOLD ::Scripting::IDebuggerController*
+    $enableDebugger(::Scripting::IDebuggerTransport&, ::Scripting::IBreakpointValidator&);
 
     MCFOLD void $disableDebugger();
 

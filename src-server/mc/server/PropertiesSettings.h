@@ -68,6 +68,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                 mServerWakeupFrequency;
     ::ll::TypedStorage<4, 4, ::TransportLayer>                                    mTransportLayerType;
     ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID>                             mNetherNetId;
+    ::ll::TypedStorage<1, 1, bool>                                                mUseJsonRpc;
     ::ll::TypedStorage<8, 40, ::NetworkAddress>                                   mRemoteServerCommunicationEndpoint;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mDefaultPlayerPermissionLevel;
     ::ll::TypedStorage<1, 1, bool>                                                mDisableClientVibrantVisuals;
@@ -83,7 +84,7 @@ public:
     ::ll::TypedStorage<4, 20, ::NetworkSettingOptions>                            mNetworkSettings;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mCustomProperties;
     ::ll::TypedStorage<8, 64, ::PlayerMovementSettings>                           mPlayerMovementSettings;
-    ::ll::TypedStorage<8, 704, ::ScriptSettings>                                  mScriptSettings;
+    ::ll::TypedStorage<8, 752, ::ScriptSettings>                                  mScriptSettings;
     ::ll::TypedStorage<1, 1, ::ChatRestrictionLevel>                              mChatRestrictionLevel;
     ::ll::TypedStorage<1, 1, bool>                                                mPersonaDisabled;
     ::ll::TypedStorage<1, 1, bool>                                                mCustomSkinsDisabled;
@@ -105,6 +106,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mRealmsStoriesEnabled;
     ::ll::TypedStorage<4, 4, ::EducationServicesEnvironment>                      mEducationServicesEnvironment;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mServiceOverrides;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>>                               mScriptSentryMaxEventsPerWindow;
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::seconds>>            mScriptSentryRateLimitWindow;
     // NOLINTEND
 
 public:

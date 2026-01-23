@@ -26,8 +26,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptWatchdog();
 
-    MCNAPI ::ScriptWatchdog& operator=(::ScriptWatchdog&&);
-
     MCNAPI ~ScriptWatchdog();
     // NOLINTEND
 

@@ -6,6 +6,11 @@
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/platform/UUID.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
 
 struct Module {
@@ -36,6 +41,12 @@ public:
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Module const&);
 
     MCAPI ~Module();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

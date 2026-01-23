@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StunByteStringAttribute() /*override*/;
+    virtual ~StunByteStringAttribute() /*override*/ = default;
 
     virtual ::cricket::StunAttributeValueType value_type() const /*override*/;
 
@@ -42,15 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void CopyBytes(::std::string_view bytes);
-
-    MCNAPI void CopyBytes(void const* bytes, uint64 length);
-
-    MCNAPI void SetBytes(uchar* bytes, uint64 length);
-
     MCNAPI explicit StunByteStringAttribute(ushort type);
-
-    MCNAPI StunByteStringAttribute(ushort type, ushort length);
 
     MCNAPI StunByteStringAttribute(ushort type, ::std::string_view str);
 
@@ -62,17 +54,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(ushort type);
 
-    MCNAPI void* $ctor(ushort type, ushort length);
-
     MCNAPI void* $ctor(ushort type, ::std::string_view str);
 
     MCNAPI void* $ctor(ushort type, void const* bytes, uint64 length);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

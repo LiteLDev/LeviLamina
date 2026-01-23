@@ -39,6 +39,8 @@ public:
 
     virtual void setDisableLanSignaling(bool disableLanSignaling) /*override*/;
 
+    virtual void setDisableTrickleIce(bool disableTrickleIce) /*override*/;
+
     virtual ::std::string getLocalIp() /*override*/;
 
     virtual ushort getPort() const /*override*/;
@@ -56,7 +58,7 @@ public:
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
     virtual bool connect(
-        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& gameConnection,
         ::Social::GameConnectionInfo const& backupConnection
     ) /*override*/;
 
@@ -109,6 +111,8 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void $setDisableLanSignaling(bool disableLanSignaling);
 
+    MCNAPI void $setDisableTrickleIce(bool disableTrickleIce);
+
     MCNAPI ::std::string $getLocalIp();
 
     MCNAPI ushort $getPort() const;
@@ -125,10 +129,8 @@ public:
 
     MCNAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCNAPI bool $connect(
-        ::Social::GameConnectionInfo const& primaryConnection,
-        ::Social::GameConnectionInfo const& backupConnection
-    );
+    MCNAPI bool
+    $connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
 
     MCNAPI void $disconnect();
 

@@ -11,6 +11,7 @@ class BlockPos;
 class ItemStack;
 class LabTableReactionComponent;
 class Random;
+class Vec3;
 // clang-format on
 
 class LabTableReaction {
@@ -48,6 +49,8 @@ public:
         int                    maxLifetime,
         int                    startDelay
     );
+
+    MCAPI ::Vec3 _getTableTop() const;
 
     MCFOLD void addComponent(::std::unique_ptr<::LabTableReactionComponent> comp);
 

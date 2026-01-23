@@ -37,6 +37,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
@@ -46,6 +47,7 @@ public:
         ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
+#endif
 
 
     // NOLINTEND

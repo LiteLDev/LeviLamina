@@ -59,6 +59,10 @@ public:
 
     virtual void DisableLANSignaling() /*override*/;
 
+    virtual void EnableTrickleIce() /*override*/;
+
+    virtual void DisableTrickleIce() /*override*/;
+
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler*) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler*) /*override*/;

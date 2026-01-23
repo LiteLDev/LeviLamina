@@ -30,6 +30,7 @@ class LevelData;
 class LinkedAssetValidator;
 class ResourcePackManager;
 struct ItemData;
+struct ItemIconInfoFactory;
 struct ItemParseContext;
 struct ItemRegistryComplexAlias;
 struct ItemTag;
@@ -248,8 +249,6 @@ public:
 
     MCAPI ::WeakPtr<::Item> getItem(short id);
 
-    MCAPI_C short getLegacyIDFromName(::HashedString const& name);
-
     MCAPI ::std::pair<::HashedString, int> getNameFromAlias(::HashedString const& name, int aux) const;
 
     MCAPI ::HashedString getNameFromLegacyID(short id);
@@ -260,7 +259,11 @@ public:
         ::BaseGameVersion const&         baseGameVersion
     );
 
-    MCAPI_C void initClientData(::ResourcePackManager& resourcePackManager, ::Experiments const& experiments);
+    MCAPI_C void initClientData(
+        ::ResourcePackManager& resourcePackManager,
+        ::Experiments const&   experiments,
+        ::ItemIconInfoFactory  iconFactory
+    );
 
     MCAPI void initCreativeItemsServer(
         ::BlockDefinitionGroup const&                      blockDefinitionGroup,
@@ -310,6 +313,8 @@ public:
     registerComplexAlias(::HashedString const& alias, ::ItemRegistryComplexAlias const& complexAlias);
 
     MCAPI void registerItem(::SharedPtr<::Item> item);
+
+    MCAPI void registerLegacyID(::HashedString const& name, short id);
 
     MCAPI void registerLegacyMapping(
         ::HashedString const&    alias,

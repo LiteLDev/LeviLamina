@@ -18,7 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S ::NetworkAddress& operator=(::NetworkAddress const&);
+    MCFOLD_S ::NetworkAddress& operator=(::NetworkAddress const&);
 
     MCAPI_S ~NetworkAddress();
     // NOLINTEND

@@ -50,18 +50,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& DEFAULT_ALLOW_DIG_WHEN_NAMED();
-
-    MCAPI static bool const& DEFAULT_DIGS_IN_DAYLIGHT();
-
-    MCAPI static float const& DEFAULT_DURATION();
-
-    MCAPI static float const& DEFAULT_IDLE_TIME();
-
-    MCAPI static bool const& DEFAULT_SUSPICION_IS_DISTURBANCE();
-
-    MCAPI static bool const& DEFAULT_VIBRATION_IS_DISTURBANCE();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcEventDtlsWritableState() /*override*/;
+    virtual ~RtcEventDtlsWritableState() /*override*/ = default;
 
     virtual ::webrtc::RtcEvent::Type GetType() const /*override*/;
 
@@ -40,12 +40,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(bool writable);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

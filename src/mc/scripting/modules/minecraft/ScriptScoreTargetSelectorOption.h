@@ -22,6 +22,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptScoreTargetSelectorOption& operator=(ScriptScoreTargetSelectorOption const&);
     ScriptScoreTargetSelectorOption(ScriptScoreTargetSelectorOption const&);
     ScriptScoreTargetSelectorOption();
 
@@ -30,9 +31,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
     operator=(::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&&);
-
-    MCNAPI ::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
-    operator=(::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption const&);
     // NOLINTEND
 
 public:

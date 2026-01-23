@@ -18,10 +18,6 @@ namespace Editor::API {
 
 class EditorServerBindingsModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
-    // prevent constructor by default
-    EditorServerBindingsModuleFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~EditorServerBindingsModuleFactory() /*override*/ = default;
@@ -30,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EditorServerBindingsModuleFactory(::Editor::ServiceProviderCollection& managerServices);
-
     MCNAPI void _addVersions(::Editor::ServiceProviderCollection& managerServices);
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
@@ -54,12 +48,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static char const*& ModuleName();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& managerServices);
     // NOLINTEND
 
 public:

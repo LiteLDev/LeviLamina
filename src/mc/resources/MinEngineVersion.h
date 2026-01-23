@@ -18,15 +18,12 @@ public:
 
 public:
     // prevent constructor by default
+    MinEngineVersion(MinEngineVersion const&);
     MinEngineVersion();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MinEngineVersion(::MinEngineVersion const&);
-
-    MCAPI_C explicit MinEngineVersion(::SemVersion const& version);
-
     MCAPI ::MinEngineVersion& operator=(::MinEngineVersion&&);
 
     MCAPI_C ::MinEngineVersion& operator=(::MinEngineVersion const&);
@@ -38,14 +35,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::MinEngineVersion fromString(::std::string const& string);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::MinEngineVersion const&);
-
-    MCAPI_C void* $ctor(::SemVersion const& version);
     // NOLINTEND
 
 public:

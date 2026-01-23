@@ -17,7 +17,11 @@ MCAPI void chargeableItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Late
 
 MCAPI void foodItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
 
+MCAPI void kineticWeaponItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
+
 MCAPI void shooterItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
+
+MCAPI void swingSoundsItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
 // NOLINTEND
 
 } // namespace Validators

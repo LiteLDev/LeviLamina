@@ -54,7 +54,7 @@ public:
 
     virtual ::rtc::SocketAddress GetRemoteAddress() const = 0;
 
-    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) = 0;
+    virtual int Send(void const*, uint64, ::rtc::PacketOptions const&) = 0;
 
     virtual int SendTo(void const*, uint64, ::rtc::SocketAddress const&, ::rtc::PacketOptions const&) = 0;
 

@@ -51,8 +51,6 @@ public:
 
     MCAPI void _sendCursorSlotPacket() const;
 
-    MCAPI int clearAllItems();
-
     MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
     MCAPI int removeResource(

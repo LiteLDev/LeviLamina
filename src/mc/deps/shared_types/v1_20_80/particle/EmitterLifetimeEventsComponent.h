@@ -27,6 +27,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EmitterLifetimeEventsComponent(EmitterLifetimeEventsComponent const&);
+    EmitterLifetimeEventsComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
@@ -37,12 +42,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C EmitterLifetimeEventsComponent();
-
-    MCAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
-
-    MCAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
-
     MCAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&
     operator=(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
 
@@ -60,16 +59,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor();
-
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
     // NOLINTEND
 
 public:

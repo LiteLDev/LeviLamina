@@ -27,6 +27,8 @@ MCNAPI ::Scripting::InterfaceBinding bindScriptInputBindingInfo();
 
 MCNAPI ::Scripting::EnumBinding bindScriptInputModifier();
 
+MCNAPI ::Scripting::InterfaceBinding bindScriptLocalizationEntry();
+
 MCNAPI ::Scripting::EnumBinding bindScriptMouseActionCategory();
 
 MCNAPI ::Scripting::EnumBinding bindStructureSourceEnum();

@@ -74,17 +74,11 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::dcsctp::StreamScheduler::VirtualTime CalculateFinishTime(uint64 bytes_to_send_next) const;
-
-        MCNAPI void ForceMarkInactive();
-
         MCNAPI void MakeActive(uint64 bytes_to_send_next);
 
         MCNAPI void MakeInactive();
 
         MCNAPI void MaybeMakeActive();
-
-        MCNAPI ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp now, uint64 max_size);
 
         MCNAPI void SetPriority(::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort> priority);
         // NOLINTEND

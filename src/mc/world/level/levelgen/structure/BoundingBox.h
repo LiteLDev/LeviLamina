@@ -86,19 +86,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::BoundingBox> intersect(::BoundingBox const& lhs, ::BoundingBox const& rhs);
-
-    MCAPI static ::BoundingBox orientBox(
-        int footX,
-        int footY,
-        int footZ,
-        int offX,
-        int offY,
-        int offZ,
-        int width,
-        int height,
-        int depth,
-        int orientation
-    );
     // NOLINTEND
 
 public:

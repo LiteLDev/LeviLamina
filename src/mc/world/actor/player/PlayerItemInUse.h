@@ -24,6 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void clearItemInUse(::EntityContext& owner);
+
     MCAPI void releaseUsing(::Player& player);
 
     MCAPI void

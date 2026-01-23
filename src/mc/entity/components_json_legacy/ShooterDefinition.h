@@ -26,11 +26,12 @@ public:
     // prevent constructor by default
     ShooterDefinition& operator=(ShooterDefinition const&);
     ShooterDefinition(ShooterDefinition const&);
-    ShooterDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ShooterDefinition();
+
     MCNAPI void addSoundByName(::std::string const& name);
 
     MCNAPI void setActorDefByName(::std::string const& name);
@@ -41,5 +42,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ShooterDefinition>>& root);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

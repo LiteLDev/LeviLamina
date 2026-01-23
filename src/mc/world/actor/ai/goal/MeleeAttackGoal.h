@@ -64,18 +64,18 @@ public:
         float         attackReachSq,
         float         targetMinY,
         float         targetMaxY,
-        float         targetDistanceSqXZ,
+        float         targetXZDistanceSqr,
         int           attackTicks
     );
 
     MCAPI static bool _canReachTargetLegacy(
-        ::Mob const&  mob,
-        ::Vec3 const& targetPosition,
-        float         attackReachSq,
-        float         targetMinY,
-        float         targetMaxY,
-        float         targetDistanceSqXZ,
-        int           attackTicks
+        ::Mob const& mob,
+        ::Vec3 const&,
+        float attackReachSq,
+        float targetMinY,
+        float targetMaxY,
+        float targetXZDistanceSqr,
+        int   attackTicks
     );
 
     MCFOLD static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
@@ -86,9 +86,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& min3DAttackVersion();
+    MCAPI static ::BaseGameVersion const& MIN_3D_ATTACK_VERSION();
 
-    MCAPI static ::BaseGameVersion const& minHitThroughWallFixVersion();
+    MCAPI static ::BaseGameVersion const& MIN_HIT_THROUGH_WALL_FIX_VERSION();
     // NOLINTEND
 
 public:

@@ -16,7 +16,7 @@ struct Schema {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnk5ed1d2;
+    ::ll::UntypedStorage<8, 168> mUnk5ed1d2;
     ::ll::UntypedStorage<8, 8>   mUnk75bb3d;
     // NOLINTEND
 
@@ -44,6 +44,8 @@ public:
     );
 
     MCNAPI bool save(::cereal::SchemaWriter& writer, ::entt::meta_handle data, ::cereal::SaverConfig const& config);
+
+    MCNAPI void schema(::entt::meta_ctx const& ctx, ::entt::type_info info);
 
     MCNAPI ~Schema();
     // NOLINTEND

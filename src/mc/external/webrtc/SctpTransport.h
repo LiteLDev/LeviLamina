@@ -4,14 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/external/webrtc/DataChannelTransportInterface.h"
-#include "mc/external/webrtc/DtlsTransportState.h"
 #include "mc/external/webrtc/SctpTransportInterface.h"
 #include "mc/external/webrtc/SctpTransportState.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class DtlsTransportInternal; }
 namespace cricket { class SctpTransportInternal; }
 namespace rtc { class CopyOnWriteBuffer; }
 namespace webrtc { class DataChannelSink; }
@@ -80,10 +78,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void Clear();
-
-    MCNAPI void OnAssociationChangeCommunicationUp();
-
-    MCNAPI void OnDtlsStateChange(::cricket::DtlsTransportInternal* transport, ::webrtc::DtlsTransportState state);
 
     MCNAPI SctpTransport(
         ::std::unique_ptr<::cricket::SctpTransportInternal> internal,

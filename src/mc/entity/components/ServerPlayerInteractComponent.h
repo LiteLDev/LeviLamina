@@ -9,6 +9,6 @@ struct ServerPlayerInteractComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::InteractPacket> mCurrentInteraction;
+    ::ll::TypedStorage<8, 88, ::InteractPacket> mCurrentInteraction;
     // NOLINTEND
 };

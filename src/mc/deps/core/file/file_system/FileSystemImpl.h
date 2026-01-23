@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileSystemImpl() = default;
+    virtual ~FileSystemImpl();
 
     virtual ::Core::Result getLastModificationTime(::Core::PathView entryPath, int64* lastModificationTime);
 
@@ -320,6 +320,12 @@ public:
         ::Core::TransactionFlags                           transactionFlags,
         ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

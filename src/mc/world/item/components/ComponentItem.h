@@ -6,6 +6,7 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/shared_types/item/ItemCooldownType.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/resources/JsonBetaState.h"
@@ -41,6 +42,7 @@ class SemVersion;
 class Vec3;
 struct ComponentItemDataAll_Latest;
 struct ComponentItemData_Legacy;
+struct ItemIconInfoFactory;
 struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 namespace Core { class Path; }
@@ -171,17 +173,26 @@ public:
 
     virtual void setColor(::ItemStackBase& instance, ::mce::Color const& color) const /*override*/;
 
+    virtual ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackMissSound() const /*override*/;
+
+    virtual ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackHitSound() const /*override*/;
+
+    virtual ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackCriticalHitSound() const /*override*/;
+
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
+
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     virtual bool canUseAsAttack() const /*override*/;
 
-    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection) const
+        /*override*/;
 
     virtual ::Actor* createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
         ::Vec3 const&      pos,
-        ::Vec3 const&      direction
+        ::Vec3 const&      aimDirection
     ) const /*override*/;
 
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
@@ -212,16 +223,21 @@ public:
 
     virtual int getCooldownDuration() const /*override*/;
 
-    virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
+    virtual ::SharedTypes::ItemCooldownType getCooldownType() const /*override*/;
 
-    virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
+    virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
     virtual bool useVariant(int, int, bool) const;
 
     virtual int getVariant(int, int, bool) const;
 
-    virtual ::PuvLoadData::LoadResultWithTiming
-    initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&) /*override*/;
+    virtual ::PuvLoadData::LoadResultWithTiming initClient(
+        ::Json::Value const&,
+        ::SemVersion const&,
+        ::JsonBetaState const,
+        ::IPackLoadContext&,
+        ::ItemIconInfoFactory
+    ) /*override*/;
 
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
@@ -232,7 +248,7 @@ public:
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int frame) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     virtual bool canBeCharged() const /*override*/;
 
@@ -367,9 +383,7 @@ public:
 
     MCAPI ::std::string const& $getDescriptionId() const;
 
-#ifdef LL_PLAT_S
     MCFOLD ::BlockShape $getBlockShape() const;
-#endif
 
     MCAPI bool $canBeDepleted() const;
 
@@ -424,20 +438,30 @@ public:
 
     MCAPI void $setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
 
+    MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> $getAttackMissSound() const;
+
+    MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> $getAttackHitSound() const;
+
+    MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> $getAttackCriticalHitSound() const;
+
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI bool $canUseAsAttack() const;
 
-    MCAPI ::ItemStack& $useAsAttack(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection) const;
 
     MCAPI ::Actor* $createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
         ::Vec3 const&      pos,
-        ::Vec3 const&      direction
+        ::Vec3 const&      aimDirection
     ) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
     MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
@@ -459,7 +483,11 @@ public:
 
     MCAPI int $getCooldownDuration() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCAPI ::SharedTypes::ItemCooldownType $getCooldownType() const;
+
+#ifdef LL_PLAT_S
+    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
+#endif
 
     MCFOLD bool $useVariant(int, int, bool) const;
 
@@ -474,7 +502,7 @@ public:
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int frame);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI bool $canBeCharged() const;
 
@@ -497,10 +525,6 @@ public:
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
-#endif
 
 
     // NOLINTEND

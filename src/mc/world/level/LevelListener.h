@@ -105,9 +105,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $allChanged();
 
-#ifdef LL_PLAT_S
     MCFOLD void $sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int);
-#endif
 
     MCFOLD void $addParticleEffect(
         ::HashedString const&,
@@ -148,6 +146,12 @@ public:
     MCFOLD void $onChunkUnloaded(::LevelChunk&);
 
     MCFOLD void $onLevelDestruction(::std::string const&);
+
+#ifdef LL_PLAT_S
+    MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
+
+    MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
+#endif
 
     MCAPI void $takePicture(
         ::cg::ImageBuffer&,

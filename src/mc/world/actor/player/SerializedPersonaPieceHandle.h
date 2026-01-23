@@ -18,8 +18,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SerializedPersonaPieceHandle(SerializedPersonaPieceHandle const&);
+    SerializedPersonaPieceHandle();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle const&);
+
     MCAPI ~SerializedPersonaPieceHandle();
     // NOLINTEND
 

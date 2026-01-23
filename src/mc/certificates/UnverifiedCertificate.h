@@ -41,7 +41,8 @@ public:
 
     MCAPI ::std::string toString() const;
 
-    MCAPI ::std::unique_ptr<::Certificate> verify(::std::vector<::std::string> const& trustedKeys) const;
+    MCAPI ::std::unique_ptr<::Certificate>
+    verify(::std::vector<::std::string> const& trustedKeys, int remainingDepth) const;
 
     MCAPI ~UnverifiedCertificate();
     // NOLINTEND

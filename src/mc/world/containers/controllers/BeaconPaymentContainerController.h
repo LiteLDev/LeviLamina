@@ -7,17 +7,34 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContainerModel;
 class ItemStackBase;
 class Recipes;
 // clang-format on
 
 class BeaconPaymentContainerController : public ::ContainerController {
 public:
+    // prevent constructor by default
+    BeaconPaymentContainerController();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BeaconPaymentContainerController() /*override*/ = default;
 
     virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit BeaconPaymentContainerController(::std::shared_ptr<::ContainerModel> ptrContainerModel);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> ptrContainerModel);
     // NOLINTEND
 
 public:

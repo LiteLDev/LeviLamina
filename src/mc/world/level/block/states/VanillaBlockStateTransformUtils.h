@@ -32,13 +32,17 @@ public:
 
     MCAPI static ::CommonDirection _rotate(::CommonDirection direction, ::Rotation rotation);
 
+    MCAPI static bool hasTransformableConnectionStates(::Block const& block);
+
     MCAPI static bool hasTransformableWallStates(::Block const& block);
 
     MCAPI static ::Block const* transformBlock(::Block const& block, ::CommonDirection targetDirection);
 
     MCAPI static ::Block const* transformBlock(::Block const& block, ::Rotation rotation, ::Mirror mirror);
 
-    MCAPI static ::Block const* transformCardinalDirection(::Block const& block, ::Rotation rotation, ::Mirror mirror);
+    MCAPI static ::Block const* transformCorner(::Block const& block, ::Mirror mirror);
+
+    MCAPI static ::Block const* transformDoorDirection(::Block const& block, ::Rotation rotation, ::Mirror mirror);
 
     MCAPI static ::Block const*
     transformWallConnectionTypes(::Block const& block, ::Rotation rotation, ::Mirror mirror);

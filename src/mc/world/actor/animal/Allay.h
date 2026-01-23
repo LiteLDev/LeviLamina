@@ -9,11 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -23,10 +20,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Tick> mDuplicationCooldownCompleteTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Allay();
 
 public:
     // virtual functions
@@ -45,25 +38,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Allay(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityId
-    );
-
     MCAPI bool hasDuplicationCooldown();
 
     MCAPI void setNewDuplicationCooldown();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityId
-    );
     // NOLINTEND
 
 public:

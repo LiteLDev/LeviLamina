@@ -13,7 +13,6 @@ public:
 
 public:
     // prevent constructor by default
-    Description& operator=(Description const&);
     Description(Description const&);
     Description();
 
@@ -22,6 +21,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::Description&
     operator=(::SharedTypes::v1_21_60::DimensionDefinition::Description&&);
+
+    MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::Description&
+    operator=(::SharedTypes::v1_21_60::DimensionDefinition::Description const&);
 
     MCAPI ~Description();
     // NOLINTEND

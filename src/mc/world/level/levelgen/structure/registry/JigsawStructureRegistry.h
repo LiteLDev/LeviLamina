@@ -52,19 +52,11 @@ public:
     MCAPI ::StructureTemplatePool const* lookupByName(::std::string const& name) const;
 
     MCAPI void registerPool(::std::unique_ptr<::StructureTemplatePool>&& pool);
-
-    MCAPI ~JigsawStructureRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

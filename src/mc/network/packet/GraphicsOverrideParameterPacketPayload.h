@@ -22,24 +22,17 @@ public:
 
 public:
     // prevent constructor by default
-    GraphicsOverrideParameterPacketPayload& operator=(GraphicsOverrideParameterPacketPayload const&);
     GraphicsOverrideParameterPacketPayload(GraphicsOverrideParameterPacketPayload const&);
     GraphicsOverrideParameterPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GraphicsOverrideParameterPacketPayload(::GraphicsOverrideParameterPacketPayload&&);
-
     MCAPI ::GraphicsOverrideParameterPacketPayload& operator=(::GraphicsOverrideParameterPacketPayload&&);
 
-    MCAPI ~GraphicsOverrideParameterPacketPayload();
-    // NOLINTEND
+    MCAPI ::GraphicsOverrideParameterPacketPayload& operator=(::GraphicsOverrideParameterPacketPayload const&);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::GraphicsOverrideParameterPacketPayload&&);
+    MCAPI ~GraphicsOverrideParameterPacketPayload();
     // NOLINTEND
 
 public:

@@ -30,10 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScreenshotOptions& operator=(ScreenshotOptions const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C ScreenshotOptions();
@@ -43,6 +39,8 @@ public:
     MCNAPI_C ScreenshotOptions(::ScreenshotOptions const&);
 
     MCNAPI_C ::ScreenshotOptions& operator=(::ScreenshotOptions&&);
+
+    MCNAPI_C ::ScreenshotOptions& operator=(::ScreenshotOptions const&);
 
     MCNAPI_C ~ScreenshotOptions();
     // NOLINTEND

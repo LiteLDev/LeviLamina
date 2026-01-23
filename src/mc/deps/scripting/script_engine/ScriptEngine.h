@@ -39,6 +39,8 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ScriptEngine(::Scripting::RegistryManager* registryManager);
 
+    MCNAPI ::Scripting::IModuleBindingFactory* _getModuleBindingFactoryByName(::std::string const& name) const;
+
     MCNAPI void addModuleBindingFactory(::std::unique_ptr<::Scripting::IModuleBindingFactory> moduleBindingFactory);
 
     MCNAPI ::Scripting::ScriptContextResult createScriptingContext(
@@ -55,6 +57,8 @@ public:
     MCNAPI ::std::optional<::Scripting::ModuleDescriptor> getModuleDescriptorByName(::std::string const& name) const;
 
     MCNAPI ::std::vector<::Scripting::SupportedBindingModule> getSupportedBindingModules() const;
+
+    MCNAPI bool hasModuleBindingFactoryByName(::std::string const& name) const;
 
     MCNAPI void setRuntimeFactory(
         ::std::function<::std::shared_ptr<::Scripting::IRuntime>(

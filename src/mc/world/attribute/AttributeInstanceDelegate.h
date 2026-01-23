@@ -36,12 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::AttributeInstance* _getMutableInstance(::AttributeModificationContext& context) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $tick(::AttributeInstance&, ::AttributeModificationContext&);

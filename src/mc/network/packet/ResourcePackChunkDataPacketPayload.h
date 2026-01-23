@@ -14,24 +14,17 @@ public:
 
 public:
     // prevent constructor by default
+    ResourcePackChunkDataPacketPayload(ResourcePackChunkDataPacketPayload const&);
     ResourcePackChunkDataPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackChunkDataPacketPayload(::ResourcePackChunkDataPacketPayload const&);
-
     MCAPI ::ResourcePackChunkDataPacketPayload& operator=(::ResourcePackChunkDataPacketPayload&&);
 
     MCAPI ::ResourcePackChunkDataPacketPayload& operator=(::ResourcePackChunkDataPacketPayload const&);
 
     MCAPI ~ResourcePackChunkDataPacketPayload();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourcePackChunkDataPacketPayload const&);
     // NOLINTEND
 
 public:

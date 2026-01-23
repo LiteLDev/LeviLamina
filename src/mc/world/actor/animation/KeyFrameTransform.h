@@ -27,13 +27,12 @@ public:
 public:
     // prevent constructor by default
     KeyFrameTransform& operator=(KeyFrameTransform const&);
+    KeyFrameTransform(KeyFrameTransform const&);
     KeyFrameTransform();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI KeyFrameTransform(::KeyFrameTransform const&);
-
     MCAPI_C void animate(
         ::RenderParams&     renderParams,
         ::BoneOrientation&  destBoneOrientation,
@@ -63,12 +62,6 @@ public:
         ::KeyFrameTransform& p2,
         ::KeyFrameTransform* p3
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::KeyFrameTransform const&);
     // NOLINTEND
 
 public:

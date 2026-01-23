@@ -29,12 +29,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Proxy();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Proxy();
+
     MCAPI Proxy(::BlockGeometrySerializer::Proxy const&);
 
     MCAPI ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode> getBoneVisibility() const;
@@ -61,6 +59,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::BlockGeometrySerializer::Proxy const&);
     // NOLINTEND
 

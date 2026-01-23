@@ -14,6 +14,7 @@ struct LoopingSoundState;
 struct PlayingSoundAttributes;
 struct SoundInstanceProperties;
 namespace Core { class Path; }
+namespace Core { class PathView; }
 class SoundItem;
 // clang-format on
 
@@ -39,7 +40,7 @@ public:
 
     virtual bool isPlayingMusicEvent(::std::string const&) const = 0;
 
-    virtual bool isPlayingMusic(::Core::Path const&) const = 0;
+    virtual bool isPlayingMusic(::Core::PathView) const = 0;
 
     virtual void fadeToStopMusic(float) = 0;
 
@@ -63,7 +64,7 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicName() = 0;
 
-    virtual bool getItem(::std::string const&, ::Core::Path const&, ::SoundItem&) const = 0;
+    virtual bool getItem(::std::string const&, ::Core::PathView, ::SoundItem&) const = 0;
 
     virtual uint64 registerLoop(::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float) = 0;
 

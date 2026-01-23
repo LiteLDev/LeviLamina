@@ -20,11 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool Acquire() const;
-
     MCNAPI RaceChecker();
-
-    MCNAPI void Release() const;
     // NOLINTEND
 
 public:

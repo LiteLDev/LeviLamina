@@ -58,6 +58,9 @@ public:
         ::RenderParams&                      childRenderParams
     );
 
+    MCNAPI float
+    executeScript(::HashedString const& scriptName, ::RenderParams& renderParams, float defaultValueIfNoScript);
+
     MCNAPI ::ExpressionNode getCopyOfScript_defaultIfNone(::HashedString const& name) const;
 
     MCNAPI ::std::weak_ptr<::DataDrivenRenderer>

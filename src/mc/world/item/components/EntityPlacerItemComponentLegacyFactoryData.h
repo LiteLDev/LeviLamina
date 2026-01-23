@@ -26,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     EntityPlacerItemComponentLegacyFactoryData& operator=(EntityPlacerItemComponentLegacyFactoryData const&);
+    EntityPlacerItemComponentLegacyFactoryData(EntityPlacerItemComponentLegacyFactoryData const&);
     EntityPlacerItemComponentLegacyFactoryData();
 
 public:
@@ -38,8 +39,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI EntityPlacerItemComponentLegacyFactoryData(::EntityPlacerItemComponentLegacyFactoryData&&);
-
-    MCAPI EntityPlacerItemComponentLegacyFactoryData(::EntityPlacerItemComponentLegacyFactoryData const&);
     // NOLINTEND
 
 public:
@@ -56,8 +55,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::EntityPlacerItemComponentLegacyFactoryData&&);
-
-    MCAPI void* $ctor(::EntityPlacerItemComponentLegacyFactoryData const&);
     // NOLINTEND
 
 public:

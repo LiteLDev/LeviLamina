@@ -14,6 +14,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
+class EntityContext;
 class ItemDescriptor;
 class Mob;
 class NavigationComponent;
@@ -57,6 +59,12 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ~Definition() /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void initialize(::EntityContext& entity, ::JumpToBlockGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -150,6 +158,14 @@ public:
     MCAPI bool _findJumpableBlocks(bool useOnlyPreferredBlocksIfAny);
 
     MCAPI bool _findTargetBlock();
+
+    MCAPI bool _isValidPassThroughBlock(::BlockPos const& blockPos, ::NavigationComponent& navigation) const;
+
+    MCAPI bool _isValidTargetBlock(
+        ::BlockPos const&      blockPos,
+        ::BlockSource const&   region,
+        ::NavigationComponent& navigation
+    ) const;
 
     MCAPI void resetCooldown();
     // NOLINTEND

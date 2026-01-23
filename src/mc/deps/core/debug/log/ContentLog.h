@@ -9,7 +9,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/typeid_t.h"
-#include "mc/diagnostics/LogAreaID.h"
+#include "mc/platform/diagnostics/LogAreaID.h"
 #include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list

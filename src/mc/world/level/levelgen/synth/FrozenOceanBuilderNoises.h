@@ -21,19 +21,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FrozenOceanBuilderNoises();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FrozenOceanBuilderNoises(
-        ::XoroshiroPositionalRandomFactory                                            positionalRandomFactory,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergSurfaceNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarRoofNoise
-    );
-
     MCAPI ~FrozenOceanBuilderNoises();
     // NOLINTEND
 
@@ -41,17 +30,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::FrozenOceanBuilderNoises make(::XoroshiroPositionalRandomFactory const& positionalRandom);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::XoroshiroPositionalRandomFactory                                            positionalRandomFactory,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergSurfaceNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarRoofNoise
-    );
     // NOLINTEND
 
 public:

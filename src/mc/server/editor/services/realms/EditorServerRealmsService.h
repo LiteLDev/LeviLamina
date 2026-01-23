@@ -11,7 +11,6 @@
 // clang-format off
 class WeakEntityRef;
 namespace Editor { class GameOptions; }
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class EditorIsRealmsServiceAvailablePayload; }
 namespace Editor::Network { class RealmWorldDownloadResponsePayload; }
 namespace Editor::Network { class RealmWorldListDownloadPayload; }
@@ -64,8 +63,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit EditorServerRealmsService(::Editor::ServiceProviderCollection& providers);
-
     MCNAPI void
     _handleIsRealmsServiceAvailablePayload(::Editor::Network::EditorIsRealmsServiceAvailablePayload const& payload);
 
@@ -76,12 +73,6 @@ public:
     MCNAPI void _handleRealmWorldSlotsDownloadPayload(::Editor::Network::RealmWorldSlotsDownloadPayload const& payload);
 
     MCNAPI void _handleRealmWorldUploadResponse(::Editor::Network::RealmWorldUploadResponsePayload const& payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

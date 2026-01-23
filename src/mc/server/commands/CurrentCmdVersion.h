@@ -52,6 +52,7 @@ enum class CurrentCmdVersion : int {
     LocateStructureOutput                                                             = 42,
     PostBlockFlattening                                                               = 43,
     TestForBlockCommandDoesNotIgnoreBlockState                                        = 44,
-    Count                                                                             = 45,
-    Latest                                                                            = 44,
+    CloneExtraBlockFilterFix                                                          = 45,
+    Count                                                                             = 46,
+    Latest                                                                            = 45,
 };

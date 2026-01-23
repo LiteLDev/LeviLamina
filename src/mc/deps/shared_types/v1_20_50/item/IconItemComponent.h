@@ -21,7 +21,6 @@ public:
 
 public:
     // prevent constructor by default
-    IconItemComponent& operator=(IconItemComponent const&);
     IconItemComponent(IconItemComponent const&);
     IconItemComponent();
 
@@ -29,6 +28,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_20_50::IconItemComponent& operator=(::SharedTypes::v1_20_50::IconItemComponent&&);
+
+    MCFOLD ::SharedTypes::v1_20_50::IconItemComponent& operator=(::SharedTypes::v1_20_50::IconItemComponent const&);
     // NOLINTEND
 
 public:

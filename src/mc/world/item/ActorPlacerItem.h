@@ -22,8 +22,8 @@ class ItemRegistryRef;
 class ItemStack;
 class ItemStackBase;
 class Vec3;
+struct ItemTintStrategy;
 struct ResolvedItemIconInfo;
-namespace mce { class Color; }
 // clang-format on
 
 class ActorPlacerItem : public ::Item {
@@ -32,10 +32,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mActorID;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorPlacerItem();
 
 public:
     // virtual functions
@@ -57,11 +53,7 @@ public:
 
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    virtual bool isMultiColorTinted(::ItemStack const&) const /*override*/;
-
-    virtual ::mce::Color getBaseColor(::ItemStack const&) const /*override*/;
-
-    virtual ::mce::Color getSecondaryColor(::ItemStack const&) const /*override*/;
+    virtual ::ItemTintStrategy getTintStrategy() const /*override*/;
 
     virtual bool isActorPlacerItem() const /*override*/;
 
@@ -75,8 +67,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorPlacerItem(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
-
     MCAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
 
     MCAPI ::Actor* _spawnActorAt(
@@ -94,7 +84,7 @@ public:
     MCAPI static void
     forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
 
-    MCAPI_C static void initializeIcons();
+    MCAPI_C static void initializeIcons(::std::unordered_map<::HashedString, ::ResolvedItemIconInfo> icons);
 
     MCAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
 
@@ -107,12 +97,6 @@ public:
     MCAPI static ::std::unordered_map<uint, ::std::string>& mCustomSpawnEggs();
 
     MCAPI static ::std::unordered_map<::HashedString, ::ResolvedItemIconInfo>& mEggTextureInfoMap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
     // NOLINTEND
 
 public:
@@ -134,11 +118,7 @@ public:
 
     MCFOLD bool $isValidAuxValue(int auxValue) const;
 
-    MCFOLD bool $isMultiColorTinted(::ItemStack const&) const;
-
-    MCFOLD ::mce::Color $getBaseColor(::ItemStack const&) const;
-
-    MCFOLD ::mce::Color $getSecondaryColor(::ItemStack const&) const;
+    MCAPI ::ItemTintStrategy $getTintStrategy() const;
 
     MCFOLD bool $isActorPlacerItem() const;
 

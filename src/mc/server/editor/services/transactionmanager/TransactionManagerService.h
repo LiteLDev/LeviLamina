@@ -18,6 +18,7 @@ class BlockPos;
 class BlockSource;
 class BlockVolumeBase;
 struct PlayerDimensionChangeBeforeEvent;
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class RedoOperationPayload; }
 namespace Editor::Network { class UndoOperationPayload; }
 namespace Editor::Transactions { class TransactionContext; }
@@ -114,6 +115,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit TransactionManagerService(::Editor::ServiceProviderCollection& providers);
+
     MCNAPI void _handleRedoMessage(::Editor::Network::RedoOperationPayload const&);
 
     MCNAPI void _handleUndoMessage(::Editor::Network::UndoOperationPayload const&);
@@ -124,6 +127,12 @@ public:
     _trackBlockChanges(::BlockSource const& region, ::std::vector<::BlockPos> const& locations);
 
     MCNAPI ::Scripting::Result_deprecated<void> _undo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

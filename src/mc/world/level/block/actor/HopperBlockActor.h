@@ -44,7 +44,7 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
@@ -118,7 +118,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int index) const;
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 

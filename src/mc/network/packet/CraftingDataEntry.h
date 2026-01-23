@@ -47,15 +47,7 @@ public:
 
     MCAPI_C void addMultiRecipe(::Recipes& recipes) const;
 
-    MCAPI_C void addShapedChemistryRecipe(::Recipes& recipes) const;
-
-    MCAPI_C void addShapedRecipe(::Recipes& recipes) const;
-
     MCAPI_C void addSmithingTransformRecipe(::Recipes& recipes) const;
-
-    MCAPI_C void addSmithingTrimRecipe(::Recipes& recipes) const;
-
-    MCAPI_C void addUserDataShapelessRecipe(::Recipes& recipes) const;
 
     MCAPI void fillFromFurnaceAuxRecipe(int itemData, ::ItemInstance const& result, ::HashedString const& tag);
 

@@ -54,6 +54,8 @@ public:
 
     MCNAPI explicit ScriptRelativeVolumeListBlockVolume(::Editor::RelativeVolumeListBlockVolume const& rhs);
 
+    MCNAPI ScriptRelativeVolumeListBlockVolume(::Vec3 const& location, ::std::optional<::Vec3> const& origin);
+
     MCNAPI void
     add(::std::variant<
         ::Vec3 const,
@@ -111,6 +113,8 @@ public:
     MCNAPI void* $ctor(::std::optional<::Vec3> const& origin);
 
     MCNAPI void* $ctor(::Editor::RelativeVolumeListBlockVolume const& rhs);
+
+    MCNAPI void* $ctor(::Vec3 const& location, ::std::optional<::Vec3> const& origin);
     // NOLINTEND
 
 public:

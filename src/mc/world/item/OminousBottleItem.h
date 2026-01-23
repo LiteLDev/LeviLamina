@@ -40,7 +40,7 @@ public:
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
+        ::ItemStackBase const&               item,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
@@ -54,8 +54,7 @@ public:
 
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
-        /*override*/;
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const /*override*/;
 
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
@@ -90,7 +89,7 @@ public:
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
     MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
+        ::ItemStackBase const&               item,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
@@ -104,7 +103,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const;
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
 

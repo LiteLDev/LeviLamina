@@ -16,7 +16,6 @@ public:
 
 public:
     // prevent constructor by default
-    CreatePhotoPacketPayload& operator=(CreatePhotoPacketPayload const&);
     CreatePhotoPacketPayload(CreatePhotoPacketPayload const&);
     CreatePhotoPacketPayload();
 
@@ -24,6 +23,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::CreatePhotoPacketPayload& operator=(::CreatePhotoPacketPayload&&);
+
+    MCAPI ::CreatePhotoPacketPayload& operator=(::CreatePhotoPacketPayload const&);
 
     MCAPI ~CreatePhotoPacketPayload();
     // NOLINTEND

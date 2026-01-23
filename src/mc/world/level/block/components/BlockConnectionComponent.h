@@ -10,6 +10,7 @@
 class Block;
 class BlockPos;
 class BlockSource;
+class BlockType;
 namespace BlockTrait { class IConnectionUpdateCallback; }
 // clang-format on
 
@@ -39,6 +40,18 @@ public:
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTrait::IConnectionUpdateCallback>> mUpdateCallback;
         ::ll::TypedStorage<4, 4, int>                                                        mUpdateFlags;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ConnectionData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -50,6 +63,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addCallback(
+        ::BlockType&                                               blockType,
+        ::NeighborBlockDirections                                  neighborBlockDirections,
+        ::std::unique_ptr<::BlockTrait::IConnectionUpdateCallback> callback,
+        int                                                        updateFlags
+    );
+
     MCAPI ::Block const& handleConnectionUpdate(
         ::BlockSource&            region,
         ::Block const&            block,

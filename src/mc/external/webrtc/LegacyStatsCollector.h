@@ -120,7 +120,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LegacyStatsCollector() /*override*/;
+    virtual ~LegacyStatsCollector() /*override*/ = default;
 
     virtual void AddLocalAudioTrack(::webrtc::AudioTrackInterface* audio_track, uint ssrc) /*override*/;
 
@@ -172,19 +172,11 @@ public:
 
     MCNAPI void ExtractSessionInfo_s(::webrtc::LegacyStatsCollector::SessionStats& session_stats);
 
-    MCNAPI ::webrtc::StatsReport* GetReport(
-        ::webrtc::StatsReport::StatsType const& type,
-        ::std::string const&                    id,
-        ::webrtc::StatsReport::Direction        direction
-    );
-
     MCNAPI void InvalidateCache();
 
     MCNAPI bool IsValidTrack(::std::string const& track_id);
 
     MCNAPI explicit LegacyStatsCollector(::webrtc::PeerConnectionInternal* pc);
-
-    MCNAPI ::webrtc::StatsReport* PrepareADMReport();
 
     MCNAPI ::webrtc::StatsReport* PrepareReport(
         bool                                                          local,
@@ -194,29 +186,15 @@ public:
         ::webrtc::StatsReport::Direction                              direction
     );
 
-    MCNAPI void UpdateReportFromAudioTrack(
-        ::webrtc::AudioTrackInterface* track,
-        ::webrtc::StatsReport*         report,
-        bool                           has_remote_tracks
-    );
-
     MCNAPI void UpdateStats(::webrtc::PeerConnectionInterface::StatsOutputLevel level);
 
     MCNAPI void UpdateStatsFromExistingLocalAudioTracks(bool has_remote_tracks);
-
-    MCNAPI void UpdateTrackReports();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::PeerConnectionInternal* pc);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

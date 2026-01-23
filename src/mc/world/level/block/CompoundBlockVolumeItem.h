@@ -7,6 +7,11 @@
 #include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
 #include "mc/world/level/block/SimpleBlockVolume.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class CompoundBlockVolumeItem {
 public:
     // member variables
@@ -20,6 +25,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~CompoundBlockVolumeItem();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

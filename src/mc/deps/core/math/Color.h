@@ -269,6 +269,10 @@ public:
     }
 
 public:
+    // prevent constructor by default
+    Color();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string toHexString() const;
@@ -277,6 +281,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::mce::Color fromARGB(int col);
+
+    MCAPI_C static ::mce::Color fromHSB(float hue, float saturation, float brightness);
+
     MCAPI static ::mce::Color fromHexString(::std::string const& hexStr);
 
     MCAPI static ::mce::Color fromRGBHexString(::std::string const& hexStr);
@@ -323,8 +331,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
     MCAPI_C void* $ctor(::glm::vec3 const& color, float a_);
 
     MCFOLD_C void* $ctor(::mce::Color const& color, float a_);

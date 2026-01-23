@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class WorldPackHistory;
+struct PackIdVersion;
 namespace Json { class Value; }
 // clang-format on
 
@@ -32,9 +34,13 @@ public:
     // NOLINTBEGIN
     MCNAPI_C WorldPacksHistoryFile(::WorldPacksHistoryFile const&);
 
+    MCNAPI_C ::WorldPackHistory const& addPack(::WorldPackHistory const& newWorldPackHistory);
+
     MCNAPI ::WorldPacksHistoryFile::ParseResult initializeFromJson(::Json::Value const& value);
 
     MCNAPI_C ::WorldPacksHistoryFile& operator=(::WorldPacksHistoryFile&&);
+
+    MCNAPI void removePack(::PackIdVersion const& packId);
 
     MCNAPI_C ::Json::Value toJsonValue() const;
 

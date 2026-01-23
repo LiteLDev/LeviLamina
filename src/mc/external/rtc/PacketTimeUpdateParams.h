@@ -17,23 +17,13 @@ public:
 public:
     // prevent constructor by default
     PacketTimeUpdateParams& operator=(PacketTimeUpdateParams const&);
+    PacketTimeUpdateParams(PacketTimeUpdateParams const&);
+    PacketTimeUpdateParams();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PacketTimeUpdateParams();
-
-    MCNAPI PacketTimeUpdateParams(::rtc::PacketTimeUpdateParams const&);
-
     MCNAPI ~PacketTimeUpdateParams();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::rtc::PacketTimeUpdateParams const&);
     // NOLINTEND
 
 public:

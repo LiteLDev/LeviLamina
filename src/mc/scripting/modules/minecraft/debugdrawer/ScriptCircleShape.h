@@ -22,6 +22,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptCircleShape(ScriptCircleShape const&);
     ScriptCircleShape();
 
 public:
@@ -37,8 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptCircleShape(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
-
     MCFOLD ::ScriptModuleDebugUtilities::ScriptCircleShape&
     operator=(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
     // NOLINTEND
@@ -47,12 +46,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
     // NOLINTEND
 
 public:

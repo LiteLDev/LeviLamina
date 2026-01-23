@@ -69,6 +69,8 @@ public:
     MCAPI void _findExitPos();
 
     MCAPI void _lockPosToBedPos();
+
+    MCAPI void _wakeUp();
     // NOLINTEND
 
 public:

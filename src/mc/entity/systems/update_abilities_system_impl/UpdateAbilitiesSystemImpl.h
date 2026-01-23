@@ -9,19 +9,18 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
+struct AbilitiesComponent;
 struct AbilitiesRequestComponent;
 struct ActorMovementTickNeededComponent;
-struct AntiCheatRewindFlagComponent;
-struct MovementAbilitiesComponent;
 // clang-format on
 
 namespace UpdateAbilitiesSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickClientProcessRequests(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::AntiCheatRewindFlagComponent>>,
+MCNAPI void tickProcessRequests(
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                  entity,
-    ::MovementAbilitiesComponent&                 abilities,
+    ::AbilitiesComponent&                         abilities,
     ::AbilitiesRequestComponent const&            abilitiesRequest,
     ::EntityModifier<::AbilitiesRequestComponent> modifier
 );

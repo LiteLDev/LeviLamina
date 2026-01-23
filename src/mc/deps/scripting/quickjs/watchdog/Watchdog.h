@@ -43,10 +43,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Watchdog() /*override*/ = default;
+    virtual ~Watchdog() /*override*/;
 
     virtual void
     setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler) /*override*/;
+
+    virtual void setWatchdogInterruptPollCounter(uint counter) /*override*/;
 
     virtual void beginTiming(::Scripting::ContextId contextId) /*override*/;
 
@@ -90,9 +92,17 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler);
+
+    MCNAPI void $setWatchdogInterruptPollCounter(uint counter);
 
     MCNAPI void $beginTiming(::Scripting::ContextId contextId);
 

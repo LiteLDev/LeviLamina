@@ -65,28 +65,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_AVOID_TARGET_XZ();
-
-    MCAPI static int const& DEFAULT_AVOID_TARGET_Y();
-
-    MCAPI static bool const& DEFAULT_IGNORE_VISIBILITY();
-
-    MCAPI static float const& DEFAULT_MAX_DIST();
-
-    MCAPI static float const& DEFAULT_MAX_FLEE();
-
-    MCAPI static float const& DEFAULT_PROBABILITY_PER_STRENGTH();
-
-    MCAPI static bool const& DEFAULT_REMOVE_TARGET();
-
-    MCAPI static float const& DEFAULT_RIVER_SPEED_MULTIPLIER();
-
-    MCAPI static float const& DEFAULT_SPRINT_DISTANCE();
-
-    MCAPI static float const& DEFAULT_SPRINT_SPEED_MULTIPLIER();
-
-    MCAPI static float const& DEFAULT_WALK_SPEED_MULTIPLIER();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

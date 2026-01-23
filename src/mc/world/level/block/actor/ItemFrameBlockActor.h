@@ -65,7 +65,7 @@ public:
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    virtual ~ItemFrameBlockActor() /*override*/;
+    virtual ~ItemFrameBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -97,12 +97,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType type);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

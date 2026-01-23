@@ -22,7 +22,6 @@ public:
 
 public:
     // prevent constructor by default
-    LevelSoundEventPacketPayload& operator=(LevelSoundEventPacketPayload const&);
     LevelSoundEventPacketPayload(LevelSoundEventPacketPayload const&);
     LevelSoundEventPacketPayload();
 
@@ -30,6 +29,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::LevelSoundEventPacketPayload& operator=(::LevelSoundEventPacketPayload&&);
+
+    MCAPI ::LevelSoundEventPacketPayload& operator=(::LevelSoundEventPacketPayload const&);
 
     MCAPI ~LevelSoundEventPacketPayload();
     // NOLINTEND

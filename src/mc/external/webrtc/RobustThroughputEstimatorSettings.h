@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class FieldTrialsView; }
-namespace webrtc { class StructParametersParser; }
 // clang-format on
 
 namespace webrtc {
@@ -32,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();
-
     MCNAPI explicit RobustThroughputEstimatorSettings(::webrtc::FieldTrialsView const* key_value_config);
     // NOLINTEND
 

@@ -45,12 +45,6 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void fromVariantMap(
-            ::DynamicProperties::PropertyCollection& collection,
-            ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const&
-                properties
-        );
-
         MCAPI static ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>>
         toVariantMap(::DynamicProperties::PropertyCollection const& collection);
         // NOLINTEND
@@ -76,9 +70,11 @@ public:
     // NOLINTBEGIN
     MCAPI DynamicProperties(::DynamicProperties&&);
 
-    MCAPI void deserialize(::CompoundTag const& root, ::cereal::ReflectionCtx const& ctx);
+    MCAPI ::DynamicProperties::PropertyCollection const* _getPropertyCollection(::std::string const&) const;
 
-    MCAPI ::std::vector<::std::string> getDynamicPropertyIds(::std::string const& collectionName) const;
+    MCFOLD ::DynamicProperties::PropertyCollection* _getPropertyCollection(::std::string const& collectionName);
+
+    MCAPI void deserialize(::CompoundTag const& root, ::cereal::ReflectionCtx const& ctx);
 
     MCAPI bool removeDynamicProperty(::std::string const& key, ::std::string const& collectionName);
 

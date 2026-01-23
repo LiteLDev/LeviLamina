@@ -25,6 +25,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void setHorizontalRotationLimit(::std::optional<::std::array<float, 2>> opt);
+
+    MCAPI void setVerticalRotationLimit(::std::optional<::std::array<float, 2>> opt);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);

@@ -6,9 +6,7 @@
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/scripting/modules/minecraft/ScriptTimeOfDay.h"
-#include "mc/world/level/dimension/MoonPhases.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,6 +22,7 @@ namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { class ScriptPlayerIterator; }
 namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 namespace ScriptModuleMinecraft { class ScriptStructureManager; }
+namespace ScriptModuleMinecraft { class ScriptTickingAreaManager; }
 namespace ScriptModuleMinecraft { class ScriptV010Events; }
 namespace ScriptModuleMinecraft { class ScriptWorldAfterEvents; }
 namespace ScriptModuleMinecraft { class ScriptWorldBeforeEvents; }
@@ -58,6 +57,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk2d1c88;
     ::ll::UntypedStorage<8, 32> mUnk2f187d;
     ::ll::UntypedStorage<8, 32> mUnk161bfd;
+    ::ll::UntypedStorage<8, 32> mUnk1f5327;
     // NOLINTEND
 
 public:
@@ -104,10 +104,6 @@ public:
 
     MCNAPI void broadcastClientMessage(::std::string const& id, ::std::string const& value);
 
-    MCNAPI void clearDynamicProperties(::Scripting::ContextConfig const& contextConfig);
-
-    MCNAPI int getAbsoluteTime() const;
-
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldAfterEvents> getAfterEvents() const;
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistRegistry> getAimAssist() const;
@@ -121,12 +117,6 @@ public:
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldBeforeEvents>
     getBeforeEvents() const;
 
-    MCNAPI int getDay() const;
-
-    MCNAPI ::Vec3 getDefaultSpawnLocation() const;
-
-    MCNAPI ::SharedTypes::Legacy::Difficulty getDifficulty() const;
-
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
     getDimension(::std::string const& name) const;
@@ -135,8 +125,6 @@ public:
     getDynamicProperty(::Scripting::ContextConfig const& contextConfig, ::std::string const& key) const;
 
     MCNAPI ::std::vector<::std::string> getDynamicPropertyIds(::Scripting::ContextConfig const& contextConfig) const;
-
-    MCNAPI int getDynamicPropertyTotalByteCount(::Scripting::ContextConfig const& contextConfig) const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>>
     getDynamicProperty_V010(::Scripting::ContextConfig const& contextConfig, ::std::string const& key) const;
@@ -149,8 +137,6 @@ public:
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootTableManager>
     getLootTableManager() const;
-
-    MCNAPI ::MoonPhases getMoonPhase() const;
 
     MCNAPI ::std::unordered_map<::std::string, ::std::variant<float, bool, ::std::string>>
     getPackSettings(::Scripting::DependencyLocator& locator, ::Scripting::ContextConfig const& config) const;
@@ -170,9 +156,12 @@ public:
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager>
     getStructureManager() const;
 
-    MCNAPI int getTimeOfDay() const;
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTickingAreaManager>
+    getTickingAreaManager() const;
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptV010Events> getWorldV010Events() const;
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptWorld& operator=(::ScriptModuleMinecraft::ScriptWorld&&);
 
     MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError>
     playMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
@@ -212,12 +201,8 @@ public:
             ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& var
     );
 
-    MCNAPI void setAbsoluteTime(int absoluteTime);
-
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, ::Scripting::Error>
     setDefaultSpawnLocation(::Vec3 const& spawnPosition);
-
-    MCNAPI void setDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
 
     MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setDynamicProperties(
         ::Scripting::ContextConfig const& contextConfig,
@@ -240,8 +225,6 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void>
     setTimeOfDay(::std::variant<int, ::ScriptModuleMinecraft::ScriptTimeOfDay> timeOfDay);
-
-    MCNAPI void stopMusic();
 
     MCNAPI ~ScriptWorld();
     // NOLINTEND

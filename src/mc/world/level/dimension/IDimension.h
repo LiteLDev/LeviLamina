@@ -10,6 +10,7 @@
 // clang-format off
 class Actor;
 class BiomeRegistry;
+class Block;
 class BlockPos;
 class BlockSource;
 class Dimension;
@@ -57,6 +58,8 @@ public:
         ::Player const*,
         ::std::vector<::NetworkIdentifierWithSubId>&
     ) const = 0;
+
+    virtual void updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const;
     // NOLINTEND
 
 public:
@@ -68,6 +71,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const;
+
 
     // NOLINTEND
 

@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TouchControl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TouchControl();
@@ -40,20 +36,6 @@ public:
     virtual void tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
 
     virtual void release(::InputEventQueue& eventQueue);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit TouchControl(::std::function<::RectangleArea()> area);
-
-    MCAPI bool canUpdateActivePointer(::TouchPointResults& touchPointResults, int pointerId, float& x, float& y) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::function<::RectangleArea()> area);
     // NOLINTEND
 
 public:

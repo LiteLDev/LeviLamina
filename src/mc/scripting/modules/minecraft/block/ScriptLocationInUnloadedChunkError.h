@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Vec3;
+namespace Scripting { struct ErrorBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -23,6 +24,12 @@ public:
     MCNAPI explicit ScriptLocationInUnloadedChunkError(::Vec3 const& pos);
 
     MCNAPI ~ScriptLocationInUnloadedChunkError();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:

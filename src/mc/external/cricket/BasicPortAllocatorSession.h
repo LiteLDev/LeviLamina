@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cricket/IceRegatheringReason.h"
 #include "mc/external/cricket/PortAllocatorSession.h"
 
 // auto generated forward declare list
@@ -128,8 +127,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void AddAllocatedPort(::cricket::Port* port, ::cricket::AllocationSequence* seq);
 
-    MCNAPI void AllocatePorts();
-
     MCNAPI BasicPortAllocatorSession(
         ::cricket::BasicPortAllocator* allocator,
         ::std::string_view             content_name,
@@ -140,18 +137,9 @@ public:
 
     MCNAPI bool CandidatePairable(::cricket::Candidate const& c, ::cricket::Port const* port) const;
 
-    MCNAPI bool CheckCandidateFilter(::cricket::Candidate const& c) const;
-
     MCNAPI void ConfigReady(::std::unique_ptr<::cricket::PortConfiguration> config);
 
-    MCNAPI void
-    DisableEquivalentPhases(::rtc::Network const* network, ::cricket::PortConfiguration* config, uint* flags);
-
     MCNAPI void DoAllocate(bool disable_equivalent);
-
-    MCNAPI ::cricket::BasicPortAllocatorSession::PortData* FindPort(::cricket::Port* port);
-
-    MCNAPI ::cricket::Port* GetBestTurnPortForNetwork(::std::string_view network_name) const;
 
     MCNAPI void GetCandidatesFromPort(
         ::cricket::BasicPortAllocatorSession::PortData const& data,
@@ -167,25 +155,13 @@ public:
 
     MCNAPI void MaybeSignalCandidatesAllocationDone();
 
-    MCNAPI void OnAllocate(int allocation_epoch);
-
-    MCNAPI void OnAllocationSequenceObjectsCreated();
-
     MCNAPI void OnCandidateError(::cricket::Port* port, ::cricket::IceCandidateErrorEvent const& event);
 
     MCNAPI void OnCandidateReady(::cricket::Port* port, ::cricket::Candidate const& c);
 
-    MCNAPI void OnConfigReady(::std::unique_ptr<::cricket::PortConfiguration> config);
-
-    MCNAPI void OnConfigStop();
-
     MCNAPI void OnNetworksChanged();
 
-    MCNAPI void OnPortAllocationComplete();
-
     MCNAPI void OnPortComplete(::cricket::Port* port);
-
-    MCNAPI void OnPortDestroyed(::cricket::PortInterface* port);
 
     MCNAPI void OnPortError(::cricket::Port* port);
 
@@ -195,12 +171,6 @@ public:
     PrunePortsAndRemoveCandidates(::std::vector<::cricket::BasicPortAllocatorSession::PortData*> const& port_data_list);
 
     MCNAPI bool PruneTurnPorts(::cricket::Port* newly_pairable_turn_port);
-
-    MCNAPI void Regather(
-        ::std::vector<::rtc::Network const*> const& networks,
-        bool                                        disable_equivalent_phases,
-        ::cricket::IceRegatheringReason             reason
-    );
     // NOLINTEND
 
 public:

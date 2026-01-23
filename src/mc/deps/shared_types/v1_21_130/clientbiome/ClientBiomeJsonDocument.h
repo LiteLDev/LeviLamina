@@ -1,0 +1,120 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/clientbiome/client_biome_json_document_helper/ComponentMap.h"
+#include "mc/deps/shared_types/v1_21_90/clientbiome/ClientBiomeJsonDocument.h"
+
+// auto generated forward declare list
+// clang-format off
+class SemVersionConstant;
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
+namespace SharedTypes::v1_21_130 {
+
+struct ClientBiomeJsonDocument {
+public:
+    // ClientBiomeJsonDocument inner types declare
+    // clang-format off
+    struct ClientBiomeJsonObject;
+    // clang-format on
+
+    // ClientBiomeJsonDocument inner types define
+    struct ClientBiomeJsonObject {
+    public:
+        // ClientBiomeJsonObject inner types declare
+        // clang-format off
+        struct ComponentMap;
+        // clang-format on
+
+        // ClientBiomeJsonObject inner types define
+        struct ComponentMap : public ::ClientBiomeJsonDocumentHelper::ComponentMap {
+        public:
+            // prevent constructor by default
+            ComponentMap(ComponentMap const&);
+            ComponentMap();
+
+        public:
+            // member functions
+            // NOLINTBEGIN
+            MCFOLD ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&
+            operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&&);
+
+            MCFOLD ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&
+            operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap const&);
+            // NOLINTEND
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            // NOLINTEND
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            32,
+            ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription>
+            mDescription;
+        ::ll::
+            TypedStorage<8, 16, ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap>
+                mComponents;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ClientBiomeJsonObject(ClientBiomeJsonObject const&);
+        ClientBiomeJsonObject();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCFOLD ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject&
+        operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject&&);
+
+        MCFOLD ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject&
+        operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
+
+        MCAPI ~ClientBiomeJsonObject();
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI_C static ::SemVersionConstant const& VERSION();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject>
+                                             mClientBiomeJsonObject;
+    ::ll::TypedStorage<8, 32, ::std::string> mFormatVersion;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+};
+
+} // namespace SharedTypes::v1_21_130

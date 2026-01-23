@@ -23,6 +23,7 @@ namespace Editor::ScriptModule { class ScriptWidgetGroupErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -113,6 +114,9 @@ public:
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptSetVisible(bool visible);
+
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>
+    getWidget(::mce::UUID const& widgetId) const;
     // NOLINTEND
 
 public:

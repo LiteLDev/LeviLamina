@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace webrtc { class DataRate; }
-namespace webrtc { class Timestamp; }
-// clang-format on
-
 namespace webrtc {
 
 class LinkCapacityTracker {
@@ -24,33 +18,12 @@ public:
     // prevent constructor by default
     LinkCapacityTracker& operator=(LinkCapacityTracker const&);
     LinkCapacityTracker(LinkCapacityTracker const&);
+    LinkCapacityTracker();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LinkCapacityTracker();
-
-    MCNAPI void OnRateUpdate(
-        ::std::optional<::webrtc::DataRate> acknowledged,
-        ::webrtc::DataRate                  target,
-        ::webrtc::Timestamp                 at_time
-    );
-
-    MCNAPI void OnRttBackoff(::webrtc::DataRate backoff_rate, ::webrtc::Timestamp at_time);
-
-    MCNAPI void OnStartingRate(::webrtc::DataRate start_rate);
-
-    MCNAPI void UpdateDelayBasedEstimate(::webrtc::Timestamp at_time, ::webrtc::DataRate delay_based_bitrate);
-
-    MCNAPI ::webrtc::DataRate estimate() const;
-
     MCNAPI ~LinkCapacityTracker();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

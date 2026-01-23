@@ -21,15 +21,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptProjectileHitEntityAfterEvent& operator=(ScriptProjectileHitEntityAfterEvent const&);
-    ScriptProjectileHitEntityAfterEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptProjectileHitEntityAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
-
     MCAPI ::ScriptModuleMinecraft::ScriptEntityHitInformation getEntityHit() const;
     // NOLINTEND
 
@@ -37,12 +30,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
     // NOLINTEND
 };
 

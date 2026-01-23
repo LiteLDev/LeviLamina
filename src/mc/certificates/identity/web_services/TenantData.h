@@ -20,15 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C TenantData(::WebServices::EduSignin::TenantData&&);
-
     MCNAPI_C ~TenantData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::WebServices::EduSignin::TenantData&&);
     // NOLINTEND
 
 public:

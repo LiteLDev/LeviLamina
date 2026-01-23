@@ -17,16 +17,17 @@ class Block;
 class BlockPos;
 class Dimension;
 class EntityContext;
-class IClientInstance;
 class ItemDescriptor;
 class ItemEnchants;
 class ItemInstance;
 class ItemStack;
-class LocalPlayer;
 class Player;
 class Vec2;
 struct ActorUniqueID;
+struct DealKineticDamageComponent;
 struct PlayerNotificationEvent;
+class IClientInstance;
+struct LocalPlayer;
 // clang-format on
 
 class PlayerEventListener {
@@ -37,11 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~PlayerEventListener() = default;
-#else // LL_PLAT_C
-    virtual ~PlayerEventListener();
-#endif
 
     virtual ::EventResult onPlayerAwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievement);
 
@@ -144,13 +141,10 @@ public:
 
     virtual ::EventResult onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
-    virtual ::EventResult onEvent(::PlayerNotificationEvent const& event);
-    // NOLINTEND
+    virtual ::EventResult
+    onPlayerKineticDamageDealt(::Player&, ::ActorUniqueID const&, ::DealKineticDamageComponent const&);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ::EventResult onEvent(::PlayerNotificationEvent const& event);
     // NOLINTEND
 
 public:
@@ -257,14 +251,13 @@ public:
 
     MCFOLD ::EventResult $onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
+    MCFOLD ::EventResult
+    $onPlayerKineticDamageDealt(::Player&, ::ActorUniqueID const&, ::DealKineticDamageComponent const&);
+
+#ifdef LL_PLAT_C
     MCFOLD ::EventResult $onEvent(::PlayerNotificationEvent const& event);
+#endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

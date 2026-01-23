@@ -45,9 +45,9 @@ public:
     // NOLINTBEGIN
     virtual ~BrewingStandBlockActor() /*override*/ = default;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -99,9 +99,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int index) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCFOLD ::std::string $getName() const;
 

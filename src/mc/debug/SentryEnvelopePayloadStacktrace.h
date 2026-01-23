@@ -18,8 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SentryEnvelopePayloadStacktrace& operator=(::SentryEnvelopePayloadStacktrace&&);
-
     MCNAPI ~SentryEnvelopePayloadStacktrace();
     // NOLINTEND
 

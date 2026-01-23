@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/dcsctp/AnyForwardTsnChunk.h"
-#include "mc/external/dcsctp/UnwrappedSequenceNumber.h"
 #include "mc/external/webrtc/StrongAlias.h"
 
 // auto generated forward declare list
@@ -69,11 +68,6 @@ public:
     MCNAPI void Add(::webrtc::StrongAlias<::dcsctp::TSNTag, uint> tsn, ::dcsctp::Data data);
 
     MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState& state);
-
-    MCNAPI void AddReassembledMessage(
-        ::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const> tsns,
-        ::dcsctp::DcSctpMessage                                                                                  message
-    );
 
     MCNAPI void EnterDeferredReset(
         ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>                                sender_last_assigned_tsn,

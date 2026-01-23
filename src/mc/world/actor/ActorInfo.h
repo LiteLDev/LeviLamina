@@ -23,15 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorInfo& operator=(ActorInfo const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorInfo();
-
-    MCAPI ActorInfo(::ActorInfo const&);
 
     MCAPI void load(::CompoundTag const* tag);
 
@@ -44,8 +38,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ActorInfo const&);
     // NOLINTEND
 
 public:

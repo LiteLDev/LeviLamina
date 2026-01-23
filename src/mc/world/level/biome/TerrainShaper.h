@@ -26,7 +26,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCFOLD static float getContinents(::TerrainShaper::Point const& point);
+        MCAPI static float getContinents(::TerrainShaper::Point const& point);
 
         MCAPI static float getErosion(::TerrainShaper::Point const& point);
 

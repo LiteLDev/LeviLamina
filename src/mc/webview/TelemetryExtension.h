@@ -48,21 +48,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit TelemetryExtension(
-        ::std::function<void(::Webview::TelemetryCommonProperties&, ::std::string, ::std::string)> log
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void*
-    $ctor(::std::function<void(::Webview::TelemetryCommonProperties&, ::std::string, ::std::string)> log);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C

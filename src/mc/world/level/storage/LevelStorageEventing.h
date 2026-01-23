@@ -28,8 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void fireDBStorageError(char const* errorType) const;
-
     MCNAPI void fireEventDBStorageSizeSnapshot(
         ::DBStorageFolderWatcher const&      folderWatcher,
         ::DBStorageFolderWatcherSnapshotKind kind

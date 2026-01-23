@@ -17,22 +17,15 @@ public:
 public:
     // prevent constructor by default
     Gif& operator=(Gif const&);
+    Gif(Gif const&);
     Gif();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C Gif(::gif::Gif const&);
-
     MCNAPI_C ::gif::Gif& operator=(::gif::Gif&&);
 
     MCNAPI_C ~Gif();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::gif::Gif const&);
     // NOLINTEND
 
 public:

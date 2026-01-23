@@ -25,8 +25,6 @@ MCAPI uchar fromVec3(::Vec3 const& dir);
 MCAPI ::std::vector<uchar>
 getMostPrioritizedFacingDirection(::Vec2 const& viewVector, uchar clickedFace, bool isReplacingABlock);
 
-MCAPI ::std::array<uchar, 6> getMostPrioritizedFacingDirectionFromViewVector(::Vec2 const& viewVector);
-
 MCAPI uchar getOpposite(uchar face);
 
 MCAPI ::glm::mat3x3 getRotationMatrix(uchar facing, ::Facing::Rotation rotation);

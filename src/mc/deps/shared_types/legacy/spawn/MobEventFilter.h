@@ -13,7 +13,6 @@ public:
 
 public:
     // prevent constructor by default
-    MobEventFilter& operator=(MobEventFilter const&);
     MobEventFilter(MobEventFilter const&);
     MobEventFilter();
 
@@ -23,6 +22,8 @@ public:
     MCAPI MobEventFilter(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
 
     MCFOLD ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
+
+    MCFOLD ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter const&);
 
     MCAPI ~MobEventFilter();
     // NOLINTEND

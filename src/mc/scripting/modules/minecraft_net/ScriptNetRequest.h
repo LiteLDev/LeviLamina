@@ -53,12 +53,20 @@ public:
     setMethod(::Bedrock::Http::Method method);
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> setTimeout(uint timeout);
+
+    MCNAPI ~ScriptNetRequest();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

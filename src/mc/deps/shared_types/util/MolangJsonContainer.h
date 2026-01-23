@@ -21,6 +21,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MolangJsonContainer& operator=(MolangJsonContainer const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI MolangJsonContainer();
@@ -29,8 +33,6 @@ public:
 
     MCAPI MolangJsonContainer(::SharedTypes::Util::MolangJsonContainer const&);
 
-    MCFOLD ::SharedTypes::Util::MolangJsonContainer& operator=(::SharedTypes::Util::MolangJsonContainer const&);
-
     MCAPI ~MolangJsonContainer();
     // NOLINTEND
 
@@ -38,10 +40,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void valueFromBool(::SharedTypes::Util::MolangJsonContainer& instance, bool value);
-
-    MCAPI static void valueFromFloat(::SharedTypes::Util::MolangJsonContainer& instance, float value);
 
     MCAPI static void valueFromString(::SharedTypes::Util::MolangJsonContainer& instance, ::std::string const& str);
     // NOLINTEND

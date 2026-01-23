@@ -57,7 +57,7 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual ~SculkShriekerBlockActor() /*override*/;
+    virtual ~SculkShriekerBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -82,12 +82,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

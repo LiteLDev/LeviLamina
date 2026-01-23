@@ -63,6 +63,8 @@ public:
 
     MCNAPI bool _checkPendingWork();
 
+    MCNAPI_C ::std::vector<::std::thread::id> getThreadIds() const;
+
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
 
     MCNAPI ::std::shared_ptr<::BackgroundTaskBase> tryPop(int minPriority);
@@ -72,6 +74,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void _registerPool(::WorkerPool& pool);
+
+    MCNAPI static void _unregisterPool(::WorkerPool& pool);
     // NOLINTEND
 
 public:

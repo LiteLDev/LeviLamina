@@ -2,12 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
 // auto generated forward declare list
 // clang-format off
-class IFileAccess;
+class PackAccessStrategy;
 class WorldTemplatePackManifest;
 struct WorldTemplateData;
 // clang-format on
@@ -51,12 +48,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::WorldTemplateData buildTemplateData(
-        ::WorldTemplatePackManifest const&        manifest,
-        ::Bedrock::NonOwnerPointer<::IFileAccess> fileAccess
-    );
-
-    MCNAPI static ::WorldTemplateInfo const& getInvalid();
+    MCNAPI static ::WorldTemplateData
+    buildTemplateData(::WorldTemplatePackManifest const& manifest, ::PackAccessStrategy const* accessStrategy);
     // NOLINTEND
 
 public:

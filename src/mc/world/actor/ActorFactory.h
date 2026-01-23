@@ -123,6 +123,8 @@ public:
 
     MCAPI_C void digestIdentifierListFromServer(::std::vector<::ActorInfo> const& identifierList);
 
+    MCAPI ::ActorComponentFactory& getComponentFactory() const;
+
     MCAPI void init(::Experiments const& experiments);
 
     MCAPI ::OwnerPtr<::EntityContext> loadActor(

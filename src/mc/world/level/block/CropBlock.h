@@ -24,6 +24,10 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class CropBlock : public ::FoliageBlock {
 public:
+    // prevent constructor by default
+    CropBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -77,7 +81,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CropBlock(::std::string const& nameId, int id);
+
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

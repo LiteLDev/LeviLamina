@@ -26,18 +26,6 @@ public:
         BitrateItem& operator=(BitrateItem const&);
         BitrateItem(BitrateItem const&);
         BitrateItem();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI BitrateItem(uchar spatial_layer, uchar temporal_layer, uint target_bitrate_kbps);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(uchar spatial_layer, uchar temporal_layer, uint target_bitrate_kbps);
-        // NOLINTEND
     };
 
 public:

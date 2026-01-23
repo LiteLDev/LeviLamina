@@ -9,6 +9,7 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
+class CommandRegistry;
 struct ScriptSettings;
 // clang-format on
 
@@ -19,6 +20,12 @@ public:
     virtual void execute(::CommandOrigin const&, ::CommandOutput& output) const /*override*/;
 
     virtual ~ReloadConfigCommand() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void setup(::CommandRegistry& registry, ::ScriptSettings& scriptSettings);
     // NOLINTEND
 
 public:

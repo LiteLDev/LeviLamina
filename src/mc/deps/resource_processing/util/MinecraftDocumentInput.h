@@ -36,6 +36,18 @@ public:
         Binary& operator=(Binary const&);
         Binary(Binary const&);
         Binary();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ~Binary();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI_C void $dtor();
+        // NOLINTEND
     };
 
     struct NoPayloadCheck {};

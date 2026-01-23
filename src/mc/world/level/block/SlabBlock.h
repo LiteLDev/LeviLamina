@@ -124,9 +124,11 @@ public:
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
-
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+
+#ifdef LL_PLAT_C
+    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
+#endif
 
 
     // NOLINTEND

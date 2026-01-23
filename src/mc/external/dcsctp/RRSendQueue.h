@@ -71,17 +71,7 @@ public:
         // NOLINTBEGIN
         MCNAPI void Decrease(uint64 bytes);
 
-        MCNAPI void SetLowThreshold(uint64 low_threshold);
-
-        MCNAPI explicit ThresholdWatcher(::std::function<void()> on_threshold_reached);
-
         MCNAPI ~ThresholdWatcher();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::std::function<void()> on_threshold_reached);
         // NOLINTEND
 
     public:
@@ -125,26 +115,6 @@ public:
             Item& operator=(Item const&);
             Item(Item const&);
             Item();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI Item(
-                ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint> message_id,
-                ::dcsctp::DcSctpMessage                                     msg,
-                ::dcsctp::RRSendQueue::MessageAttributes                    attributes
-            );
-            // NOLINTEND
-
-        public:
-            // constructor thunks
-            // NOLINTBEGIN
-            MCNAPI void* $ctor(
-                ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint> message_id,
-                ::dcsctp::DcSctpMessage                                     msg,
-                ::dcsctp::RRSendQueue::MessageAttributes                    attributes
-            );
-            // NOLINTEND
         };
 
     public:
@@ -182,10 +152,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void Add(::dcsctp::DcSctpMessage message, ::dcsctp::RRSendQueue::MessageAttributes attributes);
 
-        MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState::OutgoingStream& state) const;
-
-        MCNAPI bool Discard(::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint> message_id);
-
         MCNAPI void HandleMessageExpired(::dcsctp::RRSendQueue::OutgoingStream::Item& item);
 
         MCNAPI OutgoingStream(
@@ -197,11 +163,7 @@ public:
             ::dcsctp::DcSctpSocketHandoverState::OutgoingStream const* state
         );
 
-        MCNAPI void Pause();
-
         MCNAPI void Reset();
-
-        MCNAPI void Resume();
         // NOLINTEND
 
     public:
@@ -313,8 +275,6 @@ public:
 
     MCNAPI ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>
     GetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const;
-
-    MCNAPI bool IsEmpty() const;
 
     MCNAPI RRSendQueue(
         ::std::string_view                                         log_prefix,

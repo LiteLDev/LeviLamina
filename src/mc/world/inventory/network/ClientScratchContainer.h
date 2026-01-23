@@ -7,15 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class Container;
 class ItemStack;
 // clang-format on
 
 class ClientScratchContainer : public ::SimpleContainer {
-public:
-    // prevent constructor by default
-    ClientScratchContainer();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -28,18 +23,6 @@ public:
     ) /*override*/;
 
     virtual ~ClientScratchContainer() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C explicit ClientScratchContainer(::Container const& backingContainer);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Container const& backingContainer);
     // NOLINTEND
 
 public:

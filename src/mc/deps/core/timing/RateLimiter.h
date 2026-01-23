@@ -20,6 +20,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C RateLimiter(uint64 limit, ::std::chrono::seconds timeIntervalSeconds);
+
     MCNAPI_C bool tryAddInstance();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(uint64 limit, ::std::chrono::seconds timeIntervalSeconds);
     // NOLINTEND
 };

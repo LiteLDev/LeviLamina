@@ -38,6 +38,7 @@ public:
         ::ll::TypedStorage<1, 1, bool>        mHasLastBuiltPosition;
         ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockWasInteractive;
         ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockWasSnappable;
+        ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockHadSuccessfulUse;
         ::ll::TypedStorage<4, 12, ::BlockPos> mLastBuiltBlockPosition;
         ::ll::TypedStorage<4, 12, ::BlockPos> mBuildDirection;
         ::ll::TypedStorage<4, 12, ::BlockPos> mNextBuildPos;
@@ -84,7 +85,7 @@ public:
     ::ll::TypedStorage<8, 8, double>                                  mLastDestroyTime;
     ::ll::TypedStorage<4, 4, float>                                   mDistanceTravelled;
     ::ll::TypedStorage<4, 12, ::Vec3>                                 mPlayerLastPosition;
-    ::ll::TypedStorage<4, 56, ::GameMode::BuildContext>               mBuildContext;
+    ::ll::TypedStorage<4, 60, ::GameMode::BuildContext>               mBuildContext;
     ::ll::TypedStorage<4, 4, float>                                   mMinPlayerSpeed;
     ::ll::TypedStorage<4, 4, int>                                     mContinueBreakBlockCount;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastBuildTime;
@@ -131,7 +132,7 @@ public:
 
     virtual bool useItem(::ItemStack& item);
 
-    virtual bool useItemAsAttack(::ItemStack& item);
+    virtual bool useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection);
 
     virtual ::InteractionResult useItemOn(
         ::ItemStack&      item,
@@ -174,6 +175,8 @@ public:
 
     MCAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
 
+    MCAPI void _destroyBlockInternal(::BlockPos const& pos, ::Block const& oldBlock, ::Block const& newBlock) const;
+
     MCAPI bool _enableBlockBreakDelay() const;
 
     MCAPI void _sendPlayerInteractWithBlockAfterEvent(
@@ -206,9 +209,9 @@ public:
 
     MCAPI_C bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
 
-    MCAPI bool baseUseItem(::ItemStack& item);
+    MCAPI bool baseUseItem(::ItemStack const& item);
 
-    MCAPI bool baseUseItemAsAttack(::ItemStack& item);
+    MCAPI bool baseUseItemAsAttack(::ItemStack const& item, ::Vec3 const& aimDirection);
 
     MCAPI void continueBuildBlockAction(::Player const& player, ::HitResult const& hr);
 
@@ -253,7 +256,7 @@ public:
 
     MCAPI bool $useItem(::ItemStack& item);
 
-    MCAPI bool $useItemAsAttack(::ItemStack& item);
+    MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection);
 
     MCAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,

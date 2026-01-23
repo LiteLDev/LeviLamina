@@ -57,21 +57,15 @@ public:
 
 public:
     // prevent constructor by default
-    VideoReceiverInfo& operator=(VideoReceiverInfo const&);
+    VideoReceiverInfo(VideoReceiverInfo const&);
     VideoReceiverInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VideoReceiverInfo(::cricket::VideoReceiverInfo const&);
+    MCNAPI ::cricket::VideoReceiverInfo& operator=(::cricket::VideoReceiverInfo const&);
 
     MCNAPI ~VideoReceiverInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::cricket::VideoReceiverInfo const&);
     // NOLINTEND
 
 public:

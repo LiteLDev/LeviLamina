@@ -279,8 +279,6 @@ public:
 
     MCNAPI void MaybeSendRtcp();
 
-    MCNAPI void MaybeSendRtcpAtOrAfterTimestamp(::webrtc::Timestamp execution_time);
-
     MCNAPI explicit ModuleRtpRtcpImpl2(::webrtc::RtpRtcpInterface::Configuration const& configuration);
 
     MCNAPI void PeriodicUpdate();
@@ -288,15 +286,7 @@ public:
     MCNAPI void
     ScheduleMaybeSendRtcpAtOrAfterTimestamp(::webrtc::Timestamp execution_time, ::webrtc::TimeDelta duration);
 
-    MCNAPI void ScheduleRtcpSendEvaluation(::webrtc::TimeDelta duration);
-
-    MCNAPI bool StorePackets() const;
-
-    MCNAPI bool TimeToSendFullNackList(int64 now) const;
-
     MCNAPI int64 rtt_ms() const;
-
-    MCNAPI void set_rtt_ms(int64 rtt_ms);
     // NOLINTEND
 
 public:

@@ -10,6 +10,7 @@
 // clang-format off
 class BlockComponentStorage;
 class SemVersion;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockPrecipitationInteractionsComponentDescription
@@ -40,6 +41,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BlockPrecipitationInteractionsComponentDescription(::PrecipitationBehavior behavior);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

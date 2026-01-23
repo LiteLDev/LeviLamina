@@ -13,6 +13,7 @@ class Block;
 class BlockVolumeBase;
 class CompoundBlockVolume;
 namespace Editor { class RelativeVolumeListBlockVolume; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::BlockUtils { class CommonBlockUtilityServiceProvider; }
 // clang-format on
 
@@ -20,6 +21,10 @@ namespace Editor::BlockUtils {
 
 class ServerBlockUtilityService : public ::Editor::BlockUtils::CommonBlockUtilityService,
                                   public ::Editor::BlockUtils::ServerBlockUtilityServiceProvider {
+public:
+    // prevent constructor by default
+    ServerBlockUtilityService();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,6 +45,18 @@ public:
     virtual ::Scripting::Result_deprecated<void> _implReady() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> _implQuit() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ServerBlockUtilityService(::Editor::ServiceProviderCollection& providers);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

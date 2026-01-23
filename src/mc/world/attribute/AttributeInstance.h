@@ -71,11 +71,9 @@ public:
 
     MCAPI ::std::vector<::AttributeModifier> getModifiers() const;
 
-    MCAPI bool hasModifier(::AttributeModifier const& modifier) const;
-
     MCAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
 
-    MCAPI_C ::AttributeInstance& operator=(::AttributeInstance const&);
+    MCAPI ::AttributeInstance& operator=(::AttributeInstance const&);
 
     MCAPI void removeBuff(::AttributeBuff const& buff);
 

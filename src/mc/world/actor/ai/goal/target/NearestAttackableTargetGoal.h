@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
+#include "mc/util/IntRange.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
 // auto generated forward declare list
@@ -21,12 +22,13 @@ public:
     ::ll::TypedStorage<8, 8, ::MobDescriptor const*>                                mTargetDescriptor;
     ::ll::TypedStorage<1, 1, bool>                                                  mReselectTargets;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::MobDescriptor const*, ::Tick>> mTargetCooldowns;
-    ::ll::TypedStorage<4, 4, int>                                                   mAttackInterval;
+    ::ll::TypedStorage<4, 8, ::IntRange>                                            mAttackIntervalTicks;
     ::ll::TypedStorage<4, 4, int>                                                   mScanInterval;
     ::ll::TypedStorage<1, 1, bool>                                                  mSetPersistent;
     ::ll::TypedStorage<4, 4, float>                                                 mTargetSearchHeight;
     ::ll::TypedStorage<4, 4, float>                                                 mTargetInvisibleMultiplier;
     ::ll::TypedStorage<4, 4, float>                                                 mTargetSneakVisibilityMultiplier;
+    ::ll::TypedStorage<4, 4, float>                                                 mTargetAcquisitionProbability;
     // NOLINTEND
 
 public:

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
+#include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 #include "mc/world/actor/Mob.h"
 
 // auto generated forward declare list
@@ -89,7 +89,7 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _causeDamage(float dmg);
+    MCAPI void _causeDamage(float damage);
 
     MCAPI void _destroyWithEffects(::Actor* sourceActor);
 

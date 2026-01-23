@@ -10,7 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes {
 // functions
 // NOLINTBEGIN
-MCAPI_S void bindAll(::cereal::ReflectionCtx& ctx);
+MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindColor(::cereal::ReflectionCtx& ctx);
 
@@ -20,9 +20,13 @@ MCAPI void bindFacing(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindGlmVec2(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindJigsawJointType(::cereal::ReflectionCtx& ctx);
+MCAPI void bindGlmVec3(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindLinkedAssetTypes(::cereal::ReflectionCtx& ctx);
+MCAPI void bindHashedString(::cereal::ReflectionCtx& ctx);
+
+MCAPI void bindItemCooldownType(::cereal::ReflectionCtx& ctx);
+
+MCAPI void bindJigsawJointType(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindSemVersion(::cereal::ReflectionCtx& ctx);
 

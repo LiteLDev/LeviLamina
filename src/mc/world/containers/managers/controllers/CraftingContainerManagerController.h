@@ -167,7 +167,7 @@ public:
 
     virtual int handleAutoPlaceStack(
         ::SlotData const&                     srcSlot,
-        ::ItemTakeType                        type,
+        ::ItemTakeType                        takeType,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     ) /*override*/;
@@ -272,6 +272,8 @@ public:
     MCNAPI_C void setOnItemExpandedCallback(::std::function<void(::std::string const&, int, int)> callback);
 
     MCNAPI_C void setSearchString(::std::string const& searchString);
+
+    MCNAPI_C void switchExpandoItem(::std::string const& collectionName, int collectionIndex);
     // NOLINTEND
 
 public:
@@ -311,7 +313,7 @@ public:
 
     MCNAPI int $handleAutoPlaceStack(
         ::SlotData const&                     srcSlot,
-        ::ItemTakeType                        type,
+        ::ItemTakeType                        takeType,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     );

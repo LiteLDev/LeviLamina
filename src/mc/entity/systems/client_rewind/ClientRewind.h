@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
 
 // auto generated forward declare list
@@ -18,6 +19,7 @@ struct ActorDataHorseFlagComponent;
 struct ActorDataJumpDurationComponent;
 struct ActorDataSeatOffsetComponent;
 struct ActorMovementTickNeededComponent;
+struct DynamicRenderOffsetComponent;
 struct MoveInputComponent;
 struct ReplayStateTrackerComponent;
 struct ReplayStateValidFrameSupportComponent;
@@ -53,14 +55,11 @@ MCNAPI void tickAccumulate(
         ::Optional<::ActorDataSeatOffsetComponent const>> const& data
 );
 
-MCNAPI void tickDiscard(
-    ::ReplayStateTrackerComponent& tracker,
-    ::std::tuple<
-        ::ActorDataFlagComponent const&,
-        ::Optional<::ActorDataHorseFlagComponent const>,
-        ::Optional<::ActorDataJumpDurationComponent const>,
-        ::Optional<::ActorDataBoundingBoxComponent const>,
-        ::Optional<::ActorDataSeatOffsetComponent const>> const& data
+MCNAPI_C void tickCorrectionInterpolation(
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::StrictEntityContext const&                     entity,
+    ::DynamicRenderOffsetComponent&                  offset,
+    ::EntityModifier<::DynamicRenderOffsetComponent> modifier
 );
 
 MCNAPI_C void tickPublish(

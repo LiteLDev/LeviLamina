@@ -48,22 +48,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI AudioTrack(::std::string_view label, ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface> const& source);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::AudioTrack>
     Create(::std::string_view id, ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface> const& source);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view label, ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface> const& source);
     // NOLINTEND
 
 public:

@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
@@ -36,8 +35,6 @@ public:
     getLastInputModeUsed() const;
 
     MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError> isHotbarOnlyTouch() const;
-
-    MCNAPI void updatePlayerData(::ScriptModuleMinecraft::ScriptActorData const& playerData);
     // NOLINTEND
 
 public:

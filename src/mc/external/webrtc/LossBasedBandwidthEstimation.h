@@ -54,14 +54,6 @@ public:
     MCNAPI void
     UpdateLossStatistics(::std::vector<::webrtc::PacketResult> const& packet_results, ::webrtc::Timestamp at_time);
 
-    MCNAPI ::webrtc::DataRate decreased_bitrate() const;
-
-    MCNAPI double loss_decrease_threshold() const;
-
-    MCNAPI double loss_increase_threshold() const;
-
-    MCNAPI double loss_reset_threshold() const;
-
     MCNAPI ~LossBasedBandwidthEstimation();
     // NOLINTEND
 

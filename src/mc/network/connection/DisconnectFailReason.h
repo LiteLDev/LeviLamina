@@ -130,6 +130,18 @@ enum class DisconnectFailReason : int {
     NetherNetDataChannelClosed                    = 122,
     DiscoveryEnvironmentMismatch                  = 123,
     HostWithoutKeys                               = 124,
+    HostSignedOut                                 = 125,
+    ScriptWatchdogException                       = 126,
+    ScriptMemoryLimitExceeded                     = 127,
+    StorageLowDuringGameplay                      = 128,
+    StorageFullDuringGameplay                     = 129,
+    LevelStorageCorruption                        = 130,
+    EditionMismatchVanillaToEdu                   = 131,
+    EditionMismatchEduToVanilla                   = 132,
+    EditorMismatchEditorToVanilla                 = 133,
+    EditorMismatchVanillaToEditor                 = 134,
+    DenyListed                                    = 135,
+    MaxDisconnectFailReason                       = 136,
 };
 
 }

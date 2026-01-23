@@ -12,7 +12,6 @@ public:
 
 public:
     // prevent constructor by default
-    PlayerStartItemCooldownPacketPayload& operator=(PlayerStartItemCooldownPacketPayload const&);
     PlayerStartItemCooldownPacketPayload(PlayerStartItemCooldownPacketPayload const&);
     PlayerStartItemCooldownPacketPayload();
 
@@ -20,6 +19,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::PlayerStartItemCooldownPacketPayload& operator=(::PlayerStartItemCooldownPacketPayload&&);
+
+    MCFOLD ::PlayerStartItemCooldownPacketPayload& operator=(::PlayerStartItemCooldownPacketPayload const&);
 
     MCAPI ~PlayerStartItemCooldownPacketPayload();
     // NOLINTEND

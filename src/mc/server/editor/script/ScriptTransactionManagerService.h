@@ -37,8 +37,8 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16>  mUnk7c7f27;
-        ::ll::UntypedStorage<8, 248> mUnk45542f;
-        ::ll::UntypedStorage<8, 248> mUnk35dabd;
+        ::ll::UntypedStorage<8, 104> mUnk45542f;
+        ::ll::UntypedStorage<8, 104> mUnk35dabd;
         // NOLINTEND
 
     public:
@@ -104,6 +104,9 @@ public:
     MCNAPI ::Scripting::Result_deprecated<bool> isBusy();
 
     MCNAPI ::Scripting::Result_deprecated<bool> openTransaction(::std::string const& name);
+
+    MCNAPI ::Editor::ScriptModule::ScriptTransactionManagerService&
+    operator=(::Editor::ScriptModule::ScriptTransactionManagerService&&);
 
     MCNAPI ::Scripting::Result_deprecated<void> redo();
 

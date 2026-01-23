@@ -9,12 +9,8 @@
 // clang-format off
 namespace cricket { class AudioContentDescription; }
 namespace cricket { class SctpDataContentDescription; }
-namespace cricket { class SimulcastDescription; }
 namespace cricket { class UnsupportedContentDescription; }
 namespace cricket { class VideoContentDescription; }
-namespace cricket { struct Codec; }
-namespace cricket { struct RidDescription; }
-namespace cricket { struct StreamParams; }
 namespace webrtc { struct RtpExtension; }
 // clang-format on
 
@@ -87,11 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddCodecs(::std::vector<::cricket::Codec> const& codecs);
-
     MCNAPI void AddRtpHeaderExtension(::webrtc::RtpExtension const& ext);
-
-    MCNAPI void AddStream(::cricket::StreamParams const& stream);
 
     MCNAPI MediaContentDescription();
 
@@ -99,10 +91,6 @@ public:
 
     MCNAPI void
     set_extmap_allow_mixed_enum(::cricket::MediaContentDescription::ExtmapAllowMixed new_extmap_allow_mixed);
-
-    MCNAPI void set_receive_rids(::std::vector<::cricket::RidDescription> const& rids);
-
-    MCNAPI void set_simulcast_description(::cricket::SimulcastDescription const& simulcast);
     // NOLINTEND
 
 public:

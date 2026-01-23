@@ -29,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WardenVibrationConfig();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onSignalReceive(
@@ -51,18 +47,6 @@ public:
     shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext) /*override*/;
 
     virtual ~WardenVibrationConfig() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WardenVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
     // NOLINTEND
 
 public:

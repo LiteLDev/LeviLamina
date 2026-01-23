@@ -21,6 +21,7 @@ namespace Editor::Cursor { struct CursorState; }
 namespace Editor::Cursor { struct Position; }
 namespace Editor::Cursor { struct Ray; }
 namespace Editor::Network { class CursorServicePositionChangePayload; }
+namespace Editor::Network { class CursorServiceViewDistanceChangePayload; }
 // clang-format on
 
 namespace Editor::Cursor {
@@ -35,6 +36,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkb8f196;
     ::ll::UntypedStorage<8, 16> mUnkcf80cc;
     ::ll::UntypedStorage<8, 24> mUnka7b08b;
+    ::ll::UntypedStorage<4, 4>  mUnk10a236;
     ::ll::UntypedStorage<8, 48> mUnk6fe9e8;
     ::ll::UntypedStorage<8, 48> mUnk8dce3c;
     ::ll::UntypedStorage<8, 48> mUnk353ef0;
@@ -75,6 +77,8 @@ public:
 
     virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const& offset) /*override*/;
 
+    virtual ::Scripting::Result_deprecated<int> getMaxViewBlockDistance() const /*override*/;
+
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForCursorStateChanges(
         ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback
     ) /*override*/;
@@ -93,6 +97,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Cursor::ServerCursor>> _createCursor();
 
     MCNAPI void _createOrUpdateRegion(::BlockPos const& pos);
+
+    MCNAPI void _handleMaxViewDistanceChange(::Editor::Network::CursorServiceViewDistanceChangePayload const& payload);
 
     MCNAPI void _handlePayloadPositionChange(::Editor::Network::CursorServicePositionChangePayload const& payload);
     // NOLINTEND
@@ -128,6 +134,8 @@ public:
     $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props);
 
     MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveBy(::glm::ivec3 const& offset);
+
+    MCNAPI ::Scripting::Result_deprecated<int> $getMaxViewBlockDistance() const;
 
     MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForCursorStateChanges(
         ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback

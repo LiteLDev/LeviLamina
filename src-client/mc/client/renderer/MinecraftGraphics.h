@@ -28,7 +28,7 @@ public:
     ::ll::TypedStorage<8, 24, ::mce::ClientResourcePointer<::mce::ImmediateBuffer>>         mImmediateBuffer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::framebuilder::PBRTextureDataManager>> mPBRTextureDataManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::ImageResourceLoader>>                mImageResourceLoader;
-    ::ll::TypedStorage<8, 344, ::MinecraftGameplayGraphicsResources> mMinecraftGameplayGraphicsResources;
+    ::ll::TypedStorage<8, 328, ::MinecraftGameplayGraphicsResources> mMinecraftGameplayGraphicsResources;
     // NOLINTEND
 
 public:
@@ -49,6 +49,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit MinecraftGraphics(::mce::RenderContext& renderContext);
+
+    MCNAPI ::std::shared_ptr<::mce::ImageResourceLoader> getImageResourceLoader() const;
 
     MCNAPI ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> getPBRTextureDataManager() const;
     // NOLINTEND

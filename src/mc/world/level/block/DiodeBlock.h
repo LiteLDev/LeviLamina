@@ -27,9 +27,6 @@ public:
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
-
     virtual int getVariant(::Block const& block) const /*override*/;
 
     virtual int getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const /*override*/;
@@ -78,8 +75,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
-
     MCAPI int $getVariant(::Block const& block) const;
 
     MCAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;

@@ -4,9 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class IClientInstance;
 class Level;
 namespace PlayerCapabilities { struct ISharedController; }
+class IClientInstance;
 namespace PlayerCapabilities { struct IClientController; }
 // clang-format on
 

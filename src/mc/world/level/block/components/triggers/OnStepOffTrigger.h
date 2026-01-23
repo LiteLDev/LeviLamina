@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OnStepOffTrigger();
+    virtual ~OnStepOffTrigger() = default;
     // NOLINTEND
 
 public:
@@ -31,12 +31,6 @@ public:
     MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
     MCAPI void onStepOff(::BlockEvents::BlockStepOffEvent const& eventData) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

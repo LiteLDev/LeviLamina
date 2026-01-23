@@ -77,6 +77,14 @@ public:
     virtual void remove(::LevelStorage&) = 0;
 
     virtual void onComponentChanged(uint, float, bool, ::LevelStorage&) = 0;
+
+    virtual bool isScoped() const = 0;
+
+    virtual ::std::optional<uint64> const& getScope() const = 0;
+
+    virtual bool isDoneLoadingScoped() const = 0;
+
+    virtual bool isStandalone() const = 0;
     // NOLINTEND
 
 public:

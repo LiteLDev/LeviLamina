@@ -27,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CoralFanHang();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
@@ -54,7 +58,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CoralFanHang(
+        ::std::string const&  nameId,
+        int                   id,
+        ::HashedString const& coralFanVersion,
+        ::HashedString const& deadVersion
+    );
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&  nameId,
+        int                   id,
+        ::HashedString const& coralFanVersion,
+        ::HashedString const& deadVersion
+    );
     // NOLINTEND
 
 public:

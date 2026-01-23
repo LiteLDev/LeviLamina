@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/Direction.h"
+#include "mc/world/level/block/CornerShape.h"
 #include "mc/world/level/block/VerticalHalfEnum.h"
 #include "mc/world/level/block/states/BuiltInBlockStateVariant.h"
 
@@ -21,6 +22,8 @@ MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionNorth();
 MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionSouth();
 
 MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionWest();
+
+MCAPI ::BuiltInBlockStateVariant<::CornerShape> const& Corner();
 
 MCAPI ::BuiltInBlockStateVariant<uchar> const& FacingDirection();
 

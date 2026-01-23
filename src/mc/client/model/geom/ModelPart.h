@@ -10,7 +10,6 @@
 class AABB;
 class BoneOrientation;
 class DataDrivenGeometry;
-class ExpressionNode;
 class GeometryPtr;
 class Matrix;
 class RenderController;
@@ -129,8 +128,6 @@ public:
 
     MCNAPI_C void assignPartToGroup(::Model& model, bool forceToUniqueGroup, ::DataDrivenGeometry* owningGeometry);
 
-    MCNAPI_C void clearBoxes();
-
     MCNAPI_C void compileCubes(::Tessellator& tessellator);
 
     MCNAPI_C void compileQuads(::MinecraftGameplayGraphicsResources& gameplayResources, ::Tessellator& tessellator);
@@ -175,8 +172,6 @@ public:
 
     MCNAPI_C void
     loadPolyMesh(::Vec3 const& newPivot, ::Vec3 const& bindPoseRotation, ::Geometry::NodePolyMesh const& sourceMesh);
-
-    MCNAPI_C void loadPos(::Vec3 const& newPivot, ::ModelPart* parentPart, bool pivotSubtractsParentPivot);
 
     MCNAPI_C void loadTextureMeshes(
         ::std::shared_ptr<::ActorResourceDefinition> resourceDefinition,
@@ -226,8 +221,6 @@ public:
     );
 
     MCNAPI_C void setModelPartMaterial(::mce::MaterialPtr const& mat, ::RenderController const* renderControllerId);
-
-    MCNAPI_C void setVisibility(::ExpressionNode const& visibility, ::RenderController const* renderControllerId);
 
     MCNAPI_C void translateTo(::Matrix& mv, float scale);
 

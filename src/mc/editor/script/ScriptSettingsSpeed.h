@@ -31,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::std::variant<float>> get(::Editor::ScriptModule::ScriptSettingsSpeedPropType prop) const;
-
     MCNAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> getAll() const;
 
     MCNAPI ::Scripting::Result_deprecated<void>

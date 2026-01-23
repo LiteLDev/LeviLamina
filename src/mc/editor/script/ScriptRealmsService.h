@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/EditorRealmsServiceAvailability.h"
-#include "mc/common/editor/RealmsServiceStatus.h"
 #include "mc/common/editor/RealmsWorldUploadResult.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
@@ -71,19 +69,13 @@ public:
         ::Scripting::ScriptObjectFactory&         factory
     );
 
-    MCNAPI bool canUploadWorld();
-
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorld>, ::Scripting::Error, void>>
     getRealmWorldlist(::Scripting::ScriptObjectFactory& factory);
 
-    MCNAPI ::Editor::Services::RealmsServiceStatus getServiceStatus();
-
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorldSlot>, ::Scripting::Error, void>>
     getSlots(::std::string const& worldId, ::Scripting::ScriptObjectFactory& factory);
-
-    MCNAPI ::Editor::Services::EditorRealmsServiceAvailability isRealmsServiceAvailable();
 
     MCNAPI ::Editor::ScriptModule::ScriptRealmsService& operator=(::Editor::ScriptModule::ScriptRealmsService&&);
 

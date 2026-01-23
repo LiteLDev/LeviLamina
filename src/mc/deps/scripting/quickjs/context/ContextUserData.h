@@ -62,15 +62,9 @@ public:
         ::std::variant<::std::string_view, uint> arg
     );
 
+    MCNAPI void resetParseContext();
+
     MCNAPI void resetParseContextUntilVariant(bool removeVariant);
-
-    MCNAPI ~ContextUserData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

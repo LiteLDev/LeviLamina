@@ -123,6 +123,8 @@ public:
     ) const;
 
     MCAPI void _populateBiomeArrays(::BiomeRegistry const& biomeRegistry) const;
+
+    MCAPI void addBiomes(::std::vector<::BiomeNoiseTarget>& biomes, ::BiomeRegistry const& biomeRegistry) const;
     // NOLINTEND
 
 public:

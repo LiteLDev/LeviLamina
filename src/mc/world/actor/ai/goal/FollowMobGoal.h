@@ -49,15 +49,19 @@ public:
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    virtual ~FollowMobGoal() /*override*/ = default;
+    virtual ~FollowMobGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>> _findCandidateMobs();
+    // NOLINTEND
 
-    MCAPI void setFilters(::ActorFilterGroup& filters);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -27,6 +27,8 @@ public:
     // NOLINTBEGIN
     MCAPI EquipmentTable(::EquipmentTable const&);
 
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+
     MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
 
     MCAPI ~EquipmentTable();
@@ -50,6 +52,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/player/SerializedSkin.h"
+#include "mc/world/actor/player/SerializedSkinRef.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,10 +14,10 @@ class SkinInfoData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>    mDefaultMeshName;
-    ::ll::TypedStorage<1, 1, bool>              mIsAlphaTest;
-    ::ll::TypedStorage<1, 1, bool>              mIsDirty;
-    ::ll::TypedStorage<8, 16, ::SerializedSkin> mSkin;
+    ::ll::TypedStorage<8, 32, ::std::string>       mDefaultMeshName;
+    ::ll::TypedStorage<1, 1, bool>                 mIsAlphaTest;
+    ::ll::TypedStorage<1, 1, bool>                 mIsDirty;
+    ::ll::TypedStorage<8, 16, ::SerializedSkinRef> mSkin;
     // NOLINTEND
 
 public:
@@ -29,18 +29,11 @@ public:
     virtual ~SkinInfoData();
 #endif
 
-    virtual void updateSkin(::SerializedSkin const&, ::mce::Image const*, ::mce::Image const*) = 0;
+    virtual void updateSkin(::SerializedSkinRef const&, ::mce::Image const*, ::mce::Image const*) = 0;
 
     virtual bool hasValidTexture() = 0;
 
     virtual bool validateAndResizeSkinData(::mce::Image& image, bool isPremium);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI_C void
-    copySkinPart(::mce::Image& image, int dx1, int dy1, int dx2, int dy2, int sx1, int sy1, int sx2, int sy2);
     // NOLINTEND
 
 public:

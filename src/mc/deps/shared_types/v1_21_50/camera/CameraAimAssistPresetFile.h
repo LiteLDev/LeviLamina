@@ -21,8 +21,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CameraAimAssistPresetFile& operator=(CameraAimAssistPresetFile const&);
+    CameraAimAssistPresetFile(CameraAimAssistPresetFile const&);
+    CameraAimAssistPresetFile();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CameraAimAssistPresetFile(::SharedTypes::v1_21_50::CameraAimAssistPresetFile&&);
+
     MCAPI ~CameraAimAssistPresetFile();
     // NOLINTEND
 
@@ -30,6 +38,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetFile&&);
     // NOLINTEND
 
 public:

@@ -8,22 +8,18 @@
 #include "mc/external/cricket/MediaType.h"
 #include "mc/external/cricket/ProtocolType.h"
 #include "mc/external/cricket/RtpPacketType.h"
-#include "mc/external/webrtc/RtpExtension.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace cricket { class AudioContentDescription; }
 namespace cricket { class Candidate; }
 namespace cricket { class ContentInfo; }
-namespace cricket { class MediaContentDescription; }
 namespace cricket { class RtpHeaderExtensionQueryInterface; }
 namespace cricket { class SctpDataContentDescription; }
 namespace cricket { class SessionDescription; }
 namespace cricket { class UsedPayloadTypes; }
 namespace cricket { class VideoContentDescription; }
 namespace cricket { struct Codec; }
-namespace cricket { struct MediaChannelParameters; }
-namespace cricket { struct SenderParameters; }
 namespace webrtc { class RTCError; }
 namespace webrtc { struct RtpExtension; }
 namespace webrtc { struct RtpParameters; }
@@ -120,12 +116,6 @@ MCNAPI ::cricket::ContentInfo const* GetFirstDataContent(::cricket::SessionDescr
 MCNAPI ::cricket::ContentInfo const*
 GetFirstMediaContent(::std::vector<::cricket::ContentInfo> const& contents, ::cricket::MediaType media_type);
 
-MCNAPI ::cricket::ContentInfo const*
-GetFirstMediaContent(::cricket::SessionDescription const* sdesc, ::cricket::MediaType media_type);
-
-MCNAPI ::cricket::MediaContentDescription const*
-GetFirstMediaContentDescription(::cricket::SessionDescription const* sdesc, ::cricket::MediaType media_type);
-
 MCNAPI ::cricket::SctpDataContentDescription const*
 GetFirstSctpDataContentDescription(::cricket::SessionDescription const* sdesc);
 
@@ -141,8 +131,6 @@ MCNAPI bool GetRtcpType(void const* data, uint64 len, int* value);
 MCNAPI int GetStunErrorResponseType(int req_type);
 
 MCNAPI int GetStunSuccessResponseType(int req_type);
-
-MCNAPI int GreatestCommonDivisor(int a, int b);
 
 MCNAPI bool IceCredentialsChanged(
     ::std::string_view old_ufrag,
@@ -171,8 +159,6 @@ MCNAPI bool IsSctpProtocol(::std::string_view protocol);
 
 MCNAPI bool IsStunErrorResponseType(int msg_type);
 
-MCNAPI bool IsStunIndicationType(int msg_type);
-
 MCNAPI bool IsStunRequestType(int msg_type);
 
 MCNAPI bool IsStunSuccessResponseType(int msg_type);
@@ -187,13 +173,6 @@ MCNAPI bool IsVideoContent(::cricket::ContentInfo const* content);
 
 MCNAPI int LeastCommonMultiple(int a, int b);
 
-MCNAPI void MediaChannelParametersFromMediaDescription(
-    ::cricket::MediaContentDescription const*    desc,
-    ::std::vector<::webrtc::RtpExtension> const& extensions,
-    bool                                         is_stream_active,
-    ::cricket::MediaChannelParameters*           params
-);
-
 MCNAPI ::std::string MediaTypeToString(::cricket::MediaType type);
 
 MCNAPI void MergeCodecsFromDescription(
@@ -206,12 +185,6 @@ MCNAPI void MergeCodecsFromDescription(
 MCNAPI char const* ProtoToString(::cricket::ProtocolType proto);
 
 MCNAPI ::std::string_view RtpPacketTypeToString(::cricket::RtpPacketType packet_type);
-
-MCNAPI void RtpSendParametersFromMediaDescription(
-    ::cricket::MediaContentDescription const* desc,
-    ::webrtc::RtpExtension::Filter            extensions_filter,
-    ::cricket::SenderParameters*              send_params
-);
 
 MCNAPI ::std::optional<::cricket::ConnectionRole> StringToConnectionRole(::std::string_view role_str);
 

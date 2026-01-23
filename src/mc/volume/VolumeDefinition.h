@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct VolumeDefinition {
 public:
     // VolumeDefinition inner types declare
@@ -19,7 +24,6 @@ public:
 
     public:
         // prevent constructor by default
-        VolumeDescription& operator=(VolumeDescription const&);
         VolumeDescription(VolumeDescription const&);
         VolumeDescription();
 
@@ -27,6 +31,8 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI_C ::VolumeDefinition::VolumeDescription& operator=(::VolumeDefinition::VolumeDescription&&);
+
+        MCNAPI_C ::VolumeDefinition::VolumeDescription& operator=(::VolumeDefinition::VolumeDescription const&);
 
         MCNAPI_C ~VolumeDescription();
         // NOLINTEND
@@ -56,6 +62,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C ~VolumeDefinition();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

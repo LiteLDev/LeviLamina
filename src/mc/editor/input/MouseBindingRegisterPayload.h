@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+namespace Editor::Input { class MouseBinding; }
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class MouseBindingRegisterPayload
@@ -19,14 +26,45 @@ public:
 
 public:
     // prevent constructor by default
-    MouseBindingRegisterPayload& operator=(MouseBindingRegisterPayload const&);
-    MouseBindingRegisterPayload(MouseBindingRegisterPayload const&);
     MouseBindingRegisterPayload();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~MouseBindingRegisterPayload() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI MouseBindingRegisterPayload(::Editor::Network::MouseBindingRegisterPayload const&);
+
+    MCNAPI MouseBindingRegisterPayload(
+        ::HashedString const&                contextId,
+        ::HashedString const&                bindingId,
+        ::Editor::Input::MouseBinding const& binding
+    );
+
+    MCNAPI ::Editor::Network::MouseBindingRegisterPayload&
+    operator=(::Editor::Network::MouseBindingRegisterPayload const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Network::MouseBindingRegisterPayload const&);
+
+    MCNAPI void* $ctor(
+        ::HashedString const&                contextId,
+        ::HashedString const&                bindingId,
+        ::Editor::Input::MouseBinding const& binding
+    );
     // NOLINTEND
 
 public:

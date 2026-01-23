@@ -22,8 +22,6 @@ public:
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::std::vector<::std::string> getFogSettingsStack() const;
-
     MCAPI bool popFogSetting(::std::string const& userProvidedId);
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);

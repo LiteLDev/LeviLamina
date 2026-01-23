@@ -12,6 +12,7 @@ class BlockSource;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
+namespace ScriptModuleMinecraft { struct ScriptExplosionStartedAfterEventIntermediateData; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -19,6 +20,10 @@ namespace Scripting { struct ClassBinding; }
 namespace ScriptModuleMinecraft {
 
 struct ScriptExplosionStartedAfterEvent {
+public:
+    // ScriptExplosionStartedAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptExplosionStartedAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,6 +47,11 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptExplosionStartedAfterEvent(::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent const&);
 
+    MCAPI ScriptExplosionStartedAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                               scope
+    );
+
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>
     getImpactedBlocks() const;
 
@@ -58,6 +68,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent const&);
+
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                               scope
+    );
     // NOLINTEND
 
 public:

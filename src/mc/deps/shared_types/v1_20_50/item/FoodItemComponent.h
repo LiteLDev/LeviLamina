@@ -23,15 +23,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FoodItemComponent& operator=(FoodItemComponent const&);
-    FoodItemComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent const&);
-
     MCAPI ~FoodItemComponent();
     // NOLINTEND
 
@@ -39,12 +32,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent const&);
     // NOLINTEND
 
 public:

@@ -17,18 +17,19 @@ public:
     ::ll::UntypedStorage<8, 40> mUnk727ce9;
     ::ll::UntypedStorage<8, 24> mUnkf73704;
     ::ll::UntypedStorage<1, 2>  mUnk29b767;
-    ::ll::UntypedStorage<8, 40> mUnka736b2;
+    ::ll::UntypedStorage<8, 80> mUnk7b5d93;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptLogProperties(ScriptLogProperties const&);
     ScriptLogProperties();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptLogProperties(::Editor::ScriptModule::ScriptLogProperties&&);
+
+    MCNAPI ScriptLogProperties(::Editor::ScriptModule::ScriptLogProperties const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptLogProperties& operator=(::Editor::ScriptModule::ScriptLogProperties&&);
 
@@ -49,6 +50,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptLogProperties&&);
+
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptLogProperties const&);
     // NOLINTEND
 
 public:

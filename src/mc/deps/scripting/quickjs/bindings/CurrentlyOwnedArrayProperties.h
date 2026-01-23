@@ -50,6 +50,13 @@ public:
     CurrentlyOwnedArrayProperties& operator=(CurrentlyOwnedArrayProperties const&);
     CurrentlyOwnedArrayProperties(CurrentlyOwnedArrayProperties const&);
     CurrentlyOwnedArrayProperties();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::QuickJS::CurrentlyOwnedArrayProperties&
+    operator=(::Scripting::QuickJS::CurrentlyOwnedArrayProperties&&);
+    // NOLINTEND
 };
 
 } // namespace Scripting::QuickJS

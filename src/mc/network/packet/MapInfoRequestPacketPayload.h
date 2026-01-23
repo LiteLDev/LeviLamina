@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
 
+// auto generated forward declare list
+// clang-format off
+class MapItemSavedData;
+// clang-format on
+
 struct MapInfoRequestPacketPayload {
 public:
     // member variables
@@ -23,6 +28,8 @@ public:
     // NOLINTBEGIN
     MCAPI MapInfoRequestPacketPayload(::MapInfoRequestPacketPayload const&);
 
+    MCAPI MapInfoRequestPacketPayload(::ActorUniqueID mapId, ::MapItemSavedData& map);
+
     MCAPI ::MapInfoRequestPacketPayload& operator=(::MapInfoRequestPacketPayload&&);
 
     MCAPI ~MapInfoRequestPacketPayload();
@@ -32,6 +39,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor(::MapInfoRequestPacketPayload const&);
+
+    MCAPI void* $ctor(::ActorUniqueID mapId, ::MapItemSavedData& map);
     // NOLINTEND
 
 public:

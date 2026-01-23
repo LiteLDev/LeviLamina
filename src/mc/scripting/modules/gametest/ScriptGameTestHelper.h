@@ -193,10 +193,6 @@ public:
     MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::gametest::GameTestCompletedError>
     idle(::Scripting::ScriptObjectFactory& factory, int tickDelay);
 
-    MCNAPI bool isTestInstanceCleaningUp() const;
-
-    MCNAPI bool isTestInstanceCompleted() const;
-
     MCNAPI ::Scripting::Result<void, ::gametest::GameTestError, ::gametest::GameTestCompletedError> killAllEntities();
 
     MCNAPI ::Scripting::Result<void, ::gametest::GameTestError, ::gametest::GameTestCompletedError>

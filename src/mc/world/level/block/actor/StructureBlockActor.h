@@ -16,10 +16,9 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
+class IStructureWireframeQueue;
 class LevelChunk;
 class SaveContext;
-class WireframeQueue;
-struct WireframeQuad;
 namespace mce { class Color; }
 // clang-format on
 
@@ -45,7 +44,6 @@ public:
 
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-#ifdef LL_PLAT_C
     virtual void onPlace(::BlockSource& region) /*override*/;
 
     virtual void onRemoved(::BlockSource& region) /*override*/;
@@ -56,7 +54,6 @@ public:
 
     virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
 
-#endif
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
@@ -67,23 +64,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StructureBlockActor(::BlockPos const& pos);
+    MCAPI_C explicit StructureBlockActor(::BlockPos const& pos);
 
     MCAPI bool _loadStructure(::BlockSource& region, ::BlockPos const& position, ::BaseGameVersion const& version);
 
-    MCAPI_C void _queueStructure(::WireframeQueue& wireframeQueue, ::StructureEditorData const& dataToQueue);
+    MCAPI void _queueStructure(::IStructureWireframeQueue& wireframeQueue, ::StructureEditorData const& dataToQueue);
 
     MCAPI bool _saveStructure(::BlockSource& region, ::BlockPos const& position, bool redstoneTriggered);
 
     MCAPI void setPowered(::BlockSource& region, ::BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);
 
     MCAPI_S void setStructureData(::StructureEditorData const& data);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI_C static ::std::array<::WireframeQuad, 24> _generateWireframe(::BlockPos const& boundingBox);
     // NOLINTEND
 
 public:
@@ -101,7 +92,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCAPI_C void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -113,11 +104,6 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
-
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
-
-#ifdef LL_PLAT_C
     MCAPI void $onPlace(::BlockSource& region);
 
     MCAPI void $onRemoved(::BlockSource& region);
@@ -127,7 +113,10 @@ public:
     MCAPI void $onSubChunkLoaded(::LevelChunk& lc, short, bool);
 
     MCAPI void $onChunkUnloaded(::LevelChunk& lc);
-#endif
+
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

@@ -110,8 +110,6 @@ public:
 
     MCNAPI bool processMathFuncs();
 
-    MCNAPI_S bool processMemberAccessors();
-
     MCNAPI bool processNegativesAndLogicalNots();
 
     MCNAPI bool processQueriesAndFunctions();

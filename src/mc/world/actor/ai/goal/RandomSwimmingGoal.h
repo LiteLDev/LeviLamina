@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/RandomStrollGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-// clang-format on
-
 class RandomSwimmingGoal : public ::RandomStrollGoal {
 public:
     // member variables
@@ -29,18 +24,6 @@ public:
     virtual bool _setWantedPosition() /*override*/;
 
     virtual ~RandomSwimmingGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _getWaterHeights(
-        ::BlockPos testPos,
-        short&     groundLevel,
-        float&     waterLevel,
-        float&     minHeight,
-        float&     maxHeight
-    ) const;
     // NOLINTEND
 
 public:

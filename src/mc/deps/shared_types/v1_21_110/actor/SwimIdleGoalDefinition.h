@@ -29,10 +29,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_IDLE_TIME();
-
-    MCAPI static float const& DEFAULT_SUCCESS_RATE();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

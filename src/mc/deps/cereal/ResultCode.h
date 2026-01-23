@@ -19,6 +19,7 @@ enum class ResultCode : ushort {
     VariantPriorityOrder  = 1 << 10,
     UnrecognizedComponent = 1 << 11,
     UnsupportedVersion    = 1 << 12,
+    InvalidEnumValue      = 1 << 13,
     EnttEnumAsBitmask     = 65535,
     All                   = 65535,
 };

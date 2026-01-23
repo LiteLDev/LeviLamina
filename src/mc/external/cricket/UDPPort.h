@@ -56,25 +56,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI AddressResolver(
-            ::rtc::PacketSocketFactory*                             factory,
-            ::std::function<void(::rtc::SocketAddress const&, int)> done_callback
-        );
-
-        MCNAPI bool
-        GetResolvedAddress(::rtc::SocketAddress const& input, int family, ::rtc::SocketAddress* output) const;
-
         MCNAPI void
         Resolve(::rtc::SocketAddress const& address, int family, ::webrtc::FieldTrialsView const& field_trials);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(
-            ::rtc::PacketSocketFactory*                             factory,
-            ::std::function<void(::rtc::SocketAddress const&, int)> done_callback
-        );
         // NOLINTEND
     };
 
@@ -152,11 +135,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool HasStunCandidateWithAddress(::rtc::SocketAddress const& addr) const;
-
     MCNAPI bool Init();
-
-    MCNAPI void MaybePrepareStunCandidate();
 
     MCNAPI bool MaybeSetDefaultLocalAddress(::rtc::SocketAddress* addr) const;
 
@@ -216,6 +195,22 @@ public:
     );
 
     MCNAPI void set_stun_keepalive_delay(::std::optional<int> const& delay);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::unique_ptr<::cricket::UDPPort> Create(
+        ::rtc::Thread*                              thread,
+        ::rtc::PacketSocketFactory*                 factory,
+        ::rtc::Network const*                       network,
+        ::std::shared_ptr<::rtc::AsyncPacketSocket> socket,
+        ::std::string_view                          username,
+        ::std::string_view                          password,
+        bool                                        emit_local_for_anyaddress,
+        ::std::optional<int>                        stun_keepalive_interval,
+        ::webrtc::FieldTrialsView const*            field_trials
+    );
     // NOLINTEND
 
 public:

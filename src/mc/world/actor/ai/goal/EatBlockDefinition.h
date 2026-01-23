@@ -10,8 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockType;
-class EatBlockGoal;
-class EntityContext;
 class ExpressionNode;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -40,8 +38,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addSuccessChanceExpressionNode(::ExpressionNode const& node);
-
-    MCAPI void initialize(::EntityContext& entity, ::EatBlockGoal& goal) const;
     // NOLINTEND
 
 public:

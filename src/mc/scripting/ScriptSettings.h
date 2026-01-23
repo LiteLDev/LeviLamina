@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCerealContext;
-    ::ll::TypedStorage<8, 456, ::ScriptPackConfigurationManager>                            mPackConfigurationManager;
+    ::ll::TypedStorage<8, 480, ::ScriptPackConfigurationManager>                            mPackConfigurationManager;
     ::ll::TypedStorage<1, 1, bool>                                                          mEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                          mEnableEditorModules;
     ::ll::TypedStorage<8, 32, ::BaseGameVersion>                                            mBaseGameVersion;
@@ -29,7 +29,9 @@ public:
     ::ll::TypedStorage<4, 36, ::std::optional<::Scripting::WatchdogSettings>>               mWatchdogSettings;
     ::ll::TypedStorage<1, 1, bool>                                                          mDiagnosticsAutoStart;
     ::ll::TypedStorage<4, 8, ::std::optional<uint>>                                         mMaxDiagnosticsCaptureFiles;
-    ::ll::TypedStorage<4, 8, ::std::optional<uint>> mMaxDiagnosticsCaptureFileSize;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>>                    mMaxDiagnosticsCaptureFileSize;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>>                    mMaxEventsPerWindow;
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::seconds>> mRateLimitWindow;
     // NOLINTEND
 
 public:

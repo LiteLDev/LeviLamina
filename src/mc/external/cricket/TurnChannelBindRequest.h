@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TurnChannelBindRequest() /*override*/;
+    virtual ~TurnChannelBindRequest() /*override*/ = default;
 
     virtual void OnSent() /*override*/;
 
@@ -61,12 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(::cricket::TurnPort* port, ::cricket::TurnEntry* entry, int channel_id, ::rtc::SocketAddress const& ext_addr);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

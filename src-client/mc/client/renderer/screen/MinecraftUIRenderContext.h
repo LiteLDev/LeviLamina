@@ -277,6 +277,8 @@ public:
     MCAPI
     MinecraftUIRenderContext(::IClientInstance& client, ::ScreenContext& screenContext, ::UIScene const& currentScene);
 
+    MCAPI float _getTextAlignmentOffset(::MinecraftUIRenderContext::TextItem const& textItem, float lineLength) const;
+
     MCAPI float _getTextAlignmentPosition(::MinecraftUIRenderContext::TextItem const& textItem) const;
 
     MCAPI void

@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PhysicalSocketServer() /*override*/;
+    virtual ~PhysicalSocketServer() /*override*/ = default;
 
     virtual ::rtc::Socket* CreateSocket(int family, int type) /*override*/;
 
@@ -59,21 +59,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static int ToCmsWait(::webrtc::TimeDelta max_wait_duration);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

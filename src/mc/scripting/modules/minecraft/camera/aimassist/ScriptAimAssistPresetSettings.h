@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkf76be5;
     ::ll::UntypedStorage<8, 64> mUnk78fcb0;
-    ::ll::UntypedStorage<8, 32> mUnk266116;
+    ::ll::UntypedStorage<8, 96> mUnk2065eb;
     ::ll::UntypedStorage<8, 32> mUnk8b3495;
     ::ll::UntypedStorage<8, 40> mUnk5d1baf;
     ::ll::UntypedStorage<8, 40> mUnkcfa045;
@@ -30,13 +30,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::std::vector<::std::string>> _getExcludedTargets() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> _getExcludedBlockTagTargets() const;
+
+    MCNAPI ::std::optional<::std::vector<::std::string>> _getExcludedBlockTargets() const;
+
+    MCNAPI ::std::optional<::std::vector<::std::string>> _getExcludedEntityTargets() const;
 
     MCNAPI ::std::unordered_map<::std::string, ::std::string> _getItemSettings() const;
 
     MCNAPI ::std::optional<::std::vector<::std::string>> _getLiquidTargetingItems() const;
 
-    MCNAPI void setExcludedTargets(::std::optional<::std::vector<::std::string>> targets);
+    MCNAPI void setExcludedBlockTagTargets(::std::optional<::std::vector<::std::string>> blockTagTargets);
+
+    MCNAPI void setExcludedBlockTargets(::std::optional<::std::vector<::std::string>> blockTargets);
+
+    MCNAPI void setExcludedEntityTargets(::std::optional<::std::vector<::std::string>> entityTargets);
 
     MCNAPI void setItemSettings(::std::unordered_map<::std::string, ::std::string> itemSettings);
 

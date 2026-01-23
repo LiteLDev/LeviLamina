@@ -9,6 +9,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class Item;
 // clang-format on
 
 class FertilizeFarmBlockGoal : public ::BaseMoveToBlockGoal {
@@ -45,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _findFertilizer();
+    MCAPI int findInventorySlotForItem(::std::function<bool(::Item const&)> itemCallback) const;
 
     MCAPI bool tryFertilizeCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
     // NOLINTEND

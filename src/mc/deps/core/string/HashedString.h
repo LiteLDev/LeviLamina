@@ -140,7 +140,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+    MCAPI void* $ctor();
 
     MCAPI void* $ctor(::HashedString&& rhs);
 
@@ -149,6 +149,8 @@ public:
     MCFOLD void* $ctor(::std::string const& str);
 
     MCAPI void* $ctor(char const* str);
+
+    MCAPI_C void* $ctor(::std::string_view str);
 
     MCAPI void* $ctor(uint64 hash, char const* str);
     // NOLINTEND

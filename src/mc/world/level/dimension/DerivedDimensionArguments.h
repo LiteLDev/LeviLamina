@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IClientDimensionExtensions;
 class ILevel;
 class TaskGroup;
 // clang-format on
@@ -17,5 +18,6 @@ public:
     // NOLINTBEGIN
     ::ILevel&                                                                       mLevel;
     ::brstd::move_only_function<::std::unique_ptr<::TaskGroup>(::std::string_view)> mCreateTaskGroup;
+    std::unique_ptr<::IClientDimensionExtensions> mClientExtensions;
     // NOLINTEND
 };

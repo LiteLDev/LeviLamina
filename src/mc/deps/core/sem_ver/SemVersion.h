@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-struct SemVersionAnyVersionType;
 namespace Json { class Value; }
 // clang-format on
 
@@ -28,15 +27,17 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    SemVersion();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SemVersion();
+    MCAPI SemVersion(::SemVersion&&);
 
     MCAPI SemVersion(::SemVersion const&);
 
     MCAPI explicit SemVersion(::SemVersionConstant const& other);
-
-    MCAPI explicit SemVersion(::SemVersionAnyVersionType);
 
     MCAPI SemVersion(
         ushort                           major,
@@ -68,13 +69,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCAPI void* $ctor(::SemVersion&&);
 
     MCAPI void* $ctor(::SemVersion const&);
 
     MCAPI void* $ctor(::SemVersionConstant const& other);
-
-    MCAPI void* $ctor(::SemVersionAnyVersionType);
 
     MCAPI void* $ctor(
         ushort                           major,

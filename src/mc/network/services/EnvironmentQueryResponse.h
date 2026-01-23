@@ -29,6 +29,9 @@ public:
 
     MCNAPI_C ::std::string GetPropertyValue(::std::string const& serviceName, ::std::string const& propertyKey) const;
 
+    MCNAPI ::std::map<::std::string, ::std::string> const*
+    GetServiceEnvironmentProperties(::std::string const& serviceName, ::std::string const& environmentName) const;
+
     MCNAPI void fromJsonShared(::Json::Value const& jsonValue);
 
     MCNAPI_C ~EnvironmentQueryResponse();

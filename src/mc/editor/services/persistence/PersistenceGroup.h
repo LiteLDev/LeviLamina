@@ -42,6 +42,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::std::string _getValidKeyName(::std::string const& key) const;
+
+    MCNAPI bool _hasItem(::std::string const& itemName) const;
+
     MCNAPI void _loadItems();
 
     MCNAPI void _notifyItemChanged(::Editor::Services::PersistenceItem const& item);

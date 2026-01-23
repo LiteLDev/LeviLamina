@@ -10,9 +10,9 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class UIPropertyBag;
 namespace mce { class Color; }
 namespace mce { class UUID; }
+struct UIPropertyBag;
 // clang-format on
 
 namespace persona {
@@ -29,6 +29,8 @@ MCAPI_C ::persona::Rarity pieceRarityFromString(::std::string const& rarityTypeS
 MCAPI ::persona::PieceType pieceTypeFromString(::std::string const& assetTypeStr);
 
 MCAPI_C ::std::string stringFromPieceRarity(::persona::Rarity const& rarity);
+
+MCAPI_C ::std::string stringFromPieceRarityNotLocalized(::persona::Rarity const& rarity);
 
 MCAPI ::std::string const& stringFromPieceType(::persona::PieceType assetType, bool isDefaultItem);
 

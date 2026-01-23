@@ -45,16 +45,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void SetAddress(::rtc::SocketAddress const& addr);
 
-    MCNAPI StunAddressAttribute(ushort type, ::rtc::SocketAddress const& addr);
-
     MCNAPI StunAddressAttribute(ushort type, ushort length);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(ushort type, ::rtc::SocketAddress const& addr);
-
     MCNAPI void* $ctor(ushort type, ushort length);
     // NOLINTEND
 

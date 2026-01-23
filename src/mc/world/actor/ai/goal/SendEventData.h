@@ -30,15 +30,22 @@ public:
 
 public:
     // prevent constructor by default
-    SendEventData(SendEventData const&);
     SendEventData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SendEventData(::SendEventData const&);
+
     MCAPI ::SendEventData& operator=(::SendEventData const&);
 
     MCAPI ~SendEventData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SendEventData const&);
     // NOLINTEND
 
 public:

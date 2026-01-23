@@ -43,7 +43,6 @@ public:
 
     public:
         // prevent constructor by default
-        Rule& operator=(Rule const&);
         Rule(Rule const&);
         Rule();
 
@@ -51,6 +50,9 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::SharedTypes::v1_21_80::BlockCulling::Rule& operator=(::SharedTypes::v1_21_80::BlockCulling::Rule&&);
+
+        MCAPI ::SharedTypes::v1_21_80::BlockCulling::Rule&
+        operator=(::SharedTypes::v1_21_80::BlockCulling::Rule const&);
         // NOLINTEND
     };
 

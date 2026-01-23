@@ -54,7 +54,8 @@ MCAPI void normalizeVerticesToOrthogonalFrame(
     uint               startingVertexIndex,
     ::glm::vec2 const& frameMin,
     ::glm::vec2 const& frameMax,
-    int                zOrder
+    float              zOffset,
+    bool               downscaleOnly
 );
 // NOLINTEND
 

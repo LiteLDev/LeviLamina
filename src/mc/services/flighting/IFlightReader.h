@@ -22,6 +22,10 @@ public:
 
     virtual int getPersonaLowMemoryThresholdMb() const = 0;
 
+    virtual int getPersonaCriticalMemoryThresholdMb() const = 0;
+
+    virtual int getPersonaSkinCutoffSizeKb() const = 0;
+
     virtual bool useLegacyMultiplayerToken() const = 0;
 
     virtual ::std::chrono::seconds getNetherNetTimeout() const = 0;
@@ -37,8 +41,6 @@ public:
     virtual ::std::chrono::seconds getPlayerMessagingSafetyRefreshIntervalSeconds() const = 0;
 
     virtual ::std::chrono::seconds getProfileImageRefreshIntervalSeconds() const = 0;
-
-    virtual bool getTickDeathSystemsEnabled() const = 0;
 
     virtual bool getEnableMemoryTracker() const = 0;
 
@@ -57,6 +59,14 @@ public:
     virtual bool getFriendsDrawerOnMultipleScreens() const = 0;
 
     virtual bool getFriendsDrawerPlayersInMyWorld() const = 0;
+
+    virtual bool getPacketTelemetry() const = 0;
+
+    virtual bool getTextureCacheEnabled() const = 0;
+
+    virtual bool getTextureStreamingEnabled() const = 0;
+
+    virtual bool getDisableTrickleIce() const = 0;
 
     virtual void visit(::std::function<void(::FlightingToggleMetadata const&)> const&) const = 0;
 

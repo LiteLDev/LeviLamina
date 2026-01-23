@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_130/clientbiome/ClientBiomeJsonDocument.h"
+
 // auto generated forward declare list
 // clang-format off
 struct DeferredRenderingBiomeRegistry;
 struct FogDefinitionRegistry;
-namespace SharedTypes::v1_21_120 { struct ClientBiomeJsonDocument; }
 // clang-format on
 
 struct ClientBiomeJsonDocumentGlue {
@@ -93,9 +95,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::optional<::ClientBiomeJsonDocumentGlue::ResolvedClientBiomeData> getResolvedBiomeData(
-        ::SharedTypes::v1_21_120::ClientBiomeJsonDocument const& clientBiomeJsonDocument,
-        ::FogDefinitionRegistry const&                           fogRegistry,
-        ::DeferredRenderingBiomeRegistry const&                  deferredBiomeRegistry
+        ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject const& clientBiomeJsonObject,
+        ::FogDefinitionRegistry const&                                                  fogRegistry,
+        ::DeferredRenderingBiomeRegistry const&                                         deferredBiomeRegistry
     ) const;
 
     MCNAPI ~ClientBiomeJsonDocumentGlue();

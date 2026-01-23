@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BasicPortAllocator() /*override*/;
+    virtual ~BasicPortAllocator() /*override*/ = default;
 
     virtual void SetNetworkIgnoreMask(int network_ignore_mask) /*override*/;
 
@@ -65,8 +65,6 @@ public:
         ::cricket::RelayPortFactoryInterface* relay_port_factory,
         ::webrtc::FieldTrialsView const*      field_trials
     );
-
-    MCNAPI int GetNetworkIgnoreMask() const;
     // NOLINTEND
 
 public:
@@ -79,12 +77,6 @@ public:
         ::cricket::RelayPortFactoryInterface* relay_port_factory,
         ::webrtc::FieldTrialsView const*      field_trials
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

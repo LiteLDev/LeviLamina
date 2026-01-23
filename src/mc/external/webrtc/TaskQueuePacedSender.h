@@ -111,13 +111,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void EnsureStarted();
 
-    MCNAPI ::webrtc::TaskQueuePacedSender::Stats GetStats() const;
-
     MCNAPI void MaybeProcessPackets(::webrtc::Timestamp scheduled_process_time);
-
-    MCNAPI void MaybeScheduleProcessPackets();
-
-    MCNAPI void OnStatsUpdated(::webrtc::TaskQueuePacedSender::Stats const& stats);
 
     MCNAPI void SetAllowProbeWithoutMediaPacket(bool allow);
 
@@ -130,8 +124,6 @@ public:
         ::webrtc::TimeDelta                       max_hold_back_window,
         int                                       max_hold_back_window_in_packets
     );
-
-    MCNAPI void UpdateStats();
     // NOLINTEND
 
 public:

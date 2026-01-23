@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockRandomTickingComponent();
+    virtual ~BlockRandomTickingComponent() = default;
     // NOLINTEND
 
 public:
@@ -34,12 +34,6 @@ public:
     MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
     MCAPI void onTick(::BlockEvents::BlockRandomTickLegacyEvent const& eventData) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

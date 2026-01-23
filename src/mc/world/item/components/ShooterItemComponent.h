@@ -35,14 +35,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, float> mDuration;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD float getData() const;
-
-        MCAPI void setValue(float duration);
-        // NOLINTEND
     };
 
     struct ShooterAmmunitionEntry {

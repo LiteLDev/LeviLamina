@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StunUInt16ListAttribute() /*override*/;
+    virtual ~StunUInt16ListAttribute() /*override*/ = default;
 
     virtual ::cricket::StunAttributeValueType value_type() const /*override*/;
 
@@ -57,12 +57,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(ushort type, ushort length);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

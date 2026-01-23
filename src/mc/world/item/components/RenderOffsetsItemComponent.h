@@ -86,8 +86,6 @@ public:
         ::RenderOffsetsItemComponent::Perspective           perspective
     );
 
-    MCFOLD static void _fromString(::RenderOffsetsItemComponent&, ::std::string const&);
-
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,

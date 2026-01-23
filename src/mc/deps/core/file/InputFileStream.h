@@ -16,7 +16,12 @@ class InputFileStream : public ::Core::FileStream, public virtual ::std::ios {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~InputFileStream() /*override*/;
+#else // LL_PLAT_C
     virtual ~InputFileStream() /*override*/ = default;
+#endif
+
     // NOLINTEND
 
 public:
@@ -33,6 +38,12 @@ public:
     MCNAPI void* $ctor();
 
     MCNAPI void* $ctor(::Core::Path const& fileName, int openMode);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

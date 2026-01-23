@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class Mob;
 // clang-format on
 
@@ -45,12 +44,6 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual ~StayNearNoteblockGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> const _hasLastVibrationAtNoteblock();
     // NOLINTEND
 
 public:

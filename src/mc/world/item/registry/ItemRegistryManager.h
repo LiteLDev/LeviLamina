@@ -61,10 +61,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::ItemRegistryRef getItemRegistry();
-
-    MCAPI_C static void resetItemRegistry();
-
-    MCAPI static void setItemRegistry(::ItemRegistryRef registryRef);
     // NOLINTEND
 
 public:

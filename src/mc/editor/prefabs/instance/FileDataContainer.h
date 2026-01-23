@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::Prefabs::PrefabDBInstanceLoader::v1 { struct InstanceData; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -32,7 +33,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static ::std::optional<::Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion::FileDataContainer>
+    fromString(
+        ::Puv::SlicedLoader<::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData, nullptr_t, nullptr_t>& loader,
+        ::std::string&                jsonString,
+        ::std::vector<::std::string>& outErrors
+    );
+
+    MCNAPI static ::std::optional<::std::string> toString(
+        ::cereal::ReflectionCtx&                                           ctx,
+        ::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData const& templateData
+    );
     // NOLINTEND
 
 public:

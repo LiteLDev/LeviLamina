@@ -57,13 +57,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::DataRate AdditiveRateIncrease(::webrtc::Timestamp at_time, ::webrtc::Timestamp last_time) const;
-
     MCNAPI AimdRateControl(::webrtc::FieldTrialsView const& key_value_config, bool send_side);
 
     MCNAPI void ChangeBitrate(::webrtc::RateControlInput const& input, ::webrtc::Timestamp at_time);
-
-    MCNAPI void ChangeState(::webrtc::RateControlInput const& input, ::webrtc::Timestamp at_time);
 
     MCNAPI ::webrtc::DataRate ClampBitrate(::webrtc::DataRate new_bitrate) const;
 
@@ -74,12 +70,6 @@ public:
     MCNAPI bool InitialTimeToReduceFurther(::webrtc::Timestamp at_time) const;
 
     MCNAPI ::webrtc::DataRate LatestEstimate() const;
-
-    MCNAPI ::webrtc::DataRate MultiplicativeRateIncrease(
-        ::webrtc::Timestamp at_time,
-        ::webrtc::Timestamp last_time,
-        ::webrtc::DataRate  current_bitrate
-    ) const;
 
     MCNAPI void SetEstimate(::webrtc::DataRate bitrate, ::webrtc::Timestamp at_time);
 

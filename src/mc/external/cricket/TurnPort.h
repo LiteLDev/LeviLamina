@@ -22,7 +22,6 @@ namespace cricket { struct CreateRelayPortArgs; }
 namespace cricket { struct ProtocolAddress; }
 namespace cricket { struct RelayCredentials; }
 namespace rtc { class AsyncPacketSocket; }
-namespace rtc { class IPAddress; }
 namespace rtc { class Network; }
 namespace rtc { class PacketSocketFactory; }
 namespace rtc { class ReceivedPacket; }
@@ -189,11 +188,7 @@ public:
         int64                       packet_time_us
     );
 
-    MCNAPI bool FailAndPruneConnection(::rtc::SocketAddress const& address);
-
     MCNAPI ::cricket::TurnEntry* FindEntry(::rtc::SocketAddress const& addr) const;
-
-    MCNAPI ::cricket::TurnEntry* FindEntry(int channel_id) const;
 
     MCNAPI ::rtc::SocketAddress GetLocalAddress() const;
 
@@ -201,51 +196,25 @@ public:
 
     MCNAPI void HandleDataIndication(char const* data, uint64 size, int64 packet_time_us);
 
-    MCNAPI void HandleRefreshError();
-
-    MCNAPI bool HasPermission(::rtc::IPAddress const& ipaddr) const;
-
-    MCNAPI void MaybeAddTurnLoggingId(::cricket::StunMessage* msg);
-
     MCNAPI void OnAllocateError(int error_code, ::std::string_view reason);
 
     MCNAPI void OnAllocateMismatch();
-
-    MCNAPI void OnAllocateRequestTimeout();
-
-    MCNAPI void OnAllocateSuccess(::rtc::SocketAddress const& address, ::rtc::SocketAddress const& stun_address);
 
     MCNAPI void OnRefreshError();
 
     MCNAPI void OnSendStunPacket(void const* data, uint64 size, ::cricket::StunRequest* request);
 
-    MCNAPI void OnSocketClose(::rtc::AsyncPacketSocket* socket, int error);
-
     MCNAPI void OnSocketConnect(::rtc::AsyncPacketSocket* socket);
 
     MCNAPI ::std::string ReconstructServerUrl();
-
-    MCNAPI void Release();
-
-    MCNAPI void ResetNonce();
 
     MCNAPI void ResolveTurnAddress(::rtc::SocketAddress const& address);
 
     MCNAPI bool ScheduleRefresh(uint lifetime);
 
-    MCNAPI int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options);
-
-    MCNAPI void SendRequest(::cricket::StunRequest* req, int delay);
-
     MCNAPI bool SetAlternateServer(::rtc::SocketAddress const& address);
 
     MCNAPI void SetTurnLoggingId(::std::string_view turn_logging_id);
-
-    MCNAPI void TryAlternateServer();
-
-    MCNAPI bool TurnCustomizerAllowChannelData(void const* data, uint64 size, bool payload);
-
-    MCNAPI void TurnCustomizerMaybeModifyOutgoingStunMessage(::cricket::StunMessage* message);
 
     MCNAPI TurnPort(
         ::webrtc::TaskQueueBase*                    thread,
@@ -281,8 +250,6 @@ public:
         ::rtc::SSLCertificateVerifier*      tls_cert_verifier,
         ::webrtc::FieldTrialsView const*    field_trials
     );
-
-    MCNAPI void UpdateHash();
 
     MCNAPI bool UpdateNonce(::cricket::StunMessage* response);
 

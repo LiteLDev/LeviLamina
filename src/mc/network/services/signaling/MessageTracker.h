@@ -106,13 +106,5 @@ public:
         ::std::string const&          messageId,
         ::std::error_code             error
     );
-
-    MCNAPI ~MessageTracker();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

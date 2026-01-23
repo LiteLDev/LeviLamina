@@ -63,8 +63,6 @@ public:
         float                            fadeMipAmount,
         ::mce::Color const&              fadeMipColor
     );
-
-    MCAPI_C ~TextureAtlas();
     // NOLINTEND
 
 public:
@@ -87,12 +85,6 @@ public:
         uint&                                         outMaxWidth,
         uint&                                         outMaxHeight
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI_C void $dtor();
     // NOLINTEND
 };
 

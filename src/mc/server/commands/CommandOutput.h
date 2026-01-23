@@ -23,7 +23,7 @@ public:
     CommandOutputType                   mType;
     std::unique_ptr<CommandPropertyBag> mBag;
     std::vector<CommandOutputMessage>   mMessages;
-    int                                 mSuccessCount;
+    uint                                 mSuccessCount;
     bool                                mHasPlayerText;
     // NOLINTEND
 
@@ -65,7 +65,6 @@ public:
 
 public:
     // prevent constructor by default
-    CommandOutput& operator=(CommandOutput const&);
     CommandOutput();
 
 public:
@@ -85,11 +84,19 @@ public:
 
     MCAPI void error(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
-    MCAPI bool hasErrorMessage() const;
+    MCAPI ::CommandOutput& operator=(::CommandOutput const& rhs);
 
     MCAPI void success(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
     MCAPI ~CommandOutput();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::optional<::std::string> _mDataGetter(::CommandOutput const& payload);
+
+    MCAPI static void _mDataSetter(::CommandOutput& payload, ::std::optional<::std::string> jsonString);
     // NOLINTEND
 
 public:

@@ -42,7 +42,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ValidatorRegistryValidators(
+            ::std::function<::ContentTierIncompatibleReason(::PackInstance const&, ::ContentTierInfo const&)>
+                packValidator,
+            ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
+                subpackValidator
+        );
+
         MCNAPI ~ValidatorRegistryValidators();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(
+            ::std::function<::ContentTierIncompatibleReason(::PackInstance const&, ::ContentTierInfo const&)>
+                packValidator,
+            ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
+                subpackValidator
+        );
         // NOLINTEND
 
     public:
@@ -67,7 +85,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ValidatorRegistry() /*override*/;
+    virtual ~ValidatorRegistry() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -87,12 +105,6 @@ public:
         ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
             subpackValidator
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

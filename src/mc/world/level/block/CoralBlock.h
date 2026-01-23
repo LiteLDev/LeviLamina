@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CoralBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
@@ -38,9 +42,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CoralBlock(::std::string const& nameId, int id, ::HashedString const& deadVersion);
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::HashedString const& deadVersion);
     // NOLINTEND
 
 public:

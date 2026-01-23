@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockReducer;
+class ContainerModel;
 class ItemStackBase;
 // clang-format on
 
@@ -20,11 +21,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MaterialReducerInputContainerController();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~MaterialReducerInputContainerController() /*override*/ = default;
 
     virtual bool isItemAllowed(::ItemStackBase const& item) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C explicit MaterialReducerInputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
     // NOLINTEND
 
 public:

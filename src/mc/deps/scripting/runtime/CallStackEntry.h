@@ -14,8 +14,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CallStackEntry(CallStackEntry const&);
+    CallStackEntry();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::Scripting::CallStackEntry& operator=(::Scripting::CallStackEntry const&);
+
     MCAPI ~CallStackEntry();
     // NOLINTEND
 

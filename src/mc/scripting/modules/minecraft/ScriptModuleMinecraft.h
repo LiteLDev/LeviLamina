@@ -28,8 +28,8 @@ namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct Error; }
+namespace SharedTypes::v1_21_120 { struct CameraAimAssistPresetDefinition; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoryDefinition; }
-namespace SharedTypes::v1_21_50 { struct CameraAimAssistPresetDefinition; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -72,6 +72,8 @@ MCNAPI ::std::optional<::Scripting::Error> _validatePropertyMetadata(
     ::Actor const*            actor,
     ::std::string const&      identifier
 );
+
+MCNAPI ::Scripting::EnumBinding bindActorSwingSource();
 
 MCNAPI ::Scripting::ClassBinding bindBlockLocation();
 
@@ -136,7 +138,7 @@ MCNAPI ::std::string getScriptScoreboardParticipantName(
 MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition
 makeAimAssistCategoryDefinition(::ScriptModuleMinecraft::ScriptAimAssistCategorySettings const& category);
 
-MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition
+MCNAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition
 makeAimAssistPresetDefinition(::ScriptModuleMinecraft::ScriptAimAssistPresetSettings const& preset);
 
 MCNAPI ::std::optional<::std::shared_ptr<::Potion const> const> tryGetPotion(::std::string const& potionNameId);

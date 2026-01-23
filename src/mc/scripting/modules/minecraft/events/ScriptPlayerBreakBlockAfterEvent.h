@@ -8,20 +8,20 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
-class BlockPos;
-class ItemStackBase;
-class Player;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace Scripting { class WeakLifetimeScope; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockAfterEventIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerBreakBlockAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // ScriptPlayerBreakBlockAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -52,15 +52,6 @@ public:
 
     MCAPI ScriptPlayerBreakBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
 
-    MCAPI ScriptPlayerBreakBlockAfterEvent(
-        ::Player&                             player,
-        ::BlockPos const&                     pos,
-        ::Block const&                        destroyedBlock,
-        ::ItemStackBase const&                afterBreakItem,
-        ::ItemStackBase const&                beforeBreakItem,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-
     MCAPI ~ScriptPlayerBreakBlockAfterEvent();
     // NOLINTEND
 
@@ -76,15 +67,6 @@ public:
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
-
-    MCAPI void* $ctor(
-        ::Player&                             player,
-        ::BlockPos const&                     pos,
-        ::Block const&                        destroyedBlock,
-        ::ItemStackBase const&                afterBreakItem,
-        ::ItemStackBase const&                beforeBreakItem,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
     // NOLINTEND
 
 public:

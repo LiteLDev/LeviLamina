@@ -3,13 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class BlockComponentStorage;
 class CompoundTag;
+class SemVersion;
+class Vec3;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,9 +19,8 @@ struct BlockCollisionBoxDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>    mEnabled;
-    ::ll::TypedStorage<4, 12, ::Vec3> mOrigin;
-    ::ll::TypedStorage<4, 12, ::Vec3> mSize;
+    ::ll::TypedStorage<1, 1, bool>                   mEnabled;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>> mBoxes;
     // NOLINTEND
 
 public:
@@ -53,9 +54,17 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
+
+    MCAPI static ::SemVersion const& Version1_21_130();
     // NOLINTEND
 
 public:
@@ -69,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -83,9 +92,9 @@ public:
 
     MCFOLD bool $isNetworkComponent() const;
 
-    MCFOLD ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCFOLD void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
 
     // NOLINTEND

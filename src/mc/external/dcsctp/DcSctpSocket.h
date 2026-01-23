@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/dcsctp/DcSctpSocketInterface.h"
-#include "mc/external/dcsctp/ErrorKind.h"
 #include "mc/external/dcsctp/ResetStreamsStatus.h"
 #include "mc/external/dcsctp/SctpImplementation.h"
 #include "mc/external/dcsctp/SctpPacket.h"
@@ -189,39 +188,16 @@ public:
     HandleAbort(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI void
-    HandleCookieAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
-
-    MCNAPI void
     HandleCookieEcho(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI bool HandleCookieEchoWithTCB(::dcsctp::CommonHeader const& header, ::dcsctp::StateCookie const& cookie);
-
-    MCNAPI void
-    HandleData(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI void HandleDataCommon(::dcsctp::AnyDataChunk& chunk);
 
     MCNAPI void
     HandleError(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleForwardTsn(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
-
     MCNAPI void HandleForwardTsnCommon(::dcsctp::AnyForwardTsnChunk const& chunk);
-
-    MCNAPI void
-    HandleHeartbeatAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
-
-    MCNAPI void HandleHeartbeatRequest(
-        ::dcsctp::CommonHeader const&                header,
-        ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor
-    );
-
-    MCNAPI void
-    HandleIData(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
-
-    MCNAPI void
-    HandleIForwardTsn(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI void
     HandleInit(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
@@ -230,25 +206,9 @@ public:
     HandleInitAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI void
-    HandleReconfig(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
-
-    MCNAPI void
-    HandleSack(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
-
-    MCNAPI void
-    HandleShutdown(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
-
-    MCNAPI void
     HandleShutdownAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void HandleShutdownComplete(
-        ::dcsctp::CommonHeader const&                header,
-        ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor
-    );
-
     MCNAPI bool HandleUnrecognizedChunk(::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
-
-    MCNAPI void InternalClose(::dcsctp::ErrorKind error, ::std::string_view message);
 
     MCNAPI ::dcsctp::SendStatus
     InternalSend(::dcsctp::DcSctpMessage const& message, ::dcsctp::SendOptions const& send_options);
@@ -256,8 +216,6 @@ public:
     MCNAPI void MaybeDeliverMessages();
 
     MCNAPI void MaybeSendResetStreamsRequest();
-
-    MCNAPI void MaybeSendShutdownOnPacketReceived(::dcsctp::SctpPacket const& packet);
 
     MCNAPI void MaybeSendShutdownOrAck();
 
@@ -276,10 +234,6 @@ public:
     MCNAPI void SendShutdown();
 
     MCNAPI void SendShutdownAck();
-
-    MCNAPI void SetState(::dcsctp::DcSctpSocket::State state, ::std::string_view reason);
-
-    MCNAPI bool ValidateHasTCB();
 
     MCNAPI bool ValidatePacket(::dcsctp::SctpPacket const& packet);
     // NOLINTEND

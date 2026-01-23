@@ -21,7 +21,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptSecretString& operator=(ScriptSecretString const&);
     ScriptSecretString(ScriptSecretString const&);
     ScriptSecretString();
 
@@ -29,6 +28,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleServerAdmin::ScriptSecretString& operator=(::ScriptModuleServerAdmin::ScriptSecretString&&);
+
+    MCNAPI ::ScriptModuleServerAdmin::ScriptSecretString&
+    operator=(::ScriptModuleServerAdmin::ScriptSecretString const&);
 
     MCNAPI ~ScriptSecretString();
     // NOLINTEND

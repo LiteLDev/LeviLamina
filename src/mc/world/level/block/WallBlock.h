@@ -61,8 +61,6 @@ public:
 
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    virtual bool canConnect(::Block const& otherBlock, uchar, ::Block const&) const /*override*/;
-
     virtual bool
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
@@ -99,6 +97,8 @@ public:
 
     MCAPI bool _shouldBePost(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
+    MCAPI bool _shouldUpdateConnectionStates(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI bool _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -107,7 +107,7 @@ public:
 
     MCAPI void tryFixWallStates(::BlockSource& region, ::BlockPos const& pos, int updateFlags) const;
 
-    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -162,14 +162,22 @@ public:
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCFOLD bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
-
     MCFOLD bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
     MCFOLD bool $isWallBlock() const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+
+    MCFOLD ::HitResult $clip(
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
 
     MCFOLD ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 

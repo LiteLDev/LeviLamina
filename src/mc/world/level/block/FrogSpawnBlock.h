@@ -83,7 +83,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 

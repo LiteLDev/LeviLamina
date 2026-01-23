@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
@@ -76,7 +76,7 @@ public:
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    virtual ~ChiseledBookshelfBlockActor() /*override*/;
+    virtual ~ChiseledBookshelfBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -95,8 +95,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool allowedItem(::ItemStack const& item);
-
-    MCAPI static ::ChiseledBookshelfBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -106,15 +104,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int index) const;
 
     MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 

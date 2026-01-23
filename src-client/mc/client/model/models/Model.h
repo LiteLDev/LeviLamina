@@ -17,6 +17,7 @@ class ModelPart;
 class RenderController;
 class RenderParams;
 class ScreenContext;
+struct ActorTextureInfo;
 struct MERSUniformData;
 namespace dragon { struct RenderMetadata; }
 namespace mce { class MaterialPtr; }
@@ -103,6 +104,12 @@ public:
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::mce::ClientTexture const&     texture
+    );
+
+    MCNAPI void draw(
+        ::ScreenContext&                screenContext,
+        ::dragon::RenderMetadata const& renderMetadata,
+        ::ActorTextureInfo const&       textureInfo
     );
 
     MCNAPI void draw(

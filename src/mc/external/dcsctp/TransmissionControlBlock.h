@@ -100,8 +100,6 @@ public:
 
     MCNAPI void MaybeSendFastRetransmit();
 
-    MCNAPI void MaybeSendForwardTsn(::dcsctp::SctpPacket::Builder& builder, ::webrtc::Timestamp now);
-
     MCNAPI void MaybeSendSack();
 
     MCNAPI ::webrtc::TimeDelta OnDelayedAckTimerExpiry();

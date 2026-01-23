@@ -25,20 +25,13 @@ public:
     public:
         // prevent constructor by default
         Flexfec& operator=(Flexfec const&);
+        Flexfec(Flexfec const&);
         Flexfec();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Flexfec(::webrtc::RtpConfig::Flexfec const&);
-
         MCNAPI ~Flexfec();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::webrtc::RtpConfig::Flexfec const&);
         // NOLINTEND
 
     public:
@@ -59,20 +52,13 @@ public:
     public:
         // prevent constructor by default
         Rtx& operator=(Rtx const&);
+        Rtx(Rtx const&);
         Rtx();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Rtx(::webrtc::RtpConfig::Rtx const&);
-
         MCNAPI ~Rtx();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::webrtc::RtpConfig::Rtx const&);
         // NOLINTEND
 
     public:

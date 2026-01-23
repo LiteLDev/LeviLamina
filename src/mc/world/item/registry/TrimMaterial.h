@@ -16,7 +16,6 @@ public:
 
 public:
     // prevent constructor by default
-    TrimMaterial& operator=(TrimMaterial const&);
     TrimMaterial();
 
 public:
@@ -25,6 +24,8 @@ public:
     MCAPI TrimMaterial(::TrimMaterial&&);
 
     MCAPI TrimMaterial(::TrimMaterial const&);
+
+    MCAPI ::TrimMaterial& operator=(::TrimMaterial const&);
 
     MCAPI ~TrimMaterial();
     // NOLINTEND

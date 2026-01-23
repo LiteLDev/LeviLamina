@@ -31,6 +31,8 @@ public:
 
     virtual void setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)>) = 0;
 
+    virtual void setWatchdogInterruptPollCounter(uint) = 0;
+
     virtual void beginTiming(::Scripting::ContextId) = 0;
 
     virtual void endTiming(::Scripting::ContextId) = 0;

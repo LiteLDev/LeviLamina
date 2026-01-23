@@ -77,6 +77,11 @@ public:
         ::Core::Path const& logFileName
     );
 
+    MCNAPI void _handleAggregation(
+        ::std::deque<::Social::Events::Event>& listOfSameTypeEvents,
+        ::Social::Events::Event const&         event
+    );
+
     MCNAPI bool _needToSendAggregatedEvents() const;
 
     MCNAPI void _recordAggregatedEvent(

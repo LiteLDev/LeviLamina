@@ -21,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RepositoriesOptions(::PackCommand::RepositoriesOptions&&);
+    MCNAPI_S RepositoriesOptions(::PackCommand::RepositoriesOptions&&);
 
     MCNAPI ~RepositoriesOptions();
     // NOLINTEND
@@ -29,7 +29,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PackCommand::RepositoriesOptions&&);
+    MCNAPI_S void* $ctor(::PackCommand::RepositoriesOptions&&);
     // NOLINTEND
 
 public:

@@ -7,7 +7,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> text;
-    ::ll::TypedStorage<1, 1, bool>           keepImePosition;
     ::ll::TypedStorage<4, 4, int>            controllerId;
     // NOLINTEND
 

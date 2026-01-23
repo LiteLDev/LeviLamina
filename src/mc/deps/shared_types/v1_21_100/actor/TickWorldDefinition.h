@@ -27,12 +27,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_DISTANCE_TO_PLAYERS();
-
-    MCAPI static bool const& DEFAULT_NEVER_DESPAWN();
-
-    MCAPI static uint const& DEFAULT_RADIUS();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

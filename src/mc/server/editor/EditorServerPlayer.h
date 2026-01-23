@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerPlayer() /*override*/ = default;
+    virtual ~EditorServerPlayer() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -47,6 +47,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ServerPlayer* getServerPlayer() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

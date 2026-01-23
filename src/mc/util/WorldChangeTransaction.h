@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class IBlockWorldGenAPI;
 struct BlockChange;
@@ -43,8 +42,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit WorldChangeTransaction(::IBlockWorldGenAPI& target);
-
-    MCAPI void setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
 
     MCAPI ~WorldChangeTransaction();
     // NOLINTEND

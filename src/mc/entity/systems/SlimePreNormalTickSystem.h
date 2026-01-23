@@ -30,6 +30,15 @@ public:
         ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod
     );
 
+    MCNAPI static void _tickSlimePreNormalTickSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::SlimeFlagComponent>,
+            ::ActorOwnerComponent,
+            ::Optional<::OnGroundFlagComponent const>>             view,
+        ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod
+    );
+
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

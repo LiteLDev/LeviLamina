@@ -61,6 +61,7 @@ class ClientMovementPredictionSyncPacket;
 class ClientToServerHandshakePacket;
 class ClientboundCloseFormPacket;
 class ClientboundControlSchemeSetPacket;
+class ClientboundDataStorePacket;
 class ClientboundDebugRendererPacket;
 class ClientboundMapItemDataPacket;
 class CodeBuilderPacket;
@@ -78,7 +79,6 @@ class CraftingDataPacket;
 class CreatePhotoPacket;
 class CreativeContentPacket;
 class CurrentStructureFeaturePacket;
-class DataStoreSyncPacket;
 class DeathInfoPacket;
 class DebugDrawerPacket;
 class DebugInfoPacket;
@@ -180,6 +180,7 @@ class ServerSettingsRequestPacket;
 class ServerSettingsResponsePacket;
 class ServerStatsPacket;
 class ServerToClientHandshakePacket;
+class ServerboundDataStorePacket;
 class ServerboundDiagnosticsPacket;
 class ServerboundLoadingScreenPacket;
 class ServerboundPackSettingChangePacket;
@@ -254,6 +255,8 @@ public:
     virtual void onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&);
 
     virtual void onTick();
+
+    virtual void onOutgoingPacket(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId, ::SubClientId);
 
     virtual void onValidPacketReceived(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId, ::SubClientId);
 
@@ -733,7 +736,9 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::ServerboundPackSettingChangePacket const&);
 
-    virtual void handle(::NetworkIdentifier const&, ::DataStoreSyncPacket const&);
+    virtual void handle(::NetworkIdentifier const&, ::ServerboundDataStorePacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundDataStorePacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const&);
     // NOLINTEND
@@ -755,9 +760,9 @@ public:
 
     MCFOLD void $onTick();
 
-#ifdef LL_PLAT_S
+    MCFOLD void $onOutgoingPacket(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId, ::SubClientId);
+
     MCFOLD void $onValidPacketReceived(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId, ::SubClientId);
-#endif
 
     MCFOLD void $onStoreOfferReceive(::ShowStoreOfferRedirectType const, ::std::string const& offerID);
 
@@ -1229,7 +1234,9 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ServerboundPackSettingChangePacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::DataStoreSyncPacket const&);
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ServerboundDataStorePacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundDataStorePacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const&);
 

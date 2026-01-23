@@ -33,11 +33,13 @@ public:
 
     MCAPI ::BlockStateMeta const* getBlockStateFromHash(uint64 const& h) const;
 
-    MCAPI_C ::BlockStateMeta const* getBlockStateFromName(::std::string const& name) const;
+    MCAPI ::BlockStateMeta const* getBlockStateFromName(::std::string const& name) const;
 
     MCAPI void registerBlockStateDefinition(::BlockStateDefinition const& def);
 
     MCAPI void registerExistingBlockState(::BlockState const& state);
+
+    MCAPI ~BlockStateGroup();
     // NOLINTEND
 
 public:
@@ -57,5 +59,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

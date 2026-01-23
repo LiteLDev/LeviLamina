@@ -5,18 +5,13 @@
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockActor;
-// clang-format on
-
 namespace ScriptModuleMinecraft {
 
 class BaseScriptBlockActorComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb09225;
+    ::ll::UntypedStorage<8, 8> mUnke36270;
     // NOLINTEND
 
 public:
@@ -31,14 +26,6 @@ public:
     virtual ~BaseScriptBlockActorComponent() /*override*/;
 
     virtual bool _isValid() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::BlockActor const* _tryGetOwner() const;
-
-    MCNAPI ::BlockActor* _tryGetOwner();
     // NOLINTEND
 
 public:

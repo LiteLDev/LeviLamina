@@ -10,8 +10,6 @@
 class Actor;
 class CombatRegenerationDefinition;
 class CombatRegenerationListener;
-class Player;
-struct ActorUniqueID;
 // clang-format on
 
 class CombatRegenerationComponent {
@@ -28,8 +26,6 @@ public:
     MCNAPI void _applyCombatBuffsToMob(::Actor& owner, ::Actor& mob);
 
     MCNAPI ::CombatRegenerationDefinition const* _getDefinition(::Actor& actor) const;
-
-    MCNAPI void _trySendPlayerGeneratedByAxolotlTelemetryEvent(::Player const& player) const;
 
     MCNAPI void tick(::Actor& owner);
     // NOLINTEND

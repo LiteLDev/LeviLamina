@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackType.h"
-#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/SharedAsync.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -16,6 +15,7 @@
 class AppPlatform;
 class ResourceLocation;
 namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core::ZipUtils { class IZipUtility; }
 namespace Json { class Value; }
 namespace ResourcePackPathLifetimeHelpers { class ResourcePackPathCache; }
@@ -57,7 +57,7 @@ public:
     virtual void
     uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex) /*override*/;
 
-    virtual ~ResourcePackFileUploadManager() /*override*/ = default;
+    virtual ~ResourcePackFileUploadManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -80,10 +80,10 @@ public:
         ::Json::Value const&                     uploadOptions
     );
 
-    MCAPI ::std::optional<::Core::PathBuffer<::Core::BasicStackString<char, 1024>>> _unzipEmbeddedResourcePackForUpload(
-        ::std::string const&                     resourcePack,
+    MCAPI bool _unzipEmbeddedResourcePackForUpload(
         ::ResourceLocation const&                resourcePackLocation,
-        ::Core::PathBuffer<::std::string> const& relativePathWithinZip
+        ::Core::PathBuffer<::std::string> const& relativePathWithinZip,
+        ::Core::PathView                         outputPath
     );
 
     MCAPI ::Bedrock::Threading::Async<void> _uploadResourcePackFolder(
@@ -106,6 +106,12 @@ public:
         bool                                     isPremium,
         ::PackType                               packType
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

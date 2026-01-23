@@ -25,7 +25,6 @@ public:
 
 public:
     // prevent constructor by default
-    ItemData& operator=(ItemData const&);
     ItemData();
 
 public:
@@ -36,6 +35,8 @@ public:
     MCAPI ItemData(::ItemData const& other);
 
     MCAPI ::ItemData& operator=(::ItemData&&);
+
+    MCAPI ::ItemData& operator=(::ItemData const& other);
 
     MCAPI bool operator==(::ItemData const&) const;
 

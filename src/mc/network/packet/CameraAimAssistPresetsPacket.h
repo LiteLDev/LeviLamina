@@ -64,18 +64,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CameraAimAssistPresetsPacket();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

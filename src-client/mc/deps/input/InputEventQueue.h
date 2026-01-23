@@ -62,8 +62,7 @@ public:
     MCAPI void
     enqueueRawInput(int id, ::RawInputType keyType, ::ButtonState state, int controllerId, bool allowRemapping);
 
-    MCAPI void
-    enqueueTextChar(::std::string utf8Input, bool keepImePosition, ::FocusImpact focusImpact, int controllerId);
+    MCAPI void enqueueTextChar(::std::string utf8Input, ::FocusImpact focusImpact, int controllerId);
 
     MCAPI ~InputEventQueue();
     // NOLINTEND

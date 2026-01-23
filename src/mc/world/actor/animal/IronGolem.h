@@ -11,9 +11,6 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
-class ActorDefinitionGroup;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class IronGolem : public ::Mob {
@@ -27,13 +24,9 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IronGolem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
+    virtual bool doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
@@ -44,26 +37,6 @@ public:
     virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ~IronGolem() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI IronGolem(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WrappingActiveIceController() /*override*/;
+    virtual ~WrappingActiveIceController() /*override*/ = default;
 
     virtual void SetIceConfig(::cricket::IceConfig const& config) /*override*/;
 
@@ -75,16 +75,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void HandlePingResult(::cricket::IceControllerInterface::PingResult result);
-
     MCNAPI void HandleSwitchResult(
         ::cricket::IceSwitchReason                      reason_for_switch,
         ::cricket::IceControllerInterface::SwitchResult result
     );
-
-    MCNAPI void MaybeStartPinging();
-
-    MCNAPI void PruneConnections();
 
     MCNAPI void SelectAndPingConnection();
 
@@ -107,12 +101,6 @@ public:
         ::cricket::IceControllerFactoryInterface*  wrapped_factory,
         ::cricket::IceControllerFactoryArgs const& wrapped_factory_args
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

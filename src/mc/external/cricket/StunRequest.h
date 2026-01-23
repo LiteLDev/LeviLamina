@@ -66,8 +66,6 @@ public:
     MCNAPI ::cricket::StunMessage const* msg() const;
 
     MCNAPI void set_timed_out();
-
-    MCNAPI int type();
     // NOLINTEND
 
 public:

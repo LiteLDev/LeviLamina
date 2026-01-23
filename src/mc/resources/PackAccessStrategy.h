@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/resources/PackAccessAssetGenerationResult.h"
 #include "mc/resources/PackAccessStrategyType.h"
 
@@ -102,6 +103,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& ARCHIVE_EXTENSION();
+
+    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& ARCHIVE_FOLDER();
+
     MCNAPI static ::Core::PathBuffer<::std::string> const& PACK_IMPORT_LOCK_FILE();
     // NOLINTEND
 

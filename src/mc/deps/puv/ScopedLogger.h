@@ -22,8 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void commit();
-
     MCNAPI ~ScopedLogger();
     // NOLINTEND
 

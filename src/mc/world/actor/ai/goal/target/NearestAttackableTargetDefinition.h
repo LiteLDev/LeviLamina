@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/FloatRange.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/target/TargetGoalDefinition.h"
 
@@ -20,13 +21,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>  mReselectTargets;
-    ::ll::TypedStorage<4, 4, int>   mAttackInterval;
-    ::ll::TypedStorage<4, 4, int>   mScanInterval;
-    ::ll::TypedStorage<4, 4, float> mTargetSearchHeight;
-    ::ll::TypedStorage<4, 4, float> mTargetInvisibleMultiplier;
-    ::ll::TypedStorage<4, 4, float> mTargetSneakVisibilityMultiplier;
-    ::ll::TypedStorage<1, 1, bool>  mSetPersistent;
+    ::ll::TypedStorage<1, 1, bool>         mReselectTargets;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mAttackInterval;
+    ::ll::TypedStorage<4, 4, int>          mScanInterval;
+    ::ll::TypedStorage<4, 4, float>        mTargetAcquisitionProbability;
+    ::ll::TypedStorage<4, 4, float>        mTargetSearchHeight;
+    ::ll::TypedStorage<4, 4, float>        mTargetInvisibleMultiplier;
+    ::ll::TypedStorage<4, 4, float>        mTargetSneakVisibilityMultiplier;
+    ::ll::TypedStorage<1, 1, bool>         mSetPersistent;
     // NOLINTEND
 
 public:

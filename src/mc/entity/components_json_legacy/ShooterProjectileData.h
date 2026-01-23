@@ -16,22 +16,15 @@ public:
 public:
     // prevent constructor by default
     ShooterProjectileData& operator=(ShooterProjectileData const&);
+    ShooterProjectileData(ShooterProjectileData const&);
     ShooterProjectileData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ShooterProjectileData(::ShooterProjectileData const&);
-
     MCNAPI void setActorDefByName(::std::string const& name);
 
     MCNAPI ~ShooterProjectileData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ShooterProjectileData const&);
     // NOLINTEND
 
 public:

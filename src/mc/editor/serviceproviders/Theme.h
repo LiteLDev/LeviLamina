@@ -72,6 +72,8 @@ public:
 
     MCNAPI ::std::optional<::Editor::Settings::ThemePalette> getThemeColors(::std::string const& id) const;
 
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getThemeName(::std::string const& id) const;
+
     MCNAPI ::Scripting::Result_deprecated<::Editor::Settings::ThemePalette>
     getThemePalette(::std::string const& id) const;
 

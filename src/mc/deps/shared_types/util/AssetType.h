@@ -25,10 +25,11 @@ enum class AssetType : int {
     Lighting                = 16,
     LootTable               = 17,
     Music                   = 18,
-    ParticleTexture         = 19,
+    Skybox                  = 19,
     Sound                   = 20,
-    Structure               = 21,
-    Water                   = 22,
+    TextureFile             = 21,
+    Structure               = 22,
+    Water                   = 23,
 };
 
 }

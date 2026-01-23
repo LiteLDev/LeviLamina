@@ -20,12 +20,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _extinguishFireIfInWater(::Actor& actor);
-
     MCAPI_C static void onFireChanged(::Actor& actor);
 
     MCAPI static void setOnFire(::Actor& actor, int seconds);
 
     MCAPI static void setOnFireNoEffects(::Actor& actor, int seconds);
+
+    MCAPI static void stopFire(::Actor& actor);
     // NOLINTEND
 };

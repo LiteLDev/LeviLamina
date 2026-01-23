@@ -46,7 +46,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::std::string_view const& ITEM_ID_KEY();
+    MCNAPI static ::std::string_view const& ITEM_ID_KEY();
     // NOLINTEND
 
 public:

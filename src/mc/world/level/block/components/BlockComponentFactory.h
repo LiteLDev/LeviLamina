@@ -114,10 +114,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>*
-    contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
-
     MCAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>&
+    setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

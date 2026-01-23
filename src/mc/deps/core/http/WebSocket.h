@@ -66,6 +66,9 @@ public:
                                  onComplete,
         ::HC_WEBSOCKET_OBSERVER* connectHandle
     );
+
+    MCNAPI static void
+    _onSend(::XAsyncBlock* asyncSend, ::Bedrock::Threading::AsyncPromise<::std::error_code> onComplete);
     // NOLINTEND
 
 public:

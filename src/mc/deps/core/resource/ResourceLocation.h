@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 namespace Core { class PathView; }
 // clang-format on
 
@@ -22,10 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResourceLocation& operator=(ResourceLocation const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI_C ResourceLocation();
@@ -37,6 +34,12 @@ public:
     MCAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 
     MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
+
+    MCAPI_C ::HashedString getHashedPath() const;
+
+    MCAPI_C bool operator<(::ResourceLocation const& rhs) const;
+
+    MCAPI_C ::ResourceLocation& operator=(::ResourceLocation const&);
 
     MCAPI_C bool operator==(::ResourceLocation const& rhs) const;
 

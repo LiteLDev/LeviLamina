@@ -65,6 +65,8 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ImmutableLocalization(::Localization&& value);
 
+    MCNAPI void _setValue(::std::shared_ptr<::Localization const> value);
+
     MCNAPI void modifyAdditive(::brstd::function_ref<void(::Localization&)> modifier);
 
     MCNAPI void modifyReplace(::brstd::function_ref<void(::Localization&)> modifier);

@@ -25,7 +25,6 @@ public:
 
 public:
     // prevent constructor by default
-    PlanterItemComponent& operator=(PlanterItemComponent const&);
     PlanterItemComponent(PlanterItemComponent const&);
     PlanterItemComponent();
 
@@ -33,6 +32,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_40::PlanterItemComponent& operator=(::SharedTypes::v1_21_40::PlanterItemComponent&&);
+
+    MCAPI ::SharedTypes::v1_21_40::PlanterItemComponent&
+    operator=(::SharedTypes::v1_21_40::PlanterItemComponent const&);
 
     MCAPI ~PlanterItemComponent();
     // NOLINTEND

@@ -16,9 +16,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 208> mUnk7d3e7a;
-        ::ll::UntypedStorage<8, 64>  mUnkf99a5e;
-        ::ll::UntypedStorage<8, 16>  mUnk69db61;
+        ::ll::UntypedStorage<8, 64> mUnk7d3e7a;
+        ::ll::UntypedStorage<8, 64> mUnkf99a5e;
+        ::ll::UntypedStorage<8, 16> mUnk69db61;
         // NOLINTEND
 
     public:
@@ -33,6 +33,22 @@ public:
         MCNAPI ::entt::meta_any deref_as_ref();
 
         MCNAPI bool isValid();
+
+        MCNAPI pointer_struct(
+            ::entt::meta_any&&                      any,
+            ::std::function<bool(::entt::meta_any)> isValidFunc,
+            ::std::shared_ptr<void>                 sharedWrapper
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(
+            ::entt::meta_any&&                      any,
+            ::std::function<bool(::entt::meta_any)> isValidFunc,
+            ::std::shared_ptr<void>                 sharedWrapper
+        );
         // NOLINTEND
     };
 

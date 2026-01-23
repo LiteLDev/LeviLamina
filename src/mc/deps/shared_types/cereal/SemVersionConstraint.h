@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 
 // auto generated forward declare list
@@ -31,8 +32,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
-
     virtual ~SemVersionConstraint() /*override*/;
     // NOLINTEND
 
@@ -40,6 +39,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SemVersionConstraint(::SharedTypes::SemVersionConstraint&&);
+
+    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
 
     MCAPI void validateValue(::SemVersion const& vers, ::cereal::SerializerContext& context) const;
     // NOLINTEND
@@ -54,14 +55,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
-
-
     // NOLINTEND
 
 public:

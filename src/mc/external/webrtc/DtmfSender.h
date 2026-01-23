@@ -54,7 +54,7 @@ public:
 
     virtual int comma_delay() const /*override*/;
 
-    virtual ~DtmfSender() /*override*/;
+    virtual ~DtmfSender() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,13 +62,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void DoInsertDtmf();
 
-    MCNAPI DtmfSender(::webrtc::TaskQueueBase* signaling_thread, ::webrtc::DtmfProviderInterface* provider);
-
     MCNAPI void OnDtmfProviderDestroyed();
 
     MCNAPI void QueueInsertDtmf(uint delay_ms);
-
-    MCNAPI void StopSending();
     // NOLINTEND
 
 public:
@@ -76,18 +72,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::DtmfSender>
     Create(::webrtc::TaskQueueBase* signaling_thread, ::webrtc::DtmfProviderInterface* provider);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::TaskQueueBase* signaling_thread, ::webrtc::DtmfProviderInterface* provider);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

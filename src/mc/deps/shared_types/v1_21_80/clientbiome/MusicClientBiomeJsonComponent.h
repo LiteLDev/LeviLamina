@@ -27,7 +27,12 @@ public:
     // NOLINTBEGIN
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
 
+#ifdef LL_PLAT_S
     virtual ~MusicClientBiomeJsonComponent() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~MusicClientBiomeJsonComponent() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -42,6 +47,12 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

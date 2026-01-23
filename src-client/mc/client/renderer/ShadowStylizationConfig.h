@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class LocalPlayer;
 class ResourcePackManager;
 class SemVersion;
+struct LocalPlayer;
 namespace Editor::Services { struct ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
@@ -52,6 +52,12 @@ public:
             ShadowStylizationSettings& operator=(ShadowStylizationSettings const&);
             ShadowStylizationSettings(ShadowStylizationSettings const&);
             ShadowStylizationSettings();
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            // NOLINTEND
         };
 
     public:
@@ -63,13 +69,15 @@ public:
 
     public:
         // prevent constructor by default
-        ShadowStylizationConfigSettings& operator=(ShadowStylizationConfigSettings const&);
         ShadowStylizationConfigSettings(ShadowStylizationConfigSettings const&);
         ShadowStylizationConfigSettings();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ::ShadowStylizationConfig::ShadowStylizationConfigSettings&
+        operator=(::ShadowStylizationConfig::ShadowStylizationConfigSettings const&);
+
         MCNAPI ~ShadowStylizationConfigSettings();
         // NOLINTEND
 

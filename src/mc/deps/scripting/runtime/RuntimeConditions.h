@@ -30,8 +30,6 @@ public:
 
     MCAPI ::Scripting::RuntimeConditions getMissing(::Scripting::RuntimeConditions const& runtimeConditions);
 
-    MCAPI ::std::string toString() const;
-
     MCAPI ~RuntimeConditions();
     // NOLINTEND
 

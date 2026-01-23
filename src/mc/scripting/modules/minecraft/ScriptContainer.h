@@ -15,6 +15,7 @@ namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { struct ScriptContainerRulesError; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidContainerError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 // clang-format on
@@ -32,7 +33,6 @@ public:
 public:
     // prevent constructor by default
     ScriptContainer& operator=(ScriptContainer const&);
-    ScriptContainer(ScriptContainer const&);
     ScriptContainer();
 
 public:
@@ -87,11 +87,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptContainer(::ScriptModuleMinecraft::ScriptContainer const&);
+
     MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>,
         ::ScriptModuleMinecraft::ScriptContainerRulesError,
         ::Scripting::Error>
     addItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
+
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
+    contains(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
+
+    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidContainerError> getWeight() const;
 
     MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>,
@@ -106,6 +113,12 @@ public:
     MCNAPI static ::std::optional<::Scripting::Error> _isSlotInvalid(::Container& container, int slot);
 
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptContainer const&);
     // NOLINTEND
 
 public:

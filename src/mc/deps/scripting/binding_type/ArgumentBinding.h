@@ -9,20 +9,19 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32>  mUnk85c51a;
-    ::ll::UntypedStorage<8, 160> mUnk3a8eaa;
-    ::ll::UntypedStorage<8, 840> mUnkb650d4;
+    ::ll::UntypedStorage<8, 16>  mUnk3a8eaa;
+    ::ll::UntypedStorage<8, 264> mUnkb650d4;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ArgumentBinding& operator=(ArgumentBinding const&);
     ArgumentBinding(ArgumentBinding const&);
-    ArgumentBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ArgumentBinding(::Scripting::ArgumentBinding&&);
+    MCNAPI ArgumentBinding();
 
     MCNAPI ~ArgumentBinding();
     // NOLINTEND
@@ -30,7 +29,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::ArgumentBinding&&);
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

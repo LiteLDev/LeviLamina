@@ -9,10 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 class CommandRegistry;
-class IClientInstance;
-class IMinecraftGame;
 namespace AppExtensions { class IAppClientInstanceTestInterface; }
 namespace AppExtensions { class IAppTestClientInterface; }
+class IClientInstance;
+class IMinecraftGame;
 namespace Bedrock::DevTools { struct CommandExecutor; }
 // clang-format on
 

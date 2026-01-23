@@ -4,9 +4,8 @@
 
 enum class ResourcePackStackType : int {
     Level     = 0,
-    Addon     = 1,
-    Global    = 2,
-    Treatment = 3,
-    BaseGame  = 4,
-    Size      = 5,
+    Global    = 1,
+    Treatment = 2,
+    BaseGame  = 3,
+    Size      = 4,
 };

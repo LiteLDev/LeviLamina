@@ -20,10 +20,17 @@ namespace mce { struct BufferResourceService; }
 
 class Tessellator {
 public:
+    // Tessellator inner types declare
+    // clang-format off
+    struct DebugContextCallback;
+    // clang-format on
+
     // Tessellator inner types define
     enum class UploadMode : int {};
 
     enum class SupplementaryFieldAutoGenerationMode : int {};
+
+    struct DebugContextCallback {};
 
     using Index = uint;
 
@@ -79,15 +86,15 @@ public:
 
     MCAPI void addPostTransformOffset(float x, float y, float z);
 
-    MCAPI void addRotation(float angle, ::Vec3 const& axis);
+    MCAPI void
+    begin(::Tessellator::DebugContextCallback debugContextCallback, int reservedVertices, bool buildFaceData);
 
-    MCAPI void addTranslation(::Vec3 const& offset);
-
-    MCAPI void begin(int reservedVertices, bool buildFaceData);
-
-    MCAPI void begin(::mce::PrimitiveMode mode, int reservedVertices, bool buildFaceData);
-
-    MCAPI void beginIndices(uint64 estimateCount);
+    MCAPI void begin(
+        ::Tessellator::DebugContextCallback debugContextCallback,
+        ::mce::PrimitiveMode                mode,
+        int                                 reservedVertices,
+        bool                                buildFaceData
+    );
 
     MCAPI void clear();
 

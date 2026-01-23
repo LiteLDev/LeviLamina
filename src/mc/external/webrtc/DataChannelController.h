@@ -14,7 +14,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace rtc { class CopyOnWriteBuffer; }
-namespace rtc { class Thread; }
 namespace webrtc { class DataChannelInterface; }
 namespace webrtc { class DataChannelTransportInterface; }
 namespace webrtc { class RTCError; }
@@ -114,12 +113,8 @@ public:
     MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>>
     InternalCreateDataChannelWithProxy(::std::string const& label, ::webrtc::InternalDataChannelInit const& config);
 
-    MCNAPI void NotifyDataChannelsOfTransportCreated();
-
     MCNAPI void
     OnDataChannelOpenMessage(::webrtc::scoped_refptr<::webrtc::SctpDataChannel> channel, bool ready_to_send);
-
-    MCNAPI void OnSctpDataChannelClosed(::webrtc::SctpDataChannel* channel);
 
     MCNAPI void OnTransportChanged(::webrtc::DataChannelTransportInterface* new_data_channel_transport);
 
@@ -132,11 +127,7 @@ public:
 
     MCNAPI void TeardownDataChannelTransport_n(::webrtc::RTCError error);
 
-    MCNAPI ::rtc::Thread* network_thread() const;
-
     MCNAPI void set_data_channel_transport(::webrtc::DataChannelTransportInterface* transport);
-
-    MCNAPI ::rtc::Thread* signaling_thread() const;
     // NOLINTEND
 
 public:

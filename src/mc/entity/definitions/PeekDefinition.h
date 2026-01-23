@@ -2,12 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace JsonUtil { class EmptyClass; }
+class EntityContext;
 // clang-format on
 
 class PeekDefinition {
@@ -28,14 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~PeekDefinition();
-    // NOLINTEND
+    MCNAPI void initialize(::EntityContext& entity) const;
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void
-    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PeekDefinition>>& root);
+    MCNAPI ~PeekDefinition();
     // NOLINTEND
 
 public:

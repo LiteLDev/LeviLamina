@@ -26,10 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TemplateStructurePiece();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
@@ -45,15 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TemplateStructurePiece(int depth);
-
     MCAPI void _setBoundingBoxFromTemplate();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int depth);
     // NOLINTEND
 
 public:

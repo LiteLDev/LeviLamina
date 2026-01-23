@@ -45,7 +45,7 @@ public:
         ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptTickSignal::IntervalStatus> status;
         ::ll::TypedStorage<4, 4, uint>                                                      initialInterval;
         ::ll::TypedStorage<4, 4, uint>                                                      currentInterval;
-        ::ll::TypedStorage<8, 256, ::std::variant<::Scripting::Closure<void()>, ::std::function<void()>>> closure;
+        ::ll::TypedStorage<8, 112, ::std::variant<::Scripting::Closure<void()>, ::std::function<void()>>> closure;
         // NOLINTEND
 
     public:
@@ -79,7 +79,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 280, ::ScriptModuleMinecraft::ScriptTickSignal::Slot> slot;
+        ::ll::TypedStorage<8, 136, ::ScriptModuleMinecraft::ScriptTickSignal::Slot> slot;
         // NOLINTEND
 
     public:

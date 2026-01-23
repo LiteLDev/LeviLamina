@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ModuleBinding; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -30,8 +32,28 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _addVersions();
+
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&  moduleBuilder,
+        bool                                allowUntagged,
+        ::std::vector<::std::string> const& allowedTags
+    );
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static char const*& ModuleName();
+
     MCNAPI static ::mce::UUID& ModuleUUID();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

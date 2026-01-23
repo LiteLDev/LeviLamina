@@ -13,6 +13,7 @@
 class BlockSource;
 namespace Editor { class EditorStructureTemplate; }
 namespace Editor { class RelativeVolumeListBlockVolume; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorStructureDBMetadata; }
 namespace Editor { struct EditorStructureMetadataDeleteEditResult; }
 namespace Editor { struct EditorStructureMetadataEditParams; }
@@ -92,6 +93,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ServerStructureService(::Editor::ServiceProviderCollection& serviceProviders, bool isHostInstance);
+
     MCNAPI void _dispatchMetadataToClients();
 
     MCNAPI void _handleCopyToClipboardPayload(::Editor::Network::StructureCopyToClipboardPayload const& payload);
@@ -119,6 +122,12 @@ public:
         ::BlockSource*                                 region,
         ::Editor::RelativeVolumeListBlockVolume const& volume
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders, bool isHostInstance);
     // NOLINTEND
 
 public:

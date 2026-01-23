@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace CerealHelpers {
 
 struct FileReference {
@@ -13,7 +18,6 @@ public:
 
 public:
     // prevent constructor by default
-    FileReference& operator=(FileReference const&);
     FileReference(FileReference const&);
     FileReference();
 
@@ -22,7 +26,15 @@ public:
     // NOLINTBEGIN
     MCNAPI ::CerealHelpers::FileReference& operator=(::CerealHelpers::FileReference&&);
 
+    MCNAPI ::CerealHelpers::FileReference& operator=(::CerealHelpers::FileReference const&);
+
     MCNAPI ~FileReference();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

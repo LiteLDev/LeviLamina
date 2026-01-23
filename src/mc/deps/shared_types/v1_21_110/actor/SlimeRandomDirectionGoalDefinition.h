@@ -30,12 +30,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_ADD_RANDOM_TIME_RANGE();
-
-    MCAPI static float const& DEFAULT_MIN_CHANGE_DIRECTION_TIME();
-
-    MCAPI static int const& DEFAULT_TURN_RANGE();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

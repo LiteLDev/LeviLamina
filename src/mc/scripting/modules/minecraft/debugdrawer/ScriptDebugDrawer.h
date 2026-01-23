@@ -12,6 +12,7 @@
 class ServerLevel;
 namespace ScriptModuleDebugUtilities { class ScriptDebugShape; }
 namespace ScriptModuleDebugUtilities { struct ScriptDebugDrawerDataComponent; }
+namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -39,7 +40,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addShape(::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugShape> shape);
+    MCAPI void _addShape(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugShape> shape,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+    );
 
     MCAPI void _removeAll();
 

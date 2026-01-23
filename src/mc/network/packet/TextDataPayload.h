@@ -11,7 +11,6 @@ public:
 
 public:
     // prevent constructor by default
-    TextDataPayload& operator=(TextDataPayload const&);
     TextDataPayload(TextDataPayload const&);
     TextDataPayload();
 
@@ -19,6 +18,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::TextDataPayload& operator=(::TextDataPayload&&);
+
+    MCFOLD ::TextDataPayload& operator=(::TextDataPayload const&);
 
     MCAPI ~TextDataPayload();
     // NOLINTEND

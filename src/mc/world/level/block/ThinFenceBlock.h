@@ -75,8 +75,6 @@ public:
 
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    virtual bool canConnect(::Block const& otherBlock, uchar, ::Block const&) const /*override*/;
-
     virtual bool isThinFenceBlock() const /*override*/;
 
     virtual bool
@@ -149,8 +147,6 @@ public:
     ) const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
-
-    MCFOLD bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
 
     MCFOLD bool $isThinFenceBlock() const;
 

@@ -10,9 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 class AsyncVerdictPromise;
-class ConnectionRequest;
 class IAsyncJoinRegistrar;
-class SubClientConnectionRequest;
+struct PlayerAuthenticationInfo;
 namespace ScriptModuleServerAdmin { struct ScriptAsyncPlayerJoinBeforeEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
@@ -32,7 +31,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 72>  mUnkef0809;
-        ::ll::UntypedStorage<8, 248> mUnk7e080c;
+        ::ll::UntypedStorage<8, 104> mUnk7e080c;
         // NOLINTEND
 
     public:
@@ -44,7 +43,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI Subscriber(::ScriptModuleServerAdmin::ScriptAsyncJoinEventSignal::Subscriber&&);
+
         MCNAPI ~Subscriber();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::ScriptModuleServerAdmin::ScriptAsyncJoinEventSignal::Subscriber&&);
         // NOLINTEND
 
     public:
@@ -75,12 +82,10 @@ public:
     MCNAPI void OnAsyncJoinCallback(
         ::Scripting::Closure<::Scripting::Future<void()>(
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>
-        )>                     closure,
-        ::IAsyncJoinRegistrar* asyncJoinRegistrar,
-        ::std::variant<
-            ::std::reference_wrapper<::ConnectionRequest const>,
-            ::std::reference_wrapper<::SubClientConnectionRequest const>> const& anyReq,
-        ::std::shared_ptr<::AsyncVerdictPromise>                                 promisePtr
+        )>                                       closure,
+        ::IAsyncJoinRegistrar*                   asyncJoinRegistrar,
+        ::PlayerAuthenticationInfo const&        playerInfo,
+        ::std::shared_ptr<::AsyncVerdictPromise> promisePtr
     );
 
     MCNAPI ::Scripting::Closure<::Scripting::Future<
@@ -91,27 +96,19 @@ public:
         )> closure
     );
 
-    MCNAPI void tick();
+    MCNAPI_S void tick();
 
     MCNAPI bool unsubscribe(
         ::Scripting::Closure<::Scripting::Future<void()>(
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>
         )> const& closure
     );
-
-    MCNAPI ~ScriptAsyncJoinEventSignal();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

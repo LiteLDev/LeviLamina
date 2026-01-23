@@ -22,6 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk1b79c8;
     ::ll::UntypedStorage<1, 2>  mUnk9bbde5;
+    ::ll::UntypedStorage<8, 80> mUnk88eae3;
     ::ll::UntypedStorage<8, 80> mUnk16357b;
     ::ll::UntypedStorage<8, 32> mUnk813aa7;
     ::ll::UntypedStorage<8, 32> mUnk2db52f;
@@ -58,6 +59,15 @@ public:
     MCNAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody const&);
 
     MCNAPI ~JSONSchemaBody();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void overwriteIfAny(
+        ::std::shared_ptr<::cereal::ext::internal::JSONSchemaDef>&          that,
+        ::std::shared_ptr<::cereal::internal::ConstraintDescription> const& other
+    );
     // NOLINTEND
 
 public:

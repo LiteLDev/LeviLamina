@@ -35,6 +35,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCFOLD ::BlockDescription::BlockTraits& operator=(::BlockDescription::BlockTraits&&);
+
         MCFOLD ::BlockDescription::BlockTraits& operator=(::BlockDescription::BlockTraits const&);
         // NOLINTEND
     };

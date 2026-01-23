@@ -46,6 +46,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1> mUnk7fd416;
+    ::ll::UntypedStorage<4, 4> mUnk3e0f77;
     // NOLINTEND
 
 public:
@@ -57,13 +58,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI uint64 consumeContext(::cereal::SerializerContext const& other, ::cereal::ResultCode filter);
+    MCNAPI void clearGenerations(uint from, uint to, ::cereal::ResultCode filter);
 
-    MCNAPI ::cereal::SerializerContext detachContext();
+    MCNAPI bool hasErrorInGenerations(uint from, uint to, ::cereal::ResultCode filter) const;
 
     MCNAPI void log(::cereal::ResultCode res, ::std::string msg);
 
-    MCNAPI ::cereal::SerializerContext& operator=(::cereal::SerializerContext&&);
+    MCNAPI uint nextGeneration();
 
     MCNAPI void popContext();
 

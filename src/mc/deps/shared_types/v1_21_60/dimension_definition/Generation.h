@@ -13,7 +13,6 @@ public:
 
 public:
     // prevent constructor by default
-    Generation& operator=(Generation const&);
     Generation(Generation const&);
     Generation();
 
@@ -22,6 +21,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::Generation&
     operator=(::SharedTypes::v1_21_60::DimensionDefinition::Generation&&);
+
+    MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::Generation&
+    operator=(::SharedTypes::v1_21_60::DimensionDefinition::Generation const&);
     // NOLINTEND
 };
 

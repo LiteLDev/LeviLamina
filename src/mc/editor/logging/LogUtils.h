@@ -12,6 +12,7 @@
 class HashedString;
 class Player;
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor { struct LogContent; }
 // clang-format on
 
 namespace Editor {
@@ -23,29 +24,19 @@ public:
     MCNAPI_C static ::std::string getTimeStamp();
 
     MCNAPI static void
-    log(::Player&                       player,
-        ::Editor::LogLevel              level,
-        ::std::vector<::HashedString>&& tags,
-        ::std::string                   message,
-        ::Editor::LogChannel            channelMask,
-        ::std::string                   subMessage);
+    log(::Player&                                           player,
+        ::Editor::LogLevel                                  level,
+        ::std::vector<::HashedString>&&                     tags,
+        ::std::variant<::std::string, ::Editor::LogContent> content,
+        ::Editor::LogChannel                                channelMask);
 
     MCNAPI static void
-    log(::Editor::ServiceProviderCollection& providers,
-        ::Editor::LogContext                 context,
-        ::Editor::LogLevel                   level,
-        ::std::vector<::HashedString>&&      tags,
-        ::std::string                        message,
-        ::Editor::LogChannel                 channelMask,
-        ::std::string                        subMessage);
-
-    MCNAPI static void queueToast(
-        ::Editor::ServiceProviderCollection& providers,
-        ::Editor::LogContext                 context,
-        ::Editor::LogLevel                   level,
-        ::std::string                        message,
-        ::std::string                        subMessage
-    );
+    log(::Editor::ServiceProviderCollection&                providers,
+        ::Editor::LogContext                                context,
+        ::Editor::LogLevel                                  level,
+        ::std::vector<::HashedString>&&                     tags,
+        ::std::variant<::std::string, ::Editor::LogContent> content,
+        ::Editor::LogChannel                                channelMask);
     // NOLINTEND
 };
 

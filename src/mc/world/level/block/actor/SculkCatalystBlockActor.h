@@ -58,7 +58,7 @@ public:
 
     virtual ::GameEventListener::DeliveryMode getDeliveryMode() const /*override*/;
 
-    virtual ~SculkCatalystBlockActor() /*override*/;
+    virtual ~SculkCatalystBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,21 +70,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _trySendItSpreadsEventPacket(::Actor& actor);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

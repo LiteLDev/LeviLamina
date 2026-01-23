@@ -70,6 +70,18 @@ public:
         MolangData& operator=(MolangData const&);
         MolangData(MolangData const&);
         MolangData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~MolangData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
     };
 
     struct TerrainData {
@@ -124,6 +136,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

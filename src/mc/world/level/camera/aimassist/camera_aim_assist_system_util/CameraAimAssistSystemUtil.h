@@ -12,6 +12,7 @@
 // clang-format off
 class Block;
 class BlockPos;
+class BlockType;
 class Frustum;
 class HashedString;
 class IConstBlockSource;
@@ -30,15 +31,15 @@ namespace CameraAimAssistSystemUtil {
 // functions
 // NOLINTBEGIN
 MCNAPI_C ::CameraAimAssistSystemUtil::BlockHitDetectResult blockHitDetect(
-    ::Vec3 const&                                       start,
-    ::Vec3 const&                                       end,
-    ::IConstBlockSource const&                          region,
-    int                                                 maxDist,
-    bool                                                useSelectionBox,
-    bool                                                targetingLiquid,
-    ::std::function<bool(::Block const&)> const&        isAcceptedBlock,
-    ::std::function<bool(::HashedString const&)> const& isBlockExcluded,
-    ::std::function<int(::HashedString const&)> const&  getBlockPriority
+    ::Vec3 const&                                    start,
+    ::Vec3 const&                                    end,
+    ::IConstBlockSource const&                       region,
+    int                                              maxDist,
+    bool                                             useSelectionBox,
+    bool                                             targetingLiquid,
+    ::std::function<bool(::Block const&)> const&     isAcceptedBlock,
+    ::std::function<bool(::BlockType const&)> const& isBlockExcluded,
+    ::std::function<int(::BlockType const&)> const&  getBlockPriority
 );
 
 MCNAPI void clearAimAssistForServerPlayer(::ServerPlayer& player);
@@ -59,9 +60,9 @@ MCNAPI_C ::CameraAimAssistSystemUtil::BlockHitDetectResult firstBlockHitDetect(
     ::Vec3 const&              start,
     ::Vec3 const&              end,
     ::Vec3 const&,
-    ::std::function<bool(::Block const&)> const&        isAcceptedBlock,
-    ::std::function<bool(::HashedString const&)> const& isBlockExcluded,
-    ::std::function<int(::HashedString const&)> const&  getBlockPriority
+    ::std::function<bool(::Block const&)> const&     isAcceptedBlock,
+    ::std::function<bool(::BlockType const&)> const& isBlockExcluded,
+    ::std::function<int(::BlockType const&)> const&  getBlockPriority
 );
 
 MCNAPI ::std::optional<::CameraAimAssistPacketPayload::TargetMode>

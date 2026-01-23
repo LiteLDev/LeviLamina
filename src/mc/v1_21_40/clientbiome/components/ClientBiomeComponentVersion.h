@@ -9,5 +9,6 @@ enum class ClientBiomeComponentVersion : int {
     V1_21_100 = 3,
     V1_21_110 = 4,
     V1_21_120 = 5,
-    Count     = 6,
+    V1_21_130 = 6,
+    Count     = 7,
 };

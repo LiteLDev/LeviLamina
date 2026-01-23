@@ -50,15 +50,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI BasicFileData(::Core::PathBuffer<::std::string> const& path, uint64 size);
-
         MCNAPI ~BasicFileData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const& path, uint64 size);
         // NOLINTEND
 
     public:

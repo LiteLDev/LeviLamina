@@ -31,35 +31,13 @@ public:
 
     virtual uint64 size() const /*override*/;
 
-    virtual ~EncodedImageBuffer() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit EncodedImageBuffer(uint64 size);
-
-    MCNAPI EncodedImageBuffer(uchar const* data, uint64 size);
+    virtual ~EncodedImageBuffer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::EncodedImageBuffer> Create(uchar const* data, uint64 size);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(uint64 size);
-
-    MCNAPI void* $ctor(uchar const* data, uint64 size);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

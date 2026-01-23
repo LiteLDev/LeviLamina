@@ -21,11 +21,13 @@ struct LevelDayCycleEvent;
 struct LevelGameRuleChangeEvent;
 struct LevelSoundBroadcastEvent;
 struct LevelStartLeaveGameEvent;
+struct LevelTickingAreaFinishedLoadingEvent;
 struct LevelWeatherChangedEvent;
 struct ScriptingWorldInitializeEvent;
 // clang-format on
 
 struct LevelNotificationEvent : public ::EventVariantImpl<
+                                    ::LevelTickingAreaFinishedLoadingEvent const,
                                     ::LevelAddedActorEvent const,
                                     ::LevelBroadcastEvent const,
                                     ::LevelSoundBroadcastEvent const,

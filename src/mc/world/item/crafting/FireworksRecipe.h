@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FireworksRecipe();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer&, ::CraftingContext&) const /*override*/;
@@ -42,9 +46,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FireworksRecipe(::std::string const& recipeId, ::mce::UUID const* uuid);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID& ID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const* uuid);
     // NOLINTEND
 
 public:

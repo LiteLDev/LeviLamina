@@ -23,7 +23,6 @@ public:
 
 public:
     // prevent constructor by default
-    ItemEnchantOption& operator=(ItemEnchantOption const&);
     ItemEnchantOption(ItemEnchantOption const&);
     ItemEnchantOption();
 
@@ -31,6 +30,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ItemEnchantOption(::ItemEnchantOption&&);
+
+    MCAPI ::ItemEnchantOption& operator=(::ItemEnchantOption const&);
 
     MCAPI ~ItemEnchantOption();
     // NOLINTEND

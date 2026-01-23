@@ -46,11 +46,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void fromExpression(
-        ::SharedTypes::v1_21_10::CoordinateRangeData& instance,
-        ::SharedTypes::Legacy::ExpressionNode const&  expression
-    );
     // NOLINTEND
 
 public:

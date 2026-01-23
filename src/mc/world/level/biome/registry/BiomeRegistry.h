@@ -113,8 +113,7 @@ public:
 
     MCAPI void _save(::LevelStorage& levelStorage) const;
 
-    MCAPI_C uint64
-    assignSeasonTextureRow(::BiomeRegistry::SeasonTextureRowSettings const& desiredSettings, uint64 maxSize);
+    MCAPI bool biomeAddTag(::Biome& biome, ::HashedString tag);
 
     MCAPI bool biomeHasTag(::Biome const&, ::IDType<::BiomeTagIDType> const&) const;
 
@@ -131,8 +130,8 @@ public:
     MCAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
 
     MCAPI void initServerFromPacks(
-        ::IWorldRegistriesProvider&                        worldRegistries,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
+        ::IWorldRegistriesProvider& worldRegistries,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>,
         ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>&
             biomeIdToResolvedData
     );

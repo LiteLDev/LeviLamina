@@ -21,7 +21,7 @@ struct SchemaDescription : public ::cereal::internal::SchemaInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 376> mUnk9dbec0;
+    ::ll::UntypedStorage<8, 416> mUnk9dbec0;
     ::ll::UntypedStorage<8, 32>  mUnk5e1b13;
     ::ll::UntypedStorage<8, 32>  mUnkd4aea8;
     ::ll::UntypedStorage<8, 32>  mUnk702fe6;

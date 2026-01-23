@@ -14,13 +14,9 @@ MCNAPI bool const& CAN_BE_CUT();
 
 MCNAPI bool const& CAN_BE_STOLEN();
 
-MCNAPI float const& HARD_DISTANCE();
-
 MCNAPI float const& MAX_DISTANCE();
 
 MCNAPI ::LeashablePreset const& PRESET();
-
-MCNAPI float const& SOFT_DISTANCE();
 // NOLINTEND
 
 } // namespace Leashable::Defaults

@@ -57,9 +57,9 @@ public:
     // NOLINTBEGIN
     MCAPI SerializedSkinImpl();
 
-    MCAPI explicit SerializedSkinImpl(::ConnectionRequest const& request);
+    MCAPI SerializedSkinImpl(::std::string const& playFabId, ::ConnectionRequest const& request);
 
-    MCAPI explicit SerializedSkinImpl(::SubClientConnectionRequest const& request);
+    MCAPI SerializedSkinImpl(::std::string const& playFabId, ::SubClientConnectionRequest const& request);
 
     MCAPI SerializedSkinImpl(
         ::std::string const&      name,
@@ -83,8 +83,6 @@ public:
         bool                      overridesPlayerAppearance
     );
 
-    MCAPI_C void clear();
-
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
     MCAPI void setArmSizeFromString(::std::string const& armSizeStr);
@@ -103,9 +101,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::ConnectionRequest const& request);
+    MCAPI void* $ctor(::std::string const& playFabId, ::ConnectionRequest const& request);
 
-    MCAPI void* $ctor(::SubClientConnectionRequest const& request);
+    MCAPI void* $ctor(::std::string const& playFabId, ::SubClientConnectionRequest const& request);
 
     MCAPI void* $ctor(
         ::std::string const&      name,

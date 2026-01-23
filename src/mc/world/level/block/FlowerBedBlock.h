@@ -17,6 +17,7 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
+class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -35,10 +36,27 @@ public:
 
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    virtual bool canBeBuiltOver(
+        ::Block const&     block,
+        ::BlockSource&     region,
+        ::BlockPos const&  pos,
+        ::BlockType const& newBlock
+    ) const /*override*/;
+
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
+
+    virtual ::Block const& getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             facing,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const /*override*/;
 
     virtual ::AABB getCollisionShape(
         ::Block const&,
@@ -78,11 +96,28 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getVariant(::Block const& block) const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+
+    MCAPI bool $canBeBuiltOver(
+        ::Block const&     block,
+        ::BlockSource&     region,
+        ::BlockPos const&  pos,
+        ::BlockType const& newBlock
+    ) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             facing,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCFOLD ::AABB $getCollisionShape(
         ::Block const&,

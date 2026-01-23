@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/shared_types/item/ItemCooldownType.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/deps/shared_types/legacy/item/UseAnimation.h"
@@ -54,7 +55,9 @@ class Vec3;
 struct ActorDefinitionIdentifier;
 struct Brightness;
 struct CommandName;
+struct ItemIconInfoFactory;
 struct ItemTag;
+struct ItemTintStrategy;
 struct ItemUsedOnEventContext;
 struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
@@ -122,8 +125,12 @@ public:
     // NOLINTBEGIN
     virtual ~Item();
 
-    virtual ::PuvLoadData::LoadResultWithTiming
-    initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const);
+    virtual ::PuvLoadData::LoadResultWithTiming initServer(
+        ::Json::Value const& data,
+        ::SemVersion const&,
+        ::IPackLoadContext& packLoadContext,
+        ::JsonBetaState const
+    );
 
     virtual void tearDown();
 
@@ -166,6 +173,8 @@ public:
     virtual bool isUseable() const;
 
     virtual bool isTrimAllowed() const;
+
+    virtual bool isBodyArmor() const;
 
     virtual ::ItemComponent* getComponent(::HashedString const&) const;
 
@@ -244,7 +253,17 @@ public:
 
     virtual int getToughnessValue() const;
 
+    virtual float getKnockbackResistanceValue() const;
+
+    virtual ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackMissSound() const;
+
+    virtual ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackHitSound() const;
+
+    virtual ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackCriticalHitSound() const;
+
     virtual ::SharedTypes::Legacy::LevelSoundEvent getBreakSound() const;
+
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const;
 
     virtual bool isComplex() const;
 
@@ -258,7 +277,7 @@ public:
 
     virtual bool isActorPlacerItem() const;
 
-    virtual bool isMultiColorTinted(::ItemStack const&) const;
+    virtual ::ItemTintStrategy getTintStrategy() const;
 
     virtual ::mce::Color getColor(::CompoundTag const*, ::ItemDescriptor const&) const;
 
@@ -270,10 +289,6 @@ public:
 
     virtual void setColor(::ItemStackBase&, ::mce::Color const&) const;
 
-    virtual ::mce::Color getBaseColor(::ItemStack const&) const;
-
-    virtual ::mce::Color getSecondaryColor(::ItemStack const&) const;
-
     virtual ::ActorDefinitionIdentifier getActorIdentifier(::ItemStack const&) const;
 
     virtual int buildIdAux(short auxValue, ::CompoundTag const*) const;
@@ -284,7 +299,7 @@ public:
 
     virtual bool canUseAsAttack() const;
 
-    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player&) const;
+    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const&) const;
 
     virtual ::Actor* createProjectileActor(::BlockSource&, ::ItemStack const&, ::Vec3 const&, ::Vec3 const&) const;
 
@@ -325,12 +340,14 @@ public:
 
     virtual int getCooldownDuration() const;
 
+    virtual ::SharedTypes::ItemCooldownType getCooldownType() const;
+
     virtual void fixupCommon(::ItemStackBase& stack) const;
 
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
 
     virtual ::InHandUpdateType getInHandUpdateType(
-        ::Player const&    player,
+        ::Player const&,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
         bool const,
@@ -343,16 +360,19 @@ public:
 
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const;
 
-    virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const;
-
     virtual bool shouldEmitInUseGameEvents() const;
 
     virtual bool useInterruptedByAttacking() const;
 
     virtual bool hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
 
-    virtual ::PuvLoadData::LoadResultWithTiming
-    initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
+    virtual ::PuvLoadData::LoadResultWithTiming initClient(
+        ::Json::Value const& data,
+        ::SemVersion const&,
+        ::JsonBetaState const,
+        ::IPackLoadContext&,
+        ::ItemIconInfoFactory iconFactory
+    );
 
     virtual ::Item& setIconInfo(::std::string const& name, int index);
 
@@ -410,6 +430,8 @@ public:
 
     MCAPI ::Item& addTag(::ItemTag const& tag);
 
+    MCAPI ::Item& addTag(::HashedString const& tag);
+
     MCAPI ::Item& addTags(::std::initializer_list<::std::reference_wrapper<::ItemTag const>> tags);
 
     MCAPI ::std::string buildCategoryDescriptionName() const;
@@ -426,15 +448,17 @@ public:
 
     MCAPI bool hasTag(::ItemTag const& tag) const;
 
+    MCAPI bool hasTag(::HashedString const& tag) const;
+
     MCAPI bool isElytra() const;
 
     MCAPI bool operator==(::Item const& rhs) const;
 
     MCAPI ::Item& setAllowOffhand(bool offhand);
 
-    MCAPI ::Item& setFireResistant(bool resistant);
+    MCAPI ::Item& setCreativeGroup(::std::string const& group);
 
-    MCAPI ::Item& setIsGlint(bool glint);
+    MCAPI ::Item& setFireResistant(bool resistant);
 
     MCAPI ::Item& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
@@ -463,6 +487,8 @@ public:
     MCAPI static bool isElytra(::ItemDescriptor const& itemDescriptor);
 
     MCAPI static bool isElytraBroken(int value);
+
+    MCAPI static bool isSameTypeAndItem(::ItemStackBase const& firstItem, ::ItemStackBase const& secondItem);
     // NOLINTEND
 
 public:
@@ -490,6 +516,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ::PuvLoadData::LoadResultWithTiming $initServer(
+        ::Json::Value const& data,
+        ::SemVersion const&,
+        ::IPackLoadContext& packLoadContext,
+        ::JsonBetaState const
+    );
+#endif
+
     MCFOLD void $tearDown();
 
     MCAPI ::Item& $setDescriptionId(::std::string const& description);
@@ -520,6 +555,10 @@ public:
 
     MCFOLD bool $isDye() const;
 
+#ifdef LL_PLAT_S
+    MCFOLD ::ItemColor $getItemColor() const;
+#endif
+
     MCFOLD bool $isFertilizer() const;
 
     MCFOLD bool $isFood() const;
@@ -529,6 +568,8 @@ public:
     MCFOLD bool $isUseable() const;
 
     MCFOLD bool $isTrimAllowed() const;
+
+    MCFOLD bool $isBodyArmor() const;
 
     MCFOLD ::ItemComponent* $getComponent(::HashedString const&) const;
 
@@ -544,9 +585,7 @@ public:
 
     MCFOLD ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const&);
 
-#ifdef LL_PLAT_S
     MCFOLD ::BlockShape $getBlockShape() const;
-#endif
 
     MCAPI bool $canBeDepleted() const;
 
@@ -609,7 +648,17 @@ public:
 
     MCFOLD int $getToughnessValue() const;
 
+    MCFOLD float $getKnockbackResistanceValue() const;
+
+    MCFOLD ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> $getAttackMissSound() const;
+
+    MCFOLD ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> $getAttackHitSound() const;
+
+    MCFOLD ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> $getAttackCriticalHitSound() const;
+
     MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getBreakSound() const;
+
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
     MCFOLD bool $isComplex() const;
 
@@ -623,7 +672,7 @@ public:
 
     MCFOLD bool $isActorPlacerItem() const;
 
-    MCFOLD bool $isMultiColorTinted(::ItemStack const&) const;
+    MCFOLD ::ItemTintStrategy $getTintStrategy() const;
 
     MCFOLD ::mce::Color $getColor(::CompoundTag const*, ::ItemDescriptor const&) const;
 
@@ -635,10 +684,6 @@ public:
 
     MCFOLD void $setColor(::ItemStackBase&, ::mce::Color const&) const;
 
-    MCFOLD ::mce::Color $getBaseColor(::ItemStack const&) const;
-
-    MCFOLD ::mce::Color $getSecondaryColor(::ItemStack const&) const;
-
     MCAPI ::ActorDefinitionIdentifier $getActorIdentifier(::ItemStack const&) const;
 
     MCAPI int $buildIdAux(short auxValue, ::CompoundTag const*) const;
@@ -649,7 +694,7 @@ public:
 
     MCFOLD bool $canUseAsAttack() const;
 
-    MCFOLD ::ItemStack& $useAsAttack(::ItemStack& item, ::Player&) const;
+    MCAPI ::ItemStack& $useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const&) const;
 
     MCFOLD ::Actor* $createProjectileActor(::BlockSource&, ::ItemStack const&, ::Vec3 const&, ::Vec3 const&) const;
 
@@ -671,7 +716,7 @@ public:
 
     MCAPI ::Bedrock::Safety::RedactableString const $buildRedactedDescriptionName(::ItemStackBase const& stack) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCFOLD ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
 
@@ -690,12 +735,14 @@ public:
 
     MCAPI int $getCooldownDuration() const;
 
+    MCFOLD ::SharedTypes::ItemCooldownType $getCooldownType() const;
+
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
 
     MCFOLD void $fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
 
     MCAPI ::InHandUpdateType $getInHandUpdateType(
-        ::Player const&    player,
+        ::Player const&,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
         bool const,
@@ -706,13 +753,25 @@ public:
 
     MCFOLD void $enchantProjectile(::ItemStackBase const&, ::Actor&) const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+#ifdef LL_PLAT_S
+    MCFOLD ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
+#endif
 
     MCFOLD bool $shouldEmitInUseGameEvents() const;
 
     MCFOLD bool $useInterruptedByAttacking() const;
 
     MCFOLD bool $hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
+
+#ifdef LL_PLAT_S
+    MCAPI ::PuvLoadData::LoadResultWithTiming $initClient(
+        ::Json::Value const& data,
+        ::SemVersion const&,
+        ::JsonBetaState const,
+        ::IPackLoadContext&,
+        ::ItemIconInfoFactory iconFactory
+    );
+#endif
 
     MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 

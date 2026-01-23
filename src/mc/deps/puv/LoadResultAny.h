@@ -30,6 +30,8 @@ public:
     // NOLINTBEGIN
     MCNAPI LoadResultAny(::Puv::LoadResultAny&&);
 
+    MCNAPI explicit operator bool() const;
+
     MCNAPI ~LoadResultAny();
     // NOLINTEND
 

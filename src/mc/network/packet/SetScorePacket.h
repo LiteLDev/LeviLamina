@@ -50,6 +50,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::SetScorePacket change(::std::vector<::ScorePacketInfo> info);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScorePacketType type, ::ScoreboardId const& id, ::Objective const& objective);

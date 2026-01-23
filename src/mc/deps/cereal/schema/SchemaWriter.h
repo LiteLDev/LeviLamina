@@ -43,6 +43,8 @@ public:
 
     virtual bool write(::std::string_view const) = 0;
 
+    virtual bool write(::gsl::span<uchar const>) = 0;
+
     virtual void writeValidityFlag(bool) = 0;
 
     virtual void writeControlValue(uint) = 0;

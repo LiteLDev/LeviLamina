@@ -15,10 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ThirdPartyInfo& operator=(ThirdPartyInfo const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ThirdPartyInfo();
@@ -38,7 +34,11 @@ public:
 
     MCNAPI_C bool isEligible(::std::string const& urlToMatch) const;
 
+    MCNAPI_C bool isValid() const;
+
     MCNAPI_C ::ThirdPartyInfo& operator=(::ThirdPartyInfo&&);
+
+    MCNAPI ::ThirdPartyInfo& operator=(::ThirdPartyInfo const&);
 
     MCNAPI ~ThirdPartyInfo();
     // NOLINTEND

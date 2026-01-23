@@ -32,6 +32,8 @@ public:
 
     MCNAPI void erase(uint64 index);
 
+    MCNAPI ::WorldTemplateInfo const& getOrInvalid(uint64 index) const;
+
     MCNAPI ::WorldTemplateCollection& operator=(::WorldTemplateCollection&&);
 
     MCNAPI void push_back(::WorldTemplateData&& data, ::WorldTemplateMutableInfo&& mutableInfo);

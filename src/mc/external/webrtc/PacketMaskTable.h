@@ -32,12 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static uchar const* PickTable(::webrtc::FecMaskType fec_mask_type, int num_media_packets);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::FecMaskType fec_mask_type, int num_media_packets);

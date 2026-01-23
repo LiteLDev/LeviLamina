@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool isAbilityEnabled(::AbilitiesIndex ability) const /*override*/;
+    virtual bool isAbilityEnabled(::AbilitiesIndex) const /*override*/;
 
     virtual bool isTeacher() const /*override*/;
 
@@ -41,10 +41,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI bool $isAbilityEnabled(::AbilitiesIndex ability) const;
-#endif
-
     MCNAPI bool $isTeacher() const;
 
     MCNAPI bool $isOperator() const;

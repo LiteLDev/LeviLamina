@@ -38,13 +38,11 @@ public:
 
     MCNAPI PackReport(::PackReport const&);
 
-    MCNAPI_S bool hasErrors() const;
-
     MCNAPI_C void merge(::PackReport&& other);
 
     MCNAPI ::PackReport& operator=(::PackReport&&);
 
-    MCNAPI_C ::PackReport& operator=(::PackReport const&);
+    MCNAPI ::PackReport& operator=(::PackReport const&);
 
     MCNAPI ~PackReport();
     // NOLINTEND

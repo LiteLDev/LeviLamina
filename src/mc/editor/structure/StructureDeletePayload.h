@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class StructureDeletePayload : public ::Editor::Network::NetworkPayload<::Editor::Network::StructureDeletePayload> {
@@ -16,7 +21,6 @@ public:
 
 public:
     // prevent constructor by default
-    StructureDeletePayload& operator=(StructureDeletePayload const&);
     StructureDeletePayload(StructureDeletePayload const&);
     StructureDeletePayload();
 
@@ -29,6 +33,18 @@ public:
     virtual ~StructureDeletePayload() /*override*/;
 #endif
 
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Editor::Network::StructureDeletePayload& operator=(::Editor::Network::StructureDeletePayload const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

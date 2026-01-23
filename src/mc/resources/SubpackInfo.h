@@ -13,13 +13,14 @@ public:
 
 public:
     // prevent constructor by default
-    SubpackInfo& operator=(SubpackInfo const&);
     SubpackInfo(SubpackInfo const&);
     SubpackInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C ::SubpackInfo& operator=(::SubpackInfo const&);
+
     MCNAPI ~SubpackInfo();
     // NOLINTEND
 

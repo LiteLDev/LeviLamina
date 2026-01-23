@@ -53,6 +53,8 @@ MCNAPI_C ::std::string caseFold(::std::string_view str);
 
 MCNAPI_C bool containsUnicodeChar(::std::string const& str);
 
+MCNAPI_C uint64 createObfuscated64BitIntegerFromXboxLiveID(::std::string const& input);
+
 MCNAPI ::std::string ensureNamespace(::std::string const& id, ::std::string_view defaultNamespace);
 
 MCNAPI bool equalIgnoreCase(::std::string_view lhs, ::std::string_view rhs);
@@ -85,6 +87,8 @@ MCNAPI_C ::std::string getFilesizeString(uint64 filesize);
 
 MCNAPI_C ::std::string getFilesizeString(uint64 filesize, ::I18n& loc);
 
+MCNAPI ::std::string_view getNameWithoutNamespace(::std::string_view name);
+
 MCNAPI_C ::std::string getPackDataDownloadProgressString(
     uint64 downloadedDataSize,
     uint64 totalDownloadDataSize,
@@ -94,8 +98,6 @@ MCNAPI_C ::std::string getPackDataDownloadProgressString(
 MCNAPI_C ::std::string getPackDownloadProgressString(uint64 downloadedPacks, uint64 packsToDownload);
 
 MCNAPI_C ::std::string getVirtualCurrencyStringTTS(uint amount);
-
-MCNAPI uint hashCodeAsUtf16(::std::string_view sv);
 
 MCNAPI bool isValidNamespaceFormat(::std::string_view name);
 
@@ -158,11 +160,11 @@ MCNAPI ::std::vector<::std::string_view> splitToViews(::std::string_view view, c
 
 MCNAPI_C bool startsWith(::std::string_view str, ::std::string_view starts);
 
-MCNAPI_C bool stringContains(::std::string const& s, char character);
+MCNAPI bool stringContains(::std::string const& s, char character);
 
 MCNAPI_C bool stringIsInVector(::std::vector<::std::string> const& stringVector, ::std::string const& searchString);
 
-MCNAPI ::std::string
+MCNAPI_C ::std::string
 stringReplace(::std::string str, ::buffer_span<::std::pair<::std::string_view, ::std::string_view>> replacements);
 
 MCNAPI ::std::string& stringReplace(::std::string& s, ::std::string const& src, ::std::string const& dst, int maxCount);
@@ -199,15 +201,9 @@ MCNAPI ::std::string toLower(::std::string_view inString);
 
 MCNAPI_C bool toSafeNumber(::std::string const& str, uint& output);
 
-MCNAPI_C ::std::string toString(::std::basic_string_view<wchar_t, ::std::char_traits<wchar_t>> inputStr);
+MCNAPI ::std::string toString(::std::basic_string_view<wchar_t, ::std::char_traits<wchar_t>> inputStr);
 
 MCNAPI ::std::string toStringWithPaddedZeroes(uint number, uchar digitCount);
-
-MCNAPI ::std::string toUpper(::std::string_view inString);
-
-MCNAPI_C uint64 u64FromString(::std::string const& input);
-
-MCNAPI_C int utf8len(::std::string const& str);
 
 MCNAPI int utf8len(::std::string_view str);
 

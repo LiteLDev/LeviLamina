@@ -82,10 +82,10 @@ public:
 
         virtual bool loadResource(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
-        virtual bool loadImageResourceFromFile(
+        virtual bool loadImageResourceFromMemory(
             ::std::shared_ptr<::cg::ImageResource>& out,
-            ::ResourceLocationPair const&           resourceLocationPair,
-            ::gsl::span<::std::string const>        extensions
+            ::std::string const&                    buffer,
+            ::ResourceLocationPair const&           resourceLocationPair
         ) const;
 
         virtual bool loadCompressedImageFromMemory(::cg::CompressedImageBuffer& out, ::std::string const& buffer) const;
@@ -116,10 +116,10 @@ public:
 
         MCNAPI bool $loadResource(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
-        MCNAPI bool $loadImageResourceFromFile(
+        MCNAPI bool $loadImageResourceFromMemory(
             ::std::shared_ptr<::cg::ImageResource>& out,
-            ::ResourceLocationPair const&           resourceLocationPair,
-            ::gsl::span<::std::string const>        extensions
+            ::std::string const&                    buffer,
+            ::ResourceLocationPair const&           resourceLocationPair
         ) const;
 
         MCNAPI bool $loadCompressedImageFromMemory(::cg::CompressedImageBuffer& out, ::std::string const& buffer) const;

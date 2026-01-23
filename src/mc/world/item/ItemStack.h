@@ -61,8 +61,6 @@ public:
 
     MCAPI ItemStack(::Item const& item, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
-    MCAPI ItemStack(::std::string_view name, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
-
     MCAPI_C void clientInitNetId(::ItemStackNetId const& serverNetId);
 
     MCAPI int getMaxUseDuration() const;
@@ -119,8 +117,6 @@ public:
     MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
-
-    MCAPI void* $ctor(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
     // NOLINTEND
 
 public:

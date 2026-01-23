@@ -18,7 +18,6 @@
 // clang-format off
 class IScriptPluginSource;
 class ScriptPluginHandleCounter;
-class ScriptPrintLogger;
 class ScriptSentryLogger;
 namespace Scripting { struct BaseError; }
 namespace Scripting { struct ContextId; }
@@ -43,7 +42,7 @@ public:
     ::ll::TypedStorage<8, 32, ::Scripting::ScriptContext>                     mContext;
     ::ll::TypedStorage<1, 1, ::PluginExecutionGroup const>                    mExecutionGroup;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ScriptPluginHandleCounter>> mHandleCounter;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptPrintLogger>>          mPrintLogger;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Scripting::IPrinter>>        mPrintLogger;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptSentryLogger>>         mSentryLogger;
     // NOLINTEND
 
@@ -97,7 +96,8 @@ public:
         ::std::string const&                           runtimeName,
         ::std::string const&                           mainScriptFilePath,
         ::ResourceInformation::ResourceType            pluginType,
-        ::PluginExecutionGroup                         executionGroup
+        ::PluginExecutionGroup                         executionGroup,
+        ::std::unique_ptr<::Scripting::IPrinter>       printLogger
     );
 
     MCAPI ::std::optional<::Scripting::ScriptData> _loadScript(::std::string const& fileName);
@@ -118,7 +118,8 @@ public:
         ::std::string const&                           runtimeName,
         ::std::string const&                           mainScriptFilePath,
         ::ResourceInformation::ResourceType            pluginType,
-        ::PluginExecutionGroup                         executionGroup
+        ::PluginExecutionGroup                         executionGroup,
+        ::std::unique_ptr<::Scripting::IPrinter>       printLogger
     );
     // NOLINTEND
 

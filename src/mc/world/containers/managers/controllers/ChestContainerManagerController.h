@@ -30,7 +30,7 @@ public:
 
     virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
 
-    virtual void _onItemPlaced(::ItemInstance const& stack, ::SlotData const& dstSlot) /*override*/;
+    virtual void _onItemPlaced(::ItemInstance const& itemInstance, ::SlotData const& dstSlot) /*override*/;
     // NOLINTEND
 
 public:
@@ -57,7 +57,7 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
 
-    MCNAPI void $_onItemPlaced(::ItemInstance const& stack, ::SlotData const& dstSlot);
+    MCNAPI void $_onItemPlaced(::ItemInstance const& itemInstance, ::SlotData const& dstSlot);
 #endif
 
 

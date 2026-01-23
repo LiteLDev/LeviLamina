@@ -55,13 +55,13 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ServerThumbnailCacheService(::Editor::ServiceProviderCollection& serviceProviders);
 
+    MCNAPI ::std::optional<::Editor::ThumbnailFileBytes> _findThumbnail(::std::string_view filename) const;
+
     MCNAPI void _handleFetchRequest(::Editor::Network::ThumbnailCacheFetchRequestPayload const& evt) const;
 
     MCNAPI void _handleStoreRequest(::Editor::Network::ThumbnailCacheStorePayload const& evt);
 
     MCNAPI bool _removeThumbnailFile(::mce::UUID id, ::std::optional<uint> hash);
-
-    MCNAPI void _saveThumbnail(::std::string_view filename, ::Editor::ThumbnailFileBytes const& data);
 
     MCNAPI void _scanFileCache();
     // NOLINTEND

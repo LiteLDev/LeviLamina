@@ -28,9 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormResponseV2&
-    operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormResponseV2&&);
-
     MCNAPI ~ScriptModalFormResponseV2();
     // NOLINTEND
 

@@ -22,15 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RtpSenderInfo(::webrtc::RtpSenderInfo&&);
-
     MCNAPI ~RtpSenderInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::RtpSenderInfo&&);
     // NOLINTEND
 
 public:

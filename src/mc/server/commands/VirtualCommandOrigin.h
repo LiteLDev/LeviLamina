@@ -178,6 +178,8 @@ public:
 
     MCNAPI bool $hasTellPerms() const;
 
+    MCNAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
+
     MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
     MCNAPI bool $isSelectorExpansionAllowed() const;
@@ -195,10 +197,6 @@ public:
     MCNAPI ::CompoundTag $serialize() const;
 
     MCNAPI bool $isValid() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
-#endif
 
 
     // NOLINTEND

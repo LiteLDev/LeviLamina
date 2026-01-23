@@ -19,12 +19,6 @@ public:
     RouteEndpoint& operator=(RouteEndpoint const&);
     RouteEndpoint(RouteEndpoint const&);
     RouteEndpoint();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool operator==(::rtc::RouteEndpoint const& other) const;
-    // NOLINTEND
 };
 
 } // namespace rtc

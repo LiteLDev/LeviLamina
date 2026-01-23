@@ -21,7 +21,6 @@ namespace dcsctp { class TimeMs; }
 namespace dcsctp { class Timeout; }
 namespace rtc { class CopyOnWriteBuffer; }
 namespace rtc { class PacketTransportInternal; }
-namespace rtc { class ReceivedPacket; }
 namespace rtc { class Thread; }
 namespace webrtc { class DataChannelSink; }
 namespace webrtc { class Environment; }
@@ -174,11 +173,7 @@ public:
         ::std::unique_ptr<::dcsctp::DcSctpSocketFactory> socket_factory
     );
 
-    MCNAPI void DisconnectTransportSignals();
-
     MCNAPI void MaybeConnectSocket();
-
-    MCNAPI void OnTransportReadPacket(::rtc::PacketTransportInternal* transport, ::rtc::ReceivedPacket const& packet);
 
     MCNAPI void OnTransportWritableState(::rtc::PacketTransportInternal* transport);
     // NOLINTEND

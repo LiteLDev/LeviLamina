@@ -15,15 +15,6 @@ namespace Json { class Value; }
 namespace JsonPackUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI bool readBoolAndReport(
-    ::Json::Value const&          parent,
-    ::std::string const&          element,
-    ::std::vector<::std::string>& errorPath,
-    ::PackReport&                 report,
-    bool                          optional,
-    bool                          defaultVal
-);
-
 MCNAPI ::std::pair<::Json::Value const, ::PackParseErrorType>
 readRequiredValue(::Json::Value const& value, ::std::string const& propertyName, ::Json::ValueType type);
 
@@ -42,9 +33,6 @@ MCNAPI ::std::vector<::std::string> readStringArrayAndReport(
     ::PackReport&                 report,
     bool                          optional
 );
-
-MCNAPI ::std::pair<::Json::Value const*, ::PackParseErrorType>
-readValue(::Json::Value const& value, ::std::string const& propertyName);
 
 MCNAPI ::std::pair<::Json::Value const, ::PackParseErrorType> readValueAndReportErrors(
     ::Json::Value const&          parent,

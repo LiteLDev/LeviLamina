@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
+#include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorInteraction;
+class BlockSource;
 class Interaction;
 class ItemStack;
 class Level;
@@ -36,6 +37,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void
+    _tryDropItem(::BlockSource& region, ::Actor& owner, ::ItemSlotInfo const& itemSlotInfo, float yOffset);
+
     MCNAPI static void _tryEquipItem(
         ::Actor&              owner,
         ::Player&             player,
@@ -45,6 +49,8 @@ public:
         bool&                 useItemEventSent,
         bool&                 postponedReplace
     );
+
+    MCNAPI static void _tryRepairItem(::Actor& owner, ::ItemSlotInfo const& itemSlotInfo, int amount);
 
     MCNAPI static void _trySendEquipmentSlot(::Actor& owner, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
 

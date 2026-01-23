@@ -14,10 +14,4 @@ public:
     OnActorLeaveVolumeDefinition& operator=(OnActorLeaveVolumeDefinition const&);
     OnActorLeaveVolumeDefinition(OnActorLeaveVolumeDefinition const&);
     OnActorLeaveVolumeDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::OnActorLeaveVolumeDefinition& operator=(::OnActorLeaveVolumeDefinition&&);
-    // NOLINTEND
 };

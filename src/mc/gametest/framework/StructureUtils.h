@@ -15,7 +15,6 @@ class Level;
 class StructureBlockActor;
 class StructureEditorData;
 class StructureTemplate;
-class Vec3;
 // clang-format on
 
 namespace gametest::StructureUtils {
@@ -48,9 +47,6 @@ FindStructureBlocks(::BlockPos const& centerPos, int searchRadius, ::BlockSource
 MCAPI ::AABB GetStructureBounds(::StructureBlockActor const& structureBlockActor);
 
 MCAPI ::StructureEditorData GetStructureEditorData(::StructureTemplate const& structure, ::Rotation const& rotation);
-
-MCAPI ::Vec3
-GetStructureRelativePos(::BlockPos const& structureBlockPos, ::Vec3 const& worldPos, ::Vec3 pivot, ::Rotation rotation);
 
 MCAPI ::StructureTemplate* GetStructureTemplate(::std::string const& structureName, ::Level& level);
 

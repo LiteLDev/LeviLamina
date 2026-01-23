@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class LogLineRef; }
 namespace rtc { class LogSink; }
-namespace rtc { class StringBuilder; }
 // clang-format on
 
 namespace rtc {
@@ -33,11 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void FinishPrintStream();
-
     MCNAPI LogMessage(char const* file, int line, ::rtc::LoggingSeverity sev, ::rtc::LogErrorContext err_ctx, int err);
-
-    MCNAPI ::rtc::StringBuilder& stream();
 
     MCNAPI ~LogMessage();
     // NOLINTEND
@@ -51,15 +45,7 @@ public:
 
     MCNAPI static bool IsNoop(::rtc::LoggingSeverity severity);
 
-    MCNAPI static int64 LogStartTime();
-
-    MCNAPI static void OutputToDebug(::rtc::LogLineRef const& log_line);
-
     MCNAPI static void RemoveLogToStream(::rtc::LogSink* stream);
-
-    MCNAPI static void UpdateMinLogSeverity();
-
-    MCNAPI static uint WallClockStartTime();
     // NOLINTEND
 
 public:

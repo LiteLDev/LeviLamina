@@ -83,6 +83,10 @@ public:
 
     MCNAPI_C void _updateParticleInputsFromOutputSlot();
 
+    MCNAPI_C bool isStillValid(float pickRange);
+
+    MCNAPI_C bool outputInteractWouldCausePlace(::SlotData const& src);
+
     MCNAPI_C void updateOutput(int protons, int electrons, int neutrons);
     // NOLINTEND
 

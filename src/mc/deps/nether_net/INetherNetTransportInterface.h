@@ -60,6 +60,10 @@ public:
 
     virtual void DisableLANSignaling() = 0;
 
+    virtual void EnableTrickleIce() = 0;
+
+    virtual void DisableTrickleIce() = 0;
+
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler*) = 0;
 
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler*) = 0;

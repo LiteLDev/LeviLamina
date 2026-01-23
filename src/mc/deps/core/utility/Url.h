@@ -32,6 +32,8 @@ MCNAPI_C ::std::optional<::std::string> getExtension(::std::string const& url);
 
 MCNAPI_C ::std::vector<::std::pair<::std::string_view, ::std::string_view>> getQueryParameters(::std::string_view url);
 
+MCNAPI_C bool isValidAbsoluteUrl(::std::string const& url);
+
 MCNAPI bool isValidIP(::std::string_view ipAddrStr, bool considerIPv4Valid, bool considerIPv6Valid);
 
 MCNAPI ::Util::Url::ComponentsView parseUrl(::std::string_view url);
@@ -41,8 +43,6 @@ MCNAPI_C ::std::string setQueryParameter(::std::string_view url, ::std::string_v
 MCNAPI_C bool startsWithMatchingFullPathSegments(::std::string_view route, ::std::string_view start);
 
 MCNAPI_C ::std::string stripProtocol(::std::string const& url);
-
-MCNAPI_C ::std::optional<::std::string> urlDecode(::std::string const& value, bool replacePlusWithSpace);
 
 MCNAPI_C ::std::optional<::std::string> urlDecode(::std::string_view value, bool replacePlusWithSpace);
 

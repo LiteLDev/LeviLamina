@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class IBreakpointValidator; }
 namespace Scripting { class IDebuggerController; }
 namespace Scripting { class IDebuggerTransport; }
 namespace Scripting { class IDependencyLoader; }
@@ -80,11 +81,12 @@ public:
     ) const = 0;
 
     virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
-        executeCoroutines(::std::optional<::std::chrono::microseconds>, ::std::optional<::Scripting::Privilege>) = 0;
+        executeCoroutines(::std::optional<::Scripting::Privilege>) = 0;
 
     virtual bool hasPendingJobs() = 0;
 
-    virtual ::Scripting::IDebuggerController* enableDebugger(::Scripting::IDebuggerTransport&) = 0;
+    virtual ::Scripting::IDebuggerController*
+    enableDebugger(::Scripting::IDebuggerTransport&, ::Scripting::IBreakpointValidator&) = 0;
 
     virtual void disableDebugger() = 0;
 

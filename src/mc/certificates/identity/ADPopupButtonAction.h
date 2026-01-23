@@ -24,7 +24,6 @@ public:
 
 public:
     // prevent constructor by default
-    ADPopupButtonAction& operator=(ADPopupButtonAction const&);
     ADPopupButtonAction(ADPopupButtonAction const&);
     ADPopupButtonAction();
 
@@ -32,6 +31,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C ::ADPopupButtonAction& operator=(::ADPopupButtonAction&&);
+
+    MCNAPI_C ::ADPopupButtonAction& operator=(::ADPopupButtonAction const&);
 
     MCNAPI_C ~ADPopupButtonAction();
     // NOLINTEND

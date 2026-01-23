@@ -128,11 +128,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SubChunkPacket& operator=(SubChunkPacket const&);
-    SubChunkPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SubChunkPacket() /*override*/;
@@ -144,18 +139,6 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SubChunkPacket(::SubChunkPacket const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SubChunkPacket const&);
     // NOLINTEND
 
 public:

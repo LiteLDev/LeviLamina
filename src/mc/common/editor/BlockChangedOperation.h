@@ -57,6 +57,8 @@ public:
         ::CompoundTag*    blockData,
         ::BlockPos const& pos
     ) const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> _setBlocks(::Level& level, ::BlockSource& region, bool isUndo) const;
     // NOLINTEND
 
 public:

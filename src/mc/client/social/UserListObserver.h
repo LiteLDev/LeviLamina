@@ -9,7 +9,7 @@
 // clang-format off
 namespace Core { class FileStorageArea; }
 namespace Core { class SingleThreadedLock; }
-namespace Social { class User; }
+namespace Social { struct User; }
 // clang-format on
 
 namespace Social {

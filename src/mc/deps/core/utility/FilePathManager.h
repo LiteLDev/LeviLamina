@@ -40,7 +40,6 @@ public:
 public:
     // prevent constructor by default
     FilePathManager& operator=(FilePathManager const&);
-    FilePathManager(FilePathManager const&);
     FilePathManager();
 
 public:
@@ -52,7 +51,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI FilePathManager(::Core::FilePathManager const&);
+
     MCNAPI explicit FilePathManager(::Core::FilePathManagerPaths&& paths);
+
+    MCNAPI_C ::Core::PathView getWorldsPath() const;
 
     MCNAPI void setRootPath(::Core::PathView path);
     // NOLINTEND
@@ -76,6 +79,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::FilePathManager const&);
+
     MCNAPI void* $ctor(::Core::FilePathManagerPaths&& paths);
     // NOLINTEND
 

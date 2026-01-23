@@ -33,19 +33,11 @@ public:
     MCNAPI ScreenCapabilitiesRepo();
 
     MCNAPI ::std::unique_ptr<::IScreenCapabilities> get(::std::string const& screenName) const;
-
-    MCNAPI ~ScreenCapabilitiesRepo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

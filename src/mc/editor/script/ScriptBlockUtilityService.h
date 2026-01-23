@@ -72,10 +72,6 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptContiguousSelectionProperties>& scriptContiguousProperties
     );
 
-    MCNAPI ::Vec3 _getDimensionMaxLocation() const;
-
-    MCNAPI ::Vec3 _getDimensionMinLocation() const;
-
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>>
     _getFacePreviewSelection(

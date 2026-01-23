@@ -18,8 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SentryEnvelopePayloadDebugMetadata& operator=(::SentryEnvelopePayloadDebugMetadata&&);
-
     MCNAPI ~SentryEnvelopePayloadDebugMetadata();
     // NOLINTEND
 

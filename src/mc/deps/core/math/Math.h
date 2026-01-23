@@ -5,16 +5,21 @@
 // auto generated forward declare list
 // clang-format off
 namespace mce { struct Degree; }
+namespace mce { struct Radian; }
 // clang-format on
 
 namespace mce::Math {
 // functions
 // NOLINTBEGIN
+MCNAPI_S ::mce::Radian atan2(float dy, float dx);
+
 MCNAPI float clamp(float v, float low, float high);
 
 MCNAPI int clamp(int v, int low, int high);
 
 MCNAPI float clampRotate(float current, float target, float maxDelta);
+
+MCNAPI float cos(float f);
 
 MCNAPI float easeInBack(float from, float to, float alpha);
 
@@ -77,6 +82,8 @@ MCNAPI float easeOutQuint(float from, float to, float alpha);
 MCNAPI float easeOutSine(float from, float to, float alpha);
 
 MCNAPI float lerpRotate(float from, float to, float alpha);
+
+MCNAPI_S float sin(float f);
 
 MCNAPI float wrapDegrees(float input);
 

@@ -41,8 +41,6 @@ public:
 
     MCNAPI ::std::string first_stream_id() const;
 
-    MCNAPI bool has_ssrc(uint ssrc) const;
-
     MCNAPI ::cricket::StreamParams& operator=(::cricket::StreamParams const&);
 
     MCNAPI void set_stream_ids(::std::vector<::std::string> const& stream_ids);

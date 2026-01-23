@@ -35,14 +35,7 @@ public:
         KStoreAndCull = 1,
     };
 
-    struct MoreUseful {
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool
-        operator()(::webrtc::RtpPacketHistory::StoredPacket* lhs, ::webrtc::RtpPacketHistory::StoredPacket* rhs) const;
-        // NOLINTEND
-    };
+    struct MoreUseful {};
 
     class StoredPacket {
     public:
@@ -60,37 +53,6 @@ public:
         StoredPacket& operator=(StoredPacket const&);
         StoredPacket(StoredPacket const&);
         StoredPacket();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void IncrementTimesRetransmitted(
-            ::std::set<::webrtc::RtpPacketHistory::StoredPacket*, ::webrtc::RtpPacketHistory::MoreUseful>* priority_set
-        );
-
-        MCNAPI StoredPacket(
-            ::std::unique_ptr<::webrtc::RtpPacketToSend> packet,
-            ::webrtc::Timestamp                          send_time,
-            uint64                                       insert_order
-        );
-
-        MCNAPI ::webrtc::RtpPacketHistory::StoredPacket& operator=(::webrtc::RtpPacketHistory::StoredPacket&&);
-
-        MCNAPI ~StoredPacket();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void*
-        $ctor(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::Timestamp send_time, uint64 insert_order);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -136,15 +98,11 @@ public:
 
     MCNAPI ::webrtc::RtpPacketHistory::StorageMode GetStorageMode() const;
 
-    MCNAPI ::webrtc::RtpPacketHistory::StoredPacket* GetStoredPacket(ushort sequence_number);
-
     MCNAPI void MarkPacketAsSent(ushort sequence_number);
 
     MCNAPI void PutRtpPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::Timestamp send_time);
 
     MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> RemovePacket(int packet_index);
-
-    MCNAPI void Reset();
 
     MCNAPI RtpPacketHistory(::webrtc::Clock* clock, ::webrtc::RtpPacketHistory::PaddingMode padding_mode);
 
@@ -153,8 +111,6 @@ public:
     MCNAPI void SetStorePacketsStatus(::webrtc::RtpPacketHistory::StorageMode mode, uint64 number_to_store);
 
     MCNAPI bool VerifyRtt(::webrtc::RtpPacketHistory::StoredPacket const& packet) const;
-
-    MCNAPI bool padding_priority_enabled() const;
 
     MCNAPI ~RtpPacketHistory();
     // NOLINTEND

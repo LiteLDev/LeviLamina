@@ -26,10 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RelayServerConfig& operator=(RelayServerConfig const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RelayServerConfig();
@@ -42,6 +38,10 @@ public:
         ::std::string_view          password,
         ::cricket::ProtocolType     proto
     );
+
+    MCNAPI ::cricket::RelayServerConfig& operator=(::cricket::RelayServerConfig const&);
+
+    MCNAPI bool operator==(::cricket::RelayServerConfig const& o) const;
 
     MCNAPI ~RelayServerConfig();
     // NOLINTEND

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/dcsctp/OutstandingData.h"
-#include "mc/external/dcsctp/UnwrappedSequenceNumber.h"
 #include "mc/external/webrtc/StrongAlias.h"
 
 // auto generated forward declare list
@@ -80,25 +79,11 @@ public:
 
     MCNAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
 
-    MCNAPI uint64 GetSerializedChunkSize(::dcsctp::Data const& data) const;
-
-    MCNAPI void HandleIncreasedCumulativeTsnAck(uint64 unacked_bytes, uint64 total_bytes_acked);
-
-    MCNAPI void HandlePacketLoss(
-        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> highest_tsn_acked
-    );
-
     MCNAPI bool HandleSack(::webrtc::Timestamp now, ::dcsctp::SackChunk const& sack);
 
     MCNAPI void HandleT3RtxTimerExpiry();
 
     MCNAPI bool HasStreamsReadyToBeReset() const;
-
-    MCNAPI bool IsSackValid(::dcsctp::SackChunk const& sack) const;
-
-    MCNAPI void MaybeExitFastRecovery(
-        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> cumulative_tsn_ack
-    );
 
     MCNAPI void PrepareResetStream(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id);
 
@@ -122,18 +107,7 @@ public:
 
     MCNAPI bool ShouldSendForwardTsn(::webrtc::Timestamp now);
 
-    MCNAPI void StartT3RtxTimerIfOutstandingData();
-
-    MCNAPI void UpdateRTT(
-        ::webrtc::Timestamp                                                              now,
-        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> cumulative_tsn_ack
-    );
-
-    MCNAPI void UpdateReceiverWindow(uint a_rwnd);
-
     MCNAPI bool can_send_data() const;
-
-    MCNAPI uint64 max_bytes_to_send() const;
 
     MCNAPI ~RetransmissionQueue();
     // NOLINTEND

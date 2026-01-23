@@ -64,12 +64,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI FecHeaderWriter(uint64 max_media_packets, uint64 max_fec_packets, uint64 max_packet_overhead);
-
-    MCNAPI uint64 MaxFecPackets() const;
-
-    MCNAPI uint64 MaxMediaPackets() const;
-
-    MCNAPI uint64 MaxPacketOverhead() const;
     // NOLINTEND
 
 public:

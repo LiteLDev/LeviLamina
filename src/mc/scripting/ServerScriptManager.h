@@ -21,6 +21,7 @@
 #include "mc/scripting/RegisterDiagnosticsStatsTypes.h"
 #include "mc/scripting/ScriptSettings.h"
 #include "mc/scripting/ServerScriptManagerEvents.h"
+#include "mc/scripting/modules/FilterResult.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/LevelEventListener.h"
@@ -82,7 +83,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 144, ::ServerScriptManagerEvents>                        mScriptStateEvents;
-    ::ll::TypedStorage<8, 704, ::ScriptSettings>                                   mSettings;
+    ::ll::TypedStorage<8, 752, ::ScriptSettings>                                   mSettings;
     ::ll::TypedStorage<8, 8, ::ServerLevel&>                                       mServerLevel;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ScriptPackSettingsCache>>        mPackSettingsCache;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Scheduler>>             mServerScheduler;
@@ -119,7 +120,7 @@ public:
     ::ll::TypedStorage<
         8,
         24,
-        ::std::vector<::std::function<bool(
+        ::std::vector<::std::function<::ScriptModuleFilters::FilterResult(
             ::PackManifest const&,
             ::Scripting::ModuleDescriptor const&,
             ::Scripting::ModuleDescriptor const&,
@@ -179,11 +180,23 @@ public:
     MCAPI void _sendScriptModuleStartupEvent(::ServerLevel& level) const;
 
     MCAPI void _sendWorldInitializeEvent(::ServerLevel& level) const;
+
+    MCAPI void addModuleFilter(
+        ::std::function<::ScriptModuleFilters::FilterResult(
+            ::PackManifest const&,
+            ::Scripting::ModuleDescriptor const&,
+            ::Scripting::ModuleDescriptor const&,
+            ::ScriptPluginResult&
+        )> moduleFilter
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void
+    _sendScriptModuleShutdownEvent(::ServerLevel& level, ::std::optional<::Scripting::WeakLifetimeScope> scope);
+
     MCAPI static void _sendWorldInitializeEventImpl(
         ::ServerLevel&                                                level,
         ::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry&  itemCustomComponentRegistry,

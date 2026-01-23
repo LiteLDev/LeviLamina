@@ -23,23 +23,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleInitialSpinComponent& operator=(ParticleInitialSpinComponent const&);
-    ParticleInitialSpinComponent(ParticleInitialSpinComponent const&);
-    ParticleInitialSpinComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~ParticleInitialSpinComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ParticleInitialSpinComponent() /*override*/;
-    // NOLINTEND
+#endif
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ParticleInitialSpinComponent(::SharedTypes::v1_20_80::ParticleInitialSpinComponent&&);
     // NOLINTEND
 
 public:
@@ -52,12 +45,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleInitialSpinComponent&&);
     // NOLINTEND
 
 public:

@@ -15,6 +15,7 @@ public:
 
 public:
     // prevent constructor by default
+    PayloadDescription& operator=(PayloadDescription const&);
     PayloadDescription(PayloadDescription const&);
     PayloadDescription();
 
@@ -22,8 +23,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::DataStore::PayloadDescription& operator=(::Editor::DataStore::PayloadDescription&&);
-
-    MCNAPI ::Editor::DataStore::PayloadDescription& operator=(::Editor::DataStore::PayloadDescription const&);
 
     MCNAPI ~PayloadDescription();
     // NOLINTEND

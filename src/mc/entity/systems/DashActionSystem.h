@@ -18,7 +18,6 @@ struct ActorDataFlagComponent;
 struct ActorRotationComponent;
 struct DashActionComponent;
 struct DashCooldownTimerComponent;
-struct DashJumpFlagComponent;
 struct JumpPendingScaleComponent;
 struct JumpPreventionResult;
 struct MobEffectsComponent;
@@ -32,24 +31,6 @@ struct VehicleComponent;
 namespace DashActionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickApplyDashModifierSystem(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::DashJumpFlagComponent>,
-        ::TriggerJumpRequestComponent const,
-        ::DashActionComponent const,
-        ::MovementAttributesComponent const,
-        ::ActorRotationComponent const,
-        ::MobEffectsComponent const,
-        ::Optional<::VehicleComponent const>,
-        ::StateVectorComponent,
-        ::JumpPendingScaleComponent,
-        ::ActorDataFlagComponent,
-        ::ActorDataDirtyFlagsComponent>                                                          vehicleView,
-    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> passengerView,
-    ::EntityModifier<::DashCooldownTimerComponent>                                               mod
-);
-
 MCNAPI ::Vec3 dashForwardCamera(::Vec3 const& momentum, ::ActorRotationComponent const& cameraRotation);
 
 MCNAPI void doDash(

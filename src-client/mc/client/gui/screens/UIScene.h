@@ -150,13 +150,11 @@ public:
 
     virtual void handleInputModeChanged(::InputMode inputMode) /*override*/;
 
-    virtual void
-    handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping) /*override*/;
+    virtual void handleRawInputEvent(int, ::RawInputType, ::ButtonState, bool) /*override*/;
 
     virtual void handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact) /*override*/;
 
-    virtual void
-    handleTextChar(::std::string const& inputUtf8, bool keepImePosition, ::FocusImpact focusImpact) /*override*/;
+    virtual void handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact) /*override*/;
 
     virtual void handleCaretLocation(int, ::FocusImpact) /*override*/;
 
@@ -349,11 +347,9 @@ public:
 
     MCAPI void $handleInputModeChanged(::InputMode inputMode);
 
-    MCAPI void $handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping);
-
     MCAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
 
-    MCAPI void $handleTextChar(::std::string const& inputUtf8, bool keepImePosition, ::FocusImpact focusImpact);
+    MCAPI void $handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact);
 
     MCFOLD void $handleCaretLocation(int, ::FocusImpact);
 

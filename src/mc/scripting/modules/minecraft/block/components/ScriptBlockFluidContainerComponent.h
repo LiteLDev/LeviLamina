@@ -12,6 +12,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class CauldronBlockActor;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
@@ -38,6 +39,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::CauldronBlockActor* _tryGetCauldronBlockActor();
+
     MCNAPI ::Scripting::Result_deprecated<void> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
 
     MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getCustomColor() const;

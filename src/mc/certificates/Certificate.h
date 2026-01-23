@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Certificate(::Certificate const& other);
+    MCNAPI_C Certificate(::Certificate const& other);
 
     MCNAPI_C void addToEnd(::Certificate const& certificate);
 
@@ -82,7 +82,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Certificate const& other);
+    MCNAPI_C void* $ctor(::Certificate const& other);
     // NOLINTEND
 
 public:

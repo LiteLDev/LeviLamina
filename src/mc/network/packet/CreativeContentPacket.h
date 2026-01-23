@@ -39,15 +39,11 @@ public:
 
     public:
         // prevent constructor by default
-        CreativeGroupInfoDescription& operator=(CreativeGroupInfoDescription const&);
-        CreativeGroupInfoDescription(CreativeGroupInfoDescription const&);
         CreativeGroupInfoDescription();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C CreativeGroupInfoDescription(::CreativeContentPacket::CreativeGroupInfoDescription&&);
-
         MCAPI_C CreativeGroupInfoDescription(
             ::CreativeItemCategory          creativeItemCategory,
             ::std::string                   name,
@@ -60,8 +56,6 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI_C void* $ctor(::CreativeContentPacket::CreativeGroupInfoDescription&&);
-
         MCAPI_C void* $ctor(
             ::CreativeItemCategory          creativeItemCategory,
             ::std::string                   name,

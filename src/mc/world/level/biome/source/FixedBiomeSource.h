@@ -62,9 +62,9 @@ public:
 
     MCAPI bool $containsOnly(int, int, int, int, ::gsl::span<::BiomeIdType const> allowed) const;
 
-    MCFOLD ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
+    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCFOLD ::BiomeArea
+    MCAPI ::BiomeArea
     $getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptions) const;
 
     MCAPI bool $hasBiomeById(::BiomeIdType id) const;

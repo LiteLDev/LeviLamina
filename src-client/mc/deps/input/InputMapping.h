@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 88, ::KeyboardInputMapping>               keyboardMapping;
     ::ll::TypedStorage<8, 80, ::MouseInputMapping>                  mouseMapping;
-    ::ll::TypedStorage<8, 336, ::TouchInputMapping>                 touchMapping;
+    ::ll::TypedStorage<8, 352, ::TouchInputMapping>                 touchMapping;
     ::ll::TypedStorage<8, 128, ::GameControllerInputMapping>        gamePadMapping;
     ::ll::TypedStorage<8, 24, ::TestAutoInputMapping>               testAutoMapping;
     ::ll::TypedStorage<8, 24, ::std::vector<::ChordButtonMapping>>  chordButtonMapping;

@@ -23,6 +23,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptWidgetComponentEntityOptions& operator=(ScriptWidgetComponentEntityOptions const&);
     ScriptWidgetComponentEntityOptions(ScriptWidgetComponentEntityOptions const&);
     ScriptWidgetComponentEntityOptions();
 
@@ -37,9 +38,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions const&);
     // NOLINTEND
 
 public:

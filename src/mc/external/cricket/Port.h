@@ -203,17 +203,11 @@ public:
 
     MCNAPI void AddOrReplaceConnection(::cricket::Connection* conn);
 
-    MCNAPI void CancelPendingTasks();
-
     MCNAPI void CopyPortInformationToPacketInfo(::rtc::PacketInfo* info) const;
-
-    MCNAPI void Destroy();
 
     MCNAPI void DestroyAllConnections();
 
     MCNAPI void DestroyConnectionInternal(::cricket::Connection* conn, bool async);
-
-    MCNAPI void DestroyIfDead();
 
     MCNAPI void FinishAddingAddress(::cricket::Candidate const& c, bool is_final);
 
@@ -224,8 +218,6 @@ public:
     MCNAPI bool MaybeObfuscateAddress(::cricket::Candidate const& c, bool is_final);
 
     MCNAPI ::rtc::WeakPtr<::cricket::Port> NewWeakPtr();
-
-    MCNAPI bool OnConnectionDestroyed(::cricket::Connection* conn);
 
     MCNAPI void OnNetworkTypeChanged(::rtc::Network const* network);
 
@@ -260,8 +252,6 @@ public:
 
     MCNAPI void Prune();
 
-    MCNAPI void SendPortDestroyed(::cricket::Port* port);
-
     MCNAPI void SendUnknownAttributesErrorResponse(
         ::cricket::StunMessage*      message,
         ::rtc::SocketAddress const&  addr,
@@ -271,8 +261,6 @@ public:
     MCNAPI void SetIceParameters(int component, ::std::string_view username_fragment, ::std::string_view password);
 
     MCNAPI void set_content_name(::std::string_view content_name);
-
-    MCNAPI ::std::string const& username_fragment() const;
     // NOLINTEND
 
 public:

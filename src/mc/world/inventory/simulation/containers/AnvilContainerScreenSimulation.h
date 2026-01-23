@@ -55,12 +55,7 @@ public:
 
     virtual void _registerAutoPlaceOrder() /*override*/;
 
-#ifdef LL_PLAT_S
     virtual ~AnvilContainerScreenSimulation() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~AnvilContainerScreenSimulation() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -73,12 +68,6 @@ public:
 
     MCNAPI_C ::ContainerScreenActionResult
     _tryTransferCraft(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const& dstSlot);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

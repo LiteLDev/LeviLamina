@@ -32,9 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyMultiplayerToken(::LegacyMultiplayerToken const& other);
+    MCAPI_C LegacyMultiplayerToken(::LegacyMultiplayerToken const& other);
 
-    MCAPI_C ::Json::Value _getExtraData(::std::string const& key, ::Json::Value const& defaultValue) const;
+    MCAPI ::Json::Value _getExtraData(::std::string const& key, ::Json::Value const& defaultValue) const;
 
     MCAPI ::mce::UUID getIdentity() const;
 
@@ -44,9 +44,9 @@ public:
 
     MCAPI ::std::string getXuid(bool trustSelfSigned) const;
 
-    MCAPI ::LegacyMultiplayerToken const& operator=(::LegacyMultiplayerToken const& other);
+    MCAPI_C ::LegacyMultiplayerToken const& operator=(::LegacyMultiplayerToken const& other);
 
-    MCAPI ::std::string toString() const;
+    MCAPI_C ::std::string toString() const;
 
     MCAPI ~LegacyMultiplayerToken();
     // NOLINTEND
@@ -71,7 +71,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyMultiplayerToken const& other);
+    MCAPI_C void* $ctor(::LegacyMultiplayerToken const& other);
     // NOLINTEND
 
 public:

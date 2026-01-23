@@ -68,15 +68,11 @@ public:
     // NOLINTBEGIN
     MCNAPI Nack();
 
-    MCNAPI void Pack();
-
     MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const& packet);
 
     MCNAPI void SetPacketIds(::std::vector<ushort> nack_list);
 
     MCNAPI void SetPacketIds(ushort const* nack_list, uint64 length);
-
-    MCNAPI void Unpack();
     // NOLINTEND
 
 public:

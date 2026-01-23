@@ -24,7 +24,6 @@ public:
 public:
     // prevent constructor by default
     OnUseOnItemComponentLegacyFactoryData& operator=(OnUseOnItemComponentLegacyFactoryData const&);
-    OnUseOnItemComponentLegacyFactoryData(OnUseOnItemComponentLegacyFactoryData const&);
     OnUseOnItemComponentLegacyFactoryData();
 
 public:
@@ -36,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI OnUseOnItemComponentLegacyFactoryData(::OnUseOnItemComponentLegacyFactoryData const&);
+
     MCAPI explicit OnUseOnItemComponentLegacyFactoryData(::DefinitionTrigger trigger);
 
     MCFOLD ::OnUseOnItemComponentLegacyFactoryData& operator=(::OnUseOnItemComponentLegacyFactoryData&&);
@@ -56,6 +57,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD void* $ctor(::OnUseOnItemComponentLegacyFactoryData const&);
+
     MCAPI void* $ctor(::DefinitionTrigger trigger);
     // NOLINTEND
 

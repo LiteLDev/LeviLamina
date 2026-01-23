@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Player;
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -33,12 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerEmoteAfterEvent(
-        ::Player const&                       player,
-        ::std::string                         emotePieceId,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-
     MCAPI ::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&&);
 
@@ -49,12 +41,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player const& player, ::std::string emotePieceId, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

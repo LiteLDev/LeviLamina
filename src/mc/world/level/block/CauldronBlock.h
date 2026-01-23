@@ -196,6 +196,8 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+
     MCAPI void
     $handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const;
 
@@ -220,10 +222,6 @@ public:
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-#ifdef LL_PLAT_C
-    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
-#endif
 
 
     // NOLINTEND

@@ -21,6 +21,7 @@
 #include "mc/server/commands/CommandLexer.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandSelector.h"
+#include "mc/server/commands/CommandTypeFlag.h"
 #include "mc/server/commands/CommandVersion.h"
 #include "mc/server/commands/SemanticConstraint.h"
 #include "mc/world/actor/selectors/InvertableFilter.h"
@@ -901,6 +902,13 @@ public:
         ::std::vector<::CommandRegistry::Symbol> const& symbols
     );
 
+    MCAPI ::CommandRegistry::Symbol buildOptionalRuleChain(
+        ::CommandRegistry::Signature const&          signature,
+        ::std::vector<::CommandParameterData> const& params,
+        ::CommandParameterData const*                firstOptional,
+        uint64                                       count
+    );
+
     MCAPI void buildParseTable(uint version) const;
 
     MCAPI void buildPredictTable(::CommandRegistry::ParseTable& table, uint version) const;
@@ -945,15 +953,11 @@ public:
 
     MCAPI ::CommandRegistry::Symbol findPostfix(::std::string const& input) const;
 
-    MCAPI_C ::CommandRegistry::Symbol findSoftEnum(::std::string const& name) const;
-
     MCAPI void fireCommandParseTableTelemetry(::IMinecraftEventing const& eventing, bool isServer) const;
 
     MCAPI void forEachNonTerminal(::std::function<void(::CommandRegistry::Symbol)> func) const;
 
     MCAPI ::Json::Value generateDocumentationMetadata(bool generateInternalMetadata) const;
-
-    MCAPI ::std::vector<::std::string> getAliases(::std::string const& command) const;
 
     MCAPI ::std::vector<::std::string> getAlphabeticalLookup(::CommandOrigin const& origin) const;
 
@@ -975,6 +979,8 @@ public:
         ::std::string const&   cmdLine,
         uint                   cursorPosition
     ) const;
+
+    MCAPI_C bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
 
     MCAPI bool isValid(::CommandRegistry::Symbol symbol) const;
 

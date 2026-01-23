@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Recipe;
 class Recipes;
 // clang-format on
 
@@ -21,12 +22,11 @@ public:
 public:
     // prevent constructor by default
     UnlockedRecipesClientComponent& operator=(UnlockedRecipesClientComponent const&);
+    UnlockedRecipesClientComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C UnlockedRecipesClientComponent();
-
     MCAPI_C UnlockedRecipesClientComponent(::UnlockedRecipesClientComponent const&);
 
     MCAPI_C void addUnlockedRecipes(
@@ -34,6 +34,8 @@ public:
         ::std::vector<::std::string> const& unlockedRecipeIds,
         bool                                newlyUnlocked
     );
+
+    MCAPI_C bool isRecipeUnlocked(::Recipe const& recipe) const;
 
     MCAPI_C ::UnlockedRecipesClientComponent& operator=(::UnlockedRecipesClientComponent&&);
 
@@ -45,8 +47,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
-
     MCAPI_C void* $ctor(::UnlockedRecipesClientComponent const&);
     // NOLINTEND
 

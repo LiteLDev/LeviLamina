@@ -13,24 +13,17 @@ public:
 
 public:
     // prevent constructor by default
-    GatheringServerInfo& operator=(GatheringServerInfo const&);
     GatheringServerInfo(GatheringServerInfo const&);
     GatheringServerInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C GatheringServerInfo(::std::string const& gatheringId, ::std::string const& gatheringTitle);
-
     MCNAPI_C ::GatheringServerInfo& operator=(::GatheringServerInfo&&);
 
-    MCNAPI ~GatheringServerInfo();
-    // NOLINTEND
+    MCNAPI_C ::GatheringServerInfo& operator=(::GatheringServerInfo const&);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string const& gatheringId, ::std::string const& gatheringTitle);
+    MCNAPI ~GatheringServerInfo();
     // NOLINTEND
 
 public:

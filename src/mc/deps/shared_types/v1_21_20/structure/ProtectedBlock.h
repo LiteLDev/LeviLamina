@@ -13,7 +13,6 @@ public:
 
 public:
     // prevent constructor by default
-    ProtectedBlock& operator=(ProtectedBlock const&);
     ProtectedBlock(ProtectedBlock const&);
     ProtectedBlock();
 
@@ -22,6 +21,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&&);
+
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&
+    operator=(::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock const&);
 
     MCAPI ~ProtectedBlock();
     // NOLINTEND

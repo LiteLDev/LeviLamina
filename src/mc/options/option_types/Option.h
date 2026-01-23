@@ -158,15 +158,13 @@ public:
 
     MCNAPI_C int64 getInt64() const;
 
-    MCNAPI_C int getIntMax() const;
-
-    MCNAPI_C int getIntMin() const;
-
     MCNAPI_C ::std::string const& getString() const;
 
     MCNAPI_C ::std::vector<::std::string> getStringList() const;
 
     MCNAPI_C uint64 getUInt64() const;
+
+    MCNAPI_C ::std::unordered_map<int, ::std::string> const& getValueNameMap() const;
 
     MCNAPI_C ::std::vector<int> const& getValues() const;
 

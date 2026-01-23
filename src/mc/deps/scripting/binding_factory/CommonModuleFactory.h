@@ -24,6 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI CommonModuleFactory();
+
     MCNAPI void _addVersions();
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
@@ -39,6 +41,12 @@ public:
     MCNAPI static char const*& ModuleName();
 
     MCNAPI static ::mce::UUID const& ModuleUUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

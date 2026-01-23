@@ -63,6 +63,8 @@ public:
 
     MCNAPI ::Editor::ScriptModule::ScriptDataStoreService& operator=(::Editor::ScriptModule::ScriptDataStoreService&&);
 
+    MCNAPI void sendNotificationEvent(::std::string const& dataTag, ::std::string const& payload);
+
     MCNAPI ~ScriptDataStoreService();
     // NOLINTEND
 

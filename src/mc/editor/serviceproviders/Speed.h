@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor::Settings { struct SpeedProps; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Settings {
@@ -27,6 +28,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C explicit Speed(::std::function<void(::Editor::Settings::SpeedProps const&)> callback);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

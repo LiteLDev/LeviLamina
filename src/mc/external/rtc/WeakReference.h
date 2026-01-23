@@ -27,39 +27,12 @@ public:
         // prevent constructor by default
         Flag& operator=(Flag const&);
         Flag(Flag const&);
+        Flag();
 
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Flag() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI Flag();
-
-        MCNAPI void Invalidate();
-
-        MCNAPI bool IsValid() const;
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
+        virtual ~Flag() /*override*/ = default;
         // NOLINTEND
     };
 
@@ -82,8 +55,6 @@ public:
 
     MCNAPI WeakReference(::rtc::internal::WeakReference const&);
 
-    MCNAPI explicit WeakReference(::rtc::internal::WeakReference::Flag const* flag);
-
     MCNAPI bool is_valid() const;
 
     MCNAPI ~WeakReference();
@@ -97,8 +68,6 @@ public:
     MCNAPI void* $ctor(::rtc::internal::WeakReference&&);
 
     MCNAPI void* $ctor(::rtc::internal::WeakReference const&);
-
-    MCNAPI void* $ctor(::rtc::internal::WeakReference::Flag const* flag);
     // NOLINTEND
 
 public:

@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-namespace BlockBreadthFirst { struct BlockNeighbor; }
-// clang-format on
-
 namespace BlockBreadthFirst {
 
 struct AllNeighborsRandomized {
@@ -22,12 +16,6 @@ public:
     AllNeighborsRandomized& operator=(AllNeighborsRandomized const&);
     AllNeighborsRandomized(AllNeighborsRandomized const&);
     AllNeighborsRandomized();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::std::array<::BlockBreadthFirst::BlockNeighbor, 6> operator()(::BlockPos const& pos);
-    // NOLINTEND
 };
 
 } // namespace BlockBreadthFirst

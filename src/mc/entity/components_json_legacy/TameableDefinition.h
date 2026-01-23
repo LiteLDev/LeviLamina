@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/item/Item.h"
 
 // auto generated forward declare list
 // clang-format off
+struct ActorDefinitionTameItem;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>   mUnk3a69ae;
-    ::ll::UntypedStorage<8, 16>  mUnkb332e4;
+    ::ll::UntypedStorage<8, 24>  mUnkf7afa5;
     ::ll::UntypedStorage<8, 104> mUnk1ae022;
     // NOLINTEND
 
@@ -29,9 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addTamingItemByName(::std::string const& name);
+    MCNAPI void addTamingItem(::ActorDefinitionTameItem const& tameItem);
 
-    MCNAPI ~TameableDefinition();
+    MCNAPI void addTamingItemByName(::std::string const& name);
     // NOLINTEND
 
 public:
@@ -40,11 +40,5 @@ public:
     MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TameableDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

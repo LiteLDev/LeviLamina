@@ -56,11 +56,13 @@ public:
     MCNAPI_S PersistentWebSocket();
 
     MCNAPI void _connectWithRetry(
-        ::std::string const&                                               uri,
-        ::Bedrock::Http::HeaderCollection const&                           headers,
-        ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> lastResult,
-        ::Bedrock::Http::RetryPolicy&&                                     retry
+        ::std::string const&                     uri,
+        ::Bedrock::Http::HeaderCollection const& headers,
+        ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>,
+        ::Bedrock::Http::RetryPolicy&& retry
     );
+
+    MCNAPI void _onCloseMaybeReconnect(uint status, bool shouldReconnect);
 
     MCNAPI void _onConnect(
         ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> result,
@@ -71,6 +73,9 @@ public:
         ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> lastResult,
         ::Bedrock::Http::RetryPolicy&&                                     retry
     );
+
+    MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
+    connectWithRetry(::Bedrock::Http::RetryPolicy&& retry);
 
     MCNAPI void disconnect();
     // NOLINTEND

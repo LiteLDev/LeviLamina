@@ -23,23 +23,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EmitterLifetimeLoopingComponent& operator=(EmitterLifetimeLoopingComponent const&);
-    EmitterLifetimeLoopingComponent(EmitterLifetimeLoopingComponent const&);
-    EmitterLifetimeLoopingComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~EmitterLifetimeLoopingComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~EmitterLifetimeLoopingComponent() /*override*/;
-    // NOLINTEND
+#endif
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EmitterLifetimeLoopingComponent(::SharedTypes::v1_20_80::EmitterLifetimeLoopingComponent&&);
     // NOLINTEND
 
 public:
@@ -52,12 +45,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeLoopingComponent&&);
     // NOLINTEND
 
 public:

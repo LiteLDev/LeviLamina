@@ -50,7 +50,7 @@ public:
 
     virtual char const* type() const /*override*/;
 
-    virtual ~RTCTransportStats() /*override*/;
+    virtual ~RTCTransportStats() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -73,12 +73,6 @@ public:
     MCNAPI void* $ctor(::webrtc::RTCTransportStats const&);
 
     MCNAPI void* $ctor(::std::string id, ::webrtc::Timestamp timestamp);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

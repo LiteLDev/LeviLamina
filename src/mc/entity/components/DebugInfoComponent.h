@@ -63,7 +63,6 @@ public:
 public:
     // prevent constructor by default
     DebugInfoComponent& operator=(DebugInfoComponent const&);
-    DebugInfoComponent(DebugInfoComponent const&);
     DebugInfoComponent();
 
 public:
@@ -79,6 +78,8 @@ public:
     // NOLINTBEGIN
     MCAPI DebugInfoComponent(::DebugInfoComponent&&);
 
+    MCAPI_S DebugInfoComponent(::DebugInfoComponent const&);
+
     MCAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
     // NOLINTEND
 
@@ -86,6 +87,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::DebugInfoComponent&&);
+
+    MCAPI_S void* $ctor(::DebugInfoComponent const&);
     // NOLINTEND
 
 public:

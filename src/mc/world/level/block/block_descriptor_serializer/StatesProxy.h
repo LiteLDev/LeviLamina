@@ -21,17 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StatesProxy& operator=(StatesProxy const&);
-    StatesProxy(StatesProxy const&);
-    StatesProxy();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void fromMap(::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound> const& proxyMap);
-
-    MCAPI ::BlockDescriptorSerializer::StatesProxy& operator=(::BlockDescriptorSerializer::StatesProxy&&);
 
     MCAPI ~StatesProxy();
     // NOLINTEND

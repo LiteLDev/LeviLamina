@@ -23,6 +23,8 @@ public:
     MCAPI LegacyOnHitActorTriggerItemComponentData(::LegacyOnHitActorTriggerItemComponentData&&);
 
     MCAPI LegacyOnHitActorTriggerItemComponentData(::LegacyOnHitActorTriggerItemComponentData const&);
+
+    MCAPI ~LegacyOnHitActorTriggerItemComponentData();
     // NOLINTEND
 
 public:
@@ -31,5 +33,11 @@ public:
     MCFOLD void* $ctor(::LegacyOnHitActorTriggerItemComponentData&&);
 
     MCFOLD void* $ctor(::LegacyOnHitActorTriggerItemComponentData const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Services {
 
 struct PersistenceGroupManifest {
@@ -21,6 +26,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~PersistenceGroupManifest();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

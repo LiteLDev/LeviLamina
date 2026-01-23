@@ -2,35 +2,42 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/brstd/flat_map.h"
+
 // auto generated forward declare list
 // clang-format off
 class Attribute;
 class AttributeInstance;
 class AttributeInstanceHandle;
+class AttributeInstanceRef;
 class HashedString;
 struct AttributeData;
 struct AttributeModificationContext;
-struct MutableAttributeWithContext;
 // clang-format on
 
 class BaseAttributeMap {
 public:
     // BaseAttributeMap inner types define
-    using UnderlyingMapContainer = ::std::unordered_map<uint, ::AttributeInstance>;
+    using UnderlyingMapContainer = ::brstd::
+        flat_map<uint, ::AttributeInstance, ::std::less<uint>, ::std::vector<uint>, ::std::vector<::AttributeInstance>>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::AttributeInstance>>         mInstanceMap;
+    ::ll::TypedStorage<
+        8,
+        56,
+        ::brstd::flat_map<
+            uint,
+            ::AttributeInstance,
+            ::std::less<uint>,
+            ::std::vector<uint>,
+            ::std::vector<::AttributeInstance>>>
+                                                                                       mInstanceMap;
     ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>>                mDirtyAttributes;
     ::ll::TypedStorage<8, 8, void (::BaseAttributeMap::*)(::AttributeInstance const&)> mOnAttributeModified;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseAttributeMap& operator=(BaseAttributeMap const&);
-    BaseAttributeMap(BaseAttributeMap const&);
-    BaseAttributeMap();
 
 public:
     // member functions
@@ -39,19 +46,13 @@ public:
 
     MCFOLD_C void _onAttributeModifiedDisabled(::AttributeInstance const&);
 
-    MCAPI ::AttributeInstance const& getInstance(::Attribute const& attribute) const;
+    MCAPI ::AttributeInstanceRef getMutableInstance(uint idValue);
 
-    MCAPI ::AttributeInstance const& getInstance(uint idValue) const;
-
-    MCAPI ::AttributeInstance* getMutableInstance(::HashedString const& name);
-
-    MCAPI ::MutableAttributeWithContext getMutableInstanceWithContext(::Attribute const& attribute);
+    MCAPI_S ::AttributeInstanceRef getMutableInstance(::HashedString const& name);
 
     MCAPI ::std::vector<::AttributeInstanceHandle> getSyncableAttributes() const;
 
-    MCAPI ::BaseAttributeMap& operator=(::BaseAttributeMap&&);
-
-    MCAPI ::AttributeInstance& registerAttribute(::Attribute const& baseAttribute);
+    MCAPI ::AttributeInstanceRef registerAttribute(::Attribute const& baseAttribute);
 
     MCAPI_C void updateOrCreateAttribute(::AttributeData const& attributeData);
     // NOLINTEND
@@ -61,7 +62,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void updateAttribute(
         ::AttributeData const&          attributeData,
-        ::AttributeInstance&            attributeInstance,
+        ::AttributeInstanceRef          attributeRef,
         ::AttributeModificationContext& context
     );
     // NOLINTEND

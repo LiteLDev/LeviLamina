@@ -75,14 +75,10 @@ public:
 
     MCNAPI ::std::unique_ptr<::cricket::StunMessage> Clone() const;
 
-    MCNAPI ::cricket::StunAttribute* CreateAttribute(int type, uint64 length);
-
     MCNAPI bool
     EqualAttributes(::cricket::StunMessage const* other, ::std::function<bool(int)> attribute_type_mask) const;
 
     MCNAPI ::cricket::StunAddressAttribute const* GetAddress(int type) const;
-
-    MCNAPI ::cricket::StunAttribute const* GetAttribute(int type) const;
 
     MCNAPI ::cricket::StunByteStringAttribute const* GetByteString(int type) const;
 
@@ -97,8 +93,6 @@ public:
     MCNAPI ::cricket::StunUInt32Attribute const* GetUInt32(int type) const;
 
     MCNAPI ::cricket::StunUInt64Attribute const* GetUInt64(int type) const;
-
-    MCNAPI bool IsLegacy() const;
 
     MCNAPI bool Read(::rtc::ByteBufferReader* buf);
 
@@ -118,8 +112,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string GenerateTransactionId();
-
     MCNAPI static bool IsStunMethod(::rtc::ArrayView<int> methods, char const* data, uint64 size);
 
     MCNAPI static bool ValidateFingerprint(char const* data, uint64 size);

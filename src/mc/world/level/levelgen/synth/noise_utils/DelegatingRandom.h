@@ -49,7 +49,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $nextInt();
 
-    MCAPI int $nextInt(int const bound);
+    MCFOLD int $nextInt(int const bound);
 
     MCAPI int64 $nextLong();
 

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/SubClientId.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/molang/MolangVersion.h"
 #include "mc/util/MolangVariableMap.h"
@@ -26,7 +27,9 @@ class DataDrivenGeometry;
 class ExpressionNode;
 class Matrix;
 class ModelPartLocator;
+struct AnimationComponentArguments;
 class DataDrivenModel;
+struct ClientAnimationComponent;
 struct RenderControllerToProcess;
 // clang-format on
 
@@ -51,7 +54,7 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI_C ::std::shared_ptr<::AnimationComponent>&
-        getAnimationComponent(::Actor& owner, ushort attachableDepth, ::AttachableSlotIndex attachableIndex);
+        getAnimationComponent(::Actor& owner, ::SubClientId subClientId, ::AttachableSlotIndex attachableIndex);
         // NOLINTEND
     };
 
@@ -99,10 +102,17 @@ public:
     AnimationComponent();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~AnimationComponent();
+
+    virtual ::ClientAnimationComponent* tryGetClient();
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    AnimationComponent(::AnimationComponentGroupType animationComponentGroup, ::AnimationComponentID const& ownerUUID);
+    MCAPI explicit AnimationComponent(::AnimationComponentArguments&& args);
 
     MCAPI_C void _addAnimationToStatePlayer(
         ::HashedString const&                                    friendlyName,
@@ -188,8 +198,6 @@ public:
         ::std::shared_ptr<::DataDrivenModel> itemModel,
         ::RenderParams&                      renderParamsToUseForRenderControllerEvalulation
     );
-
-    MCAPI ~AnimationComponent();
     // NOLINTEND
 
 public:
@@ -205,12 +213,26 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AnimationComponentGroupType animationComponentGroup, ::AnimationComponentID const& ownerUUID);
+    MCAPI void* $ctor(::AnimationComponentArguments&& args);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCFOLD ::ClientAnimationComponent* $tryGetClient();
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

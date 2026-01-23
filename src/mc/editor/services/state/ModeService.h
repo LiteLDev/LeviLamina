@@ -56,13 +56,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit ModeService(::Editor::ServiceProviderCollection& providers);
+    MCNAPI explicit ModeService(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Editor::ServiceProviderCollection& providers);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

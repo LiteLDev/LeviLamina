@@ -7,7 +7,7 @@
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/UUID.h"
-#include "mc/world/actor/player/SerializedSkin.h"
+#include "mc/world/actor/player/SerializedSkinRef.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,10 +19,10 @@ class PlayerSkinPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID>      mUUID;
-    ::ll::TypedStorage<8, 16, ::SerializedSkin> mSkin;
-    ::ll::TypedStorage<8, 32, ::std::string>    mLocalizedNewSkinName;
-    ::ll::TypedStorage<8, 32, ::std::string>    mLocalizedOldSkinName;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>         mUUID;
+    ::ll::TypedStorage<8, 16, ::SerializedSkinRef> mSkin;
+    ::ll::TypedStorage<8, 32, ::std::string>       mLocalizedNewSkinName;
+    ::ll::TypedStorage<8, 32, ::std::string>       mLocalizedOldSkinName;
     // NOLINTEND
 
 public:

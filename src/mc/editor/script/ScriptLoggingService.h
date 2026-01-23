@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor { struct LocalizationEntry; }
 namespace Editor::ScriptModule { class ScriptLogProperties; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -34,21 +35,29 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> _logMessage(
         ::Editor::LogLevel                                           level,
-        ::std::string                                                message,
+        ::std::variant<::std::string, ::Editor::LocalizationEntry>   message,
         ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps
     );
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    debug(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
+    MCNAPI ::Scripting::Result_deprecated<void> debug(
+        ::std::variant<::std::string, ::Editor::LocalizationEntry>   message,
+        ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    error(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
+    MCNAPI ::Scripting::Result_deprecated<void> error(
+        ::std::variant<::std::string, ::Editor::LocalizationEntry>   message,
+        ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    info(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
+    MCNAPI ::Scripting::Result_deprecated<void> info(
+        ::std::variant<::std::string, ::Editor::LocalizationEntry>   message,
+        ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    warning(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
+    MCNAPI ::Scripting::Result_deprecated<void> warning(
+        ::std::variant<::std::string, ::Editor::LocalizationEntry>   message,
+        ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps
+    );
     // NOLINTEND
 
 public:

@@ -7,7 +7,7 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/util/Identifier.h"
 #include "mc/deps/shared_types/util/Reference.h"
-#include "mc/deps/shared_types/v1_21_50/camera/CameraPresetAimAssistDefinition.h"
+#include "mc/deps/shared_types/v1_21_50/camera/CameraAimAssistCommandPresetDefinition.h"
 #include "mc/platform/Result.h"
 #include "mc/world/level/camera/controlscheme/Scheme.h"
 
@@ -49,10 +49,11 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<float>>        mRadius;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>        mYawLimitMin;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>        mYawLimitMax;
-    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_21_90::CameraPreset::AudioListener>>      mListener;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                                      mPlayerEffects;
-    ::ll::TypedStorage<8, 72, ::std::optional<::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition>> mAimAssist;
-    ::ll::TypedStorage<1, 2, ::std::optional<::ControlScheme::Scheme>>                                   mControlScheme;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_21_90::CameraPreset::AudioListener>> mListener;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                                 mPlayerEffects;
+    ::ll::TypedStorage<8, 72, ::std::optional<::SharedTypes::v1_21_50::CameraAimAssistCommandPresetDefinition>>
+                                                                       mAimAssist;
+    ::ll::TypedStorage<1, 2, ::std::optional<::ControlScheme::Scheme>> mControlScheme;
     // NOLINTEND
 
 public:
@@ -66,9 +67,11 @@ public:
 
     MCAPI CameraPreset(::SharedTypes::v1_21_90::CameraPreset const&);
 
-    MCAPI ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset&&);
+    MCFOLD ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset&&);
 
-    MCAPI ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset const&);
+    MCFOLD ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset const&);
+
+    MCFOLD void setEntityOffset(::std::optional<::std::array<float, 3>> opt);
 
     MCAPI void write(::BinaryStream& stream) const;
 
@@ -88,13 +91,13 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_21_90::CameraPreset&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_90::CameraPreset const&);
+    MCFOLD void* $ctor(::SharedTypes::v1_21_90::CameraPreset const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -21,11 +21,12 @@ public:
     // prevent constructor by default
     LocalAudioSinkAdapter& operator=(LocalAudioSinkAdapter const&);
     LocalAudioSinkAdapter(LocalAudioSinkAdapter const&);
+    LocalAudioSinkAdapter();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalAudioSinkAdapter() /*override*/;
+    virtual ~LocalAudioSinkAdapter() /*override*/ = default;
 
     virtual void OnData(
         void const*            audio_data,
@@ -47,24 +48,6 @@ public:
     virtual int NumPreferredChannels() const /*override*/;
 
     virtual void SetSink(::cricket::AudioSource::Sink* sink) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI LocalAudioSinkAdapter();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

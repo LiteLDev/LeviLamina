@@ -68,10 +68,7 @@ public:
             public:
                 // static functions
                 // NOLINTBEGIN
-                MCNAPI static void fromPBRDataMER(
-                    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRData&          instance,
-                    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRDataMER const& value
-                );
+                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
                 // NOLINTEND
             };
 
@@ -89,6 +86,12 @@ public:
             PBRFallbackSettings& operator=(PBRFallbackSettings const&);
             PBRFallbackSettings(PBRFallbackSettings const&);
             PBRFallbackSettings();
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            // NOLINTEND
         };
 
     public:
@@ -100,13 +103,15 @@ public:
 
     public:
         // prevent constructor by default
-        PBRFallbackConfigSettings& operator=(PBRFallbackConfigSettings const&);
         PBRFallbackConfigSettings(PBRFallbackConfigSettings const&);
         PBRFallbackConfigSettings();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ::PBRFallbackConfig::PBRFallbackConfigSettings&
+        operator=(::PBRFallbackConfig::PBRFallbackConfigSettings const&);
+
         MCNAPI ~PBRFallbackConfigSettings();
         // NOLINTEND
 

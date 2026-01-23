@@ -51,6 +51,12 @@ public:
 
     MCNAPI void addOperation(::std::unique_ptr<::Editor::Transactions::IOperation> operation);
 
+    MCNAPI ::Scripting::Result_deprecated<int>
+    commitPendingOperations(::Editor::ServiceProviderCollection& serviceProviders);
+
+    MCNAPI ::Scripting::Result_deprecated<int>
+    discardPendingOperations(::Editor::ServiceProviderCollection& serviceProviders);
+
     MCNAPI ~TransactionContext();
     // NOLINTEND
 

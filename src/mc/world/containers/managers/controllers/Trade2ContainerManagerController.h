@@ -123,10 +123,6 @@ public:
 
     MCNAPI_C ::MerchantRecipe* getTrade(int tier, int index) const;
 
-    MCNAPI_C int getTradeExpForCurrentRequirement(uint currentExp) const;
-
-    MCNAPI_C int getTradeExpToNextRequirement(uint currentExp) const;
-
     MCNAPI_C void handleAutoTrade(int tier, int index, ::std::vector<::AutoPlaceResult>&);
 
     MCNAPI_C bool hasAvailableTradeWithSecondItem() const;

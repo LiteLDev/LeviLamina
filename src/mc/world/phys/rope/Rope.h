@@ -67,15 +67,16 @@ public:
 public:
     // prevent constructor by default
     Rope& operator=(Rope const&);
+    Rope();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Rope();
-
     MCAPI Rope(::Rope const&);
 
     MCAPI void _finalizeBucket(::AABBBucket& bucket);
+
+    MCAPI ::AABBBucket& _getBucket(uchar bucketIndex);
 
     MCAPI void _integrate();
 
@@ -84,8 +85,6 @@ public:
     MCAPI void _resize();
 
     MCAPI float _solveCollisions(bool checkDenyList);
-
-    MCAPI float _solveDistanceConstraints1();
 
     MCAPI float _solveDistanceConstraints3();
 
@@ -101,8 +100,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Rope const&);
     // NOLINTEND
 

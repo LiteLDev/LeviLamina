@@ -37,7 +37,7 @@ public:
     // NOLINTBEGIN
     virtual ~AsyncTCPSocketBase() /*override*/;
 
-    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) = 0;
+    virtual int Send(void const*, uint64, ::rtc::PacketOptions const&) = 0;
 
     virtual uint64 ProcessInput(::rtc::ArrayView<uchar const>) = 0;
 

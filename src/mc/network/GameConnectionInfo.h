@@ -50,6 +50,18 @@ public:
     MCAPI_C GameConnectionInfo(::Social::ConnectionType connectionType, ::std::string const& ipAddress, int port);
 
     MCAPI_C GameConnectionInfo(
+        ::Social::ConnectionType            connectionType,
+        ::NetherNet::NetworkID const&       netherNetId,
+        ::PlayerMessaging::NetworkID const& playerMessagingId
+    );
+
+    MCAPI_C GameConnectionInfo(
+        ::Social::ConnectionType      connectionType,
+        ::NetherNet::NetworkID const& netherNetId,
+        ::GatheringServerInfo const&  serverInfo
+    );
+
+    MCAPI_C GameConnectionInfo(
         ::Social::ConnectionType      connectionType,
         ::NetherNet::NetworkID const& netherNetId,
         ::ThirdPartyInfo const&       serverInfo
@@ -77,6 +89,13 @@ public:
     );
 
     MCAPI_C GameConnectionInfo(
+        ::Social::ConnectionType      connectionType,
+        ::NetherNet::NetworkID const& netherNetId,
+        ::std::string&                serverRegion,
+        int                           serviceQuality
+    );
+
+    MCAPI_C GameConnectionInfo(
         ::Social::ConnectionType connectionType,
         ::std::string const&     ipAddress,
         int                      port,
@@ -85,6 +104,8 @@ public:
     );
 
     MCAPI_C ::std::string getCorrelationId() const;
+
+    MCAPI_C ::std::string const getRakNetGUID() const;
 
     MCAPI_C ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo&&);
 
@@ -113,6 +134,18 @@ public:
     MCAPI_C void* $ctor(::Social::ConnectionType connectionType, ::std::string const& ipAddress, int port);
 
     MCAPI_C void* $ctor(
+        ::Social::ConnectionType            connectionType,
+        ::NetherNet::NetworkID const&       netherNetId,
+        ::PlayerMessaging::NetworkID const& playerMessagingId
+    );
+
+    MCAPI_C void* $ctor(
+        ::Social::ConnectionType      connectionType,
+        ::NetherNet::NetworkID const& netherNetId,
+        ::GatheringServerInfo const&  serverInfo
+    );
+
+    MCAPI_C void* $ctor(
         ::Social::ConnectionType      connectionType,
         ::NetherNet::NetworkID const& netherNetId,
         ::ThirdPartyInfo const&       serverInfo
@@ -137,6 +170,13 @@ public:
         ::std::string const&     ipAddress,
         int                      port,
         ::ThirdPartyInfo const&  serverInfo
+    );
+
+    MCAPI_C void* $ctor(
+        ::Social::ConnectionType      connectionType,
+        ::NetherNet::NetworkID const& netherNetId,
+        ::std::string&                serverRegion,
+        int                           serviceQuality
     );
 
     MCAPI_C void* $ctor(

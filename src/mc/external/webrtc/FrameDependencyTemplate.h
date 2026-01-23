@@ -21,20 +21,13 @@ public:
 public:
     // prevent constructor by default
     FrameDependencyTemplate& operator=(FrameDependencyTemplate const&);
+    FrameDependencyTemplate(FrameDependencyTemplate const&);
     FrameDependencyTemplate();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FrameDependencyTemplate(::webrtc::FrameDependencyTemplate const&);
-
     MCNAPI ~FrameDependencyTemplate();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::FrameDependencyTemplate const&);
     // NOLINTEND
 
 public:

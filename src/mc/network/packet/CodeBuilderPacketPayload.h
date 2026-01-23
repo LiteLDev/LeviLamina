@@ -12,7 +12,6 @@ public:
 
 public:
     // prevent constructor by default
-    CodeBuilderPacketPayload& operator=(CodeBuilderPacketPayload const&);
     CodeBuilderPacketPayload(CodeBuilderPacketPayload const&);
     CodeBuilderPacketPayload();
 
@@ -20,6 +19,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::CodeBuilderPacketPayload& operator=(::CodeBuilderPacketPayload&&);
+
+    MCFOLD ::CodeBuilderPacketPayload& operator=(::CodeBuilderPacketPayload const&);
 
     MCAPI ~CodeBuilderPacketPayload();
     // NOLINTEND

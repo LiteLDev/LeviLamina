@@ -40,12 +40,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LevelChunkBlockActorStorage(::LevelChunkBlockActorStorage::TrackingMode trackingMode);
 
-    MCAPI ::std::pair<
-        ::std::_List_const_iterator<::std::_List_val<
-            ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>,
-        bool>
-    emplace(::ChunkBlockPos pos, ::std::shared_ptr<::BlockActor> blockActor);
-
     MCAPI ::std::_List_const_iterator<::std::_List_val<
         ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>
     find(::ChunkBlockPos const& pos) const;

@@ -28,9 +28,6 @@ public:
         ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&
     );
 
-    MCNAPI_S ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&
-    operator=(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&&);
-
     MCNAPI ~ScriptInventoryItemEventFilterProcessedData();
     // NOLINTEND
 

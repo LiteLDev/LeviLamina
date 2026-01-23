@@ -30,11 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~LocalLocalizationDictionary() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~LocalLocalizationDictionary() /*override*/;
-#endif
 
     virtual ::std::string getLocString(::std::string const& locKey) const /*override*/;
 
@@ -55,12 +51,6 @@ public:
     MCNAPI_C bool _appendLoc(::std::string const& locCode, ::Localization& localizationObjToAppendLoc);
 
     MCNAPI_C void _initialize();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

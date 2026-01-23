@@ -19,6 +19,7 @@ class ItemInstance;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class ComparatorBlock : public ::ActorBlock {
@@ -38,9 +39,6 @@ public:
     virtual bool isInteractiveBlock() const /*override*/;
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -73,6 +71,8 @@ public:
     // NOLINTBEGIN
     MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool loading) const;
 
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
     MCAPI void _refreshOutputState(::BlockSource& region, ::BlockPos const& pos, int strength) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -92,8 +92,6 @@ public:
     MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 

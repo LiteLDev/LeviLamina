@@ -37,10 +37,6 @@ public:
 
     MCNAPI void thenFail(::std::string error);
 
-    MCNAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence> thenIdle(int tickDelay);
-
-    MCNAPI void thenSucceed();
-
     MCNAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
     thenWait(::Scripting::Closure<void()> fn);
 

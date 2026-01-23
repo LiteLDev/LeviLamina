@@ -21,6 +21,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::SharedTypes::Reference<1>, int>> mEntities;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::SharedTypes::Reference<0>, int>> mBlocks;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>>               mBlockTags;
     ::ll::TypedStorage<4, 8, ::std::optional<int>>                                    mEntityDefault;
     ::ll::TypedStorage<4, 8, ::std::optional<int>>                                    mBlockDefault;
     // NOLINTEND

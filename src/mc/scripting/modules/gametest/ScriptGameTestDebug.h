@@ -15,8 +15,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static void debugFail(::std::string const& message);
-
     MCNAPI static void timeout(int seconds);
     // NOLINTEND
 };

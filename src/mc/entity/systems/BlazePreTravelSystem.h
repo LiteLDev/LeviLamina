@@ -2,10 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
+
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct BlazeFlagComponent;
 // clang-format on
 
 class BlazePreTravelSystem {
@@ -14,5 +20,12 @@ public:
     // NOLINTBEGIN
     MCNAPI static void
     _doBlazePreTravelSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
+
+    MCNAPI static void _tickBlazePreTravelSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::BlazeFlagComponent>,
+            ::ActorOwnerComponent> view
+    );
     // NOLINTEND
 };

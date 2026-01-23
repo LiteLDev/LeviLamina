@@ -117,6 +117,8 @@ public:
 
     MCNAPI void _reset();
 
+    MCNAPI bool _resolveURI();
+
     MCNAPI bool _sendControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);
 
     MCNAPI bool _sendDataFrame(uchar const* payload, uint size, ::OpCode opCode, bool isFinalFragment);

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/webrtc/RTCErrorOr.h"
-#include "mc/external/webrtc/RtpTransceiverDirection.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -188,32 +187,9 @@ public:
         ::cricket::SessionDescription const*  current_description
     ) const;
 
-    MCNAPI ::std::unique_ptr<::cricket::TransportDescription> CreateTransportAnswer(
-        ::std::string const&                 content_name,
-        ::cricket::SessionDescription const* offer_desc,
-        ::cricket::TransportOptions const&   transport_options,
-        ::cricket::SessionDescription const* current_desc,
-        bool                                 require_transport_attributes,
-        ::cricket::IceCredentialsIterator*   ice_credentials
-    ) const;
-
-    MCNAPI ::std::vector<::cricket::Codec> const& GetAudioCodecsForAnswer(
-        ::webrtc::RtpTransceiverDirection const& offer,
-        ::webrtc::RtpTransceiverDirection const& answer
-    ) const;
-
-    MCNAPI ::std::vector<::cricket::Codec> const&
-    GetAudioCodecsForOffer(::webrtc::RtpTransceiverDirection const& direction) const;
-
     MCNAPI void GetCodecsForAnswer(
         ::std::vector<::cricket::ContentInfo const*> const& current_active_contents,
         ::cricket::SessionDescription const&                remote_offer,
-        ::std::vector<::cricket::Codec>*                    audio_codecs,
-        ::std::vector<::cricket::Codec>*                    video_codecs
-    ) const;
-
-    MCNAPI void GetCodecsForOffer(
-        ::std::vector<::cricket::ContentInfo const*> const& current_active_contents,
         ::std::vector<::cricket::Codec>*                    audio_codecs,
         ::std::vector<::cricket::Codec>*                    video_codecs
     ) const;
@@ -224,14 +200,6 @@ public:
         bool                                                     extmap_allow_mixed,
         ::std::vector<::cricket::MediaDescriptionOptions> const& media_description_options
     ) const;
-
-    MCNAPI ::std::vector<::cricket::Codec> const& GetVideoCodecsForAnswer(
-        ::webrtc::RtpTransceiverDirection const& offer,
-        ::webrtc::RtpTransceiverDirection const& answer
-    ) const;
-
-    MCNAPI ::std::vector<::cricket::Codec> const&
-    GetVideoCodecsForOffer(::webrtc::RtpTransceiverDirection const& direction) const;
 
     MCNAPI MediaSessionDescriptionFactory(
         ::cricket::MediaEngineInterface*              media_engine,

@@ -23,14 +23,13 @@ public:
 public:
     // prevent constructor by default
     ActorSpawnRuleData& operator=(ActorSpawnRuleData const&);
+    ActorSpawnRuleData(ActorSpawnRuleData const&);
     ActorSpawnRuleData();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorSpawnRuleData(::ActorSpawnRuleData&&);
-
-    MCAPI ActorSpawnRuleData(::ActorSpawnRuleData const&);
 
     MCAPI ::ActorSpawnRuleData& operator=(::ActorSpawnRuleData&&);
 
@@ -41,8 +40,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ActorSpawnRuleData&&);
-
-    MCAPI void* $ctor(::ActorSpawnRuleData const&);
     // NOLINTEND
 
 public:

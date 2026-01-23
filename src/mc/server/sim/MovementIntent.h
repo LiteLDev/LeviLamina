@@ -9,6 +9,11 @@
 #include "mc/server/sim/NavigateToPositionsIntent.h"
 #include "mc/server/sim/VoidMoveIntent.h"
 
+// auto generated forward declare list
+// clang-format off
+class SimulatedPlayer;
+// clang-format on
+
 namespace sim {
 
 struct MovementIntent {
@@ -34,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MovementIntent(
+    MCNAPI_C explicit MovementIntent(
         ::std::variant<
             ::sim::VoidMoveIntent,
             ::sim::MoveInDirectionIntent,
@@ -43,13 +48,15 @@ public:
             ::sim::NavigateToEntityIntent> type
     );
 
+    MCNAPI void finalize(::SimulatedPlayer& player);
+
     MCNAPI ~MovementIntent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCNAPI_C void* $ctor(
         ::std::variant<
             ::sim::VoidMoveIntent,
             ::sim::MoveInDirectionIntent,

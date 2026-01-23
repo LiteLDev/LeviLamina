@@ -10,8 +10,6 @@ namespace Json { class Value; }
 namespace JsonHelpers {
 // functions
 // NOLINTBEGIN
-MCNAPI_C void addBoolField(::Json::Value& rootValue, ::std::string const& fieldName, bool const& value);
-
 MCNAPI_C void addIntField(::Json::Value& rootValue, ::std::string const& fieldName, int const& value);
 
 MCNAPI_C void addStringField(::Json::Value& rootValue, ::std::string const& fieldName, ::std::string const& value);

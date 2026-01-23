@@ -63,7 +63,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Biome() = default;
+    virtual ~Biome();
     // NOLINTEND
 
 public:
@@ -125,6 +125,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BiomeIdType id, ::std::string_view name);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

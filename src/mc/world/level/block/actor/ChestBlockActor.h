@@ -95,9 +95,9 @@ public:
 
     virtual ::std::string getName() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
@@ -115,7 +115,7 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual bool saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
@@ -210,6 +210,8 @@ public:
 
     MCAPI ::std::weak_ptr<::ChestBlockActor::ChestCloser> getChestCloser(::Actor& closingActor);
 
+    MCAPI void pairWithLeadChest(::ChestBlockActor* leadChest, ::BlockSource& region);
+
     MCAPI void playCloseSound(::BlockSource& region);
 
     MCAPI void playOpenSound(::BlockSource& region);
@@ -252,9 +254,9 @@ public:
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int index) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
@@ -272,7 +274,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI bool $saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const;
+    MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCAPI void $tick(::BlockSource& region);
 

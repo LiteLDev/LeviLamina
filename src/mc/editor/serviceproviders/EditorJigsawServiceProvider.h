@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class JigsawEditorData;
 class JigsawStructureRegistry;
 class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
@@ -52,6 +53,10 @@ public:
         ::Editor::ScriptModule::ScriptClipboardItem const&,
         ::WeakEntityRef
     ) = 0;
+
+    virtual ::JigsawEditorData const getJigsawBlockData(::BlockPos&, ::WeakEntityRef) = 0;
+
+    virtual void setJigsawBlockData(::BlockPos&, ::WeakEntityRef, ::JigsawEditorData) = 0;
 
     virtual ::Bedrock::PubSub::Subscription
         listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)>) = 0;

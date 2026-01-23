@@ -51,6 +51,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CustomComponentsItemComponent& operator=(CustomComponentsItemComponent const&);
+    CustomComponentsItemComponent(CustomComponentsItemComponent const&);
+    CustomComponentsItemComponent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::SharedTypes::v1_21_60::CustomComponentsItemComponent&
+    operator=(::SharedTypes::v1_21_60::CustomComponentsItemComponent&&);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);

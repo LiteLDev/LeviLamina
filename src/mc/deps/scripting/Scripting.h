@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct ArgumentDetails; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting::Reflection { class IFunction; }
 // clang-format on
@@ -11,6 +12,8 @@ namespace Scripting::Reflection { class IFunction; }
 namespace Scripting {
 // functions
 // NOLINTBEGIN
+MCNAPI uint GetDefaultArgCount(::std::vector<::Scripting::ArgumentDetails> const& details);
+
 MCNAPI uint GetInjectedArgCount(::Scripting::Reflection::IFunction* function);
 
 MCNAPI ::std::vector<::std::string> _versionSplit(::std::string const& str, char delim);

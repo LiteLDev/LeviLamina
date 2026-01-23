@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
+#include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 #include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
@@ -32,6 +32,12 @@ MCAPI void forEachItemOnActorChest(
 );
 
 MCAPI void forEachItemOnActorEnderChest(
+    ::Actor const&                            actor,
+    ::CommandIntegerRange const&              slot,
+    ::std::function<void(::ItemStack const&)> callback
+);
+
+MCAPI void forEachItemOnActorEquippable(
     ::Actor const&                            actor,
     ::CommandIntegerRange const&              slot,
     ::std::function<void(::ItemStack const&)> callback

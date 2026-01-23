@@ -15,6 +15,7 @@ namespace Editor::ScriptModule { class ScriptClipboardItem; }
 namespace Editor::Services { class EditorJigsawServiceProvider; }
 namespace Editor::Services { struct EditorJigsawSection; }
 namespace Editor::Services { struct EditorRegistryFile; }
+namespace Editor::Services { struct JigsawBlockData; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -75,12 +76,16 @@ public:
 
     MCNAPI ::std::string getExportLocation();
 
+    MCNAPI ::Editor::Services::JigsawBlockData getJigsawBlockData(::Vec3& pos);
+
     MCNAPI ::std::map<::std::string, ::std::vector<::Editor::Services::EditorRegistryFile>>
     getRegistryData(::std::string const& registryName);
 
     MCNAPI ::std::vector<::std::string> getRegistryList();
 
     MCNAPI ::Editor::ScriptModule::ScriptJigsawService& operator=(::Editor::ScriptModule::ScriptJigsawService&&);
+
+    MCNAPI void setJigsawBlockData(::Vec3& pos, ::Editor::Services::JigsawBlockData& jigsawData);
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::vector<::std::string>, ::Scripting::Error, void>>
     setRegistryData(
@@ -101,6 +106,10 @@ public:
     MCNAPI static ::Scripting::InterfaceBinding bindEditorJigsawSection();
 
     MCNAPI static ::Scripting::InterfaceBinding bindEditorRegistryFile();
+
+    MCNAPI static ::Scripting::InterfaceBinding bindJigsawBlockData();
+
+    MCNAPI static ::Scripting::EnumBinding bindJigsawJointType();
 
     MCNAPI static ::Scripting::EnumBinding bindJigsawJsonType();
 

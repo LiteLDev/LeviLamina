@@ -75,11 +75,5 @@ public:
         ::mce::UUID                                                                                    packId,
         ::std::function<void(::std::string const&, ::std::variant<float, bool, ::std::string> const&)> callback
     );
-
-    MCNAPI void updatePackSetting(
-        ::mce::UUID                                       packId,
-        ::std::string const&                              name,
-        ::std::variant<float, bool, ::std::string> const& value
-    );
     // NOLINTEND
 };

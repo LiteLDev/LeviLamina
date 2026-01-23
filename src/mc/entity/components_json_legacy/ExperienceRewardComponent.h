@@ -21,19 +21,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI int getOnDeathExperience(::Actor& owner) const;
-
-    MCNAPI ~ExperienceRewardComponent();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& mIsExperienceDropEnabledTag();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

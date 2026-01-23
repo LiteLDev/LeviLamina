@@ -27,6 +27,9 @@ public:
         ::LevelComponent&                levelComponent
     );
 
+    MCNAPI static void
+    _tickEventingRequestSystem(::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent, ::LevelComponent> view);
+
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

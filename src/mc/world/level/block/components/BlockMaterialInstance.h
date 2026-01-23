@@ -11,7 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ClientBlockPipeline { class Material; }
+namespace ClientBlockPipeline { struct Material; }
 // clang-format on
 
 struct BlockMaterialInstance {
@@ -37,6 +37,8 @@ public:
     MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance&&);
 
     MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance const&);
+
+    MCAPI ::std::string renderLayerToString(::std::string const& defaultValue) const;
 
     MCAPI ~BlockMaterialInstance();
     // NOLINTEND

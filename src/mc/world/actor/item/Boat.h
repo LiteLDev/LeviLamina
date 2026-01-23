@@ -105,7 +105,7 @@ public:
 
     MCAPI float $getPassengerYRotation(::Actor const& passenger) const;
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
 

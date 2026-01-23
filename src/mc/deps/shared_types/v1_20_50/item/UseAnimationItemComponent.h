@@ -14,10 +14,6 @@ namespace SharedTypes::v1_20_50 {
 
 struct UseAnimationItemComponent {
 public:
-    // UseAnimationItemComponent inner types define
-    using Animation = ::SharedTypes::Legacy::UseAnimation;
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::UseAnimation> mAnimation;

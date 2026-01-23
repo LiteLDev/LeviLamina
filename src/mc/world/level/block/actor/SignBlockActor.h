@@ -105,6 +105,8 @@ public:
         // NOLINTBEGIN
         MCAPI_C CachedMessageData(::SignBlockActor::CachedMessageData&&);
 
+        MCAPI_C ::SignBlockActor::CachedMessageData& operator=(::SignBlockActor::CachedMessageData&&);
+
         MCAPI_C ~CachedMessageData();
         // NOLINTEND
 
@@ -190,19 +192,13 @@ public:
 
         MCAPI bool save(::CompoundTag& tag) const;
 
-        MCAPI_C void setCachedMessage(::SignBlockActor::CachedMessageData cachedMessage);
+        MCAPI void setEditedBy(::std::string const& playerXuid);
 
         MCAPI void setMessage(::std::string message);
 
         MCAPI void setMessage(::TextObjectRoot message);
 
         MCAPI ~Text();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static bool validateText(::CompoundTag const& tag);
         // NOLINTEND
 
     public:
@@ -245,7 +241,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SignBlockActor() /*override*/;
+    virtual ~SignBlockActor() /*override*/ = default;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -294,6 +290,8 @@ public:
 
     MCAPI_C void setMessage(::SignTextSide side, ::std::string message);
 
+    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
+
     MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
     // NOLINTEND
 
@@ -301,12 +299,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI_S void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

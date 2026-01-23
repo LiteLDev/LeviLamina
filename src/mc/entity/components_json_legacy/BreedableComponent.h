@@ -9,9 +9,10 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
-class AttributeInstance;
+class AttributeInstanceConstRef;
 class BreedableDefinition;
 class IRandom;
+class ItemDescriptor;
 class ItemStack;
 class Player;
 struct ActorUniqueID;
@@ -81,7 +82,12 @@ public:
 
     MCNAPI void _spawnLoveParticles(::Actor& owner);
 
-    MCNAPI void _useBreedItem(::Actor& owner, ::Player& player, ::ItemStack const&);
+    MCNAPI void _useBreedItem(
+        ::Actor&  owner,
+        ::Player& player,
+        ::ItemStack const&,
+        ::std::optional<::ItemDescriptor> const& resultItem
+    );
 
     MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
@@ -95,10 +101,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void setOffspringAttributes(
+        ::MutableAttributeWithContext& offspring,
+        ::AttributeInstanceConstRef    owner,
+        ::AttributeInstanceConstRef    partner
+    );
+
     MCNAPI static void setOffspringAttributesWithParentCentricBlending(
         ::MutableAttributeWithContext& offspring,
-        ::AttributeInstance const&     owner,
-        ::AttributeInstance const&     partner,
+        ::AttributeInstanceConstRef    owner,
+        ::AttributeInstanceConstRef    partner,
         ::IRandom&                     random,
         float                          attributeRangeMin,
         float                          attributeRangeMax

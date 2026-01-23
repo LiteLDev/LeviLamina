@@ -53,8 +53,6 @@ public:
     MCNAPI void Sequence(::webrtc::RtpPacketToSend& packet);
 
     MCNAPI void SetRtpState(::webrtc::RtpState const& state);
-
-    MCNAPI void UpdateLastPacketState(::webrtc::RtpPacketToSend const& packet);
     // NOLINTEND
 
 public:

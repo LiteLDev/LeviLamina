@@ -14,10 +14,7 @@
 // clang-format off
 class Actor;
 struct ActorAttackEvent;
-struct ActorDiedEvent;
 struct ActorHealthChangedEvent;
-struct ActorHurtEvent;
-struct ActorRemoveEffectEvent;
 struct ActorRemovedEvent;
 struct ProjectileHitEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
@@ -40,15 +37,9 @@ public:
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::ActorRemoveEffectEvent const& actorRemoveEffectEvent) /*override*/;
-
     virtual ::EventResult onEvent(::ActorAttackEvent const& actorAttackEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::ActorHurtEvent const& actorHurtEvent) /*override*/;
-
     virtual ::EventResult onEvent(::ActorHealthChangedEvent const& actorHealthChangedEvent) /*override*/;
-
-    virtual ::EventResult onEvent(::ActorDiedEvent const& actorDiedEvent) /*override*/;
 
     virtual ::EventResult onEvent(::ProjectileHitEvent const& projectileHitEvent) /*override*/;
 
@@ -62,15 +53,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::EventResult $onEvent(::ActorRemovedEvent const& actorRemovedEvent);
 
-    MCFOLD ::EventResult $onEvent(::ActorRemoveEffectEvent const& actorRemoveEffectEvent);
-
     MCAPI ::EventResult $onEvent(::ActorAttackEvent const& actorAttackEvent);
 
-    MCAPI ::EventResult $onEvent(::ActorHurtEvent const& actorHurtEvent);
-
     MCAPI ::EventResult $onEvent(::ActorHealthChangedEvent const& actorHealthChangedEvent);
-
-    MCAPI ::EventResult $onEvent(::ActorDiedEvent const& actorDiedEvent);
 
     MCAPI ::EventResult $onEvent(::ProjectileHitEvent const& projectileHitEvent);
 

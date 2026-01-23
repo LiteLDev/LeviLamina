@@ -129,5 +129,6 @@ enum class ActorFlags : int {
     DoesServerAuthOnlyDismount    = 123,
     BodyRotationAlwaysFollowsHead = 124,
     CanUseVerticalMovementAction  = 125,
-    Count                         = 126,
+    RotationLockedToVehicle       = 126,
+    Count                         = 127,
 };

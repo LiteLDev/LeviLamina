@@ -10,11 +10,12 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk8316e0;
     ::ll::UntypedStorage<8, 72> mUnk696975;
-    ::ll::UntypedStorage<8, 72> mUnk7a6c66;
+    ::ll::UntypedStorage<8, 56> mUnk7a6c66;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    MessageEnvelope& operator=(MessageEnvelope const&);
     MessageEnvelope(MessageEnvelope const&);
     MessageEnvelope();
 
@@ -22,8 +23,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ScriptDebuggerMessages::MessageEnvelope& operator=(::ScriptDebuggerMessages::MessageEnvelope&&);
-
-    MCNAPI ::ScriptDebuggerMessages::MessageEnvelope& operator=(::ScriptDebuggerMessages::MessageEnvelope const&);
 
     MCNAPI ~MessageEnvelope();
     // NOLINTEND

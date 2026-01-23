@@ -50,6 +50,8 @@ public:
         ::std::optional<::gametest::GameTestErrorContext> context_
     );
 
+    MCNAPI ::gametest::GameTestError& operator=(::gametest::GameTestError&&);
+
     MCNAPI ~GameTestError();
     // NOLINTEND
 

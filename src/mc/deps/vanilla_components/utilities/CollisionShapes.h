@@ -38,6 +38,7 @@ public:
 
 public:
     // prevent constructor by default
+    CollisionShapes& operator=(CollisionShapes const&);
     CollisionShapes();
 
 public:
@@ -48,8 +49,6 @@ public:
     MCAPI ::std::pair<::BlockPos, ::Block const*> getBlockPosCurrentlyStandingOn(::AABB box) const;
 
     MCAPI ::CollisionShapes& operator=(::CollisionShapes&&);
-
-    MCAPI ::CollisionShapes& operator=(::CollisionShapes const&);
 
     MCAPI ~CollisionShapes();
     // NOLINTEND

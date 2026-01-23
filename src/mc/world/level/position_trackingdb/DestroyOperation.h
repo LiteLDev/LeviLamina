@@ -39,7 +39,7 @@ public:
     ) /*override*/;
 
     virtual bool _tick(
-        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>,
         ::PositionTrackingDB::TrackingRecord&
     ) /*override*/;
     // NOLINTEND
@@ -54,10 +54,8 @@ public:
         ::PositionTrackingDB::TrackingRecord&                           record
     );
 
-    MCNAPI bool $_tick(
-        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        ::PositionTrackingDB::TrackingRecord&
-    );
+    MCNAPI bool
+    $_tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
 
     // NOLINTEND

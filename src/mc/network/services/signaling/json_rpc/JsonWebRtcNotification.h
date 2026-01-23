@@ -30,7 +30,6 @@ public:
 
     public:
         // prevent constructor by default
-        Params& operator=(Params const&);
         Params(Params const&);
         Params();
 
@@ -38,6 +37,16 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::JsonRpc::JsonWebRtcNotification::Params& operator=(::JsonRpc::JsonWebRtcNotification::Params&&);
+
+        MCNAPI ::JsonRpc::JsonWebRtcNotification::Params& operator=(::JsonRpc::JsonWebRtcNotification::Params const&);
+
+        MCNAPI ~Params();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

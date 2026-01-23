@@ -29,8 +29,6 @@ public:
 
     MCAPI void addChannelTransform(::ExpressionNode const& expression, int axisIndex);
 
-    MCAPI float getFirstChannelFloat(uint64 axisIndex) const;
-
     MCAPI bool operator==(::KeyFrameTransformData const& rhs) const;
     // NOLINTEND
 

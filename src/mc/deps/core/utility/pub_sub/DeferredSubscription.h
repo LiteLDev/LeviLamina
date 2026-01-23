@@ -13,13 +13,13 @@ public:
     // NOLINTBEGIN
     MCNAPI_C uint64 runDeferredEvents(uint64 maxToRun);
 
-    MCNAPI_C ~DeferredSubscription();
+    MCNAPI ~DeferredSubscription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

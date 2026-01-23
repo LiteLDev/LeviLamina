@@ -138,7 +138,7 @@ public:
 
     MCFOLD bool $wasEnabledWithMultiline() const;
 
-    MCAPI bool $isNumbersOnly() const;
+    MCFOLD bool $isNumbersOnly() const;
 
     MCFOLD int $getMaxLength() const;
 

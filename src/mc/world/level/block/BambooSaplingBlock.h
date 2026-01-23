@@ -42,7 +42,7 @@ public:
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    virtual bool isValidAuxValue(int auxValue) const /*override*/;
+    virtual bool isValidAuxValue(int value) const /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
@@ -77,7 +77,7 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCAPI bool $isValidAuxValue(int value) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 

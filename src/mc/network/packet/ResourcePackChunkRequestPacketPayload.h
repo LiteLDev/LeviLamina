@@ -12,7 +12,6 @@ public:
 
 public:
     // prevent constructor by default
-    ResourcePackChunkRequestPacketPayload& operator=(ResourcePackChunkRequestPacketPayload const&);
     ResourcePackChunkRequestPacketPayload(ResourcePackChunkRequestPacketPayload const&);
     ResourcePackChunkRequestPacketPayload();
 
@@ -20,6 +19,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::ResourcePackChunkRequestPacketPayload& operator=(::ResourcePackChunkRequestPacketPayload&&);
+
+    MCFOLD ::ResourcePackChunkRequestPacketPayload& operator=(::ResourcePackChunkRequestPacketPayload const&);
 
     MCAPI ~ResourcePackChunkRequestPacketPayload();
     // NOLINTEND

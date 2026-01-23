@@ -30,8 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_30::Trade& operator=(::SharedTypes::v1_21_30::Trade&&);
-
     MCAPI ::SharedTypes::v1_21_30::Trade& operator=(::SharedTypes::v1_21_30::Trade const&);
 
     MCAPI ~Trade();

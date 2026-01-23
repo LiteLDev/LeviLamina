@@ -169,6 +169,8 @@ public:
 
     MCAPI void initBlockFromDefinition(::Block& block, ::BlockPermutationDescription const& definition);
 
+    MCAPI void initBlockTypeFromDefinition(::BlockType& blockType, ::BlockDefinition const& definition);
+
     MCAPI void initializeBlockFromDefinition(::BlockDefinition const& definition, ::Level& level);
 
     MCAPI ::std::unique_ptr<::BlockDefinition> loadResource(

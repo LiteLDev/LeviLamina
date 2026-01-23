@@ -51,6 +51,8 @@ public:
         ::IMinecraftEventing&                              eventing,
         ::std::string const&                               message
     );
+
+    MCAPI static void setup(::Minecraft& game);
     // NOLINTEND
 
 public:

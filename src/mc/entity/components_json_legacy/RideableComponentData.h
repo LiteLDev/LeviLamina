@@ -32,17 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RideableComponentData(::RideableComponentData&&);
-
     MCNAPI ::RideableComponentData& operator=(::RideableComponentData&&);
 
     MCNAPI ~RideableComponentData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::RideableComponentData&&);
     // NOLINTEND
 
 public:

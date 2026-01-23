@@ -30,7 +30,6 @@ struct NumberOfEnabledControlOptionsEventData;
 struct OverlappingControlsEventData;
 struct PointerLocationEventData;
 struct PointerLocationWithIdEventData;
-struct TextCharEventData;
 struct TouchPadTouchEventData;
 // clang-format on
 
@@ -88,7 +87,7 @@ public:
 
     using ButtonPressHandler = ::std::function<void(::FocusImpact, ::IClientInstance&)>;
 
-    using TextCharHandler = ::std::function<void(::std::string const&, bool, ::FocusImpact, ::IClientInstance&)>;
+    using TextCharHandler = ::std::function<void(::std::string const&, ::FocusImpact, ::IClientInstance&)>;
 
     using CaretLocationHandler = ::std::function<void(int, ::FocusImpact, ::IClientInstance&)>;
 
@@ -137,7 +136,7 @@ public:
         ::std::multimap<uint, ::std::pair<bool, ::std::function<void(::FocusImpact, ::IClientInstance&)>>>;
 
     using TextCharHandlers =
-        ::std::vector<::std::function<void(::std::string const&, bool, ::FocusImpact, ::IClientInstance&)>>;
+        ::std::vector<::std::function<void(::std::string const&, ::FocusImpact, ::IClientInstance&)>>;
 
     using CaretLocationHandlers = ::std::vector<::std::function<void(int, ::FocusImpact, ::IClientInstance&)>>;
 
@@ -192,7 +191,7 @@ public:
     ::ll::TypedStorage<
         8,
         24,
-        ::std::vector<::std::function<void(::std::string const&, bool, ::FocusImpact, ::IClientInstance&)>>>
+        ::std::vector<::std::function<void(::std::string const&, ::FocusImpact, ::IClientInstance&)>>>
         mTextCharHandlers;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void(int, ::FocusImpact, ::IClientInstance&)>>>
         mCaretLocationHandlers;
@@ -282,9 +281,6 @@ public:
 
     MCAPI void
     _handleMappingChange(::InputMapping const* newMapping, ::InputMapping const* oldMapping, int controllerId);
-
-    MCAPI void
-    _handleTextCharEvent(::TextCharEventData const& textChar, ::FocusImpact focusImpact, ::IClientInstance& client);
 
     MCAPI void changeControllerId(int oldId, int newId);
 

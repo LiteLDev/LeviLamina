@@ -36,8 +36,6 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk1762fd;
     ::ll::UntypedStorage<1, 1>  mUnk72d582;
     ::ll::UntypedStorage<4, 4>  mUnkd95614;
-    ::ll::UntypedStorage<4, 4>  mUnkf5610b;
-    ::ll::UntypedStorage<1, 1>  mUnk721e85;
     ::ll::UntypedStorage<1, 1>  mUnkf232b2;
     ::ll::UntypedStorage<4, 4>  mUnk8d88ed;
     ::ll::UntypedStorage<4, 4>  mUnk9bcd0a;
@@ -180,8 +178,6 @@ public:
     );
 
     MCNAPI bool _shouldRenderOffHandItem(::Mob const& mob, ::ItemStack const& offhandItemInstance);
-
-    MCNAPI void prepareCarriedItem(::Mob& mob, ::ItemStack const& item);
 
     MCNAPI void transformToRightItemSpace(
         ::std::vector<::BoneOrientation>& boneOrientations,

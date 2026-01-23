@@ -49,13 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::webrtc::scoped_refptr<::rtc::RTCCertificate>
-    GenerateCertificate(::rtc::KeyParams const& key_params, ::std::optional<uint64> const& expires_ms);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::rtc::Thread* signaling_thread, ::rtc::Thread* worker_thread);

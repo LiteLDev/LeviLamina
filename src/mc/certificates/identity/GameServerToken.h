@@ -12,7 +12,6 @@ class MinecraftServiceKeyManager;
 class PrivateKeyManager;
 struct PlayerAuthenticationInfo;
 struct RawGameServerToken;
-namespace mce { class UUID; }
 // clang-format on
 
 class GameServerToken {
@@ -25,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GameServerToken(GameServerToken const&);
-    GameServerToken();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::DiscoveryEnvironment> getIssuerEnvironment() const;
@@ -37,8 +31,6 @@ public:
     MCAPI ::PlayerAuthenticationInfo getTrustedInfo() const;
 
     MCAPI ::std::string getXuid(bool trustSelfSigned) const;
-
-    MCAPI ::GameServerToken const& operator=(::GameServerToken const& other);
 
     MCAPI ~GameServerToken();
     // NOLINTEND
@@ -55,12 +47,14 @@ public:
 
     MCAPI static bool _validateSelfSigned(::WebToken const& token, int64 currentTime, bool checkExpiration);
 
+    MCAPI static ::GameServerToken
+    createAndValidateSelfSigned(::RawGameServerToken const& rawToken, bool checkExpiration);
+
     MCAPI_C static ::RawGameServerToken createSelfSigned(
-        ::PrivateKeyManager const& signer,
-        int64                      expirationDate,
-        ::mce::UUID const&,
-        ::std::string const& displayName,
-        ::std::string const& xuid
+        ::PrivateKeyManager const&        signer,
+        int64                             expirationDate,
+        ::std::string const&              keyId,
+        ::PlayerAuthenticationInfo const& claims
     );
     // NOLINTEND
 

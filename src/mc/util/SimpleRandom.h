@@ -61,18 +61,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit SimpleRandom(int64 seed);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(int64 seed);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();

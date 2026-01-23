@@ -25,8 +25,6 @@ public:
     // NOLINTBEGIN
     MCNAPI BitBufferWriter(uchar* bytes, uint64 byte_count);
 
-    MCNAPI bool ConsumeBits(uint64 bit_count);
-
     MCNAPI void GetCurrentOffset(uint64* out_byte_offset, uint64* out_bit_offset);
 
     MCNAPI uint64 RemainingBitCount() const;

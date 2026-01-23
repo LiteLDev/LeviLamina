@@ -9,6 +9,8 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
+namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -39,6 +41,11 @@ public:
 
     MCAPI ScriptActorHitAfterEvent(::ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
 
+    MCAPI ScriptActorHitAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                            scope
+    );
+
     MCAPI ~ScriptActorHitAfterEvent();
     // NOLINTEND
 
@@ -54,6 +61,11 @@ public:
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
+
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                            scope
+    );
     // NOLINTEND
 
 public:

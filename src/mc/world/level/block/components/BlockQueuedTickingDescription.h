@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockQueuedTickingDescription : public ::BlockComponentDescription {
@@ -29,6 +30,12 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual ~BlockQueuedTickingDescription() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

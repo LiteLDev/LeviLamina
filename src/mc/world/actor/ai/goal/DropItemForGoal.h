@@ -61,7 +61,7 @@ public:
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    virtual ~DropItemForGoal() /*override*/ = default;
+    virtual ~DropItemForGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -74,6 +74,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

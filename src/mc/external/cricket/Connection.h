@@ -8,20 +8,15 @@
 #include "mc/external/cricket/IceCandidatePairState.h"
 #include "mc/external/cricket/StunRequest.h"
 #include "mc/external/rtc/WeakPtr.h"
-#include "mc/external/webrtc/IceCandidatePairConfigType.h"
-#include "mc/external/webrtc/IceCandidatePairEventType.h"
-#include "mc/external/webrtc/RTCErrorOr.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace cricket { class Candidate; }
 namespace cricket { class IceMessage; }
 namespace cricket { class PortInterface; }
-namespace cricket { class StunAttribute; }
 namespace cricket { class StunByteStringAttribute; }
 namespace cricket { class StunMessage; }
 namespace cricket { class StunRequestManager; }
-namespace cricket { class StunUInt64Attribute; }
 namespace cricket { struct ConnectionInfo; }
 namespace cricket { struct IceFieldTrials; }
 namespace cricket { struct IceParameters; }
@@ -229,7 +224,7 @@ public:
 
     virtual uint64 priority() const;
 
-    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) = 0;
+    virtual int Send(void const*, uint64, ::rtc::PacketOptions const&) = 0;
 
     virtual int GetError() = 0;
 
@@ -261,10 +256,6 @@ public:
     MCNAPI void HandlePiggybackCheckAcknowledgementIfAny(::cricket::StunMessage* msg);
 
     MCNAPI void HandleStunBindingOrGoogPingRequest(::cricket::IceMessage* msg);
-
-    MCNAPI void LogCandidatePairConfig(::webrtc::IceCandidatePairConfigType type);
-
-    MCNAPI void LogCandidatePairEvent(::webrtc::IceCandidatePairEventType type, uint transaction_id);
 
     MCNAPI void MaybeSetRemoteIceParametersAndGeneration(::cricket::IceParameters const& ice_params, int generation);
 
@@ -301,8 +292,6 @@ public:
         ::absl::AnyInvocable<void(::cricket::Connection*, ::rtc::ReceivedPacket const&)> received_packet_callback
     );
 
-    MCNAPI void SendGoogPingResponse(::cricket::StunMessage const* message);
-
     MCNAPI void SendResponseMessage(::cricket::StunMessage const& response);
 
     MCNAPI void SendStunBindingResponse(::cricket::StunMessage const* message);
@@ -311,17 +300,7 @@ public:
 
     MCNAPI void SetLocalCandidateNetworkCost(ushort cost);
 
-    MCNAPI void SetStunDictConsumer(
-        ::std::function<::std::unique_ptr<::cricket::StunAttribute>(::cricket::StunByteStringAttribute const*)>
-                                                                                           goog_delta_consumer,
-        ::std::function<void(::webrtc::RTCErrorOr<::cricket::StunUInt64Attribute const*>)> goog_delta_ack_consumer
-    );
-
-    MCNAPI bool ShouldSendGoogPing(::cricket::StunMessage const* message);
-
     MCNAPI bool Shutdown();
-
-    MCNAPI ::std::string ToDebugId() const;
 
     MCNAPI ::webrtc::IceCandidatePairDescription const& ToLogDescription();
 
@@ -336,15 +315,9 @@ public:
 
     MCNAPI void UpdateState(int64 now);
 
-    MCNAPI uint acked_nomination() const;
-
     MCNAPI bool active() const;
 
     MCNAPI bool connected() const;
-
-    MCNAPI bool dead(int64 now) const;
-
-    MCNAPI int inactive_timeout() const;
 
     MCNAPI int64 last_data_received() const;
 
@@ -356,8 +329,6 @@ public:
 
     MCNAPI int64 last_received() const;
 
-    MCNAPI bool missing_responses(int64 now) const;
-
     MCNAPI ::webrtc::TaskQueueBase* network_thread() const;
 
     MCNAPI bool nominated() const;
@@ -366,19 +337,13 @@ public:
 
     MCNAPI ::cricket::PortInterface* port();
 
-    MCNAPI uint prflx_priority() const;
-
     MCNAPI bool receiving() const;
-
-    MCNAPI int receiving_timeout() const;
 
     MCNAPI int64 receiving_unchanged_since() const;
 
     MCNAPI uint remote_nomination() const;
 
     MCNAPI int rtt() const;
-
-    MCNAPI bool rtt_converged() const;
 
     MCNAPI int rtt_samples() const;
 
@@ -391,8 +356,6 @@ public:
     MCNAPI void set_nomination(uint value);
 
     MCNAPI void set_receiving_timeout(::std::optional<int> receiving_timeout_ms);
-
-    MCNAPI void set_remote_nomination(uint remote_nomination);
 
     MCNAPI void set_selected(bool selected);
 
@@ -411,12 +374,6 @@ public:
     MCNAPI ::cricket::IceCandidatePairState state() const;
 
     MCNAPI ::cricket::ConnectionInfo stats();
-
-    MCNAPI int unwritable_min_checks() const;
-
-    MCNAPI int unwritable_timeout() const;
-
-    MCNAPI bool use_candidate_attr() const;
 
     MCNAPI bool weak() const;
 

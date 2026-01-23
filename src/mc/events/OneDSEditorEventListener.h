@@ -3,13 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/events/AggregationEventListener.h"
+#include "mc/platform/brstd/flat_map.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Http { class Response; }
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Social::Events { class Event; }
+namespace Social::Events { class Property; }
 // clang-format on
 
 namespace Social::Events {
@@ -55,16 +59,28 @@ public:
     // NOLINTBEGIN
     MCNAPI void AddPartA(::std::string const& eventName, ::Json::Value& eventBody, int64 eventTimestamp);
 
-    MCNAPI void AddPartAExtensions(::Json::Value& eventBody);
-
     MCNAPI void AddPartC(::Social::Events::Event const& event, ::Json::Value& eventBody);
 
+    MCNAPI ::std::string BuildCommonSchemaMsg(::Social::Events::Event const& event);
+
     MCNAPI explicit OneDSEditorEventListener(::Core::Path logFileName);
+
+    MCNAPI void _addDynamicPropertiesFromEvent(
+        ::Json::Value& properties,
+        ::brstd::flat_map<
+            ::std::string,
+            ::std::vector<::Social::Events::Property>,
+            ::std::less<::std::string>,
+            ::std::vector<::std::string>,
+            ::std::vector<::std::vector<::Social::Events::Property>>> const& dynamicProperties
+    );
 
     MCNAPI ::std::vector<::std::string> _buildEventPayloads(
         ::std::vector<::Social::Events::Event>                            events,
         ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized
     );
+
+    MCNAPI void _handleAsyncResponse(::Bedrock::Threading::Async<::Bedrock::Http::Response> asyncResponse);
 
     MCNAPI bool _sendBatch();
 

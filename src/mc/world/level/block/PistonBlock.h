@@ -45,9 +45,6 @@ public:
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
-
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
@@ -103,8 +100,6 @@ public:
         ::Vec3 const&     clickPos,
         int               itemValue
     ) const;
-
-    MCFOLD void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
 #ifdef LL_PLAT_S
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;

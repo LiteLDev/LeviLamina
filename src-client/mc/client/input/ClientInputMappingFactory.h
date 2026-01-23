@@ -8,10 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
 class KeyboardRemappingLayout;
 struct Config;
 struct DeviceButtonMapping;
+struct IOptions;
 struct InputMapping;
 struct TouchInputMapping;
 // clang-format on
@@ -30,7 +30,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                 mSwapGamepadButtonsXY;
     ::ll::TypedStorage<1, 1, bool>                                                 mSwapGamepadButtonsAB;
     ::ll::TypedStorage<4, 4, float>                                                mSensitivity;
-    ::ll::TypedStorage<8, 80, ::GamePadRemappingLayout>                            mGameControllerRemappingLayout;
+    ::ll::TypedStorage<8, 96, ::GamePadRemappingLayout>                            mGameControllerRemappingLayout;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::KeyboardRemappingLayout>>          mKeyboardRemappingLayout;
     // NOLINTEND
 
@@ -65,7 +65,7 @@ public:
 
     MCAPI void _activateMapping(::std::string const& mappingName);
 
-    MCFOLD ::InputMapping* _getMappingInternal(::std::string const& mappingName);
+    MCAPI ::InputMapping* _getMappingInternal(::std::string const& mappingName);
 
     MCAPI void onConfigChanged(::Config const& config);
     // NOLINTEND
@@ -85,7 +85,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::InputMapping const* $getMapping(::std::string const& mappingName);
+    MCAPI ::InputMapping const* $getMapping(::std::string const& mappingName);
 
     MCAPI ::TouchInputMapping $_createScreenTouchMapping() const;
 

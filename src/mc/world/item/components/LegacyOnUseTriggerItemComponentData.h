@@ -23,6 +23,8 @@ public:
     MCAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData&&);
 
     MCAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData const&);
+
+    MCAPI ~LegacyOnUseTriggerItemComponentData();
     // NOLINTEND
 
 public:
@@ -31,5 +33,11 @@ public:
     MCFOLD void* $ctor(::LegacyOnUseTriggerItemComponentData&&);
 
     MCFOLD void* $ctor(::LegacyOnUseTriggerItemComponentData const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

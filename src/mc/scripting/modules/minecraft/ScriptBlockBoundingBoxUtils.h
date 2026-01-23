@@ -33,8 +33,6 @@ public:
 
     MCNAPI static bool isInside(::BoundingBox const& box, ::Vec3 const& pos);
 
-    MCNAPI static bool isValid(::BoundingBox const& box);
-
     MCNAPI static ::BoundingBox translate(::BoundingBox const& box, ::Vec3 const& delta);
     // NOLINTEND
 };

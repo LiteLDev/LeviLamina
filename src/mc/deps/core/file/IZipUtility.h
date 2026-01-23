@@ -39,6 +39,15 @@ public:
         ::std::function<::std::string(::Core::PathView)>,
         ::Core::ZipUtils::ZipSettings const&) const = 0;
 
+    virtual ::Bedrock::Result<void> zipFromZip(
+        ::Core::PathView,
+        ::Core::PathView,
+        ::Core::PathView,
+        ::Core::ZipUtils::ZipProgress&,
+        bool,
+        ::Core::ZipUtils::ZipSettings const&
+    ) const = 0;
+
     virtual ::Bedrock::Result<void> unzipInTransaction(
         ::Core::Path const&,
         ::Core::Path const&,

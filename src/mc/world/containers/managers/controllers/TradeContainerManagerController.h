@@ -100,8 +100,6 @@ public:
 
     MCNAPI_C ::MerchantRecipe* getRecipe(int CurrentIndex);
 
-    MCNAPI_C void recipeChanged();
-
     MCNAPI_C void setRecipeIndex(int index);
     // NOLINTEND
 

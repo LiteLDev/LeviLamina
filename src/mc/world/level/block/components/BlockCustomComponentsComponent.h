@@ -52,9 +52,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockCustomComponentsComponent& operator=(BlockCustomComponentsComponent const&);
+    BlockCustomComponentsComponent(BlockCustomComponentsComponent const&);
+    BlockCustomComponentsComponent();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
+
+    MCAPI ::BlockCustomComponentsComponent& operator=(::BlockCustomComponentsComponent&&);
 
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,

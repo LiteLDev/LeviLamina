@@ -90,7 +90,7 @@ public:
 
     MCAPI void $tick();
 
-    MCFOLD bool $hasReachedTarget() const;
+    MCAPI bool $hasReachedTarget() const;
 
     MCAPI int $_nextStartTick();
 

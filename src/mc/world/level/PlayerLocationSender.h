@@ -95,10 +95,6 @@ public:
 
     MCAPI void _updatePlayerData(::Player const& player);
 
-    MCAPI void removePlayerData(::ActorUniqueID const& playerID);
-
-    MCAPI void updatePlayersData(::std::vector<::WeakEntityRef> const& gameplayUsers);
-
     MCAPI ~PlayerLocationSender();
     // NOLINTEND
 

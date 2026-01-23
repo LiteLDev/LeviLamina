@@ -26,6 +26,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                             mEffectId;
     ::ll::TypedStorage<4, 4, int>                             mEffectAmplifier;
     ::ll::TypedStorage<1, 1, bool>                            mShowParticles;
+    ::ll::TypedStorage<1, 1, bool>                            mAmbient;
     ::ll::TypedStorage<8, 8, ::PlayerInputTick>               mTick;
     // NOLINTEND
 };

@@ -62,8 +62,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void ActivateRtcpMux();
-
     MCNAPI ::webrtc::RTCError AddRemoteCandidates(::std::vector<::cricket::Candidate> const& candidates);
 
     MCNAPI ::std::optional<::rtc::SSLRole> GetDtlsRole() const;
@@ -126,16 +124,6 @@ public:
     ) const;
 
     MCNAPI ~JsepTransport();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::webrtc::RTCError SetNegotiatedDtlsParameters(
-        ::cricket::DtlsTransportInternal* dtls_transport,
-        ::std::optional<::rtc::SSLRole>   dtls_role,
-        ::rtc::SSLFingerprint*            remote_fingerprint
-    );
     // NOLINTEND
 
 public:

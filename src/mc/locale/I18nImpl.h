@@ -184,7 +184,7 @@ public:
 
     MCAPI ::std::string _generatePackKeyPrefix(::PackManifest const& manifest);
 
-    MCAPI_S ::std::string& _getLocaleCodeFor(::std::string const& code);
+    MCAPI ::std::string& _getLocaleCodeFor(::std::string const& code);
 
     MCAPI void _notifyLanguagesLoaded();
 

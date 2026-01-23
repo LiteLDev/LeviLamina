@@ -6,6 +6,7 @@
 // clang-format off
 class Attribute;
 class AttributeInstance;
+class AttributeInstanceRef;
 class AttributeModifier;
 class BaseAttributeMap;
 class CompoundTag;
@@ -18,7 +19,7 @@ class SharedAttributes {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::AttributeInstance*
+    MCAPI static ::AttributeInstanceRef
     _legacyGetInstance(::BaseAttributeMap& attributes, ::std::string const& attributeName);
 
     MCAPI static ::std::string const& _legacyGetName(::std::string const& attributeName);

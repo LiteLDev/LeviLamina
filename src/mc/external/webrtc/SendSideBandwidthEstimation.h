@@ -78,27 +78,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void ApplyTargetLimits(::webrtc::Timestamp at_time);
-
     MCNAPI ::webrtc::DataRate GetEstimatedLinkCapacity() const;
 
     MCNAPI int GetMinBitrate() const;
 
-    MCNAPI ::webrtc::DataRate GetUpperLimit() const;
-
-    MCNAPI bool IsInStartPhase(::webrtc::Timestamp at_time) const;
-
     MCNAPI bool IsRttAboveLimit() const;
 
     MCNAPI bool LossBasedBandwidthEstimatorV1Enabled() const;
-
-    MCNAPI bool LossBasedBandwidthEstimatorV1ReadyForUse() const;
-
-    MCNAPI bool LossBasedBandwidthEstimatorV2Enabled() const;
-
-    MCNAPI bool LossBasedBandwidthEstimatorV2ReadyForUse() const;
-
-    MCNAPI void MaybeLogLossBasedEvent(::webrtc::Timestamp at_time);
 
     MCNAPI void MaybeLogLowBitrateWarning(::webrtc::DataRate bitrate, ::webrtc::Timestamp at_time);
 
@@ -134,8 +120,6 @@ public:
         ::std::optional<::webrtc::DataRate>       probe_bitrate,
         bool                                      in_alr
     );
-
-    MCNAPI void UpdateMinHistory(::webrtc::Timestamp at_time);
 
     MCNAPI void UpdatePacketsLost(int64 packets_lost, int64 number_of_packets, ::webrtc::Timestamp at_time);
 

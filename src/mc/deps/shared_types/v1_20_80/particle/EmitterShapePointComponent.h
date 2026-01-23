@@ -27,7 +27,12 @@ public:
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~EmitterShapePointComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~EmitterShapePointComponent() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

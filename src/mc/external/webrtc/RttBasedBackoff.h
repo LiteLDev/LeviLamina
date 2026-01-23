@@ -5,8 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class FieldTrialsView; }
-namespace webrtc { class TimeDelta; }
-namespace webrtc { class Timestamp; }
 // clang-format on
 
 namespace webrtc {
@@ -35,13 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::TimeDelta CorrectedRtt() const;
-
     MCNAPI bool IsRttAboveLimit() const;
 
     MCNAPI explicit RttBasedBackoff(::webrtc::FieldTrialsView const* key_value_config);
-
-    MCNAPI void UpdatePropagationRtt(::webrtc::Timestamp at_time, ::webrtc::TimeDelta propagation_rtt);
 
     MCNAPI ~RttBasedBackoff();
     // NOLINTEND

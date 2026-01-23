@@ -46,7 +46,6 @@ public:
 public:
     // prevent constructor by default
     RTCIceCandidatePairStats& operator=(RTCIceCandidatePairStats const&);
-    RTCIceCandidatePairStats(RTCIceCandidatePairStats const&);
     RTCIceCandidatePairStats();
 
 public:
@@ -58,12 +57,14 @@ public:
 
     virtual char const* type() const /*override*/;
 
-    virtual ~RTCIceCandidatePairStats() /*override*/;
+    virtual ~RTCIceCandidatePairStats() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI RTCIceCandidatePairStats(::webrtc::RTCIceCandidatePairStats const&);
+
     MCNAPI RTCIceCandidatePairStats(::std::string id, ::webrtc::Timestamp timestamp);
     // NOLINTEND
 
@@ -76,13 +77,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string id, ::webrtc::Timestamp timestamp);
-    // NOLINTEND
+    MCNAPI void* $ctor(::webrtc::RTCIceCandidatePairStats const&);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::std::string id, ::webrtc::Timestamp timestamp);
     // NOLINTEND
 
 public:

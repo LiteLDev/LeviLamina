@@ -9,7 +9,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class HashedString;
+class ItemStackBase;
 class SemVersion;
 namespace SharedTypes::v1_20_50 { struct DiggerItemComponent; }
 namespace cereal { struct ReflectionCtx; }
@@ -65,6 +67,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DiggerItemComponent(::SharedTypes::v1_20_50::DiggerItemComponent component);
+
+    MCAPI float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
     // NOLINTEND
 
 public:

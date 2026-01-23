@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 struct VariantParameterList;
 // clang-format on
 
@@ -41,6 +42,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void preNormalTick();
+
+    MCAPI void signalTo(::Player const& player, ::BlockPos& target);
     // NOLINTEND
 
 public:

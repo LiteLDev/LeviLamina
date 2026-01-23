@@ -12,6 +12,7 @@
 #include "mc/client/gui/screens/GamepadCursorData.h"
 #include "mc/client/gui/screens/TextEditFocusedListener.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/TextboxTextUpdateReason.h"
@@ -26,9 +27,7 @@ class KeyboardManager;
 class RectangleArea;
 class ScreenController;
 class ScreenViewProxy;
-class UIControl;
 class UIMeasureStrategy;
-class UIPropertyBag;
 class UIRenderContext;
 struct DataBindingComponent;
 struct FocusComponent;
@@ -44,8 +43,11 @@ struct SliderComponent;
 struct TextEditComponent;
 struct TouchPadTouchEventData;
 struct UIAnimationController;
+struct UIControl;
 struct UIControlFactory;
+struct UIPropertyBag;
 struct VisualTree;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -138,6 +140,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::UIControl>>> mFlyingItemRendererControls;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::UIControl>>> mSliderControls;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::UIControl>>> mCustomRendererControls;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::UIControl>>> mCustomFrameUpdateControls;
     ::ll::TypedStorage<
         8,
         16,
@@ -161,7 +164,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                       mCursorTick;
     ::ll::TypedStorage<4, 4, float const>                                               mControllerXThreshold;
     ::ll::TypedStorage<4, 4, float const>                                               mControllerYThreshold;
-    ::ll::TypedStorage<4, 64, ::glm::vec2[8]>                                           mControllerStickValues;
+    ::ll::TypedStorage<4, 72, ::glm::vec2[9]>                                           mControllerStickValues;
     ::ll::TypedStorage<4, 8, ::GamepadCursorData>                                       mGamepadCursorData;
     ::ll::TypedStorage<4, 8, ::glm::vec2>                                               mGamepadCursorPosition;
     ::ll::TypedStorage<1, 1, bool>                                                      mHasSetInitialPosition;
@@ -191,21 +194,22 @@ public:
     ::ll::TypedStorage<8, 40, ::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>> mCustomRendererEvents;
     ::ll::TypedStorage<4, 8, ::glm::vec2>                                               mStartLocation;
     ::ll::TypedStorage<4, 4, float>                                                     mTimeUntilNextPointerHeldEvent;
-    ::ll::TypedStorage<4, 4, float>                                                mDelayBetweenEachPointerHeldEvent;
-    ::ll::TypedStorage<1, 1, bool>                                                 mShouldSendPointerHeldEvents;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ScreenView::DelayedCommand>>         mDelayedCommands;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScreenViewProxy>>                 mProxy;
-    ::ll::TypedStorage<1, 1, bool>                                                 mIsExiting;
-    ::ll::TypedStorage<1, 1, bool>                                                 mIsEntering;
-    ::ll::TypedStorage<1, 1, bool>                                                 mIsInitialized;
-    ::ll::TypedStorage<1, 1, bool>                                                 mHasFocus;
-    ::ll::TypedStorage<1, 1, bool>                                                 mHasHadFocus;
-    ::ll::TypedStorage<1, 1, bool>                                                 mIsTerminating;
-    ::ll::TypedStorage<1, 1, bool>                                                 mDirectionalButtonWasPressed;
-    ::ll::TypedStorage<1, 1, bool>                                                 mDelayedFocusRefresh;
-    ::ll::TypedStorage<1, 1, ::TextEditFocusedListener>                            mTextEditFocusedListener;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ScreenLoadTimeTracker>> mScreenLoadTimeTracker;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                     mFocusChangeSub;
+    ::ll::TypedStorage<4, 4, float>                                        mDelayBetweenEachPointerHeldEvent;
+    ::ll::TypedStorage<1, 1, bool>                                         mShouldSendPointerHeldEvents;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScreenView::DelayedCommand>> mDelayedCommands;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScreenViewProxy>>         mProxy;
+    ::ll::TypedStorage<8, 40, ::std::queue<::std::string, ::std::deque<::std::string>>> mQueuedTextChange;
+    ::ll::TypedStorage<1, 1, bool>                                                      mIsExiting;
+    ::ll::TypedStorage<1, 1, bool>                                                      mIsEntering;
+    ::ll::TypedStorage<1, 1, bool>                                                      mIsInitialized;
+    ::ll::TypedStorage<1, 1, bool>                                                      mHasFocus;
+    ::ll::TypedStorage<1, 1, bool>                                                      mHasHadFocus;
+    ::ll::TypedStorage<1, 1, bool>                                                      mIsTerminating;
+    ::ll::TypedStorage<1, 1, bool>                                                      mDirectionalButtonWasPressed;
+    ::ll::TypedStorage<1, 1, bool>                                                      mDelayedFocusRefresh;
+    ::ll::TypedStorage<1, 1, ::TextEditFocusedListener>                                 mTextEditFocusedListener;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ScreenLoadTimeTracker>>      mScreenLoadTimeTracker;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mFocusChangeSub;
     // NOLINTEND
 
 public:
@@ -322,8 +326,6 @@ public:
     MCAPI void
     _handleTTSOnSliderMovement(::SliderComponent* sliderComponent, ::std::shared_ptr<::UIControl>& focusedControl);
 
-    MCAPI bool _hasAnimationWithPlayAndEndEventId(uint playEventId, uint endEventId) const;
-
     MCAPI bool _hasVisibleAnimationWithEndEventId(uint id) const;
 
     MCAPI bool _isFocusable(::FocusComponent const& focus) const;
@@ -343,6 +345,8 @@ public:
     MCAPI void _processControllerFocusChange(::DirectionId directionId);
 
     MCAPI void _processEvents(::ScreenInputContext& context);
+
+    MCAPI void _processQueuedText();
 
     MCAPI void _queueTextToSpeechIfEnabled(
         ::std::shared_ptr<::UIControl> focusedControl,
@@ -411,7 +415,7 @@ public:
     MCAPI bool
     handlePointerLocation(::glm::vec2 const& position, bool forceMotionlessPointer, ::FocusImpact focusImpact);
 
-    MCAPI void handleTextChar(::std::string const& inputUtf8, bool keepImePosition, ::FocusImpact focusImpact);
+    MCAPI void handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact);
 
     MCAPI void handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact);
 
@@ -449,6 +453,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>&
+    mDebugChangePublisher();
+
     MCAPI static bool& sIsDebuggingFocus();
 
     MCAPI static bool& sRenderDebugControls();

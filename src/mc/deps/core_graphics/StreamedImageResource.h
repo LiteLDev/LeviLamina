@@ -16,12 +16,8 @@ class StreamedImageResource : public ::cg::ImageResource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>> mImageData;
+    ::ll::TypedStorage<8, 56, ::cg::ImageResource::StreamedResource> mImageData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StreamedImageResource();
 
 public:
     // virtual functions
@@ -36,24 +32,12 @@ public:
 
     virtual ::cg::ImageBuffer const* getImage(uint mipLevel) const /*override*/;
 
-    virtual void addImage(::cg::ImageBuffer imageToAdd) /*override*/;
+    virtual void addImage(::cg::ImageBuffer) /*override*/;
 
     virtual void addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd) /*override*/;
 
-    virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
+    virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource>
     unwrapImageData() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI_C StreamedImageResource(::std::vector<::cg::ImageBuffer>&& imageBuffers, uint64&& hash);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(::std::vector<::cg::ImageBuffer>&& imageBuffers, uint64&& hash);
     // NOLINTEND
 
 public:
@@ -68,12 +52,11 @@ public:
 
     MCAPI ::cg::ImageBuffer const* $getImage(uint mipLevel) const;
 
-    MCAPI void $addImage(::cg::ImageBuffer imageToAdd);
+    MCAPI void $addImage(::cg::ImageBuffer);
 
     MCAPI void $addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
 
-    MCAPI ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
-    $unwrapImageData();
+    MCAPI ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource> $unwrapImageData();
 #endif
 
 

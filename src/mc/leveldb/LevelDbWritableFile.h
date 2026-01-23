@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelDbWritableFile(::std::string filename, ::LevelDbLazyFile file);
+    MCNAPI LevelDbWritableFile(::std::string filename, ::LevelDbLazyFile&& file);
 
     MCNAPI ::leveldb::Status SyncDirIfManifest();
     // NOLINTEND
@@ -46,7 +46,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string filename, ::LevelDbLazyFile file);
+    MCNAPI void* $ctor(::std::string filename, ::LevelDbLazyFile&& file);
     // NOLINTEND
 
 public:

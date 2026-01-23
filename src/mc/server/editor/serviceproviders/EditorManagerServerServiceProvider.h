@@ -18,6 +18,9 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription
         registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)>) = 0;
+
+    virtual ::Bedrock::PubSub::Subscription
+        registerLevelTickSubscriber(::std::function<void(::Editor::EditorManagerServer&)>) = 0;
     // NOLINTEND
 
 public:

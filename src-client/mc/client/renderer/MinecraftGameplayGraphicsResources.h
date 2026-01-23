@@ -33,10 +33,10 @@ public:
     ::ll::TypedStorage<8, 8, ::cg::ResourceManagerTracker<::DynamicImageResourceManager>> mDynamicImageTracker;
     ::ll::TypedStorage<8, 24, ::TickingTextures>                                          mTickingTextures;
     ::ll::TypedStorage<8, 16, ::mcr::DynamicTextureResourceManager>                       mDynamicTextures;
-    ::ll::TypedStorage<8, 80, ::mce::TextureResourceService>                              mTextureResourceService;
+    ::ll::TypedStorage<8, 64, ::mce::TextureResourceService>                              mTextureResourceService;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::BufferResourceService>>            mBufferResourceService;
     ::ll::TypedStorage<8, 72, ::mce::ImmediateBufferResourceService>               mImmediateBufferResourceService;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::RuntimeLocalLightingConfig const>> mLocalLightingConfig;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::RuntimeLocalLightingConfig const>> mRuntimeLocalLightingConfig;
     // NOLINTEND
 
 public:

@@ -7,6 +7,16 @@ public:
     using floatN2::floatN2;
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI_C ::Vec2 operator*(float s) const;
+
+    MCAPI_C ::Vec2 operator+(::Vec2 const& rhs) const;
+
+    MCAPI_S ::Vec2 operator-(::Vec2 const& rhs) const;
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI_C static ::Vec2 const& LOWEST();

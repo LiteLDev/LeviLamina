@@ -27,11 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WebToken();
+    MCAPI_C WebToken();
 
     MCAPI explicit WebToken(::std::string token);
 
     MCAPI ::std::string _signatureToDER() const;
+
+    MCAPI ::std::string getKeyId() const;
 
     MCAPI_C ::std::string getSignerPublicKey() const;
 
@@ -52,14 +54,15 @@ public:
     MCAPI static ::std::unique_ptr<::WebToken> createFromData(
         ::Json::Value const&                                           dataInfo,
         ::PrivateKeyManager const&                                     manager,
-        ::std::variant<::PublicKeySignatureType, ::CertificateSNIType> signatureType
+        ::std::variant<::PublicKeySignatureType, ::CertificateSNIType> signatureType,
+        ::Json::Value const&                                           additionalHeaderClaims
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI_C void* $ctor();
 
     MCAPI void* $ctor(::std::string token);
     // NOLINTEND

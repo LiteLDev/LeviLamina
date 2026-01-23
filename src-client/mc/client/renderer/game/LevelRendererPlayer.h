@@ -31,7 +31,6 @@ class Level;
 class LevelRenderer;
 class Matrix;
 class Mob;
-class Options;
 class Player;
 class Random;
 class ScreenContext;
@@ -49,6 +48,7 @@ struct DeferredSound;
 struct DirectionalLightRenderData;
 struct LevelRenderPreRenderUpdateParameters;
 struct NameTagRenderObjectCollection;
+struct Options;
 struct RenderChunkShared;
 struct ResolvedItemIconInfo;
 struct SkyRenderObject;
@@ -57,9 +57,9 @@ struct SoundMapping;
 struct TextureUVCoordinateSet;
 struct ViewRenderData;
 struct ViewRenderObject;
-namespace mce { class Camera; }
 namespace mce { class Color; }
 namespace mce { class MaterialPtr; }
+namespace mce { struct Camera; }
 namespace mce::framebuilder { struct SkyWeatherParameters; }
 // clang-format on
 
@@ -190,7 +190,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk175598;
     ::ll::UntypedStorage<8, 16>  mUnk5b149d;
     ::ll::UntypedStorage<8, 8>   mUnk226ab5;
-    ::ll::UntypedStorage<8, 64>  mUnkb0a4ef;
+    ::ll::UntypedStorage<8, 640> mUnkb0a4ef;
     // NOLINTEND
 
 public:
@@ -408,8 +408,6 @@ public:
     MCNAPI float getFov(float a, bool enableVariableFOV) const;
 
     MCNAPI float getFovWithoutGameplay() const;
-
-    MCNAPI void playDeferredSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
 
     MCNAPI void playSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch) const;
 

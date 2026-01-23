@@ -150,11 +150,11 @@ public:
 
     MCNAPI ::std::string $getFullLanguageCode();
 
+    MCNAPI ::UIProfile $getDefaultUIProfile(::UIScalingRules uiScalingRules) const;
+
     MCNAPI ::std::optional<::ScreenshotOptions> $getExtraLevelSaveDataIconParams(::std::string const&) const;
 
 #ifdef LL_PLAT_C
-    MCNAPI ::UIProfile $getDefaultUIProfile(::UIScalingRules uiScalingRules) const;
-
     MCNAPI ::Bedrock::NonOwnerPointer<::SuspendHandler>
     $getSuspendHandler(bool updateCachedValue, ::AppPlatform& appPlatform);
 

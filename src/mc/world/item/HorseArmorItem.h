@@ -24,13 +24,14 @@ class HorseArmorItem : public ::Item {
 public:
     // HorseArmorItem inner types define
     enum class Tier : int {
-        None    = 0,
-        Leather = 1,
-        Iron    = 2,
-        Gold    = 3,
-        Diamond = 4,
-        Copper  = 5,
-        Count   = 6,
+        None      = 0,
+        Leather   = 1,
+        Iron      = 2,
+        Gold      = 3,
+        Diamond   = 4,
+        Copper    = 5,
+        Netherite = 6,
+        Count     = 7,
     };
 
 public:
@@ -43,7 +44,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual bool isBodyArmor() const /*override*/;
+
     virtual int getArmorValue() const /*override*/;
+
+    virtual float getKnockbackResistanceValue() const /*override*/;
 
     virtual bool hasCustomColor(::CompoundTag const* userData) const /*override*/;
 
@@ -71,13 +76,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _tryEquipHorseArmor(::Actor* actor, ::ItemStack const& horseArmor);
+    MCFOLD static bool _tryEquipHorseArmor(::Actor* actor, ::ItemStack const& horseArmor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $isBodyArmor() const;
+
     MCAPI int $getArmorValue() const;
+
+    MCAPI float $getKnockbackResistanceValue() const;
 
     MCAPI bool $hasCustomColor(::CompoundTag const* userData) const;
 
@@ -89,7 +98,7 @@ public:
 
     MCAPI bool $isDyeable() const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,

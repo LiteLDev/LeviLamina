@@ -29,6 +29,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::TestConfig& operator=(::TestConfig&&);
+
     MCNAPI ~TestConfig();
     // NOLINTEND
 

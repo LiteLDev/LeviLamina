@@ -14,7 +14,11 @@ MCAPI_C ::std::string getBuildFlavor();
 
 MCAPI ::Common::BuildInfo getBuildInfo();
 
+MCAPI_C ::std::optional<::std::string> getGameDevGitCommitKustoTimeString();
+
 MCAPI_C ::std::string getGameDevInfoString();
+
+MCAPI_C ::std::string getGameDevVersionString();
 
 MCAPI ::std::string getGameSemVerString();
 

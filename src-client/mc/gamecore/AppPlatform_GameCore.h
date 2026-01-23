@@ -8,6 +8,7 @@
 #include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/deps/core/platform/FullscreenMode.h"
 #include "mc/deps/core/threading/XTaskQueueRegistrationToken.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/input/TextboxTextUpdateReason.h"
 #include "mc/win/AppPlatformWindows.h"
 
@@ -18,6 +19,8 @@ class SecureStorage;
 class SecureStorageKey;
 struct ConnectivityHint_GameCore;
 struct XTaskQueueObject;
+namespace Bedrock::PubSub { class Subscription; }
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -34,10 +37,14 @@ public:
     ::ll::TypedStorage<4, 16, ::tagRECT>                                     mSavedWindowSize;
     ::ll::TypedStorage<4, 4, long>                                           mDefaultStyle;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mAppName;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::Core::Path const&)>>    mSetStorageDirectoryCallback;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConnectivityHint_GameCore>> mConnectivityHint;
     ::ll::TypedStorage<8, 8, ::XTaskQueueObject*>                            mTaskQueue;
     ::ll::TypedStorage<8, 8, ::XTaskQueueRegistrationToken>                  mGameInviteToken;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::Core::Path const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mStorageDirectoryChangedSubscribers;
     // NOLINTEND
 
 public:
@@ -48,8 +55,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~AppPlatform_GameCore() /*override*/;
-
-    virtual ::std::string _readAssetFileInternal(::Core::Path const& filename) /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename) /*override*/;
 
@@ -69,8 +74,6 @@ public:
     virtual ::Core::PathBuffer<::std::string> getDataUrl() const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> getUserStorageRootPath() const /*override*/;
-
-    virtual void setStorageDirectoryChanged(::std::function<void(::Core::Path const&)> callback) /*override*/;
 
     virtual void setStorageDirectory(
         ::FileStorageDirectory      dir,
@@ -143,6 +146,8 @@ public:
 
     virtual bool isMouseInsideClient() const;
 
+    virtual bool canScroll() const;
+
     virtual uint64 getFreeMemory() const /*override*/;
 
     virtual uint64 getMemoryLimit() const /*override*/;
@@ -164,6 +169,9 @@ public:
     virtual bool isNetworkAvailable() const /*override*/;
 
     virtual bool isInternetAvailable() const /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription
+    addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback) /*override*/;
 
     virtual bool isHandheldDevice() const;
 
@@ -221,8 +229,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $_readAssetFileInternal(::Core::Path const& filename);
-
     MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
 
     MCAPI ::std::set<::Core::PathBuffer<::std::string>>
@@ -241,8 +247,6 @@ public:
     MCFOLD ::Core::PathBuffer<::std::string> $getDataUrl() const;
 
     MCAPI ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
-
-    MCAPI void $setStorageDirectoryChanged(::std::function<void(::Core::Path const&)> callback);
 
     MCAPI void $setStorageDirectory(
         ::FileStorageDirectory      dir,
@@ -314,6 +318,8 @@ public:
 
     MCFOLD bool $isMouseInsideClient() const;
 
+    MCFOLD bool $canScroll() const;
+
     MCAPI uint64 $getFreeMemory() const;
 
     MCAPI uint64 $getMemoryLimit() const;
@@ -335,6 +341,9 @@ public:
     MCFOLD bool $isNetworkAvailable() const;
 
     MCAPI bool $isInternetAvailable() const;
+
+    MCAPI ::Bedrock::PubSub::Subscription
+    $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
 
     MCFOLD bool $isHandheldDevice() const;
 

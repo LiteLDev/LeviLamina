@@ -21,6 +21,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void disconnect();
 
+    MCNAPI void disconnect_async();
+
     MCNAPI bool operator==(::Bedrock::PubSub::SubscriptionBase const& other) const;
     // NOLINTEND
 };

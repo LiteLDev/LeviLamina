@@ -68,6 +68,8 @@ public:
     MCAPI Test(::br::worldgen::processors::BlockRules::Test&&);
 
     MCAPI Test(::br::worldgen::processors::BlockRules::Test const&);
+
+    MCAPI explicit Test(::br::worldgen::processors::BlockRules::TagMatch match);
     // NOLINTEND
 
 public:
@@ -76,6 +78,8 @@ public:
     MCAPI void* $ctor(::br::worldgen::processors::BlockRules::Test&&);
 
     MCAPI void* $ctor(::br::worldgen::processors::BlockRules::Test const&);
+
+    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::TagMatch match);
     // NOLINTEND
 
 public:

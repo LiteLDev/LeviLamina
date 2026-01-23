@@ -69,6 +69,7 @@ struct ActorDefinitionIdentifier;
 struct ActorLink;
 struct BiomeChunkState;
 struct BlockID;
+struct Brightness;
 struct DeserializationChanges;
 struct NibblePair;
 struct SubChunk;
@@ -285,8 +286,6 @@ public:
 
     MCAPI void _generateOriginalLightingSubChunk(::BlockSource& source, uint64 subchunkIdx, bool);
 
-    MCAPI ::gsl::not_null<::Biome const*> const _getDefaultBiome() const;
-
     MCAPI_C void _handleHeightmapDataFromSubChunkPacketWithDeserializationChanges(
         short                                       subChunkIndex,
         ::SubChunkPacket::SubChunkPacketData const& subChunkPacketData
@@ -302,13 +301,6 @@ public:
     MCAPI void _makeUniformBiomes(::Biome const& biome);
 
     MCAPI void _placeBlockEntity(::std::shared_ptr<::BlockActor> te);
-
-    MCAPI void _placeCallbackIfChunkLoaded(
-        ::BlockSource&                  currentSource,
-        ::BlockPos const&               blockPos,
-        ::Block const&                  old,
-        ::gsl::not_null<::Block const*> current
-    );
 
     MCAPI bool _recalcHeight(::ChunkBlockPos const& start, ::BlockSource* source);
 
@@ -345,7 +337,7 @@ public:
 
     MCAPI void addHardcodedSpawningArea(::BoundingBox const& spawnerAABB, ::HardcodedSpawnAreaType type);
 
-    MCAPI void addSubChunkBlockEntitiesToLevelChunk(::LevelChunkBlockActorStorage& blockActorMap);
+    MCAPI_C void addSubChunkBlockEntitiesToLevelChunk(::LevelChunkBlockActorStorage& blockActorMap);
 
     MCAPI bool applySeasonsPostProcess(::BlockSource& region);
 
@@ -355,7 +347,7 @@ public:
 
     MCAPI void clientSubChunkRequestGenerateLightingForSubChunk(::ChunkViewSource& neighborhood, short absoluteIndex);
 
-    MCAPI_S void deserialize2DMaps(::IDataInput& stream);
+    MCAPI void deserialize2DMaps(::IDataInput& stream);
 
     MCAPI_C void deserializeBiomes(::IDataInput& stream, bool fromNetwork);
 
@@ -374,6 +366,8 @@ public:
         ::std::optional<::DeserializationChanges*> deserializationChanges
     );
 
+    MCAPI void discardPrunedSubChunks();
+
     MCAPI void fetchBiomes(::Bedrock::small_vector_base<::gsl::not_null<::Biome const*>>& output) const;
 
     MCAPI void fillBiomes(::BiomeChunkData const& biomeChunkData);
@@ -381,11 +375,6 @@ public:
     MCAPI void finalizeDeserialization();
 
     MCAPI void finalizePostProcessing();
-
-    MCAPI void finalizeSubChunkDeserialization(
-        ::LevelChunkBlockActorStorage& blockActorMap,
-        ::buffer_span_mut<::SubChunk>  subchunks
-    );
 
     MCAPI ::std::optional<::BlockPos> findExposedLightningRod(::BlockPos const& pos, ::BlockSource& region);
 
@@ -406,11 +395,11 @@ public:
         ::std::vector<::Actor*>&           actors
     ) const;
 
+    MCAPI ::buffer_span_mut<::SubChunk> getAllSubChunks();
+
     MCAPI ::Biome const& getBiome(::ChunkBlockPos const& pos) const;
 
     MCAPI ::Block const& getBlock(::ChunkBlockPos const& pos) const;
-
-    MCAPI ::BlockActor* getBlockEntity(::ChunkBlockPos const& localPos);
 
     MCAPI ::BrightnessPair getBrightness(::ChunkBlockPos const& pos) const;
 
@@ -432,7 +421,11 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunkMetaData> getMetaDataCopy() const;
 
+    MCAPI ::Brightness getRawBrightness(::ChunkBlockPos const& pos, ::Brightness skyDampen) const;
+
     MCAPI_C ::SubChunk* getSubChunk(short absoluteIndex);
+
+    MCAPI ::SubChunk* getSubChunksToPruneOutsideDimensionRange(uint64 index);
 
     MCAPI ::BlockPos const getTopRainBlockPos(::ChunkBlockPos const& pos);
 
@@ -479,6 +472,8 @@ public:
 
     MCAPI void removeHardcodedSpawningArea(::HardcodedSpawnAreaType type);
 
+    MCAPI void serializeBiomeStates(::IDataOutput& stream) const;
+
     MCAPI void serializeBiomes(::IDataOutput& stream) const;
 
     MCAPI void serializeBlockEntities(::IDataOutput& stream, ::SaveContext const& saveContext) const;
@@ -501,6 +496,8 @@ public:
 
     MCAPI void serializeEntityRemovals(::std::function<void(::std::string const&)> callback);
 
+    MCAPI void serializeTicks(::IDataOutput& stream) const;
+
     MCAPI void setAllBlockTypeIDAndData(::buffer_span<::BlockID> ids, ::buffer_span<::NibblePair> data);
 
     MCAPI void setBiomeFromVolume(::ClientBlockPipeline::VolumeOf<::Biome const*> const& volume);
@@ -512,6 +509,8 @@ public:
         ::std::shared_ptr<::BlockActor> blockEntity,
         ::BlockChangeContext const&     changeSourceContext
     );
+
+    MCAPI void setBlockSimple(::ChunkBlockPos const& pos, ::Block const& block);
 
     MCAPI void setBlockVolume(::BlockVolume const& box, uint yOffset);
 
@@ -550,6 +549,9 @@ public:
     // NOLINTBEGIN
     MCAPI_C static ::std::unique_ptr<::LevelChunk>
     createNewNoCustomDeleter(::Dimension& dimension, ::ChunkPos cp, bool readOnly, ::SubChunkInitMode initBlocks);
+
+    MCAPI static ::std::tuple<::std::array<::ChunkLocalHeight, 256>, ::std::array<::BiomeChunkData, 256>>
+    deserialize2DData(::IDataInput& stream, ::std::optional<::LevelChunkFormat> const& lcFormat, bool isClientSide);
 
     MCAPI static ::std::pair<ushort, ::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>>> deserialize3DBiomes(
         ::IDataInput&          stream,

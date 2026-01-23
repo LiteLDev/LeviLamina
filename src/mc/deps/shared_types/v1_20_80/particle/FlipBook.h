@@ -40,7 +40,7 @@ public:
 
     MCAPI ::SharedTypes::v1_20_80::FlipBook& operator=(::SharedTypes::v1_20_80::FlipBook const&);
 
-    MCAPI_C ~FlipBook();
+    MCAPI ~FlipBook();
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

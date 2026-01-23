@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 namespace glTF {
 
 struct Sampler {
@@ -58,8 +53,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Json::Value serialize() const;
-
     MCNAPI_C ~Sampler();
     // NOLINTEND
 

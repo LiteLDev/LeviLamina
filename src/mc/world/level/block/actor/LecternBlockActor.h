@@ -35,9 +35,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
@@ -76,6 +76,8 @@ public:
     MCAPI explicit LecternBlockActor(::BlockPos const& pos);
 
     MCAPI void setItemFromBlock(int slot, ::ItemStack const& item);
+
+    MCAPI void setPageOnServer(int page, ::BlockSource& region);
     // NOLINTEND
 
 public:
@@ -87,9 +89,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int index) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD int $getMaxStackSize() const;
 

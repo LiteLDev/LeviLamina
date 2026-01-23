@@ -41,7 +41,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $setContainerChanged(int slot);
+    MCAPI void $setContainerChanged(int slot);
 
     MCFOLD void $startOpen(::Actor& actor);
 
@@ -51,7 +51,7 @@ public:
 
     MCFOLD void $onRemoved(::BlockSource&);
 
-    MCFOLD void $initializeContainerContents(::BlockSource& region);
+    MCAPI void $initializeContainerContents(::BlockSource& region);
 
 
     // NOLINTEND

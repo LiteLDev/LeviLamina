@@ -9,6 +9,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnkf3d96f;
     ::ll::UntypedStorage<8, 64> mUnkfd17ee;
     ::ll::UntypedStorage<8, 64> mUnkd1ecc1;
+    ::ll::UntypedStorage<8, 64> mUnk8bf486;
     // NOLINTEND
 
 public:
@@ -20,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ServerNetworkHandlerDependencies(::ServerNetworkHandlerDependencies&&);
+    MCNAPI ServerNetworkHandlerDependencies(::ServerNetworkHandlerDependencies&&);
 
     MCNAPI ~ServerNetworkHandlerDependencies();
     // NOLINTEND
@@ -28,7 +29,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::ServerNetworkHandlerDependencies&&);
+    MCNAPI void* $ctor(::ServerNetworkHandlerDependencies&&);
     // NOLINTEND
 
 public:

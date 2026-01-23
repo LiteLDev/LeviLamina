@@ -26,7 +26,6 @@ public:
 
 public:
     // prevent constructor by default
-    UpdateTradePacketPayload& operator=(UpdateTradePacketPayload const&);
     UpdateTradePacketPayload();
 
 public:
@@ -37,6 +36,8 @@ public:
     MCAPI UpdateTradePacketPayload(::UpdateTradePacketPayload const& other);
 
     MCAPI ::UpdateTradePacketPayload& operator=(::UpdateTradePacketPayload&&);
+
+    MCAPI ::UpdateTradePacketPayload& operator=(::UpdateTradePacketPayload const& other);
 
     MCAPI ~UpdateTradePacketPayload();
     // NOLINTEND

@@ -16,13 +16,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VoiceMediaInfo& operator=(VoiceMediaInfo const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI VoiceMediaInfo();
 
     MCNAPI VoiceMediaInfo(::cricket::VoiceMediaInfo const&);
-
-    MCNAPI ::cricket::VoiceMediaInfo& operator=(::cricket::VoiceMediaInfo const&);
 
     MCNAPI ~VoiceMediaInfo();
     // NOLINTEND

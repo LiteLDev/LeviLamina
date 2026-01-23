@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/item/ItemCooldownType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -13,20 +16,23 @@ struct CooldownItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>          mDuration;
-    ::ll::TypedStorage<8, 32, ::std::string> mCategory;
+    ::ll::TypedStorage<4, 4, float>                           mDuration;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::ItemCooldownType> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mCategory;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    CooldownItemComponent& operator=(CooldownItemComponent const&);
     CooldownItemComponent(CooldownItemComponent const&);
     CooldownItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_20_50::CooldownItemComponent& operator=(::SharedTypes::v1_20_50::CooldownItemComponent&&);
+    MCAPI ::SharedTypes::v1_20_50::CooldownItemComponent& operator=(::SharedTypes::v1_20_50::CooldownItemComponent&&);
+
+    MCAPI ::SharedTypes::v1_20_50::CooldownItemComponent&
+    operator=(::SharedTypes::v1_20_50::CooldownItemComponent const&);
 
     MCAPI ~CooldownItemComponent();
     // NOLINTEND

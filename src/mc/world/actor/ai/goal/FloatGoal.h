@@ -15,6 +15,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, int>    mTicksUnderwater;
+    ::ll::TypedStorage<4, 4, int>    mTicksUnderwaterToDismountPassengers;
+    ::ll::TypedStorage<4, 4, float>  mChancePerTickToFloat;
     ::ll::TypedStorage<1, 1, bool>   mSinkWithPassengers;
     // NOLINTEND
 
@@ -29,6 +32,8 @@ public:
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
 
+    virtual void start() /*override*/;
+
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
@@ -37,9 +42,17 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _shouldSinkWithPassengers();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();
+
+    MCFOLD void $start();
 
     MCAPI void $tick();
 

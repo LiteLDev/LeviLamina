@@ -12,13 +12,7 @@ public:
     // clang-format on
 
     // PacketResult inner types define
-    class ReceiveTimeOrder {
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool operator()(::webrtc::PacketResult const& lhs, ::webrtc::PacketResult const& rhs);
-        // NOLINTEND
-    };
+    class ReceiveTimeOrder {};
 
 public:
     // member variables

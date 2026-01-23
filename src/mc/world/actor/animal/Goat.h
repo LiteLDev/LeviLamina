@@ -10,19 +10,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class Goat : public ::Animal {
-public:
-    // prevent constructor by default
-    Goat();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -35,31 +28,9 @@ public:
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    virtual ::SharedTypes::Legacy::LevelSoundEvent getDeathSound() /*override*/;
-
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual ~Goat() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Goat(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -73,9 +44,7 @@ public:
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getDeathSound();
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
 
     // NOLINTEND

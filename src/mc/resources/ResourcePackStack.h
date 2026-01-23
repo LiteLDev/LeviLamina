@@ -95,6 +95,8 @@ public:
 
     MCAPI_C bool isOnStack(::PackIdVersion const& packIdentity) const;
 
+    MCAPI void removeDuplicates();
+
     MCAPI bool removeIf(::std::function<bool(::PackInstance const&)> const& callback);
 
     MCAPI void removeInvalidPacks();

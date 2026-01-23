@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityRegistry;
 class StrictEntityContext;
 namespace AgentComponents { class Animating; }
 namespace AgentComponents { struct AnimationComplete; }
@@ -20,6 +21,8 @@ MCNAPI void animationTick(
     ::AgentComponents::Animating&                           anim,
     ::EntityModifier<::AgentComponents::AnimationComplete>& modifier
 );
+
+MCNAPI void runAnimTickView(::EntityRegistry& registry);
 // NOLINTEND
 
 } // namespace AgentAnimationSystems

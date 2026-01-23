@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cricket { struct VideoMediaReceiveInfo; }
-namespace cricket { struct VideoMediaSendInfo; }
-// clang-format on
-
 namespace cricket {
 
 struct VideoMediaInfo {
@@ -32,8 +26,6 @@ public:
 
     MCNAPI VideoMediaInfo(::cricket::VideoMediaInfo const&);
 
-    MCNAPI VideoMediaInfo(::cricket::VideoMediaSendInfo&& send, ::cricket::VideoMediaReceiveInfo&& receive);
-
     MCNAPI ~VideoMediaInfo();
     // NOLINTEND
 
@@ -43,8 +35,6 @@ public:
     MCNAPI void* $ctor();
 
     MCNAPI void* $ctor(::cricket::VideoMediaInfo const&);
-
-    MCNAPI void* $ctor(::cricket::VideoMediaSendInfo&& send, ::cricket::VideoMediaReceiveInfo&& receive);
     // NOLINTEND
 
 public:

@@ -18,4 +18,20 @@ public:
             variant<::std::monostate, ::EnvironmentChangeContext, ::ActorChangeContext, ::ScriptOrCommandChangeContext>>
         mContextSource;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockChangeContext();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit BlockChangeContext(bool isScriptOrCommandContext);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool isScriptOrCommandContext);
+    // NOLINTEND
 };

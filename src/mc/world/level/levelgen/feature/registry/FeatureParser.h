@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ContextArea.h"
 #include "mc/deps/puv/ParserBase.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 
@@ -37,7 +38,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Puv::LoadResultAny doParse(::Puv::Input const& input) const /*override*/;
+    virtual ::Puv::LoadResultAny doParse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const
+        /*override*/;
 
     virtual ~FeatureParser() /*override*/ = default;
     // NOLINTEND
@@ -45,7 +47,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Puv::LoadResultAny $doParse(::Puv::Input const& input) const;
+    MCAPI ::Puv::LoadResultAny $doParse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const;
 
 
     // NOLINTEND

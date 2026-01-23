@@ -15,5 +15,6 @@ public:
     ::ll::TypedStorage<4, 4, float> mWalk;
     ::ll::TypedStorage<4, 4, float> mSprint;
     ::ll::TypedStorage<4, 4, float> mSwim;
+    ::ll::TypedStorage<4, 4, float> mLunge;
     // NOLINTEND
 };

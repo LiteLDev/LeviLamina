@@ -60,25 +60,21 @@ public:
     virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view contents) const
         /*override*/;
 
-    virtual ~SessionInfoManagerImpl() /*override*/;
+    virtual ~SessionInfoManagerImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI SessionInfoManagerImpl();
+
+    MCNAPI void _reflectSessionInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

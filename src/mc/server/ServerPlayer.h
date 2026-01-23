@@ -19,6 +19,7 @@
 #include "mc/world/ContainerID.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorSwingSource.h"
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/inventory/InventoryMenu.h"
 #include "mc/world/level/GameType.h"
@@ -152,13 +153,13 @@ public:
 
     virtual void moveView() /*override*/;
 
-    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType) /*override*/;
+    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension) /*override*/;
 
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
 
     virtual bool isValidTarget(::Actor* attacker) const /*override*/;
 
-    virtual bool swing() /*override*/;
+    virtual bool swing(::ActorSwingSource swingSource) /*override*/;
 
     virtual void
     hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots) /*override*/;
@@ -220,7 +221,7 @@ public:
 
     virtual ::HashedString getCurrentStructureFeature() const /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
 
@@ -344,6 +345,8 @@ public:
 
     MCAPI void hideAllExcept(::std::optional<::std::vector<::HudElement>> const& hudElements);
 
+    MCAPI void initiateContainerClose();
+
     MCAPI bool isInPickRangeOf(::BlockPos const& pos) const;
 
     MCAPI ::ContainerID openUnmanagedContainer();
@@ -360,6 +363,8 @@ public:
         ::HudVisibility                                     hudVisibility,
         ::std::optional<::std::vector<::HudElement>> const& hudElements
     );
+
+    MCAPI void setIsShowingCredits(bool value);
     // NOLINTEND
 
 public:
@@ -425,13 +430,13 @@ public:
 
     MCAPI void $moveView();
 
-    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType);
+    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension);
 
     MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 
     MCAPI bool $isValidTarget(::Actor* attacker) const;
 
-    MCAPI bool $swing();
+    MCAPI bool $swing(::ActorSwingSource swingSource);
 
     MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots);
 
@@ -489,7 +494,7 @@ public:
 
     MCAPI ::HashedString $getCurrentStructureFeature() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI void $setContainerData(::IContainerManager& menu, int id, int value);
 

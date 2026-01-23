@@ -66,6 +66,9 @@ public:
         ::br::worldgen::StructureRegistry const&                     structureRegistry
     );
 
+    MCAPI static ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>
+    processProcessorList(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents document);
+
     MCAPI static ::StructureTemplatePool processTemplatePool(
         ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const& templatePool,
         ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager>            structureManager,

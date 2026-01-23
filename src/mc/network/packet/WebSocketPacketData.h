@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    WebSocketPacketData& operator=(WebSocketPacketData const&);
     WebSocketPacketData(WebSocketPacketData const&);
     WebSocketPacketData();
 
@@ -27,6 +26,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::WebSocketPacketData& operator=(::WebSocketPacketData&&);
+
+    MCFOLD ::WebSocketPacketData& operator=(::WebSocketPacketData const&);
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND

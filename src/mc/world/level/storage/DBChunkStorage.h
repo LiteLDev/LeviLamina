@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/util/BaseGameVersion.h"
 #include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/chunk/ActorDigestFormat.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/storage/ConsoleChunkBlender.h"
 #include "mc/world/level/storage/db_helpers/Category.h"
@@ -176,8 +177,6 @@ public:
 
     MCAPI void _deserializeIndependentActorStorage(::LevelChunk& lc, ::std::string const& storageKeyDigestBuffer);
 
-    MCAPI ::std::shared_ptr<::LevelStorageWriteBatch> _getBuffer();
-
     MCAPI bool _hasChunk(::DBChunkStorageKey const& key);
 
     MCAPI bool _hasChunkUncached(::DBChunkStorageKey const& key);
@@ -213,6 +212,12 @@ public:
 
     MCAPI void
     _writeActorDigest(::LevelStorageWriteBatch& batch, ::ChunkKey const& chunkKey, ::std::string const& digestBuffer);
+
+    MCAPI void _writeActorDigestFormatVersion(
+        ::LevelStorageWriteBatch& batch,
+        ::ChunkKey const&         chunkKey,
+        ::ActorDigestFormat       formatVersion
+    );
 
     MCAPI void _writeDiscardChunksBatch();
     // NOLINTEND

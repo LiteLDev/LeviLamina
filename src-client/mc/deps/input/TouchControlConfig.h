@@ -21,11 +21,16 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<::std::vector<::RectangleArea>()>> inactiveAreas;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           isLeftHanded;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           moveStickVisible;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           altStickVisible;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           altStickEnabled;
     ::ll::TypedStorage<8, 64, ::std::function<float()>>                          thumbstickOpacity;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           staticJoystick;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           staticAltJoystick;
     ::ll::TypedStorage<8, 64, ::std::function<::RectangleArea()>>                defaultMoveStickArea;
+    ::ll::TypedStorage<8, 64, ::std::function<::RectangleArea()>>                defaultAltStickArea;
     ::ll::TypedStorage<8, 64, ::std::function<::RectangleArea()>>                hotbarArea;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           defaultMoveStickVisible;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           defaultAltStickVisible;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           showActionButton;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           sprintOnMovement;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           isInputSprinting;

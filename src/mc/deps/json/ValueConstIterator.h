@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Json::ValueConstIterator& operator=(::Json::ValueIteratorBase const& other);
+    MCAPI ::Json::ValueConstIterator& operator=(::Json::ValueIteratorBase const& other);
 
     MCAPI ~ValueConstIterator();
     // NOLINTEND

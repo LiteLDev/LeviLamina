@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     union {
         uint64                           mActorUniqueId   : 54;
-        uint64                           mAttachableDepth : 4;
+        uint64                           mSubClientId     : 4;
         uint64                           mAttachableIndex : 6;
         ::ll::TypedStorage<8, 8, uint64> mAllBits;
     } mData;

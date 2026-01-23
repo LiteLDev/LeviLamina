@@ -16,7 +16,6 @@ namespace rtc { class AsyncListenSocket; }
 namespace rtc { class AsyncPacketSocket; }
 namespace rtc { class Network; }
 namespace rtc { class PacketSocketFactory; }
-namespace rtc { class ReceivedPacket; }
 namespace rtc { class SocketAddress; }
 namespace rtc { class Thread; }
 namespace rtc { struct PacketOptions; }
@@ -80,7 +79,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TCPPort() /*override*/;
+    virtual ~TCPPort() /*override*/ = default;
 
     virtual ::cricket::Connection* CreateConnection(
         ::cricket::Candidate const&               address,
@@ -117,8 +116,6 @@ public:
 
     MCNAPI void OnNewConnection(::rtc::AsyncListenSocket* socket, ::rtc::AsyncPacketSocket* new_socket);
 
-    MCNAPI void OnReadPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet);
-
     MCNAPI void OnReadyToSend(::rtc::AsyncPacketSocket* socket);
 
     MCNAPI TCPPort(
@@ -150,12 +147,6 @@ public:
         bool                             allow_listen,
         ::webrtc::FieldTrialsView const* field_trials
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

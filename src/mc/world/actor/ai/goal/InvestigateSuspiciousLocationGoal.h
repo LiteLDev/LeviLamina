@@ -4,57 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class InvestigateSuspiciousLocationGoal : public ::Goal {
-public:
-    // InvestigateSuspiciousLocationGoal inner types declare
-    // clang-format off
-    class Definition;
-    // clang-format on
-
-    // InvestigateSuspiciousLocationGoal inner types define
-    class Definition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
-        ::ll::TypedStorage<4, 4, float> mGoalRadius;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const&                                   name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
-                ::JsonUtil::EmptyClass,
-                ::InvestigateSuspiciousLocationGoal::Definition>>& root
-        );
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/world/actor/ActorSwingSource.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,7 +27,8 @@ public:
         8,
         40,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-        mHeldItemStack;
+                                                 mHeldItemStack;
+    ::ll::TypedStorage<1, 1, ::ActorSwingSource> mSwingSource;
     // NOLINTEND
 
 public:
@@ -42,6 +44,7 @@ public:
     MCAPI ScriptPlayerSwingStartAfterEvent(
         ::Player const&                                                                                 player,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> heldItemStack,
+        ::ActorSwingSource                                                                              swingSource,
         ::Scripting::WeakLifetimeScope const&                                                           scope
     );
 
@@ -62,6 +65,7 @@ public:
     MCAPI void* $ctor(
         ::Player const&                                                                                 player,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> heldItemStack,
+        ::ActorSwingSource                                                                              swingSource,
         ::Scripting::WeakLifetimeScope const&                                                           scope
     );
     // NOLINTEND

@@ -90,6 +90,9 @@ public:
 
     virtual ::Bedrock::Result<::std::string> asString(uint64 maxInputLength) /*override*/;
 
+    virtual ::Bedrock::Result<void>
+    asRawBytes(::std::function<::gsl::span<uchar>(uint64)> storage, uint64 maxInputLength) /*override*/;
+
     virtual ::std::optional<bool> readValidityFlag() /*override*/;
 
     virtual ::std::optional<uint> readControlValue() /*override*/;
@@ -132,6 +135,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit JSONCppSchemaReaderBase(::std::string const& data);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string const& data);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
@@ -169,6 +184,9 @@ public:
     MCNAPI ::Bedrock::Result<double> $asDouble();
 
     MCNAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
+
+    MCNAPI ::Bedrock::Result<void>
+    $asRawBytes(::std::function<::gsl::span<uchar>(uint64)> storage, uint64 maxInputLength);
 
     MCNAPI ::std::optional<bool> $readValidityFlag();
 

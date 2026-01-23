@@ -15,7 +15,6 @@ namespace webrtc { class Timestamp; }
 namespace webrtc::rtcp { class CommonHeader; }
 namespace webrtc::rtcp { class ReportBlock; }
 namespace webrtc::rtcp { class Rrtr; }
-namespace webrtc::rtcp { class TargetBitrate; }
 namespace webrtc::rtcp { class TmmbItem; }
 namespace webrtc::rtcp { struct ReceiveTimeInfo; }
 // clang-format on
@@ -147,12 +146,6 @@ public:
         // NOLINTBEGIN
         MCNAPI RegisteredSsrcs(bool disable_sequence_checker, ::webrtc::RtpRtcpInterface::Configuration const& config);
 
-        MCNAPI bool contains(uint ssrc) const;
-
-        MCNAPI uint media_ssrc() const;
-
-        MCNAPI void set_media_ssrc(uint ssrc);
-
         MCNAPI ~RegisteredSsrcs();
         // NOLINTEND
 
@@ -199,12 +192,6 @@ public:
         RttStats& operator=(RttStats const&);
         RttStats(RttStats const&);
         RttStats();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void AddRtt(::webrtc::TimeDelta rtt);
-        // NOLINTEND
     };
 
     struct TmmbrInformation {
@@ -249,6 +236,8 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI TmmbrInformation(::webrtc::RTCPReceiver::TmmbrInformation&&);
+
+        MCNAPI ::webrtc::RTCPReceiver::TmmbrInformation& operator=(::webrtc::RTCPReceiver::TmmbrInformation&&);
 
         MCNAPI ~TmmbrInformation();
         // NOLINTEND
@@ -320,8 +309,6 @@ public:
 
     MCNAPI ::webrtc::RTCPReceiver::TmmbrInformation* FindOrCreateTmmbrInfo(uint remote_ssrc);
 
-    MCNAPI ::std::optional<::webrtc::TimeDelta> GetAndResetXrRrRtt();
-
     MCNAPI ::std::vector<::webrtc::ReportBlockData> GetLatestReportBlockData() const;
 
     MCNAPI ::webrtc::RTCPReceiver::NonSenderRttStats GetNonSenderRTT() const;
@@ -330,34 +317,9 @@ public:
 
     MCNAPI ::webrtc::RTCPReceiver::TmmbrInformation* GetTmmbrInformation(uint remote_ssrc);
 
-    MCNAPI bool HandleApp(
-        ::webrtc::rtcp::CommonHeader const&        rtcp_block,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
-    );
-
     MCNAPI bool HandleBye(::webrtc::rtcp::CommonHeader const& rtcp_block);
 
     MCNAPI bool HandleFir(
-        ::webrtc::rtcp::CommonHeader const&        rtcp_block,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
-    );
-
-    MCNAPI bool HandleNack(
-        ::webrtc::rtcp::CommonHeader const&        rtcp_block,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
-    );
-
-    MCNAPI bool HandlePli(
-        ::webrtc::rtcp::CommonHeader const&        rtcp_block,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
-    );
-
-    MCNAPI void HandlePsfbApp(
-        ::webrtc::rtcp::CommonHeader const&        rtcp_block,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
-    );
-
-    MCNAPI bool HandleReceiverReport(
         ::webrtc::rtcp::CommonHeader const&        rtcp_block,
         ::webrtc::RTCPReceiver::PacketInformation* packet_information
     );
@@ -368,32 +330,7 @@ public:
         uint                                       remote_ssrc
     );
 
-    MCNAPI bool HandleSdes(
-        ::webrtc::rtcp::CommonHeader const&        rtcp_block,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
-    );
-
-    MCNAPI bool HandleSenderReport(
-        ::webrtc::rtcp::CommonHeader const&        rtcp_block,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
-    );
-
-    MCNAPI bool HandleSrReq(
-        ::webrtc::rtcp::CommonHeader const&        rtcp_block,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
-    );
-
-    MCNAPI bool HandleTmmbn(
-        ::webrtc::rtcp::CommonHeader const&        rtcp_block,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
-    );
-
     MCNAPI bool HandleTmmbr(
-        ::webrtc::rtcp::CommonHeader const&        rtcp_block,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
-    );
-
-    MCNAPI void HandleTransportFeedback(
         ::webrtc::rtcp::CommonHeader const&        rtcp_block,
         ::webrtc::RTCPReceiver::PacketInformation* packet_information
     );
@@ -409,17 +346,9 @@ public:
 
     MCNAPI void HandleXrReceiveReferenceTime(uint sender_ssrc, ::webrtc::rtcp::Rrtr const& rrtr);
 
-    MCNAPI void HandleXrTargetBitrate(
-        uint                                       ssrc,
-        ::webrtc::rtcp::TargetBitrate const&       target_bitrate,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
-    );
-
     MCNAPI void IncomingPacket(::rtc::ArrayView<uchar const> packet);
 
     MCNAPI ::std::optional<::webrtc::TimeDelta> LastRtt() const;
-
-    MCNAPI void NotifyTmmbrUpdated();
 
     MCNAPI ::std::optional<::webrtc::TimeDelta> OnPeriodicRttUpdate(::webrtc::Timestamp newer_than, bool sending);
 
@@ -430,10 +359,6 @@ public:
 
     MCNAPI RTCPReceiver(::webrtc::RtpRtcpInterface::Configuration const& config, ::webrtc::ModuleRtpRtcpImpl2* owner);
 
-    MCNAPI bool RtcpRrSequenceNumberTimeoutLocked(::webrtc::Timestamp now);
-
-    MCNAPI bool RtcpRrTimeoutLocked(::webrtc::Timestamp now);
-
     MCNAPI void SetNonSenderRttMeasurement(bool enabled);
 
     MCNAPI void SetRemoteSSRC(uint ssrc);
@@ -443,8 +368,6 @@ public:
     MCNAPI void TriggerCallbacksFromRtcpPacket(::webrtc::RTCPReceiver::PacketInformation const& packet_information);
 
     MCNAPI void UpdateTmmbrRemoteIsAlive(uint remote_ssrc);
-
-    MCNAPI uint local_media_ssrc() const;
 
     MCNAPI void set_local_media_ssrc(uint ssrc);
 

@@ -13,7 +13,7 @@ enum : uchar {
     Trace     = 1 << 3,
     Reserved4 = 1 << 4,
     Reserved5 = 1 << 5,
-    Reserved6 = 1 << 6,
+    Legacy    = 1 << 6,
     Baseline  = 1 << 7,
 };
 

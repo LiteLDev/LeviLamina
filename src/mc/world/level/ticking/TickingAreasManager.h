@@ -6,6 +6,8 @@
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/platform/UUID.h"
+#include "mc/util/Bounds.h"
 #include "mc/world/level/ticking/AddTickingAreaStatus.h"
 #include "mc/world/level/ticking/TickingAreaLoadMode.h"
 
@@ -13,7 +15,6 @@
 // clang-format off
 class Actor;
 class BlockPos;
-class CompoundTag;
 class Dimension;
 class IActorManagerConnector;
 class ILevelStorageManagerConnector;
@@ -21,18 +22,46 @@ class Level;
 class LevelStorage;
 class TickingAreaList;
 struct ActorUniqueID;
-struct Bounds;
 struct PendingArea;
 struct TickingAreaDescription;
 // clang-format on
 
 class TickingAreasManager {
 public:
+    // TickingAreasManager inner types declare
+    // clang-format off
+    struct ScopedContext;
+    // clang-format on
+
     // TickingAreasManager inner types define
     enum class AreaLimitCheck : int {
         None                       = 0,
         ActiveStandalone           = 1,
         ActiveAndPendingStandalone = 2,
+    };
+
+    struct ScopedContext {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::mce::UUID>   mUuid;
+        ::ll::TypedStorage<8, 32, ::std::string> mName;
+        ::ll::TypedStorage<4, 48, ::Bounds>      mBounds;
+        ::ll::TypedStorage<1, 1, bool>           mFinishedLoading;
+        ::ll::TypedStorage<1, 1, bool>           mIsActive;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ScopedContext();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
     };
 
     using ActivePerDimension = ::std::map<::DimensionType, ::std::shared_ptr<::TickingAreaList>>;
@@ -95,17 +124,6 @@ public:
     MCAPI void
     _savePendingArea(::LevelStorage& levelStorage, ::DimensionType dimensionId, ::PendingArea const& pendingArea);
 
-    MCAPI ::AddTickingAreaStatus addArea(
-        ::DimensionType                       dimensionId,
-        ::std::string const&                  name,
-        ::BlockPos const&                     min,
-        ::BlockPos const&                     max,
-        ::TickingAreasManager::AreaLimitCheck limitCheck,
-        bool                                  isPersistent,
-        ::TickingAreaLoadMode                 loadMode,
-        ::LevelStorage&                       levelStorage
-    );
-
     MCAPI void addEntityArea(::DimensionType dimensionId, ::Actor const& actor, ::LevelStorage& levelStorage);
 
     MCAPI void addEntityArea(
@@ -117,11 +135,17 @@ public:
         ::LevelStorage&        levelStorage
     );
 
+    MCAPI ::TickingAreasManager::ScopedContext addTransientScopedArea(
+        ::DimensionType      dimensionId,
+        ::std::string const& name,
+        uint64               scopeKey,
+        ::mce::UUID          uuid,
+        ::Bounds const&      bounds
+    );
+
     MCAPI uint countActiveStandaloneTickingAreas() const;
 
     MCAPI uint countStandaloneTickingAreas() const;
-
-    MCAPI void loadArea(::std::string const& key, ::CompoundTag const* tag);
 
     MCAPI void onTickingEntityAdded(::DimensionType dimensionId, ::Actor& actor, ::LevelStorage& levelStorage);
 
@@ -134,6 +158,8 @@ public:
 
     MCAPI ::std::vector<::TickingAreaDescription>
     removePendingAreaByPosition(::DimensionType dimensionId, ::BlockPos const& position, ::LevelStorage& levelStorage);
+
+    MCAPI void removeScopedAreas(::std::vector<::mce::UUID> const& uuids);
 
     MCAPI ::std::vector<::TickingAreaDescription> setPendingAreaLoadModeByName(
         ::DimensionType       dimensionId,
@@ -150,8 +176,6 @@ public:
     );
 
     MCAPI void update(::Level& level, ::LevelStorage& levelStorage);
-
-    MCAPI ~TickingAreasManager();
     // NOLINTEND
 
 public:
@@ -164,11 +188,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

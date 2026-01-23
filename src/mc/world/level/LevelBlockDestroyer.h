@@ -19,4 +19,26 @@ public:
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ILevelBlockDestroyerProxy>> const>
         mLevelBlockDestroyerProxy;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LevelBlockDestroyer();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI LevelBlockDestroyer(
+        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager,
+        ::std::unique_ptr<::ILevelBlockDestroyerProxy>     levelBlockDestroyerProxy
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager,
+        ::std::unique_ptr<::ILevelBlockDestroyerProxy>     levelBlockDestroyerProxy
+    );
+    // NOLINTEND
 };

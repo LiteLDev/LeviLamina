@@ -224,7 +224,7 @@ public:
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
-    onBeforePlayerGameModeChange(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode) /*override*/;
+    onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType) /*override*/;
 
     virtual void onBeforeWorldInitialize(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&
@@ -334,11 +334,6 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
     $onBeforeEffectAddedEventSend(::ActorAddEffectEvent& actorEffectAddedEvent, ::Actor const& actor);
 
-#ifdef LL_PLAT_C
-    MCAPI ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
-    $onBeforePlayerGameModeChange(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode);
-
     MCAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
     $onBeforeWeatherChangedEvent(
@@ -346,7 +341,6 @@ public:
         ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
         int                                        duration
     );
-#endif
 
 
     // NOLINTEND

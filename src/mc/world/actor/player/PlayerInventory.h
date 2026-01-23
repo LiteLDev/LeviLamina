@@ -28,13 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerInventory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerInventory() /*override*/;
+    virtual ~PlayerInventory() /*override*/ = default;
 
     virtual void containerSizeChanged(int size) /*override*/;
 
@@ -49,8 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerInventory(::std::unique_ptr<::Inventory> inv);
-
     MCAPI_C bool dropSlot(int slot, bool onlyClearContainer, bool dropAll, ::ContainerID containerId, bool randomly);
 
     MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
@@ -59,21 +53,7 @@ public:
 
     MCAPI void init(::std::weak_ptr<::HudContainerManagerModel> hud);
 
-    MCAPI bool removeResource(int type);
-
     MCAPI bool selectSlot(int slot, ::ContainerID containerId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::Inventory> inv);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

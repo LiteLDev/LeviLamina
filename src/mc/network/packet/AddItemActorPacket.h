@@ -15,6 +15,7 @@
 // clang-format off
 class BinaryStream;
 class DataItem;
+class ItemActor;
 class ReadOnlyBinaryStream;
 class SynchedActorDataEntityWrapper;
 // clang-format on
@@ -34,9 +35,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AddItemActorPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AddItemActorPacket() /*override*/;
+    virtual ~AddItemActorPacket() /*override*/ = default;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -48,9 +53,15 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI explicit AddItemActorPacket(::ItemActor& itemEntity);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ItemActor& itemEntity);
     // NOLINTEND
 
 public:

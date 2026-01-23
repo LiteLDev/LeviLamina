@@ -24,15 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SampleInfo(::std::string_view name, int min, int max, uint64 bucket_count);
-
     MCNAPI ~SampleInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view name, int min, int max, uint64 bucket_count);
     // NOLINTEND
 
 public:

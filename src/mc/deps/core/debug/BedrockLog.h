@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/diagnostics/LogAreaID.h"
-#include "mc/diagnostics/bedrock_log/LogCategory.h"
-#include "mc/diagnostics/bedrock_log/LogChannel.h"
-#include "mc/diagnostics/bedrock_log/LogRule.h"
+#include "mc/platform/diagnostics/LogAreaID.h"
+#include "mc/platform/diagnostics/bedrock_log/LogCategory.h"
+#include "mc/platform/diagnostics/bedrock_log/LogChannel.h"
+#include "mc/platform/diagnostics/bedrock_log/LogRule.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,20 +36,7 @@ MCAPI void _initPriorityFilterMap();
 
 MCAPI ::std::string _messageIdString(int _messageId);
 
-MCAPI void _openChannel(
-    ::Core::Path const&       path,
-    ::std::string const&      filename,
-    ::std::string const&      _debugLogTimestamp,
-    ::BedrockLog::LogCategory category,
-    ::BedrockLog::LogChannel  channel,
-    bool                      _createLogFile,
-    ::LogSettingsUpdater*     _settings,
-    double                    _logCycleInS
-);
-
 MCAPI ::std::string _processIdString();
-
-MCAPI ::std::string _threadIdString();
 
 MCAPI void closeAndResetAllLogs();
 

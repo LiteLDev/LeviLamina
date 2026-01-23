@@ -50,6 +50,8 @@ public:
 
     MCAPI ::Bedrock::Result<float> getFloat();
 
+    MCAPI ::Bedrock::Result<void> getRawBytes(::buffer_span_mut<uchar> outBuffer, uint64 length);
+
     MCAPI ::Bedrock::Result<int> getSignedBigEndianInt();
 
     MCAPI ::Bedrock::Result<int> getSignedInt();
@@ -77,8 +79,6 @@ public:
     MCAPI ::Bedrock::Result<int> getVarInt();
 
     MCAPI ::Bedrock::Result<int64> getVarInt64();
-
-    MCAPI void setReadPointer(uint64 pos);
     // NOLINTEND
 
 public:

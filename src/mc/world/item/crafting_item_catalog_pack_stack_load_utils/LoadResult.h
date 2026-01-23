@@ -18,23 +18,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LoadResult& operator=(LoadResult const&);
-    LoadResult(LoadResult const&);
-    LoadResult();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LoadResult(::CraftingItemCatalogPackStackLoadUtils::LoadResult&&);
-
     MCAPI ~LoadResult();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CraftingItemCatalogPackStackLoadUtils::LoadResult&&);
     // NOLINTEND
 
 public:

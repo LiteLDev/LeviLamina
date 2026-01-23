@@ -34,6 +34,8 @@ public:
 
     MCNAPI bool initializeFromJson(::Json::Value const& value);
 
+    MCNAPI_C void setUnlocalizedName(::std::string const& unlocalizedName);
+
     MCNAPI ::Json::Value toJsonValue() const;
 
     MCNAPI ~WorldPackHistory();

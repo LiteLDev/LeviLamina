@@ -19,4 +19,16 @@ public:
     ::ll::TypedStorage<1, 1, ::TextureLoadState>                mTextureLoadState;
     ::ll::TypedStorage<8, 24, ::cg::TextureSetImageDescription> mTextureSetDescription;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~BedrockTextureData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

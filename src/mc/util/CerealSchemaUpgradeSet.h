@@ -25,8 +25,6 @@ public:
     // NOLINTBEGIN
     MCNAPI bool forEach(::std::function<bool(::std::shared_ptr<::CerealSchemaUpgrade>)> functor);
 
-    MCNAPI ::CerealSchemaUpgradeSet& operator=(::CerealSchemaUpgradeSet&&);
-
     MCNAPI ~CerealSchemaUpgradeSet();
     // NOLINTEND
 

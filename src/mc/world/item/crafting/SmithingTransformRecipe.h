@@ -37,12 +37,7 @@ public:
     virtual ::std::vector<::ItemInstance> const&
     assemble(::CraftingContainer& craftingContainer, ::CraftingContext&) const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual ~SmithingTransformRecipe() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~SmithingTransformRecipe() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

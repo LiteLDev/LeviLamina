@@ -30,13 +30,12 @@ public:
 public:
     // prevent constructor by default
     ScriptProjectRegionService& operator=(ScriptProjectRegionService const&);
+    ScriptProjectRegionService(ScriptProjectRegionService const&);
     ScriptProjectRegionService();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptProjectRegionService(::Editor::ScriptModule::ScriptProjectRegionService const&);
-
     MCNAPI ::Scripting::Result_deprecated<void> disposeAllRegions();
 
     MCNAPI ::Scripting::Result_deprecated<bool> disposeRegion(::std::string const& id);
@@ -58,12 +57,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptProjectRegionService const&);
     // NOLINTEND
 };
 

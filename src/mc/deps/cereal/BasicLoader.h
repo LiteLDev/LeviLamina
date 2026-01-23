@@ -17,7 +17,7 @@ class BasicLoader : public ::cereal::BasicContextOwner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnkab84fe;
+    ::ll::UntypedStorage<8, 176> mUnkab84fe;
     ::ll::UntypedStorage<1, 1>   mUnke16cbe;
     // NOLINTEND
 

@@ -13,6 +13,8 @@
 // clang-format off
 struct ActorAddEffectEvent;
 struct ActorDefinitionEndedEvent;
+struct ActorDiedEvent;
+struct ActorHurtEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 // clang-format on
 
@@ -33,7 +35,7 @@ public:
         ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
         ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
                                        mScriptEventsHandle;
-        ::ll::TypedStorage<1, 1, bool> mAfterListener;
+        ::ll::TypedStorage<1, 1, bool> mIsV010;
         // NOLINTEND
     };
 
@@ -47,9 +49,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onEvent(::ActorAddEffectEvent const& actorAddEffectEvent) /*override*/;
+    virtual ::EventResult onEvent(::ActorAddEffectEvent const& eventData) /*override*/;
 
-    virtual ::EventResult onEvent(::ActorDefinitionEndedEvent const& actorDefinitionEndedEvent) /*override*/;
+    virtual ::EventResult onEvent(::ActorDefinitionEndedEvent const& eventData) /*override*/;
+
+    virtual ::EventResult onEvent(::ActorHurtEvent const& eventData) /*override*/;
+
+    virtual ::EventResult onEvent(::ActorDiedEvent const& eventData) /*override*/;
 
     virtual ~ScriptActorGlobalEventListener() /*override*/ = default;
     // NOLINTEND
@@ -57,9 +63,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ActorAddEffectEvent const& actorAddEffectEvent);
+    MCAPI ::EventResult $onEvent(::ActorAddEffectEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& actorDefinitionEndedEvent);
+    MCAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::ActorHurtEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::ActorDiedEvent const& eventData);
 
 
     // NOLINTEND

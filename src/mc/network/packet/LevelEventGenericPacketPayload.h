@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/nbt/CompoundTag.h"
 
 struct LevelEventGenericPacketPayload {
@@ -23,17 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelEventGenericPacketPayload(::SharedTypes::Legacy::LevelEvent eventId, ::CompoundTag const& data);
-
     MCAPI ::LevelEventGenericPacketPayload& operator=(::LevelEventGenericPacketPayload&&);
 
     MCAPI ~LevelEventGenericPacketPayload();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::LevelEvent eventId, ::CompoundTag const& data);
     // NOLINTEND
 
 public:

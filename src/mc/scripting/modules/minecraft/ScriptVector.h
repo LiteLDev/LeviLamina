@@ -15,16 +15,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptVector : public ::Vec3 {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI float length() const;
-
-    MCNAPI ::ScriptModuleMinecraft::ScriptVector normalized() const;
-
-    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptVector const& rhs) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();

@@ -75,7 +75,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncDnsResolver() /*override*/;
+    virtual ~AsyncDnsResolver() /*override*/ = default;
 
     virtual void Start(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
 
@@ -95,12 +95,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

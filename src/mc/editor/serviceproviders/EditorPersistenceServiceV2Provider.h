@@ -50,6 +50,16 @@ public:
         ::std::optional<::Editor::Services::PersistenceScope>,
         ::std::optional<int>
     ) = 0;
+
+    virtual ::Scripting::Result_deprecated<void> requestGroup(
+        ::std::string const&,
+        ::Editor::Services::PersistenceScope,
+        ::std::optional<int>,
+        ::std::function<void(::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>>)>
+    ) = 0;
+
+    virtual ::Scripting::Result_deprecated<void>
+        syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup>) = 0;
     // NOLINTEND
 
 public:

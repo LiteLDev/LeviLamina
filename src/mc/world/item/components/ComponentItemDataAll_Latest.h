@@ -12,7 +12,7 @@ struct ComponentItemDataAll_Latest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2024, ::ComponentItemData_v1_21_110>                 mCerealData;
+    ::ll::TypedStorage<8, 2176, ::ComponentItemData_v1_21_110>                 mCerealData;
     ::ll::TypedStorage<1, 2, ::std::optional<::BetaItemComponentData>>         mBetaData;
     ::ll::TypedStorage<8, 192, ::ComponentItemData_Legacy>                     mLegacyData;
     ::ll::TypedStorage<8, 32, ::std::optional<::LegacyEventItemComponentData>> mEvents;
@@ -20,7 +20,6 @@ public:
 
 public:
     // prevent constructor by default
-    ComponentItemDataAll_Latest& operator=(ComponentItemDataAll_Latest const&);
     ComponentItemDataAll_Latest(ComponentItemDataAll_Latest const&);
     ComponentItemDataAll_Latest();
 
@@ -28,6 +27,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ComponentItemDataAll_Latest(::ComponentItemDataAll_Latest&&);
+
+    MCAPI ::ComponentItemDataAll_Latest& operator=(::ComponentItemDataAll_Latest const&);
 
     MCAPI ~ComponentItemDataAll_Latest();
     // NOLINTEND

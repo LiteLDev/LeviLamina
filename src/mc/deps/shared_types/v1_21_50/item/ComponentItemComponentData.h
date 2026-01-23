@@ -110,7 +110,7 @@ public:
     ::ll::TypedStorage<4, 24, ::std::optional<::SharedTypes::v1_20_50::ThrowableItemComponent>> throwableItemComponent;
     ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_20_50::UseAnimationItemComponent>>
         useAnimationItemComponent;
-    ::ll::TypedStorage<4, 20, ::std::optional<::SharedTypes::v1_20_50::UseModifiersItemComponent>>
+    ::ll::TypedStorage<4, 28, ::std::optional<::SharedTypes::v1_20_50::UseModifiersItemComponent>>
         useModifiersItemComponent;
     ::ll::TypedStorage<4, 12, ::std::optional<::SharedTypes::v1_20_50::WearableItemComponent>> wearableItemComponent;
     // NOLINTEND

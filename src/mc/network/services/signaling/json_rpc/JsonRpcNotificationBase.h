@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace JsonRpc {
 
 class JsonRpcNotificationBase {
@@ -14,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    JsonRpcNotificationBase& operator=(JsonRpcNotificationBase const&);
     JsonRpcNotificationBase(JsonRpcNotificationBase const&);
     JsonRpcNotificationBase();
 
@@ -23,7 +27,15 @@ public:
     // NOLINTBEGIN
     MCNAPI ::JsonRpc::JsonRpcNotificationBase& operator=(::JsonRpc::JsonRpcNotificationBase&&);
 
+    MCNAPI ::JsonRpc::JsonRpcNotificationBase& operator=(::JsonRpc::JsonRpcNotificationBase const&);
+
     MCNAPI ~JsonRpcNotificationBase();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

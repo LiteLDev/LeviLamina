@@ -46,19 +46,18 @@ public:
 public:
     // prevent constructor by default
     LogicalASTCBlock& operator=(LogicalASTCBlock const&);
+    LogicalASTCBlock(LogicalASTCBlock const&);
     LogicalASTCBlock();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void CalculateWeights(::astc_codec::Footprint const& footprint, ::astc_codec::VoidExtentData const&);
-
     MCNAPI_C void
     CalculateWeights(::astc_codec::Footprint const& footprint, ::astc_codec::IntermediateBlockData const& block);
 
     MCNAPI_C ::std::array<int, 4> ColorAt(int x, int y) const;
 
-    MCNAPI_C LogicalASTCBlock(::astc_codec::LogicalASTCBlock const&);
+    MCNAPI_C LogicalASTCBlock(::astc_codec::Footprint const& footprint, ::astc_codec::VoidExtentData const& block);
 
     MCNAPI_C void SetDualPlaneChannel(int channel);
 
@@ -68,7 +67,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::astc_codec::LogicalASTCBlock const&);
+    MCNAPI_C void* $ctor(::astc_codec::Footprint const& footprint, ::astc_codec::VoidExtentData const& block);
     // NOLINTEND
 
 public:

@@ -28,7 +28,6 @@ public:
 
 public:
     // prevent constructor by default
-    BlockSpecifier& operator=(BlockSpecifier const&);
     BlockSpecifier(BlockSpecifier const&);
     BlockSpecifier();
 
@@ -38,6 +37,8 @@ public:
     MCAPI BlockSpecifier(::SharedTypes::v1_20_60::BlockSpecifier&&);
 
     MCAPI ::SharedTypes::v1_20_60::BlockSpecifier& operator=(::SharedTypes::v1_20_60::BlockSpecifier&&);
+
+    MCFOLD ::SharedTypes::v1_20_60::BlockSpecifier& operator=(::SharedTypes::v1_20_60::BlockSpecifier const&);
 
     MCAPI ~BlockSpecifier();
     // NOLINTEND

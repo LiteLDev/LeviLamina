@@ -26,6 +26,7 @@ public:
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::ResourcePack>>> mPack;
     ::ll::TypedStorage<4, 16, ::PackStats>                                        mStats;
     ::ll::TypedStorage<4, 4, int>                                                 mSubpackIndex;
+    ::ll::TypedStorage<1, 1, uchar>                                               mRevision;
     // NOLINTEND
 
 public:
@@ -57,7 +58,7 @@ public:
 
     MCAPI_C bool hasResource(::Core::Path const& resourceName) const;
 
-    MCAPI_C ::PackInstance& operator=(::PackInstance const&);
+    MCAPI ::PackInstance& operator=(::PackInstance const&);
 
     MCAPI ~PackInstance();
     // NOLINTEND

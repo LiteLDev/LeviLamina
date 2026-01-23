@@ -63,12 +63,13 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk85bc4f;
     ::ll::UntypedStorage<8, 8>   mUnk53da61;
     ::ll::UntypedStorage<8, 8>   mUnk435135;
+    ::ll::UntypedStorage<8, 8>   mUnkabc02f;
     ::ll::UntypedStorage<8, 8>   mUnk8e8e70;
     ::ll::UntypedStorage<8, 8>   mUnkde53e6;
     ::ll::UntypedStorage<4, 4>   mUnk1e8970;
     ::ll::UntypedStorage<8, 32>  mUnk4b5496;
     ::ll::UntypedStorage<4, 4>   mUnk82a025;
-    ::ll::UntypedStorage<8, 40>  mUnk2623b0;
+    ::ll::UntypedStorage<8, 24>  mUnk89c845;
     ::ll::UntypedStorage<4, 12>  mUnkc99a5f;
     // NOLINTEND
 
@@ -81,7 +82,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDebugger() /*override*/;
+    virtual ~ScriptDebugger() /*override*/ = default;
 
     virtual ::ScriptDebuggerSettings const& getSettings() const /*override*/;
 
@@ -146,12 +147,6 @@ public:
         ::IScriptDebuggerWatchdog& watchdog,
         ::IScriptTelemetryLogger&  telemetry
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

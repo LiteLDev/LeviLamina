@@ -4,12 +4,17 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptWeatherChangedAfterEventIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptWeatherChangedAfterEvent {
+public:
+    // ScriptWeatherChangedAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptWeatherChangedAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN

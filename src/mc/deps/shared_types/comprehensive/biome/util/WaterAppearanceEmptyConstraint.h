@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal::internal { struct ConstraintDescription; }
-// clang-format on
-
 namespace SharedTypes::Util {
 
 class WaterAppearanceEmptyConstraint
@@ -17,17 +12,7 @@ class WaterAppearanceEmptyConstraint
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
-
     virtual ~WaterAppearanceEmptyConstraint() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
-
-
     // NOLINTEND
 
 public:

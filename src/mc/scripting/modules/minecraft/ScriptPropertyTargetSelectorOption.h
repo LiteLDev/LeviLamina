@@ -27,7 +27,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPropertyTargetSelectorOption& operator=(ScriptPropertyTargetSelectorOption const&);
     ScriptPropertyTargetSelectorOption(ScriptPropertyTargetSelectorOption const&);
     ScriptPropertyTargetSelectorOption();
 
@@ -36,6 +35,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
     operator=(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&&);
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
+    operator=(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption const&);
     // NOLINTEND
 
 public:

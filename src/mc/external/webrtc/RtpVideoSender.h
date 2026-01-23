@@ -79,7 +79,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtpVideoSender() /*override*/;
+    virtual ~RtpVideoSender() /*override*/ = default;
 
     virtual void SetSending(bool enabled) /*override*/;
 
@@ -144,12 +144,6 @@ public:
 
     MCNAPI void ConfigureSsrcs(::std::map<uint, ::webrtc::RtpState> const& suspended_ssrcs);
 
-    MCNAPI ::webrtc::DataRate GetPostEncodeOverhead() const;
-
-    MCNAPI bool IsActiveLocked();
-
-    MCNAPI bool NackEnabled() const;
-
     MCNAPI RtpVideoSender(
         ::webrtc::Clock*                                             clock,
         ::std::map<uint, ::webrtc::RtpState> const&                  suspended_ssrcs,
@@ -193,12 +187,6 @@ public:
         ::webrtc::FieldTrialsView const&                             field_trials,
         ::webrtc::TaskQueueFactory*                                  task_queue_factory
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -4,15 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/simulation/ContainerScreenSimulation.h"
+#include "mc/world/inventory/simulation/ContainerValidationCaller.h"
 
 // auto generated forward declare list
 // clang-format off
+class Container;
+class ContainerScreenContext;
+class IContainerTransfer;
 struct ContainerScreenActionResult;
 struct ContainerValidationCraftInputs;
 struct ContainerValidationCraftResult;
+struct FullContainerName;
 // clang-format on
 
 class ContainerScreenSimulationCrafting : public ::ContainerScreenSimulation {
+public:
+    // prevent constructor by default
+    ContainerScreenSimulationCrafting();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -21,6 +30,28 @@ public:
     virtual ::ContainerValidationCraftResult getCraftPreview();
 
     virtual ~ContainerScreenSimulationCrafting() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ContainerScreenSimulationCrafting(
+        ::ContainerScreenContext const&,
+        ::ContainerValidationCaller,
+        ::std::unique_ptr<::IContainerTransfer>&&,
+        ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>>
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::ContainerScreenContext const&,
+        ::ContainerValidationCaller,
+        ::std::unique_ptr<::IContainerTransfer>&&,
+        ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>>
+    );
     // NOLINTEND
 
 public:

@@ -29,7 +29,6 @@ public:
 
 public:
     // prevent constructor by default
-    GameVersion& operator=(GameVersion const&);
     GameVersion();
 
 public:
@@ -46,6 +45,8 @@ public:
     MCNAPI bool operator<(::GameVersion const& other) const;
 
     MCNAPI ::GameVersion& operator=(::GameVersion&&);
+
+    MCNAPI ::GameVersion& operator=(::GameVersion const&);
 
     MCNAPI bool operator>=(::GameVersion const& other) const;
 

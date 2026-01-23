@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace JsonRpc {
 
 class JsonRpcRequestBase {
@@ -15,7 +20,6 @@ public:
 
 public:
     // prevent constructor by default
-    JsonRpcRequestBase& operator=(JsonRpcRequestBase const&);
     JsonRpcRequestBase(JsonRpcRequestBase const&);
 
 public:
@@ -25,7 +29,15 @@ public:
 
     MCNAPI ::JsonRpc::JsonRpcRequestBase& operator=(::JsonRpc::JsonRpcRequestBase&&);
 
+    MCNAPI ::JsonRpc::JsonRpcRequestBase& operator=(::JsonRpc::JsonRpcRequestBase const&);
+
     MCNAPI ~JsonRpcRequestBase();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

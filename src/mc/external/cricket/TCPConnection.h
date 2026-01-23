@@ -15,7 +15,6 @@ namespace cricket { class Port; }
 namespace cricket { class StunMessage; }
 namespace cricket { class StunRequest; }
 namespace rtc { class AsyncPacketSocket; }
-namespace rtc { class ReceivedPacket; }
 namespace rtc { struct PacketOptions; }
 // clang-format on
 
@@ -43,9 +42,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TCPConnection() /*override*/;
+    virtual ~TCPConnection() /*override*/ = default;
 
-    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) /*override*/;
+    virtual int Send(void const* data, uint64 size, ::rtc::PacketOptions const& options) /*override*/;
 
     virtual int GetError() /*override*/;
 
@@ -60,8 +59,6 @@ public:
 
     MCNAPI void CreateOutgoingTcpSocket();
 
-    MCNAPI void DisconnectSocketSignals(::rtc::AsyncPacketSocket* socket);
-
     MCNAPI void MaybeReconnect();
 
     MCNAPI void OnClose(::rtc::AsyncPacketSocket* socket, int error);
@@ -69,8 +66,6 @@ public:
     MCNAPI void OnConnect(::rtc::AsyncPacketSocket* socket);
 
     MCNAPI void OnDestroyed(::cricket::Connection* c);
-
-    MCNAPI void OnReadPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet);
 
     MCNAPI void OnReadyToSend(::rtc::AsyncPacketSocket* socket);
 
@@ -92,15 +87,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $Send(void const* data, uint64 len, ::rtc::PacketOptions const& options);
+    MCNAPI int $Send(void const* data, uint64 size, ::rtc::PacketOptions const& options);
 
     MCNAPI int $GetError();
 

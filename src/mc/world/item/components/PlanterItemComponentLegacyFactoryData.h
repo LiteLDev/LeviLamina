@@ -24,7 +24,6 @@ public:
 
 public:
     // prevent constructor by default
-    PlanterItemComponentLegacyFactoryData& operator=(PlanterItemComponentLegacyFactoryData const&);
     PlanterItemComponentLegacyFactoryData(PlanterItemComponentLegacyFactoryData const&);
     PlanterItemComponentLegacyFactoryData();
 
@@ -38,6 +37,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::PlanterItemComponentLegacyFactoryData& operator=(::PlanterItemComponentLegacyFactoryData&&);
+
+    MCAPI ::PlanterItemComponentLegacyFactoryData& operator=(::PlanterItemComponentLegacyFactoryData const&);
     // NOLINTEND
 
 public:

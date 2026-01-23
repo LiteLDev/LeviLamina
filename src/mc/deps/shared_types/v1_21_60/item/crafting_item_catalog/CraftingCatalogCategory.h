@@ -22,19 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftingCatalogCategory& operator=(CraftingCatalogCategory const&);
-    CraftingCatalogCategory(CraftingCatalogCategory const&);
-    CraftingCatalogCategory();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_60::CraftingCatalogCategory&
-    operator=(::SharedTypes::v1_21_60::CraftingCatalogCategory&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);

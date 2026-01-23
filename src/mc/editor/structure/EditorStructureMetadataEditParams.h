@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor {
 
 struct EditorStructureMetadataEditParams {
@@ -33,6 +38,12 @@ public:
     MCNAPI ::Editor::EditorStructureMetadataEditParams& operator=(::Editor::EditorStructureMetadataEditParams const&);
 
     MCNAPI ~EditorStructureMetadataEditParams();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

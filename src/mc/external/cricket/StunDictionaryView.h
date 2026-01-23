@@ -36,8 +36,6 @@ public:
     MCNAPI ::webrtc::RTCErrorOr<::std::pair<::std::unique_ptr<::cricket::StunUInt64Attribute>, ::std::vector<ushort>>>
     ApplyDelta(::cricket::StunByteStringAttribute const& delta);
 
-    MCNAPI uint64 GetLength(int key) const;
-
     MCNAPI ::cricket::StunAttribute const*
     GetOrNull(int key, ::std::optional<::cricket::StunAttributeValueType> type) const;
 

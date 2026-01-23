@@ -33,26 +33,19 @@ public:
 
     public:
         // prevent constructor by default
-        FeatureBinaryJsonFormat& operator=(FeatureBinaryJsonFormat const&);
         FeatureBinaryJsonFormat(FeatureBinaryJsonFormat const&);
         FeatureBinaryJsonFormat();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FeatureBinaryJsonFormat(::FeatureRegistry::FeatureBinaryJsonFormat&&);
-
         MCFOLD ::FeatureRegistry::FeatureBinaryJsonFormat& operator=(::FeatureRegistry::FeatureBinaryJsonFormat&&);
+
+        MCFOLD ::FeatureRegistry::FeatureBinaryJsonFormat& operator=(::FeatureRegistry::FeatureBinaryJsonFormat const&);
 
         MCFOLD bool operator==(::FeatureRegistry::FeatureBinaryJsonFormat const& rhs) const;
 
         MCAPI ~FeatureBinaryJsonFormat();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::FeatureRegistry::FeatureBinaryJsonFormat&&);
         // NOLINTEND
 
     public:
@@ -82,8 +75,6 @@ public:
     MCAPI ::std::string const _featureNamespaceFromInput(::std::string const& filePath, ::std::string const& contents);
 
     MCAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
-
-    MCAPI_S ::std::string const& _reverseLookup(uint64 index) const;
 
     MCAPI bool _setupFeature(
         ::IWorldRegistriesProvider&  worldRegistries,

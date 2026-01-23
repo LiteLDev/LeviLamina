@@ -134,6 +134,7 @@ public:
         ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(bool), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>
                                                                mIsHardcoreSubscribers;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveLevelData;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>  mExperienceWorldId;
     // NOLINTEND
 
 public:
@@ -164,15 +165,13 @@ public:
 
     MCAPI_C void _resetDefaultAdvancedSettingsData(bool isTrial);
 
-    MCAPI_C void _resetDefaultGeneralSettingsData();
-
     MCAPI_C void _resetDefaultScriptingCodingSettingsData();
 
     MCAPI void _setValue(::HashedString const& key, ::LevelDataValue&& value);
 
     MCAPI void _updateLimitedWorldOrigin(::BlockPos const& pos);
 
-    MCAPI_C bool achievementsWillBeDisabledOnLoad() const;
+    MCAPI bool achievementsWillBeDisabledOnLoad() const;
 
     MCAPI_C void applyPolicyBasedSettings(bool hasBehaviourPack);
 
@@ -198,8 +197,6 @@ public:
 
     MCAPI ::LevelSeed64 getSeed() const;
 
-    MCAPI_C ::BlockPos const& getSpawnPos() const;
-
     MCAPI void getTagData(::CompoundTag const& tag);
 
     MCAPI ::WorldVersion getWorldVersion() const;
@@ -224,8 +221,6 @@ public:
 
     MCAPI void setBiomeOverride(::std::string const& biomeName);
 
-    MCAPI_C void setCloudSaveInfo(::CloudSaveLevelInfo const& cloudSaveInfo);
-
     MCAPI void setDaylightCycle(::DaylightCycle daylightCycle);
 
     MCAPI void setEduSharedUriResource(::EduSharedUriResource const& eduSharedUriResource);
@@ -244,9 +239,13 @@ public:
 
     MCAPI void setIsHardcore(bool value);
 
+    MCAPI void setLevelName(::std::string const& levelName);
+
     MCAPI void setSeed(::LevelSeed64 seed);
 
     MCAPI void setSpawnPos(::BlockPos const& spawn);
+
+    MCAPI_C void setSpawnSettings(::SpawnSettings const& settings);
 
     MCAPI void setTagData(::CompoundTag& tag) const;
 

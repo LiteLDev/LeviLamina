@@ -77,10 +77,6 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-#ifdef LL_PLAT_S
-    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
-#endif
-
     MCFOLD bool $isLavaBlocking() const;
 
 

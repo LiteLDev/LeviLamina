@@ -16,7 +16,6 @@ public:
 
 public:
     // prevent constructor by default
-    EditorJigsawSection& operator=(EditorJigsawSection const&);
     EditorJigsawSection(EditorJigsawSection const&);
     EditorJigsawSection();
 
@@ -24,6 +23,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::Services::EditorJigsawSection& operator=(::Editor::Services::EditorJigsawSection&&);
+
+    MCNAPI ::Editor::Services::EditorJigsawSection& operator=(::Editor::Services::EditorJigsawSection const&);
 
     MCNAPI ~EditorJigsawSection();
     // NOLINTEND

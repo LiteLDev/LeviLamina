@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BitrateEstimator();
+    virtual ~BitrateEstimator() = default;
 
     virtual void Update(::webrtc::Timestamp at_time, ::webrtc::DataSize amount, bool in_alr);
 
@@ -55,20 +55,12 @@ public:
     MCNAPI explicit BitrateEstimator(::webrtc::FieldTrialsView const* key_value_config);
 
     MCNAPI ::std::optional<::webrtc::DataRate> PeekRate() const;
-
-    MCNAPI float UpdateWindow(int64 now_ms, int bytes, int rate_window_ms, bool* is_small_sample);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::FieldTrialsView const* key_value_config);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

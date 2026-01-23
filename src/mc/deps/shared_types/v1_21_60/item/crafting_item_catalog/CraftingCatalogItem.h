@@ -21,7 +21,6 @@ public:
 
 public:
     // prevent constructor by default
-    CraftingCatalogItem& operator=(CraftingCatalogItem const&);
     CraftingCatalogItem(CraftingCatalogItem const&);
     CraftingCatalogItem();
 
@@ -29,6 +28,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_60::CraftingCatalogItem& operator=(::SharedTypes::v1_21_60::CraftingCatalogItem&&);
+
+    MCFOLD ::SharedTypes::v1_21_60::CraftingCatalogItem& operator=(::SharedTypes::v1_21_60::CraftingCatalogItem const&);
     // NOLINTEND
 
 public:

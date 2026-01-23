@@ -13,6 +13,7 @@
 // clang-format off
 class WeakEntityRef;
 namespace Editor { class GameOptions; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class PlaytestBeginSessionTransferResponsePayload; }
 namespace mce { class UUID; }
 // clang-format on
@@ -48,6 +49,7 @@ public:
         ::ll::UntypedStorage<8, 32> mUnka39940;
         ::ll::UntypedStorage<8, 32> mUnkf32514;
         ::ll::UntypedStorage<8, 64> mUnk87fe44;
+        ::ll::UntypedStorage<1, 1>  mUnkb28cb0;
         // NOLINTEND
 
     public:
@@ -84,7 +86,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorPlaytestManagerService() /*override*/ = default;
+    virtual ~EditorPlaytestManagerService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -109,8 +111,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit EditorPlaytestManagerService(::Editor::ServiceProviderCollection& providers);
+
     MCNAPI ::Editor::Services::EditorPlaytestManagerService::PlayerSessionInfo*
     _createSessionInfo(::mce::UUID const& clientUUID);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

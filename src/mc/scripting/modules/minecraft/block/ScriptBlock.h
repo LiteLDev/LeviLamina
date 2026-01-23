@@ -64,8 +64,6 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     below(int steps) const;
 
-    MCNAPI ::Vec3 bottomCenter() const;
-
     MCNAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
@@ -93,13 +91,18 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptFacing>                                            faceToPlaceOn
     ) const;
 
-    MCNAPI ::Vec3 center() const;
-
     MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     east(int steps) const;
+
+    MCNAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>>
+    getComponent_010(
+        ::ScriptModuleMinecraft::ScriptBlockComponents const& components,
+        ::std::string const&                                  componentName
+    );
 
     MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>,
@@ -270,8 +273,6 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     setPermutation(::ScriptModuleMinecraft::ScriptBlockPermutation const& blockData);
 
-    MCNAPI void setPermutation_010(::ScriptModuleMinecraft::ScriptBlockPermutation const& blockData);
-
     MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
@@ -282,8 +283,6 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
             ::std::string> const& blockType
     );
-
-    MCNAPI void setType_010(::ScriptModuleMinecraft::ScriptBlockType const& blockType);
 
     MCNAPI ::Scripting::Result<
         void,

@@ -10,8 +10,8 @@
 #include "mc/deps/core/threading/TaskGroupState.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/nether_net/ESessionError.h"
+#include "mc/editor/services/playtest/SessionResult.h"
 #include "mc/network/services/signaling/ISignalingServiceConfigProvider.h"
-#include "mc/platform/Copyable.h"
 #include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/brstd/move_only_function.h"
@@ -51,6 +51,16 @@ namespace RepositoryLoading { struct PackModifications; }
 // clang-format on
 
 class TaskGroup : public ::IBackgroundTaskOwner {
+public:
+    // TaskGroup inner types declare
+    // clang-format off
+    template<typename T0> class Thenable;
+    // clang-format on
+
+    // TaskGroup inner types define
+    template <typename T0>
+    class Thenable {};
+
 public:
     // member variables
     // NOLINTBEGIN

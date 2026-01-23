@@ -23,7 +23,6 @@ class Level;
 class Player;
 class SemVersion;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
-namespace SharedTypes::v1_20_50 { struct FoodItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -52,10 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FoodItemComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~FoodItemComponent() /*override*/ = default;
@@ -72,20 +67,13 @@ public:
 
     virtual void use(bool& result, ::ItemStack& item, ::Player& player) /*override*/;
 
-    virtual ::Item const* useTimeDepleted(
-        ::ItemUseMethod&   itemUseMethod,
-        ::ItemStack const& initialInstance,
-        ::ItemStack&       instance,
-        ::Player&          player,
-        ::Level&           level
-    ) /*override*/;
+    virtual ::Item const*
+    useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent component);
-
     MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack const&, ::ItemStack&, ::Actor&)>& onConsume();
     // NOLINTEND
 
@@ -102,12 +90,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent component);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $_initializeComponent(::ComponentItem& owner);
@@ -121,16 +103,6 @@ public:
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
     MCAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
-
-#ifdef LL_PLAT_C
-    MCAPI ::Item const* $useTimeDepleted(
-        ::ItemUseMethod&   itemUseMethod,
-        ::ItemStack const& initialInstance,
-        ::ItemStack&       instance,
-        ::Player&          player,
-        ::Level&           level
-    );
-#endif
 
 
     // NOLINTEND

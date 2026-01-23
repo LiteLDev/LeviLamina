@@ -56,8 +56,6 @@ public:
 
     MCAPI int getInt(uint64 h) const;
 
-    MCAPI ::PropertyMetadata::ContainedType getPropertyType(::HashedString const& h) const;
-
     MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
 
     MCAPI ::HashedString const& getString(uint64 h) const;
@@ -65,8 +63,6 @@ public:
     MCAPI ::PropertyComponent& operator=(::PropertyComponent&&);
 
     MCAPI ::PropertySyncData packDirtySyncData();
-
-    MCAPI ::std::optional<bool> tryGetBool(uint64 h) const;
 
     MCAPI ::HashedString const* tryGetString(uint64 h) const;
     // NOLINTEND

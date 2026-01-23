@@ -16,6 +16,8 @@ namespace VehicleUtils { struct VehicleDirections; }
 namespace VehicleUtils {
 // functions
 // NOLINTBEGIN
+MCAPI bool arePassengersOfSameActor(::Actor const& maybePassenger1, ::Actor const& maybePassenger2);
+
 MCAPI ::std::optional<float> calculateBlockFloorHeight(::IConstBlockSource const& region, ::BlockPos const& blockPos);
 
 MCAPI bool ignoredExitCollisionBlock(::Block const& block);

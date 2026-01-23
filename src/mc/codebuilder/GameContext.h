@@ -112,11 +112,11 @@ public:
 
     MCNAPI ::Json::Value getFilepathJson(::std::string const& filePath) const;
 
+    MCNAPI ::Json::Value getTutorialJson(::std::string const& tutorialPath) const;
+
     MCNAPI ::Json::Value itemsToJson() const;
 
     MCNAPI ::Json::Value mobsToJson() const;
-
-    MCNAPI ~GameContext();
     // NOLINTEND
 
 public:
@@ -134,12 +134,6 @@ public:
         ::CodeBuilder::GameContext::ItemTypeList                          items,
         ::std::function<::ILevel*()>                                      levelGetter
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

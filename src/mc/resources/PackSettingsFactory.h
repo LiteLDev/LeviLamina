@@ -104,6 +104,9 @@ public:
 
     MCAPI ::PackSettings* _getGlobalPackSettings(::PackManifest const& manifest);
 
+    MCAPI ::std::unordered_map<::mce::UUID, ::std::unique_ptr<::PackSettings>>&
+    _getWorldIdToPackSettingsMap(::std::string const& worldId);
+
     MCAPI ::PackSettings* _getWorldPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
 
     MCAPI ::std::unique_ptr<::SharedTypes::v1_21_100::PackSettingsDefinition::Document>
@@ -116,7 +119,7 @@ public:
 
     MCAPI_C void _syncPackSettingsToSaveDoc(
         ::mce::UUID                                                 packId,
-        ::PackSettings*                                             packSettings,
+        ::PackSettings const&                                       packSettings,
         ::SharedTypes::v1_21_100::PackSettingsDefinition::Document& settingsDoc,
         bool                                                        includeTimestamp
     ) const;

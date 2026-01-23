@@ -16,7 +16,6 @@ class LevelTickTrackingComponent;
 class StrictEntityContext;
 struct ActorComponent;
 struct CurrentTickComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 struct EditorTrackLevelTickSystem {
@@ -33,7 +32,5 @@ public:
         ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
         ::ViewT<::StrictEntityContext, ::Include<::ActorTickNeededComponent>, ::LevelTickTrackingComponent> view
     );
-
-    MCNAPI_C static ::TickingSystemWithInfo createTrackTickingActors();
     // NOLINTEND
 };

@@ -27,6 +27,7 @@ public:
 public:
     // prevent constructor by default
     ScriptBlockInventoryComponentContainer& operator=(ScriptBlockInventoryComponentContainer const&);
+    ScriptBlockInventoryComponentContainer(ScriptBlockInventoryComponentContainer const&);
     ScriptBlockInventoryComponentContainer();
 
 public:
@@ -42,22 +43,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI
-    ScriptBlockInventoryComponentContainer(::ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindV010();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer const&);
     // NOLINTEND
 
 public:

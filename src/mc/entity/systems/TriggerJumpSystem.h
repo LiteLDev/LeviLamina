@@ -13,6 +13,7 @@ class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataControllingSeatIndexComponent;
 struct ActorDataFlagComponent;
+struct DashActionComponent;
 struct JumpPendingScaleComponent;
 struct MobIsJumpingFlagComponent;
 struct MobTravelComponent;

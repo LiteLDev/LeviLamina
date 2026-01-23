@@ -24,13 +24,14 @@ public:
 public:
     // prevent constructor by default
     ConditionalBandwidthOptimizationComponent& operator=(ConditionalBandwidthOptimizationComponent const&);
-    ConditionalBandwidthOptimizationComponent(ConditionalBandwidthOptimizationComponent const&);
     ConditionalBandwidthOptimizationComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent&&);
+
+    MCNAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent const&);
 
     MCNAPI ::ConditionalBandwidthOptimization getCurrentOptimizationValues(::Actor& owner);
 
@@ -43,6 +44,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ConditionalBandwidthOptimizationComponent&&);
+
+    MCNAPI void* $ctor(::ConditionalBandwidthOptimizationComponent const&);
     // NOLINTEND
 
 public:

@@ -33,14 +33,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_MAX_DISTANCE();
-
-    MCAPI static float const& DEFAULT_MIN_DISTANCE();
-
-    MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
-
-    MCAPI static float const& DEFAULT_SUCCESS_RATE();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

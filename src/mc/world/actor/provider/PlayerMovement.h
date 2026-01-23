@@ -14,6 +14,7 @@ struct ActorDataFlagComponent;
 struct ClientInputLockComponent;
 struct MoveInputComponent;
 struct MoveInputState;
+struct Tick;
 struct VanillaClientGameplayComponent;
 // clang-format on
 
@@ -29,6 +30,8 @@ MCAPI void clearInputState(::MoveInputComponent& input);
 MCAPI_C ::InputMode getInputMode(::EntityContext const& provider);
 
 MCAPI void initializePlayer(::EntityContext& provider);
+
+MCAPI void setElytraFlightTimeTicks(::EntityContext& provider, ::Tick const& value);
 
 MCAPI_C bool shouldStopEmoting(
     ::Vec2                            rawMove,

@@ -49,8 +49,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CompoundCreatorContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
-    MCAPI_C ::std::vector<::ItemStack> const& getInputItems();
     // NOLINTEND
 
 public:

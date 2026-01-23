@@ -24,7 +24,6 @@ class Level;
 class LevelStorage;
 class Mob;
 class POIInstance;
-class Player;
 class Raid;
 class Random;
 class Vec3;
@@ -180,8 +179,6 @@ public:
     MCAPI void _saveVillagePlayerStanding(::LevelStorage& levelStorage) const;
 
     MCAPI void _saveVillageRaid(::LevelStorage& levelStorage) const;
-
-    MCAPI void _sendSoundTheAlarmAchievement(::Player const& player) const;
 
     MCAPI void _spawnPassiveDwellers(::BlockSource& region, int);
 

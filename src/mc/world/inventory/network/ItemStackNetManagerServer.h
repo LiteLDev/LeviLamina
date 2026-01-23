@@ -64,7 +64,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemStackNetManagerServer() /*override*/ = default;
+    virtual ~ItemStackNetManagerServer() /*override*/;
 
     virtual ::ItemStackRequestId getRequestId() const /*override*/;
 
@@ -108,6 +108,11 @@ public:
 
     MCNAPI bool _tryFilterText(::ItemStackRequestData const* requestData);
 
+    MCNAPI_C void handleRequest(
+        ::std::unique_ptr<::ItemStackRequestData>            request,
+        ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
+    );
+
     MCNAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
     // NOLINTEND
 
@@ -115,6 +120,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ServerPlayer& serverPlayer, bool isEnabled);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

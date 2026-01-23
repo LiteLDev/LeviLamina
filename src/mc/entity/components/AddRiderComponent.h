@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/ActorDefinitionIdentifier.h"
-
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -15,20 +12,20 @@ struct AddRiderComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mPassengerType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionIdentifier>> mPassengersTypes;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AddRiderComponent& operator=(AddRiderComponent const&);
+    AddRiderComponent(AddRiderComponent const&);
+    AddRiderComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::AddRiderComponent& operator=(::AddRiderComponent&&);
+
     MCAPI void reloadComponent(::Actor& owner);
-
-    MCAPI ~AddRiderComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

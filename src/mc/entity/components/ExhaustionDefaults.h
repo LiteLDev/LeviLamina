@@ -13,6 +13,8 @@ MCAPI float const& EXHAUSTION_HEAL();
 
 MCAPI float const& EXHAUSTION_JUMP();
 
+MCAPI float const& EXHAUSTION_LUNGE();
+
 MCAPI float const& EXHAUSTION_MINE();
 
 MCAPI float const& EXHAUSTION_SPRINT();

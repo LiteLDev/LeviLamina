@@ -14,11 +14,8 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
-class BlockSource;
 class Mob;
 class Random;
-struct VariantParameterList;
 struct VariantParameterListConst;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -76,20 +73,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Definition(Definition const&);
-        Definition();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         virtual ~Definition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::PlaceBlockGoal::Definition& operator=(::PlaceBlockGoal::Definition const&);
         // NOLINTEND
 
     public:
@@ -143,17 +129,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _placeBlock(
-        ::BlockSource&                region,
-        ::BlockPos const&             targetPos,
-        ::VariantParameterList const& params,
-        ::Block const&                placementBlock
-    );
-
     MCAPI ::Block const* _tryGetRandomPlaceBlock(::VariantParameterListConst const& params, ::Random& random) const;
-
-    MCAPI void
-    _tryPlaceCarriedBlock(::BlockSource& region, ::BlockPos const& targetPos, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:

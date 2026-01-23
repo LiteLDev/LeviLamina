@@ -30,16 +30,31 @@ public:
 
 public:
     // prevent constructor by default
-    NpcRequestPacketPayload& operator=(NpcRequestPacketPayload const&);
     NpcRequestPacketPayload(NpcRequestPacketPayload const&);
     NpcRequestPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NpcRequestPacketPayload(
+        ::ActorRuntimeID                       id,
+        ::NpcRequestPacketPayload::RequestType type,
+        ::std::string                          actions,
+        uchar                                  actionIndex
+    );
+
     MCAPI ::NpcRequestPacketPayload& operator=(::NpcRequestPacketPayload&&);
 
+    MCAPI ::NpcRequestPacketPayload& operator=(::NpcRequestPacketPayload const&);
+
     MCAPI ~NpcRequestPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::ActorRuntimeID id, ::NpcRequestPacketPayload::RequestType type, ::std::string actions, uchar actionIndex);
     // NOLINTEND
 
 public:

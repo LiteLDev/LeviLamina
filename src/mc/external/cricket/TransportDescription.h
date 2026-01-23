@@ -35,6 +35,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::cricket::IceParameters GetIceParameters() const;
 
+    MCNAPI bool HasOption(::std::string_view option) const;
+
     MCNAPI TransportDescription();
 
     MCNAPI TransportDescription(::cricket::TransportDescription const& from);

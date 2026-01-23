@@ -24,6 +24,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                            mFrame;
     ::ll::TypedStorage<4, 4, float>                                          mRot;
     ::ll::TypedStorage<4, 4, float>                                          mRotA;
+    ::ll::TypedStorage<4, 4, int>                                            mLastUpdatedAt;
     // NOLINTEND
 
 public:

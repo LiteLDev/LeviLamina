@@ -10,6 +10,7 @@
 // clang-format off
 class Font;
 class FontHandle;
+class ResourceLocation;
 namespace Core { class Path; }
 namespace mce { class TextureGroup; }
 // clang-format on
@@ -80,7 +81,13 @@ public:
         ::FontHandle& uiFontHandle
     );
 
+    MCNAPI uint64 getFontIdentifier(::std::string const& fontName);
+
+    MCNAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
+
     MCNAPI void loadDefaultFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
+    MCNAPI void onLanguageChanged(::std::string const& languageCode);
 
     MCNAPI void parseAndLoadMetadataFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 

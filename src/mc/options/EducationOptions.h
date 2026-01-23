@@ -39,8 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EducationOptions(::ResourcePackManager* packMan);
-
     MCNAPI void init(::LevelData const& levelData);
     // NOLINTEND
 
@@ -58,12 +56,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::EducationOptions& DEFAULT_OPTION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ResourcePackManager* packMan);
     // NOLINTEND
 
 public:

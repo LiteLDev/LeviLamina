@@ -30,7 +30,6 @@ public:
 
     public:
         // prevent constructor by default
-        Params& operator=(Params const&);
         Params(Params const&);
         Params();
 
@@ -38,6 +37,8 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::JsonRpc::NetherNetMessage::Params& operator=(::JsonRpc::NetherNetMessage::Params&&);
+
+        MCNAPI ::JsonRpc::NetherNetMessage::Params& operator=(::JsonRpc::NetherNetMessage::Params const&);
 
         MCNAPI ~Params();
         // NOLINTEND

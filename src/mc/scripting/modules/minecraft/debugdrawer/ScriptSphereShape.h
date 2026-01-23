@@ -22,6 +22,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptSphereShape(ScriptSphereShape const&);
     ScriptSphereShape();
 
 public:
@@ -37,8 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSphereShape(::ScriptModuleDebugUtilities::ScriptSphereShape const&);
-
     MCFOLD ::ScriptModuleDebugUtilities::ScriptSphereShape&
     operator=(::ScriptModuleDebugUtilities::ScriptSphereShape const&);
     // NOLINTEND
@@ -47,12 +46,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleDebugUtilities::ScriptSphereShape const&);
     // NOLINTEND
 
 public:

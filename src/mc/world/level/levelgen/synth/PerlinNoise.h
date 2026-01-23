@@ -7,7 +7,6 @@
 class IRandom;
 class ImprovedNoise;
 class Vec3;
-struct YBlendingBugSettings;
 // clang-format on
 
 class PerlinNoise {
@@ -29,9 +28,9 @@ public:
     // NOLINTBEGIN
     MCAPI PerlinNoise(::PerlinNoise const&);
 
-    MCAPI PerlinNoise(uint seed, int levels);
+    MCAPI PerlinNoise(::IRandom& random, int levels);
 
-    MCAPI void _init(::IRandom& random, ::YBlendingBugSettings yBlendingSettings);
+    MCAPI PerlinNoise(uint seed, int levels);
 
     MCAPI void fillRegion(
         float*        buffer,
@@ -45,7 +44,7 @@ public:
         int           zStep
     ) const;
 
-    MCAPI float getValue(::Vec3 const& pos) const;
+    MCAPI float getValueNormalized(::Vec3 const& pos) const;
 
     MCAPI ~PerlinNoise();
     // NOLINTEND
@@ -54,6 +53,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::PerlinNoise const&);
+
+    MCAPI void* $ctor(::IRandom& random, int levels);
 
     MCAPI void* $ctor(uint seed, int levels);
     // NOLINTEND

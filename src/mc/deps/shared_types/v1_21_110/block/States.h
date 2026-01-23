@@ -14,30 +14,44 @@ public:
     // States inner types declare
     // clang-format off
     struct IntegerRange;
+    struct Values;
     // clang-format on
 
     // States inner types define
     struct IntegerRange {
     public:
-        // IntegerRange inner types declare
-        // clang-format off
-        struct Range;
-        // clang-format on
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int> mMin;
+        ::ll::TypedStorage<4, 4, int> mMax;
+        // NOLINTEND
+    };
 
-        // IntegerRange inner types define
-        struct Range {
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::TypedStorage<4, 4, int> mMin;
-            ::ll::TypedStorage<4, 4, int> mMax;
-            // NOLINTEND
-        };
-
+    struct Values {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 8, ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange::Range> mRange;
+        ::ll::TypedStorage<
+            8,
+            40,
+            ::std::variant<
+                ::std::vector<::std::string>,
+                ::std::vector<bool>,
+                ::std::vector<int>,
+                ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange>>
+            mValues;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~Values();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -49,13 +63,27 @@ public:
             ::std::vector<::std::string>,
             ::std::vector<bool>,
             ::std::vector<int>,
-            ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange>>;
+            ::SharedTypes::v1_21_110::BlockDefinition::States::Values>>;
 
     using IntegerRangeState = ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange;
 
     using IntegerState = ::std::vector<int>;
 
+    using StatesVariant = ::std::variant<
+        ::std::vector<::std::string>,
+        ::std::vector<bool>,
+        ::std::vector<int>,
+        ::SharedTypes::v1_21_110::BlockDefinition::States::Values>;
+
     using StringState = ::std::vector<::std::string>;
+
+    using ValuesState = ::SharedTypes::v1_21_110::BlockDefinition::States::Values;
+
+    using ValuesVariant = ::std::variant<
+        ::std::vector<::std::string>,
+        ::std::vector<bool>,
+        ::std::vector<int>,
+        ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange>;
 
 public:
     // member variables
@@ -73,56 +101,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S States();
+    MCAPI States();
 
-    MCAPI_S States(::SharedTypes::v1_21_110::BlockDefinition::States const&);
+    MCAPI States(::SharedTypes::v1_21_110::BlockDefinition::States const&);
 
-    MCAPI_S ::std::unordered_map<
+    MCAPI ::std::unordered_map<
         ::std::string,
         ::std::variant<
             ::std::vector<::std::string>,
             ::std::vector<bool>,
             ::std::vector<int>,
-            ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange>>
+            ::SharedTypes::v1_21_110::BlockDefinition::States::Values>>
     getter() const;
 
-    MCAPI_S ::SharedTypes::v1_21_110::BlockDefinition::States&
+    MCAPI ::SharedTypes::v1_21_110::BlockDefinition::States&
     operator=(::SharedTypes::v1_21_110::BlockDefinition::States&&);
 
-    MCAPI_S ::SharedTypes::v1_21_110::BlockDefinition::States&
+    MCAPI ::SharedTypes::v1_21_110::BlockDefinition::States&
     operator=(::SharedTypes::v1_21_110::BlockDefinition::States const&);
 
-    MCAPI_S void setter(
+    MCAPI void setter(
         ::std::unordered_map<
             ::std::string,
             ::std::variant<
                 ::std::vector<::std::string>,
                 ::std::vector<bool>,
                 ::std::vector<int>,
-                ::SharedTypes::v1_21_110::BlockDefinition::States::IntegerRange>>& value
+                ::SharedTypes::v1_21_110::BlockDefinition::States::Values>>& value
     );
 
-    MCAPI_S ~States();
+    MCAPI ~States();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_S void* $ctor();
+    MCAPI void* $ctor();
 
-    MCAPI_S void* $ctor(::SharedTypes::v1_21_110::BlockDefinition::States const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_110::BlockDefinition::States const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_S void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

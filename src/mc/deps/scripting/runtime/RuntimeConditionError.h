@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class RuntimeConditions; }
+namespace Scripting { struct ErrorBinding; }
 // clang-format on
 
 namespace Scripting {
@@ -24,6 +25,12 @@ public:
     RuntimeConditionError(::Scripting::RuntimeConditions const& missingRuntimeConditions, ::std::string const& apiName);
 
     MCAPI ~RuntimeConditionError();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:

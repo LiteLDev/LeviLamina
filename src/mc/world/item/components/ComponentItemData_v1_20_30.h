@@ -24,9 +24,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ComponentItemData_v1_20_30(ComponentItemData_v1_20_30 const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ComponentItemData_v1_20_30();
+
+    MCAPI ::ComponentItemData_v1_20_30& operator=(::ComponentItemData_v1_20_30 const&);
 
     MCAPI ~ComponentItemData_v1_20_30();
     // NOLINTEND

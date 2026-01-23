@@ -10,10 +10,9 @@
 // auto generated forward declare list
 // clang-format off
 class AsyncVerdictPromise;
-class ConnectionRequest;
 class Minecraft;
 class NetworkIdentifier;
-class SubClientConnectionRequest;
+struct PlayerAuthenticationInfo;
 // clang-format on
 
 class AsyncJoinRegistrar : public ::IAsyncJoinRegistrar {
@@ -36,9 +35,7 @@ public:
     virtual ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(
         ::brstd::move_only_function<void(
             ::NetworkIdentifier const&,
-            ::std::variant<
-                ::std::reference_wrapper<::ConnectionRequest const>,
-                ::std::reference_wrapper<::SubClientConnectionRequest const>> const&,
+            ::PlayerAuthenticationInfo const&,
             ::SubClientId,
             ::std::shared_ptr<::AsyncVerdictPromise>
         )> joinCallback
@@ -67,9 +64,7 @@ public:
     MCNAPI ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> $registerAsyncJoinCallback(
         ::brstd::move_only_function<void(
             ::NetworkIdentifier const&,
-            ::std::variant<
-                ::std::reference_wrapper<::ConnectionRequest const>,
-                ::std::reference_wrapper<::SubClientConnectionRequest const>> const&,
+            ::PlayerAuthenticationInfo const&,
             ::SubClientId,
             ::std::shared_ptr<::AsyncVerdictPromise>
         )> joinCallback

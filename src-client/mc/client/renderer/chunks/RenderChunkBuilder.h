@@ -18,6 +18,7 @@ class BlockSource;
 class ChunkSource;
 class ChunkViewSource;
 class MinecraftGameplayGraphicsResources;
+class SubChunkPos;
 class Tessellator;
 struct AirAndSimpleBlockBits;
 struct BlockQueueEntry;
@@ -27,9 +28,9 @@ struct RenderChunkCoordinator;
 struct RenderChunkGeometry;
 struct RenderChunkQuadInfo;
 struct RuntimeLocalLightingConfig;
-namespace ClientBlockPipeline { class MaterialRepository; }
 namespace ClientBlockPipeline { struct BlockTessellatorPipeline; }
 namespace ClientBlockPipeline { struct Description; }
+namespace ClientBlockPipeline { struct MaterialRepository; }
 namespace ClientBlockPipeline { struct TessellatorContext; }
 namespace mce { class Mesh; }
 namespace mce { class MeshData; }
@@ -98,11 +99,19 @@ public:
 
     MCNAPI void _buildRanges(::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails& renderChunkBuildDetails);
 
+    MCNAPI void _overrideStaticBlockLighting(::BlockSource& region, ::SubChunkPos const& subChunkPos);
+
     MCNAPI bool _sortBlocks(
         ::BlockSource&                                                 region,
         ::RenderChunkGeometry&                                         renderChunkGeometry,
         bool                                                           transparentLeaves,
         ::AirAndSimpleBlockBits&                                       airAndSimpleBlocks,
+        ::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails& renderChunkBuildDetails
+    );
+
+    MCNAPI bool _tessellateNewPipeline(
+        ::RenderChunkGeometry& renderChunkGeometry,
+        ::BlockSource&,
         ::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails& renderChunkBuildDetails
     );
 

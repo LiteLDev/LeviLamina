@@ -20,15 +20,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ColorExpr(ColorExpr const&);
-    ColorExpr();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_20_80::ColorExpr& operator=(::SharedTypes::v1_20_80::ColorExpr const&);
-
     MCAPI ~ColorExpr();
     // NOLINTEND
 

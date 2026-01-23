@@ -67,14 +67,6 @@ public:
         ::ContainerEnumName containerName,
         int                 containerSize,
         ::Player&           player,
-        ::ActorUniqueID     entityId,
-        ::ContainerCategory category
-    );
-
-    MCAPI LevelContainerModel(
-        ::ContainerEnumName containerName,
-        int                 containerSize,
-        ::Player&           player,
         ::BlockActorType    type,
         ::BlockPos const&   blockPos,
         ::ContainerCategory category
@@ -95,14 +87,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ContainerEnumName containerName,
-        int                 containerSize,
-        ::Player&           player,
-        ::ActorUniqueID     entityId,
-        ::ContainerCategory category
-    );
-
     MCAPI void* $ctor(
         ::ContainerEnumName containerName,
         int                 containerSize,

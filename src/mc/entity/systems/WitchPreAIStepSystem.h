@@ -22,6 +22,13 @@ public:
     MCNAPI static void
     _doWitchPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
+    MCNAPI static void _tickWitchPreAIStepSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::WitchFlagComponent>,
+            ::ActorOwnerComponent> view
+    );
+
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

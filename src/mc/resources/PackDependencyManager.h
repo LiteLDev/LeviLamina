@@ -16,14 +16,14 @@ namespace mce { class UUID; }
 namespace PackDependencyManager {
 // functions
 // NOLINTBEGIN
-MCNAPI_C ::std::vector<::PackIdVersion> getMissingDependencyIdentities(
+MCNAPI ::std::vector<::PackIdVersion> getMissingDependencyIdentities(
     ::brstd::function_ref<bool(::PackIdVersion const&) const, bool(::PackIdVersion const&)> hasPack,
     ::std::vector<::PackIdVersion> const&                                                   dependencyIdentities
 );
 
-MCNAPI bool hasMissingDependencies(::RepositoryPacks const& source, ::PackManifest const& manifest);
+MCNAPI_C bool hasMissingDependencies(::RepositoryPacks const& source, ::PackManifest const& manifest);
 
-MCNAPI bool isNativeModule(::mce::UUID const& uuid);
+MCNAPI_C bool isNativeModule(::mce::UUID const& uuid);
 // NOLINTEND
 
 } // namespace PackDependencyManager

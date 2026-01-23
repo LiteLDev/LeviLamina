@@ -13,7 +13,6 @@
 // clang-format off
 class AABB;
 class Block;
-class BlockItem;
 class BlockPos;
 class BlockSource;
 class Experiments;
@@ -64,9 +63,12 @@ public:
 
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
-    virtual bool
-    canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const
-        /*override*/;
+    virtual bool canBeBuiltOver(
+        ::Block const&     block,
+        ::BlockSource&     region,
+        ::BlockPos const&  pos,
+        ::BlockType const& newBlock
+    ) const /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
@@ -113,8 +115,12 @@ public:
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    MCAPI bool
-    $canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const;
+    MCAPI bool $canBeBuiltOver(
+        ::Block const&     block,
+        ::BlockSource&     region,
+        ::BlockPos const&  pos,
+        ::BlockType const& newBlock
+    ) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

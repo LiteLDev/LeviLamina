@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::Legacy {
 
 struct BlockDescriptor {
@@ -32,13 +37,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void fromBool(bool b);
-
-        MCAPI void fromInt(int i);
-
         MCAPI void fromString(::std::string str);
 
         MCAPI ~Compound();
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
@@ -66,7 +73,7 @@ public:
     // NOLINTBEGIN
     MCAPI BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor&&);
 
-    MCAPI ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor&&);
+    MCFOLD ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor&&);
 
     MCAPI ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor const&);
 

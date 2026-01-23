@@ -8,8 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
-class BlockSource;
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class PoweredRailBlock : public ::BaseRailBlock {
@@ -18,8 +17,7 @@ public:
     // NOLINTBEGIN
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
+    virtual void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const /*override*/;
 
     virtual ~PoweredRailBlock() /*override*/ = default;
     // NOLINTEND
@@ -29,7 +27,7 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getVariant(::Block const& block) const;
 
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCAPI void $_onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
 
     // NOLINTEND

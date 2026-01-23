@@ -20,25 +20,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MaterialReducerDataEntry& operator=(MaterialReducerDataEntry const&);
-    MaterialReducerDataEntry(MaterialReducerDataEntry const&);
-    MaterialReducerDataEntry();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C MaterialReducerDataEntry(::MaterialReducerDataEntry&&);
-
     MCAPI_C ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
     MCAPI ~MaterialReducerDataEntry();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(::MaterialReducerDataEntry&&);
     // NOLINTEND
 
 public:

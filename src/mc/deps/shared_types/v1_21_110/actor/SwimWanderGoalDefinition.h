@@ -31,14 +31,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_INTERVAL();
-
-    MCAPI static float const& DEFAULT_LOOK_AHEAD();
-
-    MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
-
-    MCAPI static float const& DEFAULT_WANDER_TIME();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

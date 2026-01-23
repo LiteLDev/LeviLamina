@@ -16,12 +16,12 @@ class MountPathingGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Mob&>               mMob;
     ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mTarget;
     ::ll::TypedStorage<4, 4, float>                mSpeed;
-    ::ll::TypedStorage<4, 4, float>                mTargetDistSqr;
+    ::ll::TypedStorage<4, 4, float>                mMinTargetDistanceSquared;
     ::ll::TypedStorage<1, 1, bool>                 mTrackTarget;
-    ::ll::TypedStorage<4, 4, int>                  mTimeToRecalcPath;
-    ::ll::TypedStorage<8, 8, ::Mob&>               mMob;
+    ::ll::TypedStorage<4, 4, int>                  mTimeToRecalculatePath;
     // NOLINTEND
 
 public:
@@ -33,10 +33,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual float _getAttackReachSqr();
-
-    virtual ~MountPathingGoal() /*override*/ = default;
-
     virtual bool canUse() /*override*/;
 
     virtual bool canContinueToUse() /*override*/;
@@ -48,18 +44,18 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+
+    virtual ~MountPathingGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $_getAttackReachSqr();
-
     MCAPI bool $canUse();
 
     MCAPI bool $canContinueToUse();
 
-    MCFOLD void $start();
+    MCAPI void $start();
 
     MCAPI void $stop();
 

@@ -87,6 +87,8 @@ public:
         ::std::string_view     key,
         ::mce::InheritanceType inheritanceType
     );
+
+    MCAPI_C void parseVersion(::Json::Value const& root);
     // NOLINTEND
 
 public:

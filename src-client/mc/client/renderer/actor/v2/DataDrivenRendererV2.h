@@ -35,6 +35,8 @@ public:
     // NOLINTBEGIN
     MCNAPI uint generateFrame(::GameplayRelatedRenderData const& renderData);
 
+    MCNAPI void reserveActors(uint64 size);
+
     MCNAPI bool
     tryAddActor(::Actor& actor, ::std::shared_ptr<::ActorRenderer> const& renderer, ::ShadowContext shadowContext);
 

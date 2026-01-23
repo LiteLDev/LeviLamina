@@ -11,6 +11,7 @@ class AppPlatform;
 namespace Social::Events { class Event; }
 namespace Social::Events { class IEventListener; }
 namespace Social::Events { class Property; }
+namespace Social::Events { struct EventManagerArguments; }
 // clang-format on
 
 namespace Social::Events {
@@ -49,13 +50,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EventManager(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
+    MCNAPI explicit EventManager(::Social::Events::EventManagerArguments&& args);
 
     MCNAPI void UpdateDnAPlatString();
 
     MCNAPI ::std::string _buildDnAPlatformString();
 
-    MCNAPI_S void addListener(::std::unique_ptr<::Social::Events::IEventListener> listener);
+    MCNAPI void addListener(::std::unique_ptr<::Social::Events::IEventListener> listener);
 
     MCNAPI ::std::unordered_map<::std::string, ::Social::Events::Property>
     buildCommonProperties(uint userId, ::std::vector<::std::string> const& exclude) const;
@@ -94,7 +95,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
+    MCNAPI void* $ctor(::Social::Events::EventManagerArguments&& args);
     // NOLINTEND
 
 public:

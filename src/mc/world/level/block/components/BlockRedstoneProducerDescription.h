@@ -11,6 +11,7 @@
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockRedstoneProducerDescription
@@ -57,6 +58,12 @@ public:
         bool                                  allowPowerUp,
         bool                                  allowPowerDown
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -14,6 +14,7 @@
 // clang-format off
 class Container;
 class ContainerWeakRef;
+class ItemDescriptor;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
@@ -130,7 +131,11 @@ public:
 
     MCAPI_C ::SlotData const& getItemSource(int slot) const;
 
+    MCAPI_C int getValidIngredientItemCount(::ItemDescriptor const& descriptor) const;
+
     MCAPI void networkUpdateItem(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+
+    MCAPI_C ::Bedrock::PubSub::Subscription registerContainerSizeChangedListener(::std::function<void(int)> callback);
 
     MCAPI_C ::Bedrock::PubSub::Subscription
     registerContainerSlotChangedListener(int slot, ::std::function<void(::ItemStackBase const&)> callback);
@@ -143,7 +148,7 @@ public:
 
     MCAPI void setClientUIContainer(::SparseContainerClient* clientUIContainer);
 
-    MCAPI_C void setItemSource(int slot, ::SlotData const& srcSlot);
+    MCAPI void setItemSource(int slot, ::SlotData const& srcSlot);
 
     MCAPI_C void unregisterTrackedOnContainerChangedCallback(::SharedTypes::Legacy::ContainerType containerType);
     // NOLINTEND

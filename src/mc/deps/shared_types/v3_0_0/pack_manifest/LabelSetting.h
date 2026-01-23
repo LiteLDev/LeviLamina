@@ -17,7 +17,6 @@ public:
 
 public:
     // prevent constructor by default
-    LabelSetting& operator=(LabelSetting const&);
     LabelSetting(LabelSetting const&);
     LabelSetting();
 
@@ -26,6 +25,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&&);
+
+    MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting const&);
 
     MCAPI ~LabelSetting();
     // NOLINTEND

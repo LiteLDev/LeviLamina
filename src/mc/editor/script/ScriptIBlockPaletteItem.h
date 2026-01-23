@@ -31,6 +31,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptIBlockPaletteItem& operator=(ScriptIBlockPaletteItem const&);
     ScriptIBlockPaletteItem(ScriptIBlockPaletteItem const&);
     ScriptIBlockPaletteItem();
 
@@ -59,9 +60,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::ScriptModule::ScriptBlockPaletteItemType getType() const;
-
-    MCNAPI ::Editor::ScriptModule::ScriptIBlockPaletteItem&
-    operator=(::Editor::ScriptModule::ScriptIBlockPaletteItem const&);
     // NOLINTEND
 
 public:

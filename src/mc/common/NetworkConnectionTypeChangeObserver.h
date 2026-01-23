@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/NetworkChangeObserver.h"
+#include "mc/deps/core/NetworkConnectionType.h"
 
 class NetworkConnectionTypeChangeObserver : public ::NetworkChangeObserver {
 public:
@@ -25,18 +26,25 @@ public:
     // NOLINTBEGIN
     virtual void onNetworkConfigurationChanged() /*override*/;
 
-#ifdef LL_PLAT_S
     virtual ~NetworkConnectionTypeChangeObserver() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~NetworkConnectionTypeChangeObserver() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI_C NetworkConnectionTypeChangeObserver(
+        ::std::function<::NetworkConnectionType()>  getNetworkConnectionType,
+        ::std::function<void(::std::string const&)> fireNetworkChangedEvent
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::std::function<::NetworkConnectionType()>  getNetworkConnectionType,
+        ::std::function<void(::std::string const&)> fireNetworkChangedEvent
+    );
     // NOLINTEND
 
 public:

@@ -44,10 +44,6 @@ public:
 
     MCNAPI int GetSrtpOverhead() const;
 
-    MCNAPI void HandleEvent(::srtp_event_data_t const* ev);
-
-    MCNAPI bool IsExternalAuthEnabled() const;
-
     MCNAPI bool ProtectRtcp(void* p, int in_len, int max_len, int* out_len);
 
     MCNAPI bool ProtectRtp(void* p, int in_len, int max_len, int* out_len);
@@ -66,9 +62,6 @@ public:
     MCNAPI bool UnprotectRtcp(void* p, int in_len, int* out_len);
 
     MCNAPI bool UnprotectRtp(void* p, int in_len, int* out_len);
-
-    MCNAPI bool
-    UpdateKey(int type, int crypto_suite, uchar const* key, uint64 len, ::std::vector<int> const& extension_ids);
 
     MCNAPI bool UpdateRecv(int crypto_suite, uchar const* key, uint64 len, ::std::vector<int> const& extension_ids);
 

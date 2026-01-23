@@ -8,7 +8,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
+#include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 #include "mc/server/commands/CommandPosition.h"
 #include "mc/server/commands/CommandSelectionOrder.h"
 #include "mc/server/commands/CommandSelectionType.h"
@@ -114,18 +114,12 @@ public:
 
     MCAPI ::std::shared_ptr<::std::vector<::Actor*>> newResults(::CommandOrigin const& origin) const;
 
-    MCAPI ~CommandSelectorBase();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Vec3 const getFeetPos(int version, ::Actor const& entity);
+    MCAPI_C ~CommandSelectorBase();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };

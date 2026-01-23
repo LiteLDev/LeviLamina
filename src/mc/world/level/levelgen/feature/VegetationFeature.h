@@ -12,6 +12,7 @@ class BlockPos;
 class BlockSource;
 class Random;
 struct WeightedBlock;
+struct WeightedBlockName;
 // clang-format on
 
 class VegetationFeature : public ::Feature {
@@ -22,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VegetationFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
@@ -30,10 +35,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit VegetationFeature(::std::vector<::WeightedBlockName> const& blocksToPlaceNames);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool
     placeBlock(::BlockSource& region, ::Block const& blockToPlace, ::BlockPos const& pos, ::Random& random);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::WeightedBlockName> const& blocksToPlaceNames);
     // NOLINTEND
 
 public:

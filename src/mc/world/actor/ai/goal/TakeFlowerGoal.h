@@ -43,7 +43,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~TakeFlowerDefinition() /*override*/ = default;
+        virtual ~TakeFlowerDefinition() /*override*/;
         // NOLINTEND
 
     public:
@@ -54,6 +54,12 @@ public:
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TakeFlowerGoal::TakeFlowerDefinition>>& root
         );
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -102,7 +108,13 @@ public:
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    virtual ~TakeFlowerGoal() /*override*/ = default;
+    virtual ~TakeFlowerGoal() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

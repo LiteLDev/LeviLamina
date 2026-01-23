@@ -21,7 +21,7 @@ public:
 
     virtual void setContainerChanged(int slot) /*override*/;
 
-    virtual void startOpen(::Actor& actor) /*override*/;
+    virtual void startOpen(::Actor&) /*override*/;
 
     virtual void dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot) /*override*/;
 
@@ -41,17 +41,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $setContainerChanged(int slot);
-
-    MCAPI void $startOpen(::Actor& actor);
-
     MCFOLD void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
     MCFOLD void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
     MCFOLD void $onRemoved(::BlockSource&);
-
-    MCFOLD void $initializeContainerContents(::BlockSource& region);
 
 
     // NOLINTEND
@@ -59,8 +53,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForFillingContainer();
-
     MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

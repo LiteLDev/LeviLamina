@@ -40,7 +40,6 @@
 class Actor;
 class Block;
 class BlockActor;
-class BlockItem;
 class BlockPos;
 class BlockSource;
 class BlockState;
@@ -62,13 +61,13 @@ class MobSpawnerData;
 class Player;
 class Randomize;
 class RenderParams;
+class ScriptBlockCustomComponentsFinalizer;
 class SemVersion;
 class SpawnConditions;
 class Vec3;
 struct ActorBlockSyncMessage;
 struct BlockAnimateTickData;
 struct BlockComponentDescription;
-struct BlockComponentFinalizerForRendererContext;
 struct BlockGraphicsModeChangeContext;
 struct CommandName;
 struct CopperBehavior;
@@ -386,7 +385,6 @@ public:
     ::ll::TypedStorage<4, 4, float>                          mThickness;
     ::ll::TypedStorage<1, 1, bool>                           mCanSlide;
     ::ll::TypedStorage<1, 1, bool>                           mCanReactToNeighborsDuringInstatick;
-    ::ll::TypedStorage<1, 1, bool>                           mIsInteraction;
     ::ll::TypedStorage<4, 4, float>                          mGravity;
     ::ll::TypedStorage<8, 8, ::Material const&>              mMaterial;
     ::ll::TypedStorage<1, 1, bool>                           mFalling;
@@ -543,8 +541,6 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const;
-
-    virtual bool canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const;
 
     virtual bool isMovingBlock() const;
 
@@ -709,7 +705,7 @@ public:
         ::Block const&     block,
         ::BlockSource&     region,
         ::BlockPos const&  pos,
-        ::BlockItem const& newItem
+        ::BlockType const& newBlock
     ) const;
 
     virtual bool canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
@@ -829,11 +825,11 @@ public:
         ::RenderParams&                                                       params
     ) const;
 
-    MCAPI bool addAABB(::AABB const& shape, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes) const;
-
     MCAPI ::BlockType& addBlockProperties(::BlockProperty addedProperties);
 
     MCAPI ::BlockType& addComponent(::BlockComponentDescription const& blockComponentDescription);
+
+    MCAPI void addGetPlacementBlockCallback(::std::unique_ptr<::BlockTrait::IGetPlacementBlockCallback> callback);
 
     MCAPI ::BlockType& addState(::BlockState const& state);
 
@@ -855,14 +851,11 @@ public:
 
     MCAPI void finalizeBlockComponentStorage();
 
-    MCAPI_C void
-    finalizeBlockComponentStorageForRendering(::BlockComponentFinalizerForRendererContext& finalizerContext);
+    MCAPI void finalizeScriptCustomComponents(::ScriptBlockCustomComponentsFinalizer& finalizer);
 
     MCAPI void forEachBlockPermutation(::brstd::function_ref<bool(::Block const&)> callback) const;
 
     MCAPI_C void forEachBlockStateInstance(::brstd::function_ref<bool(::BlockStateInstance const&)> callback) const;
-
-    MCAPI short getBlockItemId() const;
 
     MCAPI ::BlockState const* getBlockState(::HashedString const& name) const;
 
@@ -870,13 +863,13 @@ public:
 
     MCAPI void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
 
+    MCAPI float getDestroySpeed() const;
+
     MCAPI ::ResourceDrops getResourceDrops(
         ::Block const&                block,
         ::Randomize&                  randomize,
         ::ResourceDropsContext const& resourceDropsContext
     ) const;
-
-    MCAPI ::Block const& getStateFromLegacyData(ushort data) const;
 
     MCAPI bool hasState(::BlockState const& stateType) const;
 
@@ -927,15 +920,11 @@ public:
 
     MCAPI ::BlockType& setNameId(::std::string const& id);
 
-    MCAPI_C void setPermutationsBlockGraphicsAsUnknownBlock();
-
     MCAPI ::BlockType& setRequiresCorrectToolForDrops();
 
     MCAPI ::BlockType& setTintMethod(::TintMethod tintMethod);
 
     MCAPI ::BlockType& setTranslucency(float translucency);
-
-    MCAPI bool shouldRandomTick() const;
 
     MCAPI bool shouldTriggerOnStandOn(::Actor& entity, ::BlockPos const& pos) const;
 
@@ -964,7 +953,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string buildDescriptionIdFromNameInfo(::BlockType::NameInfo const& nameInfo);
+    MCAPI static bool addAABB(::AABB const& shape, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes);
 
     MCAPI static ::BlockType::NameInfo extractBlockNameInfo(::std::string const& name);
 
@@ -1087,8 +1076,6 @@ public:
     MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
     MCAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
-
-    MCAPI bool $canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const;
 
     MCFOLD bool $isMovingBlock() const;
 
@@ -1253,7 +1240,7 @@ public:
         ::Block const&     block,
         ::BlockSource&     region,
         ::BlockPos const&  pos,
-        ::BlockItem const& newItem
+        ::BlockType const& newBlock
     ) const;
 
     MCAPI bool $canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;

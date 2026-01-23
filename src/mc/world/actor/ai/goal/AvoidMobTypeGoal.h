@@ -75,6 +75,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool canFindAvoidPath(::Actor* actor);
 
+    MCAPI bool canFindAvoidPos(::Actor& entity);
+
     MCAPI ::Actor* findNearestEntityToAvoid(float dist);
     // NOLINTEND
 

@@ -27,6 +27,14 @@ public:
         ::EntityModifier<::WitherBossPreAIStepResultComponent> mod
     );
 
+    MCNAPI static void _tickWitherBossPreAIStepSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::WitherBossFlagComponent>,
+            ::ActorOwnerComponent>                             view,
+        ::EntityModifier<::WitherBossPreAIStepResultComponent> mod
+    );
+
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

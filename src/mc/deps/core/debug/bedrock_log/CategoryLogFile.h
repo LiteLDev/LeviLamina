@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/diagnostics/bedrock_log/LogChannel.h"
+#include "mc/platform/diagnostics/bedrock_log/LogChannel.h"
 
 namespace BedrockLog {
 

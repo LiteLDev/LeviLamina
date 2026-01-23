@@ -117,7 +117,7 @@ public:
 
     MCFOLD bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
+    MCAPI bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
 
     MCFOLD bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
 
@@ -133,13 +133,13 @@ public:
 
     MCFOLD ::Biome const* $getBiome(::BlockPos const& pos) const;
 
-    MCFOLD bool $isInBounds(::Pos const& pos) const;
+    MCAPI bool $isInBounds(::Pos const& pos) const;
 
     MCAPI short $getLocalWaterLevel(::BlockPos const& pos) const;
 
     MCAPI ::LevelData const& $getLevelData() const;
 
-    MCAPI ::WorldGenContext const& $getContext();
+    MCFOLD ::WorldGenContext const& $getContext();
 
     MCFOLD void $disableBlockSimple();
 

@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptArrowShape(ScriptArrowShape const&);
-    ScriptArrowShape();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void populatePacketData(::ShapeDataPayload& packet) const /*override*/;
@@ -40,14 +35,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleDebugUtilities::ScriptArrowShape&
-    operator=(::ScriptModuleDebugUtilities::ScriptArrowShape const&);
+    MCAPI ScriptArrowShape();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

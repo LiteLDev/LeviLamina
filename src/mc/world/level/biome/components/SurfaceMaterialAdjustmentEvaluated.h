@@ -30,8 +30,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SurfaceMaterialAdjustmentEvaluated& operator=(SurfaceMaterialAdjustmentEvaluated const&);
+    SurfaceMaterialAdjustmentEvaluated(SurfaceMaterialAdjustmentEvaluated const&);
+    SurfaceMaterialAdjustmentEvaluated();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void makeAdjustments(::SurfaceMaterialBlocks& blockPalette, int height) const;
+
+    MCAPI ::SurfaceMaterialAdjustmentEvaluated& operator=(::SurfaceMaterialAdjustmentEvaluated&&);
+
     MCAPI ~SurfaceMaterialAdjustmentEvaluated();
     // NOLINTEND
 

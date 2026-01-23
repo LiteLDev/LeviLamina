@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OnUseItemComponent() /*override*/ = default;
+    virtual ~OnUseItemComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -56,7 +56,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OnUseItemComponent const&);
+    MCFOLD void* $ctor(::OnUseItemComponent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

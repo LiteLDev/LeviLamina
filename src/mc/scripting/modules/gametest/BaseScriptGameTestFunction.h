@@ -40,6 +40,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI BaseScriptGameTestFunction(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
+
+    MCNAPI void addTag(::std::string tag);
     // NOLINTEND
 
 public:

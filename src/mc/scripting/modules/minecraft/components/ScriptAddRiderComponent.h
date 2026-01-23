@@ -8,16 +8,17 @@
 
 // auto generated forward declare list
 // clang-format off
-class AddRiderDefinition;
 struct AddRiderComponent;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { struct ClassBinding; }
+namespace SharedTypes::v1_21_130 { struct AddRiderDefinition; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptAddRiderComponent
-: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::AddRiderComponent, ::AddRiderDefinition> {
+: public ::ScriptModuleMinecraft::
+      ECSScriptActorComponent<::AddRiderComponent, ::SharedTypes::v1_21_130::AddRiderDefinition> {
 public:
     // virtual functions
     // NOLINTBEGIN

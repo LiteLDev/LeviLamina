@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/cricket/MediaType.h"
-#include "mc/external/rtc/VideoSinkInterface.h"
 #include "mc/external/webrtc/MediaSourceInterface.h"
 #include "mc/external/webrtc/RtpReceiverInternal.h"
 #include "mc/external/webrtc/VideoRtpTrackSource.h"
@@ -21,7 +20,6 @@ namespace webrtc { class MediaStreamInterface; }
 namespace webrtc { class MediaStreamTrackInterface; }
 namespace webrtc { class RtpReceiverObserverInterface; }
 namespace webrtc { class RtpSource; }
-namespace webrtc { class VideoFrame; }
 namespace webrtc { struct RtpParameters; }
 // clang-format on
 
@@ -163,10 +161,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void OnEncodedSinkEnabled(bool enable);
-
-    MCNAPI void OnGenerateKeyFrame();
-
     MCNAPI void RestartMediaChannel(::std::optional<uint> ssrc);
 
     MCNAPI void RestartMediaChannel_w(::std::optional<uint> ssrc, ::webrtc::MediaSourceInterface::SourceState state);
@@ -174,8 +168,6 @@ public:
     MCNAPI void SetEncodedSinkEnabled(bool enable);
 
     MCNAPI void SetMediaChannel_w(::cricket::MediaReceiveChannelInterface* media_channel);
-
-    MCNAPI void SetSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink);
 
     MCNAPI void SetupMediaChannel(::std::optional<uint> ssrc, ::cricket::MediaReceiveChannelInterface* media_channel);
 

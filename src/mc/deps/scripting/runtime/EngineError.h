@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/BaseError.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ErrorBinding; }
+// clang-format on
+
 namespace Scripting {
 
 struct EngineError : public ::Scripting::BaseError {
@@ -18,6 +23,12 @@ public:
     MCAPI explicit EngineError(::std::string const& message);
 
     MCAPI ~EngineError();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:

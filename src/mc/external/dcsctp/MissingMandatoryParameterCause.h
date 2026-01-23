@@ -34,19 +34,13 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~MissingMandatoryParameterCause() /*override*/;
+    virtual ~MissingMandatoryParameterCause() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::optional<::dcsctp::MissingMandatoryParameterCause> Parse(::rtc::ArrayView<uchar const> data);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

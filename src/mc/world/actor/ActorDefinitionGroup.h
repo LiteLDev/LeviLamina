@@ -28,8 +28,8 @@ class SemVersion;
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Puv { class Input; }
-namespace SharedTypes::v1_21_120 { struct ActorDefinitions; }
-namespace SharedTypes::v1_21_120 { struct ActorDocument; }
+namespace SharedTypes::v1_21_130 { struct ActorDefinitions; }
+namespace SharedTypes::v1_21_130 { struct ActorDocument; }
 // clang-format on
 
 class ActorDefinitionGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -122,7 +122,7 @@ public:
 
     MCAPI void _getResources(::Level& level);
 
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_120::ActorDocument> _initActorDefinition(
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_130::ActorDocument> _initActorDefinition(
         ::Puv::Input const&  input,
         ::SemVersion const&  formatVersion,
         ::IPackLoadContext&  packLoadContext,
@@ -142,7 +142,7 @@ public:
         ::LogArea                            logArea
     );
 
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_120::ActorDocument> _loadDefinitionFromJSON(
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_130::ActorDocument> _loadDefinitionFromJSON(
         ::SemVersion const&  formatVersion,
         ::IPackLoadContext&  packLoadContext,
         ::std::string const& relativeResourceFilepath,
@@ -156,7 +156,7 @@ public:
     MCAPI ::ActorDefinitionParseStatus _loadTemplates(
         ::Level&                                                                         level,
         ::std::string const&                                                             base,
-        ::std::unordered_map<::std::string, ::SharedTypes::v1_21_120::ActorDefinitions>& componentsGroup,
+        ::std::unordered_map<::std::string, ::SharedTypes::v1_21_130::ActorDefinitions>& componentsGroup,
         ::SemVersion const&                                                              formatVersion,
         ::IPackLoadContext const&                                                        packLoadContext,
         ::JsonBetaState                                                                  useBetaFeatures
@@ -170,12 +170,17 @@ public:
 
     MCAPI ::std::vector<::std::string> buildActorEventList() const;
 
+    MCAPI ::ActorDefinitionPtr tryGetDefinition(::std::string const& definitionId);
+
     MCAPI ::ActorDefinitionPtr tryGetDefinitionGroup(::std::string const& base, ::std::string const& definitionId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void
+    filterBalloonableComponent(::std::string const& idToExclude, ::std::string const& currentId, ::Json::Value& root);
+
     MCAPI static void forEachComponentOf(
         ::Json::Value&                                               entityValue,
         ::std::string const&                                         componentName,

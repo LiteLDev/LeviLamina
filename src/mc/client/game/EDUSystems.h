@@ -12,13 +12,13 @@
 // auto generated forward declare list
 // clang-format off
 class ActiveDirectoryIdentity;
-class IClientInstance;
-class IMinecraftGame;
 struct EDUConfigData;
 namespace Identity { class IEduAuth; }
 namespace Identity { struct ActiveDirectoryIdentityParameters; }
 namespace Social { class IEduMultiplayerHeadless; }
 namespace edu::auth { struct CredsLost; }
+class IClientInstance;
+class IMinecraftGame;
 struct ServicePackSystem;
 // clang-format on
 

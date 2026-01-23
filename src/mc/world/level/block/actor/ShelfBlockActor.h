@@ -55,7 +55,7 @@ public:
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
@@ -81,7 +81,7 @@ public:
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    virtual ~ShelfBlockActor() /*override*/;
+    virtual ~ShelfBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -103,12 +103,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string $getName() const;
@@ -123,7 +117,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int index) const;
 
     MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 

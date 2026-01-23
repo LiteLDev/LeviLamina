@@ -10,8 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Social { class GameConnectionInfo; }
-namespace Social { struct XboxLiveUserProfileData; }
 namespace Social { struct PlayerProfileState; }
+namespace Social { struct XboxLiveUserProfileData; }
 namespace cohtml { class Binder; }
 // clang-format on
 

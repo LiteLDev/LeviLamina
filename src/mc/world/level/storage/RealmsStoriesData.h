@@ -31,11 +31,11 @@ public:
     // NOLINTBEGIN
     MCNAPI_S explicit RealmsStoriesData(::LevelStorage& levelStorage);
 
-    MCNAPI_S void clearAllRealmEventsInLevelData();
-
     MCNAPI void setPlayerRealmEventPublished(::RealmEventId eventId, ::std::string const& xuid);
 
     MCNAPI void setWorldRealmEventPublished(::RealmEventId eventId);
+
+    MCNAPI bool wasPlayerRealmEventPublished(::RealmEventId eventId, ::std::string const& xuid) const;
 
     MCNAPI_S ~RealmsStoriesData();
     // NOLINTEND

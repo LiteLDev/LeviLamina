@@ -68,6 +68,9 @@ public:
 
     MCNAPI_C void _setupCallbacks();
 
+    MCNAPI_C ::BeaconContainerManagerController::ClickStatus
+    buttonClicked(::BeaconContainerManagerController::ButtonId id);
+
     MCNAPI_C ::std::string getButtonHoverText(::std::string const& buttonName) const;
 
     MCNAPI_C ::BeaconContainerManagerController::ButtonStatus getButtonStatus(::std::string const& buttonName) const;

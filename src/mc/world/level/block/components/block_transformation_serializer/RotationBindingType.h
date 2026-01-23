@@ -21,8 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 rotationTypeAsVec3() const;
-
     MCAPI void rotationTypeFromVec3(::Vec3 const& arr);
     // NOLINTEND
 };

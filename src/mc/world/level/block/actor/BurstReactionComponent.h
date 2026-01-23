@@ -29,11 +29,45 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BurstReactionComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BurstReactionComponent() /*override*/ = default;
 
     virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BurstReactionComponent(
+        ::ParticleType        type,
+        ::Vec3 const&         dims,
+        ::Vec3 const&         dirRange,
+        int                   count,
+        int                   dataMin,
+        int                   dataMax,
+        bool                  dirOneWay,
+        ::HashedString const& newParticle
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ParticleType        type,
+        ::Vec3 const&         dims,
+        ::Vec3 const&         dirRange,
+        int                   count,
+        int                   dataMin,
+        int                   dataMax,
+        bool                  dirOneWay,
+        ::HashedString const& newParticle
+    );
     // NOLINTEND
 
 public:

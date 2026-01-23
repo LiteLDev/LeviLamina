@@ -74,6 +74,10 @@ public:
 
     MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
+#ifdef LL_PLAT_C
+    MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
+#endif
+
 
     // NOLINTEND
 

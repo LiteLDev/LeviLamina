@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class MobEffectInstance;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -31,10 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptMobEffectInstance(::Actor const& actor, uint effectIdx);
-
-    MCNAPI bool _isValid() const;
-
     MCNAPI ::Scripting::Result_deprecated<int> getAmplifier() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
@@ -57,12 +52,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Actor const& actor, uint effectIdx);
     // NOLINTEND
 };
 

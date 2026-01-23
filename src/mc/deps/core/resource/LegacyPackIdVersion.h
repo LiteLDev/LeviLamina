@@ -17,7 +17,6 @@ public:
 
 public:
     // prevent constructor by default
-    LegacyPackIdVersion& operator=(LegacyPackIdVersion const&);
     LegacyPackIdVersion(LegacyPackIdVersion const&);
     LegacyPackIdVersion();
 
@@ -25,6 +24,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::PackIdVersion getUpgradedPackId() const;
+
+    MCNAPI_C ::LegacyPackIdVersion& operator=(::LegacyPackIdVersion const&);
 
     MCNAPI ~LegacyPackIdVersion();
     // NOLINTEND

@@ -8,7 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChunkPos;
 class Vec3;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class AABB;
@@ -29,15 +31,27 @@ public:
     // NOLINTBEGIN
     MCAPI BlockPos(::Vec3 const& v);
 
+    MCAPI BlockPos(::ChunkPos const& cp, int y);
+
     MCAPI BlockPos(float x, float y, float z);
 
     MCAPI ::BlockPos above() const;
 
     MCAPI ::BlockPos relative(uchar facing, int steps) const;
 
-    MCAPI ::std::string toCommandString() const;
+    MCAPI ::BlockPos south() const;
+
+    MCAPI_C ::std::string toCommandString() const;
 
     MCAPI ::BlockPos transform(::Rotation rotation, ::Mirror mirror, ::Vec3 const& pivot) const;
+
+    MCAPI ::BlockPos west() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -56,6 +70,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Vec3 const& v);
+
+    MCAPI void* $ctor(::ChunkPos const& cp, int y);
 
     MCAPI void* $ctor(float x, float y, float z);
     // NOLINTEND

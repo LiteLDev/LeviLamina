@@ -18,6 +18,8 @@ class ItemIconManager {
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void clearTextureTessellatorData();
+
     MCNAPI static ::TextureUVCoordinateSet const& getIcon(::ResolvedItemIconInfo const& texInfo, bool);
 
     MCNAPI static ::TextureUVCoordinateSet const&

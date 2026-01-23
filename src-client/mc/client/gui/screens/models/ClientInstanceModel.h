@@ -49,7 +49,7 @@ public:
 
     virtual int getGameType() /*override*/;
 
-    virtual void setGameType(::GameType gameType) /*override*/;
+    virtual void setGameType(::GameType) /*override*/;
 
     virtual int getGenerator() /*override*/;
 
@@ -108,8 +108,6 @@ public:
     MCNAPI int $getGameDifficulty();
 
     MCNAPI int $getGameType();
-
-    MCNAPI void $setGameType(::GameType gameType);
 
     MCNAPI int $getGenerator();
 

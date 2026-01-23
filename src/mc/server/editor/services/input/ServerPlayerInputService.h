@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Input { class KeyBinding; }
 namespace Editor::Input { class MouseBinding; }
 namespace Editor::Input { struct BindingInfo; }
@@ -34,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerPlayerInputService() /*override*/ = default;
+    virtual ~ServerPlayerInputService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -71,6 +72,24 @@ public:
     getKeyBindingProcessingState(::HashedString const& contextId, ::HashedString const& bindingId) const /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> setViewportFocus(bool isFocused) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ServerPlayerInputService(::Editor::ServiceProviderCollection& providers);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

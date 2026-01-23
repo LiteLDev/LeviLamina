@@ -17,7 +17,6 @@ public:
 
 public:
     // prevent constructor by default
-    AgentActionEventPacketPayload& operator=(AgentActionEventPacketPayload const&);
     AgentActionEventPacketPayload(AgentActionEventPacketPayload const&);
     AgentActionEventPacketPayload();
 
@@ -25,6 +24,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::AgentActionEventPacketPayload& operator=(::AgentActionEventPacketPayload&&);
+
+    MCAPI ::AgentActionEventPacketPayload& operator=(::AgentActionEventPacketPayload const&);
 
     MCAPI ~AgentActionEventPacketPayload();
     // NOLINTEND

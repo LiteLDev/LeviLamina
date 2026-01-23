@@ -48,12 +48,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& DEFAULT_MATERIAL_TYPE_NAME();
 
-    MCAPI static int const& DEFAULT_SEARCH_HEIGHT();
-
-    MCAPI static int const& DEFAULT_SEARCH_RADIUS();
-
-    MCAPI static float const& DEFAULT_SPEED_MOD();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

@@ -129,19 +129,11 @@ public:
 
     MCNAPI ::std::optional<::webrtc::Timestamp> FirstSentPacketTime() const;
 
-    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> GetPendingPacket(
-        ::webrtc::PacedPacketInfo const& pacing_info,
-        ::webrtc::Timestamp              target_send_time,
-        ::webrtc::Timestamp              now
-    );
-
     MCNAPI bool IsProbing() const;
 
     MCNAPI void MaybeUpdateMediaRateDueToLongQueue(::webrtc::Timestamp now);
 
     MCNAPI ::webrtc::Timestamp NextSendTime() const;
-
-    MCNAPI ::webrtc::Timestamp NextUnpacedSendTime() const;
 
     MCNAPI ::webrtc::Timestamp OldestPacketEnqueueTime() const;
 
@@ -157,9 +149,6 @@ public:
         ::webrtc::FieldTrialsView const&          field_trials,
         ::webrtc::PacingController::Configuration configuration
     );
-
-    MCNAPI ::webrtc::DataSize
-    PaddingToAdd(::webrtc::DataSize recommended_probe_size, ::webrtc::DataSize data_sent) const;
 
     MCNAPI void Pause();
 
@@ -187,11 +176,7 @@ public:
 
     MCNAPI void SetTransportOverhead(::webrtc::DataSize overhead_per_packet);
 
-    MCNAPI bool ShouldSendKeepalive(::webrtc::Timestamp now) const;
-
     MCNAPI void UpdateBudgetWithElapsedTime(::webrtc::TimeDelta delta);
-
-    MCNAPI void UpdateBudgetWithSentData(::webrtc::DataSize size);
 
     MCNAPI void UpdatePaddingBudgetWithSentData(::webrtc::DataSize size);
 

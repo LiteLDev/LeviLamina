@@ -34,10 +34,10 @@ public:
     virtual ~CraftableCompounds();
 
     virtual void _registerCompound(
-        ::std::vector<::ItemStack> const& input,
-        ::ItemStack const&                result,
-        ::LabTableReactionType            reaction,
-        ::CompoundContainerType           containerOverride
+        ::std::vector<::ItemStack> const&,
+        ::ItemStack const&,
+        ::LabTableReactionType,
+        ::CompoundContainerType
     );
     // NOLINTEND
 
@@ -67,6 +67,8 @@ public:
 
     MCNAPI ::std::vector<::ItemStack> const* getComponents(::ItemDescriptor const& compound) const;
 
+    MCNAPI ::ItemStack const& getCompound(::std::vector<::ItemStack> const& components);
+
     MCNAPI_C ::CompoundContainerType getContainerType(::std::vector<::ItemStack> const& components);
 
     MCNAPI ::LabTableReactionType getReaction(::std::vector<::ItemStack> const& components);
@@ -91,15 +93,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $_registerCompound(
-        ::std::vector<::ItemStack> const& input,
-        ::ItemStack const&                result,
-        ::LabTableReactionType            reaction,
-        ::CompoundContainerType           containerOverride
-    );
-#endif
-
 
     // NOLINTEND
 

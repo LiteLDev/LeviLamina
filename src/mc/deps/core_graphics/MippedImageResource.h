@@ -36,7 +36,7 @@ public:
 
     virtual void addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd) /*override*/;
 
-    virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
+    virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource>
     unwrapImageData() /*override*/;
     // NOLINTEND
 
@@ -56,8 +56,7 @@ public:
 
     MCAPI void $addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
 
-    MCAPI ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
-    $unwrapImageData();
+    MCAPI ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource> $unwrapImageData();
 #endif
 
 

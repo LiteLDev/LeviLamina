@@ -7,10 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class ClientInstance;
 class Level;
 class Minecraft;
 struct ClientInstanceNotificationEvent;
+class ClientInstance;
 // clang-format on
 
 class ClientInstanceEventListener {

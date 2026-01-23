@@ -13,14 +13,13 @@ struct SinglePoolElement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::SharedTypes::FileReference<21>>                                mLocation;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::FileReference<22>>                                mLocation;
     ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<12>>                                    mProcessors;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Projection> mProjection;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    SinglePoolElement& operator=(SinglePoolElement const&);
     SinglePoolElement(SinglePoolElement const&);
     SinglePoolElement();
 
@@ -29,6 +28,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
     operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&&);
+
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
+    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const&);
 
     MCAPI ~SinglePoolElement();
     // NOLINTEND

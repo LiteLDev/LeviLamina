@@ -47,7 +47,9 @@ public:
         ::Ability::Options                                               requiredOptions
     ) const;
 
-    MCAPI_C bool getBool(::AbilitiesIndex val) const;
+    MCAPI ::Ability const& getAbility(::AbilitiesIndex val) const;
+
+    MCAPI bool getBool(::AbilitiesIndex val) const;
 
     MCAPI_C bool loadSaveData(::CompoundTag const& parentTag);
 

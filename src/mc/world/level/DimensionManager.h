@@ -58,8 +58,6 @@ public:
     MCNAPI void forEachDimension(::std::function<bool(::Dimension&)> callback);
 
     MCNAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
-
-    MCNAPI_S void setDimensionDefinitionGroup(::std::optional<::DimensionDefinitionGroup> dimensionDefinitions);
     // NOLINTEND
 
 public:

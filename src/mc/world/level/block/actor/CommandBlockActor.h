@@ -59,7 +59,7 @@ public:
 
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const /*override*/;
 
-    virtual void setCustomName(::Bedrock::Safety::RedactableString const& name) /*override*/;
+    virtual void setCustomName(::Bedrock::Safety::RedactableString const& str) /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
@@ -123,7 +123,7 @@ public:
 
     MCFOLD ::Bedrock::Safety::RedactableString const& $getCustomName() const;
 
-    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
+    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& str);
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 

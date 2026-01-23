@@ -30,7 +30,7 @@ public:
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
     virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const /*override*/;
 
@@ -51,7 +51,7 @@ public:
     MCAPI void $executeAction(::RenderParams& params) const;
 
     MCAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const;
 

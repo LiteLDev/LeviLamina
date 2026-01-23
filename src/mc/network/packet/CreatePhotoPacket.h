@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CreatePhotoPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -75,13 +71,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CreatePhotoPacket(::CreatePhotoPacketPayload payload);
+    MCAPI CreatePhotoPacket();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CreatePhotoPacketPayload payload);
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

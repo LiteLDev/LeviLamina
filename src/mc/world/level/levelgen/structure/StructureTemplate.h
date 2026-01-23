@@ -211,6 +211,12 @@ public:
         ::StructureTemplateData const&                          structureTemplateData,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockRegistry
     );
+
+    MCAPI static ::Block const* tryGetBlockAtPos(
+        ::BlockPos const&                                       pos,
+        ::StructureTemplateData const&                          structureTemplateData,
+        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockRegistry
+    );
     // NOLINTEND
 
 public:

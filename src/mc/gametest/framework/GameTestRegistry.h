@@ -34,7 +34,13 @@ public:
 
     MCNAPI void generateTagsList();
 
+    MCNAPI ::std::function<void()> getBeforeBatchFunction(::std::string const& batchName);
+
     MCNAPI ::std::shared_ptr<::gametest::BaseGameTestFunction> getTestFunction(::std::string const& testName);
+
+    MCNAPI bool registerAfterBatchFunction(::std::string const& batchName, ::std::function<void()> fn);
+
+    MCNAPI bool registerBeforeBatchFunction(::std::string const& batchName, ::std::function<void()> fn);
 
     MCNAPI bool
     registerTestMethod(::std::string const& className, ::std::shared_ptr<::gametest::BaseGameTestFunction> fn);

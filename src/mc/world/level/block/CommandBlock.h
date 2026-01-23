@@ -68,6 +68,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void
+    _execute(::BlockSource& region, ::CommandBlockActor& entity, ::BlockPos const& pos, bool commandSet) const;
+
     MCAPI void _executeChain(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool _executeChainBlock(
@@ -87,12 +90,6 @@ public:
     updateBlock(::BlockSource& region, ::BlockPos const& pos, ::CommandBlockMode newMode, bool conditional) const;
 
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::CommandBlockActor* _getCommandBlockActor(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

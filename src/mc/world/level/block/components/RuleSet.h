@@ -29,12 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void filterDuplicates(::RuleSet& instance, ::std::vector<::DetectionRule> const& detectionRules);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

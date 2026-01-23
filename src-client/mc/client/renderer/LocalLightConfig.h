@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ResourcePackManager;
-class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -48,6 +46,12 @@ public:
             MCNAPI ::LocalLightConfig::LocalLightConfigSettingsV0::LocalLightSettings&
             operator=(::LocalLightConfig::LocalLightConfigSettingsV0::LocalLightSettings&&);
             // NOLINTEND
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            // NOLINTEND
         };
 
     public:
@@ -67,12 +71,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~LocalLightConfigSettingsV0();
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCNAPI static ::SemVersionConstant const& VERSION();
         // NOLINTEND
 
     public:
@@ -128,9 +126,9 @@ public:
         // NOLINTEND
 
     public:
-        // static variables
+        // static functions
         // NOLINTBEGIN
-        MCNAPI static ::SemVersionConstant const& VERSION();
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
@@ -163,22 +161,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI LocalLightConfig();
-
-    MCNAPI void _applyPackToGroupStorage(::LocalLightConfig::LocalLightConfigSettingsV1 const& packResults);
-
-    MCNAPI void loadDataSync(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& resourcePackManager);
-
-    MCNAPI bool loadFromString(::cereal::ReflectionCtx const& ctx, ::std::string const& pointLightsJson);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _upgradeV0_V1(
-        ::LocalLightConfig::LocalLightConfigSettingsV0 const& src,
-        ::LocalLightConfig::LocalLightConfigSettingsV1&       dst
-    );
-
     MCNAPI static void bindLocalLightParameters(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 

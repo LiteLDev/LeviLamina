@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/BlockType.h"
+#include "mc/world/level/block/WoodType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,6 +24,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class FenceGateBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    FenceGateBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -49,8 +54,6 @@ public:
 
     virtual bool ignoreEntitiesOnPistonMove(::Block const& block) const /*override*/;
 
-    virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
-
     virtual bool
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
@@ -67,6 +70,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FenceGateBlock(::std::string const& nameId, int id, ::WoodType);
+
     MCAPI void _setOpen(
         ::BlockSource&                  region,
         ::gsl::not_null<::Block const*> block,
@@ -92,6 +97,12 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::WoodType);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
@@ -113,8 +124,6 @@ public:
     MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI bool $ignoreEntitiesOnPistonMove(::Block const& block) const;
-
-    MCAPI bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
 
     MCFOLD bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;

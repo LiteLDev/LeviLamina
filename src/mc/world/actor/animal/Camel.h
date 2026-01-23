@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionGroup;
+class BlockPos;
 class EntityContext;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -35,6 +36,8 @@ public:
     virtual void normalTick() /*override*/;
 
     virtual ::Vec3 getInterpolatedRidingOffset(float, int const) const /*override*/;
+
+    virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     virtual ~Camel() /*override*/ = default;
     // NOLINTEND
@@ -69,6 +72,8 @@ public:
     MCAPI void $normalTick();
 
     MCAPI ::Vec3 $getInterpolatedRidingOffset(float, int const) const;
+
+    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
 
     // NOLINTEND

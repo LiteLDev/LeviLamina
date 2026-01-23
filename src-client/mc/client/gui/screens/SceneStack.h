@@ -12,10 +12,10 @@
 // auto generated forward declare list
 // clang-format off
 class AbstractScene;
-class Options;
 class SceneStackProxy;
 class UIEventCoordinator;
 struct CachedScenes;
+struct Options;
 struct ScreenThreshold;
 namespace Bedrock::PubSub { class Subscription; }
 namespace OreUI { struct RouteAction; }
@@ -339,11 +339,11 @@ public:
 
     virtual ::std::optional<uint64> getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const /*override*/;
 
-    virtual bool popScreensBackTo(::ui::SceneType const) /*override*/;
+    virtual bool popScreensBackTo(::ui::SceneType const sceneType) /*override*/;
 
-    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const) /*override*/;
+    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType) /*override*/;
 
-    virtual bool popTopScreensOfType(::ui::SceneType const) /*override*/;
+    virtual bool popTopScreensOfType(::ui::SceneType const sceneType) /*override*/;
 
     virtual bool update() /*override*/;
 
@@ -373,7 +373,7 @@ public:
 
     virtual void handleLicenseChanged() /*override*/;
 
-    virtual void onGameEventNotification(::ui::GameEventNotification notification) /*override*/;
+    virtual void onGameEventNotification(::ui::GameEventNotification) /*override*/;
 
     virtual ::AbstractScene* getTopScene() /*override*/;
 
@@ -395,7 +395,7 @@ public:
 
     virtual bool isScreenReplaceable() const /*override*/;
 
-    virtual void handleTextChar(::std::string const& inputUtf8, bool keepImePosition) /*override*/;
+    virtual void handleTextChar(::std::string const& inputUtf8) /*override*/;
 
     virtual void setBufferTextCharEvents(bool pushTextCharEvents) /*override*/;
 
@@ -570,6 +570,12 @@ public:
 
     MCNAPI ::std::optional<uint64> $getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const;
 
+    MCNAPI bool $popScreensBackTo(::ui::SceneType const sceneType);
+
+    MCNAPI bool $popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType);
+
+    MCNAPI bool $popTopScreensOfType(::ui::SceneType const sceneType);
+
     MCNAPI bool $update();
 
     MCNAPI void $resetScreenChangeDirtyFlag();
@@ -598,8 +604,6 @@ public:
 
     MCNAPI void $handleLicenseChanged();
 
-    MCNAPI void $onGameEventNotification(::ui::GameEventNotification notification);
-
     MCNAPI ::AbstractScene* $getTopScene();
 
     MCNAPI ::AbstractScene const* $getTopScene() const;
@@ -620,7 +624,7 @@ public:
 
     MCNAPI bool $isScreenReplaceable() const;
 
-    MCNAPI void $handleTextChar(::std::string const& inputUtf8, bool keepImePosition);
+    MCNAPI void $handleTextChar(::std::string const& inputUtf8);
 
     MCNAPI void $setBufferTextCharEvents(bool pushTextCharEvents);
 

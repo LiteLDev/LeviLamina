@@ -3,14 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/resource/ResourceFileSystem.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/platform/brstd/move_only_function.h"
 #include "mc/resources/interface/IWorldTemplateManager.h"
 
 // auto generated forward declare list
 // clang-format off
-class IFileAccess;
 class IWorldTemplateManagerInitializer;
 class Pack;
 class WorldTemplateCollectionView;
@@ -102,8 +98,6 @@ public:
     MCNAPI_C void setWorldIconAllowListPath(::WorldTemplateInfo const& info, ::std::string path);
 
     MCNAPI void sortWorldTemplates();
-
-    MCNAPI_C void update();
     // NOLINTEND
 
 public:

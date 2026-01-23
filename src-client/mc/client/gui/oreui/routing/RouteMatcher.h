@@ -115,16 +115,24 @@ public:
             ::std::function<bool()>                              isActiveCallback,
             ::std::function<::std::string(::std::string const&)> composer
         );
+
+        MCAPI ~RedirectEntry();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(
+        MCAPI void* $ctor(
             ::std::string const&                                 pattern,
             ::std::function<bool()>                              isActiveCallback,
             ::std::function<::std::string(::std::string const&)> composer
         );
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -140,7 +148,6 @@ public:
     // prevent constructor by default
     RouteMatcher& operator=(RouteMatcher const&);
     RouteMatcher(RouteMatcher const&);
-    RouteMatcher();
 
 public:
     // virtual functions
@@ -169,6 +176,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RouteMatcher();
+
     MCAPI ::std::optional<::OreUI::RouteMatcher::RedirectEntry> _matchRedirect(::std::string const& route) const;
 
     MCAPI ::std::optional<::OreUI::RouteMatcher::RouteEntry> _matchRoute(::std::string const& route) const;
@@ -188,6 +197,12 @@ public:
         ::std::function<bool()>                                                  isActiveCallback,
         ::std::function<void(::std::string const&, ::OreUI::RouteHistoryAction)> matchCallback
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

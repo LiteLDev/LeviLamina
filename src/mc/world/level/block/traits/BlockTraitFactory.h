@@ -65,12 +65,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockTraitFactory& operator=(BlockTraitFactory const&);
+    BlockTraitFactory(BlockTraitFactory const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockTraitFactory();
 
     MCAPI ::std::unique_ptr<::BlockTrait::ITrait>
     createTrait(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
+
+    MCAPI ::BlockTraitFactory& operator=(::BlockTraitFactory&&);
 
     MCAPI ~BlockTraitFactory();
     // NOLINTEND

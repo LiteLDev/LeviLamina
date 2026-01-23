@@ -23,6 +23,7 @@ struct CreateContainerItemScope;
 struct ItemStackRequestScope;
 struct ItemTransferAmount;
 struct RecipeNetIdTag;
+struct SelectedSlotInfo;
 // clang-format on
 
 class AnvilContainerManagerController : public ::ContainerManagerController {
@@ -35,6 +36,7 @@ public:
     ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>           mItemName;
     ::ll::TypedStorage<1, 1, bool>                                           mIsMapRecipe;
     ::ll::TypedStorage<8, 136, ::ItemResultPreview>                          mResultPreview;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsEnchantingBookRecipe;
     ::ll::TypedStorage<4, 4, int>                                            mRepairItemCountCost;
     ::ll::TypedStorage<4, 4, ::RecipeNetId>                                  mCurrentRecipeNetId;
     ::ll::TypedStorage<8, 8, ::Recipe const*>                                mMapCraftingRecipe;
@@ -48,11 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~AnvilContainerManagerController() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~AnvilContainerManagerController() /*override*/;
-#endif
 
     virtual void postInit(::std::weak_ptr<::ContainerManagerController> self) /*override*/;
 
@@ -75,6 +73,8 @@ public:
     virtual void handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
 
     virtual void handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
+
+    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
 
     virtual int handleAutoPlace(
         ::SlotData const&                     srcSlot,
@@ -112,15 +112,13 @@ public:
 
     MCNAPI_C bool _isTooExpensive();
 
-    MCNAPI_C bool _mayPickup();
+    MCNAPI_C void _onItemGrabbed();
+
+    MCNAPI_C bool _playerHasEnoughXP();
 
     MCNAPI_C void _setupCallbacks();
 
     MCNAPI_C ::std::string getCostText();
-
-    MCNAPI_C bool getHasInputItem();
-
-    MCNAPI_C bool shouldCrossOutIconBeVisible();
 
     MCNAPI_C bool shouldDrawRed();
     // NOLINTEND
@@ -129,12 +127,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI_C void* $ctor(::std::weak_ptr<::AnvilContainerManagerModel> containerManagerModel);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -162,6 +154,8 @@ public:
     MCNAPI void $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 
     MCNAPI void $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+
+    MCNAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 
     MCNAPI int $handleAutoPlace(
         ::SlotData const&                     srcSlot,

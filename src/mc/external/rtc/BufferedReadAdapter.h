@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BufferedReadAdapter() /*override*/;
+    virtual ~BufferedReadAdapter() /*override*/ = default;
 
     virtual int Send(void const* pv, uint64 cb) /*override*/;
 
@@ -40,26 +40,6 @@ public:
     virtual void ProcessInput(char*, uint64*) = 0;
 
     virtual void OnReadEvent(::rtc::Socket* socket) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void BufferInput(bool on);
-
-    MCNAPI BufferedReadAdapter(::rtc::Socket* socket, uint64 size);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::Socket* socket, uint64 size);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -54,43 +54,15 @@ public:
 
     MCNAPI ::webrtc::MdnsResponderInterface* GetMdnsResponder() const;
 
-    MCNAPI Network(
-        ::std::string_view      name,
-        ::std::string_view      desc,
-        ::rtc::IPAddress const& prefix,
-        int                     prefix_length,
-        ::rtc::AdapterType      type
-    );
-
     MCNAPI bool SetIPs(::std::vector<::rtc::InterfaceAddress> const& ips, bool changed);
 
     MCNAPI ::std::string ToString() const;
-
-    MCNAPI ~Network();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::pair<::rtc::AdapterType, bool> GuessAdapterFromNetworkCost(int network_cost);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::string_view      name,
-        ::std::string_view      desc,
-        ::rtc::IPAddress const& prefix,
-        int                     prefix_length,
-        ::rtc::AdapterType      type
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

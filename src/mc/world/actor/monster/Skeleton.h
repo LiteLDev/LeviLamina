@@ -24,6 +24,7 @@ public:
         Wither  = 1,
         Stray   = 2,
         Bogged  = 3,
+        Parched = 4,
     };
 
 public:
@@ -41,9 +42,9 @@ public:
     // NOLINTBEGIN
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
+    virtual bool doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
-    virtual bool canBeAffected(uint id) const /*override*/;
+    virtual bool canBeAffected(uint effectId) const /*override*/;
 
     virtual void setTarget(::Actor* entity) /*override*/;
 
@@ -83,7 +84,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI bool $canBeAffected(uint id) const;
+    MCAPI bool $canBeAffected(uint effectId) const;
 
     MCFOLD void $setTarget(::Actor* entity);
 

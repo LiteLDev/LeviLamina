@@ -118,8 +118,6 @@ public:
 
     MCNAPI void _initializeWorldIconPath(::Core::Path const& directory);
 
-    MCNAPI bool _isScreenshotIconPath(::Core::PathBuffer<::std::string> const& file);
-
     MCNAPI_C bool cloudSaveForWorldIsEnabled() const;
 
     MCNAPI_C bool isEditionCompatible() const;
@@ -132,7 +130,7 @@ public:
 
     MCNAPI_C ::LevelSummary& setId(::std::string Id);
 
-    MCNAPI_C ::LevelSummary& setName(::std::string Name);
+    MCNAPI ::LevelSummary& setName(::std::string Name);
 
     MCNAPI ~LevelSummary();
     // NOLINTEND

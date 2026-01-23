@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
@@ -33,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetArmorTrimFunction() /*override*/;
+    virtual ~SetArmorTrimFunction() /*override*/ = default;
 
     virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
 
@@ -45,6 +46,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI SetArmorTrimFunction(
+        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
+        ::HashedString const&                                  material,
+        ::HashedString const&                                  pattern
+    );
+
     MCNAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
     // NOLINTEND
 
@@ -56,9 +63,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(
+        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
+        ::HashedString const&                                  material,
+        ::HashedString const&                                  pattern
+    );
     // NOLINTEND
 
 public:

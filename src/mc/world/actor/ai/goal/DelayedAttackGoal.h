@@ -49,6 +49,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _attemptAttack(::Actor& target, bool canReach, bool hasLineOfSight);
+
+    MCAPI void _attemptStartAttacking(::Actor& target) const;
     // NOLINTEND
 
 public:

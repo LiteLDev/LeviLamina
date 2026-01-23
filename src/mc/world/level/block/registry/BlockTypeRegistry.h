@@ -8,7 +8,6 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/Owner.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/util/BaseGameVersion.h"
@@ -23,7 +22,6 @@ class BlockTypeRegistryReadLock;
 class Experiments;
 class LinkedAssetValidator;
 class ServerScriptManager;
-struct BlockComponentFinalizerForRendererContext;
 namespace VoxelShapes { class VoxelShapeRegistry; }
 // clang-format on
 
@@ -82,7 +80,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::Block const* operator()(int data) const;
+        MCFOLD ::Block const* operator()(int data) const;
 
         MCAPI ::BlockTypeRegistry::BlockComplexAliasContent& operator=(::BlockTypeRegistry::BlockComplexAliasContent&&);
 
@@ -130,6 +128,8 @@ public:
         MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, ::Block const* block);
 
         MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
+
+        MCAPI ~LookupByNameImplReturnType();
         // NOLINTEND
 
     public:
@@ -140,6 +140,12 @@ public:
         MCAPI void* $ctor(::WeakPtr<::BlockType const> blockType, ::Block const* block);
 
         MCAPI void* $ctor(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -201,8 +207,7 @@ public:
 
     MCAPI void finalizeBlockComponentStorage();
 
-    MCAPI_C void
-    finalizeBlockComponentStorageForRendering(::BlockComponentFinalizerForRendererContext& finalizerContext);
+    MCAPI_C void finalizeBlockComponentStorageForRendering(::brstd::function_ref<void(::BlockType&)> finalizer);
 
     MCAPI void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
 
@@ -261,8 +266,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::BlockTypeRegistry& get();
-
-    MCAPI static ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry> getNonOwner();
     // NOLINTEND
 
 public:

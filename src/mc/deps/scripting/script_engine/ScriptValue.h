@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
-
 namespace Scripting {
 
 class ScriptValue {
@@ -28,12 +23,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptValue();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Scripting::WeakLifetimeScope getWeakLifetimeScope() const;
     // NOLINTEND
 
 public:

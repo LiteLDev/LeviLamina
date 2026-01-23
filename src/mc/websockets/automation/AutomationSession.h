@@ -13,8 +13,10 @@
 class CommandOrigin;
 class RakWebSocketDataFrame;
 namespace Automation { class AutomationClient; }
+namespace CodeBuilder { struct AgentMessage; }
 namespace CodeBuilder { struct ChatMessage; }
 namespace CodeBuilder { struct ChatSubscription; }
+namespace CodeBuilder { struct CommandMessage; }
 namespace CodeBuilder { struct CommandRequest; }
 namespace CodeBuilder { struct EncryptionRequest; }
 namespace CodeBuilder { struct ErrorMessage; }
@@ -119,6 +121,12 @@ public:
     MCNAPI void _send(::std::string const& messageBody);
 
     MCNAPI void _sendUnencrypted(::std::string const& messageBody);
+
+    MCNAPI bool _tryHandleMessage(::CodeBuilder::AgentMessage const& message);
+
+    MCNAPI bool _tryHandleMessage(::CodeBuilder::CommandMessage const& message);
+
+    MCNAPI bool _tryHandleMessage(::CodeBuilder::ErrorMessage const& message);
 
     MCNAPI ::WSConnectionResult connect(::std::string const& serverUri);
 

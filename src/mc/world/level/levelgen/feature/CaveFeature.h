@@ -95,7 +95,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CaveFeature() /*override*/ = default;
+    virtual ~CaveFeature() /*override*/;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
@@ -184,6 +184,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

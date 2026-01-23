@@ -7,12 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptPressurePlatePopAfterEventIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptPressurePlatePopAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // ScriptPressurePlatePopAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN

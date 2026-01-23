@@ -11,6 +11,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class JukeboxBlockActor;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
@@ -32,6 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::JukeboxBlockActor* _tryGetJukeboxActor();
+
     MCNAPI ::Scripting::Result_deprecated<void> ejectRecord();
 
     MCNAPI ::Scripting::Result_deprecated<

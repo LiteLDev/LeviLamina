@@ -25,23 +25,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleMotionDynamicComponent& operator=(ParticleMotionDynamicComponent const&);
-    ParticleMotionDynamicComponent(ParticleMotionDynamicComponent const&);
-    ParticleMotionDynamicComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
     virtual ~ParticleMotionDynamicComponent() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ParticleMotionDynamicComponent(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
     // NOLINTEND
 
 public:
@@ -54,12 +42,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
     // NOLINTEND
 
 public:

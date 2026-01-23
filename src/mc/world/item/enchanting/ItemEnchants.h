@@ -47,8 +47,6 @@ public:
 
     MCAPI int getTotalValue(bool bookModifier) const;
 
-    MCAPI int hasEnchant(::Enchant::Type enchantType) const;
-
     MCAPI ::ItemEnchants& operator=(::ItemEnchants&&);
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);

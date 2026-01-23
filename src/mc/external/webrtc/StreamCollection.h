@@ -52,6 +52,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::StreamCollection> Create();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI uint64 $count();

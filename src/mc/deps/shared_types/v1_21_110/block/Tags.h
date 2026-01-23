@@ -12,21 +12,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI_S ~Tags();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_S static ::std::string_view const& NameId();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD_S void $dtor();
+    MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };
 

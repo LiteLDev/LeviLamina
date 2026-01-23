@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 class StrictEntityContext;
 struct ActorRotationComponent;
 struct PrevPosRotSetThisTickFlagComponent;
@@ -23,5 +24,7 @@ public:
         ::ActorRotationComponent&                              actorRotationComponent,
         ::EntityModifier<::PrevPosRotSetThisTickFlagComponent> modifier
     );
+
+    MCNAPI static void _setPreviousPosRotSystem(::EntityContext const& entity);
     // NOLINTEND
 };

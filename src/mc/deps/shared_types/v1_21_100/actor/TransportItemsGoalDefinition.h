@@ -29,6 +29,10 @@ public:
         Random  = 1,
     };
 
+    using BlockDescriptorVec = ::std::vector<::SharedTypes::Legacy::BlockDescriptor>;
+
+    using ItemDescriptorVec = ::std::vector<::SharedTypes::Legacy::ItemDescriptor>;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -73,21 +77,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& ALLOW_SIMULTANEOUS_INTERACTION();
-
-    MCAPI static uint const& IDLE_COOLDOWN();
-
-    MCAPI static uint const& INITIAL_COOLDOWN();
-
-    MCAPI static float const& INTERACTION_TIME();
-
-    MCAPI static uint const& MAX_STACK_SIZE();
-
-    MCAPI static uint const& MAX_VISITED_CONTAINERS();
-
     MCAPI static ::std::string_view const& NAME();
-
-    MCAPI static ::Vec2 const& SEARCH_DISTANCE();
     // NOLINTEND
 
 public:

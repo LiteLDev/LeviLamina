@@ -23,24 +23,17 @@ public:
 public:
     // prevent constructor by default
     ContentInfo& operator=(ContentInfo const&);
+    ContentInfo(ContentInfo const&);
     ContentInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContentInfo(::cricket::ContentInfo const& o);
-
     MCNAPI ::cricket::MediaContentDescription const* media_description() const;
 
     MCNAPI ::cricket::MediaContentDescription* media_description();
 
     MCNAPI ~ContentInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::cricket::ContentInfo const& o);
     // NOLINTEND
 
 public:

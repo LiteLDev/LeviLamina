@@ -183,6 +183,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
+
+    MCAPI_C static ::ShelfBlock::SlotState
+    getBlockSlotState(::BlockPos const& blockPos, ::Vec3 const& blockHit, uchar faceHit, ::BlockSource const& region);
     // NOLINTEND
 
 public:

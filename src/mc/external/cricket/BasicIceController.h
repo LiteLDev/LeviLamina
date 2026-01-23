@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BasicIceController() /*override*/;
+    virtual ~BasicIceController() /*override*/ = default;
 
     virtual void SetIceConfig(::cricket::IceConfig const& config) /*override*/;
 
@@ -86,8 +86,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit BasicIceController(::cricket::IceControllerFactoryArgs const& args);
 
-    MCNAPI int CalculateActiveWritablePingInterval(::cricket::Connection const* conn, int64 now) const;
-
     MCNAPI int CompareCandidatePairNetworks(
         ::cricket::Connection const*        a,
         ::cricket::Connection const*        b,
@@ -96,13 +94,6 @@ public:
 
     MCNAPI int CompareConnectionCandidates(::cricket::Connection const* a, ::cricket::Connection const* b) const;
 
-    MCNAPI int CompareConnectionStates(
-        ::cricket::Connection const* a,
-        ::cricket::Connection const* b,
-        ::std::optional<int64>       receiving_unchanged_threshold,
-        bool*                        missed_receiving_unchanged_threshold
-    ) const;
-
     MCNAPI int CompareConnections(
         ::cricket::Connection const* a,
         ::cricket::Connection const* b,
@@ -110,31 +101,17 @@ public:
         bool*                        missed_receiving_unchanged_threshold
     ) const;
 
-    MCNAPI ::cricket::Connection const* FindOldestConnectionNeedingTriggeredCheck(int64 now);
-
     MCNAPI ::std::map<::rtc::Network const*, ::cricket::Connection const*> GetBestConnectionByNetwork() const;
-
-    MCNAPI ::std::vector<::cricket::Connection const*> GetBestWritableConnectionPerNetwork() const;
 
     MCNAPI ::cricket::IceControllerInterface::SwitchResult
     HandleInitialSelectDampening(::cricket::IceSwitchReason reason, ::cricket::Connection const* new_connection);
 
-    MCNAPI bool IsBackupConnection(::cricket::Connection const* conn) const;
-
     MCNAPI bool IsPingable(::cricket::Connection const* conn, int64 now) const;
-
-    MCNAPI ::cricket::Connection const*
-    LeastRecentlyPinged(::cricket::Connection const* conn1, ::cricket::Connection const* conn2);
 
     MCNAPI ::cricket::Connection const*
     MorePingable(::cricket::Connection const* conn1, ::cricket::Connection const* conn2);
 
-    MCNAPI ::cricket::Connection const*
-    MostLikelyToWork(::cricket::Connection const* conn1, ::cricket::Connection const* conn2);
-
     MCNAPI bool PresumedWritable(::cricket::Connection const* conn) const;
-
-    MCNAPI bool ReadyToSend(::cricket::Connection const* connection) const;
 
     MCNAPI bool WritableConnectionPastPingInterval(::cricket::Connection const* conn, int64 now) const;
     // NOLINTEND
@@ -143,12 +120,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::cricket::IceControllerFactoryArgs const& args);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

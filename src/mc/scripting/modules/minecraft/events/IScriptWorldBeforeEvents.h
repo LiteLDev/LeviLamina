@@ -109,6 +109,16 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&
     );
 
+#ifdef LL_PLAT_S
+    MCFOLD ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
+    $onBeforeWeatherChangedEvent(
+        ::ScriptModuleMinecraft::ScriptWeatherType,
+        ::ScriptModuleMinecraft::ScriptWeatherType,
+        int
+    );
+#endif
+
     MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
     $onBeforePlayerInteractWithEntity(::Player&, ::Actor&, ::PlayerInteractWithEntityBeforeEvent const&);
@@ -117,11 +127,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
     $onBeforePlayerInteractWithBlock(::Player&, ::PlayerInteractWithBlockBeforeEvent const&);
 
-#ifdef LL_PLAT_S
     MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
     $onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType);
-#endif
 
     MCFOLD void $onBeforePlayerLeave(::Player const&);
 

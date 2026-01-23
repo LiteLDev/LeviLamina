@@ -31,8 +31,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_LISTEN_TIME();
-
     MCAPI static float const& DEFAULT_SPEED();
 
     MCAPI static float const& DEFAULT_START_DISTANCE();

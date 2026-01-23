@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
-namespace SharedTypes::v1_21_50 { struct CameraAimAssistPresetDefinition; }
+namespace SharedTypes::v1_21_120 { struct CameraAimAssistPresetDefinition; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -30,11 +30,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const* _getPresetDefinition() const;
+    MCNAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const* _getPresetDefinition() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getDefaultItemSettings() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExcludedTargets() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExcludedBlockTagTargets() const;
+
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExcludedBlockTargets() const;
+
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExcludedEntityTargets() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHandSettings() const;
 

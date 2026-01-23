@@ -235,33 +235,35 @@ public:
     ::ll::TypedStorage<4, 4, float>                                                   mSleepColliderWidth;
     ::ll::TypedStorage<1, 1, bool>                                                    mCanSleepWhileRiding;
     ::ll::TypedStorage<1, 1, bool>                                                    mSinkWithPassengers;
-    ::ll::TypedStorage<4, 4, float>                                                   mCooldownMax;
-    ::ll::TypedStorage<4, 4, float>                                                   mCooldownMin;
-    ::ll::TypedStorage<4, 4, float>                                                   mDetectMobDistance;
-    ::ll::TypedStorage<4, 4, float>                                                   mDetectMobHeight;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                                     mCanNapFilters;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                                     mWakeMobExceptionFilters;
-    ::ll::TypedStorage<4, 4, float>                                                   mInterestTime;
-    ::ll::TypedStorage<4, 4, float>                                                   mRemoveItemTime;
-    ::ll::TypedStorage<4, 4, float>                                                   mCarriedItemSwitchTime;
-    ::ll::TypedStorage<4, 4, float>                                                   mInterestCooldown;
-    ::ll::TypedStorage<4, 4, float>                                                   mCooldownTimeoutTime;
-    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>                           mDesiredMingleType;
-    ::ll::TypedStorage<4, 4, float>                                                   mMingleDistance;
-    ::ll::TypedStorage<1, 1, bool>                                                    mPickupBasedOnChance;
-    ::ll::TypedStorage<1, 1, bool>                                                    mCanPickupAnyItem;
-    ::ll::TypedStorage<4, 4, int>                                                     mTimeoutAfterBeingAttacked;
-    ::ll::TypedStorage<1, 1, bool>                                                    mCanPickupToHandOrEquipment;
-    ::ll::TypedStorage<1, 1, bool>                                                    mPickupSameItemsAsInHand;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>                        mExcludedItemsList;
-    ::ll::TypedStorage<1, 1, bool>                                                    mSlimeSetPersistent;
-    ::ll::TypedStorage<8, 32, ::std::string>                                          mAdmireItemSound;
-    ::ll::TypedStorage<4, 8, ::FloatRange>                                            mSoundInterval;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>                              mOnAdmireItemStart;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>                              mOnAdmireItemStop;
-    ::ll::TypedStorage<4, 4, float>                                                   mLiquidYOffset;
-    ::ll::TypedStorage<4, 4, float>                                                   mRiseDelta;
-    ::ll::TypedStorage<4, 4, float>                                                   mSinkDelta;
+    ::ll::TypedStorage<4, 4, float>                                                   mChancePerTickToFloat;
+    ::ll::TypedStorage<4, 4, float>                            mTimeUnderwaterToDismountPassengers;
+    ::ll::TypedStorage<4, 4, float>                            mCooldownMax;
+    ::ll::TypedStorage<4, 4, float>                            mCooldownMin;
+    ::ll::TypedStorage<4, 4, float>                            mDetectMobDistance;
+    ::ll::TypedStorage<4, 4, float>                            mDetectMobHeight;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>              mCanNapFilters;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>              mWakeMobExceptionFilters;
+    ::ll::TypedStorage<4, 4, float>                            mInterestTime;
+    ::ll::TypedStorage<4, 4, float>                            mRemoveItemTime;
+    ::ll::TypedStorage<4, 4, float>                            mCarriedItemSwitchTime;
+    ::ll::TypedStorage<4, 4, float>                            mInterestCooldown;
+    ::ll::TypedStorage<4, 4, float>                            mCooldownTimeoutTime;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>    mDesiredMingleType;
+    ::ll::TypedStorage<4, 4, float>                            mMingleDistance;
+    ::ll::TypedStorage<1, 1, bool>                             mPickupBasedOnChance;
+    ::ll::TypedStorage<1, 1, bool>                             mCanPickupAnyItem;
+    ::ll::TypedStorage<4, 4, int>                              mTimeoutAfterBeingAttacked;
+    ::ll::TypedStorage<1, 1, bool>                             mCanPickupToHandOrEquipment;
+    ::ll::TypedStorage<1, 1, bool>                             mPickupSameItemsAsInHand;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mExcludedItemsList;
+    ::ll::TypedStorage<1, 1, bool>                             mSlimeSetPersistent;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mAdmireItemSound;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                     mSoundInterval;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>       mOnAdmireItemStart;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>       mOnAdmireItemStop;
+    ::ll::TypedStorage<4, 4, float>                            mLiquidYOffset;
+    ::ll::TypedStorage<4, 4, float>                            mRiseDelta;
+    ::ll::TypedStorage<4, 4, float>                            mSinkDelta;
     // NOLINTEND
 
 public:
@@ -293,6 +295,8 @@ public:
     _getPanicGoalDamageSources(::ConstDeserializeDataParams const& deserializeDataParams);
 
     MCAPI static ::TargetSelectionMethod _getTargetSelectionMethodFromString(::std::string const& methodStr);
+
+    MCAPI static ::std::unique_ptr<::Goal> createGoal(::Mob& mob, ::LegacyGoalDefinition const& def);
 
     MCAPI static bool goalExists(::std::string const& name);
     // NOLINTEND

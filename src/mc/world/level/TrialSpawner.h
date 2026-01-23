@@ -137,19 +137,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TrialSpawner();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TrialSpawner(::BlockPos const& pos);
-
     MCAPI void _becomeOminous(::BlockSource& region, ::Block const& block);
 
     MCAPI void _dispenseItemAboveRandomCombatant(::BlockSource& region);
 
     MCAPI ::TrialSpawner::PlayerScanResult _doPlayerScan(::BlockSource& region);
+
+    MCAPI void _ejectReward(::BlockSource& region, ::BlockPos pos) const;
 
     MCAPI ::std::vector<::TrialSpawner::WeightedItemStack>& _getDispensingItems(::BlockSource& region);
 
@@ -215,7 +211,11 @@ public:
         ::std::string const& lootTableName
     );
 
+    MCAPI_C static char const* _getSmallFlameParticleName(bool isOminous);
+
     MCAPI static bool _isAllowedToSpawnInLevel(::Level& level);
+
+    MCAPI static bool _isOminous(::BlockSource& region, ::BlockPos pos);
 
     MCAPI static void _removeMobByGameplay(::Level& level, ::Actor& mob);
 
@@ -224,11 +224,5 @@ public:
     MCAPI_C static void addSpawnParticles(::Level& level, ::Vec3 pos, bool isOminous);
 
     MCAPI_C static void sendEjectItemParticles(::Level& level, ::BlockPos pos, bool isOminous);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 };

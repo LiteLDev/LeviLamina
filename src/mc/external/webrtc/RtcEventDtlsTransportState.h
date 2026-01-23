@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcEventDtlsTransportState() /*override*/;
+    virtual ~RtcEventDtlsTransportState() /*override*/ = default;
 
     virtual ::webrtc::RtcEvent::Type GetType() const /*override*/;
 
@@ -41,12 +41,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::DtlsTransportState state);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

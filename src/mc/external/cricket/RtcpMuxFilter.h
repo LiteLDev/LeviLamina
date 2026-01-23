@@ -34,15 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool ExpectAnswer(::cricket::ContentSource source);
-
-    MCNAPI bool ExpectOffer(bool offer_enable, ::cricket::ContentSource source);
-
     MCNAPI bool IsActive() const;
-
-    MCNAPI bool IsFullyActive() const;
-
-    MCNAPI bool IsProvisionallyActive() const;
 
     MCNAPI RtcpMuxFilter();
 

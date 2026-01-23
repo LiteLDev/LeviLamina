@@ -56,7 +56,8 @@ template <
     typename T48,
     typename T49,
     typename T50,
-    typename T51>
+    typename T51,
+    typename T52>
 class FrameRenderer {};
 
 } // namespace dragon::framerenderer
