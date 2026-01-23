@@ -14,7 +14,6 @@
 
 ```shell
 lip config set github_proxies=https://github.bibk.top
-lip config set go_module_proxies=https://goproxy.cn
 ```
 
 这两个镜像我们已在中国大陆测试过可用，当然你仍然可以使用其他镜像。
